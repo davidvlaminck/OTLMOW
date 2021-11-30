@@ -8,12 +8,11 @@ class NaampadObjectTestInstance(NaampadObject):
         pass
 
 
-
 class OSLOCollectorTests(unittest.TestCase):
     def test_useOTLClassNaampadObject(self):
         instance = NaampadObjectTestInstance()
-        instance.uri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#NaampadObject'
 
-    def test_instantiateNaampadObject(self):
-        instance = NaampadObject()
-        instance.uri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#NaampadObject'
+        instance.naampad = "TEST/TEST"
+        self.assertTrue(instance.naampad == "TEST/TEST")
+        self.assertTrue(instance.uri == "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#NaampadObject")
+        self.assertTrue(isinstance(instance, NaampadObject))

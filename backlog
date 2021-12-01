@@ -7,3 +7,5 @@ type op implementatie model objecten?
 keuzelijsten
 uniontypes
 agents kunnen niet zelf aangemaakt worden
+deprecated classes geven een warning
+deprecated attributen? door overerving aan te passen?

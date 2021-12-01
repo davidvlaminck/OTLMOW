@@ -1,3 +1,4 @@
+from ModelGenerator.Inheritance import Inheritance
 from ModelGenerator.OSLOAttribuut import OSLOAttribuut
 from ModelGenerator.OSLOClass import OSLOClass
 from ModelGenerator.SQLDbReader import SQLDbReader
@@ -53,6 +54,18 @@ class OSLOInMemoryCreator:
         for row in data:
             c = OSLOAttribuut(row[0], row[1], row[2], row[3], row[4], row[5], row[6], row[7], row[8], row[9], row[10],
                               row[11], row[12])
+            list.append(c)
+
+        return list
+
+    def getInheritances(self):
+        data = self.sqlDbReader.performReadQuery(
+            "SELECT base_name, base_uri, class_uri, class_name, deprecated_version FROM InternalBaseClass",
+            {})
+
+        list = []
+        for row in data:
+            c = Inheritance(row[0], row[1], row[2], row[3], row[4])
             list.append(c)
 
         return list

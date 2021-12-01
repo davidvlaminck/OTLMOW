@@ -2,6 +2,7 @@ import unittest
 from unittest.mock import Mock
 
 from ModelGenerator.FileExistChecker import FileExistChecker
+from ModelGenerator.Inheritance import Inheritance
 from ModelGenerator.OSLOAttribuut import OSLOAttribuut
 from ModelGenerator.OSLOClass import OSLOClass
 from ModelGenerator.OSLOInMemoryCreator import OSLOInMemoryCreator
@@ -41,6 +42,9 @@ class OSLOInMemoryCreatorTests(unittest.TestCase):
                 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#NaampadObject.naampad',
                 'http://www.w3.org/2001/XMLSchema#string', 0, '', 0, '', ''
             ]]
+        elif query == "SELECT base_name, base_uri, class_uri, class_name, deprecated_version FROM InternalBaseClass" and arg_dict == {}:
+            return [['AIMNaamObject', "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMNaamObject",
+                     "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#NaampadObject", "NaampadObject", ""]]
         return []
 
     def test_FileNotFound(self):
@@ -109,3 +113,15 @@ class OSLOInMemoryCreatorTests(unittest.TestCase):
         first = next(c for c in listOfAttributes)
         self.assertEqual(type(first), OSLOAttribuut)
         self.assertEqual(first.uri, attributeUri)
+
+    def test_Mock_getInheritances(self):
+        mock = Mock()
+        oSLOCreator = OSLOInMemoryCreator(mock)
+        mock.performReadQuery = self.mockPerformReadQuery
+        listOfInheritances = oSLOCreator.getInheritances()
+        class_uri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#NaampadObject'
+
+        self.assertTrue(len(listOfInheritances) >= 1)
+        first = next(c for c in listOfInheritances)
+        self.assertEqual(type(first), Inheritance)
+        self.assertEqual(first.class_uri, class_uri)

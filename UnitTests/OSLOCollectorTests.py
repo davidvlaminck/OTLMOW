@@ -17,6 +17,7 @@ class OSLOCollectorTests(unittest.TestCase):
         # assert
         self.assertTrue(len(collector.classes) >= 1)
         self.assertTrue(len(collector.attributes) >= 1)
+        self.assertTrue(len(collector.inheritances) >= 1)
 
     def test_mock_CollectThenFindAttributesByClass(self):
         mock = Mock()
@@ -33,3 +34,19 @@ class OSLOCollectorTests(unittest.TestCase):
         # assert
         self.assertIsNotNone(naampadObject_class)
         self.assertTrue(attributes[0].uri == attribute_uri)
+
+    def test_mock_CollectThenFindInheritancesByClass(self):
+        mock = Mock()
+        oSLOCreator = OSLOInMemoryCreator(mock)
+        mock.performReadQuery = OSLOInMemoryCreatorTests().mockPerformReadQuery
+        collector = OSLOCollector(oSLOCreator)
+        collector.collect()
+
+        class_uri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#NaampadObject'
+        base_class = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMNaamObject'
+        naampadObject_class = next(c for c in collector.classes if c.uri == class_uri)
+        inheritances = collector.FindInheritancesByClass(naampadObject_class)
+
+        # assert
+        self.assertIsNotNone(naampadObject_class)
+        self.assertTrue(inheritances[0].base_class == base_class)

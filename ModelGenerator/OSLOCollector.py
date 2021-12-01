@@ -1,7 +1,14 @@
+from typing import List
+
 from ModelGenerator.OSLOClass import OSLOClass
 
 
 class OSLOCollector:
+    inheritances: List
+    attributes: List
+    classes: List
+
+    
     def __init__(self, oSLOInMemoryCreator):
         self.inheritances = []
         self.OSLOInMemoryCreator = oSLOInMemoryCreator

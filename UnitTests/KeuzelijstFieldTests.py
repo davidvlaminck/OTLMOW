@@ -20,14 +20,14 @@ class KeuzelijstFieldTests(unittest.TestCase):
 
     def test_AssignCorrectValue(self):
         veld = KeuzelijstField(TestKeuzeLijst())
-        veld.setValueByLabel('optie 2')
+        veld.set_value_by_label('optie 2')
         self.assertTrue(veld.value.label == 'optie 2')
         self.assertTrue(veld.value.waarde == 'optie2')
 
     def test_AssignIncorrectValue(self):
         veld = KeuzelijstField(TestKeuzeLijst())
         with self.assertRaises(ValueError):
-            veld.setValueByLabel('optie 3')
+            veld.set_value_by_label('optie 3')
         self.assertTrue(veld.value is None)
 
 

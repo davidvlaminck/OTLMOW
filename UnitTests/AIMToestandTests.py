@@ -11,7 +11,7 @@ class AIMToestandTestInstance(AIMToestand):
 class AIMToestandTests(unittest.TestCase):
     def test_useOTLClassAIMToestand(self):
         instance = AIMToestandTestInstance()
-        instance.toestand.setValueByLabel("in ontwerp")
+        instance.toestand.set_value_by_label("in ontwerp")
 
         self.assertTrue(isinstance(instance, AIMToestand))
         self.assertTrue(instance.uri == "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMToestand")

@@ -8,6 +8,7 @@ from OTLClasses.Verification.AIMNaamObject import AIMNaamObject
 class NaampadObject(AIMNaamObject, ABC):
     """Abstracte als de basisklasse voor elk OTL object dat gebruik maakt van een naampad."""
     uri = "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#NaampadObject"
+
     naampad = StringField()
     """Een set van objecten (bv. collecties) die aanduiden waar het object zich bevindt in de objectenboom (EM-Infra)."""
 

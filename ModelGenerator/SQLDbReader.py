@@ -5,7 +5,9 @@ from ModelGenerator.IFileExistChecker import IFileExistChecker
 
 
 class SQLDbReader:
-    def __init__(self, fileExistChecker : IFileExistChecker):
+    fileExistChecker: IFileExistChecker
+
+    def __init__(self, fileExistChecker: IFileExistChecker):
         self.fileExistChecker = fileExistChecker
 
     def performReadQuery(self, query: str, params: dict):

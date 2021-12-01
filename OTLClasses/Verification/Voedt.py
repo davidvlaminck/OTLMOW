@@ -1,0 +1,2 @@
+class Voedt(DirectioneleRelatie):
+    pass

@@ -1,10 +1,14 @@
+relaties leggen: validatie op classes zelf
+relaties leggen: mogelijk maken om te leggen vanuit doel of bron
+> relatieObject implementeren
+> DtcIdentificator implementeren
+> AnyURI implementeren
+
+
 overerving tussen classes
 storage (in memory)
 tempId's vs bestaande id's
-relaties leggen: validatie op classes zelf
-relaties leggen: mogelijk maken om te leggen vanuit doel of bron
-type op implementatie model objecten?
-keuzelijsten
+type op implementatie model objecten? => enkel uri attribute op AIMObject invullen
 uniontypes
 agents kunnen niet zelf aangemaakt worden
 deprecated classes geven een warning

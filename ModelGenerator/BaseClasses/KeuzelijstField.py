@@ -1,22 +1,24 @@
 from ModelGenerator.BaseClasses.KeuzelijstWaarde import KeuzelijstWaarde
 from ModelGenerator.BaseClasses.Keuzelijst import Keuzelijst
 
-# TODO Value als class field aanmaken en wat met niet gezette waarde => None
-class KeuzelijstField:
-    def __init__(self, keuzelijst: Keuzelijst, value: KeuzelijstWaarde = None):
-        self.keuzelijst: Keuzelijst = keuzelijst
-        self.value: KeuzelijstWaarde = value
 
-    def getOptions(self):
+class KeuzelijstField:
+    keuzelijst: Keuzelijst
+    value: KeuzelijstWaarde = None
+
+    def __init__(self, keuzelijst: Keuzelijst):
+        self.keuzelijst = keuzelijst
+
+    def get_options(self):
         return self.keuzelijst.options
 
-    def setValueByWaarde(self, waarde):
+    def set_value_by_waarde(self, waarde):
         try:
             self.value = next(o for o in self.keuzelijst.options if o.waarde == waarde)
         except StopIteration:
             raise ValueError(f"There is no option with waarde '{waarde}' in {self.keuzelijst.naam}.")
 
-    def setValueByLabel(self, label):
+    def set_value_by_label(self, label):
         try:
             self.value = next(o for o in self.keuzelijst.options if o.label == label)
         except StopIteration:

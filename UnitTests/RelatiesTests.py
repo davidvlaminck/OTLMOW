@@ -10,6 +10,7 @@ from OTLClasses.Verification.Voedt import Voedt
 class RelatiesTests(unittest.TestCase):
     def test_LegVoedtRelatieTussenEnergiemeterAWVEn(self):
         instance = EnergiemeterAWV()
+        self.assertFalse(True)
 
     def test_GeldigeRelatieAttrOk(self):
         instance = GeldigeRelatie(Voedt(), Aftakking(), RelatieRichting.BRON_DOEL)

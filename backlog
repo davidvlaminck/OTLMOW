@@ -1,3 +1,5 @@
+class attributes > instance attributes
+
 relaties leggen: validatie op classes zelf
 relaties leggen: mogelijk maken om te leggen vanuit doel of bron
 methode op abstract class maken

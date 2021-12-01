@@ -9,7 +9,9 @@ from OTLClasses.Verification.Voedt import Voedt
 class EnergiemeterAWV(Energiemeter):
     """Toestel voor multifunctionele stroom- en spanningsmetingen en logging, die via een van de courante standaardkoppelvlakken (Euridis, RS485, Modbus, ...) wordt aangesloten om lokaal of op afstand te kunnen uitlezen en zodoende het energieverbruik te kunnen opvolgen"""
     def __init__(self):
-        self.add_geldige_relatie(Voedt(), Aftakking(), RelatieRichting.BRON_DOEL)
+        pass
+        #self.geldige_relaties.extend(super().geldige_relaties)
+        #self.add_geldige_relatie(Voedt(), Aftakking(), RelatieRichting.BRON_DOEL)
         #self.add_geldige_relatie(Voedt, Hoofdschakelaar, RelatieRichting.DOEL_BRON)
         #self.add_geldige_relatie(Voedt, Stroomkring, RelatieRichting.DOEL_BRON)
 

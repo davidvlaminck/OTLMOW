@@ -1,6 +1,9 @@
 class BooleanField:
     def __get__(self, instance, owner):
-        return instance.__dict__[self.name]
+        try:
+            return instance.__dict__[self.name]
+        except KeyError:
+            return None
 
     def __set__(self, instance, value):
         if not isinstance(value, bool):

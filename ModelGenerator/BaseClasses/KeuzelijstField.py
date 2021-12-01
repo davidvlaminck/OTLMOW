@@ -1,7 +1,7 @@
 from ModelGenerator.BaseClasses.KeuzelijstWaarde import KeuzelijstWaarde
 from ModelGenerator.BaseClasses.Keuzelijst import Keuzelijst
 
-
+# TODO Value als class field aanmaken en wat met niet gezette waarde => None
 class KeuzelijstField:
     def __init__(self, keuzelijst: Keuzelijst, value: KeuzelijstWaarde = None):
         self.keuzelijst: Keuzelijst = keuzelijst

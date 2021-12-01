@@ -28,3 +28,9 @@ class AIMNObjectTests(unittest.TestCase):
 
         with self.assertRaises(TypeError):
             instanceOfAbstractClass = AIMObject()
+
+        instance2 = AIMObjectTestInstance()
+        instance2.notitie = "TEST2"
+
+        self.assertTrue(instance.notitie == "TEST")
+        self.assertTrue(instance2.notitie == "TEST2")

@@ -1,2 +1,7 @@
+from OTLClasses.Verification.DirectioneleRelatie import DirectioneleRelatie
+
+
 class Voedt(DirectioneleRelatie):
-    pass
+    def __init__(self):
+        pass
+

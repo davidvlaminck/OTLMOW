@@ -24,3 +24,5 @@ class EnergiemeterAWVTests(unittest.TestCase):
         self.assertTrue(instance.aantalTelwerken == 1)
         self.assertTrue(instance2.aantalTelwerken == 2)
         self.assertTrue(instance3.aantalTelwerken is None)
+
+        self.assertTrue(len(instance.geldige_relaties) == 1)

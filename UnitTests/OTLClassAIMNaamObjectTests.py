@@ -1,7 +1,6 @@
 import unittest
 
 from OTLClasses.Verification.AIMNaamObject import AIMNaamObject
-from OTLClasses.Verification.NaampadObject import NaampadObject
 
 
 class AIMNaamObjectTestInstance(AIMNaamObject):
@@ -9,7 +8,7 @@ class AIMNaamObjectTestInstance(AIMNaamObject):
         pass
 
 
-class OSLOCollectorTests(unittest.TestCase):
+class AIMNaamObjectTests(unittest.TestCase):
     def test_useOTLClassAIMNaamObject(self):
         instance = AIMNaamObjectTestInstance()
 
@@ -20,3 +19,4 @@ class OSLOCollectorTests(unittest.TestCase):
 
         with self.assertRaises(ValueError):
             instance.naam = 9
+

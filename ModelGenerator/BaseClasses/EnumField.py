@@ -16,13 +16,3 @@ class EnumField:
     def __set_name__(self, owner, name):
         self.name = name
 
-
-class KlAIMToestand(Enum):
-    in_ontwerp = 1
-    gepland = 2
-    in_opbouw = 3
-    geannuleerd = 4
-    in_gebruik = 5
-    overgedragen = 6
-    uit_gebruik = 7
-    verwijderd = 8

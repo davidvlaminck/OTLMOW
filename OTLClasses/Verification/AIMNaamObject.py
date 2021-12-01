@@ -1,10 +1,9 @@
-from abc import ABC, abstractmethod
-
+from abc import abstractmethod
 from ModelGenerator.BaseClasses.StringField import StringField
+from OTLClasses.Verification.AIMObject import AIMObject
 
 
-# inherit from ABC to create abstract class
-class AIMNaamObject(ABC):
+class AIMNaamObject(AIMObject):
     """Abstracte als de basisklasse voor elk OTL object dat benoemd wordt met een mensleesbare identificator."""
     uri = "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMNaamObject"
     naam = StringField()

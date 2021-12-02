@@ -1,12 +1,12 @@
 from abc import ABC, abstractmethod
 
-from ModelGenerator.BaseClasses.ListField import ListField
+from ModelGenerator.BaseClasses.ListField import MeerKardinaliteitField
 
 
 class ContainerBuis(ABC):
     """Abstracte voor het groeperen van eigenschappen en relaties van buisvormige container elementen. Dit zijn buizen die kabels of andere leidingen kunnen bevatten."""
 
-    kleur = ListField(str)
+    kleur = MeerKardinaliteitField(str)
 
     uri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#ContainerBuis"
 

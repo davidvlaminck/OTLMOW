@@ -22,5 +22,3 @@ class Energiemeter(AIMObject):
     """Het serienummer (nummer van het fabrikaat) op de meter."""
     metertype = KeuzelijstField(KlEnergiemeterMetertype())
     """Type meter (mechanisch, elektronisch)."""
-
-

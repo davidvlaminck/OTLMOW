@@ -1,12 +1,30 @@
-import decimal
 import unittest
-from OTLClasses.Verification.Voedt import Voedt
-from OTLClasses.Verification.KwantWrdInVolt import KwantWrdInVolt
+
+from OTLClasses.Verification.ContainerBuis import ContainerBuis
+
+
+class ContainerBuisInstance(ContainerBuis):
+    def __init__(self):
+        pass
 
 
 class ContainerBuisTests(unittest.TestCase):
     def test_ContainerBuisInit(self):
-        instance = ContainerBuis()
+        with self.assertRaises(TypeError):
+            abstractInstance = ContainerBuis()
+        instance = ContainerBuisInstance()
+        instance.kleur = []
+        self.assertTrue(len(instance.kleur) == 0)
+        instance.kleur = ["geel"]
+        self.assertTrue(len(instance.kleur) == 1)
+        instance.kleur = ["geel","rood"]
+        self.assertTrue(len(instance.kleur) == 2)
+        with self.assertRaises(ValueError):
+            instance.kleur = [2, 3]
+        instance2 = ContainerBuisInstance()
+        instance2.kleur = ["blauw"]
+        self.assertTrue(instance.kleur[1] == "rood")
+        self.assertTrue(instance2.kleur[0] == "blauw")
 
 
         # self.assertTrue(isinstance(instance.aansluitspanning, KwantWrdInVolt))

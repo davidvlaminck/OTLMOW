@@ -18,3 +18,20 @@ uniontypes
 agents kunnen niet zelf aangemaakt worden
 deprecated classes geven een warning
 deprecated attributen? door overerving aan te passen?
+
+
+Facility
+* ImportAndStore
+* Store(Storage) = dicts (by type) in 1 dict for assets > create class to hold dict + operations
+  + 1 dict to hold all assets (search by id)
+    - StoreSearcher => return instance(s)
+    - UpdateStore
+    - CreateInStore => return instance with createdId
+    - RemoveFromStore
+* Factory
+    - CreateAssetsInBulk => return list of instances
+    - CreateRelations
+* QualityControl
+* Export
+    - memory (Dicts)
+    - Different formats

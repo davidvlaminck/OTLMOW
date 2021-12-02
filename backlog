@@ -1,4 +1,6 @@
 class attributes > instance attributes
+https://stackoverflow.com/questions/60590442/abstract-dataclass-without-abstract-methods-in-python-prohibit-instantiation
+abstract data class, evt aanpassen via __new__
 
 relaties leggen: validatie op classes zelf
 relaties leggen: mogelijk maken om te leggen vanuit doel of bron

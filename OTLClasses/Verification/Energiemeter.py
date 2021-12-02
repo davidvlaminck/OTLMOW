@@ -16,7 +16,7 @@ class Energiemeter(AIMObject):
 
     uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Energiemeter"
 
-    antalTelwerken: IntField()
+    antalTelwerken = IntField()
     """Het aantal telwerken dat de energiemeter bevat: 1 bij enkelvoudige meter, 2 bij een dag- en nacht-meter."""
     meternummer = StringField()
     """Het serienummer (nummer van het fabrikaat) op de meter."""

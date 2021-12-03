@@ -1,34 +1,45 @@
-class MeerKardinaliteitField:
-    def __init__(self, fieldType):
+import math
+
+
+class KardinaliteitField:
+    name = 'KardinaliteitField'
+
+    def __init__(self, fieldType, minKardinaliteit, maxKardinaliteit):
         self._type = fieldType
-        self.list = []
+        self.minKardinaliteit = minKardinaliteit
+        if maxKardinaliteit == '*':
+            self.maxKardinaliteit = math.inf
+        else:
+            self.maxKardinaliteit = maxKardinaliteit
 
     def __get__(self, instance, owner):
-        return self.list
+        try:
+            return instance.__dict__[self.name]
+        except KeyError:
+            return None
 
-    def __set__(self, instance, value):
-        if not isinstance(value, list):
-            raise ValueError(f'expecting list in {self.name}')
-        badtype = self.check_types_in_list(value)
-        if badtype:
-            raise ValueError(f'element of bad type in {self.name}')
-
-        self.list = value
-
-    def check_types_in_list(self, valueList):
-        badtype = False
+    def check_types_in_tuple(self, valueList) -> bool:
+        bad_type = False
         for el in valueList:
             if not (isinstance(el, self._type)):
-                badtype = True
-                return badtype
-        return badtype
+                bad_type = True
+                return bad_type
+        return bad_type
+
+    def __set__(self, instance, value):
+        if value is None:
+            instance.__dict__[self.name] = value
+            return
+        elif not isinstance(value, tuple):
+            raise ValueError(f'expecting tuple in {self.name}')
+        elif len(value) < self.minKardinaliteit:
+            raise ValueError(f'expecting at least {self.minKardinaliteit} element(s) in {self.name}')
+        elif len(value) > self.maxKardinaliteit:
+            raise ValueError(f'expecting at most {self.maxKardinaliteit} element(s) in {self.name}')
+        badtype = self.check_types_in_tuple(value)
+        if badtype:
+            raise ValueError(f'element of bad type in {self.name}')
+        instance.__dict__[self.name] = value
 
     def __set_name__(self, owner, name):
         self.name = name
-
-        # aanpassen naar eigen list implementatie
-        # waarbij kardinaliteit en type kan gecheckt worden bij set
-        # testen met 2 overervende klasses van field met dezelfde naam (andere instantie)
-        # https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#ContainerBuis.kleur
-        # kard 1 *
-        # De kleur van de coating.

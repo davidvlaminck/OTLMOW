@@ -2,11 +2,14 @@ class attributes > instance attributes
 https://stackoverflow.com/questions/60590442/abstract-dataclass-without-abstract-methods-in-python-prohibit-instantiation
 abstract data class, evt aanpassen via __new__
 
-relaties leggen: validatie op classes zelf
+relaties leggen: validatie op classes zelf is moeilijk maar kan mits extra methode aanroepen
+Relaties ophalen en sorteren op brontype, doeltype en relatietype
+Opslaan in dicts
 relaties leggen: mogelijk maken om te leggen vanuit doel of bron
 methode op abstract class maken
 > relatieObject implementeren
 > AnyURI implementeren
+
 
 
 overerving tussen classes

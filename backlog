@@ -13,6 +13,13 @@ methode op abstract class maken
 > relatieObject implementeren
 > AnyURI implementeren
 
+ophalen attributen
+select * from OSLOClass
+left join OSLOAttributen on OSLOClass.uri = OSLOAttributen.class_uri
+left join TypeLinkTabel tlt on tlt.item_uri = OSLOAttributen."type"
+left join OSLODatatypePrimitive op on OSLOAttributen.'type' = op.uri
+where OSLOClass.uri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DNBLaagspanning';
+
 
 
 overerving tussen classes

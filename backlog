@@ -4,8 +4,11 @@ abstract data class, evt aanpassen via __new__
 
 relaties leggen: validatie op classes zelf is moeilijk maar kan mits extra methode aanroepen
 Relaties ophalen en sorteren op brontype, doeltype en relatietype
-Opslaan in dicts
+Opslaan in dicts, zowel op doel eerst als op bron eerst
 relaties leggen: mogelijk maken om te leggen vanuit doel of bron
+Geldige relaties bijhouden op class niveau, op te halen bij leggen relatie
+Voor objectrelaties werken met verborgen prop en metbodes
+Opslaan in tuples
 methode op abstract class maken
 > relatieObject implementeren
 > AnyURI implementeren

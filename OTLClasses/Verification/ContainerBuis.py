@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 
-from ModelGenerator.BaseClasses.ListField import KardinaliteitField
+from ModelGenerator.BaseClasses.KardinaliteitField import KardinaliteitField
 
 
 class ContainerBuis(ABC):

@@ -1,20 +1,17 @@
-singleton
-https://stackoverflow.com/questions/6760685/creating-a-singleton-in-python
+
 
 class attributes > instance attributes
 https://stackoverflow.com/questions/60590442/abstract-dataclass-without-abstract-methods-in-python-prohibit-instantiation
 abstract data class, evt aanpassen via __new__
 
 relaties leggen: validatie op classes zelf is moeilijk maar kan mits extra methode aanroepen
-Relaties ophalen en sorteren op brontype, doeltype en relatietype
-Opslaan in dicts, zowel op doel eerst als op bron eerst
+
 relaties leggen: mogelijk maken om te leggen vanuit doel of bron
-Geldige relaties bijhouden op class niveau, op te halen bij leggen relatie
-Voor objectrelaties werken met verborgen prop en metbodes
-Opslaan in tuples
-methode op abstract class maken
+
+
 > relatieObject implementeren
 > AnyURI implementeren
+> uri implementeren op alle soorten attributen
 
 ophalen attributen
 select * from OSLOClass
@@ -28,8 +25,7 @@ where OSLOClass.uri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DN
 overerving tussen classes
 storage (in memory)
 tempId's vs bestaande id's
-type op implementatie model objecten? => enkel uri attribute op AIMObject invullen
-uniontypes
+typeuri op implementatie model objecten? => enkel uri attribute op AIMObject invullen
 agents kunnen niet zelf aangemaakt worden
 deprecated classes geven een warning
 deprecated attributen? door overerving aan te passen?

@@ -1,6 +1,6 @@
 import unittest
 
-from ModelGenerator.BaseClasses.ListField import KardinaliteitField
+from ModelGenerator.BaseClasses.KardinaliteitField import KardinaliteitField
 from OTLClasses.Verification.ContainerBuis import ContainerBuis
 
 

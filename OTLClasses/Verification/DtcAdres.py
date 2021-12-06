@@ -1,10 +1,10 @@
-from ModelGenerator.BaseClasses.KeuzelijstField import KeuzelijstField
 from ModelGenerator.BaseClasses.StringField import StringField
 from OTLClasses.Verification.KlAlgGemeente import KlAlgGemeente
 
 
 class DtcAdres:
-    """Complex datatype voor de aanduiding van een bepaalde locatie, doorgaans van een huis, woning, gebouw of faciliteit, op de aarde."""
+    """Complex datatype voor de aanduiding van een bepaalde locatie, doorgaans van een huis, woning, gebouw of
+    faciliteit, op de aarde. """
 
     bus = StringField()
     """Een nummer dat de postbus aanduidt."""
@@ -21,7 +21,6 @@ class DtcAdres:
     straatnaam = StringField()
     """De naam van de straat."""
 
-     # TODO provincie
+    # TODO provincie
 
     uri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAdres'
-

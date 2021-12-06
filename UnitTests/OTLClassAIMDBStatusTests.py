@@ -1,9 +1,6 @@
 import unittest
 
 from OTLClasses.Verification.AIMDBStatus import AIMDBStatus
-from OTLClasses.Verification.AIMNaamObject import AIMNaamObject
-from OTLClasses.Verification.AIMObject import AIMObject
-from OTLClasses.Verification.NaampadObject import NaampadObject
 
 
 class AIMDBStatusTestInstance(AIMDBStatus):

@@ -1,14 +1,8 @@
-class StringField:
-    def __get__(self, instance, owner):
-        try:
-            return instance.__dict__[self.name]
-        except KeyError:
-            return None
+from ModelGenerator.BaseClasses.PrimitiveField import PrimitiveField
 
-    def __set__(self, instance, value):
-        if not isinstance(value, str):
-            raise ValueError(f'expecting string in {self.name}')
-        instance.__dict__[self.name] = value
 
-    def __set_name__(self, owner, name):
-        self.name = name
+class StringField(PrimitiveField):
+    def __init__(self, uri: str):
+        self.uri = uri
+        super().__init__(str)
+

@@ -24,6 +24,7 @@ class KeuzelijstFieldTests(unittest.TestCase):
         self.assertTrue(veld.value.label == 'optie 2')
         self.assertTrue(veld.value.waarde == 'optie2')
 
+
     def test_AssignIncorrectValue(self):
         veld = KeuzelijstField(TestKeuzeLijst())
         with self.assertRaises(ValueError):

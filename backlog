@@ -1,3 +1,6 @@
+singleton
+https://stackoverflow.com/questions/6760685/creating-a-singleton-in-python
+
 class attributes > instance attributes
 https://stackoverflow.com/questions/60590442/abstract-dataclass-without-abstract-methods-in-python-prohibit-instantiation
 abstract data class, evt aanpassen via __new__

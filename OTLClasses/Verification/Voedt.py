@@ -4,7 +4,8 @@ from OTLClasses.Verification.KwantWrdInVolt import KwantWrdInVolt
 
 
 class Voedt(DirectioneleRelatie):
-    """Deze relatie wordt enkel gelegd naar onderdelen die permanent onder spanning staan in normaal bedrijf. Aan deze relatie wordt steeds een richting toegekend van de voedinggever naar de ontvanger."""
+    """Deze relatie wordt enkel gelegd naar onderdelen die permanent onder spanning staan in normaal bedrijf. Aan deze relatie
+    wordt steeds een richting toegekend van de voedinggever naar de ontvanger. """
 
     def __init__(self):
         pass

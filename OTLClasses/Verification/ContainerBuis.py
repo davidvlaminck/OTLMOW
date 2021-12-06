@@ -15,9 +15,4 @@ class ContainerBuis(ABC):
     def __init__(self):
         raise TypeError("Can't instantiate abstract class " + self.__class__.__name__)
 
-
-
-
-        # https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#ContainerBuis.kleur
-        # kard 1 *
-        # De kleur van de coating.
+    # TODO: add uri for attributes https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#ContainerBuis.kleur

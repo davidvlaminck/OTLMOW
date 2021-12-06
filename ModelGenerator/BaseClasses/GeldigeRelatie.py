@@ -1,22 +1,23 @@
-from ModelGenerator.BaseClasses.AbstractRelatieInteractor import AbstractRelatieInteractor
-from ModelGenerator.BaseClasses.RelatieRichting import RelatieRichting
+from ModelGenerator.BaseClasses.RelatieInteractor import RelatieInteractor
 from OTLClasses.Verification.RelatieObject import RelatieObject
 
 
 class GeldigeRelatie:
-    relatie: type
+    bron: type
     doel: type
-    richting: RelatieRichting
+    relatie: type
 
-    def __init__(self, relatie: type, doel: type, richting: RelatieRichting):
+    def __init__(self, bron: type, doel: type, relatie: type):
         relatieInstance = relatie()
         if not(isinstance(relatieInstance, RelatieObject)):
             raise TypeError("parameter relatie is geen relatieObject")
         doelInstance = doel()
-        if not(isinstance(doelInstance, AbstractRelatieInteractor)):
+        if not(isinstance(doelInstance, RelatieInteractor)):
             raise TypeError("parameter doel is geen AbstractRelatieInteractor")
-        if not(isinstance(richting, RelatieRichting)):
-            raise TypeError("parameter richting is geen RelatieRichting")
+        bronInstance = bron()
+        if not (isinstance(bronInstance, RelatieInteractor)):
+            raise TypeError("parameter bron is geen AbstractRelatieInteractor")
+
         self.relatie = relatie
         self.doel = doel
-        self.richting = richting
+        self.bron = bron

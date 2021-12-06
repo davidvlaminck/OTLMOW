@@ -1,4 +1,3 @@
-import abc
 from abc import abstractmethod
 
 from ModelGenerator.BaseClasses.IntField import IntField

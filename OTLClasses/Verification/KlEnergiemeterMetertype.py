@@ -1,7 +1,7 @@
-from ModelGenerator.BaseClasses.Keuzelijst import Keuzelijst
+from ModelGenerator.BaseClasses.KeuzelijstField import KeuzelijstField
 
 
-class KlEnergiemeterMetertype(Keuzelijst):
+class KlEnergiemeterMetertype(KeuzelijstField):
     """TODO aanvullen"""
     def __init__(self):
         super(KlEnergiemeterMetertype, self).__init__('KlEnergiemeterMetertype', 'Energiemeter Metertype',

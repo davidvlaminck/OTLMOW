@@ -9,7 +9,7 @@ class DtcAdres:
     bus = StringField()
     """Een nummer dat de postbus aanduidt."""
 
-    gemeente = KeuzelijstField(KlAlgGemeente())
+    gemeente = KlAlgGemeente()
     """De bestuurlijke eenheid waarin het adres gelegen is."""
 
     huisnummer = StringField()

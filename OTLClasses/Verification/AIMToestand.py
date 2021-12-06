@@ -1,7 +1,6 @@
 from abc import ABC, abstractmethod
 
 
-from ModelGenerator.BaseClasses.KeuzelijstField import KeuzelijstField
 from OTLClasses.Verification.KlAIMToestand import KlAIMToestand
 
 
@@ -10,7 +9,7 @@ class AIMToestand(ABC):
 
     uri = "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMToestand"
 
-    toestand = KeuzelijstField(KlAIMToestand())
+    toestand = KlAIMToestand()
     """Geeft de actuele stand in de levenscyclus van het object."""
 
     @abstractmethod

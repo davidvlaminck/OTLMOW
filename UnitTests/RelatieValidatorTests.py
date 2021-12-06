@@ -23,6 +23,14 @@ class GeldigeRelatieLijstTestInstance(GeldigeRelatieLijst):
             GeldigeRelatie(Stroomkring, Contactor, Voedt),
         ]
 
+class RelatieValidatorWithoutInstanceTests(unittest.TestCase):
+    def test_beforeInitValidateRelatieOnObject(self):
+        e = EnergiemeterAWV()
+        a = Aftakking()
+        v = Voedt
+        with self.assertRaises(NotImplementedError):
+            self.assertTrue(a.validateRelatiePossible(e, v, RelatieRichting.DOEL_BRON))
+
 class RelatieValidatorTests(unittest.TestCase):
     def test_createInstance(self):
         geldigeRelatieLijst = GeldigeRelatieLijstTestInstance()
@@ -108,9 +116,3 @@ class RelatieValidatorTests(unittest.TestCase):
         self.assertFalse(a.validateRelatiePossible(c, v, RelatieRichting.DOEL_BRON))
         self.assertTrue(a.validateRelatiePossible(h, v, RelatieRichting.BRON_DOEL))
 
-    def test_afterInitValidateRelatieOnObject(self):
-        e = EnergiemeterAWV()
-        a = Aftakking()
-        v = Voedt
-        with self.assertRaises(NotImplementedError):
-            self.assertTrue(a.validateRelatiePossible(e, v, RelatieRichting.DOEL_BRON))

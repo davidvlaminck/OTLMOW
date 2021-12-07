@@ -1,4 +1,4 @@
-class StringField:
+class AnyURIField:
     def __get__(self, instance, owner):
         try:
             return instance.__dict__[self.name]

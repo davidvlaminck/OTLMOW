@@ -7,8 +7,8 @@ class TestKeuzeLijst(KeuzelijstField):
     def __init__(self, optionByLabel: str = None):
         super(TestKeuzeLijst, self).__init__('TestKeuzeLijst', 'Test KeuzeLijst',
                                              "https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/TestKeuzeLijst")
-        self.add_option('optie1', 'optie 1', 'definitie 1', 'uri 1')
-        self.add_option('optie2', 'optie 2', 'definitie 2', 'uri 2')
+        self.add_option('optie1', 'optie 1', 'definitie 1', 'typeURI 1')
+        self.add_option('optie2', 'optie 2', 'definitie 2', 'typeURI 2')
 
         if optionByLabel is not None:
             self.set_value_by_label(optionByLabel)

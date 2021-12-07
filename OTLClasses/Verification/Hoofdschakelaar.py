@@ -6,7 +6,5 @@ class Hoofdschakelaar(AIMNaamObject):
     def __init__(self):
         pass
 
-    uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Hoofdschakelaar"
-
-
-
+    typeUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Hoofdschakelaar"
+    """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""

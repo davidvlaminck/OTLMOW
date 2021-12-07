@@ -11,4 +11,5 @@ class Stroomkring(AIMNaamObject):
     stroomkringnummer = StringField()
     """De identificatie van de stroomkring."""
 
-    uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Stroomkring"
+    typeUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Stroomkring"
+    """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""

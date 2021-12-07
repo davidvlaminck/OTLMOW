@@ -14,7 +14,7 @@ class AIMNaamObjectTests(unittest.TestCase):
 
         instance.naam = "TEST"
         self.assertTrue(instance.naam == "TEST")
-        self.assertTrue(instance.uri == "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMNaamObject")
+        self.assertTrue(instance.typeURI == "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMNaamObject")
         self.assertTrue(isinstance(instance, AIMNaamObject))
 
         with self.assertRaises(ValueError):

@@ -11,4 +11,5 @@ class Laagspanningsbord(AIMNaamObject):
     aansluitvermogen = KwantWrdInAmpere()
     """Het vermogen van het laagspanningsbord."""
 
-    uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Laagspanningsbord"
+    typeUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Laagspanningsbord"
+    """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""

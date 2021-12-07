@@ -11,7 +11,7 @@ def readSQlite():
     cur = con.cursor()
 
     for row in cur.execute(
-            "SELECT label_nl, name, uri, definition_nl, usagenote_nl, abstract, deprecated_version FROM OSLOClass where uri=:uriclass",
+            "SELECT label_nl, name, typeURI, definition_nl, usagenote_nl, abstract, deprecated_version FROM OSLOClass where typeURI=:uriclass",
             {"uriclass": 'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#AansluitendeConstructie'}):
         print(row)
         c = OSLOClass(row[0], row[1], row[2], row[3], row[4], row[5], row[6])

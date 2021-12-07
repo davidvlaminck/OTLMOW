@@ -10,4 +10,5 @@ class Bevestiging(NietDirectioneleRelatie):
     def __init__(self):
         pass
 
-    uri: URIField = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bevestiging"
+    typeUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bevestiging"
+    """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""

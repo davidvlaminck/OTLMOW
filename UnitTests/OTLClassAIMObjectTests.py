@@ -17,7 +17,7 @@ class AIMNObjectTests(unittest.TestCase):
 
         instance.notitie = "TEST"
         self.assertTrue(instance.notitie == "TEST")
-        self.assertTrue(instance.uri == "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMObject")
+        self.assertTrue(instance.typeURI == "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMObject")
         self.assertTrue(isinstance(instance, AIMObject))
         self.assertTrue(isinstance(instance, OTLAsset))
         self.assertTrue(isinstance(instance, AIMToestand))

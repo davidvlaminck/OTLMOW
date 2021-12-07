@@ -14,7 +14,7 @@ class AIMToestandTests(unittest.TestCase):
         instance.toestand.set_value_by_label("in ontwerp")
 
         self.assertTrue(isinstance(instance, AIMToestand))
-        self.assertTrue(instance.uri == "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMToestand")
+        self.assertTrue(instance.typeURI == "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMToestand")
         self.assertTrue(instance.toestand.value.label == "in ontwerp")
         self.assertTrue(instance.toestand.value.waarde == "in-ontwerp")
 

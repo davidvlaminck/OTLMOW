@@ -28,12 +28,12 @@ class OSLOCollectorTests(unittest.TestCase):
 
         class_uri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#NaampadObject'
         attribute_uri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#NaampadObject.naampad'
-        naampadObject_class = next(c for c in collector.classes if c.uri == class_uri)
+        naampadObject_class = next(c for c in collector.classes if c.typeURI == class_uri)
         attributes = collector.FindAttributesByClass(naampadObject_class)
 
         # assert
         self.assertIsNotNone(naampadObject_class)
-        self.assertTrue(attributes[0].uri == attribute_uri)
+        self.assertTrue(attributes[0].typeURI == attribute_uri)
 
     def test_mock_CollectThenFindInheritancesByClass(self):
         mock = Mock()
@@ -44,7 +44,7 @@ class OSLOCollectorTests(unittest.TestCase):
 
         class_uri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#NaampadObject'
         base_class = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMNaamObject'
-        naampadObject_class = next(c for c in collector.classes if c.uri == class_uri)
+        naampadObject_class = next(c for c in collector.classes if c.typeURI == class_uri)
         inheritances = collector.FindInheritancesByClass(naampadObject_class)
 
         # assert

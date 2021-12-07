@@ -16,8 +16,9 @@ class EnergiemeterAWV(Energiemeter):
         #self.add_geldige_relatie(Voedt, Stroomkring, RelatieRichting.DOEL_BRON)
 
     #geldige_relaties = [GeldigeRelatie(Voedt(), Aftakking(), RelatieRichting.BRON_DOEL)]
-        
-    uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#EnergiemeterAWV"
+
+    typeUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#EnergiemeterAWV"
+    """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
 
 

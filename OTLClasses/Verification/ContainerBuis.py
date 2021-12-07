@@ -9,10 +9,11 @@ class ContainerBuis(ABC):
     kleur = KardinaliteitField(str, 1, "*")
     """De kleur van de coating."""
 
-    uri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#ContainerBuis"
+    typeUri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#ContainerBuis"
+    """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     @abstractmethod
     def __init__(self):
         raise TypeError("Can't instantiate abstract class " + self.__class__.__name__)
 
-    # TODO: add uri for attributes https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#ContainerBuis.kleur
+    # TODO: add typeURI for attributes https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#ContainerBuis.kleur

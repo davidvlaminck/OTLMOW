@@ -13,4 +13,5 @@ class Voedt(DirectioneleRelatie):
     aansluitspanning = KwantWrdInVolt()
     """Spanning van de aansluiting, dit wordt enkel ingevuld op voedingsrelaties voorbij de hoofdschakelaar."""
 
-    uri: URIField = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Voedt"
+    typeUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Voedt"
+    """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""

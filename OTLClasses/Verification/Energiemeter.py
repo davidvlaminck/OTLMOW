@@ -13,7 +13,8 @@ class Energiemeter(AIMObject):
     def __init__(self):
         raise TypeError("Can't instantiate abstract class " + self.__class__.__name__)
 
-    uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Energiemeter"
+    typeUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Energiemeter"
+    """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     antalTelwerken = IntField()
     """Het aantal telwerken dat de energiemeter bevat: 1 bij enkelvoudige meter, 2 bij een dag- en nacht-meter."""

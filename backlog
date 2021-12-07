@@ -1,17 +1,41 @@
+attributen:
+name
+label
+definition
+uri
+kard. min-max + type > definieert field
+overerving
+constraints
+readonly
+usagenote
+deprecatedversion
 
+type:
+name
+uri
+usagenote
+definition
+label
+deprecatedversion
+> codelist voor keuzelijsten
 
-class attributes > instance attributes
-https://stackoverflow.com/questions/60590442/abstract-dataclass-without-abstract-methods-in-python-prohibit-instantiation
-abstract data class, evt aanpassen via __new__
+relatie:
+bron
+doel
+uri
+richting
+usage
+deprecatedversion
 
 relaties leggen: validatie op classes zelf is moeilijk maar kan mits extra methode aanroepen
-
 relaties leggen: mogelijk maken om te leggen vanuit doel of bron
 
 
 > relatieObject implementeren
 > AnyURI implementeren
+
 > uri implementeren op alle soorten attributen
+> ook deprecated en definition, label, naam, readonly, usagenote > OTLField
 
 ophalen attributen
 select * from OSLOClass
@@ -25,7 +49,6 @@ where OSLOClass.uri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DN
 overerving tussen classes
 storage (in memory)
 tempId's vs bestaande id's
-typeuri op implementatie model objecten? => enkel uri attribute op AIMObject invullen
 agents kunnen niet zelf aangemaakt worden
 deprecated classes geven een warning
 deprecated attributen? door overerving aan te passen?

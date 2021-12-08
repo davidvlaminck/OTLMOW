@@ -5,8 +5,10 @@ from ModelGenerator.BaseClasses.KeuzelijstField import KeuzelijstField
 
 class TestKeuzeLijst(KeuzelijstField):
     def __init__(self, optionByLabel: str = None):
-        super(TestKeuzeLijst, self).__init__('TestKeuzeLijst', 'Test KeuzeLijst',
-                                             "https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/TestKeuzeLijst")
+        super().__init__(naam="TestKeuzeLijst", label="TestKeuzeLijst",
+                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#TestKeuzeLijst",
+                         definition="TestKeuzeLijst definitie", constraints="", usagenote="",
+                         deprecated_version="", codelist="codelist")
         self.add_option('optie1', 'optie 1', 'definitie 1', 'typeURI 1')
         self.add_option('optie2', 'optie 2', 'definitie 2', 'typeURI 2')
 
@@ -19,21 +21,21 @@ class KeuzelijstFieldTests(unittest.TestCase):
         veld = TestKeuzeLijst()
         self.assertTrue(isinstance(veld, TestKeuzeLijst))
         self.assertTrue(isinstance(veld, KeuzelijstField))
-        self.assertTrue(veld.value is None)
+        self.assertTrue(veld.waarde is None)
 
     def test_AssignCorrectValue(self):
         veld = TestKeuzeLijst()
         veld.set_value_by_label('optie 2')
-        self.assertTrue(veld.value.label == 'optie 2')
-        self.assertTrue(veld.value.waarde == 'optie2')
+        self.assertTrue(veld.waarde.label == 'optie 2')
+        self.assertTrue(veld.waarde.invulwaarde == 'optie2')
 
     def test_AssignCorrectValueSetInConstructor(self):
         veld = TestKeuzeLijst('optie 2')
-        self.assertTrue(veld.value.label == 'optie 2')
-        self.assertTrue(veld.value.waarde == 'optie2')
+        self.assertTrue(veld.waarde.label == 'optie 2')
+        self.assertTrue(veld.waarde.invulwaarde == 'optie2')
 
     def test_AssignIncorrectValue(self):
         veld = TestKeuzeLijst()
         with self.assertRaises(ValueError):
             veld.set_value_by_label('optie 3')
-        self.assertTrue(veld.value is None)
+        self.assertTrue(veld.waarde is None)

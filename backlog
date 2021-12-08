@@ -35,7 +35,6 @@ relaties leggen: mogelijk maken om te leggen vanuit doel of bron
 > AnyURI implementeren
 
 > uri implementeren op alle soorten attributen
-> ook deprecated en definition, label, naam, readonly, usagenote > OTLField
 
 ophalen attributen
 select * from OSLOClass

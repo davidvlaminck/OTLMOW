@@ -9,9 +9,10 @@ class testClass(AIMObject):
     def __init__(self):
         AIMObject.__init__(self)
         self.testAdres = DtcAdres(naam="testAdres", label="atestAdres",
-                            uri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#testAdres",
-                            definition="testAdres definitie"
-                            , constraints="", usagenote="", deprecated_version="")
+                                  uri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#testAdres",
+                                  definition="testAdres definitie"
+                                  , constraints="", usagenote="", deprecated_version="")
+
 
 class DtcAdresTests(unittest.TestCase):
     def test_UseInClass(self):

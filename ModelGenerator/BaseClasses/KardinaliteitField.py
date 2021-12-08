@@ -1,5 +1,6 @@
 import math
 
+# TODO inherit from OTL Field
 
 class KardinaliteitField:
     name = 'KardinaliteitField'

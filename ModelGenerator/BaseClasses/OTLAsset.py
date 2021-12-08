@@ -1,7 +1,7 @@
-from abc import abstractmethod
+from abc import abstractmethod, ABC
 
 
-class OTLAsset:
+class OTLAsset(ABC):
     @abstractmethod
     def __init__(self):
-        raise TypeError("Can't instantiate abstract class " + self.__class__.__name__)
+        pass

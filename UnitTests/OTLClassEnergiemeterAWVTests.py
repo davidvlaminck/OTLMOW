@@ -8,17 +8,17 @@ class EnergiemeterAWVTests(unittest.TestCase):
         instance = EnergiemeterAWV()
         instance2 = EnergiemeterAWV()
         instance3 = EnergiemeterAWV()
-        instance.isActief = True
+        instance.isActief.waarde = True
+        instance.toestand.waarde = 'in gebruik'
 
-        self.assertTrue(instance.isActief)
-        self.assertTrue(instance.uri == "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#EnergiemeterAWV")
+        self.assertTrue(instance.isActief.waarde)
+        self.assertTrue(instance.typeURI == "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#EnergiemeterAWV")
         self.assertTrue(isinstance(instance, EnergiemeterAWV))
 
-        instance.aantalTelwerken = 1
-        instance2.aantalTelwerken = 2
-        instance2.meternummer = "123"
-        self.assertTrue(instance.aantalTelwerken == 1)
-        self.assertTrue(instance2.aantalTelwerken == 2)
-        self.assertTrue(instance3.aantalTelwerken is None)
+        instance.aantalTelwerken.waarde = 1
+        instance2.aantalTelwerken.waarde = 2
+        instance2.meternummer.waarde = "123"
+        self.assertTrue(instance.aantalTelwerken.waarde == 1)
+        self.assertTrue(instance2.aantalTelwerken.waarde == 2)
+        self.assertTrue(instance3.aantalTelwerken.waarde is None)
 
-        self.assertTrue(len(instance.geldige_relaties) == 1)

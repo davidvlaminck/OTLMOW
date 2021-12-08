@@ -11,5 +11,7 @@ class KlAIMToestand(KeuzelijstField):
                                                         "/KlAIMToestand/in-ontwerp")
         self.add_option("gepland", "gepland", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAIMToestand"
                                                   "/gepland")
+        self.add_option("in-gebruik", "in gebruik", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept"
+                                                        "/KlAIMToestand/in-gebruik")
 
         self.set_value_by_label_on_init(optionByLabel)

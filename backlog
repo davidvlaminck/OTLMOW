@@ -10,7 +10,7 @@ readonly
 usagenote
 deprecatedversion
 
-type:
+type: > OTLField
 name
 uri
 usagenote

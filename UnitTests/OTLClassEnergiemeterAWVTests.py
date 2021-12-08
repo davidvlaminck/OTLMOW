@@ -19,6 +19,6 @@ class EnergiemeterAWVTests(unittest.TestCase):
         instance2.meternummer = "123"
         self.assertTrue(instance.aantalTelwerken == 1)
         self.assertTrue(instance2.aantalTelwerken == 2)
-        #self.assertTrue(instance3.aantalTelwerken is None)
+        self.assertTrue(instance3.aantalTelwerken is None)
 
         self.assertTrue(len(instance.geldige_relaties) == 1)

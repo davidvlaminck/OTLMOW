@@ -7,7 +7,10 @@ class DtcTestClass:
     dtcTestType: DtcIdentificator
 
     def __init__(self):
-        self.dtcTestType = DtcIdentificator()
+        self.dtcTestType = DtcIdentificator(naam="DtcIdentificator", label="DtcIdentificator",
+                            uri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#DtcIdentificator",
+                            definition="DtcIdentificator definitie"
+                            , constraints="", usagenote="", deprecated_version="")
 
 
 class ComplexDataTypeFieldTests(unittest.TestCase):

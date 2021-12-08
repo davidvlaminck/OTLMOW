@@ -28,5 +28,6 @@ class Energiemeter(AIMObject, ABC):
                                 , constraints="", usagenote="", deprecated_version="")
         """Het serienummer (nummer van het fabrikaat) op de meter."""
 
-        self.metertype = KlEnergiemeterMetertype()
-        """Type meter (mechanisch, elektronisch)."""
+        #TODO keuzelijst aanvullen
+        #self.metertype = KlEnergiemeterMetertype()
+        #"""Type meter (mechanisch, elektronisch)."""

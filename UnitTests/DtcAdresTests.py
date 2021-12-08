@@ -26,13 +26,16 @@ class DtcAdresTests(unittest.TestCase):
         self.assertTrue(instance.testAdres.bus.waarde == "B")
 
     def test_DtcAdresInit(self):
-        adres = DtcAdres()
+        adres = DtcAdres(naam="testAdres", label="atestAdres",
+                                  uri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#testAdres",
+                                  definition="testAdres definitie"
+                                  , constraints="", usagenote="", deprecated_version="")
 
         adres.bus.waarde = "A"
         self.assertTrue(adres.bus.waarde == "A")
 
         adres.gemeente.set_value_by_label("de Haan")
-        self.assertTrue(adres.gemeente.value.waarde == "de-Haan")
+        self.assertTrue(adres.gemeente.waarde.invulwaarde == "de-Haan")
 
         adres.huisnummer.waarde = "1"
         self.assertTrue(adres.huisnummer.waarde == "1")

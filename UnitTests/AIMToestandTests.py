@@ -5,7 +5,7 @@ from OTLClasses.Verification.AIMToestand import AIMToestand
 
 class AIMToestandTestInstance(AIMToestand):
     def __init__(self):
-        pass
+        super().__init__()
 
 
 class AIMToestandTests(unittest.TestCase):
@@ -15,6 +15,6 @@ class AIMToestandTests(unittest.TestCase):
 
         self.assertTrue(isinstance(instance, AIMToestand))
         self.assertTrue(instance.typeURI == "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMToestand")
-        self.assertTrue(instance.toestand.value.label == "in ontwerp")
-        self.assertTrue(instance.toestand.value.waarde == "in-ontwerp")
+        self.assertTrue(instance.toestand.waarde.label == "in ontwerp")
+        self.assertTrue(instance.toestand.waarde.invulwaarde == "in-ontwerp")
 

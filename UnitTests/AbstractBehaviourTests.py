@@ -9,29 +9,31 @@ from OTLClasses.Verification.Contactor import Contactor
 class AbstractBehaviour(unittest.TestCase):
     def test_ErrorsOnInstantiateAbstractClasses(self):
         with self.assertRaises(TypeError):
-            instanceOfAbstractClass = AIMDBStatus()
+            AIMDBStatus()
         with self.assertRaises(TypeError):
-            instanceOfAbstractClass2 = AIMToestand()
+            AIMToestand()
         with self.assertRaises(TypeError):
-            instanceOfAbstractClass3 = AIMObject()
+            AIMObject()
+
+    def test_TestAssignmentsOnSameClasses(self):
         contactor = Contactor()
         self.assertTrue(contactor.uri == "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Contactor")
         self.assertTrue(isinstance(contactor, Contactor))
         self.assertTrue(isinstance(contactor, AIMObject))
         contactor2 = Contactor()
 
-        contactor.notitie = "notitie1"
-        contactor2.notitie = "notitie2"
-        self.assertTrue(contactor.notitie == "notitie1")
-        self.assertTrue(contactor2.notitie == "notitie2")
+        contactor.notitie.waarde = "notitie1"
+        contactor2.notitie.waarde = "notitie2"
+        self.assertTrue(contactor.notitie.waarde == "notitie1")
+        self.assertTrue(contactor2.notitie.waarde == "notitie2")
 
         contactor3 = Contactor()
-        self.assertTrue(contactor3.notitie is None)
+        self.assertTrue(contactor3.notitie.waarde is None)
 
-        contactor3.notitie = "notitie3"
-        self.assertTrue(contactor.notitie == "notitie1")
-        self.assertTrue(contactor2.notitie == "notitie2")
-        self.assertTrue(contactor3.notitie == "notitie3")
+        contactor3.notitie.waarde = "notitie3"
+        self.assertTrue(contactor.notitie.waarde == "notitie1")
+        self.assertTrue(contactor2.notitie.waarde == "notitie2")
+        self.assertTrue(contactor3.notitie.waarde == "notitie3")
 
 
 

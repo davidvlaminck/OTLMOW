@@ -5,7 +5,7 @@ from OTLClasses.Verification.AIMDBStatus import AIMDBStatus
 
 class AIMDBStatusTestInstance(AIMDBStatus):
     def __init__(self):
-        pass
+        super().__init__()
 
 
 class AIMDBStatusTests(unittest.TestCase):
@@ -14,7 +14,7 @@ class AIMDBStatusTests(unittest.TestCase):
         instance.isActief = True
 
         self.assertTrue(instance.isActief)
-        self.assertTrue(instance.typeURI == "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMDBStatus")
+        self.assertTrue(instance.typeUri == "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMDBStatus")
         self.assertTrue(isinstance(instance, AIMDBStatus))
 
         with self.assertRaises(ValueError):

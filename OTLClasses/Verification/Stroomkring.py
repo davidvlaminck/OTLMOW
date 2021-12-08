@@ -8,7 +8,9 @@ class Stroomkring(AIMNaamObject):
     def __init__(self):
         pass
 
-    stroomkringnummer = StringField()
+    stroomkringnummer = StringField(naam="stroomkringnummer", label="stroomkringnummer",
+                                   uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Stroomkring.stroomkringnummer",
+                                   definition="De identificatie van de stroomkring.", constraints="", usagenote="", deprecated_version="")
     """De identificatie van de stroomkring."""
 
     typeUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Stroomkring"

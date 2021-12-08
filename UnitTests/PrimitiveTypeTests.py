@@ -8,7 +8,6 @@ from ModelGenerator.BaseClasses.StringField import StringField
 class TestInstance:
     boolean = BooleanField("testuriforbool")
     integer = IntField("testuriforint")
-
     string = StringField("testuriforstring")
     """doc for string"""
 

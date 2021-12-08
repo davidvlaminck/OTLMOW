@@ -13,7 +13,8 @@ class AIMObject(AIMToestand, OTLAsset, AIMDBStatus, RelatieInteractor):
     typeURI = "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMObject"
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
-    notitie = StringField()
+    notitie = StringField(naam="notitie", label="notitie", uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMObject.notitie", definition="Extra notitie voor het object.", constraints="",
+                      usagenote="", deprecated_version="")
     """Extra notitie voor het object."""
 
     # TODO: incomplete: missing attributes

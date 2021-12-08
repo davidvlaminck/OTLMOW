@@ -17,9 +17,13 @@ class KeuzelijstFieldTests(unittest.TestCase):
             c.unionveld = "2"
 
         adresveld = DtcAdres()
-        adresveld.bus = "BUS"
+        adresveld.bus.waarde = "BUS"
         c.unionveld = adresveld
+
+        self.assertTrue(c.unionveld.bus.waarde == "BUS")
 
         gemeenteveld = KlAlgGemeente()
         gemeenteveld.set_value_by_label('aalst')
         c.unionveld = gemeenteveld
+
+        self.assertTrue(c.unionveld.value.waarde == "aalst")

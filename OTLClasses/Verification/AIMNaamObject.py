@@ -14,4 +14,4 @@ class AIMNaamObject(AIMObject):
 
     @abstractmethod
     def __init__(self):
-        raise TypeError("Can't instantiate abstract class " + self.__class__.__name__)
+        super().__init__()

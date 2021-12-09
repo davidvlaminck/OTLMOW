@@ -16,7 +16,10 @@ class KeuzelijstFieldTests(unittest.TestCase):
         with self.assertRaises(TypeError):
             c.unionveld = "2"
 
-        adresveld = DtcAdres()
+        adresveld = DtcAdres(naam="testAdres", label="atestAdres",
+                                  uri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#testAdres",
+                                  definition="testAdres definitie"
+                                  , constraints="", usagenote="", deprecated_version="")
         adresveld.bus.waarde = "BUS"
         c.unionveld = adresveld
 
@@ -26,4 +29,4 @@ class KeuzelijstFieldTests(unittest.TestCase):
         gemeenteveld.set_value_by_label('aalst')
         c.unionveld = gemeenteveld
 
-        self.assertTrue(c.unionveld.value.waarde == "aalst")
+        self.assertTrue(c.unionveld.waarde.invulwaarde == "aalst")

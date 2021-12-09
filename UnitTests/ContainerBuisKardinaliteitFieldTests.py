@@ -1,7 +1,5 @@
 import unittest
 
-from ModelGenerator.BaseClasses.KardinaliteitField import KardinaliteitField
-from ModelGenerator.BaseClasses.StringField import StringField
 from OTLClasses.Verification.ContainerBuis import ContainerBuis
 from OTLClasses.Verification.Mantelbuis import Mantelbuis
 
@@ -11,8 +9,8 @@ class ContainerBuisInstance(ContainerBuis):
         super(ContainerBuis, self).__init__()
 
 
-class ContainerBuisTests(unittest.TestCase):
-    def test_ContainerBuisInit(self):
+class ContainerBuisKardinaliteitFieldTests(unittest.TestCase):
+    def test_ContainerBuisPassTests(self):
         instance = Mantelbuis()
 
         instance.kleur.waarde = ['geel']
@@ -23,6 +21,12 @@ class ContainerBuisTests(unittest.TestCase):
 
         instance.kleur.waarde = None
         self.assertTrue(instance.kleur.waarde is None)
+
+    def test_ContainerBuisErrors(self):
+        with self.assertRaises(TypeError):
+            abstractInstance = ContainerBuis()
+
+        instance = Mantelbuis()
 
         with self.assertRaises(ValueError) as exc_tuple:
             instance.kleur.waarde = ()
@@ -45,7 +49,8 @@ class ContainerBuisTests(unittest.TestCase):
             instance.kleur.waarde = ["geel", "rood", "blauw"]
         self.assertEqual(str(exc_tuple_with_too_many_items.exception), "expecting at most 2 element(s) in kleur.waarde")
 
-        # two instances do not share this field
+    def test_ContainerBuisTwoInstances(self):
+        instance = Mantelbuis()
         instance.kleur.waarde = ["geel", "rood"]
         instance2 = Mantelbuis()
         instance2.kleur.waarde = ["blauw"]
@@ -53,5 +58,4 @@ class ContainerBuisTests(unittest.TestCase):
         self.assertTrue(instance.kleur.waarde[1] == "rood")
         self.assertTrue(instance2.kleur.waarde[0] == "blauw")
 
-        with self.assertRaises(TypeError):
-            abstractInstance = ContainerBuis()
+

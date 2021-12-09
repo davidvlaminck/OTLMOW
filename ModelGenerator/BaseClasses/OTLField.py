@@ -9,6 +9,7 @@ class OTLField:
         self.usagenote = usagenote
         self.deprecated_version = deprecated_version
         self.readonly = readonly
+        self.readonlyValue = None
         self.waarde = None
         if readonly:
             self.__dict__["waarde"] = readonlyValue

@@ -1,47 +1,48 @@
 import math
+from ModelGenerator.BaseClasses.OTLField import OTLField
+from ModelGenerator.BaseClasses.PrimitiveField import PrimitiveField
 
 
-# TODO inherit from OTL Field
-
-class KardinaliteitField:
-    name = 'KardinaliteitField'
-
-    def __init__(self, fieldType, minKardinaliteit, maxKardinaliteit):
-        self._type = fieldType
-        self.minKardinaliteit = minKardinaliteit
+class KardinaliteitField(OTLField):
+    def __init__(self, minKardinaliteit: str, maxKardinaliteit: str, fieldToMultiply: OTLField):
+        OTLField.__init__(self, naam=fieldToMultiply.naam, label=fieldToMultiply.label, uri=fieldToMultiply.uri,
+                          definition=fieldToMultiply.definition, constraints=fieldToMultiply.constraints,
+                          usagenote=fieldToMultiply.usagenote, deprecated_version=fieldToMultiply.deprecated_version)
+        self.fieldToMultiply = fieldToMultiply
+        self.minKardinaliteit = int(minKardinaliteit)
         if maxKardinaliteit == '*':
             self.maxKardinaliteit = math.inf
         else:
-            self.maxKardinaliteit = maxKardinaliteit
+            self.maxKardinaliteit = int(maxKardinaliteit)
+        self.__dict__["waarde"] = []
 
-    def __get__(self, instance, owner):
-        try:
-            return instance.__dict__[self.name]
-        except KeyError:
-            return None
+    def __setattr__(self, name, value):
+        if name == "waarde" and self.readonly and value is not None:
+            raise AttributeError(f"can't set the value of a readonly attribute")
+        if name == "waarde":
+            if value is None:
+                self.__dict__["waarde"] = value
+                return
+            elif not isinstance(value, list):
+                raise ValueError(f'expecting list in {self.naam}.{name}')
+            elif len(value) < self.minKardinaliteit:
+                raise ValueError(f'expecting at least {self.minKardinaliteit} element(s) in {self.naam}.{name}')
+            elif len(value) > self.maxKardinaliteit:
+                raise ValueError(f'expecting at most {self.maxKardinaliteit} element(s) in {self.naam}.{name}')
+            badtype = self.check_types_in_list(value)
+            if badtype:
+                raise ValueError(f'element of bad type in {self.naam}.{name}')
+        self.__dict__[name] = value
 
-    def check_types_in_tuple(self, valueList) -> bool:
+    def check_types_in_list(self, valueList) -> bool:
         bad_type = False
         for el in valueList:
-            if not (isinstance(el, self._type)):
-                bad_type = True
-                return bad_type
+            if isinstance(self.fieldToMultiply, PrimitiveField):
+                if not (isinstance(el, self.fieldToMultiply.primitiveType)):
+                    bad_type = True
+                    return bad_type
+            else:
+                if not (isinstance(el, self.fieldToMultiply.__class__)):
+                    bad_type = True
+                    return bad_type
         return bad_type
-
-    def __set__(self, instance, value):
-        if value is None:
-            instance.__dict__[self.name] = value
-            return
-        elif not isinstance(value, tuple):
-            raise ValueError(f'expecting tuple in {self.name}')
-        elif len(value) < self.minKardinaliteit:
-            raise ValueError(f'expecting at least {self.minKardinaliteit} element(s) in {self.name}')
-        elif len(value) > self.maxKardinaliteit:
-            raise ValueError(f'expecting at most {self.maxKardinaliteit} element(s) in {self.name}')
-        badtype = self.check_types_in_tuple(value)
-        if badtype:
-            raise ValueError(f'element of bad type in {self.name}')
-        instance.__dict__[self.name] = value
-
-    def __set_name__(self, owner, name):
-        self.name = name

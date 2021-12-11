@@ -8,10 +8,7 @@ from OTLClasses.Verification.DtcAdres import DtcAdres
 class testClass(AIMObject):
     def __init__(self):
         AIMObject.__init__(self)
-        self.testAdres = DtcAdres(naam="testAdres", label="atestAdres",
-                                  uri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#testAdres",
-                                  definition="testAdres definitie"
-                                  , constraints="", usagenote="", deprecated_version="")
+        self.testAdres = DtcAdres()
 
 
 class DtcAdresTests(unittest.TestCase):
@@ -26,10 +23,7 @@ class DtcAdresTests(unittest.TestCase):
         self.assertTrue(instance.testAdres.bus.waarde == "B")
 
     def test_DtcAdresInit(self):
-        adres = DtcAdres(naam="testAdres", label="atestAdres",
-                                  uri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#testAdres",
-                                  definition="testAdres definitie"
-                                  , constraints="", usagenote="", deprecated_version="")
+        adres = DtcAdres()
 
         adres.bus.waarde = "A"
         self.assertTrue(adres.bus.waarde == "A")

@@ -68,3 +68,5 @@ Facility
 * Export
     - memory (Dicts)
     - Different formats
+        - josn https://janakiev.com/blog/python-pickle-json/
+        - csv per type

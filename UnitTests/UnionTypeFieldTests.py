@@ -6,27 +6,27 @@ from OTLClasses.Verification.KlAlgGemeente import KlAlgGemeente
 
 
 class UnionTestClass(Aftakking):
-    unionveld = UnionTypeField(DtcAdres, KlAlgGemeente)
+    unionveld = UnionTypeField(naam="testAdres", label="atestAdres",
+                                  uri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#testAdres",
+                                  definition="testAdres definitie"
+                                  , usagenote="", deprecated_version="",fieldsTuple=(DtcAdres, KlAlgGemeente))
 
 
 class KeuzelijstFieldTests(unittest.TestCase):
     def test_InitField(self):
         c = UnionTestClass()
 
-        with self.assertRaises(TypeError):
-            c.unionveld = "2"
-
-        adresveld = DtcAdres(naam="testAdres", label="atestAdres",
-                                  uri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#testAdres",
-                                  definition="testAdres definitie"
-                                  , constraints="", usagenote="", deprecated_version="")
+        adresveld = DtcAdres()
         adresveld.bus.waarde = "BUS"
-        c.unionveld = adresveld
+        c.unionveld.waarde = adresveld
 
-        self.assertTrue(c.unionveld.bus.waarde == "BUS")
+        self.assertTrue(c.unionveld.waarde.bus.waarde == "BUS")
 
         gemeenteveld = KlAlgGemeente()
         gemeenteveld.set_value_by_label('aalst')
-        c.unionveld = gemeenteveld
+        c.unionveld.waarde = gemeenteveld
 
-        self.assertTrue(c.unionveld.waarde.invulwaarde == "aalst")
+        self.assertTrue(c.unionveld.waarde.waarde.invulwaarde == "aalst")
+
+        with self.assertRaises(TypeError):
+            c.unionveld.waarde = "2"

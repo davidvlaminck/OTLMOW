@@ -7,8 +7,8 @@ class DtcAdres(OTLField):
     """Complex datatype voor de aanduiding van een bepaalde locatie, doorgaans van een huis, woning, gebouw of
     faciliteit, op de aarde. """
 
-    def __init__(self, naam, label, uri, definition, constraints, usagenote, deprecated_version, readonly=False, readonlyValue=None):
-        super().__init__(naam, label, uri, definition, constraints, usagenote, deprecated_version, readonly, readonlyValue)
+    def __init__(self):
+        super().__init__("DtcAdres", "Adres", "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAdres", "Complex datatype voor de aanduiding van een bepaalde locatie, doorgaans van een huis, woning, gebouw of faciliteit, op de aarde.", None, "", "")
 
         self.bus = StringField(naam="bus", label="bus", uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAdres"
                                                        ".bus", definition="Een nummer dat de postbus aanduidt.", constraints="",

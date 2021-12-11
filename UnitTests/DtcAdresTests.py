@@ -1,11 +1,10 @@
 import unittest
-from abc import ABC, abstractmethod
 
 from OTLClasses.Verification.AIMObject import AIMObject
 from OTLClasses.Verification.DtcAdres import DtcAdres
 
 
-class testClass(AIMObject):
+class TestClass(AIMObject):
     def __init__(self):
         AIMObject.__init__(self)
         self.testAdres = DtcAdres()
@@ -13,7 +12,7 @@ class testClass(AIMObject):
 
 class DtcAdresTests(unittest.TestCase):
     def test_UseInClass(self):
-        instance = testClass()
+        instance = TestClass()
         instance.testAdres.bus.waarde = "A"
         self.assertTrue(instance.testAdres.bus.waarde == "A")
         instance.testAdres.waarde = "adres"

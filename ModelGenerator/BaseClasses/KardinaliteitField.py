@@ -1,4 +1,6 @@
 import math
+from collections import Sized
+
 from ModelGenerator.BaseClasses.OTLField import OTLField
 from ModelGenerator.BaseClasses.PrimitiveField import PrimitiveField
 
@@ -25,12 +27,12 @@ class KardinaliteitField(OTLField):
                 return
             elif not isinstance(value, list):
                 raise ValueError(f'expecting list in {self.naam}.{name}')
-            elif len(value) < self.minKardinaliteit:
+            elif type(value) == Sized and len(value) < self.minKardinaliteit:
                 raise ValueError(f'expecting at least {self.minKardinaliteit} element(s) in {self.naam}.{name}')
             elif len(value) > self.maxKardinaliteit:
                 raise ValueError(f'expecting at most {self.maxKardinaliteit} element(s) in {self.naam}.{name}')
-            badtype = self.check_types_in_list(value)
-            if badtype:
+            bad_type = self.check_types_in_list(value)
+            if bad_type:
                 raise ValueError(f'element of bad type in {self.naam}.{name}')
         self.__dict__[name] = value
 

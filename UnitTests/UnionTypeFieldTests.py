@@ -6,10 +6,10 @@ from OTLClasses.Verification.KlAlgGemeente import KlAlgGemeente
 
 
 class UnionTestClass(Aftakking):
-    unionveld = UnionTypeField(naam="testAdres", label="atestAdres",
-                                  uri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#testAdres",
-                                  definition="testAdres definitie"
-                                  , usagenote="", deprecated_version="",fieldsTuple=(DtcAdres, KlAlgGemeente))
+    unionveld = UnionTypeField(naam="testAdres", label="testAdres",
+                               uri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#testAdres",
+                               definition="testAdres definitie",
+                               usagenote="", deprecated_version="", fieldsTuple=(DtcAdres, KlAlgGemeente))
 
 
 class KeuzelijstFieldTests(unittest.TestCase):

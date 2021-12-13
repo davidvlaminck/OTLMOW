@@ -30,7 +30,7 @@ class RelatieValidatorWithoutInstanceTests(unittest.TestCase):
         a = Aftakking()
         v = Voedt
         with self.assertRaises(NotImplementedError):
-            self.assertTrue(a.validateRelatiePossible(e, v, RelatieRichting.DOEL_BRON))
+            self.assertTrue(a._validateRelatiePossible(e, v, RelatieRichting.DOEL_BRON))
 
 
 class RelatieValidatorTests(unittest.TestCase):
@@ -113,7 +113,7 @@ class RelatieValidatorTests(unittest.TestCase):
         v = Voedt
         c = Contactor()
         h = Hoofdschakelaar()
-        self.assertTrue(a.validateRelatiePossible(e, v, RelatieRichting.DOEL_BRON))
-        self.assertFalse(a.validateRelatiePossible(e, v, RelatieRichting.BRON_DOEL))
-        self.assertFalse(a.validateRelatiePossible(c, v, RelatieRichting.DOEL_BRON))
-        self.assertTrue(a.validateRelatiePossible(h, v, RelatieRichting.BRON_DOEL))
+        self.assertTrue(a._validateRelatiePossible(e, v, RelatieRichting.DOEL_BRON))
+        self.assertFalse(a._validateRelatiePossible(e, v, RelatieRichting.BRON_DOEL))
+        self.assertFalse(a._validateRelatiePossible(c, v, RelatieRichting.DOEL_BRON))
+        self.assertTrue(a._validateRelatiePossible(h, v, RelatieRichting.BRON_DOEL))

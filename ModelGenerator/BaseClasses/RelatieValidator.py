@@ -15,7 +15,7 @@ class RelatieValidator(metaclass=Singleton):
             geldigeRelatiesList = self.getGeldigeRelatiesByBronOrDoel(selfObject)
             selfObject._geldigeRelaties = tuple(i for i in geldigeRelatiesList)
 
-        RelatieInteractor.loadGeldigeRelaties = loadGeldigeRelaties
+        RelatieInteractor._loadGeldigeRelaties = loadGeldigeRelaties
         RelatieInteractor._relatieValidatieMogelijk = True
 
     def fillValidatorDictsForEfficientSearch(self, relatieLijst):

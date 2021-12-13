@@ -11,6 +11,7 @@ class JsonPickleTests(unittest.TestCase):
         a.naam = "aftakking"
         a.notitie = "notitie aftakking"
         a.typeURI = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Aftakking"
+        a.toestand.set_value_by_label("in ontwerp")
         a.isActief = True
 
         js = jsonpickle.encode(a);

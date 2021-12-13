@@ -11,10 +11,10 @@ class RelatieInteractor:
     _geldigeRelaties = ()
     _relatieValidatieMogelijk = False
 
-    def loadGeldigeRelaties(self):
+    def _loadGeldigeRelaties(self):
         pass
 
-    def validateRelatiePossible(self, doelObject, relatieType: type, relatieRichting: RelatieRichting):
+    def _validateRelatiePossible(self, doelObject, relatieType: type, relatieRichting: RelatieRichting):
         if not self._relatieValidatieMogelijk:
             raise NotImplementedError("initialize a RelatieValidator first")
         if relatieRichting == relatieRichting.BRON_DOEL:

@@ -7,6 +7,6 @@ class Aftakking(AIMNaamObject):
 
     def __init__(self):
         super().__init__()
-        self.loadGeldigeRelaties()  # TODO move to Factory? alleen toe te passen op concrete classes
+        self._loadGeldigeRelaties()  # TODO move to Factory? alleen toe te passen op concrete classes
 
     typeURI = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Aftakking"

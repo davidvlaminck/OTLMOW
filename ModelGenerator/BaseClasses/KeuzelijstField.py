@@ -30,3 +30,6 @@ class KeuzelijstField(OTLField):
     def set_value_by_label_on_init(self, optionByLabel: str):
         if optionByLabel is not None:
             self.set_value_by_label(optionByLabel)
+
+    def __getstate__(self):
+        return self.waarde

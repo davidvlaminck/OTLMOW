@@ -31,5 +31,7 @@ class KeuzelijstField(OTLField):
         if optionByLabel is not None:
             self.set_value_by_label(optionByLabel)
 
-    def __getstate__(self):
-        return self.waarde
+    def default(self):
+        if self.waarde is None:
+            return None
+        return self.waarde.invulwaarde

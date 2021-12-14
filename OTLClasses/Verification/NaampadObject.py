@@ -18,3 +18,4 @@ class NaampadObject(AIMNaamObject, ABC):
     def __init__(self):
         raise TypeError("Can't instantiate abstract class " + self.__class__.__name__)
 
+    # TODO aanpassen naar instance variabelen

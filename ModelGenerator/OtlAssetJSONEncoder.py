@@ -1,8 +1,10 @@
 import json
 
+from ModelGenerator.BaseClasses.ComplexField import ComplexField
 from ModelGenerator.BaseClasses.KeuzelijstField import KeuzelijstField
 from ModelGenerator.BaseClasses.OTLAsset import OTLAsset
 from ModelGenerator.BaseClasses.OTLField import OTLField
+from OTLClasses.Verification.DtcIdentificator import ComplexAttributen
 
 
 class OtlAssetJSONEncoder(json.JSONEncoder):
@@ -15,10 +17,8 @@ class OtlAssetJSONEncoder(json.JSONEncoder):
                     pass
                 else:
                     value = otlAsset.__getattribute__(key)
-                    if isinstance(value, KeuzelijstField):
-                        dictCopy[key] = value.waarde.invulwaarde
-                    elif isinstance(value, OTLField):
-                        dictCopy[key] = value.waarde
+                    if isinstance(value, OTLField):
+                        dictCopy[key] = value.default()
                     else:
                         dictCopy[key] = value
             return dictCopy

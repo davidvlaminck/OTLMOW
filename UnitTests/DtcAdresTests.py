@@ -1,5 +1,6 @@
 import unittest
 
+from ModelGenerator.BaseClasses.ComplexField import ComplexAttributen, ComplexField
 from OTLClasses.Verification.AIMObject import AIMObject
 from OTLClasses.Verification.DtcAdres import DtcAdres
 
@@ -11,31 +12,27 @@ class TestClass(AIMObject):
 
 
 class DtcAdresTests(unittest.TestCase):
-    def test_UseInClass(self):
+    def test_UseTestClassToTestDtcAdres(self):
         instance = TestClass()
+        self.assertTrue(isinstance(instance.testAdres, DtcAdres))
+        self.assertTrue(isinstance(instance.testAdres, ComplexField))
+        self.assertTrue(isinstance(instance.testAdres.waarde, ComplexAttributen))
+
         instance.testAdres.bus.waarde = "A"
-        self.assertTrue(instance.testAdres.bus.waarde == "A")
-        instance.testAdres.waarde = "adres"
-        self.assertTrue(instance.testAdres.waarde == "adres")
-        self.assertTrue(instance.testAdres.bus.waarde == "A")
-        instance.testAdres.bus.waarde = "B"
-        self.assertTrue(instance.testAdres.bus.waarde == "B")
+        self.assertFalse(instance.testAdres.waarde is None)
+        self.assertEqual(instance.testAdres.bus.waarde, "A")
+        self.assertEqual(instance.testAdres.waarde.bus.waarde, "A")
 
-    def test_DtcAdresInit(self):
-        adres = DtcAdres()
-
-        adres.bus.waarde = "A"
-        self.assertTrue(adres.bus.waarde == "A")
-
-        adres.gemeente.set_value_by_label("de Haan")
-        self.assertTrue(adres.gemeente.waarde.invulwaarde == "de-Haan")
-
-        adres.huisnummer.waarde = "1"
-        self.assertTrue(adres.huisnummer.waarde == "1")
+        instance.testAdres.postcode.waarde = "2880"
+        self.assertEqual(instance.testAdres.postcode.waarde, "2880")
+        self.assertEqual(instance.testAdres.waarde.postcode.waarde, "2880")
         with self.assertRaises(ValueError):
-            adres.huisnummer.waarde = 1
+            instance.testAdres.postcode.waarde = 2880
 
-        adres.postcode.waarde = "2880"
-        self.assertTrue(adres.postcode.waarde == "2880")
-        with self.assertRaises(ValueError):
-            adres.postcode.waarde = 2880
+        instance.testAdres.gemeente.set_value_by_label("de Haan")
+        self.assertTrue(instance.testAdres.gemeente.waarde.invulwaarde == "de-Haan")
+
+        self.assertTrue(instance.testAdres.waarde.default() is not None)
+        self.assertEqual(instance.testAdres.waarde.default()["bus"], "A")
+        self.assertEqual(instance.testAdres.waarde.default()["postcode"], "2880")
+        self.assertEqual(instance.testAdres.waarde.default()["gemeente"], "de-Haan")

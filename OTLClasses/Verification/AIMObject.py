@@ -23,5 +23,10 @@ class AIMObject(AIMDBStatus, AIMToestand, OTLAsset, RelatieInteractor):
         self.notitie = StringField(naam="notitie", label="notitie", uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMObject.notitie", definition="Extra notitie voor het object.", constraints="",
                           usagenote="", deprecated_version="")
         """Extra notitie voor het object."""
+        self.assetId = StringField(naam="assetId", label="Identificator",
+                                   uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcIdentificator",
+                                   definition="Complex datatype voor de identificator van een AIM object volgens de bron van de identificator.",
+                                   constraints=None, usagenote="", deprecated_version="")
+        """Complex datatype voor de identificator van een AIM object volgens de bron van de identificator."""
 
     # TODO: incomplete: missing attributes

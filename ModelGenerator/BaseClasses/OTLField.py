@@ -14,5 +14,5 @@ class OTLField:
         if readonly:
             self.__dict__["waarde"] = readonlyValue
 
-    def __getstate__(self):
+    def default(self):
         return self.waarde

@@ -1,4 +1,5 @@
 from ModelGenerator.BaseClasses.DecimalField import DecimalField
+from ModelGenerator.BaseClasses.LiteralField import LiteralField
 from ModelGenerator.BaseClasses.StringField import StringField
 from OTLClasses.Verification.KwantWrd import KwantWrd
 
@@ -12,8 +13,8 @@ class KwantWrdInAmpere(KwantWrd):
                           , constraints="", usagenote="", deprecated_version="")
     """Bevat een getal die bij het datatype hoort."""
 
-    standaardEenheid = StringField(naam="standaardEenheid", label="standaardEenheid",
+    standaardEenheid = LiteralField(naam="standaardEenheid", label="standaardEenheid",
                                    uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInVolt.standaardEenheid",
                                    definition="De standaard eenheid bij dit datatype is uitgedrukt in Ampere."
-                                   , constraints="", usagenote="", deprecated_version="", readonly=True, readonlyValue="A")
+                                   , constraints="", usagenote="", deprecated_version="", readonlyValue="A")
     """De standaard eenheid bij dit datatype is uitgedrukt in Volt."""

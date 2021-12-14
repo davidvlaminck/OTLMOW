@@ -1,9 +1,12 @@
 import unittest
 from datetime import datetime
 
+from ModelGenerator.BaseClasses import DateTimeField
 from ModelGenerator.BaseClasses.BooleanField import BooleanField
 from ModelGenerator.BaseClasses.DateField import DateField
+from ModelGenerator.BaseClasses.DateTimeField import DateTimeField
 from ModelGenerator.BaseClasses.IntField import IntField
+from ModelGenerator.BaseClasses.LiteralField import LiteralField
 from ModelGenerator.BaseClasses.NonNegIntField import NonNegIntField
 from ModelGenerator.BaseClasses.OTLField import OTLField
 from ModelGenerator.BaseClasses.StringField import StringField
@@ -29,9 +32,19 @@ class TestInstance:
         """doc for nonNegInt"""
 
         self.date = DateField(naam="DateField", label="DateField", uri="DateField",
-                            definition="definitie DateField", constraints="", usagenote="",
-                            deprecated_version="")
-        """doc for nonNegInt"""
+                              definition="definitie DateField", constraints="", usagenote="",
+                              deprecated_version="")
+        """doc for date"""
+
+        self.datetime = DateTimeField(naam="DateTimeField", label="DateTimeField", uri="DateTimeField",
+                                      definition="definitie DateTimeField", constraints="", usagenote="",
+                                      deprecated_version="")
+        """doc for datetime"""
+
+        self.literal = LiteralField(naam="LiteralField", label="LiteralField", uri="LiteralField",
+                                      definition="definitie LiteralField", constraints="", usagenote="",
+                                      deprecated_version="", readonlyValue="eenheid")
+        """doc for literal"""
 
 
 class PrimitiveTypeTests(unittest.TestCase):
@@ -112,7 +125,7 @@ class PrimitiveTypeTests(unittest.TestCase):
         self.assertTrue(isinstance(instance.nonNegInt, OTLField))
 
         instance.nonNegInt.waarde = 1
-        self.assertTrue(instance.nonNegInt.waarde == 1)
+        self.assertEqual(1, instance.nonNegInt.waarde)
         self.assertTrue(isinstance(instance.nonNegInt.waarde, int))
 
         with self.assertRaises(ValueError):
@@ -130,15 +143,42 @@ class PrimitiveTypeTests(unittest.TestCase):
         self.assertTrue(isinstance(instance.date, DateField))
         self.assertTrue(isinstance(instance.date, OTLField))
 
-        instance.date.waarde = datetime(2021, 12, 15)
-        self.assertTrue(instance.date.waarde.day == 15)
-        self.assertTrue(instance.date.waarde.month == 12)
-        self.assertTrue(instance.date.waarde.year == 2021)
+        instance.date.waarde = datetime(2021, 2, 5)
+        self.assertEqual(5, instance.date.waarde.day)
+        self.assertEqual(2, instance.date.waarde.month)
+        self.assertEqual(2021, instance.date.waarde.year)
         self.assertTrue(isinstance(instance.date.waarde, datetime))
-        #
-        # with self.assertRaises(ValueError):
-        #     instance.nonNegInt.waarde = -1
-        # with self.assertRaises(ValueError):
-        #     instance.nonNegInt.waarde = "1"
-        # with self.assertRaises(ValueError):
-        #     instance.nonNegInt.waarde = True
+        self.assertEqual("2021-02-05", instance.date.default())
+
+    def test_datetimeTests(self):
+        instance = TestInstance()
+
+        self.assertTrue(instance.datetime.uri == "DateTimeField")
+        self.assertIsNone(instance.datetime.waarde)
+        self.assertTrue(isinstance(instance.datetime, DateTimeField))
+        self.assertTrue(isinstance(instance.datetime, OTLField))
+
+        instance.datetime.waarde = datetime(2021, 2, 5, 10, 11, 12)
+        self.assertEqual(5, instance.datetime.waarde.day)
+        self.assertEqual(2, instance.datetime.waarde.month)
+        self.assertEqual(2021, instance.datetime.waarde.year)
+        self.assertEqual(10, instance.datetime.waarde.hour)
+        self.assertEqual(11, instance.datetime.waarde.minute)
+        self.assertEqual(12, instance.datetime.waarde.second)
+        self.assertTrue(isinstance(instance.datetime.waarde, datetime))
+        self.assertEqual("2021-02-05 10:11:12", instance.datetime.default())
+
+    def test_literalTests(self):
+        instance = TestInstance()
+
+        self.assertTrue(instance.literal.uri == "LiteralField")
+        self.assertIsNotNone(instance.literal.waarde)
+        self.assertTrue(isinstance(instance.literal, LiteralField))
+        self.assertTrue(isinstance(instance.literal, OTLField))
+
+        self.assertEqual("eenheid", instance.literal.waarde)
+        self.assertTrue(isinstance(instance.literal.waarde, str))
+
+        with self.assertRaises(AttributeError):
+            instance.literal.waarde = "andere eenheid"
+

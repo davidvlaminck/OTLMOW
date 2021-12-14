@@ -11,9 +11,14 @@ class RelatiesTests(unittest.TestCase):
         instance = Voedt()
 
         self.assertTrue(isinstance(instance.aansluitspanning, KwantWrdInVolt))
-        self.assertTrue(instance.aansluitspanning.standaardEenheid.waarde == "V")
+        self.assertEqual("V", instance.aansluitspanning.eenheidVeld.waarde)
+        self.assertEqual(None, instance.aansluitspanning.waarde)
+
         instance.aansluitspanning.waarde = decimal.Decimal(3)
-        instance.aansluitspanning = KwantWrdInVolt(decimal.Decimal(3))  # beide werken
+        self.assertEqual(3.0, instance.aansluitspanning.waarde)
+
+        instance.aansluitspanning = KwantWrdInVolt(decimal.Decimal(1))  # beide werken
+        self.assertEqual(1.0, instance.aansluitspanning.waarde)
 
         with self.assertRaises(ValueError):
             instance.aansluitspanning = KwantWrdInVolt(2)
@@ -21,6 +26,6 @@ class RelatiesTests(unittest.TestCase):
         with self.assertRaises(AttributeError):
             instance.aansluitspanning.standaardEenheid.waarde = 'A'
 
-        self.assertTrue(isinstance(instance.aansluitspanning.waarde, DecimalField))
+        self.assertTrue(isinstance(instance.aansluitspanning.waardeVeld, DecimalField))
 
 

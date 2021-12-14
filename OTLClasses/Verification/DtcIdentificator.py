@@ -30,9 +30,5 @@ class DtcIdentificator(ComplexField):
 
     uri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcIdentificator'
 
-    # def default(self):
-    #     return super(ComplexField, self).default()
-
-
 
 # TODO bij inladen nakjken: usage note bevate informatie over uit gebruik

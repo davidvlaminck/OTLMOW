@@ -11,16 +11,16 @@ from ModelGenerator.SQLDbReader import SQLDbReader
 
 class OSLOInMemoryCreatorTests(unittest.TestCase):
     def mockPerformReadQuery(self, query, arg_dict):
-        if query == 'SELECT label_nl, name, typeURI, definition_nl, usagenote_nl, abstract, deprecated_version FROM OSLOClass where typeURI=:uriclass' \
+        if query == 'SELECT label_nl, name, uri, definition_nl, usagenote_nl, abstract, deprecated_version FROM OSLOClass where uri=:uriclass' \
                 and arg_dict['uriclass'] == 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#NaampadObject':
             return [['Naampad object', 'NaampadObject',
                      'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#NaampadObject'
                         , 'Abstracte als de basisklasse voor elk OTL object dat gebruik maakt van een naampad.', '', 1, '']]
-        elif query == 'SELECT label_nl, name, typeURI, definition_nl, usagenote_nl, abstract, deprecated_version FROM OSLOClass' and arg_dict == {}:
+        elif query == 'SELECT label_nl, name, uri, definition_nl, usagenote_nl, abstract, deprecated_version FROM OSLOClass' and arg_dict == {}:
             return [['Naampad object', 'NaampadObject',
                      'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#NaampadObject'
                         , 'Abstracte als de basisklasse voor elk OTL object dat gebruik maakt van een naampad.', '', 1, '']]
-        elif query == 'SELECT name, label_nl, definition_nl, class_uri, kardinaliteit_min, kardinaliteit_max, typeURI, type, ' \
+        elif query == 'SELECT name, label_nl, definition_nl, class_uri, kardinaliteit_min, kardinaliteit_max, uri, type, ' \
                       'overerving, constraints, readonly, usagenote_nl, deprecated_version FROM OSLOAttributen WHERE ' \
                       'class_uri=:uriclass AND overerving = 0' \
                 and arg_dict[
@@ -32,7 +32,7 @@ class OSLOInMemoryCreatorTests(unittest.TestCase):
                 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#NaampadObject.naampad',
                 'http://www.w3.org/2001/XMLSchema#string', 0, '', 0, '', ''
             ]]
-        elif query == 'SELECT name, label_nl, definition_nl, class_uri, kardinaliteit_min, kardinaliteit_max, typeURI, type, ' \
+        elif query == 'SELECT name, label_nl, definition_nl, class_uri, kardinaliteit_min, kardinaliteit_max, uri, type, ' \
                       'overerving, constraints, readonly, usagenote_nl, deprecated_version FROM OSLOAttributen WHERE ' \
                       'overerving = 0' and arg_dict == {}:
             return [[
@@ -75,7 +75,7 @@ class OSLOInMemoryCreatorTests(unittest.TestCase):
         self.assertTrue(len(listOfClasses) >= 1)
         first = next(c for c in listOfClasses)
         self.assertEqual(type(first), OSLOClass)
-        self.assertEqual(first.typeURI, uri)
+        self.assertEqual(first.uri, uri)
 
     def test_Mock_getClassByUri(self):
         mock = Mock()
@@ -87,7 +87,7 @@ class OSLOInMemoryCreatorTests(unittest.TestCase):
         self.assertTrue(len(listOfClasses) == 1)
         first = next(c for c in listOfClasses)
         self.assertEqual(type(first), OSLOClass)
-        self.assertEqual(first.typeURI, uri)
+        self.assertEqual(first.uri, uri)
 
     def test_Mock_getAttributeByClassUri(self):
         mock = Mock()
@@ -100,7 +100,7 @@ class OSLOInMemoryCreatorTests(unittest.TestCase):
         self.assertTrue(len(listOfAttributes) == 1)
         first = next(c for c in listOfAttributes)
         self.assertEqual(type(first), OSLOAttribuut)
-        self.assertEqual(first.typeURI, attributeUri)
+        self.assertEqual(first.uri, attributeUri)
 
     def test_Mock_getAttributes(self):
         mock = Mock()
@@ -112,7 +112,7 @@ class OSLOInMemoryCreatorTests(unittest.TestCase):
         self.assertTrue(len(listOfAttributes) >= 1)
         first = next(c for c in listOfAttributes)
         self.assertEqual(type(first), OSLOAttribuut)
-        self.assertEqual(first.typeURI, attributeUri)
+        self.assertEqual(first.uri, attributeUri)
 
     def test_Mock_getInheritances(self):
         mock = Mock()

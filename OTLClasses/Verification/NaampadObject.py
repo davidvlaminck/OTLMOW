@@ -10,12 +10,8 @@ class NaampadObject(AIMNaamObject, ABC):
     typeUri = "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#NaampadObject"
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
-
-    naampad = StringField()
-    """Een set van objecten (bv. collecties) die aanduiden waar het object zich bevindt in de objectenboom (EM-Infra)."""
-
     @abstractmethod
     def __init__(self):
-        raise TypeError("Can't instantiate abstract class " + self.__class__.__name__)
+        self.naampad = StringField()
+        """Een set van objecten (bv. collecties) die aanduiden waar het object zich bevindt in de objectenboom (EM-Infra)."""
 
-    # TODO aanpassen naar instance variabelen

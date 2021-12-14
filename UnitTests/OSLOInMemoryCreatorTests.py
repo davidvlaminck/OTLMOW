@@ -5,6 +5,8 @@ from ModelGenerator.FileExistChecker import FileExistChecker
 from ModelGenerator.Inheritance import Inheritance
 from ModelGenerator.OSLOAttribuut import OSLOAttribuut
 from ModelGenerator.OSLOClass import OSLOClass
+from ModelGenerator.OSLODatatypePrimitive import OSLODatatypePrimitive
+from ModelGenerator.OSLODatatypePrimitiveAttribuut import OSLODatatypePrimitiveAttribuut
 from ModelGenerator.OSLOInMemoryCreator import OSLOInMemoryCreator
 from ModelGenerator.SQLDbReader import SQLDbReader
 
@@ -45,6 +47,56 @@ class OSLOInMemoryCreatorTests(unittest.TestCase):
         elif query == "SELECT base_name, base_uri, class_uri, class_name, deprecated_version FROM InternalBaseClass" and arg_dict == {}:
             return [['AIMNaamObject', "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMNaamObject",
                      "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#NaampadObject", "NaampadObject", ""]]
+        elif query == "SELECT name, uri, definition_nl, label_nl, usagenote_nl, deprecated_version FROM OSLODatatypePrimitive" and arg_dict == {}:
+            return [["DteKleurRAL", "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DteKleurRAL",
+                     "Beschrijft een kleur volgens het RAL classificatiesysteem. De waarde is een natuurlijk getal tussen 1000 en 9999.",
+                     "RAL-kleur", "", ""],
+                    ["KwantWrdInWatt", "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInWatt",
+                     "Een kwantitatieve waarde die een getal in watt uitdrukt.", "Kwantitatieve waarde in watt", "", ""],
+                    ["Time", "http://www.w3.org/2001/XMLSchema#time",
+                     "Beschrijft een tijd volgens http://www.w3.org/2001/XMLSchema#time.", "Tijd",
+                     "https://www.w3.org/TR/xmlschema-2/#time", ""],
+                    ["Date", "http://www.w3.org/2001/XMLSchema#date",
+                     "Beschrijft een datum volgens http://www.w3.org/2001/XMLSchema#date.", "Datum",
+                     "https://www.w3.org/TR/xmlschema-2/#date", ""],
+                    ["NonNegativeInteger", "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+                     "Beschrijft een natuurlijk getal volgens http://www.w3.org/2001/XMLSchema#nonNegativeInteger.",
+                     "Natuurlijk getal", "https://www.w3.org/TR/xmlschema-2/#nonNegativeInteger", ""],
+                    ["AnyURI", "http://www.w3.org/2001/XMLSchema#anyURI",
+                     "Een tekstwaarde die een verwijzing naar meer informatie van het element bevat volgens http://www.w3.org/2001/XMLSchema#anyURI .",
+                     "URI", "https://www.w3.org/TR/xmlschema-2/#anyURI", ""],
+                    ["String", "http://www.w3.org/2001/XMLSchema#string",
+                     "Beschrijft een tekstregel volgens http://www.w3.org/2001/XMLSchema#string.", "String",
+                     "https://www.w3.org/TR/xmlschema-2/#string", ""],
+                    ["Boolean", "http://www.w3.org/2001/XMLSchema#boolean",
+                     "Beschrijft een boolean volgens http://www.w3.org/2001/XMLSchema#boolean.", "Boolean",
+                     "https://www.w3.org/TR/xmlschema-2/#boolean", ""],
+                    ["Literal", "http://www.w3.org/2000/01/rdf-schema#Literal", "Beschrijft een constante.", "Literal",
+                     "http://www.w3.org/2000/01/rdf-schema#Literal", ""],
+                    ["DateTime", "http://www.w3.org/2001/XMLSchema#dateTime",
+                     "Beschrijft een datumtijd volgens http://www.w3.org/2001/XMLSchema#dateTime.", "Datumtijd",
+                     "https://www.w3.org/TR/xmlschema-2/#dateTime", ""],
+                    ["Integer", "http://www.w3.org/2001/XMLSchema#integer",
+                     "Beschrijft een geheel getal volgens http://www.w3.org/2001/XMLSchema#integer.", "Geheel getal",
+                     "https://www.w3.org/TR/xmlschema-2/#integer", ""],
+                    ["Decimal", "http://www.w3.org/2001/XMLSchema#decimal",
+                     "Beschrijft een decimaal getal volgens http://www.w3.org/2001/XMLSchema#decimal.", "Decimaal getal",
+                     "https://www.w3.org/TR/xmlschema-2/#decimal", ""]]
+        elif query == "SELECT name, label_nl, definition_nl, class_uri, kardinaliteit_min, kardinaliteit_max, uri, type, overerving, constraints, readonly, usagenote_nl, deprecated_version FROM OSLOAttributen" and arg_dict == {}:
+            return ["waarde", "waarde", "Beschrijft een kleur volgens het RAL classificatiesysteem.",
+                    "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DteKleurRAL", "1", "1",
+                    "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DteKleurRAL.waarde",
+                    "http://www.w3.org/2001/XMLSchema#string", "0", "", "0",
+                    "De waarde moet voldoen aan volgende regex: [1-9]\d{3}", ""], \
+                   ["standaardEenheid", "standaard eenheid", "De standaard eenheid bij dit datatype is uitgedrukt in Watt.",
+                    "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInWatt",
+                    "1", "1", "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInWatt.standaardEenheid",
+                    "http://www.w3.org/2000/01/rdf-schema#Literal", "0", "\"W\"^^cdt:ucumunit", "1", "\"W\"^^cdt:ucumunit", ""], \
+                   ["waarde", "waarde", "Bevat een getal die bij het datatype hoort.",
+                    "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInWatt",
+                    "1", "1", "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInWatt.waarde",
+                    "http://www.w3.org/2001/XMLSchema#decimal", "0", "", "0", "", ""]
+
         return []
 
     def test_FileNotFound(self):
@@ -64,6 +116,28 @@ class OSLOInMemoryCreatorTests(unittest.TestCase):
         self.assertTrue(len(listOfClasses) > 0)
         first = next(c for c in listOfClasses)
         self.assertEqual(type(first), OSLOClass)
+
+    def test_OTLDbPrimitiveDatatypes(self):
+        file_location = '../InputFiles/OTL.db'
+        file_exist_checker = FileExistChecker(file_location)
+        sql_reader = SQLDbReader(file_exist_checker)
+        oslo_creator = OSLOInMemoryCreator(sql_reader)
+        listOfPrimitiveDatatypes = oslo_creator.getAllPrimitiveDatatypes()
+
+        self.assertTrue(len(listOfPrimitiveDatatypes) > 0)
+        first = next(c for c in listOfPrimitiveDatatypes)
+        self.assertEqual(type(first), OSLODatatypePrimitive)
+
+    def test_OTLDbPrimitiveDatatypeAttributen(self):
+        file_location = '../InputFiles/OTL.db'
+        file_exist_checker = FileExistChecker(file_location)
+        sql_reader = SQLDbReader(file_exist_checker)
+        oslo_creator = OSLOInMemoryCreator(sql_reader)
+        listOfPrimitiveDatatypeAttributen = oslo_creator.getAllPrimitiveDatatypeAttributen()
+
+        self.assertTrue(len(listOfPrimitiveDatatypeAttributen) > 0)
+        first = next(c for c in listOfPrimitiveDatatypeAttributen)
+        self.assertEqual(type(first), OSLODatatypePrimitiveAttribuut)
 
     def test_Mock_getAllClasses(self):
         mock = Mock()
@@ -125,3 +199,27 @@ class OSLOInMemoryCreatorTests(unittest.TestCase):
         first = next(c for c in listOfInheritances)
         self.assertEqual(type(first), Inheritance)
         self.assertEqual(first.class_uri, class_uri)
+
+    def test_Mock_getAllPrimitiveDatatypes(self):
+        mock = Mock()
+        oSLOCreator = OSLOInMemoryCreator(mock)
+        mock.performReadQuery = self.mockPerformReadQuery
+        listOfPrimitiveDatatypes = oSLOCreator.getAllPrimitiveDatatypes()
+        class_uri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DteKleurRAL'
+
+        self.assertTrue(len(listOfPrimitiveDatatypes) >= 1)
+        first = next(c for c in listOfPrimitiveDatatypes)
+        self.assertEqual(type(first), OSLODatatypePrimitive)
+        self.assertEqual(first.uri, class_uri)
+
+    def test_Mock_getAllPrimitiveDatatypeAttributen(self):
+        mock = Mock()
+        oSLOCreator = OSLOInMemoryCreator(mock)
+        mock.performReadQuery = self.mockPerformReadQuery
+        listOfPrimitiveDatatypeAttributen = oSLOCreator.getAllPrimitiveDatatypeAttributen()
+        class_uri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DteKleurRAL.waarde'
+
+        self.assertTrue(len(listOfPrimitiveDatatypeAttributen) >= 1)
+        first = next(c for c in listOfPrimitiveDatatypeAttributen)
+        self.assertEqual(type(first), OSLODatatypePrimitiveAttribuut)
+        self.assertEqual(first.uri, class_uri)

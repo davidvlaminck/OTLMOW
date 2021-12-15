@@ -1,6 +1,6 @@
 import unittest
 
-from OTLClasses.Verification.EnergiemeterAWV import EnergiemeterAWV
+from OTLModel.Verification.EnergiemeterAWV import EnergiemeterAWV
 
 
 class EnergiemeterAWVTests(unittest.TestCase):
@@ -21,4 +21,3 @@ class EnergiemeterAWVTests(unittest.TestCase):
         self.assertTrue(instance.aantalTelwerken.waarde == 1)
         self.assertTrue(instance2.aantalTelwerken.waarde == 2)
         self.assertTrue(instance3.aantalTelwerken.waarde is None)
-

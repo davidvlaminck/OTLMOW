@@ -1,6 +1,6 @@
 import unittest
 
-from ModelGenerator.BaseClasses.KeuzelijstField import KeuzelijstField
+from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 
 
 class TestKeuzeLijst(KeuzelijstField):

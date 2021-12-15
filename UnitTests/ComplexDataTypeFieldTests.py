@@ -1,16 +1,11 @@
 import unittest
 
-from OTLClasses.Verification.DtcIdentificator import DtcIdentificator
+from OTLModel.Verification.DtcIdentificator import DtcIdentificator
 
 
 class DtcTestClass:
-    dtcTestType: DtcIdentificator
-
     def __init__(self):
-        self.dtcTestType = DtcIdentificator(naam="DtcIdentificator", label="DtcIdentificator",
-                            uri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#DtcIdentificator",
-                            definition="DtcIdentificator definitie"
-                            , constraints="", usagenote="", deprecated_version="")
+        self.dtcTestType = DtcIdentificator()
 
 
 class ComplexDataTypeFieldTests(unittest.TestCase):
@@ -18,4 +13,5 @@ class ComplexDataTypeFieldTests(unittest.TestCase):
         instance = DtcTestClass()
         instance.dtcTestType.identificator = "abc"
         instance.dtcTestType.toegekendDoor = "def"
-
+        self.assertEqual("abc", instance.dtcTestType.identificator)
+        self.assertEqual("def", instance.dtcTestType.toegekendDoor)

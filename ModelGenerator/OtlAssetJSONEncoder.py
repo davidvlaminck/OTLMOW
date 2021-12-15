@@ -1,10 +1,7 @@
 import json
 
-from ModelGenerator.BaseClasses.ComplexField import ComplexField
-from ModelGenerator.BaseClasses.KeuzelijstField import KeuzelijstField
-from ModelGenerator.BaseClasses.OTLAsset import OTLAsset
-from ModelGenerator.BaseClasses.OTLField import OTLField
-from OTLClasses.Verification.DtcIdentificator import ComplexAttributen
+from OTLModel.BaseClasses.OTLAsset import OTLAsset
+from OTLModel.Datatypes.OTLField import OTLField
 
 
 class OtlAssetJSONEncoder(json.JSONEncoder):

@@ -1,6 +1,6 @@
 import unittest
 
-from OTLClasses.Verification.AIMDBStatus import AIMDBStatus
+from OTLModel.Verification.AIMDBStatus import AIMDBStatus
 
 
 class AIMDBStatusTestInstance(AIMDBStatus):

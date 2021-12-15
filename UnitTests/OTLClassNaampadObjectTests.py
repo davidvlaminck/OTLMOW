@@ -1,7 +1,7 @@
 import unittest
 
-from OTLClasses.Verification.AIMNaamObject import AIMNaamObject
-from OTLClasses.Verification.NaampadObject import NaampadObject
+from OTLModel.Verification.AIMNaamObject import AIMNaamObject
+from OTLModel.Verification.NaampadObject import NaampadObject
 
 
 class NaampadObjectTestInstance(NaampadObject):
@@ -23,3 +23,5 @@ class OSLOCollectorTests(unittest.TestCase):
 
         with self.assertRaises(ValueError):
             instance.naampad = 9
+
+    # TODO waarde gebruiken in tests

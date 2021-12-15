@@ -1,5 +1,5 @@
-from ModelGenerator.BaseClasses.RelatieInteractor import RelatieInteractor
-from OTLClasses.Verification.RelatieObject import RelatieObject
+from OTLModel.BaseClasses.RelatieInteractor import RelatieInteractor
+from OTLModel.Verification.RelatieObject import RelatieObject
 
 
 class GeldigeRelatie:

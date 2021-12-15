@@ -1,9 +1,9 @@
 import unittest
 
-from OTLClasses.Verification.AIMDBStatus import AIMDBStatus
-from OTLClasses.Verification.AIMObject import AIMObject
-from OTLClasses.Verification.AIMToestand import AIMToestand
-from OTLClasses.Verification.Contactor import Contactor
+from OTLModel.Verification.AIMDBStatus import AIMDBStatus
+from OTLModel.Verification.AIMObject import AIMObject
+from OTLModel.Verification.AIMToestand import AIMToestand
+from OTLModel.Verification.Contactor import Contactor
 
 
 class AbstractBehaviour(unittest.TestCase):
@@ -34,8 +34,3 @@ class AbstractBehaviour(unittest.TestCase):
         self.assertTrue(contactor.notitie.waarde == "notitie1")
         self.assertTrue(contactor2.notitie.waarde == "notitie2")
         self.assertTrue(contactor3.notitie.waarde == "notitie3")
-
-
-
-
-

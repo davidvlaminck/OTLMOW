@@ -2,7 +2,7 @@ import unittest
 
 import jsonpickle
 
-from OTLClasses.Verification.Aftakking import Aftakking
+from OTLModel.Verification.Aftakking import Aftakking
 
 
 class JsonPickleTests(unittest.TestCase):
@@ -18,7 +18,7 @@ class JsonPickleTests(unittest.TestCase):
         print(js)
 
     def test_JsonDecodePickledString(self):
-        result = jsonpickle.decode('{"py/object": "OTLClasses.Verification.Aftakking.Aftakking", "isActief": true, "toestand": {"py/object": "OTLClasses.Verification.KlAIMToestand.KlAIMToestand", "py/state": "in-ontwerp"}, "notitie": "notitie aftakking", "naam": "aftakking", "typeURI": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Aftakking"}')
+        result = jsonpickle.decode('{"py/object": "OTLModel.Verification.Aftakking.Aftakking", "isActief": true, "toestand": {"py/object": "OTLModel.Verification.KlAIMToestand.KlAIMToestand", "py/state": "in-ontwerp"}, "notitie": "notitie aftakking", "naam": "aftakking", "typeURI": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Aftakking"}')
         print(result)
 
     def test_JsonDecodeNoPyObjects(self):
@@ -27,7 +27,7 @@ class JsonPickleTests(unittest.TestCase):
         print(result2)
 
     def test_JsonDecodeNoPyObjectToestand(self):
-        noPyObjects = '{"py/object": "OTLClasses.Verification.Aftakking.Aftakking", "isActief": true, "toestand": null, "notitie": "notitie aftakking", "naam": "aftakking", "typeURI": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Aftakking"}'
+        noPyObjects = '{"py/object": "OTLModel.Verification.Aftakking.Aftakking", "isActief": true, "toestand": null, "notitie": "notitie aftakking", "naam": "aftakking", "typeURI": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Aftakking"}'
         result2 = jsonpickle.decode(noPyObjects)
         print(result2)
         self.assertEqual(result2.isActief, True)
@@ -35,6 +35,6 @@ class JsonPickleTests(unittest.TestCase):
         self.assertEqual(result2.typeURI, "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Aftakking")
         self.assertEqual(result2.toestand, None)
 
-        noPyObjects = '{"py/object": "OTLClasses.Verification.Aftakking.Aftakking", "isActief": true, "toestand": "in-ontwerp", "notitie": "notitie aftakking", "naam": "aftakking", "typeURI": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Aftakking"}'
+        noPyObjects = '{"py/object": "OTLModel.Verification.Aftakking.Aftakking", "isActief": true, "toestand": "in-ontwerp", "notitie": "notitie aftakking", "naam": "aftakking", "typeURI": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Aftakking"}'
         result2 = jsonpickle.decode(noPyObjects)
         self.assertEqual(result2.toestand, "in-ontwerp")

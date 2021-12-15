@@ -1,9 +1,9 @@
 import decimal
 import unittest
 
-from ModelGenerator.BaseClasses.DecimalField import DecimalField
-from OTLClasses.Verification.Voedt import Voedt
-from OTLClasses.Verification.KwantWrdInVolt import KwantWrdInVolt
+from OTLModel.Datatypes.DecimalField import DecimalField
+from OTLModel.Verification.Voedt import Voedt
+from OTLModel.Verification.KwantWrdInVolt import KwantWrdInVolt
 
 
 class RelatiesTests(unittest.TestCase):
@@ -27,5 +27,3 @@ class RelatiesTests(unittest.TestCase):
             instance.aansluitspanning.standaardEenheid.waarde = 'A'
 
         self.assertTrue(isinstance(instance.aansluitspanning.waardeVeld, DecimalField))
-
-

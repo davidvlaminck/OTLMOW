@@ -1,7 +1,7 @@
 import unittest
 
-from OTLClasses.Verification.ContainerBuis import ContainerBuis
-from OTLClasses.Verification.Mantelbuis import Mantelbuis
+from OTLModel.Verification.ContainerBuis import ContainerBuis
+from OTLModel.Verification.Mantelbuis import Mantelbuis
 
 
 class ContainerBuisInstance(ContainerBuis):
@@ -24,7 +24,7 @@ class ContainerBuisKardinaliteitFieldTests(unittest.TestCase):
 
     def test_ContainerBuisErrors(self):
         with self.assertRaises(TypeError):
-            abstractInstance = ContainerBuis()
+            ContainerBuis()
 
         instance = Mantelbuis()
 
@@ -57,5 +57,3 @@ class ContainerBuisKardinaliteitFieldTests(unittest.TestCase):
         self.assertTrue(instance.kleur.waarde[0] == "geel")
         self.assertTrue(instance.kleur.waarde[1] == "rood")
         self.assertTrue(instance2.kleur.waarde[0] == "blauw")
-
-

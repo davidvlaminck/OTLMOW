@@ -1,6 +1,6 @@
 import unittest
 
-from OTLClasses.Verification.AIMToestand import AIMToestand
+from OTLModel.Verification.AIMToestand import AIMToestand
 
 
 class AIMToestandTestInstance(AIMToestand):
@@ -17,4 +17,3 @@ class AIMToestandTests(unittest.TestCase):
         self.assertTrue(instance.typeURI == "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMToestand")
         self.assertTrue(instance.toestand.waarde.label == "in ontwerp")
         self.assertTrue(instance.toestand.waarde.invulwaarde == "in-ontwerp")
-

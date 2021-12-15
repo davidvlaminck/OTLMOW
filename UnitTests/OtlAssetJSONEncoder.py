@@ -2,8 +2,8 @@ import unittest
 
 from ModelGenerator.BaseClasses.RelatieValidator import RelatieValidator
 from ModelGenerator.OtlAssetJSONEncoder import OtlAssetJSONEncoder
-from OTLClasses.Verification.Aftakking import Aftakking
-from OTLClasses.Verification.DtcIdentificator import DtcIdentificator
+from OTLModel.Verification.Aftakking import Aftakking
+from OTLModel.Verification.DtcIdentificator import DtcIdentificator
 from UnitTests.RelatieValidatorTests import GeldigeRelatieLijstTestInstance
 
 

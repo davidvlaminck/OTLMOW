@@ -1,15 +1,15 @@
 import unittest
-from datetime import datetime
+from datetime import datetime, time
 
-from ModelGenerator.BaseClasses import DateTimeField
-from ModelGenerator.BaseClasses.BooleanField import BooleanField
-from ModelGenerator.BaseClasses.DateField import DateField
-from ModelGenerator.BaseClasses.DateTimeField import DateTimeField
-from ModelGenerator.BaseClasses.IntField import IntField
-from ModelGenerator.BaseClasses.LiteralField import LiteralField
-from ModelGenerator.BaseClasses.NonNegIntField import NonNegIntField
-from ModelGenerator.BaseClasses.OTLField import OTLField
-from ModelGenerator.BaseClasses.StringField import StringField
+from OTLModel.Datatypes.BooleanField import BooleanField
+from OTLModel.Datatypes.DateField import DateField
+from OTLModel.Datatypes.DateTimeField import DateTimeField
+from OTLModel.Datatypes.IntField import IntField
+from OTLModel.Datatypes.LiteralField import LiteralField
+from OTLModel.Datatypes.NonNegIntField import NonNegIntField
+from OTLModel.Datatypes.OTLField import OTLField
+from OTLModel.Datatypes.StringField import StringField
+from OTLModel.Datatypes.TimeField import TimeField
 
 
 class TestInstance:
@@ -42,9 +42,14 @@ class TestInstance:
         """doc for datetime"""
 
         self.literal = LiteralField(naam="LiteralField", label="LiteralField", uri="LiteralField",
-                                      definition="definitie LiteralField", constraints="", usagenote="",
-                                      deprecated_version="", readonlyValue="eenheid")
+                                    definition="definitie LiteralField", constraints="", usagenote="",
+                                    deprecated_version="", readonlyValue="eenheid")
         """doc for literal"""
+
+        self.time = TimeField(naam="TimeField", label="TimeField", uri="TimeField",
+                              definition="definitie TimeField", constraints="", usagenote="",
+                              deprecated_version="")
+        """doc for time"""
 
 
 class PrimitiveTypeTests(unittest.TestCase):
@@ -182,3 +187,17 @@ class PrimitiveTypeTests(unittest.TestCase):
         with self.assertRaises(AttributeError):
             instance.literal.waarde = "andere eenheid"
 
+    def test_timeTests(self):
+        instance = TestInstance()
+
+        self.assertTrue(instance.time.uri == "TimeField")
+        self.assertIsNone(instance.time.waarde)
+        self.assertTrue(isinstance(instance.time, TimeField))
+        self.assertTrue(isinstance(instance.time, OTLField))
+
+        instance.time.waarde = time(10, 11, 12)
+        self.assertEqual(10, instance.time.waarde.hour)
+        self.assertEqual(11, instance.time.waarde.minute)
+        self.assertEqual(12, instance.time.waarde.second)
+        self.assertTrue(isinstance(instance.time.waarde, time))
+        self.assertEqual("10:11:12", instance.time.default())

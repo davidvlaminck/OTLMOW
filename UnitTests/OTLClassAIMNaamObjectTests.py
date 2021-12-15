@@ -1,6 +1,6 @@
 import unittest
 
-from OTLClasses.Verification.AIMNaamObject import AIMNaamObject
+from OTLModel.Verification.AIMNaamObject import AIMNaamObject
 
 
 class AIMNaamObjectTestInstance(AIMNaamObject):

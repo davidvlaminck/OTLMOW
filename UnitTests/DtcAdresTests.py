@@ -1,8 +1,8 @@
 import unittest
 
-from ModelGenerator.BaseClasses.ComplexField import ComplexAttributen, ComplexField
-from OTLClasses.Verification.AIMObject import AIMObject
-from OTLClasses.Verification.DtcAdres import DtcAdres
+from OTLModel.Datatypes.ComplexField import ComplexField, ComplexAttributen
+from OTLModel.Verification.AIMObject import AIMObject
+from OTLModel.Verification.DtcAdres import DtcAdres
 
 
 class TestClass(AIMObject):

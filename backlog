@@ -54,6 +54,8 @@ deprecated attributen? door overerving aan te passen?
 
 
 Facility
+* Design
+    - OTLModelCreator => creates OTL model
 * ImportAndStore
 * Store(Storage) = dicts (by type) in 1 dict for assets > create class to hold dict + operations
   + 1 dict to hold all assets (search by id)

@@ -1,6 +1,7 @@
 from typing import List
 
 from ModelGenerator.OSLOClass import OSLOClass
+from ModelGenerator.OSLODatatypePrimitiveAttribuut import OSLODatatypePrimitiveAttribuut
 
 
 class OSLOCollector:
@@ -30,3 +31,10 @@ class OSLOCollector:
 
     def FindInheritancesByClass(self, osloclass: OSLOClass):
         return list(filter(lambda c: c.class_uri == osloclass.uri, self.inheritances))
+
+    def FindPrimitiveDatatypeByUri(self, uri: str):
+        return next(p for p in self.primitiveDatatypes if p.uri == uri)
+
+    def FindPrimitiveDatatypeAttributenByClassUri(self, class_uri: str) -> list[OSLODatatypePrimitiveAttribuut]:
+        return sorted(list(filter(lambda p: p.class_uri == class_uri, self.primitiveDatatypeAttributen)), key=lambda p: p.uri)
+

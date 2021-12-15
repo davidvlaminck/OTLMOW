@@ -1,5 +1,6 @@
+from OTLModel.Datatypes.KwantWrdInVolt import KwantWrdInVolt
 from OTLModel.Verification.DirectioneleRelatie import DirectioneleRelatie
-from OTLModel.Verification.KwantWrdInVolt import KwantWrdInVolt
+
 
 
 class Voedt(DirectioneleRelatie):

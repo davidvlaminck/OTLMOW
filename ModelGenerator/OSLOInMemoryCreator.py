@@ -13,7 +13,7 @@ class OSLOInMemoryCreator:
     def getAllPrimitiveDatatypeAttributen(self):
         data = self.sqlDbReader.performReadQuery(
             "SELECT name, label_nl, definition_nl, class_uri, kardinaliteit_min, kardinaliteit_max, uri, type, overerving, "
-            "constraints, readonly, usagenote_nl, deprecated_version FROM OSLOAttributen",
+            "constraints, readonly, usagenote_nl, deprecated_version FROM OSLODatatypePrimitiveAttributen",
             {})
 
         list = []

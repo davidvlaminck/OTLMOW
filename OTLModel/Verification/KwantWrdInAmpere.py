@@ -1,4 +1,4 @@
-from OTLModel.Datatypes.DecimalField import DecimalField
+from OTLModel.Datatypes.DecimalFloatField import DecimalFloatField
 from OTLModel.Datatypes.KwantWrd import KwantWrd
 from OTLModel.Datatypes.LiteralField import LiteralField
 
@@ -7,10 +7,10 @@ class KwantWrdInAmpere(KwantWrd):
     """Een kwantitatieve waarde die een getal in ampère uitdrukt."""
 
     def __init__(self, waarde=None):
-        dec = DecimalField(naam="waarde", label="waarde",
-                              uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInAmpere.waarde",
-                              definition="Bevat een getal die bij het datatype hoort."
-                              , constraints="", usagenote="", deprecated_version="")
+        dec = DecimalFloatField(naam="waarde", label="waarde",
+                                uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInAmpere.waarde",
+                                definition="Bevat een getal die bij het datatype hoort."
+                                , constraints="", usagenote="", deprecated_version="")
         """Bevat een getal die bij het datatype hoort."""
 
         standaardEenheid = LiteralField(naam="standaardEenheid", label="standaardEenheid",

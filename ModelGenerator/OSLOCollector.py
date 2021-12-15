@@ -5,12 +5,6 @@ from ModelGenerator.OSLODatatypePrimitiveAttribuut import OSLODatatypePrimitiveA
 
 
 class OSLOCollector:
-    inheritances: List
-    attributes: List
-    classes: List
-    primitiveDatatypes: List
-    primitiveDatatypeAttributen: List
-    
     def __init__(self, oSLOInMemoryCreator):
         self.inheritances = []
         self.OSLOInMemoryCreator = oSLOInMemoryCreator

@@ -3,7 +3,13 @@ import sqlite3
 import requests
 from rdflib import Graph
 
+from Loggers.ConsoleLogger import ConsoleLogger
+from ModelGenerator.FileExistChecker import FileExistChecker
 from ModelGenerator.OSLOClass import OSLOClass
+from ModelGenerator.OSLOCollector import OSLOCollector
+from ModelGenerator.OSLOInMemoryCreator import OSLOInMemoryCreator
+from ModelGenerator.OTLModelCreator import OTLModelCreator
+from ModelGenerator.SQLDbReader import SQLDbReader
 
 
 def readSQlite():
@@ -42,4 +48,19 @@ def getSkosLijst(url):
 
 if __name__ == '__main__':
     #getSkosLijst('https://raw.githubusercontent.com/Informatievlaanderen/OSLOthema-wegenenverkeer/master/codelijsten/KlAIMToestand.ttl')
-    readSQlite()
+    #readSQlite()
+
+    file_location = 'InputFiles/OTL.db'
+    file_exist_checker = FileExistChecker(file_location)
+    sql_reader = SQLDbReader(file_exist_checker)
+    oslo_creator = OSLOInMemoryCreator(sql_reader)
+
+    logger = ConsoleLogger()
+    collector = OSLOCollector(oslo_creator)
+    collector.collect()
+
+    modelCreator = OTLModelCreator(logger, collector)
+    modelCreator.create_primitive_datatypes()
+
+
+

@@ -1,6 +1,6 @@
 from OTLModel.Datatypes.KwantWrd import KwantWrd
 from OTLModel.Datatypes.LiteralField import LiteralField
-from OTLModel.Datatypes.DecimalField import DecimalField
+from OTLModel.Datatypes.DecimalFloatField import DecimalFloatField
 
 
 # Generated with OTLPrimitiveDatatypeCreator
@@ -18,13 +18,13 @@ class KwantWrdInVolt(KwantWrd):
                                readonlyValue="V")
         """De standaard eenheid bij dit datatype is uitgedrukt in Volt."""
 
-        waardeVeld = DecimalField(naam="waarde",
-                                  label="waarde",
-                                  uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInVolt.waarde",
-                                  definition="Bevat een getal die bij het datatype hoort.",
-                                  constraints='',
-                                  usagenote='',
-                                  deprecated_version="")
+        waardeVeld = DecimalFloatField(naam="waarde",
+                                       label="waarde",
+                                       uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInVolt.waarde",
+                                       definition="Bevat een getal die bij het datatype hoort.",
+                                       constraints='',
+                                       usagenote='',
+                                       deprecated_version="")
         """Bevat een getal die bij het datatype hoort."""
 
         super().__init__(naam="KwantWrdInVolt",

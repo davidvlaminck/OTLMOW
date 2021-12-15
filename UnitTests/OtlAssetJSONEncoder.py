@@ -1,9 +1,11 @@
+import decimal
 import unittest
 
 from ModelGenerator.BaseClasses.RelatieValidator import RelatieValidator
 from ModelGenerator.OtlAssetJSONEncoder import OtlAssetJSONEncoder
 from OTLModel.Verification.Aftakking import Aftakking
 from OTLModel.Verification.DtcIdentificator import DtcIdentificator
+from OTLModel.Verification.Laagspanningsbord import Laagspanningsbord
 from UnitTests.RelatieValidatorTests import GeldigeRelatieLijstTestInstance
 
 
@@ -25,6 +27,17 @@ class OtlAssetJSONEncoderTests(unittest.TestCase):
 
         self.assertEqual(
             '{"assetId": null, "isActief": true, "naam": "aftakking", "notitie": "notitie aftakking", "toestand": "in-ontwerp", "typeURI": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Aftakking"}',
+            js)
+
+    def test_JsonEncodeDecimal(self):
+        a = Laagspanningsbord()
+        a.aansluitvermogen.waarde = float(25)
+
+        encoder = OtlAssetJSONEncoder()
+        js = encoder.encode(a)
+
+        self.assertEqual(
+            '{"aansluitvermogen": 25.0, "assetId": null, "isActief": null, "naam": null, "notitie": null, "toestand": null, "typeURI": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Laagspanningsbord"}',
             js)
 
     def test_JsonEncodeWithDtcIdentificator(self):

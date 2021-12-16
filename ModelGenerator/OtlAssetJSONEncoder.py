@@ -15,8 +15,12 @@ class OtlAssetJSONEncoder(json.JSONEncoder):
                 else:
                     value = otlAsset.__getattribute__(key)
                     if isinstance(value, OTLField):
+                        if value.default() is None:
+                            continue
                         dictCopy[key] = value.default()
                     else:
+                        if value is None:
+                            continue
                         dictCopy[key] = value
             return dictCopy
         else:

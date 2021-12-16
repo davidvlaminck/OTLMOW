@@ -26,9 +26,6 @@ def readSQlite():
     con.close()
 
 
-
-
-
 def getSkosLijst(url):
     response = requests.get(url, stream=True)
 
@@ -54,10 +51,10 @@ if __name__ == '__main__':
     file_exist_checker = FileExistChecker(file_location)
     sql_reader = SQLDbReader(file_exist_checker)
     oslo_creator = OSLOInMemoryCreator(sql_reader)
-
-    logger = ConsoleLogger()
     collector = OSLOCollector(oslo_creator)
     collector.collect()
+
+    logger = ConsoleLogger()
 
     modelCreator = OTLModelCreator(logger, collector)
     modelCreator.create_primitive_datatypes()

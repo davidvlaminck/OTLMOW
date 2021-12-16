@@ -26,7 +26,7 @@ class OtlAssetJSONEncoderTests(unittest.TestCase):
         js = encoder.encode(a)
 
         self.assertEqual(
-            '{"assetId": null, "isActief": true, "naam": "aftakking", "notitie": "notitie aftakking", "toestand": "in-ontwerp", "typeURI": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Aftakking"}',
+            '{"isActief": true, "naam": "aftakking", "notitie": "notitie aftakking", "toestand": "in-ontwerp", "typeURI": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Aftakking"}',
             js)
 
     def test_JsonEncodeDecimal(self):

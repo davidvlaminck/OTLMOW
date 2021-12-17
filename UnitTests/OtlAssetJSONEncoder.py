@@ -30,14 +30,14 @@ class OtlAssetJSONEncoderTests(unittest.TestCase):
             js)
 
     def test_JsonEncodeDecimal(self):
-        a = Laagspanningsbord()
-        a.aansluitvermogen.waarde = float(25)
+        l = Laagspanningsbord()
+        l.aansluitvermogen.waarde = float(25)
 
         encoder = OtlAssetJSONEncoder()
-        js = encoder.encode(a)
+        js = encoder.encode(l)
 
         self.assertEqual(
-            '{"aansluitvermogen": 25.0, "assetId": null, "isActief": null, "naam": null, "notitie": null, "toestand": null, "typeURI": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Laagspanningsbord"}',
+            '{"aansluitvermogen": 25.0, "typeURI": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Laagspanningsbord"}',
             js)
 
     def test_JsonEncodeWithDtcIdentificator(self):
@@ -51,8 +51,8 @@ class OtlAssetJSONEncoderTests(unittest.TestCase):
         encoder = OtlAssetJSONEncoder()
         js = encoder.encode(a)
 
-        self.assertEqual('{"assetId": {"identificator": "mijn eigen id", "toegekendDoor": null}, "isActief": null, '
-                         '"naam": "aftakking", "notitie": null, "toestand": null, "typeURI": '
+        self.assertEqual('{"assetId": {"identificator": "mijn eigen id"}, '
+                         '"naam": "aftakking", "typeURI": '
                          '"https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Aftakking"}', js)
 
     def test_JsonEncodeWithDtcIdentificatorAndIndent(self):

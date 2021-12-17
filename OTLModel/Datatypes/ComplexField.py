@@ -5,7 +5,8 @@ class ComplexAttributen:
     def default(self):
         d = {}
         for k, v in self.__dict__.items():
-            d[k] = v.default()
+            if v.default() is not None:
+                d[k] = v.default()
         return d
 
 

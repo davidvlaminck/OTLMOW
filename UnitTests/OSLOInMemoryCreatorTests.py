@@ -5,6 +5,8 @@ from ModelGenerator.FileExistChecker import FileExistChecker
 from ModelGenerator.Inheritance import Inheritance
 from ModelGenerator.OSLOAttribuut import OSLOAttribuut
 from ModelGenerator.OSLOClass import OSLOClass
+from ModelGenerator.OSLODatatypeComplex import OSLODatatypeComplex
+from ModelGenerator.OSLODatatypeComplexAttribuut import OSLODatatypeComplexAttribuut
 from ModelGenerator.OSLODatatypePrimitive import OSLODatatypePrimitive
 from ModelGenerator.OSLODatatypePrimitiveAttribuut import OSLODatatypePrimitiveAttribuut
 from ModelGenerator.OSLOInMemoryCreator import OSLOInMemoryCreator
@@ -83,19 +85,40 @@ class OSLOInMemoryCreatorTests(unittest.TestCase):
                      "Beschrijft een decimaal getal volgens http://www.w3.org/2001/XMLSchema#decimal.", "Decimaal getal",
                      "https://www.w3.org/TR/xmlschema-2/#decimal", ""]]
         elif query == "SELECT name, label_nl, definition_nl, class_uri, kardinaliteit_min, kardinaliteit_max, uri, type, overerving, constraints, readonly, usagenote_nl, deprecated_version FROM OSLOAttributen" and arg_dict == {}:
-            return ["waarde", "waarde", "Beschrijft een kleur volgens het RAL classificatiesysteem.",
-                    "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DteKleurRAL", "1", "1",
-                    "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DteKleurRAL.waarde",
-                    "http://www.w3.org/2001/XMLSchema#string", "0", "", "0",
-                    "De waarde moet voldoen aan volgende regex: [1-9]\d{3}", ""], \
-                   ["standaardEenheid", "standaard eenheid", "De standaard eenheid bij dit datatype is uitgedrukt in Watt.",
-                    "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInWatt",
-                    "1", "1", "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInWatt.standaardEenheid",
-                    "http://www.w3.org/2000/01/rdf-schema#Literal", "0", "\"W\"^^cdt:ucumunit", "1", "\"W\"^^cdt:ucumunit", ""], \
-                   ["waarde", "waarde", "Bevat een getal die bij het datatype hoort.",
-                    "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInWatt",
-                    "1", "1", "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInWatt.waarde",
-                    "http://www.w3.org/2001/XMLSchema#decimal", "0", "", "0", "", ""]
+            return [["waarde", "waarde", "Beschrijft een kleur volgens het RAL classificatiesysteem.",
+                     "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DteKleurRAL", "1", "1",
+                     "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DteKleurRAL.waarde",
+                     "http://www.w3.org/2001/XMLSchema#string", "0", "", "0",
+                     "De waarde moet voldoen aan volgende regex: [1-9]\d{3}", ""],
+                    ["standaardEenheid", "standaard eenheid", "De standaard eenheid bij dit datatype is uitgedrukt in Watt.",
+                     "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInWatt",
+                     "1", "1",
+                     "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInWatt.standaardEenheid",
+                     "http://www.w3.org/2000/01/rdf-schema#Literal", "0", "\"W\"^^cdt:ucumunit", "1", "\"W\"^^cdt:ucumunit", ""],
+                    ["waarde", "waarde", "Bevat een getal die bij het datatype hoort.",
+                     "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInWatt",
+                     "1", "1", "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInWatt.waarde",
+                     "http://www.w3.org/2001/XMLSchema#decimal", "0", "", "0", "", ""]]
+        elif query == "SELECT name, label_nl, definition_nl, class_uri, kardinaliteit_min, kardinaliteit_max, uri, type, overerving, constraints, readonly, usagenote_nl, deprecated_version FROM OSLODatatypePrimitiveAttributen" and arg_dict == {}:
+            return [['waarde', 'waarde', 'Beschrijft een kleur volgens het RAL classificatiesysteem.',
+                     'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DteKleurRAL', '1', '1',
+                     'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DteKleurRAL.waarde',
+                     'http://www.w3.org/2001/XMLSchema#string', '0', '', '0',
+                     'De waarde moet voldoen aan volgende regex: [1-9]\d{3}', '']]
+        elif query == "SELECT name, label_nl, definition_nl, class_uri, kardinaliteit_min, kardinaliteit_max, uri, type, overerving, constraints, readonly, usagenote_nl, deprecated_version FROM OSLODatatypeComplexAttributen" and arg_dict == {}:
+            return [['identificator', 'identificator', 'Een groep van tekens om een AIM object te identificeren of te benoemen.',
+                     'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcIdentificator', '1', '1',
+                     'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcIdentificator.identificator',
+                     'http://www.w3.org/2001/XMLSchema#string', '0', '', '0', '', ''],
+                    ['toegekendDoor', 'toegekend door', 'Gegevens van de organisatie die de toekenning deed.',
+                     'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcIdentificator', '1', '1',
+                     'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcIdentificator.toegekendDoor',
+                     'http://www.w3.org/2001/XMLSchema#string', '0', '', '0', '', '']]
+
+        elif query == "SELECT name, uri, definition_nl, label_nl, usagenote_nl, deprecated_version FROM OSLODatatypeComplex" and arg_dict == {}:
+            return [['DtcIdentificator', 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcIdentificator', '',
+                     'Complex datatype voor de identificator van een AIM object volgens de bron van de identificator.',
+                     'Identificator', '']]
 
         return []
 
@@ -223,3 +246,28 @@ class OSLOInMemoryCreatorTests(unittest.TestCase):
         first = next(c for c in listOfPrimitiveDatatypeAttributen)
         self.assertEqual(type(first), OSLODatatypePrimitiveAttribuut)
         self.assertEqual(first.uri, class_uri)
+
+    def test_Mock_getAllComplexDatatypes(self):
+        mock = Mock()
+        oSLOCreator = OSLOInMemoryCreator(mock)
+        mock.performReadQuery = self.mockPerformReadQuery
+        listOfComplexDatatypes = oSLOCreator.getAllComplexDatatypes()
+        class_uri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcIdentificator'
+
+        self.assertTrue(len(listOfComplexDatatypes) >= 1)
+        first = next(c for c in listOfComplexDatatypes)
+        self.assertEqual(type(first), OSLODatatypeComplex)
+        self.assertEqual(first.uri, class_uri)
+
+    def test_Mock_getAllComplexDatatypeAttributen(self):
+        mock = Mock()
+        oSLOCreator = OSLOInMemoryCreator(mock)
+        mock.performReadQuery = self.mockPerformReadQuery
+        listOfComplexDatatypeAttributen = oSLOCreator.getAllComplexDatatypeAttributen()
+        class_uri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcIdentificator'
+        attribuut_uri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcIdentificator.identificator'
+
+        self.assertTrue(len(listOfComplexDatatypeAttributen) >= 1)
+        first = next(c for c in listOfComplexDatatypeAttributen)
+        self.assertEqual(type(first), OSLODatatypeComplexAttribuut)
+        self.assertEqual(first.uri, attribuut_uri)

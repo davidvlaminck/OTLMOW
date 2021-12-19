@@ -1,8 +1,6 @@
 from OTLModel.Datatypes.ComplexField import ComplexField
-from OTLModel.Datatypes.KardinaliteitField import KardinaliteitField
 from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.StringField import StringField
-#from OTLModel.Verification.KlAlgProvincie import KlAlgProvincie
 from OTLModel.Verification.KlAlgGemeente import KlAlgGemeente
 
 

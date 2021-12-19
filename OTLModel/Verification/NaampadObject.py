@@ -7,7 +7,7 @@ from OTLModel.Verification.AIMNaamObject import AIMNaamObject
 # inherit from ABC to create abstract class
 class NaampadObject(AIMNaamObject, ABC):
     """Abstracte als de basisklasse voor elk OTL object dat gebruik maakt van een naampad."""
-    typeUri = "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#NaampadObject"
+    typeURI = "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#NaampadObject"
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     @abstractmethod

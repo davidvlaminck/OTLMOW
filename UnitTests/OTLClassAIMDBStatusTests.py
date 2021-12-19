@@ -14,11 +14,11 @@ class AIMDBStatusTests(unittest.TestCase):
         instance.isActief = True
 
         self.assertTrue(instance.isActief)
-        self.assertTrue(instance.typeUri == "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMDBStatus")
+        self.assertTrue(instance.typeURI == "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMDBStatus")
         self.assertTrue(isinstance(instance, AIMDBStatus))
 
         with self.assertRaises(ValueError):
-            instance.isActief = 1
+            instance.isActief = 2
 
         with self.assertRaises(ValueError):
             instance.isActief = "True"

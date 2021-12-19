@@ -1,6 +1,8 @@
 from ModelGenerator.Inheritance import Inheritance
 from ModelGenerator.OSLOAttribuut import OSLOAttribuut
 from ModelGenerator.OSLOClass import OSLOClass
+from ModelGenerator.OSLODatatypeComplex import OSLODatatypeComplex
+from ModelGenerator.OSLODatatypeComplexAttribuut import OSLODatatypeComplexAttribuut
 from ModelGenerator.OSLODatatypePrimitive import OSLODatatypePrimitive
 from ModelGenerator.OSLODatatypePrimitiveAttribuut import OSLODatatypePrimitiveAttribuut
 from ModelGenerator.SQLDbReader import SQLDbReader
@@ -18,7 +20,8 @@ class OSLOInMemoryCreator:
 
         list = []
         for row in data:
-            c = OSLODatatypePrimitiveAttribuut(row[0], row[1], row[2], row[3], row[4], row[5], row[6], row[7], row[8], row[9], row[10], row[11], row[12])
+            c = OSLODatatypePrimitiveAttribuut(row[0], row[1], row[2], row[3], row[4], row[5], row[6], row[7], row[8], row[9],
+                                               row[10], row[11], row[12])
             list.append(c)
 
         return list
@@ -93,6 +96,32 @@ class OSLOInMemoryCreator:
         list = []
         for row in data:
             c = Inheritance(row[0], row[1], row[2], row[3], row[4])
+            list.append(c)
+
+        return list
+
+    def getAllComplexDatatypes(self):
+        data = self.sqlDbReader.performReadQuery(
+            "SELECT name, uri, definition_nl, label_nl, usagenote_nl, deprecated_version FROM OSLODatatypeComplex",
+            {})
+
+        list = []
+        for row in data:
+            c = OSLODatatypeComplex(row[0], row[1], row[2], row[3], row[4], row[5])
+            list.append(c)
+
+        return list
+
+    def getAllComplexDatatypeAttributen(self):
+        data = self.sqlDbReader.performReadQuery(
+            "SELECT name, label_nl, definition_nl, class_uri, kardinaliteit_min, kardinaliteit_max, uri, type, overerving, "
+            "constraints, readonly, usagenote_nl, deprecated_version FROM OSLODatatypeComplexAttributen",
+            {})
+
+        list = []
+        for row in data:
+            c = OSLODatatypeComplexAttribuut(row[0], row[1], row[2], row[3], row[4], row[5], row[6], row[7], row[8], row[9],
+                                             row[10], row[11], row[12])
             list.append(c)
 
         return list

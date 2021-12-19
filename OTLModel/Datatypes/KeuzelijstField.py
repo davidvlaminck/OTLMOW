@@ -32,8 +32,7 @@ class Keuzelijst:
 
 class KeuzelijstField(OTLField):
     def __init__(self, lijst: Keuzelijst, naam, label, uri, definition, overerving, constraints, usagenote, deprecated_version,
-                 readonly=False,
-                 readonlyValue=None):
+                 readonly=False, readonlyValue=None):
         super().__init__(naam, label, uri, definition, constraints, usagenote, deprecated_version, readonly, readonlyValue)
         self.lijst = lijst
         self.overerving = overerving
@@ -51,6 +50,8 @@ class KeuzelijstField(OTLField):
         self.__dict__[name] = value
 
     def default(self):
+        if self.waarde is None:
+            return None
         return self.waarde.invulwaarde
 
     def set_value_by_invulwaarde(self, invulwaarde):

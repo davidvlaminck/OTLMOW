@@ -8,15 +8,28 @@ from ModelGenerator.OSLOCollector import OSLOCollector
 from ModelGenerator.OSLODatatypeComplex import OSLODatatypeComplex
 from ModelGenerator.OSLODatatypeComplexAttribuut import OSLODatatypeComplexAttribuut
 from ModelGenerator.OTLComplexDatatypeCreator import OTLComplexDatatypeCreator
+from OTLModel.Datatypes.StringField import StringField
 
 
 class ComplexDatatypeOSLOCollector(OSLOCollector):
     def __init__(self, reader):
         super().__init__(reader)
 
-        self.ComplexDatatypes = [
-            OSLODatatypeComplex('DtcAdres','https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAdres','','Complex datatype voor de aanduiding van een bepaalde locatie, doorgaans van een huis, woning, gebouw of faciliteit, op de aarde.','Adres','')]
-        self.ComplexDatatypeAttributen = [
+        self.complexDatatypes = [
+            OSLODatatypeComplex(name='DtcAdres',
+                                uri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAdres',
+                                usagenote_nl='',
+                                definition_nl='Complex datatype voor de aanduiding van een bepaalde locatie, doorgaans van een huis, woning, gebouw of faciliteit, op de aarde.',
+                                label_nl='Adres',
+                                deprecated_version=''),
+            OSLODatatypeComplex(name='DtcIdentificator',
+                                uri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcIdentificator',
+                                usagenote_nl='',
+                                definition_nl='Complex datatype voor de identificator van een AIM object volgens de bron van de identificator.',
+                                label_nl='Identificator',
+                                deprecated_version='')
+        ]
+        self.complexDatatypeAttributen = [
             OSLODatatypeComplexAttribuut('bus','bus','Een nummer dat de postbus aanduidt.','https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAdres','1','1','https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAdres.bus','http://www.w3.org/2001/XMLSchema#string',0,'',0,'',''),
         OSLODatatypeComplexAttribuut('gemeente', 'gemeente', 'De bestuurlijke eenheid waarin het adres gelegen is.',
                                      'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAdres', '1', '1',
@@ -40,73 +53,53 @@ class ComplexDatatypeOSLOCollector(OSLOCollector):
         OSLODatatypeComplexAttribuut('straatnaam', 'straatnaam', 'De naam van de straat.',
                                      'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAdres', '1', '1',
                                      'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAdres.straatnaam',
-                                     'http://www.w3.org/2001/XMLSchema#string', 0, '', 0, '','')]
+                                     'http://www.w3.org/2001/XMLSchema#string', 0, '', 0, '',''),
+        OSLODatatypeComplexAttribuut('identificator', 'identificator', 'Een groep van tekens om een AIM object te identificeren of te benoemen.',
+                                     'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcIdentificator', '1', '1',
+                                     'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcIdentificator.identificator',
+                                     'http://www.w3.org/2001/XMLSchema#string', 0, '', 0, '', ''),
+        OSLODatatypeComplexAttribuut('toegekendDoor', 'toegekend door', 'Gegevens van de organisatie die de toekenning deed.',
+                                     'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcIdentificator', '1', '1',
+                                     'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcIdentificator.toegekendDoor',
+                                     'http://www.w3.org/2001/XMLSchema#string', 0, '', 0, '', '')
+        ]
 
-        self.expectedDataKwantWrdInVolt = ['from OTLModel.Datatypes.KwantWrd import KwantWrd',
-                                           'from OTLModel.Datatypes.LiteralField import LiteralField',
-                                           'from OTLModel.Datatypes.DecimalFloatField import DecimalFloatField',
-                                           '',
-                                           '',
-                                           '# Generated with OTLComplexDatatypeCreator',
-                                           'class KwantWrdInVolt(KwantWrd):',
-                                           '    """Een kwantitatieve waarde die een getal in volt uitdrukt."""',
-                                           '',
-                                           '    def __init__(self, waarde=None):',
-                                           '        eenheid = LiteralField(naam="standaardEenheid",',
-                                           '                               label="standaard eenheid",',
-                                           '                               uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInVolt.standaardEenheid",',
-                                           '                               definition="De standaard eenheid bij dit datatype is uitgedrukt in Volt.",',
-                                           '                               constraints=\'"V"^^cdt:ucumunit\',',
-                                           '                               usagenote=\'"V"^^cdt:ucumunit\',',
-                                           '                               deprecated_version="",',
-                                           '                               readonlyValue="V")',
-                                           '        """De standaard eenheid bij dit datatype is uitgedrukt in Volt."""',
-                                           '',
-                                           '        waardeVeld = DecimalFloatField(naam="waarde",',
-                                           '                                       label="waarde",',
-                                           '                                       uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInVolt.waarde",',
-                                           '                                       definition="Bevat een getal die bij het datatype hoort.",',
-                                           '                                       constraints=\'\',',
-                                           '                                       usagenote=\'\',',
-                                           '                                       deprecated_version="")',
-                                           '        """Bevat een getal die bij het datatype hoort."""',
-                                           '',
-                                           '        super().__init__(naam="KwantWrdInVolt",',
-                                           '                         label="Kwantitatieve waarde in volt",',
-                                           '                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInVolt",',
-                                           '                         definition="Een kwantitatieve waarde die een getal in volt uitdrukt.",',
-                                           '                         usagenote="",',
-                                           '                         deprecated_version="",',
-                                           '                         waardeVeld=waardeVeld,',
-                                           '                         eenheidVeld=eenheid,',
-                                           '                         waarde=waarde)']
-        self.expectedDataRALKleur = ['from OTLModel.Datatypes.KwantWrd import KwantWrd',
-                                     'from OTLModel.Datatypes.StringField import StringField',
-                                     '',
-                                     '',
-                                     '# Generated with OTLComplexDatatypeCreator',
-                                     'class DteKleurRAL(KwantWrd):',
-                                     '    """Beschrijft een kleur volgens het RAL classificatiesysteem. De waarde is een natuurlijk getal tussen 1000 en 9999."""',
-                                     '',
-                                     '    def __init__(self, waarde=None):',
-                                     '        waardeVeld = StringField(naam="waarde",',
-                                     '                                 label="waarde",',
-                                     '                                 uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DteKleurRAL.waarde",',
-                                     '                                 definition="Beschrijft een kleur volgens het RAL classificatiesysteem.",',
-                                     '                                 constraints=\'\',',
-                                     '                                 usagenote=\'De waarde moet voldoen aan volgende regex: [1-9]\\d{3}\',',
-                                     '                                 deprecated_version="")',
-                                     '        """Beschrijft een kleur volgens het RAL classificatiesysteem."""',
-                                     '',
-                                     '        super().__init__(naam="DteKleurRAL",',
-                                     '                         label="RAL-kleur",',
-                                     '                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DteKleurRAL",',
-                                     '                         definition="Beschrijft een kleur volgens het RAL classificatiesysteem. De waarde is een natuurlijk getal tussen 1000 en 9999.",',
-                                     '                         usagenote="",',
-                                     '                         deprecated_version="",',
-                                     '                         waardeVeld=waardeVeld,',
-                                     '                         eenheidVeld=None,',
-                                     '                         waarde=waarde)']
+        self.expectedDataDtcIdentificator = ['from OTLModel.Datatypes.ComplexField import ComplexField, ComplexAttributen',
+                                             'from OTLModel.Datatypes.StringField import StringField',
+                                             '',
+                                             '',
+                                             '# Generated with OTLComplexDatatypeCreator',
+                                             'class DtcIdentificator(ComplexField):',
+                                             '    """Complex datatype voor de identificator van een AIM object volgens de bron van de identificator."""',
+                                             '',
+                                             '    def __init__(self):',
+                                             '        super().__init__(naam="DtcIdentificator",',
+                                             '                         label="Identificator",',
+                                             '                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcIdentificator",',
+                                             '                         definition="Complex datatype voor de identificator van een AIM object volgens de bron van de identificator.",',
+                                             '                         usagenote="",',
+                                             '                         deprecated_version="")',
+                                             '        self.waarde = ComplexAttributen()',
+                                             '',
+                                             '        self.waarde.identificator = StringField(naam="identificator",',
+                                             '                                                label="identificator",',
+                                             '                                                uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcIdentificator.identificator",',
+                                             '                                                definition="Een groep van tekens om een AIM object te identificeren of te benoemen.",',
+                                             '                                                constraints="",',
+                                             '                                                usagenote="",',
+                                             '                                                deprecated_version="")',
+                                             '        """Een groep van tekens om een AIM object te identificeren of te benoemen."""',
+                                             '        self.identificator = self.waarde.identificator',
+                                             '',
+                                             '        self.waarde.toegekendDoor = StringField(naam="toegekendDoor",',
+                                             '                                                label="toegekend door",',
+                                             '                                                uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcIdentificator.toegekendDoor",',
+                                             '                                                definition="Gegevens van de organisatie die de toekenning deed.",',
+                                             '                                                constraints="",',
+                                             '                                                usagenote="",',
+                                             '                                                deprecated_version="")',
+                                             '         """Gegevens van de organisatie die de toekenning deed."""',
+                                             '        self.toegekendDoor = self.waarde.toegekendDoor']
 
 
 class TestOTLComplexDatatypeCreator(OTLComplexDatatypeCreator):
@@ -149,9 +142,9 @@ class OTLComplexDatatypeCreatorTests(unittest.TestCase):
         collector = OSLOCollector(mock)
         creator = OTLComplexDatatypeCreator(logger, collector)
         osloDatatypeComplex = OSLODatatypeComplex(name='',
-                                                      uri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrd',
-                                                      definition_nl='', label_nl='', usagenote_nl='',
-                                                      deprecated_version='')
+                                                  uri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcIdentificator',
+                                                  definition_nl='', label_nl='', usagenote_nl='',
+                                                  deprecated_version='')
 
         with self.assertRaises(ValueError) as exception_bad_name:
             creator.CreateBlockToWriteFromComplexTypes(osloDatatypeComplex)
@@ -166,58 +159,81 @@ class OTLComplexDatatypeCreatorTests(unittest.TestCase):
             creator.CreateBlockToWriteFromComplexTypes(bad_Complex)
         self.assertEqual(str(exception_bad_name.exception), "Input is not a OSLODatatypeComplex")
 
-    def test_ValidOSLODatatypeComplexButNoResult(self):
-        boolean_Complex = OSLODatatypeComplex(name="Boolean", uri="http://www.w3.org/2001/XMLSchema#boolean",
-                                                  definition_nl="Beschrijft een boolean volgens http://www.w3.org/2001/XMLSchema#boolean.",
-                                                  label_nl="Boolean", usagenote_nl="https://www.w3.org/TR/xmlschema-2/#boolean",
-                                                  deprecated_version="")
-        logger = NoneLogger()
-        collector = OSLOCollector(mock)
-        creator = OTLComplexDatatypeCreator(logger, collector)
-        blockToWrite = creator.CreateBlockToWriteFromComplexTypes(boolean_Complex)
-        self.assertIsNone(blockToWrite)
-
-    def test_KwantWrdInVoltOSLODatatypeComplex(self):
+    def test_getTypeFieldsFromListOfAttributes_EmptyList(self):
         logger = NoneLogger()
         collector = ComplexDatatypeOSLOCollector(mock)
         creator = OTLComplexDatatypeCreator(logger, collector)
-        KwantWrdInVolt = collector.FindComplexDatatypeByUri(
-            'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInVolt')
-        dataToWrite = creator.CreateBlockToWriteFromComplexTypes(KwantWrdInVolt)
+        listOfFields = creator.getTypeFieldsFromListOfAttributes([])
 
-        self.assertEqual(collector.expectedDataKwantWrdInVolt, dataToWrite)
+        self.assertEqual([], listOfFields)
 
-    def test_RALKleurOSLODatatypeComplex(self):
+    def test_getTypeFieldsFromListOfAttributes_ListWithOneStringType(self):
         logger = NoneLogger()
         collector = ComplexDatatypeOSLOCollector(mock)
         creator = OTLComplexDatatypeCreator(logger, collector)
-        DteKleurRAL = collector.FindComplexDatatypeByUri(
-            'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DteKleurRAL')
-        dataToWrite = creator.CreateBlockToWriteFromComplexTypes(DteKleurRAL)
+        listOfAttributes = [OSLODatatypeComplexAttribuut(name='',  label_nl='', definition_nl='', class_uri='', kardinaliteit_min='', kardinaliteit_max='', uri='',
+                                                         type='http://www.w3.org/2001/XMLSchema#string', overerving=0, constraints='', readonly=0, usagenote_nl='', deprecated_version='')]
+        listOfFields = creator.getTypeFieldsFromListOfAttributes(listOfAttributes)
 
-        self.assertEqual(collector.expectedDataRALKleur, dataToWrite)
+        self.assertEqual(['StringField'], listOfFields)
 
-    def test_WriteToFileOSLODatatypeComplex(self):
+    def test_getTypeFieldsFromListOfAttributes_ListWithTwoStringTypes(self):
         logger = NoneLogger()
         collector = ComplexDatatypeOSLOCollector(mock)
         creator = OTLComplexDatatypeCreator(logger, collector)
-        KwantWrdInVolt = collector.FindComplexDatatypeByUri(
-            'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInVolt')
-        dataToWrite = creator.CreateBlockToWriteFromComplexTypes(KwantWrdInVolt)
-        creator.writeToFile(KwantWrdInVolt, dataToWrite, '../../')
+        listOfAttributes = [OSLODatatypeComplexAttribuut(name='',  label_nl='', definition_nl='', class_uri='', kardinaliteit_min='', kardinaliteit_max='', uri='',
+                                                         type='http://www.w3.org/2001/XMLSchema#string', overerving=0, constraints='', readonly=0, usagenote_nl='', deprecated_version=''),
+                            OSLODatatypeComplexAttribuut(name='', label_nl='', definition_nl='', class_uri='',
+                                                         kardinaliteit_min='', kardinaliteit_max='', uri='',
+                                                         type='http://www.w3.org/2001/XMLSchema#string', overerving=0,
+                                                         constraints='', readonly=0, usagenote_nl='', deprecated_version='')
+                            ]
+        listOfFields = creator.getTypeFieldsFromListOfAttributes(listOfAttributes)
 
-        self.assertTrue(os.path.isfile('../../OTLModel/Datatypes/KwantWrdInVolt.py'))
+        self.assertEqual(['StringField'], listOfFields)
 
-    def test_getEenheidFromConstraintsEmptyString(self):
+    def test_getTypeFieldsFromListOfAttributes_ListWithStringAndBoolField(self):
         logger = NoneLogger()
         collector = ComplexDatatypeOSLOCollector(mock)
         creator = OTLComplexDatatypeCreator(logger, collector)
-        with self.assertRaises(ValueError):
-            creator.getEenheidFromConstraints('')
+        listOfAttributes = [OSLODatatypeComplexAttribuut(name='',  label_nl='', definition_nl='', class_uri='', kardinaliteit_min='', kardinaliteit_max='', uri='',
+                                                         type='http://www.w3.org/2001/XMLSchema#boolean', overerving=0, constraints='', readonly=0, usagenote_nl='', deprecated_version=''),
+                            OSLODatatypeComplexAttribuut(name='', label_nl='', definition_nl='', class_uri='',
+                                                         kardinaliteit_min='', kardinaliteit_max='', uri='',
+                                                         type='http://www.w3.org/2001/XMLSchema#string', overerving=0,
+                                                         constraints='', readonly=0, usagenote_nl='', deprecated_version='')
+                            ]
+        listOfFields = creator.getTypeFieldsFromListOfAttributes(listOfAttributes)
 
-    def test_getEenheidFromConstraintsVoltString(self):
+        self.assertEqual(['BooleanField', 'StringField'], listOfFields)
+
+    def test_DtcIdentificatorOSLODatatypeComplex(self):
         logger = NoneLogger()
         collector = ComplexDatatypeOSLOCollector(mock)
         creator = OTLComplexDatatypeCreator(logger, collector)
-        result = creator.getEenheidFromConstraints('"V"^^cdt:ucumunit')
-        expected = 'V'
+        dtcIdentificator = collector.FindComplexDatatypeByUri(
+            'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcIdentificator')
+        dataToWrite = creator.CreateBlockToWriteFromComplexTypes(dtcIdentificator)
+
+        self.assertEqual(collector.expectedDataDtcIdentificator, dataToWrite)
+
+    # def test_RALKleurOSLODatatypeComplex(self):
+    #     logger = NoneLogger()
+    #     collector = ComplexDatatypeOSLOCollector(mock)
+    #     creator = OTLComplexDatatypeCreator(logger, collector)
+    #     DteKleurRAL = collector.FindComplexDatatypeByUri(
+    #         'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DteKleurRAL')
+    #     dataToWrite = creator.CreateBlockToWriteFromComplexTypes(DteKleurRAL)
+    #
+    #     self.assertEqual(collector.expectedDataRALKleur, dataToWrite)
+    #
+    # def test_WriteToFileOSLODatatypeComplex(self):
+    #     logger = NoneLogger()
+    #     collector = ComplexDatatypeOSLOCollector(mock)
+    #     creator = OTLComplexDatatypeCreator(logger, collector)
+    #     KwantWrdInVolt = collector.FindComplexDatatypeByUri(
+    #         'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInVolt')
+    #     dataToWrite = creator.CreateBlockToWriteFromComplexTypes(KwantWrdInVolt)
+    #     creator.writeToFile(KwantWrdInVolt, dataToWrite, '../../')
+    #
+    #     self.assertTrue(os.path.isfile('../../OTLModel/Datatypes/KwantWrdInVolt.py'))

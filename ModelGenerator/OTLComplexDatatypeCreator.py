@@ -1,6 +1,7 @@
 from Loggers.AbstractLogger import AbstractLogger
 from Loggers.LogType import LogType
 from ModelGenerator.OSLOCollector import OSLOCollector
+from ModelGenerator.OSLODatatypeComplex import OSLODatatypeComplex
 from ModelGenerator.OSLODatatypePrimitive import OSLODatatypePrimitive
 
 
@@ -9,46 +10,60 @@ class OTLComplexDatatypeCreator:
         logger.log("Created an instance of OTLComplexDatatypeCreator", LogType.INFO)
         self.osloCollector = osloCollector
 
-    def CreateBlockToWriteFromPrimitiveTypes(self, osloDatatypePrimitive: OSLODatatypePrimitive):
-        if not isinstance(osloDatatypePrimitive, OSLODatatypePrimitive):
-            raise ValueError(f"Input is not a OSLODatatypePrimitive")
-        if osloDatatypePrimitive.uri == '' or not (osloDatatypePrimitive.uri.startswith('http://www.w3.org/200') or
-                                                   osloDatatypePrimitive.uri.startswith(
-                                                       'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#Dte')
-                                                   or osloDatatypePrimitive.uri.startswith(
-                    'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrd')):
-            raise ValueError(f"OSLODatatypePrimitive.uri is invalid. Value = '{osloDatatypePrimitive.uri}'")
-        if osloDatatypePrimitive.name == '':
-            raise ValueError(f"OSLODatatypePrimitive.name is invalid. Value = '{osloDatatypePrimitive.name}'")
+    def CreateBlockToWriteFromComplexTypes(self, osloDatatypeComplex: OSLODatatypeComplex):
+        if not isinstance(osloDatatypeComplex, OSLODatatypeComplex):
+            raise ValueError(f"Input is not a OSLODatatypeComplex")
 
-        if osloDatatypePrimitive.uri.startswith('https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrd'):
-            return self.CreateBlockToWriteFromPrimitiveTypesKwantWrd(osloDatatypePrimitive)
-        if osloDatatypePrimitive.uri.startswith('https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#Dte'):
-            return self.CreateBlockToWriteFromPrimitiveTypesDte(osloDatatypePrimitive)
+        if osloDatatypeComplex.uri == '' or not (osloDatatypeComplex.uri == 'https://schema.org/ContactPoint' or
+                                                 osloDatatypeComplex.uri == 'https://schema.org/OpeningHoursSpecification' or
+                                                 (osloDatatypeComplex.uri.startswith(
+                                                     'https://wegenenverkeer.data.vlaanderen.be/ns/') and 'Dtc' in osloDatatypeComplex.uri)):
+            raise ValueError(f"OSLODatatypeComplex.uri is invalid. Value = '{osloDatatypeComplex.uri}'")
 
-    def CreateBlockToWriteFromPrimitiveTypesDte(self, osloDatatypePrimitive: OSLODatatypePrimitive):
-        attributen = self.osloCollector.FindPrimitiveDatatypeAttributenByClassUri(osloDatatypePrimitive.uri)
+        if osloDatatypeComplex.name == '':
+            raise ValueError(f"OSLODatatypeComplex.name is invalid. Value = '{osloDatatypeComplex.name}'")
 
-        if len(attributen) != 1:
-            raise NotImplementedError("Assumed exactly 1 PrimitiveDatatypeAttribuut in Dte attributen")
+        if osloDatatypeComplex.uri.startswith('https://wegenenverkeer.data.vlaanderen.be/ns/') and 'Dtc' in osloDatatypeComplex.uri:
+            return self.CreateBlockToWriteFromComplexTypesDtc(osloDatatypeComplex)
+        else:
+            raise NotImplementedError
 
-        if int(attributen[0].kardinaliteit_max) > 1:
-            raise NotImplementedError("Found PrimitiveDatatypeAttribuut with kardinaliteit_max > 1")
+    def CreateBlockToWriteFromComplexTypesDtc(self, osloDatatypeComplex: OSLODatatypeComplex):
+        attributen = self.osloCollector.FindComplexDatatypeAttributenByClassUri(osloDatatypeComplex.uri)
 
-        datablock = ['from OTLModel.Datatypes.KwantWrd import KwantWrd']
+        if len(attributen) == 1:
+            raise NotImplementedError("Assumed more than 1 ComplexDatatypeAttribuut in Dtc attributen")
 
-        if attributen[0].readonly == 1:
+        if any(atr.kardinaliteit_max != "1" for atr in attributen):
+            raise NotImplementedError("Found ComplexDatatypeAttribuut with kardinaliteit_max != 1")
+
+        datablock = ['from OTLModel.Datatypes.ComplexField import ComplexField, ComplexAttributen']
+
+        if any(atr.readonly == 1 for atr in attributen):
             raise NotImplementedError("readonly property is assumed to be 0 on value fields")
 
-        typeField = self.getFieldFromTypeUri(attributen[0].type)
-        datablock.append(f'from OTLModel.Datatypes.{typeField} import {typeField}')
+        listOfFields = self.getTypeFieldsFromListOfAttributes(attributen)
+        for typeField in listOfFields:
+            datablock.append(f'from OTLModel.Datatypes.{typeField} import {typeField}')
+
         datablock.append('')
         datablock.append('')
         datablock.append(f'# Generated with {self.__class__.__name__}')
-        datablock.append(f'class {osloDatatypePrimitive.name}(KwantWrd):')
-        datablock.append(f'    """{osloDatatypePrimitive.definition_nl}"""')
+        datablock.append(f'class {osloDatatypeComplex.name}(ComplexField):')
+        datablock.append(f'    """{osloDatatypeComplex.definition_nl}"""')
         datablock.append('')
-        datablock.append('    def __init__(self, waarde=None):')
+        datablock.append('    def __init__(self):')
+        datablock.append(f'        super().__init__(naam="{osloDatatypeComplex.name}",')
+        datablock.append(f'                         label="{osloDatatypeComplex.label_nl}",')
+        datablock.append(f'                         uri="{osloDatatypeComplex.uri}",')
+        datablock.append(f'                         definition="{osloDatatypeComplex.definition_nl}",')
+        datablock.append(f'                         usagenote="{osloDatatypeComplex.usagenote_nl}",')
+        datablock.append(f'                         deprecated_version="{osloDatatypeComplex.deprecated_version}")')
+        datablock.append('        self.waarde = ComplexAttributen()')
+        datablock.append('')
+
+        # TODO for each attribute...
+
         datablock.append(f'        waardeVeld = {typeField}(naam="{attributen[0].name}",')
         datablock.append(f'                                 label="{attributen[0].label_nl}",')
         datablock.append(f'                                 uri="{attributen[0].uri}",')
@@ -58,70 +73,6 @@ class OTLComplexDatatypeCreator:
         datablock.append(f'                                 deprecated_version="{attributen[0].deprecated_version}")')
         datablock.append(f'        """{attributen[0].definition_nl}"""')
         datablock.append('')
-        datablock.append(f'        super().__init__(naam="{osloDatatypePrimitive.name}",')
-        datablock.append(f'                         label="{osloDatatypePrimitive.label_nl}",')
-        datablock.append(f'                         uri="{osloDatatypePrimitive.uri}",')
-        datablock.append(f'                         definition="{osloDatatypePrimitive.definition_nl}",')
-        datablock.append(f'                         usagenote="{osloDatatypePrimitive.usagenote_nl}",')
-        datablock.append(f'                         deprecated_version="{osloDatatypePrimitive.deprecated_version}",')
-        datablock.append(f'                         waardeVeld=waardeVeld,')
-        datablock.append(f'                         eenheidVeld=None,')
-        datablock.append(f'                         waarde=waarde)')
-
-        return datablock
-
-    def CreateBlockToWriteFromPrimitiveTypesKwantWrd(self, osloDatatypePrimitive: OSLODatatypePrimitive):
-        attributen = self.osloCollector.FindPrimitiveDatatypeAttributenByClassUri(osloDatatypePrimitive.uri)
-
-        if any(int(a.kardinaliteit_max) > 1 for a in attributen):
-            raise NotImplementedError("Found PrimitiveDatatypeAttribuut with kardinaliteit_max > 1")
-
-        datablock = ['from OTLModel.Datatypes.KwantWrd import KwantWrd']
-        if 'Literal' not in attributen[0].type:
-            raise NotImplementedError(
-                f'{osloDatatypePrimitive.uri}: the first attribute is not the Literal for this DatatypePrimitive')
-        if attributen[0].readonly == 0 or attributen[1].readonly == 1:
-            raise NotImplementedError("readonly property is assumed to be 1 on Literal and 0 on value fields")
-
-        datablock.append('from OTLModel.Datatypes.LiteralField import LiteralField')
-        typeField = self.getFieldFromTypeUri(attributen[1].type)
-        datablock.append(f'from OTLModel.Datatypes.{typeField} import {typeField}')
-        datablock.append('')
-        datablock.append('')
-        datablock.append(f'# Generated with {self.__class__.__name__}')
-        datablock.append(f'class {osloDatatypePrimitive.name}(KwantWrd):')
-        datablock.append(f'    """{osloDatatypePrimitive.definition_nl}"""')
-        datablock.append('')
-        datablock.append('    def __init__(self, waarde=None):')
-        datablock.append(f'        eenheid = LiteralField(naam="{attributen[0].name}",')
-        datablock.append(f'                               label="{attributen[0].label_nl}",')
-        datablock.append(f'                               uri="{attributen[0].uri}",')
-        datablock.append(f'                               definition="{attributen[0].definition_nl}",')
-        datablock.append(f'                               constraints=\'{attributen[0].constraints}\',')
-        datablock.append(f'                               usagenote=\'{attributen[0].usagenote_nl}\',')
-        datablock.append(f'                               deprecated_version="{attributen[0].deprecated_version}",')
-        datablock.append(
-            f'                               readonlyValue="{self.getEenheidFromConstraints(attributen[0].constraints)}")')
-        datablock.append(f'        """{attributen[0].definition_nl}"""')
-        datablock.append('')
-        datablock.append(f'        waardeVeld = {typeField}(naam="{attributen[1].name}",')
-        datablock.append(f'                                       label="{attributen[1].label_nl}",')
-        datablock.append(f'                                       uri="{attributen[1].uri}",')
-        datablock.append(f'                                       definition="{attributen[1].definition_nl}",')
-        datablock.append(f'                                       constraints=\'{attributen[1].constraints}\',')
-        datablock.append(f'                                       usagenote=\'{attributen[1].usagenote_nl}\',')
-        datablock.append(f'                                       deprecated_version="{attributen[1].deprecated_version}")')
-        datablock.append(f'        """{attributen[1].definition_nl}"""')
-        datablock.append('')
-        datablock.append(f'        super().__init__(naam="{osloDatatypePrimitive.name}",')
-        datablock.append(f'                         label="{osloDatatypePrimitive.label_nl}",')
-        datablock.append(f'                         uri="{osloDatatypePrimitive.uri}",')
-        datablock.append(f'                         definition="{osloDatatypePrimitive.definition_nl}",')
-        datablock.append(f'                         usagenote="{osloDatatypePrimitive.usagenote_nl}",')
-        datablock.append(f'                         deprecated_version="{osloDatatypePrimitive.deprecated_version}",')
-        datablock.append(f'                         waardeVeld=waardeVeld,')
-        datablock.append(f'                         eenheidVeld=eenheid,')
-        datablock.append(f'                         waarde=waarde)')
 
         return datablock
 
@@ -139,6 +90,8 @@ class OTLComplexDatatypeCreator:
                 return 'DecimalFloatField'
             case 'http://www.w3.org/2001/XMLSchema#string':
                 return 'StringField'
+            case 'http://www.w3.org/2001/XMLSchema#boolean':
+                return 'BooleanField'
             case 'http://www.w3.org/2001/XMLSchema#nonNegativeInteger':
                 return 'NonNegIntField'
         raise NotImplemented('not supported type in OTLPrimitiveDatatypeCreator.getFieldFromTypeUri()')
@@ -150,3 +103,11 @@ class OTLComplexDatatypeCreator:
         for line in dataToWrite:
             file.write(line + "\n")
         file.close()
+
+    def getTypeFieldsFromListOfAttributes(self, attributen):
+        if len(attributen) == 0:
+            return []
+        select_types_list = list(map(lambda a: self.getFieldFromTypeUri(a.type), attributen))
+        distinct_types_list = list(set(select_types_list))
+        sorted_list = sorted(distinct_types_list, key=lambda t: t)
+        return sorted_list

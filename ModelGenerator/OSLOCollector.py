@@ -1,6 +1,7 @@
 from typing import List
 
 from ModelGenerator.OSLOClass import OSLOClass
+from ModelGenerator.OSLODatatypeComplexAttribuut import OSLODatatypeComplexAttribuut
 from ModelGenerator.OSLODatatypePrimitiveAttribuut import OSLODatatypePrimitiveAttribuut
 
 
@@ -12,6 +13,8 @@ class OSLOCollector:
         self.classes = []
         self.primitiveDatatypes = []
         self.primitiveDatatypeAttributen = []
+        self.complexDatatypes = []
+        self.complexDatatypeAttributen = []
 
     def collect(self):
         self.classes = self.OSLOInMemoryCreator.getAllClasses()
@@ -19,6 +22,8 @@ class OSLOCollector:
         self.inheritances = self.OSLOInMemoryCreator.getInheritances()
         self.primitiveDatatypes = self.OSLOInMemoryCreator.getAllPrimitiveDatatypes()
         self.primitiveDatatypeAttributen = self.OSLOInMemoryCreator.getAllPrimitiveDatatypeAttributen()
+        self.complexDatatypes = self.OSLOInMemoryCreator.getAllComplexDatatypes()
+        self.complexDatatypeAttributen = self.OSLOInMemoryCreator.getAllComplexDatatypeAttributen()
 
     def FindAttributesByClass(self, osloclass: OSLOClass):
         return list(filter(lambda c: c.class_uri == osloclass.uri, self.attributes))
@@ -31,4 +36,11 @@ class OSLOCollector:
 
     def FindPrimitiveDatatypeAttributenByClassUri(self, class_uri: str) -> list[OSLODatatypePrimitiveAttribuut]:
         return sorted(list(filter(lambda p: p.class_uri == class_uri, self.primitiveDatatypeAttributen)), key=lambda p: p.uri)
+
+    def FindComplexDatatypeByUri(self, uri):
+        return next(p for p in self.complexDatatypes if p.uri == uri)
+
+    def FindComplexDatatypeAttributenByClassUri(self, class_uri: str) -> list[OSLODatatypeComplexAttribuut]:
+        return sorted(list(filter(lambda p: p.class_uri == class_uri, self.complexDatatypeAttributen)), key=lambda p: p.uri)
+
 

@@ -11,7 +11,7 @@ from UnitTests.RelatieValidatorTests import GeldigeRelatieLijstTestInstance
 
 class OtlAssetJSONEncoderTests(unittest.TestCase):
     def test_JsonEncode(self):
-        # add _geldige_relaties on Aftakking type
+        # add _geldige_relaties on Aftakking fieldType
         geldigeRelatieLijst = GeldigeRelatieLijstTestInstance()
         validator = RelatieValidator(geldigeRelatieLijst)
 

@@ -1,11 +1,12 @@
 from Loggers.AbstractLogger import AbstractLogger
 from Loggers.LogType import LogType
+from ModelGenerator.AbstractDatatypeCreator import AbstractDatatypeCreator
 from ModelGenerator.OSLOCollector import OSLOCollector
 from ModelGenerator.OSLODatatypeComplex import OSLODatatypeComplex
 from ModelGenerator.OSLODatatypePrimitive import OSLODatatypePrimitive
 
 
-class OTLComplexDatatypeCreator:
+class OTLComplexDatatypeCreator(AbstractDatatypeCreator):
     def __init__(self, logger: AbstractLogger, osloCollector: OSLOCollector):
         logger.log("Created an instance of OTLComplexDatatypeCreator", LogType.INFO)
         self.osloCollector = osloCollector
@@ -62,17 +63,21 @@ class OTLComplexDatatypeCreator:
         datablock.append('        self.waarde = ComplexAttributen()')
         datablock.append('')
 
-        # TODO for each attribute...
+        for attribuut in attributen:
+            whitespace = self.getWhiteSpaceEquivalent(f'        self.waarde.{attribuut.name} = {self.getFieldFromTypeUri(attribuut.type)}(')
+            datablock.append(f'        self.waarde.{attribuut.name} = {self.getFieldFromTypeUri(attribuut.type)}(naam="{attribuut.name}",')
+            datablock.append(f'{whitespace}label="{attribuut.label_nl}",')
+            datablock.append(f'{whitespace}uri="{attribuut.uri}",')
+            datablock.append(f'{whitespace}definition="{attribuut.definition_nl}",')
+            datablock.append(f'{whitespace}constraints="{attribuut.constraints}",')
+            datablock.append(f'{whitespace}usagenote="{attribuut.usagenote_nl}",')
+            datablock.append(f'{whitespace}deprecated_version="{attribuut.deprecated_version}")')
+            datablock.append(f'        """{attribuut.definition_nl}"""')
+            datablock.append(f'        self.{attribuut.name} = self.waarde.{attribuut.name}')
+            datablock.append('')
 
-        datablock.append(f'        waardeVeld = {typeField}(naam="{attributen[0].name}",')
-        datablock.append(f'                                 label="{attributen[0].label_nl}",')
-        datablock.append(f'                                 uri="{attributen[0].uri}",')
-        datablock.append(f'                                 definition="{attributen[0].definition_nl}",')
-        datablock.append(f'                                 constraints=\'{attributen[0].constraints}\',')
-        datablock.append(f'                                 usagenote=\'{attributen[0].usagenote_nl}\',')
-        datablock.append(f'                                 deprecated_version="{attributen[0].deprecated_version}")')
-        datablock.append(f'        """{attributen[0].definition_nl}"""')
-        datablock.append('')
+        if datablock[-1] == '':
+            datablock.pop()
 
         return datablock
 
@@ -84,30 +89,6 @@ class OTLComplexDatatypeCreator:
         return split_text[1]
 
     @staticmethod
-    def getFieldFromTypeUri(type: str):
-        match type:
-            case 'http://www.w3.org/2001/XMLSchema#decimal':
-                return 'DecimalFloatField'
-            case 'http://www.w3.org/2001/XMLSchema#string':
-                return 'StringField'
-            case 'http://www.w3.org/2001/XMLSchema#boolean':
-                return 'BooleanField'
-            case 'http://www.w3.org/2001/XMLSchema#nonNegativeInteger':
-                return 'NonNegIntField'
-        raise NotImplemented('not supported type in OTLPrimitiveDatatypeCreator.getFieldFromTypeUri()')
+    def getWhiteSpaceEquivalent(string):
+        return ''.join(' ' * len(string))
 
-    def writeToFile(self, KwantWrd: OSLODatatypePrimitive, dataToWrite: list[str], relativePath=''):
-        path = f"{relativePath}OTLModel/Datatypes/{KwantWrd.name}.py"
-
-        file = open(path, "w")
-        for line in dataToWrite:
-            file.write(line + "\n")
-        file.close()
-
-    def getTypeFieldsFromListOfAttributes(self, attributen):
-        if len(attributen) == 0:
-            return []
-        select_types_list = list(map(lambda a: self.getFieldFromTypeUri(a.type), attributen))
-        distinct_types_list = list(set(select_types_list))
-        sorted_list = sorted(distinct_types_list, key=lambda t: t)
-        return sorted_list

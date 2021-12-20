@@ -30,38 +30,40 @@ class ComplexDatatypeOSLOCollector(OSLOCollector):
                                 deprecated_version='')
         ]
         self.complexDatatypeAttributen = [
-            OSLODatatypeComplexAttribuut('bus','bus','Een nummer dat de postbus aanduidt.','https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAdres','1','1','https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAdres.bus','http://www.w3.org/2001/XMLSchema#string',0,'',0,'',''),
-        OSLODatatypeComplexAttribuut('gemeente', 'gemeente', 'De bestuurlijke eenheid waarin het adres gelegen is.',
-                                     'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAdres', '1', '1',
-                                     'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAdres.gemeente',
-                                     'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KlAlgGemeente', 0, '',
-                                     0, '', ''),
-        OSLODatatypeComplexAttribuut('huisnummer', 'huisnummer',
-                                     'Een nummer dat door de gemeente aan bv. een huis wordt toegekend.',
-                                     'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAdres', '1', '1',
-                                     'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAdres.huisnummer',
-                                     'http://www.w3.org/2001/XMLSchema#string', 0, '', 0, '', ''),
-        OSLODatatypeComplexAttribuut('postcode', 'postcode', 'Een korte reeks tekens die in het postadres wordt opgenomen.',
-                                     'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAdres', '1', '1',
-                                     'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAdres.postcode',
-                                     'http://www.w3.org/2001/XMLSchema#string', 0, '', 0, '', ''),
-        OSLODatatypeComplexAttribuut('provincie', 'provincie', 'Het deelgebied waarin het adres gelegen is.',
-                                     'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAdres', '1', '1',
-                                     'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAdres.provincie',
-                                     'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KlAlgProvincie', 0, '',
-                                     0, '', ''),
-        OSLODatatypeComplexAttribuut('straatnaam', 'straatnaam', 'De naam van de straat.',
-                                     'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAdres', '1', '1',
-                                     'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAdres.straatnaam',
-                                     'http://www.w3.org/2001/XMLSchema#string', 0, '', 0, '',''),
-        OSLODatatypeComplexAttribuut('identificator', 'identificator', 'Een groep van tekens om een AIM object te identificeren of te benoemen.',
-                                     'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcIdentificator', '1', '1',
-                                     'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcIdentificator.identificator',
-                                     'http://www.w3.org/2001/XMLSchema#string', 0, '', 0, '', ''),
-        OSLODatatypeComplexAttribuut('toegekendDoor', 'toegekend door', 'Gegevens van de organisatie die de toekenning deed.',
-                                     'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcIdentificator', '1', '1',
-                                     'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcIdentificator.toegekendDoor',
-                                     'http://www.w3.org/2001/XMLSchema#string', 0, '', 0, '', '')
+            OSLODatatypeComplexAttribuut('bus', 'bus', 'Een nummer dat de postbus aanduidt.',
+                                         'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAdres', '1', '1',
+                                         'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAdres.bus',
+                                         'http://www.w3.org/2001/XMLSchema#string', 0, '', 0, '', ''),
+            OSLODatatypeComplexAttribuut('gemeente', 'gemeente', 'De bestuurlijke eenheid waarin het adres gelegen is.',
+                                         'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAdres', '1', '1',
+                                         'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAdres.gemeente',
+                                         'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KlAlgGemeente', 0, '',
+                                         0, '', ''),
+            OSLODatatypeComplexAttribuut('huisnummer', 'huisnummer',
+                                         'Een nummer dat door de gemeente aan bv. een huis wordt toegekend.',
+                                         'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAdres', '1', '1',
+                                         'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAdres.huisnummer',
+                                         'http://www.w3.org/2001/XMLSchema#string', 0, '', 0, '', ''),
+            OSLODatatypeComplexAttribuut('postcode', 'postcode', 'Een korte reeks tekens die in het postadres wordt opgenomen.',
+                                         'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAdres', '1', '1',
+                                         'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAdres.postcode',
+                                         'http://www.w3.org/2001/XMLSchema#string', 0, '', 0, '', ''),
+            # provincie weggehaald
+            OSLODatatypeComplexAttribuut('straatnaam', 'straatnaam', 'De naam van de straat.',
+                                         'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAdres', '1', '1',
+                                         'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAdres.straatnaam',
+                                         'http://www.w3.org/2001/XMLSchema#string', 0, '', 0, '', ''),
+            OSLODatatypeComplexAttribuut('identificator', 'identificator',
+                                         'Een groep van tekens om een AIM object te identificeren of te benoemen.',
+                                         'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcIdentificator',
+                                         '1', '1',
+                                         'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcIdentificator.identificator',
+                                         'http://www.w3.org/2001/XMLSchema#string', 0, '', 0, '', ''),
+            OSLODatatypeComplexAttribuut('toegekendDoor', 'toegekend door', 'Gegevens van de organisatie die de toekenning deed.',
+                                         'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcIdentificator',
+                                         '1', '1',
+                                         'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcIdentificator.toegekendDoor',
+                                         'http://www.w3.org/2001/XMLSchema#string', 0, '', 0, '', '')
         ]
 
         self.expectedDataDtcIdentificator = ['from OTLModel.Datatypes.ComplexField import ComplexField, ComplexAttributen',
@@ -98,7 +100,7 @@ class ComplexDatatypeOSLOCollector(OSLOCollector):
                                              '                                                constraints="",',
                                              '                                                usagenote="",',
                                              '                                                deprecated_version="")',
-                                             '         """Gegevens van de organisatie die de toekenning deed."""',
+                                             '        """Gegevens van de organisatie die de toekenning deed."""',
                                              '        self.toegekendDoor = self.waarde.toegekendDoor']
 
 
@@ -120,7 +122,7 @@ class OTLComplexDatatypeCreatorTests(unittest.TestCase):
         collector = OSLOCollector(mock)
         creator = OTLComplexDatatypeCreator(logger, collector)
         osloDatatypeComplex = OSLODatatypeComplex(name='name', uri='', definition_nl='', label_nl='', usagenote_nl='',
-                                                      deprecated_version='')
+                                                  deprecated_version='')
 
         with self.assertRaises(ValueError) as exception_empty_uri:
             creator.CreateBlockToWriteFromComplexTypes(osloDatatypeComplex)
@@ -131,7 +133,7 @@ class OTLComplexDatatypeCreatorTests(unittest.TestCase):
         collector = OSLOCollector(mock)
         creator = OTLComplexDatatypeCreator(logger, collector)
         osloDatatypeComplex = OSLODatatypeComplex(name='name', uri='Bad uri', definition_nl='', label_nl='', usagenote_nl='',
-                                                      deprecated_version='')
+                                                  deprecated_version='')
 
         with self.assertRaises(ValueError) as exception_bad_uri:
             creator.CreateBlockToWriteFromComplexTypes(osloDatatypeComplex)
@@ -171,8 +173,11 @@ class OTLComplexDatatypeCreatorTests(unittest.TestCase):
         logger = NoneLogger()
         collector = ComplexDatatypeOSLOCollector(mock)
         creator = OTLComplexDatatypeCreator(logger, collector)
-        listOfAttributes = [OSLODatatypeComplexAttribuut(name='',  label_nl='', definition_nl='', class_uri='', kardinaliteit_min='', kardinaliteit_max='', uri='',
-                                                         type='http://www.w3.org/2001/XMLSchema#string', overerving=0, constraints='', readonly=0, usagenote_nl='', deprecated_version='')]
+        listOfAttributes = [
+            OSLODatatypeComplexAttribuut(name='', label_nl='', definition_nl='', class_uri='', kardinaliteit_min='',
+                                         kardinaliteit_max='', uri='',
+                                         type='http://www.w3.org/2001/XMLSchema#string', overerving=0, constraints='', readonly=0,
+                                         usagenote_nl='', deprecated_version='')]
         listOfFields = creator.getTypeFieldsFromListOfAttributes(listOfAttributes)
 
         self.assertEqual(['StringField'], listOfFields)
@@ -181,13 +186,16 @@ class OTLComplexDatatypeCreatorTests(unittest.TestCase):
         logger = NoneLogger()
         collector = ComplexDatatypeOSLOCollector(mock)
         creator = OTLComplexDatatypeCreator(logger, collector)
-        listOfAttributes = [OSLODatatypeComplexAttribuut(name='',  label_nl='', definition_nl='', class_uri='', kardinaliteit_min='', kardinaliteit_max='', uri='',
-                                                         type='http://www.w3.org/2001/XMLSchema#string', overerving=0, constraints='', readonly=0, usagenote_nl='', deprecated_version=''),
-                            OSLODatatypeComplexAttribuut(name='', label_nl='', definition_nl='', class_uri='',
-                                                         kardinaliteit_min='', kardinaliteit_max='', uri='',
-                                                         type='http://www.w3.org/2001/XMLSchema#string', overerving=0,
-                                                         constraints='', readonly=0, usagenote_nl='', deprecated_version='')
-                            ]
+        listOfAttributes = [
+            OSLODatatypeComplexAttribuut(name='', label_nl='', definition_nl='', class_uri='', kardinaliteit_min='',
+                                         kardinaliteit_max='', uri='',
+                                         type='http://www.w3.org/2001/XMLSchema#string', overerving=0, constraints='', readonly=0,
+                                         usagenote_nl='', deprecated_version=''),
+            OSLODatatypeComplexAttribuut(name='', label_nl='', definition_nl='', class_uri='',
+                                         kardinaliteit_min='', kardinaliteit_max='', uri='',
+                                         type='http://www.w3.org/2001/XMLSchema#string', overerving=0,
+                                         constraints='', readonly=0, usagenote_nl='', deprecated_version='')
+            ]
         listOfFields = creator.getTypeFieldsFromListOfAttributes(listOfAttributes)
 
         self.assertEqual(['StringField'], listOfFields)
@@ -196,16 +204,40 @@ class OTLComplexDatatypeCreatorTests(unittest.TestCase):
         logger = NoneLogger()
         collector = ComplexDatatypeOSLOCollector(mock)
         creator = OTLComplexDatatypeCreator(logger, collector)
-        listOfAttributes = [OSLODatatypeComplexAttribuut(name='',  label_nl='', definition_nl='', class_uri='', kardinaliteit_min='', kardinaliteit_max='', uri='',
-                                                         type='http://www.w3.org/2001/XMLSchema#boolean', overerving=0, constraints='', readonly=0, usagenote_nl='', deprecated_version=''),
-                            OSLODatatypeComplexAttribuut(name='', label_nl='', definition_nl='', class_uri='',
-                                                         kardinaliteit_min='', kardinaliteit_max='', uri='',
-                                                         type='http://www.w3.org/2001/XMLSchema#string', overerving=0,
-                                                         constraints='', readonly=0, usagenote_nl='', deprecated_version='')
-                            ]
+        listOfAttributes = [
+            OSLODatatypeComplexAttribuut(name='', label_nl='', definition_nl='', class_uri='', kardinaliteit_min='',
+                                         kardinaliteit_max='', uri='',
+                                         type='http://www.w3.org/2001/XMLSchema#boolean', overerving=0, constraints='',
+                                         readonly=0, usagenote_nl='', deprecated_version=''),
+            OSLODatatypeComplexAttribuut(name='', label_nl='', definition_nl='', class_uri='',
+                                         kardinaliteit_min='', kardinaliteit_max='', uri='',
+                                         type='http://www.w3.org/2001/XMLSchema#string', overerving=0,
+                                         constraints='', readonly=0, usagenote_nl='', deprecated_version='')
+            ]
         listOfFields = creator.getTypeFieldsFromListOfAttributes(listOfAttributes)
 
         self.assertEqual(['BooleanField', 'StringField'], listOfFields)
+
+    def test_getWhiteSpaceEquivalent_EmptyString(self):
+        logger = NoneLogger()
+        collector = ComplexDatatypeOSLOCollector(mock)
+        creator = OTLComplexDatatypeCreator(logger, collector)
+        result = creator.getWhiteSpaceEquivalent('')
+        self.assertEqual('', result)
+
+    def test_getWhiteSpaceEquivalent_StringOf1Length(self):
+        logger = NoneLogger()
+        collector = ComplexDatatypeOSLOCollector(mock)
+        creator = OTLComplexDatatypeCreator(logger, collector)
+        result = creator.getWhiteSpaceEquivalent('a')
+        self.assertEqual(' ', result)
+
+    def test_getWhiteSpaceEquivalent_StringOf2Length(self):
+        logger = NoneLogger()
+        collector = ComplexDatatypeOSLOCollector(mock)
+        creator = OTLComplexDatatypeCreator(logger, collector)
+        result = creator.getWhiteSpaceEquivalent('aa')
+        self.assertEqual('  ', result)
 
     def test_DtcIdentificatorOSLODatatypeComplex(self):
         logger = NoneLogger()

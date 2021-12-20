@@ -8,7 +8,7 @@ class KwantWrd(OTLField):
                  eenheidVeld, readonly=False, readonlyValue=None, waarde=None):
         self.waardeVeld = waardeVeld
         if not(eenheidVeld is None or isinstance(eenheidVeld, LiteralField)):
-            raise TypeError("eenheidVeld is not the correct type (LiteralField or None)")
+            raise TypeError("eenheidVeld is not the correct fieldType (LiteralField or None)")
         self.eenheidVeld = eenheidVeld
         super().__init__(naam, label, uri, definition, usagenote, deprecated_version, readonly,
                          readonlyValue)

@@ -1,6 +1,6 @@
 from OTLModel.Datatypes.KwantWrd import KwantWrd
 from OTLModel.Datatypes.LiteralField import LiteralField
-from OTLModel.Datatypes.NonNegIntField import NonNegIntField
+from OTLModel.Datatypes.NonNegIntegerField import NonNegIntegerField
 
 
 # Generated with OTLPrimitiveDatatypeCreator
@@ -18,13 +18,13 @@ class KwantWrdInJaar(KwantWrd):
                                readonlyValue="a")
         """De standaard eenheid bij dit datatype is uitgedrukt in jaar."""
 
-        waardeVeld = NonNegIntField(naam="waarde",
-                                       label="waarde",
-                                       uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInJaar.waarde",
-                                       definition="Bevat een getal die bij het datatype hoort.",
-                                       constraints='',
-                                       usagenote='',
-                                       deprecated_version="")
+        waardeVeld = NonNegIntegerField(naam="waarde",
+                                        label="waarde",
+                                        uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInJaar.waarde",
+                                        definition="Bevat een getal die bij het datatype hoort.",
+                                        constraints='',
+                                        usagenote='',
+                                        deprecated_version="")
         """Bevat een getal die bij het datatype hoort."""
 
         super().__init__(naam="KwantWrdInJaar",

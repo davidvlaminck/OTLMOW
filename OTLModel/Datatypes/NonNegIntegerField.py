@@ -1,15 +1,15 @@
 import decimal
 
-from OTLModel.Datatypes.IntField import IntField
+from OTLModel.Datatypes.IntegerField import IntegerField
 
 
-class NonNegIntField(IntField):
+class NonNegIntegerField(IntegerField):
     def __init__(self, naam, label, uri, definition, constraints, usagenote, deprecated_version, readonly=False,
                  readonlyValue=None):
         super().__init__(naam, label, uri, definition, constraints, usagenote, deprecated_version, readonly, readonlyValue)
 
     def __setattr__(self, name, value):
-        if type(self) == NonNegIntField:
+        if type(self) == NonNegIntegerField:
             if name == "waarde" and self.readonly and value is not None:
                 raise AttributeError(f"can't set the value of a readonly attribute")
             if name == "waarde":

@@ -1,10 +1,11 @@
 from Loggers.AbstractLogger import AbstractLogger
 from Loggers.LogType import LogType
+from ModelGenerator.AbstractDatatypeCreator import AbstractDatatypeCreator
 from ModelGenerator.OSLOCollector import OSLOCollector
 from ModelGenerator.OSLODatatypePrimitive import OSLODatatypePrimitive
 
 
-class OTLPrimitiveDatatypeCreator:
+class OTLPrimitiveDatatypeCreator(AbstractDatatypeCreator):
     def __init__(self, logger: AbstractLogger, osloCollector: OSLOCollector):
         logger.log("Created an instance of OTLPrimitiveDatatypeCreator", LogType.INFO)
         self.osloCollector = osloCollector
@@ -131,22 +132,3 @@ class OTLPrimitiveDatatypeCreator:
             raise ValueError
         split_text = constraints.split('"')
         return split_text[1]
-
-    @staticmethod
-    def getFieldFromTypeUri(type: str):
-        match type:
-            case 'http://www.w3.org/2001/XMLSchema#decimal':
-                return 'DecimalFloatField'
-            case 'http://www.w3.org/2001/XMLSchema#string':
-                return 'StringField'
-            case 'http://www.w3.org/2001/XMLSchema#nonNegativeInteger':
-                return 'NonNegIntField'
-        raise NotImplemented('not supported type in OTLPrimitiveDatatypeCreator.getFieldFromTypeUri()')
-
-    def writeToFile(self, KwantWrd: OSLODatatypePrimitive, dataToWrite: list[str], relativePath=''):
-        path = f"{relativePath}OTLModel/Datatypes/{KwantWrd.name}.py"
-
-        file = open(path, "w")
-        for line in dataToWrite:
-            file.write(line + "\n")
-        file.close()

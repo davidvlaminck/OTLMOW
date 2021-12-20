@@ -4,9 +4,9 @@ from datetime import datetime, time
 from OTLModel.Datatypes.BooleanField import BooleanField
 from OTLModel.Datatypes.DateField import DateField
 from OTLModel.Datatypes.DateTimeField import DateTimeField
-from OTLModel.Datatypes.IntField import IntField
+from OTLModel.Datatypes.IntegerField import IntegerField
 from OTLModel.Datatypes.LiteralField import LiteralField
-from OTLModel.Datatypes.NonNegIntField import NonNegIntField
+from OTLModel.Datatypes.NonNegIntegerField import NonNegIntegerField
 from OTLModel.Datatypes.OTLField import OTLField
 from OTLModel.Datatypes.StringField import StringField
 from OTLModel.Datatypes.TimeField import TimeField
@@ -22,13 +22,13 @@ class TestInstance:
                                   definition="definitie StringField", constraints="", usagenote="", deprecated_version="")
         """doc for string"""
 
-        self.int = IntField(naam="IntField", label="IntField", uri="IntField", definition="definitie IntField", constraints="",
-                            usagenote="", deprecated_version="")
+        self.int = IntegerField(naam="IntegerField", label="IntegerField", uri="IntegerField", definition="definitie IntegerField", constraints="",
+                                usagenote="", deprecated_version="")
         """doc for int"""
 
-        self.nonNegInt = NonNegIntField(naam="NonNegIntField", label="NonNegIntField", uri="NonNegIntField",
-                                        definition="definitie NonNegIntField", constraints="", usagenote="",
-                                        deprecated_version="")
+        self.nonNegInt = NonNegIntegerField(naam="NonNegIntegerField", label="NonNegIntegerField", uri="NonNegIntegerField",
+                                            definition="definitie NonNegIntegerField", constraints="", usagenote="",
+                                            deprecated_version="")
         """doc for nonNegInt"""
 
         self.date = DateField(naam="DateField", label="DateField", uri="DateField",
@@ -104,9 +104,9 @@ class PrimitiveTypeTests(unittest.TestCase):
     def test_intTests(self):
         instance = TestInstance()
 
-        self.assertTrue(instance.int.uri == "IntField")
+        self.assertTrue(instance.int.uri == "IntegerField")
         self.assertIsNone(instance.int.waarde)
-        self.assertTrue(isinstance(instance.int, IntField))
+        self.assertTrue(isinstance(instance.int, IntegerField))
         self.assertTrue(isinstance(instance.int, OTLField))
 
         instance.int.waarde = 1
@@ -124,9 +124,9 @@ class PrimitiveTypeTests(unittest.TestCase):
     def test_nonNegIntTests(self):
         instance = TestInstance()
 
-        self.assertTrue(instance.nonNegInt.uri == "NonNegIntField")
+        self.assertTrue(instance.nonNegInt.uri == "NonNegIntegerField")
         self.assertIsNone(instance.nonNegInt.waarde)
-        self.assertTrue(isinstance(instance.nonNegInt, IntField))
+        self.assertTrue(isinstance(instance.nonNegInt, IntegerField))
         self.assertTrue(isinstance(instance.nonNegInt, OTLField))
 
         instance.nonNegInt.waarde = 1

@@ -24,7 +24,7 @@ class OSLOInMemoryCreatorTests(unittest.TestCase):
             return [['Naampad object', 'NaampadObject',
                      'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#NaampadObject'
                         , 'Abstracte als de basisklasse voor elk OTL object dat gebruik maakt van een naampad.', '', 1, '']]
-        elif query == 'SELECT name, label_nl, definition_nl, class_uri, kardinaliteit_min, kardinaliteit_max, uri, type, ' \
+        elif query == 'SELECT name, label_nl, definition_nl, class_uri, kardinaliteit_min, kardinaliteit_max, uri, fieldType, ' \
                       'overerving, constraints, readonly, usagenote_nl, deprecated_version FROM OSLOAttributen WHERE ' \
                       'class_uri=:uriclass AND overerving = 0' \
                 and arg_dict[
@@ -36,7 +36,7 @@ class OSLOInMemoryCreatorTests(unittest.TestCase):
                 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#NaampadObject.naampad',
                 'http://www.w3.org/2001/XMLSchema#string', 0, '', 0, '', ''
             ]]
-        elif query == 'SELECT name, label_nl, definition_nl, class_uri, kardinaliteit_min, kardinaliteit_max, uri, type, ' \
+        elif query == 'SELECT name, label_nl, definition_nl, class_uri, kardinaliteit_min, kardinaliteit_max, uri, fieldType, ' \
                       'overerving, constraints, readonly, usagenote_nl, deprecated_version FROM OSLOAttributen WHERE ' \
                       'overerving = 0' and arg_dict == {}:
             return [[
@@ -84,7 +84,7 @@ class OSLOInMemoryCreatorTests(unittest.TestCase):
                     ["Decimal", "http://www.w3.org/2001/XMLSchema#decimal",
                      "Beschrijft een decimaal getal volgens http://www.w3.org/2001/XMLSchema#decimal.", "Decimaal getal",
                      "https://www.w3.org/TR/xmlschema-2/#decimal", ""]]
-        elif query == "SELECT name, label_nl, definition_nl, class_uri, kardinaliteit_min, kardinaliteit_max, uri, type, overerving, constraints, readonly, usagenote_nl, deprecated_version FROM OSLOAttributen" and arg_dict == {}:
+        elif query == "SELECT name, label_nl, definition_nl, class_uri, kardinaliteit_min, kardinaliteit_max, uri, fieldType, overerving, constraints, readonly, usagenote_nl, deprecated_version FROM OSLOAttributen" and arg_dict == {}:
             return [["waarde", "waarde", "Beschrijft een kleur volgens het RAL classificatiesysteem.",
                      "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DteKleurRAL", "1", "1",
                      "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DteKleurRAL.waarde",
@@ -99,13 +99,13 @@ class OSLOInMemoryCreatorTests(unittest.TestCase):
                      "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInWatt",
                      "1", "1", "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInWatt.waarde",
                      "http://www.w3.org/2001/XMLSchema#decimal", "0", "", "0", "", ""]]
-        elif query == "SELECT name, label_nl, definition_nl, class_uri, kardinaliteit_min, kardinaliteit_max, uri, type, overerving, constraints, readonly, usagenote_nl, deprecated_version FROM OSLODatatypePrimitiveAttributen" and arg_dict == {}:
+        elif query == "SELECT name, label_nl, definition_nl, class_uri, kardinaliteit_min, kardinaliteit_max, uri, fieldType, overerving, constraints, readonly, usagenote_nl, deprecated_version FROM OSLODatatypePrimitiveAttributen" and arg_dict == {}:
             return [['waarde', 'waarde', 'Beschrijft een kleur volgens het RAL classificatiesysteem.',
                      'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DteKleurRAL', '1', '1',
                      'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DteKleurRAL.waarde',
                      'http://www.w3.org/2001/XMLSchema#string', '0', '', '0',
                      'De waarde moet voldoen aan volgende regex: [1-9]\d{3}', '']]
-        elif query == "SELECT name, label_nl, definition_nl, class_uri, kardinaliteit_min, kardinaliteit_max, uri, type, overerving, constraints, readonly, usagenote_nl, deprecated_version FROM OSLODatatypeComplexAttributen" and arg_dict == {}:
+        elif query == "SELECT name, label_nl, definition_nl, class_uri, kardinaliteit_min, kardinaliteit_max, uri, fieldType, overerving, constraints, readonly, usagenote_nl, deprecated_version FROM OSLODatatypeComplexAttributen" and arg_dict == {}:
             return [['identificator', 'identificator', 'Een groep van tekens om een AIM object te identificeren of te benoemen.',
                      'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcIdentificator', '1', '1',
                      'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcIdentificator.identificator',

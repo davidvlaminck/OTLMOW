@@ -1,6 +1,6 @@
 from abc import abstractmethod, ABC
 
-from OTLModel.Datatypes.IntField import IntField
+from OTLModel.Datatypes.IntegerField import IntegerField
 from OTLModel.Datatypes.StringField import StringField
 from OTLModel.Verification.AIMObject import AIMObject
 
@@ -14,11 +14,11 @@ class Energiemeter(AIMObject, ABC):
     @abstractmethod
     def __init__(self):
         AIMObject.__init__(self)
-        self.aantalTelwerken = IntField(naam="aantalTelwerken", label="aantal telwerken",
-                                        uri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Energiemeter.aantalTelwerken",
-                                        definition="Het aantal telwerken dat de energiemeter bevat: 1 bij enkelvoudige meter, "
+        self.aantalTelwerken = IntegerField(naam="aantalTelwerken", label="aantal telwerken",
+                                            uri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Energiemeter.aantalTelwerken",
+                                            definition="Het aantal telwerken dat de energiemeter bevat: 1 bij enkelvoudige meter, "
                                                    "2 bij een dag- en nacht-meter.", constraints="", usagenote="",
-                                        deprecated_version="")
+                                            deprecated_version="")
         """Het aantal telwerken dat de energiemeter bevat: 1 bij enkelvoudige meter, 2 bij een dag- en nacht-meter."""
 
         self.meternummer = StringField(naam="meternummer", label="meternummer",

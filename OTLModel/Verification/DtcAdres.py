@@ -24,8 +24,8 @@ class DtcAdres(ComplexField):
         """Een nummer dat de postbus aanduidt."""
         self.bus = self.waarde.bus
 
-        self.waarde.gemeente = KeuzelijstField(lijst=KlAlgGemeente(),
-                                               naam="gemeente",
+        self.waarde.gemeente = KeuzelijstField(naam="gemeente",
+                                               lijst=KlAlgGemeente(),
                                                label="gemeente",
                                                uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAdres.gemeente",
                                                definition="De bestuurlijke eenheid waarin het adres gelegen is.",

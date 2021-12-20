@@ -42,7 +42,7 @@ class ContainerBuisKardinaliteitFieldTests(unittest.TestCase):
 
         with self.assertRaises(ValueError) as exc_tuple_with_bad_value:
             instance.kleur.waarde = ["geel", 3]
-        self.assertEqual(str(exc_tuple_with_bad_value.exception), "element of bad type in kleur.waarde")
+        self.assertEqual(str(exc_tuple_with_bad_value.exception), "element of bad fieldType in kleur.waarde")
 
         instance.kleur.maxKardinaliteit = 2
         with self.assertRaises(ValueError) as exc_tuple_with_too_many_items:

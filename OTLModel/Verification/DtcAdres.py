@@ -1,4 +1,4 @@
-from OTLModel.Datatypes.ComplexField import ComplexField
+from OTLModel.Datatypes.ComplexField import ComplexField, ComplexAttributen
 from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.StringField import StringField
 from OTLModel.Verification.KlAlgGemeente import KlAlgGemeente
@@ -9,10 +9,13 @@ class DtcAdres(ComplexField):
     """Complex datatype voor de aanduiding van een bepaalde locatie, doorgaans van een huis, woning, gebouw of faciliteit, op de aarde."""
 
     def __init__(self):
-        super().__init__("DtcAdres", "Adres", "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAdres",
-                         "Complex datatype voor de aanduiding van een bepaalde locatie, doorgaans van een huis, woning, "
-                         "gebouw of faciliteit, op de aarde.",
-                         None, "", "")
+        super().__init__(naam="DtcAdres",
+                         label="Adres",
+                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAdres",
+                         definition="Complex datatype voor de aanduiding van een bepaalde locatie, doorgaans van een huis, woning, gebouw of faciliteit, op de aarde.",
+                         usagenote="",
+                         deprecated_version="")
+        self.waarde = ComplexAttributen()
 
         self.waarde.bus = StringField(naam="bus",
                                       label="bus",

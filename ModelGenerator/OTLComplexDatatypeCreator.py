@@ -43,7 +43,7 @@ class OTLComplexDatatypeCreator(AbstractDatatypeCreator):
         if any(atr.readonly == 1 for atr in attributen):
             raise NotImplementedError("readonly property is assumed to be 0 on value fields")
 
-        listOfFields = self.getTypeFieldsFromListOfAttributes(attributen)
+        listOfFields = self.getFieldsToImportFromListOfAttributes(attributen)
         for typeField in listOfFields:
             datablock.append(f'from OTLModel.Datatypes.{typeField} import {typeField}')
 
@@ -64,8 +64,8 @@ class OTLComplexDatatypeCreator(AbstractDatatypeCreator):
         datablock.append('')
 
         for attribuut in attributen:
-            whitespace = self.getWhiteSpaceEquivalent(f'        self.waarde.{attribuut.name} = {self.getFieldFromTypeUri(attribuut.type)}(')
-            datablock.append(f'        self.waarde.{attribuut.name} = {self.getFieldFromTypeUri(attribuut.type)}(naam="{attribuut.name}",')
+            whitespace = self.getWhiteSpaceEquivalent(f'        self.waarde.{attribuut.name} = {self.getFieldNameFromTypeUri(attribuut.type)}(')
+            datablock.append(f'        self.waarde.{attribuut.name} = {self.getFieldNameFromTypeUri(attribuut.type)}(naam="{attribuut.name}",')
             datablock.append(f'{whitespace}label="{attribuut.label_nl}",')
             datablock.append(f'{whitespace}uri="{attribuut.uri}",')
             datablock.append(f'{whitespace}definition="{attribuut.definition_nl}",')
@@ -91,4 +91,9 @@ class OTLComplexDatatypeCreator(AbstractDatatypeCreator):
     @staticmethod
     def getWhiteSpaceEquivalent(string):
         return ''.join(' ' * len(string))
+
+    def getFieldNameFromTypeUri(self, attribuutType):
+        if attribuutType.startswith('http://www.w3.org/2001/XMLSchema#'):
+            return self.getSingleFieldFromTypeUri(attribuutType)
+        return self.getNonSingleFieldFromTypeUri(attribuutType)[0]
 

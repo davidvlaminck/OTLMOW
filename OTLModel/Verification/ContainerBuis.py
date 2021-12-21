@@ -13,9 +13,9 @@ class ContainerBuis(ABC):
 
     @abstractmethod
     def __init__(self):
-        stringField = StringField(naam="kleur", label="kleur",
+        kleurField = StringField(naam="kleur", label="kleur",
                                   uri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#ContainerBuis.kleur",
                                   definition="De kleur van de coating.",
                                   constraints="", usagenote="", deprecated_version="")
-        self.kleur = KardinaliteitField(minKardinaliteit="1", maxKardinaliteit="*", fieldToMultiply=stringField)
+        self.kleur = KardinaliteitField(minKardinaliteit="1", maxKardinaliteit="*", fieldToMultiply=kleurField)
         """De kleur van de coating."""

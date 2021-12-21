@@ -4,10 +4,13 @@ from unittest import mock
 from unittest.mock import patch
 
 from Loggers.NoneLogger import NoneLogger
+from ModelGenerator.FileExistChecker import FileExistChecker
 from ModelGenerator.OSLOCollector import OSLOCollector
 from ModelGenerator.OSLODatatypeComplex import OSLODatatypeComplex
 from ModelGenerator.OSLODatatypeComplexAttribuut import OSLODatatypeComplexAttribuut
+from ModelGenerator.OSLOInMemoryCreator import OSLOInMemoryCreator
 from ModelGenerator.OTLComplexDatatypeCreator import OTLComplexDatatypeCreator
+from ModelGenerator.SQLDbReader import SQLDbReader
 from OTLModel.Datatypes.StringField import StringField
 
 
@@ -66,7 +69,7 @@ class ComplexDatatypeOSLOCollector(OSLOCollector):
                                          'http://www.w3.org/2001/XMLSchema#string', 0, '', 0, '', '')
         ]
 
-        self.expectedDataDtcIdentificator = ['from OTLModel.Datatypes.ComplexField import ComplexField, ComplexAttributen',
+        self.expectedDataDtcIdentificator = ['from OTLModel.Datatypes.ComplexField import ComplexField',
                                              'from OTLModel.Datatypes.StringField import StringField',
                                              '',
                                              '',
@@ -81,7 +84,6 @@ class ComplexDatatypeOSLOCollector(OSLOCollector):
                                              '                         definition="Complex datatype voor de identificator van een AIM object volgens de bron van de identificator.",',
                                              '                         usagenote="",',
                                              '                         deprecated_version="")',
-                                             '        self.waarde = ComplexAttributen()',
                                              '',
                                              '        self.waarde.identificator = StringField(naam="identificator",',
                                              '                                                label="identificator",',
@@ -90,8 +92,8 @@ class ComplexDatatypeOSLOCollector(OSLOCollector):
                                              '                                                constraints="",',
                                              '                                                usagenote="",',
                                              '                                                deprecated_version="")',
-                                             '        """Een groep van tekens om een AIM object te identificeren of te benoemen."""',
                                              '        self.identificator = self.waarde.identificator',
+                                             '        """Een groep van tekens om een AIM object te identificeren of te benoemen."""',
                                              '',
                                              '        self.waarde.toegekendDoor = StringField(naam="toegekendDoor",',
                                              '                                                label="toegekend door",',
@@ -100,10 +102,10 @@ class ComplexDatatypeOSLOCollector(OSLOCollector):
                                              '                                                constraints="",',
                                              '                                                usagenote="",',
                                              '                                                deprecated_version="")',
-                                             '        """Gegevens van de organisatie die de toekenning deed."""',
-                                             '        self.toegekendDoor = self.waarde.toegekendDoor']
+                                             '        self.toegekendDoor = self.waarde.toegekendDoor',
+                                             '        """Gegevens van de organisatie die de toekenning deed."""']
 
-        self.expectedDataDtcAdres = ['from OTLModel.Datatypes.ComplexField import ComplexField, ComplexAttributen',
+        self.expectedDataDtcAdres = ['from OTLModel.Datatypes.ComplexField import ComplexField',
                                      'from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField',
                                      'from OTLModel.Datatypes.KlAlgGemeente import KlAlgGemeente',
                                      'from OTLModel.Datatypes.StringField import StringField',
@@ -120,7 +122,6 @@ class ComplexDatatypeOSLOCollector(OSLOCollector):
                                      '                         definition="Complex datatype voor de aanduiding van een bepaalde locatie, doorgaans van een huis, woning, gebouw of faciliteit, op de aarde.",',
                                      '                         usagenote="",',
                                      '                         deprecated_version="")',
-                                     '        self.waarde = ComplexAttributen()',
                                      '',
                                      '        self.waarde.bus = StringField(naam="bus",',
                                      '                                      label="bus",',
@@ -129,20 +130,19 @@ class ComplexDatatypeOSLOCollector(OSLOCollector):
                                      '                                      constraints="",',
                                      '                                      usagenote="",',
                                      '                                      deprecated_version="")',
-                                     '        """Een nummer dat de postbus aanduidt."""',
                                      '        self.bus = self.waarde.bus',
+                                     '        """Een nummer dat de postbus aanduidt."""',
                                      '',
                                      '        self.waarde.gemeente = KeuzelijstField(naam="gemeente",',
-                                     '                                               lijst=KlAlgGemeente(),', # TODO variabel maken
+                                     '                                               lijst=KlAlgGemeente(),',
                                      '                                               label="gemeente",',
                                      '                                               uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAdres.gemeente",',
                                      '                                               definition="De bestuurlijke eenheid waarin het adres gelegen is.",',
-                                     '                                               overerving=False,',
                                      '                                               constraints="",',
                                      '                                               usagenote="",',
                                      '                                               deprecated_version="")',
-                                     '        """De bestuurlijke eenheid waarin het adres gelegen is."""',
                                      '        self.gemeente = self.waarde.gemeente',
+                                     '        """De bestuurlijke eenheid waarin het adres gelegen is."""',
                                      '',
                                      '        self.waarde.huisnummer = StringField(naam="huisnummer",',
                                      '                                             label="huisnummer",',
@@ -151,8 +151,8 @@ class ComplexDatatypeOSLOCollector(OSLOCollector):
                                      '                                             constraints="",',
                                      '                                             usagenote="",',
                                      '                                             deprecated_version="")',
-                                     '        """Een nummer dat door de gemeente aan bv. een huis wordt toegekend."""',
                                      '        self.huisnummer = self.waarde.huisnummer',
+                                     '        """Een nummer dat door de gemeente aan bv. een huis wordt toegekend."""',
                                      '',
                                      '        self.waarde.postcode = StringField(naam="postcode",',
                                      '                                           label="postcode",',
@@ -161,8 +161,8 @@ class ComplexDatatypeOSLOCollector(OSLOCollector):
                                      '                                           constraints="",',
                                      '                                           usagenote="",',
                                      '                                           deprecated_version="")',
-                                     '        """Een korte reeks tekens die in het postadres wordt opgenomen."""',
                                      '        self.postcode = self.waarde.postcode',
+                                     '        """Een korte reeks tekens die in het postadres wordt opgenomen."""',
                                      '',
                                      '        self.waarde.straatnaam = StringField(naam="straatnaam",',
                                      '                                             label="straatnaam",',
@@ -171,8 +171,8 @@ class ComplexDatatypeOSLOCollector(OSLOCollector):
                                      '                                             constraints="",',
                                      '                                             usagenote="",',
                                      '                                             deprecated_version="")',
-                                     '        """De naam van de straat."""',
-                                     '        self.straatnaam = self.waarde.straatnaam']
+                                     '        self.straatnaam = self.waarde.straatnaam',
+                                     '        """De naam van de straat."""']
 
 
 class TestOTLComplexDatatypeCreator(OTLComplexDatatypeCreator):
@@ -329,6 +329,60 @@ class OTLComplexDatatypeCreatorTests(unittest.TestCase):
         dataToWrite = creator.CreateBlockToWriteFromComplexTypes(dtcAdres)
 
         self.assertEqual(collector.expectedDataDtcAdres, dataToWrite)
+
+    def test_WriteToFileDtcAdresOSLODatatypeComplex(self):
+        logger = NoneLogger()
+
+        file_location = '../../InputFiles/OTL.db'
+        file_exist_checker = FileExistChecker(file_location)
+        sql_reader = SQLDbReader(file_exist_checker)
+        oslo_creator = OSLOInMemoryCreator(sql_reader)
+        collector = OSLOCollector(oslo_creator)
+        collector.collect()
+
+        creator = OTLComplexDatatypeCreator(logger, collector)
+        dtcAdres = collector.FindComplexDatatypeByUri(
+            'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAdres')
+        dataToWrite = creator.CreateBlockToWriteFromComplexTypes(dtcAdres)
+        creator.writeToFile(dtcAdres, dataToWrite, '../../')
+
+        self.assertTrue(os.path.isfile('../../OTLModel/Datatypes/DtcAdres.py'))
+
+    def test_WriteToFileDtcRechtspersoonOSLODatatypeComplex(self):
+        logger = NoneLogger()
+
+        file_location = '../../InputFiles/OTL.db'
+        file_exist_checker = FileExistChecker(file_location)
+        sql_reader = SQLDbReader(file_exist_checker)
+        oslo_creator = OSLOInMemoryCreator(sql_reader)
+        collector = OSLOCollector(oslo_creator)
+        collector.collect()
+
+        creator = OTLComplexDatatypeCreator(logger, collector)
+        DtcRechtspersoon = collector.FindComplexDatatypeByUri(
+            'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcRechtspersoon')
+        dataToWrite = creator.CreateBlockToWriteFromComplexTypes(DtcRechtspersoon)
+        creator.writeToFile(DtcRechtspersoon, dataToWrite, '../../')
+
+        self.assertTrue(os.path.isfile('../../OTLModel/Datatypes/DtcRechtspersoon.py'))
+
+    def test_WriteToFileDtcMaaienOSLODatatypeComplex(self):
+        logger = NoneLogger()
+
+        file_location = '../../InputFiles/OTL.db'
+        file_exist_checker = FileExistChecker(file_location)
+        sql_reader = SQLDbReader(file_exist_checker)
+        oslo_creator = OSLOInMemoryCreator(sql_reader)
+        collector = OSLOCollector(oslo_creator)
+        collector.collect()
+
+        creator = OTLComplexDatatypeCreator(logger, collector)
+        DtcMaaien = collector.FindComplexDatatypeByUri(
+            'https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#DtcMaaien')
+        dataToWrite = creator.CreateBlockToWriteFromComplexTypes(DtcMaaien)
+        creator.writeToFile(DtcMaaien, dataToWrite, '../../')
+
+        self.assertTrue(os.path.isfile('../../OTLModel/Datatypes/DtcMaaien.py'))
 
     def test_getNonPrimitiveFieldFromTypeUri_ComplexField(self):
         logger = NoneLogger()

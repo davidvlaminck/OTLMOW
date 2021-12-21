@@ -1,12 +1,24 @@
 import unittest
 
+from OTLModel.Datatypes.KardinaliteitField import KardinaliteitField
+from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Verification.ContainerBuis import ContainerBuis
+from OTLModel.Verification.KlMaaiFrequentie import KlMaaiFrequentie
 from OTLModel.Verification.Mantelbuis import Mantelbuis
 
 
 class ContainerBuisInstance(ContainerBuis):
     def __init__(self):
         super(ContainerBuis, self).__init__()
+        keuzelijstField = KeuzelijstField(lijst=KlMaaiFrequentie(),
+                                          naam="frequentie",
+                                          label="frequentie",
+                                          uri="https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#DtcMaaien.frequentie",
+                                          definition="Het aantal keer dat er gemaaid wordt per jaar.", usagenote="",
+                                          constraints='', overerving=False,
+                                          deprecated_version="")
+        self.kleur = KardinaliteitField(minKardinaliteit="1", maxKardinaliteit="*", fieldToMultiply=keuzelijstField)
+        """De kleur van de coating."""
 
 
 class ContainerBuisKardinaliteitFieldTests(unittest.TestCase):
@@ -42,7 +54,7 @@ class ContainerBuisKardinaliteitFieldTests(unittest.TestCase):
 
         with self.assertRaises(ValueError) as exc_tuple_with_bad_value:
             instance.kleur.waarde = ["geel", 3]
-        self.assertEqual(str(exc_tuple_with_bad_value.exception), "element of bad fieldType in kleur.waarde")
+        self.assertEqual(str(exc_tuple_with_bad_value.exception), "element of bad type in kleur.waarde")
 
         instance.kleur.maxKardinaliteit = 2
         with self.assertRaises(ValueError) as exc_tuple_with_too_many_items:

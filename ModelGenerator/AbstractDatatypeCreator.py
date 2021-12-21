@@ -27,13 +27,13 @@ class AbstractDatatypeCreator(ABC):
     @staticmethod
     def getNonSingleFieldFromTypeUri(fieldType: str):
         if '#Dtc' in fieldType:
-            typeName = fieldType[fieldType.find("#")+1::]
+            typeName = fieldType[fieldType.find("#") + 1::]
             return ['ComplexField', typeName]
         if '#Dte' in fieldType or '#KwantWrd' in fieldType:
-            typeName = fieldType[fieldType.find("#")+1::]
+            typeName = fieldType[fieldType.find("#") + 1::]
             return [typeName]
         if '#Kl' in fieldType:
-            typeName = fieldType[fieldType.find("#")+1::]
+            typeName = fieldType[fieldType.find("#") + 1::]
             return ['KeuzelijstField', typeName]
 
         raise NotImplemented('not supported fieldType in getNonSingleFieldFromTypeUri()')

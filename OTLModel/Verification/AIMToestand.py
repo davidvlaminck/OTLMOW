@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 
 from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
-from OTLModel.Verification.KlAIMToestand import KlAIMToestand
+from OTLModel.Datatypes.KlAIMToestand import KlAIMToestand
 
 
 class AIMToestand(ABC):

@@ -9,6 +9,7 @@ from ModelGenerator.OSLODatatypeComplex import OSLODatatypeComplex
 from ModelGenerator.OSLODatatypeComplexAttribuut import OSLODatatypeComplexAttribuut
 from ModelGenerator.OSLODatatypePrimitive import OSLODatatypePrimitive
 from ModelGenerator.OSLODatatypePrimitiveAttribuut import OSLODatatypePrimitiveAttribuut
+from ModelGenerator.OSLOEnumeration import OSLOEnumeration
 from ModelGenerator.OSLOInMemoryCreator import OSLOInMemoryCreator
 from ModelGenerator.SQLDbReader import SQLDbReader
 
@@ -119,6 +120,11 @@ class OSLOInMemoryCreatorTests(unittest.TestCase):
             return [['DtcIdentificator', 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcIdentificator', '',
                      'Complex datatype voor de identificator van een AIM object volgens de bron van de identificator.',
                      'Identificator', '']]
+
+        elif query == "SELECT name, uri, usagenote_nl, definition_nl, label_nl, codelist, deprecated_version FROM OSLOEnumeration" and arg_dict == {}:
+            return [['KlAIMToestand', 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KlAIMToestand', '',
+                     'Keuzelijst met fasen uit de levenscyclus van een object om de toestand op een moment mee vast te leggen.',
+                     'AIM toestand', 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlAIMToestand', '']]
 
         return []
 
@@ -264,10 +270,21 @@ class OSLOInMemoryCreatorTests(unittest.TestCase):
         oSLOCreator = OSLOInMemoryCreator(mock)
         mock.performReadQuery = self.mockPerformReadQuery
         listOfComplexDatatypeAttributen = oSLOCreator.getAllComplexDatatypeAttributen()
-        class_uri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcIdentificator'
         attribuut_uri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcIdentificator.identificator'
 
         self.assertTrue(len(listOfComplexDatatypeAttributen) >= 1)
         first = next(c for c in listOfComplexDatatypeAttributen)
         self.assertEqual(type(first), OSLODatatypeComplexAttribuut)
         self.assertEqual(first.uri, attribuut_uri)
+
+    def test_Mock_getAllEnumerations(self):
+        mock = Mock()
+        oSLOCreator = OSLOInMemoryCreator(mock)
+        mock.performReadQuery = self.mockPerformReadQuery
+        listOfEnumerations = oSLOCreator.getEnumerations()
+        class_uri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KlAIMToestand'
+
+        self.assertTrue(len(listOfEnumerations) >= 1)
+        first = next(c for c in listOfEnumerations)
+        self.assertEqual(type(first), OSLOEnumeration)
+        self.assertEqual(first.uri, class_uri)

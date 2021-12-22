@@ -1,7 +1,7 @@
 from OTLModel.Datatypes.ComplexField import ComplexField, ComplexAttributen
 from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.StringField import StringField
-from OTLModel.Verification.KlAlgGemeente import KlAlgGemeente
+from OTLModel.Datatypes.KlAlgGemeente import KlAlgGemeente
 
 
 # Generated with OTLComplexDatatypeCreatorTests

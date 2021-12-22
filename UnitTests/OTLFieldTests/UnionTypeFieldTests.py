@@ -2,8 +2,8 @@ import unittest
 
 from OTLModel.Datatypes.UnionTypeField import UnionTypeField
 from OTLModel.Verification.Aftakking import Aftakking
-from OTLModel.Verification.DtcAdres import DtcAdres
-from OTLModel.Verification.KlAlgGemeente import KlAlgGemeente
+from OTLModel.Datatypes.DtcAdres import DtcAdres
+from OTLModel.Datatypes.KlAlgGemeente import KlAlgGemeente
 
 
 class UnionTestClass(Aftakking):

@@ -3,6 +3,7 @@ from Loggers.LogType import LogType
 from ModelGenerator.OSLOCollector import OSLOCollector
 from ModelGenerator.OSLODatatypePrimitive import OSLODatatypePrimitive
 from ModelGenerator.OTLComplexDatatypeCreator import OTLComplexDatatypeCreator
+from ModelGenerator.OTLEnumerationCreator import OTLEnumerationCreator
 from ModelGenerator.OTLPrimitiveDatatypeCreator import OTLPrimitiveDatatypeCreator
 
 
@@ -46,9 +47,6 @@ class OTLModelCreator:
         creator = OTLComplexDatatypeCreator(self.logger, self.osloCollector)
 
         for complexDatatype in self.osloCollector.complexDatatypes:
-            if complexDatatype.name == 'DtcContactinfo':
-                pass
-
             try:
                 dataToWrite = creator.CreateBlockToWriteFromComplexTypes(complexDatatype)
                 if dataToWrite is None:
@@ -62,3 +60,22 @@ class OTLModelCreator:
             except BaseException as e:
                 self.logger.log(str(e), LogType.ERROR)
                 self.logger.log(f"Could not create a class for {complexDatatype.name}", LogType.ERROR)
+
+    def create_enumerations(self):
+        creator = OTLEnumerationCreator(self.logger, self.osloCollector)
+
+        for enumeration in self.osloCollector.enumerations:
+
+            try:
+                dataToWrite = creator.CreateBlockToWriteFromEnumerations(enumeration)
+                if dataToWrite is None:
+                    self.logger.log(f"Could not create a class for {enumeration.name}", LogType.INFO)
+                    pass
+                if len(dataToWrite) == 0:
+                    self.logger.log(f"Could not create a class for {enumeration.name}", LogType.INFO)
+                    pass
+                creator.writeToFile(enumeration, dataToWrite)
+                self.logger.log(f"Created a class for {enumeration.name}", LogType.INFO)
+            except BaseException as e:
+                self.logger.log(str(e), LogType.ERROR)
+                self.logger.log(f"Could not create a class for {enumeration.name}", LogType.ERROR)

@@ -3,7 +3,7 @@ import unittest
 from OTLModel.Datatypes.KardinaliteitField import KardinaliteitField
 from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Verification.ContainerBuis import ContainerBuis
-from OTLModel.Verification.KlMaaiFrequentie import KlMaaiFrequentie
+from OTLModel.Datatypes.KlMaaiFrequentie import KlMaaiFrequentie
 from OTLModel.Verification.Mantelbuis import Mantelbuis
 
 

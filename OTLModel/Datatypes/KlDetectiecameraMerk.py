@@ -1,0 +1,16 @@
+from OTLModel.Datatypes.Keuzelijst import Keuzelijst
+
+
+# Generated with OTLEnumerationCreator
+class KlDetectiecameraMerk(Keuzelijst):
+    """Keuzelijst met merknamen voor Detectiecamera."""
+
+    def __init__(self):
+        super().__init__(naam="KlDetectiecameraMerk",
+                         label="Detectiecamera merk",
+                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlDetectiecameraMerk",
+                         definition="Keuzelijst met merknamen voor Detectiecamera.",
+                         usagenote="",
+                         deprecated_version="",
+                         codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlDetectiecameraMerk")
+

@@ -45,5 +45,5 @@ class OSLOCollector:
     def FindComplexDatatypeAttributenByClassUri(self, class_uri: str) -> list[OSLODatatypeComplexAttribuut]:
         return sorted(list(filter(lambda p: p.class_uri == class_uri, self.complexDatatypeAttributen)), key=lambda p: p.uri)
 
-    def FindEnumerationsByUri(self, uri):
+    def FindEnumerationByUri(self, uri):
         return next(p for p in self.enumerations if p.uri == uri)

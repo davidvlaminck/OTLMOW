@@ -5,6 +5,7 @@ from ModelGenerator.OSLODatatypeComplex import OSLODatatypeComplex
 from ModelGenerator.OSLODatatypeComplexAttribuut import OSLODatatypeComplexAttribuut
 from ModelGenerator.OSLODatatypePrimitive import OSLODatatypePrimitive
 from ModelGenerator.OSLODatatypePrimitiveAttribuut import OSLODatatypePrimitiveAttribuut
+from ModelGenerator.OSLOEnumeration import OSLOEnumeration
 from ModelGenerator.SQLDbReader import SQLDbReader
 
 
@@ -122,6 +123,18 @@ class OSLOInMemoryCreator:
         for row in data:
             c = OSLODatatypeComplexAttribuut(row[0], row[1], row[2], row[3], row[4], row[5], row[6], row[7], row[8], row[9],
                                              row[10], row[11], row[12])
+            list.append(c)
+
+        return list
+
+    def getEnumerations(self):
+        data = self.sqlDbReader.performReadQuery(
+            "SELECT name, uri, usagenote_nl, definition_nl, label_nl, codelist, deprecated_version FROM OSLOEnumeration",
+            {})
+
+        list = []
+        for row in data:
+            c = OSLOEnumeration(row[0], row[1], row[2], row[3], row[4], row[5], row[6])
             list.append(c)
 
         return list

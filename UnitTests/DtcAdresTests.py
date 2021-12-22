@@ -2,7 +2,7 @@ import unittest
 
 from OTLModel.Datatypes.ComplexField import ComplexField, ComplexAttributen
 from OTLModel.Verification.AIMObject import AIMObject
-from OTLModel.Verification.DtcAdres import DtcAdres
+from OTLModel.Datatypes.DtcAdres import DtcAdres
 
 
 class TestClass(AIMObject):

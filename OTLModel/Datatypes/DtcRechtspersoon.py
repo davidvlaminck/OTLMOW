@@ -25,6 +25,7 @@ class DtcRechtspersoon(ComplexField):
         self.waarde.adres.readonly = 0
         self.waarde.adres.usagenote = ""
         self.waarde.adres.deprecated_version = ""
+        self.adres = self.waarde.adres
         """Het adres."""
 
         self.waarde.afdeling = StringField(naam="afdeling",

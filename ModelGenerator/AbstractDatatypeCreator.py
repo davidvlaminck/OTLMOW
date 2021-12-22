@@ -29,14 +29,20 @@ class AbstractDatatypeCreator(ABC):
         if '#Dtc' in fieldType:
             typeName = fieldType[fieldType.find("#") + 1::]
             return ['ComplexField', typeName]
+        if fieldType.startswith("https://schema.org/"):
+            if fieldType == "https://schema.org/ContactPoint":
+                return ['ComplexField', "DtcContactinfo"]
+            if fieldType == "https://schema.org/OpeningHoursSpecification":
+                return ['ComplexField', "DtcOpeningsurenSpecificatie"]
+            raise NotImplementedError(f"Field of type {fieldType} is not implemented in DatatypeCreator")
         if '#Dte' in fieldType or '#KwantWrd' in fieldType:
             typeName = fieldType[fieldType.find("#") + 1::]
-            return [typeName]
+            return ['ComplexField', typeName]
         if '#Kl' in fieldType:
             typeName = fieldType[fieldType.find("#") + 1::]
             return ['KeuzelijstField', typeName]
 
-        raise NotImplemented('not supported fieldType in getNonSingleFieldFromTypeUri()')
+        raise NotImplemented(f'not supported fieldType {fieldType} in getNonSingleFieldFromTypeUri()')
 
     @staticmethod
     def writeToFile(datatype, dataToWrite: list[str], relativePath=''):

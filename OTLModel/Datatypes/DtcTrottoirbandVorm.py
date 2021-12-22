@@ -1,0 +1,55 @@
+from OTLModel.Datatypes.ComplexField import ComplexField
+from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
+from OTLModel.Datatypes.KlLETrottoirbandVorm import KlLETrottoirbandVorm
+from OTLModel.Datatypes.KwantWrdInCentimeter import KwantWrdInCentimeter
+
+
+# Generated with OTLComplexDatatypeCreator
+class DtcTrottoirbandVorm(ComplexField):
+    """Complex datatype voor de vorm van een trotoirband."""
+
+    def __init__(self):
+        super().__init__(naam="DtcTrottoirbandVorm",
+                         label="Trottoirband vorm",
+                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcTrottoirbandVorm",
+                         definition="Complex datatype voor de vorm van een trotoirband.",
+                         usagenote="",
+                         deprecated_version="")
+
+        self.waarde.breedte = KwantWrdInCentimeter()
+        self.waarde.breedte.naam = "breedte"
+        self.waarde.breedte.label = "breedte"
+        self.waarde.breedte.definition = "De breedte van de trottoirband."
+        self.waarde.breedte.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcTrottoirbandVorm.breedte"
+        self.waarde.breedte.overerving = 0
+        self.waarde.breedte.constraints = ""
+        self.waarde.breedte.readonly = 0
+        self.waarde.breedte.usagenote = ""
+        self.waarde.breedte.deprecated_version = ""
+        self.breedte = self.waarde.breedte
+        """De breedte van de trottoirband."""
+
+        self.waarde.dikte = KwantWrdInCentimeter()
+        self.waarde.dikte.naam = "dikte"
+        self.waarde.dikte.label = "dikte"
+        self.waarde.dikte.definition = "De dikte van de trottoirband."
+        self.waarde.dikte.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcTrottoirbandVorm.dikte"
+        self.waarde.dikte.overerving = 0
+        self.waarde.dikte.constraints = ""
+        self.waarde.dikte.readonly = 0
+        self.waarde.dikte.usagenote = ""
+        self.waarde.dikte.deprecated_version = ""
+        self.dikte = self.waarde.dikte
+        """De dikte van de trottoirband."""
+
+        self.waarde.vorm = KeuzelijstField(naam="vorm",
+                                           lijst=KlLETrottoirbandVorm(),
+                                           overerving=0,
+                                           label="vorm",
+                                           uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcTrottoirbandVorm.vorm",
+                                           definition="De vorm van de trottoirband.",
+                                           constraints="",
+                                           usagenote="",
+                                           deprecated_version="")
+        self.vorm = self.waarde.vorm
+        """De vorm van de trottoirband."""

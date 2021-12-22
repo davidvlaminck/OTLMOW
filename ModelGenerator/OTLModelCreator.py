@@ -2,6 +2,7 @@ from Loggers.AbstractLogger import AbstractLogger
 from Loggers.LogType import LogType
 from ModelGenerator.OSLOCollector import OSLOCollector
 from ModelGenerator.OSLODatatypePrimitive import OSLODatatypePrimitive
+from ModelGenerator.OTLComplexDatatypeCreator import OTLComplexDatatypeCreator
 from ModelGenerator.OTLPrimitiveDatatypeCreator import OTLPrimitiveDatatypeCreator
 
 
@@ -40,3 +41,24 @@ class OTLModelCreator:
             except BaseException as e:
                 self.logger.log(str(e), LogType.ERROR)
                 self.logger.log(f"Could not create a class for {primDatatype.name}", LogType.ERROR)
+
+    def create_complex_datatypes(self):
+        creator = OTLComplexDatatypeCreator(self.logger, self.osloCollector)
+
+        for complexDatatype in self.osloCollector.complexDatatypes:
+            if complexDatatype.name == 'DtcContactinfo':
+                pass
+
+            try:
+                dataToWrite = creator.CreateBlockToWriteFromComplexTypes(complexDatatype)
+                if dataToWrite is None:
+                    self.logger.log(f"Could not create a class for {complexDatatype.name}", LogType.INFO)
+                    pass
+                if len(dataToWrite) == 0:
+                    self.logger.log(f"Could not create a class for {complexDatatype.name}", LogType.INFO)
+                    pass
+                creator.writeToFile(complexDatatype, dataToWrite)
+                self.logger.log(f"Created a class for {complexDatatype.name}", LogType.INFO)
+            except BaseException as e:
+                self.logger.log(str(e), LogType.ERROR)
+                self.logger.log(f"Could not create a class for {complexDatatype.name}", LogType.ERROR)

@@ -420,24 +420,20 @@ class OTLComplexDatatypeCreatorTests(unittest.TestCase):
 
         self.assertEqual(expectedList, typesList)
 
+    def test_getTypeNameOfComplexAttribuut_Kl(self):
+        logger = NoneLogger()
+        collector = ComplexDatatypeOSLOCollector(mock)
+        creator = OTLComplexDatatypeCreator(logger, collector)
+        dtcIdentificator = collector.FindComplexDatatypeAttributenByClassUri('https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAdres')[1]
+        typeName = creator.getTypeNameOfComplexAttribuut(dtcIdentificator)
 
-    # def test_RALKleurOSLODatatypeComplex(self):
-    #     logger = NoneLogger()
-    #     collector = ComplexDatatypeOSLOCollector(mock)
-    #     creator = OTLComplexDatatypeCreator(logger, collector)
-    #     DteKleurRAL = collector.FindComplexDatatypeByUri(
-    #         'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DteKleurRAL')
-    #     dataToWrite = creator.CreateBlockToWriteFromComplexTypes(DteKleurRAL)
-    #
-    #     self.assertEqual(collector.expectedDataRALKleur, dataToWrite)
-    #
-    # def test_WriteToFileOSLODatatypeComplex(self):
-    #     logger = NoneLogger()
-    #     collector = ComplexDatatypeOSLOCollector(mock)
-    #     creator = OTLComplexDatatypeCreator(logger, collector)
-    #     KwantWrdInVolt = collector.FindComplexDatatypeByUri(
-    #         'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInVolt')
-    #     dataToWrite = creator.CreateBlockToWriteFromComplexTypes(KwantWrdInVolt)
-    #     creator.writeToFile(KwantWrdInVolt, dataToWrite, '../../')
-    #
-    #     self.assertTrue(os.path.isfile('../../OTLModel/Datatypes/KwantWrdInVolt.py'))
+        self.assertEqual("KlAlgGemeente", typeName)
+
+    def test_getTypeNameOfComplexAttribuut_String(self):
+        logger = NoneLogger()
+        collector = ComplexDatatypeOSLOCollector(mock)
+        creator = OTLComplexDatatypeCreator(logger, collector)
+        dtcIdentificator = collector.FindComplexDatatypeAttributenByClassUri('https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAdres')[0]
+        typeName = creator.getTypeNameOfComplexAttribuut(dtcIdentificator)
+
+        self.assertEqual("string", typeName)

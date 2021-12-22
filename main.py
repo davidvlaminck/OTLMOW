@@ -57,7 +57,8 @@ if __name__ == '__main__':
     logger = ConsoleLogger()
 
     modelCreator = OTLModelCreator(logger, collector)
-    modelCreator.create_primitive_datatypes()
+    # modelCreator.create_primitive_datatypes()
+    modelCreator.create_complex_datatypes()
 
 
 

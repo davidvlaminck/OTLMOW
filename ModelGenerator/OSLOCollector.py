@@ -15,6 +15,7 @@ class OSLOCollector:
         self.primitiveDatatypeAttributen = []
         self.complexDatatypes = []
         self.complexDatatypeAttributen = []
+        self.enumerations = []
 
     def collect(self):
         self.classes = self.OSLOInMemoryCreator.getAllClasses()
@@ -24,6 +25,7 @@ class OSLOCollector:
         self.primitiveDatatypeAttributen = self.OSLOInMemoryCreator.getAllPrimitiveDatatypeAttributen()
         self.complexDatatypes = self.OSLOInMemoryCreator.getAllComplexDatatypes()
         self.complexDatatypeAttributen = self.OSLOInMemoryCreator.getAllComplexDatatypeAttributen()
+        self.enumerations = self.OSLOInMemoryCreator.getEnumerations()
 
     def FindAttributesByClass(self, osloclass: OSLOClass):
         return list(filter(lambda c: c.class_uri == osloclass.uri, self.attributes))
@@ -43,4 +45,5 @@ class OSLOCollector:
     def FindComplexDatatypeAttributenByClassUri(self, class_uri: str) -> list[OSLODatatypeComplexAttribuut]:
         return sorted(list(filter(lambda p: p.class_uri == class_uri, self.complexDatatypeAttributen)), key=lambda p: p.uri)
 
-
+    def FindEnumerationsByUri(self, uri):
+        return next(p for p in self.enumerations if p.uri == uri)

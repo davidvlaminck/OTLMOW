@@ -22,6 +22,7 @@ class OSLOCollectorTests(unittest.TestCase):
         self.assertTrue(len(collector.primitiveDatatypeAttributen) >= 1)
         self.assertTrue(len(collector.complexDatatypes) >= 1)
         self.assertTrue(len(collector.complexDatatypeAttributen) >= 1)
+        self.assertTrue(len(collector.enumerations) >= 1)
 
     def test_mock_CollectThenFindAttributesByClass(self):
         mock = Mock()

@@ -1,6 +1,7 @@
 import unittest
 
-from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField, Keuzelijst
+from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
+from OTLModel.Datatypes.Keuzelijst import Keuzelijst
 from OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 

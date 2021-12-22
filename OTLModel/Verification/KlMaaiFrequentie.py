@@ -1,4 +1,4 @@
-from OTLModel.Datatypes.KeuzelijstField import Keuzelijst
+from OTLModel.Datatypes.Keuzelijst import Keuzelijst
 
 
 class KlMaaiFrequentie(Keuzelijst):

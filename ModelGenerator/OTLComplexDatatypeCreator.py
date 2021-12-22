@@ -3,7 +3,7 @@ from Loggers.LogType import LogType
 from ModelGenerator.AbstractDatatypeCreator import AbstractDatatypeCreator
 from ModelGenerator.OSLOCollector import OSLOCollector
 from ModelGenerator.OSLODatatypeComplex import OSLODatatypeComplex
-from ModelGenerator.OSLODatatypePrimitive import OSLODatatypePrimitive
+from ModelGenerator.OSLODatatypeComplexAttribuut import OSLODatatypeComplexAttribuut
 
 
 class OTLComplexDatatypeCreator(AbstractDatatypeCreator):
@@ -24,17 +24,15 @@ class OTLComplexDatatypeCreator(AbstractDatatypeCreator):
         if osloDatatypeComplex.name == '':
             raise ValueError(f"OSLODatatypeComplex.name is invalid. Value = '{osloDatatypeComplex.name}'")
 
-        if osloDatatypeComplex.uri.startswith(
-                'https://wegenenverkeer.data.vlaanderen.be/ns/') and 'Dtc' in osloDatatypeComplex.uri:
+        if osloDatatypeComplex.uri.startswith('https://wegenenverkeer.data.vlaanderen.be/ns/') and 'Dtc' in osloDatatypeComplex.uri:
+            return self.CreateBlockToWriteFromComplexTypesDtc(osloDatatypeComplex)
+        elif osloDatatypeComplex.uri.startswith('https://schema.org/'):
             return self.CreateBlockToWriteFromComplexTypesDtc(osloDatatypeComplex)
         else:
             raise NotImplementedError
 
     def CreateBlockToWriteFromComplexTypesDtc(self, osloDatatypeComplex: OSLODatatypeComplex):
         attributen = self.osloCollector.FindComplexDatatypeAttributenByClassUri(osloDatatypeComplex.uri)
-
-        if len(attributen) == 1:
-            raise NotImplementedError("Assumed more than 1 ComplexDatatypeAttribuut in Dtc attributen")
 
         datablock = ['from OTLModel.Datatypes.ComplexField import ComplexField']
 
@@ -66,8 +64,22 @@ class OTLComplexDatatypeCreator(AbstractDatatypeCreator):
 
         for attribuut in attributen:
             if attribuut.kardinaliteit_max == '1':
+                typeName = self.getTypeNameOfComplexAttribuut(attribuut)
 
-                if self.getFieldNameFromTypeUri(attribuut.type) != "ComplexField":
+                if self.getFieldNameFromTypeUri(attribuut.type) == "ComplexField" or typeName.startswith("KwantWrd") or attribuut.type.startswith("https://schema.org/"):
+                    datablock.append(f'        self.waarde.{attribuut.name} = {typeName}()')
+                    datablock.append(f'        self.waarde.{attribuut.name}.naam = "{attribuut.name}"')
+                    datablock.append(f'        self.waarde.{attribuut.name}.label = "{attribuut.label_nl}"')
+                    datablock.append(f'        self.waarde.{attribuut.name}.definition = "{attribuut.definition_nl}"')
+                    datablock.append(f'        self.waarde.{attribuut.name}.uri = "{attribuut.uri}"')
+                    datablock.append(f'        self.waarde.{attribuut.name}.overerving = {attribuut.overerving}')
+                    datablock.append(f'        self.waarde.{attribuut.name}.constraints = "{attribuut.constraints}"')
+                    datablock.append(f'        self.waarde.{attribuut.name}.readonly = {attribuut.readonly}')
+                    datablock.append(f'        self.waarde.{attribuut.name}.usagenote = "{attribuut.usagenote_nl}"')
+                    datablock.append(f'        self.waarde.{attribuut.name}.deprecated_version = "{attribuut.deprecated_version}"')
+                    datablock.append(f'        self.{attribuut.name} = self.waarde.{attribuut.name}')
+                    datablock.append(f'        """{attribuut.definition_nl}"""')
+                else:
                     whitespace = self.getWhiteSpaceEquivalent(
                         f'        self.waarde.{attribuut.name} = {self.getFieldNameFromTypeUri(attribuut.type)}(')
                     datablock.append(
@@ -84,40 +96,43 @@ class OTLComplexDatatypeCreator(AbstractDatatypeCreator):
                     datablock.append(f'{whitespace}deprecated_version="{attribuut.deprecated_version}")')
                     datablock.append(f'        self.{attribuut.name} = self.waarde.{attribuut.name}')
                     datablock.append(f'        """{attribuut.definition_nl}"""')
-                else:
-                    typeName = attribuut.type[attribuut.type.find("#") + 1::]
-                    datablock.append(f'        self.waarde.adres = {typeName}()')
-                    datablock.append(f'        self.waarde.adres.naam = "{attribuut.name}"')
-                    datablock.append(f'        self.waarde.adres.label = "{attribuut.label_nl}"')
-                    datablock.append(f'        self.waarde.adres.definition = "{attribuut.definition_nl}"')
-                    datablock.append(f'        self.waarde.adres.uri = "{attribuut.uri}"')
-                    datablock.append(f'        self.waarde.adres.overerving = {attribuut.overerving}')
-                    datablock.append(f'        self.waarde.adres.constraints = "{attribuut.constraints}"')
-                    datablock.append(f'        self.waarde.adres.readonly = {attribuut.readonly}')
-                    datablock.append(f'        self.waarde.adres.usagenote = "{attribuut.usagenote_nl}"')
-                    datablock.append(f'        self.waarde.adres.deprecated_version = "{attribuut.deprecated_version}"')
-                    datablock.append(f'        """{attribuut.definition_nl}"""')
 
                 datablock.append('')
 
             else:
-                whitespace = self.getWhiteSpaceEquivalent(
-                    f'        {attribuut.name}Field = {self.getFieldNameFromTypeUri(attribuut.type)}(')
-                datablock.append(
-                    f'        {attribuut.name}Field = {self.getFieldNameFromTypeUri(attribuut.type)}(naam="{attribuut.name}",')
-                if self.getFieldNameFromTypeUri(attribuut.type) == "KeuzelijstField":
-                    typeName = attribuut.type[attribuut.type.find("#") + 1::]
-                    datablock.append(f'{whitespace}lijst={typeName}(),')
-                    datablock.append(f'{whitespace}overerving={attribuut.overerving},')
-                datablock.append(f'{whitespace}label="{attribuut.label_nl}",')
-                datablock.append(f'{whitespace}uri="{attribuut.uri}",')
-                datablock.append(f'{whitespace}definition="{attribuut.definition_nl}",')
-                datablock.append(f'{whitespace}constraints="{attribuut.constraints}",')
-                datablock.append(f'{whitespace}usagenote="{attribuut.usagenote_nl}",')
-                datablock.append(f'{whitespace}deprecated_version="{attribuut.deprecated_version}")')
-                datablock.append(f'        self.{attribuut.name} = KardinaliteitField(minKardinaliteit="{attribuut.kardinaliteit_min}", maxKardinaliteit="{attribuut.kardinaliteit_max}", fieldToMultiply={attribuut.name}Field)')
-                datablock.append(f'        """{attribuut.definition_nl}"""')
-                datablock.append('')
+                typeName = self.getTypeNameOfComplexAttribuut(attribuut)
+                if self.getFieldNameFromTypeUri(attribuut.type) == "ComplexField" or typeName.startswith("KwantWrd") or attribuut.type.startswith("https://schema.org/"):
+                    datablock.append(f'        {attribuut.name}Field = {self.getFieldNameFromTypeUri(attribuut.type)}()')
+                    datablock.append(f'        {attribuut.name}Field.naam = "{attribuut.name}"')
+                    datablock.append(f'        {attribuut.name}Field.label = "{attribuut.label_nl}"')
+                    datablock.append(f'        {attribuut.name}Field.definition = "{attribuut.definition_nl}"')
+                    datablock.append(f'        {attribuut.name}Field.uri = "{attribuut.uri}"')
+                    datablock.append(f'        {attribuut.name}Field.overerving = {attribuut.overerving}')
+                    datablock.append(f'        {attribuut.name}Field.constraints = "{attribuut.constraints}"')
+                    datablock.append(f'        {attribuut.name}Field.readonly = {attribuut.readonly}')
+                    datablock.append(f'        {attribuut.name}Field.usagenote = "{attribuut.usagenote_nl}"')
+                    datablock.append(f'        {attribuut.name}Field.deprecated_version = "{attribuut.deprecated_version}"')
+                    datablock.append(f'        self.{attribuut.name} = KardinaliteitField(minKardinaliteit="{attribuut.kardinaliteit_min}", maxKardinaliteit="{attribuut.kardinaliteit_max}", fieldToMultiply={attribuut.name}Field)')
+                    datablock.append(f'        """{attribuut.definition_nl}"""')
+                    datablock.append('')
+                else:
+                    whitespace = self.getWhiteSpaceEquivalent(
+                        f'        {attribuut.name}Field = {self.getFieldNameFromTypeUri(attribuut.type)}(')
+                    datablock.append(
+                        f'        {attribuut.name}Field = {self.getFieldNameFromTypeUri(attribuut.type)}(naam="{attribuut.name}",')
+                    if self.getFieldNameFromTypeUri(attribuut.type) == "KeuzelijstField":
+                        typeName = attribuut.type[attribuut.type.find("#") + 1::]
+                        datablock.append(f'{whitespace}lijst={typeName}(),')
+                        datablock.append(f'{whitespace}overerving={attribuut.overerving},')
+                    datablock.append(f'{whitespace}label="{attribuut.label_nl}",')
+                    datablock.append(f'{whitespace}uri="{attribuut.uri}",')
+                    datablock.append(f'{whitespace}definition="{attribuut.definition_nl}",')
+                    datablock.append(f'{whitespace}constraints="{attribuut.constraints}",')
+                    datablock.append(f'{whitespace}usagenote="{attribuut.usagenote_nl}",')
+                    datablock.append(f'{whitespace}deprecated_version="{attribuut.deprecated_version}")')
+                    datablock.append(f'        self.{attribuut.name} = KardinaliteitField(minKardinaliteit="{attribuut.kardinaliteit_min}", maxKardinaliteit="{attribuut.kardinaliteit_max}", fieldToMultiply={attribuut.name}Field)')
+                    datablock.append(f'        """{attribuut.definition_nl}"""')
+                    datablock.append('')
 
         if datablock[-1] == '':
             datablock.pop()
@@ -138,4 +153,20 @@ class OTLComplexDatatypeCreator(AbstractDatatypeCreator):
     def getFieldNameFromTypeUri(self, attribuutType):
         if attribuutType.startswith('http://www.w3.org/2001/XMLSchema#'):
             return self.getSingleFieldFromTypeUri(attribuutType)
+        if attribuutType.startswith("https://schema.org/"):
+            return self.getNonSingleFieldFromTypeUri(attribuutType)[1]
         return self.getNonSingleFieldFromTypeUri(attribuutType)[0]
+
+    def getTypeNameOfComplexAttribuut(self, attribuut: OSLODatatypeComplexAttribuut):
+        if attribuut.type.startswith("https://wegenenverkeer.data.vlaanderen.be/ns/") or attribuut.type.startswith("http://www.w3.org/2001/XMLSchema#"):
+            return attribuut.type[attribuut.type.find("#") + 1::]
+        elif attribuut.type.startswith("https://schema.org/"):
+            if attribuut.type == "https://schema.org/ContactPoint":
+                return "DtcContactinfo"
+            if attribuut.type == "https://schema.org/OpeningHoursSpecification":
+                return "DtcOpeningsurenSpecificatie"
+            raise NotImplementedError(f"Field of type {attribuut.type} is not implemented in DatatypeCreator.getTypeNameOfComplexAttribuut")
+
+        raise NotImplementedError(f"getTypeNameOfComplexAttribuut fails to get typename from {attribuut.uri}")
+
+

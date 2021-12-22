@@ -29,10 +29,10 @@ class DtcAdres(ComplexField):
 
         self.waarde.gemeente = KeuzelijstField(naam="gemeente",
                                                lijst=KlAlgGemeente(),
+                                               overerving=0,
                                                label="gemeente",
                                                uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAdres.gemeente",
                                                definition="De bestuurlijke eenheid waarin het adres gelegen is.",
-                                               overerving=0,
                                                constraints="",
                                                usagenote="",
                                                deprecated_version="")
@@ -61,10 +61,10 @@ class DtcAdres(ComplexField):
 
         self.waarde.provincie = KeuzelijstField(naam="provincie",
                                                 lijst=KlAlgProvincie(),
+                                                overerving=0,
                                                 label="provincie",
                                                 uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAdres.provincie",
                                                 definition="Het deelgebied waarin het adres gelegen is.",
-                                                overerving=0,
                                                 constraints="",
                                                 usagenote="",
                                                 deprecated_version="")

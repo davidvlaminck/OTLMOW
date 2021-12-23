@@ -95,6 +95,6 @@ class OTLModelCreator:
                     pass
                 creator.writeToFile(cls, 'Classes', dataToWrite)
                 self.logger.log(f"Created a class for {cls.name}", LogType.INFO)
-            except BaseException as e:
+            except Exception as e:
                 self.logger.log(str(e), LogType.ERROR)
                 self.logger.log(f"Could not create a class for {cls.name}", LogType.ERROR)

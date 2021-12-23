@@ -88,7 +88,7 @@ class AbstractDatatypeCreator(ABC):
             elif typeLink == "OSLODatatypeComplex":
                 collectedList.append(self.getTypeNameOfComplexAttribuut(attribuut.type))
             else:
-                raise not NotImplemented
+                raise not NotImplementedError(f"{typeLink.item_tabel} not implemented")
 
         distinct_types_list = list(set(collectedList))
         sorted_list = sorted(distinct_types_list, key=lambda t: t)

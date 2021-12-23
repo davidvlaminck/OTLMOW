@@ -1,4 +1,5 @@
 from OTLModel.Datatypes.ComplexField import ComplexField
+from OTLModel.Datatypes.ComplexField import ComplexField
 from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlBSSRandafwerking import KlBSSRandafwerking
 from OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter
@@ -17,22 +18,19 @@ class DtcBSSRandafwerking(ComplexField):
                          deprecated_version="")
 
         self.waarde.lengteRandafwerking = KwantWrdInMeter()
+        """De lengte in meter van de randafwerking."""
         self.waarde.lengteRandafwerking.naam = "lengteRandafwerking"
         self.waarde.lengteRandafwerking.label = "lengte randafwerking"
-        self.waarde.lengteRandafwerking.definition = "De lengte in meter van de randafwerking."
         self.waarde.lengteRandafwerking.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcBSSRandafwerking.lengteRandafwerking"
-        self.waarde.lengteRandafwerking.overerving = 0
+        self.waarde.lengteRandafwerking.definition = "De lengte in meter van de randafwerking."
         self.waarde.lengteRandafwerking.constraints = ""
-        self.waarde.lengteRandafwerking.readonly = 0
         self.waarde.lengteRandafwerking.usagenote = ""
         self.waarde.lengteRandafwerking.deprecated_version = ""
         self.lengteRandafwerking = self.waarde.lengteRandafwerking
-        """De lengte in meter van de randafwerking."""
 
         self.waarde.randafwerking = KeuzelijstField(naam="randafwerking",
-                                                    lijst=KlBSSRandafwerking(),
-                                                    overerving=0,
                                                     label="randafwerking",
+                                                    lijst=KlBSSRandafwerking(),
                                                     uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcBSSRandafwerking.randafwerking",
                                                     definition="De mogelijke wijzen van randafwerking van de verharding.",
                                                     constraints="",

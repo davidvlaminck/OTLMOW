@@ -1,4 +1,5 @@
 from OTLModel.Datatypes.ComplexField import ComplexField
+from OTLModel.Datatypes.ComplexField import ComplexField
 from OTLModel.Datatypes.StringField import StringField
 
 

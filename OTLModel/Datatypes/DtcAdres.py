@@ -1,4 +1,5 @@
 from OTLModel.Datatypes.ComplexField import ComplexField
+from OTLModel.Datatypes.ComplexField import ComplexField
 from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlAlgGemeente import KlAlgGemeente
 from OTLModel.Datatypes.KlAlgProvincie import KlAlgProvincie
@@ -28,9 +29,8 @@ class DtcAdres(ComplexField):
         """Een nummer dat de postbus aanduidt."""
 
         self.waarde.gemeente = KeuzelijstField(naam="gemeente",
-                                               lijst=KlAlgGemeente(),
-                                               overerving=0,
                                                label="gemeente",
+                                               lijst=KlAlgGemeente(),
                                                uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAdres.gemeente",
                                                definition="De bestuurlijke eenheid waarin het adres gelegen is.",
                                                constraints="",
@@ -60,9 +60,8 @@ class DtcAdres(ComplexField):
         """Een korte reeks tekens die in het postadres wordt opgenomen."""
 
         self.waarde.provincie = KeuzelijstField(naam="provincie",
-                                                lijst=KlAlgProvincie(),
-                                                overerving=0,
                                                 label="provincie",
+                                                lijst=KlAlgProvincie(),
                                                 uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAdres.provincie",
                                                 definition="Het deelgebied waarin het adres gelegen is.",
                                                 constraints="",

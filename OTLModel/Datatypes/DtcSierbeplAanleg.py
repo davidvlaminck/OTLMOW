@@ -1,4 +1,5 @@
 from OTLModel.Datatypes.ComplexField import ComplexField
+from OTLModel.Datatypes.ComplexField import ComplexField
 from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlAanplantingswijzeSierbeplanting import KlAanplantingswijzeSierbeplanting
 from OTLModel.Datatypes.KlSierbeplContainer import KlSierbeplContainer
@@ -20,9 +21,8 @@ class DtcSierbeplAanleg(ComplexField):
                          deprecated_version="")
 
         self.waarde.aanplantingswijze = KeuzelijstField(naam="aanplantingswijze",
-                                                        lijst=KlAanplantingswijzeSierbeplanting(),
-                                                        overerving=0,
                                                         label="aanplantingswijze",
+                                                        lijst=KlAanplantingswijzeSierbeplanting(),
                                                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcSierbeplAanleg.aanplantingswijze",
                                                         definition="Manier van aanplanten.",
                                                         constraints="",
@@ -32,9 +32,8 @@ class DtcSierbeplAanleg(ComplexField):
         """Manier van aanplanten."""
 
         self.waarde.containermaat = KeuzelijstField(naam="containermaat",
-                                                    lijst=KlSierbeplContainer(),
-                                                    overerving=0,
                                                     label="containermaat",
+                                                    lijst=KlSierbeplContainer(),
                                                     uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcSierbeplAanleg.containermaat",
                                                     definition="De grootte van de pot of container waarin de plant wordt geleverd. De P staat voor pot, de C voor container. Het getal geeft de grootte weer in centimeter.",
                                                     constraints="",
@@ -54,9 +53,8 @@ class DtcSierbeplAanleg(ComplexField):
         """Aantal planten per vierkante meter."""
 
         self.waarde.plantmaat = KeuzelijstField(naam="plantmaat",
-                                                lijst=KlSierbeplPlantmaat(),
-                                                overerving=0,
                                                 label="plantmaat",
+                                                lijst=KlSierbeplPlantmaat(),
                                                 uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcSierbeplAanleg.plantmaat",
                                                 definition="De hoogte van de plant in cm gemeten tussen een minimum en maximum waarde.",
                                                 constraints="",
@@ -66,9 +64,8 @@ class DtcSierbeplAanleg(ComplexField):
         """De hoogte van de plant in cm gemeten tussen een minimum en maximum waarde."""
 
         self.waarde.plantverband = KeuzelijstField(naam="plantverband",
-                                                   lijst=KlVegetatiePlantverband(),
-                                                   overerving=0,
                                                    label="plantverband",
+                                                   lijst=KlVegetatiePlantverband(),
                                                    uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcSierbeplAanleg.plantverband",
                                                    definition="De wijze waarop de planten zijn geschikt.",
                                                    constraints="",

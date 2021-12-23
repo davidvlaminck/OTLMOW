@@ -16,6 +16,7 @@ class OSLOCollector:
         self.complexDatatypes = []
         self.complexDatatypeAttributen = []
         self.enumerations = []
+        self.typeLinks = []
 
     def collect(self):
         self.classes = self.OSLOInMemoryCreator.getAllClasses()
@@ -26,12 +27,16 @@ class OSLOCollector:
         self.complexDatatypes = self.OSLOInMemoryCreator.getAllComplexDatatypes()
         self.complexDatatypeAttributen = self.OSLOInMemoryCreator.getAllComplexDatatypeAttributen()
         self.enumerations = self.OSLOInMemoryCreator.getEnumerations()
+        self.typeLinks = self.OSLOInMemoryCreator.getTypeLinks()
 
     def FindAttributesByClass(self, osloclass: OSLOClass):
         return list(filter(lambda c: c.class_uri == osloclass.uri, self.attributes))
 
     def FindInheritancesByClass(self, osloclass: OSLOClass):
         return list(filter(lambda c: c.class_uri == osloclass.uri, self.inheritances))
+
+    def FindClassByUri(self, uri: str):
+        return next(p for p in self.classes if p.uri == uri)
 
     def FindPrimitiveDatatypeByUri(self, uri: str):
         return next(p for p in self.primitiveDatatypes if p.uri == uri)
@@ -47,3 +52,6 @@ class OSLOCollector:
 
     def FindEnumerationByUri(self, uri):
         return next(p for p in self.enumerations if p.uri == uri)
+
+    def FindTypeLinkByUri(self, type_uri: str):
+        return next(p for p in self.typeLinks if p.item_uri == type_uri)

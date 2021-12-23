@@ -1,4 +1,5 @@
 from OTLModel.Datatypes.ComplexField import ComplexField
+from OTLModel.Datatypes.ComplexField import ComplexField
 from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlConstructiestaalsoort import KlConstructiestaalsoort
 from OTLModel.Datatypes.KlWalsmethode import KlWalsmethode
@@ -17,9 +18,8 @@ class DtcConstructiestaalspecificaties(ComplexField):
                          deprecated_version="")
 
         self.waarde.staalsoort = KeuzelijstField(naam="staalsoort",
-                                                 lijst=KlConstructiestaalsoort(),
-                                                 overerving=0,
                                                  label="staalsoort",
+                                                 lijst=KlConstructiestaalsoort(),
                                                  uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcConstructiestaalspecificaties.staalsoort",
                                                  definition="Staalkwaliteit die wordt gebruikt volgens Europese normen.",
                                                  constraints="",
@@ -29,9 +29,8 @@ class DtcConstructiestaalspecificaties(ComplexField):
         """Staalkwaliteit die wordt gebruikt volgens Europese normen."""
 
         self.waarde.walsmethode = KeuzelijstField(naam="walsmethode",
-                                                  lijst=KlWalsmethode(),
-                                                  overerving=0,
                                                   label="walsmethode",
+                                                  lijst=KlWalsmethode(),
                                                   uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcConstructiestaalspecificaties.walsmethode",
                                                   definition="Op welke manier het staal gewalst is.",
                                                   constraints="",

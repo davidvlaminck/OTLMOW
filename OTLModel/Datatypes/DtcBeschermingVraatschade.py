@@ -1,5 +1,6 @@
 from OTLModel.Datatypes.ComplexField import ComplexField
 from OTLModel.Datatypes.BooleanField import BooleanField
+from OTLModel.Datatypes.ComplexField import ComplexField
 from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlMateriaalBeschermingVraatschade import KlMateriaalBeschermingVraatschade
 
@@ -17,9 +18,8 @@ class DtcBeschermingVraatschade(ComplexField):
                          deprecated_version="")
 
         self.waarde.materiaal = KeuzelijstField(naam="materiaal",
-                                                lijst=KlMateriaalBeschermingVraatschade(),
-                                                overerving=0,
                                                 label="materiaal",
+                                                lijst=KlMateriaalBeschermingVraatschade(),
                                                 uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcBeschermingVraatschade.materiaal",
                                                 definition="De middelen als bescherming tegen vraatschade.",
                                                 constraints="",

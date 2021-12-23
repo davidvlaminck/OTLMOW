@@ -1,4 +1,5 @@
 from OTLModel.Datatypes.ComplexField import ComplexField
+from OTLModel.Datatypes.ComplexField import ComplexField
 from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlLEKantopsluitingBijkomendeParameter import KlLEKantopsluitingBijkomendeParameter
 from OTLModel.Datatypes.StringField import StringField
@@ -17,9 +18,8 @@ class DtcLENorm(ComplexField):
                          deprecated_version="")
 
         self.waarde.bijkomendeParameter = KeuzelijstField(naam="bijkomendeParameter",
-                                                          lijst=KlLEKantopsluitingBijkomendeParameter(),
-                                                          overerving=0,
                                                           label="bijkomende parameter",
+                                                          lijst=KlLEKantopsluitingBijkomendeParameter(),
                                                           uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcLENorm.bijkomendeParameter",
                                                           definition="Het gedetailleerder typeren van de kantopsluiting.",
                                                           constraints="",

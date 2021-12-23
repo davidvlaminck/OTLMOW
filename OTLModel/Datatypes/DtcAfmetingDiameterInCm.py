@@ -1,4 +1,5 @@
 from OTLModel.Datatypes.ComplexField import ComplexField
+from OTLModel.Datatypes.ComplexField import ComplexField
 from OTLModel.Datatypes.KwantWrdInCentimeter import KwantWrdInCentimeter
 
 
@@ -15,14 +16,12 @@ class DtcAfmetingDiameterInCm(ComplexField):
                          deprecated_version="")
 
         self.waarde.diameter = KwantWrdInCentimeter()
+        """De diameter in centimeter."""
         self.waarde.diameter.naam = "diameter"
         self.waarde.diameter.label = "diameter"
-        self.waarde.diameter.definition = "De diameter in centimeter."
         self.waarde.diameter.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAfmetingDiameterInCm.diameter"
-        self.waarde.diameter.overerving = 0
+        self.waarde.diameter.definition = "De diameter in centimeter."
         self.waarde.diameter.constraints = ""
-        self.waarde.diameter.readonly = 0
         self.waarde.diameter.usagenote = ""
         self.waarde.diameter.deprecated_version = ""
         self.diameter = self.waarde.diameter
-        """De diameter in centimeter."""

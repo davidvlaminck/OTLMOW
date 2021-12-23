@@ -1,4 +1,5 @@
 from OTLModel.Datatypes.ComplexField import ComplexField
+from OTLModel.Datatypes.ComplexField import ComplexField
 from OTLModel.Datatypes.IntegerField import IntegerField
 from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlPoortconfiguratieRichting import KlPoortconfiguratieRichting
@@ -28,9 +29,8 @@ class DtcSoftwarePoortconfiguratie(ComplexField):
         """Het nummer dat werd toegekend aan de (netwerk)poort."""
 
         self.waarde.richting = KeuzelijstField(naam="richting",
-                                               lijst=KlPoortconfiguratieRichting(),
-                                               overerving=0,
                                                label="richting",
+                                               lijst=KlPoortconfiguratieRichting(),
                                                uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcSoftwarePoortconfiguratie.richting",
                                                definition="De richting waarin de poort openstaat.",
                                                constraints="",

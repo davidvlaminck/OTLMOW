@@ -1,7 +1,7 @@
 import unittest
 
 from OTLModel.Datatypes.DtcRechtspersoon import DtcRechtspersoon
-from OTLModel.Verification.DtcIdentificator import DtcIdentificator
+from OTLModel.Datatypes.DtcIdentificator import DtcIdentificator
 
 
 class DtcTestClass:

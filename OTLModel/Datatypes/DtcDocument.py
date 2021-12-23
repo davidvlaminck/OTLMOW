@@ -1,4 +1,5 @@
 from OTLModel.Datatypes.ComplexField import ComplexField
+from OTLModel.Datatypes.ComplexField import ComplexField
 from OTLModel.Datatypes.DteTekstblok import DteTekstblok
 from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlAlgMimeType import KlAlgMimeType
@@ -29,9 +30,8 @@ class DtcDocument(ComplexField):
         """De naam van het Document inclusief de bestandsextensie, van de naam gescheiden door een punt."""
 
         self.waarde.mimeType = KeuzelijstField(naam="mimeType",
-                                               lijst=KlAlgMimeType(),
-                                               overerving=0,
                                                label="mime-type",
+                                               lijst=KlAlgMimeType(),
                                                uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcDocument.mimeType",
                                                definition="Het MIME type van het document.",
                                                constraints="",
@@ -41,17 +41,15 @@ class DtcDocument(ComplexField):
         """Het MIME type van het document."""
 
         self.waarde.omschrijving = DteTekstblok()
+        """Een korte toelichting over waar het document juist voor dient."""
         self.waarde.omschrijving.naam = "omschrijving"
         self.waarde.omschrijving.label = "omschrijving"
-        self.waarde.omschrijving.definition = "Een korte toelichting over waar het document juist voor dient."
         self.waarde.omschrijving.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcDocument.omschrijving"
-        self.waarde.omschrijving.overerving = 0
+        self.waarde.omschrijving.definition = "Een korte toelichting over waar het document juist voor dient."
         self.waarde.omschrijving.constraints = ""
-        self.waarde.omschrijving.readonly = 0
         self.waarde.omschrijving.usagenote = ""
         self.waarde.omschrijving.deprecated_version = ""
         self.omschrijving = self.waarde.omschrijving
-        """Een korte toelichting over waar het document juist voor dient."""
 
         self.waarde.uri = URIField(naam="uri",
                                    label="uri",

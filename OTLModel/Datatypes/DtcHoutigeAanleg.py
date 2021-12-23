@@ -1,5 +1,6 @@
 from OTLModel.Datatypes.ComplexField import ComplexField
 from OTLModel.Datatypes.BooleanField import BooleanField
+from OTLModel.Datatypes.ComplexField import ComplexField
 from OTLModel.Datatypes.DtcBeschermingVraatschade import DtcBeschermingVraatschade
 from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlBeschermingMaaischade import KlBeschermingMaaischade
@@ -23,19 +24,6 @@ class DtcHoutigeAanleg(ComplexField):
                          definition="Complex datatype dat de aanleg van houtige vegetatie beschrijft.",
                          usagenote="",
                          deprecated_version="")
-
-        self.waarde.beschermingVraatschade = DtcBeschermingVraatschade()
-        self.waarde.beschermingVraatschade.naam = "beschermingVraatschade"
-        self.waarde.beschermingVraatschade.label = "bescherming vraatschade"
-        self.waarde.beschermingVraatschade.definition = "Bescherming van de stam tegen knaagdieren."
-        self.waarde.beschermingVraatschade.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcHoutigeAanleg.beschermingVraatschade"
-        self.waarde.beschermingVraatschade.overerving = 0
-        self.waarde.beschermingVraatschade.constraints = ""
-        self.waarde.beschermingVraatschade.readonly = 0
-        self.waarde.beschermingVraatschade.usagenote = "Attribuut uit gebruik sinds versie 2.0.0"
-        self.waarde.beschermingVraatschade.deprecated_version = "2.0.0"
-        self.beschermingVraatschade = self.waarde.beschermingVraatschade
-        """Bescherming van de stam tegen knaagdieren."""
 
         self.waarde.heeftBoomplaat = BooleanField(naam="heeftBoomplaat",
                                                   label="heeft boomplaat",
@@ -68,9 +56,8 @@ class DtcHoutigeAanleg(ComplexField):
         """Wortelgeleiding en –wering moet voorkomen dat boomwortels het trottoir, de middenberm, het fietspad, de rijweg, andere wegverhardingen en leidingstelsels beschadigen. Het heeft als doel om boomwortels naar beneden te leiden, waar ze onder een obstakel verder kunnen groeien."""
 
         self.waarde.maaischadeBescherming = KeuzelijstField(naam="maaischadeBescherming",
-                                                            lijst=KlBeschermingMaaischade(),
-                                                            overerving=0,
                                                             label="maaischade bescherming",
+                                                            lijst=KlBeschermingMaaischade(),
                                                             uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcHoutigeAanleg.maaischadeBescherming",
                                                             definition="Bescherming van de stam tegen maaimachines.",
                                                             constraints="",
@@ -100,9 +87,8 @@ class DtcHoutigeAanleg(ComplexField):
         """Aantal planten per vierkante meter."""
 
         self.waarde.plantmaatHoogte = KeuzelijstField(naam="plantmaatHoogte",
-                                                      lijst=KlPlantmaatHoogte(),
-                                                      overerving=0,
                                                       label="plantmaat hoogte",
+                                                      lijst=KlPlantmaatHoogte(),
                                                       uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcHoutigeAanleg.plantmaatHoogte",
                                                       definition="De hoogte van de plant in cm gemeten tussen een minimum en maximum waarde.",
                                                       constraints="",
@@ -112,9 +98,8 @@ class DtcHoutigeAanleg(ComplexField):
         """De hoogte van de plant in cm gemeten tussen een minimum en maximum waarde."""
 
         self.waarde.plantmaatOmtrek = KeuzelijstField(naam="plantmaatOmtrek",
-                                                      lijst=KlPlantmaatOmtrek(),
-                                                      overerving=0,
                                                       label="plantmaat omtrek",
+                                                      lijst=KlPlantmaatOmtrek(),
                                                       uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcHoutigeAanleg.plantmaatOmtrek",
                                                       definition="De stamomtrek in centimeter  (gemeten op 1 m boven het maaiveld) met een minimum en maximum waarde.",
                                                       constraints="",
@@ -124,9 +109,8 @@ class DtcHoutigeAanleg(ComplexField):
         """De stamomtrek in centimeter  (gemeten op 1 m boven het maaiveld) met een minimum en maximum waarde."""
 
         self.waarde.plantverband = KeuzelijstField(naam="plantverband",
-                                                   lijst=KlVegetatiePlantverband(),
-                                                   overerving=0,
                                                    label="plantverband",
+                                                   lijst=KlVegetatiePlantverband(),
                                                    uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcHoutigeAanleg.plantverband",
                                                    definition="De wijze waarop de planten zijn geschikt.",
                                                    constraints="",
@@ -136,9 +120,8 @@ class DtcHoutigeAanleg(ComplexField):
         """De wijze waarop de planten zijn geschikt."""
 
         self.waarde.vormAanlevering = KeuzelijstField(naam="vormAanlevering",
-                                                      lijst=KlVormAanleveringHoutigeVegetatie(),
-                                                      overerving=0,
                                                       label="vorm aanlevering",
+                                                      lijst=KlVormAanleveringHoutigeVegetatie(),
                                                       uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcHoutigeAanleg.vormAanlevering",
                                                       definition="De wijze waarop het plantgoed wordt aangeleverd.",
                                                       constraints="",
@@ -148,9 +131,8 @@ class DtcHoutigeAanleg(ComplexField):
         """De wijze waarop het plantgoed wordt aangeleverd."""
 
         self.waarde.vraatschadeBescherming = KeuzelijstField(naam="vraatschadeBescherming",
-                                                             lijst=KlMateriaalBeschermingVraatschade(),
-                                                             overerving=0,
                                                              label="vraatschade bescherming",
+                                                             lijst=KlMateriaalBeschermingVraatschade(),
                                                              uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcHoutigeAanleg.vraatschadeBescherming",
                                                              definition="Bescherming van de stam tegen knaagdieren.",
                                                              constraints="",
@@ -160,9 +142,8 @@ class DtcHoutigeAanleg(ComplexField):
         """Bescherming van de stam tegen knaagdieren."""
 
         self.waarde.wortel = KeuzelijstField(naam="wortel",
-                                             lijst=KlVegetatieWortel(),
-                                             overerving=0,
                                              label="wortel",
+                                             lijst=KlVegetatieWortel(),
                                              uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcHoutigeAanleg.wortel",
                                              definition="De manier van levering en aanplanting van het wortelgestel van de boom of plant.",
                                              constraints="",

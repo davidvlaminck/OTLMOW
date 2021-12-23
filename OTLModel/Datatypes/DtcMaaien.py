@@ -1,6 +1,7 @@
 from OTLModel.Datatypes.ComplexField import ComplexField
 from OTLModel.Datatypes.KardinaliteitField import KardinaliteitField
 from OTLModel.Datatypes.BooleanField import BooleanField
+from OTLModel.Datatypes.ComplexField import ComplexField
 from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlMaaiFrequentie import KlMaaiFrequentie
 from OTLModel.Datatypes.KlMaaiPeriode import KlMaaiPeriode
@@ -19,15 +20,15 @@ class DtcMaaien(ComplexField):
                          deprecated_version="")
 
         frequentieField = KeuzelijstField(naam="frequentie",
-                                          lijst=KlMaaiFrequentie(),
-                                          overerving=0,
                                           label="frequentie",
+                                          lijst=KlMaaiFrequentie(),
                                           uri="https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#DtcMaaien.frequentie",
                                           definition="Het aantal keer dat er gemaaid wordt per jaar.",
                                           constraints="",
                                           usagenote="",
                                           deprecated_version="")
-        self.frequentie = KardinaliteitField(minKardinaliteit="1", maxKardinaliteit="*", fieldToMultiply=frequentieField)
+        self.waarde.frequentie = KardinaliteitField(minKardinaliteit="1", maxKardinaliteit="*", fieldToMultiply=frequentieField)
+        self.frequentie = self.waarde.frequentie
         """Het aantal keer dat er gemaaid wordt per jaar."""
 
         self.waarde.isGazonbeheer = BooleanField(naam="isGazonbeheer",
@@ -81,13 +82,13 @@ class DtcMaaien(ComplexField):
         """Aanduiding of er gemaaid mag worden met een klepelmaaier."""
 
         periodeField = KeuzelijstField(naam="periode",
-                                       lijst=KlMaaiPeriode(),
-                                       overerving=0,
                                        label="periode",
+                                       lijst=KlMaaiPeriode(),
                                        uri="https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#DtcMaaien.periode",
                                        definition="De maand waarin het maaien wordt uitgevoerd.",
                                        constraints="",
                                        usagenote="",
                                        deprecated_version="")
-        self.periode = KardinaliteitField(minKardinaliteit="1", maxKardinaliteit="*", fieldToMultiply=periodeField)
+        self.waarde.periode = KardinaliteitField(minKardinaliteit="1", maxKardinaliteit="*", fieldToMultiply=periodeField)
+        self.periode = self.waarde.periode
         """De maand waarin het maaien wordt uitgevoerd."""

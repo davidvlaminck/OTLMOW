@@ -134,7 +134,7 @@ class OTLEnumerationCreatorTests(unittest.TestCase):
         KlAIMToestand = collector.FindEnumerationByUri(
             'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KlAIMToestand')
         dataToWrite = creator.CreateBlockToWriteFromEnumerations(KlAIMToestand)
-        creator.writeToFile(KlAIMToestand, dataToWrite, '../../')
+        creator.writeToFile(KlAIMToestand, 'Datatypes', dataToWrite, '../../')
 
         self.assertTrue(os.path.isfile('../../OTLModel/Datatypes/KlAIMToestand.py'))
 
@@ -152,6 +152,6 @@ class OTLEnumerationCreatorTests(unittest.TestCase):
         KlAIMToestand = collector.FindEnumerationByUri(
             'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KlAlgProvincie')
         dataToWrite = creator.CreateBlockToWriteFromEnumerations(KlAIMToestand)
-        creator.writeToFile(KlAIMToestand, dataToWrite, '../../')
+        creator.writeToFile(KlAIMToestand, 'Datatypes', dataToWrite, '../../')
 
         self.assertTrue(os.path.isfile('../../OTLModel/Datatypes/KlAlgProvincie.py'))

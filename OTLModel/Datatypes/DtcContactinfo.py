@@ -1,5 +1,6 @@
 from OTLModel.Datatypes.ComplexField import ComplexField
 from OTLModel.Datatypes.KardinaliteitField import KardinaliteitField
+from OTLModel.Datatypes.ComplexField import ComplexField
 from OTLModel.Datatypes.DtcAdres import DtcAdres
 from OTLModel.Datatypes.DtcOpeningsurenSpecificatie import DtcOpeningsurenSpecificatie
 from OTLModel.Datatypes.StringField import StringField
@@ -18,29 +19,26 @@ class DtcContactinfo(ComplexField):
                          deprecated_version="")
 
         self.waarde.adres = DtcAdres()
+        """Adres dat men kan aanschrijven of bezoeken."""
         self.waarde.adres.naam = "adres"
         self.waarde.adres.label = "adres"
-        self.waarde.adres.definition = "Adres dat men kan aanschrijven of bezoeken."
         self.waarde.adres.uri = "https://schema.org/ContactPoint.adres"
-        self.waarde.adres.overerving = 0
+        self.waarde.adres.definition = "Adres dat men kan aanschrijven of bezoeken."
         self.waarde.adres.constraints = ""
-        self.waarde.adres.readonly = 0
         self.waarde.adres.usagenote = ""
         self.waarde.adres.deprecated_version = ""
         self.adres = self.waarde.adres
-        """Adres dat men kan aanschrijven of bezoeken."""
 
         beschikbaarheidField = DtcOpeningsurenSpecificatie()
         beschikbaarheidField.naam = "beschikbaarheid"
         beschikbaarheidField.label = "beschikbaarheid"
-        beschikbaarheidField.definition = "Periode waarin contact kan worden opgenomen."
         beschikbaarheidField.uri = "https://schema.org/ContactPoint.beschikbaarheid"
-        beschikbaarheidField.overerving = 0
+        beschikbaarheidField.definition = "Periode waarin contact kan worden opgenomen."
         beschikbaarheidField.constraints = ""
-        beschikbaarheidField.readonly = 0
         beschikbaarheidField.usagenote = ""
         beschikbaarheidField.deprecated_version = ""
-        self.beschikbaarheid = KardinaliteitField(minKardinaliteit="0", maxKardinaliteit="*", fieldToMultiply=beschikbaarheidField)
+        self.waarde.beschikbaarheid = KardinaliteitField(minKardinaliteit="0", maxKardinaliteit="*", fieldToMultiply=beschikbaarheidField)
+        self.beschikbaarheid = self.waarde.beschikbaarheid
         """Periode waarin contact kan worden opgenomen."""
 
         self.waarde.contactnaam = StringField(naam="contactnaam",

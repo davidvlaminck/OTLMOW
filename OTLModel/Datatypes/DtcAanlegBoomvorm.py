@@ -1,5 +1,6 @@
 from OTLModel.Datatypes.ComplexField import ComplexField
 from OTLModel.Datatypes.BooleanField import BooleanField
+from OTLModel.Datatypes.ComplexField import ComplexField
 from OTLModel.Datatypes.DtcBeschermingVraatschade import DtcBeschermingVraatschade
 from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlAantalBoompalen import KlAantalBoompalen
@@ -26,23 +27,9 @@ class DtcAanlegBoomvorm(ComplexField):
                          usagenote="",
                          deprecated_version="")
 
-        self.waarde.beschermingVraatschade = DtcBeschermingVraatschade()
-        self.waarde.beschermingVraatschade.naam = "beschermingVraatschade"
-        self.waarde.beschermingVraatschade.label = "bescherming vraatschade"
-        self.waarde.beschermingVraatschade.definition = "Bescherming van de stam tegen knaagdieren."
-        self.waarde.beschermingVraatschade.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcAanlegBoomvorm.beschermingVraatschade"
-        self.waarde.beschermingVraatschade.overerving = 0
-        self.waarde.beschermingVraatschade.constraints = ""
-        self.waarde.beschermingVraatschade.readonly = 0
-        self.waarde.beschermingVraatschade.usagenote = "Attribuut uit gebruik sinds versie 2.0.0"
-        self.waarde.beschermingVraatschade.deprecated_version = "2.0.0"
-        self.beschermingVraatschade = self.waarde.beschermingVraatschade
-        """Bescherming van de stam tegen knaagdieren."""
-
         self.waarde.boompaalconstructie = KeuzelijstField(naam="boompaalconstructie",
-                                                          lijst=KlAantalBoompalen(),
-                                                          overerving=0,
                                                           label="boompaalconstructie",
+                                                          lijst=KlAantalBoompalen(),
                                                           uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcAanlegBoomvorm.boompaalconstructie",
                                                           definition="Een constructie om de wortels van de aangeplante boom vast te zetten of te fixeren met oa. palen.",
                                                           constraints="",
@@ -52,9 +39,8 @@ class DtcAanlegBoomvorm(ComplexField):
         """Een constructie om de wortels van de aangeplante boom vast te zetten of te fixeren met oa. palen."""
 
         self.waarde.groeiplaatsverbetering = KeuzelijstField(naam="groeiplaatsverbetering",
-                                                             lijst=KlGroeiplaatsverbetering(),
-                                                             overerving=0,
                                                              label="groeiplaatsverbetering",
+                                                             lijst=KlGroeiplaatsverbetering(),
                                                              uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcAanlegBoomvorm.groeiplaatsverbetering",
                                                              definition="De techniek waarmee de groeiplaats wordt verbeterd met als doel de levensverwachting en de conditie van de vegetatie te verbeteren.",
                                                              constraints="",
@@ -84,9 +70,8 @@ class DtcAanlegBoomvorm(ComplexField):
         """Aanduiding of de boom wortelwering heeft. Wortelgeleiding en –wering moet voorkomen dat boomwortels het trottoir, de middenberm, het fietspad, de rijweg, andere wegverhardingen en leidingstelsels beschadigen."""
 
         self.waarde.maaischadeBescherming = KeuzelijstField(naam="maaischadeBescherming",
-                                                            lijst=KlBeschermingMaaischade(),
-                                                            overerving=0,
                                                             label="maaischade bescherming",
+                                                            lijst=KlBeschermingMaaischade(),
                                                             uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcAanlegBoomvorm.maaischadeBescherming",
                                                             definition="Bescherming van de stam tegen maaimachines.",
                                                             constraints="",
@@ -96,9 +81,8 @@ class DtcAanlegBoomvorm(ComplexField):
         """Bescherming van de stam tegen maaimachines."""
 
         self.waarde.plantmaatHoogte = KeuzelijstField(naam="plantmaatHoogte",
-                                                      lijst=KlPlantmaatHoogte(),
-                                                      overerving=0,
                                                       label="plantmaat hoogte",
+                                                      lijst=KlPlantmaatHoogte(),
                                                       uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcAanlegBoomvorm.plantmaatHoogte",
                                                       definition="De hoogte in meter gemeten van de stamvoet tot de top met een minimum en maximum waarde.",
                                                       constraints="",
@@ -108,9 +92,8 @@ class DtcAanlegBoomvorm(ComplexField):
         """De hoogte in meter gemeten van de stamvoet tot de top met een minimum en maximum waarde."""
 
         self.waarde.plantmaatOmtrek = KeuzelijstField(naam="plantmaatOmtrek",
-                                                      lijst=KlPlantmaatOmtrek(),
-                                                      overerving=0,
                                                       label="plantmaat omtrek",
+                                                      lijst=KlPlantmaatOmtrek(),
                                                       uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcAanlegBoomvorm.plantmaatOmtrek",
                                                       definition="De stamomtrek in centimeter  (gemeten op 1 m boven het maaiveld) met een minimum en maximum waarde.",
                                                       constraints="",
@@ -120,9 +103,8 @@ class DtcAanlegBoomvorm(ComplexField):
         """De stamomtrek in centimeter  (gemeten op 1 m boven het maaiveld) met een minimum en maximum waarde."""
 
         self.waarde.verankering = KeuzelijstField(naam="verankering",
-                                                  lijst=KlBoomVerankering(),
-                                                  overerving=0,
                                                   label="verankering",
+                                                  lijst=KlBoomVerankering(),
                                                   uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcAanlegBoomvorm.verankering",
                                                   definition="Aanduiding of de boom onder- of bovengronds gefixeerd wordt.",
                                                   constraints="",
@@ -132,9 +114,8 @@ class DtcAanlegBoomvorm(ComplexField):
         """Aanduiding of de boom onder- of bovengronds gefixeerd wordt."""
 
         self.waarde.verankeringstype = KeuzelijstField(naam="verankeringstype",
-                                                       lijst=KlBoomVerankeringtype(),
-                                                       overerving=0,
                                                        label="verankeringstype",
+                                                       lijst=KlBoomVerankeringtype(),
                                                        uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcAanlegBoomvorm.verankeringstype",
                                                        definition="Het materiaal van de fixering of verankering.",
                                                        constraints="",
@@ -144,9 +125,8 @@ class DtcAanlegBoomvorm(ComplexField):
         """Het materiaal van de fixering of verankering."""
 
         self.waarde.vormAanlevering = KeuzelijstField(naam="vormAanlevering",
-                                                      lijst=KlVormAanleveringHoutigeVegetatie(),
-                                                      overerving=0,
                                                       label="vorm aanlevering",
+                                                      lijst=KlVormAanleveringHoutigeVegetatie(),
                                                       uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcAanlegBoomvorm.vormAanlevering",
                                                       definition="De wijze waarop het plantgoed wordt aangeleverd.",
                                                       constraints="",
@@ -156,9 +136,8 @@ class DtcAanlegBoomvorm(ComplexField):
         """De wijze waarop het plantgoed wordt aangeleverd."""
 
         self.waarde.vraatschadeBescherming = KeuzelijstField(naam="vraatschadeBescherming",
-                                                             lijst=KlMateriaalBeschermingVraatschade(),
-                                                             overerving=0,
                                                              label="vraatschade bescherming",
+                                                             lijst=KlMateriaalBeschermingVraatschade(),
                                                              uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcAanlegBoomvorm.vraatschadeBescherming",
                                                              definition="Bescherming van de stam tegen knaagdieren.",
                                                              constraints="",
@@ -168,9 +147,8 @@ class DtcAanlegBoomvorm(ComplexField):
         """Bescherming van de stam tegen knaagdieren."""
 
         self.waarde.wortelAanplant = KeuzelijstField(naam="wortelAanplant",
-                                                     lijst=KlVegetatieWortel(),
-                                                     overerving=0,
                                                      label="wortel aanplant",
+                                                     lijst=KlVegetatieWortel(),
                                                      uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcAanlegBoomvorm.wortelAanplant",
                                                      definition="De manier van levering en aanplanting van het wortelgestel van de boom of plant.",
                                                      constraints="",

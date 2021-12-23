@@ -1,4 +1,5 @@
 from OTLModel.Datatypes.ComplexField import ComplexField
+from OTLModel.Datatypes.ComplexField import ComplexField
 from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlLEGCGeluidskarakteristiek import KlLEGCGeluidskarakteristiek
 from OTLModel.Datatypes.KlLEGCMateriaal import KlLEGCMateriaal
@@ -17,9 +18,8 @@ class DtcGCMateriaalKarakteristiek(ComplexField):
                          deprecated_version="")
 
         self.waarde.geluidskarakteristiek = KeuzelijstField(naam="geluidskarakteristiek",
-                                                            lijst=KlLEGCGeluidskarakteristiek(),
-                                                            overerving=0,
                                                             label="geluidskarakteristiek",
+                                                            lijst=KlLEGCGeluidskarakteristiek(),
                                                             uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcGCMateriaalKarakteristiek.geluidskarakteristiek",
                                                             definition="Het kenmerkend gedrag inzake geluid van de geluidswerende constructie.",
                                                             constraints="",
@@ -29,9 +29,8 @@ class DtcGCMateriaalKarakteristiek(ComplexField):
         """Het kenmerkend gedrag inzake geluid van de geluidswerende constructie."""
 
         self.waarde.materiaal = KeuzelijstField(naam="materiaal",
-                                                lijst=KlLEGCMateriaal(),
-                                                overerving=0,
                                                 label="materiaal",
+                                                lijst=KlLEGCMateriaal(),
                                                 uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcGCMateriaalKarakteristiek.materiaal",
                                                 definition="Het materiaal van de geluidswerende constructie.",
                                                 constraints="",

@@ -1,32 +1,3 @@
-attributen:
-name
-label
-definition
-uri
-kard. min-max + type > definieert field
-overerving
-constraints
-readonly
-usagenote
-deprecatedversion
-
-type: > OTLField
-name
-uri
-usagenote
-definition
-label
-deprecatedversion
-> codelist voor keuzelijsten
-
-relatie:
-bron
-doel
-uri
-richting
-usagenote
-deprecatedversion
-
 relaties leggen: validatie op classes zelf is moeilijk maar kan mits extra methode aanroepen
 relaties leggen: mogelijk maken om te leggen vanuit doel of bron
 
@@ -44,13 +15,23 @@ left join OSLODatatypePrimitive op on OSLOAttributen.'type' = op.uri
 where OSLOClass.uri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DNBLaagspanning';
 
 
-
-overerving tussen classes
+TODO's:
 storage (in memory)
 tempId's vs bestaande id's
 agents kunnen niet zelf aangemaakt worden
 deprecated classes geven een warning
 deprecated attributen? door overerving aan te passen?
+
+To check:
+Agent
+Keuring
+WVLichtmast
+Lichtmast
+BitumineuzeLaag
+Funderingsmassief
+Sokkel
+KlassiekeFundering
+Verkeersbord
 
 
 Facility

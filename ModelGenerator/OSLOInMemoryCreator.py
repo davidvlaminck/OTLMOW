@@ -6,6 +6,7 @@ from ModelGenerator.OSLODatatypeComplexAttribuut import OSLODatatypeComplexAttri
 from ModelGenerator.OSLODatatypePrimitive import OSLODatatypePrimitive
 from ModelGenerator.OSLODatatypePrimitiveAttribuut import OSLODatatypePrimitiveAttribuut
 from ModelGenerator.OSLOEnumeration import OSLOEnumeration
+from ModelGenerator.OSLOTypeLink import OSLOTypeLink
 from ModelGenerator.SQLDbReader import SQLDbReader
 
 
@@ -135,6 +136,18 @@ class OSLOInMemoryCreator:
         list = []
         for row in data:
             c = OSLOEnumeration(row[0], row[1], row[2], row[3], row[4], row[5], row[6])
+            list.append(c)
+
+        return list
+
+    def getTypeLinks(self):
+        data = self.sqlDbReader.performReadQuery(
+            "SELECT item_uri, item_tabel, deprecated_version FROM TypeLinkTabel",
+            {})
+
+        list = []
+        for row in data:
+            c = OSLOTypeLink(row[0], row[1], row[2])
             list.append(c)
 
         return list

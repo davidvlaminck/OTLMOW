@@ -1,4 +1,5 @@
 from OTLModel.Datatypes.ComplexField import ComplexField
+from OTLModel.Datatypes.ComplexField import ComplexField
 from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlKleurSupp import KlKleurSupp
 from OTLModel.Datatypes.KlTypeSuppCBV import KlTypeSuppCBV
@@ -17,9 +18,8 @@ class DtcSupplementenCBV(ComplexField):
                          deprecated_version="")
 
         self.waarde.kleur = KeuzelijstField(naam="kleur",
-                                            lijst=KlKleurSupp(),
-                                            overerving=0,
                                             label="kleur",
+                                            lijst=KlKleurSupp(),
                                             uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcSupplementenCBV.kleur",
                                             definition="De kleur van de supplementen toegevoegd aan de verharding.",
                                             constraints="",
@@ -29,9 +29,8 @@ class DtcSupplementenCBV(ComplexField):
         """De kleur van de supplementen toegevoegd aan de verharding."""
 
         self.waarde.type = KeuzelijstField(naam="type",
-                                           lijst=KlTypeSuppCBV(),
-                                           overerving=0,
                                            label="type",
+                                           lijst=KlTypeSuppCBV(),
                                            uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcSupplementenCBV.type",
                                            definition="Het type van de supplementen toegevoegd aan de verharding.",
                                            constraints="",

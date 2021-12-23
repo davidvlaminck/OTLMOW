@@ -1,4 +1,5 @@
 from OTLModel.Datatypes.ComplexField import ComplexField
+from OTLModel.Datatypes.ComplexField import ComplexField
 from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlAlgWeekdagen import KlAlgWeekdagen
 from OTLModel.Datatypes.TimeField import TimeField
@@ -37,9 +38,8 @@ class DtcOpeningsurenSpecificatie(ComplexField):
         """Het tijdsstip waarop de sluiting plaatsvindt."""
 
         self.waarde.weekdag = KeuzelijstField(naam="weekdag",
-                                              lijst=KlAlgWeekdagen(),
-                                              overerving=0,
                                               label="weekdag",
+                                              lijst=KlAlgWeekdagen(),
                                               uri="https://schema.org/OpeningHoursSpecification.weekdag",
                                               definition="Een dag uit de week incl. weekenddagen.",
                                               constraints="",

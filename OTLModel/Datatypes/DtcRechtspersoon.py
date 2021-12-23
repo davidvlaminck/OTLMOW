@@ -1,4 +1,5 @@
 from OTLModel.Datatypes.ComplexField import ComplexField
+from OTLModel.Datatypes.ComplexField import ComplexField
 from OTLModel.Datatypes.DtcAdres import DtcAdres
 from OTLModel.Datatypes.StringField import StringField
 
@@ -16,17 +17,15 @@ class DtcRechtspersoon(ComplexField):
                          deprecated_version="")
 
         self.waarde.adres = DtcAdres()
+        """Het adres."""
         self.waarde.adres.naam = "adres"
         self.waarde.adres.label = "adres"
-        self.waarde.adres.definition = "Het adres."
         self.waarde.adres.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcRechtspersoon.adres"
-        self.waarde.adres.overerving = 0
+        self.waarde.adres.definition = "Het adres."
         self.waarde.adres.constraints = ""
-        self.waarde.adres.readonly = 0
         self.waarde.adres.usagenote = ""
         self.waarde.adres.deprecated_version = ""
         self.adres = self.waarde.adres
-        """Het adres."""
 
         self.waarde.afdeling = StringField(naam="afdeling",
                                            label="afdeling",

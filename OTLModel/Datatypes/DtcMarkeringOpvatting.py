@@ -1,4 +1,5 @@
 from OTLModel.Datatypes.ComplexField import ComplexField
+from OTLModel.Datatypes.ComplexField import ComplexField
 from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlMarkeringWaarborgperiode import KlMarkeringWaarborgperiode
 from OTLModel.Datatypes.KlSignalisatieMarkeringOpvatting import KlSignalisatieMarkeringOpvatting
@@ -17,9 +18,8 @@ class DtcMarkeringOpvatting(ComplexField):
                          deprecated_version="")
 
         self.waarde.opvatting = KeuzelijstField(naam="opvatting",
-                                                lijst=KlSignalisatieMarkeringOpvatting(),
-                                                overerving=0,
                                                 label="opvatting",
+                                                lijst=KlSignalisatieMarkeringOpvatting(),
                                                 uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcMarkeringOpvatting.opvatting",
                                                 definition="De opvatting van de markering, zijnde middelenverbintenis of resultaatsverbintenis.",
                                                 constraints="",
@@ -29,9 +29,8 @@ class DtcMarkeringOpvatting(ComplexField):
         """De opvatting van de markering, zijnde middelenverbintenis of resultaatsverbintenis."""
 
         self.waarde.waarborgperiode = KeuzelijstField(naam="waarborgperiode",
-                                                      lijst=KlMarkeringWaarborgperiode(),
-                                                      overerving=0,
                                                       label="waarborgperiode",
+                                                      lijst=KlMarkeringWaarborgperiode(),
                                                       uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcMarkeringOpvatting.waarborgperiode",
                                                       definition="De periode waarin de markering moet voldoen aan de resultaatseisen.",
                                                       constraints="",

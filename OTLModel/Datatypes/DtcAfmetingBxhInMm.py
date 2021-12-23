@@ -1,4 +1,5 @@
 from OTLModel.Datatypes.ComplexField import ComplexField
+from OTLModel.Datatypes.ComplexField import ComplexField
 from OTLModel.Datatypes.KwantWrdInMillimeter import KwantWrdInMillimeter
 
 
@@ -15,27 +16,23 @@ class DtcAfmetingBxhInMm(ComplexField):
                          deprecated_version="")
 
         self.waarde.breedte = KwantWrdInMillimeter()
+        """De breedte in millimeter."""
         self.waarde.breedte.naam = "breedte"
         self.waarde.breedte.label = "breedte"
-        self.waarde.breedte.definition = "De breedte in millimeter."
         self.waarde.breedte.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAfmetingBxhInMm.breedte"
-        self.waarde.breedte.overerving = 0
+        self.waarde.breedte.definition = "De breedte in millimeter."
         self.waarde.breedte.constraints = ""
-        self.waarde.breedte.readonly = 0
         self.waarde.breedte.usagenote = ""
         self.waarde.breedte.deprecated_version = ""
         self.breedte = self.waarde.breedte
-        """De breedte in millimeter."""
 
         self.waarde.hoogte = KwantWrdInMillimeter()
+        """De hoogte in millimeter."""
         self.waarde.hoogte.naam = "hoogte"
         self.waarde.hoogte.label = "hoogte"
-        self.waarde.hoogte.definition = "De hoogte in millimeter."
         self.waarde.hoogte.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAfmetingBxhInMm.hoogte"
-        self.waarde.hoogte.overerving = 0
+        self.waarde.hoogte.definition = "De hoogte in millimeter."
         self.waarde.hoogte.constraints = ""
-        self.waarde.hoogte.readonly = 0
         self.waarde.hoogte.usagenote = ""
         self.waarde.hoogte.deprecated_version = ""
         self.hoogte = self.waarde.hoogte
-        """De hoogte in millimeter."""

@@ -2,7 +2,7 @@ from abc import abstractmethod
 
 from OTLModel.Datatypes.URIField import URIField
 from OTLModel.Verification.AIMDBStatus import AIMDBStatus
-from OTLModel.Verification.DtcIdentificator import DtcIdentificator
+from OTLModel.Datatypes.DtcIdentificator import DtcIdentificator
 
 
 class RelatieObject(AIMDBStatus):

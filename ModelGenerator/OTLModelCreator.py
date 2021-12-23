@@ -1,7 +1,7 @@
 from Loggers.AbstractLogger import AbstractLogger
 from Loggers.LogType import LogType
 from ModelGenerator.OSLOCollector import OSLOCollector
-from ModelGenerator.OSLODatatypePrimitive import OSLODatatypePrimitive
+from ModelGenerator.OTLClassCreator import OTLClassCreator
 from ModelGenerator.OTLComplexDatatypeCreator import OTLComplexDatatypeCreator
 from ModelGenerator.OTLEnumerationCreator import OTLEnumerationCreator
 from ModelGenerator.OTLPrimitiveDatatypeCreator import OTLPrimitiveDatatypeCreator
@@ -37,7 +37,7 @@ class OTLModelCreator:
                 if len(dataToWrite) == 0:
                     self.logger.log(f"Could not create a class for {primDatatype.name}", LogType.INFO)
                     pass
-                creator.writeToFile(primDatatype, dataToWrite)
+                creator.writeToFile(primDatatype, 'Datatypes', dataToWrite)
                 self.logger.log(f"Created a class for {primDatatype.name}", LogType.INFO)
             except BaseException as e:
                 self.logger.log(str(e), LogType.ERROR)
@@ -55,7 +55,7 @@ class OTLModelCreator:
                 if len(dataToWrite) == 0:
                     self.logger.log(f"Could not create a class for {complexDatatype.name}", LogType.INFO)
                     pass
-                creator.writeToFile(complexDatatype, dataToWrite)
+                creator.writeToFile(complexDatatype, 'Datatypes', dataToWrite)
                 self.logger.log(f"Created a class for {complexDatatype.name}", LogType.INFO)
             except BaseException as e:
                 self.logger.log(str(e), LogType.ERROR)
@@ -74,8 +74,27 @@ class OTLModelCreator:
                 if len(dataToWrite) == 0:
                     self.logger.log(f"Could not create a class for {enumeration.name}", LogType.INFO)
                     pass
-                creator.writeToFile(enumeration, dataToWrite)
+                creator.writeToFile(enumeration, 'Datatypes', dataToWrite)
                 self.logger.log(f"Created a class for {enumeration.name}", LogType.INFO)
             except BaseException as e:
                 self.logger.log(str(e), LogType.ERROR)
                 self.logger.log(f"Could not create a class for {enumeration.name}", LogType.ERROR)
+
+    def create_classes(self):
+        creator = OTLClassCreator(self.logger, self.osloCollector)
+
+        for cls in self.osloCollector.classes:
+
+            try:
+                dataToWrite = creator.CreateBlockToWriteFromClasses(cls)
+                if dataToWrite is None:
+                    self.logger.log(f"Could not create a class for {cls.name}", LogType.INFO)
+                    pass
+                if len(dataToWrite) == 0:
+                    self.logger.log(f"Could not create a class for {cls.name}", LogType.INFO)
+                    pass
+                creator.writeToFile(cls, 'Classes', dataToWrite)
+                self.logger.log(f"Created a class for {cls.name}", LogType.INFO)
+            except BaseException as e:
+                self.logger.log(str(e), LogType.ERROR)
+                self.logger.log(f"Could not create a class for {cls.name}", LogType.ERROR)

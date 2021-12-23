@@ -1,6 +1,7 @@
 from OTLModel.Datatypes.ComplexField import ComplexField
 from OTLModel.Datatypes.KardinaliteitField import KardinaliteitField
 from OTLModel.Datatypes.BooleanField import BooleanField
+from OTLModel.Datatypes.ComplexField import ComplexField
 from OTLModel.Datatypes.DtcDocument import DtcDocument
 from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlBetonmilieuklasse import KlBetonmilieuklasse
@@ -23,46 +24,43 @@ class DtcBetonspecificaties(ComplexField):
                          deprecated_version="")
 
         self.waarde.betondekking = KwantWrdInMillimeter()
+        """De afstand in millimeter tussen de buitenkant van het beton (het oppervlak van het beton) tot het dichtstbijzijnde wapeningsstaal."""
         self.waarde.betondekking.naam = "betondekking"
         self.waarde.betondekking.label = "betondekking"
-        self.waarde.betondekking.definition = "De afstand in millimeter tussen de buitenkant van het beton (het oppervlak van het beton) tot het dichtstbijzijnde wapeningsstaal."
         self.waarde.betondekking.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcBetonspecificaties.betondekking"
-        self.waarde.betondekking.overerving = 0
+        self.waarde.betondekking.definition = "De afstand in millimeter tussen de buitenkant van het beton (het oppervlak van het beton) tot het dichtstbijzijnde wapeningsstaal."
         self.waarde.betondekking.constraints = ""
-        self.waarde.betondekking.readonly = 0
         self.waarde.betondekking.usagenote = ""
         self.waarde.betondekking.deprecated_version = ""
         self.betondekking = self.waarde.betondekking
-        """De afstand in millimeter tussen de buitenkant van het beton (het oppervlak van het beton) tot het dichtstbijzijnde wapeningsstaal."""
 
         betonmilieuklassenField = KeuzelijstField(naam="betonmilieuklassen",
-                                                  lijst=KlBetonmilieuklasse(),
-                                                  overerving=0,
                                                   label="betonmilieuklassen",
+                                                  lijst=KlBetonmilieuklasse(),
                                                   uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcBetonspecificaties.betonmilieuklassen",
                                                   definition="Milieuklassen (X-klassen) leggen rechtstreeks de link met bepaalde aantastingsmechanismen, waaraan de betonconstructie (of een onderdeel ervan) wordt blootgesteld tijdens het gebruik. Er kunnen meerdere milieuklassen van toepassing zijn.",
                                                   constraints="",
                                                   usagenote="",
                                                   deprecated_version="")
-        self.betonmilieuklassen = KardinaliteitField(minKardinaliteit="1", maxKardinaliteit="*", fieldToMultiply=betonmilieuklassenField)
+        self.waarde.betonmilieuklassen = KardinaliteitField(minKardinaliteit="1", maxKardinaliteit="*", fieldToMultiply=betonmilieuklassenField)
+        self.betonmilieuklassen = self.waarde.betonmilieuklassen
         """Milieuklassen (X-klassen) leggen rechtstreeks de link met bepaalde aantastingsmechanismen, waaraan de betonconstructie (of een onderdeel ervan) wordt blootgesteld tijdens het gebruik. Er kunnen meerdere milieuklassen van toepassing zijn."""
 
         betonomgevingsklassenField = KeuzelijstField(naam="betonomgevingsklassen",
-                                                     lijst=KlBetonomgevingsklasse(),
-                                                     overerving=0,
                                                      label="betonomgevingsklassen",
+                                                     lijst=KlBetonomgevingsklasse(),
                                                      uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcBetonspecificaties.betonomgevingsklassen",
                                                      definition="De omgeving waaraan de betonconstructie (of een onderdeel ervan) wordt blootgesteld tijdens het gebruik. Er kunnen meerdere omgevingsklassen van toepassing zijn.",
                                                      constraints="",
                                                      usagenote="",
                                                      deprecated_version="")
-        self.betonomgevingsklassen = KardinaliteitField(minKardinaliteit="1", maxKardinaliteit="*", fieldToMultiply=betonomgevingsklassenField)
+        self.waarde.betonomgevingsklassen = KardinaliteitField(minKardinaliteit="1", maxKardinaliteit="*", fieldToMultiply=betonomgevingsklassenField)
+        self.betonomgevingsklassen = self.waarde.betonomgevingsklassen
         """De omgeving waaraan de betonconstructie (of een onderdeel ervan) wordt blootgesteld tijdens het gebruik. Er kunnen meerdere omgevingsklassen van toepassing zijn."""
 
         self.waarde.betonsterkteklasse = KeuzelijstField(naam="betonsterkteklasse",
-                                                         lijst=KlBetonsterkteklasse(),
-                                                         overerving=0,
                                                          label="betonsterkteklasse",
+                                                         lijst=KlBetonsterkteklasse(),
                                                          uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcBetonspecificaties.betonsterkteklasse",
                                                          definition="De sterkteklasse is een maat voor de druksterkte van beton.",
                                                          constraints="",
@@ -72,9 +70,8 @@ class DtcBetonspecificaties(ComplexField):
         """De sterkteklasse is een maat voor de druksterkte van beton."""
 
         self.waarde.gebruiksdomein = KeuzelijstField(naam="gebruiksdomein",
-                                                     lijst=KlGebruiksdomein(),
-                                                     overerving=0,
                                                      label="gebruiksdomein",
+                                                     lijst=KlGebruiksdomein(),
                                                      uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcBetonspecificaties.gebruiksdomein",
                                                      definition="De gebruiksomstandigheden van het beton. Dit bepaalt tevens het maximum chloridegehalte.",
                                                      constraints="",
@@ -84,17 +81,15 @@ class DtcBetonspecificaties(ComplexField):
         """De gebruiksomstandigheden van het beton. Dit bepaalt tevens het maximum chloridegehalte."""
 
         self.waarde.grootsteKorrelafmetingDmax = KwantWrdInMillimeter()
+        """De nominale grootste korrelafmeting (Dmax)."""
         self.waarde.grootsteKorrelafmetingDmax.naam = "grootsteKorrelafmetingDmax"
         self.waarde.grootsteKorrelafmetingDmax.label = "grootste korrelafmeting (Dmax)"
-        self.waarde.grootsteKorrelafmetingDmax.definition = "De nominale grootste korrelafmeting (Dmax)."
         self.waarde.grootsteKorrelafmetingDmax.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcBetonspecificaties.grootsteKorrelafmetingDmax"
-        self.waarde.grootsteKorrelafmetingDmax.overerving = 0
+        self.waarde.grootsteKorrelafmetingDmax.definition = "De nominale grootste korrelafmeting (Dmax)."
         self.waarde.grootsteKorrelafmetingDmax.constraints = ""
-        self.waarde.grootsteKorrelafmetingDmax.readonly = 0
         self.waarde.grootsteKorrelafmetingDmax.usagenote = ""
         self.waarde.grootsteKorrelafmetingDmax.deprecated_version = ""
         self.grootsteKorrelafmetingDmax = self.waarde.grootsteKorrelafmetingDmax
-        """De nominale grootste korrelafmeting (Dmax)."""
 
         self.waarde.isCementMetBeperktAlkaligehalte = BooleanField(naam="isCementMetBeperktAlkaligehalte",
                                                                    label="is cement met beperkt alkaligehalte",
@@ -147,14 +142,12 @@ class DtcBetonspecificaties(ComplexField):
         """Geeft aan of het beton zich niet ontmengt onder of in water."""
 
         self.waarde.technischeFiche = DtcDocument()
+        """De technische fiche van het beton. Deze moet volgende eigenschappen bevatten: de norm waaraan het beton voldoet, de sterkteklasse, de duurzaamheid (bestaande uit het gebruiksdomein en de omgevingsklasse(n)), de consistentieklasse, de nominale grootste korrelafmeting,..."""
         self.waarde.technischeFiche.naam = "technischeFiche"
         self.waarde.technischeFiche.label = "technische fiche"
-        self.waarde.technischeFiche.definition = "De technische fiche van het beton. Deze moet volgende eigenschappen bevatten: de norm waaraan het beton voldoet, de sterkteklasse, de duurzaamheid (bestaande uit het gebruiksdomein en de omgevingsklasse(n)), de consistentieklasse, de nominale grootste korrelafmeting,..."
         self.waarde.technischeFiche.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcBetonspecificaties.technischeFiche"
-        self.waarde.technischeFiche.overerving = 0
+        self.waarde.technischeFiche.definition = "De technische fiche van het beton. Deze moet volgende eigenschappen bevatten: de norm waaraan het beton voldoet, de sterkteklasse, de duurzaamheid (bestaande uit het gebruiksdomein en de omgevingsklasse(n)), de consistentieklasse, de nominale grootste korrelafmeting,..."
         self.waarde.technischeFiche.constraints = ""
-        self.waarde.technischeFiche.readonly = 0
         self.waarde.technischeFiche.usagenote = ""
         self.waarde.technischeFiche.deprecated_version = ""
         self.technischeFiche = self.waarde.technischeFiche
-        """De technische fiche van het beton. Deze moet volgende eigenschappen bevatten: de norm waaraan het beton voldoet, de sterkteklasse, de duurzaamheid (bestaande uit het gebruiksdomein en de omgevingsklasse(n)), de consistentieklasse, de nominale grootste korrelafmeting,..."""

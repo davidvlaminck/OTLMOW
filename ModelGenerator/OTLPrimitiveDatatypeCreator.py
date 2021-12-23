@@ -7,8 +7,8 @@ from ModelGenerator.OSLODatatypePrimitive import OSLODatatypePrimitive
 
 class OTLPrimitiveDatatypeCreator(AbstractDatatypeCreator):
     def __init__(self, logger: AbstractLogger, osloCollector: OSLOCollector):
-        logger.log("Created an instance of OTLPrimitiveDatatypeCreator", LogType.INFO)
-        self.osloCollector = osloCollector
+        super().__init__(logger, osloCollector)
+        self.logger.log("Created an instance of OTLPrimitiveDatatypeCreator", LogType.INFO)
 
     def CreateBlockToWriteFromPrimitiveTypes(self, osloDatatypePrimitive: OSLODatatypePrimitive):
         if not isinstance(osloDatatypePrimitive, OSLODatatypePrimitive):

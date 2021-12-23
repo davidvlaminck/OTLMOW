@@ -1,4 +1,5 @@
 from OTLModel.Datatypes.ComplexField import ComplexField
+from OTLModel.Datatypes.ComplexField import ComplexField
 from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlProfielhoogtemaat import KlProfielhoogtemaat
 from OTLModel.Datatypes.KlProfielsoort import KlProfielsoort
@@ -17,9 +18,8 @@ class DtcProfieltype(ComplexField):
                          deprecated_version="")
 
         self.waarde.profielhoogtemaat = KeuzelijstField(naam="profielhoogtemaat",
-                                                        lijst=KlProfielhoogtemaat(),
-                                                        overerving=0,
                                                         label="profielhoogtemaat",
+                                                        lijst=KlProfielhoogtemaat(),
                                                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcProfieltype.profielhoogtemaat",
                                                         definition="Voorgedefinieerde hoogtemaat van een profiel.",
                                                         constraints="",
@@ -29,9 +29,8 @@ class DtcProfieltype(ComplexField):
         """Voorgedefinieerde hoogtemaat van een profiel."""
 
         self.waarde.profielsoort = KeuzelijstField(naam="profielsoort",
-                                                   lijst=KlProfielsoort(),
-                                                   overerving=0,
                                                    label="profielsoort",
+                                                   lijst=KlProfielsoort(),
                                                    uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcProfieltype.profielsoort",
                                                    definition="Het type profiel (de meest genormeerde types).",
                                                    constraints="",

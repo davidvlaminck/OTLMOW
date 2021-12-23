@@ -1,23 +1,13 @@
 import unittest
 
-from OTLModel.Datatypes.KardinaliteitField import KardinaliteitField
-from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
+from OTLModel.Verification.Buis import Buis
 from OTLModel.Verification.ContainerBuis import ContainerBuis
-from OTLModel.Datatypes.KlMaaiFrequentie import KlMaaiFrequentie
 from OTLModel.Verification.Mantelbuis import Mantelbuis
 
 
 class ContainerBuisInstance(ContainerBuis):
     def __init__(self):
         super(ContainerBuis, self).__init__()
-        keuzelijstField = KeuzelijstField(lijst=KlMaaiFrequentie(),
-                                          naam="frequentie",
-                                          label="frequentie",
-                                          uri="https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#DtcMaaien.frequentie",
-                                          definition="Het aantal keer dat er gemaaid wordt per jaar.", usagenote="",
-                                          constraints='', overerving=False,
-                                          deprecated_version="")
-        self.kleur = KardinaliteitField(minKardinaliteit="1", maxKardinaliteit="*", fieldToMultiply=keuzelijstField)
         """De kleur van de coating."""
 
 
@@ -35,8 +25,13 @@ class ContainerBuisKardinaliteitFieldTests(unittest.TestCase):
         self.assertTrue(instance.kleur.waarde is None)
 
     def test_ContainerBuisErrors(self):
-        with self.assertRaises(TypeError):
+        with self.assertRaises(TypeError) as exc_abstract:
             ContainerBuis()
+        self.assertEqual(str(exc_abstract.exception), "Can't instantiate abstract class ContainerBuis with abstract method __init__")
+
+        with self.assertRaises(TypeError) as exc_abstract:
+            Buis()
+        self.assertEqual(str(exc_abstract.exception), "Can't instantiate abstract class Buis with abstract method __init__")
 
         instance = Mantelbuis()
 

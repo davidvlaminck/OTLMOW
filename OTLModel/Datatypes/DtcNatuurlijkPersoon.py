@@ -1,6 +1,7 @@
 from OTLModel.Datatypes.ComplexField import ComplexField
 from OTLModel.Datatypes.KardinaliteitField import KardinaliteitField
 from OTLModel.Datatypes.BooleanField import BooleanField
+from OTLModel.Datatypes.ComplexField import ComplexField
 from OTLModel.Datatypes.DtcAdres import DtcAdres
 from OTLModel.Datatypes.StringField import StringField
 
@@ -27,17 +28,16 @@ class DtcNatuurlijkPersoon(ComplexField):
         self.achternaam = self.waarde.achternaam
         """De achternaam."""
 
-        adresField = ComplexField()
+        adresField = DtcAdres()
         adresField.naam = "adres"
         adresField.label = "adres"
-        adresField.definition = "Het adres."
         adresField.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcNatuurlijkPersoon.adres"
-        adresField.overerving = 0
+        adresField.definition = "Het adres."
         adresField.constraints = ""
-        adresField.readonly = 0
         adresField.usagenote = ""
         adresField.deprecated_version = ""
-        self.adres = KardinaliteitField(minKardinaliteit="1", maxKardinaliteit="*", fieldToMultiply=adresField)
+        self.waarde.adres = KardinaliteitField(minKardinaliteit="1", maxKardinaliteit="*", fieldToMultiply=adresField)
+        self.adres = self.waarde.adres
         """Het adres."""
 
         emailadresField = StringField(naam="emailadres",
@@ -47,7 +47,8 @@ class DtcNatuurlijkPersoon(ComplexField):
                                       constraints="",
                                       usagenote="",
                                       deprecated_version="")
-        self.emailadres = KardinaliteitField(minKardinaliteit="1", maxKardinaliteit="*", fieldToMultiply=emailadresField)
+        self.waarde.emailadres = KardinaliteitField(minKardinaliteit="1", maxKardinaliteit="*", fieldToMultiply=emailadresField)
+        self.emailadres = self.waarde.emailadres
         """Het emailadres."""
 
         faxField = StringField(naam="fax",
@@ -57,7 +58,8 @@ class DtcNatuurlijkPersoon(ComplexField):
                                constraints="",
                                usagenote="",
                                deprecated_version="")
-        self.fax = KardinaliteitField(minKardinaliteit="1", maxKardinaliteit="*", fieldToMultiply=faxField)
+        self.waarde.fax = KardinaliteitField(minKardinaliteit="1", maxKardinaliteit="*", fieldToMultiply=faxField)
+        self.fax = self.waarde.fax
         """De faxnummer."""
 
         self.waarde.heeftEmailVoorkeur = BooleanField(naam="heeftEmailVoorkeur",
@@ -87,7 +89,8 @@ class DtcNatuurlijkPersoon(ComplexField):
                                            constraints="",
                                            usagenote="",
                                            deprecated_version="")
-        self.telefoonnnummer = KardinaliteitField(minKardinaliteit="1", maxKardinaliteit="*", fieldToMultiply=telefoonnnummerField)
+        self.waarde.telefoonnnummer = KardinaliteitField(minKardinaliteit="1", maxKardinaliteit="*", fieldToMultiply=telefoonnnummerField)
+        self.telefoonnnummer = self.waarde.telefoonnnummer
         """Het telefoonnummer."""
 
         self.waarde.voornaam = StringField(naam="voornaam",

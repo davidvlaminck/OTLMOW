@@ -1,5 +1,6 @@
 from OTLModel.Datatypes.ComplexField import ComplexField
 from OTLModel.Datatypes.BooleanField import BooleanField
+from OTLModel.Datatypes.ComplexField import ComplexField
 from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlDuurzaamheidsklasseHout import KlDuurzaamheidsklasseHout
 from OTLModel.Datatypes.KlKwaliteitsklasseHout import KlKwaliteitsklasseHout
@@ -19,9 +20,8 @@ class DtcHoutspecificaties(ComplexField):
                          deprecated_version="")
 
         self.waarde.houtduurzaamheidsklasse = KeuzelijstField(naam="houtduurzaamheidsklasse",
-                                                              lijst=KlDuurzaamheidsklasseHout(),
-                                                              overerving=0,
                                                               label="houtduurzaamheidsklasse",
+                                                              lijst=KlDuurzaamheidsklasseHout(),
                                                               uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcHoutspecificaties.houtduurzaamheidsklasse",
                                                               definition="De verwachte levensduur van het hout. De klasse geeft de resistentie aan van het kernhout tegen ongunstige omstandigheden.",
                                                               constraints="",
@@ -31,9 +31,8 @@ class DtcHoutspecificaties(ComplexField):
         """De verwachte levensduur van het hout. De klasse geeft de resistentie aan van het kernhout tegen ongunstige omstandigheden."""
 
         self.waarde.houtkwaliteitsklasse = KeuzelijstField(naam="houtkwaliteitsklasse",
-                                                           lijst=KlKwaliteitsklasseHout(),
-                                                           overerving=0,
                                                            label="houtkwaliteitsklasse",
+                                                           lijst=KlKwaliteitsklasseHout(),
                                                            uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcHoutspecificaties.houtkwaliteitsklasse",
                                                            definition="Kwaliteitsindeling van de houtsoort met betrekking op vervormingen, scheuren en kwasten.",
                                                            constraints="",
@@ -43,9 +42,8 @@ class DtcHoutspecificaties(ComplexField):
         """Kwaliteitsindeling van de houtsoort met betrekking op vervormingen, scheuren en kwasten."""
 
         self.waarde.houtsterkteklasse = KeuzelijstField(naam="houtsterkteklasse",
-                                                        lijst=KlSterkteklasseHout(),
-                                                        overerving=0,
                                                         label="houtsterkteklasse",
+                                                        lijst=KlSterkteklasseHout(),
                                                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcHoutspecificaties.houtsterkteklasse",
                                                         definition="De maximale belasting van het hout. Deze klasse geeft aan hoe sterk en voor welke constructies de houtsoort geschikt is.",
                                                         constraints="",

@@ -1,5 +1,5 @@
 from OTLModel.Verification.AIMNaamObject import AIMNaamObject
-from OTLModel.Verification.KwantWrdInAmpere import KwantWrdInAmpere
+from OTLModel.Datatypes.KwantWrdInAmpere import KwantWrdInAmpere
 
 
 class Laagspanningsbord(AIMNaamObject):

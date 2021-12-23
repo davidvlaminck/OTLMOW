@@ -4,7 +4,7 @@ import unittest
 from ModelGenerator.BaseClasses.RelatieValidator import RelatieValidator
 from ModelGenerator.OtlAssetJSONEncoder import OtlAssetJSONEncoder
 from OTLModel.Verification.Aftakking import Aftakking
-from OTLModel.Verification.DtcIdentificator import DtcIdentificator
+from OTLModel.Datatypes.DtcIdentificator import DtcIdentificator
 from OTLModel.Verification.Laagspanningsbord import Laagspanningsbord
 from UnitTests.RelatieValidatorTests import GeldigeRelatieLijstTestInstance
 

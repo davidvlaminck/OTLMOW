@@ -1,5 +1,6 @@
 from OTLModel.Datatypes.ComplexField import ComplexField
 from OTLModel.Datatypes.KardinaliteitField import KardinaliteitField
+from OTLModel.Datatypes.ComplexField import ComplexField
 from OTLModel.Datatypes.DtcDocument import DtcDocument
 from OTLModel.Datatypes.IntegerField import IntegerField
 from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
@@ -41,9 +42,8 @@ class DtcGeluidstestRapport(ComplexField):
         """De sterkte van het geluid in dB."""
 
         self.waarde.locatieInSitulabo = KeuzelijstField(naam="locatieInSitulabo",
-                                                        lijst=KlGCMeetMethode(),
-                                                        overerving=0,
                                                         label="locatie in situlabo",
+                                                        lijst=KlGCMeetMethode(),
                                                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#DtcGeluidstestRapport.locatieInSitulabo",
                                                         definition="Locatie waar de geluidstest is uitgevoerd (terrein of labo).",
                                                         constraints="",
@@ -63,9 +63,8 @@ class DtcGeluidstestRapport(ComplexField):
         """De gemeten waarde van het  luchtgeluidsisiolatie van het geluidsscherm."""
 
         self.waarde.norm = KeuzelijstField(naam="norm",
-                                           lijst=KlLEGCNorm(),
-                                           overerving=0,
                                            label="norm",
+                                           lijst=KlLEGCNorm(),
                                            uri="https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#DtcGeluidstestRapport.norm",
                                            definition="De proef volgens de beschreven standaard.",
                                            constraints="",
@@ -74,23 +73,21 @@ class DtcGeluidstestRapport(ComplexField):
         self.norm = self.waarde.norm
         """De proef volgens de beschreven standaard."""
 
-        testrapportField = ComplexField()
+        testrapportField = DtcDocument()
         testrapportField.naam = "testrapport"
         testrapportField.label = "testrapport"
-        testrapportField.definition = "Documentbijlage met de resultaten van de test."
         testrapportField.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#DtcGeluidstestRapport.testrapport"
-        testrapportField.overerving = 0
+        testrapportField.definition = "Documentbijlage met de resultaten van de test."
         testrapportField.constraints = ""
-        testrapportField.readonly = 0
         testrapportField.usagenote = "Bestanden van het type xlsx of pdf."
         testrapportField.deprecated_version = ""
-        self.testrapport = KardinaliteitField(minKardinaliteit="1", maxKardinaliteit="*", fieldToMultiply=testrapportField)
+        self.waarde.testrapport = KardinaliteitField(minKardinaliteit="1", maxKardinaliteit="*", fieldToMultiply=testrapportField)
+        self.testrapport = self.waarde.testrapport
         """Documentbijlage met de resultaten van de test."""
 
         self.waarde.type = KeuzelijstField(naam="type",
-                                           lijst=KlLEGCTestType(),
-                                           overerving=0,
                                            label="type",
+                                           lijst=KlLEGCTestType(),
                                            uri="https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#DtcGeluidstestRapport.type",
                                            definition="Het type van de test.",
                                            constraints="",

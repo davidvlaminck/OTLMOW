@@ -38,6 +38,10 @@ class OTLClassCreator(AbstractDatatypeCreator):
             for inheritance in inheritances:
                 datablock.append(f'from OTLModel.Classes.{inheritance.base_name} import {inheritance.base_name}')
 
+        if osloClass.uri == 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMObject':
+            datablock.append('from OTLModel.BaseClasses.RelatieInteractor import RelatieInteractor')
+            datablock.append('from OTLModel.BaseClasses.OTLAsset import OTLAsset')
+
         if any(atr.kardinaliteit_max != "1" for atr in attributen):
             datablock.append('from OTLModel.Datatypes.KardinaliteitField import KardinaliteitField')
 
@@ -65,6 +69,10 @@ class OTLClassCreator(AbstractDatatypeCreator):
         elif len(inheritances) > 1:
             for inheritance in inheritances:
                 datablock.append(f'        {inheritance.base_name}.__init__(self)')
+
+        if osloClass.uri == 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMObject':
+            datablock.append(f'        OTLAsset.__init__(self)')
+            datablock.append(f'        RelatieInteractor.__init__(self)')
 
         self.addAttributenToDataBlock(attributen, datablock, forDatatypeUse=False)
 

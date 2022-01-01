@@ -32,6 +32,7 @@ Funderingsmassief
 Sokkel
 KlassiekeFundering
 Verkeersbord
+==> query'en welke concrete classes NIET overerven van AIMObject > RelatieInteractor en OTL Asset
 
 
 Facility

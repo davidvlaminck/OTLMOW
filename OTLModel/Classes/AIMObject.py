@@ -1,9 +1,8 @@
 from abc import abstractmethod
-
-from OTLModel.BaseClasses.OTLAsset import OTLAsset
-from OTLModel.BaseClasses.RelatieInteractor import RelatieInteractor
 from OTLModel.Classes.AIMToestand import AIMToestand
 from OTLModel.Classes.AIMDBStatus import AIMDBStatus
+from OTLModel.Classes.OTLAsset import OTLAsset
+from OTLModel.Classes.RelatieInteractor import RelatieInteractor
 from OTLModel.Datatypes.KardinaliteitField import KardinaliteitField
 from OTLModel.Datatypes.DateField import DateField
 from OTLModel.Datatypes.DtcIdentificator import DtcIdentificator
@@ -14,7 +13,7 @@ from OTLModel.Datatypes.URIField import URIField
 
 # Generated with OTLClassCreator
 class AIMObject(AIMToestand, AIMDBStatus, OTLAsset, RelatieInteractor):
-    """Abstracte als de basisklasse voor alle uniek geÃ¯dentificeerde OTL objecten met de basiseigenschappen die elk OTL object minstens heeft."""
+    """Abstracte als de basisklasse voor alle uniek geïdentificeerde OTL objecten met de basiseigenschappen die elk OTL object minstens heeft."""
 
     typeURI = "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMObject"
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
@@ -23,6 +22,8 @@ class AIMObject(AIMToestand, AIMDBStatus, OTLAsset, RelatieInteractor):
     def __init__(self):
         AIMToestand.__init__(self)
         AIMDBStatus.__init__(self)
+        OTLAsset.__init__(self)
+        RelatieInteractor.__init__(self)
         self.assetId = DtcIdentificator()
         """Unieke identificatie van de asset zoals toegekend door de assetbeheerder of n.a.v. eerste aanlevering door de leverancier."""
         self.assetId.naam = "assetId"

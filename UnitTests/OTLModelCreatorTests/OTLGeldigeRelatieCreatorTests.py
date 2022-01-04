@@ -1,21 +1,49 @@
+# -*- coding: utf-8 -*-
 import unittest
 from unittest.mock import Mock
 
-from ModelGenerator.FileExistChecker import FileExistChecker
-from ModelGenerator.Inheritance import Inheritance
-from ModelGenerator.OSLOAttribuut import OSLOAttribuut
-from ModelGenerator.OSLOClass import OSLOClass
-from ModelGenerator.OSLODatatypeComplex import OSLODatatypeComplex
-from ModelGenerator.OSLODatatypeComplexAttribuut import OSLODatatypeComplexAttribuut
-from ModelGenerator.OSLODatatypePrimitive import OSLODatatypePrimitive
-from ModelGenerator.OSLODatatypePrimitiveAttribuut import OSLODatatypePrimitiveAttribuut
-from ModelGenerator.OSLOEnumeration import OSLOEnumeration
+from Loggers.NoneLogger import NoneLogger
+from ModelGenerator.OSLOCollector import OSLOCollector
 from ModelGenerator.OSLOInMemoryCreator import OSLOInMemoryCreator
-from ModelGenerator.OSLORelatie import OSLORelatie
-from ModelGenerator.SQLDbReader import SQLDbReader
+from ModelGenerator.OTLGeldigeRelatieCreator import OTLGeldigeRelatieCreator
 
 
-class OSLOInMemoryCreatorTests(unittest.TestCase):
+class OTLClassCreatorTests(unittest.TestCase):
+    expectedData = ['from ModelGenerator.BaseClasses.GeldigeRelatie import GeldigeRelatie',
+                         'from OTLModel.Classes.Behuizing import Behuizing',
+                         'from OTLModel.Classes.Bevestiging import Bevestiging',
+                         'from OTLModel.Classes.Calamiteitendoorsteek import Calamiteitendoorsteek',
+                         'from OTLModel.Classes.Contactor import Contactor',
+                         'from OTLModel.Classes.IOKaart import IOKaart',
+                         'from OTLModel.Classes.Laagspanningsbord import Laagspanningsbord',
+                         'from OTLModel.Classes.Seinlantaarn import Seinlantaarn',
+                         'from OTLModel.Classes.SlagboomarmVerlichting import SlagboomarmVerlichting',
+                         'from OTLModel.Classes.Slagboomkolom import Slagboomkolom',
+                         'from OTLModel.Classes.Stroomkring import Stroomkring',
+                         'from OTLModel.Classes.Sturing import Sturing',
+                         'from OTLModel.Classes.Ventilatie import Ventilatie',
+                         'from OTLModel.Classes.Voedt import Voedt',
+                         'from OTLModel.Classes.VoedtAangestuurd import VoedtAangestuurd',
+                         '',
+                         '',
+                         'class GeldigeRelatieLijst:',
+                         '    def __init__(self):',
+                         '        self.lijst = [',
+                         '            GeldigeRelatie(Behuizing, Contactor, Bevestiging),',
+                         '            GeldigeRelatie(Contactor, Behuizing, Bevestiging),',
+                         '            GeldigeRelatie(Contactor, Laagspanningsbord, Bevestiging),',
+                         '            GeldigeRelatie(Laagspanningsbord, Contactor, Bevestiging),',
+                         '            GeldigeRelatie(Contactor, IOKaart, Sturing),',
+                         '            GeldigeRelatie(IOKaart, Contactor, Sturing),',
+                         '            GeldigeRelatie(Contactor, Contactor, Voedt),',
+                         '            GeldigeRelatie(Stroomkring, Contactor, Voedt),',
+                         '            GeldigeRelatie(Contactor, Seinlantaarn, VoedtAangestuurd),',
+                         '            GeldigeRelatie(Contactor, Ventilatie, VoedtAangestuurd),',
+                         '            GeldigeRelatie(Contactor, Calamiteitendoorsteek, VoedtAangestuurd),',
+                         '            GeldigeRelatie(Contactor, SlagboomarmVerlichting, VoedtAangestuurd),',
+                         '            GeldigeRelatie(Contactor, Slagboomkolom, VoedtAangestuurd)',
+                         '        ]']
+
     def mockPerformReadQuery(self, query, arg_dict):
         if query == 'SELECT label_nl, name, uri, definition_nl, usagenote_nl, abstract, deprecated_version FROM OSLOClass where uri=:uriclass' \
                 and arg_dict['uriclass'] == 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#NaampadObject':
@@ -25,7 +53,51 @@ class OSLOInMemoryCreatorTests(unittest.TestCase):
         elif query == 'SELECT label_nl, name, uri, definition_nl, usagenote_nl, abstract, deprecated_version FROM OSLOClass' and arg_dict == {}:
             return [['Naampad object', 'NaampadObject',
                      'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#NaampadObject'
-                        , 'Abstracte als de basisklasse voor elk OTL object dat gebruik maakt van een naampad.', '', 1, '']]
+                        , 'Abstracte als de basisklasse voor elk OTL object dat gebruik maakt van een naampad.', '', 1, ''],
+                    ['Behuizing', 'Behuizing', 'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Behuizing',
+                     'Abstracte voor alle types van behuizing voor het beschermen van technieken.', '', '1', ''],
+                    ['Seinlantaarn', 'Seinlantaarn', 'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Seinlantaarn',
+                     'Abstracte voor het geheel van één of meerdere verkeerslichten die boven elkaar worden opgesteld en worden bevestigd op een steun,teneinde de beweging van een weggebruiker die een bepaald traject volgt,te verhinderen of toe te laten.',
+                     '', '1', ''],
+                    ['Ventilatie', 'Ventilatie', 'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Ventilatie',
+                     'Abstracte voor attributen die gemeenschappelijk zijn voor verschillende types van ventilatie.', '', '1',
+                     ''],
+                    ['Bevestiging', 'Bevestiging', 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bevestiging',
+                     'Deze relatie geeft aan dat twee onderdelen direct fysiek op elkaar bevestigd zijn. Dit kan zowel aan de buitenkant als aan de binnenkant zijn zoals bv. een camera aan een paal of een laagspanningsbord in een kast. Deze relatie heeft geen richting.',
+                     '', '0', ''],
+                    ['Calamiteitendoorsteek', 'Calamiteitendoorsteek',
+                     'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Calamiteitendoorsteek',
+                     'Een calamiteitendoorsteek, afgekort CADO, is een mechanische constructie voor het opklappen van een deel van de vangrail in de middenberm van een weg. Het primaire doel van de calamiteitendoorsteek is het doorlaten van hulpverleningsvoertuigen.',
+                     '', '0', ''],
+                    ['Contactor', 'Contactor', 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Contactor',
+                     'Toestel dat ter plaatse of op afstand aangestuurd wordt om (grote) vermogensstromen af te schakelen.', '',
+                     '0', ''],
+                    ['IO-Kaart', 'IOKaart', 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#IOKaart',
+                     'Een kaart of module die gebruikt wordt voor de ingang of uitgang van een verwerkingseenheid (bv. een PLC). Op de IO-kaart worden perifere toestellen en sensoren aangesloten.',
+                     '', '0', ''],
+                    ['Laagspanningsbord', 'Laagspanningsbord',
+                     'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Laagspanningsbord',
+                     'Verzameling van alle elektrische componenten nodig voor de voeding en sturing van applicaties die erop aangesloten zijn. Omvat onder andere automaten,klemmenblokken,...',
+                     '', '0', ''],
+                    ['Slagboomarm verlichting', 'SlagboomarmVerlichting',
+                     'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#SlagboomarmVerlichting',
+                     'Verlichting bevestigd aan de slagboomarm om de zichtbaarheid van die arm te verhogen.', '', '0', ''],
+                    ['Slagboomkolom', 'Slagboomkolom', 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomkolom',
+                     'De koker van een slagboominstallatie die de motor bevat en waaraan de slagboomarm bevestigd is.', '', '0',
+                     ''],
+                    ['Stroomkring', 'Stroomkring', 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Stroomkring',
+                     'Ook wel vertrek of vertrekkende kabel genoemd. Afgezekerde elektrische geleiders waarmee de applicaties voorzien worden van de nodige voeding.',
+                     '', '0', ''],
+                    ['Sturing', 'Sturing', 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Sturing',
+                     'Deze relatie geeft aan of er een of andere vorm van dataverkeer is tussen 2 onderdelen. Een wegverlichtingstoestel dat aan staat wordt ook als sturing beschouwd, in dit geval is het een lang ononderbroken elektrisch aan-signaal. Deze relatie heeft geen richting.',
+                     '', '0', ''],
+                    ['Voedt', 'Voedt', 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Voedt',
+                     'Deze relatie wordt enkel gelegd naar onderdelen die permanent onder spanning staan in normaal bedrijf. Aan deze relatie wordt steeds een richting toegekend van de voedinggever naar de ontvanger.',
+                     '', '0', ''],
+                    ['Voedt aangestuurd', 'VoedtAangestuurd',
+                     'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#VoedtAangestuurd',
+                     'Deze relatie wordt enkel gelegd naar objecttypes die typisch een groot vermogen vereisen en onder spanning komen nadat het voedend element aangestuurd is om die spanning door te sturen.',
+                     '', '0', '']]
         elif query == 'SELECT name, label_nl, definition_nl, class_uri, kardinaliteit_min, kardinaliteit_max, uri, fieldType, ' \
                       'overerving, constraints, readonly, usagenote_nl, deprecated_version FROM OSLOAttributen WHERE ' \
                       'class_uri=:uriclass AND overerving = 0' \
@@ -127,7 +199,7 @@ class OSLOInMemoryCreatorTests(unittest.TestCase):
                      'Keuzelijst met fasen uit de levenscyclus van een object om de toestand op een moment mee vast te leggen.',
                      'AIM toestand', 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlAIMToestand', '']]
 
-        elif query == "SELECT * FROM OSLORelaties WHERE bron_overerving = '' AND doel_overerving = '' ORDER BY uri, bron_uri, " \
+        elif query == "SELECT * FROM OSLORelaties ORDER BY uri, bron_uri, " \
                       "doel_uri" and arg_dict == {}:
             return [['', '', 'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Behuizing',
                      'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Contactor',
@@ -170,174 +242,28 @@ class OSLOInMemoryCreatorTests(unittest.TestCase):
                      'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#VoedtAangestuurd', 'Source -> Destination', '', '']]
         return []
 
-    def test_FileNotFound(self):
-        file_location = ''
-        file_exist_checker = FileExistChecker(file_location)
-        sql_reader = SQLDbReader(file_exist_checker)
-        oslo_creator = OSLOInMemoryCreator(sql_reader)
-        self.assertRaises(FileNotFoundError, oslo_creator.getAllClasses)
-
-    def test_OTLDbClass(self):
-        file_location = '../InputFiles/OTL.db'
-        file_exist_checker = FileExistChecker(file_location)
-        sql_reader = SQLDbReader(file_exist_checker)
-        oslo_creator = OSLOInMemoryCreator(sql_reader)
-        listOfClasses = oslo_creator.getAllClasses()
-
-        self.assertTrue(len(listOfClasses) > 0)
-        first = next(c for c in listOfClasses)
-        self.assertEqual(type(first), OSLOClass)
-
-    def test_OTLDbPrimitiveDatatypes(self):
-        file_location = '../InputFiles/OTL.db'
-        file_exist_checker = FileExistChecker(file_location)
-        sql_reader = SQLDbReader(file_exist_checker)
-        oslo_creator = OSLOInMemoryCreator(sql_reader)
-        listOfPrimitiveDatatypes = oslo_creator.getAllPrimitiveDatatypes()
-
-        self.assertTrue(len(listOfPrimitiveDatatypes) > 0)
-        first = next(c for c in listOfPrimitiveDatatypes)
-        self.assertEqual(type(first), OSLODatatypePrimitive)
-
-    def test_OTLDbPrimitiveDatatypeAttributen(self):
-        file_location = '../InputFiles/OTL.db'
-        file_exist_checker = FileExistChecker(file_location)
-        sql_reader = SQLDbReader(file_exist_checker)
-        oslo_creator = OSLOInMemoryCreator(sql_reader)
-        listOfPrimitiveDatatypeAttributen = oslo_creator.getAllPrimitiveDatatypeAttributen()
-
-        self.assertTrue(len(listOfPrimitiveDatatypeAttributen) > 0)
-        first = next(c for c in listOfPrimitiveDatatypeAttributen)
-        self.assertEqual(type(first), OSLODatatypePrimitiveAttribuut)
-
-    def test_Mock_getAllClasses(self):
-        mock = Mock()
-        oSLOCreator = OSLOInMemoryCreator(mock)
-        mock.performReadQuery = self.mockPerformReadQuery
-        uri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#NaampadObject'
-        listOfClasses = oSLOCreator.getAllClasses()
-
-        self.assertTrue(len(listOfClasses) >= 1)
-        first = next(c for c in listOfClasses)
-        self.assertEqual(type(first), OSLOClass)
-        self.assertEqual(first.uri, uri)
-
-    def test_Mock_getClassByUri(self):
-        mock = Mock()
-        oSLOCreator = OSLOInMemoryCreator(mock)
-        mock.performReadQuery = self.mockPerformReadQuery
-        uri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#NaampadObject'
-        listOfClasses = oSLOCreator.getClassByUri(uri)
-
-        self.assertTrue(len(listOfClasses) == 1)
-        first = next(c for c in listOfClasses)
-        self.assertEqual(type(first), OSLOClass)
-        self.assertEqual(first.uri, uri)
-
-    def test_Mock_getAttributeByClassUri(self):
-        mock = Mock()
-        oSLOCreator = OSLOInMemoryCreator(mock)
-        mock.performReadQuery = self.mockPerformReadQuery
-        uri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#NaampadObject'
-        attributeUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#NaampadObject.naampad'
-        listOfAttributes = oSLOCreator.getAttributeByClassUri(uri)
-
-        self.assertTrue(len(listOfAttributes) == 1)
-        first = next(c for c in listOfAttributes)
-        self.assertEqual(type(first), OSLOAttribuut)
-        self.assertEqual(first.uri, attributeUri)
-
-    def test_Mock_getAttributes(self):
-        mock = Mock()
-        oSLOCreator = OSLOInMemoryCreator(mock)
-        mock.performReadQuery = self.mockPerformReadQuery
-        attributeUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#NaampadObject.naampad'
-        listOfAttributes = oSLOCreator.getAttributes()
-
-        self.assertTrue(len(listOfAttributes) >= 1)
-        first = next(c for c in listOfAttributes)
-        self.assertEqual(type(first), OSLOAttribuut)
-        self.assertEqual(first.uri, attributeUri)
-
-    def test_Mock_getInheritances(self):
-        mock = Mock()
-        oSLOCreator = OSLOInMemoryCreator(mock)
-        mock.performReadQuery = self.mockPerformReadQuery
-        listOfInheritances = oSLOCreator.getInheritances()
-        class_uri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#NaampadObject'
-
-        self.assertTrue(len(listOfInheritances) >= 1)
-        first = next(c for c in listOfInheritances)
-        self.assertEqual(type(first), Inheritance)
-        self.assertEqual(first.class_uri, class_uri)
-
-    def test_Mock_getAllPrimitiveDatatypes(self):
-        mock = Mock()
-        oSLOCreator = OSLOInMemoryCreator(mock)
-        mock.performReadQuery = self.mockPerformReadQuery
-        listOfPrimitiveDatatypes = oSLOCreator.getAllPrimitiveDatatypes()
-        class_uri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DteKleurRAL'
-
-        self.assertTrue(len(listOfPrimitiveDatatypes) >= 1)
-        first = next(c for c in listOfPrimitiveDatatypes)
-        self.assertEqual(type(first), OSLODatatypePrimitive)
-        self.assertEqual(first.uri, class_uri)
-
-    def test_Mock_getAllPrimitiveDatatypeAttributen(self):
-        mock = Mock()
-        oSLOCreator = OSLOInMemoryCreator(mock)
-        mock.performReadQuery = self.mockPerformReadQuery
-        listOfPrimitiveDatatypeAttributen = oSLOCreator.getAllPrimitiveDatatypeAttributen()
-        class_uri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DteKleurRAL.waarde'
-
-        self.assertTrue(len(listOfPrimitiveDatatypeAttributen) >= 1)
-        first = next(c for c in listOfPrimitiveDatatypeAttributen)
-        self.assertEqual(type(first), OSLODatatypePrimitiveAttribuut)
-        self.assertEqual(first.uri, class_uri)
-
-    def test_Mock_getAllComplexDatatypes(self):
-        mock = Mock()
-        oSLOCreator = OSLOInMemoryCreator(mock)
-        mock.performReadQuery = self.mockPerformReadQuery
-        listOfComplexDatatypes = oSLOCreator.getAllComplexDatatypes()
-        class_uri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcIdentificator'
-
-        self.assertTrue(len(listOfComplexDatatypes) >= 1)
-        first = next(c for c in listOfComplexDatatypes)
-        self.assertEqual(type(first), OSLODatatypeComplex)
-        self.assertEqual(first.uri, class_uri)
-
-    def test_Mock_getAllComplexDatatypeAttributen(self):
-        mock = Mock()
-        oSLOCreator = OSLOInMemoryCreator(mock)
-        mock.performReadQuery = self.mockPerformReadQuery
-        listOfComplexDatatypeAttributen = oSLOCreator.getAllComplexDatatypeAttributen()
-        attribuut_uri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcIdentificator.identificator'
-
-        self.assertTrue(len(listOfComplexDatatypeAttributen) >= 1)
-        first = next(c for c in listOfComplexDatatypeAttributen)
-        self.assertEqual(type(first), OSLODatatypeComplexAttribuut)
-        self.assertEqual(first.uri, attribuut_uri)
-
-    def test_Mock_getAllEnumerations(self):
-        mock = Mock()
-        oSLOCreator = OSLOInMemoryCreator(mock)
-        mock.performReadQuery = self.mockPerformReadQuery
-        listOfEnumerations = oSLOCreator.getEnumerations()
-        class_uri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KlAIMToestand'
-
-        self.assertTrue(len(listOfEnumerations) >= 1)
-        first = next(c for c in listOfEnumerations)
-        self.assertEqual(type(first), OSLOEnumeration)
-        self.assertEqual(first.uri, class_uri)
-
-    def test_Mock_getAllRelations(self):
+    def test_init(self):
         mock = Mock()
         oSLOCreator = OSLOInMemoryCreator(mock)
         mock.performReadQuery = self.mockPerformReadQuery
         listOfRelations = oSLOCreator.getAllRelations()
-
         self.assertTrue(len(listOfRelations) >= 1)
-        first = next(c for c in listOfRelations)
-        self.assertEqual(type(first), OSLORelatie)
-        self.assertEqual(first.uri, "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bevestiging")
+
+    def test_write(self):
+        mock = Mock()
+        oSLOCreator = OSLOInMemoryCreator(mock)
+        mock.performReadQuery = self.mockPerformReadQuery
+        listOfRelations = oSLOCreator.getAllRelations()
+        listOfClasses = oSLOCreator.getAllClasses()
+        self.assertTrue(len(listOfRelations) >= 1)
+        self.assertTrue(len(listOfClasses) >= 1)
+
+        logger = NoneLogger()
+        collector = OSLOCollector(mock)
+        collector.relations = listOfRelations
+        collector.classes = listOfClasses
+
+        creator = OTLGeldigeRelatieCreator(logger, collector)
+        dataToWrite = creator.CreateBlockToWriteFromRelations()
+
+        self.assertEqual(self.expectedData, dataToWrite)

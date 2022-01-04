@@ -17,10 +17,10 @@ class RelatieObject(AIMDBStatus):
     doelAssetId = DtcIdentificator()
 
     typeURI = URIField(naam="typeURI",
-                                label="type URI",
-                                uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMObject.typeURI",
-                                definition="De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI .",
-                                constraints="",
-                                usagenote="",
-                                deprecated_version="")
+                       label="type URI",
+                       uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMObject.typeURI",
+                       definition="De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI .",
+                       constraints="",
+                       usagenote="",
+                       deprecated_version="")
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""

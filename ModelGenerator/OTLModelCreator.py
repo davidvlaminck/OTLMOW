@@ -4,6 +4,7 @@ from ModelGenerator.OSLOCollector import OSLOCollector
 from ModelGenerator.OTLClassCreator import OTLClassCreator
 from ModelGenerator.OTLComplexDatatypeCreator import OTLComplexDatatypeCreator
 from ModelGenerator.OTLEnumerationCreator import OTLEnumerationCreator
+from ModelGenerator.OTLGeldigeRelatieCreator import OTLGeldigeRelatieCreator
 from ModelGenerator.OTLPrimitiveDatatypeCreator import OTLPrimitiveDatatypeCreator
 
 
@@ -15,9 +16,10 @@ class OTLModelCreator:
 
     def create_full_model(self):
         # self.create_primitive_datatypes() # TODO error with creating primitive datatypes
-        self.create_complex_datatypes()
-        self.create_enumerations()
+        #self.create_complex_datatypes()
+        #self.create_enumerations()
         self.create_classes()
+        self.create_relations()
 
     def create_primitive_datatypes(self):
         creator = OTLPrimitiveDatatypeCreator(self.logger, self.osloCollector)
@@ -104,3 +106,20 @@ class OTLModelCreator:
             except Exception as e:
                 self.logger.log(str(e), LogType.ERROR)
                 self.logger.log(f"Could not create a class for {cls.name}", LogType.ERROR)
+
+    def create_relations(self):
+        creator = OTLGeldigeRelatieCreator(self.logger, self.osloCollector)
+
+        try:
+            dataToWrite = creator.CreateBlockToWriteFromRelations()
+            if dataToWrite is None:
+                self.logger.log(f"Could not create a list of GeldigeRelatie objects", LogType.INFO)
+                pass
+            if len(dataToWrite) == 0:
+                self.logger.log(f"Could not create a list of GeldigeRelatie objects", LogType.INFO)
+                pass
+            creator.writeToFile(dataToWrite)
+            self.logger.log(f"Created a list of GeldigeRelatie objects", LogType.INFO)
+        except Exception as e:
+            self.logger.log(str(e), LogType.ERROR)
+            self.logger.log(f"Could not create a list of GeldigeRelatie objects", LogType.ERROR)

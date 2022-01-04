@@ -3,11 +3,11 @@ import unittest
 from ModelGenerator.BaseClasses.GeldigeRelatie import GeldigeRelatie
 from ModelGenerator.BaseClasses.RelatieRichting import RelatieRichting
 from ModelGenerator.BaseClasses.RelatieValidator import RelatieValidator
+from OTLModel.GeldigeRelatieLijst import GeldigeRelatieLijst
 from OTLModel.Verification.Aftakking import Aftakking
 from OTLModel.Verification.Bevestiging import Bevestiging
 from OTLModel.Verification.Contactor import Contactor
 from OTLModel.Verification.EnergiemeterAWV import EnergiemeterAWV
-from OTLModel.Verification.GeldigeRelatieLijst import GeldigeRelatieLijst
 from OTLModel.Verification.Hoofdschakelaar import Hoofdschakelaar
 from OTLModel.Verification.Stroomkring import Stroomkring
 from OTLModel.Verification.Voedt import Voedt

@@ -19,6 +19,5 @@ class AIMToestand(ABC):
                                         definition="Geeft de actuele stand in de levenscyclus van het object.",
                                         constraints="",
                                         usagenote="",
-                                        deprecated_version="",
-                                        overerving=0)
+                                        deprecated_version="")
         """Geeft de actuele stand in de levenscyclus van het object."""

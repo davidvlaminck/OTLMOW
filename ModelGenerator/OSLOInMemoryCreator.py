@@ -6,6 +6,7 @@ from ModelGenerator.OSLODatatypeComplexAttribuut import OSLODatatypeComplexAttri
 from ModelGenerator.OSLODatatypePrimitive import OSLODatatypePrimitive
 from ModelGenerator.OSLODatatypePrimitiveAttribuut import OSLODatatypePrimitiveAttribuut
 from ModelGenerator.OSLOEnumeration import OSLOEnumeration
+from ModelGenerator.OSLORelatie import OSLORelatie
 from ModelGenerator.OSLOTypeLink import OSLOTypeLink
 from ModelGenerator.SQLDbReader import SQLDbReader
 
@@ -148,6 +149,18 @@ class OSLOInMemoryCreator:
         list = []
         for row in data:
             c = OSLOTypeLink(row[0], row[1], row[2])
+            list.append(c)
+
+        return list
+
+    def getAllRelations(self):
+        data = self.sqlDbReader.performReadQuery(
+            "SELECT * FROM OSLORelaties ORDER BY uri, bron_uri, doel_uri",
+            {})
+
+        list = []
+        for row in data:
+            c = OSLORelatie(row[0], row[1], row[2], row[3], row[4], row[5], row[6], row[7])
             list.append(c)
 
         return list

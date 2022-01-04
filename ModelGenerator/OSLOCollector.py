@@ -17,6 +17,7 @@ class OSLOCollector:
         self.complexDatatypeAttributen = []
         self.enumerations = []
         self.typeLinks = []
+        self.relations = []
 
     def collect(self):
         self.classes = self.OSLOInMemoryCreator.getAllClasses()
@@ -28,6 +29,7 @@ class OSLOCollector:
         self.complexDatatypeAttributen = self.OSLOInMemoryCreator.getAllComplexDatatypeAttributen()
         self.enumerations = self.OSLOInMemoryCreator.getEnumerations()
         self.typeLinks = self.OSLOInMemoryCreator.getTypeLinks()
+        self.relations = self.OSLOInMemoryCreator.getAllRelations()
 
     def FindAttributesByClass(self, osloclass: OSLOClass):
         return list(filter(lambda c: c.class_uri == osloclass.uri, self.attributes))

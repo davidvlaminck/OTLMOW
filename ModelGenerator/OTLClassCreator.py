@@ -1,12 +1,14 @@
 from Loggers.AbstractLogger import AbstractLogger
 from Loggers.LogType import LogType
 from ModelGenerator.AbstractDatatypeCreator import AbstractDatatypeCreator
+from ModelGenerator.Inheritance import Inheritance
 from ModelGenerator.OSLOClass import OSLOClass
 from ModelGenerator.OSLOCollector import OSLOCollector
 
 
 class OTLClassCreator(AbstractDatatypeCreator):
     def __init__(self, logger: AbstractLogger, osloCollector: OSLOCollector):
+        super().__init__(logger, osloCollector)
         logger.log("Created an instance of OTLClassCreator", LogType.INFO)
         self.osloCollector = osloCollector
 
@@ -14,7 +16,9 @@ class OTLClassCreator(AbstractDatatypeCreator):
         if not isinstance(osloClass, OSLOClass):
             raise ValueError(f"Input is not a OSLOClass")
 
-        if osloClass.uri == '' or not (osloClass.uri.startswith('https://wegenenverkeer.data.vlaanderen.be/ns/') or osloClass.uri.startswith('http://purl.org/dc/terms')):
+        if osloClass.uri == '' or not (
+                osloClass.uri.startswith('https://wegenenverkeer.data.vlaanderen.be/ns/') or osloClass.uri.startswith(
+                'http://purl.org/dc/terms')):
             raise ValueError(f"OSLOClass.uri is invalid. Value = '{osloClass.uri}'")
 
         if osloClass.name == '':
@@ -25,6 +29,12 @@ class OTLClassCreator(AbstractDatatypeCreator):
     def CreateBlockToWriteFromClass(self, osloClass: OSLOClass):
         attributen = self.osloCollector.FindAttributesByClass(osloClass)
         inheritances = self.osloCollector.FindInheritancesByClass(osloClass)
+
+        if osloClass.uri == 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMObject':
+            inheritances.append(
+                Inheritance(base_name='OTLAsset', base_uri='', class_name='', class_uri='', deprecated_version=''))
+            inheritances.append(
+                Inheritance(base_name='RelatieInteractor', base_uri='', class_name='', class_uri='', deprecated_version=''))
 
         datablock = []
 
@@ -37,10 +47,6 @@ class OTLClassCreator(AbstractDatatypeCreator):
         if len(inheritances) > 0:
             for inheritance in inheritances:
                 datablock.append(f'from OTLModel.Classes.{inheritance.base_name} import {inheritance.base_name}')
-
-        if osloClass.uri == 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMObject':
-            datablock.append('from OTLModel.BaseClasses.RelatieInteractor import RelatieInteractor')
-            datablock.append('from OTLModel.BaseClasses.OTLAsset import OTLAsset')
 
         if any(atr.kardinaliteit_max != "1" for atr in attributen):
             datablock.append('from OTLModel.Datatypes.KardinaliteitField import KardinaliteitField')
@@ -69,10 +75,6 @@ class OTLClassCreator(AbstractDatatypeCreator):
         elif len(inheritances) > 1:
             for inheritance in inheritances:
                 datablock.append(f'        {inheritance.base_name}.__init__(self)')
-
-        if osloClass.uri == 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMObject':
-            datablock.append(f'        OTLAsset.__init__(self)')
-            datablock.append(f'        RelatieInteractor.__init__(self)')
 
         self.addAttributenToDataBlock(attributen, datablock, forDatatypeUse=False)
 

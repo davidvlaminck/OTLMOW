@@ -1,6 +1,6 @@
 from OTLModel.BaseClasses.RelatieInteractor import RelatieInteractor
 from ModelGenerator.BaseClasses.Singleton import Singleton
-from OTLModel.Verification.GeldigeRelatieLijst import GeldigeRelatieLijst
+from OTLModel.GeldigeRelatieLijst import GeldigeRelatieLijst
 
 
 class RelatieValidator(metaclass=Singleton):

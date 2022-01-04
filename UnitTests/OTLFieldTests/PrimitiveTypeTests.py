@@ -1,6 +1,7 @@
 import unittest
 from datetime import datetime, time
 
+from OTLModel.BaseClasses.WKTField import WKTField
 from OTLModel.Datatypes.BooleanField import BooleanField
 from OTLModel.Datatypes.DateField import DateField
 from OTLModel.Datatypes.DateTimeField import DateTimeField
@@ -50,6 +51,11 @@ class TestInstance:
                               definition="definitie TimeField", constraints="", usagenote="",
                               deprecated_version="")
         """doc for time"""
+
+        self.wkt = WKTField(naam="WKTField", label="WKTField", uri="WKTField",
+                              definition="definitie WKTField", constraints="", usagenote="",
+                              deprecated_version="")
+        """doc for wkt """
 
 
 class PrimitiveTypeTests(unittest.TestCase):
@@ -201,3 +207,17 @@ class PrimitiveTypeTests(unittest.TestCase):
         self.assertEqual(12, instance.time.waarde.second)
         self.assertTrue(isinstance(instance.time.waarde, time))
         self.assertEqual("10:11:12", instance.time.default())
+
+    def test_wktTests(self):
+        instance = TestInstance()
+
+        self.assertTrue(instance.wkt.uri == "WKTField")
+        self.assertIsNone(instance.wkt.waarde)
+        self.assertTrue(isinstance(instance.wkt, WKTField))
+        self.assertTrue(isinstance(instance.wkt, OTLField))
+
+        with self.assertRaises(ValueError):
+            instance.wkt.waarde = 2
+
+        with self.assertRaises(ValueError):
+            instance.wkt.waarde = "invalid wkt string"

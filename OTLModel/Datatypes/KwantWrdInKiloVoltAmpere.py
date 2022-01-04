@@ -5,7 +5,7 @@ from OTLModel.Datatypes.DecimalFloatField import DecimalFloatField
 
 # Generated with OTLPrimitiveDatatypeCreator
 class KwantWrdInKiloVoltAmpere(KwantWrd):
-    """Een kwantitatieve waarde die een getal in kilovoltampère uitdrukt."""
+    """Een kwantitatieve waarde die een getal in kilovoltampÃ¨re uitdrukt."""
 
     def __init__(self, waarde=None):
         eenheid = LiteralField(naam="standaardEenheid",
@@ -28,9 +28,9 @@ class KwantWrdInKiloVoltAmpere(KwantWrd):
         """Bevat een getal die bij het datatype hoort."""
 
         super().__init__(naam="KwantWrdInKiloVoltAmpere",
-                         label="Kwantitatieve waarde in kilovoltampère",
+                         label="Kwantitatieve waarde in kilovoltampÃ¨re",
                          uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInKiloVoltAmpere",
-                         definition="Een kwantitatieve waarde die een getal in kilovoltampère uitdrukt.",
+                         definition="Een kwantitatieve waarde die een getal in kilovoltampÃ¨re uitdrukt.",
                          usagenote="",
                          deprecated_version="",
                          waardeVeld=waardeVeld,

@@ -1,4 +1,7 @@
 from abc import abstractmethod
+
+from OTLModel.BaseClasses.OTLAsset import OTLAsset
+from OTLModel.BaseClasses.RelatieInteractor import RelatieInteractor
 from OTLModel.Classes.AIMToestand import AIMToestand
 from OTLModel.Classes.AIMDBStatus import AIMDBStatus
 from OTLModel.Datatypes.KardinaliteitField import KardinaliteitField
@@ -10,8 +13,8 @@ from OTLModel.Datatypes.URIField import URIField
 
 
 # Generated with OTLClassCreator
-class AIMObject(AIMToestand, AIMDBStatus):
-    """Abstracte als de basisklasse voor alle uniek geïdentificeerde OTL objecten met de basiseigenschappen die elk OTL object minstens heeft."""
+class AIMObject(AIMToestand, AIMDBStatus, OTLAsset, RelatieInteractor):
+    """Abstracte als de basisklasse voor alle uniek geÃ¯dentificeerde OTL objecten met de basiseigenschappen die elk OTL object minstens heeft."""
 
     typeURI = "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMObject"
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""

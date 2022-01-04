@@ -22,6 +22,6 @@ class DteTekstblok(KwantWrd):
                          definition="Een tekst welke uit meerdere zinnen bestaat, en ook regeleindes kan bevatten. Een tekstblok bevat maximaal 65.000 karakters.",
                          usagenote="",
                          deprecated_version="",
-                         waardeVeld=waardeVeld,
+                         waardeVeld=self.waardeVeld,
                          eenheidVeld=None,
                          waarde=waarde)

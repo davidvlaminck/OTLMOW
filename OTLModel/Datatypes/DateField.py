@@ -10,4 +10,6 @@ class DateField(PrimitiveField):
                          readonlyValue)
 
     def default(self):
-        return self.waarde.strftime("%Y-%m-%d")
+        if self.waarde is not None:
+            return self.waarde.strftime("%Y-%m-%d")
+        return ''

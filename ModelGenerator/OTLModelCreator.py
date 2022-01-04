@@ -13,6 +13,12 @@ class OTLModelCreator:
         self.osloCollector = osloCollector
         self.logger.log("Created an instance of OTLModelCreator", LogType.INFO)
 
+    def create_full_model(self):
+        # self.create_primitive_datatypes() # TODO error with creating primitive datatypes
+        self.create_complex_datatypes()
+        self.create_enumerations()
+        self.create_classes()
+
     def create_primitive_datatypes(self):
         creator = OTLPrimitiveDatatypeCreator(self.logger, self.osloCollector)
 

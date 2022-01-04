@@ -1,32 +1,28 @@
-import sqlite3
-
-import requests
-from rdflib import Graph, RDF, FOAF, URIRef
-
-from Loggers.ConsoleLogger import ConsoleLogger
-from ModelGenerator.FileExistChecker import FileExistChecker
-from ModelGenerator.OSLOClass import OSLOClass
-from ModelGenerator.OSLOCollector import OSLOCollector
-from ModelGenerator.OSLOInMemoryCreator import OSLOInMemoryCreator
-from ModelGenerator.OTLModelCreator import OTLModelCreator
-from ModelGenerator.SQLDbReader import SQLDbReader
-
+from Facility.OTLFacility import OTLFacility
+from Loggers.TxtLogger import TxtLogger
+from OTLModel.Classes.DNBLaagspanning import DNBLaagspanning
 
 if __name__ == '__main__':
-    file_location = 'InputFiles/OTL.db'
-    file_exist_checker = FileExistChecker(file_location)
-    sql_reader = SQLDbReader(file_exist_checker)
-    oslo_creator = OSLOInMemoryCreator(sql_reader)
-    collector = OSLOCollector(oslo_creator)
-    collector.collect()
+    # create the main facade class: OTLFacility
+    otl_file_location = 'InputFiles/OTL.db'
+    logger = TxtLogger(r'C:\temp\pythonLogging\pythonlog.txt')
+    otl_facility = OTLFacility(logger)
 
-    logger = ConsoleLogger()
+    # create a datamodel based on the OTL SQLite database and ttl files stored on the github
+    otl_facility.init_otl_model_creator(otl_file_location)
+    # otl_facility.create_otl_datamodel()
 
-    modelCreator = OTLModelCreator(logger, collector)
-    # modelCreator.create_primitive_datatypes() # not working!
-    # modelCreator.create_complex_datatypes()
-    # modelCreator.create_enumerations()
-    modelCreator.create_classes()
+    # use the datamodel to create instances of OTL classes
+    dnb = DNBLaagspanning()
+    dnb.naam.waarde = 'A0024'
+    dnb.toestand.set_value_by_label('in gebruik')
+    dnb.assetId.identificator.waarde = 'eigen_Id_voor_A0024'
+    dnb.eanNummer.waarde = '541448860003995215'
+    dnb.adresVolgensDNB.gemeente.set_value_by_label('brasschaat')
+    # dnb.adresVolgensDNB.gemeente.set_value_by_label('Brasschaat') # this raises a ValueError because it has an incorrect value
+    dnb.adresVolgensDNB.postcode.waarde = '2930'
+    dnb.adresVolgensDNB.straatnaam.waarde = 'Bredabaan 90'
 
-
-
+    # encode to a json representation
+    encoded_json = otl_facility.encoder.encode(dnb)
+    print(encoded_json)

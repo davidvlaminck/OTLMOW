@@ -36,7 +36,8 @@ class OTLClassCreator(AbstractDatatypeCreator):
             inheritances.append(
                 Inheritance(base_name='RelatieInteractor', base_uri='', class_name='', class_uri='', deprecated_version=''))
 
-        datablock = []
+        #datablock = ['# coding=utf-8']
+        datablock=[]
 
         if osloClass.abstract == 1:
             if len(inheritances) > 0:
@@ -46,7 +47,10 @@ class OTLClassCreator(AbstractDatatypeCreator):
 
         if len(inheritances) > 0:
             for inheritance in inheritances:
-                datablock.append(f'from OTLModel.Classes.{inheritance.base_name} import {inheritance.base_name}')
+                if inheritance.base_name == 'OTLAsset' or inheritance.base_name == 'RelatieInteractor':
+                    datablock.append(f'from OTLModel.BaseClasses.{inheritance.base_name} import {inheritance.base_name}')
+                else:
+                    datablock.append(f'from OTLModel.Classes.{inheritance.base_name} import {inheritance.base_name}')
 
         if any(atr.kardinaliteit_max != "1" for atr in attributen):
             datablock.append('from OTLModel.Datatypes.KardinaliteitField import KardinaliteitField')

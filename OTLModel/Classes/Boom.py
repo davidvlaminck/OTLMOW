@@ -140,13 +140,11 @@ class Boom(VegetatieElement):
         self.takvrijeStamlengte.deprecated_version = ""
 
         self.totaleBoombeschermingszone = KwantWrdInCentimeter()
-        """De straal van de cirkelvormige ruimte rond de boom waar maatregelen genomen worden om de boom te beschermen tijdens projecten of manifestaties uitgedrukt in centimeters.
-"""
+        """De straal van de cirkelvormige ruimte rond de boom waar maatregelen genomen worden om de boom te beschermen tijdens projecten of manifestaties uitgedrukt in centimeters."""
         self.totaleBoombeschermingszone.naam = "totaleBoombeschermingszone"
         self.totaleBoombeschermingszone.label = "totale boombeschermingszone"
         self.totaleBoombeschermingszone.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Boom.totaleBoombeschermingszone"
-        self.totaleBoombeschermingszone.definition = "De straal van de cirkelvormige ruimte rond de boom waar maatregelen genomen worden om de boom te beschermen tijdens projecten of manifestaties uitgedrukt in centimeters.
-"
+        self.totaleBoombeschermingszone.definition = "De straal van de cirkelvormige ruimte rond de boom waar maatregelen genomen worden om de boom te beschermen tijdens projecten of manifestaties uitgedrukt in centimeters."
         self.totaleBoombeschermingszone.constraints = ""
         self.totaleBoombeschermingszone.usagenote = ""
         self.totaleBoombeschermingszone.deprecated_version = ""

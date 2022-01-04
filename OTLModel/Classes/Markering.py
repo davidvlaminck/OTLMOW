@@ -23,15 +23,11 @@ class Markering(AIMObject, Signalisatie):
         self.isHandwerk = BooleanField(naam="isHandwerk",
                                        label="is handwerk",
                                        uri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Markering.isHandwerk",
-                                       definition="Boolean om te bepalen of de markering machinaal of handmatig is aangebracht
-
-.",
+                                       definition="Boolean om te bepalen of de markering machinaal of handmatig is aangebracht.",
                                        constraints="",
                                        usagenote="",
                                        deprecated_version="")
-        """Boolean om te bepalen of de markering machinaal of handmatig is aangebracht
-
-."""
+        """Boolean om te bepalen of de markering machinaal of handmatig is aangebracht."""
 
         self.isTijdelijk = BooleanField(naam="isTijdelijk",
                                         label="is tijdelijk",

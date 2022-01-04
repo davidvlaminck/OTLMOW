@@ -159,16 +159,19 @@ class AbstractDatatypeCreator(ABC):
             # kardinaliteit 1 of *
             # fieldtype: Complex, KwantWrd, Primitive, Keuzelijst
 
+            definitie = attribuut.definition_nl.replace('"', '\"').replace('\n', '')
+
             if attribuut.kardinaliteit_max == '1':
                 if typeLink == "OSLODatatypePrimitive":
                     fieldName = self.getSingleFieldFromTypeUri(attribuut.type)
                     if fieldName.startswith("Dte") or fieldName.startswith('KwantWrd'):
                         datablock.append(f'        {selfWaarde}.{attribuut.name} = {fieldName}()')
-                        datablock.append(f'        """{attribuut.definition_nl}"""')
+                        datablock.append(f'        """{definitie}"""')
                         datablock.append(f'        {selfWaarde}.{attribuut.name}.naam = "{attribuut.name}"')
                         datablock.append(f'        {selfWaarde}.{attribuut.name}.label = "{attribuut.label_nl}"')
                         datablock.append(f'        {selfWaarde}.{attribuut.name}.uri = "{attribuut.uri}"')
-                        datablock.append(f'        {selfWaarde}.{attribuut.name}.definition = "{attribuut.definition_nl}"')
+
+                        datablock.append(f'        {selfWaarde}.{attribuut.name}.definition = "{definitie}"')
                         datablock.append(f'        {selfWaarde}.{attribuut.name}.constraints = "{attribuut.constraints}"')
                         datablock.append(f'        {selfWaarde}.{attribuut.name}.usagenote = "{attribuut.usagenote_nl}"')
                         if attribuut.readonly:
@@ -184,7 +187,7 @@ class AbstractDatatypeCreator(ABC):
                             f'        {selfWaarde}.{attribuut.name} = {self.getFieldNameFromTypeUri(attribuut.type)}(naam="{attribuut.name}",')
                         datablock.append(f'{whitespace}label="{attribuut.label_nl}",')
                         datablock.append(f'{whitespace}uri="{attribuut.uri}",')
-                        datablock.append(f'{whitespace}definition="{attribuut.definition_nl}",')
+                        datablock.append(f'{whitespace}definition="{definitie}",')
                         datablock.append(f'{whitespace}constraints="{attribuut.constraints}",')
                         datablock.append(f'{whitespace}usagenote="{attribuut.usagenote_nl}",')
                         if attribuut.readonly:
@@ -192,7 +195,7 @@ class AbstractDatatypeCreator(ABC):
                         datablock.append(f'{whitespace}deprecated_version="{attribuut.deprecated_version}")')
                         if forDatatypeUse:
                             datablock.append(f'        self.{attribuut.name} = {selfWaarde}.{attribuut.name}')
-                        datablock.append(f'        """{attribuut.definition_nl}"""')
+                        datablock.append(f'        """{definitie}"""')
 
                     datablock.append('')
                     continue
@@ -206,7 +209,7 @@ class AbstractDatatypeCreator(ABC):
                     datablock.append(f'{whitespace}label="{attribuut.label_nl}",')
                     datablock.append(f'{whitespace}lijst={typeName}(),')
                     datablock.append(f'{whitespace}uri="{attribuut.uri}",')
-                    datablock.append(f'{whitespace}definition="{attribuut.definition_nl}",')
+                    datablock.append(f'{whitespace}definition="{definitie}",')
                     datablock.append(f'{whitespace}constraints="{attribuut.constraints}",')
                     datablock.append(f'{whitespace}usagenote="{attribuut.usagenote_nl}",')
                     if attribuut.readonly:
@@ -214,18 +217,18 @@ class AbstractDatatypeCreator(ABC):
                     datablock.append(f'{whitespace}deprecated_version="{attribuut.deprecated_version}")')
                     if forDatatypeUse:
                         datablock.append(f'        self.{attribuut.name} = {selfWaarde}.{attribuut.name}')
-                    datablock.append(f'        """{attribuut.definition_nl}"""')
+                    datablock.append(f'        """{definitie}"""')
                     datablock.append('')
                     continue
 
                 if typeLink == "OSLODatatypeComplex":
                     fieldName = self.getTypeNameOfComplexAttribuut(attribuut.type)
                     datablock.append(f'        {selfWaarde}.{attribuut.name} = {fieldName}()')
-                    datablock.append(f'        """{attribuut.definition_nl}"""')
+                    datablock.append(f'        """{definitie}"""')
                     datablock.append(f'        {selfWaarde}.{attribuut.name}.naam = "{attribuut.name}"')
                     datablock.append(f'        {selfWaarde}.{attribuut.name}.label = "{attribuut.label_nl}"')
                     datablock.append(f'        {selfWaarde}.{attribuut.name}.uri = "{attribuut.uri}"')
-                    datablock.append(f'        {selfWaarde}.{attribuut.name}.definition = "{attribuut.definition_nl}"')
+                    datablock.append(f'        {selfWaarde}.{attribuut.name}.definition = "{definitie}"')
                     datablock.append(f'        {selfWaarde}.{attribuut.name}.constraints = "{attribuut.constraints}"')
                     datablock.append(f'        {selfWaarde}.{attribuut.name}.usagenote = "{attribuut.usagenote_nl}"')
                     if attribuut.readonly:
@@ -244,7 +247,7 @@ class AbstractDatatypeCreator(ABC):
                     datablock.append(f'        {attribuut.name}Field.naam = "{attribuut.name}"')
                     datablock.append(f'        {attribuut.name}Field.label = "{attribuut.label_nl}"')
                     datablock.append(f'        {attribuut.name}Field.uri = "{attribuut.uri}"')
-                    datablock.append(f'        {attribuut.name}Field.definition = "{attribuut.definition_nl}"')
+                    datablock.append(f'        {attribuut.name}Field.definition = "{definitie}"')
                     datablock.append(f'        {attribuut.name}Field.constraints = "{attribuut.constraints}"')
                     datablock.append(f'        {attribuut.name}Field.usagenote = "{attribuut.usagenote_nl}"')
                     if attribuut.readonly:
@@ -258,7 +261,7 @@ class AbstractDatatypeCreator(ABC):
                     else:
                         datablock.append(
                             f'        self.{attribuut.name} = KardinaliteitField(minKardinaliteit="{attribuut.kardinaliteit_min}", maxKardinaliteit="{attribuut.kardinaliteit_max}", fieldToMultiply={attribuut.name}Field)')
-                    datablock.append(f'        """{attribuut.definition_nl}"""')
+                    datablock.append(f'        """{definitie}"""')
                     datablock.append('')
                     continue
 
@@ -271,7 +274,7 @@ class AbstractDatatypeCreator(ABC):
                     datablock.append(f'{whitespace}label="{attribuut.label_nl}",')
                     datablock.append(f'{whitespace}lijst={typeName}(),')
                     datablock.append(f'{whitespace}uri="{attribuut.uri}",')
-                    datablock.append(f'{whitespace}definition="{attribuut.definition_nl}",')
+                    datablock.append(f'{whitespace}definition="{definitie}",')
                     datablock.append(f'{whitespace}constraints="{attribuut.constraints}",')
                     datablock.append(f'{whitespace}usagenote="{attribuut.usagenote_nl}",')
                     if attribuut.readonly:
@@ -285,7 +288,7 @@ class AbstractDatatypeCreator(ABC):
                         datablock.append(
                             f'        self.{attribuut.name} = KardinaliteitField(minKardinaliteit="{attribuut.kardinaliteit_min}", maxKardinaliteit="{attribuut.kardinaliteit_max}", fieldToMultiply={attribuut.name}Field)')
 
-                    datablock.append(f'        """{attribuut.definition_nl}"""')
+                    datablock.append(f'        """{definitie}"""')
                     datablock.append('')
                     continue
 
@@ -297,7 +300,7 @@ class AbstractDatatypeCreator(ABC):
                         datablock.append(f'        {attribuut.name}Field.naam = "{attribuut.name}"')
                         datablock.append(f'        {attribuut.name}Field.label = "{attribuut.label_nl}"')
                         datablock.append(f'        {attribuut.name}Field.uri = "{attribuut.uri}"')
-                        datablock.append(f'        {attribuut.name}Field.definition = "{attribuut.definition_nl}"')
+                        datablock.append(f'        {attribuut.name}Field.definition = "{definitie}"')
                         datablock.append(f'        {attribuut.name}Field.constraints = "{attribuut.constraints}"')
                         datablock.append(f'        {attribuut.name}Field.usagenote = "{attribuut.usagenote_nl}"')
                         if attribuut.readonly:
@@ -311,7 +314,7 @@ class AbstractDatatypeCreator(ABC):
                         else:
                             datablock.append(
                                 f'        self.{attribuut.name} = KardinaliteitField(minKardinaliteit="{attribuut.kardinaliteit_min}", maxKardinaliteit="{attribuut.kardinaliteit_max}", fieldToMultiply={attribuut.name}Field)')
-                        datablock.append(f'        """{attribuut.definition_nl}"""')
+                        datablock.append(f'        """{definitie}"""')
                     else:
                         whitespace = self.getWhiteSpaceEquivalent(
                             f'        {attribuut.name}Field = {self.getFieldNameFromTypeUri(attribuut.type)}(')
@@ -319,7 +322,7 @@ class AbstractDatatypeCreator(ABC):
                             f'        {attribuut.name}Field = {self.getFieldNameFromTypeUri(attribuut.type)}(naam="{attribuut.name}",')
                         datablock.append(f'{whitespace}label="{attribuut.label_nl}",')
                         datablock.append(f'{whitespace}uri="{attribuut.uri}",')
-                        datablock.append(f'{whitespace}definition="{attribuut.definition_nl}",')
+                        datablock.append(f'{whitespace}definition="{definitie}",')
                         datablock.append(f'{whitespace}constraints="{attribuut.constraints}",')
                         datablock.append(f'{whitespace}usagenote="{attribuut.usagenote_nl}",')
                         if attribuut.readonly:
@@ -333,7 +336,7 @@ class AbstractDatatypeCreator(ABC):
                             datablock.append(
                                 f'        self.{attribuut.name} = KardinaliteitField(minKardinaliteit="{attribuut.kardinaliteit_min}", maxKardinaliteit="{attribuut.kardinaliteit_max}", fieldToMultiply={attribuut.name}Field)')
 
-                        datablock.append(f'        """{attribuut.definition_nl}"""')
+                        datablock.append(f'        """{definitie}"""')
 
                     datablock.append('')
                     continue

@@ -1,8 +1,6 @@
 from Facility.OTLFacility import OTLFacility
 from Loggers.TxtLogger import TxtLogger
-from ModelGenerator.BaseClasses.RelatieValidator import RelatieValidator
 from OTLModel.Classes.DNBLaagspanning import DNBLaagspanning
-from OTLModel.Classes.EnergiemeterDNB import EnergiemeterDNB
 
 if __name__ == '__main__':
     # create the main facade class: OTLFacility
@@ -17,11 +15,12 @@ if __name__ == '__main__':
     # use the generated datamodel to create instances of OTL classes
     dnb = DNBLaagspanning()
     dnb.naam.waarde = 'A0024'
+    # dnb.naam.waarde = 24  # this raises a ValueError because it has an incorrect value
     dnb.toestand.set_value_by_label('in gebruik')
     dnb.assetId.identificator.waarde = 'eigen_Id_voor_A0024'
     dnb.eanNummer.waarde = '541448860003995215'
     dnb.adresVolgensDNB.gemeente.set_value_by_label('brasschaat')
-    # dnb.adresVolgensDNB.gemeente.set_value_by_label('Brasschaat') # this raises a ValueError because it has an incorrect value
+    # dnb.adresVolgensDNB.gemeente.set_value_by_label('Brasschaat')  # this raises a ValueError because it has an incorrect value
     dnb.adresVolgensDNB.postcode.waarde = '2930'
     dnb.adresVolgensDNB.straatnaam.waarde = 'Bredabaan 90'
 

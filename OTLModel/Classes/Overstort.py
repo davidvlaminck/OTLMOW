@@ -16,13 +16,11 @@ class Overstort(LinkendElement):
     def __init__(self):
         super().__init__()
         self.drempellengte = KwantWrdInMillimeter()
-        """Drempellengte of breedte van de overstort. Deze wordt gemeten aan de kortste zijde
-van de drempel."""
+        """Drempellengte of breedte van de overstort. Deze wordt gemeten aan de kortste zijdevan de drempel."""
         self.drempellengte.naam = "drempellengte"
         self.drempellengte.label = "breedte"
         self.drempellengte.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Overstort.drempellengte"
-        self.drempellengte.definition = "Drempellengte of breedte van de overstort. Deze wordt gemeten aan de kortste zijde
-van de drempel."
+        self.drempellengte.definition = "Drempellengte of breedte van de overstort. Deze wordt gemeten aan de kortste zijdevan de drempel."
         self.drempellengte.constraints = ""
         self.drempellengte.usagenote = ""
         self.drempellengte.deprecated_version = ""
@@ -48,19 +46,11 @@ van de drempel."
         self.peil.deprecated_version = ""
 
         self.vrijeHoogte = KwantWrdInMeter()
-        """De vrije hoogte tussen de overstortdrempel en het plafond van de
-constructie ter hoogte van de drempel. Voor drempels in leidingen worden
-de vrije hoogte voor de databank genomen tussen de drempel en de
-binnenbovenkant buis. Indien er geen sprake is van een vrije hoogte (vb
-drempels in grachten) wordt dit niet ingevuld."""
+        """De vrije hoogte tussen de overstortdrempel en het plafond van deconstructie ter hoogte van de drempel. Voor drempels in leidingen wordende vrije hoogte voor de databank genomen tussen de drempel en debinnenbovenkant buis. Indien er geen sprake is van een vrije hoogte (vbdrempels in grachten) wordt dit niet ingevuld."""
         self.vrijeHoogte.naam = "vrijeHoogte"
         self.vrijeHoogte.label = "vrije hoogte"
         self.vrijeHoogte.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Overstort.vrijeHoogte"
-        self.vrijeHoogte.definition = "De vrije hoogte tussen de overstortdrempel en het plafond van de
-constructie ter hoogte van de drempel. Voor drempels in leidingen worden
-de vrije hoogte voor de databank genomen tussen de drempel en de
-binnenbovenkant buis. Indien er geen sprake is van een vrije hoogte (vb
-drempels in grachten) wordt dit niet ingevuld."
+        self.vrijeHoogte.definition = "De vrije hoogte tussen de overstortdrempel en het plafond van deconstructie ter hoogte van de drempel. Voor drempels in leidingen wordende vrije hoogte voor de databank genomen tussen de drempel en debinnenbovenkant buis. Indien er geen sprake is van een vrije hoogte (vbdrempels in grachten) wordt dit niet ingevuld."
         self.vrijeHoogte.constraints = ""
         self.vrijeHoogte.usagenote = ""
         self.vrijeHoogte.deprecated_version = ""

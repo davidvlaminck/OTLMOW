@@ -19,7 +19,8 @@ class OTLModelCreator:
         #self.create_complex_datatypes()
         #self.create_enumerations()
         self.create_classes()
-        self.create_relations()
+        #self.create_relations()
+        pass
 
     def create_primitive_datatypes(self):
         creator = OTLPrimitiveDatatypeCreator(self.logger, self.osloCollector)
@@ -92,7 +93,6 @@ class OTLModelCreator:
         creator = OTLClassCreator(self.logger, self.osloCollector)
 
         for cls in self.osloCollector.classes:
-
             try:
                 dataToWrite = creator.CreateBlockToWriteFromClasses(cls)
                 if dataToWrite is None:

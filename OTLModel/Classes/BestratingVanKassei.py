@@ -12,15 +12,11 @@ class BestratingVanKassei(Bestrating):
     def __init__(self):
         super().__init__()
         self.afmetingVanBestratingselementBxl = DtcAfmetingBxlInCm()
-        """Afmeting van de breedte in cm (langste)
- en van de lengte in cm (kortste)
- van de kassei."""
+        """Afmeting van de breedte in cm (langste) en van de lengte in cm (kortste) van de kassei."""
         self.afmetingVanBestratingselementBxl.naam = "afmetingVanBestratingselementBxl"
         self.afmetingVanBestratingselementBxl.label = "afmeting van bestratingselement bxl"
         self.afmetingVanBestratingselementBxl.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#BestratingVanKassei.afmetingVanBestratingselementBxl"
-        self.afmetingVanBestratingselementBxl.definition = "Afmeting van de breedte in cm (langste)
- en van de lengte in cm (kortste)
- van de kassei."
+        self.afmetingVanBestratingselementBxl.definition = "Afmeting van de breedte in cm (langste) en van de lengte in cm (kortste) van de kassei."
         self.afmetingVanBestratingselementBxl.constraints = ""
         self.afmetingVanBestratingselementBxl.usagenote = ""
         self.afmetingVanBestratingselementBxl.deprecated_version = ""

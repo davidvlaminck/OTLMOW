@@ -35,7 +35,7 @@ Verkeersbord
 ==> query'en welke concrete classes NIET overerven van AIMObject > RelatieInteractor en OTL Asset
 
 Ventilatie (kwantWrd missing?)
-Seinlantaarn > encoding probleem
+AIMObject, Seinlantaarn > encoding probleem
 
 
 Facility
@@ -55,5 +55,5 @@ Facility
 * Export
     - memory (Dicts)
     - Different formats
-        - josn https://janakiev.com/blog/python-pickle-json/
+        - json
         - csv per type

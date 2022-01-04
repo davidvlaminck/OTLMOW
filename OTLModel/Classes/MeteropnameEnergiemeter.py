@@ -22,13 +22,11 @@ class MeteropnameEnergiemeter(AIMNaamObject):
         """De datum van de laatste meteropname van de energiemeter."""
 
         self.meterstandDag = KwantWrdInkWh()
-        """De meterstand bij de laatste meteropname van de dag-energiemeter.
-"""
+        """De meterstand bij de laatste meteropname van de dag-energiemeter."""
         self.meterstandDag.naam = "meterstandDag"
         self.meterstandDag.label = "meterstand dag"
         self.meterstandDag.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#MeteropnameEnergiemeter.meterstandDag"
-        self.meterstandDag.definition = "De meterstand bij de laatste meteropname van de dag-energiemeter.
-"
+        self.meterstandDag.definition = "De meterstand bij de laatste meteropname van de dag-energiemeter."
         self.meterstandDag.constraints = ""
         self.meterstandDag.usagenote = ""
         self.meterstandDag.deprecated_version = ""

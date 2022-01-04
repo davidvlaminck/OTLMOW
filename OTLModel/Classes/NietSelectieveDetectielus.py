@@ -19,15 +19,11 @@ class NietSelectieveDetectielus(SelNietSelLus):
                                        label="functie",
                                        lijst=KlVriLusFunctie(),
                                        uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#NietSelectieveDetectielus.functie",
-                                       definition="Type niet-selectieve detectielus bv. file, afstand, hiaat,...
-
-",
+                                       definition="Type niet-selectieve detectielus bv. file, afstand, hiaat,...",
                                        constraints="",
                                        usagenote="",
                                        deprecated_version="")
-        """Type niet-selectieve detectielus bv. file, afstand, hiaat,...
-
-"""
+        """Type niet-selectieve detectielus bv. file, afstand, hiaat,..."""
 
         self.isMotorgevoelig = BooleanField(naam="isMotorgevoelig",
                                             label="is motorgevoelig",

@@ -1,5 +1,9 @@
 # OTLClassPython demo code
 
+    from Facility.OTLFacility import OTLFacility
+    from Loggers.TxtLogger import TxtLogger
+    from OTLModel.Classes.DNBLaagspanning import DNBLaagspanning
+
     # create the main facade class: OTLFacility
     otl_file_location = 'InputFiles/OTL.db'
     logger = TxtLogger(r'C:\temp\pythonLogging\pythonlog.txt')

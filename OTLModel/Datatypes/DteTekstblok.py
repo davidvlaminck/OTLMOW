@@ -11,8 +11,8 @@ class DteTekstblok(KwantWrd):
                                       label="waarde",
                                       uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DteTekstblok.waarde",
                                       definition="De string welke uit meerdere zinnen bestaat, en ook regeleindes kan bevatten. Een tekstblok bevat maximaal 65.000 karakters.",
-                                      constraints='',
-                                      usagenote='',
+                                      constraints="",
+                                      usagenote="",
                                       deprecated_version="")
         """De string welke uit meerdere zinnen bestaat, en ook regeleindes kan bevatten. Een tekstblok bevat maximaal 65.000 karakters."""
 

@@ -62,12 +62,12 @@ class DtcAanlegBoomvorm(ComplexField):
         self.waarde.heeftWortelgeleidingwortelwering = BooleanField(naam="heeftWortelgeleidingwortelwering",
                                                                     label="heeft wortelgeleiding wortelwering",
                                                                     uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcAanlegBoomvorm.heeftWortelgeleidingwortelwering",
-                                                                    definition="Aanduiding of de boom wortelwering heeft. Wortelgeleiding en â€“wering moet voorkomen dat boomwortels het trottoir, de middenberm, het fietspad, de rijweg, andere wegverhardingen en leidingstelsels beschadigen.",
+                                                                    definition="Aanduiding of de boom wortelwering heeft. Wortelgeleiding en –wering moet voorkomen dat boomwortels het trottoir, de middenberm, het fietspad, de rijweg, andere wegverhardingen en leidingstelsels beschadigen.",
                                                                     constraints="",
                                                                     usagenote="",
                                                                     deprecated_version="")
         self.heeftWortelgeleidingwortelwering = self.waarde.heeftWortelgeleidingwortelwering
-        """Aanduiding of de boom wortelwering heeft. Wortelgeleiding en â€“wering moet voorkomen dat boomwortels het trottoir, de middenberm, het fietspad, de rijweg, andere wegverhardingen en leidingstelsels beschadigen."""
+        """Aanduiding of de boom wortelwering heeft. Wortelgeleiding en –wering moet voorkomen dat boomwortels het trottoir, de middenberm, het fietspad, de rijweg, andere wegverhardingen en leidingstelsels beschadigen."""
 
         self.waarde.maaischadeBescherming = KeuzelijstField(naam="maaischadeBescherming",
                                                             label="maaischade bescherming",

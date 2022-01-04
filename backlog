@@ -34,8 +34,8 @@ KlassiekeFundering
 Verkeersbord
 ==> query'en welke concrete classes NIET overerven van AIMObject > RelatieInteractor en OTL Asset toevoegen aan die assets
 
-Ventilatie (kwantWrd missing?)
-AIMObject, Seinlantaarn > encoding probleem
+OTLPrimitiveDatatypeCreator probleem met getFieldFromTypeUri oplossen
+AIMObject, Seinlantaarn > encoding probleem > voorlopige oplossing ==> # coding=utf-8
 
 
 Facility

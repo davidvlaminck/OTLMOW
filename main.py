@@ -1,6 +1,8 @@
 from Facility.OTLFacility import OTLFacility
 from Loggers.TxtLogger import TxtLogger
+from ModelGenerator.BaseClasses.RelatieValidator import RelatieValidator
 from OTLModel.Classes.DNBLaagspanning import DNBLaagspanning
+from OTLModel.Classes.EnergiemeterDNB import EnergiemeterDNB
 
 if __name__ == '__main__':
     # create the main facade class: OTLFacility
@@ -12,7 +14,7 @@ if __name__ == '__main__':
     otl_facility.init_otl_model_creator(otl_file_location)
     # otl_facility.create_otl_datamodel()
 
-    # use the datamodel to create instances of OTL classes
+    # use the generated datamodel to create instances of OTL classes
     dnb = DNBLaagspanning()
     dnb.naam.waarde = 'A0024'
     dnb.toestand.set_value_by_label('in gebruik')

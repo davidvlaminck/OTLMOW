@@ -10,11 +10,17 @@ class RelatieObject(AIMDBStatus):
     def __init__(self):
         raise TypeError("Can't instantiate abstract class " + self.__class__.__name__)
 
-    assetId = DtcIdentificator
+    assetId = DtcIdentificator()
 
-    bronAssetId = DtcIdentificator
+    bronAssetId = DtcIdentificator()
 
-    doelAssetId = DtcIdentificator
+    doelAssetId = DtcIdentificator()
 
-    typeURI = URIField()
+    typeURI = URIField(naam="typeURI",
+                                label="type URI",
+                                uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMObject.typeURI",
+                                definition="De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI .",
+                                constraints="",
+                                usagenote="",
+                                deprecated_version="")
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""

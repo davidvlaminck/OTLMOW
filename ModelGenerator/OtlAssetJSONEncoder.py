@@ -15,9 +15,19 @@ class OtlAssetJSONEncoder(json.JSONEncoder):
                 else:
                     value = otlAsset.__getattribute__(key)
                     if isinstance(value, OTLField):
-                        if value.default() is None:
+                        valueByDefault = value.default()
+                        if valueByDefault is None:
                             continue
-                        dictCopy[key] = value.default()
+                        if isinstance(valueByDefault, str):
+                            if len(valueByDefault) == 0:
+                                continue
+                        if isinstance(valueByDefault, list):
+                            if len(valueByDefault) == 0:
+                                continue
+                        if isinstance(valueByDefault, dict):
+                            if self.isEmptyDict(valueByDefault):
+                                continue
+                        dictCopy[key] =valueByDefault
                     else:
                         if value is None:
                             continue
@@ -25,4 +35,15 @@ class OtlAssetJSONEncoder(json.JSONEncoder):
             return dictCopy
         else:
             return super().default(otlAsset)
+
     # https://realpython.com/python-json/?fbclid=IwAR2gXW0-lF6Koyd6YxpSUBJH-mEj1lS1lEPUavPfrYbzfbzWnkLcRN_RAG8
+
+    def isEmptyDict(self, value: dict):
+        b = True
+        for v in value.values():
+            if isinstance(v, dict):
+                if self.isEmptyDict(v):
+                    continue
+            if v is not None:
+                return False
+        return b

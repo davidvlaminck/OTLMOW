@@ -9,7 +9,7 @@
     otl_facility.init_otl_model_creator(otl_file_location)
     otl_facility.create_otl_datamodel()
 
-    # use the datamodel to create instances of OTL classes
+    # use the generated datamodel to create instances of OTL classes
     dnb = DNBLaagspanning()
     dnb.naam.waarde = 'A0024'
     dnb.toestand.set_value_by_label('in gebruik')

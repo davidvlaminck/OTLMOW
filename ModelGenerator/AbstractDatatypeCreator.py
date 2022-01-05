@@ -148,14 +148,15 @@ class AbstractDatatypeCreator(ABC):
 
             if attribuut.deprecated_version != '':
                 continue
-                #raise NotImplementedError(f"deprecated attributes is not implemented, found in {attributen.uri}")
+                # raise NotImplementedError(f"deprecated attributes is not implemented, found in {attributen.uri}")
 
             # depending on the use for datatype creation or class creation use 'self.' or 'self.waarde.'
             selfWaarde = 'self.waarde'
             if not forDatatypeUse:
                 selfWaarde = 'self'
 
-            if attribuut.uri == 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMObject.typeURI' and class_uri == 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMObject':
+            if (attribuut.uri == 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMObject.typeURI' and class_uri == 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMObject') or (
+                    attribuut.uri == 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#RelatieObject.typeURI' and class_uri == 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#RelatieObject'):
                 datablock.append('        uri = self.typeURI')
 
             definitie = attribuut.definition_nl.replace('"', r'\"').replace('\n', '')
@@ -179,7 +180,8 @@ class AbstractDatatypeCreator(ABC):
                             f'        {selfWaarde}.{attribuut.name}.deprecated_version = "{attribuut.deprecated_version}"')
                         if forDatatypeUse:
                             datablock.append(f'        self.{attribuut.name} = {selfWaarde}.{attribuut.name}')
-                        if attribuut.uri == 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMObject.typeURI' and class_uri == 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMObject':
+                        if (attribuut.uri == 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMObject.typeURI' and class_uri == 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMObject') or (
+                                attribuut.uri == 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#RelatieObject.typeURI' and class_uri == 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#RelatieObject'):
                             datablock.append('        self.typeURI.waarde = uri')
                     else:
                         whitespace = self.getWhiteSpaceEquivalent(

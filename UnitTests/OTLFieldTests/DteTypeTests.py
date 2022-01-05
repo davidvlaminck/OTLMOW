@@ -4,7 +4,7 @@ from abc import ABC
 
 from OTLModel.Datatypes.DteKleurRAL import DteKleurRAL
 from OTLModel.Datatypes.StringField import StringField
-from OTLModel.Verification.AIMObject import AIMObject
+from OTLModel.Classes.AIMObject import AIMObject
 
 
 class DteTestClass(AIMObject, ABC):

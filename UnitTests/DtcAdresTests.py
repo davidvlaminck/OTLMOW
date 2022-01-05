@@ -1,7 +1,7 @@
 import unittest
 
 from OTLModel.Datatypes.ComplexField import ComplexField, ComplexAttributen
-from OTLModel.Verification.AIMObject import AIMObject
+from OTLModel.Classes.AIMObject import AIMObject
 from OTLModel.Datatypes.DtcAdres import DtcAdres
 
 

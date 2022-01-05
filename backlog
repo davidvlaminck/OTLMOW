@@ -30,7 +30,8 @@ Verkeersbord
 OTLPrimitiveDatatypeCreator probleem met getFieldFromTypeUri oplossen
 AIMObject, Seinlantaarn > encoding probleem > voorlopige oplossing ==> # coding=utf-8
 
-AIMObject heeft een fix gekregen voor typeURI, maar Agent en ProefEnMeting en andere soorten classes nog niet
+AIMObject RelatieObject heeft een fix gekregen voor typeURI, maar Agent en ProefEnMeting en andere soorten classes nog niet
+testen schrijven voor bestaande fixes
 
 
 Facility

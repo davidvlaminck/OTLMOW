@@ -2,7 +2,7 @@ import unittest
 
 import jsonpickle
 
-from OTLModel.Verification.Aftakking import Aftakking
+from OTLModel.Classes.Aftakking import Aftakking
 
 
 class JsonPickleTests(unittest.TestCase):

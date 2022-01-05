@@ -1,7 +1,7 @@
 import unittest
 
-from OTLModel.Verification.AIMNaamObject import AIMNaamObject
-from OTLModel.Verification.NaampadObject import NaampadObject
+from OTLModel.Classes.AIMNaamObject import AIMNaamObject
+from OTLModel.Classes.NaampadObject import NaampadObject
 
 
 class NaampadObjectTestInstance(NaampadObject):

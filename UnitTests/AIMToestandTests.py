@@ -1,6 +1,6 @@
 import unittest
 
-from OTLModel.Verification.AIMToestand import AIMToestand
+from OTLModel.Classes.AIMToestand import AIMToestand
 
 
 class AIMToestandTestInstance(AIMToestand):

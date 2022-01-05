@@ -1,3 +1,4 @@
+# coding=utf-8
 from OTLModel.Datatypes.KwantWrd import KwantWrd
 from OTLModel.Datatypes.LiteralField import LiteralField
 from OTLModel.Datatypes.DecimalFloatField import DecimalFloatField
@@ -12,10 +13,10 @@ class KwantWrdInPromille(KwantWrd):
                                     label="standaard eenheid",
                                     uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInPromille.standaardEenheid",
                                     definition="De standaard eenheid bij dit datatype is uitgedrukt in promille.",
-                                    constraints='"‰"^^cdt:ucumunit',
-                                    usagenote='"‰"^^cdt:ucumunit',
+                                    constraints='"â€°"^^cdt:ucumunit',
+                                    usagenote='"â€°"^^cdt:ucumunit',
                                     deprecated_version="",
-                                    readonlyValue="‰")
+                                    readonlyValue="â€°")
         """De standaard eenheid bij dit datatype is uitgedrukt in promille."""
 
         self.waardeVeld = DecimalFloatField(naam="waarde",

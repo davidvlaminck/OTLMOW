@@ -1,8 +1,8 @@
 import unittest
 
-from OTLModel.Verification.Buis import Buis
-from OTLModel.Verification.ContainerBuis import ContainerBuis
-from OTLModel.Verification.Mantelbuis import Mantelbuis
+from OTLModel.Classes.Buis import Buis
+from OTLModel.Classes.ContainerBuis import ContainerBuis
+from OTLModel.Classes.Mantelbuis import Mantelbuis
 
 
 class ContainerBuisInstance(ContainerBuis):

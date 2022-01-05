@@ -6,6 +6,7 @@ from ModelGenerator.BaseClasses.RelatieRichting import RelatieRichting
 class RelatieInteractor:
     @abstractmethod
     def __init__(self):
+        self._loadGeldigeRelaties()
         pass
 
     _geldigeRelaties = ()

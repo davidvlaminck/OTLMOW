@@ -1,18 +1,6 @@
 relaties leggen: validatie op classes zelf is moeilijk maar kan mits extra methode aanroepen
-relaties leggen: mogelijk maken om te leggen vanuit doel of bron
-
-
-> relatieObject implementeren
-> AnyURI implementeren
-
-> uri implementeren op alle soorten attributen
-
-ophalen attributen
-select * from OSLOClass
-left join OSLOAttributen on OSLOClass.uri = OSLOAttributen.class_uri
-left join TypeLinkTabel tlt on tlt.item_uri = OSLOAttributen."type"
-left join OSLODatatypePrimitive op on OSLOAttributen.'type' = op.uri
-where OSLOClass.uri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DNBLaagspanning';
+relaties leggen: mogelijk maken om te leggen vanuit doel of bron of valideren
+relatieCreator => gebruikt relatieValidator en _validatie methode op objecten zelf om te verifiëren of een relatie mag gelegd worden. Houdt geen rekening met bestaande relaties
 
 
 TODO's:
@@ -21,6 +9,11 @@ tempId's vs bestaande id's
 agents kunnen niet zelf aangemaakt worden
 deprecated classes geven een warning
 deprecated attributen? door overerving aan te passen?
+AnyURI implementeren
+utf-8 encoding
+unionTypes aanmaken
+Agent - ProefEnMeting ondersteuning
+
 
 To check:
 Agent
@@ -36,6 +29,8 @@ Verkeersbord
 
 OTLPrimitiveDatatypeCreator probleem met getFieldFromTypeUri oplossen
 AIMObject, Seinlantaarn > encoding probleem > voorlopige oplossing ==> # coding=utf-8
+
+AIMObject heeft een fix gekregen voor typeURI, maar Agent en ProefEnMeting en andere soorten classes nog niet
 
 
 Facility

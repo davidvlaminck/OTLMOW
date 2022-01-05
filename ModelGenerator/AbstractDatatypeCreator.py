@@ -139,7 +139,7 @@ class AbstractDatatypeCreator(ABC):
 
         raise NotImplementedError(f"getTypeNameOfComplexAttribuut fails to get typename from {type_uri}")
 
-    def addAttributenToDataBlock(self, attributen, datablock, forDatatypeUse=True):
+    def addAttributenToDataBlock(self, attributen, datablock, class_uri='', forDatatypeUse=True):
         for attribuut in attributen:
             typeLink = self.getTypeLinkFromAttribuut(attribuut)
 
@@ -155,11 +155,10 @@ class AbstractDatatypeCreator(ABC):
             if not forDatatypeUse:
                 selfWaarde = 'self'
 
-            # two parameters for a total of 8 different uses
-            # kardinaliteit 1 of *
-            # fieldtype: Complex, KwantWrd, Primitive, Keuzelijst
+            if attribuut.uri == 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMObject.typeURI' and class_uri == 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMObject':
+                datablock.append('        uri = self.typeURI')
 
-            definitie = attribuut.definition_nl.replace('"', '\"').replace('\n', '')
+            definitie = attribuut.definition_nl.replace('"', r'\"').replace('\n', '')
 
             if attribuut.kardinaliteit_max == '1':
                 if typeLink == "OSLODatatypePrimitive":
@@ -180,6 +179,8 @@ class AbstractDatatypeCreator(ABC):
                             f'        {selfWaarde}.{attribuut.name}.deprecated_version = "{attribuut.deprecated_version}"')
                         if forDatatypeUse:
                             datablock.append(f'        self.{attribuut.name} = {selfWaarde}.{attribuut.name}')
+                        if attribuut.uri == 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMObject.typeURI' and class_uri == 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMObject':
+                            datablock.append('        self.typeURI.waarde = uri')
                     else:
                         whitespace = self.getWhiteSpaceEquivalent(
                             f'        {selfWaarde}.{attribuut.name} = {self.getFieldNameFromTypeUri(attribuut.type)}(')

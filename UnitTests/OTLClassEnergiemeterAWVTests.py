@@ -1,6 +1,6 @@
 import unittest
 
-from OTLModel.Verification.EnergiemeterAWV import EnergiemeterAWV
+from OTLModel.Classes.EnergiemeterAWV import EnergiemeterAWV
 
 
 class EnergiemeterAWVTests(unittest.TestCase):

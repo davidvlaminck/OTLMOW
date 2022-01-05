@@ -3,7 +3,7 @@ import unittest
 
 from OTLModel.Datatypes.KwantWrdInVolt import KwantWrdInVolt
 from OTLModel.Datatypes.DecimalFloatField import DecimalFloatField
-from OTLModel.Verification.Voedt import Voedt
+from OTLModel.Classes.Voedt import Voedt
 
 
 class RelatiesTests(unittest.TestCase):

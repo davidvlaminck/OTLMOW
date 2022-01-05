@@ -4,13 +4,13 @@ from ModelGenerator.BaseClasses.GeldigeRelatie import GeldigeRelatie
 from ModelGenerator.BaseClasses.RelatieRichting import RelatieRichting
 from ModelGenerator.BaseClasses.RelatieValidator import RelatieValidator
 from OTLModel.GeldigeRelatieLijst import GeldigeRelatieLijst
-from OTLModel.Verification.Aftakking import Aftakking
-from OTLModel.Verification.Bevestiging import Bevestiging
-from OTLModel.Verification.Contactor import Contactor
-from OTLModel.Verification.EnergiemeterAWV import EnergiemeterAWV
-from OTLModel.Verification.Hoofdschakelaar import Hoofdschakelaar
-from OTLModel.Verification.Stroomkring import Stroomkring
-from OTLModel.Verification.Voedt import Voedt
+from OTLModel.Classes.Aftakking import Aftakking
+from OTLModel.Classes.Bevestiging import Bevestiging
+from OTLModel.Classes.Contactor import Contactor
+from OTLModel.Classes.EnergiemeterAWV import EnergiemeterAWV
+from OTLModel.Classes.Hoofdschakelaar import Hoofdschakelaar
+from OTLModel.Classes.Stroomkring import Stroomkring
+from OTLModel.Classes.Voedt import Voedt
 
 
 class GeldigeRelatieLijstTestInstance(GeldigeRelatieLijst):

@@ -1,9 +1,9 @@
 import unittest
 
 from ModelGenerator.BaseClasses.GeldigeRelatie import GeldigeRelatie
-from OTLModel.Verification.Aftakking import Aftakking
-from OTLModel.Verification.EnergiemeterAWV import EnergiemeterAWV
-from OTLModel.Verification.Voedt import Voedt
+from OTLModel.Classes.Aftakking import Aftakking
+from OTLModel.Classes.EnergiemeterAWV import EnergiemeterAWV
+from OTLModel.Classes.Voedt import Voedt
 
 
 class GeldigeRelatiesTests(unittest.TestCase):

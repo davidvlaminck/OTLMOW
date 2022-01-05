@@ -48,7 +48,7 @@ class OTLComplexDatatypeCreator(AbstractDatatypeCreator):
 
         datablock.append('')
         datablock.append('')
-        datablock.append(f'# Generated with {self.__class__.__name__}')
+        datablock.append(f'# Generated with {self.__class__.__name__}. To modify: extend, do not edit')
         datablock.append(f'class {osloDatatypeComplex.name}(ComplexField):')
         datablock.append(f'    """{osloDatatypeComplex.definition_nl}"""')
         datablock.append('')

@@ -1,3 +1,4 @@
+# coding=utf-8
 from abc import abstractmethod
 from OTLModel.Classes.AIMObject import AIMObject
 from OTLModel.Datatypes.KardinaliteitField import KardinaliteitField
@@ -14,7 +15,7 @@ from OTLModel.Datatypes.KwantWrdInPromille import KwantWrdInPromille
 
 # Generated with OTLClassCreator
 class Buis(AIMObject):
-    """Abstracte om de gemeenschappelijke eigenschappen en relaties van de verschillende soorten buizen onder één noemer te houden."""
+    """Abstracte om de gemeenschappelijke eigenschappen en relaties van de verschillende soorten buizen onder Ã©Ã©n noemer te houden."""
 
     typeURI = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Buis"
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""

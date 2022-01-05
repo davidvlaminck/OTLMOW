@@ -1,9 +1,9 @@
 import unittest
 
-from OTLModel.Verification.AIMDBStatus import AIMDBStatus
-from OTLModel.Verification.AIMObject import AIMObject
-from OTLModel.Verification.AIMToestand import AIMToestand
-from OTLModel.Verification.Contactor import Contactor
+from OTLModel.Classes.AIMDBStatus import AIMDBStatus
+from OTLModel.Classes.AIMObject import AIMObject
+from OTLModel.Classes.AIMToestand import AIMToestand
+from OTLModel.Classes.Contactor import Contactor
 
 
 class AbstractBehaviour(unittest.TestCase):

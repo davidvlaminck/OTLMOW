@@ -37,7 +37,7 @@ class OTLClassCreator(AbstractDatatypeCreator):
                 Inheritance(base_name='RelatieInteractor', base_uri='', class_name='', class_uri='', deprecated_version=''))
 
         #datablock = ['# coding=utf-8']
-        datablock=[]
+        datablock = []
 
         if osloClass.abstract == 1:
             if len(inheritances) > 0:
@@ -64,7 +64,7 @@ class OTLClassCreator(AbstractDatatypeCreator):
 
         datablock.append('')
         datablock.append('')
-        datablock.append(f'# Generated with {self.__class__.__name__}')
+        datablock.append(f'# Generated with {self.__class__.__name__}. To modify: extend, do not edit')
         datablock.append(self.getClassLineFromClassAndInheritances(osloClass, inheritances))
         datablock.append(f'    """{osloClass.definition_nl}"""')
         datablock.append('')
@@ -80,7 +80,7 @@ class OTLClassCreator(AbstractDatatypeCreator):
             for inheritance in inheritances:
                 datablock.append(f'        {inheritance.base_name}.__init__(self)')
 
-        self.addAttributenToDataBlock(attributen, datablock, forDatatypeUse=False)
+        self.addAttributenToDataBlock(attributen, datablock, class_uri=osloClass.uri, forDatatypeUse=False)
 
         if datablock[-1] == '':
             datablock.pop()

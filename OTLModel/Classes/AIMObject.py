@@ -83,11 +83,13 @@ class AIMObject(AIMToestand, AIMDBStatus, OTLAsset, RelatieInteractor):
         self.theoretischeLevensduur.usagenote = ""
         self.theoretischeLevensduur.deprecated_version = ""
 
+        uri = self.typeURI
         self.typeURI = URIField(naam="typeURI",
                                 label="type URI",
                                 uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMObject.typeURI",
-                                definition="De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI .",
+                                definition="De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI.",
                                 constraints="",
                                 usagenote="",
                                 deprecated_version="")
-        """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI ."""
+        """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
+        self.typeURI.waarde = uri

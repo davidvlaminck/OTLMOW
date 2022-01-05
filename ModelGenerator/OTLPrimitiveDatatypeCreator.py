@@ -45,7 +45,7 @@ class OTLPrimitiveDatatypeCreator(AbstractDatatypeCreator):
         datablock.append(f'from OTLModel.Datatypes.{typeField} import {typeField}')
         datablock.append('')
         datablock.append('')
-        datablock.append(f'# Generated with {self.__class__.__name__}')
+        datablock.append(f'# Generated with {self.__class__.__name__}. To modify: extend, do not edit')
         datablock.append(f'class {osloDatatypePrimitive.name}(KwantWrd):')
         datablock.append(f'    """{osloDatatypePrimitive.definition_nl}"""')
         datablock.append('')

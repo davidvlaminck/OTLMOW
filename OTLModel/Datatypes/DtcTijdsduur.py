@@ -1,11 +1,11 @@
-from OTLModel.Datatypes.ComplexField import ComplexField
+# coding=utf-8
 from OTLModel.Datatypes.ComplexField import ComplexField
 from OTLModel.Datatypes.KwantWrdInMinuut import KwantWrdInMinuut
 from OTLModel.Datatypes.KwantWrdInSeconde import KwantWrdInSeconde
 from OTLModel.Datatypes.KwantWrdInUur import KwantWrdInUur
 
 
-# Generated with OTLComplexDatatypeCreator
+# Generated with OTLComplexDatatypeCreator. To modify: extend, do not edit
 class DtcTijdsduur(ComplexField):
     """Complex datatype voor de instelling van een tijdsbepaling."""
 

@@ -1,3 +1,4 @@
+# coding=utf-8
 from abc import abstractmethod, ABC
 from OTLModel.Datatypes.KardinaliteitField import KardinaliteitField
 from OTLModel.Datatypes.DtcDocument import DtcDocument

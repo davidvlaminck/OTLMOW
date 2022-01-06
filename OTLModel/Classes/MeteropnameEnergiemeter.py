@@ -1,3 +1,4 @@
+# coding=utf-8
 from OTLModel.Classes.AIMNaamObject import AIMNaamObject
 from OTLModel.Datatypes.DateField import DateField
 from OTLModel.Datatypes.KwantWrdInkWh import KwantWrdInkWh

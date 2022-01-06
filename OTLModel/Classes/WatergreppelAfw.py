@@ -1,3 +1,4 @@
+# coding=utf-8
 from OTLModel.Classes.AfwijkendeKantopsluiting import AfwijkendeKantopsluiting
 from OTLModel.Datatypes.IntegerField import IntegerField
 

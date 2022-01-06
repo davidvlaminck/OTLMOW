@@ -1,4 +1,4 @@
-from OTLModel.Datatypes.ComplexField import ComplexField
+# coding=utf-8
 from OTLModel.Datatypes.KardinaliteitField import KardinaliteitField
 from OTLModel.Datatypes.ComplexField import ComplexField
 from OTLModel.Datatypes.DtcDocument import DtcDocument
@@ -9,7 +9,7 @@ from OTLModel.Datatypes.KlLEGCNorm import KlLEGCNorm
 from OTLModel.Datatypes.KlLEGCTestType import KlLEGCTestType
 
 
-# Generated with OTLComplexDatatypeCreator
+# Generated with OTLComplexDatatypeCreator. To modify: extend, do not edit
 class DtcGeluidstestRapport(ComplexField):
     """Complex datatype voor een verslag dat de resultaten van de geluidsmetingen weergeeft."""
 

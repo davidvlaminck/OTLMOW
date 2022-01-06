@@ -1,3 +1,4 @@
+# coding=utf-8
 from OTLModel.Classes.AndereLaag import AndereLaag
 from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlBestrijkingKaliber import KlBestrijkingKaliber
@@ -7,7 +8,7 @@ from OTLModel.Datatypes.KlBestrijkingsoort import KlBestrijkingsoort
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
 class Bestrijking(AndereLaag):
-    """Een bestrijking bestaat in het sproeien op een verharding of een fundering van één of twee eenvormige 
+    """Een bestrijking bestaat in het sproeien op een verharding of een fundering van Ã©Ã©n of twee eenvormige 
 lagen bindmiddel met een geschikte viscositeit."""
 
     typeURI = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bestrijking"

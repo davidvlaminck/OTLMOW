@@ -1,3 +1,4 @@
+# coding=utf-8
 from abc import abstractmethod
 from OTLModel.Classes.ArtificieleLaag import ArtificieleLaag
 from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField

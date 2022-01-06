@@ -16,6 +16,9 @@ class OTLClassCreator(AbstractDatatypeCreator):
         if not isinstance(osloClass, OSLOClass):
             raise ValueError(f"Input is not a OSLOClass")
 
+        if 'WVLichtmast' in osloClass.uri:
+            pass
+
         if osloClass.uri == '' or not (
                 osloClass.uri.startswith('https://wegenenverkeer.data.vlaanderen.be/ns/') or osloClass.uri.startswith(
                 'http://purl.org/dc/terms')):
@@ -81,7 +84,7 @@ class OTLClassCreator(AbstractDatatypeCreator):
                 datablock.append(f'        {inheritance.base_name}.__init__(self)')
             datablock.append('')
 
-        self.addAttributenToDataBlock(attributen, datablock, class_uri=osloClass.uri, forClassUse=False)
+        self.addAttributenToDataBlock(attributen, datablock, class_uri=osloClass.uri, forClassUse=True)
 
         if datablock[-1] == '':
             datablock.pop()

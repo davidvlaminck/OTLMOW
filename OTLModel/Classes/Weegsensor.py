@@ -1,3 +1,4 @@
+# coding=utf-8
 from OTLModel.Classes.AIMNaamObject import AIMNaamObject
 from OTLModel.Datatypes.DtcDocument import DtcDocument
 from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
@@ -59,11 +60,11 @@ class Weegsensor(AIMNaamObject):
         self.serienummer = StringField(naam="serienummer",
                                        label="serienummer",
                                        uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Weegsensor.serienummer",
-                                       definition="Het unieke nummer waarmee het toestel door de fabrikant geïdentificeerd is.",
+                                       definition="Het unieke nummer waarmee het toestel door de fabrikant geÃ¯dentificeerd is.",
                                        constraints="",
                                        usagenote="",
                                        deprecated_version="")
-        """Het unieke nummer waarmee het toestel door de fabrikant geïdentificeerd is."""
+        """Het unieke nummer waarmee het toestel door de fabrikant geÃ¯dentificeerd is."""
 
         self.type = KeuzelijstField(naam="type",
                                     label="type",

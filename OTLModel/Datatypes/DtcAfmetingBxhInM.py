@@ -1,9 +1,9 @@
-from OTLModel.Datatypes.ComplexField import ComplexField
+# coding=utf-8
 from OTLModel.Datatypes.ComplexField import ComplexField
 from OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter
 
 
-# Generated with OTLComplexDatatypeCreator
+# Generated with OTLComplexDatatypeCreator. To modify: extend, do not edit
 class DtcAfmetingBxhInM(ComplexField):
     """Complex datatype voor de afmeting van de breedte en hoogte in meter."""
 

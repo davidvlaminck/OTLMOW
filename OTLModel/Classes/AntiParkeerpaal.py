@@ -1,3 +1,4 @@
+# coding=utf-8
 from OTLModel.Classes.Straatmeubilair import Straatmeubilair
 from OTLModel.Datatypes.AntiParkeerpaalType import AntiParkeerpaalType
 from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField

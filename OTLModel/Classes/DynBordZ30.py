@@ -1,3 +1,4 @@
+# coding=utf-8
 from OTLModel.Classes.LEDBord import LEDBord
 from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlDynBordZ30Merk import KlDynBordZ30Merk

@@ -1,3 +1,4 @@
+# coding=utf-8
 from OTLModel.Classes.AIMObject import AIMObject
 from OTLModel.Classes.Signalisatie import Signalisatie
 from OTLModel.Datatypes.KardinaliteitField import KardinaliteitField
@@ -11,7 +12,7 @@ from OTLModel.Datatypes.KlPositieSoort import KlPositieSoort
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
 class Verkeersbordopstelling(AIMObject, Signalisatie):
-    """Het geheel van verticale verkeerssignalisatie die bevestigd is aan één of meerdere draagconstructies op éénzelfde geolocatie."""
+    """Het geheel van verticale verkeerssignalisatie die bevestigd is aan Ã©Ã©n of meerdere draagconstructies op Ã©Ã©nzelfde geolocatie."""
 
     typeURI = "https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Verkeersbordopstelling"
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
@@ -46,7 +47,7 @@ class Verkeersbordopstelling(AIMObject, Signalisatie):
                                                   uri="https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Verkeersbordopstelling.operationeleStatus",
                                                   definition="Operationele status van de Verkeersbordopstelling volgens keuzelijst.",
                                                   constraints="",
-                                                  usagenote="Enkel te gebruiken wanneer een object 'in gebruik' is. Zie ook attribuut toestand overgeërfd van AIMToestand om de asset levenscyclus aan te duiden.",
+                                                  usagenote="Enkel te gebruiken wanneer een object 'in gebruik' is. Zie ook attribuut toestand overgeÃ«rfd van AIMToestand om de asset levenscyclus aan te duiden.",
                                                   deprecated_version="")
         """Operationele status van de Verkeersbordopstelling volgens keuzelijst."""
 

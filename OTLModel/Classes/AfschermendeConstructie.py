@@ -1,3 +1,4 @@
+# coding=utf-8
 from abc import abstractmethod
 from OTLModel.Classes.BijlageVoertuigkering import BijlageVoertuigkering
 from OTLModel.Classes.LijnvormigElement import LijnvormigElement
@@ -12,7 +13,7 @@ from OTLModel.Datatypes.StringField import StringField
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
 class AfschermendeConstructie(BijlageVoertuigkering, LijnvormigElement):
-    """Abstracte die een lijn- of puntvormige constructie,geïnstalleerd langs de weg om een kerend vermogen te bieden aan een dwalend voertuig,samenvat."""
+    """Abstracte die een lijn- of puntvormige constructie,geÃ¯nstalleerd langs de weg om een kerend vermogen te bieden aan een dwalend voertuig,samenvat."""
 
     typeURI = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#AfschermendeConstructie"
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
@@ -72,11 +73,11 @@ class AfschermendeConstructie(BijlageVoertuigkering, LijnvormigElement):
         self.productnaam = StringField(naam="productnaam",
                                        label="productnaam",
                                        uri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#AfschermendeConstructie.productnaam",
-                                       definition="Dit is de commerciële naam van de afschermende constructie.",
+                                       definition="Dit is de commerciÃ«le naam van de afschermende constructie.",
                                        constraints="",
                                        usagenote="",
                                        deprecated_version="")
-        """Dit is de commerciële naam van de afschermende constructie."""
+        """Dit is de commerciÃ«le naam van de afschermende constructie."""
 
         self.uitvoeringscertificatie = DtcDocument()
         """Documentatie van het certificaat."""

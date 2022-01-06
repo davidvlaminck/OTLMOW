@@ -1,3 +1,4 @@
+# coding=utf-8
 from OTLModel.Classes.AIMObject import AIMObject
 from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlEcoEcoductType import KlEcoEcoductType
@@ -17,8 +18,8 @@ class Ecoduct(AIMObject):
                                     label="type",
                                     lijst=KlEcoEcoductType(),
                                     uri="https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Ecoduct.type",
-                                    definition="Het type van ecoduct, zoals bv ecoveloduct, bermbrug,….",
+                                    definition="Het type van ecoduct, zoals bv ecoveloduct, bermbrug,â€¦.",
                                     constraints="",
                                     usagenote="",
                                     deprecated_version="")
-        """Het type van ecoduct, zoals bv ecoveloduct, bermbrug,…."""
+        """Het type van ecoduct, zoals bv ecoveloduct, bermbrug,â€¦."""

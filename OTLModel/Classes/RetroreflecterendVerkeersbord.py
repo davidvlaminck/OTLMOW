@@ -1,3 +1,4 @@
+# coding=utf-8
 from OTLModel.Classes.AIMObject import AIMObject
 from OTLModel.Classes.Verkeersbord import Verkeersbord
 from OTLModel.Datatypes.DteKleurRAL import DteKleurRAL
@@ -10,7 +11,7 @@ from OTLModel.Datatypes.KwantWrdInVierkanteMeter import KwantWrdInVierkanteMeter
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
 class RetroreflecterendVerkeersbord(AIMObject, Verkeersbord):
-    """Verkeersbord met op het beeldvlak een tekening en/of tekst die worden weergegeven met een geëigend bekledingsmateriaal."""
+    """Verkeersbord met op het beeldvlak een tekening en/of tekst die worden weergegeven met een geÃ«igend bekledingsmateriaal."""
 
     typeURI = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#RetroreflecterendVerkeersbord"
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""

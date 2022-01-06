@@ -1,3 +1,4 @@
+# coding=utf-8
 from OTLModel.Classes.AIMObject import AIMObject
 from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlEcoEcokokerType import KlEcoEcokokerType
@@ -17,8 +18,8 @@ class Ecokoker(AIMObject):
                                     label="type",
                                     lijst=KlEcoEcokokerType(),
                                     uri="https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Ecokoker.type",
-                                    definition="Het type van ecokoker zoals bv. amfibieënkoker, ….",
+                                    definition="Het type van ecokoker zoals bv. amfibieÃ«nkoker, â€¦.",
                                     constraints="",
                                     usagenote="",
                                     deprecated_version="")
-        """Het type van ecokoker zoals bv. amfibieënkoker, …."""
+        """Het type van ecokoker zoals bv. amfibieÃ«nkoker, â€¦."""

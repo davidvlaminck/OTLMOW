@@ -1,3 +1,4 @@
+# coding=utf-8
 from abc import abstractmethod
 from OTLModel.Classes.Software import Software
 from OTLModel.Datatypes.DtcDocument import DtcDocument

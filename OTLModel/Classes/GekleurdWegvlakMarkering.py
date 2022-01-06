@@ -1,3 +1,4 @@
+# coding=utf-8
 from OTLModel.Classes.Markering import Markering
 from OTLModel.Classes.AOWSType import AOWSType
 from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField

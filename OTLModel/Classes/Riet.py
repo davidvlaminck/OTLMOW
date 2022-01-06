@@ -1,3 +1,4 @@
+# coding=utf-8
 from OTLModel.Classes.Ruigte import Ruigte
 from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlNSB import KlNSB

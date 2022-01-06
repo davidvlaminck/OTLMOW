@@ -1,3 +1,4 @@
+# coding=utf-8
 from OTLModel.Classes.Buitenkast import Buitenkast
 from OTLModel.Datatypes.DtcDocument import DtcDocument
 

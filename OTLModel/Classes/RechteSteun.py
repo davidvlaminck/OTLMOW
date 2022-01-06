@@ -1,3 +1,4 @@
+# coding=utf-8
 from OTLModel.Classes.VRIDraagconstructie import VRIDraagconstructie
 from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlRechteSteunType import KlRechteSteunType

@@ -1,3 +1,4 @@
+# coding=utf-8
 from OTLModel.Classes.AIMObject import AIMObject
 from OTLModel.Datatypes.KardinaliteitField import KardinaliteitField
 from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField

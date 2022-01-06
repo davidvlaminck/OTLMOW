@@ -1,3 +1,4 @@
+# coding=utf-8
 from ModelGenerator.BaseClasses.GeldigeRelatie import GeldigeRelatie
 from OTLModel.Classes.AIDModule import AIDModule
 from OTLModel.Classes.AIMNaamObject import AIMNaamObject

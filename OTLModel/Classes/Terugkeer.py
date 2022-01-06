@@ -1,3 +1,4 @@
+# coding=utf-8
 from OTLModel.Classes.ComplexeGeleiding import ComplexeGeleiding
 from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlEcoOverstaptype import KlEcoOverstaptype

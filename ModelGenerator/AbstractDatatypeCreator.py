@@ -74,7 +74,9 @@ class AbstractDatatypeCreator(ABC):
             file.write(line + "\n")
         file.close()
 
-    def getFieldsToImportFromListOfAttributes(self, attributen, listToStartFrom=[]):
+    def getFieldsToImportFromListOfAttributes(self, attributen, listToStartFrom=None):
+        if listToStartFrom is None:
+            listToStartFrom = []
         if len(attributen) == 0:
             return listToStartFrom
 
@@ -90,6 +92,8 @@ class AbstractDatatypeCreator(ABC):
                 collectedList.append(self.getSingleFieldFromTypeUri(attribuut.type))
             elif typeLink == "OSLODatatypeComplex":
                 collectedList.append(self.getTypeNameOfComplexAttribuut(attribuut.type))
+            elif typeLink == "OSLODatatypeUnion":
+                collectedList.append(self.getTypeNameOfUnionAttribuut(attribuut.type))
             else:
                 raise not NotImplementedError(f"{typeLink.item_tabel} not implemented")
 
@@ -127,6 +131,12 @@ class AbstractDatatypeCreator(ABC):
     @staticmethod
     def getTypeNameOfEnumUri(type_uri: str):
         return type_uri.split('#')[1]
+
+    def getTypeNameOfUnionAttribuut(self, type_uri: str):
+        if type_uri.startswith("https://wegenenverkeer.data.vlaanderen.be/ns/"):
+            return type_uri[type_uri.find("#") + 1::]
+
+        raise NotImplementedError(f"getTypeNameOfComplexAttribuut fails to get typename from {type_uri}")
 
     def getTypeNameOfComplexAttribuut(self, type_uri: str):
         if type_uri.startswith("https://wegenenverkeer.data.vlaanderen.be/ns/") or type_uri.startswith(
@@ -248,9 +258,52 @@ class AbstractDatatypeCreator(ABC):
                     datablock.append('')
                     continue
 
+                if typeLink == "OSLODatatypeUnion":
+                    fieldName = self.getTypeNameOfUnionAttribuut(attribuut.type)
+                    datablock.append(f'        {selfWaarde}{attribuut.name} = {fieldName}()')
+                    datablock.append(f'        """{definitie}"""')
+                    datablock.append(f'        {selfWaarde}{attribuut.name}.naam = "{attribuut.name}"')
+                    datablock.append(f'        {selfWaarde}{attribuut.name}.label = "{attribuut.label_nl}"')
+                    datablock.append(f'        {selfWaarde}{attribuut.name}.uri = "{attribuut.uri}"')
+                    datablock.append(f'        {selfWaarde}{attribuut.name}.definition = "{definitie}"')
+                    datablock.append(f'        {selfWaarde}{attribuut.name}.constraints = "{attribuut.constraints}"')
+                    datablock.append(f'        {selfWaarde}{attribuut.name}.usagenote = "{attribuut.usagenote_nl}"')
+                    if attribuut.readonly:
+                        datablock.append(f'        {selfWaarde}{attribuut.name}.readonly = {attribuut.readonly}')
+                    datablock.append(
+                        f'        {selfWaarde}{attribuut.name}.deprecated_version = "{attribuut.deprecated_version}"')
+                    if not forClassUse and not forUnionTypeUse:
+                        datablock.append(f'        self.{attribuut.name} = {selfWaarde}{attribuut.name}')
+                    datablock.append('')
+                    continue
+
             else:  # kardinaliteit_max > 1
                 if typeLink == "OSLODatatypeComplex":
                     fieldName = self.getTypeNameOfComplexAttribuut(attribuut.type)
+                    datablock.append(f'        {attribuut.name}Field = {fieldName}()')
+                    datablock.append(f'        {attribuut.name}Field.naam = "{attribuut.name}"')
+                    datablock.append(f'        {attribuut.name}Field.label = "{attribuut.label_nl}"')
+                    datablock.append(f'        {attribuut.name}Field.uri = "{attribuut.uri}"')
+                    datablock.append(f'        {attribuut.name}Field.definition = "{definitie}"')
+                    datablock.append(f'        {attribuut.name}Field.constraints = "{attribuut.constraints}"')
+                    datablock.append(f'        {attribuut.name}Field.usagenote = "{attribuut.usagenote_nl}"')
+                    if attribuut.readonly:
+                        datablock.append(f'        {attribuut.name}Field.readonly = {attribuut.readonly}')
+                    datablock.append(
+                        f'        {attribuut.name}Field.deprecated_version = "{attribuut.deprecated_version}"')
+                    if not forClassUse and not forUnionTypeUse:
+                        datablock.append(
+                            f'        self.waarde.{attribuut.name} = KardinaliteitField(minKardinaliteit="{attribuut.kardinaliteit_min}", maxKardinaliteit="{attribuut.kardinaliteit_max}", fieldToMultiply={attribuut.name}Field)')
+                        datablock.append(f'        self.{attribuut.name} = self.waarde.{attribuut.name}')
+                    else:
+                        datablock.append(
+                            f'        self.{attribuut.name} = KardinaliteitField(minKardinaliteit="{attribuut.kardinaliteit_min}", maxKardinaliteit="{attribuut.kardinaliteit_max}", fieldToMultiply={attribuut.name}Field)')
+                    datablock.append(f'        """{definitie}"""')
+                    datablock.append('')
+                    continue
+
+                if typeLink == "OSLODatatypeUnion":
+                    fieldName = self.getTypeNameOfUnionAttribuut(attribuut.type)
                     datablock.append(f'        {attribuut.name}Field = {fieldName}()')
                     datablock.append(f'        {attribuut.name}Field.naam = "{attribuut.name}"')
                     datablock.append(f'        {attribuut.name}Field.label = "{attribuut.label_nl}"')

@@ -1,3 +1,4 @@
+# coding=utf-8
 from abc import abstractmethod
 from OTLModel.Classes.Detectie import Detectie
 from OTLModel.Datatypes.DtcAfmetingBxlInM import DtcAfmetingBxlInM

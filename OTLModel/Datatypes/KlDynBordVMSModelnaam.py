@@ -1,7 +1,8 @@
+# coding=utf-8
 from OTLModel.Datatypes.Keuzelijst import Keuzelijst
 
 
-# Generated with OTLEnumerationCreator
+# Generated with OTLEnumerationCreator. To modify: extend, do not edit
 class KlDynBordVMSModelnaam(Keuzelijst):
     """Keuzelijst met de gangbare modelnamen van VMS borden. De modelnamen worden meestal door de leverancier of fabrikant bepaald."""
 

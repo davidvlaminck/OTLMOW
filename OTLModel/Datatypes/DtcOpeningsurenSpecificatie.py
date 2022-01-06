@@ -1,11 +1,11 @@
-from OTLModel.Datatypes.ComplexField import ComplexField
+# coding=utf-8
 from OTLModel.Datatypes.ComplexField import ComplexField
 from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlAlgWeekdagen import KlAlgWeekdagen
 from OTLModel.Datatypes.TimeField import TimeField
 
 
-# Generated with OTLComplexDatatypeCreator
+# Generated with OTLComplexDatatypeCreator. To modify: extend, do not edit
 class DtcOpeningsurenSpecificatie(ComplexField):
     """Complex datatype dat de openingsuren volgens https://schema.org/OpeningHoursSpecification specifieert."""
 

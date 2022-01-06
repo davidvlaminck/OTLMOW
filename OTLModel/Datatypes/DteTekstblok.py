@@ -1,8 +1,9 @@
+# coding=utf-8
 from OTLModel.Datatypes.KwantWrd import KwantWrd
 from OTLModel.Datatypes.StringField import StringField
 
 
-# Generated with OTLPrimitiveDatatypeCreator
+# Generated with OTLPrimitiveDatatypeCreator. To modify: extend, do not edit
 class DteTekstblok(KwantWrd):
     """Een tekst welke uit meerdere zinnen bestaat, en ook regeleindes kan bevatten. Een tekstblok bevat maximaal 65.000 karakters."""
 

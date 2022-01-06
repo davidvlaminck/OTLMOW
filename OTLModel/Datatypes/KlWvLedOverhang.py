@@ -1,7 +1,8 @@
+# coding=utf-8
 from OTLModel.Datatypes.Keuzelijst import Keuzelijst
 
 
-# Generated with OTLEnumerationCreator
+# Generated with OTLEnumerationCreator. To modify: extend, do not edit
 class KlWvLedOverhang(Keuzelijst):
     """Afstand tot de rand van de rijbaan van de verticale projectie van het verlichtingstoestel op de rijbaan in meter. Als de afstand tot de rijbaan gelijk is aan 0, dan valt de verticale projectie samen met de rand van de rijbaan, bij negatieve waardes ligt de verticale projectie in de berm en bij positieve waardes ligt de verticale projectie op de rijbaan."""
 

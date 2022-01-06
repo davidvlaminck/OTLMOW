@@ -1,9 +1,10 @@
+# coding=utf-8
 from OTLModel.Datatypes.KwantWrd import KwantWrd
 from OTLModel.Datatypes.LiteralField import LiteralField
 from OTLModel.Datatypes.DecimalFloatField import DecimalFloatField
 
 
-# Generated with OTLPrimitiveDatatypeCreator
+# Generated with OTLPrimitiveDatatypeCreator. To modify: extend, do not edit
 class KwantWrdInMeterTAW(KwantWrd):
     """Een kwantitatieve waarde die de hoogte weergeeft in meter van een locatie tov het TAW-referentiepeil."""
 

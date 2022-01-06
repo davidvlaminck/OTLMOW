@@ -1,7 +1,8 @@
+# coding=utf-8
 from OTLModel.Datatypes.Keuzelijst import Keuzelijst
 
 
-# Generated with OTLEnumerationCreator
+# Generated with OTLEnumerationCreator. To modify: extend, do not edit
 class KlVerkeerslichtMasker(Keuzelijst):
     """Keuzelijst met de gangbare types masker die op een verkeerslicht zijn aangebracht."""
 
@@ -21,10 +22,10 @@ class KlVerkeerslichtMasker(Keuzelijst):
         self.add_option("pijl-rechtdoor-links", "pijl rechtdoor links", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerkeerslichtMasker/pijl-rechtdoor-links")
         self.add_option("driehoek", "driehoek", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerkeerslichtMasker/driehoek")
         self.add_option("vierkant-groen", "vierkant groen", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerkeerslichtMasker/vierkant-groen")
-        self.add_option("schuine-balk--45°", "schuine balk -45°", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerkeerslichtMasker/schuine-balk--45°")
+        self.add_option("schuine-balk--45Â°", "schuine balk -45Â°", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerkeerslichtMasker/schuine-balk--45Â°")
         self.add_option("volle-lens", "volle lens", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerkeerslichtMasker/volle-lens")
         self.add_option("niet-gekend", "niet gekend", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerkeerslichtMasker/niet-gekend")
-        self.add_option("schuine-balk-+45°", "schuine balk +45°", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerkeerslichtMasker/schuine-balk-+45°")
+        self.add_option("schuine-balk-+45Â°", "schuine balk +45Â°", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerkeerslichtMasker/schuine-balk-+45Â°")
         self.add_option("kruis", "kruis", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerkeerslichtMasker/kruis")
         self.add_option("pijl-rechts", "pijl rechts", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerkeerslichtMasker/pijl-rechts")
         self.add_option("pijl-rechtdoor-rechts", "pijl rechtdoor rechts", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerkeerslichtMasker/pijl-rechtdoor-rechts")

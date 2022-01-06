@@ -1,4 +1,4 @@
-from OTLModel.Datatypes.ComplexField import ComplexField
+# coding=utf-8
 from OTLModel.Datatypes.BooleanField import BooleanField
 from OTLModel.Datatypes.ComplexField import ComplexField
 from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
@@ -7,7 +7,7 @@ from OTLModel.Datatypes.KlKwaliteitsklasseHout import KlKwaliteitsklasseHout
 from OTLModel.Datatypes.KlSterkteklasseHout import KlSterkteklasseHout
 
 
-# Generated with OTLComplexDatatypeCreator
+# Generated with OTLComplexDatatypeCreator. To modify: extend, do not edit
 class DtcHoutspecificaties(ComplexField):
     """Complex datatype om de eigenschappen van hout te bundelen."""
 

@@ -1,3 +1,4 @@
+# coding=utf-8
 from OTLModel.Classes.AIMObject import AIMObject
 from OTLModel.Classes.Deur import Deur
 from OTLModel.Classes.BevestigingGC import BevestigingGC

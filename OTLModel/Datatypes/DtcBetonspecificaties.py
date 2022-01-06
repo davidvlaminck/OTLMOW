@@ -1,4 +1,4 @@
-from OTLModel.Datatypes.ComplexField import ComplexField
+# coding=utf-8
 from OTLModel.Datatypes.KardinaliteitField import KardinaliteitField
 from OTLModel.Datatypes.BooleanField import BooleanField
 from OTLModel.Datatypes.ComplexField import ComplexField
@@ -11,7 +11,7 @@ from OTLModel.Datatypes.KlGebruiksdomein import KlGebruiksdomein
 from OTLModel.Datatypes.KwantWrdInMillimeter import KwantWrdInMillimeter
 
 
-# Generated with OTLComplexDatatypeCreator
+# Generated with OTLComplexDatatypeCreator. To modify: extend, do not edit
 class DtcBetonspecificaties(ComplexField):
     """Complex datatype om de eigenschappen van beton te bundelen."""
 
@@ -132,7 +132,7 @@ class DtcBetonspecificaties(ComplexField):
         """Geeft aan of het cement gebruikt wordt voor een tragere sterkteontwikkeling (LH)."""
 
         self.waarde.isColloidaalbeton = BooleanField(naam="isColloidaalbeton",
-                                                     label="is colloïdaalbeton",
+                                                     label="is colloÃ¯daalbeton",
                                                      uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcBetonspecificaties.isColloidaalbeton",
                                                      definition="Geeft aan of het beton zich niet ontmengt onder of in water.",
                                                      constraints="",

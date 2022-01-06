@@ -1,3 +1,4 @@
+# coding=utf-8
 from OTLModel.Classes.PTModuleMetFirmware import PTModuleMetFirmware
 from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlPtKARModemProtocol import KlPtKARModemProtocol
@@ -5,7 +6,7 @@ from OTLModel.Datatypes.KlPtKARModemProtocol import KlPtKARModemProtocol
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
 class PTKARModem(PTModuleMetFirmware):
-    """Modem die KAR signalen, korte afstands radiosignalen, kan ontvangen van de KAR-module die geïnstalleerd is op het openbaar vervoer voertuig. Het voertuig meldt zich zo via virtuele lussen, gedefinieerd op basis van GPS- positie, aan bij de PT regelaar."""
+    """Modem die KAR signalen, korte afstands radiosignalen, kan ontvangen van de KAR-module die geÃ¯nstalleerd is op het openbaar vervoer voertuig. Het voertuig meldt zich zo via virtuele lussen, gedefinieerd op basis van GPS- positie, aan bij de PT regelaar."""
 
     typeURI = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#PTKARModem"
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""

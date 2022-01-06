@@ -1,3 +1,4 @@
+# coding=utf-8
 from OTLModel.Classes.DirectioneleRelatie import DirectioneleRelatie
 from OTLModel.Datatypes.KardinaliteitField import KardinaliteitField
 from OTLModel.Datatypes.DateField import DateField
@@ -28,11 +29,11 @@ class HeeftBetrokkene(DirectioneleRelatie):
         self.datumEinde = DateField(naam="datumEinde",
                                     label="datum einde",
                                     uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#HeeftBetrokkene.datumEinde",
-                                    definition="De datum waarop de betrokkenheid beëindigd is of moet beëindigd worden. ",
+                                    definition="De datum waarop de betrokkenheid beÃ«indigd is of moet beÃ«indigd worden. ",
                                     constraints="",
                                     usagenote="",
                                     deprecated_version="")
-        """De datum waarop de betrokkenheid beëindigd is of moet beëindigd worden. """
+        """De datum waarop de betrokkenheid beÃ«indigd is of moet beÃ«indigd worden. """
 
         self.rol = KeuzelijstField(naam="rol",
                                    label="rol",

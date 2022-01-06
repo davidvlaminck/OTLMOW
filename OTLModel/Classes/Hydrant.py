@@ -1,3 +1,4 @@
+# coding=utf-8
 from OTLModel.Classes.Brandvoorziening import Brandvoorziening
 from OTLModel.Datatypes.BooleanField import BooleanField
 from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField

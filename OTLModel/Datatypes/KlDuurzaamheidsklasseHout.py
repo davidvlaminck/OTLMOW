@@ -1,7 +1,8 @@
+# coding=utf-8
 from OTLModel.Datatypes.Keuzelijst import Keuzelijst
 
 
-# Generated with OTLEnumerationCreator
+# Generated with OTLEnumerationCreator. To modify: extend, do not edit
 class KlDuurzaamheidsklasseHout(Keuzelijst):
     """De resistentie van het kernhout tegen ongunstige omstandigheden."""
 

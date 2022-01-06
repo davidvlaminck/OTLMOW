@@ -1,3 +1,4 @@
+# coding=utf-8
 from OTLModel.Classes.VegetatieElement import VegetatieElement
 from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlVegetatieWortel import KlVegetatieWortel

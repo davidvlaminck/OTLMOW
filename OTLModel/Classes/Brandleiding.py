@@ -1,3 +1,4 @@
+# coding=utf-8
 from OTLModel.Classes.Persleiding import Persleiding
 from OTLModel.Datatypes.BooleanField import BooleanField
 from OTLModel.Datatypes.KwantWrdInBar import KwantWrdInBar
@@ -14,7 +15,7 @@ class Brandleiding(Persleiding):
         super().__init__()
 
         self.isGeisoleerd = BooleanField(naam="isGeisoleerd",
-                                         label="is geïsoleerd",
+                                         label="is geÃ¯soleerd",
                                          uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Brandleiding.isGeisoleerd",
                                          definition="Geeft aan of de brandleiding voorzien is van eigen isolatie.",
                                          constraints="",

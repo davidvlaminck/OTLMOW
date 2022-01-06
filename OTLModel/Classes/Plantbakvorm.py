@@ -1,3 +1,4 @@
+# coding=utf-8
 from OTLModel.Classes.VegetatieElement import VegetatieElement
 from OTLModel.Datatypes.BooleanField import BooleanField
 from OTLModel.Datatypes.KwantWrdInKubiekeMeter import KwantWrdInKubiekeMeter

@@ -1,3 +1,4 @@
+# coding=utf-8
 from OTLModel.Classes.AndereLaag import AndereLaag
 from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlBeschermingWapeningType import KlBeschermingWapeningType

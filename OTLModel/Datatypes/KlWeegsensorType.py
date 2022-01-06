@@ -1,7 +1,8 @@
+# coding=utf-8
 from OTLModel.Datatypes.Keuzelijst import Keuzelijst
 
 
-# Generated with OTLEnumerationCreator
+# Generated with OTLEnumerationCreator. To modify: extend, do not edit
 class KlWeegsensorType(Keuzelijst):
     """Het type van de weegsensor."""
 
@@ -14,4 +15,4 @@ class KlWeegsensorType(Keuzelijst):
                          deprecated_version="",
                          codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlWeegsensorType")
 
-        self.add_option("piëzo-kwarts", "piëzo-kwarts", "piëzo-kwarts", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlWeegsensorType/piëzo-kwarts")
+        self.add_option("piÃ«zo-kwarts", "piÃ«zo-kwarts", "piÃ«zo-kwarts", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlWeegsensorType/piÃ«zo-kwarts")

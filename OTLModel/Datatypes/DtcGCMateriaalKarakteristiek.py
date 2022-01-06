@@ -1,11 +1,11 @@
-from OTLModel.Datatypes.ComplexField import ComplexField
+# coding=utf-8
 from OTLModel.Datatypes.ComplexField import ComplexField
 from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlLEGCGeluidskarakteristiek import KlLEGCGeluidskarakteristiek
 from OTLModel.Datatypes.KlLEGCMateriaal import KlLEGCMateriaal
 
 
-# Generated with OTLComplexDatatypeCreator
+# Generated with OTLComplexDatatypeCreator. To modify: extend, do not edit
 class DtcGCMateriaalKarakteristiek(ComplexField):
     """Complex datatype voor het materiaal en zijn geluidskarakteristiek van de geluidswerende constructie."""
 

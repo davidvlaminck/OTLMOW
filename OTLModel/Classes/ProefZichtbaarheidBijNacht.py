@@ -1,3 +1,4 @@
+# coding=utf-8
 from OTLModel.Classes.Proef import Proef
 from OTLModel.Datatypes.DecimalFloatField import DecimalFloatField
 
@@ -12,9 +13,9 @@ class ProefZichtbaarheidBijNacht(Proef):
     def __init__(self):
         super().__init__()
 
-        self.retrotreflectiecoëfficiënt = DecimalFloatField(naam="retrotreflectiecoëfficiënt",
-                                                            label="retrotreflectiecoëfficiënt",
-                                                            uri="https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefZichtbaarheidBijNacht.retrotreflectiecoëfficiënt",
+        self.retrotreflectiecoÃ«fficiÃ«nt = DecimalFloatField(naam="retrotreflectiecoÃ«fficiÃ«nt",
+                                                            label="retrotreflectiecoÃ«fficiÃ«nt",
+                                                            uri="https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefZichtbaarheidBijNacht.retrotreflectiecoÃ«fficiÃ«nt",
                                                             definition="De maat voor het retroreflecterend vermogen van een markering bij nacht.",
                                                             constraints="",
                                                             usagenote="uitgedrukt in mcd. m-2.lux-1",

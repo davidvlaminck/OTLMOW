@@ -1,3 +1,4 @@
+# coding=utf-8
 from OTLModel.Classes.SchokindexVoertuigkering import SchokindexVoertuigkering
 from OTLModel.Classes.AfschermendeConstructie import AfschermendeConstructie
 from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
@@ -7,7 +8,7 @@ from OTLModel.Datatypes.KlLEACPerformantieniveau import KlLEACPerformantieniveau
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
 class Obstakelbeveiliger(SchokindexVoertuigkering, AfschermendeConstructie):
-    """Een energie-absorberende constructie voor voertuigen,geïnstalleerd vóór één of meerdere obstakels,met als doel de ernst van een botsing te reduceren."""
+    """Een energie-absorberende constructie voor voertuigen,geÃ¯nstalleerd vÃ³Ã³r Ã©Ã©n of meerdere obstakels,met als doel de ernst van een botsing te reduceren."""
 
     typeURI = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Obstakelbeveiliger"
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""

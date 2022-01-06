@@ -1,3 +1,4 @@
+# coding=utf-8
 from OTLModel.Classes.Verkeerslicht import Verkeerslicht
 from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlVriBewaking import KlVriBewaking

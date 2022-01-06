@@ -1,3 +1,4 @@
+# coding=utf-8
 from abc import abstractmethod
 from OTLModel.Classes.AIMNaamObject import AIMNaamObject
 from OTLModel.Datatypes.BooleanField import BooleanField
@@ -26,11 +27,11 @@ class Verlichtingstoestel(AIMNaamObject):
         self.heeftAansluitkastGeintegreerd = BooleanField(naam="heeftAansluitkastGeintegreerd",
                                                           label="heeft aansluitkast geintegreerd",
                                                           uri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Verlichtingstoestel.heeftAansluitkastGeintegreerd",
-                                                          definition="Is de aansluitkast geïntegreerd?",
+                                                          definition="Is de aansluitkast geÃ¯ntegreerd?",
                                                           constraints="",
                                                           usagenote="",
                                                           deprecated_version="")
-        """Is de aansluitkast geïntegreerd?"""
+        """Is de aansluitkast geÃ¯ntegreerd?"""
 
         self.merk = KeuzelijstField(naam="merk",
                                     label="merk",

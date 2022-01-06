@@ -1,3 +1,4 @@
+# coding=utf-8
 from OTLModel.Classes.ZenderOntvangerToegang import ZenderOntvangerToegang
 from OTLModel.Datatypes.DteTekstblok import DteTekstblok
 from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField

@@ -1,3 +1,4 @@
+# coding=utf-8
 from OTLModel.Classes.AIMObject import AIMObject
 from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlStopcontactAantalPolen import KlStopcontactAantalPolen
@@ -36,11 +37,11 @@ class Stopcontact(AIMObject):
         self.spanning.deprecated_version = ""
 
         self.stroomsterkte = KwantWrdInAmpere()
-        """Maximale stroomsterkte van het stopcontact uitgedrukt in ampère."""
+        """Maximale stroomsterkte van het stopcontact uitgedrukt in ampÃ¨re."""
         self.stroomsterkte.naam = "stroomsterkte"
         self.stroomsterkte.label = "stroomsterkte"
         self.stroomsterkte.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Stopcontact.stroomsterkte"
-        self.stroomsterkte.definition = "Maximale stroomsterkte van het stopcontact uitgedrukt in ampère."
+        self.stroomsterkte.definition = "Maximale stroomsterkte van het stopcontact uitgedrukt in ampÃ¨re."
         self.stroomsterkte.constraints = ""
         self.stroomsterkte.usagenote = ""
         self.stroomsterkte.deprecated_version = ""

@@ -1,3 +1,4 @@
+# coding=utf-8
 from OTLModel.Classes.Ventilatie import Ventilatie
 from OTLModel.Datatypes.KardinaliteitField import KardinaliteitField
 from OTLModel.Datatypes.BooleanField import BooleanField
@@ -9,7 +10,7 @@ from OTLModel.Datatypes.KwantWrdInProcent import KwantWrdInProcent
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
 class Ventilator(Ventilatie):
-    """Onderdeel voor het creëren van luchtcirculatie binnen een open of gesloten ruimte met het oog op het vervangen van vervuilde door zuivere lucht. Voor een gesloten ruimte kan de luchtcirculatie ook zorgen voor afkoeling."""
+    """Onderdeel voor het creÃ«ren van luchtcirculatie binnen een open of gesloten ruimte met het oog op het vervangen van vervuilde door zuivere lucht. Voor een gesloten ruimte kan de luchtcirculatie ook zorgen voor afkoeling."""
 
     typeURI = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Ventilator"
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""

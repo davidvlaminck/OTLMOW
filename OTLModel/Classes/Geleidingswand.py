@@ -1,3 +1,4 @@
+# coding=utf-8
 from OTLModel.Classes.Geleiding import Geleiding
 from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlGeleidingMateriaal import KlGeleidingMateriaal
@@ -7,7 +8,7 @@ from OTLModel.Datatypes.KwantWrdInMillimeter import KwantWrdInMillimeter
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
 class Geleidingswand(Geleiding):
-    """Een geleidingswand geleidt kleinere dieren zoals amfibieën naar kleinere ecokokers, ecoduikers en dergelijke."""
+    """Een geleidingswand geleidt kleinere dieren zoals amfibieÃ«n naar kleinere ecokokers, ecoduikers en dergelijke."""
 
     typeURI = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Geleidingswand"
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""

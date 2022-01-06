@@ -1,8 +1,9 @@
+# coding=utf-8
 from OTLModel.Datatypes.KwantWrd import KwantWrd
 from OTLModel.Datatypes.StringField import StringField
 
 
-# Generated with OTLPrimitiveDatatypeCreator
+# Generated with OTLPrimitiveDatatypeCreator. To modify: extend, do not edit
 class DteIPv4Adres(KwantWrd):
     """Beschrijft een ip-adres volgens de ipv4 specificatie."""
 

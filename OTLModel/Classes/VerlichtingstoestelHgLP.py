@@ -1,3 +1,4 @@
+# coding=utf-8
 from OTLModel.Classes.VerlichtingstoestelConnector import VerlichtingstoestelConnector
 from OTLModel.Classes.Verlichtingstoestel import Verlichtingstoestel
 

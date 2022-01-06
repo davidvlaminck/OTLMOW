@@ -1,3 +1,4 @@
+# coding=utf-8
 from abc import abstractmethod
 from OTLModel.Classes.AIMNaamObject import AIMNaamObject
 from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
@@ -7,7 +8,7 @@ from OTLModel.Datatypes.KlPTRegelaarModuleModelnaam import KlPTRegelaarModuleMod
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
 class PTRegelaarModule(AIMNaamObject):
-    """Abstracte voor de verschillende modules waaruit het personentransportbeïnvloedingssysteem van de verkeersregelaar opgebouwd is. Hierdoor zal het personentransport een snellere doorstroming aan een verkeerslichtengeregeld kruispunt genieten."""
+    """Abstracte voor de verschillende modules waaruit het personentransportbeÃ¯nvloedingssysteem van de verkeersregelaar opgebouwd is. Hierdoor zal het personentransport een snellere doorstroming aan een verkeerslichtengeregeld kruispunt genieten."""
 
     typeURI = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#PTRegelaarModule"
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""

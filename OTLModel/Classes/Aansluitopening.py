@@ -1,3 +1,4 @@
+# coding=utf-8
 from OTLModel.Classes.LinkendElement import LinkendElement
 from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlRioleringVorm import KlRioleringVorm

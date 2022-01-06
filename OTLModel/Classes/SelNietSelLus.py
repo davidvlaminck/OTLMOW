@@ -1,3 +1,4 @@
+# coding=utf-8
 from abc import abstractmethod
 from OTLModel.Classes.Detectielus import Detectielus
 from OTLModel.Datatypes.BooleanField import BooleanField

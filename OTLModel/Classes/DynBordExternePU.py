@@ -1,3 +1,4 @@
+# coding=utf-8
 from OTLModel.Classes.PU import PU
 from OTLModel.Datatypes.BooleanField import BooleanField
 from OTLModel.Datatypes.DtcDocument import DtcDocument
@@ -19,11 +20,11 @@ class DynBordExternePU(PU):
         self.heeftGeintegreerdeModem = BooleanField(naam="heeftGeintegreerdeModem",
                                                     label="heeft geintegreerde modem",
                                                     uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DynBordExternePU.heeftGeintegreerdeModem",
-                                                    definition="De PU heeft een geïntegreerde modem.",
+                                                    definition="De PU heeft een geÃ¯ntegreerde modem.",
                                                     constraints="",
                                                     usagenote="",
                                                     deprecated_version="")
-        """De PU heeft een geïntegreerde modem."""
+        """De PU heeft een geÃ¯ntegreerde modem."""
 
         self.merk = KeuzelijstField(naam="merk",
                                     label="merk",

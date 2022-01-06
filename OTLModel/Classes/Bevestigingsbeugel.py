@@ -1,3 +1,4 @@
+# coding=utf-8
 from OTLModel.Classes.AIMNaamObject import AIMNaamObject
 from OTLModel.Classes.BevestigingGC import BevestigingGC
 from OTLModel.Datatypes.KardinaliteitField import KardinaliteitField

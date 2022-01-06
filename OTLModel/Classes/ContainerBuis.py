@@ -20,6 +20,5 @@ class ContainerBuis(ABC):
                                  constraints="",
                                  usagenote="",
                                  deprecated_version="")
-        self.waarde.kleur = KardinaliteitField(minKardinaliteit="1", maxKardinaliteit="*", fieldToMultiply=kleurField)
-        self.kleur = self.waarde.kleur
+        self.kleur = KardinaliteitField(minKardinaliteit="1", maxKardinaliteit="*", fieldToMultiply=kleurField)
         """De kleur van de coating."""

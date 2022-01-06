@@ -1,3 +1,4 @@
+# coding=utf-8
 from abc import abstractmethod
 from OTLModel.Classes.AIMNaamObject import AIMNaamObject
 from OTLModel.Datatypes.DteIPv4Adres import DteIPv4Adres
@@ -55,8 +56,8 @@ class Controller(AIMNaamObject):
         self.serienummer = StringField(naam="serienummer",
                                        label="serienummer",
                                        uri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Controller.serienummer",
-                                       definition="Het unieke nummer waarmee het toestel door de fabrikant geïdentificeerd is.",
+                                       definition="Het unieke nummer waarmee het toestel door de fabrikant geÃ¯dentificeerd is.",
                                        constraints="",
                                        usagenote="",
                                        deprecated_version="")
-        """Het unieke nummer waarmee het toestel door de fabrikant geïdentificeerd is."""
+        """Het unieke nummer waarmee het toestel door de fabrikant geÃ¯dentificeerd is."""

@@ -1,3 +1,4 @@
+# coding=utf-8
 from OTLModel.Classes.Grasland import Grasland
 from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlNSB import KlNSB
@@ -5,7 +6,7 @@ from OTLModel.Datatypes.KlNSB import KlNSB
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
 class BloemrijkGraslandGraslandfase4(Grasland):
-    """G4 - Fijn mozaïek van grassen, kruiden, russen en zeggen."""
+    """G4 - Fijn mozaÃ¯ek van grassen, kruiden, russen en zeggen."""
 
     typeURI = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#BloemrijkGraslandGraslandfase4"
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""

@@ -1,7 +1,8 @@
+# coding=utf-8
 from OTLModel.Datatypes.Keuzelijst import Keuzelijst
 
 
-# Generated with OTLEnumerationCreator
+# Generated with OTLEnumerationCreator. To modify: extend, do not edit
 class KlLEGCOpeningType(Keuzelijst):
     """Types van opening."""
 
@@ -14,7 +15,7 @@ class KlLEGCOpeningType(Keuzelijst):
                          deprecated_version="2.1.0",
                          codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlLEGCOpeningType")
 
-        self.add_option("nooddeur", "nooddeur", "Deze optie mag niet geselecteerd worden. Indien de doorgang een nooddeur is moet het onderdeel 'Vluchtdeur' geïnstantieerd worden ipv het onderdeel 'Doorgang'.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLEGCOpeningType/nooddeur")
+        self.add_option("nooddeur", "nooddeur", "Deze optie mag niet geselecteerd worden. Indien de doorgang een nooddeur is moet het onderdeel 'Vluchtdeur' geÃ¯nstantieerd worden ipv het onderdeel 'Doorgang'.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLEGCOpeningType/nooddeur")
         self.add_option("vluchtopening", "vluchtopening", "vluchtopening", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLEGCOpeningType/vluchtopening")
         self.add_option("dienstopening", "dienstopening", "dienstopening", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLEGCOpeningType/dienstopening")
         self.add_option("sas", "sas", "sas", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLEGCOpeningType/sas")

@@ -1,3 +1,4 @@
+# coding=utf-8
 from abc import abstractmethod
 from OTLModel.Classes.AIMNaamObject import AIMNaamObject
 from OTLModel.Datatypes.BooleanField import BooleanField
@@ -10,7 +11,7 @@ from OTLModel.Datatypes.KlSeinlantaarnModelnaam import KlSeinlantaarnModelnaam
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
 class Seinlantaarn(AIMNaamObject):
-    """Abstracte voor het geheel van één of meerdere verkeerslichten die boven elkaar worden opgesteld en worden bevestigd op een steun,teneinde de beweging van een weggebruiker die een bepaald traject volgt,te verhinderen of toe te laten."""
+    """Abstracte voor het geheel van Ã©Ã©n of meerdere verkeerslichten die boven elkaar worden opgesteld en worden bevestigd op een steun,teneinde de beweging van een weggebruiker die een bepaald traject volgt,te verhinderen of toe te laten."""
 
     typeURI = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Seinlantaarn"
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""

@@ -1,3 +1,4 @@
+# coding=utf-8
 from OTLModel.Classes.AIMNaamObject import AIMNaamObject
 from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlNeerslagsensorMerk import KlNeerslagsensorMerk

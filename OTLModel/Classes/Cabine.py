@@ -1,3 +1,4 @@
+# coding=utf-8
 from OTLModel.Classes.Inloopbehuizing import Inloopbehuizing
 from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlCabineAardingsstelsel import KlCabineAardingsstelsel

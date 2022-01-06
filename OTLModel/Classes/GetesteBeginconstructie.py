@@ -1,3 +1,4 @@
+# coding=utf-8
 from OTLModel.Classes.SchokindexVoertuigkering import SchokindexVoertuigkering
 from OTLModel.Classes.Beginstuk import Beginstuk
 from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField

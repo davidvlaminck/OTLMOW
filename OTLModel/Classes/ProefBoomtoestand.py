@@ -1,3 +1,4 @@
+# coding=utf-8
 from OTLModel.Classes.Proef import Proef
 from OTLModel.Datatypes.KardinaliteitField import KardinaliteitField
 from OTLModel.Datatypes.DateTimeField import DateTimeField
@@ -50,21 +51,21 @@ class ProefBoomtoestand(Proef):
                                               label="conditiewaarde",
                                               lijst=KlBoomConditiewaarde(),
                                               uri="https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefBoomtoestand.conditiewaarde",
-                                              definition="Een coëfficiënt die iets vertelt over de gezondheidstoestand (vitaliteit, conditie) en de levensverwachting van een boom.",
+                                              definition="Een coÃ«fficiÃ«nt die iets vertelt over de gezondheidstoestand (vitaliteit, conditie) en de levensverwachting van een boom.",
                                               constraints="",
                                               usagenote="",
                                               deprecated_version="")
-        """Een coëfficiënt die iets vertelt over de gezondheidstoestand (vitaliteit, conditie) en de levensverwachting van een boom."""
+        """Een coÃ«fficiÃ«nt die iets vertelt over de gezondheidstoestand (vitaliteit, conditie) en de levensverwachting van een boom."""
 
         self.conflicten = KeuzelijstField(naam="conflicten",
                                           label="conflicten",
                                           lijst=KlBoomConflicten(),
                                           uri="https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefBoomtoestand.conflicten",
-                                          definition="Mogelijke standplaatsconflicten die de condities of structuur van de boom negatief kunnen beïnvloeden.",
+                                          definition="Mogelijke standplaatsconflicten die de condities of structuur van de boom negatief kunnen beÃ¯nvloeden.",
                                           constraints="",
                                           usagenote="",
                                           deprecated_version="")
-        """Mogelijke standplaatsconflicten die de condities of structuur van de boom negatief kunnen beïnvloeden."""
+        """Mogelijke standplaatsconflicten die de condities of structuur van de boom negatief kunnen beÃ¯nvloeden."""
 
         gebrekenField = KeuzelijstField(naam="gebreken",
                                         label="gebreken",
@@ -140,11 +141,11 @@ class ProefBoomtoestand(Proef):
         self.soortwaarde = DecimalFloatField(naam="soortwaarde",
                                              label="soortwaarde",
                                              uri="https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefBoomtoestand.soortwaarde",
-                                             definition="Geeft voor een bepaalde boomsoort of -variëteit de verhouding weer tussen de prijs per cm² van die soort en de eenheidsprijs.",
+                                             definition="Geeft voor een bepaalde boomsoort of -variÃ«teit de verhouding weer tussen de prijs per cmÂ² van die soort en de eenheidsprijs.",
                                              constraints="",
                                              usagenote="",
                                              deprecated_version="")
-        """Geeft voor een bepaalde boomsoort of -variëteit de verhouding weer tussen de prijs per cm² van die soort en de eenheidsprijs."""
+        """Geeft voor een bepaalde boomsoort of -variÃ«teit de verhouding weer tussen de prijs per cmÂ² van die soort en de eenheidsprijs."""
 
         self.stamomtrek = KwantWrdInCentimeter()
         """Omtrek van de stam van de boom in cm, gemeten op 1 meter boven de grond."""

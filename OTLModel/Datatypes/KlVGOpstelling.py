@@ -1,15 +1,16 @@
+# coding=utf-8
 from OTLModel.Datatypes.Keuzelijst import Keuzelijst
 
 
-# Generated with OTLEnumerationCreator
+# Generated with OTLEnumerationCreator. To modify: extend, do not edit
 class KlVGOpstelling(Keuzelijst):
-    """Beschrijft de oriëntatie van het geplaatste schermelement tov de weg. De oriëntatie van vlakke schermen kan naast loodrecht op het maaiveld ook schuin naar achter hellend of schuin naar voor hellend zijn."""
+    """Beschrijft de oriÃ«ntatie van het geplaatste schermelement tov de weg. De oriÃ«ntatie van vlakke schermen kan naast loodrecht op het maaiveld ook schuin naar achter hellend of schuin naar voor hellend zijn."""
 
     def __init__(self):
         super().__init__(naam="KlVGOpstelling",
                          label="Vlak geluidschermelement opstelling",
                          uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlVGOpstelling",
-                         definition="Beschrijft de oriëntatie van het geplaatste schermelement tov de weg. De oriëntatie van vlakke schermen kan naast loodrecht op het maaiveld ook schuin naar achter hellend of schuin naar voor hellend zijn.",
+                         definition="Beschrijft de oriÃ«ntatie van het geplaatste schermelement tov de weg. De oriÃ«ntatie van vlakke schermen kan naast loodrecht op het maaiveld ook schuin naar achter hellend of schuin naar voor hellend zijn.",
                          usagenote="",
                          deprecated_version="",
                          codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlVGOpstelling")

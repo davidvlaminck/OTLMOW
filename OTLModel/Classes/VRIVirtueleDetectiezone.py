@@ -1,3 +1,4 @@
+# coding=utf-8
 from OTLModel.Classes.Detectielus import Detectielus
 from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlVriLusFunctie import KlVriLusFunctie

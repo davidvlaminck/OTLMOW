@@ -1,3 +1,4 @@
+# coding=utf-8
 from OTLModel.Classes.NietWeggebondenDetectie import NietWeggebondenDetectie
 from OTLModel.Datatypes.DtcTijdsduur import DtcTijdsduur
 from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField

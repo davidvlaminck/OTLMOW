@@ -1,3 +1,4 @@
+# coding=utf-8
 from OTLModel.Classes.ConstructieElement import ConstructieElement
 from OTLModel.Datatypes.BooleanField import BooleanField
 from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
@@ -46,11 +47,11 @@ class Damwand(ConstructieElement):
         self.oppervlakte.deprecated_version = ""
 
         self.profiellengte = KwantWrdInMeter()
-        """De lengte van één damwandprofiel."""
+        """De lengte van Ã©Ã©n damwandprofiel."""
         self.profiellengte.naam = "profiellengte"
         self.profiellengte.label = "profiellengte"
         self.profiellengte.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Damwand.profiellengte"
-        self.profiellengte.definition = "De lengte van één damwandprofiel."
+        self.profiellengte.definition = "De lengte van Ã©Ã©n damwandprofiel."
         self.profiellengte.constraints = ""
         self.profiellengte.usagenote = ""
         self.profiellengte.deprecated_version = ""

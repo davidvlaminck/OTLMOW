@@ -1,3 +1,4 @@
+# coding=utf-8
 from abc import abstractmethod, ABC
 from OTLModel.Datatypes.DtcProductidentificatiecode import DtcProductidentificatiecode
 

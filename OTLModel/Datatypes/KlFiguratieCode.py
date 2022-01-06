@@ -1,7 +1,8 @@
+# coding=utf-8
 from OTLModel.Datatypes.Keuzelijst import Keuzelijst
 
 
-# Generated with OTLEnumerationCreator
+# Generated with OTLEnumerationCreator. To modify: extend, do not edit
 class KlFiguratieCode(Keuzelijst):
     """Codes voor de figuratie markering."""
 
@@ -63,8 +64,8 @@ class KlFiguratieCode(Keuzelijst):
         self.add_option("TRAM-LS", "TRAM LS", "Een overlangse lettermarkering TRAM.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieCode/TRAM-LS")
         self.add_option("STOP-DW", "STOP DW", "Een dwarse lettermarkering STOP.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieCode/STOP-DW")
         self.add_option("STOP-DW-oud", "STOP DW-oud", "Een dwarse lettermarkering STOP.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieCode/STOP-DW-oud")
-        self.add_option("BHALTE-GR", "BHALTE-GR", "Een lettermarkering BUS met arcering > 22.75 m².", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieCode/BHALTE-GR")
-        self.add_option("BHALTE-KL", "BHALTE-KL", "Een lettermarkering BUS met arcering < 22.75 m².", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieCode/BHALTE-KL")
+        self.add_option("BHALTE-GR", "BHALTE-GR", "Een lettermarkering BUS met arcering > 22.75 mÂ².", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieCode/BHALTE-GR")
+        self.add_option("BHALTE-KL", "BHALTE-KL", "Een lettermarkering BUS met arcering < 22.75 mÂ².", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieCode/BHALTE-KL")
         self.add_option("BHALTE-WEG", "BHALTE-WEG", "Een lettermarkering BUS zonder arcering", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieCode/BHALTE-WEG")
         self.add_option("VB-E1", "VB-E1", "Een verkeersbordmarkering parkeerverbod (OFF)", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieCode/VB-E1")
         self.add_option("VB-A23", "VB-A23", "Een verkeersbordmarkering schoolkinderen (OFF)", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieCode/VB-A23")

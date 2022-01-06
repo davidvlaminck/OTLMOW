@@ -1,3 +1,4 @@
+# coding=utf-8
 from OTLModel.Classes.Luchtkwaliteittoestel import Luchtkwaliteittoestel
 from OTLModel.Datatypes.BooleanField import BooleanField
 

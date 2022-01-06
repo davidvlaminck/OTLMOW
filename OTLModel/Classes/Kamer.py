@@ -1,3 +1,4 @@
+# coding=utf-8
 from OTLModel.Classes.PutRelatie import PutRelatie
 from OTLModel.Datatypes.KardinaliteitField import KardinaliteitField
 from OTLModel.Datatypes.DtcDocument import DtcDocument
@@ -11,8 +12,8 @@ from OTLModel.Datatypes.KwantWrdInMillimeter import KwantWrdInMillimeter
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
 class Kamer(PutRelatie):
-    """Een kamer is een aanééngesloten ondergrondse constructie waarbinnen vrije stroming van water over de
- bodem mogelijk is. Een constructie of inspectieput kan één of meerdere kamers hebben."""
+    """Een kamer is een aanÃ©Ã©ngesloten ondergrondse constructie waarbinnen vrije stroming van water over de
+ bodem mogelijk is. Een constructie of inspectieput kan Ã©Ã©n of meerdere kamers hebben."""
 
     typeURI = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Kamer"
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""

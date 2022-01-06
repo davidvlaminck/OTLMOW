@@ -1,7 +1,8 @@
+# coding=utf-8
 from OTLModel.Datatypes.Keuzelijst import Keuzelijst
 
 
-# Generated with OTLEnumerationCreator
+# Generated with OTLEnumerationCreator. To modify: extend, do not edit
 class KlLetterCijfer(Keuzelijst):
     """De mogelijke letters en cijfers voor een letter- of cijfermarkering."""
 
@@ -50,6 +51,6 @@ class KlLetterCijfer(Keuzelijst):
         self.add_option("7", "7", "Cijfer 7.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLetterCijfer/7")
         self.add_option("8", "8", "Cijfer 8.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLetterCijfer/8")
         self.add_option("9", "9", "Cijfer 9.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLetterCijfer/9")
-        self.add_option("â", "â", "Letter â.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLetterCijfer/â")
-        self.add_option("é", "é", "Letter é.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLetterCijfer/é")
+        self.add_option("Ã¢", "Ã¢", "Letter Ã¢.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLetterCijfer/Ã¢")
+        self.add_option("Ã©", "Ã©", "Letter Ã©.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLetterCijfer/Ã©")
         self.add_option("-", "-", "Koppelteken.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLetterCijfer/-")

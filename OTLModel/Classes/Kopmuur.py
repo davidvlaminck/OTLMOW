@@ -1,3 +1,4 @@
+# coding=utf-8
 from OTLModel.Classes.AIMObject import AIMObject
 from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlKopmuurMateriaal import KlKopmuurMateriaal
@@ -5,7 +6,7 @@ from OTLModel.Datatypes.KlKopmuurMateriaal import KlKopmuurMateriaal
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
 class Kopmuur(AIMObject):
-    """Een kopmuur is een inrichtingselement van de wegbaan, dat gebruikt wordt voor de geleiding van verkeer bij grachten. Een kopmuur is een keermuur die een functie vervult van afwateringssysteem en is in de regel haaks op de hartlijn van de wegcorridor georiënteerd."""
+    """Een kopmuur is een inrichtingselement van de wegbaan, dat gebruikt wordt voor de geleiding van verkeer bij grachten. Een kopmuur is een keermuur die een functie vervult van afwateringssysteem en is in de regel haaks op de hartlijn van de wegcorridor georiÃ«nteerd."""
 
     typeURI = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Kopmuur"
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""

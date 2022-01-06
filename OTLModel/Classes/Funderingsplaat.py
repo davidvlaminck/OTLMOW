@@ -1,3 +1,4 @@
+# coding=utf-8
 from OTLModel.Classes.Betonfundering import Betonfundering
 from OTLModel.Classes.KlassiekeFundering import KlassiekeFundering
 

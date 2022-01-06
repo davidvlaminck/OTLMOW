@@ -1,3 +1,4 @@
+# coding=utf-8
 from OTLModel.Classes.Grasland import Grasland
 from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlNSB import KlNSB
@@ -5,7 +6,7 @@ from OTLModel.Datatypes.KlNSB import KlNSB
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
 class GrasKruidenmixGraslandfase3(Grasland):
-    """G3 - Fijn mozaïek van grassen en kruiden zoals:
+    """G3 - Fijn mozaÃ¯ek van grassen en kruiden zoals:
 beemdlangbloem, gewone berenklauw,
 gewoon duizendblad, gewoon reukgras,
 glanshaver, grasmuur, grote vossenstaart,

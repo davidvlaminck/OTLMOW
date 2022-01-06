@@ -1,3 +1,4 @@
+# coding=utf-8
 from OTLModel.Classes.RetroreflecterendVerkeersbord import RetroreflecterendVerkeersbord
 from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlCalamiteitsbordType import KlCalamiteitsbordType
@@ -7,7 +8,7 @@ from OTLModel.Datatypes.KlCalamiteitsbordVorm import KlCalamiteitsbordVorm
 # Generated with OTLClassCreator. To modify: extend, do not edit
 class CalamiteitsBord(RetroreflecterendVerkeersbord):
     """De aanwijzingsborden ter plaatse van een startpunt, een aantakpunt, een wissel- of koppelpunt van een
-omleggingsroute bij calamiteiten zijn geïntegreerd in een één-bordsysteem met een scharnierende
+omleggingsroute bij calamiteiten zijn geÃ¯ntegreerd in een Ã©Ã©n-bordsysteem met een scharnierende
 plaat."""
 
     typeURI = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#CalamiteitsBord"

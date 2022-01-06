@@ -1,10 +1,11 @@
+# coding=utf-8
 from OTLModel.Classes.Proef import Proef
 from OTLModel.Datatypes.DtcDocument import DtcDocument
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
 class ProefRetroreflectie(Proef):
-    """Het bepalen van de retroreflectiecoëfficiënt via een manuele retroreflectometer of via labotesten."""
+    """Het bepalen van de retroreflectiecoÃ«fficiÃ«nt via een manuele retroreflectometer of via labotesten."""
 
     typeURI = "https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefRetroreflectie"
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""

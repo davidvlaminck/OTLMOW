@@ -1,3 +1,4 @@
+# coding=utf-8
 from OTLModel.Classes.VegetatieElement import VegetatieElement
 from OTLModel.Datatypes.KardinaliteitField import KardinaliteitField
 from OTLModel.Datatypes.BooleanField import BooleanField
@@ -131,11 +132,11 @@ class Boom(VegetatieElement):
         self.kroonDiameter.deprecated_version = ""
 
         self.takvrijeStamlengte = KwantWrdInMeter()
-        """Tot aan de hoogte van de gewenste takvrije stamlengte wordt de boom zodanig gesnoeid dat er één doorgaande stam is."""
+        """Tot aan de hoogte van de gewenste takvrije stamlengte wordt de boom zodanig gesnoeid dat er Ã©Ã©n doorgaande stam is."""
         self.takvrijeStamlengte.naam = "takvrijeStamlengte"
         self.takvrijeStamlengte.label = "takvrije stamlengte"
         self.takvrijeStamlengte.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Boom.takvrijeStamlengte"
-        self.takvrijeStamlengte.definition = "Tot aan de hoogte van de gewenste takvrije stamlengte wordt de boom zodanig gesnoeid dat er één doorgaande stam is."
+        self.takvrijeStamlengte.definition = "Tot aan de hoogte van de gewenste takvrije stamlengte wordt de boom zodanig gesnoeid dat er Ã©Ã©n doorgaande stam is."
         self.takvrijeStamlengte.constraints = ""
         self.takvrijeStamlengte.usagenote = ""
         self.takvrijeStamlengte.deprecated_version = ""

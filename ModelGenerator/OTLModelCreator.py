@@ -6,6 +6,7 @@ from ModelGenerator.OTLComplexDatatypeCreator import OTLComplexDatatypeCreator
 from ModelGenerator.OTLEnumerationCreator import OTLEnumerationCreator
 from ModelGenerator.OTLGeldigeRelatieCreator import OTLGeldigeRelatieCreator
 from ModelGenerator.OTLPrimitiveDatatypeCreator import OTLPrimitiveDatatypeCreator
+from ModelGenerator.OTLUnionDatatypeCreator import OTLUnionDatatypeCreator
 
 
 class OTLModelCreator:
@@ -15,11 +16,12 @@ class OTLModelCreator:
         self.logger.log("Created an instance of OTLModelCreator", LogType.INFO)
 
     def create_full_model(self):
-        #self.create_primitive_datatypes()
-        #self.create_complex_datatypes()
+        self.create_primitive_datatypes()
+        self.create_complex_datatypes()
+        self.create_union_datatypes()
         #self.create_enumerations()
         self.create_classes()
-        #self.create_relations()
+        self.create_relations()
 
     def create_primitive_datatypes(self):
         creator = OTLPrimitiveDatatypeCreator(self.logger, self.osloCollector)
@@ -69,6 +71,24 @@ class OTLModelCreator:
                 self.logger.log(str(e), LogType.ERROR)
                 self.logger.log(f"Could not create a class for {complexDatatype.name}", LogType.ERROR)
 
+    def create_union_datatypes(self):
+        creator = OTLUnionDatatypeCreator(self.logger, self.osloCollector)
+
+        for unionDatatype in self.osloCollector.unionDatatypes:
+            try:
+                dataToWrite = creator.CreateBlockToWriteFromUnionTypes(unionDatatype)
+                if dataToWrite is None:
+                    self.logger.log(f"Could not create a class for {unionDatatype.name}", LogType.INFO)
+                    pass
+                if len(dataToWrite) == 0:
+                    self.logger.log(f"Could not create a class for {unionDatatype.name}", LogType.INFO)
+                    pass
+                creator.writeToFile(unionDatatype, 'Datatypes', dataToWrite)
+                self.logger.log(f"Created a class for {unionDatatype.name}", LogType.INFO)
+            except BaseException as e:
+                self.logger.log(str(e), LogType.ERROR)
+                self.logger.log(f"Could not create a class for {unionDatatype.name}", LogType.ERROR)
+
     def create_enumerations(self):
         creator = OTLEnumerationCreator(self.logger, self.osloCollector)
 
@@ -100,7 +120,7 @@ class OTLModelCreator:
                 if len(dataToWrite) == 0:
                     self.logger.log(f"Could not create a class for {cls.name}", LogType.INFO)
                     pass
-                creator.writeToFile(cls, 'Classes', dataToWrite, 'utf-8')
+                creator.writeToFile(cls, 'Classes', dataToWrite)
                 self.logger.log(f"Created a class for {cls.name}", LogType.INFO)
             except Exception as e:
                 self.logger.log(str(e), LogType.ERROR)

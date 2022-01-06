@@ -1,3 +1,4 @@
+# coding=utf-8
 from OTLModel.Classes.AndereVerharding import AndereVerharding
 
 

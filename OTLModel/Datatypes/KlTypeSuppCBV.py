@@ -1,7 +1,8 @@
+# coding=utf-8
 from OTLModel.Datatypes.Keuzelijst import Keuzelijst
 
 
-# Generated with OTLEnumerationCreator
+# Generated with OTLEnumerationCreator. To modify: extend, do not edit
 class KlTypeSuppCBV(Keuzelijst):
     """Keuzelijst om het type van de toegevoegde supplementen van de CBV te bepalen."""
 

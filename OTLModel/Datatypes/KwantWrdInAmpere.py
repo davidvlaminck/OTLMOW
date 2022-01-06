@@ -1,11 +1,12 @@
+# coding=utf-8
 from OTLModel.Datatypes.KwantWrd import KwantWrd
 from OTLModel.Datatypes.LiteralField import LiteralField
 from OTLModel.Datatypes.DecimalFloatField import DecimalFloatField
 
 
-# Generated with OTLPrimitiveDatatypeCreator
+# Generated with OTLPrimitiveDatatypeCreator. To modify: extend, do not edit
 class KwantWrdInAmpere(KwantWrd):
-    """Een kwantitatieve waarde die een getal in ampère uitdrukt."""
+    """Een kwantitatieve waarde die een getal in ampÃ¨re uitdrukt."""
 
     def __init__(self, waarde=None):
         self.eenheid = LiteralField(naam="standaardEenheid",
@@ -28,9 +29,9 @@ class KwantWrdInAmpere(KwantWrd):
         """Bevat een getal die bij het datatype hoort."""
 
         super().__init__(naam="KwantWrdInAmpere",
-                         label="Kwantitatieve waarde in ampère",
+                         label="Kwantitatieve waarde in ampÃ¨re",
                          uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInAmpere",
-                         definition="Een kwantitatieve waarde die een getal in ampère uitdrukt.",
+                         definition="Een kwantitatieve waarde die een getal in ampÃ¨re uitdrukt.",
                          usagenote="",
                          deprecated_version="",
                          waardeVeld=self.waardeVeld,

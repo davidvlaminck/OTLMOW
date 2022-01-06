@@ -1,3 +1,4 @@
+# coding=utf-8
 from OTLModel.Classes.StalenProfiel import StalenProfiel
 from OTLModel.Datatypes.DtcProfieltype import DtcProfieltype
 

@@ -1,7 +1,8 @@
+# coding=utf-8
 from OTLModel.Datatypes.Keuzelijst import Keuzelijst
 
 
-# Generated with OTLEnumerationCreator
+# Generated with OTLEnumerationCreator. To modify: extend, do not edit
 class KlMIVLusZichtbaarheid(Keuzelijst):
     """Is de lus zichtbaar in het wegdek of bedenkt door een toplaag."""
 

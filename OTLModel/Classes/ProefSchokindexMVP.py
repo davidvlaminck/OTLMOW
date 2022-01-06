@@ -1,3 +1,4 @@
+# coding=utf-8
 from OTLModel.Classes.Proef import Proef
 from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlLEACSchokindexMVP import KlLEACSchokindexMVP

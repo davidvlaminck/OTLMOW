@@ -1,3 +1,4 @@
+# coding=utf-8
 from OTLModel.Classes.Controller import Controller
 from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlControllerBeveiligingssleutel import KlControllerBeveiligingssleutel

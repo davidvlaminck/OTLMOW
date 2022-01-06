@@ -1,11 +1,11 @@
-from OTLModel.Datatypes.ComplexField import ComplexField
+# coding=utf-8
 from OTLModel.Datatypes.ComplexField import ComplexField
 from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlProfielhoogtemaat import KlProfielhoogtemaat
 from OTLModel.Datatypes.KlProfielsoort import KlProfielsoort
 
 
-# Generated with OTLComplexDatatypeCreator
+# Generated with OTLComplexDatatypeCreator. To modify: extend, do not edit
 class DtcProfieltype(ComplexField):
     """Complex datatype om de hoogtemaat en de soort van het profiel in te geven."""
 

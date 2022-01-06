@@ -1,3 +1,4 @@
+# coding=utf-8
 from abc import abstractmethod
 from OTLModel.Classes.AfschermendeConstructie import AfschermendeConstructie
 from OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter

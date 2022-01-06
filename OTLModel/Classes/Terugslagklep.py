@@ -1,3 +1,4 @@
+# coding=utf-8
 from OTLModel.Classes.LinkendElement import LinkendElement
 from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlTerugslagklepType import KlTerugslagklepType
@@ -9,7 +10,7 @@ from OTLModel.Datatypes.KwantWrdInMillimeter import KwantWrdInMillimeter
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
 class Terugslagklep(LinkendElement):
-    """Een terugslagklep is een klep die dient om water, vloeistof, granulaat, poeder of gas in één richting door te laten. Meestal duwt het medium de klep bij het heenstromen open en sluit een veer of de zwaartekracht de klep."""
+    """Een terugslagklep is een klep die dient om water, vloeistof, granulaat, poeder of gas in Ã©Ã©n richting door te laten. Meestal duwt het medium de klep bij het heenstromen open en sluit een veer of de zwaartekracht de klep."""
 
     typeURI = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Terugslagklep"
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""

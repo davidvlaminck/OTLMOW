@@ -1,3 +1,4 @@
+# coding=utf-8
 from OTLModel.Classes.SoftwareToegang import SoftwareToegang
 from OTLModel.Datatypes.KardinaliteitField import KardinaliteitField
 from OTLModel.Datatypes.DtcDocument import DtcDocument

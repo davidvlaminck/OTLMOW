@@ -1,3 +1,4 @@
+# coding=utf-8
 from OTLModel.Classes.MeteropnameEnergiemeter import MeteropnameEnergiemeter
 from OTLModel.Datatypes.KwantWrdInKiloWatt import KwantWrdInKiloWatt
 from OTLModel.Datatypes.KwantWrdInkVARh import KwantWrdInkVARh

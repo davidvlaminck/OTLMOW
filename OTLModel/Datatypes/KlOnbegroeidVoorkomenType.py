@@ -1,7 +1,8 @@
+# coding=utf-8
 from OTLModel.Datatypes.Keuzelijst import Keuzelijst
 
 
-# Generated with OTLEnumerationCreator
+# Generated with OTLEnumerationCreator. To modify: extend, do not edit
 class KlOnbegroeidVoorkomenType(Keuzelijst):
     """De mogelijke afwerkingen van het onbegroeide voorkomen."""
 
@@ -16,7 +17,7 @@ class KlOnbegroeidVoorkomenType(Keuzelijst):
 
         self.add_option("grindgazon-tweelaags", "grindgazon tweelaags", "Afwerking van tweelaagse grindgazon.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOnbegroeidVoorkomenType/grindgazon-tweelaags")
         self.add_option("kunstgras", "kunstgras", "Bedekking bestaande uit synthetisch materiaal, met de bedoeling om natuurlijk gras te imiteren.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOnbegroeidVoorkomenType/kunstgras")
-        self.add_option("gesloten-kunststofverharding", "gesloten kunststofverharding", "Kunststofverharding die over de totale oppervlakte in één continue laag werd aangebracht.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOnbegroeidVoorkomenType/gesloten-kunststofverharding")
+        self.add_option("gesloten-kunststofverharding", "gesloten kunststofverharding", "Kunststofverharding die over de totale oppervlakte in Ã©Ã©n continue laag werd aangebracht.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOnbegroeidVoorkomenType/gesloten-kunststofverharding")
         self.add_option("schors", "schors", "Bedekking bestaande uit mengsel van schors (gefragmenteerde boomschors)", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOnbegroeidVoorkomenType/schors")
         self.add_option("tegels-met-groenvoeg", "tegels met groenvoeg", "Tegels die zo gelegd zijn dat de voeg begroeibaar is en waterdoorlaatbaar.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOnbegroeidVoorkomenType/tegels-met-groenvoeg")
         self.add_option("steenslag-rolgrind", "steenslag rolgrind", "Bedekking van een onverharde zone die opgebouwd is uit een niet-gecompacteerde groep van individuele componenten die voldoen aan de volgende specificaties: losse steenslag, behalve dolomiet, afgeronde en onregelmatige vorm en onregelmatig verband.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOnbegroeidVoorkomenType/steenslag-rolgrind")

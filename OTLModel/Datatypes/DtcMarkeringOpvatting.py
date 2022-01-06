@@ -1,11 +1,11 @@
-from OTLModel.Datatypes.ComplexField import ComplexField
+# coding=utf-8
 from OTLModel.Datatypes.ComplexField import ComplexField
 from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlMarkeringWaarborgperiode import KlMarkeringWaarborgperiode
 from OTLModel.Datatypes.KlSignalisatieMarkeringOpvatting import KlSignalisatieMarkeringOpvatting
 
 
-# Generated with OTLComplexDatatypeCreator
+# Generated with OTLComplexDatatypeCreator. To modify: extend, do not edit
 class DtcMarkeringOpvatting(ComplexField):
     """Complex datatype voor de opvatting van een markering."""
 

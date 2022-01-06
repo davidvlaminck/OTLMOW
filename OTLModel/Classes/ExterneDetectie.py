@@ -1,3 +1,4 @@
+# coding=utf-8
 from OTLModel.Classes.Detectie import Detectie
 from OTLModel.Datatypes.BooleanField import BooleanField
 from OTLModel.Datatypes.DtcNatuurlijkPersoon import DtcNatuurlijkPersoon

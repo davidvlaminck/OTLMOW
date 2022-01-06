@@ -1,3 +1,4 @@
+# coding=utf-8
 from OTLModel.Classes.Detectie import Detectie
 from OTLModel.Classes.FirmwareObject import FirmwareObject
 from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
@@ -8,7 +9,7 @@ from OTLModel.Datatypes.KlWeggebondendetectorModelnaam import KlWeggebondendetec
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
 class WeggebondenDetector(Detectie, FirmwareObject):
-    """Weggebonden detectoren zijn draadloze in het wegdek geïntegreerde radars of magnetische inductiesensoren. Ze zitten ingebed in een cilinder, die geplaatst wordt in het wegdek en die draadloos communiceert met een access point die met de verkeersregelaar verbonden is"""
+    """Weggebonden detectoren zijn draadloze in het wegdek geÃ¯ntegreerde radars of magnetische inductiesensoren. Ze zitten ingebed in een cilinder, die geplaatst wordt in het wegdek en die draadloos communiceert met een access point die met de verkeersregelaar verbonden is"""
 
     typeURI = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#WeggebondenDetector"
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""

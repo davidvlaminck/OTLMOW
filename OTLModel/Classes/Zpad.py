@@ -1,3 +1,4 @@
+# coding=utf-8
 from OTLModel.Classes.NaampadObject import NaampadObject
 from OTLModel.Datatypes.IntegerField import IntegerField
 from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField

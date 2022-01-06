@@ -1,3 +1,4 @@
+# coding=utf-8
 from OTLModel.Classes.VRIDraagconstructie import VRIDraagconstructie
 from OTLModel.Datatypes.BooleanField import BooleanField
 from OTLModel.Datatypes.DecimalFloatField import DecimalFloatField
@@ -89,11 +90,11 @@ class Seinbrug(VRIDraagconstructie):
                                            label="rijrichting",
                                            lijst=KlSeinbrugRijrichting(),
                                            uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Seinbrug.rijrichting",
-                                           definition="Geeft aan of de seinbrug één of beide rijrichtingen overspant.",
+                                           definition="Geeft aan of de seinbrug Ã©Ã©n of beide rijrichtingen overspant.",
                                            constraints="",
                                            usagenote="",
                                            deprecated_version="")
-        """Geeft aan of de seinbrug één of beide rijrichtingen overspant."""
+        """Geeft aan of de seinbrug Ã©Ã©n of beide rijrichtingen overspant."""
 
         self.technischeFiche = DtcDocument()
         """Een bijlage waarin de detailtekeningen van de seinbrug."""

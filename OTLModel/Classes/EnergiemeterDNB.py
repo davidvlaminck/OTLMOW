@@ -1,3 +1,4 @@
+# coding=utf-8
 from OTLModel.Classes.DNBMeter import DNBMeter
 from OTLModel.Datatypes.BooleanField import BooleanField
 from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField

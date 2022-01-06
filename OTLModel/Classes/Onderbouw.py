@@ -1,3 +1,4 @@
+# coding=utf-8
 from OTLModel.Classes.LaagDikte import LaagDikte
 from OTLModel.Classes.Laag import Laag
 from OTLModel.Datatypes.BooleanField import BooleanField

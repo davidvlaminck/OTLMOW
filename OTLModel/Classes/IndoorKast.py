@@ -1,3 +1,4 @@
+# coding=utf-8
 from OTLModel.Classes.Kast import Kast
 from OTLModel.Datatypes.KardinaliteitField import KardinaliteitField
 from OTLModel.Datatypes.DtcDocument import DtcDocument

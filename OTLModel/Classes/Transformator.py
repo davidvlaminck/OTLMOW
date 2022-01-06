@@ -1,3 +1,4 @@
+# coding=utf-8
 from OTLModel.Classes.AIMNaamObject import AIMNaamObject
 from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlTransformatorIsolatiemedium import KlTransformatorIsolatiemedium
@@ -72,11 +73,11 @@ class Transformator(AIMNaamObject):
         self.schakelgroep = StringField(naam="schakelgroep",
                                         label="schakelgroep",
                                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Transformator.schakelgroep",
-                                        definition="Verzameling van 3 schakelcombinaties waarbij de hoofdletter de schakelwijze van de primaire weergeeft, de kleine letter(s) de schakelwijze van de secundaire weergeeft (en eventueel het feit dat het sterpunt naar buiten werd gebracht) en het getal geeft het klokgetal (of het aantal keer dat er 30° faseverschuiving tussen HS- en LS-spanning is) vb Dyn11",
+                                        definition="Verzameling van 3 schakelcombinaties waarbij de hoofdletter de schakelwijze van de primaire weergeeft, de kleine letter(s) de schakelwijze van de secundaire weergeeft (en eventueel het feit dat het sterpunt naar buiten werd gebracht) en het getal geeft het klokgetal (of het aantal keer dat er 30Â° faseverschuiving tussen HS- en LS-spanning is) vb Dyn11",
                                         constraints="",
                                         usagenote="",
                                         deprecated_version="")
-        """Verzameling van 3 schakelcombinaties waarbij de hoofdletter de schakelwijze van de primaire weergeeft, de kleine letter(s) de schakelwijze van de secundaire weergeeft (en eventueel het feit dat het sterpunt naar buiten werd gebracht) en het getal geeft het klokgetal (of het aantal keer dat er 30° faseverschuiving tussen HS- en LS-spanning is) vb Dyn11"""
+        """Verzameling van 3 schakelcombinaties waarbij de hoofdletter de schakelwijze van de primaire weergeeft, de kleine letter(s) de schakelwijze van de secundaire weergeeft (en eventueel het feit dat het sterpunt naar buiten werd gebracht) en het getal geeft het klokgetal (of het aantal keer dat er 30Â° faseverschuiving tussen HS- en LS-spanning is) vb Dyn11"""
 
         self.typeBeveiliging = KeuzelijstField(naam="typeBeveiliging",
                                                label="type beveiliging",

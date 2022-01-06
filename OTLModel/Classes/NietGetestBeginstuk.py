@@ -1,3 +1,4 @@
+# coding=utf-8
 from OTLModel.Classes.Beginstuk import Beginstuk
 from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlLEACUitbuigingstype import KlLEACUitbuigingstype

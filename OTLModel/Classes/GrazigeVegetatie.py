@@ -1,3 +1,4 @@
+# coding=utf-8
 from abc import abstractmethod
 from OTLModel.Classes.BegroeidVoorkomen import BegroeidVoorkomen
 from OTLModel.Datatypes.BooleanField import BooleanField

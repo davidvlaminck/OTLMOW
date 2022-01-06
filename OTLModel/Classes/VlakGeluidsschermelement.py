@@ -1,3 +1,4 @@
+# coding=utf-8
 from OTLModel.Classes.Geluidsschermelement import Geluidsschermelement
 from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlVGOpstelling import KlVGOpstelling
@@ -19,11 +20,11 @@ class VlakGeluidsschermelement(Geluidsschermelement):
                                           label="opstelling",
                                           lijst=KlVGOpstelling(),
                                           uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#VlakGeluidsschermelement.opstelling",
-                                          definition="Dit attribuut beschrijft de oriëntatie van het geplaatste schermelement t.o.v. de weg. De oriëntatie van vlakke schermen kan naast loodrecht op het maaiveld ook schuin naar achter hellend of schuin naar voor hellend zijn.",
+                                          definition="Dit attribuut beschrijft de oriÃ«ntatie van het geplaatste schermelement t.o.v. de weg. De oriÃ«ntatie van vlakke schermen kan naast loodrecht op het maaiveld ook schuin naar achter hellend of schuin naar voor hellend zijn.",
                                           constraints="",
                                           usagenote="",
                                           deprecated_version="")
-        """Dit attribuut beschrijft de oriëntatie van het geplaatste schermelement t.o.v. de weg. De oriëntatie van vlakke schermen kan naast loodrecht op het maaiveld ook schuin naar achter hellend of schuin naar voor hellend zijn."""
+        """Dit attribuut beschrijft de oriÃ«ntatie van het geplaatste schermelement t.o.v. de weg. De oriÃ«ntatie van vlakke schermen kan naast loodrecht op het maaiveld ook schuin naar achter hellend of schuin naar voor hellend zijn."""
 
         self.schermelementtype = KeuzelijstField(naam="schermelementtype",
                                                  label="schermelementtype",

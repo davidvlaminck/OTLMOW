@@ -1,15 +1,16 @@
+# coding=utf-8
 from OTLModel.Datatypes.Keuzelijst import Keuzelijst
 
 
-# Generated with OTLEnumerationCreator
+# Generated with OTLEnumerationCreator. To modify: extend, do not edit
 class KlMeetcelNauwkeurigheidsvermogen(Keuzelijst):
-    """Nauwkeurigheidsvermogen van de meetcel in voltampère (bv. 5 of 15)."""
+    """Nauwkeurigheidsvermogen van de meetcel in voltampÃ¨re (bv. 5 of 15)."""
 
     def __init__(self):
         super().__init__(naam="KlMeetcelNauwkeurigheidsvermogen",
                          label="Meetcel nauwkeurigheidsvermogen",
                          uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlMeetcelNauwkeurigheidsvermogen",
-                         definition="Nauwkeurigheidsvermogen van de meetcel in voltampère (bv. 5 of 15).",
+                         definition="Nauwkeurigheidsvermogen van de meetcel in voltampÃ¨re (bv. 5 of 15).",
                          usagenote="",
                          deprecated_version="",
                          codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlMeetcelNauwkeurigheidsvermogen")

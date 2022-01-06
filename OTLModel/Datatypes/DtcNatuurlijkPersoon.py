@@ -1,4 +1,4 @@
-from OTLModel.Datatypes.ComplexField import ComplexField
+# coding=utf-8
 from OTLModel.Datatypes.KardinaliteitField import KardinaliteitField
 from OTLModel.Datatypes.BooleanField import BooleanField
 from OTLModel.Datatypes.ComplexField import ComplexField
@@ -6,7 +6,7 @@ from OTLModel.Datatypes.DtcAdres import DtcAdres
 from OTLModel.Datatypes.StringField import StringField
 
 
-# Generated with OTLComplexDatatypeCreator
+# Generated with OTLComplexDatatypeCreator. To modify: extend, do not edit
 class DtcNatuurlijkPersoon(ComplexField):
     """Complex datatype dat een natuurlijk persoon beschrijft."""
 

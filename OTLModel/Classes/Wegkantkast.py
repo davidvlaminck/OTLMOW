@@ -1,3 +1,4 @@
+# coding=utf-8
 from OTLModel.Classes.Buitenkast import Buitenkast
 from OTLModel.Datatypes.KardinaliteitField import KardinaliteitField
 from OTLModel.Datatypes.BooleanField import BooleanField
@@ -39,12 +40,12 @@ class Wegkantkast(Buitenkast):
         mplanField.naam = "mplan"
         mplanField.label = "m-plan"
         mplanField.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Wegkantkast.mplan"
-        mplanField.definition = "Mechanisch plan van de volledige installatie. Er wordt één plan toegevoegd per installatie/techniek die op de kast is aangesloten."
+        mplanField.definition = "Mechanisch plan van de volledige installatie. Er wordt Ã©Ã©n plan toegevoegd per installatie/techniek die op de kast is aangesloten."
         mplanField.constraints = ""
         mplanField.usagenote = "Bestanden van het type dwg of pdf."
         mplanField.deprecated_version = ""
         self.mplan = KardinaliteitField(minKardinaliteit="1", maxKardinaliteit="*", fieldToMultiply=mplanField)
-        """Mechanisch plan van de volledige installatie. Er wordt één plan toegevoegd per installatie/techniek die op de kast is aangesloten."""
+        """Mechanisch plan van de volledige installatie. Er wordt Ã©Ã©n plan toegevoegd per installatie/techniek die op de kast is aangesloten."""
 
         self.type = KeuzelijstField(naam="type",
                                     label="type",

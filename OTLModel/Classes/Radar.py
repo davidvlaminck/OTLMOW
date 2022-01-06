@@ -1,3 +1,4 @@
+# coding=utf-8
 from OTLModel.Classes.NietWeggebondenDetectie import NietWeggebondenDetectie
 from OTLModel.Classes.TypeWeggebruiker import TypeWeggebruiker
 from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField

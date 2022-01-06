@@ -1,7 +1,8 @@
+# coding=utf-8
 from OTLModel.Datatypes.Keuzelijst import Keuzelijst
 
 
-# Generated with OTLEnumerationCreator
+# Generated with OTLEnumerationCreator. To modify: extend, do not edit
 class KlFiguratieType(Keuzelijst):
     """Types van figuratiemarkering."""
 
@@ -34,7 +35,7 @@ class KlFiguratieType(Keuzelijst):
         self.add_option("voorsortering-Links-(5m)", "voorsortering Links (5m)", "Pijl Voorsortering Links (5m)", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/voorsortering-Links-(5m)")
         self.add_option("voorsortering-Links-(7.5m)", "voorsortering Links (7.5m)", "Pijl Voorsortering Links (7,5m)", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/voorsortering-Links-(7.5m)")
         self.add_option("voorsortering-Rechts-(5m)", "voorsortering Rechts (5m)", "Pijl Voorsortering Rechts (5m)", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/voorsortering-Rechts-(5m)")
-        self.add_option("voorsortering-Rechts-(7.5m)", "voorsortering Rechts (7.5m)", "Aanduiding A49 kruising van een openbare weg door één of meer in de rijbaan aangelegde sporen.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/voorsortering-Rechts-(7.5m)")
+        self.add_option("voorsortering-Rechts-(7.5m)", "voorsortering Rechts (7.5m)", "Aanduiding A49 kruising van een openbare weg door Ã©Ã©n of meer in de rijbaan aangelegde sporen.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/voorsortering-Rechts-(7.5m)")
         self.add_option("rijstrook-vermindering-links", "rijstrook vermindering links", "Pijl Rijstrook vermindering links", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/rijstrook-vermindering-links")
         self.add_option("rijstrook-vermindering-rechts", "rijstrook vermindering rechts", "Pijl Rijstrook vermindering rechts", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/rijstrook-vermindering-rechts")
         self.add_option("fietspadpijl-(std)", "fietspadpijl (std)", "Pijl Fietspadpijl (std)", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/fietspadpijl-(std)")
@@ -55,8 +56,8 @@ class KlFiguratieType(Keuzelijst):
         self.add_option("TRAM-(langs)", "TRAM (langs)", "Lettermarkering van tramhalte (langs)", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/TRAM-(langs)")
         self.add_option("STOP-(smal)", "STOP (smal)", "Lettermarkering STOP (smal)", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/STOP-(smal)")
         self.add_option("STOP", "STOP", "Lettermarkering STOP", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/STOP")
-        self.add_option("kleiner-dan-22.75-m²", "kleiner dan 22.75 m²", "Lettermarkering bus met arcering.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/kleiner-dan-22.75-m²")
-        self.add_option("groter-dan-22.75-m²", "groter dan 22.75 m²", "Lettermarkering bus met arcering.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/groter-dan-22.75-m²")
+        self.add_option("kleiner-dan-22.75-mÂ²", "kleiner dan 22.75 mÂ²", "Lettermarkering bus met arcering.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/kleiner-dan-22.75-mÂ²")
+        self.add_option("groter-dan-22.75-mÂ²", "groter dan 22.75 mÂ²", "Lettermarkering bus met arcering.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/groter-dan-22.75-mÂ²")
         self.add_option("bushalte-op-de-rijweg", "bushalte op de rijweg", "Lettermarkering bus zonder arcering.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/bushalte-op-de-rijweg")
         self.add_option("parkeerverbod", "parkeerverbod", "Verkeersbordmarkering parkeerverbod.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/parkeerverbod")
         self.add_option("schoolkinderen", "schoolkinderen", "Verkeersbordmarkering schoolkinderen.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/schoolkinderen")
@@ -69,7 +70,7 @@ class KlFiguratieType(Keuzelijst):
         self.add_option("groot", "groot", "Omgekeerde driehoek markering groot type.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/groot")
         self.add_option("klein", "klein", "Omgekeerde driehoek markering klein type.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/klein")
         self.add_option("null", "null", "Geen aanduiding.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/null")
-        self.add_option("kruising-sporen", "kruising sporen", "Aanduiding A49 kruising van een openbare weg door één of meer in de rijbaan aangelegde sporen.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/kruising-sporen")
+        self.add_option("kruising-sporen", "kruising sporen", "Aanduiding A49 kruising van een openbare weg door Ã©Ã©n of meer in de rijbaan aangelegde sporen.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/kruising-sporen")
         self.add_option("oversteekplaats-voor-voetgangers", "oversteekplaats voor voetgangers", "Aanduiding A21 oversteekplaats voor voetgangers.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/oversteekplaats-voor-voetgangers")
         self.add_option("fietsstraat-einde", "fietsstraat einde", "Verkeersbord F113 dat het einde van de fietsstraat aanduidt.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/fietsstraat-einde")
         self.add_option("fietsstraat-begin", "fietsstraat begin", "Verkeersbord F111 dat het einde van de fietsstraat aanduidt.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/fietsstraat-begin")

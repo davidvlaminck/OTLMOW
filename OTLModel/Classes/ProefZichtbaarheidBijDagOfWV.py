@@ -1,10 +1,11 @@
+# coding=utf-8
 from OTLModel.Classes.Proef import Proef
 from OTLModel.Datatypes.DecimalFloatField import DecimalFloatField
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
 class ProefZichtbaarheidBijDagOfWV(Proef):
-    """Bepaling van de luminantiecoëfficiënt bij diffuse verlichting van een gemarkeerd oppervlak (Qd) bij daglicht of onder openbare verlichting."""
+    """Bepaling van de luminantiecoÃ«fficiÃ«nt bij diffuse verlichting van een gemarkeerd oppervlak (Qd) bij daglicht of onder openbare verlichting."""
 
     typeURI = "https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefZichtbaarheidBijDagOfWV"
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
@@ -12,9 +13,9 @@ class ProefZichtbaarheidBijDagOfWV(Proef):
     def __init__(self):
         super().__init__()
 
-        self.luminantiecoëfficiënt = DecimalFloatField(naam="luminantiecoëfficiënt",
-                                                       label="luminantiecoëfficient",
-                                                       uri="https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefZichtbaarheidBijDagOfWV.luminantiecoëfficiënt",
+        self.luminantiecoÃ«fficiÃ«nt = DecimalFloatField(naam="luminantiecoÃ«fficiÃ«nt",
+                                                       label="luminantiecoÃ«fficient",
+                                                       uri="https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefZichtbaarheidBijDagOfWV.luminantiecoÃ«fficiÃ«nt",
                                                        definition="De verhouding van de luminantie van het oppervlak in een gegeven richting en de verlichtingssterkte op het oppervlak.",
                                                        constraints="",
                                                        usagenote="uitgedrukt in mcd. m-2.lux-1",

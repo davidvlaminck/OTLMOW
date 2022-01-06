@@ -1,3 +1,4 @@
+# coding=utf-8
 from OTLModel.Classes.IVRIComponent import IVRIComponent
 from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlIVRIMerkITSapp import KlIVRIMerkITSapp

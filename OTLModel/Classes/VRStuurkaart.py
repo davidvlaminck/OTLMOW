@@ -1,3 +1,4 @@
+# coding=utf-8
 from OTLModel.Classes.VRModuleMetFirmware import VRModuleMetFirmware
 from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlVrStuurkaartCommunicatieprotocol import KlVrStuurkaartCommunicatieprotocol

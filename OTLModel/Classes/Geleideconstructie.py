@@ -1,3 +1,4 @@
+# coding=utf-8
 from OTLModel.Classes.SchokindexVoertuigkering import SchokindexVoertuigkering
 from OTLModel.Classes.EigenschappenVoertuigkering import EigenschappenVoertuigkering
 from OTLModel.Classes.AansluitendeConstructie import AansluitendeConstructie
@@ -8,7 +9,7 @@ from OTLModel.Datatypes.KlLEACWerkingsbreedte import KlLEACWerkingsbreedte
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
 class Geleideconstructie(SchokindexVoertuigkering, EigenschappenVoertuigkering, AansluitendeConstructie):
-    """Een doorlopende afschermende constructie voor voertuigen geïnstalleerd langs de weg of in de middenberm."""
+    """Een doorlopende afschermende constructie voor voertuigen geÃ¯nstalleerd langs de weg of in de middenberm."""
 
     typeURI = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Geleideconstructie"
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""

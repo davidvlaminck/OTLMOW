@@ -1,7 +1,8 @@
+# coding=utf-8
 from OTLModel.Datatypes.Keuzelijst import Keuzelijst
 
 
-# Generated with OTLEnumerationCreator
+# Generated with OTLEnumerationCreator. To modify: extend, do not edit
 class KlDraagConstrBijzondertransport(Keuzelijst):
     """De mogelijkheden en manieren waarop een steun geschikt is om bijzonder transport mogelijk te maken."""
 

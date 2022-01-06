@@ -1,7 +1,8 @@
+# coding=utf-8
 from OTLModel.Datatypes.Keuzelijst import Keuzelijst
 
 
-# Generated with OTLEnumerationCreator
+# Generated with OTLEnumerationCreator. To modify: extend, do not edit
 class KlVerkeersbordsteunType(Keuzelijst):
     """Types voor een verkeersbordsteun."""
 
@@ -14,8 +15,8 @@ class KlVerkeersbordsteunType(Keuzelijst):
                          deprecated_version="",
                          codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlVerkeersbordsteunType")
 
-        self.add_option("seinbrug", "seinbrug", "Deze optie mag niet aangeduid worden! Bij instantiëren van seinbruggen moet je het onderdeel 'Seinbrug' gebruiken.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerkeersbordsteunType/seinbrug")
-        self.add_option("galgpaal", "galgpaal", "Deze optie mag niet aangeduid worden! Bij instantiëren van galgpalen moet je het onderdeel 'Galgpaal' gebruiken.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerkeersbordsteunType/galgpaal")
+        self.add_option("seinbrug", "seinbrug", "Deze optie mag niet aangeduid worden! Bij instantiÃ«ren van seinbruggen moet je het onderdeel 'Seinbrug' gebruiken.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerkeersbordsteunType/seinbrug")
+        self.add_option("galgpaal", "galgpaal", "Deze optie mag niet aangeduid worden! Bij instantiÃ«ren van galgpalen moet je het onderdeel 'Galgpaal' gebruiken.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerkeersbordsteunType/galgpaal")
         self.add_option("botsvriendelijke-steun-type-100NE2", "botsvriendelijke steun type 100NE2", "te bepalen", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerkeersbordsteunType/botsvriendelijke-steun-type-100NE2")
         self.add_option("vakwerksteun", "vakwerksteun", "Een keuzelijst om het type verkeersbordpaal te bepalen", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerkeersbordsteunType/vakwerksteun")
         self.add_option("botsvriendelijke-steun-type-100NE3", "botsvriendelijke steun type 100NE3", "te bepalen", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerkeersbordsteunType/botsvriendelijke-steun-type-100NE3")

@@ -1,7 +1,8 @@
+# coding=utf-8
 from OTLModel.Datatypes.Keuzelijst import Keuzelijst
 
 
-# Generated with OTLEnumerationCreator
+# Generated with OTLEnumerationCreator. To modify: extend, do not edit
 class KlDynBordExternePUModelnaam(Keuzelijst):
     """De modelnaam van externe processing unit voor dynamische verkeersborden. Wordt bepaald door de lverancier."""
 

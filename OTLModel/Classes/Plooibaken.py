@@ -1,3 +1,4 @@
+# coding=utf-8
 from OTLModel.Classes.Straatmeubilair import Straatmeubilair
 from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlKleurPlooibaken import KlKleurPlooibaken

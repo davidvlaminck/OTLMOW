@@ -1,3 +1,4 @@
+# coding=utf-8
 from abc import abstractmethod
 from OTLModel.Classes.Laag import Laag
 from OTLModel.Classes.LaagDikte import LaagDikte

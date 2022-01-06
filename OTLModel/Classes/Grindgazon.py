@@ -1,3 +1,4 @@
+# coding=utf-8
 from OTLModel.Classes.BegroeidVoorkomen import BegroeidVoorkomen
 from OTLModel.Datatypes.BooleanField import BooleanField
 
@@ -15,8 +16,8 @@ class Grindgazon(BegroeidVoorkomen):
         self.isTweelaags = BooleanField(naam="isTweelaags",
                                         label="is tweelaags",
                                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Grindgazon.isTweelaags",
-                                        definition="Geeft aan of het grindgazon tweelaags of éénlaags is.",
+                                        definition="Geeft aan of het grindgazon tweelaags of Ã©Ã©nlaags is.",
                                         constraints="",
                                         usagenote="",
                                         deprecated_version="")
-        """Geeft aan of het grindgazon tweelaags of éénlaags is."""
+        """Geeft aan of het grindgazon tweelaags of Ã©Ã©nlaags is."""

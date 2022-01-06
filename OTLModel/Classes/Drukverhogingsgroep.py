@@ -1,3 +1,4 @@
+# coding=utf-8
 from OTLModel.Classes.Brandvoorziening import Brandvoorziening
 from OTLModel.Datatypes.KwantWrdInBar import KwantWrdInBar
 from OTLModel.Datatypes.KwantWrdInKiloWatt import KwantWrdInKiloWatt

@@ -1,4 +1,4 @@
-from OTLModel.Datatypes.ComplexField import ComplexField
+# coding=utf-8
 from OTLModel.Datatypes.BooleanField import BooleanField
 from OTLModel.Datatypes.ComplexField import ComplexField
 from OTLModel.Datatypes.DtcBeschermingVraatschade import DtcBeschermingVraatschade
@@ -13,7 +13,7 @@ from OTLModel.Datatypes.KlVormAanleveringHoutigeVegetatie import KlVormAanleveri
 from OTLModel.Datatypes.NonNegIntegerField import NonNegIntegerField
 
 
-# Generated with OTLComplexDatatypeCreator
+# Generated with OTLComplexDatatypeCreator. To modify: extend, do not edit
 class DtcHoutigeAanleg(ComplexField):
     """Complex datatype dat de aanleg van houtige vegetatie beschrijft."""
 
@@ -48,12 +48,12 @@ class DtcHoutigeAanleg(ComplexField):
         self.waarde.heeftWortelgeleidingwortelwering = BooleanField(naam="heeftWortelgeleidingwortelwering",
                                                                     label="heeft wortelgeleiding-wortelwering",
                                                                     uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcHoutigeAanleg.heeftWortelgeleidingwortelwering",
-                                                                    definition="Wortelgeleiding en –wering moet voorkomen dat boomwortels het trottoir, de middenberm, het fietspad, de rijweg, andere wegverhardingen en leidingstelsels beschadigen. Het heeft als doel om boomwortels naar beneden te leiden, waar ze onder een obstakel verder kunnen groeien.",
+                                                                    definition="Wortelgeleiding en â€“wering moet voorkomen dat boomwortels het trottoir, de middenberm, het fietspad, de rijweg, andere wegverhardingen en leidingstelsels beschadigen. Het heeft als doel om boomwortels naar beneden te leiden, waar ze onder een obstakel verder kunnen groeien.",
                                                                     constraints="",
                                                                     usagenote="",
                                                                     deprecated_version="")
         self.heeftWortelgeleidingwortelwering = self.waarde.heeftWortelgeleidingwortelwering
-        """Wortelgeleiding en –wering moet voorkomen dat boomwortels het trottoir, de middenberm, het fietspad, de rijweg, andere wegverhardingen en leidingstelsels beschadigen. Het heeft als doel om boomwortels naar beneden te leiden, waar ze onder een obstakel verder kunnen groeien."""
+        """Wortelgeleiding en â€“wering moet voorkomen dat boomwortels het trottoir, de middenberm, het fietspad, de rijweg, andere wegverhardingen en leidingstelsels beschadigen. Het heeft als doel om boomwortels naar beneden te leiden, waar ze onder een obstakel verder kunnen groeien."""
 
         self.waarde.maaischadeBescherming = KeuzelijstField(naam="maaischadeBescherming",
                                                             label="maaischade bescherming",

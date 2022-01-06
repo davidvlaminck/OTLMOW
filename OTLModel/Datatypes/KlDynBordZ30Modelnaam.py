@@ -1,7 +1,8 @@
+# coding=utf-8
 from OTLModel.Datatypes.Keuzelijst import Keuzelijst
 
 
-# Generated with OTLEnumerationCreator
+# Generated with OTLEnumerationCreator. To modify: extend, do not edit
 class KlDynBordZ30Modelnaam(Keuzelijst):
     """Keuzelijst met de gangbare modelnamen van dynamische zone 30 borden. De modelnamen worden meestal door de leverancier of fabrikant bepaald."""
 

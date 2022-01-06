@@ -1,3 +1,4 @@
+# coding=utf-8
 from OTLModel.Classes.ConstructieElement import ConstructieElement
 from OTLModel.Classes.BetonnenConstructieElement import BetonnenConstructieElement
 from OTLModel.Classes.ConstructieElementenGC import ConstructieElementenGC

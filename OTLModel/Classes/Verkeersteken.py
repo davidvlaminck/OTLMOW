@@ -1,3 +1,4 @@
+# coding=utf-8
 from abc import abstractmethod
 from OTLModel.Classes.AIMObject import AIMObject
 from OTLModel.Datatypes.KardinaliteitField import KardinaliteitField
@@ -45,12 +46,12 @@ class Verkeersteken(AIMObject):
         mobiliteitsMaatregelField.naam = "mobiliteitsMaatregel"
         mobiliteitsMaatregelField.label = "mobiliteitsmaatregel"
         mobiliteitsMaatregelField.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Verkeersteken.mobiliteitsMaatregel"
-        mobiliteitsMaatregelField.definition = "Externe referentie naar een maatregel om de beweging en verplaatsing van de weggebruiker op het openbaar domein of privé domein met openbaar karakter te organiseren."
+        mobiliteitsMaatregelField.definition = "Externe referentie naar een maatregel om de beweging en verplaatsing van de weggebruiker op het openbaar domein of privÃ© domein met openbaar karakter te organiseren."
         mobiliteitsMaatregelField.constraints = ""
         mobiliteitsMaatregelField.usagenote = ""
         mobiliteitsMaatregelField.deprecated_version = ""
         self.mobiliteitsMaatregel = KardinaliteitField(minKardinaliteit="0", maxKardinaliteit="*", fieldToMultiply=mobiliteitsMaatregelField)
-        """Externe referentie naar een maatregel om de beweging en verplaatsing van de weggebruiker op het openbaar domein of privé domein met openbaar karakter te organiseren."""
+        """Externe referentie naar een maatregel om de beweging en verplaatsing van de weggebruiker op het openbaar domein of privÃ© domein met openbaar karakter te organiseren."""
 
         self.plaatsbeschrijving = StringField(naam="plaatsbeschrijving",
                                               label="plaatsbeschrijving",

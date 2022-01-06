@@ -1,3 +1,4 @@
+# coding=utf-8
 from abc import abstractmethod, ABC
 from OTLModel.Datatypes.DecimalFloatField import DecimalFloatField
 from OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter

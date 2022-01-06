@@ -1,3 +1,4 @@
+# coding=utf-8
 from OTLModel.Classes.Bestrating import Bestrating
 from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlBestratingAfwerking import KlBestratingAfwerking

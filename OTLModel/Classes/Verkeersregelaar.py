@@ -1,3 +1,4 @@
+# coding=utf-8
 from OTLModel.Classes.AIMNaamObject import AIMNaamObject
 from OTLModel.Datatypes.KardinaliteitField import KardinaliteitField
 from OTLModel.Datatypes.DateField import DateField
@@ -14,10 +15,10 @@ from OTLModel.Datatypes.StringField import StringField
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
 class Verkeersregelaar(AIMNaamObject):
-    """Een verkeersregelaar is een programmeerbaar toestel dat de verkeerslichten op kruispunten kan regelen overeenkomstig een goedgekeurd verkeersplan. Een verkeersregelaar is bedoeld om het verkeer verkeersafhankelijk te sturen overeenkomstig het gedetecteerde verkeer. Verkeersregelaars kunnen op zichzelf werken of in groep ingeschakeld worden, zodoende op een gecoördineerde wijze de verkeersstromen te verwerken.
+    """Een verkeersregelaar is een programmeerbaar toestel dat de verkeerslichten op kruispunten kan regelen overeenkomstig een goedgekeurd verkeersplan. Een verkeersregelaar is bedoeld om het verkeer verkeersafhankelijk te sturen overeenkomstig het gedetecteerde verkeer. Verkeersregelaars kunnen op zichzelf werken of in groep ingeschakeld worden, zodoende op een gecoÃ¶rdineerde wijze de verkeersstromen te verwerken.
 Eveneens detecteert een verkeersregelaar defecte onderdelen, van zichzelf of van aangesloten installaties. Afhankelijk van het soort defect stuurt een verkeersregelaar een code uit opdat het euvel hersteld kan worden. Bij welbepaalde defecten worden verkeerslichten uitgeschakeld of op knipperstand gezet.
 Volgende documenten zijn specifiek van toepassing voor verkeersregelaars:
-*Koninklijk Besluit van 01.12.1975 (wegcode), aangevuld met alle officiële documenten hierover gepubliceerd;
+*Koninklijk Besluit van 01.12.1975 (wegcode), aangevuld met alle officiÃ«le documenten hierover gepubliceerd;
 *NBN EN 12675:2000 (Verkeersregelapparaten - Functionele veiligheidseisen);
 *NBN EN 50556:2011 (Signalisatie voor wegverkeer;
 *NBN EN 12368:2006 (Verkeersregelinstallaties - Verkeerslantaars);
@@ -30,15 +31,15 @@ Volgende documenten zijn specifiek van toepassing voor verkeersregelaars:
         super().__init__()
 
         coordinatiewijzeField = KeuzelijstField(naam="coordinatiewijze",
-                                                label="coördinatiewijze",
+                                                label="coÃ¶rdinatiewijze",
                                                 lijst=KlVerkeersregelaarCoordinatiewijze(),
                                                 uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Verkeersregelaar.coordinatiewijze",
-                                                definition="Wijze waarop de coördinatie is opgezet en de eventuele rol die de verkeersregelaar hierin speelt.",
+                                                definition="Wijze waarop de coÃ¶rdinatie is opgezet en de eventuele rol die de verkeersregelaar hierin speelt.",
                                                 constraints="",
                                                 usagenote="",
                                                 deprecated_version="")
         self.coordinatiewijze = KardinaliteitField(minKardinaliteit="1", maxKardinaliteit="*", fieldToMultiply=coordinatiewijzeField)
-        """Wijze waarop de coördinatie is opgezet en de eventuele rol die de verkeersregelaar hierin speelt."""
+        """Wijze waarop de coÃ¶rdinatie is opgezet en de eventuele rol die de verkeersregelaar hierin speelt."""
 
         externeReferentieField = DtcExterneReferentie()
         externeReferentieField.naam = "externeReferentie"

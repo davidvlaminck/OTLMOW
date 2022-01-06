@@ -1,4 +1,4 @@
-from OTLModel.Datatypes.ComplexField import ComplexField
+# coding=utf-8
 from OTLModel.Datatypes.ComplexField import ComplexField
 from OTLModel.Datatypes.DteTekstblok import DteTekstblok
 from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
@@ -7,7 +7,7 @@ from OTLModel.Datatypes.StringField import StringField
 from OTLModel.Datatypes.URIField import URIField
 
 
-# Generated with OTLComplexDatatypeCreator
+# Generated with OTLComplexDatatypeCreator. To modify: extend, do not edit
 class DtcDocument(ComplexField):
     """Complex datatype voor alle bestandsbijlages."""
 

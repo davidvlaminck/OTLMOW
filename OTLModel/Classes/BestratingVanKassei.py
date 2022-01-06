@@ -1,3 +1,4 @@
+# coding=utf-8
 from OTLModel.Classes.Bestrating import Bestrating
 from OTLModel.Datatypes.DtcAfmetingBxlInCm import DtcAfmetingBxlInCm
 

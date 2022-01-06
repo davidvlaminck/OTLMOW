@@ -1,3 +1,4 @@
+# coding=utf-8
 from OTLModel.Classes.AndereVerharding import AndereVerharding
 from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlDolomietType import KlDolomietType

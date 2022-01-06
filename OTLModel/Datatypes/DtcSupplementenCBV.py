@@ -1,11 +1,11 @@
-from OTLModel.Datatypes.ComplexField import ComplexField
+# coding=utf-8
 from OTLModel.Datatypes.ComplexField import ComplexField
 from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlKleurSupp import KlKleurSupp
 from OTLModel.Datatypes.KlTypeSuppCBV import KlTypeSuppCBV
 
 
-# Generated with OTLComplexDatatypeCreator
+# Generated with OTLComplexDatatypeCreator. To modify: extend, do not edit
 class DtcSupplementenCBV(ComplexField):
     """Complex datatype voor de supplementen van de CBV."""
 

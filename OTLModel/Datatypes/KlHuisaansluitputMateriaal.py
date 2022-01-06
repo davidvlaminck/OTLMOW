@@ -1,7 +1,8 @@
+# coding=utf-8
 from OTLModel.Datatypes.Keuzelijst import Keuzelijst
 
 
-# Generated with OTLEnumerationCreator
+# Generated with OTLEnumerationCreator. To modify: extend, do not edit
 class KlHuisaansluitputMateriaal(Keuzelijst):
     """Materialen voor een huisaansluitput."""
 
@@ -16,4 +17,4 @@ class KlHuisaansluitputMateriaal(Keuzelijst):
 
         self.add_option("beton", "beton", "betonnen huisaansluitputje", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlHuisaansluitputMateriaal/beton")
         self.add_option("kunststof", "kunststof", "kunstof aansluitputje", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlHuisaansluitputMateriaal/kunststof")
-        self.add_option("gres", "gres", "aansluitputje in grès", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlHuisaansluitputMateriaal/gres")
+        self.add_option("gres", "gres", "aansluitputje in grÃ¨s", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlHuisaansluitputMateriaal/gres")

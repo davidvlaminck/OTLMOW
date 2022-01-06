@@ -1,3 +1,4 @@
+# coding=utf-8
 from OTLModel.Classes.AndereLaag import AndereLaag
 from OTLModel.Datatypes.KardinaliteitField import KardinaliteitField
 from OTLModel.Datatypes.BooleanField import BooleanField

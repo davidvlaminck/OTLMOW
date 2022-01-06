@@ -1,3 +1,4 @@
+# coding=utf-8
 from OTLModel.Classes.HoutigeVegetatie import HoutigeVegetatie
 from OTLModel.Datatypes.KardinaliteitField import KardinaliteitField
 from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
@@ -41,11 +42,11 @@ class OpgaandeHoutigeVegetatie(HoutigeVegetatie):
                                                  label="natuurstreefbeeld",
                                                  lijst=KlNSB(),
                                                  uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#OpgaandeHoutigeVegetatie.natuurstreefbeeld",
-                                                 definition="Een natuurstreefbeeld is een nagestreefd biotoop, mozaïek van biotopen of een leefgebied van een soort dat je wil behouden of verkrijgen via een goed natuurbeheer.In het definitief plan van type twee, drie of vier wordt het ecologisch einddoel vastgesteld aan de hand van natuurstreefbeelden.",
+                                                 definition="Een natuurstreefbeeld is een nagestreefd biotoop, mozaÃ¯ek van biotopen of een leefgebied van een soort dat je wil behouden of verkrijgen via een goed natuurbeheer.In het definitief plan van type twee, drie of vier wordt het ecologisch einddoel vastgesteld aan de hand van natuurstreefbeelden.",
                                                  constraints="",
                                                  usagenote="",
                                                  deprecated_version="")
-        """Een natuurstreefbeeld is een nagestreefd biotoop, mozaïek van biotopen of een leefgebied van een soort dat je wil behouden of verkrijgen via een goed natuurbeheer.In het definitief plan van type twee, drie of vier wordt het ecologisch einddoel vastgesteld aan de hand van natuurstreefbeelden."""
+        """Een natuurstreefbeeld is een nagestreefd biotoop, mozaÃ¯ek van biotopen of een leefgebied van een soort dat je wil behouden of verkrijgen via een goed natuurbeheer.In het definitief plan van type twee, drie of vier wordt het ecologisch einddoel vastgesteld aan de hand van natuurstreefbeelden."""
 
         self.type = KeuzelijstField(naam="type",
                                     label="type",

@@ -1,3 +1,4 @@
+# coding=utf-8
 from OTLModel.Classes.AIMToestand import AIMToestand
 from OTLModel.Classes.AIMDBStatus import AIMDBStatus
 from OTLModel.Datatypes.KardinaliteitField import KardinaliteitField
@@ -50,13 +51,13 @@ class Derdenobject(AIMToestand, AIMDBStatus):
         """Een foto van het derdenobject die eventuele detailinformatie weergeeft."""
 
         self.heeftAansluitkastGeintegreerd = BooleanField(naam="heeftAansluitkastGeintegreerd",
-                                                          label="heeft aansluitkast geïntegreerd",
+                                                          label="heeft aansluitkast geÃ¯ntegreerd",
                                                           uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#Derdenobject.heeftAansluitkastGeintegreerd",
-                                                          definition="Aanduiding of de aansluitkast geïntegreerd is.",
+                                                          definition="Aanduiding of de aansluitkast geÃ¯ntegreerd is.",
                                                           constraints="",
                                                           usagenote="",
                                                           deprecated_version="")
-        """Aanduiding of de aansluitkast geïntegreerd is."""
+        """Aanduiding of de aansluitkast geÃ¯ntegreerd is."""
 
         self.omschrijving = StringField(naam="omschrijving",
                                         label="omschrijving",

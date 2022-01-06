@@ -1,3 +1,4 @@
+# coding=utf-8
 from OTLModel.Classes.Bebakening import Bebakening
 from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlWildreflectorDrager import KlWildreflectorDrager

@@ -1,3 +1,4 @@
+# coding=utf-8
 from OTLModel.Classes.LijnvormigElement import LijnvormigElement
 from OTLModel.Datatypes.KardinaliteitField import KardinaliteitField
 from OTLModel.Datatypes.BooleanField import BooleanField

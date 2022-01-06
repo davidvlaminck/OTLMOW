@@ -1,3 +1,4 @@
+# coding=utf-8
 from abc import abstractmethod
 from OTLModel.Classes.Communicatieapparatuur import Communicatieapparatuur
 from OTLModel.Classes.FirmwareObject import FirmwareObject

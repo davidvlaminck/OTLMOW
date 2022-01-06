@@ -1,3 +1,4 @@
+# coding=utf-8
 from abc import abstractmethod
 from OTLModel.Classes.Fundering import Fundering
 from OTLModel.Datatypes.DtcAfmetingBxlInM import DtcAfmetingBxlInM

@@ -1,3 +1,4 @@
+# coding=utf-8
 from OTLModel.Classes.ContainerBuis import ContainerBuis
 from OTLModel.Classes.Buis import Buis
 from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField

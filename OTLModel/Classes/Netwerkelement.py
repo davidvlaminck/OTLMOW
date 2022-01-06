@@ -1,3 +1,4 @@
+# coding=utf-8
 from OTLModel.Classes.AIMNaamObject import AIMNaamObject
 from OTLModel.Datatypes.DteIPv4Adres import DteIPv4Adres
 from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField

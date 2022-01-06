@@ -1,3 +1,4 @@
+# coding=utf-8
 from OTLModel.Classes.DwarseMarkeringToegang import DwarseMarkeringToegang
 from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlDwarseMarkeringCode import KlDwarseMarkeringCode

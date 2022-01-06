@@ -1,5 +1,5 @@
-from AbstractLogger import AbstractLogger
-from LogType import LogType
+from Loggers.AbstractLogger import AbstractLogger
+from Loggers.LogType import LogType
 
 
 class LoggerCollection(AbstractLogger):

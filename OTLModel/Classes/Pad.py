@@ -1,3 +1,4 @@
+# coding=utf-8
 from OTLModel.Classes.NaampadObject import NaampadObject
 from OTLModel.Datatypes.KardinaliteitField import KardinaliteitField
 from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
@@ -6,7 +7,7 @@ from OTLModel.Datatypes.KlPadNetwerkprotectie import KlPadNetwerkprotectie
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
 class Pad(NaampadObject):
-    """Een aaneengesloten reeks van links die samen een verbinding realiseren over het netwerk, gebruik makende van eenzelfde technologie (vb SDH, OTN…)."""
+    """Een aaneengesloten reeks van links die samen een verbinding realiseren over het netwerk, gebruik makende van eenzelfde technologie (vb SDH, OTNâ€¦)."""
 
     typeURI = "https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Pad"
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""

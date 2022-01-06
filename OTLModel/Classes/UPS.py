@@ -1,3 +1,4 @@
+# coding=utf-8
 from OTLModel.Classes.Voedingspunt import Voedingspunt
 from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlUPSMerk import KlUPSMerk

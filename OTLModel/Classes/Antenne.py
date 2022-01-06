@@ -1,3 +1,4 @@
+# coding=utf-8
 from OTLModel.Classes.Communicatieapparatuur import Communicatieapparatuur
 from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlAntenneFrequentierange import KlAntenneFrequentierange

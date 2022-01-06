@@ -1,3 +1,4 @@
+# coding=utf-8
 from OTLModel.Classes.Communicatieapparatuur import Communicatieapparatuur
 from OTLModel.Classes.FirmwareObject import FirmwareObject
 from OTLModel.Datatypes.StringField import StringField
@@ -5,7 +6,7 @@ from OTLModel.Datatypes.StringField import StringField
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
 class Armatuurcontroller(Communicatieapparatuur, FirmwareObject):
-    """Controller die op het verlichtingstoestel wordt gemonteerd en die één verlichtingstoestel aanstuurt."""
+    """Controller die op het verlichtingstoestel wordt gemonteerd en die Ã©Ã©n verlichtingstoestel aanstuurt."""
 
     typeURI = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Armatuurcontroller"
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
@@ -35,8 +36,8 @@ class Armatuurcontroller(Communicatieapparatuur, FirmwareObject):
         self.serienummer = StringField(naam="serienummer",
                                        label="serienummer",
                                        uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Armatuurcontroller.serienummer",
-                                       definition="Het unieke nummer waarmee het toestel door de fabrikant geïdentificeerd is.",
+                                       definition="Het unieke nummer waarmee het toestel door de fabrikant geÃ¯dentificeerd is.",
                                        constraints="",
                                        usagenote="",
                                        deprecated_version="")
-        """Het unieke nummer waarmee het toestel door de fabrikant geïdentificeerd is."""
+        """Het unieke nummer waarmee het toestel door de fabrikant geÃ¯dentificeerd is."""

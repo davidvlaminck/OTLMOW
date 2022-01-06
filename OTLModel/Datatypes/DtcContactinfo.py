@@ -1,4 +1,4 @@
-from OTLModel.Datatypes.ComplexField import ComplexField
+# coding=utf-8
 from OTLModel.Datatypes.KardinaliteitField import KardinaliteitField
 from OTLModel.Datatypes.ComplexField import ComplexField
 from OTLModel.Datatypes.DtcAdres import DtcAdres
@@ -6,7 +6,7 @@ from OTLModel.Datatypes.DtcOpeningsurenSpecificatie import DtcOpeningsurenSpecif
 from OTLModel.Datatypes.StringField import StringField
 
 
-# Generated with OTLComplexDatatypeCreator
+# Generated with OTLComplexDatatypeCreator. To modify: extend, do not edit
 class DtcContactinfo(ComplexField):
     """Complex datatype voor de informatie zoals email, telefoon, adres die toelaat om iemand of iets te contacteren."""
 

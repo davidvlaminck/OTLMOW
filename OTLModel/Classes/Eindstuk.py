@@ -1,3 +1,4 @@
+# coding=utf-8
 from OTLModel.Classes.AfschermendeConstructie import AfschermendeConstructie
 from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlLEACTypeEindstuk import KlLEACTypeEindstuk

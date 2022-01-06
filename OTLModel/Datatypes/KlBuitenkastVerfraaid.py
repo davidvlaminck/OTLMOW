@@ -1,7 +1,8 @@
+# coding=utf-8
 from OTLModel.Datatypes.Keuzelijst import Keuzelijst
 
 
-# Generated with OTLEnumerationCreator
+# Generated with OTLEnumerationCreator. To modify: extend, do not edit
 class KlBuitenkastVerfraaid(Keuzelijst):
     """Mogelijke types voor verfraaiing als combinatie van aan- en afwezigheid en al dan niet vegund."""
 

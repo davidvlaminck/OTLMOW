@@ -1,3 +1,4 @@
+# coding=utf-8
 from OTLModel.Classes.FiguratieMarkeringToegang import FiguratieMarkeringToegang
 from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlLetterCijfer import KlLetterCijfer

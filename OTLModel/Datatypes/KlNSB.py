@@ -1,7 +1,8 @@
+# coding=utf-8
 from OTLModel.Datatypes.Keuzelijst import Keuzelijst
 
 
-# Generated with OTLEnumerationCreator
+# Generated with OTLEnumerationCreator. To modify: extend, do not edit
 class KlNSB(Keuzelijst):
     """Het mogelijke huidige natuurbeelden of natuurstreefbeelden."""
 
@@ -15,7 +16,7 @@ class KlNSB(Keuzelijst):
                          codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlNSB")
 
         self.add_option("andere-Hp", "andere Hp", "geen soorten van de twee volgende types (rbbkam & rbbvos) aanwezig.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNSB/andere-Hp")
-        self.add_option("rbbkam", "rbbkam", "kamgras en/of veldgerst abundant én aantal soorten >;15", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNSB/rbbkam")
+        self.add_option("rbbkam", "rbbkam", "kamgras en/of veldgerst abundant Ã©n aantal soorten >;15", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNSB/rbbkam")
         self.add_option("rbbhu", "rbbhu", "min. 2 soorten abundant aanwezig uit:  kruipend zenegroen, pinksterbloem, tweerijige zegge, moesdistel, ruwe smele, lidrus, moerasspirea, beemdlangbloem, moerasrolklaver, echte koekoeksbloem, penningkruid, moeras/zompvergeet-mij-nietje, grote ratelaar, waterkruiskruid, smeerwortel, vogelwikke OF trosdravik of grote trosdravik aanwezig", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNSB/rbbhu")
         self.add_option("rbbzil", "rbbzil", "zilt grasland: aardbeiklaver, akkerkers, getand vlotgras, gewone waterbies, heelblaadjes, klein vlooienkruid, kruipend moerasscherm, moeras/zompvergeetme-nietje, moeraszoutgras (polderstreek), penningkruid, pijptorkruid, platte rus, polei, rode ogentroost, slanke waterbies, smalle rolklaver (polderstreek), valse voszegge, watermunt, zeegroene rus, zilte rus, zilte zegge (polderstreek), zilverschoon, zomprus", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNSB/rbbzil")
         self.add_option("andere-Hu", "andere Hu", "Voldoet niet aan de voorwaarden voor 6510 (< 7 soorten uit 6510)", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNSB/andere-Hu")

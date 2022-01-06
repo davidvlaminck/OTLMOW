@@ -1,15 +1,16 @@
+# coding=utf-8
 from OTLModel.Datatypes.Keuzelijst import Keuzelijst
 
 
-# Generated with OTLEnumerationCreator
+# Generated with OTLEnumerationCreator. To modify: extend, do not edit
 class KlVentilatorRichting(Keuzelijst):
-    """Keuzelijst die aangeeft of de luchtstroom in één richting of beide richtingen kan plaatsvinden."""
+    """Keuzelijst die aangeeft of de luchtstroom in Ã©Ã©n richting of beide richtingen kan plaatsvinden."""
 
     def __init__(self):
         super().__init__(naam="KlVentilatorRichting",
                          label="Ventilator richting",
                          uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlVentilatorRichting",
-                         definition="Keuzelijst die aangeeft of de luchtstroom in één richting of beide richtingen kan plaatsvinden.",
+                         definition="Keuzelijst die aangeeft of de luchtstroom in Ã©Ã©n richting of beide richtingen kan plaatsvinden.",
                          usagenote="",
                          deprecated_version="",
                          codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlVentilatorRichting")

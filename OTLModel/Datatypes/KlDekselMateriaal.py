@@ -1,7 +1,8 @@
+# coding=utf-8
 from OTLModel.Datatypes.Keuzelijst import Keuzelijst
 
 
-# Generated with OTLEnumerationCreator
+# Generated with OTLEnumerationCreator. To modify: extend, do not edit
 class KlDekselMateriaal(Keuzelijst):
     """Het materiaal waaruit het deksel bestaat."""
 
@@ -22,7 +23,7 @@ class KlDekselMateriaal(Keuzelijst):
         self.add_option("grijs-gietijzer", "grijs gietijzer", "grijs gietijzer", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlDekselMateriaal/grijs-gietijzer")
         self.add_option("smeedijzer", "smeedijzer", "smeedijzer", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlDekselMateriaal/smeedijzer")
         self.add_option("staal", "staal", "staal", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlDekselMateriaal/staal")
-        self.add_option("ongeïdentificeerd-type-ijzer-of-staal", "ongeïdentificeerd type ijzer of staal", "ongeïdentificeerd type ijzer of staal", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlDekselMateriaal/ongeïdentificeerd-type-ijzer-of-staal")
-        self.add_option("ongeïdentificeerd-type-kunststof", "ongeïdentificeerd type kunststof", "ongeïdentificeerd type kunststof", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlDekselMateriaal/ongeïdentificeerd-type-kunststof")
-        self.add_option("ongeïdentificeerd-materiaal", "ongeïdentificeerd materiaal", "ongeïdentificeerd materiaal", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlDekselMateriaal/ongeïdentificeerd-materiaal")
+        self.add_option("ongeÃ¯dentificeerd-type-ijzer-of-staal", "ongeÃ¯dentificeerd type ijzer of staal", "ongeÃ¯dentificeerd type ijzer of staal", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlDekselMateriaal/ongeÃ¯dentificeerd-type-ijzer-of-staal")
+        self.add_option("ongeÃ¯dentificeerd-type-kunststof", "ongeÃ¯dentificeerd type kunststof", "ongeÃ¯dentificeerd type kunststof", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlDekselMateriaal/ongeÃ¯dentificeerd-type-kunststof")
+        self.add_option("ongeÃ¯dentificeerd-materiaal", "ongeÃ¯dentificeerd materiaal", "ongeÃ¯dentificeerd materiaal", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlDekselMateriaal/ongeÃ¯dentificeerd-materiaal")
         self.add_option("anders", "anders", "anders", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlDekselMateriaal/anders")

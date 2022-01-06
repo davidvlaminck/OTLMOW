@@ -1,3 +1,4 @@
+# coding=utf-8
 from abc import abstractmethod
 from OTLModel.Classes.ConstructieElement import ConstructieElement
 from OTLModel.Datatypes.KwantWrdInCentimeter import KwantWrdInCentimeter

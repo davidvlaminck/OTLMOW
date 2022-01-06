@@ -1,7 +1,8 @@
+# coding=utf-8
 from OTLModel.Datatypes.Keuzelijst import Keuzelijst
 
 
-# Generated with OTLEnumerationCreator
+# Generated with OTLEnumerationCreator. To modify: extend, do not edit
 class KlLEGCTestType(Keuzelijst):
     """Het test type van het geluidswerend scherm."""
 
@@ -14,5 +15,5 @@ class KlLEGCTestType(Keuzelijst):
                          deprecated_version="",
                          codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlLEGCTestType")
 
-        self.add_option("geluidsabsorptie", "geluidsabsorptie", "Proef : De ééngetalsaanduiding als waarde voor de geluidsabsorptie", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLEGCTestType/geluidsabsorptie")
-        self.add_option("luchtgeluidsisolatie", "luchtgeluidsisolatie", "Proef : De ééngetalsaanduiding voor luchtgeluidsisolatie", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLEGCTestType/luchtgeluidsisolatie")
+        self.add_option("geluidsabsorptie", "geluidsabsorptie", "Proef : De Ã©Ã©ngetalsaanduiding als waarde voor de geluidsabsorptie", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLEGCTestType/geluidsabsorptie")
+        self.add_option("luchtgeluidsisolatie", "luchtgeluidsisolatie", "Proef : De Ã©Ã©ngetalsaanduiding voor luchtgeluidsisolatie", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLEGCTestType/luchtgeluidsisolatie")

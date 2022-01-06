@@ -1,3 +1,4 @@
+# coding=utf-8
 from OTLModel.Classes.Voedingspunt import Voedingspunt
 from OTLModel.Classes.BevestigingGC import BevestigingGC
 from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
@@ -8,7 +9,7 @@ from OTLModel.Datatypes.KwantWrdInWatt import KwantWrdInWatt
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
 class Zonnepaneel(Voedingspunt, BevestigingGC):
-    """Toestel om elektrische energie op te wekken uit zonlicht met als doel het voeden van een installatie. Ook wel fotovoltaïsche cellen of zonnecellen genoemd."""
+    """Toestel om elektrische energie op te wekken uit zonlicht met als doel het voeden van een installatie. Ook wel fotovoltaÃ¯sche cellen of zonnecellen genoemd."""
 
     typeURI = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Zonnepaneel"
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""

@@ -1,3 +1,4 @@
+# coding=utf-8
 from OTLModel.Classes.BijlageVoertuigkering import BijlageVoertuigkering
 from OTLModel.Classes.Geluidsschermelement import Geluidsschermelement
 from OTLModel.Classes.SchokindexVoertuigkering import SchokindexVoertuigkering

@@ -1,3 +1,4 @@
+# coding=utf-8
 from OTLModel.Classes.GestandaardiseerdeKantopsluiting import GestandaardiseerdeKantopsluiting
 from OTLModel.Datatypes.DtcLENorm import DtcLENorm
 from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField

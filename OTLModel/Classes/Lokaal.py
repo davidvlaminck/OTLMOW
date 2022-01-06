@@ -1,3 +1,4 @@
+# coding=utf-8
 from OTLModel.Classes.Behuizing import Behuizing
 from OTLModel.Datatypes.DtcDocument import DtcDocument
 

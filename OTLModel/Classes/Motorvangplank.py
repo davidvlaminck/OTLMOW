@@ -1,3 +1,4 @@
+# coding=utf-8
 from OTLModel.Classes.AfschermendeConstructie import AfschermendeConstructie
 from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlLEACSchokindexMVP import KlLEACSchokindexMVP
@@ -7,7 +8,7 @@ from OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
 class Motorvangplank(AfschermendeConstructie):
-    """Een constructie geïnstalleerd aan een geleideconstructie of in de onmiddellijke omgeving ervan,met als doel de ernst van een botsing van een motorrijder met de geleideconstructie te reduceren."""
+    """Een constructie geÃ¯nstalleerd aan een geleideconstructie of in de onmiddellijke omgeving ervan,met als doel de ernst van een botsing van een motorrijder met de geleideconstructie te reduceren."""
 
     typeURI = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Motorvangplank"
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""

@@ -1,3 +1,4 @@
+# coding=utf-8
 from abc import abstractmethod
 from OTLModel.Classes.Signalisatie import Signalisatie
 from OTLModel.Classes.AIMObject import AIMObject

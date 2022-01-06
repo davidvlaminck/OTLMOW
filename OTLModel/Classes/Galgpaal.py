@@ -1,3 +1,4 @@
+# coding=utf-8
 from OTLModel.Classes.VRIDraagconstructie import VRIDraagconstructie
 from OTLModel.Datatypes.DecimalFloatField import DecimalFloatField
 from OTLModel.Datatypes.DtcDocument import DtcDocument
@@ -8,7 +9,7 @@ from OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
 class Galgpaal(VRIDraagconstructie):
-    """De galgpalen zijn bestemd voor het bevestigen van verkeerslichten, signaalborden, wegwijzers boven het wegdek. Bovendien laten zij het bevestigen toe van één of meerdere lantaarns van het type 200 op de paalschacht. De draagwijdte van de arm moet kunnen reiken tot 9 m. De galgpalen beantwoorden aan SB270-51-6.15"""
+    """De galgpalen zijn bestemd voor het bevestigen van verkeerslichten, signaalborden, wegwijzers boven het wegdek. Bovendien laten zij het bevestigen toe van Ã©Ã©n of meerdere lantaarns van het type 200 op de paalschacht. De draagwijdte van de arm moet kunnen reiken tot 9 m. De galgpalen beantwoorden aan SB270-51-6.15"""
 
     typeURI = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Galgpaal"
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""

@@ -1,3 +1,4 @@
+# coding=utf-8
 from OTLModel.Classes.LaagBouwklasse import LaagBouwklasse
 from OTLModel.Datatypes.DtcSupplementenCBV import DtcSupplementenCBV
 from OTLModel.Datatypes.IntegerField import IntegerField

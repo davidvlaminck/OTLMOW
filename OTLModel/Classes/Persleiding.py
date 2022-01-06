@@ -1,3 +1,4 @@
+# coding=utf-8
 from OTLModel.Classes.Buis import Buis
 from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlPersleidingMateriaal import KlPersleidingMateriaal

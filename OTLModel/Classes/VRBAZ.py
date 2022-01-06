@@ -1,3 +1,4 @@
+# coding=utf-8
 from OTLModel.Classes.VRModuleZFirmware import VRModuleZFirmware
 from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlVRBAZMerk import KlVRBAZMerk

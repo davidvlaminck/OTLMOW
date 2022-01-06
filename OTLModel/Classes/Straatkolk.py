@@ -1,3 +1,4 @@
+# coding=utf-8
 from OTLModel.Classes.Put import Put
 from OTLModel.Classes.PutRelatie import PutRelatie
 from OTLModel.Datatypes.BooleanField import BooleanField

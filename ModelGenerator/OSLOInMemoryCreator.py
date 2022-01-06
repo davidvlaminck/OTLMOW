@@ -5,6 +5,8 @@ from ModelGenerator.OSLODatatypeComplex import OSLODatatypeComplex
 from ModelGenerator.OSLODatatypeComplexAttribuut import OSLODatatypeComplexAttribuut
 from ModelGenerator.OSLODatatypePrimitive import OSLODatatypePrimitive
 from ModelGenerator.OSLODatatypePrimitiveAttribuut import OSLODatatypePrimitiveAttribuut
+from ModelGenerator.OSLODatatypeUnion import OSLODatatypeUnion
+from ModelGenerator.OSLODatatypeUnionAttribuut import OSLODatatypeUnionAttribuut
 from ModelGenerator.OSLOEnumeration import OSLOEnumeration
 from ModelGenerator.OSLORelatie import OSLORelatie
 from ModelGenerator.OSLOTypeLink import OSLOTypeLink
@@ -125,6 +127,32 @@ class OSLOInMemoryCreator:
         for row in data:
             c = OSLODatatypeComplexAttribuut(row[0], row[1], row[2], row[3], row[4], row[5], row[6], row[7], row[8], row[9],
                                              row[10], row[11], row[12])
+            list.append(c)
+
+        return list
+
+    def getAllUnionDatatypes(self):
+        data = self.sqlDbReader.performReadQuery(
+            "SELECT name, uri, definition_nl, label_nl, usagenote_nl, deprecated_version FROM OSLODatatypeUnion",
+            {})
+
+        list = []
+        for row in data:
+            c = OSLODatatypeUnion(row[0], row[1], row[2], row[3], row[4], row[5])
+            list.append(c)
+
+        return list
+
+    def getAllUnionDatatypeAttributen(self):
+        data = self.sqlDbReader.performReadQuery(
+            "SELECT name, label_nl, definition_nl, class_uri, kardinaliteit_min, kardinaliteit_max, uri, type, overerving, "
+            "constraints, readonly, usagenote_nl, deprecated_version FROM OSLODatatypeUnionAttributen",
+            {})
+
+        list = []
+        for row in data:
+            c = OSLODatatypeUnionAttribuut(row[0], row[1], row[2], row[3], row[4], row[5], row[6], row[7], row[8], row[9],
+                                           row[10], row[11], row[12])
             list.append(c)
 
         return list

@@ -11,70 +11,55 @@ class OTLUnionDatatypeCreator(AbstractDatatypeCreator):
         super().__init__(logger, osloCollector)
         self.logger.log("Created an instance of OTLUnionDatatypeCreator", LogType.INFO)
 
-    def CreateBlockToWriteFromComplexTypes(self, OSLODatatypeUnion: OSLODatatypeUnion):
-        if not isinstance(OSLODatatypeUnion, OSLODatatypeUnion):
+    def CreateBlockToWriteFromUnionTypes(self, oSLODatatypeUnion: OSLODatatypeUnion):
+        if not isinstance(oSLODatatypeUnion, OSLODatatypeUnion):
             raise ValueError(f"Input is not a OSLODatatypeUnion")
 
-        if OSLODatatypeUnion.uri == '' or not (OSLODatatypeUnion.uri == 'https://schema.org/ContactPoint' or
-                                                 OSLODatatypeUnion.uri == 'https://schema.org/OpeningHoursSpecification' or
-                                                 (OSLODatatypeUnion.uri.startswith(
-                                                     'https://wegenenverkeer.data.vlaanderen.be/ns/') and 'Dtc' in OSLODatatypeUnion.uri)):
-            raise ValueError(f"OSLODatatypeUnion.uri is invalid. Value = '{OSLODatatypeUnion.uri}'")
+        if oSLODatatypeUnion.uri == '' or not (oSLODatatypeUnion.uri.startswith(
+                'https://wegenenverkeer.data.vlaanderen.be/ns/') and 'Dtu' in oSLODatatypeUnion.uri):
+            raise ValueError(f"OSLODatatypeUnion.uri is invalid. Value = '{oSLODatatypeUnion.uri}'")
 
-        if OSLODatatypeUnion.name == '':
-            raise ValueError(f"OSLODatatypeUnion.name is invalid. Value = '{OSLODatatypeUnion.name}'")
+        if oSLODatatypeUnion.name == '':
+            raise ValueError(f"OSLODatatypeUnion.name is invalid. Value = '{oSLODatatypeUnion.name}'")
 
-        if OSLODatatypeUnion.uri.startswith('https://wegenenverkeer.data.vlaanderen.be/ns/') and 'Dtc' in OSLODatatypeUnion.uri:
-            return self.CreateBlockToWriteFromComplexTypesDtc(OSLODatatypeUnion)
-        elif OSLODatatypeUnion.uri.startswith('https://schema.org/'):
-            return self.CreateBlockToWriteFromComplexTypesDtc(OSLODatatypeUnion)
-        else:
-            raise NotImplementedError
+        return self.CreateBlockToWriteFromUnionTypesDtu(oSLODatatypeUnion)
 
-    def CreateBlockToWriteFromComplexTypesDtc(self, OSLODatatypeUnion: OSLODatatypeUnion):
-        attributen = self.osloCollector.FindComplexDatatypeAttributenByClassUri(OSLODatatypeUnion.uri)
+    def CreateBlockToWriteFromUnionTypesDtu(self, oSLODatatypeUnion: OSLODatatypeUnion):
+        attributen = self.osloCollector.FindUnionDatatypeAttributenByClassUri(oSLODatatypeUnion.uri)
 
-        datablock = ['# coding=utf-8', 'from OTLModel.Datatypes.ComplexField import ComplexField']
+        datablock = ['# coding=utf-8', 'from OTLModel.Datatypes.UnionTypeField import UnionTypeField']
 
         if any(atr.kardinaliteit_max != "1" for atr in attributen):
-            datablock.append('from OTLModel.Datatypes.KardinaliteitField import KardinaliteitField')
+            raise NotImplementedError(" no support for UnionTypes with > 1 kardinaliteit")
 
         if any(atr.readonly == 1 for atr in attributen):
             raise NotImplementedError("readonly property is assumed to be 0 on value fields")
 
-        listOfFields = self.getFieldsToImportFromListOfAttributes(attributen, ['ComplexField'])
+        listOfFields = self.getFieldsToImportFromListOfAttributes(attributen)
         for typeField in listOfFields:
             datablock.append(f'from OTLModel.Datatypes.{typeField} import {typeField}')
 
         datablock.append('')
         datablock.append('')
         datablock.append(f'# Generated with {self.__class__.__name__}. To modify: extend, do not edit')
-        datablock.append(f'class {OSLODatatypeUnion.name}(ComplexField):')
-        datablock.append(f'    """{OSLODatatypeUnion.definition_nl}"""')
+        datablock.append(f'class {oSLODatatypeUnion.name}(UnionTypeField):')
+        datablock.append(f'    """{oSLODatatypeUnion.definition_nl}"""')
         datablock.append('')
         datablock.append('    def __init__(self):')
-        datablock.append(f'        super().__init__(naam="{OSLODatatypeUnion.name}",')
-        datablock.append(f'                         label="{OSLODatatypeUnion.label_nl}",')
-        datablock.append(f'                         uri="{OSLODatatypeUnion.uri}",')
-        datablock.append(f'                         definition="{OSLODatatypeUnion.definition_nl}",')
-        datablock.append(f'                         usagenote="{OSLODatatypeUnion.usagenote_nl}",')
-        datablock.append(f'                         deprecated_version="{OSLODatatypeUnion.deprecated_version}")')
+        datablock.append(f'        super().__init__(naam="{oSLODatatypeUnion.name}",')
+        datablock.append(f'                         label="{oSLODatatypeUnion.label_nl}",')
+        datablock.append(f'                         uri="{oSLODatatypeUnion.uri}",')
+        datablock.append(f'                         definition="{oSLODatatypeUnion.definition_nl}",')
+        datablock.append(f'                         usagenote="{oSLODatatypeUnion.usagenote_nl}",')
+        datablock.append(f'                         deprecated_version="{oSLODatatypeUnion.deprecated_version}")')
         datablock.append('')
 
-        self.addAttributenToDataBlock(attributen, datablock)
+        self.addAttributenToDataBlock(attributen, datablock, forUnionTypeUse=True)
 
-        if datablock[-1] == '':
-            datablock.pop()
+        fieldsTupleLine = '        self.fieldsTuple = ('
+        for attribuut in attributen:
+            fieldsTupleLine += 'field_' + attribuut.name + ', '
+        fieldsTupleLine = fieldsTupleLine[:-2] + ')'
+        datablock.append(fieldsTupleLine)
 
         return datablock
-
-    @staticmethod
-    def getEenheidFromConstraints(constraints: str):
-        if constraints == '':
-            raise ValueError
-        split_text = constraints.split('"')
-        return split_text[1]
-
-    @staticmethod
-    def getWhiteSpaceEquivalent(string):
-        return ''.join(' ' * len(string))

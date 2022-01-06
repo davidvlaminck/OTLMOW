@@ -16,14 +16,16 @@ class OSLOCollectorTests(unittest.TestCase):
 
         # assert
         self.assertTrue(len(collector.classes) >= 1)
-        self.assertTrue(len(collector.relations) >= 1)
-        self.assertTrue(len(collector.attributes) >= 1)
         self.assertTrue(len(collector.inheritances) >= 1)
         self.assertTrue(len(collector.primitiveDatatypes) >= 1)
         self.assertTrue(len(collector.primitiveDatatypeAttributen) >= 1)
         self.assertTrue(len(collector.complexDatatypes) >= 1)
         self.assertTrue(len(collector.complexDatatypeAttributen) >= 1)
+        self.assertTrue(len(collector.unionDatatypes) >= 1)
+        self.assertTrue(len(collector.unionDatatypeAttributen) >= 1)
         self.assertTrue(len(collector.enumerations) >= 1)
+        self.assertTrue(len(collector.attributes) >= 1)
+        self.assertTrue(len(collector.relations) >= 1)
 
 
     def test_mock_CollectThenFindAttributesByClass(self):

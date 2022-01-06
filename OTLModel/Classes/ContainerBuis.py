@@ -1,3 +1,4 @@
+# coding=utf-8
 from abc import abstractmethod, ABC
 from OTLModel.Datatypes.KardinaliteitField import KardinaliteitField
 from OTLModel.Datatypes.StringField import StringField
@@ -19,5 +20,6 @@ class ContainerBuis(ABC):
                                  constraints="",
                                  usagenote="",
                                  deprecated_version="")
-        self.kleur = KardinaliteitField(minKardinaliteit="1", maxKardinaliteit="*", fieldToMultiply=kleurField)
+        self.waarde.kleur = KardinaliteitField(minKardinaliteit="1", maxKardinaliteit="*", fieldToMultiply=kleurField)
+        self.kleur = self.waarde.kleur
         """De kleur van de coating."""

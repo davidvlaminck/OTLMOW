@@ -9,6 +9,8 @@ from ModelGenerator.OSLODatatypeComplex import OSLODatatypeComplex
 from ModelGenerator.OSLODatatypeComplexAttribuut import OSLODatatypeComplexAttribuut
 from ModelGenerator.OSLODatatypePrimitive import OSLODatatypePrimitive
 from ModelGenerator.OSLODatatypePrimitiveAttribuut import OSLODatatypePrimitiveAttribuut
+from ModelGenerator.OSLODatatypeUnion import OSLODatatypeUnion
+from ModelGenerator.OSLODatatypeUnionAttribuut import OSLODatatypeUnionAttribuut
 from ModelGenerator.OSLOEnumeration import OSLOEnumeration
 from ModelGenerator.OSLOInMemoryCreator import OSLOInMemoryCreator
 from ModelGenerator.OSLORelatie import OSLORelatie
@@ -86,7 +88,7 @@ class OSLOInMemoryCreatorTests(unittest.TestCase):
                     ["Decimal", "http://www.w3.org/2001/XMLSchema#decimal",
                      "Beschrijft een decimaal getal volgens http://www.w3.org/2001/XMLSchema#decimal.", "Decimaal getal",
                      "https://www.w3.org/TR/xmlschema-2/#decimal", ""]]
-        elif query == "SELECT name, label_nl, definition_nl, class_uri, kardinaliteit_min, kardinaliteit_max, uri, fieldType, overerving, constraints, readonly, usagenote_nl, deprecated_version FROM OSLOAttributen" and arg_dict == {}:
+        elif query == "SELECT name, label_nl, definition_nl, class_uri, kardinaliteit_min, kardinaliteit_max, uri, type, overerving, constraints, readonly, usagenote_nl, deprecated_version FROM OSLOAttributen" and arg_dict == {}:
             return [["waarde", "waarde", "Beschrijft een kleur volgens het RAL classificatiesysteem.",
                      "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DteKleurRAL", "1", "1",
                      "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DteKleurRAL.waarde",
@@ -101,13 +103,13 @@ class OSLOInMemoryCreatorTests(unittest.TestCase):
                      "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInWatt",
                      "1", "1", "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInWatt.waarde",
                      "http://www.w3.org/2001/XMLSchema#decimal", "0", "", "0", "", ""]]
-        elif query == "SELECT name, label_nl, definition_nl, class_uri, kardinaliteit_min, kardinaliteit_max, uri, fieldType, overerving, constraints, readonly, usagenote_nl, deprecated_version FROM OSLODatatypePrimitiveAttributen" and arg_dict == {}:
+        elif query == "SELECT name, label_nl, definition_nl, class_uri, kardinaliteit_min, kardinaliteit_max, uri, type, overerving, constraints, readonly, usagenote_nl, deprecated_version FROM OSLODatatypePrimitiveAttributen" and arg_dict == {}:
             return [['waarde', 'waarde', 'Beschrijft een kleur volgens het RAL classificatiesysteem.',
                      'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DteKleurRAL', '1', '1',
                      'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DteKleurRAL.waarde',
                      'http://www.w3.org/2001/XMLSchema#string', '0', '', '0',
                      'De waarde moet voldoen aan volgende regex: [1-9]\d{3}', '']]
-        elif query == "SELECT name, label_nl, definition_nl, class_uri, kardinaliteit_min, kardinaliteit_max, uri, fieldType, overerving, constraints, readonly, usagenote_nl, deprecated_version FROM OSLODatatypeComplexAttributen" and arg_dict == {}:
+        elif query == "SELECT name, label_nl, definition_nl, class_uri, kardinaliteit_min, kardinaliteit_max, uri, type, overerving, constraints, readonly, usagenote_nl, deprecated_version FROM OSLODatatypeComplexAttributen" and arg_dict == {}:
             return [['identificator', 'identificator', 'Een groep van tekens om een AIM object te identificeren of te benoemen.',
                      'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcIdentificator', '1', '1',
                      'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcIdentificator.identificator',
@@ -168,6 +170,21 @@ class OSLOInMemoryCreatorTests(unittest.TestCase):
                     ['', '', 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Contactor',
                      'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomkolom',
                      'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#VoedtAangestuurd', 'Source -> Destination', '', '']]
+
+        elif query == "SELECT name, label_nl, definition_nl, class_uri, kardinaliteit_min, kardinaliteit_max, uri, type, overerving, constraints, readonly, usagenote_nl, deprecated_version FROM OSLODatatypeUnionAttributen" and arg_dict == {}:
+            return [['afwijkendeHoogte', 'afwijkende hoogte', 'De afwijkende hoogte van de mast in meter.',
+                     'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtuLichtmastMasthoogte', '0', '1',
+                     'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtuLichtmastMasthoogte.afwijkendeHoogte',
+                     'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMeter', 0, '', 0, '', ''],
+                    ['standaardHoogte', 'standaard hoogte', 'Bepaling van de standaard hoogte van een mast.',
+                     'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtuLichtmastMasthoogte', '0', '1',
+                     'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtuLichtmastMasthoogte.standaardHoogte',
+                     'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlLichtmastMasthoogte', 0, '', 0, '', '']]
+
+        elif query == "SELECT name, uri, definition_nl, label_nl, usagenote_nl, deprecated_version FROM OSLODatatypeUnion" and arg_dict == {}:
+            return [['DtuLichtmastMasthoogte', 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtuLichtmastMasthoogte',
+                     'Union datatype om een standaard of afwijkende masthoogte te bepalen.', 'Masthoogte', '', '']]
+
         return []
 
     def test_FileNotFound(self):
@@ -341,3 +358,27 @@ class OSLOInMemoryCreatorTests(unittest.TestCase):
         first = next(c for c in listOfRelations)
         self.assertEqual(type(first), OSLORelatie)
         self.assertEqual(first.uri, "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bevestiging")
+
+    def test_Mock_getAllUnionDatatypes(self):
+        mock = Mock()
+        oSLOCreator = OSLOInMemoryCreator(mock)
+        mock.performReadQuery = self.mockPerformReadQuery
+        listOfUnionDatatypes = oSLOCreator.getAllUnionDatatypes()
+        class_uri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtuLichtmastMasthoogte'
+
+        self.assertTrue(len(listOfUnionDatatypes) >= 1)
+        first = next(c for c in listOfUnionDatatypes)
+        self.assertEqual(type(first), OSLODatatypeUnion)
+        self.assertEqual(first.uri, class_uri)
+
+    def test_Mock_getAllUnionDatatypeAttributen(self):
+        mock = Mock()
+        oSLOCreator = OSLOInMemoryCreator(mock)
+        mock.performReadQuery = self.mockPerformReadQuery
+        listOfUnionDatatypeAttributen = oSLOCreator.getAllUnionDatatypeAttributen()
+        attribuut_uri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtuLichtmastMasthoogte.afwijkendeHoogte'
+
+        self.assertTrue(len(listOfUnionDatatypeAttributen) >= 1)
+        first = next(c for c in listOfUnionDatatypeAttributen)
+        self.assertEqual(type(first), OSLODatatypeUnionAttribuut)
+        self.assertEqual(first.uri, attribuut_uri)

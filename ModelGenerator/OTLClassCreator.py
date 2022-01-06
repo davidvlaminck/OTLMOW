@@ -81,7 +81,7 @@ class OTLClassCreator(AbstractDatatypeCreator):
                 datablock.append(f'        {inheritance.base_name}.__init__(self)')
             datablock.append('')
 
-        self.addAttributenToDataBlock(attributen, datablock, class_uri=osloClass.uri, forDatatypeUse=False)
+        self.addAttributenToDataBlock(attributen, datablock, class_uri=osloClass.uri, forClassUse=False)
 
         if datablock[-1] == '':
             datablock.pop()

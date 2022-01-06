@@ -76,11 +76,12 @@ class ComplexDatatypeOSLOCollector(OSLOCollector):
             OSLOTypeLink("https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KlProvincie", "OSLOEnumeration", "")
         ]
 
-        self.expectedDataDtcIdentificator = ['from OTLModel.Datatypes.ComplexField import ComplexField',
+        self.expectedDataDtcIdentificator = ['# coding=utf-8',
+                                             'from OTLModel.Datatypes.ComplexField import ComplexField',
                                              'from OTLModel.Datatypes.StringField import StringField',
                                              '',
                                              '',
-                                             '# Generated with OTLComplexDatatypeCreator',
+                                             '# Generated with OTLComplexDatatypeCreator. To modify: extend, do not edit',
                                              'class DtcIdentificator(ComplexField):',
                                              '    """Complex datatype voor de identificator van een AIM object volgens de bron van de identificator."""',
                                              '',
@@ -112,13 +113,14 @@ class ComplexDatatypeOSLOCollector(OSLOCollector):
                                              '        self.toegekendDoor = self.waarde.toegekendDoor',
                                              '        """Gegevens van de organisatie die de toekenning deed."""']
 
-        self.expectedDataDtcAdres = ['from OTLModel.Datatypes.ComplexField import ComplexField',
+        self.expectedDataDtcAdres = ['# coding=utf-8',
+                                     'from OTLModel.Datatypes.ComplexField import ComplexField',
+                                     'from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField',
                                      'from OTLModel.Datatypes.KlAlgGemeente import KlAlgGemeente',
                                      'from OTLModel.Datatypes.StringField import StringField',
-                                     'from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField',
                                      '',
                                      '',
-                                     '# Generated with OTLComplexDatatypeCreator',
+                                     '# Generated with OTLComplexDatatypeCreator. To modify: extend, do not edit',
                                      'class DtcAdres(ComplexField):',
                                      '    """Complex datatype voor de aanduiding van een bepaalde locatie, doorgaans van een huis, woning, gebouw of faciliteit, op de aarde."""',
                                      '',
@@ -141,9 +143,8 @@ class ComplexDatatypeOSLOCollector(OSLOCollector):
                                      '        """Een nummer dat de postbus aanduidt."""',
                                      '',
                                      '        self.waarde.gemeente = KeuzelijstField(naam="gemeente",',
-                                     '                                               lijst=KlAlgGemeente(),',
-                                     '                                               overerving=0,',
                                      '                                               label="gemeente",',
+                                     '                                               lijst=KlAlgGemeente(),',
                                      '                                               uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAdres.gemeente",',
                                      '                                               definition="De bestuurlijke eenheid waarin het adres gelegen is.",',
                                      '                                               constraints="",',
@@ -240,28 +241,6 @@ class OTLComplexDatatypeCreatorTests(unittest.TestCase):
             creator.CreateBlockToWriteFromComplexTypes(bad_Complex)
         self.assertEqual(str(exception_bad_name.exception), "Input is not a OSLODatatypeComplex")
 
-
-    def test_getWhiteSpaceEquivalent_EmptyString(self):
-        logger = NoneLogger()
-        collector = ComplexDatatypeOSLOCollector(mock)
-        creator = OTLComplexDatatypeCreator(logger, collector)
-        result = creator.getWhiteSpaceEquivalent('')
-        self.assertEqual('', result)
-
-    def test_getWhiteSpaceEquivalent_StringOf1Length(self):
-        logger = NoneLogger()
-        collector = ComplexDatatypeOSLOCollector(mock)
-        creator = OTLComplexDatatypeCreator(logger, collector)
-        result = creator.getWhiteSpaceEquivalent('a')
-        self.assertEqual(' ', result)
-
-    def test_getWhiteSpaceEquivalent_StringOf2Length(self):
-        logger = NoneLogger()
-        collector = ComplexDatatypeOSLOCollector(mock)
-        creator = OTLComplexDatatypeCreator(logger, collector)
-        result = creator.getWhiteSpaceEquivalent('aa')
-        self.assertEqual('  ', result)
-
     def test_DtcIdentificatorOSLODatatypeComplex(self):
         logger = NoneLogger()
         collector = ComplexDatatypeOSLOCollector(mock)
@@ -335,57 +314,3 @@ class OTLComplexDatatypeCreatorTests(unittest.TestCase):
         creator.writeToFile(DtcMaaien, 'Datatypes', dataToWrite, '../../')
 
         self.assertTrue(os.path.isfile('../../OTLModel/Datatypes/DtcMaaien.py'))
-
-    def test_getNonPrimitiveFieldFromTypeUri_ComplexField(self):
-        logger = NoneLogger()
-        collector = ComplexDatatypeOSLOCollector(mock)
-        creator = OTLComplexDatatypeCreator(logger, collector)
-        typesList = creator.getNonSingleFieldFromTypeUri('https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAdres')
-        expectedList = ['ComplexField', 'DtcAdres']
-
-        self.assertEqual(expectedList, typesList)
-
-    def test_getNonPrimitiveFieldFromTypeUri_DteField(self):
-        logger = NoneLogger()
-        collector = ComplexDatatypeOSLOCollector(mock)
-        creator = OTLComplexDatatypeCreator(logger, collector)
-        typesList = creator.getNonSingleFieldFromTypeUri('https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DteTekstblok')
-        expectedList = ['ComplexField', 'DteTekstblok']
-
-        self.assertEqual(expectedList, typesList)
-
-    def test_getNonPrimitiveFieldFromTypeUri_KwantWrdField(self):
-        logger = NoneLogger()
-        collector = ComplexDatatypeOSLOCollector(mock)
-        creator = OTLComplexDatatypeCreator(logger, collector)
-        typesList = creator.getNonSingleFieldFromTypeUri('https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInCentimeter')
-        expectedList = ['ComplexField', 'KwantWrdInCentimeter']
-
-        self.assertEqual(expectedList, typesList)
-
-    def test_getNonPrimitiveFieldFromTypeUri_Keuzelijst(self):
-        logger = NoneLogger()
-        collector = ComplexDatatypeOSLOCollector(mock)
-        creator = OTLComplexDatatypeCreator(logger, collector)
-        typesList = creator.getNonSingleFieldFromTypeUri('https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KlAlgGemeente')
-        expectedList = ['KeuzelijstField', 'KlAlgGemeente']
-
-        self.assertEqual(expectedList, typesList)
-
-    def test_getTypeNameOfComplexAttribuut_Kl(self):
-        logger = NoneLogger()
-        collector = ComplexDatatypeOSLOCollector(mock)
-        creator = OTLComplexDatatypeCreator(logger, collector)
-        dtcIdentificator = collector.FindComplexDatatypeAttributenByClassUri('https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAdres')[1]
-        typeName = creator.getTypeNameOfComplexAttribuut(dtcIdentificator.type)
-
-        self.assertEqual("KlAlgGemeente", typeName)
-
-    def test_getTypeNameOfComplexAttribuut_String(self):
-        logger = NoneLogger()
-        collector = ComplexDatatypeOSLOCollector(mock)
-        creator = OTLComplexDatatypeCreator(logger, collector)
-        dtcIdentificator = collector.FindComplexDatatypeAttributenByClassUri('https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAdres')[0]
-        typeName = creator.getTypeNameOfComplexAttribuut(dtcIdentificator.type)
-
-        self.assertEqual("string", typeName)

@@ -23,10 +23,11 @@ class EnumerationOSLOCollector(OSLOCollector):
                             'Keuzelijst met fasen uit de levenscyclus van een object om de toestand op een moment mee vast te leggen.',
                             'AIM toestand', 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlAIMToestand', '')]
 
-        self.expectedDataKlAIMToestand = ['from OTLModel.Datatypes.Keuzelijst import Keuzelijst',
+        self.expectedDataKlAIMToestand = ['# coding=utf-8',
+                                          'from OTLModel.Datatypes.Keuzelijst import Keuzelijst',
                                           '',
                                           '',
-                                          '# Generated with OTLEnumerationCreator',
+                                          '# Generated with OTLEnumerationCreator. To modify: extend, do not edit',
                                           'class KlAIMToestand(Keuzelijst):',
                                           '    """Keuzelijst met fasen uit de levenscyclus van een object om de toestand op een moment mee vast te leggen."""',
                                           '',

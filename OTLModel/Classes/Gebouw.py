@@ -1,3 +1,4 @@
+# coding=utf-8
 from OTLModel.Classes.Behuizing import Behuizing
 from OTLModel.Datatypes.DtcDocument import DtcDocument
 
@@ -12,12 +13,13 @@ class Gebouw(Behuizing):
     def __init__(self):
         super().__init__()
 
-        self.grondplan = DtcDocument()
+        self.waarde.grondplan = DtcDocument()
         """Plattegrond van het gebouw met aanduidingen van de verschillende aanwezige elementen zoals kelder, kasten met kastnummers, toegangscontrole en meer."""
-        self.grondplan.naam = "grondplan"
-        self.grondplan.label = "grondplan"
-        self.grondplan.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Gebouw.grondplan"
-        self.grondplan.definition = "Plattegrond van het gebouw met aanduidingen van de verschillende aanwezige elementen zoals kelder, kasten met kastnummers, toegangscontrole en meer."
-        self.grondplan.constraints = ""
-        self.grondplan.usagenote = ""
-        self.grondplan.deprecated_version = ""
+        self.waarde.grondplan.naam = "grondplan"
+        self.waarde.grondplan.label = "grondplan"
+        self.waarde.grondplan.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Gebouw.grondplan"
+        self.waarde.grondplan.definition = "Plattegrond van het gebouw met aanduidingen van de verschillende aanwezige elementen zoals kelder, kasten met kastnummers, toegangscontrole en meer."
+        self.waarde.grondplan.constraints = ""
+        self.waarde.grondplan.usagenote = ""
+        self.waarde.grondplan.deprecated_version = ""
+        self.grondplan = self.waarde.grondplan

@@ -34,7 +34,7 @@ class OTLComplexDatatypeCreator(AbstractDatatypeCreator):
     def CreateBlockToWriteFromComplexTypesDtc(self, osloDatatypeComplex: OSLODatatypeComplex):
         attributen = self.osloCollector.FindComplexDatatypeAttributenByClassUri(osloDatatypeComplex.uri)
 
-        datablock = ['# coding=utf-8', 'from OTLModel.Datatypes.ComplexField import ComplexField']
+        datablock = ['# coding=utf-8']
 
         if any(atr.kardinaliteit_max != "1" for atr in attributen):
             datablock.append('from OTLModel.Datatypes.KardinaliteitField import KardinaliteitField')
@@ -74,7 +74,3 @@ class OTLComplexDatatypeCreator(AbstractDatatypeCreator):
             raise ValueError
         split_text = constraints.split('"')
         return split_text[1]
-
-    @staticmethod
-    def getWhiteSpaceEquivalent(string):
-        return ''.join(' ' * len(string))

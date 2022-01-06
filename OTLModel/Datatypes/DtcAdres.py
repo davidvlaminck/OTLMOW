@@ -1,4 +1,4 @@
-from OTLModel.Datatypes.ComplexField import ComplexField
+# coding=utf-8
 from OTLModel.Datatypes.ComplexField import ComplexField
 from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlAlgGemeente import KlAlgGemeente
@@ -6,7 +6,7 @@ from OTLModel.Datatypes.KlAlgProvincie import KlAlgProvincie
 from OTLModel.Datatypes.StringField import StringField
 
 
-# Generated with OTLComplexDatatypeCreator
+# Generated with OTLComplexDatatypeCreator. To modify: extend, do not edit
 class DtcAdres(ComplexField):
     """Complex datatype voor de aanduiding van een bepaalde locatie, doorgaans van een huis, woning, gebouw of faciliteit, op de aarde."""
 

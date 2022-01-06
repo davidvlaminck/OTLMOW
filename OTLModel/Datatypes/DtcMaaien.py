@@ -1,4 +1,4 @@
-from OTLModel.Datatypes.ComplexField import ComplexField
+# coding=utf-8
 from OTLModel.Datatypes.KardinaliteitField import KardinaliteitField
 from OTLModel.Datatypes.BooleanField import BooleanField
 from OTLModel.Datatypes.ComplexField import ComplexField
@@ -7,7 +7,7 @@ from OTLModel.Datatypes.KlMaaiFrequentie import KlMaaiFrequentie
 from OTLModel.Datatypes.KlMaaiPeriode import KlMaaiPeriode
 
 
-# Generated with OTLComplexDatatypeCreator
+# Generated with OTLComplexDatatypeCreator. To modify: extend, do not edit
 class DtcMaaien(ComplexField):
     """Complex datatype voor de eigenschappen van maaien."""
 

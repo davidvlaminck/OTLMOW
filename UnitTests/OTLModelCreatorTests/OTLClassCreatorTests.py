@@ -35,31 +35,36 @@ class ClassOSLOCollector(OSLOCollector):
         ]
 
         self.typeLinks = [
-            OSLOTypeLink("https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcDocument", "OSLODatatypeComplex", "")
+            OSLOTypeLink("https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcDocument", "OSLODatatypeComplex",
+                         "")
         ]
 
-        self.expectedDataGebouw = ['from OTLModel.Classes.Behuizing import Behuizing',
-                               'from OTLModel.Datatypes.DtcDocument import DtcDocument',
-                               '',
-                               '',
-                               '# Generated with OTLClassCreator',
-                               'class Gebouw(Behuizing):',
-                               '    """Elk bouwwerk, dat een voor mensen toegankelijke overdekte, geheel of gedeeltelijk met wanden omsloten ruimte vormt."""',
-                               '',
-                               '    typeURI = "https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Gebouw"',
-                               '    """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""',
-                               '',
-                               '    def __init__(self):',
-                               '        super().__init__()',
-                               '        self.grondplan = DtcDocument()',
-                               '        """Plattegrond van het gebouw met aanduidingen van de verschillende aanwezige elementen zoals kelder, kasten met kastnummers, toegangscontrole en meer."""',
-                               '        self.grondplan.naam = "grondplan"',
-                               '        self.grondplan.label = "grondplan"',
-                               '        self.grondplan.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Gebouw.grondplan"',
-                               '        self.grondplan.definition = "Plattegrond van het gebouw met aanduidingen van de verschillende aanwezige elementen zoals kelder, kasten met kastnummers, toegangscontrole en meer."',
-                               '        self.grondplan.constraints = ""',
-                               '        self.grondplan.usagenote = ""',
-                               '        self.grondplan.deprecated_version = ""']
+        self.expectedDataGebouw = ['# coding=utf-8',
+                                   'from OTLModel.Classes.Behuizing import Behuizing',
+                                   'from OTLModel.Datatypes.DtcDocument import DtcDocument',
+                                   '',
+                                   '',
+                                   '# Generated with OTLClassCreator. To modify: extend, do not edit',
+                                   'class Gebouw(Behuizing):',
+                                   '    """Elk bouwwerk, dat een voor mensen toegankelijke overdekte, geheel of gedeeltelijk met wanden omsloten ruimte vormt."""',
+                                   '',
+                                   '    typeURI = "https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Gebouw"',
+                                   '    """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""',
+                                   '',
+                                   '    def __init__(self):',
+                                   '        super().__init__()',
+                                   '',
+                                   '        self.waarde.grondplan = DtcDocument()',
+                                   '        """Plattegrond van het gebouw met aanduidingen van de verschillende aanwezige elementen zoals kelder, kasten met kastnummers, toegangscontrole en meer."""',
+                                   '        self.waarde.grondplan.naam = "grondplan"',
+                                   '        self.waarde.grondplan.label = "grondplan"',
+                                   '        self.waarde.grondplan.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Gebouw.grondplan"',
+                                   '        self.waarde.grondplan.definition = "Plattegrond van het gebouw met aanduidingen van de verschillende aanwezige elementen zoals kelder, kasten met kastnummers, toegangscontrole en meer."',
+                                   '        self.waarde.grondplan.constraints = ""',
+                                   '        self.waarde.grondplan.usagenote = ""',
+                                   '        self.waarde.grondplan.deprecated_version = ""',
+                                   '        self.grondplan = self.waarde.grondplan']
+
 
 class TestOTLClassCreator(OTLClassCreator):
     def __init__(self, logger, collector):
@@ -118,12 +123,13 @@ class OTLClassCreatorTests(unittest.TestCase):
             creator.CreateBlockToWriteFromClasses(bad_Class)
         self.assertEqual(str(exception_bad_name.exception), "Input is not a OSLOClass")
 
-    expectedDataContainerBuis = ['from abc import abstractmethod, ABC',
+    expectedDataContainerBuis = ['# coding=utf-8',
+                                 'from abc import abstractmethod, ABC',
                                  'from OTLModel.Datatypes.KardinaliteitField import KardinaliteitField',
                                  'from OTLModel.Datatypes.StringField import StringField',
                                  '',
                                  '',
-                                 '# Generated with OTLClassCreator',
+                                 '# Generated with OTLClassCreator. To modify: extend, do not edit',
                                  'class ContainerBuis(ABC):',
                                  '    """Abstracte voor het groeperen van eigenschappen en relaties van buisvormige container elementen. Dit zijn buizen die kabels of andere leidingen kunnen bevatten."""',
                                  '',
@@ -139,7 +145,8 @@ class OTLClassCreatorTests(unittest.TestCase):
                                  '                                 constraints="",',
                                  '                                 usagenote="",',
                                  '                                 deprecated_version="")',
-                                 '        self.kleur = KardinaliteitField(minKardinaliteit="1", maxKardinaliteit="*", fieldToMultiply=kleurField)',
+                                 '        self.waarde.kleur = KardinaliteitField(minKardinaliteit="1", maxKardinaliteit="*", fieldToMultiply=kleurField)',
+                                 '        self.kleur = self.waarde.kleur',
                                  '        """De kleur van de coating."""']
 
     def test_ContainerBuis(self):
@@ -167,7 +174,6 @@ class OTLClassCreatorTests(unittest.TestCase):
         dataToWrite = creator.CreateBlockToWriteFromClasses(gebouw)
 
         self.assertEqual(collector.expectedDataGebouw, dataToWrite)
-
 
     def test_WriteToFileContainerBuis(self):
         logger = NoneLogger()
@@ -219,5 +225,3 @@ class OTLClassCreatorTests(unittest.TestCase):
         creator.writeToFile(containerBuis, 'Classes', dataToWrite, '../../')
 
         self.assertTrue(os.path.isfile('../../OTLModel/Classes/Gebouw.py'))
-
-

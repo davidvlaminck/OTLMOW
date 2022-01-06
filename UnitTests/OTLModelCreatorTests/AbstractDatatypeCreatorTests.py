@@ -6,10 +6,9 @@ from ModelGenerator.AbstractDatatypeCreator import AbstractDatatypeCreator
 from ModelGenerator.OSLOAttribuut import OSLOAttribuut
 from ModelGenerator.OSLOCollector import OSLOCollector
 from ModelGenerator.OSLODatatypeComplexAttribuut import OSLODatatypeComplexAttribuut
-from ModelGenerator.OSLODatatypePrimitiveAttribuut import OSLODatatypePrimitiveAttribuut
-from ModelGenerator.OSLOEnumeration import OSLOEnumeration
 from ModelGenerator.OSLOTypeLink import OSLOTypeLink
 from ModelGenerator.OTLComplexDatatypeCreator import OTLComplexDatatypeCreator
+from UnitTests.OTLModelCreatorTests.OTLComplexDatatypeCreatorTests import ComplexDatatypeOSLOCollector
 
 
 class ClassOSLOCollector(OSLOCollector):
@@ -31,6 +30,8 @@ class ClassOSLOCollector(OSLOCollector):
                          ""),
             OSLOTypeLink("https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KlAlgGemeente", "OSLOEnumeration",
                          ""),
+            OSLOTypeLink("https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtuLichtmastMasthoogte", "OSLODatatypeUnion",
+                         ''),
             OSLOTypeLink("https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMeter",
                          "OSLODatatypePrimitive", ""),
             OSLOTypeLink("https://schema.org/OpeningHoursSpecification", "OSLODatatypeComplex", ""),
@@ -370,7 +371,8 @@ class AbstractDatatypeCreatorTests(unittest.TestCase):
                              '        standenField.constraints = ""',
                              '        standenField.usagenote = ""',
                              '        standenField.deprecated_version = ""',
-                             '        self.standen = KardinaliteitField(minKardinaliteit="1", maxKardinaliteit="*", fieldToMultiply=standenField)',
+                             '        self.waarde.standen = KardinaliteitField(minKardinaliteit="1", maxKardinaliteit="*", fieldToMultiply=standenField)',
+                             '        self.standen = self.waarde.standen',
                              '        """Met de standen van de ventilator kan de draaisnelheid en soms ook de draairichting van de de bladen van de ventilator bepaald worden."""',
                              '']
 
@@ -392,10 +394,86 @@ class AbstractDatatypeCreatorTests(unittest.TestCase):
                              '        ipAdresField.constraints = ""',
                              '        ipAdresField.usagenote = ""',
                              '        ipAdresField.deprecated_version = ""',
-                             '        self.ipAdres = KardinaliteitField(minKardinaliteit="1", maxKardinaliteit="*", fieldToMultiply=ipAdresField)',
+                             '        self.waarde.ipAdres = KardinaliteitField(minKardinaliteit="1", maxKardinaliteit="*", fieldToMultiply=ipAdresField)',
+                             '        self.ipAdres = self.waarde.ipAdres',
                              '        """Het IP-adres van de hardware."""',
                              '']
 
         self.assertEqual(expectedDatablock, creator.addAttributenToDataBlock([attribuut], [], False))
 
     # kard max DteField (https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#HardwareToegang.ipAdres)
+
+    def test_getWhiteSpaceEquivalent_EmptyString(self):
+        creator = TestAbstractCreator()
+        result = creator.getWhiteSpaceEquivalent('')
+        self.assertEqual('', result)
+
+    def test_getWhiteSpaceEquivalent_StringOf1Length(self):
+        creator = TestAbstractCreator()
+        result = creator.getWhiteSpaceEquivalent('a')
+        self.assertEqual(' ', result)
+
+    def test_getWhiteSpaceEquivalent_StringOf2Length(self):
+        creator = TestAbstractCreator()
+        result = creator.getWhiteSpaceEquivalent('aa')
+        self.assertEqual('  ', result)
+
+    def test_getNonPrimitiveFieldFromTypeUri_ComplexField(self):
+        creator = TestAbstractCreator()
+        typesList = creator.getNonSingleFieldFromTypeUri(
+            'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAdres')
+        expectedList = ['ComplexField', 'DtcAdres']
+
+        self.assertEqual(expectedList, typesList)
+
+    def test_getNonPrimitiveFieldFromTypeUri_DteField(self):
+        creator = TestAbstractCreator()
+        typesList = creator.getNonSingleFieldFromTypeUri(
+            'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DteTekstblok')
+        expectedList = ['ComplexField', 'DteTekstblok']
+
+        self.assertEqual(expectedList, typesList)
+
+    def test_getNonPrimitiveFieldFromTypeUri_KwantWrdField(self):
+        creator = TestAbstractCreator()
+        typesList = creator.getNonSingleFieldFromTypeUri(
+            'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInCentimeter')
+        expectedList = ['ComplexField', 'KwantWrdInCentimeter']
+
+        self.assertEqual(expectedList, typesList)
+
+    def test_getNonPrimitiveFieldFromTypeUri_UnionTypeField(self):
+        creator = TestAbstractCreator()
+        typesList = creator.getNonSingleFieldFromTypeUri(
+            'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtuLichtmastMasthoogte')
+        expectedList = ['UnionTypeField', 'DtuLichtmastMasthoogte']
+
+        self.assertEqual(expectedList, typesList)
+
+    def test_getNonPrimitiveFieldFromTypeUri_Keuzelijst(self):
+        creator = TestAbstractCreator()
+        typesList = creator.getNonSingleFieldFromTypeUri(
+            'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KlAlgGemeente')
+        expectedList = ['KeuzelijstField', 'KlAlgGemeente']
+
+        self.assertEqual(expectedList, typesList)
+
+    def test_getTypeNameOfComplexAttribuut_Kl(self):
+        logger = NoneLogger()
+        collector = ComplexDatatypeOSLOCollector(mock)
+        creator = OTLComplexDatatypeCreator(logger, collector)
+        dtcIdentificator = collector.FindComplexDatatypeAttributenByClassUri(
+            'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAdres')[1]
+        typeName = creator.getTypeNameOfComplexAttribuut(dtcIdentificator.type)
+
+        self.assertEqual("KlAlgGemeente", typeName)
+
+    def test_getTypeNameOfComplexAttribuut_String(self):
+        logger = NoneLogger()
+        collector = ComplexDatatypeOSLOCollector(mock)
+        creator = OTLComplexDatatypeCreator(logger, collector)
+        dtcIdentificator = collector.FindComplexDatatypeAttributenByClassUri(
+            'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAdres')[0]
+        typeName = creator.getTypeNameOfComplexAttribuut(dtcIdentificator.type)
+
+        self.assertEqual("string", typeName)

@@ -77,7 +77,7 @@ class OTLPrimitiveDatatypeCreator(AbstractDatatypeCreator):
         if any(int(a.kardinaliteit_max) > 1 for a in attributen):
             raise NotImplementedError("Found PrimitiveDatatypeAttribuut with kardinaliteit_max > 1")
 
-        datablock = ['from OTLModel.Datatypes.KwantWrd import KwantWrd']
+        datablock = ['# coding=utf-8', 'from OTLModel.Datatypes.KwantWrd import KwantWrd']
         if 'Literal' not in attributen[0].type:
             raise NotImplementedError(
                 f'{osloDatatypePrimitive.uri}: the first attribute is not the Literal for this DatatypePrimitive')
@@ -89,7 +89,7 @@ class OTLPrimitiveDatatypeCreator(AbstractDatatypeCreator):
         datablock.append(f'from OTLModel.Datatypes.{typeField} import {typeField}')
         datablock.append('')
         datablock.append('')
-        datablock.append(f'# Generated with {self.__class__.__name__}')
+        datablock.append(f'# Generated with {self.__class__.__name__}. To modify: extend, do not edit')
         datablock.append(f'class {osloDatatypePrimitive.name}(KwantWrd):')
         datablock.append(f'    """{osloDatatypePrimitive.definition_nl}"""')
         datablock.append('')

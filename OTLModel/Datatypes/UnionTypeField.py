@@ -2,11 +2,11 @@ from OTLModel.Datatypes.OTLField import OTLField
 
 
 class UnionTypeField(OTLField):
-    def __init__(self, naam, label, uri, definition, constraints, usagenote, deprecated_version, fieldsTuple, readonly=False,
+    def __init__(self, naam, label, uri, definition, usagenote, deprecated_version, readonly=False,
                  readonlyValue=None):
-        super().__init__(naam=naam, label=label, uri=uri, definition=definition, constraints=constraints, usagenote=usagenote,
+        super().__init__(naam=naam, label=label, uri=uri, definition=definition, constraints=None, usagenote=usagenote,
                          deprecated_version=deprecated_version, readonly=readonly, readonlyValue=readonlyValue)
-        self.fieldsTuple = fieldsTuple
+        self.fieldsTuple = None
         self.actiefVeld = None
 
     def __getattribute__(self, name):
@@ -22,14 +22,14 @@ class UnionTypeField(OTLField):
                 self.__dict__["waarde"] = value
                 return
             if self.actiefVeld is None:
-                raise RuntimeError('Use the method use_field() first to notify what field of the union type you want to use.')
+                raise RuntimeError('Use the method gebruik_veld() first to declare what field of the union type you want to use.')
             if not isinstance(value, type(self.actiefVeld)):
                 raise ValueError(f'{value} is not of the correct type, expecting type of {type(self.actiefVeld)})')
             self.actiefVeld = value
             return
         self.__dict__[name] = value
 
-    def use_field(self, fieldName):
+    def gebruik_veld(self, fieldName):
         try:
             self.actiefVeld = next(f for f in self.fieldsTuple if f.naam == fieldName)
             self.waarde = self.actiefVeld.waarde

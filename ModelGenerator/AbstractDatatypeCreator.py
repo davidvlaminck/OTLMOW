@@ -59,6 +59,9 @@ class AbstractDatatypeCreator(ABC):
         if '#Kl' in fieldType:
             typeName = fieldType[fieldType.find("#") + 1::]
             return ['KeuzelijstField', typeName]
+        if '#Dtu' in fieldType:
+            typeName = fieldType[fieldType.find("#") + 1::]
+            return ['UnionTypeField', typeName]
 
         raise NotImplemented(f'not supported fieldType {fieldType} in getNonSingleFieldFromTypeUri()')
 
@@ -139,7 +142,7 @@ class AbstractDatatypeCreator(ABC):
 
         raise NotImplementedError(f"getTypeNameOfComplexAttribuut fails to get typename from {type_uri}")
 
-    def addAttributenToDataBlock(self, attributen, datablock, class_uri='', forDatatypeUse=True):
+    def addAttributenToDataBlock(self, attributen, datablock, class_uri='', forClassUse=False, forUnionTypeUse=False):
         for attribuut in attributen:
             typeLink = self.getTypeLinkFromAttribuut(attribuut)
 
@@ -151,9 +154,11 @@ class AbstractDatatypeCreator(ABC):
                 # raise NotImplementedError(f"deprecated attributes is not implemented, found in {attributen.uri}")
 
             # depending on the use for datatype creation or class creation use 'self.' or 'self.waarde.'
-            selfWaarde = 'self.waarde'
-            if not forDatatypeUse:
-                selfWaarde = 'self'
+            selfWaarde = 'self.waarde.'
+            if forClassUse:
+                selfWaarde = 'self.'
+            if forUnionTypeUse:
+                selfWaarde = 'field_'
 
             if (attribuut.uri == 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMObject.typeURI' and class_uri == 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMObject') or (
                     attribuut.uri == 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#RelatieObject.typeURI' and class_uri == 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#RelatieObject'):
@@ -165,29 +170,29 @@ class AbstractDatatypeCreator(ABC):
                 if typeLink == "OSLODatatypePrimitive":
                     fieldName = self.getSingleFieldFromTypeUri(attribuut.type)
                     if fieldName.startswith("Dte") or fieldName.startswith('KwantWrd'):
-                        datablock.append(f'        {selfWaarde}.{attribuut.name} = {fieldName}()')
+                        datablock.append(f'        {selfWaarde}{attribuut.name} = {fieldName}()')
                         datablock.append(f'        """{definitie}"""')
-                        datablock.append(f'        {selfWaarde}.{attribuut.name}.naam = "{attribuut.name}"')
-                        datablock.append(f'        {selfWaarde}.{attribuut.name}.label = "{attribuut.label_nl}"')
-                        datablock.append(f'        {selfWaarde}.{attribuut.name}.uri = "{attribuut.uri}"')
+                        datablock.append(f'        {selfWaarde}{attribuut.name}.naam = "{attribuut.name}"')
+                        datablock.append(f'        {selfWaarde}{attribuut.name}.label = "{attribuut.label_nl}"')
+                        datablock.append(f'        {selfWaarde}{attribuut.name}.uri = "{attribuut.uri}"')
 
-                        datablock.append(f'        {selfWaarde}.{attribuut.name}.definition = "{definitie}"')
-                        datablock.append(f'        {selfWaarde}.{attribuut.name}.constraints = "{attribuut.constraints}"')
-                        datablock.append(f'        {selfWaarde}.{attribuut.name}.usagenote = "{attribuut.usagenote_nl}"')
+                        datablock.append(f'        {selfWaarde}{attribuut.name}.definition = "{definitie}"')
+                        datablock.append(f'        {selfWaarde}{attribuut.name}.constraints = "{attribuut.constraints}"')
+                        datablock.append(f'        {selfWaarde}{attribuut.name}.usagenote = "{attribuut.usagenote_nl}"')
                         if attribuut.readonly:
-                            datablock.append(f'        {selfWaarde}.{attribuut.name}.readonly = {attribuut.readonly}')
+                            datablock.append(f'        {selfWaarde}{attribuut.name}.readonly = {attribuut.readonly}')
                         datablock.append(
-                            f'        {selfWaarde}.{attribuut.name}.deprecated_version = "{attribuut.deprecated_version}"')
-                        if forDatatypeUse:
-                            datablock.append(f'        self.{attribuut.name} = {selfWaarde}.{attribuut.name}')
+                            f'        {selfWaarde}{attribuut.name}.deprecated_version = "{attribuut.deprecated_version}"')
+                        if not forClassUse and not forUnionTypeUse:
+                            datablock.append(f'        self.{attribuut.name} = {selfWaarde}{attribuut.name}')
                         if (attribuut.uri == 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMObject.typeURI' and class_uri == 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMObject') or (
                                 attribuut.uri == 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#RelatieObject.typeURI' and class_uri == 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#RelatieObject'):
                             datablock.append('        self.typeURI.waarde = uri')
                     else:
                         whitespace = self.getWhiteSpaceEquivalent(
-                            f'        {selfWaarde}.{attribuut.name} = {self.getFieldNameFromTypeUri(attribuut.type)}(')
+                            f'        {selfWaarde}{attribuut.name} = {self.getFieldNameFromTypeUri(attribuut.type)}(')
                         datablock.append(
-                            f'        {selfWaarde}.{attribuut.name} = {self.getFieldNameFromTypeUri(attribuut.type)}(naam="{attribuut.name}",')
+                            f'        {selfWaarde}{attribuut.name} = {self.getFieldNameFromTypeUri(attribuut.type)}(naam="{attribuut.name}",')
                         datablock.append(f'{whitespace}label="{attribuut.label_nl}",')
                         datablock.append(f'{whitespace}uri="{attribuut.uri}",')
                         datablock.append(f'{whitespace}definition="{definitie}",')
@@ -196,8 +201,8 @@ class AbstractDatatypeCreator(ABC):
                         if attribuut.readonly:
                             datablock.append(f'{whitespace}readonly="{attribuut.readonly}",')
                         datablock.append(f'{whitespace}deprecated_version="{attribuut.deprecated_version}")')
-                        if forDatatypeUse:
-                            datablock.append(f'        self.{attribuut.name} = {selfWaarde}.{attribuut.name}')
+                        if not forClassUse and not forUnionTypeUse:
+                            datablock.append(f'        self.{attribuut.name} = {selfWaarde}{attribuut.name}')
                         datablock.append(f'        """{definitie}"""')
 
                     datablock.append('')
@@ -206,9 +211,9 @@ class AbstractDatatypeCreator(ABC):
                 if typeLink == "OSLOEnumeration":
                     typeName = self.getTypeNameOfEnumUri(attribuut.type)
                     whitespace = self.getWhiteSpaceEquivalent(
-                        f'        {selfWaarde}.{attribuut.name} = KeuzelijstField(')
+                        f'        {selfWaarde}{attribuut.name} = KeuzelijstField(')
                     datablock.append(
-                        f'        {selfWaarde}.{attribuut.name} = KeuzelijstField(naam="{attribuut.name}",')
+                        f'        {selfWaarde}{attribuut.name} = KeuzelijstField(naam="{attribuut.name}",')
                     datablock.append(f'{whitespace}label="{attribuut.label_nl}",')
                     datablock.append(f'{whitespace}lijst={typeName}(),')
                     datablock.append(f'{whitespace}uri="{attribuut.uri}",')
@@ -218,28 +223,28 @@ class AbstractDatatypeCreator(ABC):
                     if attribuut.readonly:
                         datablock.append(f'{whitespace}readonly="{attribuut.readonly}",')
                     datablock.append(f'{whitespace}deprecated_version="{attribuut.deprecated_version}")')
-                    if forDatatypeUse:
-                        datablock.append(f'        self.{attribuut.name} = {selfWaarde}.{attribuut.name}')
+                    if not forClassUse and not forUnionTypeUse:
+                        datablock.append(f'        self.{attribuut.name} = {selfWaarde}{attribuut.name}')
                     datablock.append(f'        """{definitie}"""')
                     datablock.append('')
                     continue
 
                 if typeLink == "OSLODatatypeComplex":
                     fieldName = self.getTypeNameOfComplexAttribuut(attribuut.type)
-                    datablock.append(f'        {selfWaarde}.{attribuut.name} = {fieldName}()')
+                    datablock.append(f'        {selfWaarde}{attribuut.name} = {fieldName}()')
                     datablock.append(f'        """{definitie}"""')
-                    datablock.append(f'        {selfWaarde}.{attribuut.name}.naam = "{attribuut.name}"')
-                    datablock.append(f'        {selfWaarde}.{attribuut.name}.label = "{attribuut.label_nl}"')
-                    datablock.append(f'        {selfWaarde}.{attribuut.name}.uri = "{attribuut.uri}"')
-                    datablock.append(f'        {selfWaarde}.{attribuut.name}.definition = "{definitie}"')
-                    datablock.append(f'        {selfWaarde}.{attribuut.name}.constraints = "{attribuut.constraints}"')
-                    datablock.append(f'        {selfWaarde}.{attribuut.name}.usagenote = "{attribuut.usagenote_nl}"')
+                    datablock.append(f'        {selfWaarde}{attribuut.name}.naam = "{attribuut.name}"')
+                    datablock.append(f'        {selfWaarde}{attribuut.name}.label = "{attribuut.label_nl}"')
+                    datablock.append(f'        {selfWaarde}{attribuut.name}.uri = "{attribuut.uri}"')
+                    datablock.append(f'        {selfWaarde}{attribuut.name}.definition = "{definitie}"')
+                    datablock.append(f'        {selfWaarde}{attribuut.name}.constraints = "{attribuut.constraints}"')
+                    datablock.append(f'        {selfWaarde}{attribuut.name}.usagenote = "{attribuut.usagenote_nl}"')
                     if attribuut.readonly:
-                        datablock.append(f'        {selfWaarde}.{attribuut.name}.readonly = {attribuut.readonly}')
+                        datablock.append(f'        {selfWaarde}{attribuut.name}.readonly = {attribuut.readonly}')
                     datablock.append(
-                        f'        {selfWaarde}.{attribuut.name}.deprecated_version = "{attribuut.deprecated_version}"')
-                    if forDatatypeUse:
-                        datablock.append(f'        self.{attribuut.name} = {selfWaarde}.{attribuut.name}')
+                        f'        {selfWaarde}{attribuut.name}.deprecated_version = "{attribuut.deprecated_version}"')
+                    if not forClassUse and not forUnionTypeUse:
+                        datablock.append(f'        self.{attribuut.name} = {selfWaarde}{attribuut.name}')
                     datablock.append('')
                     continue
 
@@ -257,7 +262,7 @@ class AbstractDatatypeCreator(ABC):
                         datablock.append(f'        {attribuut.name}Field.readonly = {attribuut.readonly}')
                     datablock.append(
                         f'        {attribuut.name}Field.deprecated_version = "{attribuut.deprecated_version}"')
-                    if forDatatypeUse:
+                    if not forClassUse and not forUnionTypeUse:
                         datablock.append(
                             f'        self.waarde.{attribuut.name} = KardinaliteitField(minKardinaliteit="{attribuut.kardinaliteit_min}", maxKardinaliteit="{attribuut.kardinaliteit_max}", fieldToMultiply={attribuut.name}Field)')
                         datablock.append(f'        self.{attribuut.name} = self.waarde.{attribuut.name}')
@@ -283,7 +288,7 @@ class AbstractDatatypeCreator(ABC):
                     if attribuut.readonly:
                         datablock.append(f'{whitespace}readonly="{attribuut.readonly}",')
                     datablock.append(f'{whitespace}deprecated_version="{attribuut.deprecated_version}")')
-                    if forDatatypeUse:
+                    if not forClassUse and not forUnionTypeUse:
                         datablock.append(
                             f'        self.waarde.{attribuut.name} = KardinaliteitField(minKardinaliteit="{attribuut.kardinaliteit_min}", maxKardinaliteit="{attribuut.kardinaliteit_max}", fieldToMultiply={attribuut.name}Field)')
                         datablock.append(f'        self.{attribuut.name} = self.waarde.{attribuut.name}')
@@ -310,7 +315,7 @@ class AbstractDatatypeCreator(ABC):
                             datablock.append(f'        {attribuut.name}Field.readonly = {attribuut.readonly}')
                         datablock.append(
                             f'        {attribuut.name}Field.deprecated_version = "{attribuut.deprecated_version}"')
-                        if forDatatypeUse:
+                        if not forClassUse and not forUnionTypeUse:
                             datablock.append(
                                 f'        self.waarde.{attribuut.name} = KardinaliteitField(minKardinaliteit="{attribuut.kardinaliteit_min}", maxKardinaliteit="{attribuut.kardinaliteit_max}", fieldToMultiply={attribuut.name}Field)')
                             datablock.append(f'        self.{attribuut.name} = self.waarde.{attribuut.name}')
@@ -331,7 +336,7 @@ class AbstractDatatypeCreator(ABC):
                         if attribuut.readonly:
                             datablock.append(f'{whitespace}readonly="{attribuut.readonly}",')
                         datablock.append(f'{whitespace}deprecated_version="{attribuut.deprecated_version}")')
-                        if forDatatypeUse:
+                        if not forClassUse and not forUnionTypeUse:
                             datablock.append(
                                 f'        self.waarde.{attribuut.name} = KardinaliteitField(minKardinaliteit="{attribuut.kardinaliteit_min}", maxKardinaliteit="{attribuut.kardinaliteit_max}", fieldToMultiply={attribuut.name}Field)')
                             datablock.append(f'        self.{attribuut.name} = self.waarde.{attribuut.name}')

@@ -3,6 +3,7 @@ from typing import List
 from ModelGenerator.OSLOClass import OSLOClass
 from ModelGenerator.OSLODatatypeComplexAttribuut import OSLODatatypeComplexAttribuut
 from ModelGenerator.OSLODatatypePrimitiveAttribuut import OSLODatatypePrimitiveAttribuut
+from ModelGenerator.OSLODatatypeUnionAttribuut import OSLODatatypeUnionAttribuut
 
 
 class OSLOCollector:
@@ -15,6 +16,8 @@ class OSLOCollector:
         self.primitiveDatatypeAttributen = []
         self.complexDatatypes = []
         self.complexDatatypeAttributen = []
+        self.unionDatatypes = []
+        self.unionDatatypeAttributen = []
         self.enumerations = []
         self.typeLinks = []
         self.relations = []
@@ -27,6 +30,8 @@ class OSLOCollector:
         self.primitiveDatatypeAttributen = self.OSLOInMemoryCreator.getAllPrimitiveDatatypeAttributen()
         self.complexDatatypes = self.OSLOInMemoryCreator.getAllComplexDatatypes()
         self.complexDatatypeAttributen = self.OSLOInMemoryCreator.getAllComplexDatatypeAttributen()
+        self.unionDatatypes = self.OSLOInMemoryCreator.getAllUnionDatatypes()
+        self.unionDatatypeAttributen = self.OSLOInMemoryCreator.getAllUnionDatatypeAttributen()
         self.enumerations = self.OSLOInMemoryCreator.getEnumerations()
         self.typeLinks = self.OSLOInMemoryCreator.getTypeLinks()
         self.relations = self.OSLOInMemoryCreator.getAllRelations()
@@ -51,6 +56,12 @@ class OSLOCollector:
 
     def FindComplexDatatypeAttributenByClassUri(self, class_uri: str) -> list[OSLODatatypeComplexAttribuut]:
         return sorted(list(filter(lambda p: p.class_uri == class_uri, self.complexDatatypeAttributen)), key=lambda p: p.uri)
+
+    def FindUnionDatatypeByUri(self, uri):
+        return next(p for p in self.unionDatatypes if p.uri == uri)
+
+    def FindUnionDatatypeAttributenByClassUri(self, class_uri: str) -> list[OSLODatatypeUnionAttribuut]:
+        return sorted(list(filter(lambda p: p.class_uri == class_uri, self.unionDatatypeAttributen)), key=lambda p: p.uri)
 
     def FindEnumerationByUri(self, uri):
         return next(p for p in self.enumerations if p.uri == uri)

@@ -1,16 +1,16 @@
 import unittest
 
+from OTLModel.Classes.AIMObject import AIMObject
 from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlLichtmastMasthoogte import KlLichtmastMasthoogte
 from OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter
 from OTLModel.Datatypes.UnionTypeField import UnionTypeField
 from OTLModel.Classes.Aftakking import Aftakking
-from OTLModel.Datatypes.KlAlgGemeente import KlAlgGemeente
 
 
-class UnionTestClass(Aftakking):
-    def __init__(self):
-        super().__init__()
+class UnionTestField(UnionTypeField):
+    def __init__(self, naam, label, uri, definition, constraints, usagenote, deprecated_version, readonly=False,
+                 readonlyValue=None):
 
         field1 = KwantWrdInMeter()
         """De afwijkende hoogte van de mast in meter."""
@@ -31,16 +31,32 @@ class UnionTestClass(Aftakking):
                                  usagenote="",
                                  deprecated_version="")
 
-        self.unionveld = UnionTypeField(naam="testUnion",
+        super().__init__(naam=naam,
+                         label=label,
+                         uri=uri,
+                         definition=definition,
+                         constraints=constraints,
+                         usagenote=usagenote,
+                         deprecated_version=deprecated_version,
+                         readonly=readonly,
+                         readonlyValue=readonlyValue,
+                         fieldsTuple=(field1, field2))
+
+
+class UnionTestClass(AIMObject):
+    def __init__(self):
+        super().__init__()
+
+        self.unionveld = UnionTestField(naam="testUnion",
                                         label="testUnion",
                                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#testUnion",
                                         definition="testUnion definitie",
+                                        constraints="",
                                         usagenote="",
-                                        deprecated_version="",
-                                        fieldsTuple=(field1, field2))
+                                        deprecated_version="")
 
 
-class KeuzelijstFieldTests(unittest.TestCase):
+class UnionTypeFieldTests(unittest.TestCase):
     def test_InitClassWithField(self):
         c = UnionTestClass()
         self.assertIsNotNone(c)

@@ -11,13 +11,16 @@ deprecated classes geven een warning
 deprecated attributen? door overerving aan te passen?
 AnyURI implementeren
 utf-8 encoding > setting in pycharm aanpassen + UTF-8 + BOM aanzetten voor windows
-Agent - ProefEnMeting - Keuring ondersteuning
+Agent - Keuring ondersteuning > Worden niet correct gegenereerd
 
 
 To check:
 Agent
 Keuring
 Sokkel (dtc ontbreekt)
+Signalisatie (abstract zonder attributen)
+AIMObject TypeURI override
+RelatieObject TypeURI override
 ==> query'en welke concrete classes NIET overerven van AIMObject > RelatieInteractor en OTL Asset toevoegen aan die assets
 
 OTLPrimitiveDatatypeCreator probleem met getFieldFromTypeUri oplossen

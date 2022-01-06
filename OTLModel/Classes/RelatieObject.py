@@ -45,13 +45,3 @@ class RelatieObject(AIMDBStatus):
         self.doelAssetId.constraints = ""
         self.doelAssetId.usagenote = ""
         self.doelAssetId.deprecated_version = ""
-
-        uri = self.typeURI
-        self.typeURI = URIField(naam="typeURI",
-                                label="type URI",
-                                uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#RelatieObject.typeURI",
-                                definition="De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI .",
-                                constraints="",
-                                usagenote="",
-                                deprecated_version="")
-        """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI ."""

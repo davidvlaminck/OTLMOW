@@ -11,3 +11,4 @@ class Verankering(ABC):
 
     @abstractmethod
     def __init__(self):
+        pass

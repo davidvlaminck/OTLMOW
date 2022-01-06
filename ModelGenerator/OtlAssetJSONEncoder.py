@@ -1,19 +1,20 @@
 import json
 
 from OTLModel.BaseClasses.OTLAsset import OTLAsset
+from OTLModel.Classes.RelatieObject import RelatieObject
 from OTLModel.Datatypes.OTLField import OTLField
 
 
 class OtlAssetJSONEncoder(json.JSONEncoder):
-    def default(self, otlAsset):
-        if isinstance(otlAsset, OTLAsset):
-            d = dir(otlAsset)
+    def default(self, otlObject):
+        if isinstance(otlObject, OTLAsset) or isinstance(otlObject, RelatieObject):
+            d = dir(otlObject)
             dictCopy = {}
             for key in d:
                 if key[0] == '_':
                     pass
                 else:
-                    value = otlAsset.__getattribute__(key)
+                    value = otlObject.__getattribute__(key)
                     if isinstance(value, OTLField):
                         valueByDefault = value.default()
                         if valueByDefault is None:
@@ -27,14 +28,14 @@ class OtlAssetJSONEncoder(json.JSONEncoder):
                         if isinstance(valueByDefault, dict):
                             if self.isEmptyDict(valueByDefault):
                                 continue
-                        dictCopy[key] =valueByDefault
+                        dictCopy[key] = valueByDefault
                     else:
                         if value is None:
                             continue
                         dictCopy[key] = value
             return dictCopy
         else:
-            return super().default(otlAsset)
+            return super().default(otlObject)
 
     # https://realpython.com/python-json/?fbclid=IwAR2gXW0-lF6Koyd6YxpSUBJH-mEj1lS1lEPUavPfrYbzfbzWnkLcRN_RAG8
 

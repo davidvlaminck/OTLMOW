@@ -85,6 +85,8 @@ class OTLClassCreator(AbstractDatatypeCreator):
             datablock.append('')
 
         self.addAttributenToDataBlock(attributen, datablock, class_uri=osloClass.uri, forClassUse=True)
+        if len(inheritances) == 0 and len(attributen) == 0:
+            datablock.append('        pass')
 
         if datablock[-1] == '':
             datablock.pop()
@@ -93,6 +95,7 @@ class OTLClassCreator(AbstractDatatypeCreator):
 
     def getClassLineFromClassAndInheritances(self, osloClass, inheritances):
         if osloClass.abstract == 0 and len(inheritances) == 0:
+            return f'class {osloClass.name}:'
             raise NotImplementedError(f"{osloClass.uri} is a base class, which is not implemented")
         if osloClass.abstract == 1 and len(inheritances) == 0:
             return f'class {osloClass.name}(ABC):'

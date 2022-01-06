@@ -11,3 +11,4 @@ class ConstructieElementenGC(ABC):
 
     @abstractmethod
     def __init__(self):
+        pass

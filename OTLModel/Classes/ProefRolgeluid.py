@@ -2,7 +2,7 @@ from OTLModel.Classes.Proef import Proef
 from OTLModel.Datatypes.DtcDocument import DtcDocument
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class ProefRolgeluid(Proef):
     """Het rolgeluid wordt gemeten met de CPX-methode volgens ISO/CEN 11819-2."""
 
@@ -11,6 +11,7 @@ class ProefRolgeluid(Proef):
 
     def __init__(self):
         super().__init__()
+
         self.rolgeluid = DtcDocument()
         """Proefresultaten van het rolgeluid van de toplaag."""
         self.rolgeluid.naam = "rolgeluid"

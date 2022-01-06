@@ -4,7 +4,7 @@ from OTLModel.Datatypes.KlTaludgootType import KlTaludgootType
 from OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Taludgoot(AIMObject):
     """Goot die in het talud loodrecht op de kruinlijn is aangebracht. De functie hiervan is onder meer opvang en afvoer hemelwater."""
 
@@ -13,6 +13,7 @@ class Taludgoot(AIMObject):
 
     def __init__(self):
         super().__init__()
+
         self.totaleLengte = KwantWrdInMeter()
         """De totale lengte van de geprefabriceerde betonelementen in lopende meter vanaf het beginstuk (niet inbegrepen) tot aan het eindstuk (niet inbegrepen)."""
         self.totaleLengte.naam = "totaleLengte"

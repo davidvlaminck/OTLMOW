@@ -8,7 +8,7 @@ from OTLModel.Datatypes.KlRackType import KlRackType
 from OTLModel.Datatypes.KwantWrdInCentimeter import KwantWrdInCentimeter
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Rack(AIMNaamObject):
     """Interne draagstructuur binnen een behuizing voor (elektromechanische) toestellen."""
 
@@ -17,6 +17,7 @@ class Rack(AIMNaamObject):
 
     def __init__(self):
         super().__init__()
+
         self.diepte = KwantWrdInCentimeter()
         """De diepte van het rack tussen de voorste en achterste rails."""
         self.diepte.naam = "diepte"

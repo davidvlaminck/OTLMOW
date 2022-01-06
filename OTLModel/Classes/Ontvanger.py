@@ -5,7 +5,7 @@ from OTLModel.Datatypes.KlOntvangerModelnaam import KlOntvangerModelnaam
 from OTLModel.Datatypes.KlOntvangerToepassing import KlOntvangerToepassing
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Ontvanger(ZenderOntvangerToegang):
     """Toestel voor het opvangen van signalen."""
 
@@ -14,6 +14,7 @@ class Ontvanger(ZenderOntvangerToegang):
 
     def __init__(self):
         super().__init__()
+
         self.merk = KeuzelijstField(naam="merk",
                                     label="merk",
                                     lijst=KlOntvangerMerk(),

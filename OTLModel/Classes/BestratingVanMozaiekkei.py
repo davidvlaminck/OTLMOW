@@ -4,7 +4,7 @@ from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlMozaiekkeiFormaat import KlMozaiekkeiFormaat
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class BestratingVanMozaiekkei(Bestrating):
     """Bestrating van kasseien, in mozaïekverband gelegd. Kasseien zijn bestratingselementen van porfier, kwartsiet, graniet, of van harde zandsteen die geen schilferige structuur heeft. Ze hebben een dicht aaneengesloten en homogene korrel, zonder steenkorst, kwade aders of kwakaders en vertonen geen diamantkop."""
 
@@ -13,6 +13,7 @@ class BestratingVanMozaiekkei(Bestrating):
 
     def __init__(self):
         super().__init__()
+
         self.formaat = KeuzelijstField(naam="formaat",
                                        label="formaat",
                                        lijst=KlMozaiekkeiFormaat(),

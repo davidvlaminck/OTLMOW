@@ -5,7 +5,7 @@ from OTLModel.Datatypes.KlSlemProductfamilie import KlSlemProductfamilie
 from OTLModel.Datatypes.KlSlemlaagsoort import KlSlemlaagsoort
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Slemlaag(AndereLaag):
     """Een slemlaag (slem) is een oppervlaktebehandeling die bestaat uit een mengsel dat ter plaatse bereid en verwerkt wordt.
 """
@@ -15,6 +15,7 @@ class Slemlaag(AndereLaag):
 
     def __init__(self):
         super().__init__()
+
         self.kleur = KeuzelijstField(naam="kleur",
                                      label="kleur",
                                      lijst=KlKleurSupp(),

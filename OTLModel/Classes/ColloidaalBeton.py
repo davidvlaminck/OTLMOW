@@ -1,7 +1,7 @@
 from OTLModel.Classes.AndereVerharding import AndereVerharding
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class ColloidaalBeton(AndereVerharding):
     """Betonspecie voor toepassing onder water, waarvan de samenhang is verbeterd door toevoeging van een waterretentiemiddel."""
 

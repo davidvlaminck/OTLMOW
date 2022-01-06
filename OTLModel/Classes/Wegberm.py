@@ -5,7 +5,7 @@ from OTLModel.Datatypes.KlWegbermBIO import KlWegbermBIO
 from OTLModel.Datatypes.KlWegbermType import KlWegbermType
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Wegberm(AIMObject, TerreinDeel):
     """Gedeelte van het wegplatform dat buiten de rijbanen ligt. Een wegberm kan sloten en bijzonder ingerichte onderdelen bevatten."""
 
@@ -15,6 +15,7 @@ class Wegberm(AIMObject, TerreinDeel):
     def __init__(self):
         AIMObject.__init__(self)
         TerreinDeel.__init__(self)
+
         self.bijzonderIngerichteOnderdelen = KeuzelijstField(naam="bijzonderIngerichteOnderdelen",
                                                              label="bijzonder ingerichte onderdelen van de wegberm",
                                                              lijst=KlWegbermBIO(),

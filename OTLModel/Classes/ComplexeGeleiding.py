@@ -2,7 +2,7 @@ from abc import abstractmethod
 from OTLModel.Classes.Geleiding import Geleiding
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class ComplexeGeleiding(Geleiding):
     """Een Abstracte die de SluitAanOp relatie mogelijk maakt voor de samenstellende onderdelen van een complexere geleiding."""
 

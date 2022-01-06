@@ -4,7 +4,7 @@ from OTLModel.Datatypes.KardinaliteitField import KardinaliteitField
 from OTLModel.Datatypes.DtcDocument import DtcDocument
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class LijnvormigElement(AIMObject):
     """Abstracte voor de gemeenschappelijke eigenschappen en relaties van lijnvormige elementen."""
 
@@ -14,6 +14,7 @@ class LijnvormigElement(AIMObject):
     @abstractmethod
     def __init__(self):
         super().__init__()
+
         technischeFicheField = DtcDocument()
         technischeFicheField.naam = "technischeFiche"
         technischeFicheField.label = "technische fiche"

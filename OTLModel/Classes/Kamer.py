@@ -9,7 +9,7 @@ from OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter
 from OTLModel.Datatypes.KwantWrdInMillimeter import KwantWrdInMillimeter
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Kamer(PutRelatie):
     """Een kamer is een aanééngesloten ondergrondse constructie waarbinnen vrije stroming van water over de
  bodem mogelijk is. Een constructie of inspectieput kan één of meerdere kamers hebben."""
@@ -19,6 +19,7 @@ class Kamer(PutRelatie):
 
     def __init__(self):
         super().__init__()
+
         self.breedte = KwantWrdInMillimeter()
         """De afmeting 1 (breedte) van het grondplan van de putkamer in millimeter."""
         self.breedte.naam = "breedte"

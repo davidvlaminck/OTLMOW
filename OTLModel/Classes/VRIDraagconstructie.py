@@ -2,7 +2,7 @@ from abc import abstractmethod
 from OTLModel.Classes.SteunStandaard import SteunStandaard
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class VRIDraagconstructie(SteunStandaard):
     """Abstracte voor een dragend element (bv. paal, kolom ) waaraan lantaarns met verkeerslichten bevestigd kunnen worden bij de verkeersregelinstallatie."""
 

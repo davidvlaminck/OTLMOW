@@ -4,7 +4,7 @@ from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlAlgBouwklassegroep import KlAlgBouwklassegroep
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class LaagBouwklasse(ArtificieleLaag):
     """Abstracte waarmee aan een laag het attribuut bouwklasse wordt toegekend."""
 
@@ -14,6 +14,7 @@ class LaagBouwklasse(ArtificieleLaag):
     @abstractmethod
     def __init__(self):
         super().__init__()
+
         self.bouwklasse = KeuzelijstField(naam="bouwklasse",
                                           label="bouwklasse",
                                           lijst=KlAlgBouwklassegroep(),

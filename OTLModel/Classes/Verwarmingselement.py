@@ -5,7 +5,7 @@ from OTLModel.Datatypes.KlVerwarmingselementModelnaam import KlVerwarmingselemen
 from OTLModel.Datatypes.KwantWrdInWatt import KwantWrdInWatt
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Verwarmingselement(AIMObject):
     """Toestel dat het verwarmingslint van warmte voorziet afhankelijk van de omgevingstemperatuur."""
 
@@ -14,6 +14,7 @@ class Verwarmingselement(AIMObject):
 
     def __init__(self):
         super().__init__()
+
         self.merk = KeuzelijstField(naam="merk",
                                     label="merk",
                                     lijst=KlVerwarmingselementMerk(),

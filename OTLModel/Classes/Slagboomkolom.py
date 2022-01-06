@@ -7,7 +7,7 @@ from OTLModel.Datatypes.KlSlagboomkolomMerk import KlSlagboomkolomMerk
 from OTLModel.Datatypes.KlSlagboomkolomModelnaam import KlSlagboomkolomModelnaam
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Slagboomkolom(AIMObject):
     """De koker van een slagboominstallatie die de motor bevat en waaraan de slagboomarm bevestigd is."""
 
@@ -16,6 +16,7 @@ class Slagboomkolom(AIMObject):
 
     def __init__(self):
         super().__init__()
+
         self.afmetingen = DtcAfmetingBxlxhInMm()
         """De afmetingen van de slagboomkolom."""
         self.afmetingen.naam = "afmetingen"

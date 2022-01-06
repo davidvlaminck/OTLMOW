@@ -4,7 +4,7 @@ from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlRioleringsbuisMateriaal import KlRioleringsbuisMateriaal
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Mantelbuis(ContainerBuis, Buis):
     """Een ondergrondse buis bestemd voor de doorvoer van kabels en/of leidingen."""
 
@@ -14,6 +14,7 @@ class Mantelbuis(ContainerBuis, Buis):
     def __init__(self):
         ContainerBuis.__init__(self)
         Buis.__init__(self)
+
         self.materiaal = KeuzelijstField(naam="materiaal",
                                          label="materiaal",
                                          lijst=KlRioleringsbuisMateriaal(),

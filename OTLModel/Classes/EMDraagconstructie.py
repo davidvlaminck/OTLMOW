@@ -4,7 +4,7 @@ from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlEMDraagconstructieElekBeveiliging import KlEMDraagconstructieElekBeveiliging
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class EMDraagconstructie(Draagconstructie):
     """Abstracte voor een elektromechanisch (EM) dragend element (bv. paal, kolom, seinbrug, galgpaal) waaraan EM-toestellen bevestigd kunnen worden."""
 
@@ -14,6 +14,7 @@ class EMDraagconstructie(Draagconstructie):
     @abstractmethod
     def __init__(self):
         super().__init__()
+
         self.elektrischeBeveiliging = KeuzelijstField(naam="elektrischeBeveiliging",
                                                       label="elektrische beveiliging",
                                                       lijst=KlEMDraagconstructieElekBeveiliging(),

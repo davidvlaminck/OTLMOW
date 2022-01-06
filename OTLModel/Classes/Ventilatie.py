@@ -6,7 +6,7 @@ from OTLModel.Datatypes.KwantWrdInMillimeter import KwantWrdInMillimeter
 from OTLModel.Datatypes.KwantWrdInWatt import KwantWrdInWatt
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Ventilatie(AIMObject):
     """Abstracte voor attributen die gemeenschappelijk zijn voor verschillende types van ventilatie."""
 
@@ -16,6 +16,7 @@ class Ventilatie(AIMObject):
     @abstractmethod
     def __init__(self):
         super().__init__()
+
         self.binnendiameter = KwantWrdInMillimeter()
         """De grootste afstand van de rechte lijn die kan worden getrokken tussen twee punten op de binnenzijde van de ventilatie. Deze rechte lijn gaat altijd door het middelpunt van de ventilatie."""
         self.binnendiameter.naam = "binnendiameter"

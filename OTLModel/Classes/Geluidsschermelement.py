@@ -5,7 +5,7 @@ from OTLModel.Datatypes.KwantWrdInCentimeter import KwantWrdInCentimeter
 from OTLModel.Datatypes.KwantWrdInKiloNewtonPerVierkanteMeter import KwantWrdInKiloNewtonPerVierkanteMeter
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Geluidsschermelement(LijnvormigElement):
     """Abstracte om de gemeenschappelijke eigenschappen van de verschillende types schermlementen te bundelen."""
 
@@ -15,6 +15,7 @@ class Geluidsschermelement(LijnvormigElement):
     @abstractmethod
     def __init__(self):
         super().__init__()
+
         self.hoogte = KwantWrdInCentimeter()
         """De hoogte in centimeter van het schermelement, verticaal gemeten."""
         self.hoogte.naam = "hoogte"

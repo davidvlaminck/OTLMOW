@@ -3,7 +3,7 @@ from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlDolomietType import KlDolomietType
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Dolomietverharding(AndereVerharding):
     """Bedekking van een onverharde zone die opgebouwd is uit een niet-gecompacteerde groep van individuele componenten die voldoen aan de volgende specificaties: dolomiet (gele kleur, gemiddelde korrelgrootte), onregelmatige vorm, onregelmatig verband."""
 
@@ -12,6 +12,7 @@ class Dolomietverharding(AndereVerharding):
 
     def __init__(self):
         super().__init__()
+
         self.type = KeuzelijstField(naam="type",
                                     label="type",
                                     lijst=KlDolomietType(),

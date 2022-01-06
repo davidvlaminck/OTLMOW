@@ -5,7 +5,7 @@ from OTLModel.Datatypes.KlLuchtkwaliteitOpstellingMerk import KlLuchtkwaliteitOp
 from OTLModel.Datatypes.KlLuchtkwaliteitOpstellingModelnaam import KlLuchtkwaliteitOpstellingModelnaam
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Luchtkwaliteittoestel(AIMNaamObject):
     """Abstracte voor attributen van onderdelen van de luchtkwaliteitsensor installatie."""
 
@@ -15,6 +15,7 @@ class Luchtkwaliteittoestel(AIMNaamObject):
     @abstractmethod
     def __init__(self):
         super().__init__()
+
         self.merk = KeuzelijstField(naam="merk",
                                     label="merk",
                                     lijst=KlLuchtkwaliteitOpstellingMerk(),

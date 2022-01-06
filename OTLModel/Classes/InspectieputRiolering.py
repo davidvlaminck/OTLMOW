@@ -5,7 +5,7 @@ from OTLModel.Datatypes.KlPutType import KlPutType
 from OTLModel.Datatypes.KwantWrdInDecimaleGraden import KwantWrdInDecimaleGraden
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class InspectieputRiolering(AIMObject, Put):
     """Dient om de aanwezige riolering te kunnen inspecteren, reinigen of onderhouden. """
 
@@ -15,6 +15,7 @@ class InspectieputRiolering(AIMObject, Put):
     def __init__(self):
         AIMObject.__init__(self)
         Put.__init__(self)
+
         self.hoekverdraaiing = KwantWrdInDecimaleGraden()
         """Verschil in richting tussen inkomende en uitgaande rioolbuis."""
         self.hoekverdraaiing.naam = "hoekverdraaiing"

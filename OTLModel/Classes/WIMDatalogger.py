@@ -4,7 +4,7 @@ from OTLModel.Datatypes.KlWIMDataloggerMerk import KlWIMDataloggerMerk
 from OTLModel.Datatypes.KlWIMDataloggerModelnaam import KlWIMDataloggerModelnaam
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class WIMDatalogger(AIMNaamObject):
     """Lokale verwerkingseenheid voor aggregatie weeggegevens."""
 
@@ -13,6 +13,7 @@ class WIMDatalogger(AIMNaamObject):
 
     def __init__(self):
         super().__init__()
+
         self.merk = KeuzelijstField(naam="merk",
                                     label="merk",
                                     lijst=KlWIMDataloggerMerk(),

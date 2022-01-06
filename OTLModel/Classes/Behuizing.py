@@ -4,7 +4,7 @@ from OTLModel.Datatypes.DtcAdres import DtcAdres
 from OTLModel.Datatypes.DtcDocument import DtcDocument
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Behuizing(AIMNaamObject):
     """Abstracte voor alle types van behuizing voor het beschermen van technieken."""
 
@@ -14,6 +14,7 @@ class Behuizing(AIMNaamObject):
     @abstractmethod
     def __init__(self):
         super().__init__()
+
         self.adres = DtcAdres()
         """Adres (aanduiding van de locatie) van de behuizing. Indien deze geen adres heeft, wordt net zoals door Fluvius voor cabines, het adres van een nabijgelegen straat genomen."""
         self.adres.naam = "adres"

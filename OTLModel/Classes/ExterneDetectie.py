@@ -7,7 +7,7 @@ from OTLModel.Datatypes.KlExternedetectieAangeslotentoestel import KlExternedete
 from OTLModel.Datatypes.KlExternedetectieCommunicatiewijze import KlExternedetectieCommunicatiewijze
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class ExterneDetectie(Detectie):
     """Inputsignalen bv. van een brug of een overweg, die door een externe partij doorgegeven worden teneinde de verkeersregelaar aan te sturen. 
 Dit object wordt niet gebruikt voor eigen lussen van een ander kruispunt."""
@@ -17,6 +17,7 @@ Dit object wordt niet gebruikt voor eigen lussen van een ander kruispunt."""
 
     def __init__(self):
         super().__init__()
+
         self.aangeslotenToestel = KeuzelijstField(naam="aangeslotenToestel",
                                                   label="aangesloten toestel",
                                                   lijst=KlExternedetectieAangeslotentoestel(),

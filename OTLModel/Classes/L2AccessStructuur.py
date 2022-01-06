@@ -1,7 +1,7 @@
 from OTLModel.Classes.NaampadObject import NaampadObject
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class L2AccessStructuur(NaampadObject):
     """Opstelling die het mogelijk maakt om een techniek direct te koppelen met het IP telematica netwerk. Een L2 access structuur bestaat uit meerdere L2 Switches die met elkaar verbonden zijn."""
 

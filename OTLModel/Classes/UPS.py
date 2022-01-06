@@ -7,7 +7,7 @@ from OTLModel.Datatypes.KwantWrdInkWh import KwantWrdInkWh
 from OTLModel.Datatypes.StringField import StringField
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class UPS(Voedingspunt):
     """Toestel (Uninterruptible Power Supply = niet onderbreekbare voeding) voor het leveren van  elektrische energie van een vastgelegde kwaliteit, onafhankelijk van de beschikbaarheid van een betrouwbare netspanning. Indien het openbare net niet langer bruikbaar is om als energiebron te fungeren, wordt de energievoorziening overgenomen door de accubatterij. Deze zal gedurende een bepaalde tijd, afhankelijk van de capaciteit, de stroomvoorziening verzorgen. De UPS dient om de (minimale) voeding ononderbroken te verzekeren"""
 
@@ -16,6 +16,7 @@ class UPS(Voedingspunt):
 
     def __init__(self):
         super().__init__()
+
         self.autonomie = KwantWrdInkWh()
         """De tijd die de UPS een installatie van voeding kan voorzien."""
         self.autonomie.naam = "autonomie"

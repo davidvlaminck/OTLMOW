@@ -1,7 +1,7 @@
 from OTLModel.Classes.DirectioneleRelatie import DirectioneleRelatie
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class IsAdmOnderdeelVan(DirectioneleRelatie):
     """Deze relatie geeft aan dat een onderdeel louter met een administratieve functie toebehoort aan de collectie."""
 

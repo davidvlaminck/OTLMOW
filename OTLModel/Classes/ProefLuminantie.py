@@ -2,7 +2,7 @@ from OTLModel.Classes.Proef import Proef
 from OTLModel.Datatypes.DecimalFloatField import DecimalFloatField
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class ProefLuminantie(Proef):
     """Bij gebrek aan Qd-meting kan de luminantiefactor ß van wegmarkeringen gebruikt worden om het contrast met het wegdek en bijgevolg de dagzichtbaarheid te bepalen."""
 
@@ -11,6 +11,7 @@ class ProefLuminantie(Proef):
 
     def __init__(self):
         super().__init__()
+
         self.luminantiefactor = DecimalFloatField(naam="luminantiefactor",
                                                   label="luminantiefactor",
                                                   uri="https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefLuminantie.luminantiefactor",

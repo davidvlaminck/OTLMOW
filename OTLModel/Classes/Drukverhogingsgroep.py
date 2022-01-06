@@ -3,7 +3,7 @@ from OTLModel.Datatypes.KwantWrdInBar import KwantWrdInBar
 from OTLModel.Datatypes.KwantWrdInKiloWatt import KwantWrdInKiloWatt
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Drukverhogingsgroep(Brandvoorziening):
     """Onderdeel dat de druk van het aangevoerde water regelt."""
 
@@ -12,6 +12,7 @@ class Drukverhogingsgroep(Brandvoorziening):
 
     def __init__(self):
         super().__init__()
+
         self.inkomendeDruk = KwantWrdInBar()
         """Verwachte inkomende druk van het water bij de groep."""
         self.inkomendeDruk.naam = "inkomendeDruk"

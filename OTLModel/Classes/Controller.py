@@ -4,7 +4,7 @@ from OTLModel.Datatypes.DteIPv4Adres import DteIPv4Adres
 from OTLModel.Datatypes.StringField import StringField
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Controller(AIMNaamObject):
     """Abstracte voor allerlei types van controllers."""
 
@@ -14,6 +14,7 @@ class Controller(AIMNaamObject):
     @abstractmethod
     def __init__(self):
         super().__init__()
+
         self.batchnummer = StringField(naam="batchnummer",
                                        label="batchnummer",
                                        uri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Controller.batchnummer",

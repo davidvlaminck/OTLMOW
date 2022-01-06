@@ -1,7 +1,7 @@
 from OTLModel.Classes.HoutigeVegetatie import HoutigeVegetatie
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Haag(HoutigeVegetatie):
     """Hagen zijn smalle lijnvormige elementen bestaande uit houtige soorten die geschoren kunnen worden."""
 

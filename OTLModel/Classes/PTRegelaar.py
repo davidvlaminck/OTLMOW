@@ -9,7 +9,7 @@ from OTLModel.Datatypes.KlPtRegelaarProtocol import KlPtRegelaarProtocol
 from OTLModel.Datatypes.StringField import StringField
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class PTRegelaar(AIMNaamObject):
     """Deze PT-module staat in voor het ontvangen en bewerken van telegrammen van voertuigen van het openbaar vervoer (bussen, trams)."""
 
@@ -18,6 +18,7 @@ class PTRegelaar(AIMNaamObject):
 
     def __init__(self):
         super().__init__()
+
         self.communicatiewijze = KeuzelijstField(naam="communicatiewijze",
                                                  label="communicatiewijze",
                                                  lijst=KlPtRegelaarCommunicatiewijze(),

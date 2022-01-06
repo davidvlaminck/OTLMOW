@@ -1,7 +1,7 @@
 from OTLModel.Classes.Energiemeter import Energiemeter
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class EnergiemeterAWV(Energiemeter):
     """Toestel voor multifunctionele stroom- en spanningsmetingen en logging, die via een van de courante standaardkoppelvlakken (Euridis, RS485, Modbus, ...) wordt aangesloten om lokaal of op afstand te kunnen uitlezen en zodoende het energieverbruik te kunnen opvolgen"""
 

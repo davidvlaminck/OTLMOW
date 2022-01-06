@@ -3,7 +3,7 @@ from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlContactpuntType import KlContactpuntType
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Contactpunt(AIMObject):
     """Techniek voor het meten van een aan- of afwezigheid van contact tussen de onderdelen waaraan deze bevestigd is. """
 
@@ -12,6 +12,7 @@ class Contactpunt(AIMObject):
 
     def __init__(self):
         super().__init__()
+
         self.type = KeuzelijstField(naam="type",
                                     label="type contactpunt",
                                     lijst=KlContactpuntType(),

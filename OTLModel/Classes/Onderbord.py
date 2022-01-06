@@ -1,7 +1,7 @@
 from OTLModel.Classes.RetroreflecterendVerkeersbord import RetroreflecterendVerkeersbord
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Onderbord(RetroreflecterendVerkeersbord):
     """Een bord met een verkeersteken dat als toevoeging onder een verkeersbord is gehangen."""
 

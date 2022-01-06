@@ -2,7 +2,7 @@ from OTLModel.Classes.Proef import Proef
 from OTLModel.Datatypes.DtcDocument import DtcDocument
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class ProefTextuurdiepte(Proef):
     """Bepaling van de uitwasdiepte van de verharding na een oppervlaktebehandeling volgens NBN EN ISO 13473-1."""
 
@@ -11,6 +11,7 @@ class ProefTextuurdiepte(Proef):
 
     def __init__(self):
         super().__init__()
+
         self.textuurdiepte = DtcDocument()
         """Proefresultaten van de textuurdiepte van de toplaag."""
         self.textuurdiepte.naam = "textuurdiepte"

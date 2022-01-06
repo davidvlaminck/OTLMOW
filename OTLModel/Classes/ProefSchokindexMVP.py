@@ -3,7 +3,7 @@ from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlLEACSchokindexMVP import KlLEACSchokindexMVP
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class ProefSchokindexMVP(Proef):
     """Proef voor de bepaling van de schokindex parameter van de motorvangplank."""
 

@@ -3,7 +3,7 @@ from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlVriLusFunctie import KlVriLusFunctie
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class VRIVirtueleDetectiezone(Detectielus):
     """Een virtuele detectiezone is een draadloos alternatief voor een traditionele lus. Op basis van GPS gegevens wordt een zone of traject vastgelegd waarbinnen er (al dan niet selectieve) input dient geleverd te worden aan de verkeersregelaar. De virtuele detectiezone kan ook gebruikt worden om de detectiezones van detectiecamera's en radars te inventariseren.
 """
@@ -13,6 +13,7 @@ class VRIVirtueleDetectiezone(Detectielus):
 
     def __init__(self):
         super().__init__()
+
         self.functie = KeuzelijstField(naam="functie",
                                        label="functie",
                                        lijst=KlVriLusFunctie(),

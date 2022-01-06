@@ -1,7 +1,7 @@
 from OTLModel.Classes.AndereLaag import AndereLaag
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Noppendrainage(AndereLaag):
     """Een noppendrainveld zorgt voor een verticale afwatering van het overtollige water."""
 

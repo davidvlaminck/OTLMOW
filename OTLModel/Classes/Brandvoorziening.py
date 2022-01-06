@@ -2,7 +2,7 @@ from abc import abstractmethod
 from OTLModel.Classes.AIMNaamObject import AIMNaamObject
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Brandvoorziening(AIMNaamObject):
     """Abstracte voor linkende elementen die voorzien kunnen worden van verwarming om hun werkzaamheid in extreme omstandigheden te garanderen."""
 

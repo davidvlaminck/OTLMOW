@@ -1,7 +1,7 @@
 from OTLModel.Classes.BloemrijkGraslandGraslandfase4 import BloemrijkGraslandGraslandfase4
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class KalkrijkKamgrasland(BloemrijkGraslandGraslandfase4):
     """G4c - aarddistel, beemdkroon, bevertjes, driedistel,
 duifkruid, geelhartje, gevinde kortsteel,

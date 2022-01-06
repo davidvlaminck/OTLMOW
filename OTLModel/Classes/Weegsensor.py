@@ -7,7 +7,7 @@ from OTLModel.Datatypes.KlWeegsensorType import KlWeegsensorType
 from OTLModel.Datatypes.StringField import StringField
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Weegsensor(AIMNaamObject):
     """Registratie van de wieldruk van een voertuig (alle klassen). Dit wordt vertaald naar een massa."""
 
@@ -16,6 +16,7 @@ class Weegsensor(AIMNaamObject):
 
     def __init__(self):
         super().__init__()
+
         self.meetrapport = DtcDocument()
         """Document met kalibratiegegevens (aantal rondes, types voertuigen,...)."""
         self.meetrapport.naam = "meetrapport"

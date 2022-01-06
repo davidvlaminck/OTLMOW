@@ -4,7 +4,7 @@ from OTLModel.Datatypes.KlVirtueleServerMerk import KlVirtueleServerMerk
 from OTLModel.Datatypes.KlVirtueleServerModelnaam import KlVirtueleServerModelnaam
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class VirtueleServer(HardwareToegang):
     """Gedeelte van een fysieke server, dat zich met behulp van software gedraagt als een 'echte' server."""
 
@@ -13,6 +13,7 @@ class VirtueleServer(HardwareToegang):
 
     def __init__(self):
         super().__init__()
+
         self.merk = KeuzelijstField(naam="merk",
                                     label="merk",
                                     lijst=KlVirtueleServerMerk(),

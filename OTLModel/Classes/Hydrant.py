@@ -5,7 +5,7 @@ from OTLModel.Datatypes.KlHydrantKoppeling import KlHydrantKoppeling
 from OTLModel.Datatypes.KwantWrdInInch import KwantWrdInInch
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Hydrant(Brandvoorziening):
     """Aftappunt van de brandleiding bedoeld voor de brandweer. Ook brandkraan genoemd."""
 
@@ -14,6 +14,7 @@ class Hydrant(Brandvoorziening):
 
     def __init__(self):
         super().__init__()
+
         self.diameter = KwantWrdInInch()
         """Diameter van het aftappunt."""
         self.diameter.naam = "diameter"

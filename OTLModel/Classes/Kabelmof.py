@@ -3,7 +3,7 @@ from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlKabelmofType import KlKabelmofType
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Kabelmof(AIMNaamObject):
     """Een verbindingsgreep die aansluitingen van kabels rondom afsluit."""
 
@@ -12,6 +12,7 @@ class Kabelmof(AIMNaamObject):
 
     def __init__(self):
         super().__init__()
+
         self.type = KeuzelijstField(naam="type",
                                     label="type kabelmof",
                                     lijst=KlKabelmofType(),

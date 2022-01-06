@@ -3,7 +3,7 @@ from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlLEACPerformantieniveau import KlLEACPerformantieniveau
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class ProefPerformantieniveau(Proef):
     """Bepaling van het performantieniveau."""
 

@@ -9,7 +9,7 @@ from OTLModel.Datatypes.KwantWrdInMillimeter import KwantWrdInMillimeter
 from OTLModel.Datatypes.KwantWrdInWatt import KwantWrdInWatt
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Pomp(LinkendElement):
     """Een pomp is een werktuig dat water verplaatst door er energie aan af te geven in de vorm van een drukverhoging of snelheidsverhoging."""
 
@@ -18,6 +18,7 @@ class Pomp(LinkendElement):
 
     def __init__(self):
         super().__init__()
+
         self.binnenDiameter = KwantWrdInMillimeter()
         """Afmeting van de binnenkant van de opening waardoor het opgepompte water loopt."""
         self.binnenDiameter.naam = "binnenDiameter"

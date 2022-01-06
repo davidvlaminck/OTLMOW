@@ -4,7 +4,7 @@ from OTLModel.Classes.FirmwareObject import FirmwareObject
 from OTLModel.Datatypes.KwantWrdInVolt import KwantWrdInVolt
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class NietWeggebondenDetectie(Detectie, FirmwareObject):
     """Abstracte voor niet weggebonden detectoren. Deze bevinden zich niet in het wegoppervlak en worden aangewend voor volgende doeleinden:
 *nabij de stoplijnen van kruispunten als kruispuntdetectoren waardoor de verkeersafhankelijke werking van de verkeersregelaar mogelijk wordt (zogenaamde microregeling);
@@ -17,6 +17,7 @@ class NietWeggebondenDetectie(Detectie, FirmwareObject):
     def __init__(self):
         Detectie.__init__(self)
         FirmwareObject.__init__(self)
+
         self.voedingsspanning = KwantWrdInVolt()
         """Spanning waarmee de detectoren gevoed worden."""
         self.voedingsspanning.naam = "voedingsspanning"

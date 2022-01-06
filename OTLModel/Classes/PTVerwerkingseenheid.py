@@ -1,7 +1,7 @@
 from OTLModel.Classes.PTModuleMetFirmware import PTModuleMetFirmware
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class PTVerwerkingseenheid(PTModuleMetFirmware):
     """Ook LS-kaart of Local Stationkaart genoemd, de centrale verwerkingseenheid die in verbinding staat met één of meerdere demodulatoren."""
 

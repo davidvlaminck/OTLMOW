@@ -6,7 +6,7 @@ from OTLModel.Datatypes.KlAlgRijrichting import KlAlgRijrichting
 from OTLModel.Datatypes.KlAlgSnelheidsregime import KlAlgSnelheidsregime
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Trajectcontrole(NaampadObject):
     """Trajectcontrole is een systeem waarbij de gemiddelde snelheid over een langere afstand wordt gemeten."""
 
@@ -15,6 +15,7 @@ class Trajectcontrole(NaampadObject):
 
     def __init__(self):
         super().__init__()
+
         self.attest = DtcDocument()
         """Het ijkingsattest van de trajectcontrole in zijn geheel."""
         self.attest.naam = "attest"

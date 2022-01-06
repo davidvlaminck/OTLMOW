@@ -3,7 +3,7 @@ from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlHulppostkastType import KlHulppostkastType
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Hulppostkast(Buitenkast):
     """Een kast waarin verschillende onderdelen verzameld worden voor bijstand in noodgevallen."""
 
@@ -12,6 +12,7 @@ class Hulppostkast(Buitenkast):
 
     def __init__(self):
         super().__init__()
+
         self.type = KeuzelijstField(naam="type",
                                     label="type",
                                     lijst=KlHulppostkastType(),

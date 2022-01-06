@@ -6,7 +6,7 @@ from OTLModel.Datatypes.KwantWrdInMeterTAW import KwantWrdInMeterTAW
 from OTLModel.Datatypes.KwantWrdInMillimeter import KwantWrdInMillimeter
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Overstort(LinkendElement):
     """Een overstort is een drempel tussen twee kamers waar water vanaf een bepaald peil van de ene naar de andere kamer kan stromen. Tussen twee kamers kunnen een of meerdere overstorten voorkomen."""
 
@@ -15,6 +15,7 @@ class Overstort(LinkendElement):
 
     def __init__(self):
         super().__init__()
+
         self.drempellengte = KwantWrdInMillimeter()
         """Drempellengte of breedte van de overstort. Deze wordt gemeten aan de kortste zijdevan de drempel."""
         self.drempellengte.naam = "drempellengte"

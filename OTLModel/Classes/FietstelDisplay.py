@@ -3,7 +3,7 @@ from OTLModel.Datatypes.BooleanField import BooleanField
 from OTLModel.Datatypes.DtcDocument import DtcDocument
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class FietstelDisplay(AIMNaamObject):
     """Verankerd toestel dat een selectie van telgegevens van het fietstelsysteem toont voor passerende fietsers."""
 
@@ -12,6 +12,7 @@ class FietstelDisplay(AIMNaamObject):
 
     def __init__(self):
         super().__init__()
+
         self.isDubbelzijdig = BooleanField(naam="isDubbelzijdig",
                                            label="is dubbelzijdig",
                                            uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#FietstelDisplay.isDubbelzijdig",

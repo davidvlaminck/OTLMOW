@@ -24,7 +24,8 @@ class OTLEnumerationCreator(AbstractDatatypeCreator):
         return self.CreateBlockToWriteFromEnumeration(osloEnumeration)
 
     def CreateBlockToWriteFromEnumeration(self, osloEnumeration: OSLOEnumeration):
-        datablock = ['from OTLModel.Datatypes.Keuzelijst import Keuzelijst',
+        datablock = ['# coding=utf-8',
+                     'from OTLModel.Datatypes.Keuzelijst import Keuzelijst',
                      '',
                      '',
                      f'# Generated with {self.__class__.__name__}. To modify: extend, do not edit',

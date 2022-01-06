@@ -3,7 +3,7 @@ from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlOnbegroeidVoorkomenType import KlOnbegroeidVoorkomenType
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class OnbegroeidVoorkomen(AndereVerharding):
     """Een ander fysiek voorkomen van het aardoppervlak dat niet vegetatief is."""
 
@@ -12,6 +12,7 @@ class OnbegroeidVoorkomen(AndereVerharding):
 
     def __init__(self):
         super().__init__()
+
         self.type = KeuzelijstField(naam="type",
                                     label="type",
                                     lijst=KlOnbegroeidVoorkomenType(),

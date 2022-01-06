@@ -5,7 +5,7 @@ from OTLModel.Datatypes.KlLEACObstakelbeveiligerType import KlLEACObstakelbeveil
 from OTLModel.Datatypes.KlLEACPerformantieniveau import KlLEACPerformantieniveau
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Obstakelbeveiliger(SchokindexVoertuigkering, AfschermendeConstructie):
     """Een energie-absorberende constructie voor voertuigen,geïnstalleerd vóór één of meerdere obstakels,met als doel de ernst van een botsing te reduceren."""
 
@@ -15,6 +15,7 @@ class Obstakelbeveiliger(SchokindexVoertuigkering, AfschermendeConstructie):
     def __init__(self):
         SchokindexVoertuigkering.__init__(self)
         AfschermendeConstructie.__init__(self)
+
         self.performantieniveau = KeuzelijstField(naam="performantieniveau",
                                                   label="performantieniveau",
                                                   lijst=KlLEACPerformantieniveau(),

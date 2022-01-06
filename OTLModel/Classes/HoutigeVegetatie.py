@@ -7,7 +7,7 @@ from OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter
 from OTLModel.Datatypes.KwantWrdInVierkanteMeter import KwantWrdInVierkanteMeter
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class HoutigeVegetatie(BegroeidVoorkomen):
     """Houtige planten of houtige gewassen (planta lignosa) zijn overblijvende planten die worden gekenmerkt door secundaire diktegroei, waardoor de takken, stammen en wortels veel hout bevatten."""
 
@@ -17,6 +17,7 @@ class HoutigeVegetatie(BegroeidVoorkomen):
     @abstractmethod
     def __init__(self):
         super().__init__()
+
         aanlegField = DtcHoutigeAanleg()
         aanlegField.naam = "aanleg"
         aanlegField.label = "aanleg"

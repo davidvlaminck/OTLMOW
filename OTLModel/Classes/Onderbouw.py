@@ -7,7 +7,7 @@ from OTLModel.Datatypes.KlOnderbouwType import KlOnderbouwType
 from OTLModel.Datatypes.KwantWrdInKubiekeMeter import KwantWrdInKubiekeMeter
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Onderbouw(LaagDikte, Laag):
     """Gedeelte van het baanlichaam dat tussen het baanbed en de verharding ligt. Deze omvat onderfundering, fundering en de straatlaag."""
 
@@ -17,6 +17,7 @@ class Onderbouw(LaagDikte, Laag):
     def __init__(self):
         LaagDikte.__init__(self)
         Laag.__init__(self)
+
         self.isHerstel = BooleanField(naam="isHerstel",
                                       label="is herstel",
                                       uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Onderbouw.isHerstel",

@@ -16,7 +16,7 @@ from OTLModel.Datatypes.KwantWrdInCentimeter import KwantWrdInCentimeter
 from OTLModel.Datatypes.KwantWrdInEuro import KwantWrdInEuro
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class ProefBoomtoestand(Proef):
     """De toestand met waarnemingen per inspectie van een boom."""
 
@@ -25,6 +25,7 @@ class ProefBoomtoestand(Proef):
 
     def __init__(self):
         super().__init__()
+
         self.basiswaarde = KwantWrdInEuro()
         """Het schriftelijk verslag dat na onderzoek of visuele controle wordt opgemaakt."""
         self.basiswaarde.naam = "basiswaarde"

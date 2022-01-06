@@ -5,7 +5,7 @@ from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlIVRIBaseline import KlIVRIBaseline
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class IVRIComponent(Software):
     """Abstracte die eigenschappen van de iVRI (intelligente verkeersregelaar) component bundelt."""
 
@@ -15,6 +15,7 @@ class IVRIComponent(Software):
     @abstractmethod
     def __init__(self):
         super().__init__()
+
         self.baseline = KeuzelijstField(naam="baseline",
                                         label="baseline",
                                         lijst=KlIVRIBaseline(),

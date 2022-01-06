@@ -3,7 +3,7 @@ from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlVrStuurkaartCommunicatieprotocol import KlVrStuurkaartCommunicatieprotocol
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class VRStuurkaart(VRModuleMetFirmware):
     """Ook wel basissturing genoemd. Dit is de hoofdprocessorkaart van de VRI. Hier wordt het instructieprogramma en het kruispuntprogramma ingeladen."""
 
@@ -12,6 +12,7 @@ class VRStuurkaart(VRModuleMetFirmware):
 
     def __init__(self):
         super().__init__()
+
         self.communicatieprotocol = KeuzelijstField(naam="communicatieprotocol",
                                                     label="communicatieprotocol",
                                                     lijst=KlVrStuurkaartCommunicatieprotocol(),

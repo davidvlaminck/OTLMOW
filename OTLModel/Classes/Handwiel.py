@@ -1,7 +1,7 @@
 from OTLModel.Classes.AIMObject import AIMObject
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Handwiel(AIMObject):
     """Een handwiel kan worden gebruikt voor het openen of sluiten van een afsluiter."""
 

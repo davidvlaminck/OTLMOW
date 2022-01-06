@@ -8,7 +8,7 @@ from OTLModel.Datatypes.KlSeinbrugType import KlSeinbrugType
 from OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Seinbrug(VRIDraagconstructie):
     """Metalen constructie bestaande uit twee of meer verticale steunen met voetplaat en uit een enkele of een dubbel uitgevoerde horizontale dwarsverbinding, allen kokervormig met rechthoekige doorsnede. Ook wel portiek of portaal genoemd."""
 
@@ -17,6 +17,7 @@ class Seinbrug(VRIDraagconstructie):
 
     def __init__(self):
         super().__init__()
+
         self.aantalLadders = DecimalFloatField(naam="aantalLadders",
                                                label="aantal ladders",
                                                uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Seinbrug.aantalLadders",

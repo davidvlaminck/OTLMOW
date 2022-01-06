@@ -1,4 +1,3 @@
-# coding=utf-8
 from OTLModel.Classes.AIMNaamObject import AIMNaamObject
 from OTLModel.Datatypes.DtcDocument import DtcDocument
 from OTLModel.Datatypes.DteIPv4Adres import DteIPv4Adres
@@ -7,7 +6,7 @@ from OTLModel.Datatypes.KlAIDModuleType import KlAIDModuleType
 from OTLModel.Datatypes.StringField import StringField
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class AIDModule(AIMNaamObject):
     """Aparte hardware module voor automatische incidentdetectie op camerabeelden. De module kan centraal of lokaal opgesteld staan maar altijd als apart onderdeel, niet als deel van de camera die de beelden doorstuurt. Ze kan gebruikt worden voor modules die analoge beelden analyseren en voor modules die werken op basis van digitale beelden. Het doel is om op een automatische en zo intelligent mogelijk manier gebeurtenissen uit de beelden van een CCTV-camera te halen."""
 
@@ -16,6 +15,7 @@ class AIDModule(AIMNaamObject):
 
     def __init__(self):
         super().__init__()
+
         self.configBestand = DtcDocument()
         """Configuratiebestand van de configuratie van de AID."""
         self.configBestand.naam = "configBestand"
@@ -29,11 +29,11 @@ class AIDModule(AIMNaamObject):
         self.dnsNaam = StringField(naam="dnsNaam",
                                    label="DNS naam",
                                    uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#AIDModule.dnsNaam",
-                                   definition="De DNSNaam (ook \"volledige domein naam\" genoemd ) is een unieke naam binnen het Domain Name System (DNS), het naamgevingssysteem waarmee computers, webservers, diensten en  toepassing op een unieke manier kunnen worden geÃ¯dentificeerd. Deze bevat zowel de hostname en de top level domein naam bv. 120c8-ar1.belfa.be.",
+                                   definition="De DNSNaam (ook \"volledige domein naam\" genoemd ) is een unieke naam binnen het Domain Name System (DNS), het naamgevingssysteem waarmee computers, webservers, diensten en  toepassing op een unieke manier kunnen worden geïdentificeerd. Deze bevat zowel de hostname en de top level domein naam bv. 120c8-ar1.belfa.be.",
                                    constraints="",
                                    usagenote="",
                                    deprecated_version="")
-        """De DNSNaam (ook \"volledige domein naam\" genoemd ) is een unieke naam binnen het Domain Name System (DNS), het naamgevingssysteem waarmee computers, webservers, diensten en  toepassing op een unieke manier kunnen worden geÃ¯dentificeerd. Deze bevat zowel de hostname en de top level domein naam bv. 120c8-ar1.belfa.be."""
+        """De DNSNaam (ook \"volledige domein naam\" genoemd ) is een unieke naam binnen het Domain Name System (DNS), het naamgevingssysteem waarmee computers, webservers, diensten en  toepassing op een unieke manier kunnen worden geïdentificeerd. Deze bevat zowel de hostname en de top level domein naam bv. 120c8-ar1.belfa.be."""
 
         self.ipAdres = DteIPv4Adres()
         """Het IP-adres van de AID-module."""

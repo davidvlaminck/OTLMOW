@@ -3,7 +3,7 @@ from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlVriBewaking import KlVriBewaking
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class VerkeerslichtRood(Verkeerslicht):
     """Een lichtbron met rode kleur om de weggebruikers aan te geven dat het verboden is de stopstreep of, zo er geen stopstreep is, het verkeerslicht zelf, voorbij te rijden."""
 
@@ -12,6 +12,7 @@ class VerkeerslichtRood(Verkeerslicht):
 
     def __init__(self):
         super().__init__()
+
         self.typeBewaking = KeuzelijstField(naam="typeBewaking",
                                             label="type bewaking",
                                             lijst=KlVriBewaking(),

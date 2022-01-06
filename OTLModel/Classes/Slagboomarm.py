@@ -6,7 +6,7 @@ from OTLModel.Datatypes.KlSlagboomarmModelnaam import KlSlagboomarmModelnaam
 from OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Slagboomarm(AIMObject):
     """De bewegende arm van een slagboominstallatie."""
 
@@ -15,6 +15,7 @@ class Slagboomarm(AIMObject):
 
     def __init__(self):
         super().__init__()
+
         self.lengteBoom = KwantWrdInMeter()
         """De lengte van de slagboomarm uitgedrukt in meter."""
         self.lengteBoom.naam = "lengteBoom"

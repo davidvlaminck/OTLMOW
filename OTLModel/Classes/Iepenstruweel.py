@@ -1,7 +1,7 @@
 from OTLModel.Classes.OpgaandeHoutigeVegetatie import OpgaandeHoutigeVegetatie
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Iepenstruweel(OpgaandeHoutigeVegetatie):
     """H2 - Houtige begroeiing in holle wegen van de leemstreek met gladde iep, ruwe iep, meidoorn spp., gewone es, gewone vlier, maarts viooltje, vogelmelk, aalbes, gevlekte aronskelk, speenkruid, vingerhelmbloem, grote keverorchis, klimop, klimopereprijs, look-zonder-look."""
 

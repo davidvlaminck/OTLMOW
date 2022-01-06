@@ -4,7 +4,7 @@ from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlPadNetwerkprotectie import KlPadNetwerkprotectie
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Pad(NaampadObject):
     """Een aaneengesloten reeks van links die samen een verbinding realiseren over het netwerk, gebruik makende van eenzelfde technologie (vb SDH, OTN…)."""
 
@@ -13,6 +13,7 @@ class Pad(NaampadObject):
 
     def __init__(self):
         super().__init__()
+
         netwerkprotectieField = KeuzelijstField(naam="netwerkprotectie",
                                                 label="netwerkprotectie",
                                                 lijst=KlPadNetwerkprotectie(),

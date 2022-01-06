@@ -4,7 +4,7 @@ from OTLModel.Classes.LaagDikte import LaagDikte
 from OTLModel.Classes.LaagProductidentificatiecode import LaagProductidentificatiecode
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class ArtificieleLaag(Laag, LaagDikte, LaagProductidentificatiecode):
     """Abstracte als noemer om de abstracten Laag, LaagProductidentificatiecode en LaagDikte te groeperen."""
 

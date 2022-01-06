@@ -3,7 +3,7 @@ from OTLModel.Classes.Deur import Deur
 from OTLModel.Classes.BevestigingGC import BevestigingGC
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Vluchtdeur(AIMObject, Deur, BevestigingGC):
     """Deur voor het ontvluchten in geval van calamiteiten weg van de incidentlocatie naar een veilige zone. Een vluchtdeur wordt onder alle omstandigheden zonder sleutel geopend en dit met beperkte kracht."""
 

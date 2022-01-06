@@ -1,7 +1,7 @@
 from OTLModel.Classes.VRModuleMetFirmware import VRModuleMetFirmware
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class VRLuskaart(VRModuleMetFirmware):
     """Kaart die instaat voor het verwerken van de informatie uit de lussen en voor het doorgeven van die informatie naar de besturingskaart."""
 

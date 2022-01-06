@@ -5,7 +5,7 @@ from OTLModel.Datatypes.KlPTRegelaarModuleMerk import KlPTRegelaarModuleMerk
 from OTLModel.Datatypes.KlPTRegelaarModuleModelnaam import KlPTRegelaarModuleModelnaam
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class PTRegelaarModule(AIMNaamObject):
     """Abstracte voor de verschillende modules waaruit het personentransportbeïnvloedingssysteem van de verkeersregelaar opgebouwd is. Hierdoor zal het personentransport een snellere doorstroming aan een verkeerslichtengeregeld kruispunt genieten."""
 
@@ -15,6 +15,7 @@ class PTRegelaarModule(AIMNaamObject):
     @abstractmethod
     def __init__(self):
         super().__init__()
+
         self.merk = KeuzelijstField(naam="merk",
                                     label="merk",
                                     lijst=KlPTRegelaarModuleMerk(),

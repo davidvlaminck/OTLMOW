@@ -2,7 +2,7 @@ from OTLModel.Classes.AIMObject import AIMObject
 from OTLModel.Datatypes.DtcDocument import DtcDocument
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Duikschot(AIMObject):
     """Duikschotten onder het wateroppervlak dicht bij de overstortrand verhinderen dat het drijvende materiaal meevloeit met het water."""
 
@@ -11,6 +11,7 @@ class Duikschot(AIMObject):
 
     def __init__(self):
         super().__init__()
+
         self.technischeFiche = DtcDocument()
         """De technische fiche van het duikschot."""
         self.technischeFiche.naam = "technischeFiche"

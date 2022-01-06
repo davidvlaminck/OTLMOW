@@ -5,7 +5,7 @@ from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlKleurReflector import KlKleurReflector
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Bebakening(AIMObject, Signalisatie):
     """Abstracte voor de bebakeningen."""
 
@@ -16,6 +16,7 @@ class Bebakening(AIMObject, Signalisatie):
     def __init__(self):
         AIMObject.__init__(self)
         Signalisatie.__init__(self)
+
         self.kleurReflectorAflopend = KeuzelijstField(naam="kleurReflectorAflopend",
                                                       label="kleur aflopend",
                                                       lijst=KlKleurReflector(),

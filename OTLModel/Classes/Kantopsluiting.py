@@ -7,7 +7,7 @@ from OTLModel.Datatypes.KlLEKantopsluitingSoort import KlLEKantopsluitingSoort
 from OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Kantopsluiting(LijnvormigElement):
     """Abstracte voor de gemeenschappelijke eigenschappen en relaties voor de kantopsluiting."""
 
@@ -17,6 +17,7 @@ class Kantopsluiting(LijnvormigElement):
     @abstractmethod
     def __init__(self):
         super().__init__()
+
         self.isGeprefabriceerd = BooleanField(naam="isGeprefabriceerd",
                                               label="is geprefabriceerd",
                                               uri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Kantopsluiting.isGeprefabriceerd",

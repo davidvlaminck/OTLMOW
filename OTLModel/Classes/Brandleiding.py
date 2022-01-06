@@ -3,7 +3,7 @@ from OTLModel.Datatypes.BooleanField import BooleanField
 from OTLModel.Datatypes.KwantWrdInBar import KwantWrdInBar
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Brandleiding(Persleiding):
     """Segment uit de leiding die water aanvoert voor het blussen van een brand."""
 
@@ -12,6 +12,7 @@ class Brandleiding(Persleiding):
 
     def __init__(self):
         super().__init__()
+
         self.isGeisoleerd = BooleanField(naam="isGeisoleerd",
                                          label="is geïsoleerd",
                                          uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Brandleiding.isGeisoleerd",

@@ -4,7 +4,7 @@ from OTLModel.Datatypes.KlBatterijMerk import KlBatterijMerk
 from OTLModel.Datatypes.KlBatterijModelnaam import KlBatterijModelnaam
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Batterij(Voedingspunt):
     """Element bestaande uit meerdere elektrochemische cellen voor het leveren van elektriciteit,die ontstaat door de omzetting van opgeslagen chemische energie in elektrische energie."""
 
@@ -13,6 +13,7 @@ class Batterij(Voedingspunt):
 
     def __init__(self):
         super().__init__()
+
         self.merk = KeuzelijstField(naam="merk",
                                     label="merk",
                                     lijst=KlBatterijMerk(),

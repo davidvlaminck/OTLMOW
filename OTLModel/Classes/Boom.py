@@ -12,7 +12,7 @@ from OTLModel.Datatypes.KwantWrdInKubiekeMeter import KwantWrdInKubiekeMeter
 from OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Boom(VegetatieElement):
     """Een opgaande boom is een boom waarvan de vorm van de kruin overeenkomt met zijn natuurlijke, soortgebonden habitus. Opgaande bomen kunnen een hoge, lage, brede, smalle of een afwijkende groeivorm hebben, zoals zuil- en treurvormen. De boom kan zich op volstrekt natuurlijke wijze uitgezaaid hebben en zijn groeivorm kan bepaald zijn door de natuurlijke groeiomstandigheden (bv. natuurlijke snoei). Ontstond de boom in kunstmatige omstandigheden, dan is de groeivorm bepaald door de jeugdsnoei in de kwekerij en is het eindbeeld van de boom bepaald door de begeleidingssnoei of vormsnoei die wordt uitgevoerd vanaf het planten."""
 
@@ -21,6 +21,7 @@ class Boom(VegetatieElement):
 
     def __init__(self):
         super().__init__()
+
         self.aanleg = DtcAanlegBoomvorm()
         """De manier van aanplanten van individuele bomen."""
         self.aanleg.naam = "aanleg"

@@ -7,7 +7,7 @@ from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlVerkeersspiegelVorm import KlVerkeersspiegelVorm
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Verkeersspiegel(AIMObject, Signalisatie):
     """Een verkeersspiegel is een spiegel die de zichtbaarheid verbetert van het aankomende verkeer."""
 
@@ -17,6 +17,7 @@ class Verkeersspiegel(AIMObject, Signalisatie):
     def __init__(self):
         AIMObject.__init__(self)
         Signalisatie.__init__(self)
+
         bijlageDocumentField = DtcDocument()
         bijlageDocumentField.naam = "bijlageDocument"
         bijlageDocumentField.label = "bijlage document"

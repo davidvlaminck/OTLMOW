@@ -5,7 +5,7 @@ from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlSierbeplantingType import KlSierbeplantingType
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Sierbeplanting(BegroeidVoorkomen):
     """Planten die geen blijvende houtige stengel vormen. Eenjarige,tweejarige of vaste planten,die in de winter tot de grond toe afsterven."""
 
@@ -14,6 +14,7 @@ class Sierbeplanting(BegroeidVoorkomen):
 
     def __init__(self):
         super().__init__()
+
         self.aanleg = DtcSierbeplAanleg()
         """De manier van aanplanten van de sierbeplanting."""
         self.aanleg.naam = "aanleg"

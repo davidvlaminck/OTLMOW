@@ -3,7 +3,7 @@ from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlNSB import KlNSB
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Struweel(HoutigeVegetatie):
     """Een struweel is een met struiken begroeide oppervlakte dat minimaal 5 m breed  is, minimaal 1 m hoog, maar meestal 2 tot 5 m hoog is. Een struweel is meestal meersoortig en vaak aan de rand van een bos terug te vinden."""
 
@@ -12,6 +12,7 @@ class Struweel(HoutigeVegetatie):
 
     def __init__(self):
         super().__init__()
+
         self.huidigNatuurbeeld = KeuzelijstField(naam="huidigNatuurbeeld",
                                                  label="huidig natuurbeeld",
                                                  lijst=KlNSB(),

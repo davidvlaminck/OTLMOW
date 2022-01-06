@@ -7,7 +7,7 @@ from OTLModel.Datatypes.KwantWrdInMeterTAW import KwantWrdInMeterTAW
 from OTLModel.Datatypes.KwantWrdInMillimeter import KwantWrdInMillimeter
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Terugslagklep(LinkendElement):
     """Een terugslagklep is een klep die dient om water, vloeistof, granulaat, poeder of gas in één richting door te laten. Meestal duwt het medium de klep bij het heenstromen open en sluit een veer of de zwaartekracht de klep."""
 
@@ -16,6 +16,7 @@ class Terugslagklep(LinkendElement):
 
     def __init__(self):
         super().__init__()
+
         self.breedteOpening = KwantWrdInMillimeter()
         """Breedte van de opening die door de terugslagklep wordt afgesloten in millimeter."""
         self.breedteOpening.naam = "breedteOpening"

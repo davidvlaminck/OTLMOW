@@ -4,7 +4,7 @@ from OTLModel.Datatypes.KlEcoBoombrugType import KlEcoBoombrugType
 from OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Boombrug(AIMObject):
     """Een eenvoudige constructie die een oversteek biedt voor soorten die in bomen leven, voornamelijk eekhoorns."""
 
@@ -13,6 +13,7 @@ class Boombrug(AIMObject):
 
     def __init__(self):
         super().__init__()
+
         self.hoogte = KwantWrdInMeter()
         """De hoogte van de boombrug in meter."""
         self.hoogte.naam = "hoogte"

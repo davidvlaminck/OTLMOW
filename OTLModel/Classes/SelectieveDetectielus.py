@@ -6,7 +6,7 @@ from OTLModel.Datatypes.KlSelLusSoort import KlSelLusSoort
 from OTLModel.Datatypes.KlSelLusVerbinding import KlSelLusVerbinding
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class SelectieveDetectielus(SelNietSelLus):
     """De selectieve detectielussen moeten bepaalde voertuigen toelaten het kruispunt prioritair te dwarsen. Daarvoor zijn die prioritaire voertuigen uitgerust met een zendtoestel dat gecodeerd informatie doorstuurt naar een datalus in het wegdek. Deze lus is verbonden met een demodulator die de informatie decodeert en doorstuurt naar de verkeersregelaar van het te dwarsen kruispunt"""
 
@@ -15,6 +15,7 @@ class SelectieveDetectielus(SelNietSelLus):
 
     def __init__(self):
         super().__init__()
+
         self.heeftMeerdereKruisingen = BooleanField(naam="heeftMeerdereKruisingen",
                                                     label="heeft meerdere kruisingen",
                                                     uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#SelectieveDetectielus.heeftMeerdereKruisingen",

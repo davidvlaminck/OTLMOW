@@ -5,7 +5,7 @@ from OTLModel.Datatypes.KwantWrdInMeterTAW import KwantWrdInMeterTAW
 from OTLModel.Datatypes.KwantWrdInMillimeter import KwantWrdInMillimeter
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Aansluitopening(LinkendElement):
     """Een kleine doorgang in de wand tussen twee kamers, of aan het begin van een leiding."""
 
@@ -14,6 +14,7 @@ class Aansluitopening(LinkendElement):
 
     def __init__(self):
         super().__init__()
+
         self.breedte = KwantWrdInMillimeter()
         """De afstand tussen de uiterste zijden van de aansluitopening in millimeter."""
         self.breedte.naam = "breedte"

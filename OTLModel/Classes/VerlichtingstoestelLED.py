@@ -13,7 +13,7 @@ from OTLModel.Datatypes.KlWvLedTussenafstand import KlWvLedTussenafstand
 from OTLModel.Datatypes.KlWvLedVerlNiveau import KlWvLedVerlNiveau
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class VerlichtingstoestelLED(VerlichtingstoestelConnector, Verlichtingstoestel):
     """Het geheel van de LEDlichtmodule en de behuizing die werden samengesteld met als doel:
  * de lichtstroom van de lichtbronnen hoofdzakelijk op het te verlichten oppervlak (doorlopende wegsectie, conflictgebied,...) te richten, teneinde de zichtbaarheid te verhogen;
@@ -27,6 +27,7 @@ De LED driver bevindt zich fysiek in het verlichtingstoestel maar wordt als een 
     def __init__(self):
         VerlichtingstoestelConnector.__init__(self)
         Verlichtingstoestel.__init__(self)
+
         self.aantalTeVerlichtenRijstroken = KeuzelijstField(naam="aantalTeVerlichtenRijstroken",
                                                             label="aantal te verlichten rijstroken",
                                                             lijst=KlWvLedAantalTeVerlichtenRijstroken(),

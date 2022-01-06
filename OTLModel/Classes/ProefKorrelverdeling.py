@@ -2,7 +2,7 @@ from OTLModel.Classes.Proef import Proef
 from OTLModel.Datatypes.DtcDocument import DtcDocument
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class ProefKorrelverdeling(Proef):
     """Bepaling van de doorval door een reeks zeven van een granulaatmengsel volgens NBN EN 933-1."""
 
@@ -11,6 +11,7 @@ class ProefKorrelverdeling(Proef):
 
     def __init__(self):
         super().__init__()
+
         self.korrelverdeling = DtcDocument()
         """Het resultaat van de test van de gemeten korrelverdeling in de BV laag."""
         self.korrelverdeling.naam = "korrelverdeling"

@@ -2,7 +2,7 @@ from OTLModel.Classes.Put import Put
 from OTLModel.Classes.PutRelatie import PutRelatie
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Infiltratievoorziening(Put, PutRelatie):
     """Voorziening voor infiltratie van onvervuild water."""
 

@@ -1,7 +1,7 @@
 from OTLModel.Classes.AIMNaamObject import AIMNaamObject
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class ForfaitaireAansluiting(AIMNaamObject):
     """Een elektrische aansluiting waarbij met een forfaitair tarief gewerkt wordt, hierbij is er geen teller voorzien door de DNB."""
 

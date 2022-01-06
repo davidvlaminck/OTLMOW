@@ -1,7 +1,7 @@
 from OTLModel.Classes.AIMNaamObject import AIMNaamObject
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class FieldOfView(AIMNaamObject):
     """2D-polygoon die het gezichtsveld van een gekoppeld camera onderdeel voorstelt."""
 

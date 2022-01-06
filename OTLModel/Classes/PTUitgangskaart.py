@@ -1,7 +1,7 @@
 from OTLModel.Classes.PTModuleZFirmware import PTModuleZFirmware
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class PTUitgangskaart(PTModuleZFirmware):
     """Relaiskaart met 12 spanningsvrije contacten per kaart, max. 2 bijkomende kaarten per luscontactinterface."""
 

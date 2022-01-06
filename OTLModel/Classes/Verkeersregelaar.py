@@ -12,7 +12,7 @@ from OTLModel.Datatypes.KlVerkeersregelaarVoltage import KlVerkeersregelaarVolta
 from OTLModel.Datatypes.StringField import StringField
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Verkeersregelaar(AIMNaamObject):
     """Een verkeersregelaar is een programmeerbaar toestel dat de verkeerslichten op kruispunten kan regelen overeenkomstig een goedgekeurd verkeersplan. Een verkeersregelaar is bedoeld om het verkeer verkeersafhankelijk te sturen overeenkomstig het gedetecteerde verkeer. Verkeersregelaars kunnen op zichzelf werken of in groep ingeschakeld worden, zodoende op een gecoördineerde wijze de verkeersstromen te verwerken.
 Eveneens detecteert een verkeersregelaar defecte onderdelen, van zichzelf of van aangesloten installaties. Afhankelijk van het soort defect stuurt een verkeersregelaar een code uit opdat het euvel hersteld kan worden. Bij welbepaalde defecten worden verkeerslichten uitgeschakeld of op knipperstand gezet.
@@ -28,6 +28,7 @@ Volgende documenten zijn specifiek van toepassing voor verkeersregelaars:
 
     def __init__(self):
         super().__init__()
+
         coordinatiewijzeField = KeuzelijstField(naam="coordinatiewijze",
                                                 label="coördinatiewijze",
                                                 lijst=KlVerkeersregelaarCoordinatiewijze(),

@@ -4,7 +4,7 @@ from OTLModel.Datatypes.KlVRBatterijCUMerk import KlVRBatterijCUMerk
 from OTLModel.Datatypes.KlVRBatterijCUModelnaam import KlVRBatterijCUModelnaam
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class VRBatterijICU(VRModuleZFirmware):
     """Batterij die zorgt dat de primaire melding "spanning afwezig", in het geval van een spanningsuitval, nog kan doorgestuurd worden naar het afstandsbewakingssysteem."""
 
@@ -13,6 +13,7 @@ class VRBatterijICU(VRModuleZFirmware):
 
     def __init__(self):
         super().__init__()
+
         self.merk = KeuzelijstField(naam="merk",
                                     label="merk",
                                     lijst=KlVRBatterijCUMerk(),

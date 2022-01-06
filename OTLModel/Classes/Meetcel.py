@@ -6,7 +6,7 @@ from OTLModel.Datatypes.KlMeetcelVeiligheidsfactor import KlMeetcelVeiligheidsfa
 from OTLModel.Datatypes.StringField import StringField
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Meetcel(AIMNaamObject):
     """Een cel voorzien met uitrusting voor het meten van het energieverbruik aan de hoogspanningszijde van de transformator."""
 
@@ -15,6 +15,7 @@ class Meetcel(AIMNaamObject):
 
     def __init__(self):
         super().__init__()
+
         self.nauwkeurigheidsklasse = KeuzelijstField(naam="nauwkeurigheidsklasse",
                                                      label="nauwkeurigheidsklasse",
                                                      lijst=KlMeetcelNauwkeurigheidsklasse(),

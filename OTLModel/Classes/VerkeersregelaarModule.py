@@ -2,7 +2,7 @@ from abc import abstractmethod
 from OTLModel.Classes.AIMNaamObject import AIMNaamObject
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class VerkeersregelaarModule(AIMNaamObject):
     """Abstracte voor de verschillende modules waaruit een verkeersregelaar opgebouwd is."""
 

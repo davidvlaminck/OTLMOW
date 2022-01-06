@@ -5,7 +5,7 @@ from OTLModel.Datatypes.KlHulpstukType import KlHulpstukType
 from OTLModel.Datatypes.KwantWrdInMillimeter import KwantWrdInMillimeter
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Hulpstuk(LinkendElement):
     """Stukken die zorgen voor verbindingen tussen rechte buizen om bv. van richting te veranderen, te verlengen, te verlopen van diameter, meerdere buizen op mekaar aan te sluiten,..."""
 
@@ -14,6 +14,7 @@ class Hulpstuk(LinkendElement):
 
     def __init__(self):
         super().__init__()
+
         self.inwendigeDiameter = KwantWrdInMillimeter()
         """De diameter van de binnenzijde van het hulpstuk in millimeter."""
         self.inwendigeDiameter.naam = "inwendigeDiameter"

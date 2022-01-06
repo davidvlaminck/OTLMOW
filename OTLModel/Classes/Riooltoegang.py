@@ -4,7 +4,7 @@ from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlUitlaatType import KlUitlaatType
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Riooltoegang(Put, PutRelatie):
     """Het uiteinde van een rioolbuis."""
 
@@ -14,6 +14,7 @@ class Riooltoegang(Put, PutRelatie):
     def __init__(self):
         Put.__init__(self)
         PutRelatie.__init__(self)
+
         self.typeRiooltoegang = KeuzelijstField(naam="typeRiooltoegang",
                                                 label="type riooltoegang",
                                                 lijst=KlUitlaatType(),

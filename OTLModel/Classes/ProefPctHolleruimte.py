@@ -2,7 +2,7 @@ from OTLModel.Classes.Proef import Proef
 from OTLModel.Datatypes.DtcDocument import DtcDocument
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class ProefPctHolleruimte(Proef):
     """Proef om het percentage holle ruimte in een bitumineuze laag te bepalen."""
 
@@ -11,6 +11,7 @@ class ProefPctHolleruimte(Proef):
 
     def __init__(self):
         super().__init__()
+
         self.pctHolleruimte = DtcDocument()
         """Het resultaat van het aantal percentage holleruimte meting aanwezig in de laag."""
         self.pctHolleruimte.naam = "pctHolleruimte"

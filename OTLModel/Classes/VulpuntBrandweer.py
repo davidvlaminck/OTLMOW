@@ -1,7 +1,7 @@
 from OTLModel.Classes.Brandvoorziening import Brandvoorziening
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class VulpuntBrandweer(Brandvoorziening):
     """Klep in de brandleiding waar een vulwagen van de brandweer het debiet van de brandleiding kan verhogen door water toe voegen."""
 

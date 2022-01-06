@@ -2,7 +2,7 @@ from OTLModel.Classes.BegroeidVoorkomen import BegroeidVoorkomen
 from OTLModel.Datatypes.BooleanField import BooleanField
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Grindgazon(BegroeidVoorkomen):
     """Gazontype specifiek op een gestabiliseerde ondergrond. Het is een substraat ontwikkeld om voertuigen sporadisch toe te laten op gazons zonder dat er spoorvorming optreedt."""
 
@@ -11,6 +11,7 @@ class Grindgazon(BegroeidVoorkomen):
 
     def __init__(self):
         super().__init__()
+
         self.isTweelaags = BooleanField(naam="isTweelaags",
                                         label="is tweelaags",
                                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Grindgazon.isTweelaags",

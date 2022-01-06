@@ -1,7 +1,7 @@
 from OTLModel.Classes.PTModuleZFirmware import PTModuleZFirmware
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class PTDemodulatoren(PTModuleZFirmware):
     """De functie van de demodulator bestaat erin de data, ontvangen door de lus, te decoderen en in het juiste formaat door te sturen naar de centrale verwerkingseenheid, de PT-verwerkingseenheid."""
 

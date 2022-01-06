@@ -4,7 +4,7 @@ from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlVriBewaking import KlVriBewaking
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Detectie(AIMNaamObject):
     """Abstracte voor de overige detecties, zijnde die die niet onder de groepen "niet weggebonden detecties", " weggebonden detecties" of "detectielussen" vallen."""
 
@@ -14,6 +14,7 @@ class Detectie(AIMNaamObject):
     @abstractmethod
     def __init__(self):
         super().__init__()
+
         self.soortBewaking = KeuzelijstField(naam="soortBewaking",
                                              label="soort bewaking",
                                              lijst=KlVriBewaking(),

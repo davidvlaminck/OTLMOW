@@ -3,7 +3,7 @@ from OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter
 from OTLModel.Datatypes.KwantWrdInVierkanteMeter import KwantWrdInVierkanteMeter
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class GroepDwarseMarkeringEnFiguratie(AIMObject):
     """Groepering van de dwarse- en figuratiemarkering."""
 
@@ -12,6 +12,7 @@ class GroepDwarseMarkeringEnFiguratie(AIMObject):
 
     def __init__(self):
         super().__init__()
+
         self.totaleOppervlakte = KwantWrdInVierkanteMeter()
         """De oppervlakte van de groep dwarse en/of figuratie markering."""
         self.totaleOppervlakte.naam = "totaleOppervlakte"

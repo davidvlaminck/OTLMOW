@@ -5,7 +5,7 @@ from OTLModel.Datatypes.KlLEKantstrookType import KlLEKantstrookType
 from OTLModel.Datatypes.KwantWrdInCentimeter import KwantWrdInCentimeter
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class KantstrookStd(GestandaardiseerdeKantopsluiting):
     """Gestandaardiseerde kantopsluiting, bestemd om de verharding steun te geven."""
 
@@ -14,6 +14,7 @@ class KantstrookStd(GestandaardiseerdeKantopsluiting):
 
     def __init__(self):
         super().__init__()
+
         self.breedte = KwantWrdInCentimeter()
         """De breedte van de gestandaardiseerde kantstrook in centimeter."""
         self.breedte.naam = "breedte"

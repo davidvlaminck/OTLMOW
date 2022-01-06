@@ -6,7 +6,7 @@ from OTLModel.Datatypes.KlRioleringsbuisMateriaal import KlRioleringsbuisMateria
 from OTLModel.Datatypes.KlSterktereeks import KlSterktereeks
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Rioleringsbuis(Buis):
     """Ondergronds kanaal of pijp voor gravitaire afvoer van water."""
 
@@ -15,6 +15,7 @@ class Rioleringsbuis(Buis):
 
     def __init__(self):
         super().__init__()
+
         self.aantalAfgedichteAansluitingen = IntegerField(naam="aantalAfgedichteAansluitingen",
                                                           label="Aantal afgedichte aansluitingen",
                                                           uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Rioleringsbuis.aantalAfgedichteAansluitingen",

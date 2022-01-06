@@ -3,7 +3,7 @@ from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlScheurremmendeLaagType import KlScheurremmendeLaagType
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class ScheurremmendeLaag(AndereLaag):
     """Een scheurremmende laag is een laag onder andere bitumineuze lagen om reflectiescheurvorming tegen te gaan of een wegstructuur te versterken (asfaltwapening)."""
 
@@ -12,6 +12,7 @@ class ScheurremmendeLaag(AndereLaag):
 
     def __init__(self):
         super().__init__()
+
         self.type = KeuzelijstField(naam="type",
                                     label="type",
                                     lijst=KlScheurremmendeLaagType(),

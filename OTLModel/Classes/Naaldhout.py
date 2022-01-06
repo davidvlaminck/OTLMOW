@@ -1,7 +1,7 @@
 from OTLModel.Classes.OpgaandeHoutigeVegetatie import OpgaandeHoutigeVegetatie
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Naaldhout(OpgaandeHoutigeVegetatie):
     """H5 - 
 Naaldhoutbestanden van allerlei aard: van mono-specifiek of dominant tot gevarieerd met o.a. zwarte den, grove den, spar spp., lork, Douglas en ev. struweelsoorten (soorten uit S1, S2, S4, S5)."""

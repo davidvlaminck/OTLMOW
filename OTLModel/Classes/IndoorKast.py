@@ -3,7 +3,7 @@ from OTLModel.Datatypes.KardinaliteitField import KardinaliteitField
 from OTLModel.Datatypes.DtcDocument import DtcDocument
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class IndoorKast(Kast):
     """Behuizing in de vorm van een kast voor gebruik in binnenruimtes."""
 
@@ -12,6 +12,7 @@ class IndoorKast(Kast):
 
     def __init__(self):
         super().__init__()
+
         mplanField = DtcDocument()
         mplanField.naam = "mplan"
         mplanField.label = "m-plan"

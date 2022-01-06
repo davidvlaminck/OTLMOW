@@ -6,7 +6,7 @@ from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlLEACWerkingsbreedte import KlLEACWerkingsbreedte
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Geleideconstructie(SchokindexVoertuigkering, EigenschappenVoertuigkering, AansluitendeConstructie):
     """Een doorlopende afschermende constructie voor voertuigen geïnstalleerd langs de weg of in de middenberm."""
 
@@ -17,6 +17,7 @@ class Geleideconstructie(SchokindexVoertuigkering, EigenschappenVoertuigkering, 
         SchokindexVoertuigkering.__init__(self)
         EigenschappenVoertuigkering.__init__(self)
         AansluitendeConstructie.__init__(self)
+
         self.isVerwijderbaar = BooleanField(naam="isVerwijderbaar",
                                             label="is verwijderbaar",
                                             uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Geleideconstructie.isVerwijderbaar",

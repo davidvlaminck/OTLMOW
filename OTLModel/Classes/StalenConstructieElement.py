@@ -3,7 +3,7 @@ from OTLModel.Datatypes.DtcConstructiestaalspecificaties import DtcConstructiest
 from OTLModel.Datatypes.KwantWrdInKilogram import KwantWrdInKilogram
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class StalenConstructieElement(ABC):
     """Bundeling van gemeenschappelijke eigenschappen van stalen constructie-elementen."""
 

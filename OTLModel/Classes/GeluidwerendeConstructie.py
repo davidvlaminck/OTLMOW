@@ -5,7 +5,7 @@ from OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter
 from OTLModel.Datatypes.KwantWrdInVierkanteMeter import KwantWrdInVierkanteMeter
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class GeluidwerendeConstructie(AIMObject):
     """Een geluidswerende wandvormige constructie bestaande uit een desgevallend geluidsisolerend materiaal en/of geluidsabsorberend materiaal en voorzien van de nodige structuren om de bouwkundige stabiliteit te verzekeren."""
 
@@ -14,6 +14,7 @@ class GeluidwerendeConstructie(AIMObject):
 
     def __init__(self):
         super().__init__()
+
         self.detailplanHoogteverloop = DtcDocument()
         """Dit is een detailplan in de vorm van een lijn waarin het verloop van de absolute hoogte van de top van de geluidswerende constructie wordt weergegeven. Minstens om de 10 meter wordt de hoogte van de top van de constructie bepaald. Het detailplan wordt gebruikt voor akoestische modellering."""
         self.detailplanHoogteverloop.naam = "detailplanHoogteverloop"

@@ -9,7 +9,7 @@ from OTLModel.Datatypes.KlStortsteenType import KlStortsteenType
 from OTLModel.Datatypes.KlTypeSchanskorf import KlTypeSchanskorf
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Schanskorf(AndereVerharding):
     """Een schanskorf bestaat uit een metalen gaasnet dat wordt gevuld met steenachtige materialen."""
 
@@ -18,6 +18,7 @@ class Schanskorf(AndereVerharding):
 
     def __init__(self):
         super().__init__()
+
         self.heeftVerankeringspalen = BooleanField(naam="heeftVerankeringspalen",
                                                    label="heeft verankeringspalen",
                                                    uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Schanskorf.heeftVerankeringspalen",

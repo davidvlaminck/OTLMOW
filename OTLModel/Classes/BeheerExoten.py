@@ -6,7 +6,7 @@ from OTLModel.Datatypes.KlNazorgJaarfrequentie import KlNazorgJaarfrequentie
 from OTLModel.Datatypes.KwantWrdInVierkanteMeter import KwantWrdInVierkanteMeter
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class BeheerExoten(AIMObject):
     """Het beheerobject voor de exoten."""
 
@@ -15,6 +15,7 @@ class BeheerExoten(AIMObject):
 
     def __init__(self):
         super().__init__()
+
         self.beheeroptie = KeuzelijstField(naam="beheeroptie",
                                            label="beheeroptie",
                                            lijst=KlBeheerExoten(),

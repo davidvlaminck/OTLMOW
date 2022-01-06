@@ -1,7 +1,7 @@
 from OTLModel.Classes.Ventilatie import Ventilatie
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Overdrukventilator(Ventilatie):
     """Onderdeel dat tot doel heeft overdruk te creëren in een gesloten ruimte zodat bij het openen van de ruimte enkel lucht kan ontsnappen naar buiten en geen lucht, rook, partikels, ... naar binnen te laten."""
 

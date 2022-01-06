@@ -9,7 +9,7 @@ from OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter
 from OTLModel.Datatypes.StringField import StringField
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class SteunStandaard(AIMNaamObject, EMDraagconstructie):
     """Abstracte voor de standaard steunen."""
 
@@ -20,6 +20,7 @@ class SteunStandaard(AIMNaamObject, EMDraagconstructie):
     def __init__(self):
         AIMNaamObject.__init__(self)
         EMDraagconstructie.__init__(self)
+
         self.beschermlaag = KeuzelijstField(naam="beschermlaag",
                                             label="beschermlaag",
                                             lijst=KlDraagConstrBeschermlaag(),

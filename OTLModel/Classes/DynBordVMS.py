@@ -4,7 +4,7 @@ from OTLModel.Datatypes.KlDynBordVMSMerk import KlDynBordVMSMerk
 from OTLModel.Datatypes.KlDynBordVMSModelnaam import KlDynBordVMSModelnaam
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class DynBordVMS(LEDBord):
     """Dynamisch verkeersbord dat dynamische verkeerstekens  (linkerzijde) en teksten (rechterzijde) kan afbeelden. VMS staat voor Variable Message Signs."""
 
@@ -13,6 +13,7 @@ class DynBordVMS(LEDBord):
 
     def __init__(self):
         super().__init__()
+
         self.merk = KeuzelijstField(naam="merk",
                                     label="merk",
                                     lijst=KlDynBordVMSMerk(),

@@ -5,7 +5,7 @@ from OTLModel.Datatypes.KlLEACSnelheidsklasse import KlLEACSnelheidsklasse
 from OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Motorvangplank(AfschermendeConstructie):
     """Een constructie geïnstalleerd aan een geleideconstructie of in de onmiddellijke omgeving ervan,met als doel de ernst van een botsing van een motorrijder met de geleideconstructie te reduceren."""
 
@@ -14,6 +14,7 @@ class Motorvangplank(AfschermendeConstructie):
 
     def __init__(self):
         super().__init__()
+
         self.lengte = KwantWrdInMeter()
         """De lengte van de motorvangplank in meter."""
         self.lengte.naam = "lengte"

@@ -3,7 +3,7 @@ from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlRetroreflecterendeKokerFolieType import KlRetroreflecterendeKokerFolieType
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class RetroReflecterendeKoker(AIMObject):
     """Een kunststoffen koker bevestigd rond een steun om de zichtbaarheid van verkeerseilanden te verhogen."""
 
@@ -12,6 +12,7 @@ class RetroReflecterendeKoker(AIMObject):
 
     def __init__(self):
         super().__init__()
+
         self.folieType = KeuzelijstField(naam="folieType",
                                          label="folie type",
                                          lijst=KlRetroreflecterendeKokerFolieType(),

@@ -3,7 +3,7 @@ from OTLModel.Classes.FirmwareObject import FirmwareObject
 from OTLModel.Datatypes.StringField import StringField
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Armatuurcontroller(Communicatieapparatuur, FirmwareObject):
     """Controller die op het verlichtingstoestel wordt gemonteerd en die één verlichtingstoestel aanstuurt."""
 
@@ -13,6 +13,7 @@ class Armatuurcontroller(Communicatieapparatuur, FirmwareObject):
     def __init__(self):
         Communicatieapparatuur.__init__(self)
         FirmwareObject.__init__(self)
+
         self.merk = StringField(naam="merk",
                                 label="merk",
                                 uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Armatuurcontroller.merk",

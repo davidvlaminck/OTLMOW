@@ -2,7 +2,7 @@ from abc import abstractmethod
 from OTLModel.Classes.AIMNaamObject import AIMNaamObject
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class SoftwareToegang(AIMNaamObject):
     """Een abstracte waarmee een object kan connecteren naar software, al dan niet door gebruik te maken van de logische poort."""
 

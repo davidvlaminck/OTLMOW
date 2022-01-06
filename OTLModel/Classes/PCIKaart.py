@@ -4,7 +4,7 @@ from OTLModel.Datatypes.KlPCIkaartMerk import KlPCIkaartMerk
 from OTLModel.Datatypes.KlPCIkaartModelnaam import KlPCIkaartModelnaam
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class PCIKaart(AIMNaamObject):
     """Peripheral Component Interconnect of uitbreidingssleuf."""
 
@@ -13,6 +13,7 @@ class PCIKaart(AIMNaamObject):
 
     def __init__(self):
         super().__init__()
+
         self.merk = KeuzelijstField(naam="merk",
                                     label="merk",
                                     lijst=KlPCIkaartMerk(),

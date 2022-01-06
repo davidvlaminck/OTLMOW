@@ -3,7 +3,7 @@ from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlLEACUitbuigingstype import KlLEACUitbuigingstype
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class NietGetestBeginstuk(Beginstuk):
     """Een niet-gecertificeerd begin aan een geleideconstructie, aan de stroomopwaartse zijde ten opzichte van de meest nabij gelegen rijstrook."""
 
@@ -12,6 +12,7 @@ class NietGetestBeginstuk(Beginstuk):
 
     def __init__(self):
         super().__init__()
+
         self.uitbuigingstype = KeuzelijstField(naam="uitbuigingstype",
                                                label="uitbuigingstype",
                                                lijst=KlLEACUitbuigingstype(),

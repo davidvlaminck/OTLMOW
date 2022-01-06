@@ -4,7 +4,7 @@ from OTLModel.Datatypes.KlKlimatisatieMerk import KlKlimatisatieMerk
 from OTLModel.Datatypes.KlKlimatisatieModelnaam import KlKlimatisatieModelnaam
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Klimatisatie(AIMNaamObject):
     """Component waarmee de temperatuur en klimaat geregeld wordt van het objecttype waaraan het bevestigd is zoals een behuizing of ruimte."""
 
@@ -13,6 +13,7 @@ class Klimatisatie(AIMNaamObject):
 
     def __init__(self):
         super().__init__()
+
         self.merk = KeuzelijstField(naam="merk",
                                     label="merk",
                                     lijst=KlKlimatisatieMerk(),

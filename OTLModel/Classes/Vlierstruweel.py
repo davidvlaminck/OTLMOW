@@ -1,7 +1,7 @@
 from OTLModel.Classes.Struweel import Struweel
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Vlierstruweel(Struweel):
     """S5 - 
 gewone vlier (dominant)."""

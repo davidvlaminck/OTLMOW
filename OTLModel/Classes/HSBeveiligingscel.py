@@ -13,7 +13,7 @@ from OTLModel.Datatypes.KwantWrdInJaar import KwantWrdInJaar
 from OTLModel.Datatypes.StringField import StringField
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class HSBeveiligingscel(AIMNaamObject):
     """Cel die de hoogspanningsschakelinrichting omvat. Hieronder vallen onder meer de lastscheidingsschakelaar, smeltveiligheden, aardingsschakelaar,..."""
 
@@ -22,6 +22,7 @@ class HSBeveiligingscel(AIMNaamObject):
 
     def __init__(self):
         super().__init__()
+
         self.elektrischSchema = DtcDocument()
         """Elektrisch aansluitschema van de HS beveiligingscel."""
         self.elektrischSchema.naam = "elektrischSchema"

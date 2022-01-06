@@ -5,7 +5,7 @@ from OTLModel.Datatypes.KlNeerslagsensorModelnaam import KlNeerslagsensorModelna
 from OTLModel.Datatypes.KlNeerslagsensorType import KlNeerslagsensorType
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Neerslagsensor(AIMNaamObject):
     """Detectie van neerslag(hoeveelheid/intensiteit)."""
 
@@ -14,6 +14,7 @@ class Neerslagsensor(AIMNaamObject):
 
     def __init__(self):
         super().__init__()
+
         self.merk = KeuzelijstField(naam="merk",
                                     label="merk",
                                     lijst=KlNeerslagsensorMerk(),

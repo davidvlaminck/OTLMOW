@@ -1,7 +1,7 @@
 from OTLModel.Classes.DirectioneleRelatie import DirectioneleRelatie
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class HeeftNetwerkProtectie(DirectioneleRelatie):
     """Deze relatie geeft aan wat de redundante paden/linken zijn van elkaar, dit is enkel in gebruik binnen het netwerk domein. Deze relatie heeft geen richting."""
 

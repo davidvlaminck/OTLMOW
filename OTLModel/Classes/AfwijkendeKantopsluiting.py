@@ -6,7 +6,7 @@ from OTLModel.Datatypes.DtcDocument import DtcDocument
 from OTLModel.Datatypes.KwantWrdInCentimeter import KwantWrdInCentimeter
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class AfwijkendeKantopsluiting(Kantopsluiting):
     """Abstracte voor een kantopsluiting die niet voldoet aan een bepaalde standaard."""
 
@@ -16,6 +16,7 @@ class AfwijkendeKantopsluiting(Kantopsluiting):
     @abstractmethod
     def __init__(self):
         super().__init__()
+
         self.breedte = KwantWrdInCentimeter()
         """De breedte van de afwijkende kantopsluiting in centimeter."""
         self.breedte.naam = "breedte"

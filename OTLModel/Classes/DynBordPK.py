@@ -4,7 +4,7 @@ from OTLModel.Datatypes.KlDynBordPKMerk import KlDynBordPKMerk
 from OTLModel.Datatypes.KlDynBordPKModelnaam import KlDynBordPKModelnaam
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class DynBordPK(LEDBord):
     """Dynamisch verkeersbord dat een Pijl of Kruis verkeersteken kan afbeelden."""
 
@@ -13,6 +13,7 @@ class DynBordPK(LEDBord):
 
     def __init__(self):
         super().__init__()
+
         self.merk = KeuzelijstField(naam="merk",
                                     label="merk",
                                     lijst=KlDynBordPKMerk(),

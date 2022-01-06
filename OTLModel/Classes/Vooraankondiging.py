@@ -1,7 +1,7 @@
 from OTLModel.Classes.Waarschuwingslantaarn import Waarschuwingslantaarn
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Vooraankondiging(Waarschuwingslantaarn):
     """Geheel van één of meerdere knipperlantaarns, inclusief knipperdoos, bevestigd op een draagconstructie ter waarschuwing (ter benadering) van een verkeerslichtengeregeld kruispunt."""
 

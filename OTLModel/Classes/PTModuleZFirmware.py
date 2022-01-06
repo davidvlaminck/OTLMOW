@@ -2,7 +2,7 @@ from abc import abstractmethod
 from OTLModel.Classes.PTRegelaarModule import PTRegelaarModule
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class PTModuleZFirmware(PTRegelaarModule):
     """Abstracte voor de modules zonder firmware van het personentransportbeïnvloedingssysteem van een verkeersregelaar."""
 

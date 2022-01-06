@@ -1,7 +1,7 @@
 from OTLModel.Classes.AndereLaag import AndereLaag
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Stortdraad(AndereLaag):
     """Staaldraad omwikkeld met een laag plastic ter bescherming tegen vocht, vooral gebruikt als stut voor stortsteen."""
 

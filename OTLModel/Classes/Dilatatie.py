@@ -3,7 +3,7 @@ from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlLEACUitzettingswaardeDilatatie import KlLEACUitzettingswaardeDilatatie
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Dilatatie(AIMObject):
     """Dilataties zijn bedoeld om ervoor te zorgen dat bouwconstructies vrij kunnen krimpen en uitzetten bij onder andere temperatuurwisselingen."""
 
@@ -12,6 +12,7 @@ class Dilatatie(AIMObject):
 
     def __init__(self):
         super().__init__()
+
         self.uitzettingswaarde = KeuzelijstField(naam="uitzettingswaarde",
                                                  label="Uitzettingswaarde",
                                                  lijst=KlLEACUitzettingswaardeDilatatie(),

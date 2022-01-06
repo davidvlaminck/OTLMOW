@@ -2,7 +2,7 @@ from OTLModel.Classes.AIMObject import AIMObject
 from OTLModel.Datatypes.DtcDocument import DtcDocument
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Baanlichaam(AIMObject):
     """De lagen tussen het baanbed en het baanoppervlak."""
 
@@ -11,6 +11,7 @@ class Baanlichaam(AIMObject):
 
     def __init__(self):
         super().__init__()
+
         self.dwarsprofiel = DtcDocument()
         """Een dwarsprofiel is een doorsnijding van een terrein of constructie met een verticaal vlak, aangebracht loodrecht op de as ervan."""
         self.dwarsprofiel.naam = "dwarsprofiel"

@@ -2,7 +2,7 @@ from OTLModel.Classes.Proef import Proef
 from OTLModel.Datatypes.KwantWrdInCentimeter import KwantWrdInCentimeter
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class ProefGemetenDikte(Proef):
     """De effectieve dikte van de laag."""
 
@@ -11,6 +11,7 @@ class ProefGemetenDikte(Proef):
 
     def __init__(self):
         super().__init__()
+
         self.gemetenDikte = KwantWrdInCentimeter()
         """De gemeten dikte van de laag in centimeter."""
         self.gemetenDikte.naam = "gemetenDikte"

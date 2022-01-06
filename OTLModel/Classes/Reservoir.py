@@ -1,7 +1,7 @@
 from OTLModel.Classes.Kamer import Kamer
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Reservoir(Kamer):
     """Een reservoir is een complexe kamer die verschillende niveaus en gekoppelde oppervlaktes kan hebben."""
 

@@ -3,7 +3,7 @@ from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlNSB import KlNSB
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class SoortenrijkSchraalGraslandGraslandfase5(Grasland):
     """G5 - Een fijn, soortenrijk mozaïek van geel-, grijs- en blauwgroene laagblijvende schijngrassen (zeggen en russen) en kruiden."""
 
@@ -12,6 +12,7 @@ class SoortenrijkSchraalGraslandGraslandfase5(Grasland):
 
     def __init__(self):
         super().__init__()
+
         self.huidigNatuurbeeld = KeuzelijstField(naam="huidigNatuurbeeld",
                                                  label="huidig natuurbeeld",
                                                  lijst=KlNSB(),

@@ -5,7 +5,7 @@ from OTLModel.Datatypes.KwantWrdInAmpere import KwantWrdInAmpere
 from OTLModel.Datatypes.KwantWrdInVolt import KwantWrdInVolt
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Stopcontact(AIMObject):
     """Een aansluitpunt op het elektrisch net voor afname van elektrische energie met behulp van een stekker."""
 
@@ -14,6 +14,7 @@ class Stopcontact(AIMObject):
 
     def __init__(self):
         super().__init__()
+
         self.aantalPolen = KeuzelijstField(naam="aantalPolen",
                                            label="aantal polen",
                                            lijst=KlStopcontactAantalPolen(),

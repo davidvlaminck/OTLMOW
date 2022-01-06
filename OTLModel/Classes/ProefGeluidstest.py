@@ -2,7 +2,7 @@ from OTLModel.Classes.Proef import Proef
 from OTLModel.Datatypes.DtcGeluidstestRapport import DtcGeluidstestRapport
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class ProefGeluidstest(Proef):
     """Test van het geluidsscherm op oa. luchtgeluidsisolatie, geluidsabsorptie, e.d. """
 
@@ -11,6 +11,7 @@ class ProefGeluidstest(Proef):
 
     def __init__(self):
         super().__init__()
+
         self.geluidstestrapport = DtcGeluidstestRapport()
         """Het resultaat geluidstest."""
         self.geluidstestrapport.naam = "geluidstestrapport"

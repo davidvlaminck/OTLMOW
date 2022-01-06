@@ -5,7 +5,7 @@ from OTLModel.Datatypes.KlBeheerBoomvorm import KlBeheerBoomvorm
 from OTLModel.Datatypes.KwantWrdInVierkanteMeter import KwantWrdInVierkanteMeter
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class BeheerBoomvorm(AIMObject):
     """Het beheerobject voor de solitaire boom."""
 
@@ -14,6 +14,7 @@ class BeheerBoomvorm(AIMObject):
 
     def __init__(self):
         super().__init__()
+
         beheeroptieField = KeuzelijstField(naam="beheeroptie",
                                            label="beheeroptie",
                                            lijst=KlBeheerBoomvorm(),

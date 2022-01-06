@@ -2,7 +2,7 @@ from OTLModel.Classes.AIMObject import AIMObject
 from OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class PiezometrischeBuis(AIMObject):
     """Een al dan niet permanente buis om waterstanden bij grondverlaging te meten."""
 
@@ -11,6 +11,7 @@ class PiezometrischeBuis(AIMObject):
 
     def __init__(self):
         super().__init__()
+
         self.diepte = KwantWrdInMeter()
         """De diepte vanaf maaiveld tot de onderkant van de piezometrische buis in meter."""
         self.diepte.naam = "diepte"

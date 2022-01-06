@@ -1,7 +1,7 @@
 from OTLModel.Classes.Grasland import Grasland
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class GrassenmixGraslandfase1(Grasland):
     """G1 - Groen lappendeken met soorten uit G0 + kruipende boterbloem, paardenbloem,gewone hoornbloem (in enkelemonospecifieke haarden)."""
 

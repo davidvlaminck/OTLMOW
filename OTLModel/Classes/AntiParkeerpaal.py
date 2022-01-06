@@ -5,7 +5,7 @@ from OTLModel.Datatypes.KlAntiparkeerpaalMateriaal import KlAntiparkeerpaalMater
 from OTLModel.Datatypes.KlPlaatsingswijze import KlPlaatsingswijze
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class AntiParkeerpaal(Straatmeubilair):
     """Een paal met als doel het parkeren te verhinderen."""
 
@@ -14,6 +14,7 @@ class AntiParkeerpaal(Straatmeubilair):
 
     def __init__(self):
         super().__init__()
+
         self.materiaal = KeuzelijstField(naam="materiaal",
                                          label="materiaal",
                                          lijst=KlAntiparkeerpaalMateriaal(),

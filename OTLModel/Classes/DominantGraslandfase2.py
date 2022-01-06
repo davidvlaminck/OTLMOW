@@ -1,7 +1,7 @@
 from OTLModel.Classes.Grasland import Grasland
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class DominantGraslandfase2(Grasland):
     """G2 - Meer dan 50% van de oppervlakte ingenomen door één niet sterk glanzende grassoort:gestreepte witbol, grote vossenstaart of glanshaver, + grassen en kruiden uit G0 en G1."""
 

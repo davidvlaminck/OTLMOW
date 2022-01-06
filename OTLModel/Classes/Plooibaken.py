@@ -4,7 +4,7 @@ from OTLModel.Datatypes.KlKleurPlooibaken import KlKleurPlooibaken
 from OTLModel.Datatypes.KlPlooibakenType import KlPlooibakenType
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Plooibaken(Straatmeubilair):
     """Een zacht kunststoffen paal met verschillende diameter en reflecterende banden."""
 
@@ -13,6 +13,7 @@ class Plooibaken(Straatmeubilair):
 
     def __init__(self):
         super().__init__()
+
         self.kleur = KeuzelijstField(naam="kleur",
                                      label="kleur",
                                      lijst=KlKleurPlooibaken(),

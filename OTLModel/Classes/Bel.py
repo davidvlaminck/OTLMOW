@@ -2,7 +2,7 @@ from OTLModel.Classes.AIMNaamObject import AIMNaamObject
 from OTLModel.Datatypes.DtcDocument import DtcDocument
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Bel(AIMNaamObject):
     """Toestel dat door middel van een geluidssignaal de aandacht vestigt op een situatie."""
 
@@ -11,6 +11,7 @@ class Bel(AIMNaamObject):
 
     def __init__(self):
         super().__init__()
+
         self.technischeFiche = DtcDocument()
         """De technische fiche van een bel."""
         self.technischeFiche.naam = "technischeFiche"

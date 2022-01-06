@@ -8,7 +8,7 @@ from OTLModel.Datatypes.StringField import StringField
 from OTLModel.Datatypes.URIField import URIField
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Derdenobject(AIMToestand, AIMDBStatus):
     """Object niet in eigendom van de assetbeheerder dat zonder verdere typering bewaard wordt om relaties met getypeerde assets te kunnen beheren."""
 
@@ -18,6 +18,7 @@ class Derdenobject(AIMToestand, AIMDBStatus):
     def __init__(self):
         AIMToestand.__init__(self)
         AIMDBStatus.__init__(self)
+
         self.assetId = DtcIdentificator()
         """Unieke identificatie van de asset zoals toegekend door de assetbeheerder of n.a.v. eerste aanlevering door de leverancier."""
         self.assetId.naam = "assetId"

@@ -9,7 +9,7 @@ from OTLModel.Datatypes.KlCabineModelnaam import KlCabineModelnaam
 from OTLModel.Datatypes.StringField import StringField
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Inloopbehuizing(Behuizing):
     """Een behuizing voor het beschermen van technieken en materialen waarin het omwille van de grootte en toegankelijkheid mogelijk is om rond te lopen."""
 
@@ -19,6 +19,7 @@ class Inloopbehuizing(Behuizing):
     @abstractmethod
     def __init__(self):
         super().__init__()
+
         self.afmeting = DtcAfmetingBxlxhInM()
         """Buitenafmetingen van het bovengronds gedeelte van een behuizing waarin het in principe mogelijk is om rond te lopen omwille van de grootte en toegankelijkheid."""
         self.afmeting.naam = "afmeting"

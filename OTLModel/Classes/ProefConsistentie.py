@@ -2,7 +2,7 @@ from OTLModel.Classes.Proef import Proef
 from OTLModel.Datatypes.DtcDocument import DtcDocument
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class ProefConsistentie(Proef):
     """Zetmaat van betonspecie volgens NBN EN 12350-2 bij een cementbetonverharding of een lijnvormig element."""
 
@@ -11,6 +11,7 @@ class ProefConsistentie(Proef):
 
     def __init__(self):
         super().__init__()
+
         self.consistentie = DtcDocument()
         """Proefresultaten van de consistentie."""
         self.consistentie.naam = "consistentie"

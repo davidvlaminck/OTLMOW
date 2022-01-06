@@ -6,7 +6,7 @@ from OTLModel.Datatypes.KlBestratingselementAfmetingLxB import KlBestratingselem
 from OTLModel.Datatypes.KlWBSSType import KlWBSSType
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class WaterdoorlatendeBestrating(Bestrating):
     """Betonstraatstenen of betontegels die omwille van hun vormkenmerken (bv. drainageopeningen of verbrede voegen) of betonstructuur (poreus beton met een open korrelopbouw) water doorlaten zoals omschreven in PTV 122."""
 
@@ -15,6 +15,7 @@ class WaterdoorlatendeBestrating(Bestrating):
 
     def __init__(self):
         super().__init__()
+
         self.aard = KeuzelijstField(naam="aard",
                                     label="aard",
                                     lijst=KlAardWBSS(),

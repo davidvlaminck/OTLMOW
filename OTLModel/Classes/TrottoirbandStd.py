@@ -5,7 +5,7 @@ from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlLETrottoirbandType import KlLETrottoirbandType
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class TrottoirbandStd(GestandaardiseerdeKantopsluiting):
     """Gestandaardiseerde kantopsluiting,bestemd om de rand van de verharding te beschermen en te versterken."""
 
@@ -14,6 +14,7 @@ class TrottoirbandStd(GestandaardiseerdeKantopsluiting):
 
     def __init__(self):
         super().__init__()
+
         self.norm = DtcLENorm()
         """De gestandaardiseerde trottoirband volgens aangeduide norm."""
         self.norm.naam = "norm"

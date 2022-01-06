@@ -3,7 +3,7 @@ from OTLModel.Classes.Communicatieapparatuur import Communicatieapparatuur
 from OTLModel.Classes.FirmwareObject import FirmwareObject
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class ZenderOntvangerToegang(Communicatieapparatuur, FirmwareObject):
     """Abstracte voor relaties van Zender,Ontvanger en Repeater met andere apparatuur."""
 

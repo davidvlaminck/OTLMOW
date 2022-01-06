@@ -3,7 +3,7 @@ from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlEcoOverstaptype import KlEcoOverstaptype
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Terugkeer(ComplexeGeleiding):
     """Een mogelijkheid om dieren die toch aan de wegkant verzeild zijn geraakt terug naar de veilige kant te laten begeven."""
 
@@ -12,6 +12,7 @@ class Terugkeer(ComplexeGeleiding):
 
     def __init__(self):
         super().__init__()
+
         self.typeUitvoering = KeuzelijstField(naam="typeUitvoering",
                                               label="type uitvoering",
                                               lijst=KlEcoOverstaptype(),

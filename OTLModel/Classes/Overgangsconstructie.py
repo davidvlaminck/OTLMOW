@@ -2,7 +2,7 @@ from OTLModel.Classes.SchokindexVoertuigkering import SchokindexVoertuigkering
 from OTLModel.Classes.AansluitendeConstructie import AansluitendeConstructie
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Overgangsconstructie(SchokindexVoertuigkering, AansluitendeConstructie):
     """Verbinding tussen twee afschermende constructies voor wegen van verschillende ontwerpen en/of prestatiekenmerken."""
 

@@ -1,7 +1,7 @@
 from OTLModel.Classes.BloemrijkGraslandGraslandfase4 import BloemrijkGraslandGraslandfase4
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Stroomdalgrasland(BloemrijkGraslandGraslandfase4):
     """G4b - cipreswolfsmelk, geoorde zuring, gestreepte
 klaver, grote tijm, handjesgras, harige ratelaar,

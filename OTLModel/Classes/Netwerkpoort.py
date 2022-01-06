@@ -9,7 +9,7 @@ from OTLModel.Datatypes.KlNetwerkpoortType import KlNetwerkpoortType
 from OTLModel.Datatypes.StringField import StringField
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Netwerkpoort(AIMNaamObject):
     """De ingang van het toestel samen met component die erop zit,bv. SFP of XFP."""
 
@@ -18,6 +18,7 @@ class Netwerkpoort(AIMNaamObject):
 
     def __init__(self):
         super().__init__()
+
         self.beschrijvingFabrikant = StringField(naam="beschrijvingFabrikant",
                                                  label="beschrijving fabrikant",
                                                  uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Netwerkpoort.beschrijvingFabrikant",

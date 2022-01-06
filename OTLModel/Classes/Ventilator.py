@@ -7,7 +7,7 @@ from OTLModel.Datatypes.KlVentilatorRichting import KlVentilatorRichting
 from OTLModel.Datatypes.KwantWrdInProcent import KwantWrdInProcent
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Ventilator(Ventilatie):
     """Onderdeel voor het creëren van luchtcirculatie binnen een open of gesloten ruimte met het oog op het vervangen van vervuilde door zuivere lucht. Voor een gesloten ruimte kan de luchtcirculatie ook zorgen voor afkoeling."""
 
@@ -16,6 +16,7 @@ class Ventilator(Ventilatie):
 
     def __init__(self):
         super().__init__()
+
         self.draairichting = KeuzelijstField(naam="draairichting",
                                              label="draairichting",
                                              lijst=KlVentilatorRichting(),

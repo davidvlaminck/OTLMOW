@@ -1,7 +1,7 @@
 from OTLModel.Classes.SoortenrijkSchraalGraslandGraslandfase5 import SoortenrijkSchraalGraslandGraslandfase5
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Dwerghavergrasland(SoortenrijkSchraalGraslandGraslandfase5):
     """G5b - vroege haver, klein vogelpootje, zilverhaver,
 klein tasjeskruid, dwergviltkruid, eekhoorngras

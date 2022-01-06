@@ -4,7 +4,7 @@ from OTLModel.Datatypes.KlBinnenverlichtingstoestelSchakelwijze import KlBinnenv
 from OTLModel.Datatypes.KlBinnenverlichtingstoestelSoortLamp import KlBinnenverlichtingstoestelSoortLamp
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Binnenverlichtingstoestel(AIMObject):
     """Een verlichtingstoestel dat binnen in een gebouw geplaatst wordt. Een verlichtingstoestel is de combinatie van de lamp en de armatuur."""
 
@@ -13,6 +13,7 @@ class Binnenverlichtingstoestel(AIMObject):
 
     def __init__(self):
         super().__init__()
+
         self.schakelwijze = KeuzelijstField(naam="schakelwijze",
                                             label="schakelwijze",
                                             lijst=KlBinnenverlichtingstoestelSchakelwijze(),

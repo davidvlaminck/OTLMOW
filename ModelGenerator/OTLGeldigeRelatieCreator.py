@@ -12,7 +12,7 @@ class OTLGeldigeRelatieCreator:
     def CreateBlockToWriteFromRelations(self):
         list_classes_to_import = []
         list_of_relaties = []
-        datablock = ['from ModelGenerator.BaseClasses.GeldigeRelatie import GeldigeRelatie']
+        datablock = ['# coding=utf-8', 'from ModelGenerator.BaseClasses.GeldigeRelatie import GeldigeRelatie']
 
         list_classes_to_import = list(map(lambda r: r.bron_uri, self.osloCollector.relations))
         list_classes_to_import.extend(list(map(lambda r: r.doel_uri, self.osloCollector.relations)))

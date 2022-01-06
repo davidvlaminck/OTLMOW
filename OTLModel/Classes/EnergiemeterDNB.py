@@ -4,7 +4,7 @@ from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlEnergiemeterDNBUurtarief import KlEnergiemeterDNBUurtarief
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class EnergiemeterDNB(DNBMeter):
     """Toestel dat eigendom is van de distributienetbeheerder en in de installatie van de asset beheerder geplaatst wordt voor het meten van het energieverbruik van de betreffende installatie."""
 
@@ -13,6 +13,7 @@ class EnergiemeterDNB(DNBMeter):
 
     def __init__(self):
         super().__init__()
+
         self.isGecombineerdeEnergiemeter = BooleanField(naam="isGecombineerdeEnergiemeter",
                                                         label="is gecombineerde energiemeter",
                                                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#EnergiemeterDNB.isGecombineerdeEnergiemeter",

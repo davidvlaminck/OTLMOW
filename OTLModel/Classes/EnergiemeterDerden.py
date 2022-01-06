@@ -1,7 +1,7 @@
 from OTLModel.Classes.Energiemeter import Energiemeter
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class EnergiemeterDerden(Energiemeter):
     """Toestel dat eigendom is van een derde partij, verschillend van de distributienetbeheerder, waarmee het energieverbruik van de installaties van deze derden gemeten wordt. 
 Deze energiemeters komen enkel voor op:

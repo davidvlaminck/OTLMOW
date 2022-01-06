@@ -5,7 +5,7 @@ from OTLModel.Datatypes.KlKleurSupp import KlKleurSupp
 from OTLModel.Datatypes.KwantWrdInTon import KwantWrdInTon
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class DunneOverlaging(AndereLaag):
     """Een dunne overlaging kan bestaan uit een SME overlaging of een antisliplaag."""
 
@@ -14,6 +14,7 @@ class DunneOverlaging(AndereLaag):
 
     def __init__(self):
         super().__init__()
+
         self.gewicht = KwantWrdInTon()
         """Het gewicht van de dunne overlaging in ton."""
         self.gewicht.naam = "gewicht"

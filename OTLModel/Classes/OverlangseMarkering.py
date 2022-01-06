@@ -8,7 +8,7 @@ from OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter
 from OTLModel.Datatypes.KwantWrdInVierkanteMeter import KwantWrdInVierkanteMeter
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class OverlangseMarkering(Markering, AOWSType):
     """Een markering overlangs op de weg aangebracht om het verkeer te waarschuwen, informeren of regelen."""
 
@@ -18,6 +18,7 @@ class OverlangseMarkering(Markering, AOWSType):
     def __init__(self):
         Markering.__init__(self)
         AOWSType.__init__(self)
+
         self.code = KeuzelijstField(naam="code",
                                     label="code",
                                     lijst=KlOverlangseMarkeringCode(),

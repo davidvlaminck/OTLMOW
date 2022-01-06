@@ -2,7 +2,7 @@ from abc import abstractmethod, ABC
 from OTLModel.Datatypes.KwantWrdInCentimeter import KwantWrdInCentimeter
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class LaagDikte(ABC):
     """Abstracte waarmee aan een laag het attribuut dikte wordt toegekend."""
 

@@ -5,7 +5,7 @@ from OTLModel.Datatypes.KlPoEInjectorMerk import KlPoEInjectorMerk
 from OTLModel.Datatypes.KlPoEInjectorModelnaam import KlPoEInjectorModelnaam
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class PoEInjector(AIMNaamObject):
     """Een toestel waarmee stroom/voeding voor een ander toestel over een datakabel kan gestuurd worden."""
 
@@ -14,6 +14,7 @@ class PoEInjector(AIMNaamObject):
 
     def __init__(self):
         super().__init__()
+
         self.merk = KeuzelijstField(naam="merk",
                                     label="merk",
                                     lijst=KlPoEInjectorMerk(),

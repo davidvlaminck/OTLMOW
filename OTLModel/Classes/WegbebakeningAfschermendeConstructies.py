@@ -3,7 +3,7 @@ from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlWegbebakeningType import KlWegbebakeningType
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class WegbebakeningAfschermendeConstructies(Bebakening):
     """Een houder met reflector op een constructie met als doel het verkeer te geleiden."""
 
@@ -12,6 +12,7 @@ class WegbebakeningAfschermendeConstructies(Bebakening):
 
     def __init__(self):
         super().__init__()
+
         self.type = KeuzelijstField(naam="type",
                                     label="type",
                                     lijst=KlWegbebakeningType(),

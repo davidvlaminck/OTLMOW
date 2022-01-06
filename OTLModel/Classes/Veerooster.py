@@ -2,7 +2,7 @@ from OTLModel.Classes.ComplexeGeleiding import ComplexeGeleiding
 from OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Veerooster(ComplexeGeleiding):
     """Een veerooster is een infrastructurele voorziening die is aangebracht in het wegdek om te voorkomen dat vee een gebied binnenkomt of verlaat."""
 
@@ -11,6 +11,7 @@ class Veerooster(ComplexeGeleiding):
 
     def __init__(self):
         super().__init__()
+
         self.breedte = KwantWrdInMeter()
         """De breedte van het veerooster in meter."""
         self.breedte.naam = "breedte"

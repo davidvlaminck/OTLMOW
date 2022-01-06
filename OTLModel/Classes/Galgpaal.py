@@ -6,7 +6,7 @@ from OTLModel.Datatypes.KlDraagconstructieDwarsdoorsnede import KlDraagconstruct
 from OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Galgpaal(VRIDraagconstructie):
     """De galgpalen zijn bestemd voor het bevestigen van verkeerslichten, signaalborden, wegwijzers boven het wegdek. Bovendien laten zij het bevestigen toe van één of meerdere lantaarns van het type 200 op de paalschacht. De draagwijdte van de arm moet kunnen reiken tot 9 m. De galgpalen beantwoorden aan SB270-51-6.15"""
 
@@ -15,6 +15,7 @@ class Galgpaal(VRIDraagconstructie):
 
     def __init__(self):
         super().__init__()
+
         self.aantalLiggers = DecimalFloatField(naam="aantalLiggers",
                                                label="aantal liggers",
                                                uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Galgpaal.aantalLiggers",

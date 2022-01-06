@@ -10,7 +10,7 @@ from OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter
 from OTLModel.Datatypes.KwantWrdInVierkanteMeter import KwantWrdInVierkanteMeter
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class BegroeidVoorkomen(AIMObject):
     """Abstracte die alle gemeenschappelijke eigenschappen omtrent begroeid voorkomen opsomt."""
 
@@ -20,6 +20,7 @@ class BegroeidVoorkomen(AIMObject):
     @abstractmethod
     def __init__(self):
         super().__init__()
+
         self.breedte = KwantWrdInMeter()
         """De afstand van het begroeide oppervlak dwars op de as van de (water)weg."""
         self.breedte.naam = "breedte"

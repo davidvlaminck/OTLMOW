@@ -2,7 +2,7 @@ from OTLModel.Classes.Proef import Proef
 from OTLModel.Datatypes.DecimalFloatField import DecimalFloatField
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class ProefZichtbaarheidBijDagOfWV(Proef):
     """Bepaling van de luminantiecoëfficiënt bij diffuse verlichting van een gemarkeerd oppervlak (Qd) bij daglicht of onder openbare verlichting."""
 
@@ -11,6 +11,7 @@ class ProefZichtbaarheidBijDagOfWV(Proef):
 
     def __init__(self):
         super().__init__()
+
         self.luminantiecoëfficiënt = DecimalFloatField(naam="luminantiecoëfficiënt",
                                                        label="luminantiecoëfficient",
                                                        uri="https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefZichtbaarheidBijDagOfWV.luminantiecoëfficiënt",

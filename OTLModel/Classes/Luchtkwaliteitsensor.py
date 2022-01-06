@@ -1,7 +1,7 @@
 from OTLModel.Classes.NaampadObject import NaampadObject
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Luchtkwaliteitsensor(NaampadObject):
     """Installatie voor het meten van verschillende aspecten van de luchtkwaliteit in tunnels tussen twee punten op basis van de onderbrekingen in een signaal dat tussen die twee punten reist."""
 

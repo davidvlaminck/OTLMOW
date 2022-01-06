@@ -1,7 +1,7 @@
 from OTLModel.Classes.AndereVerharding import AndereVerharding
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Ternairmengselverharding(AndereVerharding):
     """Een verharding van gebonden mengsel van grof brekerzand van natuurlijke stenen, eventueel gemengd met brekerzand van hoogovenslakken en steenslag."""
 

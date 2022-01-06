@@ -2,7 +2,7 @@ from abc import abstractmethod, ABC
 from OTLModel.Datatypes.BooleanField import BooleanField
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class AIMDBStatus(ABC):
     """Voegt een attribuut toe aan de subklasse dat aangeeft of de asset zichtbaar is in de databank of (zacht) verwijderd is."""
 

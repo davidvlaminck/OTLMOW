@@ -4,7 +4,7 @@ from OTLModel.Datatypes.KlPersleidingMateriaal import KlPersleidingMateriaal
 from OTLModel.Datatypes.KlSDRKlasse import KlSDRKlasse
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Persleiding(Buis):
     """Ondergronds kanaal of pijp voor afvoer van een vloeistof of gas onder druk."""
 
@@ -13,6 +13,7 @@ class Persleiding(Buis):
 
     def __init__(self):
         super().__init__()
+
         self.materiaal = KeuzelijstField(naam="materiaal",
                                          label="materiaal",
                                          lijst=KlPersleidingMateriaal(),

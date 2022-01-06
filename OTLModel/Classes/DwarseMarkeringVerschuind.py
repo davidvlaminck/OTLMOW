@@ -6,7 +6,7 @@ from OTLModel.Datatypes.KwantWrdInDecimaleGraden import KwantWrdInDecimaleGraden
 from OTLModel.Datatypes.KwantWrdInVierkanteMeter import KwantWrdInVierkanteMeter
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class DwarseMarkeringVerschuind(DwarseMarkeringToegang):
     """Een schuine markering dwars op de weg aangebracht om het verkeer te waarschuwen, informeren of regelen."""
 
@@ -15,6 +15,7 @@ class DwarseMarkeringVerschuind(DwarseMarkeringToegang):
 
     def __init__(self):
         super().__init__()
+
         self.basisoppervlakte = KwantWrdInVierkanteMeter()
         """De basisoppervlakte van de dwarse markering in vierkante meter."""
         self.basisoppervlakte.naam = "basisoppervlakte"

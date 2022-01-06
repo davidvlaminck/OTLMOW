@@ -2,7 +2,7 @@ from abc import abstractmethod
 from OTLModel.Classes.VerkeersregelaarModule import VerkeersregelaarModule
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class VRModuleZFirmware(VerkeersregelaarModule):
     """Abstracte voor modules zonder firmware van een verkeersregelaar."""
 

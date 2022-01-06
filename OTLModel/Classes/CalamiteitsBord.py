@@ -4,7 +4,7 @@ from OTLModel.Datatypes.KlCalamiteitsbordType import KlCalamiteitsbordType
 from OTLModel.Datatypes.KlCalamiteitsbordVorm import KlCalamiteitsbordVorm
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class CalamiteitsBord(RetroreflecterendVerkeersbord):
     """De aanwijzingsborden ter plaatse van een startpunt, een aantakpunt, een wissel- of koppelpunt van een
 omleggingsroute bij calamiteiten zijn geïntegreerd in een één-bordsysteem met een scharnierende
@@ -15,6 +15,7 @@ plaat."""
 
     def __init__(self):
         super().__init__()
+
         self.calamiteitsbordType = KeuzelijstField(naam="calamiteitsbordType",
                                                    label="calamiteitsbord type",
                                                    lijst=KlCalamiteitsbordType(),

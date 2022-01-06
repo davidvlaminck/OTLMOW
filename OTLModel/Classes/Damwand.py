@@ -6,7 +6,7 @@ from OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter
 from OTLModel.Datatypes.KwantWrdInVierkanteMeter import KwantWrdInVierkanteMeter
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Damwand(ConstructieElement):
     """Een grond- en/of waterkerende constructie, die bestaat uit een verticaal in de grond geplaatste wand."""
 
@@ -15,6 +15,7 @@ class Damwand(ConstructieElement):
 
     def __init__(self):
         super().__init__()
+
         self.isWaterdicht = BooleanField(naam="isWaterdicht",
                                          label="is waterdicht",
                                          uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Damwand.isWaterdicht",

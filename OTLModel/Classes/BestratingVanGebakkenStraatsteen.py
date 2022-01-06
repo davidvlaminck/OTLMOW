@@ -4,7 +4,7 @@ from OTLModel.Datatypes.KlFormaatGebakkenStraatsteen import KlFormaatGebakkenStr
 from OTLModel.Datatypes.KlStandaardkwaliteitsklasse import KlStandaardkwaliteitsklasse
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class BestratingVanGebakkenStraatsteen(Bestrating):
     """Gebakken straatstenen zijn straatstenen, in hoofdzaak vervaardigd uit klei al dan niet gemengd met leem, zand, brandstoffen of andere toeslagstoffen."""
 
@@ -13,6 +13,7 @@ class BestratingVanGebakkenStraatsteen(Bestrating):
 
     def __init__(self):
         super().__init__()
+
         self.formaatVanBestratingselement = KeuzelijstField(naam="formaatVanBestratingselement",
                                                             label="formaat van bestratingselement",
                                                             lijst=KlFormaatGebakkenStraatsteen(),

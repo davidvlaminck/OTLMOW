@@ -1,7 +1,7 @@
 from OTLModel.Classes.Bebakening import Bebakening
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Reflectorpaal(Bebakening):
     """Een kunststoffen paal met reflector om het verkeer te geleiden."""
 

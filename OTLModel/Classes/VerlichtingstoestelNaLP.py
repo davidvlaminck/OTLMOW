@@ -1,7 +1,7 @@
 from OTLModel.Classes.Verlichtingstoestel import Verlichtingstoestel
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class VerlichtingstoestelNaLP(Verlichtingstoestel):
     """Het geheel van de Natrium Lagedruk lamp(NaLP), eventuele voorschakelapparatuur en de behuizing die werden samengesteld met als doel:
  * de lichtstroom van de lichtbronnen hoofdzakelijk op het te verlichten oppervlak (doorlopende wegsectie, conflictgebied,...) te richten, teneinde de zichtbaarheid te verhogen;

@@ -34,7 +34,7 @@ class OTLComplexDatatypeCreator(AbstractDatatypeCreator):
     def CreateBlockToWriteFromComplexTypesDtc(self, osloDatatypeComplex: OSLODatatypeComplex):
         attributen = self.osloCollector.FindComplexDatatypeAttributenByClassUri(osloDatatypeComplex.uri)
 
-        datablock = ['from OTLModel.Datatypes.ComplexField import ComplexField']
+        datablock = ['# coding=utf-8', 'from OTLModel.Datatypes.ComplexField import ComplexField']
 
         if any(atr.kardinaliteit_max != "1" for atr in attributen):
             datablock.append('from OTLModel.Datatypes.KardinaliteitField import KardinaliteitField')

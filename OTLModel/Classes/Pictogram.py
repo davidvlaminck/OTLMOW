@@ -6,7 +6,7 @@ from OTLModel.Datatypes.KwantWrdInMinuut import KwantWrdInMinuut
 from OTLModel.Datatypes.StringField import StringField
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Pictogram(AIMObject, BevestigingGC):
     """Een bord dat een symbool of afbeelding bevat dat de plaats inneemt van een tekst."""
 
@@ -16,6 +16,7 @@ class Pictogram(AIMObject, BevestigingGC):
     def __init__(self):
         AIMObject.__init__(self)
         BevestigingGC.__init__(self)
+
         self.nalichtingstijd = KwantWrdInMinuut()
         """De tijd dat het opgeslagen licht (bij bv. fosforen) in een andere lichtfrequentie (met minder energie) weer wordt uitgezonden."""
         self.nalichtingstijd.naam = "nalichtingstijd"

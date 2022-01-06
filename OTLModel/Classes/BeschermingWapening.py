@@ -3,7 +3,7 @@ from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlBeschermingWapeningType import KlBeschermingWapeningType
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class BeschermingWapening(AndereLaag):
     """De bescherming of de wapening van de onderfundering, fundering of grondmassief."""
 
@@ -12,6 +12,7 @@ class BeschermingWapening(AndereLaag):
 
     def __init__(self):
         super().__init__()
+
         self.type = KeuzelijstField(naam="type",
                                     label="type",
                                     lijst=KlBeschermingWapeningType(),

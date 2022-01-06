@@ -6,7 +6,7 @@ from OTLModel.Datatypes.KlBrandblusserGewicht import KlBrandblusserGewicht
 from OTLModel.Datatypes.KlBrandblusserType import KlBrandblusserType
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Brandblusser(AIMObject):
     """Een apparaat om het vuur van een kleine brand mee te doven. Het bestaat uit een cilinder waarin een beperkte hoeveelheid blusmiddel onder druk staat."""
 
@@ -15,6 +15,7 @@ class Brandblusser(AIMObject):
 
     def __init__(self):
         super().__init__()
+
         self.aankoopdatum = DateField(naam="aankoopdatum",
                                       label="aankoopdatum",
                                       uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Brandblusser.aankoopdatum",

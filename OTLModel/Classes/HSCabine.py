@@ -4,7 +4,7 @@ from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlCabineLokaalKlasse import KlCabineLokaalKlasse
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class HSCabine(Cabine):
     """Een behuizing  bestemd voor het beschermen van elektrisch hoogspanningsmateriaal en het daarbij horende laagspanningsmateriaal en elektromechanische technieken."""
 
@@ -13,6 +13,7 @@ class HSCabine(Cabine):
 
     def __init__(self):
         super().__init__()
+
         self.lokaalKlasse = KeuzelijstField(naam="lokaalKlasse",
                                             label="lokaal klasse",
                                             lijst=KlCabineLokaalKlasse(),

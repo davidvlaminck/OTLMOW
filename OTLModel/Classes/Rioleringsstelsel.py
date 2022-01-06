@@ -3,7 +3,7 @@ from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlRioleringStelsel import KlRioleringStelsel
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Rioleringsstelsel(AIMObject):
     """De groepering van de objecten die behoren tot de riolering."""
 
@@ -12,6 +12,7 @@ class Rioleringsstelsel(AIMObject):
 
     def __init__(self):
         super().__init__()
+
         self.systeemtype = KeuzelijstField(naam="systeemtype",
                                            label="systeemtype",
                                            lijst=KlRioleringStelsel(),

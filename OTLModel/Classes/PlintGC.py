@@ -7,7 +7,7 @@ from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlPlaatsingswijzePlint import KlPlaatsingswijzePlint
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class PlintGC(ConstructieElement, BetonnenConstructieElement, ConstructieElementenGC):
     """Een plint is een betonnen balk/plaat die de akoestische dichtheid verzekert tussen de schermelementen van de geluidswerende constructie en de bodem."""
 
@@ -18,6 +18,7 @@ class PlintGC(ConstructieElement, BetonnenConstructieElement, ConstructieElement
         ConstructieElement.__init__(self)
         BetonnenConstructieElement.__init__(self)
         ConstructieElementenGC.__init__(self)
+
         self.afmetingen = DtcAfmetingBxlxhInM()
         """Met dit complex datatype worden de afmetingen van de plint weergegeven. Indien de plint afwijkt van een rechthoekige vorm wordt deze informatie in de technische fiche opgeslagen."""
         self.afmetingen.naam = "afmetingen"

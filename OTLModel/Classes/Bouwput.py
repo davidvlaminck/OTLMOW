@@ -4,7 +4,7 @@ from OTLModel.Datatypes.KlBouwputType import KlBouwputType
 from OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Bouwput(AIMObject):
     """De ontgraving die nodig is voor het maken van een ondergrondse constructie zoals bv. een put of putten."""
 
@@ -13,6 +13,7 @@ class Bouwput(AIMObject):
 
     def __init__(self):
         super().__init__()
+
         self.putdiepte = KwantWrdInMeter()
         """Diepte tussen het maaiveld en onderkant bouwput in meter."""
         self.putdiepte.naam = "putdiepte"

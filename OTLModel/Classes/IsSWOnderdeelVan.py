@@ -1,7 +1,7 @@
 from OTLModel.Classes.DirectioneleRelatie import DirectioneleRelatie
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class IsSWOnderdeelVan(DirectioneleRelatie):
     """Deze relatie geeft de link aan tussen een software onderdeel en een ander software onderdeel waarbij de eerste bv. een service is van een grotere software."""
 

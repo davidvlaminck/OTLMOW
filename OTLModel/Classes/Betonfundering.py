@@ -5,7 +5,7 @@ from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlFunderingBetonkwaliteit import KlFunderingBetonkwaliteit
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Betonfundering(Fundering):
     """Abstracte voor funderingen in beton."""
 

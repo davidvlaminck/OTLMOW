@@ -3,7 +3,7 @@ from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlBestratingOpvulsoort import KlBestratingOpvulsoort
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class VerhardingGrasKunststofplaat(Bestrating):
     """Gras/grind-kunststofplaten zijn kunststofplaten met raatvormige structuur die aangewend worden voor het wapenen van grasmatten. Ze voldoen aan de voorschriften van PTV 828. """
 
@@ -12,6 +12,7 @@ class VerhardingGrasKunststofplaat(Bestrating):
 
     def __init__(self):
         super().__init__()
+
         self.vulling = KeuzelijstField(naam="vulling",
                                        label="vulling",
                                        lijst=KlBestratingOpvulsoort(),

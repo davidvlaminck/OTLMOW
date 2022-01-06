@@ -3,7 +3,7 @@ from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlNSB import KlNSB
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class VerruigdGrasland(Ruigte):
     """R2 - grote brandnetel, kleefkruid, ridderzuring, akkerdistel, speerdistel, gewone berenklauw, fluitenkruid, bramen, klit, jacobskruiskruid, ijle dravik, dolle kervel, kweek, kropaar, haagwinde, zevenblad."""
 
@@ -12,6 +12,7 @@ class VerruigdGrasland(Ruigte):
 
     def __init__(self):
         super().__init__()
+
         self.huidigNatuurbeeld = KeuzelijstField(naam="huidigNatuurbeeld",
                                                  label="huidig natuurbeeld",
                                                  lijst=KlNSB(),

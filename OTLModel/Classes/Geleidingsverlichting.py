@@ -1,7 +1,7 @@
 from OTLModel.Classes.AIMObject import AIMObject
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Geleidingsverlichting(AIMObject):
     """Verlichting die de gestrande weggebruiker begeleiding biedt op handhoogte langs de vluchtroute tot aan een vluchtdeur of tot aan een veilige locatie."""
 

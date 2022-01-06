@@ -4,7 +4,7 @@ from OTLModel.Datatypes.KlLEACKerendVermogen import KlLEACKerendVermogen
 from OTLModel.Datatypes.KlLEACVoertuigOverhelling import KlLEACVoertuigOverhelling
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class EigenschappenVoertuigkering(ABC):
     """Op deze abstracte worden attributen met betrekking tot voertuigkering bijgehouden."""
 

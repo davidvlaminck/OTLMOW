@@ -1,7 +1,7 @@
 from OTLModel.Classes.PTModuleMetFirmware import PTModuleMetFirmware
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class PTModem(PTModuleMetFirmware):
     """Communicatiemodem van het personentransportbeïnvloedingssysteem die via het netwerk (3G-4G) communiceert."""
 

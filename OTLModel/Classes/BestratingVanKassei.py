@@ -2,7 +2,7 @@ from OTLModel.Classes.Bestrating import Bestrating
 from OTLModel.Datatypes.DtcAfmetingBxlInCm import DtcAfmetingBxlInCm
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class BestratingVanKassei(Bestrating):
     """Bestrating van kasseien, in rij gelegd. Kasseien zijn bestratingselementen van porfier, kwartsiet, graniet, of van harde zandsteen die geen schilferige structuur heeft. Ze hebben een dicht aaneengesloten en homogene korrel, zonder steenkorst, kwade aders of kwakaders en vertonen geen diamantkop."""
 
@@ -11,6 +11,7 @@ class BestratingVanKassei(Bestrating):
 
     def __init__(self):
         super().__init__()
+
         self.afmetingVanBestratingselementBxl = DtcAfmetingBxlInCm()
         """Afmeting van de breedte in cm (langste) en van de lengte in cm (kortste) van de kassei."""
         self.afmetingVanBestratingselementBxl.naam = "afmetingVanBestratingselementBxl"

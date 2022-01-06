@@ -3,7 +3,7 @@ from OTLModel.Classes.PTRegelaarModule import PTRegelaarModule
 from OTLModel.Classes.FirmwareObject import FirmwareObject
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class PTModuleMetFirmware(PTRegelaarModule, FirmwareObject):
     """Abstracte voor de modules met firmware van het personentransportbeïnvloedingssysteem van een verkeersregelaar."""
 

@@ -4,7 +4,7 @@ from OTLModel.Classes.ConstructieElementenGC import ConstructieElementenGC
 from OTLModel.Datatypes.DtcAfmetingBxlxhInCm import DtcAfmetingBxlxhInCm
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class ConstructieSokkel(ConstructieElement, BetonnenConstructieElement, ConstructieElementenGC):
     """Betonnen zool die het object dat erop rust verhoogt of dat dient om een structuur op een goede manier te kunnen opleggen/verbinden met de fundering."""
 
@@ -15,6 +15,7 @@ class ConstructieSokkel(ConstructieElement, BetonnenConstructieElement, Construc
         ConstructieElement.__init__(self)
         BetonnenConstructieElement.__init__(self)
         ConstructieElementenGC.__init__(self)
+
         self.afmetingen = DtcAfmetingBxlxhInCm()
         """De afmetingen van de constructiesokkel."""
         self.afmetingen.naam = "afmetingen"

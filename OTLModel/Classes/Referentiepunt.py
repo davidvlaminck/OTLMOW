@@ -6,7 +6,7 @@ from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlSignalisatieReferentiepuntType import KlSignalisatieReferentiepuntType
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Referentiepunt(AIMObject, Signalisatie, BevestigingGC):
     """Een kilometer- of hectometerpaal."""
 
@@ -17,6 +17,7 @@ class Referentiepunt(AIMObject, Signalisatie, BevestigingGC):
         AIMObject.__init__(self)
         Signalisatie.__init__(self)
         BevestigingGC.__init__(self)
+
         self.opschrift = DteTekstblok()
         """De notatie van het referentiepunt."""
         self.opschrift.naam = "opschrift"

@@ -3,7 +3,7 @@ from OTLModel.Datatypes.KardinaliteitField import KardinaliteitField
 from OTLModel.Datatypes.DtcDocument import DtcDocument
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class BijlageVoertuigkering(ABC):
     """Abstracte om bestanden te bundelen omtrent voertuigkering."""
 

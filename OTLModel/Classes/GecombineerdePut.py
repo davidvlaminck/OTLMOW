@@ -1,7 +1,7 @@
 from OTLModel.Classes.AIMObject import AIMObject
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class GecombineerdePut(AIMObject):
     """Alle putrelaties."""
 

@@ -6,7 +6,7 @@ from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlHuisaansluitputMateriaal import KlHuisaansluitputMateriaal
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Huisaansluitput(Put, PutRelatie):
     """Het constructieonderdeel (putje of T-stuk) dat de verbinding vormt tussen de private riolering en de 
  huisaansluiting."""
@@ -17,6 +17,7 @@ class Huisaansluitput(Put, PutRelatie):
     def __init__(self):
         Put.__init__(self)
         PutRelatie.__init__(self)
+
         self.aansluitingsfiche = DtcDocument()
         """De aansluitingsfiche van de huisaansluitput."""
         self.aansluitingsfiche.naam = "aansluitingsfiche"

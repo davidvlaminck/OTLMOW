@@ -6,7 +6,7 @@ from OTLModel.Datatypes.KlBestratingVoegvulling import KlBestratingVoegvulling
 from OTLModel.Datatypes.KlKleurSupp import KlKleurSupp
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Bestrating(ArtificieleLaag):
     """Verhardingstype opgebouwd uit bestratingen (rechthoekige of vierkante componenten van beperkte afmetingen) waardoor een aanzienlijk aantal voegen tussen de componenten zitten."""
 
@@ -16,6 +16,7 @@ class Bestrating(ArtificieleLaag):
     @abstractmethod
     def __init__(self):
         super().__init__()
+
         self.kleur = KeuzelijstField(naam="kleur",
                                      label="kleur",
                                      lijst=KlKleurSupp(),

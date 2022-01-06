@@ -2,7 +2,7 @@ from OTLModel.Classes.Behuizing import Behuizing
 from OTLModel.Datatypes.DtcDocument import DtcDocument
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Lokaal(Behuizing):
     """Een ruimte binnen een gebouw."""
 
@@ -11,6 +11,7 @@ class Lokaal(Behuizing):
 
     def __init__(self):
         super().__init__()
+
         self.grondplan = DtcDocument()
         """Plattegrond van het lokaal met aanduidingen van de verschillende aanwezige elementen zoals kasten met kastnummers, toegangscontrole en meer."""
         self.grondplan.naam = "grondplan"

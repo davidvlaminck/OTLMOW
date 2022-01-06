@@ -4,7 +4,7 @@ from OTLModel.Datatypes.KlSleufUitvoering import KlSleufUitvoering
 from OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Sleuf(AIMObject):
     """Lijnvormige verdieping van de natuurlijke ondergrond, nodig voor het leggen van leidingen."""
 
@@ -13,6 +13,7 @@ class Sleuf(AIMObject):
 
     def __init__(self):
         super().__init__()
+
         self.breedte = KwantWrdInMeter()
         """De breedte van de sleuf in meter volgens figuur 7-1-1 van Standaardbestek 250."""
         self.breedte.naam = "breedte"

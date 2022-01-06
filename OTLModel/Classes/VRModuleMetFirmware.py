@@ -6,7 +6,7 @@ from OTLModel.Datatypes.KlVRModuleMetFirmwareMerk import KlVRModuleMetFirmwareMe
 from OTLModel.Datatypes.KlVRModuleMetFirmwareModelnaam import KlVRModuleMetFirmwareModelnaam
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class VRModuleMetFirmware(VerkeersregelaarModule, FirmwareObject):
     """Abstracte voor modules met firmware van een verkeersregelaar."""
 
@@ -17,6 +17,7 @@ class VRModuleMetFirmware(VerkeersregelaarModule, FirmwareObject):
     def __init__(self):
         VerkeersregelaarModule.__init__(self)
         FirmwareObject.__init__(self)
+
         self.merk = KeuzelijstField(naam="merk",
                                     label="merk",
                                     lijst=KlVRModuleMetFirmwareMerk(),

@@ -36,7 +36,7 @@ class OTLPrimitiveDatatypeCreator(AbstractDatatypeCreator):
         if int(attributen[0].kardinaliteit_max) > 1:
             raise NotImplementedError("Found PrimitiveDatatypeAttribuut with kardinaliteit_max > 1")
 
-        datablock = ['from OTLModel.Datatypes.KwantWrd import KwantWrd']
+        datablock = ['# coding=utf-8', 'from OTLModel.Datatypes.KwantWrd import KwantWrd']
 
         if attributen[0].readonly == 1:
             raise NotImplementedError("readonly property is assumed to be 0 on value fields")

@@ -6,7 +6,7 @@ from OTLModel.Datatypes.KlHardwareModelnaam import KlHardwareModelnaam
 from OTLModel.Datatypes.KlHardwareVormfactor import KlHardwareVormfactor
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Hardware(HardwareToegang):
     """Fysieke componenten of onderdelen van een computer."""
 
@@ -15,6 +15,7 @@ class Hardware(HardwareToegang):
 
     def __init__(self):
         super().__init__()
+
         self.aantalUnits = IntegerField(naam="aantalUnits",
                                         label="aantal units",
                                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Hardware.aantalUnits",

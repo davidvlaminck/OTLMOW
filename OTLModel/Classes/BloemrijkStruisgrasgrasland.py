@@ -1,7 +1,7 @@
 from OTLModel.Classes.BloemrijkGraslandGraslandfase4 import BloemrijkGraslandGraslandfase4
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class BloemrijkStruisgrasgrasland(BloemrijkGraslandGraslandfase4):
     """G4d - akkerhoornbloem, gewone veldbies, gewoon
 biggenkruid, gewoon duizendblad, gewoon

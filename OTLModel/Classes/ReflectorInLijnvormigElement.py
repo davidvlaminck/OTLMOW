@@ -1,7 +1,7 @@
 from OTLModel.Classes.Bebakening import Bebakening
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class ReflectorInLijnvormigElement(Bebakening):
     """Een reflector dat deel uitmaakt van een constructie met als doel de zichtbaarheid van deze constructie te verhogen."""
 

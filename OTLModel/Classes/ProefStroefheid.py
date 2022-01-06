@@ -2,7 +2,7 @@ from OTLModel.Classes.Proef import Proef
 from OTLModel.Datatypes.DtcDocument import DtcDocument
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class ProefStroefheid(Proef):
     """Het vermogen van een wegdek om door voertuigbanden tangentieel uitgeoefende krachten (bij het nemen van bochten, afremmen of optrekken) te compenseren door even grote wrijvingskrachten."""
 
@@ -11,6 +11,7 @@ class ProefStroefheid(Proef):
 
     def __init__(self):
         super().__init__()
+
         self.stroefheid = DtcDocument()
         """Proefresultaten van de stroefheid."""
         self.stroefheid.naam = "stroefheid"

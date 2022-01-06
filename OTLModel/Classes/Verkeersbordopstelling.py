@@ -9,7 +9,7 @@ from OTLModel.Datatypes.KlOperationeleStatus import KlOperationeleStatus
 from OTLModel.Datatypes.KlPositieSoort import KlPositieSoort
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Verkeersbordopstelling(AIMObject, Signalisatie):
     """Het geheel van verticale verkeerssignalisatie die bevestigd is aan één of meerdere draagconstructies op éénzelfde geolocatie."""
 
@@ -19,6 +19,7 @@ class Verkeersbordopstelling(AIMObject, Signalisatie):
     def __init__(self):
         AIMObject.__init__(self)
         Signalisatie.__init__(self)
+
         afbeeldingField = DtcDocument()
         afbeeldingField.naam = "afbeelding"
         afbeeldingField.label = "afbeelding"

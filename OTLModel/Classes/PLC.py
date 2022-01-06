@@ -5,7 +5,7 @@ from OTLModel.Datatypes.KlPLCMerk import KlPLCMerk
 from OTLModel.Datatypes.KlPLCModelnaam import KlPLCModelnaam
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class PLC(Controller):
     """Een verwerkingseenheid die volgens een vaste cyclus op basis van informatie van zijn ingangen, zijn uitgangen aanstuurt op basis van zijn programma. Omwille van zijn vormfactor kan de eenheid gebruikt worden in een vijandige omgeving."""
 
@@ -14,6 +14,7 @@ class PLC(Controller):
 
     def __init__(self):
         super().__init__()
+
         self.merk = KeuzelijstField(naam="merk",
                                     label="merk",
                                     lijst=KlPLCMerk(),

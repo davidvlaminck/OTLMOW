@@ -1,7 +1,7 @@
 from OTLModel.Classes.OpgaandeHoutigeVegetatie import OpgaandeHoutigeVegetatie
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Wilgenstruweel(OpgaandeHoutigeVegetatie):
     """H1 - wilgensoorten, sporkehout, gewone vlier, braam spp., brede stekelvaren, grote brandnetel, hondsdraf, kleefkruid, pitrus."""
 

@@ -6,7 +6,7 @@ from OTLModel.Datatypes.KlBeheerSierbeplanting import KlBeheerSierbeplanting
 from OTLModel.Datatypes.KwantWrdInVierkanteMeter import KwantWrdInVierkanteMeter
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class BeheerSierbeplanting(AIMObject):
     """Het beheerobject voor de sierbeplanting."""
 
@@ -15,6 +15,7 @@ class BeheerSierbeplanting(AIMObject):
 
     def __init__(self):
         super().__init__()
+
         beheeroptieField = KeuzelijstField(naam="beheeroptie",
                                            label="beheeroptie",
                                            lijst=KlBeheerSierbeplanting(),

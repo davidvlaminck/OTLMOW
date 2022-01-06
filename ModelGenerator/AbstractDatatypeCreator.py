@@ -66,7 +66,7 @@ class AbstractDatatypeCreator(ABC):
     def writeToFile(datatype, directory: str, dataToWrite: list[str], relativePath=''):
         path = f"{relativePath}OTLModel/{directory}/{datatype.name}.py"
 
-        file = open(path, "w")
+        file = open(path, "w", encoding='utf-8')
         for line in dataToWrite:
             file.write(line + "\n")
         file.close()

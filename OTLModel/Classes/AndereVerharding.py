@@ -2,7 +2,7 @@ from abc import abstractmethod
 from OTLModel.Classes.ArtificieleLaag import ArtificieleLaag
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class AndereVerharding(ArtificieleLaag):
     """Abstracte voor de andere verhardingen, met een ander fysiek voorkomen van het aardoppervlak dat niet vegetatief is."""
 

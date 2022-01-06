@@ -6,7 +6,7 @@ from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlVegetatieelementHoogte import KlVegetatieelementHoogte
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class VegetatieElement(AIMObject):
     """Abstracte om alle gemeenschappelijke eigenschappen en relaties van de solitaire plant in de ruimte onder 1 noemer te plaatsen."""
 
@@ -16,6 +16,7 @@ class VegetatieElement(AIMObject):
     @abstractmethod
     def __init__(self):
         super().__init__()
+
         self.hoogte = KeuzelijstField(naam="hoogte",
                                       label="hoogte",
                                       lijst=KlVegetatieelementHoogte(),

@@ -12,9 +12,10 @@ from OTLModel.Datatypes.StringField import StringField
 from OTLModel.Datatypes.URIField import URIField
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class AIMObject(AIMToestand, AIMDBStatus, OTLAsset, RelatieInteractor):
-    """Abstracte als de basisklasse voor alle uniek geïdentificeerde OTL objecten met de basiseigenschappen die elk OTL object minstens heeft."""
+    """Abstracte als de basisklasse voor alle uniek geïdentificeerde OTL objecten met de basiseigenschappen die elk OTL object
+    minstens heeft."""
 
     typeURI = "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMObject"
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
@@ -25,6 +26,7 @@ class AIMObject(AIMToestand, AIMDBStatus, OTLAsset, RelatieInteractor):
         AIMDBStatus.__init__(self)
         OTLAsset.__init__(self)
         RelatieInteractor.__init__(self)
+
         self.assetId = DtcIdentificator()
         """Unieke identificatie van de asset zoals toegekend door de assetbeheerder of n.a.v. eerste aanlevering door de leverancier."""
         self.assetId.naam = "assetId"
@@ -87,9 +89,8 @@ class AIMObject(AIMToestand, AIMDBStatus, OTLAsset, RelatieInteractor):
         self.typeURI = URIField(naam="typeURI",
                                 label="type URI",
                                 uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMObject.typeURI",
-                                definition="De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI.",
+                                definition="De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI .",
                                 constraints="",
                                 usagenote="",
                                 deprecated_version="")
-        """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
-        self.typeURI.waarde = uri
+        """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI ."""

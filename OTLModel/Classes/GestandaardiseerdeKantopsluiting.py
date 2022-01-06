@@ -5,7 +5,7 @@ from OTLModel.Datatypes.KlLEKantopsluitingBijkomendeParameter import KlLEKantops
 from OTLModel.Datatypes.KlLEStandaardFabricageLengte import KlLEStandaardFabricageLengte
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class GestandaardiseerdeKantopsluiting(Kantopsluiting):
     """Abstracte voor een kantopsluiting die voldoet aan een bepaalde standaard."""
 
@@ -15,6 +15,7 @@ class GestandaardiseerdeKantopsluiting(Kantopsluiting):
     @abstractmethod
     def __init__(self):
         super().__init__()
+
         self.bijkomendeParameter = KeuzelijstField(naam="bijkomendeParameter",
                                                    label="bijkomende parameter",
                                                    lijst=KlLEKantopsluitingBijkomendeParameter(),

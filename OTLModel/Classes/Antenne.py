@@ -5,7 +5,7 @@ from OTLModel.Datatypes.KlAntenneMerk import KlAntenneMerk
 from OTLModel.Datatypes.KlAntenneModelnaam import KlAntenneModelnaam
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Antenne(Communicatieapparatuur):
     """Toestel verbonden met een zender of ontvanger ten behoeve van het opvangen of verspreiden van signalen."""
 
@@ -14,6 +14,7 @@ class Antenne(Communicatieapparatuur):
 
     def __init__(self):
         super().__init__()
+
         self.frequentierange = KeuzelijstField(naam="frequentierange",
                                                label="frequentierange",
                                                lijst=KlAntenneFrequentierange(),

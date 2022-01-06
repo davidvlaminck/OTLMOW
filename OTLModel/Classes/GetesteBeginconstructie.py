@@ -4,7 +4,7 @@ from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlLEACPerformantieklasse import KlLEACPerformantieklasse
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class GetesteBeginconstructie(SchokindexVoertuigkering, Beginstuk):
     """Een gecertificeerd begin aan een geleideconstructie,met als doel de ernst van een frontale botsing te reduceren aan de stroomopwaartse zijde ten opzichte van de meest nabij gelegen rijstrook."""
 
@@ -14,6 +14,7 @@ class GetesteBeginconstructie(SchokindexVoertuigkering, Beginstuk):
     def __init__(self):
         SchokindexVoertuigkering.__init__(self)
         Beginstuk.__init__(self)
+
         self.performantieklasse = KeuzelijstField(naam="performantieklasse",
                                                   label="performantieklasse",
                                                   lijst=KlLEACPerformantieklasse(),

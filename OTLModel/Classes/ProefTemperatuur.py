@@ -2,7 +2,7 @@ from OTLModel.Classes.Proef import Proef
 from OTLModel.Datatypes.KwantWrdInCelsius import KwantWrdInCelsius
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class ProefTemperatuur(Proef):
     """Controle van de temperatuur van een asfaltmengsel."""
 
@@ -11,6 +11,7 @@ class ProefTemperatuur(Proef):
 
     def __init__(self):
         super().__init__()
+
         self.temperatuur = KwantWrdInCelsius()
         """De temperatuur van de BV laag in graden Celsius."""
         self.temperatuur.naam = "temperatuur"

@@ -9,7 +9,7 @@ from OTLModel.Datatypes.KwantWrdInKubiekeMeterPerSeconde import KwantWrdInKubiek
 from OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Brandhaspel(Brandvoorziening):
     """Een brandslang met spuitmond,opgerold op een haspel."""
 
@@ -18,6 +18,7 @@ class Brandhaspel(Brandvoorziening):
 
     def __init__(self):
         super().__init__()
+
         self.buitendiameter = KwantWrdInCentimeter()
         """Buitendiameter van de slang op de haspel."""
         self.buitendiameter.naam = "buitendiameter"

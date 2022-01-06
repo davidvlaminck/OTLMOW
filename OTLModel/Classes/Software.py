@@ -8,7 +8,7 @@ from OTLModel.Datatypes.StringField import StringField
 from OTLModel.Datatypes.URIField import URIField
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Software(SoftwareToegang):
     """Geheel van computerprogramma's met bijbehorende data."""
 
@@ -17,6 +17,7 @@ class Software(SoftwareToegang):
 
     def __init__(self):
         super().__init__()
+
         self.aangebodenServices = DtcDocument()
         """De endpoints van diensten."""
         self.aangebodenServices.naam = "aangebodenServices"

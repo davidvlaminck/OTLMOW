@@ -7,7 +7,7 @@ from OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter
 from OTLModel.Datatypes.KwantWrdInVierkanteMeter import KwantWrdInVierkanteMeter
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class GekleurdWegvlakMarkering(Markering, AOWSType):
     """Een markering van een wegdeel aangebracht om het verkeer te waarschuwen, informeren of regelen."""
 
@@ -17,6 +17,7 @@ class GekleurdWegvlakMarkering(Markering, AOWSType):
     def __init__(self):
         Markering.__init__(self)
         AOWSType.__init__(self)
+
         self.breedte = KwantWrdInMeter()
         """De breedte van de markering in meter."""
         self.breedte.naam = "breedte"

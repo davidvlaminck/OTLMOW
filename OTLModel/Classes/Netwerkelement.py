@@ -7,7 +7,7 @@ from OTLModel.Datatypes.KlNetwerkelemModelnaam import KlNetwerkelemModelnaam
 from OTLModel.Datatypes.StringField import StringField
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Netwerkelement(AIMNaamObject):
     """Toestel,onderdeel van het netwerk,waarop netwerkverbindingen kunnen aangelegd worden."""
 
@@ -16,6 +16,7 @@ class Netwerkelement(AIMNaamObject):
 
     def __init__(self):
         super().__init__()
+
         self.beschrijvingFabrikant = StringField(naam="beschrijvingFabrikant",
                                                  label="beschrijving fabrikant",
                                                  uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Netwerkelement.beschrijvingFabrikant",

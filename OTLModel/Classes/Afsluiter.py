@@ -6,7 +6,7 @@ from OTLModel.Datatypes.KwantWrdInMeterTAW import KwantWrdInMeterTAW
 from OTLModel.Datatypes.KwantWrdInMillimeter import KwantWrdInMillimeter
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Afsluiter(LinkendElement):
     """Een afsluiter dient om rioolstrengen af te sluiten bij bv. gebreken."""
 
@@ -15,6 +15,7 @@ class Afsluiter(LinkendElement):
 
     def __init__(self):
         super().__init__()
+
         self.actueleHoogte = KwantWrdInMillimeter()
         """De afstand tussen het vloeipeil van de opening en de laagste positie van de schuif."""
         self.actueleHoogte.naam = "actueleHoogte"

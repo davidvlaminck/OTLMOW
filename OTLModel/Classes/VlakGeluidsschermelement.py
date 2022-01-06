@@ -5,7 +5,7 @@ from OTLModel.Datatypes.KlVGSchermelementtype import KlVGSchermelementtype
 from OTLModel.Datatypes.KlVormSchermelement import KlVormSchermelement
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class VlakGeluidsschermelement(Geluidsschermelement):
     """Een vlak scherm zijn alle schermtypes die getest kunnen worden volgens de normen NBN EN 1793-1 NBN EN 1793-2."""
 
@@ -14,6 +14,7 @@ class VlakGeluidsschermelement(Geluidsschermelement):
 
     def __init__(self):
         super().__init__()
+
         self.opstelling = KeuzelijstField(naam="opstelling",
                                           label="opstelling",
                                           lijst=KlVGOpstelling(),

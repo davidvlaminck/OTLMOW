@@ -3,7 +3,7 @@ from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlLEACVoertuigOverhelling import KlLEACVoertuigOverhelling
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class ProefVoertuigOverhelling(Proef):
     """Proef om de overhelling over de bebakening van het voertuig te bepalen bij impact."""
 

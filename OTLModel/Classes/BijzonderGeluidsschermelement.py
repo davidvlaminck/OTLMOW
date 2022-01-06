@@ -3,7 +3,7 @@ from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlBGSchermelementtype import KlBGSchermelementtype
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class BijzonderGeluidsschermelement(Geluidsschermelement):
     """Dit zijn niet-vlakke schermelementen (waaronder L-elementen en bloembakelementen). Deze schermen kunnen niet getest worden volgens de normen NBN EN 1793-1 NBN EN 1793-2."""
 
@@ -12,6 +12,7 @@ class BijzonderGeluidsschermelement(Geluidsschermelement):
 
     def __init__(self):
         super().__init__()
+
         self.schermelementtype = KeuzelijstField(naam="schermelementtype",
                                                  label="schermelementtype",
                                                  lijst=KlBGSchermelementtype(),

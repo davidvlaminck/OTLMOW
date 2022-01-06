@@ -4,7 +4,7 @@ from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlLantaarnLamptype import KlLantaarnLamptype
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Waarschuwingslantaarn(AIMNaamObject):
     """Abstracte voor waarschuwingsinrichtingen in de buurt van een verkeerslichtengeregeld kruispunt."""
 
@@ -14,6 +14,7 @@ class Waarschuwingslantaarn(AIMNaamObject):
     @abstractmethod
     def __init__(self):
         super().__init__()
+
         self.lamptype = KeuzelijstField(naam="lamptype",
                                         label="lamptype",
                                         lijst=KlLantaarnLamptype(),

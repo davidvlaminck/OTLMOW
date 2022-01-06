@@ -1,7 +1,7 @@
 from OTLModel.Classes.DirectioneleRelatie import DirectioneleRelatie
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class VoedtAangestuurd(DirectioneleRelatie):
     """Deze relatie wordt enkel gelegd naar objecttypes die typisch een groot vermogen vereisen en onder spanning komen nadat het voedend element aangestuurd is om die spanning door te sturen."""
 

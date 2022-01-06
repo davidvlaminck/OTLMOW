@@ -1,7 +1,7 @@
 from abc import abstractmethod, ABC
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Verankering(ABC):
     """Abstracte voor verschillende soorten ankers waarmee objecten aan elkaar gefixeerd worden. Ankers worden typisch vastgezet in een of alle betrokken objecten."""
 

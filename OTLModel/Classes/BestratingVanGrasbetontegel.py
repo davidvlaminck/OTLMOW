@@ -3,7 +3,7 @@ from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlBestratingOpvulsoort import KlBestratingOpvulsoort
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class BestratingVanGrasbetontegel(Bestrating):
     """Bestrating van grasbetontegels."""
 
@@ -12,6 +12,7 @@ class BestratingVanGrasbetontegel(Bestrating):
 
     def __init__(self):
         super().__init__()
+
         self.vulling = KeuzelijstField(naam="vulling",
                                        label="vulling",
                                        lijst=KlBestratingOpvulsoort(),

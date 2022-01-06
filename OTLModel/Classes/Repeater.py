@@ -5,7 +5,7 @@ from OTLModel.Datatypes.KlRepeaterMerk import KlRepeaterMerk
 from OTLModel.Datatypes.KlRepeaterModelnaam import KlRepeaterModelnaam
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Repeater(ZenderOntvangerToegang):
     """Apparatuur die het ontvangen signaal versterkt doorgeeft."""
 
@@ -14,6 +14,7 @@ class Repeater(ZenderOntvangerToegang):
 
     def __init__(self):
         super().__init__()
+
         self.merk = KeuzelijstField(naam="merk",
                                     label="merk",
                                     lijst=KlRepeaterMerk(),

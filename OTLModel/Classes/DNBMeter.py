@@ -4,7 +4,7 @@ from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlEnergiemeterDNBMeteropnameFrequentie import KlEnergiemeterDNBMeteropnameFrequentie
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class DNBMeter(Energiemeter):
     """Abstracte voor elk toestel dat eigendom is van de distributienetbeheerder en in de installatie van de asset beheerder geplaatst wordt voor diverse metingen van doorgevoerde energie."""
 
@@ -14,6 +14,7 @@ class DNBMeter(Energiemeter):
     @abstractmethod
     def __init__(self):
         super().__init__()
+
         self.meteropnameFrequentie = KeuzelijstField(naam="meteropnameFrequentie",
                                                      label="meteropname frequentie",
                                                      lijst=KlEnergiemeterDNBMeteropnameFrequentie(),

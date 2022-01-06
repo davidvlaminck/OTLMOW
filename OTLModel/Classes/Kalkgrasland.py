@@ -1,7 +1,7 @@
 from OTLModel.Classes.SoortenrijkSchraalGraslandGraslandfase5 import SoortenrijkSchraalGraslandGraslandfase5
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Kalkgrasland(SoortenrijkSchraalGraslandGraslandfase5):
     """G5c - 
 blauwgras, bergdravik, duifkruid, grote

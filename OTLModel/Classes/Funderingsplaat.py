@@ -2,7 +2,7 @@ from OTLModel.Classes.Betonfundering import Betonfundering
 from OTLModel.Classes.KlassiekeFundering import KlassiekeFundering
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Funderingsplaat(Betonfundering, KlassiekeFundering):
     """Fundering die minstens het volledige grondvlak van het gefundeerd object omvat maar met een beperkte hoogte voor de fundering van een constructie die stabiliteit haalt uit haar eigen gewicht."""
 

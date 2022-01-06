@@ -9,7 +9,7 @@ from OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter
 from OTLModel.Datatypes.KwantWrdInMillimeter import KwantWrdInMillimeter
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Schacht(PutRelatie):
     """Gedeelte van de put tussen regeling en de kamer."""
 
@@ -18,6 +18,7 @@ class Schacht(PutRelatie):
 
     def __init__(self):
         super().__init__()
+
         self.breedte = KwantWrdInMillimeter()
         """De afmeting 1 (breedte) van het grondplan van de schacht in millimeter."""
         self.breedte.naam = "breedte"

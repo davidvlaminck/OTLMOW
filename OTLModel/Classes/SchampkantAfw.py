@@ -1,7 +1,7 @@
 from OTLModel.Classes.AfwijkendeKantopsluiting import AfwijkendeKantopsluiting
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class SchampkantAfw(AfwijkendeKantopsluiting):
     """Afwijkende kantopsluiting, die zones van voertuigenverkeer onderling of voertuigenzones van andere
 verkeerszones scheidt en de overschrijding door voertuigen bemoeilijkt maar geen voertuigkerende

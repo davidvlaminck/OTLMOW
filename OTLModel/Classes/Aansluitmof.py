@@ -4,7 +4,7 @@ from OTLModel.Datatypes.KlAansluitstukMateriaal import KlAansluitstukMateriaal
 from OTLModel.Datatypes.KwantWrdInMillimeter import KwantWrdInMillimeter
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Aansluitmof(LinkendElement):
     """Aansluitingsstuk tussen 2 buizen."""
 
@@ -13,6 +13,7 @@ class Aansluitmof(LinkendElement):
 
     def __init__(self):
         super().__init__()
+
         self.diameter = KwantWrdInMillimeter()
         """De diameter van het boorgat gebruikt door de aansluitmof  in millimeter."""
         self.diameter.naam = "diameter"

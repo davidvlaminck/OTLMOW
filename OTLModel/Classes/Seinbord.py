@@ -1,7 +1,7 @@
 from OTLModel.Classes.Waarschuwingslantaarn import Waarschuwingslantaarn
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Seinbord(Waarschuwingslantaarn):
     """Paneel met waarschuwingstekst in oplichtende letters in de nabijheid van het kruispunt om weggebruikers te wijzen op een gesloten overweg, openstaande brug, voorbijrijdende tram,..."""
 

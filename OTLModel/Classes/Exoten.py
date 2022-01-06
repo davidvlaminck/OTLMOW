@@ -1,7 +1,7 @@
 from OTLModel.Classes.BegroeidVoorkomen import BegroeidVoorkomen
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Exoten(BegroeidVoorkomen):
     """Exoten, in deze context, zijn planten die zich hebben gevestigd in België terwijl ze oorspronkelijk niet in België voorkwamen. Ze verdringen bovendien inheemse soorten uit hun normale groeiplaats."""
 

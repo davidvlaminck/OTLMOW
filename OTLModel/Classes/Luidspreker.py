@@ -7,7 +7,7 @@ from OTLModel.Datatypes.KlLuidsprekerMerk import KlLuidsprekerMerk
 from OTLModel.Datatypes.KlLuidsprekerModelnaam import KlLuidsprekerModelnaam
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Luidspreker(AIMNaamObject):
     """Een luidspreker is een apparaat waarmee elektrische signalen worden omgezet in geluid."""
 
@@ -16,6 +16,7 @@ class Luidspreker(AIMNaamObject):
 
     def __init__(self):
         super().__init__()
+
         self.merk = KeuzelijstField(naam="merk",
                                     label="merk",
                                     lijst=KlLuidsprekerMerk(),

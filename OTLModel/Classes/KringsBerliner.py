@@ -4,7 +4,7 @@ from OTLModel.Datatypes.KlTypeBeschoeiing import KlTypeBeschoeiing
 from OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class KringsBerliner(AIMObject):
     """Een grond- en/of waterkerende constructie, die bestaat uit een verticaal in de grond geplaatste wand."""
 
@@ -13,6 +13,7 @@ class KringsBerliner(AIMObject):
 
     def __init__(self):
         super().__init__()
+
         self.beschoeiingsLengte = KwantWrdInMeter()
         """De totale lengte van de beschoeiing langs de sleuf in lopende meter."""
         self.beschoeiingsLengte.naam = "beschoeiingsLengte"

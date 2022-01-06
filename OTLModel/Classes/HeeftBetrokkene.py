@@ -6,7 +6,7 @@ from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlBetrokkenheidRol import KlBetrokkenheidRol
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class HeeftBetrokkene(DirectioneleRelatie):
     """Koppelt een natuurlijk persoon,rechtspersoon of een hoedanigheid (een functie eerder dan de persoon die de functie uitoefent) aan een object in een bepaalde rol."""
 
@@ -15,6 +15,7 @@ class HeeftBetrokkene(DirectioneleRelatie):
 
     def __init__(self):
         super().__init__()
+
         self.datumAanvang = DateField(naam="datumAanvang",
                                       label="datum aanvang",
                                       uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#HeeftBetrokkene.datumAanvang",

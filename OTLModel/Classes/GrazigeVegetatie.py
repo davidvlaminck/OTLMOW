@@ -5,7 +5,7 @@ from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlGrazigeVegetatieAanleg import KlGrazigeVegetatieAanleg
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class GrazigeVegetatie(BegroeidVoorkomen):
     """Begroeiingen die uit grassen en (bloeiende) kruiden bestaan."""
 
@@ -15,6 +15,7 @@ class GrazigeVegetatie(BegroeidVoorkomen):
     @abstractmethod
     def __init__(self):
         super().__init__()
+
         self.aanleg = KeuzelijstField(naam="aanleg",
                                       label="aanleg",
                                       lijst=KlGrazigeVegetatieAanleg(),

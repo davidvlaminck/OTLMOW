@@ -1,7 +1,7 @@
 from OTLModel.Classes.AIMObject import AIMObject
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class WVOpvoertransformator(AIMObject):
     """Toestel voor het opvoeren van de spanning, bij wegverlichtingsinstallaties gebruikt om de spanning te verhogen indien deze te laag geworden is wegens de kabelverliezen."""
 

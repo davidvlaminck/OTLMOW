@@ -4,7 +4,7 @@ from OTLModel.Datatypes.BooleanField import BooleanField
 from OTLModel.Datatypes.DtcDocument import DtcDocument
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class ProefNaderOnderzoekTomograaf(Proef):
     """Een geluids- en/of elektrische weerstandstomografie is een niet-destructieve methode om rot en holtes in bomen op te sporen door gebruik van geluidsgolven en/of elektrische stroom."""
 
@@ -13,6 +13,7 @@ class ProefNaderOnderzoekTomograaf(Proef):
 
     def __init__(self):
         super().__init__()
+
         self.inclusiefElektrisch = BooleanField(naam="inclusiefElektrisch",
                                                 label="inclusief elektrisch",
                                                 uri="https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefNaderOnderzoekTomograaf.inclusiefElektrisch",

@@ -3,7 +3,7 @@ from OTLModel.Classes.Detectielus import Detectielus
 from OTLModel.Datatypes.BooleanField import BooleanField
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class SelNietSelLus(Detectielus):
     """Abstracte klasse die de eigenschappen van selectieve en niet-selectieve lussen combineert."""
 
@@ -13,6 +13,7 @@ class SelNietSelLus(Detectielus):
     @abstractmethod
     def __init__(self):
         super().__init__()
+
         self.heeftMofInTrekput = BooleanField(naam="heeftMofInTrekput",
                                               label="heeft mof in trekput",
                                               uri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#SelNietSelLus.heeftMofInTrekput",

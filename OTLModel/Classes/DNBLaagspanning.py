@@ -1,7 +1,7 @@
 from OTLModel.Classes.DNB import DNB
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class DNBLaagspanning(DNB):
     """Aansluiting op het laagspanningsnet van de distributienetbeheerder."""
 

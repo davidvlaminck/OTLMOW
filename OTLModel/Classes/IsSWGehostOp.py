@@ -1,7 +1,7 @@
 from OTLModel.Classes.DirectioneleRelatie import DirectioneleRelatie
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class IsSWGehostOp(DirectioneleRelatie):
     """Deze relatie legt de link tussen een software en hardware onderdeel."""
 

@@ -6,7 +6,7 @@ from OTLModel.Datatypes.KlRasterMazen import KlRasterMazen
 from OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Ecoraster(ComplexeGeleiding):
     """Een geleiding om dieren te leiden naar een plaats (ecoduct, ecotunnel, ...) waar ze veilig een drukke weg kunnen oversteken."""
 
@@ -15,6 +15,7 @@ class Ecoraster(ComplexeGeleiding):
 
     def __init__(self):
         super().__init__()
+
         self.heeftPrikkeldraad = BooleanField(naam="heeftPrikkeldraad",
                                               label="heeft prikkeldraad",
                                               uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Ecoraster.heeftPrikkeldraad",

@@ -4,7 +4,7 @@ from OTLModel.Datatypes.KlOmegaElementMateriaal import KlOmegaElementMateriaal
 from OTLModel.Datatypes.KlPlaatsingswijze import KlPlaatsingswijze
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class OmegaElement(Straatmeubilair):
     """Een voetgangersafsluiting met als doel om de voetgangers te geleiden."""
 
@@ -13,6 +13,7 @@ class OmegaElement(Straatmeubilair):
 
     def __init__(self):
         super().__init__()
+
         self.materiaal = KeuzelijstField(naam="materiaal",
                                          label="materiaal",
                                          lijst=KlOmegaElementMateriaal(),

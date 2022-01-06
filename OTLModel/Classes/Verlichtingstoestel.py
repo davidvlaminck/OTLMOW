@@ -9,7 +9,7 @@ from OTLModel.Datatypes.KwantWrdInWatt import KwantWrdInWatt
 from OTLModel.Datatypes.StringField import StringField
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Verlichtingstoestel(AIMNaamObject):
     """Abstracte voor het geheel van de lichtbron en de behuizing die werden samengesteld met als doel:
 * de lichtstroom van de lichtbronnen hoofdzakelijk op het te verlichten oppervlak (doorlopende wegsectie, conflictgebied,...) te richten, teneinde de zichtbaarheid te verhogen;
@@ -22,6 +22,7 @@ class Verlichtingstoestel(AIMNaamObject):
     @abstractmethod
     def __init__(self):
         super().__init__()
+
         self.heeftAansluitkastGeintegreerd = BooleanField(naam="heeftAansluitkastGeintegreerd",
                                                           label="heeft aansluitkast geintegreerd",
                                                           uri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Verlichtingstoestel.heeftAansluitkastGeintegreerd",

@@ -8,7 +8,7 @@ from OTLModel.Datatypes.KwantWrdInKiloVoltAmpere import KwantWrdInKiloVoltAmpere
 from OTLModel.Datatypes.StringField import StringField
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class DNB(Voedingspunt):
     """Een abstracte die de gegevens van de distributienetbeheerder bevat die bij een aansluiting horen."""
 
@@ -18,6 +18,7 @@ class DNB(Voedingspunt):
     @abstractmethod
     def __init__(self):
         super().__init__()
+
         self.aansluitvermogen = KwantWrdInKiloVoltAmpere()
         """Vermogen van de aansluiting."""
         self.aansluitvermogen.naam = "aansluitvermogen"

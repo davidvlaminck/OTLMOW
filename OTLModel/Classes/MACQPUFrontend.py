@@ -1,7 +1,7 @@
 from OTLModel.Classes.PU import PU
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class MACQPUFrontend(PU):
     """Een processing unit van MACQ die de link legt tussen de AID-module en de AID-push server en de correlatiemodule."""
 

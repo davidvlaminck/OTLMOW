@@ -4,7 +4,7 @@ from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlToegangscontroleSleuteltype import KlToegangscontroleSleuteltype
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Toegangscontrole(AIMNaamObject):
     """Component voor controle van de toegang tot een ruimte of behuizing."""
 
@@ -13,6 +13,7 @@ class Toegangscontrole(AIMNaamObject):
 
     def __init__(self):
         super().__init__()
+
         self.heeftBadgelezer = BooleanField(naam="heeftBadgelezer",
                                             label="heeft badgelezer",
                                             uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Toegangscontrole.heeftBadgelezer",

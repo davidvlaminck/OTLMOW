@@ -2,7 +2,7 @@ from OTLModel.Classes.StalenProfiel import StalenProfiel
 from OTLModel.Datatypes.DtcProfieltype import DtcProfieltype
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class StandaardStalenProfiel(StalenProfiel):
     """Een stalen constructie-element waarvan de lengte vele malen groter is dan de breedte en de hoogte in doorsnede. Standaard stalen profiel omvat de meest genormeerde soorten profielen, zoals H-, I- en U-profielen met voorgedefinieerde profielhoogtematen."""
 
@@ -11,6 +11,7 @@ class StandaardStalenProfiel(StalenProfiel):
 
     def __init__(self):
         super().__init__()
+
         self.profieltype = DtcProfieltype()
         """Soort van profiel gecombineerd met de hoogte."""
         self.profieltype.naam = "profieltype"

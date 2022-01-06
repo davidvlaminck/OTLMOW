@@ -3,7 +3,7 @@ from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlClusterClusterdoel import KlClusterClusterdoel
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Cluster(AIMNaamObject):
     """Groep van servers die samenwerken om een gemeenschappelijk doel te bereiken (zowel voor groeperen van resources en/of redundantie)."""
 
@@ -12,6 +12,7 @@ class Cluster(AIMNaamObject):
 
     def __init__(self):
         super().__init__()
+
         self.clusterdoel = KeuzelijstField(naam="clusterdoel",
                                            label="clusterdoel",
                                            lijst=KlClusterClusterdoel(),

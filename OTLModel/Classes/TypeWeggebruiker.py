@@ -3,7 +3,7 @@ from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlVriTypeweggebruiker import KlVriTypeweggebruiker
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class TypeWeggebruiker(ABC):
     """Abstracte klasse die het type weggebruiker met een attribuut (volgens keuzelijst) aangeeft."""
 

@@ -10,7 +10,7 @@ from OTLModel.Datatypes.KwantWrdInSeconde import KwantWrdInSeconde
 from OTLModel.Datatypes.KwantWrdInUur import KwantWrdInUur
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Deur(ABC):
     """Een beweegbaar element ter afsluiting van een ruimte. In een gebouw is een deur meestal bevestigd in een kozijn,dat weer in een muur of wand is aangebracht."""
 

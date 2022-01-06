@@ -6,7 +6,7 @@ from OTLModel.Datatypes.KlBuitenkastVerfraaid import KlBuitenkastVerfraaid
 from OTLModel.Datatypes.KwantWrdInJaar import KwantWrdInJaar
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Buitenkast(Kast):
     """Abstracte voor kasten die typisch buiten staan en daarom bestand moeten zijn tegen de elementen en verfraaiing kunnen krijgen."""
 
@@ -16,15 +16,16 @@ class Buitenkast(Kast):
     @abstractmethod
     def __init__(self):
         super().__init__()
+
         self.ipKlasse = KeuzelijstField(naam="ipKlasse",
                                         label="ingress protection klasse",
                                         lijst=KlAlgIngressProtectionCode(),
                                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Buitenkast.ipKlasse",
-                                        definition="De IP-codering als een aanduiding voor de mate van beveiliging van de constructie van elektrische of elektronische apparatuur tegen eigen schade door gebruik in "vijandige omgevingen" en tegen eventueel gevaar voor de gebruiker volgens IEC 60529.",
+                                        definition="De IP-codering als een aanduiding voor de mate van beveiliging van de constructie van elektrische of elektronische apparatuur tegen eigen schade door gebruik in \"vijandige omgevingen\" en tegen eventueel gevaar voor de gebruiker volgens IEC 60529.",
                                         constraints="",
                                         usagenote="",
                                         deprecated_version="")
-        """De IP-codering als een aanduiding voor de mate van beveiliging van de constructie van elektrische of elektronische apparatuur tegen eigen schade door gebruik in "vijandige omgevingen" en tegen eventueel gevaar voor de gebruiker volgens IEC 60529."""
+        """De IP-codering als een aanduiding voor de mate van beveiliging van de constructie van elektrische of elektronische apparatuur tegen eigen schade door gebruik in \"vijandige omgevingen\" en tegen eventueel gevaar voor de gebruiker volgens IEC 60529."""
 
         self.keuringsfrequentie = KwantWrdInJaar()
         """Frequentie (in jaar) waarmee de kast moet onderworpen worden aan een periodieke keuring door een externe dienst voor technische controle."""

@@ -2,7 +2,7 @@ from abc import abstractmethod, ABC
 from OTLModel.Datatypes.StringField import StringField
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class FirmwareObject(ABC):
     """Abstracte voor de firmware van het object."""
 

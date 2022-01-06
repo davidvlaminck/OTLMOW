@@ -6,7 +6,7 @@ from OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter
 from OTLModel.Datatypes.KwantWrdInVierkanteMeter import KwantWrdInVierkanteMeter
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Laag(AIMObject):
     """Abstracte voor de gemeenschappelijke eigenschappen van de onderliggende verhardings- en funderings-onderdelen."""
 
@@ -16,6 +16,7 @@ class Laag(AIMObject):
     @abstractmethod
     def __init__(self):
         super().__init__()
+
         self.breedte = KwantWrdInMeter()
         """De (gemiddelde) breedte van een laag in meter. Dit kan ook de nominale breedte zijn afhankelijk van de laag en situatie."""
         self.breedte.naam = "breedte"

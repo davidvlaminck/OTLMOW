@@ -2,7 +2,7 @@ from OTLModel.Classes.LinkendElement import LinkendElement
 from OTLModel.Datatypes.KwantWrdInMeterTAW import KwantWrdInMeterTAW
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Wervel(LinkendElement):
     """Een wervel is een debietsbeperkend element dat zich tussen 2 kamers of tussen een kamer en een leiding bevindt."""
 
@@ -11,6 +11,7 @@ class Wervel(LinkendElement):
 
     def __init__(self):
         super().__init__()
+
         self.peil = KwantWrdInMeterTAW()
         """Dit is het niveau in meter-TAW van de inlaat van het wervelventiel."""
         self.peil.naam = "peil"

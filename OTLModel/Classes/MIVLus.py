@@ -5,7 +5,7 @@ from OTLModel.Datatypes.KlMIVLusUitslijprichting import KlMIVLusUitslijprichting
 from OTLModel.Datatypes.KlMIVLusZichtbaarheid import KlMIVLusZichtbaarheid
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class MIVLus(AIMNaamObject):
     """Meten in Vlaanderen : inductieve lus, ingeslepen in het wegdek."""
 
@@ -14,6 +14,7 @@ class MIVLus(AIMNaamObject):
 
     def __init__(self):
         super().__init__()
+
         self.meetrapport = DtcDocument()
         """De elektrische eigenschappen van de lus: R, L, C en de isolatieweerstand. Dit verzekert naast de afmetingen mee de voorziene nauwkeurigheid van de voertuigmetingen."""
         self.meetrapport.naam = "meetrapport"

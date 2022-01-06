@@ -4,7 +4,7 @@ from OTLModel.Datatypes.KlIVRIMerkRIS import KlIVRIMerkRIS
 from OTLModel.Datatypes.KlIVRIModelRIS import KlIVRIModelRIS
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class RIS(IVRIComponent):
     """Afkorting van Roadside ITS Station. Functionele software component die een RIS aanbiedt voor de werking van intelligente verkeersregelaars."""
 
@@ -13,6 +13,7 @@ class RIS(IVRIComponent):
 
     def __init__(self):
         super().__init__()
+
         self.merk = KeuzelijstField(naam="merk",
                                     label="merk",
                                     lijst=KlIVRIMerkRIS(),

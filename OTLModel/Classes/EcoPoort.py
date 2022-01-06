@@ -4,7 +4,7 @@ from OTLModel.Datatypes.KlEcoPoorttype import KlEcoPoorttype
 from OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class EcoPoort(ComplexeGeleiding):
     """Een afsluitbare doorgang om mensen toe te laten tot het gebied."""
 
@@ -13,6 +13,7 @@ class EcoPoort(ComplexeGeleiding):
 
     def __init__(self):
         super().__init__()
+
         self.breedte = KwantWrdInMeter()
         """De breedte van de poort in meter."""
         self.breedte.naam = "breedte"

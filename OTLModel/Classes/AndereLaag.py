@@ -3,7 +3,7 @@ from OTLModel.Classes.Laag import Laag
 from OTLModel.Classes.LaagProductidentificatiecode import LaagProductidentificatiecode
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class AndereLaag(Laag, LaagProductidentificatiecode):
     """Abstracte als tussenlaag voor de andere laag-objecten."""
 

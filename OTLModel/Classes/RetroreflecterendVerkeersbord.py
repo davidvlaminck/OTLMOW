@@ -8,7 +8,7 @@ from OTLModel.Datatypes.KlRetroreflecterendVerkeersbordMerk import KlRetroreflec
 from OTLModel.Datatypes.KwantWrdInVierkanteMeter import KwantWrdInVierkanteMeter
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class RetroreflecterendVerkeersbord(AIMObject, Verkeersbord):
     """Verkeersbord met op het beeldvlak een tekening en/of tekst die worden weergegeven met een geëigend bekledingsmateriaal."""
 
@@ -18,6 +18,7 @@ class RetroreflecterendVerkeersbord(AIMObject, Verkeersbord):
     def __init__(self):
         AIMObject.__init__(self)
         Verkeersbord.__init__(self)
+
         self.afwerkingsgraad = KeuzelijstField(naam="afwerkingsgraad",
                                                label="afwerkingsgraad",
                                                lijst=KlRetroreflecterendVerkeersbordAfwerkingsgraad(),

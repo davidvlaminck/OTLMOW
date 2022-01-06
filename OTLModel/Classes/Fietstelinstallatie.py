@@ -1,7 +1,7 @@
 from OTLModel.Classes.NaampadObject import NaampadObject
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Fietstelinstallatie(NaampadObject):
     """Groepering van onderdelen die samen een installatie vormen voor het verzamelen van telgegevens over passerende fietsers en in sommige installaties het tonenvan de gegevens."""
 

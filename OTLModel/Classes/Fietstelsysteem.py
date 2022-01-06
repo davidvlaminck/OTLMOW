@@ -6,7 +6,7 @@ from OTLModel.Datatypes.KlFietstelsysteemMerk import KlFietstelsysteemMerk
 from OTLModel.Datatypes.KlFietstelsysteemModelnaam import KlFietstelsysteemModelnaam
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Fietstelsysteem(AIMNaamObject):
     """Toestel bij de fietstelinstallatie dat gegevens van detectielussen over passerende fietsers verzamelt en verwerkt."""
 
@@ -15,6 +15,7 @@ class Fietstelsysteem(AIMNaamObject):
 
     def __init__(self):
         super().__init__()
+
         self.afmetingen = DtcAfmetingBxlxhInMm()
         """De afmetingen van het fietstelsysteem."""
         self.afmetingen.naam = "afmetingen"

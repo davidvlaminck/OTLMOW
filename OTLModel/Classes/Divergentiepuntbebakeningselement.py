@@ -5,7 +5,7 @@ from OTLModel.Datatypes.KlDivergentiepuntbebakeningselementType import KlDiverge
 from OTLModel.Datatypes.KlFolieType import KlFolieType
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Divergentiepuntbebakeningselement(AIMObject, Signalisatie):
     """Een constructie met als doel de zichtbaarheid van het divergentiepunt te vergroten."""
 
@@ -15,6 +15,7 @@ class Divergentiepuntbebakeningselement(AIMObject, Signalisatie):
     def __init__(self):
         AIMObject.__init__(self)
         Signalisatie.__init__(self)
+
         self.folietype = KeuzelijstField(naam="folietype",
                                          label="folietype",
                                          lijst=KlFolieType(),

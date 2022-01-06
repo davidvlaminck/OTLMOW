@@ -9,7 +9,7 @@ from OTLModel.Datatypes.KwantWrdInVolt import KwantWrdInVolt
 from OTLModel.Datatypes.StringField import StringField
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Transformator(AIMNaamObject):
     """Elektrische apparatuur, bestaande uit magnetisch gekoppelde spoelen, die instaat voor het transformeren van de voedingsspanning."""
 
@@ -18,6 +18,7 @@ class Transformator(AIMNaamObject):
 
     def __init__(self):
         super().__init__()
+
         self.isolatiemedium = KeuzelijstField(naam="isolatiemedium",
                                               label="isolatiemedium",
                                               lijst=KlTransformatorIsolatiemedium(),

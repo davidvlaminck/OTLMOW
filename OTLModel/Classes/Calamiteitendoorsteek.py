@@ -7,7 +7,7 @@ from OTLModel.Datatypes.KlCADOModelnaam import KlCADOModelnaam
 from OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Calamiteitendoorsteek(AIMNaamObject):
     """Een calamiteitendoorsteek, afgekort CADO, is een mechanische constructie voor het opklappen van een deel van de vangrail in de middenberm van een weg. Het primaire doel van de calamiteitendoorsteek is het doorlaten van hulpverleningsvoertuigen."""
 
@@ -16,6 +16,7 @@ class Calamiteitendoorsteek(AIMNaamObject):
 
     def __init__(self):
         super().__init__()
+
         self.isDubbelArmig = BooleanField(naam="isDubbelArmig",
                                           label="is dubbelarmig",
                                           uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Calamiteitendoorsteek.isDubbelArmig",

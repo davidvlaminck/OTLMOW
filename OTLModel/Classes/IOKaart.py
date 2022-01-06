@@ -8,7 +8,7 @@ from OTLModel.Datatypes.KlIOSignaaltype import KlIOSignaaltype
 from OTLModel.Datatypes.StringField import StringField
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class IOKaart(AIMObject):
     """Een kaart of module die gebruikt wordt voor de ingang of uitgang van een verwerkingseenheid (bv. een PLC). Op de IO-kaart worden perifere toestellen en sensoren aangesloten."""
 
@@ -17,6 +17,7 @@ class IOKaart(AIMObject):
 
     def __init__(self):
         super().__init__()
+
         self.bitsnelheid = KeuzelijstField(naam="bitsnelheid",
                                            label="bitsnelheid",
                                            lijst=KlIOBitSnelheid(),

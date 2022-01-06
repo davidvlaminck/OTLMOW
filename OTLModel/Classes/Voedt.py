@@ -2,7 +2,7 @@ from OTLModel.Classes.DirectioneleRelatie import DirectioneleRelatie
 from OTLModel.Datatypes.KwantWrdInVolt import KwantWrdInVolt
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Voedt(DirectioneleRelatie):
     """Deze relatie wordt enkel gelegd naar onderdelen die permanent onder spanning staan in normaal bedrijf. Aan deze relatie wordt steeds een richting toegekend van de voedinggever naar de ontvanger."""
 
@@ -11,6 +11,7 @@ class Voedt(DirectioneleRelatie):
 
     def __init__(self):
         super().__init__()
+
         self.aansluitspanning = KwantWrdInVolt()
         """Spanning van de aansluiting, dit wordt enkel ingevuld op voedingsrelaties voorbij de hoofdschakelaar."""
         self.aansluitspanning.naam = "aansluitspanning"

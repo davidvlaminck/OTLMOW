@@ -1,7 +1,7 @@
 from OTLModel.Classes.AIMNaamObject import AIMNaamObject
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Netstabilisator(AIMNaamObject):
     """Toestel dat het inkomende voedingsnet m.b.v. filters e.d. zodanig bewerkt dat er een stabiele output uitkomt die gebruikt kan worden voor de voeding van gevoelige apparatuur."""
 

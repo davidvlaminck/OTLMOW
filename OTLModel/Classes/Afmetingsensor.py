@@ -5,7 +5,7 @@ from OTLModel.Datatypes.KlAfmetingsensorModelnaam import KlAfmetingsensorModelna
 from OTLModel.Datatypes.KlAfmetingsensorType import KlAfmetingsensorType
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Afmetingsensor(AIMNaamObject):
     """Registratie van voertuigafmetingen."""
 
@@ -14,6 +14,7 @@ class Afmetingsensor(AIMNaamObject):
 
     def __init__(self):
         super().__init__()
+
         self.merk = KeuzelijstField(naam="merk",
                                     label="merk",
                                     lijst=KlAfmetingsensorMerk(),

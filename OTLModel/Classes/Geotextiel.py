@@ -6,7 +6,7 @@ from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlGeotextielType import KlGeotextielType
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Geotextiel(AndereLaag):
     """Geotextiel om grondoppervlakken, taluds en/of bodems te beschermen tegen
  erosie door wind, golfslag en/of stroming van water, afkomstig hetzij van afstromende neerslag, hetzij
@@ -17,6 +17,7 @@ class Geotextiel(AndereLaag):
 
     def __init__(self):
         super().__init__()
+
         self.heeftVulling = BooleanField(naam="heeftVulling",
                                          label="heeft vulling",
                                          uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Geotextiel.heeftVulling",

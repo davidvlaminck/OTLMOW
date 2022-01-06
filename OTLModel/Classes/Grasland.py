@@ -3,7 +3,7 @@ from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlNSB import KlNSB
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Grasland(GrazigeVegetatie):
     """Grazige vegetatie met daarin kruidachtigen die jaarlijks één of meerdere malen per jaar gemaaid of begraasd wordt."""
 
@@ -12,6 +12,7 @@ class Grasland(GrazigeVegetatie):
 
     def __init__(self):
         super().__init__()
+
         self.natuurstreefbeeld = KeuzelijstField(naam="natuurstreefbeeld",
                                                  label="natuurstreefbeeld",
                                                  lijst=KlNSB(),

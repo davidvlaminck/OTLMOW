@@ -9,7 +9,7 @@ from OTLModel.Datatypes.KlKleurMarkering import KlKleurMarkering
 from OTLModel.Datatypes.KlMarkeringSoort import KlMarkeringSoort
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Markering(AIMObject, Signalisatie):
     """Abstracte als noemer voor de verschillende types van markeringen."""
 
@@ -20,6 +20,7 @@ class Markering(AIMObject, Signalisatie):
     def __init__(self):
         AIMObject.__init__(self)
         Signalisatie.__init__(self)
+
         self.isHandwerk = BooleanField(naam="isHandwerk",
                                        label="is handwerk",
                                        uri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Markering.isHandwerk",

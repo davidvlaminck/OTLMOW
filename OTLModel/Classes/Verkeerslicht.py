@@ -7,7 +7,7 @@ from OTLModel.Datatypes.KlVerkeerslichtModelnaam import KlVerkeerslichtModelnaam
 from OTLModel.Datatypes.KwantWrdInWatt import KwantWrdInWatt
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Verkeerslicht(AIMNaamObject):
     """Abstracte voor verkeerslichten. Dit zijn apparaten, opgesteld naast of boven de weg, om weggebruikers visueel te geleiden over een kruispunt door het gebruik van rode, oranje-gele en groene lichten. De bepalingen van de wegcode zijn van toepassing, meer bepaald titel III, hoofdstuk I, artikelen 61 t.e.m. 64."""
 
@@ -17,6 +17,7 @@ class Verkeerslicht(AIMNaamObject):
     @abstractmethod
     def __init__(self):
         super().__init__()
+
         self.masker = KeuzelijstField(naam="masker",
                                       label="masker",
                                       lijst=KlVerkeerslichtMasker(),

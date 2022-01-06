@@ -2,7 +2,7 @@ from OTLModel.Classes.AIMObject import AIMObject
 from OTLModel.Datatypes.KwantWrdInWatt import KwantWrdInWatt
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Verwarmingslint(AIMObject):
     """Verwarmbare omwikkeling voor onderdelen die moeten beschermd worden tegen bevriezing."""
 
@@ -11,6 +11,7 @@ class Verwarmingslint(AIMObject):
 
     def __init__(self):
         super().__init__()
+
         self.vermogen = KwantWrdInWatt()
         """Het vereiste vermogen in watt voor de correcte werking van het verwarmingslint."""
         self.vermogen.naam = "vermogen"

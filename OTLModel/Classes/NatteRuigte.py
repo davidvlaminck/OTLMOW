@@ -3,7 +3,7 @@ from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlNSB import KlNSB
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class NatteRuigte(Ruigte):
     """Een natte ruigte is een vegetatie op natte standplaatsen die ontstaat na het wegvallen van beheer (maaien of begrazen) en dat gepaard gaat met de vestiging en/of uitbreiding van forse plantensoorten (zogenaamde ruigtekruiden). Deze ruigtekruiden zijn gekenmerkt door hun overblijvende natuur, hun snelle groei en de productie van aanzienlijke hoeveelheden strooisel, waardoor ze andere, vooral kleinere soorten, verdringen en de vestiging van andere soorten verhinderen."""
 
@@ -12,6 +12,7 @@ class NatteRuigte(Ruigte):
 
     def __init__(self):
         super().__init__()
+
         self.huidigNatuurbeeld = KeuzelijstField(naam="huidigNatuurbeeld",
                                                  label="huidig natuurbeeld",
                                                  lijst=KlNSB(),

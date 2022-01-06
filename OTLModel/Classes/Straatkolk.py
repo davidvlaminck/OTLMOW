@@ -11,7 +11,7 @@ from OTLModel.Datatypes.KlStraatkolkType import KlStraatkolkType
 from OTLModel.Datatypes.KlStraatkolkTypeUitlaat import KlStraatkolkTypeUitlaat
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Straatkolk(Put, PutRelatie):
     """De hemelwaterinlaatconstructie,meestal geplaatst in de straatgoot of watergreppel,waarlangs het hemelwater van de verhardingen wordt afgevoerd."""
 
@@ -21,6 +21,7 @@ class Straatkolk(Put, PutRelatie):
     def __init__(self):
         Put.__init__(self)
         PutRelatie.__init__(self)
+
         self.bakAfmetingen = DtcAfmetingBxlxhInMm()
         """De afmetingen van de bak van de straatkolk in mm."""
         self.bakAfmetingen.naam = "bakAfmetingen"

@@ -1,7 +1,7 @@
 from OTLModel.Classes.Seinlantaarn import Seinlantaarn
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Knipperlantaarn(Seinlantaarn):
     """Een lantaarn bestaande uit één of meerdere knipperende oranje-geel verkeerslichten bevestigd op een steun, teneinde de weggebruiker te waarschuwen."""
 

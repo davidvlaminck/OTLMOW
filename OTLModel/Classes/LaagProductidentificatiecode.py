@@ -2,7 +2,7 @@ from abc import abstractmethod, ABC
 from OTLModel.Datatypes.DtcProductidentificatiecode import DtcProductidentificatiecode
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class LaagProductidentificatiecode(ABC):
     """Abstracte waarmee aan een laag de eigenschap productidentificatiecode wordt toegekend."""
 

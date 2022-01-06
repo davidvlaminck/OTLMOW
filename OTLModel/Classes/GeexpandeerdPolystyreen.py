@@ -1,7 +1,7 @@
 from OTLModel.Classes.AndereLaag import AndereLaag
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class GeexpandeerdPolystyreen(AndereLaag):
     """Geëxpandeerd polystyreen of PS-hardschuim is een karakteristieke en vrijwel altijd witte kunststof, in de volksmond piepschuim genoemd."""
 

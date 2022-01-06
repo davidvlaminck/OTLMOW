@@ -4,7 +4,7 @@ from OTLModel.Datatypes.KwantWrdInKubiekeMeter import KwantWrdInKubiekeMeter
 from OTLModel.Datatypes.KwantWrdInVierkanteMeter import KwantWrdInVierkanteMeter
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Plantbakvorm(VegetatieElement):
     """Beplanting die niet in volle grond werd aangebracht, maar in bakvorm."""
 
@@ -13,6 +13,7 @@ class Plantbakvorm(VegetatieElement):
 
     def __init__(self):
         super().__init__()
+
         self.isBereikbaar = BooleanField(naam="isBereikbaar",
                                          label="is bereikbaar",
                                          uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Plantbakvorm.isBereikbaar",

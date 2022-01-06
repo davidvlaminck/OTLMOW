@@ -6,7 +6,7 @@ from OTLModel.Datatypes.KlVrComKaartTypeOpslaggeheugen import KlVrComKaartTypeOp
 from OTLModel.Datatypes.StringField import StringField
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class VRCommunicatiekaart(VRModuleMetFirmware):
     """Modem die alle toestandswijzigingen van de stuurkaart doorgeeft aan het afstandsbewakingssysteem. De module maakt continue een backup van alle log en data gegevens en slaat deze op op de aanwezige SD kaart. Tevens wordt de module ook gebruikt om vanop afstand te kunnen communiceren met de regelaar"""
 
@@ -15,14 +15,15 @@ class VRCommunicatiekaart(VRModuleMetFirmware):
 
     def __init__(self):
         super().__init__()
+
         self.dnsNaam = StringField(naam="dnsNaam",
                                    label="DNS naam",
                                    uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#VRCommunicatiekaart.dnsNaam",
-                                   definition="De DNSNaam (ook "volledige domein naam" genoemd ) is een unieke naam binnen het Domain Name System (DNS), het naamgevingssysteem waarmee computers, webservers, diensten en  toepassing op een unieke manier kunnen worden geïdentificeerd. Deze bevat zowel de hostname en de top level domein naam bv. 120c8-ar1.belfa.be.",
+                                   definition="De DNSNaam (ook \"volledige domein naam\" genoemd ) is een unieke naam binnen het Domain Name System (DNS), het naamgevingssysteem waarmee computers, webservers, diensten en  toepassing op een unieke manier kunnen worden geïdentificeerd. Deze bevat zowel de hostname en de top level domein naam bv. 120c8-ar1.belfa.be.",
                                    constraints="",
                                    usagenote="",
                                    deprecated_version="")
-        """De DNSNaam (ook "volledige domein naam" genoemd ) is een unieke naam binnen het Domain Name System (DNS), het naamgevingssysteem waarmee computers, webservers, diensten en  toepassing op een unieke manier kunnen worden geïdentificeerd. Deze bevat zowel de hostname en de top level domein naam bv. 120c8-ar1.belfa.be."""
+        """De DNSNaam (ook \"volledige domein naam\" genoemd ) is een unieke naam binnen het Domain Name System (DNS), het naamgevingssysteem waarmee computers, webservers, diensten en  toepassing op een unieke manier kunnen worden geïdentificeerd. Deze bevat zowel de hostname en de top level domein naam bv. 120c8-ar1.belfa.be."""
 
         self.heeftSmartguard = BooleanField(naam="heeftSmartguard",
                                             label="heeft smartguard",

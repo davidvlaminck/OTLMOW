@@ -1,7 +1,7 @@
 from OTLModel.Classes.PTModuleZFirmware import PTModuleZFirmware
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class PTSCKaart(PTModuleZFirmware):
     """Seriële controle uitbreidingskaart (optioneel): 4 lussen per kaart, max. 2 bijkomende uitbreidingskaarten per luscontactinterface."""
 

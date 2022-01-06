@@ -5,7 +5,7 @@ from OTLModel.Datatypes.KlBestrijkingProductfamilie import KlBestrijkingProductf
 from OTLModel.Datatypes.KlBestrijkingsoort import KlBestrijkingsoort
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Bestrijking(AndereLaag):
     """Een bestrijking bestaat in het sproeien op een verharding of een fundering van één of twee eenvormige 
 lagen bindmiddel met een geschikte viscositeit."""
@@ -15,6 +15,7 @@ lagen bindmiddel met een geschikte viscositeit."""
 
     def __init__(self):
         super().__init__()
+
         self.kaliber = KeuzelijstField(naam="kaliber",
                                        label="kaliber",
                                        lijst=KlBestrijkingKaliber(),

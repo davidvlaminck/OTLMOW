@@ -1,7 +1,7 @@
 from abc import abstractmethod, ABC
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Signalisatie(ABC):
     """Abstracte voor de gemeenschappelijke eigenschappen en relaties van signalisatie-elementen."""
 

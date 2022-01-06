@@ -1,7 +1,7 @@
 from OTLModel.Classes.Geleiding import Geleiding
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Stobbenwal(Geleiding):
     """Wortelkluiten of ander houtmateriaal (zoals stamhout) om beschutting en geleiding van kleinere diersoorten zoals muizen, egels."""
 

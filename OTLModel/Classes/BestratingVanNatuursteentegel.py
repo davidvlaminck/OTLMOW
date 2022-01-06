@@ -5,7 +5,7 @@ from OTLModel.Datatypes.KlBestratingselementAfmetingLxB import KlBestratingselem
 from OTLModel.Datatypes.KlNatuursteentegelGebruiksklasse import KlNatuursteentegelGebruiksklasse
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class BestratingVanNatuursteentegel(Bestrating):
     """Een buitentegel (of buitenplavei) is elk element van natuursteen gebruikt als bestratingsmateriaal, waarvan de breedte groter is dan 150 mm en doorgaans groter is dan twee maal de dikte volgens PTV841."""
 
@@ -14,6 +14,7 @@ class BestratingVanNatuursteentegel(Bestrating):
 
     def __init__(self):
         super().__init__()
+
         self.afmetingVanBestratingselementLxB = KeuzelijstField(naam="afmetingVanBestratingselementLxB",
                                                                 label="afmeting van bestratingselement LxB",
                                                                 lijst=KlBestratingselementAfmetingLxB(),

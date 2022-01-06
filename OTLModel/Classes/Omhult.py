@@ -1,7 +1,7 @@
 from OTLModel.Classes.DirectioneleRelatie import DirectioneleRelatie
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Omhult(DirectioneleRelatie):
     """Deze relatie geeft aan dat het ene onderdeel het andere omhult. Deze relatie heeft een richting en gaat van het omhullende onderdeel naar het onderdeel dat omhult wordt."""
 

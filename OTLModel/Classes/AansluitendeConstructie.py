@@ -3,7 +3,7 @@ from OTLModel.Classes.AfschermendeConstructie import AfschermendeConstructie
 from OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class AansluitendeConstructie(AfschermendeConstructie):
     """Abstracte die alle aansluitende constructies bundelt."""
 
@@ -13,6 +13,7 @@ class AansluitendeConstructie(AfschermendeConstructie):
     @abstractmethod
     def __init__(self):
         super().__init__()
+
         self.totaleLengte = KwantWrdInMeter()
         """De totale lengte van de elementen van de aansluitende constructie."""
         self.totaleLengte.naam = "totaleLengte"

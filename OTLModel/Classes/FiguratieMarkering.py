@@ -6,7 +6,7 @@ from OTLModel.Datatypes.KlFiguratieType import KlFiguratieType
 from OTLModel.Datatypes.KwantWrdInVierkanteMeter import KwantWrdInVierkanteMeter
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class FiguratieMarkering(FiguratieMarkeringToegang):
     """Een markering als figuratie op de weg aangebracht om het verkeer te waarschuwen, informeren of regelen."""
 
@@ -15,6 +15,7 @@ class FiguratieMarkering(FiguratieMarkeringToegang):
 
     def __init__(self):
         super().__init__()
+
         self.code = KeuzelijstField(naam="code",
                                     label="code",
                                     lijst=KlFiguratieCode(),

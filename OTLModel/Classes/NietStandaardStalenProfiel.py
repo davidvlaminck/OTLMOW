@@ -2,7 +2,7 @@ from OTLModel.Classes.StalenProfiel import StalenProfiel
 from OTLModel.Datatypes.KwantWrdInMillimeter import KwantWrdInMillimeter
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class NietStandaardStalenProfiel(StalenProfiel):
     """Een stalen constructie-element waarvan de lengte vele malen groter is dan de breedte en de hoogte in doorsnede. Niet-standaard stalen profiel omvat alle speciale, op maat gemaakte en/of niet vaak voorkomende profielen."""
 
@@ -11,6 +11,7 @@ class NietStandaardStalenProfiel(StalenProfiel):
 
     def __init__(self):
         super().__init__()
+
         self.profielbreedte = KwantWrdInMillimeter()
         """De korte afmeting in millimeter van het profiel."""
         self.profielbreedte.naam = "profielbreedte"

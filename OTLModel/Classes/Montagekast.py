@@ -2,7 +2,7 @@ from OTLModel.Classes.Buitenkast import Buitenkast
 from OTLModel.Datatypes.DtcDocument import DtcDocument
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Montagekast(Buitenkast):
     """Een kleine kast voor binnen of buiten die net omwille van zijn beperkte omvang doorgaans aan een paal, muur of andere objecten bevestigd wordt."""
 
@@ -11,6 +11,7 @@ class Montagekast(Buitenkast):
 
     def __init__(self):
         super().__init__()
+
         self.eplanMechanischPlan = DtcDocument()
         """Elektrisch aansluitschema van de kast en mechanisch plan van de volledige installatie in de kast."""
         self.eplanMechanischPlan.naam = "eplanMechanischPlan"

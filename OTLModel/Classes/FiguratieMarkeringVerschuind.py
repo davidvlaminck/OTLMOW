@@ -7,7 +7,7 @@ from OTLModel.Datatypes.KwantWrdInDecimaleGraden import KwantWrdInDecimaleGraden
 from OTLModel.Datatypes.KwantWrdInVierkanteMeter import KwantWrdInVierkanteMeter
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class FiguratieMarkeringVerschuind(FiguratieMarkeringToegang):
     """Een schuine markering als figuratie op de weg aangebracht om het verkeer te waarschuwen, informeren of regelen."""
 
@@ -16,6 +16,7 @@ class FiguratieMarkeringVerschuind(FiguratieMarkeringToegang):
 
     def __init__(self):
         super().__init__()
+
         self.basisOppervlakte = KwantWrdInVierkanteMeter()
         """De (basis) oppervlakte van de markering zoals beschreven in de algemene omzendbrief."""
         self.basisOppervlakte.naam = "basisOppervlakte"

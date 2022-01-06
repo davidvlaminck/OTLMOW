@@ -1,4 +1,3 @@
-# coding=utf-8
 from abc import abstractmethod
 from OTLModel.Classes.AIMObject import AIMObject
 from OTLModel.Datatypes.KardinaliteitField import KardinaliteitField
@@ -13,9 +12,9 @@ from OTLModel.Datatypes.KwantWrdInMillimeter import KwantWrdInMillimeter
 from OTLModel.Datatypes.KwantWrdInPromille import KwantWrdInPromille
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Buis(AIMObject):
-    """Abstracte om de gemeenschappelijke eigenschappen en relaties van de verschillende soorten buizen onder Ã©Ã©n noemer te houden."""
+    """Abstracte om de gemeenschappelijke eigenschappen en relaties van de verschillende soorten buizen onder één noemer te houden."""
 
     typeURI = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Buis"
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
@@ -23,6 +22,7 @@ class Buis(AIMObject):
     @abstractmethod
     def __init__(self):
         super().__init__()
+
         self.bokAfwaarts = KwantWrdInMeterTAW()
         """Peil in meter-TAW van de vloei aan de afwaartse kant van de buis."""
         self.bokAfwaarts.naam = "bokAfwaarts"

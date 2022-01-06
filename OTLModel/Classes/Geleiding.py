@@ -2,7 +2,7 @@ from abc import abstractmethod
 from OTLModel.Classes.AIMObject import AIMObject
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Geleiding(AIMObject):
     """Abstracte om de gerelateerde objecten onder 1 noemer te houden."""
 

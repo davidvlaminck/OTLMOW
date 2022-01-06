@@ -5,7 +5,7 @@ from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlBeheerHoutigeVegetatie import KlBeheerHoutigeVegetatie
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class BeheerHoutigeVegetatie(AIMObject):
     """Het beheerobject voor de houtige vegetatie."""
 
@@ -14,6 +14,7 @@ class BeheerHoutigeVegetatie(AIMObject):
 
     def __init__(self):
         super().__init__()
+
         beheeroptieField = KeuzelijstField(naam="beheeroptie",
                                            label="beheeroptie",
                                            lijst=KlBeheerHoutigeVegetatie(),

@@ -2,7 +2,7 @@ from OTLModel.Classes.Proef import Proef
 from OTLModel.Datatypes.DecimalFloatField import DecimalFloatField
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class ProefZichtbaarheidBijNacht(Proef):
     """Bepaling van het retroreflecterend vermogen van een markering bij nacht."""
 
@@ -11,6 +11,7 @@ class ProefZichtbaarheidBijNacht(Proef):
 
     def __init__(self):
         super().__init__()
+
         self.retrotreflectiecoëfficiënt = DecimalFloatField(naam="retrotreflectiecoëfficiënt",
                                                             label="retrotreflectiecoëfficiënt",
                                                             uri="https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefZichtbaarheidBijNacht.retrotreflectiecoëfficiënt",

@@ -6,7 +6,7 @@ from OTLModel.Datatypes.KlHoutigeType import KlHoutigeType
 from OTLModel.Datatypes.KlNSB import KlNSB
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class OpgaandeHoutigeVegetatie(HoutigeVegetatie):
     """Een houtkant of een bos."""
 
@@ -15,6 +15,7 @@ class OpgaandeHoutigeVegetatie(HoutigeVegetatie):
 
     def __init__(self):
         super().__init__()
+
         groeiplaatsverbeteringField = KeuzelijstField(naam="groeiplaatsverbetering",
                                                       label="groeiplaatsverbetering",
                                                       lijst=KlGroeiplaatsverbetering(),

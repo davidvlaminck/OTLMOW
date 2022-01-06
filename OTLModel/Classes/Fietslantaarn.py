@@ -1,7 +1,7 @@
 from OTLModel.Classes.Seinlantaarn import Seinlantaarn
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Fietslantaarn(Seinlantaarn):
     """Geheel van meerdere verkeerslichten die boven elkaar worden opgesteld en worden bevestigd op een steun, teneinde de beweging van fietsers te verhinderen of toe te laten."""
 

@@ -8,7 +8,7 @@ from OTLModel.Datatypes.KwantWrdInMillimeter import KwantWrdInMillimeter
 from OTLModel.Datatypes.StringField import StringField
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Verkeersbordsteun(AIMNaamObject, Draagconstructie):
     """Een draagconstructie voor verkeersborden of pictogrammen. Dit kan een ronde paal of een vakwerksteun zijn."""
 
@@ -18,6 +18,7 @@ class Verkeersbordsteun(AIMNaamObject, Draagconstructie):
     def __init__(self):
         AIMNaamObject.__init__(self)
         Draagconstructie.__init__(self)
+
         self.fabricagevoorschrift = StringField(naam="fabricagevoorschrift",
                                                 label="fabricagevoorschrift",
                                                 uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Verkeersbordsteun.fabricagevoorschrift",

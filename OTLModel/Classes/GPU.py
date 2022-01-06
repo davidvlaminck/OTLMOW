@@ -4,7 +4,7 @@ from OTLModel.Datatypes.KlGPUMerk import KlGPUMerk
 from OTLModel.Datatypes.KlGPUModelnaam import KlGPUModelnaam
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class GPU(AIMNaamObject):
     """Grafische verwerkingseenheid."""
 
@@ -13,6 +13,7 @@ class GPU(AIMNaamObject):
 
     def __init__(self):
         super().__init__()
+
         self.merk = KeuzelijstField(naam="merk",
                                     label="merk",
                                     lijst=KlGPUMerk(),

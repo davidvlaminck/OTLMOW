@@ -5,7 +5,7 @@ from OTLModel.Datatypes.KlLESchampkantType import KlLESchampkantType
 from OTLModel.Datatypes.KwantWrdInCentimeter import KwantWrdInCentimeter
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class SchampkantStd(GestandaardiseerdeKantopsluiting):
     """Gestandaardiseerde kantopsluiting, die zones van voertuigenverkeer onderling of voertuigenzones van andere verkeerszones scheidt en de overschrijding door voertuigen bemoeilijkt maar geen voertuigkerende functie heeft."""
 
@@ -14,6 +14,7 @@ class SchampkantStd(GestandaardiseerdeKantopsluiting):
 
     def __init__(self):
         super().__init__()
+
         self.breedte = KwantWrdInCentimeter()
         """De breedte van de gestandaardiseerde schampkant in centimeter."""
         self.breedte.naam = "breedte"

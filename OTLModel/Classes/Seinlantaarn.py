@@ -8,7 +8,7 @@ from OTLModel.Datatypes.KlSeinlantaarnMerk import KlSeinlantaarnMerk
 from OTLModel.Datatypes.KlSeinlantaarnModelnaam import KlSeinlantaarnModelnaam
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Seinlantaarn(AIMNaamObject):
     """Abstracte voor het geheel van één of meerdere verkeerslichten die boven elkaar worden opgesteld en worden bevestigd op een steun,teneinde de beweging van een weggebruiker die een bepaald traject volgt,te verhinderen of toe te laten."""
 
@@ -18,6 +18,7 @@ class Seinlantaarn(AIMNaamObject):
     @abstractmethod
     def __init__(self):
         super().__init__()
+
         self.diameter = KeuzelijstField(naam="diameter",
                                         label="diameter",
                                         lijst=KlSeinlantaarnDiameter(),

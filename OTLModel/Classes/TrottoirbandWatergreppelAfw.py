@@ -1,7 +1,7 @@
 from OTLModel.Classes.AfwijkendeKantopsluiting import AfwijkendeKantopsluiting
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class TrottoirbandWatergreppelAfw(AfwijkendeKantopsluiting):
     """Afwijkende kantopsluiting, die een trottoirband en een watergreppel combineert in een geheel."""
 

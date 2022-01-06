@@ -2,7 +2,7 @@ from OTLModel.Classes.Brandvoorziening import Brandvoorziening
 from OTLModel.Datatypes.BooleanField import BooleanField
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class StuurklepBrandleiding(Brandvoorziening):
     """Een afsluiter die vanop afstand bediend wordt om te verhinderen dat er water in de leiding blijft staan."""
 
@@ -11,6 +11,7 @@ class StuurklepBrandleiding(Brandvoorziening):
 
     def __init__(self):
         super().__init__()
+
         self.heeftLeegloopklep = BooleanField(naam="heeftLeegloopklep",
                                               label="heeft leegloopklep",
                                               uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#StuurklepBrandleiding.heeftLeegloopklep",

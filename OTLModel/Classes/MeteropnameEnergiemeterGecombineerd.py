@@ -3,7 +3,7 @@ from OTLModel.Datatypes.KwantWrdInKiloWatt import KwantWrdInKiloWatt
 from OTLModel.Datatypes.KwantWrdInkVARh import KwantWrdInkVARh
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class MeteropnameEnergiemeterGecombineerd(MeteropnameEnergiemeter):
     """Resultaten van een meteropname van een gecombineerde energiemeter."""
 
@@ -12,6 +12,7 @@ class MeteropnameEnergiemeterGecombineerd(MeteropnameEnergiemeter):
 
     def __init__(self):
         super().__init__()
+
         self.meterstandPiek = KwantWrdInKiloWatt()
         """De stand van de energiemeter waarmee het piekvermogen gemeten wordt."""
         self.meterstandPiek.naam = "meterstandPiek"

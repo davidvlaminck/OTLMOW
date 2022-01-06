@@ -1,7 +1,7 @@
 from OTLModel.Classes.Ruigte import Ruigte
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Brandnetelruigte(Ruigte):
     """R3 - dominante bedekking van grote brandnetel."""
 

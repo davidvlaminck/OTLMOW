@@ -5,7 +5,7 @@ from OTLModel.Datatypes.KlHoogtedetectieModelnaam import KlHoogtedetectieModelna
 from OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Hoogtedetectie(AIMNaamObject):
     """Hoogtedetectiesysteem voor het voorkomen van schade aan kunstwerken. Stuurt vaak een dynamisch bord aan. Voor handhaving staat het in relatie met een ANPR-camera."""
 
@@ -14,6 +14,7 @@ class Hoogtedetectie(AIMNaamObject):
 
     def __init__(self):
         super().__init__()
+
         self.detectiehoogte = KwantWrdInMeter()
         """De ingestelde hoogtelimiet waarboven het systeem voor hoogtedetectie een detectiesignaal moet uitsturen."""
         self.detectiehoogte.naam = "detectiehoogte"

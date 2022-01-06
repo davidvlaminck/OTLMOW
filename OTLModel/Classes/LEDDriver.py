@@ -7,7 +7,7 @@ from OTLModel.Datatypes.KwantWrdInMilliAmpere import KwantWrdInMilliAmpere
 from OTLModel.Datatypes.KwantWrdInWatt import KwantWrdInWatt
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class LEDDriver(AIMObject):
     """Een LED-driver is een elektronisch toestel dat de stroomtoevoer naar de LED's dimensioneert om de goede werking te verzekeren. Via de instelparameters van de driver kan uiteindelijk de lichtsterkte van de LED verlichting aangepast worden."""
 
@@ -16,6 +16,7 @@ class LEDDriver(AIMObject):
 
     def __init__(self):
         super().__init__()
+
         self.maximaalVermogen = KwantWrdInWatt()
         """Maximaal afgenomen vermogen van de driver en lamp samen (incl. verlies/verbruik van de driver zelf)."""
         self.maximaalVermogen.naam = "maximaalVermogen"

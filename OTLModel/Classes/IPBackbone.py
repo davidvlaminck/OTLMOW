@@ -1,7 +1,7 @@
 from OTLModel.Classes.NaampadObject import NaampadObject
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class IPBackbone(NaampadObject):
     """Netwerk dat bestaat uit meerdere L3 switches. Zij verbinden de verschillende L2 access structuren met de datacentres"""
 

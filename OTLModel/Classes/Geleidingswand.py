@@ -5,7 +5,7 @@ from OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter
 from OTLModel.Datatypes.KwantWrdInMillimeter import KwantWrdInMillimeter
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Geleidingswand(Geleiding):
     """Een geleidingswand geleidt kleinere dieren zoals amfibieën naar kleinere ecokokers, ecoduikers en dergelijke."""
 
@@ -14,6 +14,7 @@ class Geleidingswand(Geleiding):
 
     def __init__(self):
         super().__init__()
+
         self.hoogte = KwantWrdInMillimeter()
         """De hoogte van de geleidingswand in millimeter."""
         self.hoogte.naam = "hoogte"

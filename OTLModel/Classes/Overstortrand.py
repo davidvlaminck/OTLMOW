@@ -6,7 +6,7 @@ from OTLModel.Datatypes.KlVariabelDeelType import KlVariabelDeelType
 from OTLModel.Datatypes.KwantWrdInMillimeter import KwantWrdInMillimeter
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Overstortrand(AIMObject):
     """Een overstortrand heeft als doel het afvoeren van (pieken in) overtollig rioolwater vanuit de gemengde riolering naar het oppervlaktewater."""
 
@@ -15,6 +15,7 @@ class Overstortrand(AIMObject):
 
     def __init__(self):
         super().__init__()
+
         self.breedte = KwantWrdInMillimeter()
         """De afstand tussen de uiterste zijden van de overstortrand in millimeter."""
         self.breedte.naam = "breedte"

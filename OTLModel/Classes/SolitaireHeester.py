@@ -3,7 +3,7 @@ from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlVegetatieWortel import KlVegetatieWortel
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class SolitaireHeester(VegetatieElement):
     """Afzonderlijk te onderscheiden heester. Heesters zijn houtachtige planten die in of dicht bij de grond vertakken. Anders dan een boom vormen ze in het algemeen geen duidelijke stam, maar komen de meeste soorten met een aantal takken uit de grond, die dan ook grondtakken genoemd worden. Voorwaarde is wel dat de plant in zijn eventuele stam en takken houtweefsel vormt, hoewel dat niet tot in het hart hoeft te zijn."""
 
@@ -12,6 +12,7 @@ class SolitaireHeester(VegetatieElement):
 
     def __init__(self):
         super().__init__()
+
         self.wortelAanplant = KeuzelijstField(naam="wortelAanplant",
                                               label="wortel aanplant",
                                               lijst=KlVegetatieWortel(),

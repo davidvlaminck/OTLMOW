@@ -3,7 +3,7 @@ from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlBinnenverlichtingstoestelSoortLamp import KlBinnenverlichtingstoestelSoortLamp
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Aanstraalverlichting(AIMObject):
     """Lamp met fel gebundeld licht die het verlicht gebied duidelijk zichtbaar maakt."""
 
@@ -12,6 +12,7 @@ class Aanstraalverlichting(AIMObject):
 
     def __init__(self):
         super().__init__()
+
         self.type = KeuzelijstField(naam="type",
                                     label="type",
                                     lijst=KlBinnenverlichtingstoestelSoortLamp(),

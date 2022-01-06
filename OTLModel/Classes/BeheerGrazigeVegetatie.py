@@ -8,7 +8,7 @@ from OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter
 from OTLModel.Datatypes.KwantWrdInVierkanteMeter import KwantWrdInVierkanteMeter
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class BeheerGrazigeVegetatie(AIMObject):
     """Het beheerobject voor de grazige vegetatie."""
 
@@ -17,6 +17,7 @@ class BeheerGrazigeVegetatie(AIMObject):
 
     def __init__(self):
         super().__init__()
+
         beheeroptieField = KeuzelijstField(naam="beheeroptie",
                                            label="beheeroptie",
                                            lijst=KlBeheerGrazigeVegetatie(),

@@ -5,7 +5,7 @@ from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlUitvoeringsmethode import KlUitvoeringsmethode
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class BetonnenConstructieElement(ABC):
     """Bundeling van gemeenschappelijke eigenschappen van betonnen constructie-elementen."""
 

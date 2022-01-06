@@ -1,7 +1,7 @@
 from OTLModel.Classes.AIMObject import AIMObject
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Muurdoorgangsstuk(AIMObject):
     """Een hulpstuk als doorgang die zorgt voor een volledige verankering en een volledig waterdichte doorvoering van een persleiding door de wanden van de toegangs- of verbindingsputten."""
 

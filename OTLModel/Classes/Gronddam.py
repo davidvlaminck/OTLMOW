@@ -5,7 +5,7 @@ from OTLModel.Datatypes.KlHelling import KlHelling
 from OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Gronddam(AIMObject):
     """Gronddammen zijn trapeziumvormige constructies bestaande uit zand, grond of steenachtige materialen.
 De onderkant van de gronddam wordt direct op het bestaand maaiveld aangebracht of op een vooraf aangebrachte grondverbetering.
@@ -16,6 +16,7 @@ Een gronddam kan volgende functies vervullen: geluidswering, geleiding van diere
 
     def __init__(self):
         super().__init__()
+
         self.basisbreedte = KwantWrdInMeter()
         """De breedte van de basis van de gronddam in meter."""
         self.basisbreedte.naam = "basisbreedte"

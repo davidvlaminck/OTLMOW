@@ -3,7 +3,7 @@ from OTLModel.Datatypes.KardinaliteitField import KardinaliteitField
 from OTLModel.Datatypes.DtcDocument import DtcDocument
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class ProefVerderOnderzoekTrekproef(Proef):
     """Een trekproef is een manier om nader te onderzoeken hoe het met de veiligheid van een (aangetaste of beschadigde) boom gesteld is. Door met een lier effectief aan een boom te trekken wordt de belasting bij storm in een model gegoten en getest."""
 
@@ -12,6 +12,7 @@ class ProefVerderOnderzoekTrekproef(Proef):
 
     def __init__(self):
         super().__init__()
+
         verderOnderzoekTrekproefField = DtcDocument()
         verderOnderzoekTrekproefField.naam = "verderOnderzoekTrekproef"
         verderOnderzoekTrekproefField.label = "verder onderzoek trekproef"

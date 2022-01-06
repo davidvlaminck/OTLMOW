@@ -4,7 +4,7 @@ from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlDraineerbuisMateriaal import KlDraineerbuisMateriaal
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Draineerbuis(Buis):
     """Een buis voor het afvoeren van water uit de bodem over en door de grond,met als gevolg het verlagen van het grondwaterpeil."""
 
@@ -13,6 +13,7 @@ class Draineerbuis(Buis):
 
     def __init__(self):
         super().__init__()
+
         self.heeftDrainbrug = BooleanField(naam="heeftDrainbrug",
                                            label="heeft drainbrug",
                                            uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Draineerbuis.heeftDrainbrug",

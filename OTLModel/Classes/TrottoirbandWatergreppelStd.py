@@ -5,7 +5,7 @@ from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlLETrottoirbandWatergreppelType import KlLETrottoirbandWatergreppelType
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class TrottoirbandWatergreppelStd(GestandaardiseerdeKantopsluiting):
     """Gestandaardiseerde kantopsluiting, die een trottoirband en een watergreppel combineert in een geheel."""
 
@@ -14,6 +14,7 @@ class TrottoirbandWatergreppelStd(GestandaardiseerdeKantopsluiting):
 
     def __init__(self):
         super().__init__()
+
         self.norm = DtcLENorm()
         """De gestandaardiseerde trottoirband_watergreppel volgens aangeduide norm."""
         self.norm.naam = "norm"

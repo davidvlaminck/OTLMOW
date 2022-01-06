@@ -4,7 +4,7 @@ from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlLEGCOpeningType import KlLEGCOpeningType
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Vluchtopening(AIMObject):
     """Vluchtopeningen voorzien een vluchtmogelijkheid. Deze bezitten dezelfde akoestische kwaliteitseisen als de voorgestelde schermen."""
 
@@ -13,6 +13,7 @@ class Vluchtopening(AIMObject):
 
     def __init__(self):
         super().__init__()
+
         self.technischeFiche = DtcDocument()
         """Document waarin onder andere het inplantingsplan van de doorgang wordt weergegeven."""
         self.technischeFiche.naam = "technischeFiche"

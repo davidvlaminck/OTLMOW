@@ -2,7 +2,7 @@ from OTLModel.Classes.AIMObject import AIMObject
 from OTLModel.Datatypes.BooleanField import BooleanField
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class VentilatieAfsluitklep(AIMObject):
     """Constructie voor het fysiek afsluiten van een ventilatieschacht die verhindert dat luchtstromen van de (dwars)ventilatie door de schachten gaan."""
 
@@ -11,6 +11,7 @@ class VentilatieAfsluitklep(AIMObject):
 
     def __init__(self):
         super().__init__()
+
         self.heeftManueleBediening = BooleanField(naam="heeftManueleBediening",
                                                   label="Heeft manuele bediening",
                                                   uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#VentilatieAfsluitklep.heeftManueleBediening",

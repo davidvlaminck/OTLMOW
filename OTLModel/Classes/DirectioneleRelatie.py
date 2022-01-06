@@ -2,7 +2,7 @@ from abc import abstractmethod
 from OTLModel.Classes.RelatieObject import RelatieObject
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class DirectioneleRelatie(RelatieObject):
     """Een abstracte die relaties groepeert waarbij de richting semantisch gedefinieerd is."""
 

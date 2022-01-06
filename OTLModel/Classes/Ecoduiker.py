@@ -3,7 +3,7 @@ from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlEcoLooprichelType import KlEcoLooprichelType
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Ecoduiker(AIMObject):
     """Buis- of tunnelvormige doorgang voor water onder een weg, die is voorzien van een oeverstrook of van looprichels zodat kleinere diersoorten beschermd voor het verkeer kunnen doorsteken."""
 
@@ -12,6 +12,7 @@ class Ecoduiker(AIMObject):
 
     def __init__(self):
         super().__init__()
+
         self.typeLooprichel = KeuzelijstField(naam="typeLooprichel",
                                               label="type looprichel",
                                               lijst=KlEcoLooprichelType(),

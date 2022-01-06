@@ -3,7 +3,7 @@ from OTLModel.Datatypes.BooleanField import BooleanField
 from OTLModel.Datatypes.KwantWrdInVierkanteMeter import KwantWrdInVierkanteMeter
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Klimvorm(VegetatieElement):
     """Plant met buigzame stengels die zich aan muren,bomen,enz. hecht en zodoende omhoog klimt."""
 
@@ -12,6 +12,7 @@ class Klimvorm(VegetatieElement):
 
     def __init__(self):
         super().__init__()
+
         self.begroeidOppervlak = KwantWrdInVierkanteMeter()
         """Verticale oppervlakte dat begroeid is in vierkante meter."""
         self.begroeidOppervlak.naam = "begroeidOppervlak"

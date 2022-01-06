@@ -7,7 +7,7 @@ from OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter
 from OTLModel.Datatypes.KwantWrdInVierkanteMeter import KwantWrdInVierkanteMeter
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class LijnvormigElementMarkering(Markering, AOWSType):
     """Een markering van een lijnvormig element om de zichtbaarheid te verhogen om het verkeer te waarschuwen, informeren of regelen."""
 
@@ -17,6 +17,7 @@ class LijnvormigElementMarkering(Markering, AOWSType):
     def __init__(self):
         Markering.__init__(self)
         AOWSType.__init__(self)
+
         self.code = KeuzelijstField(naam="code",
                                     label="code",
                                     lijst=KlLEMarkeringCode(),

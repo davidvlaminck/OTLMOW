@@ -5,7 +5,7 @@ from OTLModel.Datatypes.KlDwarseMarkeringSoort import KlDwarseMarkeringSoort
 from OTLModel.Datatypes.KwantWrdInVierkanteMeter import KwantWrdInVierkanteMeter
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class DwarseMarkering(DwarseMarkeringToegang):
     """Een markering dwars op de weg aangebracht om het verkeer te waarschuwen, informeren of regelen."""
 
@@ -14,6 +14,7 @@ class DwarseMarkering(DwarseMarkeringToegang):
 
     def __init__(self):
         super().__init__()
+
         self.code = KeuzelijstField(naam="code",
                                     label="code",
                                     lijst=KlDwarseMarkeringCode(),

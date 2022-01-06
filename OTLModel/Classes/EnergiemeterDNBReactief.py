@@ -1,7 +1,7 @@
 from OTLModel.Classes.DNBMeter import DNBMeter
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class EnergiemeterDNBReactief(DNBMeter):
     """Toestel dat eigendom is van de distributienetbeheerder en in de installatie van de asset beheerder geplaatst wordt voor het meten van het reactief vermogen."""
 

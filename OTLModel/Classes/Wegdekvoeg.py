@@ -5,7 +5,7 @@ from OTLModel.Datatypes.KlWegdekvoegType import KlWegdekvoegType
 from OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Wegdekvoeg(AIMObject):
     """Dwarsvoegen en langsvoegen met uitzondering van de krimpvoegen."""
 
@@ -14,6 +14,7 @@ class Wegdekvoeg(AIMObject):
 
     def __init__(self):
         super().__init__()
+
         self.heeftDeuvels = BooleanField(naam="heeftDeuvels",
                                          label="heeft deuvels",
                                          uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Wegdekvoeg.heeftDeuvels",

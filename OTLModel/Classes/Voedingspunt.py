@@ -2,7 +2,7 @@ from abc import abstractmethod
 from OTLModel.Classes.AIMNaamObject import AIMNaamObject
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Voedingspunt(AIMNaamObject):
     """Abstracte voor het aansluitpunt van de voeding."""
 

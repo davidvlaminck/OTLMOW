@@ -5,7 +5,7 @@ from OTLModel.Datatypes.KlNetwerklinkMediumtype import KlNetwerklinkMediumtype
 from OTLModel.Datatypes.StringField import StringField
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Link(NaampadObject):
     """Het (glasvezel) traject tussen twee toestellen (NetwerkElementen) die rechtstreeks met mekaar communiceren."""
 
@@ -14,6 +14,7 @@ class Link(NaampadObject):
 
     def __init__(self):
         super().__init__()
+
         self.geleidingsgroepTnummer = IntegerField(naam="geleidingsgroepTnummer",
                                                    label="geleidingsgroep T-nummer",
                                                    uri="https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Link.geleidingsgroepTnummer",

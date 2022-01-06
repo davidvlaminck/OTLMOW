@@ -3,7 +3,7 @@ from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlVerlichtingstoestelconnectorBesturingsconnector import KlVerlichtingstoestelconnectorBesturingsconnector
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class VerlichtingstoestelConnector(ABC):
     """Abstracte om een besturingsconnector toe te voegen aan een WV-toestel."""
 

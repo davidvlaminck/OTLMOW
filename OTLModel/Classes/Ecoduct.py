@@ -3,7 +3,7 @@ from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlEcoEcoductType import KlEcoEcoductType
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Ecoduct(AIMObject):
     """Ecoducten of natuurbruggen zorgen ervoor dat dieren veilig de weg kunnen oversteken."""
 
@@ -12,6 +12,7 @@ class Ecoduct(AIMObject):
 
     def __init__(self):
         super().__init__()
+
         self.type = KeuzelijstField(naam="type",
                                     label="type",
                                     lijst=KlEcoEcoductType(),

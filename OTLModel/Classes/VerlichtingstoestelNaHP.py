@@ -4,7 +4,7 @@ from OTLModel.Datatypes.BooleanField import BooleanField
 from OTLModel.Datatypes.DteKleurRAL import DteKleurRAL
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class VerlichtingstoestelNaHP(VerlichtingstoestelConnector, Verlichtingstoestel):
     """Het geheel van de natrium hoge druk lamp (NaHP) en de behuizing die werden samengesteld met als doel:
 * de lichtstroom van de lichtbronnen hoofdzakelijk op het te verlichten oppervlak (doorlopende wegsectie, conflictgebied,...) te richten, teneinde de zichtbaarheid te verhogen;
@@ -17,6 +17,7 @@ class VerlichtingstoestelNaHP(VerlichtingstoestelConnector, Verlichtingstoestel)
     def __init__(self):
         VerlichtingstoestelConnector.__init__(self)
         Verlichtingstoestel.__init__(self)
+
         self.armatuurkleur = DteKleurRAL()
         """De kleur van de zichtbare buitenkant van het verlichtingstoestel."""
         self.armatuurkleur.naam = "armatuurkleur"

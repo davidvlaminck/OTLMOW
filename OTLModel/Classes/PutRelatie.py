@@ -2,7 +2,7 @@ from abc import abstractmethod
 from OTLModel.Classes.AIMObject import AIMObject
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class PutRelatie(AIMObject):
     """Abstracte om de relaties van de verschillende soorten putten te groeperen."""
 

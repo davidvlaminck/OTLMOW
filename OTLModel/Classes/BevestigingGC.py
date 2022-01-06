@@ -1,7 +1,7 @@
 from abc import abstractmethod, ABC
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class BevestigingGC(ABC):
     """Abstracte om de bevestigingsrelatie naar de profielen en schermelementen van geluidswerende constructies te faciliteren."""
 

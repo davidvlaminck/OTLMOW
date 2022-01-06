@@ -4,7 +4,7 @@ from OTLModel.Datatypes.KlDynBordOpMaatMerk import KlDynBordOpMaatMerk
 from OTLModel.Datatypes.KlDynBordOpMaatModelnaam import KlDynBordOpMaatModelnaam
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class DynBordOpMaat(LEDBord):
     """Dynamisch verkeersbord dat niet standaard is; en dus niet is gespecifieerd in SB270."""
 
@@ -13,6 +13,7 @@ class DynBordOpMaat(LEDBord):
 
     def __init__(self):
         super().__init__()
+
         self.merk = KeuzelijstField(naam="merk",
                                     label="merk",
                                     lijst=KlDynBordOpMaatMerk(),

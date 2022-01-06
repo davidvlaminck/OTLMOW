@@ -1,7 +1,7 @@
 from OTLModel.Classes.Verkeerslicht import Verkeerslicht
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class VerkeerslichtWit(Verkeerslicht):
     """Een witte lichtbron om het verkeer te regelen van voertuigen van personentransport."""
 

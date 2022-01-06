@@ -1,7 +1,7 @@
 from OTLModel.Classes.AIMNaamObject import AIMNaamObject
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class MIVVoedingsmodule(AIMNaamObject):
     """Meten in Vlaanderen : voedingsmodule voor LVE-rack of SAT-rack."""
 

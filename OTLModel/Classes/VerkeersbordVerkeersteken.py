@@ -2,7 +2,7 @@ from OTLModel.Classes.Verkeersteken import Verkeersteken
 from OTLModel.Datatypes.BooleanField import BooleanField
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class VerkeersbordVerkeersteken(Verkeersteken):
     """De voorstelling door middel van een verkeersbord van een aanwijzing ten behoeve van de weggebruikers die verbonden wordt aan het aankondigen of opleggen van een bepaalde verkeersmaatregel zoals bepaald in de wegcode."""
 
@@ -11,6 +11,7 @@ class VerkeersbordVerkeersteken(Verkeersteken):
 
     def __init__(self):
         super().__init__()
+
         self.isBeginZone = BooleanField(naam="isBeginZone",
                                         label="is begin van een zone",
                                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/installatie#VerkeersbordVerkeersteken.isBeginZone",

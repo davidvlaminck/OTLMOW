@@ -1,7 +1,7 @@
 from OTLModel.Classes.PTModuleZFirmware import PTModuleZFirmware
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class PTVoedingsmodule(PTModuleZFirmware):
     """Voedingsmodule van de PT regelaar 230VAC/ 24 VDC - 5A."""
 

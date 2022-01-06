@@ -3,7 +3,7 @@ from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlLEACSchokindex import KlLEACSchokindex
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class ProefSchokindex(Proef):
     """Proef voor de bepaling van de schokindex parameter."""
 

@@ -15,11 +15,11 @@ class OTLModelCreator:
         self.logger.log("Created an instance of OTLModelCreator", LogType.INFO)
 
     def create_full_model(self):
-        self.create_primitive_datatypes()
-        self.create_complex_datatypes()
-        self.create_enumerations()
+        #self.create_primitive_datatypes()
+        #self.create_complex_datatypes()
+        #self.create_enumerations()
         self.create_classes()
-        self.create_relations()
+        #self.create_relations()
 
     def create_primitive_datatypes(self):
         creator = OTLPrimitiveDatatypeCreator(self.logger, self.osloCollector)
@@ -100,7 +100,7 @@ class OTLModelCreator:
                 if len(dataToWrite) == 0:
                     self.logger.log(f"Could not create a class for {cls.name}", LogType.INFO)
                     pass
-                creator.writeToFile(cls, 'Classes', dataToWrite)
+                creator.writeToFile(cls, 'Classes', dataToWrite, 'utf-8')
                 self.logger.log(f"Created a class for {cls.name}", LogType.INFO)
             except Exception as e:
                 self.logger.log(str(e), LogType.ERROR)

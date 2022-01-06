@@ -1,7 +1,7 @@
 from OTLModel.Classes.VRModuleMetFirmware import VRModuleMetFirmware
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class VRKortsluitbeveiliging(VRModuleMetFirmware):
     """Een elektronische kortsluitbeveiliging ingebouwd in de vermogen-/lampenschakelaars. Tevens zijn alle uitgangen voorzien van een zekering."""
 

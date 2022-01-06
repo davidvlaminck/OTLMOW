@@ -3,7 +3,7 @@ from OTLModel.Datatypes.BooleanField import BooleanField
 from OTLModel.Datatypes.StringField import StringField
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class AOWSType(ABC):
     """Abstracte om alle eigenschappen en relaties van AOWS type onder 1 noemer te houden."""
 

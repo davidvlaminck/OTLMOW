@@ -2,7 +2,7 @@ from OTLModel.Classes.AIMObject import AIMObject
 from OTLModel.Datatypes.KwantWrdInVierkanteMeter import KwantWrdInVierkanteMeter
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class GroepMarkering(AIMObject):
     """Groepering om alle soorten markeringen te groeperen."""
 
@@ -11,6 +11,7 @@ class GroepMarkering(AIMObject):
 
     def __init__(self):
         super().__init__()
+
         self.totaleGroepOppervlakte = KwantWrdInVierkanteMeter()
         """De totale oppervlakte van de totale markering groepering."""
         self.totaleGroepOppervlakte.naam = "totaleGroepOppervlakte"

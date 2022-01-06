@@ -6,7 +6,7 @@ from OTLModel.Datatypes.KlZonnepaneelModelnaam import KlZonnepaneelModelnaam
 from OTLModel.Datatypes.KwantWrdInWatt import KwantWrdInWatt
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Zonnepaneel(Voedingspunt, BevestigingGC):
     """Toestel om elektrische energie op te wekken uit zonlicht met als doel het voeden van een installatie. Ook wel fotovoltaïsche cellen of zonnecellen genoemd."""
 
@@ -16,6 +16,7 @@ class Zonnepaneel(Voedingspunt, BevestigingGC):
     def __init__(self):
         Voedingspunt.__init__(self)
         BevestigingGC.__init__(self)
+
         self.merk = KeuzelijstField(naam="merk",
                                     label="merk",
                                     lijst=KlZonnepaneelMerk(),

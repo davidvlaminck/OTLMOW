@@ -6,7 +6,7 @@ from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlWegkantkastType import KlWegkantkastType
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Wegkantkast(Buitenkast):
     """Behuizing in de vorm van een kast typisch gebruikt buiten, langs de kant van de weg."""
 
@@ -15,6 +15,7 @@ class Wegkantkast(Buitenkast):
 
     def __init__(self):
         super().__init__()
+
         self.elektrischSchema = DtcDocument()
         """Elektrisch aansluitschema van de kast."""
         self.elektrischSchema.naam = "elektrischSchema"

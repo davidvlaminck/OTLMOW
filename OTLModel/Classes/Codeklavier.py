@@ -6,7 +6,7 @@ from OTLModel.Datatypes.KlCodeklavierModelnaam import KlCodeklavierModelnaam
 from OTLModel.Datatypes.KlCodeklavierWerking import KlCodeklavierWerking
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Codeklavier(AIMNaamObject):
     """Toestel voor het aansturen van een asset op basis van ingetoetste codes."""
 
@@ -15,6 +15,7 @@ class Codeklavier(AIMNaamObject):
 
     def __init__(self):
         super().__init__()
+
         self.merk = KeuzelijstField(naam="merk",
                                     label="merk",
                                     lijst=KlCodeklavierMerk(),

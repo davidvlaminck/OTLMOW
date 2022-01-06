@@ -2,7 +2,7 @@ from OTLModel.Classes.Proef import Proef
 from OTLModel.Datatypes.DtcDocument import DtcDocument
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class ProefVlakheid(Proef):
     """Controle van de effenheid van het oppervlak met behulp van een 3 meter lange rei volgens NBN EN 13036-7."""
 
@@ -11,6 +11,7 @@ class ProefVlakheid(Proef):
 
     def __init__(self):
         super().__init__()
+
         self.vlakheid = DtcDocument()
         """Proefresultaten van de vlakheid."""
         self.vlakheid.naam = "vlakheid"

@@ -4,7 +4,7 @@ from OTLModel.Datatypes.KlIVRIMerkTLCfi import KlIVRIMerkTLCfi
 from OTLModel.Datatypes.KlIVRIModelTLCfi import KlIVRIModelTLCfi
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class TLCfiPoort(IVRIComponent):
     """Functionele software component die een TLC-FI interface aanbiedt waardoor data kan uitgewisseld worden voor intelligente verkeersregelaars."""
 
@@ -13,6 +13,7 @@ class TLCfiPoort(IVRIComponent):
 
     def __init__(self):
         super().__init__()
+
         self.merk = KeuzelijstField(naam="merk",
                                     label="merk",
                                     lijst=KlIVRIMerkTLCfi(),

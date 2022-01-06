@@ -4,7 +4,7 @@ from OTLModel.Datatypes.BooleanField import BooleanField
 from OTLModel.Datatypes.KwantWrdInKubiekeMeter import KwantWrdInKubiekeMeter
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Verankeringsmassief(Betonfundering, KlassiekeFundering):
     """Een fundering waarin ankers zijn aangebracht en die zorgen voor bevestiging en stabilisatie van een object."""
 
@@ -14,6 +14,7 @@ class Verankeringsmassief(Betonfundering, KlassiekeFundering):
     def __init__(self):
         Betonfundering.__init__(self)
         KlassiekeFundering.__init__(self)
+
         self.isAfgedektMetBitumen = BooleanField(naam="isAfgedektMetBitumen",
                                                  label="is afgedekt met bitumen",
                                                  uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Verankeringsmassief.isAfgedektMetBitumen",

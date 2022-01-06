@@ -1,7 +1,7 @@
 from OTLModel.Classes.BloemrijkGraslandGraslandfase4 import BloemrijkGraslandGraslandfase4
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class BloemrijkGlanshavergrasland(BloemrijkGraslandGraslandfase4):
     """G4a - aardaker, beemdkroon, beemdooievaarsbek,
 bevertjes, gele morgenster, gewone agrimonie,

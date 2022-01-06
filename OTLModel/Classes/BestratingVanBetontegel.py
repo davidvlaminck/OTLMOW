@@ -5,7 +5,7 @@ from OTLModel.Datatypes.KlBestratingAfwerking import KlBestratingAfwerking
 from OTLModel.Datatypes.KlBestratingselementAfmetingLxB import KlBestratingselementAfmetingLxB
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class BestratingVanBetontegel(Bestrating):
     """Bestrating van geprefabriceerde platte stenen in beton die (in de afgesproken mate) voldoen aan de vereisten van NBN EN 1339 en NBN B21-211."""
 
@@ -14,6 +14,7 @@ class BestratingVanBetontegel(Bestrating):
 
     def __init__(self):
         super().__init__()
+
         self.afmetingVanBestratingselementLxB = KeuzelijstField(naam="afmetingVanBestratingselementLxB",
                                                                 label="afmeting van bestratingselement LxB",
                                                                 lijst=KlBestratingselementAfmetingLxB(),

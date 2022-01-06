@@ -2,7 +2,7 @@ from OTLModel.Classes.Proef import Proef
 from OTLModel.Datatypes.DtcDocument import DtcDocument
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class ProefDruksterkte(Proef):
     """De spanning waarbij het materiaal van de laag onder invloed van (druk)belasting bezwijkt."""
 
@@ -11,6 +11,7 @@ class ProefDruksterkte(Proef):
 
     def __init__(self):
         super().__init__()
+
         self.druksterkte = DtcDocument()
         """Proefresultaten van de druksterkte van de laag."""
         self.druksterkte.naam = "druksterkte"

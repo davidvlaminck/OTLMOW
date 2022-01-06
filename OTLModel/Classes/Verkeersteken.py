@@ -9,7 +9,7 @@ from OTLModel.Datatypes.KlVerkeerstekenWettelijkeStatus import KlVerkeerstekenWe
 from OTLModel.Datatypes.StringField import StringField
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Verkeersteken(AIMObject):
     """Abstracte klasse voor aanwijzingen ten behoeve van de weggebruikers die verbonden wordt aan het aankondigen of opleggen van een bepaalde verkeersmaatregel zoals bepaald in de wegcode."""
 
@@ -19,6 +19,7 @@ class Verkeersteken(AIMObject):
     @abstractmethod
     def __init__(self):
         super().__init__()
+
         self.adres = DtcAdres()
         """Adres van het verkeersteken."""
         self.adres.naam = "adres"

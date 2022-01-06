@@ -1,7 +1,7 @@
 from OTLModel.Classes.AIMNaamObject import AIMNaamObject
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Lichtsensor(AIMNaamObject):
     """Sensor die de intensiteit van het invallende licht meet."""
 

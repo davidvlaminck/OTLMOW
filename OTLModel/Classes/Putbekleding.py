@@ -4,7 +4,7 @@ from OTLModel.Datatypes.KlPutbekledingType import KlPutbekledingType
 from OTLModel.Datatypes.KwantWrdInMillimeter import KwantWrdInMillimeter
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Putbekleding(AIMObject):
     """De soort afwerkingslaag waarmee een put bekleed is."""
 
@@ -13,6 +13,7 @@ class Putbekleding(AIMObject):
 
     def __init__(self):
         super().__init__()
+
         self.laagdikte = KwantWrdInMillimeter()
         """De dikte van de bekledingslaag in millimeter."""
         self.laagdikte.naam = "laagdikte"

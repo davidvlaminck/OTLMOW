@@ -5,7 +5,7 @@ from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlKabelnettoegangNetwerksoort import KlKabelnettoegangNetwerksoort
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class KabelnetToegang(AIMNaamObject):
     """Knooppunt van Kabelnet dat toegang geeft tot de informatie die in Kabelnet bewaard wordt."""
 
@@ -14,6 +14,7 @@ class KabelnetToegang(AIMNaamObject):
 
     def __init__(self):
         super().__init__()
+
         self.kabelnetToegangId = IntegerField(naam="kabelnetToegangId",
                                               label="kabelnettoegang ID",
                                               uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KabelnetToegang.kabelnetToegangId",

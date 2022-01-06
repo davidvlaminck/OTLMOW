@@ -6,7 +6,7 @@ from OTLModel.Datatypes.KlVriLusFunctie import KlVriLusFunctie
 from OTLModel.Datatypes.KlVriLusSoortvoertuig import KlVriLusSoortvoertuig
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class NietSelectieveDetectielus(SelNietSelLus):
     """Een niet-selectieve detectielus werkt onder invloed van een wijziging in de zelfinductie van een lus in het wegdek wanneer het metaal van een voertuig binnen het gevoeligheidsgebied van de lus komt. """
 
@@ -15,6 +15,7 @@ class NietSelectieveDetectielus(SelNietSelLus):
 
     def __init__(self):
         super().__init__()
+
         self.functie = KeuzelijstField(naam="functie",
                                        label="functie",
                                        lijst=KlVriLusFunctie(),

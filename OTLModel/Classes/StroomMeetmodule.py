@@ -1,7 +1,7 @@
 from OTLModel.Classes.AIMNaamObject import AIMNaamObject
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class StroomMeetmodule(AIMNaamObject):
     """Differentieel dat de spanning op de leidingen detecteert en fouten doorgeeft naar de PLC."""
 

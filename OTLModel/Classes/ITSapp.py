@@ -4,7 +4,7 @@ from OTLModel.Datatypes.KlIVRIMerkITSapp import KlIVRIMerkITSapp
 from OTLModel.Datatypes.KlIVRIModelITSapp import KlIVRIModelITSapp
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class ITSapp(IVRIComponent):
     """Functionele software component die de intelligente regel applicaties aanbiedt aan de intelligente verkeersregelaars."""
 
@@ -13,6 +13,7 @@ class ITSapp(IVRIComponent):
 
     def __init__(self):
         super().__init__()
+
         self.merk = KeuzelijstField(naam="merk",
                                     label="merk",
                                     lijst=KlIVRIMerkITSapp(),

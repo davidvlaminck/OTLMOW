@@ -3,7 +3,7 @@ from OTLModel.Classes.Signalisatie import Signalisatie
 from OTLModel.Classes.AIMObject import AIMObject
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Straatmeubilair(Signalisatie, AIMObject):
     """Abstracte bedoeld om het straatmeubilair onder 1 noemer te houden."""
 

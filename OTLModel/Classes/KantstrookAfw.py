@@ -2,7 +2,7 @@ from OTLModel.Classes.AfwijkendeKantopsluiting import AfwijkendeKantopsluiting
 from OTLModel.Datatypes.IntegerField import IntegerField
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class KantstrookAfw(AfwijkendeKantopsluiting):
     """Afwijkende kantopsluiting, bestemd om de verharding steun te geven."""
 
@@ -11,6 +11,7 @@ class KantstrookAfw(AfwijkendeKantopsluiting):
 
     def __init__(self):
         super().__init__()
+
         self.aantalRijenBetonstraatsteen = IntegerField(naam="aantalRijenBetonstraatsteen",
                                                         label="aantal rijen betonstraatsteen",
                                                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KantstrookAfw.aantalRijenBetonstraatsteen",

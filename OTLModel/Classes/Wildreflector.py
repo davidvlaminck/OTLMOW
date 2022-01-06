@@ -3,7 +3,7 @@ from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlWildreflectorDrager import KlWildreflectorDrager
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Wildreflector(Bebakening):
     """Een wildreflector is een reflecterend afschrikkingssysteem voor groot en klein wild nabij een weg."""
 
@@ -12,6 +12,7 @@ class Wildreflector(Bebakening):
 
     def __init__(self):
         super().__init__()
+
         self.drager = KeuzelijstField(naam="drager",
                                       label="drager",
                                       lijst=KlWildreflectorDrager(),

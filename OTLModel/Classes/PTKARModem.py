@@ -3,7 +3,7 @@ from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlPtKARModemProtocol import KlPtKARModemProtocol
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class PTKARModem(PTModuleMetFirmware):
     """Modem die KAR signalen, korte afstands radiosignalen, kan ontvangen van de KAR-module die geïnstalleerd is op het openbaar vervoer voertuig. Het voertuig meldt zich zo via virtuele lussen, gedefinieerd op basis van GPS- positie, aan bij de PT regelaar."""
 
@@ -12,6 +12,7 @@ class PTKARModem(PTModuleMetFirmware):
 
     def __init__(self):
         super().__init__()
+
         self.protocolOVVoertuig = KeuzelijstField(naam="protocolOVVoertuig",
                                                   label="protocol OV-voertuig",
                                                   lijst=KlPtKARModemProtocol(),

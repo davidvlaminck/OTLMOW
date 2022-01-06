@@ -4,7 +4,7 @@ from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlPutMateriaal import KlPutMateriaal
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class BlindePut(AIMObject, Put):
     """Een put waar de riolering op aangesloten is maar die niet meer zichtbaar is."""
 
@@ -14,6 +14,7 @@ class BlindePut(AIMObject, Put):
     def __init__(self):
         AIMObject.__init__(self)
         Put.__init__(self)
+
         self.materiaal = KeuzelijstField(naam="materiaal",
                                          label="materiaal",
                                          lijst=KlPutMateriaal(),

@@ -2,7 +2,7 @@ from OTLModel.Classes.NaampadObject import NaampadObject
 from OTLModel.Datatypes.DtcDocument import DtcDocument
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class MIVInstallatie(NaampadObject):
     """De volledige opstelling voor meten in Vlaanderen op een bepaalde locatie."""
 
@@ -11,6 +11,7 @@ class MIVInstallatie(NaampadObject):
 
     def __init__(self):
         super().__init__()
+
         self.lusConfig = DtcDocument()
         """Een definierende tabel die relatie legt tussen meetpuntnummer lusvolgorde nummer en de GPS locatie."""
         self.lusConfig.naam = "lusConfig"

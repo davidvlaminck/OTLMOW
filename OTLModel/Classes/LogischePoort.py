@@ -2,7 +2,7 @@ from OTLModel.Classes.SoftwareToegang import SoftwareToegang
 from OTLModel.Datatypes.DtcSoftwarePoortconfiguratie import DtcSoftwarePoortconfiguratie
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class LogischePoort(SoftwareToegang):
     """Een 'logische' connectie waaraan een nummer tussen 0 en 65536 wordt toegewezen."""
 
@@ -11,6 +11,7 @@ class LogischePoort(SoftwareToegang):
 
     def __init__(self):
         super().__init__()
+
         self.poortconfiguratie = DtcSoftwarePoortconfiguratie()
         """Type TCP of UDP service."""
         self.poortconfiguratie.naam = "poortconfiguratie"

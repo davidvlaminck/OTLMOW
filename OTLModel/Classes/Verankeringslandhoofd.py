@@ -3,7 +3,7 @@ from OTLModel.Datatypes.IntegerField import IntegerField
 from OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Verankeringslandhoofd(AIMObject):
     """De verankeringsconstructie aan het einde van een cementbetonverharding."""
 
@@ -12,6 +12,7 @@ class Verankeringslandhoofd(AIMObject):
 
     def __init__(self):
         super().__init__()
+
         self.breedte = KwantWrdInMeter()
         """De breedte van het verankeringslandhoofd in meter."""
         self.breedte.naam = "breedte"

@@ -3,7 +3,7 @@ from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlSteenslagType import KlSteenslagType
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Steenslagverharding(AndereVerharding):
     """Een verharding van gebroken steen."""
 
@@ -12,6 +12,7 @@ class Steenslagverharding(AndereVerharding):
 
     def __init__(self):
         super().__init__()
+
         self.type = KeuzelijstField(naam="type",
                                     label="type",
                                     lijst=KlSteenslagType(),

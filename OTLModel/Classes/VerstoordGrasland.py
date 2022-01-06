@@ -1,7 +1,7 @@
 from OTLModel.Classes.Ruigte import Ruigte
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class VerstoordGrasland(Ruigte):
     """R1 - duinriet, kruipertje, gewone raket, bijvoet,
 fijnstraal spec., kleine brandnetel,

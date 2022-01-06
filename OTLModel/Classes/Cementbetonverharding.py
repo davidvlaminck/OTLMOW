@@ -9,7 +9,7 @@ from OTLModel.Datatypes.KwantWrdInKubiekeMeter import KwantWrdInKubiekeMeter
 from OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Cementbetonverharding(LaagBouwklasse):
     """Stijve verharding met of zonder wapening verkregen door cementbeton te spreiden en mechanisch te verdichten."""
 
@@ -18,6 +18,7 @@ class Cementbetonverharding(LaagBouwklasse):
 
     def __init__(self):
         super().__init__()
+
         self.aantalAnkerstaven = IntegerField(naam="aantalAnkerstaven",
                                               label="aantal ankerstaven",
                                               uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Cementbetonverharding.aantalAnkerstaven",

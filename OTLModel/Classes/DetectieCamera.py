@@ -7,7 +7,7 @@ from OTLModel.Datatypes.KlDetectiecameraMerk import KlDetectiecameraMerk
 from OTLModel.Datatypes.KlDetectiecameraModelnaam import KlDetectiecameraModelnaam
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class DetectieCamera(NietWeggebondenDetectie, TypeWeggebruiker):
     """Deze camera's worden onder andere opgesteld op kruispunten om de aanwezigheid van voertuigen te detecteren. De detectie kan optisch en/of thermografisch gebeuren. """
 
@@ -17,6 +17,7 @@ class DetectieCamera(NietWeggebondenDetectie, TypeWeggebruiker):
     def __init__(self):
         NietWeggebondenDetectie.__init__(self)
         TypeWeggebruiker.__init__(self)
+
         detectieprincipeField = KeuzelijstField(naam="detectieprincipe",
                                                 label="detectieprincipe",
                                                 lijst=KlDetectiecameraDetectieprincipe(),

@@ -1,7 +1,7 @@
 from OTLModel.Classes.VRModuleMetFirmware import VRModuleMetFirmware
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class VRUitgangscontacten(VRModuleMetFirmware):
     """Visualisatie en uitsturing van contacten."""
 

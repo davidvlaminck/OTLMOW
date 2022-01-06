@@ -6,7 +6,7 @@ from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlLEWatergreppelType import KlLEWatergreppelType
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class WatergreppelStd(GestandaardiseerdeKantopsluiting):
     """Gestandaardiseerde kantopsluiting, bestemd om water van de verharding op te vangen en af te voeren."""
 
@@ -15,6 +15,7 @@ class WatergreppelStd(GestandaardiseerdeKantopsluiting):
 
     def __init__(self):
         super().__init__()
+
         self.isVerholen = BooleanField(naam="isVerholen",
                                        label="is verholen",
                                        uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#WatergreppelStd.isVerholen",

@@ -6,7 +6,7 @@ from OTLModel.Datatypes.KlPictogramSymbool import KlPictogramSymbool
 from OTLModel.Datatypes.KwantWrdInMinuut import KwantWrdInMinuut
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class InwendigVerlichtPictogram(AIMObject):
     """Verlichtingstoestel om de aandacht te vestigen op een pictogram dat erop bevestigd is."""
 
@@ -15,6 +15,7 @@ class InwendigVerlichtPictogram(AIMObject):
 
     def __init__(self):
         super().__init__()
+
         self.afmeting = DtcAfmetingBxlxhInMm()
         """Geeft de buitenafmeting van het toestel mee."""
         self.afmeting.naam = "afmeting"

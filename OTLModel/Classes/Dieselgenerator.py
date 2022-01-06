@@ -2,7 +2,7 @@ from OTLModel.Classes.Voedingspunt import Voedingspunt
 from OTLModel.Datatypes.DtcAfmetingBxlxhInMm import DtcAfmetingBxlxhInMm
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Dieselgenerator(Voedingspunt):
     """Dieselmotor die een generator (machine die mechanische energie omzet in elektrische energie) aandrijft,typisch gebruikt als noodstroom aggregaat bij het wegvallen van de normale netvoeding."""
 
@@ -11,6 +11,7 @@ class Dieselgenerator(Voedingspunt):
 
     def __init__(self):
         super().__init__()
+
         self.afmetingen = DtcAfmetingBxlxhInMm()
         """De afmetingen van de dieselgenerator."""
         self.afmetingen.naam = "afmetingen"

@@ -7,7 +7,7 @@ from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlBevestigingsbeugelType import KlBevestigingsbeugelType
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Bevestigingsbeugel(AIMNaamObject, BevestigingGC):
     """Verbindingsstuk waarmee een object kan vastgemaakt worden aan een steun of oppervlak."""
 
@@ -17,6 +17,7 @@ class Bevestigingsbeugel(AIMNaamObject, BevestigingGC):
     def __init__(self):
         AIMNaamObject.__init__(self)
         BevestigingGC.__init__(self)
+
         berekeningsnotaField = DtcDocument()
         berekeningsnotaField.naam = "berekeningsnota"
         berekeningsnotaField.label = "berekeningsnota"

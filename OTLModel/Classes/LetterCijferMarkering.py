@@ -5,7 +5,7 @@ from OTLModel.Datatypes.KlLetterCijferType import KlLetterCijferType
 from OTLModel.Datatypes.KwantWrdInVierkanteMeter import KwantWrdInVierkanteMeter
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class LetterCijferMarkering(FiguratieMarkeringToegang):
     """Een markering bestaande uit individuele letters en/of cijfers."""
 
@@ -14,6 +14,7 @@ class LetterCijferMarkering(FiguratieMarkeringToegang):
 
     def __init__(self):
         super().__init__()
+
         self.letterCijfer = KeuzelijstField(naam="letterCijfer",
                                             label="letter-cijfer",
                                             lijst=KlLetterCijfer(),

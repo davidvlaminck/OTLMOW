@@ -1,7 +1,7 @@
 from OTLModel.Classes.BegroeidVoorkomen import BegroeidVoorkomen
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Onderwatervegetatie(BegroeidVoorkomen):
     """Vegetatie die zich onder het wateroppervlak bevindt."""
 

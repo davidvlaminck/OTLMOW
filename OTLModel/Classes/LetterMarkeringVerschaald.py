@@ -6,7 +6,7 @@ from OTLModel.Datatypes.KlLetterVerschaaldType import KlLetterVerschaaldType
 from OTLModel.Datatypes.KwantWrdInVierkanteMeter import KwantWrdInVierkanteMeter
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class LetterMarkeringVerschaald(FiguratieMarkeringToegang):
     """Een markering bestaande uit letters die een verschaling ondergaat zoals een vergroting en/of een verkleining."""
 
@@ -15,6 +15,7 @@ class LetterMarkeringVerschaald(FiguratieMarkeringToegang):
 
     def __init__(self):
         super().__init__()
+
         self.basisOppervlakte = KwantWrdInVierkanteMeter()
         """De basisoppervlakte van de individuele lettermarkering voor verschaling zoals beschreven in de algemene omzendbrief."""
         self.basisOppervlakte.naam = "basisOppervlakte"

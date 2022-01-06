@@ -5,7 +5,7 @@ from OTLModel.Datatypes.KlCabineStandaardtype import KlCabineStandaardtype
 from OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Cabine(Inloopbehuizing):
     """Een behuizing voornamelijk bestemd voor het beschermen van elektromechanische technieken waarin het omwille van de grootte en toegankelijkheid mogelijk is om rond te lopen."""
 
@@ -14,6 +14,7 @@ class Cabine(Inloopbehuizing):
 
     def __init__(self):
         super().__init__()
+
         self.aardingsstelsel = KeuzelijstField(naam="aardingsstelsel",
                                                label="aardingsstelsel",
                                                lijst=KlCabineAardingsstelsel(),

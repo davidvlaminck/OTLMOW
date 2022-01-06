@@ -1,7 +1,7 @@
 from OTLModel.Classes.GrazigeVegetatie import GrazigeVegetatie
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Grasmat(GrazigeVegetatie):
     """Grasvegetatie die een uniforme zode vormt met veel grassen en zeer regelmatig wordt gemaaid."""
 

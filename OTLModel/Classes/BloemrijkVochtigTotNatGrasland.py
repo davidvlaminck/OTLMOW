@@ -1,7 +1,7 @@
 from OTLModel.Classes.BloemrijkGraslandGraslandfase4 import BloemrijkGraslandGraslandfase4
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class BloemrijkVochtigTotNatGrasland(BloemrijkGraslandGraslandfase4):
     """G4e - echte koekoeksbloem, grote ratelaar, kruipend
 zenegroen, moeras/zompvergeet-me-nietje,

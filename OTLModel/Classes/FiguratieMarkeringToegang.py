@@ -3,7 +3,7 @@ from OTLModel.Classes.Markering import Markering
 from OTLModel.Classes.AOWSType import AOWSType
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class FiguratieMarkeringToegang(Markering, AOWSType):
     """Abstracte als toegang tot de verschillende soorten figuratiemarkeringen."""
 

@@ -6,7 +6,7 @@ from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlLEACWerkingsbreedte import KlLEACWerkingsbreedte
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class VoertuigkerendGeluidsschermelement(BijlageVoertuigkering, Geluidsschermelement, SchokindexVoertuigkering, EigenschappenVoertuigkering):
     """Dit zijn schermelementen met een voet in de vorm van een T. Op de voet worden deltablocs geplaatst die een stabiliserende en voertuigkerende functie hebben."""
 
@@ -18,6 +18,7 @@ class VoertuigkerendGeluidsschermelement(BijlageVoertuigkering, Geluidsschermele
         Geluidsschermelement.__init__(self)
         SchokindexVoertuigkering.__init__(self)
         EigenschappenVoertuigkering.__init__(self)
+
         self.werkingsbreedte = KeuzelijstField(naam="werkingsbreedte",
                                                label="werkingsbreedte",
                                                lijst=KlLEACWerkingsbreedte(),

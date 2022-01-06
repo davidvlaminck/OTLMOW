@@ -1,7 +1,7 @@
 from OTLModel.Classes.Grasland import Grasland
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class RaaigrasweideGraslandfase0(Grasland):
     """G0 - Zeer uniform grasland met vrijwel uitsluitend sterk glanzend gras Engels of Italiaans raaigras en/of ruw beemdgras dominant + vogelmuur, straatgras."""
 

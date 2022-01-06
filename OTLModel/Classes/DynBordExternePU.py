@@ -6,7 +6,7 @@ from OTLModel.Datatypes.KlDynBordExternePUMerk import KlDynBordExternePUMerk
 from OTLModel.Datatypes.KlDynBordExternePUModelnaam import KlDynBordExternePUModelnaam
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class DynBordExternePU(PU):
     """Externe stuureenheid die buiten het dynamisch bord bevestigd is, in de buurt van de openbare weg. Het betreft dus geen stuureenheid in een serverroom, noch een stuureenheid op het bord zelf."""
 
@@ -15,6 +15,7 @@ class DynBordExternePU(PU):
 
     def __init__(self):
         super().__init__()
+
         self.heeftGeintegreerdeModem = BooleanField(naam="heeftGeintegreerdeModem",
                                                     label="heeft geintegreerde modem",
                                                     uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DynBordExternePU.heeftGeintegreerdeModem",

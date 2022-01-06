@@ -3,7 +3,7 @@ from OTLModel.Datatypes.DtcDocument import DtcDocument
 from OTLModel.Datatypes.KwantWrdInAmpere import KwantWrdInAmpere
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Laagspanningsbord(AIMNaamObject):
     """Verzameling van alle elektrische componenten nodig voor de voeding en sturing van applicaties die erop aangesloten zijn. Omvat onder andere automaten,klemmenblokken,..."""
 
@@ -12,6 +12,7 @@ class Laagspanningsbord(AIMNaamObject):
 
     def __init__(self):
         super().__init__()
+
         self.elektrischSchema = DtcDocument()
         """Het elektrisch aansluitschema van het laagspanningsbord."""
         self.elektrischSchema.naam = "elektrischSchema"

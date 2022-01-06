@@ -6,7 +6,7 @@ from OTLModel.Datatypes.KlWeggebondendetectorMerk import KlWeggebondendetectorMe
 from OTLModel.Datatypes.KlWeggebondendetectorModelnaam import KlWeggebondendetectorModelnaam
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class WeggebondenDetector(Detectie, FirmwareObject):
     """Weggebonden detectoren zijn draadloze in het wegdek geïntegreerde radars of magnetische inductiesensoren. Ze zitten ingebed in een cilinder, die geplaatst wordt in het wegdek en die draadloos communiceert met een access point die met de verkeersregelaar verbonden is"""
 
@@ -16,6 +16,7 @@ class WeggebondenDetector(Detectie, FirmwareObject):
     def __init__(self):
         Detectie.__init__(self)
         FirmwareObject.__init__(self)
+
         self.detectieprincipe = KeuzelijstField(naam="detectieprincipe",
                                                 label="detectieprincipe",
                                                 lijst=KlWeggebondendetectorDetectieprincipe(),

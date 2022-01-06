@@ -6,7 +6,7 @@ from OTLModel.Datatypes.KlNetwerkkaartModelnaam import KlNetwerkkaartModelnaam
 from OTLModel.Datatypes.StringField import StringField
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Netwerkkaart(AIMNaamObject):
     """Component van een NetwerkElement om specifieke verbindingen te leggen."""
 
@@ -15,6 +15,7 @@ class Netwerkkaart(AIMNaamObject):
 
     def __init__(self):
         super().__init__()
+
         self.beschrijvingFabrikant = StringField(naam="beschrijvingFabrikant",
                                                  label="beschrijving fabrikant",
                                                  uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Netwerkkaart.beschrijvingFabrikant",

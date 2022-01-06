@@ -1,7 +1,7 @@
 from OTLModel.Classes.SoortenrijkSchraalGraslandGraslandfase5 import SoortenrijkSchraalGraslandGraslandfase5
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Duingrasland(SoortenrijkSchraalGraslandGraslandfase5):
     """G5a - Zanddoddengras, Kleverige reigersbek, Ruw
 vergeet-mij-nietje, Kruipend stalkruid,

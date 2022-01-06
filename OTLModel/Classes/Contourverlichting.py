@@ -1,7 +1,7 @@
 from OTLModel.Classes.AIMObject import AIMObject
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Contourverlichting(AIMObject):
     """Groene ledstrip verlichting die de vluchtdeur omrand en zo de visibiliteit van de vluchtdeur en de vluchtweg vergroot."""
 

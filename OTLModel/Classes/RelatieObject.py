@@ -4,7 +4,7 @@ from OTLModel.Datatypes.DtcIdentificator import DtcIdentificator
 from OTLModel.Datatypes.URIField import URIField
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class RelatieObject(AIMDBStatus):
     """Abstracte die de relaties voorziet van gemeenschappelijk eigenschappen."""
 
@@ -14,6 +14,7 @@ class RelatieObject(AIMDBStatus):
     @abstractmethod
     def __init__(self):
         super().__init__()
+
         self.assetId = DtcIdentificator()
         """Unieke identificatie van de asset zoals toegekend door de assetbeheerder of n.a.v. eerste aanlevering door de leverancier."""
         self.assetId.naam = "assetId"
@@ -44,6 +45,7 @@ class RelatieObject(AIMDBStatus):
         self.doelAssetId.usagenote = ""
         self.doelAssetId.deprecated_version = ""
 
+        uri = self.typeURI
         self.typeURI = URIField(naam="typeURI",
                                 label="type URI",
                                 uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#RelatieObject.typeURI",

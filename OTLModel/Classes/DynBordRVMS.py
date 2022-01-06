@@ -4,7 +4,7 @@ from OTLModel.Datatypes.KlDynBordRVMSMerk import KlDynBordRVMSMerk
 from OTLModel.Datatypes.KlDynBordRVMSModelnaam import KlDynBordRVMSModelnaam
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class DynBordRVMS(LEDBord):
     """Dynamisch verkeersbord dat dynamische verkeerstekens  en teksten kan afbeelden. RVMS staat voor Road-side Variable Message Signs."""
 
@@ -13,6 +13,7 @@ class DynBordRVMS(LEDBord):
 
     def __init__(self):
         super().__init__()
+
         self.merk = KeuzelijstField(naam="merk",
                                     label="merk",
                                     lijst=KlDynBordRVMSMerk(),

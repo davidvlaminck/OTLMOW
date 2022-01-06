@@ -1,7 +1,7 @@
 from OTLModel.Classes.PTModuleMetFirmware import PTModuleMetFirmware
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class PTRadio(PTModuleMetFirmware):
     """Module voor het verzenden en ontvangen van berichten komende van een radio uit een andere verkeersregelaar of een kast op afstand."""
 

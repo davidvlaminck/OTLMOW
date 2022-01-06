@@ -1,10 +1,9 @@
-
 from abc import abstractmethod
 from OTLModel.Classes.AIMObject import AIMObject
 from OTLModel.Datatypes.StringField import StringField
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class AIMNaamObject(AIMObject):
     """Abstracte als de basisklasse voor elk OTL object dat benoemd wordt met een mensleesbare identificator."""
 
@@ -14,6 +13,7 @@ class AIMNaamObject(AIMObject):
     @abstractmethod
     def __init__(self):
         super().__init__()
+
         self.naam = StringField(naam="naam",
                                 label="naam",
                                 uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMNaamObject.naam",

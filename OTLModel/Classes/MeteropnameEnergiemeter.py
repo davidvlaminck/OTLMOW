@@ -3,7 +3,7 @@ from OTLModel.Datatypes.DateField import DateField
 from OTLModel.Datatypes.KwantWrdInkWh import KwantWrdInkWh
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class MeteropnameEnergiemeter(AIMNaamObject):
     """Resultaten van een meteropname van een energiemeter."""
 
@@ -12,6 +12,7 @@ class MeteropnameEnergiemeter(AIMNaamObject):
 
     def __init__(self):
         super().__init__()
+
         self.datumMeterstand = DateField(naam="datumMeterstand",
                                          label="datum meterstand dag",
                                          uri="https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#MeteropnameEnergiemeter.datumMeterstand",

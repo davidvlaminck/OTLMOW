@@ -10,7 +10,7 @@ from OTLModel.Datatypes.KlStortsteenType import KlStortsteenType
 from OTLModel.Datatypes.KwantWrdInTon import KwantWrdInTon
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Stortsteen(AndereLaag):
     """Natuursteen van onregelmatige vorm,meestal gebruikt voor verstevigings- en beschermingsdoeleinden."""
 
@@ -19,6 +19,7 @@ class Stortsteen(AndereLaag):
 
     def __init__(self):
         super().__init__()
+
         self.gewicht = KwantWrdInTon()
         """De hoeveelheid stortsteen in ton."""
         self.gewicht.naam = "gewicht"

@@ -7,7 +7,7 @@ from OTLModel.Datatypes.DtcDocument import DtcDocument
 from OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class StalenProfiel(ConstructieElement, StalenConstructieElement, ConstructieElementenGC):
     """Bundeling van gemeenschappelijke eigenschappen van standaard en niet-standaard stalen profiel."""
 
@@ -19,6 +19,7 @@ class StalenProfiel(ConstructieElement, StalenConstructieElement, ConstructieEle
         ConstructieElement.__init__(self)
         StalenConstructieElement.__init__(self)
         ConstructieElementenGC.__init__(self)
+
         self.isVoorgebogen = BooleanField(naam="isVoorgebogen",
                                           label="is voorgebogen",
                                           uri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#StalenProfiel.isVoorgebogen",

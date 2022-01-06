@@ -7,7 +7,7 @@ from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlAlgMateriaal import KlAlgMateriaal
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Kast(Behuizing):
     """Abstracte voor allerlei types kasten."""
 
@@ -17,6 +17,7 @@ class Kast(Behuizing):
     @abstractmethod
     def __init__(self):
         super().__init__()
+
         self.afmeting = DtcAfmetingBxlxhInMm()
         """Buitenafmeting van de kast als maximale breedte, lengte en hoogte in millimeter."""
         self.afmeting.naam = "afmeting"

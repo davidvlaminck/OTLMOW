@@ -1,7 +1,7 @@
 from OTLModel.Classes.VegetatieElement import VegetatieElement
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Muurvegetatie(VegetatieElement):
     """Muurvegetaties zijn gebonden aan door de mens gecreëerde stenige, doorgaans steile tot verticale standplaatsen. Voorbeelden zijn kerkhofmuren, stadswallen, ruïnes, kademuren, oude forten en bunkers."""
 

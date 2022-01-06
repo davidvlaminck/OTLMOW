@@ -5,7 +5,7 @@ from OTLModel.Datatypes.KlZenderMerk import KlZenderMerk
 from OTLModel.Datatypes.KlZenderModelnaam import KlZenderModelnaam
 
 
-# Generated with OTLClassCreator
+# Generated with OTLClassCreator. To modify: extend, do not edit
 class Zender(ZenderOntvangerToegang):
     """Een apparaat dat signalen uitzendt."""
 
@@ -14,6 +14,7 @@ class Zender(ZenderOntvangerToegang):
 
     def __init__(self):
         super().__init__()
+
         self.merk = KeuzelijstField(naam="merk",
                                     label="merk",
                                     lijst=KlZenderMerk(),

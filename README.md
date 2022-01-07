@@ -40,6 +40,7 @@ dnb.adresVolgensDNB.gemeente.set_value_by_label('brasschaat')
 # dnb.adresVolgensDNB.gemeente.set_value_by_label('Brasschaat')  # this raises a ValueError because it has an incorrect value
 dnb.adresVolgensDNB.postcode.waarde = '2930'
 dnb.adresVolgensDNB.straatnaam.waarde = 'Bredabaan 90'
+dnb.geometry = 'POINT Z(157696.6 219065.5 0)'
 
 # encode to a json representation
 encoded_json = otl_facility.encoder.encode(dnb)
@@ -57,8 +58,10 @@ output:
         "identificator": "eigen_Id_voor_A0024"
     },
     "eanNummer": "541448860003995215",
+    "geometry": "POINT Z(157696.6 219065.5 0)",
     "naam": "A0024",
-    "toestand": "in-gebruik"
+    "toestand": "in-gebruik",
+    "typeURI": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DNBLaagspanning"
 }
 ```
 

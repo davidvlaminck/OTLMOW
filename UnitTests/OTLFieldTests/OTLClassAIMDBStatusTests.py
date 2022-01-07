@@ -11,17 +11,24 @@ class AIMDBStatusTestInstance(AIMDBStatus):
 class AIMDBStatusTests(unittest.TestCase):
     def test_useOTLClassAIMDBStatus(self):
         instance = AIMDBStatusTestInstance()
-        instance.isActief = True
+        self.assertIsNone(instance.isActief.waarde)
+        instance.isActief.waarde = True
 
-        self.assertTrue(instance.isActief)
+        self.assertTrue(instance.isActief.waarde)
         self.assertTrue(instance.typeURI == "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMDBStatus")
         self.assertTrue(isinstance(instance, AIMDBStatus))
 
-        with self.assertRaises(ValueError):
-            instance.isActief = 2
+    def test_useOTLClassAIMDBStatus_errors(self):
+        instance = AIMDBStatusTestInstance()
+        instance.isActief.waarde = True
 
         with self.assertRaises(ValueError):
-            instance.isActief = "True"
+            instance.isActief.waarde = "True"
+
+        with self.assertRaises(ValueError):
+            instance.isActief.waarde = 2
 
         with self.assertRaises(TypeError):
             instanceOfAbstractClass = AIMDBStatus()
+
+

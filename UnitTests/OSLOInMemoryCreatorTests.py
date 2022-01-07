@@ -28,11 +28,8 @@ class OSLOInMemoryCreatorTests(unittest.TestCase):
             return [['Naampad object', 'NaampadObject',
                      'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#NaampadObject'
                         , 'Abstracte als de basisklasse voor elk OTL object dat gebruik maakt van een naampad.', '', 1, '']]
-        elif query == 'SELECT name, label_nl, definition_nl, class_uri, kardinaliteit_min, kardinaliteit_max, uri, fieldType, ' \
-                      'overerving, constraints, readonly, usagenote_nl, deprecated_version FROM OSLOAttributen WHERE ' \
-                      'class_uri=:uriclass AND overerving = 0' \
-                and arg_dict[
-            'uriclass'] == 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#NaampadObject':
+        elif query == 'SELECT name, label_nl, definition_nl, class_uri, kardinaliteit_min, kardinaliteit_max, uri, type, overerving, constraints, readonly, usagenote_nl, deprecated_version FROM OSLOAttributen WHERE class_uri=:uriclass AND overerving = 0 and name <> \'typeURI\'' and \
+                arg_dict['uriclass'] == 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#NaampadObject':
             return [[
                 'naampad', 'naampad',
                 'Een set van objecten (bv. collecties) die aanduiden waar het object zich bevindt in de objectenboom (EM-Infra).'
@@ -40,9 +37,9 @@ class OSLOInMemoryCreatorTests(unittest.TestCase):
                 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#NaampadObject.naampad',
                 'http://www.w3.org/2001/XMLSchema#string', 0, '', 0, '', ''
             ]]
-        elif query == 'SELECT name, label_nl, definition_nl, class_uri, kardinaliteit_min, kardinaliteit_max, uri, fieldType, ' \
-                      'overerving, constraints, readonly, usagenote_nl, deprecated_version FROM OSLOAttributen WHERE ' \
-                      'overerving = 0' and arg_dict == {}:
+        elif query == 'SELECT name, label_nl, definition_nl, class_uri, kardinaliteit_min, kardinaliteit_max, uri, type, ' \
+                      'overerving, constraints, readonly, usagenote_nl, deprecated_version FROM OSLOAttributen WHERE overerving ' \
+                      '= 0 and name <> \'typeURI\'' and arg_dict == {}:
             return [[
                 'naampad', 'naampad',
                 'Een set van objecten (bv. collecties) die aanduiden waar het object zich bevindt in de objectenboom (EM-Infra).'
@@ -128,6 +125,13 @@ class OSLOInMemoryCreatorTests(unittest.TestCase):
             return [['KlAIMToestand', 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KlAIMToestand', '',
                      'Keuzelijst met fasen uit de levenscyclus van een object om de toestand op een moment mee vast te leggen.',
                      'AIM toestand', 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlAIMToestand', '']]
+
+        elif query == "SELECT * FROM OSLORelaties ORDER BY uri, bron_uri, doel_uri" and arg_dict == {}:
+            return [['', 'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Fundering',
+                     'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#AansluitendeConstructie',
+                     'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Betonfundering',
+                     'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bevestiging', 'Unspecified',
+                     'Klasse uit gebruik sinds versie 2.0.0', '2.0.0']]
 
         elif query == "SELECT * FROM OSLORelaties WHERE bron_overerving = '' AND doel_overerving = '' ORDER BY uri, bron_uri, " \
                       "doel_uri" and arg_dict == {}:
@@ -257,7 +261,8 @@ class OSLOInMemoryCreatorTests(unittest.TestCase):
         mock.performReadQuery = self.mockPerformReadQuery
         uri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#NaampadObject'
         attributeUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#NaampadObject.naampad'
-        listOfAttributes = oSLOCreator.getAttributeByClassUri(uri)
+        listOfAttributes = oSLOCreator.getAttributes()
+        attributes = oSLOCreator.getAttributeByClassUri(uri)
 
         self.assertTrue(len(listOfAttributes) == 1)
         first = next(c for c in listOfAttributes)

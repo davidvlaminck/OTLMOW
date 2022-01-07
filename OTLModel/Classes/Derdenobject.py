@@ -6,7 +6,6 @@ from OTLModel.Datatypes.BooleanField import BooleanField
 from OTLModel.Datatypes.DtcDocument import DtcDocument
 from OTLModel.Datatypes.DtcIdentificator import DtcIdentificator
 from OTLModel.Datatypes.StringField import StringField
-from OTLModel.Datatypes.URIField import URIField
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
@@ -67,12 +66,3 @@ class Derdenobject(AIMToestand, AIMDBStatus):
                                         usagenote="",
                                         deprecated_version="")
         """Omschrijving van het derdenobject."""
-
-        self.typeURI = URIField(naam="typeURI",
-                                label="type URI",
-                                uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#Derdenobject.typeURI",
-                                definition="De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI .",
-                                constraints="",
-                                usagenote="",
-                                deprecated_version="")
-        """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI ."""

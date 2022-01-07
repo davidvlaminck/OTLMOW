@@ -123,7 +123,7 @@ class OTLUnionDatatypeCreatorTests(unittest.TestCase):
         collector = OSLOCollector(mock)
         creator = OTLUnionDatatypeCreator(logger, collector)
         osloDatatypeUnion = OSLODatatypeUnion(name='',
-                                              uri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcIdentificator',
+                                              uri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtuLichtmastMasthoogte',
                                               definition_nl='', label_nl='', usagenote_nl='',
                                               deprecated_version='')
 
@@ -162,10 +162,10 @@ class OTLUnionDatatypeCreatorTests(unittest.TestCase):
         collector.collect()
 
         creator = OTLUnionDatatypeCreator(logger, collector)
-        dtcAdres = collector.FindUnionDatatypeByUri(
+        DtuLichtmastMasthoogte = collector.FindUnionDatatypeByUri(
             'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtuLichtmastMasthoogte')
-        dataToWrite = creator.CreateBlockToWriteFromUnionTypes(dtcAdres)
-        creator.writeToFile(dtcAdres, 'Datatypes', dataToWrite, '../../')
+        dataToWrite = creator.CreateBlockToWriteFromUnionTypes(DtuLichtmastMasthoogte)
+        creator.writeToFile(DtuLichtmastMasthoogte, 'Datatypes', dataToWrite, '../../')
 
         self.assertTrue(os.path.isfile('../../OTLModel/Datatypes/DtuLichtmastMasthoogte.py'))
 

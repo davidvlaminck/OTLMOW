@@ -17,7 +17,7 @@ class AbstractBehaviour(unittest.TestCase):
 
     def test_TestAssignmentsOnSameClasses(self):
         contactor = Contactor()
-        self.assertTrue(contactor.uri == "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Contactor")
+        self.assertTrue(contactor.typeURI == "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Contactor")
         self.assertTrue(isinstance(contactor, Contactor))
         self.assertTrue(isinstance(contactor, AIMObject))
         contactor2 = Contactor()

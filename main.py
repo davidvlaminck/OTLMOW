@@ -27,6 +27,7 @@ if __name__ == '__main__':
     # dnb.adresVolgensDNB.gemeente.set_value_by_label('Brasschaat')  # this raises a ValueError because it has an incorrect value
     dnb.adresVolgensDNB.postcode.waarde = '2930'
     dnb.adresVolgensDNB.straatnaam.waarde = 'Bredabaan 90'
+    dnb.geometry = 'POINT Z(157696.6 219065.5 0)'
 
     meter = EnergiemeterDNB()
     meter.naam = '1234567'

@@ -2,7 +2,7 @@
 This project aims to implement the Flemish datastandard OTL (https://wegenenverkeer.data.vlaanderen.be/) in Python
 Below is sample code that should be self-explanatory in the usage of this project.
 
-##Creating the OTL datamodel using the OTL SQlite
+## Creating the OTL datamodel using the OTL SQlite
 With every OTL update, this piece of code will create an updated Python datamodel. This is not backwards compatible.
 ```  
 from Facility.OTLFacility import OTLFacility
@@ -17,7 +17,7 @@ otl_file_location = 'InputFiles/OTL.db'
 otl_facility.init_otl_model_creator(otl_file_location)
 otl_facility.create_otl_datamodel()
 ```
-##Using the OTL Datamodel instances to create objects and encode them in JSON
+## Using the OTL Datamodel instances to create objects and encode them in JSON
 The datamodel generates classes, allowing the properties to be filled with data.
 Use the property 'waarde' to change the value of a property to allow data validation
 ```  

@@ -19,7 +19,7 @@ otl_facility.create_otl_datamodel()
 ```
 ## Using the OTL Datamodel instances to create objects and encode them in JSON
 The datamodel generates classes, allowing the properties to be filled with data.
-Use the property 'waarde' to change the value of a property to allow data validation.
+Use the property 'waarde' to change the value of a property and to allow data validation.
 ```  
 from Facility.OTLFacility import OTLFacility
 from Loggers.TxtLogger import TxtLogger

@@ -1,8 +1,8 @@
 # OTLClassPython Project 
-This project aims to implement the Flemish datastandard OTL (https://wegenenverkeer.data.vlaanderen.be/) in Python.
-Below is sample code that should be self-explanatory in the usage of this project.
+This project aims to implement the Flemish data standard OTL (https://wegenenverkeer.data.vlaanderen.be/) in Python.
+Below is sample code that should be self-explanatory. It demonstrates the basic possibilities of this project.
 
-## Creating the OTL datamodel using the OTL SQlite
+## Creating the OTL datamodel using the OTL SQLite
 With every OTL update, this piece of code will create an updated Python datamodel. This is not backwards compatible.
 ```  
 from Facility.OTLFacility import OTLFacility

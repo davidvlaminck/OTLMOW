@@ -37,6 +37,12 @@ class RelatieValidator(metaclass=Singleton):
         except KeyError:
             return False
 
+    def validateRelatieByURI(self, bron, doel, relatieType):
+        try:
+            return self.dictByBronDoelRelatie[bron.typeURI][doel.typeURI][relatieType.typeURI] is not None
+        except KeyError:
+            return False
+
     def getGeldigeRelatiesByBronOrDoel(self, bronOfDoel: RelatieInteractor):
         relaties = []
         bronOfDoelType = type(bronOfDoel)

@@ -127,7 +127,7 @@ class RelatieValidatorTests(unittest.TestCase):
         e = EnergiemeterAWV()
         a = Aftakking()
         v = Voedt
-        self.assertTrue(validator.validateRelatie(e, a, v))
+        self.assertTrue(validator.validateRelatieByURI(e, a, v))
 
     def test_afterInitValidateMultipleRelaties(self):
         geldigeRelatieLijst = GeldigeRelatieLijstTestInstance()
@@ -138,10 +138,10 @@ class RelatieValidatorTests(unittest.TestCase):
         c = Contactor()
         h = Hoofdschakelaar()
         v = Voedt
-        self.assertTrue(validator.validateRelatie(e, a, v))
-        self.assertTrue(validator.validateRelatie(s, a, v))
-        self.assertTrue(validator.validateRelatie(a, h, v))
-        self.assertTrue(validator.validateRelatie(s, c, v))
+        self.assertTrue(validator.validateRelatieByURI(e, a, v))
+        self.assertTrue(validator.validateRelatieByURI(s, a, v))
+        self.assertTrue(validator.validateRelatieByURI(a, h, v))
+        self.assertTrue(validator.validateRelatieByURI(s, c, v))
 
     def test_afterInitValidateBadRelatieByBron(self):
         geldigeRelatieLijst = GeldigeRelatieLijstTestInstance()
@@ -149,7 +149,7 @@ class RelatieValidatorTests(unittest.TestCase):
         c = Contactor()
         a = Aftakking()
         v = Voedt
-        self.assertFalse(validator.validateRelatie(c, a, v))
+        self.assertFalse(validator.validateRelatieByURI(c, a, v))
 
     def test_afterInitValidateBadRelatieByDoel(self):
         geldigeRelatieLijst = GeldigeRelatieLijstTestInstance()
@@ -157,7 +157,7 @@ class RelatieValidatorTests(unittest.TestCase):
         e = EnergiemeterAWV()
         c = Contactor()
         v = Voedt
-        self.assertFalse(validator.validateRelatie(e, c, v))
+        self.assertFalse(validator.validateRelatieByURI(e, c, v))
 
     def test_afterInitValidateBadRelatieByRelatie(self):
         geldigeRelatieLijst = GeldigeRelatieLijstTestInstance()
@@ -165,7 +165,7 @@ class RelatieValidatorTests(unittest.TestCase):
         e = EnergiemeterAWV()
         a = Aftakking()
         b = Bevestiging
-        self.assertFalse(validator.validateRelatie(e, a, b))
+        self.assertFalse(validator.validateRelatieByURI(e, a, b))
 
     def test_afterInitGetGeldigeRelatiesByBronOrDoel(self):
         geldigeRelatieLijst = GeldigeRelatieLijstTestInstance()

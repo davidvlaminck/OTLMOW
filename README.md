@@ -42,26 +42,64 @@ dnb.adresVolgensDNB.postcode.waarde = '2930'
 dnb.adresVolgensDNB.straatnaam.waarde = 'Bredabaan 90'
 dnb.geometry = 'POINT Z(157696.6 219065.5 0)'
 
+meter = EnergiemeterDNB()
+meter.naam = '50004784'
+meter.assetId.identificator.waarde = 'eigen_Id_voor_50004784'
+meter.aantalTelwerken.waarde = 1
+
+voedingsrelatie = Voedt()
+voedingsrelatie.assetId.identificator.waarde = "A0024-50004784"
+voedingsrelatie.bronAssetId.identificator.waarde = 'eigen_Id_voor_A0024'
+voedingsrelatie.doelAssetId.identificator.waarde = 'eigen_Id_voor_50004784'
+
+lijst_otl_objecten = [dnb, meter, voedingsrelatie]
+
 # encode to a json representation
-encoded_json = otl_facility.encoder.encode(dnb)
+encoded_json = otl_facility.encoder.encode(lijst_otl_objecten)
 print(encoded_json)
+
+# write the json file
+path = f'{datetime.now().strftime("%Y%m%d%H%M%S")}_export.json'
+otl_facility.encoder.write_json_to_file(encoded_json, path)
 ```
 output:
 ```
-{
-    "adresVolgensDNB": {
-        "gemeente": "brasschaat",
-        "postcode": "2930",
-        "straatnaam": "Bredabaan 90"
+[
+    {
+        "adresVolgensDNB": {
+            "gemeente": "brasschaat",
+            "postcode": "2930",
+            "straatnaam": "Bredabaan 90"
+        },
+        "assetId": {
+            "identificator": "eigen_Id_voor_A0024"
+        },
+        "eanNummer": "541448860003995215",
+        "geometry": "POINT Z(157696.6 219065.5 0)",
+        "naam": "A0024",
+        "toestand": "in-gebruik",
+        "typeURI": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DNBLaagspanning"
     },
-    "assetId": {
-        "identificator": "eigen_Id_voor_A0024"
+    {
+        "aantalTelwerken": 1,
+        "assetId": {
+            "identificator": "eigen_Id_voor_50004784"
+        },
+        "naam": "50004784",
+        "typeURI": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#EnergiemeterDNB"
     },
-    "eanNummer": "541448860003995215",
-    "geometry": "POINT Z(157696.6 219065.5 0)",
-    "naam": "A0024",
-    "toestand": "in-gebruik",
-    "typeURI": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DNBLaagspanning"
-}
+    {
+        "assetId": {
+            "identificator": "A0024-50004784"
+        },
+        "bronAssetId": {
+            "identificator": "eigen_Id_voor_A0024"
+        },
+        "doelAssetId": {
+            "identificator": "eigen_Id_voor_50004784"
+        },
+        "typeURI": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Voedt"
+    }
+]
 ```
 

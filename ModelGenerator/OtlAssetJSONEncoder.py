@@ -48,3 +48,8 @@ class OtlAssetJSONEncoder(json.JSONEncoder):
             if v is not None:
                 return False
         return b
+
+    def write_json_to_file(self, json, path):
+        f = open(path, "w")
+        f.write(json)
+        f.close()

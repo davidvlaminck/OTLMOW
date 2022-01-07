@@ -1,10 +1,9 @@
 from OTLModel.BaseClasses.RelatieInteractor import RelatieInteractor
 from ModelGenerator.BaseClasses.Singleton import Singleton
-from OTLModel.GeldigeRelatieLijst import GeldigeRelatieLijst
 
 
 class RelatieValidator(metaclass=Singleton):
-    def __init__(self, relatieLijst: GeldigeRelatieLijst):
+    def __init__(self, relatieLijst):
         self.dictByDoelBronRelatie = {}
         self.dictByBronDoelRelatie = {}
         self.fillValidatorDictsForEfficientSearch(relatieLijst)

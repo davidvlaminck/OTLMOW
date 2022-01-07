@@ -10,7 +10,7 @@ class GeldigeRelatie:
     def __init__(self, bron: type, doel: type, relatie: type):
         relatieInstance = relatie()
         if not(isinstance(relatieInstance, RelatieObject)):
-            raise TypeError("parameter relatie is geen relatieObject")
+            raise TypeError("parameter relatie is geen RelatieObject")
         doelInstance = doel()
         if not(isinstance(doelInstance, RelatieInteractor)):
             raise TypeError("parameter doel is geen AbstractRelatieInteractor")

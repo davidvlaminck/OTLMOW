@@ -24,7 +24,6 @@ class RelatieValidator(metaclass=Singleton):
             if rel.doel not in self.dictByBronDoelRelatie[rel.bron]:
                 self.dictByBronDoelRelatie[rel.bron][rel.doel] = {}
             self.dictByBronDoelRelatie[rel.bron][rel.doel][rel.relatie] = rel
-        for rel in relatieLijst.lijst:
             if rel.doel not in self.dictByDoelBronRelatie:
                 self.dictByDoelBronRelatie[rel.doel] = {}
             if rel.bron not in self.dictByDoelBronRelatie[rel.doel]:

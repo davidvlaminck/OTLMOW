@@ -1,3 +1,4 @@
+import rdflib
 import requests
 
 from Loggers.AbstractLogger import AbstractLogger
@@ -51,6 +52,8 @@ class OTLEnumerationCreator(AbstractDatatypeCreator):
 
     @staticmethod
     def getKeuzelijstWaardesFromUri(name):
+
+
         response = requests.get(
             f'https://raw.githubusercontent.com/Informatievlaanderen/OSLOthema-wegenenverkeer/master/codelijsten/{name}.ttl',
             stream=True)

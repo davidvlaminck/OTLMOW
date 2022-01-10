@@ -139,7 +139,7 @@ class OTLEnumerationCreatorTests(unittest.TestCase):
 
         self.assertTrue(os.path.isfile('../../OTLModel/Datatypes/KlAIMToestand.py'))
 
-    def test_test_WriteToFileOSLOEnumeration2(self):
+    def test_WriteToFileOSLOEnumeration2(self):
         logger = NoneLogger()
 
         file_location = '../../InputFiles/OTL.db'
@@ -156,3 +156,23 @@ class OTLEnumerationCreatorTests(unittest.TestCase):
         creator.writeToFile(KlAIMToestand, 'Datatypes', dataToWrite, '../../')
 
         self.assertTrue(os.path.isfile('../../OTLModel/Datatypes/KlAlgProvincie.py'))
+
+    def test_getKeuzelijstWaardesFromUri(self):
+        logger = NoneLogger()
+
+        file_location = '../../InputFiles/OTL.db'
+        file_exist_checker = FileExistChecker(file_location)
+        sql_reader = SQLDbReader(file_exist_checker)
+        oslo_creator = OSLOInMemoryCreator(sql_reader)
+        collector = OSLOCollector(oslo_creator)
+        collector.collect()
+
+        creator = OTLEnumerationCreator(logger, collector)
+        keuzelijst = creator.getKeuzelijstWaardesFromUri("KlAIMToestand")
+
+        self.assertTrue(len(keuzelijst) > 0)
+        self.assertEqual('in-ontwerp', keuzelijst[0].invulwaarde)
+        self.assertEqual('in ontwerp', keuzelijst[0].label)
+        self.assertEqual('', keuzelijst[0].definitie)
+        self.assertEqual('https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAIMToestand/in-ontwerp', keuzelijst[0].uri)
+        pass

@@ -47,3 +47,10 @@ class KardinaliteitField(OTLField):
                     bad_type = True
                     return bad_type
         return bad_type
+
+    def default(self):
+        lijstValues = []
+        for element in self.waarde:
+            lijstValues.append(element.default())
+        return lijstValues
+

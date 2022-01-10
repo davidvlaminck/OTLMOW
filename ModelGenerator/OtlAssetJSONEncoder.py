@@ -2,6 +2,8 @@ import json
 
 from OTLModel.BaseClasses.OTLAsset import OTLAsset
 from OTLModel.Classes.RelatieObject import RelatieObject
+from OTLModel.Datatypes.KardinaliteitField import KardinaliteitField
+from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.OTLField import OTLField
 
 

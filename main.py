@@ -17,6 +17,7 @@ if __name__ == '__main__':
     otl_facility.init_otl_model_creator(otl_file_location)
     otl_facility.create_otl_datamodel()
 
+    # ===========================================================================================================================
     # use the generated datamodel to create instances of OTL classes
     dnb = DNBLaagspanning()
     dnb.naam.waarde = 'A0024'
@@ -50,5 +51,13 @@ if __name__ == '__main__':
     path = f'{datetime.now().strftime("%Y%m%d%H%M%S")}_export.json'
     otl_facility.encoder.write_json_to_file(encoded_json, path)
 
+    # ===========================================================================================================================
+    # validation for relations is possible, either on the object itself or through the validator
+
+    # validation from a concrete object
     print(dnb._validateRelatiePossible(meter, Voedt, relatieRichting=RelatieRichting.BRON_DOEL))
     # outputs True
+
+    # using facility's designated validator
+    print(otl_facility.relatieValidator.validateRelatieByURI(dnb, meter, Voedt))
+    # also outputs True

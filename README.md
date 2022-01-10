@@ -40,12 +40,12 @@ dnb.adresVolgensDNB.gemeente.set_value_by_label('brasschaat')
 # dnb.adresVolgensDNB.gemeente.set_value_by_label('Brasschaat')  # this raises a ValueError because it has an incorrect value
 dnb.adresVolgensDNB.postcode.waarde = '2930'
 dnb.adresVolgensDNB.straatnaam.waarde = 'Bredabaan 90'
-dnb.geometry = 'POINT Z(157696.6 219065.5 0)'
 
 meter = EnergiemeterDNB()
 meter.naam = '50004784'
 meter.assetId.identificator.waarde = 'eigen_Id_voor_50004784'
 meter.aantalTelwerken.waarde = 1
+meter.geometry = 'POINT Z(157696.6 219065.5 0)'
 
 voedingsrelatie = Voedt()
 voedingsrelatie.assetId.identificator.waarde = "A0024-50004784"
@@ -75,7 +75,6 @@ output:
             "identificator": "eigen_Id_voor_A0024"
         },
         "eanNummer": "541448860003995215",
-        "geometry": "POINT Z(157696.6 219065.5 0)",
         "naam": "A0024",
         "toestand": "in-gebruik",
         "typeURI": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DNBLaagspanning"
@@ -85,6 +84,7 @@ output:
         "assetId": {
             "identificator": "eigen_Id_voor_50004784"
         },
+        "geometry": "POINT Z(157696.6 219065.5 0)",
         "naam": "50004784",
         "typeURI": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#EnergiemeterDNB"
     },

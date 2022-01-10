@@ -1,5 +1,8 @@
 import unittest
 
+from Facility.OTLFacility import OTLFacility
+from Loggers.NoneLogger import NoneLogger
+from ModelGenerator.BaseClasses.GeldigeRelatie import GeldigeRelatie
 from ModelGenerator.BaseClasses.RelatieRichting import RelatieRichting
 from ModelGenerator.BaseClasses.RelatieValidator import RelatieValidator
 from OTLModel.BaseClasses.RelatieInteractor import RelatieInteractor
@@ -59,16 +62,16 @@ class GeldigeRelatieLijstTestInstance(GeldigeRelatieLijst):
     def __init__(self):
         GeldigeRelatieLijst.__init__(self)
         self.lijst = [
-            GeldigeRelatie2('https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#EnergiemeterAWV',
+            GeldigeRelatie('https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#EnergiemeterAWV',
                             'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Aftakking',
                             'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Voedt'),
-            GeldigeRelatie2('https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Stroomkring',
+            GeldigeRelatie('https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Stroomkring',
                             'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Aftakking',
                             'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Voedt'),
-            GeldigeRelatie2('https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Aftakking',
+            GeldigeRelatie('https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Aftakking',
                             'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Hoofdschakelaar',
                             'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Voedt'),
-            GeldigeRelatie2('https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Stroomkring',
+            GeldigeRelatie('https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Stroomkring',
                             'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Contactor',
                             'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Voedt')
         ]
@@ -87,27 +90,6 @@ class RelatieValidatorTests(unittest.TestCase):
     def test_GeldigeRelatieAttrOk(self):
         instance = GeldigeRelatieLijstTestInstance().lijst[0]
         self.assertTrue(instance is not None)
-
-    def test_GeldigeRelatieAttr1Fout(self):
-        with self.assertRaises(TypeError) as Attr1Fout:
-            GeldigeRelatie2('https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Voedt',
-                            'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Aftakking',
-                            'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Voedt')
-        self.assertEqual(str(Attr1Fout.exception), "parameter bron is geen AbstractRelatieInteractor")
-
-    def test_GeldigeRelatieAttr2Fout(self):
-        with self.assertRaises(TypeError) as Attr2Fout:
-            GeldigeRelatie2('https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#EnergiemeterAWV',
-                            'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Voedt',
-                            'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Voedt')
-        self.assertEqual(str(Attr2Fout.exception), "parameter doel is geen AbstractRelatieInteractor")
-
-    def test_GeldigeRelatieAttr3Fout(self):
-        with self.assertRaises(TypeError) as Attr3Fout:
-            GeldigeRelatie2('https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#EnergiemeterAWV',
-                            'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Aftakking',
-                            'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Aftakking')
-        self.assertEqual(str(Attr3Fout.exception), "parameter relatie is geen RelatieObject")
 
     def test_createInstance(self):
         geldigeRelatieLijst = GeldigeRelatieLijstTestInstance()
@@ -171,20 +153,34 @@ class RelatieValidatorTests(unittest.TestCase):
         geldigeRelatieLijst = GeldigeRelatieLijstTestInstance()
         validator = RelatieValidator(geldigeRelatieLijst)
         a = Aftakking()
-        list = validator.getGeldigeRelatiesByBronOrDoel(a)
-        self.assertTrue(len(list) == 3)
+        list = validator.getGeldigeRelatiesByBronOrDoel(a.typeURI)
+        self.assertEqual(3, len(list))
 
     def test_afterInitGetGeldigeRelatiesOnObject(self):
         geldigeRelatieLijst = GeldigeRelatieLijstTestInstance()
         validator = RelatieValidator(geldigeRelatieLijst)
         a = Aftakking()
-        self.assertTrue(len(a._geldigeRelaties) > 0)
+        self.assertEqual(0, len(a._geldigeRelaties))
+        a._loadGeldigeRelaties()
+        self.assertGreater(len(a._geldigeRelaties), 0)
 
     def test_afterInitValidateRelatieOnObject(self):
         geldigeRelatieLijst = GeldigeRelatieLijstTestInstance()
         validator = RelatieValidator(geldigeRelatieLijst)
-        e = EnergiemeterAWV()
         a = Aftakking()
+        e = EnergiemeterAWV()
+        v = Voedt
+        c = Contactor()
+        h = Hoofdschakelaar()
+        self.assertTrue(a._validateRelatiePossible(e, v, RelatieRichting.DOEL_BRON))
+        self.assertFalse(a._validateRelatiePossible(e, v, RelatieRichting.BRON_DOEL))
+        self.assertFalse(a._validateRelatiePossible(c, v, RelatieRichting.DOEL_BRON))
+        self.assertTrue(a._validateRelatiePossible(h, v, RelatieRichting.BRON_DOEL))
+
+    def test_afterInitFacilityValidateRelatieOnObject(self):
+        facility = OTLFacility(NoneLogger())
+        a = Aftakking()
+        e = EnergiemeterAWV()
         v = Voedt
         c = Contactor()
         h = Hoofdschakelaar()

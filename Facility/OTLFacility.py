@@ -1,4 +1,6 @@
 from Loggers.AbstractLogger import AbstractLogger
+from ModelGenerator.BaseClasses.RelatieValidator import RelatieValidator
+from OTLModel.GeldigeRelatieLijst import GeldigeRelatieLijst
 from ModelGenerator.FileExistChecker import FileExistChecker
 from ModelGenerator.OSLOCollector import OSLOCollector
 from ModelGenerator.OSLOInMemoryCreator import OSLOInMemoryCreator
@@ -13,6 +15,7 @@ class OTLFacility:
         self.collector = None
         self.modelCreator = None
         self.encoder = OtlAssetJSONEncoder(indent=4)
+        self.validator = RelatieValidator(GeldigeRelatieLijst())
 
     def init_otl_model_creator(self, otl_file_location):
         file_exist_checker = FileExistChecker(otl_file_location)

@@ -19,8 +19,8 @@ class OTLModelCreator:
         self.create_primitive_datatypes()
         self.create_complex_datatypes()
         self.create_union_datatypes()
-        #self.create_enumerations()
-        self.create_classes()
+        #  self.create_enumerations()
+        #  self.create_classes()
         self.create_relations()
 
     def create_primitive_datatypes(self):

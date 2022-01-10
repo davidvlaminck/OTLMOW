@@ -2,6 +2,7 @@ from datetime import datetime
 
 from Facility.OTLFacility import OTLFacility
 from Loggers.TxtLogger import TxtLogger
+from ModelGenerator.BaseClasses.RelatieRichting import RelatieRichting
 from OTLModel.Classes.DNBLaagspanning import DNBLaagspanning
 from OTLModel.Classes.EnergiemeterDNB import EnergiemeterDNB
 from OTLModel.Classes.Voedt import Voedt
@@ -49,8 +50,5 @@ if __name__ == '__main__':
     path = f'{datetime.now().strftime("%Y%m%d%H%M%S")}_export.json'
     otl_facility.encoder.write_json_to_file(encoded_json, path)
 
-
-
-
-    # r = RelatieValidator(GeldigeRelatieLijst())
-    # dnb._validateRelatiePossible(meter, Voedt, relatieRichting=RelatieRichting.BRON_DOEL)
+    print(dnb._validateRelatiePossible(meter, Voedt, relatieRichting=RelatieRichting.BRON_DOEL))
+    # outputs True

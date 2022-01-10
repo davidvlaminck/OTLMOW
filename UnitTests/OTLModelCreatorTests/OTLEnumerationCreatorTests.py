@@ -40,11 +40,11 @@ class EnumerationOSLOCollector(OSLOCollector):
                                           '                         deprecated_version="",',
                                           '                         codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlAIMToestand")',
                                           '',
-                                          '        self.add_option("in-ontwerp", "in ontwerp", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAIMToestand/in-ontwerp")',
-                                          '        self.add_option("gepland", "gepland", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAIMToestand/gepland")',
-                                          '        self.add_option("in-opbouw", "in opbouw", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAIMToestand/in-opbouw")',
                                           '        self.add_option("geannuleerd", "geannuleerd", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAIMToestand/geannuleerd")',
+                                          '        self.add_option("gepland", "gepland", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAIMToestand/gepland")',
                                           '        self.add_option("in-gebruik", "in gebruik", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAIMToestand/in-gebruik")',
+                                          '        self.add_option("in-ontwerp", "in ontwerp", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAIMToestand/in-ontwerp")',
+                                          '        self.add_option("in-opbouw", "in opbouw", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAIMToestand/in-opbouw")',
                                           '        self.add_option("overgedragen", "overgedragen", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAIMToestand/overgedragen")',
                                           '        self.add_option("uit-gebruik", "uit gebruik", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAIMToestand/uit-gebruik")',
                                           '        self.add_option("verwijderd", "verwijderd", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAIMToestand/verwijderd")']
@@ -171,8 +171,9 @@ class OTLEnumerationCreatorTests(unittest.TestCase):
         keuzelijst = creator.getKeuzelijstWaardesFromUri("KlAIMToestand")
 
         self.assertTrue(len(keuzelijst) > 0)
-        self.assertEqual('in-ontwerp', keuzelijst[0].invulwaarde)
-        self.assertEqual('in ontwerp', keuzelijst[0].label)
-        self.assertEqual('', keuzelijst[0].definitie)
-        self.assertEqual('https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAIMToestand/in-ontwerp', keuzelijst[0].uri)
+        inontwerp_waarde = next(k for k in keuzelijst if k.invulwaarde == 'in-ontwerp')
+        self.assertEqual('in-ontwerp', inontwerp_waarde.invulwaarde)
+        self.assertEqual('in ontwerp', inontwerp_waarde.label)
+        self.assertEqual('', inontwerp_waarde.definitie)
+        self.assertEqual('https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAIMToestand/in-ontwerp', inontwerp_waarde.uri)
         pass

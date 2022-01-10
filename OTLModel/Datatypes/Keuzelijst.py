@@ -13,7 +13,12 @@ class Keuzelijst:
         self.deprecated_version = deprecated_version
 
     def add_option(self, invulwaarde, label, definitie, uri):
-        self.options.append(KeuzelijstWaarde(invulwaarde, label, definitie, uri))
+        waarde = KeuzelijstWaarde()
+        waarde.invulwaarde = invulwaarde
+        waarde.label = label
+        waarde.definitie = definitie
+        waarde.uri = uri
+        self.options.append(waarde)
 
     def get_value_by_invulwaarde(self, invulwaarde):
         try:

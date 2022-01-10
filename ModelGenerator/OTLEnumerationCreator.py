@@ -1,5 +1,5 @@
 import rdflib
-import requests
+from rdflib import URIRef
 
 from Loggers.AbstractLogger import AbstractLogger
 from Loggers.LogType import LogType
@@ -11,6 +11,7 @@ from OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 class OTLEnumerationCreator(AbstractDatatypeCreator):
     def __init__(self, logger: AbstractLogger, osloCollector: OSLOCollector):
+        super().__init__(logger, osloCollector)
         logger.log("Created an instance of OTLEnumerationCreator", LogType.INFO)
         self.osloCollector = osloCollector
 
@@ -51,32 +52,34 @@ class OTLEnumerationCreator(AbstractDatatypeCreator):
         return datablock
 
     @staticmethod
-    def getKeuzelijstWaardesFromUri(name):
+    def getKeuzelijstWaardesFromUri(keuzelijstnaam):
+        # create a Graph
+        g = rdflib.Graph()
+        keuzelijst_link = f"https://raw.githubusercontent.com/Informatievlaanderen/OSLOthema-wegenenverkeer/master/codelijsten/{keuzelijstnaam}.ttl"
 
-
-        response = requests.get(
-            f'https://raw.githubusercontent.com/Informatievlaanderen/OSLOthema-wegenenverkeer/master/codelijsten/{name}.ttl',
-            stream=True)
-
-        # Throw an error for bad status codes
+        # parse the turtle file hosted on github
         try:
-            response.raise_for_status()
+            g.parse(keuzelijst_link, format="turtle")
         except Exception:
-            raise ConnectionError(f"Could not download ttl file for {name}")
+            raise ConnectionError(f"Could not get ttl file for {keuzelijstnaam}")
 
-        contentLines = response.content.decode('UTF-8').replace('\\n', '\n').split('\n')
+        # get distinct set of subjects and remove the conceptschema subject
+        distinct_subjects = set([str(url) for url in g.subjects()])
+        scheme = next(d for d in distinct_subjects if d.startswith('https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/'))
+        distinct_subjects.remove(scheme)
 
-        lijst = []
+        # loop through each triple in the graph by subject
+        lijst_keuze_opties = []
+        for distinct_object in distinct_subjects:
+            waarde = KeuzelijstWaarde()
+            waarde.uri = distinct_object
+            for s, p, o in g.triples((URIRef(distinct_object), None, None)):
+                if str(p) == 'http://www.w3.org/2004/02/skos/core#notation':
+                    waarde.invulwaarde = str(o)
+                elif str(p) == 'http://www.w3.org/2004/02/skos/core#prefLabel':
+                    waarde.label = str(o)
+                elif str(p) == 'http://www.w3.org/2004/02/skos/core#definition':
+                    waarde.definitie = str(o)
+            lijst_keuze_opties.append(waarde)
 
-        for i in range(0, len(contentLines)):
-            if 'skos:Concept;' in contentLines[i]:
-                uri = contentLines[i].replace('<', '').replace('> a skos:Concept;', '')
-                definition = contentLines[i + 1].split('"')[1]
-                invulwaarde = contentLines[i + 3].split('"')[1]
-                label = contentLines[i + 4].split('"')[1]
-                lijst.append(KeuzelijstWaarde(label=label, invulwaarde=invulwaarde, uri=uri, definitie=definition))
-
-        return lijst
-        # download ttl
-        # open ttl en creëer KeuzelijstWaarde
-        # return list of KeuzelijstWaarde
+        return sorted(lijst_keuze_opties, key=lambda l: l.invulwaarde)

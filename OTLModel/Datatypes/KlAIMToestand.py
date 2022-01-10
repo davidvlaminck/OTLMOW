@@ -15,11 +15,11 @@ class KlAIMToestand(Keuzelijst):
                          deprecated_version="",
                          codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlAIMToestand")
 
-        self.add_option("in-ontwerp", "in ontwerp", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAIMToestand/in-ontwerp")
-        self.add_option("gepland", "gepland", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAIMToestand/gepland")
-        self.add_option("in-opbouw", "in opbouw", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAIMToestand/in-opbouw")
         self.add_option("geannuleerd", "geannuleerd", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAIMToestand/geannuleerd")
+        self.add_option("gepland", "gepland", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAIMToestand/gepland")
         self.add_option("in-gebruik", "in gebruik", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAIMToestand/in-gebruik")
+        self.add_option("in-ontwerp", "in ontwerp", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAIMToestand/in-ontwerp")
+        self.add_option("in-opbouw", "in opbouw", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAIMToestand/in-opbouw")
         self.add_option("overgedragen", "overgedragen", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAIMToestand/overgedragen")
         self.add_option("uit-gebruik", "uit gebruik", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAIMToestand/uit-gebruik")
         self.add_option("verwijderd", "verwijderd", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAIMToestand/verwijderd")

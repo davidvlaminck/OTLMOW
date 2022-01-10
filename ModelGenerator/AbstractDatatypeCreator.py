@@ -170,10 +170,6 @@ class AbstractDatatypeCreator(ABC):
             if forUnionTypeUse:
                 selfWaarde = 'field_'
 
-            if (attribuut.uri == 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMObject.typeURI' and class_uri == 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMObject') or (
-                    attribuut.uri == 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#RelatieObject.typeURI' and class_uri == 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#RelatieObject'):
-                datablock.append('        uri = self.typeURI')
-
             definitie = attribuut.definition_nl.replace('"', r'\"').replace('\n', '')
 
             if attribuut.kardinaliteit_max == '1':
@@ -195,9 +191,6 @@ class AbstractDatatypeCreator(ABC):
                             f'        {selfWaarde}{attribuut.name}.deprecated_version = "{attribuut.deprecated_version}"')
                         if not forClassUse and not forUnionTypeUse:
                             datablock.append(f'        self.{attribuut.name} = {selfWaarde}{attribuut.name}')
-                        if (attribuut.uri == 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMObject.typeURI' and class_uri == 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMObject') or (
-                                attribuut.uri == 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#RelatieObject.typeURI' and class_uri == 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#RelatieObject'):
-                            datablock.append('        self.typeURI.waarde = uri')
                     else:
                         whitespace = self.getWhiteSpaceEquivalent(
                             f'        {selfWaarde}{attribuut.name} = {self.getFieldNameFromTypeUri(attribuut.type)}(')

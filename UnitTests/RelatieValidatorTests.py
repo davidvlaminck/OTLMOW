@@ -63,17 +63,17 @@ class GeldigeRelatieLijstTestInstance(GeldigeRelatieLijst):
         GeldigeRelatieLijst.__init__(self)
         self.lijst = [
             GeldigeRelatie('https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#EnergiemeterAWV',
-                            'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Aftakking',
-                            'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Voedt'),
+                           'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Aftakking',
+                           'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Voedt'),
             GeldigeRelatie('https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Stroomkring',
-                            'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Aftakking',
-                            'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Voedt'),
+                           'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Aftakking',
+                           'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Voedt'),
             GeldigeRelatie('https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Aftakking',
-                            'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Hoofdschakelaar',
-                            'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Voedt'),
+                           'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Hoofdschakelaar',
+                           'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Voedt'),
             GeldigeRelatie('https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Stroomkring',
-                            'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Contactor',
-                            'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Voedt')
+                           'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Contactor',
+                           'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Voedt')
         ]
 
 
@@ -111,7 +111,7 @@ class RelatieValidatorTests(unittest.TestCase):
         v = Voedt
         self.assertTrue(validator.validateRelatieByURI(e, a, v))
 
-    def test_afterInitValidateMultipleRelaties(self):
+    def test_afterInitValidateMultipleCases(self):
         geldigeRelatieLijst = GeldigeRelatieLijstTestInstance()
         validator = RelatieValidator(geldigeRelatieLijst)
         e = EnergiemeterAWV()
@@ -120,10 +120,26 @@ class RelatieValidatorTests(unittest.TestCase):
         c = Contactor()
         h = Hoofdschakelaar()
         v = Voedt
-        self.assertTrue(validator.validateRelatieByURI(e, a, v))
-        self.assertTrue(validator.validateRelatieByURI(s, a, v))
-        self.assertTrue(validator.validateRelatieByURI(a, h, v))
-        self.assertTrue(validator.validateRelatieByURI(s, c, v))
+
+        true_cases = [
+            dict(bron=e, doel=a, relatie=v),
+            dict(bron=s, doel=a, relatie=v),
+            dict(bron=a, doel=h, relatie=v),
+            dict(bron=s, doel=c, relatie=v)
+        ]
+        false_cases = [
+            dict(bron=e, doel=h, relatie=v),
+            dict(bron=c, doel=s, relatie=v)
+        ]
+
+        for case in true_cases:
+            with self.subTest(
+                    f"testing valid relation: {case['bron'].typeURI.split('#')[1]} ---{case['relatie'].typeURI.split('#')[1]}--> {case['doel'].typeURI.split('#')[1]}"):
+                self.assertTrue(validator.validateRelatieByURI(case['bron'], case['doel'], case['relatie']))
+        for case in false_cases:
+            with self.subTest(
+                    f"testing invalid relation: {case['bron'].typeURI.split('#')[1]} ---{case['relatie'].typeURI.split('#')[1]}--> {case['doel'].typeURI.split('#')[1]}"):
+                self.assertFalse(validator.validateRelatieByURI(case['bron'], case['doel'], case['relatie']))
 
     def test_afterInitValidateBadRelatieByBron(self):
         geldigeRelatieLijst = GeldigeRelatieLijstTestInstance()
@@ -177,6 +193,8 @@ class RelatieValidatorTests(unittest.TestCase):
         self.assertFalse(a._validateRelatiePossible(c, v, RelatieRichting.DOEL_BRON))
         self.assertTrue(a._validateRelatiePossible(h, v, RelatieRichting.BRON_DOEL))
 
+
+class RelatieValidatorTestsUsingFacility(unittest.TestCase):
     def test_afterInitFacilityValidateRelatieOnObject(self):
         facility = OTLFacility(NoneLogger())
         a = Aftakking()

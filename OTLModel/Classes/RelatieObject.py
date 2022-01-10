@@ -2,7 +2,6 @@
 from abc import abstractmethod
 from OTLModel.Classes.AIMDBStatus import AIMDBStatus
 from OTLModel.Datatypes.DtcIdentificator import DtcIdentificator
-from OTLModel.Datatypes.URIField import URIField
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit

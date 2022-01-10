@@ -16,8 +16,7 @@ class OTLClassCreator(AbstractDatatypeCreator):
         if not isinstance(osloClass, OSLOClass):
             raise ValueError(f"Input is not a OSLOClass")
 
-        if 'WVLichtmast' in osloClass.uri:
-            pass
+
 
         if osloClass.uri == '' or not (
                 osloClass.uri.startswith('https://wegenenverkeer.data.vlaanderen.be/ns/') or osloClass.uri.startswith(
@@ -96,7 +95,6 @@ class OTLClassCreator(AbstractDatatypeCreator):
     def getClassLineFromClassAndInheritances(self, osloClass, inheritances):
         if osloClass.abstract == 0 and len(inheritances) == 0:
             return f'class {osloClass.name}:'
-            raise NotImplementedError(f"{osloClass.uri} is a base class, which is not implemented")
         if osloClass.abstract == 1 and len(inheritances) == 0:
             return f'class {osloClass.name}(ABC):'
         if len(inheritances) > 0:

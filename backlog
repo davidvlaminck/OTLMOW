@@ -20,17 +20,12 @@ herbekijken ttl bestanden inlezen, zie voorbeeld onderaan backlog
 To check:
 Agent
 Keuring
+Proef
 Sokkel (dtc ontbreekt)
 Signalisatie (abstract zonder attributen)
-AIMObject TypeURI override
-RelatieObject TypeURI override
-==> query'en welke concrete classes NIET overerven van AIMObject > RelatieInteractor en OTL Asset toevoegen aan die assets
-
-OTLPrimitiveDatatypeCreator probleem met getFieldFromTypeUri oplossen
+query'en welke concrete classes NIET overerven van AIMObject > RelatieInteractor en OTL Asset toevoegen aan die assets
 AIMObject, Seinlantaarn > encoding probleem > voorlopige oplossing ==> # coding=utf-8
 
-AIMObject RelatieObject heeft een fix gekregen voor typeURI, maar Agent en ProefEnMeting en andere soorten classes nog niet
-testen schrijven voor bestaande fixes
 
 
 Facility

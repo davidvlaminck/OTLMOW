@@ -9,7 +9,6 @@ from OTLModel.Datatypes.DateField import DateField
 from OTLModel.Datatypes.DtcIdentificator import DtcIdentificator
 from OTLModel.Datatypes.KwantWrdInMaand import KwantWrdInMaand
 from OTLModel.Datatypes.StringField import StringField
-from OTLModel.Datatypes.URIField import URIField
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit

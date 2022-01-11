@@ -4,18 +4,17 @@ relatieCreator => gebruikt relatieValidator en _validatie methode op objecten ze
 
 
 TODO's:
+deprecated classes implementeren => evt warning geven bij gebruik
 storage (in memory)
 tempId's vs bestaande id's
 agents kunnen niet zelf aangemaakt worden
-deprecated classes geven een warning
-deprecated attributen? door overerving aan te passen?
 AnyURI implementeren
 utf-8 encoding > setting in pycharm aanpassen + UTF-8 + BOM aanzetten voor windows
 Agent - Keuring ondersteuning > Worden niet correct gegenereerd
 hoe libraries gemakkelijk importeren?
 geometrie artefact gebruiken om WKT strings inhoudelijk te checken
 herbekijken ttl bestanden inlezen, zie voorbeeld onderaan backlog
-
+postenmapping: implementatie in beide richtingen: van mapping naar assets en omgekeerd
 
 To check:
 Agent

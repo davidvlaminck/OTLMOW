@@ -24,6 +24,8 @@ Use the property 'waarde' to change the value of a property and to allow data va
 from Facility.OTLFacility import OTLFacility
 from Loggers.TxtLogger import TxtLogger
 from OTLModel.Classes.DNBLaagspanning import DNBLaagspanning
+from OTLModel.Classes.EnergiemeterDNB import EnergiemeterDNB
+from OTLModel.Classes.Voedt import Voedt
 
 # create the main facade class: OTLFacility
 logger = TxtLogger(r'C:\temp\pythonLogging\pythonlog.txt')

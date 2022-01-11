@@ -1,0 +1,144 @@
+[
+  {
+    "assetId": {
+      "identificator": "000a35d5-c4a5-4a36-8620-62c99e053ba0-b25kZXJkZWVsI05ldHdlcmtwb29ydA",
+      "toegekendDoor": "AWV"
+    },
+    "typeURI": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Netwerkpoort",
+    "isActief": true,
+    "naam": "Poort_2625",
+    "toestand": "in-ontwerp",
+    "beschrijvingFabrikant": "test",
+    "nNILANCapaciteit": 155
+  },
+  {
+    "assetId": {
+      "identificator": "1ce81d00-43c8-438f-893f-3468f56b218a-b25kZXJkZWVsI0hvb3J0Qmlq",
+      "toegekendDoor": "AWV"
+    },
+    "typeURI": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#HoortBij",
+    "bronAssetId": {
+      "identificator": "000a35d5-c4a5-4a36-8620-62c99e053ba0-b25kZXJkZWVsI05ldHdlcmtwb29ydA",
+      "toegekendDoor": "AWV"
+    },
+    "doelAssetId": {
+      "identificator": "c531aad8-e7c3-49f6-8c0d-c228a0c17c02-aW5zdGFsbGF0aWUjTGluaw",
+      "toegekendDoor": "AWV"
+    },
+    "bron": {
+      "typeURI": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Netwerkpoort"
+    },
+    "doel": {
+      "typeURI": "https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Link"
+    },
+    "isActief": true
+  },
+  {
+    "assetId": {
+      "identificator": "4be83a8f-ab97-44c7-8dc6-1666c8dfb68e-b25kZXJkZWVsI0hlZWZ0QmV0cm9ra2VuZQ"
+    },
+    "typeURI": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#HeeftBetrokkene",
+    "bronAssetId": {
+      "identificator": "000a35d5-c4a5-4a36-8620-62c99e053ba0-b25kZXJkZWVsI05ldHdlcmtwb29ydA"
+    },
+    "doelAssetId": {
+      "identificator": "5434ffca-8bdc-445a-a4ba-b395c87dec30-cHVybDpBZ2VudA"
+    },
+    "bron": {
+      "typeURI": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Netwerkpoort"
+    },
+    "doel": {
+      "typeURI": "http://purl.org/dc/terms/Agent"
+    },
+    "rol": "toezichter",
+    "specifiekeContactinfo": [],
+    "isActief": true
+  },
+  {
+    "assetId": {
+      "identificator": "69fa32ea-1016-444e-bf73-9760685097d5-b25kZXJkZWVsI0hvb3J0Qmlq",
+      "toegekendDoor": "AWV"
+    },
+    "typeURI": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#HoortBij",
+    "bronAssetId": {
+      "identificator": "000a35d5-c4a5-4a36-8620-62c99e053ba0-b25kZXJkZWVsI05ldHdlcmtwb29ydA",
+      "toegekendDoor": "AWV"
+    },
+    "doelAssetId": {
+      "identificator": "de590e9e-9225-46d5-9303-df6d43e4712f-aW5zdGFsbGF0aWUjTGluaw",
+      "toegekendDoor": "AWV"
+    },
+    "bron": {
+      "typeURI": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Netwerkpoort"
+    },
+    "doel": {
+      "typeURI": "https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Link"
+    },
+    "isActief": true
+  },
+  {
+    "assetId": {
+      "identificator": "77c3c493-5174-4b84-807d-4915f21443f1-b25kZXJkZWVsI0JldmVzdGlnaW5n",
+      "toegekendDoor": "AWV"
+    },
+    "typeURI": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bevestiging",
+    "bronAssetId": {
+      "identificator": "000a35d5-c4a5-4a36-8620-62c99e053ba0-b25kZXJkZWVsI05ldHdlcmtwb29ydA",
+      "toegekendDoor": "AWV"
+    },
+    "doelAssetId": {
+      "identificator": "4d85efcc-9b04-4b66-9d10-5baa31528451-b25kZXJkZWVsI05ldHdlcmtlbGVtZW50",
+      "toegekendDoor": "AWV"
+    },
+    "bron": {
+      "typeURI": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Netwerkpoort"
+    },
+    "doel": {
+      "typeURI": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Netwerkelement"
+    },
+    "isActief": true
+  },
+  {
+    "assetId": {
+      "identificator": "8e4a8d26-cf37-4b4c-9097-1ede41cdee0c-b25kZXJkZWVsI0hlZWZ0QmV0cm9ra2VuZQ"
+    },
+    "typeURI": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#HeeftBetrokkene",
+    "bronAssetId": {
+      "identificator": "000a35d5-c4a5-4a36-8620-62c99e053ba0-b25kZXJkZWVsI05ldHdlcmtwb29ydA"
+    },
+    "doelAssetId": {
+      "identificator": "a495ac56-7749-4b9f-9e65-c7d0e46ceb8e-cHVybDpBZ2VudA"
+    },
+    "bron": {
+      "typeURI": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Netwerkpoort"
+    },
+    "doel": {
+      "typeURI": "http://purl.org/dc/terms/Agent"
+    },
+    "rol": "toezichtsgroep",
+    "specifiekeContactinfo": [],
+    "isActief": true
+  },
+  {
+    "assetId": {
+      "identificator": "cb9aa0d4-b6ad-474f-9aef-345408313a64-b25kZXJkZWVsI0JldmVzdGlnaW5n",
+      "toegekendDoor": "AWV"
+    },
+    "typeURI": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bevestiging",
+    "bronAssetId": {
+      "identificator": "000a35d5-c4a5-4a36-8620-62c99e053ba0-b25kZXJkZWVsI05ldHdlcmtwb29ydA",
+      "toegekendDoor": "AWV"
+    },
+    "doelAssetId": {
+      "identificator": "bbac4a9a-905a-4991-bafa-43126fb5db10-b25kZXJkZWVsI05ldHdlcmtlbGVtZW50",
+      "toegekendDoor": "AWV"
+    },
+    "bron": {
+      "typeURI": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Netwerkpoort"
+    },
+    "doel": {
+      "typeURI": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Netwerkelement"
+    },
+    "isActief": true
+  }
+]

@@ -1,3 +1,4 @@
+from OTLModel.Datatypes.ComplexField import ComplexAttributen, ComplexField
 from OTLModel.Datatypes.OTLField import OTLField
 
 
@@ -24,15 +25,18 @@ class UnionTypeField(OTLField):
             if self.actiefVeld is None:
                 raise RuntimeError('Use the method gebruik_veld() first to declare what field of the union type you want to use.')
             if not isinstance(value, type(self.actiefVeld)):
-                raise ValueError(f'{value} is not of the correct type, expecting type of {type(self.actiefVeld)})')
-            self.actiefVeld = value
+                if type(value) == ComplexAttributen and isinstance(self.actiefVeld, ComplexField):
+                    pass
+                else:
+                    raise ValueError(f'{value} is not of the correct type, expecting type of {type(self.actiefVeld)})')
+            self.actiefVeld.waarde = value
             return
         self.__dict__[name] = value
 
     def gebruik_veld(self, fieldName):
         try:
             self.actiefVeld = next(f for f in self.fieldsTuple if f.naam == fieldName)
-            self.waarde = self.actiefVeld.waarde
+            #self.waarde = self.actiefVeld.waarde
         except StopIteration:
             msg = f'{fieldName} is not a valid field name for this field. Use of the of the following instead: '
             for field in self.fieldsTuple:

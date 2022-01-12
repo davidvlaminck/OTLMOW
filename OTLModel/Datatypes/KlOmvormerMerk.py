@@ -9,11 +9,11 @@ class KlOmvormerMerk(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlOmvormerMerk",
                          label="Omvormer merk",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlOmvormerMerk",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlOmvormerMerk",
                          definition="Het merk van de omvormer.",
                          usagenote="",
                          deprecated_version="",
                          codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlOmvormerMerk")
 
-        self.add_option("bosch", "Bosch", "Bosch", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOmvormerMerk/bosch")
         self.add_option("axis", "Axis", "Axis", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOmvormerMerk/axis")
+        self.add_option("bosch", "Bosch", "Bosch", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOmvormerMerk/bosch")

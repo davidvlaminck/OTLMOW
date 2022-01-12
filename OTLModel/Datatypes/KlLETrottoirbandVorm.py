@@ -9,7 +9,7 @@ class KlLETrottoirbandVorm(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlLETrottoirbandVorm",
                          label="Trottoirband vorm",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlLETrottoirbandVorm",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlLETrottoirbandVorm",
                          definition="De vormen van een trottoirband.",
                          usagenote="",
                          deprecated_version="",

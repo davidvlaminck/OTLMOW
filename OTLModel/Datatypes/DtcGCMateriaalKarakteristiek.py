@@ -12,7 +12,7 @@ class DtcGCMateriaalKarakteristiek(ComplexField):
     def __init__(self):
         super().__init__(naam="DtcGCMateriaalKarakteristiek",
                          label="Materiaal karakteristiek",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcGCMateriaalKarakteristiek",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcGCMateriaalKarakteristiek",
                          definition="Complex datatype voor het materiaal en zijn geluidskarakteristiek van de geluidswerende constructie.",
                          usagenote="",
                          deprecated_version="")
@@ -20,7 +20,7 @@ class DtcGCMateriaalKarakteristiek(ComplexField):
         self.waarde.geluidskarakteristiek = KeuzelijstField(naam="geluidskarakteristiek",
                                                             label="geluidskarakteristiek",
                                                             lijst=KlLEGCGeluidskarakteristiek(),
-                                                            uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcGCMateriaalKarakteristiek.geluidskarakteristiek",
+                                                            objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcGCMateriaalKarakteristiek.geluidskarakteristiek",
                                                             definition="Het kenmerkend gedrag inzake geluid van de geluidswerende constructie.",
                                                             constraints="",
                                                             usagenote="",
@@ -31,7 +31,7 @@ class DtcGCMateriaalKarakteristiek(ComplexField):
         self.waarde.materiaal = KeuzelijstField(naam="materiaal",
                                                 label="materiaal",
                                                 lijst=KlLEGCMateriaal(),
-                                                uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcGCMateriaalKarakteristiek.materiaal",
+                                                objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcGCMateriaalKarakteristiek.materiaal",
                                                 definition="Het materiaal van de geluidswerende constructie.",
                                                 constraints="",
                                                 usagenote="",

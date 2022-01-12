@@ -17,7 +17,7 @@ class Kopmuur(AIMObject):
         self.materiaal = KeuzelijstField(naam="materiaal",
                                          label="materiaal",
                                          lijst=KlKopmuurMateriaal(),
-                                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Kopmuur.materiaal",
+                                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Kopmuur.materiaal",
                                          definition="Bepaalt het materiaal van de kopmuur.",
                                          constraints="",
                                          usagenote="",

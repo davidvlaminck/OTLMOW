@@ -17,7 +17,7 @@ class Toegangscontrole(AIMNaamObject):
 
         self.heeftBadgelezer = BooleanField(naam="heeftBadgelezer",
                                             label="heeft badgelezer",
-                                            uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Toegangscontrole.heeftBadgelezer",
+                                            objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Toegangscontrole.heeftBadgelezer",
                                             definition="Geeft aan of de toegangscontrole uitgerust is met een badgelezer.",
                                             constraints="",
                                             usagenote="",
@@ -26,7 +26,7 @@ class Toegangscontrole(AIMNaamObject):
 
         self.heeftSlotMetAfstandsbediening = BooleanField(naam="heeftSlotMetAfstandsbediening",
                                                           label="heeft slot met afstandsbediening",
-                                                          uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Toegangscontrole.heeftSlotMetAfstandsbediening",
+                                                          objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Toegangscontrole.heeftSlotMetAfstandsbediening",
                                                           definition="Geeft aan of het objecttype waaraan de toegangscontrole bevestigd is, kan geopend worden via een slot met afstandsbediening.",
                                                           constraints="",
                                                           usagenote="",
@@ -36,7 +36,7 @@ class Toegangscontrole(AIMNaamObject):
         self.sleutelType = KeuzelijstField(naam="sleutelType",
                                            label="type sleutel",
                                            lijst=KlToegangscontroleSleuteltype(),
-                                           uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Toegangscontrole.sleutelType",
+                                           objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Toegangscontrole.sleutelType",
                                            definition="De soort sleutel die wordt gebruikt om de toegang te regelen.",
                                            constraints="",
                                            usagenote="",

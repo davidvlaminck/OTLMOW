@@ -9,7 +9,7 @@ class KlPLCModelnaam(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlPLCModelnaam",
                          label="PLC model",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlPLCModelnaam",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlPLCModelnaam",
                          definition="De modelnaam van de PLC.",
                          usagenote="",
                          deprecated_version="",

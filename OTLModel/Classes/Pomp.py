@@ -24,7 +24,7 @@ class Pomp(LinkendElement):
         """Afmeting van de binnenkant van de opening waardoor het opgepompte water loopt."""
         self.binnenDiameter.naam = "binnenDiameter"
         self.binnenDiameter.label = "binnendiameter"
-        self.binnenDiameter.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Pomp.binnenDiameter"
+        self.binnenDiameter.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Pomp.binnenDiameter"
         self.binnenDiameter.definition = "Afmeting van de binnenkant van de opening waardoor het opgepompte water loopt."
         self.binnenDiameter.constraints = ""
         self.binnenDiameter.usagenote = ""
@@ -34,7 +34,7 @@ class Pomp(LinkendElement):
         """Afmeting van de buitenkant van de opening waarlangs het opgepomte water loopt in functie van een aansluiting van een afvoer."""
         self.buitenDiameter.naam = "buitenDiameter"
         self.buitenDiameter.label = "buitendiameter"
-        self.buitenDiameter.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Pomp.buitenDiameter"
+        self.buitenDiameter.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Pomp.buitenDiameter"
         self.buitenDiameter.definition = "Afmeting van de buitenkant van de opening waarlangs het opgepomte water loopt in functie van een aansluiting van een afvoer."
         self.buitenDiameter.constraints = ""
         self.buitenDiameter.usagenote = ""
@@ -44,7 +44,7 @@ class Pomp(LinkendElement):
         """Het debiet dat de pomp kan verplaatsen wanneer ze op volle capaciteit werkt volgens de specificaties van de fabrikant."""
         self.maximaalDebiet.naam = "maximaalDebiet"
         self.maximaalDebiet.label = "maximaal debiet"
-        self.maximaalDebiet.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Pomp.maximaalDebiet"
+        self.maximaalDebiet.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Pomp.maximaalDebiet"
         self.maximaalDebiet.definition = "Het debiet dat de pomp kan verplaatsen wanneer ze op volle capaciteit werkt volgens de specificaties van de fabrikant."
         self.maximaalDebiet.constraints = ""
         self.maximaalDebiet.usagenote = ""
@@ -53,7 +53,7 @@ class Pomp(LinkendElement):
         self.merk = KeuzelijstField(naam="merk",
                                     label="merk",
                                     lijst=KlPompMerk(),
-                                    uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Pomp.merk",
+                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Pomp.merk",
                                     definition="De naam van het merk volgens de fabrikant.",
                                     constraints="",
                                     usagenote="",
@@ -62,7 +62,7 @@ class Pomp(LinkendElement):
 
         self.metSoftstarter = BooleanField(naam="metSoftstarter",
                                            label="met softstarter",
-                                           uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Pomp.metSoftstarter",
+                                           objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Pomp.metSoftstarter",
                                            definition="Geeft aan of het toestel voorzien is van een eigen softstarter.",
                                            constraints="",
                                            usagenote="",
@@ -71,7 +71,7 @@ class Pomp(LinkendElement):
 
         self.metTempSensor = BooleanField(naam="metTempSensor",
                                           label="met temperatuur sensor",
-                                          uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Pomp.metTempSensor",
+                                          objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Pomp.metTempSensor",
                                           definition="Geeft aan of het toestel uitgerust is met een temperatuur sensor in functie van de bewaking van de correcte werking.",
                                           constraints="",
                                           usagenote="",
@@ -80,7 +80,7 @@ class Pomp(LinkendElement):
 
         self.metVochtsensor = BooleanField(naam="metVochtsensor",
                                            label="met vocht sensor",
-                                           uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Pomp.metVochtsensor",
+                                           objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Pomp.metVochtsensor",
                                            definition="Geeft aan of het toestel uitgerust is met een vocht sensor in functie van de bewaking van de correcte werking.",
                                            constraints="",
                                            usagenote="",
@@ -90,7 +90,7 @@ class Pomp(LinkendElement):
         self.modelnaam = KeuzelijstField(naam="modelnaam",
                                          label="modelnaam",
                                          lijst=KlPompModelnaam(),
-                                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Pomp.modelnaam",
+                                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Pomp.modelnaam",
                                          definition="Naam van het model van het toestel volgens de fabrikant.",
                                          constraints="",
                                          usagenote="",
@@ -100,7 +100,7 @@ class Pomp(LinkendElement):
         self.soort = KeuzelijstField(naam="soort",
                                      label="soort",
                                      lijst=KlPompSoort(),
-                                     uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Pomp.soort",
+                                     objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Pomp.soort",
                                      definition="Bepaalt de aard van de pomp volgens haar werkingsprincipe.",
                                      constraints="",
                                      usagenote="",
@@ -111,7 +111,7 @@ class Pomp(LinkendElement):
         """Elektrisch vermogen van het toestels volgens de specificaties van de fabrikant."""
         self.vermogen.naam = "vermogen"
         self.vermogen.label = "vermogen"
-        self.vermogen.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Pomp.vermogen"
+        self.vermogen.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Pomp.vermogen"
         self.vermogen.definition = "Elektrisch vermogen van het toestels volgens de specificaties van de fabrikant."
         self.vermogen.constraints = ""
         self.vermogen.usagenote = ""

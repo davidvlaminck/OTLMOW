@@ -17,7 +17,7 @@ class Dilatatie(AIMObject):
         self.uitzettingswaarde = KeuzelijstField(naam="uitzettingswaarde",
                                                  label="Uitzettingswaarde",
                                                  lijst=KlLEACUitzettingswaardeDilatatie(),
-                                                 uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Dilatatie.uitzettingswaarde",
+                                                 objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Dilatatie.uitzettingswaarde",
                                                  definition="De grootst mogelijke uitzetting die mogelijk is voor een bepaalde dilatatieoplossing.",
                                                  constraints="",
                                                  usagenote="",

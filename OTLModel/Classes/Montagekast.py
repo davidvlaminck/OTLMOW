@@ -17,7 +17,7 @@ class Montagekast(Buitenkast):
         """Elektrisch aansluitschema van de kast en mechanisch plan van de volledige installatie in de kast."""
         self.eplanMechanischPlan.naam = "eplanMechanischPlan"
         self.eplanMechanischPlan.label = "e-plan en m-plan"
-        self.eplanMechanischPlan.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Montagekast.eplanMechanischPlan"
+        self.eplanMechanischPlan.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Montagekast.eplanMechanischPlan"
         self.eplanMechanischPlan.definition = "Elektrisch aansluitschema van de kast en mechanisch plan van de volledige installatie in de kast."
         self.eplanMechanischPlan.constraints = ""
         self.eplanMechanischPlan.usagenote = "Bestanden van het type dwg."

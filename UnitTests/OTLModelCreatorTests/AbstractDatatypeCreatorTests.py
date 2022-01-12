@@ -89,7 +89,7 @@ class AbstractDatatypeCreatorTests(unittest.TestCase):
         creator = TestAbstractCreator()
         listOfAttributes = [
             OSLODatatypeComplexAttribuut(name='', label_nl='', definition_nl='', class_uri='', kardinaliteit_min='',
-                                         kardinaliteit_max='', uri='',
+                                         kardinaliteit_max='', objectUri='',
                                          type='http://www.w3.org/2001/XMLSchema#string', overerving=0, constraints='', readonly=0,
                                          usagenote_nl='', deprecated_version='')]
         listOfFields = creator.getFieldsToImportFromListOfAttributes(listOfAttributes)
@@ -100,11 +100,11 @@ class AbstractDatatypeCreatorTests(unittest.TestCase):
         creator = TestAbstractCreator()
         listOfAttributes = [
             OSLODatatypeComplexAttribuut(name='', label_nl='', definition_nl='', class_uri='', kardinaliteit_min='',
-                                         kardinaliteit_max='', uri='',
+                                         kardinaliteit_max='', objectUri='',
                                          type='http://www.w3.org/2001/XMLSchema#string', overerving=0, constraints='', readonly=0,
                                          usagenote_nl='', deprecated_version=''),
             OSLODatatypeComplexAttribuut(name='', label_nl='', definition_nl='', class_uri='',
-                                         kardinaliteit_min='', kardinaliteit_max='', uri='',
+                                         kardinaliteit_min='', kardinaliteit_max='', objectUri='',
                                          type='http://www.w3.org/2001/XMLSchema#string', overerving=0,
                                          constraints='', readonly=0, usagenote_nl='', deprecated_version='')
         ]
@@ -116,11 +116,11 @@ class AbstractDatatypeCreatorTests(unittest.TestCase):
         creator = TestAbstractCreator()
         listOfAttributes = [
             OSLODatatypeComplexAttribuut(name='', label_nl='', definition_nl='', class_uri='', kardinaliteit_min='',
-                                         kardinaliteit_max='', uri='',
+                                         kardinaliteit_max='', objectUri='',
                                          type='http://www.w3.org/2001/XMLSchema#boolean', overerving=0, constraints='',
                                          readonly=0, usagenote_nl='', deprecated_version=''),
             OSLODatatypeComplexAttribuut(name='', label_nl='', definition_nl='', class_uri='',
-                                         kardinaliteit_min='', kardinaliteit_max='', uri='',
+                                         kardinaliteit_min='', kardinaliteit_max='', objectUri='',
                                          type='http://www.w3.org/2001/XMLSchema#string', overerving=0,
                                          constraints='', readonly=0, usagenote_nl='', deprecated_version='')
         ]
@@ -132,11 +132,11 @@ class AbstractDatatypeCreatorTests(unittest.TestCase):
         creator = TestAbstractCreator()
         listOfAttributes = [
             OSLODatatypeComplexAttribuut(name='boolean', label_nl='', definition_nl='', class_uri='', kardinaliteit_min='',
-                                         kardinaliteit_max='', uri='',
+                                         kardinaliteit_max='', objectUri='',
                                          type='http://www.w3.org/2001/XMLSchema#boolean', overerving=0, constraints='',
                                          readonly=0, usagenote_nl='', deprecated_version=''),
             OSLODatatypeComplexAttribuut(name='string', label_nl='', definition_nl='', class_uri='',
-                                         kardinaliteit_min='', kardinaliteit_max='', uri='',
+                                         kardinaliteit_min='', kardinaliteit_max='', objectUri='',
                                          type='http://www.w3.org/2001/XMLSchema#string', overerving=0,
                                          constraints='', readonly=0, usagenote_nl='', deprecated_version=''),
             OSLODatatypeComplexAttribuut('technischeFiche', 'technische fiche',
@@ -155,7 +155,7 @@ class AbstractDatatypeCreatorTests(unittest.TestCase):
         creator = TestAbstractCreator()
         attribuut = OSLODatatypeComplexAttribuut(name='boolean', label_nl='', definition_nl='', class_uri='',
                                                  kardinaliteit_min='',
-                                                 kardinaliteit_max='', uri='',
+                                                 kardinaliteit_max='', objectUri='',
                                                  type='http://www.w3.org/2001/XMLSchema#boolean', overerving=0, constraints='',
                                                  readonly=0, usagenote_nl='', deprecated_version='')
         typeLink = creator.getTypeLinkFromAttribuut(attribuut)
@@ -185,7 +185,7 @@ class AbstractDatatypeCreatorTests(unittest.TestCase):
 
         expectedDatablock = ['        self.waarde.huisnummer = StringField(naam="huisnummer",',
                              '                                             label="huisnummer",',
-                             '                                             uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAdres.huisnummer",',
+                             '                                             objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAdres.huisnummer",',
                              '                                             definition="Een nummer dat door de gemeente aan bv. een huis wordt toegekend.",',
                              '                                             constraints="",',
                              '                                             usagenote="",',
@@ -208,7 +208,7 @@ class AbstractDatatypeCreatorTests(unittest.TestCase):
                              '        """Opmerkingen van de toestand en staat van de buis."""',
                              '        self.waarde.toestandBuis.naam = "toestandBuis"',
                              '        self.waarde.toestandBuis.label = "toestand buis"',
-                             '        self.waarde.toestandBuis.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Buis.toestandBuis"',
+                             '        self.waarde.toestandBuis.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Buis.toestandBuis"',
                              '        self.waarde.toestandBuis.definition = "Opmerkingen van de toestand en staat van de buis."',
                              '        self.waarde.toestandBuis.constraints = ""',
                              '        self.waarde.toestandBuis.usagenote = ""',
@@ -230,7 +230,7 @@ class AbstractDatatypeCreatorTests(unittest.TestCase):
                              '        """De totale lengte in meter van de buis tussen opwaartse en afwaartse put."""',
                              '        self.waarde.lengte.naam = "lengte"',
                              '        self.waarde.lengte.label = "lengte"',
-                             '        self.waarde.lengte.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Buis.lengte"',
+                             '        self.waarde.lengte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Buis.lengte"',
                              '        self.waarde.lengte.definition = "De totale lengte in meter van de buis tussen opwaartse en afwaartse put."',
                              '        self.waarde.lengte.constraints = ""',
                              '        self.waarde.lengte.usagenote = ""',
@@ -253,7 +253,7 @@ class AbstractDatatypeCreatorTests(unittest.TestCase):
         expectedDatablock = ['        self.waarde.gemeente = KeuzelijstField(naam="gemeente",',
                              '                                               label="gemeente",',
                              '                                               lijst=KlAlgGemeente(),',
-                             '                                               uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAdres.gemeente",',
+                             '                                               objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAdres.gemeente",',
                              '                                               definition="De bestuurlijke eenheid waarin het adres gelegen is.",',
                              '                                               constraints="",',
                              '                                               usagenote="",',
@@ -276,7 +276,7 @@ class AbstractDatatypeCreatorTests(unittest.TestCase):
                              '        """Adres dat men kan aanschrijven of bezoeken."""',
                              '        self.waarde.adres.naam = "adres"',
                              '        self.waarde.adres.label = "adres"',
-                             '        self.waarde.adres.uri = "https://schema.org/ContactPoint.adres"',
+                             '        self.waarde.adres.objectUri = "https://schema.org/ContactPoint.adres"',
                              '        self.waarde.adres.definition = "Adres dat men kan aanschrijven of bezoeken."',
                              '        self.waarde.adres.constraints = ""',
                              '        self.waarde.adres.usagenote = ""',
@@ -297,7 +297,7 @@ class AbstractDatatypeCreatorTests(unittest.TestCase):
         expectedDatablock = ['        beschikbaarheidField = DtcOpeningsurenSpecificatie()',
                              '        beschikbaarheidField.naam = "beschikbaarheid"',
                              '        beschikbaarheidField.label = "beschikbaarheid"',
-                             '        beschikbaarheidField.uri = "https://schema.org/ContactPoint.beschikbaarheid"',
+                             '        beschikbaarheidField.objectUri = "https://schema.org/ContactPoint.beschikbaarheid"',
                              '        beschikbaarheidField.definition = "Periode waarin contact kan worden opgenomen."',
                              '        beschikbaarheidField.constraints = ""',
                              '        beschikbaarheidField.usagenote = ""',
@@ -320,7 +320,7 @@ class AbstractDatatypeCreatorTests(unittest.TestCase):
         expectedDatablock = ['        frequentieField = KeuzelijstField(naam="frequentie",',
                              '                                          label="frequentie",',
                              '                                          lijst=KlMaaiFrequentie(),',
-                             '                                          uri="https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#DtcMaaien.frequentie",',
+                             '                                          objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#DtcMaaien.frequentie",',
                              '                                          definition="Het aantal keer dat er gemaaid wordt per jaar.",',
                              '                                          constraints="",',
                              '                                          usagenote="",',
@@ -342,7 +342,7 @@ class AbstractDatatypeCreatorTests(unittest.TestCase):
 
         expectedDatablock = ['        emailadresField = StringField(naam="emailadres",',
                              '                                      label="emailadres",',
-                             '                                      uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcNatuurlijkPersoon.emailadres",',
+                             '                                      objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcNatuurlijkPersoon.emailadres",',
                              '                                      definition="Het emailadres.",',
                              '                                      constraints="",',
                              '                                      usagenote="",',
@@ -366,7 +366,7 @@ class AbstractDatatypeCreatorTests(unittest.TestCase):
         expectedDatablock = ['        standenField = KwantWrdInProcent()',
                              '        standenField.naam = "standen"',
                              '        standenField.label = "standen"',
-                             '        standenField.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Ventilator.standen"',
+                             '        standenField.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Ventilator.standen"',
                              '        standenField.definition = "Met de standen van de ventilator kan de draaisnelheid en soms ook de draairichting van de de bladen van de ventilator bepaald worden."',
                              '        standenField.constraints = ""',
                              '        standenField.usagenote = ""',
@@ -389,7 +389,7 @@ class AbstractDatatypeCreatorTests(unittest.TestCase):
         expectedDatablock = ['        ipAdresField = DteIPv4Adres()',
                              '        ipAdresField.naam = "ipAdres"',
                              '        ipAdresField.label = "ip adres"',
-                             '        ipAdresField.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#HardwareToegang.ipAdres"',
+                             '        ipAdresField.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#HardwareToegang.ipAdres"',
                              '        ipAdresField.definition = "Het IP-adres van de hardware."',
                              '        ipAdresField.constraints = ""',
                              '        ipAdresField.usagenote = ""',

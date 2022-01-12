@@ -18,7 +18,7 @@ class VRIVirtueleDetectiezone(Detectielus):
         self.functie = KeuzelijstField(naam="functie",
                                        label="functie",
                                        lijst=KlVriLusFunctie(),
-                                       uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#VRIVirtueleDetectiezone.functie",
+                                       objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#VRIVirtueleDetectiezone.functie",
                                        definition="Functie van de VRI detectiezone.",
                                        constraints="",
                                        usagenote="",

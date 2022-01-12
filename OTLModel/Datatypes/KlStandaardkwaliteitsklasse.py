@@ -9,7 +9,7 @@ class KlStandaardkwaliteitsklasse(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlStandaardkwaliteitsklasse",
                          label="Standaardkwaliteitsklasse",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlStandaardkwaliteitsklasse",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlStandaardkwaliteitsklasse",
                          definition="De mogelijke tandaardkwaliteitsklassen.",
                          usagenote="",
                          deprecated_version="",

@@ -9,7 +9,7 @@ class KlKopmuurMateriaal(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlKopmuurMateriaal",
                          label="Kopmuur materiaal",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlKopmuurMateriaal",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlKopmuurMateriaal",
                          definition="Materialen van de kopmuur.",
                          usagenote="",
                          deprecated_version="",

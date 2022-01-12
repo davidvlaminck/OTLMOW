@@ -11,7 +11,7 @@ class KwantWrdInCelsius(KwantWrd):
     def __init__(self, waarde=None):
         self.eenheid = LiteralField(naam="standaardEenheid",
                                     label="standaard eenheid",
-                                    uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInCelsius.standaardEenheid",
+                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInCelsius.standaardEenheid",
                                     definition="De standaard eenheid bij dit datatype is uitgedrukt in celsius.",
                                     constraints='"Cel"^^cdt:ucumunit',
                                     usagenote='"Cel"^^cdt:ucumunit',
@@ -21,7 +21,7 @@ class KwantWrdInCelsius(KwantWrd):
 
         self.waardeVeld = DecimalFloatField(naam="waarde",
                                             label="waarde",
-                                            uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInCelsius.waarde",
+                                            objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInCelsius.waarde",
                                             definition="Bevat een getal die bij het datatype hoort.",
                                             constraints="",
                                             usagenote="",
@@ -30,7 +30,7 @@ class KwantWrdInCelsius(KwantWrd):
 
         super().__init__(naam="KwantWrdInCelsius",
                          label="Kwantitatieve waarde in Celsius",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInCelsius",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInCelsius",
                          definition="Een kwantitatieve waarde die een getal in graden celsius uitdrukt.",
                          usagenote="",
                          deprecated_version="",

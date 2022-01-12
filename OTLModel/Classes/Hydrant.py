@@ -20,7 +20,7 @@ class Hydrant(Brandvoorziening):
         """Diameter van het aftappunt."""
         self.diameter.naam = "diameter"
         self.diameter.label = "diameter"
-        self.diameter.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Hydrant.diameter"
+        self.diameter.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Hydrant.diameter"
         self.diameter.definition = "Diameter van het aftappunt."
         self.diameter.constraints = ""
         self.diameter.usagenote = ""
@@ -28,7 +28,7 @@ class Hydrant(Brandvoorziening):
 
         self.heeftEigenAfsluitkraan = BooleanField(naam="heeftEigenAfsluitkraan",
                                                    label="heeft eigen afsluitkraan",
-                                                   uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Hydrant.heeftEigenAfsluitkraan",
+                                                   objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Hydrant.heeftEigenAfsluitkraan",
                                                    definition="Geeft aan of de hydrant ter plaatse kan afgesloten/opengezet kan worden.",
                                                    constraints="",
                                                    usagenote="",
@@ -37,7 +37,7 @@ class Hydrant(Brandvoorziening):
 
         self.heeftIsolatie = BooleanField(naam="heeftIsolatie",
                                           label="heeft isolatie",
-                                          uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Hydrant.heeftIsolatie",
+                                          objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Hydrant.heeftIsolatie",
                                           definition="Geeft aan of de hydrant voorzien is van eigen isolatie.",
                                           constraints="",
                                           usagenote="",
@@ -47,7 +47,7 @@ class Hydrant(Brandvoorziening):
         self.koppeling = KeuzelijstField(naam="koppeling",
                                          label="koppeling",
                                          lijst=KlHydrantKoppeling(),
-                                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Hydrant.koppeling",
+                                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Hydrant.koppeling",
                                          definition="Aard van de koppeling voor aansluiting van een aftapping.",
                                          constraints="",
                                          usagenote="",

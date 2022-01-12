@@ -9,7 +9,7 @@ class KlMeetmicrofoonMerk(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlMeetmicrofoonMerk",
                          label="Meetmicrofoon merk",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlMeetmicrofoonMerk",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlMeetmicrofoonMerk",
                          definition="Het merk van de meetmicrofoon.",
                          usagenote="",
                          deprecated_version="",

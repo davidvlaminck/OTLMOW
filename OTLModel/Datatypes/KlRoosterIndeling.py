@@ -9,7 +9,7 @@ class KlRoosterIndeling(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlRoosterIndeling",
                          label="Rooster indeling",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlRoosterIndeling",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlRoosterIndeling",
                          definition="Deze keuzelijst geeft aan hoe het rooster ingedeeld is: met zijdelingse opvang of dat er sprake is van een 1-delig of 2-delig rooster.",
                          usagenote="",
                          deprecated_version="",

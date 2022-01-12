@@ -21,7 +21,7 @@ class Kantopsluiting(LijnvormigElement):
 
         self.isGeprefabriceerd = BooleanField(naam="isGeprefabriceerd",
                                               label="is geprefabriceerd",
-                                              uri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Kantopsluiting.isGeprefabriceerd",
+                                              objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Kantopsluiting.isGeprefabriceerd",
                                               definition="Aanduiding of de kantopsluiting al dan niet is geprefabriceerd.",
                                               constraints="",
                                               usagenote="",
@@ -31,7 +31,7 @@ class Kantopsluiting(LijnvormigElement):
         self.kleur = KeuzelijstField(naam="kleur",
                                      label="kleur",
                                      lijst=KlLEKantopsluitingKleur(),
-                                     uri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Kantopsluiting.kleur",
+                                     objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Kantopsluiting.kleur",
                                      definition="De kleur van kantopsluiting.",
                                      constraints="",
                                      usagenote="",
@@ -41,7 +41,7 @@ class Kantopsluiting(LijnvormigElement):
         self.soort = KeuzelijstField(naam="soort",
                                      label="soort",
                                      lijst=KlLEKantopsluitingSoort(),
-                                     uri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Kantopsluiting.soort",
+                                     objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Kantopsluiting.soort",
                                      definition="De soort van kantopsluiting.",
                                      constraints="",
                                      usagenote="",
@@ -52,7 +52,7 @@ class Kantopsluiting(LijnvormigElement):
         """De totale lengte van de geplaatste constructie van kantopsluitingen in meter."""
         self.totaleLengte.naam = "totaleLengte"
         self.totaleLengte.label = "lengte"
-        self.totaleLengte.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Kantopsluiting.totaleLengte"
+        self.totaleLengte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Kantopsluiting.totaleLengte"
         self.totaleLengte.definition = "De totale lengte van de geplaatste constructie van kantopsluitingen in meter."
         self.totaleLengte.constraints = ""
         self.totaleLengte.usagenote = ""

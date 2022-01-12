@@ -17,7 +17,7 @@ class Draineerbuis(Buis):
 
         self.heeftDrainbrug = BooleanField(naam="heeftDrainbrug",
                                            label="heeft drainbrug",
-                                           uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Draineerbuis.heeftDrainbrug",
+                                           objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Draineerbuis.heeftDrainbrug",
                                            definition="Aanduiding of er al dan niet een profiel onderaan de draineerbuis aanwezig is om zettingen te vermijden.",
                                            constraints="",
                                            usagenote="",
@@ -27,7 +27,7 @@ class Draineerbuis(Buis):
         self.materiaal = KeuzelijstField(naam="materiaal",
                                          label="materiaal",
                                          lijst=KlDraineerbuisMateriaal(),
-                                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Draineerbuis.materiaal",
+                                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Draineerbuis.materiaal",
                                          definition="Bepaalt het materiaal van de draineerbuis.",
                                          constraints="",
                                          usagenote="",

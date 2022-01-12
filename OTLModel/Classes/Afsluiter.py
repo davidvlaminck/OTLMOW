@@ -21,7 +21,7 @@ class Afsluiter(LinkendElement):
         """De afstand tussen het vloeipeil van de opening en de laagste positie van de schuif."""
         self.actueleHoogte.naam = "actueleHoogte"
         self.actueleHoogte.label = "actuele hoogte"
-        self.actueleHoogte.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Afsluiter.actueleHoogte"
+        self.actueleHoogte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Afsluiter.actueleHoogte"
         self.actueleHoogte.definition = "De afstand tussen het vloeipeil van de opening en de laagste positie van de schuif."
         self.actueleHoogte.constraints = ""
         self.actueleHoogte.usagenote = ""
@@ -31,7 +31,7 @@ class Afsluiter(LinkendElement):
         """De afstand tussen de uiterste zijden van de afsluiter in millimeter."""
         self.breedte.naam = "breedte"
         self.breedte.label = "breedte"
-        self.breedte.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Afsluiter.breedte"
+        self.breedte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Afsluiter.breedte"
         self.breedte.definition = "De afstand tussen de uiterste zijden van de afsluiter in millimeter."
         self.breedte.constraints = ""
         self.breedte.usagenote = ""
@@ -41,7 +41,7 @@ class Afsluiter(LinkendElement):
         """De afstand tussen het hoogste en laagste punt van de afsluiter met uitzondering van de spindel in millimeter."""
         self.hoogte.naam = "hoogte"
         self.hoogte.label = "hoogte"
-        self.hoogte.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Afsluiter.hoogte"
+        self.hoogte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Afsluiter.hoogte"
         self.hoogte.definition = "De afstand tussen het hoogste en laagste punt van de afsluiter met uitzondering van de spindel in millimeter."
         self.hoogte.constraints = ""
         self.hoogte.usagenote = ""
@@ -50,7 +50,7 @@ class Afsluiter(LinkendElement):
         self.materiaal = KeuzelijstField(naam="materiaal",
                                          label="materiaal",
                                          lijst=KlTsklepAfsluiterMateriaal(),
-                                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Afsluiter.materiaal",
+                                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Afsluiter.materiaal",
                                          definition="Materiaal waaruit de afsluiter is vervaardigd.",
                                          constraints="",
                                          usagenote="",
@@ -61,7 +61,7 @@ class Afsluiter(LinkendElement):
         """BOK-peil in meter-TAW van de onderkant van de doorlaat van de afsluiter."""
         self.peil.naam = "peil"
         self.peil.label = "peil"
-        self.peil.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Afsluiter.peil"
+        self.peil.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Afsluiter.peil"
         self.peil.definition = "BOK-peil in meter-TAW van de onderkant van de doorlaat van de afsluiter."
         self.peil.constraints = ""
         self.peil.usagenote = ""
@@ -70,7 +70,7 @@ class Afsluiter(LinkendElement):
         self.type = KeuzelijstField(naam="type",
                                     label="type",
                                     lijst=KlAfsluiterType(),
-                                    uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Afsluiter.type",
+                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Afsluiter.type",
                                     definition="Bepaalt het type van de afsluiter.",
                                     constraints="",
                                     usagenote="",

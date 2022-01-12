@@ -9,7 +9,7 @@ class KlVRBAZMerk(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlVRBAZMerk",
                          label="VR-BAZ merk",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlVRBAZMerk",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlVRBAZMerk",
                          definition="Keuzelijst met merknamen voor VRBAZ.",
                          usagenote="",
                          deprecated_version="",

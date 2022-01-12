@@ -17,7 +17,7 @@ class IndoorKast(Kast):
         mplanField = DtcDocument()
         mplanField.naam = "mplan"
         mplanField.label = "m-plan"
-        mplanField.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#IndoorKast.mplan"
+        mplanField.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#IndoorKast.mplan"
         mplanField.definition = "Mechanisch plan van de volledige installatie. Er wordt 1 plan toegevoegd per installatie/techniek die op de kast is aangesloten."
         mplanField.constraints = ""
         mplanField.usagenote = "Bestanden van het type dwg of pdf."

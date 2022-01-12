@@ -9,7 +9,7 @@ class KlEnergiemeterDNBMeteropnameFrequentie(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlEnergiemeterDNBMeteropnameFrequentie",
                          label="Energiemeter DNB meteropname frequentie",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlEnergiemeterDNBMeteropnameFrequentie",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlEnergiemeterDNBMeteropnameFrequentie",
                          definition="Frequentie waarmee de meterstand opgenomen wordt door de netbeheerder.",
                          usagenote="",
                          deprecated_version="",

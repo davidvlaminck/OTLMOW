@@ -11,7 +11,7 @@ class KwantWrdInPromille(KwantWrd):
     def __init__(self, waarde=None):
         self.eenheid = LiteralField(naam="standaardEenheid",
                                     label="standaard eenheid",
-                                    uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInPromille.standaardEenheid",
+                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInPromille.standaardEenheid",
                                     definition="De standaard eenheid bij dit datatype is uitgedrukt in promille.",
                                     constraints='"‰"^^cdt:ucumunit',
                                     usagenote='"‰"^^cdt:ucumunit',
@@ -21,7 +21,7 @@ class KwantWrdInPromille(KwantWrd):
 
         self.waardeVeld = DecimalFloatField(naam="waarde",
                                             label="waarde",
-                                            uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInPromille.waarde",
+                                            objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInPromille.waarde",
                                             definition="Bevat een getal die bij het datatype hoort.",
                                             constraints="",
                                             usagenote="",
@@ -30,7 +30,7 @@ class KwantWrdInPromille(KwantWrd):
 
         super().__init__(naam="KwantWrdInPromille",
                          label="Kwantitatieve waarde in promille",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInPromille",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInPromille",
                          definition="Een kwantitatieve waarde die een getal in promille uitdrukt.",
                          usagenote="",
                          deprecated_version="",

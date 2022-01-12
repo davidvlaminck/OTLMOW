@@ -25,7 +25,7 @@ class SteunStandaard(AIMNaamObject, EMDraagconstructie):
         self.beschermlaag = KeuzelijstField(naam="beschermlaag",
                                             label="beschermlaag",
                                             lijst=KlDraagConstrBeschermlaag(),
-                                            uri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#SteunStandaard.beschermlaag",
+                                            objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#SteunStandaard.beschermlaag",
                                             definition="Type bescherming van de steun, bv. geschilderd of gegalvaniseerd.",
                                             constraints="",
                                             usagenote="",
@@ -35,7 +35,7 @@ class SteunStandaard(AIMNaamObject, EMDraagconstructie):
         self.bijzonderTransport = KeuzelijstField(naam="bijzonderTransport",
                                                   label="bijzonder transport",
                                                   lijst=KlDraagConstrBijzondertransport(),
-                                                  uri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#SteunStandaard.bijzonderTransport",
+                                                  objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#SteunStandaard.bijzonderTransport",
                                                   definition="Wijze waarop het object eventueel geschikt is om bijzonder transport mogelijk te maken.",
                                                   constraints="",
                                                   usagenote="",
@@ -44,7 +44,7 @@ class SteunStandaard(AIMNaamObject, EMDraagconstructie):
 
         self.fabrikant = StringField(naam="fabrikant",
                                      label="fabrikant",
-                                     uri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#SteunStandaard.fabrikant",
+                                     objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#SteunStandaard.fabrikant",
                                      definition="De fabrikant van de steun.",
                                      constraints="",
                                      usagenote="",
@@ -55,7 +55,7 @@ class SteunStandaard(AIMNaamObject, EMDraagconstructie):
         """Hoogte (in meter) van de bovenkant van de steun."""
         self.hoogteBovenkant.naam = "hoogteBovenkant"
         self.hoogteBovenkant.label = "hoogte bovenkant"
-        self.hoogteBovenkant.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#SteunStandaard.hoogteBovenkant"
+        self.hoogteBovenkant.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#SteunStandaard.hoogteBovenkant"
         self.hoogteBovenkant.definition = "Hoogte (in meter) van de bovenkant van de steun."
         self.hoogteBovenkant.constraints = ""
         self.hoogteBovenkant.usagenote = ""
@@ -65,7 +65,7 @@ class SteunStandaard(AIMNaamObject, EMDraagconstructie):
         """De RAL kleur van het uitwendig zichtbare gedeelte."""
         self.kleur.naam = "kleur"
         self.kleur.label = "kleur"
-        self.kleur.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#SteunStandaard.kleur"
+        self.kleur.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#SteunStandaard.kleur"
         self.kleur.definition = "De RAL kleur van het uitwendig zichtbare gedeelte."
         self.kleur.constraints = ""
         self.kleur.usagenote = ""

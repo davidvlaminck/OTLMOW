@@ -9,7 +9,7 @@ class KlAIMToestand(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlAIMToestand",
                          label="AIM toestand",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KlAIMToestand",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KlAIMToestand",
                          definition="Keuzelijst met fasen uit de levenscyclus van een object om de toestand op een moment mee vast te leggen.",
                          usagenote="",
                          deprecated_version="",

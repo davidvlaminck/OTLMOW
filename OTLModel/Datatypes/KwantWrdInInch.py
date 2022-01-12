@@ -11,7 +11,7 @@ class KwantWrdInInch(KwantWrd):
     def __init__(self, waarde=None):
         self.eenheid = LiteralField(naam="standaardEenheid",
                                     label="standaard eenheid",
-                                    uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInInch.standaardEenheid",
+                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInInch.standaardEenheid",
                                     definition="De standaard eenheid bij dit datatype is uitgedrukt in inch als internationale eenheid (eengemaakte Britse en Amerikaanse systeem).",
                                     constraints='"[in_i]"^^cdt:ucumunit',
                                     usagenote='"[in_i]"^^cdt:ucumunit',
@@ -21,7 +21,7 @@ class KwantWrdInInch(KwantWrd):
 
         self.waardeVeld = DecimalFloatField(naam="waarde",
                                             label="waarde",
-                                            uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInInch.waarde",
+                                            objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInInch.waarde",
                                             definition="Bevat een getal die bij het datatype hoort.",
                                             constraints="",
                                             usagenote="",
@@ -30,7 +30,7 @@ class KwantWrdInInch(KwantWrd):
 
         super().__init__(naam="KwantWrdInInch",
                          label="Kwantitatieve waarde in inch",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInInch",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInInch",
                          definition="Een kwantitatieve waarde die een getal in inches uitdrukt.",
                          usagenote="",
                          deprecated_version="",

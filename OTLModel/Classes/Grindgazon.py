@@ -15,7 +15,7 @@ class Grindgazon(BegroeidVoorkomen):
 
         self.isTweelaags = BooleanField(naam="isTweelaags",
                                         label="is tweelaags",
-                                        uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Grindgazon.isTweelaags",
+                                        objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Grindgazon.isTweelaags",
                                         definition="Geeft aan of het grindgazon tweelaags of éénlaags is.",
                                         constraints="",
                                         usagenote="",

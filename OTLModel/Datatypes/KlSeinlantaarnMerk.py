@@ -9,7 +9,7 @@ class KlSeinlantaarnMerk(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlSeinlantaarnMerk",
                          label="seinlantaarn merk",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#KlSeinlantaarnMerk",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#KlSeinlantaarnMerk",
                          definition="Keuzelijst met merknamen voor Seinlantaarn.",
                          usagenote="",
                          deprecated_version="",

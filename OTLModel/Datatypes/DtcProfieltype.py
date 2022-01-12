@@ -12,7 +12,7 @@ class DtcProfieltype(ComplexField):
     def __init__(self):
         super().__init__(naam="DtcProfieltype",
                          label="Profieltype",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcProfieltype",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcProfieltype",
                          definition="Complex datatype om de hoogtemaat en de soort van het profiel in te geven.",
                          usagenote="",
                          deprecated_version="")
@@ -20,7 +20,7 @@ class DtcProfieltype(ComplexField):
         self.waarde.profielhoogtemaat = KeuzelijstField(naam="profielhoogtemaat",
                                                         label="profielhoogtemaat",
                                                         lijst=KlProfielhoogtemaat(),
-                                                        uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcProfieltype.profielhoogtemaat",
+                                                        objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcProfieltype.profielhoogtemaat",
                                                         definition="Voorgedefinieerde hoogtemaat van een profiel.",
                                                         constraints="",
                                                         usagenote="",
@@ -31,7 +31,7 @@ class DtcProfieltype(ComplexField):
         self.waarde.profielsoort = KeuzelijstField(naam="profielsoort",
                                                    label="profielsoort",
                                                    lijst=KlProfielsoort(),
-                                                   uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcProfieltype.profielsoort",
+                                                   objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcProfieltype.profielsoort",
                                                    definition="Het type profiel (de meest genormeerde types).",
                                                    constraints="",
                                                    usagenote="",

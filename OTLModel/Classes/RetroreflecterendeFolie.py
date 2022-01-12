@@ -17,7 +17,7 @@ class RetroreflecterendeFolie(AIMObject):
         self.folietype = KeuzelijstField(naam="folietype",
                                          label="folietype",
                                          lijst=KlFolieType(),
-                                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#RetroreflecterendeFolie.folietype",
+                                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#RetroreflecterendeFolie.folietype",
                                          definition="Het type folie dat bevestigd is aan het retroreflecterend verkeersbord.",
                                          constraints="",
                                          usagenote="",

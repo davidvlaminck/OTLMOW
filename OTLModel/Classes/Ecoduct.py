@@ -17,7 +17,7 @@ class Ecoduct(AIMObject):
         self.type = KeuzelijstField(naam="type",
                                     label="type",
                                     lijst=KlEcoEcoductType(),
-                                    uri="https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Ecoduct.type",
+                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Ecoduct.type",
                                     definition="Het type van ecoduct, zoals bv ecoveloduct, bermbrug,….",
                                     constraints="",
                                     usagenote="",

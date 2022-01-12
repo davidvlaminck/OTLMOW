@@ -9,7 +9,7 @@ class KlAudioversterkerModelnaam(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlAudioversterkerModelnaam",
                          label="Audioversterker modelnaam",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlAudioversterkerModelnaam",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlAudioversterkerModelnaam",
                          definition="De modelnaam van de audioversterker.",
                          usagenote="",
                          deprecated_version="",

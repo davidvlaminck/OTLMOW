@@ -4,9 +4,9 @@ from OTLModel.Datatypes.OTLField import OTLField
 
 
 class KeuzelijstField(OTLField):
-    def __init__(self, lijst: Keuzelijst, naam, label, uri, definition, constraints, usagenote, deprecated_version, overerving=None,
+    def __init__(self, lijst: Keuzelijst, naam, label, objectUri, definition, constraints, usagenote, deprecated_version, overerving=None,
                  readonly=False, readonlyValue=None):
-        super().__init__(naam, label, uri, definition, constraints, usagenote, deprecated_version, readonly, readonlyValue)
+        super().__init__(naam, label, objectUri, definition, constraints, usagenote, deprecated_version, readonly, readonlyValue)
         self.lijst = lijst
         self.overerving = overerving
         self.waarde = None

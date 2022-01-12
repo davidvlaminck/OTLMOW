@@ -10,7 +10,7 @@ class DtcAfmetingBxlxhInCm(ComplexField):
     def __init__(self):
         super().__init__(naam="DtcAfmetingBxlxhInCm",
                          label="Afmeting bxlxh in centimeter",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAfmetingBxlxhInCm",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAfmetingBxlxhInCm",
                          definition="Complex datatype voor de afmeting van de breedte,de lengte en hoogte in centimeter.",
                          usagenote="",
                          deprecated_version="")
@@ -19,7 +19,7 @@ class DtcAfmetingBxlxhInCm(ComplexField):
         """De breedte in centimeter."""
         self.waarde.breedte.naam = "breedte"
         self.waarde.breedte.label = "breedte"
-        self.waarde.breedte.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAfmetingBxlxhInCm.breedte"
+        self.waarde.breedte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAfmetingBxlxhInCm.breedte"
         self.waarde.breedte.definition = "De breedte in centimeter."
         self.waarde.breedte.constraints = ""
         self.waarde.breedte.usagenote = ""
@@ -30,7 +30,7 @@ class DtcAfmetingBxlxhInCm(ComplexField):
         """De hoogte in centimeter."""
         self.waarde.hoogte.naam = "hoogte"
         self.waarde.hoogte.label = "hoogte"
-        self.waarde.hoogte.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAfmetingBxlxhInCm.hoogte"
+        self.waarde.hoogte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAfmetingBxlxhInCm.hoogte"
         self.waarde.hoogte.definition = "De hoogte in centimeter."
         self.waarde.hoogte.constraints = ""
         self.waarde.hoogte.usagenote = ""
@@ -41,7 +41,7 @@ class DtcAfmetingBxlxhInCm(ComplexField):
         """De lengte in centimeter."""
         self.waarde.lengte.naam = "lengte"
         self.waarde.lengte.label = "lengte"
-        self.waarde.lengte.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAfmetingBxlxhInCm.lengte"
+        self.waarde.lengte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAfmetingBxlxhInCm.lengte"
         self.waarde.lengte.definition = "De lengte in centimeter."
         self.waarde.lengte.constraints = ""
         self.waarde.lengte.usagenote = ""

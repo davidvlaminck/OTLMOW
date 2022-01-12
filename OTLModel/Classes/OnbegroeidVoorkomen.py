@@ -17,7 +17,7 @@ class OnbegroeidVoorkomen(AndereVerharding):
         self.type = KeuzelijstField(naam="type",
                                     label="type",
                                     lijst=KlOnbegroeidVoorkomenType(),
-                                    uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#OnbegroeidVoorkomen.type",
+                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#OnbegroeidVoorkomen.type",
                                     definition="Type van onbegroeid voorkomen.",
                                     constraints="",
                                     usagenote="",

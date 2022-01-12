@@ -9,7 +9,7 @@ class KlWvLichtmastArmlengte(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlWvLichtmastArmlengte",
                          label="WV-mast armlengte",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlWvLichtmastArmlengte",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlWvLichtmastArmlengte",
                          definition="Lengte van de arm van de lichtmast in meter.",
                          usagenote="",
                          deprecated_version="",

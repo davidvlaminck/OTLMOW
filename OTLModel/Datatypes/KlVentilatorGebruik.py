@@ -9,7 +9,7 @@ class KlVentilatorGebruik(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlVentilatorGebruik",
                          label="Gebruikstypes ventilator",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlVentilatorGebruik",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlVentilatorGebruik",
                          definition="Keuzelijst die de types van gebruik voor de ventilator aangeeft.",
                          usagenote="",
                          deprecated_version="",

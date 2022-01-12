@@ -12,7 +12,7 @@ class DtcSupplementenCBV(ComplexField):
     def __init__(self):
         super().__init__(naam="DtcSupplementenCBV",
                          label="Supplementen CBV",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcSupplementenCBV",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcSupplementenCBV",
                          definition="Complex datatype voor de supplementen van de CBV.",
                          usagenote="",
                          deprecated_version="")
@@ -20,7 +20,7 @@ class DtcSupplementenCBV(ComplexField):
         self.waarde.kleur = KeuzelijstField(naam="kleur",
                                             label="kleur",
                                             lijst=KlKleurSupp(),
-                                            uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcSupplementenCBV.kleur",
+                                            objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcSupplementenCBV.kleur",
                                             definition="De kleur van de supplementen toegevoegd aan de verharding.",
                                             constraints="",
                                             usagenote="",
@@ -31,7 +31,7 @@ class DtcSupplementenCBV(ComplexField):
         self.waarde.type = KeuzelijstField(naam="type",
                                            label="type",
                                            lijst=KlTypeSuppCBV(),
-                                           uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcSupplementenCBV.type",
+                                           objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcSupplementenCBV.type",
                                            definition="Het type van de supplementen toegevoegd aan de verharding.",
                                            constraints="",
                                            usagenote="",

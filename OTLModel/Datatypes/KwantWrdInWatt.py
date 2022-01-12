@@ -11,7 +11,7 @@ class KwantWrdInWatt(KwantWrd):
     def __init__(self, waarde=None):
         self.eenheid = LiteralField(naam="standaardEenheid",
                                     label="standaard eenheid",
-                                    uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInWatt.standaardEenheid",
+                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInWatt.standaardEenheid",
                                     definition="De standaard eenheid bij dit datatype is uitgedrukt in Watt.",
                                     constraints='"W"^^cdt:ucumunit',
                                     usagenote='"W"^^cdt:ucumunit',
@@ -21,7 +21,7 @@ class KwantWrdInWatt(KwantWrd):
 
         self.waardeVeld = DecimalFloatField(naam="waarde",
                                             label="waarde",
-                                            uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInWatt.waarde",
+                                            objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInWatt.waarde",
                                             definition="Bevat een getal die bij het datatype hoort.",
                                             constraints="",
                                             usagenote="",
@@ -30,7 +30,7 @@ class KwantWrdInWatt(KwantWrd):
 
         super().__init__(naam="KwantWrdInWatt",
                          label="Kwantitatieve waarde in watt",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInWatt",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInWatt",
                          definition="Een kwantitatieve waarde die een getal in watt uitdrukt.",
                          usagenote="",
                          deprecated_version="",

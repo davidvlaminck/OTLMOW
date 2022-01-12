@@ -17,7 +17,7 @@ class ProefKorrelverdeling(Proef):
         """Het resultaat van de test van de gemeten korrelverdeling in de BV laag."""
         self.korrelverdeling.naam = "korrelverdeling"
         self.korrelverdeling.label = "korrelverdeling"
-        self.korrelverdeling.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefKorrelverdeling.korrelverdeling"
+        self.korrelverdeling.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefKorrelverdeling.korrelverdeling"
         self.korrelverdeling.definition = "Het resultaat van de test van de gemeten korrelverdeling in de BV laag."
         self.korrelverdeling.constraints = ""
         self.korrelverdeling.usagenote = ""

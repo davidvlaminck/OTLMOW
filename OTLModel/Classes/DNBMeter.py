@@ -19,7 +19,7 @@ class DNBMeter(Energiemeter):
         self.meteropnameFrequentie = KeuzelijstField(naam="meteropnameFrequentie",
                                                      label="meteropname frequentie",
                                                      lijst=KlEnergiemeterDNBMeteropnameFrequentie(),
-                                                     uri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#DNBMeter.meteropnameFrequentie",
+                                                     objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#DNBMeter.meteropnameFrequentie",
                                                      definition="Frequentie waarmee de meterstand opgenomen wordt door de netbeheerder.",
                                                      constraints="",
                                                      usagenote="",

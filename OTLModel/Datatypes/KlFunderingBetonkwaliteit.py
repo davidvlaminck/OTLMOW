@@ -9,7 +9,7 @@ class KlFunderingBetonkwaliteit(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlFunderingBetonkwaliteit",
                          label="Fundering betonkwaliteit",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlFunderingBetonkwaliteit",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlFunderingBetonkwaliteit",
                          definition="Mogelijke waarden voor de betonkwaliteit van een fundering.",
                          usagenote="Klasse uit gebruik sinds versie 2.0.0",
                          deprecated_version="2.0.0",

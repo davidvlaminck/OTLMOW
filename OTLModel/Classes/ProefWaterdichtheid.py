@@ -17,7 +17,7 @@ class ProefWaterdichtheid(Proef):
         """Testresultaten van het opgemeten waterverlies van het beproefde leidingsvak."""
         self.waterdichtheid.naam = "waterdichtheid"
         self.waterdichtheid.label = "waterdichtheid"
-        self.waterdichtheid.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefWaterdichtheid.waterdichtheid"
+        self.waterdichtheid.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefWaterdichtheid.waterdichtheid"
         self.waterdichtheid.definition = "Testresultaten van het opgemeten waterverlies van het beproefde leidingsvak."
         self.waterdichtheid.constraints = ""
         self.waterdichtheid.usagenote = ""

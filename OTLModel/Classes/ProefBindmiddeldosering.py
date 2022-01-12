@@ -17,7 +17,7 @@ class ProefBindmiddeldosering(Proef):
         """Het technisch verslag van een aangewezen bindmiddeldosering."""
         self.technischVerslagBindmiddeldosering.naam = "technischVerslagBindmiddeldosering"
         self.technischVerslagBindmiddeldosering.label = "technisch verslag bindmiddeldosering"
-        self.technischVerslagBindmiddeldosering.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefBindmiddeldosering.technischVerslagBindmiddeldosering"
+        self.technischVerslagBindmiddeldosering.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefBindmiddeldosering.technischVerslagBindmiddeldosering"
         self.technischVerslagBindmiddeldosering.definition = "Het technisch verslag van een aangewezen bindmiddeldosering."
         self.technischVerslagBindmiddeldosering.constraints = ""
         self.technischVerslagBindmiddeldosering.usagenote = ""

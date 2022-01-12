@@ -21,7 +21,7 @@ class Slagboomarm(AIMObject):
         """De lengte van de slagboomarm uitgedrukt in meter."""
         self.lengteBoom.naam = "lengteBoom"
         self.lengteBoom.label = "lengte boom"
-        self.lengteBoom.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomarm.lengteBoom"
+        self.lengteBoom.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomarm.lengteBoom"
         self.lengteBoom.definition = "De lengte van de slagboomarm uitgedrukt in meter."
         self.lengteBoom.constraints = ""
         self.lengteBoom.usagenote = ""
@@ -30,7 +30,7 @@ class Slagboomarm(AIMObject):
         self.merk = KeuzelijstField(naam="merk",
                                     label="merk",
                                     lijst=KlSlagboomarmMerk(),
-                                    uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomarm.merk",
+                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomarm.merk",
                                     definition="Het merk van de slagboom installatie.",
                                     constraints="",
                                     usagenote="",
@@ -40,7 +40,7 @@ class Slagboomarm(AIMObject):
         self.modelnaam = KeuzelijstField(naam="modelnaam",
                                          label="modelnaam",
                                          lijst=KlSlagboomarmModelnaam(),
-                                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomarm.modelnaam",
+                                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomarm.modelnaam",
                                          definition="Naam van het model van de slagboominstallatie.",
                                          constraints="",
                                          usagenote="",
@@ -51,7 +51,7 @@ class Slagboomarm(AIMObject):
         """Technische fiche van de slagboominstallatie."""
         self.technischeFiche.naam = "technischeFiche"
         self.technischeFiche.label = "technische fiche"
-        self.technischeFiche.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomarm.technischeFiche"
+        self.technischeFiche.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomarm.technischeFiche"
         self.technischeFiche.definition = "Technische fiche van de slagboominstallatie."
         self.technischeFiche.constraints = ""
         self.technischeFiche.usagenote = ""

@@ -20,7 +20,7 @@ class Motorvangplank(AfschermendeConstructie):
         """De lengte van de motorvangplank in meter."""
         self.lengte.naam = "lengte"
         self.lengte.label = "lengte"
-        self.lengte.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Motorvangplank.lengte"
+        self.lengte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Motorvangplank.lengte"
         self.lengte.definition = "De lengte van de motorvangplank in meter."
         self.lengte.constraints = ""
         self.lengte.usagenote = ""
@@ -29,7 +29,7 @@ class Motorvangplank(AfschermendeConstructie):
         self.schokindexMvp = KeuzelijstField(naam="schokindexMvp",
                                              label="schokindex motorvangplank",
                                              lijst=KlLEACSchokindexMVP(),
-                                             uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Motorvangplank.schokindexMvp",
+                                             objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Motorvangplank.schokindexMvp",
                                              definition="Head injury criterium (HIC) van een motorvangplank.",
                                              constraints="",
                                              usagenote="",
@@ -39,7 +39,7 @@ class Motorvangplank(AfschermendeConstructie):
         self.snelheidsklasse = KeuzelijstField(naam="snelheidsklasse",
                                                label="snelheidsklasse",
                                                lijst=KlLEACSnelheidsklasse(),
-                                               uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Motorvangplank.snelheidsklasse",
+                                               objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Motorvangplank.snelheidsklasse",
                                                definition="De snelheid waarmee de testen uitgevoerd worden en of deze plaatsvinden op een continu of discontinu (niet in gebruik bij AWV) systeem.",
                                                constraints="",
                                                usagenote="",
@@ -50,7 +50,7 @@ class Motorvangplank(AfschermendeConstructie):
         """De afstand tussen de voorkant van het onvervormd systeem tot de maximale dynamische laterale positie van elk onderdeel van het systeem."""
         self.werkingsbreedteMvpwd.naam = "werkingsbreedteMvpwd"
         self.werkingsbreedteMvpwd.label = "werkingsbreedte mvpwd"
-        self.werkingsbreedteMvpwd.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Motorvangplank.werkingsbreedteMvpwd"
+        self.werkingsbreedteMvpwd.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Motorvangplank.werkingsbreedteMvpwd"
         self.werkingsbreedteMvpwd.definition = "De afstand tussen de voorkant van het onvervormd systeem tot de maximale dynamische laterale positie van elk onderdeel van het systeem."
         self.werkingsbreedteMvpwd.constraints = ""
         self.werkingsbreedteMvpwd.usagenote = ""

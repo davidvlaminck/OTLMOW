@@ -9,7 +9,7 @@ class KlContactpuntType(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlContactpuntType",
                          label="Contactpunt type",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlContactpuntType",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlContactpuntType",
                          definition="Keuzelijst voor types van deurcontacten volgens de gebruikte techniek.",
                          usagenote="",
                          deprecated_version="",

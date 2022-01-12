@@ -17,7 +17,7 @@ class ProefEffectiefBindmiddelgehalte(Proef):
         """Het resultaat van de test van het gemeten effectief bindmiddelgehalte in de BV laag."""
         self.effectiefBindmiddelgehalte.naam = "effectiefBindmiddelgehalte"
         self.effectiefBindmiddelgehalte.label = "effectief bindmiddelgehalte"
-        self.effectiefBindmiddelgehalte.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefEffectiefBindmiddelgehalte.effectiefBindmiddelgehalte"
+        self.effectiefBindmiddelgehalte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefEffectiefBindmiddelgehalte.effectiefBindmiddelgehalte"
         self.effectiefBindmiddelgehalte.definition = "Het resultaat van de test van het gemeten effectief bindmiddelgehalte in de BV laag."
         self.effectiefBindmiddelgehalte.constraints = ""
         self.effectiefBindmiddelgehalte.usagenote = ""

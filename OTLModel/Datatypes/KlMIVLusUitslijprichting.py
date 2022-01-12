@@ -9,7 +9,7 @@ class KlMIVLusUitslijprichting(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlMIVLusUitslijprichting",
                          label="MIV-lus uitslijprichting",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlMIVLusUitslijprichting",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlMIVLusUitslijprichting",
                          definition="De uitlopers van de lus gaan naar links of naar rechts  bekeken ten opzichte van de rijrichting.",
                          usagenote="",
                          deprecated_version="",

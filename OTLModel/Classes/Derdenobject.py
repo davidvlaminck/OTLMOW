@@ -23,7 +23,7 @@ class Derdenobject(AIMToestand, AIMDBStatus):
         """Unieke identificatie van de asset zoals toegekend door de assetbeheerder of n.a.v. eerste aanlevering door de leverancier."""
         self.assetId.naam = "assetId"
         self.assetId.label = "asset-id"
-        self.assetId.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#Derdenobject.assetId"
+        self.assetId.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#Derdenobject.assetId"
         self.assetId.definition = "Unieke identificatie van de asset zoals toegekend door de assetbeheerder of n.a.v. eerste aanlevering door de leverancier."
         self.assetId.constraints = ""
         self.assetId.usagenote = ""
@@ -31,7 +31,7 @@ class Derdenobject(AIMToestand, AIMDBStatus):
 
         self.contactgegevens = StringField(naam="contactgegevens",
                                            label="contactgegevens",
-                                           uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#Derdenobject.contactgegevens",
+                                           objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#Derdenobject.contactgegevens",
                                            definition="Naam, voornaam, telefoonnummer en/of e-mailadres van de contactpersoon.",
                                            constraints="",
                                            usagenote="",
@@ -41,7 +41,7 @@ class Derdenobject(AIMToestand, AIMDBStatus):
         fotoField = DtcDocument()
         fotoField.naam = "foto"
         fotoField.label = "foto"
-        fotoField.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#Derdenobject.foto"
+        fotoField.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#Derdenobject.foto"
         fotoField.definition = "Een foto van het derdenobject die eventuele detailinformatie weergeeft."
         fotoField.constraints = ""
         fotoField.usagenote = "Enkel bestanden die een foto zijn."
@@ -51,7 +51,7 @@ class Derdenobject(AIMToestand, AIMDBStatus):
 
         self.heeftAansluitkastGeintegreerd = BooleanField(naam="heeftAansluitkastGeintegreerd",
                                                           label="heeft aansluitkast geïntegreerd",
-                                                          uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#Derdenobject.heeftAansluitkastGeintegreerd",
+                                                          objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#Derdenobject.heeftAansluitkastGeintegreerd",
                                                           definition="Aanduiding of de aansluitkast geïntegreerd is.",
                                                           constraints="",
                                                           usagenote="",
@@ -60,7 +60,7 @@ class Derdenobject(AIMToestand, AIMDBStatus):
 
         self.omschrijving = StringField(naam="omschrijving",
                                         label="omschrijving",
-                                        uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#Derdenobject.omschrijving",
+                                        objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#Derdenobject.omschrijving",
                                         definition="Omschrijving van het derdenobject.",
                                         constraints="",
                                         usagenote="",

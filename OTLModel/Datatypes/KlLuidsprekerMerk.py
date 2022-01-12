@@ -9,7 +9,7 @@ class KlLuidsprekerMerk(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlLuidsprekerMerk",
                          label="Luidspreker merk",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlLuidsprekerMerk",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlLuidsprekerMerk",
                          definition="Het merk van de luidspreker.",
                          usagenote="",
                          deprecated_version="",

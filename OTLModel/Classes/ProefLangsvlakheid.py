@@ -17,7 +17,7 @@ class ProefLangsvlakheid(Proef):
         """Het resultaat van de meting."""
         self.langsvlakheid.naam = "langsvlakheid"
         self.langsvlakheid.label = "langsvlakheid"
-        self.langsvlakheid.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefLangsvlakheid.langsvlakheid"
+        self.langsvlakheid.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefLangsvlakheid.langsvlakheid"
         self.langsvlakheid.definition = "Het resultaat van de meting."
         self.langsvlakheid.constraints = ""
         self.langsvlakheid.usagenote = ""

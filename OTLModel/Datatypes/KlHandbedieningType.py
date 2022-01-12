@@ -9,7 +9,7 @@ class KlHandbedieningType(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlHandbedieningType",
                          label="Handbediening type",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlHandbedieningType",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlHandbedieningType",
                          definition="Types van handbediening voor toestellen bevestigd aan een kast.",
                          usagenote="",
                          deprecated_version="",

@@ -9,7 +9,7 @@ class KlAfmetingsensorMerk(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlAfmetingsensorMerk",
                          label="Afmetingsensor merk",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlAfmetingsensorMerk",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlAfmetingsensorMerk",
                          definition="Het merk van de afmetingsensor.",
                          usagenote="",
                          deprecated_version="",

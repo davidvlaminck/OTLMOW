@@ -9,7 +9,7 @@ class KlVRBatterijCUMerk(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlVRBatterijCUMerk",
                          label="Batterij CU merk",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlVRBatterijCUMerk",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlVRBatterijCUMerk",
                          definition="Keuzelijst met merknamen voor VRBatterijCU.",
                          usagenote="",
                          deprecated_version="",

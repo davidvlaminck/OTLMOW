@@ -9,7 +9,7 @@ class KlHSBeveiligingscelOverstroombeveiligingVermogenschakelaar(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlHSBeveiligingscelOverstroombeveiligingVermogenschakelaar",
                          label="HS-beveiligingscel overstroombeveiliging vermogenschakelaar",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlHSBeveiligingscelOverstroombeveiligingVermogenschakelaar",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlHSBeveiligingscelOverstroombeveiligingVermogenschakelaar",
                          definition="Directe of indirecte overstroombeveiliging van de vermogenschakelaar.",
                          usagenote="",
                          deprecated_version="",

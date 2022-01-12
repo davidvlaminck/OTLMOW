@@ -19,7 +19,7 @@ class Putbekleding(AIMObject):
         """De dikte van de bekledingslaag in millimeter."""
         self.laagdikte.naam = "laagdikte"
         self.laagdikte.label = "laagdikte"
-        self.laagdikte.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Putbekleding.laagdikte"
+        self.laagdikte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Putbekleding.laagdikte"
         self.laagdikte.definition = "De dikte van de bekledingslaag in millimeter."
         self.laagdikte.constraints = ""
         self.laagdikte.usagenote = ""
@@ -28,7 +28,7 @@ class Putbekleding(AIMObject):
         self.type = KeuzelijstField(naam="type",
                                     label="type",
                                     lijst=KlPutbekledingType(),
-                                    uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Putbekleding.type",
+                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Putbekleding.type",
                                     definition="Bepaalt het type van de putbekleding.",
                                     constraints="",
                                     usagenote="",

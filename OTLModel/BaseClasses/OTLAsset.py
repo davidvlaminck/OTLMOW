@@ -8,7 +8,7 @@ class OTLAsset(ABC):
     def __init__(self):
         self.geometry = WKTField(naam='geometry',
                                  label='geometry',
-                                 uri='https://loc.data.wegenenverkeer.be/ns/implementatieelement#Locatie.geometrie',
+                                 objectUri='https://loc.data.wegenenverkeer.be/ns/implementatieelement#Locatie.geometrie',
                                  definition='geometry voor DAVIE',
                                  constraints='',
                                  usagenote='',

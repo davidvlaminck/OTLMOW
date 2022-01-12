@@ -29,7 +29,7 @@ class AIMObject(AIMToestand, AIMDBStatus, OTLAsset, RelatieInteractor):
         """Unieke identificatie van de asset zoals toegekend door de assetbeheerder of n.a.v. eerste aanlevering door de leverancier."""
         self.assetId.naam = "assetId"
         self.assetId.label = "asset-id"
-        self.assetId.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMObject.assetId"
+        self.assetId.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMObject.assetId"
         self.assetId.definition = "Unieke identificatie van de asset zoals toegekend door de assetbeheerder of n.a.v. eerste aanlevering door de leverancier."
         self.assetId.constraints = ""
         self.assetId.usagenote = ""
@@ -37,7 +37,7 @@ class AIMObject(AIMToestand, AIMDBStatus, OTLAsset, RelatieInteractor):
 
         bestekPostNummerField = StringField(naam="bestekPostNummer",
                                             label="bestekpostnummer",
-                                            uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMObject.bestekPostNummer",
+                                            objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMObject.bestekPostNummer",
                                             definition="Een verwijzing naar een postnummer uit het specifieke bestek waar het object mee verband houdt.",
                                             constraints="",
                                             usagenote="",
@@ -47,7 +47,7 @@ class AIMObject(AIMToestand, AIMDBStatus, OTLAsset, RelatieInteractor):
 
         self.datumOprichtingObject = DateField(naam="datumOprichtingObject",
                                                label="datum oprichting object",
-                                               uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMObject.datumOprichtingObject",
+                                               objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMObject.datumOprichtingObject",
                                                definition="Datum van de oprichting van het object.",
                                                constraints="",
                                                usagenote="",
@@ -56,7 +56,7 @@ class AIMObject(AIMToestand, AIMDBStatus, OTLAsset, RelatieInteractor):
 
         self.notitie = StringField(naam="notitie",
                                    label="notitie",
-                                   uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMObject.notitie",
+                                   objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMObject.notitie",
                                    definition="Extra notitie voor het object.",
                                    constraints="",
                                    usagenote="",
@@ -65,7 +65,7 @@ class AIMObject(AIMToestand, AIMDBStatus, OTLAsset, RelatieInteractor):
 
         standaardBestekPostNummerField = StringField(naam="standaardBestekPostNummer",
                                                      label="standaardbestekpostnummer",
-                                                     uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMObject.standaardBestekPostNummer",
+                                                     objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMObject.standaardBestekPostNummer",
                                                      definition="Een verwijzing naar een postnummer uit het standaardbestek waar het object mee verband houdt. De notatie van het postnummer moet overeenkomen met de notatie die gebruikt is in de catalogi van standaardbestekken, bijvoorbeeld postnummer 0701.20404G.",
                                                      constraints="",
                                                      usagenote="",
@@ -77,7 +77,7 @@ class AIMObject(AIMToestand, AIMDBStatus, OTLAsset, RelatieInteractor):
         """ De levensduur in aantal maanden die theoretisch mag verwacht worden voor een object."""
         self.theoretischeLevensduur.naam = "theoretischeLevensduur"
         self.theoretischeLevensduur.label = "theoretische levensduur"
-        self.theoretischeLevensduur.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMObject.theoretischeLevensduur"
+        self.theoretischeLevensduur.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMObject.theoretischeLevensduur"
         self.theoretischeLevensduur.definition = " De levensduur in aantal maanden die theoretisch mag verwacht worden voor een object."
         self.theoretischeLevensduur.constraints = ""
         self.theoretischeLevensduur.usagenote = ""

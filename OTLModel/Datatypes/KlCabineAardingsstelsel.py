@@ -9,7 +9,7 @@ class KlCabineAardingsstelsel(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlCabineAardingsstelsel",
                          label="Cabine aardingsstelsel",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlCabineAardingsstelsel",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlCabineAardingsstelsel",
                          definition="Lijst van mogelijke aardinggsstelsels.",
                          usagenote="",
                          deprecated_version="",

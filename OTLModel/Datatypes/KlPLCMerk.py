@@ -9,7 +9,7 @@ class KlPLCMerk(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlPLCMerk",
                          label="PLC merk",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlPLCMerk",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlPLCMerk",
                          definition="Het merk van de PLC.",
                          usagenote="",
                          deprecated_version="",

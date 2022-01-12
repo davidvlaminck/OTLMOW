@@ -17,7 +17,7 @@ class RetroReflecterendeKoker(AIMObject):
         self.folieType = KeuzelijstField(naam="folieType",
                                          label="folie type",
                                          lijst=KlRetroreflecterendeKokerFolieType(),
-                                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#RetroReflecterendeKoker.folieType",
+                                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#RetroReflecterendeKoker.folieType",
                                          definition="Een keuzelijst het folietype van reflecterende koker te bepalen.",
                                          constraints="",
                                          usagenote="",

@@ -12,7 +12,7 @@ class DtcProductidentificatiecode(ComplexField):
     def __init__(self):
         super().__init__(naam="DtcProductidentificatiecode",
                          label="Productidentificatiecode",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcProductidentificatiecode",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcProductidentificatiecode",
                          definition="Complex datatype dat alle nodige informatie van het product capteert.",
                          usagenote="",
                          deprecated_version="")
@@ -21,7 +21,7 @@ class DtcProductidentificatiecode(ComplexField):
         """Een rapport met de resultaten van de keuring."""
         self.waarde.keuringsverslag.naam = "keuringsverslag"
         self.waarde.keuringsverslag.label = "keuringsverslag"
-        self.waarde.keuringsverslag.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcProductidentificatiecode.keuringsverslag"
+        self.waarde.keuringsverslag.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcProductidentificatiecode.keuringsverslag"
         self.waarde.keuringsverslag.definition = "Een rapport met de resultaten van de keuring."
         self.waarde.keuringsverslag.constraints = ""
         self.waarde.keuringsverslag.usagenote = ""
@@ -30,7 +30,7 @@ class DtcProductidentificatiecode(ComplexField):
 
         self.waarde.linkTechnischeFiche = URIField(naam="linkTechnischeFiche",
                                                    label="link technische fiche",
-                                                   uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcProductidentificatiecode.linkTechnischeFiche",
+                                                   objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcProductidentificatiecode.linkTechnischeFiche",
                                                    definition="De link naar de technische fiche van het gerelateerd product.",
                                                    constraints="",
                                                    usagenote="",
@@ -40,7 +40,7 @@ class DtcProductidentificatiecode(ComplexField):
 
         self.waarde.producent = StringField(naam="producent",
                                             label="producent",
-                                            uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcProductidentificatiecode.producent",
+                                            objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcProductidentificatiecode.producent",
                                             definition="De gerelateerde fabrikant.",
                                             constraints="",
                                             usagenote="",
@@ -50,7 +50,7 @@ class DtcProductidentificatiecode(ComplexField):
 
         self.waarde.productidentificatiecode = StringField(naam="productidentificatiecode",
                                                            label="productidentificatiecode",
-                                                           uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcProductidentificatiecode.productidentificatiecode",
+                                                           objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcProductidentificatiecode.productidentificatiecode",
                                                            definition="De code van het gebruikte product (COPRO/BENOR).",
                                                            constraints="",
                                                            usagenote="",

@@ -21,7 +21,7 @@ class VegetatieElement(AIMObject):
         self.hoogte = KeuzelijstField(naam="hoogte",
                                       label="hoogte",
                                       lijst=KlVegetatieelementHoogte(),
-                                      uri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#VegetatieElement.hoogte",
+                                      objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#VegetatieElement.hoogte",
                                       definition="De hoogteklasse van het vegetatie-element.",
                                       constraints="",
                                       usagenote="",
@@ -30,7 +30,7 @@ class VegetatieElement(AIMObject):
 
         self.niveau = DecimalFloatField(naam="niveau",
                                         label="niveau",
-                                        uri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#VegetatieElement.niveau",
+                                        objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#VegetatieElement.niveau",
                                         definition="Het niveau waarop het object zich bevindt, relatief ten opzichte van andere objecten. Negatieve waarden worden geassocieerd met ondergronds en positieve waarden met bovengronds. Nul wordt beschouwd als een absolute waarde om het maaiveld aan te duiden.",
                                         constraints="",
                                         usagenote="",
@@ -41,7 +41,7 @@ class VegetatieElement(AIMObject):
         """Met deze eigenschap worden de Nederlandse soortnaam, wetenschappelijke soortnaam en de soortcode van de plantensoort weergegeven."""
         self.soortnaam.naam = "soortnaam"
         self.soortnaam.label = "soortnaam"
-        self.soortnaam.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#VegetatieElement.soortnaam"
+        self.soortnaam.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#VegetatieElement.soortnaam"
         self.soortnaam.definition = "Met deze eigenschap worden de Nederlandse soortnaam, wetenschappelijke soortnaam en de soortcode van de plantensoort weergegeven."
         self.soortnaam.constraints = ""
         self.soortnaam.usagenote = ""

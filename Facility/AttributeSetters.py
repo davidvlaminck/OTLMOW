@@ -74,17 +74,8 @@ class KardinaliteitFieldSetter(AbstractAttributeSetter):
         lijstValues = []
         for value_iter in valueList:
             attributeInstance = copy.deepcopy(self.attribute.fieldToMultiply)
-            if isinstance(value_iter, str):
-                attr_naam = 'fieldToMultiply'
-                attribute_setter = AttributeSetterFactory.CreateSetter(attributeInstance)
-                attribute_setter.set_attribute(value_iter)
-            elif isinstance(value_iter, dict):
-                for k, v in value_iter.items():
-                    attr_naam = k.split('.')[-1]
-                    attribute_setter = AttributeSetterFactory.CreateSetter(self.attribute, attr_naam)
-                    attribute_setter.set_attribute(v)
-            else:
-                raise NotImplementedError
+            attribute_setter = AttributeSetterFactory.CreateSetter(attributeInstance)
+            attribute_setter.set_attribute(value_iter)
             lijstValues.append(attributeInstance)
         self.attribute.waarde = lijstValues
 
@@ -92,6 +83,8 @@ class KardinaliteitFieldSetter(AbstractAttributeSetter):
 class ComplexFieldSetter(AbstractAttributeSetter):
     def __init__(self, attribute):
         self.attribute = attribute
+        if self.attribute.naam == 'externeReferentie':
+            pass
 
     def set_attribute(self, value):  # TODO write test
         for k, v in value.items():

@@ -9,7 +9,7 @@ class KlNetwerkpoortGolflengte(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlNetwerkpoortGolflengte",
                          label="Netwerkpoort golflengte",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlNetwerkpoortGolflengte",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlNetwerkpoortGolflengte",
                          definition="Lijst van mogelijke golflengten waarop een Netwerkpoort kan communiceren.",
                          usagenote="",
                          deprecated_version="",
@@ -24,6 +24,7 @@ class KlNetwerkpoortGolflengte(Keuzelijst):
         self.add_option("C1570", "C1570", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/C1570")
         self.add_option("C1590", "C1590", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/C1590")
         self.add_option("C1610", "C1610", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/C1610")
+        self.add_option("C850", "C850", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/C850")
         self.add_option("D1528.77", "D1528.77", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1528.77")
         self.add_option("D1529.16", "D1529.16", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1529.16")
         self.add_option("D1529.55", "D1529.55", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1529.55")
@@ -115,7 +116,6 @@ class KlNetwerkpoortGolflengte(Keuzelijst):
         self.add_option("D1563.86", "D1563.86", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1563.86")
         self.add_option("D1564.27", "D1564.27", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1564.27")
         self.add_option("D1564.68", "D1564.68", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1564.68")
-        self.add_option("flex", "flex", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/flex")
         self.add_option("NULL", "NULL", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/NULL")
         self.add_option("Other", "Other", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/Other")
-        self.add_option("C850", "C850", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/C850")
+        self.add_option("flex", "flex", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/flex")

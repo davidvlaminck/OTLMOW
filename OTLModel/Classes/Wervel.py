@@ -17,7 +17,7 @@ class Wervel(LinkendElement):
         """Dit is het niveau in meter-TAW van de inlaat van het wervelventiel."""
         self.peil.naam = "peil"
         self.peil.label = "peil"
-        self.peil.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Wervel.peil"
+        self.peil.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Wervel.peil"
         self.peil.definition = "Dit is het niveau in meter-TAW van de inlaat van het wervelventiel."
         self.peil.constraints = ""
         self.peil.usagenote = ""

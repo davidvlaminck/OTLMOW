@@ -17,7 +17,7 @@ class Handbediening(AIMNaamObject):
         self.type = KeuzelijstField(naam="type",
                                     label="type handbediening",
                                     lijst=KlHandbedieningType(),
-                                    uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Handbediening.type",
+                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Handbediening.type",
                                     definition="Het gebruikte type voor handbediening langs de buitenkant van een kast voor sturing van systemen binnenin.",
                                     constraints="",
                                     usagenote="",

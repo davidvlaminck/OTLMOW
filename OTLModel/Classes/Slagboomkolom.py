@@ -22,7 +22,7 @@ class Slagboomkolom(AIMObject):
         """De afmetingen van de slagboomkolom."""
         self.afmetingen.naam = "afmetingen"
         self.afmetingen.label = "afmetingen"
-        self.afmetingen.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomkolom.afmetingen"
+        self.afmetingen.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomkolom.afmetingen"
         self.afmetingen.definition = "De afmetingen van de slagboomkolom."
         self.afmetingen.constraints = ""
         self.afmetingen.usagenote = ""
@@ -30,7 +30,7 @@ class Slagboomkolom(AIMObject):
 
         self.isPivoterend = BooleanField(naam="isPivoterend",
                                          label="is pivoterend",
-                                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomkolom.isPivoterend",
+                                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomkolom.isPivoterend",
                                          definition="Attribuut waarmee kan aangegeven worden of de koker van de slagboominstallatie al dan niet pivoteert.",
                                          constraints="",
                                          usagenote="",
@@ -40,7 +40,7 @@ class Slagboomkolom(AIMObject):
         self.merk = KeuzelijstField(naam="merk",
                                     label="merk",
                                     lijst=KlSlagboomkolomMerk(),
-                                    uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomkolom.merk",
+                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomkolom.merk",
                                     definition="Het merk van de slagboom installatie.",
                                     constraints="",
                                     usagenote="",
@@ -50,7 +50,7 @@ class Slagboomkolom(AIMObject):
         self.modelnaam = KeuzelijstField(naam="modelnaam",
                                          label="modelnaam",
                                          lijst=KlSlagboomkolomModelnaam(),
-                                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomkolom.modelnaam",
+                                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomkolom.modelnaam",
                                          definition="Naam van het model van de slagboominstallatie.",
                                          constraints="",
                                          usagenote="",
@@ -61,7 +61,7 @@ class Slagboomkolom(AIMObject):
         """Technische fiche van de slagboominstallatie."""
         self.technischeFiche.naam = "technischeFiche"
         self.technischeFiche.label = "technische fiche"
-        self.technischeFiche.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomkolom.technischeFiche"
+        self.technischeFiche.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomkolom.technischeFiche"
         self.technischeFiche.definition = "Technische fiche van de slagboominstallatie."
         self.technischeFiche.constraints = ""
         self.technischeFiche.usagenote = ""

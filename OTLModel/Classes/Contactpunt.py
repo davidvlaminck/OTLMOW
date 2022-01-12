@@ -17,7 +17,7 @@ class Contactpunt(AIMObject):
         self.type = KeuzelijstField(naam="type",
                                     label="type contactpunt",
                                     lijst=KlContactpuntType(),
-                                    uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Contactpunt.type",
+                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Contactpunt.type",
                                     definition="Typering van de gebruikte techniek op basis waarvan de aan- of afwezigheid van een contact vastgesteld wordt.",
                                     constraints="",
                                     usagenote="",

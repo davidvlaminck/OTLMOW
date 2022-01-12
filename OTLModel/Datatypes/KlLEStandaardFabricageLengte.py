@@ -9,7 +9,7 @@ class KlLEStandaardFabricageLengte(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlLEStandaardFabricageLengte",
                          label="Standaard frabricage lengte",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlLEStandaardFabricageLengte",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlLEStandaardFabricageLengte",
                          definition="De lengte van de inviduele kantopsluiting volgens de norm.",
                          usagenote="",
                          deprecated_version="",

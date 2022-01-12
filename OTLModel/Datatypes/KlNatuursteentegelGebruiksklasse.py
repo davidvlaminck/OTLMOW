@@ -9,7 +9,7 @@ class KlNatuursteentegelGebruiksklasse(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlNatuursteentegelGebruiksklasse",
                          label="Natuursteentegel gebruiksklasse",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlNatuursteentegelGebruiksklasse",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlNatuursteentegelGebruiksklasse",
                          definition="Mogelijke waarden voor de gebruiksklasse, vorm en afwerking van de natuursteentegel.",
                          usagenote="",
                          deprecated_version="",

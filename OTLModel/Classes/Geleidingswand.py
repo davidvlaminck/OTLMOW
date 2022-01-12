@@ -20,7 +20,7 @@ class Geleidingswand(Geleiding):
         """De hoogte van de geleidingswand in millimeter."""
         self.hoogte.naam = "hoogte"
         self.hoogte.label = "hoogte"
-        self.hoogte.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Geleidingswand.hoogte"
+        self.hoogte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Geleidingswand.hoogte"
         self.hoogte.definition = "De hoogte van de geleidingswand in millimeter."
         self.hoogte.constraints = ""
         self.hoogte.usagenote = ""
@@ -30,7 +30,7 @@ class Geleidingswand(Geleiding):
         """De lengte van de geleidingswand in meter."""
         self.lengte.naam = "lengte"
         self.lengte.label = "lengte"
-        self.lengte.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Geleidingswand.lengte"
+        self.lengte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Geleidingswand.lengte"
         self.lengte.definition = "De lengte van de geleidingswand in meter."
         self.lengte.constraints = ""
         self.lengte.usagenote = ""
@@ -39,7 +39,7 @@ class Geleidingswand(Geleiding):
         self.materiaal = KeuzelijstField(naam="materiaal",
                                          label="materiaal",
                                          lijst=KlGeleidingMateriaal(),
-                                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Geleidingswand.materiaal",
+                                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Geleidingswand.materiaal",
                                          definition="Het materiaal van de geleiding.",
                                          constraints="",
                                          usagenote="",

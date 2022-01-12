@@ -9,7 +9,7 @@ class KlPoEInjectorModelnaam(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlPoEInjectorModelnaam",
                          label="Power over ethernet injector modelnaam",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlPoEInjectorModelnaam",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlPoEInjectorModelnaam",
                          definition="De modelnaam van de PoE-injector.",
                          usagenote="",
                          deprecated_version="",

@@ -19,7 +19,7 @@ class LaagBouwklasse(ArtificieleLaag):
         self.bouwklasse = KeuzelijstField(naam="bouwklasse",
                                           label="bouwklasse",
                                           lijst=KlAlgBouwklassegroep(),
-                                          uri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#LaagBouwklasse.bouwklasse",
+                                          objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#LaagBouwklasse.bouwklasse",
                                           definition="Een maat voor de verkeersbelasting over de volledige levensduur van de laag. De laag is ontworpen volgens de aangeduide bouwklasse.",
                                           constraints="",
                                           usagenote="",

@@ -15,7 +15,7 @@ class KantstrookAfw(AfwijkendeKantopsluiting):
 
         self.aantalRijenBetonstraatsteen = IntegerField(naam="aantalRijenBetonstraatsteen",
                                                         label="aantal rijen betonstraatsteen",
-                                                        uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KantstrookAfw.aantalRijenBetonstraatsteen",
+                                                        objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KantstrookAfw.aantalRijenBetonstraatsteen",
                                                         definition="Het aantal rijen betonstraatsteen waaruit de kantstrook is opgebouwd.",
                                                         constraints="",
                                                         usagenote="",

@@ -19,7 +19,7 @@ class Boombrug(AIMObject):
         """De hoogte van de boombrug in meter."""
         self.hoogte.naam = "hoogte"
         self.hoogte.label = "hoogte"
-        self.hoogte.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Boombrug.hoogte"
+        self.hoogte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Boombrug.hoogte"
         self.hoogte.definition = "De hoogte van de boombrug in meter."
         self.hoogte.constraints = ""
         self.hoogte.usagenote = ""
@@ -29,7 +29,7 @@ class Boombrug(AIMObject):
         """De lengte van de boombrug in meter."""
         self.lengte.naam = "lengte"
         self.lengte.label = "lengte"
-        self.lengte.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Boombrug.lengte"
+        self.lengte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Boombrug.lengte"
         self.lengte.definition = "De lengte van de boombrug in meter."
         self.lengte.constraints = ""
         self.lengte.usagenote = ""
@@ -38,7 +38,7 @@ class Boombrug(AIMObject):
         self.type = KeuzelijstField(naam="type",
                                     label="type",
                                     lijst=KlEcoBoombrugType(),
-                                    uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Boombrug.type",
+                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Boombrug.type",
                                     definition="Het type van boombrug.",
                                     constraints="",
                                     usagenote="",

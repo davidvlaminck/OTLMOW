@@ -18,7 +18,7 @@ Afhankelijk van het gekozen model kan de rechte steun bestemd zijn voor: verkeer
         self.type = KeuzelijstField(naam="type",
                                     label="type",
                                     lijst=KlRechteSteunType(),
-                                    uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#RechteSteun.type",
+                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#RechteSteun.type",
                                     definition="Het type verwijst naar de aanpassingen die gebeuren wanneer een andere techniek gebruik maakt van de rechte steun. Meestal gaat dit over een aanpassing in de lengte van het verjongde deel van de rechte steun.",
                                     constraints="",
                                     usagenote="",

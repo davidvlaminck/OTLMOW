@@ -22,7 +22,7 @@ class IntercomToestel(AIMNaamObject):
 
         self.dnsNaam = StringField(naam="dnsNaam",
                                    label="DNS naam",
-                                   uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#IntercomToestel.dnsNaam",
+                                   objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#IntercomToestel.dnsNaam",
                                    definition="De DNSNaam (ook \"volledige domein naam\" genoemd ) is een unieke naam binnen het Domain Name System (DNS), het naamgevingssysteem waarmee computers, webservers, diensten en  toepassing op een unieke manier kunnen worden geïdentificeerd. Deze bevat zowel de hostname en de top level domein naam bv. 120c8-ar1.belfa.be.",
                                    constraints="",
                                    usagenote="",
@@ -31,7 +31,7 @@ class IntercomToestel(AIMNaamObject):
 
         self.heeftVideo = BooleanField(naam="heeftVideo",
                                        label="heeft video",
-                                       uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#IntercomToestel.heeftVideo",
+                                       objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#IntercomToestel.heeftVideo",
                                        definition="Geeft aan of communicatie tussen personen al dan niet via video kan verlopen.",
                                        constraints="",
                                        usagenote="",
@@ -42,7 +42,7 @@ class IntercomToestel(AIMNaamObject):
         """Het IP-adres van het intercomtoestel."""
         self.ipAdres.naam = "ipAdres"
         self.ipAdres.label = "IP-adres"
-        self.ipAdres.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#IntercomToestel.ipAdres"
+        self.ipAdres.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#IntercomToestel.ipAdres"
         self.ipAdres.definition = "Het IP-adres van het intercomtoestel."
         self.ipAdres.constraints = ""
         self.ipAdres.usagenote = ""
@@ -51,7 +51,7 @@ class IntercomToestel(AIMNaamObject):
         self.merk = KeuzelijstField(naam="merk",
                                     label="merk",
                                     lijst=KlIntercomMerk(),
-                                    uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#IntercomToestel.merk",
+                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#IntercomToestel.merk",
                                     definition="Het merk van het intercomtoestel.",
                                     constraints="",
                                     usagenote="",
@@ -61,7 +61,7 @@ class IntercomToestel(AIMNaamObject):
         self.modelnaam = KeuzelijstField(naam="modelnaam",
                                          label="modelnaam",
                                          lijst=KlIntercomModelnaam(),
-                                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#IntercomToestel.modelnaam",
+                                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#IntercomToestel.modelnaam",
                                          definition="De modelnaam van het intercomtoestel.",
                                          constraints="",
                                          usagenote="",
@@ -72,7 +72,7 @@ class IntercomToestel(AIMNaamObject):
         """De technische fiche van het intercomtoestel."""
         self.technischeFiche.naam = "technischeFiche"
         self.technischeFiche.label = "technische fiche"
-        self.technischeFiche.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#IntercomToestel.technischeFiche"
+        self.technischeFiche.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#IntercomToestel.technischeFiche"
         self.technischeFiche.definition = "De technische fiche van het intercomtoestel."
         self.technischeFiche.constraints = ""
         self.technischeFiche.usagenote = ""
@@ -81,7 +81,7 @@ class IntercomToestel(AIMNaamObject):
         self.transportType = KeuzelijstField(naam="transportType",
                                              label="transporttype",
                                              lijst=KlAudioTransportType(),
-                                             uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#IntercomToestel.transportType",
+                                             objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#IntercomToestel.transportType",
                                              definition="Geeft het type van (video- en) audiotransport aan van het intercomtoestel binnen het intercomsysteem.",
                                              constraints="",
                                              usagenote="",

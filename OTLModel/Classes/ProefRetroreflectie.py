@@ -17,7 +17,7 @@ class ProefRetroreflectie(Proef):
         """Proef om de retroreflectie van een verkeersbord te bepalen."""
         self.retroreflectie.naam = "retroreflectie"
         self.retroreflectie.label = "retroreflectie"
-        self.retroreflectie.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefRetroreflectie.retroreflectie"
+        self.retroreflectie.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefRetroreflectie.retroreflectie"
         self.retroreflectie.definition = "Proef om de retroreflectie van een verkeersbord te bepalen."
         self.retroreflectie.constraints = ""
         self.retroreflectie.usagenote = ""

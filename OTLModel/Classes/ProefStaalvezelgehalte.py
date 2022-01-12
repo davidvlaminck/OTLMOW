@@ -17,7 +17,7 @@ class ProefStaalvezelgehalte(Proef):
         """Het resultaat van de test van het gemeten staalvezelgehalte in de BV laag."""
         self.staalvezelgehalte.naam = "staalvezelgehalte"
         self.staalvezelgehalte.label = "staalvezelgehalte"
-        self.staalvezelgehalte.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefStaalvezelgehalte.staalvezelgehalte"
+        self.staalvezelgehalte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefStaalvezelgehalte.staalvezelgehalte"
         self.staalvezelgehalte.definition = "Het resultaat van de test van het gemeten staalvezelgehalte in de BV laag."
         self.staalvezelgehalte.constraints = ""
         self.staalvezelgehalte.usagenote = ""

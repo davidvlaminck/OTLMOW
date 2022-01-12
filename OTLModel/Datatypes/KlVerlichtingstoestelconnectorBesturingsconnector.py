@@ -9,7 +9,7 @@ class KlVerlichtingstoestelconnectorBesturingsconnector(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlVerlichtingstoestelconnectorBesturingsconnector",
                          label="WV-besturingsconnector",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#KlVerlichtingstoestelconnectorBesturingsconnector",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#KlVerlichtingstoestelconnectorBesturingsconnector",
                          definition="Type van connector verwerkt in de behuizing van het verlichtingstoestel voor de aansluiting van de module voor lokale afstandsbediening en -bewaking.",
                          usagenote="",
                          deprecated_version="",

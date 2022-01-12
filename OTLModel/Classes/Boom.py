@@ -27,7 +27,7 @@ class Boom(VegetatieElement):
         """De manier van aanplanten van individuele bomen."""
         self.aanleg.naam = "aanleg"
         self.aanleg.label = "aanleg"
-        self.aanleg.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Boom.aanleg"
+        self.aanleg.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Boom.aanleg"
         self.aanleg.definition = "De manier van aanplanten van individuele bomen."
         self.aanleg.constraints = ""
         self.aanleg.usagenote = ""
@@ -36,7 +36,7 @@ class Boom(VegetatieElement):
         boomspiegelField = KeuzelijstField(naam="boomspiegel",
                                            label="boomspiegel",
                                            lijst=KlBoomspiegelInvulling(),
-                                           uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Boom.boomspiegel",
+                                           objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Boom.boomspiegel",
                                            definition="Het stuk grond rondom de stam van een boom. Dit is in de ideale situatie minstens zo groot is als de kruin van de boom.",
                                            constraints="",
                                            usagenote="",
@@ -48,7 +48,7 @@ class Boom(VegetatieElement):
         """De straal van de cirkelvormige ruimte waarbinnen de wortels zich bevinden die instaan voor de stabiliteit van de boom uitgedrukt in meter."""
         self.boomverankeringszone.naam = "boomverankeringszone"
         self.boomverankeringszone.label = "boomverankeringszone"
-        self.boomverankeringszone.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Boom.boomverankeringszone"
+        self.boomverankeringszone.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Boom.boomverankeringszone"
         self.boomverankeringszone.definition = "De straal van de cirkelvormige ruimte waarbinnen de wortels zich bevinden die instaan voor de stabiliteit van de boom uitgedrukt in meter."
         self.boomverankeringszone.constraints = ""
         self.boomverankeringszone.usagenote = ""
@@ -58,7 +58,7 @@ class Boom(VegetatieElement):
         """Het bodemvolume met voldoende mineralen, water en zuurstof die bereikbaar zijn voor een boom om erin te wortelen."""
         self.doorwortelbaarVolume.naam = "doorwortelbaarVolume"
         self.doorwortelbaarVolume.label = "doorwortelbaar volume"
-        self.doorwortelbaarVolume.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Boom.doorwortelbaarVolume"
+        self.doorwortelbaarVolume.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Boom.doorwortelbaarVolume"
         self.doorwortelbaarVolume.definition = "Het bodemvolume met voldoende mineralen, water en zuurstof die bereikbaar zijn voor een boom om erin te wortelen."
         self.doorwortelbaarVolume.constraints = ""
         self.doorwortelbaarVolume.usagenote = ""
@@ -67,7 +67,7 @@ class Boom(VegetatieElement):
         self.eindbeeld = KeuzelijstField(naam="eindbeeld",
                                          label="eindbeeld",
                                          lijst=KlEindbeeldOpgaandeBoom(),
-                                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Boom.eindbeeld",
+                                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Boom.eindbeeld",
                                          definition="Het nagestreefde beeld van de volgroeide boom of struik op deze specifieke standplaats.",
                                          constraints="",
                                          usagenote="",
@@ -77,7 +77,7 @@ class Boom(VegetatieElement):
         self.geschatteKlassePlantjaar = KeuzelijstField(naam="geschatteKlassePlantjaar",
                                                         label="geschatte klasse plantjaar",
                                                         lijst=KlKlassePlantjaar(),
-                                                        uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Boom.geschatteKlassePlantjaar",
+                                                        objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Boom.geschatteKlassePlantjaar",
                                                         definition="Dit attribuut geeft een interval weer van 20 jaar waarin de boom geplant werd.",
                                                         constraints="",
                                                         usagenote="",
@@ -87,7 +87,7 @@ class Boom(VegetatieElement):
         self.groeifase = KeuzelijstField(naam="groeifase",
                                          label="groeifase",
                                          lijst=KlBoomGroeifase(),
-                                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Boom.groeifase",
+                                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Boom.groeifase",
                                          definition="Fase van beheer volgens de verschillende levensfases van de boom.",
                                          constraints="",
                                          usagenote="",
@@ -96,7 +96,7 @@ class Boom(VegetatieElement):
 
         self.heeftBoomrooster = BooleanField(naam="heeftBoomrooster",
                                              label="heeft boomrooster",
-                                             uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Boom.heeftBoomrooster",
+                                             objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Boom.heeftBoomrooster",
                                              definition="Duidt aan of een horizontale structuur aanwezig is die zorgt voor een adequate bescherming van bomen tegen betreding van de boomspiegel door voetgangers of verkeer.",
                                              constraints="",
                                              usagenote="",
@@ -105,7 +105,7 @@ class Boom(VegetatieElement):
 
         self.heeftLuchtleiding = BooleanField(naam="heeftLuchtleiding",
                                               label="heeft luchtleiding",
-                                              uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Boom.heeftLuchtleiding",
+                                              objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Boom.heeftLuchtleiding",
                                               definition="Bepaling of een bovengrondse nutsleiding aanwezig is die in conflict kan komen met de boom.",
                                               constraints="",
                                               usagenote="",
@@ -114,7 +114,7 @@ class Boom(VegetatieElement):
 
         self.isVerplant = BooleanField(naam="isVerplant",
                                        label="is verplant",
-                                       uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Boom.isVerplant",
+                                       objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Boom.isVerplant",
                                        definition="Aanduiding of de opgaande boom al dan niet van locatie veranderd is na een eerste aanplant binnen het openbaar domein.",
                                        constraints="",
                                        usagenote="",
@@ -125,7 +125,7 @@ class Boom(VegetatieElement):
         """Diameter van de kroonprojectie in meter."""
         self.kroonDiameter.naam = "kroonDiameter"
         self.kroonDiameter.label = "kroon diameter"
-        self.kroonDiameter.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Boom.kroonDiameter"
+        self.kroonDiameter.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Boom.kroonDiameter"
         self.kroonDiameter.definition = "Diameter van de kroonprojectie in meter."
         self.kroonDiameter.constraints = ""
         self.kroonDiameter.usagenote = ""
@@ -135,7 +135,7 @@ class Boom(VegetatieElement):
         """Tot aan de hoogte van de gewenste takvrije stamlengte wordt de boom zodanig gesnoeid dat er één doorgaande stam is."""
         self.takvrijeStamlengte.naam = "takvrijeStamlengte"
         self.takvrijeStamlengte.label = "takvrije stamlengte"
-        self.takvrijeStamlengte.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Boom.takvrijeStamlengte"
+        self.takvrijeStamlengte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Boom.takvrijeStamlengte"
         self.takvrijeStamlengte.definition = "Tot aan de hoogte van de gewenste takvrije stamlengte wordt de boom zodanig gesnoeid dat er één doorgaande stam is."
         self.takvrijeStamlengte.constraints = ""
         self.takvrijeStamlengte.usagenote = ""
@@ -145,7 +145,7 @@ class Boom(VegetatieElement):
         """De straal van de cirkelvormige ruimte rond de boom waar maatregelen genomen worden om de boom te beschermen tijdens projecten of manifestaties uitgedrukt in centimeters."""
         self.totaleBoombeschermingszone.naam = "totaleBoombeschermingszone"
         self.totaleBoombeschermingszone.label = "totale boombeschermingszone"
-        self.totaleBoombeschermingszone.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Boom.totaleBoombeschermingszone"
+        self.totaleBoombeschermingszone.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Boom.totaleBoombeschermingszone"
         self.totaleBoombeschermingszone.definition = "De straal van de cirkelvormige ruimte rond de boom waar maatregelen genomen worden om de boom te beschermen tijdens projecten of manifestaties uitgedrukt in centimeters."
         self.totaleBoombeschermingszone.constraints = ""
         self.totaleBoombeschermingszone.usagenote = ""
@@ -155,7 +155,7 @@ class Boom(VegetatieElement):
         """Vrij te houden hoogte in meter, voor het doorrijden van verkeer toe te laten."""
         self.vrijeDoorrijhoogte.naam = "vrijeDoorrijhoogte"
         self.vrijeDoorrijhoogte.label = "vrije doorrijhoogte"
-        self.vrijeDoorrijhoogte.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Boom.vrijeDoorrijhoogte"
+        self.vrijeDoorrijhoogte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Boom.vrijeDoorrijhoogte"
         self.vrijeDoorrijhoogte.definition = "Vrij te houden hoogte in meter, voor het doorrijden van verkeer toe te laten."
         self.vrijeDoorrijhoogte.constraints = ""
         self.vrijeDoorrijhoogte.usagenote = ""

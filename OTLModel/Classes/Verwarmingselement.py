@@ -19,7 +19,7 @@ class Verwarmingselement(AIMObject):
         self.merk = KeuzelijstField(naam="merk",
                                     label="merk",
                                     lijst=KlVerwarmingselementMerk(),
-                                    uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Verwarmingselement.merk",
+                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Verwarmingselement.merk",
                                     definition="Merk van het element volgens de fabrikant.",
                                     constraints="",
                                     usagenote="",
@@ -29,7 +29,7 @@ class Verwarmingselement(AIMObject):
         self.modelnaam = KeuzelijstField(naam="modelnaam",
                                          label="modelnaam",
                                          lijst=KlVerwarmingselementModelnaam(),
-                                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Verwarmingselement.modelnaam",
+                                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Verwarmingselement.modelnaam",
                                          definition="Modelnaam van het element volgens de fabrikant.",
                                          constraints="",
                                          usagenote="",
@@ -40,7 +40,7 @@ class Verwarmingselement(AIMObject):
         """Elektrisch vermogen nodig voor de correcte werking van het element."""
         self.vermogen.naam = "vermogen"
         self.vermogen.label = "vermogen"
-        self.vermogen.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Verwarmingselement.vermogen"
+        self.vermogen.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Verwarmingselement.vermogen"
         self.vermogen.definition = "Elektrisch vermogen nodig voor de correcte werking van het element."
         self.vermogen.constraints = ""
         self.vermogen.usagenote = ""

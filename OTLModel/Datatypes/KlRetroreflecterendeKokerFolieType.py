@@ -9,7 +9,7 @@ class KlRetroreflecterendeKokerFolieType(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlRetroreflecterendeKokerFolieType",
                          label="Retroreflecterende koker folie type",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlRetroreflecterendeKokerFolieType",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlRetroreflecterendeKokerFolieType",
                          definition="Keuzeijst voor het bepalen van folietype van de retroreflecterende koker.",
                          usagenote="",
                          deprecated_version="",

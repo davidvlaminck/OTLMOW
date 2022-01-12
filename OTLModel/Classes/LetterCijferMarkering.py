@@ -19,7 +19,7 @@ class LetterCijferMarkering(FiguratieMarkeringToegang):
         self.letterCijfer = KeuzelijstField(naam="letterCijfer",
                                             label="letter-cijfer",
                                             lijst=KlLetterCijfer(),
-                                            uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#LetterCijferMarkering.letterCijfer",
+                                            objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#LetterCijferMarkering.letterCijfer",
                                             definition="De individuele letter of cijfer gebruikt bij de wegmarkering.",
                                             constraints="",
                                             usagenote="",
@@ -30,7 +30,7 @@ class LetterCijferMarkering(FiguratieMarkeringToegang):
         """De oppervlakte van de individuele letter- of cijfermarkering zoals beschreven in de algemene omzendbrief."""
         self.oppervlakte.naam = "oppervlakte"
         self.oppervlakte.label = "basisoppervlakte"
-        self.oppervlakte.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#LetterCijferMarkering.oppervlakte"
+        self.oppervlakte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#LetterCijferMarkering.oppervlakte"
         self.oppervlakte.definition = "De oppervlakte van de individuele letter- of cijfermarkering zoals beschreven in de algemene omzendbrief."
         self.oppervlakte.constraints = ""
         self.oppervlakte.usagenote = ""
@@ -39,7 +39,7 @@ class LetterCijferMarkering(FiguratieMarkeringToegang):
         self.type = KeuzelijstField(naam="type",
                                     label="type",
                                     lijst=KlLetterCijferType(),
-                                    uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#LetterCijferMarkering.type",
+                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#LetterCijferMarkering.type",
                                     definition="Het type van de individuele letter- of cijfermarkering.",
                                     constraints="",
                                     usagenote="",

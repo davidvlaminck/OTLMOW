@@ -9,7 +9,7 @@ class KlLetterVerschaaldType(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlLetterVerschaaldType",
                          label="Type van de verschaalde letter",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlLetterVerschaaldType",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlLetterVerschaaldType",
                          definition="De mogelijke types van een individueel verschaalde lettermarkering.",
                          usagenote="",
                          deprecated_version="",

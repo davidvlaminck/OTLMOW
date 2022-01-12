@@ -17,7 +17,7 @@ class NaampadObject(AIMNaamObject):
 
         self.naampad = StringField(naam="naampad",
                                    label="naampad",
-                                   uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#NaampadObject.naampad",
+                                   objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#NaampadObject.naampad",
                                    definition="Een set van objecten (bv. collecties) die aanduiden waar het object zich bevindt in de objectenboom (EM-Infra).",
                                    constraints="",
                                    usagenote="",

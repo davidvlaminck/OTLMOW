@@ -9,7 +9,7 @@ class KlVormSchermelement(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlVormSchermelement",
                          label="Vorm schermelement",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlVormSchermelement",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlVormSchermelement",
                          definition="Deze keuzelijst geeft aan of het schermelement recht of gebogen is.",
                          usagenote="",
                          deprecated_version="",

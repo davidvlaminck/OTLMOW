@@ -17,7 +17,7 @@ class ProefVerderOnderzoekTrekproef(Proef):
         verderOnderzoekTrekproefField = DtcDocument()
         verderOnderzoekTrekproefField.naam = "verderOnderzoekTrekproef"
         verderOnderzoekTrekproefField.label = "verder onderzoek trekproef"
-        verderOnderzoekTrekproefField.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefVerderOnderzoekTrekproef.verderOnderzoekTrekproef"
+        verderOnderzoekTrekproefField.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefVerderOnderzoekTrekproef.verderOnderzoekTrekproef"
         verderOnderzoekTrekproefField.definition = "Een trekproef is een niet-destructieve methode om de stabiliteit (gevoeligheid voor windworp) vanbomen te testen door een kunstmatige belasting op de stam te relateren met het kantelen van destamvoet."
         verderOnderzoekTrekproefField.constraints = ""
         verderOnderzoekTrekproefField.usagenote = ""

@@ -10,7 +10,7 @@ class DtcAfmetingBxhInMm(ComplexField):
     def __init__(self):
         super().__init__(naam="DtcAfmetingBxhInMm",
                          label="Afmeting bxh in millimeter",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAfmetingBxhInMm",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAfmetingBxhInMm",
                          definition="Complex datatype voor de afmeting van de breedte en hoogte in millimeter.",
                          usagenote="",
                          deprecated_version="")
@@ -19,7 +19,7 @@ class DtcAfmetingBxhInMm(ComplexField):
         """De breedte in millimeter."""
         self.waarde.breedte.naam = "breedte"
         self.waarde.breedte.label = "breedte"
-        self.waarde.breedte.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAfmetingBxhInMm.breedte"
+        self.waarde.breedte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAfmetingBxhInMm.breedte"
         self.waarde.breedte.definition = "De breedte in millimeter."
         self.waarde.breedte.constraints = ""
         self.waarde.breedte.usagenote = ""
@@ -30,7 +30,7 @@ class DtcAfmetingBxhInMm(ComplexField):
         """De hoogte in millimeter."""
         self.waarde.hoogte.naam = "hoogte"
         self.waarde.hoogte.label = "hoogte"
-        self.waarde.hoogte.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAfmetingBxhInMm.hoogte"
+        self.waarde.hoogte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAfmetingBxhInMm.hoogte"
         self.waarde.hoogte.definition = "De hoogte in millimeter."
         self.waarde.hoogte.constraints = ""
         self.waarde.hoogte.usagenote = ""

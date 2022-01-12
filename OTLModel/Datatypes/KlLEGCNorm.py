@@ -9,7 +9,7 @@ class KlLEGCNorm(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlLEGCNorm",
                          label="Norm",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlLEGCNorm",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlLEGCNorm",
                          definition="De mogelijke normen.",
                          usagenote="",
                          deprecated_version="",

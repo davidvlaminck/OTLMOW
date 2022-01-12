@@ -9,7 +9,7 @@ class KlVerkeersbordconceptStatus(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlVerkeersbordconceptStatus",
                          label="VerkeersbordconceptStatus",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlVerkeersbordconceptStatus",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlVerkeersbordconceptStatus",
                          definition="Keuzelijst met waarden die aangeven of een verkeersbordconcept nog gebruikt wordt.",
                          usagenote="Bijvoorbeeld: stabiel, onstabiel, afgeschaft. Een bord met snelheidslimiet van 60 km/u is bijvoorbeeld afgeschaft.",
                          deprecated_version="",

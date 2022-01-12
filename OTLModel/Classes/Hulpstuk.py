@@ -20,7 +20,7 @@ class Hulpstuk(LinkendElement):
         """De diameter van de binnenzijde van het hulpstuk in millimeter."""
         self.inwendigeDiameter.naam = "inwendigeDiameter"
         self.inwendigeDiameter.label = "inwendige diameter"
-        self.inwendigeDiameter.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Hulpstuk.inwendigeDiameter"
+        self.inwendigeDiameter.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Hulpstuk.inwendigeDiameter"
         self.inwendigeDiameter.definition = "De diameter van de binnenzijde van het hulpstuk in millimeter."
         self.inwendigeDiameter.constraints = ""
         self.inwendigeDiameter.usagenote = ""
@@ -29,7 +29,7 @@ class Hulpstuk(LinkendElement):
         self.materiaal = KeuzelijstField(naam="materiaal",
                                          label="materiaal",
                                          lijst=KlAansluitstukMateriaal(),
-                                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Hulpstuk.materiaal",
+                                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Hulpstuk.materiaal",
                                          definition="Het materiaal waaruit het hulpstuk vervaardigd is.",
                                          constraints="",
                                          usagenote="",
@@ -39,7 +39,7 @@ class Hulpstuk(LinkendElement):
         self.type = KeuzelijstField(naam="type",
                                     label="type",
                                     lijst=KlHulpstukType(),
-                                    uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Hulpstuk.type",
+                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Hulpstuk.type",
                                     definition="Het type van het hulpstuk.",
                                     constraints="",
                                     usagenote="",
@@ -50,7 +50,7 @@ class Hulpstuk(LinkendElement):
         """De diameter van de buitenzijde van het hulpstuk in millimeter."""
         self.uitwendigeDiameter.naam = "uitwendigeDiameter"
         self.uitwendigeDiameter.label = "uitwendige diameter"
-        self.uitwendigeDiameter.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Hulpstuk.uitwendigeDiameter"
+        self.uitwendigeDiameter.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Hulpstuk.uitwendigeDiameter"
         self.uitwendigeDiameter.definition = "De diameter van de buitenzijde van het hulpstuk in millimeter."
         self.uitwendigeDiameter.constraints = ""
         self.uitwendigeDiameter.usagenote = ""

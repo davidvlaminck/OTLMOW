@@ -11,7 +11,7 @@ class KwantWrdInMegaPascal(KwantWrd):
     def __init__(self, waarde=None):
         self.eenheid = LiteralField(naam="standaardEenheid",
                                     label="standaard eenheid",
-                                    uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMegaPascal.standaardEenheid",
+                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMegaPascal.standaardEenheid",
                                     definition="De standaard eenheid bij dit datatype is uitgedrukt in mega pascal.",
                                     constraints='"MPa"^^cdt:ucumunit',
                                     usagenote='"MPa"^^cdt:ucumunit',
@@ -21,7 +21,7 @@ class KwantWrdInMegaPascal(KwantWrd):
 
         self.waardeVeld = DecimalFloatField(naam="waarde",
                                             label="waarde",
-                                            uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMegaPascal.waarde",
+                                            objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMegaPascal.waarde",
                                             definition="Bevat een getal die bij het datatype hoort.",
                                             constraints="",
                                             usagenote="",
@@ -30,7 +30,7 @@ class KwantWrdInMegaPascal(KwantWrd):
 
         super().__init__(naam="KwantWrdInMegaPascal",
                          label="Kwantitatieve waarde in MPa",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMegaPascal",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMegaPascal",
                          definition="Een kwantitatieve waarde die een getal in megapascal uitdrukt.",
                          usagenote="",
                          deprecated_version="",

@@ -12,7 +12,7 @@ class DtcTijdsduur(ComplexField):
     def __init__(self):
         super().__init__(naam="DtcTijdsduur",
                          label="Tijdsduur",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcTijdsduur",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcTijdsduur",
                          definition="Complex datatype voor de instelling van een tijdsbepaling.",
                          usagenote="",
                          deprecated_version="")
@@ -21,7 +21,7 @@ class DtcTijdsduur(ComplexField):
         """Het aantal minuten."""
         self.waarde.minuten.naam = "minuten"
         self.waarde.minuten.label = "minuten"
-        self.waarde.minuten.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcTijdsduur.minuten"
+        self.waarde.minuten.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcTijdsduur.minuten"
         self.waarde.minuten.definition = "Het aantal minuten."
         self.waarde.minuten.constraints = ""
         self.waarde.minuten.usagenote = ""
@@ -32,7 +32,7 @@ class DtcTijdsduur(ComplexField):
         """Het aantal seconden."""
         self.waarde.seconden.naam = "seconden"
         self.waarde.seconden.label = "seconden"
-        self.waarde.seconden.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcTijdsduur.seconden"
+        self.waarde.seconden.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcTijdsduur.seconden"
         self.waarde.seconden.definition = "Het aantal seconden."
         self.waarde.seconden.constraints = ""
         self.waarde.seconden.usagenote = ""
@@ -43,7 +43,7 @@ class DtcTijdsduur(ComplexField):
         """Het aantal uren."""
         self.waarde.uren.naam = "uren"
         self.waarde.uren.label = "uren"
-        self.waarde.uren.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcTijdsduur.uren"
+        self.waarde.uren.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcTijdsduur.uren"
         self.waarde.uren.definition = "Het aantal uren."
         self.waarde.uren.constraints = ""
         self.waarde.uren.usagenote = ""

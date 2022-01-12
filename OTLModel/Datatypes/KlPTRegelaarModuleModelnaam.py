@@ -9,7 +9,7 @@ class KlPTRegelaarModuleModelnaam(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlPTRegelaarModuleModelnaam",
                          label="PT regelaarmodule modelnaam",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#KlPTRegelaarModuleModelnaam",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#KlPTRegelaarModuleModelnaam",
                          definition="Keuzelijst met modelnamen voor PTRegelaarModule.",
                          usagenote="",
                          deprecated_version="",

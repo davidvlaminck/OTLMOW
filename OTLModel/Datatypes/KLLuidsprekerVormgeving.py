@@ -9,7 +9,7 @@ class KLLuidsprekerVormgeving(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KLLuidsprekerVormgeving",
                          label="Luidspreker vormgeving",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KLLuidsprekerVormgeving",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KLLuidsprekerVormgeving",
                          definition="Types luidspreker volgens hun vormfactor.",
                          usagenote="",
                          deprecated_version="",

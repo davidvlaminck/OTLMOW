@@ -20,9 +20,6 @@ class RelatiesTests(unittest.TestCase):
         instance.aansluitspanning = KwantWrdInVolt(1.0)  # beide werken
         self.assertEqual(1.0, instance.aansluitspanning.waarde)
 
-        with self.assertRaises(ValueError):
-            instance.aansluitspanning = KwantWrdInVolt(2)
-
         with self.assertRaises(AttributeError):
             instance.aansluitspanning.standaardEenheid.waarde = 'A'
 

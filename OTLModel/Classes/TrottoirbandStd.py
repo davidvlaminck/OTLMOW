@@ -20,7 +20,7 @@ class TrottoirbandStd(GestandaardiseerdeKantopsluiting):
         """De gestandaardiseerde trottoirband volgens aangeduide norm."""
         self.norm.naam = "norm"
         self.norm.label = "norm"
-        self.norm.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#TrottoirbandStd.norm"
+        self.norm.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#TrottoirbandStd.norm"
         self.norm.definition = "De gestandaardiseerde trottoirband volgens aangeduide norm."
         self.norm.constraints = ""
         self.norm.usagenote = ""
@@ -29,7 +29,7 @@ class TrottoirbandStd(GestandaardiseerdeKantopsluiting):
         self.type = KeuzelijstField(naam="type",
                                     label="type",
                                     lijst=KlLETrottoirbandType(),
-                                    uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#TrottoirbandStd.type",
+                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#TrottoirbandStd.type",
                                     definition="Bepaling van het type van trottoirband.",
                                     constraints="",
                                     usagenote="",
@@ -40,7 +40,7 @@ class TrottoirbandStd(GestandaardiseerdeKantopsluiting):
         """Bepaling van de vorm van de trottoirband."""
         self.vorm.naam = "vorm"
         self.vorm.label = "vorm"
-        self.vorm.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#TrottoirbandStd.vorm"
+        self.vorm.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#TrottoirbandStd.vorm"
         self.vorm.definition = "Bepaling van de vorm van de trottoirband."
         self.vorm.constraints = ""
         self.vorm.usagenote = ""

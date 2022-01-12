@@ -4,9 +4,9 @@ from OTLModel.Datatypes.PrimitiveField import PrimitiveField
 
 
 class DateField(PrimitiveField):
-    def __init__(self, naam, label, uri, definition, constraints, usagenote, deprecated_version, readonly=False,
+    def __init__(self, naam, label, objectUri, definition, constraints, usagenote, deprecated_version, readonly=False,
                  readonlyValue=None):
-        super().__init__(datetime, naam, label, uri, definition, constraints, usagenote, deprecated_version, readonly,
+        super().__init__(datetime, naam, label, objectUri, definition, constraints, usagenote, deprecated_version, readonly,
                          readonlyValue)
 
     def default(self):

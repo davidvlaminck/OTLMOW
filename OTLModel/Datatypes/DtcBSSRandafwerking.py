@@ -12,7 +12,7 @@ class DtcBSSRandafwerking(ComplexField):
     def __init__(self):
         super().__init__(naam="DtcBSSRandafwerking",
                          label="Betonstraatsteenafwerking",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcBSSRandafwerking",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcBSSRandafwerking",
                          definition="Complex datatype voor de afwerking van de rand van een betonstraatsteenverharding.",
                          usagenote="",
                          deprecated_version="")
@@ -21,7 +21,7 @@ class DtcBSSRandafwerking(ComplexField):
         """De lengte in meter van de randafwerking."""
         self.waarde.lengteRandafwerking.naam = "lengteRandafwerking"
         self.waarde.lengteRandafwerking.label = "lengte randafwerking"
-        self.waarde.lengteRandafwerking.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcBSSRandafwerking.lengteRandafwerking"
+        self.waarde.lengteRandafwerking.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcBSSRandafwerking.lengteRandafwerking"
         self.waarde.lengteRandafwerking.definition = "De lengte in meter van de randafwerking."
         self.waarde.lengteRandafwerking.constraints = ""
         self.waarde.lengteRandafwerking.usagenote = ""
@@ -31,7 +31,7 @@ class DtcBSSRandafwerking(ComplexField):
         self.waarde.randafwerking = KeuzelijstField(naam="randafwerking",
                                                     label="randafwerking",
                                                     lijst=KlBSSRandafwerking(),
-                                                    uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcBSSRandafwerking.randafwerking",
+                                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcBSSRandafwerking.randafwerking",
                                                     definition="De mogelijke wijzen van randafwerking van de verharding.",
                                                     constraints="",
                                                     usagenote="",

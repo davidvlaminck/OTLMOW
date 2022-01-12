@@ -22,7 +22,7 @@ class Sokkel(AIMNaamObject):
         """De afmeting van het grondvlak van de sokkel volgens zijn vorm."""
         self.afmetingGrondvlak.naam = "afmetingGrondvlak"
         self.afmetingGrondvlak.label = "afmeting grondvlak"
-        self.afmetingGrondvlak.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Sokkel.afmetingGrondvlak"
+        self.afmetingGrondvlak.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Sokkel.afmetingGrondvlak"
         self.afmetingGrondvlak.definition = "De afmeting van het grondvlak van de sokkel volgens zijn vorm."
         self.afmetingGrondvlak.constraints = ""
         self.afmetingGrondvlak.usagenote = ""
@@ -30,7 +30,7 @@ class Sokkel(AIMNaamObject):
 
         self.heeftMaaibescherming = BooleanField(naam="heeftMaaibescherming",
                                                  label="heeft maaibescherming",
-                                                 uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Sokkel.heeftMaaibescherming",
+                                                 objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Sokkel.heeftMaaibescherming",
                                                  definition="Geeft aan of de sokkel (en daarmee het object dat er bovenop geplaatst is) beschermd is tegen schade als gevolg van het maaien van omliggende begroeiing.",
                                                  constraints="",
                                                  usagenote="",
@@ -41,7 +41,7 @@ class Sokkel(AIMNaamObject):
         """Hoogte in centimeters van het hoogste punt van de sokkel gemeten vanaf het maaiveld."""
         self.hoogteBovenMaaiveld.naam = "hoogteBovenMaaiveld"
         self.hoogteBovenMaaiveld.label = "hoogte boven het maaiveld"
-        self.hoogteBovenMaaiveld.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Sokkel.hoogteBovenMaaiveld"
+        self.hoogteBovenMaaiveld.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Sokkel.hoogteBovenMaaiveld"
         self.hoogteBovenMaaiveld.definition = "Hoogte in centimeters van het hoogste punt van de sokkel gemeten vanaf het maaiveld."
         self.hoogteBovenMaaiveld.constraints = ""
         self.hoogteBovenMaaiveld.usagenote = ""
@@ -50,7 +50,7 @@ class Sokkel(AIMNaamObject):
         self.materiaal = KeuzelijstField(naam="materiaal",
                                          label="materiaal",
                                          lijst=KlAlgMateriaal(),
-                                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Sokkel.materiaal",
+                                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Sokkel.materiaal",
                                          definition="De grondstof waaruit de sokkel (voornamelijk) vervaardigd is.",
                                          constraints="",
                                          usagenote="",
@@ -61,7 +61,7 @@ class Sokkel(AIMNaamObject):
         """De totale hoogte van de sokkel wanneer die rechtop staat."""
         self.sokkelhoogte.naam = "sokkelhoogte"
         self.sokkelhoogte.label = "hoogte van de sokkel"
-        self.sokkelhoogte.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Sokkel.sokkelhoogte"
+        self.sokkelhoogte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Sokkel.sokkelhoogte"
         self.sokkelhoogte.definition = "De totale hoogte van de sokkel wanneer die rechtop staat."
         self.sokkelhoogte.constraints = ""
         self.sokkelhoogte.usagenote = ""

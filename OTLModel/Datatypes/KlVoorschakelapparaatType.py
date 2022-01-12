@@ -9,7 +9,7 @@ class KlVoorschakelapparaatType(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlVoorschakelapparaatType",
                          label="Voorschakelapparaat type",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlVoorschakelapparaatType",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlVoorschakelapparaatType",
                          definition="Type van het voorschakelapparaat.",
                          usagenote="",
                          deprecated_version="",

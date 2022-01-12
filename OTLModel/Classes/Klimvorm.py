@@ -18,7 +18,7 @@ class Klimvorm(VegetatieElement):
         """Verticale oppervlakte dat begroeid is in vierkante meter."""
         self.begroeidOppervlak.naam = "begroeidOppervlak"
         self.begroeidOppervlak.label = "begroeid oppervlak"
-        self.begroeidOppervlak.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Klimvorm.begroeidOppervlak"
+        self.begroeidOppervlak.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Klimvorm.begroeidOppervlak"
         self.begroeidOppervlak.definition = "Verticale oppervlakte dat begroeid is in vierkante meter."
         self.begroeidOppervlak.constraints = ""
         self.begroeidOppervlak.usagenote = ""
@@ -26,7 +26,7 @@ class Klimvorm(VegetatieElement):
 
         self.heeftBeheerScheren = BooleanField(naam="heeftBeheerScheren",
                                                label="heeft beheer scheren",
-                                               uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Klimvorm.heeftBeheerScheren",
+                                               objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Klimvorm.heeftBeheerScheren",
                                                definition="Duidt aan of de klimvorm al dan niet geschoren wordt.",
                                                constraints="",
                                                usagenote="",
@@ -35,7 +35,7 @@ class Klimvorm(VegetatieElement):
 
         self.heeftBevestigingconstructie = BooleanField(naam="heeftBevestigingconstructie",
                                                         label="Heeft bevestigingsconstructie",
-                                                        uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Klimvorm.heeftBevestigingconstructie",
+                                                        objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Klimvorm.heeftBevestigingconstructie",
                                                         definition="Aanduiding of de klimvorm een bevestigingsconstructie heeft om aan bv een geluidswerende constructie vastgemaakt te worden.",
                                                         constraints="",
                                                         usagenote="",
@@ -44,7 +44,7 @@ class Klimvorm(VegetatieElement):
 
         self.isGrondgebonden = BooleanField(naam="isGrondgebonden",
                                             label="is grondgebonden",
-                                            uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Klimvorm.isGrondgebonden",
+                                            objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Klimvorm.isGrondgebonden",
                                             definition="Duidt aan of de klimvorm al dan niet in volle grond staat.",
                                             constraints="",
                                             usagenote="",
@@ -53,7 +53,7 @@ class Klimvorm(VegetatieElement):
 
         self.isZelfhechtend = BooleanField(naam="isZelfhechtend",
                                            label="is zelfhechtend",
-                                           uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Klimvorm.isZelfhechtend",
+                                           objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Klimvorm.isZelfhechtend",
                                            definition="Geeft aan of de klimplant (zoals klimop of wingerd) rechtstreeks op de muur kan groeien zonder nood aan een draagstructuur.",
                                            constraints="",
                                            usagenote="",

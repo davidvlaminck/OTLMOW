@@ -19,7 +19,7 @@ class Ecoraster(ComplexeGeleiding):
 
         self.heeftPrikkeldraad = BooleanField(naam="heeftPrikkeldraad",
                                               label="heeft prikkeldraad",
-                                              uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Ecoraster.heeftPrikkeldraad",
+                                              objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Ecoraster.heeftPrikkeldraad",
                                               definition="Aanduiding of het ecoraster is voorzien van prikkeldraad.",
                                               constraints="",
                                               usagenote="",
@@ -28,7 +28,7 @@ class Ecoraster(ComplexeGeleiding):
 
         self.heeftSpandraden = BooleanField(naam="heeftSpandraden",
                                             label="heeft spandraden",
-                                            uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Ecoraster.heeftSpandraden",
+                                            objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Ecoraster.heeftSpandraden",
                                             definition="Aanduiding of het ecoraster is voorzien van spandraden.",
                                             constraints="",
                                             usagenote="",
@@ -39,7 +39,7 @@ class Ecoraster(ComplexeGeleiding):
         """De lengte van het ecoraster in meter."""
         self.lengte.naam = "lengte"
         self.lengte.label = "lengte"
-        self.lengte.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Ecoraster.lengte"
+        self.lengte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Ecoraster.lengte"
         self.lengte.definition = "De lengte van het ecoraster in meter."
         self.lengte.constraints = ""
         self.lengte.usagenote = ""
@@ -49,7 +49,7 @@ class Ecoraster(ComplexeGeleiding):
         """De hoogte van de paal in het ecoraster in meter."""
         self.paalhoogte.naam = "paalhoogte"
         self.paalhoogte.label = "paalhoogte"
-        self.paalhoogte.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Ecoraster.paalhoogte"
+        self.paalhoogte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Ecoraster.paalhoogte"
         self.paalhoogte.definition = "De hoogte van de paal in het ecoraster in meter."
         self.paalhoogte.constraints = ""
         self.paalhoogte.usagenote = ""
@@ -58,7 +58,7 @@ class Ecoraster(ComplexeGeleiding):
         self.paalMateriaal = KeuzelijstField(naam="paalMateriaal",
                                              label="paal materiaal",
                                              lijst=KlEcoPaalmateriaal(),
-                                             uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Ecoraster.paalMateriaal",
+                                             objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Ecoraster.paalMateriaal",
                                              definition="Het materiaal van de paal in het ecoraster.",
                                              constraints="",
                                              usagenote="",
@@ -68,7 +68,7 @@ class Ecoraster(ComplexeGeleiding):
         self.typeMazen = KeuzelijstField(naam="typeMazen",
                                          label="type mazen",
                                          lijst=KlRasterMazen(),
-                                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Ecoraster.typeMazen",
+                                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Ecoraster.typeMazen",
                                          definition="Het type van de mazen in het ecoraster.",
                                          constraints="",
                                          usagenote="",

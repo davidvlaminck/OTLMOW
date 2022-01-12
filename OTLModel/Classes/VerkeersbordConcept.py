@@ -23,7 +23,7 @@ class VerkeersbordConcept(AIMObject):
         afbeeldingField = DtcDocument()
         afbeeldingField.naam = "afbeelding"
         afbeeldingField.label = "afbeelding"
-        afbeeldingField.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/installatie#VerkeersbordConcept.afbeelding"
+        afbeeldingField.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/installatie#VerkeersbordConcept.afbeelding"
         afbeeldingField.definition = "De afbeelding van het verkeersbordconcept."
         afbeeldingField.constraints = ""
         afbeeldingField.usagenote = ""
@@ -33,7 +33,7 @@ class VerkeersbordConcept(AIMObject):
 
         self.betekenis = StringField(naam="betekenis",
                                      label="betekenis",
-                                     uri="https://wegenenverkeer.data.vlaanderen.be/ns/installatie#VerkeersbordConcept.betekenis",
+                                     objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/installatie#VerkeersbordConcept.betekenis",
                                      definition="Betekenis die gegeven wordt aan dit soort verkeersbord volgens de wegcode.",
                                      constraints="",
                                      usagenote="",
@@ -44,7 +44,7 @@ class VerkeersbordConcept(AIMObject):
         """Verwijst naar een rechtsgrondonderdeel over dit verkeersbordconcept."""
         self.rechtsgrondOnderdeel.naam = "rechtsgrondOnderdeel"
         self.rechtsgrondOnderdeel.label = "rechtsgrondonderdeel"
-        self.rechtsgrondOnderdeel.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/installatie#VerkeersbordConcept.rechtsgrondOnderdeel"
+        self.rechtsgrondOnderdeel.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/installatie#VerkeersbordConcept.rechtsgrondOnderdeel"
         self.rechtsgrondOnderdeel.definition = "Verwijst naar een rechtsgrondonderdeel over dit verkeersbordconcept."
         self.rechtsgrondOnderdeel.constraints = ""
         self.rechtsgrondOnderdeel.usagenote = "Verwijst meestal naar een artikel in de wegcode die informatie over dit verkeersbordconcept bevat. Bijvoorbeeld: artikel 68.3 voor verbodsborden."
@@ -53,7 +53,7 @@ class VerkeersbordConcept(AIMObject):
         self.status = KeuzelijstField(naam="status",
                                       label="status",
                                       lijst=KlVerkeersbordconceptStatus(),
-                                      uri="https://wegenenverkeer.data.vlaanderen.be/ns/installatie#VerkeersbordConcept.status",
+                                      objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/installatie#VerkeersbordConcept.status",
                                       definition="Duidt of het verkeersbordconcept nog gebruikt wordt.",
                                       constraints="",
                                       usagenote="Bijvoorbeeld: stabiel, onstabiel, afgeschaft. Een bord met snelheidslimiet van 60 km/u is bijvoorbeeld afgeschaft.",
@@ -63,7 +63,7 @@ class VerkeersbordConcept(AIMObject):
         self.verkeersbordCategorie = KeuzelijstField(naam="verkeersbordCategorie",
                                                      label="verkeersbord categorie",
                                                      lijst=KlVerkeersbordCategorie(),
-                                                     uri="https://wegenenverkeer.data.vlaanderen.be/ns/installatie#VerkeersbordConcept.verkeersbordCategorie",
+                                                     objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/installatie#VerkeersbordConcept.verkeersbordCategorie",
                                                      definition="Categorie van het verkeersbordconcept.	.",
                                                      constraints="",
                                                      usagenote="",
@@ -73,7 +73,7 @@ class VerkeersbordConcept(AIMObject):
         self.verkeersbordCode = KeuzelijstField(naam="verkeersbordCode",
                                                 label="verkeersbordcode",
                                                 lijst=KlVerkeersbordCode(),
-                                                uri="https://wegenenverkeer.data.vlaanderen.be/ns/installatie#VerkeersbordConcept.verkeersbordCode",
+                                                objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/installatie#VerkeersbordConcept.verkeersbordCode",
                                                 definition="Code die aan dit soort bord gegeven wordt binnen de wegcode.",
                                                 constraints="",
                                                 usagenote="",

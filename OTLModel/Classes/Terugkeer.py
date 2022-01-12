@@ -17,7 +17,7 @@ class Terugkeer(ComplexeGeleiding):
         self.typeUitvoering = KeuzelijstField(naam="typeUitvoering",
                                               label="type uitvoering",
                                               lijst=KlEcoOverstaptype(),
-                                              uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Terugkeer.typeUitvoering",
+                                              objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Terugkeer.typeUitvoering",
                                               definition="Het type van terugkeer.",
                                               constraints="",
                                               usagenote="",

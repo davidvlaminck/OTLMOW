@@ -17,7 +17,7 @@ class ProefVisueleBeoordeling(Proef):
         """Een rapport van de visuele beoordeling van de laag."""
         self.visueleBeoordeling.naam = "visueleBeoordeling"
         self.visueleBeoordeling.label = "visuele beoordeling"
-        self.visueleBeoordeling.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefVisueleBeoordeling.visueleBeoordeling"
+        self.visueleBeoordeling.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefVisueleBeoordeling.visueleBeoordeling"
         self.visueleBeoordeling.definition = "Een rapport van de visuele beoordeling van de laag."
         self.visueleBeoordeling.constraints = ""
         self.visueleBeoordeling.usagenote = ""

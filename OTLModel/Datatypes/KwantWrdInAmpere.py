@@ -11,7 +11,7 @@ class KwantWrdInAmpere(KwantWrd):
     def __init__(self, waarde=None):
         self.eenheid = LiteralField(naam="standaardEenheid",
                                     label="standaard eenheid",
-                                    uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInAmpere.standaardEenheid",
+                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInAmpere.standaardEenheid",
                                     definition="De standaard eenheid bij dit datatype is uitgedrukt in ampere.",
                                     constraints='"A"^^cdt:ucumunit',
                                     usagenote='"A"^^cdt:ucumunit',
@@ -21,7 +21,7 @@ class KwantWrdInAmpere(KwantWrd):
 
         self.waardeVeld = DecimalFloatField(naam="waarde",
                                             label="waarde",
-                                            uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInAmpere.waarde",
+                                            objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInAmpere.waarde",
                                             definition="Bevat een getal die bij het datatype hoort.",
                                             constraints="",
                                             usagenote="",
@@ -30,7 +30,7 @@ class KwantWrdInAmpere(KwantWrd):
 
         super().__init__(naam="KwantWrdInAmpere",
                          label="Kwantitatieve waarde in ampère",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInAmpere",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInAmpere",
                          definition="Een kwantitatieve waarde die een getal in ampère uitdrukt.",
                          usagenote="",
                          deprecated_version="",

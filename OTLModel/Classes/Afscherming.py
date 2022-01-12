@@ -17,7 +17,7 @@ class Afscherming(AIMObject):
         self.type = KeuzelijstField(naam="type",
                                     label="type",
                                     lijst=KlEcoAfschermingtype(),
-                                    uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Afscherming.type",
+                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Afscherming.type",
                                     definition="Het type van afscherming.",
                                     constraints="",
                                     usagenote="",

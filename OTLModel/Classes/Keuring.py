@@ -14,7 +14,7 @@ class Keuring:
     def __init__(self):
         self.datum = DateField(naam="datum",
                                label="keuringsdatum",
-                               uri="https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#Keuring.datum",
+                               objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#Keuring.datum",
                                definition="De datum waarop de keuring werd uitgevoerd.",
                                constraints="",
                                usagenote="",
@@ -25,7 +25,7 @@ class Keuring:
         """de periode (in jaar) waarbinnen de keuring geldig blijft. """
         self.geldigheidsDuur.naam = "geldigheidsDuur"
         self.geldigheidsDuur.label = "geldigheidsduur"
-        self.geldigheidsDuur.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#Keuring.geldigheidsDuur"
+        self.geldigheidsDuur.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#Keuring.geldigheidsDuur"
         self.geldigheidsDuur.definition = "de periode (in jaar) waarbinnen de keuring geldig blijft. "
         self.geldigheidsDuur.constraints = ""
         self.geldigheidsDuur.usagenote = ""
@@ -35,7 +35,7 @@ class Keuring:
         """document met het verslag van de keuring."""
         self.verslag.naam = "verslag"
         self.verslag.label = "keuringsverslag"
-        self.verslag.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#Keuring.verslag"
+        self.verslag.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#Keuring.verslag"
         self.verslag.definition = "document met het verslag van de keuring."
         self.verslag.constraints = ""
         self.verslag.usagenote = ""

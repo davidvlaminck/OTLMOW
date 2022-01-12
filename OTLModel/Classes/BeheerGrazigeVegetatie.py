@@ -22,7 +22,7 @@ class BeheerGrazigeVegetatie(AIMObject):
         beheeroptieField = KeuzelijstField(naam="beheeroptie",
                                            label="beheeroptie",
                                            lijst=KlBeheerGrazigeVegetatie(),
-                                           uri="https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#BeheerGrazigeVegetatie.beheeroptie",
+                                           objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#BeheerGrazigeVegetatie.beheeroptie",
                                            definition="Aanduiding van welk beheer wordt toegepast op de grazige vegetatie.",
                                            constraints="",
                                            usagenote="",
@@ -32,7 +32,7 @@ class BeheerGrazigeVegetatie(AIMObject):
 
         self.heeftBeheerplan = BooleanField(naam="heeftBeheerplan",
                                             label="heeft beheerplan",
-                                            uri="https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#BeheerGrazigeVegetatie.heeftBeheerplan",
+                                            objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#BeheerGrazigeVegetatie.heeftBeheerplan",
                                             definition="Aanduiding of er een beheerplan bestaat.",
                                             constraints="",
                                             usagenote="",
@@ -43,7 +43,7 @@ class BeheerGrazigeVegetatie(AIMObject):
         """De lengte in meter van de te behandelen grazige vegetatie."""
         self.lengte.naam = "lengte"
         self.lengte.label = "Lengte"
-        self.lengte.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#BeheerGrazigeVegetatie.lengte"
+        self.lengte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#BeheerGrazigeVegetatie.lengte"
         self.lengte.definition = "De lengte in meter van de te behandelen grazige vegetatie."
         self.lengte.constraints = ""
         self.lengte.usagenote = ""
@@ -53,7 +53,7 @@ class BeheerGrazigeVegetatie(AIMObject):
         """Complex datatype voor de eigenschappen van maaien."""
         self.maaien.naam = "maaien"
         self.maaien.label = "maaien"
-        self.maaien.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#BeheerGrazigeVegetatie.maaien"
+        self.maaien.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#BeheerGrazigeVegetatie.maaien"
         self.maaien.definition = "Complex datatype voor de eigenschappen van maaien."
         self.maaien.constraints = ""
         self.maaien.usagenote = ""
@@ -63,7 +63,7 @@ class BeheerGrazigeVegetatie(AIMObject):
         """De oppervlakte in vierkante meter van de te behandelen grazige vegetatie."""
         self.oppervlakte.naam = "oppervlakte"
         self.oppervlakte.label = "oppervlakte"
-        self.oppervlakte.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#BeheerGrazigeVegetatie.oppervlakte"
+        self.oppervlakte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#BeheerGrazigeVegetatie.oppervlakte"
         self.oppervlakte.definition = "De oppervlakte in vierkante meter van de te behandelen grazige vegetatie."
         self.oppervlakte.constraints = ""
         self.oppervlakte.usagenote = ""

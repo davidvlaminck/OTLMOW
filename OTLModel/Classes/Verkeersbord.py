@@ -23,7 +23,7 @@ class Verkeersbord(ABC):
         """De hoek waarin het fysiek bord gepositioneerd is ten opzichte van een vooropgestelde as (het ware noorden). De hoek wordt gemeten in radialen of graden ten opzichte van het noorden in wijzerzin."""
         self.aanzicht.naam = "aanzicht"
         self.aanzicht.label = "aanzicht"
-        self.aanzicht.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Verkeersbord.aanzicht"
+        self.aanzicht.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Verkeersbord.aanzicht"
         self.aanzicht.definition = "De hoek waarin het fysiek bord gepositioneerd is ten opzichte van een vooropgestelde as (het ware noorden). De hoek wordt gemeten in radialen of graden ten opzichte van het noorden in wijzerzin."
         self.aanzicht.constraints = ""
         self.aanzicht.usagenote = "In radialen of graden ten opzichte van het noorden in wijzerzin."
@@ -32,7 +32,7 @@ class Verkeersbord(ABC):
         afbeeldingField = DtcDocument()
         afbeeldingField.naam = "afbeelding"
         afbeeldingField.label = "afbeelding"
-        afbeeldingField.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Verkeersbord.afbeelding"
+        afbeeldingField.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Verkeersbord.afbeelding"
         afbeeldingField.definition = "De afbeelding van het verkeersbord."
         afbeeldingField.constraints = ""
         afbeeldingField.usagenote = ""
@@ -44,7 +44,7 @@ class Verkeersbord(ABC):
         """De afmeting(en) van het verkeersbord."""
         self.afmeting.naam = "afmeting"
         self.afmeting.label = "afmeting"
-        self.afmeting.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Verkeersbord.afmeting"
+        self.afmeting.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Verkeersbord.afmeting"
         self.afmeting.definition = "De afmeting(en) van het verkeersbord."
         self.afmeting.constraints = ""
         self.afmeting.usagenote = ""
@@ -52,7 +52,7 @@ class Verkeersbord(ABC):
 
         self.fabricagevoorschrift = StringField(naam="fabricagevoorschrift",
                                                 label="fabricagevoorschrift",
-                                                uri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Verkeersbord.fabricagevoorschrift",
+                                                objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Verkeersbord.fabricagevoorschrift",
                                                 definition="Het fabricagevoorschrift op het verkeersbord.",
                                                 constraints="",
                                                 usagenote="",
@@ -62,7 +62,7 @@ class Verkeersbord(ABC):
         self.operationeleStatus = KeuzelijstField(naam="operationeleStatus",
                                                   label="operationele status",
                                                   lijst=KlOperationeleStatus(),
-                                                  uri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Verkeersbord.operationeleStatus",
+                                                  objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Verkeersbord.operationeleStatus",
                                                   definition="De operationele status van het verkeersbord.",
                                                   constraints="",
                                                   usagenote="Enkel te gebruiken wanneer een object 'in gebruik' is. Zie ook attribuut toestand overgeërfd van AIMToestand om de asset levenscyclus aan te duiden.",
@@ -73,7 +73,7 @@ class Verkeersbord(ABC):
         """Afstand tussen het maaiveld en de onderrand van het bord."""
         self.opstelhoogte.naam = "opstelhoogte"
         self.opstelhoogte.label = "opstelhoogte"
-        self.opstelhoogte.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Verkeersbord.opstelhoogte"
+        self.opstelhoogte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Verkeersbord.opstelhoogte"
         self.opstelhoogte.definition = "Afstand tussen het maaiveld en de onderrand van het bord."
         self.opstelhoogte.constraints = ""
         self.opstelhoogte.usagenote = ""

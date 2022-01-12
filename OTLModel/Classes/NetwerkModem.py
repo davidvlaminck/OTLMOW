@@ -16,7 +16,7 @@ class NetwerkModem(AIMNaamObject):
 
         self.dnsNaam = StringField(naam="dnsNaam",
                                    label="DNS naam",
-                                   uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#NetwerkModem.dnsNaam",
+                                   objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#NetwerkModem.dnsNaam",
                                    definition="De DNSNaam (ook \"volledige domein naam\" genoemd ) is een unieke naam binnen het Domain Name System (DNS), het naamgevingssysteem waarmee computers, webservers, diensten en  toepassing op een unieke manier kunnen worden geïdentificeerd. Deze bevat zowel de hostname en de top level domein naam bv. 120c8-ar1.belfa.be.",
                                    constraints="",
                                    usagenote="",
@@ -27,7 +27,7 @@ class NetwerkModem(AIMNaamObject):
         """IP-adres van de netwerkmodem."""
         self.ipAdres.naam = "ipAdres"
         self.ipAdres.label = "ip adres"
-        self.ipAdres.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#NetwerkModem.ipAdres"
+        self.ipAdres.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#NetwerkModem.ipAdres"
         self.ipAdres.definition = "IP-adres van de netwerkmodem."
         self.ipAdres.constraints = ""
         self.ipAdres.usagenote = ""

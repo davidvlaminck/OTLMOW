@@ -17,7 +17,7 @@ class ProefGrondkarakteristieken(Proef):
         """Proef met de resultaten van de grondkarakteristieken."""
         self.bepalingGrondkarakteristieken.naam = "bepalingGrondkarakteristieken"
         self.bepalingGrondkarakteristieken.label = "bepaling grondkarakteristieken"
-        self.bepalingGrondkarakteristieken.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefGrondkarakteristieken.bepalingGrondkarakteristieken"
+        self.bepalingGrondkarakteristieken.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefGrondkarakteristieken.bepalingGrondkarakteristieken"
         self.bepalingGrondkarakteristieken.definition = "Proef met de resultaten van de grondkarakteristieken."
         self.bepalingGrondkarakteristieken.constraints = ""
         self.bepalingGrondkarakteristieken.usagenote = ""

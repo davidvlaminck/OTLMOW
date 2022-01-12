@@ -9,7 +9,7 @@ class KlHoogtedetectieMerk(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlHoogtedetectieMerk",
                          label="Hoogtedetectie merk",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlHoogtedetectieMerk",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlHoogtedetectieMerk",
                          definition="Keuzelijst met de gangbare merken van hoogtedetectiesystemen. De merken verwijzen doorgaans naar de fabrikant of leverancier.",
                          usagenote="",
                          deprecated_version="",

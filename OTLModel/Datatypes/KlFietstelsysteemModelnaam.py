@@ -9,7 +9,7 @@ class KlFietstelsysteemModelnaam(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlFietstelsysteemModelnaam",
                          label="Modelnaam fietstelsysteem",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlFietstelsysteemModelnaam",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlFietstelsysteemModelnaam",
                          definition="Lijst met mogelijke modelnamen voor fietstelsystemen.",
                          usagenote="",
                          deprecated_version="",

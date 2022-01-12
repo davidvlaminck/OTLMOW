@@ -25,7 +25,7 @@ class Kamer(PutRelatie):
         """De afmeting 1 (breedte) van het grondplan van de putkamer in millimeter."""
         self.breedte.naam = "breedte"
         self.breedte.label = "breedte"
-        self.breedte.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Kamer.breedte"
+        self.breedte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Kamer.breedte"
         self.breedte.definition = "De afmeting 1 (breedte) van het grondplan van de putkamer in millimeter."
         self.breedte.constraints = ""
         self.breedte.usagenote = ""
@@ -35,7 +35,7 @@ class Kamer(PutRelatie):
         """De diepte van de putkamer in meter."""
         self.diepte.naam = "diepte"
         self.diepte.label = "diepte"
-        self.diepte.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Kamer.diepte"
+        self.diepte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Kamer.diepte"
         self.diepte.definition = "De diepte van de putkamer in meter."
         self.diepte.constraints = ""
         self.diepte.usagenote = ""
@@ -45,7 +45,7 @@ class Kamer(PutRelatie):
         """De afmeting 2 (hoogte) van het grondplan van de putkamer in millimeter."""
         self.hoogte.naam = "hoogte"
         self.hoogte.label = "hoogte"
-        self.hoogte.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Kamer.hoogte"
+        self.hoogte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Kamer.hoogte"
         self.hoogte.definition = "De afmeting 2 (hoogte) van het grondplan van de putkamer in millimeter."
         self.hoogte.constraints = ""
         self.hoogte.usagenote = ""
@@ -54,7 +54,7 @@ class Kamer(PutRelatie):
         self.klasse = KeuzelijstField(naam="klasse",
                                       label="klasse",
                                       lijst=KlKamerKlasse(),
-                                      uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Kamer.klasse",
+                                      objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Kamer.klasse",
                                       definition="De stabiliteitsklasse van de kamer.",
                                       constraints="",
                                       usagenote="",
@@ -64,7 +64,7 @@ class Kamer(PutRelatie):
         self.materiaal = KeuzelijstField(naam="materiaal",
                                          label="materiaal",
                                          lijst=KlPutMateriaal(),
-                                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Kamer.materiaal",
+                                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Kamer.materiaal",
                                          definition="Het materiaal waaruit de kamer opgebouwd is.",
                                          constraints="",
                                          usagenote="",
@@ -74,7 +74,7 @@ class Kamer(PutRelatie):
         technischeFicheField = DtcDocument()
         technischeFicheField.naam = "technischeFiche"
         technischeFicheField.label = "technische fiche"
-        technischeFicheField.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Kamer.technischeFiche"
+        technischeFicheField.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Kamer.technischeFiche"
         technischeFicheField.definition = "De technische fiche van de kamer."
         technischeFicheField.constraints = ""
         technischeFicheField.usagenote = "Bestanden van het type xlsx, dwg of pdf."
@@ -85,7 +85,7 @@ class Kamer(PutRelatie):
         self.vorm = KeuzelijstField(naam="vorm",
                                     label="vorm",
                                     lijst=KlRioleringVorm(),
-                                    uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Kamer.vorm",
+                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Kamer.vorm",
                                     definition="De vorm van de kamer.",
                                     constraints="",
                                     usagenote="",

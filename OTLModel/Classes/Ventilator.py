@@ -21,7 +21,7 @@ class Ventilator(Ventilatie):
         self.draairichting = KeuzelijstField(naam="draairichting",
                                              label="draairichting",
                                              lijst=KlVentilatorRichting(),
-                                             uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Ventilator.draairichting",
+                                             objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Ventilator.draairichting",
                                              definition="Geeft aan of de bladen van de ventilator met de wijzers mee of tegen de wijzers in draaien.",
                                              constraints="",
                                              usagenote="",
@@ -31,7 +31,7 @@ class Ventilator(Ventilatie):
         self.gebruik = KeuzelijstField(naam="gebruik",
                                        label="gebruik",
                                        lijst=KlVentilatorGebruik(),
-                                       uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Ventilator.gebruik",
+                                       objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Ventilator.gebruik",
                                        definition="Geeft aan op welke manier de ventilator ingezet wordt.",
                                        constraints="",
                                        usagenote="",
@@ -40,7 +40,7 @@ class Ventilator(Ventilatie):
 
         self.heefDrukverschilmeting = BooleanField(naam="heefDrukverschilmeting",
                                                    label="heeft drukverschilmeting",
-                                                   uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Ventilator.heefDrukverschilmeting",
+                                                   objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Ventilator.heefDrukverschilmeting",
                                                    definition="Geeft aan of de ventilator uitgerust is met een drukverschilmeters.",
                                                    constraints="",
                                                    usagenote="",
@@ -49,7 +49,7 @@ class Ventilator(Ventilatie):
 
         self.heeftTemperatuurmeting = BooleanField(naam="heeftTemperatuurmeting",
                                                    label="heeft temperatuurmeting",
-                                                   uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Ventilator.heeftTemperatuurmeting",
+                                                   objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Ventilator.heeftTemperatuurmeting",
                                                    definition="Geeft aan of de ventilator uitgerust is met temperatuurmeting.",
                                                    constraints="",
                                                    usagenote="",
@@ -58,7 +58,7 @@ class Ventilator(Ventilatie):
 
         self.heeftTrillingsmeting = BooleanField(naam="heeftTrillingsmeting",
                                                  label="heeft trillingsmeting",
-                                                 uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Ventilator.heeftTrillingsmeting",
+                                                 objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Ventilator.heeftTrillingsmeting",
                                                  definition="Geeft aan of de ventilator uitgerust is met trillingsmeting.",
                                                  constraints="",
                                                  usagenote="",
@@ -68,7 +68,7 @@ class Ventilator(Ventilatie):
         standenField = KwantWrdInProcent()
         standenField.naam = "standen"
         standenField.label = "standen"
-        standenField.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Ventilator.standen"
+        standenField.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Ventilator.standen"
         standenField.definition = "Met de standen van de ventilator kan de draaisnelheid en soms ook de draairichting van de de bladen van de ventilator bepaald worden."
         standenField.constraints = ""
         standenField.usagenote = ""

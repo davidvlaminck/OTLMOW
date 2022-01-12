@@ -17,7 +17,7 @@ class ProefDraagvermogen(Proef):
         """Proef die het draagvermogen van de laag bepaald."""
         self.draagvermogen.naam = "draagvermogen"
         self.draagvermogen.label = "draagvermogen"
-        self.draagvermogen.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefDraagvermogen.draagvermogen"
+        self.draagvermogen.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefDraagvermogen.draagvermogen"
         self.draagvermogen.definition = "Proef die het draagvermogen van de laag bepaald."
         self.draagvermogen.constraints = ""
         self.draagvermogen.usagenote = ""

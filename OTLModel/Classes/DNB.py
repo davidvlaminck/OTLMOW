@@ -24,7 +24,7 @@ class DNB(Voedingspunt):
         """Vermogen van de aansluiting."""
         self.aansluitvermogen.naam = "aansluitvermogen"
         self.aansluitvermogen.label = "aansluitvermogen"
-        self.aansluitvermogen.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#DNB.aansluitvermogen"
+        self.aansluitvermogen.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#DNB.aansluitvermogen"
         self.aansluitvermogen.definition = "Vermogen van de aansluiting."
         self.aansluitvermogen.constraints = ""
         self.aansluitvermogen.usagenote = ""
@@ -34,7 +34,7 @@ class DNB(Voedingspunt):
         """Het adres van de aansluiting volgens de distributienetbeheerder."""
         self.adresVolgensDNB.naam = "adresVolgensDNB"
         self.adresVolgensDNB.label = "adres volgens DNB"
-        self.adresVolgensDNB.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#DNB.adresVolgensDNB"
+        self.adresVolgensDNB.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#DNB.adresVolgensDNB"
         self.adresVolgensDNB.definition = "Het adres van de aansluiting volgens de distributienetbeheerder."
         self.adresVolgensDNB.constraints = ""
         self.adresVolgensDNB.usagenote = ""
@@ -42,7 +42,7 @@ class DNB(Voedingspunt):
 
         self.datumEnergieleveringscontract = DateField(naam="datumEnergieleveringscontract",
                                                        label="datum energieleveringscontract",
-                                                       uri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#DNB.datumEnergieleveringscontract",
+                                                       objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#DNB.datumEnergieleveringscontract",
                                                        definition="De datum waarop het energieleveringscontract afgesloten is.",
                                                        constraints="",
                                                        usagenote="",
@@ -51,7 +51,7 @@ class DNB(Voedingspunt):
 
         self.datumOprichting = DateField(naam="datumOprichting",
                                          label="datum oprichting",
-                                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#DNB.datumOprichting",
+                                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#DNB.datumOprichting",
                                          definition="Datum waarop de DNB het voedingsbord koppelt met het net.",
                                          constraints="",
                                          usagenote="",
@@ -60,7 +60,7 @@ class DNB(Voedingspunt):
 
         self.datumStartEnergielevering = DateField(naam="datumStartEnergielevering",
                                                    label="datum start energielevering",
-                                                   uri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#DNB.datumStartEnergielevering",
+                                                   objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#DNB.datumStartEnergielevering",
                                                    definition="De datum waarop de energielevering effectief aanvangt. Dit gebeurt zodra zowel de aansluiting op het DNB-net als het energieleveringscontract in orde zijn.",
                                                    constraints="",
                                                    usagenote="",
@@ -69,7 +69,7 @@ class DNB(Voedingspunt):
 
         self.eanNummer = StringField(naam="eanNummer",
                                      label="ean nummer",
-                                     uri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#DNB.eanNummer",
+                                     objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#DNB.eanNummer",
                                      definition="Uniek identificatienummer van de elektrische aansluiting, bestaande uit 18 cijfers.",
                                      constraints="",
                                      usagenote="",
@@ -80,7 +80,7 @@ class DNB(Voedingspunt):
         """Leverancier van de energie."""
         self.energieleverancier.naam = "energieleverancier"
         self.energieleverancier.label = "energieleverancier"
-        self.energieleverancier.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#DNB.energieleverancier"
+        self.energieleverancier.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#DNB.energieleverancier"
         self.energieleverancier.definition = "Leverancier van de energie."
         self.energieleverancier.constraints = ""
         self.energieleverancier.usagenote = ""
@@ -90,7 +90,7 @@ class DNB(Voedingspunt):
         """Lokale instantie die instaat voor het beheer van het elektriciteitsnet."""
         self.netbeheerder.naam = "netbeheerder"
         self.netbeheerder.label = "netbeheerder"
-        self.netbeheerder.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#DNB.netbeheerder"
+        self.netbeheerder.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#DNB.netbeheerder"
         self.netbeheerder.definition = "Lokale instantie die instaat voor het beheer van het elektriciteitsnet."
         self.netbeheerder.constraints = ""
         self.netbeheerder.usagenote = ""
@@ -98,7 +98,7 @@ class DNB(Voedingspunt):
 
         self.referentieDNB = StringField(naam="referentieDNB",
                                          label="referentie distributienetbeheerder",
-                                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#DNB.referentieDNB",
+                                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#DNB.referentieDNB",
                                          definition="De wijze waarop, de referentie waarmee de aansluiting gekend is bij de distributienetbeheerder.",
                                          constraints="",
                                          usagenote="",
@@ -109,7 +109,7 @@ class DNB(Voedingspunt):
         """Document met de risicoanalyse."""
         self.risicoAnalyse.naam = "risicoAnalyse"
         self.risicoAnalyse.label = "risico analyse"
-        self.risicoAnalyse.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#DNB.risicoAnalyse"
+        self.risicoAnalyse.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#DNB.risicoAnalyse"
         self.risicoAnalyse.definition = "Document met de risicoanalyse."
         self.risicoAnalyse.constraints = ""
         self.risicoAnalyse.usagenote = ""

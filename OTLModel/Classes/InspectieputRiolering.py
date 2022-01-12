@@ -21,7 +21,7 @@ class InspectieputRiolering(AIMObject, Put):
         """Verschil in richting tussen inkomende en uitgaande rioolbuis."""
         self.hoekverdraaiing.naam = "hoekverdraaiing"
         self.hoekverdraaiing.label = "hoekverdraaiing"
-        self.hoekverdraaiing.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/installatie#InspectieputRiolering.hoekverdraaiing"
+        self.hoekverdraaiing.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/installatie#InspectieputRiolering.hoekverdraaiing"
         self.hoekverdraaiing.definition = "Verschil in richting tussen inkomende en uitgaande rioolbuis."
         self.hoekverdraaiing.constraints = ""
         self.hoekverdraaiing.usagenote = ""
@@ -30,7 +30,7 @@ class InspectieputRiolering(AIMObject, Put):
         self.type = KeuzelijstField(naam="type",
                                     label="type",
                                     lijst=KlPutType(),
-                                    uri="https://wegenenverkeer.data.vlaanderen.be/ns/installatie#InspectieputRiolering.type",
+                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/installatie#InspectieputRiolering.type",
                                     definition="Het type van de put zoals beschreven in hoofdstuk 7 van het standaardbestek 250.",
                                     constraints="",
                                     usagenote="",

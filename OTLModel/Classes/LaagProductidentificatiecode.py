@@ -16,7 +16,7 @@ class LaagProductidentificatiecode(ABC):
         """De productidentificatiecode van het gebruikte product (bv. COPRO code of Benor code)."""
         self.productidentificatiecode.naam = "productidentificatiecode"
         self.productidentificatiecode.label = "productidentificatiecode"
-        self.productidentificatiecode.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#LaagProductidentificatiecode.productidentificatiecode"
+        self.productidentificatiecode.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#LaagProductidentificatiecode.productidentificatiecode"
         self.productidentificatiecode.definition = "De productidentificatiecode van het gebruikte product (bv. COPRO code of Benor code)."
         self.productidentificatiecode.constraints = ""
         self.productidentificatiecode.usagenote = ""

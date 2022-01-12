@@ -23,7 +23,7 @@ class PTRegelaar(AIMNaamObject):
         self.communicatiewijze = KeuzelijstField(naam="communicatiewijze",
                                                  label="communicatiewijze",
                                                  lijst=KlPtRegelaarCommunicatiewijze(),
-                                                 uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#PTRegelaar.communicatiewijze",
+                                                 objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#PTRegelaar.communicatiewijze",
                                                  definition="De manier waarop de PT-regelaar communiceert met de verkeersregelaar.",
                                                  constraints="",
                                                  usagenote="",
@@ -33,7 +33,7 @@ class PTRegelaar(AIMNaamObject):
         lijnnummersField = DtcDocument()
         lijnnummersField.naam = "lijnnummers"
         lijnnummersField.label = "lijnnummers"
-        lijnnummersField.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#PTRegelaar.lijnnummers"
+        lijnnummersField.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#PTRegelaar.lijnnummers"
         lijnnummersField.definition = "Nummers van de PT lijnen die connecteren met de PT regelaar."
         lijnnummersField.constraints = ""
         lijnnummersField.usagenote = ""
@@ -44,7 +44,7 @@ class PTRegelaar(AIMNaamObject):
         self.merk = KeuzelijstField(naam="merk",
                                     label="merk",
                                     lijst=KlPTRegelaarMerk(),
-                                    uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#PTRegelaar.merk",
+                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#PTRegelaar.merk",
                                     definition="Het merk van een PT regelaar.",
                                     constraints="",
                                     usagenote="",
@@ -54,7 +54,7 @@ class PTRegelaar(AIMNaamObject):
         self.modelnaam = KeuzelijstField(naam="modelnaam",
                                          label="modelnaam",
                                          lijst=KlPTRegelaarModelnaam(),
-                                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#PTRegelaar.modelnaam",
+                                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#PTRegelaar.modelnaam",
                                          definition="De modelnaam/product range van een PT regelaar.",
                                          constraints="",
                                          usagenote="",
@@ -64,7 +64,7 @@ class PTRegelaar(AIMNaamObject):
         self.protocol = KeuzelijstField(naam="protocol",
                                         label="protocol",
                                         lijst=KlPtRegelaarProtocol(),
-                                        uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#PTRegelaar.protocol",
+                                        objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#PTRegelaar.protocol",
                                         definition="Naam van het protocol waarmee gecommuniceerd wordt tussen PT-regelaar en verkeersregelaar.",
                                         constraints="",
                                         usagenote="",
@@ -73,7 +73,7 @@ class PTRegelaar(AIMNaamObject):
 
         voertuignummersField = StringField(naam="voertuignummers",
                                            label="voertuignummers",
-                                           uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#PTRegelaar.voertuignummers",
+                                           objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#PTRegelaar.voertuignummers",
                                            definition="Nummers van de voertuigen die connecteren met de PT regelaar.",
                                            constraints="",
                                            usagenote="",

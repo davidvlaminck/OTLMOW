@@ -34,7 +34,7 @@ class EnumerationOSLOCollector(OSLOCollector):
                                           '    def __init__(self):',
                                           '        super().__init__(naam="KlAIMToestand",',
                                           '                         label="AIM toestand",',
-                                          '                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KlAIMToestand",',
+                                          '                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KlAIMToestand",',
                                           '                         definition="Keuzelijst met fasen uit de levenscyclus van een object om de toestand op een moment mee vast te leggen.",',
                                           '                         usagenote="",',
                                           '                         deprecated_version="",',
@@ -67,30 +67,30 @@ class OTLEnumerationCreatorTests(unittest.TestCase):
         logger = NoneLogger()
         collector = OSLOCollector(mock)
         creator = OTLEnumerationCreator(logger, collector)
-        osloEnumeration = OSLOEnumeration(name='name', uri='', definition_nl='', label_nl='', usagenote_nl='',
+        osloEnumeration = OSLOEnumeration(name='name', objectUri='', definition_nl='', label_nl='', usagenote_nl='',
                                           deprecated_version='', codelist='')
 
         with self.assertRaises(ValueError) as exception_empty_uri:
             creator.CreateBlockToWriteFromEnumerations(osloEnumeration)
-        self.assertEqual(str(exception_empty_uri.exception), "OSLOEnumeration.uri is invalid. Value = ''")
+        self.assertEqual(str(exception_empty_uri.exception), "OSLOEnumeration.objectUri is invalid. Value = ''")
 
     def test_InvalidOSLOEnumerationBadUri(self):
         logger = NoneLogger()
         collector = OSLOCollector(mock)
         creator = OTLEnumerationCreator(logger, collector)
-        osloEnumeration = OSLOEnumeration(name='name', uri='Bad uri', definition_nl='', label_nl='', usagenote_nl='',
+        osloEnumeration = OSLOEnumeration(name='name', objectUri='Bad objectUri', definition_nl='', label_nl='', usagenote_nl='',
                                           deprecated_version='', codelist='')
 
         with self.assertRaises(ValueError) as exception_bad_uri:
             creator.CreateBlockToWriteFromEnumerations(osloEnumeration)
-        self.assertEqual(str(exception_bad_uri.exception), "OSLOEnumeration.uri is invalid. Value = 'Bad uri'")
+        self.assertEqual(str(exception_bad_uri.exception), "OSLOEnumeration.objectUri is invalid. Value = 'Bad objectUri'")
 
     def test_InvalidOSLOEnumerationEmptyName(self):
         logger = NoneLogger()
         collector = OSLOCollector(mock)
         creator = OTLEnumerationCreator(logger, collector)
         osloEnumeration = OSLOEnumeration(name='',
-                                          uri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrd',
+                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrd',
                                           definition_nl='', label_nl='', usagenote_nl='',
                                           deprecated_version='', codelist='')
 
@@ -175,5 +175,5 @@ class OTLEnumerationCreatorTests(unittest.TestCase):
         self.assertEqual('in-ontwerp', inontwerp_waarde.invulwaarde)
         self.assertEqual('in ontwerp', inontwerp_waarde.label)
         self.assertEqual('', inontwerp_waarde.definitie)
-        self.assertEqual('https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAIMToestand/in-ontwerp', inontwerp_waarde.uri)
+        self.assertEqual('https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAIMToestand/in-ontwerp', inontwerp_waarde.objectUri)
         pass

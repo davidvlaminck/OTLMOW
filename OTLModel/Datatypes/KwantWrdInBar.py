@@ -11,7 +11,7 @@ class KwantWrdInBar(KwantWrd):
     def __init__(self, waarde=None):
         self.eenheid = LiteralField(naam="standaardEenheid",
                                     label="standaard eenheid",
-                                    uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInBar.standaardEenheid",
+                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInBar.standaardEenheid",
                                     definition="De standaard eenheid bij dit datatype is uitgedrukt in bar.",
                                     constraints='"bar"^^cdt:ucumunit',
                                     usagenote='"bar"^^cdt:ucumunit',
@@ -21,7 +21,7 @@ class KwantWrdInBar(KwantWrd):
 
         self.waardeVeld = DecimalFloatField(naam="waarde",
                                             label="waarde",
-                                            uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInBar.waarde",
+                                            objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInBar.waarde",
                                             definition="Bevat een getal die bij het datatype hoort.",
                                             constraints="",
                                             usagenote="",
@@ -30,7 +30,7 @@ class KwantWrdInBar(KwantWrd):
 
         super().__init__(naam="KwantWrdInBar",
                          label="Kwantitatieve waarde in bar",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInBar",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInBar",
                          definition="Een kwantitatieve waarde die een getal in bar uitdrukt.",
                          usagenote="",
                          deprecated_version="",

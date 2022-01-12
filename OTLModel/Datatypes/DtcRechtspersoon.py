@@ -11,7 +11,7 @@ class DtcRechtspersoon(ComplexField):
     def __init__(self):
         super().__init__(naam="DtcRechtspersoon",
                          label="Rechtspersoon",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcRechtspersoon",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcRechtspersoon",
                          definition="Complex datatype voor een rechtspersoon.",
                          usagenote="",
                          deprecated_version="")
@@ -20,7 +20,7 @@ class DtcRechtspersoon(ComplexField):
         """Het adres."""
         self.waarde.adres.naam = "adres"
         self.waarde.adres.label = "adres"
-        self.waarde.adres.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcRechtspersoon.adres"
+        self.waarde.adres.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcRechtspersoon.adres"
         self.waarde.adres.definition = "Het adres."
         self.waarde.adres.constraints = ""
         self.waarde.adres.usagenote = ""
@@ -29,7 +29,7 @@ class DtcRechtspersoon(ComplexField):
 
         self.waarde.afdeling = StringField(naam="afdeling",
                                            label="afdeling",
-                                           uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcRechtspersoon.afdeling",
+                                           objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcRechtspersoon.afdeling",
                                            definition="De afdeling waartoe een rechtspersoon behoort.",
                                            constraints="",
                                            usagenote="",
@@ -39,7 +39,7 @@ class DtcRechtspersoon(ComplexField):
 
         self.waarde.organisatie = StringField(naam="organisatie",
                                               label="organisatie",
-                                              uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcRechtspersoon.organisatie",
+                                              objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcRechtspersoon.organisatie",
                                               definition="De naam van de organisatie of rechtspersoon.",
                                               constraints="",
                                               usagenote="",
@@ -49,7 +49,7 @@ class DtcRechtspersoon(ComplexField):
 
         self.waarde.telefoonnnummer = StringField(naam="telefoonnnummer",
                                                   label="telefoonnnummer",
-                                                  uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcRechtspersoon.telefoonnnummer",
+                                                  objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcRechtspersoon.telefoonnnummer",
                                                   definition="Het telefoonnummer.",
                                                   constraints="",
                                                   usagenote="",

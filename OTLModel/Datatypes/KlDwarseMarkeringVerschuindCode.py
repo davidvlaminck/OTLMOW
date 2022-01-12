@@ -9,7 +9,7 @@ class KlDwarseMarkeringVerschuindCode(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlDwarseMarkeringVerschuindCode",
                          label="Dwarse markering code verschuind",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlDwarseMarkeringVerschuindCode",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlDwarseMarkeringVerschuindCode",
                          definition="Codes van de schuine dwarse markering.",
                          usagenote="",
                          deprecated_version="",

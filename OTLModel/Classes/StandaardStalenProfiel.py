@@ -17,7 +17,7 @@ class StandaardStalenProfiel(StalenProfiel):
         """Soort van profiel gecombineerd met de hoogte."""
         self.profieltype.naam = "profieltype"
         self.profieltype.label = "profieltype"
-        self.profieltype.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#StandaardStalenProfiel.profieltype"
+        self.profieltype.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#StandaardStalenProfiel.profieltype"
         self.profieltype.definition = "Soort van profiel gecombineerd met de hoogte."
         self.profieltype.constraints = ""
         self.profieltype.usagenote = ""

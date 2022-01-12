@@ -21,7 +21,7 @@ class Overstort(LinkendElement):
         """Drempellengte of breedte van de overstort. Deze wordt gemeten aan de kortste zijdevan de drempel."""
         self.drempellengte.naam = "drempellengte"
         self.drempellengte.label = "breedte"
-        self.drempellengte.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Overstort.drempellengte"
+        self.drempellengte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Overstort.drempellengte"
         self.drempellengte.definition = "Drempellengte of breedte van de overstort. Deze wordt gemeten aan de kortste zijdevan de drempel."
         self.drempellengte.constraints = ""
         self.drempellengte.usagenote = ""
@@ -30,7 +30,7 @@ class Overstort(LinkendElement):
         self.materiaalDrempel = KeuzelijstField(naam="materiaalDrempel",
                                                 label="materiaal drempel",
                                                 lijst=KlOverstortMateriaalDrempel(),
-                                                uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Overstort.materiaalDrempel",
+                                                objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Overstort.materiaalDrempel",
                                                 definition="Het gebruikte materiaal voor het vervaardigen van de overstort (drempel).",
                                                 constraints="",
                                                 usagenote="",
@@ -41,7 +41,7 @@ class Overstort(LinkendElement):
         """Drempelpeil van de overstort. Uitgedrukt in meter-TAW gemeten in het midden van de drempel."""
         self.peil.naam = "peil"
         self.peil.label = "peil"
-        self.peil.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Overstort.peil"
+        self.peil.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Overstort.peil"
         self.peil.definition = "Drempelpeil van de overstort. Uitgedrukt in meter-TAW gemeten in het midden van de drempel."
         self.peil.constraints = ""
         self.peil.usagenote = ""
@@ -51,7 +51,7 @@ class Overstort(LinkendElement):
         """De vrije hoogte tussen de overstortdrempel en het plafond van deconstructie ter hoogte van de drempel. Voor drempels in leidingen wordende vrije hoogte voor de databank genomen tussen de drempel en debinnenbovenkant buis. Indien er geen sprake is van een vrije hoogte (vbdrempels in grachten) wordt dit niet ingevuld."""
         self.vrijeHoogte.naam = "vrijeHoogte"
         self.vrijeHoogte.label = "vrije hoogte"
-        self.vrijeHoogte.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Overstort.vrijeHoogte"
+        self.vrijeHoogte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Overstort.vrijeHoogte"
         self.vrijeHoogte.definition = "De vrije hoogte tussen de overstortdrempel en het plafond van deconstructie ter hoogte van de drempel. Voor drempels in leidingen wordende vrije hoogte voor de databank genomen tussen de drempel en debinnenbovenkant buis. Indien er geen sprake is van een vrije hoogte (vbdrempels in grachten) wordt dit niet ingevuld."
         self.vrijeHoogte.constraints = ""
         self.vrijeHoogte.usagenote = ""

@@ -17,7 +17,7 @@ class Kabelmof(AIMNaamObject):
         self.type = KeuzelijstField(naam="type",
                                     label="type kabelmof",
                                     lijst=KlKabelmofType(),
-                                    uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Kabelmof.type",
+                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Kabelmof.type",
                                     definition="Soort mof volgens een lijst van types.",
                                     constraints="",
                                     usagenote="",

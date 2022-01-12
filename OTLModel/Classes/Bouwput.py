@@ -19,7 +19,7 @@ class Bouwput(AIMObject):
         """Diepte tussen het maaiveld en onderkant bouwput in meter."""
         self.putdiepte.naam = "putdiepte"
         self.putdiepte.label = "putdiepte"
-        self.putdiepte.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bouwput.putdiepte"
+        self.putdiepte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bouwput.putdiepte"
         self.putdiepte.definition = "Diepte tussen het maaiveld en onderkant bouwput in meter."
         self.putdiepte.constraints = ""
         self.putdiepte.usagenote = ""
@@ -28,7 +28,7 @@ class Bouwput(AIMObject):
         self.type = KeuzelijstField(naam="type",
                                     label="type",
                                     lijst=KlBouwputType(),
-                                    uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bouwput.type",
+                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bouwput.type",
                                     definition="Het type van bouwput.",
                                     constraints="",
                                     usagenote="",

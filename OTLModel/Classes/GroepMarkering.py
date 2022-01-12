@@ -17,7 +17,7 @@ class GroepMarkering(AIMObject):
         """De totale oppervlakte van de totale markering groepering."""
         self.totaleGroepOppervlakte.naam = "totaleGroepOppervlakte"
         self.totaleGroepOppervlakte.label = "totale oppervlakte groepering"
-        self.totaleGroepOppervlakte.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/installatie#GroepMarkering.totaleGroepOppervlakte"
+        self.totaleGroepOppervlakte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/installatie#GroepMarkering.totaleGroepOppervlakte"
         self.totaleGroepOppervlakte.definition = "De totale oppervlakte van de totale markering groepering."
         self.totaleGroepOppervlakte.constraints = ""
         self.totaleGroepOppervlakte.usagenote = ""

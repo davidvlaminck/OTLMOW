@@ -17,7 +17,7 @@ class Wildreflector(Bebakening):
         self.drager = KeuzelijstField(naam="drager",
                                       label="drager",
                                       lijst=KlWildreflectorDrager(),
-                                      uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Wildreflector.drager",
+                                      objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Wildreflector.drager",
                                       definition="De constructie waar de wildreflector is aan bevestigd.",
                                       constraints="",
                                       usagenote="",

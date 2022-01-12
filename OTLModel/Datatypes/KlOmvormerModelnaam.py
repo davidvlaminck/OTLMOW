@@ -9,7 +9,7 @@ class KlOmvormerModelnaam(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlOmvormerModelnaam",
                          label="Omvormer modelnaam",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlOmvormerModelnaam",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlOmvormerModelnaam",
                          definition="De modelnaam van de omvormer.",
                          usagenote="",
                          deprecated_version="",

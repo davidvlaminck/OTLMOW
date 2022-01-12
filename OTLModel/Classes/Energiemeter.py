@@ -20,7 +20,7 @@ class Energiemeter(AIMNaamObject):
 
         self.aantalTelwerken = IntegerField(naam="aantalTelwerken",
                                             label="aantal telwerken",
-                                            uri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Energiemeter.aantalTelwerken",
+                                            objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Energiemeter.aantalTelwerken",
                                             definition="Het aantal telwerken dat de energiemeter bevat: 1 bij enkelvoudige meter, 2 bij een dag- en nacht-meter.",
                                             constraints="",
                                             usagenote="",
@@ -29,7 +29,7 @@ class Energiemeter(AIMNaamObject):
 
         self.meternummer = StringField(naam="meternummer",
                                        label="meternummer",
-                                       uri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Energiemeter.meternummer",
+                                       objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Energiemeter.meternummer",
                                        definition="Het serienummer (nummer van het fabrikaat) op de meter.",
                                        constraints="",
                                        usagenote="",
@@ -39,7 +39,7 @@ class Energiemeter(AIMNaamObject):
         self.metertype = KeuzelijstField(naam="metertype",
                                          label="metertype",
                                          lijst=KlEnergiemeterMetertype(),
-                                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Energiemeter.metertype",
+                                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Energiemeter.metertype",
                                          definition="Type meter (mechanisch, elektronisch).",
                                          constraints="",
                                          usagenote="",

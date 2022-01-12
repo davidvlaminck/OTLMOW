@@ -23,7 +23,7 @@ class Kast(Behuizing):
         """Buitenafmeting van de kast als maximale breedte, lengte en hoogte in millimeter."""
         self.afmeting.naam = "afmeting"
         self.afmeting.label = "afmeting"
-        self.afmeting.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Kast.afmeting"
+        self.afmeting.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Kast.afmeting"
         self.afmeting.definition = "Buitenafmeting van de kast als maximale breedte, lengte en hoogte in millimeter."
         self.afmeting.constraints = ""
         self.afmeting.usagenote = ""
@@ -31,7 +31,7 @@ class Kast(Behuizing):
 
         self.heeftVerlichting = BooleanField(naam="heeftVerlichting",
                                              label="heeft verlichting",
-                                             uri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Kast.heeftVerlichting",
+                                             objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Kast.heeftVerlichting",
                                              definition="Geeft aan of er verlichting aanwezig is binnen de kast.",
                                              constraints="",
                                              usagenote="",
@@ -42,7 +42,7 @@ class Kast(Behuizing):
         """Schematisch overzicht van de indeling van de kast volgens de aanwezige technieken in vooraanzicht."""
         self.indelingsplan.naam = "indelingsplan"
         self.indelingsplan.label = "indelingsplan"
-        self.indelingsplan.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Kast.indelingsplan"
+        self.indelingsplan.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Kast.indelingsplan"
         self.indelingsplan.definition = "Schematisch overzicht van de indeling van de kast volgens de aanwezige technieken in vooraanzicht."
         self.indelingsplan.constraints = ""
         self.indelingsplan.usagenote = ""
@@ -51,7 +51,7 @@ class Kast(Behuizing):
         self.kastmateriaal = KeuzelijstField(naam="kastmateriaal",
                                              label="kastmateriaal",
                                              lijst=KlAlgMateriaal(),
-                                             uri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Kast.kastmateriaal",
+                                             objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Kast.kastmateriaal",
                                              definition="Materiaal waaruit de kast is opgebouwd.",
                                              constraints="",
                                              usagenote="",

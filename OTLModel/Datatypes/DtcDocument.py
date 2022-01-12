@@ -14,14 +14,14 @@ class DtcDocument(ComplexField):
     def __init__(self):
         super().__init__(naam="DtcDocument",
                          label="Bestandsbijlage",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcDocument",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcDocument",
                          definition="Complex datatype voor alle bestandsbijlages.",
                          usagenote="",
                          deprecated_version="")
 
         self.waarde.bestandsnaam = StringField(naam="bestandsnaam",
                                                label="bestandsnaam",
-                                               uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcDocument.bestandsnaam",
+                                               objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcDocument.bestandsnaam",
                                                definition="De naam van het Document inclusief de bestandsextensie, van de naam gescheiden door een punt.",
                                                constraints="",
                                                usagenote="",
@@ -32,7 +32,7 @@ class DtcDocument(ComplexField):
         self.waarde.mimeType = KeuzelijstField(naam="mimeType",
                                                label="mime-type",
                                                lijst=KlAlgMimeType(),
-                                               uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcDocument.mimeType",
+                                               objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcDocument.mimeType",
                                                definition="Het MIME type van het document.",
                                                constraints="",
                                                usagenote="",
@@ -44,7 +44,7 @@ class DtcDocument(ComplexField):
         """Een korte toelichting over waar het document juist voor dient."""
         self.waarde.omschrijving.naam = "omschrijving"
         self.waarde.omschrijving.label = "omschrijving"
-        self.waarde.omschrijving.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcDocument.omschrijving"
+        self.waarde.omschrijving.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcDocument.omschrijving"
         self.waarde.omschrijving.definition = "Een korte toelichting over waar het document juist voor dient."
         self.waarde.omschrijving.constraints = ""
         self.waarde.omschrijving.usagenote = ""
@@ -53,7 +53,7 @@ class DtcDocument(ComplexField):
 
         self.waarde.uri = URIField(naam="uri",
                                    label="uri",
-                                   uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcDocument.uri",
+                                   objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcDocument.uri",
                                    definition="De verwijzing naar de bestandslocatie via een link. Bij lokale bestanden kan dit eventueel ook een pad zijn.",
                                    constraints="",
                                    usagenote="",

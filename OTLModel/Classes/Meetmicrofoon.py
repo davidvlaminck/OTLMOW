@@ -22,7 +22,7 @@ Een meetmicrofoon registreert de geluidsdruk, is gevoelig voor geluid uit alle r
         self.merk = KeuzelijstField(naam="merk",
                                     label="merk",
                                     lijst=KlMeetmicrofoonMerk(),
-                                    uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Meetmicrofoon.merk",
+                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Meetmicrofoon.merk",
                                     definition="Het merk van de meetmicrofoon.",
                                     constraints="",
                                     usagenote="",
@@ -32,7 +32,7 @@ Een meetmicrofoon registreert de geluidsdruk, is gevoelig voor geluid uit alle r
         self.modelnaam = KeuzelijstField(naam="modelnaam",
                                          label="modelnaam",
                                          lijst=KlMeetmicrofoonModelnaam(),
-                                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Meetmicrofoon.modelnaam",
+                                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Meetmicrofoon.modelnaam",
                                          definition="De modelnaam van de meetmicrofoon.",
                                          constraints="",
                                          usagenote="",
@@ -43,7 +43,7 @@ Een meetmicrofoon registreert de geluidsdruk, is gevoelig voor geluid uit alle r
         """De technische fiche van de meetmicrofoon."""
         self.technischeFiche.naam = "technischeFiche"
         self.technischeFiche.label = "technische fiche"
-        self.technischeFiche.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Meetmicrofoon.technischeFiche"
+        self.technischeFiche.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Meetmicrofoon.technischeFiche"
         self.technischeFiche.definition = "De technische fiche van de meetmicrofoon."
         self.technischeFiche.constraints = ""
         self.technischeFiche.usagenote = ""
@@ -52,7 +52,7 @@ Een meetmicrofoon registreert de geluidsdruk, is gevoelig voor geluid uit alle r
         self.transportType = KeuzelijstField(naam="transportType",
                                              label="transport type",
                                              lijst=KlAudioTransportType(),
-                                             uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Meetmicrofoon.transportType",
+                                             objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Meetmicrofoon.transportType",
                                              definition="Geeft aan op welke manier het audiosignaal wordt getransporteerd door het toestel.",
                                              constraints="",
                                              usagenote="",

@@ -14,7 +14,7 @@ class FirmwareObject(ABC):
     def __init__(self):
         self.firmwareversie = StringField(naam="firmwareversie",
                                           label="firmwareversie",
-                                          uri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#FirmwareObject.firmwareversie",
+                                          objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#FirmwareObject.firmwareversie",
                                           definition="Versie van de firmware.",
                                           constraints="",
                                           usagenote="",

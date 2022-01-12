@@ -17,7 +17,7 @@ class VerkeerslichtRood(Verkeerslicht):
         self.typeBewaking = KeuzelijstField(naam="typeBewaking",
                                             label="type bewaking",
                                             lijst=KlVriBewaking(),
-                                            uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#VerkeerslichtRood.typeBewaking",
+                                            objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#VerkeerslichtRood.typeBewaking",
                                             definition="Type bewaking van het rode verkeerslicht.",
                                             constraints="",
                                             usagenote="",

@@ -20,7 +20,7 @@ class Fundering(ConstructieElement):
         """De hoogte van het laagste punt van de onderkant van een element, ten opzichte van gemiddeld laagwaterpeil te Oostende (TAWpeil)."""
         self.aanzetpeil.naam = "aanzetpeil"
         self.aanzetpeil.label = "aanzetpeil"
-        self.aanzetpeil.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Fundering.aanzetpeil"
+        self.aanzetpeil.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Fundering.aanzetpeil"
         self.aanzetpeil.definition = "De hoogte van het laagste punt van de onderkant van een element, ten opzichte van gemiddeld laagwaterpeil te Oostende (TAWpeil)."
         self.aanzetpeil.constraints = ""
         self.aanzetpeil.usagenote = ""

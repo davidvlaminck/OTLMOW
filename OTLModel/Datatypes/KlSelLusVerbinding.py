@@ -9,7 +9,7 @@ class KlSelLusVerbinding(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlSelLusVerbinding",
                          label="Selectieve lus verbinding",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlSelLusVerbinding",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlSelLusVerbinding",
                          definition="Keuzelijst met soorten verbindingen voor selectieve lussen.",
                          usagenote="",
                          deprecated_version="",

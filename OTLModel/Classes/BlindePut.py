@@ -19,7 +19,7 @@ class BlindePut(AIMObject, Put):
         self.materiaal = KeuzelijstField(naam="materiaal",
                                          label="materiaal",
                                          lijst=KlPutMateriaal(),
-                                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/installatie#BlindePut.materiaal",
+                                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/installatie#BlindePut.materiaal",
                                          definition="Het materiaal waaruit de blinde put is vervaardigd.",
                                          constraints="",
                                          usagenote="",

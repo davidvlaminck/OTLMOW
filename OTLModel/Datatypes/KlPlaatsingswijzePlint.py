@@ -9,7 +9,7 @@ class KlPlaatsingswijzePlint(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlPlaatsingswijzePlint",
                          label="Plaatsingswijze plint",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlPlaatsingswijzePlint",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlPlaatsingswijzePlint",
                          definition="De manier waarop de plint geplaatst is ten opzichte van de profielen.",
                          usagenote="",
                          deprecated_version="",

@@ -19,7 +19,7 @@ class Mantelbuis(ContainerBuis, Buis):
         self.materiaal = KeuzelijstField(naam="materiaal",
                                          label="materiaal",
                                          lijst=KlRioleringsbuisMateriaal(),
-                                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Mantelbuis.materiaal",
+                                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Mantelbuis.materiaal",
                                          definition="Bepaalt het materiaal van de mantelbuis.",
                                          constraints="",
                                          usagenote="",

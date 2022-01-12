@@ -25,7 +25,7 @@ class Stortsteen(AndereLaag):
         """De hoeveelheid stortsteen in ton."""
         self.gewicht.naam = "gewicht"
         self.gewicht.label = "gewicht"
-        self.gewicht.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Stortsteen.gewicht"
+        self.gewicht.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Stortsteen.gewicht"
         self.gewicht.definition = "De hoeveelheid stortsteen in ton."
         self.gewicht.constraints = ""
         self.gewicht.usagenote = ""
@@ -34,7 +34,7 @@ class Stortsteen(AndereLaag):
         hechtspecieField = KeuzelijstField(naam="hechtspecie",
                                            label="hechtspecie",
                                            lijst=KlHechtspecie(),
-                                           uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Stortsteen.hechtspecie",
+                                           objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Stortsteen.hechtspecie",
                                            definition="Het gebruikte hechtingsmateriaal tussen gestapelde stenen.",
                                            constraints="",
                                            usagenote="",
@@ -44,7 +44,7 @@ class Stortsteen(AndereLaag):
 
         self.isVerankerd = BooleanField(naam="isVerankerd",
                                         label="is verankerd",
-                                        uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Stortsteen.isVerankerd",
+                                        objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Stortsteen.isVerankerd",
                                         definition="Aanduiding of de gestapelde ruwe steen verankerd is.",
                                         constraints="",
                                         usagenote="",
@@ -54,7 +54,7 @@ class Stortsteen(AndereLaag):
         self.kaliber = KeuzelijstField(naam="kaliber",
                                        label="kaliber",
                                        lijst=KlStortsteenKaliber(),
-                                       uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Stortsteen.kaliber",
+                                       objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Stortsteen.kaliber",
                                        definition="De gemiddelde diameter van de stortsteen.",
                                        constraints="",
                                        usagenote="",
@@ -64,7 +64,7 @@ class Stortsteen(AndereLaag):
         self.plaatsingswijze = KeuzelijstField(naam="plaatsingswijze",
                                                label="bestortingswijze",
                                                lijst=KlStortsteenPlaatsingswijze(),
-                                               uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Stortsteen.plaatsingswijze",
+                                               objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Stortsteen.plaatsingswijze",
                                                definition="De manier waarop de stenen worden geplaatst.",
                                                constraints="",
                                                usagenote="",
@@ -74,7 +74,7 @@ class Stortsteen(AndereLaag):
         technischeFicheField = DtcDocument()
         technischeFicheField.naam = "technischeFiche"
         technischeFicheField.label = "technische fiche"
-        technischeFicheField.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Stortsteen.technischeFiche"
+        technischeFicheField.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Stortsteen.technischeFiche"
         technischeFicheField.definition = "De technische fiche van stortsteen als bijlage."
         technischeFicheField.constraints = ""
         technischeFicheField.usagenote = ""
@@ -85,7 +85,7 @@ class Stortsteen(AndereLaag):
         self.type = KeuzelijstField(naam="type",
                                     label="type",
                                     lijst=KlStortsteenType(),
-                                    uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Stortsteen.type",
+                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Stortsteen.type",
                                     definition="Het type stortsteen.",
                                     constraints="",
                                     usagenote="",

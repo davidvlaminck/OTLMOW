@@ -17,7 +17,7 @@ class BestratingVanGrasbetontegel(Bestrating):
         self.vulling = KeuzelijstField(naam="vulling",
                                        label="vulling",
                                        lijst=KlBestratingOpvulsoort(),
-                                       uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#BestratingVanGrasbetontegel.vulling",
+                                       objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#BestratingVanGrasbetontegel.vulling",
                                        definition="Het gebruikte materiaal als toevoeging in de vrije openingen van de tegels.",
                                        constraints="",
                                        usagenote="",

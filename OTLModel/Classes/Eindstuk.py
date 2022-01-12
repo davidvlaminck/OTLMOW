@@ -17,7 +17,7 @@ class Eindstuk(AfschermendeConstructie):
         self.type = KeuzelijstField(naam="type",
                                     label="type",
                                     lijst=KlLEACTypeEindstuk(),
-                                    uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Eindstuk.type",
+                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Eindstuk.type",
                                     definition="De vorm van het eindstuk.",
                                     constraints="",
                                     usagenote="",

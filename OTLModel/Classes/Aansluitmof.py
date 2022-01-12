@@ -19,7 +19,7 @@ class Aansluitmof(LinkendElement):
         """De diameter van het boorgat gebruikt door de aansluitmof  in millimeter."""
         self.diameter.naam = "diameter"
         self.diameter.label = "diameter"
-        self.diameter.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Aansluitmof.diameter"
+        self.diameter.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Aansluitmof.diameter"
         self.diameter.definition = "De diameter van het boorgat gebruikt door de aansluitmof  in millimeter."
         self.diameter.constraints = ""
         self.diameter.usagenote = ""
@@ -28,7 +28,7 @@ class Aansluitmof(LinkendElement):
         self.materiaal = KeuzelijstField(naam="materiaal",
                                          label="materiaal",
                                          lijst=KlAansluitstukMateriaal(),
-                                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Aansluitmof.materiaal",
+                                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Aansluitmof.materiaal",
                                          definition="Het materiaal van de aansluitmof.",
                                          constraints="",
                                          usagenote="",

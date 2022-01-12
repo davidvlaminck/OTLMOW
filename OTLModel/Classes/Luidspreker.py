@@ -21,7 +21,7 @@ class Luidspreker(AIMNaamObject):
         self.merk = KeuzelijstField(naam="merk",
                                     label="merk",
                                     lijst=KlLuidsprekerMerk(),
-                                    uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Luidspreker.merk",
+                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Luidspreker.merk",
                                     definition="Het merk van de luidspreker.",
                                     constraints="",
                                     usagenote="",
@@ -31,7 +31,7 @@ class Luidspreker(AIMNaamObject):
         self.modelnaam = KeuzelijstField(naam="modelnaam",
                                          label="modelnaam",
                                          lijst=KlLuidsprekerModelnaam(),
-                                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Luidspreker.modelnaam",
+                                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Luidspreker.modelnaam",
                                          definition="De modelnaam van de luidspreker.",
                                          constraints="",
                                          usagenote="",
@@ -42,7 +42,7 @@ class Luidspreker(AIMNaamObject):
         """De technische fiche van de luidspreker."""
         self.technischeFiche.naam = "technischeFiche"
         self.technischeFiche.label = "technische fiche"
-        self.technischeFiche.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Luidspreker.technischeFiche"
+        self.technischeFiche.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Luidspreker.technischeFiche"
         self.technischeFiche.definition = "De technische fiche van de luidspreker."
         self.technischeFiche.constraints = ""
         self.technischeFiche.usagenote = ""
@@ -51,7 +51,7 @@ class Luidspreker(AIMNaamObject):
         self.transportType = KeuzelijstField(naam="transportType",
                                              label="transport type",
                                              lijst=KlAudioTransportType(),
-                                             uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Luidspreker.transportType",
+                                             objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Luidspreker.transportType",
                                              definition="Geeft aan op welke manier het audiosignaal wordt getransporteerd door het toestel.",
                                              constraints="",
                                              usagenote="",
@@ -61,7 +61,7 @@ class Luidspreker(AIMNaamObject):
         self.vormgeving = KeuzelijstField(naam="vormgeving",
                                           label="vormgeving",
                                           lijst=KLLuidsprekerVormgeving(),
-                                          uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Luidspreker.vormgeving",
+                                          objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Luidspreker.vormgeving",
                                           definition="Soort luidsprekers volgens zijn vormfactor.",
                                           constraints="",
                                           usagenote="",

@@ -9,11 +9,11 @@ class KlBoomVerankering(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlBoomVerankering",
                          label="Boom verankering",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlBoomVerankering",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlBoomVerankering",
                          definition="De verschillende manieren van verankering van een boom.",
                          usagenote="",
                          deprecated_version="",
                          codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlBoomVerankering")
 
-        self.add_option("ondergronds", "ondergronds", "De constructie voor de stabiliteit van de boom bevindt zich volledig onder de grond", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBoomVerankering/ondergronds")
         self.add_option("bovengronds", "bovengronds", "De constructie voor de stabiliteit van de boom bevindt zich boven de grond", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBoomVerankering/bovengronds")
+        self.add_option("ondergronds", "ondergronds", "De constructie voor de stabiliteit van de boom bevindt zich volledig onder de grond", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBoomVerankering/ondergronds")

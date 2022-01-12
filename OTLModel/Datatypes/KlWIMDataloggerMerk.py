@@ -9,7 +9,7 @@ class KlWIMDataloggerMerk(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlWIMDataloggerMerk",
                          label="WIM-datalogger merk",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlWIMDataloggerMerk",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlWIMDataloggerMerk",
                          definition="Het merk van de WIM-datalogger.",
                          usagenote="",
                          deprecated_version="",

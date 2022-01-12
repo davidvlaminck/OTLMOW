@@ -18,7 +18,7 @@ class Pad(NaampadObject):
         netwerkprotectieField = KeuzelijstField(naam="netwerkprotectie",
                                                 label="netwerkprotectie",
                                                 lijst=KlPadNetwerkprotectie(),
-                                                uri="https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Pad.netwerkprotectie",
+                                                objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Pad.netwerkprotectie",
                                                 definition="Referentie van het pad dat redundantie levert aan dit pad.",
                                                 constraints="",
                                                 usagenote="",

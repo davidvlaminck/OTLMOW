@@ -19,7 +19,7 @@ class LijnvormigElement(AIMObject):
         technischeFicheField = DtcDocument()
         technischeFicheField.naam = "technischeFiche"
         technischeFicheField.label = "technische fiche"
-        technischeFicheField.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#LijnvormigElement.technischeFiche"
+        technischeFicheField.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#LijnvormigElement.technischeFiche"
         technischeFicheField.definition = "De technische fiche van het lijnvormig element."
         technischeFicheField.constraints = ""
         technischeFicheField.usagenote = ""

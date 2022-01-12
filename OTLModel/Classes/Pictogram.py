@@ -22,7 +22,7 @@ class Pictogram(AIMObject, BevestigingGC):
         """De tijd dat het opgeslagen licht (bij bv. fosforen) in een andere lichtfrequentie (met minder energie) weer wordt uitgezonden."""
         self.nalichtingstijd.naam = "nalichtingstijd"
         self.nalichtingstijd.label = "nalichtingstijd"
-        self.nalichtingstijd.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Pictogram.nalichtingstijd"
+        self.nalichtingstijd.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Pictogram.nalichtingstijd"
         self.nalichtingstijd.definition = "De tijd dat het opgeslagen licht (bij bv. fosforen) in een andere lichtfrequentie (met minder energie) weer wordt uitgezonden."
         self.nalichtingstijd.constraints = ""
         self.nalichtingstijd.usagenote = ""
@@ -30,7 +30,7 @@ class Pictogram(AIMObject, BevestigingGC):
 
         self.opschrift = StringField(naam="opschrift",
                                      label="opschrift",
-                                     uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Pictogram.opschrift",
+                                     objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Pictogram.opschrift",
                                      definition="Eventueel begeleidende tekst bij het symbool.",
                                      constraints="",
                                      usagenote="",
@@ -40,7 +40,7 @@ class Pictogram(AIMObject, BevestigingGC):
         self.symbool = KeuzelijstField(naam="symbool",
                                        label="symbool",
                                        lijst=KlPictogramSymbool(),
-                                       uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Pictogram.symbool",
+                                       objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Pictogram.symbool",
                                        definition="Het symbool op het pictogram.",
                                        constraints="",
                                        usagenote="",

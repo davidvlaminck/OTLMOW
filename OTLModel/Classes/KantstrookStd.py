@@ -20,7 +20,7 @@ class KantstrookStd(GestandaardiseerdeKantopsluiting):
         """De breedte van de gestandaardiseerde kantstrook in centimeter."""
         self.breedte.naam = "breedte"
         self.breedte.label = "breedte"
-        self.breedte.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KantstrookStd.breedte"
+        self.breedte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KantstrookStd.breedte"
         self.breedte.definition = "De breedte van de gestandaardiseerde kantstrook in centimeter."
         self.breedte.constraints = ""
         self.breedte.usagenote = ""
@@ -30,7 +30,7 @@ class KantstrookStd(GestandaardiseerdeKantopsluiting):
         """De dikte van de gestandaardiseerde kantstrook in centimeter."""
         self.dikte.naam = "dikte"
         self.dikte.label = "dikte"
-        self.dikte.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KantstrookStd.dikte"
+        self.dikte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KantstrookStd.dikte"
         self.dikte.definition = "De dikte van de gestandaardiseerde kantstrook in centimeter."
         self.dikte.constraints = ""
         self.dikte.usagenote = ""
@@ -40,7 +40,7 @@ class KantstrookStd(GestandaardiseerdeKantopsluiting):
         """De gestandaardiseerd kantstrook volgens aangeduide norm."""
         self.norm.naam = "norm"
         self.norm.label = "norm"
-        self.norm.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KantstrookStd.norm"
+        self.norm.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KantstrookStd.norm"
         self.norm.definition = "De gestandaardiseerd kantstrook volgens aangeduide norm."
         self.norm.constraints = ""
         self.norm.usagenote = ""
@@ -49,7 +49,7 @@ class KantstrookStd(GestandaardiseerdeKantopsluiting):
         self.type = KeuzelijstField(naam="type",
                                     label="type",
                                     lijst=KlLEKantstrookType(),
-                                    uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KantstrookStd.type",
+                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KantstrookStd.type",
                                     definition="Het type van gestandaardiseerde kantstrook.",
                                     constraints="",
                                     usagenote="",

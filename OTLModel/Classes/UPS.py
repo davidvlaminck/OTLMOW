@@ -22,7 +22,7 @@ class UPS(Voedingspunt):
         """De tijd die de UPS een installatie van voeding kan voorzien."""
         self.autonomie.naam = "autonomie"
         self.autonomie.label = "autonomie"
-        self.autonomie.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#UPS.autonomie"
+        self.autonomie.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#UPS.autonomie"
         self.autonomie.definition = "De tijd die de UPS een installatie van voeding kan voorzien."
         self.autonomie.constraints = ""
         self.autonomie.usagenote = ""
@@ -32,7 +32,7 @@ class UPS(Voedingspunt):
         """Maximale continu vermogen van de UPS."""
         self.maxContinuVermogen.naam = "maxContinuVermogen"
         self.maxContinuVermogen.label = "maximaal continu vermogen"
-        self.maxContinuVermogen.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#UPS.maxContinuVermogen"
+        self.maxContinuVermogen.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#UPS.maxContinuVermogen"
         self.maxContinuVermogen.definition = "Maximale continu vermogen van de UPS."
         self.maxContinuVermogen.constraints = ""
         self.maxContinuVermogen.usagenote = ""
@@ -42,7 +42,7 @@ class UPS(Voedingspunt):
         """Het maximale piekvermogen van de UPS."""
         self.maxPiekVermogen.naam = "maxPiekVermogen"
         self.maxPiekVermogen.label = "max piekvermogen"
-        self.maxPiekVermogen.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#UPS.maxPiekVermogen"
+        self.maxPiekVermogen.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#UPS.maxPiekVermogen"
         self.maxPiekVermogen.definition = "Het maximale piekvermogen van de UPS."
         self.maxPiekVermogen.constraints = ""
         self.maxPiekVermogen.usagenote = ""
@@ -51,7 +51,7 @@ class UPS(Voedingspunt):
         self.merk = KeuzelijstField(naam="merk",
                                     label="merk",
                                     lijst=KlUPSMerk(),
-                                    uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#UPS.merk",
+                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#UPS.merk",
                                     definition="Merk waarmee de fabrikant de UPS identificeert.",
                                     constraints="",
                                     usagenote="",
@@ -61,7 +61,7 @@ class UPS(Voedingspunt):
         self.modelnaam = KeuzelijstField(naam="modelnaam",
                                          label="modelnaam",
                                          lijst=KlUPSModelnaam(),
-                                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#UPS.modelnaam",
+                                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#UPS.modelnaam",
                                          definition="Modelnaam van de UPS volgens de fabrikant.",
                                          constraints="",
                                          usagenote="",
@@ -70,7 +70,7 @@ class UPS(Voedingspunt):
 
         self.serienummer = StringField(naam="serienummer",
                                        label="serienummer",
-                                       uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#UPS.serienummer",
+                                       objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#UPS.serienummer",
                                        definition="Unieke identificatiecode van het toestel, toegekend door de fabrikant.",
                                        constraints="",
                                        usagenote="",

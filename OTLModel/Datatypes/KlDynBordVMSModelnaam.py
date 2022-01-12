@@ -9,7 +9,7 @@ class KlDynBordVMSModelnaam(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlDynBordVMSModelnaam",
                          label="Dyn bord VMS modelnaam",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlDynBordVMSModelnaam",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlDynBordVMSModelnaam",
                          definition="Keuzelijst met de gangbare modelnamen van VMS borden. De modelnamen worden meestal door de leverancier of fabrikant bepaald.",
                          usagenote="",
                          deprecated_version="",

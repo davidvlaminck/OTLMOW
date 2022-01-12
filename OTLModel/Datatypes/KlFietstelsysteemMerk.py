@@ -9,7 +9,7 @@ class KlFietstelsysteemMerk(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlFietstelsysteemMerk",
                          label="Merknaam fietstelsysteem",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlFietstelsysteemMerk",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlFietstelsysteemMerk",
                          definition="Lijst van mogelijke merknamen voor fietstelsystemen.",
                          usagenote="",
                          deprecated_version="",

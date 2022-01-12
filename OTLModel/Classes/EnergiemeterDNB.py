@@ -17,7 +17,7 @@ class EnergiemeterDNB(DNBMeter):
 
         self.isGecombineerdeEnergiemeter = BooleanField(naam="isGecombineerdeEnergiemeter",
                                                         label="is gecombineerde energiemeter",
-                                                        uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#EnergiemeterDNB.isGecombineerdeEnergiemeter",
+                                                        objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#EnergiemeterDNB.isGecombineerdeEnergiemeter",
                                                         definition="Geeft aan of de meter naast de gewone verbruiksmeting ook reactief vermogen en piek metingen doet.",
                                                         constraints="",
                                                         usagenote="",
@@ -27,7 +27,7 @@ class EnergiemeterDNB(DNBMeter):
         self.uurtarief = KeuzelijstField(naam="uurtarief",
                                          label="uurtarief",
                                          lijst=KlEnergiemeterDNBUurtarief(),
-                                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#EnergiemeterDNB.uurtarief",
+                                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#EnergiemeterDNB.uurtarief",
                                          definition="Type uurtarief vb enkelvoudig, dubbelvoudig,...",
                                          constraints="",
                                          usagenote="",

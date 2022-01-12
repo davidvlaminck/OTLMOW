@@ -9,7 +9,7 @@ class KlControllerBeveiligingssleutel(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlControllerBeveiligingssleutel",
                          label="Controller beveiligingssleutel.",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlControllerBeveiligingssleutel",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlControllerBeveiligingssleutel",
                          definition="De encryptie die wordt toegepast om de verbinding tussen lokaal en centraal te beveiligen.",
                          usagenote="",
                          deprecated_version="",

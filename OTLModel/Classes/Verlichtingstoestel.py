@@ -26,7 +26,7 @@ class Verlichtingstoestel(AIMNaamObject):
 
         self.heeftAansluitkastGeintegreerd = BooleanField(naam="heeftAansluitkastGeintegreerd",
                                                           label="heeft aansluitkast geintegreerd",
-                                                          uri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Verlichtingstoestel.heeftAansluitkastGeintegreerd",
+                                                          objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Verlichtingstoestel.heeftAansluitkastGeintegreerd",
                                                           definition="Is de aansluitkast geïntegreerd?",
                                                           constraints="",
                                                           usagenote="",
@@ -36,7 +36,7 @@ class Verlichtingstoestel(AIMNaamObject):
         self.merk = KeuzelijstField(naam="merk",
                                     label="merk",
                                     lijst=KlVerlichtingstoestelMerk(),
-                                    uri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Verlichtingstoestel.merk",
+                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Verlichtingstoestel.merk",
                                     definition="Het merk van het verlichtingstoestel.",
                                     constraints="",
                                     usagenote="",
@@ -46,7 +46,7 @@ class Verlichtingstoestel(AIMNaamObject):
         self.modelnaam = KeuzelijstField(naam="modelnaam",
                                          label="modelnaam",
                                          lijst=KlVerlichtingstoestelModelnaam(),
-                                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Verlichtingstoestel.modelnaam",
+                                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Verlichtingstoestel.modelnaam",
                                          definition="De modelnaam van het verlichtingstoestel.",
                                          constraints="",
                                          usagenote="",
@@ -55,7 +55,7 @@ class Verlichtingstoestel(AIMNaamObject):
 
         self.stroomkringnummer = StringField(naam="stroomkringnummer",
                                              label="stroomkringnummer",
-                                             uri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Verlichtingstoestel.stroomkringnummer",
+                                             objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Verlichtingstoestel.stroomkringnummer",
                                              definition="Nummer van de stroomkring waarop het verlichtingstoestel is aangesloten.",
                                              constraints="",
                                              usagenote="",
@@ -66,7 +66,7 @@ class Verlichtingstoestel(AIMNaamObject):
         """Systeemvermogen (Watt) van het verlichtingstoestel."""
         self.systeemvermogen.naam = "systeemvermogen"
         self.systeemvermogen.label = "systeemvermogen"
-        self.systeemvermogen.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Verlichtingstoestel.systeemvermogen"
+        self.systeemvermogen.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Verlichtingstoestel.systeemvermogen"
         self.systeemvermogen.definition = "Systeemvermogen (Watt) van het verlichtingstoestel."
         self.systeemvermogen.constraints = ""
         self.systeemvermogen.usagenote = ""
@@ -75,7 +75,7 @@ class Verlichtingstoestel(AIMNaamObject):
         self.verlichtGebied = KeuzelijstField(naam="verlichtGebied",
                                               label="verlicht gebied",
                                               lijst=KlVerlichtingstoestelVerlichtGebied(),
-                                              uri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Verlichtingstoestel.verlichtGebied",
+                                              objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Verlichtingstoestel.verlichtGebied",
                                               definition="Het gebied op de wegbaan of het object dat verlicht wordt door het verlichtingstoestel.",
                                               constraints="",
                                               usagenote="",

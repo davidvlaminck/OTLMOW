@@ -9,7 +9,7 @@ class KlCalamiteitsbordVorm(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlCalamiteitsbordVorm",
                          label="Calamiteitsbord vorm",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlCalamiteitsbordVorm",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlCalamiteitsbordVorm",
                          definition="Vormen van het calamiteitsbord.",
                          usagenote="",
                          deprecated_version="",

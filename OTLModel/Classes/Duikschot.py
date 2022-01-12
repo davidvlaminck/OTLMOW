@@ -17,7 +17,7 @@ class Duikschot(AIMObject):
         """De technische fiche van het duikschot."""
         self.technischeFiche.naam = "technischeFiche"
         self.technischeFiche.label = "technische fiche"
-        self.technischeFiche.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Duikschot.technischeFiche"
+        self.technischeFiche.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Duikschot.technischeFiche"
         self.technischeFiche.definition = "De technische fiche van het duikschot."
         self.technischeFiche.constraints = ""
         self.technischeFiche.usagenote = ""

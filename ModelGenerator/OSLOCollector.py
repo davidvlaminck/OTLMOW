@@ -37,34 +37,34 @@ class OSLOCollector:
         self.relations = self.OSLOInMemoryCreator.getAllRelations()
 
     def FindAttributesByClass(self, osloclass: OSLOClass):
-        return list(filter(lambda c: c.class_uri == osloclass.uri, self.attributes))
+        return list(filter(lambda c: c.class_uri == osloclass.objectUri, self.attributes))
 
     def FindInheritancesByClass(self, osloclass: OSLOClass):
-        return list(filter(lambda c: c.class_uri == osloclass.uri, self.inheritances))
+        return list(filter(lambda c: c.class_uri == osloclass.objectUri, self.inheritances))
 
     def FindClassByUri(self, uri: str):
-        return next(p for p in self.classes if p.uri == uri)
+        return next(p for p in self.classes if p.objectUri == uri)
 
     def FindPrimitiveDatatypeByUri(self, uri: str):
-        return next(p for p in self.primitiveDatatypes if p.uri == uri)
+        return next(p for p in self.primitiveDatatypes if p.objectUri == uri)
 
     def FindPrimitiveDatatypeAttributenByClassUri(self, class_uri: str) -> list[OSLODatatypePrimitiveAttribuut]:
-        return sorted(list(filter(lambda p: p.class_uri == class_uri, self.primitiveDatatypeAttributen)), key=lambda p: p.uri)
+        return sorted(list(filter(lambda p: p.class_uri == class_uri, self.primitiveDatatypeAttributen)), key=lambda p: p.objectUri)
 
     def FindComplexDatatypeByUri(self, uri):
-        return next(p for p in self.complexDatatypes if p.uri == uri)
+        return next(p for p in self.complexDatatypes if p.objectUri == uri)
 
     def FindComplexDatatypeAttributenByClassUri(self, class_uri: str) -> list[OSLODatatypeComplexAttribuut]:
-        return sorted(list(filter(lambda p: p.class_uri == class_uri, self.complexDatatypeAttributen)), key=lambda p: p.uri)
+        return sorted(list(filter(lambda p: p.class_uri == class_uri, self.complexDatatypeAttributen)), key=lambda p: p.objectUri)
 
     def FindUnionDatatypeByUri(self, uri):
-        return next(p for p in self.unionDatatypes if p.uri == uri)
+        return next(p for p in self.unionDatatypes if p.objectUri == uri)
 
     def FindUnionDatatypeAttributenByClassUri(self, class_uri: str) -> list[OSLODatatypeUnionAttribuut]:
-        return sorted(list(filter(lambda p: p.class_uri == class_uri, self.unionDatatypeAttributen)), key=lambda p: p.uri)
+        return sorted(list(filter(lambda p: p.class_uri == class_uri, self.unionDatatypeAttributen)), key=lambda p: p.objectUri)
 
     def FindEnumerationByUri(self, uri):
-        return next(p for p in self.enumerations if p.uri == uri)
+        return next(p for p in self.enumerations if p.objectUri == uri)
 
     def FindTypeLinkByUri(self, type_uri: str):
         return next(p for p in self.typeLinks if p.item_uri == type_uri)

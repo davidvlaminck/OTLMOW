@@ -9,7 +9,7 @@ class KlContactorType(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlContactorType",
                          label="contactor type",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlContactorType",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlContactorType",
                          definition="Geeft aan of het een K of Q contactor betreft.",
                          usagenote="",
                          deprecated_version="",

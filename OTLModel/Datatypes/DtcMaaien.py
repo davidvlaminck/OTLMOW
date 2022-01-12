@@ -14,7 +14,7 @@ class DtcMaaien(ComplexField):
     def __init__(self):
         super().__init__(naam="DtcMaaien",
                          label="Maaien",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#DtcMaaien",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#DtcMaaien",
                          definition="Complex datatype voor de eigenschappen van maaien.",
                          usagenote="",
                          deprecated_version="")
@@ -22,7 +22,7 @@ class DtcMaaien(ComplexField):
         frequentieField = KeuzelijstField(naam="frequentie",
                                           label="frequentie",
                                           lijst=KlMaaiFrequentie(),
-                                          uri="https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#DtcMaaien.frequentie",
+                                          objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#DtcMaaien.frequentie",
                                           definition="Het aantal keer dat er gemaaid wordt per jaar.",
                                           constraints="",
                                           usagenote="",
@@ -33,7 +33,7 @@ class DtcMaaien(ComplexField):
 
         self.waarde.isGazonbeheer = BooleanField(naam="isGazonbeheer",
                                                  label="is gazonbeheer",
-                                                 uri="https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#DtcMaaien.isGazonbeheer",
+                                                 objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#DtcMaaien.isGazonbeheer",
                                                  definition="Aanduiding of de grazige vegetatie meer dan 3x per jaar gemaaid wordt.",
                                                  constraints="",
                                                  usagenote="",
@@ -43,7 +43,7 @@ class DtcMaaien(ComplexField):
 
         self.waarde.isMachinaal = BooleanField(naam="isMachinaal",
                                                label="is machinaal",
-                                               uri="https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#DtcMaaien.isMachinaal",
+                                               objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#DtcMaaien.isMachinaal",
                                                definition="Aanduiding of het maaien machinaal of handmatig wordt uitgevoerd.",
                                                constraints="",
                                                usagenote="",
@@ -53,7 +53,7 @@ class DtcMaaien(ComplexField):
 
         self.waarde.isRuigtebeheer = BooleanField(naam="isRuigtebeheer",
                                                   label="is ruigtebeheer",
-                                                  uri="https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#DtcMaaien.isRuigtebeheer",
+                                                  objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#DtcMaaien.isRuigtebeheer",
                                                   definition="Aanduiding of de grazige vegetatie minder dan 1x per jaar gemaaid wordt.",
                                                   constraints="",
                                                   usagenote="",
@@ -63,7 +63,7 @@ class DtcMaaien(ComplexField):
 
         self.waarde.isVeiligheidsmaaien = BooleanField(naam="isVeiligheidsmaaien",
                                                        label="is veiligheidsmaaien",
-                                                       uri="https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#DtcMaaien.isVeiligheidsmaaien",
+                                                       objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#DtcMaaien.isVeiligheidsmaaien",
                                                        definition="Aanduiding of er een maaistrook aanwezig is voor het vrijwaren van de zichtbaarheid en voor het vrijhouden van de bebakening en signalisatie.",
                                                        constraints="",
                                                        usagenote="",
@@ -73,7 +73,7 @@ class DtcMaaien(ComplexField):
 
         self.waarde.klepelmaaierToegelaten = BooleanField(naam="klepelmaaierToegelaten",
                                                           label="klepelmaaier toegelaten",
-                                                          uri="https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#DtcMaaien.klepelmaaierToegelaten",
+                                                          objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#DtcMaaien.klepelmaaierToegelaten",
                                                           definition="Aanduiding of er gemaaid mag worden met een klepelmaaier.",
                                                           constraints="",
                                                           usagenote="",
@@ -84,7 +84,7 @@ class DtcMaaien(ComplexField):
         periodeField = KeuzelijstField(naam="periode",
                                        label="periode",
                                        lijst=KlMaaiPeriode(),
-                                       uri="https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#DtcMaaien.periode",
+                                       objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#DtcMaaien.periode",
                                        definition="De maand waarin het maaien wordt uitgevoerd.",
                                        constraints="",
                                        usagenote="",

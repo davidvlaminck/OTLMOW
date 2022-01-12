@@ -9,7 +9,7 @@ class KlLichtmastMasthoogte(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlLichtmastMasthoogte",
                          label="Wv masthoogte",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlLichtmastMasthoogte",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlLichtmastMasthoogte",
                          definition="De standaard masthoogten.",
                          usagenote="",
                          deprecated_version="",

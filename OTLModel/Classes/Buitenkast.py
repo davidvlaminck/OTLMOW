@@ -21,7 +21,7 @@ class Buitenkast(Kast):
         self.ipKlasse = KeuzelijstField(naam="ipKlasse",
                                         label="ingress protection klasse",
                                         lijst=KlAlgIngressProtectionCode(),
-                                        uri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Buitenkast.ipKlasse",
+                                        objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Buitenkast.ipKlasse",
                                         definition="De IP-codering als een aanduiding voor de mate van beveiliging van de constructie van elektrische of elektronische apparatuur tegen eigen schade door gebruik in \"vijandige omgevingen\" en tegen eventueel gevaar voor de gebruiker volgens IEC 60529.",
                                         constraints="",
                                         usagenote="",
@@ -32,7 +32,7 @@ class Buitenkast(Kast):
         """Frequentie (in jaar) waarmee de kast moet onderworpen worden aan een periodieke keuring door een externe dienst voor technische controle."""
         self.keuringsfrequentie.naam = "keuringsfrequentie"
         self.keuringsfrequentie.label = "keuringsfrequentie"
-        self.keuringsfrequentie.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Buitenkast.keuringsfrequentie"
+        self.keuringsfrequentie.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Buitenkast.keuringsfrequentie"
         self.keuringsfrequentie.definition = "Frequentie (in jaar) waarmee de kast moet onderworpen worden aan een periodieke keuring door een externe dienst voor technische controle."
         self.keuringsfrequentie.constraints = ""
         self.keuringsfrequentie.usagenote = ""
@@ -41,7 +41,7 @@ class Buitenkast(Kast):
         self.verfraaid = KeuzelijstField(naam="verfraaid",
                                          label="verfraaid",
                                          lijst=KlBuitenkastVerfraaid(),
-                                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Buitenkast.verfraaid",
+                                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Buitenkast.verfraaid",
                                          definition="Geeft aan of de wegkantkast voorzien van verfraaiing en of die al dan niet vergund is.",
                                          constraints="",
                                          usagenote="",

@@ -22,7 +22,7 @@ class Verkeersbordsteun(AIMNaamObject, Draagconstructie):
 
         self.fabricagevoorschrift = StringField(naam="fabricagevoorschrift",
                                                 label="fabricagevoorschrift",
-                                                uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Verkeersbordsteun.fabricagevoorschrift",
+                                                objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Verkeersbordsteun.fabricagevoorschrift",
                                                 definition="Genormaliseerde referentie waaraan het infrastructuur element aan voldoet.",
                                                 constraints="",
                                                 usagenote="",
@@ -33,7 +33,7 @@ class Verkeersbordsteun(AIMNaamObject, Draagconstructie):
         """De lengte van de verkeersbordpaal in meter."""
         self.lengte.naam = "lengte"
         self.lengte.label = "lengte"
-        self.lengte.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Verkeersbordsteun.lengte"
+        self.lengte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Verkeersbordsteun.lengte"
         self.lengte.definition = "De lengte van de verkeersbordpaal in meter."
         self.lengte.constraints = ""
         self.lengte.usagenote = ""
@@ -43,7 +43,7 @@ class Verkeersbordsteun(AIMNaamObject, Draagconstructie):
         """De bovengrondse lengte van de verkeersbordpaal in meter."""
         self.lengteBovengronds.naam = "lengteBovengronds"
         self.lengteBovengronds.label = "lengte bovengronds"
-        self.lengteBovengronds.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Verkeersbordsteun.lengteBovengronds"
+        self.lengteBovengronds.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Verkeersbordsteun.lengteBovengronds"
         self.lengteBovengronds.definition = "De bovengrondse lengte van de verkeersbordpaal in meter."
         self.lengteBovengronds.constraints = ""
         self.lengteBovengronds.usagenote = ""
@@ -53,7 +53,7 @@ class Verkeersbordsteun(AIMNaamObject, Draagconstructie):
         """De ondergrondse lengte van de verkeersbordpaal in meter."""
         self.lengteOndergronds.naam = "lengteOndergronds"
         self.lengteOndergronds.label = "lengte ondergronds"
-        self.lengteOndergronds.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Verkeersbordsteun.lengteOndergronds"
+        self.lengteOndergronds.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Verkeersbordsteun.lengteOndergronds"
         self.lengteOndergronds.definition = "De ondergrondse lengte van de verkeersbordpaal in meter."
         self.lengteOndergronds.constraints = ""
         self.lengteOndergronds.usagenote = ""
@@ -62,7 +62,7 @@ class Verkeersbordsteun(AIMNaamObject, Draagconstructie):
         self.type = KeuzelijstField(naam="type",
                                     label="type",
                                     lijst=KlVerkeersbordsteunType(),
-                                    uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Verkeersbordsteun.type",
+                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Verkeersbordsteun.type",
                                     definition="Het type verkeersbordpaal.",
                                     constraints="",
                                     usagenote="",
@@ -73,7 +73,7 @@ class Verkeersbordsteun(AIMNaamObject, Draagconstructie):
         """De dikte van de wand in millimeter."""
         self.wanddikte.naam = "wanddikte"
         self.wanddikte.label = "wanddikte"
-        self.wanddikte.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Verkeersbordsteun.wanddikte"
+        self.wanddikte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Verkeersbordsteun.wanddikte"
         self.wanddikte.definition = "De dikte van de wand in millimeter."
         self.wanddikte.constraints = ""
         self.wanddikte.usagenote = ""
@@ -83,7 +83,7 @@ class Verkeersbordsteun(AIMNaamObject, Draagconstructie):
         """De diameter van de verkeersbordpaal in millimeter."""
         self.diameter.naam = "diameter"
         self.diameter.label = "diameter"
-        self.diameter.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Verkeersbordsteun.diameter"
+        self.diameter.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Verkeersbordsteun.diameter"
         self.diameter.definition = "De diameter van de verkeersbordpaal in millimeter."
         self.diameter.constraints = ""
         self.diameter.usagenote = ""

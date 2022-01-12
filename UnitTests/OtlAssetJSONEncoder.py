@@ -32,13 +32,13 @@ class OtlAssetJSONEncoderTests(unittest.TestCase):
 
     def test_JsonEncodeDecimal(self):
         l = Laagspanningsbord()
-        l.aansluitvermogen.waarde = float(25)
+        l.vermogen.waarde = float(25)
 
         encoder = OtlAssetJSONEncoder()
         js = encoder.encode(l)
 
         self.assertEqual(
-            '{"aansluitvermogen": 25.0, "typeURI": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Laagspanningsbord"}',
+            '{"typeURI": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Laagspanningsbord", "vermogen": 25.0}',
             js)
 
     def test_JsonEncodeWithDtcIdentificator(self):

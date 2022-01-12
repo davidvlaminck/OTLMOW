@@ -9,7 +9,7 @@ class KlMIVLusZichtbaarheid(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlMIVLusZichtbaarheid",
                          label="MIV-lus zichtbaarheid",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlMIVLusZichtbaarheid",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlMIVLusZichtbaarheid",
                          definition="Is de lus zichtbaar in het wegdek of bedenkt door een toplaag.",
                          usagenote="",
                          deprecated_version="",

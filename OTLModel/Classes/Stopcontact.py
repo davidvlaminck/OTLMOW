@@ -19,7 +19,7 @@ class Stopcontact(AIMObject):
         self.aantalPolen = KeuzelijstField(naam="aantalPolen",
                                            label="aantal polen",
                                            lijst=KlStopcontactAantalPolen(),
-                                           uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Stopcontact.aantalPolen",
+                                           objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Stopcontact.aantalPolen",
                                            definition="Typering van het stopcontact volgens het aantal polen op basis van een keuzelijst.",
                                            constraints="",
                                            usagenote="",
@@ -30,7 +30,7 @@ class Stopcontact(AIMObject):
         """De voorziene spanning voor het stopcontact."""
         self.spanning.naam = "spanning"
         self.spanning.label = "spanning"
-        self.spanning.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Stopcontact.spanning"
+        self.spanning.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Stopcontact.spanning"
         self.spanning.definition = "De voorziene spanning voor het stopcontact."
         self.spanning.constraints = ""
         self.spanning.usagenote = ""
@@ -40,7 +40,7 @@ class Stopcontact(AIMObject):
         """Maximale stroomsterkte van het stopcontact uitgedrukt in ampère."""
         self.stroomsterkte.naam = "stroomsterkte"
         self.stroomsterkte.label = "stroomsterkte"
-        self.stroomsterkte.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Stopcontact.stroomsterkte"
+        self.stroomsterkte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Stopcontact.stroomsterkte"
         self.stroomsterkte.definition = "Maximale stroomsterkte van het stopcontact uitgedrukt in ampère."
         self.stroomsterkte.constraints = ""
         self.stroomsterkte.usagenote = ""

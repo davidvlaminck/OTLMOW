@@ -19,7 +19,7 @@ class DynBordExternePU(PU):
 
         self.heeftGeintegreerdeModem = BooleanField(naam="heeftGeintegreerdeModem",
                                                     label="heeft geintegreerde modem",
-                                                    uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DynBordExternePU.heeftGeintegreerdeModem",
+                                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DynBordExternePU.heeftGeintegreerdeModem",
                                                     definition="De PU heeft een geïntegreerde modem.",
                                                     constraints="",
                                                     usagenote="",
@@ -29,7 +29,7 @@ class DynBordExternePU(PU):
         self.merk = KeuzelijstField(naam="merk",
                                     label="merk",
                                     lijst=KlDynBordExternePUMerk(),
-                                    uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DynBordExternePU.merk",
+                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DynBordExternePU.merk",
                                     definition="Het merk van de externe PU volgens een keuzelijst.",
                                     constraints="",
                                     usagenote="",
@@ -39,7 +39,7 @@ class DynBordExternePU(PU):
         self.modelnaam = KeuzelijstField(naam="modelnaam",
                                          label="modelnaam",
                                          lijst=KlDynBordExternePUModelnaam(),
-                                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DynBordExternePU.modelnaam",
+                                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DynBordExternePU.modelnaam",
                                          definition="De modelnaam van de externe PU volgens een keuzelijst.",
                                          constraints="",
                                          usagenote="",
@@ -50,7 +50,7 @@ class DynBordExternePU(PU):
         """Document met technische informatie over de PU."""
         self.technischeFiche.naam = "technischeFiche"
         self.technischeFiche.label = "technische fiche"
-        self.technischeFiche.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DynBordExternePU.technischeFiche"
+        self.technischeFiche.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DynBordExternePU.technischeFiche"
         self.technischeFiche.definition = "Document met technische informatie over de PU."
         self.technischeFiche.constraints = ""
         self.technischeFiche.usagenote = ""

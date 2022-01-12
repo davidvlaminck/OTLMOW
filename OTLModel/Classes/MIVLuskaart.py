@@ -17,7 +17,7 @@ class MIVLuskaart(AIMNaamObject):
         """De elektrische eigenschappen van de lus: R, L, C en de isolatieweerstand. Dit verzekert naast de afmetingen mee de voorziene nauwkeurigheid van de voertuigmetingen."""
         self.lussenMeetrapport.naam = "lussenMeetrapport"
         self.lussenMeetrapport.label = "lussen meetrapport"
-        self.lussenMeetrapport.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#MIVLuskaart.lussenMeetrapport"
+        self.lussenMeetrapport.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#MIVLuskaart.lussenMeetrapport"
         self.lussenMeetrapport.definition = "De elektrische eigenschappen van de lus: R, L, C en de isolatieweerstand. Dit verzekert naast de afmetingen mee de voorziene nauwkeurigheid van de voertuigmetingen."
         self.lussenMeetrapport.constraints = ""
         self.lussenMeetrapport.usagenote = "Bestanden van het type pdf."

@@ -16,7 +16,7 @@ class AIMToestand(ABC):
         self.toestand = KeuzelijstField(naam="toestand",
                                         label="toestand",
                                         lijst=KlAIMToestand(),
-                                        uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMToestand.toestand",
+                                        objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMToestand.toestand",
                                         definition="Geeft de actuele stand in de levenscyclus van het object.",
                                         constraints="",
                                         usagenote="",

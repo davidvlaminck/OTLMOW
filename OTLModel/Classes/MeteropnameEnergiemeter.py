@@ -16,7 +16,7 @@ class MeteropnameEnergiemeter(AIMNaamObject):
 
         self.datumMeterstand = DateField(naam="datumMeterstand",
                                          label="datum meterstand dag",
-                                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#MeteropnameEnergiemeter.datumMeterstand",
+                                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#MeteropnameEnergiemeter.datumMeterstand",
                                          definition="De datum van de laatste meteropname van de energiemeter.",
                                          constraints="",
                                          usagenote="",
@@ -27,7 +27,7 @@ class MeteropnameEnergiemeter(AIMNaamObject):
         """De meterstand bij de laatste meteropname van de dag-energiemeter."""
         self.meterstandDag.naam = "meterstandDag"
         self.meterstandDag.label = "meterstand dag"
-        self.meterstandDag.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#MeteropnameEnergiemeter.meterstandDag"
+        self.meterstandDag.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#MeteropnameEnergiemeter.meterstandDag"
         self.meterstandDag.definition = "De meterstand bij de laatste meteropname van de dag-energiemeter."
         self.meterstandDag.constraints = ""
         self.meterstandDag.usagenote = ""
@@ -37,7 +37,7 @@ class MeteropnameEnergiemeter(AIMNaamObject):
         """De meterstand bij de laatste meteropname van de nacht-energiemeter."""
         self.meterstandNacht.naam = "meterstandNacht"
         self.meterstandNacht.label = "meterstand nacht"
-        self.meterstandNacht.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#MeteropnameEnergiemeter.meterstandNacht"
+        self.meterstandNacht.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#MeteropnameEnergiemeter.meterstandNacht"
         self.meterstandNacht.definition = "De meterstand bij de laatste meteropname van de nacht-energiemeter."
         self.meterstandNacht.constraints = ""
         self.meterstandNacht.usagenote = ""

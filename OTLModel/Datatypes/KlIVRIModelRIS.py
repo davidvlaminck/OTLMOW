@@ -9,7 +9,7 @@ class KlIVRIModelRIS(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlIVRIModelRIS",
                          label="iVRIModelRIS",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlIVRIModelRIS",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlIVRIModelRIS",
                          definition="De modelnaam van de RIS.",
                          usagenote="",
                          deprecated_version="",

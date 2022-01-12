@@ -15,7 +15,7 @@ class ContainerBuis(ABC):
     def __init__(self):
         kleurField = StringField(naam="kleur",
                                  label="kleur",
-                                 uri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#ContainerBuis.kleur",
+                                 objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#ContainerBuis.kleur",
                                  definition="De kleur van de coating.",
                                  constraints="",
                                  usagenote="",

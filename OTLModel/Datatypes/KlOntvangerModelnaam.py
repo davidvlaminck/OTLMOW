@@ -9,7 +9,7 @@ class KlOntvangerModelnaam(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlOntvangerModelnaam",
                          label="ontvanger modelnaam",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlOntvangerModelnaam",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlOntvangerModelnaam",
                          definition="Keuzelijst met modelnamen voor Ontvanger.",
                          usagenote="",
                          deprecated_version="",

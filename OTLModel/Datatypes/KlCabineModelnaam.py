@@ -9,7 +9,7 @@ class KlCabineModelnaam(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlCabineModelnaam",
                          label="Cabine modelnaam",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlCabineModelnaam",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlCabineModelnaam",
                          definition="Modelnamen voor cabines.",
                          usagenote="",
                          deprecated_version="",

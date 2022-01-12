@@ -12,7 +12,7 @@ class DtcTrottoirbandVorm(ComplexField):
     def __init__(self):
         super().__init__(naam="DtcTrottoirbandVorm",
                          label="Trottoirband vorm",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcTrottoirbandVorm",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcTrottoirbandVorm",
                          definition="Complex datatype voor de vorm van een trotoirband.",
                          usagenote="",
                          deprecated_version="")
@@ -21,7 +21,7 @@ class DtcTrottoirbandVorm(ComplexField):
         """De breedte van de trottoirband."""
         self.waarde.breedte.naam = "breedte"
         self.waarde.breedte.label = "breedte"
-        self.waarde.breedte.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcTrottoirbandVorm.breedte"
+        self.waarde.breedte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcTrottoirbandVorm.breedte"
         self.waarde.breedte.definition = "De breedte van de trottoirband."
         self.waarde.breedte.constraints = ""
         self.waarde.breedte.usagenote = ""
@@ -32,7 +32,7 @@ class DtcTrottoirbandVorm(ComplexField):
         """De dikte van de trottoirband."""
         self.waarde.dikte.naam = "dikte"
         self.waarde.dikte.label = "dikte"
-        self.waarde.dikte.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcTrottoirbandVorm.dikte"
+        self.waarde.dikte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcTrottoirbandVorm.dikte"
         self.waarde.dikte.definition = "De dikte van de trottoirband."
         self.waarde.dikte.constraints = ""
         self.waarde.dikte.usagenote = ""
@@ -42,7 +42,7 @@ class DtcTrottoirbandVorm(ComplexField):
         self.waarde.vorm = KeuzelijstField(naam="vorm",
                                            label="vorm",
                                            lijst=KlLETrottoirbandVorm(),
-                                           uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcTrottoirbandVorm.vorm",
+                                           objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcTrottoirbandVorm.vorm",
                                            definition="De vorm van de trottoirband.",
                                            constraints="",
                                            usagenote="",

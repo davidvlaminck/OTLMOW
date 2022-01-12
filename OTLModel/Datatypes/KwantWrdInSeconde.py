@@ -11,7 +11,7 @@ class KwantWrdInSeconde(KwantWrd):
     def __init__(self, waarde=None):
         self.eenheid = LiteralField(naam="standaardEenheid",
                                     label="standaard eenheid",
-                                    uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInSeconde.standaardEenheid",
+                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInSeconde.standaardEenheid",
                                     definition="De standaard eenheid bij dit datatype is uitgedrukt in seconde.",
                                     constraints='"s"^^cdt:ucumunit',
                                     usagenote='"s"^^cdt:ucumunit',
@@ -21,7 +21,7 @@ class KwantWrdInSeconde(KwantWrd):
 
         self.waardeVeld = NonNegIntegerField(naam="waarde",
                                              label="waarde",
-                                             uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInSeconde.waarde",
+                                             objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInSeconde.waarde",
                                              definition="Bevat een getal die bij het datatype hoort.",
                                              constraints="",
                                              usagenote="",
@@ -30,7 +30,7 @@ class KwantWrdInSeconde(KwantWrd):
 
         super().__init__(naam="KwantWrdInSeconde",
                          label="Kwantitatieve waarde in seconde",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInSeconde",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInSeconde",
                          definition="Een kwantitatieve waarde die een getal in seconde uitdrukt.",
                          usagenote="",
                          deprecated_version="",

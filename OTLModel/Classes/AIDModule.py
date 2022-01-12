@@ -21,7 +21,7 @@ class AIDModule(AIMNaamObject):
         """Configuratiebestand van de configuratie van de AID."""
         self.configBestand.naam = "configBestand"
         self.configBestand.label = "config bestand"
-        self.configBestand.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#AIDModule.configBestand"
+        self.configBestand.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#AIDModule.configBestand"
         self.configBestand.definition = "Configuratiebestand van de configuratie van de AID."
         self.configBestand.constraints = ""
         self.configBestand.usagenote = ""
@@ -29,7 +29,7 @@ class AIDModule(AIMNaamObject):
 
         self.dnsNaam = StringField(naam="dnsNaam",
                                    label="DNS naam",
-                                   uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#AIDModule.dnsNaam",
+                                   objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#AIDModule.dnsNaam",
                                    definition="De DNSNaam (ook \"volledige domein naam\" genoemd ) is een unieke naam binnen het Domain Name System (DNS), het naamgevingssysteem waarmee computers, webservers, diensten en  toepassing op een unieke manier kunnen worden geïdentificeerd. Deze bevat zowel de hostname en de top level domein naam bv. 120c8-ar1.belfa.be.",
                                    constraints="",
                                    usagenote="",
@@ -40,7 +40,7 @@ class AIDModule(AIMNaamObject):
         """Het IP-adres van de AID-module."""
         self.ipAdres.naam = "ipAdres"
         self.ipAdres.label = "ip adres datastring"
-        self.ipAdres.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#AIDModule.ipAdres"
+        self.ipAdres.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#AIDModule.ipAdres"
         self.ipAdres.definition = "Het IP-adres van de AID-module."
         self.ipAdres.constraints = ""
         self.ipAdres.usagenote = ""
@@ -50,7 +50,7 @@ class AIDModule(AIMNaamObject):
         """Technische fiche van de AID-module."""
         self.technischeFiche.naam = "technischeFiche"
         self.technischeFiche.label = "technische fiche"
-        self.technischeFiche.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#AIDModule.technischeFiche"
+        self.technischeFiche.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#AIDModule.technischeFiche"
         self.technischeFiche.definition = "Technische fiche van de AID-module."
         self.technischeFiche.constraints = ""
         self.technischeFiche.usagenote = "Bestanden van het type pdf."
@@ -59,7 +59,7 @@ class AIDModule(AIMNaamObject):
         self.type = KeuzelijstField(naam="type",
                                     label="type",
                                     lijst=KlAIDModuleType(),
-                                    uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#AIDModule.type",
+                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#AIDModule.type",
                                     definition="Het type van de AID-module.",
                                     constraints="",
                                     usagenote="",

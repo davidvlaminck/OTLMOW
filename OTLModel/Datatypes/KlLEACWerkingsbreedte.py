@@ -9,7 +9,7 @@ class KlLEACWerkingsbreedte(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlLEACWerkingsbreedte",
                          label="Werkingsbreedte",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlLEACWerkingsbreedte",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlLEACWerkingsbreedte",
                          definition="De verschillende mogelijke werkingsbreedtes.",
                          usagenote="",
                          deprecated_version="",

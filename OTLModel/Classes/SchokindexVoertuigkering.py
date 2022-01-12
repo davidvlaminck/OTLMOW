@@ -16,7 +16,7 @@ class SchokindexVoertuigkering(ABC):
         self.schokindex = KeuzelijstField(naam="schokindex",
                                           label="schokindex",
                                           lijst=KlLEACSchokindex(),
-                                          uri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#SchokindexVoertuigkering.schokindex",
+                                          objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#SchokindexVoertuigkering.schokindex",
                                           definition="De parameter die weergeeft hoe groot de kans op ernstige letsels is van de inzittenden bij een aanrijding.",
                                           constraints="",
                                           usagenote="",

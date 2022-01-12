@@ -9,7 +9,7 @@ class KlRetroreflecterendVerkeersbordMerk(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlRetroreflecterendVerkeersbordMerk",
                          label="Retroreflecterend Verkeersbord Merk",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlRetroreflecterendVerkeersbordMerk",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlRetroreflecterendVerkeersbordMerk",
                          definition="Keuzelijst met merknamen van retroreflecterende verkeersborden. De merknaam duidt op de leverancier of producent van het verkeersbord.",
                          usagenote="",
                          deprecated_version="",

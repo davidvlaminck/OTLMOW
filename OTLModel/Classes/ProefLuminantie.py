@@ -15,7 +15,7 @@ class ProefLuminantie(Proef):
 
         self.luminantiefactor = DecimalFloatField(naam="luminantiefactor",
                                                   label="luminantiefactor",
-                                                  uri="https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefLuminantie.luminantiefactor",
+                                                  objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefLuminantie.luminantiefactor",
                                                   definition="Waarde om het contrast met het wegdek en bijgevolg de dagzichtbaarheid te bepalen.",
                                                   constraints="",
                                                   usagenote="",

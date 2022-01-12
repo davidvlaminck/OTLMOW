@@ -17,7 +17,7 @@ class BoogpaalVerkeerslicht(VRIDraagconstructie):
         self.typeBoogpaal = KeuzelijstField(naam="typeBoogpaal",
                                             label="type boogpaal",
                                             lijst=KlBoogpaalType(),
-                                            uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#BoogpaalVerkeerslicht.typeBoogpaal",
+                                            objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#BoogpaalVerkeerslicht.typeBoogpaal",
                                             definition="Draagwijdte van de boogpaal.",
                                             constraints="",
                                             usagenote="",

@@ -9,7 +9,7 @@ class KlVerlichtingstoestelMerk(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlVerlichtingstoestelMerk",
                          label="Verlichtingstoestel merk",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#KlVerlichtingstoestelMerk",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#KlVerlichtingstoestelMerk",
                          definition="Het merk van het verlichtingstoestel.",
                          usagenote="",
                          deprecated_version="",

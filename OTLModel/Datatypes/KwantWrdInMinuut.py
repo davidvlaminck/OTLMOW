@@ -11,7 +11,7 @@ class KwantWrdInMinuut(KwantWrd):
     def __init__(self, waarde=None):
         self.eenheid = LiteralField(naam="standaardEenheid",
                                     label="standaard eenheid",
-                                    uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMinuut.standaardEenheid",
+                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMinuut.standaardEenheid",
                                     definition="De standaard eenheid bij dit datatype is uitgedrukt in minuten.",
                                     constraints='"min"^^cdt:ucumunit',
                                     usagenote='"min"^^cdt:ucumunit',
@@ -21,7 +21,7 @@ class KwantWrdInMinuut(KwantWrd):
 
         self.waardeVeld = NonNegIntegerField(naam="waarde",
                                              label="waarde",
-                                             uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMinuut.waarde",
+                                             objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMinuut.waarde",
                                              definition="Bevat een getal die bij het datatype hoort.",
                                              constraints="",
                                              usagenote="",
@@ -30,7 +30,7 @@ class KwantWrdInMinuut(KwantWrd):
 
         super().__init__(naam="KwantWrdInMinuut",
                          label="Kwantitatieve waarde in minuten",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMinuut",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMinuut",
                          definition="Een kwantitatieve waarde die een getal in minuten uitdrukt.",
                          usagenote="",
                          deprecated_version="",

@@ -17,7 +17,7 @@ class NatteRuigte(Ruigte):
         self.huidigNatuurbeeld = KeuzelijstField(naam="huidigNatuurbeeld",
                                                  label="huidig natuurbeeld",
                                                  lijst=KlNSB(),
-                                                 uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#NatteRuigte.huidigNatuurbeeld",
+                                                 objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#NatteRuigte.huidigNatuurbeeld",
                                                  definition="Bepaling van het vegetatietype op basis van terreininventarisatie.",
                                                  constraints="",
                                                  usagenote="",

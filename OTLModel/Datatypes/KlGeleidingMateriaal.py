@@ -9,7 +9,7 @@ class KlGeleidingMateriaal(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlGeleidingMateriaal",
                          label="Geleiding materiaal",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlGeleidingMateriaal",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlGeleidingMateriaal",
                          definition="Materialen voor de geleidingwand om kleinere wilde dieren te geleiden.",
                          usagenote="",
                          deprecated_version="",

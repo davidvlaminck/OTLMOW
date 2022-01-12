@@ -16,7 +16,7 @@ class FietstelDisplay(AIMNaamObject):
 
         self.isDubbelzijdig = BooleanField(naam="isDubbelzijdig",
                                            label="is dubbelzijdig",
-                                           uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#FietstelDisplay.isDubbelzijdig",
+                                           objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#FietstelDisplay.isDubbelzijdig",
                                            definition="Geeft aan of het display telgegevens toont langs zijn beide zijden of niet.",
                                            constraints="",
                                            usagenote="",
@@ -27,7 +27,7 @@ class FietstelDisplay(AIMNaamObject):
         """Document met de technische specificaties van het display."""
         self.technischeFiche.naam = "technischeFiche"
         self.technischeFiche.label = "technische fiche"
-        self.technischeFiche.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#FietstelDisplay.technischeFiche"
+        self.technischeFiche.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#FietstelDisplay.technischeFiche"
         self.technischeFiche.definition = "Document met de technische specificaties van het display."
         self.technischeFiche.constraints = ""
         self.technischeFiche.usagenote = ""

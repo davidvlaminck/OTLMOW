@@ -25,7 +25,7 @@ class Inloopbehuizing(Behuizing):
         """Buitenafmetingen van het bovengronds gedeelte van een behuizing waarin het in principe mogelijk is om rond te lopen omwille van de grootte en toegankelijkheid."""
         self.afmeting.naam = "afmeting"
         self.afmeting.label = "afmeting"
-        self.afmeting.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Inloopbehuizing.afmeting"
+        self.afmeting.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Inloopbehuizing.afmeting"
         self.afmeting.definition = "Buitenafmetingen van het bovengronds gedeelte van een behuizing waarin het in principe mogelijk is om rond te lopen omwille van de grootte en toegankelijkheid."
         self.afmeting.constraints = ""
         self.afmeting.usagenote = ""
@@ -33,7 +33,7 @@ class Inloopbehuizing(Behuizing):
 
         self.beschrijvingBereikbaarheid = StringField(naam="beschrijvingBereikbaarheid",
                                                       label="beschrijving bereikbaarheid",
-                                                      uri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Inloopbehuizing.beschrijvingBereikbaarheid",
+                                                      objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Inloopbehuizing.beschrijvingBereikbaarheid",
                                                       definition="Een beschrijving van de omgeving van de behuizing in functie van de bereikbaarheid en toegankelijkheid voor werken en toezicht.",
                                                       constraints="",
                                                       usagenote="",
@@ -44,7 +44,7 @@ class Inloopbehuizing(Behuizing):
         """Plattegrond van de behuizing met aanduidingen van de verschillende aanwezige elementen zoals kelder, kasten met kastnummers, toegangscontrole en meer."""
         self.grondplan.naam = "grondplan"
         self.grondplan.label = "grondplan"
-        self.grondplan.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Inloopbehuizing.grondplan"
+        self.grondplan.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Inloopbehuizing.grondplan"
         self.grondplan.definition = "Plattegrond van de behuizing met aanduidingen van de verschillende aanwezige elementen zoals kelder, kasten met kastnummers, toegangscontrole en meer."
         self.grondplan.constraints = ""
         self.grondplan.usagenote = ""
@@ -53,7 +53,7 @@ class Inloopbehuizing(Behuizing):
         self.inloopbehuizingMateriaal = KeuzelijstField(naam="inloopbehuizingMateriaal",
                                                         label="Cabine materiaal",
                                                         lijst=KlAlgMateriaal(),
-                                                        uri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Inloopbehuizing.inloopbehuizingMateriaal",
+                                                        objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Inloopbehuizing.inloopbehuizingMateriaal",
                                                         definition="Materiaal waaruit de cabine vervaardigd is zonder buitenafwerking van dak of wanden.",
                                                         constraints="",
                                                         usagenote="",
@@ -63,7 +63,7 @@ class Inloopbehuizing(Behuizing):
         self.merk = KeuzelijstField(naam="merk",
                                     label="merk",
                                     lijst=KlCabineMerk(),
-                                    uri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Inloopbehuizing.merk",
+                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Inloopbehuizing.merk",
                                     definition="De merknaam volgens de fabrikant van een behuizing waarin het in principe mogelijk is om rond te lopen omwille van de grootte en toegankelijkheid.",
                                     constraints="",
                                     usagenote="",
@@ -73,7 +73,7 @@ class Inloopbehuizing(Behuizing):
         self.modelnaam = KeuzelijstField(naam="modelnaam",
                                          label="modelnaam",
                                          lijst=KlCabineModelnaam(),
-                                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Inloopbehuizing.modelnaam",
+                                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Inloopbehuizing.modelnaam",
                                          definition="Naam waarmee de fabrikant het model identificeert van een behuizing waarin het in principe mogelijk is om rond te lopen omwille van de grootte en toegankelijkheid.",
                                          constraints="",
                                          usagenote="",

@@ -18,7 +18,7 @@ class Segmentcontroller(Controller):
         self.beveiligingssleutel = KeuzelijstField(naam="beveiligingssleutel",
                                                    label="beveiligingssleutel",
                                                    lijst=KlControllerBeveiligingssleutel(),
-                                                   uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Segmentcontroller.beveiligingssleutel",
+                                                   objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Segmentcontroller.beveiligingssleutel",
                                                    definition="De encryptie die wordt toegepast om de verbinding tussen lokaal en centraal te beveiligen.",
                                                    constraints="",
                                                    usagenote="",
@@ -27,7 +27,7 @@ class Segmentcontroller(Controller):
 
         self.merk = StringField(naam="merk",
                                 label="merk",
-                                uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Segmentcontroller.merk",
+                                objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Segmentcontroller.merk",
                                 definition="Merk van de segmentcontroller.",
                                 constraints="",
                                 usagenote="",
@@ -36,7 +36,7 @@ class Segmentcontroller(Controller):
 
         self.modelnaam = StringField(naam="modelnaam",
                                      label="modelnaam",
-                                     uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Segmentcontroller.modelnaam",
+                                     objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Segmentcontroller.modelnaam",
                                      definition="Modelnaam van de segmentcontroller.",
                                      constraints="",
                                      usagenote="",

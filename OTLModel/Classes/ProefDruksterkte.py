@@ -17,7 +17,7 @@ class ProefDruksterkte(Proef):
         """Proefresultaten van de druksterkte van de laag."""
         self.druksterkte.naam = "druksterkte"
         self.druksterkte.label = "druksterkte"
-        self.druksterkte.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefDruksterkte.druksterkte"
+        self.druksterkte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefDruksterkte.druksterkte"
         self.druksterkte.definition = "Proefresultaten van de druksterkte van de laag."
         self.druksterkte.constraints = ""
         self.druksterkte.usagenote = ""

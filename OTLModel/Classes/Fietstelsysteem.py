@@ -21,7 +21,7 @@ class Fietstelsysteem(AIMNaamObject):
         """De afmetingen van het fietstelsysteem."""
         self.afmetingen.naam = "afmetingen"
         self.afmetingen.label = "afmetingen"
-        self.afmetingen.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Fietstelsysteem.afmetingen"
+        self.afmetingen.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Fietstelsysteem.afmetingen"
         self.afmetingen.definition = "De afmetingen van het fietstelsysteem."
         self.afmetingen.constraints = ""
         self.afmetingen.usagenote = ""
@@ -30,7 +30,7 @@ class Fietstelsysteem(AIMNaamObject):
         self.merk = KeuzelijstField(naam="merk",
                                     label="merk",
                                     lijst=KlFietstelsysteemMerk(),
-                                    uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Fietstelsysteem.merk",
+                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Fietstelsysteem.merk",
                                     definition="Merknaam van het fietstelsysteem.",
                                     constraints="",
                                     usagenote="",
@@ -40,7 +40,7 @@ class Fietstelsysteem(AIMNaamObject):
         self.modelnaam = KeuzelijstField(naam="modelnaam",
                                          label="modelnaam",
                                          lijst=KlFietstelsysteemModelnaam(),
-                                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Fietstelsysteem.modelnaam",
+                                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Fietstelsysteem.modelnaam",
                                          definition="Naam van het model van het fietstelsysteem volgens de fabrikant.",
                                          constraints="",
                                          usagenote="",
@@ -51,7 +51,7 @@ class Fietstelsysteem(AIMNaamObject):
         """Document met de technische specificaties van het fietstelsysteem."""
         self.technischeFiche.naam = "technischeFiche"
         self.technischeFiche.label = "technische fiche"
-        self.technischeFiche.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Fietstelsysteem.technischeFiche"
+        self.technischeFiche.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Fietstelsysteem.technischeFiche"
         self.technischeFiche.definition = "Document met de technische specificaties van het fietstelsysteem."
         self.technischeFiche.constraints = ""
         self.technischeFiche.usagenote = ""

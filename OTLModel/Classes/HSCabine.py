@@ -18,7 +18,7 @@ class HSCabine(Cabine):
         self.lokaalKlasse = KeuzelijstField(naam="lokaalKlasse",
                                             label="lokaal klasse",
                                             lijst=KlCabineLokaalKlasse(),
-                                            uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#HSCabine.lokaalKlasse",
+                                            objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#HSCabine.lokaalKlasse",
                                             definition="Classificatie van de hoogspanningscabine als lokaal volgens Synergrid.",
                                             constraints="",
                                             usagenote="",
@@ -27,7 +27,7 @@ class HSCabine(Cabine):
 
         self.vervaldatumVeiligheidshandschoenen = DateField(naam="vervaldatumVeiligheidshandschoenen",
                                                             label="vervaldatum veiligheidshandschoenen",
-                                                            uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#HSCabine.vervaldatumVeiligheidshandschoenen",
+                                                            objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#HSCabine.vervaldatumVeiligheidshandschoenen",
                                                             definition="De datum waarop de huidige veiligheidshandschoenen in de hoogspanningscabine vervallen.",
                                                             constraints="",
                                                             usagenote="",

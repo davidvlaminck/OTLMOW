@@ -10,7 +10,7 @@ class DtcAfmetingZijdeInMm(ComplexField):
     def __init__(self):
         super().__init__(naam="DtcAfmetingZijdeInMm",
                          label="Afmeting zijde in millimeter",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAfmetingZijdeInMm",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAfmetingZijdeInMm",
                          definition="Complex datatype voor de afmeting van een zijde in millimeter.",
                          usagenote="",
                          deprecated_version="")
@@ -19,7 +19,7 @@ class DtcAfmetingZijdeInMm(ComplexField):
         """De afmeting van een zijde in millimeter."""
         self.waarde.zijde.naam = "zijde"
         self.waarde.zijde.label = "zijde"
-        self.waarde.zijde.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAfmetingZijdeInMm.zijde"
+        self.waarde.zijde.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAfmetingZijdeInMm.zijde"
         self.waarde.zijde.definition = "De afmeting van een zijde in millimeter."
         self.waarde.zijde.constraints = ""
         self.waarde.zijde.usagenote = ""

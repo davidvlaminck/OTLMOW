@@ -13,14 +13,14 @@ class DtcSoftwarePoortconfiguratie(ComplexField):
     def __init__(self):
         super().__init__(naam="DtcSoftwarePoortconfiguratie",
                          label="Software poortconfiguratie",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcSoftwarePoortconfiguratie",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcSoftwarePoortconfiguratie",
                          definition="Complex datatype dat beschrijft welke poort voor welke service gebruikt wordt.",
                          usagenote="",
                          deprecated_version="")
 
         self.waarde.poortnummer = IntegerField(naam="poortnummer",
                                                label="poortnummer",
-                                               uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcSoftwarePoortconfiguratie.poortnummer",
+                                               objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcSoftwarePoortconfiguratie.poortnummer",
                                                definition="Het nummer dat werd toegekend aan de (netwerk)poort.",
                                                constraints="",
                                                usagenote="",
@@ -31,7 +31,7 @@ class DtcSoftwarePoortconfiguratie(ComplexField):
         self.waarde.richting = KeuzelijstField(naam="richting",
                                                label="richting",
                                                lijst=KlPoortconfiguratieRichting(),
-                                               uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcSoftwarePoortconfiguratie.richting",
+                                               objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcSoftwarePoortconfiguratie.richting",
                                                definition="De richting waarin de poort openstaat.",
                                                constraints="",
                                                usagenote="",
@@ -41,7 +41,7 @@ class DtcSoftwarePoortconfiguratie(ComplexField):
 
         self.waarde.service = StringField(naam="service",
                                           label="service",
-                                          uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcSoftwarePoortconfiguratie.service",
+                                          objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcSoftwarePoortconfiguratie.service",
                                           definition="De service die op een bepaalde poort is aangesloten.",
                                           constraints="",
                                           usagenote="",

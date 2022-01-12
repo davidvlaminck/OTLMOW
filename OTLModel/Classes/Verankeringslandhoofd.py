@@ -18,7 +18,7 @@ class Verankeringslandhoofd(AIMObject):
         """De breedte van het verankeringslandhoofd in meter."""
         self.breedte.naam = "breedte"
         self.breedte.label = "breedte"
-        self.breedte.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Verankeringslandhoofd.breedte"
+        self.breedte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Verankeringslandhoofd.breedte"
         self.breedte.definition = "De breedte van het verankeringslandhoofd in meter."
         self.breedte.constraints = ""
         self.breedte.usagenote = ""
@@ -28,7 +28,7 @@ class Verankeringslandhoofd(AIMObject):
         """De lengte van het verankeringslandhoofd in meter."""
         self.lengte.naam = "lengte"
         self.lengte.label = "lengte"
-        self.lengte.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Verankeringslandhoofd.lengte"
+        self.lengte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Verankeringslandhoofd.lengte"
         self.lengte.definition = "De lengte van het verankeringslandhoofd in meter."
         self.lengte.constraints = ""
         self.lengte.usagenote = ""
@@ -36,7 +36,7 @@ class Verankeringslandhoofd(AIMObject):
 
         self.ribben = IntegerField(naam="ribben",
                                    label="ribben",
-                                   uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Verankeringslandhoofd.ribben",
+                                   objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Verankeringslandhoofd.ribben",
                                    definition="Het aantal ribben van het verankeringslandhoofd.",
                                    constraints="",
                                    usagenote="",

@@ -25,7 +25,7 @@ class Verkeersteken(AIMObject):
         """Adres van het verkeersteken."""
         self.adres.naam = "adres"
         self.adres.label = "adres"
-        self.adres.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Verkeersteken.adres"
+        self.adres.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Verkeersteken.adres"
         self.adres.definition = "Adres van het verkeersteken."
         self.adres.constraints = ""
         self.adres.usagenote = ""
@@ -34,7 +34,7 @@ class Verkeersteken(AIMObject):
         afbeeldingField = DtcDocument()
         afbeeldingField.naam = "afbeelding"
         afbeeldingField.label = "afbeelding"
-        afbeeldingField.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Verkeersteken.afbeelding"
+        afbeeldingField.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Verkeersteken.afbeelding"
         afbeeldingField.definition = "Foto van het verkeersteken."
         afbeeldingField.constraints = ""
         afbeeldingField.usagenote = ""
@@ -45,7 +45,7 @@ class Verkeersteken(AIMObject):
         mobiliteitsMaatregelField = DtcExterneReferentie()
         mobiliteitsMaatregelField.naam = "mobiliteitsMaatregel"
         mobiliteitsMaatregelField.label = "mobiliteitsmaatregel"
-        mobiliteitsMaatregelField.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Verkeersteken.mobiliteitsMaatregel"
+        mobiliteitsMaatregelField.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Verkeersteken.mobiliteitsMaatregel"
         mobiliteitsMaatregelField.definition = "Externe referentie naar een maatregel om de beweging en verplaatsing van de weggebruiker op het openbaar domein of privé domein met openbaar karakter te organiseren."
         mobiliteitsMaatregelField.constraints = ""
         mobiliteitsMaatregelField.usagenote = ""
@@ -55,7 +55,7 @@ class Verkeersteken(AIMObject):
 
         self.plaatsbeschrijving = StringField(naam="plaatsbeschrijving",
                                               label="plaatsbeschrijving",
-                                              uri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Verkeersteken.plaatsbeschrijving",
+                                              objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Verkeersteken.plaatsbeschrijving",
                                               definition="Tekstuele beschrijving waar het verkeersteken zal komen.",
                                               constraints="",
                                               usagenote="",
@@ -65,7 +65,7 @@ class Verkeersteken(AIMObject):
         signalisatieVergunningField = DtcExterneReferentie()
         signalisatieVergunningField.naam = "signalisatieVergunning"
         signalisatieVergunningField.label = "signalisatievergunning"
-        signalisatieVergunningField.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Verkeersteken.signalisatieVergunning"
+        signalisatieVergunningField.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Verkeersteken.signalisatieVergunning"
         signalisatieVergunningField.definition = "Externe referentie naar een vergunning voor het tijdelijk aanbrengen of wijzigen van signalisatie op het openbaar domein of privaat domein met openbaar karakter."
         signalisatieVergunningField.constraints = ""
         signalisatieVergunningField.usagenote = ""
@@ -75,7 +75,7 @@ class Verkeersteken(AIMObject):
 
         self.variabelOpschrift = StringField(naam="variabelOpschrift",
                                              label="variabel opschrift",
-                                             uri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Verkeersteken.variabelOpschrift",
+                                             objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Verkeersteken.variabelOpschrift",
                                              definition="Variabele tekst die op het verkeersbordconcept komt te staan.",
                                              constraints="",
                                              usagenote="",
@@ -85,7 +85,7 @@ class Verkeersteken(AIMObject):
         self.wettelijkeStatus = KeuzelijstField(naam="wettelijkeStatus",
                                                 label="wettelijke status",
                                                 lijst=KlVerkeerstekenWettelijkeStatus(),
-                                                uri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Verkeersteken.wettelijkeStatus",
+                                                objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Verkeersteken.wettelijkeStatus",
                                                 definition="Duidt de wettelijke status aan van het verkeersteken.",
                                                 constraints="",
                                                 usagenote="Bijvoorbeeld: vergund, niet-vergund, in ontwerp",

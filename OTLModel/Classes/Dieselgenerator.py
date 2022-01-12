@@ -17,7 +17,7 @@ class Dieselgenerator(Voedingspunt):
         """De afmetingen van de dieselgenerator."""
         self.afmetingen.naam = "afmetingen"
         self.afmetingen.label = "afmetingen"
-        self.afmetingen.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Dieselgenerator.afmetingen"
+        self.afmetingen.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Dieselgenerator.afmetingen"
         self.afmetingen.definition = "De afmetingen van de dieselgenerator."
         self.afmetingen.constraints = ""
         self.afmetingen.usagenote = ""

@@ -17,7 +17,7 @@ class WegbebakeningAfschermendeConstructies(Bebakening):
         self.type = KeuzelijstField(naam="type",
                                     label="type",
                                     lijst=KlWegbebakeningType(),
-                                    uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#WegbebakeningAfschermendeConstructies.type",
+                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#WegbebakeningAfschermendeConstructies.type",
                                     definition="De vorm van wegbebakening voor afschermende constructies.",
                                     constraints="",
                                     usagenote="",

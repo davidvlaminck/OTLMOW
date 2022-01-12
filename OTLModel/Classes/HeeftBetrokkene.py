@@ -19,7 +19,7 @@ class HeeftBetrokkene(DirectioneleRelatie):
 
         self.datumAanvang = DateField(naam="datumAanvang",
                                       label="datum aanvang",
-                                      uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#HeeftBetrokkene.datumAanvang",
+                                      objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#HeeftBetrokkene.datumAanvang",
                                       definition="De datum waarop de betrokkenheid effectief geworden is of zal worden. ",
                                       constraints="",
                                       usagenote="",
@@ -28,7 +28,7 @@ class HeeftBetrokkene(DirectioneleRelatie):
 
         self.datumEinde = DateField(naam="datumEinde",
                                     label="datum einde",
-                                    uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#HeeftBetrokkene.datumEinde",
+                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#HeeftBetrokkene.datumEinde",
                                     definition="De datum waarop de betrokkenheid beëindigd is of moet beëindigd worden. ",
                                     constraints="",
                                     usagenote="",
@@ -38,7 +38,7 @@ class HeeftBetrokkene(DirectioneleRelatie):
         self.rol = KeuzelijstField(naam="rol",
                                    label="rol",
                                    lijst=KlBetrokkenheidRol(),
-                                   uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#HeeftBetrokkene.rol",
+                                   objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#HeeftBetrokkene.rol",
                                    definition="Type voor de manier waarop een agent betrokken is bij een object.",
                                    constraints="",
                                    usagenote="",
@@ -48,7 +48,7 @@ class HeeftBetrokkene(DirectioneleRelatie):
         specifiekeContactinfoField = DtcContactinfo()
         specifiekeContactinfoField.naam = "specifiekeContactinfo"
         specifiekeContactinfoField.label = "specifieke contactinfo"
-        specifiekeContactinfoField.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#HeeftBetrokkene.specifiekeContactinfo"
+        specifiekeContactinfoField.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#HeeftBetrokkene.specifiekeContactinfo"
         specifiekeContactinfoField.definition = "Specifieke contactgegevens van de betrokken agent met betrekking tot het gekoppelde object."
         specifiekeContactinfoField.constraints = ""
         specifiekeContactinfoField.usagenote = ""

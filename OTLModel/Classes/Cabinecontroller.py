@@ -18,7 +18,7 @@ class Cabinecontroller(Controller):
         self.beveiligingssleutel = KeuzelijstField(naam="beveiligingssleutel",
                                                    label="beveiligingssleutel",
                                                    lijst=KlControllerBeveiligingssleutel(),
-                                                   uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Cabinecontroller.beveiligingssleutel",
+                                                   objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Cabinecontroller.beveiligingssleutel",
                                                    definition="De encryptie die wordt toegepast om de verbinding tussen lokaal en centraal te beveiligen.",
                                                    constraints="",
                                                    usagenote="",
@@ -27,7 +27,7 @@ class Cabinecontroller(Controller):
 
         self.merk = StringField(naam="merk",
                                 label="merk",
-                                uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Cabinecontroller.merk",
+                                objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Cabinecontroller.merk",
                                 definition="Merk van de cabinecontroller.",
                                 constraints="",
                                 usagenote="",
@@ -36,7 +36,7 @@ class Cabinecontroller(Controller):
 
         self.modelnaam = StringField(naam="modelnaam",
                                      label="modelnaam",
-                                     uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Cabinecontroller.modelnaam",
+                                     objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Cabinecontroller.modelnaam",
                                      definition="Modelnaam van de cabinecontroller.",
                                      constraints="",
                                      usagenote="",

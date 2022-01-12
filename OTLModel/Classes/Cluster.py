@@ -17,7 +17,7 @@ class Cluster(AIMNaamObject):
         self.clusterdoel = KeuzelijstField(naam="clusterdoel",
                                            label="clusterdoel",
                                            lijst=KlClusterClusterdoel(),
-                                           uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Cluster.clusterdoel",
+                                           objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Cluster.clusterdoel",
                                            definition="De reden waarom de custer is opgezet, bv. resources groeperen of redundantie.",
                                            constraints="",
                                            usagenote="",

@@ -11,7 +11,7 @@ class KwantWrdInVierkanteMeter(KwantWrd):
     def __init__(self, waarde=None):
         self.eenheid = LiteralField(naam="standaardEenheid",
                                     label="standaard eenheid",
-                                    uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInVierkanteMeter.standaardEenheid",
+                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInVierkanteMeter.standaardEenheid",
                                     definition="De standaard eenheid bij dit datatype is uitgedrukt in vierkante meter.",
                                     constraints='"m2"^^cdt:ucumunit',
                                     usagenote='"m2"^^cdt:ucumunit',
@@ -21,7 +21,7 @@ class KwantWrdInVierkanteMeter(KwantWrd):
 
         self.waardeVeld = DecimalFloatField(naam="waarde",
                                             label="waarde",
-                                            uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInVierkanteMeter.waarde",
+                                            objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInVierkanteMeter.waarde",
                                             definition="Bevat een getal die bij het datatype hoort.",
                                             constraints="",
                                             usagenote="",
@@ -30,7 +30,7 @@ class KwantWrdInVierkanteMeter(KwantWrd):
 
         super().__init__(naam="KwantWrdInVierkanteMeter",
                          label="Kwantitatieve waarde in vierkante meter",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInVierkanteMeter",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInVierkanteMeter",
                          definition="Een kwantitatieve waarde die een getal in vierkante meter uitdrukt.",
                          usagenote="",
                          deprecated_version="",

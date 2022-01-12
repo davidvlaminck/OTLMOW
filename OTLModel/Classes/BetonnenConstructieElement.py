@@ -19,7 +19,7 @@ class BetonnenConstructieElement(ABC):
         """Eigenschappen van het gebruikte beton."""
         self.betonspecificaties.naam = "betonspecificaties"
         self.betonspecificaties.label = "betonspecificaties"
-        self.betonspecificaties.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#BetonnenConstructieElement.betonspecificaties"
+        self.betonspecificaties.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#BetonnenConstructieElement.betonspecificaties"
         self.betonspecificaties.definition = "Eigenschappen van het gebruikte beton."
         self.betonspecificaties.constraints = ""
         self.betonspecificaties.usagenote = ""
@@ -28,7 +28,7 @@ class BetonnenConstructieElement(ABC):
         self.uitvoeringsmethode = KeuzelijstField(naam="uitvoeringsmethode",
                                                   label="uitvoeringsmethode",
                                                   lijst=KlUitvoeringsmethode(),
-                                                  uri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#BetonnenConstructieElement.uitvoeringsmethode",
+                                                  objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#BetonnenConstructieElement.uitvoeringsmethode",
                                                   definition="Op welke manier het beton wordt aangebracht.",
                                                   constraints="",
                                                   usagenote="",
@@ -39,7 +39,7 @@ class BetonnenConstructieElement(ABC):
         """Plan waarin de wapening zo gedetailleerd mogelijk wordt uitgetekend (met materiaalspecificaties en de afmetingen worden weergegeven in millimeters)."""
         self.wapeningsplan.naam = "wapeningsplan"
         self.wapeningsplan.label = "wapeningsplan"
-        self.wapeningsplan.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#BetonnenConstructieElement.wapeningsplan"
+        self.wapeningsplan.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#BetonnenConstructieElement.wapeningsplan"
         self.wapeningsplan.definition = "Plan waarin de wapening zo gedetailleerd mogelijk wordt uitgetekend (met materiaalspecificaties en de afmetingen worden weergegeven in millimeters)."
         self.wapeningsplan.constraints = ""
         self.wapeningsplan.usagenote = ""

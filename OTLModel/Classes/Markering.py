@@ -24,7 +24,7 @@ class Markering(AIMObject, Signalisatie):
 
         self.isHandwerk = BooleanField(naam="isHandwerk",
                                        label="is handwerk",
-                                       uri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Markering.isHandwerk",
+                                       objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Markering.isHandwerk",
                                        definition="Boolean om te bepalen of de markering machinaal of handmatig is aangebracht.",
                                        constraints="",
                                        usagenote="",
@@ -33,7 +33,7 @@ class Markering(AIMObject, Signalisatie):
 
         self.isTijdelijk = BooleanField(naam="isTijdelijk",
                                         label="is tijdelijk",
-                                        uri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Markering.isTijdelijk",
+                                        objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Markering.isTijdelijk",
                                         definition="Aanduiding of de wegmarkering al dan niet tot de werfsignalisatie behoort.",
                                         constraints="",
                                         usagenote="",
@@ -43,7 +43,7 @@ class Markering(AIMObject, Signalisatie):
         self.kleur = KeuzelijstField(naam="kleur",
                                      label="kleur",
                                      lijst=KlKleurMarkering(),
-                                     uri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Markering.kleur",
+                                     objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Markering.kleur",
                                      definition="De kleur van de gebruikte markering.",
                                      constraints="",
                                      usagenote="",
@@ -53,7 +53,7 @@ class Markering(AIMObject, Signalisatie):
         self.markeringsoort = KeuzelijstField(naam="markeringsoort",
                                               label="markeringsoort",
                                               lijst=KlMarkeringSoort(),
-                                              uri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Markering.markeringsoort",
+                                              objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Markering.markeringsoort",
                                               definition="De soort van markering (verf, thermopast,...).",
                                               constraints="",
                                               usagenote="",
@@ -64,7 +64,7 @@ class Markering(AIMObject, Signalisatie):
         """De product informatie van de markering via COPRO codes."""
         self.markeringsysteemCopro.naam = "markeringsysteemCopro"
         self.markeringsysteemCopro.label = "markeringsysteem COPRO"
-        self.markeringsysteemCopro.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Markering.markeringsysteemCopro"
+        self.markeringsysteemCopro.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Markering.markeringsysteemCopro"
         self.markeringsysteemCopro.definition = "De product informatie van de markering via COPRO codes."
         self.markeringsysteemCopro.constraints = ""
         self.markeringsysteemCopro.usagenote = ""
@@ -74,7 +74,7 @@ class Markering(AIMObject, Signalisatie):
         """De opvatting van de markering, zijnde middelenverbintenis of resultaatsverbintenis met een minimale levensduur."""
         self.opvatting.naam = "opvatting"
         self.opvatting.label = "opvatting"
-        self.opvatting.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Markering.opvatting"
+        self.opvatting.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Markering.opvatting"
         self.opvatting.definition = "De opvatting van de markering, zijnde middelenverbintenis of resultaatsverbintenis met een minimale levensduur."
         self.opvatting.constraints = ""
         self.opvatting.usagenote = ""

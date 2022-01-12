@@ -9,7 +9,7 @@ class KlNetwerkkaartModelnaam(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlNetwerkkaartModelnaam",
                          label="Netwerkkaart modelnaam",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlNetwerkkaartModelnaam",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlNetwerkkaartModelnaam",
                          definition="Modelnamen voor Netwerkkaarten.",
                          usagenote="",
                          deprecated_version="",
@@ -33,9 +33,9 @@ class KlNetwerkkaartModelnaam(Keuzelijst):
         self.add_option("F10-A90-33", "F10-A90-33", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkkaartModelnaam/F10-A90-33")
         self.add_option("F10-A90-34", "F10-A90-34", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkkaartModelnaam/F10-A90-34")
         self.add_option("F10-A90-35", "F10-A90-35", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkkaartModelnaam/F10-A90-35")
+        self.add_option("F10-T90-T31", "F10-T90-T31", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkkaartModelnaam/F10-T90-T31")
         self.add_option("F10E-A90-TN", "F10E-A90-TN", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkkaartModelnaam/F10E-A90-TN")
         self.add_option("F10E-T90-TN", "F10E-T90-TN", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkkaartModelnaam/F10E-T90-TN")
-        self.add_option("F10-T90-T31", "F10-T90-T31", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkkaartModelnaam/F10-T90-T31")
         self.add_option("FC4-T90-TN", "FC4-T90-TN", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkkaartModelnaam/FC4-T90-TN")
         self.add_option("LKA146", "LKA146", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkkaartModelnaam/LKA146")
         self.add_option("LKA39", "LKA39", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkkaartModelnaam/LKA39")

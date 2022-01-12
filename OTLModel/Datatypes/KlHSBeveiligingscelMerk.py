@@ -9,7 +9,7 @@ class KlHSBeveiligingscelMerk(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlHSBeveiligingscelMerk",
                          label="HS-beveiligingscel merk",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlHSBeveiligingscelMerk",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlHSBeveiligingscelMerk",
                          definition="Het merk van de HS-beveiligingscel.",
                          usagenote="",
                          deprecated_version="",

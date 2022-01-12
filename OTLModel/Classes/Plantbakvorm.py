@@ -17,7 +17,7 @@ class Plantbakvorm(VegetatieElement):
 
         self.isBereikbaar = BooleanField(naam="isBereikbaar",
                                          label="is bereikbaar",
-                                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Plantbakvorm.isBereikbaar",
+                                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Plantbakvorm.isBereikbaar",
                                          definition="Duidt aan of de plantbakvorm door de mens fysiek bereikbaar is zonder hulpmiddelen.",
                                          constraints="",
                                          usagenote="",
@@ -26,7 +26,7 @@ class Plantbakvorm(VegetatieElement):
 
         self.isVerplaatsbaar = BooleanField(naam="isVerplaatsbaar",
                                             label="is verplaatsbaar",
-                                            uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Plantbakvorm.isVerplaatsbaar",
+                                            objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Plantbakvorm.isVerplaatsbaar",
                                             definition="Duidt aan of de plantbakvorm al dan niet verplaatsbaar is en dus niet permanent verankerd werd met het aardoppervlak.",
                                             constraints="",
                                             usagenote="",
@@ -37,7 +37,7 @@ class Plantbakvorm(VegetatieElement):
         """De afmetingen van de plantbak in vierkante meter."""
         self.oppervlakteBak.naam = "oppervlakteBak"
         self.oppervlakteBak.label = "oppervlakte"
-        self.oppervlakteBak.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Plantbakvorm.oppervlakteBak"
+        self.oppervlakteBak.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Plantbakvorm.oppervlakteBak"
         self.oppervlakteBak.definition = "De afmetingen van de plantbak in vierkante meter."
         self.oppervlakteBak.constraints = ""
         self.oppervlakteBak.usagenote = ""
@@ -47,7 +47,7 @@ class Plantbakvorm(VegetatieElement):
         """De inhoud of grootte van de plantbakvorm in de ruimte in kubieke meter."""
         self.volume.naam = "volume"
         self.volume.label = "volume"
-        self.volume.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Plantbakvorm.volume"
+        self.volume.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Plantbakvorm.volume"
         self.volume.definition = "De inhoud of grootte van de plantbakvorm in de ruimte in kubieke meter."
         self.volume.constraints = ""
         self.volume.usagenote = ""

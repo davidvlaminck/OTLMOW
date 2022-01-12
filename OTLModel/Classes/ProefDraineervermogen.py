@@ -17,7 +17,7 @@ class ProefDraineervermogen(Proef):
         """Proefresultaten van het drainvermogen."""
         self.draineervermogen.naam = "draineervermogen"
         self.draineervermogen.label = "draineervermogen"
-        self.draineervermogen.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefDraineervermogen.draineervermogen"
+        self.draineervermogen.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefDraineervermogen.draineervermogen"
         self.draineervermogen.definition = "Proefresultaten van het drainvermogen."
         self.draineervermogen.constraints = ""
         self.draineervermogen.usagenote = ""

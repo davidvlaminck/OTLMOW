@@ -9,7 +9,7 @@ class KlPtRegelaarProtocol(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlPtRegelaarProtocol",
                          label="PT-regelaar protocol",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlPtRegelaarProtocol",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlPtRegelaarProtocol",
                          definition="Beschrijft het protocol waarmee de PT-regelaar communiceert.",
                          usagenote="",
                          deprecated_version="",

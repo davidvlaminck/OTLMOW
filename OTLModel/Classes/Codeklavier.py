@@ -20,7 +20,7 @@ class Codeklavier(AIMNaamObject):
         self.merk = KeuzelijstField(naam="merk",
                                     label="merk",
                                     lijst=KlCodeklavierMerk(),
-                                    uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Codeklavier.merk",
+                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Codeklavier.merk",
                                     definition="Het merk van het codeklavier.",
                                     constraints="",
                                     usagenote="",
@@ -30,7 +30,7 @@ class Codeklavier(AIMNaamObject):
         self.modelnaam = KeuzelijstField(naam="modelnaam",
                                          label="modelnaam",
                                          lijst=KlCodeklavierModelnaam(),
-                                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Codeklavier.modelnaam",
+                                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Codeklavier.modelnaam",
                                          definition="De modelnaam van het codeklavier.",
                                          constraints="",
                                          usagenote="",
@@ -41,7 +41,7 @@ class Codeklavier(AIMNaamObject):
         """De technische fiche van het codeklavier."""
         self.technischeFiche.naam = "technischeFiche"
         self.technischeFiche.label = "technische fiche"
-        self.technischeFiche.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Codeklavier.technischeFiche"
+        self.technischeFiche.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Codeklavier.technischeFiche"
         self.technischeFiche.definition = "De technische fiche van het codeklavier."
         self.technischeFiche.constraints = ""
         self.technischeFiche.usagenote = ""
@@ -50,7 +50,7 @@ class Codeklavier(AIMNaamObject):
         self.werking = KeuzelijstField(naam="werking",
                                        label="werking",
                                        lijst=KlCodeklavierWerking(),
-                                       uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Codeklavier.werking",
+                                       objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Codeklavier.werking",
                                        definition="Indeling van het toestel volgens de manier waarop de gebruiker de aansturing doet.",
                                        constraints="",
                                        usagenote="",

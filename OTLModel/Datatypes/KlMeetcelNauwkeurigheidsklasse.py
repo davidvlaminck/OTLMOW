@@ -9,7 +9,7 @@ class KlMeetcelNauwkeurigheidsklasse(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlMeetcelNauwkeurigheidsklasse",
                          label="Meetcel nauwkeurigheidsklasse",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlMeetcelNauwkeurigheidsklasse",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlMeetcelNauwkeurigheidsklasse",
                          definition="Nauwkeurigheidsklasse van de meetcel (vb 0,2; 0,2s; 0,5; ...).",
                          usagenote="",
                          deprecated_version="",

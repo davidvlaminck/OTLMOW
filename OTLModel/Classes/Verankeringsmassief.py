@@ -18,7 +18,7 @@ class Verankeringsmassief(Betonfundering, KlassiekeFundering):
 
         self.isAfgedektMetBitumen = BooleanField(naam="isAfgedektMetBitumen",
                                                  label="is afgedekt met bitumen",
-                                                 uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Verankeringsmassief.isAfgedektMetBitumen",
+                                                 objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Verankeringsmassief.isAfgedektMetBitumen",
                                                  definition="Geeft aan of de fundering afgedekt is met een waterbestendige laag die regenwater en vuil wegvoert van de fundering.",
                                                  constraints="",
                                                  usagenote="",
@@ -29,7 +29,7 @@ class Verankeringsmassief(Betonfundering, KlassiekeFundering):
         """Het volume in kubieke meter van het verankeringsmassief."""
         self.volume.naam = "volume"
         self.volume.label = "volume"
-        self.volume.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Verankeringsmassief.volume"
+        self.volume.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Verankeringsmassief.volume"
         self.volume.definition = "Het volume in kubieke meter van het verankeringsmassief."
         self.volume.constraints = ""
         self.volume.usagenote = ""

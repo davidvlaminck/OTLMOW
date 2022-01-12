@@ -15,7 +15,7 @@ class Luchtkwaliteitreflector(Luchtkwaliteittoestel):
 
         self.isBeschermd = BooleanField(naam="isBeschermd",
                                         label="is beschermd",
-                                        uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Luchtkwaliteitreflector.isBeschermd",
+                                        objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Luchtkwaliteitreflector.isBeschermd",
                                         definition="Geeft aan of de sensor beschermd is tegen beschadiging, bv. door een aanrijding.",
                                         constraints="",
                                         usagenote="",

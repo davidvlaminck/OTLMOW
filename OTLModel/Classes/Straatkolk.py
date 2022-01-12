@@ -27,7 +27,7 @@ class Straatkolk(Put, PutRelatie):
         """De afmetingen van de bak van de straatkolk in mm."""
         self.bakAfmetingen.naam = "bakAfmetingen"
         self.bakAfmetingen.label = "bak afmetingen"
-        self.bakAfmetingen.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Straatkolk.bakAfmetingen"
+        self.bakAfmetingen.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Straatkolk.bakAfmetingen"
         self.bakAfmetingen.definition = "De afmetingen van de bak van de straatkolk in mm."
         self.bakAfmetingen.constraints = ""
         self.bakAfmetingen.usagenote = ""
@@ -36,7 +36,7 @@ class Straatkolk(Put, PutRelatie):
         self.bakType = KeuzelijstField(naam="bakType",
                                        label="baktype",
                                        lijst=KlStraatkolkBakType(),
-                                       uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Straatkolk.bakType",
+                                       objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Straatkolk.bakType",
                                        definition="Het type van bak van de straatkolk.",
                                        constraints="",
                                        usagenote="",
@@ -45,7 +45,7 @@ class Straatkolk(Put, PutRelatie):
 
         self.heeftAfdekplaatReukafsluiter = BooleanField(naam="heeftAfdekplaatReukafsluiter",
                                                          label="heeft afdekplaat reukafsluiter",
-                                                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Straatkolk.heeftAfdekplaatReukafsluiter",
+                                                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Straatkolk.heeftAfdekplaatReukafsluiter",
                                                          definition="Dit attribuut geeft aan of de straatkolk een afdekplaat als reukafsluiter heeft.",
                                                          constraints="",
                                                          usagenote="",
@@ -54,7 +54,7 @@ class Straatkolk(Put, PutRelatie):
 
         self.isInfiltrerend = BooleanField(naam="isInfiltrerend",
                                            label="is infiltrerend",
-                                           uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Straatkolk.isInfiltrerend",
+                                           objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Straatkolk.isInfiltrerend",
                                            definition="Wanneer de wanden van de straatkolk poreus zijn (en de straatkolk dus infiltrerend is), kan een deel van het water het water dat in de straatkolk komt rechtstreeks in de grond infiltreren.",
                                            constraints="",
                                            usagenote="",
@@ -64,7 +64,7 @@ class Straatkolk(Put, PutRelatie):
         self.roosterIndeling = KeuzelijstField(naam="roosterIndeling",
                                                label="rooster indeling",
                                                lijst=KlRoosterIndeling(),
-                                               uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Straatkolk.roosterIndeling",
+                                               objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Straatkolk.roosterIndeling",
                                                definition="Dit attribuut geeft aan hoe het rooster ingedeeld is: met zijdelingse opvang of dat er sprake is van een 1-delig of 2-delig rooster.",
                                                constraints="",
                                                usagenote="",
@@ -74,7 +74,7 @@ class Straatkolk(Put, PutRelatie):
         self.roosterOpeningswijze = KeuzelijstField(naam="roosterOpeningswijze",
                                                     label="rooster openingswijze",
                                                     lijst=KlRoosterOpeningswijze(),
-                                                    uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Straatkolk.roosterOpeningswijze",
+                                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Straatkolk.roosterOpeningswijze",
                                                     definition="Dit attribuut geeft de manier aan hoe het rooster geopend kan worden.",
                                                     constraints="",
                                                     usagenote="",
@@ -84,7 +84,7 @@ class Straatkolk(Put, PutRelatie):
         self.type = KeuzelijstField(naam="type",
                                     label="type",
                                     lijst=KlStraatkolkType(),
-                                    uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Straatkolk.type",
+                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Straatkolk.type",
                                     definition="Het type van de straatkolk.",
                                     constraints="",
                                     usagenote="",
@@ -94,7 +94,7 @@ class Straatkolk(Put, PutRelatie):
         self.typeUitlaat = KeuzelijstField(naam="typeUitlaat",
                                            label="type uitlaat ",
                                            lijst=KlStraatkolkTypeUitlaat(),
-                                           uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Straatkolk.typeUitlaat",
+                                           objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Straatkolk.typeUitlaat",
                                            definition="Het type van uitlaat van de straatkolk.",
                                            constraints="",
                                            usagenote="",

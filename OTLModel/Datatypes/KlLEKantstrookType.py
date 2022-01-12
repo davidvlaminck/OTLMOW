@@ -9,7 +9,7 @@ class KlLEKantstrookType(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlLEKantstrookType",
                          label="Kantstrook type",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlLEKantstrookType",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlLEKantstrookType",
                          definition="Types van kantstrook.",
                          usagenote="",
                          deprecated_version="",

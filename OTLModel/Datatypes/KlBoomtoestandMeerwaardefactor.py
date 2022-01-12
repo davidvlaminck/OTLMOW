@@ -9,7 +9,7 @@ class KlBoomtoestandMeerwaardefactor(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlBoomtoestandMeerwaardefactor",
                          label="Boomtoestand meerwaardefactor",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlBoomtoestandMeerwaardefactor",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlBoomtoestandMeerwaardefactor",
                          definition="De meerwaarde (ecologisch,erfgoed) van de boom.",
                          usagenote="",
                          deprecated_version="",

@@ -9,7 +9,7 @@ class KlEcoOverstaptype(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlEcoOverstaptype",
                          label="Overstaptype",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlEcoOverstaptype",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlEcoOverstaptype",
                          definition="Types van terugkeer voor wild.",
                          usagenote="",
                          deprecated_version="",

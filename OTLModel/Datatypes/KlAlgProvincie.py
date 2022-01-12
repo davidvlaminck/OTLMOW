@@ -9,7 +9,7 @@ class KlAlgProvincie(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlAlgProvincie",
                          label="Provincie",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KlAlgProvincie",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KlAlgProvincie",
                          definition="Lijst van provincies in Vlaanderen.",
                          usagenote="",
                          deprecated_version="",

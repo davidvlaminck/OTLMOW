@@ -9,7 +9,7 @@ class KlGCMeetMethode(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlGCMeetMethode",
                          label="Meet methode",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlGCMeetMethode",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlGCMeetMethode",
                          definition="Locaties van de geluidstestproef.",
                          usagenote="",
                          deprecated_version="",

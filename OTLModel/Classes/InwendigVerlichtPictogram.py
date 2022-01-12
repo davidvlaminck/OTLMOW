@@ -21,7 +21,7 @@ class InwendigVerlichtPictogram(AIMObject):
         """Geeft de buitenafmeting van het toestel mee."""
         self.afmeting.naam = "afmeting"
         self.afmeting.label = "afmeting"
-        self.afmeting.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#InwendigVerlichtPictogram.afmeting"
+        self.afmeting.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#InwendigVerlichtPictogram.afmeting"
         self.afmeting.definition = "Geeft de buitenafmeting van het toestel mee."
         self.afmeting.constraints = ""
         self.afmeting.usagenote = ""
@@ -31,7 +31,7 @@ class InwendigVerlichtPictogram(AIMObject):
         """De tijd tussen het uitschakelen van de interne lichtbron en het volledig duister worden van het toestel."""
         self.nalichtingstijd.naam = "nalichtingstijd"
         self.nalichtingstijd.label = "nalichtingstijd"
-        self.nalichtingstijd.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#InwendigVerlichtPictogram.nalichtingstijd"
+        self.nalichtingstijd.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#InwendigVerlichtPictogram.nalichtingstijd"
         self.nalichtingstijd.definition = "De tijd tussen het uitschakelen van de interne lichtbron en het volledig duister worden van het toestel."
         self.nalichtingstijd.constraints = ""
         self.nalichtingstijd.usagenote = ""
@@ -40,7 +40,7 @@ class InwendigVerlichtPictogram(AIMObject):
         self.symbool = KeuzelijstField(naam="symbool",
                                        label="symbool",
                                        lijst=KlPictogramSymbool(),
-                                       uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#InwendigVerlichtPictogram.symbool",
+                                       objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#InwendigVerlichtPictogram.symbool",
                                        definition="Het symbool afgebeeld op het toestel.",
                                        constraints="",
                                        usagenote="",
@@ -50,7 +50,7 @@ class InwendigVerlichtPictogram(AIMObject):
         self.typeLamp = KeuzelijstField(naam="typeLamp",
                                         label="type lamp",
                                         lijst=KlBinnenverlichtingstoestelSoortLamp(),
-                                        uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#InwendigVerlichtPictogram.typeLamp",
+                                        objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#InwendigVerlichtPictogram.typeLamp",
                                         definition="Het soort lamp waarmee het toestel verlicht wordt.",
                                         constraints="",
                                         usagenote="",

@@ -18,7 +18,7 @@ class Zpad(NaampadObject):
 
         self.netwerkklant = StringField(naam="netwerkklant",
                                         label="netwerkklant",
-                                        uri="https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Zpad.netwerkklant",
+                                        objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Zpad.netwerkklant",
                                         definition="Naam van de organisatie van de gebruiker.",
                                         constraints="",
                                         usagenote="",
@@ -27,7 +27,7 @@ class Zpad(NaampadObject):
 
         self.omschrijving = StringField(naam="omschrijving",
                                         label="omschrijving",
-                                        uri="https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Zpad.omschrijving",
+                                        objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Zpad.omschrijving",
                                         definition="Beschrijving van de aard en/of doel van de verbinding.",
                                         constraints="",
                                         usagenote="",
@@ -37,7 +37,7 @@ class Zpad(NaampadObject):
         self.type = KeuzelijstField(naam="type",
                                     label="type",
                                     lijst=KlZpadType(),
-                                    uri="https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Zpad.type",
+                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Zpad.type",
                                     definition="De soort verbinding, gebaseerd op het gebruikte protocol.",
                                     constraints="",
                                     usagenote="",
@@ -46,7 +46,7 @@ class Zpad(NaampadObject):
 
         self.WANCapaciteit = IntegerField(naam="WANCapaciteit",
                                           label="wan capaciteit",
-                                          uri="https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Zpad.WANCapaciteit",
+                                          objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Zpad.WANCapaciteit",
                                           definition="Capaciteit van de verbinding vanuit het standpunt van de gebruiker.",
                                           constraints="",
                                           usagenote="",

@@ -17,7 +17,7 @@ class Dolomietverharding(AndereVerharding):
         self.type = KeuzelijstField(naam="type",
                                     label="type",
                                     lijst=KlDolomietType(),
-                                    uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Dolomietverharding.type",
+                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Dolomietverharding.type",
                                     definition="Het type dolomiet.",
                                     constraints="",
                                     usagenote="",

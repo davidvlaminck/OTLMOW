@@ -9,7 +9,7 @@ class KlPTRegelaarMerk(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlPTRegelaarMerk",
                          label="PT regelaar merk",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlPTRegelaarMerk",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlPTRegelaarMerk",
                          definition="Keuzelijst met merknamen voor PTRegelaar.",
                          usagenote="",
                          deprecated_version="",

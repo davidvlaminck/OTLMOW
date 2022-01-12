@@ -9,7 +9,7 @@ class KlLEACSnelheidsklasse(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlLEACSnelheidsklasse",
                          label="Snelheidsklasse",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlLEACSnelheidsklasse",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlLEACSnelheidsklasse",
                          definition="De verschillende snelheidsklasses van afschermende constructies.",
                          usagenote="",
                          deprecated_version="",

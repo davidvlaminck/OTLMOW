@@ -16,7 +16,7 @@ class Brandleiding(Persleiding):
 
         self.isGeisoleerd = BooleanField(naam="isGeisoleerd",
                                          label="is geïsoleerd",
-                                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Brandleiding.isGeisoleerd",
+                                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Brandleiding.isGeisoleerd",
                                          definition="Geeft aan of de brandleiding voorzien is van eigen isolatie.",
                                          constraints="",
                                          usagenote="",
@@ -27,7 +27,7 @@ class Brandleiding(Persleiding):
         """De vastgelegde druk die moet voorzien worden op de leiding in functie van de aanvoer van bluswater."""
         self.leidingdruk.naam = "leidingdruk"
         self.leidingdruk.label = "leidingdruk"
-        self.leidingdruk.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Brandleiding.leidingdruk"
+        self.leidingdruk.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Brandleiding.leidingdruk"
         self.leidingdruk.definition = "De vastgelegde druk die moet voorzien worden op de leiding in functie van de aanvoer van bluswater."
         self.leidingdruk.constraints = ""
         self.leidingdruk.usagenote = ""

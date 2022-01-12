@@ -9,7 +9,7 @@ class KlDrukknopMerk(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlDrukknopMerk",
                          label="Drukknop merk",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlDrukknopMerk",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlDrukknopMerk",
                          definition="Keuzelijst met merknamen voor Drukknop.",
                          usagenote="",
                          deprecated_version="",

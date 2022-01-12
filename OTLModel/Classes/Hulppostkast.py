@@ -17,7 +17,7 @@ class Hulppostkast(Buitenkast):
         self.type = KeuzelijstField(naam="type",
                                     label="type",
                                     lijst=KlHulppostkastType(),
-                                    uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Hulppostkast.type",
+                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Hulppostkast.type",
                                     definition="Classificatie van de hulppostkast op basis van de inhoud en vorm volgens gangbare standaarden.",
                                     constraints="",
                                     usagenote="",

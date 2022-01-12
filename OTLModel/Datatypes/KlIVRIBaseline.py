@@ -9,7 +9,7 @@ class KlIVRIBaseline(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlIVRIBaseline",
                          label="iVRIBaseline",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#KlIVRIBaseline",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#KlIVRIBaseline",
                          definition="De specificatieversie van het protocol van de iVRI component.",
                          usagenote="",
                          deprecated_version="",

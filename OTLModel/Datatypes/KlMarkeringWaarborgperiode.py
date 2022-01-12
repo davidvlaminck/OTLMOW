@@ -9,7 +9,7 @@ class KlMarkeringWaarborgperiode(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlMarkeringWaarborgperiode",
                          label="markeringswaarborgperiode",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlMarkeringWaarborgperiode",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlMarkeringWaarborgperiode",
                          definition="Opties om de waarborgperiode aan te duiden.",
                          usagenote="",
                          deprecated_version="",

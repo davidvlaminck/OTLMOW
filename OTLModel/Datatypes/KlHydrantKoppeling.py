@@ -9,7 +9,7 @@ class KlHydrantKoppeling(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlHydrantKoppeling",
                          label="Hydrant koppeling",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlHydrantKoppeling",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlHydrantKoppeling",
                          definition="Keuzelijst met types koppelingen van hydranten.",
                          usagenote="",
                          deprecated_version="",

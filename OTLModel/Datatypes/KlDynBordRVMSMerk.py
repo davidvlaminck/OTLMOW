@@ -9,7 +9,7 @@ class KlDynBordRVMSMerk(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlDynBordRVMSMerk",
                          label="Dyn bord RVMS merk",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlDynBordRVMSMerk",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlDynBordRVMSMerk",
                          definition="Keuzelijst met de gangbare merken van RVMS borden. De merken verwijzen doorgaans naar de fabrikant of leverancier.",
                          usagenote="",
                          deprecated_version="",

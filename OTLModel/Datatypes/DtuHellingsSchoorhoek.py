@@ -12,7 +12,7 @@ class DtuHellingsSchoorhoek(UnionTypeField):
     def __init__(self):
         super().__init__(naam="DtuHellingsSchoorhoek",
                          label="Hellings- of schoorhoek",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtuHellingsSchoorhoek",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtuHellingsSchoorhoek",
                          definition="Union datatype voor de hellings- of de schoorhoek.",
                          usagenote="",
                          deprecated_version="")
@@ -21,7 +21,7 @@ class DtuHellingsSchoorhoek(UnionTypeField):
         """Hoek die het object maakt ten opzichte van de verticale, uitgedrukt in decimale graden."""
         field_hellingshoek.naam = "hellingshoek"
         field_hellingshoek.label = "hellingshoek"
-        field_hellingshoek.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtuHellingsSchoorhoek.hellingshoek"
+        field_hellingshoek.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtuHellingsSchoorhoek.hellingshoek"
         field_hellingshoek.definition = "Hoek die het object maakt ten opzichte van de verticale, uitgedrukt in decimale graden."
         field_hellingshoek.constraints = ""
         field_hellingshoek.usagenote = ""
@@ -30,7 +30,7 @@ class DtuHellingsSchoorhoek(UnionTypeField):
         field_schoorhoek = KeuzelijstField(naam="schoorhoek",
                                            label="schoorhoek",
                                            lijst=KlSchoorhoek(),
-                                           uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtuHellingsSchoorhoek.schoorhoek",
+                                           objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtuHellingsSchoorhoek.schoorhoek",
                                            definition="Hoek die het object maakt ten opzichte van de verticale, uitgedrukt in 1 op x (vb.: 1/4).",
                                            constraints="",
                                            usagenote="",

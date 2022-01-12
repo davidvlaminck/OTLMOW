@@ -27,7 +27,7 @@ class Lichtmast(AIMNaamObject, EMDraagconstructie):
         self.beschermlaag = KeuzelijstField(naam="beschermlaag",
                                             label="beschermlaag",
                                             lijst=KlDraagConstrBeschermlaag(),
-                                            uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Lichtmast.beschermlaag",
+                                            objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Lichtmast.beschermlaag",
                                             definition="Beschermlaag van de lichtmast.",
                                             constraints="",
                                             usagenote="",
@@ -37,7 +37,7 @@ class Lichtmast(AIMNaamObject, EMDraagconstructie):
         self.dwarsdoorsnede = KeuzelijstField(naam="dwarsdoorsnede",
                                               label="dwarsdoorsnede",
                                               lijst=KlDraagconstructieDwarsdoorsnede(),
-                                              uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Lichtmast.dwarsdoorsnede",
+                                              objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Lichtmast.dwarsdoorsnede",
                                               definition="De vorm van de dwarsdoorsnede van de lichtmast.",
                                               constraints="",
                                               usagenote="",
@@ -46,7 +46,7 @@ class Lichtmast(AIMNaamObject, EMDraagconstructie):
 
         self.heeftStopcontact = BooleanField(naam="heeftStopcontact",
                                              label="heeft stopcontact aanwezig",
-                                             uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Lichtmast.heeftStopcontact",
+                                             objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Lichtmast.heeftStopcontact",
                                              definition="Geeft aan of er een stopcontact aanwezig is op de lichtmast.",
                                              constraints="",
                                              usagenote="",
@@ -57,7 +57,7 @@ class Lichtmast(AIMNaamObject, EMDraagconstructie):
         """RAL kleur van de lichtmast."""
         self.kleur.naam = "kleur"
         self.kleur.label = "kleur"
-        self.kleur.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Lichtmast.kleur"
+        self.kleur.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Lichtmast.kleur"
         self.kleur.definition = "RAL kleur van de lichtmast."
         self.kleur.constraints = ""
         self.kleur.usagenote = ""
@@ -66,7 +66,7 @@ class Lichtmast(AIMNaamObject, EMDraagconstructie):
         self.leverancier = KeuzelijstField(naam="leverancier",
                                            label="leverancier",
                                            lijst=KlLichtmastLeverancier(),
-                                           uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Lichtmast.leverancier",
+                                           objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Lichtmast.leverancier",
                                            definition="Leverancier van de lichtmast.",
                                            constraints="",
                                            usagenote="",
@@ -77,7 +77,7 @@ class Lichtmast(AIMNaamObject, EMDraagconstructie):
         """Hoogte (in meter) van de lichtmast."""
         self.masthoogte.naam = "masthoogte"
         self.masthoogte.label = "masthoogte"
-        self.masthoogte.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Lichtmast.masthoogte"
+        self.masthoogte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Lichtmast.masthoogte"
         self.masthoogte.definition = "Hoogte (in meter) van de lichtmast."
         self.masthoogte.constraints = ""
         self.masthoogte.usagenote = ""
@@ -86,7 +86,7 @@ class Lichtmast(AIMNaamObject, EMDraagconstructie):
         self.masttype = KeuzelijstField(naam="masttype",
                                         label="masttype",
                                         lijst=KlLichtmastMasttype(),
-                                        uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Lichtmast.masttype",
+                                        objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Lichtmast.masttype",
                                         definition="Type mast bv. rechte metalen paal, rechte metalen paal op voet, kreukelpaal met arm,...",
                                         constraints="",
                                         usagenote="",
@@ -96,7 +96,7 @@ class Lichtmast(AIMNaamObject, EMDraagconstructie):
         self.normeringBotsvriendelijk = KeuzelijstField(naam="normeringBotsvriendelijk",
                                                         label="normering botsvriendelijk",
                                                         lijst=KlLichtmastBotsNormering(),
-                                                        uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Lichtmast.normeringBotsvriendelijk",
+                                                        objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Lichtmast.normeringBotsvriendelijk",
                                                         definition="Categorie in normering botsvriendelijkheid.",
                                                         constraints="",
                                                         usagenote="",
@@ -105,7 +105,7 @@ class Lichtmast(AIMNaamObject, EMDraagconstructie):
 
         self.specialeUitvoeringswijze = StringField(naam="specialeUitvoeringswijze",
                                                     label="speciale uitvoeringswijze",
-                                                    uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Lichtmast.specialeUitvoeringswijze",
+                                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Lichtmast.specialeUitvoeringswijze",
                                                     definition="Omschrijving van de speciale uitvoeringswijze van de lichtmast indien van toepassing.",
                                                     constraints="",
                                                     usagenote="",

@@ -17,7 +17,7 @@ class VoedingDerdenLaagspanning(Voedingspunt):
         self.aansluitvermogen = KeuzelijstField(naam="aansluitvermogen",
                                                 label="aansluitvermogen",
                                                 lijst=KlEleAansluitvermogen(),
-                                                uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#VoedingDerdenLaagspanning.aansluitvermogen",
+                                                objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#VoedingDerdenLaagspanning.aansluitvermogen",
                                                 definition="Vermogen van de aansluiting.",
                                                 constraints="",
                                                 usagenote="",

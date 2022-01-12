@@ -17,7 +17,7 @@ class Ecokoker(AIMObject):
         self.type = KeuzelijstField(naam="type",
                                     label="type",
                                     lijst=KlEcoEcokokerType(),
-                                    uri="https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Ecokoker.type",
+                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Ecokoker.type",
                                     definition="Het type van ecokoker zoals bv. amfibieënkoker, ….",
                                     constraints="",
                                     usagenote="",

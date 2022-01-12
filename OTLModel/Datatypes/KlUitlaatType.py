@@ -9,7 +9,7 @@ class KlUitlaatType(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlUitlaatType",
                          label="Uitlaat type",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlUitlaatType",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlUitlaatType",
                          definition="De verschillende types van uitlaat.",
                          usagenote="",
                          deprecated_version="",

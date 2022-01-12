@@ -9,7 +9,7 @@ class KlDetectiecameraDetectieprincipe(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlDetectiecameraDetectieprincipe",
                          label="Detectiecamera detectieprincipe",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlDetectiecameraDetectieprincipe",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlDetectiecameraDetectieprincipe",
                          definition="Keuzelijst met detectieprincipes voor Detectiecamera.",
                          usagenote="",
                          deprecated_version="",

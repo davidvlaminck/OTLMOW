@@ -9,12 +9,23 @@ class KlLetterCijfer(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlLetterCijfer",
                          label="Letter-cijfer",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlLetterCijfer",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlLetterCijfer",
                          definition="De mogelijke letters en cijfers voor een letter- of cijfermarkering.",
                          usagenote="",
                          deprecated_version="",
                          codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlLetterCijfer")
 
+        self.add_option("-", "-", "Koppelteken.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLetterCijfer/-")
+        self.add_option("0", "0", "Cijfer 0.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLetterCijfer/0")
+        self.add_option("1", "1", "Cijfer 1.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLetterCijfer/1")
+        self.add_option("2", "2", "Cijfer 2.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLetterCijfer/2")
+        self.add_option("3", "3", "Cijfer 3.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLetterCijfer/3")
+        self.add_option("4", "4", "Cijfer 4.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLetterCijfer/4")
+        self.add_option("5", "5", "Cijfer 5.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLetterCijfer/5")
+        self.add_option("6", "6", "Cijfer 6.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLetterCijfer/6")
+        self.add_option("7", "7", "Cijfer 7.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLetterCijfer/7")
+        self.add_option("8", "8", "Cijfer 8.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLetterCijfer/8")
+        self.add_option("9", "9", "Cijfer 9.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLetterCijfer/9")
         self.add_option("a", "a", "Letter a.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLetterCijfer/a")
         self.add_option("b", "b", "Letter b.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLetterCijfer/b")
         self.add_option("c", "c", "Letter c.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLetterCijfer/c")
@@ -41,16 +52,5 @@ class KlLetterCijfer(Keuzelijst):
         self.add_option("x", "x", "Letter x.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLetterCijfer/x")
         self.add_option("y", "y", "Letter y.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLetterCijfer/y")
         self.add_option("z", "z", "Letter z.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLetterCijfer/z")
-        self.add_option("0", "0", "Cijfer 0.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLetterCijfer/0")
-        self.add_option("1", "1", "Cijfer 1.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLetterCijfer/1")
-        self.add_option("2", "2", "Cijfer 2.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLetterCijfer/2")
-        self.add_option("3", "3", "Cijfer 3.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLetterCijfer/3")
-        self.add_option("4", "4", "Cijfer 4.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLetterCijfer/4")
-        self.add_option("5", "5", "Cijfer 5.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLetterCijfer/5")
-        self.add_option("6", "6", "Cijfer 6.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLetterCijfer/6")
-        self.add_option("7", "7", "Cijfer 7.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLetterCijfer/7")
-        self.add_option("8", "8", "Cijfer 8.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLetterCijfer/8")
-        self.add_option("9", "9", "Cijfer 9.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLetterCijfer/9")
         self.add_option("â", "â", "Letter â.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLetterCijfer/â")
         self.add_option("é", "é", "Letter é.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLetterCijfer/é")
-        self.add_option("-", "-", "Koppelteken.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLetterCijfer/-")

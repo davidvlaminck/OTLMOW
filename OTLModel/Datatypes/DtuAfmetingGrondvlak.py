@@ -11,7 +11,7 @@ class DtuAfmetingGrondvlak(UnionTypeField):
     def __init__(self):
         super().__init__(naam="DtuAfmetingGrondvlak",
                          label="afmeting grondvlak",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtuAfmetingGrondvlak",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtuAfmetingGrondvlak",
                          definition="Datatype voor de afmeting van een (grond)vlak volgens zijn vorm.",
                          usagenote="",
                          deprecated_version="")
@@ -20,7 +20,7 @@ class DtuAfmetingGrondvlak(UnionTypeField):
         """Afmetingen voor breedte en lengte of diepte. De breedte meet van links naar rechts in vooraanzicht, de lengte van voor naar achter."""
         field_rechthoekig.naam = "rechthoekig"
         field_rechthoekig.label = "rechthoekig"
-        field_rechthoekig.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtuAfmetingGrondvlak.rechthoekig"
+        field_rechthoekig.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtuAfmetingGrondvlak.rechthoekig"
         field_rechthoekig.definition = "Afmetingen voor breedte en lengte of diepte. De breedte meet van links naar rechts in vooraanzicht, de lengte van voor naar achter."
         field_rechthoekig.constraints = ""
         field_rechthoekig.usagenote = ""
@@ -30,7 +30,7 @@ class DtuAfmetingGrondvlak(UnionTypeField):
         """Afmeting van de diameter in centimeter van een rond (grond)vlak."""
         field_rond.naam = "rond"
         field_rond.label = "rond"
-        field_rond.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtuAfmetingGrondvlak.rond"
+        field_rond.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtuAfmetingGrondvlak.rond"
         field_rond.definition = "Afmeting van de diameter in centimeter van een rond (grond)vlak."
         field_rond.constraints = ""
         field_rond.usagenote = ""

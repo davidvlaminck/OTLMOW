@@ -9,7 +9,7 @@ class KlBrandblusserBlusmiddel(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlBrandblusserBlusmiddel",
                          label="Brandblusser blusmiddel",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlBrandblusserBlusmiddel",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlBrandblusserBlusmiddel",
                          definition="Keuzelijst met de verschillende mogelijke blusmiddelen voor een brandblusser.",
                          usagenote="",
                          deprecated_version="",

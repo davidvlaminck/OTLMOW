@@ -17,7 +17,7 @@ class BijzonderGeluidsschermelement(Geluidsschermelement):
         self.schermelementtype = KeuzelijstField(naam="schermelementtype",
                                                  label="schermelementtype",
                                                  lijst=KlBGSchermelementtype(),
-                                                 uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#BijzonderGeluidsschermelement.schermelementtype",
+                                                 objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#BijzonderGeluidsschermelement.schermelementtype",
                                                  definition="Het type bijzonder-schermelement.",
                                                  constraints="",
                                                  usagenote="",

@@ -11,7 +11,7 @@ class KwantWrdInKiloNewtonPerVierkanteMeter(KwantWrd):
     def __init__(self, waarde=None):
         self.eenheid = LiteralField(naam="standaardEenheid",
                                     label="standaard eenheid",
-                                    uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInKiloNewtonPerVierkanteMeter.standaardEenheid",
+                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInKiloNewtonPerVierkanteMeter.standaardEenheid",
                                     definition="De standaard eenheid bij dit datatype is uitgedrukt in KiloNewton per vierkante meter.",
                                     constraints='"kN/m2"^^cdt:ucumunit',
                                     usagenote='"kN/m2"^^cdt:ucumunit',
@@ -21,7 +21,7 @@ class KwantWrdInKiloNewtonPerVierkanteMeter(KwantWrd):
 
         self.waardeVeld = DecimalFloatField(naam="waarde",
                                             label="waarde",
-                                            uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInKiloNewtonPerVierkanteMeter.waarde",
+                                            objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInKiloNewtonPerVierkanteMeter.waarde",
                                             definition="Bevat een getal die bij het datatype hoort.",
                                             constraints="",
                                             usagenote="",
@@ -30,7 +30,7 @@ class KwantWrdInKiloNewtonPerVierkanteMeter(KwantWrd):
 
         super().__init__(naam="KwantWrdInKiloNewtonPerVierkanteMeter",
                          label="Kwantitatieve waarde in kN per vierkante meter",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInKiloNewtonPerVierkanteMeter",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInKiloNewtonPerVierkanteMeter",
                          definition="Een kwantitatieve waarde die een getal in KiloNewton per vierkante meter uitdrukt.",
                          usagenote="",
                          deprecated_version="",

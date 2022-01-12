@@ -9,7 +9,7 @@ class KlGPUMerk(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlGPUMerk",
                          label="GPU merk",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlGPUMerk",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlGPUMerk",
                          definition="Het merk van de GPU.",
                          usagenote="",
                          deprecated_version="",

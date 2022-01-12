@@ -9,7 +9,7 @@ class KlAardWBSS(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlAardWBSS",
                          label="Aard van waterdoorlatende betonstraatsteen",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlAardWBSS",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlAardWBSS",
                          definition="De mogelijke vormen die ervoor zorgen dat hemelwater infiltreert langs de waterdoorlatende betonstraatsteen.",
                          usagenote="",
                          deprecated_version="",

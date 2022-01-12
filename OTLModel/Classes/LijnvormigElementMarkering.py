@@ -22,7 +22,7 @@ class LijnvormigElementMarkering(Markering, AOWSType):
         self.code = KeuzelijstField(naam="code",
                                     label="code",
                                     lijst=KlLEMarkeringCode(),
-                                    uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#LijnvormigElementMarkering.code",
+                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#LijnvormigElementMarkering.code",
                                     definition="De (COPRO/BENOR) code van de lijnvormig element markering.",
                                     constraints="",
                                     usagenote="",
@@ -33,7 +33,7 @@ class LijnvormigElementMarkering(Markering, AOWSType):
         """De lengte van de markering in meter."""
         self.lengte.naam = "lengte"
         self.lengte.label = "lengte"
-        self.lengte.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#LijnvormigElementMarkering.lengte"
+        self.lengte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#LijnvormigElementMarkering.lengte"
         self.lengte.definition = "De lengte van de markering in meter."
         self.lengte.constraints = ""
         self.lengte.usagenote = ""
@@ -43,7 +43,7 @@ class LijnvormigElementMarkering(Markering, AOWSType):
         """De oppervlakte van de markering op het lijnvormig element in vierkante meter."""
         self.oppervlakte.naam = "oppervlakte"
         self.oppervlakte.label = "oppervlakte"
-        self.oppervlakte.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#LijnvormigElementMarkering.oppervlakte"
+        self.oppervlakte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#LijnvormigElementMarkering.oppervlakte"
         self.oppervlakte.definition = "De oppervlakte van de markering op het lijnvormig element in vierkante meter."
         self.oppervlakte.constraints = ""
         self.oppervlakte.usagenote = ""
@@ -52,7 +52,7 @@ class LijnvormigElementMarkering(Markering, AOWSType):
         self.soortOmschrijving = KeuzelijstField(naam="soortOmschrijving",
                                                  label="soort omschrijving",
                                                  lijst=KlLEMarkeringSoort(),
-                                                 uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#LijnvormigElementMarkering.soortOmschrijving",
+                                                 objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#LijnvormigElementMarkering.soortOmschrijving",
                                                  definition="De soort en tevens de omschrijving van de lijnvormige elementen markering.",
                                                  constraints="",
                                                  usagenote="",

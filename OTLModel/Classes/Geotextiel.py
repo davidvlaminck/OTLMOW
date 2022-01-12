@@ -21,7 +21,7 @@ class Geotextiel(AndereLaag):
 
         self.heeftVulling = BooleanField(naam="heeftVulling",
                                          label="heeft vulling",
-                                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Geotextiel.heeftVulling",
+                                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Geotextiel.heeftVulling",
                                          definition="Aanduiding of er vulling zoals bv. houtsnippers, grind,... in een omhulsel van geotextiel aanwezig is.",
                                          constraints="",
                                          usagenote="",
@@ -30,7 +30,7 @@ class Geotextiel(AndereLaag):
 
         self.isBiodegradeerbaar = BooleanField(naam="isBiodegradeerbaar",
                                                label="is biodegradeerbaar",
-                                               uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Geotextiel.isBiodegradeerbaar",
+                                               objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Geotextiel.isBiodegradeerbaar",
                                                definition="Aanduiding of het geotextiel al dan niet biologisch degradeerbaar is.",
                                                constraints="",
                                                usagenote="",
@@ -39,7 +39,7 @@ class Geotextiel(AndereLaag):
 
         self.isIngezaaid = BooleanField(naam="isIngezaaid",
                                         label="is ingezaaid",
-                                        uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Geotextiel.isIngezaaid",
+                                        objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Geotextiel.isIngezaaid",
                                         definition="Aanduiding of er in het geotextiel zaden aanwezig zijn.",
                                         constraints="",
                                         usagenote="",
@@ -49,7 +49,7 @@ class Geotextiel(AndereLaag):
         technischeFicheField = DtcDocument()
         technischeFicheField.naam = "technischeFiche"
         technischeFicheField.label = "technische fiche"
-        technischeFicheField.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Geotextiel.technischeFiche"
+        technischeFicheField.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Geotextiel.technischeFiche"
         technischeFicheField.definition = "De technische fiche van het geotextiel."
         technischeFicheField.constraints = ""
         technischeFicheField.usagenote = ""
@@ -60,7 +60,7 @@ class Geotextiel(AndereLaag):
         self.type = KeuzelijstField(naam="type",
                                     label="type",
                                     lijst=KlGeotextielType(),
-                                    uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Geotextiel.type",
+                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Geotextiel.type",
                                     definition="Het type geotextiel.",
                                     constraints="",
                                     usagenote="",

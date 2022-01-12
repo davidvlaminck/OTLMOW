@@ -15,46 +15,46 @@ from OTLModel.Datatypes.TimeField import TimeField
 
 class TestInstance:
     def __init__(self):
-        self.boolean = BooleanField(naam="booleanField", label="booleanField", uri="booleanField",
+        self.boolean = BooleanField(naam="booleanField", label="booleanField", objectUri="booleanField",
                                     definition="definitie booleanField", constraints="", usagenote="", deprecated_version="")
         """doc for boolean"""
 
-        self.string = StringField(naam="StringField", label="StringFieldLabel", uri="StringFieldUri",
+        self.string = StringField(naam="StringField", label="StringFieldLabel", objectUri="StringFieldUri",
                                   definition="definitie StringField", constraints="", usagenote="", deprecated_version="")
         """doc for string"""
 
-        self.int = IntegerField(naam="IntegerField", label="IntegerField", uri="IntegerField", definition="definitie IntegerField", constraints="",
+        self.int = IntegerField(naam="IntegerField", label="IntegerField", objectUri="IntegerField", definition="definitie IntegerField", constraints="",
                                 usagenote="", deprecated_version="")
         """doc for int"""
 
-        self.nonNegInt = NonNegIntegerField(naam="NonNegIntegerField", label="NonNegIntegerField", uri="NonNegIntegerField",
+        self.nonNegInt = NonNegIntegerField(naam="NonNegIntegerField", label="NonNegIntegerField", objectUri="NonNegIntegerField",
                                             definition="definitie NonNegIntegerField", constraints="", usagenote="",
                                             deprecated_version="")
         """doc for nonNegInt"""
 
-        self.date = DateField(naam="DateField", label="DateField", uri="DateField",
+        self.date = DateField(naam="DateField", label="DateField", objectUri="DateField",
                               definition="definitie DateField", constraints="", usagenote="",
                               deprecated_version="")
         """doc for date"""
 
-        self.datetime = DateTimeField(naam="DateTimeField", label="DateTimeField", uri="DateTimeField",
+        self.datetime = DateTimeField(naam="DateTimeField", label="DateTimeField", objectUri="DateTimeField",
                                       definition="definitie DateTimeField", constraints="", usagenote="",
                                       deprecated_version="")
         """doc for datetime"""
 
-        self.literal = LiteralField(naam="LiteralField", label="LiteralField", uri="LiteralField",
+        self.literal = LiteralField(naam="LiteralField", label="LiteralField", objectUri="LiteralField",
                                     definition="definitie LiteralField", constraints="", usagenote="",
                                     deprecated_version="", readonlyValue="eenheid")
         """doc for literal"""
 
-        self.time = TimeField(naam="TimeField", label="TimeField", uri="TimeField",
+        self.time = TimeField(naam="TimeField", label="TimeField", objectUri="TimeField",
                               definition="definitie TimeField", constraints="", usagenote="",
                               deprecated_version="")
         """doc for time"""
 
-        self.wkt = WKTField(naam="WKTField", label="WKTField", uri="WKTField",
-                              definition="definitie WKTField", constraints="", usagenote="",
-                              deprecated_version="")
+        self.wkt = WKTField(naam="WKTField", label="WKTField", objectUri="WKTField",
+                            definition="definitie WKTField", constraints="", usagenote="",
+                            deprecated_version="")
         """doc for wkt """
 
 
@@ -72,7 +72,7 @@ class PrimitiveTypeTests(unittest.TestCase):
 
     def test_stringTests(self):
         instance = TestInstance()
-        self.assertTrue(instance.string.uri == "StringFieldUri")
+        self.assertTrue(instance.string.objectUri == "StringFieldUri")
         self.assertTrue(instance.string.naam == "StringField")
         self.assertIsNone(instance.string.waarde)
 
@@ -92,7 +92,7 @@ class PrimitiveTypeTests(unittest.TestCase):
     def test_BooleanFieldTests(self):
         instance = TestInstance()
 
-        self.assertTrue(instance.boolean.uri == "booleanField")
+        self.assertTrue(instance.boolean.objectUri == "booleanField")
         self.assertIsNone(instance.boolean.waarde)
         self.assertTrue(isinstance(instance.boolean, BooleanField))
         self.assertTrue(isinstance(instance.boolean, OTLField))
@@ -110,7 +110,7 @@ class PrimitiveTypeTests(unittest.TestCase):
     def test_intTests(self):
         instance = TestInstance()
 
-        self.assertTrue(instance.int.uri == "IntegerField")
+        self.assertTrue(instance.int.objectUri == "IntegerField")
         self.assertIsNone(instance.int.waarde)
         self.assertTrue(isinstance(instance.int, IntegerField))
         self.assertTrue(isinstance(instance.int, OTLField))
@@ -130,7 +130,7 @@ class PrimitiveTypeTests(unittest.TestCase):
     def test_nonNegIntTests(self):
         instance = TestInstance()
 
-        self.assertTrue(instance.nonNegInt.uri == "NonNegIntegerField")
+        self.assertTrue(instance.nonNegInt.objectUri == "NonNegIntegerField")
         self.assertIsNone(instance.nonNegInt.waarde)
         self.assertTrue(isinstance(instance.nonNegInt, IntegerField))
         self.assertTrue(isinstance(instance.nonNegInt, OTLField))
@@ -149,7 +149,7 @@ class PrimitiveTypeTests(unittest.TestCase):
     def test_dateTests(self):
         instance = TestInstance()
 
-        self.assertTrue(instance.date.uri == "DateField")
+        self.assertTrue(instance.date.objectUri == "DateField")
         self.assertIsNone(instance.date.waarde)
         self.assertTrue(isinstance(instance.date, DateField))
         self.assertTrue(isinstance(instance.date, OTLField))
@@ -164,7 +164,7 @@ class PrimitiveTypeTests(unittest.TestCase):
     def test_datetimeTests(self):
         instance = TestInstance()
 
-        self.assertTrue(instance.datetime.uri == "DateTimeField")
+        self.assertTrue(instance.datetime.objectUri == "DateTimeField")
         self.assertIsNone(instance.datetime.waarde)
         self.assertTrue(isinstance(instance.datetime, DateTimeField))
         self.assertTrue(isinstance(instance.datetime, OTLField))
@@ -182,7 +182,7 @@ class PrimitiveTypeTests(unittest.TestCase):
     def test_literalTests(self):
         instance = TestInstance()
 
-        self.assertTrue(instance.literal.uri == "LiteralField")
+        self.assertTrue(instance.literal.objectUri == "LiteralField")
         self.assertIsNotNone(instance.literal.waarde)
         self.assertTrue(isinstance(instance.literal, LiteralField))
         self.assertTrue(isinstance(instance.literal, OTLField))
@@ -196,7 +196,7 @@ class PrimitiveTypeTests(unittest.TestCase):
     def test_timeTests(self):
         instance = TestInstance()
 
-        self.assertTrue(instance.time.uri == "TimeField")
+        self.assertTrue(instance.time.objectUri == "TimeField")
         self.assertIsNone(instance.time.waarde)
         self.assertTrue(isinstance(instance.time, TimeField))
         self.assertTrue(isinstance(instance.time, OTLField))
@@ -211,7 +211,7 @@ class PrimitiveTypeTests(unittest.TestCase):
     def test_wktTests(self):
         instance = TestInstance()
 
-        self.assertTrue(instance.wkt.uri == "WKTField")
+        self.assertTrue(instance.wkt.objectUri == "WKTField")
         self.assertIsNone(instance.wkt.waarde)
         self.assertTrue(isinstance(instance.wkt, WKTField))
         self.assertTrue(isinstance(instance.wkt, OTLField))

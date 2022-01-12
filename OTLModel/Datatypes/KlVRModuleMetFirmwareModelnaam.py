@@ -9,7 +9,7 @@ class KlVRModuleMetFirmwareModelnaam(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlVRModuleMetFirmwareModelnaam",
                          label="VR-module met firmware modelnaam",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#KlVRModuleMetFirmwareModelnaam",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#KlVRModuleMetFirmwareModelnaam",
                          definition="Lijst met modelnamen voor VR-modules met firmware.",
                          usagenote="",
                          deprecated_version="",

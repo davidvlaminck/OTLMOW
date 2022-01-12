@@ -20,7 +20,7 @@ class Sierbeplanting(BegroeidVoorkomen):
         """De manier van aanplanten van de sierbeplanting."""
         self.aanleg.naam = "aanleg"
         self.aanleg.label = "aanleg"
-        self.aanleg.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Sierbeplanting.aanleg"
+        self.aanleg.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Sierbeplanting.aanleg"
         self.aanleg.definition = "De manier van aanplanten van de sierbeplanting."
         self.aanleg.constraints = ""
         self.aanleg.usagenote = ""
@@ -29,7 +29,7 @@ class Sierbeplanting(BegroeidVoorkomen):
         typeField = KeuzelijstField(naam="type",
                                     label="type",
                                     lijst=KlSierbeplantingType(),
-                                    uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Sierbeplanting.type",
+                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Sierbeplanting.type",
                                     definition="Type van sierbeplanting.",
                                     constraints="",
                                     usagenote="",

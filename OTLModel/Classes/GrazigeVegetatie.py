@@ -20,7 +20,7 @@ class GrazigeVegetatie(BegroeidVoorkomen):
         self.aanleg = KeuzelijstField(naam="aanleg",
                                       label="aanleg",
                                       lijst=KlGrazigeVegetatieAanleg(),
-                                      uri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#GrazigeVegetatie.aanleg",
+                                      objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#GrazigeVegetatie.aanleg",
                                       definition="De wijze van aanleg/aanplanting van de grazige vegetatie.",
                                       constraints="",
                                       usagenote="",
@@ -29,7 +29,7 @@ class GrazigeVegetatie(BegroeidVoorkomen):
 
         self.heeftBolgewassen = BooleanField(naam="heeftBolgewassen",
                                              label="heeft bolgewassen",
-                                             uri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#GrazigeVegetatie.heeftBolgewassen",
+                                             objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#GrazigeVegetatie.heeftBolgewassen",
                                              definition="Grasland met bol- en knolgewassen die in het voorjaar bloeien.",
                                              constraints="",
                                              usagenote="",
@@ -38,7 +38,7 @@ class GrazigeVegetatie(BegroeidVoorkomen):
 
         self.isOvergroeienRandVerharding = BooleanField(naam="isOvergroeienRandVerharding",
                                                         label="is overgroeien rand verharding",
-                                                        uri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#GrazigeVegetatie.isOvergroeienRandVerharding",
+                                                        objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#GrazigeVegetatie.isOvergroeienRandVerharding",
                                                         definition="Geeft aan of de rand van de verharding al dan niet wordt overgroeid door de grazige vegetatie.",
                                                         constraints="",
                                                         usagenote="",

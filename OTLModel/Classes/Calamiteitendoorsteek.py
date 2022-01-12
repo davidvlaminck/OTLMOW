@@ -20,7 +20,7 @@ class Calamiteitendoorsteek(AIMNaamObject):
 
         self.isDubbelArmig = BooleanField(naam="isDubbelArmig",
                                           label="is dubbelarmig",
-                                          uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Calamiteitendoorsteek.isDubbelArmig",
+                                          objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Calamiteitendoorsteek.isDubbelArmig",
                                           definition="Aanduiding of de calamiteitendoorsteek dubbel armig is.",
                                           constraints="",
                                           usagenote="",
@@ -31,7 +31,7 @@ class Calamiteitendoorsteek(AIMNaamObject):
         """De totale lengte van de calamiteitendoorsteek constructie."""
         self.lengte.naam = "lengte"
         self.lengte.label = "lengte"
-        self.lengte.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Calamiteitendoorsteek.lengte"
+        self.lengte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Calamiteitendoorsteek.lengte"
         self.lengte.definition = "De totale lengte van de calamiteitendoorsteek constructie."
         self.lengte.constraints = ""
         self.lengte.usagenote = ""
@@ -40,7 +40,7 @@ class Calamiteitendoorsteek(AIMNaamObject):
         self.merk = KeuzelijstField(naam="merk",
                                     label="merk",
                                     lijst=KlCADOMerk(),
-                                    uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Calamiteitendoorsteek.merk",
+                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Calamiteitendoorsteek.merk",
                                     definition="Het merk van de calamiteitendoorsteek.",
                                     constraints="",
                                     usagenote="",
@@ -50,7 +50,7 @@ class Calamiteitendoorsteek(AIMNaamObject):
         self.modelnaam = KeuzelijstField(naam="modelnaam",
                                          label="modelnaam",
                                          lijst=KlCADOModelnaam(),
-                                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Calamiteitendoorsteek.modelnaam",
+                                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Calamiteitendoorsteek.modelnaam",
                                          definition="De modelnaam van de calamiteitendoorsteek.",
                                          constraints="",
                                          usagenote="",
@@ -61,7 +61,7 @@ class Calamiteitendoorsteek(AIMNaamObject):
         """De technische fiche van de calamiteitendoorsteek."""
         self.technischeFiche.naam = "technischeFiche"
         self.technischeFiche.label = "technische fiche"
-        self.technischeFiche.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Calamiteitendoorsteek.technischeFiche"
+        self.technischeFiche.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Calamiteitendoorsteek.technischeFiche"
         self.technischeFiche.definition = "De technische fiche van de calamiteitendoorsteek."
         self.technischeFiche.constraints = ""
         self.technischeFiche.usagenote = ""

@@ -9,7 +9,7 @@ class KlRegelaarRegelaartype(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlRegelaarRegelaartype",
                          label="Regelaar regelaartype",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlRegelaarRegelaartype",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlRegelaarRegelaartype",
                          definition="Keuzelijst met verschillende types verkeersregelaars.",
                          usagenote="",
                          deprecated_version="",

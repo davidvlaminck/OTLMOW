@@ -19,7 +19,7 @@ class Detectie(AIMNaamObject):
         self.soortBewaking = KeuzelijstField(naam="soortBewaking",
                                              label="soort bewaking",
                                              lijst=KlVriBewaking(),
-                                             uri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Detectie.soortBewaking",
+                                             objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Detectie.soortBewaking",
                                              definition="Type bewaking van de detectie.",
                                              constraints="",
                                              usagenote="",

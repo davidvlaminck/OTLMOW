@@ -14,7 +14,7 @@ class AIMDBStatus(ABC):
     def __init__(self):
         self.isActief = BooleanField(naam="isActief",
                                      label="is actief",
-                                     uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMDBStatus.isActief",
+                                     objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMDBStatus.isActief",
                                      definition="Geeft aan of het object actief kan gebruikt worden of (zacht) verwijderd is uit het asset beheer systeem.",
                                      constraints="",
                                      usagenote="",

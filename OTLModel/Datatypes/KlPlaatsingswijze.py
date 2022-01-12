@@ -9,7 +9,7 @@ class KlPlaatsingswijze(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlPlaatsingswijze",
                          label="Plaatsingswijze",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlPlaatsingswijze",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlPlaatsingswijze",
                          definition="Mogelijke manieren van plaatsing van het straatmeubilair.",
                          usagenote="",
                          deprecated_version="",

@@ -20,13 +20,13 @@ class ComplexDatatypeOSLOCollector(OSLOCollector):
 
         self.complexDatatypes = [
             OSLODatatypeComplex(name='DtcAdres',
-                                uri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAdres',
+                                objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAdres',
                                 usagenote_nl='',
                                 definition_nl='Complex datatype voor de aanduiding van een bepaalde locatie, doorgaans van een huis, woning, gebouw of faciliteit, op de aarde.',
                                 label_nl='Adres',
                                 deprecated_version=''),
             OSLODatatypeComplex(name='DtcIdentificator',
-                                uri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcIdentificator',
+                                objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcIdentificator',
                                 usagenote_nl='',
                                 definition_nl='Complex datatype voor de identificator van een AIM object volgens de bron van de identificator.',
                                 label_nl='Identificator',
@@ -88,14 +88,14 @@ class ComplexDatatypeOSLOCollector(OSLOCollector):
                                              '    def __init__(self):',
                                              '        super().__init__(naam="DtcIdentificator",',
                                              '                         label="Identificator",',
-                                             '                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcIdentificator",',
+                                             '                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcIdentificator",',
                                              '                         definition="Complex datatype voor de identificator van een AIM object volgens de bron van de identificator.",',
                                              '                         usagenote="",',
                                              '                         deprecated_version="")',
                                              '',
                                              '        self.waarde.identificator = StringField(naam="identificator",',
                                              '                                                label="identificator",',
-                                             '                                                uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcIdentificator.identificator",',
+                                             '                                                objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcIdentificator.identificator",',
                                              '                                                definition="Een groep van tekens om een AIM object te identificeren of te benoemen.",',
                                              '                                                constraints="",',
                                              '                                                usagenote="",',
@@ -105,7 +105,7 @@ class ComplexDatatypeOSLOCollector(OSLOCollector):
                                              '',
                                              '        self.waarde.toegekendDoor = StringField(naam="toegekendDoor",',
                                              '                                                label="toegekend door",',
-                                             '                                                uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcIdentificator.toegekendDoor",',
+                                             '                                                objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcIdentificator.toegekendDoor",',
                                              '                                                definition="Gegevens van de organisatie die de toekenning deed.",',
                                              '                                                constraints="",',
                                              '                                                usagenote="",',
@@ -127,14 +127,14 @@ class ComplexDatatypeOSLOCollector(OSLOCollector):
                                      '    def __init__(self):',
                                      '        super().__init__(naam="DtcAdres",',
                                      '                         label="Adres",',
-                                     '                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAdres",',
+                                     '                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAdres",',
                                      '                         definition="Complex datatype voor de aanduiding van een bepaalde locatie, doorgaans van een huis, woning, gebouw of faciliteit, op de aarde.",',
                                      '                         usagenote="",',
                                      '                         deprecated_version="")',
                                      '',
                                      '        self.waarde.bus = StringField(naam="bus",',
                                      '                                      label="bus",',
-                                     '                                      uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAdres.bus",',
+                                     '                                      objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAdres.bus",',
                                      '                                      definition="Een nummer dat de postbus aanduidt.",',
                                      '                                      constraints="",',
                                      '                                      usagenote="",',
@@ -145,7 +145,7 @@ class ComplexDatatypeOSLOCollector(OSLOCollector):
                                      '        self.waarde.gemeente = KeuzelijstField(naam="gemeente",',
                                      '                                               label="gemeente",',
                                      '                                               lijst=KlAlgGemeente(),',
-                                     '                                               uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAdres.gemeente",',
+                                     '                                               objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAdres.gemeente",',
                                      '                                               definition="De bestuurlijke eenheid waarin het adres gelegen is.",',
                                      '                                               constraints="",',
                                      '                                               usagenote="",',
@@ -155,7 +155,7 @@ class ComplexDatatypeOSLOCollector(OSLOCollector):
                                      '',
                                      '        self.waarde.huisnummer = StringField(naam="huisnummer",',
                                      '                                             label="huisnummer",',
-                                     '                                             uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAdres.huisnummer",',
+                                     '                                             objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAdres.huisnummer",',
                                      '                                             definition="Een nummer dat door de gemeente aan bv. een huis wordt toegekend.",',
                                      '                                             constraints="",',
                                      '                                             usagenote="",',
@@ -165,7 +165,7 @@ class ComplexDatatypeOSLOCollector(OSLOCollector):
                                      '',
                                      '        self.waarde.postcode = StringField(naam="postcode",',
                                      '                                           label="postcode",',
-                                     '                                           uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAdres.postcode",',
+                                     '                                           objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAdres.postcode",',
                                      '                                           definition="Een korte reeks tekens die in het postadres wordt opgenomen.",',
                                      '                                           constraints="",',
                                      '                                           usagenote="",',
@@ -175,7 +175,7 @@ class ComplexDatatypeOSLOCollector(OSLOCollector):
                                      '',
                                      '        self.waarde.straatnaam = StringField(naam="straatnaam",',
                                      '                                             label="straatnaam",',
-                                     '                                             uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAdres.straatnaam",',
+                                     '                                             objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAdres.straatnaam",',
                                      '                                             definition="De naam van de straat.",',
                                      '                                             constraints="",',
                                      '                                             usagenote="",',
@@ -201,30 +201,30 @@ class OTLComplexDatatypeCreatorTests(unittest.TestCase):
         logger = NoneLogger()
         collector = OSLOCollector(mock)
         creator = OTLComplexDatatypeCreator(logger, collector)
-        osloDatatypeComplex = OSLODatatypeComplex(name='name', uri='', definition_nl='', label_nl='', usagenote_nl='',
+        osloDatatypeComplex = OSLODatatypeComplex(name='name', objectUri='', definition_nl='', label_nl='', usagenote_nl='',
                                                   deprecated_version='')
 
         with self.assertRaises(ValueError) as exception_empty_uri:
             creator.CreateBlockToWriteFromComplexTypes(osloDatatypeComplex)
-        self.assertEqual(str(exception_empty_uri.exception), "OSLODatatypeComplex.uri is invalid. Value = ''")
+        self.assertEqual(str(exception_empty_uri.exception), "OSLODatatypeComplex.objectUri is invalid. Value = ''")
 
     def test_InvalidOSLODatatypeComplexBadUri(self):
         logger = NoneLogger()
         collector = OSLOCollector(mock)
         creator = OTLComplexDatatypeCreator(logger, collector)
-        osloDatatypeComplex = OSLODatatypeComplex(name='name', uri='Bad uri', definition_nl='', label_nl='', usagenote_nl='',
+        osloDatatypeComplex = OSLODatatypeComplex(name='name', objectUri='Bad objectUri', definition_nl='', label_nl='', usagenote_nl='',
                                                   deprecated_version='')
 
         with self.assertRaises(ValueError) as exception_bad_uri:
             creator.CreateBlockToWriteFromComplexTypes(osloDatatypeComplex)
-        self.assertEqual(str(exception_bad_uri.exception), "OSLODatatypeComplex.uri is invalid. Value = 'Bad uri'")
+        self.assertEqual(str(exception_bad_uri.exception), "OSLODatatypeComplex.objectUri is invalid. Value = 'Bad objectUri'")
 
     def test_InvalidOSLODatatypeComplexEmptyName(self):
         logger = NoneLogger()
         collector = OSLOCollector(mock)
         creator = OTLComplexDatatypeCreator(logger, collector)
         osloDatatypeComplex = OSLODatatypeComplex(name='',
-                                                  uri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcIdentificator',
+                                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcIdentificator',
                                                   definition_nl='', label_nl='', usagenote_nl='',
                                                   deprecated_version='')
 

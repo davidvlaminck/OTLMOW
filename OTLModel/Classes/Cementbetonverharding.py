@@ -22,7 +22,7 @@ class Cementbetonverharding(LaagBouwklasse):
 
         self.aantalAnkerstaven = IntegerField(naam="aantalAnkerstaven",
                                               label="aantal ankerstaven",
-                                              uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Cementbetonverharding.aantalAnkerstaven",
+                                              objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Cementbetonverharding.aantalAnkerstaven",
                                               definition="Aantal ankerstaven waarmee de voegen verankerd zijn.",
                                               constraints="",
                                               usagenote="",
@@ -32,7 +32,7 @@ class Cementbetonverharding(LaagBouwklasse):
         self.aardVerharding = KeuzelijstField(naam="aardVerharding",
                                               label="aard verharding",
                                               lijst=KlCBVAardVerharding(),
-                                              uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Cementbetonverharding.aardVerharding",
+                                              objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Cementbetonverharding.aardVerharding",
                                               definition="De uitvoeringswijze van de cementbetonverharding.",
                                               constraints="",
                                               usagenote="",
@@ -43,7 +43,7 @@ class Cementbetonverharding(LaagBouwklasse):
         """De afstand tussen de krimpvoegen in meter."""
         self.krimpvoegFrequentie.naam = "krimpvoegFrequentie"
         self.krimpvoegFrequentie.label = "krimpvoeg frequentie"
-        self.krimpvoegFrequentie.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Cementbetonverharding.krimpvoegFrequentie"
+        self.krimpvoegFrequentie.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Cementbetonverharding.krimpvoegFrequentie"
         self.krimpvoegFrequentie.definition = "De afstand tussen de krimpvoegen in meter."
         self.krimpvoegFrequentie.constraints = ""
         self.krimpvoegFrequentie.usagenote = ""
@@ -52,7 +52,7 @@ class Cementbetonverharding(LaagBouwklasse):
         self.laagtype = KeuzelijstField(naam="laagtype",
                                         label="laagtype",
                                         lijst=KlCBVLaagtype(),
-                                        uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Cementbetonverharding.laagtype",
+                                        objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Cementbetonverharding.laagtype",
                                         definition="Het type van de cementbetonverhardingslaag.",
                                         constraints="",
                                         usagenote="",
@@ -62,7 +62,7 @@ class Cementbetonverharding(LaagBouwklasse):
         self.oppervlakbehandeling = KeuzelijstField(naam="oppervlakbehandeling",
                                                     label="oppervlakbehandeling",
                                                     lijst=KlCBVOppervlaktebehandeling(),
-                                                    uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Cementbetonverharding.oppervlakbehandeling",
+                                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Cementbetonverharding.oppervlakbehandeling",
                                                     definition="Behandeling die wordt toegepast op het oppervlak van een laag, met of zonder toevoeging van materialen, en bestemd is om de eigenschappen van de laag te verbeteren, hetzij bij de uitvoering, hetzij achteraf. ",
                                                     constraints="",
                                                     usagenote="",
@@ -73,7 +73,7 @@ class Cementbetonverharding(LaagBouwklasse):
         """Additionele toevoegingen aan de verharding."""
         self.supplementen.naam = "supplementen"
         self.supplementen.label = "supplementen van de verharding"
-        self.supplementen.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Cementbetonverharding.supplementen"
+        self.supplementen.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Cementbetonverharding.supplementen"
         self.supplementen.definition = "Additionele toevoegingen aan de verharding."
         self.supplementen.constraints = ""
         self.supplementen.usagenote = ""
@@ -83,7 +83,7 @@ class Cementbetonverharding(LaagBouwklasse):
         """Het volume van cementbetonverharding in kubieke meter."""
         self.volume.naam = "volume"
         self.volume.label = "volume"
-        self.volume.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Cementbetonverharding.volume"
+        self.volume.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Cementbetonverharding.volume"
         self.volume.definition = "Het volume van cementbetonverharding in kubieke meter."
         self.volume.constraints = ""
         self.volume.usagenote = ""

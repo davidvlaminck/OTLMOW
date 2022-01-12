@@ -12,7 +12,7 @@ class DtcBeschermingVraatschade(ComplexField):
     def __init__(self):
         super().__init__(naam="DtcBeschermingVraatschade",
                          label="Bescherming vraatschade",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcBeschermingVraatschade",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcBeschermingVraatschade",
                          definition="Complex datatype voor bescherming van de stam tegen knaagdieren.",
                          usagenote="",
                          deprecated_version="")
@@ -20,7 +20,7 @@ class DtcBeschermingVraatschade(ComplexField):
         self.waarde.materiaal = KeuzelijstField(naam="materiaal",
                                                 label="materiaal",
                                                 lijst=KlMateriaalBeschermingVraatschade(),
-                                                uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcBeschermingVraatschade.materiaal",
+                                                objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcBeschermingVraatschade.materiaal",
                                                 definition="De middelen als bescherming tegen vraatschade.",
                                                 constraints="",
                                                 usagenote="",
@@ -30,7 +30,7 @@ class DtcBeschermingVraatschade(ComplexField):
 
         self.waarde.tegenMaaischade = BooleanField(naam="tegenMaaischade",
                                                    label="tegen maaischade",
-                                                   uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcBeschermingVraatschade.tegenMaaischade",
+                                                   objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcBeschermingVraatschade.tegenMaaischade",
                                                    definition="Aanduiding of er bescherming tegen maaischade aanwezig is.",
                                                    constraints="",
                                                    usagenote="",

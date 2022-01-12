@@ -22,7 +22,7 @@ class Laag(AIMObject):
         """De (gemiddelde) breedte van een laag in meter. Dit kan ook de nominale breedte zijn afhankelijk van de laag en situatie."""
         self.breedte.naam = "breedte"
         self.breedte.label = "breedte"
-        self.breedte.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Laag.breedte"
+        self.breedte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Laag.breedte"
         self.breedte.definition = "De (gemiddelde) breedte van een laag in meter. Dit kan ook de nominale breedte zijn afhankelijk van de laag en situatie."
         self.breedte.constraints = ""
         self.breedte.usagenote = ""
@@ -31,7 +31,7 @@ class Laag(AIMObject):
         self.laagRol = KeuzelijstField(naam="laagRol",
                                        label="laagrol",
                                        lijst=KlLaagRol(),
-                                       uri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Laag.laagRol",
+                                       objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Laag.laagRol",
                                        definition="De functie die de laag vervult in de verticale opbouw.",
                                        constraints="",
                                        usagenote="",
@@ -42,7 +42,7 @@ class Laag(AIMObject):
         """De (gemiddelde) lengte van een laag in meter. Dit kan ook de nominale lengte zijn afhankelijk van de laag en situatie."""
         self.lengte.naam = "lengte"
         self.lengte.label = "lengte"
-        self.lengte.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Laag.lengte"
+        self.lengte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Laag.lengte"
         self.lengte.definition = "De (gemiddelde) lengte van een laag in meter. Dit kan ook de nominale lengte zijn afhankelijk van de laag en situatie."
         self.lengte.constraints = ""
         self.lengte.usagenote = ""
@@ -52,7 +52,7 @@ class Laag(AIMObject):
         """De oppervlakte van een laag in vierkante meter."""
         self.oppervlakte.naam = "oppervlakte"
         self.oppervlakte.label = "oppervlakte"
-        self.oppervlakte.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Laag.oppervlakte"
+        self.oppervlakte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Laag.oppervlakte"
         self.oppervlakte.definition = "De oppervlakte van een laag in vierkante meter."
         self.oppervlakte.constraints = ""
         self.oppervlakte.usagenote = ""

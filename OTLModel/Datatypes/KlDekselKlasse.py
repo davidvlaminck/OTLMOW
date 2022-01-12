@@ -9,7 +9,7 @@ class KlDekselKlasse(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlDekselKlasse",
                          label="Dekselklasse",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlDekselKlasse",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlDekselKlasse",
                          definition="Klassen van het deksel van de bovenbouw.",
                          usagenote="",
                          deprecated_version="",

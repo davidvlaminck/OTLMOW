@@ -22,7 +22,7 @@ class Terugslagklep(LinkendElement):
         """Breedte van de opening die door de terugslagklep wordt afgesloten in millimeter."""
         self.breedteOpening.naam = "breedteOpening"
         self.breedteOpening.label = "breedte opening"
-        self.breedteOpening.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Terugslagklep.breedteOpening"
+        self.breedteOpening.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Terugslagklep.breedteOpening"
         self.breedteOpening.definition = "Breedte van de opening die door de terugslagklep wordt afgesloten in millimeter."
         self.breedteOpening.constraints = ""
         self.breedteOpening.usagenote = ""
@@ -32,7 +32,7 @@ class Terugslagklep(LinkendElement):
         """De diameter van de terugslagklep in millimeter."""
         self.diameter.naam = "diameter"
         self.diameter.label = "diameter"
-        self.diameter.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Terugslagklep.diameter"
+        self.diameter.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Terugslagklep.diameter"
         self.diameter.definition = "De diameter van de terugslagklep in millimeter."
         self.diameter.constraints = ""
         self.diameter.usagenote = ""
@@ -42,7 +42,7 @@ class Terugslagklep(LinkendElement):
         """De hoogte van de opening die door de terugslagklep wordt afgesloten in millimeter."""
         self.hoogteOpening.naam = "hoogteOpening"
         self.hoogteOpening.label = "hoogte opening"
-        self.hoogteOpening.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Terugslagklep.hoogteOpening"
+        self.hoogteOpening.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Terugslagklep.hoogteOpening"
         self.hoogteOpening.definition = "De hoogte van de opening die door de terugslagklep wordt afgesloten in millimeter."
         self.hoogteOpening.constraints = ""
         self.hoogteOpening.usagenote = ""
@@ -51,7 +51,7 @@ class Terugslagklep(LinkendElement):
         self.materiaal = KeuzelijstField(naam="materiaal",
                                          label="materiaal",
                                          lijst=KlTsklepAfsluiterMateriaal(),
-                                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Terugslagklep.materiaal",
+                                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Terugslagklep.materiaal",
                                          definition="Het materiaal waaruit de terugslagklep is vervaardigd.",
                                          constraints="",
                                          usagenote="",
@@ -62,7 +62,7 @@ class Terugslagklep(LinkendElement):
         """Niveau van de doorlaatopening van de terugslagklep uitgedrukt in meter-TAW."""
         self.peil.naam = "peil"
         self.peil.label = "peil"
-        self.peil.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Terugslagklep.peil"
+        self.peil.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Terugslagklep.peil"
         self.peil.definition = "Niveau van de doorlaatopening van de terugslagklep uitgedrukt in meter-TAW."
         self.peil.constraints = ""
         self.peil.usagenote = ""
@@ -71,7 +71,7 @@ class Terugslagklep(LinkendElement):
         self.type = KeuzelijstField(naam="type",
                                     label="type",
                                     lijst=KlTerugslagklepType(),
-                                    uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Terugslagklep.type",
+                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Terugslagklep.type",
                                     definition="Bepaalt het type van terugslagklep.",
                                     constraints="",
                                     usagenote="",
@@ -81,7 +81,7 @@ class Terugslagklep(LinkendElement):
         self.vorm = KeuzelijstField(naam="vorm",
                                     label="vorm",
                                     lijst=KlVormTerugslagklep(),
-                                    uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Terugslagklep.vorm",
+                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Terugslagklep.vorm",
                                     definition="De vorm van de terugslagklep.",
                                     constraints="",
                                     usagenote="",

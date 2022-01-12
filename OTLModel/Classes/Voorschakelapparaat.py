@@ -23,7 +23,7 @@ Voor de elektromagnetische bestaat deze uit
         self.type = KeuzelijstField(naam="type",
                                     label="type",
                                     lijst=KlVoorschakelapparaatType(),
-                                    uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Voorschakelapparaat.type",
+                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Voorschakelapparaat.type",
                                     definition="Type van het voorschakelapparaat.",
                                     constraints="",
                                     usagenote="",

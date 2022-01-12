@@ -19,7 +19,7 @@ class BeheerBoomvorm(AIMObject):
         beheeroptieField = KeuzelijstField(naam="beheeroptie",
                                            label="beheeroptie",
                                            lijst=KlBeheerBoomvorm(),
-                                           uri="https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#BeheerBoomvorm.beheeroptie",
+                                           objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#BeheerBoomvorm.beheeroptie",
                                            definition="Behandelingswijzen van bomen.",
                                            constraints="",
                                            usagenote="",
@@ -31,7 +31,7 @@ class BeheerBoomvorm(AIMObject):
         """De oppervlakte in vierkante meter van de te behandelen grond rond de boom."""
         self.oppervlakte.naam = "oppervlakte"
         self.oppervlakte.label = "oppervlakte"
-        self.oppervlakte.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#BeheerBoomvorm.oppervlakte"
+        self.oppervlakte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#BeheerBoomvorm.oppervlakte"
         self.oppervlakte.definition = "De oppervlakte in vierkante meter van de te behandelen grond rond de boom."
         self.oppervlakte.constraints = ""
         self.oppervlakte.usagenote = ""

@@ -22,7 +22,7 @@ Een gronddam kan volgende functies vervullen: geluidswering, geleiding van diere
         """De breedte van de basis van de gronddam in meter."""
         self.basisbreedte.naam = "basisbreedte"
         self.basisbreedte.label = "basisbreedte"
-        self.basisbreedte.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Gronddam.basisbreedte"
+        self.basisbreedte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Gronddam.basisbreedte"
         self.basisbreedte.definition = "De breedte van de basis van de gronddam in meter."
         self.basisbreedte.constraints = ""
         self.basisbreedte.usagenote = ""
@@ -30,7 +30,7 @@ Een gronddam kan volgende functies vervullen: geluidswering, geleiding van diere
 
         self.gronddichtheid = DecimalFloatField(naam="gronddichtheid",
                                                 label="gronddichtheid",
-                                                uri="https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Gronddam.gronddichtheid",
+                                                objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Gronddam.gronddichtheid",
                                                 definition="De gronddichtheid van de gronddam.",
                                                 constraints="",
                                                 usagenote="",
@@ -40,7 +40,7 @@ Een gronddam kan volgende functies vervullen: geluidswering, geleiding van diere
         self.hellingAchterzijde = KeuzelijstField(naam="hellingAchterzijde",
                                                   label="helling achterzijde",
                                                   lijst=KlHelling(),
-                                                  uri="https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Gronddam.hellingAchterzijde",
+                                                  objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Gronddam.hellingAchterzijde",
                                                   definition="De hellingsgraad van de achterzijde gronddam in kwarten.",
                                                   constraints="",
                                                   usagenote="",
@@ -50,7 +50,7 @@ Een gronddam kan volgende functies vervullen: geluidswering, geleiding van diere
         self.hellingVoorzijde = KeuzelijstField(naam="hellingVoorzijde",
                                                 label="helling voorzijde",
                                                 lijst=KlHelling(),
-                                                uri="https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Gronddam.hellingVoorzijde",
+                                                objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Gronddam.hellingVoorzijde",
                                                 definition="De hellingsgraad van de voorzijde van de gronddam in kwarten.",
                                                 constraints="",
                                                 usagenote="",
@@ -61,7 +61,7 @@ Een gronddam kan volgende functies vervullen: geluidswering, geleiding van diere
         """De hoogte van de gronddam in meter."""
         self.hoogte.naam = "hoogte"
         self.hoogte.label = "hoogte"
-        self.hoogte.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Gronddam.hoogte"
+        self.hoogte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Gronddam.hoogte"
         self.hoogte.definition = "De hoogte van de gronddam in meter."
         self.hoogte.constraints = ""
         self.hoogte.usagenote = ""
@@ -71,7 +71,7 @@ Een gronddam kan volgende functies vervullen: geluidswering, geleiding van diere
         """De breedte van de kruin van de gronddam in meter."""
         self.kruinbreedte.naam = "kruinbreedte"
         self.kruinbreedte.label = "kruinbreedte"
-        self.kruinbreedte.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Gronddam.kruinbreedte"
+        self.kruinbreedte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Gronddam.kruinbreedte"
         self.kruinbreedte.definition = "De breedte van de kruin van de gronddam in meter."
         self.kruinbreedte.constraints = ""
         self.kruinbreedte.usagenote = ""

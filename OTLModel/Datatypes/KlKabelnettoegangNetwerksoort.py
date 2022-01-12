@@ -9,7 +9,7 @@ class KlKabelnettoegangNetwerksoort(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlKabelnettoegangNetwerksoort",
                          label="Kabelnet toegang netwerksoort",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlKabelnettoegangNetwerksoort",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlKabelnettoegangNetwerksoort",
                          definition="Lijst van netwerktypes die bereikbaar is via het kabelnet toegangspunt.",
                          usagenote="",
                          deprecated_version="",

@@ -17,7 +17,7 @@ class ProefDwarsvlakheid(Proef):
         """Proefresultaten van de dwarsvlakheid."""
         self.dwarsvlakheid.naam = "dwarsvlakheid"
         self.dwarsvlakheid.label = "dwarsvlakheid"
-        self.dwarsvlakheid.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefDwarsvlakheid.dwarsvlakheid"
+        self.dwarsvlakheid.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefDwarsvlakheid.dwarsvlakheid"
         self.dwarsvlakheid.definition = "Proefresultaten van de dwarsvlakheid."
         self.dwarsvlakheid.constraints = ""
         self.dwarsvlakheid.usagenote = ""

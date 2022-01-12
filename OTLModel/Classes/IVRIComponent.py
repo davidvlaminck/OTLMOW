@@ -20,7 +20,7 @@ class IVRIComponent(Software):
         self.baseline = KeuzelijstField(naam="baseline",
                                         label="baseline",
                                         lijst=KlIVRIBaseline(),
-                                        uri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#IVRIComponent.baseline",
+                                        objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#IVRIComponent.baseline",
                                         definition="Specificatieversie van het protocol waarop de iVRI component werkt.",
                                         constraints="",
                                         usagenote="",
@@ -31,7 +31,7 @@ class IVRIComponent(Software):
         """Certificaat van de keuringsinstantie dat wordt uitgereikt aan een iVRI (intelligente verkeersregelaar) component. """
         self.certificaat.naam = "certificaat"
         self.certificaat.label = "certificaat"
-        self.certificaat.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#IVRIComponent.certificaat"
+        self.certificaat.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#IVRIComponent.certificaat"
         self.certificaat.definition = "Certificaat van de keuringsinstantie dat wordt uitgereikt aan een iVRI (intelligente verkeersregelaar) component. "
         self.certificaat.constraints = ""
         self.certificaat.usagenote = ""

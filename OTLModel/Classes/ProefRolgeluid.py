@@ -17,7 +17,7 @@ class ProefRolgeluid(Proef):
         """Proefresultaten van het rolgeluid van de toplaag."""
         self.rolgeluid.naam = "rolgeluid"
         self.rolgeluid.label = "rolgeluid"
-        self.rolgeluid.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefRolgeluid.rolgeluid"
+        self.rolgeluid.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefRolgeluid.rolgeluid"
         self.rolgeluid.definition = "Proefresultaten van het rolgeluid van de toplaag."
         self.rolgeluid.constraints = ""
         self.rolgeluid.usagenote = ""

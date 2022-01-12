@@ -22,7 +22,7 @@ class AfwijkendeKantopsluiting(Kantopsluiting):
         """De breedte van de afwijkende kantopsluiting in centimeter."""
         self.breedte.naam = "breedte"
         self.breedte.label = "breedte"
-        self.breedte.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#AfwijkendeKantopsluiting.breedte"
+        self.breedte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#AfwijkendeKantopsluiting.breedte"
         self.breedte.definition = "De breedte van de afwijkende kantopsluiting in centimeter."
         self.breedte.constraints = ""
         self.breedte.usagenote = ""
@@ -32,7 +32,7 @@ class AfwijkendeKantopsluiting(Kantopsluiting):
         """De dikte van de afwijkende kantopsluiting in centimeter."""
         self.dikte.naam = "dikte"
         self.dikte.label = "dikte"
-        self.dikte.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#AfwijkendeKantopsluiting.dikte"
+        self.dikte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#AfwijkendeKantopsluiting.dikte"
         self.dikte.definition = "De dikte van de afwijkende kantopsluiting in centimeter."
         self.dikte.constraints = ""
         self.dikte.usagenote = ""
@@ -40,7 +40,7 @@ class AfwijkendeKantopsluiting(Kantopsluiting):
 
         self.heeftOppervlaktebehandeling = BooleanField(naam="heeftOppervlaktebehandeling",
                                                         label="heeft oppervlaktebehandeling",
-                                                        uri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#AfwijkendeKantopsluiting.heeftOppervlaktebehandeling",
+                                                        objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#AfwijkendeKantopsluiting.heeftOppervlaktebehandeling",
                                                         definition="Aanduiding of er een oppervlaktebehandeling is uitgevoerd op de afwijkende kantopsluiting.",
                                                         constraints="",
                                                         usagenote="",
@@ -50,7 +50,7 @@ class AfwijkendeKantopsluiting(Kantopsluiting):
         technischeFicheAfwijkingField = DtcDocument()
         technischeFicheAfwijkingField.naam = "technischeFicheAfwijking"
         technischeFicheAfwijkingField.label = "technische fiche afwijking"
-        technischeFicheAfwijkingField.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#AfwijkendeKantopsluiting.technischeFicheAfwijking"
+        technischeFicheAfwijkingField.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#AfwijkendeKantopsluiting.technischeFicheAfwijking"
         technischeFicheAfwijkingField.definition = "De technische fiche van de afwijkende kantopsluiting."
         technischeFicheAfwijkingField.constraints = ""
         technischeFicheAfwijkingField.usagenote = "Bestanden van het type xlsx of pdf."

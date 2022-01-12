@@ -22,7 +22,7 @@ class Verkeerslicht(AIMNaamObject):
         self.masker = KeuzelijstField(naam="masker",
                                       label="masker",
                                       lijst=KlVerkeerslichtMasker(),
-                                      uri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Verkeerslicht.masker",
+                                      objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Verkeerslicht.masker",
                                       definition="Type masker dat is aangebracht op het verkeerslicht.",
                                       constraints="",
                                       usagenote="",
@@ -32,7 +32,7 @@ class Verkeerslicht(AIMNaamObject):
         self.merk = KeuzelijstField(naam="merk",
                                     label="merk",
                                     lijst=KlVerkeerslichtMerk(),
-                                    uri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Verkeerslicht.merk",
+                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Verkeerslicht.merk",
                                     definition="Het merk van het verkeerslicht.",
                                     constraints="",
                                     usagenote="",
@@ -42,7 +42,7 @@ class Verkeerslicht(AIMNaamObject):
         self.modelnaam = KeuzelijstField(naam="modelnaam",
                                          label="modelnaam",
                                          lijst=KlVerkeerslichtModelnaam(),
-                                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Verkeerslicht.modelnaam",
+                                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Verkeerslicht.modelnaam",
                                          definition="De modelnaam/product range van het verkeerslicht.",
                                          constraints="",
                                          usagenote="",
@@ -53,7 +53,7 @@ class Verkeerslicht(AIMNaamObject):
         """Vermogen (Watt) van het verkeerslicht."""
         self.vermogen.naam = "vermogen"
         self.vermogen.label = "vermogen"
-        self.vermogen.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Verkeerslicht.vermogen"
+        self.vermogen.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Verkeerslicht.vermogen"
         self.vermogen.definition = "Vermogen (Watt) van het verkeerslicht."
         self.vermogen.constraints = ""
         self.vermogen.usagenote = ""

@@ -9,7 +9,7 @@ class KlLEACVoertuigOverhelling(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlLEACVoertuigOverhelling",
                          label="Voertuig overhelling",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlLEACVoertuigOverhelling",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlLEACVoertuigOverhelling",
                          definition="De verschillende maten van voertuigoverhelling.",
                          usagenote="",
                          deprecated_version="",

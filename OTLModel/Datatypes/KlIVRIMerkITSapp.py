@@ -9,7 +9,7 @@ class KlIVRIMerkITSapp(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlIVRIMerkITSapp",
                          label="iVRIMerkITSapp",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlIVRIMerkITSapp",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlIVRIMerkITSapp",
                          definition="Het merk van de ITSapp.",
                          usagenote="",
                          deprecated_version="",

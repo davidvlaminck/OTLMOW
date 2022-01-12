@@ -17,7 +17,7 @@ class Lokaal(Behuizing):
         """Plattegrond van het lokaal met aanduidingen van de verschillende aanwezige elementen zoals kasten met kastnummers, toegangscontrole en meer."""
         self.grondplan.naam = "grondplan"
         self.grondplan.label = "grondplan"
-        self.grondplan.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Lokaal.grondplan"
+        self.grondplan.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Lokaal.grondplan"
         self.grondplan.definition = "Plattegrond van het lokaal met aanduidingen van de verschillende aanwezige elementen zoals kasten met kastnummers, toegangscontrole en meer."
         self.grondplan.constraints = ""
         self.grondplan.usagenote = ""

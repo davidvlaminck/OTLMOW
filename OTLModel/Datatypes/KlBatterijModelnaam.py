@@ -9,7 +9,7 @@ class KlBatterijModelnaam(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlBatterijModelnaam",
                          label="Batterij modelnaam",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlBatterijModelnaam",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlBatterijModelnaam",
                          definition="De modelnaam van de batterij.",
                          usagenote="",
                          deprecated_version="",

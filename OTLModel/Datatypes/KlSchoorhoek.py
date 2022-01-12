@@ -9,7 +9,7 @@ class KlSchoorhoek(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlSchoorhoek",
                          label="Schoorhoek",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KlSchoorhoek",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KlSchoorhoek",
                          definition="De schoorhoek van het object, uitgedrukt in 1 op x (vb.: 1/4).",
                          usagenote="",
                          deprecated_version="",

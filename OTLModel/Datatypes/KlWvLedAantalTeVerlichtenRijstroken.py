@@ -9,7 +9,7 @@ class KlWvLedAantalTeVerlichtenRijstroken(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlWvLedAantalTeVerlichtenRijstroken",
                          label="WV LED aantal te verlichten rijstroken",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlWvLedAantalTeVerlichtenRijstroken",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlWvLedAantalTeVerlichtenRijstroken",
                          definition="Het aantal rijstroken dat verlicht wordt door het LED verlichtingstoestel.",
                          usagenote="",
                          deprecated_version="",

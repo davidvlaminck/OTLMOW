@@ -9,7 +9,7 @@ class KlIVRIMerkRIS(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlIVRIMerkRIS",
                          label="iVRIMerkRIS",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlIVRIMerkRIS",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlIVRIMerkRIS",
                          definition="Het merk van de RIS.",
                          usagenote="",
                          deprecated_version="",

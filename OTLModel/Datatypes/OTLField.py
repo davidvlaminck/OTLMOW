@@ -1,9 +1,9 @@
 class OTLField:
-    def __init__(self, naam, label, uri, definition, constraints, usagenote, deprecated_version, readonly=False,
+    def __init__(self, naam, label, objectUri, definition, constraints, usagenote, deprecated_version, readonly=False,
                  readonlyValue=None):
         self.naam = naam
         self.label = label
-        self.uri = uri
+        self.objectUri = objectUri
         self.definition = definition
         self.constraints = constraints
         self.usagenote = usagenote

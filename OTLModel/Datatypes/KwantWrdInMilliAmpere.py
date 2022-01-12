@@ -11,7 +11,7 @@ class KwantWrdInMilliAmpere(KwantWrd):
     def __init__(self, waarde=None):
         self.eenheid = LiteralField(naam="standaardEenheid",
                                     label="standaard eenheid",
-                                    uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMilliAmpere.standaardEenheid",
+                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMilliAmpere.standaardEenheid",
                                     definition="De standaard eenheid bij dit datatype is uitgedrukt in milliAmpere.",
                                     constraints='"mA"^^cdt:ucumunit',
                                     usagenote='"mA"^^cdt:ucumunit',
@@ -21,7 +21,7 @@ class KwantWrdInMilliAmpere(KwantWrd):
 
         self.waardeVeld = DecimalFloatField(naam="waarde",
                                             label="waarde",
-                                            uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMilliAmpere.waarde",
+                                            objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMilliAmpere.waarde",
                                             definition="Bevat een getal die bij het datatype hoort.",
                                             constraints="",
                                             usagenote="",
@@ -30,7 +30,7 @@ class KwantWrdInMilliAmpere(KwantWrd):
 
         super().__init__(naam="KwantWrdInMilliAmpere",
                          label="Kwantitatieve waarde in milliampère",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMilliAmpere",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMilliAmpere",
                          definition="Een kwantitatieve waarde die een getal in milliampère uitdrukt.",
                          usagenote="",
                          deprecated_version="",

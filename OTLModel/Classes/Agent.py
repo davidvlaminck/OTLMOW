@@ -17,7 +17,7 @@ class Agent:
         """Identificatie van de agent volgens een bepaalde bron."""
         self.agentId.naam = "agentId"
         self.agentId.label = "agent identificatie"
-        self.agentId.uri = "http://purl.org/dc/terms/Agent.agentId"
+        self.agentId.objectUri = "http://purl.org/dc/terms/Agent.agentId"
         self.agentId.definition = "Identificatie van de agent volgens een bepaalde bron."
         self.agentId.constraints = ""
         self.agentId.usagenote = ""
@@ -26,7 +26,7 @@ class Agent:
         contactinfoField = DtcContactinfo()
         contactinfoField.naam = "contactinfo"
         contactinfoField.label = "Contactinfo"
-        contactinfoField.uri = "http://purl.org/dc/terms/Agent.contactinfo"
+        contactinfoField.objectUri = "http://purl.org/dc/terms/Agent.contactinfo"
         contactinfoField.definition = "Algemene contactgegevens voor de agent."
         contactinfoField.constraints = ""
         contactinfoField.usagenote = ""
@@ -36,7 +36,7 @@ class Agent:
 
         self.naam = StringField(naam="naam",
                                 label="naam",
-                                uri="http://purl.org/dc/terms/Agent.naam",
+                                objectUri="http://purl.org/dc/terms/Agent.naam",
                                 definition="De naam waarmee de agent doorgaans benoemd wordt.",
                                 constraints="",
                                 usagenote="",

@@ -19,7 +19,7 @@ class Taludgoot(AIMObject):
         """De totale lengte van de geprefabriceerde betonelementen in lopende meter vanaf het beginstuk (niet inbegrepen) tot aan het eindstuk (niet inbegrepen)."""
         self.totaleLengte.naam = "totaleLengte"
         self.totaleLengte.label = "totale lengte"
-        self.totaleLengte.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Taludgoot.totaleLengte"
+        self.totaleLengte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Taludgoot.totaleLengte"
         self.totaleLengte.definition = "De totale lengte van de geprefabriceerde betonelementen in lopende meter vanaf het beginstuk (niet inbegrepen) tot aan het eindstuk (niet inbegrepen)."
         self.totaleLengte.constraints = ""
         self.totaleLengte.usagenote = ""
@@ -28,7 +28,7 @@ class Taludgoot(AIMObject):
         self.type = KeuzelijstField(naam="type",
                                     label="type",
                                     lijst=KlTaludgootType(),
-                                    uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Taludgoot.type",
+                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Taludgoot.type",
                                     definition="Het type van geprefabriceerd betonelement.",
                                     constraints="",
                                     usagenote="",

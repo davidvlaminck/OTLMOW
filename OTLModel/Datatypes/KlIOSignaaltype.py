@@ -9,7 +9,7 @@ class KlIOSignaaltype(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlIOSignaaltype",
                          label="IO-kaart signaaltype",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlIOSignaaltype",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlIOSignaaltype",
                          definition="Geeft aan of de IO-kaart werkt met een digitaal of met een analoog signaal.",
                          usagenote="",
                          deprecated_version="",

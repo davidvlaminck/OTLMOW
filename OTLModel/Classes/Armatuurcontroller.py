@@ -17,7 +17,7 @@ class Armatuurcontroller(Communicatieapparatuur, FirmwareObject):
 
         self.merk = StringField(naam="merk",
                                 label="merk",
-                                uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Armatuurcontroller.merk",
+                                objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Armatuurcontroller.merk",
                                 definition="Merk van de armatuurcontroller.",
                                 constraints="",
                                 usagenote="",
@@ -26,7 +26,7 @@ class Armatuurcontroller(Communicatieapparatuur, FirmwareObject):
 
         self.modelnaam = StringField(naam="modelnaam",
                                      label="modelnaam",
-                                     uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Armatuurcontroller.modelnaam",
+                                     objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Armatuurcontroller.modelnaam",
                                      definition="Modelnaam van de armatuurcontroller.",
                                      constraints="",
                                      usagenote="",
@@ -35,7 +35,7 @@ class Armatuurcontroller(Communicatieapparatuur, FirmwareObject):
 
         self.serienummer = StringField(naam="serienummer",
                                        label="serienummer",
-                                       uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Armatuurcontroller.serienummer",
+                                       objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Armatuurcontroller.serienummer",
                                        definition="Het unieke nummer waarmee het toestel door de fabrikant geïdentificeerd is.",
                                        constraints="",
                                        usagenote="",

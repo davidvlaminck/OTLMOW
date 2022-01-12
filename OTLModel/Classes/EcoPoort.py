@@ -19,7 +19,7 @@ class EcoPoort(ComplexeGeleiding):
         """De breedte van de poort in meter."""
         self.breedte.naam = "breedte"
         self.breedte.label = "breedte"
-        self.breedte.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#EcoPoort.breedte"
+        self.breedte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#EcoPoort.breedte"
         self.breedte.definition = "De breedte van de poort in meter."
         self.breedte.constraints = ""
         self.breedte.usagenote = ""
@@ -28,7 +28,7 @@ class EcoPoort(ComplexeGeleiding):
         self.poortType = KeuzelijstField(naam="poortType",
                                          label="poort type",
                                          lijst=KlEcoPoorttype(),
-                                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#EcoPoort.poortType",
+                                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#EcoPoort.poortType",
                                          definition="Bepaling van het type van poort.",
                                          constraints="",
                                          usagenote="",

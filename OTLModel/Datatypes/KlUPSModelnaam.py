@@ -9,7 +9,7 @@ class KlUPSModelnaam(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlUPSModelnaam",
                          label="UPS modelnaam",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlUPSModelnaam",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlUPSModelnaam",
                          definition="De modelnaam van de UPS.",
                          usagenote="",
                          deprecated_version="",

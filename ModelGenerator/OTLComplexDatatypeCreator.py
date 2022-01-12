@@ -15,24 +15,24 @@ class OTLComplexDatatypeCreator(AbstractDatatypeCreator):
         if not isinstance(osloDatatypeComplex, OSLODatatypeComplex):
             raise ValueError(f"Input is not a OSLODatatypeComplex")
 
-        if osloDatatypeComplex.uri == '' or not (osloDatatypeComplex.uri == 'https://schema.org/ContactPoint' or
-                                                 osloDatatypeComplex.uri == 'https://schema.org/OpeningHoursSpecification' or
-                                                 (osloDatatypeComplex.uri.startswith(
-                                                     'https://wegenenverkeer.data.vlaanderen.be/ns/') and 'Dtc' in osloDatatypeComplex.uri)):
-            raise ValueError(f"OSLODatatypeComplex.uri is invalid. Value = '{osloDatatypeComplex.uri}'")
+        if osloDatatypeComplex.objectUri == '' or not (osloDatatypeComplex.objectUri == 'https://schema.org/ContactPoint' or
+                                                       osloDatatypeComplex.objectUri == 'https://schema.org/OpeningHoursSpecification' or
+                                                       (osloDatatypeComplex.objectUri.startswith(
+                                                     'https://wegenenverkeer.data.vlaanderen.be/ns/') and 'Dtc' in osloDatatypeComplex.objectUri)):
+            raise ValueError(f"OSLODatatypeComplex.objectUri is invalid. Value = '{osloDatatypeComplex.objectUri}'")
 
         if osloDatatypeComplex.name == '':
             raise ValueError(f"OSLODatatypeComplex.name is invalid. Value = '{osloDatatypeComplex.name}'")
 
-        if osloDatatypeComplex.uri.startswith('https://wegenenverkeer.data.vlaanderen.be/ns/') and 'Dtc' in osloDatatypeComplex.uri:
+        if osloDatatypeComplex.objectUri.startswith('https://wegenenverkeer.data.vlaanderen.be/ns/') and 'Dtc' in osloDatatypeComplex.objectUri:
             return self.CreateBlockToWriteFromComplexTypesDtc(osloDatatypeComplex)
-        elif osloDatatypeComplex.uri.startswith('https://schema.org/'):
+        elif osloDatatypeComplex.objectUri.startswith('https://schema.org/'):
             return self.CreateBlockToWriteFromComplexTypesDtc(osloDatatypeComplex)
         else:
             raise NotImplementedError
 
     def CreateBlockToWriteFromComplexTypesDtc(self, osloDatatypeComplex: OSLODatatypeComplex):
-        attributen = self.osloCollector.FindComplexDatatypeAttributenByClassUri(osloDatatypeComplex.uri)
+        attributen = self.osloCollector.FindComplexDatatypeAttributenByClassUri(osloDatatypeComplex.objectUri)
 
         datablock = ['# coding=utf-8']
 
@@ -55,7 +55,7 @@ class OTLComplexDatatypeCreator(AbstractDatatypeCreator):
         datablock.append('    def __init__(self):')
         datablock.append(f'        super().__init__(naam="{osloDatatypeComplex.name}",')
         datablock.append(f'                         label="{osloDatatypeComplex.label_nl}",')
-        datablock.append(f'                         uri="{osloDatatypeComplex.uri}",')
+        datablock.append(f'                         objectUri="{osloDatatypeComplex.objectUri}",')
         datablock.append(f'                         definition="{osloDatatypeComplex.definition_nl}",')
         datablock.append(f'                         usagenote="{osloDatatypeComplex.usagenote_nl}",')
         datablock.append(f'                         deprecated_version="{osloDatatypeComplex.deprecated_version}")')

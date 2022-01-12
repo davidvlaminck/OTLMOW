@@ -9,7 +9,7 @@ class KlRadarMerk(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlRadarMerk",
                          label="Radar merk",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlRadarMerk",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlRadarMerk",
                          definition="Keuzelijst met merknamen voor Radar.",
                          usagenote="",
                          deprecated_version="",

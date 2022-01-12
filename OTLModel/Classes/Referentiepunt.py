@@ -23,7 +23,7 @@ class Referentiepunt(AIMObject, Signalisatie, BevestigingGC):
         """De notatie van het referentiepunt."""
         self.opschrift.naam = "opschrift"
         self.opschrift.label = "opschrift"
-        self.opschrift.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Referentiepunt.opschrift"
+        self.opschrift.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Referentiepunt.opschrift"
         self.opschrift.definition = "De notatie van het referentiepunt."
         self.opschrift.constraints = ""
         self.opschrift.usagenote = ""
@@ -32,7 +32,7 @@ class Referentiepunt(AIMObject, Signalisatie, BevestigingGC):
         self.type = KeuzelijstField(naam="type",
                                     label="type",
                                     lijst=KlSignalisatieReferentiepuntType(),
-                                    uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Referentiepunt.type",
+                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Referentiepunt.type",
                                     definition="Het type van referentiepunt.",
                                     constraints="",
                                     usagenote="",

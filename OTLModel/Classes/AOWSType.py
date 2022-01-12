@@ -15,7 +15,7 @@ class AOWSType(ABC):
     def __init__(self):
         self.isGoedgekeurd = BooleanField(naam="isGoedgekeurd",
                                           label="is goedgekeurd",
-                                          uri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#AOWSType.isGoedgekeurd",
+                                          objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#AOWSType.isGoedgekeurd",
                                           definition="Bepaling van de goedkeuring van AOWS.",
                                           constraints="",
                                           usagenote="",
@@ -24,7 +24,7 @@ class AOWSType(ABC):
 
         self.versieGoedgekeurd = StringField(naam="versieGoedgekeurd",
                                              label="versie goedgekeurd",
-                                             uri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#AOWSType.versieGoedgekeurd",
+                                             objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#AOWSType.versieGoedgekeurd",
                                              definition="De versie van het standaardbestek 250 waar de goedkeuring is bepaald.",
                                              constraints="",
                                              usagenote="",

@@ -23,7 +23,7 @@ class LEDBord(AIMNaamObject, Verkeersbord):
 
         self.aantalLichtsensoren = IntegerField(naam="aantalLichtsensoren",
                                                 label="aantal lichtsensoren",
-                                                uri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#LEDBord.aantalLichtsensoren",
+                                                objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#LEDBord.aantalLichtsensoren",
                                                 definition="Het aantal lichtsensoren waar het bord over beschikt die continu de intensiteit van het invallend licht meten.",
                                                 constraints="",
                                                 usagenote="",
@@ -32,7 +32,7 @@ class LEDBord(AIMNaamObject, Verkeersbord):
 
         self.dnsNaam = StringField(naam="dnsNaam",
                                    label="DNS naam",
-                                   uri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#LEDBord.dnsNaam",
+                                   objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#LEDBord.dnsNaam",
                                    definition="De DNSNaam (ook \"volledige domein naam\" genoemd ) is een unieke naam binnen het Domain Name System (DNS), het naamgevingssysteem waarmee computers, webservers, diensten en  toepassing op een unieke manier kunnen worden geïdentificeerd. Deze bevat zowel de hostname en de top level domein naam bv. 120c8-ar1.belfa.be.",
                                    constraints="",
                                    usagenote="",
@@ -41,7 +41,7 @@ class LEDBord(AIMNaamObject, Verkeersbord):
 
         self.heeftDeurcontact = BooleanField(naam="heeftDeurcontact",
                                              label="heeft deurcontact",
-                                             uri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#LEDBord.heeftDeurcontact",
+                                             objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#LEDBord.heeftDeurcontact",
                                              definition="Het LEDBord is beveiligd met een deurcontact dat waarschuwt voor ongeoorloofd openen van het bord door middel van een software-matig alarm.",
                                              constraints="",
                                              usagenote="",
@@ -52,7 +52,7 @@ class LEDBord(AIMNaamObject, Verkeersbord):
         """Het IP netwerkadres van het LEDBord."""
         self.ipAdres.naam = "ipAdres"
         self.ipAdres.label = "ip adres"
-        self.ipAdres.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#LEDBord.ipAdres"
+        self.ipAdres.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#LEDBord.ipAdres"
         self.ipAdres.definition = "Het IP netwerkadres van het LEDBord."
         self.ipAdres.constraints = ""
         self.ipAdres.usagenote = ""
@@ -60,7 +60,7 @@ class LEDBord(AIMNaamObject, Verkeersbord):
 
         self.logischeGroepVerkeerscentrum = StringField(naam="logischeGroepVerkeerscentrum",
                                                         label="logische groep verkeerscentrum",
-                                                        uri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#LEDBord.logischeGroepVerkeerscentrum",
+                                                        objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#LEDBord.logischeGroepVerkeerscentrum",
                                                         definition="Identificator van de logische groep toegekend door het Verkeerscentrum.",
                                                         constraints="",
                                                         usagenote="",
@@ -69,7 +69,7 @@ class LEDBord(AIMNaamObject, Verkeersbord):
 
         self.protocol = StringField(naam="protocol",
                                     label="protocol",
-                                    uri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#LEDBord.protocol",
+                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#LEDBord.protocol",
                                     definition="Communicatieprotocol waarmee het LEDBord wordt aangestuurd.",
                                     constraints="",
                                     usagenote="",
@@ -80,7 +80,7 @@ class LEDBord(AIMNaamObject, Verkeersbord):
         """Document met technische informatie over het LEDBord."""
         self.technischeFiche.naam = "technischeFiche"
         self.technischeFiche.label = "technische fiche"
-        self.technischeFiche.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#LEDBord.technischeFiche"
+        self.technischeFiche.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#LEDBord.technischeFiche"
         self.technischeFiche.definition = "Document met technische informatie over het LEDBord."
         self.technischeFiche.constraints = ""
         self.technischeFiche.usagenote = ""
@@ -88,7 +88,7 @@ class LEDBord(AIMNaamObject, Verkeersbord):
 
         self.versie = StringField(naam="versie",
                                   label="versie",
-                                  uri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#LEDBord.versie",
+                                  objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#LEDBord.versie",
                                   definition="Versie van het LEDBord.",
                                   constraints="",
                                   usagenote="",

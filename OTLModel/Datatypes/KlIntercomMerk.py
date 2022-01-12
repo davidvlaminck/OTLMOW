@@ -9,7 +9,7 @@ class KlIntercomMerk(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlIntercomMerk",
                          label="Intercomtoestel merk",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlIntercomMerk",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlIntercomMerk",
                          definition="Het merk van het intercomtoestel.",
                          usagenote="",
                          deprecated_version="",

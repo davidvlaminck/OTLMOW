@@ -15,7 +15,7 @@ class VerkeersbordVerkeersteken(Verkeersteken):
 
         self.isBeginZone = BooleanField(naam="isBeginZone",
                                         label="is begin van een zone",
-                                        uri="https://wegenenverkeer.data.vlaanderen.be/ns/installatie#VerkeersbordVerkeersteken.isBeginZone",
+                                        objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/installatie#VerkeersbordVerkeersteken.isBeginZone",
                                         definition="Duidt aan of het verkeersteken het begin van een zone aanduidt.",
                                         constraints="",
                                         usagenote="",
@@ -24,7 +24,7 @@ class VerkeersbordVerkeersteken(Verkeersteken):
 
         self.isEindeZone = BooleanField(naam="isEindeZone",
                                         label="is einde van een zone",
-                                        uri="https://wegenenverkeer.data.vlaanderen.be/ns/installatie#VerkeersbordVerkeersteken.isEindeZone",
+                                        objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/installatie#VerkeersbordVerkeersteken.isEindeZone",
                                         definition="Duidt aan of het verkeersteken het einde van een zone aanduidt.",
                                         constraints="",
                                         usagenote="",

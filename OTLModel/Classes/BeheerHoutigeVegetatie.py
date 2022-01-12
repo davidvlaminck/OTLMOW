@@ -19,7 +19,7 @@ class BeheerHoutigeVegetatie(AIMObject):
         beheeroptieField = KeuzelijstField(naam="beheeroptie",
                                            label="beheeroptie",
                                            lijst=KlBeheerHoutigeVegetatie(),
-                                           uri="https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#BeheerHoutigeVegetatie.beheeroptie",
+                                           objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#BeheerHoutigeVegetatie.beheeroptie",
                                            definition="Aanduiding van welk beheer wordt toegepast op de houtige vegetatie.",
                                            constraints="",
                                            usagenote="",
@@ -29,7 +29,7 @@ class BeheerHoutigeVegetatie(AIMObject):
 
         self.heeftBeheerplan = BooleanField(naam="heeftBeheerplan",
                                             label="heeft beheerplan",
-                                            uri="https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#BeheerHoutigeVegetatie.heeftBeheerplan",
+                                            objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#BeheerHoutigeVegetatie.heeftBeheerplan",
                                             definition="Aanduiding of er een beheerplan bestaat.",
                                             constraints="",
                                             usagenote="",

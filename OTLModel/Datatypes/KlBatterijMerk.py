@@ -9,7 +9,7 @@ class KlBatterijMerk(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlBatterijMerk",
                          label="Batterij merk",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlBatterijMerk",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlBatterijMerk",
                          definition="Het merk van de batterij.",
                          usagenote="",
                          deprecated_version="",

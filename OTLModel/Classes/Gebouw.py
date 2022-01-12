@@ -17,7 +17,7 @@ class Gebouw(Behuizing):
         """Plattegrond van het gebouw met aanduidingen van de verschillende aanwezige elementen zoals kelder, kasten met kastnummers, toegangscontrole en meer."""
         self.grondplan.naam = "grondplan"
         self.grondplan.label = "grondplan"
-        self.grondplan.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Gebouw.grondplan"
+        self.grondplan.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Gebouw.grondplan"
         self.grondplan.definition = "Plattegrond van het gebouw met aanduidingen van de verschillende aanwezige elementen zoals kelder, kasten met kastnummers, toegangscontrole en meer."
         self.grondplan.constraints = ""
         self.grondplan.usagenote = ""

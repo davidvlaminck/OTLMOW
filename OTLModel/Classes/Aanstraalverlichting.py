@@ -17,7 +17,7 @@ class Aanstraalverlichting(AIMObject):
         self.type = KeuzelijstField(naam="type",
                                     label="type",
                                     lijst=KlBinnenverlichtingstoestelSoortLamp(),
-                                    uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Aanstraalverlichting.type",
+                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Aanstraalverlichting.type",
                                     definition="Geeft het soort lamp mee dat voor de verlichting zorgt.",
                                     constraints="",
                                     usagenote="",

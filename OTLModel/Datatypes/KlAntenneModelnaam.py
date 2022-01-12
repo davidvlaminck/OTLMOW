@@ -9,7 +9,7 @@ class KlAntenneModelnaam(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlAntenneModelnaam",
                          label="Antenne modelnaam",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlAntenneModelnaam",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlAntenneModelnaam",
                          definition="Keuzelijst met modelnamen voor Antenne.",
                          usagenote="",
                          deprecated_version="",

@@ -17,7 +17,7 @@ class ProefGemetenDikte(Proef):
         """De gemeten dikte van de laag in centimeter."""
         self.gemetenDikte.naam = "gemetenDikte"
         self.gemetenDikte.label = "gemeten dikte"
-        self.gemetenDikte.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefGemetenDikte.gemetenDikte"
+        self.gemetenDikte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefGemetenDikte.gemetenDikte"
         self.gemetenDikte.definition = "De gemeten dikte van de laag in centimeter."
         self.gemetenDikte.constraints = ""
         self.gemetenDikte.usagenote = ""

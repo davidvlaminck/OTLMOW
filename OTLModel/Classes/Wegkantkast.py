@@ -21,7 +21,7 @@ class Wegkantkast(Buitenkast):
         """Elektrisch aansluitschema van de kast."""
         self.elektrischSchema.naam = "elektrischSchema"
         self.elektrischSchema.label = "elektrisch schema"
-        self.elektrischSchema.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Wegkantkast.elektrischSchema"
+        self.elektrischSchema.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Wegkantkast.elektrischSchema"
         self.elektrischSchema.definition = "Elektrisch aansluitschema van de kast."
         self.elektrischSchema.constraints = ""
         self.elektrischSchema.usagenote = ""
@@ -29,7 +29,7 @@ class Wegkantkast(Buitenkast):
 
         self.heeftMaaibescherming = BooleanField(naam="heeftMaaibescherming",
                                                  label="heeft maaibescherming",
-                                                 uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Wegkantkast.heeftMaaibescherming",
+                                                 objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Wegkantkast.heeftMaaibescherming",
                                                  definition="Geeft aan of de kast voorzien is van bescherming tegen schade bij het maaien van de omgeving rond de kast.",
                                                  constraints="",
                                                  usagenote="",
@@ -39,7 +39,7 @@ class Wegkantkast(Buitenkast):
         mplanField = DtcDocument()
         mplanField.naam = "mplan"
         mplanField.label = "m-plan"
-        mplanField.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Wegkantkast.mplan"
+        mplanField.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Wegkantkast.mplan"
         mplanField.definition = "Mechanisch plan van de volledige installatie. Er wordt één plan toegevoegd per installatie/techniek die op de kast is aangesloten."
         mplanField.constraints = ""
         mplanField.usagenote = "Bestanden van het type dwg of pdf."
@@ -50,7 +50,7 @@ class Wegkantkast(Buitenkast):
         self.type = KeuzelijstField(naam="type",
                                     label="type",
                                     lijst=KlWegkantkastType(),
-                                    uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Wegkantkast.type",
+                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Wegkantkast.type",
                                     definition="Type van de wegkantkast volgens de gangbare types.",
                                     constraints="",
                                     usagenote="",

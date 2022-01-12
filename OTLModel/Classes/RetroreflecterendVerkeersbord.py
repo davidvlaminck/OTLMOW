@@ -23,7 +23,7 @@ class RetroreflecterendVerkeersbord(AIMObject, Verkeersbord):
         self.afwerkingsgraad = KeuzelijstField(naam="afwerkingsgraad",
                                                label="afwerkingsgraad",
                                                lijst=KlRetroreflecterendVerkeersbordAfwerkingsgraad(),
-                                               uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#RetroreflecterendVerkeersbord.afwerkingsgraad",
+                                               objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#RetroreflecterendVerkeersbord.afwerkingsgraad",
                                                definition="De afwerkingsgraad van het retroreflecterend verkeersbord, volgens een keuzelijst op basis van SB250.",
                                                constraints="",
                                                usagenote="",
@@ -33,7 +33,7 @@ class RetroreflecterendVerkeersbord(AIMObject, Verkeersbord):
         self.grootteorde = KeuzelijstField(naam="grootteorde",
                                            label="grootteorde",
                                            lijst=KlRetroreflecterendVerkeersbordGrootteorde(),
-                                           uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#RetroreflecterendVerkeersbord.grootteorde",
+                                           objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#RetroreflecterendVerkeersbord.grootteorde",
                                            definition="De classificatie naar grootteorde van het verkeersbord, zoals gedefinieerd in SB250 hoofdstuk 10.",
                                            constraints="",
                                            usagenote="",
@@ -44,7 +44,7 @@ class RetroreflecterendVerkeersbord(AIMObject, Verkeersbord):
         """De kleur van de achterkant van het retroreflecterend verkeersbord."""
         self.kleurAchterkant.naam = "kleurAchterkant"
         self.kleurAchterkant.label = "kleur achterkant"
-        self.kleurAchterkant.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#RetroreflecterendVerkeersbord.kleurAchterkant"
+        self.kleurAchterkant.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#RetroreflecterendVerkeersbord.kleurAchterkant"
         self.kleurAchterkant.definition = "De kleur van de achterkant van het retroreflecterend verkeersbord."
         self.kleurAchterkant.constraints = ""
         self.kleurAchterkant.usagenote = ""
@@ -53,7 +53,7 @@ class RetroreflecterendVerkeersbord(AIMObject, Verkeersbord):
         self.merk = KeuzelijstField(naam="merk",
                                     label="merk",
                                     lijst=KlRetroreflecterendVerkeersbordMerk(),
-                                    uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#RetroreflecterendVerkeersbord.merk",
+                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#RetroreflecterendVerkeersbord.merk",
                                     definition="De merknaam van het verkeersbord; duidt op de leverancier of producent van het verkeersbord.",
                                     constraints="",
                                     usagenote="Te selecteren uit een keuzelijst.",
@@ -64,7 +64,7 @@ class RetroreflecterendVerkeersbord(AIMObject, Verkeersbord):
         """De oppervlakte van het beeldvlak van een verkeersbord."""
         self.oppervlakte.naam = "oppervlakte"
         self.oppervlakte.label = "oppervlakte"
-        self.oppervlakte.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#RetroreflecterendVerkeersbord.oppervlakte"
+        self.oppervlakte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#RetroreflecterendVerkeersbord.oppervlakte"
         self.oppervlakte.definition = "De oppervlakte van het beeldvlak van een verkeersbord."
         self.oppervlakte.constraints = ""
         self.oppervlakte.usagenote = ""

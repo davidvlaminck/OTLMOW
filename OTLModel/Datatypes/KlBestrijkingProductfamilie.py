@@ -9,7 +9,7 @@ class KlBestrijkingProductfamilie(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlBestrijkingProductfamilie",
                          label="Productfamilies",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlBestrijkingProductfamilie",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlBestrijkingProductfamilie",
                          definition="De mogelijke productfamiles.",
                          usagenote="",
                          deprecated_version="",

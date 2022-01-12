@@ -15,7 +15,7 @@ class WatergreppelAfw(AfwijkendeKantopsluiting):
 
         self.aantalRijenBetonstraatsteen = IntegerField(naam="aantalRijenBetonstraatsteen",
                                                         label="aantal rijen betonstraatsteen",
-                                                        uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#WatergreppelAfw.aantalRijenBetonstraatsteen",
+                                                        objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#WatergreppelAfw.aantalRijenBetonstraatsteen",
                                                         definition="Het aantal rijen betonstraatsteen waaruit de watergreppel is opgebouwd.",
                                                         constraints="",
                                                         usagenote="",

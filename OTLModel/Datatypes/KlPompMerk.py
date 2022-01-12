@@ -9,7 +9,7 @@ class KlPompMerk(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlPompMerk",
                          label="Typepomp merk",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlPompMerk",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlPompMerk",
                          definition="Lijst met merknamen voor pompen.",
                          usagenote="",
                          deprecated_version="",

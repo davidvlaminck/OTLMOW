@@ -11,7 +11,7 @@ class KwantWrdInDecimaleGraden(KwantWrd):
     def __init__(self, waarde=None):
         self.eenheid = LiteralField(naam="standaardEenheid",
                                     label="standaard eenheid",
-                                    uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInDecimaleGraden.standaardEenheid",
+                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInDecimaleGraden.standaardEenheid",
                                     definition="De standaard eenheid bij dit datatype is uitgedrukt in decimale graden.",
                                     constraints='"deg"^^cdt:ucumunit',
                                     usagenote='"deg"^^cdt:ucumunit',
@@ -21,7 +21,7 @@ class KwantWrdInDecimaleGraden(KwantWrd):
 
         self.waardeVeld = DecimalFloatField(naam="waarde",
                                             label="waarde",
-                                            uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInDecimaleGraden.waarde",
+                                            objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInDecimaleGraden.waarde",
                                             definition="Bevat een getal die bij het datatype hoort.",
                                             constraints="",
                                             usagenote="",
@@ -30,7 +30,7 @@ class KwantWrdInDecimaleGraden(KwantWrd):
 
         super().__init__(naam="KwantWrdInDecimaleGraden",
                          label="Kwantitatieve waarde in decimale graden",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInDecimaleGraden",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInDecimaleGraden",
                          definition="Een kwantitatieve waarde die een getal in decimale graden uitdrukt.",
                          usagenote="",
                          deprecated_version="",

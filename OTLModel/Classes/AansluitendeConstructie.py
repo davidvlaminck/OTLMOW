@@ -19,7 +19,7 @@ class AansluitendeConstructie(AfschermendeConstructie):
         """De totale lengte van de elementen van de aansluitende constructie."""
         self.totaleLengte.naam = "totaleLengte"
         self.totaleLengte.label = "totale lengte"
-        self.totaleLengte.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#AansluitendeConstructie.totaleLengte"
+        self.totaleLengte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#AansluitendeConstructie.totaleLengte"
         self.totaleLengte.definition = "De totale lengte van de elementen van de aansluitende constructie."
         self.totaleLengte.constraints = ""
         self.totaleLengte.usagenote = ""

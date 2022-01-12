@@ -9,7 +9,7 @@ class KlPCIkaartMerk(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlPCIkaartMerk",
                          label="PCI-kaart merk",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlPCIkaartMerk",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlPCIkaartMerk",
                          definition="Het merk van de PCI-kaart.",
                          usagenote="",
                          deprecated_version="",

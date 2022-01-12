@@ -17,7 +17,7 @@ class Verwarmingslint(AIMObject):
         """Het vereiste vermogen in watt voor de correcte werking van het verwarmingslint."""
         self.vermogen.naam = "vermogen"
         self.vermogen.label = "vermogen"
-        self.vermogen.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Verwarmingslint.vermogen"
+        self.vermogen.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Verwarmingslint.vermogen"
         self.vermogen.definition = "Het vereiste vermogen in watt voor de correcte werking van het verwarmingslint."
         self.vermogen.constraints = ""
         self.vermogen.usagenote = ""

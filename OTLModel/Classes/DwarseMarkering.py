@@ -19,7 +19,7 @@ class DwarseMarkering(DwarseMarkeringToegang):
         self.code = KeuzelijstField(naam="code",
                                     label="code",
                                     lijst=KlDwarseMarkeringCode(),
-                                    uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DwarseMarkering.code",
+                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DwarseMarkering.code",
                                     definition="De (COPRO/BENOR)  code van dwarse markering.",
                                     constraints="",
                                     usagenote="",
@@ -30,7 +30,7 @@ class DwarseMarkering(DwarseMarkeringToegang):
         """De oppervlakte van de dwarse markering in vierkante meter."""
         self.oppervlakte.naam = "oppervlakte"
         self.oppervlakte.label = "oppervlakte"
-        self.oppervlakte.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DwarseMarkering.oppervlakte"
+        self.oppervlakte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DwarseMarkering.oppervlakte"
         self.oppervlakte.definition = "De oppervlakte van de dwarse markering in vierkante meter."
         self.oppervlakte.constraints = ""
         self.oppervlakte.usagenote = ""
@@ -39,7 +39,7 @@ class DwarseMarkering(DwarseMarkeringToegang):
         self.soortOmschrijving = KeuzelijstField(naam="soortOmschrijving",
                                                  label="soort omschrijving",
                                                  lijst=KlDwarseMarkeringSoort(),
-                                                 uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DwarseMarkering.soortOmschrijving",
+                                                 objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DwarseMarkering.soortOmschrijving",
                                                  definition="De soort en tevens de omschrijving van dwarse markering.",
                                                  constraints="",
                                                  usagenote="",

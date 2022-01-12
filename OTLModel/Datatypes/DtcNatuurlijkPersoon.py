@@ -13,14 +13,14 @@ class DtcNatuurlijkPersoon(ComplexField):
     def __init__(self):
         super().__init__(naam="DtcNatuurlijkPersoon",
                          label="Natuurlijk persoon",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcNatuurlijkPersoon",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcNatuurlijkPersoon",
                          definition="Complex datatype dat een natuurlijk persoon beschrijft.",
                          usagenote="",
                          deprecated_version="")
 
         self.waarde.achternaam = StringField(naam="achternaam",
                                              label="achternaam",
-                                             uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcNatuurlijkPersoon.achternaam",
+                                             objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcNatuurlijkPersoon.achternaam",
                                              definition="De achternaam.",
                                              constraints="",
                                              usagenote="",
@@ -31,7 +31,7 @@ class DtcNatuurlijkPersoon(ComplexField):
         adresField = DtcAdres()
         adresField.naam = "adres"
         adresField.label = "adres"
-        adresField.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcNatuurlijkPersoon.adres"
+        adresField.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcNatuurlijkPersoon.adres"
         adresField.definition = "Het adres."
         adresField.constraints = ""
         adresField.usagenote = ""
@@ -42,7 +42,7 @@ class DtcNatuurlijkPersoon(ComplexField):
 
         emailadresField = StringField(naam="emailadres",
                                       label="emailadres",
-                                      uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcNatuurlijkPersoon.emailadres",
+                                      objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcNatuurlijkPersoon.emailadres",
                                       definition="Het emailadres.",
                                       constraints="",
                                       usagenote="",
@@ -53,7 +53,7 @@ class DtcNatuurlijkPersoon(ComplexField):
 
         faxField = StringField(naam="fax",
                                label="fax",
-                               uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcNatuurlijkPersoon.fax",
+                               objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcNatuurlijkPersoon.fax",
                                definition="De faxnummer.",
                                constraints="",
                                usagenote="",
@@ -64,7 +64,7 @@ class DtcNatuurlijkPersoon(ComplexField):
 
         self.waarde.heeftEmailVoorkeur = BooleanField(naam="heeftEmailVoorkeur",
                                                       label="heeft email voorkeur",
-                                                      uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcNatuurlijkPersoon.heeftEmailVoorkeur",
+                                                      objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcNatuurlijkPersoon.heeftEmailVoorkeur",
                                                       definition="Aanduiding of een persoon de voorkeur heeft om via email gecontacteerd te worden.",
                                                       constraints="",
                                                       usagenote="",
@@ -74,7 +74,7 @@ class DtcNatuurlijkPersoon(ComplexField):
 
         self.waarde.heeftFaxVoorkeur = BooleanField(naam="heeftFaxVoorkeur",
                                                     label="heeft fax voorkeur",
-                                                    uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcNatuurlijkPersoon.heeftFaxVoorkeur",
+                                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcNatuurlijkPersoon.heeftFaxVoorkeur",
                                                     definition="Aanduiding of een persoon een voorkeur heeft om via fax gegevens te ontvangen.",
                                                     constraints="",
                                                     usagenote="",
@@ -84,7 +84,7 @@ class DtcNatuurlijkPersoon(ComplexField):
 
         telefoonnnummerField = StringField(naam="telefoonnnummer",
                                            label="telefoonnnummer",
-                                           uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcNatuurlijkPersoon.telefoonnnummer",
+                                           objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcNatuurlijkPersoon.telefoonnnummer",
                                            definition="Het telefoonnummer.",
                                            constraints="",
                                            usagenote="",
@@ -95,7 +95,7 @@ class DtcNatuurlijkPersoon(ComplexField):
 
         self.waarde.voornaam = StringField(naam="voornaam",
                                            label="voornaam",
-                                           uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcNatuurlijkPersoon.voornaam",
+                                           objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcNatuurlijkPersoon.voornaam",
                                            definition="De voornaam.",
                                            constraints="",
                                            usagenote="",

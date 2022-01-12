@@ -22,7 +22,7 @@ Dit object wordt niet gebruikt voor eigen lussen van een ander kruispunt."""
         self.aangeslotenToestel = KeuzelijstField(naam="aangeslotenToestel",
                                                   label="aangesloten toestel",
                                                   lijst=KlExternedetectieAangeslotentoestel(),
-                                                  uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#ExterneDetectie.aangeslotenToestel",
+                                                  objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#ExterneDetectie.aangeslotenToestel",
                                                   definition="Type aangesloten toestel (trein, brug, FCD).",
                                                   constraints="",
                                                   usagenote="",
@@ -32,7 +32,7 @@ Dit object wordt niet gebruikt voor eigen lussen van een ander kruispunt."""
         self.communicatiewijze = KeuzelijstField(naam="communicatiewijze",
                                                  label="communicatiewijze",
                                                  lijst=KlExternedetectieCommunicatiewijze(),
-                                                 uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#ExterneDetectie.communicatiewijze",
+                                                 objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#ExterneDetectie.communicatiewijze",
                                                  definition="De manier waarop de externe detectie communiceert met de verkeersregelaar.",
                                                  constraints="",
                                                  usagenote="",
@@ -43,7 +43,7 @@ Dit object wordt niet gebruikt voor eigen lussen van een ander kruispunt."""
         """Naam, voornaam en telefoonnummer van de contactpersoon."""
         self.contactpersoon.naam = "contactpersoon"
         self.contactpersoon.label = "contactpersoon"
-        self.contactpersoon.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#ExterneDetectie.contactpersoon"
+        self.contactpersoon.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#ExterneDetectie.contactpersoon"
         self.contactpersoon.definition = "Naam, voornaam en telefoonnummer van de contactpersoon."
         self.contactpersoon.constraints = ""
         self.contactpersoon.usagenote = ""
@@ -53,7 +53,7 @@ Dit object wordt niet gebruikt voor eigen lussen van een ander kruispunt."""
         """Eigenaar van het aangesloten toestel/systeem."""
         self.eigenaar.naam = "eigenaar"
         self.eigenaar.label = "eigenaar"
-        self.eigenaar.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#ExterneDetectie.eigenaar"
+        self.eigenaar.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#ExterneDetectie.eigenaar"
         self.eigenaar.definition = "Eigenaar van het aangesloten toestel/systeem."
         self.eigenaar.constraints = ""
         self.eigenaar.usagenote = ""
@@ -61,7 +61,7 @@ Dit object wordt niet gebruikt voor eigen lussen van een ander kruispunt."""
 
         self.heeftHandshaking = BooleanField(naam="heeftHandshaking",
                                              label="heeft handshaking",
-                                             uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#ExterneDetectie.heeftHandshaking",
+                                             objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#ExterneDetectie.heeftHandshaking",
                                              definition="Bij handshaking wordt gebruikt gemaakt van 2 contacten (maak / verbreek) om zeker te zijn dat het een valide signaal betreft (en geen kabelbreuk of gelijkwaardig).",
                                              constraints="",
                                              usagenote="",

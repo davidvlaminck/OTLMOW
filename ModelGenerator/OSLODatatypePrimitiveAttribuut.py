@@ -9,7 +9,7 @@ class OSLODatatypePrimitiveAttribuut:
     class_uri: str
     kardinaliteit_min: str
     kardinaliteit_max: str
-    uri: str
+    objectUri: str
     type: str
     overerving: int
     constraints: str

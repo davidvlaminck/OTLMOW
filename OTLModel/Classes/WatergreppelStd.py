@@ -19,7 +19,7 @@ class WatergreppelStd(GestandaardiseerdeKantopsluiting):
 
         self.isVerholen = BooleanField(naam="isVerholen",
                                        label="is verholen",
-                                       uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#WatergreppelStd.isVerholen",
+                                       objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#WatergreppelStd.isVerholen",
                                        definition="Aanduiding of de watergreppel verholen is. Verholen goten hebben een kleine sleufopening en een grote afvoercapaciteit.",
                                        constraints="",
                                        usagenote="",
@@ -30,7 +30,7 @@ class WatergreppelStd(GestandaardiseerdeKantopsluiting):
         """De gestandaardiseerde watergreppel volgens aangeduide norm."""
         self.norm.naam = "norm"
         self.norm.label = "norm"
-        self.norm.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#WatergreppelStd.norm"
+        self.norm.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#WatergreppelStd.norm"
         self.norm.definition = "De gestandaardiseerde watergreppel volgens aangeduide norm."
         self.norm.constraints = ""
         self.norm.usagenote = ""
@@ -39,7 +39,7 @@ class WatergreppelStd(GestandaardiseerdeKantopsluiting):
         self.type = KeuzelijstField(naam="type",
                                     label="type",
                                     lijst=KlLEWatergreppelType(),
-                                    uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#WatergreppelStd.type",
+                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#WatergreppelStd.type",
                                     definition="Het type van gestandaardiseerde watergreppel.",
                                     constraints="",
                                     usagenote="",
@@ -50,7 +50,7 @@ class WatergreppelStd(GestandaardiseerdeKantopsluiting):
         """De vorm van de watergreppel."""
         self.vorm.naam = "vorm"
         self.vorm.label = "vorm"
-        self.vorm.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#WatergreppelStd.vorm"
+        self.vorm.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#WatergreppelStd.vorm"
         self.vorm.definition = "De vorm van de watergreppel."
         self.vorm.constraints = ""
         self.vorm.usagenote = ""

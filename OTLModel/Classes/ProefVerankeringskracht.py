@@ -17,7 +17,7 @@ class ProefVerankeringskracht(Proef):
         """Het resultaat van de test om de verankeringskracht in de BV laag."""
         self.verankeringskracht.naam = "verankeringskracht"
         self.verankeringskracht.label = "verankeringskracht"
-        self.verankeringskracht.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefVerankeringskracht.verankeringskracht"
+        self.verankeringskracht.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefVerankeringskracht.verankeringskracht"
         self.verankeringskracht.definition = "Het resultaat van de test om de verankeringskracht in de BV laag."
         self.verankeringskracht.constraints = ""
         self.verankeringskracht.usagenote = ""

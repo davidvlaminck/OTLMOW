@@ -17,7 +17,7 @@ class ProefGeluidstest(Proef):
         """Het resultaat geluidstest."""
         self.geluidstestrapport.naam = "geluidstestrapport"
         self.geluidstestrapport.label = "geluidstestrapport"
-        self.geluidstestrapport.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefGeluidstest.geluidstestrapport"
+        self.geluidstestrapport.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefGeluidstest.geluidstestrapport"
         self.geluidstestrapport.definition = "Het resultaat geluidstest."
         self.geluidstestrapport.constraints = ""
         self.geluidstestrapport.usagenote = ""

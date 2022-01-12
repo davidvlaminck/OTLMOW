@@ -11,7 +11,7 @@ class KwantWrdInJaar(KwantWrd):
     def __init__(self, waarde=None):
         self.eenheid = LiteralField(naam="standaardEenheid",
                                     label="standaard eenheid",
-                                    uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInJaar.standaardEenheid",
+                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInJaar.standaardEenheid",
                                     definition="De standaard eenheid bij dit datatype is uitgedrukt in jaar.",
                                     constraints='"a"^^cdt:ucumunit',
                                     usagenote='"a"^^cdt:ucumunit',
@@ -21,7 +21,7 @@ class KwantWrdInJaar(KwantWrd):
 
         self.waardeVeld = NonNegIntegerField(naam="waarde",
                                              label="waarde",
-                                             uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInJaar.waarde",
+                                             objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInJaar.waarde",
                                              definition="Bevat een getal die bij het datatype hoort.",
                                              constraints="",
                                              usagenote="",
@@ -30,7 +30,7 @@ class KwantWrdInJaar(KwantWrd):
 
         super().__init__(naam="KwantWrdInJaar",
                          label="Kwantitatieve waarde in aantal jaar",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInJaar",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInJaar",
                          definition="Een kwantitatieve waarde die een getal in aantal jaar uitdrukt.",
                          usagenote="",
                          deprecated_version="",

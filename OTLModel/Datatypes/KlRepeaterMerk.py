@@ -9,7 +9,7 @@ class KlRepeaterMerk(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlRepeaterMerk",
                          label="repeater merk",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlRepeaterMerk",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlRepeaterMerk",
                          definition="Keuzelijst met merknamen voor Repeater.",
                          usagenote="",
                          deprecated_version="",

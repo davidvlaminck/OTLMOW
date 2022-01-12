@@ -27,7 +27,7 @@ class Omvormer(AIMNaamObject):
 
         self.dnsNaam = StringField(naam="dnsNaam",
                                    label="DNS naam",
-                                   uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Omvormer.dnsNaam",
+                                   objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Omvormer.dnsNaam",
                                    definition="De DNSNaam (ook \"volledige domein naam\" genoemd ) is een unieke naam binnen het Domain Name System (DNS), het naamgevingssysteem waarmee computers, webservers, diensten en  toepassing op een unieke manier kunnen worden geïdentificeerd. Deze bevat zowel de hostname en de top level domein naam bv. 120c8-ar1.belfa.be.",
                                    constraints="",
                                    usagenote="",
@@ -38,7 +38,7 @@ class Omvormer(AIMNaamObject):
         """Het IP-adres van de omvormer."""
         self.ipAdres.naam = "ipAdres"
         self.ipAdres.label = "ip adres"
-        self.ipAdres.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Omvormer.ipAdres"
+        self.ipAdres.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Omvormer.ipAdres"
         self.ipAdres.definition = "Het IP-adres van de omvormer."
         self.ipAdres.constraints = ""
         self.ipAdres.usagenote = ""
@@ -47,7 +47,7 @@ class Omvormer(AIMNaamObject):
         self.merk = KeuzelijstField(naam="merk",
                                     label="merk",
                                     lijst=KlOmvormerMerk(),
-                                    uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Omvormer.merk",
+                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Omvormer.merk",
                                     definition="Het merk van de omvormer.",
                                     constraints="",
                                     usagenote="",
@@ -57,7 +57,7 @@ class Omvormer(AIMNaamObject):
         self.modelnaam = KeuzelijstField(naam="modelnaam",
                                          label="modelnaam",
                                          lijst=KlOmvormerModelnaam(),
-                                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Omvormer.modelnaam",
+                                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Omvormer.modelnaam",
                                          definition="De modelnaam van de omvormer.",
                                          constraints="",
                                          usagenote="",
@@ -68,7 +68,7 @@ class Omvormer(AIMNaamObject):
         """Technische fiche van de omvormer."""
         self.technischeFiche.naam = "technischeFiche"
         self.technischeFiche.label = "technische fiche"
-        self.technischeFiche.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Omvormer.technischeFiche"
+        self.technischeFiche.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Omvormer.technischeFiche"
         self.technischeFiche.definition = "Technische fiche van de omvormer."
         self.technischeFiche.constraints = ""
         self.technischeFiche.usagenote = "Bestanden van het type pdf."
@@ -77,7 +77,7 @@ class Omvormer(AIMNaamObject):
         self.type = KeuzelijstField(naam="type",
                                     label="type",
                                     lijst=KlOmvormerType(),
-                                    uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Omvormer.type",
+                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Omvormer.type",
                                     definition="De soort omvorming die gebeurt er in de omvormer.",
                                     constraints="",
                                     usagenote="",

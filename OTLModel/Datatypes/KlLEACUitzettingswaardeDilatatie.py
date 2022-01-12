@@ -9,7 +9,7 @@ class KlLEACUitzettingswaardeDilatatie(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlLEACUitzettingswaardeDilatatie",
                          label="Uitzetttingswaarde dilatatie",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlLEACUitzettingswaardeDilatatie",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlLEACUitzettingswaardeDilatatie",
                          definition="De grootst mogelijke uitzetting die mogelijk is voor een bepaalde dilatatieoplossing.",
                          usagenote="",
                          deprecated_version="",

@@ -17,7 +17,7 @@ class ProefPctHolleruimte(Proef):
         """Het resultaat van het aantal percentage holleruimte meting aanwezig in de laag."""
         self.pctHolleruimte.naam = "pctHolleruimte"
         self.pctHolleruimte.label = "pct holleruimte"
-        self.pctHolleruimte.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefPctHolleruimte.pctHolleruimte"
+        self.pctHolleruimte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefPctHolleruimte.pctHolleruimte"
         self.pctHolleruimte.definition = "Het resultaat van het aantal percentage holleruimte meting aanwezig in de laag."
         self.pctHolleruimte.constraints = ""
         self.pctHolleruimte.usagenote = ""

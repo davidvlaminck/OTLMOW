@@ -9,7 +9,7 @@ class KlWalsmethode(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlWalsmethode",
                          label="Walsmethode",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KlWalsmethode",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KlWalsmethode",
                          definition="De manier waarop het staal is gewalst.",
                          usagenote="",
                          deprecated_version="",

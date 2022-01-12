@@ -9,7 +9,7 @@ class KlStopcontactAantalPolen(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlStopcontactAantalPolen",
                          label="stopcontact aantal polen",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlStopcontactAantalPolen",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlStopcontactAantalPolen",
                          definition="Mogelijke waarden voor het aantal polen van een stopcontact.",
                          usagenote="",
                          deprecated_version="",

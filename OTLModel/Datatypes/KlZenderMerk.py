@@ -9,7 +9,7 @@ class KlZenderMerk(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlZenderMerk",
                          label="zender merk",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlZenderMerk",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlZenderMerk",
                          definition="Keuzelijst met merknamen voor Zender.",
                          usagenote="",
                          deprecated_version="",

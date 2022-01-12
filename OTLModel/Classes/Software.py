@@ -23,7 +23,7 @@ class Software(SoftwareToegang):
         """De endpoints van diensten."""
         self.aangebodenServices.naam = "aangebodenServices"
         self.aangebodenServices.label = "aangeboden services"
-        self.aangebodenServices.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Software.aangebodenServices"
+        self.aangebodenServices.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Software.aangebodenServices"
         self.aangebodenServices.definition = "De endpoints van diensten."
         self.aangebodenServices.constraints = ""
         self.aangebodenServices.usagenote = ""
@@ -31,7 +31,7 @@ class Software(SoftwareToegang):
 
         self.buildnummer = StringField(naam="buildnummer",
                                        label="buildnummer",
-                                       uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Software.buildnummer",
+                                       objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Software.buildnummer",
                                        definition="De software build.",
                                        constraints="",
                                        usagenote="",
@@ -42,7 +42,7 @@ class Software(SoftwareToegang):
         """Afhankelijkheden met andere diensten."""
         self.dependencies.naam = "dependencies"
         self.dependencies.label = "dependencies"
-        self.dependencies.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Software.dependencies"
+        self.dependencies.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Software.dependencies"
         self.dependencies.definition = "Afhankelijkheden met andere diensten."
         self.dependencies.constraints = ""
         self.dependencies.usagenote = ""
@@ -51,7 +51,7 @@ class Software(SoftwareToegang):
         self.licentie = KeuzelijstField(naam="licentie",
                                         label="licentie",
                                         lijst=KlSoftwareLicentie(),
-                                        uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Software.licentie",
+                                        objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Software.licentie",
                                         definition="De licentievorm van de software (bv. commercieel, shareware, freeware, open source [BSD, Apache, GPL],...).",
                                         constraints="",
                                         usagenote="",
@@ -60,7 +60,7 @@ class Software(SoftwareToegang):
 
         self.onlineDocumentatie = URIField(naam="onlineDocumentatie",
                                            label="online documentatie",
-                                           uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Software.onlineDocumentatie",
+                                           objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Software.onlineDocumentatie",
                                            definition="De url waarop documentatie over de software te vinden is.",
                                            constraints="",
                                            usagenote="",
@@ -70,7 +70,7 @@ class Software(SoftwareToegang):
         poortenconfiguratieField = DtcSoftwarePoortconfiguratie()
         poortenconfiguratieField.naam = "poortenconfiguratie"
         poortenconfiguratieField.label = "poortenconfiguratie"
-        poortenconfiguratieField.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Software.poortenconfiguratie"
+        poortenconfiguratieField.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Software.poortenconfiguratie"
         poortenconfiguratieField.definition = "Beschrijft welke poort voor welke service gebruikt wordt."
         poortenconfiguratieField.constraints = ""
         poortenconfiguratieField.usagenote = ""
@@ -80,7 +80,7 @@ class Software(SoftwareToegang):
 
         self.versie = StringField(naam="versie",
                                   label="versie",
-                                  uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Software.versie",
+                                  objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Software.versie",
                                   definition="Het versienummer van de software.",
                                   constraints="",
                                   usagenote="",

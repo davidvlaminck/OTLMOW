@@ -16,7 +16,7 @@ class TypeWeggebruiker(ABC):
         self.typeWeggebruiker = KeuzelijstField(naam="typeWeggebruiker",
                                                 label="type weggebruiker",
                                                 lijst=KlVriTypeweggebruiker(),
-                                                uri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#TypeWeggebruiker.typeWeggebruiker",
+                                                objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#TypeWeggebruiker.typeWeggebruiker",
                                                 definition="het type weggebruiker.",
                                                 constraints="",
                                                 usagenote="",

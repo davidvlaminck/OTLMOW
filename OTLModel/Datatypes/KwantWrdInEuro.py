@@ -11,7 +11,7 @@ class KwantWrdInEuro(KwantWrd):
     def __init__(self, waarde=None):
         self.eenheid = LiteralField(naam="standaardEenheid",
                                     label="standaard eenheid",
-                                    uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInEuro.standaardEenheid",
+                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInEuro.standaardEenheid",
                                     definition="De standaard eenheid bij dit datatype is uitgedrukt in Euro.",
                                     constraints='"{Euro}"^^cdt:ucumunit',
                                     usagenote='"{Euro}"^^cdt:ucumunit',
@@ -21,7 +21,7 @@ class KwantWrdInEuro(KwantWrd):
 
         self.waardeVeld = DecimalFloatField(naam="waarde",
                                             label="waarde",
-                                            uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInEuro.waarde",
+                                            objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInEuro.waarde",
                                             definition="Bevat een getal die bij het datatype hoort.",
                                             constraints="",
                                             usagenote="",
@@ -30,7 +30,7 @@ class KwantWrdInEuro(KwantWrd):
 
         super().__init__(naam="KwantWrdInEuro",
                          label="Kwantitatieve waarde in euro",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInEuro",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInEuro",
                          definition="Een kwantitatieve waarde die een getal in Euro uitdrukt.",
                          usagenote="",
                          deprecated_version="",

@@ -9,7 +9,7 @@ class KlCADOModelnaam(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlCADOModelnaam",
                          label="Calamiteitendoorsteek modelnaam",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlCADOModelnaam",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlCADOModelnaam",
                          definition="De modelnaam van de calamiteitendoorsteek.",
                          usagenote="",
                          deprecated_version="",

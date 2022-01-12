@@ -9,7 +9,7 @@ class KlDynBordRVMSModelnaam(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlDynBordRVMSModelnaam",
                          label="Dyn bord RVMS modelnaam",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlDynBordRVMSModelnaam",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlDynBordRVMSModelnaam",
                          definition="Keuzelijst met de gangbare modelnamen van RVMS borden. De modelnamen worden meestal door de leverancier of fabrikant bepaald.",
                          usagenote="",
                          deprecated_version="",

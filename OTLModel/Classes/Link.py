@@ -18,7 +18,7 @@ class Link(NaampadObject):
 
         self.geleidingsgroepTnummer = IntegerField(naam="geleidingsgroepTnummer",
                                                    label="geleidingsgroep T-nummer",
-                                                   uri="https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Link.geleidingsgroepTnummer",
+                                                   objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Link.geleidingsgroepTnummer",
                                                    definition="T-nummer van de geleidingsgroep in de kabelnet toepassing.",
                                                    constraints="",
                                                    usagenote="",
@@ -28,7 +28,7 @@ class Link(NaampadObject):
         self.mediumtype = KeuzelijstField(naam="mediumtype",
                                           label="mediumtype",
                                           lijst=KlNetwerklinkMediumtype(),
-                                          uri="https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Link.mediumtype",
+                                          objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Link.mediumtype",
                                           definition="Geeft aan hoe de verbinding tussen Netwerkelementen fysiek gerealiseerd wordt",
                                           constraints="",
                                           usagenote="",
@@ -37,7 +37,7 @@ class Link(NaampadObject):
 
         self.ring = StringField(naam="ring",
                                 label="ring",
-                                uri="https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Link.ring",
+                                objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Link.ring",
                                 definition="Naam van de ringstructuur in het transport netwerk.",
                                 constraints="",
                                 usagenote="",

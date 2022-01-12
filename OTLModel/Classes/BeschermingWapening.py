@@ -17,7 +17,7 @@ class BeschermingWapening(AndereLaag):
         self.type = KeuzelijstField(naam="type",
                                     label="type",
                                     lijst=KlBeschermingWapeningType(),
-                                    uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#BeschermingWapening.type",
+                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#BeschermingWapening.type",
                                     definition="Het type bescherming of wapening.",
                                     constraints="",
                                     usagenote="",

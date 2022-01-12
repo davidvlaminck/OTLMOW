@@ -9,7 +9,7 @@ class KlVerwarmingselementModelnaam(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlVerwarmingselementModelnaam",
                          label="Verwarmingselement model naam",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlVerwarmingselementModelnaam",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlVerwarmingselementModelnaam",
                          definition="Keuzelijst van modellen van verwarmingselementen voor alle relevante merken.",
                          usagenote="",
                          deprecated_version="",

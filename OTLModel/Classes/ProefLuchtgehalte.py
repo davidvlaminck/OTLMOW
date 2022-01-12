@@ -17,7 +17,7 @@ class ProefLuchtgehalte(Proef):
         """Proefresultaten van het luchtgehalte."""
         self.luchtgehalte.naam = "luchtgehalte"
         self.luchtgehalte.label = "luchtgehalte"
-        self.luchtgehalte.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefLuchtgehalte.luchtgehalte"
+        self.luchtgehalte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefLuchtgehalte.luchtgehalte"
         self.luchtgehalte.definition = "Proefresultaten van het luchtgehalte."
         self.luchtgehalte.constraints = ""
         self.luchtgehalte.usagenote = ""

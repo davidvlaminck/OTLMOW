@@ -17,7 +17,7 @@ class ProefVlakheid(Proef):
         """Proefresultaten van de vlakheid."""
         self.vlakheid.naam = "vlakheid"
         self.vlakheid.label = "vlakheid"
-        self.vlakheid.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefVlakheid.vlakheid"
+        self.vlakheid.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefVlakheid.vlakheid"
         self.vlakheid.definition = "Proefresultaten van de vlakheid."
         self.vlakheid.constraints = ""
         self.vlakheid.usagenote = ""

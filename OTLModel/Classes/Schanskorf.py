@@ -22,7 +22,7 @@ class Schanskorf(AndereVerharding):
 
         self.heeftVerankeringspalen = BooleanField(naam="heeftVerankeringspalen",
                                                    label="heeft verankeringspalen",
-                                                   uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Schanskorf.heeftVerankeringspalen",
+                                                   objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Schanskorf.heeftVerankeringspalen",
                                                    definition="Aanduiding of de palen de functie hebben om een schanskorf te verankeren.",
                                                    constraints="",
                                                    usagenote="",
@@ -31,7 +31,7 @@ class Schanskorf(AndereVerharding):
 
         self.isGegalvaniseerd = BooleanField(naam="isGegalvaniseerd",
                                              label="is gegalvaniseerd",
-                                             uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Schanskorf.isGegalvaniseerd",
+                                             objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Schanskorf.isGegalvaniseerd",
                                              definition="Aanduiding of de schanskorf gegalvaniseerd is.",
                                              constraints="",
                                              usagenote="",
@@ -40,7 +40,7 @@ class Schanskorf(AndereVerharding):
 
         self.isGelast = BooleanField(naam="isGelast",
                                      label="is gelast",
-                                     uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Schanskorf.isGelast",
+                                     objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Schanskorf.isGelast",
                                      definition="Aanduiding of de schanskorf gelast is.",
                                      constraints="",
                                      usagenote="",
@@ -50,7 +50,7 @@ class Schanskorf(AndereVerharding):
         self.kaliber = KeuzelijstField(naam="kaliber",
                                        label="kaliber",
                                        lijst=KlStortsteenKaliber(),
-                                       uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Schanskorf.kaliber",
+                                       objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Schanskorf.kaliber",
                                        definition="Het kaliber of gemiddelde diameter van de stenen in de schanskorf.",
                                        constraints="",
                                        usagenote="",
@@ -60,7 +60,7 @@ class Schanskorf(AndereVerharding):
         self.materiaalVulling = KeuzelijstField(naam="materiaalVulling",
                                                 label="materiaalvulling",
                                                 lijst=KlStortsteenType(),
-                                                uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Schanskorf.materiaalVulling",
+                                                objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Schanskorf.materiaalVulling",
                                                 definition="Het soort stenen waaruit de opvulling van een schanskorf bestaat.",
                                                 constraints="",
                                                 usagenote="",
@@ -70,7 +70,7 @@ class Schanskorf(AndereVerharding):
         technischeFicheField = DtcDocument()
         technischeFicheField.naam = "technischeFiche"
         technischeFicheField.label = "technische fiche"
-        technischeFicheField.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Schanskorf.technischeFiche"
+        technischeFicheField.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Schanskorf.technischeFiche"
         technischeFicheField.definition = "De technische fiche van de schanskorven als bijlage."
         technischeFicheField.constraints = ""
         technischeFicheField.usagenote = ""
@@ -81,7 +81,7 @@ class Schanskorf(AndereVerharding):
         self.type = KeuzelijstField(naam="type",
                                     label="type",
                                     lijst=KlTypeSchanskorf(),
-                                    uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Schanskorf.type",
+                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Schanskorf.type",
                                     definition="Duidt het type schanskorf aan.",
                                     constraints="",
                                     usagenote="",
@@ -91,7 +91,7 @@ class Schanskorf(AndereVerharding):
         self.vorm = KeuzelijstField(naam="vorm",
                                     label="vorm",
                                     lijst=KlSchanskorfVorm(),
-                                    uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Schanskorf.vorm",
+                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Schanskorf.vorm",
                                     definition="De gebruikte vorm van de schanskorf.",
                                     constraints="",
                                     usagenote="",

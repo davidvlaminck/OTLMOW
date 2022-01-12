@@ -9,7 +9,7 @@ class KlHulppostkastType(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlHulppostkastType",
                          label="Hulppostkast type",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlHulppostkastType",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlHulppostkastType",
                          definition="Lijst met al dan niet gestandaardiseerde types voor hulppostkasten.",
                          usagenote="",
                          deprecated_version="",

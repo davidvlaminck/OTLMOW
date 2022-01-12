@@ -9,7 +9,7 @@ class KlWeggebondendetectorMerk(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlWeggebondendetectorMerk",
                          label="Weggebondendetector merk",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlWeggebondendetectorMerk",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlWeggebondendetectorMerk",
                          definition="Keuzelijst met merknamen voor Weggebondendetector.",
                          usagenote="",
                          deprecated_version="",

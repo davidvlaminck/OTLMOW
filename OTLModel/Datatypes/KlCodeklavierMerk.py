@@ -9,7 +9,7 @@ class KlCodeklavierMerk(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlCodeklavierMerk",
                          label="Codeklavier merk",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlCodeklavierMerk",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlCodeklavierMerk",
                          definition="Het merk van het codeklavier.",
                          usagenote="",
                          deprecated_version="",

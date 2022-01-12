@@ -9,7 +9,7 @@ class KlANPRMerk(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlANPRMerk",
                          label="ANPR-camera merk",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlANPRMerk",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlANPRMerk",
                          definition="Het merk van de ANPR-camera.",
                          usagenote="",
                          deprecated_version="",

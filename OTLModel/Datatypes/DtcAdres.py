@@ -13,14 +13,14 @@ class DtcAdres(ComplexField):
     def __init__(self):
         super().__init__(naam="DtcAdres",
                          label="Adres",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAdres",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAdres",
                          definition="Complex datatype voor de aanduiding van een bepaalde locatie, doorgaans van een huis, woning, gebouw of faciliteit, op de aarde.",
                          usagenote="",
                          deprecated_version="")
 
         self.waarde.bus = StringField(naam="bus",
                                       label="bus",
-                                      uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAdres.bus",
+                                      objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAdres.bus",
                                       definition="Een nummer dat de postbus aanduidt.",
                                       constraints="",
                                       usagenote="",
@@ -31,7 +31,7 @@ class DtcAdres(ComplexField):
         self.waarde.gemeente = KeuzelijstField(naam="gemeente",
                                                label="gemeente",
                                                lijst=KlAlgGemeente(),
-                                               uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAdres.gemeente",
+                                               objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAdres.gemeente",
                                                definition="De bestuurlijke eenheid waarin het adres gelegen is.",
                                                constraints="",
                                                usagenote="",
@@ -41,7 +41,7 @@ class DtcAdres(ComplexField):
 
         self.waarde.huisnummer = StringField(naam="huisnummer",
                                              label="huisnummer",
-                                             uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAdres.huisnummer",
+                                             objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAdres.huisnummer",
                                              definition="Een nummer dat door de gemeente aan bv. een huis wordt toegekend.",
                                              constraints="",
                                              usagenote="",
@@ -51,7 +51,7 @@ class DtcAdres(ComplexField):
 
         self.waarde.postcode = StringField(naam="postcode",
                                            label="postcode",
-                                           uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAdres.postcode",
+                                           objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAdres.postcode",
                                            definition="Een korte reeks tekens die in het postadres wordt opgenomen.",
                                            constraints="",
                                            usagenote="",
@@ -62,7 +62,7 @@ class DtcAdres(ComplexField):
         self.waarde.provincie = KeuzelijstField(naam="provincie",
                                                 label="provincie",
                                                 lijst=KlAlgProvincie(),
-                                                uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAdres.provincie",
+                                                objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAdres.provincie",
                                                 definition="Het deelgebied waarin het adres gelegen is.",
                                                 constraints="",
                                                 usagenote="",
@@ -72,7 +72,7 @@ class DtcAdres(ComplexField):
 
         self.waarde.straatnaam = StringField(naam="straatnaam",
                                              label="straatnaam",
-                                             uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAdres.straatnaam",
+                                             objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAdres.straatnaam",
                                              definition="De naam van de straat.",
                                              constraints="",
                                              usagenote="",

@@ -17,7 +17,7 @@ class ProefNaderOnderzoekTomograaf(Proef):
 
         self.inclusiefElektrisch = BooleanField(naam="inclusiefElektrisch",
                                                 label="inclusief elektrisch",
-                                                uri="https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefNaderOnderzoekTomograaf.inclusiefElektrisch",
+                                                objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefNaderOnderzoekTomograaf.inclusiefElektrisch",
                                                 definition="Aanduiding of naast een geluidsweerstandstomografie ook een elektrische weerstandstomografie gebeurd is.",
                                                 constraints="",
                                                 usagenote="",
@@ -27,7 +27,7 @@ class ProefNaderOnderzoekTomograaf(Proef):
         naderOnderzoekTomograafField = DtcDocument()
         naderOnderzoekTomograafField.naam = "naderOnderzoekTomograaf"
         naderOnderzoekTomograafField.label = "nader onderzoek tomograaf"
-        naderOnderzoekTomograafField.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefNaderOnderzoekTomograaf.naderOnderzoekTomograaf"
+        naderOnderzoekTomograafField.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefNaderOnderzoekTomograaf.naderOnderzoekTomograaf"
         naderOnderzoekTomograafField.definition = "Het resultaat van de tomograaf proef."
         naderOnderzoekTomograafField.constraints = ""
         naderOnderzoekTomograafField.usagenote = ""

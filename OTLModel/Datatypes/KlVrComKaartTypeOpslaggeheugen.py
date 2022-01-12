@@ -9,7 +9,7 @@ class KlVrComKaartTypeOpslaggeheugen(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlVrComKaartTypeOpslaggeheugen",
                          label="VR-communicatiekaart type opslaggeheugen",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlVrComKaartTypeOpslaggeheugen",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlVrComKaartTypeOpslaggeheugen",
                          definition="Keuzelijst met verschillende types geheugen van een VRCommunicatiekaart.",
                          usagenote="",
                          deprecated_version="",

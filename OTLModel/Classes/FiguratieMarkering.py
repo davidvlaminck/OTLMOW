@@ -20,7 +20,7 @@ class FiguratieMarkering(FiguratieMarkeringToegang):
         self.code = KeuzelijstField(naam="code",
                                     label="code",
                                     lijst=KlFiguratieCode(),
-                                    uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#FiguratieMarkering.code",
+                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#FiguratieMarkering.code",
                                     definition="De code van de figuratie markering.",
                                     constraints="",
                                     usagenote="",
@@ -31,7 +31,7 @@ class FiguratieMarkering(FiguratieMarkeringToegang):
         """De oppervlakte van de markering zoals beschreven in de algemene omzendbrief."""
         self.oppervlakte.naam = "oppervlakte"
         self.oppervlakte.label = "oppervlakte"
-        self.oppervlakte.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#FiguratieMarkering.oppervlakte"
+        self.oppervlakte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#FiguratieMarkering.oppervlakte"
         self.oppervlakte.definition = "De oppervlakte van de markering zoals beschreven in de algemene omzendbrief."
         self.oppervlakte.constraints = ""
         self.oppervlakte.usagenote = ""
@@ -40,7 +40,7 @@ class FiguratieMarkering(FiguratieMarkeringToegang):
         self.soortOmschrijving = KeuzelijstField(naam="soortOmschrijving",
                                                  label="soort omschrijving",
                                                  lijst=KlFiguratieSoort(),
-                                                 uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#FiguratieMarkering.soortOmschrijving",
+                                                 objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#FiguratieMarkering.soortOmschrijving",
                                                  definition="De soort en tevens de omschrijving van de figuratie markering.",
                                                  constraints="",
                                                  usagenote="",
@@ -50,7 +50,7 @@ class FiguratieMarkering(FiguratieMarkeringToegang):
         self.type = KeuzelijstField(naam="type",
                                     label="type",
                                     lijst=KlFiguratieType(),
-                                    uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#FiguratieMarkering.type",
+                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#FiguratieMarkering.type",
                                     definition="Het type van figuratie markering.",
                                     constraints="",
                                     usagenote="",

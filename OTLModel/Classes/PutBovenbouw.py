@@ -28,7 +28,7 @@ class PutBovenbouw(AIMObject):
         """Breedte-afmeting van het deksel in centimeter. Bij vierkante en cirkelvormige deksels is deze waarde gelijk aan de hoogte."""
         self.breedte.naam = "breedte"
         self.breedte.label = "breedte"
-        self.breedte.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#PutBovenbouw.breedte"
+        self.breedte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#PutBovenbouw.breedte"
         self.breedte.definition = "Breedte-afmeting van het deksel in centimeter. Bij vierkante en cirkelvormige deksels is deze waarde gelijk aan de hoogte."
         self.breedte.constraints = ""
         self.breedte.usagenote = ""
@@ -37,7 +37,7 @@ class PutBovenbouw(AIMObject):
         self.dekselklasse = KeuzelijstField(naam="dekselklasse",
                                             label="dekselklasse",
                                             lijst=KlDekselKlasse(),
-                                            uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#PutBovenbouw.dekselklasse",
+                                            objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#PutBovenbouw.dekselklasse",
                                             definition="Bepaalt de mate waarin het deksel van de bovenbouw belast kan worden door voertuigen.",
                                             constraints="",
                                             usagenote="",
@@ -47,7 +47,7 @@ class PutBovenbouw(AIMObject):
         self.dekselvorm = KeuzelijstField(naam="dekselvorm",
                                           label="dekselvorm",
                                           lijst=KlRioleringVorm(),
-                                          uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#PutBovenbouw.dekselvorm",
+                                          objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#PutBovenbouw.dekselvorm",
                                           definition="Bepaalt de vorm van het deksel.",
                                           constraints="",
                                           usagenote="",
@@ -58,7 +58,7 @@ class PutBovenbouw(AIMObject):
         """Hoogte-afmeting van het deksel in centimeter. Bij vierkante en cirkelvormige deksels is deze waarde gelijk aan de breedte."""
         self.hoogte.naam = "hoogte"
         self.hoogte.label = "hoogte"
-        self.hoogte.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#PutBovenbouw.hoogte"
+        self.hoogte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#PutBovenbouw.hoogte"
         self.hoogte.definition = "Hoogte-afmeting van het deksel in centimeter. Bij vierkante en cirkelvormige deksels is deze waarde gelijk aan de breedte."
         self.hoogte.constraints = ""
         self.hoogte.usagenote = ""
@@ -66,7 +66,7 @@ class PutBovenbouw(AIMObject):
 
         self.isAfgesloten = BooleanField(naam="isAfgesloten",
                                          label="is afgesloten",
-                                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#PutBovenbouw.isAfgesloten",
+                                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#PutBovenbouw.isAfgesloten",
                                          definition="Bepaling of de afsluitinrichting vergrendeld is of niet.",
                                          constraints="",
                                          usagenote="",
@@ -75,7 +75,7 @@ class PutBovenbouw(AIMObject):
 
         self.isScharnierend = BooleanField(naam="isScharnierend",
                                            label="is scharnierend",
-                                           uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#PutBovenbouw.isScharnierend",
+                                           objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#PutBovenbouw.isScharnierend",
                                            definition="Het deksel is al of niet bevestigd met een scharnier.",
                                            constraints="",
                                            usagenote="",
@@ -84,7 +84,7 @@ class PutBovenbouw(AIMObject):
 
         self.isWaterdichtVergrendeld = BooleanField(naam="isWaterdichtVergrendeld",
                                                     label="Is waterdicht vergrendeld",
-                                                    uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#PutBovenbouw.isWaterdichtVergrendeld",
+                                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#PutBovenbouw.isWaterdichtVergrendeld",
                                                     definition="Geeft aan of de bovenbouw al dan niet waterdicht vergrendeld is zodat het water zich niet boven de bovenbouw kan begeven.",
                                                     constraints="",
                                                     usagenote="",
@@ -94,7 +94,7 @@ class PutBovenbouw(AIMObject):
         self.kader = KeuzelijstField(naam="kader",
                                      label="kader",
                                      lijst=KlDekselKaderType(),
-                                     uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#PutBovenbouw.kader",
+                                     objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#PutBovenbouw.kader",
                                      definition="Bepaalt het type van het dekselkader.",
                                      constraints="",
                                      usagenote="",
@@ -104,7 +104,7 @@ class PutBovenbouw(AIMObject):
         self.materiaal = KeuzelijstField(naam="materiaal",
                                          label="materiaal",
                                          lijst=KlDekselMateriaal(),
-                                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#PutBovenbouw.materiaal",
+                                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#PutBovenbouw.materiaal",
                                          definition="Het materiaal waaruit het deksel van de bovenbouw is vervaardigd.",
                                          constraints="",
                                          usagenote="",
@@ -115,7 +115,7 @@ class PutBovenbouw(AIMObject):
         """De oppervlakte van het zichtbare deel van de bovenbouw in vierkante meter."""
         self.oppervlakte.naam = "oppervlakte"
         self.oppervlakte.label = "oppervlakte"
-        self.oppervlakte.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#PutBovenbouw.oppervlakte"
+        self.oppervlakte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#PutBovenbouw.oppervlakte"
         self.oppervlakte.definition = "De oppervlakte van het zichtbare deel van de bovenbouw in vierkante meter."
         self.oppervlakte.constraints = ""
         self.oppervlakte.usagenote = ""
@@ -124,7 +124,7 @@ class PutBovenbouw(AIMObject):
         self.regeling = KeuzelijstField(naam="regeling",
                                         label="regeling",
                                         lijst=KlDekselRegeling(),
-                                        uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#PutBovenbouw.regeling",
+                                        objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#PutBovenbouw.regeling",
                                         definition="De wijze hoe de regeling van het deksel is uitgevoerd.",
                                         constraints="",
                                         usagenote="",
@@ -134,7 +134,7 @@ class PutBovenbouw(AIMObject):
         technischeFicheField = DtcDocument()
         technischeFicheField.naam = "technischeFiche"
         technischeFicheField.label = "technische fiche"
-        technischeFicheField.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#PutBovenbouw.technischeFiche"
+        technischeFicheField.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#PutBovenbouw.technischeFiche"
         technischeFicheField.definition = "De technische fiche van de bovenbouw."
         technischeFicheField.constraints = ""
         technischeFicheField.usagenote = "Bestanden van het type xlsx of pdf."
@@ -145,7 +145,7 @@ class PutBovenbouw(AIMObject):
         self.vergrendeling = KeuzelijstField(naam="vergrendeling",
                                              label="vergrendeling",
                                              lijst=KlDekselVergrendeling(),
-                                             uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#PutBovenbouw.vergrendeling",
+                                             objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#PutBovenbouw.vergrendeling",
                                              definition="Bepaalt het type sleutel voor het ontgrendelen van het deksel.",
                                              constraints="",
                                              usagenote="",

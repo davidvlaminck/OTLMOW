@@ -20,7 +20,7 @@ class Hoogtedetectie(AIMNaamObject):
         """De ingestelde hoogtelimiet waarboven het systeem voor hoogtedetectie een detectiesignaal moet uitsturen."""
         self.detectiehoogte.naam = "detectiehoogte"
         self.detectiehoogte.label = "detectiehoogte"
-        self.detectiehoogte.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Hoogtedetectie.detectiehoogte"
+        self.detectiehoogte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Hoogtedetectie.detectiehoogte"
         self.detectiehoogte.definition = "De ingestelde hoogtelimiet waarboven het systeem voor hoogtedetectie een detectiesignaal moet uitsturen."
         self.detectiehoogte.constraints = ""
         self.detectiehoogte.usagenote = ""
@@ -29,7 +29,7 @@ class Hoogtedetectie(AIMNaamObject):
         self.merk = KeuzelijstField(naam="merk",
                                     label="merk",
                                     lijst=KlHoogtedetectieMerk(),
-                                    uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Hoogtedetectie.merk",
+                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Hoogtedetectie.merk",
                                     definition="Merknaam van het systeem voor hoogtedetectie.Verwijst naar de fabrikant of producent.",
                                     constraints="",
                                     usagenote="volgens een keuzelijst",
@@ -39,7 +39,7 @@ class Hoogtedetectie(AIMNaamObject):
         self.modelnaam = KeuzelijstField(naam="modelnaam",
                                          label="modelnaam",
                                          lijst=KlHoogtedetectieModelnaam(),
-                                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Hoogtedetectie.modelnaam",
+                                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Hoogtedetectie.modelnaam",
                                          definition="De modelnaam van de hoogtedetectie.",
                                          constraints="",
                                          usagenote="Uit een keuzelijst.",

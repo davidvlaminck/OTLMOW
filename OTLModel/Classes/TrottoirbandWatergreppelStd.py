@@ -20,7 +20,7 @@ class TrottoirbandWatergreppelStd(GestandaardiseerdeKantopsluiting):
         """De gestandaardiseerde trottoirband_watergreppel volgens aangeduide norm."""
         self.norm.naam = "norm"
         self.norm.label = "norm"
-        self.norm.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#TrottoirbandWatergreppelStd.norm"
+        self.norm.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#TrottoirbandWatergreppelStd.norm"
         self.norm.definition = "De gestandaardiseerde trottoirband_watergreppel volgens aangeduide norm."
         self.norm.constraints = ""
         self.norm.usagenote = ""
@@ -29,7 +29,7 @@ class TrottoirbandWatergreppelStd(GestandaardiseerdeKantopsluiting):
         self.type = KeuzelijstField(naam="type",
                                     label="type",
                                     lijst=KlLETrottoirbandWatergreppelType(),
-                                    uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#TrottoirbandWatergreppelStd.type",
+                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#TrottoirbandWatergreppelStd.type",
                                     definition="Het type van gestandaardiseerde trottoirband_watergreppel.",
                                     constraints="",
                                     usagenote="",
@@ -40,7 +40,7 @@ class TrottoirbandWatergreppelStd(GestandaardiseerdeKantopsluiting):
         """De vorm van de gestandaardiseerde trottoirband_watergreppel."""
         self.vorm.naam = "vorm"
         self.vorm.label = "vorm"
-        self.vorm.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#TrottoirbandWatergreppelStd.vorm"
+        self.vorm.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#TrottoirbandWatergreppelStd.vorm"
         self.vorm.definition = "De vorm van de gestandaardiseerde trottoirband_watergreppel."
         self.vorm.constraints = ""
         self.vorm.usagenote = ""

@@ -17,7 +17,7 @@ class ProefHechtsterkte(Proef):
         """Proef om de hechtsterkte van de laag te bepalen."""
         self.hechtsterkte.naam = "hechtsterkte"
         self.hechtsterkte.label = "hechtsterkte"
-        self.hechtsterkte.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefHechtsterkte.hechtsterkte"
+        self.hechtsterkte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefHechtsterkte.hechtsterkte"
         self.hechtsterkte.definition = "Proef om de hechtsterkte van de laag te bepalen."
         self.hechtsterkte.constraints = ""
         self.hechtsterkte.usagenote = ""

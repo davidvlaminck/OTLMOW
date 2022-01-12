@@ -22,7 +22,7 @@ class LEDDriver(AIMObject):
         """Maximaal afgenomen vermogen van de driver en lamp samen (incl. verlies/verbruik van de driver zelf)."""
         self.maximaalVermogen.naam = "maximaalVermogen"
         self.maximaalVermogen.label = "maximaal vermogen"
-        self.maximaalVermogen.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#LEDDriver.maximaalVermogen"
+        self.maximaalVermogen.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#LEDDriver.maximaalVermogen"
         self.maximaalVermogen.definition = "Maximaal afgenomen vermogen van de driver en lamp samen (incl. verlies/verbruik van de driver zelf)."
         self.maximaalVermogen.constraints = ""
         self.maximaalVermogen.usagenote = ""
@@ -32,7 +32,7 @@ class LEDDriver(AIMObject):
         """Maximale aanstuurstroom die de LED driver kan leveren."""
         self.maximaleAanstuurstroom.naam = "maximaleAanstuurstroom"
         self.maximaleAanstuurstroom.label = "maximale aanstuurstroom"
-        self.maximaleAanstuurstroom.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#LEDDriver.maximaleAanstuurstroom"
+        self.maximaleAanstuurstroom.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#LEDDriver.maximaleAanstuurstroom"
         self.maximaleAanstuurstroom.definition = "Maximale aanstuurstroom die de LED driver kan leveren."
         self.maximaleAanstuurstroom.constraints = ""
         self.maximaleAanstuurstroom.usagenote = ""
@@ -41,7 +41,7 @@ class LEDDriver(AIMObject):
         self.merk = KeuzelijstField(naam="merk",
                                     label="merk",
                                     lijst=KlLEDDriverMerk(),
-                                    uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#LEDDriver.merk",
+                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#LEDDriver.merk",
                                     definition="Het merk van de LED-driver.",
                                     constraints="",
                                     usagenote="",
@@ -51,7 +51,7 @@ class LEDDriver(AIMObject):
         self.modelnaam = KeuzelijstField(naam="modelnaam",
                                          label="modelnaam",
                                          lijst=KlLEDDriverModelnaam(),
-                                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#LEDDriver.modelnaam",
+                                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#LEDDriver.modelnaam",
                                          definition="De modelnaam van de LED-driver.",
                                          constraints="",
                                          usagenote="",
@@ -61,7 +61,7 @@ class LEDDriver(AIMObject):
         self.protocol = KeuzelijstField(naam="protocol",
                                         label="protocol",
                                         lijst=KlLEDDriverProtocol(),
-                                        uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#LEDDriver.protocol",
+                                        objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#LEDDriver.protocol",
                                         definition="Protocol gebruikt door de LED driver voor het aansturen van de LED's.",
                                         constraints="",
                                         usagenote="",

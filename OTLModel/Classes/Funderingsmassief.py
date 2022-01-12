@@ -22,7 +22,7 @@ class Funderingsmassief(Fundering):
         """De afmetingen van het grondvlak van de fundering volgens zijn vorm."""
         self.afmetingGrondvlak.naam = "afmetingGrondvlak"
         self.afmetingGrondvlak.label = "afmeting grondvlak"
-        self.afmetingGrondvlak.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Funderingsmassief.afmetingGrondvlak"
+        self.afmetingGrondvlak.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Funderingsmassief.afmetingGrondvlak"
         self.afmetingGrondvlak.definition = "De afmetingen van het grondvlak van de fundering volgens zijn vorm."
         self.afmetingGrondvlak.constraints = ""
         self.afmetingGrondvlak.usagenote = ""
@@ -32,7 +32,7 @@ class Funderingsmassief(Fundering):
         """De afstand tussen het laagste punt van de onderkant en hoogste punt van de bovenkant van de fundering."""
         self.funderingshoogte.naam = "funderingshoogte"
         self.funderingshoogte.label = "funderingshoogte"
-        self.funderingshoogte.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Funderingsmassief.funderingshoogte"
+        self.funderingshoogte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Funderingsmassief.funderingshoogte"
         self.funderingshoogte.definition = "De afstand tussen het laagste punt van de onderkant en hoogste punt van de bovenkant van de fundering."
         self.funderingshoogte.constraints = ""
         self.funderingshoogte.usagenote = ""
@@ -40,7 +40,7 @@ class Funderingsmassief(Fundering):
 
         self.isPermanent = BooleanField(naam="isPermanent",
                                         label="is permanent",
-                                        uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Funderingsmassief.isPermanent",
+                                        objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Funderingsmassief.isPermanent",
                                         definition="Bepaalt of de fundering (en het gefundeerd object) blijvend is.",
                                         constraints="",
                                         usagenote="",
@@ -49,7 +49,7 @@ class Funderingsmassief(Fundering):
 
         self.isPrefab = BooleanField(naam="isPrefab",
                                      label="is prefab",
-                                     uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Funderingsmassief.isPrefab",
+                                     objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Funderingsmassief.isPrefab",
                                      definition="Bepaalt of de fundering ter plaatse gestort is of als geprefabriceerd element aangevoerd.",
                                      constraints="",
                                      usagenote="",
@@ -59,7 +59,7 @@ class Funderingsmassief(Fundering):
         self.materiaal = KeuzelijstField(naam="materiaal",
                                          label="materiaal",
                                          lijst=KlAlgMateriaal(),
-                                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Funderingsmassief.materiaal",
+                                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Funderingsmassief.materiaal",
                                          definition="De grondstof waaruit het funderingsmassief gemaakt is. ",
                                          constraints="",
                                          usagenote="",
@@ -70,7 +70,7 @@ class Funderingsmassief(Fundering):
         """Het volume in kubieke meter van het funderingsmassief."""
         self.volume.naam = "volume"
         self.volume.label = "volume"
-        self.volume.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Funderingsmassief.volume"
+        self.volume.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Funderingsmassief.volume"
         self.volume.definition = "Het volume in kubieke meter van het funderingsmassief."
         self.volume.constraints = ""
         self.volume.usagenote = ""

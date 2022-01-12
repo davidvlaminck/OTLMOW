@@ -9,7 +9,7 @@ class KlSDRKlasse(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlSDRKlasse",
                          label="SDR klasse",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlSDRKlasse",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlSDRKlasse",
                          definition="De verhouding tussen de wanddikte en de diameter van de persleiding.",
                          usagenote="",
                          deprecated_version="",

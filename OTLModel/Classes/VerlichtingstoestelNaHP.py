@@ -23,7 +23,7 @@ class VerlichtingstoestelNaHP(VerlichtingstoestelConnector, Verlichtingstoestel)
         """De kleur van de zichtbare buitenkant van het verlichtingstoestel."""
         self.armatuurkleur.naam = "armatuurkleur"
         self.armatuurkleur.label = "armatuurkleur"
-        self.armatuurkleur.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#VerlichtingstoestelNaHP.armatuurkleur"
+        self.armatuurkleur.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#VerlichtingstoestelNaHP.armatuurkleur"
         self.armatuurkleur.definition = "De kleur van de zichtbare buitenkant van het verlichtingstoestel."
         self.armatuurkleur.constraints = ""
         self.armatuurkleur.usagenote = ""
@@ -31,7 +31,7 @@ class VerlichtingstoestelNaHP(VerlichtingstoestelConnector, Verlichtingstoestel)
 
         self.heeftAntiVandalisme = BooleanField(naam="heeftAntiVandalisme",
                                                 label="heeft anti-vandalisme",
-                                                uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#VerlichtingstoestelNaHP.heeftAntiVandalisme",
+                                                objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#VerlichtingstoestelNaHP.heeftAntiVandalisme",
                                                 definition="Is het een antivandalisme type verlichtingstoestel?",
                                                 constraints="",
                                                 usagenote="",
@@ -40,7 +40,7 @@ class VerlichtingstoestelNaHP(VerlichtingstoestelConnector, Verlichtingstoestel)
 
         self.heeftSperfilter = BooleanField(naam="heeftSperfilter",
                                             label="heeft sperfilter",
-                                            uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#VerlichtingstoestelNaHP.heeftSperfilter",
+                                            objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#VerlichtingstoestelNaHP.heeftSperfilter",
                                             definition="Is er een sperfilter aanwezig?",
                                             constraints="",
                                             usagenote="",

@@ -23,7 +23,7 @@ class GekleurdWegvlakMarkering(Markering, AOWSType):
         """De breedte van de markering in meter."""
         self.breedte.naam = "breedte"
         self.breedte.label = "breedte"
-        self.breedte.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#GekleurdWegvlakMarkering.breedte"
+        self.breedte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#GekleurdWegvlakMarkering.breedte"
         self.breedte.definition = "De breedte van de markering in meter."
         self.breedte.constraints = ""
         self.breedte.usagenote = ""
@@ -32,7 +32,7 @@ class GekleurdWegvlakMarkering(Markering, AOWSType):
         self.code = KeuzelijstField(naam="code",
                                     label="code",
                                     lijst=KlGekleurdWVCode(),
-                                    uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#GekleurdWegvlakMarkering.code",
+                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#GekleurdWegvlakMarkering.code",
                                     definition="De  (COPRO/BENOR) code van de gekleurde wegvlak markering.",
                                     constraints="",
                                     usagenote="",
@@ -43,7 +43,7 @@ class GekleurdWegvlakMarkering(Markering, AOWSType):
         """De lengte van de markering in meter."""
         self.lengte.naam = "lengte"
         self.lengte.label = "lengte"
-        self.lengte.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#GekleurdWegvlakMarkering.lengte"
+        self.lengte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#GekleurdWegvlakMarkering.lengte"
         self.lengte.definition = "De lengte van de markering in meter."
         self.lengte.constraints = ""
         self.lengte.usagenote = ""
@@ -53,7 +53,7 @@ class GekleurdWegvlakMarkering(Markering, AOWSType):
         """De oppervlakte van het gekleurd wegdeel in vierkante meter."""
         self.oppervlakte.naam = "oppervlakte"
         self.oppervlakte.label = "oppervlakte"
-        self.oppervlakte.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#GekleurdWegvlakMarkering.oppervlakte"
+        self.oppervlakte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#GekleurdWegvlakMarkering.oppervlakte"
         self.oppervlakte.definition = "De oppervlakte van het gekleurd wegdeel in vierkante meter."
         self.oppervlakte.constraints = ""
         self.oppervlakte.usagenote = ""
@@ -62,7 +62,7 @@ class GekleurdWegvlakMarkering(Markering, AOWSType):
         self.soortOmschrijving = KeuzelijstField(naam="soortOmschrijving",
                                                  label="soort omschrijving",
                                                  lijst=KlGekleurdWVSoort(),
-                                                 uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#GekleurdWegvlakMarkering.soortOmschrijving",
+                                                 objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#GekleurdWegvlakMarkering.soortOmschrijving",
                                                  definition="De soort en tevens omschrijving van de figuratie markering.",
                                                  constraints="",
                                                  usagenote="",

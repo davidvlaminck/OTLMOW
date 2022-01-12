@@ -19,7 +19,7 @@ class Sleuf(AIMObject):
         """De breedte van de sleuf in meter volgens figuur 7-1-1 van Standaardbestek 250."""
         self.breedte.naam = "breedte"
         self.breedte.label = "breedte"
-        self.breedte.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Sleuf.breedte"
+        self.breedte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Sleuf.breedte"
         self.breedte.definition = "De breedte van de sleuf in meter volgens figuur 7-1-1 van Standaardbestek 250."
         self.breedte.constraints = ""
         self.breedte.usagenote = ""
@@ -29,7 +29,7 @@ class Sleuf(AIMObject):
         """De diepte van de sleuf tussen toekomstig maaiveld en de binnenonderkant van de buis in meter."""
         self.diepte.naam = "diepte"
         self.diepte.label = "diepte"
-        self.diepte.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Sleuf.diepte"
+        self.diepte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Sleuf.diepte"
         self.diepte.definition = "De diepte van de sleuf tussen toekomstig maaiveld en de binnenonderkant van de buis in meter."
         self.diepte.constraints = ""
         self.diepte.usagenote = ""
@@ -39,7 +39,7 @@ class Sleuf(AIMObject):
         """De totale lengte van de sleuf in lopende meter."""
         self.lengte.naam = "lengte"
         self.lengte.label = "lengte"
-        self.lengte.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Sleuf.lengte"
+        self.lengte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Sleuf.lengte"
         self.lengte.definition = "De totale lengte van de sleuf in lopende meter."
         self.lengte.constraints = ""
         self.lengte.usagenote = ""
@@ -48,7 +48,7 @@ class Sleuf(AIMObject):
         self.uitvoering = KeuzelijstField(naam="uitvoering",
                                           label="uitvoering",
                                           lijst=KlSleufUitvoering(),
-                                          uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Sleuf.uitvoering",
+                                          objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Sleuf.uitvoering",
                                           definition="Bepaalt de wijze van de uitvoering van de sleuf.",
                                           constraints="",
                                           usagenote="",

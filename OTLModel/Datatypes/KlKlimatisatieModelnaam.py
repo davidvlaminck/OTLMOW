@@ -9,7 +9,7 @@ class KlKlimatisatieModelnaam(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlKlimatisatieModelnaam",
                          label="Klimatisatie modelnaam",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlKlimatisatieModelnaam",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlKlimatisatieModelnaam",
                          definition="Modelnamen voor klimatisatiesystemen.",
                          usagenote="",
                          deprecated_version="",

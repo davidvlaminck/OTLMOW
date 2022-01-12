@@ -9,7 +9,7 @@ class KlSignalisatieMarkeringOpvatting(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlSignalisatieMarkeringOpvatting",
                          label="Signalisatie markering opvatting",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlSignalisatieMarkeringOpvatting",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlSignalisatieMarkeringOpvatting",
                          definition="De markeringsopvattingen van de markering.",
                          usagenote="",
                          deprecated_version="",

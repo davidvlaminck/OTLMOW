@@ -11,7 +11,7 @@ class KwantWrdInUur(KwantWrd):
     def __init__(self, waarde=None):
         self.eenheid = LiteralField(naam="standaardEenheid",
                                     label="standaard eenheid",
-                                    uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInUur.standaardEenheid",
+                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInUur.standaardEenheid",
                                     definition="De standaard eenheid bij dit datatype is uitgedrukt in uur.",
                                     constraints='"h"^^cdt:ucumunit',
                                     usagenote='"h"^^cdt:ucumunit',
@@ -21,7 +21,7 @@ class KwantWrdInUur(KwantWrd):
 
         self.waardeVeld = NonNegIntegerField(naam="waarde",
                                              label="waarde",
-                                             uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInUur.waarde",
+                                             objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInUur.waarde",
                                              definition="Bevat een getal die bij het datatype hoort.",
                                              constraints="",
                                              usagenote="",
@@ -30,7 +30,7 @@ class KwantWrdInUur(KwantWrd):
 
         super().__init__(naam="KwantWrdInUur",
                          label="Kwantitatieve waarde in uur",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInUur",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInUur",
                          definition="Een kwantitatieve waarde die een getal in uur uitdrukt.",
                          usagenote="",
                          deprecated_version="",

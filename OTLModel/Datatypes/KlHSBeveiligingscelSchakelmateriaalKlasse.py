@@ -9,7 +9,7 @@ class KlHSBeveiligingscelSchakelmateriaalKlasse(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlHSBeveiligingscelSchakelmateriaalKlasse",
                          label="HS-beveiligingscel schakelmateriaal klasse",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlHSBeveiligingscelSchakelmateriaalKlasse",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlHSBeveiligingscelSchakelmateriaalKlasse",
                          definition="Klasse van het schakelmateriaal volgens Synergrid.",
                          usagenote="",
                          deprecated_version="",

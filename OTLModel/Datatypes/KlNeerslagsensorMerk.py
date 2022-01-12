@@ -9,7 +9,7 @@ class KlNeerslagsensorMerk(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlNeerslagsensorMerk",
                          label="Neerslagsensor merk",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlNeerslagsensorMerk",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlNeerslagsensorMerk",
                          definition="Het merk van de neerslagsensor.",
                          usagenote="",
                          deprecated_version="",

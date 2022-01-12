@@ -17,7 +17,7 @@ class Steenslagverharding(AndereVerharding):
         self.type = KeuzelijstField(naam="type",
                                     label="type",
                                     lijst=KlSteenslagType(),
-                                    uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Steenslagverharding.type",
+                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Steenslagverharding.type",
                                     definition="Bepaling van het type steenslagverharding.",
                                     constraints="",
                                     usagenote="",

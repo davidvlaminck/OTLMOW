@@ -23,7 +23,7 @@ class VerlichtingstoestelMHHP(VerlichtingstoestelConnector, Verlichtingstoestel)
         """De kleur van de zichtbare buitenkant van het verlichtingstoestel."""
         self.armatuurkleur.naam = "armatuurkleur"
         self.armatuurkleur.label = "armatuurkleur"
-        self.armatuurkleur.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#VerlichtingstoestelMHHP.armatuurkleur"
+        self.armatuurkleur.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#VerlichtingstoestelMHHP.armatuurkleur"
         self.armatuurkleur.definition = "De kleur van de zichtbare buitenkant van het verlichtingstoestel."
         self.armatuurkleur.constraints = ""
         self.armatuurkleur.usagenote = ""
@@ -31,7 +31,7 @@ class VerlichtingstoestelMHHP(VerlichtingstoestelConnector, Verlichtingstoestel)
 
         self.heeftAntiVandalisme = BooleanField(naam="heeftAntiVandalisme",
                                                 label="heeft anti vandalisme",
-                                                uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#VerlichtingstoestelMHHP.heeftAntiVandalisme",
+                                                objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#VerlichtingstoestelMHHP.heeftAntiVandalisme",
                                                 definition="Is het een antivandalisme type verlichtingstoestel?",
                                                 constraints="",
                                                 usagenote="",

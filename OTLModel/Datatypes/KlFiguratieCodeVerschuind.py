@@ -9,7 +9,7 @@ class KlFiguratieCodeVerschuind(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlFiguratieCodeVerschuind",
                          label="Figuratie code verschuind",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlFiguratieCodeVerschuind",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlFiguratieCodeVerschuind",
                          definition="Codes voor de verschuinde figuratie markering.",
                          usagenote="",
                          deprecated_version="",

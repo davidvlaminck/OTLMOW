@@ -9,7 +9,7 @@ class KlBoogpaalType(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlBoogpaalType",
                          label="Type boogpaal",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlBoogpaalType",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlBoogpaalType",
                          definition="Draagwijdte van de boogpaal.",
                          usagenote="",
                          deprecated_version="",

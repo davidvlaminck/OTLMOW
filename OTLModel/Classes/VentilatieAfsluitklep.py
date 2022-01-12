@@ -15,7 +15,7 @@ class VentilatieAfsluitklep(AIMObject):
 
         self.heeftManueleBediening = BooleanField(naam="heeftManueleBediening",
                                                   label="Heeft manuele bediening",
-                                                  uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#VentilatieAfsluitklep.heeftManueleBediening",
+                                                  objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#VentilatieAfsluitklep.heeftManueleBediening",
                                                   definition="Geeft aan of de afsluitklep manueel kan bediend worden.",
                                                   constraints="",
                                                   usagenote="",

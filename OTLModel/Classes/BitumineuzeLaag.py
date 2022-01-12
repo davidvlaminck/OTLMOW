@@ -20,7 +20,7 @@ class BitumineuzeLaag(LaagBouwklasse):
         self.bindmiddelType = KeuzelijstField(naam="bindmiddelType",
                                               label="bindmiddel type",
                                               lijst=KlBVBindmiddel(),
-                                              uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#BitumineuzeLaag.bindmiddelType",
+                                              objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#BitumineuzeLaag.bindmiddelType",
                                               definition="Het bindmiddeltype van de bitumineuze laag.",
                                               constraints="",
                                               usagenote="",
@@ -30,7 +30,7 @@ class BitumineuzeLaag(LaagBouwklasse):
         self.kleur = KeuzelijstField(naam="kleur",
                                      label="kleur",
                                      lijst=KlKleurSupp(),
-                                     uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#BitumineuzeLaag.kleur",
+                                     objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#BitumineuzeLaag.kleur",
                                      definition="De kleur van de bitumineuze laag.",
                                      constraints="",
                                      usagenote="",
@@ -41,7 +41,7 @@ class BitumineuzeLaag(LaagBouwklasse):
         """Het type van bitumineuze laag."""
         self.laagtype.naam = "laagtype"
         self.laagtype.label = "laagtype"
-        self.laagtype.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#BitumineuzeLaag.laagtype"
+        self.laagtype.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#BitumineuzeLaag.laagtype"
         self.laagtype.definition = "Het type van bitumineuze laag."
         self.laagtype.constraints = ""
         self.laagtype.usagenote = ""
@@ -50,7 +50,7 @@ class BitumineuzeLaag(LaagBouwklasse):
         self.mengseltype = KeuzelijstField(naam="mengseltype",
                                            label="mengseltype",
                                            lijst=KlBVMengseltype(),
-                                           uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#BitumineuzeLaag.mengseltype",
+                                           objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#BitumineuzeLaag.mengseltype",
                                            definition="Het type van het (giet)asfaltmengsel.",
                                            constraints="",
                                            usagenote="",

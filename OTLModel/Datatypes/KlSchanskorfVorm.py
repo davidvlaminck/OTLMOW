@@ -9,7 +9,7 @@ class KlSchanskorfVorm(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlSchanskorfVorm",
                          label="Schanskorf vorm",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlSchanskorfVorm",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlSchanskorfVorm",
                          definition="Vormen van schanskorven.",
                          usagenote="",
                          deprecated_version="",

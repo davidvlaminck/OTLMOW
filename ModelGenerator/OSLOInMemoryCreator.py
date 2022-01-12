@@ -57,7 +57,7 @@ class OSLOInMemoryCreator:
 
     def getClassByUri(self, class_uri: str):
         data = self.sqlDbReader.performReadQuery(
-            "SELECT label_nl, name, uri, definition_nl, usagenote_nl, abstract, deprecated_version FROM OSLOClass where uri=:uriclass",
+            "SELECT label_nl, name, uri, definition_nl, usagenote_nl, abstract, deprecated_version FROM OSLOClass where objectUri=:uriclass",
             {"uriclass": class_uri})
 
         list = []

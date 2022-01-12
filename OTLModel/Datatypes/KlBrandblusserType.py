@@ -9,7 +9,7 @@ class KlBrandblusserType(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlBrandblusserType",
                          label="Brandblusser type",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlBrandblusserType",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlBrandblusserType",
                          definition="Keuzelijst met verschillende types van brandblussers volgens de algemene classificatie van brandblussers.",
                          usagenote="",
                          deprecated_version="",

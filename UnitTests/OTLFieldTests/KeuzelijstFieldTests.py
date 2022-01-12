@@ -9,7 +9,7 @@ from OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 class TestKeuzeLijst(Keuzelijst):
     def __init__(self):
         super().__init__(naam="TestKeuzeLijst", label="TestKeuzeLijst",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#TestKeuzeLijst",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#TestKeuzeLijst",
                          definition="TestKeuzeLijst definitie", usagenote="",
                          deprecated_version="", codelist="codelist")
         self.add_option('optie1', 'optie 1', 'definitie 1', 'typeURI 1')
@@ -19,7 +19,7 @@ class TestKeuzeLijst(Keuzelijst):
 class TestKeuzeLijstField(KeuzelijstField):
     def __init__(self):
         super().__init__(lijst=TestKeuzeLijst(), naam="TestKeuzeLijstField", label="TestKeuzeLijstField",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#TestKeuzeLijstField",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#TestKeuzeLijstField",
                          definition="TestKeuzeLijstField definitie", usagenote="", constraints='', overerving=False,
                          deprecated_version="")
 

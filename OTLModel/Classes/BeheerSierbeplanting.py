@@ -20,7 +20,7 @@ class BeheerSierbeplanting(AIMObject):
         beheeroptieField = KeuzelijstField(naam="beheeroptie",
                                            label="beheeroptie",
                                            lijst=KlBeheerSierbeplanting(),
-                                           uri="https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#BeheerSierbeplanting.beheeroptie",
+                                           objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#BeheerSierbeplanting.beheeroptie",
                                            definition="Aanduiding van welk beheer wordt toegepast op de sierbeplanting.",
                                            constraints="",
                                            usagenote="",
@@ -30,7 +30,7 @@ class BeheerSierbeplanting(AIMObject):
 
         self.heeftBeheerplan = BooleanField(naam="heeftBeheerplan",
                                             label="heeft beheerplan",
-                                            uri="https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#BeheerSierbeplanting.heeftBeheerplan",
+                                            objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#BeheerSierbeplanting.heeftBeheerplan",
                                             definition="Aanduiding of er een beheerplan bestaat.",
                                             constraints="",
                                             usagenote="",
@@ -41,7 +41,7 @@ class BeheerSierbeplanting(AIMObject):
         """De oppervlakte in vierkante meter van de te behandelen sierbeplanting."""
         self.oppervlakte.naam = "oppervlakte"
         self.oppervlakte.label = "oppervlakte"
-        self.oppervlakte.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#BeheerSierbeplanting.oppervlakte"
+        self.oppervlakte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#BeheerSierbeplanting.oppervlakte"
         self.oppervlakte.definition = "De oppervlakte in vierkante meter van de te behandelen sierbeplanting."
         self.oppervlakte.constraints = ""
         self.oppervlakte.usagenote = ""

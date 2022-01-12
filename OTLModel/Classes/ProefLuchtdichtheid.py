@@ -17,7 +17,7 @@ class ProefLuchtdichtheid(Proef):
         """Testresultaten van de opgemeten drukval van het beproefde leidingsvak."""
         self.luchtdichtheid.naam = "luchtdichtheid"
         self.luchtdichtheid.label = "luchtdichtheid"
-        self.luchtdichtheid.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefLuchtdichtheid.luchtdichtheid"
+        self.luchtdichtheid.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefLuchtdichtheid.luchtdichtheid"
         self.luchtdichtheid.definition = "Testresultaten van de opgemeten drukval van het beproefde leidingsvak."
         self.luchtdichtheid.constraints = ""
         self.luchtdichtheid.usagenote = ""

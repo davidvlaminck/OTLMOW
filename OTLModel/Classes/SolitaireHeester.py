@@ -17,7 +17,7 @@ class SolitaireHeester(VegetatieElement):
         self.wortelAanplant = KeuzelijstField(naam="wortelAanplant",
                                               label="wortel aanplant",
                                               lijst=KlVegetatieWortel(),
-                                              uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#SolitaireHeester.wortelAanplant",
+                                              objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#SolitaireHeester.wortelAanplant",
                                               definition="De manier van levering en aanplanting van het wortelgestel van de boom of plant.",
                                               constraints="",
                                               usagenote="",

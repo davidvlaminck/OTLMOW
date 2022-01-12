@@ -9,7 +9,7 @@ class KlDunneOverlagingType(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlDunneOverlagingType",
                          label="Dunne overlaging type",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlDunneOverlagingType",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlDunneOverlagingType",
                          definition="Types van dunne overlaging.",
                          usagenote="",
                          deprecated_version="",

@@ -21,7 +21,7 @@ class ConstructieSokkel(ConstructieElement, BetonnenConstructieElement, Construc
         """De afmetingen van de constructiesokkel."""
         self.afmetingen.naam = "afmetingen"
         self.afmetingen.label = "afmetingen"
-        self.afmetingen.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#ConstructieSokkel.afmetingen"
+        self.afmetingen.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#ConstructieSokkel.afmetingen"
         self.afmetingen.definition = "De afmetingen van de constructiesokkel."
         self.afmetingen.constraints = ""
         self.afmetingen.usagenote = ""

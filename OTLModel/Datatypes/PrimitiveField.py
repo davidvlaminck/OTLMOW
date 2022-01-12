@@ -5,9 +5,9 @@ from OTLModel.Datatypes.OTLField import OTLField
 
 
 class PrimitiveField(OTLField, ABC):
-    def __init__(self, primitiveType: type, naam, label, uri, definition, constraints, usagenote, deprecated_version,
+    def __init__(self, primitiveType: type, naam, label, objectUri, definition, constraints, usagenote, deprecated_version,
                  readonly=False, readonlyValue=None):
-        super().__init__(naam, label, uri, definition, constraints, usagenote, deprecated_version, readonly, readonlyValue)
+        super().__init__(naam, label, objectUri, definition, constraints, usagenote, deprecated_version, readonly, readonlyValue)
         self.primitiveType = primitiveType
 
     def __setattr__(self, name, value):

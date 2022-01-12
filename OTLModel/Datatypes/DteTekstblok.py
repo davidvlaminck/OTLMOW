@@ -10,7 +10,7 @@ class DteTekstblok(KwantWrd):
     def __init__(self, waarde=None):
         self.waardeVeld = StringField(naam="waarde",
                                       label="waarde",
-                                      uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DteTekstblok.waarde",
+                                      objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DteTekstblok.waarde",
                                       definition="De string welke uit meerdere zinnen bestaat, en ook regeleindes kan bevatten. Een tekstblok bevat maximaal 65.000 karakters.",
                                       constraints="",
                                       usagenote="",
@@ -19,7 +19,7 @@ class DteTekstblok(KwantWrd):
 
         super().__init__(naam="DteTekstblok",
                          label="Tekstblok",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DteTekstblok",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DteTekstblok",
                          definition="Een tekst welke uit meerdere zinnen bestaat, en ook regeleindes kan bevatten. Een tekstblok bevat maximaal 65.000 karakters.",
                          usagenote="",
                          deprecated_version="",

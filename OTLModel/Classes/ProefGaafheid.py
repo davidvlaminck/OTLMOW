@@ -17,7 +17,7 @@ class ProefGaafheid(Proef):
         """De resultaten van de controle."""
         self.gaafheid.naam = "gaafheid"
         self.gaafheid.label = "gaafheid"
-        self.gaafheid.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefGaafheid.gaafheid"
+        self.gaafheid.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefGaafheid.gaafheid"
         self.gaafheid.definition = "De resultaten van de controle."
         self.gaafheid.constraints = ""
         self.gaafheid.usagenote = ""

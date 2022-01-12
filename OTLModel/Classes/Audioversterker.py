@@ -20,7 +20,7 @@ class Audioversterker(AIMNaamObject):
 
         self.dnsNaam = StringField(naam="dnsNaam",
                                    label="DNS naam",
-                                   uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Audioversterker.dnsNaam",
+                                   objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Audioversterker.dnsNaam",
                                    definition="De DNSNaam (ook \"volledige domein naam\" genoemd ) is een unieke naam binnen het Domain Name System (DNS), het naamgevingssysteem waarmee computers, webservers, diensten en  toepassing op een unieke manier kunnen worden geïdentificeerd. Deze bevat zowel de hostname en de top level domein naam bv. 120c8-ar1.belfa.be.",
                                    constraints="",
                                    usagenote="",
@@ -31,7 +31,7 @@ class Audioversterker(AIMNaamObject):
         """Het IP-adres van de audioversterker."""
         self.ipAdres.naam = "ipAdres"
         self.ipAdres.label = "IP-adres"
-        self.ipAdres.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Audioversterker.ipAdres"
+        self.ipAdres.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Audioversterker.ipAdres"
         self.ipAdres.definition = "Het IP-adres van de audioversterker."
         self.ipAdres.constraints = ""
         self.ipAdres.usagenote = ""
@@ -40,7 +40,7 @@ class Audioversterker(AIMNaamObject):
         self.merk = KeuzelijstField(naam="merk",
                                     label="merk",
                                     lijst=KlAudioversterkerMerk(),
-                                    uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Audioversterker.merk",
+                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Audioversterker.merk",
                                     definition="Het merk van de audioversterker.",
                                     constraints="",
                                     usagenote="",
@@ -50,7 +50,7 @@ class Audioversterker(AIMNaamObject):
         self.modelnaam = KeuzelijstField(naam="modelnaam",
                                          label="modelnaam",
                                          lijst=KlAudioversterkerModelnaam(),
-                                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Audioversterker.modelnaam",
+                                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Audioversterker.modelnaam",
                                          definition="De modelnaam van de audioversterker.",
                                          constraints="",
                                          usagenote="",
@@ -61,7 +61,7 @@ class Audioversterker(AIMNaamObject):
         """De technische fiche van de audioversterker."""
         self.technischeFiche.naam = "technischeFiche"
         self.technischeFiche.label = "technische fiche"
-        self.technischeFiche.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Audioversterker.technischeFiche"
+        self.technischeFiche.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Audioversterker.technischeFiche"
         self.technischeFiche.definition = "De technische fiche van de audioversterker."
         self.technischeFiche.constraints = ""
         self.technischeFiche.usagenote = ""

@@ -9,7 +9,7 @@ class KlIOKaartModelnaam(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlIOKaartModelnaam",
                          label="IO-kaart modelnaam",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlIOKaartModelnaam",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlIOKaartModelnaam",
                          definition="Lijst van mogelijke modelnamen voor IO-kaarten.",
                          usagenote="",
                          deprecated_version="",

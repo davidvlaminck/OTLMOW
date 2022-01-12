@@ -157,11 +157,11 @@ class AbstractDatatypeCreator(ABC):
             typeLink = self.getTypeLinkFromAttribuut(attribuut)
 
             if attribuut.overerving == 1:
-                raise NotImplementedError(f"overerving 1 is not implemented, found in {attributen.uri}")
+                raise NotImplementedError(f"overerving 1 is not implemented, found in {attributen.objectUri}")
 
             if attribuut.deprecated_version != '':
                 continue
-                # raise NotImplementedError(f"deprecated attributes is not implemented, found in {attributen.uri}")
+                # raise NotImplementedError(f"deprecated attributes is not implemented, found in {attributen.objectUri}")
 
             # depending on the use for datatype creation or class creation use 'self.' or 'self.waarde.'
             selfWaarde = 'self.waarde.'
@@ -180,7 +180,7 @@ class AbstractDatatypeCreator(ABC):
                         datablock.append(f'        """{definitie}"""')
                         datablock.append(f'        {selfWaarde}{attribuut.name}.naam = "{attribuut.name}"')
                         datablock.append(f'        {selfWaarde}{attribuut.name}.label = "{attribuut.label_nl}"')
-                        datablock.append(f'        {selfWaarde}{attribuut.name}.uri = "{attribuut.uri}"')
+                        datablock.append(f'        {selfWaarde}{attribuut.name}.objectUri = "{attribuut.objectUri}"')
 
                         datablock.append(f'        {selfWaarde}{attribuut.name}.definition = "{definitie}"')
                         datablock.append(f'        {selfWaarde}{attribuut.name}.constraints = "{attribuut.constraints}"')
@@ -197,7 +197,7 @@ class AbstractDatatypeCreator(ABC):
                         datablock.append(
                             f'        {selfWaarde}{attribuut.name} = {self.getFieldNameFromTypeUri(attribuut.type)}(naam="{attribuut.name}",')
                         datablock.append(f'{whitespace}label="{attribuut.label_nl}",')
-                        datablock.append(f'{whitespace}uri="{attribuut.uri}",')
+                        datablock.append(f'{whitespace}objectUri="{attribuut.objectUri}",')
                         datablock.append(f'{whitespace}definition="{definitie}",')
                         datablock.append(f'{whitespace}constraints="{attribuut.constraints}",')
                         datablock.append(f'{whitespace}usagenote="{attribuut.usagenote_nl}",')
@@ -219,7 +219,7 @@ class AbstractDatatypeCreator(ABC):
                         f'        {selfWaarde}{attribuut.name} = KeuzelijstField(naam="{attribuut.name}",')
                     datablock.append(f'{whitespace}label="{attribuut.label_nl}",')
                     datablock.append(f'{whitespace}lijst={typeName}(),')
-                    datablock.append(f'{whitespace}uri="{attribuut.uri}",')
+                    datablock.append(f'{whitespace}objectUri="{attribuut.objectUri}",')
                     datablock.append(f'{whitespace}definition="{definitie}",')
                     datablock.append(f'{whitespace}constraints="{attribuut.constraints}",')
                     datablock.append(f'{whitespace}usagenote="{attribuut.usagenote_nl}",')
@@ -238,7 +238,7 @@ class AbstractDatatypeCreator(ABC):
                     datablock.append(f'        """{definitie}"""')
                     datablock.append(f'        {selfWaarde}{attribuut.name}.naam = "{attribuut.name}"')
                     datablock.append(f'        {selfWaarde}{attribuut.name}.label = "{attribuut.label_nl}"')
-                    datablock.append(f'        {selfWaarde}{attribuut.name}.uri = "{attribuut.uri}"')
+                    datablock.append(f'        {selfWaarde}{attribuut.name}.objectUri = "{attribuut.objectUri}"')
                     datablock.append(f'        {selfWaarde}{attribuut.name}.definition = "{definitie}"')
                     datablock.append(f'        {selfWaarde}{attribuut.name}.constraints = "{attribuut.constraints}"')
                     datablock.append(f'        {selfWaarde}{attribuut.name}.usagenote = "{attribuut.usagenote_nl}"')
@@ -257,7 +257,7 @@ class AbstractDatatypeCreator(ABC):
                     datablock.append(f'        """{definitie}"""')
                     datablock.append(f'        {selfWaarde}{attribuut.name}.naam = "{attribuut.name}"')
                     datablock.append(f'        {selfWaarde}{attribuut.name}.label = "{attribuut.label_nl}"')
-                    datablock.append(f'        {selfWaarde}{attribuut.name}.uri = "{attribuut.uri}"')
+                    datablock.append(f'        {selfWaarde}{attribuut.name}.objectUri = "{attribuut.objectUri}"')
                     datablock.append(f'        {selfWaarde}{attribuut.name}.definition = "{definitie}"')
                     datablock.append(f'        {selfWaarde}{attribuut.name}.constraints = "{attribuut.constraints}"')
                     datablock.append(f'        {selfWaarde}{attribuut.name}.usagenote = "{attribuut.usagenote_nl}"')
@@ -276,7 +276,7 @@ class AbstractDatatypeCreator(ABC):
                     datablock.append(f'        {attribuut.name}Field = {fieldName}()')
                     datablock.append(f'        {attribuut.name}Field.naam = "{attribuut.name}"')
                     datablock.append(f'        {attribuut.name}Field.label = "{attribuut.label_nl}"')
-                    datablock.append(f'        {attribuut.name}Field.uri = "{attribuut.uri}"')
+                    datablock.append(f'        {attribuut.name}Field.objectUri = "{attribuut.objectUri}"')
                     datablock.append(f'        {attribuut.name}Field.definition = "{definitie}"')
                     datablock.append(f'        {attribuut.name}Field.constraints = "{attribuut.constraints}"')
                     datablock.append(f'        {attribuut.name}Field.usagenote = "{attribuut.usagenote_nl}"')
@@ -300,7 +300,7 @@ class AbstractDatatypeCreator(ABC):
                     datablock.append(f'        {attribuut.name}Field = {fieldName}()')
                     datablock.append(f'        {attribuut.name}Field.naam = "{attribuut.name}"')
                     datablock.append(f'        {attribuut.name}Field.label = "{attribuut.label_nl}"')
-                    datablock.append(f'        {attribuut.name}Field.uri = "{attribuut.uri}"')
+                    datablock.append(f'        {attribuut.name}Field.objectUri = "{attribuut.objectUri}"')
                     datablock.append(f'        {attribuut.name}Field.definition = "{definitie}"')
                     datablock.append(f'        {attribuut.name}Field.constraints = "{attribuut.constraints}"')
                     datablock.append(f'        {attribuut.name}Field.usagenote = "{attribuut.usagenote_nl}"')
@@ -327,7 +327,7 @@ class AbstractDatatypeCreator(ABC):
                         f'        {attribuut.name}Field = KeuzelijstField(naam="{attribuut.name}",')
                     datablock.append(f'{whitespace}label="{attribuut.label_nl}",')
                     datablock.append(f'{whitespace}lijst={typeName}(),')
-                    datablock.append(f'{whitespace}uri="{attribuut.uri}",')
+                    datablock.append(f'{whitespace}objectUri="{attribuut.objectUri}",')
                     datablock.append(f'{whitespace}definition="{definitie}",')
                     datablock.append(f'{whitespace}constraints="{attribuut.constraints}",')
                     datablock.append(f'{whitespace}usagenote="{attribuut.usagenote_nl}",')
@@ -353,7 +353,7 @@ class AbstractDatatypeCreator(ABC):
 
                         datablock.append(f'        {attribuut.name}Field.naam = "{attribuut.name}"')
                         datablock.append(f'        {attribuut.name}Field.label = "{attribuut.label_nl}"')
-                        datablock.append(f'        {attribuut.name}Field.uri = "{attribuut.uri}"')
+                        datablock.append(f'        {attribuut.name}Field.objectUri = "{attribuut.objectUri}"')
                         datablock.append(f'        {attribuut.name}Field.definition = "{definitie}"')
                         datablock.append(f'        {attribuut.name}Field.constraints = "{attribuut.constraints}"')
                         datablock.append(f'        {attribuut.name}Field.usagenote = "{attribuut.usagenote_nl}"')
@@ -375,7 +375,7 @@ class AbstractDatatypeCreator(ABC):
                         datablock.append(
                             f'        {attribuut.name}Field = {self.getFieldNameFromTypeUri(attribuut.type)}(naam="{attribuut.name}",')
                         datablock.append(f'{whitespace}label="{attribuut.label_nl}",')
-                        datablock.append(f'{whitespace}uri="{attribuut.uri}",')
+                        datablock.append(f'{whitespace}objectUri="{attribuut.objectUri}",')
                         datablock.append(f'{whitespace}definition="{definitie}",')
                         datablock.append(f'{whitespace}constraints="{attribuut.constraints}",')
                         datablock.append(f'{whitespace}usagenote="{attribuut.usagenote_nl}",')

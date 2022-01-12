@@ -24,7 +24,7 @@ class Brandhaspel(Brandvoorziening):
         """Buitendiameter van de slang op de haspel."""
         self.buitendiameter.naam = "buitendiameter"
         self.buitendiameter.label = "buitendiameter"
-        self.buitendiameter.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Brandhaspel.buitendiameter"
+        self.buitendiameter.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Brandhaspel.buitendiameter"
         self.buitendiameter.definition = "Buitendiameter van de slang op de haspel."
         self.buitendiameter.constraints = ""
         self.buitendiameter.usagenote = ""
@@ -32,7 +32,7 @@ class Brandhaspel(Brandvoorziening):
 
         self.keuringsdatum = DateField(naam="keuringsdatum",
                                        label="keuringsdatum",
-                                       uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Brandhaspel.keuringsdatum",
+                                       objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Brandhaspel.keuringsdatum",
                                        definition="Laatste datum waarop de haspel gekeurd is.",
                                        constraints="",
                                        usagenote="",
@@ -43,7 +43,7 @@ class Brandhaspel(Brandvoorziening):
         """Het maximale debiet dat per tijdseenheid door de slang en spuitmond kan stromen."""
         self.maximaalVolumedebiet.naam = "maximaalVolumedebiet"
         self.maximaalVolumedebiet.label = "maximaal volumedebiet"
-        self.maximaalVolumedebiet.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Brandhaspel.maximaalVolumedebiet"
+        self.maximaalVolumedebiet.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Brandhaspel.maximaalVolumedebiet"
         self.maximaalVolumedebiet.definition = "Het maximale debiet dat per tijdseenheid door de slang en spuitmond kan stromen."
         self.maximaalVolumedebiet.constraints = ""
         self.maximaalVolumedebiet.usagenote = ""
@@ -52,7 +52,7 @@ class Brandhaspel(Brandvoorziening):
         self.merk = KeuzelijstField(naam="merk",
                                     label="merk",
                                     lijst=KlBrandhaspelMerk(),
-                                    uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Brandhaspel.merk",
+                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Brandhaspel.merk",
                                     definition="Het merk van de brandhaspel.",
                                     constraints="",
                                     usagenote="",
@@ -62,7 +62,7 @@ class Brandhaspel(Brandvoorziening):
         self.modelnaam = KeuzelijstField(naam="modelnaam",
                                          label="modelnaam",
                                          lijst=KlBrandhaspelModelnaam(),
-                                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Brandhaspel.modelnaam",
+                                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Brandhaspel.modelnaam",
                                          definition="De modelnaam van de brandhaspel.",
                                          constraints="",
                                          usagenote="",
@@ -73,7 +73,7 @@ class Brandhaspel(Brandvoorziening):
         """Nuttige lengte van de brandslang op de haspel."""
         self.slangLengte.naam = "slangLengte"
         self.slangLengte.label = "slanglengte"
-        self.slangLengte.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Brandhaspel.slangLengte"
+        self.slangLengte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Brandhaspel.slangLengte"
         self.slangLengte.definition = "Nuttige lengte van de brandslang op de haspel."
         self.slangLengte.constraints = ""
         self.slangLengte.usagenote = ""

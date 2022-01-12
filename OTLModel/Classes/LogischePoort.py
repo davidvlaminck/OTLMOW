@@ -17,7 +17,7 @@ class LogischePoort(SoftwareToegang):
         """Type TCP of UDP service."""
         self.poortconfiguratie.naam = "poortconfiguratie"
         self.poortconfiguratie.label = "poortconfiguratie"
-        self.poortconfiguratie.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#LogischePoort.poortconfiguratie"
+        self.poortconfiguratie.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#LogischePoort.poortconfiguratie"
         self.poortconfiguratie.definition = "Type TCP of UDP service."
         self.poortconfiguratie.constraints = ""
         self.poortconfiguratie.usagenote = ""

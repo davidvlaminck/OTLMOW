@@ -9,7 +9,7 @@ class KlDeurFabrikant(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlDeurFabrikant",
                          label="Deur fabrikant",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#KlDeurFabrikant",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#KlDeurFabrikant",
                          definition="Lijst van fabrikanten van deuren.",
                          usagenote="",
                          deprecated_version="",

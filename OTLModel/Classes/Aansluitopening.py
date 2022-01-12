@@ -20,7 +20,7 @@ class Aansluitopening(LinkendElement):
         """De afstand tussen de uiterste zijden van de aansluitopening in millimeter."""
         self.breedte.naam = "breedte"
         self.breedte.label = "breedte"
-        self.breedte.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Aansluitopening.breedte"
+        self.breedte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Aansluitopening.breedte"
         self.breedte.definition = "De afstand tussen de uiterste zijden van de aansluitopening in millimeter."
         self.breedte.constraints = ""
         self.breedte.usagenote = ""
@@ -30,7 +30,7 @@ class Aansluitopening(LinkendElement):
         """De afstand tussen het hoogste en laagste punt van de aansluitopening in millimeter."""
         self.hoogte.naam = "hoogte"
         self.hoogte.label = "hoogte"
-        self.hoogte.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Aansluitopening.hoogte"
+        self.hoogte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Aansluitopening.hoogte"
         self.hoogte.definition = "De afstand tussen het hoogste en laagste punt van de aansluitopening in millimeter."
         self.hoogte.constraints = ""
         self.hoogte.usagenote = ""
@@ -40,7 +40,7 @@ class Aansluitopening(LinkendElement):
         """BOK peil in meter-TAW van de knijpopening."""
         self.peil.naam = "peil"
         self.peil.label = "peil"
-        self.peil.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Aansluitopening.peil"
+        self.peil.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Aansluitopening.peil"
         self.peil.definition = "BOK peil in meter-TAW van de knijpopening."
         self.peil.constraints = ""
         self.peil.usagenote = ""
@@ -49,7 +49,7 @@ class Aansluitopening(LinkendElement):
         self.vorm = KeuzelijstField(naam="vorm",
                                     label="vorm",
                                     lijst=KlRioleringVorm(),
-                                    uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Aansluitopening.vorm",
+                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Aansluitopening.vorm",
                                     definition="De vorm van de aansluitopening.",
                                     constraints="",
                                     usagenote="",

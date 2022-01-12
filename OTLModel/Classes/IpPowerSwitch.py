@@ -19,7 +19,7 @@ class IpPowerSwitch(AIMNaamObject):
 
         self.dnsNaam = StringField(naam="dnsNaam",
                                    label="DNS naam",
-                                   uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#IpPowerSwitch.dnsNaam",
+                                   objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#IpPowerSwitch.dnsNaam",
                                    definition="De DNSNaam (ook \"volledige domein naam\" genoemd ) is een unieke naam binnen het Domain Name System (DNS), het naamgevingssysteem waarmee computers, webservers, diensten en  toepassing op een unieke manier kunnen worden geïdentificeerd. Deze bevat zowel de hostname en de top level domein naam bv. 120c8-ar1.belfa.be.",
                                    constraints="",
                                    usagenote="",
@@ -30,7 +30,7 @@ class IpPowerSwitch(AIMNaamObject):
         """De handleiding van de IP powerswitch."""
         self.handleiding.naam = "handleiding"
         self.handleiding.label = "handleiding"
-        self.handleiding.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#IpPowerSwitch.handleiding"
+        self.handleiding.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#IpPowerSwitch.handleiding"
         self.handleiding.definition = "De handleiding van de IP powerswitch."
         self.handleiding.constraints = ""
         self.handleiding.usagenote = "Bestanden van het type pdf."
@@ -40,7 +40,7 @@ class IpPowerSwitch(AIMNaamObject):
         """Het IP-adres van de IP power switch."""
         self.ipAdres.naam = "ipAdres"
         self.ipAdres.label = "ip adres"
-        self.ipAdres.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#IpPowerSwitch.ipAdres"
+        self.ipAdres.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#IpPowerSwitch.ipAdres"
         self.ipAdres.definition = "Het IP-adres van de IP power switch."
         self.ipAdres.constraints = ""
         self.ipAdres.usagenote = ""
@@ -50,7 +50,7 @@ class IpPowerSwitch(AIMNaamObject):
         """De technische fiche  van de IP powerswitch."""
         self.technischeFiche.naam = "technischeFiche"
         self.technischeFiche.label = "technische fiche"
-        self.technischeFiche.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#IpPowerSwitch.technischeFiche"
+        self.technischeFiche.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#IpPowerSwitch.technischeFiche"
         self.technischeFiche.definition = "De technische fiche  van de IP powerswitch."
         self.technischeFiche.constraints = ""
         self.technischeFiche.usagenote = "Bestanden van het type pdf."
@@ -59,7 +59,7 @@ class IpPowerSwitch(AIMNaamObject):
         self.type = KeuzelijstField(naam="type",
                                     label="type",
                                     lijst=KlIpPowerSwitchType(),
-                                    uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#IpPowerSwitch.type",
+                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#IpPowerSwitch.type",
                                     definition="Merk en type van de IP powerswitch.",
                                     constraints="",
                                     usagenote="",

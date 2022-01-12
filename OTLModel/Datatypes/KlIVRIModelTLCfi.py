@@ -9,7 +9,7 @@ class KlIVRIModelTLCfi(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlIVRIModelTLCfi",
                          label="iVRIModelTLCfi",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlIVRIModelTLCfi",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlIVRIModelTLCfi",
                          definition="De modelnaam van de TLC-fi poort.",
                          usagenote="",
                          deprecated_version="",

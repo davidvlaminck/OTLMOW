@@ -5,7 +5,7 @@ import dataclasses
 class OSLOClass:
     label_nl: str
     name: str
-    uri: str
+    objectUri: str
     definition_nl: str
     usagenote_nl: str
     abstract: int

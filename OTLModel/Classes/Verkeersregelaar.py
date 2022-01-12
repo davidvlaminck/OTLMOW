@@ -33,7 +33,7 @@ Volgende documenten zijn specifiek van toepassing voor verkeersregelaars:
         coordinatiewijzeField = KeuzelijstField(naam="coordinatiewijze",
                                                 label="coördinatiewijze",
                                                 lijst=KlVerkeersregelaarCoordinatiewijze(),
-                                                uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Verkeersregelaar.coordinatiewijze",
+                                                objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Verkeersregelaar.coordinatiewijze",
                                                 definition="Wijze waarop de coördinatie is opgezet en de eventuele rol die de verkeersregelaar hierin speelt.",
                                                 constraints="",
                                                 usagenote="",
@@ -44,7 +44,7 @@ Volgende documenten zijn specifiek van toepassing voor verkeersregelaars:
         externeReferentieField = DtcExterneReferentie()
         externeReferentieField.naam = "externeReferentie"
         externeReferentieField.label = "externe referentie"
-        externeReferentieField.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Verkeersregelaar.externeReferentie"
+        externeReferentieField.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Verkeersregelaar.externeReferentie"
         externeReferentieField.definition = "Referentie zoals gekend bij een externe partij bv. aannemer, VLCC, ..."
         externeReferentieField.constraints = ""
         externeReferentieField.usagenote = ""
@@ -56,7 +56,7 @@ Volgende documenten zijn specifiek van toepassing voor verkeersregelaars:
         """Document met het kabelaansluitschema."""
         self.kabelaansluitschema.naam = "kabelaansluitschema"
         self.kabelaansluitschema.label = "kabelaansluitschema"
-        self.kabelaansluitschema.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Verkeersregelaar.kabelaansluitschema"
+        self.kabelaansluitschema.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Verkeersregelaar.kabelaansluitschema"
         self.kabelaansluitschema.definition = "Document met het kabelaansluitschema."
         self.kabelaansluitschema.constraints = ""
         self.kabelaansluitschema.usagenote = ""
@@ -65,7 +65,7 @@ Volgende documenten zijn specifiek van toepassing voor verkeersregelaars:
         self.merk = KeuzelijstField(naam="merk",
                                     label="merk",
                                     lijst=KlVerkeersregelaarMerk(),
-                                    uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Verkeersregelaar.merk",
+                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Verkeersregelaar.merk",
                                     definition="Het merk van een verkeersregelaar.",
                                     constraints="",
                                     usagenote="",
@@ -75,7 +75,7 @@ Volgende documenten zijn specifiek van toepassing voor verkeersregelaars:
         self.modelnaam = KeuzelijstField(naam="modelnaam",
                                          label="modelnaam",
                                          lijst=KlVerkeersregelaarModelnaam(),
-                                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Verkeersregelaar.modelnaam",
+                                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Verkeersregelaar.modelnaam",
                                          definition="De modelnaam/product range van een verkeersregelaar.",
                                          constraints="",
                                          usagenote="",
@@ -84,7 +84,7 @@ Volgende documenten zijn specifiek van toepassing voor verkeersregelaars:
 
         self.programmeertool = StringField(naam="programmeertool",
                                            label="programmeertool",
-                                           uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Verkeersregelaar.programmeertool",
+                                           objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Verkeersregelaar.programmeertool",
                                            definition="Software waarmee de verkeersregelaar geprogrammeerd kan worden.",
                                            constraints="",
                                            usagenote="",
@@ -94,7 +94,7 @@ Volgende documenten zijn specifiek van toepassing voor verkeersregelaars:
         self.regelaartype = KeuzelijstField(naam="regelaartype",
                                             label="regelaartype",
                                             lijst=KlRegelaarRegelaartype(),
-                                            uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Verkeersregelaar.regelaartype",
+                                            objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Verkeersregelaar.regelaartype",
                                             definition="Onderverdeling in type regelaar volgens het maximale aantal aan te sluiten seingroepen en kruispuntdetectoren.",
                                             constraints="",
                                             usagenote="",
@@ -105,7 +105,7 @@ Volgende documenten zijn specifiek van toepassing voor verkeersregelaars:
         """Document met technische informatie."""
         self.technischeDocumentatie.naam = "technischeDocumentatie"
         self.technischeDocumentatie.label = "technische documentatie"
-        self.technischeDocumentatie.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Verkeersregelaar.technischeDocumentatie"
+        self.technischeDocumentatie.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Verkeersregelaar.technischeDocumentatie"
         self.technischeDocumentatie.definition = "Document met technische informatie."
         self.technischeDocumentatie.constraints = ""
         self.technischeDocumentatie.usagenote = ""
@@ -114,7 +114,7 @@ Volgende documenten zijn specifiek van toepassing voor verkeersregelaars:
         self.voltageLampen = KeuzelijstField(naam="voltageLampen",
                                              label="voltage lampen",
                                              lijst=KlVerkeersregelaarVoltage(),
-                                             uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Verkeersregelaar.voltageLampen",
+                                             objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Verkeersregelaar.voltageLampen",
                                              definition="Voltage van de verkeerslichten.",
                                              constraints="",
                                              usagenote="",
@@ -123,7 +123,7 @@ Volgende documenten zijn specifiek van toepassing voor verkeersregelaars:
 
         self.vplanDatum = DateField(naam="vplanDatum",
                                     label="vplan datum",
-                                    uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Verkeersregelaar.vplanDatum",
+                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Verkeersregelaar.vplanDatum",
                                     definition="Datum van het V-plan.",
                                     constraints="",
                                     usagenote="",
@@ -132,7 +132,7 @@ Volgende documenten zijn specifiek van toepassing voor verkeersregelaars:
 
         self.vplanNummer = StringField(naam="vplanNummer",
                                        label="vplan nummer",
-                                       uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Verkeersregelaar.vplanNummer",
+                                       objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Verkeersregelaar.vplanNummer",
                                        definition="Nummer van het V-plan.",
                                        constraints="",
                                        usagenote="",

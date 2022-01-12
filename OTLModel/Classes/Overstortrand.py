@@ -21,7 +21,7 @@ class Overstortrand(AIMObject):
         """De afstand tussen de uiterste zijden van de overstortrand in millimeter."""
         self.breedte.naam = "breedte"
         self.breedte.label = "breedte"
-        self.breedte.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Overstortrand.breedte"
+        self.breedte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Overstortrand.breedte"
         self.breedte.definition = "De afstand tussen de uiterste zijden van de overstortrand in millimeter."
         self.breedte.constraints = ""
         self.breedte.usagenote = ""
@@ -31,7 +31,7 @@ class Overstortrand(AIMObject):
         """De afstand tussen de vaste drempel en het hoogste punt van de overstortrand in millimeter."""
         self.hoogte.naam = "hoogte"
         self.hoogte.label = "hoogte"
-        self.hoogte.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Overstortrand.hoogte"
+        self.hoogte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Overstortrand.hoogte"
         self.hoogte.definition = "De afstand tussen de vaste drempel en het hoogste punt van de overstortrand in millimeter."
         self.hoogte.constraints = ""
         self.hoogte.usagenote = ""
@@ -40,7 +40,7 @@ class Overstortrand(AIMObject):
         self.materiaal = KeuzelijstField(naam="materiaal",
                                          label="materiaal",
                                          lijst=KlOverstortrandMateriaal(),
-                                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Overstortrand.materiaal",
+                                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Overstortrand.materiaal",
                                          definition="Het materiaal waaruit de overstortrand vervaardigd is.",
                                          constraints="",
                                          usagenote="",
@@ -51,7 +51,7 @@ class Overstortrand(AIMObject):
         """De technische fiche van de de overstortrand."""
         self.technischeFiche.naam = "technischeFiche"
         self.technischeFiche.label = "technische fiche"
-        self.technischeFiche.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Overstortrand.technischeFiche"
+        self.technischeFiche.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Overstortrand.technischeFiche"
         self.technischeFiche.definition = "De technische fiche van de de overstortrand."
         self.technischeFiche.constraints = ""
         self.technischeFiche.usagenote = ""
@@ -60,7 +60,7 @@ class Overstortrand(AIMObject):
         self.variabelDeelType = KeuzelijstField(naam="variabelDeelType",
                                                 label="variabel deel type",
                                                 lijst=KlVariabelDeelType(),
-                                                uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Overstortrand.variabelDeelType",
+                                                objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Overstortrand.variabelDeelType",
                                                 definition="Bepaalt het type van het variabel deel van de overstortrand.",
                                                 constraints="",
                                                 usagenote="",
@@ -71,7 +71,7 @@ class Overstortrand(AIMObject):
         """De wanddikte van de overstortrand in millimeter."""
         self.wanddikte.naam = "wanddikte"
         self.wanddikte.label = "wanddikte"
-        self.wanddikte.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Overstortrand.wanddikte"
+        self.wanddikte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Overstortrand.wanddikte"
         self.wanddikte.definition = "De wanddikte van de overstortrand in millimeter."
         self.wanddikte.constraints = ""
         self.wanddikte.usagenote = ""

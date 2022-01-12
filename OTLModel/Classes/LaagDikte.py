@@ -16,7 +16,7 @@ class LaagDikte(ABC):
         """De gemiddelde dikte van een laag in centimeter."""
         self.dikte.naam = "dikte"
         self.dikte.label = "dikte"
-        self.dikte.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#LaagDikte.dikte"
+        self.dikte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#LaagDikte.dikte"
         self.dikte.definition = "De gemiddelde dikte van een laag in centimeter."
         self.dikte.constraints = ""
         self.dikte.usagenote = ""

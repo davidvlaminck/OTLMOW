@@ -19,7 +19,7 @@ class Waarschuwingslantaarn(AIMNaamObject):
         self.lamptype = KeuzelijstField(naam="lamptype",
                                         label="lamptype",
                                         lijst=KlLantaarnLamptype(),
-                                        uri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Waarschuwingslantaarn.lamptype",
+                                        objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Waarschuwingslantaarn.lamptype",
                                         definition="Type lamp in de lantaarn.",
                                         constraints="",
                                         usagenote="",

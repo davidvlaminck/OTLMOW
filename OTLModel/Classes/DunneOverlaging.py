@@ -20,7 +20,7 @@ class DunneOverlaging(AndereLaag):
         """Het gewicht van de dunne overlaging in ton."""
         self.gewicht.naam = "gewicht"
         self.gewicht.label = "gewicht"
-        self.gewicht.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DunneOverlaging.gewicht"
+        self.gewicht.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DunneOverlaging.gewicht"
         self.gewicht.definition = "Het gewicht van de dunne overlaging in ton."
         self.gewicht.constraints = ""
         self.gewicht.usagenote = ""
@@ -29,7 +29,7 @@ class DunneOverlaging(AndereLaag):
         self.kleur = KeuzelijstField(naam="kleur",
                                      label="kleur",
                                      lijst=KlKleurSupp(),
-                                     uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DunneOverlaging.kleur",
+                                     objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DunneOverlaging.kleur",
                                      definition="De kleur van de dunne overlaging.",
                                      constraints="",
                                      usagenote="",
@@ -39,7 +39,7 @@ class DunneOverlaging(AndereLaag):
         self.type = KeuzelijstField(naam="type",
                                     label="type",
                                     lijst=KlDunneOverlagingType(),
-                                    uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DunneOverlaging.type",
+                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DunneOverlaging.type",
                                     definition="Het type SME overlaging of antisliplaag.",
                                     constraints="",
                                     usagenote="",

@@ -55,7 +55,7 @@ class UnionDatatypeOSLOCollector(OSLOCollector):
                             '    def __init__(self):',
                             '        super().__init__(naam="DtuLichtmastMasthoogte",',
                             '                         label="Masthoogte",',
-                            '                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtuLichtmastMasthoogte",',
+                            '                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtuLichtmastMasthoogte",',
                             '                         definition="Union datatype om een standaard of afwijkende masthoogte te bepalen.",',
                             '                         usagenote="",',
                             '                         deprecated_version="")',
@@ -64,7 +64,7 @@ class UnionDatatypeOSLOCollector(OSLOCollector):
                             '        """De afwijkende hoogte van de mast in meter."""',
                             '        field_afwijkendeHoogte.naam = "afwijkendeHoogte"',
                             '        field_afwijkendeHoogte.label = "afwijkende hoogte"',
-                            '        field_afwijkendeHoogte.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtuLichtmastMasthoogte.afwijkendeHoogte"',
+                            '        field_afwijkendeHoogte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtuLichtmastMasthoogte.afwijkendeHoogte"',
                             '        field_afwijkendeHoogte.definition = "De afwijkende hoogte van de mast in meter."',
                             '        field_afwijkendeHoogte.constraints = ""',
                             '        field_afwijkendeHoogte.usagenote = ""',
@@ -73,7 +73,7 @@ class UnionDatatypeOSLOCollector(OSLOCollector):
                             '        field_standaardHoogte = KeuzelijstField(naam="standaardHoogte",',
                             '                                                label="standaard hoogte",',
                             '                                                lijst=KlLichtmastMasthoogte(),',
-                            '                                                uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtuLichtmastMasthoogte.standaardHoogte",',
+                            '                                                objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtuLichtmastMasthoogte.standaardHoogte",',
                             '                                                definition="Bepaling van de standaard hoogte van een mast.",',
                             '                                                constraints="",',
                             '                                                usagenote="",',
@@ -100,30 +100,30 @@ class OTLUnionDatatypeCreatorTests(unittest.TestCase):
         logger = NoneLogger()
         collector = OSLOCollector(mock)
         creator = OTLUnionDatatypeCreator(logger, collector)
-        osloDatatypeUnion = OSLODatatypeUnion(name='name', uri='', definition_nl='', label_nl='', usagenote_nl='',
+        osloDatatypeUnion = OSLODatatypeUnion(name='name', objectUri='', definition_nl='', label_nl='', usagenote_nl='',
                                               deprecated_version='')
 
         with self.assertRaises(ValueError) as exception_empty_uri:
             creator.CreateBlockToWriteFromUnionTypes(osloDatatypeUnion)
-        self.assertEqual(str(exception_empty_uri.exception), "OSLODatatypeUnion.uri is invalid. Value = ''")
+        self.assertEqual(str(exception_empty_uri.exception), "OSLODatatypeUnion.objectUri is invalid. Value = ''")
 
     def test_InvalidOSLODatatypeUnionBadUri(self):
         logger = NoneLogger()
         collector = OSLOCollector(mock)
         creator = OTLUnionDatatypeCreator(logger, collector)
-        osloDatatypeUnion = OSLODatatypeUnion(name='name', uri='Bad uri', definition_nl='', label_nl='', usagenote_nl='',
+        osloDatatypeUnion = OSLODatatypeUnion(name='name', objectUri='Bad objectUri', definition_nl='', label_nl='', usagenote_nl='',
                                               deprecated_version='')
 
         with self.assertRaises(ValueError) as exception_bad_uri:
             creator.CreateBlockToWriteFromUnionTypes(osloDatatypeUnion)
-        self.assertEqual(str(exception_bad_uri.exception), "OSLODatatypeUnion.uri is invalid. Value = 'Bad uri'")
+        self.assertEqual(str(exception_bad_uri.exception), "OSLODatatypeUnion.objectUri is invalid. Value = 'Bad objectUri'")
 
     def test_InvalidOSLODatatypeUnionEmptyName(self):
         logger = NoneLogger()
         collector = OSLOCollector(mock)
         creator = OTLUnionDatatypeCreator(logger, collector)
         osloDatatypeUnion = OSLODatatypeUnion(name='',
-                                              uri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtuLichtmastMasthoogte',
+                                              objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtuLichtmastMasthoogte',
                                               definition_nl='', label_nl='', usagenote_nl='',
                                               deprecated_version='')
 

@@ -9,7 +9,7 @@ class KlZenderModelnaam(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlZenderModelnaam",
                          label="zender modelnaam",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlZenderModelnaam",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlZenderModelnaam",
                          definition="Keuzelijst met modelnamen voor Zender.",
                          usagenote="",
                          deprecated_version="",

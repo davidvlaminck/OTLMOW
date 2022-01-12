@@ -9,7 +9,7 @@ class AntiParkeerpaalType(Keuzelijst):
     def __init__(self):
         super().__init__(naam="AntiParkeerpaalType",
                          label="Anti-parkeerpaal type",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#AntiParkeerpaalType",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#AntiParkeerpaalType",
                          definition="De vormen van een anti-parkeerpaal.",
                          usagenote="",
                          deprecated_version="",

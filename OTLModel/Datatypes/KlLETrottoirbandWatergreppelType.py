@@ -9,7 +9,7 @@ class KlLETrottoirbandWatergreppelType(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlLETrottoirbandWatergreppelType",
                          label="Trottoirband watergreppel type",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlLETrottoirbandWatergreppelType",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlLETrottoirbandWatergreppelType",
                          definition="De vormen van een trottoirband_watergreppel.",
                          usagenote="",
                          deprecated_version="",

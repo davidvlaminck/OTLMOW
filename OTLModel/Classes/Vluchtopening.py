@@ -19,7 +19,7 @@ class Vluchtopening(AIMObject):
         """Document waarin onder andere het inplantingsplan van de doorgang wordt weergegeven."""
         self.technischeFiche.naam = "technischeFiche"
         self.technischeFiche.label = "technische fiche"
-        self.technischeFiche.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Vluchtopening.technischeFiche"
+        self.technischeFiche.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Vluchtopening.technischeFiche"
         self.technischeFiche.definition = "Document waarin onder andere het inplantingsplan van de doorgang wordt weergegeven."
         self.technischeFiche.constraints = ""
         self.technischeFiche.usagenote = ""

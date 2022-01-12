@@ -5,9 +5,9 @@ from OTLModel.Datatypes.StringField import StringField
 
 
 class WKTField(StringField):
-    def __init__(self, naam, label, uri, definition, constraints, usagenote, deprecated_version, readonly=False,
+    def __init__(self, naam, label, objectUri, definition, constraints, usagenote, deprecated_version, readonly=False,
                  readonlyValue=None):
-        super().__init__(naam, label, uri, definition, constraints, usagenote, deprecated_version, readonly, readonlyValue)
+        super().__init__(naam, label, objectUri, definition, constraints, usagenote, deprecated_version, readonly, readonlyValue)
 
     def __setattr__(self, name, value):
         if type(self) == WKTField:

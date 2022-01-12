@@ -9,7 +9,7 @@ class KlKamerKlasse(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlKamerKlasse",
                          label="Kamer klasse",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlKamerKlasse",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlKamerKlasse",
                          definition="De stabiliteitsklasse van de kamer.",
                          usagenote="",
                          deprecated_version="",

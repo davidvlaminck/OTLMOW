@@ -7,7 +7,7 @@ class OSLORelatie:
     doel_overerving: str
     bron_uri: str
     doel_uri: str
-    uri: str
+    objectUri: str
     richting: str
     usagenote_nl: str
     deprecated_version: str

@@ -19,7 +19,7 @@ class PLC(Controller):
         self.merk = KeuzelijstField(naam="merk",
                                     label="merk",
                                     lijst=KlPLCMerk(),
-                                    uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#PLC.merk",
+                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#PLC.merk",
                                     definition="Het merk van de PLC.",
                                     constraints="",
                                     usagenote="",
@@ -29,7 +29,7 @@ class PLC(Controller):
         self.modelnaam = KeuzelijstField(naam="modelnaam",
                                          label="modelnaam",
                                          lijst=KlPLCModelnaam(),
-                                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#PLC.modelnaam",
+                                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#PLC.modelnaam",
                                          definition="De modelnaam van de PLC.",
                                          constraints="",
                                          usagenote="",
@@ -40,7 +40,7 @@ class PLC(Controller):
         """De technische fiche van de PLC."""
         self.technischeFiche.naam = "technischeFiche"
         self.technischeFiche.label = "technischeFiche"
-        self.technischeFiche.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#PLC.technischeFiche"
+        self.technischeFiche.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#PLC.technischeFiche"
         self.technischeFiche.definition = "De technische fiche van de PLC."
         self.technischeFiche.constraints = ""
         self.technischeFiche.usagenote = ""

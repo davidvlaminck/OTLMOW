@@ -12,7 +12,7 @@ class DtcProfileerlaag(ComplexField):
     def __init__(self):
         super().__init__(naam="DtcProfileerlaag",
                          label="Profileerlaag",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcProfileerlaag",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcProfileerlaag",
                          definition="Complex datatype om extra informatie te capteren van de profilerende laag.",
                          usagenote="",
                          deprecated_version="")
@@ -21,7 +21,7 @@ class DtcProfileerlaag(ComplexField):
         """Het gewicht van de profileerlaag in ton."""
         self.waarde.gewicht.naam = "gewicht"
         self.waarde.gewicht.label = "gewicht"
-        self.waarde.gewicht.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcProfileerlaag.gewicht"
+        self.waarde.gewicht.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcProfileerlaag.gewicht"
         self.waarde.gewicht.definition = "Het gewicht van de profileerlaag in ton."
         self.waarde.gewicht.constraints = ""
         self.waarde.gewicht.usagenote = ""
@@ -31,7 +31,7 @@ class DtcProfileerlaag(ComplexField):
         self.waarde.laagtype = KeuzelijstField(naam="laagtype",
                                                label="laagtype",
                                                lijst=KlBVLaagtype(),
-                                               uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcProfileerlaag.laagtype",
+                                               objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcProfileerlaag.laagtype",
                                                definition="Het type van de bitumineuze verharding.",
                                                constraints="",
                                                usagenote="",

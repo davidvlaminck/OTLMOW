@@ -22,7 +22,7 @@ class HoutigeVegetatie(BegroeidVoorkomen):
         aanlegField = DtcHoutigeAanleg()
         aanlegField.naam = "aanleg"
         aanlegField.label = "aanleg"
-        aanlegField.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#HoutigeVegetatie.aanleg"
+        aanlegField.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#HoutigeVegetatie.aanleg"
         aanlegField.definition = "De manier van aanplanten van de houtige vegetatie."
         aanlegField.constraints = ""
         aanlegField.usagenote = ""
@@ -34,7 +34,7 @@ class HoutigeVegetatie(BegroeidVoorkomen):
         """De hoogte in meter gemeten van de stamvoet tot de top of bovenste snoeivlak van de houtige vegetatie. """
         self.hoogte.naam = "hoogte"
         self.hoogte.label = "hoogte"
-        self.hoogte.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#HoutigeVegetatie.hoogte"
+        self.hoogte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#HoutigeVegetatie.hoogte"
         self.hoogte.definition = "De hoogte in meter gemeten van de stamvoet tot de top of bovenste snoeivlak van de houtige vegetatie. "
         self.hoogte.constraints = ""
         self.hoogte.usagenote = ""
@@ -42,7 +42,7 @@ class HoutigeVegetatie(BegroeidVoorkomen):
 
         self.isVrijUitgroeiend = BooleanField(naam="isVrijUitgroeiend",
                                               label="is vrij uitgroeiend",
-                                              uri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#HoutigeVegetatie.isVrijUitgroeiend",
+                                              objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#HoutigeVegetatie.isVrijUitgroeiend",
                                               definition="Geeft aan of de vegetatie of begroeiing al dan niet snoei vereist.",
                                               constraints="",
                                               usagenote="",
@@ -53,7 +53,7 @@ class HoutigeVegetatie(BegroeidVoorkomen):
         """De afmeting van de begroeiing in vierkante meter dat geschoren moet worden."""
         self.knipoppervlak.naam = "knipoppervlak"
         self.knipoppervlak.label = "knipoppervlak"
-        self.knipoppervlak.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#HoutigeVegetatie.knipoppervlak"
+        self.knipoppervlak.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#HoutigeVegetatie.knipoppervlak"
         self.knipoppervlak.definition = "De afmeting van de begroeiing in vierkante meter dat geschoren moet worden."
         self.knipoppervlak.constraints = ""
         self.knipoppervlak.usagenote = ""

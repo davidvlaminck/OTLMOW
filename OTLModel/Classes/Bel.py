@@ -17,7 +17,7 @@ class Bel(AIMNaamObject):
         """De technische fiche van een bel."""
         self.technischeFiche.naam = "technischeFiche"
         self.technischeFiche.label = "technische fiche"
-        self.technischeFiche.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bel.technischeFiche"
+        self.technischeFiche.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bel.technischeFiche"
         self.technischeFiche.definition = "De technische fiche van een bel."
         self.technischeFiche.constraints = ""
         self.technischeFiche.usagenote = ""

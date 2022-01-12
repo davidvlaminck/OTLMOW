@@ -24,7 +24,7 @@ class Schacht(PutRelatie):
         """De afmeting 1 (breedte) van het grondplan van de schacht in millimeter."""
         self.breedte.naam = "breedte"
         self.breedte.label = "breedte"
-        self.breedte.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Schacht.breedte"
+        self.breedte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Schacht.breedte"
         self.breedte.definition = "De afmeting 1 (breedte) van het grondplan van de schacht in millimeter."
         self.breedte.constraints = ""
         self.breedte.usagenote = ""
@@ -34,7 +34,7 @@ class Schacht(PutRelatie):
         """De diepte vanaf het maaiveld tot onderkant van de afdekplaat in meter."""
         self.diepte.naam = "diepte"
         self.diepte.label = "diepte"
-        self.diepte.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Schacht.diepte"
+        self.diepte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Schacht.diepte"
         self.diepte.definition = "De diepte vanaf het maaiveld tot onderkant van de afdekplaat in meter."
         self.diepte.constraints = ""
         self.diepte.usagenote = ""
@@ -42,7 +42,7 @@ class Schacht(PutRelatie):
 
         self.heeftLadder = BooleanField(naam="heeftLadder",
                                         label="heeft ladder",
-                                        uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Schacht.heeftLadder",
+                                        objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Schacht.heeftLadder",
                                         definition="Bepaling of er al dan niet een ladder aanwezig is in de schacht.",
                                         constraints="",
                                         usagenote="",
@@ -53,7 +53,7 @@ class Schacht(PutRelatie):
         """De afmeting 2 (hoogte) van het grondplan van de schacht in millimeter."""
         self.hoogte.naam = "hoogte"
         self.hoogte.label = "hoogte"
-        self.hoogte.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Schacht.hoogte"
+        self.hoogte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Schacht.hoogte"
         self.hoogte.definition = "De afmeting 2 (hoogte) van het grondplan van de schacht in millimeter."
         self.hoogte.constraints = ""
         self.hoogte.usagenote = ""
@@ -62,7 +62,7 @@ class Schacht(PutRelatie):
         self.materiaal = KeuzelijstField(naam="materiaal",
                                          label="materiaal",
                                          lijst=KlPutMateriaal(),
-                                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Schacht.materiaal",
+                                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Schacht.materiaal",
                                          definition="Het materiaal waaruit de schacht opgebouwd is.",
                                          constraints="",
                                          usagenote="",
@@ -72,7 +72,7 @@ class Schacht(PutRelatie):
         technischeFicheField = DtcDocument()
         technischeFicheField.naam = "technischeFiche"
         technischeFicheField.label = "technische fiche"
-        technischeFicheField.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Schacht.technischeFiche"
+        technischeFicheField.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Schacht.technischeFiche"
         technischeFicheField.definition = "De technische fiche van de schacht."
         technischeFicheField.constraints = ""
         technischeFicheField.usagenote = "Bestanden van het type xlsx, dwg of pdf."
@@ -83,7 +83,7 @@ class Schacht(PutRelatie):
         self.vorm = KeuzelijstField(naam="vorm",
                                     label="vorm",
                                     lijst=KlRioleringVorm(),
-                                    uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Schacht.vorm",
+                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Schacht.vorm",
                                     definition="Vorm van het schachtgedeelte van de kamer.",
                                     constraints="",
                                     usagenote="",

@@ -19,7 +19,7 @@ class EMDraagconstructie(Draagconstructie):
         self.elektrischeBeveiliging = KeuzelijstField(naam="elektrischeBeveiliging",
                                                       label="elektrische beveiliging",
                                                       lijst=KlEMDraagconstructieElekBeveiliging(),
-                                                      uri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#EMDraagconstructie.elektrischeBeveiliging",
+                                                      objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#EMDraagconstructie.elektrischeBeveiliging",
                                                       definition="Type elektrische beveiliging aanwezig in de draagconstructie.",
                                                       constraints="",
                                                       usagenote="",

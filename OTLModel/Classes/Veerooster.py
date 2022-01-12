@@ -17,7 +17,7 @@ class Veerooster(ComplexeGeleiding):
         """De breedte van het veerooster in meter."""
         self.breedte.naam = "breedte"
         self.breedte.label = "breedte"
-        self.breedte.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Veerooster.breedte"
+        self.breedte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Veerooster.breedte"
         self.breedte.definition = "De breedte van het veerooster in meter."
         self.breedte.constraints = ""
         self.breedte.usagenote = ""

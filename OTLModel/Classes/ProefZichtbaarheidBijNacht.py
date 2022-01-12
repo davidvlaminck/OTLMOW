@@ -15,7 +15,7 @@ class ProefZichtbaarheidBijNacht(Proef):
 
         self.retrotreflectiecoëfficiënt = DecimalFloatField(naam="retrotreflectiecoëfficiënt",
                                                             label="retrotreflectiecoëfficiënt",
-                                                            uri="https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefZichtbaarheidBijNacht.retrotreflectiecoëfficiënt",
+                                                            objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefZichtbaarheidBijNacht.retrotreflectiecoëfficiënt",
                                                             definition="De maat voor het retroreflecterend vermogen van een markering bij nacht.",
                                                             constraints="",
                                                             usagenote="uitgedrukt in mcd. m-2.lux-1",

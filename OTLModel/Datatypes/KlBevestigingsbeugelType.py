@@ -9,7 +9,7 @@ class KlBevestigingsbeugelType(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlBevestigingsbeugelType",
                          label="Bevestigingsbeugel type",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlBevestigingsbeugelType",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlBevestigingsbeugelType",
                          definition="Types van bevestigingsbeugel.",
                          usagenote="",
                          deprecated_version="",

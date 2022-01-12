@@ -9,7 +9,7 @@ class KlBrandblusserGewicht(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlBrandblusserGewicht",
                          label="Brandblusser gewicht",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlBrandblusserGewicht",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlBrandblusserGewicht",
                          definition="Keuzelijst met de mogelijke gewichten van brandblussers.",
                          usagenote="",
                          deprecated_version="",

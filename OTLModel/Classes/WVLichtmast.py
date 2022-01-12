@@ -20,7 +20,7 @@ class WVLichtmast(Lichtmast):
         self.aantalArmen = KeuzelijstField(naam="aantalArmen",
                                            label="aantal armen",
                                            lijst=KlWvLichtmastAantArmen(),
-                                           uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#WVLichtmast.aantalArmen",
+                                           objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#WVLichtmast.aantalArmen",
                                            definition="Aantal armen van de lichtmast.",
                                            constraints="",
                                            usagenote="",
@@ -30,7 +30,7 @@ class WVLichtmast(Lichtmast):
         self.armlengte = KeuzelijstField(naam="armlengte",
                                          label="armlengte",
                                          lijst=KlWvLichtmastArmlengte(),
-                                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#WVLichtmast.armlengte",
+                                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#WVLichtmast.armlengte",
                                          definition="Lengte van de arm van de lichtmast in meter.",
                                          constraints="",
                                          usagenote="",
@@ -40,7 +40,7 @@ class WVLichtmast(Lichtmast):
         bevestigingToestellenField = DtuWvLichtmastBevsToestelMethode()
         bevestigingToestellenField.naam = "bevestigingToestellen"
         bevestigingToestellenField.label = "bevestiging toestellen"
-        bevestigingToestellenField.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#WVLichtmast.bevestigingToestellen"
+        bevestigingToestellenField.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#WVLichtmast.bevestigingToestellen"
         bevestigingToestellenField.definition = "Geeft de wijze aan waarop elk verlichtingstoestel bevestigd is op de lichtmast als keuze uit een lijst voor standaardmethodes of verder toegelicht wanneer een afwijkende methode gebruikt wordt."
         bevestigingToestellenField.constraints = ""
         bevestigingToestellenField.usagenote = ""

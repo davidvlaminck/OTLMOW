@@ -18,8 +18,8 @@ class OTLEnumerationCreator(AbstractDatatypeCreator):
     def CreateBlockToWriteFromEnumerations(self, osloEnumeration: OSLOEnumeration):
         if not isinstance(osloEnumeration, OSLOEnumeration):
             raise ValueError(f"Input is not a OSLOEnumeration")
-        if osloEnumeration.uri == '' or not osloEnumeration.uri.startswith('https://wegenenverkeer.data.vlaanderen.be/ns/'):
-            raise ValueError(f"OSLOEnumeration.uri is invalid. Value = '{osloEnumeration.uri}'")
+        if osloEnumeration.objectUri == '' or not osloEnumeration.objectUri.startswith('https://wegenenverkeer.data.vlaanderen.be/ns/'):
+            raise ValueError(f"OSLOEnumeration.objectUri is invalid. Value = '{osloEnumeration.objectUri}'")
         if osloEnumeration.name == '':
             raise ValueError(f"OSLOEnumeration.name is invalid. Value = '{osloEnumeration.name}'")
 
@@ -37,7 +37,7 @@ class OTLEnumerationCreator(AbstractDatatypeCreator):
                      '    def __init__(self):',
                      f'        super().__init__(naam="{osloEnumeration.name}",',
                      f'                         label="{osloEnumeration.label_nl}",',
-                     f'                         uri="{osloEnumeration.uri}",',
+                     f'                         objectUri="{osloEnumeration.objectUri}",',
                      f'                         definition="{osloEnumeration.definition_nl}",',
                      f'                         usagenote="{osloEnumeration.usagenote_nl}",',
                      f'                         deprecated_version="{osloEnumeration.deprecated_version}",',
@@ -47,7 +47,7 @@ class OTLEnumerationCreator(AbstractDatatypeCreator):
         waardes = self.getKeuzelijstWaardesFromUri(osloEnumeration.name)
         for waarde in waardes:
             datablock.append(
-                f'        self.add_option("{waarde.invulwaarde}", "{waarde.label}", "{waarde.definitie}", "{waarde.uri}")')
+                f'        self.add_option("{waarde.invulwaarde}", "{waarde.label}", "{waarde.definitie}", "{waarde.objectUri}")')
 
         return datablock
 
@@ -72,7 +72,7 @@ class OTLEnumerationCreator(AbstractDatatypeCreator):
         lijst_keuze_opties = []
         for distinct_object in distinct_subjects:
             waarde = KeuzelijstWaarde()
-            waarde.uri = distinct_object
+            waarde.objectUri = distinct_object
             for s, p, o in g.triples((URIRef(distinct_object), None, None)):
                 if str(p) == 'http://www.w3.org/2004/02/skos/core#notation':
                     waarde.invulwaarde = str(o)

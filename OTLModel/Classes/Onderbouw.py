@@ -21,7 +21,7 @@ class Onderbouw(LaagDikte, Laag):
 
         self.isHerstel = BooleanField(naam="isHerstel",
                                       label="is herstel",
-                                      uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Onderbouw.isHerstel",
+                                      objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Onderbouw.isHerstel",
                                       definition="Aanduiding of de onderbouw laag is of wordt hersteld.",
                                       constraints="",
                                       usagenote="",
@@ -32,7 +32,7 @@ class Onderbouw(LaagDikte, Laag):
         """Een gedeeltelijke insnijding in een constructiedeel die uitzetting en krimp in de constructie toelaat."""
         self.krimpvoegen.naam = "krimpvoegen"
         self.krimpvoegen.label = "Krimpvoegen"
-        self.krimpvoegen.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Onderbouw.krimpvoegen"
+        self.krimpvoegen.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Onderbouw.krimpvoegen"
         self.krimpvoegen.definition = "Een gedeeltelijke insnijding in een constructiedeel die uitzetting en krimp in de constructie toelaat."
         self.krimpvoegen.constraints = ""
         self.krimpvoegen.usagenote = ""
@@ -41,7 +41,7 @@ class Onderbouw(LaagDikte, Laag):
         self.type = KeuzelijstField(naam="type",
                                     label="type",
                                     lijst=KlOnderbouwType(),
-                                    uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Onderbouw.type",
+                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Onderbouw.type",
                                     definition="Het type van onderbouw.",
                                     constraints="",
                                     usagenote="",
@@ -52,7 +52,7 @@ class Onderbouw(LaagDikte, Laag):
         """Het volume van onderbouw in kubieke meter."""
         self.volume.naam = "volume"
         self.volume.label = "volume"
-        self.volume.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Onderbouw.volume"
+        self.volume.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Onderbouw.volume"
         self.volume.definition = "Het volume van onderbouw in kubieke meter."
         self.volume.constraints = ""
         self.volume.usagenote = ""

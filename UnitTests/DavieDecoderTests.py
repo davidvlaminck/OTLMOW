@@ -83,13 +83,7 @@ class DavieDecoderTests(TestCase):
     "bestandsnaam" : "Cooper.jpg"
   },
   "programmeertool" : "fwispbnxlo",
-  "externeReferentie" : [ {
-    "externePartij" : "bij externe partij 2",
-    "externReferentienummer" : "externe referentie 2"
-  }, {
-    "externePartij" : "bij externe partij 1",
-    "externReferentienummer" : "externe referentie 1"
-  } ],
+  "externeReferentie" : [ {    "externePartij" : "bij externe partij 2",    "externReferentienummer" : "externe referentie 2"  }, {    "externePartij" : "bij externe partij 1",    "externReferentienummer" : "externe referentie 1"  } ],
   "regelaartype" : "type-1",
   "notitie" : "test 123",
   "naam" : "Gevondenproficiat",
@@ -179,17 +173,15 @@ class DavieDecoderTests(TestCase):
         self.assertTrue(isinstance(lijstObjecten[0], Verkeersregelaar))
 
         with self.subTest("Assert KardinaliteitField met KeuzelijstField"):
-            self.assertTrue(isinstance(lijstObjecten[0].coordinatiewijzeField, KardinaliteitField))
-            self.assertTrue(isinstance(lijstObjecten[0].coordinatiewijzeField.waarde, list))
-            self.assertEqual("centraal", lijstObjecten[0].coordinatiewijzeField.waarde[0].waarde.invulwaarde)
-            self.assertEqual("pulsen", lijstObjecten[0].coordinatiewijzeField.waarde[1].waarde.invulwaarde)
+            self.assertTrue(isinstance(lijstObjecten[0].coordinatiewijze, KardinaliteitField))
+            self.assertTrue(isinstance(lijstObjecten[0].coordinatiewijze.waarde, list))
+            self.assertEqual("centraal", lijstObjecten[0].coordinatiewijze.waarde[0].waarde.invulwaarde)
+            self.assertEqual("pulsen", lijstObjecten[0].coordinatiewijze.waarde[1].waarde.invulwaarde)
 
-
-# write test for
-# DAtefield
-# KArdinaliteitField
-# DateTimeField
-# TimeField
-# UnionTypeField
-# NonNegIntField
-
+        with self.subTest("Assert KardinaliteitField met ComplexField"):
+            self.assertTrue(isinstance(lijstObjecten[0].externeReferentie, KardinaliteitField))
+            self.assertTrue(isinstance(lijstObjecten[0].externeReferentie.waarde, list))
+            self.assertEqual("bij externe partij 2", lijstObjecten[0].externeReferentie.waarde[0].externePartij.waarde)
+            self.assertEqual("externe referentie 2", lijstObjecten[0].externeReferentie.waarde[0].externReferentienummer.waarde)
+            self.assertEqual("bij externe partij 1", lijstObjecten[0].externeReferentie.waarde[1].externePartij.waarde)
+            self.assertEqual("externe referentie 1", lijstObjecten[0].externeReferentie.waarde[1].externReferentienummer.waarde)

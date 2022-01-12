@@ -9,7 +9,7 @@ class KlAntenneFrequentierange(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlAntenneFrequentierange",
                          label="Antenne frequentierange",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlAntenneFrequentierange",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlAntenneFrequentierange",
                          definition="Keuzelijst met frequentiebanden aan waarbinnen een antenne gebruikt kan worden.",
                          usagenote="",
                          deprecated_version="",

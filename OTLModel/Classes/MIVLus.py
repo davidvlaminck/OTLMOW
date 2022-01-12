@@ -20,7 +20,7 @@ class MIVLus(AIMNaamObject):
         """De elektrische eigenschappen van de lus: R, L, C en de isolatieweerstand. Dit verzekert naast de afmetingen mee de voorziene nauwkeurigheid van de voertuigmetingen."""
         self.meetrapport.naam = "meetrapport"
         self.meetrapport.label = "meetrapport"
-        self.meetrapport.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#MIVLus.meetrapport"
+        self.meetrapport.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#MIVLus.meetrapport"
         self.meetrapport.definition = "De elektrische eigenschappen van de lus: R, L, C en de isolatieweerstand. Dit verzekert naast de afmetingen mee de voorziene nauwkeurigheid van de voertuigmetingen."
         self.meetrapport.constraints = ""
         self.meetrapport.usagenote = "Bestanden van het type pdf."
@@ -29,7 +29,7 @@ class MIVLus(AIMNaamObject):
         self.uitslijprichting = KeuzelijstField(naam="uitslijprichting",
                                                 label="uitslijprichting",
                                                 lijst=KlMIVLusUitslijprichting(),
-                                                uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#MIVLus.uitslijprichting",
+                                                objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#MIVLus.uitslijprichting",
                                                 definition="De uitlopers van de lus gaan naar links of naar rechts  bekeken ten opzichte van de rijrichting.",
                                                 constraints="",
                                                 usagenote="",
@@ -39,7 +39,7 @@ class MIVLus(AIMNaamObject):
         self.zichtbaarheid = KeuzelijstField(naam="zichtbaarheid",
                                              label="zichtbaarheid",
                                              lijst=KlMIVLusZichtbaarheid(),
-                                             uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#MIVLus.zichtbaarheid",
+                                             objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#MIVLus.zichtbaarheid",
                                              definition="Is dus lus zichtbaar in het wegdek of bedekt door een toplaag.",
                                              constraints="",
                                              usagenote="",

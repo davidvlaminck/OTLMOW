@@ -9,7 +9,7 @@ class KlIOKaartMerk(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlIOKaartMerk",
                          label="IO-kaart merken",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlIOKaartMerk",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlIOKaartMerk",
                          definition="Lijst van mogelijke merken voor IO-kaarten.",
                          usagenote="",
                          deprecated_version="",

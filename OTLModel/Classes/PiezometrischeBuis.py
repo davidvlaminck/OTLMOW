@@ -17,7 +17,7 @@ class PiezometrischeBuis(AIMObject):
         """De diepte vanaf maaiveld tot de onderkant van de piezometrische buis in meter."""
         self.diepte.naam = "diepte"
         self.diepte.label = "diepte"
-        self.diepte.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#PiezometrischeBuis.diepte"
+        self.diepte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#PiezometrischeBuis.diepte"
         self.diepte.definition = "De diepte vanaf maaiveld tot de onderkant van de piezometrische buis in meter."
         self.diepte.constraints = ""
         self.diepte.usagenote = ""

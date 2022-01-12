@@ -19,7 +19,7 @@ class KringsBerliner(AIMObject):
         """De totale lengte van de beschoeiing langs de sleuf in lopende meter."""
         self.beschoeiingsLengte.naam = "beschoeiingsLengte"
         self.beschoeiingsLengte.label = "beschoeiingslengte"
-        self.beschoeiingsLengte.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KringsBerliner.beschoeiingsLengte"
+        self.beschoeiingsLengte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KringsBerliner.beschoeiingsLengte"
         self.beschoeiingsLengte.definition = "De totale lengte van de beschoeiing langs de sleuf in lopende meter."
         self.beschoeiingsLengte.constraints = ""
         self.beschoeiingsLengte.usagenote = ""
@@ -29,7 +29,7 @@ class KringsBerliner(AIMObject):
         """De diepte van de buis."""
         self.buisdiepte.naam = "buisdiepte"
         self.buisdiepte.label = "buisdiepte"
-        self.buisdiepte.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KringsBerliner.buisdiepte"
+        self.buisdiepte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KringsBerliner.buisdiepte"
         self.buisdiepte.definition = "De diepte van de buis."
         self.buisdiepte.constraints = ""
         self.buisdiepte.usagenote = ""
@@ -38,7 +38,7 @@ class KringsBerliner(AIMObject):
         self.type = KeuzelijstField(naam="type",
                                     label="type",
                                     lijst=KlTypeBeschoeiing(),
-                                    uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KringsBerliner.type",
+                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KringsBerliner.type",
                                     definition="Het type beschoeiing.",
                                     constraints="",
                                     usagenote="",

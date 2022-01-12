@@ -15,7 +15,7 @@ class Stroomkring(AIMNaamObject):
 
         self.stroomkringnummer = StringField(naam="stroomkringnummer",
                                              label="stroomkringnummer",
-                                             uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Stroomkring.stroomkringnummer",
+                                             objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Stroomkring.stroomkringnummer",
                                              definition="De identificatie van de stroomkring.",
                                              constraints="",
                                              usagenote="",

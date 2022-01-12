@@ -10,7 +10,7 @@ class DtcKrimpvoeg(ComplexField):
     def __init__(self):
         super().__init__(naam="DtcKrimpvoeg",
                          label="Krimpvoeg",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcKrimpvoeg",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcKrimpvoeg",
                          definition="Complex datatype voor de informatie van de krimpvoegen.",
                          usagenote="",
                          deprecated_version="")
@@ -19,7 +19,7 @@ class DtcKrimpvoeg(ComplexField):
         """De afstand tussen de krimpvoegen in meter."""
         self.waarde.krimpvoegFrequentie.naam = "krimpvoegFrequentie"
         self.waarde.krimpvoegFrequentie.label = "krimpvoeg frequentie"
-        self.waarde.krimpvoegFrequentie.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcKrimpvoeg.krimpvoegFrequentie"
+        self.waarde.krimpvoegFrequentie.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcKrimpvoeg.krimpvoegFrequentie"
         self.waarde.krimpvoegFrequentie.definition = "De afstand tussen de krimpvoegen in meter."
         self.waarde.krimpvoegFrequentie.constraints = ""
         self.waarde.krimpvoegFrequentie.usagenote = ""
@@ -30,7 +30,7 @@ class DtcKrimpvoeg(ComplexField):
         """De totale lengte in meter."""
         self.waarde.totaleLengte.naam = "totaleLengte"
         self.waarde.totaleLengte.label = "lengte"
-        self.waarde.totaleLengte.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcKrimpvoeg.totaleLengte"
+        self.waarde.totaleLengte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcKrimpvoeg.totaleLengte"
         self.waarde.totaleLengte.definition = "De totale lengte in meter."
         self.waarde.totaleLengte.constraints = ""
         self.waarde.totaleLengte.usagenote = ""

@@ -10,14 +10,14 @@ class DtcVegetatieSoortnaam(ComplexField):
     def __init__(self):
         super().__init__(naam="DtcVegetatieSoortnaam",
                          label="Vegetatie soortnaam",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcVegetatieSoortnaam",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcVegetatieSoortnaam",
                          definition="Complex datatype voor de soortnaam en code van een begroeiing.",
                          usagenote="",
                          deprecated_version="")
 
         self.waarde.code = StringField(naam="code",
                                        label="code",
-                                       uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcVegetatieSoortnaam.code",
+                                       objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcVegetatieSoortnaam.code",
                                        definition="De unieke identificator voor de soort van het vegetatie-element.",
                                        constraints="",
                                        usagenote="De GBIF code is een unieke gestandaardiseerde code uitgegeven door het GBIF (the Global Biodiversity Information Facility - GBIF.org)",
@@ -27,7 +27,7 @@ class DtcVegetatieSoortnaam(ComplexField):
 
         self.waarde.soortnaamNederlands = StringField(naam="soortnaamNederlands",
                                                       label="soortnaam nederlands",
-                                                      uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcVegetatieSoortnaam.soortnaamNederlands",
+                                                      objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcVegetatieSoortnaam.soortnaamNederlands",
                                                       definition="De Nederlandse soortnaam van de beplanting.",
                                                       constraints="",
                                                       usagenote="",
@@ -37,7 +37,7 @@ class DtcVegetatieSoortnaam(ComplexField):
 
         self.waarde.soortnaamWetenschappelijk = StringField(naam="soortnaamWetenschappelijk",
                                                             label="soortnaam wetenschappelijk",
-                                                            uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcVegetatieSoortnaam.soortnaamWetenschappelijk",
+                                                            objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcVegetatieSoortnaam.soortnaamWetenschappelijk",
                                                             definition="De wetenschappelijke soortnaam van de beplanting.",
                                                             constraints="",
                                                             usagenote="",

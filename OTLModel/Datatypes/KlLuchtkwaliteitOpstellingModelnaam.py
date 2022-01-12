@@ -9,7 +9,7 @@ class KlLuchtkwaliteitOpstellingModelnaam(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlLuchtkwaliteitOpstellingModelnaam",
                          label="Luchtkwaliteitsopstelling modelnaam",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#KlLuchtkwaliteitOpstellingModelnaam",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#KlLuchtkwaliteitOpstellingModelnaam",
                          definition="De modelnaam van een onderdeel uit een luchtkwaliteitsinstallatie.",
                          usagenote="",
                          deprecated_version="",

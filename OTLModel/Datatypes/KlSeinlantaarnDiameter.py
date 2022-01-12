@@ -9,7 +9,7 @@ class KlSeinlantaarnDiameter(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlSeinlantaarnDiameter",
                          label="Seinlantaarn diameter",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#KlSeinlantaarnDiameter",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#KlSeinlantaarnDiameter",
                          definition="Keuzelijst met de verschillende voorkomende diameter-waarden voor Seinlantaarn.",
                          usagenote="",
                          deprecated_version="",

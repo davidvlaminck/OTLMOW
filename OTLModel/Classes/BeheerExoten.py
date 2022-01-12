@@ -20,7 +20,7 @@ class BeheerExoten(AIMObject):
         self.beheeroptie = KeuzelijstField(naam="beheeroptie",
                                            label="beheeroptie",
                                            lijst=KlBeheerExoten(),
-                                           uri="https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#BeheerExoten.beheeroptie",
+                                           objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#BeheerExoten.beheeroptie",
                                            definition="Behandelingswijzen van exoten.",
                                            constraints="",
                                            usagenote="",
@@ -29,7 +29,7 @@ class BeheerExoten(AIMObject):
 
         self.bijzondereAfvoerVereist = BooleanField(naam="bijzondereAfvoerVereist",
                                                     label="bijzondere afvoer vereist",
-                                                    uri="https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#BeheerExoten.bijzondereAfvoerVereist",
+                                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#BeheerExoten.bijzondereAfvoerVereist",
                                                     definition="Aanduiding of voor de verwijderde exoten een niet-reguliere afvoer is voorzien.",
                                                     constraints="",
                                                     usagenote="",
@@ -38,7 +38,7 @@ class BeheerExoten(AIMObject):
 
         self.heeftDeponie = BooleanField(naam="heeftDeponie",
                                          label="heeft deponie",
-                                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#BeheerExoten.heeftDeponie",
+                                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#BeheerExoten.heeftDeponie",
                                          definition="Aanduiding of de Japanse duizendknoop terplaatse kan worden gedeponeerd in een gecontamineerde zone.",
                                          constraints="",
                                          usagenote="",
@@ -48,7 +48,7 @@ class BeheerExoten(AIMObject):
         self.nazorgJaarfrequentie = KeuzelijstField(naam="nazorgJaarfrequentie",
                                                     label="nazorg jaarfrequentie",
                                                     lijst=KlNazorgJaarfrequentie(),
-                                                    uri="https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#BeheerExoten.nazorgJaarfrequentie",
+                                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#BeheerExoten.nazorgJaarfrequentie",
                                                     definition="Aantal keer dat de behandelde zone jaarlijks dient te worden gecontroleerd.",
                                                     constraints="",
                                                     usagenote="",
@@ -59,7 +59,7 @@ class BeheerExoten(AIMObject):
         """De oppervlakte in vierkante meter van de te behandelen exoten."""
         self.oppervlakte.naam = "oppervlakte"
         self.oppervlakte.label = "oppervlakte"
-        self.oppervlakte.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#BeheerExoten.oppervlakte"
+        self.oppervlakte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#BeheerExoten.oppervlakte"
         self.oppervlakte.definition = "De oppervlakte in vierkante meter van de te behandelen exoten."
         self.oppervlakte.constraints = ""
         self.oppervlakte.usagenote = ""

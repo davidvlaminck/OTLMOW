@@ -17,7 +17,7 @@ class ProefConsistentie(Proef):
         """Proefresultaten van de consistentie."""
         self.consistentie.naam = "consistentie"
         self.consistentie.label = "consistentie"
-        self.consistentie.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefConsistentie.consistentie"
+        self.consistentie.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefConsistentie.consistentie"
         self.consistentie.definition = "Proefresultaten van de consistentie."
         self.consistentie.constraints = ""
         self.consistentie.usagenote = ""

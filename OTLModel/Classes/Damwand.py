@@ -19,7 +19,7 @@ class Damwand(ConstructieElement):
 
         self.isWaterdicht = BooleanField(naam="isWaterdicht",
                                          label="is waterdicht",
-                                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Damwand.isWaterdicht",
+                                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Damwand.isWaterdicht",
                                          definition="Geeft aan of de damwand al dan niet waterdicht is.",
                                          constraints="",
                                          usagenote="",
@@ -29,7 +29,7 @@ class Damwand(ConstructieElement):
         self.materiaal = KeuzelijstField(naam="materiaal",
                                          label="Damwand materiaal",
                                          lijst=KlDamwandMateriaal(),
-                                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Damwand.materiaal",
+                                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Damwand.materiaal",
                                          definition="Het materiaal waaruit de damwand bestaat.",
                                          constraints="",
                                          usagenote="",
@@ -40,7 +40,7 @@ class Damwand(ConstructieElement):
         """De totale oppervlakte van de damwandconstructie in vierkante meter."""
         self.oppervlakte.naam = "oppervlakte"
         self.oppervlakte.label = "oppervlakte"
-        self.oppervlakte.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Damwand.oppervlakte"
+        self.oppervlakte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Damwand.oppervlakte"
         self.oppervlakte.definition = "De totale oppervlakte van de damwandconstructie in vierkante meter."
         self.oppervlakte.constraints = ""
         self.oppervlakte.usagenote = ""
@@ -50,7 +50,7 @@ class Damwand(ConstructieElement):
         """De lengte van één damwandprofiel."""
         self.profiellengte.naam = "profiellengte"
         self.profiellengte.label = "profiellengte"
-        self.profiellengte.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Damwand.profiellengte"
+        self.profiellengte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Damwand.profiellengte"
         self.profiellengte.definition = "De lengte van één damwandprofiel."
         self.profiellengte.constraints = ""
         self.profiellengte.usagenote = ""
@@ -60,7 +60,7 @@ class Damwand(ConstructieElement):
         """De totale lengte van de damwandconstructie in lopende meter."""
         self.totaleLengte.naam = "totaleLengte"
         self.totaleLengte.label = "totale lengte"
-        self.totaleLengte.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Damwand.totaleLengte"
+        self.totaleLengte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Damwand.totaleLengte"
         self.totaleLengte.definition = "De totale lengte van de damwandconstructie in lopende meter."
         self.totaleLengte.constraints = ""
         self.totaleLengte.usagenote = ""

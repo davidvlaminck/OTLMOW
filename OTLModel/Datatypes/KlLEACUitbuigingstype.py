@@ -9,7 +9,7 @@ class KlLEACUitbuigingstype(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlLEACUitbuigingstype",
                          label="Uitbuigingstype",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlLEACUitbuigingstype",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlLEACUitbuigingstype",
                          definition="De mogelijke uitbuigingstypes.",
                          usagenote="",
                          deprecated_version="",

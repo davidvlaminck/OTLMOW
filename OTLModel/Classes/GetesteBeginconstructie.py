@@ -19,7 +19,7 @@ class GetesteBeginconstructie(SchokindexVoertuigkering, Beginstuk):
         self.performantieklasse = KeuzelijstField(naam="performantieklasse",
                                                   label="performantieklasse",
                                                   lijst=KlLEACPerformantieklasse(),
-                                                  uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#GetesteBeginconstructie.performantieklasse",
+                                                  objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#GetesteBeginconstructie.performantieklasse",
                                                   definition="De aanduiding hoe (performantie) de beginconstructie is getest.",
                                                   constraints="",
                                                   usagenote="",

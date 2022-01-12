@@ -19,7 +19,7 @@ class PoEInjector(AIMNaamObject):
         self.merk = KeuzelijstField(naam="merk",
                                     label="merk",
                                     lijst=KlPoEInjectorMerk(),
-                                    uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#PoEInjector.merk",
+                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#PoEInjector.merk",
                                     definition="Het merk van de PoE-injector.",
                                     constraints="",
                                     usagenote="",
@@ -29,7 +29,7 @@ class PoEInjector(AIMNaamObject):
         self.modelnaam = KeuzelijstField(naam="modelnaam",
                                          label="modelnaam",
                                          lijst=KlPoEInjectorModelnaam(),
-                                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#PoEInjector.modelnaam",
+                                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#PoEInjector.modelnaam",
                                          definition="De modelnaam van de PoE-injector.",
                                          constraints="",
                                          usagenote="",
@@ -40,7 +40,7 @@ class PoEInjector(AIMNaamObject):
         """De technische fiche van de PoE-injector."""
         self.technischeFiche.naam = "technischeFiche"
         self.technischeFiche.label = "technische fiche"
-        self.technischeFiche.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#PoEInjector.technischeFiche"
+        self.technischeFiche.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#PoEInjector.technischeFiche"
         self.technischeFiche.definition = "De technische fiche van de PoE-injector."
         self.technischeFiche.constraints = ""
         self.technischeFiche.usagenote = ""

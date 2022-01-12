@@ -13,7 +13,7 @@ class DtcContactinfo(ComplexField):
     def __init__(self):
         super().__init__(naam="DtcContactinfo",
                          label="Contactinfo",
-                         uri="https://schema.org/ContactPoint",
+                         objectUri="https://schema.org/ContactPoint",
                          definition="Complex datatype voor de informatie zoals email, telefoon, adres die toelaat om iemand of iets te contacteren.",
                          usagenote="",
                          deprecated_version="")
@@ -22,7 +22,7 @@ class DtcContactinfo(ComplexField):
         """Adres dat men kan aanschrijven of bezoeken."""
         self.waarde.adres.naam = "adres"
         self.waarde.adres.label = "adres"
-        self.waarde.adres.uri = "https://schema.org/ContactPoint.adres"
+        self.waarde.adres.objectUri = "https://schema.org/ContactPoint.adres"
         self.waarde.adres.definition = "Adres dat men kan aanschrijven of bezoeken."
         self.waarde.adres.constraints = ""
         self.waarde.adres.usagenote = ""
@@ -32,7 +32,7 @@ class DtcContactinfo(ComplexField):
         beschikbaarheidField = DtcOpeningsurenSpecificatie()
         beschikbaarheidField.naam = "beschikbaarheid"
         beschikbaarheidField.label = "beschikbaarheid"
-        beschikbaarheidField.uri = "https://schema.org/ContactPoint.beschikbaarheid"
+        beschikbaarheidField.objectUri = "https://schema.org/ContactPoint.beschikbaarheid"
         beschikbaarheidField.definition = "Periode waarin contact kan worden opgenomen."
         beschikbaarheidField.constraints = ""
         beschikbaarheidField.usagenote = ""
@@ -43,7 +43,7 @@ class DtcContactinfo(ComplexField):
 
         self.waarde.contactnaam = StringField(naam="contactnaam",
                                               label="contactnaam",
-                                              uri="https://schema.org/ContactPoint.contactnaam",
+                                              objectUri="https://schema.org/ContactPoint.contactnaam",
                                               definition="Naam van bv. de persoon die men kan contacteren.",
                                               constraints="",
                                               usagenote="",
@@ -53,7 +53,7 @@ class DtcContactinfo(ComplexField):
 
         self.waarde.email = StringField(naam="email",
                                         label="email",
-                                        uri="https://schema.org/ContactPoint.email",
+                                        objectUri="https://schema.org/ContactPoint.email",
                                         definition="Email-adres waarnaar men kan mailen.",
                                         constraints="",
                                         usagenote="",
@@ -63,7 +63,7 @@ class DtcContactinfo(ComplexField):
 
         self.waarde.fax = StringField(naam="fax",
                                       label="fax",
-                                      uri="https://schema.org/ContactPoint.fax",
+                                      objectUri="https://schema.org/ContactPoint.fax",
                                       definition="Faxnummer waarnaar men kan faxen.",
                                       constraints="",
                                       usagenote="",
@@ -73,7 +73,7 @@ class DtcContactinfo(ComplexField):
 
         self.waarde.opmerkingen = StringField(naam="opmerkingen",
                                               label="opmerkingen",
-                                              uri="https://schema.org/ContactPoint.opmerkingen",
+                                              objectUri="https://schema.org/ContactPoint.opmerkingen",
                                               definition="Bijkomende informatie met betrekking tot het gebruik van de contactgegevens.",
                                               constraints="",
                                               usagenote="",
@@ -83,7 +83,7 @@ class DtcContactinfo(ComplexField):
 
         self.waarde.telefoon = StringField(naam="telefoon",
                                            label="telefoon",
-                                           uri="https://schema.org/ContactPoint.telefoon",
+                                           objectUri="https://schema.org/ContactPoint.telefoon",
                                            definition="Telefoonnummer waarop men kan bellen.",
                                            constraints="",
                                            usagenote="",
@@ -93,7 +93,7 @@ class DtcContactinfo(ComplexField):
 
         self.waarde.website = StringField(naam="website",
                                           label="website",
-                                          uri="https://schema.org/ContactPoint.website",
+                                          objectUri="https://schema.org/ContactPoint.website",
                                           definition="Website waarnaar men kan surfen.",
                                           constraints="",
                                           usagenote="",

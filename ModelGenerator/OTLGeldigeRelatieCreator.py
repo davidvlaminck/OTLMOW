@@ -19,9 +19,9 @@ class OTLGeldigeRelatieCreator:
                           '        self.lijst = ['])
 
         for relatie in self.osloCollector.relations:
-            bron = next(c.uri for c in self.osloCollector.classes if c.uri == relatie.bron_uri)
-            doel = next(c.uri for c in self.osloCollector.classes if c.uri == relatie.doel_uri)
-            uri = next(c.uri for c in self.osloCollector.classes if c.uri == relatie.uri)
+            bron = next(c.objectUri for c in self.osloCollector.classes if c.objectUri == relatie.bron_uri)
+            doel = next(c.objectUri for c in self.osloCollector.classes if c.objectUri == relatie.doel_uri)
+            uri = next(c.objectUri for c in self.osloCollector.classes if c.objectUri == relatie.objectUri)
             datablock.append(f'            GeldigeRelatie("{bron}", "{doel}", "{uri}"),')
 
         datablock[-1] = datablock[-1][:-1]  # remove last character of the last item in datablock

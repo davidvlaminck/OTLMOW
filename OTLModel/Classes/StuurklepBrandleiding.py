@@ -15,7 +15,7 @@ class StuurklepBrandleiding(Brandvoorziening):
 
         self.heeftLeegloopklep = BooleanField(naam="heeftLeegloopklep",
                                               label="heeft leegloopklep",
-                                              uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#StuurklepBrandleiding.heeftLeegloopklep",
+                                              objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#StuurklepBrandleiding.heeftLeegloopklep",
                                               definition="Voorziet een mogelijkheid om via de klep de brandleiding te laten leeglopen.",
                                               constraints="",
                                               usagenote="",

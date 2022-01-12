@@ -9,7 +9,7 @@ class KlCBVLaagtype(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlCBVLaagtype",
                          label="CBV laagtype",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlCBVLaagtype",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlCBVLaagtype",
                          definition="Bepaling van het laagtype van de cement/beton verharding.",
                          usagenote="",
                          deprecated_version="",

@@ -58,7 +58,7 @@ class ClassOSLOCollector(OSLOCollector):
                                    '        """Plattegrond van het gebouw met aanduidingen van de verschillende aanwezige elementen zoals kelder, kasten met kastnummers, toegangscontrole en meer."""',
                                    '        self.grondplan.naam = "grondplan"',
                                    '        self.grondplan.label = "grondplan"',
-                                   '        self.grondplan.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Gebouw.grondplan"',
+                                   '        self.grondplan.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Gebouw.grondplan"',
                                    '        self.grondplan.definition = "Plattegrond van het gebouw met aanduidingen van de verschillende aanwezige elementen zoals kelder, kasten met kastnummers, toegangscontrole en meer."',
                                    '        self.grondplan.constraints = ""',
                                    '        self.grondplan.usagenote = ""',
@@ -82,30 +82,30 @@ class OTLClassCreatorTests(unittest.TestCase):
         logger = NoneLogger()
         collector = OSLOCollector(mock)
         creator = OTLClassCreator(logger, collector)
-        osloClass = OSLOClass(name='name', uri='', definition_nl='', label_nl='', usagenote_nl='', abstract=1,
+        osloClass = OSLOClass(name='name', objectUri='', definition_nl='', label_nl='', usagenote_nl='', abstract=1,
                               deprecated_version='')
 
         with self.assertRaises(ValueError) as exception_empty_uri:
             creator.CreateBlockToWriteFromClasses(osloClass)
-        self.assertEqual(str(exception_empty_uri.exception), "OSLOClass.uri is invalid. Value = ''")
+        self.assertEqual(str(exception_empty_uri.exception), "OSLOClass.objectUri is invalid. Value = ''")
 
     def test_InvalidOSLODatatypeComplexBadUri(self):
         logger = NoneLogger()
         collector = OSLOCollector(mock)
         creator = OTLClassCreator(logger, collector)
-        osloClass = OSLOClass(name='name', uri='Bad uri', definition_nl='', label_nl='', usagenote_nl='', abstract=1,
+        osloClass = OSLOClass(name='name', objectUri='Bad objectUri', definition_nl='', label_nl='', usagenote_nl='', abstract=1,
                               deprecated_version='')
 
         with self.assertRaises(ValueError) as exception_bad_uri:
             creator.CreateBlockToWriteFromClasses(osloClass)
-        self.assertEqual(str(exception_bad_uri.exception), "OSLOClass.uri is invalid. Value = 'Bad uri'")
+        self.assertEqual(str(exception_bad_uri.exception), "OSLOClass.objectUri is invalid. Value = 'Bad objectUri'")
 
     def test_InvalidOSLODatatypeComplexEmptyName(self):
         logger = NoneLogger()
         collector = OSLOCollector(mock)
         creator = OTLClassCreator(logger, collector)
         osloClass = OSLOClass(name='',
-                              uri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcIdentificator',
+                              objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcIdentificator',
                               definition_nl='', label_nl='', usagenote_nl='', abstract=1,
                               deprecated_version='')
 
@@ -139,7 +139,7 @@ class OTLClassCreatorTests(unittest.TestCase):
                                  '    def __init__(self):',
                                  '        kleurField = StringField(naam="kleur",',
                                  '                                 label="kleur",',
-                                 '                                 uri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#ContainerBuis.kleur",',
+                                 '                                 objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#ContainerBuis.kleur",',
                                  '                                 definition="De kleur van de coating.",',
                                  '                                 constraints="",',
                                  '                                 usagenote="",',

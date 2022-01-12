@@ -19,7 +19,7 @@ class LinkendElement(AIMObject):
         technischeFicheField = DtcDocument()
         technischeFicheField.naam = "technischeFiche"
         technischeFicheField.label = "technische fiche"
-        technischeFicheField.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#LinkendElement.technischeFiche"
+        technischeFicheField.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#LinkendElement.technischeFiche"
         technischeFicheField.definition = "De technische fiche van een linkend element."
         technischeFicheField.constraints = ""
         technischeFicheField.usagenote = ""

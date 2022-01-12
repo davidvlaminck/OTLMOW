@@ -23,7 +23,7 @@ class Rack(AIMNaamObject):
         """De diepte van het rack tussen de voorste en achterste rails."""
         self.diepte.naam = "diepte"
         self.diepte.label = "diepte"
-        self.diepte.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Rack.diepte"
+        self.diepte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Rack.diepte"
         self.diepte.definition = "De diepte van het rack tussen de voorste en achterste rails."
         self.diepte.constraints = ""
         self.diepte.usagenote = ""
@@ -31,7 +31,7 @@ class Rack(AIMNaamObject):
 
         self.hoogteInRU = IntegerField(naam="hoogteInRU",
                                        label="hoogte in RU",
-                                       uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Rack.hoogteInRU",
+                                       objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Rack.hoogteInRU",
                                        definition="Bruikbare ruimte om toestellen te monteren, uitgedrukt in RU (rack units).",
                                        constraints="",
                                        usagenote="",
@@ -42,7 +42,7 @@ class Rack(AIMNaamObject):
         """Foto of schematische voorstelling van de huidige samenstelling van de samenstelling in het rack."""
         self.huidigBeeld.naam = "huidigBeeld"
         self.huidigBeeld.label = "huidig beeld"
-        self.huidigBeeld.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Rack.huidigBeeld"
+        self.huidigBeeld.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Rack.huidigBeeld"
         self.huidigBeeld.definition = "Foto of schematische voorstelling van de huidige samenstelling van de samenstelling in het rack."
         self.huidigBeeld.constraints = ""
         self.huidigBeeld.usagenote = ""
@@ -51,7 +51,7 @@ class Rack(AIMNaamObject):
         self.merk = KeuzelijstField(naam="merk",
                                     label="merk",
                                     lijst=KlRackMerk(),
-                                    uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Rack.merk",
+                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Rack.merk",
                                     definition="Merk waarmee de fabrikant dit type rack identificeert.",
                                     constraints="",
                                     usagenote="",
@@ -61,7 +61,7 @@ class Rack(AIMNaamObject):
         self.modelnaam = KeuzelijstField(naam="modelnaam",
                                          label="modelnaam",
                                          lijst=KlRackModelnaam(),
-                                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Rack.modelnaam",
+                                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Rack.modelnaam",
                                          definition="Modelnaam waarmee de fabrikant dit type toestel identificeert.",
                                          constraints="",
                                          usagenote="",
@@ -71,7 +71,7 @@ class Rack(AIMNaamObject):
         self.rackType = KeuzelijstField(naam="rackType",
                                         label="Rack type",
                                         lijst=KlRackType(),
-                                        uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Rack.rackType",
+                                        objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Rack.rackType",
                                         definition="Geeft het type aan voor een rack volgens een keuzelijst van beschikbare types.",
                                         constraints="",
                                         usagenote="",

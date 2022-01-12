@@ -21,7 +21,7 @@ class IntercomServer(AIMNaamObject):
 
         self.dnsNaam = StringField(naam="dnsNaam",
                                    label="DNS naam",
-                                   uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#IntercomServer.dnsNaam",
+                                   objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#IntercomServer.dnsNaam",
                                    definition="De DNSNaam (ook \"volledige domein naam\" genoemd ) is een unieke naam binnen het Domain Name System (DNS), het naamgevingssysteem waarmee computers, webservers, diensten en  toepassing op een unieke manier kunnen worden geïdentificeerd. Deze bevat zowel de hostname en de top level domein naam bv. 120c8-ar1.belfa.be.",
                                    constraints="",
                                    usagenote="",
@@ -32,7 +32,7 @@ class IntercomServer(AIMNaamObject):
         """Het IP-adres van de intercomserver."""
         self.ipAdres.naam = "ipAdres"
         self.ipAdres.label = "IP-adres"
-        self.ipAdres.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#IntercomServer.ipAdres"
+        self.ipAdres.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#IntercomServer.ipAdres"
         self.ipAdres.definition = "Het IP-adres van de intercomserver."
         self.ipAdres.constraints = ""
         self.ipAdres.usagenote = ""
@@ -41,7 +41,7 @@ class IntercomServer(AIMNaamObject):
         self.merk = KeuzelijstField(naam="merk",
                                     label="merk",
                                     lijst=KlIntercomServerMerk(),
-                                    uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#IntercomServer.merk",
+                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#IntercomServer.merk",
                                     definition="Het merk van de intercomserver.",
                                     constraints="",
                                     usagenote="",
@@ -51,7 +51,7 @@ class IntercomServer(AIMNaamObject):
         self.modelnaam = KeuzelijstField(naam="modelnaam",
                                          label="modelnaam",
                                          lijst=KlIntercomServerModelnaam(),
-                                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#IntercomServer.modelnaam",
+                                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#IntercomServer.modelnaam",
                                          definition="De modelnaam van de intercomserver.",
                                          constraints="",
                                          usagenote="",
@@ -62,7 +62,7 @@ class IntercomServer(AIMNaamObject):
         """De technische fiche van de intercomserver."""
         self.technischeFiche.naam = "technischeFiche"
         self.technischeFiche.label = "technische fiche"
-        self.technischeFiche.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#IntercomServer.technischeFiche"
+        self.technischeFiche.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#IntercomServer.technischeFiche"
         self.technischeFiche.definition = "De technische fiche van de intercomserver."
         self.technischeFiche.constraints = ""
         self.technischeFiche.usagenote = ""
@@ -71,7 +71,7 @@ class IntercomServer(AIMNaamObject):
         self.transportType = KeuzelijstField(naam="transportType",
                                              label="transport type",
                                              lijst=KlAudioTransportType(),
-                                             uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#IntercomServer.transportType",
+                                             objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#IntercomServer.transportType",
                                              definition="Geeft aan op welke manier het audiosignaal wordt getransporteerd door het toestel.",
                                              constraints="",
                                              usagenote="",

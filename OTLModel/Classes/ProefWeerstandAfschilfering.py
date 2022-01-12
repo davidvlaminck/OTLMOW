@@ -17,7 +17,7 @@ class ProefWeerstandAfschilfering(Proef):
         """Proef om de weerstand/afschilfering van de laag te bepalen."""
         self.weerstandAfschilfering.naam = "weerstandAfschilfering"
         self.weerstandAfschilfering.label = "weerstand afschilfering"
-        self.weerstandAfschilfering.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefWeerstandAfschilfering.weerstandAfschilfering"
+        self.weerstandAfschilfering.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefWeerstandAfschilfering.weerstandAfschilfering"
         self.weerstandAfschilfering.definition = "Proef om de weerstand/afschilfering van de laag te bepalen."
         self.weerstandAfschilfering.constraints = ""
         self.weerstandAfschilfering.usagenote = ""

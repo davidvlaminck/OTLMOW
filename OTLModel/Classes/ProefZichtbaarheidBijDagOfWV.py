@@ -15,7 +15,7 @@ class ProefZichtbaarheidBijDagOfWV(Proef):
 
         self.luminantiecoëfficiënt = DecimalFloatField(naam="luminantiecoëfficiënt",
                                                        label="luminantiecoëfficient",
-                                                       uri="https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefZichtbaarheidBijDagOfWV.luminantiecoëfficiënt",
+                                                       objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefZichtbaarheidBijDagOfWV.luminantiecoëfficiënt",
                                                        definition="De verhouding van de luminantie van het oppervlak in een gegeven richting en de verlichtingssterkte op het oppervlak.",
                                                        constraints="",
                                                        usagenote="uitgedrukt in mcd. m-2.lux-1",

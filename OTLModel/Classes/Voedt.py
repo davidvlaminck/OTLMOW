@@ -17,7 +17,7 @@ class Voedt(DirectioneleRelatie):
         """Spanning van de aansluiting, dit wordt enkel ingevuld op voedingsrelaties voorbij de hoofdschakelaar."""
         self.aansluitspanning.naam = "aansluitspanning"
         self.aansluitspanning.label = "aansluitspanning"
-        self.aansluitspanning.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Voedt.aansluitspanning"
+        self.aansluitspanning.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Voedt.aansluitspanning"
         self.aansluitspanning.definition = "Spanning van de aansluiting, dit wordt enkel ingevuld op voedingsrelaties voorbij de hoofdschakelaar."
         self.aansluitspanning.constraints = ""
         self.aansluitspanning.usagenote = ""

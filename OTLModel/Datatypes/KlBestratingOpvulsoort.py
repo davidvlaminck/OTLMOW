@@ -9,7 +9,7 @@ class KlBestratingOpvulsoort(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlBestratingOpvulsoort",
                          label="Bestrating opvulsoort",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlBestratingOpvulsoort",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlBestratingOpvulsoort",
                          definition="De mogelijke opvulsoorten van de grasbetontegel en graskunststofplaat.",
                          usagenote="",
                          deprecated_version="",

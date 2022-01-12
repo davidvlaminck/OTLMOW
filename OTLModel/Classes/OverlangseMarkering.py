@@ -23,7 +23,7 @@ class OverlangseMarkering(Markering, AOWSType):
         self.code = KeuzelijstField(naam="code",
                                     label="code",
                                     lijst=KlOverlangseMarkeringCode(),
-                                    uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#OverlangseMarkering.code",
+                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#OverlangseMarkering.code",
                                     definition="De (COPRO/BENOR) code van de overlangse markering.",
                                     constraints="",
                                     usagenote="",
@@ -34,7 +34,7 @@ class OverlangseMarkering(Markering, AOWSType):
         """De lengte van de markering in meter."""
         self.lengte.naam = "lengte"
         self.lengte.label = "lengte"
-        self.lengte.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#OverlangseMarkering.lengte"
+        self.lengte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#OverlangseMarkering.lengte"
         self.lengte.definition = "De lengte van de markering in meter."
         self.lengte.constraints = ""
         self.lengte.usagenote = ""
@@ -44,7 +44,7 @@ class OverlangseMarkering(Markering, AOWSType):
         """De oppervlakte van de overlangse markering in vierkante meter."""
         self.oppervlakte.naam = "oppervlakte"
         self.oppervlakte.label = "oppervlakte"
-        self.oppervlakte.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#OverlangseMarkering.oppervlakte"
+        self.oppervlakte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#OverlangseMarkering.oppervlakte"
         self.oppervlakte.definition = "De oppervlakte van de overlangse markering in vierkante meter."
         self.oppervlakte.constraints = ""
         self.oppervlakte.usagenote = ""
@@ -53,7 +53,7 @@ class OverlangseMarkering(Markering, AOWSType):
         self.positie = KeuzelijstField(naam="positie",
                                        label="positie",
                                        lijst=KlPositieSoort(),
-                                       uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#OverlangseMarkering.positie",
+                                       objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#OverlangseMarkering.positie",
                                        definition="Bepaling van het wegdeel van de overlangse markering.",
                                        constraints="",
                                        usagenote="",
@@ -63,7 +63,7 @@ class OverlangseMarkering(Markering, AOWSType):
         self.type = KeuzelijstField(naam="type",
                                     label="type",
                                     lijst=KlOverlangsemarkeringType(),
-                                    uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#OverlangseMarkering.type",
+                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#OverlangseMarkering.type",
                                     definition="Het type van overlangse markering.",
                                     constraints="",
                                     usagenote="",

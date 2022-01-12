@@ -17,7 +17,7 @@ class ProefWatergehalte(Proef):
         """Het resultaat van de test van het gemeten watergehalte in de BV laag."""
         self.watergehalte.naam = "watergehalte"
         self.watergehalte.label = "watergehalte"
-        self.watergehalte.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefWatergehalte.watergehalte"
+        self.watergehalte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefWatergehalte.watergehalte"
         self.watergehalte.definition = "Het resultaat van de test van het gemeten watergehalte in de BV laag."
         self.watergehalte.constraints = ""
         self.watergehalte.usagenote = ""

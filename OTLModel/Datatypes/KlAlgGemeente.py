@@ -9,7 +9,7 @@ class KlAlgGemeente(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlAlgGemeente",
                          label="Gemeente",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KlAlgGemeente",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KlAlgGemeente",
                          definition="Lijst van gemeentes in Vlaanderen.",
                          usagenote="",
                          deprecated_version="",
@@ -140,8 +140,8 @@ class KlAlgGemeente(Keuzelijst):
         self.add_option("jabbeke", "jabbeke", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/jabbeke")
         self.add_option("kalmthout", "kalmthout", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/kalmthout")
         self.add_option("kampenhout", "kampenhout", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/kampenhout")
-        self.add_option("kapellen", "kapellen", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/kapellen")
         self.add_option("kapelle-op-den-Bos", "kapelle-op-den-Bos", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/kapelle-op-den-Bos")
+        self.add_option("kapellen", "kapellen", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/kapellen")
         self.add_option("kaprijke", "kaprijke", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/kaprijke")
         self.add_option("kasterlee", "kasterlee", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/kasterlee")
         self.add_option("keerbergen", "keerbergen", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/keerbergen")
@@ -181,11 +181,11 @@ class KlAlgGemeente(Keuzelijst):
         self.add_option("linkebeek", "linkebeek", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/linkebeek")
         self.add_option("lint", "lint", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/lint")
         self.add_option("linter", "linter", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/linter")
+        self.add_option("lo-Reninge", "lo-Reninge", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/lo-Reninge")
         self.add_option("lochristi", "lochristi", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/lochristi")
         self.add_option("lokeren", "lokeren", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/lokeren")
         self.add_option("lommel", "lommel", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/lommel")
         self.add_option("londerzeel", "londerzeel", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/londerzeel")
-        self.add_option("lo-Reninge", "lo-Reninge", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/lo-Reninge")
         self.add_option("lovendegem", "lovendegem", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/lovendegem")
         self.add_option("lubbeek", "lubbeek", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/lubbeek")
         self.add_option("lummen", "lummen", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/lummen")
@@ -226,10 +226,10 @@ class KlAlgGemeente(Keuzelijst):
         self.add_option("oostrozebeke", "oostrozebeke", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/oostrozebeke")
         self.add_option("opglabbeek", "opglabbeek", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/opglabbeek")
         self.add_option("opwijk", "opwijk", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/opwijk")
-        self.add_option("oudenaarde", "oudenaarde", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/oudenaarde")
-        self.add_option("oudenburg", "oudenburg", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/oudenburg")
         self.add_option("oud-Heverlee", "oud-Heverlee", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/oud-Heverlee")
         self.add_option("oud-Turnhout", "oud-Turnhout", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/oud-Turnhout")
+        self.add_option("oudenaarde", "oudenaarde", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/oudenaarde")
+        self.add_option("oudenburg", "oudenburg", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/oudenburg")
         self.add_option("overijse", "overijse", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/overijse")
         self.add_option("overpelt", "overpelt", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/overpelt")
         self.add_option("peer", "peer", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/peer")

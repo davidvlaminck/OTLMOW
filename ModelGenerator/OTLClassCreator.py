@@ -18,10 +18,10 @@ class OTLClassCreator(AbstractDatatypeCreator):
 
 
 
-        if osloClass.uri == '' or not (
-                osloClass.uri.startswith('https://wegenenverkeer.data.vlaanderen.be/ns/') or osloClass.uri.startswith(
+        if osloClass.objectUri == '' or not (
+                osloClass.objectUri.startswith('https://wegenenverkeer.data.vlaanderen.be/ns/') or osloClass.objectUri.startswith(
                 'http://purl.org/dc/terms')):
-            raise ValueError(f"OSLOClass.uri is invalid. Value = '{osloClass.uri}'")
+            raise ValueError(f"OSLOClass.objectUri is invalid. Value = '{osloClass.objectUri}'")
 
         if osloClass.name == '':
             raise ValueError(f"OSLOClass.name is invalid. Value = '{osloClass.name}'")
@@ -32,7 +32,7 @@ class OTLClassCreator(AbstractDatatypeCreator):
         attributen = self.osloCollector.FindAttributesByClass(osloClass)
         inheritances = self.osloCollector.FindInheritancesByClass(osloClass)
 
-        if osloClass.uri == 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMObject':
+        if osloClass.objectUri == 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMObject':
             inheritances.append(
                 Inheritance(base_name='OTLAsset', base_uri='', class_name='', class_uri='', deprecated_version=''))
             inheritances.append(
@@ -69,7 +69,7 @@ class OTLClassCreator(AbstractDatatypeCreator):
         datablock.append(self.getClassLineFromClassAndInheritances(osloClass, inheritances))
         datablock.append(f'    """{osloClass.definition_nl}"""')
         datablock.append('')
-        datablock.append(f'    typeURI = "{osloClass.uri}"')
+        datablock.append(f'    typeURI = "{osloClass.objectUri}"')
         datablock.append('    """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""')
         datablock.append('')
         if osloClass.abstract == 1:
@@ -83,7 +83,7 @@ class OTLClassCreator(AbstractDatatypeCreator):
                 datablock.append(f'        {inheritance.base_name}.__init__(self)')
             datablock.append('')
 
-        self.addAttributenToDataBlock(attributen, datablock, class_uri=osloClass.uri, forClassUse=True)
+        self.addAttributenToDataBlock(attributen, datablock, class_uri=osloClass.objectUri, forClassUse=True)
         if len(inheritances) == 0 and len(attributen) == 0:
             datablock.append('        pass')
 
@@ -105,4 +105,4 @@ class OTLClassCreator(AbstractDatatypeCreator):
             line += '):'
             return line
 
-        raise NotImplementedError(f"{osloClass.uri} class structure not implemented")
+        raise NotImplementedError(f"{osloClass.objectUri} class structure not implemented")

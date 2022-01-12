@@ -9,7 +9,7 @@ class KlRasterMazen(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlRasterMazen",
                          label="Rastermazen",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlRasterMazen",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlRasterMazen",
                          definition="Types van de mazen in het ecoraster.",
                          usagenote="",
                          deprecated_version="",

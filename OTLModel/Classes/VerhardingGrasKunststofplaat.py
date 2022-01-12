@@ -17,7 +17,7 @@ class VerhardingGrasKunststofplaat(Bestrating):
         self.vulling = KeuzelijstField(naam="vulling",
                                        label="vulling",
                                        lijst=KlBestratingOpvulsoort(),
-                                       uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#VerhardingGrasKunststofplaat.vulling",
+                                       objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#VerhardingGrasKunststofplaat.vulling",
                                        definition="Het gebruikte materiaal als toevoeging in de vrije openingen van de gras-kunststofplaten.",
                                        constraints="",
                                        usagenote="",

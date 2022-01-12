@@ -9,7 +9,7 @@ class KlVGOpstelling(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlVGOpstelling",
                          label="Vlak geluidschermelement opstelling",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlVGOpstelling",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlVGOpstelling",
                          definition="Beschrijft de oriëntatie van het geplaatste schermelement tov de weg. De oriëntatie van vlakke schermen kan naast loodrecht op het maaiveld ook schuin naar achter hellend of schuin naar voor hellend zijn.",
                          usagenote="",
                          deprecated_version="",

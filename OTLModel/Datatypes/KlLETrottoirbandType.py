@@ -9,7 +9,7 @@ class KlLETrottoirbandType(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlLETrottoirbandType",
                          label="Trottoirband type",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlLETrottoirbandType",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlLETrottoirbandType",
                          definition="Types van trottoirband.",
                          usagenote="",
                          deprecated_version="",
@@ -26,12 +26,13 @@ class KlLETrottoirbandType(Keuzelijst):
         self.add_option("beton-type-I-E", "beton type I E", "type I E", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLETrottoirbandType/beton-type-I-E")
         self.add_option("beton-type-I-F1", "beton type I F1", "type I F1", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLETrottoirbandType/beton-type-I-F1")
         self.add_option("beton-type-I-F2", "beton type I F2", "type I F2", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLETrottoirbandType/beton-type-I-F2")
+        self.add_option("beton-type-I-H", "beton type I H", "type I H", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLETrottoirbandType/beton-type-I-H")
         self.add_option("natuursteen-type-A-I-1", "natuursteen type A I 1", "natuursteen type A I 1", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLETrottoirbandType/natuursteen-type-A-I-1")
+        self.add_option("natuursteen-type-A-I-2", "natuursteen type A I 2", "natuursteen type A I 2", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLETrottoirbandType/natuursteen-type-A-I-2")
+        self.add_option("natuursteen-type-A-I-3", "natuursteen type A I 3", "natuursteen type A I 3", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLETrottoirbandType/natuursteen-type-A-I-3")
         self.add_option("natuursteen-type-A-II-1", "natuursteen type A II 1", "natuursteen type A II 1", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLETrottoirbandType/natuursteen-type-A-II-1")
         self.add_option("natuursteen-type-A-II-2", "natuursteen type A II 2", "natuursteen type A II 2", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLETrottoirbandType/natuursteen-type-A-II-2")
         self.add_option("natuursteen-type-A-II-3", "natuursteen type A II 3", "natuursteen type A II 3", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLETrottoirbandType/natuursteen-type-A-II-3")
-        self.add_option("natuursteen-type-A-I-2", "natuursteen type A I 2", "natuursteen type A I 2", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLETrottoirbandType/natuursteen-type-A-I-2")
-        self.add_option("natuursteen-type-A-I-3", "natuursteen type A I 3", "natuursteen type A I 3", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLETrottoirbandType/natuursteen-type-A-I-3")
         self.add_option("natuursteen-type-B-I-1", "natuursteen type B I 1", "natuursteen type B I 1", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLETrottoirbandType/natuursteen-type-B-I-1")
         self.add_option("natuursteen-type-B-I-2", "natuursteen type B I 2", "natuursteen type B I 2", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLETrottoirbandType/natuursteen-type-B-I-2")
         self.add_option("natuursteen-type-B-II", "natuursteen type B II", "natuursteen type B II", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLETrottoirbandType/natuursteen-type-B-II")
@@ -39,4 +40,3 @@ class KlLETrottoirbandType(Keuzelijst):
         self.add_option("natuursteen-type-C-I-2", "natuursteen type C I 2", "natuursteen type C I 2", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLETrottoirbandType/natuursteen-type-C-I-2")
         self.add_option("natuursteen-type-C-II-1", "natuursteen type C II 1", "natuursteen type C II 1", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLETrottoirbandType/natuursteen-type-C-II-1")
         self.add_option("natuursteen-type-C-II-2", "natuursteen type C II 2", "natuursteen type C II 2", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLETrottoirbandType/natuursteen-type-C-II-2")
-        self.add_option("beton-type-I-H", "beton type I H", "type I H", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLETrottoirbandType/beton-type-I-H")

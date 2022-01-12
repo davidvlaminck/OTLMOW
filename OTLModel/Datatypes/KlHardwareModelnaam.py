@@ -9,7 +9,7 @@ class KlHardwareModelnaam(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlHardwareModelnaam",
                          label="Hardware modelnaam",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlHardwareModelnaam",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlHardwareModelnaam",
                          definition="De modelnaam van de hardware.",
                          usagenote="",
                          deprecated_version="",

@@ -22,7 +22,7 @@ class FiguratieMarkeringVerschuind(FiguratieMarkeringToegang):
         """De (basis) oppervlakte van de markering zoals beschreven in de algemene omzendbrief."""
         self.basisOppervlakte.naam = "basisOppervlakte"
         self.basisOppervlakte.label = "basisoppervlakte"
-        self.basisOppervlakte.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#FiguratieMarkeringVerschuind.basisOppervlakte"
+        self.basisOppervlakte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#FiguratieMarkeringVerschuind.basisOppervlakte"
         self.basisOppervlakte.definition = "De (basis) oppervlakte van de markering zoals beschreven in de algemene omzendbrief."
         self.basisOppervlakte.constraints = ""
         self.basisOppervlakte.usagenote = ""
@@ -31,7 +31,7 @@ class FiguratieMarkeringVerschuind(FiguratieMarkeringToegang):
         self.code = KeuzelijstField(naam="code",
                                     label="code",
                                     lijst=KlFiguratieCodeVerschuind(),
-                                    uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#FiguratieMarkeringVerschuind.code",
+                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#FiguratieMarkeringVerschuind.code",
                                     definition="De code van de verschuinde figuratie markering.",
                                     constraints="",
                                     usagenote="",
@@ -42,7 +42,7 @@ class FiguratieMarkeringVerschuind(FiguratieMarkeringToegang):
         """De hoek van de verschuinde figuratiemarkering in decimale graden."""
         self.hoek.naam = "hoek"
         self.hoek.label = "hoek"
-        self.hoek.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#FiguratieMarkeringVerschuind.hoek"
+        self.hoek.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#FiguratieMarkeringVerschuind.hoek"
         self.hoek.definition = "De hoek van de verschuinde figuratiemarkering in decimale graden."
         self.hoek.constraints = ""
         self.hoek.usagenote = ""
@@ -52,7 +52,7 @@ class FiguratieMarkeringVerschuind(FiguratieMarkeringToegang):
         """De oppervlakte van de figuratie markering na verschuining."""
         self.oppervlakte.naam = "oppervlakte"
         self.oppervlakte.label = "oppervlakte"
-        self.oppervlakte.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#FiguratieMarkeringVerschuind.oppervlakte"
+        self.oppervlakte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#FiguratieMarkeringVerschuind.oppervlakte"
         self.oppervlakte.definition = "De oppervlakte van de figuratie markering na verschuining."
         self.oppervlakte.constraints = ""
         self.oppervlakte.usagenote = ""
@@ -61,7 +61,7 @@ class FiguratieMarkeringVerschuind(FiguratieMarkeringToegang):
         self.soortOmschrijving = KeuzelijstField(naam="soortOmschrijving",
                                                  label="soort omschrijving",
                                                  lijst=KlFiguratieSoortVerschuind(),
-                                                 uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#FiguratieMarkeringVerschuind.soortOmschrijving",
+                                                 objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#FiguratieMarkeringVerschuind.soortOmschrijving",
                                                  definition="De soort en tevens de omschrijving van de verschuinde figuratie markering.",
                                                  constraints="",
                                                  usagenote="",
@@ -71,7 +71,7 @@ class FiguratieMarkeringVerschuind(FiguratieMarkeringToegang):
         self.type = KeuzelijstField(naam="type",
                                     label="type",
                                     lijst=KlFiguratieTypeVerschuind(),
-                                    uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#FiguratieMarkeringVerschuind.type",
+                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#FiguratieMarkeringVerschuind.type",
                                     definition="Het type van de verschuinde figuratie markering.",
                                     constraints="",
                                     usagenote="",

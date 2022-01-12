@@ -9,7 +9,7 @@ class KlDwarseMarkeringVerschuindSoort(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlDwarseMarkeringVerschuindSoort",
                          label="Dwarse markering soort verschuind",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlDwarseMarkeringVerschuindSoort",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlDwarseMarkeringVerschuindSoort",
                          definition="Soorten van de schuine dwarse markering.",
                          usagenote="",
                          deprecated_version="",

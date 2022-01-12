@@ -14,7 +14,7 @@ class DtuLichtmastMasthoogte(UnionTypeField):
         super().__init__(
             naam='DtuLichtmastMasthoogte',
             label='Masthoogte',
-            uri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtuLichtmastMasthoogte',
+            objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtuLichtmastMasthoogte',
             definition='Union datatype om een standaard of afwijkende masthoogte te bepalen.',
             usagenote="",
             deprecated_version="")
@@ -23,7 +23,7 @@ class DtuLichtmastMasthoogte(UnionTypeField):
         """De afwijkende hoogte van de mast in meter."""
         field_afwijkendeHoogte.naam = "afwijkendeHoogte"
         field_afwijkendeHoogte.label = "afwijkende hoogte"
-        field_afwijkendeHoogte.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtuLichtmastMasthoogte.afwijkendeHoogte"
+        field_afwijkendeHoogte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtuLichtmastMasthoogte.afwijkendeHoogte"
         field_afwijkendeHoogte.definition = "De afwijkende hoogte van de mast in meter."
         field_afwijkendeHoogte.constraints = ""
         field_afwijkendeHoogte.usagenote = ""
@@ -32,7 +32,7 @@ class DtuLichtmastMasthoogte(UnionTypeField):
         field_standaardHoogte = KeuzelijstField(naam="standaardHoogte",
                                                 label="standaard hoogte",
                                                 lijst=KlLichtmastMasthoogte(),
-                                                uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtuLichtmastMasthoogte.standaardHoogte",
+                                                objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtuLichtmastMasthoogte.standaardHoogte",
                                                 definition="Bepaling van de standaard hoogte van een mast.",
                                                 constraints="",
                                                 usagenote="",
@@ -49,7 +49,7 @@ class UnionTestClass(AIMObject):
         self.unionveld = DtuLichtmastMasthoogte()
         self.unionveld.naam = "testUnion"
         self.unionveld.label = "testUnion"
-        self.unionveld.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#testUnion"
+        self.unionveld.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#testUnion"
         self.unionveld.definition = "testUnion definitie"
         self.unionveld.constraints = ""
         self.unionveld.usagenote = ""

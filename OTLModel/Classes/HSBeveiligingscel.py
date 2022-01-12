@@ -28,7 +28,7 @@ class HSBeveiligingscel(AIMNaamObject):
         """Elektrisch aansluitschema van de HS beveiligingscel."""
         self.elektrischSchema.naam = "elektrischSchema"
         self.elektrischSchema.label = "elektrisch schema"
-        self.elektrischSchema.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#HSBeveiligingscel.elektrischSchema"
+        self.elektrischSchema.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#HSBeveiligingscel.elektrischSchema"
         self.elektrischSchema.definition = "Elektrisch aansluitschema van de HS beveiligingscel."
         self.elektrischSchema.constraints = ""
         self.elektrischSchema.usagenote = ""
@@ -36,7 +36,7 @@ class HSBeveiligingscel(AIMNaamObject):
 
         self.heeftreserveZekering = BooleanField(naam="heeftreserveZekering",
                                                  label="heeft reserve zekering",
-                                                 uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#HSBeveiligingscel.heeftreserveZekering",
+                                                 objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#HSBeveiligingscel.heeftreserveZekering",
                                                  definition="Is er een reserve zekering aanwezig?",
                                                  constraints="",
                                                  usagenote="",
@@ -46,7 +46,7 @@ class HSBeveiligingscel(AIMNaamObject):
         self.hoogspanningszekering = KeuzelijstField(naam="hoogspanningszekering",
                                                      label="hoogspanningszekering",
                                                      lijst=KlHSBeveiligingscelHoogspanningszekering(),
-                                                     uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#HSBeveiligingscel.hoogspanningszekering",
+                                                     objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#HSBeveiligingscel.hoogspanningszekering",
                                                      definition="Waarde van de hoogspanningszekering.",
                                                      constraints="",
                                                      usagenote="",
@@ -57,7 +57,7 @@ class HSBeveiligingscel(AIMNaamObject):
         """Frequentie (in jaar) waarmee de installatie moet onderworpen worden aan een periodieke keuring door een externe dienst voor technische controle."""
         self.keuringsfrequentie.naam = "keuringsfrequentie"
         self.keuringsfrequentie.label = "keuringsfrequentie"
-        self.keuringsfrequentie.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#HSBeveiligingscel.keuringsfrequentie"
+        self.keuringsfrequentie.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#HSBeveiligingscel.keuringsfrequentie"
         self.keuringsfrequentie.definition = "Frequentie (in jaar) waarmee de installatie moet onderworpen worden aan een periodieke keuring door een externe dienst voor technische controle."
         self.keuringsfrequentie.constraints = ""
         self.keuringsfrequentie.usagenote = ""
@@ -66,7 +66,7 @@ class HSBeveiligingscel(AIMNaamObject):
         self.merk = KeuzelijstField(naam="merk",
                                     label="merk",
                                     lijst=KlHSBeveiligingscelMerk(),
-                                    uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#HSBeveiligingscel.merk",
+                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#HSBeveiligingscel.merk",
                                     definition="Merk van de HS beveiligingscel.",
                                     constraints="",
                                     usagenote="",
@@ -76,7 +76,7 @@ class HSBeveiligingscel(AIMNaamObject):
         self.modelnaam = KeuzelijstField(naam="modelnaam",
                                          label="modelnaam",
                                          lijst=KlHSBeveiligingscelModelnaam(),
-                                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#HSBeveiligingscel.modelnaam",
+                                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#HSBeveiligingscel.modelnaam",
                                          definition="Modelnaam van de HS beveiligingscel.",
                                          constraints="",
                                          usagenote="",
@@ -87,7 +87,7 @@ class HSBeveiligingscel(AIMNaamObject):
         """Instelwaarde van de overstroombeveiliging."""
         self.overstroombeveiligingInstelwaarde.naam = "overstroombeveiligingInstelwaarde"
         self.overstroombeveiligingInstelwaarde.label = "overstroombeveiliging instelwaarde"
-        self.overstroombeveiligingInstelwaarde.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#HSBeveiligingscel.overstroombeveiligingInstelwaarde"
+        self.overstroombeveiligingInstelwaarde.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#HSBeveiligingscel.overstroombeveiligingInstelwaarde"
         self.overstroombeveiligingInstelwaarde.definition = "Instelwaarde van de overstroombeveiliging."
         self.overstroombeveiligingInstelwaarde.constraints = ""
         self.overstroombeveiligingInstelwaarde.usagenote = ""
@@ -95,7 +95,7 @@ class HSBeveiligingscel(AIMNaamObject):
 
         self.overstroombeveiligingType = StringField(naam="overstroombeveiligingType",
                                                      label="overstroombeveiliging type",
-                                                     uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#HSBeveiligingscel.overstroombeveiligingType",
+                                                     objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#HSBeveiligingscel.overstroombeveiligingType",
                                                      definition="Type overstroombeveiliging.",
                                                      constraints="",
                                                      usagenote="",
@@ -105,7 +105,7 @@ class HSBeveiligingscel(AIMNaamObject):
         self.overstroombeveiligingVermogenschakelaar = KeuzelijstField(naam="overstroombeveiligingVermogenschakelaar",
                                                                        label="overstroombeveiliging vermogenschakelaar",
                                                                        lijst=KlHSBeveiligingscelOverstroombeveiligingVermogenschakelaar(),
-                                                                       uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#HSBeveiligingscel.overstroombeveiligingVermogenschakelaar",
+                                                                       objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#HSBeveiligingscel.overstroombeveiligingVermogenschakelaar",
                                                                        definition="Directe of indirecte overstroombeveiliging van de vermogenschakelaar.",
                                                                        constraints="",
                                                                        usagenote="",
@@ -115,7 +115,7 @@ class HSBeveiligingscel(AIMNaamObject):
         self.schakelmateriaalKlasse = KeuzelijstField(naam="schakelmateriaalKlasse",
                                                       label="schakelmateriaal klasse",
                                                       lijst=KlHSBeveiligingscelSchakelmateriaalKlasse(),
-                                                      uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#HSBeveiligingscel.schakelmateriaalKlasse",
+                                                      objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#HSBeveiligingscel.schakelmateriaalKlasse",
                                                       definition="Klasse van het schakelmateriaal volgens Synergrid.",
                                                       constraints="",
                                                       usagenote="",
@@ -125,7 +125,7 @@ class HSBeveiligingscel(AIMNaamObject):
         self.schakelmateriaalType = KeuzelijstField(naam="schakelmateriaalType",
                                                     label="schakelmateriaal type",
                                                     lijst=KlHSBeveiligingscelSchakelmateriaalType(),
-                                                    uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#HSBeveiligingscel.schakelmateriaalType",
+                                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#HSBeveiligingscel.schakelmateriaalType",
                                                     definition="Type van schakelmateriaal.",
                                                     constraints="",
                                                     usagenote="",

@@ -9,7 +9,7 @@ class KlCameraModelnaam(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlCameraModelnaam",
                          label="Camera modelnaam",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlCameraModelnaam",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlCameraModelnaam",
                          definition="De modelnaam van de camera.",
                          usagenote="",
                          deprecated_version="",

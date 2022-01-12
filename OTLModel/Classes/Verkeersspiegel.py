@@ -22,7 +22,7 @@ class Verkeersspiegel(AIMObject, Signalisatie):
         bijlageDocumentField = DtcDocument()
         bijlageDocumentField.naam = "bijlageDocument"
         bijlageDocumentField.label = "bijlage document"
-        bijlageDocumentField.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Verkeersspiegel.bijlageDocument"
+        bijlageDocumentField.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Verkeersspiegel.bijlageDocument"
         bijlageDocumentField.definition = "Een document met dossiernummer waardoor men kan terugkoppelen naar de vergunning."
         bijlageDocumentField.constraints = ""
         bijlageDocumentField.usagenote = ""
@@ -32,7 +32,7 @@ class Verkeersspiegel(AIMObject, Signalisatie):
 
         self.isGoedgekeurd = BooleanField(naam="isGoedgekeurd",
                                           label="is goedgekeurd",
-                                          uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Verkeersspiegel.isGoedgekeurd",
+                                          objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Verkeersspiegel.isGoedgekeurd",
                                           definition="Geeft of de verkeersspiegel al dan niet goedgekeurd is.",
                                           constraints="",
                                           usagenote="",
@@ -42,7 +42,7 @@ class Verkeersspiegel(AIMObject, Signalisatie):
         self.vorm = KeuzelijstField(naam="vorm",
                                     label="vorm",
                                     lijst=KlVerkeersspiegelVorm(),
-                                    uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Verkeersspiegel.vorm",
+                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Verkeersspiegel.vorm",
                                     definition="Bepaling van de vorm van de gebruikte verkeersspiegel.",
                                     constraints="",
                                     usagenote="",

@@ -9,7 +9,7 @@ class KlSlemProductfamilie(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlSlemProductfamilie",
                          label="Productfamilies",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlSlemProductfamilie",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlSlemProductfamilie",
                          definition="De mogelijke productfamiles.",
                          usagenote="",
                          deprecated_version="",

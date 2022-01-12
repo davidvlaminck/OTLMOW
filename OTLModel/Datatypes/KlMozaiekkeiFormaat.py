@@ -9,7 +9,7 @@ class KlMozaiekkeiFormaat(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlMozaiekkeiFormaat",
                          label="Mozaiekkei formaat",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlMozaiekkeiFormaat",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlMozaiekkeiFormaat",
                          definition="Formaten van de mozaïekkei.",
                          usagenote="",
                          deprecated_version="",

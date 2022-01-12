@@ -17,7 +17,7 @@ class ProefDoorlatendheid(Proef):
         """Proefresultaten van de waterdoorlatendheid."""
         self.doorlatendheid.naam = "doorlatendheid"
         self.doorlatendheid.label = "doorlatendheid"
-        self.doorlatendheid.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefDoorlatendheid.doorlatendheid"
+        self.doorlatendheid.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefDoorlatendheid.doorlatendheid"
         self.doorlatendheid.definition = "Proefresultaten van de waterdoorlatendheid."
         self.doorlatendheid.constraints = ""
         self.doorlatendheid.usagenote = ""

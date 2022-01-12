@@ -3,4 +3,4 @@ class KeuzelijstWaarde:
         self.invulwaarde = ''
         self.label = ''
         self.definitie = ''
-        self.uri = ''
+        self.objectUri = ''

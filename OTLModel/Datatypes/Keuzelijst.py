@@ -2,22 +2,22 @@ from OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 
 class Keuzelijst:
-    def __init__(self, naam, label, uri, definition, usagenote, deprecated_version, codelist):
+    def __init__(self, naam, label, objectUri, definition, usagenote, deprecated_version, codelist):
         self.options = []
         self.codelist = codelist
         self.naam = naam
         self.label = label
-        self.uri = uri
+        self.objectUri = objectUri
         self.definition = definition
         self.usagenote = usagenote
         self.deprecated_version = deprecated_version
 
-    def add_option(self, invulwaarde, label, definitie, uri):
+    def add_option(self, invulwaarde, label, definitie, objectUri):
         waarde = KeuzelijstWaarde()
         waarde.invulwaarde = invulwaarde
         waarde.label = label
         waarde.definitie = definitie
-        waarde.uri = uri
+        waarde.objectUri = objectUri
         self.options.append(waarde)
 
     def get_value_by_invulwaarde(self, invulwaarde):

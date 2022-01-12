@@ -17,7 +17,7 @@ class ProefTemperatuur(Proef):
         """De temperatuur van de BV laag in graden Celsius."""
         self.temperatuur.naam = "temperatuur"
         self.temperatuur.label = "temperatuur"
-        self.temperatuur.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefTemperatuur.temperatuur"
+        self.temperatuur.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefTemperatuur.temperatuur"
         self.temperatuur.definition = "De temperatuur van de BV laag in graden Celsius."
         self.temperatuur.constraints = ""
         self.temperatuur.usagenote = ""

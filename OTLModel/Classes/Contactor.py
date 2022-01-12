@@ -17,7 +17,7 @@ class Contactor(AIMObject):
         self.type = KeuzelijstField(naam="type",
                                     label="type contactor",
                                     lijst=KlContactorType(),
-                                    uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Contactor.type",
+                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Contactor.type",
                                     definition="Geeft aan of het een K of Q contactor betreft.",
                                     constraints="",
                                     usagenote="",

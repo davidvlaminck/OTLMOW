@@ -17,7 +17,7 @@ class ProefTextuurdiepte(Proef):
         """Proefresultaten van de textuurdiepte van de toplaag."""
         self.textuurdiepte.naam = "textuurdiepte"
         self.textuurdiepte.label = "textuurdiepte"
-        self.textuurdiepte.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefTextuurdiepte.textuurdiepte"
+        self.textuurdiepte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefTextuurdiepte.textuurdiepte"
         self.textuurdiepte.definition = "Proefresultaten van de textuurdiepte van de toplaag."
         self.textuurdiepte.constraints = ""
         self.textuurdiepte.usagenote = ""

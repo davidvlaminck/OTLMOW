@@ -9,7 +9,7 @@ class KlIpPowerSwitchType(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlIpPowerSwitchType",
                          label="IP powerswitch type",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlIpPowerSwitchType",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlIpPowerSwitchType",
                          definition="Type van de IP powerswitch.",
                          usagenote="",
                          deprecated_version="",

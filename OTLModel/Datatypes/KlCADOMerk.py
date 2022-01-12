@@ -9,7 +9,7 @@ class KlCADOMerk(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlCADOMerk",
                          label="Calamiteitendoorsteek merk",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlCADOMerk",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlCADOMerk",
                          definition="Het merk van de calamiteitendoorsteek.",
                          usagenote="",
                          deprecated_version="",

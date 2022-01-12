@@ -16,7 +16,7 @@ class BijlageVoertuigkering(ABC):
         testrapportVoertuigkeringField = DtcDocument()
         testrapportVoertuigkeringField.naam = "testrapportVoertuigkering"
         testrapportVoertuigkeringField.label = "testrapport voertuigkering"
-        testrapportVoertuigkeringField.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#BijlageVoertuigkering.testrapportVoertuigkering"
+        testrapportVoertuigkeringField.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#BijlageVoertuigkering.testrapportVoertuigkering"
         testrapportVoertuigkeringField.definition = "De testresultaten van de crashtesten die op de voertuigkerende constructie uitgevoerd zijn."
         testrapportVoertuigkeringField.constraints = ""
         testrapportVoertuigkeringField.usagenote = ""
@@ -27,7 +27,7 @@ class BijlageVoertuigkering(ABC):
         videoVoertuigkeringField = DtcDocument()
         videoVoertuigkeringField.naam = "videoVoertuigkering"
         videoVoertuigkeringField.label = "video voertuigkering"
-        videoVoertuigkeringField.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#BijlageVoertuigkering.videoVoertuigkering"
+        videoVoertuigkeringField.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#BijlageVoertuigkering.videoVoertuigkering"
         videoVoertuigkeringField.definition = "Video-opname van de crashtesten op de voertuigkerende constructie."
         videoVoertuigkeringField.constraints = ""
         videoVoertuigkeringField.usagenote = ""

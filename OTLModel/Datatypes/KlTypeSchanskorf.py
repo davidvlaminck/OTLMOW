@@ -9,7 +9,7 @@ class KlTypeSchanskorf(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlTypeSchanskorf",
                          label="Type schanskorf",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlTypeSchanskorf",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlTypeSchanskorf",
                          definition="Keuzelijst met de verschillende types schanskorven.",
                          usagenote="",
                          deprecated_version="",

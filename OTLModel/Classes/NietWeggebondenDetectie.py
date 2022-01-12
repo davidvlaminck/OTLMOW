@@ -23,7 +23,7 @@ class NietWeggebondenDetectie(Detectie, FirmwareObject):
         """Spanning waarmee de detectoren gevoed worden."""
         self.voedingsspanning.naam = "voedingsspanning"
         self.voedingsspanning.label = "voedingsspanning"
-        self.voedingsspanning.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#NietWeggebondenDetectie.voedingsspanning"
+        self.voedingsspanning.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#NietWeggebondenDetectie.voedingsspanning"
         self.voedingsspanning.definition = "Spanning waarmee de detectoren gevoed worden."
         self.voedingsspanning.constraints = ""
         self.voedingsspanning.usagenote = ""

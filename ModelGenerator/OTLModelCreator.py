@@ -19,7 +19,7 @@ class OTLModelCreator:
         self.create_primitive_datatypes()
         self.create_complex_datatypes()
         self.create_union_datatypes()
-        #  self.create_enumerations()
+        #self.create_enumerations()
         self.create_classes()
         self.create_relations()
 
@@ -27,7 +27,7 @@ class OTLModelCreator:
         creator = OTLPrimitiveDatatypeCreator(self.logger, self.osloCollector)
 
         for primDatatype in self.osloCollector.primitiveDatatypes:
-            if primDatatype.uri in ['http://www.w3.org/2000/01/rdf-schema#Literal',
+            if primDatatype.objectUri in ['http://www.w3.org/2000/01/rdf-schema#Literal',
                                     'http://www.w3.org/2001/XMLSchema#dateTime',
                                     'http://www.w3.org/2001/XMLSchema#integer',
                                     'http://www.w3.org/2001/XMLSchema#decimal',

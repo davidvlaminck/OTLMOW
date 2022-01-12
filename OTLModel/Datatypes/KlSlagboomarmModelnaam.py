@@ -9,7 +9,7 @@ class KlSlagboomarmModelnaam(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlSlagboomarmModelnaam",
                          label="Slagboomarm modelnaam",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlSlagboomarmModelnaam",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlSlagboomarmModelnaam",
                          definition="De modelnaam van de slagboomarm.",
                          usagenote="",
                          deprecated_version="",

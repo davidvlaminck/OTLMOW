@@ -17,7 +17,7 @@ class SelNietSelLus(Detectielus):
 
         self.heeftMofInTrekput = BooleanField(naam="heeftMofInTrekput",
                                               label="heeft mof in trekput",
-                                              uri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#SelNietSelLus.heeftMofInTrekput",
+                                              objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#SelNietSelLus.heeftMofInTrekput",
                                               definition="Aanduiding of de mof bereikbaar is via een trekput.",
                                               constraints="",
                                               usagenote="",
@@ -26,7 +26,7 @@ class SelNietSelLus(Detectielus):
 
         self.isPrioritair = BooleanField(naam="isPrioritair",
                                          label="is prioritair",
-                                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#SelNietSelLus.isPrioritair",
+                                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#SelNietSelLus.isPrioritair",
                                          definition="Geeft aan of de lus prioritair hersteld moet worden bij defect.",
                                          constraints="",
                                          usagenote="",

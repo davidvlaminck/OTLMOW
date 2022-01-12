@@ -9,7 +9,7 @@ class KlDetectiecameraMerk(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlDetectiecameraMerk",
                          label="Detectiecamera merk",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlDetectiecameraMerk",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlDetectiecameraMerk",
                          definition="Keuzelijst met merknamen voor Detectiecamera.",
                          usagenote="",
                          deprecated_version="",

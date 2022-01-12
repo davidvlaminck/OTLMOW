@@ -9,7 +9,7 @@ class KlAantalBoompalen(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlAantalBoompalen",
                          label="Aantal boompalen",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlAantalBoompalen",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlAantalBoompalen",
                          definition="Hoeveelheid palen waaruit de constructie bestaat.",
                          usagenote="",
                          deprecated_version="",

@@ -21,7 +21,7 @@ class DwarseMarkeringVerschuind(DwarseMarkeringToegang):
         """De basisoppervlakte van de dwarse markering in vierkante meter."""
         self.basisoppervlakte.naam = "basisoppervlakte"
         self.basisoppervlakte.label = "oppervlakte"
-        self.basisoppervlakte.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DwarseMarkeringVerschuind.basisoppervlakte"
+        self.basisoppervlakte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DwarseMarkeringVerschuind.basisoppervlakte"
         self.basisoppervlakte.definition = "De basisoppervlakte van de dwarse markering in vierkante meter."
         self.basisoppervlakte.constraints = ""
         self.basisoppervlakte.usagenote = ""
@@ -30,7 +30,7 @@ class DwarseMarkeringVerschuind(DwarseMarkeringToegang):
         self.code = KeuzelijstField(naam="code",
                                     label="code",
                                     lijst=KlDwarseMarkeringVerschuindCode(),
-                                    uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DwarseMarkeringVerschuind.code",
+                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DwarseMarkeringVerschuind.code",
                                     definition="De (COPRO/BENOR)  code van dwarse markering.",
                                     constraints="",
                                     usagenote="",
@@ -41,7 +41,7 @@ class DwarseMarkeringVerschuind(DwarseMarkeringToegang):
         """De hoek van de verschuinde dwarsmarkering in decimale graden."""
         self.hoek.naam = "hoek"
         self.hoek.label = "hoek"
-        self.hoek.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DwarseMarkeringVerschuind.hoek"
+        self.hoek.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DwarseMarkeringVerschuind.hoek"
         self.hoek.definition = "De hoek van de verschuinde dwarsmarkering in decimale graden."
         self.hoek.constraints = ""
         self.hoek.usagenote = ""
@@ -51,7 +51,7 @@ class DwarseMarkeringVerschuind(DwarseMarkeringToegang):
         """De oppervlakte van een dwarsmarkering na verschuining."""
         self.oppervlakte.naam = "oppervlakte"
         self.oppervlakte.label = "oppervlakte"
-        self.oppervlakte.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DwarseMarkeringVerschuind.oppervlakte"
+        self.oppervlakte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DwarseMarkeringVerschuind.oppervlakte"
         self.oppervlakte.definition = "De oppervlakte van een dwarsmarkering na verschuining."
         self.oppervlakte.constraints = ""
         self.oppervlakte.usagenote = ""
@@ -60,7 +60,7 @@ class DwarseMarkeringVerschuind(DwarseMarkeringToegang):
         self.soortOmschrijving = KeuzelijstField(naam="soortOmschrijving",
                                                  label="soort omschrijving",
                                                  lijst=KlDwarseMarkeringVerschuindSoort(),
-                                                 uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DwarseMarkeringVerschuind.soortOmschrijving",
+                                                 objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DwarseMarkeringVerschuind.soortOmschrijving",
                                                  definition="De soort en tevens de omschrijving van dwarse markering.",
                                                  constraints="",
                                                  usagenote="",

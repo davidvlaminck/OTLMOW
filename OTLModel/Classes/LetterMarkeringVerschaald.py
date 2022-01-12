@@ -21,7 +21,7 @@ class LetterMarkeringVerschaald(FiguratieMarkeringToegang):
         """De basisoppervlakte van de individuele lettermarkering voor verschaling zoals beschreven in de algemene omzendbrief."""
         self.basisOppervlakte.naam = "basisOppervlakte"
         self.basisOppervlakte.label = "basisoppervlakte"
-        self.basisOppervlakte.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#LetterMarkeringVerschaald.basisOppervlakte"
+        self.basisOppervlakte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#LetterMarkeringVerschaald.basisOppervlakte"
         self.basisOppervlakte.definition = "De basisoppervlakte van de individuele lettermarkering voor verschaling zoals beschreven in de algemene omzendbrief."
         self.basisOppervlakte.constraints = ""
         self.basisOppervlakte.usagenote = ""
@@ -30,7 +30,7 @@ class LetterMarkeringVerschaald(FiguratieMarkeringToegang):
         self.letter = KeuzelijstField(naam="letter",
                                       label="letter",
                                       lijst=KlLetterVerschaald(),
-                                      uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#LetterMarkeringVerschaald.letter",
+                                      objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#LetterMarkeringVerschaald.letter",
                                       definition="De individuele letter gebruikt bij de verschaalde wegmarkering.",
                                       constraints="",
                                       usagenote="",
@@ -41,7 +41,7 @@ class LetterMarkeringVerschaald(FiguratieMarkeringToegang):
         """De oppervlakte van een figuratiemarkering na de verschaling."""
         self.oppervlakte.naam = "oppervlakte"
         self.oppervlakte.label = "oppervlakte"
-        self.oppervlakte.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#LetterMarkeringVerschaald.oppervlakte"
+        self.oppervlakte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#LetterMarkeringVerschaald.oppervlakte"
         self.oppervlakte.definition = "De oppervlakte van een figuratiemarkering na de verschaling."
         self.oppervlakte.constraints = ""
         self.oppervlakte.usagenote = ""
@@ -50,7 +50,7 @@ class LetterMarkeringVerschaald(FiguratieMarkeringToegang):
         self.type = KeuzelijstField(naam="type",
                                     label="type",
                                     lijst=KlLetterVerschaaldType(),
-                                    uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#LetterMarkeringVerschaald.type",
+                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#LetterMarkeringVerschaald.type",
                                     definition="Het type van de individuele verschaalde lettermarkering.",
                                     constraints="",
                                     usagenote="",
@@ -59,7 +59,7 @@ class LetterMarkeringVerschaald(FiguratieMarkeringToegang):
 
         self.vergrotingsfactor = DecimalFloatField(naam="vergrotingsfactor",
                                                    label="vergrotingsfactor",
-                                                   uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#LetterMarkeringVerschaald.vergrotingsfactor",
+                                                   objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#LetterMarkeringVerschaald.vergrotingsfactor",
                                                    definition="Een decimaal getal dat weergeeft in welke mate de figuratiemarkering vergroot of verkleind wordt.",
                                                    constraints="",
                                                    usagenote="",
@@ -68,7 +68,7 @@ class LetterMarkeringVerschaald(FiguratieMarkeringToegang):
 
         self.verlengingsfactor = DecimalFloatField(naam="verlengingsfactor",
                                                    label="verlengingsfactor",
-                                                   uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#LetterMarkeringVerschaald.verlengingsfactor",
+                                                   objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#LetterMarkeringVerschaald.verlengingsfactor",
                                                    definition="Een decimaal getal dat de verlenging van een figuratiemarkering weergeeft.",
                                                    constraints="",
                                                    usagenote="",

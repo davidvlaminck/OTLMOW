@@ -24,7 +24,7 @@ class PlintGC(ConstructieElement, BetonnenConstructieElement, ConstructieElement
         """Met dit complex datatype worden de afmetingen van de plint weergegeven. Indien de plint afwijkt van een rechthoekige vorm wordt deze informatie in de technische fiche opgeslagen."""
         self.afmetingen.naam = "afmetingen"
         self.afmetingen.label = "afmetingen"
-        self.afmetingen.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#PlintGC.afmetingen"
+        self.afmetingen.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#PlintGC.afmetingen"
         self.afmetingen.definition = "Met dit complex datatype worden de afmetingen van de plint weergegeven. Indien de plint afwijkt van een rechthoekige vorm wordt deze informatie in de technische fiche opgeslagen."
         self.afmetingen.constraints = ""
         self.afmetingen.usagenote = ""
@@ -33,7 +33,7 @@ class PlintGC(ConstructieElement, BetonnenConstructieElement, ConstructieElement
         self.plaatsingswijze = KeuzelijstField(naam="plaatsingswijze",
                                                label="plaatsingswijze",
                                                lijst=KlPlaatsingswijzePlint(),
-                                               uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#PlintGC.plaatsingswijze",
+                                               objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#PlintGC.plaatsingswijze",
                                                definition="De manier waarop de plint geplaatst is ten opzichte van de profielen.",
                                                constraints="",
                                                usagenote="",
@@ -44,7 +44,7 @@ class PlintGC(ConstructieElement, BetonnenConstructieElement, ConstructieElement
         """Document met verdere specificaties van de plint die niet opgevangen worden met de aanwezige attributen."""
         self.technischeFiche.naam = "technischeFiche"
         self.technischeFiche.label = "technische fiche"
-        self.technischeFiche.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#PlintGC.technischeFiche"
+        self.technischeFiche.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#PlintGC.technischeFiche"
         self.technischeFiche.definition = "Document met verdere specificaties van de plint die niet opgevangen worden met de aanwezige attributen."
         self.technischeFiche.constraints = ""
         self.technischeFiche.usagenote = ""

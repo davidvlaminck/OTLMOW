@@ -19,7 +19,7 @@ class Cabine(Inloopbehuizing):
         self.aardingsstelsel = KeuzelijstField(naam="aardingsstelsel",
                                                label="aardingsstelsel",
                                                lijst=KlCabineAardingsstelsel(),
-                                               uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Cabine.aardingsstelsel",
+                                               objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Cabine.aardingsstelsel",
                                                definition="Keuze tussen verschillende types voor het gebruikte aardingsstelsel.",
                                                constraints="",
                                                usagenote="",
@@ -30,7 +30,7 @@ class Cabine(Inloopbehuizing):
         """Binnenhoogte in meter van de kabelkelder onder de cabine."""
         self.kelderdiepte.naam = "kelderdiepte"
         self.kelderdiepte.label = "kelderdiepte"
-        self.kelderdiepte.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Cabine.kelderdiepte"
+        self.kelderdiepte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Cabine.kelderdiepte"
         self.kelderdiepte.definition = "Binnenhoogte in meter van de kabelkelder onder de cabine."
         self.kelderdiepte.constraints = ""
         self.kelderdiepte.usagenote = ""
@@ -39,7 +39,7 @@ class Cabine(Inloopbehuizing):
         self.standaardtype = KeuzelijstField(naam="standaardtype",
                                              label="standaardtype",
                                              lijst=KlCabineStandaardtype(),
-                                             uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Cabine.standaardtype",
+                                             objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Cabine.standaardtype",
                                              definition="Het type van de cabine volgens de gangbare standaarden.",
                                              constraints="",
                                              usagenote="",

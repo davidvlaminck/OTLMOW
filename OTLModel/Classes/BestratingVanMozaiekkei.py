@@ -18,7 +18,7 @@ class BestratingVanMozaiekkei(Bestrating):
         self.formaat = KeuzelijstField(naam="formaat",
                                        label="formaat",
                                        lijst=KlMozaiekkeiFormaat(),
-                                       uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#BestratingVanMozaiekkei.formaat",
+                                       objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#BestratingVanMozaiekkei.formaat",
                                        definition="De grootte van mozaïekkei.",
                                        constraints="",
                                        usagenote="",
@@ -27,7 +27,7 @@ class BestratingVanMozaiekkei(Bestrating):
 
         self.isHerbruik = BooleanField(naam="isHerbruik",
                                        label="is herbruik",
-                                       uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#BestratingVanMozaiekkei.isHerbruik",
+                                       objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#BestratingVanMozaiekkei.isHerbruik",
                                        definition="Bepaling of de mozaïekkeien gerecycleerd werden.",
                                        constraints="",
                                        usagenote="",

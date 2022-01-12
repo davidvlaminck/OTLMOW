@@ -9,7 +9,7 @@ class KlWeegsensorModelnaam(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlWeegsensorModelnaam",
                          label="Weegsensor modelnaam",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlWeegsensorModelnaam",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlWeegsensorModelnaam",
                          definition="De modelnaam van de weegsensor.",
                          usagenote="",
                          deprecated_version="",

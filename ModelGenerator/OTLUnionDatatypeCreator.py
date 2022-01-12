@@ -15,9 +15,9 @@ class OTLUnionDatatypeCreator(AbstractDatatypeCreator):
         if not isinstance(oSLODatatypeUnion, OSLODatatypeUnion):
             raise ValueError(f"Input is not a OSLODatatypeUnion")
 
-        if oSLODatatypeUnion.uri == '' or not (oSLODatatypeUnion.uri.startswith(
-                'https://wegenenverkeer.data.vlaanderen.be/ns/') and 'Dtu' in oSLODatatypeUnion.uri):
-            raise ValueError(f"OSLODatatypeUnion.uri is invalid. Value = '{oSLODatatypeUnion.uri}'")
+        if oSLODatatypeUnion.objectUri == '' or not (oSLODatatypeUnion.objectUri.startswith(
+                'https://wegenenverkeer.data.vlaanderen.be/ns/') and 'Dtu' in oSLODatatypeUnion.objectUri):
+            raise ValueError(f"OSLODatatypeUnion.objectUri is invalid. Value = '{oSLODatatypeUnion.objectUri}'")
 
         if oSLODatatypeUnion.name == '':
             raise ValueError(f"OSLODatatypeUnion.name is invalid. Value = '{oSLODatatypeUnion.name}'")
@@ -25,7 +25,7 @@ class OTLUnionDatatypeCreator(AbstractDatatypeCreator):
         return self.CreateBlockToWriteFromUnionTypesDtu(oSLODatatypeUnion)
 
     def CreateBlockToWriteFromUnionTypesDtu(self, oSLODatatypeUnion: OSLODatatypeUnion):
-        attributen = self.osloCollector.FindUnionDatatypeAttributenByClassUri(oSLODatatypeUnion.uri)
+        attributen = self.osloCollector.FindUnionDatatypeAttributenByClassUri(oSLODatatypeUnion.objectUri)
 
         datablock = ['# coding=utf-8', 'from OTLModel.Datatypes.UnionTypeField import UnionTypeField']
 
@@ -48,7 +48,7 @@ class OTLUnionDatatypeCreator(AbstractDatatypeCreator):
         datablock.append('    def __init__(self):')
         datablock.append(f'        super().__init__(naam="{oSLODatatypeUnion.name}",')
         datablock.append(f'                         label="{oSLODatatypeUnion.label_nl}",')
-        datablock.append(f'                         uri="{oSLODatatypeUnion.uri}",')
+        datablock.append(f'                         objectUri="{oSLODatatypeUnion.objectUri}",')
         datablock.append(f'                         definition="{oSLODatatypeUnion.definition_nl}",')
         datablock.append(f'                         usagenote="{oSLODatatypeUnion.usagenote_nl}",')
         datablock.append(f'                         deprecated_version="{oSLODatatypeUnion.deprecated_version}")')

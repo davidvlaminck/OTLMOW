@@ -21,7 +21,7 @@ class Drukknop(NietWeggebondenDetectie):
         """Wachttijd (in uren) waarna een alarm pas mag optreden."""
         self.bewakingstijd.naam = "bewakingstijd"
         self.bewakingstijd.label = "bewakingstijd"
-        self.bewakingstijd.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Drukknop.bewakingstijd"
+        self.bewakingstijd.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Drukknop.bewakingstijd"
         self.bewakingstijd.definition = "Wachttijd (in uren) waarna een alarm pas mag optreden."
         self.bewakingstijd.constraints = ""
         self.bewakingstijd.usagenote = ""
@@ -30,7 +30,7 @@ class Drukknop(NietWeggebondenDetectie):
         self.merk = KeuzelijstField(naam="merk",
                                     label="merk",
                                     lijst=KlDrukknopMerk(),
-                                    uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Drukknop.merk",
+                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Drukknop.merk",
                                     definition="De naam van het merk van de drukknop.",
                                     constraints="",
                                     usagenote="",
@@ -40,7 +40,7 @@ class Drukknop(NietWeggebondenDetectie):
         self.modelnaam = KeuzelijstField(naam="modelnaam",
                                          label="modelnaam",
                                          lijst=KlDrukknopModelnaam(),
-                                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Drukknop.modelnaam",
+                                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Drukknop.modelnaam",
                                          definition="De modelnaam van de drukknop.",
                                          constraints="",
                                          usagenote="",
@@ -50,7 +50,7 @@ class Drukknop(NietWeggebondenDetectie):
         self.soortDrukknop = KeuzelijstField(naam="soortDrukknop",
                                              label="soort drukknop",
                                              lijst=KlDrukknopSoort(),
-                                             uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Drukknop.soortDrukknop",
+                                             objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Drukknop.soortDrukknop",
                                              definition="Doelgroep van de drukknop (voetganger, fietser, ruiter,...).",
                                              constraints="",
                                              usagenote="",

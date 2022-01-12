@@ -9,7 +9,7 @@ class KlWvLichtmastAantArmen(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlWvLichtmastAantArmen",
                          label="WV-mast aantal armen",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlWvLichtmastAantArmen",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlWvLichtmastAantArmen",
                          definition="Aantal armen van de lichtmast.",
                          usagenote="",
                          deprecated_version="",

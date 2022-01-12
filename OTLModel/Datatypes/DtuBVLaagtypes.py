@@ -12,7 +12,7 @@ class DtuBVLaagtypes(UnionTypeField):
     def __init__(self):
         super().__init__(naam="DtuBVLaagtypes",
                          label="Laagtype van de bitumineuze verharding",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtuBVLaagtypes",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtuBVLaagtypes",
                          definition="Union datatype voor een laagtype anders dan de profileerlaag. Bij een profileerlaag kan men het gewicht toelichten.",
                          usagenote="",
                          deprecated_version="")
@@ -20,7 +20,7 @@ class DtuBVLaagtypes(UnionTypeField):
         field_laagtype = KeuzelijstField(naam="laagtype",
                                          label="laagtype",
                                          lijst=KlBVLaagtype(),
-                                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtuBVLaagtypes.laagtype",
+                                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtuBVLaagtypes.laagtype",
                                          definition="Het type van de bitumineuze verharding.",
                                          constraints="",
                                          usagenote="",
@@ -31,7 +31,7 @@ class DtuBVLaagtypes(UnionTypeField):
         """De laag die het profiel verbetert van de verharding."""
         field_profileerlaag.naam = "profileerlaag"
         field_profileerlaag.label = "profileerlaag"
-        field_profileerlaag.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtuBVLaagtypes.profileerlaag"
+        field_profileerlaag.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtuBVLaagtypes.profileerlaag"
         field_profileerlaag.definition = "De laag die het profiel verbetert van de verharding."
         field_profileerlaag.constraints = ""
         field_profileerlaag.usagenote = ""

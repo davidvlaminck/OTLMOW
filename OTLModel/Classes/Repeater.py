@@ -19,7 +19,7 @@ class Repeater(ZenderOntvangerToegang):
         self.merk = KeuzelijstField(naam="merk",
                                     label="merk",
                                     lijst=KlRepeaterMerk(),
-                                    uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Repeater.merk",
+                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Repeater.merk",
                                     definition="Het merk van de repeater.",
                                     constraints="",
                                     usagenote="",
@@ -29,7 +29,7 @@ class Repeater(ZenderOntvangerToegang):
         self.modelnaam = KeuzelijstField(naam="modelnaam",
                                          label="modelnaam",
                                          lijst=KlRepeaterModelnaam(),
-                                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Repeater.modelnaam",
+                                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Repeater.modelnaam",
                                          definition="De modelnaam/product range van een repeater.",
                                          constraints="",
                                          usagenote="",
@@ -40,7 +40,7 @@ class Repeater(ZenderOntvangerToegang):
         """De techniek of standaard waarmee signalen over het netwerk verstuurd worden. Mogelijke waarden zijn onder andere: KAR,  wifi, GPRS of GSM.."""
         self.toepassing.naam = "toepassing"
         self.toepassing.label = "toepassing"
-        self.toepassing.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Repeater.toepassing"
+        self.toepassing.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Repeater.toepassing"
         self.toepassing.definition = "De techniek of standaard waarmee signalen over het netwerk verstuurd worden. Mogelijke waarden zijn onder andere: KAR,  wifi, GPRS of GSM.."
         self.toepassing.constraints = ""
         self.toepassing.usagenote = ""

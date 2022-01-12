@@ -11,7 +11,7 @@ class KwantWrdInGigabyte(KwantWrd):
     def __init__(self, waarde=None):
         self.eenheid = LiteralField(naam="standaardEenheid",
                                     label="standaard eenheid",
-                                    uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInGigabyte.standaardEenheid",
+                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInGigabyte.standaardEenheid",
                                     definition="De standaard eenheid bij dit datatype is uitgedrukt in gigabyte.",
                                     constraints='"GBy"^^cdt:ucumunit',
                                     usagenote='"GBy"^^cdt:ucumunit',
@@ -21,7 +21,7 @@ class KwantWrdInGigabyte(KwantWrd):
 
         self.waardeVeld = DecimalFloatField(naam="waarde",
                                             label="waarde",
-                                            uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInGigabyte.waarde",
+                                            objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInGigabyte.waarde",
                                             definition="Bevat een getal die bij het datatype hoort.",
                                             constraints="",
                                             usagenote="",
@@ -30,7 +30,7 @@ class KwantWrdInGigabyte(KwantWrd):
 
         super().__init__(naam="KwantWrdInGigabyte",
                          label="Kwantitatieve waarde in gigabyte",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInGigabyte",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInGigabyte",
                          definition="Een kwantitatieve waarde die een getal in gigabyte uitdrukt.",
                          usagenote="",
                          deprecated_version="",

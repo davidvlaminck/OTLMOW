@@ -17,7 +17,7 @@ class ScheurremmendeLaag(AndereLaag):
         self.type = KeuzelijstField(naam="type",
                                     label="type",
                                     lijst=KlScheurremmendeLaagType(),
-                                    uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#ScheurremmendeLaag.type",
+                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#ScheurremmendeLaag.type",
                                     definition="Het type scheurremmende laag.",
                                     constraints="",
                                     usagenote="",

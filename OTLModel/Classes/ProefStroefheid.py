@@ -17,7 +17,7 @@ class ProefStroefheid(Proef):
         """Proefresultaten van de stroefheid."""
         self.stroefheid.naam = "stroefheid"
         self.stroefheid.label = "stroefheid"
-        self.stroefheid.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefStroefheid.stroefheid"
+        self.stroefheid.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefStroefheid.stroefheid"
         self.stroefheid.definition = "Proefresultaten van de stroefheid."
         self.stroefheid.constraints = ""
         self.stroefheid.usagenote = ""

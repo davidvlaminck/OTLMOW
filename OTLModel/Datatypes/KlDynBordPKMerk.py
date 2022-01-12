@@ -9,7 +9,7 @@ class KlDynBordPKMerk(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlDynBordPKMerk",
                          label="Dyn bord PK merk",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlDynBordPKMerk",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlDynBordPKMerk",
                          definition="Keuzelijst met de gangbare merken van Pijl-Kruisborden. De merken verwijzen doorgaans naar de fabrikant of leverancier.",
                          usagenote="",
                          deprecated_version="",

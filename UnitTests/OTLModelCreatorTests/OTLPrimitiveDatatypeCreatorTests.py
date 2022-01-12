@@ -55,7 +55,7 @@ class PrimitiveDatatypeOSLOCollector(OSLOCollector):
                                            '    def __init__(self, waarde=None):',
                                            '        self.eenheid = LiteralField(naam="standaardEenheid",',
                                            '                                    label="standaard eenheid",',
-                                           '                                    uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInVolt.standaardEenheid",',
+                                           '                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInVolt.standaardEenheid",',
                                            '                                    definition="De standaard eenheid bij dit datatype is uitgedrukt in Volt.",',
                                            '                                    constraints=\'"V"^^cdt:ucumunit\',',
                                            '                                    usagenote=\'"V"^^cdt:ucumunit\',',
@@ -65,7 +65,7 @@ class PrimitiveDatatypeOSLOCollector(OSLOCollector):
                                            '',
                                            '        self.waardeVeld = DecimalFloatField(naam="waarde",',
                                            '                                            label="waarde",',
-                                           '                                            uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInVolt.waarde",',
+                                           '                                            objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInVolt.waarde",',
                                            '                                            definition="Bevat een getal die bij het datatype hoort.",',
                                            '                                            constraints="",',
                                            '                                            usagenote="",',
@@ -74,7 +74,7 @@ class PrimitiveDatatypeOSLOCollector(OSLOCollector):
                                            '',
                                            '        super().__init__(naam="KwantWrdInVolt",',
                                            '                         label="Kwantitatieve waarde in volt",',
-                                           '                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInVolt",',
+                                           '                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInVolt",',
                                            '                         definition="Een kwantitatieve waarde die een getal in volt uitdrukt.",',
                                            '                         usagenote="",',
                                            '                         deprecated_version="",',
@@ -93,7 +93,7 @@ class PrimitiveDatatypeOSLOCollector(OSLOCollector):
                                      '    def __init__(self, waarde=None):',
                                      '        self.waardeVeld = StringField(naam="waarde",',
                                      '                                      label="waarde",',
-                                     '                                      uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DteKleurRAL.waarde",',
+                                     '                                      objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DteKleurRAL.waarde",',
                                      '                                      definition="Beschrijft een kleur volgens het RAL classificatiesysteem.",',
                                      '                                      constraints="",',
                                      '                                      usagenote="De waarde moet voldoen aan volgende regex: [1-9]\\d{3}",',
@@ -102,7 +102,7 @@ class PrimitiveDatatypeOSLOCollector(OSLOCollector):
                                      '',
                                      '        super().__init__(naam="DteKleurRAL",',
                                      '                         label="RAL-kleur",',
-                                     '                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DteKleurRAL",',
+                                     '                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DteKleurRAL",',
                                      '                         definition="Beschrijft een kleur volgens het RAL classificatiesysteem. De waarde is een natuurlijk getal tussen 1000 en 9999.",',
                                      '                         usagenote="",',
                                      '                         deprecated_version="",',
@@ -128,30 +128,30 @@ class OTLPrimitiveDatatypeCreatorTests(unittest.TestCase):
         logger = NoneLogger()
         collector = OSLOCollector(mock)
         creator = OTLPrimitiveDatatypeCreator(logger, collector)
-        osloDatatypePrimitive = OSLODatatypePrimitive(name='name', uri='', definition_nl='', label_nl='', usagenote_nl='',
+        osloDatatypePrimitive = OSLODatatypePrimitive(name='name', objectUri='', definition_nl='', label_nl='', usagenote_nl='',
                                                       deprecated_version='')
 
         with self.assertRaises(ValueError) as exception_empty_uri:
             creator.CreateBlockToWriteFromPrimitiveTypes(osloDatatypePrimitive)
-        self.assertEqual(str(exception_empty_uri.exception), "OSLODatatypePrimitive.uri is invalid. Value = ''")
+        self.assertEqual(str(exception_empty_uri.exception), "OSLODatatypePrimitive.objectUri is invalid. Value = ''")
 
     def test_InvalidOSLODatatypePrimitiveBadUri(self):
         logger = NoneLogger()
         collector = OSLOCollector(mock)
         creator = OTLPrimitiveDatatypeCreator(logger, collector)
-        osloDatatypePrimitive = OSLODatatypePrimitive(name='name', uri='Bad uri', definition_nl='', label_nl='', usagenote_nl='',
+        osloDatatypePrimitive = OSLODatatypePrimitive(name='name', objectUri='Bad objectUri', definition_nl='', label_nl='', usagenote_nl='',
                                                       deprecated_version='')
 
         with self.assertRaises(ValueError) as exception_bad_uri:
             creator.CreateBlockToWriteFromPrimitiveTypes(osloDatatypePrimitive)
-        self.assertEqual(str(exception_bad_uri.exception), "OSLODatatypePrimitive.uri is invalid. Value = 'Bad uri'")
+        self.assertEqual(str(exception_bad_uri.exception), "OSLODatatypePrimitive.objectUri is invalid. Value = 'Bad objectUri'")
 
     def test_InvalidOSLODatatypePrimitiveEmptyName(self):
         logger = NoneLogger()
         collector = OSLOCollector(mock)
         creator = OTLPrimitiveDatatypeCreator(logger, collector)
         osloDatatypePrimitive = OSLODatatypePrimitive(name='',
-                                                      uri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrd',
+                                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrd',
                                                       definition_nl='', label_nl='', usagenote_nl='',
                                                       deprecated_version='')
 
@@ -169,7 +169,7 @@ class OTLPrimitiveDatatypeCreatorTests(unittest.TestCase):
         self.assertEqual(str(exception_bad_name.exception), "Input is not a OSLODatatypePrimitive")
 
     def test_ValidOSLODatatypePrimitiveButNoResult(self):
-        boolean_primitive = OSLODatatypePrimitive(name="Boolean", uri="http://www.w3.org/2001/XMLSchema#boolean",
+        boolean_primitive = OSLODatatypePrimitive(name="Boolean", objectUri="http://www.w3.org/2001/XMLSchema#boolean",
                                                   definition_nl="Beschrijft een boolean volgens http://www.w3.org/2001/XMLSchema#boolean.",
                                                   label_nl="Boolean", usagenote_nl="https://www.w3.org/TR/xmlschema-2/#boolean",
                                                   deprecated_version="")

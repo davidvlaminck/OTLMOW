@@ -11,7 +11,7 @@ class KwantWrdInMeter(KwantWrd):
     def __init__(self, waarde=None):
         self.eenheid = LiteralField(naam="standaardEenheid",
                                     label="standaard eenheid",
-                                    uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMeter.standaardEenheid",
+                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMeter.standaardEenheid",
                                     definition="De standaard eenheid bij dit datatype is uitgedrukt in meter.",
                                     constraints='"m"^^cdt:ucumunit',
                                     usagenote='"m"^^cdt:ucumunit',
@@ -21,7 +21,7 @@ class KwantWrdInMeter(KwantWrd):
 
         self.waardeVeld = DecimalFloatField(naam="waarde",
                                             label="waarde",
-                                            uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMeter.waarde",
+                                            objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMeter.waarde",
                                             definition="Bevat een getal die bij het datatype hoort.",
                                             constraints="",
                                             usagenote="",
@@ -30,7 +30,7 @@ class KwantWrdInMeter(KwantWrd):
 
         super().__init__(naam="KwantWrdInMeter",
                          label="Kwantitatieve waarde in meter",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMeter",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMeter",
                          definition="Een kwantitatieve waarde die een getal in meter uitdrukt.",
                          usagenote="",
                          deprecated_version="",

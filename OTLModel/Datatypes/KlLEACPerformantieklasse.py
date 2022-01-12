@@ -9,7 +9,7 @@ class KlLEACPerformantieklasse(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlLEACPerformantieklasse",
                          label="Performantieklasse",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlLEACPerformantieklasse",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlLEACPerformantieklasse",
                          definition="De verschillende performantieklasses van de geteste beginconstructie.",
                          usagenote="",
                          deprecated_version="",

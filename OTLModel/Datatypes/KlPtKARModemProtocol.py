@@ -9,7 +9,7 @@ class KlPtKARModemProtocol(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlPtKARModemProtocol",
                          label="PT-KAR-modem protocol",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlPtKARModemProtocol",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlPtKARModemProtocol",
                          definition="Beschrijft het protocol dat de PT-KAR-Modem gebruikt om te communiceren.",
                          usagenote="",
                          deprecated_version="",

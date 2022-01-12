@@ -9,7 +9,7 @@ class KlBrandhaspelModelnaam(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlBrandhaspelModelnaam",
                          label="brandhaspel model naam",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlBrandhaspelModelnaam",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlBrandhaspelModelnaam",
                          definition="De modelnaam van de brandhaspel.",
                          usagenote="",
                          deprecated_version="",

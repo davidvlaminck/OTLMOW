@@ -19,7 +19,7 @@ class VRCommunicatiekaart(VRModuleMetFirmware):
 
         self.dnsNaam = StringField(naam="dnsNaam",
                                    label="DNS naam",
-                                   uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#VRCommunicatiekaart.dnsNaam",
+                                   objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#VRCommunicatiekaart.dnsNaam",
                                    definition="De DNSNaam (ook \"volledige domein naam\" genoemd ) is een unieke naam binnen het Domain Name System (DNS), het naamgevingssysteem waarmee computers, webservers, diensten en  toepassing op een unieke manier kunnen worden geïdentificeerd. Deze bevat zowel de hostname en de top level domein naam bv. 120c8-ar1.belfa.be.",
                                    constraints="",
                                    usagenote="",
@@ -28,7 +28,7 @@ class VRCommunicatiekaart(VRModuleMetFirmware):
 
         self.heeftSmartguard = BooleanField(naam="heeftSmartguard",
                                             label="heeft smartguard",
-                                            uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#VRCommunicatiekaart.heeftSmartguard",
+                                            objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#VRCommunicatiekaart.heeftSmartguard",
                                             definition="Smartguard aanwezig?",
                                             constraints="",
                                             usagenote="",
@@ -39,7 +39,7 @@ class VRCommunicatiekaart(VRModuleMetFirmware):
         """IP-adres."""
         self.ipAdres.naam = "ipAdres"
         self.ipAdres.label = "ipv4 adres"
-        self.ipAdres.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#VRCommunicatiekaart.ipAdres"
+        self.ipAdres.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#VRCommunicatiekaart.ipAdres"
         self.ipAdres.definition = "IP-adres."
         self.ipAdres.constraints = ""
         self.ipAdres.usagenote = ""
@@ -47,7 +47,7 @@ class VRCommunicatiekaart(VRModuleMetFirmware):
 
         self.telefoonnummer = StringField(naam="telefoonnummer",
                                           label="telefoonnummer",
-                                          uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#VRCommunicatiekaart.telefoonnummer",
+                                          objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#VRCommunicatiekaart.telefoonnummer",
                                           definition="Telefoonnummer.",
                                           constraints="",
                                           usagenote="",
@@ -57,7 +57,7 @@ class VRCommunicatiekaart(VRModuleMetFirmware):
         self.typeGeheugen = KeuzelijstField(naam="typeGeheugen",
                                             label="type geheugen",
                                             lijst=KlVrComKaartTypeOpslaggeheugen(),
-                                            uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#VRCommunicatiekaart.typeGeheugen",
+                                            objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#VRCommunicatiekaart.typeGeheugen",
                                             definition="Type opslaggeheugen op de aanwezige SD-kaart.",
                                             constraints="",
                                             usagenote="",
@@ -66,7 +66,7 @@ class VRCommunicatiekaart(VRModuleMetFirmware):
 
         self.uitvoering = StringField(naam="uitvoering",
                                       label="uitvoering",
-                                      uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#VRCommunicatiekaart.uitvoering",
+                                      objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#VRCommunicatiekaart.uitvoering",
                                       definition="Type van communicatiekaart.",
                                       constraints="",
                                       usagenote="",

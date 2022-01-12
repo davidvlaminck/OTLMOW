@@ -22,7 +22,7 @@ class ANPRCamera(AIMNaamObject):
 
         self.dnsNaam = StringField(naam="dnsNaam",
                                    label="DNS naam",
-                                   uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#ANPRCamera.dnsNaam",
+                                   objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#ANPRCamera.dnsNaam",
                                    definition="De DNSNaam (ook \"volledige domein naam\" genoemd ) is een unieke naam binnen het Domain Name System (DNS), het naamgevingssysteem waarmee computers, webservers, diensten en  toepassing op een unieke manier kunnen worden geïdentificeerd. Deze bevat zowel de hostname en de top level domein naam bv. 120c8-ar1.belfa.be.",
                                    constraints="",
                                    usagenote="",
@@ -31,7 +31,7 @@ class ANPRCamera(AIMNaamObject):
 
         self.heeftFlits = BooleanField(naam="heeftFlits",
                                        label="heeft flits",
-                                       uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#ANPRCamera.heeftFlits",
+                                       objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#ANPRCamera.heeftFlits",
                                        definition="Geeft aan of de camera een externe infrarood flits heeft.",
                                        constraints="",
                                        usagenote="",
@@ -42,7 +42,7 @@ class ANPRCamera(AIMNaamObject):
         """IP-adres van de ANPR-camera."""
         self.ipAdres.naam = "ipAdres"
         self.ipAdres.label = "ip adres"
-        self.ipAdres.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#ANPRCamera.ipAdres"
+        self.ipAdres.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#ANPRCamera.ipAdres"
         self.ipAdres.definition = "IP-adres van de ANPR-camera."
         self.ipAdres.constraints = ""
         self.ipAdres.usagenote = ""
@@ -51,7 +51,7 @@ class ANPRCamera(AIMNaamObject):
         self.merk = KeuzelijstField(naam="merk",
                                     label="merk",
                                     lijst=KlANPRMerk(),
-                                    uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#ANPRCamera.merk",
+                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#ANPRCamera.merk",
                                     definition="Het merk van de ANPR-camera.",
                                     constraints="",
                                     usagenote="",
@@ -61,7 +61,7 @@ class ANPRCamera(AIMNaamObject):
         self.modelnaam = KeuzelijstField(naam="modelnaam",
                                          label="modelnaam",
                                          lijst=KlANPRModelnaam(),
-                                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#ANPRCamera.modelnaam",
+                                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#ANPRCamera.modelnaam",
                                          definition="De modelnaam van de ANPR-camera.",
                                          constraints="",
                                          usagenote="",
@@ -71,7 +71,7 @@ class ANPRCamera(AIMNaamObject):
         self.rijrichting = KeuzelijstField(naam="rijrichting",
                                            label="rijrichting",
                                            lijst=KlAlgRijrichting(),
-                                           uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#ANPRCamera.rijrichting",
+                                           objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#ANPRCamera.rijrichting",
                                            definition="De rijrichting van de voertuigen die door de camera geregistreerd worden.",
                                            constraints="",
                                            usagenote="",
@@ -82,7 +82,7 @@ class ANPRCamera(AIMNaamObject):
         """Technische fiche van dit element."""
         self.technischeFiche.naam = "technischeFiche"
         self.technischeFiche.label = "technische fiche"
-        self.technischeFiche.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#ANPRCamera.technischeFiche"
+        self.technischeFiche.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#ANPRCamera.technischeFiche"
         self.technischeFiche.definition = "Technische fiche van dit element."
         self.technischeFiche.constraints = ""
         self.technischeFiche.usagenote = "Bestanden van het type pdf."

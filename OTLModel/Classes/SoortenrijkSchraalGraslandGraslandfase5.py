@@ -17,7 +17,7 @@ class SoortenrijkSchraalGraslandGraslandfase5(Grasland):
         self.huidigNatuurbeeld = KeuzelijstField(naam="huidigNatuurbeeld",
                                                  label="huidig natuurbeeld",
                                                  lijst=KlNSB(),
-                                                 uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#SoortenrijkSchraalGraslandGraslandfase5.huidigNatuurbeeld",
+                                                 objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#SoortenrijkSchraalGraslandGraslandfase5.huidigNatuurbeeld",
                                                  definition="Bepaling van het vegetatietype op basis van terreininventarisatie.",
                                                  constraints="",
                                                  usagenote="",

@@ -18,7 +18,7 @@ class KabelnetToegang(AIMNaamObject):
 
         self.kabelnetToegangId = IntegerField(naam="kabelnetToegangId",
                                               label="kabelnettoegang ID",
-                                              uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KabelnetToegang.kabelnetToegangId",
+                                              objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KabelnetToegang.kabelnetToegangId",
                                               definition="Uniek nummer uit de Kabelnet toepassing dat deze toegang identificeert.",
                                               constraints="",
                                               usagenote="",
@@ -28,7 +28,7 @@ class KabelnetToegang(AIMNaamObject):
         netwerkSoortField = KeuzelijstField(naam="netwerkSoort",
                                             label="netwerk soort",
                                             lijst=KlKabelnettoegangNetwerksoort(),
-                                            uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KabelnetToegang.netwerkSoort",
+                                            objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KabelnetToegang.netwerkSoort",
                                             definition="Type netwerk dat bereikbaar is via het toegangspunt.",
                                             constraints="",
                                             usagenote="",

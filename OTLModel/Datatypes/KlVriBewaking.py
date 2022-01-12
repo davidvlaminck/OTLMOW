@@ -9,7 +9,7 @@ class KlVriBewaking(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlVriBewaking",
                          label="VRI bewaking",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlVriBewaking",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlVriBewaking",
                          definition="Keuzelijst met verschillende soorten bewaking of detectie bij een VRI.",
                          usagenote="",
                          deprecated_version="",

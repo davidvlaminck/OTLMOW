@@ -9,7 +9,7 @@ class KlVirtueleServerModelnaam(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlVirtueleServerModelnaam",
                          label="Virtuele server modelnaam",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlVirtueleServerModelnaam",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlVirtueleServerModelnaam",
                          definition="De modelnaam van de virtuele server.",
                          usagenote="",
                          deprecated_version="",

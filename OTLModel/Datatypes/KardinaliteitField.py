@@ -6,7 +6,7 @@ from OTLModel.Datatypes.PrimitiveField import PrimitiveField
 
 class KardinaliteitField(OTLField):
     def __init__(self, minKardinaliteit: str, maxKardinaliteit: str, fieldToMultiply: OTLField):
-        OTLField.__init__(self, naam=fieldToMultiply.naam, label=fieldToMultiply.label, uri=fieldToMultiply.uri,
+        OTLField.__init__(self, naam=fieldToMultiply.naam, label=fieldToMultiply.label, objectUri=fieldToMultiply.objectUri,
                           definition=fieldToMultiply.definition, constraints=fieldToMultiply.constraints,
                           usagenote=fieldToMultiply.usagenote, deprecated_version=fieldToMultiply.deprecated_version)
         self.fieldToMultiply = fieldToMultiply
@@ -39,7 +39,7 @@ class KardinaliteitField(OTLField):
         bad_type = False
         for el in valueList:
             if isinstance(self.fieldToMultiply, PrimitiveField):
-                if not (isinstance(el, self.fieldToMultiply.primitiveType)):
+                if not (isinstance(el.waarde, self.fieldToMultiply.primitiveType)):
                     bad_type = True
                     return bad_type
             else:

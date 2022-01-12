@@ -9,7 +9,7 @@ class KlVegetatieDrassigheid(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlVegetatieDrassigheid",
                          label="Vegetatie drassigheid",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlVegetatieDrassigheid",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlVegetatieDrassigheid",
                          definition="De mate van drassigheid..",
                          usagenote="",
                          deprecated_version="",

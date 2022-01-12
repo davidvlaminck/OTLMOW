@@ -9,7 +9,7 @@ class KlWildreflectorDrager(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlWildreflectorDrager",
                          label="Wildreflector drager",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlWildreflectorDrager",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlWildreflectorDrager",
                          definition="Mogelijke dragers van een wildreflector.",
                          usagenote="",
                          deprecated_version="",

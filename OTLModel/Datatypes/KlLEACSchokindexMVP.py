@@ -9,7 +9,7 @@ class KlLEACSchokindexMVP(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlLEACSchokindexMVP",
                          label="Schokindex MVP",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlLEACSchokindexMVP",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlLEACSchokindexMVP",
                          definition="Head injury criteria (HIC) van een motorvangplank.",
                          usagenote="",
                          deprecated_version="",

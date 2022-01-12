@@ -9,7 +9,7 @@ class KlVerkeerslichtMerk(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlVerkeerslichtMerk",
                          label="verkeerslicht merk",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#KlVerkeerslichtMerk",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#KlVerkeerslichtMerk",
                          definition="Keuzelijst met merknamen voor Verkeerslicht.",
                          usagenote="",
                          deprecated_version="",

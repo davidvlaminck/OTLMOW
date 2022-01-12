@@ -9,7 +9,7 @@ class KlVegetatieelementHoogte(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlVegetatieelementHoogte",
                          label="Vegetatieelement hoogte",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlVegetatieelementHoogte",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlVegetatieelementHoogte",
                          definition="De orde van hoogte van een vegetatie-element.",
                          usagenote="",
                          deprecated_version="",

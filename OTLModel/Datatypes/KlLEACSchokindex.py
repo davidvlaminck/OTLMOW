@@ -9,7 +9,7 @@ class KlLEACSchokindex(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlLEACSchokindex",
                          label="Schokindex",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlLEACSchokindex",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlLEACSchokindex",
                          definition="De verschillende schokindices.",
                          usagenote="",
                          deprecated_version="",

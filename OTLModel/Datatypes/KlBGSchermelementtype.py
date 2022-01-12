@@ -9,7 +9,7 @@ class KlBGSchermelementtype(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlBGSchermelementtype",
                          label="Bijzonder geluidsschermelementtype",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlBGSchermelementtype",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlBGSchermelementtype",
                          definition="Het type bijzonder-schermelement.",
                          usagenote="",
                          deprecated_version="",

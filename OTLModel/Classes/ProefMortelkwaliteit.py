@@ -17,7 +17,7 @@ class ProefMortelkwaliteit(Proef):
         """Een rapport van de mortelkwaliteit van de onderbouw laag."""
         self.mortelkwaliteit.naam = "mortelkwaliteit"
         self.mortelkwaliteit.label = "mortelkwaliteit"
-        self.mortelkwaliteit.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefMortelkwaliteit.mortelkwaliteit"
+        self.mortelkwaliteit.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefMortelkwaliteit.mortelkwaliteit"
         self.mortelkwaliteit.definition = "Een rapport van de mortelkwaliteit van de onderbouw laag."
         self.mortelkwaliteit.constraints = ""
         self.mortelkwaliteit.usagenote = ""

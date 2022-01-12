@@ -19,7 +19,7 @@ class Riooltoegang(Put, PutRelatie):
         self.typeRiooltoegang = KeuzelijstField(naam="typeRiooltoegang",
                                                 label="type riooltoegang",
                                                 lijst=KlUitlaatType(),
-                                                uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Riooltoegang.typeRiooltoegang",
+                                                objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Riooltoegang.typeRiooltoegang",
                                                 definition="Bepaalt het type van een riooltoegang.",
                                                 constraints="",
                                                 usagenote="",

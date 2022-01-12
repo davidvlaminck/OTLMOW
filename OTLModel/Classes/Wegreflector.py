@@ -17,7 +17,7 @@ class Wegreflector(Bebakening):
         self.type = KeuzelijstField(naam="type",
                                     label="type",
                                     lijst=KlWegreflectorType(),
-                                    uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Wegreflector.type",
+                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Wegreflector.type",
                                     definition="De vorm van wegreflector.",
                                     constraints="",
                                     usagenote="",

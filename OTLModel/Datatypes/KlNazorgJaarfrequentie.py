@@ -9,7 +9,7 @@ class KlNazorgJaarfrequentie(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlNazorgJaarfrequentie",
                          label="Nazorg jaarfrequentie",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#KlNazorgJaarfrequentie",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#KlNazorgJaarfrequentie",
                          definition="Aantal keer dat jaarlijks de behandelde zone dient te worden gecontroleerd.",
                          usagenote="",
                          deprecated_version="",

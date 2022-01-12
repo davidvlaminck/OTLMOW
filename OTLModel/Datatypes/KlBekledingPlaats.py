@@ -9,7 +9,7 @@ class KlBekledingPlaats(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlBekledingPlaats",
                          label="Bekleding plaats",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlBekledingPlaats",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlBekledingPlaats",
                          definition="Mogelijke locaties van de bekleding op de buis of put.",
                          usagenote="",
                          deprecated_version="",

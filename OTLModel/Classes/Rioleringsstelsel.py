@@ -17,7 +17,7 @@ class Rioleringsstelsel(AIMObject):
         self.systeemtype = KeuzelijstField(naam="systeemtype",
                                            label="systeemtype",
                                            lijst=KlRioleringStelsel(),
-                                           uri="https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Rioleringsstelsel.systeemtype",
+                                           objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Rioleringsstelsel.systeemtype",
                                            definition="Geeft aan wat voor afvoerwater er door de riolering afgevoerd wordt.",
                                            constraints="",
                                            usagenote="",

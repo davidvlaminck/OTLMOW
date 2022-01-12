@@ -12,7 +12,7 @@ class DtcConstructiestaalspecificaties(ComplexField):
     def __init__(self):
         super().__init__(naam="DtcConstructiestaalspecificaties",
                          label="Constructiestaalspecificaties",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcConstructiestaalspecificaties",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcConstructiestaalspecificaties",
                          definition="Complex datatype om de eigenschappen van constructiestaal te bundelen.",
                          usagenote="",
                          deprecated_version="")
@@ -20,7 +20,7 @@ class DtcConstructiestaalspecificaties(ComplexField):
         self.waarde.staalsoort = KeuzelijstField(naam="staalsoort",
                                                  label="staalsoort",
                                                  lijst=KlConstructiestaalsoort(),
-                                                 uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcConstructiestaalspecificaties.staalsoort",
+                                                 objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcConstructiestaalspecificaties.staalsoort",
                                                  definition="Staalkwaliteit die wordt gebruikt volgens Europese normen.",
                                                  constraints="",
                                                  usagenote="",
@@ -31,7 +31,7 @@ class DtcConstructiestaalspecificaties(ComplexField):
         self.waarde.walsmethode = KeuzelijstField(naam="walsmethode",
                                                   label="walsmethode",
                                                   lijst=KlWalsmethode(),
-                                                  uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcConstructiestaalspecificaties.walsmethode",
+                                                  objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcConstructiestaalspecificaties.walsmethode",
                                                   definition="Op welke manier het staal gewalst is.",
                                                   constraints="",
                                                   usagenote="",

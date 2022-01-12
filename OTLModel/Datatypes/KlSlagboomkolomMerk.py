@@ -9,7 +9,7 @@ class KlSlagboomkolomMerk(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlSlagboomkolomMerk",
                          label="Slagboomkolom merk",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlSlagboomkolomMerk",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlSlagboomkolomMerk",
                          definition="Het merk van de slagboomkolom.",
                          usagenote="",
                          deprecated_version="",

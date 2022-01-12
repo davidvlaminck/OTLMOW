@@ -17,7 +17,7 @@ class VRStuurkaart(VRModuleMetFirmware):
         self.communicatieprotocol = KeuzelijstField(naam="communicatieprotocol",
                                                     label="communicatieprotocol",
                                                     lijst=KlVrStuurkaartCommunicatieprotocol(),
-                                                    uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#VRStuurkaart.communicatieprotocol",
+                                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#VRStuurkaart.communicatieprotocol",
                                                     definition="Gebruikte communicatieprotocol voor de stuurkaart.",
                                                     constraints="",
                                                     usagenote="",

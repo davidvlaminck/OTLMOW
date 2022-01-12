@@ -9,7 +9,7 @@ class KlSierbeplPlantmaat(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlSierbeplPlantmaat",
                          label="Sierbepl plantmaat",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlSierbeplPlantmaat",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlSierbeplPlantmaat",
                          definition="De plantmaten van de sierplant.",
                          usagenote="",
                          deprecated_version="",

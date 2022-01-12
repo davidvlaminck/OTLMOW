@@ -19,7 +19,7 @@ from ModelGenerator.SQLDbReader import SQLDbReader
 
 class OSLOInMemoryCreatorTests(unittest.TestCase):
     def mockPerformReadQuery(self, query, arg_dict):
-        if query == 'SELECT label_nl, name, uri, definition_nl, usagenote_nl, abstract, deprecated_version FROM OSLOClass where uri=:uriclass' \
+        if query == 'SELECT label_nl, name, uri, definition_nl, usagenote_nl, abstract, deprecated_version FROM OSLOClass where objectUri=:uriclass' \
                 and arg_dict['uriclass'] == 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#NaampadObject':
             return [['Naampad object', 'NaampadObject',
                      'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#NaampadObject'
@@ -241,7 +241,7 @@ class OSLOInMemoryCreatorTests(unittest.TestCase):
         self.assertTrue(len(listOfClasses) >= 1)
         first = next(c for c in listOfClasses)
         self.assertEqual(type(first), OSLOClass)
-        self.assertEqual(first.uri, uri)
+        self.assertEqual(first.objectUri, uri)
 
     def test_Mock_getClassByUri(self):
         mock = Mock()
@@ -253,7 +253,7 @@ class OSLOInMemoryCreatorTests(unittest.TestCase):
         self.assertTrue(len(listOfClasses) == 1)
         first = next(c for c in listOfClasses)
         self.assertEqual(type(first), OSLOClass)
-        self.assertEqual(first.uri, uri)
+        self.assertEqual(first.objectUri, uri)
 
     def test_Mock_getAttributeByClassUri(self):
         mock = Mock()
@@ -267,7 +267,7 @@ class OSLOInMemoryCreatorTests(unittest.TestCase):
         self.assertTrue(len(listOfAttributes) == 1)
         first = next(c for c in listOfAttributes)
         self.assertEqual(type(first), OSLOAttribuut)
-        self.assertEqual(first.uri, attributeUri)
+        self.assertEqual(first.objectUri, attributeUri)
 
     def test_Mock_getAttributes(self):
         mock = Mock()
@@ -279,7 +279,7 @@ class OSLOInMemoryCreatorTests(unittest.TestCase):
         self.assertTrue(len(listOfAttributes) >= 1)
         first = next(c for c in listOfAttributes)
         self.assertEqual(type(first), OSLOAttribuut)
-        self.assertEqual(first.uri, attributeUri)
+        self.assertEqual(first.objectUri, attributeUri)
 
     def test_Mock_getInheritances(self):
         mock = Mock()
@@ -303,7 +303,7 @@ class OSLOInMemoryCreatorTests(unittest.TestCase):
         self.assertTrue(len(listOfPrimitiveDatatypes) >= 1)
         first = next(c for c in listOfPrimitiveDatatypes)
         self.assertEqual(type(first), OSLODatatypePrimitive)
-        self.assertEqual(first.uri, class_uri)
+        self.assertEqual(first.objectUri, class_uri)
 
     def test_Mock_getAllPrimitiveDatatypeAttributen(self):
         mock = Mock()
@@ -315,7 +315,7 @@ class OSLOInMemoryCreatorTests(unittest.TestCase):
         self.assertTrue(len(listOfPrimitiveDatatypeAttributen) >= 1)
         first = next(c for c in listOfPrimitiveDatatypeAttributen)
         self.assertEqual(type(first), OSLODatatypePrimitiveAttribuut)
-        self.assertEqual(first.uri, class_uri)
+        self.assertEqual(first.objectUri, class_uri)
 
     def test_Mock_getAllComplexDatatypes(self):
         mock = Mock()
@@ -327,7 +327,7 @@ class OSLOInMemoryCreatorTests(unittest.TestCase):
         self.assertTrue(len(listOfComplexDatatypes) >= 1)
         first = next(c for c in listOfComplexDatatypes)
         self.assertEqual(type(first), OSLODatatypeComplex)
-        self.assertEqual(first.uri, class_uri)
+        self.assertEqual(first.objectUri, class_uri)
 
     def test_Mock_getAllComplexDatatypeAttributen(self):
         mock = Mock()
@@ -339,7 +339,7 @@ class OSLOInMemoryCreatorTests(unittest.TestCase):
         self.assertTrue(len(listOfComplexDatatypeAttributen) >= 1)
         first = next(c for c in listOfComplexDatatypeAttributen)
         self.assertEqual(type(first), OSLODatatypeComplexAttribuut)
-        self.assertEqual(first.uri, attribuut_uri)
+        self.assertEqual(first.objectUri, attribuut_uri)
 
     def test_Mock_getAllEnumerations(self):
         mock = Mock()
@@ -351,7 +351,7 @@ class OSLOInMemoryCreatorTests(unittest.TestCase):
         self.assertTrue(len(listOfEnumerations) >= 1)
         first = next(c for c in listOfEnumerations)
         self.assertEqual(type(first), OSLOEnumeration)
-        self.assertEqual(first.uri, class_uri)
+        self.assertEqual(first.objectUri, class_uri)
 
     def test_Mock_getAllRelations(self):
         mock = Mock()
@@ -362,7 +362,7 @@ class OSLOInMemoryCreatorTests(unittest.TestCase):
         self.assertTrue(len(listOfRelations) >= 1)
         first = next(c for c in listOfRelations)
         self.assertEqual(type(first), OSLORelatie)
-        self.assertEqual(first.uri, "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bevestiging")
+        self.assertEqual(first.objectUri, "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bevestiging")
 
     def test_Mock_getAllUnionDatatypes(self):
         mock = Mock()
@@ -374,7 +374,7 @@ class OSLOInMemoryCreatorTests(unittest.TestCase):
         self.assertTrue(len(listOfUnionDatatypes) >= 1)
         first = next(c for c in listOfUnionDatatypes)
         self.assertEqual(type(first), OSLODatatypeUnion)
-        self.assertEqual(first.uri, class_uri)
+        self.assertEqual(first.objectUri, class_uri)
 
     def test_Mock_getAllUnionDatatypeAttributen(self):
         mock = Mock()
@@ -386,4 +386,4 @@ class OSLOInMemoryCreatorTests(unittest.TestCase):
         self.assertTrue(len(listOfUnionDatatypeAttributen) >= 1)
         first = next(c for c in listOfUnionDatatypeAttributen)
         self.assertEqual(type(first), OSLODatatypeUnionAttribuut)
-        self.assertEqual(first.uri, attribuut_uri)
+        self.assertEqual(first.objectUri, attribuut_uri)

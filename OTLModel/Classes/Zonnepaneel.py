@@ -21,7 +21,7 @@ class Zonnepaneel(Voedingspunt, BevestigingGC):
         self.merk = KeuzelijstField(naam="merk",
                                     label="merk",
                                     lijst=KlZonnepaneelMerk(),
-                                    uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Zonnepaneel.merk",
+                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Zonnepaneel.merk",
                                     definition="Het merk van het zonnepaneel.",
                                     constraints="",
                                     usagenote="",
@@ -31,7 +31,7 @@ class Zonnepaneel(Voedingspunt, BevestigingGC):
         self.modelnaam = KeuzelijstField(naam="modelnaam",
                                          label="modelnaam",
                                          lijst=KlZonnepaneelModelnaam(),
-                                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Zonnepaneel.modelnaam",
+                                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Zonnepaneel.modelnaam",
                                          definition="De modelnaam van het zonnepaneel.",
                                          constraints="",
                                          usagenote="",
@@ -42,7 +42,7 @@ class Zonnepaneel(Voedingspunt, BevestigingGC):
         """Het vermogen van het zonnepaneel."""
         self.vermogen.naam = "vermogen"
         self.vermogen.label = "vermogen"
-        self.vermogen.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Zonnepaneel.vermogen"
+        self.vermogen.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Zonnepaneel.vermogen"
         self.vermogen.definition = "Het vermogen van het zonnepaneel."
         self.vermogen.constraints = ""
         self.vermogen.usagenote = ""

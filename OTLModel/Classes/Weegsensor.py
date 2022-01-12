@@ -22,7 +22,7 @@ class Weegsensor(AIMNaamObject):
         """Document met kalibratiegegevens (aantal rondes, types voertuigen,...)."""
         self.meetrapport.naam = "meetrapport"
         self.meetrapport.label = "meetrapport"
-        self.meetrapport.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Weegsensor.meetrapport"
+        self.meetrapport.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Weegsensor.meetrapport"
         self.meetrapport.definition = "Document met kalibratiegegevens (aantal rondes, types voertuigen,...)."
         self.meetrapport.constraints = ""
         self.meetrapport.usagenote = "Bestanden van het type pdf."
@@ -31,7 +31,7 @@ class Weegsensor(AIMNaamObject):
         self.merk = KeuzelijstField(naam="merk",
                                     label="merk",
                                     lijst=KlWeegsensorMerk(),
-                                    uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Weegsensor.merk",
+                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Weegsensor.merk",
                                     definition="Het merk van de weegsensor.",
                                     constraints="",
                                     usagenote="",
@@ -41,7 +41,7 @@ class Weegsensor(AIMNaamObject):
         self.modelnaam = KeuzelijstField(naam="modelnaam",
                                          label="modelnaam",
                                          lijst=KlWeegsensorModelnaam(),
-                                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Weegsensor.modelnaam",
+                                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Weegsensor.modelnaam",
                                          definition="De modelnaam van de weegsensor.",
                                          constraints="",
                                          usagenote="",
@@ -50,7 +50,7 @@ class Weegsensor(AIMNaamObject):
 
         self.rijstrook = StringField(naam="rijstrook",
                                      label="rijstrook",
-                                     uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Weegsensor.rijstrook",
+                                     objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Weegsensor.rijstrook",
                                      definition="Beschrijft de rijstroken die door de weegsensor bewaakt worden.",
                                      constraints="",
                                      usagenote="",
@@ -59,7 +59,7 @@ class Weegsensor(AIMNaamObject):
 
         self.serienummer = StringField(naam="serienummer",
                                        label="serienummer",
-                                       uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Weegsensor.serienummer",
+                                       objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Weegsensor.serienummer",
                                        definition="Het unieke nummer waarmee het toestel door de fabrikant geïdentificeerd is.",
                                        constraints="",
                                        usagenote="",
@@ -69,7 +69,7 @@ class Weegsensor(AIMNaamObject):
         self.type = KeuzelijstField(naam="type",
                                     label="type",
                                     lijst=KlWeegsensorType(),
-                                    uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Weegsensor.type",
+                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Weegsensor.type",
                                     definition="Het type van de weegsensor.",
                                     constraints="",
                                     usagenote="",

@@ -17,7 +17,7 @@ class Ecoduiker(AIMObject):
         self.typeLooprichel = KeuzelijstField(naam="typeLooprichel",
                                               label="type looprichel",
                                               lijst=KlEcoLooprichelType(),
-                                              uri="https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Ecoduiker.typeLooprichel",
+                                              objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Ecoduiker.typeLooprichel",
                                               definition="Type van looprichel in de ecoduiker.",
                                               constraints="",
                                               usagenote="",

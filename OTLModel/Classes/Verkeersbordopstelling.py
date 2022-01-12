@@ -24,7 +24,7 @@ class Verkeersbordopstelling(AIMObject, Signalisatie):
         afbeeldingField = DtcDocument()
         afbeeldingField.naam = "afbeelding"
         afbeeldingField.label = "afbeelding"
-        afbeeldingField.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Verkeersbordopstelling.afbeelding"
+        afbeeldingField.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Verkeersbordopstelling.afbeelding"
         afbeeldingField.definition = "Grafische weergave van de opstelling geplaatst op het openbaar domein."
         afbeeldingField.constraints = ""
         afbeeldingField.usagenote = "Een bestand dat een afbeelding weergeeft."
@@ -34,7 +34,7 @@ class Verkeersbordopstelling(AIMObject, Signalisatie):
 
         self.isBotsvriendelijk = BooleanField(naam="isBotsvriendelijk",
                                               label="is botsvriendelijk",
-                                              uri="https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Verkeersbordopstelling.isBotsvriendelijk",
+                                              objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Verkeersbordopstelling.isBotsvriendelijk",
                                               definition="Een botsvriendelijk obstakel is een voorwerp dat bij aanrijding door een voertuig de letselernst voor de inzittenden reduceert.",
                                               constraints="",
                                               usagenote="",
@@ -44,7 +44,7 @@ class Verkeersbordopstelling(AIMObject, Signalisatie):
         self.operationeleStatus = KeuzelijstField(naam="operationeleStatus",
                                                   label="operationele status",
                                                   lijst=KlOperationeleStatus(),
-                                                  uri="https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Verkeersbordopstelling.operationeleStatus",
+                                                  objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Verkeersbordopstelling.operationeleStatus",
                                                   definition="Operationele status van de Verkeersbordopstelling volgens keuzelijst.",
                                                   constraints="",
                                                   usagenote="Enkel te gebruiken wanneer een object 'in gebruik' is. Zie ook attribuut toestand overgeërfd van AIMToestand om de asset levenscyclus aan te duiden.",
@@ -54,7 +54,7 @@ class Verkeersbordopstelling(AIMObject, Signalisatie):
         self.positieTovRijweg = KeuzelijstField(naam="positieTovRijweg",
                                                 label="positie ten opzichte van de rijweg",
                                                 lijst=KlPositieSoort(),
-                                                uri="https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Verkeersbordopstelling.positieTovRijweg",
+                                                objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Verkeersbordopstelling.positieTovRijweg",
                                                 definition="De plaatsing van de opstelling ten aanzien van de rijbaan.",
                                                 constraints="",
                                                 usagenote="Bijvoorbeeld: boven, rechts, links",
@@ -64,7 +64,7 @@ class Verkeersbordopstelling(AIMObject, Signalisatie):
         wegSegmentField = DtcExterneReferentie()
         wegSegmentField.naam = "wegSegment"
         wegSegmentField.label = "wegsegment"
-        wegSegmentField.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Verkeersbordopstelling.wegSegment"
+        wegSegmentField.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Verkeersbordopstelling.wegSegment"
         wegSegmentField.definition = "Wegsegment waarbij de verkeersbordopstelling geplaatst is."
         wegSegmentField.constraints = ""
         wegSegmentField.usagenote = "Dit is niet noodzakelijk het wegsegment waarop het verkeersbord van toepassing is."

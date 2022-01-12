@@ -9,7 +9,7 @@ class KlIntercomServerModelnaam(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlIntercomServerModelnaam",
                          label="Intercomserver modelnaam",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlIntercomServerModelnaam",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlIntercomServerModelnaam",
                          definition="De modelnaam van de intercomserver.",
                          usagenote="",
                          deprecated_version="",

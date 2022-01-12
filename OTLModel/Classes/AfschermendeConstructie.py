@@ -25,7 +25,7 @@ class AfschermendeConstructie(BijlageVoertuigkering, LijnvormigElement):
 
         self.certificaathouder = StringField(naam="certificaathouder",
                                              label="certificaathouder",
-                                             uri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#AfschermendeConstructie.certificaathouder",
+                                             objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#AfschermendeConstructie.certificaathouder",
                                              definition="De houder van het uitvoeringscertificaat.",
                                              constraints="",
                                              usagenote="",
@@ -34,7 +34,7 @@ class AfschermendeConstructie(BijlageVoertuigkering, LijnvormigElement):
 
         self.isPermanent = BooleanField(naam="isPermanent",
                                         label="is permanent",
-                                        uri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#AfschermendeConstructie.isPermanent",
+                                        objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#AfschermendeConstructie.isPermanent",
                                         definition="Vermelding of de afschermende constructie al dan niet van permanente aard is.",
                                         constraints="",
                                         usagenote="",
@@ -44,7 +44,7 @@ class AfschermendeConstructie(BijlageVoertuigkering, LijnvormigElement):
         self.materiaal = KeuzelijstField(naam="materiaal",
                                          label="materiaal",
                                          lijst=KlLEACMateriaal(),
-                                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#AfschermendeConstructie.materiaal",
+                                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#AfschermendeConstructie.materiaal",
                                          definition="Het gebruikte materiaal voor de afschermende constructie.",
                                          constraints="",
                                          usagenote="",
@@ -53,7 +53,7 @@ class AfschermendeConstructie(BijlageVoertuigkering, LijnvormigElement):
 
         self.metTandGroef = BooleanField(naam="metTandGroef",
                                          label="met tand-groef",
-                                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#AfschermendeConstructie.metTandGroef",
+                                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#AfschermendeConstructie.metTandGroef",
                                          definition="Geeft aan of de afschermende constructie bevestigd is aan de onderliggende laag door middel van een tand-groef aansluiting.",
                                          constraints="",
                                          usagenote="",
@@ -64,7 +64,7 @@ class AfschermendeConstructie(BijlageVoertuigkering, LijnvormigElement):
         """De productidentificatiecode voor het bepalen van de code van het gebruikte product (bv. COPRO/BENOR)."""
         self.productidentificatiecode.naam = "productidentificatiecode"
         self.productidentificatiecode.label = "productidentificatiecode"
-        self.productidentificatiecode.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#AfschermendeConstructie.productidentificatiecode"
+        self.productidentificatiecode.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#AfschermendeConstructie.productidentificatiecode"
         self.productidentificatiecode.definition = "De productidentificatiecode voor het bepalen van de code van het gebruikte product (bv. COPRO/BENOR)."
         self.productidentificatiecode.constraints = ""
         self.productidentificatiecode.usagenote = ""
@@ -72,7 +72,7 @@ class AfschermendeConstructie(BijlageVoertuigkering, LijnvormigElement):
 
         self.productnaam = StringField(naam="productnaam",
                                        label="productnaam",
-                                       uri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#AfschermendeConstructie.productnaam",
+                                       objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#AfschermendeConstructie.productnaam",
                                        definition="Dit is de commerciële naam van de afschermende constructie.",
                                        constraints="",
                                        usagenote="",
@@ -83,7 +83,7 @@ class AfschermendeConstructie(BijlageVoertuigkering, LijnvormigElement):
         """Documentatie van het certificaat."""
         self.uitvoeringscertificatie.naam = "uitvoeringscertificatie"
         self.uitvoeringscertificatie.label = "uitvoeringscertificatie"
-        self.uitvoeringscertificatie.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#AfschermendeConstructie.uitvoeringscertificatie"
+        self.uitvoeringscertificatie.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#AfschermendeConstructie.uitvoeringscertificatie"
         self.uitvoeringscertificatie.definition = "Documentatie van het certificaat."
         self.uitvoeringscertificatie.constraints = ""
         self.uitvoeringscertificatie.usagenote = "Bestanden van het type xlsx of pdf."

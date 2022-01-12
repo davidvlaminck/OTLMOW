@@ -9,7 +9,7 @@ class KlZonnepaneelModelnaam(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlZonnepaneelModelnaam",
                          label="Zonnepaneel modelnaam",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlZonnepaneelModelnaam",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlZonnepaneelModelnaam",
                          definition="De modelnaam van het zonnepaneel.",
                          usagenote="",
                          deprecated_version="",

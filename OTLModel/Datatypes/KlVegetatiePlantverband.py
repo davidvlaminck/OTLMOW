@@ -9,7 +9,7 @@ class KlVegetatiePlantverband(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlVegetatiePlantverband",
                          label="Vegetatie plantverband",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlVegetatiePlantverband",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlVegetatiePlantverband",
                          definition="De verschillende opties voor het plantverband.",
                          usagenote="",
                          deprecated_version="",

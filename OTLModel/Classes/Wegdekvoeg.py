@@ -18,7 +18,7 @@ class Wegdekvoeg(AIMObject):
 
         self.heeftDeuvels = BooleanField(naam="heeftDeuvels",
                                          label="heeft deuvels",
-                                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Wegdekvoeg.heeftDeuvels",
+                                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Wegdekvoeg.heeftDeuvels",
                                          definition="Aanduiding of de voeg al dan niet verdeuveld is.",
                                          constraints="",
                                          usagenote="",
@@ -29,7 +29,7 @@ class Wegdekvoeg(AIMObject):
         """De lengte van de wegdekvoeg."""
         self.lengte.naam = "lengte"
         self.lengte.label = "lengte"
-        self.lengte.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Wegdekvoeg.lengte"
+        self.lengte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Wegdekvoeg.lengte"
         self.lengte.definition = "De lengte van de wegdekvoeg."
         self.lengte.constraints = ""
         self.lengte.usagenote = ""
@@ -38,7 +38,7 @@ class Wegdekvoeg(AIMObject):
         self.type = KeuzelijstField(naam="type",
                                     label="type",
                                     lijst=KlWegdekvoegType(),
-                                    uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Wegdekvoeg.type",
+                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Wegdekvoeg.type",
                                     definition="Het type van wegdekvoeg.",
                                     constraints="",
                                     usagenote="",

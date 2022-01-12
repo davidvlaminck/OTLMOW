@@ -11,7 +11,7 @@ class DtuDwarsafmetingen(UnionTypeField):
     def __init__(self):
         super().__init__(naam="DtuDwarsafmetingen",
                          label="Dwarsafmetingen",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtuDwarsafmetingen",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtuDwarsafmetingen",
                          definition="Union datatype voor de dwarsafmetingen van een object volgens zijn vorm.",
                          usagenote="",
                          deprecated_version="")
@@ -20,7 +20,7 @@ class DtuDwarsafmetingen(UnionTypeField):
         """Afmetingen voor breedte, lengte en hoogte van een rechthoekig object."""
         field_rechthoekig.naam = "rechthoekig"
         field_rechthoekig.label = "rechthoekig"
-        field_rechthoekig.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtuDwarsafmetingen.rechthoekig"
+        field_rechthoekig.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtuDwarsafmetingen.rechthoekig"
         field_rechthoekig.definition = "Afmetingen voor breedte, lengte en hoogte van een rechthoekig object."
         field_rechthoekig.constraints = ""
         field_rechthoekig.usagenote = ""
@@ -30,7 +30,7 @@ class DtuDwarsafmetingen(UnionTypeField):
         """Afmeting van de diameter in milimeter van een rond object."""
         field_rond.naam = "rond"
         field_rond.label = "rond"
-        field_rond.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtuDwarsafmetingen.rond"
+        field_rond.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtuDwarsafmetingen.rond"
         field_rond.definition = "Afmeting van de diameter in milimeter van een rond object."
         field_rond.constraints = ""
         field_rond.usagenote = ""

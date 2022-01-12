@@ -20,7 +20,7 @@ class BestratingVanBetonstraatsteen(Bestrating):
         self.afmetingVanBestratingselementLxB = KeuzelijstField(naam="afmetingVanBestratingselementLxB",
                                                                 label="afmeting van bestratingselement LxB",
                                                                 lijst=KlBestratingselementAfmetingLxB(),
-                                                                uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#BestratingVanBetonstraatsteen.afmetingVanBestratingselementLxB",
+                                                                objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#BestratingVanBetonstraatsteen.afmetingVanBestratingselementLxB",
                                                                 definition="De lengte en breedte van het bestratingselement in millimeter.",
                                                                 constraints="",
                                                                 usagenote="",
@@ -30,7 +30,7 @@ class BestratingVanBetonstraatsteen(Bestrating):
         self.afwerking = KeuzelijstField(naam="afwerking",
                                          label="afwerking",
                                          lijst=KlBestratingAfwerking(),
-                                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#BestratingVanBetonstraatsteen.afwerking",
+                                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#BestratingVanBetonstraatsteen.afwerking",
                                          definition="Bepaling van afwerking van de betonstraatstenen.",
                                          constraints="",
                                          usagenote="",
@@ -41,7 +41,7 @@ class BestratingVanBetonstraatsteen(Bestrating):
         """De wijze waarop de rand van de betonstraatsteenverharding is afgewerkt."""
         self.randafwerking.naam = "randafwerking"
         self.randafwerking.label = "randafwerking"
-        self.randafwerking.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#BestratingVanBetonstraatsteen.randafwerking"
+        self.randafwerking.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#BestratingVanBetonstraatsteen.randafwerking"
         self.randafwerking.definition = "De wijze waarop de rand van de betonstraatsteenverharding is afgewerkt."
         self.randafwerking.constraints = ""
         self.randafwerking.usagenote = ""
@@ -50,7 +50,7 @@ class BestratingVanBetonstraatsteen(Bestrating):
         self.type = KeuzelijstField(naam="type",
                                     label="type",
                                     lijst=KlBSSType(),
-                                    uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#BestratingVanBetonstraatsteen.type",
+                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#BestratingVanBetonstraatsteen.type",
                                     definition="Het type betonstraatsteen.",
                                     constraints="",
                                     usagenote="",

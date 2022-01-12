@@ -9,7 +9,7 @@ class KlVerkeerstekenWettelijkeStatus(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlVerkeerstekenWettelijkeStatus",
                          label="VerkeerstekenWettelijkeStatus",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlVerkeerstekenWettelijkeStatus",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlVerkeerstekenWettelijkeStatus",
                          definition="Keuzelijst met waarden die de wettelijke status van een verkeersteken aangeven.",
                          usagenote="Bijvoorbeeld: vergund, niet-vergund, in ontwerp",
                          deprecated_version="",

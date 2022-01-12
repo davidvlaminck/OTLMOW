@@ -9,7 +9,7 @@ class KlIORichting(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlIORichting",
                          label="IO richting",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlIORichting",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlIORichting",
                          definition="Geeft aan of de IO-kaart dient voor input of output.",
                          usagenote="",
                          deprecated_version="",

@@ -9,7 +9,7 @@ class KlLEWatergreppelType(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlLEWatergreppelType",
                          label="Watergreppel type",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlLEWatergreppelType",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlLEWatergreppelType",
                          definition="Types van watergreppel.",
                          usagenote="",
                          deprecated_version="",

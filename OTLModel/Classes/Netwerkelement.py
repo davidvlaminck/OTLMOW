@@ -20,7 +20,7 @@ class Netwerkelement(AIMNaamObject):
 
         self.beschrijvingFabrikant = StringField(naam="beschrijvingFabrikant",
                                                  label="beschrijving fabrikant",
-                                                 uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Netwerkelement.beschrijvingFabrikant",
+                                                 objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Netwerkelement.beschrijvingFabrikant",
                                                  definition="Bijkomende specificaties over het apparaat of onderdeel type van de fabrikant.",
                                                  constraints="",
                                                  usagenote="",
@@ -30,7 +30,7 @@ class Netwerkelement(AIMNaamObject):
         self.gebruik = KeuzelijstField(naam="gebruik",
                                        label="gebruik",
                                        lijst=KlNetwerkelemGebruik(),
-                                       uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Netwerkelement.gebruik",
+                                       objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Netwerkelement.gebruik",
                                        definition="Toestel, onderdeel van het netwerk, waarop netwerkverbindingen kunnen aangelegd worden.",
                                        constraints="",
                                        usagenote="",
@@ -41,7 +41,7 @@ class Netwerkelement(AIMNaamObject):
         """IP adres van het toestel."""
         self.ipAddressBeheer.naam = "ipAddressBeheer"
         self.ipAddressBeheer.label = "IP address beheer"
-        self.ipAddressBeheer.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Netwerkelement.ipAddressBeheer"
+        self.ipAddressBeheer.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Netwerkelement.ipAddressBeheer"
         self.ipAddressBeheer.definition = "IP adres van het toestel."
         self.ipAddressBeheer.constraints = ""
         self.ipAddressBeheer.usagenote = ""
@@ -51,7 +51,7 @@ class Netwerkelement(AIMNaamObject):
         """IP adres mask van het toestel."""
         self.ipAddressMask.naam = "ipAddressMask"
         self.ipAddressMask.label = "IP address mask"
-        self.ipAddressMask.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Netwerkelement.ipAddressMask"
+        self.ipAddressMask.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Netwerkelement.ipAddressMask"
         self.ipAddressMask.definition = "IP adres mask van het toestel."
         self.ipAddressMask.constraints = ""
         self.ipAddressMask.usagenote = ""
@@ -61,7 +61,7 @@ class Netwerkelement(AIMNaamObject):
         """IP adres van gateway."""
         self.ipGateway.naam = "ipGateway"
         self.ipGateway.label = "IP gateway"
-        self.ipGateway.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Netwerkelement.ipGateway"
+        self.ipGateway.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Netwerkelement.ipGateway"
         self.ipGateway.definition = "IP adres van gateway."
         self.ipGateway.constraints = ""
         self.ipGateway.usagenote = ""
@@ -70,7 +70,7 @@ class Netwerkelement(AIMNaamObject):
         self.merk = KeuzelijstField(naam="merk",
                                     label="merk",
                                     lijst=KlNetwerkMerk(),
-                                    uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Netwerkelement.merk",
+                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Netwerkelement.merk",
                                     definition="Merk waarmee de fabrikant het netwerkelement identificeert.",
                                     constraints="",
                                     usagenote="",
@@ -80,7 +80,7 @@ class Netwerkelement(AIMNaamObject):
         self.modelnaam = KeuzelijstField(naam="modelnaam",
                                          label="modelnaam",
                                          lijst=KlNetwerkelemModelnaam(),
-                                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Netwerkelement.modelnaam",
+                                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Netwerkelement.modelnaam",
                                          definition="Modelnaam waarmee de fabrikant dit type toestel identificeert.",
                                          constraints="",
                                          usagenote="",
@@ -89,7 +89,7 @@ class Netwerkelement(AIMNaamObject):
 
         self.nSAPAddress = StringField(naam="nSAPAddress",
                                        label="NSAP-address",
-                                       uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Netwerkelement.nSAPAddress",
+                                       objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Netwerkelement.nSAPAddress",
                                        definition="Netwerkadres van deze component.",
                                        constraints="",
                                        usagenote="",
@@ -98,7 +98,7 @@ class Netwerkelement(AIMNaamObject):
 
         self.serienummer = StringField(naam="serienummer",
                                        label="serienummer",
-                                       uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Netwerkelement.serienummer",
+                                       objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Netwerkelement.serienummer",
                                        definition="Unieke identificatiecode van het toestel, toegekend door de fabrikant.",
                                        constraints="",
                                        usagenote="",
@@ -107,7 +107,7 @@ class Netwerkelement(AIMNaamObject):
 
         self.softwareVersie = StringField(naam="softwareVersie",
                                           label="software versie",
-                                          uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Netwerkelement.softwareVersie",
+                                          objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Netwerkelement.softwareVersie",
                                           definition="Identificatie van de softwareversie die op dit apparaat of onderdeel geladen is. Dit kan ook de firmwareversie zijn.",
                                           constraints="",
                                           usagenote="",

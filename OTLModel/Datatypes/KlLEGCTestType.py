@@ -9,7 +9,7 @@ class KlLEGCTestType(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlLEGCTestType",
                          label="Test type",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlLEGCTestType",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlLEGCTestType",
                          definition="Het test type van het geluidswerend scherm.",
                          usagenote="",
                          deprecated_version="",

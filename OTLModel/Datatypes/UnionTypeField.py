@@ -2,9 +2,9 @@ from OTLModel.Datatypes.OTLField import OTLField
 
 
 class UnionTypeField(OTLField):
-    def __init__(self, naam, label, uri, definition, usagenote, deprecated_version, readonly=False,
+    def __init__(self, naam, label, objectUri, definition, usagenote, deprecated_version, readonly=False,
                  readonlyValue=None):
-        super().__init__(naam=naam, label=label, uri=uri, definition=definition, constraints=None, usagenote=usagenote,
+        super().__init__(naam=naam, label=label, objectUri=objectUri, definition=definition, constraints=None, usagenote=usagenote,
                          deprecated_version=deprecated_version, readonly=readonly, readonlyValue=readonlyValue)
         self.fieldsTuple = None
         self.actiefVeld = None

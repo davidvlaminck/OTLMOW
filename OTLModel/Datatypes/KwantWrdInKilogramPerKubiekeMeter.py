@@ -11,7 +11,7 @@ class KwantWrdInKilogramPerKubiekeMeter(KwantWrd):
     def __init__(self, waarde=None):
         self.eenheid = LiteralField(naam="standaardEenheid",
                                     label="standaard eenheid",
-                                    uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInKilogramPerKubiekeMeter.standaardEenheid",
+                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInKilogramPerKubiekeMeter.standaardEenheid",
                                     definition="De standaard eenheid bij dit datatype is uitgedrukt in kilogram per kubieke meter.",
                                     constraints='"kg/m3"^^cdt:ucumunit',
                                     usagenote='"kg/m3"^^cdt:ucumunit',
@@ -21,7 +21,7 @@ class KwantWrdInKilogramPerKubiekeMeter(KwantWrd):
 
         self.waardeVeld = DecimalFloatField(naam="waarde",
                                             label="waarde",
-                                            uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInKilogramPerKubiekeMeter.waarde",
+                                            objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInKilogramPerKubiekeMeter.waarde",
                                             definition="Bevat een getal die bij het datatype hoort.",
                                             constraints="",
                                             usagenote="",
@@ -30,7 +30,7 @@ class KwantWrdInKilogramPerKubiekeMeter(KwantWrd):
 
         super().__init__(naam="KwantWrdInKilogramPerKubiekeMeter",
                          label="Kwantitatieve waarde in kilogram per kubieke meter",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInKilogramPerKubiekeMeter",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInKilogramPerKubiekeMeter",
                          definition="Een kwantitatieve waarde die een getal in kilogram per kubieke meter uitdrukt.",
                          usagenote="",
                          deprecated_version="",

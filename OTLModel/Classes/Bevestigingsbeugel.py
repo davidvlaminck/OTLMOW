@@ -22,7 +22,7 @@ class Bevestigingsbeugel(AIMNaamObject, BevestigingGC):
         berekeningsnotaField = DtcDocument()
         berekeningsnotaField.naam = "berekeningsnota"
         berekeningsnotaField.label = "berekeningsnota"
-        berekeningsnotaField.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bevestigingsbeugel.berekeningsnota"
+        berekeningsnotaField.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bevestigingsbeugel.berekeningsnota"
         berekeningsnotaField.definition = "Document met de berekeningsnota van de bevestigingsbeugel."
         berekeningsnotaField.constraints = ""
         berekeningsnotaField.usagenote = "Bestanden van het type xlsx of pdf."
@@ -33,7 +33,7 @@ class Bevestigingsbeugel(AIMNaamObject, BevestigingGC):
         constructieEnMontageplanField = DtcDocument()
         constructieEnMontageplanField.naam = "constructieEnMontageplan"
         constructieEnMontageplanField.label = "constructie en montageplan"
-        constructieEnMontageplanField.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bevestigingsbeugel.constructieEnMontageplan"
+        constructieEnMontageplanField.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bevestigingsbeugel.constructieEnMontageplan"
         constructieEnMontageplanField.definition = "Document met het constructie- en montageplan van de bevestigingsbeugel."
         constructieEnMontageplanField.constraints = ""
         constructieEnMontageplanField.usagenote = "Bestanden van het type dwg of pdf."
@@ -43,7 +43,7 @@ class Bevestigingsbeugel(AIMNaamObject, BevestigingGC):
 
         self.isVerzegeld = BooleanField(naam="isVerzegeld",
                                         label="is verzegeld",
-                                        uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bevestigingsbeugel.isVerzegeld",
+                                        objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bevestigingsbeugel.isVerzegeld",
                                         definition="Geeft aan of de bevestigingsbeugel verzegeld is tegen het ongemerkt losmaken ervan.",
                                         constraints="",
                                         usagenote="",
@@ -53,7 +53,7 @@ class Bevestigingsbeugel(AIMNaamObject, BevestigingGC):
         self.type = KeuzelijstField(naam="type",
                                     label="type",
                                     lijst=KlBevestigingsbeugelType(),
-                                    uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bevestigingsbeugel.type",
+                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bevestigingsbeugel.type",
                                     definition="Het type van de bevestigingsbeugel.",
                                     constraints="",
                                     usagenote="",

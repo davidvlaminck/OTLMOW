@@ -23,7 +23,7 @@ class StalenProfiel(ConstructieElement, StalenConstructieElement, ConstructieEle
 
         self.isVoorgebogen = BooleanField(naam="isVoorgebogen",
                                           label="is voorgebogen",
-                                          uri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#StalenProfiel.isVoorgebogen",
+                                          objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#StalenProfiel.isVoorgebogen",
                                           definition="Bij het fabriceren wordt er bewust een ronding aangebracht in het profiel. Dit kan bijvoorbeeld dienen ter compensatie van doorbuiging of omwille van esthetische redenen,...",
                                           constraints="",
                                           usagenote="",
@@ -34,7 +34,7 @@ class StalenProfiel(ConstructieElement, StalenConstructieElement, ConstructieEle
         """De lengte van het profiel uitgedrukt in in meter."""
         self.lengte.naam = "lengte"
         self.lengte.label = "lengte"
-        self.lengte.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#StalenProfiel.lengte"
+        self.lengte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#StalenProfiel.lengte"
         self.lengte.definition = "De lengte van het profiel uitgedrukt in in meter."
         self.lengte.constraints = ""
         self.lengte.usagenote = ""
@@ -44,7 +44,7 @@ class StalenProfiel(ConstructieElement, StalenConstructieElement, ConstructieEle
         """De technische gegevens van het stalen profiel (relevante normen, detail afmetingen, gewicht,...)."""
         self.technischeFiche.naam = "technischeFiche"
         self.technischeFiche.label = "technische fiche"
-        self.technischeFiche.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#StalenProfiel.technischeFiche"
+        self.technischeFiche.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#StalenProfiel.technischeFiche"
         self.technischeFiche.definition = "De technische gegevens van het stalen profiel (relevante normen, detail afmetingen, gewicht,...)."
         self.technischeFiche.constraints = ""
         self.technischeFiche.usagenote = ""

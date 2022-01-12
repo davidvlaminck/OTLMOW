@@ -19,7 +19,7 @@ class Galgpaal(VRIDraagconstructie):
 
         self.aantalLiggers = DecimalFloatField(naam="aantalLiggers",
                                                label="aantal liggers",
-                                               uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Galgpaal.aantalLiggers",
+                                               objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Galgpaal.aantalLiggers",
                                                definition="Het aantal liggers waarmee de arm van de galgpaal is uitgevoerd.",
                                                constraints="",
                                                usagenote="",
@@ -30,7 +30,7 @@ class Galgpaal(VRIDraagconstructie):
         """Lengte van de arm van een galgpaal in meter."""
         self.armlengte.naam = "armlengte"
         self.armlengte.label = "armlengte"
-        self.armlengte.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Galgpaal.armlengte"
+        self.armlengte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Galgpaal.armlengte"
         self.armlengte.definition = "Lengte van de arm van een galgpaal in meter."
         self.armlengte.constraints = ""
         self.armlengte.usagenote = ""
@@ -40,7 +40,7 @@ class Galgpaal(VRIDraagconstructie):
         """Een bijlage met daarin de berekeningsnota voor de galgpaal."""
         self.berekeningsnota.naam = "berekeningsnota"
         self.berekeningsnota.label = "berekeningsnota"
-        self.berekeningsnota.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Galgpaal.berekeningsnota"
+        self.berekeningsnota.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Galgpaal.berekeningsnota"
         self.berekeningsnota.definition = "Een bijlage met daarin de berekeningsnota voor de galgpaal."
         self.berekeningsnota.constraints = ""
         self.berekeningsnota.usagenote = ""
@@ -49,7 +49,7 @@ class Galgpaal(VRIDraagconstructie):
         self.dwarsdoorsnede = KeuzelijstField(naam="dwarsdoorsnede",
                                               label="dwarsdoorsnede",
                                               lijst=KlDraagconstructieDwarsdoorsnede(),
-                                              uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Galgpaal.dwarsdoorsnede",
+                                              objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Galgpaal.dwarsdoorsnede",
                                               definition="De vorm van de dwarsdoorsnede van het opstaande deel van de galgpaal.",
                                               constraints="",
                                               usagenote="",

@@ -22,7 +22,7 @@ class Buisbekleding(AIMObject):
         """De dikte van de bekledingslaag in millimeter."""
         self.laagdikte.naam = "laagdikte"
         self.laagdikte.label = "Laagdikte"
-        self.laagdikte.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Buisbekleding.laagdikte"
+        self.laagdikte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Buisbekleding.laagdikte"
         self.laagdikte.definition = "De dikte van de bekledingslaag in millimeter."
         self.laagdikte.constraints = ""
         self.laagdikte.usagenote = ""
@@ -32,7 +32,7 @@ class Buisbekleding(AIMObject):
         """De totale lengte van de buisbekleding in lopende meter."""
         self.lengte.naam = "lengte"
         self.lengte.label = "Lengte"
-        self.lengte.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Buisbekleding.lengte"
+        self.lengte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Buisbekleding.lengte"
         self.lengte.definition = "De totale lengte van de buisbekleding in lopende meter."
         self.lengte.constraints = ""
         self.lengte.usagenote = ""
@@ -41,7 +41,7 @@ class Buisbekleding(AIMObject):
         self.plaats = KeuzelijstField(naam="plaats",
                                       label="plaats",
                                       lijst=KlBekledingPlaats(),
-                                      uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Buisbekleding.plaats",
+                                      objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Buisbekleding.plaats",
                                       definition="De kant waar de bekleding van de buis zich bevindt.",
                                       constraints="",
                                       usagenote="",
@@ -52,7 +52,7 @@ class Buisbekleding(AIMObject):
         """De technische fiche van de buisbekleding."""
         self.technischeFiche.naam = "technischeFiche"
         self.technischeFiche.label = "technische fiche"
-        self.technischeFiche.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Buisbekleding.technischeFiche"
+        self.technischeFiche.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Buisbekleding.technischeFiche"
         self.technischeFiche.definition = "De technische fiche van de buisbekleding."
         self.technischeFiche.constraints = ""
         self.technischeFiche.usagenote = ""
@@ -62,7 +62,7 @@ class Buisbekleding(AIMObject):
         """Het einde van de buisbekleding in meter ten opzichte van de beginput van de buis."""
         self.tot.naam = "tot"
         self.tot.label = "tot"
-        self.tot.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Buisbekleding.tot"
+        self.tot.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Buisbekleding.tot"
         self.tot.definition = "Het einde van de buisbekleding in meter ten opzichte van de beginput van de buis."
         self.tot.constraints = ""
         self.tot.usagenote = ""
@@ -71,7 +71,7 @@ class Buisbekleding(AIMObject):
         self.uitvoeringswijze = KeuzelijstField(naam="uitvoeringswijze",
                                                 label="uitvoeringswijze",
                                                 lijst=KlBuisbekledingUitvoeringswijze(),
-                                                uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Buisbekleding.uitvoeringswijze",
+                                                objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Buisbekleding.uitvoeringswijze",
                                                 definition="Materiaal en manier van aanbrengen van de buisbekleding.",
                                                 constraints="",
                                                 usagenote="",
@@ -82,7 +82,7 @@ class Buisbekleding(AIMObject):
         """Het begin van de buisbekleding in meter ten opzichte van de beginput van de leiding."""
         self.van.naam = "van"
         self.van.label = "van"
-        self.van.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Buisbekleding.van"
+        self.van.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Buisbekleding.van"
         self.van.definition = "Het begin van de buisbekleding in meter ten opzichte van de beginput van de leiding."
         self.van.constraints = ""
         self.van.usagenote = ""

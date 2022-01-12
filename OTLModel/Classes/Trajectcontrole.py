@@ -21,7 +21,7 @@ class Trajectcontrole(NaampadObject):
         """Het ijkingsattest van de trajectcontrole in zijn geheel."""
         self.attest.naam = "attest"
         self.attest.label = "attest"
-        self.attest.uri = "https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Trajectcontrole.attest"
+        self.attest.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Trajectcontrole.attest"
         self.attest.definition = "Het ijkingsattest van de trajectcontrole in zijn geheel."
         self.attest.constraints = ""
         self.attest.usagenote = "Bestanden van het type pdf."
@@ -29,7 +29,7 @@ class Trajectcontrole(NaampadObject):
 
         self.nTP = BooleanField(naam="nTP",
                                 label="NTP",
-                                uri="https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Trajectcontrole.nTP",
+                                objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Trajectcontrole.nTP",
                                 definition="Aanduiding of het systeem voor zijn tijdsaanduiding gebruik maakt van NTP.",
                                 constraints="",
                                 usagenote="",
@@ -39,7 +39,7 @@ class Trajectcontrole(NaampadObject):
         self.rijrichting = KeuzelijstField(naam="rijrichting",
                                            label="rijrichting",
                                            lijst=KlAlgRijrichting(),
-                                           uri="https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Trajectcontrole.rijrichting",
+                                           objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Trajectcontrole.rijrichting",
                                            definition="De rijrichting van de voertuigen die gecontroleerd worden.",
                                            constraints="",
                                            usagenote="",
@@ -49,7 +49,7 @@ class Trajectcontrole(NaampadObject):
         self.snelheidsregime = KeuzelijstField(naam="snelheidsregime",
                                                label="snelheidsregime",
                                                lijst=KlAlgSnelheidsregime(),
-                                               uri="https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Trajectcontrole.snelheidsregime",
+                                               objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Trajectcontrole.snelheidsregime",
                                                definition="Het snelheidsregime waarop de voertuigen worden gecontroleerd.",
                                                constraints="",
                                                usagenote="",

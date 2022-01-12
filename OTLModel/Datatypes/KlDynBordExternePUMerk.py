@@ -9,7 +9,7 @@ class KlDynBordExternePUMerk(Keuzelijst):
     def __init__(self):
         super().__init__(naam="KlDynBordExternePUMerk",
                          label="Keuzelijst met merknamen van externe PUs",
-                         uri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlDynBordExternePUMerk",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlDynBordExternePUMerk",
                          definition="Keuzelijst met merknamen van externe PUs.",
                          usagenote="",
                          deprecated_version="",

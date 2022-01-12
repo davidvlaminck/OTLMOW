@@ -1,7 +1,7 @@
+import os
 import unittest
 from unittest.mock import Mock
 
-from ModelGenerator.FileExistChecker import FileExistChecker
 from ModelGenerator.Inheritance import Inheritance
 from ModelGenerator.OSLOAttribuut import OSLOAttribuut
 from ModelGenerator.OSLOClass import OSLOClass
@@ -193,15 +193,13 @@ class OSLOInMemoryCreatorTests(unittest.TestCase):
 
     def test_FileNotFound(self):
         file_location = ''
-        file_exist_checker = FileExistChecker(file_location)
-        sql_reader = SQLDbReader(file_exist_checker)
-        oslo_creator = OSLOInMemoryCreator(sql_reader)
-        self.assertRaises(FileNotFoundError, oslo_creator.getAllClasses)
+        with self.assertRaises(FileNotFoundError):
+            sql_reader = SQLDbReader(file_location)
 
     def test_OTLDbClass(self):
-        file_location = '../InputFiles/OTL.db'
-        file_exist_checker = FileExistChecker(file_location)
-        sql_reader = SQLDbReader(file_exist_checker)
+        base_dir = os.path.dirname(os.path.realpath(__file__))
+        file_location = f'{base_dir}/../InputFiles/OTL.db'
+        sql_reader = SQLDbReader(file_location)
         oslo_creator = OSLOInMemoryCreator(sql_reader)
         listOfClasses = oslo_creator.getAllClasses()
 
@@ -210,9 +208,9 @@ class OSLOInMemoryCreatorTests(unittest.TestCase):
         self.assertEqual(type(first), OSLOClass)
 
     def test_OTLDbPrimitiveDatatypes(self):
-        file_location = '../InputFiles/OTL.db'
-        file_exist_checker = FileExistChecker(file_location)
-        sql_reader = SQLDbReader(file_exist_checker)
+        base_dir = os.path.dirname(os.path.realpath(__file__))
+        file_location = f'{base_dir}/../InputFiles/OTL.db'
+        sql_reader = SQLDbReader(file_location)
         oslo_creator = OSLOInMemoryCreator(sql_reader)
         listOfPrimitiveDatatypes = oslo_creator.getAllPrimitiveDatatypes()
 
@@ -221,9 +219,9 @@ class OSLOInMemoryCreatorTests(unittest.TestCase):
         self.assertEqual(type(first), OSLODatatypePrimitive)
 
     def test_OTLDbPrimitiveDatatypeAttributen(self):
-        file_location = '../InputFiles/OTL.db'
-        file_exist_checker = FileExistChecker(file_location)
-        sql_reader = SQLDbReader(file_exist_checker)
+        base_dir = os.path.dirname(os.path.realpath(__file__))
+        file_location = f'{base_dir}/../InputFiles/OTL.db'
+        sql_reader = SQLDbReader(file_location)
         oslo_creator = OSLOInMemoryCreator(sql_reader)
         listOfPrimitiveDatatypeAttributen = oslo_creator.getAllPrimitiveDatatypeAttributen()
 

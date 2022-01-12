@@ -1,3 +1,4 @@
+import os
 from abc import ABC
 
 from Loggers.AbstractLogger import AbstractLogger
@@ -67,7 +68,8 @@ class AbstractDatatypeCreator(ABC):
 
     @staticmethod
     def writeToFile(datatype, directory: str, dataToWrite: list[str], relativePath=''):
-        path = f"{relativePath}OTLModel/{directory}/{datatype.name}.py"
+        base_dir = os.path.dirname(os.path.realpath(__file__))
+        path = f"{base_dir}/../OTLModel/{directory}/{datatype.name}.py"
 
         file = open(path, "w", encoding='utf-8')
         for line in dataToWrite:

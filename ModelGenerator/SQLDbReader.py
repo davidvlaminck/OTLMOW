@@ -1,20 +1,22 @@
 import os
 import sqlite3
 
-from ModelGenerator.IFileExistChecker import IFileExistChecker
-
 
 class SQLDbReader:
-    fileExistChecker: IFileExistChecker
-
-    def __init__(self, fileExistChecker: IFileExistChecker):
-        self.fileExistChecker = fileExistChecker
+    def __init__(self, path=None):
+        self.path = path
+        if path is None:
+            self.file_exists = False
+        else:
+            self.file_exists = os.path.isfile(path)
+            if not self.file_exists:
+                raise FileNotFoundError(path + " is not a valid path. File does not exist.")
 
     def performReadQuery(self, query: str, params: dict):
-        if not (self.fileExistChecker.fileFound()):
-            raise FileNotFoundError(self.fileExistChecker.path + " is not a valid path. File does not exist.")
+        if not self.file_exists:
+            raise FileNotFoundError(self.path + " is not a valid path. File does not exist.")
 
-        con = sqlite3.connect(self.fileExistChecker.path)
+        con = sqlite3.connect(self.path)
         cur = con.cursor()
         data = []
         for row in cur.execute(query, params):

@@ -134,10 +134,10 @@ class AttributeSetterTests(TestCase):
                 attribute_setter.set_attribute(value)
 
         self.assertTrue(isinstance(attribute_setter, KardinaliteitFieldSetter))
-        self.assertEqual("bij externe partij 2", instance.externeReferentie.waarde[0].externePartij.waarde)
-        self.assertEqual("externe referentie 2", instance.externeReferentie.waarde[0].externReferentienummer.waarde)
-        self.assertEqual("bij externe partij 1", instance.externeReferentie.waarde[1].externePartij.waarde)
-        self.assertEqual("externe referentie 1", instance.externeReferentie.waarde[1].externReferentienummer.waarde)
+        self.assertEqual("bij externe partij 2", instance.externeReferentie.waarde[0].waarde.externePartij.waarde)
+        self.assertEqual("externe referentie 2", instance.externeReferentie.waarde[0].waarde.externReferentienummer.waarde)
+        self.assertEqual("bij externe partij 1", instance.externeReferentie.waarde[1].waarde.externePartij.waarde)
+        self.assertEqual("externe referentie 1", instance.externeReferentie.waarde[1].waarde.externReferentienummer.waarde)
 
     def test_decode_ComplexOfComplexField(self):
         instance = DNBLaagspanning()

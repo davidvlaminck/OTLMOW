@@ -1,3 +1,4 @@
+import copy
 import math
 
 from OTLModel.Datatypes.OTLField import OTLField
@@ -33,19 +34,31 @@ class KardinaliteitField(OTLField):
             bad_type = self.check_types_in_list(value)
             if bad_type:
                 raise ValueError(f'element of bad type in {self.naam}.{name}')
+            valueList = []
+            for el in value:
+                if isinstance(el, type(self.fieldToMultiply)):
+                    valueList.append(el)
+                else:
+                    instanceField = copy.deepcopy(self.fieldToMultiply)
+                    instanceField.waarde = el
+                    valueList.append(instanceField)
+            self.__dict__[name] = valueList
+            return
         self.__dict__[name] = value
 
     def check_types_in_list(self, valueList) -> bool:
         bad_type = False
         for el in valueList:
             if isinstance(self.fieldToMultiply, PrimitiveField):
-                if not (isinstance(el.waarde, self.fieldToMultiply.primitiveType)):
-                    bad_type = True
-                    return bad_type
+                try:
+                    if not (isinstance(el.waarde, self.fieldToMultiply.primitiveType)):
+                        return True
+                except AttributeError:
+                    if not (isinstance(el, self.fieldToMultiply.primitiveType)):
+                        return True
             else:
                 if not (isinstance(el, self.fieldToMultiply.__class__)):
-                    bad_type = True
-                    return bad_type
+                    return True
         return bad_type
 
     def default(self):

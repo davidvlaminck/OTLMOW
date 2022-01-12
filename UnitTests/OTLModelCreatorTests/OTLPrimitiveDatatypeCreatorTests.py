@@ -208,7 +208,9 @@ class OTLPrimitiveDatatypeCreatorTests(unittest.TestCase):
         dataToWrite = creator.CreateBlockToWriteFromPrimitiveTypes(KwantWrdInVolt)
         creator.writeToFile(KwantWrdInVolt, 'Datatypes', dataToWrite, '../../')
 
-        self.assertTrue(os.path.isfile('../../OTLModel/Datatypes/KwantWrdInVolt.py'))
+        base_dir = os.path.dirname(os.path.realpath(__file__))
+
+        self.assertTrue(os.path.isfile(f'{base_dir}/../../OTLModel/Datatypes/KwantWrdInVolt.py'))
 
     def test_getEenheidFromConstraintsEmptyString(self):
         logger = NoneLogger()

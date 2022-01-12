@@ -4,7 +4,6 @@ from unittest import mock
 from unittest.mock import patch
 
 from Loggers.NoneLogger import NoneLogger
-from ModelGenerator.FileExistChecker import FileExistChecker
 from ModelGenerator.OSLOCollector import OSLOCollector
 from ModelGenerator.OSLOEnumeration import OSLOEnumeration
 from ModelGenerator.OSLOInMemoryCreator import OSLOInMemoryCreator
@@ -142,9 +141,9 @@ class OTLEnumerationCreatorTests(unittest.TestCase):
     def test_WriteToFileOSLOEnumeration2(self):
         logger = NoneLogger()
 
-        file_location = '../../InputFiles/OTL.db'
-        file_exist_checker = FileExistChecker(file_location)
-        sql_reader = SQLDbReader(file_exist_checker)
+        base_dir = os.path.dirname(os.path.realpath(__file__))
+        file_location = f'{base_dir}/../../InputFiles/OTL.db'
+        sql_reader = SQLDbReader(file_location)
         oslo_creator = OSLOInMemoryCreator(sql_reader)
         collector = OSLOCollector(oslo_creator)
         collector.collect()
@@ -160,9 +159,9 @@ class OTLEnumerationCreatorTests(unittest.TestCase):
     def test_getKeuzelijstWaardesFromUri(self):
         logger = NoneLogger()
 
-        file_location = '../../InputFiles/OTL.db'
-        file_exist_checker = FileExistChecker(file_location)
-        sql_reader = SQLDbReader(file_exist_checker)
+        base_dir = os.path.dirname(os.path.realpath(__file__))
+        file_location = f'{base_dir}/../../InputFiles/OTL.db'
+        sql_reader = SQLDbReader(file_location)
         oslo_creator = OSLOInMemoryCreator(sql_reader)
         collector = OSLOCollector(oslo_creator)
         collector.collect()

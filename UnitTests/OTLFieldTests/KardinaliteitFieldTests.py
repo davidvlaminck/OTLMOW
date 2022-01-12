@@ -5,18 +5,13 @@ from OTLModel.Classes.ContainerBuis import ContainerBuis
 from OTLModel.Classes.Mantelbuis import Mantelbuis
 
 
-class ContainerBuisInstance(ContainerBuis):
-    def __init__(self):
-        super(ContainerBuis, self).__init__()
-        """De kleur van de coating."""
-
-
 class ContainerBuisKardinaliteitFieldTests(unittest.TestCase):
     def test_ContainerBuisPassTests(self):
         instance = Mantelbuis()
 
         instance.kleur.waarde = ['geel']
         self.assertTrue(len(instance.kleur.waarde) == 1)
+        self.assertEqual("geel", instance.kleur.waarde[0].waarde)
 
         instance.kleur.waarde = ["geel", "rood"]
         self.assertTrue(len(instance.kleur.waarde) == 2)
@@ -43,24 +38,24 @@ class ContainerBuisKardinaliteitFieldTests(unittest.TestCase):
             instance.kleur.waarde = {}
         self.assertEqual(str(exc_dict.exception), "expecting list in kleur.waarde")
 
-        with self.assertRaises(ValueError) as exc_empty_list:
-            instance.kleur.waarde = []
-        self.assertEqual(str(exc_empty_list.exception), "expecting at least 1 element(s) in kleur.waarde")
-
         with self.assertRaises(ValueError) as exc_tuple_with_bad_value:
             instance.kleur.waarde = ["geel", 3]
         self.assertEqual(str(exc_tuple_with_bad_value.exception), "element of bad type in kleur.waarde")
 
         instance.kleur.maxKardinaliteit = 2
-        with self.assertRaises(ValueError) as exc_tuple_with_too_many_items:
+        instance.kleur.minKardinaliteit = 2
+        with self.assertRaises(ValueError) as exc_list_one_short:
+            instance.kleur.waarde = ["geel"]
+        self.assertEqual(str(exc_list_one_short.exception), "expecting at least 2 element(s) in kleur.waarde")
+        with self.assertRaises(ValueError) as exc_list_one_too_many:
             instance.kleur.waarde = ["geel", "rood", "blauw"]
-        self.assertEqual(str(exc_tuple_with_too_many_items.exception), "expecting at most 2 element(s) in kleur.waarde")
+        self.assertEqual(str(exc_list_one_too_many.exception), "expecting at most 2 element(s) in kleur.waarde")
 
     def test_ContainerBuisTwoInstances(self):
         instance = Mantelbuis()
         instance.kleur.waarde = ["geel", "rood"]
         instance2 = Mantelbuis()
         instance2.kleur.waarde = ["blauw"]
-        self.assertTrue(instance.kleur.waarde[0] == "geel")
-        self.assertTrue(instance.kleur.waarde[1] == "rood")
-        self.assertTrue(instance2.kleur.waarde[0] == "blauw")
+        self.assertTrue(instance.kleur.waarde[0].waarde == "geel")
+        self.assertTrue(instance.kleur.waarde[1].waarde == "rood")
+        self.assertTrue(instance2.kleur.waarde[0].waarde == "blauw")

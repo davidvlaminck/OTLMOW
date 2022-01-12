@@ -4,7 +4,6 @@ from unittest import mock
 from unittest.mock import patch
 
 from Loggers.NoneLogger import NoneLogger
-from ModelGenerator.FileExistChecker import FileExistChecker
 from ModelGenerator.OSLOCollector import OSLOCollector
 from ModelGenerator.OSLODatatypeComplex import OSLODatatypeComplex
 from ModelGenerator.OSLODatatypeComplexAttribuut import OSLODatatypeComplexAttribuut
@@ -264,9 +263,9 @@ class OTLComplexDatatypeCreatorTests(unittest.TestCase):
     def test_WriteToFileDtcAdresOSLODatatypeComplex(self):
         logger = NoneLogger()
 
-        file_location = '../../InputFiles/OTL.db'
-        file_exist_checker = FileExistChecker(file_location)
-        sql_reader = SQLDbReader(file_exist_checker)
+        base_dir = os.path.dirname(os.path.realpath(__file__))
+        file_location = f'{base_dir}/../../InputFiles/OTL.db'
+        sql_reader = SQLDbReader(file_location)
         oslo_creator = OSLOInMemoryCreator(sql_reader)
         collector = OSLOCollector(oslo_creator)
         collector.collect()
@@ -282,9 +281,9 @@ class OTLComplexDatatypeCreatorTests(unittest.TestCase):
     def test_WriteToFileDtcRechtspersoonOSLODatatypeComplex(self):
         logger = NoneLogger()
 
-        file_location = '../../InputFiles/OTL.db'
-        file_exist_checker = FileExistChecker(file_location)
-        sql_reader = SQLDbReader(file_exist_checker)
+        base_dir = os.path.dirname(os.path.realpath(__file__))
+        file_location = f'{base_dir}/../../InputFiles/OTL.db'
+        sql_reader = SQLDbReader(file_location)
         oslo_creator = OSLOInMemoryCreator(sql_reader)
         collector = OSLOCollector(oslo_creator)
         collector.collect()
@@ -300,9 +299,9 @@ class OTLComplexDatatypeCreatorTests(unittest.TestCase):
     def test_WriteToFileDtcMaaienOSLODatatypeComplex(self):
         logger = NoneLogger()
 
-        file_location = '../../InputFiles/OTL.db'
-        file_exist_checker = FileExistChecker(file_location)
-        sql_reader = SQLDbReader(file_exist_checker)
+        base_dir = os.path.dirname(os.path.realpath(__file__))
+        file_location = f'{base_dir}/../../InputFiles/OTL.db'
+        sql_reader = SQLDbReader(file_location)
         oslo_creator = OSLOInMemoryCreator(sql_reader)
         collector = OSLOCollector(oslo_creator)
         collector.collect()

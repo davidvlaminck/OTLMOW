@@ -4,8 +4,6 @@ from OTLModel.Classes.BitumineuzeLaag import BitumineuzeLaag
 from OTLModel.Classes.Lichtmast import Lichtmast
 from OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter
 
-
-# TODO testen nakijken
 class UnionTypeFieldTests(unittest.TestCase):
     def test_InitClassWithField(self):
         c = Lichtmast()

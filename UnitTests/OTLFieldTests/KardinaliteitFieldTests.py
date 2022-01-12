@@ -6,6 +6,23 @@ from OTLModel.Classes.Mantelbuis import Mantelbuis
 
 
 class ContainerBuisKardinaliteitFieldTests(unittest.TestCase):
+    def test_alternatives_set_and_get_waarde_KardinaliteitField(self):
+        mantelbuis = Mantelbuis()
+        mantelbuis.kleur.set_waarde_by_index('rood', 1)
+        mantelbuis.kleur.set_waarde_by_index('geel', 0)
+
+        # default
+        self.assertEqual("geel", mantelbuis.kleur.waarde[0].waarde)
+        self.assertEqual("rood", mantelbuis.kleur.waarde[1].waarde)
+        # alternative 1
+        self.assertEqual("geel", mantelbuis.kleur.waarde_index(0))
+        self.assertEqual("rood", mantelbuis.kleur.waarde_index(1))
+        # alternative 2
+        kleurwaardes = mantelbuis.kleur.volgende_waarde()
+        self.assertEqual("geel", next(kleurwaardes))
+        self.assertEqual("rood", next(kleurwaardes))
+
+
     def test_ContainerBuisPassTests(self):
         instance = Mantelbuis()
 

@@ -18,6 +18,22 @@ class KardinaliteitField(OTLField):
             self.maxKardinaliteit = int(maxKardinaliteit)
         self.__dict__["waarde"] = []
 
+    def set_waarde_by_index(self, value, index):
+        if self.waarde is None:
+            self.waarde = []
+        instanceField = copy.deepcopy(self.fieldToMultiply)
+        instanceField.waarde = value
+        while index >= len(self.waarde):
+            self.waarde.append(None)
+        self.waarde[index] = instanceField
+
+    def waarde_index(self, index):
+        return self.waarde[index].waarde
+
+    def volgende_waarde(self):
+        for val in self.waarde:
+            yield val.waarde
+
     def __setattr__(self, name, value):
         if name == "waarde" and self.readonly and value is not None:
             raise AttributeError(f"can't set the value of a readonly attribute")

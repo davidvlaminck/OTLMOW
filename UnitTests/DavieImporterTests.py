@@ -1,16 +1,12 @@
 ﻿import unittest
 
-
-class DavieImporter:
-    @classmethod
-    def Import(self, filePath):
-        pass
+from Facility.DavieImporter import DavieImporter
 
 
 class DavieImporterTests(unittest.TestCase):
     def test_FileNotFoundRaisesError(self):
         filePath=''
-        DavieImporter.Import(filePath)
+        DavieImporter.import_file(filePath)
         raise NotImplementedError
 
     def test_ImportEmptyFileReturnEmptyList(self):

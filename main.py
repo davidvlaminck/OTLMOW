@@ -1,4 +1,5 @@
 from datetime import datetime
+import normalisatieExoten
 
 from Facility.OTLFacility import OTLFacility
 from Loggers.TxtLogger import TxtLogger
@@ -8,6 +9,9 @@ from OTLModel.Classes.EnergiemeterDNB import EnergiemeterDNB
 from OTLModel.Classes.Voedt import Voedt
 
 if __name__ == '__main__':
+    normalisatieExoten.normaliseer_exoten()
+    exit()
+
     # create the main facade class: OTLFacility
     logger = TxtLogger(r'C:\temp\pythonLogging\pythonlog.txt')
     otl_facility = OTLFacility(logger)

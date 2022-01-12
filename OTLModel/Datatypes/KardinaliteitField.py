@@ -21,7 +21,7 @@ class KardinaliteitField(OTLField):
         if name == "waarde" and self.readonly and value is not None:
             raise AttributeError(f"can't set the value of a readonly attribute")
         if name == "waarde":
-            if value is None:
+            if value is None or value == []:
                 self.__dict__["waarde"] = value
                 return
             elif not isinstance(value, list):

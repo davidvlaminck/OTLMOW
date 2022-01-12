@@ -1,3 +1,5 @@
+from Facility.DavieDecoder import DavieDecoder
+from Facility.DavieExporter import DavieExporter
 from Loggers.AbstractLogger import AbstractLogger
 from ModelGenerator.BaseClasses.RelatieValidator import RelatieValidator
 from OTLModel.GeldigeRelatieLijst import GeldigeRelatieLijst
@@ -7,14 +9,18 @@ from ModelGenerator.OSLOInMemoryCreator import OSLOInMemoryCreator
 from ModelGenerator.OTLModelCreator import OTLModelCreator
 from ModelGenerator.OtlAssetJSONEncoder import OtlAssetJSONEncoder
 from ModelGenerator.SQLDbReader import SQLDbReader
+from Facility.DavieImporter import DavieImporter
 
 
 class OTLFacility:
     def __init__(self, instanceLogger: AbstractLogger):
+        self.davieImporter = DavieImporter()
         self.logger = instanceLogger
         self.collector = None
         self.modelCreator = None
+        self.davieExporter = DavieExporter()
         self.encoder = OtlAssetJSONEncoder(indent=4)
+        self.davieDecoder = DavieDecoder()
         self.relatieValidator = RelatieValidator(GeldigeRelatieLijst())
 
     def init_otl_model_creator(self, otl_file_location):

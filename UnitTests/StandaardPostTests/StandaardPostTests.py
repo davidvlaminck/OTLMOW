@@ -24,7 +24,7 @@ class StandaardPostMapping:
 
 
 def set_value_by_dotnotatie(assetOrAttribuut, dotnotatie, defaultWaarde):
-    if not '.' in dotnotatie:
+    if '.' not in dotnotatie:
         attribuut = getattr(assetOrAttribuut, dotnotatie)
         if isinstance(attribuut, KeuzelijstField):
             attribuut.set_value_by_invulwaarde(defaultWaarde)
@@ -40,6 +40,7 @@ def set_value_by_dotnotatie(assetOrAttribuut, dotnotatie, defaultWaarde):
     else:
         attribuut = getattr(assetOrAttribuut, attributen[0])
     set_value_by_dotnotatie(attribuut, dotnotatie.split(".", 1)[1], defaultWaarde)
+
 
 @dataclasses.dataclass
 class StandaardPost:

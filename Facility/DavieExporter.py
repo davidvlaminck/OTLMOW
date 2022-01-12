@@ -7,5 +7,4 @@ class DavieExporter:
 
     def export_objects_to_json_file(self, list_of_objects, file_path):
         encoded_json = self.encoder.encode(list_of_objects)
-        with open(file_path, "w") as file:
-            file.write(encoded_json)
+        self.encoder.write_json_to_file(encoded_json, file_path)

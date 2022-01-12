@@ -51,7 +51,6 @@ class OtlAssetJSONEncoder(json.JSONEncoder):
                 return False
         return b
 
-    def write_json_to_file(self, json, path):
-        f = open(path, "w")
-        f.write(json)
-        f.close()
+    def write_json_to_file(self, encoded_json, file_path):
+        with open(file_path, "w") as file:
+            file.write(encoded_json)

@@ -22,18 +22,8 @@ class EMInfraImporter:
             self.get_asset_id_from_uuid_and_typeURI(uuid, typeURI)
         )
 
-    def get_asset_id_from_uuid_and_typeURI(self, uuid, typeURI):
-        type = typeURI.split('/ns/')[1]
-        type_encoded = base64.b64encode(type.encode('utf-8'))
-        return uuid + '-' + type_encoded.decode("utf-8")
-
-
-# cert_path = 'datamanager_eminfra_prd.awv.vlaanderen.be.crt'
-# key_path = 'datamanager_eminfra_prd.awv.vlaanderen.be.key'
-# url = "https://services.apps.mow.vlaanderen.be/eminfra/core/api/otl/assets"
-# response = requests.get(url, cert=(cert_path, key_path))  # headers={"accept": "application/vnd.awv.eminfra.v2+json"}
-#
-# decoded_string = response.content.decode("utf-8")
-
-# 000d3091-deca-4714-8f82-d95aace9ea90-b25kZXJkZWVsI1N0cm9vbWtyaW5n
-# 000d0d69-e1fc-40e3-9f45-99ac8e6aa341-b25kZXJkZWVsI05ldHdlcmtwb29ydA
+    @staticmethod
+    def get_asset_id_from_uuid_and_typeURI(uuid, typeURI):
+        shortUri = typeURI.split('/ns/')[1]
+        shortUri_encoded = base64.b64encode(shortUri.encode('utf-8'))
+        return uuid + '-' + shortUri_encoded.decode("utf-8")

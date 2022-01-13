@@ -16,10 +16,13 @@ def normaliseer_exoten():
     # loop through all objects and create an instance of InvasieveExoten based on an existing Exoten object
     list_of_fields_to_copy = otl_facility.asset_factory.get_public_fieldlist_from_object(lijst_exoten[0])
     for exoten in lijst_exoten:
+        # create InvasieveExoten, using the data of Exoten
         nieuwe_invasieve_exoten = otl_facility.asset_factory.create_aimObject_using_other_aimObject_as_template(
             orig_aimObject=exoten, typeURI=InvasieveExoten.typeURI, fieldsToCopy=list_of_fields_to_copy)
 
+        # change the assetId
         nieuwe_invasieve_exoten.assetId.identificator.waarde = f'nieuwe_versie_van_{exoten.assetId.identificator.waarde}'
+
         lijst_objecten.append(nieuwe_invasieve_exoten)
 
         # also set isActief to False to soft-delete Exoten

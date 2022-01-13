@@ -79,7 +79,7 @@ class OTLClassCreator(AbstractDatatypeCreator):
             datablock.append('        super().__init__()')
             datablock.append('')
         elif len(inheritances) > 1:
-            for inheritance in inheritances:
+            for inheritance in sorted(inheritances, key=lambda a: a.base_name):
                 datablock.append(f'        {inheritance.base_name}.__init__(self)')
             datablock.append('')
 

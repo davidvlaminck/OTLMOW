@@ -19,7 +19,7 @@ if __name__ == '__main__':
     otl_facility = OTLFacility(LoggerCollection([logger, ConsoleLogger()]))
 
     # create a datamodel based on the OTL SQLite database and ttl files stored on the github
-    otl_file_location = 'InputFiles/OTL-PROD-2.1.0.db'
+    otl_file_location = 'InputFiles/OTL.db'
     otl_facility.init_otl_model_creator(otl_file_location)
     otl_facility.create_otl_datamodel()
 

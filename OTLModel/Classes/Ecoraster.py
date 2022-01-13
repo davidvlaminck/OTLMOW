@@ -45,16 +45,6 @@ class Ecoraster(ComplexeGeleiding):
         self.lengte.usagenote = ""
         self.lengte.deprecated_version = ""
 
-        self.paalhoogte = KwantWrdInMeter()
-        """De hoogte van de paal in het ecoraster in meter."""
-        self.paalhoogte.naam = "paalhoogte"
-        self.paalhoogte.label = "paalhoogte"
-        self.paalhoogte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Ecoraster.paalhoogte"
-        self.paalhoogte.definition = "De hoogte van de paal in het ecoraster in meter."
-        self.paalhoogte.constraints = ""
-        self.paalhoogte.usagenote = ""
-        self.paalhoogte.deprecated_version = ""
-
         self.paalMateriaal = KeuzelijstField(naam="paalMateriaal",
                                              label="paal materiaal",
                                              lijst=KlEcoPaalmateriaal(),
@@ -64,6 +54,16 @@ class Ecoraster(ComplexeGeleiding):
                                              usagenote="",
                                              deprecated_version="")
         """Het materiaal van de paal in het ecoraster."""
+
+        self.paalhoogte = KwantWrdInMeter()
+        """De hoogte van de paal in het ecoraster in meter."""
+        self.paalhoogte.naam = "paalhoogte"
+        self.paalhoogte.label = "paalhoogte"
+        self.paalhoogte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Ecoraster.paalhoogte"
+        self.paalhoogte.definition = "De hoogte van de paal in het ecoraster in meter."
+        self.paalhoogte.constraints = ""
+        self.paalhoogte.usagenote = ""
+        self.paalhoogte.deprecated_version = ""
 
         self.typeMazen = KeuzelijstField(naam="typeMazen",
                                          label="type mazen",

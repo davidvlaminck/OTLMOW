@@ -20,6 +20,16 @@ class Verkeersbordsteun(AIMNaamObject, Draagconstructie):
         AIMNaamObject.__init__(self)
         Draagconstructie.__init__(self)
 
+        self.diameter = KwantWrdInMillimeter()
+        """De diameter van de verkeersbordpaal in millimeter."""
+        self.diameter.naam = "diameter"
+        self.diameter.label = "diameter"
+        self.diameter.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Verkeersbordsteun.diameter"
+        self.diameter.definition = "De diameter van de verkeersbordpaal in millimeter."
+        self.diameter.constraints = ""
+        self.diameter.usagenote = ""
+        self.diameter.deprecated_version = ""
+
         self.fabricagevoorschrift = StringField(naam="fabricagevoorschrift",
                                                 label="fabricagevoorschrift",
                                                 objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Verkeersbordsteun.fabricagevoorschrift",
@@ -78,13 +88,3 @@ class Verkeersbordsteun(AIMNaamObject, Draagconstructie):
         self.wanddikte.constraints = ""
         self.wanddikte.usagenote = ""
         self.wanddikte.deprecated_version = ""
-
-        self.diameter = KwantWrdInMillimeter()
-        """De diameter van de verkeersbordpaal in millimeter."""
-        self.diameter.naam = "diameter"
-        self.diameter.label = "diameter"
-        self.diameter.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Verkeersbordsteun.diameter"
-        self.diameter.definition = "De diameter van de verkeersbordpaal in millimeter."
-        self.diameter.constraints = ""
-        self.diameter.usagenote = ""
-        self.diameter.deprecated_version = ""

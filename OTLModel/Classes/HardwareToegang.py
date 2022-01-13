@@ -22,6 +22,15 @@ class HardwareToegang(AIMNaamObject):
     def __init__(self):
         super().__init__()
 
+        self.CPU = StringField(naam="CPU",
+                               label="CPU",
+                               objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#HardwareToegang.CPU",
+                               definition="Centrale verwerkingseenheid.",
+                               constraints="",
+                               usagenote="",
+                               deprecated_version="")
+        """Centrale verwerkingseenheid."""
+
         self.cdDvdTape = KeuzelijstField(naam="cdDvdTape",
                                          label="CD DVD Tape",
                                          lijst=KlHardwareCdDvdTape(),
@@ -31,15 +40,6 @@ class HardwareToegang(AIMNaamObject):
                                          usagenote="",
                                          deprecated_version="")
         """De hardware uitgerust met CD/DVD/Tape."""
-
-        self.CPU = StringField(naam="CPU",
-                               label="CPU",
-                               objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#HardwareToegang.CPU",
-                               definition="Centrale verwerkingseenheid.",
-                               constraints="",
-                               usagenote="",
-                               deprecated_version="")
-        """Centrale verwerkingseenheid."""
 
         self.disk = KwantWrdInGigabyte()
         """De disk config van de hardware, HD, RAID, ..."""

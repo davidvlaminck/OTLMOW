@@ -18,3 +18,4 @@ class KlIVRIMerkTLCfi(Keuzelijst):
         self.add_option("dynniq", "Dynniq", "Dynniq", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlIVRIMerkTLCfi/dynniq")
         self.add_option("ko-hartog", "Ko Hartog", "Ko Hartog", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlIVRIMerkTLCfi/ko-hartog")
         self.add_option("siemens", "Siemens", "Siemens", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlIVRIMerkTLCfi/siemens")
+        self.add_option("yunex", "Yunex", "Yunex", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlIVRIMerkTLCfi/yunex")

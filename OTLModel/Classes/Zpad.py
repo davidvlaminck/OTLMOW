@@ -16,6 +16,15 @@ class Zpad(NaampadObject):
     def __init__(self):
         super().__init__()
 
+        self.WANCapaciteit = IntegerField(naam="WANCapaciteit",
+                                          label="wan capaciteit",
+                                          objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Zpad.WANCapaciteit",
+                                          definition="Capaciteit van de verbinding vanuit het standpunt van de gebruiker.",
+                                          constraints="",
+                                          usagenote="",
+                                          deprecated_version="")
+        """Capaciteit van de verbinding vanuit het standpunt van de gebruiker."""
+
         self.netwerkklant = StringField(naam="netwerkklant",
                                         label="netwerkklant",
                                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Zpad.netwerkklant",
@@ -43,12 +52,3 @@ class Zpad(NaampadObject):
                                     usagenote="",
                                     deprecated_version="")
         """De soort verbinding, gebaseerd op het gebruikte protocol."""
-
-        self.WANCapaciteit = IntegerField(naam="WANCapaciteit",
-                                          label="wan capaciteit",
-                                          objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Zpad.WANCapaciteit",
-                                          definition="Capaciteit van de verbinding vanuit het standpunt van de gebruiker.",
-                                          constraints="",
-                                          usagenote="",
-                                          deprecated_version="")
-        """Capaciteit van de verbinding vanuit het standpunt van de gebruiker."""

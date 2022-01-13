@@ -155,7 +155,7 @@ class AbstractDatatypeCreator(ABC):
         raise NotImplementedError(f"getTypeNameOfComplexAttribuut fails to get typename from {type_uri}")
 
     def addAttributenToDataBlock(self, attributen, datablock, class_uri='', forClassUse=False, forUnionTypeUse=False):
-        for attribuut in attributen:
+        for attribuut in sorted(attributen, key=lambda a: a.name):
             typeLink = self.getTypeLinkFromAttribuut(attribuut)
 
             if attribuut.overerving == 1:

@@ -4,6 +4,8 @@ from Facility.EMInfraDecoder import EMInfraDecoder
 from Facility.EMInfraImporter import EMInfraImporter
 
 from Facility.OTLFacility import OTLFacility
+from Loggers.ConsoleLogger import ConsoleLogger
+from Loggers.LoggerCollection import LoggerCollection
 from Loggers.TxtLogger import TxtLogger
 from ModelGenerator.BaseClasses.RelatieRichting import RelatieRichting
 from OTLModel.Classes.DNBLaagspanning import DNBLaagspanning
@@ -11,15 +13,13 @@ from OTLModel.Classes.EnergiemeterDNB import EnergiemeterDNB
 from OTLModel.Classes.Voedt import Voedt
 
 if __name__ == '__main__':
-    normalisatieExoten.normaliseer_exoten()
-    exit()
 
     # create the main facade class: OTLFacility
     logger = TxtLogger(r'C:\temp\pythonLogging\pythonlog.txt')
-    otl_facility = OTLFacility(logger)
+    otl_facility = OTLFacility(LoggerCollection([logger, ConsoleLogger()]))
 
     # create a datamodel based on the OTL SQLite database and ttl files stored on the github
-    otl_file_location = 'InputFiles/OTL.db'
+    otl_file_location = 'InputFiles/OTL-PROD-2.1.0.db'
     otl_facility.init_otl_model_creator(otl_file_location)
     otl_facility.create_otl_datamodel()
 

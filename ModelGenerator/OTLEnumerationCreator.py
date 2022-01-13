@@ -45,7 +45,7 @@ class OTLEnumerationCreator(AbstractDatatypeCreator):
                      '']
 
         waardes = self.getKeuzelijstWaardesFromUri(osloEnumeration.name)
-        for waarde in waardes:
+        for waarde in sorted(waardes, key=lambda w: w.invulwaarde):
             datablock.append(
                 f'        self.add_option("{waarde.invulwaarde}", "{waarde.label}", "{waarde.definitie}", "{waarde.objectUri}")')
 

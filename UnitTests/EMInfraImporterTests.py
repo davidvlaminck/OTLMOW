@@ -1,10 +1,8 @@
 ﻿import unittest
-import pytest as pytest
 from Facility.EMInfraImporter import EMInfraImporter
 
 
 class EMInfraImporterTests(unittest.TestCase):
-    @pytest.mark.integtest
     def test_ImportEmptyFileReturnEmptyList(self):
         asset_id = '000d3091-deca-4714-8f82-d95aace9ea90-b25kZXJkZWVsI1N0cm9vbWtyaW5n'
         cert_path = 'C:\\resources\\datamanager_eminfra_prd.awv.vlaanderen.be.crt'

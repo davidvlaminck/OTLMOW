@@ -1,3 +1,4 @@
+from Facility.AssetFactory import AssetFactory
 from Facility.DavieDecoder import DavieDecoder
 from Facility.DavieExporter import DavieExporter
 from Loggers.AbstractLogger import AbstractLogger
@@ -20,6 +21,7 @@ class OTLFacility:
         self.davieExporter = DavieExporter()
         self.encoder = OtlAssetJSONEncoder(indent=4)
         self.davieDecoder = DavieDecoder()
+        self.asset_factory = AssetFactory()
         self.relatieValidator = RelatieValidator(GeldigeRelatieLijst())
 
     def init_otl_model_creator(self, otl_file_location):

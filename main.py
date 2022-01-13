@@ -1,5 +1,7 @@
 from datetime import datetime
 import normalisatieExoten
+from Facility.EMInfraDecoder import EMInfraDecoder
+from Facility.EMInfraImporter import EMInfraImporter
 
 from Facility.OTLFacility import OTLFacility
 from Loggers.TxtLogger import TxtLogger

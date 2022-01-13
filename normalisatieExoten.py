@@ -25,7 +25,7 @@ def normaliseer_exoten():
 
         lijst_objecten.append(nieuwe_invasieve_exoten)
 
-        # also set isActief to False to soft-delete Exoten
+        # set isActief to False to soft-delete Exoten and add for the import
         exoten.isActief.waarde = False
         lijst_objecten.append(exoten)
 

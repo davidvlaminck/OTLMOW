@@ -2,7 +2,6 @@
 from Loggers.TxtLogger import TxtLogger
 from OTLModel.Classes.InvasieveExoten import InvasieveExoten
 
-
 def normaliseer_exoten():
     # create the main facade class: OTLFacility
     logger = TxtLogger(r'C:\temp\pythonLogging\pythonlog.txt')
@@ -31,3 +30,6 @@ def normaliseer_exoten():
 
     # write to a json file that can be uploaded in Davie
     otl_facility.davieExporter.export_objects_to_json_file(lijst_objecten, 'C:\\resources\\DA-2022-00004_exoten_normalisatie_prd_voor_import.json')
+
+if __name__ == '__main__':
+    normaliseer_exoten()

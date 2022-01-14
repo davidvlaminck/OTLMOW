@@ -44,10 +44,10 @@ dnb.adresVolgensDNB.postcode.waarde = '2930'
 dnb.adresVolgensDNB.straatnaam.waarde = 'Bredabaan 90'
 
 meter = EnergiemeterDNB()
-meter.naam = '50004784'
+meter.naam.waarde = '50004784'
 meter.assetId.identificator.waarde = 'eigen_Id_voor_50004784'
 meter.aantalTelwerken.waarde = 1
-meter.geometry = 'POINT Z(157696.6 219065.5 0)'
+meter.geometry.waarde = 'POINT Z(157696.6 219065.5 0)'
 
 voedingsrelatie = Voedt()
 voedingsrelatie.assetId.identificator.waarde = "A0024-50004784"

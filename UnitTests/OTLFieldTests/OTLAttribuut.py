@@ -43,7 +43,7 @@ class OTLAttribuut(AttributeInfo):
             elif len(value) > kardinaliteit_max:
                 raise ValueError(f'expecting at most {kardinaliteit_max} element(s) in {owner.__class__.__name__}.{self.naam}')
             for el_value in value:
-                if not self.field.validate(el_value):
+                if not self.field.validate(el_value, self):
                     raise ValueError(f'invalid value in list for {owner.__class__.__name__}.{self.naam}: {el_value} is not valid, must be valid for {self.field.naam}')
             self.waarde = value
         else:

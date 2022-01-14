@@ -2,7 +2,9 @@
 
 from UnitTests.OTLFieldTests.AttributeInfo import AttributeInfo
 from UnitTests.OTLFieldTests.DtcIdentificator import DtcIdentificator
+from UnitTests.OTLFieldTests.DtcVegetatieSoortnaam import DtcVegetatieSoortnaam
 from UnitTests.OTLFieldTests.KlAIMToestand import KlAIMToestand
+from UnitTests.OTLFieldTests.KlRioleringsbuisMateriaal import KlRioleringsbuisMateriaal
 from UnitTests.OTLFieldTests.OTLAttribuut import OTLAttribuut
 from UnitTests.OTLFieldTests.StringField import StringField
 
@@ -45,6 +47,47 @@ class TestInstance2(AttributeInfo):
                                    kardinaliteit_min='1',
                                    kardinaliteit_max='*')
 
+        self._materiaal = OTLAttribuut(naam="materiaal",
+                                       label="materiaal",
+                                       field=KlRioleringsbuisMateriaal(),
+                                       objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Mantelbuis.materiaal",
+                                       definition="Bepaalt het materiaal van de mantelbuis.",
+                                       constraints="",
+                                       usagenote="",
+                                       deprecated_version="",
+                                       kardinaliteit_min='1',
+                                       kardinaliteit_max='*')
+
+        self._soort = OTLAttribuut(naam="soort",
+                                       label="soort",
+                                       field=DtcVegetatieSoortnaam(),
+                                       objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#BegroeidVoorkomen.soort",
+                                       definition="Met deze eigenschap worden de Nederlandse soortnaam, wetenschappelijke soortnaam en de soortcode van de meest voorkomende soorten binnen het begroeid oppervlak weergegeven.",
+                                       constraints="",
+                                       usagenote="",
+                                       deprecated_version="",
+                                       kardinaliteit_min='1',
+                                       kardinaliteit_max='*')
+
+    @property
+    def soort(self):
+        """Met deze eigenschap worden de Nederlandse soortnaam, wetenschappelijke soortnaam en de soortcode van de meest voorkomende soorten binnen het begroeid oppervlak weergegeven."""
+        return self._soort.waarde
+
+    @soort.setter
+    def soort(self, value):
+        self._soort.set_waarde(value, owner=self)
+
+
+    @property
+    def materiaal(self):
+        """Bepaalt het materiaal van de mantelbuis."""
+        return self._materiaal.waarde
+
+    @materiaal.setter
+    def materiaal(self, value):
+        self._materiaal.set_waarde(value, owner=self)
+
     @property
     def kleur(self):
         """De kleur van de coating."""
@@ -83,7 +126,7 @@ class TestInstance2(AttributeInfo):
 
 
 class RefactoringTests(unittest.TestCase):
-    def test_requirements(self):
+    def test_StringField(self):
         instance = TestInstance2()
         instance.notitie = "a"
         print(instance.notitie)
@@ -101,6 +144,9 @@ class RefactoringTests(unittest.TestCase):
         self.assertEqual("a", instance.notitie)
         self.assertEqual("b", instance2.notitie)
 
+    def test_ComplexField(self):
+        instance = TestInstance2()
+        instance2 = TestInstance2()
         instance.assetId.identificator = 'id'
         instance.assetId.toegekendDoor = 'AWV'
         instance2.assetId.identificator = 'id2'
@@ -120,6 +166,9 @@ class RefactoringTests(unittest.TestCase):
         with self.assertRaises(TypeError):
             instance.assetId = 2
 
+    def test_KeuzelijstField(self):
+        instance = TestInstance2()
+        instance2 = TestInstance2()
         instance.toestand = 'in-gebruik'
         self.assertEqual('in-gebruik', instance.toestand)
         with self.assertRaises(ValueError):
@@ -136,6 +185,9 @@ class RefactoringTests(unittest.TestCase):
             "geannuleerd\ngepland\nin-gebruik\nin-ontwerp\nin-opbouw\novergedragen\nuit-gebruik\nverwijderd",
             instance.attr_type_info("toestand"))
 
+    def test_StringFieldMetKardinaliteit(self):
+        instance = TestInstance2()
+        instance2 = TestInstance2()
         self.assertEqual(None, instance.kleur)
         with self.assertRaises(ValueError):
             instance.kleur = []
@@ -147,6 +199,27 @@ class RefactoringTests(unittest.TestCase):
             instance.kleur = ("geel")
         with self.assertRaises(TypeError):
             instance.kleur = ["geel", 2]
+
+    def test_KeuzelijstFieldMetKardinaliteit(self):
+        instance = TestInstance2()
+        instance2 = TestInstance2()
+        self.assertEqual(None, instance.materiaal)
+        with self.assertRaises(ValueError):
+            instance.materiaal = []
+        instance.materiaal = ['PP-buizen']
+        self.assertEqual(['PP-buizen'], instance.materiaal)
+        instance.materiaal = ['PP-buizen', 'PVC-buizen']
+        self.assertEqual(['PP-buizen', 'PVC-buizen'], instance.materiaal)
+        with self.assertRaises(TypeError):
+            instance.materiaal = ("PP-buizen")
+        with self.assertRaises(TypeError):
+            instance.materiaal = ["PP-buizen", 2]
+
+    def test_ComplexFieldMetKardinaliteit(self):
+        self.assertFalse(True)
+
+    def test_ComplexFieldInComplexField(self):
+        self.assertFalse(True)
 
     # use setattr and getattr on class/attribuut
     # .attr_info('name attribute') returns info about attribute

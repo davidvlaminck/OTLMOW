@@ -20,8 +20,8 @@ class AIMObject(AIMToestand, AIMDBStatus, OTLAsset, RelatieInteractor):
 
     @abstractmethod
     def __init__(self):
-        AIMToestand.__init__(self)
         AIMDBStatus.__init__(self)
+        AIMToestand.__init__(self)
         OTLAsset.__init__(self)
         RelatieInteractor.__init__(self)
 

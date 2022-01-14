@@ -18,8 +18,8 @@ class StalenProfiel(ConstructieElement, StalenConstructieElement, ConstructieEle
     @abstractmethod
     def __init__(self):
         ConstructieElement.__init__(self)
-        StalenConstructieElement.__init__(self)
         ConstructieElementenGC.__init__(self)
+        StalenConstructieElement.__init__(self)
 
         self.isVoorgebogen = BooleanField(naam="isVoorgebogen",
                                           label="is voorgebogen",

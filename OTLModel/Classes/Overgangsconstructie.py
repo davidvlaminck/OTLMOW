@@ -11,5 +11,5 @@ class Overgangsconstructie(SchokindexVoertuigkering, AansluitendeConstructie):
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        SchokindexVoertuigkering.__init__(self)
         AansluitendeConstructie.__init__(self)
+        SchokindexVoertuigkering.__init__(self)

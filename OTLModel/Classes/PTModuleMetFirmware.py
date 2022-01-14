@@ -13,5 +13,5 @@ class PTModuleMetFirmware(PTRegelaarModule, FirmwareObject):
 
     @abstractmethod
     def __init__(self):
-        PTRegelaarModule.__init__(self)
         FirmwareObject.__init__(self)
+        PTRegelaarModule.__init__(self)

@@ -13,5 +13,5 @@ class Straatmeubilair(Signalisatie, AIMObject):
 
     @abstractmethod
     def __init__(self):
-        Signalisatie.__init__(self)
         AIMObject.__init__(self)
+        Signalisatie.__init__(self)

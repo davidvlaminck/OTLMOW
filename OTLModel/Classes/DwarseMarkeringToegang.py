@@ -13,5 +13,5 @@ class DwarseMarkeringToegang(Markering, AOWSType):
 
     @abstractmethod
     def __init__(self):
-        Markering.__init__(self)
         AOWSType.__init__(self)
+        Markering.__init__(self)

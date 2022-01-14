@@ -16,8 +16,8 @@ class Onderbouw(LaagDikte, Laag):
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        LaagDikte.__init__(self)
         Laag.__init__(self)
+        LaagDikte.__init__(self)
 
         self.isHerstel = BooleanField(naam="isHerstel",
                                       label="is herstel",

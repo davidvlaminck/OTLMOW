@@ -16,9 +16,9 @@ class VoertuigkerendGeluidsschermelement(BijlageVoertuigkering, Geluidsschermele
 
     def __init__(self):
         BijlageVoertuigkering.__init__(self)
+        EigenschappenVoertuigkering.__init__(self)
         Geluidsschermelement.__init__(self)
         SchokindexVoertuigkering.__init__(self)
-        EigenschappenVoertuigkering.__init__(self)
 
         self.werkingsbreedte = KeuzelijstField(naam="werkingsbreedte",
                                                label="werkingsbreedte",

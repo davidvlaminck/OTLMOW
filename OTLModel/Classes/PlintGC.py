@@ -16,8 +16,8 @@ class PlintGC(ConstructieElement, BetonnenConstructieElement, ConstructieElement
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        ConstructieElement.__init__(self)
         BetonnenConstructieElement.__init__(self)
+        ConstructieElement.__init__(self)
         ConstructieElementenGC.__init__(self)
 
         self.afmetingen = DtcAfmetingBxlxhInM()

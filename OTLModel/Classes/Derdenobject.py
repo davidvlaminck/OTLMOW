@@ -16,8 +16,8 @@ class Derdenobject(AIMToestand, AIMDBStatus):
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        AIMToestand.__init__(self)
         AIMDBStatus.__init__(self)
+        AIMToestand.__init__(self)
 
         self.assetId = DtcIdentificator()
         """Unieke identificatie van de asset zoals toegekend door de assetbeheerder of n.a.v. eerste aanlevering door de leverancier."""

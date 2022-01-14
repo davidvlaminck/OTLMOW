@@ -15,8 +15,8 @@ class Zonnepaneel(Voedingspunt, BevestigingGC):
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        Voedingspunt.__init__(self)
         BevestigingGC.__init__(self)
+        Voedingspunt.__init__(self)
 
         self.merk = KeuzelijstField(naam="merk",
                                     label="merk",

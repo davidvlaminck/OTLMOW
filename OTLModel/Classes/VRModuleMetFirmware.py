@@ -16,8 +16,8 @@ class VRModuleMetFirmware(VerkeersregelaarModule, FirmwareObject):
 
     @abstractmethod
     def __init__(self):
-        VerkeersregelaarModule.__init__(self)
         FirmwareObject.__init__(self)
+        VerkeersregelaarModule.__init__(self)
 
         self.merk = KeuzelijstField(naam="merk",
                                     label="merk",

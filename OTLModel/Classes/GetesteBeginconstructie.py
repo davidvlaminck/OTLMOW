@@ -13,8 +13,8 @@ class GetesteBeginconstructie(SchokindexVoertuigkering, Beginstuk):
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        SchokindexVoertuigkering.__init__(self)
         Beginstuk.__init__(self)
+        SchokindexVoertuigkering.__init__(self)
 
         self.performantieklasse = KeuzelijstField(naam="performantieklasse",
                                                   label="performantieklasse",

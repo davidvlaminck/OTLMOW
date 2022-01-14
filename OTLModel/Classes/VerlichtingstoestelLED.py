@@ -26,8 +26,8 @@ De LED driver bevindt zich fysiek in het verlichtingstoestel maar wordt als een 
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        VerlichtingstoestelConnector.__init__(self)
         Verlichtingstoestel.__init__(self)
+        VerlichtingstoestelConnector.__init__(self)
 
         self.aantalTeVerlichtenRijstroken = KeuzelijstField(naam="aantalTeVerlichtenRijstroken",
                                                             label="aantal te verlichten rijstroken",

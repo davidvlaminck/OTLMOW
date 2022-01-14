@@ -16,8 +16,8 @@ class Referentiepunt(AIMObject, Signalisatie, BevestigingGC):
 
     def __init__(self):
         AIMObject.__init__(self)
-        Signalisatie.__init__(self)
         BevestigingGC.__init__(self)
+        Signalisatie.__init__(self)
 
         self.opschrift = DteTekstblok()
         """De notatie van het referentiepunt."""

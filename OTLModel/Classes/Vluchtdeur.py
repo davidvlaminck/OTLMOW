@@ -13,5 +13,5 @@ class Vluchtdeur(AIMObject, Deur, BevestigingGC):
 
     def __init__(self):
         AIMObject.__init__(self)
-        Deur.__init__(self)
         BevestigingGC.__init__(self)
+        Deur.__init__(self)

@@ -11,7 +11,7 @@ class KlLEGCSchermelementType(Keuzelijst):
                          label="Schermelement type",
                          objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlLEGCSchermelementType",
                          definition="Schermelement types.",
-                         usagenote="Klasse uit gebruik sinds versie 2.0.0",
+                         usagenote="Klasse uit gebruik sinds versie 2.0.0 ",
                          deprecated_version="2.0.0",
                          codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlLEGCSchermelementType")
 

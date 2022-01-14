@@ -63,11 +63,11 @@ class Cementbetonverharding(LaagBouwklasse):
                                                     label="oppervlakbehandeling",
                                                     lijst=KlCBVOppervlaktebehandeling(),
                                                     objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Cementbetonverharding.oppervlakbehandeling",
-                                                    definition="Behandeling die wordt toegepast op het oppervlak van een laag, met of zonder toevoeging van materialen, en bestemd is om de eigenschappen van de laag te verbeteren, hetzij bij de uitvoering, hetzij achteraf. ",
+                                                    definition="Behandeling die wordt toegepast op het oppervlak van een laag, met of zonder toevoeging van materialen, en bestemd is om de eigenschappen van de laag te verbeteren, hetzij bij de uitvoering, hetzij achteraf.",
                                                     constraints="",
                                                     usagenote="",
                                                     deprecated_version="")
-        """Behandeling die wordt toegepast op het oppervlak van een laag, met of zonder toevoeging van materialen, en bestemd is om de eigenschappen van de laag te verbeteren, hetzij bij de uitvoering, hetzij achteraf. """
+        """Behandeling die wordt toegepast op het oppervlak van een laag, met of zonder toevoeging van materialen, en bestemd is om de eigenschappen van de laag te verbeteren, hetzij bij de uitvoering, hetzij achteraf."""
 
         self.supplementen = DtcSupplementenCBV()
         """Additionele toevoegingen aan de verharding."""

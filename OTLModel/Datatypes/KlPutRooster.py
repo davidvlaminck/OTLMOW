@@ -11,7 +11,7 @@ class KlPutRooster(Keuzelijst):
                          label="Putrooster",
                          objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlPutRooster",
                          definition="Types rooster van de put.",
-                         usagenote="Klasse uit gebruik sinds versie 2.1.0",
+                         usagenote="Klasse uit gebruik sinds versie 2.1.0 ",
                          deprecated_version="2.1.0",
                          codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlPutRooster")
 

@@ -1,0 +1,39 @@
+# coding=utf-8
+from OTLModel.Datatypes.KwantWrd import KwantWrd
+from OTLModel.Datatypes.LiteralField import LiteralField
+from OTLModel.Datatypes.DecimalFloatField import DecimalFloatField
+
+
+# Generated with OTLPrimitiveDatatypeCreator. To modify: extend, do not edit
+class KwantWrdInKubiekeMeterPerSeconde(KwantWrd):
+    """Een kwantitatieve waarde die een getal in kubieke meter per seconde uitdrukt."""
+
+    def __init__(self, waarde=None):
+        self.eenheid = LiteralField(naam="standaardEenheid",
+                                    label="standaard eenheid",
+                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInKubiekeMeterPerSeconde.standaardEenheid",
+                                    definition="De standaard eenheid bij dit datatype is uitgedrukt in kubieke meter per seconde.",
+                                    constraints='"m3/s"^^cdt:ucumunit',
+                                    usagenote='"m3/s"^^cdt:ucumunit',
+                                    deprecated_version="",
+                                    readonlyValue="m3/s")
+        """De standaard eenheid bij dit datatype is uitgedrukt in kubieke meter per seconde."""
+
+        self.waardeVeld = DecimalFloatField(naam="waarde",
+                                            label="waarde",
+                                            objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInKubiekeMeterPerSeconde.waarde",
+                                            definition="Bevat een getal die bij het datatype hoort.",
+                                            constraints="",
+                                            usagenote="",
+                                            deprecated_version="")
+        """Bevat een getal die bij het datatype hoort."""
+
+        super().__init__(naam="KwantWrdInKubiekeMeterPerSeconde",
+                         label="Kwantitatieve waarde in kubieke meter per seconde",
+                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInKubiekeMeterPerSeconde",
+                         definition="Een kwantitatieve waarde die een getal in kubieke meter per seconde uitdrukt.",
+                         usagenote="",
+                         deprecated_version="",
+                         waardeVeld=self.waardeVeld,
+                         eenheidVeld=self.eenheid,
+                         waarde=waarde)

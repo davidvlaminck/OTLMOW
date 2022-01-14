@@ -18,11 +18,11 @@ class Overstort(LinkendElement):
         super().__init__()
 
         self.drempellengte = KwantWrdInMillimeter()
-        """Drempellengte of breedte van de overstort. Deze wordt gemeten aan de kortste zijdevan de drempel."""
+        """Drempellengte of breedte van de overstort. Deze wordt gemeten aan de kortste zijde van de drempel."""
         self.drempellengte.naam = "drempellengte"
         self.drempellengte.label = "breedte"
         self.drempellengte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Overstort.drempellengte"
-        self.drempellengte.definition = "Drempellengte of breedte van de overstort. Deze wordt gemeten aan de kortste zijdevan de drempel."
+        self.drempellengte.definition = "Drempellengte of breedte van de overstort. Deze wordt gemeten aan de kortste zijde van de drempel."
         self.drempellengte.constraints = ""
         self.drempellengte.usagenote = ""
         self.drempellengte.deprecated_version = ""

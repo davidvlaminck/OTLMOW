@@ -18,9 +18,9 @@ class ProefVerderOnderzoekTrekproef(Proef):
         verderOnderzoekTrekproefField.naam = "verderOnderzoekTrekproef"
         verderOnderzoekTrekproefField.label = "verder onderzoek trekproef"
         verderOnderzoekTrekproefField.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefVerderOnderzoekTrekproef.verderOnderzoekTrekproef"
-        verderOnderzoekTrekproefField.definition = "Een trekproef is een niet-destructieve methode om de stabiliteit (gevoeligheid voor windworp) vanbomen te testen door een kunstmatige belasting op de stam te relateren met het kantelen van destamvoet."
+        verderOnderzoekTrekproefField.definition = "Een trekproef is een niet-destructieve methode om de stabiliteit (gevoeligheid voor windworp) van bomen te testen door een kunstmatige belasting op de stam te relateren met het kantelen van de stamvoet."
         verderOnderzoekTrekproefField.constraints = ""
         verderOnderzoekTrekproefField.usagenote = ""
         verderOnderzoekTrekproefField.deprecated_version = ""
         self.verderOnderzoekTrekproef = KardinaliteitField(minKardinaliteit="1", maxKardinaliteit="*", fieldToMultiply=verderOnderzoekTrekproefField)
-        """Een trekproef is een niet-destructieve methode om de stabiliteit (gevoeligheid voor windworp) vanbomen te testen door een kunstmatige belasting op de stam te relateren met het kantelen van destamvoet."""
+        """Een trekproef is een niet-destructieve methode om de stabiliteit (gevoeligheid voor windworp) van bomen te testen door een kunstmatige belasting op de stam te relateren met het kantelen van de stamvoet."""

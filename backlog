@@ -23,8 +23,11 @@ hoe libraries gemakkelijk importeren?
 geometrie artefact gebruiken om WKT strings inhoudelijk te checken
 herbekijken ttl bestanden inlezen, zie voorbeeld onderaan backlog
 postenmapping: implementatie in beide richtingen: van mapping naar assets en omgekeerd
-. Get_attributes() om door atrrivuten te lopen.
+. Get_attributes() om door atrrivuten te lopen. Dict
 Docstring appenden vanuit otlbject met gnerieke functies
+KwantWrd met readonly doen > setter weglaten 
+Alle tests laten passen met 1 script
+Lie demo via console? 
 
 To check:
 Agent

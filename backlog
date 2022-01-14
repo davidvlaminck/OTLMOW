@@ -4,13 +4,8 @@ relatieCreator => gebruikt relatieValidator en _validatie methode op objecten ze
 
 
 TODO's:
-OTL model houdt geen rekening met bestaande classes en datatypes (deze moeten gewist worden indien niet meer in de OTL)
-Asset Factory: vervangt classloader
-  - create_asset_from_typURI
-  - copy_values_from_asset_to_asset met **args
-  - combinatie
-  - gebruikt mss dot notatie  of letterlijk lezen van attributen
-    - copy waardes door fields te shallow copy'en
+OTL model creator houdt geen rekening met bestaande classes en datatypes (deze moeten gewist worden indien niet meer in de OTL)
+Asset Factory: 
   - create similar relations from asset
 deprecated classes implementeren => evt warning geven bij gebruik
 storage (in memory)
@@ -20,8 +15,7 @@ AnyURI implementeren
 utf-8 encoding > setting in pycharm aanpassen + UTF-8 + BOM aanzetten voor windows
 Agent - Keuring ondersteuning > Worden niet correct gegenereerd
 hoe libraries gemakkelijk importeren?
-geometrie artefact gebruiken om WKT strings inhoudelijk te checken
-herbekijken ttl bestanden inlezen, zie voorbeeld onderaan backlog
+geometrie artefact gebruiken om WKT strings inhoudelijk te checke
 postenmapping: implementatie in beide richtingen: van mapping naar assets en omgekeerd
 . Get_attributes() om door atrrivuten te lopen. Dict
 Docstring appenden vanuit otlbject met gnerieke functies

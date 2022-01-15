@@ -1,22 +1,28 @@
-relaties leggen: validatie op classes zelf is moeilijk maar kan mits extra methode aanroepen
-relaties leggen: mogelijk maken om te leggen vanuit doel of bron of valideren
-relatieCreator => gebruikt relatieValidator en _validatie methode op objecten zelf om te verifiëren of een relatie mag gelegd worden. Houdt geen rekening met bestaande relaties
-
-
-TODO's:
-OTL model creator houdt geen rekening met bestaande classes en datatypes (deze moeten gewist worden indien niet meer in de OTL)
-Asset Factory: 
-  - create similar relations from asset
-Create_model(pure=False) 
-deprecated classes implementeren => evt warning geven bij gebruik
-storage (in memory)
-tempId's vs bestaande id's
-agents kunnen niet zelf aangemaakt worden
-AnyURI implementeren
+Fix
 utf-8 encoding > setting in pycharm aanpassen + UTF-8 + BOM aanzetten voor windows
 Agent - Keuring ondersteuning > Worden niet correct gegenereerd
-hoe libraries gemakkelijk importeren?
-geometrie artefact gebruiken om WKT strings inhoudelijk te checke
+
+
+NewFeatures
+relatieCreator => gebruikt relatieValidator en _validatie methode op objecten zelf om te verifiëren of een relatie mag gelegd worden. Houdt geen rekening met bestaande relaties
+OTL model creator houdt geen rekening met bestaande classes en datatypes (deze moeten gewist worden indien niet meer in de OTL)
+Create_model(pure=False): pure maakt een model zonder toevoegingen zoals relatieInteractor en otlobject
+Asset Factory: create similar relations from asset
+deprecated: gebruik ervan moet in de logs een warning geven, zowel bij classes als attributen
+Store: assets opslaan in Store waar je gemakkelijk kan zoekn op id of comb van naam en type. Maakt ook mogelijk om te controleren op ids of dubbele relaties 
+Automatisch temp id's genereren voor assets waar die niet is ingevuld (alleen nuttig indien via Factory aangemaakt, de gebruiker moet de ids kunnen vinden om bv relaties te leggen 
+AgentCollection: bevat Agents zodat men gemakkelijk relaties kan leggen naar bestaande Agents 
+Inlezen van Geometrie Artefact zodat per type validatie op geometrie kan gebeuren
+
+
+Demo
+
+ 
+
+TODO's: 
+
+AnyURI implementeren
+hoe libraries gemakkelijk importeren? 
 postenmapping: implementatie in beide richtingen: van mapping naar assets en omgekeerd
 . Get_attributes() om door atrrivuten te lopen. Dict
 Docstring appenden vanuit otlbject met gnerieke functies

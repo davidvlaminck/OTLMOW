@@ -12,7 +12,7 @@ relatieCreator => gebruikt relatieValidator en _validatie methode op objecten ze
 OTL model creator houdt geen rekening met bestaande classes en datatypes (deze moeten gewist worden indien niet meer in de OTL)
 Create_model(pure=False): pure maakt een model zonder toevoegingen zoals relatieInteractor en otlobject
 Asset Factory: create similar relations from asset
-deprecated: gebruik ervan moet in de logs een warning geven, zowel bij classes als attributen
+deprecated: gebruik ervan moet in de logs een warning geven, zowel bij classes als attributen. Gebruik buitin warnings
 Store: assets opslaan in Store waar je gemakkelijk kan zoekn op id of comb van naam en type. Maakt ook mogelijk om te controleren op ids of dubbele relaties 
 Automatisch temp id's genereren voor assets waar die niet is ingevuld (alleen nuttig indien via Factory aangemaakt, de gebruiker moet de ids kunnen vinden om bv relaties te leggen 
 AgentCollection: bevat Agents zodat men gemakkelijk relaties kan leggen naar bestaande Agents 
@@ -40,7 +40,7 @@ use case: migratietraject met testdata ondersteunen
 > allerelei features toegevoegd, zoals import, validatie, helperfuncties etc.
 Ooit vertrokken van meest simpele model, maar heeft geen inheritance metadata op types en attrs en heeft geen validatie. 
 Dotnotatie bevatte waarde om validatie af te dwingen
-
+Voordeel echte overerving: filter asssets op abstract type, filter relatie van assets
 
 Fieldrefactor inspiratie 
 DtcAdresWaardes

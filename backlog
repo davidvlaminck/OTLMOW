@@ -23,6 +23,9 @@ Docstring appenden vanuit otlbject met gnerieke functies
 KwantWrd met readonly doen > setter weglaten 
 Alle tests laten passen met 1 script
 Live demo via console? 
+type zoeken via uri of naam
+use case: migratietraject met testdata ondersteunen
+> allerelei features toegevoegd, zoals import, validatie, helperfuncties etc.
 Ooit vertrokken van meest simpele model, maar heeft geen inheritance metadata op types en attrs en heeft geen validatie. 
 Dotnotatie bevatte waarde om validatie af te dwingen 
 Info over attribuut: _attr

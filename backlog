@@ -7,6 +7,7 @@ TODO's:
 OTL model creator houdt geen rekening met bestaande classes en datatypes (deze moeten gewist worden indien niet meer in de OTL)
 Asset Factory: 
   - create similar relations from asset
+Create_model(pure=False) 
 deprecated classes implementeren => evt warning geven bij gebruik
 storage (in memory)
 tempId's vs bestaande id's

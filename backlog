@@ -7,7 +7,7 @@ Nakijken Sokkel (dtc ontbreekt), Signalisatie (abstract zonder attributen)
 
 
 NewFeatures
-Dependencies resolven
+Dependencies resolven: pip install -r requirements.txt 
 relatieCreator => gebruikt relatieValidator en _validatie methode op objecten zelf om te verifiëren of een relatie mag gelegd worden. Houdt geen rekening met bestaande relaties
 OTL model creator houdt geen rekening met bestaande classes en datatypes (deze moeten gewist worden indien niet meer in de OTL)
 Create_model(pure=False): pure maakt een model zonder toevoegingen zoals relatieInteractor en otlobject

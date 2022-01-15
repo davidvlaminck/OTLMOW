@@ -1,9 +1,13 @@
 Fix
 utf-8 encoding > setting in pycharm aanpassen + UTF-8 + BOM aanzetten voor windows
 Agent - Keuring ondersteuning > Worden niet correct gegenereerd
+Alle tests laten lopen met 1 script
+Nakijken implementatie van Agent, proef en keuring:overerving van de base class otlobject: query'en welke concrete classes NIET overerven van AIMObject > RelatieInteractor en OTL Asset toevoegen aan die assets
+Nakijken Sokkel (dtc ontbreekt), Signalisatie (abstract zonder attributen) 
 
 
 NewFeatures
+Dependencies resolven
 relatieCreator => gebruikt relatieValidator en _validatie methode op objecten zelf om te verifiëren of een relatie mag gelegd worden. Houdt geen rekening met bestaande relaties
 OTL model creator houdt geen rekening met bestaande classes en datatypes (deze moeten gewist worden indien niet meer in de OTL)
 Create_model(pure=False): pure maakt een model zonder toevoegingen zoals relatieInteractor en otlobject
@@ -13,40 +17,32 @@ Store: assets opslaan in Store waar je gemakkelijk kan zoekn op id of comb van n
 Automatisch temp id's genereren voor assets waar die niet is ingevuld (alleen nuttig indien via Factory aangemaakt, de gebruiker moet de ids kunnen vinden om bv relaties te leggen 
 AgentCollection: bevat Agents zodat men gemakkelijk relaties kan leggen naar bestaande Agents 
 Inlezen van Geometrie Artefact zodat per type validatie op geometrie kan gebeuren
+AnyURIField implementeren met validatie voor zover dat mogelijk is
+Postenmapping:
+- van post autoamtisch asset maken met ingevulde waardes
+- van ingevulde asset uitzoeken welke post of posten dit is 
+.attributenIterator: iterator voor de attributen van dat attribuut of class (zoeken naar attributen die met _ beginnen en otlfield zijn. In dict steken
+Docstring appenden vanuit otlbject met generieke functies zoals attr_info
+KwantWrd met readonly doen > setter weglaten 
+Attr_info met lege parameter: info over object zelf, werkt niet voor classed en type want dat heeft geen field
 
 
 Demo
+Via console? Vermijd de nood voor imports
+Enkel facility importeren
+Creeer object via uri of naam
+Vul asset info, met juiste en foute waardes
+Vraag attribuut informatie op
+Ander gebruik: normalisatie script
 
- 
-
-TODO's: 
-
-AnyURI implementeren
-hoe libraries gemakkelijk importeren? 
-postenmapping: implementatie in beide richtingen: van mapping naar assets en omgekeerd
-. Get_attributes() om door atrrivuten te lopen. Dict
-Docstring appenden vanuit otlbject met gnerieke functies
-KwantWrd met readonly doen > setter weglaten 
-Alle tests laten passen met 1 script
-Live demo via console? 
-type zoeken via uri of naam
+DemoInfo
 use case: migratietraject met testdata ondersteunen
 > allerelei features toegevoegd, zoals import, validatie, helperfuncties etc.
 Ooit vertrokken van meest simpele model, maar heeft geen inheritance metadata op types en attrs en heeft geen validatie. 
-Dotnotatie bevatte waarde om validatie af te dwingen 
-Info over attribuut: _attr
+Dotnotatie bevatte waarde om validatie af te dwingen
 
 
-To check:
-Agent
-Keuring
-Proef
-Sokkel (dtc ontbreekt)
-Signalisatie (abstract zonder attributen)
-query'en welke concrete classes NIET overerven van AIMObject > RelatieInteractor en OTL Asset toevoegen aan die assets
-AIMObject, Seinlantaarn > encoding probleem > voorlopige oplossing ==> # coding=utf-8
-
-Fieldrefactor
+Fieldrefactor inspiratie 
 DtcAdresWaardes
 KwantWrdInMeterWaardes
 

@@ -22,7 +22,10 @@ postenmapping: implementatie in beide richtingen: van mapping naar assets en omg
 Docstring appenden vanuit otlbject met gnerieke functies
 KwantWrd met readonly doen > setter weglaten 
 Alle tests laten passen met 1 script
-Lie demo via console? 
+Live demo via console? 
+Ooit vertrokken van meest simpele model, maar heeft geen inheritance metadata op types en attrs en heeft geen validatie. 
+Dotnotatie bevatte waarde om validatie af te dwingen 
+Info over attribuut: _attr
 
 To check:
 Agent

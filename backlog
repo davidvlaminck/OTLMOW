@@ -30,6 +30,7 @@ Ooit vertrokken van meest simpele model, maar heeft geen inheritance metadata op
 Dotnotatie bevatte waarde om validatie af te dwingen 
 Info over attribuut: _attr
 
+
 To check:
 Agent
 Keuring
@@ -39,7 +40,9 @@ Signalisatie (abstract zonder attributen)
 query'en welke concrete classes NIET overerven van AIMObject > RelatieInteractor en OTL Asset toevoegen aan die assets
 AIMObject, Seinlantaarn > encoding probleem > voorlopige oplossing ==> # coding=utf-8
 
-
+Fieldrefactor
+DtcAdresWaardes
+KwantWrdInMeterWaardes
 
 Facility
 * Design

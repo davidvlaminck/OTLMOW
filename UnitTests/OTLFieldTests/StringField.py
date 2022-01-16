@@ -7,9 +7,9 @@ class StringField(OTLField):
         self.naam = "StringField"
         self.definition = "Beschrijft een tekstregel volgens http://www.w3.org/2001/XMLSchema#string."
 
-    def validate(self, value, attribuut=None):
+    def validate(value, attribuut):
         if value is not None and not isinstance(value, str):
-            raise TypeError(f'expecting string in {self.naam}')
+            raise TypeError(f'expecting string in {attribuut.naam}')
         return True
 
     def __str__(self):

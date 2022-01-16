@@ -8,7 +8,7 @@ from UnitTests.OTLFieldTests.OTLField import OTLField
 
 class OTLAttribuut(AttributeInfo):
     def __init__(self, naam='', label='', objectUri='', definition='', constraints='', usagenote='', deprecated_version='',
-                 kardinaliteit_min='1', kardinaliteit_max='1', field=OTLField(), readonly=False, readonlyValue=None):
+                 kardinaliteit_min='1', kardinaliteit_max='1', field=type, readonly=False, readonlyValue=None):
         self.naam = naam
         self.label = label
         self.objectUri = objectUri
@@ -25,8 +25,12 @@ class OTLAttribuut(AttributeInfo):
         if readonly:
             self.__dict__["waarde"] = readonlyValue
 
-        if isinstance(field, ComplexField):
-            self.waarde = copy.deepcopy(self.field.waarde)
+        t =(field)
+        d = t()
+
+        if isinstance(d, ComplexField):
+            w = d.waarde()
+            self.waarde = w
 
     def set_waarde(self, value, owner=None):
         # in combinatie met kard indien nodig

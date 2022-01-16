@@ -20,10 +20,10 @@ class AttributeInfo:
             attribuut = attribuut_naam.split('.')[0]
             rest = attribuut_naam.split('.', 1)[1]
             at = getattr(self, '_' + attribuut)
-            if isinstance(at.field, ComplexField):
+            if isinstance(at.field(), ComplexField):
                 return at.waarde.attr_type_info(rest)
             else:
                 return at.attr_type_info(rest)
         else:
             at = getattr(self, '_' + attribuut_naam)
-            return str(at.field)
+            return str(at.field())

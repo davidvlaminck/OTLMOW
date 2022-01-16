@@ -11,5 +11,5 @@ class OTLField:
         self.usagenote = ''
 
     @abstractmethod
-    def validate(self, value, attribuut=None):
+    def validate(value, attribuut):
         pass

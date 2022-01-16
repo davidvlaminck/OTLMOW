@@ -6,7 +6,7 @@ from UnitTests.OTLFieldTests.ComplexField import ComplexField
 
 class DtcIdentificatorWaardenObject(AttributeInfo):
     def __init__(self):
-        self._identificator = OTLAttribuut(field=StringField(),
+        self._identificator = OTLAttribuut(field=StringField,
                                            naam="identificator",
                                            label="identificator",
                                            objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcIdentificator.identificator",
@@ -15,7 +15,7 @@ class DtcIdentificatorWaardenObject(AttributeInfo):
                                            usagenote="",
                                            deprecated_version="")
 
-        self._toegekendDoor = OTLAttribuut(field=StringField(),
+        self._toegekendDoor = OTLAttribuut(field=StringField,
                                            naam="toegekendDoor",
                                            label="toegekend door",
                                            objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcIdentificator.toegekendDoor",
@@ -52,4 +52,4 @@ class DtcIdentificator(ComplexField, AttributeInfo):
         self.definition = "Complex datatype voor de identificator van een AIM object volgens de bron van de identificator.",
         self.usagenote = "",
         self.deprecated_version = ""
-        self.waarde = DtcIdentificatorWaardenObject()
+        self.waarde = DtcIdentificatorWaardenObject

@@ -6,7 +6,7 @@ from UnitTests.OTLFieldTests.ComplexField import ComplexField
 
 class DtcVegetatieSoortnaamWaarden(AttributeInfo):
     def __init__(self):
-        self._code = OTLAttribuut(field=StringField(),
+        self._code = OTLAttribuut(field=StringField,
                                   naam="code",
                                   label="code",
                                   objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcVegetatieSoortnaam.code",
@@ -15,7 +15,7 @@ class DtcVegetatieSoortnaamWaarden(AttributeInfo):
                                   usagenote="De GBIF code is een unieke gestandaardiseerde code uitgegeven door het GBIF (the Global Biodiversity Information Facility - GBIF.org)",
                                   deprecated_version="")
 
-        self._soortnaamNederlands = OTLAttribuut(field=StringField(),
+        self._soortnaamNederlands = OTLAttribuut(field=StringField,
                                                  label="soortnaam nederlands",
                                                  objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcVegetatieSoortnaam.soortnaamNederlands",
                                                  definition="De Nederlandse soortnaam van de beplanting.",
@@ -23,7 +23,7 @@ class DtcVegetatieSoortnaamWaarden(AttributeInfo):
                                                  usagenote="",
                                                  deprecated_version="")
 
-        self._soortnaamWetenschappelijk = OTLAttribuut(field=StringField(),
+        self._soortnaamWetenschappelijk = OTLAttribuut(field=StringField,
                                                        naam="soortnaamWetenschappelijk",
                                                        label="soortnaam wetenschappelijk",
                                                        objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcVegetatieSoortnaam.soortnaamWetenschappelijk",
@@ -69,4 +69,4 @@ class DtcVegetatieSoortnaam(ComplexField, AttributeInfo):
         self.definition = "Met deze eigenschap worden de Nederlandse soortnaam, wetenschappelijke soortnaam en de soortcode van de meest voorkomende soorten binnen het begroeid oppervlak weergegeven.",
         self.usagenote = "",
         self.deprecated_version = ""
-        self.waarde = DtcVegetatieSoortnaamWaarden()
+        self.waarde = DtcVegetatieSoortnaamWaarden

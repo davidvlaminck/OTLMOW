@@ -7,7 +7,7 @@ Nakijken Sokkel (dtc ontbreekt), Signalisatie (abstract zonder attributen)
 Gebruik classes met parameter namen
 OTL attribuut etc definiëren met lege strings. Dat kan dan bij creator classes weggelaten worden 
 Geldige relatie lijst refactor naar isistance met inheritance ipv alle relaties en testen:https://stackoverflow.com/questions/31488362/why-is-dict-faster-than-if-else-in-python/31488416
-
+Field niet instantieren
 
 NewFeatures
 Dependencies resolven: pip install -r requirements.txt 

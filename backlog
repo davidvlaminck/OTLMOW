@@ -17,8 +17,8 @@ Agent - Keuring ondersteuning > Worden niet correct gegenereerd
 hoe libraries gemakkelijk importeren?
 geometrie artefact gebruiken om WKT strings inhoudelijk te checke
 postenmapping: implementatie in beide richtingen: van mapping naar assets en omgekeerd
-. Get_attributes() om door atrrivuten te lopen. Dict
-Docstring appenden vanuit otlbject met gnerieke functies
+. Get_attributes() om door atrributen te lopen. Dict
+Docstring appenden vanuit otlbject met generieke functies
 KwantWrd met readonly doen > setter weglaten 
 Alle tests laten passen met 1 script
 Lie demo via console? 

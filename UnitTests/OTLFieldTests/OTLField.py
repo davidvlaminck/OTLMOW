@@ -10,6 +10,7 @@ class OTLField:
         self.constraints = ''
         self.usagenote = ''
 
+    @staticmethod
     @abstractmethod
     def validate(value, attribuut):
         pass

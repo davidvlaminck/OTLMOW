@@ -26,4 +26,4 @@ class AttributeInfo:
                 return at.attr_type_info(rest)
         else:
             at = getattr(self, '_' + attribuut_naam)
-            return str(at.field())
+            return str(at.field)

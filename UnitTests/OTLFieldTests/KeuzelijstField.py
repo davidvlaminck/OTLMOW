@@ -3,10 +3,11 @@ from UnitTests.OTLFieldTests.OTLField import OTLField
 
 
 class KeuzelijstField(OTLField):
+    @staticmethod
     def validate(value, attribuut):
         if not isinstance(value, str):
             raise TypeError(f'{value} is not the correct type. Expecting a string')
-        if value is not None and not value in list(map(lambda x: x.invulwaarde, attribuut.options)):
+        if value is not None and not value in list(map(lambda x: x.invulwaarde, attribuut.field.options)):
             raise ValueError(
                 f'{value} is not a valid option for {attribuut.naam}, find the valid options using .attr_type_info("{attribuut.naam}")')
         return True

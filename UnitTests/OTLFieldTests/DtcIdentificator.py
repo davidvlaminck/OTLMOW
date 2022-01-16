@@ -4,7 +4,7 @@ from UnitTests.OTLFieldTests.StringField import StringField
 from UnitTests.OTLFieldTests.ComplexField import ComplexField
 
 
-class DtcIdentificatorWaardenObject(AttributeInfo):
+class DtcIdentificatorWaarden(AttributeInfo):
     def __init__(self):
         self._identificator = OTLAttribuut(field=StringField,
                                            naam="identificator",
@@ -52,4 +52,4 @@ class DtcIdentificator(ComplexField, AttributeInfo):
         self.definition = "Complex datatype voor de identificator van een AIM object volgens de bron van de identificator.",
         self.usagenote = "",
         self.deprecated_version = ""
-        self.waarde = DtcIdentificatorWaardenObject
+        self.waarde = DtcIdentificatorWaarden

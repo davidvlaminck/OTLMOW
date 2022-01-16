@@ -3,6 +3,7 @@ import math
 
 from UnitTests.OTLFieldTests.AttributeInfo import AttributeInfo
 from UnitTests.OTLFieldTests.ComplexField import ComplexField
+from UnitTests.OTLFieldTests.KeuzelijstField import KeuzelijstField
 from UnitTests.OTLFieldTests.OTLField import OTLField
 
 
@@ -21,16 +22,12 @@ class OTLAttribuut(AttributeInfo):
         self.kardinaliteit_max = kardinaliteit_max
         self.readonlyValue = None
         self.waarde = None
-        self.field = field
+        self.field = field()
         if readonly:
             self.__dict__["waarde"] = readonlyValue
 
-        t =(field)
-        d = t()
-
-        if isinstance(d, ComplexField):
-            w = d.waarde()
-            self.waarde = w
+        if isinstance(self.field, ComplexField):
+            self.waarde = self.field.waarde()
 
     def set_waarde(self, value, owner=None):
         # in combinatie met kard indien nodig
@@ -51,7 +48,7 @@ class OTLAttribuut(AttributeInfo):
                     raise ValueError(f'invalid value in list for {owner.__class__.__name__}.{self.naam}: {el_value} is not valid, must be valid for {self.field.naam}')
             self.waarde = value
         else:
-            if self.field.validate(value, attribuut=self):
+            if self.field.validate(value=value, attribuut=self):
                 self.waarde = value
 
     def __str__(self):

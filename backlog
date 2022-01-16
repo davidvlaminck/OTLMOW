@@ -48,6 +48,7 @@ use case: migratietraject met testdata ondersteunen
 Ooit vertrokken van meest simpele model, maar heeft geen inheritance metadata op types en attrs en heeft geen validatie. 
 Dotnotatie bevatte waarde om validatie af te dwingen
 Voordeel echte overerving: filter asssets op abstract type, filter relatie van assets
+Dynamic typing voor union types
 
 Fieldrefactor inspiratie 
 DtcAdresWaardes

@@ -9,6 +9,8 @@ from ModelGenerator.OSLODatatypePrimitive import OSLODatatypePrimitive
 from ModelGenerator.OSLODatatypePrimitiveAttribuut import OSLODatatypePrimitiveAttribuut
 from ModelGenerator.OTLPrimitiveDatatypeCreator import OTLPrimitiveDatatypeCreator
 
+ROOT_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
 
 class PrimitiveDatatypeOSLOCollector(OSLOCollector):
     def __init__(self, reader):
@@ -208,9 +210,8 @@ class OTLPrimitiveDatatypeCreatorTests(unittest.TestCase):
         dataToWrite = creator.CreateBlockToWriteFromPrimitiveTypes(KwantWrdInVolt)
         creator.writeToFile(KwantWrdInVolt, 'Datatypes', dataToWrite, '../../')
 
-        base_dir = os.path.dirname(os.path.realpath(__file__))
-
-        self.assertTrue(os.path.isfile(f'{base_dir}/../../OTLModel/Datatypes/KwantWrdInVolt.py'))
+        filelocation = os.path.abspath(os.path.join(os.sep, ROOT_DIR, 'OTLModel/Datatypes/KwantWrdInVolt.py'))
+        self.assertTrue(os.path.isfile(filelocation))
 
     def test_getEenheidFromConstraintsEmptyString(self):
         logger = NoneLogger()

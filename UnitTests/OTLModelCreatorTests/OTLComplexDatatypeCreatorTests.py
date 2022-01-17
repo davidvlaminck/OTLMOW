@@ -12,6 +12,7 @@ from ModelGenerator.OSLOTypeLink import OSLOTypeLink
 from ModelGenerator.OTLComplexDatatypeCreator import OTLComplexDatatypeCreator
 from ModelGenerator.SQLDbReader import SQLDbReader
 
+ROOT_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 class ComplexDatatypeOSLOCollector(OSLOCollector):
     def __init__(self, reader):
@@ -276,7 +277,8 @@ class OTLComplexDatatypeCreatorTests(unittest.TestCase):
         dataToWrite = creator.CreateBlockToWriteFromComplexTypes(dtcAdres)
         creator.writeToFile(dtcAdres, 'Datatypes', dataToWrite, '../../')
 
-        self.assertTrue(os.path.isfile('../../OTLModel/Datatypes/DtcAdres.py'))
+        filelocation = os.path.abspath(os.path.join(os.sep, ROOT_DIR, 'OTLModel/Datatypes/DtcAdres.py'))
+        self.assertTrue(os.path.isfile(filelocation))
 
     def test_WriteToFileDtcRechtspersoonOSLODatatypeComplex(self):
         logger = NoneLogger()
@@ -294,7 +296,8 @@ class OTLComplexDatatypeCreatorTests(unittest.TestCase):
         dataToWrite = creator.CreateBlockToWriteFromComplexTypes(DtcRechtspersoon)
         creator.writeToFile(DtcRechtspersoon, 'Datatypes', dataToWrite, '../../')
 
-        self.assertTrue(os.path.isfile('../../OTLModel/Datatypes/DtcRechtspersoon.py'))
+        filelocation = os.path.abspath(os.path.join(os.sep, ROOT_DIR, 'OTLModel/Datatypes/DtcRechtspersoon.py'))
+        self.assertTrue(os.path.isfile(filelocation))
 
     def test_WriteToFileDtcMaaienOSLODatatypeComplex(self):
         logger = NoneLogger()
@@ -312,4 +315,5 @@ class OTLComplexDatatypeCreatorTests(unittest.TestCase):
         dataToWrite = creator.CreateBlockToWriteFromComplexTypes(DtcMaaien)
         creator.writeToFile(DtcMaaien, 'Datatypes', dataToWrite, '../../')
 
-        self.assertTrue(os.path.isfile('../../OTLModel/Datatypes/DtcMaaien.py'))
+        filelocation = os.path.abspath(os.path.join(os.sep, ROOT_DIR, 'OTLModel/Datatypes/DtcMaaien.py'))
+        self.assertTrue(os.path.isfile(filelocation))

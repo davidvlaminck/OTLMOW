@@ -11,6 +11,8 @@ from ModelGenerator.OTLEnumerationCreator import OTLEnumerationCreator
 from ModelGenerator.SQLDbReader import SQLDbReader
 from OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
+ROOT_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
 
 class EnumerationOSLOCollector(OSLOCollector):
     def __init__(self, reader):
@@ -136,7 +138,8 @@ class OTLEnumerationCreatorTests(unittest.TestCase):
         dataToWrite = creator.CreateBlockToWriteFromEnumerations(KlAIMToestand)
         creator.writeToFile(KlAIMToestand, 'Datatypes', dataToWrite, '../../')
 
-        self.assertTrue(os.path.isfile('../../OTLModel/Datatypes/KlAIMToestand.py'))
+        filelocation = os.path.abspath(os.path.join(os.sep, ROOT_DIR, 'OTLModel/Datatypes/KlAIMToestand.py'))
+        self.assertTrue(os.path.isfile(filelocation))
 
     def test_WriteToFileOSLOEnumeration2(self):
         logger = NoneLogger()
@@ -154,7 +157,8 @@ class OTLEnumerationCreatorTests(unittest.TestCase):
         dataToWrite = creator.CreateBlockToWriteFromEnumerations(KlAIMToestand)
         creator.writeToFile(KlAIMToestand, 'Datatypes', dataToWrite, '../../')
 
-        self.assertTrue(os.path.isfile('../../OTLModel/Datatypes/KlAlgProvincie.py'))
+        filelocation = os.path.abspath(os.path.join(os.sep, ROOT_DIR, 'OTLModel/Datatypes/KlAlgProvincie.py'))
+        self.assertTrue(os.path.isfile(filelocation))
 
     def test_getKeuzelijstWaardesFromUri(self):
         logger = NoneLogger()

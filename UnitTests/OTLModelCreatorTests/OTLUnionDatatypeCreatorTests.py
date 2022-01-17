@@ -13,6 +13,9 @@ from ModelGenerator.OTLUnionDatatypeCreator import OTLUnionDatatypeCreator
 from ModelGenerator.SQLDbReader import SQLDbReader
 
 
+ROOT_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+
 class UnionDatatypeOSLOCollector(OSLOCollector):
     def __init__(self, reader):
         super().__init__(reader)
@@ -153,8 +156,7 @@ class OTLUnionDatatypeCreatorTests(unittest.TestCase):
     def test_WriteToFileDtcAdresOSLODatatypeUnion(self):
         logger = NoneLogger()
 
-        base_dir = os.path.dirname(os.path.realpath(__file__))
-        file_location = f'{base_dir}/../InputFiles/OTL.db'
+        file_location = os.path.abspath(os.path.join(os.sep, ROOT_DIR, 'InputFiles/OTL.db'))
         sql_reader = SQLDbReader(file_location)
         oslo_creator = OSLOInMemoryCreator(sql_reader)
         collector = OSLOCollector(oslo_creator)
@@ -166,5 +168,6 @@ class OTLUnionDatatypeCreatorTests(unittest.TestCase):
         dataToWrite = creator.CreateBlockToWriteFromUnionTypes(DtuLichtmastMasthoogte)
         creator.writeToFile(DtuLichtmastMasthoogte, 'Datatypes', dataToWrite, '../../')
 
-        self.assertTrue(os.path.isfile('../../OTLModel/Datatypes/DtuLichtmastMasthoogte.py'))
+        filelocation = os.path.abspath(os.path.join(os.sep, ROOT_DIR, 'OTLModel/Datatypes/DtuLichtmastMasthoogte.py'))
+        self.assertTrue(os.path.isfile(filelocation))
 

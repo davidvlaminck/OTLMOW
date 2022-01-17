@@ -145,6 +145,7 @@ class TestInstance2(AttributeInfo):
 
 
 class RefactoringTests(unittest.TestCase):
+    @unittest.skip("not implemented yet")
     def test_AttrInfoOfClass(self):
         instance = TestInstance2()
         result = instance.attr_info()  # displays info about itself
@@ -297,9 +298,11 @@ possible values:
         with self.assertRaises(TypeError):
             instance.materiaal = ["PP-buizen", 2]
 
+    @unittest.skip("not implemented yet")
     def test_ComplexFieldMetKardinaliteit(self):
         self.assertFalse(True)
 
+    @unittest.skip("not implemented yet")
     def test_ComplexFieldInComplexField(self):
         self.assertFalse(True)
 

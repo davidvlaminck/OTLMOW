@@ -13,6 +13,8 @@ from ModelGenerator.OSLOTypeLink import OSLOTypeLink
 from ModelGenerator.OTLClassCreator import OTLClassCreator
 from ModelGenerator.SQLDbReader import SQLDbReader
 
+ROOT_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
 
 class ClassOSLOCollector(OSLOCollector):
     def __init__(self, reader):
@@ -187,7 +189,8 @@ class OTLClassCreatorTests(unittest.TestCase):
         dataToWrite = creator.CreateBlockToWriteFromClasses(containerBuis)
         creator.writeToFile(containerBuis, 'Classes', dataToWrite, '../../')
 
-        self.assertTrue(os.path.isfile('../../OTLModel/Classes/ContainerBuis.py'))
+        filelocation = os.path.abspath(os.path.join(os.sep, ROOT_DIR, 'OTLModel/Classes/ContainerBuis.py'))
+        self.assertTrue(os.path.isfile(filelocation))
 
     def test_WriteToFileBuis(self):
         logger = NoneLogger()
@@ -204,7 +207,8 @@ class OTLClassCreatorTests(unittest.TestCase):
         dataToWrite = creator.CreateBlockToWriteFromClasses(buis)
         creator.writeToFile(buis, 'Classes', dataToWrite, '../../')
 
-        self.assertTrue(os.path.isfile('../../OTLModel/Classes/Buis.py'))
+        filelocation = os.path.abspath(os.path.join(os.sep, ROOT_DIR, 'OTLModel/Classes/Buis.py'))
+        self.assertTrue(os.path.isfile(filelocation))
 
     def test_WriteToFileGebouw(self):
         logger = NoneLogger()
@@ -221,4 +225,5 @@ class OTLClassCreatorTests(unittest.TestCase):
         dataToWrite = creator.CreateBlockToWriteFromClasses(containerBuis)
         creator.writeToFile(containerBuis, 'Classes', dataToWrite, '../../')
 
-        self.assertTrue(os.path.isfile('../../OTLModel/Classes/Gebouw.py'))
+        filelocation = os.path.abspath(os.path.join(os.sep, ROOT_DIR, 'OTLModel/Classes/Gebouw.py'))
+        self.assertTrue(os.path.isfile(filelocation))

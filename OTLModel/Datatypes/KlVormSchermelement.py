@@ -1,19 +1,24 @@
 # coding=utf-8
-from OTLModel.Datatypes.Keuzelijst import Keuzelijst
+from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
+from OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 
 # Generated with OTLEnumerationCreator. To modify: extend, do not edit
-class KlVormSchermelement(Keuzelijst):
+class KlVormSchermelement(KeuzelijstField):
     """Deze keuzelijst geeft aan of het schermelement recht of gebogen is."""
+    naam = 'KlVormSchermelement'
+    label = 'Vorm schermelement'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlVormSchermelement'
+    definition = 'Deze keuzelijst geeft aan of het schermelement recht of gebogen is.'
+    codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlVormSchermelement'
+    options = {
+        'gebogen': KeuzelijstWaarde(invulwaarde='gebogen',
+                                    label='gebogen',
+                                    definitie='gebogen',
+                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVormSchermelement/gebogen'),
+        'recht': KeuzelijstWaarde(invulwaarde='recht',
+                                  label='recht',
+                                  definitie='recht',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVormSchermelement/recht')
+    }
 
-    def __init__(self):
-        super().__init__(naam="KlVormSchermelement",
-                         label="Vorm schermelement",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlVormSchermelement",
-                         definition="Deze keuzelijst geeft aan of het schermelement recht of gebogen is.",
-                         usagenote="",
-                         deprecated_version="",
-                         codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlVormSchermelement")
-
-        self.add_option("gebogen", "gebogen", "gebogen", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVormSchermelement/gebogen")
-        self.add_option("recht", "recht", "recht", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVormSchermelement/recht")

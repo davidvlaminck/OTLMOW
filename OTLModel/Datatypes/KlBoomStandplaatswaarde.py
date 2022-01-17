@@ -1,22 +1,36 @@
 # coding=utf-8
-from OTLModel.Datatypes.Keuzelijst import Keuzelijst
+from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
+from OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 
 # Generated with OTLEnumerationCreator. To modify: extend, do not edit
-class KlBoomStandplaatswaarde(Keuzelijst):
+class KlBoomStandplaatswaarde(KeuzelijstField):
     """De verschillende opties van de standplaatswaarde voor een boom."""
+    naam = 'KlBoomStandplaatswaarde'
+    label = 'Boom standplaatswaarde'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlBoomStandplaatswaarde'
+    definition = 'De verschillende opties van de standplaatswaarde voor een boom.'
+    codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlBoomStandplaatswaarde'
+    options = {
+        '0.6': KeuzelijstWaarde(invulwaarde='0.6',
+                                label='0.6',
+                                definitie='Landelijk gebied',
+                                objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBoomStandplaatswaarde/0.6'),
+        '0.7': KeuzelijstWaarde(invulwaarde='0.7',
+                                label='0.7',
+                                definitie='Overgangszone: bebouwde kom - landelijk gebied',
+                                objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBoomStandplaatswaarde/0.7'),
+        '0.8': KeuzelijstWaarde(invulwaarde='0.8',
+                                label='0.8',
+                                definitie='Open en halfopen bebouwing',
+                                objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBoomStandplaatswaarde/0.8'),
+        '0.9': KeuzelijstWaarde(invulwaarde='0.9',
+                                label='0.9',
+                                definitie='Gesloten bebouwing',
+                                objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBoomStandplaatswaarde/0.9'),
+        '1.0': KeuzelijstWaarde(invulwaarde='1.0',
+                                label='1.0',
+                                definitie='Sterk verstedelijkte stads- of dorpskern',
+                                objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBoomStandplaatswaarde/1.0')
+    }
 
-    def __init__(self):
-        super().__init__(naam="KlBoomStandplaatswaarde",
-                         label="Boom standplaatswaarde",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlBoomStandplaatswaarde",
-                         definition="De verschillende opties van de standplaatswaarde voor een boom.",
-                         usagenote="",
-                         deprecated_version="",
-                         codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlBoomStandplaatswaarde")
-
-        self.add_option("0.6", "0.6", "Landelijk gebied", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBoomStandplaatswaarde/0.6")
-        self.add_option("0.7", "0.7", "Overgangszone: bebouwde kom - landelijk gebied", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBoomStandplaatswaarde/0.7")
-        self.add_option("0.8", "0.8", "Open en halfopen bebouwing", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBoomStandplaatswaarde/0.8")
-        self.add_option("0.9", "0.9", "Gesloten bebouwing", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBoomStandplaatswaarde/0.9")
-        self.add_option("1.0", "1.0", "Sterk verstedelijkte stads- of dorpskern", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBoomStandplaatswaarde/1.0")

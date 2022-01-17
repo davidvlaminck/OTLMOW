@@ -1,4 +1,6 @@
 # coding=utf-8
+from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
+from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Datatypes.ComplexField import ComplexField
 from OTLModel.Datatypes.KwantWrdInMinuut import KwantWrdInMinuut
 from OTLModel.Datatypes.KwantWrdInSeconde import KwantWrdInSeconde
@@ -6,46 +8,63 @@ from OTLModel.Datatypes.KwantWrdInUur import KwantWrdInUur
 
 
 # Generated with OTLComplexDatatypeCreator. To modify: extend, do not edit
-class DtcTijdsduur(ComplexField):
-    """Complex datatype voor de instelling van een tijdsbepaling."""
-
+class DtcTijdsduurWaarden(AttributeInfo):
     def __init__(self):
-        super().__init__(naam="DtcTijdsduur",
-                         label="Tijdsduur",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcTijdsduur",
-                         definition="Complex datatype voor de instelling van een tijdsbepaling.",
-                         usagenote="",
-                         deprecated_version="")
+        self._minuten = OTLAttribuut(field=KwantWrdInMinuut,
+                                     naam='minuten',
+                                     label='minuten',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcTijdsduur.minuten',
+                                     definition='Het aantal minuten.')
 
-        self.waarde.minuten = KwantWrdInMinuut()
+        self._seconden = OTLAttribuut(field=KwantWrdInSeconde,
+                                      naam='seconden',
+                                      label='seconden',
+                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcTijdsduur.seconden',
+                                      definition='Het aantal seconden.')
+
+        self._uren = OTLAttribuut(field=KwantWrdInUur,
+                                  naam='uren',
+                                  label='uren',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcTijdsduur.uren',
+                                  definition='Het aantal uren.')
+
+    @property
+    def minuten(self):
         """Het aantal minuten."""
-        self.waarde.minuten.naam = "minuten"
-        self.waarde.minuten.label = "minuten"
-        self.waarde.minuten.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcTijdsduur.minuten"
-        self.waarde.minuten.definition = "Het aantal minuten."
-        self.waarde.minuten.constraints = ""
-        self.waarde.minuten.usagenote = ""
-        self.waarde.minuten.deprecated_version = ""
-        self.minuten = self.waarde.minuten
+        return self._minuten.waarde
 
-        self.waarde.seconden = KwantWrdInSeconde()
+    @minuten.setter
+    def minuten(self, value):
+        self._minuten.set_waarde(value)
+
+    @property
+    def seconden(self):
         """Het aantal seconden."""
-        self.waarde.seconden.naam = "seconden"
-        self.waarde.seconden.label = "seconden"
-        self.waarde.seconden.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcTijdsduur.seconden"
-        self.waarde.seconden.definition = "Het aantal seconden."
-        self.waarde.seconden.constraints = ""
-        self.waarde.seconden.usagenote = ""
-        self.waarde.seconden.deprecated_version = ""
-        self.seconden = self.waarde.seconden
+        return self._seconden.waarde
 
-        self.waarde.uren = KwantWrdInUur()
+    @seconden.setter
+    def seconden(self, value):
+        self._seconden.set_waarde(value)
+
+    @property
+    def uren(self):
         """Het aantal uren."""
-        self.waarde.uren.naam = "uren"
-        self.waarde.uren.label = "uren"
-        self.waarde.uren.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcTijdsduur.uren"
-        self.waarde.uren.definition = "Het aantal uren."
-        self.waarde.uren.constraints = ""
-        self.waarde.uren.usagenote = ""
-        self.waarde.uren.deprecated_version = ""
-        self.uren = self.waarde.uren
+        return self._uren.waarde
+
+    @uren.setter
+    def uren(self, value):
+        self._uren.set_waarde(value)
+
+
+# Generated with OTLComplexDatatypeCreator. To modify: extend, do not edit
+class DtcTijdsduur(ComplexField, AttributeInfo):
+    """Complex datatype voor de instelling van een tijdsbepaling."""
+    naam = 'DtcTijdsduur'
+    label = 'Tijdsduur'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcTijdsduur'
+    definition = 'Complex datatype voor de instelling van een tijdsbepaling.'
+    waardeObject = DtcTijdsduurWaarden
+
+    def __str__(self):
+        return ComplexField.__str__(self)
+

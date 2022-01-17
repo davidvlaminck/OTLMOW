@@ -1,27 +1,48 @@
 # coding=utf-8
-from OTLModel.Datatypes.Keuzelijst import Keuzelijst
+from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
+from OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 
 # Generated with OTLEnumerationCreator. To modify: extend, do not edit
-class KlOmvormerType(Keuzelijst):
+class KlOmvormerType(KeuzelijstField):
     """De soort omvorming die gebeurt er in de omvormer."""
+    naam = 'KlOmvormerType'
+    label = 'Omvormer type'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlOmvormerType'
+    definition = 'De soort omvorming die gebeurt er in de omvormer.'
+    codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlOmvormerType'
+    options = {
+        'Coax-UTP': KeuzelijstWaarde(invulwaarde='Coax-UTP',
+                                     label='Coax-UTP',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOmvormerType/Coax-UTP'),
+        'Decoder': KeuzelijstWaarde(invulwaarde='Decoder',
+                                    label='Decoder',
+                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOmvormerType/Decoder'),
+        'Encoder': KeuzelijstWaarde(invulwaarde='Encoder',
+                                    label='Encoder',
+                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOmvormerType/Encoder'),
+        'Glasvezel-UTP': KeuzelijstWaarde(invulwaarde='Glasvezel-UTP',
+                                          label='Glasvezel-UTP',
+                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOmvormerType/Glasvezel-UTP'),
+        'UTP-(Serieel)-UTP': KeuzelijstWaarde(invulwaarde='UTP-(Serieel)-UTP',
+                                              label='UTP (Serieel)-UTP',
+                                              objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOmvormerType/UTP-(Serieel)-UTP'),
+        'UTP-Coax': KeuzelijstWaarde(invulwaarde='UTP-Coax',
+                                     label='UTP-Coax',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOmvormerType/UTP-Coax'),
+        'UTP-Glasvezel': KeuzelijstWaarde(invulwaarde='UTP-Glasvezel',
+                                          label='UTP-Glasvezel',
+                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOmvormerType/UTP-Glasvezel'),
+        'UTP-UTP-(serieel)': KeuzelijstWaarde(invulwaarde='UTP-UTP-(serieel)',
+                                              label='UTP-UTP (serieel)',
+                                              objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOmvormerType/UTP-UTP-(serieel)'),
+        'draadloos-utp': KeuzelijstWaarde(invulwaarde='draadloos-utp',
+                                          label='Draadloos-UTP',
+                                          definitie='Draadloos-UTP',
+                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOmvormerType/draadloos-utp'),
+        'utp-draadloos': KeuzelijstWaarde(invulwaarde='utp-draadloos',
+                                          label='UTP-Draadloos',
+                                          definitie='UTP-Draadloos',
+                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOmvormerType/utp-draadloos')
+    }
 
-    def __init__(self):
-        super().__init__(naam="KlOmvormerType",
-                         label="Omvormer type",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlOmvormerType",
-                         definition="De soort omvorming die gebeurt er in de omvormer.",
-                         usagenote="",
-                         deprecated_version="",
-                         codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlOmvormerType")
-
-        self.add_option("Coax-UTP", "Coax-UTP", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOmvormerType/Coax-UTP")
-        self.add_option("Decoder", "Decoder", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOmvormerType/Decoder")
-        self.add_option("Encoder", "Encoder", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOmvormerType/Encoder")
-        self.add_option("Glasvezel-UTP", "Glasvezel-UTP", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOmvormerType/Glasvezel-UTP")
-        self.add_option("UTP-(Serieel)-UTP", "UTP (Serieel)-UTP", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOmvormerType/UTP-(Serieel)-UTP")
-        self.add_option("UTP-Coax", "UTP-Coax", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOmvormerType/UTP-Coax")
-        self.add_option("UTP-Glasvezel", "UTP-Glasvezel", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOmvormerType/UTP-Glasvezel")
-        self.add_option("UTP-UTP-(serieel)", "UTP-UTP (serieel)", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOmvormerType/UTP-UTP-(serieel)")
-        self.add_option("draadloos-utp", "Draadloos-UTP", "Draadloos-UTP", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOmvormerType/draadloos-utp")
-        self.add_option("utp-draadloos", "UTP-Draadloos", "UTP-Draadloos", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOmvormerType/utp-draadloos")

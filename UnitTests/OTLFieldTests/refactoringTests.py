@@ -1,15 +1,16 @@
 ﻿import unittest
 
+from OTLModel.Datatypes.DtcRechtspersoon import DtcRechtspersoon
 from UnitTests.OTLFieldTests.KwantWrdInMeter import KwantWrdInMeter
-from UnitTests.OTLFieldTests.UnionTypeError import UnionTypeError
-from UnitTests.OTLFieldTests.AttributeInfo import AttributeInfo
+from Facility.Exceptions.UnionTypeError import UnionTypeError
+from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from UnitTests.OTLFieldTests.DtcIdentificator import DtcIdentificator
 from UnitTests.OTLFieldTests.DtcVegetatieSoortnaam import DtcVegetatieSoortnaam
 from UnitTests.OTLFieldTests.DtuLichtmastMasthoogte import DtuLichtmastMasthoogte
 from UnitTests.OTLFieldTests.KlAIMToestand import KlAIMToestand
 from UnitTests.OTLFieldTests.KlRioleringsbuisMateriaal import KlRioleringsbuisMateriaal
-from UnitTests.OTLFieldTests.OTLAttribuut import OTLAttribuut
-from UnitTests.OTLFieldTests.StringField import StringField
+from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLModel.Datatypes.StringField import StringField
 
 
 class TestInstance2(AttributeInfo):
@@ -70,6 +71,21 @@ class TestInstance2(AttributeInfo):
                                   label="hoogte",
                                   objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#.Hoogte",
                                   definition="De hoogte in meter.")
+
+        self._persoon = OTLAttribuut(field=DtcRechtspersoon,
+                                   naam='persoon',
+                                   label='persoon',
+                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcRechtspersoon',
+                                   definition='persoon.')
+
+    @property
+    def persoon(self):
+        """De hoogte in meter."""
+        return self._persoon.waarde
+
+    @persoon.setter
+    def persoon(self, value):
+        self._persoon.set_waarde(value, owner=self)
 
     @property
     def hoogte(self):
@@ -183,6 +199,10 @@ deprecated_version: """,
         instance2.notitie = "b"
         self.assertEqual("a", instance.notitie)
         self.assertEqual("b", instance2.notitie)
+        instance.notitie = None
+        self.assertEqual(None, instance.notitie)
+        instance.notitie = "b"
+        self.assertEqual("b", instance.notitie)
 
     def test_ComplexField(self):
         instance = TestInstance2()
@@ -222,7 +242,7 @@ deprecated_version: """,
             instance.attr_type_info('assetId.identificator'))
         with self.assertRaises(TypeError):
             instance.assetId.toegekendDoor = 2
-        with self.assertRaises(TypeError):
+        with self.assertRaises(ValueError):
             instance.assetId = 2
 
     def test_KeuzelijstField(self):
@@ -250,13 +270,13 @@ kardinaliteit_max: 1
 deprecated_version: """,
                          instance.attr_info("toestand"))
         self.assertEqual(
-            """information about ('KlAIMToestand',):
-naam: ('KlAIMToestand',)
-uri: ('https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KlAIMToestand',)
-definition: ('Keuzelijst met fasen uit de levenscyclus van een object om de toestand op een moment mee vast te leggen.',)
-label: ('AIM toestand',)
-usagenote: ('',)
-deprecated_version: ('',)
+            """information about KlAIMToestand:
+naam: KlAIMToestand
+uri: https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KlAIMToestand
+definition: Keuzelijst met fasen uit de levenscyclus van een object om de toestand op een moment mee vast te leggen.
+label: AIM toestand
+usagenote: 
+deprecated_version: 
 possible values:
     geannuleerd
     gepland
@@ -302,8 +322,24 @@ possible values:
     def test_ComplexFieldMetKardinaliteit(self):
         self.assertFalse(True)
 
-    @unittest.skip("not implemented yet")
     def test_ComplexFieldInComplexField(self):
+        instance = TestInstance2()
+        instance2 = TestInstance2()
+        with self.assertRaises(ValueError):
+            instance.persoon = []
+        instance.persoon.adres.straatnaam = 'straat'
+        instance.persoon.organisatie = 'organisatie'
+        instance.persoon.adres.postcode = '2900'
+        instance.persoon.adres.gemeente = 'schoten'
+
+        self.assertEqual('straat', instance.persoon.adres.straatnaam)
+        self.assertEqual('organisatie', instance.persoon.organisatie)
+        self.assertEqual('2900', instance.persoon.adres.postcode)
+        self.assertEqual('schoten', instance.persoon.adres.gemeente)
+
+
+    @unittest.skip("not implemented yet")
+    def test_BooleanField(self):
         self.assertFalse(True)
 
     def test_UnionTypeField(self):
@@ -335,7 +371,7 @@ naam: KwantWrdInMeter
 uri: https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMeter
 definition: Een kwantitatieve waarde die een getal in meter uitdrukt.
 label: Kwantitatieve waarde in meter
-usagenote: https://www.w3.org/TR/xmlschema-2/#string
+usagenote: https://www.w3.org/TR/xmlschema-2/#decimal
 deprecated_version: 
 
 information about standaardEenheid:

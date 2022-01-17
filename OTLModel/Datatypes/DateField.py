@@ -1,15 +1,26 @@
 from datetime import datetime
+from OTLModel.BaseClasses.OTLField import OTLField
 
-from OTLModel.Datatypes.PrimitiveField import PrimitiveField
 
+class DateField(OTLField):
+    """Beschrijft een datum volgens http://www.w3.org/2001/XMLSchema#date."""
+    naam = 'Date'
+    objectUri = 'http://www.w3.org/2001/XMLSchema#date'
+    definition = 'Beschrijft een datum volgens http://www.w3.org/2001/XMLSchema#date.'
+    label = 'Datum'
+    usagenote = 'https://www.w3.org/TR/xmlschema-2/#date'
 
-class DateField(PrimitiveField):
-    def __init__(self, naam, label, objectUri, definition, constraints, usagenote, deprecated_version, readonly=False,
-                 readonlyValue=None):
-        super().__init__(datetime, naam, label, objectUri, definition, constraints, usagenote, deprecated_version, readonly,
-                         readonlyValue)
+    @staticmethod
+    def validate(value, attribuut):
+        if value is not None and not isinstance(value, datetime):
+            raise TypeError(f'expecting datetime in {attribuut.naam}')
+        # TODO time vars should be 0 0 0
+        return True
 
-    def default(self):
-        if self.waarde is not None:
-            return self.waarde.strftime("%Y-%m-%d")
-        return ''
+    @staticmethod
+    def value_default(value):
+        return value.strftime("%Y-%m-%d")
+
+    def __str__(self):
+        return OTLField.__str__(self)
+

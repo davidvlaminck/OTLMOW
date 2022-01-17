@@ -1,6 +1,6 @@
 import unittest
 
-from OTLModel.Datatypes.ComplexField import ComplexField, ComplexAttributen
+from OTLModel.Datatypes.ComplexField import ComplexField
 from OTLModel.Classes.AIMObject import AIMObject
 from OTLModel.Datatypes.DtcAdres import DtcAdres
 
@@ -16,23 +16,21 @@ class DtcAdresTests(unittest.TestCase):
         instance = TestClass()
         self.assertTrue(isinstance(instance.testAdres, DtcAdres))
         self.assertTrue(isinstance(instance.testAdres, ComplexField))
-        self.assertTrue(isinstance(instance.testAdres.waarde, ComplexAttributen))
 
-        instance.testAdres.bus.waarde = "A"
-        self.assertFalse(instance.testAdres.waarde is None)
-        self.assertEqual(instance.testAdres.bus.waarde, "A")
-        self.assertEqual(instance.testAdres.waarde.bus.waarde, "A")
+        instance.testAdres.bus = "A"
+        self.assertFalse(instance.testAdres is None)
+        self.assertEqual(instance.testAdres.bus, "A")
+
 
         instance.testAdres.postcode.waarde = "2880"
-        self.assertEqual(instance.testAdres.postcode.waarde, "2880")
-        self.assertEqual(instance.testAdres.waarde.postcode.waarde, "2880")
+        self.assertEqual(instance.testAdres.postcode, "2880")
         with self.assertRaises(ValueError):
-            instance.testAdres.postcode.waarde = 2880
+            instance.testAdres.postcode = 2880
 
-        instance.testAdres.gemeente.set_value_by_label("de Haan")
-        self.assertTrue(instance.testAdres.gemeente.waarde.invulwaarde == "de-Haan")
+        instance.testAdres.gemeente = "de Haan"
+        self.assertTrue(instance.testAdres.gemeente == "de-Haan")
 
-        self.assertTrue(instance.testAdres.waarde.default() is not None)
-        self.assertEqual(instance.testAdres.waarde.default()["bus"], "A")
-        self.assertEqual(instance.testAdres.waarde.default()["postcode"], "2880")
-        self.assertEqual(instance.testAdres.waarde.default()["gemeente"], "de-Haan")
+        self.assertTrue(instance.testAdres.default() is not None)
+        self.assertEqual(instance.testAdres.default()["bus"], "A")
+        self.assertEqual(instance.testAdres.default()["postcode"], "2880")
+        self.assertEqual(instance.testAdres.default()["gemeente"], "de-Haan")

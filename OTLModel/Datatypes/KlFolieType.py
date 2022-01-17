@@ -1,22 +1,36 @@
 # coding=utf-8
-from OTLModel.Datatypes.Keuzelijst import Keuzelijst
+from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
+from OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 
 # Generated with OTLEnumerationCreator. To modify: extend, do not edit
-class KlFolieType(Keuzelijst):
+class KlFolieType(KeuzelijstField):
     """Types van folie."""
+    naam = 'KlFolieType'
+    label = 'Folie type'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlFolieType'
+    definition = 'Types van folie.'
+    codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlFolieType'
+    options = {
+        'folietype-1': KeuzelijstWaarde(invulwaarde='folietype-1',
+                                        label='folietype 1',
+                                        definitie='folietype 1',
+                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFolieType/folietype-1'),
+        'folietype-2': KeuzelijstWaarde(invulwaarde='folietype-2',
+                                        label='folietype 2',
+                                        definitie='folietype 2',
+                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFolieType/folietype-2'),
+        'folietype-3a': KeuzelijstWaarde(invulwaarde='folietype-3a',
+                                         label='folietype 3a',
+                                         definitie='folietype 3a',
+                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFolieType/folietype-3a'),
+        'folietype-3a-en-3b': KeuzelijstWaarde(invulwaarde='folietype-3a-en-3b',
+                                               label='folietype 3a en 3b',
+                                               definitie='folietype 3a en 3b',
+                                               objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFolieType/folietype-3a-en-3b'),
+        'folietype-3b': KeuzelijstWaarde(invulwaarde='folietype-3b',
+                                         label='folietype 3b',
+                                         definitie='folietype 3b',
+                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFolieType/folietype-3b')
+    }
 
-    def __init__(self):
-        super().__init__(naam="KlFolieType",
-                         label="Folie type",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlFolieType",
-                         definition="Types van folie.",
-                         usagenote="",
-                         deprecated_version="",
-                         codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlFolieType")
-
-        self.add_option("folietype-1", "folietype 1", "folietype 1", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFolieType/folietype-1")
-        self.add_option("folietype-2", "folietype 2", "folietype 2", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFolieType/folietype-2")
-        self.add_option("folietype-3a", "folietype 3a", "folietype 3a", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFolieType/folietype-3a")
-        self.add_option("folietype-3a-en-3b", "folietype 3a en 3b", "folietype 3a en 3b", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFolieType/folietype-3a-en-3b")
-        self.add_option("folietype-3b", "folietype 3b", "folietype 3b", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFolieType/folietype-3b")

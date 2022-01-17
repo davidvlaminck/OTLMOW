@@ -1,22 +1,36 @@
 # coding=utf-8
-from OTLModel.Datatypes.Keuzelijst import Keuzelijst
+from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
+from OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 
 # Generated with OTLEnumerationCreator. To modify: extend, do not edit
-class KlWBSSType(Keuzelijst):
+class KlWBSSType(KeuzelijstField):
     """Types van waterdoorlatende betonstraatstenen en betontegels."""
+    naam = 'KlWBSSType'
+    label = 'WBSS type'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlWBSSType'
+    definition = 'Types van waterdoorlatende betonstraatstenen en betontegels.'
+    codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlWBSSType'
+    options = {
+        'gekleurde-met-anorganische-pigmenten': KeuzelijstWaarde(invulwaarde='gekleurde-met-anorganische-pigmenten',
+                                                                 label='gekleurde met anorganische pigmenten',
+                                                                 definitie='gekleurde waterdoorlatende betonstraatstenen met anorganische pigmenten',
+                                                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlWBSSType/gekleurde-met-anorganische-pigmenten'),
+        'gekleurde-met-kleurondersteunende-granulaten': KeuzelijstWaarde(invulwaarde='gekleurde-met-kleurondersteunende-granulaten',
+                                                                         label='gekleurde met kleurondersteunende granulaten',
+                                                                         definitie='gekleurde waterdoorlatende betonstraatstenen met kleurondersteunende granulaten',
+                                                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlWBSSType/gekleurde-met-kleurondersteunende-granulaten'),
+        'grijze': KeuzelijstWaarde(invulwaarde='grijze',
+                                   label='grijze',
+                                   definitie='grijze waterdoorlatende betonstraatstenen',
+                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlWBSSType/grijze'),
+        'waterdoorlatende-betontegel': KeuzelijstWaarde(invulwaarde='waterdoorlatende-betontegel',
+                                                        label='waterdoorlatende betontegel',
+                                                        definitie='waterdoorlatende betontegel',
+                                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlWBSSType/waterdoorlatende-betontegel'),
+        'witte-met-kleurondersteunende-granulaten': KeuzelijstWaarde(invulwaarde='witte-met-kleurondersteunende-granulaten',
+                                                                     label='witte met kleurondersteunende granulaten',
+                                                                     definitie='witte waterdoorlatende betonstraatstenen met kleurondersteunende granulaten',
+                                                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlWBSSType/witte-met-kleurondersteunende-granulaten')
+    }
 
-    def __init__(self):
-        super().__init__(naam="KlWBSSType",
-                         label="WBSS type",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlWBSSType",
-                         definition="Types van waterdoorlatende betonstraatstenen en betontegels.",
-                         usagenote="",
-                         deprecated_version="",
-                         codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlWBSSType")
-
-        self.add_option("gekleurde-met-anorganische-pigmenten", "gekleurde met anorganische pigmenten", "gekleurde waterdoorlatende betonstraatstenen met anorganische pigmenten", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlWBSSType/gekleurde-met-anorganische-pigmenten")
-        self.add_option("gekleurde-met-kleurondersteunende-granulaten", "gekleurde met kleurondersteunende granulaten", "gekleurde waterdoorlatende betonstraatstenen met kleurondersteunende granulaten", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlWBSSType/gekleurde-met-kleurondersteunende-granulaten")
-        self.add_option("grijze", "grijze", "grijze waterdoorlatende betonstraatstenen", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlWBSSType/grijze")
-        self.add_option("waterdoorlatende-betontegel", "waterdoorlatende betontegel", "waterdoorlatende betontegel", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlWBSSType/waterdoorlatende-betontegel")
-        self.add_option("witte-met-kleurondersteunende-granulaten", "witte met kleurondersteunende granulaten", "witte waterdoorlatende betonstraatstenen met kleurondersteunende granulaten", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlWBSSType/witte-met-kleurondersteunende-granulaten")

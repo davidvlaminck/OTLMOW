@@ -1,4 +1,6 @@
 # coding=utf-8
+from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
+from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Datatypes.ComplexField import ComplexField
 from OTLModel.Datatypes.DtcDocument import DtcDocument
 from OTLModel.Datatypes.StringField import StringField
@@ -6,54 +8,78 @@ from OTLModel.Datatypes.URIField import URIField
 
 
 # Generated with OTLComplexDatatypeCreator. To modify: extend, do not edit
-class DtcProductidentificatiecode(ComplexField):
-    """Complex datatype dat alle nodige informatie van het product capteert."""
-
+class DtcProductidentificatiecodeWaarden(AttributeInfo):
     def __init__(self):
-        super().__init__(naam="DtcProductidentificatiecode",
-                         label="Productidentificatiecode",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcProductidentificatiecode",
-                         definition="Complex datatype dat alle nodige informatie van het product capteert.",
-                         usagenote="",
-                         deprecated_version="")
+        self._keuringsverslag = OTLAttribuut(field=DtcDocument,
+                                             naam='keuringsverslag',
+                                             label='keuringsverslag',
+                                             objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcProductidentificatiecode.keuringsverslag',
+                                             definition='Een rapport met de resultaten van de keuring.')
 
-        self.waarde.keuringsverslag = DtcDocument()
+        self._linkTechnischeFiche = OTLAttribuut(field=URIField,
+                                                 naam='linkTechnischeFiche',
+                                                 label='link technische fiche',
+                                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcProductidentificatiecode.linkTechnischeFiche',
+                                                 definition='De link naar de technische fiche van het gerelateerd product.')
+
+        self._producent = OTLAttribuut(field=StringField,
+                                       naam='producent',
+                                       label='producent',
+                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcProductidentificatiecode.producent',
+                                       definition='De gerelateerde fabrikant.')
+
+        self._productidentificatiecode = OTLAttribuut(field=StringField,
+                                                      naam='productidentificatiecode',
+                                                      label='productidentificatiecode',
+                                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcProductidentificatiecode.productidentificatiecode',
+                                                      definition='De code van het gebruikte product (COPRO/BENOR).')
+
+    @property
+    def keuringsverslag(self):
         """Een rapport met de resultaten van de keuring."""
-        self.waarde.keuringsverslag.naam = "keuringsverslag"
-        self.waarde.keuringsverslag.label = "keuringsverslag"
-        self.waarde.keuringsverslag.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcProductidentificatiecode.keuringsverslag"
-        self.waarde.keuringsverslag.definition = "Een rapport met de resultaten van de keuring."
-        self.waarde.keuringsverslag.constraints = ""
-        self.waarde.keuringsverslag.usagenote = ""
-        self.waarde.keuringsverslag.deprecated_version = ""
-        self.keuringsverslag = self.waarde.keuringsverslag
+        return self._keuringsverslag.waarde
 
-        self.waarde.linkTechnischeFiche = URIField(naam="linkTechnischeFiche",
-                                                   label="link technische fiche",
-                                                   objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcProductidentificatiecode.linkTechnischeFiche",
-                                                   definition="De link naar de technische fiche van het gerelateerd product.",
-                                                   constraints="",
-                                                   usagenote="",
-                                                   deprecated_version="")
-        self.linkTechnischeFiche = self.waarde.linkTechnischeFiche
+    @keuringsverslag.setter
+    def keuringsverslag(self, value):
+        self._keuringsverslag.set_waarde(value)
+
+    @property
+    def linkTechnischeFiche(self):
         """De link naar de technische fiche van het gerelateerd product."""
+        return self._linkTechnischeFiche.waarde
 
-        self.waarde.producent = StringField(naam="producent",
-                                            label="producent",
-                                            objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcProductidentificatiecode.producent",
-                                            definition="De gerelateerde fabrikant.",
-                                            constraints="",
-                                            usagenote="",
-                                            deprecated_version="")
-        self.producent = self.waarde.producent
+    @linkTechnischeFiche.setter
+    def linkTechnischeFiche(self, value):
+        self._linkTechnischeFiche.set_waarde(value)
+
+    @property
+    def producent(self):
         """De gerelateerde fabrikant."""
+        return self._producent.waarde
 
-        self.waarde.productidentificatiecode = StringField(naam="productidentificatiecode",
-                                                           label="productidentificatiecode",
-                                                           objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcProductidentificatiecode.productidentificatiecode",
-                                                           definition="De code van het gebruikte product (COPRO/BENOR).",
-                                                           constraints="",
-                                                           usagenote="",
-                                                           deprecated_version="")
-        self.productidentificatiecode = self.waarde.productidentificatiecode
+    @producent.setter
+    def producent(self, value):
+        self._producent.set_waarde(value)
+
+    @property
+    def productidentificatiecode(self):
         """De code van het gebruikte product (COPRO/BENOR)."""
+        return self._productidentificatiecode.waarde
+
+    @productidentificatiecode.setter
+    def productidentificatiecode(self, value):
+        self._productidentificatiecode.set_waarde(value)
+
+
+# Generated with OTLComplexDatatypeCreator. To modify: extend, do not edit
+class DtcProductidentificatiecode(ComplexField, AttributeInfo):
+    """Complex datatype dat alle nodige informatie van het product capteert."""
+    naam = 'DtcProductidentificatiecode'
+    label = 'Productidentificatiecode'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcProductidentificatiecode'
+    definition = 'Complex datatype dat alle nodige informatie van het product capteert.'
+    waardeObject = DtcProductidentificatiecodeWaarden
+
+    def __str__(self):
+        return ComplexField.__str__(self)
+

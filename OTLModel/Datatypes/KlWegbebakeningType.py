@@ -1,23 +1,40 @@
 # coding=utf-8
-from OTLModel.Datatypes.Keuzelijst import Keuzelijst
+from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
+from OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 
 # Generated with OTLEnumerationCreator. To modify: extend, do not edit
-class KlWegbebakeningType(Keuzelijst):
+class KlWegbebakeningType(KeuzelijstField):
     """De vormen van wegbebakening."""
+    naam = 'KlWegbebakeningType'
+    label = 'Wegbebakening type'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlWegbebakeningType'
+    definition = 'De vormen van wegbebakening.'
+    codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlWegbebakeningType'
+    options = {
+        'type-1-(new-jersey-reclip)': KeuzelijstWaarde(invulwaarde='type-1-(new-jersey-reclip)',
+                                                       label='type 1 (new jersey reclip)',
+                                                       definitie='type 1 (new jersey reclip)',
+                                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlWegbebakeningType/type-1-(new-jersey-reclip)'),
+        'type-2-(new-jersey)': KeuzelijstWaarde(invulwaarde='type-2-(new-jersey)',
+                                                label='type 2 (new jersey)',
+                                                definitie='type 2 (new jersey)',
+                                                objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlWegbebakeningType/type-2-(new-jersey)'),
+        'type-3-(referentiepaal)': KeuzelijstWaarde(invulwaarde='type-3-(referentiepaal)',
+                                                    label='type 3 (referentiepaal)',
+                                                    definitie='type 3 (referentiepaal)',
+                                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlWegbebakeningType/type-3-(referentiepaal)'),
+        'type-A-(vangrail-reclip)': KeuzelijstWaarde(invulwaarde='type-A-(vangrail-reclip)',
+                                                     label='type A (vangrail reclip)',
+                                                     definitie='type A (vangrail reclip)',
+                                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlWegbebakeningType/type-A-(vangrail-reclip)'),
+        'type-B-(vangrail)': KeuzelijstWaarde(invulwaarde='type-B-(vangrail)',
+                                              label='type B (vangrail)',
+                                              definitie='type B (vangrail)',
+                                              objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlWegbebakeningType/type-B-(vangrail)'),
+        'type-C-(vangrail-trapezium)': KeuzelijstWaarde(invulwaarde='type-C-(vangrail-trapezium)',
+                                                        label='type C (vangrail trapezium)',
+                                                        definitie='Type C (vangrail trapezium)',
+                                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlWegbebakeningType/type-C-(vangrail-trapezium)')
+    }
 
-    def __init__(self):
-        super().__init__(naam="KlWegbebakeningType",
-                         label="Wegbebakening type",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlWegbebakeningType",
-                         definition="De vormen van wegbebakening.",
-                         usagenote="",
-                         deprecated_version="",
-                         codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlWegbebakeningType")
-
-        self.add_option("type-1-(new-jersey-reclip)", "type 1 (new jersey reclip)", "type 1 (new jersey reclip)", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlWegbebakeningType/type-1-(new-jersey-reclip)")
-        self.add_option("type-2-(new-jersey)", "type 2 (new jersey)", "type 2 (new jersey)", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlWegbebakeningType/type-2-(new-jersey)")
-        self.add_option("type-3-(referentiepaal)", "type 3 (referentiepaal)", "type 3 (referentiepaal)", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlWegbebakeningType/type-3-(referentiepaal)")
-        self.add_option("type-A-(vangrail-reclip)", "type A (vangrail reclip)", "type A (vangrail reclip)", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlWegbebakeningType/type-A-(vangrail-reclip)")
-        self.add_option("type-B-(vangrail)", "type B (vangrail)", "type B (vangrail)", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlWegbebakeningType/type-B-(vangrail)")
-        self.add_option("type-C-(vangrail-trapezium)", "type C (vangrail trapezium)", "Type C (vangrail trapezium)", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlWegbebakeningType/type-C-(vangrail-trapezium)")

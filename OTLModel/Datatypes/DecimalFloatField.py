@@ -5,6 +5,7 @@ from OTLModel.Datatypes.PrimitiveField import PrimitiveField
 
 class DecimalFloatField(PrimitiveField):
     def __init__(self, naam, label, objectUri, definition, constraints, usagenote, deprecated_version):
+        raise SyntaxError
         super().__init__(float, naam, label, objectUri, definition, constraints, usagenote, deprecated_version)
 
     def __setattr__(self, name, value):

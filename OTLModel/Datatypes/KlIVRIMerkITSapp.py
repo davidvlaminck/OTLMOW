@@ -1,17 +1,16 @@
 # coding=utf-8
-from OTLModel.Datatypes.Keuzelijst import Keuzelijst
+from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
+from OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 
 # Generated with OTLEnumerationCreator. To modify: extend, do not edit
-class KlIVRIMerkITSapp(Keuzelijst):
+class KlIVRIMerkITSapp(KeuzelijstField):
     """Het merk van de ITSapp."""
-
-    def __init__(self):
-        super().__init__(naam="KlIVRIMerkITSapp",
-                         label="iVRIMerkITSapp",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlIVRIMerkITSapp",
-                         definition="Het merk van de ITSapp.",
-                         usagenote="",
-                         deprecated_version="",
-                         codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlIVRIMerkITSapp")
+    naam = 'KlIVRIMerkITSapp'
+    label = 'iVRIMerkITSapp'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlIVRIMerkITSapp'
+    definition = 'Het merk van de ITSapp.'
+    codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlIVRIMerkITSapp'
+    options = 
+    }
 

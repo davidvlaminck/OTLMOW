@@ -19,9 +19,9 @@ class OTLModelCreator:
         self.create_primitive_datatypes()
         self.create_complex_datatypes()
         self.create_union_datatypes()
-        self.create_enumerations()
-        self.create_classes()
-        self.create_relations()
+        #self.create_enumerations()
+        #self.create_classes()
+        #self.create_relations()
 
     def create_primitive_datatypes(self):
         creator = OTLPrimitiveDatatypeCreator(self.logger, self.osloCollector)
@@ -35,7 +35,8 @@ class OTLModelCreator:
                                     'http://www.w3.org/2001/XMLSchema#date',
                                     'http://www.w3.org/2001/XMLSchema#nonNegativeInteger',
                                     'http://www.w3.org/2001/XMLSchema#string',
-                                    'http://www.w3.org/2001/XMLSchema#boolean']:
+                                    'http://www.w3.org/2001/XMLSchema#boolean'
+                                    'http://www.w3.org/2001/XMLSchema#anyURI']:
                 self.logger.log(f"Skip creating class for {primDatatype.name}", LogType.INFO)
                 continue
 

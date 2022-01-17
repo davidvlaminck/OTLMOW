@@ -1,14 +1,11 @@
-﻿from UnitTests.OTLFieldTests.FloatOrDecimalField import FloatOrDecimalField
-from UnitTests.OTLFieldTests.KwantWrd import KwantWrd
-from UnitTests.OTLFieldTests.KwantWrdEenheid import KwantWrdEenheid
-from UnitTests.OTLFieldTests.OTLAttribuut import OTLAttribuut
-from UnitTests.OTLFieldTests.StringField import StringField
+﻿from OTLModel.Datatypes.FloatOrDecimalField import FloatOrDecimalField
+from OTLModel.Datatypes.LiteralField import LiteralField
+from OTLModel.BaseClasses.KwantWrd import KwantWrd
+from OTLModel.BaseClasses.KwantWrdEenheid import KwantWrdEenheid
+from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 
 
-class LiteralField(StringField):
-    pass
-
-
+# Generated with OTLPrimitiveDatatypeCreator. To modify: extend, do not edit
 class KwantWrdInMeterEenheid(KwantWrdEenheid):
     def __init__(self):
         super().__init__()
@@ -21,6 +18,7 @@ class KwantWrdInMeterEenheid(KwantWrdEenheid):
                                               usagenote='"m"^^cdt:ucumunit')
 
 
+# Generated with OTLPrimitiveDatatypeCreator. To modify: extend, do not edit
 class KwantWrdInMeter(FloatOrDecimalField, KwantWrd):
     naam = "KwantWrdInMeter"
     label = "Kwantitatieve waarde in meter"

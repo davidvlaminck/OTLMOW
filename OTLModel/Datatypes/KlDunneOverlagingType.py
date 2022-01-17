@@ -1,20 +1,28 @@
 # coding=utf-8
-from OTLModel.Datatypes.Keuzelijst import Keuzelijst
+from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
+from OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 
 # Generated with OTLEnumerationCreator. To modify: extend, do not edit
-class KlDunneOverlagingType(Keuzelijst):
+class KlDunneOverlagingType(KeuzelijstField):
     """Types van dunne overlaging."""
+    naam = 'KlDunneOverlagingType'
+    label = 'Dunne overlaging type'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlDunneOverlagingType'
+    definition = 'Types van dunne overlaging.'
+    codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlDunneOverlagingType'
+    options = {
+        'SME-D1': KeuzelijstWaarde(invulwaarde='SME-D1',
+                                   label='SME-D1',
+                                   definitie='SME-D1',
+                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlDunneOverlagingType/SME-D1'),
+        'SME-D2': KeuzelijstWaarde(invulwaarde='SME-D2',
+                                   label='SME-D2',
+                                   definitie='SMA-D2',
+                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlDunneOverlagingType/SME-D2'),
+        'antisliplaag': KeuzelijstWaarde(invulwaarde='antisliplaag',
+                                         label='antisliplaag',
+                                         definitie='antisliplaag',
+                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlDunneOverlagingType/antisliplaag')
+    }
 
-    def __init__(self):
-        super().__init__(naam="KlDunneOverlagingType",
-                         label="Dunne overlaging type",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlDunneOverlagingType",
-                         definition="Types van dunne overlaging.",
-                         usagenote="",
-                         deprecated_version="",
-                         codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlDunneOverlagingType")
-
-        self.add_option("SME-D1", "SME-D1", "SME-D1", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlDunneOverlagingType/SME-D1")
-        self.add_option("SME-D2", "SME-D2", "SMA-D2", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlDunneOverlagingType/SME-D2")
-        self.add_option("antisliplaag", "antisliplaag", "antisliplaag", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlDunneOverlagingType/antisliplaag")

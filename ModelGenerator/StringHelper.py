@@ -2,7 +2,7 @@
     if not isinstance(input, str):
         raise TypeError
     if input == '':
-        return ''
+        return "''"
     singles = sum(1 for c in input if c == "'")
     doubles = sum(1 for c in input if c == '"')
     if singles > doubles:

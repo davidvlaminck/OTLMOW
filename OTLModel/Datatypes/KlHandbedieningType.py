@@ -1,20 +1,25 @@
 # coding=utf-8
-from OTLModel.Datatypes.Keuzelijst import Keuzelijst
+from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
+from OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 
 # Generated with OTLEnumerationCreator. To modify: extend, do not edit
-class KlHandbedieningType(Keuzelijst):
+class KlHandbedieningType(KeuzelijstField):
     """Types van handbediening voor toestellen bevestigd aan een kast."""
+    naam = 'KlHandbedieningType'
+    label = 'Handbediening type'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlHandbedieningType'
+    definition = 'Types van handbediening voor toestellen bevestigd aan een kast.'
+    codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlHandbedieningType'
+    options = {
+        'drukknop': KeuzelijstWaarde(invulwaarde='drukknop',
+                                     label='drukknop',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlHandbedieningType/drukknop'),
+        'schakelaar': KeuzelijstWaarde(invulwaarde='schakelaar',
+                                       label='schakelaar',
+                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlHandbedieningType/schakelaar'),
+        'sleutelcontact': KeuzelijstWaarde(invulwaarde='sleutelcontact',
+                                           label='sleutelcontact',
+                                           objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlHandbedieningType/sleutelcontact')
+    }
 
-    def __init__(self):
-        super().__init__(naam="KlHandbedieningType",
-                         label="Handbediening type",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlHandbedieningType",
-                         definition="Types van handbediening voor toestellen bevestigd aan een kast.",
-                         usagenote="",
-                         deprecated_version="",
-                         codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlHandbedieningType")
-
-        self.add_option("drukknop", "drukknop", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlHandbedieningType/drukknop")
-        self.add_option("schakelaar", "schakelaar", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlHandbedieningType/schakelaar")
-        self.add_option("sleutelcontact", "sleutelcontact", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlHandbedieningType/sleutelcontact")

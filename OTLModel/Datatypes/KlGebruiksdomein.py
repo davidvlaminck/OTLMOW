@@ -1,20 +1,28 @@
 # coding=utf-8
-from OTLModel.Datatypes.Keuzelijst import Keuzelijst
+from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
+from OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 
 # Generated with OTLEnumerationCreator. To modify: extend, do not edit
-class KlGebruiksdomein(Keuzelijst):
+class KlGebruiksdomein(KeuzelijstField):
     """De omstandigheden waarin het beton gebruikt zal worden."""
+    naam = 'KlGebruiksdomein'
+    label = 'Gebruiksdomein'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KlGebruiksdomein'
+    definition = 'De omstandigheden waarin het beton gebruikt zal worden.'
+    codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlGebruiksdomein'
+    options = {
+        'gb-gewapend': KeuzelijstWaarde(invulwaarde='gb-gewapend',
+                                        label='GB (gewapend)',
+                                        definitie='Gewapend beton.',
+                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlGebruiksdomein/gb-gewapend'),
+        'ob-ongewapend': KeuzelijstWaarde(invulwaarde='ob-ongewapend',
+                                          label='OB (ongewapend)',
+                                          definitie='Ongewapend beton.',
+                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlGebruiksdomein/ob-ongewapend'),
+        'vb-voorgespannen': KeuzelijstWaarde(invulwaarde='vb-voorgespannen',
+                                             label='VB (voorgespannen)',
+                                             definitie='Voorgespannen beton.',
+                                             objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlGebruiksdomein/vb-voorgespannen')
+    }
 
-    def __init__(self):
-        super().__init__(naam="KlGebruiksdomein",
-                         label="Gebruiksdomein",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KlGebruiksdomein",
-                         definition="De omstandigheden waarin het beton gebruikt zal worden.",
-                         usagenote="",
-                         deprecated_version="",
-                         codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlGebruiksdomein")
-
-        self.add_option("gb-gewapend", "GB (gewapend)", "Gewapend beton.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlGebruiksdomein/gb-gewapend")
-        self.add_option("ob-ongewapend", "OB (ongewapend)", "Ongewapend beton.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlGebruiksdomein/ob-ongewapend")
-        self.add_option("vb-voorgespannen", "VB (voorgespannen)", "Voorgespannen beton.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlGebruiksdomein/vb-voorgespannen")

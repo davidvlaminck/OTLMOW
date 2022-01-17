@@ -1,17 +1,16 @@
 # coding=utf-8
-from OTLModel.Datatypes.Keuzelijst import Keuzelijst
+from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
+from OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 
 # Generated with OTLEnumerationCreator. To modify: extend, do not edit
-class KlDrukknopModelnaam(Keuzelijst):
+class KlDrukknopModelnaam(KeuzelijstField):
     """Keuzelijst met modelnamen voor Drukknop."""
-
-    def __init__(self):
-        super().__init__(naam="KlDrukknopModelnaam",
-                         label="Drukknop modelnaam",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlDrukknopModelnaam",
-                         definition="Keuzelijst met modelnamen voor Drukknop.",
-                         usagenote="",
-                         deprecated_version="",
-                         codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlDrukknopModelnaam")
+    naam = 'KlDrukknopModelnaam'
+    label = 'Drukknop modelnaam'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlDrukknopModelnaam'
+    definition = 'Keuzelijst met modelnamen voor Drukknop.'
+    codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlDrukknopModelnaam'
+    options = 
+    }
 

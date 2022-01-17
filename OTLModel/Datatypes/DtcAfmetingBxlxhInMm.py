@@ -1,49 +1,68 @@
 # coding=utf-8
+from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
+from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Datatypes.ComplexField import ComplexField
 from OTLModel.Datatypes.KwantWrdInMillimeter import KwantWrdInMillimeter
 
 
 # Generated with OTLComplexDatatypeCreator. To modify: extend, do not edit
-class DtcAfmetingBxlxhInMm(ComplexField):
-    """Complex datatype voor de afmeting van de breedte,de lengte en hoogte in millimeter."""
-
+class DtcAfmetingBxlxhInMmWaarden(AttributeInfo):
     def __init__(self):
-        super().__init__(naam="DtcAfmetingBxlxhInMm",
-                         label="Afmeting bxlxh in millimeter",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAfmetingBxlxhInMm",
-                         definition="Complex datatype voor de afmeting van de breedte,de lengte en hoogte in millimeter.",
-                         usagenote="",
-                         deprecated_version="")
+        self._breedte = OTLAttribuut(field=KwantWrdInMillimeter,
+                                     naam='breedte',
+                                     label='breedte',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAfmetingBxlxhInMm.breedte',
+                                     definition='De breedte in millimeter.')
 
-        self.waarde.breedte = KwantWrdInMillimeter()
+        self._hoogte = OTLAttribuut(field=KwantWrdInMillimeter,
+                                    naam='hoogte',
+                                    label='hoogte',
+                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAfmetingBxlxhInMm.hoogte',
+                                    definition='De hoogte in millimeter.')
+
+        self._lengte = OTLAttribuut(field=KwantWrdInMillimeter,
+                                    naam='lengte',
+                                    label='lengte',
+                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAfmetingBxlxhInMm.lengte',
+                                    definition='De lengte in millimeter.')
+
+    @property
+    def breedte(self):
         """De breedte in millimeter."""
-        self.waarde.breedte.naam = "breedte"
-        self.waarde.breedte.label = "breedte"
-        self.waarde.breedte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAfmetingBxlxhInMm.breedte"
-        self.waarde.breedte.definition = "De breedte in millimeter."
-        self.waarde.breedte.constraints = ""
-        self.waarde.breedte.usagenote = ""
-        self.waarde.breedte.deprecated_version = ""
-        self.breedte = self.waarde.breedte
+        return self._breedte.waarde
 
-        self.waarde.hoogte = KwantWrdInMillimeter()
+    @breedte.setter
+    def breedte(self, value):
+        self._breedte.set_waarde(value)
+
+    @property
+    def hoogte(self):
         """De hoogte in millimeter."""
-        self.waarde.hoogte.naam = "hoogte"
-        self.waarde.hoogte.label = "hoogte"
-        self.waarde.hoogte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAfmetingBxlxhInMm.hoogte"
-        self.waarde.hoogte.definition = "De hoogte in millimeter."
-        self.waarde.hoogte.constraints = ""
-        self.waarde.hoogte.usagenote = ""
-        self.waarde.hoogte.deprecated_version = ""
-        self.hoogte = self.waarde.hoogte
+        return self._hoogte.waarde
 
-        self.waarde.lengte = KwantWrdInMillimeter()
+    @hoogte.setter
+    def hoogte(self, value):
+        self._hoogte.set_waarde(value)
+
+    @property
+    def lengte(self):
         """De lengte in millimeter."""
-        self.waarde.lengte.naam = "lengte"
-        self.waarde.lengte.label = "lengte"
-        self.waarde.lengte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAfmetingBxlxhInMm.lengte"
-        self.waarde.lengte.definition = "De lengte in millimeter."
-        self.waarde.lengte.constraints = ""
-        self.waarde.lengte.usagenote = ""
-        self.waarde.lengte.deprecated_version = ""
-        self.lengte = self.waarde.lengte
+        return self._lengte.waarde
+
+    @lengte.setter
+    def lengte(self, value):
+        self._lengte.set_waarde(value)
+
+
+# Generated with OTLComplexDatatypeCreator. To modify: extend, do not edit
+class DtcAfmetingBxlxhInMm(ComplexField, AttributeInfo):
+    """Complex datatype voor de afmeting van de breedte,de lengte en hoogte in millimeter."""
+    naam = 'DtcAfmetingBxlxhInMm'
+    label = 'Afmeting bxlxh in millimeter'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAfmetingBxlxhInMm'
+    definition = 'Complex datatype voor de afmeting van de breedte,de lengte en hoogte in millimeter.'
+    waardeObject = DtcAfmetingBxlxhInMmWaarden
+
+    def __str__(self):
+        return ComplexField.__str__(self)
+

@@ -1,20 +1,28 @@
 # coding=utf-8
-from OTLModel.Datatypes.Keuzelijst import Keuzelijst
+from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
+from OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 
 # Generated with OTLEnumerationCreator. To modify: extend, do not edit
-class KlDekselVergrendeling(Keuzelijst):
+class KlDekselVergrendeling(KeuzelijstField):
     """Manieren waarop het deksel is vergrendeld."""
+    naam = 'KlDekselVergrendeling'
+    label = 'Dekselvergrendeling'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlDekselVergrendeling'
+    definition = 'Manieren waarop het deksel is vergrendeld.'
+    codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlDekselVergrendeling'
+    options = {
+        'bouten': KeuzelijstWaarde(invulwaarde='bouten',
+                                   label='bouten',
+                                   definitie='Het deksel is vergrendeld met inox schroefbouten met zeskantmoer',
+                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlDekselVergrendeling/bouten'),
+        'haken': KeuzelijstWaarde(invulwaarde='haken',
+                                  label='haken',
+                                  definitie='Het deksel is met haken vergrendeld',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlDekselVergrendeling/haken'),
+        'inbus': KeuzelijstWaarde(invulwaarde='inbus',
+                                  label='inbus',
+                                  definitie='Het deksel is vergrendeld met inox schroefbouten met inbusmoer',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlDekselVergrendeling/inbus')
+    }
 
-    def __init__(self):
-        super().__init__(naam="KlDekselVergrendeling",
-                         label="Dekselvergrendeling",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlDekselVergrendeling",
-                         definition="Manieren waarop het deksel is vergrendeld.",
-                         usagenote="",
-                         deprecated_version="",
-                         codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlDekselVergrendeling")
-
-        self.add_option("bouten", "bouten", "Het deksel is vergrendeld met inox schroefbouten met zeskantmoer", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlDekselVergrendeling/bouten")
-        self.add_option("haken", "haken", "Het deksel is met haken vergrendeld", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlDekselVergrendeling/haken")
-        self.add_option("inbus", "inbus", "Het deksel is vergrendeld met inox schroefbouten met inbusmoer", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlDekselVergrendeling/inbus")

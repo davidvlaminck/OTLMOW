@@ -1,5 +1,6 @@
 # coding=utf-8
-from OTLModel.Datatypes.KardinaliteitField import KardinaliteitField
+from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
+from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Datatypes.ComplexField import ComplexField
 from OTLModel.Datatypes.DtcAdres import DtcAdres
 from OTLModel.Datatypes.DtcOpeningsurenSpecificatie import DtcOpeningsurenSpecificatie
@@ -7,96 +8,147 @@ from OTLModel.Datatypes.StringField import StringField
 
 
 # Generated with OTLComplexDatatypeCreator. To modify: extend, do not edit
-class DtcContactinfo(ComplexField):
-    """Complex datatype voor de informatie zoals email, telefoon, adres die toelaat om iemand of iets te contacteren."""
-
+class DtcContactinfoWaarden(AttributeInfo):
     def __init__(self):
-        super().__init__(naam="DtcContactinfo",
-                         label="Contactinfo",
-                         objectUri="https://schema.org/ContactPoint",
-                         definition="Complex datatype voor de informatie zoals email, telefoon, adres die toelaat om iemand of iets te contacteren.",
-                         usagenote="",
-                         deprecated_version="")
+        self._adres = OTLAttribuut(field=DtcAdres,
+                                   naam='adres',
+                                   label='adres',
+                                   objectUri='https://schema.org/ContactPoint.adres',
+                                   kardinaliteit_min='0',
+                                   definition='Adres dat men kan aanschrijven of bezoeken.')
 
-        self.waarde.adres = DtcAdres()
+        self._beschikbaarheid = OTLAttribuut(field=DtcOpeningsurenSpecificatie,
+                                             naam='beschikbaarheid',
+                                             label='beschikbaarheid',
+                                             objectUri='https://schema.org/ContactPoint.beschikbaarheid',
+                                             kardinaliteit_min='0',
+                                             kardinaliteit_max='*',
+                                             definition='Periode waarin contact kan worden opgenomen.')
+
+        self._contactnaam = OTLAttribuut(field=StringField,
+                                         naam='contactnaam',
+                                         label='contactnaam',
+                                         objectUri='https://schema.org/ContactPoint.contactnaam',
+                                         kardinaliteit_min='0',
+                                         definition='Naam van bv. de persoon die men kan contacteren.')
+
+        self._email = OTLAttribuut(field=StringField,
+                                   naam='email',
+                                   label='email',
+                                   objectUri='https://schema.org/ContactPoint.email',
+                                   kardinaliteit_min='0',
+                                   definition='Email-adres waarnaar men kan mailen.')
+
+        self._fax = OTLAttribuut(field=StringField,
+                                 naam='fax',
+                                 label='fax',
+                                 objectUri='https://schema.org/ContactPoint.fax',
+                                 kardinaliteit_min='0',
+                                 definition='Faxnummer waarnaar men kan faxen.')
+
+        self._opmerkingen = OTLAttribuut(field=StringField,
+                                         naam='opmerkingen',
+                                         label='opmerkingen',
+                                         objectUri='https://schema.org/ContactPoint.opmerkingen',
+                                         kardinaliteit_min='0',
+                                         definition='Bijkomende informatie met betrekking tot het gebruik van de contactgegevens.')
+
+        self._telefoon = OTLAttribuut(field=StringField,
+                                      naam='telefoon',
+                                      label='telefoon',
+                                      objectUri='https://schema.org/ContactPoint.telefoon',
+                                      kardinaliteit_min='0',
+                                      definition='Telefoonnummer waarop men kan bellen.')
+
+        self._website = OTLAttribuut(field=StringField,
+                                     naam='website',
+                                     label='website',
+                                     objectUri='https://schema.org/ContactPoint.website',
+                                     kardinaliteit_min='0',
+                                     definition='Website waarnaar men kan surfen.')
+
+    @property
+    def adres(self):
         """Adres dat men kan aanschrijven of bezoeken."""
-        self.waarde.adres.naam = "adres"
-        self.waarde.adres.label = "adres"
-        self.waarde.adres.objectUri = "https://schema.org/ContactPoint.adres"
-        self.waarde.adres.definition = "Adres dat men kan aanschrijven of bezoeken."
-        self.waarde.adres.constraints = ""
-        self.waarde.adres.usagenote = ""
-        self.waarde.adres.deprecated_version = ""
-        self.adres = self.waarde.adres
+        return self._adres.waarde
 
-        beschikbaarheidField = DtcOpeningsurenSpecificatie()
-        beschikbaarheidField.naam = "beschikbaarheid"
-        beschikbaarheidField.label = "beschikbaarheid"
-        beschikbaarheidField.objectUri = "https://schema.org/ContactPoint.beschikbaarheid"
-        beschikbaarheidField.definition = "Periode waarin contact kan worden opgenomen."
-        beschikbaarheidField.constraints = ""
-        beschikbaarheidField.usagenote = ""
-        beschikbaarheidField.deprecated_version = ""
-        self.waarde.beschikbaarheid = KardinaliteitField(minKardinaliteit="0", maxKardinaliteit="*", fieldToMultiply=beschikbaarheidField)
-        self.beschikbaarheid = self.waarde.beschikbaarheid
+    @adres.setter
+    def adres(self, value):
+        self._adres.set_waarde(value)
+
+    @property
+    def beschikbaarheid(self):
         """Periode waarin contact kan worden opgenomen."""
+        return self._beschikbaarheid.waarde
 
-        self.waarde.contactnaam = StringField(naam="contactnaam",
-                                              label="contactnaam",
-                                              objectUri="https://schema.org/ContactPoint.contactnaam",
-                                              definition="Naam van bv. de persoon die men kan contacteren.",
-                                              constraints="",
-                                              usagenote="",
-                                              deprecated_version="")
-        self.contactnaam = self.waarde.contactnaam
+    @beschikbaarheid.setter
+    def beschikbaarheid(self, value):
+        self._beschikbaarheid.set_waarde(value)
+
+    @property
+    def contactnaam(self):
         """Naam van bv. de persoon die men kan contacteren."""
+        return self._contactnaam.waarde
 
-        self.waarde.email = StringField(naam="email",
-                                        label="email",
-                                        objectUri="https://schema.org/ContactPoint.email",
-                                        definition="Email-adres waarnaar men kan mailen.",
-                                        constraints="",
-                                        usagenote="",
-                                        deprecated_version="")
-        self.email = self.waarde.email
+    @contactnaam.setter
+    def contactnaam(self, value):
+        self._contactnaam.set_waarde(value)
+
+    @property
+    def email(self):
         """Email-adres waarnaar men kan mailen."""
+        return self._email.waarde
 
-        self.waarde.fax = StringField(naam="fax",
-                                      label="fax",
-                                      objectUri="https://schema.org/ContactPoint.fax",
-                                      definition="Faxnummer waarnaar men kan faxen.",
-                                      constraints="",
-                                      usagenote="",
-                                      deprecated_version="")
-        self.fax = self.waarde.fax
+    @email.setter
+    def email(self, value):
+        self._email.set_waarde(value)
+
+    @property
+    def fax(self):
         """Faxnummer waarnaar men kan faxen."""
+        return self._fax.waarde
 
-        self.waarde.opmerkingen = StringField(naam="opmerkingen",
-                                              label="opmerkingen",
-                                              objectUri="https://schema.org/ContactPoint.opmerkingen",
-                                              definition="Bijkomende informatie met betrekking tot het gebruik van de contactgegevens.",
-                                              constraints="",
-                                              usagenote="",
-                                              deprecated_version="")
-        self.opmerkingen = self.waarde.opmerkingen
+    @fax.setter
+    def fax(self, value):
+        self._fax.set_waarde(value)
+
+    @property
+    def opmerkingen(self):
         """Bijkomende informatie met betrekking tot het gebruik van de contactgegevens."""
+        return self._opmerkingen.waarde
 
-        self.waarde.telefoon = StringField(naam="telefoon",
-                                           label="telefoon",
-                                           objectUri="https://schema.org/ContactPoint.telefoon",
-                                           definition="Telefoonnummer waarop men kan bellen.",
-                                           constraints="",
-                                           usagenote="",
-                                           deprecated_version="")
-        self.telefoon = self.waarde.telefoon
+    @opmerkingen.setter
+    def opmerkingen(self, value):
+        self._opmerkingen.set_waarde(value)
+
+    @property
+    def telefoon(self):
         """Telefoonnummer waarop men kan bellen."""
+        return self._telefoon.waarde
 
-        self.waarde.website = StringField(naam="website",
-                                          label="website",
-                                          objectUri="https://schema.org/ContactPoint.website",
-                                          definition="Website waarnaar men kan surfen.",
-                                          constraints="",
-                                          usagenote="",
-                                          deprecated_version="")
-        self.website = self.waarde.website
+    @telefoon.setter
+    def telefoon(self, value):
+        self._telefoon.set_waarde(value)
+
+    @property
+    def website(self):
         """Website waarnaar men kan surfen."""
+        return self._website.waarde
+
+    @website.setter
+    def website(self, value):
+        self._website.set_waarde(value)
+
+
+# Generated with OTLComplexDatatypeCreator. To modify: extend, do not edit
+class DtcContactinfo(ComplexField, AttributeInfo):
+    """Complex datatype voor de informatie zoals email, telefoon, adres die toelaat om iemand of iets te contacteren."""
+    naam = 'DtcContactinfo'
+    label = 'Contactinfo'
+    objectUri = 'https://schema.org/ContactPoint'
+    definition = 'Complex datatype voor de informatie zoals email, telefoon, adres die toelaat om iemand of iets te contacteren.'
+    waardeObject = DtcContactinfoWaarden
+
+    def __str__(self):
+        return ComplexField.__str__(self)
+

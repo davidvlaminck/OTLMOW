@@ -1,19 +1,22 @@
 # coding=utf-8
-from OTLModel.Datatypes.Keuzelijst import Keuzelijst
+from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
+from OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 
 # Generated with OTLEnumerationCreator. To modify: extend, do not edit
-class KlKabelnettoegangNetwerksoort(Keuzelijst):
+class KlKabelnettoegangNetwerksoort(KeuzelijstField):
     """Lijst van netwerktypes die bereikbaar is via het kabelnet toegangspunt."""
+    naam = 'KlKabelnettoegangNetwerksoort'
+    label = 'Kabelnet toegang netwerksoort'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlKabelnettoegangNetwerksoort'
+    definition = 'Lijst van netwerktypes die bereikbaar is via het kabelnet toegangspunt.'
+    codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlKabelnettoegangNetwerksoort'
+    options = {
+        'Cu': KeuzelijstWaarde(invulwaarde='Cu',
+                               label='Cu',
+                               objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlKabelnettoegangNetwerksoort/Cu'),
+        'FO': KeuzelijstWaarde(invulwaarde='FO',
+                               label='FO',
+                               objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlKabelnettoegangNetwerksoort/FO')
+    }
 
-    def __init__(self):
-        super().__init__(naam="KlKabelnettoegangNetwerksoort",
-                         label="Kabelnet toegang netwerksoort",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlKabelnettoegangNetwerksoort",
-                         definition="Lijst van netwerktypes die bereikbaar is via het kabelnet toegangspunt.",
-                         usagenote="",
-                         deprecated_version="",
-                         codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlKabelnettoegangNetwerksoort")
-
-        self.add_option("Cu", "Cu", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlKabelnettoegangNetwerksoort/Cu")
-        self.add_option("FO", "FO", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlKabelnettoegangNetwerksoort/FO")

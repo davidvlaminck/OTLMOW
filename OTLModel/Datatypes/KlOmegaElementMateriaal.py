@@ -1,20 +1,28 @@
 # coding=utf-8
-from OTLModel.Datatypes.Keuzelijst import Keuzelijst
+from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
+from OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 
 # Generated with OTLEnumerationCreator. To modify: extend, do not edit
-class KlOmegaElementMateriaal(Keuzelijst):
+class KlOmegaElementMateriaal(KeuzelijstField):
     """De gebruikte materialen van het omega-element."""
+    naam = 'KlOmegaElementMateriaal'
+    label = 'Omega element materiaal'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlOmegaElementMateriaal'
+    definition = 'De gebruikte materialen van het omega-element.'
+    codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlOmegaElementMateriaal'
+    options = {
+        'aluminium': KeuzelijstWaarde(invulwaarde='aluminium',
+                                      label='aluminium',
+                                      definitie='Omega-element vervaarigd uit aluminium.',
+                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOmegaElementMateriaal/aluminium'),
+        'roestvrij-staal': KeuzelijstWaarde(invulwaarde='roestvrij-staal',
+                                            label='roestvrij staal',
+                                            definitie='Omega-element vervaarigd uit roestvrij staal.',
+                                            objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOmegaElementMateriaal/roestvrij-staal'),
+        'verzinkt-staal': KeuzelijstWaarde(invulwaarde='verzinkt-staal',
+                                           label='verzinkt staal',
+                                           definitie='Omega-element vervaarigd uit verzinkt staal.',
+                                           objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOmegaElementMateriaal/verzinkt-staal')
+    }
 
-    def __init__(self):
-        super().__init__(naam="KlOmegaElementMateriaal",
-                         label="Omega element materiaal",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlOmegaElementMateriaal",
-                         definition="De gebruikte materialen van het omega-element.",
-                         usagenote="",
-                         deprecated_version="",
-                         codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlOmegaElementMateriaal")
-
-        self.add_option("aluminium", "aluminium", "Omega-element vervaarigd uit aluminium.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOmegaElementMateriaal/aluminium")
-        self.add_option("roestvrij-staal", "roestvrij staal", "Omega-element vervaarigd uit roestvrij staal.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOmegaElementMateriaal/roestvrij-staal")
-        self.add_option("verzinkt-staal", "verzinkt staal", "Omega-element vervaarigd uit verzinkt staal.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOmegaElementMateriaal/verzinkt-staal")

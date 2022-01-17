@@ -1,20 +1,25 @@
 # coding=utf-8
-from OTLModel.Datatypes.Keuzelijst import Keuzelijst
+from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
+from OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 
 # Generated with OTLEnumerationCreator. To modify: extend, do not edit
-class KlExternedetectieCommunicatiewijze(Keuzelijst):
+class KlExternedetectieCommunicatiewijze(KeuzelijstField):
     """Keuzelijst met de verschillende manieren waarop een externe detectie communiceert met een verkeersregelaar."""
+    naam = 'KlExternedetectieCommunicatiewijze'
+    label = 'Externedetectie communicatiewijze'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlExternedetectieCommunicatiewijze'
+    definition = 'Keuzelijst met de verschillende manieren waarop een externe detectie communiceert met een verkeersregelaar.'
+    codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlExternedetectieCommunicatiewijze'
+    options = {
+        'contact': KeuzelijstWaarde(invulwaarde='contact',
+                                    label='contact',
+                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlExternedetectieCommunicatiewijze/contact'),
+        'protocol': KeuzelijstWaarde(invulwaarde='protocol',
+                                     label='protocol',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlExternedetectieCommunicatiewijze/protocol'),
+        'serieel': KeuzelijstWaarde(invulwaarde='serieel',
+                                    label='serieel',
+                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlExternedetectieCommunicatiewijze/serieel')
+    }
 
-    def __init__(self):
-        super().__init__(naam="KlExternedetectieCommunicatiewijze",
-                         label="Externedetectie communicatiewijze",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlExternedetectieCommunicatiewijze",
-                         definition="Keuzelijst met de verschillende manieren waarop een externe detectie communiceert met een verkeersregelaar.",
-                         usagenote="",
-                         deprecated_version="",
-                         codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlExternedetectieCommunicatiewijze")
-
-        self.add_option("contact", "contact", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlExternedetectieCommunicatiewijze/contact")
-        self.add_option("protocol", "protocol", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlExternedetectieCommunicatiewijze/protocol")
-        self.add_option("serieel", "serieel", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlExternedetectieCommunicatiewijze/serieel")

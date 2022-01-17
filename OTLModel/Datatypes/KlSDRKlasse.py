@@ -1,19 +1,24 @@
 # coding=utf-8
-from OTLModel.Datatypes.Keuzelijst import Keuzelijst
+from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
+from OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 
 # Generated with OTLEnumerationCreator. To modify: extend, do not edit
-class KlSDRKlasse(Keuzelijst):
+class KlSDRKlasse(KeuzelijstField):
     """De verhouding tussen de wanddikte en de diameter van de persleiding."""
+    naam = 'KlSDRKlasse'
+    label = 'SDR klasse'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlSDRKlasse'
+    definition = 'De verhouding tussen de wanddikte en de diameter van de persleiding.'
+    codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlSDRKlasse'
+    options = {
+        '11': KeuzelijstWaarde(invulwaarde='11',
+                               label='11',
+                               definitie='11',
+                               objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlSDRKlasse/11'),
+        '17': KeuzelijstWaarde(invulwaarde='17',
+                               label='17',
+                               definitie='17',
+                               objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlSDRKlasse/17')
+    }
 
-    def __init__(self):
-        super().__init__(naam="KlSDRKlasse",
-                         label="SDR klasse",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlSDRKlasse",
-                         definition="De verhouding tussen de wanddikte en de diameter van de persleiding.",
-                         usagenote="",
-                         deprecated_version="",
-                         codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlSDRKlasse")
-
-        self.add_option("11", "11", "11", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlSDRKlasse/11")
-        self.add_option("17", "17", "17", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlSDRKlasse/17")

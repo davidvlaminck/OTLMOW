@@ -1,19 +1,22 @@
 # coding=utf-8
-from OTLModel.Datatypes.Keuzelijst import Keuzelijst
+from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
+from OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 
 # Generated with OTLEnumerationCreator. To modify: extend, do not edit
-class KlBrandblusserGewicht(Keuzelijst):
+class KlBrandblusserGewicht(KeuzelijstField):
     """Keuzelijst met de mogelijke gewichten van brandblussers."""
+    naam = 'KlBrandblusserGewicht'
+    label = 'Brandblusser gewicht'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlBrandblusserGewicht'
+    definition = 'Keuzelijst met de mogelijke gewichten van brandblussers.'
+    codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlBrandblusserGewicht'
+    options = {
+        '6-kg': KeuzelijstWaarde(invulwaarde='6-kg',
+                                 label='6 kg',
+                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBrandblusserGewicht/6-kg'),
+        '9-kg': KeuzelijstWaarde(invulwaarde='9-kg',
+                                 label='9 kg',
+                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBrandblusserGewicht/9-kg')
+    }
 
-    def __init__(self):
-        super().__init__(naam="KlBrandblusserGewicht",
-                         label="Brandblusser gewicht",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlBrandblusserGewicht",
-                         definition="Keuzelijst met de mogelijke gewichten van brandblussers.",
-                         usagenote="",
-                         deprecated_version="",
-                         codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlBrandblusserGewicht")
-
-        self.add_option("6-kg", "6 kg", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBrandblusserGewicht/6-kg")
-        self.add_option("9-kg", "9 kg", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBrandblusserGewicht/9-kg")

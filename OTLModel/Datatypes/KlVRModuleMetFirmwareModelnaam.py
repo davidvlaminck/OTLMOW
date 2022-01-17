@@ -1,17 +1,16 @@
 # coding=utf-8
-from OTLModel.Datatypes.Keuzelijst import Keuzelijst
+from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
+from OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 
 # Generated with OTLEnumerationCreator. To modify: extend, do not edit
-class KlVRModuleMetFirmwareModelnaam(Keuzelijst):
+class KlVRModuleMetFirmwareModelnaam(KeuzelijstField):
     """Lijst met modelnamen voor VR-modules met firmware."""
-
-    def __init__(self):
-        super().__init__(naam="KlVRModuleMetFirmwareModelnaam",
-                         label="VR-module met firmware modelnaam",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#KlVRModuleMetFirmwareModelnaam",
-                         definition="Lijst met modelnamen voor VR-modules met firmware.",
-                         usagenote="",
-                         deprecated_version="",
-                         codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlVRModuleMetFirmwareModelnaam")
+    naam = 'KlVRModuleMetFirmwareModelnaam'
+    label = 'VR-module met firmware modelnaam'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#KlVRModuleMetFirmwareModelnaam'
+    definition = 'Lijst met modelnamen voor VR-modules met firmware.'
+    codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlVRModuleMetFirmwareModelnaam'
+    options = 
+    }
 

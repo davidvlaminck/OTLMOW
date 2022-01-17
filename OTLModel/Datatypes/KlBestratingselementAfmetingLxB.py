@@ -1,30 +1,68 @@
 # coding=utf-8
-from OTLModel.Datatypes.Keuzelijst import Keuzelijst
+from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
+from OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 
 # Generated with OTLEnumerationCreator. To modify: extend, do not edit
-class KlBestratingselementAfmetingLxB(Keuzelijst):
+class KlBestratingselementAfmetingLxB(KeuzelijstField):
     """De afmetingen of aanduidingen voor bestrating van betonstraatstenen."""
+    naam = 'KlBestratingselementAfmetingLxB'
+    label = 'Afmeting bestratingselement lengte x breedte'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlBestratingselementAfmetingLxB'
+    definition = 'De afmetingen of aanduidingen voor bestrating van betonstraatstenen.'
+    codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlBestratingselementAfmetingLxB'
+    options = {
+        '1000-x-1000': KeuzelijstWaarde(invulwaarde='1000-x-1000',
+                                        label='1000 x 1000',
+                                        definitie='1000 x 1000',
+                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBestratingselementAfmetingLxB/1000-x-1000'),
+        '150-x-150': KeuzelijstWaarde(invulwaarde='150-x-150',
+                                      label='150 x 150',
+                                      definitie='150 x 150',
+                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBestratingselementAfmetingLxB/150-x-150'),
+        '200-x-200': KeuzelijstWaarde(invulwaarde='200-x-200',
+                                      label='200 x 200',
+                                      definitie='200 x 200',
+                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBestratingselementAfmetingLxB/200-x-200'),
+        '200-x-200-voegstenen': KeuzelijstWaarde(invulwaarde='200-x-200-voegstenen',
+                                                 label='200 x 200 voegstenen',
+                                                 definitie='200 x 200 voegstenen',
+                                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBestratingselementAfmetingLxB/200-x-200-voegstenen'),
+        '220-x-110': KeuzelijstWaarde(invulwaarde='220-x-110',
+                                      label='220 x 110',
+                                      definitie='220 x 110',
+                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBestratingselementAfmetingLxB/220-x-110'),
+        '220-x-220': KeuzelijstWaarde(invulwaarde='220-x-220',
+                                      label='220 x 220',
+                                      definitie='220 x 220',
+                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBestratingselementAfmetingLxB/220-x-220'),
+        '220-x-220-voegstenen': KeuzelijstWaarde(invulwaarde='220-x-220-voegstenen',
+                                                 label='220 x 220 voegstenen',
+                                                 definitie='220 x 220 voegstenen',
+                                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBestratingselementAfmetingLxB/220-x-220-voegstenen'),
+        '300-x-300': KeuzelijstWaarde(invulwaarde='300-x-300',
+                                      label='300 x 300',
+                                      definitie='300 x 300',
+                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBestratingselementAfmetingLxB/300-x-300'),
+        '400-x-400': KeuzelijstWaarde(invulwaarde='400-x-400',
+                                      label='400 x 400',
+                                      definitie='400 x 400',
+                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBestratingselementAfmetingLxB/400-x-400'),
+        '500-x-500': KeuzelijstWaarde(invulwaarde='500-x-500',
+                                      label='500 x 500',
+                                      definitie='500 x 500',
+                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBestratingselementAfmetingLxB/500-x-500'),
+        '600-x-600': KeuzelijstWaarde(invulwaarde='600-x-600',
+                                      label='600 x 600',
+                                      definitie='600 x 600',
+                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBestratingselementAfmetingLxB/600-x-600'),
+        '800-x-800': KeuzelijstWaarde(invulwaarde='800-x-800',
+                                      label='800 x 800',
+                                      definitie='800 x 800',
+                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBestratingselementAfmetingLxB/800-x-800'),
+        'afmetingen-volgens-de-opdrachtdocumenten': KeuzelijstWaarde(invulwaarde='afmetingen-volgens-de-opdrachtdocumenten',
+                                                                     label='afmetingen volgens de opdrachtdocumenten',
+                                                                     definitie='afmetingen volgens de opdrachtdocumenten',
+                                                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBestratingselementAfmetingLxB/afmetingen-volgens-de-opdrachtdocumenten')
+    }
 
-    def __init__(self):
-        super().__init__(naam="KlBestratingselementAfmetingLxB",
-                         label="Afmeting bestratingselement lengte x breedte",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlBestratingselementAfmetingLxB",
-                         definition="De afmetingen of aanduidingen voor bestrating van betonstraatstenen.",
-                         usagenote="",
-                         deprecated_version="",
-                         codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlBestratingselementAfmetingLxB")
-
-        self.add_option("1000-x-1000", "1000 x 1000", "1000 x 1000", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBestratingselementAfmetingLxB/1000-x-1000")
-        self.add_option("150-x-150", "150 x 150", "150 x 150", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBestratingselementAfmetingLxB/150-x-150")
-        self.add_option("200-x-200", "200 x 200", "200 x 200", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBestratingselementAfmetingLxB/200-x-200")
-        self.add_option("200-x-200-voegstenen", "200 x 200 voegstenen", "200 x 200 voegstenen", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBestratingselementAfmetingLxB/200-x-200-voegstenen")
-        self.add_option("220-x-110", "220 x 110", "220 x 110", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBestratingselementAfmetingLxB/220-x-110")
-        self.add_option("220-x-220", "220 x 220", "220 x 220", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBestratingselementAfmetingLxB/220-x-220")
-        self.add_option("220-x-220-voegstenen", "220 x 220 voegstenen", "220 x 220 voegstenen", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBestratingselementAfmetingLxB/220-x-220-voegstenen")
-        self.add_option("300-x-300", "300 x 300", "300 x 300", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBestratingselementAfmetingLxB/300-x-300")
-        self.add_option("400-x-400", "400 x 400", "400 x 400", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBestratingselementAfmetingLxB/400-x-400")
-        self.add_option("500-x-500", "500 x 500", "500 x 500", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBestratingselementAfmetingLxB/500-x-500")
-        self.add_option("600-x-600", "600 x 600", "600 x 600", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBestratingselementAfmetingLxB/600-x-600")
-        self.add_option("800-x-800", "800 x 800", "800 x 800", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBestratingselementAfmetingLxB/800-x-800")
-        self.add_option("afmetingen-volgens-de-opdrachtdocumenten", "afmetingen volgens de opdrachtdocumenten", "afmetingen volgens de opdrachtdocumenten", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBestratingselementAfmetingLxB/afmetingen-volgens-de-opdrachtdocumenten")

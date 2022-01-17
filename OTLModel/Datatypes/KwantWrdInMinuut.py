@@ -1,39 +1,29 @@
 # coding=utf-8
-from OTLModel.Datatypes.KwantWrd import KwantWrd
-from OTLModel.Datatypes.LiteralField import LiteralField
 from OTLModel.Datatypes.NonNegIntegerField import NonNegIntegerField
+from OTLModel.Datatypes.LiteralField import LiteralField
+from OTLModel.BaseClasses.KwantWrd import KwantWrd
+from OTLModel.BaseClasses.KwantWrdEenheid import KwantWrdEenheid
+from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 
 
 # Generated with OTLPrimitiveDatatypeCreator. To modify: extend, do not edit
-class KwantWrdInMinuut(KwantWrd):
-    """Een kwantitatieve waarde die een getal in minuten uitdrukt."""
+class KwantWrdInMinuutEenheid(KwantWrdEenheid):
+    def __init__(self):
+        super().__init__()
+        self._standaardEenheid = OTLAttribuut(field=LiteralField,
+                                              naam='standaardEenheid',
+                                              label='standaard eenheid',
+                                              objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMinuut.standaardEenheid',
+                                              definition='De standaard eenheid bij dit datatype is uitgedrukt in minuten.',
+                                              constraints='"min"^^cdt:ucumunit',
+                                              usagenote='"min"^^cdt:ucumunit')
 
-    def __init__(self, waarde=None):
-        self.eenheid = LiteralField(naam="standaardEenheid",
-                                    label="standaard eenheid",
-                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMinuut.standaardEenheid",
-                                    definition="De standaard eenheid bij dit datatype is uitgedrukt in minuten.",
-                                    constraints='"min"^^cdt:ucumunit',
-                                    usagenote='"min"^^cdt:ucumunit',
-                                    deprecated_version="",
-                                    readonlyValue="min")
-        """De standaard eenheid bij dit datatype is uitgedrukt in minuten."""
 
-        self.waardeVeld = NonNegIntegerField(naam="waarde",
-                                             label="waarde",
-                                             objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMinuut.waarde",
-                                             definition="Bevat een getal die bij het datatype hoort.",
-                                             constraints="",
-                                             usagenote="",
-                                             deprecated_version="")
-        """Bevat een getal die bij het datatype hoort."""
+# Generated with OTLPrimitiveDatatypeCreator. To modify: extend, do not edit
+class KwantWrdInMinuut(NonNegIntegerField, KwantWrd):
+    naam = 'waarde'
+    label = 'waarde'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMinuut.waarde'
+    definition = 'Bevat een getal die bij het datatype hoort.'
+    eenheid = KwantWrdInMinuutEenheid()
 
-        super().__init__(naam="KwantWrdInMinuut",
-                         label="Kwantitatieve waarde in minuten",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMinuut",
-                         definition="Een kwantitatieve waarde die een getal in minuten uitdrukt.",
-                         usagenote="",
-                         deprecated_version="",
-                         waardeVeld=self.waardeVeld,
-                         eenheidVeld=self.eenheid,
-                         waarde=waarde)

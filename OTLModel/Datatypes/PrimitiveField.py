@@ -7,6 +7,7 @@ from OTLModel.Datatypes.OTLField import OTLField
 class PrimitiveField(OTLField, ABC):
     def __init__(self, primitiveType: type, naam, label, objectUri, definition, constraints, usagenote, deprecated_version,
                  readonly=False, readonlyValue=None):
+        raise SyntaxError('')
         super().__init__(naam, label, objectUri, definition, constraints, usagenote, deprecated_version, readonly, readonlyValue)
         self.primitiveType = primitiveType
 

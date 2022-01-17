@@ -1,28 +1,24 @@
-﻿from UnitTests.OTLFieldTests.AttributeInfo import AttributeInfo
-from UnitTests.OTLFieldTests.OTLAttribuut import OTLAttribuut
-from UnitTests.OTLFieldTests.StringField import StringField
-from UnitTests.OTLFieldTests.ComplexField import ComplexField
+﻿# coding=utf-8
+from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
+from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLModel.Datatypes.ComplexField import ComplexField
+from OTLModel.Datatypes.StringField import StringField
 
 
+# Generated with OTLComplexDatatypeCreator. To modify: extend, do not edit
 class DtcIdentificatorWaarden(AttributeInfo):
     def __init__(self):
         self._identificator = OTLAttribuut(field=StringField,
-                                           naam="identificator",
-                                           label="identificator",
-                                           objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcIdentificator.identificator",
-                                           definition="Een groep van tekens om een AIM object te identificeren of te benoemen.",
-                                           constraints="",
-                                           usagenote="",
-                                           deprecated_version="")
+                                           naam='identificator',
+                                           label='identificator',
+                                           objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcIdentificator.identificator',
+                                           definition='Een groep van tekens om een AIM object te identificeren of te benoemen.')
 
         self._toegekendDoor = OTLAttribuut(field=StringField,
-                                           naam="toegekendDoor",
-                                           label="toegekend door",
-                                           objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcIdentificator.toegekendDoor",
-                                           definition="Gegevens van de organisatie die de toekenning deed.",
-                                           constraints="",
-                                           usagenote="",
-                                           deprecated_version="")
+                                           naam='toegekendDoor',
+                                           label='toegekend door',
+                                           objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcIdentificator.toegekendDoor',
+                                           definition='Gegevens van de organisatie die de toekenning deed.')
 
     @property
     def identificator(self):
@@ -43,12 +39,15 @@ class DtcIdentificatorWaarden(AttributeInfo):
         self._toegekendDoor.set_waarde(value)
 
 
+# Generated with OTLComplexDatatypeCreator. To modify: extend, do not edit
 class DtcIdentificator(ComplexField, AttributeInfo):
-    naam = "DtcIdentificator",
-    label = "Identificator",
-    objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcIdentificator",
-    definition = "Complex datatype voor de identificator van een AIM object volgens de bron van de identificator.",
-    usagenote = "",
-    deprecated_version = ""
+    """Complex datatype voor de identificator van een AIM object volgens de bron van de identificator."""
+    naam = 'DtcIdentificator',
+    label = 'Identificator',
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcIdentificator',
+    definition = 'Complex datatype voor de identificator van een AIM object volgens de bron van de identificator.',
     waardeObject = DtcIdentificatorWaarden
+
+    def __str__(self):
+        return ComplexField.__str__(self)
 

@@ -1,21 +1,28 @@
 # coding=utf-8
-from OTLModel.Datatypes.Keuzelijst import Keuzelijst
+from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
+from OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 
 # Generated with OTLEnumerationCreator. To modify: extend, do not edit
-class KlLuchtkwaliteitOpstellingModelnaam(Keuzelijst):
+class KlLuchtkwaliteitOpstellingModelnaam(KeuzelijstField):
     """De modelnaam van een onderdeel uit een luchtkwaliteitsinstallatie."""
+    naam = 'KlLuchtkwaliteitOpstellingModelnaam'
+    label = 'Luchtkwaliteitsopstelling modelnaam'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#KlLuchtkwaliteitOpstellingModelnaam'
+    definition = 'De modelnaam van een onderdeel uit een luchtkwaliteitsinstallatie.'
+    codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlLuchtkwaliteitOpstellingModelnaam'
+    options = {
+        'VICOTEC321': KeuzelijstWaarde(invulwaarde='VICOTEC321',
+                                       label='VICOTEC321',
+                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLuchtkwaliteitOpstellingModelnaam/VICOTEC321'),
+        'VICOTEC322': KeuzelijstWaarde(invulwaarde='VICOTEC322',
+                                       label='VICOTEC322',
+                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLuchtkwaliteitOpstellingModelnaam/VICOTEC322'),
+        'VICOTEC323': KeuzelijstWaarde(invulwaarde='VICOTEC323',
+                                       label='VICOTEC323',
+                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLuchtkwaliteitOpstellingModelnaam/VICOTEC323'),
+        'VICOTEC324': KeuzelijstWaarde(invulwaarde='VICOTEC324',
+                                       label='VICOTEC324',
+                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLuchtkwaliteitOpstellingModelnaam/VICOTEC324')
+    }
 
-    def __init__(self):
-        super().__init__(naam="KlLuchtkwaliteitOpstellingModelnaam",
-                         label="Luchtkwaliteitsopstelling modelnaam",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#KlLuchtkwaliteitOpstellingModelnaam",
-                         definition="De modelnaam van een onderdeel uit een luchtkwaliteitsinstallatie.",
-                         usagenote="",
-                         deprecated_version="",
-                         codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlLuchtkwaliteitOpstellingModelnaam")
-
-        self.add_option("VICOTEC321", "VICOTEC321", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLuchtkwaliteitOpstellingModelnaam/VICOTEC321")
-        self.add_option("VICOTEC322", "VICOTEC322", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLuchtkwaliteitOpstellingModelnaam/VICOTEC322")
-        self.add_option("VICOTEC323", "VICOTEC323", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLuchtkwaliteitOpstellingModelnaam/VICOTEC323")
-        self.add_option("VICOTEC324", "VICOTEC324", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLuchtkwaliteitOpstellingModelnaam/VICOTEC324")

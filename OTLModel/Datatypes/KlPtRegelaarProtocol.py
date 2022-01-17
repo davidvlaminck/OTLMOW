@@ -1,19 +1,22 @@
 # coding=utf-8
-from OTLModel.Datatypes.Keuzelijst import Keuzelijst
+from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
+from OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 
 # Generated with OTLEnumerationCreator. To modify: extend, do not edit
-class KlPtRegelaarProtocol(Keuzelijst):
+class KlPtRegelaarProtocol(KeuzelijstField):
     """Beschrijft het protocol waarmee de PT-regelaar communiceert."""
+    naam = 'KlPtRegelaarProtocol'
+    label = 'PT-regelaar protocol'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlPtRegelaarProtocol'
+    definition = 'Beschrijft het protocol waarmee de PT-regelaar communiceert.'
+    codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlPtRegelaarProtocol'
+    options = {
+        'R0916': KeuzelijstWaarde(invulwaarde='R0916',
+                                  label='R0916',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlPtRegelaarProtocol/R0916'),
+        'R0918': KeuzelijstWaarde(invulwaarde='R0918',
+                                  label='R0918',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlPtRegelaarProtocol/R0918')
+    }
 
-    def __init__(self):
-        super().__init__(naam="KlPtRegelaarProtocol",
-                         label="PT-regelaar protocol",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlPtRegelaarProtocol",
-                         definition="Beschrijft het protocol waarmee de PT-regelaar communiceert.",
-                         usagenote="",
-                         deprecated_version="",
-                         codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlPtRegelaarProtocol")
-
-        self.add_option("R0916", "R0916", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlPtRegelaarProtocol/R0916")
-        self.add_option("R0918", "R0918", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlPtRegelaarProtocol/R0918")

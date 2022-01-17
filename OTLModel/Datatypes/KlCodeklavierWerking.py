@@ -1,20 +1,25 @@
 # coding=utf-8
-from OTLModel.Datatypes.Keuzelijst import Keuzelijst
+from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
+from OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 
 # Generated with OTLEnumerationCreator. To modify: extend, do not edit
-class KlCodeklavierWerking(Keuzelijst):
+class KlCodeklavierWerking(KeuzelijstField):
     """Een keuzelijst met werkingsprincipes van een codeklavier."""
+    naam = 'KlCodeklavierWerking'
+    label = 'Codeklavier werking'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlCodeklavierWerking'
+    definition = 'Een keuzelijst met werkingsprincipes van een codeklavier.'
+    codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlCodeklavierWerking'
+    options = {
+        'cijfercodeslot': KeuzelijstWaarde(invulwaarde='cijfercodeslot',
+                                           label='cijfercodeslot',
+                                           objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlCodeklavierWerking/cijfercodeslot'),
+        'cijfercodeslot-met-drukknop': KeuzelijstWaarde(invulwaarde='cijfercodeslot-met-drukknop',
+                                                        label='cijfercodeslot met drukknop',
+                                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlCodeklavierWerking/cijfercodeslot-met-drukknop'),
+        'drukknop': KeuzelijstWaarde(invulwaarde='drukknop',
+                                     label='drukknop',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlCodeklavierWerking/drukknop')
+    }
 
-    def __init__(self):
-        super().__init__(naam="KlCodeklavierWerking",
-                         label="Codeklavier werking",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlCodeklavierWerking",
-                         definition="Een keuzelijst met werkingsprincipes van een codeklavier.",
-                         usagenote="",
-                         deprecated_version="",
-                         codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlCodeklavierWerking")
-
-        self.add_option("cijfercodeslot", "cijfercodeslot", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlCodeklavierWerking/cijfercodeslot")
-        self.add_option("cijfercodeslot-met-drukknop", "cijfercodeslot met drukknop", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlCodeklavierWerking/cijfercodeslot-met-drukknop")
-        self.add_option("drukknop", "drukknop", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlCodeklavierWerking/drukknop")

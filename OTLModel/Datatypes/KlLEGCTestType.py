@@ -1,19 +1,24 @@
 # coding=utf-8
-from OTLModel.Datatypes.Keuzelijst import Keuzelijst
+from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
+from OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 
 # Generated with OTLEnumerationCreator. To modify: extend, do not edit
-class KlLEGCTestType(Keuzelijst):
+class KlLEGCTestType(KeuzelijstField):
     """Het test type van het geluidswerend scherm."""
+    naam = 'KlLEGCTestType'
+    label = 'Test type'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlLEGCTestType'
+    definition = 'Het test type van het geluidswerend scherm.'
+    codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlLEGCTestType'
+    options = {
+        'geluidsabsorptie': KeuzelijstWaarde(invulwaarde='geluidsabsorptie',
+                                             label='geluidsabsorptie',
+                                             definitie='Proef : De ééngetalsaanduiding als waarde voor de geluidsabsorptie',
+                                             objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLEGCTestType/geluidsabsorptie'),
+        'luchtgeluidsisolatie': KeuzelijstWaarde(invulwaarde='luchtgeluidsisolatie',
+                                                 label='luchtgeluidsisolatie',
+                                                 definitie='Proef : De ééngetalsaanduiding voor luchtgeluidsisolatie',
+                                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLEGCTestType/luchtgeluidsisolatie')
+    }
 
-    def __init__(self):
-        super().__init__(naam="KlLEGCTestType",
-                         label="Test type",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlLEGCTestType",
-                         definition="Het test type van het geluidswerend scherm.",
-                         usagenote="",
-                         deprecated_version="",
-                         codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlLEGCTestType")
-
-        self.add_option("geluidsabsorptie", "geluidsabsorptie", "Proef : De ééngetalsaanduiding als waarde voor de geluidsabsorptie", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLEGCTestType/geluidsabsorptie")
-        self.add_option("luchtgeluidsisolatie", "luchtgeluidsisolatie", "Proef : De ééngetalsaanduiding voor luchtgeluidsisolatie", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLEGCTestType/luchtgeluidsisolatie")

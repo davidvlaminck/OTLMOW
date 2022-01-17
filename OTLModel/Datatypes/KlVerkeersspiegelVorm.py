@@ -1,19 +1,24 @@
 # coding=utf-8
-from OTLModel.Datatypes.Keuzelijst import Keuzelijst
+from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
+from OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 
 # Generated with OTLEnumerationCreator. To modify: extend, do not edit
-class KlVerkeersspiegelVorm(Keuzelijst):
+class KlVerkeersspiegelVorm(KeuzelijstField):
     """De vormen van een verkeersspiegel."""
+    naam = 'KlVerkeersspiegelVorm'
+    label = 'Verkeersspiegel vorm'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlVerkeersspiegelVorm'
+    definition = 'De vormen van een verkeersspiegel.'
+    codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlVerkeersspiegelVorm'
+    options = {
+        'rechthoekig': KeuzelijstWaarde(invulwaarde='rechthoekig',
+                                        label='rechthoekig',
+                                        definitie='rechthoekige verkeersspiegel',
+                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerkeersspiegelVorm/rechthoekig'),
+        'rond': KeuzelijstWaarde(invulwaarde='rond',
+                                 label='rond',
+                                 definitie='ronde verkeersspiegel',
+                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerkeersspiegelVorm/rond')
+    }
 
-    def __init__(self):
-        super().__init__(naam="KlVerkeersspiegelVorm",
-                         label="Verkeersspiegel vorm",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlVerkeersspiegelVorm",
-                         definition="De vormen van een verkeersspiegel.",
-                         usagenote="",
-                         deprecated_version="",
-                         codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlVerkeersspiegelVorm")
-
-        self.add_option("rechthoekig", "rechthoekig", "rechthoekige verkeersspiegel", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerkeersspiegelVorm/rechthoekig")
-        self.add_option("rond", "rond", "ronde verkeersspiegel", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerkeersspiegelVorm/rond")

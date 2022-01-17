@@ -7,6 +7,7 @@ from OTLModel.Datatypes.PrimitiveField import PrimitiveField
 
 class KardinaliteitField(OTLField):
     def __init__(self, minKardinaliteit: str, maxKardinaliteit: str, fieldToMultiply: OTLField):
+        raise SyntaxError
         OTLField.__init__(self, naam=fieldToMultiply.naam, label=fieldToMultiply.label, objectUri=fieldToMultiply.objectUri,
                           definition=fieldToMultiply.definition, constraints=fieldToMultiply.constraints,
                           usagenote=fieldToMultiply.usagenote, deprecated_version=fieldToMultiply.deprecated_version)

@@ -1,21 +1,29 @@
 # coding=utf-8
-from OTLModel.Datatypes.Keuzelijst import Keuzelijst
+from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
+from OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 
 # Generated with OTLEnumerationCreator. To modify: extend, do not edit
-class KlHardwareOS(Keuzelijst):
+class KlHardwareOS(KeuzelijstField):
     """vb : Windows 10 SP1, Windows 10 SP2, unix."""
+    naam = 'KlHardwareOS'
+    label = 'Hardware OS'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#KlHardwareOS'
+    definition = 'vb : Windows 10 SP1, Windows 10 SP2, unix.'
+    codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlHardwareOS'
+    options = {
+        'cent-os-linux-7-core': KeuzelijstWaarde(invulwaarde='cent-os-linux-7-core',
+                                                 label='CentOS Linux 7 (Core)',
+                                                 definitie='CentOS Linux 7 (Core)',
+                                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlHardwareOS/cent-os-linux-7-core'),
+        'unix': KeuzelijstWaarde(invulwaarde='unix',
+                                 label='unix',
+                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlHardwareOS/unix'),
+        'windows-10-SP1': KeuzelijstWaarde(invulwaarde='windows-10-SP1',
+                                           label='windows 10 SP1',
+                                           objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlHardwareOS/windows-10-SP1'),
+        'windows-10-SP2': KeuzelijstWaarde(invulwaarde='windows-10-SP2',
+                                           label='windows 10 SP2',
+                                           objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlHardwareOS/windows-10-SP2')
+    }
 
-    def __init__(self):
-        super().__init__(naam="KlHardwareOS",
-                         label="Hardware OS",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#KlHardwareOS",
-                         definition="vb : Windows 10 SP1, Windows 10 SP2, unix.",
-                         usagenote="",
-                         deprecated_version="",
-                         codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlHardwareOS")
-
-        self.add_option("cent-os-linux-7-core", "CentOS Linux 7 (Core)", "CentOS Linux 7 (Core)", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlHardwareOS/cent-os-linux-7-core")
-        self.add_option("unix", "unix", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlHardwareOS/unix")
-        self.add_option("windows-10-SP1", "windows 10 SP1", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlHardwareOS/windows-10-SP1")
-        self.add_option("windows-10-SP2", "windows 10 SP2", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlHardwareOS/windows-10-SP2")

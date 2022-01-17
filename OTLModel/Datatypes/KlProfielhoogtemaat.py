@@ -1,46 +1,132 @@
 # coding=utf-8
-from OTLModel.Datatypes.Keuzelijst import Keuzelijst
+from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
+from OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 
 # Generated with OTLEnumerationCreator. To modify: extend, do not edit
-class KlProfielhoogtemaat(Keuzelijst):
+class KlProfielhoogtemaat(KeuzelijstField):
     """Voorgedefinieerde hoogtemaat van een profiel."""
+    naam = 'KlProfielhoogtemaat'
+    label = 'Profielhoogtemaat'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlProfielhoogtemaat'
+    definition = 'Voorgedefinieerde hoogtemaat van een profiel.'
+    codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlProfielhoogtemaat'
+    options = {
+        '100': KeuzelijstWaarde(invulwaarde='100',
+                                label='100',
+                                definitie='100',
+                                objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlProfielhoogtemaat/100'),
+        '1000': KeuzelijstWaarde(invulwaarde='1000',
+                                 label='1000',
+                                 definitie='1000',
+                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlProfielhoogtemaat/1000'),
+        '120': KeuzelijstWaarde(invulwaarde='120',
+                                label='120',
+                                definitie='120',
+                                objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlProfielhoogtemaat/120'),
+        '140': KeuzelijstWaarde(invulwaarde='140',
+                                label='140',
+                                definitie='140',
+                                objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlProfielhoogtemaat/140'),
+        '160': KeuzelijstWaarde(invulwaarde='160',
+                                label='160',
+                                definitie='160',
+                                objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlProfielhoogtemaat/160'),
+        '180': KeuzelijstWaarde(invulwaarde='180',
+                                label='180',
+                                definitie='180',
+                                objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlProfielhoogtemaat/180'),
+        '200': KeuzelijstWaarde(invulwaarde='200',
+                                label='200',
+                                definitie='200',
+                                objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlProfielhoogtemaat/200'),
+        '220': KeuzelijstWaarde(invulwaarde='220',
+                                label='220',
+                                definitie='220',
+                                objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlProfielhoogtemaat/220'),
+        '240': KeuzelijstWaarde(invulwaarde='240',
+                                label='240',
+                                definitie='240',
+                                objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlProfielhoogtemaat/240'),
+        '260': KeuzelijstWaarde(invulwaarde='260',
+                                label='260',
+                                definitie='260',
+                                objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlProfielhoogtemaat/260'),
+        '270': KeuzelijstWaarde(invulwaarde='270',
+                                label='270',
+                                definitie='270',
+                                objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlProfielhoogtemaat/270'),
+        '280': KeuzelijstWaarde(invulwaarde='280',
+                                label='280',
+                                definitie='280',
+                                objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlProfielhoogtemaat/280'),
+        '300': KeuzelijstWaarde(invulwaarde='300',
+                                label='300',
+                                definitie='300',
+                                objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlProfielhoogtemaat/300'),
+        '320': KeuzelijstWaarde(invulwaarde='320',
+                                label='320',
+                                definitie='320',
+                                objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlProfielhoogtemaat/320'),
+        '330': KeuzelijstWaarde(invulwaarde='330',
+                                label='330',
+                                definitie='330',
+                                objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlProfielhoogtemaat/330'),
+        '340': KeuzelijstWaarde(invulwaarde='340',
+                                label='340',
+                                definitie='340',
+                                objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlProfielhoogtemaat/340'),
+        '350': KeuzelijstWaarde(invulwaarde='350',
+                                label='350',
+                                definitie='350',
+                                objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlProfielhoogtemaat/350'),
+        '360': KeuzelijstWaarde(invulwaarde='360',
+                                label='360',
+                                definitie='360',
+                                objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlProfielhoogtemaat/360'),
+        '380': KeuzelijstWaarde(invulwaarde='380',
+                                label='380',
+                                definitie='380',
+                                objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlProfielhoogtemaat/380'),
+        '400': KeuzelijstWaarde(invulwaarde='400',
+                                label='400',
+                                definitie='400',
+                                objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlProfielhoogtemaat/400'),
+        '450': KeuzelijstWaarde(invulwaarde='450',
+                                label='450',
+                                definitie='450',
+                                objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlProfielhoogtemaat/450'),
+        '500': KeuzelijstWaarde(invulwaarde='500',
+                                label='500',
+                                definitie='500',
+                                objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlProfielhoogtemaat/500'),
+        '550': KeuzelijstWaarde(invulwaarde='550',
+                                label='550',
+                                definitie='550',
+                                objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlProfielhoogtemaat/550'),
+        '600': KeuzelijstWaarde(invulwaarde='600',
+                                label='600',
+                                definitie='600',
+                                objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlProfielhoogtemaat/600'),
+        '650': KeuzelijstWaarde(invulwaarde='650',
+                                label='650',
+                                definitie='650',
+                                objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlProfielhoogtemaat/650'),
+        '700': KeuzelijstWaarde(invulwaarde='700',
+                                label='700',
+                                definitie='700',
+                                objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlProfielhoogtemaat/700'),
+        '80': KeuzelijstWaarde(invulwaarde='80',
+                               label='80',
+                               definitie='80',
+                               objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlProfielhoogtemaat/80'),
+        '800': KeuzelijstWaarde(invulwaarde='800',
+                                label='800',
+                                definitie='800',
+                                objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlProfielhoogtemaat/800'),
+        '900': KeuzelijstWaarde(invulwaarde='900',
+                                label='900',
+                                definitie='900',
+                                objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlProfielhoogtemaat/900')
+    }
 
-    def __init__(self):
-        super().__init__(naam="KlProfielhoogtemaat",
-                         label="Profielhoogtemaat",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlProfielhoogtemaat",
-                         definition="Voorgedefinieerde hoogtemaat van een profiel.",
-                         usagenote="",
-                         deprecated_version="",
-                         codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlProfielhoogtemaat")
-
-        self.add_option("100", "100", "100", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlProfielhoogtemaat/100")
-        self.add_option("1000", "1000", "1000", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlProfielhoogtemaat/1000")
-        self.add_option("120", "120", "120", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlProfielhoogtemaat/120")
-        self.add_option("140", "140", "140", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlProfielhoogtemaat/140")
-        self.add_option("160", "160", "160", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlProfielhoogtemaat/160")
-        self.add_option("180", "180", "180", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlProfielhoogtemaat/180")
-        self.add_option("200", "200", "200", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlProfielhoogtemaat/200")
-        self.add_option("220", "220", "220", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlProfielhoogtemaat/220")
-        self.add_option("240", "240", "240", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlProfielhoogtemaat/240")
-        self.add_option("260", "260", "260", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlProfielhoogtemaat/260")
-        self.add_option("270", "270", "270", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlProfielhoogtemaat/270")
-        self.add_option("280", "280", "280", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlProfielhoogtemaat/280")
-        self.add_option("300", "300", "300", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlProfielhoogtemaat/300")
-        self.add_option("320", "320", "320", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlProfielhoogtemaat/320")
-        self.add_option("330", "330", "330", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlProfielhoogtemaat/330")
-        self.add_option("340", "340", "340", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlProfielhoogtemaat/340")
-        self.add_option("350", "350", "350", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlProfielhoogtemaat/350")
-        self.add_option("360", "360", "360", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlProfielhoogtemaat/360")
-        self.add_option("380", "380", "380", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlProfielhoogtemaat/380")
-        self.add_option("400", "400", "400", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlProfielhoogtemaat/400")
-        self.add_option("450", "450", "450", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlProfielhoogtemaat/450")
-        self.add_option("500", "500", "500", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlProfielhoogtemaat/500")
-        self.add_option("550", "550", "550", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlProfielhoogtemaat/550")
-        self.add_option("600", "600", "600", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlProfielhoogtemaat/600")
-        self.add_option("650", "650", "650", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlProfielhoogtemaat/650")
-        self.add_option("700", "700", "700", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlProfielhoogtemaat/700")
-        self.add_option("80", "80", "80", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlProfielhoogtemaat/80")
-        self.add_option("800", "800", "800", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlProfielhoogtemaat/800")
-        self.add_option("900", "900", "900", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlProfielhoogtemaat/900")

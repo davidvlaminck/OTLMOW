@@ -1,20 +1,25 @@
 # coding=utf-8
-from OTLModel.Datatypes.Keuzelijst import Keuzelijst
+from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
+from OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 
 # Generated with OTLEnumerationCreator. To modify: extend, do not edit
-class KlDynBordPKModelnaam(Keuzelijst):
+class KlDynBordPKModelnaam(KeuzelijstField):
     """Keuzelijst met de gangbare modelnamen van dynamische Pijl-Kruis borden. De modelnamen worden meestal door de leverancier of fabrikant bepaald."""
+    naam = 'KlDynBordPKModelnaam'
+    label = 'Dyn bord PK modelnaam'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlDynBordPKModelnaam'
+    definition = 'Keuzelijst met de gangbare modelnamen van dynamische Pijl-Kruis borden. De modelnamen worden meestal door de leverancier of fabrikant bepaald.'
+    codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlDynBordPKModelnaam'
+    options = {
+        'PK-08J03': KeuzelijstWaarde(invulwaarde='PK-08J03',
+                                     label='PK-08J03',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlDynBordPKModelnaam/PK-08J03'),
+        'PK-LHT': KeuzelijstWaarde(invulwaarde='PK-LHT',
+                                   label='PK-LHT',
+                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlDynBordPKModelnaam/PK-LHT'),
+        'PK-Tidal': KeuzelijstWaarde(invulwaarde='PK-Tidal',
+                                     label='PK-Tidal',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlDynBordPKModelnaam/PK-Tidal')
+    }
 
-    def __init__(self):
-        super().__init__(naam="KlDynBordPKModelnaam",
-                         label="Dyn bord PK modelnaam",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlDynBordPKModelnaam",
-                         definition="Keuzelijst met de gangbare modelnamen van dynamische Pijl-Kruis borden. De modelnamen worden meestal door de leverancier of fabrikant bepaald.",
-                         usagenote="",
-                         deprecated_version="",
-                         codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlDynBordPKModelnaam")
-
-        self.add_option("PK-08J03", "PK-08J03", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlDynBordPKModelnaam/PK-08J03")
-        self.add_option("PK-LHT", "PK-LHT", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlDynBordPKModelnaam/PK-LHT")
-        self.add_option("PK-Tidal", "PK-Tidal", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlDynBordPKModelnaam/PK-Tidal")

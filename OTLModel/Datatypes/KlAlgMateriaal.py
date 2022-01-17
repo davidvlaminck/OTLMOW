@@ -1,26 +1,45 @@
 # coding=utf-8
-from OTLModel.Datatypes.Keuzelijst import Keuzelijst
+from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
+from OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 
 # Generated with OTLEnumerationCreator. To modify: extend, do not edit
-class KlAlgMateriaal(Keuzelijst):
+class KlAlgMateriaal(KeuzelijstField):
     """Het materiaal waaruit een object voornamelijk gebouwd is."""
+    naam = 'KlAlgMateriaal'
+    label = 'Materiaal soorten'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlAlgMateriaal'
+    definition = 'Het materiaal waaruit een object voornamelijk gebouwd is.'
+    codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlAlgMateriaal'
+    options = {
+        'aluminium': KeuzelijstWaarde(invulwaarde='aluminium',
+                                      label='aluminium',
+                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgMateriaal/aluminium'),
+        'beton': KeuzelijstWaarde(invulwaarde='beton',
+                                  label='beton',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgMateriaal/beton'),
+        'glasvezelversterkt-polyester': KeuzelijstWaarde(invulwaarde='glasvezelversterkt-polyester',
+                                                         label='glasvezelversterkt polyester',
+                                                         definitie='glasvezelversterkt polyester',
+                                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgMateriaal/glasvezelversterkt-polyester'),
+        'hout': KeuzelijstWaarde(invulwaarde='hout',
+                                 label='hout',
+                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgMateriaal/hout'),
+        'houtvezelbeton': KeuzelijstWaarde(invulwaarde='houtvezelbeton',
+                                           label='houtvezelbeton',
+                                           objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgMateriaal/houtvezelbeton'),
+        'kunstof': KeuzelijstWaarde(invulwaarde='kunstof',
+                                    label='kunstof',
+                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgMateriaal/kunstof'),
+        'kunststof': KeuzelijstWaarde(invulwaarde='kunststof',
+                                      label='kunststof',
+                                      definitie='kunststof',
+                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgMateriaal/kunststof'),
+        'roestvrijstaal': KeuzelijstWaarde(invulwaarde='roestvrijstaal',
+                                           label='roestvrijstaal',
+                                           objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgMateriaal/roestvrijstaal'),
+        'staal': KeuzelijstWaarde(invulwaarde='staal',
+                                  label='staal',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgMateriaal/staal')
+    }
 
-    def __init__(self):
-        super().__init__(naam="KlAlgMateriaal",
-                         label="Materiaal soorten",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlAlgMateriaal",
-                         definition="Het materiaal waaruit een object voornamelijk gebouwd is.",
-                         usagenote="",
-                         deprecated_version="",
-                         codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlAlgMateriaal")
-
-        self.add_option("aluminium", "aluminium", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgMateriaal/aluminium")
-        self.add_option("beton", "beton", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgMateriaal/beton")
-        self.add_option("glasvezelversterkt-polyester", "glasvezelversterkt polyester", "glasvezelversterkt polyester", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgMateriaal/glasvezelversterkt-polyester")
-        self.add_option("hout", "hout", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgMateriaal/hout")
-        self.add_option("houtvezelbeton", "houtvezelbeton", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgMateriaal/houtvezelbeton")
-        self.add_option("kunstof", "kunstof", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgMateriaal/kunstof")
-        self.add_option("kunststof", "kunststof", "kunststof", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgMateriaal/kunststof")
-        self.add_option("roestvrijstaal", "roestvrijstaal", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgMateriaal/roestvrijstaal")
-        self.add_option("staal", "staal", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgMateriaal/staal")

@@ -1,20 +1,28 @@
 # coding=utf-8
-from OTLModel.Datatypes.Keuzelijst import Keuzelijst
+from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
+from OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 
 # Generated with OTLEnumerationCreator. To modify: extend, do not edit
-class KlAantalBoompalen(Keuzelijst):
+class KlAantalBoompalen(KeuzelijstField):
     """Hoeveelheid palen waaruit de constructie bestaat."""
+    naam = 'KlAantalBoompalen'
+    label = 'Aantal boompalen'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlAantalBoompalen'
+    definition = 'Hoeveelheid palen waaruit de constructie bestaat.'
+    codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlAantalBoompalen'
+    options = {
+        '1': KeuzelijstWaarde(invulwaarde='1',
+                              label='1',
+                              definitie='De constructie bestaat uit 1 boompaal.',
+                              objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAantalBoompalen/1'),
+        '2': KeuzelijstWaarde(invulwaarde='2',
+                              label='2',
+                              definitie='De constructie bestaat uit 2 boompalen.',
+                              objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAantalBoompalen/2'),
+        '3': KeuzelijstWaarde(invulwaarde='3',
+                              label='3',
+                              definitie='De constructie bestaat uit 3 boompalen.',
+                              objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAantalBoompalen/3')
+    }
 
-    def __init__(self):
-        super().__init__(naam="KlAantalBoompalen",
-                         label="Aantal boompalen",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlAantalBoompalen",
-                         definition="Hoeveelheid palen waaruit de constructie bestaat.",
-                         usagenote="",
-                         deprecated_version="",
-                         codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlAantalBoompalen")
-
-        self.add_option("1", "1", "De constructie bestaat uit 1 boompaal.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAantalBoompalen/1")
-        self.add_option("2", "2", "De constructie bestaat uit 2 boompalen.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAantalBoompalen/2")
-        self.add_option("3", "3", "De constructie bestaat uit 3 boompalen.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAantalBoompalen/3")

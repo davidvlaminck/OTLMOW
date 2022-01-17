@@ -1,23 +1,40 @@
 # coding=utf-8
-from OTLModel.Datatypes.Keuzelijst import Keuzelijst
+from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
+from OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 
 # Generated with OTLEnumerationCreator. To modify: extend, do not edit
-class KlSleufUitvoering(Keuzelijst):
+class KlSleufUitvoering(KeuzelijstField):
     """Uitvoeringen van de sleuf."""
+    naam = 'KlSleufUitvoering'
+    label = 'Sleuf uitvoering'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlSleufUitvoering'
+    definition = 'Uitvoeringen van de sleuf.'
+    codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlSleufUitvoering'
+    options = {
+        'beschoeide-sleuf': KeuzelijstWaarde(invulwaarde='beschoeide-sleuf',
+                                             label='beschoeide sleuf',
+                                             definitie='beschoeide sleuf',
+                                             objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlSleufUitvoering/beschoeide-sleuf'),
+        'beschoeide-sleuf-met-voorafgraving': KeuzelijstWaarde(invulwaarde='beschoeide-sleuf-met-voorafgraving',
+                                                               label='beschoeide sleuf met voorafgraving',
+                                                               definitie='beschoeide sleuf met voorafgraving',
+                                                               objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlSleufUitvoering/beschoeide-sleuf-met-voorafgraving'),
+        'directional-drilling': KeuzelijstWaarde(invulwaarde='directional-drilling',
+                                                 label='directional drilling',
+                                                 definitie='directional drilling',
+                                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlSleufUitvoering/directional-drilling'),
+        'onderdoorpersing': KeuzelijstWaarde(invulwaarde='onderdoorpersing',
+                                             label='onderdoorpersing',
+                                             definitie='onderdoorpersing',
+                                             objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlSleufUitvoering/onderdoorpersing'),
+        'open-sleuf': KeuzelijstWaarde(invulwaarde='open-sleuf',
+                                       label='open sleuf',
+                                       definitie='open sleuf',
+                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlSleufUitvoering/open-sleuf'),
+        'waterdicht-beschoeide-sleuf-met-damplanken': KeuzelijstWaarde(invulwaarde='waterdicht-beschoeide-sleuf-met-damplanken',
+                                                                       label='waterdicht beschoeide sleuf met damplanken',
+                                                                       definitie='waterdicht beschoeide sleuf met damplanken',
+                                                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlSleufUitvoering/waterdicht-beschoeide-sleuf-met-damplanken')
+    }
 
-    def __init__(self):
-        super().__init__(naam="KlSleufUitvoering",
-                         label="Sleuf uitvoering",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlSleufUitvoering",
-                         definition="Uitvoeringen van de sleuf.",
-                         usagenote="",
-                         deprecated_version="",
-                         codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlSleufUitvoering")
-
-        self.add_option("beschoeide-sleuf", "beschoeide sleuf", "beschoeide sleuf", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlSleufUitvoering/beschoeide-sleuf")
-        self.add_option("beschoeide-sleuf-met-voorafgraving", "beschoeide sleuf met voorafgraving", "beschoeide sleuf met voorafgraving", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlSleufUitvoering/beschoeide-sleuf-met-voorafgraving")
-        self.add_option("directional-drilling", "directional drilling", "directional drilling", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlSleufUitvoering/directional-drilling")
-        self.add_option("onderdoorpersing", "onderdoorpersing", "onderdoorpersing", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlSleufUitvoering/onderdoorpersing")
-        self.add_option("open-sleuf", "open sleuf", "open sleuf", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlSleufUitvoering/open-sleuf")
-        self.add_option("waterdicht-beschoeide-sleuf-met-damplanken", "waterdicht beschoeide sleuf met damplanken", "waterdicht beschoeide sleuf met damplanken", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlSleufUitvoering/waterdicht-beschoeide-sleuf-met-damplanken")

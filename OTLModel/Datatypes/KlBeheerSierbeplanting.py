@@ -1,23 +1,40 @@
 # coding=utf-8
-from OTLModel.Datatypes.Keuzelijst import Keuzelijst
+from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
+from OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 
 # Generated with OTLEnumerationCreator. To modify: extend, do not edit
-class KlBeheerSierbeplanting(Keuzelijst):
+class KlBeheerSierbeplanting(KeuzelijstField):
     """Verschillende mogelijke beheeropties bij sierbeplanting."""
+    naam = 'KlBeheerSierbeplanting'
+    label = 'Beheer sierbeplanting'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#KlBeheerSierbeplanting'
+    definition = 'Verschillende mogelijke beheeropties bij sierbeplanting.'
+    codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlBeheerSierbeplanting'
+    options = {
+        'hakken': KeuzelijstWaarde(invulwaarde='hakken',
+                                   label='hakken',
+                                   definitie='Hakken van de grond tussen sierbeplantingen.',
+                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBeheerSierbeplanting/hakken'),
+        'niets-doen': KeuzelijstWaarde(invulwaarde='niets-doen',
+                                       label='niets doen',
+                                       definitie='Er wordt geen beheer uitgevoerd.',
+                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBeheerSierbeplanting/niets-doen'),
+        'opschikken-knippen-dood-materiaal': KeuzelijstWaarde(invulwaarde='opschikken-knippen-dood-materiaal',
+                                                              label='opschikken-knippen dood materiaal',
+                                                              definitie='Opschikken/knippen van dood materiaal.',
+                                                              objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBeheerSierbeplanting/opschikken-knippen-dood-materiaal'),
+        'scheren': KeuzelijstWaarde(invulwaarde='scheren',
+                                    label='scheren',
+                                    definitie='Het vlakvormig gelijkmatig kort afsnijden van takken van hagen, heesters en houtkanten.',
+                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBeheerSierbeplanting/scheren'),
+        'snoeien': KeuzelijstWaarde(invulwaarde='snoeien',
+                                    label='snoeien',
+                                    definitie='Het inkorten of wegnemen van stengels met snoeischaar.',
+                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBeheerSierbeplanting/snoeien'),
+        'wieden': KeuzelijstWaarde(invulwaarde='wieden',
+                                   label='wieden',
+                                   definitie='Het wieden van de grond tussen sierbeplanting. Dit is het verwijderen van onkruid.',
+                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBeheerSierbeplanting/wieden')
+    }
 
-    def __init__(self):
-        super().__init__(naam="KlBeheerSierbeplanting",
-                         label="Beheer sierbeplanting",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#KlBeheerSierbeplanting",
-                         definition="Verschillende mogelijke beheeropties bij sierbeplanting.",
-                         usagenote="",
-                         deprecated_version="",
-                         codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlBeheerSierbeplanting")
-
-        self.add_option("hakken", "hakken", "Hakken van de grond tussen sierbeplantingen.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBeheerSierbeplanting/hakken")
-        self.add_option("niets-doen", "niets doen", "Er wordt geen beheer uitgevoerd.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBeheerSierbeplanting/niets-doen")
-        self.add_option("opschikken-knippen-dood-materiaal", "opschikken-knippen dood materiaal", "Opschikken/knippen van dood materiaal.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBeheerSierbeplanting/opschikken-knippen-dood-materiaal")
-        self.add_option("scheren", "scheren", "Het vlakvormig gelijkmatig kort afsnijden van takken van hagen, heesters en houtkanten.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBeheerSierbeplanting/scheren")
-        self.add_option("snoeien", "snoeien", "Het inkorten of wegnemen van stengels met snoeischaar.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBeheerSierbeplanting/snoeien")
-        self.add_option("wieden", "wieden", "Het wieden van de grond tussen sierbeplanting. Dit is het verwijderen van onkruid.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBeheerSierbeplanting/wieden")

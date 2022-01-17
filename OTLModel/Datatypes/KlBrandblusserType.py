@@ -1,21 +1,28 @@
 # coding=utf-8
-from OTLModel.Datatypes.Keuzelijst import Keuzelijst
+from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
+from OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 
 # Generated with OTLEnumerationCreator. To modify: extend, do not edit
-class KlBrandblusserType(Keuzelijst):
+class KlBrandblusserType(KeuzelijstField):
     """Keuzelijst met verschillende types van brandblussers volgens de algemene classificatie van brandblussers."""
+    naam = 'KlBrandblusserType'
+    label = 'Brandblusser type'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlBrandblusserType'
+    definition = 'Keuzelijst met verschillende types van brandblussers volgens de algemene classificatie van brandblussers.'
+    codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlBrandblusserType'
+    options = {
+        'a': KeuzelijstWaarde(invulwaarde='a',
+                              label='a',
+                              objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBrandblusserType/a'),
+        'b': KeuzelijstWaarde(invulwaarde='b',
+                              label='b',
+                              objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBrandblusserType/b'),
+        'c': KeuzelijstWaarde(invulwaarde='c',
+                              label='c',
+                              objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBrandblusserType/c'),
+        'd': KeuzelijstWaarde(invulwaarde='d',
+                              label='d',
+                              objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBrandblusserType/d')
+    }
 
-    def __init__(self):
-        super().__init__(naam="KlBrandblusserType",
-                         label="Brandblusser type",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlBrandblusserType",
-                         definition="Keuzelijst met verschillende types van brandblussers volgens de algemene classificatie van brandblussers.",
-                         usagenote="",
-                         deprecated_version="",
-                         codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlBrandblusserType")
-
-        self.add_option("a", "a", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBrandblusserType/a")
-        self.add_option("b", "b", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBrandblusserType/b")
-        self.add_option("c", "c", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBrandblusserType/c")
-        self.add_option("d", "d", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBrandblusserType/d")

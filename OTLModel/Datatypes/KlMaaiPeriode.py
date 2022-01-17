@@ -1,24 +1,44 @@
 # coding=utf-8
-from OTLModel.Datatypes.Keuzelijst import Keuzelijst
+from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
+from OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 
 # Generated with OTLEnumerationCreator. To modify: extend, do not edit
-class KlMaaiPeriode(Keuzelijst):
+class KlMaaiPeriode(KeuzelijstField):
     """De maand waarin het maaien wordt uitgevoerd."""
+    naam = 'KlMaaiPeriode'
+    label = 'Maaiperiode'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#KlMaaiPeriode'
+    definition = 'De maand waarin het maaien wordt uitgevoerd.'
+    codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlMaaiPeriode'
+    options = {
+        'april': KeuzelijstWaarde(invulwaarde='april',
+                                  label='april',
+                                  definitie='De maand april.',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlMaaiPeriode/april'),
+        'augustus': KeuzelijstWaarde(invulwaarde='augustus',
+                                     label='augustus',
+                                     definitie='De maand augustus.',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlMaaiPeriode/augustus'),
+        'juli': KeuzelijstWaarde(invulwaarde='juli',
+                                 label='juli',
+                                 definitie='De maand juli.',
+                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlMaaiPeriode/juli'),
+        'juni': KeuzelijstWaarde(invulwaarde='juni',
+                                 label='juni',
+                                 definitie='De maand juni.',
+                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlMaaiPeriode/juni'),
+        'mei': KeuzelijstWaarde(invulwaarde='mei',
+                                label='mei',
+                                definitie='De maand mei.',
+                                objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlMaaiPeriode/mei'),
+        'oktober': KeuzelijstWaarde(invulwaarde='oktober',
+                                    label='oktober',
+                                    definitie='De maand oktober.',
+                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlMaaiPeriode/oktober'),
+        'september': KeuzelijstWaarde(invulwaarde='september',
+                                      label='september',
+                                      definitie='De maand september.',
+                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlMaaiPeriode/september')
+    }
 
-    def __init__(self):
-        super().__init__(naam="KlMaaiPeriode",
-                         label="Maaiperiode",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#KlMaaiPeriode",
-                         definition="De maand waarin het maaien wordt uitgevoerd.",
-                         usagenote="",
-                         deprecated_version="",
-                         codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlMaaiPeriode")
-
-        self.add_option("april", "april", "De maand april.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlMaaiPeriode/april")
-        self.add_option("augustus", "augustus", "De maand augustus.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlMaaiPeriode/augustus")
-        self.add_option("juli", "juli", "De maand juli.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlMaaiPeriode/juli")
-        self.add_option("juni", "juni", "De maand juni.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlMaaiPeriode/juni")
-        self.add_option("mei", "mei", "De maand mei.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlMaaiPeriode/mei")
-        self.add_option("oktober", "oktober", "De maand oktober.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlMaaiPeriode/oktober")
-        self.add_option("september", "september", "De maand september.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlMaaiPeriode/september")

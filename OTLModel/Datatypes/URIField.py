@@ -1,10 +1,24 @@
-from OTLModel.Datatypes.StringField import StringField
+from attr import validators
+
+from OTLModel.BaseClasses.OTLField import OTLField
 
 
-class URIField(StringField):
-    def __init__(self, naam, label, objectUri, definition, constraints, usagenote, deprecated_version, readonly=False,
-                 readonlyValue=None):
-        super().__init__(naam, label, objectUri, definition, constraints, usagenote, deprecated_version, readonly, readonlyValue)
+class URIField(OTLField):
+    """Een tekstwaarde die een verwijzing naar meer informatie van het element bevat volgens http://www.w3.org/2001/XMLSchema#anyURI ."""
+    naam = 'AnyURI'
+    objectUri = 'http://www.w3.org/2001/XMLSchema#anyURI'
+    definition = 'Een tekstwaarde die een verwijzing naar meer informatie van het element bevat volgens http://www.w3.org/2001/XMLSchema#anyURI.'
+    label = 'URI'
+    usagenote = 'https://www.w3.org/TR/xmlschema-2/#anyURI'
 
-    # TODO add URI validation
+    @staticmethod
+    def validate(value, attribuut):
+        if value is not None:
+            if not isinstance(value, str):
+                raise TypeError(f'expecting string in {attribuut.naam}')
+            # TODO add URI validation
+        return True
+
+    def __str__(self):
+        return OTLField.__str__(self)
 

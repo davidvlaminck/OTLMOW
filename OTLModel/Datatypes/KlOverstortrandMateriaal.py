@@ -1,20 +1,28 @@
 # coding=utf-8
-from OTLModel.Datatypes.Keuzelijst import Keuzelijst
+from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
+from OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 
 # Generated with OTLEnumerationCreator. To modify: extend, do not edit
-class KlOverstortrandMateriaal(Keuzelijst):
+class KlOverstortrandMateriaal(KeuzelijstField):
     """De materialen van de overstortrand."""
+    naam = 'KlOverstortrandMateriaal'
+    label = 'Overstortrand materiaal'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlOverstortrandMateriaal'
+    definition = 'De materialen van de overstortrand.'
+    codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlOverstortrandMateriaal'
+    options = {
+        'hout': KeuzelijstWaarde(invulwaarde='hout',
+                                 label='hout',
+                                 definitie='Een overstortrand uit hout.',
+                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOverstortrandMateriaal/hout'),
+        'inox': KeuzelijstWaarde(invulwaarde='inox',
+                                 label='inox',
+                                 definitie='Een overstortrand uit inox.',
+                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOverstortrandMateriaal/inox'),
+        'metselwerk': KeuzelijstWaarde(invulwaarde='metselwerk',
+                                       label='metselwerk',
+                                       definitie='Een overstortrand uit metselwerk.',
+                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOverstortrandMateriaal/metselwerk')
+    }
 
-    def __init__(self):
-        super().__init__(naam="KlOverstortrandMateriaal",
-                         label="Overstortrand materiaal",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlOverstortrandMateriaal",
-                         definition="De materialen van de overstortrand.",
-                         usagenote="",
-                         deprecated_version="",
-                         codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlOverstortrandMateriaal")
-
-        self.add_option("hout", "hout", "Een overstortrand uit hout.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOverstortrandMateriaal/hout")
-        self.add_option("inox", "inox", "Een overstortrand uit inox.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOverstortrandMateriaal/inox")
-        self.add_option("metselwerk", "metselwerk", "Een overstortrand uit metselwerk.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOverstortrandMateriaal/metselwerk")

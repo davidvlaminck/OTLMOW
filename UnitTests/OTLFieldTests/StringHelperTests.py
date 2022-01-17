@@ -1,6 +1,6 @@
 ﻿from unittest import TestCase
 
-from UnitTests.OTLFieldTests.StringHelper import wrap_in_quotes
+from ModelGenerator.StringHelper import wrap_in_quotes
 
 
 class StringHelperTests(TestCase):

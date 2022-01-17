@@ -1,19 +1,24 @@
 # coding=utf-8
-from OTLModel.Datatypes.Keuzelijst import Keuzelijst
+from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
+from OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 
 # Generated with OTLEnumerationCreator. To modify: extend, do not edit
-class KlWildreflectorDrager(Keuzelijst):
+class KlWildreflectorDrager(KeuzelijstField):
     """Mogelijke dragers van een wildreflector."""
+    naam = 'KlWildreflectorDrager'
+    label = 'Wildreflector drager'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlWildreflectorDrager'
+    definition = 'Mogelijke dragers van een wildreflector.'
+    codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlWildreflectorDrager'
+    options = {
+        'houten-paal': KeuzelijstWaarde(invulwaarde='houten-paal',
+                                        label='houten paal',
+                                        definitie='houten paal als drager.',
+                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlWildreflectorDrager/houten-paal'),
+        'metalen-paal': KeuzelijstWaarde(invulwaarde='metalen-paal',
+                                         label='metalen paal',
+                                         definitie='metalen paal als drager.',
+                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlWildreflectorDrager/metalen-paal')
+    }
 
-    def __init__(self):
-        super().__init__(naam="KlWildreflectorDrager",
-                         label="Wildreflector drager",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlWildreflectorDrager",
-                         definition="Mogelijke dragers van een wildreflector.",
-                         usagenote="",
-                         deprecated_version="",
-                         codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlWildreflectorDrager")
-
-        self.add_option("houten-paal", "houten paal", "houten paal als drager.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlWildreflectorDrager/houten-paal")
-        self.add_option("metalen-paal", "metalen paal", "metalen paal als drager.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlWildreflectorDrager/metalen-paal")

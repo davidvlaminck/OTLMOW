@@ -1,17 +1,16 @@
 # coding=utf-8
-from OTLModel.Datatypes.Keuzelijst import Keuzelijst
+from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
+from OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 
 # Generated with OTLEnumerationCreator. To modify: extend, do not edit
-class KlVerwarmingselementMerk(Keuzelijst):
+class KlVerwarmingselementMerk(KeuzelijstField):
     """Keuzelijst van merken voor verwarmingselementen."""
-
-    def __init__(self):
-        super().__init__(naam="KlVerwarmingselementMerk",
-                         label="Verwarmingselement merk",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlVerwarmingselementMerk",
-                         definition="Keuzelijst van merken voor verwarmingselementen.",
-                         usagenote="",
-                         deprecated_version="",
-                         codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlVerwarmingselementMerk")
+    naam = 'KlVerwarmingselementMerk'
+    label = 'Verwarmingselement merk'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlVerwarmingselementMerk'
+    definition = 'Keuzelijst van merken voor verwarmingselementen.'
+    codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlVerwarmingselementMerk'
+    options = 
+    }
 

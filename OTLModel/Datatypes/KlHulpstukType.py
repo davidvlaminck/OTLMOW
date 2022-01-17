@@ -1,21 +1,32 @@
 # coding=utf-8
-from OTLModel.Datatypes.Keuzelijst import Keuzelijst
+from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
+from OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 
 # Generated with OTLEnumerationCreator. To modify: extend, do not edit
-class KlHulpstukType(Keuzelijst):
+class KlHulpstukType(KeuzelijstField):
     """Het type van het hulpstuk."""
+    naam = 'KlHulpstukType'
+    label = 'Hulpstuk type'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlHulpstukType'
+    definition = 'Het type van het hulpstuk.'
+    codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlHulpstukType'
+    options = {
+        'T-stuk': KeuzelijstWaarde(invulwaarde='T-stuk',
+                                   label='T-stuk',
+                                   definitie='T-stuk',
+                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlHulpstukType/T-stuk'),
+        'Y-stuk': KeuzelijstWaarde(invulwaarde='Y-stuk',
+                                   label='Y-stuk',
+                                   definitie='Y-stuk',
+                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlHulpstukType/Y-stuk'),
+        'aansluitstuk': KeuzelijstWaarde(invulwaarde='aansluitstuk',
+                                         label='aansluitstuk',
+                                         definitie='aansluitstuk',
+                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlHulpstukType/aansluitstuk'),
+        'bochtstuk': KeuzelijstWaarde(invulwaarde='bochtstuk',
+                                      label='bochtstuk',
+                                      definitie='bochtstuk',
+                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlHulpstukType/bochtstuk')
+    }
 
-    def __init__(self):
-        super().__init__(naam="KlHulpstukType",
-                         label="Hulpstuk type",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlHulpstukType",
-                         definition="Het type van het hulpstuk.",
-                         usagenote="",
-                         deprecated_version="",
-                         codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlHulpstukType")
-
-        self.add_option("T-stuk", "T-stuk", "T-stuk", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlHulpstukType/T-stuk")
-        self.add_option("Y-stuk", "Y-stuk", "Y-stuk", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlHulpstukType/Y-stuk")
-        self.add_option("aansluitstuk", "aansluitstuk", "aansluitstuk", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlHulpstukType/aansluitstuk")
-        self.add_option("bochtstuk", "bochtstuk", "bochtstuk", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlHulpstukType/bochtstuk")

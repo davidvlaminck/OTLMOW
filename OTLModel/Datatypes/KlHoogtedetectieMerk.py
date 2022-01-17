@@ -1,17 +1,16 @@
 # coding=utf-8
-from OTLModel.Datatypes.Keuzelijst import Keuzelijst
+from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
+from OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 
 # Generated with OTLEnumerationCreator. To modify: extend, do not edit
-class KlHoogtedetectieMerk(Keuzelijst):
+class KlHoogtedetectieMerk(KeuzelijstField):
     """Keuzelijst met de gangbare merken van hoogtedetectiesystemen. De merken verwijzen doorgaans naar de fabrikant of leverancier."""
-
-    def __init__(self):
-        super().__init__(naam="KlHoogtedetectieMerk",
-                         label="Hoogtedetectie merk",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlHoogtedetectieMerk",
-                         definition="Keuzelijst met de gangbare merken van hoogtedetectiesystemen. De merken verwijzen doorgaans naar de fabrikant of leverancier.",
-                         usagenote="",
-                         deprecated_version="",
-                         codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlHoogtedetectieMerk")
+    naam = 'KlHoogtedetectieMerk'
+    label = 'Hoogtedetectie merk'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlHoogtedetectieMerk'
+    definition = 'Keuzelijst met de gangbare merken van hoogtedetectiesystemen. De merken verwijzen doorgaans naar de fabrikant of leverancier.'
+    codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlHoogtedetectieMerk'
+    options = 
+    }
 

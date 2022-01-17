@@ -1,19 +1,24 @@
 # coding=utf-8
-from OTLModel.Datatypes.Keuzelijst import Keuzelijst
+from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
+from OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 
 # Generated with OTLEnumerationCreator. To modify: extend, do not edit
-class KlFiguratieCodeVerschuind(Keuzelijst):
+class KlFiguratieCodeVerschuind(KeuzelijstField):
     """Codes voor de verschuinde figuratie markering."""
+    naam = 'KlFiguratieCodeVerschuind'
+    label = 'Figuratie code verschuind'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlFiguratieCodeVerschuind'
+    definition = 'Codes voor de verschuinde figuratie markering.'
+    codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlFiguratieCodeVerschuind'
+    options = {
+        'STOP-SmSc': KeuzelijstWaarde(invulwaarde='STOP-SmSc',
+                                      label='STOP-SmSc',
+                                      definitie='Een STOP markering smal en schuin.',
+                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieCodeVerschuind/STOP-SmSc'),
+        'VB-B1-GRsch': KeuzelijstWaarde(invulwaarde='VB-B1-GRsch',
+                                        label='VB-B1-GRsch',
+                                        definitie='Een omgekeerde driehoekmarkering groot en schuin.',
+                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieCodeVerschuind/VB-B1-GRsch')
+    }
 
-    def __init__(self):
-        super().__init__(naam="KlFiguratieCodeVerschuind",
-                         label="Figuratie code verschuind",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlFiguratieCodeVerschuind",
-                         definition="Codes voor de verschuinde figuratie markering.",
-                         usagenote="",
-                         deprecated_version="",
-                         codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlFiguratieCodeVerschuind")
-
-        self.add_option("STOP-SmSc", "STOP-SmSc", "Een STOP markering smal en schuin.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieCodeVerschuind/STOP-SmSc")
-        self.add_option("VB-B1-GRsch", "VB-B1-GRsch", "Een omgekeerde driehoekmarkering groot en schuin.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieCodeVerschuind/VB-B1-GRsch")

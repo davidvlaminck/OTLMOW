@@ -16,6 +16,10 @@ class OTLField:
         pass
 
     @staticmethod
+    def value_default(value):
+        return value
+
+    @staticmethod
     def convert_to_correct_type(value):
         return value
 

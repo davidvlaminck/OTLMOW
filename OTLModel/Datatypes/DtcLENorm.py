@@ -1,39 +1,54 @@
 # coding=utf-8
+from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
+from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Datatypes.ComplexField import ComplexField
-from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlLEKantopsluitingBijkomendeParameter import KlLEKantopsluitingBijkomendeParameter
 from OTLModel.Datatypes.StringField import StringField
 
 
 # Generated with OTLComplexDatatypeCreator. To modify: extend, do not edit
-class DtcLENorm(ComplexField):
-    """Complex datatype voor de norm van het lijnvormig element."""
-
+class DtcLENormWaarden(AttributeInfo):
     def __init__(self):
-        super().__init__(naam="DtcLENorm",
-                         label="Norm van het lijnvormig element",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcLENorm",
-                         definition="Complex datatype voor de norm van het lijnvormig element.",
-                         usagenote="",
-                         deprecated_version="")
+        self._bijkomendeParameter = OTLAttribuut(field=KlLEKantopsluitingBijkomendeParameter,
+                                                 naam='bijkomendeParameter',
+                                                 label='bijkomende parameter',
+                                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcLENorm.bijkomendeParameter',
+                                                 definition='Het gedetailleerder typeren van de kantopsluiting.')
 
-        self.waarde.bijkomendeParameter = KeuzelijstField(naam="bijkomendeParameter",
-                                                          label="bijkomende parameter",
-                                                          lijst=KlLEKantopsluitingBijkomendeParameter(),
-                                                          objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcLENorm.bijkomendeParameter",
-                                                          definition="Het gedetailleerder typeren van de kantopsluiting.",
-                                                          constraints="",
-                                                          usagenote="",
-                                                          deprecated_version="")
-        self.bijkomendeParameter = self.waarde.bijkomendeParameter
+        self._norm = OTLAttribuut(field=StringField,
+                                  naam='norm',
+                                  label='norm',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcLENorm.norm',
+                                  definition='De opgelegde en beschreven standaard van de kantopsluiting.')
+
+    @property
+    def bijkomendeParameter(self):
         """Het gedetailleerder typeren van de kantopsluiting."""
+        return self._bijkomendeParameter.waarde
 
-        self.waarde.norm = StringField(naam="norm",
-                                       label="norm",
-                                       objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcLENorm.norm",
-                                       definition="De opgelegde en beschreven standaard van de kantopsluiting.",
-                                       constraints="",
-                                       usagenote="",
-                                       deprecated_version="")
-        self.norm = self.waarde.norm
+    @bijkomendeParameter.setter
+    def bijkomendeParameter(self, value):
+        self._bijkomendeParameter.set_waarde(value)
+
+    @property
+    def norm(self):
         """De opgelegde en beschreven standaard van de kantopsluiting."""
+        return self._norm.waarde
+
+    @norm.setter
+    def norm(self, value):
+        self._norm.set_waarde(value)
+
+
+# Generated with OTLComplexDatatypeCreator. To modify: extend, do not edit
+class DtcLENorm(ComplexField, AttributeInfo):
+    """Complex datatype voor de norm van het lijnvormig element."""
+    naam = 'DtcLENorm'
+    label = 'Norm van het lijnvormig element'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcLENorm'
+    definition = 'Complex datatype voor de norm van het lijnvormig element.'
+    waardeObject = DtcLENormWaarden
+
+    def __str__(self):
+        return ComplexField.__str__(self)
+

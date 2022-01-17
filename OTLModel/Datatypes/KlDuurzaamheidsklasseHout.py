@@ -1,17 +1,16 @@
 # coding=utf-8
-from OTLModel.Datatypes.Keuzelijst import Keuzelijst
+from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
+from OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 
 # Generated with OTLEnumerationCreator. To modify: extend, do not edit
-class KlDuurzaamheidsklasseHout(Keuzelijst):
+class KlDuurzaamheidsklasseHout(KeuzelijstField):
     """De resistentie van het kernhout tegen ongunstige omstandigheden."""
-
-    def __init__(self):
-        super().__init__(naam="KlDuurzaamheidsklasseHout",
-                         label="Duurzaamheidsklasse van hout",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KlDuurzaamheidsklasseHout",
-                         definition="De resistentie van het kernhout tegen ongunstige omstandigheden.",
-                         usagenote="",
-                         deprecated_version="",
-                         codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlDuurzaamheidsklasseHout")
+    naam = 'KlDuurzaamheidsklasseHout'
+    label = 'Duurzaamheidsklasse van hout'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KlDuurzaamheidsklasseHout'
+    definition = 'De resistentie van het kernhout tegen ongunstige omstandigheden.'
+    codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlDuurzaamheidsklasseHout'
+    options = 
+    }
 

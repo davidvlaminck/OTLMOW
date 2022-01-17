@@ -1,83 +1,280 @@
 # coding=utf-8
-from OTLModel.Datatypes.Keuzelijst import Keuzelijst
+from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
+from OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 
 # Generated with OTLEnumerationCreator. To modify: extend, do not edit
-class KlFiguratieType(Keuzelijst):
+class KlFiguratieType(KeuzelijstField):
     """Types van figuratiemarkering."""
+    naam = 'KlFiguratieType'
+    label = 'Figuratie type'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlFiguratieType'
+    definition = 'Types van figuratiemarkering.'
+    codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlFiguratieType'
+    options = {
+        '2e-afslag-links-(5m)': KeuzelijstWaarde(invulwaarde='2e-afslag-links-(5m)',
+                                                 label='2e afslag links (5m)',
+                                                 definitie='Pijl 2e afslag links (5m).',
+                                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/2e-afslag-links-(5m)'),
+        '2e-afslag-links-(7.5m)': KeuzelijstWaarde(invulwaarde='2e-afslag-links-(7.5m)',
+                                                   label='2e afslag links (7.5m)',
+                                                   definitie='Pijl 2e afslag links (7,5m)',
+                                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/2e-afslag-links-(7.5m)'),
+        '2e-afslag-rechts-(5m)': KeuzelijstWaarde(invulwaarde='2e-afslag-rechts-(5m)',
+                                                  label='2e afslag rechts (5m)',
+                                                  definitie='Pijl 2e afslag rechts (5m)',
+                                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/2e-afslag-rechts-(5m)'),
+        '2e-afslag-rechts-(7.5m)': KeuzelijstWaarde(invulwaarde='2e-afslag-rechts-(7.5m)',
+                                                    label='2e afslag rechts (7.5m)',
+                                                    definitie='Pijl 2e afslag rechts (7,5m)',
+                                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/2e-afslag-rechts-(7.5m)'),
+        'BUS-(dwars-op-BOB)': KeuzelijstWaarde(invulwaarde='BUS-(dwars-op-BOB)',
+                                               label='BUS (dwars op BOB)',
+                                               definitie='Lettermarkering van bus (dwars op BOB)',
+                                               objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/BUS-(dwars-op-BOB)'),
+        'BUS-(dwars-op-busstrook)': KeuzelijstWaarde(invulwaarde='BUS-(dwars-op-busstrook)',
+                                                     label='BUS (dwars op busstrook)',
+                                                     definitie='Lettermarkering van bus (dwars op busstrook)',
+                                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/BUS-(dwars-op-busstrook)'),
+        'BUS-(langs-op-BOB)': KeuzelijstWaarde(invulwaarde='BUS-(langs-op-BOB)',
+                                               label='BUS (langs op BOB)',
+                                               definitie='Lettermarkering van bus (langs op BOB)',
+                                               objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/BUS-(langs-op-BOB)'),
+        'STOP': KeuzelijstWaarde(invulwaarde='STOP',
+                                 label='STOP',
+                                 definitie='Lettermarkering STOP',
+                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/STOP'),
+        'STOP-(smal)': KeuzelijstWaarde(invulwaarde='STOP-(smal)',
+                                        label='STOP (smal)',
+                                        definitie='Lettermarkering STOP (smal)',
+                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/STOP-(smal)'),
+        'TAXI-(dwars)': KeuzelijstWaarde(invulwaarde='TAXI-(dwars)',
+                                         label='TAXI (dwars)',
+                                         definitie='Lettermarkering van taxiplaats (dwars)',
+                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/TAXI-(dwars)'),
+        'TAXI-(langs)': KeuzelijstWaarde(invulwaarde='TAXI-(langs)',
+                                         label='TAXI (langs)',
+                                         definitie='Lettermarkering van taxiplaats (langs)',
+                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/TAXI-(langs)'),
+        'TRAM-(dwars)': KeuzelijstWaarde(invulwaarde='TRAM-(dwars)',
+                                         label='TRAM (dwars)',
+                                         definitie='Lettermarkering van tramhalte (dwars)',
+                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/TRAM-(dwars)'),
+        'TRAM-(langs)': KeuzelijstWaarde(invulwaarde='TRAM-(langs)',
+                                         label='TRAM (langs)',
+                                         definitie='Lettermarkering van tramhalte (langs)',
+                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/TRAM-(langs)'),
+        'autocar': KeuzelijstWaarde(invulwaarde='autocar',
+                                    label='autocar',
+                                    definitie='Symbool autocar.',
+                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/autocar'),
+        'blauwe-zone-(parkeerschijf)': KeuzelijstWaarde(invulwaarde='blauwe-zone-(parkeerschijf)',
+                                                        label='blauwe zone (parkeerschijf)',
+                                                        definitie='Verkeersbordmarkering blauwe zone (parkeerschijf).',
+                                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/blauwe-zone-(parkeerschijf)'),
+        'bromfiets-groot': KeuzelijstWaarde(invulwaarde='bromfiets-groot',
+                                            label='bromfiets groot',
+                                            definitie='Symbool bromfiets groot.',
+                                            objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/bromfiets-groot'),
+        'bromfiets-klein': KeuzelijstWaarde(invulwaarde='bromfiets-klein',
+                                            label='bromfiets klein',
+                                            definitie='Symbool bromfiets klein.',
+                                            objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/bromfiets-klein'),
+        'bushalte-op-de-rijweg': KeuzelijstWaarde(invulwaarde='bushalte-op-de-rijweg',
+                                                  label='bushalte op de rijweg',
+                                                  definitie='Lettermarkering bus zonder arcering.',
+                                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/bushalte-op-de-rijweg'),
+        'elektrische-voertuigen-normaal': KeuzelijstWaarde(invulwaarde='elektrische-voertuigen-normaal',
+                                                           label='elektrische voertuigen normaal',
+                                                           definitie='Symbool elektrische voertuigen normaal.',
+                                                           objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/elektrische-voertuigen-normaal'),
+        'elektrische-voertuigen-vergroot': KeuzelijstWaarde(invulwaarde='elektrische-voertuigen-vergroot',
+                                                            label='elektrische voertuigen vergroot',
+                                                            definitie='Symbool elektrische voertuigen vergroot.',
+                                                            objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/elektrische-voertuigen-vergroot'),
+        'elektrische-voertuigen-verkleind': KeuzelijstWaarde(invulwaarde='elektrische-voertuigen-verkleind',
+                                                             label='elektrische voertuigen verkleind',
+                                                             definitie='Symbool elektrische voertuigen verkleind.',
+                                                             objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/elektrische-voertuigen-verkleind'),
+        'fietslogo-Groot': KeuzelijstWaarde(invulwaarde='fietslogo-Groot',
+                                            label='fietslogo Groot',
+                                            definitie='Logomarkering fiestslogo Groot.',
+                                            objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/fietslogo-Groot'),
+        'fietslogo-Klein': KeuzelijstWaarde(invulwaarde='fietslogo-Klein',
+                                            label='fietslogo Klein',
+                                            definitie='Logomarkering fiestslogo Klein.',
+                                            objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/fietslogo-Klein'),
+        'fietspadpijl-(klein---dubbele-fietspadpijl)': KeuzelijstWaarde(invulwaarde='fietspadpijl-(klein---dubbele-fietspadpijl)',
+                                                                        label='fietspadpijl (klein - dubbele fietspadpijl)',
+                                                                        definitie='Pijl Fietspadpijl (klein - dubbele fietspadpijl)',
+                                                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/fietspadpijl-(klein---dubbele-fietspadpijl)'),
+        'fietspadpijl-(std)': KeuzelijstWaarde(invulwaarde='fietspadpijl-(std)',
+                                               label='fietspadpijl (std)',
+                                               definitie='Pijl Fietspadpijl (std)',
+                                               objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/fietspadpijl-(std)'),
+        'fietsstraat-begin': KeuzelijstWaarde(invulwaarde='fietsstraat-begin',
+                                              label='fietsstraat begin',
+                                              definitie='Verkeersbord F111 dat het einde van de fietsstraat aanduidt.',
+                                              objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/fietsstraat-begin'),
+        'fietsstraat-einde': KeuzelijstWaarde(invulwaarde='fietsstraat-einde',
+                                              label='fietsstraat einde',
+                                              definitie='Verkeersbord F113 dat het einde van de fietsstraat aanduidt.',
+                                              objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/fietsstraat-einde'),
+        'fietsvoorsortering-Links': KeuzelijstWaarde(invulwaarde='fietsvoorsortering-Links',
+                                                     label='fietsvoorsortering Links',
+                                                     definitie='Pijl Fietsvoorsortering Links',
+                                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/fietsvoorsortering-Links'),
+        'groot': KeuzelijstWaarde(invulwaarde='groot',
+                                  label='groot',
+                                  definitie='Omgekeerde driehoek markering groot type.',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/groot'),
+        'groter-dan-22.75-m²': KeuzelijstWaarde(invulwaarde='groter-dan-22.75-m²',
+                                                label='groter dan 22.75 m²',
+                                                definitie='Lettermarkering bus met arcering.',
+                                                objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/groter-dan-22.75-m²'),
+        'klein': KeuzelijstWaarde(invulwaarde='klein',
+                                  label='klein',
+                                  definitie='Omgekeerde driehoek markering klein type.',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/klein'),
+        'kleiner-dan-22.75-m²': KeuzelijstWaarde(invulwaarde='kleiner-dan-22.75-m²',
+                                                 label='kleiner dan 22.75 m²',
+                                                 definitie='Lettermarkering bus met arcering.',
+                                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/kleiner-dan-22.75-m²'),
+        'kruising-sporen': KeuzelijstWaarde(invulwaarde='kruising-sporen',
+                                            label='kruising sporen',
+                                            definitie='Aanduiding A49 kruising van een openbare weg door één of meer in de rijbaan aangelegde sporen.',
+                                            objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/kruising-sporen'),
+        'links-(5m)': KeuzelijstWaarde(invulwaarde='links-(5m)',
+                                       label='links (5m)',
+                                       definitie='Pijl Links (5m)',
+                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/links-(5m)'),
+        'links-(7.5m)': KeuzelijstWaarde(invulwaarde='links-(7.5m)',
+                                         label='links (7.5m)',
+                                         definitie='Pijl Links (7,5m)',
+                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/links-(7.5m)'),
+        'links-+-Rechts-(5m)': KeuzelijstWaarde(invulwaarde='links-+-Rechts-(5m)',
+                                                label='links + Rechts (5m)',
+                                                definitie='Pijl Links + Rechts (5m)',
+                                                objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/links-+-Rechts-(5m)'),
+        'links-+-Rechts-(7.5m)': KeuzelijstWaarde(invulwaarde='links-+-Rechts-(7.5m)',
+                                                  label='links + Rechts (7.5m)',
+                                                  definitie='Pijl Links + Rechts (7,5m)',
+                                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/links-+-Rechts-(7.5m)'),
+        'mindervaliden-logo-klein': KeuzelijstWaarde(invulwaarde='mindervaliden-logo-klein',
+                                                     label='mindervaliden logo klein',
+                                                     definitie='Logomarkering Mindervaliden klein.',
+                                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/mindervaliden-logo-klein'),
+        'mindervaliden-logo-normaal': KeuzelijstWaarde(invulwaarde='mindervaliden-logo-normaal',
+                                                       label='mindervaliden logo normaal',
+                                                       definitie='Logomarkering Mindervaliden normaal.',
+                                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/mindervaliden-logo-normaal'),
+        'mindervaliden-logo-vergroot': KeuzelijstWaarde(invulwaarde='mindervaliden-logo-vergroot',
+                                                        label='mindervaliden logo vergroot',
+                                                        definitie='Logomarkering Mindervaliden vergroot.',
+                                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/mindervaliden-logo-vergroot'),
+        'null': KeuzelijstWaarde(invulwaarde='null',
+                                 label='null',
+                                 definitie='Geen aanduiding.',
+                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/null'),
+        'oversteekplaats-voor-voetgangers': KeuzelijstWaarde(invulwaarde='oversteekplaats-voor-voetgangers',
+                                                             label='oversteekplaats voor voetgangers',
+                                                             definitie='Aanduiding A21 oversteekplaats voor voetgangers.',
+                                                             objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/oversteekplaats-voor-voetgangers'),
+        'parkeerverbod': KeuzelijstWaarde(invulwaarde='parkeerverbod',
+                                          label='parkeerverbod',
+                                          definitie='Verkeersbordmarkering parkeerverbod.',
+                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/parkeerverbod'),
+        'rechtdoor-(5m)': KeuzelijstWaarde(invulwaarde='rechtdoor-(5m)',
+                                           label='rechtdoor (5m)',
+                                           definitie='Pijl rechtdoor (5m)',
+                                           objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/rechtdoor-(5m)'),
+        'rechtdoor-+-Links-(5m)': KeuzelijstWaarde(invulwaarde='rechtdoor-+-Links-(5m)',
+                                                   label='rechtdoor + Links (5m)',
+                                                   definitie='Pijl Rechtdoor + Links (5m)',
+                                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/rechtdoor-+-Links-(5m)'),
+        'rechtdoor-+-Links-(7.5m)': KeuzelijstWaarde(invulwaarde='rechtdoor-+-Links-(7.5m)',
+                                                     label='rechtdoor + Links (7.5m)',
+                                                     definitie='Pijl Rechtdoor + Links (7,5m)',
+                                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/rechtdoor-+-Links-(7.5m)'),
+        'rechtdoor-+-Links-+-Rechts-(5m)': KeuzelijstWaarde(invulwaarde='rechtdoor-+-Links-+-Rechts-(5m)',
+                                                            label='rechtdoor + Links + Rechts (5m)',
+                                                            definitie='Pijl Rechtdoor + Links + Rechts (5m)',
+                                                            objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/rechtdoor-+-Links-+-Rechts-(5m)'),
+        'rechtdoor-+-Links-+-Rechts-(7.5m)': KeuzelijstWaarde(invulwaarde='rechtdoor-+-Links-+-Rechts-(7.5m)',
+                                                              label='rechtdoor + Links + Rechts (7.5m)',
+                                                              definitie='Pijl Rechtdoor + Links + Rechts (7,5m)',
+                                                              objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/rechtdoor-+-Links-+-Rechts-(7.5m)'),
+        'rechtdoor-+-Rechts-(5m)': KeuzelijstWaarde(invulwaarde='rechtdoor-+-Rechts-(5m)',
+                                                    label='rechtdoor + Rechts (5m)',
+                                                    definitie='Pijl Rechtdoor + Rechts (5m)',
+                                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/rechtdoor-+-Rechts-(5m)'),
+        'rechtdoor-+-Rechts-(7.5m)': KeuzelijstWaarde(invulwaarde='rechtdoor-+-Rechts-(7.5m)',
+                                                      label='rechtdoor + Rechts (7.5m)',
+                                                      definitie='Pijl Rechtdoor + Rechts (7,5m)',
+                                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/rechtdoor-+-Rechts-(7.5m)'),
+        'rechts-(5m)': KeuzelijstWaarde(invulwaarde='rechts-(5m)',
+                                        label='rechts (5m)',
+                                        definitie='Pijl Rechts (5m)',
+                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/rechts-(5m)'),
+        'rechts-(7.5m)': KeuzelijstWaarde(invulwaarde='rechts-(7.5m)',
+                                          label='rechts (7.5m)',
+                                          definitie='Pijl Rechts (7,5m)',
+                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/rechts-(7.5m)'),
+        'rijstrook-vermindering-links': KeuzelijstWaarde(invulwaarde='rijstrook-vermindering-links',
+                                                         label='rijstrook vermindering links',
+                                                         definitie='Pijl Rijstrook vermindering links',
+                                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/rijstrook-vermindering-links'),
+        'rijstrook-vermindering-rechts': KeuzelijstWaarde(invulwaarde='rijstrook-vermindering-rechts',
+                                                          label='rijstrook vermindering rechts',
+                                                          definitie='Pijl Rijstrook vermindering rechts',
+                                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/rijstrook-vermindering-rechts'),
+        'schoolkinderen': KeuzelijstWaarde(invulwaarde='schoolkinderen',
+                                           label='schoolkinderen',
+                                           definitie='Verkeersbordmarkering schoolkinderen.',
+                                           objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/schoolkinderen'),
+        'turborotonde-Links': KeuzelijstWaarde(invulwaarde='turborotonde-Links',
+                                               label='turborotonde Links',
+                                               definitie='Pijl Turborotonde Links',
+                                               objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/turborotonde-Links'),
+        'turborotonde-Rechtdoor': KeuzelijstWaarde(invulwaarde='turborotonde-Rechtdoor',
+                                                   label='turborotonde Rechtdoor',
+                                                   definitie='Pijl Turborotonde Rechtdoor',
+                                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/turborotonde-Rechtdoor'),
+        'turborotonde-Rechtdoor-en-Links': KeuzelijstWaarde(invulwaarde='turborotonde-Rechtdoor-en-Links',
+                                                            label='turborotonde Rechtdoor en Links',
+                                                            definitie='Pijl Turborotonde Rechtdoor en Links',
+                                                            objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/turborotonde-Rechtdoor-en-Links'),
+        'turborotonde-Rechtdoor-en-Rechts': KeuzelijstWaarde(invulwaarde='turborotonde-Rechtdoor-en-Rechts',
+                                                             label='turborotonde Rechtdoor en Rechts',
+                                                             definitie='Pijl Turborotonde Rechtdoor en Rechts',
+                                                             objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/turborotonde-Rechtdoor-en-Rechts'),
+        'turborotonde-Rechtdoor.-Links-en-rechts': KeuzelijstWaarde(invulwaarde='turborotonde-Rechtdoor.-Links-en-rechts',
+                                                                    label='turborotonde Rechtdoor. Links en rechts',
+                                                                    definitie='Pijl Turborotonde Rechtdoor, Links en rechts',
+                                                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/turborotonde-Rechtdoor.-Links-en-rechts'),
+        'turborotonde-Rechts': KeuzelijstWaarde(invulwaarde='turborotonde-Rechts',
+                                                label='turborotonde Rechts',
+                                                definitie='Pijl Turborotonde Rechts',
+                                                objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/turborotonde-Rechts'),
+        'voorsortering-Links-(5m)': KeuzelijstWaarde(invulwaarde='voorsortering-Links-(5m)',
+                                                     label='voorsortering Links (5m)',
+                                                     definitie='Pijl Voorsortering Links (5m)',
+                                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/voorsortering-Links-(5m)'),
+        'voorsortering-Links-(7.5m)': KeuzelijstWaarde(invulwaarde='voorsortering-Links-(7.5m)',
+                                                       label='voorsortering Links (7.5m)',
+                                                       definitie='Pijl Voorsortering Links (7,5m)',
+                                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/voorsortering-Links-(7.5m)'),
+        'voorsortering-Rechts-(5m)': KeuzelijstWaarde(invulwaarde='voorsortering-Rechts-(5m)',
+                                                      label='voorsortering Rechts (5m)',
+                                                      definitie='Pijl Voorsortering Rechts (5m)',
+                                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/voorsortering-Rechts-(5m)'),
+        'voorsortering-Rechts-(7.5m)': KeuzelijstWaarde(invulwaarde='voorsortering-Rechts-(7.5m)',
+                                                        label='voorsortering Rechts (7.5m)',
+                                                        definitie='Aanduiding A49 kruising van een openbare weg door één of meer in de rijbaan aangelegde sporen.',
+                                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/voorsortering-Rechts-(7.5m)'),
+        'woon-werkverkeer': KeuzelijstWaarde(invulwaarde='woon-werkverkeer',
+                                             label='woon-werkverkeer',
+                                             definitie='Symbool woon-werkverkeer.',
+                                             objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/woon-werkverkeer')
+    }
 
-    def __init__(self):
-        super().__init__(naam="KlFiguratieType",
-                         label="Figuratie type",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlFiguratieType",
-                         definition="Types van figuratiemarkering.",
-                         usagenote="",
-                         deprecated_version="",
-                         codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlFiguratieType")
-
-        self.add_option("2e-afslag-links-(5m)", "2e afslag links (5m)", "Pijl 2e afslag links (5m).", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/2e-afslag-links-(5m)")
-        self.add_option("2e-afslag-links-(7.5m)", "2e afslag links (7.5m)", "Pijl 2e afslag links (7,5m)", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/2e-afslag-links-(7.5m)")
-        self.add_option("2e-afslag-rechts-(5m)", "2e afslag rechts (5m)", "Pijl 2e afslag rechts (5m)", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/2e-afslag-rechts-(5m)")
-        self.add_option("2e-afslag-rechts-(7.5m)", "2e afslag rechts (7.5m)", "Pijl 2e afslag rechts (7,5m)", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/2e-afslag-rechts-(7.5m)")
-        self.add_option("BUS-(dwars-op-BOB)", "BUS (dwars op BOB)", "Lettermarkering van bus (dwars op BOB)", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/BUS-(dwars-op-BOB)")
-        self.add_option("BUS-(dwars-op-busstrook)", "BUS (dwars op busstrook)", "Lettermarkering van bus (dwars op busstrook)", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/BUS-(dwars-op-busstrook)")
-        self.add_option("BUS-(langs-op-BOB)", "BUS (langs op BOB)", "Lettermarkering van bus (langs op BOB)", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/BUS-(langs-op-BOB)")
-        self.add_option("STOP", "STOP", "Lettermarkering STOP", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/STOP")
-        self.add_option("STOP-(smal)", "STOP (smal)", "Lettermarkering STOP (smal)", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/STOP-(smal)")
-        self.add_option("TAXI-(dwars)", "TAXI (dwars)", "Lettermarkering van taxiplaats (dwars)", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/TAXI-(dwars)")
-        self.add_option("TAXI-(langs)", "TAXI (langs)", "Lettermarkering van taxiplaats (langs)", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/TAXI-(langs)")
-        self.add_option("TRAM-(dwars)", "TRAM (dwars)", "Lettermarkering van tramhalte (dwars)", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/TRAM-(dwars)")
-        self.add_option("TRAM-(langs)", "TRAM (langs)", "Lettermarkering van tramhalte (langs)", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/TRAM-(langs)")
-        self.add_option("autocar", "autocar", "Symbool autocar.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/autocar")
-        self.add_option("blauwe-zone-(parkeerschijf)", "blauwe zone (parkeerschijf)", "Verkeersbordmarkering blauwe zone (parkeerschijf).", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/blauwe-zone-(parkeerschijf)")
-        self.add_option("bromfiets-groot", "bromfiets groot", "Symbool bromfiets groot.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/bromfiets-groot")
-        self.add_option("bromfiets-klein", "bromfiets klein", "Symbool bromfiets klein.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/bromfiets-klein")
-        self.add_option("bushalte-op-de-rijweg", "bushalte op de rijweg", "Lettermarkering bus zonder arcering.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/bushalte-op-de-rijweg")
-        self.add_option("elektrische-voertuigen-normaal", "elektrische voertuigen normaal", "Symbool elektrische voertuigen normaal.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/elektrische-voertuigen-normaal")
-        self.add_option("elektrische-voertuigen-vergroot", "elektrische voertuigen vergroot", "Symbool elektrische voertuigen vergroot.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/elektrische-voertuigen-vergroot")
-        self.add_option("elektrische-voertuigen-verkleind", "elektrische voertuigen verkleind", "Symbool elektrische voertuigen verkleind.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/elektrische-voertuigen-verkleind")
-        self.add_option("fietslogo-Groot", "fietslogo Groot", "Logomarkering fiestslogo Groot.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/fietslogo-Groot")
-        self.add_option("fietslogo-Klein", "fietslogo Klein", "Logomarkering fiestslogo Klein.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/fietslogo-Klein")
-        self.add_option("fietspadpijl-(klein---dubbele-fietspadpijl)", "fietspadpijl (klein - dubbele fietspadpijl)", "Pijl Fietspadpijl (klein - dubbele fietspadpijl)", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/fietspadpijl-(klein---dubbele-fietspadpijl)")
-        self.add_option("fietspadpijl-(std)", "fietspadpijl (std)", "Pijl Fietspadpijl (std)", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/fietspadpijl-(std)")
-        self.add_option("fietsstraat-begin", "fietsstraat begin", "Verkeersbord F111 dat het einde van de fietsstraat aanduidt.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/fietsstraat-begin")
-        self.add_option("fietsstraat-einde", "fietsstraat einde", "Verkeersbord F113 dat het einde van de fietsstraat aanduidt.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/fietsstraat-einde")
-        self.add_option("fietsvoorsortering-Links", "fietsvoorsortering Links", "Pijl Fietsvoorsortering Links", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/fietsvoorsortering-Links")
-        self.add_option("groot", "groot", "Omgekeerde driehoek markering groot type.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/groot")
-        self.add_option("groter-dan-22.75-m²", "groter dan 22.75 m²", "Lettermarkering bus met arcering.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/groter-dan-22.75-m²")
-        self.add_option("klein", "klein", "Omgekeerde driehoek markering klein type.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/klein")
-        self.add_option("kleiner-dan-22.75-m²", "kleiner dan 22.75 m²", "Lettermarkering bus met arcering.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/kleiner-dan-22.75-m²")
-        self.add_option("kruising-sporen", "kruising sporen", "Aanduiding A49 kruising van een openbare weg door één of meer in de rijbaan aangelegde sporen.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/kruising-sporen")
-        self.add_option("links-(5m)", "links (5m)", "Pijl Links (5m)", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/links-(5m)")
-        self.add_option("links-(7.5m)", "links (7.5m)", "Pijl Links (7,5m)", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/links-(7.5m)")
-        self.add_option("links-+-Rechts-(5m)", "links + Rechts (5m)", "Pijl Links + Rechts (5m)", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/links-+-Rechts-(5m)")
-        self.add_option("links-+-Rechts-(7.5m)", "links + Rechts (7.5m)", "Pijl Links + Rechts (7,5m)", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/links-+-Rechts-(7.5m)")
-        self.add_option("mindervaliden-logo-klein", "mindervaliden logo klein", "Logomarkering Mindervaliden klein.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/mindervaliden-logo-klein")
-        self.add_option("mindervaliden-logo-normaal", "mindervaliden logo normaal", "Logomarkering Mindervaliden normaal.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/mindervaliden-logo-normaal")
-        self.add_option("mindervaliden-logo-vergroot", "mindervaliden logo vergroot", "Logomarkering Mindervaliden vergroot.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/mindervaliden-logo-vergroot")
-        self.add_option("null", "null", "Geen aanduiding.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/null")
-        self.add_option("oversteekplaats-voor-voetgangers", "oversteekplaats voor voetgangers", "Aanduiding A21 oversteekplaats voor voetgangers.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/oversteekplaats-voor-voetgangers")
-        self.add_option("parkeerverbod", "parkeerverbod", "Verkeersbordmarkering parkeerverbod.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/parkeerverbod")
-        self.add_option("rechtdoor-(5m)", "rechtdoor (5m)", "Pijl rechtdoor (5m)", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/rechtdoor-(5m)")
-        self.add_option("rechtdoor-+-Links-(5m)", "rechtdoor + Links (5m)", "Pijl Rechtdoor + Links (5m)", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/rechtdoor-+-Links-(5m)")
-        self.add_option("rechtdoor-+-Links-(7.5m)", "rechtdoor + Links (7.5m)", "Pijl Rechtdoor + Links (7,5m)", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/rechtdoor-+-Links-(7.5m)")
-        self.add_option("rechtdoor-+-Links-+-Rechts-(5m)", "rechtdoor + Links + Rechts (5m)", "Pijl Rechtdoor + Links + Rechts (5m)", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/rechtdoor-+-Links-+-Rechts-(5m)")
-        self.add_option("rechtdoor-+-Links-+-Rechts-(7.5m)", "rechtdoor + Links + Rechts (7.5m)", "Pijl Rechtdoor + Links + Rechts (7,5m)", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/rechtdoor-+-Links-+-Rechts-(7.5m)")
-        self.add_option("rechtdoor-+-Rechts-(5m)", "rechtdoor + Rechts (5m)", "Pijl Rechtdoor + Rechts (5m)", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/rechtdoor-+-Rechts-(5m)")
-        self.add_option("rechtdoor-+-Rechts-(7.5m)", "rechtdoor + Rechts (7.5m)", "Pijl Rechtdoor + Rechts (7,5m)", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/rechtdoor-+-Rechts-(7.5m)")
-        self.add_option("rechts-(5m)", "rechts (5m)", "Pijl Rechts (5m)", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/rechts-(5m)")
-        self.add_option("rechts-(7.5m)", "rechts (7.5m)", "Pijl Rechts (7,5m)", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/rechts-(7.5m)")
-        self.add_option("rijstrook-vermindering-links", "rijstrook vermindering links", "Pijl Rijstrook vermindering links", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/rijstrook-vermindering-links")
-        self.add_option("rijstrook-vermindering-rechts", "rijstrook vermindering rechts", "Pijl Rijstrook vermindering rechts", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/rijstrook-vermindering-rechts")
-        self.add_option("schoolkinderen", "schoolkinderen", "Verkeersbordmarkering schoolkinderen.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/schoolkinderen")
-        self.add_option("turborotonde-Links", "turborotonde Links", "Pijl Turborotonde Links", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/turborotonde-Links")
-        self.add_option("turborotonde-Rechtdoor", "turborotonde Rechtdoor", "Pijl Turborotonde Rechtdoor", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/turborotonde-Rechtdoor")
-        self.add_option("turborotonde-Rechtdoor-en-Links", "turborotonde Rechtdoor en Links", "Pijl Turborotonde Rechtdoor en Links", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/turborotonde-Rechtdoor-en-Links")
-        self.add_option("turborotonde-Rechtdoor-en-Rechts", "turborotonde Rechtdoor en Rechts", "Pijl Turborotonde Rechtdoor en Rechts", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/turborotonde-Rechtdoor-en-Rechts")
-        self.add_option("turborotonde-Rechtdoor.-Links-en-rechts", "turborotonde Rechtdoor. Links en rechts", "Pijl Turborotonde Rechtdoor, Links en rechts", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/turborotonde-Rechtdoor.-Links-en-rechts")
-        self.add_option("turborotonde-Rechts", "turborotonde Rechts", "Pijl Turborotonde Rechts", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/turborotonde-Rechts")
-        self.add_option("voorsortering-Links-(5m)", "voorsortering Links (5m)", "Pijl Voorsortering Links (5m)", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/voorsortering-Links-(5m)")
-        self.add_option("voorsortering-Links-(7.5m)", "voorsortering Links (7.5m)", "Pijl Voorsortering Links (7,5m)", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/voorsortering-Links-(7.5m)")
-        self.add_option("voorsortering-Rechts-(5m)", "voorsortering Rechts (5m)", "Pijl Voorsortering Rechts (5m)", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/voorsortering-Rechts-(5m)")
-        self.add_option("voorsortering-Rechts-(7.5m)", "voorsortering Rechts (7.5m)", "Aanduiding A49 kruising van een openbare weg door één of meer in de rijbaan aangelegde sporen.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/voorsortering-Rechts-(7.5m)")
-        self.add_option("woon-werkverkeer", "woon-werkverkeer", "Symbool woon-werkverkeer.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieType/woon-werkverkeer")

@@ -1,17 +1,16 @@
 # coding=utf-8
-from OTLModel.Datatypes.Keuzelijst import Keuzelijst
+from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
+from OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 
 # Generated with OTLEnumerationCreator. To modify: extend, do not edit
-class KlHydrantKoppeling(Keuzelijst):
+class KlHydrantKoppeling(KeuzelijstField):
     """Keuzelijst met types koppelingen van hydranten."""
-
-    def __init__(self):
-        super().__init__(naam="KlHydrantKoppeling",
-                         label="Hydrant koppeling",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlHydrantKoppeling",
-                         definition="Keuzelijst met types koppelingen van hydranten.",
-                         usagenote="",
-                         deprecated_version="",
-                         codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlHydrantKoppeling")
+    naam = 'KlHydrantKoppeling'
+    label = 'Hydrant koppeling'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlHydrantKoppeling'
+    definition = 'Keuzelijst met types koppelingen van hydranten.'
+    codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlHydrantKoppeling'
+    options = 
+    }
 

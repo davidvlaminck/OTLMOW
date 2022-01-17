@@ -1,17 +1,16 @@
 # coding=utf-8
-from OTLModel.Datatypes.Keuzelijst import Keuzelijst
+from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
+from OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 
 # Generated with OTLEnumerationCreator. To modify: extend, do not edit
-class KlCADOModelnaam(Keuzelijst):
+class KlCADOModelnaam(KeuzelijstField):
     """De modelnaam van de calamiteitendoorsteek."""
-
-    def __init__(self):
-        super().__init__(naam="KlCADOModelnaam",
-                         label="Calamiteitendoorsteek modelnaam",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlCADOModelnaam",
-                         definition="De modelnaam van de calamiteitendoorsteek.",
-                         usagenote="",
-                         deprecated_version="",
-                         codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlCADOModelnaam")
+    naam = 'KlCADOModelnaam'
+    label = 'Calamiteitendoorsteek modelnaam'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlCADOModelnaam'
+    definition = 'De modelnaam van de calamiteitendoorsteek.'
+    codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlCADOModelnaam'
+    options = 
+    }
 

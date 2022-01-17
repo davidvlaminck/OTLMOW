@@ -1,19 +1,24 @@
 # coding=utf-8
-from OTLModel.Datatypes.Keuzelijst import Keuzelijst
+from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
+from OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 
 # Generated with OTLEnumerationCreator. To modify: extend, do not edit
-class KlOverstortMateriaalDrempel(Keuzelijst):
+class KlOverstortMateriaalDrempel(KeuzelijstField):
     """De materialen van vervaardiging van de overstort."""
+    naam = 'KlOverstortMateriaalDrempel'
+    label = 'Overstort materiaal drempel'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlOverstortMateriaalDrempel'
+    definition = 'De materialen van vervaardiging van de overstort.'
+    codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlOverstortMateriaalDrempel'
+    options = {
+        'beton': KeuzelijstWaarde(invulwaarde='beton',
+                                  label='beton',
+                                  definitie='beton',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOverstortMateriaalDrempel/beton'),
+        'metselwerk': KeuzelijstWaarde(invulwaarde='metselwerk',
+                                       label='metselwerk',
+                                       definitie='metselwerk',
+                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOverstortMateriaalDrempel/metselwerk')
+    }
 
-    def __init__(self):
-        super().__init__(naam="KlOverstortMateriaalDrempel",
-                         label="Overstort materiaal drempel",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlOverstortMateriaalDrempel",
-                         definition="De materialen van vervaardiging van de overstort.",
-                         usagenote="",
-                         deprecated_version="",
-                         codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlOverstortMateriaalDrempel")
-
-        self.add_option("beton", "beton", "beton", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOverstortMateriaalDrempel/beton")
-        self.add_option("metselwerk", "metselwerk", "metselwerk", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOverstortMateriaalDrempel/metselwerk")

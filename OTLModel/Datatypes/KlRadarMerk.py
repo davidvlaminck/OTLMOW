@@ -1,17 +1,16 @@
 # coding=utf-8
-from OTLModel.Datatypes.Keuzelijst import Keuzelijst
+from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
+from OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 
 # Generated with OTLEnumerationCreator. To modify: extend, do not edit
-class KlRadarMerk(Keuzelijst):
+class KlRadarMerk(KeuzelijstField):
     """Keuzelijst met merknamen voor Radar."""
-
-    def __init__(self):
-        super().__init__(naam="KlRadarMerk",
-                         label="Radar merk",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlRadarMerk",
-                         definition="Keuzelijst met merknamen voor Radar.",
-                         usagenote="",
-                         deprecated_version="",
-                         codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlRadarMerk")
+    naam = 'KlRadarMerk'
+    label = 'Radar merk'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlRadarMerk'
+    definition = 'Keuzelijst met merknamen voor Radar.'
+    codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlRadarMerk'
+    options = 
+    }
 

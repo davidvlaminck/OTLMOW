@@ -1,20 +1,25 @@
 # coding=utf-8
-from OTLModel.Datatypes.Keuzelijst import Keuzelijst
+from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
+from OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 
 # Generated with OTLEnumerationCreator. To modify: extend, do not edit
-class KlWvLedProtector(Keuzelijst):
+class KlWvLedProtector(KeuzelijstField):
     """Type doorschijnende kap ter bescherming van de LED's (vlak glas, polycarbonaat,...)."""
+    naam = 'KlWvLedProtector'
+    label = 'WV protector'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlWvLedProtector'
+    definition = "Type doorschijnende kap ter bescherming van de LED's (vlak glas, polycarbonaat,...)."
+    codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlWvLedProtector'
+    options = {
+        'gebogen-glas': KeuzelijstWaarde(invulwaarde='gebogen-glas',
+                                         label='gebogen glas',
+                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlWvLedProtector/gebogen-glas'),
+        'polycarbonaat': KeuzelijstWaarde(invulwaarde='polycarbonaat',
+                                          label='polycarbonaat',
+                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlWvLedProtector/polycarbonaat'),
+        'vlak-glas': KeuzelijstWaarde(invulwaarde='vlak-glas',
+                                      label='vlak glas',
+                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlWvLedProtector/vlak-glas')
+    }
 
-    def __init__(self):
-        super().__init__(naam="KlWvLedProtector",
-                         label="WV protector",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlWvLedProtector",
-                         definition="Type doorschijnende kap ter bescherming van de LED's (vlak glas, polycarbonaat,...).",
-                         usagenote="",
-                         deprecated_version="",
-                         codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlWvLedProtector")
-
-        self.add_option("gebogen-glas", "gebogen glas", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlWvLedProtector/gebogen-glas")
-        self.add_option("polycarbonaat", "polycarbonaat", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlWvLedProtector/polycarbonaat")
-        self.add_option("vlak-glas", "vlak glas", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlWvLedProtector/vlak-glas")

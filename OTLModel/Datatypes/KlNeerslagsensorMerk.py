@@ -1,18 +1,19 @@
 # coding=utf-8
-from OTLModel.Datatypes.Keuzelijst import Keuzelijst
+from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
+from OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 
 # Generated with OTLEnumerationCreator. To modify: extend, do not edit
-class KlNeerslagsensorMerk(Keuzelijst):
+class KlNeerslagsensorMerk(KeuzelijstField):
     """Het merk van de neerslagsensor."""
+    naam = 'KlNeerslagsensorMerk'
+    label = 'Neerslagsensor merk'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlNeerslagsensorMerk'
+    definition = 'Het merk van de neerslagsensor.'
+    codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlNeerslagsensorMerk'
+    options = {
+        'Luft': KeuzelijstWaarde(invulwaarde='Luft',
+                                 label='Luft',
+                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNeerslagsensorMerk/Luft')
+    }
 
-    def __init__(self):
-        super().__init__(naam="KlNeerslagsensorMerk",
-                         label="Neerslagsensor merk",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlNeerslagsensorMerk",
-                         definition="Het merk van de neerslagsensor.",
-                         usagenote="",
-                         deprecated_version="",
-                         codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlNeerslagsensorMerk")
-
-        self.add_option("Luft", "Luft", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNeerslagsensorMerk/Luft")

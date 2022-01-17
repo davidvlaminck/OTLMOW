@@ -1,58 +1,84 @@
 # coding=utf-8
+from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
+from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Datatypes.ComplexField import ComplexField
 from OTLModel.Datatypes.DtcAdres import DtcAdres
 from OTLModel.Datatypes.StringField import StringField
 
 
 # Generated with OTLComplexDatatypeCreator. To modify: extend, do not edit
-class DtcRechtspersoon(ComplexField):
-    """Complex datatype voor een rechtspersoon."""
-
+class DtcRechtspersoonWaarden(AttributeInfo):
     def __init__(self):
-        super().__init__(naam="DtcRechtspersoon",
-                         label="Rechtspersoon",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcRechtspersoon",
-                         definition="Complex datatype voor een rechtspersoon.",
-                         usagenote="",
-                         deprecated_version="")
+        self._adres = OTLAttribuut(field=DtcAdres,
+                                   naam='adres',
+                                   label='adres',
+                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcRechtspersoon.adres',
+                                   definition='Het adres.')
 
-        self.waarde.adres = DtcAdres()
+        self._afdeling = OTLAttribuut(field=StringField,
+                                      naam='afdeling',
+                                      label='afdeling',
+                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcRechtspersoon.afdeling',
+                                      definition='De afdeling waartoe een rechtspersoon behoort.')
+
+        self._organisatie = OTLAttribuut(field=StringField,
+                                         naam='organisatie',
+                                         label='organisatie',
+                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcRechtspersoon.organisatie',
+                                         definition='De naam van de organisatie of rechtspersoon.')
+
+        self._telefoonnnummer = OTLAttribuut(field=StringField,
+                                             naam='telefoonnnummer',
+                                             label='telefoonnnummer',
+                                             objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcRechtspersoon.telefoonnnummer',
+                                             definition='Het telefoonnummer.')
+
+    @property
+    def adres(self):
         """Het adres."""
-        self.waarde.adres.naam = "adres"
-        self.waarde.adres.label = "adres"
-        self.waarde.adres.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcRechtspersoon.adres"
-        self.waarde.adres.definition = "Het adres."
-        self.waarde.adres.constraints = ""
-        self.waarde.adres.usagenote = ""
-        self.waarde.adres.deprecated_version = ""
-        self.adres = self.waarde.adres
+        return self._adres.waarde
 
-        self.waarde.afdeling = StringField(naam="afdeling",
-                                           label="afdeling",
-                                           objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcRechtspersoon.afdeling",
-                                           definition="De afdeling waartoe een rechtspersoon behoort.",
-                                           constraints="",
-                                           usagenote="",
-                                           deprecated_version="")
-        self.afdeling = self.waarde.afdeling
+    @adres.setter
+    def adres(self, value):
+        self._adres.set_waarde(value)
+
+    @property
+    def afdeling(self):
         """De afdeling waartoe een rechtspersoon behoort."""
+        return self._afdeling.waarde
 
-        self.waarde.organisatie = StringField(naam="organisatie",
-                                              label="organisatie",
-                                              objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcRechtspersoon.organisatie",
-                                              definition="De naam van de organisatie of rechtspersoon.",
-                                              constraints="",
-                                              usagenote="",
-                                              deprecated_version="")
-        self.organisatie = self.waarde.organisatie
+    @afdeling.setter
+    def afdeling(self, value):
+        self._afdeling.set_waarde(value)
+
+    @property
+    def organisatie(self):
         """De naam van de organisatie of rechtspersoon."""
+        return self._organisatie.waarde
 
-        self.waarde.telefoonnnummer = StringField(naam="telefoonnnummer",
-                                                  label="telefoonnnummer",
-                                                  objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcRechtspersoon.telefoonnnummer",
-                                                  definition="Het telefoonnummer.",
-                                                  constraints="",
-                                                  usagenote="",
-                                                  deprecated_version="")
-        self.telefoonnnummer = self.waarde.telefoonnnummer
+    @organisatie.setter
+    def organisatie(self, value):
+        self._organisatie.set_waarde(value)
+
+    @property
+    def telefoonnnummer(self):
         """Het telefoonnummer."""
+        return self._telefoonnnummer.waarde
+
+    @telefoonnnummer.setter
+    def telefoonnnummer(self, value):
+        self._telefoonnnummer.set_waarde(value)
+
+
+# Generated with OTLComplexDatatypeCreator. To modify: extend, do not edit
+class DtcRechtspersoon(ComplexField, AttributeInfo):
+    """Complex datatype voor een rechtspersoon."""
+    naam = 'DtcRechtspersoon'
+    label = 'Rechtspersoon'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcRechtspersoon'
+    definition = 'Complex datatype voor een rechtspersoon.'
+    waardeObject = DtcRechtspersoonWaarden
+
+    def __str__(self):
+        return ComplexField.__str__(self)
+

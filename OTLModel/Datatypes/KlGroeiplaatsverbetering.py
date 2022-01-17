@@ -1,23 +1,40 @@
 # coding=utf-8
-from OTLModel.Datatypes.Keuzelijst import Keuzelijst
+from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
+from OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 
 # Generated with OTLEnumerationCreator. To modify: extend, do not edit
-class KlGroeiplaatsverbetering(Keuzelijst):
+class KlGroeiplaatsverbetering(KeuzelijstField):
     """De techniek waarmee de groeiplaats wordt verbeterd met als doel de levensverwachting en de conditie van de vegetatie te verbeteren."""
+    naam = 'KlGroeiplaatsverbetering'
+    label = 'Groeiplaatsverbetering'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlGroeiplaatsverbetering'
+    definition = 'De techniek waarmee de groeiplaats wordt verbeterd met als doel de levensverwachting en de conditie van de vegetatie te verbeteren.'
+    codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlGroeiplaatsverbetering'
+    options = {
+        'bodembeluchting-luchtinjectie': KeuzelijstWaarde(invulwaarde='bodembeluchting-luchtinjectie',
+                                                          label='bodembeluchting-luchtinjectie',
+                                                          definitie='Groeiplaatsverbetering dmv bodembeluchting-luchtinjectie.',
+                                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlGroeiplaatsverbetering/bodembeluchting-luchtinjectie'),
+        'horizontale-drainage': KeuzelijstWaarde(invulwaarde='horizontale-drainage',
+                                                 label='horizontale drainage',
+                                                 definitie='Groeiplaatsverbetering dmv horizontale drainage.',
+                                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlGroeiplaatsverbetering/horizontale-drainage'),
+        'irrgatie-drainagebuis': KeuzelijstWaarde(invulwaarde='irrgatie-drainagebuis',
+                                                  label='irrgatie drainagebuis',
+                                                  definitie='Groeiplaatsverbetering dmv irrigatie met een drainagebuis.',
+                                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlGroeiplaatsverbetering/irrgatie-drainagebuis'),
+        'irrigatie-gietrand-overtollige-grond': KeuzelijstWaarde(invulwaarde='irrigatie-gietrand-overtollige-grond',
+                                                                 label='irrigatie gietrand overtollige grond',
+                                                                 definitie='Groeiplaatsverbetering dmv irrigatie met een overtollige grond.',
+                                                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlGroeiplaatsverbetering/irrigatie-gietrand-overtollige-grond'),
+        'irrigatie-kunstmatige-gietrand': KeuzelijstWaarde(invulwaarde='irrigatie-kunstmatige-gietrand',
+                                                           label='irrigatie kunstmatige gietrand',
+                                                           definitie='Groeiplaatsverbetering dmv irrigatie met een kunstmatige gietrand.',
+                                                           objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlGroeiplaatsverbetering/irrigatie-kunstmatige-gietrand'),
+        'verticale-drainage': KeuzelijstWaarde(invulwaarde='verticale-drainage',
+                                               label='verticale drainage',
+                                               definitie='Groeiplaatsverbetering dmv verticale drainage.',
+                                               objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlGroeiplaatsverbetering/verticale-drainage')
+    }
 
-    def __init__(self):
-        super().__init__(naam="KlGroeiplaatsverbetering",
-                         label="Groeiplaatsverbetering",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlGroeiplaatsverbetering",
-                         definition="De techniek waarmee de groeiplaats wordt verbeterd met als doel de levensverwachting en de conditie van de vegetatie te verbeteren.",
-                         usagenote="",
-                         deprecated_version="",
-                         codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlGroeiplaatsverbetering")
-
-        self.add_option("bodembeluchting-luchtinjectie", "bodembeluchting-luchtinjectie", "Groeiplaatsverbetering dmv bodembeluchting-luchtinjectie.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlGroeiplaatsverbetering/bodembeluchting-luchtinjectie")
-        self.add_option("horizontale-drainage", "horizontale drainage", "Groeiplaatsverbetering dmv horizontale drainage.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlGroeiplaatsverbetering/horizontale-drainage")
-        self.add_option("irrgatie-drainagebuis", "irrgatie drainagebuis", "Groeiplaatsverbetering dmv irrigatie met een drainagebuis.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlGroeiplaatsverbetering/irrgatie-drainagebuis")
-        self.add_option("irrigatie-gietrand-overtollige-grond", "irrigatie gietrand overtollige grond", "Groeiplaatsverbetering dmv irrigatie met een overtollige grond.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlGroeiplaatsverbetering/irrigatie-gietrand-overtollige-grond")
-        self.add_option("irrigatie-kunstmatige-gietrand", "irrigatie kunstmatige gietrand", "Groeiplaatsverbetering dmv irrigatie met een kunstmatige gietrand.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlGroeiplaatsverbetering/irrigatie-kunstmatige-gietrand")
-        self.add_option("verticale-drainage", "verticale drainage", "Groeiplaatsverbetering dmv verticale drainage.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlGroeiplaatsverbetering/verticale-drainage")

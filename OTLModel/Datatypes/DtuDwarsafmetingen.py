@@ -1,39 +1,46 @@
 # coding=utf-8
-from OTLModel.Datatypes.UnionTypeField import UnionTypeField
+from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
+from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Datatypes.DtcAfmetingBxlxhInMm import DtcAfmetingBxlxhInMm
 from OTLModel.Datatypes.DtcAfmetingDiameterInMm import DtcAfmetingDiameterInMm
+from OTLModel.Datatypes.UnionTypeField import UnionTypeField
 
 
 # Generated with OTLUnionDatatypeCreator. To modify: extend, do not edit
-class DtuDwarsafmetingen(UnionTypeField):
-    """Union datatype voor de dwarsafmetingen van een object volgens zijn vorm."""
-
+class DtuDwarsafmetingenAttributen(AttributeInfo):
     def __init__(self):
-        super().__init__(naam="DtuDwarsafmetingen",
-                         label="Dwarsafmetingen",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtuDwarsafmetingen",
-                         definition="Union datatype voor de dwarsafmetingen van een object volgens zijn vorm.",
-                         usagenote="",
-                         deprecated_version="")
+        self._rechthoekig = OTLAttribuut(field=DtcAfmetingBxlxhInMm,
+                                         naam='rechthoekig',
+                                         label='rechthoekig',
+                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtuDwarsafmetingen.rechthoekig',
+                                         definition='Afmetingen voor breedte, lengte en hoogte van een rechthoekig object.')
 
-        field_rechthoekig = DtcAfmetingBxlxhInMm()
+        self._rond = OTLAttribuut(field=DtcAfmetingDiameterInMm,
+                                  naam='rond',
+                                  label='rond',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtuDwarsafmetingen.rond',
+                                  definition='Afmeting van de diameter in milimeter van een rond object.')
+
+    @property
+    def rechthoekig(self):
         """Afmetingen voor breedte, lengte en hoogte van een rechthoekig object."""
-        field_rechthoekig.naam = "rechthoekig"
-        field_rechthoekig.label = "rechthoekig"
-        field_rechthoekig.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtuDwarsafmetingen.rechthoekig"
-        field_rechthoekig.definition = "Afmetingen voor breedte, lengte en hoogte van een rechthoekig object."
-        field_rechthoekig.constraints = ""
-        field_rechthoekig.usagenote = ""
-        field_rechthoekig.deprecated_version = ""
+        return self._rechthoekig.waarde
 
-        field_rond = DtcAfmetingDiameterInMm()
+    @property
+    def rond(self):
         """Afmeting van de diameter in milimeter van een rond object."""
-        field_rond.naam = "rond"
-        field_rond.label = "rond"
-        field_rond.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtuDwarsafmetingen.rond"
-        field_rond.definition = "Afmeting van de diameter in milimeter van een rond object."
-        field_rond.constraints = ""
-        field_rond.usagenote = ""
-        field_rond.deprecated_version = ""
+        return self._rond.waarde
 
-        self.fieldsTuple = (field_rechthoekig, field_rond)
+
+# Generated with OTLUnionDatatypeCreator. To modify: extend, do not edit
+class DtuDwarsafmetingen(UnionTypeField, AttributeInfo):
+    """Union datatype voor de dwarsafmetingen van een object volgens zijn vorm."""
+    naam = 'DtuDwarsafmetingen'
+    label = 'Dwarsafmetingen'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtuDwarsafmetingen'
+    definition = 'Union datatype voor de dwarsafmetingen van een object volgens zijn vorm.'
+    waardeObject = DtuDwarsafmetingenAttributen
+
+    def __str__(self):
+        return UnionTypeField.__str__(self)
+

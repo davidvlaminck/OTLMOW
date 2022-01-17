@@ -1,68 +1,220 @@
 # coding=utf-8
-from OTLModel.Datatypes.Keuzelijst import Keuzelijst
+from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
+from OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 
 # Generated with OTLEnumerationCreator. To modify: extend, do not edit
-class KlBVMengseltype(Keuzelijst):
+class KlBVMengseltype(KeuzelijstField):
     """het mengseltype van de butimineuze verharding."""
+    naam = 'KlBVMengseltype'
+    label = 'BV mengseltype'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlBVMengseltype'
+    definition = 'het mengseltype van de butimineuze verharding.'
+    codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlBVMengseltype'
+    options = {
+        'AB-1B': KeuzelijstWaarde(invulwaarde='AB-1B',
+                                  label='AB-1B',
+                                  definitie='AB-1B',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBVMengseltype/AB-1B'),
+        'AB-2C': KeuzelijstWaarde(invulwaarde='AB-2C',
+                                  label='AB-2C',
+                                  definitie='AB-2C',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBVMengseltype/AB-2C'),
+        'AB-3A': KeuzelijstWaarde(invulwaarde='AB-3A',
+                                  label='AB-3A',
+                                  definitie='AB-3A',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBVMengseltype/AB-3A'),
+        'AB-3B': KeuzelijstWaarde(invulwaarde='AB-3B',
+                                  label='AB-3B',
+                                  definitie='AB-3B',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBVMengseltype/AB-3B'),
+        'AB-3C': KeuzelijstWaarde(invulwaarde='AB-3C',
+                                  label='AB-3C',
+                                  definitie='AB-3C',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBVMengseltype/AB-3C'),
+        'AB-3D': KeuzelijstWaarde(invulwaarde='AB-3D',
+                                  label='AB-3D',
+                                  definitie='AB-3D',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBVMengseltype/AB-3D'),
+        'AB-4C': KeuzelijstWaarde(invulwaarde='AB-4C',
+                                  label='AB-4C',
+                                  definitie='AB-4C',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBVMengseltype/AB-4C'),
+        'AB-4D': KeuzelijstWaarde(invulwaarde='AB-4D',
+                                  label='AB-4D',
+                                  definitie='AB-4D',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBVMengseltype/AB-4D'),
+        'AB-5D': KeuzelijstWaarde(invulwaarde='AB-5D',
+                                  label='AB-5D',
+                                  definitie='AB-5D',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBVMengseltype/AB-5D'),
+        'ABT-B': KeuzelijstWaarde(invulwaarde='ABT-B',
+                                  label='ABT-B',
+                                  definitie='ABT-B',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBVMengseltype/ABT-B'),
+        'AGT-klasse-I': KeuzelijstWaarde(invulwaarde='AGT-klasse-I',
+                                         label='AGT klasse I',
+                                         definitie='AGT klasse I',
+                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBVMengseltype/AGT-klasse-I'),
+        'AGT-klasse-II': KeuzelijstWaarde(invulwaarde='AGT-klasse-II',
+                                          label='AGT klasse II',
+                                          definitie='AGT klasse II',
+                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBVMengseltype/AGT-klasse-II'),
+        'APO-A': KeuzelijstWaarde(invulwaarde='APO-A',
+                                  label='APO-A',
+                                  definitie='APO-A',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBVMengseltype/APO-A'),
+        'APO-B': KeuzelijstWaarde(invulwaarde='APO-B',
+                                  label='APO-B',
+                                  definitie='APO-B',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBVMengseltype/APO-B'),
+        'APO-C': KeuzelijstWaarde(invulwaarde='APO-C',
+                                  label='APO-C',
+                                  definitie='APO-C',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBVMengseltype/APO-C'),
+        'APO-D': KeuzelijstWaarde(invulwaarde='APO-D',
+                                  label='APO-D',
+                                  definitie='APO-D',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBVMengseltype/APO-D'),
+        'APT-C': KeuzelijstWaarde(invulwaarde='APT-C',
+                                  label='APT-C',
+                                  definitie='APT-C',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBVMengseltype/APT-C'),
+        'APT-D': KeuzelijstWaarde(invulwaarde='APT-D',
+                                  label='APT-D',
+                                  definitie='APT-D',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBVMengseltype/APT-D'),
+        'AVS-B': KeuzelijstWaarde(invulwaarde='AVS-B',
+                                  label='AVS-B',
+                                  definitie='AVS-B',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBVMengseltype/AVS-B'),
+        'GA-C': KeuzelijstWaarde(invulwaarde='GA-C',
+                                 label='GA-C',
+                                 definitie='GA-C',
+                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBVMengseltype/GA-C'),
+        'GA-D': KeuzelijstWaarde(invulwaarde='GA-D',
+                                 label='GA-D',
+                                 definitie='GA-D',
+                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBVMengseltype/GA-D'),
+        'GA-E': KeuzelijstWaarde(invulwaarde='GA-E',
+                                 label='GA-E',
+                                 definitie='GA-E',
+                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBVMengseltype/GA-E'),
+        'GAA-E': KeuzelijstWaarde(invulwaarde='GAA-E',
+                                  label='GAA-E',
+                                  definitie='GAA-E',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBVMengseltype/GAA-E'),
+        'GAB-D': KeuzelijstWaarde(invulwaarde='GAB-D',
+                                  label='GAB-D',
+                                  definitie='GAB-D',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBVMengseltype/GAB-D'),
+        'IA': KeuzelijstWaarde(invulwaarde='IA',
+                               label='IA',
+                               definitie='IA',
+                               objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBVMengseltype/IA'),
+        'IB': KeuzelijstWaarde(invulwaarde='IB',
+                               label='IB',
+                               definitie='IB',
+                               objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBVMengseltype/IB'),
+        'IC': KeuzelijstWaarde(invulwaarde='IC',
+                               label='IC',
+                               definitie='IC',
+                               objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBVMengseltype/IC'),
+        'II': KeuzelijstWaarde(invulwaarde='II',
+                               label='II',
+                               definitie='II',
+                               objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBVMengseltype/II'),
+        'IIIA': KeuzelijstWaarde(invulwaarde='IIIA',
+                                 label='IIIA',
+                                 definitie='IIIA',
+                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBVMengseltype/IIIA'),
+        'IIIB': KeuzelijstWaarde(invulwaarde='IIIB',
+                                 label='IIIB',
+                                 definitie='IIIB',
+                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBVMengseltype/IIIB'),
+        'IIIC': KeuzelijstWaarde(invulwaarde='IIIC',
+                                 label='IIIC',
+                                 definitie='IIIC',
+                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBVMengseltype/IIIC'),
+        'IV': KeuzelijstWaarde(invulwaarde='IV',
+                               label='IV',
+                               definitie='IV',
+                               objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBVMengseltype/IV'),
+        'SMA-B1': KeuzelijstWaarde(invulwaarde='SMA-B1',
+                                   label='SMA-B1',
+                                   definitie='SMA-B1',
+                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBVMengseltype/SMA-B1'),
+        'SMA-B2': KeuzelijstWaarde(invulwaarde='SMA-B2',
+                                   label='SMA-B2',
+                                   definitie='SMA-B2',
+                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBVMengseltype/SMA-B2'),
+        'SMA-C1': KeuzelijstWaarde(invulwaarde='SMA-C1',
+                                   label='SMA-C1',
+                                   definitie='SMA-C1',
+                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBVMengseltype/SMA-C1'),
+        'SMA-C2': KeuzelijstWaarde(invulwaarde='SMA-C2',
+                                   label='SMA-C2',
+                                   definitie='SMA-C2',
+                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBVMengseltype/SMA-C2'),
+        'SMA-D1': KeuzelijstWaarde(invulwaarde='SMA-D1',
+                                   label='SMA-D1',
+                                   definitie='SMA-D1',
+                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBVMengseltype/SMA-D1'),
+        'SMA-D2': KeuzelijstWaarde(invulwaarde='SMA-D2',
+                                   label='SMA-D2',
+                                   definitie='SMA-D2',
+                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBVMengseltype/SMA-D2'),
+        'ZOA-B1': KeuzelijstWaarde(invulwaarde='ZOA-B1',
+                                   label='ZOA-B1',
+                                   definitie='ZOA-B1',
+                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBVMengseltype/ZOA-B1'),
+        'ZOA-B2': KeuzelijstWaarde(invulwaarde='ZOA-B2',
+                                   label='ZOA-B2',
+                                   definitie='ZOA-B2',
+                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBVMengseltype/ZOA-B2'),
+        'ZOA-C1': KeuzelijstWaarde(invulwaarde='ZOA-C1',
+                                   label='ZOA-C1',
+                                   definitie='ZOA-C1',
+                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBVMengseltype/ZOA-C1'),
+        'ZOA-C2': KeuzelijstWaarde(invulwaarde='ZOA-C2',
+                                   label='ZOA-C2',
+                                   definitie='ZOA-C2',
+                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBVMengseltype/ZOA-C2'),
+        'gietasfalt': KeuzelijstWaarde(invulwaarde='gietasfalt',
+                                       label='gietasfalt',
+                                       definitie='gietasfalt',
+                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBVMengseltype/gietasfalt'),
+        'onderlaag-APO-A-en-toplaag-AGT-klasse-I': KeuzelijstWaarde(invulwaarde='onderlaag-APO-A-en-toplaag-AGT-klasse-I',
+                                                                    label='onderlaag APO-A en toplaag AGT klasse I',
+                                                                    definitie='onderlaag APO-A en toplaag AGT klasse I',
+                                                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBVMengseltype/onderlaag-APO-A-en-toplaag-AGT-klasse-I'),
+        'onderlaag-APO-A-en-toplaag-AGT-klasse-II': KeuzelijstWaarde(invulwaarde='onderlaag-APO-A-en-toplaag-AGT-klasse-II',
+                                                                     label='onderlaag APO-A en toplaag AGT klasse II',
+                                                                     definitie='onderlaag APO-A en toplaag AGT klasse II',
+                                                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBVMengseltype/onderlaag-APO-A-en-toplaag-AGT-klasse-II'),
+        'onderlaag-APO-B-en-toplaag-AGT-klasse-I': KeuzelijstWaarde(invulwaarde='onderlaag-APO-B-en-toplaag-AGT-klasse-I',
+                                                                    label='onderlaag APO-B en toplaag AGT klasse I',
+                                                                    definitie='onderlaag APO-B en toplaag AGT klasse I',
+                                                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBVMengseltype/onderlaag-APO-B-en-toplaag-AGT-klasse-I'),
+        'onderlaag-APO-B-en-toplaag-AGT-klasse-II': KeuzelijstWaarde(invulwaarde='onderlaag-APO-B-en-toplaag-AGT-klasse-II',
+                                                                     label='onderlaag APO-B en toplaag AGT klasse II',
+                                                                     definitie='onderlaag APO-B en toplaag AGT klasse II',
+                                                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBVMengseltype/onderlaag-APO-B-en-toplaag-AGT-klasse-II'),
+        'toplaag-van-SMA-C': KeuzelijstWaarde(invulwaarde='toplaag-van-SMA-C',
+                                              label='toplaag van SMA-C',
+                                              definitie='toplaag van SMA-C',
+                                              objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBVMengseltype/toplaag-van-SMA-C'),
+        'toplaag-van-SMA-D': KeuzelijstWaarde(invulwaarde='toplaag-van-SMA-D',
+                                              label='toplaag van SMA-D',
+                                              definitie='toplaag van SMA-D',
+                                              objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBVMengseltype/toplaag-van-SMA-D'),
+        'toplaag-van-ZOA-B': KeuzelijstWaarde(invulwaarde='toplaag-van-ZOA-B',
+                                              label='toplaag van ZOA-B',
+                                              definitie='toplaag van ZOA-B',
+                                              objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBVMengseltype/toplaag-van-ZOA-B'),
+        'toplaag-van-ZOA-C': KeuzelijstWaarde(invulwaarde='toplaag-van-ZOA-C',
+                                              label='toplaag van ZOA-C',
+                                              definitie='toplaag van ZOA-C',
+                                              objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBVMengseltype/toplaag-van-ZOA-C')
+    }
 
-    def __init__(self):
-        super().__init__(naam="KlBVMengseltype",
-                         label="BV mengseltype",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlBVMengseltype",
-                         definition="het mengseltype van de butimineuze verharding.",
-                         usagenote="",
-                         deprecated_version="",
-                         codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlBVMengseltype")
-
-        self.add_option("AB-1B", "AB-1B", "AB-1B", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBVMengseltype/AB-1B")
-        self.add_option("AB-2C", "AB-2C", "AB-2C", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBVMengseltype/AB-2C")
-        self.add_option("AB-3A", "AB-3A", "AB-3A", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBVMengseltype/AB-3A")
-        self.add_option("AB-3B", "AB-3B", "AB-3B", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBVMengseltype/AB-3B")
-        self.add_option("AB-3C", "AB-3C", "AB-3C", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBVMengseltype/AB-3C")
-        self.add_option("AB-3D", "AB-3D", "AB-3D", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBVMengseltype/AB-3D")
-        self.add_option("AB-4C", "AB-4C", "AB-4C", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBVMengseltype/AB-4C")
-        self.add_option("AB-4D", "AB-4D", "AB-4D", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBVMengseltype/AB-4D")
-        self.add_option("AB-5D", "AB-5D", "AB-5D", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBVMengseltype/AB-5D")
-        self.add_option("ABT-B", "ABT-B", "ABT-B", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBVMengseltype/ABT-B")
-        self.add_option("AGT-klasse-I", "AGT klasse I", "AGT klasse I", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBVMengseltype/AGT-klasse-I")
-        self.add_option("AGT-klasse-II", "AGT klasse II", "AGT klasse II", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBVMengseltype/AGT-klasse-II")
-        self.add_option("APO-A", "APO-A", "APO-A", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBVMengseltype/APO-A")
-        self.add_option("APO-B", "APO-B", "APO-B", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBVMengseltype/APO-B")
-        self.add_option("APO-C", "APO-C", "APO-C", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBVMengseltype/APO-C")
-        self.add_option("APO-D", "APO-D", "APO-D", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBVMengseltype/APO-D")
-        self.add_option("APT-C", "APT-C", "APT-C", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBVMengseltype/APT-C")
-        self.add_option("APT-D", "APT-D", "APT-D", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBVMengseltype/APT-D")
-        self.add_option("AVS-B", "AVS-B", "AVS-B", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBVMengseltype/AVS-B")
-        self.add_option("GA-C", "GA-C", "GA-C", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBVMengseltype/GA-C")
-        self.add_option("GA-D", "GA-D", "GA-D", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBVMengseltype/GA-D")
-        self.add_option("GA-E", "GA-E", "GA-E", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBVMengseltype/GA-E")
-        self.add_option("GAA-E", "GAA-E", "GAA-E", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBVMengseltype/GAA-E")
-        self.add_option("GAB-D", "GAB-D", "GAB-D", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBVMengseltype/GAB-D")
-        self.add_option("IA", "IA", "IA", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBVMengseltype/IA")
-        self.add_option("IB", "IB", "IB", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBVMengseltype/IB")
-        self.add_option("IC", "IC", "IC", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBVMengseltype/IC")
-        self.add_option("II", "II", "II", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBVMengseltype/II")
-        self.add_option("IIIA", "IIIA", "IIIA", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBVMengseltype/IIIA")
-        self.add_option("IIIB", "IIIB", "IIIB", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBVMengseltype/IIIB")
-        self.add_option("IIIC", "IIIC", "IIIC", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBVMengseltype/IIIC")
-        self.add_option("IV", "IV", "IV", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBVMengseltype/IV")
-        self.add_option("SMA-B1", "SMA-B1", "SMA-B1", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBVMengseltype/SMA-B1")
-        self.add_option("SMA-B2", "SMA-B2", "SMA-B2", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBVMengseltype/SMA-B2")
-        self.add_option("SMA-C1", "SMA-C1", "SMA-C1", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBVMengseltype/SMA-C1")
-        self.add_option("SMA-C2", "SMA-C2", "SMA-C2", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBVMengseltype/SMA-C2")
-        self.add_option("SMA-D1", "SMA-D1", "SMA-D1", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBVMengseltype/SMA-D1")
-        self.add_option("SMA-D2", "SMA-D2", "SMA-D2", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBVMengseltype/SMA-D2")
-        self.add_option("ZOA-B1", "ZOA-B1", "ZOA-B1", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBVMengseltype/ZOA-B1")
-        self.add_option("ZOA-B2", "ZOA-B2", "ZOA-B2", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBVMengseltype/ZOA-B2")
-        self.add_option("ZOA-C1", "ZOA-C1", "ZOA-C1", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBVMengseltype/ZOA-C1")
-        self.add_option("ZOA-C2", "ZOA-C2", "ZOA-C2", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBVMengseltype/ZOA-C2")
-        self.add_option("gietasfalt", "gietasfalt", "gietasfalt", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBVMengseltype/gietasfalt")
-        self.add_option("onderlaag-APO-A-en-toplaag-AGT-klasse-I", "onderlaag APO-A en toplaag AGT klasse I", "onderlaag APO-A en toplaag AGT klasse I", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBVMengseltype/onderlaag-APO-A-en-toplaag-AGT-klasse-I")
-        self.add_option("onderlaag-APO-A-en-toplaag-AGT-klasse-II", "onderlaag APO-A en toplaag AGT klasse II", "onderlaag APO-A en toplaag AGT klasse II", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBVMengseltype/onderlaag-APO-A-en-toplaag-AGT-klasse-II")
-        self.add_option("onderlaag-APO-B-en-toplaag-AGT-klasse-I", "onderlaag APO-B en toplaag AGT klasse I", "onderlaag APO-B en toplaag AGT klasse I", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBVMengseltype/onderlaag-APO-B-en-toplaag-AGT-klasse-I")
-        self.add_option("onderlaag-APO-B-en-toplaag-AGT-klasse-II", "onderlaag APO-B en toplaag AGT klasse II", "onderlaag APO-B en toplaag AGT klasse II", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBVMengseltype/onderlaag-APO-B-en-toplaag-AGT-klasse-II")
-        self.add_option("toplaag-van-SMA-C", "toplaag van SMA-C", "toplaag van SMA-C", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBVMengseltype/toplaag-van-SMA-C")
-        self.add_option("toplaag-van-SMA-D", "toplaag van SMA-D", "toplaag van SMA-D", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBVMengseltype/toplaag-van-SMA-D")
-        self.add_option("toplaag-van-ZOA-B", "toplaag van ZOA-B", "toplaag van ZOA-B", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBVMengseltype/toplaag-van-ZOA-B")
-        self.add_option("toplaag-van-ZOA-C", "toplaag van ZOA-C", "toplaag van ZOA-C", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBVMengseltype/toplaag-van-ZOA-C")

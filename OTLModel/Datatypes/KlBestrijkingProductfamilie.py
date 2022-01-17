@@ -1,25 +1,48 @@
 # coding=utf-8
-from OTLModel.Datatypes.Keuzelijst import Keuzelijst
+from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
+from OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 
 # Generated with OTLEnumerationCreator. To modify: extend, do not edit
-class KlBestrijkingProductfamilie(Keuzelijst):
+class KlBestrijkingProductfamilie(KeuzelijstField):
     """De mogelijke productfamiles."""
+    naam = 'KlBestrijkingProductfamilie'
+    label = 'Productfamilies'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlBestrijkingProductfamilie'
+    definition = 'De mogelijke productfamiles.'
+    codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlBestrijkingProductfamilie'
+    options = {
+        '1': KeuzelijstWaarde(invulwaarde='1',
+                              label='1',
+                              definitie='Productfamilie 1',
+                              objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBestrijkingProductfamilie/1'),
+        '2': KeuzelijstWaarde(invulwaarde='2',
+                              label='2',
+                              definitie='Productfamilie 2',
+                              objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBestrijkingProductfamilie/2'),
+        '3': KeuzelijstWaarde(invulwaarde='3',
+                              label='3',
+                              definitie='Productfamilie 3',
+                              objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBestrijkingProductfamilie/3'),
+        '4': KeuzelijstWaarde(invulwaarde='4',
+                              label='4',
+                              definitie='Productfamilie 4',
+                              objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBestrijkingProductfamilie/4'),
+        '5': KeuzelijstWaarde(invulwaarde='5',
+                              label='5',
+                              definitie='Productfamilie 5',
+                              objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBestrijkingProductfamilie/5'),
+        '6': KeuzelijstWaarde(invulwaarde='6',
+                              label='6',
+                              definitie='Productfamilie 6',
+                              objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBestrijkingProductfamilie/6'),
+        '7': KeuzelijstWaarde(invulwaarde='7',
+                              label='7',
+                              definitie='Productfamilie 7',
+                              objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBestrijkingProductfamilie/7'),
+        '8': KeuzelijstWaarde(invulwaarde='8',
+                              label='8',
+                              definitie='Productfamilie 8',
+                              objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBestrijkingProductfamilie/8')
+    }
 
-    def __init__(self):
-        super().__init__(naam="KlBestrijkingProductfamilie",
-                         label="Productfamilies",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlBestrijkingProductfamilie",
-                         definition="De mogelijke productfamiles.",
-                         usagenote="",
-                         deprecated_version="",
-                         codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlBestrijkingProductfamilie")
-
-        self.add_option("1", "1", "Productfamilie 1", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBestrijkingProductfamilie/1")
-        self.add_option("2", "2", "Productfamilie 2", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBestrijkingProductfamilie/2")
-        self.add_option("3", "3", "Productfamilie 3", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBestrijkingProductfamilie/3")
-        self.add_option("4", "4", "Productfamilie 4", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBestrijkingProductfamilie/4")
-        self.add_option("5", "5", "Productfamilie 5", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBestrijkingProductfamilie/5")
-        self.add_option("6", "6", "Productfamilie 6", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBestrijkingProductfamilie/6")
-        self.add_option("7", "7", "Productfamilie 7", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBestrijkingProductfamilie/7")
-        self.add_option("8", "8", "Productfamilie 8", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBestrijkingProductfamilie/8")

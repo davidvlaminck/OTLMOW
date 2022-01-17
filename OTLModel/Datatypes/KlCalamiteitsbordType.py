@@ -1,19 +1,24 @@
 # coding=utf-8
-from OTLModel.Datatypes.Keuzelijst import Keuzelijst
+from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
+from OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 
 # Generated with OTLEnumerationCreator. To modify: extend, do not edit
-class KlCalamiteitsbordType(Keuzelijst):
+class KlCalamiteitsbordType(KeuzelijstField):
     """Types van calamiteitsbord."""
+    naam = 'KlCalamiteitsbordType'
+    label = 'Calamiteitsbord type'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlCalamiteitsbordType'
+    definition = 'Types van calamiteitsbord.'
+    codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlCalamiteitsbordType'
+    options = {
+        'draaiend-bord': KeuzelijstWaarde(invulwaarde='draaiend-bord',
+                                          label='draaiend bord',
+                                          definitie='Een draaiend calamiteitsbord.',
+                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlCalamiteitsbordType/draaiend-bord'),
+        'dragend-bord': KeuzelijstWaarde(invulwaarde='dragend-bord',
+                                         label='dragend bord',
+                                         definitie='Een dragend calamiteitsbord.',
+                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlCalamiteitsbordType/dragend-bord')
+    }
 
-    def __init__(self):
-        super().__init__(naam="KlCalamiteitsbordType",
-                         label="Calamiteitsbord type",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlCalamiteitsbordType",
-                         definition="Types van calamiteitsbord.",
-                         usagenote="",
-                         deprecated_version="",
-                         codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlCalamiteitsbordType")
-
-        self.add_option("draaiend-bord", "draaiend bord", "Een draaiend calamiteitsbord.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlCalamiteitsbordType/draaiend-bord")
-        self.add_option("dragend-bord", "dragend bord", "Een dragend calamiteitsbord.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlCalamiteitsbordType/dragend-bord")

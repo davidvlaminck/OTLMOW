@@ -1,20 +1,28 @@
 # coding=utf-8
-from OTLModel.Datatypes.Keuzelijst import Keuzelijst
+from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
+from OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 
 # Generated with OTLEnumerationCreator. To modify: extend, do not edit
-class KlAanplantingswijzeSierbeplanting(Keuzelijst):
+class KlAanplantingswijzeSierbeplanting(KeuzelijstField):
     """De mogelijke manieren van aanplanten van sierbeplanting."""
+    naam = 'KlAanplantingswijzeSierbeplanting'
+    label = 'aanplantingswijze sierbeplanting'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlAanplantingswijzeSierbeplanting'
+    definition = 'De mogelijke manieren van aanplanten van sierbeplanting.'
+    codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlAanplantingswijzeSierbeplanting'
+    options = {
+        'aanplanting-bol--en-knolgewassen': KeuzelijstWaarde(invulwaarde='aanplanting-bol--en-knolgewassen',
+                                                             label='aanplanting bol- en knolgewassen',
+                                                             definitie='Aanplanting via bol- en knolgewassen',
+                                                             objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAanplantingswijzeSierbeplanting/aanplanting-bol--en-knolgewassen'),
+        'aanplanting-helm': KeuzelijstWaarde(invulwaarde='aanplanting-helm',
+                                             label='aanplanting helm',
+                                             definitie='Aanplanting via helm',
+                                             objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAanplantingswijzeSierbeplanting/aanplanting-helm'),
+        'aanplanting-zonder-helm': KeuzelijstWaarde(invulwaarde='aanplanting-zonder-helm',
+                                                    label='aanplanting zonder helm',
+                                                    definitie='Aanplanting zonder helm',
+                                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAanplantingswijzeSierbeplanting/aanplanting-zonder-helm')
+    }
 
-    def __init__(self):
-        super().__init__(naam="KlAanplantingswijzeSierbeplanting",
-                         label="aanplantingswijze sierbeplanting",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlAanplantingswijzeSierbeplanting",
-                         definition="De mogelijke manieren van aanplanten van sierbeplanting.",
-                         usagenote="",
-                         deprecated_version="",
-                         codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlAanplantingswijzeSierbeplanting")
-
-        self.add_option("aanplanting-bol--en-knolgewassen", "aanplanting bol- en knolgewassen", "Aanplanting via bol- en knolgewassen", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAanplantingswijzeSierbeplanting/aanplanting-bol--en-knolgewassen")
-        self.add_option("aanplanting-helm", "aanplanting helm", "Aanplanting via helm", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAanplantingswijzeSierbeplanting/aanplanting-helm")
-        self.add_option("aanplanting-zonder-helm", "aanplanting zonder helm", "Aanplanting zonder helm", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAanplantingswijzeSierbeplanting/aanplanting-zonder-helm")

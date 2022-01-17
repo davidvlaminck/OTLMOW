@@ -1,31 +1,72 @@
 # coding=utf-8
-from OTLModel.Datatypes.Keuzelijst import Keuzelijst
+from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
+from OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 
 # Generated with OTLEnumerationCreator. To modify: extend, do not edit
-class KlPlantmaatOmtrek(Keuzelijst):
+class KlPlantmaatOmtrek(KeuzelijstField):
     """De stamomtrek in centimeter (gemeten op 1 m boven het maaiveld) met een minimum en maximum waarde."""
+    naam = 'KlPlantmaatOmtrek'
+    label = 'Plantmaat omtrek'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlPlantmaatOmtrek'
+    definition = 'De stamomtrek in centimeter (gemeten op 1 m boven het maaiveld) met een minimum en maximum waarde.'
+    codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlPlantmaatOmtrek'
+    options = {
+        '10-12': KeuzelijstWaarde(invulwaarde='10-12',
+                                  label='10/12',
+                                  definitie='Houtige vegetatie met stamomtrek tussen 10 en 12 cm.',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlPlantmaatOmtrek/10-12'),
+        '12-14': KeuzelijstWaarde(invulwaarde='12-14',
+                                  label='12/14',
+                                  definitie='Houtige vegetatie met stamomtrek tussen 12 en 14 cm.',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlPlantmaatOmtrek/12-14'),
+        '14-16': KeuzelijstWaarde(invulwaarde='14-16',
+                                  label='14/16',
+                                  definitie='Houtige vegetatie met stamomtrek tussen 14 en 16 cm.',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlPlantmaatOmtrek/14-16'),
+        '16-18': KeuzelijstWaarde(invulwaarde='16-18',
+                                  label='16/18',
+                                  definitie='Houtige vegetatie met stamomtrek tussen 16 en 18 cm.',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlPlantmaatOmtrek/16-18'),
+        '18-20': KeuzelijstWaarde(invulwaarde='18-20',
+                                  label='18/20',
+                                  definitie='Houtige vegetatie met stamomtrek tussen 18 en 20 cm.',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlPlantmaatOmtrek/18-20'),
+        '20-25': KeuzelijstWaarde(invulwaarde='20-25',
+                                  label='20/25',
+                                  definitie='Houtige vegetatie met stamomtrek tussen 20 en 25 cm.',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlPlantmaatOmtrek/20-25'),
+        '25-30': KeuzelijstWaarde(invulwaarde='25-30',
+                                  label='25/30',
+                                  definitie='Houtige vegetatie met stamomtrek tussen 25 en 30 cm.',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlPlantmaatOmtrek/25-30'),
+        '30-35': KeuzelijstWaarde(invulwaarde='30-35',
+                                  label='30/35',
+                                  definitie='Houtige vegetatie met stamomtrek tussen 30 en 35 cm.',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlPlantmaatOmtrek/30-35'),
+        '30-40': KeuzelijstWaarde(invulwaarde='30-40',
+                                  label='30/40',
+                                  definitie='Houtige vegetatie met stamomtrek tussen 30 en 40 cm.',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlPlantmaatOmtrek/30-40'),
+        '35-40': KeuzelijstWaarde(invulwaarde='35-40',
+                                  label='35/40',
+                                  definitie='Houtige vegetatie met stamomtrek tussen 35 en 40 cm.',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlPlantmaatOmtrek/35-40'),
+        '40-50': KeuzelijstWaarde(invulwaarde='40-50',
+                                  label='40/50',
+                                  definitie='Houtige vegetatie met stamomtrek tussen 40 en 50 cm.',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlPlantmaatOmtrek/40-50'),
+        '50-60': KeuzelijstWaarde(invulwaarde='50-60',
+                                  label='50/60',
+                                  definitie='Houtige vegetatie met stamomtrek tussen 50 en 60 cm.',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlPlantmaatOmtrek/50-60'),
+        '6-8': KeuzelijstWaarde(invulwaarde='6-8',
+                                label='6/8',
+                                definitie='Houtige vegetatie met stamomtrek tussen 6 en 8 cm.',
+                                objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlPlantmaatOmtrek/6-8'),
+        '8-10': KeuzelijstWaarde(invulwaarde='8-10',
+                                 label='8/10',
+                                 definitie='Houtige vegetatie met stamomtrek tussen 8 en 10 cm.',
+                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlPlantmaatOmtrek/8-10')
+    }
 
-    def __init__(self):
-        super().__init__(naam="KlPlantmaatOmtrek",
-                         label="Plantmaat omtrek",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlPlantmaatOmtrek",
-                         definition="De stamomtrek in centimeter (gemeten op 1 m boven het maaiveld) met een minimum en maximum waarde.",
-                         usagenote="",
-                         deprecated_version="",
-                         codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlPlantmaatOmtrek")
-
-        self.add_option("10-12", "10/12", "Houtige vegetatie met stamomtrek tussen 10 en 12 cm.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlPlantmaatOmtrek/10-12")
-        self.add_option("12-14", "12/14", "Houtige vegetatie met stamomtrek tussen 12 en 14 cm.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlPlantmaatOmtrek/12-14")
-        self.add_option("14-16", "14/16", "Houtige vegetatie met stamomtrek tussen 14 en 16 cm.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlPlantmaatOmtrek/14-16")
-        self.add_option("16-18", "16/18", "Houtige vegetatie met stamomtrek tussen 16 en 18 cm.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlPlantmaatOmtrek/16-18")
-        self.add_option("18-20", "18/20", "Houtige vegetatie met stamomtrek tussen 18 en 20 cm.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlPlantmaatOmtrek/18-20")
-        self.add_option("20-25", "20/25", "Houtige vegetatie met stamomtrek tussen 20 en 25 cm.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlPlantmaatOmtrek/20-25")
-        self.add_option("25-30", "25/30", "Houtige vegetatie met stamomtrek tussen 25 en 30 cm.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlPlantmaatOmtrek/25-30")
-        self.add_option("30-35", "30/35", "Houtige vegetatie met stamomtrek tussen 30 en 35 cm.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlPlantmaatOmtrek/30-35")
-        self.add_option("30-40", "30/40", "Houtige vegetatie met stamomtrek tussen 30 en 40 cm.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlPlantmaatOmtrek/30-40")
-        self.add_option("35-40", "35/40", "Houtige vegetatie met stamomtrek tussen 35 en 40 cm.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlPlantmaatOmtrek/35-40")
-        self.add_option("40-50", "40/50", "Houtige vegetatie met stamomtrek tussen 40 en 50 cm.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlPlantmaatOmtrek/40-50")
-        self.add_option("50-60", "50/60", "Houtige vegetatie met stamomtrek tussen 50 en 60 cm.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlPlantmaatOmtrek/50-60")
-        self.add_option("6-8", "6/8", "Houtige vegetatie met stamomtrek tussen 6 en 8 cm.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlPlantmaatOmtrek/6-8")
-        self.add_option("8-10", "8/10", "Houtige vegetatie met stamomtrek tussen 8 en 10 cm.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlPlantmaatOmtrek/8-10")

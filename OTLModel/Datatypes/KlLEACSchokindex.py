@@ -1,20 +1,28 @@
 # coding=utf-8
-from OTLModel.Datatypes.Keuzelijst import Keuzelijst
+from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
+from OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 
 # Generated with OTLEnumerationCreator. To modify: extend, do not edit
-class KlLEACSchokindex(Keuzelijst):
+class KlLEACSchokindex(KeuzelijstField):
     """De verschillende schokindices."""
+    naam = 'KlLEACSchokindex'
+    label = 'Schokindex'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlLEACSchokindex'
+    definition = 'De verschillende schokindices.'
+    codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlLEACSchokindex'
+    options = {
+        'a': KeuzelijstWaarde(invulwaarde='a',
+                              label='a',
+                              definitie='ASI <= 1.0 (zeer veilig)',
+                              objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLEACSchokindex/a'),
+        'b': KeuzelijstWaarde(invulwaarde='b',
+                              label='b',
+                              definitie='ASI <= 1.4 (voldoende veilig)',
+                              objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLEACSchokindex/b'),
+        'c': KeuzelijstWaarde(invulwaarde='c',
+                              label='c',
+                              definitie='ASI <= 1.9',
+                              objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLEACSchokindex/c')
+    }
 
-    def __init__(self):
-        super().__init__(naam="KlLEACSchokindex",
-                         label="Schokindex",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlLEACSchokindex",
-                         definition="De verschillende schokindices.",
-                         usagenote="",
-                         deprecated_version="",
-                         codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlLEACSchokindex")
-
-        self.add_option("a", "a", "ASI <= 1.0 (zeer veilig)", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLEACSchokindex/a")
-        self.add_option("b", "b", "ASI <= 1.4 (voldoende veilig)", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLEACSchokindex/b")
-        self.add_option("c", "c", "ASI <= 1.9", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLEACSchokindex/c")

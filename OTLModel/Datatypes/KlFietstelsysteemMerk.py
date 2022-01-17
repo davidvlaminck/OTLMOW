@@ -1,17 +1,16 @@
 # coding=utf-8
-from OTLModel.Datatypes.Keuzelijst import Keuzelijst
+from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
+from OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 
 # Generated with OTLEnumerationCreator. To modify: extend, do not edit
-class KlFietstelsysteemMerk(Keuzelijst):
+class KlFietstelsysteemMerk(KeuzelijstField):
     """Lijst van mogelijke merknamen voor fietstelsystemen."""
-
-    def __init__(self):
-        super().__init__(naam="KlFietstelsysteemMerk",
-                         label="Merknaam fietstelsysteem",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlFietstelsysteemMerk",
-                         definition="Lijst van mogelijke merknamen voor fietstelsystemen.",
-                         usagenote="",
-                         deprecated_version="",
-                         codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlFietstelsysteemMerk")
+    naam = 'KlFietstelsysteemMerk'
+    label = 'Merknaam fietstelsysteem'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlFietstelsysteemMerk'
+    definition = 'Lijst van mogelijke merknamen voor fietstelsystemen.'
+    codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlFietstelsysteemMerk'
+    options = 
+    }
 

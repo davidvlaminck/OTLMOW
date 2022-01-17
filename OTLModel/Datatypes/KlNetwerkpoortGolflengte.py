@@ -1,121 +1,328 @@
 # coding=utf-8
-from OTLModel.Datatypes.Keuzelijst import Keuzelijst
+from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
+from OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 
 # Generated with OTLEnumerationCreator. To modify: extend, do not edit
-class KlNetwerkpoortGolflengte(Keuzelijst):
+class KlNetwerkpoortGolflengte(KeuzelijstField):
     """Lijst van mogelijke golflengten waarop een Netwerkpoort kan communiceren."""
+    naam = 'KlNetwerkpoortGolflengte'
+    label = 'Netwerkpoort golflengte'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlNetwerkpoortGolflengte'
+    definition = 'Lijst van mogelijke golflengten waarop een Netwerkpoort kan communiceren.'
+    codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlNetwerkpoortGolflengte'
+    options = {
+        'C1310': KeuzelijstWaarde(invulwaarde='C1310',
+                                  label='C1310',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/C1310'),
+        'C1470': KeuzelijstWaarde(invulwaarde='C1470',
+                                  label='C1470',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/C1470'),
+        'C1490': KeuzelijstWaarde(invulwaarde='C1490',
+                                  label='C1490',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/C1490'),
+        'C1510': KeuzelijstWaarde(invulwaarde='C1510',
+                                  label='C1510',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/C1510'),
+        'C1530': KeuzelijstWaarde(invulwaarde='C1530',
+                                  label='C1530',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/C1530'),
+        'C1550': KeuzelijstWaarde(invulwaarde='C1550',
+                                  label='C1550',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/C1550'),
+        'C1570': KeuzelijstWaarde(invulwaarde='C1570',
+                                  label='C1570',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/C1570'),
+        'C1590': KeuzelijstWaarde(invulwaarde='C1590',
+                                  label='C1590',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/C1590'),
+        'C1610': KeuzelijstWaarde(invulwaarde='C1610',
+                                  label='C1610',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/C1610'),
+        'C850': KeuzelijstWaarde(invulwaarde='C850',
+                                 label='C850',
+                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/C850'),
+        'D1528.77': KeuzelijstWaarde(invulwaarde='D1528.77',
+                                     label='D1528.77',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1528.77'),
+        'D1529.16': KeuzelijstWaarde(invulwaarde='D1529.16',
+                                     label='D1529.16',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1529.16'),
+        'D1529.55': KeuzelijstWaarde(invulwaarde='D1529.55',
+                                     label='D1529.55',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1529.55'),
+        'D1529.94': KeuzelijstWaarde(invulwaarde='D1529.94',
+                                     label='D1529.94',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1529.94'),
+        'D1530.33': KeuzelijstWaarde(invulwaarde='D1530.33',
+                                     label='D1530.33',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1530.33'),
+        'D1530.72': KeuzelijstWaarde(invulwaarde='D1530.72',
+                                     label='D1530.72',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1530.72'),
+        'D1531.12': KeuzelijstWaarde(invulwaarde='D1531.12',
+                                     label='D1531.12',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1531.12'),
+        'D1531.51': KeuzelijstWaarde(invulwaarde='D1531.51',
+                                     label='D1531.51',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1531.51'),
+        'D1531.90': KeuzelijstWaarde(invulwaarde='D1531.90',
+                                     label='D1531.90',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1531.90'),
+        'D1532.29': KeuzelijstWaarde(invulwaarde='D1532.29',
+                                     label='D1532.29',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1532.29'),
+        'D1532.68': KeuzelijstWaarde(invulwaarde='D1532.68',
+                                     label='D1532.68',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1532.68'),
+        'D1533.07': KeuzelijstWaarde(invulwaarde='D1533.07',
+                                     label='D1533.07',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1533.07'),
+        'D1533.47': KeuzelijstWaarde(invulwaarde='D1533.47',
+                                     label='D1533.47',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1533.47'),
+        'D1533.86': KeuzelijstWaarde(invulwaarde='D1533.86',
+                                     label='D1533.86',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1533.86'),
+        'D1534.25': KeuzelijstWaarde(invulwaarde='D1534.25',
+                                     label='D1534.25',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1534.25'),
+        'D1534.64': KeuzelijstWaarde(invulwaarde='D1534.64',
+                                     label='D1534.64',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1534.64'),
+        'D1535.04': KeuzelijstWaarde(invulwaarde='D1535.04',
+                                     label='D1535.04',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1535.04'),
+        'D1535.43': KeuzelijstWaarde(invulwaarde='D1535.43',
+                                     label='D1535.43',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1535.43'),
+        'D1535.82': KeuzelijstWaarde(invulwaarde='D1535.82',
+                                     label='D1535.82',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1535.82'),
+        'D1536.22': KeuzelijstWaarde(invulwaarde='D1536.22',
+                                     label='D1536.22',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1536.22'),
+        'D1536.61': KeuzelijstWaarde(invulwaarde='D1536.61',
+                                     label='D1536.61',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1536.61'),
+        'D1537.00': KeuzelijstWaarde(invulwaarde='D1537.00',
+                                     label='D1537.00',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1537.00'),
+        'D1537.40': KeuzelijstWaarde(invulwaarde='D1537.40',
+                                     label='D1537.40',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1537.40'),
+        'D1537.79': KeuzelijstWaarde(invulwaarde='D1537.79',
+                                     label='D1537.79',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1537.79'),
+        'D1538.19': KeuzelijstWaarde(invulwaarde='D1538.19',
+                                     label='D1538.19',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1538.19'),
+        'D1538.58': KeuzelijstWaarde(invulwaarde='D1538.58',
+                                     label='D1538.58',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1538.58'),
+        'D1538.98': KeuzelijstWaarde(invulwaarde='D1538.98',
+                                     label='D1538.98',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1538.98'),
+        'D1539.37': KeuzelijstWaarde(invulwaarde='D1539.37',
+                                     label='D1539.37',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1539.37'),
+        'D1539.77': KeuzelijstWaarde(invulwaarde='D1539.77',
+                                     label='D1539.77',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1539.77'),
+        'D1540.16': KeuzelijstWaarde(invulwaarde='D1540.16',
+                                     label='D1540.16',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1540.16'),
+        'D1540.56': KeuzelijstWaarde(invulwaarde='D1540.56',
+                                     label='D1540.56',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1540.56'),
+        'D1540.95': KeuzelijstWaarde(invulwaarde='D1540.95',
+                                     label='D1540.95',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1540.95'),
+        'D1541.35': KeuzelijstWaarde(invulwaarde='D1541.35',
+                                     label='D1541.35',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1541.35'),
+        'D1541.75': KeuzelijstWaarde(invulwaarde='D1541.75',
+                                     label='D1541.75',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1541.75'),
+        'D1542.14': KeuzelijstWaarde(invulwaarde='D1542.14',
+                                     label='D1542.14',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1542.14'),
+        'D1542.54': KeuzelijstWaarde(invulwaarde='D1542.54',
+                                     label='D1542.54',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1542.54'),
+        'D1542.94': KeuzelijstWaarde(invulwaarde='D1542.94',
+                                     label='D1542.94',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1542.94'),
+        'D1543.33': KeuzelijstWaarde(invulwaarde='D1543.33',
+                                     label='D1543.33',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1543.33'),
+        'D1543.73': KeuzelijstWaarde(invulwaarde='D1543.73',
+                                     label='D1543.73',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1543.73'),
+        'D1544.13': KeuzelijstWaarde(invulwaarde='D1544.13',
+                                     label='D1544.13',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1544.13'),
+        'D1544.53': KeuzelijstWaarde(invulwaarde='D1544.53',
+                                     label='D1544.53',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1544.53'),
+        'D1544.92': KeuzelijstWaarde(invulwaarde='D1544.92',
+                                     label='D1544.92',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1544.92'),
+        'D1545.32': KeuzelijstWaarde(invulwaarde='D1545.32',
+                                     label='D1545.32',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1545.32'),
+        'D1545.72': KeuzelijstWaarde(invulwaarde='D1545.72',
+                                     label='D1545.72',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1545.72'),
+        'D1546.12': KeuzelijstWaarde(invulwaarde='D1546.12',
+                                     label='D1546.12',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1546.12'),
+        'D1546.52': KeuzelijstWaarde(invulwaarde='D1546.52',
+                                     label='D1546.52',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1546.52'),
+        'D1546.92': KeuzelijstWaarde(invulwaarde='D1546.92',
+                                     label='D1546.92',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1546.92'),
+        'D1547.32': KeuzelijstWaarde(invulwaarde='D1547.32',
+                                     label='D1547.32',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1547.32'),
+        'D1547.72': KeuzelijstWaarde(invulwaarde='D1547.72',
+                                     label='D1547.72',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1547.72'),
+        'D1548.11': KeuzelijstWaarde(invulwaarde='D1548.11',
+                                     label='D1548.11',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1548.11'),
+        'D1548.51': KeuzelijstWaarde(invulwaarde='D1548.51',
+                                     label='D1548.51',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1548.51'),
+        'D1548.91': KeuzelijstWaarde(invulwaarde='D1548.91',
+                                     label='D1548.91',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1548.91'),
+        'D1549.32': KeuzelijstWaarde(invulwaarde='D1549.32',
+                                     label='D1549.32',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1549.32'),
+        'D1549.72': KeuzelijstWaarde(invulwaarde='D1549.72',
+                                     label='D1549.72',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1549.72'),
+        'D1550.12': KeuzelijstWaarde(invulwaarde='D1550.12',
+                                     label='D1550.12',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1550.12'),
+        'D1550.52': KeuzelijstWaarde(invulwaarde='D1550.52',
+                                     label='D1550.52',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1550.52'),
+        'D1550.92': KeuzelijstWaarde(invulwaarde='D1550.92',
+                                     label='D1550.92',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1550.92'),
+        'D1551.32': KeuzelijstWaarde(invulwaarde='D1551.32',
+                                     label='D1551.32',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1551.32'),
+        'D1551.72': KeuzelijstWaarde(invulwaarde='D1551.72',
+                                     label='D1551.72',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1551.72'),
+        'D1552.12': KeuzelijstWaarde(invulwaarde='D1552.12',
+                                     label='D1552.12',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1552.12'),
+        'D1552.52': KeuzelijstWaarde(invulwaarde='D1552.52',
+                                     label='D1552.52',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1552.52'),
+        'D1552.93': KeuzelijstWaarde(invulwaarde='D1552.93',
+                                     label='D1552.93',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1552.93'),
+        'D1553.33': KeuzelijstWaarde(invulwaarde='D1553.33',
+                                     label='D1553.33',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1553.33'),
+        'D1553.73': KeuzelijstWaarde(invulwaarde='D1553.73',
+                                     label='D1553.73',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1553.73'),
+        'D1554.13': KeuzelijstWaarde(invulwaarde='D1554.13',
+                                     label='D1554.13',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1554.13'),
+        'D1554.54': KeuzelijstWaarde(invulwaarde='D1554.54',
+                                     label='D1554.54',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1554.54'),
+        'D1554.94': KeuzelijstWaarde(invulwaarde='D1554.94',
+                                     label='D1554.94',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1554.94'),
+        'D1555.34': KeuzelijstWaarde(invulwaarde='D1555.34',
+                                     label='D1555.34',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1555.34'),
+        'D1555.75': KeuzelijstWaarde(invulwaarde='D1555.75',
+                                     label='D1555.75',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1555.75'),
+        'D1556.15': KeuzelijstWaarde(invulwaarde='D1556.15',
+                                     label='D1556.15',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1556.15'),
+        'D1556.55': KeuzelijstWaarde(invulwaarde='D1556.55',
+                                     label='D1556.55',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1556.55'),
+        'D1556.96': KeuzelijstWaarde(invulwaarde='D1556.96',
+                                     label='D1556.96',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1556.96'),
+        'D1557.36': KeuzelijstWaarde(invulwaarde='D1557.36',
+                                     label='D1557.36',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1557.36'),
+        'D1557.77': KeuzelijstWaarde(invulwaarde='D1557.77',
+                                     label='D1557.77',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1557.77'),
+        'D1558.17': KeuzelijstWaarde(invulwaarde='D1558.17',
+                                     label='D1558.17',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1558.17'),
+        'D1558.58': KeuzelijstWaarde(invulwaarde='D1558.58',
+                                     label='D1558.58',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1558.58'),
+        'D1558.98': KeuzelijstWaarde(invulwaarde='D1558.98',
+                                     label='D1558.98',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1558.98'),
+        'D1559.39': KeuzelijstWaarde(invulwaarde='D1559.39',
+                                     label='D1559.39',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1559.39'),
+        'D1559.79': KeuzelijstWaarde(invulwaarde='D1559.79',
+                                     label='D1559.79',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1559.79'),
+        'D1560.20': KeuzelijstWaarde(invulwaarde='D1560.20',
+                                     label='D1560.20',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1560.20'),
+        'D1560.61': KeuzelijstWaarde(invulwaarde='D1560.61',
+                                     label='D1560.61',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1560.61'),
+        'D1561.01': KeuzelijstWaarde(invulwaarde='D1561.01',
+                                     label='D1561.01',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1561.01'),
+        'D1561.42': KeuzelijstWaarde(invulwaarde='D1561.42',
+                                     label='D1561.42',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1561.42'),
+        'D1561.83': KeuzelijstWaarde(invulwaarde='D1561.83',
+                                     label='D1561.83',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1561.83'),
+        'D1562.23': KeuzelijstWaarde(invulwaarde='D1562.23',
+                                     label='D1562.23',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1562.23'),
+        'D1562.64': KeuzelijstWaarde(invulwaarde='D1562.64',
+                                     label='D1562.64',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1562.64'),
+        'D1563.05': KeuzelijstWaarde(invulwaarde='D1563.05',
+                                     label='D1563.05',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1563.05'),
+        'D1563.45': KeuzelijstWaarde(invulwaarde='D1563.45',
+                                     label='D1563.45',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1563.45'),
+        'D1563.86': KeuzelijstWaarde(invulwaarde='D1563.86',
+                                     label='D1563.86',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1563.86'),
+        'D1564.27': KeuzelijstWaarde(invulwaarde='D1564.27',
+                                     label='D1564.27',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1564.27'),
+        'D1564.68': KeuzelijstWaarde(invulwaarde='D1564.68',
+                                     label='D1564.68',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1564.68'),
+        'NULL': KeuzelijstWaarde(invulwaarde='NULL',
+                                 label='NULL',
+                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/NULL'),
+        'Other': KeuzelijstWaarde(invulwaarde='Other',
+                                  label='Other',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/Other'),
+        'flex': KeuzelijstWaarde(invulwaarde='flex',
+                                 label='flex',
+                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/flex')
+    }
 
-    def __init__(self):
-        super().__init__(naam="KlNetwerkpoortGolflengte",
-                         label="Netwerkpoort golflengte",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlNetwerkpoortGolflengte",
-                         definition="Lijst van mogelijke golflengten waarop een Netwerkpoort kan communiceren.",
-                         usagenote="",
-                         deprecated_version="",
-                         codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlNetwerkpoortGolflengte")
-
-        self.add_option("C1310", "C1310", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/C1310")
-        self.add_option("C1470", "C1470", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/C1470")
-        self.add_option("C1490", "C1490", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/C1490")
-        self.add_option("C1510", "C1510", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/C1510")
-        self.add_option("C1530", "C1530", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/C1530")
-        self.add_option("C1550", "C1550", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/C1550")
-        self.add_option("C1570", "C1570", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/C1570")
-        self.add_option("C1590", "C1590", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/C1590")
-        self.add_option("C1610", "C1610", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/C1610")
-        self.add_option("C850", "C850", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/C850")
-        self.add_option("D1528.77", "D1528.77", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1528.77")
-        self.add_option("D1529.16", "D1529.16", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1529.16")
-        self.add_option("D1529.55", "D1529.55", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1529.55")
-        self.add_option("D1529.94", "D1529.94", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1529.94")
-        self.add_option("D1530.33", "D1530.33", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1530.33")
-        self.add_option("D1530.72", "D1530.72", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1530.72")
-        self.add_option("D1531.12", "D1531.12", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1531.12")
-        self.add_option("D1531.51", "D1531.51", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1531.51")
-        self.add_option("D1531.90", "D1531.90", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1531.90")
-        self.add_option("D1532.29", "D1532.29", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1532.29")
-        self.add_option("D1532.68", "D1532.68", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1532.68")
-        self.add_option("D1533.07", "D1533.07", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1533.07")
-        self.add_option("D1533.47", "D1533.47", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1533.47")
-        self.add_option("D1533.86", "D1533.86", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1533.86")
-        self.add_option("D1534.25", "D1534.25", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1534.25")
-        self.add_option("D1534.64", "D1534.64", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1534.64")
-        self.add_option("D1535.04", "D1535.04", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1535.04")
-        self.add_option("D1535.43", "D1535.43", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1535.43")
-        self.add_option("D1535.82", "D1535.82", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1535.82")
-        self.add_option("D1536.22", "D1536.22", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1536.22")
-        self.add_option("D1536.61", "D1536.61", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1536.61")
-        self.add_option("D1537.00", "D1537.00", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1537.00")
-        self.add_option("D1537.40", "D1537.40", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1537.40")
-        self.add_option("D1537.79", "D1537.79", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1537.79")
-        self.add_option("D1538.19", "D1538.19", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1538.19")
-        self.add_option("D1538.58", "D1538.58", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1538.58")
-        self.add_option("D1538.98", "D1538.98", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1538.98")
-        self.add_option("D1539.37", "D1539.37", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1539.37")
-        self.add_option("D1539.77", "D1539.77", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1539.77")
-        self.add_option("D1540.16", "D1540.16", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1540.16")
-        self.add_option("D1540.56", "D1540.56", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1540.56")
-        self.add_option("D1540.95", "D1540.95", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1540.95")
-        self.add_option("D1541.35", "D1541.35", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1541.35")
-        self.add_option("D1541.75", "D1541.75", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1541.75")
-        self.add_option("D1542.14", "D1542.14", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1542.14")
-        self.add_option("D1542.54", "D1542.54", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1542.54")
-        self.add_option("D1542.94", "D1542.94", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1542.94")
-        self.add_option("D1543.33", "D1543.33", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1543.33")
-        self.add_option("D1543.73", "D1543.73", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1543.73")
-        self.add_option("D1544.13", "D1544.13", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1544.13")
-        self.add_option("D1544.53", "D1544.53", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1544.53")
-        self.add_option("D1544.92", "D1544.92", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1544.92")
-        self.add_option("D1545.32", "D1545.32", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1545.32")
-        self.add_option("D1545.72", "D1545.72", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1545.72")
-        self.add_option("D1546.12", "D1546.12", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1546.12")
-        self.add_option("D1546.52", "D1546.52", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1546.52")
-        self.add_option("D1546.92", "D1546.92", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1546.92")
-        self.add_option("D1547.32", "D1547.32", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1547.32")
-        self.add_option("D1547.72", "D1547.72", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1547.72")
-        self.add_option("D1548.11", "D1548.11", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1548.11")
-        self.add_option("D1548.51", "D1548.51", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1548.51")
-        self.add_option("D1548.91", "D1548.91", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1548.91")
-        self.add_option("D1549.32", "D1549.32", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1549.32")
-        self.add_option("D1549.72", "D1549.72", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1549.72")
-        self.add_option("D1550.12", "D1550.12", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1550.12")
-        self.add_option("D1550.52", "D1550.52", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1550.52")
-        self.add_option("D1550.92", "D1550.92", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1550.92")
-        self.add_option("D1551.32", "D1551.32", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1551.32")
-        self.add_option("D1551.72", "D1551.72", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1551.72")
-        self.add_option("D1552.12", "D1552.12", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1552.12")
-        self.add_option("D1552.52", "D1552.52", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1552.52")
-        self.add_option("D1552.93", "D1552.93", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1552.93")
-        self.add_option("D1553.33", "D1553.33", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1553.33")
-        self.add_option("D1553.73", "D1553.73", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1553.73")
-        self.add_option("D1554.13", "D1554.13", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1554.13")
-        self.add_option("D1554.54", "D1554.54", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1554.54")
-        self.add_option("D1554.94", "D1554.94", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1554.94")
-        self.add_option("D1555.34", "D1555.34", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1555.34")
-        self.add_option("D1555.75", "D1555.75", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1555.75")
-        self.add_option("D1556.15", "D1556.15", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1556.15")
-        self.add_option("D1556.55", "D1556.55", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1556.55")
-        self.add_option("D1556.96", "D1556.96", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1556.96")
-        self.add_option("D1557.36", "D1557.36", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1557.36")
-        self.add_option("D1557.77", "D1557.77", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1557.77")
-        self.add_option("D1558.17", "D1558.17", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1558.17")
-        self.add_option("D1558.58", "D1558.58", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1558.58")
-        self.add_option("D1558.98", "D1558.98", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1558.98")
-        self.add_option("D1559.39", "D1559.39", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1559.39")
-        self.add_option("D1559.79", "D1559.79", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1559.79")
-        self.add_option("D1560.20", "D1560.20", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1560.20")
-        self.add_option("D1560.61", "D1560.61", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1560.61")
-        self.add_option("D1561.01", "D1561.01", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1561.01")
-        self.add_option("D1561.42", "D1561.42", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1561.42")
-        self.add_option("D1561.83", "D1561.83", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1561.83")
-        self.add_option("D1562.23", "D1562.23", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1562.23")
-        self.add_option("D1562.64", "D1562.64", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1562.64")
-        self.add_option("D1563.05", "D1563.05", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1563.05")
-        self.add_option("D1563.45", "D1563.45", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1563.45")
-        self.add_option("D1563.86", "D1563.86", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1563.86")
-        self.add_option("D1564.27", "D1564.27", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1564.27")
-        self.add_option("D1564.68", "D1564.68", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/D1564.68")
-        self.add_option("NULL", "NULL", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/NULL")
-        self.add_option("Other", "Other", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/Other")
-        self.add_option("flex", "flex", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortGolflengte/flex")

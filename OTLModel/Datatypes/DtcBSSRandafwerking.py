@@ -1,40 +1,54 @@
 # coding=utf-8
+from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
+from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Datatypes.ComplexField import ComplexField
-from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlBSSRandafwerking import KlBSSRandafwerking
 from OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter
 
 
 # Generated with OTLComplexDatatypeCreator. To modify: extend, do not edit
-class DtcBSSRandafwerking(ComplexField):
-    """Complex datatype voor de afwerking van de rand van een betonstraatsteenverharding."""
-
+class DtcBSSRandafwerkingWaarden(AttributeInfo):
     def __init__(self):
-        super().__init__(naam="DtcBSSRandafwerking",
-                         label="Betonstraatsteenafwerking",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcBSSRandafwerking",
-                         definition="Complex datatype voor de afwerking van de rand van een betonstraatsteenverharding.",
-                         usagenote="",
-                         deprecated_version="")
+        self._lengteRandafwerking = OTLAttribuut(field=KwantWrdInMeter,
+                                                 naam='lengteRandafwerking',
+                                                 label='lengte randafwerking',
+                                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcBSSRandafwerking.lengteRandafwerking',
+                                                 definition='De lengte in meter van de randafwerking.')
 
-        self.waarde.lengteRandafwerking = KwantWrdInMeter()
+        self._randafwerking = OTLAttribuut(field=KlBSSRandafwerking,
+                                           naam='randafwerking',
+                                           label='randafwerking',
+                                           objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcBSSRandafwerking.randafwerking',
+                                           definition='De mogelijke wijzen van randafwerking van de verharding.')
+
+    @property
+    def lengteRandafwerking(self):
         """De lengte in meter van de randafwerking."""
-        self.waarde.lengteRandafwerking.naam = "lengteRandafwerking"
-        self.waarde.lengteRandafwerking.label = "lengte randafwerking"
-        self.waarde.lengteRandafwerking.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcBSSRandafwerking.lengteRandafwerking"
-        self.waarde.lengteRandafwerking.definition = "De lengte in meter van de randafwerking."
-        self.waarde.lengteRandafwerking.constraints = ""
-        self.waarde.lengteRandafwerking.usagenote = ""
-        self.waarde.lengteRandafwerking.deprecated_version = ""
-        self.lengteRandafwerking = self.waarde.lengteRandafwerking
+        return self._lengteRandafwerking.waarde
 
-        self.waarde.randafwerking = KeuzelijstField(naam="randafwerking",
-                                                    label="randafwerking",
-                                                    lijst=KlBSSRandafwerking(),
-                                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcBSSRandafwerking.randafwerking",
-                                                    definition="De mogelijke wijzen van randafwerking van de verharding.",
-                                                    constraints="",
-                                                    usagenote="",
-                                                    deprecated_version="")
-        self.randafwerking = self.waarde.randafwerking
+    @lengteRandafwerking.setter
+    def lengteRandafwerking(self, value):
+        self._lengteRandafwerking.set_waarde(value)
+
+    @property
+    def randafwerking(self):
         """De mogelijke wijzen van randafwerking van de verharding."""
+        return self._randafwerking.waarde
+
+    @randafwerking.setter
+    def randafwerking(self, value):
+        self._randafwerking.set_waarde(value)
+
+
+# Generated with OTLComplexDatatypeCreator. To modify: extend, do not edit
+class DtcBSSRandafwerking(ComplexField, AttributeInfo):
+    """Complex datatype voor de afwerking van de rand van een betonstraatsteenverharding."""
+    naam = 'DtcBSSRandafwerking'
+    label = 'Betonstraatsteenafwerking'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcBSSRandafwerking'
+    definition = 'Complex datatype voor de afwerking van de rand van een betonstraatsteenverharding.'
+    waardeObject = DtcBSSRandafwerkingWaarden
+
+    def __str__(self):
+        return ComplexField.__str__(self)
+

@@ -1,21 +1,32 @@
 # coding=utf-8
-from OTLModel.Datatypes.Keuzelijst import Keuzelijst
+from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
+from OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 
 # Generated with OTLEnumerationCreator. To modify: extend, do not edit
-class KlPlooibakenType(Keuzelijst):
+class KlPlooibakenType(KeuzelijstField):
     """ vormen van een plooibaken."""
+    naam = 'KlPlooibakenType'
+    label = 'Plooibaken type'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlPlooibakenType'
+    definition = ' vormen van een plooibaken.'
+    codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlPlooibakenType'
+    options = {
+        'plooibaken-diameter-130-mm---M24': KeuzelijstWaarde(invulwaarde='plooibaken-diameter-130-mm---M24',
+                                                             label='plooibaken diameter 130 mm - M24',
+                                                             definitie='Plooibaken diameter 130 mm – M24',
+                                                             objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlPlooibakenType/plooibaken-diameter-130-mm---M24'),
+        'plooibaken-diameter-80-mm---M16': KeuzelijstWaarde(invulwaarde='plooibaken-diameter-80-mm---M16',
+                                                            label='plooibaken diameter 80 mm - M16',
+                                                            definitie='Plooibaken diameter 80 mm – M16',
+                                                            objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlPlooibakenType/plooibaken-diameter-80-mm---M16'),
+        'plooibaken-diameter-80-mm---M24': KeuzelijstWaarde(invulwaarde='plooibaken-diameter-80-mm---M24',
+                                                            label='plooibaken diameter 80 mm - M24',
+                                                            definitie='Plooibaken diameter 80 mm – M24',
+                                                            objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlPlooibakenType/plooibaken-diameter-80-mm---M24'),
+        'verkeerszuil': KeuzelijstWaarde(invulwaarde='verkeerszuil',
+                                         label='verkeerszuil',
+                                         definitie='Verkeerszuil',
+                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlPlooibakenType/verkeerszuil')
+    }
 
-    def __init__(self):
-        super().__init__(naam="KlPlooibakenType",
-                         label="Plooibaken type",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlPlooibakenType",
-                         definition=" vormen van een plooibaken.",
-                         usagenote="",
-                         deprecated_version="",
-                         codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlPlooibakenType")
-
-        self.add_option("plooibaken-diameter-130-mm---M24", "plooibaken diameter 130 mm - M24", "Plooibaken diameter 130 mm – M24", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlPlooibakenType/plooibaken-diameter-130-mm---M24")
-        self.add_option("plooibaken-diameter-80-mm---M16", "plooibaken diameter 80 mm - M16", "Plooibaken diameter 80 mm – M16", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlPlooibakenType/plooibaken-diameter-80-mm---M16")
-        self.add_option("plooibaken-diameter-80-mm---M24", "plooibaken diameter 80 mm - M24", "Plooibaken diameter 80 mm – M24", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlPlooibakenType/plooibaken-diameter-80-mm---M24")
-        self.add_option("verkeerszuil", "verkeerszuil", "Verkeerszuil", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlPlooibakenType/verkeerszuil")

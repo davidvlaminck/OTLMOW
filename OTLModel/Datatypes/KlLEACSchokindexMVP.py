@@ -1,19 +1,24 @@
 # coding=utf-8
-from OTLModel.Datatypes.Keuzelijst import Keuzelijst
+from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
+from OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 
 # Generated with OTLEnumerationCreator. To modify: extend, do not edit
-class KlLEACSchokindexMVP(Keuzelijst):
+class KlLEACSchokindexMVP(KeuzelijstField):
     """Head injury criteria (HIC) van een motorvangplank."""
+    naam = 'KlLEACSchokindexMVP'
+    label = 'Schokindex MVP'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlLEACSchokindexMVP'
+    definition = 'Head injury criteria (HIC) van een motorvangplank.'
+    codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlLEACSchokindexMVP'
+    options = {
+        'level-1': KeuzelijstWaarde(invulwaarde='level-1',
+                                    label='level 1',
+                                    definitie='Krachten op hoofd en nek worden beperkt tijdens test',
+                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLEACSchokindexMVP/level-1'),
+        'level-2': KeuzelijstWaarde(invulwaarde='level-2',
+                                    label='level 2',
+                                    definitie='Krachten op hoofd en nek worden tot levensgevaarlijk tijdens test',
+                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLEACSchokindexMVP/level-2')
+    }
 
-    def __init__(self):
-        super().__init__(naam="KlLEACSchokindexMVP",
-                         label="Schokindex MVP",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlLEACSchokindexMVP",
-                         definition="Head injury criteria (HIC) van een motorvangplank.",
-                         usagenote="",
-                         deprecated_version="",
-                         codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlLEACSchokindexMVP")
-
-        self.add_option("level-1", "level 1", "Krachten op hoofd en nek worden beperkt tijdens test", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLEACSchokindexMVP/level-1")
-        self.add_option("level-2", "level 2", "Krachten op hoofd en nek worden tot levensgevaarlijk tijdens test", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLEACSchokindexMVP/level-2")

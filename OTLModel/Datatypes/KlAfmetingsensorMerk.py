@@ -1,18 +1,19 @@
 # coding=utf-8
-from OTLModel.Datatypes.Keuzelijst import Keuzelijst
+from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
+from OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 
 # Generated with OTLEnumerationCreator. To modify: extend, do not edit
-class KlAfmetingsensorMerk(Keuzelijst):
+class KlAfmetingsensorMerk(KeuzelijstField):
     """Het merk van de afmetingsensor."""
+    naam = 'KlAfmetingsensorMerk'
+    label = 'Afmetingsensor merk'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlAfmetingsensorMerk'
+    definition = 'Het merk van de afmetingsensor.'
+    codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlAfmetingsensorMerk'
+    options = {
+        'Sick': KeuzelijstWaarde(invulwaarde='Sick',
+                                 label='Sick',
+                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAfmetingsensorMerk/Sick')
+    }
 
-    def __init__(self):
-        super().__init__(naam="KlAfmetingsensorMerk",
-                         label="Afmetingsensor merk",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlAfmetingsensorMerk",
-                         definition="Het merk van de afmetingsensor.",
-                         usagenote="",
-                         deprecated_version="",
-                         codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlAfmetingsensorMerk")
-
-        self.add_option("Sick", "Sick", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAfmetingsensorMerk/Sick")

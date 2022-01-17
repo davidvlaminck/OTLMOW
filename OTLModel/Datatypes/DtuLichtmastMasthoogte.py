@@ -1,40 +1,48 @@
 # coding=utf-8
-from OTLModel.Datatypes.UnionTypeField import UnionTypeField
-from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
+from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
+from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Datatypes.KlLichtmastMasthoogte import KlLichtmastMasthoogte
 from OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter
+from OTLModel.Datatypes.UnionTypeField import UnionTypeField
 
 
 # Generated with OTLUnionDatatypeCreator. To modify: extend, do not edit
-class DtuLichtmastMasthoogte(UnionTypeField):
-    """Union datatype om een standaard of afwijkende masthoogte te bepalen."""
-
+class DtuLichtmastMasthoogteAttributen(AttributeInfo):
     def __init__(self):
-        super().__init__(naam="DtuLichtmastMasthoogte",
-                         label="Masthoogte",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtuLichtmastMasthoogte",
-                         definition="Union datatype om een standaard of afwijkende masthoogte te bepalen.",
-                         usagenote="",
-                         deprecated_version="")
+        self._afwijkendeHoogte = OTLAttribuut(field=KwantWrdInMeter,
+                                              naam='afwijkendeHoogte',
+                                              label='afwijkende hoogte',
+                                              objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtuLichtmastMasthoogte.afwijkendeHoogte',
+                                              kardinaliteit_min='0',
+                                              definition='De afwijkende hoogte van de mast in meter.')
 
-        field_afwijkendeHoogte = KwantWrdInMeter()
+        self._standaardHoogte = OTLAttribuut(field=KlLichtmastMasthoogte,
+                                             naam='standaardHoogte',
+                                             label='standaard hoogte',
+                                             objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtuLichtmastMasthoogte.standaardHoogte',
+                                             kardinaliteit_min='0',
+                                             definition='Bepaling van de standaard hoogte van een mast.')
+
+    @property
+    def afwijkendeHoogte(self):
         """De afwijkende hoogte van de mast in meter."""
-        field_afwijkendeHoogte.naam = "afwijkendeHoogte"
-        field_afwijkendeHoogte.label = "afwijkende hoogte"
-        field_afwijkendeHoogte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtuLichtmastMasthoogte.afwijkendeHoogte"
-        field_afwijkendeHoogte.definition = "De afwijkende hoogte van de mast in meter."
-        field_afwijkendeHoogte.constraints = ""
-        field_afwijkendeHoogte.usagenote = ""
-        field_afwijkendeHoogte.deprecated_version = ""
+        return self._afwijkendeHoogte.waarde
 
-        field_standaardHoogte = KeuzelijstField(naam="standaardHoogte",
-                                                label="standaard hoogte",
-                                                lijst=KlLichtmastMasthoogte(),
-                                                objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtuLichtmastMasthoogte.standaardHoogte",
-                                                definition="Bepaling van de standaard hoogte van een mast.",
-                                                constraints="",
-                                                usagenote="",
-                                                deprecated_version="")
+    @property
+    def standaardHoogte(self):
         """Bepaling van de standaard hoogte van een mast."""
+        return self._standaardHoogte.waarde
 
-        self.fieldsTuple = (field_afwijkendeHoogte, field_standaardHoogte)
+
+# Generated with OTLUnionDatatypeCreator. To modify: extend, do not edit
+class DtuLichtmastMasthoogte(UnionTypeField, AttributeInfo):
+    """Union datatype om een standaard of afwijkende masthoogte te bepalen."""
+    naam = 'DtuLichtmastMasthoogte'
+    label = 'Masthoogte'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtuLichtmastMasthoogte'
+    definition = 'Union datatype om een standaard of afwijkende masthoogte te bepalen.'
+    waardeObject = DtuLichtmastMasthoogteAttributen
+
+    def __str__(self):
+        return UnionTypeField.__str__(self)
+

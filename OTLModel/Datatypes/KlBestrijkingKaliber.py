@@ -1,23 +1,40 @@
 # coding=utf-8
-from OTLModel.Datatypes.Keuzelijst import Keuzelijst
+from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
+from OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 
 # Generated with OTLEnumerationCreator. To modify: extend, do not edit
-class KlBestrijkingKaliber(Keuzelijst):
+class KlBestrijkingKaliber(KeuzelijstField):
     """De mogelijke kalibers."""
+    naam = 'KlBestrijkingKaliber'
+    label = 'kalibers'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlBestrijkingKaliber'
+    definition = 'De mogelijke kalibers.'
+    codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlBestrijkingKaliber'
+    options = {
+        '2-10': KeuzelijstWaarde(invulwaarde='2-10',
+                                 label='2/10',
+                                 definitie='kaliber 2/10',
+                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBestrijkingKaliber/2-10'),
+        '2-4': KeuzelijstWaarde(invulwaarde='2-4',
+                                label='2/4',
+                                definitie='kaliber 2/4',
+                                objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBestrijkingKaliber/2-4'),
+        '2-6.3': KeuzelijstWaarde(invulwaarde='2-6.3',
+                                  label='2/6.3',
+                                  definitie='kaliber 2/6.3',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBestrijkingKaliber/2-6.3'),
+        '4-10': KeuzelijstWaarde(invulwaarde='4-10',
+                                 label='4/10',
+                                 definitie='kaliber 4/10',
+                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBestrijkingKaliber/4-10'),
+        '4-6.3': KeuzelijstWaarde(invulwaarde='4-6.3',
+                                  label='4/6.3',
+                                  definitie='kaliber 4/6.3',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBestrijkingKaliber/4-6.3'),
+        '6.3-10': KeuzelijstWaarde(invulwaarde='6.3-10',
+                                   label='6.3/10',
+                                   definitie='kaliber 6.3/10',
+                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBestrijkingKaliber/6.3-10')
+    }
 
-    def __init__(self):
-        super().__init__(naam="KlBestrijkingKaliber",
-                         label="kalibers",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlBestrijkingKaliber",
-                         definition="De mogelijke kalibers.",
-                         usagenote="",
-                         deprecated_version="",
-                         codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlBestrijkingKaliber")
-
-        self.add_option("2-10", "2/10", "kaliber 2/10", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBestrijkingKaliber/2-10")
-        self.add_option("2-4", "2/4", "kaliber 2/4", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBestrijkingKaliber/2-4")
-        self.add_option("2-6.3", "2/6.3", "kaliber 2/6.3", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBestrijkingKaliber/2-6.3")
-        self.add_option("4-10", "4/10", "kaliber 4/10", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBestrijkingKaliber/4-10")
-        self.add_option("4-6.3", "4/6.3", "kaliber 4/6.3", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBestrijkingKaliber/4-6.3")
-        self.add_option("6.3-10", "6.3/10", "kaliber 6.3/10", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBestrijkingKaliber/6.3-10")

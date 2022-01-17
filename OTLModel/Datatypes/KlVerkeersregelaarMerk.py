@@ -1,21 +1,32 @@
 # coding=utf-8
-from OTLModel.Datatypes.Keuzelijst import Keuzelijst
+from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
+from OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 
 # Generated with OTLEnumerationCreator. To modify: extend, do not edit
-class KlVerkeersregelaarMerk(Keuzelijst):
+class KlVerkeersregelaarMerk(KeuzelijstField):
     """Keuzelijst met merknamen voor Verkeersregelaar."""
+    naam = 'KlVerkeersregelaarMerk'
+    label = 'verkeersregelaar merk'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlVerkeersregelaarMerk'
+    definition = 'Keuzelijst met merknamen voor Verkeersregelaar.'
+    codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlVerkeersregelaarMerk'
+    options = {
+        'dynniq': KeuzelijstWaarde(invulwaarde='dynniq',
+                                   label='Dynniq',
+                                   definitie='Dynniq',
+                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerkeersregelaarMerk/dynniq'),
+        'ko-hartog': KeuzelijstWaarde(invulwaarde='ko-hartog',
+                                      label='Ko Hartog',
+                                      definitie='Ko Hartog',
+                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerkeersregelaarMerk/ko-hartog'),
+        'peek': KeuzelijstWaarde(invulwaarde='peek',
+                                 label='Peek',
+                                 definitie='Peek',
+                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerkeersregelaarMerk/peek'),
+        'siemens': KeuzelijstWaarde(invulwaarde='siemens',
+                                    label='Siemens',
+                                    definitie='Siemens',
+                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerkeersregelaarMerk/siemens')
+    }
 
-    def __init__(self):
-        super().__init__(naam="KlVerkeersregelaarMerk",
-                         label="verkeersregelaar merk",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlVerkeersregelaarMerk",
-                         definition="Keuzelijst met merknamen voor Verkeersregelaar.",
-                         usagenote="",
-                         deprecated_version="",
-                         codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlVerkeersregelaarMerk")
-
-        self.add_option("dynniq", "Dynniq", "Dynniq", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerkeersregelaarMerk/dynniq")
-        self.add_option("ko-hartog", "Ko Hartog", "Ko Hartog", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerkeersregelaarMerk/ko-hartog")
-        self.add_option("peek", "Peek", "Peek", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerkeersregelaarMerk/peek")
-        self.add_option("siemens", "Siemens", "Siemens", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerkeersregelaarMerk/siemens")

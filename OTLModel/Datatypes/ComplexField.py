@@ -1,21 +1,14 @@
-from OTLModel.Datatypes.OTLField import OTLField
+﻿from abc import ABC
+from OTLModel.BaseClasses.OTLField import OTLField
 
 
-class ComplexAttributen:
-    def default(self):
-        d = {}
-        for k, v in self.__dict__.items():
-            if v.default() is not None:
-                d[k] = v.default()
-        return d
+class ComplexField(OTLField, ABC):
+    def __str__(self):
+        return OTLField.__str__(self)
 
+    _uses_waarde_object = True
 
-class ComplexField(OTLField):
-    def __init__(self, naam, label, objectUri, definition, usagenote, deprecated_version, readonly=False, readonlyValue=None):
-        super().__init__(naam=naam, label=label, objectUri=objectUri, definition=definition, constraints=None,
-                         usagenote=usagenote, deprecated_version=deprecated_version, readonly=readonly,
-                         readonlyValue=readonlyValue)
-        self.waarde = ComplexAttributen()
+    @staticmethod
+    def validate(value, attribuut):
+        raise ValueError(f'This is a complex datatype. Set the values through the attributes. Use .attr_type_info() for more info')
 
-    def default(self):
-        return self.waarde.default()

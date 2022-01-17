@@ -1,19 +1,24 @@
 # coding=utf-8
-from OTLModel.Datatypes.Keuzelijst import Keuzelijst
+from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
+from OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 
 # Generated with OTLEnumerationCreator. To modify: extend, do not edit
-class KlLEACObstakelbeveiligerType(Keuzelijst):
+class KlLEACObstakelbeveiligerType(KeuzelijstField):
     """De verschillende types van obstakelbeveiliger."""
+    naam = 'KlLEACObstakelbeveiligerType'
+    label = 'Obstakelbeveiliger type'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlLEACObstakelbeveiligerType'
+    definition = 'De verschillende types van obstakelbeveiliger.'
+    codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlLEACObstakelbeveiligerType'
+    options = {
+        'afstoppend-(NR)': KeuzelijstWaarde(invulwaarde='afstoppend-(NR)',
+                                            label='afstoppend (NR)',
+                                            definitie='Obstakelbeveiliger brengt het voertuig tot stilstand maar zijn niet getest op zijdelingse aanrijdingen',
+                                            objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLEACObstakelbeveiligerType/afstoppend-(NR)'),
+        'geleidend-(R)': KeuzelijstWaarde(invulwaarde='geleidend-(R)',
+                                          label='geleidend (R)',
+                                          definitie='Obstakelbeveiliger brengt het voertuig niet tot stilstand maar terug in de juiste richting',
+                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLEACObstakelbeveiligerType/geleidend-(R)')
+    }
 
-    def __init__(self):
-        super().__init__(naam="KlLEACObstakelbeveiligerType",
-                         label="Obstakelbeveiliger type",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlLEACObstakelbeveiligerType",
-                         definition="De verschillende types van obstakelbeveiliger.",
-                         usagenote="",
-                         deprecated_version="",
-                         codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlLEACObstakelbeveiligerType")
-
-        self.add_option("afstoppend-(NR)", "afstoppend (NR)", "Obstakelbeveiliger brengt het voertuig tot stilstand maar zijn niet getest op zijdelingse aanrijdingen", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLEACObstakelbeveiligerType/afstoppend-(NR)")
-        self.add_option("geleidend-(R)", "geleidend (R)", "Obstakelbeveiliger brengt het voertuig niet tot stilstand maar terug in de juiste richting", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLEACObstakelbeveiligerType/geleidend-(R)")

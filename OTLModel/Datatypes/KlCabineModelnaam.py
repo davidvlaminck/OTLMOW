@@ -1,17 +1,16 @@
 # coding=utf-8
-from OTLModel.Datatypes.Keuzelijst import Keuzelijst
+from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
+from OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 
 # Generated with OTLEnumerationCreator. To modify: extend, do not edit
-class KlCabineModelnaam(Keuzelijst):
+class KlCabineModelnaam(KeuzelijstField):
     """Modelnamen voor cabines."""
-
-    def __init__(self):
-        super().__init__(naam="KlCabineModelnaam",
-                         label="Cabine modelnaam",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlCabineModelnaam",
-                         definition="Modelnamen voor cabines.",
-                         usagenote="",
-                         deprecated_version="",
-                         codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlCabineModelnaam")
+    naam = 'KlCabineModelnaam'
+    label = 'Cabine modelnaam'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlCabineModelnaam'
+    definition = 'Modelnamen voor cabines.'
+    codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlCabineModelnaam'
+    options = 
+    }
 

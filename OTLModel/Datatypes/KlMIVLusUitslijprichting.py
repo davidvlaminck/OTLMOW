@@ -1,19 +1,22 @@
 # coding=utf-8
-from OTLModel.Datatypes.Keuzelijst import Keuzelijst
+from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
+from OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 
 # Generated with OTLEnumerationCreator. To modify: extend, do not edit
-class KlMIVLusUitslijprichting(Keuzelijst):
+class KlMIVLusUitslijprichting(KeuzelijstField):
     """De uitlopers van de lus gaan naar links of naar rechts  bekeken ten opzichte van de rijrichting."""
+    naam = 'KlMIVLusUitslijprichting'
+    label = 'MIV-lus uitslijprichting'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlMIVLusUitslijprichting'
+    definition = 'De uitlopers van de lus gaan naar links of naar rechts  bekeken ten opzichte van de rijrichting.'
+    codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlMIVLusUitslijprichting'
+    options = {
+        'links': KeuzelijstWaarde(invulwaarde='links',
+                                  label='links',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlMIVLusUitslijprichting/links'),
+        'rechts': KeuzelijstWaarde(invulwaarde='rechts',
+                                   label='rechts',
+                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlMIVLusUitslijprichting/rechts')
+    }
 
-    def __init__(self):
-        super().__init__(naam="KlMIVLusUitslijprichting",
-                         label="MIV-lus uitslijprichting",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlMIVLusUitslijprichting",
-                         definition="De uitlopers van de lus gaan naar links of naar rechts  bekeken ten opzichte van de rijrichting.",
-                         usagenote="",
-                         deprecated_version="",
-                         codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlMIVLusUitslijprichting")
-
-        self.add_option("links", "links", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlMIVLusUitslijprichting/links")
-        self.add_option("rechts", "rechts", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlMIVLusUitslijprichting/rechts")

@@ -1,20 +1,28 @@
 # coding=utf-8
-from OTLModel.Datatypes.Keuzelijst import Keuzelijst
+from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
+from OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 
 # Generated with OTLEnumerationCreator. To modify: extend, do not edit
-class KlVGSchermelementtype(Keuzelijst):
+class KlVGSchermelementtype(KeuzelijstField):
     """Het type vlak-schermelement."""
+    naam = 'KlVGSchermelementtype'
+    label = 'Vlak geluidsschermelementtype'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlVGSchermelementtype'
+    definition = 'Het type vlak-schermelement.'
+    codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlVGSchermelementtype'
+    options = {
+        'schermelement-bevestigd-tegen-de-profielen': KeuzelijstWaarde(invulwaarde='schermelement-bevestigd-tegen-de-profielen',
+                                                                       label='schermelement bevestigd tegen de profielen',
+                                                                       definitie='schermelement bevestigd tegen de profielen',
+                                                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVGSchermelementtype/schermelement-bevestigd-tegen-de-profielen'),
+        'schermelement-geplaatst-tussen-profielen': KeuzelijstWaarde(invulwaarde='schermelement-geplaatst-tussen-profielen',
+                                                                     label='schermelement geplaatst tussen profielen',
+                                                                     definitie='schermelement geplaatst tussen profielen',
+                                                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVGSchermelementtype/schermelement-geplaatst-tussen-profielen'),
+        'schermelement-zonder-profielen': KeuzelijstWaarde(invulwaarde='schermelement-zonder-profielen',
+                                                           label='schermelement zonder profielen',
+                                                           definitie='schermelement zonder profielen',
+                                                           objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVGSchermelementtype/schermelement-zonder-profielen')
+    }
 
-    def __init__(self):
-        super().__init__(naam="KlVGSchermelementtype",
-                         label="Vlak geluidsschermelementtype",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlVGSchermelementtype",
-                         definition="Het type vlak-schermelement.",
-                         usagenote="",
-                         deprecated_version="",
-                         codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlVGSchermelementtype")
-
-        self.add_option("schermelement-bevestigd-tegen-de-profielen", "schermelement bevestigd tegen de profielen", "schermelement bevestigd tegen de profielen", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVGSchermelementtype/schermelement-bevestigd-tegen-de-profielen")
-        self.add_option("schermelement-geplaatst-tussen-profielen", "schermelement geplaatst tussen profielen", "schermelement geplaatst tussen profielen", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVGSchermelementtype/schermelement-geplaatst-tussen-profielen")
-        self.add_option("schermelement-zonder-profielen", "schermelement zonder profielen", "schermelement zonder profielen", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVGSchermelementtype/schermelement-zonder-profielen")

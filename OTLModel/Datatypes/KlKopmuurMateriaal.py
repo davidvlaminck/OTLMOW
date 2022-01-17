@@ -1,19 +1,24 @@
 # coding=utf-8
-from OTLModel.Datatypes.Keuzelijst import Keuzelijst
+from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
+from OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 
 # Generated with OTLEnumerationCreator. To modify: extend, do not edit
-class KlKopmuurMateriaal(Keuzelijst):
+class KlKopmuurMateriaal(KeuzelijstField):
     """Materialen van de kopmuur."""
+    naam = 'KlKopmuurMateriaal'
+    label = 'Kopmuur materiaal'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlKopmuurMateriaal'
+    definition = 'Materialen van de kopmuur.'
+    codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlKopmuurMateriaal'
+    options = {
+        'beton': KeuzelijstWaarde(invulwaarde='beton',
+                                  label='beton',
+                                  definitie='beton',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlKopmuurMateriaal/beton'),
+        'metselwerk': KeuzelijstWaarde(invulwaarde='metselwerk',
+                                       label='metselwerk',
+                                       definitie='metselwerk',
+                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlKopmuurMateriaal/metselwerk')
+    }
 
-    def __init__(self):
-        super().__init__(naam="KlKopmuurMateriaal",
-                         label="Kopmuur materiaal",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlKopmuurMateriaal",
-                         definition="Materialen van de kopmuur.",
-                         usagenote="",
-                         deprecated_version="",
-                         codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlKopmuurMateriaal")
-
-        self.add_option("beton", "beton", "beton", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlKopmuurMateriaal/beton")
-        self.add_option("metselwerk", "metselwerk", "metselwerk", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlKopmuurMateriaal/metselwerk")

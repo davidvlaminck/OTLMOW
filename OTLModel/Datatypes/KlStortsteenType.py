@@ -1,27 +1,56 @@
 # coding=utf-8
-from OTLModel.Datatypes.Keuzelijst import Keuzelijst
+from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
+from OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 
 # Generated with OTLEnumerationCreator. To modify: extend, do not edit
-class KlStortsteenType(Keuzelijst):
+class KlStortsteenType(KeuzelijstField):
     """Stortsteen types."""
+    naam = 'KlStortsteenType'
+    label = 'Stortsteen type'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlStortsteenType'
+    definition = 'Stortsteen types.'
+    codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlStortsteenType'
+    options = {
+        'brokken-van-betonpuin': KeuzelijstWaarde(invulwaarde='brokken-van-betonpuin',
+                                                  label='brokken van betonpuin',
+                                                  definitie='brokken van betonpuin',
+                                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlStortsteenType/brokken-van-betonpuin'),
+        'brokken-van-breuksteenpuin': KeuzelijstWaarde(invulwaarde='brokken-van-breuksteenpuin',
+                                                       label='brokken van breuksteenpuin',
+                                                       definitie='brokken van breuksteenpuin',
+                                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlStortsteenType/brokken-van-breuksteenpuin'),
+        'brokken-van-mengpuin': KeuzelijstWaarde(invulwaarde='brokken-van-mengpuin',
+                                                 label='brokken van mengpuin',
+                                                 definitie='brokken van mengpuin',
+                                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlStortsteenType/brokken-van-mengpuin'),
+        'brokken-van-metselwerkpuin': KeuzelijstWaarde(invulwaarde='brokken-van-metselwerkpuin',
+                                                       label='brokken van metselwerkpuin',
+                                                       definitie='brokken van metselwerkpuin',
+                                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlStortsteenType/brokken-van-metselwerkpuin'),
+        'dolomiet': KeuzelijstWaarde(invulwaarde='dolomiet',
+                                     label='dolomiet',
+                                     definitie='dolomiet',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlStortsteenType/dolomiet'),
+        'kunststeenslag': KeuzelijstWaarde(invulwaarde='kunststeenslag',
+                                           label='kunststeenslag',
+                                           definitie='brokken van betonpuin',
+                                           objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlStortsteenType/kunststeenslag'),
+        'natuursteenslag': KeuzelijstWaarde(invulwaarde='natuursteenslag',
+                                            label='natuursteenslag',
+                                            definitie='natuursteenslag',
+                                            objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlStortsteenType/natuursteenslag'),
+        'rolgrind': KeuzelijstWaarde(invulwaarde='rolgrind',
+                                     label='rolgrind',
+                                     definitie='Grind met goed afgeronde korrels.',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlStortsteenType/rolgrind'),
+        'rolsteen': KeuzelijstWaarde(invulwaarde='rolsteen',
+                                     label='rolsteen',
+                                     definitie='rolsteen',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlStortsteenType/rolsteen'),
+        'ruwe-breuksteen': KeuzelijstWaarde(invulwaarde='ruwe-breuksteen',
+                                            label='ruwe breuksteen',
+                                            definitie='een natuursteen van onregelmatige vorm',
+                                            objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlStortsteenType/ruwe-breuksteen')
+    }
 
-    def __init__(self):
-        super().__init__(naam="KlStortsteenType",
-                         label="Stortsteen type",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlStortsteenType",
-                         definition="Stortsteen types.",
-                         usagenote="",
-                         deprecated_version="",
-                         codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlStortsteenType")
-
-        self.add_option("brokken-van-betonpuin", "brokken van betonpuin", "brokken van betonpuin", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlStortsteenType/brokken-van-betonpuin")
-        self.add_option("brokken-van-breuksteenpuin", "brokken van breuksteenpuin", "brokken van breuksteenpuin", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlStortsteenType/brokken-van-breuksteenpuin")
-        self.add_option("brokken-van-mengpuin", "brokken van mengpuin", "brokken van mengpuin", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlStortsteenType/brokken-van-mengpuin")
-        self.add_option("brokken-van-metselwerkpuin", "brokken van metselwerkpuin", "brokken van metselwerkpuin", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlStortsteenType/brokken-van-metselwerkpuin")
-        self.add_option("dolomiet", "dolomiet", "dolomiet", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlStortsteenType/dolomiet")
-        self.add_option("kunststeenslag", "kunststeenslag", "brokken van betonpuin", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlStortsteenType/kunststeenslag")
-        self.add_option("natuursteenslag", "natuursteenslag", "natuursteenslag", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlStortsteenType/natuursteenslag")
-        self.add_option("rolgrind", "rolgrind", "Grind met goed afgeronde korrels.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlStortsteenType/rolgrind")
-        self.add_option("rolsteen", "rolsteen", "rolsteen", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlStortsteenType/rolsteen")
-        self.add_option("ruwe-breuksteen", "ruwe breuksteen", "een natuursteen van onregelmatige vorm", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlStortsteenType/ruwe-breuksteen")

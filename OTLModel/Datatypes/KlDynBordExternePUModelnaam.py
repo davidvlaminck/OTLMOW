@@ -1,20 +1,25 @@
 # coding=utf-8
-from OTLModel.Datatypes.Keuzelijst import Keuzelijst
+from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
+from OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 
 # Generated with OTLEnumerationCreator. To modify: extend, do not edit
-class KlDynBordExternePUModelnaam(Keuzelijst):
+class KlDynBordExternePUModelnaam(KeuzelijstField):
     """De modelnaam van externe processing unit voor dynamische verkeersborden. Wordt bepaald door de lverancier."""
+    naam = 'KlDynBordExternePUModelnaam'
+    label = 'Keuzelijst met modellen van Externe PU'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlDynBordExternePUModelnaam'
+    definition = 'De modelnaam van externe processing unit voor dynamische verkeersborden. Wordt bepaald door de lverancier.'
+    codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlDynBordExternePUModelnaam'
+    options = {
+        'diamond': KeuzelijstWaarde(invulwaarde='diamond',
+                                    label='diamond',
+                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlDynBordExternePUModelnaam/diamond'),
+        'ixor': KeuzelijstWaarde(invulwaarde='ixor',
+                                 label='ixor',
+                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlDynBordExternePUModelnaam/ixor'),
+        'moxa': KeuzelijstWaarde(invulwaarde='moxa',
+                                 label='moxa',
+                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlDynBordExternePUModelnaam/moxa')
+    }
 
-    def __init__(self):
-        super().__init__(naam="KlDynBordExternePUModelnaam",
-                         label="Keuzelijst met modellen van Externe PU",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlDynBordExternePUModelnaam",
-                         definition="De modelnaam van externe processing unit voor dynamische verkeersborden. Wordt bepaald door de lverancier.",
-                         usagenote="",
-                         deprecated_version="",
-                         codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlDynBordExternePUModelnaam")
-
-        self.add_option("diamond", "diamond", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlDynBordExternePUModelnaam/diamond")
-        self.add_option("ixor", "ixor", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlDynBordExternePUModelnaam/ixor")
-        self.add_option("moxa", "moxa", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlDynBordExternePUModelnaam/moxa")

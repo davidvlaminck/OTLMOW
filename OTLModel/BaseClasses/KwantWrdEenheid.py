@@ -1,4 +1,4 @@
-﻿from UnitTests.OTLFieldTests.AttributeInfo import AttributeInfo
+﻿from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 
 
 class KwantWrdEenheid(AttributeInfo):

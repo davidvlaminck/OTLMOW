@@ -1,21 +1,32 @@
 # coding=utf-8
-from OTLModel.Datatypes.Keuzelijst import Keuzelijst
+from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
+from OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 
 # Generated with OTLEnumerationCreator. To modify: extend, do not edit
-class KlBSSRandafwerking(Keuzelijst):
+class KlBSSRandafwerking(KeuzelijstField):
     """De verschillende manieren van de randafwerking van de verharding."""
+    naam = 'KlBSSRandafwerking'
+    label = 'randafwerking'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlBSSRandafwerking'
+    definition = 'De verschillende manieren van de randafwerking van de verharding.'
+    codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlBSSRandafwerking'
+    options = {
+        'biscchopsmutsen': KeuzelijstWaarde(invulwaarde='biscchopsmutsen',
+                                            label='biscchopsmutsen',
+                                            definitie='Een kantsteen die wordt toegepast wanneer de betonstraatsteen in keperverband wordt gestraat.',
+                                            objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBSSRandafwerking/biscchopsmutsen'),
+        'geen': KeuzelijstWaarde(invulwaarde='geen',
+                                 label='geen',
+                                 definitie='De randafwerking is overbodig. ',
+                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBSSRandafwerking/geen'),
+        'gezaagde-betonstraatstenen': KeuzelijstWaarde(invulwaarde='gezaagde-betonstraatstenen',
+                                                       label='gezaagde betonstraatstenen',
+                                                       definitie='Een kantsteen, meestal uit hetzelfde materiaal,  die op maat werd gebracht.',
+                                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBSSRandafwerking/gezaagde-betonstraatstenen'),
+        'kardinaalsmutsen': KeuzelijstWaarde(invulwaarde='kardinaalsmutsen',
+                                             label='kardinaalsmutsen',
+                                             definitie='Een kantsteen die wordt toegepast wanneer de betonstraatsteen in keperverband wordt gestraat.',
+                                             objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBSSRandafwerking/kardinaalsmutsen')
+    }
 
-    def __init__(self):
-        super().__init__(naam="KlBSSRandafwerking",
-                         label="randafwerking",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlBSSRandafwerking",
-                         definition="De verschillende manieren van de randafwerking van de verharding.",
-                         usagenote="",
-                         deprecated_version="",
-                         codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlBSSRandafwerking")
-
-        self.add_option("biscchopsmutsen", "biscchopsmutsen", "Een kantsteen die wordt toegepast wanneer de betonstraatsteen in keperverband wordt gestraat.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBSSRandafwerking/biscchopsmutsen")
-        self.add_option("geen", "geen", "De randafwerking is overbodig. ", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBSSRandafwerking/geen")
-        self.add_option("gezaagde-betonstraatstenen", "gezaagde betonstraatstenen", "Een kantsteen, meestal uit hetzelfde materiaal,  die op maat werd gebracht.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBSSRandafwerking/gezaagde-betonstraatstenen")
-        self.add_option("kardinaalsmutsen", "kardinaalsmutsen", "Een kantsteen die wordt toegepast wanneer de betonstraatsteen in keperverband wordt gestraat.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBSSRandafwerking/kardinaalsmutsen")

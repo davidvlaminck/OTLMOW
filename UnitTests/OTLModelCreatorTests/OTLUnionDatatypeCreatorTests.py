@@ -12,7 +12,6 @@ from ModelGenerator.OSLOTypeLink import OSLOTypeLink
 from ModelGenerator.OTLUnionDatatypeCreator import OTLUnionDatatypeCreator
 from ModelGenerator.SQLDbReader import SQLDbReader
 
-
 ROOT_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 
@@ -39,50 +38,59 @@ class UnionDatatypeOSLOCollector(OSLOCollector):
         ]
 
         self.typeLinks = [
-            OSLOTypeLink("https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMeter", "OSLODatatypePrimitive", ""),
+            OSLOTypeLink("https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMeter",
+                         "OSLODatatypePrimitive", ""),
             OSLOTypeLink("https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlLichtmastMasthoogte", "OSLOEnumeration", "")
         ]
 
-        self.expectedDtu = ['# coding=utf-8',
-                            'from OTLModel.Datatypes.UnionTypeField import UnionTypeField',
-                            'from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField',
-                            'from OTLModel.Datatypes.KlLichtmastMasthoogte import KlLichtmastMasthoogte',
-                            'from OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter',
-                            '',
-                            '',
-                            '# Generated with OTLUnionDatatypeCreator. To modify: extend, do not edit',
-                            'class DtuLichtmastMasthoogte(UnionTypeField):',
-                            '    """Union datatype om een standaard of afwijkende masthoogte te bepalen."""',
-                            '',
-                            '    def __init__(self):',
-                            '        super().__init__(naam="DtuLichtmastMasthoogte",',
-                            '                         label="Masthoogte",',
-                            '                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtuLichtmastMasthoogte",',
-                            '                         definition="Union datatype om een standaard of afwijkende masthoogte te bepalen.",',
-                            '                         usagenote="",',
-                            '                         deprecated_version="")',
-                            '',
-                            '        field_afwijkendeHoogte = KwantWrdInMeter()',
+        self.expectedDtu = ["# coding=utf-8",
+                            "from OTLModel.BaseClasses.AttributeInfo import AttributeInfo",
+                            "from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut",
+                            "from OTLModel.Datatypes.KlLichtmastMasthoogte import KlLichtmastMasthoogte",
+                            "from OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter",
+                            "from OTLModel.Datatypes.UnionTypeField import UnionTypeField",
+                            "",
+                            "",
+                            "# Generated with OTLUnionDatatypeCreator. To modify: extend, do not edit",
+                            "class DtuLichtmastMasthoogteAttributen(AttributeInfo):",
+                            "    def __init__(self):",
+                            "        self._afwijkendeHoogte = OTLAttribuut(field=KwantWrdInMeter,",
+                            "                                              naam='afwijkendeHoogte',",
+                            "                                              label='afwijkende hoogte',",
+                            "                                              objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtuLichtmastMasthoogte.afwijkendeHoogte',",
+                            "                                              kardinaliteit_min='0',",
+                            "                                              definition='De afwijkende hoogte van de mast in meter.')",
+                            "",
+                            "        self._standaardHoogte = OTLAttribuut(field=KlLichtmastMasthoogte,",
+                            "                                             naam='standaardHoogte',",
+                            "                                             label='standaard hoogte',",
+                            "                                             objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtuLichtmastMasthoogte.standaardHoogte',",
+                            "                                             kardinaliteit_min='0',",
+                            "                                             definition='Bepaling van de standaard hoogte van een mast.')",
+                            "",
+                            "    @property",
+                            "    def afwijkendeHoogte(self):",
                             '        """De afwijkende hoogte van de mast in meter."""',
-                            '        field_afwijkendeHoogte.naam = "afwijkendeHoogte"',
-                            '        field_afwijkendeHoogte.label = "afwijkende hoogte"',
-                            '        field_afwijkendeHoogte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtuLichtmastMasthoogte.afwijkendeHoogte"',
-                            '        field_afwijkendeHoogte.definition = "De afwijkende hoogte van de mast in meter."',
-                            '        field_afwijkendeHoogte.constraints = ""',
-                            '        field_afwijkendeHoogte.usagenote = ""',
-                            '        field_afwijkendeHoogte.deprecated_version = ""',
-                            '',
-                            '        field_standaardHoogte = KeuzelijstField(naam="standaardHoogte",',
-                            '                                                label="standaard hoogte",',
-                            '                                                lijst=KlLichtmastMasthoogte(),',
-                            '                                                objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtuLichtmastMasthoogte.standaardHoogte",',
-                            '                                                definition="Bepaling van de standaard hoogte van een mast.",',
-                            '                                                constraints="",',
-                            '                                                usagenote="",',
-                            '                                                deprecated_version="")',
+                            "        return self._afwijkendeHoogte.waarde",
+                            "",
+                            "    @property",
+                            "    def standaardHoogte(self):",
                             '        """Bepaling van de standaard hoogte van een mast."""',
-                            '',
-                            '        self.fieldsTuple = (field_afwijkendeHoogte, field_standaardHoogte)']
+                            "        return self._standaardHoogte.waarde",
+                            "",
+                            "",
+                            "# Generated with OTLUnionDatatypeCreator. To modify: extend, do not edit",
+                            "class DtuLichtmastMasthoogte(UnionTypeField, AttributeInfo):",
+                            '    """Union datatype om een standaard of afwijkende masthoogte te bepalen."""',
+                            "    naam = 'DtuLichtmastMasthoogte'",
+                            "    label = 'Masthoogte'",
+                            "    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtuLichtmastMasthoogte'",
+                            "    definition = 'Union datatype om een standaard of afwijkende masthoogte te bepalen.'",
+                            "    waardeObject = DtuLichtmastMasthoogteAttributen",
+                            "",
+                            "    def __str__(self):",
+                            "        return UnionTypeField.__str__(self)",
+                            ""]
 
 
 class TestOTLUnionDatatypeCreator(OTLUnionDatatypeCreator):
@@ -113,7 +121,8 @@ class OTLUnionDatatypeCreatorTests(unittest.TestCase):
         logger = NoneLogger()
         collector = OSLOCollector(mock)
         creator = OTLUnionDatatypeCreator(logger, collector)
-        osloDatatypeUnion = OSLODatatypeUnion(name='name', objectUri='Bad objectUri', definition_nl='', label_nl='', usagenote_nl='',
+        osloDatatypeUnion = OSLODatatypeUnion(name='name', objectUri='Bad objectUri', definition_nl='', label_nl='',
+                                              usagenote_nl='',
                                               deprecated_version='')
 
         with self.assertRaises(ValueError) as exception_bad_uri:
@@ -142,7 +151,7 @@ class OTLUnionDatatypeCreatorTests(unittest.TestCase):
             creator.CreateBlockToWriteFromUnionTypes(bad_Union)
         self.assertEqual(str(exception_bad_name.exception), "Input is not a OSLODatatypeUnion")
 
-    def test_DtcIdentificatorOSLODatatypeUnion(self):
+    def test_DtuLichtmastMasthoogteOSLODatatypeUnion(self):
         logger = NoneLogger()
         collector = UnionDatatypeOSLOCollector(mock)
         creator = OTLUnionDatatypeCreator(logger, collector)
@@ -151,7 +160,6 @@ class OTLUnionDatatypeCreatorTests(unittest.TestCase):
         dataToWrite = creator.CreateBlockToWriteFromUnionTypes(DtuLichtmastMasthoogte)
 
         self.assertEqual(collector.expectedDtu, dataToWrite)
-
 
     def test_WriteToFileDtcAdresOSLODatatypeUnion(self):
         logger = NoneLogger()
@@ -170,4 +178,3 @@ class OTLUnionDatatypeCreatorTests(unittest.TestCase):
 
         filelocation = os.path.abspath(os.path.join(os.sep, ROOT_DIR, 'OTLModel/Datatypes/DtuLichtmastMasthoogte.py'))
         self.assertTrue(os.path.isfile(filelocation))
-

@@ -1,10 +1,9 @@
 # coding=utf-8
-from OTLModel.Datatypes.Keuzelijst import Keuzelijst
 
 
 # Generated with OTLEnumerationCreator. To modify: extend, do not edit
 from OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
-from UnitTests.OTLFieldTests.KeuzelijstField import KeuzelijstField
+from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 
 
 class KlLichtmastMasthoogte(KeuzelijstField):

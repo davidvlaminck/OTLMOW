@@ -1,19 +1,24 @@
 # coding=utf-8
-from OTLModel.Datatypes.Keuzelijst import Keuzelijst
+from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
+from OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 
 # Generated with OTLEnumerationCreator. To modify: extend, do not edit
-class KlDivergentiepuntbebakeningselementType(Keuzelijst):
+class KlDivergentiepuntbebakeningselementType(KeuzelijstField):
     """De vormen van het divergentiepuntbebakeningselement."""
+    naam = 'KlDivergentiepuntbebakeningselementType'
+    label = 'Divergentiepuntbebakeningselementtype'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlDivergentiepuntbebakeningselementType'
+    definition = 'De vormen van het divergentiepuntbebakeningselement.'
+    codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlDivergentiepuntbebakeningselementType'
+    options = {
+        'klein-model': KeuzelijstWaarde(invulwaarde='klein-model',
+                                        label='klein model',
+                                        definitie='Divergentiepuntbebakeningselement van 1 meter diameter (folie type 3.a).',
+                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlDivergentiepuntbebakeningselementType/klein-model'),
+        'standaard-model': KeuzelijstWaarde(invulwaarde='standaard-model',
+                                            label='standaard model',
+                                            definitie='Divergentiepuntbebakeningselement van 2 meter diameter (folie type 2).',
+                                            objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlDivergentiepuntbebakeningselementType/standaard-model')
+    }
 
-    def __init__(self):
-        super().__init__(naam="KlDivergentiepuntbebakeningselementType",
-                         label="Divergentiepuntbebakeningselementtype",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlDivergentiepuntbebakeningselementType",
-                         definition="De vormen van het divergentiepuntbebakeningselement.",
-                         usagenote="",
-                         deprecated_version="",
-                         codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlDivergentiepuntbebakeningselementType")
-
-        self.add_option("klein-model", "klein model", "Divergentiepuntbebakeningselement van 1 meter diameter (folie type 3.a).", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlDivergentiepuntbebakeningselementType/klein-model")
-        self.add_option("standaard-model", "standaard model", "Divergentiepuntbebakeningselement van 2 meter diameter (folie type 2).", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlDivergentiepuntbebakeningselementType/standaard-model")

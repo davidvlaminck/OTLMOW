@@ -1,23 +1,34 @@
 # coding=utf-8
-from OTLModel.Datatypes.Keuzelijst import Keuzelijst
+from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
+from OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 
 # Generated with OTLEnumerationCreator. To modify: extend, do not edit
-class KlHSBeveiligingscelSchakelmateriaalType(Keuzelijst):
+class KlHSBeveiligingscelSchakelmateriaalType(KeuzelijstField):
     """Type van schakelmateriaal."""
+    naam = 'KlHSBeveiligingscelSchakelmateriaalType'
+    label = 'HS-beveiligingscel schakelmateriaal type'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlHSBeveiligingscelSchakelmateriaalType'
+    definition = 'Type van schakelmateriaal.'
+    codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlHSBeveiligingscelSchakelmateriaalType'
+    options = {
+        'RMU-2KT': KeuzelijstWaarde(invulwaarde='RMU-2KT',
+                                    label='RMU 2KT',
+                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlHSBeveiligingscelSchakelmateriaalType/RMU-2KT'),
+        'RMU-3KT': KeuzelijstWaarde(invulwaarde='RMU-3KT',
+                                    label='RMU 3KT',
+                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlHSBeveiligingscelSchakelmateriaalType/RMU-3KT'),
+        'metaalomsloten-celstruktuur': KeuzelijstWaarde(invulwaarde='metaalomsloten-celstruktuur',
+                                                        label='metaalomsloten celstruktuur',
+                                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlHSBeveiligingscelSchakelmateriaalType/metaalomsloten-celstruktuur'),
+        'metal-clad-schakelvelden': KeuzelijstWaarde(invulwaarde='metal-clad-schakelvelden',
+                                                     label='metal-clad schakelvelden',
+                                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlHSBeveiligingscelSchakelmateriaalType/metal-clad-schakelvelden'),
+        'modulaire-schakelvelden': KeuzelijstWaarde(invulwaarde='modulaire-schakelvelden',
+                                                    label='modulaire schakelvelden',
+                                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlHSBeveiligingscelSchakelmateriaalType/modulaire-schakelvelden'),
+        'open-celstruktuur': KeuzelijstWaarde(invulwaarde='open-celstruktuur',
+                                              label='open celstruktuur',
+                                              objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlHSBeveiligingscelSchakelmateriaalType/open-celstruktuur')
+    }
 
-    def __init__(self):
-        super().__init__(naam="KlHSBeveiligingscelSchakelmateriaalType",
-                         label="HS-beveiligingscel schakelmateriaal type",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlHSBeveiligingscelSchakelmateriaalType",
-                         definition="Type van schakelmateriaal.",
-                         usagenote="",
-                         deprecated_version="",
-                         codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlHSBeveiligingscelSchakelmateriaalType")
-
-        self.add_option("RMU-2KT", "RMU 2KT", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlHSBeveiligingscelSchakelmateriaalType/RMU-2KT")
-        self.add_option("RMU-3KT", "RMU 3KT", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlHSBeveiligingscelSchakelmateriaalType/RMU-3KT")
-        self.add_option("metaalomsloten-celstruktuur", "metaalomsloten celstruktuur", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlHSBeveiligingscelSchakelmateriaalType/metaalomsloten-celstruktuur")
-        self.add_option("metal-clad-schakelvelden", "metal-clad schakelvelden", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlHSBeveiligingscelSchakelmateriaalType/metal-clad-schakelvelden")
-        self.add_option("modulaire-schakelvelden", "modulaire schakelvelden", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlHSBeveiligingscelSchakelmateriaalType/modulaire-schakelvelden")
-        self.add_option("open-celstruktuur", "open celstruktuur", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlHSBeveiligingscelSchakelmateriaalType/open-celstruktuur")

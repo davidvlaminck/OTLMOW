@@ -1,10 +1,7 @@
-﻿import copy
-import math
+﻿import math
 
-from UnitTests.OTLFieldTests.AttributeInfo import AttributeInfo
-from UnitTests.OTLFieldTests.ComplexField import ComplexField
-from UnitTests.OTLFieldTests.KeuzelijstField import KeuzelijstField
-from UnitTests.OTLFieldTests.OTLField import OTLField
+from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
+from OTLModel.BaseClasses.OTLField import OTLField
 
 
 class OTLAttribuut(AttributeInfo):

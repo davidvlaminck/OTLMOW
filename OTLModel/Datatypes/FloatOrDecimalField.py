@@ -1,15 +1,15 @@
 ﻿import decimal
 
-from UnitTests.OTLFieldTests.OTLField import OTLField
+from OTLModel.BaseClasses.OTLField import OTLField
 
 
 class FloatOrDecimalField(OTLField):
-    """Beschrijft een tekstregel volgens http://www.w3.org/2001/XMLSchema#string."""
-    naam = 'String'
-    objectUri = 'http://www.w3.org/2001/XMLSchema#string'
-    definition = 'Beschrijft een tekstregel volgens http://www.w3.org/2001/XMLSchema#string.'
-    label = 'String'
-    usagenote = 'https://www.w3.org/TR/xmlschema-2/#string'
+    """Beschrijft een decimaal getal volgens http://www.w3.org/2001/XMLSchema#decimal."""
+    naam = 'Decimal'
+    objectUri = 'http://www.w3.org/2001/XMLSchema#decimal'
+    definition = 'Beschrijft een decimaal getal volgens http://www.w3.org/2001/XMLSchema#decimal.'
+    label = 'Decimaal getal'
+    usagenote = 'https://www.w3.org/TR/xmlschema-2/#decimal'
 
     @staticmethod
     def convert_to_correct_type(value):

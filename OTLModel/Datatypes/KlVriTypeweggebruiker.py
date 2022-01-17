@@ -1,23 +1,34 @@
 # coding=utf-8
-from OTLModel.Datatypes.Keuzelijst import Keuzelijst
+from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
+from OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 
 # Generated with OTLEnumerationCreator. To modify: extend, do not edit
-class KlVriTypeweggebruiker(Keuzelijst):
+class KlVriTypeweggebruiker(KeuzelijstField):
     """Lijst met types van weggebruikers."""
+    naam = 'KlVriTypeweggebruiker'
+    label = 'VRI detector typeweggebruiker'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#KlVriTypeweggebruiker'
+    definition = 'Lijst met types van weggebruikers.'
+    codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlVriTypeweggebruiker'
+    options = {
+        'bus': KeuzelijstWaarde(invulwaarde='bus',
+                                label='bus',
+                                objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVriTypeweggebruiker/bus'),
+        'fiets': KeuzelijstWaarde(invulwaarde='fiets',
+                                  label='fiets',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVriTypeweggebruiker/fiets'),
+        'tram': KeuzelijstWaarde(invulwaarde='tram',
+                                 label='tram',
+                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVriTypeweggebruiker/tram'),
+        'voertuig': KeuzelijstWaarde(invulwaarde='voertuig',
+                                     label='voertuig',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVriTypeweggebruiker/voertuig'),
+        'voetganger': KeuzelijstWaarde(invulwaarde='voetganger',
+                                       label='voetganger',
+                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVriTypeweggebruiker/voetganger'),
+        'vrachtwagen': KeuzelijstWaarde(invulwaarde='vrachtwagen',
+                                        label='vrachtwagen',
+                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVriTypeweggebruiker/vrachtwagen')
+    }
 
-    def __init__(self):
-        super().__init__(naam="KlVriTypeweggebruiker",
-                         label="VRI detector typeweggebruiker",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#KlVriTypeweggebruiker",
-                         definition="Lijst met types van weggebruikers.",
-                         usagenote="",
-                         deprecated_version="",
-                         codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlVriTypeweggebruiker")
-
-        self.add_option("bus", "bus", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVriTypeweggebruiker/bus")
-        self.add_option("fiets", "fiets", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVriTypeweggebruiker/fiets")
-        self.add_option("tram", "tram", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVriTypeweggebruiker/tram")
-        self.add_option("voertuig", "voertuig", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVriTypeweggebruiker/voertuig")
-        self.add_option("voetganger", "voetganger", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVriTypeweggebruiker/voetganger")
-        self.add_option("vrachtwagen", "vrachtwagen", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVriTypeweggebruiker/vrachtwagen")

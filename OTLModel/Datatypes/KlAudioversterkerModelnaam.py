@@ -1,17 +1,16 @@
 # coding=utf-8
-from OTLModel.Datatypes.Keuzelijst import Keuzelijst
+from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
+from OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 
 # Generated with OTLEnumerationCreator. To modify: extend, do not edit
-class KlAudioversterkerModelnaam(Keuzelijst):
+class KlAudioversterkerModelnaam(KeuzelijstField):
     """De modelnaam van de audioversterker."""
-
-    def __init__(self):
-        super().__init__(naam="KlAudioversterkerModelnaam",
-                         label="Audioversterker modelnaam",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlAudioversterkerModelnaam",
-                         definition="De modelnaam van de audioversterker.",
-                         usagenote="",
-                         deprecated_version="",
-                         codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlAudioversterkerModelnaam")
+    naam = 'KlAudioversterkerModelnaam'
+    label = 'Audioversterker modelnaam'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlAudioversterkerModelnaam'
+    definition = 'De modelnaam van de audioversterker.'
+    codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlAudioversterkerModelnaam'
+    options = 
+    }
 

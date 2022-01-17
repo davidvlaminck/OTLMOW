@@ -1,22 +1,36 @@
 # coding=utf-8
-from OTLModel.Datatypes.Keuzelijst import Keuzelijst
+from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
+from OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 
 # Generated with OTLEnumerationCreator. To modify: extend, do not edit
-class KlKleurSupp(Keuzelijst):
+class KlKleurSupp(KeuzelijstField):
     """Keuzelijst om de kleur van de toegevoegde supplementen van de verharding te bepalen."""
+    naam = 'KlKleurSupp'
+    label = 'Kleur supplementen'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlKleurSupp'
+    definition = 'Keuzelijst om de kleur van de toegevoegde supplementen van de verharding te bepalen.'
+    codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlKleurSupp'
+    options = {
+        'beige': KeuzelijstWaarde(invulwaarde='beige',
+                                  label='beige',
+                                  definitie='De kleur rood.',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlKleurSupp/beige'),
+        'bordeaux-bruin': KeuzelijstWaarde(invulwaarde='bordeaux-bruin',
+                                           label='bordeaux-bruin',
+                                           definitie='De kleur bordeaux/bruin.',
+                                           objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlKleurSupp/bordeaux-bruin'),
+        'geen': KeuzelijstWaarde(invulwaarde='geen',
+                                 label='geen',
+                                 definitie='Geen of standaard kleur.',
+                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlKleurSupp/geen'),
+        'oker': KeuzelijstWaarde(invulwaarde='oker',
+                                 label='oker',
+                                 definitie='De kleur oker.',
+                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlKleurSupp/oker'),
+        'rood': KeuzelijstWaarde(invulwaarde='rood',
+                                 label='rood',
+                                 definitie='De kleur beige.',
+                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlKleurSupp/rood')
+    }
 
-    def __init__(self):
-        super().__init__(naam="KlKleurSupp",
-                         label="Kleur supplementen",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlKleurSupp",
-                         definition="Keuzelijst om de kleur van de toegevoegde supplementen van de verharding te bepalen.",
-                         usagenote="",
-                         deprecated_version="",
-                         codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlKleurSupp")
-
-        self.add_option("beige", "beige", "De kleur rood.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlKleurSupp/beige")
-        self.add_option("bordeaux-bruin", "bordeaux-bruin", "De kleur bordeaux/bruin.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlKleurSupp/bordeaux-bruin")
-        self.add_option("geen", "geen", "Geen of standaard kleur.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlKleurSupp/geen")
-        self.add_option("oker", "oker", "De kleur oker.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlKleurSupp/oker")
-        self.add_option("rood", "rood", "De kleur beige.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlKleurSupp/rood")

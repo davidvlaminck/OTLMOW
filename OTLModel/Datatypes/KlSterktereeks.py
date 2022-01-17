@@ -1,37 +1,96 @@
 # coding=utf-8
-from OTLModel.Datatypes.Keuzelijst import Keuzelijst
+from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
+from OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 
 # Generated with OTLEnumerationCreator. To modify: extend, do not edit
-class KlSterktereeks(Keuzelijst):
+class KlSterktereeks(KeuzelijstField):
     """De stabiliteitklasse van de buis."""
+    naam = 'KlSterktereeks'
+    label = 'Sterktereeks'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlSterktereeks'
+    definition = 'De stabiliteitklasse van de buis.'
+    codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlSterktereeks'
+    options = {
+        'GVP-SN10000-N-M2': KeuzelijstWaarde(invulwaarde='GVP-SN10000-N-M2',
+                                             label='GVP SN10000 N/M2',
+                                             definitie='GVP SN10000 N/M2',
+                                             objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlSterktereeks/GVP-SN10000-N-M2'),
+        'GVP-SN2500-N-M2': KeuzelijstWaarde(invulwaarde='GVP-SN2500-N-M2',
+                                            label='GVP SN2500 N/M2',
+                                            definitie='GVP SN2500 N/M2',
+                                            objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlSterktereeks/GVP-SN2500-N-M2'),
+        'GVP-SN5000-N-M2': KeuzelijstWaarde(invulwaarde='GVP-SN5000-N-M2',
+                                            label='GVP SN5000 N/M2',
+                                            definitie='GVP SN5000 N/M2',
+                                            objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlSterktereeks/GVP-SN5000-N-M2'),
+        'PVC-SN16': KeuzelijstWaarde(invulwaarde='PVC-SN16',
+                                     label='PVC SN16',
+                                     definitie='PVC SN16',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlSterktereeks/PVC-SN16'),
+        'PVC-SN2': KeuzelijstWaarde(invulwaarde='PVC-SN2',
+                                    label='PVC SN2',
+                                    definitie='PVC SN2',
+                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlSterktereeks/PVC-SN2'),
+        'PVC-SN4': KeuzelijstWaarde(invulwaarde='PVC-SN4',
+                                    label='PVC SN4',
+                                    definitie='PVC SN4',
+                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlSterktereeks/PVC-SN4'),
+        'PVC-SN8': KeuzelijstWaarde(invulwaarde='PVC-SN8',
+                                    label='PVC SN8',
+                                    definitie='PVC SN8',
+                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlSterktereeks/PVC-SN8'),
+        'gres-120': KeuzelijstWaarde(invulwaarde='gres-120',
+                                     label='gres 120',
+                                     definitie='gres 120',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlSterktereeks/gres-120'),
+        'gres-160': KeuzelijstWaarde(invulwaarde='gres-160',
+                                     label='gres 160',
+                                     definitie='gres 160',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlSterktereeks/gres-160'),
+        'gres-200': KeuzelijstWaarde(invulwaarde='gres-200',
+                                     label='gres 200',
+                                     definitie='gres 200',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlSterktereeks/gres-200'),
+        'gres-240': KeuzelijstWaarde(invulwaarde='gres-240',
+                                     label='gres 240',
+                                     definitie='gres 240',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlSterktereeks/gres-240'),
+        'gres-34': KeuzelijstWaarde(invulwaarde='gres-34',
+                                    label='gres 34',
+                                    definitie='gres 34',
+                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlSterktereeks/gres-34'),
+        'gres-95': KeuzelijstWaarde(invulwaarde='gres-95',
+                                    label='gres 95',
+                                    definitie='gres 95',
+                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlSterktereeks/gres-95'),
+        'gres-minimum-kruindrukwaarde-34': KeuzelijstWaarde(invulwaarde='gres-minimum-kruindrukwaarde-34',
+                                                            label='gres minimum kruindrukwaarde 34',
+                                                            definitie='gres minimum kruindrukwaarde 34',
+                                                            objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlSterktereeks/gres-minimum-kruindrukwaarde-34'),
+        'gres-minimum-kruindrukwaarde-90': KeuzelijstWaarde(invulwaarde='gres-minimum-kruindrukwaarde-90',
+                                                            label='gres minimum kruindrukwaarde 90',
+                                                            definitie='gres minimum kruindrukwaarde 90',
+                                                            objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlSterktereeks/gres-minimum-kruindrukwaarde-90'),
+        'hdpe-p-n-10': KeuzelijstWaarde(invulwaarde='hdpe-p-n-10',
+                                        label='HDPE PN10',
+                                        definitie='HDPE PN10',
+                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlSterktereeks/hdpe-p-n-10'),
+        'hdpe-p-n-16': KeuzelijstWaarde(invulwaarde='hdpe-p-n-16',
+                                        label='HDPE PN16',
+                                        definitie='HDPE PN16',
+                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlSterktereeks/hdpe-p-n-16'),
+        'pp-s-n-8': KeuzelijstWaarde(invulwaarde='pp-s-n-8',
+                                     label='PP SN8',
+                                     definitie='PP SN8',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlSterktereeks/pp-s-n-8'),
+        'pvc-composiet-s-n-4': KeuzelijstWaarde(invulwaarde='pvc-composiet-s-n-4',
+                                                label='PVC composiet SN4',
+                                                definitie='PVC composiet SN4',
+                                                objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlSterktereeks/pvc-composiet-s-n-4'),
+        'pvc-composiet-s-n-8': KeuzelijstWaarde(invulwaarde='pvc-composiet-s-n-8',
+                                                label='PVC composiet SN8',
+                                                definitie='PVC composiet SN8',
+                                                objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlSterktereeks/pvc-composiet-s-n-8')
+    }
 
-    def __init__(self):
-        super().__init__(naam="KlSterktereeks",
-                         label="Sterktereeks",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlSterktereeks",
-                         definition="De stabiliteitklasse van de buis.",
-                         usagenote="",
-                         deprecated_version="",
-                         codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlSterktereeks")
-
-        self.add_option("GVP-SN10000-N-M2", "GVP SN10000 N/M2", "GVP SN10000 N/M2", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlSterktereeks/GVP-SN10000-N-M2")
-        self.add_option("GVP-SN2500-N-M2", "GVP SN2500 N/M2", "GVP SN2500 N/M2", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlSterktereeks/GVP-SN2500-N-M2")
-        self.add_option("GVP-SN5000-N-M2", "GVP SN5000 N/M2", "GVP SN5000 N/M2", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlSterktereeks/GVP-SN5000-N-M2")
-        self.add_option("PVC-SN16", "PVC SN16", "PVC SN16", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlSterktereeks/PVC-SN16")
-        self.add_option("PVC-SN2", "PVC SN2", "PVC SN2", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlSterktereeks/PVC-SN2")
-        self.add_option("PVC-SN4", "PVC SN4", "PVC SN4", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlSterktereeks/PVC-SN4")
-        self.add_option("PVC-SN8", "PVC SN8", "PVC SN8", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlSterktereeks/PVC-SN8")
-        self.add_option("gres-120", "gres 120", "gres 120", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlSterktereeks/gres-120")
-        self.add_option("gres-160", "gres 160", "gres 160", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlSterktereeks/gres-160")
-        self.add_option("gres-200", "gres 200", "gres 200", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlSterktereeks/gres-200")
-        self.add_option("gres-240", "gres 240", "gres 240", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlSterktereeks/gres-240")
-        self.add_option("gres-34", "gres 34", "gres 34", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlSterktereeks/gres-34")
-        self.add_option("gres-95", "gres 95", "gres 95", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlSterktereeks/gres-95")
-        self.add_option("gres-minimum-kruindrukwaarde-34", "gres minimum kruindrukwaarde 34", "gres minimum kruindrukwaarde 34", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlSterktereeks/gres-minimum-kruindrukwaarde-34")
-        self.add_option("gres-minimum-kruindrukwaarde-90", "gres minimum kruindrukwaarde 90", "gres minimum kruindrukwaarde 90", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlSterktereeks/gres-minimum-kruindrukwaarde-90")
-        self.add_option("hdpe-p-n-10", "HDPE PN10", "HDPE PN10", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlSterktereeks/hdpe-p-n-10")
-        self.add_option("hdpe-p-n-16", "HDPE PN16", "HDPE PN16", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlSterktereeks/hdpe-p-n-16")
-        self.add_option("pp-s-n-8", "PP SN8", "PP SN8", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlSterktereeks/pp-s-n-8")
-        self.add_option("pvc-composiet-s-n-4", "PVC composiet SN4", "PVC composiet SN4", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlSterktereeks/pvc-composiet-s-n-4")
-        self.add_option("pvc-composiet-s-n-8", "PVC composiet SN8", "PVC composiet SN8", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlSterktereeks/pvc-composiet-s-n-8")

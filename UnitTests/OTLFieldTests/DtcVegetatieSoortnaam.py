@@ -1,7 +1,7 @@
-﻿from UnitTests.OTLFieldTests.AttributeInfo import AttributeInfo
-from UnitTests.OTLFieldTests.OTLAttribuut import OTLAttribuut
-from UnitTests.OTLFieldTests.StringField import StringField
-from UnitTests.OTLFieldTests.ComplexField import ComplexField
+﻿from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
+from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLModel.Datatypes.StringField import StringField
+from OTLModel.Datatypes.ComplexField import ComplexField
 
 
 class DtcVegetatieSoortnaamWaarden(AttributeInfo):

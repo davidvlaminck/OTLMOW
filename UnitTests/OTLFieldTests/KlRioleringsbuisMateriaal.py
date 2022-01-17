@@ -1,5 +1,5 @@
 ﻿from OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
-from UnitTests.OTLFieldTests.KeuzelijstField import KeuzelijstField
+from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 
 
 class KlRioleringsbuisMateriaal(KeuzelijstField):

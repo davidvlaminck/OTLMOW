@@ -1,5 +1,5 @@
-﻿from UnitTests.OTLFieldTests.ComplexField import ComplexField
-from UnitTests.OTLFieldTests.KwantWrd import KwantWrd
+﻿from OTLModel.Datatypes.ComplexField import ComplexField
+from OTLModel.BaseClasses.KwantWrd import KwantWrd
 
 
 class AttributeInfo:

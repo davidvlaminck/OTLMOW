@@ -1,26 +1,52 @@
 # coding=utf-8
-from OTLModel.Datatypes.Keuzelijst import Keuzelijst
+from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
+from OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 
 # Generated with OTLEnumerationCreator. To modify: extend, do not edit
-class KlBoomConflicten(Keuzelijst):
+class KlBoomConflicten(KeuzelijstField):
     """De verschillende mogelijke conflicten van een boom."""
+    naam = 'KlBoomConflicten'
+    label = 'Boom conflicten'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlBoomConflicten'
+    definition = 'De verschillende mogelijke conflicten van een boom.'
+    codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlBoomConflicten'
+    options = {
+        'andere': KeuzelijstWaarde(invulwaarde='andere',
+                                   label='andere',
+                                   definitie='Andere mogelijke conflicten',
+                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBoomConflicten/andere'),
+        'beperkte-doorwortelbare-ruimte': KeuzelijstWaarde(invulwaarde='beperkte-doorwortelbare-ruimte',
+                                                           label='beperkte doorwortelbare ruimte',
+                                                           definitie='Het bodemvolume met voldoende mineralen, water en zuurstof waar de wortels van de boom zich kunnen ontwikkelen is veel lager dan verwacht',
+                                                           objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBoomConflicten/beperkte-doorwortelbare-ruimte'),
+        'bodemverdichting': KeuzelijstWaarde(invulwaarde='bodemverdichting',
+                                             label='bodemverdichting',
+                                             definitie='Verdichting van de bodem door belasting (voetgangers, fietsers, auto's, bouwmaterialen,...)',
+                                             objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBoomConflicten/bodemverdichting'),
+        'hinderende-takken': KeuzelijstWaarde(invulwaarde='hinderende-takken',
+                                              label='hinderende takken',
+                                              definitie='Takken die hinderlijk zijn voor de zichtbaarheid en de vrije doorrijhoogte of die luchtleidingen raken',
+                                              objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBoomConflicten/hinderende-takken'),
+        'instabiel': KeuzelijstWaarde(invulwaarde='instabiel',
+                                      label='instabiel',
+                                      definitie='Een boom die niet stabiel in de grond staat',
+                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBoomConflicten/instabiel'),
+        'scheefstand': KeuzelijstWaarde(invulwaarde='scheefstand',
+                                        label='scheefstand',
+                                        definitie='Schuin gezakte/gegroeide boom waarbij de top van de boom in het verlengde van de stam ligt en niet verticaal opgericht is',
+                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBoomConflicten/scheefstand'),
+        'te-dicht-bij-rand-verharding': KeuzelijstWaarde(invulwaarde='te-dicht-bij-rand-verharding',
+                                                         label='te dicht bij rand verharding',
+                                                         definitie='Verharding ligt op minder dan 50 cm van de stamvoet',
+                                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBoomConflicten/te-dicht-bij-rand-verharding'),
+        'verharding': KeuzelijstWaarde(invulwaarde='verharding',
+                                       label='verharding',
+                                       definitie='Een verhardingslaag bevindt zich zeer dicht tegen de boom',
+                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBoomConflicten/verharding'),
+        'wortelopdruk': KeuzelijstWaarde(invulwaarde='wortelopdruk',
+                                         label='wortelopdruk',
+                                         definitie='Boomwortels die (weg)verhardingselementen opdrukken',
+                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBoomConflicten/wortelopdruk')
+    }
 
-    def __init__(self):
-        super().__init__(naam="KlBoomConflicten",
-                         label="Boom conflicten",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlBoomConflicten",
-                         definition="De verschillende mogelijke conflicten van een boom.",
-                         usagenote="",
-                         deprecated_version="",
-                         codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlBoomConflicten")
-
-        self.add_option("andere", "andere", "Andere mogelijke conflicten", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBoomConflicten/andere")
-        self.add_option("beperkte-doorwortelbare-ruimte", "beperkte doorwortelbare ruimte", "Het bodemvolume met voldoende mineralen, water en zuurstof waar de wortels van de boom zich kunnen ontwikkelen is veel lager dan verwacht", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBoomConflicten/beperkte-doorwortelbare-ruimte")
-        self.add_option("bodemverdichting", "bodemverdichting", "Verdichting van de bodem door belasting (voetgangers, fietsers, auto's, bouwmaterialen,...)", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBoomConflicten/bodemverdichting")
-        self.add_option("hinderende-takken", "hinderende takken", "Takken die hinderlijk zijn voor de zichtbaarheid en de vrije doorrijhoogte of die luchtleidingen raken", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBoomConflicten/hinderende-takken")
-        self.add_option("instabiel", "instabiel", "Een boom die niet stabiel in de grond staat", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBoomConflicten/instabiel")
-        self.add_option("scheefstand", "scheefstand", "Schuin gezakte/gegroeide boom waarbij de top van de boom in het verlengde van de stam ligt en niet verticaal opgericht is", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBoomConflicten/scheefstand")
-        self.add_option("te-dicht-bij-rand-verharding", "te dicht bij rand verharding", "Verharding ligt op minder dan 50 cm van de stamvoet", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBoomConflicten/te-dicht-bij-rand-verharding")
-        self.add_option("verharding", "verharding", "Een verhardingslaag bevindt zich zeer dicht tegen de boom", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBoomConflicten/verharding")
-        self.add_option("wortelopdruk", "wortelopdruk", "Boomwortels die (weg)verhardingselementen opdrukken", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBoomConflicten/wortelopdruk")

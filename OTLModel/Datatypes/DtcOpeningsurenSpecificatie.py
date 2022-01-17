@@ -1,49 +1,69 @@
 # coding=utf-8
+from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
+from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Datatypes.ComplexField import ComplexField
-from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlAlgWeekdagen import KlAlgWeekdagen
 from OTLModel.Datatypes.TimeField import TimeField
 
 
 # Generated with OTLComplexDatatypeCreator. To modify: extend, do not edit
-class DtcOpeningsurenSpecificatie(ComplexField):
-    """Complex datatype dat de openingsuren volgens https://schema.org/OpeningHoursSpecification specifieert."""
-
+class DtcOpeningsurenSpecificatieWaarden(AttributeInfo):
     def __init__(self):
-        super().__init__(naam="DtcOpeningsurenSpecificatie",
-                         label="Openingsurenspecificatie",
-                         objectUri="https://schema.org/OpeningHoursSpecification",
-                         definition="Complex datatype dat de openingsuren volgens https://schema.org/OpeningHoursSpecification specifieert.",
-                         usagenote="",
-                         deprecated_version="")
+        self._openingstijd = OTLAttribuut(field=TimeField,
+                                          naam='openingstijd',
+                                          label='openingstijd',
+                                          objectUri='https://schema.org/OpeningHoursSpecification.openingstijd',
+                                          definition='Het tijdsstip waarop de opening plaatsvindt.')
 
-        self.waarde.openingstijd = TimeField(naam="openingstijd",
-                                             label="openingstijd",
-                                             objectUri="https://schema.org/OpeningHoursSpecification.openingstijd",
-                                             definition="Het tijdsstip waarop de opening plaatsvindt.",
-                                             constraints="",
-                                             usagenote="",
-                                             deprecated_version="")
-        self.openingstijd = self.waarde.openingstijd
+        self._sluitingstijd = OTLAttribuut(field=TimeField,
+                                           naam='sluitingstijd',
+                                           label='sluitingstijd',
+                                           objectUri='https://schema.org/OpeningHoursSpecification.sluitingstijd',
+                                           definition='Het tijdsstip waarop de sluiting plaatsvindt.')
+
+        self._weekdag = OTLAttribuut(field=KlAlgWeekdagen,
+                                     naam='weekdag',
+                                     label='weekdag',
+                                     objectUri='https://schema.org/OpeningHoursSpecification.weekdag',
+                                     definition='Een dag uit de week incl. weekenddagen.')
+
+    @property
+    def openingstijd(self):
         """Het tijdsstip waarop de opening plaatsvindt."""
+        return self._openingstijd.waarde
 
-        self.waarde.sluitingstijd = TimeField(naam="sluitingstijd",
-                                              label="sluitingstijd",
-                                              objectUri="https://schema.org/OpeningHoursSpecification.sluitingstijd",
-                                              definition="Het tijdsstip waarop de sluiting plaatsvindt.",
-                                              constraints="",
-                                              usagenote="",
-                                              deprecated_version="")
-        self.sluitingstijd = self.waarde.sluitingstijd
+    @openingstijd.setter
+    def openingstijd(self, value):
+        self._openingstijd.set_waarde(value)
+
+    @property
+    def sluitingstijd(self):
         """Het tijdsstip waarop de sluiting plaatsvindt."""
+        return self._sluitingstijd.waarde
 
-        self.waarde.weekdag = KeuzelijstField(naam="weekdag",
-                                              label="weekdag",
-                                              lijst=KlAlgWeekdagen(),
-                                              objectUri="https://schema.org/OpeningHoursSpecification.weekdag",
-                                              definition="Een dag uit de week incl. weekenddagen.",
-                                              constraints="",
-                                              usagenote="",
-                                              deprecated_version="")
-        self.weekdag = self.waarde.weekdag
+    @sluitingstijd.setter
+    def sluitingstijd(self, value):
+        self._sluitingstijd.set_waarde(value)
+
+    @property
+    def weekdag(self):
         """Een dag uit de week incl. weekenddagen."""
+        return self._weekdag.waarde
+
+    @weekdag.setter
+    def weekdag(self, value):
+        self._weekdag.set_waarde(value)
+
+
+# Generated with OTLComplexDatatypeCreator. To modify: extend, do not edit
+class DtcOpeningsurenSpecificatie(ComplexField, AttributeInfo):
+    """Complex datatype dat de openingsuren volgens https://schema.org/OpeningHoursSpecification specifieert."""
+    naam = 'DtcOpeningsurenSpecificatie'
+    label = 'Openingsurenspecificatie'
+    objectUri = 'https://schema.org/OpeningHoursSpecification'
+    definition = 'Complex datatype dat de openingsuren volgens https://schema.org/OpeningHoursSpecification specifieert.'
+    waardeObject = DtcOpeningsurenSpecificatieWaarden
+
+    def __str__(self):
+        return ComplexField.__str__(self)
+

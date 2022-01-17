@@ -1,325 +1,940 @@
 # coding=utf-8
-from OTLModel.Datatypes.Keuzelijst import Keuzelijst
+from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
+from OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 
 # Generated with OTLEnumerationCreator. To modify: extend, do not edit
-class KlAlgGemeente(Keuzelijst):
+class KlAlgGemeente(KeuzelijstField):
     """Lijst van gemeentes in Vlaanderen."""
+    naam = 'KlAlgGemeente'
+    label = 'Gemeente'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KlAlgGemeente'
+    definition = 'Lijst van gemeentes in Vlaanderen.'
+    codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlAlgGemeente'
+    options = {
+        'aalst': KeuzelijstWaarde(invulwaarde='aalst',
+                                  label='aalst',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/aalst'),
+        'aalter': KeuzelijstWaarde(invulwaarde='aalter',
+                                   label='aalter',
+                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/aalter'),
+        'aarschot': KeuzelijstWaarde(invulwaarde='aarschot',
+                                     label='aarschot',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/aarschot'),
+        'aartselaar': KeuzelijstWaarde(invulwaarde='aartselaar',
+                                       label='aartselaar',
+                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/aartselaar'),
+        'affligem': KeuzelijstWaarde(invulwaarde='affligem',
+                                     label='affligem',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/affligem'),
+        'alken': KeuzelijstWaarde(invulwaarde='alken',
+                                  label='alken',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/alken'),
+        'alveringem': KeuzelijstWaarde(invulwaarde='alveringem',
+                                       label='alveringem',
+                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/alveringem'),
+        'antwerpen': KeuzelijstWaarde(invulwaarde='antwerpen',
+                                      label='antwerpen',
+                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/antwerpen'),
+        'anzegem': KeuzelijstWaarde(invulwaarde='anzegem',
+                                    label='anzegem',
+                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/anzegem'),
+        'ardooie': KeuzelijstWaarde(invulwaarde='ardooie',
+                                    label='ardooie',
+                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/ardooie'),
+        'arendonk': KeuzelijstWaarde(invulwaarde='arendonk',
+                                     label='arendonk',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/arendonk'),
+        'as': KeuzelijstWaarde(invulwaarde='as',
+                               label='as',
+                               objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/as'),
+        'asse': KeuzelijstWaarde(invulwaarde='asse',
+                                 label='asse',
+                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/asse'),
+        'assenede': KeuzelijstWaarde(invulwaarde='assenede',
+                                     label='assenede',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/assenede'),
+        'avelgem': KeuzelijstWaarde(invulwaarde='avelgem',
+                                    label='avelgem',
+                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/avelgem'),
+        'baarle-Hertog': KeuzelijstWaarde(invulwaarde='baarle-Hertog',
+                                          label='baarle-Hertog',
+                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/baarle-Hertog'),
+        'balen': KeuzelijstWaarde(invulwaarde='balen',
+                                  label='balen',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/balen'),
+        'beernem': KeuzelijstWaarde(invulwaarde='beernem',
+                                    label='beernem',
+                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/beernem'),
+        'beerse': KeuzelijstWaarde(invulwaarde='beerse',
+                                   label='beerse',
+                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/beerse'),
+        'beersel': KeuzelijstWaarde(invulwaarde='beersel',
+                                    label='beersel',
+                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/beersel'),
+        'begijnendijk': KeuzelijstWaarde(invulwaarde='begijnendijk',
+                                         label='begijnendijk',
+                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/begijnendijk'),
+        'bekkevoort': KeuzelijstWaarde(invulwaarde='bekkevoort',
+                                       label='bekkevoort',
+                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/bekkevoort'),
+        'beringen': KeuzelijstWaarde(invulwaarde='beringen',
+                                     label='beringen',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/beringen'),
+        'berlaar': KeuzelijstWaarde(invulwaarde='berlaar',
+                                    label='berlaar',
+                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/berlaar'),
+        'berlare': KeuzelijstWaarde(invulwaarde='berlare',
+                                    label='berlare',
+                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/berlare'),
+        'bertem': KeuzelijstWaarde(invulwaarde='bertem',
+                                   label='bertem',
+                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/bertem'),
+        'bever': KeuzelijstWaarde(invulwaarde='bever',
+                                  label='bever',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/bever'),
+        'beveren': KeuzelijstWaarde(invulwaarde='beveren',
+                                    label='beveren',
+                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/beveren'),
+        'bierbeek': KeuzelijstWaarde(invulwaarde='bierbeek',
+                                     label='bierbeek',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/bierbeek'),
+        'bilzen': KeuzelijstWaarde(invulwaarde='bilzen',
+                                   label='bilzen',
+                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/bilzen'),
+        'blankenberge': KeuzelijstWaarde(invulwaarde='blankenberge',
+                                         label='blankenberge',
+                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/blankenberge'),
+        'bocholt': KeuzelijstWaarde(invulwaarde='bocholt',
+                                    label='bocholt',
+                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/bocholt'),
+        'boechout': KeuzelijstWaarde(invulwaarde='boechout',
+                                     label='boechout',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/boechout'),
+        'bonheiden': KeuzelijstWaarde(invulwaarde='bonheiden',
+                                      label='bonheiden',
+                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/bonheiden'),
+        'boom': KeuzelijstWaarde(invulwaarde='boom',
+                                 label='boom',
+                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/boom'),
+        'boortmeerbeek': KeuzelijstWaarde(invulwaarde='boortmeerbeek',
+                                          label='boortmeerbeek',
+                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/boortmeerbeek'),
+        'borgloon': KeuzelijstWaarde(invulwaarde='borgloon',
+                                     label='borgloon',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/borgloon'),
+        'bornem': KeuzelijstWaarde(invulwaarde='bornem',
+                                   label='bornem',
+                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/bornem'),
+        'borsbeek': KeuzelijstWaarde(invulwaarde='borsbeek',
+                                     label='borsbeek',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/borsbeek'),
+        'boutersem': KeuzelijstWaarde(invulwaarde='boutersem',
+                                      label='boutersem',
+                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/boutersem'),
+        'brakel': KeuzelijstWaarde(invulwaarde='brakel',
+                                   label='brakel',
+                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/brakel'),
+        'brasschaat': KeuzelijstWaarde(invulwaarde='brasschaat',
+                                       label='brasschaat',
+                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/brasschaat'),
+        'brecht': KeuzelijstWaarde(invulwaarde='brecht',
+                                   label='brecht',
+                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/brecht'),
+        'bredene': KeuzelijstWaarde(invulwaarde='bredene',
+                                    label='bredene',
+                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/bredene'),
+        'bree': KeuzelijstWaarde(invulwaarde='bree',
+                                 label='bree',
+                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/bree'),
+        'brugge': KeuzelijstWaarde(invulwaarde='brugge',
+                                   label='brugge',
+                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/brugge'),
+        'buggenhout': KeuzelijstWaarde(invulwaarde='buggenhout',
+                                       label='buggenhout',
+                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/buggenhout'),
+        'damme': KeuzelijstWaarde(invulwaarde='damme',
+                                  label='damme',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/damme'),
+        'de-Haan': KeuzelijstWaarde(invulwaarde='de-Haan',
+                                    label='de Haan',
+                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/de-Haan'),
+        'de-Panne': KeuzelijstWaarde(invulwaarde='de-Panne',
+                                     label='de Panne',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/de-Panne'),
+        'de-Pinte': KeuzelijstWaarde(invulwaarde='de-Pinte',
+                                     label='de Pinte',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/de-Pinte'),
+        'deerlijk': KeuzelijstWaarde(invulwaarde='deerlijk',
+                                     label='deerlijk',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/deerlijk'),
+        'deinze': KeuzelijstWaarde(invulwaarde='deinze',
+                                   label='deinze',
+                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/deinze'),
+        'denderleeuw': KeuzelijstWaarde(invulwaarde='denderleeuw',
+                                        label='denderleeuw',
+                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/denderleeuw'),
+        'dendermonde': KeuzelijstWaarde(invulwaarde='dendermonde',
+                                        label='dendermonde',
+                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/dendermonde'),
+        'dentergem': KeuzelijstWaarde(invulwaarde='dentergem',
+                                      label='dentergem',
+                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/dentergem'),
+        'dessel': KeuzelijstWaarde(invulwaarde='dessel',
+                                   label='dessel',
+                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/dessel'),
+        'destelbergen': KeuzelijstWaarde(invulwaarde='destelbergen',
+                                         label='destelbergen',
+                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/destelbergen'),
+        'diepenbeek': KeuzelijstWaarde(invulwaarde='diepenbeek',
+                                       label='diepenbeek',
+                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/diepenbeek'),
+        'diest': KeuzelijstWaarde(invulwaarde='diest',
+                                  label='diest',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/diest'),
+        'diksmuide': KeuzelijstWaarde(invulwaarde='diksmuide',
+                                      label='diksmuide',
+                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/diksmuide'),
+        'dilbeek': KeuzelijstWaarde(invulwaarde='dilbeek',
+                                    label='dilbeek',
+                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/dilbeek'),
+        'dilsen-Stokkem': KeuzelijstWaarde(invulwaarde='dilsen-Stokkem',
+                                           label='dilsen-Stokkem',
+                                           objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/dilsen-Stokkem'),
+        'drogenbos': KeuzelijstWaarde(invulwaarde='drogenbos',
+                                      label='drogenbos',
+                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/drogenbos'),
+        'duffel': KeuzelijstWaarde(invulwaarde='duffel',
+                                   label='duffel',
+                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/duffel'),
+        'edegem': KeuzelijstWaarde(invulwaarde='edegem',
+                                   label='edegem',
+                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/edegem'),
+        'eeklo': KeuzelijstWaarde(invulwaarde='eeklo',
+                                  label='eeklo',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/eeklo'),
+        'erpe-Mere': KeuzelijstWaarde(invulwaarde='erpe-Mere',
+                                      label='erpe-Mere',
+                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/erpe-Mere'),
+        'essen': KeuzelijstWaarde(invulwaarde='essen',
+                                  label='essen',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/essen'),
+        'evergem': KeuzelijstWaarde(invulwaarde='evergem',
+                                    label='evergem',
+                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/evergem'),
+        'galmaarden': KeuzelijstWaarde(invulwaarde='galmaarden',
+                                       label='galmaarden',
+                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/galmaarden'),
+        'gavere': KeuzelijstWaarde(invulwaarde='gavere',
+                                   label='gavere',
+                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/gavere'),
+        'geel': KeuzelijstWaarde(invulwaarde='geel',
+                                 label='geel',
+                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/geel'),
+        'geetbets': KeuzelijstWaarde(invulwaarde='geetbets',
+                                     label='geetbets',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/geetbets'),
+        'genk': KeuzelijstWaarde(invulwaarde='genk',
+                                 label='genk',
+                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/genk'),
+        'gent': KeuzelijstWaarde(invulwaarde='gent',
+                                 label='gent',
+                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/gent'),
+        'geraardsbergen': KeuzelijstWaarde(invulwaarde='geraardsbergen',
+                                           label='geraardsbergen',
+                                           objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/geraardsbergen'),
+        'gingelom': KeuzelijstWaarde(invulwaarde='gingelom',
+                                     label='gingelom',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/gingelom'),
+        'gistel': KeuzelijstWaarde(invulwaarde='gistel',
+                                   label='gistel',
+                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/gistel'),
+        'glabbeek': KeuzelijstWaarde(invulwaarde='glabbeek',
+                                     label='glabbeek',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/glabbeek'),
+        'gooik': KeuzelijstWaarde(invulwaarde='gooik',
+                                  label='gooik',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/gooik'),
+        'grimbergen': KeuzelijstWaarde(invulwaarde='grimbergen',
+                                       label='grimbergen',
+                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/grimbergen'),
+        'grobbendonk': KeuzelijstWaarde(invulwaarde='grobbendonk',
+                                        label='grobbendonk',
+                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/grobbendonk'),
+        'haacht': KeuzelijstWaarde(invulwaarde='haacht',
+                                   label='haacht',
+                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/haacht'),
+        'haaltert': KeuzelijstWaarde(invulwaarde='haaltert',
+                                     label='haaltert',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/haaltert'),
+        'halen': KeuzelijstWaarde(invulwaarde='halen',
+                                  label='halen',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/halen'),
+        'halle': KeuzelijstWaarde(invulwaarde='halle',
+                                  label='halle',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/halle'),
+        'ham': KeuzelijstWaarde(invulwaarde='ham',
+                                label='ham',
+                                objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/ham'),
+        'hamme': KeuzelijstWaarde(invulwaarde='hamme',
+                                  label='hamme',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/hamme'),
+        'hamont-Achel': KeuzelijstWaarde(invulwaarde='hamont-Achel',
+                                         label='hamont-Achel',
+                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/hamont-Achel'),
+        'harelbeke': KeuzelijstWaarde(invulwaarde='harelbeke',
+                                      label='harelbeke',
+                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/harelbeke'),
+        'hasselt': KeuzelijstWaarde(invulwaarde='hasselt',
+                                    label='hasselt',
+                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/hasselt'),
+        'hechtel-Eksel': KeuzelijstWaarde(invulwaarde='hechtel-Eksel',
+                                          label='hechtel-Eksel',
+                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/hechtel-Eksel'),
+        'heers': KeuzelijstWaarde(invulwaarde='heers',
+                                  label='heers',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/heers'),
+        'heist-op-den-Berg': KeuzelijstWaarde(invulwaarde='heist-op-den-Berg',
+                                              label='heist-op-den-Berg',
+                                              objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/heist-op-den-Berg'),
+        'hemiksem': KeuzelijstWaarde(invulwaarde='hemiksem',
+                                     label='hemiksem',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/hemiksem'),
+        'herent': KeuzelijstWaarde(invulwaarde='herent',
+                                   label='herent',
+                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/herent'),
+        'herentals': KeuzelijstWaarde(invulwaarde='herentals',
+                                      label='herentals',
+                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/herentals'),
+        'herenthout': KeuzelijstWaarde(invulwaarde='herenthout',
+                                       label='herenthout',
+                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/herenthout'),
+        'herk-de-Stad': KeuzelijstWaarde(invulwaarde='herk-de-Stad',
+                                         label='herk-de-Stad',
+                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/herk-de-Stad'),
+        'herne': KeuzelijstWaarde(invulwaarde='herne',
+                                  label='herne',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/herne'),
+        'herselt': KeuzelijstWaarde(invulwaarde='herselt',
+                                    label='herselt',
+                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/herselt'),
+        'herstappe': KeuzelijstWaarde(invulwaarde='herstappe',
+                                      label='herstappe',
+                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/herstappe'),
+        'herzele': KeuzelijstWaarde(invulwaarde='herzele',
+                                    label='herzele',
+                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/herzele'),
+        'heusden-Zolder': KeuzelijstWaarde(invulwaarde='heusden-Zolder',
+                                           label='heusden-Zolder',
+                                           objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/heusden-Zolder'),
+        'heuvelland': KeuzelijstWaarde(invulwaarde='heuvelland',
+                                       label='heuvelland',
+                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/heuvelland'),
+        'hoegaarden': KeuzelijstWaarde(invulwaarde='hoegaarden',
+                                       label='hoegaarden',
+                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/hoegaarden'),
+        'hoeilaart': KeuzelijstWaarde(invulwaarde='hoeilaart',
+                                      label='hoeilaart',
+                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/hoeilaart'),
+        'hoeselt': KeuzelijstWaarde(invulwaarde='hoeselt',
+                                    label='hoeselt',
+                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/hoeselt'),
+        'holsbeek': KeuzelijstWaarde(invulwaarde='holsbeek',
+                                     label='holsbeek',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/holsbeek'),
+        'hooglede': KeuzelijstWaarde(invulwaarde='hooglede',
+                                     label='hooglede',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/hooglede'),
+        'hoogstraten': KeuzelijstWaarde(invulwaarde='hoogstraten',
+                                        label='hoogstraten',
+                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/hoogstraten'),
+        'horebeke': KeuzelijstWaarde(invulwaarde='horebeke',
+                                     label='horebeke',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/horebeke'),
+        'houthalen-Helchteren': KeuzelijstWaarde(invulwaarde='houthalen-Helchteren',
+                                                 label='houthalen-Helchteren',
+                                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/houthalen-Helchteren'),
+        'houthulst': KeuzelijstWaarde(invulwaarde='houthulst',
+                                      label='houthulst',
+                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/houthulst'),
+        'hove': KeuzelijstWaarde(invulwaarde='hove',
+                                 label='hove',
+                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/hove'),
+        'huldenberg': KeuzelijstWaarde(invulwaarde='huldenberg',
+                                       label='huldenberg',
+                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/huldenberg'),
+        'hulshout': KeuzelijstWaarde(invulwaarde='hulshout',
+                                     label='hulshout',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/hulshout'),
+        'ichtegem': KeuzelijstWaarde(invulwaarde='ichtegem',
+                                     label='ichtegem',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/ichtegem'),
+        'ieper': KeuzelijstWaarde(invulwaarde='ieper',
+                                  label='ieper',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/ieper'),
+        'ingelmunster': KeuzelijstWaarde(invulwaarde='ingelmunster',
+                                         label='ingelmunster',
+                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/ingelmunster'),
+        'izegem': KeuzelijstWaarde(invulwaarde='izegem',
+                                   label='izegem',
+                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/izegem'),
+        'jabbeke': KeuzelijstWaarde(invulwaarde='jabbeke',
+                                    label='jabbeke',
+                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/jabbeke'),
+        'kalmthout': KeuzelijstWaarde(invulwaarde='kalmthout',
+                                      label='kalmthout',
+                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/kalmthout'),
+        'kampenhout': KeuzelijstWaarde(invulwaarde='kampenhout',
+                                       label='kampenhout',
+                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/kampenhout'),
+        'kapelle-op-den-Bos': KeuzelijstWaarde(invulwaarde='kapelle-op-den-Bos',
+                                               label='kapelle-op-den-Bos',
+                                               objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/kapelle-op-den-Bos'),
+        'kapellen': KeuzelijstWaarde(invulwaarde='kapellen',
+                                     label='kapellen',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/kapellen'),
+        'kaprijke': KeuzelijstWaarde(invulwaarde='kaprijke',
+                                     label='kaprijke',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/kaprijke'),
+        'kasterlee': KeuzelijstWaarde(invulwaarde='kasterlee',
+                                      label='kasterlee',
+                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/kasterlee'),
+        'keerbergen': KeuzelijstWaarde(invulwaarde='keerbergen',
+                                       label='keerbergen',
+                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/keerbergen'),
+        'kinrooi': KeuzelijstWaarde(invulwaarde='kinrooi',
+                                    label='kinrooi',
+                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/kinrooi'),
+        'kluisbergen': KeuzelijstWaarde(invulwaarde='kluisbergen',
+                                        label='kluisbergen',
+                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/kluisbergen'),
+        'knesselare': KeuzelijstWaarde(invulwaarde='knesselare',
+                                       label='knesselare',
+                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/knesselare'),
+        'knokke-Heist': KeuzelijstWaarde(invulwaarde='knokke-Heist',
+                                         label='knokke-Heist',
+                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/knokke-Heist'),
+        'koekelare': KeuzelijstWaarde(invulwaarde='koekelare',
+                                      label='koekelare',
+                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/koekelare'),
+        'koksijde': KeuzelijstWaarde(invulwaarde='koksijde',
+                                     label='koksijde',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/koksijde'),
+        'kontich': KeuzelijstWaarde(invulwaarde='kontich',
+                                    label='kontich',
+                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/kontich'),
+        'kortemark': KeuzelijstWaarde(invulwaarde='kortemark',
+                                      label='kortemark',
+                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/kortemark'),
+        'kortenaken': KeuzelijstWaarde(invulwaarde='kortenaken',
+                                       label='kortenaken',
+                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/kortenaken'),
+        'kortenberg': KeuzelijstWaarde(invulwaarde='kortenberg',
+                                       label='kortenberg',
+                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/kortenberg'),
+        'kortessem': KeuzelijstWaarde(invulwaarde='kortessem',
+                                      label='kortessem',
+                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/kortessem'),
+        'kortrijk': KeuzelijstWaarde(invulwaarde='kortrijk',
+                                     label='kortrijk',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/kortrijk'),
+        'kraainem': KeuzelijstWaarde(invulwaarde='kraainem',
+                                     label='kraainem',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/kraainem'),
+        'kruibeke': KeuzelijstWaarde(invulwaarde='kruibeke',
+                                     label='kruibeke',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/kruibeke'),
+        'kruishoutem': KeuzelijstWaarde(invulwaarde='kruishoutem',
+                                        label='kruishoutem',
+                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/kruishoutem'),
+        'kuurne': KeuzelijstWaarde(invulwaarde='kuurne',
+                                   label='kuurne',
+                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/kuurne'),
+        'laakdal': KeuzelijstWaarde(invulwaarde='laakdal',
+                                    label='laakdal',
+                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/laakdal'),
+        'laarne': KeuzelijstWaarde(invulwaarde='laarne',
+                                   label='laarne',
+                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/laarne'),
+        'lanaken': KeuzelijstWaarde(invulwaarde='lanaken',
+                                    label='lanaken',
+                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/lanaken'),
+        'landen': KeuzelijstWaarde(invulwaarde='landen',
+                                   label='landen',
+                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/landen'),
+        'langemark-Poelkapelle': KeuzelijstWaarde(invulwaarde='langemark-Poelkapelle',
+                                                  label='langemark-Poelkapelle',
+                                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/langemark-Poelkapelle'),
+        'lebbeke': KeuzelijstWaarde(invulwaarde='lebbeke',
+                                    label='lebbeke',
+                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/lebbeke'),
+        'lede': KeuzelijstWaarde(invulwaarde='lede',
+                                 label='lede',
+                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/lede'),
+        'ledegem': KeuzelijstWaarde(invulwaarde='ledegem',
+                                    label='ledegem',
+                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/ledegem'),
+        'lendelede': KeuzelijstWaarde(invulwaarde='lendelede',
+                                      label='lendelede',
+                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/lendelede'),
+        'lennik': KeuzelijstWaarde(invulwaarde='lennik',
+                                   label='lennik',
+                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/lennik'),
+        'leopoldsburg': KeuzelijstWaarde(invulwaarde='leopoldsburg',
+                                         label='leopoldsburg',
+                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/leopoldsburg'),
+        'leuven': KeuzelijstWaarde(invulwaarde='leuven',
+                                   label='leuven',
+                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/leuven'),
+        'lichtervelde': KeuzelijstWaarde(invulwaarde='lichtervelde',
+                                         label='lichtervelde',
+                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/lichtervelde'),
+        'liedekerke': KeuzelijstWaarde(invulwaarde='liedekerke',
+                                       label='liedekerke',
+                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/liedekerke'),
+        'lier': KeuzelijstWaarde(invulwaarde='lier',
+                                 label='lier',
+                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/lier'),
+        'lierde': KeuzelijstWaarde(invulwaarde='lierde',
+                                   label='lierde',
+                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/lierde'),
+        'lille': KeuzelijstWaarde(invulwaarde='lille',
+                                  label='lille',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/lille'),
+        'linkebeek': KeuzelijstWaarde(invulwaarde='linkebeek',
+                                      label='linkebeek',
+                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/linkebeek'),
+        'lint': KeuzelijstWaarde(invulwaarde='lint',
+                                 label='lint',
+                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/lint'),
+        'linter': KeuzelijstWaarde(invulwaarde='linter',
+                                   label='linter',
+                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/linter'),
+        'lo-Reninge': KeuzelijstWaarde(invulwaarde='lo-Reninge',
+                                       label='lo-Reninge',
+                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/lo-Reninge'),
+        'lochristi': KeuzelijstWaarde(invulwaarde='lochristi',
+                                      label='lochristi',
+                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/lochristi'),
+        'lokeren': KeuzelijstWaarde(invulwaarde='lokeren',
+                                    label='lokeren',
+                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/lokeren'),
+        'lommel': KeuzelijstWaarde(invulwaarde='lommel',
+                                   label='lommel',
+                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/lommel'),
+        'londerzeel': KeuzelijstWaarde(invulwaarde='londerzeel',
+                                       label='londerzeel',
+                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/londerzeel'),
+        'lovendegem': KeuzelijstWaarde(invulwaarde='lovendegem',
+                                       label='lovendegem',
+                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/lovendegem'),
+        'lubbeek': KeuzelijstWaarde(invulwaarde='lubbeek',
+                                    label='lubbeek',
+                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/lubbeek'),
+        'lummen': KeuzelijstWaarde(invulwaarde='lummen',
+                                   label='lummen',
+                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/lummen'),
+        'maarkedal': KeuzelijstWaarde(invulwaarde='maarkedal',
+                                      label='maarkedal',
+                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/maarkedal'),
+        'maaseik': KeuzelijstWaarde(invulwaarde='maaseik',
+                                    label='maaseik',
+                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/maaseik'),
+        'maasmechelen': KeuzelijstWaarde(invulwaarde='maasmechelen',
+                                         label='maasmechelen',
+                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/maasmechelen'),
+        'machelen': KeuzelijstWaarde(invulwaarde='machelen',
+                                     label='machelen',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/machelen'),
+        'maldegem': KeuzelijstWaarde(invulwaarde='maldegem',
+                                     label='maldegem',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/maldegem'),
+        'malle': KeuzelijstWaarde(invulwaarde='malle',
+                                  label='malle',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/malle'),
+        'mechelen': KeuzelijstWaarde(invulwaarde='mechelen',
+                                     label='mechelen',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/mechelen'),
+        'meerhout': KeuzelijstWaarde(invulwaarde='meerhout',
+                                     label='meerhout',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/meerhout'),
+        'meeuwen-Gruitrode': KeuzelijstWaarde(invulwaarde='meeuwen-Gruitrode',
+                                              label='meeuwen-Gruitrode',
+                                              objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/meeuwen-Gruitrode'),
+        'meise': KeuzelijstWaarde(invulwaarde='meise',
+                                  label='meise',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/meise'),
+        'melle': KeuzelijstWaarde(invulwaarde='melle',
+                                  label='melle',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/melle'),
+        'menen': KeuzelijstWaarde(invulwaarde='menen',
+                                  label='menen',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/menen'),
+        'merchtem': KeuzelijstWaarde(invulwaarde='merchtem',
+                                     label='merchtem',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/merchtem'),
+        'merelbeke': KeuzelijstWaarde(invulwaarde='merelbeke',
+                                      label='merelbeke',
+                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/merelbeke'),
+        'merksplas': KeuzelijstWaarde(invulwaarde='merksplas',
+                                      label='merksplas',
+                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/merksplas'),
+        'mesen': KeuzelijstWaarde(invulwaarde='mesen',
+                                  label='mesen',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/mesen'),
+        'meulebeke': KeuzelijstWaarde(invulwaarde='meulebeke',
+                                      label='meulebeke',
+                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/meulebeke'),
+        'middelkerke': KeuzelijstWaarde(invulwaarde='middelkerke',
+                                        label='middelkerke',
+                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/middelkerke'),
+        'moerbeke': KeuzelijstWaarde(invulwaarde='moerbeke',
+                                     label='moerbeke',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/moerbeke'),
+        'mol': KeuzelijstWaarde(invulwaarde='mol',
+                                label='mol',
+                                objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/mol'),
+        'moorslede': KeuzelijstWaarde(invulwaarde='moorslede',
+                                      label='moorslede',
+                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/moorslede'),
+        'mortsel': KeuzelijstWaarde(invulwaarde='mortsel',
+                                    label='mortsel',
+                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/mortsel'),
+        'nazareth': KeuzelijstWaarde(invulwaarde='nazareth',
+                                     label='nazareth',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/nazareth'),
+        'neerpelt': KeuzelijstWaarde(invulwaarde='neerpelt',
+                                     label='neerpelt',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/neerpelt'),
+        'nevele': KeuzelijstWaarde(invulwaarde='nevele',
+                                   label='nevele',
+                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/nevele'),
+        'niel': KeuzelijstWaarde(invulwaarde='niel',
+                                 label='niel',
+                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/niel'),
+        'nieuwerkerken': KeuzelijstWaarde(invulwaarde='nieuwerkerken',
+                                          label='nieuwerkerken',
+                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/nieuwerkerken'),
+        'nieuwpoort': KeuzelijstWaarde(invulwaarde='nieuwpoort',
+                                       label='nieuwpoort',
+                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/nieuwpoort'),
+        'nijlen': KeuzelijstWaarde(invulwaarde='nijlen',
+                                   label='nijlen',
+                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/nijlen'),
+        'ninove': KeuzelijstWaarde(invulwaarde='ninove',
+                                   label='ninove',
+                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/ninove'),
+        'olen': KeuzelijstWaarde(invulwaarde='olen',
+                                 label='olen',
+                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/olen'),
+        'oostende': KeuzelijstWaarde(invulwaarde='oostende',
+                                     label='oostende',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/oostende'),
+        'oosterzele': KeuzelijstWaarde(invulwaarde='oosterzele',
+                                       label='oosterzele',
+                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/oosterzele'),
+        'oostkamp': KeuzelijstWaarde(invulwaarde='oostkamp',
+                                     label='oostkamp',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/oostkamp'),
+        'oostrozebeke': KeuzelijstWaarde(invulwaarde='oostrozebeke',
+                                         label='oostrozebeke',
+                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/oostrozebeke'),
+        'opglabbeek': KeuzelijstWaarde(invulwaarde='opglabbeek',
+                                       label='opglabbeek',
+                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/opglabbeek'),
+        'opwijk': KeuzelijstWaarde(invulwaarde='opwijk',
+                                   label='opwijk',
+                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/opwijk'),
+        'oud-Heverlee': KeuzelijstWaarde(invulwaarde='oud-Heverlee',
+                                         label='oud-Heverlee',
+                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/oud-Heverlee'),
+        'oud-Turnhout': KeuzelijstWaarde(invulwaarde='oud-Turnhout',
+                                         label='oud-Turnhout',
+                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/oud-Turnhout'),
+        'oudenaarde': KeuzelijstWaarde(invulwaarde='oudenaarde',
+                                       label='oudenaarde',
+                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/oudenaarde'),
+        'oudenburg': KeuzelijstWaarde(invulwaarde='oudenburg',
+                                      label='oudenburg',
+                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/oudenburg'),
+        'overijse': KeuzelijstWaarde(invulwaarde='overijse',
+                                     label='overijse',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/overijse'),
+        'overpelt': KeuzelijstWaarde(invulwaarde='overpelt',
+                                     label='overpelt',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/overpelt'),
+        'peer': KeuzelijstWaarde(invulwaarde='peer',
+                                 label='peer',
+                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/peer'),
+        'pepingen': KeuzelijstWaarde(invulwaarde='pepingen',
+                                     label='pepingen',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/pepingen'),
+        'pittem': KeuzelijstWaarde(invulwaarde='pittem',
+                                   label='pittem',
+                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/pittem'),
+        'poperinge': KeuzelijstWaarde(invulwaarde='poperinge',
+                                      label='poperinge',
+                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/poperinge'),
+        'putte': KeuzelijstWaarde(invulwaarde='putte',
+                                  label='putte',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/putte'),
+        'puurs': KeuzelijstWaarde(invulwaarde='puurs',
+                                  label='puurs',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/puurs'),
+        'ranst': KeuzelijstWaarde(invulwaarde='ranst',
+                                  label='ranst',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/ranst'),
+        'ravels': KeuzelijstWaarde(invulwaarde='ravels',
+                                   label='ravels',
+                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/ravels'),
+        'retie': KeuzelijstWaarde(invulwaarde='retie',
+                                  label='retie',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/retie'),
+        'riemst': KeuzelijstWaarde(invulwaarde='riemst',
+                                   label='riemst',
+                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/riemst'),
+        'rijkevorsel': KeuzelijstWaarde(invulwaarde='rijkevorsel',
+                                        label='rijkevorsel',
+                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/rijkevorsel'),
+        'roeselare': KeuzelijstWaarde(invulwaarde='roeselare',
+                                      label='roeselare',
+                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/roeselare'),
+        'ronse': KeuzelijstWaarde(invulwaarde='ronse',
+                                  label='ronse',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/ronse'),
+        'roosdaal': KeuzelijstWaarde(invulwaarde='roosdaal',
+                                     label='roosdaal',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/roosdaal'),
+        'rotselaar': KeuzelijstWaarde(invulwaarde='rotselaar',
+                                      label='rotselaar',
+                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/rotselaar'),
+        'ruiselede': KeuzelijstWaarde(invulwaarde='ruiselede',
+                                      label='ruiselede',
+                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/ruiselede'),
+        'rumst': KeuzelijstWaarde(invulwaarde='rumst',
+                                  label='rumst',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/rumst'),
+        'schelle': KeuzelijstWaarde(invulwaarde='schelle',
+                                    label='schelle',
+                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/schelle'),
+        'scherpenheuvel-Zichem': KeuzelijstWaarde(invulwaarde='scherpenheuvel-Zichem',
+                                                  label='scherpenheuvel-Zichem',
+                                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/scherpenheuvel-Zichem'),
+        'schilde': KeuzelijstWaarde(invulwaarde='schilde',
+                                    label='schilde',
+                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/schilde'),
+        'schoten': KeuzelijstWaarde(invulwaarde='schoten',
+                                    label='schoten',
+                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/schoten'),
+        'sint-Amands': KeuzelijstWaarde(invulwaarde='sint-Amands',
+                                        label='sint-Amands',
+                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/sint-Amands'),
+        'sint-Genesius-Rode': KeuzelijstWaarde(invulwaarde='sint-Genesius-Rode',
+                                               label='sint-Genesius-Rode',
+                                               objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/sint-Genesius-Rode'),
+        'sint-Gillis-Waas': KeuzelijstWaarde(invulwaarde='sint-Gillis-Waas',
+                                             label='sint-Gillis-Waas',
+                                             objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/sint-Gillis-Waas'),
+        'sint-Katelijne-Waver': KeuzelijstWaarde(invulwaarde='sint-Katelijne-Waver',
+                                                 label='sint-Katelijne-Waver',
+                                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/sint-Katelijne-Waver'),
+        'sint-Laureins': KeuzelijstWaarde(invulwaarde='sint-Laureins',
+                                          label='sint-Laureins',
+                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/sint-Laureins'),
+        'sint-Lievens-Houtem': KeuzelijstWaarde(invulwaarde='sint-Lievens-Houtem',
+                                                label='sint-Lievens-Houtem',
+                                                objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/sint-Lievens-Houtem'),
+        'sint-Martens-Latem': KeuzelijstWaarde(invulwaarde='sint-Martens-Latem',
+                                               label='sint-Martens-Latem',
+                                               objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/sint-Martens-Latem'),
+        'sint-Niklaas': KeuzelijstWaarde(invulwaarde='sint-Niklaas',
+                                         label='sint-Niklaas',
+                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/sint-Niklaas'),
+        'sint-Pieters-Leeuw': KeuzelijstWaarde(invulwaarde='sint-Pieters-Leeuw',
+                                               label='sint-Pieters-Leeuw',
+                                               objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/sint-Pieters-Leeuw'),
+        'sint-Truiden': KeuzelijstWaarde(invulwaarde='sint-Truiden',
+                                         label='sint-Truiden',
+                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/sint-Truiden'),
+        'spiere-Helkijn': KeuzelijstWaarde(invulwaarde='spiere-Helkijn',
+                                           label='spiere-Helkijn',
+                                           objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/spiere-Helkijn'),
+        'stabroek': KeuzelijstWaarde(invulwaarde='stabroek',
+                                     label='stabroek',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/stabroek'),
+        'staden': KeuzelijstWaarde(invulwaarde='staden',
+                                   label='staden',
+                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/staden'),
+        'steenokkerzeel': KeuzelijstWaarde(invulwaarde='steenokkerzeel',
+                                           label='steenokkerzeel',
+                                           objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/steenokkerzeel'),
+        'stekene': KeuzelijstWaarde(invulwaarde='stekene',
+                                    label='stekene',
+                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/stekene'),
+        'temse': KeuzelijstWaarde(invulwaarde='temse',
+                                  label='temse',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/temse'),
+        'ternat': KeuzelijstWaarde(invulwaarde='ternat',
+                                   label='ternat',
+                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/ternat'),
+        'tervuren': KeuzelijstWaarde(invulwaarde='tervuren',
+                                     label='tervuren',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/tervuren'),
+        'tessenderlo': KeuzelijstWaarde(invulwaarde='tessenderlo',
+                                        label='tessenderlo',
+                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/tessenderlo'),
+        'tielt': KeuzelijstWaarde(invulwaarde='tielt',
+                                  label='tielt',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/tielt'),
+        'tielt-Winge': KeuzelijstWaarde(invulwaarde='tielt-Winge',
+                                        label='tielt-Winge',
+                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/tielt-Winge'),
+        'tienen': KeuzelijstWaarde(invulwaarde='tienen',
+                                   label='tienen',
+                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/tienen'),
+        'tongeren': KeuzelijstWaarde(invulwaarde='tongeren',
+                                     label='tongeren',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/tongeren'),
+        'torhout': KeuzelijstWaarde(invulwaarde='torhout',
+                                    label='torhout',
+                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/torhout'),
+        'tremelo': KeuzelijstWaarde(invulwaarde='tremelo',
+                                    label='tremelo',
+                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/tremelo'),
+        'turnhout': KeuzelijstWaarde(invulwaarde='turnhout',
+                                     label='turnhout',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/turnhout'),
+        'veurne': KeuzelijstWaarde(invulwaarde='veurne',
+                                   label='veurne',
+                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/veurne'),
+        'vilvoorde': KeuzelijstWaarde(invulwaarde='vilvoorde',
+                                      label='vilvoorde',
+                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/vilvoorde'),
+        'vleteren': KeuzelijstWaarde(invulwaarde='vleteren',
+                                     label='vleteren',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/vleteren'),
+        'voeren': KeuzelijstWaarde(invulwaarde='voeren',
+                                   label='voeren',
+                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/voeren'),
+        'vorselaar': KeuzelijstWaarde(invulwaarde='vorselaar',
+                                      label='vorselaar',
+                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/vorselaar'),
+        'vosselaar': KeuzelijstWaarde(invulwaarde='vosselaar',
+                                      label='vosselaar',
+                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/vosselaar'),
+        'waarschoot': KeuzelijstWaarde(invulwaarde='waarschoot',
+                                       label='waarschoot',
+                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/waarschoot'),
+        'waasmunster': KeuzelijstWaarde(invulwaarde='waasmunster',
+                                        label='waasmunster',
+                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/waasmunster'),
+        'wachtebeke': KeuzelijstWaarde(invulwaarde='wachtebeke',
+                                       label='wachtebeke',
+                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/wachtebeke'),
+        'waregem': KeuzelijstWaarde(invulwaarde='waregem',
+                                    label='waregem',
+                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/waregem'),
+        'wellen': KeuzelijstWaarde(invulwaarde='wellen',
+                                   label='wellen',
+                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/wellen'),
+        'wemmel': KeuzelijstWaarde(invulwaarde='wemmel',
+                                   label='wemmel',
+                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/wemmel'),
+        'wervik': KeuzelijstWaarde(invulwaarde='wervik',
+                                   label='wervik',
+                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/wervik'),
+        'westerlo': KeuzelijstWaarde(invulwaarde='westerlo',
+                                     label='westerlo',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/westerlo'),
+        'wetteren': KeuzelijstWaarde(invulwaarde='wetteren',
+                                     label='wetteren',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/wetteren'),
+        'wevelgem': KeuzelijstWaarde(invulwaarde='wevelgem',
+                                     label='wevelgem',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/wevelgem'),
+        'wezembeek-Oppem': KeuzelijstWaarde(invulwaarde='wezembeek-Oppem',
+                                            label='wezembeek-Oppem',
+                                            objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/wezembeek-Oppem'),
+        'wichelen': KeuzelijstWaarde(invulwaarde='wichelen',
+                                     label='wichelen',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/wichelen'),
+        'wielsbeke': KeuzelijstWaarde(invulwaarde='wielsbeke',
+                                      label='wielsbeke',
+                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/wielsbeke'),
+        'wijnegem': KeuzelijstWaarde(invulwaarde='wijnegem',
+                                     label='wijnegem',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/wijnegem'),
+        'willebroek': KeuzelijstWaarde(invulwaarde='willebroek',
+                                       label='willebroek',
+                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/willebroek'),
+        'wingene': KeuzelijstWaarde(invulwaarde='wingene',
+                                    label='wingene',
+                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/wingene'),
+        'wommelgem': KeuzelijstWaarde(invulwaarde='wommelgem',
+                                      label='wommelgem',
+                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/wommelgem'),
+        'wortegem-Petegem': KeuzelijstWaarde(invulwaarde='wortegem-Petegem',
+                                             label='wortegem-Petegem',
+                                             objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/wortegem-Petegem'),
+        'wuustwezel': KeuzelijstWaarde(invulwaarde='wuustwezel',
+                                       label='wuustwezel',
+                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/wuustwezel'),
+        'zandhoven': KeuzelijstWaarde(invulwaarde='zandhoven',
+                                      label='zandhoven',
+                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/zandhoven'),
+        'zaventem': KeuzelijstWaarde(invulwaarde='zaventem',
+                                     label='zaventem',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/zaventem'),
+        'zedelgem': KeuzelijstWaarde(invulwaarde='zedelgem',
+                                     label='zedelgem',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/zedelgem'),
+        'zele': KeuzelijstWaarde(invulwaarde='zele',
+                                 label='zele',
+                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/zele'),
+        'zelzate': KeuzelijstWaarde(invulwaarde='zelzate',
+                                    label='zelzate',
+                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/zelzate'),
+        'zemst': KeuzelijstWaarde(invulwaarde='zemst',
+                                  label='zemst',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/zemst'),
+        'zingem': KeuzelijstWaarde(invulwaarde='zingem',
+                                   label='zingem',
+                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/zingem'),
+        'zoersel': KeuzelijstWaarde(invulwaarde='zoersel',
+                                    label='zoersel',
+                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/zoersel'),
+        'zomergem': KeuzelijstWaarde(invulwaarde='zomergem',
+                                     label='zomergem',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/zomergem'),
+        'zonhoven': KeuzelijstWaarde(invulwaarde='zonhoven',
+                                     label='zonhoven',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/zonhoven'),
+        'zonnebeke': KeuzelijstWaarde(invulwaarde='zonnebeke',
+                                      label='zonnebeke',
+                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/zonnebeke'),
+        'zottegem': KeuzelijstWaarde(invulwaarde='zottegem',
+                                     label='zottegem',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/zottegem'),
+        'zoutleeuw': KeuzelijstWaarde(invulwaarde='zoutleeuw',
+                                      label='zoutleeuw',
+                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/zoutleeuw'),
+        'zuienkerke': KeuzelijstWaarde(invulwaarde='zuienkerke',
+                                       label='zuienkerke',
+                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/zuienkerke'),
+        'zulte': KeuzelijstWaarde(invulwaarde='zulte',
+                                  label='zulte',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/zulte'),
+        'zutendaal': KeuzelijstWaarde(invulwaarde='zutendaal',
+                                      label='zutendaal',
+                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/zutendaal'),
+        'zwalm': KeuzelijstWaarde(invulwaarde='zwalm',
+                                  label='zwalm',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/zwalm'),
+        'zwevegem': KeuzelijstWaarde(invulwaarde='zwevegem',
+                                     label='zwevegem',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/zwevegem'),
+        'zwijndrecht': KeuzelijstWaarde(invulwaarde='zwijndrecht',
+                                        label='zwijndrecht',
+                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/zwijndrecht')
+    }
 
-    def __init__(self):
-        super().__init__(naam="KlAlgGemeente",
-                         label="Gemeente",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KlAlgGemeente",
-                         definition="Lijst van gemeentes in Vlaanderen.",
-                         usagenote="",
-                         deprecated_version="",
-                         codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlAlgGemeente")
-
-        self.add_option("aalst", "aalst", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/aalst")
-        self.add_option("aalter", "aalter", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/aalter")
-        self.add_option("aarschot", "aarschot", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/aarschot")
-        self.add_option("aartselaar", "aartselaar", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/aartselaar")
-        self.add_option("affligem", "affligem", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/affligem")
-        self.add_option("alken", "alken", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/alken")
-        self.add_option("alveringem", "alveringem", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/alveringem")
-        self.add_option("antwerpen", "antwerpen", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/antwerpen")
-        self.add_option("anzegem", "anzegem", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/anzegem")
-        self.add_option("ardooie", "ardooie", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/ardooie")
-        self.add_option("arendonk", "arendonk", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/arendonk")
-        self.add_option("as", "as", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/as")
-        self.add_option("asse", "asse", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/asse")
-        self.add_option("assenede", "assenede", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/assenede")
-        self.add_option("avelgem", "avelgem", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/avelgem")
-        self.add_option("baarle-Hertog", "baarle-Hertog", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/baarle-Hertog")
-        self.add_option("balen", "balen", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/balen")
-        self.add_option("beernem", "beernem", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/beernem")
-        self.add_option("beerse", "beerse", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/beerse")
-        self.add_option("beersel", "beersel", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/beersel")
-        self.add_option("begijnendijk", "begijnendijk", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/begijnendijk")
-        self.add_option("bekkevoort", "bekkevoort", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/bekkevoort")
-        self.add_option("beringen", "beringen", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/beringen")
-        self.add_option("berlaar", "berlaar", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/berlaar")
-        self.add_option("berlare", "berlare", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/berlare")
-        self.add_option("bertem", "bertem", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/bertem")
-        self.add_option("bever", "bever", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/bever")
-        self.add_option("beveren", "beveren", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/beveren")
-        self.add_option("bierbeek", "bierbeek", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/bierbeek")
-        self.add_option("bilzen", "bilzen", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/bilzen")
-        self.add_option("blankenberge", "blankenberge", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/blankenberge")
-        self.add_option("bocholt", "bocholt", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/bocholt")
-        self.add_option("boechout", "boechout", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/boechout")
-        self.add_option("bonheiden", "bonheiden", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/bonheiden")
-        self.add_option("boom", "boom", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/boom")
-        self.add_option("boortmeerbeek", "boortmeerbeek", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/boortmeerbeek")
-        self.add_option("borgloon", "borgloon", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/borgloon")
-        self.add_option("bornem", "bornem", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/bornem")
-        self.add_option("borsbeek", "borsbeek", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/borsbeek")
-        self.add_option("boutersem", "boutersem", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/boutersem")
-        self.add_option("brakel", "brakel", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/brakel")
-        self.add_option("brasschaat", "brasschaat", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/brasschaat")
-        self.add_option("brecht", "brecht", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/brecht")
-        self.add_option("bredene", "bredene", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/bredene")
-        self.add_option("bree", "bree", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/bree")
-        self.add_option("brugge", "brugge", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/brugge")
-        self.add_option("buggenhout", "buggenhout", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/buggenhout")
-        self.add_option("damme", "damme", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/damme")
-        self.add_option("de-Haan", "de Haan", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/de-Haan")
-        self.add_option("de-Panne", "de Panne", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/de-Panne")
-        self.add_option("de-Pinte", "de Pinte", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/de-Pinte")
-        self.add_option("deerlijk", "deerlijk", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/deerlijk")
-        self.add_option("deinze", "deinze", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/deinze")
-        self.add_option("denderleeuw", "denderleeuw", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/denderleeuw")
-        self.add_option("dendermonde", "dendermonde", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/dendermonde")
-        self.add_option("dentergem", "dentergem", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/dentergem")
-        self.add_option("dessel", "dessel", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/dessel")
-        self.add_option("destelbergen", "destelbergen", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/destelbergen")
-        self.add_option("diepenbeek", "diepenbeek", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/diepenbeek")
-        self.add_option("diest", "diest", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/diest")
-        self.add_option("diksmuide", "diksmuide", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/diksmuide")
-        self.add_option("dilbeek", "dilbeek", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/dilbeek")
-        self.add_option("dilsen-Stokkem", "dilsen-Stokkem", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/dilsen-Stokkem")
-        self.add_option("drogenbos", "drogenbos", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/drogenbos")
-        self.add_option("duffel", "duffel", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/duffel")
-        self.add_option("edegem", "edegem", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/edegem")
-        self.add_option("eeklo", "eeklo", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/eeklo")
-        self.add_option("erpe-Mere", "erpe-Mere", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/erpe-Mere")
-        self.add_option("essen", "essen", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/essen")
-        self.add_option("evergem", "evergem", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/evergem")
-        self.add_option("galmaarden", "galmaarden", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/galmaarden")
-        self.add_option("gavere", "gavere", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/gavere")
-        self.add_option("geel", "geel", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/geel")
-        self.add_option("geetbets", "geetbets", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/geetbets")
-        self.add_option("genk", "genk", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/genk")
-        self.add_option("gent", "gent", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/gent")
-        self.add_option("geraardsbergen", "geraardsbergen", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/geraardsbergen")
-        self.add_option("gingelom", "gingelom", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/gingelom")
-        self.add_option("gistel", "gistel", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/gistel")
-        self.add_option("glabbeek", "glabbeek", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/glabbeek")
-        self.add_option("gooik", "gooik", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/gooik")
-        self.add_option("grimbergen", "grimbergen", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/grimbergen")
-        self.add_option("grobbendonk", "grobbendonk", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/grobbendonk")
-        self.add_option("haacht", "haacht", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/haacht")
-        self.add_option("haaltert", "haaltert", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/haaltert")
-        self.add_option("halen", "halen", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/halen")
-        self.add_option("halle", "halle", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/halle")
-        self.add_option("ham", "ham", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/ham")
-        self.add_option("hamme", "hamme", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/hamme")
-        self.add_option("hamont-Achel", "hamont-Achel", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/hamont-Achel")
-        self.add_option("harelbeke", "harelbeke", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/harelbeke")
-        self.add_option("hasselt", "hasselt", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/hasselt")
-        self.add_option("hechtel-Eksel", "hechtel-Eksel", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/hechtel-Eksel")
-        self.add_option("heers", "heers", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/heers")
-        self.add_option("heist-op-den-Berg", "heist-op-den-Berg", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/heist-op-den-Berg")
-        self.add_option("hemiksem", "hemiksem", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/hemiksem")
-        self.add_option("herent", "herent", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/herent")
-        self.add_option("herentals", "herentals", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/herentals")
-        self.add_option("herenthout", "herenthout", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/herenthout")
-        self.add_option("herk-de-Stad", "herk-de-Stad", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/herk-de-Stad")
-        self.add_option("herne", "herne", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/herne")
-        self.add_option("herselt", "herselt", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/herselt")
-        self.add_option("herstappe", "herstappe", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/herstappe")
-        self.add_option("herzele", "herzele", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/herzele")
-        self.add_option("heusden-Zolder", "heusden-Zolder", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/heusden-Zolder")
-        self.add_option("heuvelland", "heuvelland", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/heuvelland")
-        self.add_option("hoegaarden", "hoegaarden", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/hoegaarden")
-        self.add_option("hoeilaart", "hoeilaart", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/hoeilaart")
-        self.add_option("hoeselt", "hoeselt", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/hoeselt")
-        self.add_option("holsbeek", "holsbeek", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/holsbeek")
-        self.add_option("hooglede", "hooglede", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/hooglede")
-        self.add_option("hoogstraten", "hoogstraten", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/hoogstraten")
-        self.add_option("horebeke", "horebeke", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/horebeke")
-        self.add_option("houthalen-Helchteren", "houthalen-Helchteren", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/houthalen-Helchteren")
-        self.add_option("houthulst", "houthulst", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/houthulst")
-        self.add_option("hove", "hove", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/hove")
-        self.add_option("huldenberg", "huldenberg", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/huldenberg")
-        self.add_option("hulshout", "hulshout", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/hulshout")
-        self.add_option("ichtegem", "ichtegem", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/ichtegem")
-        self.add_option("ieper", "ieper", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/ieper")
-        self.add_option("ingelmunster", "ingelmunster", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/ingelmunster")
-        self.add_option("izegem", "izegem", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/izegem")
-        self.add_option("jabbeke", "jabbeke", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/jabbeke")
-        self.add_option("kalmthout", "kalmthout", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/kalmthout")
-        self.add_option("kampenhout", "kampenhout", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/kampenhout")
-        self.add_option("kapelle-op-den-Bos", "kapelle-op-den-Bos", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/kapelle-op-den-Bos")
-        self.add_option("kapellen", "kapellen", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/kapellen")
-        self.add_option("kaprijke", "kaprijke", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/kaprijke")
-        self.add_option("kasterlee", "kasterlee", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/kasterlee")
-        self.add_option("keerbergen", "keerbergen", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/keerbergen")
-        self.add_option("kinrooi", "kinrooi", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/kinrooi")
-        self.add_option("kluisbergen", "kluisbergen", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/kluisbergen")
-        self.add_option("knesselare", "knesselare", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/knesselare")
-        self.add_option("knokke-Heist", "knokke-Heist", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/knokke-Heist")
-        self.add_option("koekelare", "koekelare", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/koekelare")
-        self.add_option("koksijde", "koksijde", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/koksijde")
-        self.add_option("kontich", "kontich", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/kontich")
-        self.add_option("kortemark", "kortemark", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/kortemark")
-        self.add_option("kortenaken", "kortenaken", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/kortenaken")
-        self.add_option("kortenberg", "kortenberg", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/kortenberg")
-        self.add_option("kortessem", "kortessem", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/kortessem")
-        self.add_option("kortrijk", "kortrijk", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/kortrijk")
-        self.add_option("kraainem", "kraainem", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/kraainem")
-        self.add_option("kruibeke", "kruibeke", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/kruibeke")
-        self.add_option("kruishoutem", "kruishoutem", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/kruishoutem")
-        self.add_option("kuurne", "kuurne", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/kuurne")
-        self.add_option("laakdal", "laakdal", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/laakdal")
-        self.add_option("laarne", "laarne", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/laarne")
-        self.add_option("lanaken", "lanaken", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/lanaken")
-        self.add_option("landen", "landen", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/landen")
-        self.add_option("langemark-Poelkapelle", "langemark-Poelkapelle", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/langemark-Poelkapelle")
-        self.add_option("lebbeke", "lebbeke", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/lebbeke")
-        self.add_option("lede", "lede", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/lede")
-        self.add_option("ledegem", "ledegem", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/ledegem")
-        self.add_option("lendelede", "lendelede", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/lendelede")
-        self.add_option("lennik", "lennik", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/lennik")
-        self.add_option("leopoldsburg", "leopoldsburg", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/leopoldsburg")
-        self.add_option("leuven", "leuven", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/leuven")
-        self.add_option("lichtervelde", "lichtervelde", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/lichtervelde")
-        self.add_option("liedekerke", "liedekerke", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/liedekerke")
-        self.add_option("lier", "lier", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/lier")
-        self.add_option("lierde", "lierde", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/lierde")
-        self.add_option("lille", "lille", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/lille")
-        self.add_option("linkebeek", "linkebeek", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/linkebeek")
-        self.add_option("lint", "lint", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/lint")
-        self.add_option("linter", "linter", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/linter")
-        self.add_option("lo-Reninge", "lo-Reninge", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/lo-Reninge")
-        self.add_option("lochristi", "lochristi", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/lochristi")
-        self.add_option("lokeren", "lokeren", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/lokeren")
-        self.add_option("lommel", "lommel", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/lommel")
-        self.add_option("londerzeel", "londerzeel", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/londerzeel")
-        self.add_option("lovendegem", "lovendegem", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/lovendegem")
-        self.add_option("lubbeek", "lubbeek", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/lubbeek")
-        self.add_option("lummen", "lummen", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/lummen")
-        self.add_option("maarkedal", "maarkedal", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/maarkedal")
-        self.add_option("maaseik", "maaseik", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/maaseik")
-        self.add_option("maasmechelen", "maasmechelen", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/maasmechelen")
-        self.add_option("machelen", "machelen", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/machelen")
-        self.add_option("maldegem", "maldegem", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/maldegem")
-        self.add_option("malle", "malle", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/malle")
-        self.add_option("mechelen", "mechelen", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/mechelen")
-        self.add_option("meerhout", "meerhout", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/meerhout")
-        self.add_option("meeuwen-Gruitrode", "meeuwen-Gruitrode", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/meeuwen-Gruitrode")
-        self.add_option("meise", "meise", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/meise")
-        self.add_option("melle", "melle", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/melle")
-        self.add_option("menen", "menen", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/menen")
-        self.add_option("merchtem", "merchtem", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/merchtem")
-        self.add_option("merelbeke", "merelbeke", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/merelbeke")
-        self.add_option("merksplas", "merksplas", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/merksplas")
-        self.add_option("mesen", "mesen", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/mesen")
-        self.add_option("meulebeke", "meulebeke", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/meulebeke")
-        self.add_option("middelkerke", "middelkerke", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/middelkerke")
-        self.add_option("moerbeke", "moerbeke", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/moerbeke")
-        self.add_option("mol", "mol", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/mol")
-        self.add_option("moorslede", "moorslede", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/moorslede")
-        self.add_option("mortsel", "mortsel", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/mortsel")
-        self.add_option("nazareth", "nazareth", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/nazareth")
-        self.add_option("neerpelt", "neerpelt", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/neerpelt")
-        self.add_option("nevele", "nevele", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/nevele")
-        self.add_option("niel", "niel", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/niel")
-        self.add_option("nieuwerkerken", "nieuwerkerken", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/nieuwerkerken")
-        self.add_option("nieuwpoort", "nieuwpoort", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/nieuwpoort")
-        self.add_option("nijlen", "nijlen", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/nijlen")
-        self.add_option("ninove", "ninove", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/ninove")
-        self.add_option("olen", "olen", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/olen")
-        self.add_option("oostende", "oostende", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/oostende")
-        self.add_option("oosterzele", "oosterzele", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/oosterzele")
-        self.add_option("oostkamp", "oostkamp", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/oostkamp")
-        self.add_option("oostrozebeke", "oostrozebeke", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/oostrozebeke")
-        self.add_option("opglabbeek", "opglabbeek", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/opglabbeek")
-        self.add_option("opwijk", "opwijk", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/opwijk")
-        self.add_option("oud-Heverlee", "oud-Heverlee", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/oud-Heverlee")
-        self.add_option("oud-Turnhout", "oud-Turnhout", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/oud-Turnhout")
-        self.add_option("oudenaarde", "oudenaarde", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/oudenaarde")
-        self.add_option("oudenburg", "oudenburg", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/oudenburg")
-        self.add_option("overijse", "overijse", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/overijse")
-        self.add_option("overpelt", "overpelt", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/overpelt")
-        self.add_option("peer", "peer", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/peer")
-        self.add_option("pepingen", "pepingen", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/pepingen")
-        self.add_option("pittem", "pittem", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/pittem")
-        self.add_option("poperinge", "poperinge", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/poperinge")
-        self.add_option("putte", "putte", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/putte")
-        self.add_option("puurs", "puurs", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/puurs")
-        self.add_option("ranst", "ranst", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/ranst")
-        self.add_option("ravels", "ravels", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/ravels")
-        self.add_option("retie", "retie", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/retie")
-        self.add_option("riemst", "riemst", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/riemst")
-        self.add_option("rijkevorsel", "rijkevorsel", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/rijkevorsel")
-        self.add_option("roeselare", "roeselare", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/roeselare")
-        self.add_option("ronse", "ronse", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/ronse")
-        self.add_option("roosdaal", "roosdaal", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/roosdaal")
-        self.add_option("rotselaar", "rotselaar", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/rotselaar")
-        self.add_option("ruiselede", "ruiselede", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/ruiselede")
-        self.add_option("rumst", "rumst", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/rumst")
-        self.add_option("schelle", "schelle", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/schelle")
-        self.add_option("scherpenheuvel-Zichem", "scherpenheuvel-Zichem", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/scherpenheuvel-Zichem")
-        self.add_option("schilde", "schilde", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/schilde")
-        self.add_option("schoten", "schoten", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/schoten")
-        self.add_option("sint-Amands", "sint-Amands", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/sint-Amands")
-        self.add_option("sint-Genesius-Rode", "sint-Genesius-Rode", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/sint-Genesius-Rode")
-        self.add_option("sint-Gillis-Waas", "sint-Gillis-Waas", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/sint-Gillis-Waas")
-        self.add_option("sint-Katelijne-Waver", "sint-Katelijne-Waver", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/sint-Katelijne-Waver")
-        self.add_option("sint-Laureins", "sint-Laureins", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/sint-Laureins")
-        self.add_option("sint-Lievens-Houtem", "sint-Lievens-Houtem", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/sint-Lievens-Houtem")
-        self.add_option("sint-Martens-Latem", "sint-Martens-Latem", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/sint-Martens-Latem")
-        self.add_option("sint-Niklaas", "sint-Niklaas", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/sint-Niklaas")
-        self.add_option("sint-Pieters-Leeuw", "sint-Pieters-Leeuw", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/sint-Pieters-Leeuw")
-        self.add_option("sint-Truiden", "sint-Truiden", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/sint-Truiden")
-        self.add_option("spiere-Helkijn", "spiere-Helkijn", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/spiere-Helkijn")
-        self.add_option("stabroek", "stabroek", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/stabroek")
-        self.add_option("staden", "staden", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/staden")
-        self.add_option("steenokkerzeel", "steenokkerzeel", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/steenokkerzeel")
-        self.add_option("stekene", "stekene", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/stekene")
-        self.add_option("temse", "temse", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/temse")
-        self.add_option("ternat", "ternat", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/ternat")
-        self.add_option("tervuren", "tervuren", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/tervuren")
-        self.add_option("tessenderlo", "tessenderlo", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/tessenderlo")
-        self.add_option("tielt", "tielt", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/tielt")
-        self.add_option("tielt-Winge", "tielt-Winge", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/tielt-Winge")
-        self.add_option("tienen", "tienen", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/tienen")
-        self.add_option("tongeren", "tongeren", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/tongeren")
-        self.add_option("torhout", "torhout", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/torhout")
-        self.add_option("tremelo", "tremelo", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/tremelo")
-        self.add_option("turnhout", "turnhout", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/turnhout")
-        self.add_option("veurne", "veurne", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/veurne")
-        self.add_option("vilvoorde", "vilvoorde", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/vilvoorde")
-        self.add_option("vleteren", "vleteren", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/vleteren")
-        self.add_option("voeren", "voeren", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/voeren")
-        self.add_option("vorselaar", "vorselaar", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/vorselaar")
-        self.add_option("vosselaar", "vosselaar", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/vosselaar")
-        self.add_option("waarschoot", "waarschoot", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/waarschoot")
-        self.add_option("waasmunster", "waasmunster", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/waasmunster")
-        self.add_option("wachtebeke", "wachtebeke", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/wachtebeke")
-        self.add_option("waregem", "waregem", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/waregem")
-        self.add_option("wellen", "wellen", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/wellen")
-        self.add_option("wemmel", "wemmel", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/wemmel")
-        self.add_option("wervik", "wervik", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/wervik")
-        self.add_option("westerlo", "westerlo", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/westerlo")
-        self.add_option("wetteren", "wetteren", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/wetteren")
-        self.add_option("wevelgem", "wevelgem", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/wevelgem")
-        self.add_option("wezembeek-Oppem", "wezembeek-Oppem", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/wezembeek-Oppem")
-        self.add_option("wichelen", "wichelen", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/wichelen")
-        self.add_option("wielsbeke", "wielsbeke", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/wielsbeke")
-        self.add_option("wijnegem", "wijnegem", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/wijnegem")
-        self.add_option("willebroek", "willebroek", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/willebroek")
-        self.add_option("wingene", "wingene", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/wingene")
-        self.add_option("wommelgem", "wommelgem", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/wommelgem")
-        self.add_option("wortegem-Petegem", "wortegem-Petegem", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/wortegem-Petegem")
-        self.add_option("wuustwezel", "wuustwezel", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/wuustwezel")
-        self.add_option("zandhoven", "zandhoven", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/zandhoven")
-        self.add_option("zaventem", "zaventem", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/zaventem")
-        self.add_option("zedelgem", "zedelgem", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/zedelgem")
-        self.add_option("zele", "zele", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/zele")
-        self.add_option("zelzate", "zelzate", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/zelzate")
-        self.add_option("zemst", "zemst", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/zemst")
-        self.add_option("zingem", "zingem", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/zingem")
-        self.add_option("zoersel", "zoersel", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/zoersel")
-        self.add_option("zomergem", "zomergem", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/zomergem")
-        self.add_option("zonhoven", "zonhoven", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/zonhoven")
-        self.add_option("zonnebeke", "zonnebeke", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/zonnebeke")
-        self.add_option("zottegem", "zottegem", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/zottegem")
-        self.add_option("zoutleeuw", "zoutleeuw", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/zoutleeuw")
-        self.add_option("zuienkerke", "zuienkerke", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/zuienkerke")
-        self.add_option("zulte", "zulte", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/zulte")
-        self.add_option("zutendaal", "zutendaal", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/zutendaal")
-        self.add_option("zwalm", "zwalm", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/zwalm")
-        self.add_option("zwevegem", "zwevegem", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/zwevegem")
-        self.add_option("zwijndrecht", "zwijndrecht", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgGemeente/zwijndrecht")

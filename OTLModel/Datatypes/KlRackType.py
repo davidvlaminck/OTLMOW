@@ -1,22 +1,31 @@
 # coding=utf-8
-from OTLModel.Datatypes.Keuzelijst import Keuzelijst
+from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
+from OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 
 # Generated with OTLEnumerationCreator. To modify: extend, do not edit
-class KlRackType(Keuzelijst):
+class KlRackType(KeuzelijstField):
     """Lijst met gestandaardiseerde en niet-gestandaardiseerde types rack in gebruik bij de assetbeheerder."""
+    naam = 'KlRackType'
+    label = 'rack type'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlRackType'
+    definition = 'Lijst met gestandaardiseerde en niet-gestandaardiseerde types rack in gebruik bij de assetbeheerder.'
+    codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlRackType'
+    options = {
+        '19-inch': KeuzelijstWaarde(invulwaarde='19-inch',
+                                    label='19-inch',
+                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlRackType/19-inch'),
+        '21-inch': KeuzelijstWaarde(invulwaarde='21-inch',
+                                    label='21-inch',
+                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlRackType/21-inch'),
+        'DIN-rail': KeuzelijstWaarde(invulwaarde='DIN-rail',
+                                     label='DIN-rail',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlRackType/DIN-rail'),
+        'MIVLVERack': KeuzelijstWaarde(invulwaarde='MIVLVERack',
+                                       label='MIVLVERack',
+                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlRackType/MIVLVERack'),
+        'MIVSATRack': KeuzelijstWaarde(invulwaarde='MIVSATRack',
+                                       label='MIVSATRack',
+                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlRackType/MIVSATRack')
+    }
 
-    def __init__(self):
-        super().__init__(naam="KlRackType",
-                         label="rack type",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlRackType",
-                         definition="Lijst met gestandaardiseerde en niet-gestandaardiseerde types rack in gebruik bij de assetbeheerder.",
-                         usagenote="",
-                         deprecated_version="",
-                         codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlRackType")
-
-        self.add_option("19-inch", "19-inch", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlRackType/19-inch")
-        self.add_option("21-inch", "21-inch", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlRackType/21-inch")
-        self.add_option("DIN-rail", "DIN-rail", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlRackType/DIN-rail")
-        self.add_option("MIVLVERack", "MIVLVERack", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlRackType/MIVLVERack")
-        self.add_option("MIVSATRack", "MIVSATRack", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlRackType/MIVSATRack")

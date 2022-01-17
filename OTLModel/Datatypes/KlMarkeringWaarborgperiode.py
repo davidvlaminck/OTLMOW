@@ -1,20 +1,28 @@
 # coding=utf-8
-from OTLModel.Datatypes.Keuzelijst import Keuzelijst
+from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
+from OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 
 # Generated with OTLEnumerationCreator. To modify: extend, do not edit
-class KlMarkeringWaarborgperiode(Keuzelijst):
+class KlMarkeringWaarborgperiode(KeuzelijstField):
     """Opties om de waarborgperiode aan te duiden."""
+    naam = 'KlMarkeringWaarborgperiode'
+    label = 'markeringswaarborgperiode'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlMarkeringWaarborgperiode'
+    definition = 'Opties om de waarborgperiode aan te duiden.'
+    codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlMarkeringWaarborgperiode'
+    options = {
+        '1-jaar': KeuzelijstWaarde(invulwaarde='1-jaar',
+                                   label='1 jaar',
+                                   definitie='Waarborgperiode van 1 jaar.',
+                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlMarkeringWaarborgperiode/1-jaar'),
+        '3-jaar': KeuzelijstWaarde(invulwaarde='3-jaar',
+                                   label='3 jaar',
+                                   definitie='Waarborgperiode van 3 jaar.',
+                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlMarkeringWaarborgperiode/3-jaar'),
+        '6-jaar': KeuzelijstWaarde(invulwaarde='6-jaar',
+                                   label='6 jaar',
+                                   definitie='Waarborgperiode van 6 jaar.',
+                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlMarkeringWaarborgperiode/6-jaar')
+    }
 
-    def __init__(self):
-        super().__init__(naam="KlMarkeringWaarborgperiode",
-                         label="markeringswaarborgperiode",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlMarkeringWaarborgperiode",
-                         definition="Opties om de waarborgperiode aan te duiden.",
-                         usagenote="",
-                         deprecated_version="",
-                         codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlMarkeringWaarborgperiode")
-
-        self.add_option("1-jaar", "1 jaar", "Waarborgperiode van 1 jaar.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlMarkeringWaarborgperiode/1-jaar")
-        self.add_option("3-jaar", "3 jaar", "Waarborgperiode van 3 jaar.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlMarkeringWaarborgperiode/3-jaar")
-        self.add_option("6-jaar", "6 jaar", "Waarborgperiode van 6 jaar.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlMarkeringWaarborgperiode/6-jaar")

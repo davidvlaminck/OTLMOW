@@ -1,21 +1,32 @@
 # coding=utf-8
-from OTLModel.Datatypes.Keuzelijst import Keuzelijst
+from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
+from OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 
 # Generated with OTLEnumerationCreator. To modify: extend, do not edit
-class KlIVRIMerkTLCfi(Keuzelijst):
+class KlIVRIMerkTLCfi(KeuzelijstField):
     """Het merk van de TLC-fi poort."""
+    naam = 'KlIVRIMerkTLCfi'
+    label = 'iVRIMerkTLCfi'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlIVRIMerkTLCfi'
+    definition = 'Het merk van de TLC-fi poort.'
+    codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlIVRIMerkTLCfi'
+    options = {
+        'dynniq': KeuzelijstWaarde(invulwaarde='dynniq',
+                                   label='Dynniq',
+                                   definitie='Dynniq',
+                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlIVRIMerkTLCfi/dynniq'),
+        'ko-hartog': KeuzelijstWaarde(invulwaarde='ko-hartog',
+                                      label='Ko Hartog',
+                                      definitie='Ko Hartog',
+                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlIVRIMerkTLCfi/ko-hartog'),
+        'siemens': KeuzelijstWaarde(invulwaarde='siemens',
+                                    label='Siemens',
+                                    definitie='Siemens',
+                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlIVRIMerkTLCfi/siemens'),
+        'yunex': KeuzelijstWaarde(invulwaarde='yunex',
+                                  label='Yunex',
+                                  definitie='Yunex',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlIVRIMerkTLCfi/yunex')
+    }
 
-    def __init__(self):
-        super().__init__(naam="KlIVRIMerkTLCfi",
-                         label="iVRIMerkTLCfi",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlIVRIMerkTLCfi",
-                         definition="Het merk van de TLC-fi poort.",
-                         usagenote="",
-                         deprecated_version="",
-                         codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlIVRIMerkTLCfi")
-
-        self.add_option("dynniq", "Dynniq", "Dynniq", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlIVRIMerkTLCfi/dynniq")
-        self.add_option("ko-hartog", "Ko Hartog", "Ko Hartog", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlIVRIMerkTLCfi/ko-hartog")
-        self.add_option("siemens", "Siemens", "Siemens", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlIVRIMerkTLCfi/siemens")
-        self.add_option("yunex", "Yunex", "Yunex", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlIVRIMerkTLCfi/yunex")

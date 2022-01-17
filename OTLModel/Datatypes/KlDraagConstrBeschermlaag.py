@@ -1,20 +1,28 @@
 # coding=utf-8
-from OTLModel.Datatypes.Keuzelijst import Keuzelijst
+from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
+from OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 
 # Generated with OTLEnumerationCreator. To modify: extend, do not edit
-class KlDraagConstrBeschermlaag(Keuzelijst):
+class KlDraagConstrBeschermlaag(KeuzelijstField):
     """De manieren van aanbrengen van een beschermlaag ter voorkoming van roestvorming."""
+    naam = 'KlDraagConstrBeschermlaag'
+    label = 'Draagconstructie beschermlaag'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlDraagConstrBeschermlaag'
+    definition = 'De manieren van aanbrengen van een beschermlaag ter voorkoming van roestvorming.'
+    codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlDraagConstrBeschermlaag'
+    options = {
+        'gecoat': KeuzelijstWaarde(invulwaarde='gecoat',
+                                   label='gecoat',
+                                   definitie='Een mengsel van stoffen aangebracht om roest te voorkomen.',
+                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlDraagConstrBeschermlaag/gecoat'),
+        'gegalvaniseerd': KeuzelijstWaarde(invulwaarde='gegalvaniseerd',
+                                           label='gegalvaniseerd',
+                                           definitie='Een laag zink aangebracht om roest te voorkomen.',
+                                           objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlDraagConstrBeschermlaag/gegalvaniseerd'),
+        'geschilderd': KeuzelijstWaarde(invulwaarde='geschilderd',
+                                        label='geschilderd',
+                                        definitie='Een laag verf aangebracht om roest te voorkomen.',
+                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlDraagConstrBeschermlaag/geschilderd')
+    }
 
-    def __init__(self):
-        super().__init__(naam="KlDraagConstrBeschermlaag",
-                         label="Draagconstructie beschermlaag",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlDraagConstrBeschermlaag",
-                         definition="De manieren van aanbrengen van een beschermlaag ter voorkoming van roestvorming.",
-                         usagenote="",
-                         deprecated_version="",
-                         codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlDraagConstrBeschermlaag")
-
-        self.add_option("gecoat", "gecoat", "Een mengsel van stoffen aangebracht om roest te voorkomen.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlDraagConstrBeschermlaag/gecoat")
-        self.add_option("gegalvaniseerd", "gegalvaniseerd", "Een laag zink aangebracht om roest te voorkomen.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlDraagConstrBeschermlaag/gegalvaniseerd")
-        self.add_option("geschilderd", "geschilderd", "Een laag verf aangebracht om roest te voorkomen.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlDraagConstrBeschermlaag/geschilderd")

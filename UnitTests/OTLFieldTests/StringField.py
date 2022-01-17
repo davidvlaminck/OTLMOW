@@ -2,10 +2,12 @@
 
 
 class StringField(OTLField):
-    def __init__(self):
-        super().__init__()
-        self.naam = "StringField"
-        self.definition = "Beschrijft een tekstregel volgens http://www.w3.org/2001/XMLSchema#string."
+    """Beschrijft een tekstregel volgens http://www.w3.org/2001/XMLSchema#string."""
+    naam = 'String'
+    objectUri = 'http://www.w3.org/2001/XMLSchema#string'
+    definition = 'Beschrijft een tekstregel volgens http://www.w3.org/2001/XMLSchema#string.'
+    label = 'String'
+    usagenote = 'https://www.w3.org/TR/xmlschema-2/#string'
 
     @staticmethod
     def validate(value, attribuut):
@@ -14,4 +16,5 @@ class StringField(OTLField):
         return True
 
     def __str__(self):
-        return f"naam: {self.naam}; definitie: {self.definition}"
+        return OTLField.__str__(self)
+

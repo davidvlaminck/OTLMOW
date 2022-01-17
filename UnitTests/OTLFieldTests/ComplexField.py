@@ -4,9 +4,7 @@ from UnitTests.OTLFieldTests.OTLField import OTLField
 
 
 class ComplexField(OTLField):
-    @abstractmethod
-    def __init__(self):
-        super().__init__()
+    _uses_waarde_object = True
 
     @staticmethod
     def validate(value, attribuut):

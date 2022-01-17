@@ -61,12 +61,10 @@ class DtcVegetatieSoortnaamWaarden(AttributeInfo):
 
 
 class DtcVegetatieSoortnaam(ComplexField, AttributeInfo):
-    def __init__(self):
-        super().__init__()
-        self.naam = "soort",
-        self.label = "soort",
-        self.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#BegroeidVoorkomen.soort",
-        self.definition = "Met deze eigenschap worden de Nederlandse soortnaam, wetenschappelijke soortnaam en de soortcode van de meest voorkomende soorten binnen het begroeid oppervlak weergegeven.",
-        self.usagenote = "",
-        self.deprecated_version = ""
-        self.waarde = DtcVegetatieSoortnaamWaarden
+    naam = "soort",
+    label = "soort",
+    objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#BegroeidVoorkomen.soort",
+    definition = "Met deze eigenschap worden de Nederlandse soortnaam, wetenschappelijke soortnaam en de soortcode van de meest voorkomende soorten binnen het begroeid oppervlak weergegeven.",
+    usagenote = "",
+    deprecated_version = ""
+    waardeObject = DtcVegetatieSoortnaamWaarden

@@ -44,12 +44,11 @@ class DtcIdentificatorWaarden(AttributeInfo):
 
 
 class DtcIdentificator(ComplexField, AttributeInfo):
-    def __init__(self):
-        super().__init__()
-        self.naam = "DtcIdentificator",
-        self.label = "Identificator",
-        self.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcIdentificator",
-        self.definition = "Complex datatype voor de identificator van een AIM object volgens de bron van de identificator.",
-        self.usagenote = "",
-        self.deprecated_version = ""
-        self.waarde = DtcIdentificatorWaarden
+    naam = "DtcIdentificator",
+    label = "Identificator",
+    objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcIdentificator",
+    definition = "Complex datatype voor de identificator van een AIM object volgens de bron van de identificator.",
+    usagenote = "",
+    deprecated_version = ""
+    waardeObject = DtcIdentificatorWaarden
+

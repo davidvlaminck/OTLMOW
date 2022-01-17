@@ -1,8 +1,11 @@
 ﻿import unittest
 
+from UnitTests.OTLFieldTests.KwantWrdInMeter import KwantWrdInMeter
+from UnitTests.OTLFieldTests.UnionTypeError import UnionTypeError
 from UnitTests.OTLFieldTests.AttributeInfo import AttributeInfo
 from UnitTests.OTLFieldTests.DtcIdentificator import DtcIdentificator
 from UnitTests.OTLFieldTests.DtcVegetatieSoortnaam import DtcVegetatieSoortnaam
+from UnitTests.OTLFieldTests.DtuLichtmastMasthoogte import DtuLichtmastMasthoogte
 from UnitTests.OTLFieldTests.KlAIMToestand import KlAIMToestand
 from UnitTests.OTLFieldTests.KlRioleringsbuisMateriaal import KlRioleringsbuisMateriaal
 from UnitTests.OTLFieldTests.OTLAttribuut import OTLAttribuut
@@ -14,26 +17,22 @@ class TestInstance2(AttributeInfo):
         super().__init__()
 
         self._notitie = OTLAttribuut(field=StringField,
-                                     naam="notitie", label="notitie",
+                                     naam="notitie",
+                                     label="notitie",
                                      objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMObject.notitie",
-                                     definition="Extra notitie voor het object.", constraints="", usagenote="",
-                                     deprecated_version="")
+                                     definition="Extra notitie voor het object.")
 
         self._assetId = OTLAttribuut(field=DtcIdentificator,
                                      naam="DtcIdentificator",
                                      label="Identificator",
                                      objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcIdentificator",
-                                     definition="Complex datatype voor de identificator van een AIM object volgens de bron van de identificator.",
-                                     usagenote="",
-                                     deprecated_version="")
+                                     definition="Complex datatype voor de identificator van een AIM object volgens de bron van de identificator.")
 
         self._toestand = OTLAttribuut(field=KlAIMToestand,
                                       naam="toestand",
                                       label="toestand",
                                       objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMToestand.toestand",
                                       definition="Geeft de actuele stand in de levenscyclus van het object.",
-                                      constraints="",
-                                      usagenote="",
                                       deprecated_version="")
 
         self._kleur = OTLAttribuut(field=StringField,
@@ -41,9 +40,6 @@ class TestInstance2(AttributeInfo):
                                    label="kleur",
                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#ContainerBuis.kleur",
                                    definition="De kleur van de coating.",
-                                   constraints="",
-                                   usagenote="",
-                                   deprecated_version="",
                                    kardinaliteit_min='1',
                                    kardinaliteit_max='*')
 
@@ -52,22 +48,46 @@ class TestInstance2(AttributeInfo):
                                        field=KlRioleringsbuisMateriaal,
                                        objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Mantelbuis.materiaal",
                                        definition="Bepaalt het materiaal van de mantelbuis.",
-                                       constraints="",
-                                       usagenote="",
-                                       deprecated_version="",
                                        kardinaliteit_min='1',
                                        kardinaliteit_max='*')
 
         self._soort = OTLAttribuut(naam="soort",
-                                       label="soort",
-                                       field=DtcVegetatieSoortnaam,
-                                       objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#BegroeidVoorkomen.soort",
-                                       definition="Met deze eigenschap worden de Nederlandse soortnaam, wetenschappelijke soortnaam en de soortcode van de meest voorkomende soorten binnen het begroeid oppervlak weergegeven.",
-                                       constraints="",
-                                       usagenote="",
-                                       deprecated_version="",
-                                       kardinaliteit_min='1',
-                                       kardinaliteit_max='*')
+                                   label="soort",
+                                   field=DtcVegetatieSoortnaam,
+                                   objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#BegroeidVoorkomen.soort",
+                                   definition="Met deze eigenschap worden de Nederlandse soortnaam, wetenschappelijke soortnaam en de soortcode van de meest voorkomende soorten binnen het begroeid oppervlak weergegeven.",
+                                   kardinaliteit_min='1',
+                                   kardinaliteit_max='*')
+
+        self._masthoogte = OTLAttribuut(field=DtuLichtmastMasthoogte,
+                                        naam="masthoogte",
+                                        label="masthoogte",
+                                        objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Lichtmast.masthoogte",
+                                        definition="Hoogte (in meter) van de lichtmast.")
+
+        self._hoogte = OTLAttribuut(field=KwantWrdInMeter,
+                                  naam="Hoogte",
+                                  label="hoogte",
+                                  objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#.Hoogte",
+                                  definition="De hoogte in meter.")
+
+    @property
+    def hoogte(self):
+        """De hoogte in meter."""
+        return self._hoogte.waarde
+
+    @hoogte.setter
+    def hoogte(self, value):
+        self._hoogte.set_waarde(value, owner=self)
+
+    @property
+    def masthoogte(self):
+        """Hoogte (in meter) van de lichtmast."""
+        return self._masthoogte.waarde
+
+    @masthoogte.setter
+    def masthoogte(self, value):
+        self._masthoogte.set_waarde(value, owner=self)
 
     @property
     def soort(self):
@@ -77,7 +97,6 @@ class TestInstance2(AttributeInfo):
     @soort.setter
     def soort(self, value):
         self._soort.set_waarde(value, owner=self)
-
 
     @property
     def materiaal(self):
@@ -126,17 +145,37 @@ class TestInstance2(AttributeInfo):
 
 
 class RefactoringTests(unittest.TestCase):
+    def test_AttrInfoOfClass(self):
+        instance = TestInstance2()
+        result = instance.attr_info()  # displays info about itself
+        self.assertTrue(False)
+
     def test_StringField(self):
         instance = TestInstance2()
         instance.notitie = "a"
-        print(instance.notitie)
         self.assertEqual("a", instance.notitie)
         with self.assertRaises(TypeError):
             instance.notitie = 2
-        self.assertEqual("naam: notitie; definitie: Extra notitie voor het object.",
-                         instance.attr_info("notitie"))  # evt  instance.attr_info(instance.notitie) ?
+        self.assertEqual("""information about notitie:
+naam: notitie
+uri: https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMObject.notitie
+definition: Extra notitie voor het object.
+label: notitie
+usagenote: 
+constraints: 
+readonly: False
+kardinaliteit_min: 1
+kardinaliteit_max: 1
+deprecated_version: """,
+                         instance.attr_info("notitie"))
         self.assertEqual(
-            "naam: StringField; definitie: Beschrijft een tekstregel volgens http://www.w3.org/2001/XMLSchema#string.",
+            """information about String:
+naam: String
+uri: http://www.w3.org/2001/XMLSchema#string
+definition: Beschrijft een tekstregel volgens http://www.w3.org/2001/XMLSchema#string.
+label: String
+usagenote: https://www.w3.org/TR/xmlschema-2/#string
+deprecated_version: """,
             instance.attr_type_info("notitie"))
         instance2 = TestInstance2()
         self.assertEqual(None, instance2.notitie)
@@ -155,12 +194,31 @@ class RefactoringTests(unittest.TestCase):
         self.assertEqual("AWV", instance.assetId.toegekendDoor)
         self.assertEqual("id2", instance2.assetId.identificator)
         self.assertEqual("extern", instance2.assetId.toegekendDoor)
-        # self.assertEqual(
-        #     'naam: identificator; definitie: Een groep van tekens om een AIM object te identificeren of te benoemen.',
-        #     instance.assetId.attr_info('identificator'))
-        # self.assertEqual(
-        #     'naam: identificator; definitie: Een groep van tekens om een AIM object te identificeren of te benoemen.',
-        #     instance.attr_info('assetId.identificator'))
+        expectedIdentificatorInfo = """information about identificator:
+naam: identificator
+uri: https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcIdentificator.identificator
+definition: Een groep van tekens om een AIM object te identificeren of te benoemen.
+label: identificator
+usagenote: 
+constraints: 
+readonly: False
+kardinaliteit_min: 1
+kardinaliteit_max: 1
+deprecated_version: """
+        self.assertEqual(expectedIdentificatorInfo,
+            instance.assetId.attr_info('identificator'))
+        self.assertEqual(
+            expectedIdentificatorInfo,
+            instance.attr_info('assetId.identificator'))
+        self.assertEqual(
+            """information about String:
+naam: String
+uri: http://www.w3.org/2001/XMLSchema#string
+definition: Beschrijft een tekstregel volgens http://www.w3.org/2001/XMLSchema#string.
+label: String
+usagenote: https://www.w3.org/TR/xmlschema-2/#string
+deprecated_version: """,
+            instance.attr_type_info('assetId.identificator'))
         with self.assertRaises(TypeError):
             instance.assetId.toegekendDoor = 2
         with self.assertRaises(TypeError):
@@ -178,11 +236,35 @@ class RefactoringTests(unittest.TestCase):
         instance2.toestand = 'in-opbouw'
         self.assertEqual('in-gebruik', instance.toestand)
         self.assertEqual('in-opbouw', instance2.toestand)
-        self.assertEqual("naam: toestand; definitie: Geeft de actuele stand in de levenscyclus van het object.",
+        self.assertEqual("""information about toestand:
+naam: toestand
+uri: https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMToestand.toestand
+definition: Geeft de actuele stand in de levenscyclus van het object.
+label: toestand
+usagenote: 
+constraints: 
+readonly: False
+kardinaliteit_min: 1
+kardinaliteit_max: 1
+deprecated_version: """,
                          instance.attr_info("toestand"))
         self.assertEqual(
-            "naam: KlAIMToestand; definitie: Keuzelijst met fasen uit de levenscyclus van een object om de toestand op een moment mee vast te leggen. mogelijke waardes:\n"
-            "geannuleerd\ngepland\nin-gebruik\nin-ontwerp\nin-opbouw\novergedragen\nuit-gebruik\nverwijderd",
+            """information about ('KlAIMToestand',):
+naam: ('KlAIMToestand',)
+uri: ('https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KlAIMToestand',)
+definition: ('Keuzelijst met fasen uit de levenscyclus van een object om de toestand op een moment mee vast te leggen.',)
+label: ('AIM toestand',)
+usagenote: ('',)
+deprecated_version: ('',)
+possible values:
+    geannuleerd
+    gepland
+    in-gebruik
+    in-ontwerp
+    in-opbouw
+    overgedragen
+    overgedragen
+    verwijderd""",
             instance.attr_type_info("toestand"))
 
     def test_StringFieldMetKardinaliteit(self):
@@ -211,7 +293,7 @@ class RefactoringTests(unittest.TestCase):
         instance.materiaal = ['PP-buizen', 'PVC-buizen']
         self.assertEqual(['PP-buizen', 'PVC-buizen'], instance.materiaal)
         with self.assertRaises(TypeError):
-            instance.materiaal = ("PP-buizen")
+            instance.materiaal = tuple("PP-buizen")
         with self.assertRaises(TypeError):
             instance.materiaal = ["PP-buizen", 2]
 
@@ -220,6 +302,48 @@ class RefactoringTests(unittest.TestCase):
 
     def test_ComplexFieldInComplexField(self):
         self.assertFalse(True)
+
+    def test_UnionTypeField(self):
+        instance = TestInstance2()
+        instance2 = TestInstance2()
+        self.assertEqual(None, instance.masthoogte)
+        with self.assertRaises(UnionTypeError):
+            instance.masthoogte = '10'
+        instance.masthoogte = "10.00"
+        self.assertEqual("10.00", instance.masthoogte)
+        instance.masthoogte = 11.00
+        self.assertEqual(11.00, instance.masthoogte)
+
+
+    def test_KwantWaardeField(self):
+        instance = TestInstance2()
+        instance2 = TestInstance2()
+        self.assertEqual(None, instance.hoogte)
+        with self.assertRaises(TypeError):
+            instance.hoogte = '10.00'
+        instance.hoogte = 10.00
+        self.assertEqual(10.00, instance.hoogte)
+        instance.hoogte = 10
+        self.assertEqual(10, instance.hoogte)
+        with self.assertRaises(TypeError):
+            instance.hoogte = True
+        self.assertEqual("""information about KwantWrdInMeter:
+naam: KwantWrdInMeter
+uri: https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMeter
+definition: Een kwantitatieve waarde die een getal in meter uitdrukt.
+label: Kwantitatieve waarde in meter
+usagenote: https://www.w3.org/TR/xmlschema-2/#string
+deprecated_version: 
+
+information about standaardEenheid:
+    naam: standaardEenheid
+    uri: https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMeter.standaardEenheid
+    definition: De standaard eenheid bij dit datatype is uitgedrukt in meter.
+    label: standaard eenheid
+    usagenote: "m"^^cdt:ucumunit
+    constraints: "m"^^cdt:ucumunit
+    deprecated_version: """, instance.attr_type_info('hoogte'))
+
 
     # use setattr and getattr on class/attribuut
     # .attr_info('name attribute') returns info about attribute

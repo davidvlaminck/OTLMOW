@@ -1,0 +1,2 @@
+﻿class KwantWrd:
+    eenheid = None

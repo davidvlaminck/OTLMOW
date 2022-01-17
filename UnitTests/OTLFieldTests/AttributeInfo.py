@@ -1,17 +1,21 @@
 ﻿from UnitTests.OTLFieldTests.ComplexField import ComplexField
+from UnitTests.OTLFieldTests.KwantWrd import KwantWrd
 
 
 class AttributeInfo:
-    def attr_info(self, attribuut_naam):
+    def attr_info(self, attribuut_naam=''):
         if '.' in attribuut_naam:
             attribuut = attribuut_naam.split('.')[0]
             rest = attribuut_naam.split('.', 1)[1]
             at = getattr(self, '_' + attribuut)
-            if isinstance(at.field, ComplexField):
-                return at.waarde.attr_info(rest)
+            print(at.field)
+            if at.field._uses_waarde_object:
+                return at.field.waardeObject().attr_info(rest)
             else:
                 return at.attr_info(rest)
         else:
+            if attribuut_naam == '':
+                return str(self)
             at = getattr(self, '_' + attribuut_naam)
             return str(at)
 
@@ -21,9 +25,11 @@ class AttributeInfo:
             rest = attribuut_naam.split('.', 1)[1]
             at = getattr(self, '_' + attribuut)
             if isinstance(at.field(), ComplexField):
-                return at.waarde.attr_type_info(rest)
+                return at.field.waardeObject().attr_type_info(rest)
             else:
                 return at.attr_type_info(rest)
         else:
             at = getattr(self, '_' + attribuut_naam)
-            return str(at.field)
+            if isinstance(at.field(), KwantWrd):
+                return str(at.field()) + str(at.field.eenheid)
+            return str(at.field())

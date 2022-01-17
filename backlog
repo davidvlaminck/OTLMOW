@@ -32,7 +32,7 @@ Postenmapping:
 Docstring appenden vanuit otlbject met generieke functies zoals attr_info
 KwantWrd met readonly doen > setter weglaten 
 Attr_info met lege parameter: info over object zelf, werkt niet voor classed en type want dat heeft geen field
-
+Import eminfra voor asset relaties etc: alternatief voor data afladen in Davie 
 
 Demo
 Via console? Vermijd de nood voor imports
@@ -41,6 +41,7 @@ Creeer object via uri of naam
 Vul asset info, met juiste en foute waardes
 Vraag attribuut informatie op
 Ander gebruik: normalisatie script
+Abstracte class instantieren
 
 DemoInfo
 use case: migratietraject met testdata ondersteunen

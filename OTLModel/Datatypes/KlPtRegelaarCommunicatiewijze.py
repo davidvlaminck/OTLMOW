@@ -1,21 +1,29 @@
 # coding=utf-8
-from OTLModel.Datatypes.Keuzelijst import Keuzelijst
+from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
+from OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 
 # Generated with OTLEnumerationCreator. To modify: extend, do not edit
-class KlPtRegelaarCommunicatiewijze(Keuzelijst):
+class KlPtRegelaarCommunicatiewijze(KeuzelijstField):
     """Keuzelijst met de verschillende manieren waarop een PT_Regelaar communiceert met de Verkeersregelaar."""
+    naam = 'KlPtRegelaarCommunicatiewijze'
+    label = 'Ptregelaar communicatiewijze'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlPtRegelaarCommunicatiewijze'
+    definition = 'Keuzelijst met de verschillende manieren waarop een PT_Regelaar communiceert met de Verkeersregelaar.'
+    codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlPtRegelaarCommunicatiewijze'
+    options = {
+        'VR-PT-kaart': KeuzelijstWaarde(invulwaarde='VR-PT-kaart',
+                                        label='VR PT-kaart',
+                                        definitie='De PT kaart is een module die is ingebouwd in de verkeersregelaar',
+                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlPtRegelaarCommunicatiewijze/VR-PT-kaart'),
+        'contact': KeuzelijstWaarde(invulwaarde='contact',
+                                    label='contact',
+                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlPtRegelaarCommunicatiewijze/contact'),
+        'protocol': KeuzelijstWaarde(invulwaarde='protocol',
+                                     label='protocol',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlPtRegelaarCommunicatiewijze/protocol'),
+        'serieel': KeuzelijstWaarde(invulwaarde='serieel',
+                                    label='serieel',
+                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlPtRegelaarCommunicatiewijze/serieel')
+    }
 
-    def __init__(self):
-        super().__init__(naam="KlPtRegelaarCommunicatiewijze",
-                         label="Ptregelaar communicatiewijze",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlPtRegelaarCommunicatiewijze",
-                         definition="Keuzelijst met de verschillende manieren waarop een PT_Regelaar communiceert met de Verkeersregelaar.",
-                         usagenote="",
-                         deprecated_version="",
-                         codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlPtRegelaarCommunicatiewijze")
-
-        self.add_option("VR-PT-kaart", "VR PT-kaart", "De PT kaart is een module die is ingebouwd in de verkeersregelaar", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlPtRegelaarCommunicatiewijze/VR-PT-kaart")
-        self.add_option("contact", "contact", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlPtRegelaarCommunicatiewijze/contact")
-        self.add_option("protocol", "protocol", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlPtRegelaarCommunicatiewijze/protocol")
-        self.add_option("serieel", "serieel", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlPtRegelaarCommunicatiewijze/serieel")

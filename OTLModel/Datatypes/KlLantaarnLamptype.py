@@ -1,21 +1,32 @@
 # coding=utf-8
-from OTLModel.Datatypes.Keuzelijst import Keuzelijst
+from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
+from OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 
 # Generated with OTLEnumerationCreator. To modify: extend, do not edit
-class KlLantaarnLamptype(Keuzelijst):
+class KlLantaarnLamptype(KeuzelijstField):
     """Keuzelijst met LantaarnLamp types."""
+    naam = 'KlLantaarnLamptype'
+    label = 'Lantaarn lamptype'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#KlLantaarnLamptype'
+    definition = 'Keuzelijst met LantaarnLamp types.'
+    codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlLantaarnLamptype'
+    options = {
+        'LED': KeuzelijstWaarde(invulwaarde='LED',
+                                label='LED',
+                                definitie='Led lamp.',
+                                objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLantaarnLamptype/LED'),
+        'gasontlading': KeuzelijstWaarde(invulwaarde='gasontlading',
+                                         label='gasontlading',
+                                         definitie='Lamp op basis van gas.',
+                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLantaarnLamptype/gasontlading'),
+        'gloeilamp': KeuzelijstWaarde(invulwaarde='gloeilamp',
+                                      label='gloeilamp',
+                                      definitie='Gloeilamp.',
+                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLantaarnLamptype/gloeilamp'),
+        'halogeen': KeuzelijstWaarde(invulwaarde='halogeen',
+                                     label='halogeen',
+                                     definitie='Halogeenlamp.',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLantaarnLamptype/halogeen')
+    }
 
-    def __init__(self):
-        super().__init__(naam="KlLantaarnLamptype",
-                         label="Lantaarn lamptype",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#KlLantaarnLamptype",
-                         definition="Keuzelijst met LantaarnLamp types.",
-                         usagenote="",
-                         deprecated_version="",
-                         codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlLantaarnLamptype")
-
-        self.add_option("LED", "LED", "Led lamp.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLantaarnLamptype/LED")
-        self.add_option("gasontlading", "gasontlading", "Lamp op basis van gas.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLantaarnLamptype/gasontlading")
-        self.add_option("gloeilamp", "gloeilamp", "Gloeilamp.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLantaarnLamptype/gloeilamp")
-        self.add_option("halogeen", "halogeen", "Halogeenlamp.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLantaarnLamptype/halogeen")

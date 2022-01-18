@@ -1,46 +1,64 @@
 # coding=utf-8
+from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
+from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from abc import abstractmethod, ABC
 from OTLModel.Datatypes.DtcBetonspecificaties import DtcBetonspecificaties
 from OTLModel.Datatypes.DtcDocument import DtcDocument
-from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlUitvoeringsmethode import KlUitvoeringsmethode
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class BetonnenConstructieElement(ABC):
+class BetonnenConstructieElement(ABC, AttributeInfo):
     """Bundeling van gemeenschappelijke eigenschappen van betonnen constructie-elementen."""
 
-    typeURI = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#BetonnenConstructieElement"
+    typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#BetonnenConstructieElement'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     @abstractmethod
     def __init__(self):
-        self.betonspecificaties = DtcBetonspecificaties()
+        super().__init__()
+
+        self._betonspecificaties = OTLAttribuut(field=DtcBetonspecificaties,
+                                                naam='betonspecificaties',
+                                                label='betonspecificaties',
+                                                objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#BetonnenConstructieElement.betonspecificaties',
+                                                definition='Eigenschappen van het gebruikte beton.')
+
+        self._uitvoeringsmethode = OTLAttribuut(field=KlUitvoeringsmethode,
+                                                naam='uitvoeringsmethode',
+                                                label='uitvoeringsmethode',
+                                                objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#BetonnenConstructieElement.uitvoeringsmethode',
+                                                definition='Op welke manier het beton wordt aangebracht.')
+
+        self._wapeningsplan = OTLAttribuut(field=DtcDocument,
+                                           naam='wapeningsplan',
+                                           label='wapeningsplan',
+                                           objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#BetonnenConstructieElement.wapeningsplan',
+                                           definition='Plan waarin de wapening zo gedetailleerd mogelijk wordt uitgetekend (met materiaalspecificaties en de afmetingen worden weergegeven in millimeters).')
+
+    @property
+    def betonspecificaties(self):
         """Eigenschappen van het gebruikte beton."""
-        self.betonspecificaties.naam = "betonspecificaties"
-        self.betonspecificaties.label = "betonspecificaties"
-        self.betonspecificaties.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#BetonnenConstructieElement.betonspecificaties"
-        self.betonspecificaties.definition = "Eigenschappen van het gebruikte beton."
-        self.betonspecificaties.constraints = ""
-        self.betonspecificaties.usagenote = ""
-        self.betonspecificaties.deprecated_version = ""
+        return self._betonspecificaties.waarde
 
-        self.uitvoeringsmethode = KeuzelijstField(naam="uitvoeringsmethode",
-                                                  label="uitvoeringsmethode",
-                                                  lijst=KlUitvoeringsmethode(),
-                                                  objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#BetonnenConstructieElement.uitvoeringsmethode",
-                                                  definition="Op welke manier het beton wordt aangebracht.",
-                                                  constraints="",
-                                                  usagenote="",
-                                                  deprecated_version="")
+    @betonspecificaties.setter
+    def betonspecificaties(self, value):
+        self._betonspecificaties.set_waarde(value, owner=self)
+
+    @property
+    def uitvoeringsmethode(self):
         """Op welke manier het beton wordt aangebracht."""
+        return self._uitvoeringsmethode.waarde
 
-        self.wapeningsplan = DtcDocument()
+    @uitvoeringsmethode.setter
+    def uitvoeringsmethode(self, value):
+        self._uitvoeringsmethode.set_waarde(value, owner=self)
+
+    @property
+    def wapeningsplan(self):
         """Plan waarin de wapening zo gedetailleerd mogelijk wordt uitgetekend (met materiaalspecificaties en de afmetingen worden weergegeven in millimeters)."""
-        self.wapeningsplan.naam = "wapeningsplan"
-        self.wapeningsplan.label = "wapeningsplan"
-        self.wapeningsplan.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#BetonnenConstructieElement.wapeningsplan"
-        self.wapeningsplan.definition = "Plan waarin de wapening zo gedetailleerd mogelijk wordt uitgetekend (met materiaalspecificaties en de afmetingen worden weergegeven in millimeters)."
-        self.wapeningsplan.constraints = ""
-        self.wapeningsplan.usagenote = ""
-        self.wapeningsplan.deprecated_version = ""
+        return self._wapeningsplan.waarde
+
+    @wapeningsplan.setter
+    def wapeningsplan(self, value):
+        self._wapeningsplan.set_waarde(value, owner=self)

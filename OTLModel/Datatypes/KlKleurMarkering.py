@@ -1,22 +1,36 @@
 # coding=utf-8
-from OTLModel.Datatypes.Keuzelijst import Keuzelijst
+from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
+from OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 
 # Generated with OTLEnumerationCreator. To modify: extend, do not edit
-class KlKleurMarkering(Keuzelijst):
+class KlKleurMarkering(KeuzelijstField):
     """De mogeglijke markeringskleuren."""
+    naam = 'KlKleurMarkering'
+    label = 'Kleur markering'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlKleurMarkering'
+    definition = 'De mogeglijke markeringskleuren.'
+    codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlKleurMarkering'
+    options = {
+        'geel-(Y1)': KeuzelijstWaarde(invulwaarde='geel-(Y1)',
+                                      label='geel (Y1)',
+                                      definitie='Geel (Y1) als kleur van de markering.',
+                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlKleurMarkering/geel-(Y1)'),
+        'geel-(Y2)': KeuzelijstWaarde(invulwaarde='geel-(Y2)',
+                                      label='geel (Y2)',
+                                      definitie='Geel (Y2) als kleur van de markering.',
+                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlKleurMarkering/geel-(Y2)'),
+        'oker-(RAL1024)': KeuzelijstWaarde(invulwaarde='oker-(RAL1024)',
+                                           label='oker (RAL1024)',
+                                           definitie='Oker als de kleur van de markering.',
+                                           objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlKleurMarkering/oker-(RAL1024)'),
+        'rood-(RAL3020)': KeuzelijstWaarde(invulwaarde='rood-(RAL3020)',
+                                           label='rood (RAL3020)',
+                                           definitie='Rood als de kleur van de markering.',
+                                           objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlKleurMarkering/rood-(RAL3020)'),
+        'wit': KeuzelijstWaarde(invulwaarde='wit',
+                                label='wit',
+                                definitie='Wit als de kleur van de markering.',
+                                objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlKleurMarkering/wit')
+    }
 
-    def __init__(self):
-        super().__init__(naam="KlKleurMarkering",
-                         label="Kleur markering",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlKleurMarkering",
-                         definition="De mogeglijke markeringskleuren.",
-                         usagenote="",
-                         deprecated_version="",
-                         codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlKleurMarkering")
-
-        self.add_option("geel-(Y1)", "geel (Y1)", "Geel (Y1) als kleur van de markering.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlKleurMarkering/geel-(Y1)")
-        self.add_option("geel-(Y2)", "geel (Y2)", "Geel (Y2) als kleur van de markering.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlKleurMarkering/geel-(Y2)")
-        self.add_option("oker-(RAL1024)", "oker (RAL1024)", "Oker als de kleur van de markering.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlKleurMarkering/oker-(RAL1024)")
-        self.add_option("rood-(RAL3020)", "rood (RAL3020)", "Rood als de kleur van de markering.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlKleurMarkering/rood-(RAL3020)")
-        self.add_option("wit", "wit", "Wit als de kleur van de markering.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlKleurMarkering/wit")

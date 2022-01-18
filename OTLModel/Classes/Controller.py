@@ -1,4 +1,6 @@
 # coding=utf-8
+from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
+from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from abc import abstractmethod
 from OTLModel.Classes.AIMNaamObject import AIMNaamObject
 from OTLModel.Datatypes.DteIPv4Adres import DteIPv4Adres
@@ -6,58 +8,88 @@ from OTLModel.Datatypes.StringField import StringField
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Controller(AIMNaamObject):
+class Controller(AIMNaamObject, AttributeInfo):
     """Abstracte voor allerlei types van controllers."""
 
-    typeURI = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Controller"
+    typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Controller'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     @abstractmethod
     def __init__(self):
-        super().__init__()
+        AIMNaamObject.__init__(self)
+        AttributeInfo.__init__(self)
 
-        self.batchnummer = StringField(naam="batchnummer",
-                                       label="batchnummer",
-                                       objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Controller.batchnummer",
-                                       definition="Nummer van de batch.",
-                                       constraints="",
-                                       usagenote="",
-                                       deprecated_version="")
+        self._batchnummer = OTLAttribuut(field=StringField,
+                                         naam='batchnummer',
+                                         label='batchnummer',
+                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Controller.batchnummer',
+                                         definition='Nummer van de batch.')
+
+        self._dNSNaam = OTLAttribuut(field=StringField,
+                                     naam='dNSNaam',
+                                     label='DNS-naam',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Controller.dNSNaam',
+                                     definition='DNS-naam van de controller.')
+
+        self._firmwareversie = OTLAttribuut(field=StringField,
+                                            naam='firmwareversie',
+                                            label='firmwareversie',
+                                            objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Controller.firmwareversie',
+                                            definition='Firmwareversie van de controller.')
+
+        self._iPAdres = OTLAttribuut(field=DteIPv4Adres,
+                                     naam='iPAdres',
+                                     label='IP-adres',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Controller.iPAdres',
+                                     definition='IP-adres van de controller.')
+
+        self._serienummer = OTLAttribuut(field=StringField,
+                                         naam='serienummer',
+                                         label='serienummer',
+                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Controller.serienummer',
+                                         definition='Het unieke nummer waarmee het toestel door de fabrikant geïdentificeerd is.')
+
+    @property
+    def batchnummer(self):
         """Nummer van de batch."""
+        return self._batchnummer.waarde
 
-        self.dNSNaam = StringField(naam="dNSNaam",
-                                   label="DNS-naam",
-                                   objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Controller.dNSNaam",
-                                   definition="DNS-naam van de controller.",
-                                   constraints="",
-                                   usagenote="",
-                                   deprecated_version="")
+    @batchnummer.setter
+    def batchnummer(self, value):
+        self._batchnummer.set_waarde(value, owner=self)
+
+    @property
+    def dNSNaam(self):
         """DNS-naam van de controller."""
+        return self._dNSNaam.waarde
 
-        self.firmwareversie = StringField(naam="firmwareversie",
-                                          label="firmwareversie",
-                                          objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Controller.firmwareversie",
-                                          definition="Firmwareversie van de controller.",
-                                          constraints="",
-                                          usagenote="",
-                                          deprecated_version="")
+    @dNSNaam.setter
+    def dNSNaam(self, value):
+        self._dNSNaam.set_waarde(value, owner=self)
+
+    @property
+    def firmwareversie(self):
         """Firmwareversie van de controller."""
+        return self._firmwareversie.waarde
 
-        self.iPAdres = DteIPv4Adres()
+    @firmwareversie.setter
+    def firmwareversie(self, value):
+        self._firmwareversie.set_waarde(value, owner=self)
+
+    @property
+    def iPAdres(self):
         """IP-adres van de controller."""
-        self.iPAdres.naam = "iPAdres"
-        self.iPAdres.label = "IP-adres"
-        self.iPAdres.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Controller.iPAdres"
-        self.iPAdres.definition = "IP-adres van de controller."
-        self.iPAdres.constraints = ""
-        self.iPAdres.usagenote = ""
-        self.iPAdres.deprecated_version = ""
+        return self._iPAdres.waarde
 
-        self.serienummer = StringField(naam="serienummer",
-                                       label="serienummer",
-                                       objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Controller.serienummer",
-                                       definition="Het unieke nummer waarmee het toestel door de fabrikant geïdentificeerd is.",
-                                       constraints="",
-                                       usagenote="",
-                                       deprecated_version="")
+    @iPAdres.setter
+    def iPAdres(self, value):
+        self._iPAdres.set_waarde(value, owner=self)
+
+    @property
+    def serienummer(self):
         """Het unieke nummer waarmee het toestel door de fabrikant geïdentificeerd is."""
+        return self._serienummer.waarde
+
+    @serienummer.setter
+    def serienummer(self, value):
+        self._serienummer.set_waarde(value, owner=self)

@@ -1,24 +1,28 @@
 from shapely import wkt
 from shapely.errors import WKTReadingError
+from OTLModel.BaseClasses.OTLField import OTLField
 
-from OTLModel.Datatypes.StringField import StringField
+
+class WKTField(OTLField):
+    """Een tekstwaarde in WKT string vorm."""
+    naam = 'WKT'
+    objectUri = ''
+    definition = ''
+    label = 'WKT'
+    usagenote = ''
+
+    @staticmethod
+    def validate(value, attribuut):
+        if value is not None:
+            if not isinstance(value, str):
+                raise TypeError(f'expecting string in {attribuut.naam}')
+            try:
+                wkt.loads(value)
+            except WKTReadingError as error:
+                raise ValueError(f'{value} is not a valid WKT string for {attribuut.naam}: {str(error)}')
+        return True
+
+    def __str__(self):
+        return OTLField.__str__(self)
 
 
-class WKTField(StringField):
-    def __init__(self, naam, label, objectUri, definition, constraints, usagenote, deprecated_version, readonly=False,
-                 readonlyValue=None):
-        super().__init__(naam, label, objectUri, definition, constraints, usagenote, deprecated_version, readonly, readonlyValue)
-
-    def __setattr__(self, name, value):
-        if type(self) == WKTField:
-            if name == "waarde" and self.readonly and value is not None:
-                raise AttributeError(f"can't set the value of a readonly attribute")
-            if name == "waarde":
-                if value is not None and not isinstance(value, str):
-                    raise ValueError(f'expecting a string in {self.naam}')
-                if value is not None:
-                    try:
-                        wkt.loads(value)
-                    except WKTReadingError as error:
-                        raise ValueError(f'{value} is not a valid WKT string for {self.naam}: {str(error)}')
-            self.__dict__[name] = value

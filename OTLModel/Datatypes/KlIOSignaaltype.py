@@ -1,19 +1,22 @@
 # coding=utf-8
-from OTLModel.Datatypes.Keuzelijst import Keuzelijst
+from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
+from OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 
 # Generated with OTLEnumerationCreator. To modify: extend, do not edit
-class KlIOSignaaltype(Keuzelijst):
+class KlIOSignaaltype(KeuzelijstField):
     """Geeft aan of de IO-kaart werkt met een digitaal of met een analoog signaal."""
+    naam = 'KlIOSignaaltype'
+    label = 'IO-kaart signaaltype'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlIOSignaaltype'
+    definition = 'Geeft aan of de IO-kaart werkt met een digitaal of met een analoog signaal.'
+    codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlIOSignaaltype'
+    options = {
+        'analoog': KeuzelijstWaarde(invulwaarde='analoog',
+                                    label='analoog',
+                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlIOSignaaltype/analoog'),
+        'digitaal': KeuzelijstWaarde(invulwaarde='digitaal',
+                                     label='digitaal',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlIOSignaaltype/digitaal')
+    }
 
-    def __init__(self):
-        super().__init__(naam="KlIOSignaaltype",
-                         label="IO-kaart signaaltype",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlIOSignaaltype",
-                         definition="Geeft aan of de IO-kaart werkt met een digitaal of met een analoog signaal.",
-                         usagenote="",
-                         deprecated_version="",
-                         codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlIOSignaaltype")
-
-        self.add_option("analoog", "analoog", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlIOSignaaltype/analoog")
-        self.add_option("digitaal", "digitaal", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlIOSignaaltype/digitaal")

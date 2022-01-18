@@ -1,32 +1,76 @@
 # coding=utf-8
-from OTLModel.Datatypes.Keuzelijst import Keuzelijst
+from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
+from OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 
 # Generated with OTLEnumerationCreator. To modify: extend, do not edit
-class KlScheurremmendeLaagType(Keuzelijst):
+class KlScheurremmendeLaagType(KeuzelijstField):
     """Types van scheurremmende laag."""
+    naam = 'KlScheurremmendeLaagType'
+    label = 'Scheurremmende laag type'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlScheurremmendeLaagType'
+    definition = 'Types van scheurremmende laag.'
+    codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlScheurremmendeLaagType'
+    options = {
+        'bitumineus-membraan-(SAMI)': KeuzelijstWaarde(invulwaarde='bitumineus-membraan-(SAMI)',
+                                                       label='bitumineus membraan (SAMI)',
+                                                       definitie='bitumineus membraan (SAMI)',
+                                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlScheurremmendeLaagType/bitumineus-membraan-(SAMI)'),
+        'geocomposiet': KeuzelijstWaarde(invulwaarde='geocomposiet',
+                                         label='geocomposiet',
+                                         definitie='geocomposiet',
+                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlScheurremmendeLaagType/geocomposiet'),
+        'geocomposiet-klasse-c': KeuzelijstWaarde(invulwaarde='geocomposiet-klasse-c',
+                                                  label='geocomposiet klasse C',
+                                                  definitie='geocomposiet klasse C',
+                                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlScheurremmendeLaagType/geocomposiet-klasse-c'),
+        'geocomposiet-klasse-cd': KeuzelijstWaarde(invulwaarde='geocomposiet-klasse-cd',
+                                                   label='geocomposiet klasse CD',
+                                                   definitie='geocomposiet klasse CD',
+                                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlScheurremmendeLaagType/geocomposiet-klasse-cd'),
+        'geocomposiet-klasse-d': KeuzelijstWaarde(invulwaarde='geocomposiet-klasse-d',
+                                                  label='geocomposiet klasse D',
+                                                  definitie='geocomposiet klasse D',
+                                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlScheurremmendeLaagType/geocomposiet-klasse-d'),
+        'geocomposiet-klasse-e-1': KeuzelijstWaarde(invulwaarde='geocomposiet-klasse-e-1',
+                                                    label='geocomposiet klasse E1',
+                                                    definitie='geocomposiet klasse E1',
+                                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlScheurremmendeLaagType/geocomposiet-klasse-e-1'),
+        'geocomposiet-klasse-e-2': KeuzelijstWaarde(invulwaarde='geocomposiet-klasse-e-2',
+                                                    label='geocomposiet klasse E2',
+                                                    definitie='geocomposiet klasse E2',
+                                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlScheurremmendeLaagType/geocomposiet-klasse-e-2'),
+        'grids': KeuzelijstWaarde(invulwaarde='grids',
+                                  label='grids',
+                                  definitie='grids',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlScheurremmendeLaagType/grids'),
+        'grids-klasse-c': KeuzelijstWaarde(invulwaarde='grids-klasse-c',
+                                           label='grids klasse C',
+                                           definitie='grids klasse C',
+                                           objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlScheurremmendeLaagType/grids-klasse-c'),
+        'grids-klasse-cd': KeuzelijstWaarde(invulwaarde='grids-klasse-cd',
+                                            label='grids klasse CD',
+                                            definitie='grids klasse CD',
+                                            objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlScheurremmendeLaagType/grids-klasse-cd'),
+        'grids-klasse-d': KeuzelijstWaarde(invulwaarde='grids-klasse-d',
+                                           label='grids klasse D',
+                                           definitie='grids klasse D',
+                                           objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlScheurremmendeLaagType/grids-klasse-d'),
+        'grids-klasse-e-1': KeuzelijstWaarde(invulwaarde='grids-klasse-e-1',
+                                             label='grids klasse E1',
+                                             definitie='grids klasse E1',
+                                             objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlScheurremmendeLaagType/grids-klasse-e-1'),
+        'grids-klasse-e-2': KeuzelijstWaarde(invulwaarde='grids-klasse-e-2',
+                                             label='grids klasse E2',
+                                             definitie='grids klasse E2',
+                                             objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlScheurremmendeLaagType/grids-klasse-e-2'),
+        'stalen-wapeningsnet-type-1': KeuzelijstWaarde(invulwaarde='stalen-wapeningsnet-type-1',
+                                                       label='stalen wapeningsnet type 1',
+                                                       definitie='stalen wapeningsnet type 1',
+                                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlScheurremmendeLaagType/stalen-wapeningsnet-type-1'),
+        'stalen-wapeningsnet-type-2': KeuzelijstWaarde(invulwaarde='stalen-wapeningsnet-type-2',
+                                                       label='stalen wapeningsnet type 2',
+                                                       definitie='stalen wapeningsnet type 2',
+                                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlScheurremmendeLaagType/stalen-wapeningsnet-type-2')
+    }
 
-    def __init__(self):
-        super().__init__(naam="KlScheurremmendeLaagType",
-                         label="Scheurremmende laag type",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlScheurremmendeLaagType",
-                         definition="Types van scheurremmende laag.",
-                         usagenote="",
-                         deprecated_version="",
-                         codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlScheurremmendeLaagType")
-
-        self.add_option("bitumineus-membraan-(SAMI)", "bitumineus membraan (SAMI)", "bitumineus membraan (SAMI)", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlScheurremmendeLaagType/bitumineus-membraan-(SAMI)")
-        self.add_option("geocomposiet", "geocomposiet", "geocomposiet", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlScheurremmendeLaagType/geocomposiet")
-        self.add_option("geocomposiet-klasse-c", "geocomposiet klasse C", "geocomposiet klasse C", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlScheurremmendeLaagType/geocomposiet-klasse-c")
-        self.add_option("geocomposiet-klasse-cd", "geocomposiet klasse CD", "geocomposiet klasse CD", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlScheurremmendeLaagType/geocomposiet-klasse-cd")
-        self.add_option("geocomposiet-klasse-d", "geocomposiet klasse D", "geocomposiet klasse D", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlScheurremmendeLaagType/geocomposiet-klasse-d")
-        self.add_option("geocomposiet-klasse-e-1", "geocomposiet klasse E1", "geocomposiet klasse E1", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlScheurremmendeLaagType/geocomposiet-klasse-e-1")
-        self.add_option("geocomposiet-klasse-e-2", "geocomposiet klasse E2", "geocomposiet klasse E2", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlScheurremmendeLaagType/geocomposiet-klasse-e-2")
-        self.add_option("grids", "grids", "grids", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlScheurremmendeLaagType/grids")
-        self.add_option("grids-klasse-c", "grids klasse C", "grids klasse C", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlScheurremmendeLaagType/grids-klasse-c")
-        self.add_option("grids-klasse-cd", "grids klasse CD", "grids klasse CD", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlScheurremmendeLaagType/grids-klasse-cd")
-        self.add_option("grids-klasse-d", "grids klasse D", "grids klasse D", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlScheurremmendeLaagType/grids-klasse-d")
-        self.add_option("grids-klasse-e-1", "grids klasse E1", "grids klasse E1", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlScheurremmendeLaagType/grids-klasse-e-1")
-        self.add_option("grids-klasse-e-2", "grids klasse E2", "grids klasse E2", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlScheurremmendeLaagType/grids-klasse-e-2")
-        self.add_option("stalen-wapeningsnet-type-1", "stalen wapeningsnet type 1", "stalen wapeningsnet type 1", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlScheurremmendeLaagType/stalen-wapeningsnet-type-1")
-        self.add_option("stalen-wapeningsnet-type-2", "stalen wapeningsnet type 2", "stalen wapeningsnet type 2", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlScheurremmendeLaagType/stalen-wapeningsnet-type-2")

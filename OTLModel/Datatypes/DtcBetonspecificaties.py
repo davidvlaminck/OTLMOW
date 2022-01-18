@@ -1,9 +1,9 @@
 # coding=utf-8
-from OTLModel.Datatypes.KardinaliteitField import KardinaliteitField
+from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
+from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Datatypes.BooleanField import BooleanField
 from OTLModel.Datatypes.ComplexField import ComplexField
 from OTLModel.Datatypes.DtcDocument import DtcDocument
-from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlBetonmilieuklasse import KlBetonmilieuklasse
 from OTLModel.Datatypes.KlBetonomgevingsklasse import KlBetonomgevingsklasse
 from OTLModel.Datatypes.KlBetonsterkteklasse import KlBetonsterkteklasse
@@ -12,142 +12,200 @@ from OTLModel.Datatypes.KwantWrdInMillimeter import KwantWrdInMillimeter
 
 
 # Generated with OTLComplexDatatypeCreator. To modify: extend, do not edit
-class DtcBetonspecificaties(ComplexField):
-    """Complex datatype om de eigenschappen van beton te bundelen."""
-
+class DtcBetonspecificatiesWaarden(AttributeInfo):
     def __init__(self):
-        super().__init__(naam="DtcBetonspecificaties",
-                         label="Betonspecificaties",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcBetonspecificaties",
-                         definition="Complex datatype om de eigenschappen van beton te bundelen.",
-                         usagenote="",
-                         deprecated_version="")
+        self._betondekking = OTLAttribuut(field=KwantWrdInMillimeter,
+                                          naam='betondekking',
+                                          label='betondekking',
+                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcBetonspecificaties.betondekking',
+                                          definition='De afstand in millimeter tussen de buitenkant van het beton (het oppervlak van het beton) tot het dichtstbijzijnde wapeningsstaal.')
 
-        self.waarde.betondekking = KwantWrdInMillimeter()
+        self._betonmilieuklassen = OTLAttribuut(field=KlBetonmilieuklasse,
+                                                naam='betonmilieuklassen',
+                                                label='betonmilieuklassen',
+                                                objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcBetonspecificaties.betonmilieuklassen',
+                                                kardinaliteit_max='*',
+                                                definition='Milieuklassen (X-klassen) leggen rechtstreeks de link met bepaalde aantastingsmechanismen, waaraan de betonconstructie (of een onderdeel ervan) wordt blootgesteld tijdens het gebruik. Er kunnen meerdere milieuklassen van toepassing zijn.')
+
+        self._betonomgevingsklassen = OTLAttribuut(field=KlBetonomgevingsklasse,
+                                                   naam='betonomgevingsklassen',
+                                                   label='betonomgevingsklassen',
+                                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcBetonspecificaties.betonomgevingsklassen',
+                                                   kardinaliteit_max='*',
+                                                   definition='De omgeving waaraan de betonconstructie (of een onderdeel ervan) wordt blootgesteld tijdens het gebruik. Er kunnen meerdere omgevingsklassen van toepassing zijn.')
+
+        self._betonsterkteklasse = OTLAttribuut(field=KlBetonsterkteklasse,
+                                                naam='betonsterkteklasse',
+                                                label='betonsterkteklasse',
+                                                objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcBetonspecificaties.betonsterkteklasse',
+                                                definition='De sterkteklasse is een maat voor de druksterkte van beton.')
+
+        self._gebruiksdomein = OTLAttribuut(field=KlGebruiksdomein,
+                                            naam='gebruiksdomein',
+                                            label='gebruiksdomein',
+                                            objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcBetonspecificaties.gebruiksdomein',
+                                            definition='De gebruiksomstandigheden van het beton. Dit bepaalt tevens het maximum chloridegehalte.')
+
+        self._grootsteKorrelafmetingDmax = OTLAttribuut(field=KwantWrdInMillimeter,
+                                                        naam='grootsteKorrelafmetingDmax',
+                                                        label='grootste korrelafmeting (Dmax)',
+                                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcBetonspecificaties.grootsteKorrelafmetingDmax',
+                                                        definition='De nominale grootste korrelafmeting (Dmax).')
+
+        self._isCementMetBeperktAlkaligehalte = OTLAttribuut(field=BooleanField,
+                                                             naam='isCementMetBeperktAlkaligehalte',
+                                                             label='is cement met beperkt alkaligehalte',
+                                                             objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcBetonspecificaties.isCementMetBeperktAlkaligehalte',
+                                                             definition='Aanduiding of het cement een beperkt alkaligehalte heeft (LA).')
+
+        self._isCementMetHogeAanvangssterkte = OTLAttribuut(field=BooleanField,
+                                                            naam='isCementMetHogeAanvangssterkte',
+                                                            label='is cement met hoge aanvangssterkte',
+                                                            objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcBetonspecificaties.isCementMetHogeAanvangssterkte',
+                                                            definition='Geeft aan of het cement gebruikt wordt voor een snelle binding (bijvoorbeeld in de winter) (HES).')
+
+        self._isCementMetHogeBestandheidTegenSulfaten = OTLAttribuut(field=BooleanField,
+                                                                     naam='isCementMetHogeBestandheidTegenSulfaten',
+                                                                     label='is cement met hoge bestandheid tegen sulfaten',
+                                                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcBetonspecificaties.isCementMetHogeBestandheidTegenSulfaten',
+                                                                     definition='Geeft aan of het cement een hoge bestandheid heeft tegen sulfaten (SR).')
+
+        self._isCementMetLageHydratatiewarmte = OTLAttribuut(field=BooleanField,
+                                                             naam='isCementMetLageHydratatiewarmte',
+                                                             label='is cement met lage hydratatiewarmte',
+                                                             objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcBetonspecificaties.isCementMetLageHydratatiewarmte',
+                                                             definition='Geeft aan of het cement gebruikt wordt voor een tragere sterkteontwikkeling (LH).')
+
+        self._isColloidaalbeton = OTLAttribuut(field=BooleanField,
+                                               naam='isColloidaalbeton',
+                                               label='is colloïdaalbeton',
+                                               objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcBetonspecificaties.isColloidaalbeton',
+                                               definition='Geeft aan of het beton zich niet ontmengt onder of in water.')
+
+        self._technischeFiche = OTLAttribuut(field=DtcDocument,
+                                             naam='technischeFiche',
+                                             label='technische fiche',
+                                             objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcBetonspecificaties.technischeFiche',
+                                             definition='De technische fiche van het beton. Deze moet volgende eigenschappen bevatten: de norm waaraan het beton voldoet, de sterkteklasse, de duurzaamheid (bestaande uit het gebruiksdomein en de omgevingsklasse(n)), de consistentieklasse, de nominale grootste korrelafmeting,...')
+
+    @property
+    def betondekking(self):
         """De afstand in millimeter tussen de buitenkant van het beton (het oppervlak van het beton) tot het dichtstbijzijnde wapeningsstaal."""
-        self.waarde.betondekking.naam = "betondekking"
-        self.waarde.betondekking.label = "betondekking"
-        self.waarde.betondekking.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcBetonspecificaties.betondekking"
-        self.waarde.betondekking.definition = "De afstand in millimeter tussen de buitenkant van het beton (het oppervlak van het beton) tot het dichtstbijzijnde wapeningsstaal."
-        self.waarde.betondekking.constraints = ""
-        self.waarde.betondekking.usagenote = ""
-        self.waarde.betondekking.deprecated_version = ""
-        self.betondekking = self.waarde.betondekking
+        return self._betondekking.waarde
 
-        betonmilieuklassenField = KeuzelijstField(naam="betonmilieuklassen",
-                                                  label="betonmilieuklassen",
-                                                  lijst=KlBetonmilieuklasse(),
-                                                  objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcBetonspecificaties.betonmilieuklassen",
-                                                  definition="Milieuklassen (X-klassen) leggen rechtstreeks de link met bepaalde aantastingsmechanismen, waaraan de betonconstructie (of een onderdeel ervan) wordt blootgesteld tijdens het gebruik. Er kunnen meerdere milieuklassen van toepassing zijn.",
-                                                  constraints="",
-                                                  usagenote="",
-                                                  deprecated_version="")
-        self.waarde.betonmilieuklassen = KardinaliteitField(minKardinaliteit="1", maxKardinaliteit="*", fieldToMultiply=betonmilieuklassenField)
-        self.betonmilieuklassen = self.waarde.betonmilieuklassen
+    @betondekking.setter
+    def betondekking(self, value):
+        self._betondekking.set_waarde(value)
+
+    @property
+    def betonmilieuklassen(self):
         """Milieuklassen (X-klassen) leggen rechtstreeks de link met bepaalde aantastingsmechanismen, waaraan de betonconstructie (of een onderdeel ervan) wordt blootgesteld tijdens het gebruik. Er kunnen meerdere milieuklassen van toepassing zijn."""
+        return self._betonmilieuklassen.waarde
 
-        betonomgevingsklassenField = KeuzelijstField(naam="betonomgevingsklassen",
-                                                     label="betonomgevingsklassen",
-                                                     lijst=KlBetonomgevingsklasse(),
-                                                     objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcBetonspecificaties.betonomgevingsklassen",
-                                                     definition="De omgeving waaraan de betonconstructie (of een onderdeel ervan) wordt blootgesteld tijdens het gebruik. Er kunnen meerdere omgevingsklassen van toepassing zijn.",
-                                                     constraints="",
-                                                     usagenote="",
-                                                     deprecated_version="")
-        self.waarde.betonomgevingsklassen = KardinaliteitField(minKardinaliteit="1", maxKardinaliteit="*", fieldToMultiply=betonomgevingsklassenField)
-        self.betonomgevingsklassen = self.waarde.betonomgevingsklassen
+    @betonmilieuklassen.setter
+    def betonmilieuklassen(self, value):
+        self._betonmilieuklassen.set_waarde(value)
+
+    @property
+    def betonomgevingsklassen(self):
         """De omgeving waaraan de betonconstructie (of een onderdeel ervan) wordt blootgesteld tijdens het gebruik. Er kunnen meerdere omgevingsklassen van toepassing zijn."""
+        return self._betonomgevingsklassen.waarde
 
-        self.waarde.betonsterkteklasse = KeuzelijstField(naam="betonsterkteklasse",
-                                                         label="betonsterkteklasse",
-                                                         lijst=KlBetonsterkteklasse(),
-                                                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcBetonspecificaties.betonsterkteklasse",
-                                                         definition="De sterkteklasse is een maat voor de druksterkte van beton.",
-                                                         constraints="",
-                                                         usagenote="",
-                                                         deprecated_version="")
-        self.betonsterkteklasse = self.waarde.betonsterkteklasse
+    @betonomgevingsklassen.setter
+    def betonomgevingsklassen(self, value):
+        self._betonomgevingsklassen.set_waarde(value)
+
+    @property
+    def betonsterkteklasse(self):
         """De sterkteklasse is een maat voor de druksterkte van beton."""
+        return self._betonsterkteklasse.waarde
 
-        self.waarde.gebruiksdomein = KeuzelijstField(naam="gebruiksdomein",
-                                                     label="gebruiksdomein",
-                                                     lijst=KlGebruiksdomein(),
-                                                     objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcBetonspecificaties.gebruiksdomein",
-                                                     definition="De gebruiksomstandigheden van het beton. Dit bepaalt tevens het maximum chloridegehalte.",
-                                                     constraints="",
-                                                     usagenote="",
-                                                     deprecated_version="")
-        self.gebruiksdomein = self.waarde.gebruiksdomein
+    @betonsterkteklasse.setter
+    def betonsterkteklasse(self, value):
+        self._betonsterkteklasse.set_waarde(value)
+
+    @property
+    def gebruiksdomein(self):
         """De gebruiksomstandigheden van het beton. Dit bepaalt tevens het maximum chloridegehalte."""
+        return self._gebruiksdomein.waarde
 
-        self.waarde.grootsteKorrelafmetingDmax = KwantWrdInMillimeter()
+    @gebruiksdomein.setter
+    def gebruiksdomein(self, value):
+        self._gebruiksdomein.set_waarde(value)
+
+    @property
+    def grootsteKorrelafmetingDmax(self):
         """De nominale grootste korrelafmeting (Dmax)."""
-        self.waarde.grootsteKorrelafmetingDmax.naam = "grootsteKorrelafmetingDmax"
-        self.waarde.grootsteKorrelafmetingDmax.label = "grootste korrelafmeting (Dmax)"
-        self.waarde.grootsteKorrelafmetingDmax.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcBetonspecificaties.grootsteKorrelafmetingDmax"
-        self.waarde.grootsteKorrelafmetingDmax.definition = "De nominale grootste korrelafmeting (Dmax)."
-        self.waarde.grootsteKorrelafmetingDmax.constraints = ""
-        self.waarde.grootsteKorrelafmetingDmax.usagenote = ""
-        self.waarde.grootsteKorrelafmetingDmax.deprecated_version = ""
-        self.grootsteKorrelafmetingDmax = self.waarde.grootsteKorrelafmetingDmax
+        return self._grootsteKorrelafmetingDmax.waarde
 
-        self.waarde.isCementMetBeperktAlkaligehalte = BooleanField(naam="isCementMetBeperktAlkaligehalte",
-                                                                   label="is cement met beperkt alkaligehalte",
-                                                                   objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcBetonspecificaties.isCementMetBeperktAlkaligehalte",
-                                                                   definition="Aanduiding of het cement een beperkt alkaligehalte heeft (LA).",
-                                                                   constraints="",
-                                                                   usagenote="",
-                                                                   deprecated_version="")
-        self.isCementMetBeperktAlkaligehalte = self.waarde.isCementMetBeperktAlkaligehalte
+    @grootsteKorrelafmetingDmax.setter
+    def grootsteKorrelafmetingDmax(self, value):
+        self._grootsteKorrelafmetingDmax.set_waarde(value)
+
+    @property
+    def isCementMetBeperktAlkaligehalte(self):
         """Aanduiding of het cement een beperkt alkaligehalte heeft (LA)."""
+        return self._isCementMetBeperktAlkaligehalte.waarde
 
-        self.waarde.isCementMetHogeAanvangssterkte = BooleanField(naam="isCementMetHogeAanvangssterkte",
-                                                                  label="is cement met hoge aanvangssterkte",
-                                                                  objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcBetonspecificaties.isCementMetHogeAanvangssterkte",
-                                                                  definition="Geeft aan of het cement gebruikt wordt voor een snelle binding (bijvoorbeeld in de winter) (HES).",
-                                                                  constraints="",
-                                                                  usagenote="",
-                                                                  deprecated_version="")
-        self.isCementMetHogeAanvangssterkte = self.waarde.isCementMetHogeAanvangssterkte
+    @isCementMetBeperktAlkaligehalte.setter
+    def isCementMetBeperktAlkaligehalte(self, value):
+        self._isCementMetBeperktAlkaligehalte.set_waarde(value)
+
+    @property
+    def isCementMetHogeAanvangssterkte(self):
         """Geeft aan of het cement gebruikt wordt voor een snelle binding (bijvoorbeeld in de winter) (HES)."""
+        return self._isCementMetHogeAanvangssterkte.waarde
 
-        self.waarde.isCementMetHogeBestandheidTegenSulfaten = BooleanField(naam="isCementMetHogeBestandheidTegenSulfaten",
-                                                                           label="is cement met hoge bestandheid tegen sulfaten",
-                                                                           objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcBetonspecificaties.isCementMetHogeBestandheidTegenSulfaten",
-                                                                           definition="Geeft aan of het cement een hoge bestandheid heeft tegen sulfaten (SR).",
-                                                                           constraints="",
-                                                                           usagenote="",
-                                                                           deprecated_version="")
-        self.isCementMetHogeBestandheidTegenSulfaten = self.waarde.isCementMetHogeBestandheidTegenSulfaten
+    @isCementMetHogeAanvangssterkte.setter
+    def isCementMetHogeAanvangssterkte(self, value):
+        self._isCementMetHogeAanvangssterkte.set_waarde(value)
+
+    @property
+    def isCementMetHogeBestandheidTegenSulfaten(self):
         """Geeft aan of het cement een hoge bestandheid heeft tegen sulfaten (SR)."""
+        return self._isCementMetHogeBestandheidTegenSulfaten.waarde
 
-        self.waarde.isCementMetLageHydratatiewarmte = BooleanField(naam="isCementMetLageHydratatiewarmte",
-                                                                   label="is cement met lage hydratatiewarmte",
-                                                                   objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcBetonspecificaties.isCementMetLageHydratatiewarmte",
-                                                                   definition="Geeft aan of het cement gebruikt wordt voor een tragere sterkteontwikkeling (LH).",
-                                                                   constraints="",
-                                                                   usagenote="",
-                                                                   deprecated_version="")
-        self.isCementMetLageHydratatiewarmte = self.waarde.isCementMetLageHydratatiewarmte
+    @isCementMetHogeBestandheidTegenSulfaten.setter
+    def isCementMetHogeBestandheidTegenSulfaten(self, value):
+        self._isCementMetHogeBestandheidTegenSulfaten.set_waarde(value)
+
+    @property
+    def isCementMetLageHydratatiewarmte(self):
         """Geeft aan of het cement gebruikt wordt voor een tragere sterkteontwikkeling (LH)."""
+        return self._isCementMetLageHydratatiewarmte.waarde
 
-        self.waarde.isColloidaalbeton = BooleanField(naam="isColloidaalbeton",
-                                                     label="is colloïdaalbeton",
-                                                     objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcBetonspecificaties.isColloidaalbeton",
-                                                     definition="Geeft aan of het beton zich niet ontmengt onder of in water.",
-                                                     constraints="",
-                                                     usagenote="",
-                                                     deprecated_version="")
-        self.isColloidaalbeton = self.waarde.isColloidaalbeton
+    @isCementMetLageHydratatiewarmte.setter
+    def isCementMetLageHydratatiewarmte(self, value):
+        self._isCementMetLageHydratatiewarmte.set_waarde(value)
+
+    @property
+    def isColloidaalbeton(self):
         """Geeft aan of het beton zich niet ontmengt onder of in water."""
+        return self._isColloidaalbeton.waarde
 
-        self.waarde.technischeFiche = DtcDocument()
+    @isColloidaalbeton.setter
+    def isColloidaalbeton(self, value):
+        self._isColloidaalbeton.set_waarde(value)
+
+    @property
+    def technischeFiche(self):
         """De technische fiche van het beton. Deze moet volgende eigenschappen bevatten: de norm waaraan het beton voldoet, de sterkteklasse, de duurzaamheid (bestaande uit het gebruiksdomein en de omgevingsklasse(n)), de consistentieklasse, de nominale grootste korrelafmeting,..."""
-        self.waarde.technischeFiche.naam = "technischeFiche"
-        self.waarde.technischeFiche.label = "technische fiche"
-        self.waarde.technischeFiche.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcBetonspecificaties.technischeFiche"
-        self.waarde.technischeFiche.definition = "De technische fiche van het beton. Deze moet volgende eigenschappen bevatten: de norm waaraan het beton voldoet, de sterkteklasse, de duurzaamheid (bestaande uit het gebruiksdomein en de omgevingsklasse(n)), de consistentieklasse, de nominale grootste korrelafmeting,..."
-        self.waarde.technischeFiche.constraints = ""
-        self.waarde.technischeFiche.usagenote = ""
-        self.waarde.technischeFiche.deprecated_version = ""
-        self.technischeFiche = self.waarde.technischeFiche
+        return self._technischeFiche.waarde
+
+    @technischeFiche.setter
+    def technischeFiche(self, value):
+        self._technischeFiche.set_waarde(value)
+
+
+# Generated with OTLComplexDatatypeCreator. To modify: extend, do not edit
+class DtcBetonspecificaties(ComplexField, AttributeInfo):
+    """Complex datatype om de eigenschappen van beton te bundelen."""
+    naam = 'DtcBetonspecificaties'
+    label = 'Betonspecificaties'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcBetonspecificaties'
+    definition = 'Complex datatype om de eigenschappen van beton te bundelen.'
+    waardeObject = DtcBetonspecificatiesWaarden
+
+    def __str__(self):
+        return ComplexField.__str__(self)
+

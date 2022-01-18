@@ -1,35 +1,27 @@
-from OTLModel.Datatypes.Keuzelijst import Keuzelijst
-from OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
-from OTLModel.Datatypes.OTLField import OTLField
+﻿from OTLModel.BaseClasses.OTLField import OTLField
 
 
 class KeuzelijstField(OTLField):
-    def __init__(self, lijst: Keuzelijst, naam, label, objectUri, definition, constraints, usagenote, deprecated_version, overerving=None,
-                 readonly=False, readonlyValue=None):
-        super().__init__(naam, label, objectUri, definition, constraints, usagenote, deprecated_version, readonly, readonlyValue)
-        self.lijst = lijst
-        self.overerving = overerving
-        self.waarde = None
+    options = {}
+    codelist = ''
 
-    def __setattr__(self, name, value):
-        if name == "waarde" and self.readonly and value is not None:
-            raise AttributeError(f"can't set the value of a readonly attribute")
-        if name == "waarde":
-            if value is not None and (not isinstance(value, KeuzelijstWaarde)):
-                raise ValueError(f'expecting {self.lijst.__name__} in {self.naam}')
-            if value is not None and not value in self.lijst.options:
-                raise ValueError(
-                    f'{value.invulwaarde} is not a valid option for {self.naam}, find the valid options in {self.lijst}')
-        self.__dict__[name] = value
+    @staticmethod
+    def validate(value, attribuut):
+        if not isinstance(value, str):
+            raise TypeError(f'{value} is not the correct type. Expecting a string')
+        if value is not None and not value in attribuut.field.options.keys():
+            raise ValueError(
+                f'{value} is not a valid option for {attribuut.naam}, find the valid options using .attr_type_info("{attribuut.naam}")')
+        return True
 
-    def default(self):
-        if self.waarde is None:
-            return None
-        return self.waarde.invulwaarde
-
-    def set_value_by_invulwaarde(self, invulwaarde):
-        self.waarde = self.lijst.get_value_by_invulwaarde(invulwaarde)
-
-    def set_value_by_label(self, label):
-        self.waarde = self.lijst.get_value_by_label(label)
-
+    def __str__(self):
+        s = f"""information about {self.naam}:
+naam: {self.naam}
+uri: {self.objectUri}
+definition: {self.definition}
+label: {self.label}
+usagenote: {self.usagenote}
+deprecated_version: {self.deprecated_version}"""
+        s += '\npossible values:\n'
+        s += '\n'.join(list(map(lambda x: '    ' + x.invulwaarde, self.options.values())))
+        return s

@@ -1,20 +1,26 @@
 # coding=utf-8
-from OTLModel.Datatypes.Keuzelijst import Keuzelijst
+from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
+from OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 
 # Generated with OTLEnumerationCreator. To modify: extend, do not edit
-class KlTransformatorTrafobeveiliging(Keuzelijst):
+class KlTransformatorTrafobeveiliging(KeuzelijstField):
     """Type transformatorbeveiliging."""
+    naam = 'KlTransformatorTrafobeveiliging'
+    label = 'Transformator trafobeveiliging'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlTransformatorTrafobeveiliging'
+    definition = 'Type transformatorbeveiliging.'
+    codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlTransformatorTrafobeveiliging'
+    options = {
+        'gecombineerd': KeuzelijstWaarde(invulwaarde='gecombineerd',
+                                         label='gecombineerd',
+                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlTransformatorTrafobeveiliging/gecombineerd'),
+        'overdruk': KeuzelijstWaarde(invulwaarde='overdruk',
+                                     label='overdruk',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlTransformatorTrafobeveiliging/overdruk'),
+        'overtemperatuur': KeuzelijstWaarde(invulwaarde='overtemperatuur',
+                                            label='overtemperatuur',
+                                            definitie='attributen invullen//',
+                                            objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlTransformatorTrafobeveiliging/overtemperatuur')
+    }
 
-    def __init__(self):
-        super().__init__(naam="KlTransformatorTrafobeveiliging",
-                         label="Transformator trafobeveiliging",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlTransformatorTrafobeveiliging",
-                         definition="Type transformatorbeveiliging.",
-                         usagenote="",
-                         deprecated_version="",
-                         codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlTransformatorTrafobeveiliging")
-
-        self.add_option("gecombineerd", "gecombineerd", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlTransformatorTrafobeveiliging/gecombineerd")
-        self.add_option("overdruk", "overdruk", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlTransformatorTrafobeveiliging/overdruk")
-        self.add_option("overtemperatuur", "overtemperatuur", "attributen invullen//", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlTransformatorTrafobeveiliging/overtemperatuur")

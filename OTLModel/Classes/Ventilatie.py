@@ -1,4 +1,6 @@
 # coding=utf-8
+from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
+from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from abc import abstractmethod
 from OTLModel.Classes.AIMObject import AIMObject
 from OTLModel.Datatypes.KwantWrdInKubiekeMeter import KwantWrdInKubiekeMeter
@@ -8,52 +10,90 @@ from OTLModel.Datatypes.KwantWrdInWatt import KwantWrdInWatt
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Ventilatie(AIMObject):
+class Ventilatie(AIMObject, AttributeInfo):
     """Abstracte voor attributen die gemeenschappelijk zijn voor verschillende types van ventilatie."""
 
-    typeURI = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Ventilatie"
+    typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Ventilatie'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     @abstractmethod
     def __init__(self):
-        super().__init__()
+        AIMObject.__init__(self)
+        AttributeInfo.__init__(self)
 
-        self.binnendiameter = KwantWrdInMillimeter()
+        self._binnendiameter = OTLAttribuut(field=KwantWrdInMillimeter,
+                                            naam='binnendiameter',
+                                            label='binnendiameter',
+                                            objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Ventilatie.binnendiameter',
+                                            definition='De grootste afstand van de rechte lijn die kan worden getrokken tussen twee punten op de binnenzijde van de ventilatie. Deze rechte lijn gaat altijd door het middelpunt van de ventilatie.')
+
+        self._buitendiameter = OTLAttribuut(field=KwantWrdInMillimeter,
+                                            naam='buitendiameter',
+                                            label='buitendiameter',
+                                            objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Ventilatie.buitendiameter',
+                                            definition='De grootste afstand van de rechte lijn die kan worden getrokken tussen twee punten op de buitenzijde van de ventilatie. Deze rechte lijn gaat altijd door het middelpunt van de ventilatie.')
+
+        self._maximaalDebiet = OTLAttribuut(field=KwantWrdInKubiekeMeter,
+                                            naam='maximaalDebiet',
+                                            label='maximaal debiet',
+                                            objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Ventilatie.maximaalDebiet',
+                                            usagenote='Attribuut uit gebruik sinds versie 2.0.0',
+                                            deprecated_version='2.0.0',
+                                            definition='Maximaal debiet is de grootste hoeveelheid gas of vloeistof die per tijdseenheid door een bepaald oppervlak kan stromen.')
+
+        self._maximaalVolumedebiet = OTLAttribuut(field=KwantWrdInKubiekeMeterPerSeconde,
+                                                  naam='maximaalVolumedebiet',
+                                                  label='maximaal volumedebiet',
+                                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Ventilatie.maximaalVolumedebiet',
+                                                  definition='Maximaal volumedebiet is de grootste hoeveelheid volume aan gas of vloeistof die per tijdseenheid door een bepaald oppervlak kan stromen.')
+
+        self._vermogen = OTLAttribuut(field=KwantWrdInWatt,
+                                      naam='vermogen',
+                                      label='vermogen',
+                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Ventilatie.vermogen',
+                                      definition='Het vermogen van een ventilatie is de energie die dat het per seconde omzet.')
+
+    @property
+    def binnendiameter(self):
         """De grootste afstand van de rechte lijn die kan worden getrokken tussen twee punten op de binnenzijde van de ventilatie. Deze rechte lijn gaat altijd door het middelpunt van de ventilatie."""
-        self.binnendiameter.naam = "binnendiameter"
-        self.binnendiameter.label = "binnendiameter"
-        self.binnendiameter.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Ventilatie.binnendiameter"
-        self.binnendiameter.definition = "De grootste afstand van de rechte lijn die kan worden getrokken tussen twee punten op de binnenzijde van de ventilatie. Deze rechte lijn gaat altijd door het middelpunt van de ventilatie."
-        self.binnendiameter.constraints = ""
-        self.binnendiameter.usagenote = ""
-        self.binnendiameter.deprecated_version = ""
+        return self._binnendiameter.waarde
 
-        self.buitendiameter = KwantWrdInMillimeter()
+    @binnendiameter.setter
+    def binnendiameter(self, value):
+        self._binnendiameter.set_waarde(value, owner=self)
+
+    @property
+    def buitendiameter(self):
         """De grootste afstand van de rechte lijn die kan worden getrokken tussen twee punten op de buitenzijde van de ventilatie. Deze rechte lijn gaat altijd door het middelpunt van de ventilatie."""
-        self.buitendiameter.naam = "buitendiameter"
-        self.buitendiameter.label = "buitendiameter"
-        self.buitendiameter.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Ventilatie.buitendiameter"
-        self.buitendiameter.definition = "De grootste afstand van de rechte lijn die kan worden getrokken tussen twee punten op de buitenzijde van de ventilatie. Deze rechte lijn gaat altijd door het middelpunt van de ventilatie."
-        self.buitendiameter.constraints = ""
-        self.buitendiameter.usagenote = ""
-        self.buitendiameter.deprecated_version = ""
+        return self._buitendiameter.waarde
 
-        self.maximaalVolumedebiet = KwantWrdInKubiekeMeterPerSeconde()
+    @buitendiameter.setter
+    def buitendiameter(self, value):
+        self._buitendiameter.set_waarde(value, owner=self)
+
+    @property
+    def maximaalDebiet(self):
+        """Maximaal debiet is de grootste hoeveelheid gas of vloeistof die per tijdseenheid door een bepaald oppervlak kan stromen."""
+        return self._maximaalDebiet.waarde
+
+    @maximaalDebiet.setter
+    def maximaalDebiet(self, value):
+        self._maximaalDebiet.set_waarde(value, owner=self)
+
+    @property
+    def maximaalVolumedebiet(self):
         """Maximaal volumedebiet is de grootste hoeveelheid volume aan gas of vloeistof die per tijdseenheid door een bepaald oppervlak kan stromen."""
-        self.maximaalVolumedebiet.naam = "maximaalVolumedebiet"
-        self.maximaalVolumedebiet.label = "maximaal volumedebiet"
-        self.maximaalVolumedebiet.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Ventilatie.maximaalVolumedebiet"
-        self.maximaalVolumedebiet.definition = "Maximaal volumedebiet is de grootste hoeveelheid volume aan gas of vloeistof die per tijdseenheid door een bepaald oppervlak kan stromen."
-        self.maximaalVolumedebiet.constraints = ""
-        self.maximaalVolumedebiet.usagenote = ""
-        self.maximaalVolumedebiet.deprecated_version = ""
+        return self._maximaalVolumedebiet.waarde
 
-        self.vermogen = KwantWrdInWatt()
+    @maximaalVolumedebiet.setter
+    def maximaalVolumedebiet(self, value):
+        self._maximaalVolumedebiet.set_waarde(value, owner=self)
+
+    @property
+    def vermogen(self):
         """Het vermogen van een ventilatie is de energie die dat het per seconde omzet."""
-        self.vermogen.naam = "vermogen"
-        self.vermogen.label = "vermogen"
-        self.vermogen.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Ventilatie.vermogen"
-        self.vermogen.definition = "Het vermogen van een ventilatie is de energie die dat het per seconde omzet."
-        self.vermogen.constraints = ""
-        self.vermogen.usagenote = ""
-        self.vermogen.deprecated_version = ""
+        return self._vermogen.waarde
+
+    @vermogen.setter
+    def vermogen(self, value):
+        self._vermogen.set_waarde(value, owner=self)

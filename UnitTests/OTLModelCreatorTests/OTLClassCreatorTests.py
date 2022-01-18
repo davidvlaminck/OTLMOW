@@ -13,6 +13,8 @@ from ModelGenerator.OSLOTypeLink import OSLOTypeLink
 from ModelGenerator.OTLClassCreator import OTLClassCreator
 from ModelGenerator.SQLDbReader import SQLDbReader
 
+ROOT_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
 
 class ClassOSLOCollector(OSLOCollector):
     def __init__(self, reader):
@@ -39,29 +41,37 @@ class ClassOSLOCollector(OSLOCollector):
         ]
 
         self.expectedDataGebouw = ['# coding=utf-8',
+                                   'from OTLModel.BaseClasses.AttributeInfo import AttributeInfo',
+                                   'from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut',
                                    'from OTLModel.Classes.Behuizing import Behuizing',
                                    'from OTLModel.Datatypes.DtcDocument import DtcDocument',
                                    '',
                                    '',
                                    '# Generated with OTLClassCreator. To modify: extend, do not edit',
-                                   'class Gebouw(Behuizing):',
+                                   "class Gebouw(Behuizing, AttributeInfo):",
                                    '    """Elk bouwwerk, dat een voor mensen toegankelijke overdekte, geheel of gedeeltelijk met wanden omsloten ruimte vormt."""',
-                                   '',
-                                   '    typeURI = "https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Gebouw"',
+                                   "",
+                                   "    typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Gebouw'",
                                    '    """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""',
-                                   '',
-                                   '    def __init__(self):',
-                                   '        super().__init__()',
-                                   '',
-                                   '        self.grondplan = DtcDocument()',
+                                   "",
+                                   "    def __init__(self):",
+                                   '        AttributeInfo.__init__(self)',
+                                   '        Behuizing.__init__(self)',
+                                   "",
+                                   "        self._grondplan = OTLAttribuut(field=DtcDocument,",
+                                   "                                       naam='grondplan',",
+                                   "                                       label='grondplan',",
+                                   "                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Gebouw.grondplan',",
+                                   "                                       definition='Plattegrond van het gebouw met aanduidingen van de verschillende aanwezige elementen zoals kelder, kasten met kastnummers, toegangscontrole en meer.')",
+                                   "",
+                                   "    @property",
+                                   "    def grondplan(self):",
                                    '        """Plattegrond van het gebouw met aanduidingen van de verschillende aanwezige elementen zoals kelder, kasten met kastnummers, toegangscontrole en meer."""',
-                                   '        self.grondplan.naam = "grondplan"',
-                                   '        self.grondplan.label = "grondplan"',
-                                   '        self.grondplan.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Gebouw.grondplan"',
-                                   '        self.grondplan.definition = "Plattegrond van het gebouw met aanduidingen van de verschillende aanwezige elementen zoals kelder, kasten met kastnummers, toegangscontrole en meer."',
-                                   '        self.grondplan.constraints = ""',
-                                   '        self.grondplan.usagenote = ""',
-                                   '        self.grondplan.deprecated_version = ""']
+                                   "        return self._grondplan.waarde",
+                                   "",
+                                   "    @grondplan.setter",
+                                   "    def grondplan(self, value):",
+                                   "        self._grondplan.set_waarde(value, owner=self)"]
 
 
 class TestOTLClassCreator(OTLClassCreator):
@@ -81,7 +91,7 @@ class OTLClassCreatorTests(unittest.TestCase):
         logger = NoneLogger()
         collector = OSLOCollector(mock)
         creator = OTLClassCreator(logger, collector)
-        osloClass = OSLOClass(name='name', objectUri='', definition_nl='', label_nl='', usagenote_nl='', abstract=1,
+        osloClass = OSLOClass(name='name', objectUri='', definition='', label='', usagenote='', abstract=1,
                               deprecated_version='')
 
         with self.assertRaises(ValueError) as exception_empty_uri:
@@ -92,7 +102,7 @@ class OTLClassCreatorTests(unittest.TestCase):
         logger = NoneLogger()
         collector = OSLOCollector(mock)
         creator = OTLClassCreator(logger, collector)
-        osloClass = OSLOClass(name='name', objectUri='Bad objectUri', definition_nl='', label_nl='', usagenote_nl='', abstract=1,
+        osloClass = OSLOClass(name='name', objectUri='Bad objectUri', definition='', label='', usagenote='', abstract=1,
                               deprecated_version='')
 
         with self.assertRaises(ValueError) as exception_bad_uri:
@@ -105,7 +115,7 @@ class OTLClassCreatorTests(unittest.TestCase):
         creator = OTLClassCreator(logger, collector)
         osloClass = OSLOClass(name='',
                               objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcIdentificator',
-                              definition_nl='', label_nl='', usagenote_nl='', abstract=1,
+                              definition='', label='', usagenote='', abstract=1,
                               deprecated_version='')
 
         with self.assertRaises(ValueError) as exception_bad_name:
@@ -187,7 +197,8 @@ class OTLClassCreatorTests(unittest.TestCase):
         dataToWrite = creator.CreateBlockToWriteFromClasses(containerBuis)
         creator.writeToFile(containerBuis, 'Classes', dataToWrite, '../../')
 
-        self.assertTrue(os.path.isfile('../../OTLModel/Classes/ContainerBuis.py'))
+        filelocation = os.path.abspath(os.path.join(os.sep, ROOT_DIR, 'OTLModel/Classes/ContainerBuis.py'))
+        self.assertTrue(os.path.isfile(filelocation))
 
     def test_WriteToFileBuis(self):
         logger = NoneLogger()
@@ -204,7 +215,8 @@ class OTLClassCreatorTests(unittest.TestCase):
         dataToWrite = creator.CreateBlockToWriteFromClasses(buis)
         creator.writeToFile(buis, 'Classes', dataToWrite, '../../')
 
-        self.assertTrue(os.path.isfile('../../OTLModel/Classes/Buis.py'))
+        filelocation = os.path.abspath(os.path.join(os.sep, ROOT_DIR, 'OTLModel/Classes/Buis.py'))
+        self.assertTrue(os.path.isfile(filelocation))
 
     def test_WriteToFileGebouw(self):
         logger = NoneLogger()
@@ -221,4 +233,5 @@ class OTLClassCreatorTests(unittest.TestCase):
         dataToWrite = creator.CreateBlockToWriteFromClasses(containerBuis)
         creator.writeToFile(containerBuis, 'Classes', dataToWrite, '../../')
 
-        self.assertTrue(os.path.isfile('../../OTLModel/Classes/Gebouw.py'))
+        filelocation = os.path.abspath(os.path.join(os.sep, ROOT_DIR, 'OTLModel/Classes/Gebouw.py'))
+        self.assertTrue(os.path.isfile(filelocation))

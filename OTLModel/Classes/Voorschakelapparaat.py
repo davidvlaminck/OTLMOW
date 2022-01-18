@@ -1,11 +1,12 @@
 # coding=utf-8
+from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
+from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.AIMObject import AIMObject
-from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlVoorschakelapparaatType import KlVoorschakelapparaatType
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Voorschakelapparaat(AIMObject):
+class Voorschakelapparaat(AIMObject, AttributeInfo):
     """Het voorschakelapparaat van een ontladingslamp in ruime zin omvat alle componenten die in serie of in parallel met de lamp geschakeld worden om haar goede werking te verzekeren. Ze bestaat in 2 uitvoeringsvormen elektromagnetische en elektronische.
 Voor de elektromagnetische bestaat deze uit 
 *de ballast: een elektromagnetische eenheid, die d.m.v. passieve componenten zoals een spoel of een condensator en/of actieve componenten, hoofdzakelijk dient om de lampstroom te beperken tot de vereiste waarde;
@@ -14,18 +15,24 @@ Voor de elektromagnetische bestaat deze uit
 *de eventuele externe beveiligingen;
 *de onderlinge bekabeling."""
 
-    typeURI = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Voorschakelapparaat"
+    typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Voorschakelapparaat'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        super().__init__()
+        AIMObject.__init__(self)
+        AttributeInfo.__init__(self)
 
-        self.type = KeuzelijstField(naam="type",
-                                    label="type",
-                                    lijst=KlVoorschakelapparaatType(),
-                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Voorschakelapparaat.type",
-                                    definition="Type van het voorschakelapparaat.",
-                                    constraints="",
-                                    usagenote="",
-                                    deprecated_version="")
+        self._type = OTLAttribuut(field=KlVoorschakelapparaatType,
+                                  naam='type',
+                                  label='type',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Voorschakelapparaat.type',
+                                  definition='Type van het voorschakelapparaat.')
+
+    @property
+    def type(self):
         """Type van het voorschakelapparaat."""
+        return self._type.waarde
+
+    @type.setter
+    def type(self, value):
+        self._type.set_waarde(value, owner=self)

@@ -1,26 +1,52 @@
 # coding=utf-8
-from OTLModel.Datatypes.Keuzelijst import Keuzelijst
+from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
+from OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 
 # Generated with OTLEnumerationCreator. To modify: extend, do not edit
-class KlLaagRol(Keuzelijst):
+class KlLaagRol(KeuzelijstField):
     """De mogelijke rollen van de laag."""
+    naam = 'KlLaagRol'
+    label = 'Laag rol'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlLaagRol'
+    definition = 'De mogelijke rollen van de laag.'
+    codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlLaagRol'
+    options = {
+        'aanvulling': KeuzelijstWaarde(invulwaarde='aanvulling',
+                                       label='aanvulling',
+                                       definitie='De laag als aanvulling.',
+                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLaagRol/aanvulling'),
+        'bed-van-bestrating': KeuzelijstWaarde(invulwaarde='bed-van-bestrating',
+                                               label='bed van bestrating',
+                                               definitie='Dit betekent hetzelfde als \'straatlaag\'. Gelieve voor deze optie \'straatlaag\' aan te duiden als keuzemogelijkheid!',
+                                               objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLaagRol/bed-van-bestrating'),
+        'fundering': KeuzelijstWaarde(invulwaarde='fundering',
+                                      label='fundering',
+                                      definitie='De laag als fundering.',
+                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLaagRol/fundering'),
+        'fundering-voor-lijnvormige-elementen': KeuzelijstWaarde(invulwaarde='fundering-voor-lijnvormige-elementen',
+                                                                 label='fundering voor lijnvormige elementen',
+                                                                 definitie='De laag als fundering voor lijnvormige elementen.',
+                                                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLaagRol/fundering-voor-lijnvormige-elementen'),
+        'omhulling': KeuzelijstWaarde(invulwaarde='omhulling',
+                                      label='omhulling',
+                                      definitie='De laag als omhulling.',
+                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLaagRol/omhulling'),
+        'onderfundering': KeuzelijstWaarde(invulwaarde='onderfundering',
+                                           label='onderfundering',
+                                           definitie='De laag als onderfundering.',
+                                           objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLaagRol/onderfundering'),
+        'straatlaag': KeuzelijstWaarde(invulwaarde='straatlaag',
+                                       label='straatlaag',
+                                       definitie='De laag als straatlaag',
+                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLaagRol/straatlaag'),
+        'verharding': KeuzelijstWaarde(invulwaarde='verharding',
+                                       label='verharding',
+                                       definitie='De laag als verharding.',
+                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLaagRol/verharding'),
+        'wapening': KeuzelijstWaarde(invulwaarde='wapening',
+                                     label='wapening',
+                                     definitie='De laag als wapening en/of bescherming.',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLaagRol/wapening')
+    }
 
-    def __init__(self):
-        super().__init__(naam="KlLaagRol",
-                         label="Laag rol",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlLaagRol",
-                         definition="De mogelijke rollen van de laag.",
-                         usagenote="",
-                         deprecated_version="",
-                         codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlLaagRol")
-
-        self.add_option("aanvulling", "aanvulling", "De laag als aanvulling.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLaagRol/aanvulling")
-        self.add_option("bed-van-bestrating", "bed van bestrating", "Dit betekent hetzelfde als 'straatlaag'. Gelieve voor deze optie 'straatlaag' aan te duiden als keuzemogelijkheid!", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLaagRol/bed-van-bestrating")
-        self.add_option("fundering", "fundering", "De laag als fundering.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLaagRol/fundering")
-        self.add_option("fundering-voor-lijnvormige-elementen", "fundering voor lijnvormige elementen", "De laag als fundering voor lijnvormige elementen.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLaagRol/fundering-voor-lijnvormige-elementen")
-        self.add_option("omhulling", "omhulling", "De laag als omhulling.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLaagRol/omhulling")
-        self.add_option("onderfundering", "onderfundering", "De laag als onderfundering.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLaagRol/onderfundering")
-        self.add_option("straatlaag", "straatlaag", "De laag als straatlaag", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLaagRol/straatlaag")
-        self.add_option("verharding", "verharding", "De laag als verharding.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLaagRol/verharding")
-        self.add_option("wapening", "wapening", "De laag als wapening en/of bescherming.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLaagRol/wapening")

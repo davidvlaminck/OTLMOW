@@ -6,6 +6,7 @@ from Loggers.LogType import LogType
 from ModelGenerator.AbstractDatatypeCreator import AbstractDatatypeCreator
 from ModelGenerator.OSLOCollector import OSLOCollector
 from ModelGenerator.OSLOEnumeration import OSLOEnumeration
+from ModelGenerator.StringHelper import wrap_in_quotes
 from OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 
@@ -27,27 +28,35 @@ class OTLEnumerationCreator(AbstractDatatypeCreator):
 
     def CreateBlockToWriteFromEnumeration(self, osloEnumeration: OSLOEnumeration):
         datablock = ['# coding=utf-8',
-                     'from OTLModel.Datatypes.Keuzelijst import Keuzelijst',
+                     'from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField',
+                     'from OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde',
                      '',
                      '',
                      f'# Generated with {self.__class__.__name__}. To modify: extend, do not edit',
-                     f'class {osloEnumeration.name}(Keuzelijst):',
-                     f'    """{osloEnumeration.definition_nl}"""',
-                     '',
-                     '    def __init__(self):',
-                     f'        super().__init__(naam="{osloEnumeration.name}",',
-                     f'                         label="{osloEnumeration.label_nl}",',
-                     f'                         objectUri="{osloEnumeration.objectUri}",',
-                     f'                         definition="{osloEnumeration.definition_nl}",',
-                     f'                         usagenote="{osloEnumeration.usagenote_nl}",',
-                     f'                         deprecated_version="{osloEnumeration.deprecated_version}",',
-                     f'                         codelist="{osloEnumeration.codelist}")',
-                     '']
+                     f'class {osloEnumeration.name}(KeuzelijstField):',
+                     f'    """{osloEnumeration.definition}"""',
+                     f'    naam = {wrap_in_quotes(osloEnumeration.name)}',
+                     f'    label = {wrap_in_quotes(osloEnumeration.label)}',
+                     f'    objectUri = {wrap_in_quotes(osloEnumeration.objectUri)}',
+                     f'    definition = {wrap_in_quotes(osloEnumeration.definition)}']
+        if osloEnumeration.deprecated_version != '':
+            datablock.append(f'    deprecated_version = {wrap_in_quotes(osloEnumeration.deprecated_version)}')
+        datablock.append(f'    codelist = {wrap_in_quotes(osloEnumeration.codelist)}')
+        datablock.append('    options = {')
 
         waardes = self.getKeuzelijstWaardesFromUri(osloEnumeration.name)
         for waarde in sorted(waardes, key=lambda w: w.invulwaarde):
-            datablock.append(
-                f'        self.add_option("{waarde.invulwaarde}", "{waarde.label}", "{waarde.definitie}", "{waarde.objectUri}")')
+            whitespace = AbstractDatatypeCreator.getWhiteSpaceEquivalent(f"        '{waarde.invulwaarde}': KeuzelijstWaarde(")
+            datablock.append(f"        '{waarde.invulwaarde}': KeuzelijstWaarde(invulwaarde='{waarde.invulwaarde}',")
+            datablock.append(f"{whitespace}label='{waarde.label}',")
+            if waarde.definitie != '':
+                datablock.append(f"{whitespace}definitie={wrap_in_quotes(waarde.definitie)},")
+            datablock.append(f"{whitespace}objectUri='{waarde.objectUri}'),")
+
+        if len(waardes) > 0:
+            datablock[-1] = datablock[-1][:-1]
+        datablock.append('    }')
+        datablock.append('')
 
         return datablock
 

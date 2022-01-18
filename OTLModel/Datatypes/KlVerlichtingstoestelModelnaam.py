@@ -1,60 +1,152 @@
 # coding=utf-8
-from OTLModel.Datatypes.Keuzelijst import Keuzelijst
+from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
+from OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 
 # Generated with OTLEnumerationCreator. To modify: extend, do not edit
-class KlVerlichtingstoestelModelnaam(Keuzelijst):
+class KlVerlichtingstoestelModelnaam(KeuzelijstField):
     """De modelnaam van het verlichtingstoestel."""
+    naam = 'KlVerlichtingstoestelModelnaam'
+    label = 'Verlichtingstoestel modelnaam'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#KlVerlichtingstoestelModelnaam'
+    definition = 'De modelnaam van het verlichtingstoestel.'
+    codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlVerlichtingstoestelModelnaam'
+    options = {
+        'ARC': KeuzelijstWaarde(invulwaarde='ARC',
+                                label='ARC',
+                                objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerlichtingstoestelModelnaam/ARC'),
+        'Belgica': KeuzelijstWaarde(invulwaarde='Belgica',
+                                    label='Belgica',
+                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerlichtingstoestelModelnaam/Belgica'),
+        'Calypso': KeuzelijstWaarde(invulwaarde='Calypso',
+                                    label='Calypso',
+                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerlichtingstoestelModelnaam/Calypso'),
+        'Corus': KeuzelijstWaarde(invulwaarde='Corus',
+                                  label='Corus',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerlichtingstoestelModelnaam/Corus'),
+        'DTN': KeuzelijstWaarde(invulwaarde='DTN',
+                                label='DTN',
+                                objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerlichtingstoestelModelnaam/DTN'),
+        'Evolo': KeuzelijstWaarde(invulwaarde='Evolo',
+                                  label='Evolo',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerlichtingstoestelModelnaam/Evolo'),
+        'Focal': KeuzelijstWaarde(invulwaarde='Focal',
+                                  label='Focal',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerlichtingstoestelModelnaam/Focal'),
+        'GSM': KeuzelijstWaarde(invulwaarde='GSM',
+                                label='GSM',
+                                objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerlichtingstoestelModelnaam/GSM'),
+        'GTMB': KeuzelijstWaarde(invulwaarde='GTMB',
+                                 label='GTMB',
+                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerlichtingstoestelModelnaam/GTMB'),
+        'GTNB': KeuzelijstWaarde(invulwaarde='GTNB',
+                                 label='GTNB',
+                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerlichtingstoestelModelnaam/GTNB'),
+        'GZM': KeuzelijstWaarde(invulwaarde='GZM',
+                                label='GZM',
+                                objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerlichtingstoestelModelnaam/GZM'),
+        'Gema': KeuzelijstWaarde(invulwaarde='Gema',
+                                 label='Gema',
+                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerlichtingstoestelModelnaam/Gema'),
+        'HCI-TS': KeuzelijstWaarde(invulwaarde='HCI-TS',
+                                   label='HCI-TS',
+                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerlichtingstoestelModelnaam/HCI-TS'),
+        'Iridium': KeuzelijstWaarde(invulwaarde='Iridium',
+                                    label='Iridium',
+                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerlichtingstoestelModelnaam/Iridium'),
+        'MNF300': KeuzelijstWaarde(invulwaarde='MNF300',
+                                   label='MNF300',
+                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerlichtingstoestelModelnaam/MNF300'),
+        'MWF230': KeuzelijstWaarde(invulwaarde='MWF230',
+                                   label='MWF230',
+                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerlichtingstoestelModelnaam/MWF230'),
+        'MY11': KeuzelijstWaarde(invulwaarde='MY11',
+                                 label='MY11',
+                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerlichtingstoestelModelnaam/MY11'),
+        'Neos': KeuzelijstWaarde(invulwaarde='Neos',
+                                 label='Neos',
+                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerlichtingstoestelModelnaam/Neos'),
+        'Onyx': KeuzelijstWaarde(invulwaarde='Onyx',
+                                 label='Onyx',
+                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerlichtingstoestelModelnaam/Onyx'),
+        'RT3NB': KeuzelijstWaarde(invulwaarde='RT3NB',
+                                  label='RT3NB',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerlichtingstoestelModelnaam/RT3NB'),
+        'RT3SB': KeuzelijstWaarde(invulwaarde='RT3SB',
+                                  label='RT3SB',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerlichtingstoestelModelnaam/RT3SB'),
+        'RXN': KeuzelijstWaarde(invulwaarde='RXN',
+                                label='RXN',
+                                objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerlichtingstoestelModelnaam/RXN'),
+        'RXS': KeuzelijstWaarde(invulwaarde='RXS',
+                                label='RXS',
+                                objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerlichtingstoestelModelnaam/RXS'),
+        'Radial': KeuzelijstWaarde(invulwaarde='Radial',
+                                   label='Radial',
+                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerlichtingstoestelModelnaam/Radial'),
+        'SRS201': KeuzelijstWaarde(invulwaarde='SRS201',
+                                   label='SRS201',
+                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerlichtingstoestelModelnaam/SRS201'),
+        'Safir': KeuzelijstWaarde(invulwaarde='Safir',
+                                  label='Safir',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerlichtingstoestelModelnaam/Safir'),
+        'Saturnus': KeuzelijstWaarde(invulwaarde='Saturnus',
+                                     label='Saturnus',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerlichtingstoestelModelnaam/Saturnus'),
+        'Squalo': KeuzelijstWaarde(invulwaarde='Squalo',
+                                   label='Squalo',
+                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerlichtingstoestelModelnaam/Squalo'),
+        'Syntra': KeuzelijstWaarde(invulwaarde='Syntra',
+                                   label='Syntra',
+                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerlichtingstoestelModelnaam/Syntra'),
+        'VTP': KeuzelijstWaarde(invulwaarde='VTP',
+                                label='VTP',
+                                objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerlichtingstoestelModelnaam/VTP'),
+        'Z18': KeuzelijstWaarde(invulwaarde='Z18',
+                                label='Z18',
+                                objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerlichtingstoestelModelnaam/Z18'),
+        'Z2': KeuzelijstWaarde(invulwaarde='Z2',
+                               label='Z2',
+                               objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerlichtingstoestelModelnaam/Z2'),
+        'Z21': KeuzelijstWaarde(invulwaarde='Z21',
+                                label='Z21',
+                                objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerlichtingstoestelModelnaam/Z21'),
+        'ampera': KeuzelijstWaarde(invulwaarde='ampera',
+                                   label='Ampera',
+                                   definitie='Ampera',
+                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerlichtingstoestelModelnaam/ampera'),
+        'andere': KeuzelijstWaarde(invulwaarde='andere',
+                                   label='andere',
+                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerlichtingstoestelModelnaam/andere'),
+        'brugleuning': KeuzelijstWaarde(invulwaarde='brugleuning',
+                                        label='brugleuning',
+                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerlichtingstoestelModelnaam/brugleuning'),
+        'clear-field': KeuzelijstWaarde(invulwaarde='clear-field',
+                                        label='ClearField',
+                                        definitie='ClearField',
+                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerlichtingstoestelModelnaam/clear-field'),
+        'digi-street': KeuzelijstWaarde(invulwaarde='digi-street',
+                                        label='DigiStreet',
+                                        definitie='DigiStreet',
+                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerlichtingstoestelModelnaam/digi-street'),
+        'izylum': KeuzelijstWaarde(invulwaarde='izylum',
+                                   label='Izylum',
+                                   definitie='Izylum',
+                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerlichtingstoestelModelnaam/izylum'),
+        'luma': KeuzelijstWaarde(invulwaarde='luma',
+                                 label='Luma',
+                                 definitie='Luma',
+                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerlichtingstoestelModelnaam/luma'),
+        'lumi-street': KeuzelijstWaarde(invulwaarde='lumi-street',
+                                        label='LumiStreet',
+                                        definitie='LumiStreet',
+                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerlichtingstoestelModelnaam/lumi-street'),
+        'projector': KeuzelijstWaarde(invulwaarde='projector',
+                                      label='projector',
+                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerlichtingstoestelModelnaam/projector'),
+        'teceo': KeuzelijstWaarde(invulwaarde='teceo',
+                                  label='Teceo',
+                                  definitie='Teceo',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerlichtingstoestelModelnaam/teceo')
+    }
 
-    def __init__(self):
-        super().__init__(naam="KlVerlichtingstoestelModelnaam",
-                         label="Verlichtingstoestel modelnaam",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#KlVerlichtingstoestelModelnaam",
-                         definition="De modelnaam van het verlichtingstoestel.",
-                         usagenote="",
-                         deprecated_version="",
-                         codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlVerlichtingstoestelModelnaam")
-
-        self.add_option("ARC", "ARC", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerlichtingstoestelModelnaam/ARC")
-        self.add_option("Belgica", "Belgica", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerlichtingstoestelModelnaam/Belgica")
-        self.add_option("Calypso", "Calypso", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerlichtingstoestelModelnaam/Calypso")
-        self.add_option("Corus", "Corus", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerlichtingstoestelModelnaam/Corus")
-        self.add_option("DTN", "DTN", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerlichtingstoestelModelnaam/DTN")
-        self.add_option("Evolo", "Evolo", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerlichtingstoestelModelnaam/Evolo")
-        self.add_option("Focal", "Focal", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerlichtingstoestelModelnaam/Focal")
-        self.add_option("GSM", "GSM", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerlichtingstoestelModelnaam/GSM")
-        self.add_option("GTMB", "GTMB", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerlichtingstoestelModelnaam/GTMB")
-        self.add_option("GTNB", "GTNB", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerlichtingstoestelModelnaam/GTNB")
-        self.add_option("GZM", "GZM", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerlichtingstoestelModelnaam/GZM")
-        self.add_option("Gema", "Gema", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerlichtingstoestelModelnaam/Gema")
-        self.add_option("HCI-TS", "HCI-TS", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerlichtingstoestelModelnaam/HCI-TS")
-        self.add_option("Iridium", "Iridium", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerlichtingstoestelModelnaam/Iridium")
-        self.add_option("MNF300", "MNF300", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerlichtingstoestelModelnaam/MNF300")
-        self.add_option("MWF230", "MWF230", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerlichtingstoestelModelnaam/MWF230")
-        self.add_option("MY11", "MY11", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerlichtingstoestelModelnaam/MY11")
-        self.add_option("Neos", "Neos", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerlichtingstoestelModelnaam/Neos")
-        self.add_option("Onyx", "Onyx", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerlichtingstoestelModelnaam/Onyx")
-        self.add_option("RT3NB", "RT3NB", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerlichtingstoestelModelnaam/RT3NB")
-        self.add_option("RT3SB", "RT3SB", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerlichtingstoestelModelnaam/RT3SB")
-        self.add_option("RXN", "RXN", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerlichtingstoestelModelnaam/RXN")
-        self.add_option("RXS", "RXS", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerlichtingstoestelModelnaam/RXS")
-        self.add_option("Radial", "Radial", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerlichtingstoestelModelnaam/Radial")
-        self.add_option("SRS201", "SRS201", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerlichtingstoestelModelnaam/SRS201")
-        self.add_option("Safir", "Safir", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerlichtingstoestelModelnaam/Safir")
-        self.add_option("Saturnus", "Saturnus", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerlichtingstoestelModelnaam/Saturnus")
-        self.add_option("Squalo", "Squalo", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerlichtingstoestelModelnaam/Squalo")
-        self.add_option("Syntra", "Syntra", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerlichtingstoestelModelnaam/Syntra")
-        self.add_option("VTP", "VTP", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerlichtingstoestelModelnaam/VTP")
-        self.add_option("Z18", "Z18", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerlichtingstoestelModelnaam/Z18")
-        self.add_option("Z2", "Z2", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerlichtingstoestelModelnaam/Z2")
-        self.add_option("Z21", "Z21", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerlichtingstoestelModelnaam/Z21")
-        self.add_option("ampera", "Ampera", "Ampera", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerlichtingstoestelModelnaam/ampera")
-        self.add_option("andere", "andere", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerlichtingstoestelModelnaam/andere")
-        self.add_option("brugleuning", "brugleuning", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerlichtingstoestelModelnaam/brugleuning")
-        self.add_option("clear-field", "ClearField", "ClearField", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerlichtingstoestelModelnaam/clear-field")
-        self.add_option("digi-street", "DigiStreet", "DigiStreet", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerlichtingstoestelModelnaam/digi-street")
-        self.add_option("izylum", "Izylum", "Izylum", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerlichtingstoestelModelnaam/izylum")
-        self.add_option("luma", "Luma", "Luma", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerlichtingstoestelModelnaam/luma")
-        self.add_option("lumi-street", "LumiStreet", "LumiStreet", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerlichtingstoestelModelnaam/lumi-street")
-        self.add_option("projector", "projector", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerlichtingstoestelModelnaam/projector")
-        self.add_option("teceo", "Teceo", "Teceo", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerlichtingstoestelModelnaam/teceo")

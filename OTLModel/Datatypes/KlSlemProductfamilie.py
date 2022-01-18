@@ -1,21 +1,32 @@
 # coding=utf-8
-from OTLModel.Datatypes.Keuzelijst import Keuzelijst
+from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
+from OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 
 # Generated with OTLEnumerationCreator. To modify: extend, do not edit
-class KlSlemProductfamilie(Keuzelijst):
+class KlSlemProductfamilie(KeuzelijstField):
     """De mogelijke productfamiles."""
+    naam = 'KlSlemProductfamilie'
+    label = 'Productfamilies'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlSlemProductfamilie'
+    definition = 'De mogelijke productfamiles.'
+    codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlSlemProductfamilie'
+    options = {
+        '1': KeuzelijstWaarde(invulwaarde='1',
+                              label='1',
+                              definitie='Productfamilie 1',
+                              objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlSlemProductfamilie/1'),
+        '2': KeuzelijstWaarde(invulwaarde='2',
+                              label='2',
+                              definitie='Productfamilie 2',
+                              objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlSlemProductfamilie/2'),
+        '5': KeuzelijstWaarde(invulwaarde='5',
+                              label='5',
+                              definitie='Productfamilie 5',
+                              objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlSlemProductfamilie/5'),
+        '6': KeuzelijstWaarde(invulwaarde='6',
+                              label='6',
+                              definitie='Productfamilie 6',
+                              objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlSlemProductfamilie/6')
+    }
 
-    def __init__(self):
-        super().__init__(naam="KlSlemProductfamilie",
-                         label="Productfamilies",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlSlemProductfamilie",
-                         definition="De mogelijke productfamiles.",
-                         usagenote="",
-                         deprecated_version="",
-                         codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlSlemProductfamilie")
-
-        self.add_option("1", "1", "Productfamilie 1", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlSlemProductfamilie/1")
-        self.add_option("2", "2", "Productfamilie 2", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlSlemProductfamilie/2")
-        self.add_option("5", "5", "Productfamilie 5", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlSlemProductfamilie/5")
-        self.add_option("6", "6", "Productfamilie 6", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlSlemProductfamilie/6")

@@ -1,47 +1,64 @@
 # coding=utf-8
+from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
+from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.ZenderOntvangerToegang import ZenderOntvangerToegang
 from OTLModel.Datatypes.DteTekstblok import DteTekstblok
-from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlZenderMerk import KlZenderMerk
 from OTLModel.Datatypes.KlZenderModelnaam import KlZenderModelnaam
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Zender(ZenderOntvangerToegang):
+class Zender(ZenderOntvangerToegang, AttributeInfo):
     """Een apparaat dat signalen uitzendt."""
 
-    typeURI = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Zender"
+    typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Zender'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        super().__init__()
+        AttributeInfo.__init__(self)
+        ZenderOntvangerToegang.__init__(self)
 
-        self.merk = KeuzelijstField(naam="merk",
-                                    label="merk",
-                                    lijst=KlZenderMerk(),
-                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Zender.merk",
-                                    definition="Het merk van een zender.",
-                                    constraints="",
-                                    usagenote="",
-                                    deprecated_version="")
+        self._merk = OTLAttribuut(field=KlZenderMerk,
+                                  naam='merk',
+                                  label='merk',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Zender.merk',
+                                  definition='Het merk van een zender.')
+
+        self._modelnaam = OTLAttribuut(field=KlZenderModelnaam,
+                                       naam='modelnaam',
+                                       label='modelnaam',
+                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Zender.modelnaam',
+                                       definition='De modelnaam/product range van een zender.')
+
+        self._toepassing = OTLAttribuut(field=DteTekstblok,
+                                        naam='toepassing',
+                                        label='toepassing',
+                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Zender.toepassing',
+                                        definition='De techniek of standaard waarmee signalen over het netwerk verstuurd worden. Mogelijke waarden zijn onder andere: KAR,  wifi, GPRS of GSM..')
+
+    @property
+    def merk(self):
         """Het merk van een zender."""
+        return self._merk.waarde
 
-        self.modelnaam = KeuzelijstField(naam="modelnaam",
-                                         label="modelnaam",
-                                         lijst=KlZenderModelnaam(),
-                                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Zender.modelnaam",
-                                         definition="De modelnaam/product range van een zender.",
-                                         constraints="",
-                                         usagenote="",
-                                         deprecated_version="")
+    @merk.setter
+    def merk(self, value):
+        self._merk.set_waarde(value, owner=self)
+
+    @property
+    def modelnaam(self):
         """De modelnaam/product range van een zender."""
+        return self._modelnaam.waarde
 
-        self.toepassing = DteTekstblok()
+    @modelnaam.setter
+    def modelnaam(self, value):
+        self._modelnaam.set_waarde(value, owner=self)
+
+    @property
+    def toepassing(self):
         """De techniek of standaard waarmee signalen over het netwerk verstuurd worden. Mogelijke waarden zijn onder andere: KAR,  wifi, GPRS of GSM.."""
-        self.toepassing.naam = "toepassing"
-        self.toepassing.label = "toepassing"
-        self.toepassing.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Zender.toepassing"
-        self.toepassing.definition = "De techniek of standaard waarmee signalen over het netwerk verstuurd worden. Mogelijke waarden zijn onder andere: KAR,  wifi, GPRS of GSM.."
-        self.toepassing.constraints = ""
-        self.toepassing.usagenote = ""
-        self.toepassing.deprecated_version = ""
+        return self._toepassing.waarde
+
+    @toepassing.setter
+    def toepassing(self, value):
+        self._toepassing.set_waarde(value, owner=self)

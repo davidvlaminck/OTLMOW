@@ -1,6 +1,6 @@
 import os
 import unittest
-from unittest import mock
+from unittest import mock, TestCase
 from unittest.mock import patch
 
 from Loggers.NoneLogger import NoneLogger
@@ -8,6 +8,8 @@ from ModelGenerator.OSLOCollector import OSLOCollector
 from ModelGenerator.OSLODatatypePrimitive import OSLODatatypePrimitive
 from ModelGenerator.OSLODatatypePrimitiveAttribuut import OSLODatatypePrimitiveAttribuut
 from ModelGenerator.OTLPrimitiveDatatypeCreator import OTLPrimitiveDatatypeCreator
+
+ROOT_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 
 class PrimitiveDatatypeOSLOCollector(OSLOCollector):
@@ -43,44 +45,34 @@ class PrimitiveDatatypeOSLOCollector(OSLOCollector):
                                            'De waarde moet voldoen aan volgende regex: [1-9]\\d{3}', '')]
 
         self.expectedDataKwantWrdInVolt = ['# coding=utf-8',
-                                           'from OTLModel.Datatypes.KwantWrd import KwantWrd',
+                                           'from OTLModel.Datatypes.FloatOrDecimalField import FloatOrDecimalField',
                                            'from OTLModel.Datatypes.LiteralField import LiteralField',
-                                           'from OTLModel.Datatypes.DecimalFloatField import DecimalFloatField',
+                                           'from OTLModel.BaseClasses.KwantWrd import KwantWrd',
+                                           'from OTLModel.BaseClasses.KwantWrdEenheid import KwantWrdEenheid',
+                                           'from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut',
                                            '',
                                            '',
                                            '# Generated with OTLPrimitiveDatatypeCreator. To modify: extend, do not edit',
-                                           'class KwantWrdInVolt(KwantWrd):',
-                                           '    """Een kwantitatieve waarde die een getal in volt uitdrukt."""',
+                                           'class KwantWrdInVoltEenheid(KwantWrdEenheid):',
+                                           '    def __init__(self):',
+                                           '        super().__init__()',
+                                           '        self._standaardEenheid = OTLAttribuut(field=LiteralField,',
+                                           '                                              naam=\'standaardEenheid\',',
+                                           '                                              label=\'standaard eenheid\',',
+                                           '                                              objectUri=\'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInVolt.standaardEenheid\',',
+                                           '                                              definition=\'De standaard eenheid bij dit datatype is uitgedrukt in Volt.\',',
+                                           '                                              constraints=\'\"V\"^^cdt:ucumunit\',',
+                                           '                                              usagenote=\'\"V\"^^cdt:ucumunit\')',
                                            '',
-                                           '    def __init__(self, waarde=None):',
-                                           '        self.eenheid = LiteralField(naam="standaardEenheid",',
-                                           '                                    label="standaard eenheid",',
-                                           '                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInVolt.standaardEenheid",',
-                                           '                                    definition="De standaard eenheid bij dit datatype is uitgedrukt in Volt.",',
-                                           '                                    constraints=\'"V"^^cdt:ucumunit\',',
-                                           '                                    usagenote=\'"V"^^cdt:ucumunit\',',
-                                           '                                    deprecated_version="",',
-                                           '                                    readonlyValue="V")',
-                                           '        """De standaard eenheid bij dit datatype is uitgedrukt in Volt."""',
                                            '',
-                                           '        self.waardeVeld = DecimalFloatField(naam="waarde",',
-                                           '                                            label="waarde",',
-                                           '                                            objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInVolt.waarde",',
-                                           '                                            definition="Bevat een getal die bij het datatype hoort.",',
-                                           '                                            constraints="",',
-                                           '                                            usagenote="",',
-                                           '                                            deprecated_version="")',
-                                           '        """Bevat een getal die bij het datatype hoort."""',
-                                           '',
-                                           '        super().__init__(naam="KwantWrdInVolt",',
-                                           '                         label="Kwantitatieve waarde in volt",',
-                                           '                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInVolt",',
-                                           '                         definition="Een kwantitatieve waarde die een getal in volt uitdrukt.",',
-                                           '                         usagenote="",',
-                                           '                         deprecated_version="",',
-                                           '                         waardeVeld=self.waardeVeld,',
-                                           '                         eenheidVeld=self.eenheid,',
-                                           '                         waarde=waarde)']
+                                           '# Generated with OTLPrimitiveDatatypeCreator. To modify: extend, do not edit',
+                                           'class KwantWrdInVolt(FloatOrDecimalField, KwantWrd):',
+                                           '    naam = \'waarde\'',
+                                           '    label = \'waarde\'',
+                                           '    objectUri = \'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInVolt.waarde\'',
+                                           '    definition = \'Bevat een getal die bij het datatype hoort.\'',
+                                           '    eenheid = KwantWrdInVoltEenheid()',
+                                           '']
         self.expectedDataRALKleur = ['# coding=utf-8',
                                      'from OTLModel.Datatypes.KwantWrd import KwantWrd',
                                      'from OTLModel.Datatypes.StringField import StringField',
@@ -128,7 +120,7 @@ class OTLPrimitiveDatatypeCreatorTests(unittest.TestCase):
         logger = NoneLogger()
         collector = OSLOCollector(mock)
         creator = OTLPrimitiveDatatypeCreator(logger, collector)
-        osloDatatypePrimitive = OSLODatatypePrimitive(name='name', objectUri='', definition_nl='', label_nl='', usagenote_nl='',
+        osloDatatypePrimitive = OSLODatatypePrimitive(name='name', objectUri='', definition='', label='', usagenote='',
                                                       deprecated_version='')
 
         with self.assertRaises(ValueError) as exception_empty_uri:
@@ -139,7 +131,8 @@ class OTLPrimitiveDatatypeCreatorTests(unittest.TestCase):
         logger = NoneLogger()
         collector = OSLOCollector(mock)
         creator = OTLPrimitiveDatatypeCreator(logger, collector)
-        osloDatatypePrimitive = OSLODatatypePrimitive(name='name', objectUri='Bad objectUri', definition_nl='', label_nl='', usagenote_nl='',
+        osloDatatypePrimitive = OSLODatatypePrimitive(name='name', objectUri='Bad objectUri', definition='', label='',
+                                                      usagenote='',
                                                       deprecated_version='')
 
         with self.assertRaises(ValueError) as exception_bad_uri:
@@ -152,7 +145,7 @@ class OTLPrimitiveDatatypeCreatorTests(unittest.TestCase):
         creator = OTLPrimitiveDatatypeCreator(logger, collector)
         osloDatatypePrimitive = OSLODatatypePrimitive(name='',
                                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrd',
-                                                      definition_nl='', label_nl='', usagenote_nl='',
+                                                      definition='', label='', usagenote='',
                                                       deprecated_version='')
 
         with self.assertRaises(ValueError) as exception_bad_name:
@@ -170,8 +163,8 @@ class OTLPrimitiveDatatypeCreatorTests(unittest.TestCase):
 
     def test_ValidOSLODatatypePrimitiveButNoResult(self):
         boolean_primitive = OSLODatatypePrimitive(name="Boolean", objectUri="http://www.w3.org/2001/XMLSchema#boolean",
-                                                  definition_nl="Beschrijft een boolean volgens http://www.w3.org/2001/XMLSchema#boolean.",
-                                                  label_nl="Boolean", usagenote_nl="https://www.w3.org/TR/xmlschema-2/#boolean",
+                                                  definition="Beschrijft een boolean volgens http://www.w3.org/2001/XMLSchema#boolean.",
+                                                  label="Boolean", usagenote="https://www.w3.org/TR/xmlschema-2/#boolean",
                                                   deprecated_version="")
         logger = NoneLogger()
         collector = OSLOCollector(mock)
@@ -208,9 +201,8 @@ class OTLPrimitiveDatatypeCreatorTests(unittest.TestCase):
         dataToWrite = creator.CreateBlockToWriteFromPrimitiveTypes(KwantWrdInVolt)
         creator.writeToFile(KwantWrdInVolt, 'Datatypes', dataToWrite, '../../')
 
-        base_dir = os.path.dirname(os.path.realpath(__file__))
-
-        self.assertTrue(os.path.isfile(f'{base_dir}/../../OTLModel/Datatypes/KwantWrdInVolt.py'))
+        filelocation = os.path.abspath(os.path.join(os.sep, ROOT_DIR, 'OTLModel/Datatypes/KwantWrdInVolt.py'))
+        self.assertTrue(os.path.isfile(filelocation))
 
     def test_getEenheidFromConstraintsEmptyString(self):
         logger = NoneLogger()

@@ -1,37 +1,49 @@
 # coding=utf-8
+from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
+from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.VRModuleZFirmware import VRModuleZFirmware
-from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlVRBAZMerk import KlVRBAZMerk
 from OTLModel.Datatypes.KlVRBAZModelnaam import KlVRBAZModelnaam
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class VRBAZ(VRModuleZFirmware):
+class VRBAZ(VRModuleZFirmware, AttributeInfo):
     """Het bedien- en aanzichttoestel, ook wel bedienings- en diagnosepaneel, is ingebouwd achter een politiedeur. Het bevat een display en bedieningstoetsen om de verkeersregelaar te bedienen. 
 De display van de BAZ geeft de actuele werktoestand aan, inclusief eventuele toestandswisselingen. De actieve defecten zijn onmiddellijk, zonder enige manipulatie, zichtbaar op de display. Met de bedieningsknoppen moet het werkingsregime (online, offline, handbediening, oranjegeel knipperlicht, integraal rood of volledig gedoofd) gekozen kunnen worden. Tevens moet het regime "handbediening" bediend kunnen worden met de bedieningsknoppen. Met een knop wordt er overgeschakeld naar de volgende fase. Een getuigen-LED geeft aan wanneer de overgangsfase is afgerond en er kan overgegaan worden naar de volgende fase"""
 
-    typeURI = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#VRBAZ"
+    typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#VRBAZ'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        super().__init__()
+        AttributeInfo.__init__(self)
+        VRModuleZFirmware.__init__(self)
 
-        self.merk = KeuzelijstField(naam="merk",
-                                    label="merk",
-                                    lijst=KlVRBAZMerk(),
-                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#VRBAZ.merk",
-                                    definition="De merknaam van de VR-BAZ.",
-                                    constraints="",
-                                    usagenote="",
-                                    deprecated_version="")
+        self._merk = OTLAttribuut(field=KlVRBAZMerk,
+                                  naam='merk',
+                                  label='merk',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#VRBAZ.merk',
+                                  definition='De merknaam van de VR-BAZ.')
+
+        self._modelnaam = OTLAttribuut(field=KlVRBAZModelnaam,
+                                       naam='modelnaam',
+                                       label='modelnaam',
+                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#VRBAZ.modelnaam',
+                                       definition='De modelnaam van de VR-BAZ.')
+
+    @property
+    def merk(self):
         """De merknaam van de VR-BAZ."""
+        return self._merk.waarde
 
-        self.modelnaam = KeuzelijstField(naam="modelnaam",
-                                         label="modelnaam",
-                                         lijst=KlVRBAZModelnaam(),
-                                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#VRBAZ.modelnaam",
-                                         definition="De modelnaam van de VR-BAZ.",
-                                         constraints="",
-                                         usagenote="",
-                                         deprecated_version="")
+    @merk.setter
+    def merk(self, value):
+        self._merk.set_waarde(value, owner=self)
+
+    @property
+    def modelnaam(self):
         """De modelnaam van de VR-BAZ."""
+        return self._modelnaam.waarde
+
+    @modelnaam.setter
+    def modelnaam(self, value):
+        self._modelnaam.set_waarde(value, owner=self)

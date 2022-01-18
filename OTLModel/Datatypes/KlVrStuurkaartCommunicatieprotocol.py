@@ -1,20 +1,26 @@
 # coding=utf-8
-from OTLModel.Datatypes.Keuzelijst import Keuzelijst
+from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
+from OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 
 # Generated with OTLEnumerationCreator. To modify: extend, do not edit
-class KlVrStuurkaartCommunicatieprotocol(Keuzelijst):
+class KlVrStuurkaartCommunicatieprotocol(KeuzelijstField):
     """Keuzelist met de voorkomende communicatieprotocollen voor VRIstuurkaarten."""
+    naam = 'KlVrStuurkaartCommunicatieprotocol'
+    label = 'VRI-communicatieprotocol'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlVrStuurkaartCommunicatieprotocol'
+    definition = 'Keuzelist met de voorkomende communicatieprotocollen voor VRIstuurkaarten.'
+    codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlVrStuurkaartCommunicatieprotocol'
+    options = {
+        'canto': KeuzelijstWaarde(invulwaarde='canto',
+                                  label='canto',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVrStuurkaartCommunicatieprotocol/canto'),
+        'gecombineerd': KeuzelijstWaarde(invulwaarde='gecombineerd',
+                                         label='gecombineerd',
+                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVrStuurkaartCommunicatieprotocol/gecombineerd'),
+        'ocit': KeuzelijstWaarde(invulwaarde='ocit',
+                                 label='ocit',
+                                 definitie='nog in te vullen',
+                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVrStuurkaartCommunicatieprotocol/ocit')
+    }
 
-    def __init__(self):
-        super().__init__(naam="KlVrStuurkaartCommunicatieprotocol",
-                         label="VRI-communicatieprotocol",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlVrStuurkaartCommunicatieprotocol",
-                         definition="Keuzelist met de voorkomende communicatieprotocollen voor VRIstuurkaarten.",
-                         usagenote="",
-                         deprecated_version="",
-                         codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlVrStuurkaartCommunicatieprotocol")
-
-        self.add_option("canto", "canto", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVrStuurkaartCommunicatieprotocol/canto")
-        self.add_option("gecombineerd", "gecombineerd", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVrStuurkaartCommunicatieprotocol/gecombineerd")
-        self.add_option("ocit", "ocit", "nog in te vullen", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVrStuurkaartCommunicatieprotocol/ocit")

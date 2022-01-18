@@ -1,19 +1,24 @@
 # coding=utf-8
-from OTLModel.Datatypes.Keuzelijst import Keuzelijst
+from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
+from OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 
 # Generated with OTLEnumerationCreator. To modify: extend, do not edit
-class KlCameraMerk(Keuzelijst):
+class KlCameraMerk(KeuzelijstField):
     """Het merk van de camera."""
+    naam = 'KlCameraMerk'
+    label = 'Camera merk'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlCameraMerk'
+    definition = 'Het merk van de camera.'
+    codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlCameraMerk'
+    options = {
+        'bosch': KeuzelijstWaarde(invulwaarde='bosch',
+                                  label='Bosch',
+                                  definitie='Bosch',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlCameraMerk/bosch'),
+        'videotec': KeuzelijstWaarde(invulwaarde='videotec',
+                                     label='Videotec',
+                                     definitie='Videotec',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlCameraMerk/videotec')
+    }
 
-    def __init__(self):
-        super().__init__(naam="KlCameraMerk",
-                         label="Camera merk",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlCameraMerk",
-                         definition="Het merk van de camera.",
-                         usagenote="",
-                         deprecated_version="",
-                         codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlCameraMerk")
-
-        self.add_option("bosch", "Bosch", "Bosch", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlCameraMerk/bosch")
-        self.add_option("videotec", "Videotec", "Videotec", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlCameraMerk/videotec")

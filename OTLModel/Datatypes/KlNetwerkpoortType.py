@@ -1,21 +1,32 @@
 # coding=utf-8
-from OTLModel.Datatypes.Keuzelijst import Keuzelijst
+from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
+from OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 
 # Generated with OTLEnumerationCreator. To modify: extend, do not edit
-class KlNetwerkpoortType(Keuzelijst):
+class KlNetwerkpoortType(KeuzelijstField):
     """Lijst van types voor Netwerkpoort."""
+    naam = 'KlNetwerkpoortType'
+    label = 'Netwerkpoort type'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlNetwerkpoortType'
+    definition = 'Lijst van types voor Netwerkpoort.'
+    codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlNetwerkpoortType'
+    options = {
+        'NNI': KeuzelijstWaarde(invulwaarde='NNI',
+                                label='NNI',
+                                definitie='Network-Network-Interface: deze poort verbindt het netwerk toestel met een poort van een ander netwerk toestel.',
+                                objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortType/NNI'),
+        'NULL': KeuzelijstWaarde(invulwaarde='NULL',
+                                 label='NULL',
+                                 definitie='Geen interface.',
+                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortType/NULL'),
+        'Other': KeuzelijstWaarde(invulwaarde='Other',
+                                  label='Other',
+                                  definitie='Ander, onbekend type interface.',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortType/Other'),
+        'UNI': KeuzelijstWaarde(invulwaarde='UNI',
+                                label='UNI',
+                                definitie='User-Network-Interface: deze poort verbindt het netwerk toestel met de poort van een gebruiker.',
+                                objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortType/UNI')
+    }
 
-    def __init__(self):
-        super().__init__(naam="KlNetwerkpoortType",
-                         label="Netwerkpoort type",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlNetwerkpoortType",
-                         definition="Lijst van types voor Netwerkpoort.",
-                         usagenote="",
-                         deprecated_version="",
-                         codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlNetwerkpoortType")
-
-        self.add_option("NNI", "NNI", "Network-Network-Interface: deze poort verbindt het netwerk toestel met een poort van een ander netwerk toestel.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortType/NNI")
-        self.add_option("NULL", "NULL", "Geen interface.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortType/NULL")
-        self.add_option("Other", "Other", "Ander, onbekend type interface.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortType/Other")
-        self.add_option("UNI", "UNI", "User-Network-Interface: deze poort verbindt het netwerk toestel met de poort van een gebruiker.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortType/UNI")

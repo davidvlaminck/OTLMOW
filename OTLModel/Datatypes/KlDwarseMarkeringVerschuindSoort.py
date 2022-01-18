@@ -1,18 +1,20 @@
 # coding=utf-8
-from OTLModel.Datatypes.Keuzelijst import Keuzelijst
+from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
+from OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 
 # Generated with OTLEnumerationCreator. To modify: extend, do not edit
-class KlDwarseMarkeringVerschuindSoort(Keuzelijst):
+class KlDwarseMarkeringVerschuindSoort(KeuzelijstField):
     """Soorten van de schuine dwarse markering."""
+    naam = 'KlDwarseMarkeringVerschuindSoort'
+    label = 'Dwarse markering soort verschuind'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlDwarseMarkeringVerschuindSoort'
+    definition = 'Soorten van de schuine dwarse markering.'
+    codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlDwarseMarkeringVerschuindSoort'
+    options = {
+        'fietsoversteekplaats-met-blokken-(FOP)-schuin': KeuzelijstWaarde(invulwaarde='fietsoversteekplaats-met-blokken-(FOP)-schuin',
+                                                                          label='fietsoversteekplaats met blokken (FOP) schuin',
+                                                                          definitie='Een oversteekplaats voor fietsers gemarkeerd door witte parallellogrammen.',
+                                                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlDwarseMarkeringVerschuindSoort/fietsoversteekplaats-met-blokken-(FOP)-schuin')
+    }
 
-    def __init__(self):
-        super().__init__(naam="KlDwarseMarkeringVerschuindSoort",
-                         label="Dwarse markering soort verschuind",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlDwarseMarkeringVerschuindSoort",
-                         definition="Soorten van de schuine dwarse markering.",
-                         usagenote="",
-                         deprecated_version="",
-                         codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlDwarseMarkeringVerschuindSoort")
-
-        self.add_option("fietsoversteekplaats-met-blokken-(FOP)-schuin", "fietsoversteekplaats met blokken (FOP) schuin", "Een oversteekplaats voor fietsers gemarkeerd door witte parallellogrammen.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlDwarseMarkeringVerschuindSoort/fietsoversteekplaats-met-blokken-(FOP)-schuin")

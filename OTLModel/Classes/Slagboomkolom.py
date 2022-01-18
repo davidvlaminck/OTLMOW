@@ -1,68 +1,96 @@
 # coding=utf-8
+from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
+from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.AIMObject import AIMObject
 from OTLModel.Datatypes.BooleanField import BooleanField
 from OTLModel.Datatypes.DtcAfmetingBxlxhInMm import DtcAfmetingBxlxhInMm
 from OTLModel.Datatypes.DtcDocument import DtcDocument
-from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlSlagboomkolomMerk import KlSlagboomkolomMerk
 from OTLModel.Datatypes.KlSlagboomkolomModelnaam import KlSlagboomkolomModelnaam
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Slagboomkolom(AIMObject):
+class Slagboomkolom(AIMObject, AttributeInfo):
     """De koker van een slagboominstallatie die de motor bevat en waaraan de slagboomarm bevestigd is."""
 
-    typeURI = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomkolom"
+    typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomkolom'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        super().__init__()
+        AIMObject.__init__(self)
+        AttributeInfo.__init__(self)
 
-        self.afmetingen = DtcAfmetingBxlxhInMm()
+        self._afmetingen = OTLAttribuut(field=DtcAfmetingBxlxhInMm,
+                                        naam='afmetingen',
+                                        label='afmetingen',
+                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomkolom.afmetingen',
+                                        definition='De afmetingen van de slagboomkolom.')
+
+        self._isPivoterend = OTLAttribuut(field=BooleanField,
+                                          naam='isPivoterend',
+                                          label='is pivoterend',
+                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomkolom.isPivoterend',
+                                          definition='Attribuut waarmee kan aangegeven worden of de koker van de slagboominstallatie al dan niet pivoteert.')
+
+        self._merk = OTLAttribuut(field=KlSlagboomkolomMerk,
+                                  naam='merk',
+                                  label='merk',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomkolom.merk',
+                                  definition='Het merk van de slagboom installatie.')
+
+        self._modelnaam = OTLAttribuut(field=KlSlagboomkolomModelnaam,
+                                       naam='modelnaam',
+                                       label='modelnaam',
+                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomkolom.modelnaam',
+                                       definition='Naam van het model van de slagboominstallatie.')
+
+        self._technischeFiche = OTLAttribuut(field=DtcDocument,
+                                             naam='technischeFiche',
+                                             label='technische fiche',
+                                             objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomkolom.technischeFiche',
+                                             definition='Technische fiche van de slagboominstallatie.')
+
+    @property
+    def afmetingen(self):
         """De afmetingen van de slagboomkolom."""
-        self.afmetingen.naam = "afmetingen"
-        self.afmetingen.label = "afmetingen"
-        self.afmetingen.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomkolom.afmetingen"
-        self.afmetingen.definition = "De afmetingen van de slagboomkolom."
-        self.afmetingen.constraints = ""
-        self.afmetingen.usagenote = ""
-        self.afmetingen.deprecated_version = ""
+        return self._afmetingen.waarde
 
-        self.isPivoterend = BooleanField(naam="isPivoterend",
-                                         label="is pivoterend",
-                                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomkolom.isPivoterend",
-                                         definition="Attribuut waarmee kan aangegeven worden of de koker van de slagboominstallatie al dan niet pivoteert.",
-                                         constraints="",
-                                         usagenote="",
-                                         deprecated_version="")
+    @afmetingen.setter
+    def afmetingen(self, value):
+        self._afmetingen.set_waarde(value, owner=self)
+
+    @property
+    def isPivoterend(self):
         """Attribuut waarmee kan aangegeven worden of de koker van de slagboominstallatie al dan niet pivoteert."""
+        return self._isPivoterend.waarde
 
-        self.merk = KeuzelijstField(naam="merk",
-                                    label="merk",
-                                    lijst=KlSlagboomkolomMerk(),
-                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomkolom.merk",
-                                    definition="Het merk van de slagboom installatie.",
-                                    constraints="",
-                                    usagenote="",
-                                    deprecated_version="")
+    @isPivoterend.setter
+    def isPivoterend(self, value):
+        self._isPivoterend.set_waarde(value, owner=self)
+
+    @property
+    def merk(self):
         """Het merk van de slagboom installatie."""
+        return self._merk.waarde
 
-        self.modelnaam = KeuzelijstField(naam="modelnaam",
-                                         label="modelnaam",
-                                         lijst=KlSlagboomkolomModelnaam(),
-                                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomkolom.modelnaam",
-                                         definition="Naam van het model van de slagboominstallatie.",
-                                         constraints="",
-                                         usagenote="",
-                                         deprecated_version="")
+    @merk.setter
+    def merk(self, value):
+        self._merk.set_waarde(value, owner=self)
+
+    @property
+    def modelnaam(self):
         """Naam van het model van de slagboominstallatie."""
+        return self._modelnaam.waarde
 
-        self.technischeFiche = DtcDocument()
+    @modelnaam.setter
+    def modelnaam(self, value):
+        self._modelnaam.set_waarde(value, owner=self)
+
+    @property
+    def technischeFiche(self):
         """Technische fiche van de slagboominstallatie."""
-        self.technischeFiche.naam = "technischeFiche"
-        self.technischeFiche.label = "technische fiche"
-        self.technischeFiche.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomkolom.technischeFiche"
-        self.technischeFiche.definition = "Technische fiche van de slagboominstallatie."
-        self.technischeFiche.constraints = ""
-        self.technischeFiche.usagenote = ""
-        self.technischeFiche.deprecated_version = ""
+        return self._technischeFiche.waarde
+
+    @technischeFiche.setter
+    def technischeFiche(self, value):
+        self._technischeFiche.set_waarde(value, owner=self)

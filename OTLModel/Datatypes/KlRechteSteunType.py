@@ -1,22 +1,31 @@
 # coding=utf-8
-from OTLModel.Datatypes.Keuzelijst import Keuzelijst
+from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
+from OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 
 # Generated with OTLEnumerationCreator. To modify: extend, do not edit
-class KlRechteSteunType(Keuzelijst):
+class KlRechteSteunType(KeuzelijstField):
     """Keuzelijst die de verschillende types rechte steunen aanduidt."""
+    naam = 'KlRechteSteunType'
+    label = 'Rechte steun type'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlRechteSteunType'
+    definition = 'Keuzelijst die de verschillende types rechte steunen aanduidt.'
+    codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlRechteSteunType'
+    options = {
+        'VRI-met-zwanehals': KeuzelijstWaarde(invulwaarde='VRI-met-zwanehals',
+                                              label='VRI met zwanehals',
+                                              objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlRechteSteunType/VRI-met-zwanehals'),
+        'a-paal': KeuzelijstWaarde(invulwaarde='a-paal',
+                                   label='a-paal',
+                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlRechteSteunType/a-paal'),
+        'bi-flash': KeuzelijstWaarde(invulwaarde='bi-flash',
+                                     label='bi-flash',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlRechteSteunType/bi-flash'),
+        'd-paal': KeuzelijstWaarde(invulwaarde='d-paal',
+                                   label='d-paal',
+                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlRechteSteunType/d-paal'),
+        'variabele-Z30': KeuzelijstWaarde(invulwaarde='variabele-Z30',
+                                          label='variabele Z30',
+                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlRechteSteunType/variabele-Z30')
+    }
 
-    def __init__(self):
-        super().__init__(naam="KlRechteSteunType",
-                         label="Rechte steun type",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlRechteSteunType",
-                         definition="Keuzelijst die de verschillende types rechte steunen aanduidt.",
-                         usagenote="",
-                         deprecated_version="",
-                         codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlRechteSteunType")
-
-        self.add_option("VRI-met-zwanehals", "VRI met zwanehals", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlRechteSteunType/VRI-met-zwanehals")
-        self.add_option("a-paal", "a-paal", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlRechteSteunType/a-paal")
-        self.add_option("bi-flash", "bi-flash", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlRechteSteunType/bi-flash")
-        self.add_option("d-paal", "d-paal", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlRechteSteunType/d-paal")
-        self.add_option("variabele-Z30", "variabele Z30", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlRechteSteunType/variabele-Z30")

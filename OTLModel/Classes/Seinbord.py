@@ -1,13 +1,16 @@
 # coding=utf-8
+from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
+from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.Waarschuwingslantaarn import Waarschuwingslantaarn
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Seinbord(Waarschuwingslantaarn):
+class Seinbord(Waarschuwingslantaarn, AttributeInfo):
     """Paneel met waarschuwingstekst in oplichtende letters in de nabijheid van het kruispunt om weggebruikers te wijzen op een gesloten overweg, openstaande brug, voorbijrijdende tram,..."""
 
-    typeURI = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Seinbord"
+    typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Seinbord'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        super().__init__()
+        AttributeInfo.__init__(self)
+        Waarschuwingslantaarn.__init__(self)

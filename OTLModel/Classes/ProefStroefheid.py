@@ -1,24 +1,32 @@
 # coding=utf-8
+from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
+from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.Proef import Proef
 from OTLModel.Datatypes.DtcDocument import DtcDocument
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class ProefStroefheid(Proef):
+class ProefStroefheid(Proef, AttributeInfo):
     """Het vermogen van een wegdek om door voertuigbanden tangentieel uitgeoefende krachten (bij het nemen van bochten, afremmen of optrekken) te compenseren door even grote wrijvingskrachten."""
 
-    typeURI = "https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefStroefheid"
+    typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefStroefheid'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        super().__init__()
+        AttributeInfo.__init__(self)
+        Proef.__init__(self)
 
-        self.stroefheid = DtcDocument()
+        self._stroefheid = OTLAttribuut(field=DtcDocument,
+                                        naam='stroefheid',
+                                        label='stroefheid',
+                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefStroefheid.stroefheid',
+                                        definition='Proefresultaten van de stroefheid.')
+
+    @property
+    def stroefheid(self):
         """Proefresultaten van de stroefheid."""
-        self.stroefheid.naam = "stroefheid"
-        self.stroefheid.label = "stroefheid"
-        self.stroefheid.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefStroefheid.stroefheid"
-        self.stroefheid.definition = "Proefresultaten van de stroefheid."
-        self.stroefheid.constraints = ""
-        self.stroefheid.usagenote = ""
-        self.stroefheid.deprecated_version = ""
+        return self._stroefheid.waarde
+
+    @stroefheid.setter
+    def stroefheid(self, value):
+        self._stroefheid.set_waarde(value, owner=self)

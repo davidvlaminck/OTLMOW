@@ -1,22 +1,35 @@
 # coding=utf-8
-from OTLModel.Datatypes.Keuzelijst import Keuzelijst
+from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
+from OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 
 # Generated with OTLEnumerationCreator. To modify: extend, do not edit
-class KlStortsteenPlaatsingswijze(Keuzelijst):
+class KlStortsteenPlaatsingswijze(KeuzelijstField):
     """De manier waarop de stenen worden geplaatst."""
+    naam = 'KlStortsteenPlaatsingswijze'
+    label = 'Plaatsingswijze'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlStortsteenPlaatsingswijze'
+    definition = 'De manier waarop de stenen worden geplaatst.'
+    codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlStortsteenPlaatsingswijze'
+    options = {
+        'gestapeld': KeuzelijstWaarde(invulwaarde='gestapeld',
+                                      label='gestapeld',
+                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlStortsteenPlaatsingswijze/gestapeld'),
+        'gewone-bestorting-met-fixatie-colloïdaal-beton': KeuzelijstWaarde(invulwaarde='gewone-bestorting-met-fixatie-colloïdaal-beton',
+                                                                           label='gewone bestorting met fixatie colloïdaal beton',
+                                                                           definitie='gewone bestorting met fixatie colloïdaal beton',
+                                                                           objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlStortsteenPlaatsingswijze/gewone-bestorting-met-fixatie-colloïdaal-beton'),
+        'gewone-bestorting-zonder-fixatie-colloïdaal-beton': KeuzelijstWaarde(invulwaarde='gewone-bestorting-zonder-fixatie-colloïdaal-beton',
+                                                                              label='gewone bestorting zonder fixatie colloïdaal beton',
+                                                                              definitie='gewone bestorting zonder fixatie colloïdaal beton',
+                                                                              objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlStortsteenPlaatsingswijze/gewone-bestorting-zonder-fixatie-colloïdaal-beton'),
+        'stroomkuilenprofiel-met-fixatie-colloïdaal-beton': KeuzelijstWaarde(invulwaarde='stroomkuilenprofiel-met-fixatie-colloïdaal-beton',
+                                                                             label='stroomkuilenprofiel met fixatie colloïdaal beton',
+                                                                             definitie='stroomkuilenprofiel met fixatie colloïdaal beton',
+                                                                             objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlStortsteenPlaatsingswijze/stroomkuilenprofiel-met-fixatie-colloïdaal-beton'),
+        'stroomkuilenprofiel-zonder-fixatie-colloïdaal-beton': KeuzelijstWaarde(invulwaarde='stroomkuilenprofiel-zonder-fixatie-colloïdaal-beton',
+                                                                                label='stroomkuilenprofiel zonder fixatie colloïdaal beton',
+                                                                                definitie='stroomkuilenprofiel zonder fixatie colloïdaal beton',
+                                                                                objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlStortsteenPlaatsingswijze/stroomkuilenprofiel-zonder-fixatie-colloïdaal-beton')
+    }
 
-    def __init__(self):
-        super().__init__(naam="KlStortsteenPlaatsingswijze",
-                         label="Plaatsingswijze",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlStortsteenPlaatsingswijze",
-                         definition="De manier waarop de stenen worden geplaatst.",
-                         usagenote="",
-                         deprecated_version="",
-                         codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlStortsteenPlaatsingswijze")
-
-        self.add_option("gestapeld", "gestapeld", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlStortsteenPlaatsingswijze/gestapeld")
-        self.add_option("gewone-bestorting-met-fixatie-colloïdaal-beton", "gewone bestorting met fixatie colloïdaal beton", "gewone bestorting met fixatie colloïdaal beton", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlStortsteenPlaatsingswijze/gewone-bestorting-met-fixatie-colloïdaal-beton")
-        self.add_option("gewone-bestorting-zonder-fixatie-colloïdaal-beton", "gewone bestorting zonder fixatie colloïdaal beton", "gewone bestorting zonder fixatie colloïdaal beton", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlStortsteenPlaatsingswijze/gewone-bestorting-zonder-fixatie-colloïdaal-beton")
-        self.add_option("stroomkuilenprofiel-met-fixatie-colloïdaal-beton", "stroomkuilenprofiel met fixatie colloïdaal beton", "stroomkuilenprofiel met fixatie colloïdaal beton", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlStortsteenPlaatsingswijze/stroomkuilenprofiel-met-fixatie-colloïdaal-beton")
-        self.add_option("stroomkuilenprofiel-zonder-fixatie-colloïdaal-beton", "stroomkuilenprofiel zonder fixatie colloïdaal beton", "stroomkuilenprofiel zonder fixatie colloïdaal beton", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlStortsteenPlaatsingswijze/stroomkuilenprofiel-zonder-fixatie-colloïdaal-beton")

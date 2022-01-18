@@ -7,10 +7,6 @@ class RelatieInteractor:
     typeURI = ''
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
-    @abstractmethod
-    def __init__(self):
-        pass
-
     _geldigeRelaties = ()
     _relatieValidatieMogelijk = False
 
@@ -29,3 +25,7 @@ class RelatieInteractor:
                 if geldigeRelatie.doel == self.typeURI and geldigeRelatie.bron == doelObject.typeURI and geldigeRelatie.relatie == relatieType.typeURI:
                     return True
         return False
+
+    @abstractmethod
+    def __init__(self):
+        pass

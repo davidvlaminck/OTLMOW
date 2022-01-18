@@ -16,8 +16,6 @@ class OTLClassCreator(AbstractDatatypeCreator):
         if not isinstance(osloClass, OSLOClass):
             raise ValueError(f"Input is not a OSLOClass")
 
-
-
         if osloClass.objectUri == '' or not (
                 osloClass.objectUri.startswith('https://wegenenverkeer.data.vlaanderen.be/ns/') or osloClass.objectUri.startswith(
                 'http://purl.org/dc/terms')):
@@ -38,7 +36,9 @@ class OTLClassCreator(AbstractDatatypeCreator):
             inheritances.append(
                 Inheritance(base_name='RelatieInteractor', base_uri='', class_name='', class_uri='', deprecated_version=''))
 
-        datablock = ['# coding=utf-8']
+        datablock = ['# coding=utf-8',
+                     'from OTLModel.BaseClasses.AttributeInfo import AttributeInfo',
+                     'from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut']
 
         if osloClass.abstract == 1:
             if len(inheritances) > 0:
@@ -53,8 +53,7 @@ class OTLClassCreator(AbstractDatatypeCreator):
                 else:
                     datablock.append(f'from OTLModel.Classes.{inheritance.base_name} import {inheritance.base_name}')
 
-        if any(atr.kardinaliteit_max != "1" for atr in attributen):
-            datablock.append('from OTLModel.Datatypes.KardinaliteitField import KardinaliteitField')
+        inheritances.append(Inheritance(base_name='AttributeInfo', class_name=osloClass.name, base_uri='', class_uri='', deprecated_version=''))
 
         if any(atr.readonly == 1 for atr in attributen):
             raise NotImplementedError("readonly property is assumed to be 0 on value fields")
@@ -67,9 +66,9 @@ class OTLClassCreator(AbstractDatatypeCreator):
         datablock.append('')
         datablock.append(f'# Generated with {self.__class__.__name__}. To modify: extend, do not edit')
         datablock.append(self.getClassLineFromClassAndInheritances(osloClass, inheritances))
-        datablock.append(f'    """{osloClass.definition_nl}"""')
+        datablock.append(f'    """{osloClass.definition}"""')
         datablock.append('')
-        datablock.append(f'    typeURI = "{osloClass.objectUri}"')
+        datablock.append(f"    typeURI = '{osloClass.objectUri}'")
         datablock.append('    """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""')
         datablock.append('')
         if osloClass.abstract == 1:
@@ -93,11 +92,11 @@ class OTLClassCreator(AbstractDatatypeCreator):
         return datablock
 
     def getClassLineFromClassAndInheritances(self, osloClass, inheritances):
-        if osloClass.abstract == 0 and len(inheritances) == 0:
-            return f'class {osloClass.name}:'
-        if osloClass.abstract == 1 and len(inheritances) == 0:
-            return f'class {osloClass.name}(ABC):'
-        if len(inheritances) > 0:
+        if osloClass.abstract == 0 and len(inheritances) <= 1:
+            return f'class {osloClass.name}:(AttributeInfo)'
+        if osloClass.abstract == 1 and len(inheritances) <= 1:
+            return f'class {osloClass.name}(ABC, AttributeInfo):'
+        if len(inheritances) > 1:
             line = f'class {osloClass.name}('
             for inheritance in inheritances:
                 line += inheritance.base_name + ', '

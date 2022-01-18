@@ -1,23 +1,32 @@
 # coding=utf-8
+from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
+from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.AfwijkendeKantopsluiting import AfwijkendeKantopsluiting
 from OTLModel.Datatypes.IntegerField import IntegerField
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class WatergreppelAfw(AfwijkendeKantopsluiting):
+class WatergreppelAfw(AfwijkendeKantopsluiting, AttributeInfo):
     """Afwijkende kantopsluiting, bestemd om water van de verharding op te vangen en af te voeren."""
 
-    typeURI = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#WatergreppelAfw"
+    typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#WatergreppelAfw'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        super().__init__()
+        AfwijkendeKantopsluiting.__init__(self)
+        AttributeInfo.__init__(self)
 
-        self.aantalRijenBetonstraatsteen = IntegerField(naam="aantalRijenBetonstraatsteen",
-                                                        label="aantal rijen betonstraatsteen",
-                                                        objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#WatergreppelAfw.aantalRijenBetonstraatsteen",
-                                                        definition="Het aantal rijen betonstraatsteen waaruit de watergreppel is opgebouwd.",
-                                                        constraints="",
-                                                        usagenote="",
-                                                        deprecated_version="")
+        self._aantalRijenBetonstraatsteen = OTLAttribuut(field=IntegerField,
+                                                         naam='aantalRijenBetonstraatsteen',
+                                                         label='aantal rijen betonstraatsteen',
+                                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#WatergreppelAfw.aantalRijenBetonstraatsteen',
+                                                         definition='Het aantal rijen betonstraatsteen waaruit de watergreppel is opgebouwd.')
+
+    @property
+    def aantalRijenBetonstraatsteen(self):
         """Het aantal rijen betonstraatsteen waaruit de watergreppel is opgebouwd."""
+        return self._aantalRijenBetonstraatsteen.waarde
+
+    @aantalRijenBetonstraatsteen.setter
+    def aantalRijenBetonstraatsteen(self, value):
+        self._aantalRijenBetonstraatsteen.set_waarde(value, owner=self)

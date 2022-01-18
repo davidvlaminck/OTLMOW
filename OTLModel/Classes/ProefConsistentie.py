@@ -1,24 +1,32 @@
 # coding=utf-8
+from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
+from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.Proef import Proef
 from OTLModel.Datatypes.DtcDocument import DtcDocument
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class ProefConsistentie(Proef):
+class ProefConsistentie(Proef, AttributeInfo):
     """Zetmaat van betonspecie volgens NBN EN 12350-2 bij een cementbetonverharding of een lijnvormig element."""
 
-    typeURI = "https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefConsistentie"
+    typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefConsistentie'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        super().__init__()
+        AttributeInfo.__init__(self)
+        Proef.__init__(self)
 
-        self.consistentie = DtcDocument()
+        self._consistentie = OTLAttribuut(field=DtcDocument,
+                                          naam='consistentie',
+                                          label='consistentie',
+                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefConsistentie.consistentie',
+                                          definition='Proefresultaten van de consistentie.')
+
+    @property
+    def consistentie(self):
         """Proefresultaten van de consistentie."""
-        self.consistentie.naam = "consistentie"
-        self.consistentie.label = "consistentie"
-        self.consistentie.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefConsistentie.consistentie"
-        self.consistentie.definition = "Proefresultaten van de consistentie."
-        self.consistentie.constraints = ""
-        self.consistentie.usagenote = ""
-        self.consistentie.deprecated_version = ""
+        return self._consistentie.waarde
+
+    @consistentie.setter
+    def consistentie(self, value):
+        self._consistentie.set_waarde(value, owner=self)

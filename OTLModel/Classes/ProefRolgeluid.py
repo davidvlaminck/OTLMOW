@@ -1,24 +1,32 @@
 # coding=utf-8
+from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
+from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.Proef import Proef
 from OTLModel.Datatypes.DtcDocument import DtcDocument
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class ProefRolgeluid(Proef):
+class ProefRolgeluid(Proef, AttributeInfo):
     """Het rolgeluid wordt gemeten met de CPX-methode volgens ISO/CEN 11819-2."""
 
-    typeURI = "https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefRolgeluid"
+    typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefRolgeluid'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        super().__init__()
+        AttributeInfo.__init__(self)
+        Proef.__init__(self)
 
-        self.rolgeluid = DtcDocument()
+        self._rolgeluid = OTLAttribuut(field=DtcDocument,
+                                       naam='rolgeluid',
+                                       label='rolgeluid',
+                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefRolgeluid.rolgeluid',
+                                       definition='Proefresultaten van het rolgeluid van de toplaag.')
+
+    @property
+    def rolgeluid(self):
         """Proefresultaten van het rolgeluid van de toplaag."""
-        self.rolgeluid.naam = "rolgeluid"
-        self.rolgeluid.label = "rolgeluid"
-        self.rolgeluid.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefRolgeluid.rolgeluid"
-        self.rolgeluid.definition = "Proefresultaten van het rolgeluid van de toplaag."
-        self.rolgeluid.constraints = ""
-        self.rolgeluid.usagenote = ""
-        self.rolgeluid.deprecated_version = ""
+        return self._rolgeluid.waarde
+
+    @rolgeluid.setter
+    def rolgeluid(self, value):
+        self._rolgeluid.set_waarde(value, owner=self)

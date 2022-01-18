@@ -1,21 +1,32 @@
 # coding=utf-8
-from OTLModel.Datatypes.Keuzelijst import Keuzelijst
+from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
+from OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 
 # Generated with OTLEnumerationCreator. To modify: extend, do not edit
-class KlBouwputType(Keuzelijst):
+class KlBouwputType(KeuzelijstField):
     """Het type van bouwput."""
+    naam = 'KlBouwputType'
+    label = 'Bouwput type.'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlBouwputType'
+    definition = 'Het type van bouwput.'
+    codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlBouwputType'
+    options = {
+        'bouwput': KeuzelijstWaarde(invulwaarde='bouwput',
+                                    label='bouwput',
+                                    definitie='bouwput',
+                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBouwputType/bouwput'),
+        'intredeput': KeuzelijstWaarde(invulwaarde='intredeput',
+                                       label='intredeput',
+                                       definitie='intredeput',
+                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBouwputType/intredeput'),
+        'ontvangstput': KeuzelijstWaarde(invulwaarde='ontvangstput',
+                                         label='ontvangstput',
+                                         definitie='ontvangstput',
+                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBouwputType/ontvangstput'),
+        'persput': KeuzelijstWaarde(invulwaarde='persput',
+                                    label='persput',
+                                    definitie='persput',
+                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBouwputType/persput')
+    }
 
-    def __init__(self):
-        super().__init__(naam="KlBouwputType",
-                         label="Bouwput type.",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlBouwputType",
-                         definition="Het type van bouwput.",
-                         usagenote="",
-                         deprecated_version="",
-                         codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlBouwputType")
-
-        self.add_option("bouwput", "bouwput", "bouwput", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBouwputType/bouwput")
-        self.add_option("intredeput", "intredeput", "intredeput", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBouwputType/intredeput")
-        self.add_option("ontvangstput", "ontvangstput", "ontvangstput", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBouwputType/ontvangstput")
-        self.add_option("persput", "persput", "persput", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBouwputType/persput")

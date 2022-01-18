@@ -1,22 +1,36 @@
 # coding=utf-8
-from OTLModel.Datatypes.Keuzelijst import Keuzelijst
+from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
+from OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 
 # Generated with OTLEnumerationCreator. To modify: extend, do not edit
-class KlStandaardkwaliteitsklasse(Keuzelijst):
+class KlStandaardkwaliteitsklasse(KeuzelijstField):
     """De mogelijke tandaardkwaliteitsklassen."""
+    naam = 'KlStandaardkwaliteitsklasse'
+    label = 'Standaardkwaliteitsklasse'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlStandaardkwaliteitsklasse'
+    definition = 'De mogelijke tandaardkwaliteitsklassen.'
+    codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlStandaardkwaliteitsklasse'
+    options = {
+        'a': KeuzelijstWaarde(invulwaarde='a',
+                              label='a',
+                              definitie='A',
+                              objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlStandaardkwaliteitsklasse/a'),
+        'b': KeuzelijstWaarde(invulwaarde='b',
+                              label='b',
+                              definitie='B',
+                              objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlStandaardkwaliteitsklasse/b'),
+        'c': KeuzelijstWaarde(invulwaarde='c',
+                              label='c',
+                              definitie='C',
+                              objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlStandaardkwaliteitsklasse/c'),
+        'd': KeuzelijstWaarde(invulwaarde='d',
+                              label='d',
+                              definitie='D',
+                              objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlStandaardkwaliteitsklasse/d'),
+        'e': KeuzelijstWaarde(invulwaarde='e',
+                              label='e',
+                              definitie='E',
+                              objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlStandaardkwaliteitsklasse/e')
+    }
 
-    def __init__(self):
-        super().__init__(naam="KlStandaardkwaliteitsklasse",
-                         label="Standaardkwaliteitsklasse",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlStandaardkwaliteitsklasse",
-                         definition="De mogelijke tandaardkwaliteitsklassen.",
-                         usagenote="",
-                         deprecated_version="",
-                         codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlStandaardkwaliteitsklasse")
-
-        self.add_option("a", "a", "A", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlStandaardkwaliteitsklasse/a")
-        self.add_option("b", "b", "B", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlStandaardkwaliteitsklasse/b")
-        self.add_option("c", "c", "C", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlStandaardkwaliteitsklasse/c")
-        self.add_option("d", "d", "D", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlStandaardkwaliteitsklasse/d")
-        self.add_option("e", "e", "E", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlStandaardkwaliteitsklasse/e")

@@ -1,40 +1,46 @@
 # coding=utf-8
-from OTLModel.Datatypes.UnionTypeField import UnionTypeField
-from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
+from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
+from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Datatypes.KlSchoorhoek import KlSchoorhoek
 from OTLModel.Datatypes.KwantWrdInDecimaleGraden import KwantWrdInDecimaleGraden
+from OTLModel.Datatypes.UnionTypeField import UnionTypeField
 
 
 # Generated with OTLUnionDatatypeCreator. To modify: extend, do not edit
-class DtuHellingsSchoorhoek(UnionTypeField):
-    """Union datatype voor de hellings- of de schoorhoek."""
-
+class DtuHellingsSchoorhoekAttributen(AttributeInfo):
     def __init__(self):
-        super().__init__(naam="DtuHellingsSchoorhoek",
-                         label="Hellings- of schoorhoek",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtuHellingsSchoorhoek",
-                         definition="Union datatype voor de hellings- of de schoorhoek.",
-                         usagenote="",
-                         deprecated_version="")
+        self._hellingshoek = OTLAttribuut(field=KwantWrdInDecimaleGraden,
+                                          naam='hellingshoek',
+                                          label='hellingshoek',
+                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtuHellingsSchoorhoek.hellingshoek',
+                                          definition='Hoek die het object maakt ten opzichte van de verticale, uitgedrukt in decimale graden.')
 
-        field_hellingshoek = KwantWrdInDecimaleGraden()
+        self._schoorhoek = OTLAttribuut(field=KlSchoorhoek,
+                                        naam='schoorhoek',
+                                        label='schoorhoek',
+                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtuHellingsSchoorhoek.schoorhoek',
+                                        definition='Hoek die het object maakt ten opzichte van de verticale, uitgedrukt in 1 op x (vb.: 1/4).')
+
+    @property
+    def hellingshoek(self):
         """Hoek die het object maakt ten opzichte van de verticale, uitgedrukt in decimale graden."""
-        field_hellingshoek.naam = "hellingshoek"
-        field_hellingshoek.label = "hellingshoek"
-        field_hellingshoek.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtuHellingsSchoorhoek.hellingshoek"
-        field_hellingshoek.definition = "Hoek die het object maakt ten opzichte van de verticale, uitgedrukt in decimale graden."
-        field_hellingshoek.constraints = ""
-        field_hellingshoek.usagenote = ""
-        field_hellingshoek.deprecated_version = ""
+        return self._hellingshoek.waarde
 
-        field_schoorhoek = KeuzelijstField(naam="schoorhoek",
-                                           label="schoorhoek",
-                                           lijst=KlSchoorhoek(),
-                                           objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtuHellingsSchoorhoek.schoorhoek",
-                                           definition="Hoek die het object maakt ten opzichte van de verticale, uitgedrukt in 1 op x (vb.: 1/4).",
-                                           constraints="",
-                                           usagenote="",
-                                           deprecated_version="")
+    @property
+    def schoorhoek(self):
         """Hoek die het object maakt ten opzichte van de verticale, uitgedrukt in 1 op x (vb.: 1/4)."""
+        return self._schoorhoek.waarde
 
-        self.fieldsTuple = (field_hellingshoek, field_schoorhoek)
+
+# Generated with OTLUnionDatatypeCreator. To modify: extend, do not edit
+class DtuHellingsSchoorhoek(UnionTypeField, AttributeInfo):
+    """Union datatype voor de hellings- of de schoorhoek."""
+    naam = 'DtuHellingsSchoorhoek'
+    label = 'Hellings- of schoorhoek'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtuHellingsSchoorhoek'
+    definition = 'Union datatype voor de hellings- of de schoorhoek.'
+    waardeObject = DtuHellingsSchoorhoekAttributen
+
+    def __str__(self):
+        return UnionTypeField.__str__(self)
+

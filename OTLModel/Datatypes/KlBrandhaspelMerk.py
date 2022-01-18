@@ -1,17 +1,16 @@
 # coding=utf-8
-from OTLModel.Datatypes.Keuzelijst import Keuzelijst
+from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
+from OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 
 # Generated with OTLEnumerationCreator. To modify: extend, do not edit
-class KlBrandhaspelMerk(Keuzelijst):
+class KlBrandhaspelMerk(KeuzelijstField):
     """Het merk van de brandhaspel."""
-
-    def __init__(self):
-        super().__init__(naam="KlBrandhaspelMerk",
-                         label="Brandhaspel merk",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlBrandhaspelMerk",
-                         definition="Het merk van de brandhaspel.",
-                         usagenote="",
-                         deprecated_version="",
-                         codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlBrandhaspelMerk")
+    naam = 'KlBrandhaspelMerk'
+    label = 'Brandhaspel merk'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlBrandhaspelMerk'
+    definition = 'Het merk van de brandhaspel.'
+    codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlBrandhaspelMerk'
+    options = 
+    }
 

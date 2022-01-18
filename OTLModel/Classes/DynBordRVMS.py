@@ -1,36 +1,48 @@
 # coding=utf-8
+from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
+from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.LEDBord import LEDBord
-from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlDynBordRVMSMerk import KlDynBordRVMSMerk
 from OTLModel.Datatypes.KlDynBordRVMSModelnaam import KlDynBordRVMSModelnaam
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class DynBordRVMS(LEDBord):
+class DynBordRVMS(LEDBord, AttributeInfo):
     """Dynamisch verkeersbord dat dynamische verkeerstekens  en teksten kan afbeelden. RVMS staat voor Road-side Variable Message Signs."""
 
-    typeURI = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DynBordRVMS"
+    typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DynBordRVMS'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        super().__init__()
+        AttributeInfo.__init__(self)
+        LEDBord.__init__(self)
 
-        self.merk = KeuzelijstField(naam="merk",
-                                    label="merk",
-                                    lijst=KlDynBordRVMSMerk(),
-                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DynBordRVMS.merk",
-                                    definition="Merk van het dynamische bord.",
-                                    constraints="",
-                                    usagenote="",
-                                    deprecated_version="")
+        self._merk = OTLAttribuut(field=KlDynBordRVMSMerk,
+                                  naam='merk',
+                                  label='merk',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DynBordRVMS.merk',
+                                  definition='Merk van het dynamische bord.')
+
+        self._modelnaam = OTLAttribuut(field=KlDynBordRVMSModelnaam,
+                                       naam='modelnaam',
+                                       label='modelnaam',
+                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DynBordRVMS.modelnaam',
+                                       definition='Modelnaam van het RVMS-bord.')
+
+    @property
+    def merk(self):
         """Merk van het dynamische bord."""
+        return self._merk.waarde
 
-        self.modelnaam = KeuzelijstField(naam="modelnaam",
-                                         label="modelnaam",
-                                         lijst=KlDynBordRVMSModelnaam(),
-                                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DynBordRVMS.modelnaam",
-                                         definition="Modelnaam van het RVMS-bord.",
-                                         constraints="",
-                                         usagenote="",
-                                         deprecated_version="")
+    @merk.setter
+    def merk(self, value):
+        self._merk.set_waarde(value, owner=self)
+
+    @property
+    def modelnaam(self):
         """Modelnaam van het RVMS-bord."""
+        return self._modelnaam.waarde
+
+    @modelnaam.setter
+    def modelnaam(self, value):
+        self._modelnaam.set_waarde(value, owner=self)

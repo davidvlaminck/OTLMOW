@@ -1,20 +1,28 @@
 # coding=utf-8
-from OTLModel.Datatypes.Keuzelijst import Keuzelijst
+from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
+from OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 
 # Generated with OTLEnumerationCreator. To modify: extend, do not edit
-class KlEcoEcoductType(Keuzelijst):
+class KlEcoEcoductType(KeuzelijstField):
     """Types van ecoduct."""
+    naam = 'KlEcoEcoductType'
+    label = 'Ecoduct type'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlEcoEcoductType'
+    definition = 'Types van ecoduct.'
+    codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlEcoEcoductType'
+    options = {
+        'bermbrug': KeuzelijstWaarde(invulwaarde='bermbrug',
+                                     label='bermbrug',
+                                     definitie='Een bestaande, vaak smalle brug met beperkt verkeer waarop de natuur via groene bermen doorloopt.',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlEcoEcoductType/bermbrug'),
+        'ecocreaduct': KeuzelijstWaarde(invulwaarde='ecocreaduct',
+                                        label='ecocreaduct',
+                                        definitie='Een brug hoofdzakelijk in gebruik voor natuur, gecombineerd met zachte recreatie (fietsers, wandelaars, ruiters).',
+                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlEcoEcoductType/ecocreaduct'),
+        'ecoveloduct': KeuzelijstWaarde(invulwaarde='ecoveloduct',
+                                        label='ecoveloduct',
+                                        definitie='Een brug hoofdzakelijk in gebruik voor natuur, gecombineerd met een fietspad.',
+                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlEcoEcoductType/ecoveloduct')
+    }
 
-    def __init__(self):
-        super().__init__(naam="KlEcoEcoductType",
-                         label="Ecoduct type",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlEcoEcoductType",
-                         definition="Types van ecoduct.",
-                         usagenote="",
-                         deprecated_version="",
-                         codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlEcoEcoductType")
-
-        self.add_option("bermbrug", "bermbrug", "Een bestaande, vaak smalle brug met beperkt verkeer waarop de natuur via groene bermen doorloopt.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlEcoEcoductType/bermbrug")
-        self.add_option("ecocreaduct", "ecocreaduct", "Een brug hoofdzakelijk in gebruik voor natuur, gecombineerd met zachte recreatie (fietsers, wandelaars, ruiters).", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlEcoEcoductType/ecocreaduct")
-        self.add_option("ecoveloduct", "ecoveloduct", "Een brug hoofdzakelijk in gebruik voor natuur, gecombineerd met een fietspad.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlEcoEcoductType/ecoveloduct")

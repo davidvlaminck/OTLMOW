@@ -1,10 +1,10 @@
 # coding=utf-8
+from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
+from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.Proef import Proef
-from OTLModel.Datatypes.KardinaliteitField import KardinaliteitField
 from OTLModel.Datatypes.DateTimeField import DateTimeField
-from OTLModel.Datatypes.DecimalFloatField import DecimalFloatField
 from OTLModel.Datatypes.DtcDocument import DtcDocument
-from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
+from OTLModel.Datatypes.FloatOrDecimalField import FloatOrDecimalField
 from OTLModel.Datatypes.KlBoomConditiebeoordeling import KlBoomConditiebeoordeling
 from OTLModel.Datatypes.KlBoomConditiewaarde import KlBoomConditiewaarde
 from OTLModel.Datatypes.KlBoomConflicten import KlBoomConflicten
@@ -18,180 +18,268 @@ from OTLModel.Datatypes.KwantWrdInEuro import KwantWrdInEuro
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class ProefBoomtoestand(Proef):
+class ProefBoomtoestand(Proef, AttributeInfo):
     """De toestand met waarnemingen per inspectie van een boom."""
 
-    typeURI = "https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefBoomtoestand"
+    typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefBoomtoestand'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        super().__init__()
+        AttributeInfo.__init__(self)
+        Proef.__init__(self)
 
-        self.basiswaarde = KwantWrdInEuro()
+        self._basiswaarde = OTLAttribuut(field=KwantWrdInEuro,
+                                         naam='basiswaarde',
+                                         label='rapportage onderzoek',
+                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefBoomtoestand.basiswaarde',
+                                         definition='Het schriftelijk verslag dat na onderzoek of visuele controle wordt opgemaakt.')
+
+        self._conditiebeoordeling = OTLAttribuut(field=KlBoomConditiebeoordeling,
+                                                 naam='conditiebeoordeling',
+                                                 label='conditiebeoordeling',
+                                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefBoomtoestand.conditiebeoordeling',
+                                                 definition='De conditie beoordeeld volgens de kronenstructuur van Dr. A. Roloff, gelet op de scheutlengte ontwikkeling en vorming van dood hout.')
+
+        self._conditiewaarde = OTLAttribuut(field=KlBoomConditiewaarde,
+                                            naam='conditiewaarde',
+                                            label='conditiewaarde',
+                                            objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefBoomtoestand.conditiewaarde',
+                                            definition='Een coëfficiënt die iets vertelt over de gezondheidstoestand (vitaliteit, conditie) en de levensverwachting van een boom.')
+
+        self._conflicten = OTLAttribuut(field=KlBoomConflicten,
+                                        naam='conflicten',
+                                        label='conflicten',
+                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefBoomtoestand.conflicten',
+                                        definition='Mogelijke standplaatsconflicten die de condities of structuur van de boom negatief kunnen beïnvloeden.')
+
+        self._gebreken = OTLAttribuut(field=KlBoomGebreken,
+                                      naam='gebreken',
+                                      label='gebreken',
+                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefBoomtoestand.gebreken',
+                                      kardinaliteit_max='*',
+                                      definition='Een visueel defect aan een boom wat dient gemonitord te worden.')
+
+        self._krooninspectie = OTLAttribuut(field=DtcDocument,
+                                            naam='krooninspectie',
+                                            label='krooninspectie',
+                                            objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefBoomtoestand.krooninspectie',
+                                            definition='Controle van gebrekssymptomen in de kroon.')
+
+        self._meerwaarde = OTLAttribuut(field=KlBoomtoestandMeerwaardefactor,
+                                        naam='meerwaarde',
+                                        label='meerwaarde',
+                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefBoomtoestand.meerwaarde',
+                                        definition='Mogelijkheid om de boom een waarde toe te kennen op basis van hun uitzonderlijke ecologische of erfgoedwaarde .')
+
+        self._onderhoudstoestand = OTLAttribuut(field=KlBoomOnderhoudstoestand,
+                                                naam='onderhoudstoestand',
+                                                label='onderhoudstoestand',
+                                                objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefBoomtoestand.onderhoudstoestand',
+                                                definition='De toestand van een boom die de eventuele snoeiachterstand aangeeft.')
+
+        self._onderzoekVisueleBoomcontrole = OTLAttribuut(field=DtcDocument,
+                                                          naam='onderzoekVisueleBoomcontrole',
+                                                          label='Onderzoek visuele boomcontrole',
+                                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefBoomtoestand.onderzoekVisueleBoomcontrole',
+                                                          definition='Visueel bepalen van de veiligheid en conditie van een boom.')
+
+        self._plantwijzewaarde = OTLAttribuut(field=KlBoomPlantwijzewaarde,
+                                              naam='plantwijzewaarde',
+                                              label='plantwijzewaarde',
+                                              objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefBoomtoestand.plantwijzewaarde',
+                                              definition='Een factor die de ontwikkeling van het uiterlijk (de habitus) van een boom relateert met de manier waarop hij geplant wordt.')
+
+        self._rapportageOnderzoek = OTLAttribuut(field=DtcDocument,
+                                                 naam='rapportageOnderzoek',
+                                                 label='rapportage onderzoek',
+                                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefBoomtoestand.rapportageOnderzoek',
+                                                 definition='Het schriftelijk verslag dat na onderzoek of visuele controle wordt opgemaakt.')
+
+        self._soortwaarde = OTLAttribuut(field=FloatOrDecimalField,
+                                         naam='soortwaarde',
+                                         label='soortwaarde',
+                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefBoomtoestand.soortwaarde',
+                                         definition='Geeft voor een bepaalde boomsoort of -variëteit de verhouding weer tussen de prijs per cm² van die soort en de eenheidsprijs.')
+
+        self._stamomtrek = OTLAttribuut(field=KwantWrdInCentimeter,
+                                        naam='stamomtrek',
+                                        label='stamomtrek',
+                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefBoomtoestand.stamomtrek',
+                                        definition='Omtrek van de stam van de boom in cm, gemeten op 1 meter boven de grond.')
+
+        self._standplaatswaarde = OTLAttribuut(field=KlBoomStandplaatswaarde,
+                                               naam='standplaatswaarde',
+                                               label='standplaatswaarde',
+                                               objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefBoomtoestand.standplaatswaarde',
+                                               definition='De waarde van de boom afhankelijk van de bebouwingsdichtheid en de aanplantingsmogelijkheden rondom en voor de boom.')
+
+        self._tijdstempelBoomtoestand = OTLAttribuut(field=DateTimeField,
+                                                     naam='tijdstempelBoomtoestand',
+                                                     label='tijdstempel boomtoestand',
+                                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefBoomtoestand.tijdstempelBoomtoestand',
+                                                     definition='Datum van laatste snoeibeurt.')
+
+        self._uitgebreidPlaatsonderzoek = OTLAttribuut(field=DtcDocument,
+                                                       naam='uitgebreidPlaatsonderzoek',
+                                                       label='uitgebreid plaatsonderzoek',
+                                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefBoomtoestand.uitgebreidPlaatsonderzoek',
+                                                       definition='Grondige beoordeling van de textuur en structuur van de bodem, met als doel een voorstel tot conditieverbeterende maatregelen.')
+
+        self._wortelonderzoek = OTLAttribuut(field=DtcDocument,
+                                             naam='wortelonderzoek',
+                                             label='Wortelonderzoek',
+                                             objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefBoomtoestand.wortelonderzoek',
+                                             definition='Bepalen van de kwaliteit van de wortels (bv. aantasting door schimmels) of het bepalen van de reikwijdte van de wortels (bv. om een wortelbeschermingszone op te zetten in de buurt van werken van de  bomen).')
+
+    @property
+    def basiswaarde(self):
         """Het schriftelijk verslag dat na onderzoek of visuele controle wordt opgemaakt."""
-        self.basiswaarde.naam = "basiswaarde"
-        self.basiswaarde.label = "rapportage onderzoek"
-        self.basiswaarde.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefBoomtoestand.basiswaarde"
-        self.basiswaarde.definition = "Het schriftelijk verslag dat na onderzoek of visuele controle wordt opgemaakt."
-        self.basiswaarde.constraints = ""
-        self.basiswaarde.usagenote = ""
-        self.basiswaarde.deprecated_version = ""
+        return self._basiswaarde.waarde
 
-        self.conditiebeoordeling = KeuzelijstField(naam="conditiebeoordeling",
-                                                   label="conditiebeoordeling",
-                                                   lijst=KlBoomConditiebeoordeling(),
-                                                   objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefBoomtoestand.conditiebeoordeling",
-                                                   definition="De conditie beoordeeld volgens de kronenstructuur van Dr. A. Roloff, gelet op de scheutlengte ontwikkeling en vorming van dood hout.",
-                                                   constraints="",
-                                                   usagenote="",
-                                                   deprecated_version="")
+    @basiswaarde.setter
+    def basiswaarde(self, value):
+        self._basiswaarde.set_waarde(value, owner=self)
+
+    @property
+    def conditiebeoordeling(self):
         """De conditie beoordeeld volgens de kronenstructuur van Dr. A. Roloff, gelet op de scheutlengte ontwikkeling en vorming van dood hout."""
+        return self._conditiebeoordeling.waarde
 
-        self.conditiewaarde = KeuzelijstField(naam="conditiewaarde",
-                                              label="conditiewaarde",
-                                              lijst=KlBoomConditiewaarde(),
-                                              objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefBoomtoestand.conditiewaarde",
-                                              definition="Een coëfficiënt die iets vertelt over de gezondheidstoestand (vitaliteit, conditie) en de levensverwachting van een boom.",
-                                              constraints="",
-                                              usagenote="",
-                                              deprecated_version="")
+    @conditiebeoordeling.setter
+    def conditiebeoordeling(self, value):
+        self._conditiebeoordeling.set_waarde(value, owner=self)
+
+    @property
+    def conditiewaarde(self):
         """Een coëfficiënt die iets vertelt over de gezondheidstoestand (vitaliteit, conditie) en de levensverwachting van een boom."""
+        return self._conditiewaarde.waarde
 
-        self.conflicten = KeuzelijstField(naam="conflicten",
-                                          label="conflicten",
-                                          lijst=KlBoomConflicten(),
-                                          objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefBoomtoestand.conflicten",
-                                          definition="Mogelijke standplaatsconflicten die de condities of structuur van de boom negatief kunnen beïnvloeden.",
-                                          constraints="",
-                                          usagenote="",
-                                          deprecated_version="")
+    @conditiewaarde.setter
+    def conditiewaarde(self, value):
+        self._conditiewaarde.set_waarde(value, owner=self)
+
+    @property
+    def conflicten(self):
         """Mogelijke standplaatsconflicten die de condities of structuur van de boom negatief kunnen beïnvloeden."""
+        return self._conflicten.waarde
 
-        gebrekenField = KeuzelijstField(naam="gebreken",
-                                        label="gebreken",
-                                        lijst=KlBoomGebreken(),
-                                        objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefBoomtoestand.gebreken",
-                                        definition="Een visueel defect aan een boom wat dient gemonitord te worden.",
-                                        constraints="",
-                                        usagenote="",
-                                        deprecated_version="")
-        self.gebreken = KardinaliteitField(minKardinaliteit="1", maxKardinaliteit="*", fieldToMultiply=gebrekenField)
+    @conflicten.setter
+    def conflicten(self, value):
+        self._conflicten.set_waarde(value, owner=self)
+
+    @property
+    def gebreken(self):
         """Een visueel defect aan een boom wat dient gemonitord te worden."""
+        return self._gebreken.waarde
 
-        self.krooninspectie = DtcDocument()
+    @gebreken.setter
+    def gebreken(self, value):
+        self._gebreken.set_waarde(value, owner=self)
+
+    @property
+    def krooninspectie(self):
         """Controle van gebrekssymptomen in de kroon."""
-        self.krooninspectie.naam = "krooninspectie"
-        self.krooninspectie.label = "krooninspectie"
-        self.krooninspectie.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefBoomtoestand.krooninspectie"
-        self.krooninspectie.definition = "Controle van gebrekssymptomen in de kroon."
-        self.krooninspectie.constraints = ""
-        self.krooninspectie.usagenote = ""
-        self.krooninspectie.deprecated_version = ""
+        return self._krooninspectie.waarde
 
-        self.meerwaarde = KeuzelijstField(naam="meerwaarde",
-                                          label="meerwaarde",
-                                          lijst=KlBoomtoestandMeerwaardefactor(),
-                                          objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefBoomtoestand.meerwaarde",
-                                          definition="Mogelijkheid om de boom een waarde toe te kennen op basis van hun uitzonderlijke ecologische of erfgoedwaarde .",
-                                          constraints="",
-                                          usagenote="",
-                                          deprecated_version="")
+    @krooninspectie.setter
+    def krooninspectie(self, value):
+        self._krooninspectie.set_waarde(value, owner=self)
+
+    @property
+    def meerwaarde(self):
         """Mogelijkheid om de boom een waarde toe te kennen op basis van hun uitzonderlijke ecologische of erfgoedwaarde ."""
+        return self._meerwaarde.waarde
 
-        self.onderhoudstoestand = KeuzelijstField(naam="onderhoudstoestand",
-                                                  label="onderhoudstoestand",
-                                                  lijst=KlBoomOnderhoudstoestand(),
-                                                  objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefBoomtoestand.onderhoudstoestand",
-                                                  definition="De toestand van een boom die de eventuele snoeiachterstand aangeeft.",
-                                                  constraints="",
-                                                  usagenote="",
-                                                  deprecated_version="")
+    @meerwaarde.setter
+    def meerwaarde(self, value):
+        self._meerwaarde.set_waarde(value, owner=self)
+
+    @property
+    def onderhoudstoestand(self):
         """De toestand van een boom die de eventuele snoeiachterstand aangeeft."""
+        return self._onderhoudstoestand.waarde
 
-        self.onderzoekVisueleBoomcontrole = DtcDocument()
+    @onderhoudstoestand.setter
+    def onderhoudstoestand(self, value):
+        self._onderhoudstoestand.set_waarde(value, owner=self)
+
+    @property
+    def onderzoekVisueleBoomcontrole(self):
         """Visueel bepalen van de veiligheid en conditie van een boom."""
-        self.onderzoekVisueleBoomcontrole.naam = "onderzoekVisueleBoomcontrole"
-        self.onderzoekVisueleBoomcontrole.label = "Onderzoek visuele boomcontrole"
-        self.onderzoekVisueleBoomcontrole.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefBoomtoestand.onderzoekVisueleBoomcontrole"
-        self.onderzoekVisueleBoomcontrole.definition = "Visueel bepalen van de veiligheid en conditie van een boom."
-        self.onderzoekVisueleBoomcontrole.constraints = ""
-        self.onderzoekVisueleBoomcontrole.usagenote = ""
-        self.onderzoekVisueleBoomcontrole.deprecated_version = ""
+        return self._onderzoekVisueleBoomcontrole.waarde
 
-        self.plantwijzewaarde = KeuzelijstField(naam="plantwijzewaarde",
-                                                label="plantwijzewaarde",
-                                                lijst=KlBoomPlantwijzewaarde(),
-                                                objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefBoomtoestand.plantwijzewaarde",
-                                                definition="Een factor die de ontwikkeling van het uiterlijk (de habitus) van een boom relateert met de manier waarop hij geplant wordt.",
-                                                constraints="",
-                                                usagenote="",
-                                                deprecated_version="")
+    @onderzoekVisueleBoomcontrole.setter
+    def onderzoekVisueleBoomcontrole(self, value):
+        self._onderzoekVisueleBoomcontrole.set_waarde(value, owner=self)
+
+    @property
+    def plantwijzewaarde(self):
         """Een factor die de ontwikkeling van het uiterlijk (de habitus) van een boom relateert met de manier waarop hij geplant wordt."""
+        return self._plantwijzewaarde.waarde
 
-        self.rapportageOnderzoek = DtcDocument()
+    @plantwijzewaarde.setter
+    def plantwijzewaarde(self, value):
+        self._plantwijzewaarde.set_waarde(value, owner=self)
+
+    @property
+    def rapportageOnderzoek(self):
         """Het schriftelijk verslag dat na onderzoek of visuele controle wordt opgemaakt."""
-        self.rapportageOnderzoek.naam = "rapportageOnderzoek"
-        self.rapportageOnderzoek.label = "rapportage onderzoek"
-        self.rapportageOnderzoek.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefBoomtoestand.rapportageOnderzoek"
-        self.rapportageOnderzoek.definition = "Het schriftelijk verslag dat na onderzoek of visuele controle wordt opgemaakt."
-        self.rapportageOnderzoek.constraints = ""
-        self.rapportageOnderzoek.usagenote = ""
-        self.rapportageOnderzoek.deprecated_version = ""
+        return self._rapportageOnderzoek.waarde
 
-        self.soortwaarde = DecimalFloatField(naam="soortwaarde",
-                                             label="soortwaarde",
-                                             objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefBoomtoestand.soortwaarde",
-                                             definition="Geeft voor een bepaalde boomsoort of -variëteit de verhouding weer tussen de prijs per cm² van die soort en de eenheidsprijs.",
-                                             constraints="",
-                                             usagenote="",
-                                             deprecated_version="")
+    @rapportageOnderzoek.setter
+    def rapportageOnderzoek(self, value):
+        self._rapportageOnderzoek.set_waarde(value, owner=self)
+
+    @property
+    def soortwaarde(self):
         """Geeft voor een bepaalde boomsoort of -variëteit de verhouding weer tussen de prijs per cm² van die soort en de eenheidsprijs."""
+        return self._soortwaarde.waarde
 
-        self.stamomtrek = KwantWrdInCentimeter()
+    @soortwaarde.setter
+    def soortwaarde(self, value):
+        self._soortwaarde.set_waarde(value, owner=self)
+
+    @property
+    def stamomtrek(self):
         """Omtrek van de stam van de boom in cm, gemeten op 1 meter boven de grond."""
-        self.stamomtrek.naam = "stamomtrek"
-        self.stamomtrek.label = "stamomtrek"
-        self.stamomtrek.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefBoomtoestand.stamomtrek"
-        self.stamomtrek.definition = "Omtrek van de stam van de boom in cm, gemeten op 1 meter boven de grond."
-        self.stamomtrek.constraints = ""
-        self.stamomtrek.usagenote = ""
-        self.stamomtrek.deprecated_version = ""
+        return self._stamomtrek.waarde
 
-        self.standplaatswaarde = KeuzelijstField(naam="standplaatswaarde",
-                                                 label="standplaatswaarde",
-                                                 lijst=KlBoomStandplaatswaarde(),
-                                                 objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefBoomtoestand.standplaatswaarde",
-                                                 definition="De waarde van de boom afhankelijk van de bebouwingsdichtheid en de aanplantingsmogelijkheden rondom en voor de boom.",
-                                                 constraints="",
-                                                 usagenote="",
-                                                 deprecated_version="")
+    @stamomtrek.setter
+    def stamomtrek(self, value):
+        self._stamomtrek.set_waarde(value, owner=self)
+
+    @property
+    def standplaatswaarde(self):
         """De waarde van de boom afhankelijk van de bebouwingsdichtheid en de aanplantingsmogelijkheden rondom en voor de boom."""
+        return self._standplaatswaarde.waarde
 
-        self.tijdstempelBoomtoestand = DateTimeField(naam="tijdstempelBoomtoestand",
-                                                     label="tijdstempel boomtoestand",
-                                                     objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefBoomtoestand.tijdstempelBoomtoestand",
-                                                     definition="Datum van laatste snoeibeurt.",
-                                                     constraints="",
-                                                     usagenote="",
-                                                     deprecated_version="")
+    @standplaatswaarde.setter
+    def standplaatswaarde(self, value):
+        self._standplaatswaarde.set_waarde(value, owner=self)
+
+    @property
+    def tijdstempelBoomtoestand(self):
         """Datum van laatste snoeibeurt."""
+        return self._tijdstempelBoomtoestand.waarde
 
-        self.uitgebreidPlaatsonderzoek = DtcDocument()
+    @tijdstempelBoomtoestand.setter
+    def tijdstempelBoomtoestand(self, value):
+        self._tijdstempelBoomtoestand.set_waarde(value, owner=self)
+
+    @property
+    def uitgebreidPlaatsonderzoek(self):
         """Grondige beoordeling van de textuur en structuur van de bodem, met als doel een voorstel tot conditieverbeterende maatregelen."""
-        self.uitgebreidPlaatsonderzoek.naam = "uitgebreidPlaatsonderzoek"
-        self.uitgebreidPlaatsonderzoek.label = "uitgebreid plaatsonderzoek"
-        self.uitgebreidPlaatsonderzoek.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefBoomtoestand.uitgebreidPlaatsonderzoek"
-        self.uitgebreidPlaatsonderzoek.definition = "Grondige beoordeling van de textuur en structuur van de bodem, met als doel een voorstel tot conditieverbeterende maatregelen."
-        self.uitgebreidPlaatsonderzoek.constraints = ""
-        self.uitgebreidPlaatsonderzoek.usagenote = ""
-        self.uitgebreidPlaatsonderzoek.deprecated_version = ""
+        return self._uitgebreidPlaatsonderzoek.waarde
 
-        self.wortelonderzoek = DtcDocument()
+    @uitgebreidPlaatsonderzoek.setter
+    def uitgebreidPlaatsonderzoek(self, value):
+        self._uitgebreidPlaatsonderzoek.set_waarde(value, owner=self)
+
+    @property
+    def wortelonderzoek(self):
         """Bepalen van de kwaliteit van de wortels (bv. aantasting door schimmels) of het bepalen van de reikwijdte van de wortels (bv. om een wortelbeschermingszone op te zetten in de buurt van werken van de  bomen)."""
-        self.wortelonderzoek.naam = "wortelonderzoek"
-        self.wortelonderzoek.label = "Wortelonderzoek"
-        self.wortelonderzoek.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefBoomtoestand.wortelonderzoek"
-        self.wortelonderzoek.definition = "Bepalen van de kwaliteit van de wortels (bv. aantasting door schimmels) of het bepalen van de reikwijdte van de wortels (bv. om een wortelbeschermingszone op te zetten in de buurt van werken van de  bomen)."
-        self.wortelonderzoek.constraints = ""
-        self.wortelonderzoek.usagenote = ""
-        self.wortelonderzoek.deprecated_version = ""
+        return self._wortelonderzoek.waarde
+
+    @wortelonderzoek.setter
+    def wortelonderzoek(self, value):
+        self._wortelonderzoek.set_waarde(value, owner=self)

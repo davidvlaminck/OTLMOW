@@ -1,42 +1,33 @@
 import unittest
 
+from OTLModel.Classes.AIMObject import AIMObject
 from OTLModel.Classes.Buis import Buis
 from OTLModel.Classes.ContainerBuis import ContainerBuis
 from OTLModel.Classes.Mantelbuis import Mantelbuis
 
 
 class ContainerBuisKardinaliteitFieldTests(unittest.TestCase):
-    def test_alternatives_set_and_get_waarde_KardinaliteitField(self):
+    def test_Mantelbuis_assign_correct_value(self):
         mantelbuis = Mantelbuis()
-        mantelbuis.kleur.set_waarde_by_index('rood', 1)
-        mantelbuis.kleur.set_waarde_by_index('geel', 0)
+        mantelbuis.kleur = ['geel', 'rood']
 
-        # default
-        self.assertEqual("geel", mantelbuis.kleur.waarde[0].waarde)
-        self.assertEqual("rood", mantelbuis.kleur.waarde[1].waarde)
-        # alternative 1
-        self.assertEqual("geel", mantelbuis.kleur.waarde_index(0))
-        self.assertEqual("rood", mantelbuis.kleur.waarde_index(1))
-        # alternative 2
-        kleurwaardes = mantelbuis.kleur.volgende_waarde()
-        self.assertEqual("geel", next(kleurwaardes))
-        self.assertEqual("rood", next(kleurwaardes))
+        self.assertEqual("geel", mantelbuis.kleur[0])
+        self.assertEqual("rood", mantelbuis.kleur[1])
 
+    def test_Mantelbuis_reassign_values(self):
+        mantelbuis = Mantelbuis()
+        mantelbuis.kleur = ['geel']
 
-    def test_ContainerBuisPassTests(self):
-        instance = Mantelbuis()
+        self.assertEqual("geel", mantelbuis.kleur[0])
+        self.assertEqual(1, len(mantelbuis.kleur))
 
-        instance.kleur.waarde = ['geel']
-        self.assertTrue(len(instance.kleur.waarde) == 1)
-        self.assertEqual("geel", instance.kleur.waarde[0].waarde)
+        mantelbuis.kleur = ['geel', 'rood']
+        self.assertEqual(2, len(mantelbuis.kleur))
 
-        instance.kleur.waarde = ["geel", "rood"]
-        self.assertTrue(len(instance.kleur.waarde) == 2)
+        mantelbuis.kleur = None
+        self.assertIsNone(mantelbuis.kleur)
 
-        instance.kleur.waarde = None
-        self.assertTrue(instance.kleur.waarde is None)
-
-    def test_ContainerBuisErrors(self):
+    def test_Mantelbuis_errors(self):
         with self.assertRaises(TypeError) as exc_abstract:
             ContainerBuis()
         self.assertEqual(str(exc_abstract.exception), "Can't instantiate abstract class ContainerBuis with abstract method __init__")
@@ -47,32 +38,31 @@ class ContainerBuisKardinaliteitFieldTests(unittest.TestCase):
 
         instance = Mantelbuis()
 
-        with self.assertRaises(ValueError) as exc_tuple:
-            instance.kleur.waarde = ()
-        self.assertEqual(str(exc_tuple.exception), "expecting list in kleur.waarde")
+        with self.assertRaises(TypeError) as exc_dict:
+            instance.kleur = 2
 
-        with self.assertRaises(ValueError) as exc_dict:
-            instance.kleur.waarde = {}
-        self.assertEqual(str(exc_dict.exception), "expecting list in kleur.waarde")
+        with self.assertRaises(TypeError) as exc_dict:
+            instance.kleur = {}
+        self.assertEqual(str(exc_dict.exception), "expecting a list in Mantelbuis.kleur")
 
         with self.assertRaises(ValueError) as exc_tuple_with_bad_value:
-            instance.kleur.waarde = ["geel", 3]
-        self.assertEqual(str(exc_tuple_with_bad_value.exception), "element of bad type in kleur.waarde")
+            instance.kleur = ["geel", 3]
+        self.assertEqual(str(exc_tuple_with_bad_value.exception), "invalid value in list for Mantelbuis.kleur: 3 is not valid, must be valid for String\nexpecting string in kleur")
 
-        instance.kleur.maxKardinaliteit = 2
-        instance.kleur.minKardinaliteit = 2
+        instance._kleur.kardinaliteit_min = "2"
+        instance._kleur.kardinaliteit_max = "2"
         with self.assertRaises(ValueError) as exc_list_one_short:
-            instance.kleur.waarde = ["geel"]
-        self.assertEqual(str(exc_list_one_short.exception), "expecting at least 2 element(s) in kleur.waarde")
+            instance.kleur = ["geel"]
+        self.assertEqual(str(exc_list_one_short.exception), "expecting at least 2 element(s) in Mantelbuis.kleur")
         with self.assertRaises(ValueError) as exc_list_one_too_many:
-            instance.kleur.waarde = ["geel", "rood", "blauw"]
-        self.assertEqual(str(exc_list_one_too_many.exception), "expecting at most 2 element(s) in kleur.waarde")
+            instance.kleur = ["geel", "rood", "blauw"]
+        self.assertEqual(str(exc_list_one_too_many.exception), "expecting at most 2 element(s) in Mantelbuis.kleur")
 
-    def test_ContainerBuisTwoInstances(self):
+    def test_MantelbuisTwoInstances(self):
         instance = Mantelbuis()
-        instance.kleur.waarde = ["geel", "rood"]
+        instance.kleur = ["geel", "rood"]
         instance2 = Mantelbuis()
-        instance2.kleur.waarde = ["blauw"]
-        self.assertTrue(instance.kleur.waarde[0].waarde == "geel")
-        self.assertTrue(instance.kleur.waarde[1].waarde == "rood")
-        self.assertTrue(instance2.kleur.waarde[0].waarde == "blauw")
+        instance2.kleur = ["blauw"]
+        self.assertTrue(instance.kleur[0] == "geel")
+        self.assertTrue(instance.kleur[1] == "rood")
+        self.assertTrue(instance2.kleur[0] == "blauw")

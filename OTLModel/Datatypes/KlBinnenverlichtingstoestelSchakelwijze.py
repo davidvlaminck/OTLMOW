@@ -1,20 +1,25 @@
 # coding=utf-8
-from OTLModel.Datatypes.Keuzelijst import Keuzelijst
+from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
+from OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 
 # Generated with OTLEnumerationCreator. To modify: extend, do not edit
-class KlBinnenverlichtingstoestelSchakelwijze(Keuzelijst):
+class KlBinnenverlichtingstoestelSchakelwijze(KeuzelijstField):
     """Lijst met schakelwijzen voor een binnenverlichtingstoestel."""
+    naam = 'KlBinnenverlichtingstoestelSchakelwijze'
+    label = 'Binnenverlichtingstoestel schakelwijze'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlBinnenverlichtingstoestelSchakelwijze'
+    definition = 'Lijst met schakelwijzen voor een binnenverlichtingstoestel.'
+    codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlBinnenverlichtingstoestelSchakelwijze'
+    options = {
+        'continu': KeuzelijstWaarde(invulwaarde='continu',
+                                    label='continu',
+                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBinnenverlichtingstoestelSchakelwijze/continu'),
+        'schakelaar': KeuzelijstWaarde(invulwaarde='schakelaar',
+                                       label='schakelaar',
+                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBinnenverlichtingstoestelSchakelwijze/schakelaar'),
+        'timer': KeuzelijstWaarde(invulwaarde='timer',
+                                  label='timer',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBinnenverlichtingstoestelSchakelwijze/timer')
+    }
 
-    def __init__(self):
-        super().__init__(naam="KlBinnenverlichtingstoestelSchakelwijze",
-                         label="Binnenverlichtingstoestel schakelwijze",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlBinnenverlichtingstoestelSchakelwijze",
-                         definition="Lijst met schakelwijzen voor een binnenverlichtingstoestel.",
-                         usagenote="",
-                         deprecated_version="",
-                         codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlBinnenverlichtingstoestelSchakelwijze")
-
-        self.add_option("continu", "continu", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBinnenverlichtingstoestelSchakelwijze/continu")
-        self.add_option("schakelaar", "schakelaar", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBinnenverlichtingstoestelSchakelwijze/schakelaar")
-        self.add_option("timer", "timer", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBinnenverlichtingstoestelSchakelwijze/timer")

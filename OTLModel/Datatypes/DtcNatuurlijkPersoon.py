@@ -1,5 +1,6 @@
 # coding=utf-8
-from OTLModel.Datatypes.KardinaliteitField import KardinaliteitField
+from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
+from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Datatypes.BooleanField import BooleanField
 from OTLModel.Datatypes.ComplexField import ComplexField
 from OTLModel.Datatypes.DtcAdres import DtcAdres
@@ -7,98 +8,142 @@ from OTLModel.Datatypes.StringField import StringField
 
 
 # Generated with OTLComplexDatatypeCreator. To modify: extend, do not edit
-class DtcNatuurlijkPersoon(ComplexField):
-    """Complex datatype dat een natuurlijk persoon beschrijft."""
-
+class DtcNatuurlijkPersoonWaarden(AttributeInfo):
     def __init__(self):
-        super().__init__(naam="DtcNatuurlijkPersoon",
-                         label="Natuurlijk persoon",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcNatuurlijkPersoon",
-                         definition="Complex datatype dat een natuurlijk persoon beschrijft.",
-                         usagenote="",
-                         deprecated_version="")
+        self._achternaam = OTLAttribuut(field=StringField,
+                                        naam='achternaam',
+                                        label='achternaam',
+                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcNatuurlijkPersoon.achternaam',
+                                        definition='De achternaam.')
 
-        self.waarde.achternaam = StringField(naam="achternaam",
-                                             label="achternaam",
-                                             objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcNatuurlijkPersoon.achternaam",
-                                             definition="De achternaam.",
-                                             constraints="",
-                                             usagenote="",
-                                             deprecated_version="")
-        self.achternaam = self.waarde.achternaam
+        self._adres = OTLAttribuut(field=DtcAdres,
+                                   naam='adres',
+                                   label='adres',
+                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcNatuurlijkPersoon.adres',
+                                   kardinaliteit_max='*',
+                                   definition='Het adres.')
+
+        self._emailadres = OTLAttribuut(field=StringField,
+                                        naam='emailadres',
+                                        label='emailadres',
+                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcNatuurlijkPersoon.emailadres',
+                                        kardinaliteit_max='*',
+                                        definition='Het emailadres.')
+
+        self._fax = OTLAttribuut(field=StringField,
+                                 naam='fax',
+                                 label='fax',
+                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcNatuurlijkPersoon.fax',
+                                 kardinaliteit_max='*',
+                                 definition='De faxnummer.')
+
+        self._heeftEmailVoorkeur = OTLAttribuut(field=BooleanField,
+                                                naam='heeftEmailVoorkeur',
+                                                label='heeft email voorkeur',
+                                                objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcNatuurlijkPersoon.heeftEmailVoorkeur',
+                                                definition='Aanduiding of een persoon de voorkeur heeft om via email gecontacteerd te worden.')
+
+        self._heeftFaxVoorkeur = OTLAttribuut(field=BooleanField,
+                                              naam='heeftFaxVoorkeur',
+                                              label='heeft fax voorkeur',
+                                              objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcNatuurlijkPersoon.heeftFaxVoorkeur',
+                                              definition='Aanduiding of een persoon een voorkeur heeft om via fax gegevens te ontvangen.')
+
+        self._telefoonnnummer = OTLAttribuut(field=StringField,
+                                             naam='telefoonnnummer',
+                                             label='telefoonnnummer',
+                                             objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcNatuurlijkPersoon.telefoonnnummer',
+                                             kardinaliteit_max='*',
+                                             definition='Het telefoonnummer.')
+
+        self._voornaam = OTLAttribuut(field=StringField,
+                                      naam='voornaam',
+                                      label='voornaam',
+                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcNatuurlijkPersoon.voornaam',
+                                      definition='De voornaam.')
+
+    @property
+    def achternaam(self):
         """De achternaam."""
+        return self._achternaam.waarde
 
-        adresField = DtcAdres()
-        adresField.naam = "adres"
-        adresField.label = "adres"
-        adresField.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcNatuurlijkPersoon.adres"
-        adresField.definition = "Het adres."
-        adresField.constraints = ""
-        adresField.usagenote = ""
-        adresField.deprecated_version = ""
-        self.waarde.adres = KardinaliteitField(minKardinaliteit="1", maxKardinaliteit="*", fieldToMultiply=adresField)
-        self.adres = self.waarde.adres
+    @achternaam.setter
+    def achternaam(self, value):
+        self._achternaam.set_waarde(value)
+
+    @property
+    def adres(self):
         """Het adres."""
+        return self._adres.waarde
 
-        emailadresField = StringField(naam="emailadres",
-                                      label="emailadres",
-                                      objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcNatuurlijkPersoon.emailadres",
-                                      definition="Het emailadres.",
-                                      constraints="",
-                                      usagenote="",
-                                      deprecated_version="")
-        self.waarde.emailadres = KardinaliteitField(minKardinaliteit="1", maxKardinaliteit="*", fieldToMultiply=emailadresField)
-        self.emailadres = self.waarde.emailadres
+    @adres.setter
+    def adres(self, value):
+        self._adres.set_waarde(value)
+
+    @property
+    def emailadres(self):
         """Het emailadres."""
+        return self._emailadres.waarde
 
-        faxField = StringField(naam="fax",
-                               label="fax",
-                               objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcNatuurlijkPersoon.fax",
-                               definition="De faxnummer.",
-                               constraints="",
-                               usagenote="",
-                               deprecated_version="")
-        self.waarde.fax = KardinaliteitField(minKardinaliteit="1", maxKardinaliteit="*", fieldToMultiply=faxField)
-        self.fax = self.waarde.fax
+    @emailadres.setter
+    def emailadres(self, value):
+        self._emailadres.set_waarde(value)
+
+    @property
+    def fax(self):
         """De faxnummer."""
+        return self._fax.waarde
 
-        self.waarde.heeftEmailVoorkeur = BooleanField(naam="heeftEmailVoorkeur",
-                                                      label="heeft email voorkeur",
-                                                      objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcNatuurlijkPersoon.heeftEmailVoorkeur",
-                                                      definition="Aanduiding of een persoon de voorkeur heeft om via email gecontacteerd te worden.",
-                                                      constraints="",
-                                                      usagenote="",
-                                                      deprecated_version="")
-        self.heeftEmailVoorkeur = self.waarde.heeftEmailVoorkeur
+    @fax.setter
+    def fax(self, value):
+        self._fax.set_waarde(value)
+
+    @property
+    def heeftEmailVoorkeur(self):
         """Aanduiding of een persoon de voorkeur heeft om via email gecontacteerd te worden."""
+        return self._heeftEmailVoorkeur.waarde
 
-        self.waarde.heeftFaxVoorkeur = BooleanField(naam="heeftFaxVoorkeur",
-                                                    label="heeft fax voorkeur",
-                                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcNatuurlijkPersoon.heeftFaxVoorkeur",
-                                                    definition="Aanduiding of een persoon een voorkeur heeft om via fax gegevens te ontvangen.",
-                                                    constraints="",
-                                                    usagenote="",
-                                                    deprecated_version="")
-        self.heeftFaxVoorkeur = self.waarde.heeftFaxVoorkeur
+    @heeftEmailVoorkeur.setter
+    def heeftEmailVoorkeur(self, value):
+        self._heeftEmailVoorkeur.set_waarde(value)
+
+    @property
+    def heeftFaxVoorkeur(self):
         """Aanduiding of een persoon een voorkeur heeft om via fax gegevens te ontvangen."""
+        return self._heeftFaxVoorkeur.waarde
 
-        telefoonnnummerField = StringField(naam="telefoonnnummer",
-                                           label="telefoonnnummer",
-                                           objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcNatuurlijkPersoon.telefoonnnummer",
-                                           definition="Het telefoonnummer.",
-                                           constraints="",
-                                           usagenote="",
-                                           deprecated_version="")
-        self.waarde.telefoonnnummer = KardinaliteitField(minKardinaliteit="1", maxKardinaliteit="*", fieldToMultiply=telefoonnnummerField)
-        self.telefoonnnummer = self.waarde.telefoonnnummer
+    @heeftFaxVoorkeur.setter
+    def heeftFaxVoorkeur(self, value):
+        self._heeftFaxVoorkeur.set_waarde(value)
+
+    @property
+    def telefoonnnummer(self):
         """Het telefoonnummer."""
+        return self._telefoonnnummer.waarde
 
-        self.waarde.voornaam = StringField(naam="voornaam",
-                                           label="voornaam",
-                                           objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcNatuurlijkPersoon.voornaam",
-                                           definition="De voornaam.",
-                                           constraints="",
-                                           usagenote="",
-                                           deprecated_version="")
-        self.voornaam = self.waarde.voornaam
+    @telefoonnnummer.setter
+    def telefoonnnummer(self, value):
+        self._telefoonnnummer.set_waarde(value)
+
+    @property
+    def voornaam(self):
         """De voornaam."""
+        return self._voornaam.waarde
+
+    @voornaam.setter
+    def voornaam(self, value):
+        self._voornaam.set_waarde(value)
+
+
+# Generated with OTLComplexDatatypeCreator. To modify: extend, do not edit
+class DtcNatuurlijkPersoon(ComplexField, AttributeInfo):
+    """Complex datatype dat een natuurlijk persoon beschrijft."""
+    naam = 'DtcNatuurlijkPersoon'
+    label = 'Natuurlijk persoon'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcNatuurlijkPersoon'
+    definition = 'Complex datatype dat een natuurlijk persoon beschrijft.'
+    waardeObject = DtcNatuurlijkPersoonWaarden
+
+    def __str__(self):
+        return ComplexField.__str__(self)
+

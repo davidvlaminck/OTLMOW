@@ -1,20 +1,28 @@
 # coding=utf-8
-from OTLModel.Datatypes.Keuzelijst import Keuzelijst
+from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
+from OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 
 # Generated with OTLEnumerationCreator. To modify: extend, do not edit
-class KlVegetatieDrassigheid(Keuzelijst):
+class KlVegetatieDrassigheid(KeuzelijstField):
     """De mate van drassigheid.."""
+    naam = 'KlVegetatieDrassigheid'
+    label = 'Vegetatie drassigheid'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlVegetatieDrassigheid'
+    definition = 'De mate van drassigheid..'
+    codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlVegetatieDrassigheid'
+    options = {
+        'matig-drassig': KeuzelijstWaarde(invulwaarde='matig-drassig',
+                                          label='matig drassig',
+                                          definitie='De ondergrond is matig drassig',
+                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVegetatieDrassigheid/matig-drassig'),
+        'niet-drassig': KeuzelijstWaarde(invulwaarde='niet-drassig',
+                                         label='niet drassig',
+                                         definitie='De ondergrond is niet drassig',
+                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVegetatieDrassigheid/niet-drassig'),
+        'sterk-drassig': KeuzelijstWaarde(invulwaarde='sterk-drassig',
+                                          label='sterk drassig',
+                                          definitie='De ondergrond is sterk drassig',
+                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVegetatieDrassigheid/sterk-drassig')
+    }
 
-    def __init__(self):
-        super().__init__(naam="KlVegetatieDrassigheid",
-                         label="Vegetatie drassigheid",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlVegetatieDrassigheid",
-                         definition="De mate van drassigheid..",
-                         usagenote="",
-                         deprecated_version="",
-                         codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlVegetatieDrassigheid")
-
-        self.add_option("matig-drassig", "matig drassig", "De ondergrond is matig drassig", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVegetatieDrassigheid/matig-drassig")
-        self.add_option("niet-drassig", "niet drassig", "De ondergrond is niet drassig", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVegetatieDrassigheid/niet-drassig")
-        self.add_option("sterk-drassig", "sterk drassig", "De ondergrond is sterk drassig", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVegetatieDrassigheid/sterk-drassig")

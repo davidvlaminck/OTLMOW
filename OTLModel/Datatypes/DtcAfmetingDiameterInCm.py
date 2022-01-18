@@ -1,27 +1,38 @@
 # coding=utf-8
+from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
+from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Datatypes.ComplexField import ComplexField
 from OTLModel.Datatypes.KwantWrdInCentimeter import KwantWrdInCentimeter
 
 
 # Generated with OTLComplexDatatypeCreator. To modify: extend, do not edit
-class DtcAfmetingDiameterInCm(ComplexField):
-    """Complex datatype voor de afmeting van een diameter in centimeter."""
-
+class DtcAfmetingDiameterInCmWaarden(AttributeInfo):
     def __init__(self):
-        super().__init__(naam="DtcAfmetingDiameterInCm",
-                         label="Afmeting diameter in centimeter",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAfmetingDiameterInCm",
-                         definition="Complex datatype voor de afmeting van een diameter in centimeter.",
-                         usagenote="",
-                         deprecated_version="")
+        self._diameter = OTLAttribuut(field=KwantWrdInCentimeter,
+                                      naam='diameter',
+                                      label='diameter',
+                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAfmetingDiameterInCm.diameter',
+                                      definition='De diameter in centimeter.')
 
-        self.waarde.diameter = KwantWrdInCentimeter()
+    @property
+    def diameter(self):
         """De diameter in centimeter."""
-        self.waarde.diameter.naam = "diameter"
-        self.waarde.diameter.label = "diameter"
-        self.waarde.diameter.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAfmetingDiameterInCm.diameter"
-        self.waarde.diameter.definition = "De diameter in centimeter."
-        self.waarde.diameter.constraints = ""
-        self.waarde.diameter.usagenote = ""
-        self.waarde.diameter.deprecated_version = ""
-        self.diameter = self.waarde.diameter
+        return self._diameter.waarde
+
+    @diameter.setter
+    def diameter(self, value):
+        self._diameter.set_waarde(value)
+
+
+# Generated with OTLComplexDatatypeCreator. To modify: extend, do not edit
+class DtcAfmetingDiameterInCm(ComplexField, AttributeInfo):
+    """Complex datatype voor de afmeting van een diameter in centimeter."""
+    naam = 'DtcAfmetingDiameterInCm'
+    label = 'Afmeting diameter in centimeter'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAfmetingDiameterInCm'
+    definition = 'Complex datatype voor de afmeting van een diameter in centimeter.'
+    waardeObject = DtcAfmetingDiameterInCmWaarden
+
+    def __str__(self):
+        return ComplexField.__str__(self)
+

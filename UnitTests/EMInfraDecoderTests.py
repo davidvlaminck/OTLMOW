@@ -10,7 +10,7 @@ class EMInfraDecoderTests(TestCase):
     def test_decodeFirstEntry(self):
         responseString = ResponseTestDouble().response
         decoder = EMInfraDecoder()
-        list = decoder.decode(responseString)
+        list = decoder.decodeGraph(responseString)
         first = list[0]
         self.assertTrue(isinstance(first, Omvormer))
         self.assertEqual("https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Omvormer", first.typeURI)
@@ -26,7 +26,7 @@ class EMInfraDecoderTests(TestCase):
     def test_decodeAndEncode(self):
         responseString = ResponseTestDouble().response
         decoder = EMInfraDecoder()
-        lijst = decoder.decode(responseString)
+        lijst = decoder.decodeGraph(responseString)
         encoder = OtlAssetJSONEncoder()
         actualJsonString = encoder.encode(lijst)
 

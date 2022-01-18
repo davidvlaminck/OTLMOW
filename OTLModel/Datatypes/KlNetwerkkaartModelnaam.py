@@ -1,74 +1,187 @@
 # coding=utf-8
-from OTLModel.Datatypes.Keuzelijst import Keuzelijst
+from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
+from OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 
 # Generated with OTLEnumerationCreator. To modify: extend, do not edit
-class KlNetwerkkaartModelnaam(Keuzelijst):
+class KlNetwerkkaartModelnaam(KeuzelijstField):
     """Modelnamen voor Netwerkkaarten."""
+    naam = 'KlNetwerkkaartModelnaam'
+    label = 'Netwerkkaart modelnaam'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlNetwerkkaartModelnaam'
+    definition = 'Modelnamen voor Netwerkkaarten.'
+    codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlNetwerkkaartModelnaam'
+    options = {
+        'ASC105': KeuzelijstWaarde(invulwaarde='ASC105',
+                                   label='ASC105',
+                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkkaartModelnaam/ASC105'),
+        'ASC108': KeuzelijstWaarde(invulwaarde='ASC108',
+                                   label='ASC108',
+                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkkaartModelnaam/ASC108'),
+        'ASC109': KeuzelijstWaarde(invulwaarde='ASC109',
+                                   label='ASC109',
+                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkkaartModelnaam/ASC109'),
+        'ASC110': KeuzelijstWaarde(invulwaarde='ASC110',
+                                   label='ASC110',
+                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkkaartModelnaam/ASC110'),
+        'CL-DUAL-FC8': KeuzelijstWaarde(invulwaarde='CL-DUAL-FC8',
+                                        label='CL-DUAL-FC8',
+                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkkaartModelnaam/CL-DUAL-FC8'),
+        'CMC410': KeuzelijstWaarde(invulwaarde='CMC410',
+                                   label='CMC410',
+                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkkaartModelnaam/CMC410'),
+        'CMC418': KeuzelijstWaarde(invulwaarde='CMC418',
+                                   label='CMC418',
+                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkkaartModelnaam/CMC418'),
+        'CN-100-C4L': KeuzelijstWaarde(invulwaarde='CN-100-C4L',
+                                       label='CN-100-C4L',
+                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkkaartModelnaam/CN-100-C4L'),
+        'CN-100-C80': KeuzelijstWaarde(invulwaarde='CN-100-C80',
+                                       label='CN-100-C80',
+                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkkaartModelnaam/CN-100-C80'),
+        'CN-200-B80': KeuzelijstWaarde(invulwaarde='CN-200-B80',
+                                       label='CN-200-B80',
+                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkkaartModelnaam/CN-200-B80'),
+        'CN-200-R80': KeuzelijstWaarde(invulwaarde='CN-200-R80',
+                                       label='CN-200-R80',
+                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkkaartModelnaam/CN-200-R80'),
+        'CN-200-RBS': KeuzelijstWaarde(invulwaarde='CN-200-RBS',
+                                       label='CN-200-RBS',
+                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkkaartModelnaam/CN-200-RBS'),
+        'CN-C4L-00': KeuzelijstWaarde(invulwaarde='CN-C4L-00',
+                                      label='CN-C4L-00',
+                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkkaartModelnaam/CN-C4L-00'),
+        'CN-C80-13': KeuzelijstWaarde(invulwaarde='CN-C80-13',
+                                      label='CN-C80-13',
+                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkkaartModelnaam/CN-C80-13'),
+        'CN-OPS-2': KeuzelijstWaarde(invulwaarde='CN-OPS-2',
+                                     label='CN-OPS-2',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkkaartModelnaam/CN-OPS-2'),
+        'F10-A90-33': KeuzelijstWaarde(invulwaarde='F10-A90-33',
+                                       label='F10-A90-33',
+                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkkaartModelnaam/F10-A90-33'),
+        'F10-A90-34': KeuzelijstWaarde(invulwaarde='F10-A90-34',
+                                       label='F10-A90-34',
+                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkkaartModelnaam/F10-A90-34'),
+        'F10-A90-35': KeuzelijstWaarde(invulwaarde='F10-A90-35',
+                                       label='F10-A90-35',
+                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkkaartModelnaam/F10-A90-35'),
+        'F10-T90-T31': KeuzelijstWaarde(invulwaarde='F10-T90-T31',
+                                        label='F10-T90-T31',
+                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkkaartModelnaam/F10-T90-T31'),
+        'F10E-A90-TN': KeuzelijstWaarde(invulwaarde='F10E-A90-TN',
+                                        label='F10E-A90-TN',
+                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkkaartModelnaam/F10E-A90-TN'),
+        'F10E-T90-TN': KeuzelijstWaarde(invulwaarde='F10E-T90-TN',
+                                        label='F10E-T90-TN',
+                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkkaartModelnaam/F10E-T90-TN'),
+        'FC4-T90-TN': KeuzelijstWaarde(invulwaarde='FC4-T90-TN',
+                                       label='FC4-T90-TN',
+                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkkaartModelnaam/FC4-T90-TN'),
+        'LKA146': KeuzelijstWaarde(invulwaarde='LKA146',
+                                   label='LKA146',
+                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkkaartModelnaam/LKA146'),
+        'LKA39': KeuzelijstWaarde(invulwaarde='LKA39',
+                                  label='LKA39',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkkaartModelnaam/LKA39'),
+        'LKA412': KeuzelijstWaarde(invulwaarde='LKA412',
+                                   label='LKA412',
+                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkkaartModelnaam/LKA412'),
+        'LKA48': KeuzelijstWaarde(invulwaarde='LKA48',
+                                  label='LKA48',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkkaartModelnaam/LKA48'),
+        'LKA53': KeuzelijstWaarde(invulwaarde='LKA53',
+                                  label='LKA53',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkkaartModelnaam/LKA53'),
+        'LKA58': KeuzelijstWaarde(invulwaarde='LKA58',
+                                  label='LKA58',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkkaartModelnaam/LKA58'),
+        'LKA62': KeuzelijstWaarde(invulwaarde='LKA62',
+                                  label='LKA62',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkkaartModelnaam/LKA62'),
+        'M6': KeuzelijstWaarde(invulwaarde='M6',
+                               label='M6',
+                               objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkkaartModelnaam/M6'),
+        'NTK505DA': KeuzelijstWaarde(invulwaarde='NTK505DA',
+                                     label='NTK505DA',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkkaartModelnaam/NTK505DA'),
+        'NTK505FB': KeuzelijstWaarde(invulwaarde='NTK505FB',
+                                     label='NTK505FB',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkkaartModelnaam/NTK505FB'),
+        'NTK505QA': KeuzelijstWaarde(invulwaarde='NTK505QA',
+                                     label='NTK505QA',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkkaartModelnaam/NTK505QA'),
+        'NTK505RA': KeuzelijstWaarde(invulwaarde='NTK505RA',
+                                     label='NTK505RA',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkkaartModelnaam/NTK505RA'),
+        'NTK505SB': KeuzelijstWaarde(invulwaarde='NTK505SB',
+                                     label='NTK505SB',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkkaartModelnaam/NTK505SB'),
+        'NTK505YA': KeuzelijstWaarde(invulwaarde='NTK505YA',
+                                     label='NTK505YA',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkkaartModelnaam/NTK505YA'),
+        'NTK507LD': KeuzelijstWaarde(invulwaarde='NTK507LD',
+                                     label='NTK507LD',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkkaartModelnaam/NTK507LD'),
+        'NTK507MD': KeuzelijstWaarde(invulwaarde='NTK507MD',
+                                     label='NTK507MD',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkkaartModelnaam/NTK507MD'),
+        'NTK507NA': KeuzelijstWaarde(invulwaarde='NTK507NA',
+                                     label='NTK507NA',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkkaartModelnaam/NTK507NA'),
+        'NTK507PB': KeuzelijstWaarde(invulwaarde='NTK507PB',
+                                     label='NTK507PB',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkkaartModelnaam/NTK507PB'),
+        'NTK529AC': KeuzelijstWaarde(invulwaarde='NTK529AC',
+                                     label='NTK529AC',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkkaartModelnaam/NTK529AC'),
+        'NTK529BA': KeuzelijstWaarde(invulwaarde='NTK529BA',
+                                     label='NTK529BA',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkkaartModelnaam/NTK529BA'),
+        'NTK530PM': KeuzelijstWaarde(invulwaarde='NTK530PM',
+                                     label='NTK530PM',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkkaartModelnaam/NTK530PM'),
+        'NTK530QA': KeuzelijstWaarde(invulwaarde='NTK530QA',
+                                     label='NTK530QA',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkkaartModelnaam/NTK530QA'),
+        'NTK532DA': KeuzelijstWaarde(invulwaarde='NTK532DA',
+                                     label='NTK532DA',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkkaartModelnaam/NTK532DA'),
+        'NTK536BE': KeuzelijstWaarde(invulwaarde='NTK536BE',
+                                     label='NTK536BE',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkkaartModelnaam/NTK536BE'),
+        'NTK536FB': KeuzelijstWaarde(invulwaarde='NTK536FB',
+                                     label='NTK536FB',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkkaartModelnaam/NTK536FB'),
+        'NTK538BM': KeuzelijstWaarde(invulwaarde='NTK538BM',
+                                     label='NTK538BM',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkkaartModelnaam/NTK538BM'),
+        'NTK539UD': KeuzelijstWaarde(invulwaarde='NTK539UD',
+                                     label='NTK539UD',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkkaartModelnaam/NTK539UD'),
+        'NTK552AB': KeuzelijstWaarde(invulwaarde='NTK552AB',
+                                     label='NTK552AB',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkkaartModelnaam/NTK552AB'),
+        'NTK555CA': KeuzelijstWaarde(invulwaarde='NTK555CA',
+                                     label='NTK555CA',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkkaartModelnaam/NTK555CA'),
+        'NTK555NA': KeuzelijstWaarde(invulwaarde='NTK555NA',
+                                     label='NTK555NA',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkkaartModelnaam/NTK555NA'),
+        'NTK555NB': KeuzelijstWaarde(invulwaarde='NTK555NB',
+                                     label='NTK555NB',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkkaartModelnaam/NTK555NB'),
+        'NULL': KeuzelijstWaarde(invulwaarde='NULL',
+                                 label='NULL',
+                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkkaartModelnaam/NULL'),
+        'Other': KeuzelijstWaarde(invulwaarde='Other',
+                                  label='Other',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkkaartModelnaam/Other'),
+        'PSM-12V': KeuzelijstWaarde(invulwaarde='PSM-12V',
+                                    label='PSM-12V',
+                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkkaartModelnaam/PSM-12V'),
+        'RS-10G-4P': KeuzelijstWaarde(invulwaarde='RS-10G-4P',
+                                      label='RS-10G-4P',
+                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkkaartModelnaam/RS-10G-4P')
+    }
 
-    def __init__(self):
-        super().__init__(naam="KlNetwerkkaartModelnaam",
-                         label="Netwerkkaart modelnaam",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlNetwerkkaartModelnaam",
-                         definition="Modelnamen voor Netwerkkaarten.",
-                         usagenote="",
-                         deprecated_version="",
-                         codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlNetwerkkaartModelnaam")
-
-        self.add_option("ASC105", "ASC105", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkkaartModelnaam/ASC105")
-        self.add_option("ASC108", "ASC108", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkkaartModelnaam/ASC108")
-        self.add_option("ASC109", "ASC109", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkkaartModelnaam/ASC109")
-        self.add_option("ASC110", "ASC110", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkkaartModelnaam/ASC110")
-        self.add_option("CL-DUAL-FC8", "CL-DUAL-FC8", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkkaartModelnaam/CL-DUAL-FC8")
-        self.add_option("CMC410", "CMC410", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkkaartModelnaam/CMC410")
-        self.add_option("CMC418", "CMC418", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkkaartModelnaam/CMC418")
-        self.add_option("CN-100-C4L", "CN-100-C4L", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkkaartModelnaam/CN-100-C4L")
-        self.add_option("CN-100-C80", "CN-100-C80", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkkaartModelnaam/CN-100-C80")
-        self.add_option("CN-200-B80", "CN-200-B80", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkkaartModelnaam/CN-200-B80")
-        self.add_option("CN-200-R80", "CN-200-R80", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkkaartModelnaam/CN-200-R80")
-        self.add_option("CN-200-RBS", "CN-200-RBS", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkkaartModelnaam/CN-200-RBS")
-        self.add_option("CN-C4L-00", "CN-C4L-00", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkkaartModelnaam/CN-C4L-00")
-        self.add_option("CN-C80-13", "CN-C80-13", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkkaartModelnaam/CN-C80-13")
-        self.add_option("CN-OPS-2", "CN-OPS-2", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkkaartModelnaam/CN-OPS-2")
-        self.add_option("F10-A90-33", "F10-A90-33", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkkaartModelnaam/F10-A90-33")
-        self.add_option("F10-A90-34", "F10-A90-34", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkkaartModelnaam/F10-A90-34")
-        self.add_option("F10-A90-35", "F10-A90-35", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkkaartModelnaam/F10-A90-35")
-        self.add_option("F10-T90-T31", "F10-T90-T31", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkkaartModelnaam/F10-T90-T31")
-        self.add_option("F10E-A90-TN", "F10E-A90-TN", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkkaartModelnaam/F10E-A90-TN")
-        self.add_option("F10E-T90-TN", "F10E-T90-TN", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkkaartModelnaam/F10E-T90-TN")
-        self.add_option("FC4-T90-TN", "FC4-T90-TN", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkkaartModelnaam/FC4-T90-TN")
-        self.add_option("LKA146", "LKA146", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkkaartModelnaam/LKA146")
-        self.add_option("LKA39", "LKA39", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkkaartModelnaam/LKA39")
-        self.add_option("LKA412", "LKA412", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkkaartModelnaam/LKA412")
-        self.add_option("LKA48", "LKA48", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkkaartModelnaam/LKA48")
-        self.add_option("LKA53", "LKA53", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkkaartModelnaam/LKA53")
-        self.add_option("LKA58", "LKA58", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkkaartModelnaam/LKA58")
-        self.add_option("LKA62", "LKA62", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkkaartModelnaam/LKA62")
-        self.add_option("M6", "M6", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkkaartModelnaam/M6")
-        self.add_option("NTK505DA", "NTK505DA", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkkaartModelnaam/NTK505DA")
-        self.add_option("NTK505FB", "NTK505FB", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkkaartModelnaam/NTK505FB")
-        self.add_option("NTK505QA", "NTK505QA", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkkaartModelnaam/NTK505QA")
-        self.add_option("NTK505RA", "NTK505RA", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkkaartModelnaam/NTK505RA")
-        self.add_option("NTK505SB", "NTK505SB", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkkaartModelnaam/NTK505SB")
-        self.add_option("NTK505YA", "NTK505YA", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkkaartModelnaam/NTK505YA")
-        self.add_option("NTK507LD", "NTK507LD", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkkaartModelnaam/NTK507LD")
-        self.add_option("NTK507MD", "NTK507MD", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkkaartModelnaam/NTK507MD")
-        self.add_option("NTK507NA", "NTK507NA", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkkaartModelnaam/NTK507NA")
-        self.add_option("NTK507PB", "NTK507PB", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkkaartModelnaam/NTK507PB")
-        self.add_option("NTK529AC", "NTK529AC", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkkaartModelnaam/NTK529AC")
-        self.add_option("NTK529BA", "NTK529BA", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkkaartModelnaam/NTK529BA")
-        self.add_option("NTK530PM", "NTK530PM", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkkaartModelnaam/NTK530PM")
-        self.add_option("NTK530QA", "NTK530QA", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkkaartModelnaam/NTK530QA")
-        self.add_option("NTK532DA", "NTK532DA", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkkaartModelnaam/NTK532DA")
-        self.add_option("NTK536BE", "NTK536BE", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkkaartModelnaam/NTK536BE")
-        self.add_option("NTK536FB", "NTK536FB", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkkaartModelnaam/NTK536FB")
-        self.add_option("NTK538BM", "NTK538BM", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkkaartModelnaam/NTK538BM")
-        self.add_option("NTK539UD", "NTK539UD", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkkaartModelnaam/NTK539UD")
-        self.add_option("NTK552AB", "NTK552AB", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkkaartModelnaam/NTK552AB")
-        self.add_option("NTK555CA", "NTK555CA", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkkaartModelnaam/NTK555CA")
-        self.add_option("NTK555NA", "NTK555NA", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkkaartModelnaam/NTK555NA")
-        self.add_option("NTK555NB", "NTK555NB", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkkaartModelnaam/NTK555NB")
-        self.add_option("NULL", "NULL", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkkaartModelnaam/NULL")
-        self.add_option("Other", "Other", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkkaartModelnaam/Other")
-        self.add_option("PSM-12V", "PSM-12V", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkkaartModelnaam/PSM-12V")
-        self.add_option("RS-10G-4P", "RS-10G-4P", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkkaartModelnaam/RS-10G-4P")

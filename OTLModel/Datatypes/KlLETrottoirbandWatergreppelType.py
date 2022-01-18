@@ -1,22 +1,36 @@
 # coding=utf-8
-from OTLModel.Datatypes.Keuzelijst import Keuzelijst
+from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
+from OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 
 # Generated with OTLEnumerationCreator. To modify: extend, do not edit
-class KlLETrottoirbandWatergreppelType(Keuzelijst):
+class KlLETrottoirbandWatergreppelType(KeuzelijstField):
     """De vormen van een trottoirband_watergreppel."""
+    naam = 'KlLETrottoirbandWatergreppelType'
+    label = 'Trottoirband watergreppel type'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlLETrottoirbandWatergreppelType'
+    definition = 'De vormen van een trottoirband_watergreppel.'
+    codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlLETrottoirbandWatergreppelType'
+    options = {
+        'type-III-A': KeuzelijstWaarde(invulwaarde='type-III-A',
+                                       label='type III A',
+                                       definitie='type III A',
+                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLETrottoirbandWatergreppelType/type-III-A'),
+        'type-III-B': KeuzelijstWaarde(invulwaarde='type-III-B',
+                                       label='type III B',
+                                       definitie='type III B',
+                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLETrottoirbandWatergreppelType/type-III-B'),
+        'type-III-C': KeuzelijstWaarde(invulwaarde='type-III-C',
+                                       label='type III C',
+                                       definitie='type III C',
+                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLETrottoirbandWatergreppelType/type-III-C'),
+        'type-III-D': KeuzelijstWaarde(invulwaarde='type-III-D',
+                                       label='type III D',
+                                       definitie='type III D',
+                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLETrottoirbandWatergreppelType/type-III-D'),
+        'type-III-E': KeuzelijstWaarde(invulwaarde='type-III-E',
+                                       label='type III E',
+                                       definitie='type III E',
+                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLETrottoirbandWatergreppelType/type-III-E')
+    }
 
-    def __init__(self):
-        super().__init__(naam="KlLETrottoirbandWatergreppelType",
-                         label="Trottoirband watergreppel type",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlLETrottoirbandWatergreppelType",
-                         definition="De vormen van een trottoirband_watergreppel.",
-                         usagenote="",
-                         deprecated_version="",
-                         codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlLETrottoirbandWatergreppelType")
-
-        self.add_option("type-III-A", "type III A", "type III A", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLETrottoirbandWatergreppelType/type-III-A")
-        self.add_option("type-III-B", "type III B", "type III B", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLETrottoirbandWatergreppelType/type-III-B")
-        self.add_option("type-III-C", "type III C", "type III C", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLETrottoirbandWatergreppelType/type-III-C")
-        self.add_option("type-III-D", "type III D", "type III D", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLETrottoirbandWatergreppelType/type-III-D")
-        self.add_option("type-III-E", "type III E", "type III E", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLETrottoirbandWatergreppelType/type-III-E")

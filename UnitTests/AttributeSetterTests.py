@@ -25,7 +25,7 @@ class AttributeSetterTests(TestCase):
                 attribute_setter.set_attribute(value)
 
         self.assertTrue(isinstance(attribute_setter, PrimitiveFieldSetter))
-        self.assertEqual("test notitie", instance.notitie.waarde)
+        self.assertEqual("test notitie", instance.notitie)
 
     def test_decode_BooleanField(self):
         instance = Brandleiding()
@@ -38,7 +38,7 @@ class AttributeSetterTests(TestCase):
                 attribute_setter.set_attribute(value)
 
         self.assertTrue(isinstance(attribute_setter, PrimitiveFieldSetter))
-        self.assertEqual(True, instance.isGeisoleerd.waarde)
+        self.assertEqual(True, instance.isGeisoleerd)
 
     def test_decode_KwantWrdField(self):
         instance = Brandleiding()
@@ -64,7 +64,7 @@ class AttributeSetterTests(TestCase):
                 attribute_setter.set_attribute(value)
 
         self.assertTrue(isinstance(attribute_setter, DateFieldSetter))
-        self.assertEqual(datetime(2020, 4, 22, 0, 0, 0), instance.datumOprichtingObject.waarde)
+        self.assertEqual(datetime(2020, 4, 22, 0, 0, 0), instance.datumOprichtingObject)
 
     def test_decode_KeuzelijstField(self):
         instance = Afscherming()
@@ -150,7 +150,7 @@ class AttributeSetterTests(TestCase):
                 attribute_setter.set_attribute(value)
 
         self.assertTrue(isinstance(attribute_setter, ComplexFieldSetter))
-        self.assertEqual("teststraat", instance.energieleverancier.adres.straatnaam.waarde)
+        self.assertEqual("teststraat", instance.energieleverancier.adres.straatnaam)
 
     def test_decode_NonNegIntFieldInKwantWrd(self):
         instance = Wegkantkast()

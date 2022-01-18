@@ -1,61 +1,93 @@
 # coding=utf-8
+from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
+from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.VegetatieElement import VegetatieElement
 from OTLModel.Datatypes.BooleanField import BooleanField
 from OTLModel.Datatypes.KwantWrdInVierkanteMeter import KwantWrdInVierkanteMeter
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Klimvorm(VegetatieElement):
+class Klimvorm(VegetatieElement, AttributeInfo):
     """Plant met buigzame stengels die zich aan muren,bomen,enz. hecht en zodoende omhoog klimt."""
 
-    typeURI = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Klimvorm"
+    typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Klimvorm'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        super().__init__()
+        AttributeInfo.__init__(self)
+        VegetatieElement.__init__(self)
 
-        self.begroeidOppervlak = KwantWrdInVierkanteMeter()
+        self._begroeidOppervlak = OTLAttribuut(field=KwantWrdInVierkanteMeter,
+                                               naam='begroeidOppervlak',
+                                               label='begroeid oppervlak',
+                                               objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Klimvorm.begroeidOppervlak',
+                                               definition='Verticale oppervlakte dat begroeid is in vierkante meter.')
+
+        self._heeftBeheerScheren = OTLAttribuut(field=BooleanField,
+                                                naam='heeftBeheerScheren',
+                                                label='heeft beheer scheren',
+                                                objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Klimvorm.heeftBeheerScheren',
+                                                definition='Duidt aan of de klimvorm al dan niet geschoren wordt.')
+
+        self._heeftBevestigingconstructie = OTLAttribuut(field=BooleanField,
+                                                         naam='heeftBevestigingconstructie',
+                                                         label='Heeft bevestigingsconstructie',
+                                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Klimvorm.heeftBevestigingconstructie',
+                                                         definition='Aanduiding of de klimvorm een bevestigingsconstructie heeft om aan bv een geluidswerende constructie vastgemaakt te worden.')
+
+        self._isGrondgebonden = OTLAttribuut(field=BooleanField,
+                                             naam='isGrondgebonden',
+                                             label='is grondgebonden',
+                                             objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Klimvorm.isGrondgebonden',
+                                             definition='Duidt aan of de klimvorm al dan niet in volle grond staat.')
+
+        self._isZelfhechtend = OTLAttribuut(field=BooleanField,
+                                            naam='isZelfhechtend',
+                                            label='is zelfhechtend',
+                                            objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Klimvorm.isZelfhechtend',
+                                            definition='Geeft aan of de klimplant (zoals klimop of wingerd) rechtstreeks op de muur kan groeien zonder nood aan een draagstructuur.')
+
+    @property
+    def begroeidOppervlak(self):
         """Verticale oppervlakte dat begroeid is in vierkante meter."""
-        self.begroeidOppervlak.naam = "begroeidOppervlak"
-        self.begroeidOppervlak.label = "begroeid oppervlak"
-        self.begroeidOppervlak.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Klimvorm.begroeidOppervlak"
-        self.begroeidOppervlak.definition = "Verticale oppervlakte dat begroeid is in vierkante meter."
-        self.begroeidOppervlak.constraints = ""
-        self.begroeidOppervlak.usagenote = ""
-        self.begroeidOppervlak.deprecated_version = ""
+        return self._begroeidOppervlak.waarde
 
-        self.heeftBeheerScheren = BooleanField(naam="heeftBeheerScheren",
-                                               label="heeft beheer scheren",
-                                               objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Klimvorm.heeftBeheerScheren",
-                                               definition="Duidt aan of de klimvorm al dan niet geschoren wordt.",
-                                               constraints="",
-                                               usagenote="",
-                                               deprecated_version="")
+    @begroeidOppervlak.setter
+    def begroeidOppervlak(self, value):
+        self._begroeidOppervlak.set_waarde(value, owner=self)
+
+    @property
+    def heeftBeheerScheren(self):
         """Duidt aan of de klimvorm al dan niet geschoren wordt."""
+        return self._heeftBeheerScheren.waarde
 
-        self.heeftBevestigingconstructie = BooleanField(naam="heeftBevestigingconstructie",
-                                                        label="Heeft bevestigingsconstructie",
-                                                        objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Klimvorm.heeftBevestigingconstructie",
-                                                        definition="Aanduiding of de klimvorm een bevestigingsconstructie heeft om aan bv een geluidswerende constructie vastgemaakt te worden.",
-                                                        constraints="",
-                                                        usagenote="",
-                                                        deprecated_version="")
+    @heeftBeheerScheren.setter
+    def heeftBeheerScheren(self, value):
+        self._heeftBeheerScheren.set_waarde(value, owner=self)
+
+    @property
+    def heeftBevestigingconstructie(self):
         """Aanduiding of de klimvorm een bevestigingsconstructie heeft om aan bv een geluidswerende constructie vastgemaakt te worden."""
+        return self._heeftBevestigingconstructie.waarde
 
-        self.isGrondgebonden = BooleanField(naam="isGrondgebonden",
-                                            label="is grondgebonden",
-                                            objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Klimvorm.isGrondgebonden",
-                                            definition="Duidt aan of de klimvorm al dan niet in volle grond staat.",
-                                            constraints="",
-                                            usagenote="",
-                                            deprecated_version="")
+    @heeftBevestigingconstructie.setter
+    def heeftBevestigingconstructie(self, value):
+        self._heeftBevestigingconstructie.set_waarde(value, owner=self)
+
+    @property
+    def isGrondgebonden(self):
         """Duidt aan of de klimvorm al dan niet in volle grond staat."""
+        return self._isGrondgebonden.waarde
 
-        self.isZelfhechtend = BooleanField(naam="isZelfhechtend",
-                                           label="is zelfhechtend",
-                                           objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Klimvorm.isZelfhechtend",
-                                           definition="Geeft aan of de klimplant (zoals klimop of wingerd) rechtstreeks op de muur kan groeien zonder nood aan een draagstructuur.",
-                                           constraints="",
-                                           usagenote="",
-                                           deprecated_version="")
+    @isGrondgebonden.setter
+    def isGrondgebonden(self, value):
+        self._isGrondgebonden.set_waarde(value, owner=self)
+
+    @property
+    def isZelfhechtend(self):
         """Geeft aan of de klimplant (zoals klimop of wingerd) rechtstreeks op de muur kan groeien zonder nood aan een draagstructuur."""
+        return self._isZelfhechtend.waarde
+
+    @isZelfhechtend.setter
+    def isZelfhechtend(self, value):
+        self._isZelfhechtend.set_waarde(value, owner=self)

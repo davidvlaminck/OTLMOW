@@ -18,7 +18,7 @@ class DavieDecoder:
             lijst.append(instance)
 
             for key, value in obj.items():
-                if 'typeURI' in key or value == '':
+                if 'typeURI' in key or value == '' or value == []:
                     continue
                 if 'geometrie' in key:
                     key = 'loc:Locatie.geometry'

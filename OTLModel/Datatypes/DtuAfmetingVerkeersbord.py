@@ -1,70 +1,85 @@
 # coding=utf-8
-from OTLModel.Datatypes.UnionTypeField import UnionTypeField
+from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
+from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Datatypes.DtcAfmetingBxhInMm import DtcAfmetingBxhInMm
 from OTLModel.Datatypes.DtcAfmetingDiameterInMm import DtcAfmetingDiameterInMm
 from OTLModel.Datatypes.DtcAfmetingZijdeInMm import DtcAfmetingZijdeInMm
+from OTLModel.Datatypes.UnionTypeField import UnionTypeField
 
 
 # Generated with OTLUnionDatatypeCreator. To modify: extend, do not edit
-class DtuAfmetingVerkeersbord(UnionTypeField):
-    """Union datatype voor de afmeting van het verkeersbord."""
-
+class DtuAfmetingVerkeersbordAttributen(AttributeInfo):
     def __init__(self):
-        super().__init__(naam="DtuAfmetingVerkeersbord",
-                         label="Afmeting verkeersbord",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtuAfmetingVerkeersbord",
-                         definition="Union datatype voor de afmeting van het verkeersbord.",
-                         usagenote="",
-                         deprecated_version="")
+        self._achthoekig = OTLAttribuut(field=DtcAfmetingZijdeInMm,
+                                        naam='achthoekig',
+                                        label='achthoekig',
+                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtuAfmetingVerkeersbord.achthoekig',
+                                        kardinaliteit_min='0',
+                                        definition='De afmeting voor een achthoekig verkeersbord (zijde in millimeter).')
 
-        field_achthoekig = DtcAfmetingZijdeInMm()
+        self._driehoekig = OTLAttribuut(field=DtcAfmetingZijdeInMm,
+                                        naam='driehoekig',
+                                        label='driehoekig',
+                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtuAfmetingVerkeersbord.driehoekig',
+                                        kardinaliteit_min='0',
+                                        definition='De afmeting van een driehoekig verkeersbord (zijde in millimeter).')
+
+        self._rond = OTLAttribuut(field=DtcAfmetingDiameterInMm,
+                                  naam='rond',
+                                  label='rond',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtuAfmetingVerkeersbord.rond',
+                                  kardinaliteit_min='0',
+                                  definition='De afmeting voor een rond verkeersbord (diameter in millimeter).')
+
+        self._vierhoekig = OTLAttribuut(field=DtcAfmetingBxhInMm,
+                                        naam='vierhoekig',
+                                        label='vierhoekig',
+                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtuAfmetingVerkeersbord.vierhoekig',
+                                        kardinaliteit_min='0',
+                                        definition='De afmeting voor een vierhoekig verkeersbord (breedte en hoogte in millimeter).')
+
+        self._zeshoekig = OTLAttribuut(field=DtcAfmetingZijdeInMm,
+                                       naam='zeshoekig',
+                                       label='zeshoekig',
+                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtuAfmetingVerkeersbord.zeshoekig',
+                                       kardinaliteit_min='0',
+                                       definition='De afmeting voor een zeshoekig verkeersbord (zijde in millimeter).')
+
+    @property
+    def achthoekig(self):
         """De afmeting voor een achthoekig verkeersbord (zijde in millimeter)."""
-        field_achthoekig.naam = "achthoekig"
-        field_achthoekig.label = "achthoekig"
-        field_achthoekig.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtuAfmetingVerkeersbord.achthoekig"
-        field_achthoekig.definition = "De afmeting voor een achthoekig verkeersbord (zijde in millimeter)."
-        field_achthoekig.constraints = ""
-        field_achthoekig.usagenote = ""
-        field_achthoekig.deprecated_version = ""
+        return self._achthoekig.waarde
 
-        field_driehoekig = DtcAfmetingZijdeInMm()
+    @property
+    def driehoekig(self):
         """De afmeting van een driehoekig verkeersbord (zijde in millimeter)."""
-        field_driehoekig.naam = "driehoekig"
-        field_driehoekig.label = "driehoekig"
-        field_driehoekig.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtuAfmetingVerkeersbord.driehoekig"
-        field_driehoekig.definition = "De afmeting van een driehoekig verkeersbord (zijde in millimeter)."
-        field_driehoekig.constraints = ""
-        field_driehoekig.usagenote = ""
-        field_driehoekig.deprecated_version = ""
+        return self._driehoekig.waarde
 
-        field_rond = DtcAfmetingDiameterInMm()
+    @property
+    def rond(self):
         """De afmeting voor een rond verkeersbord (diameter in millimeter)."""
-        field_rond.naam = "rond"
-        field_rond.label = "rond"
-        field_rond.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtuAfmetingVerkeersbord.rond"
-        field_rond.definition = "De afmeting voor een rond verkeersbord (diameter in millimeter)."
-        field_rond.constraints = ""
-        field_rond.usagenote = ""
-        field_rond.deprecated_version = ""
+        return self._rond.waarde
 
-        field_vierhoekig = DtcAfmetingBxhInMm()
+    @property
+    def vierhoekig(self):
         """De afmeting voor een vierhoekig verkeersbord (breedte en hoogte in millimeter)."""
-        field_vierhoekig.naam = "vierhoekig"
-        field_vierhoekig.label = "vierhoekig"
-        field_vierhoekig.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtuAfmetingVerkeersbord.vierhoekig"
-        field_vierhoekig.definition = "De afmeting voor een vierhoekig verkeersbord (breedte en hoogte in millimeter)."
-        field_vierhoekig.constraints = ""
-        field_vierhoekig.usagenote = ""
-        field_vierhoekig.deprecated_version = ""
+        return self._vierhoekig.waarde
 
-        field_zeshoekig = DtcAfmetingZijdeInMm()
+    @property
+    def zeshoekig(self):
         """De afmeting voor een zeshoekig verkeersbord (zijde in millimeter)."""
-        field_zeshoekig.naam = "zeshoekig"
-        field_zeshoekig.label = "zeshoekig"
-        field_zeshoekig.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtuAfmetingVerkeersbord.zeshoekig"
-        field_zeshoekig.definition = "De afmeting voor een zeshoekig verkeersbord (zijde in millimeter)."
-        field_zeshoekig.constraints = ""
-        field_zeshoekig.usagenote = ""
-        field_zeshoekig.deprecated_version = ""
+        return self._zeshoekig.waarde
 
-        self.fieldsTuple = (field_achthoekig, field_driehoekig, field_rond, field_vierhoekig, field_zeshoekig)
+
+# Generated with OTLUnionDatatypeCreator. To modify: extend, do not edit
+class DtuAfmetingVerkeersbord(UnionTypeField, AttributeInfo):
+    """Union datatype voor de afmeting van het verkeersbord."""
+    naam = 'DtuAfmetingVerkeersbord'
+    label = 'Afmeting verkeersbord'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtuAfmetingVerkeersbord'
+    definition = 'Union datatype voor de afmeting van het verkeersbord.'
+    waardeObject = DtuAfmetingVerkeersbordAttributen
+
+    def __str__(self):
+        return UnionTypeField.__str__(self)
+

@@ -1,20 +1,25 @@
 # coding=utf-8
-from OTLModel.Datatypes.Keuzelijst import Keuzelijst
+from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
+from OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 
 # Generated with OTLEnumerationCreator. To modify: extend, do not edit
-class KlVriLusSoortvoertuig(Keuzelijst):
+class KlVriLusSoortvoertuig(KeuzelijstField):
     """Keuzelijst met verschillende types voertuigen die een detectielus volgens diens instellingen kan detecteren."""
+    naam = 'KlVriLusSoortvoertuig'
+    label = 'VRI-lus soort voertuig'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlVriLusSoortvoertuig'
+    definition = 'Keuzelijst met verschillende types voertuigen die een detectielus volgens diens instellingen kan detecteren.'
+    codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlVriLusSoortvoertuig'
+    options = {
+        'fiets': KeuzelijstWaarde(invulwaarde='fiets',
+                                  label='fiets',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVriLusSoortvoertuig/fiets'),
+        'motor': KeuzelijstWaarde(invulwaarde='motor',
+                                  label='motor',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVriLusSoortvoertuig/motor'),
+        'voertuig': KeuzelijstWaarde(invulwaarde='voertuig',
+                                     label='voertuig',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVriLusSoortvoertuig/voertuig')
+    }
 
-    def __init__(self):
-        super().__init__(naam="KlVriLusSoortvoertuig",
-                         label="VRI-lus soort voertuig",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlVriLusSoortvoertuig",
-                         definition="Keuzelijst met verschillende types voertuigen die een detectielus volgens diens instellingen kan detecteren.",
-                         usagenote="",
-                         deprecated_version="",
-                         codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlVriLusSoortvoertuig")
-
-        self.add_option("fiets", "fiets", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVriLusSoortvoertuig/fiets")
-        self.add_option("motor", "motor", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVriLusSoortvoertuig/motor")
-        self.add_option("voertuig", "voertuig", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVriLusSoortvoertuig/voertuig")

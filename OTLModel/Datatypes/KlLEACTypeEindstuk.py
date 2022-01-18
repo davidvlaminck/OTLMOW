@@ -1,20 +1,28 @@
 # coding=utf-8
-from OTLModel.Datatypes.Keuzelijst import Keuzelijst
+from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
+from OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 
 # Generated with OTLEnumerationCreator. To modify: extend, do not edit
-class KlLEACTypeEindstuk(Keuzelijst):
+class KlLEACTypeEindstuk(KeuzelijstField):
     """De verschillende types eindstukken."""
+    naam = 'KlLEACTypeEindstuk'
+    label = 'Type eindstuk'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlLEACTypeEindstuk'
+    definition = 'De verschillende types eindstukken.'
+    codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlLEACTypeEindstuk'
+    options = {
+        'naar-beneden-afgebogen': KeuzelijstWaarde(invulwaarde='naar-beneden-afgebogen',
+                                                   label='naar beneden afgebogen',
+                                                   definitie='naar beneden afgebogen',
+                                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLEACTypeEindstuk/naar-beneden-afgebogen'),
+        'schelp': KeuzelijstWaarde(invulwaarde='schelp',
+                                   label='schelp',
+                                   definitie='schelp',
+                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLEACTypeEindstuk/schelp'),
+        'uitgebogen': KeuzelijstWaarde(invulwaarde='uitgebogen',
+                                       label='uitgebogen',
+                                       definitie='uitgebogen',
+                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLEACTypeEindstuk/uitgebogen')
+    }
 
-    def __init__(self):
-        super().__init__(naam="KlLEACTypeEindstuk",
-                         label="Type eindstuk",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlLEACTypeEindstuk",
-                         definition="De verschillende types eindstukken.",
-                         usagenote="",
-                         deprecated_version="",
-                         codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlLEACTypeEindstuk")
-
-        self.add_option("naar-beneden-afgebogen", "naar beneden afgebogen", "naar beneden afgebogen", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLEACTypeEindstuk/naar-beneden-afgebogen")
-        self.add_option("schelp", "schelp", "schelp", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLEACTypeEindstuk/schelp")
-        self.add_option("uitgebogen", "uitgebogen", "uitgebogen", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLEACTypeEindstuk/uitgebogen")

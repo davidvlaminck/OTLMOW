@@ -4,7 +4,6 @@ from datetime import datetime
 
 from OTLModel.Datatypes.ComplexField import ComplexField
 from OTLModel.Datatypes.DateField import DateField
-from OTLModel.Datatypes.KardinaliteitField import KardinaliteitField
 from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 
 
@@ -13,7 +12,7 @@ class AttributeSetterFactory:  # TODO write tests
     def CreateSetter(cls, instance, attr_naam=None):
         if attr_naam is not None:
             try:
-                attribute = getattr(instance, attr_naam)
+                attribute = getattr(instance, '_' + attr_naam)
             except AttributeError as ex:
                 if attr_naam == "bron" or attr_naam == "doel":
                     return None  # TODO decide whether or not to implement bron and doel attributes of relatie
@@ -21,17 +20,9 @@ class AttributeSetterFactory:  # TODO write tests
         else:
             attribute = instance
 
-        if isinstance(attribute, KeuzelijstField):
-            return KeuzelijstFieldSetter(attribute)
-        elif isinstance(attribute, ComplexField):
+        if attribute.field.waardeObject is not None:
             return ComplexFieldSetter(attribute)
-        elif isinstance(attribute, DateField):
-            return DateFieldSetter(attribute)
-        elif isinstance(attribute, KardinaliteitField):
-            return KardinaliteitFieldSetter(attribute)
-        else:
-            return PrimitiveFieldSetter(attribute)
-
+        return PrimitiveFieldSetter(attribute)
 
 class AbstractAttributeSetter(ABC):
     @abstractmethod
@@ -44,7 +35,7 @@ class KeuzelijstFieldSetter(AbstractAttributeSetter):
         self.attribute = attribute
 
     def set_attribute(self, value):  # TODO write test
-        self.attribute.set_value_by_invulwaarde(value.split('/')[-1])
+        self.attribute.waarde = value
 
 
 class PrimitiveFieldSetter(AbstractAttributeSetter):
@@ -55,41 +46,30 @@ class PrimitiveFieldSetter(AbstractAttributeSetter):
         self.attribute.waarde = value
 
 
-class KardinaliteitFieldSetter(AbstractAttributeSetter):
-    def __init__(self, attribute):
-        self.attribute = attribute
-
-    def set_attributeComplex(self, value):  # TODO write test
-        lijstValues = []
-        for valueDict in value:
-            attributeInstance = copy.deepcopy(self.attribute.fieldToMultiply)
-            for k, v in valueDict.items():
-                attr_naam = k.split('.')[-1]
-                attribute_setter = AttributeSetterFactory.CreateSetter(self.attribute, attr_naam)
-                attribute_setter.set_attribute(v)
-            lijstValues.append(attributeInstance)
-        self.attribute.waarde = lijstValues
-
-    def set_attribute(self, valueList):  # TODO write test
-        lijstValues = []
-        for value_iter in valueList:
-            attributeInstance = copy.deepcopy(self.attribute.fieldToMultiply)
-            attribute_setter = AttributeSetterFactory.CreateSetter(attributeInstance)
-            attribute_setter.set_attribute(value_iter)
-            lijstValues.append(attributeInstance)
-        self.attribute.waarde = lijstValues
-
-
 class ComplexFieldSetter(AbstractAttributeSetter):
     def __init__(self, attribute):
         self.attribute = attribute
         if self.attribute.naam == 'externeReferentie':
             pass
 
-    def set_attribute(self, value):  # TODO write test
+    def set_attribute(self, value):
+        if type(value) is list:
+            valueList = []
+            for item in value:
+                waardeObject = self.attribute.field.waardeObject()
+                self.set_complex_attribute(value=item, attribuut=waardeObject)
+                valueList.append(waardeObject)
+            self.attribute.waarde = valueList
+        else:
+            self.set_complex_attribute(value)
+
+    def set_complex_attribute(self, value, attribuut=None):
         for k, v in value.items():
             attr_naam = k.split('.')[-1]
-            attribute_setter = AttributeSetterFactory.CreateSetter(self.attribute, attr_naam)
+            if attribuut is None:
+                attribute_setter = AttributeSetterFactory.CreateSetter(self.attribute.waarde, attr_naam)
+            else:
+                attribute_setter = AttributeSetterFactory.CreateSetter(attribuut, attr_naam)
             attribute_setter.set_attribute(v)
 
 

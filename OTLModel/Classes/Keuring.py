@@ -1,45 +1,62 @@
 # coding=utf-8
-from OTLModel.Classes.Proef import Proef
+from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
+from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Datatypes.DateField import DateField
 from OTLModel.Datatypes.DtcDocument import DtcDocument
 from OTLModel.Datatypes.KwantWrdInJaar import KwantWrdInJaar
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Keuring(Proef):
+class Keuring:(AttributeInfo)
     """Technische keuring uitgevoerd door een officiële keuringsinstantie."""
 
-    typeURI = "https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#Keuring"
+    typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#Keuring'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
         super().__init__()
 
-        self.datum = DateField(naam="datum",
-                               label="keuringsdatum",
-                               objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#Keuring.datum",
-                               definition="De datum waarop de keuring werd uitgevoerd.",
-                               constraints="",
-                               usagenote="",
-                               deprecated_version="")
+        self._datum = OTLAttribuut(field=DateField,
+                                   naam='datum',
+                                   label='keuringsdatum',
+                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#Keuring.datum',
+                                   definition='De datum waarop de keuring werd uitgevoerd.')
+
+        self._geldigheidsDuur = OTLAttribuut(field=KwantWrdInJaar,
+                                             naam='geldigheidsDuur',
+                                             label='geldigheidsduur',
+                                             objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#Keuring.geldigheidsDuur',
+                                             definition='de periode (in jaar) waarbinnen de keuring geldig blijft. ')
+
+        self._verslag = OTLAttribuut(field=DtcDocument,
+                                     naam='verslag',
+                                     label='keuringsverslag',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#Keuring.verslag',
+                                     definition='document met het verslag van de keuring.')
+
+    @property
+    def datum(self):
         """De datum waarop de keuring werd uitgevoerd."""
+        return self._datum.waarde
 
-        self.geldigheidsDuur = KwantWrdInJaar()
+    @datum.setter
+    def datum(self, value):
+        self._datum.set_waarde(value, owner=self)
+
+    @property
+    def geldigheidsDuur(self):
         """de periode (in jaar) waarbinnen de keuring geldig blijft. """
-        self.geldigheidsDuur.naam = "geldigheidsDuur"
-        self.geldigheidsDuur.label = "geldigheidsduur"
-        self.geldigheidsDuur.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#Keuring.geldigheidsDuur"
-        self.geldigheidsDuur.definition = "de periode (in jaar) waarbinnen de keuring geldig blijft. "
-        self.geldigheidsDuur.constraints = ""
-        self.geldigheidsDuur.usagenote = ""
-        self.geldigheidsDuur.deprecated_version = ""
+        return self._geldigheidsDuur.waarde
 
-        self.verslag = DtcDocument()
+    @geldigheidsDuur.setter
+    def geldigheidsDuur(self, value):
+        self._geldigheidsDuur.set_waarde(value, owner=self)
+
+    @property
+    def verslag(self):
         """document met het verslag van de keuring."""
-        self.verslag.naam = "verslag"
-        self.verslag.label = "keuringsverslag"
-        self.verslag.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#Keuring.verslag"
-        self.verslag.definition = "document met het verslag van de keuring."
-        self.verslag.constraints = ""
-        self.verslag.usagenote = ""
-        self.verslag.deprecated_version = ""
+        return self._verslag.waarde
+
+    @verslag.setter
+    def verslag(self, value):
+        self._verslag.set_waarde(value, owner=self)

@@ -1,56 +1,172 @@
 # coding=utf-8
-from OTLModel.Datatypes.Keuzelijst import Keuzelijst
+from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
+from OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 
 # Generated with OTLEnumerationCreator. To modify: extend, do not edit
-class KlLetterCijfer(Keuzelijst):
+class KlLetterCijfer(KeuzelijstField):
     """De mogelijke letters en cijfers voor een letter- of cijfermarkering."""
+    naam = 'KlLetterCijfer'
+    label = 'Letter-cijfer'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlLetterCijfer'
+    definition = 'De mogelijke letters en cijfers voor een letter- of cijfermarkering.'
+    codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlLetterCijfer'
+    options = {
+        '-': KeuzelijstWaarde(invulwaarde='-',
+                              label='-',
+                              definitie='Koppelteken.',
+                              objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLetterCijfer/-'),
+        '0': KeuzelijstWaarde(invulwaarde='0',
+                              label='0',
+                              definitie='Cijfer 0.',
+                              objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLetterCijfer/0'),
+        '1': KeuzelijstWaarde(invulwaarde='1',
+                              label='1',
+                              definitie='Cijfer 1.',
+                              objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLetterCijfer/1'),
+        '2': KeuzelijstWaarde(invulwaarde='2',
+                              label='2',
+                              definitie='Cijfer 2.',
+                              objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLetterCijfer/2'),
+        '3': KeuzelijstWaarde(invulwaarde='3',
+                              label='3',
+                              definitie='Cijfer 3.',
+                              objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLetterCijfer/3'),
+        '4': KeuzelijstWaarde(invulwaarde='4',
+                              label='4',
+                              definitie='Cijfer 4.',
+                              objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLetterCijfer/4'),
+        '5': KeuzelijstWaarde(invulwaarde='5',
+                              label='5',
+                              definitie='Cijfer 5.',
+                              objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLetterCijfer/5'),
+        '6': KeuzelijstWaarde(invulwaarde='6',
+                              label='6',
+                              definitie='Cijfer 6.',
+                              objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLetterCijfer/6'),
+        '7': KeuzelijstWaarde(invulwaarde='7',
+                              label='7',
+                              definitie='Cijfer 7.',
+                              objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLetterCijfer/7'),
+        '8': KeuzelijstWaarde(invulwaarde='8',
+                              label='8',
+                              definitie='Cijfer 8.',
+                              objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLetterCijfer/8'),
+        '9': KeuzelijstWaarde(invulwaarde='9',
+                              label='9',
+                              definitie='Cijfer 9.',
+                              objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLetterCijfer/9'),
+        'a': KeuzelijstWaarde(invulwaarde='a',
+                              label='a',
+                              definitie='Letter a.',
+                              objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLetterCijfer/a'),
+        'b': KeuzelijstWaarde(invulwaarde='b',
+                              label='b',
+                              definitie='Letter b.',
+                              objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLetterCijfer/b'),
+        'c': KeuzelijstWaarde(invulwaarde='c',
+                              label='c',
+                              definitie='Letter c.',
+                              objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLetterCijfer/c'),
+        'd': KeuzelijstWaarde(invulwaarde='d',
+                              label='d',
+                              definitie='Letter d.',
+                              objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLetterCijfer/d'),
+        'e': KeuzelijstWaarde(invulwaarde='e',
+                              label='e',
+                              definitie='Letter e.',
+                              objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLetterCijfer/e'),
+        'f': KeuzelijstWaarde(invulwaarde='f',
+                              label='f',
+                              definitie='Letter f.',
+                              objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLetterCijfer/f'),
+        'g': KeuzelijstWaarde(invulwaarde='g',
+                              label='g',
+                              definitie='Letter g.',
+                              objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLetterCijfer/g'),
+        'h': KeuzelijstWaarde(invulwaarde='h',
+                              label='h',
+                              definitie='Letter h.',
+                              objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLetterCijfer/h'),
+        'i': KeuzelijstWaarde(invulwaarde='i',
+                              label='i',
+                              definitie='Letter i.',
+                              objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLetterCijfer/i'),
+        'j': KeuzelijstWaarde(invulwaarde='j',
+                              label='j',
+                              definitie='Letter j.',
+                              objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLetterCijfer/j'),
+        'k': KeuzelijstWaarde(invulwaarde='k',
+                              label='k',
+                              definitie='Letter k.',
+                              objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLetterCijfer/k'),
+        'l': KeuzelijstWaarde(invulwaarde='l',
+                              label='l',
+                              definitie='Letter l.',
+                              objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLetterCijfer/l'),
+        'm': KeuzelijstWaarde(invulwaarde='m',
+                              label='m',
+                              definitie='Letter m.',
+                              objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLetterCijfer/m'),
+        'n': KeuzelijstWaarde(invulwaarde='n',
+                              label='n',
+                              definitie='Letter n.',
+                              objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLetterCijfer/n'),
+        'o': KeuzelijstWaarde(invulwaarde='o',
+                              label='o',
+                              definitie='Letter o.',
+                              objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLetterCijfer/o'),
+        'p': KeuzelijstWaarde(invulwaarde='p',
+                              label='p',
+                              definitie='Letter p.',
+                              objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLetterCijfer/p'),
+        'q': KeuzelijstWaarde(invulwaarde='q',
+                              label='q',
+                              definitie='Letter q.',
+                              objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLetterCijfer/q'),
+        'r': KeuzelijstWaarde(invulwaarde='r',
+                              label='r',
+                              definitie='Letter r.',
+                              objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLetterCijfer/r'),
+        's': KeuzelijstWaarde(invulwaarde='s',
+                              label='s',
+                              definitie='Letter s.',
+                              objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLetterCijfer/s'),
+        't': KeuzelijstWaarde(invulwaarde='t',
+                              label='t',
+                              definitie='Letter t.',
+                              objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLetterCijfer/t'),
+        'u': KeuzelijstWaarde(invulwaarde='u',
+                              label='u',
+                              definitie='Letter u.',
+                              objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLetterCijfer/u'),
+        'v': KeuzelijstWaarde(invulwaarde='v',
+                              label='v',
+                              definitie='Letter v.',
+                              objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLetterCijfer/v'),
+        'w': KeuzelijstWaarde(invulwaarde='w',
+                              label='w',
+                              definitie='Letter w.',
+                              objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLetterCijfer/w'),
+        'x': KeuzelijstWaarde(invulwaarde='x',
+                              label='x',
+                              definitie='Letter x.',
+                              objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLetterCijfer/x'),
+        'y': KeuzelijstWaarde(invulwaarde='y',
+                              label='y',
+                              definitie='Letter y.',
+                              objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLetterCijfer/y'),
+        'z': KeuzelijstWaarde(invulwaarde='z',
+                              label='z',
+                              definitie='Letter z.',
+                              objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLetterCijfer/z'),
+        'â': KeuzelijstWaarde(invulwaarde='â',
+                              label='â',
+                              definitie='Letter â.',
+                              objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLetterCijfer/â'),
+        'é': KeuzelijstWaarde(invulwaarde='é',
+                              label='é',
+                              definitie='Letter é.',
+                              objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLetterCijfer/é')
+    }
 
-    def __init__(self):
-        super().__init__(naam="KlLetterCijfer",
-                         label="Letter-cijfer",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlLetterCijfer",
-                         definition="De mogelijke letters en cijfers voor een letter- of cijfermarkering.",
-                         usagenote="",
-                         deprecated_version="",
-                         codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlLetterCijfer")
-
-        self.add_option("-", "-", "Koppelteken.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLetterCijfer/-")
-        self.add_option("0", "0", "Cijfer 0.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLetterCijfer/0")
-        self.add_option("1", "1", "Cijfer 1.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLetterCijfer/1")
-        self.add_option("2", "2", "Cijfer 2.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLetterCijfer/2")
-        self.add_option("3", "3", "Cijfer 3.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLetterCijfer/3")
-        self.add_option("4", "4", "Cijfer 4.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLetterCijfer/4")
-        self.add_option("5", "5", "Cijfer 5.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLetterCijfer/5")
-        self.add_option("6", "6", "Cijfer 6.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLetterCijfer/6")
-        self.add_option("7", "7", "Cijfer 7.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLetterCijfer/7")
-        self.add_option("8", "8", "Cijfer 8.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLetterCijfer/8")
-        self.add_option("9", "9", "Cijfer 9.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLetterCijfer/9")
-        self.add_option("a", "a", "Letter a.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLetterCijfer/a")
-        self.add_option("b", "b", "Letter b.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLetterCijfer/b")
-        self.add_option("c", "c", "Letter c.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLetterCijfer/c")
-        self.add_option("d", "d", "Letter d.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLetterCijfer/d")
-        self.add_option("e", "e", "Letter e.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLetterCijfer/e")
-        self.add_option("f", "f", "Letter f.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLetterCijfer/f")
-        self.add_option("g", "g", "Letter g.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLetterCijfer/g")
-        self.add_option("h", "h", "Letter h.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLetterCijfer/h")
-        self.add_option("i", "i", "Letter i.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLetterCijfer/i")
-        self.add_option("j", "j", "Letter j.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLetterCijfer/j")
-        self.add_option("k", "k", "Letter k.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLetterCijfer/k")
-        self.add_option("l", "l", "Letter l.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLetterCijfer/l")
-        self.add_option("m", "m", "Letter m.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLetterCijfer/m")
-        self.add_option("n", "n", "Letter n.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLetterCijfer/n")
-        self.add_option("o", "o", "Letter o.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLetterCijfer/o")
-        self.add_option("p", "p", "Letter p.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLetterCijfer/p")
-        self.add_option("q", "q", "Letter q.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLetterCijfer/q")
-        self.add_option("r", "r", "Letter r.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLetterCijfer/r")
-        self.add_option("s", "s", "Letter s.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLetterCijfer/s")
-        self.add_option("t", "t", "Letter t.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLetterCijfer/t")
-        self.add_option("u", "u", "Letter u.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLetterCijfer/u")
-        self.add_option("v", "v", "Letter v.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLetterCijfer/v")
-        self.add_option("w", "w", "Letter w.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLetterCijfer/w")
-        self.add_option("x", "x", "Letter x.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLetterCijfer/x")
-        self.add_option("y", "y", "Letter y.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLetterCijfer/y")
-        self.add_option("z", "z", "Letter z.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLetterCijfer/z")
-        self.add_option("â", "â", "Letter â.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLetterCijfer/â")
-        self.add_option("é", "é", "Letter é.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLetterCijfer/é")

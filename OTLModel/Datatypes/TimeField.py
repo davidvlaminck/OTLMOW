@@ -1,12 +1,25 @@
 from datetime import time
+from OTLModel.BaseClasses.OTLField import OTLField
 
-from OTLModel.Datatypes.PrimitiveField import PrimitiveField
 
+class TimeField(OTLField):
+    """Beschrijft een tekstregel volgens http://www.w3.org/2001/XMLSchema#string."""
+    naam = 'Time'
+    objectUri = 'http://www.w3.org/2001/XMLSchema#time'
+    definition = 'Beschrijft een datum volgens http://www.w3.org/2001/XMLSchema#time.'
+    label = 'Tijd'
+    usagenote = 'https://www.w3.org/TR/xmlschema-2/#time'
 
-class TimeField(PrimitiveField):
-    def __init__(self, naam, label, objectUri, definition, constraints, usagenote, deprecated_version, readonly=False,
-                 readonlyValue=None):
-        super().__init__(time, naam, label, objectUri, definition, constraints, usagenote, deprecated_version, readonly, readonlyValue)
+    @staticmethod
+    def validate(value, attribuut):
+        if value is not None and not isinstance(value, time):
+            raise TypeError(f'expecting datetime in {attribuut.naam}')
+        return True
 
-    def default(self):
-        return self.waarde.strftime("%H:%M:%S")
+    @staticmethod
+    def value_default(value):
+        return value.strftime("%H:%M:%S")
+
+    def __str__(self):
+        return OTLField.__str__(self)
+

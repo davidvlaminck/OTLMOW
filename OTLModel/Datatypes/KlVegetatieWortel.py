@@ -1,21 +1,32 @@
 # coding=utf-8
-from OTLModel.Datatypes.Keuzelijst import Keuzelijst
+from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
+from OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 
 # Generated with OTLEnumerationCreator. To modify: extend, do not edit
-class KlVegetatieWortel(Keuzelijst):
+class KlVegetatieWortel(KeuzelijstField):
     """De verschillende opties van hoe de wortel was bij aanplanting."""
+    naam = 'KlVegetatieWortel'
+    label = 'Vegetatie wortel'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlVegetatieWortel'
+    definition = 'De verschillende opties van hoe de wortel was bij aanplanting.'
+    codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlVegetatieWortel'
+    options = {
+        'container': KeuzelijstWaarde(invulwaarde='container',
+                                      label='container',
+                                      definitie='De wortels zitten in een container of pot bij aanlevering en aanplant.',
+                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVegetatieWortel/container'),
+        'draadkluit': KeuzelijstWaarde(invulwaarde='draadkluit',
+                                       label='draadkluit',
+                                       definitie='De wortels zitten in een met draad ingebonden kluit aarde',
+                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVegetatieWortel/draadkluit'),
+        'kluit': KeuzelijstWaarde(invulwaarde='kluit',
+                                  label='kluit',
+                                  definitie='De wortels zijn omringd met aarde.',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVegetatieWortel/kluit'),
+        'naakt': KeuzelijstWaarde(invulwaarde='naakt',
+                                  label='naakt',
+                                  definitie='Wortels waarrond geen grond aanwezig is',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVegetatieWortel/naakt')
+    }
 
-    def __init__(self):
-        super().__init__(naam="KlVegetatieWortel",
-                         label="Vegetatie wortel",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlVegetatieWortel",
-                         definition="De verschillende opties van hoe de wortel was bij aanplanting.",
-                         usagenote="",
-                         deprecated_version="",
-                         codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlVegetatieWortel")
-
-        self.add_option("container", "container", "De wortels zitten in een container of pot bij aanlevering en aanplant.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVegetatieWortel/container")
-        self.add_option("draadkluit", "draadkluit", "De wortels zitten in een met draad ingebonden kluit aarde", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVegetatieWortel/draadkluit")
-        self.add_option("kluit", "kluit", "De wortels zijn omringd met aarde.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVegetatieWortel/kluit")
-        self.add_option("naakt", "naakt", "Wortels waarrond geen grond aanwezig is", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVegetatieWortel/naakt")

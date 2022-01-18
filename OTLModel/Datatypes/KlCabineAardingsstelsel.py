@@ -1,19 +1,22 @@
 # coding=utf-8
-from OTLModel.Datatypes.Keuzelijst import Keuzelijst
+from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
+from OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 
 # Generated with OTLEnumerationCreator. To modify: extend, do not edit
-class KlCabineAardingsstelsel(Keuzelijst):
+class KlCabineAardingsstelsel(KeuzelijstField):
     """Lijst van mogelijke aardinggsstelsels."""
+    naam = 'KlCabineAardingsstelsel'
+    label = 'Cabine aardingsstelsel'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlCabineAardingsstelsel'
+    definition = 'Lijst van mogelijke aardinggsstelsels.'
+    codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlCabineAardingsstelsel'
+    options = {
+        'gescheiden': KeuzelijstWaarde(invulwaarde='gescheiden',
+                                       label='gescheiden',
+                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlCabineAardingsstelsel/gescheiden'),
+        'globaal': KeuzelijstWaarde(invulwaarde='globaal',
+                                    label='globaal',
+                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlCabineAardingsstelsel/globaal')
+    }
 
-    def __init__(self):
-        super().__init__(naam="KlCabineAardingsstelsel",
-                         label="Cabine aardingsstelsel",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlCabineAardingsstelsel",
-                         definition="Lijst van mogelijke aardinggsstelsels.",
-                         usagenote="",
-                         deprecated_version="",
-                         codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlCabineAardingsstelsel")
-
-        self.add_option("gescheiden", "gescheiden", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlCabineAardingsstelsel/gescheiden")
-        self.add_option("globaal", "globaal", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlCabineAardingsstelsel/globaal")

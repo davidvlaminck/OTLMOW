@@ -1,25 +1,48 @@
 # coding=utf-8
-from OTLModel.Datatypes.Keuzelijst import Keuzelijst
+from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
+from OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 
 # Generated with OTLEnumerationCreator. To modify: extend, do not edit
-class KlHelling(Keuzelijst):
+class KlHelling(KeuzelijstField):
     """Kwarten voor het bepalen van de hellingsgraad."""
+    naam = 'KlHelling'
+    label = 'Helling'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlHelling'
+    definition = 'Kwarten voor het bepalen van de hellingsgraad.'
+    codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlHelling'
+    options = {
+        '10-4': KeuzelijstWaarde(invulwaarde='10-4',
+                                 label='10-4',
+                                 definitie='10-4',
+                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlHelling/10-4'),
+        '12-4': KeuzelijstWaarde(invulwaarde='12-4',
+                                 label='12-4',
+                                 definitie='12-4',
+                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlHelling/12-4'),
+        '14-4': KeuzelijstWaarde(invulwaarde='14-4',
+                                 label='14-4',
+                                 definitie='14-4',
+                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlHelling/14-4'),
+        '16-4': KeuzelijstWaarde(invulwaarde='16-4',
+                                 label='16-4',
+                                 definitie='16-4',
+                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlHelling/16-4'),
+        '18-4': KeuzelijstWaarde(invulwaarde='18-4',
+                                 label='18-4',
+                                 definitie='18-4',
+                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlHelling/18-4'),
+        '4-4': KeuzelijstWaarde(invulwaarde='4-4',
+                                label='4-4',
+                                definitie='4-4',
+                                objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlHelling/4-4'),
+        '6-4': KeuzelijstWaarde(invulwaarde='6-4',
+                                label='6-4',
+                                definitie='6-4',
+                                objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlHelling/6-4'),
+        '8-4': KeuzelijstWaarde(invulwaarde='8-4',
+                                label='8-4',
+                                definitie='8-4',
+                                objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlHelling/8-4')
+    }
 
-    def __init__(self):
-        super().__init__(naam="KlHelling",
-                         label="Helling",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlHelling",
-                         definition="Kwarten voor het bepalen van de hellingsgraad.",
-                         usagenote="",
-                         deprecated_version="",
-                         codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlHelling")
-
-        self.add_option("10-4", "10-4", "10-4", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlHelling/10-4")
-        self.add_option("12-4", "12-4", "12-4", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlHelling/12-4")
-        self.add_option("14-4", "14-4", "14-4", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlHelling/14-4")
-        self.add_option("16-4", "16-4", "16-4", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlHelling/16-4")
-        self.add_option("18-4", "18-4", "18-4", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlHelling/18-4")
-        self.add_option("4-4", "4-4", "4-4", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlHelling/4-4")
-        self.add_option("6-4", "6-4", "6-4", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlHelling/6-4")
-        self.add_option("8-4", "8-4", "8-4", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlHelling/8-4")

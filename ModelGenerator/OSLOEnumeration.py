@@ -5,9 +5,9 @@ import dataclasses
 class OSLOEnumeration:
     name: str
     objectUri: str
-    usagenote_nl: str
-    definition_nl: str
-    label_nl: str
+    usagenote: str
+    definition: str
+    label: str
     codelist: str
     deprecated_version: str
 

@@ -1,19 +1,24 @@
 # coding=utf-8
-from OTLModel.Datatypes.Keuzelijst import Keuzelijst
+from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
+from OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 
 # Generated with OTLEnumerationCreator. To modify: extend, do not edit
-class KlGCMeetMethode(Keuzelijst):
+class KlGCMeetMethode(KeuzelijstField):
     """Locaties van de geluidstestproef."""
+    naam = 'KlGCMeetMethode'
+    label = 'Meet methode'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlGCMeetMethode'
+    definition = 'Locaties van de geluidstestproef.'
+    codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlGCMeetMethode'
+    options = {
+        'inSitu': KeuzelijstWaarde(invulwaarde='inSitu',
+                                   label='inSitu',
+                                   definitie='Proef uitgevoerd op de werf',
+                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlGCMeetMethode/inSitu'),
+        'labo': KeuzelijstWaarde(invulwaarde='labo',
+                                 label='labo',
+                                 definitie='Proef uitgevoerd in het labo',
+                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlGCMeetMethode/labo')
+    }
 
-    def __init__(self):
-        super().__init__(naam="KlGCMeetMethode",
-                         label="Meet methode",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlGCMeetMethode",
-                         definition="Locaties van de geluidstestproef.",
-                         usagenote="",
-                         deprecated_version="",
-                         codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlGCMeetMethode")
-
-        self.add_option("inSitu", "inSitu", "Proef uitgevoerd op de werf", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlGCMeetMethode/inSitu")
-        self.add_option("labo", "labo", "Proef uitgevoerd in het labo", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlGCMeetMethode/labo")

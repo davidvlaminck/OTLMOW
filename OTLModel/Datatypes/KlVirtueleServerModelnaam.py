@@ -1,17 +1,16 @@
 # coding=utf-8
-from OTLModel.Datatypes.Keuzelijst import Keuzelijst
+from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
+from OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 
 # Generated with OTLEnumerationCreator. To modify: extend, do not edit
-class KlVirtueleServerModelnaam(Keuzelijst):
+class KlVirtueleServerModelnaam(KeuzelijstField):
     """De modelnaam van de virtuele server."""
-
-    def __init__(self):
-        super().__init__(naam="KlVirtueleServerModelnaam",
-                         label="Virtuele server modelnaam",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlVirtueleServerModelnaam",
-                         definition="De modelnaam van de virtuele server.",
-                         usagenote="",
-                         deprecated_version="",
-                         codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlVirtueleServerModelnaam")
+    naam = 'KlVirtueleServerModelnaam'
+    label = 'Virtuele server modelnaam'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlVirtueleServerModelnaam'
+    definition = 'De modelnaam van de virtuele server.'
+    codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlVirtueleServerModelnaam'
+    options = 
+    }
 

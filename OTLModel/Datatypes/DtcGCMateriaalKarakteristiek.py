@@ -1,40 +1,54 @@
 # coding=utf-8
+from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
+from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Datatypes.ComplexField import ComplexField
-from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlLEGCGeluidskarakteristiek import KlLEGCGeluidskarakteristiek
 from OTLModel.Datatypes.KlLEGCMateriaal import KlLEGCMateriaal
 
 
 # Generated with OTLComplexDatatypeCreator. To modify: extend, do not edit
-class DtcGCMateriaalKarakteristiek(ComplexField):
-    """Complex datatype voor het materiaal en zijn geluidskarakteristiek van de geluidswerende constructie."""
-
+class DtcGCMateriaalKarakteristiekWaarden(AttributeInfo):
     def __init__(self):
-        super().__init__(naam="DtcGCMateriaalKarakteristiek",
-                         label="Materiaal karakteristiek",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcGCMateriaalKarakteristiek",
-                         definition="Complex datatype voor het materiaal en zijn geluidskarakteristiek van de geluidswerende constructie.",
-                         usagenote="",
-                         deprecated_version="")
+        self._geluidskarakteristiek = OTLAttribuut(field=KlLEGCGeluidskarakteristiek,
+                                                   naam='geluidskarakteristiek',
+                                                   label='geluidskarakteristiek',
+                                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcGCMateriaalKarakteristiek.geluidskarakteristiek',
+                                                   definition='Het kenmerkend gedrag inzake geluid van de geluidswerende constructie.')
 
-        self.waarde.geluidskarakteristiek = KeuzelijstField(naam="geluidskarakteristiek",
-                                                            label="geluidskarakteristiek",
-                                                            lijst=KlLEGCGeluidskarakteristiek(),
-                                                            objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcGCMateriaalKarakteristiek.geluidskarakteristiek",
-                                                            definition="Het kenmerkend gedrag inzake geluid van de geluidswerende constructie.",
-                                                            constraints="",
-                                                            usagenote="",
-                                                            deprecated_version="")
-        self.geluidskarakteristiek = self.waarde.geluidskarakteristiek
+        self._materiaal = OTLAttribuut(field=KlLEGCMateriaal,
+                                       naam='materiaal',
+                                       label='materiaal',
+                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcGCMateriaalKarakteristiek.materiaal',
+                                       definition='Het materiaal van de geluidswerende constructie.')
+
+    @property
+    def geluidskarakteristiek(self):
         """Het kenmerkend gedrag inzake geluid van de geluidswerende constructie."""
+        return self._geluidskarakteristiek.waarde
 
-        self.waarde.materiaal = KeuzelijstField(naam="materiaal",
-                                                label="materiaal",
-                                                lijst=KlLEGCMateriaal(),
-                                                objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcGCMateriaalKarakteristiek.materiaal",
-                                                definition="Het materiaal van de geluidswerende constructie.",
-                                                constraints="",
-                                                usagenote="",
-                                                deprecated_version="")
-        self.materiaal = self.waarde.materiaal
+    @geluidskarakteristiek.setter
+    def geluidskarakteristiek(self, value):
+        self._geluidskarakteristiek.set_waarde(value)
+
+    @property
+    def materiaal(self):
         """Het materiaal van de geluidswerende constructie."""
+        return self._materiaal.waarde
+
+    @materiaal.setter
+    def materiaal(self, value):
+        self._materiaal.set_waarde(value)
+
+
+# Generated with OTLComplexDatatypeCreator. To modify: extend, do not edit
+class DtcGCMateriaalKarakteristiek(ComplexField, AttributeInfo):
+    """Complex datatype voor het materiaal en zijn geluidskarakteristiek van de geluidswerende constructie."""
+    naam = 'DtcGCMateriaalKarakteristiek'
+    label = 'Materiaal karakteristiek'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcGCMateriaalKarakteristiek'
+    definition = 'Complex datatype voor het materiaal en zijn geluidskarakteristiek van de geluidswerende constructie.'
+    waardeObject = DtcGCMateriaalKarakteristiekWaarden
+
+    def __str__(self):
+        return ComplexField.__str__(self)
+

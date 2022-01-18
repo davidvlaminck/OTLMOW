@@ -1,25 +1,32 @@
 # coding=utf-8
+from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
+from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.AIMObject import AIMObject
-from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlEcoEcokokerType import KlEcoEcokokerType
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Ecokoker(AIMObject):
+class Ecokoker(AIMObject, AttributeInfo):
     """Een kleine ecotunnel of ecokoker is een doorgang voor dieren onder een weg of spoorweg."""
 
-    typeURI = "https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Ecokoker"
+    typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Ecokoker'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        super().__init__()
+        AIMObject.__init__(self)
+        AttributeInfo.__init__(self)
 
-        self.type = KeuzelijstField(naam="type",
-                                    label="type",
-                                    lijst=KlEcoEcokokerType(),
-                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Ecokoker.type",
-                                    definition="Het type van ecokoker zoals bv. amfibieënkoker, ….",
-                                    constraints="",
-                                    usagenote="",
-                                    deprecated_version="")
+        self._type = OTLAttribuut(field=KlEcoEcokokerType,
+                                  naam='type',
+                                  label='type',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Ecokoker.type',
+                                  definition='Het type van ecokoker zoals bv. amfibieënkoker, ….')
+
+    @property
+    def type(self):
         """Het type van ecokoker zoals bv. amfibieënkoker, …."""
+        return self._type.waarde
+
+    @type.setter
+    def type(self, value):
+        self._type.set_waarde(value, owner=self)

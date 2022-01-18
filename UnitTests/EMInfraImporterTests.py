@@ -10,7 +10,7 @@ class EMInfraImporterTests(unittest.TestCase):
         importer = EMInfraImporter(cert_path, key_path)
         asset = importer.import_asset_from_webservice_by_asset_id(asset_id)
 
-        self.assertEqual(asset_id, asset.assetId.identificator.waarde)
+        self.assertEqual(asset_id, asset.assetId.identificator)
 
     def test_get_asset_id_from_uuid_and_typeURI(self):
         asset_id = '000d3091-deca-4714-8f82-d95aace9ea90-b25kZXJkZWVsI1N0cm9vbWtyaW5n'

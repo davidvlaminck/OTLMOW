@@ -1,0 +1,2 @@
+﻿class UnionTypeError(ValueError):
+    pass

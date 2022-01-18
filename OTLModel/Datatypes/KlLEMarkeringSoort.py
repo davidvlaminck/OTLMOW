@@ -1,22 +1,36 @@
 # coding=utf-8
-from OTLModel.Datatypes.Keuzelijst import Keuzelijst
+from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
+from OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 
 # Generated with OTLEnumerationCreator. To modify: extend, do not edit
-class KlLEMarkeringSoort(Keuzelijst):
+class KlLEMarkeringSoort(KeuzelijstField):
     """Mogelijke markeringsoorten op een lijvormig element."""
+    naam = 'KlLEMarkeringSoort'
+    label = 'Soort markering van lijnvormig element'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlLEMarkeringSoort'
+    definition = 'Mogelijke markeringsoorten op een lijvormig element.'
+    codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlLEMarkeringSoort'
+    options = {
+        'biggenrug': KeuzelijstWaarde(invulwaarde='biggenrug',
+                                      label='biggenrug',
+                                      definitie='Een betonnen obstakel dat meestal een infrastructurele en beschermende functie heeft',
+                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLEMarkeringSoort/biggenrug'),
+        'boordsteen': KeuzelijstWaarde(invulwaarde='boordsteen',
+                                       label='boordsteen',
+                                       definitie='Een lijnvormig element dat de scheiding verzorgt tussen een rijbaan en het meestal hoger gelegen trottoir',
+                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLEMarkeringSoort/boordsteen'),
+        'boordsteen-parkeerverbod': KeuzelijstWaarde(invulwaarde='boordsteen-parkeerverbod',
+                                                     label='boordsteen parkeerverbod',
+                                                     definitie='Een lijnvormig element dat de scheiding verzorgt tussen een rijbaan en het meestal hoger gelegen trottoir met als functie het aanduiden van parkeerverbod',
+                                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLEMarkeringSoort/boordsteen-parkeerverbod'),
+        'new-Jersey': KeuzelijstWaarde(invulwaarde='new-Jersey',
+                                       label='new Jersey',
+                                       definitie='Een afschermende constructie uit kunststof, beton of metaal dat naast wegen wordt geplaatst om te voorkomen dat voertuigen de weg in zijdelingse richting verlaten, kantelen of de middenberm doorkruisen.',
+                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLEMarkeringSoort/new-Jersey'),
+        'vangrail': KeuzelijstWaarde(invulwaarde='vangrail',
+                                     label='vangrail',
+                                     definitie='Een afschermende constructie die naast wegen wordt geplaatst om te voorkomen dat voertuigen de weg in zijdelingse richting verlaten, kantelen of de middenberm doorkruisen.',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLEMarkeringSoort/vangrail')
+    }
 
-    def __init__(self):
-        super().__init__(naam="KlLEMarkeringSoort",
-                         label="Soort markering van lijnvormig element",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlLEMarkeringSoort",
-                         definition="Mogelijke markeringsoorten op een lijvormig element.",
-                         usagenote="",
-                         deprecated_version="",
-                         codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlLEMarkeringSoort")
-
-        self.add_option("biggenrug", "biggenrug", "Een betonnen obstakel dat meestal een infrastructurele en beschermende functie heeft", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLEMarkeringSoort/biggenrug")
-        self.add_option("boordsteen", "boordsteen", "Een lijnvormig element dat de scheiding verzorgt tussen een rijbaan en het meestal hoger gelegen trottoir", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLEMarkeringSoort/boordsteen")
-        self.add_option("boordsteen-parkeerverbod", "boordsteen parkeerverbod", "Een lijnvormig element dat de scheiding verzorgt tussen een rijbaan en het meestal hoger gelegen trottoir met als functie het aanduiden van parkeerverbod", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLEMarkeringSoort/boordsteen-parkeerverbod")
-        self.add_option("new-Jersey", "new Jersey", "Een afschermende constructie uit kunststof, beton of metaal dat naast wegen wordt geplaatst om te voorkomen dat voertuigen de weg in zijdelingse richting verlaten, kantelen of de middenberm doorkruisen.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLEMarkeringSoort/new-Jersey")
-        self.add_option("vangrail", "vangrail", "Een afschermende constructie die naast wegen wordt geplaatst om te voorkomen dat voertuigen de weg in zijdelingse richting verlaten, kantelen of de middenberm doorkruisen.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLEMarkeringSoort/vangrail")

@@ -1,48 +1,65 @@
 # coding=utf-8
+from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
+from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.AIMObject import AIMObject
-from OTLModel.Datatypes.KardinaliteitField import KardinaliteitField
 from OTLModel.Datatypes.BooleanField import BooleanField
-from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlBeheerSierbeplanting import KlBeheerSierbeplanting
 from OTLModel.Datatypes.KwantWrdInVierkanteMeter import KwantWrdInVierkanteMeter
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class BeheerSierbeplanting(AIMObject):
+class BeheerSierbeplanting(AIMObject, AttributeInfo):
     """Het beheerobject voor de sierbeplanting."""
 
-    typeURI = "https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#BeheerSierbeplanting"
+    typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#BeheerSierbeplanting'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        super().__init__()
+        AIMObject.__init__(self)
+        AttributeInfo.__init__(self)
 
-        beheeroptieField = KeuzelijstField(naam="beheeroptie",
-                                           label="beheeroptie",
-                                           lijst=KlBeheerSierbeplanting(),
-                                           objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#BeheerSierbeplanting.beheeroptie",
-                                           definition="Aanduiding van welk beheer wordt toegepast op de sierbeplanting.",
-                                           constraints="",
-                                           usagenote="",
-                                           deprecated_version="")
-        self.beheeroptie = KardinaliteitField(minKardinaliteit="1", maxKardinaliteit="*", fieldToMultiply=beheeroptieField)
+        self._beheeroptie = OTLAttribuut(field=KlBeheerSierbeplanting,
+                                         naam='beheeroptie',
+                                         label='beheeroptie',
+                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#BeheerSierbeplanting.beheeroptie',
+                                         kardinaliteit_max='*',
+                                         definition='Aanduiding van welk beheer wordt toegepast op de sierbeplanting.')
+
+        self._heeftBeheerplan = OTLAttribuut(field=BooleanField,
+                                             naam='heeftBeheerplan',
+                                             label='heeft beheerplan',
+                                             objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#BeheerSierbeplanting.heeftBeheerplan',
+                                             definition='Aanduiding of er een beheerplan bestaat.')
+
+        self._oppervlakte = OTLAttribuut(field=KwantWrdInVierkanteMeter,
+                                         naam='oppervlakte',
+                                         label='oppervlakte',
+                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#BeheerSierbeplanting.oppervlakte',
+                                         definition='De oppervlakte in vierkante meter van de te behandelen sierbeplanting.')
+
+    @property
+    def beheeroptie(self):
         """Aanduiding van welk beheer wordt toegepast op de sierbeplanting."""
+        return self._beheeroptie.waarde
 
-        self.heeftBeheerplan = BooleanField(naam="heeftBeheerplan",
-                                            label="heeft beheerplan",
-                                            objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#BeheerSierbeplanting.heeftBeheerplan",
-                                            definition="Aanduiding of er een beheerplan bestaat.",
-                                            constraints="",
-                                            usagenote="",
-                                            deprecated_version="")
+    @beheeroptie.setter
+    def beheeroptie(self, value):
+        self._beheeroptie.set_waarde(value, owner=self)
+
+    @property
+    def heeftBeheerplan(self):
         """Aanduiding of er een beheerplan bestaat."""
+        return self._heeftBeheerplan.waarde
 
-        self.oppervlakte = KwantWrdInVierkanteMeter()
+    @heeftBeheerplan.setter
+    def heeftBeheerplan(self, value):
+        self._heeftBeheerplan.set_waarde(value, owner=self)
+
+    @property
+    def oppervlakte(self):
         """De oppervlakte in vierkante meter van de te behandelen sierbeplanting."""
-        self.oppervlakte.naam = "oppervlakte"
-        self.oppervlakte.label = "oppervlakte"
-        self.oppervlakte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#BeheerSierbeplanting.oppervlakte"
-        self.oppervlakte.definition = "De oppervlakte in vierkante meter van de te behandelen sierbeplanting."
-        self.oppervlakte.constraints = ""
-        self.oppervlakte.usagenote = ""
-        self.oppervlakte.deprecated_version = ""
+        return self._oppervlakte.waarde
+
+    @oppervlakte.setter
+    def oppervlakte(self, value):
+        self._oppervlakte.set_waarde(value, owner=self)

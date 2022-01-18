@@ -1,9 +1,9 @@
 # coding=utf-8
+from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
+from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from abc import abstractmethod, ABC
-from OTLModel.Datatypes.KardinaliteitField import KardinaliteitField
 from OTLModel.Datatypes.DtcDocument import DtcDocument
 from OTLModel.Datatypes.DtuAfmetingVerkeersbord import DtuAfmetingVerkeersbord
-from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlOperationeleStatus import KlOperationeleStatus
 from OTLModel.Datatypes.KwantWrdInDecimaleGraden import KwantWrdInDecimaleGraden
 from OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter
@@ -11,70 +11,105 @@ from OTLModel.Datatypes.StringField import StringField
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Verkeersbord(ABC):
+class Verkeersbord(ABC, AttributeInfo):
     """Abstracte klasse voor borden die een fysieke drager van verkeerstekens kunnen zijn waarvan de betekenis bepaald wordt door een verkeersbordconcept."""
 
-    typeURI = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Verkeersbord"
+    typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Verkeersbord'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     @abstractmethod
     def __init__(self):
-        self.aanzicht = KwantWrdInDecimaleGraden()
+        super().__init__()
+
+        self._aanzicht = OTLAttribuut(field=KwantWrdInDecimaleGraden,
+                                      naam='aanzicht',
+                                      label='aanzicht',
+                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Verkeersbord.aanzicht',
+                                      usagenote='In radialen of graden ten opzichte van het noorden in wijzerzin.',
+                                      definition='De hoek waarin het fysiek bord gepositioneerd is ten opzichte van een vooropgestelde as (het ware noorden). De hoek wordt gemeten in radialen of graden ten opzichte van het noorden in wijzerzin.')
+
+        self._afbeelding = OTLAttribuut(field=DtcDocument,
+                                        naam='afbeelding',
+                                        label='afbeelding',
+                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Verkeersbord.afbeelding',
+                                        kardinaliteit_max='*',
+                                        definition='De afbeelding van het verkeersbord.')
+
+        self._afmeting = OTLAttribuut(field=DtuAfmetingVerkeersbord,
+                                      naam='afmeting',
+                                      label='afmeting',
+                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Verkeersbord.afmeting',
+                                      definition='De afmeting(en) van het verkeersbord.')
+
+        self._fabricagevoorschrift = OTLAttribuut(field=StringField,
+                                                  naam='fabricagevoorschrift',
+                                                  label='fabricagevoorschrift',
+                                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Verkeersbord.fabricagevoorschrift',
+                                                  definition='Het fabricagevoorschrift op het verkeersbord.')
+
+        self._operationeleStatus = OTLAttribuut(field=KlOperationeleStatus,
+                                                naam='operationeleStatus',
+                                                label='operationele status',
+                                                objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Verkeersbord.operationeleStatus',
+                                                usagenote="Enkel te gebruiken wanneer een object 'in gebruik' is. Zie ook attribuut toestand overgeërfd van AIMToestand om de asset levenscyclus aan te duiden.",
+                                                definition='De operationele status van het verkeersbord.')
+
+        self._opstelhoogte = OTLAttribuut(field=KwantWrdInMeter,
+                                          naam='opstelhoogte',
+                                          label='opstelhoogte',
+                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Verkeersbord.opstelhoogte',
+                                          definition='Afstand tussen het maaiveld en de onderrand van het bord.')
+
+    @property
+    def aanzicht(self):
         """De hoek waarin het fysiek bord gepositioneerd is ten opzichte van een vooropgestelde as (het ware noorden). De hoek wordt gemeten in radialen of graden ten opzichte van het noorden in wijzerzin."""
-        self.aanzicht.naam = "aanzicht"
-        self.aanzicht.label = "aanzicht"
-        self.aanzicht.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Verkeersbord.aanzicht"
-        self.aanzicht.definition = "De hoek waarin het fysiek bord gepositioneerd is ten opzichte van een vooropgestelde as (het ware noorden). De hoek wordt gemeten in radialen of graden ten opzichte van het noorden in wijzerzin."
-        self.aanzicht.constraints = ""
-        self.aanzicht.usagenote = "In radialen of graden ten opzichte van het noorden in wijzerzin."
-        self.aanzicht.deprecated_version = ""
+        return self._aanzicht.waarde
 
-        afbeeldingField = DtcDocument()
-        afbeeldingField.naam = "afbeelding"
-        afbeeldingField.label = "afbeelding"
-        afbeeldingField.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Verkeersbord.afbeelding"
-        afbeeldingField.definition = "De afbeelding van het verkeersbord."
-        afbeeldingField.constraints = ""
-        afbeeldingField.usagenote = ""
-        afbeeldingField.deprecated_version = ""
-        self.afbeelding = KardinaliteitField(minKardinaliteit="1", maxKardinaliteit="*", fieldToMultiply=afbeeldingField)
+    @aanzicht.setter
+    def aanzicht(self, value):
+        self._aanzicht.set_waarde(value, owner=self)
+
+    @property
+    def afbeelding(self):
         """De afbeelding van het verkeersbord."""
+        return self._afbeelding.waarde
 
-        self.afmeting = DtuAfmetingVerkeersbord()
+    @afbeelding.setter
+    def afbeelding(self, value):
+        self._afbeelding.set_waarde(value, owner=self)
+
+    @property
+    def afmeting(self):
         """De afmeting(en) van het verkeersbord."""
-        self.afmeting.naam = "afmeting"
-        self.afmeting.label = "afmeting"
-        self.afmeting.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Verkeersbord.afmeting"
-        self.afmeting.definition = "De afmeting(en) van het verkeersbord."
-        self.afmeting.constraints = ""
-        self.afmeting.usagenote = ""
-        self.afmeting.deprecated_version = ""
+        return self._afmeting.waarde
 
-        self.fabricagevoorschrift = StringField(naam="fabricagevoorschrift",
-                                                label="fabricagevoorschrift",
-                                                objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Verkeersbord.fabricagevoorschrift",
-                                                definition="Het fabricagevoorschrift op het verkeersbord.",
-                                                constraints="",
-                                                usagenote="",
-                                                deprecated_version="")
+    @afmeting.setter
+    def afmeting(self, value):
+        self._afmeting.set_waarde(value, owner=self)
+
+    @property
+    def fabricagevoorschrift(self):
         """Het fabricagevoorschrift op het verkeersbord."""
+        return self._fabricagevoorschrift.waarde
 
-        self.operationeleStatus = KeuzelijstField(naam="operationeleStatus",
-                                                  label="operationele status",
-                                                  lijst=KlOperationeleStatus(),
-                                                  objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Verkeersbord.operationeleStatus",
-                                                  definition="De operationele status van het verkeersbord.",
-                                                  constraints="",
-                                                  usagenote="Enkel te gebruiken wanneer een object 'in gebruik' is. Zie ook attribuut toestand overgeërfd van AIMToestand om de asset levenscyclus aan te duiden.",
-                                                  deprecated_version="")
+    @fabricagevoorschrift.setter
+    def fabricagevoorschrift(self, value):
+        self._fabricagevoorschrift.set_waarde(value, owner=self)
+
+    @property
+    def operationeleStatus(self):
         """De operationele status van het verkeersbord."""
+        return self._operationeleStatus.waarde
 
-        self.opstelhoogte = KwantWrdInMeter()
+    @operationeleStatus.setter
+    def operationeleStatus(self, value):
+        self._operationeleStatus.set_waarde(value, owner=self)
+
+    @property
+    def opstelhoogte(self):
         """Afstand tussen het maaiveld en de onderrand van het bord."""
-        self.opstelhoogte.naam = "opstelhoogte"
-        self.opstelhoogte.label = "opstelhoogte"
-        self.opstelhoogte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Verkeersbord.opstelhoogte"
-        self.opstelhoogte.definition = "Afstand tussen het maaiveld en de onderrand van het bord."
-        self.opstelhoogte.constraints = ""
-        self.opstelhoogte.usagenote = ""
-        self.opstelhoogte.deprecated_version = ""
+        return self._opstelhoogte.waarde
+
+    @opstelhoogte.setter
+    def opstelhoogte(self, value):
+        self._opstelhoogte.set_waarde(value, owner=self)

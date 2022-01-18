@@ -1,24 +1,37 @@
 # coding=utf-8
-from OTLModel.Datatypes.Keuzelijst import Keuzelijst
+from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
+from OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 
 # Generated with OTLEnumerationCreator. To modify: extend, do not edit
-class KlCabineLokaalKlasse(Keuzelijst):
+class KlCabineLokaalKlasse(KeuzelijstField):
     """Lijst van waarden voor de classificatie van de hoogspanningscabine als lokaal volgens Synergrid."""
+    naam = 'KlCabineLokaalKlasse'
+    label = 'Cabine lokaal klasse'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlCabineLokaalKlasse'
+    definition = 'Lijst van waarden voor de classificatie van de hoogspanningscabine als lokaal volgens Synergrid.'
+    codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlCabineLokaalKlasse'
+    options = {
+        'BB00': KeuzelijstWaarde(invulwaarde='BB00',
+                                 label='BB00',
+                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlCabineLokaalKlasse/BB00'),
+        'BB05': KeuzelijstWaarde(invulwaarde='BB05',
+                                 label='BB05',
+                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlCabineLokaalKlasse/BB05'),
+        'BB10': KeuzelijstWaarde(invulwaarde='BB10',
+                                 label='BB10',
+                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlCabineLokaalKlasse/BB10'),
+        'BB20': KeuzelijstWaarde(invulwaarde='BB20',
+                                 label='BB20',
+                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlCabineLokaalKlasse/BB20'),
+        'BB30': KeuzelijstWaarde(invulwaarde='BB30',
+                                 label='BB30',
+                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlCabineLokaalKlasse/BB30'),
+        'BB40': KeuzelijstWaarde(invulwaarde='BB40',
+                                 label='BB40',
+                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlCabineLokaalKlasse/BB40'),
+        'BB50': KeuzelijstWaarde(invulwaarde='BB50',
+                                 label='BB50',
+                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlCabineLokaalKlasse/BB50')
+    }
 
-    def __init__(self):
-        super().__init__(naam="KlCabineLokaalKlasse",
-                         label="Cabine lokaal klasse",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlCabineLokaalKlasse",
-                         definition="Lijst van waarden voor de classificatie van de hoogspanningscabine als lokaal volgens Synergrid.",
-                         usagenote="",
-                         deprecated_version="",
-                         codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlCabineLokaalKlasse")
-
-        self.add_option("BB00", "BB00", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlCabineLokaalKlasse/BB00")
-        self.add_option("BB05", "BB05", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlCabineLokaalKlasse/BB05")
-        self.add_option("BB10", "BB10", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlCabineLokaalKlasse/BB10")
-        self.add_option("BB20", "BB20", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlCabineLokaalKlasse/BB20")
-        self.add_option("BB30", "BB30", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlCabineLokaalKlasse/BB30")
-        self.add_option("BB40", "BB40", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlCabineLokaalKlasse/BB40")
-        self.add_option("BB50", "BB50", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlCabineLokaalKlasse/BB50")

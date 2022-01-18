@@ -1,10 +1,10 @@
 # coding=utf-8
+from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
+from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from abc import abstractmethod
 from OTLModel.Classes.AIMObject import AIMObject
-from OTLModel.Datatypes.KardinaliteitField import KardinaliteitField
 from OTLModel.Datatypes.BooleanField import BooleanField
 from OTLModel.Datatypes.DtcVegetatieSoortnaam import DtcVegetatieSoortnaam
-from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlTaludWaarde import KlTaludWaarde
 from OTLModel.Datatypes.KlVegetatieDrassigheid import KlVegetatieDrassigheid
 from OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter
@@ -12,82 +12,119 @@ from OTLModel.Datatypes.KwantWrdInVierkanteMeter import KwantWrdInVierkanteMeter
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class BegroeidVoorkomen(AIMObject):
+class BegroeidVoorkomen(AIMObject, AttributeInfo):
     """Abstracte die alle gemeenschappelijke eigenschappen omtrent begroeid voorkomen opsomt."""
 
-    typeURI = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#BegroeidVoorkomen"
+    typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#BegroeidVoorkomen'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     @abstractmethod
     def __init__(self):
-        super().__init__()
+        AIMObject.__init__(self)
+        AttributeInfo.__init__(self)
 
-        self.breedte = KwantWrdInMeter()
+        self._breedte = OTLAttribuut(field=KwantWrdInMeter,
+                                     naam='breedte',
+                                     label='breedte',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#BegroeidVoorkomen.breedte',
+                                     definition='De afstand van het begroeide oppervlak dwars op de as van de (water)weg.')
+
+        self._drassigheid = OTLAttribuut(field=KlVegetatieDrassigheid,
+                                         naam='drassigheid',
+                                         label='drassigheid',
+                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#BegroeidVoorkomen.drassigheid',
+                                         definition='Mate waarin de bodem verzadigd is met water. De drassigheid geeft hierbij aan in welke mate de normale werking van types machines zou kunnen verstoord worden.')
+
+        self._heeftObstakels = OTLAttribuut(field=BooleanField,
+                                            naam='heeftObstakels',
+                                            label='heeft obstakels',
+                                            objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#BegroeidVoorkomen.heeftObstakels',
+                                            definition='Eigenschap die aangeeft of er binnen het beheerdeel al dan niet objecten voorkomen die de vrije werking van machines of andere werktuigen kan verhinderen.')
+
+        self._lengte = OTLAttribuut(field=KwantWrdInMeter,
+                                    naam='lengte',
+                                    label='lengte',
+                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#BegroeidVoorkomen.lengte',
+                                    definition='De afstand van het begroeide oppervlak evenwijdig met de as van de (water)weg.')
+
+        self._oppervlakte = OTLAttribuut(field=KwantWrdInVierkanteMeter,
+                                         naam='oppervlakte',
+                                         label='oppervlakte',
+                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#BegroeidVoorkomen.oppervlakte',
+                                         definition='De oppervlakte van het begroeide oppervlak in vierkante meter.')
+
+        self._soort = OTLAttribuut(field=DtcVegetatieSoortnaam,
+                                   naam='soort',
+                                   label='soort',
+                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#BegroeidVoorkomen.soort',
+                                   kardinaliteit_max='*',
+                                   definition='Met deze eigenschap worden de Nederlandse soortnaam, wetenschappelijke soortnaam en de soortcode van de meest voorkomende soorten binnen het begroeid oppervlak weergegeven.')
+
+        self._taludwaarde = OTLAttribuut(field=KlTaludWaarde,
+                                         naam='taludwaarde',
+                                         label='taludwaarde',
+                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#BegroeidVoorkomen.taludwaarde',
+                                         definition='Een talud is het kunstmatig gedeelte van een vlak van de wegbaan, dijken, spoorbanen, vestingswerken, ... dat een helling (min. 20%, max 80% voor kunstmatig verharde taluds) vertoont en bedoeld voor het opvangen van een hoogteverschil.')
+
+    @property
+    def breedte(self):
         """De afstand van het begroeide oppervlak dwars op de as van de (water)weg."""
-        self.breedte.naam = "breedte"
-        self.breedte.label = "breedte"
-        self.breedte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#BegroeidVoorkomen.breedte"
-        self.breedte.definition = "De afstand van het begroeide oppervlak dwars op de as van de (water)weg."
-        self.breedte.constraints = ""
-        self.breedte.usagenote = ""
-        self.breedte.deprecated_version = ""
+        return self._breedte.waarde
 
-        self.drassigheid = KeuzelijstField(naam="drassigheid",
-                                           label="drassigheid",
-                                           lijst=KlVegetatieDrassigheid(),
-                                           objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#BegroeidVoorkomen.drassigheid",
-                                           definition="Mate waarin de bodem verzadigd is met water. De drassigheid geeft hierbij aan in welke mate de normale werking van types machines zou kunnen verstoord worden.",
-                                           constraints="",
-                                           usagenote="",
-                                           deprecated_version="")
+    @breedte.setter
+    def breedte(self, value):
+        self._breedte.set_waarde(value, owner=self)
+
+    @property
+    def drassigheid(self):
         """Mate waarin de bodem verzadigd is met water. De drassigheid geeft hierbij aan in welke mate de normale werking van types machines zou kunnen verstoord worden."""
+        return self._drassigheid.waarde
 
-        self.heeftObstakels = BooleanField(naam="heeftObstakels",
-                                           label="heeft obstakels",
-                                           objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#BegroeidVoorkomen.heeftObstakels",
-                                           definition="Eigenschap die aangeeft of er binnen het beheerdeel al dan niet objecten voorkomen die de vrije werking van machines of andere werktuigen kan verhinderen.",
-                                           constraints="",
-                                           usagenote="",
-                                           deprecated_version="")
+    @drassigheid.setter
+    def drassigheid(self, value):
+        self._drassigheid.set_waarde(value, owner=self)
+
+    @property
+    def heeftObstakels(self):
         """Eigenschap die aangeeft of er binnen het beheerdeel al dan niet objecten voorkomen die de vrije werking van machines of andere werktuigen kan verhinderen."""
+        return self._heeftObstakels.waarde
 
-        self.lengte = KwantWrdInMeter()
+    @heeftObstakels.setter
+    def heeftObstakels(self, value):
+        self._heeftObstakels.set_waarde(value, owner=self)
+
+    @property
+    def lengte(self):
         """De afstand van het begroeide oppervlak evenwijdig met de as van de (water)weg."""
-        self.lengte.naam = "lengte"
-        self.lengte.label = "lengte"
-        self.lengte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#BegroeidVoorkomen.lengte"
-        self.lengte.definition = "De afstand van het begroeide oppervlak evenwijdig met de as van de (water)weg."
-        self.lengte.constraints = ""
-        self.lengte.usagenote = ""
-        self.lengte.deprecated_version = ""
+        return self._lengte.waarde
 
-        self.oppervlakte = KwantWrdInVierkanteMeter()
+    @lengte.setter
+    def lengte(self, value):
+        self._lengte.set_waarde(value, owner=self)
+
+    @property
+    def oppervlakte(self):
         """De oppervlakte van het begroeide oppervlak in vierkante meter."""
-        self.oppervlakte.naam = "oppervlakte"
-        self.oppervlakte.label = "oppervlakte"
-        self.oppervlakte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#BegroeidVoorkomen.oppervlakte"
-        self.oppervlakte.definition = "De oppervlakte van het begroeide oppervlak in vierkante meter."
-        self.oppervlakte.constraints = ""
-        self.oppervlakte.usagenote = ""
-        self.oppervlakte.deprecated_version = ""
+        return self._oppervlakte.waarde
 
-        soortField = DtcVegetatieSoortnaam()
-        soortField.naam = "soort"
-        soortField.label = "soort"
-        soortField.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#BegroeidVoorkomen.soort"
-        soortField.definition = "Met deze eigenschap worden de Nederlandse soortnaam, wetenschappelijke soortnaam en de soortcode van de meest voorkomende soorten binnen het begroeid oppervlak weergegeven."
-        soortField.constraints = ""
-        soortField.usagenote = ""
-        soortField.deprecated_version = ""
-        self.soort = KardinaliteitField(minKardinaliteit="1", maxKardinaliteit="*", fieldToMultiply=soortField)
+    @oppervlakte.setter
+    def oppervlakte(self, value):
+        self._oppervlakte.set_waarde(value, owner=self)
+
+    @property
+    def soort(self):
         """Met deze eigenschap worden de Nederlandse soortnaam, wetenschappelijke soortnaam en de soortcode van de meest voorkomende soorten binnen het begroeid oppervlak weergegeven."""
+        return self._soort.waarde
 
-        self.taludwaarde = KeuzelijstField(naam="taludwaarde",
-                                           label="taludwaarde",
-                                           lijst=KlTaludWaarde(),
-                                           objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#BegroeidVoorkomen.taludwaarde",
-                                           definition="Een talud is het kunstmatig gedeelte van een vlak van de wegbaan, dijken, spoorbanen, vestingswerken, ... dat een helling (min. 20%, max 80% voor kunstmatig verharde taluds) vertoont en bedoeld voor het opvangen van een hoogteverschil.",
-                                           constraints="",
-                                           usagenote="",
-                                           deprecated_version="")
+    @soort.setter
+    def soort(self, value):
+        self._soort.set_waarde(value, owner=self)
+
+    @property
+    def taludwaarde(self):
         """Een talud is het kunstmatig gedeelte van een vlak van de wegbaan, dijken, spoorbanen, vestingswerken, ... dat een helling (min. 20%, max 80% voor kunstmatig verharde taluds) vertoont en bedoeld voor het opvangen van een hoogteverschil."""
+        return self._taludwaarde.waarde
+
+    @taludwaarde.setter
+    def taludwaarde(self, value):
+        self._taludwaarde.set_waarde(value, owner=self)

@@ -1,9 +1,10 @@
 # coding=utf-8
+from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
+from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.AIMNaamObject import AIMNaamObject
 from OTLModel.Datatypes.BooleanField import BooleanField
 from OTLModel.Datatypes.DtcDocument import DtcDocument
 from OTLModel.Datatypes.DteIPv4Adres import DteIPv4Adres
-from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlANPRMerk import KlANPRMerk
 from OTLModel.Datatypes.KlANPRModelnaam import KlANPRModelnaam
 from OTLModel.Datatypes.KlAlgRijrichting import KlAlgRijrichting
@@ -11,79 +12,118 @@ from OTLModel.Datatypes.StringField import StringField
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class ANPRCamera(AIMNaamObject):
+class ANPRCamera(AIMNaamObject, AttributeInfo):
     """Nummerplaatherkenningscamera: een camera die als output de nummerplaat van een voertuig in tekst geeft en een foto van het deel van het voertuig waar de nummerplaat zich bevindt. Afhankelijk van het merk en type gecombineerd met een al dan niet bewegend overzichtsbeeld."""
 
-    typeURI = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#ANPRCamera"
+    typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#ANPRCamera'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        super().__init__()
+        AIMNaamObject.__init__(self)
+        AttributeInfo.__init__(self)
 
-        self.dnsNaam = StringField(naam="dnsNaam",
-                                   label="DNS naam",
-                                   objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#ANPRCamera.dnsNaam",
-                                   definition="De DNSNaam (ook \"volledige domein naam\" genoemd ) is een unieke naam binnen het Domain Name System (DNS), het naamgevingssysteem waarmee computers, webservers, diensten en  toepassing op een unieke manier kunnen worden geïdentificeerd. Deze bevat zowel de hostname en de top level domein naam bv. 120c8-ar1.belfa.be.",
-                                   constraints="",
-                                   usagenote="",
-                                   deprecated_version="")
-        """De DNSNaam (ook \"volledige domein naam\" genoemd ) is een unieke naam binnen het Domain Name System (DNS), het naamgevingssysteem waarmee computers, webservers, diensten en  toepassing op een unieke manier kunnen worden geïdentificeerd. Deze bevat zowel de hostname en de top level domein naam bv. 120c8-ar1.belfa.be."""
+        self._dnsNaam = OTLAttribuut(field=StringField,
+                                     naam='dnsNaam',
+                                     label='DNS naam',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#ANPRCamera.dnsNaam',
+                                     definition='De DNSNaam (ook "volledige domein naam" genoemd ) is een unieke naam binnen het Domain Name System (DNS), het naamgevingssysteem waarmee computers, webservers, diensten en  toepassing op een unieke manier kunnen worden geïdentificeerd. Deze bevat zowel de hostname en de top level domein naam bv. 120c8-ar1.belfa.be.')
 
-        self.heeftFlits = BooleanField(naam="heeftFlits",
-                                       label="heeft flits",
-                                       objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#ANPRCamera.heeftFlits",
-                                       definition="Geeft aan of de camera een externe infrarood flits heeft.",
-                                       constraints="",
-                                       usagenote="",
-                                       deprecated_version="")
+        self._heeftFlits = OTLAttribuut(field=BooleanField,
+                                        naam='heeftFlits',
+                                        label='heeft flits',
+                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#ANPRCamera.heeftFlits',
+                                        definition='Geeft aan of de camera een externe infrarood flits heeft.')
+
+        self._ipAdres = OTLAttribuut(field=DteIPv4Adres,
+                                     naam='ipAdres',
+                                     label='ip adres',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#ANPRCamera.ipAdres',
+                                     definition='IP-adres van de ANPR-camera.')
+
+        self._merk = OTLAttribuut(field=KlANPRMerk,
+                                  naam='merk',
+                                  label='merk',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#ANPRCamera.merk',
+                                  definition='Het merk van de ANPR-camera.')
+
+        self._modelnaam = OTLAttribuut(field=KlANPRModelnaam,
+                                       naam='modelnaam',
+                                       label='modelnaam',
+                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#ANPRCamera.modelnaam',
+                                       definition='De modelnaam van de ANPR-camera.')
+
+        self._rijrichting = OTLAttribuut(field=KlAlgRijrichting,
+                                         naam='rijrichting',
+                                         label='rijrichting',
+                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#ANPRCamera.rijrichting',
+                                         definition='De rijrichting van de voertuigen die door de camera geregistreerd worden.')
+
+        self._technischeFiche = OTLAttribuut(field=DtcDocument,
+                                             naam='technischeFiche',
+                                             label='technische fiche',
+                                             objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#ANPRCamera.technischeFiche',
+                                             usagenote='Bestanden van het type pdf.',
+                                             definition='Technische fiche van dit element.')
+
+    @property
+    def dnsNaam(self):
+        """De DNSNaam (ook "volledige domein naam" genoemd ) is een unieke naam binnen het Domain Name System (DNS), het naamgevingssysteem waarmee computers, webservers, diensten en  toepassing op een unieke manier kunnen worden geïdentificeerd. Deze bevat zowel de hostname en de top level domein naam bv. 120c8-ar1.belfa.be."""
+        return self._dnsNaam.waarde
+
+    @dnsNaam.setter
+    def dnsNaam(self, value):
+        self._dnsNaam.set_waarde(value, owner=self)
+
+    @property
+    def heeftFlits(self):
         """Geeft aan of de camera een externe infrarood flits heeft."""
+        return self._heeftFlits.waarde
 
-        self.ipAdres = DteIPv4Adres()
+    @heeftFlits.setter
+    def heeftFlits(self, value):
+        self._heeftFlits.set_waarde(value, owner=self)
+
+    @property
+    def ipAdres(self):
         """IP-adres van de ANPR-camera."""
-        self.ipAdres.naam = "ipAdres"
-        self.ipAdres.label = "ip adres"
-        self.ipAdres.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#ANPRCamera.ipAdres"
-        self.ipAdres.definition = "IP-adres van de ANPR-camera."
-        self.ipAdres.constraints = ""
-        self.ipAdres.usagenote = ""
-        self.ipAdres.deprecated_version = ""
+        return self._ipAdres.waarde
 
-        self.merk = KeuzelijstField(naam="merk",
-                                    label="merk",
-                                    lijst=KlANPRMerk(),
-                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#ANPRCamera.merk",
-                                    definition="Het merk van de ANPR-camera.",
-                                    constraints="",
-                                    usagenote="",
-                                    deprecated_version="")
+    @ipAdres.setter
+    def ipAdres(self, value):
+        self._ipAdres.set_waarde(value, owner=self)
+
+    @property
+    def merk(self):
         """Het merk van de ANPR-camera."""
+        return self._merk.waarde
 
-        self.modelnaam = KeuzelijstField(naam="modelnaam",
-                                         label="modelnaam",
-                                         lijst=KlANPRModelnaam(),
-                                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#ANPRCamera.modelnaam",
-                                         definition="De modelnaam van de ANPR-camera.",
-                                         constraints="",
-                                         usagenote="",
-                                         deprecated_version="")
+    @merk.setter
+    def merk(self, value):
+        self._merk.set_waarde(value, owner=self)
+
+    @property
+    def modelnaam(self):
         """De modelnaam van de ANPR-camera."""
+        return self._modelnaam.waarde
 
-        self.rijrichting = KeuzelijstField(naam="rijrichting",
-                                           label="rijrichting",
-                                           lijst=KlAlgRijrichting(),
-                                           objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#ANPRCamera.rijrichting",
-                                           definition="De rijrichting van de voertuigen die door de camera geregistreerd worden.",
-                                           constraints="",
-                                           usagenote="",
-                                           deprecated_version="")
+    @modelnaam.setter
+    def modelnaam(self, value):
+        self._modelnaam.set_waarde(value, owner=self)
+
+    @property
+    def rijrichting(self):
         """De rijrichting van de voertuigen die door de camera geregistreerd worden."""
+        return self._rijrichting.waarde
 
-        self.technischeFiche = DtcDocument()
+    @rijrichting.setter
+    def rijrichting(self, value):
+        self._rijrichting.set_waarde(value, owner=self)
+
+    @property
+    def technischeFiche(self):
         """Technische fiche van dit element."""
-        self.technischeFiche.naam = "technischeFiche"
-        self.technischeFiche.label = "technische fiche"
-        self.technischeFiche.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#ANPRCamera.technischeFiche"
-        self.technischeFiche.definition = "Technische fiche van dit element."
-        self.technischeFiche.constraints = ""
-        self.technischeFiche.usagenote = "Bestanden van het type pdf."
-        self.technischeFiche.deprecated_version = ""
+        return self._technischeFiche.waarde
+
+    @technischeFiche.setter
+    def technischeFiche(self, value):
+        self._technischeFiche.set_waarde(value, owner=self)

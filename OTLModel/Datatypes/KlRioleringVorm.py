@@ -1,29 +1,64 @@
 # coding=utf-8
-from OTLModel.Datatypes.Keuzelijst import Keuzelijst
+from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
+from OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 
 # Generated with OTLEnumerationCreator. To modify: extend, do not edit
-class KlRioleringVorm(Keuzelijst):
+class KlRioleringVorm(KeuzelijstField):
     """Vormen van de riolering."""
+    naam = 'KlRioleringVorm'
+    label = 'Riolering vorm'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlRioleringVorm'
+    definition = 'Vormen van de riolering.'
+    codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlRioleringVorm'
+    options = {
+        'achthoekig': KeuzelijstWaarde(invulwaarde='achthoekig',
+                                       label='achthoekig',
+                                       definitie='Achthoekig',
+                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlRioleringVorm/achthoekig'),
+        'andere': KeuzelijstWaarde(invulwaarde='andere',
+                                   label='andere',
+                                   definitie='Andere',
+                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlRioleringVorm/andere'),
+        'cirkelvormig': KeuzelijstWaarde(invulwaarde='cirkelvormig',
+                                         label='cirkelvormig',
+                                         definitie='Cirkelvormig',
+                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlRioleringVorm/cirkelvormig'),
+        'cunette': KeuzelijstWaarde(invulwaarde='cunette',
+                                    label='cunette',
+                                    definitie='Cunette',
+                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlRioleringVorm/cunette'),
+        'driehoekig': KeuzelijstWaarde(invulwaarde='driehoekig',
+                                       label='driehoekig',
+                                       definitie='Driehoekig',
+                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlRioleringVorm/driehoekig'),
+        'eivormig': KeuzelijstWaarde(invulwaarde='eivormig',
+                                     label='eivormig',
+                                     definitie='Eivormig',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlRioleringVorm/eivormig'),
+        'gewelf': KeuzelijstWaarde(invulwaarde='gewelf',
+                                   label='gewelf',
+                                   definitie='Gewelf',
+                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlRioleringVorm/gewelf'),
+        'ovaal': KeuzelijstWaarde(invulwaarde='ovaal',
+                                  label='ovaal',
+                                  definitie='Ovaal',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlRioleringVorm/ovaal'),
+        'rechthoekig': KeuzelijstWaarde(invulwaarde='rechthoekig',
+                                        label='rechthoekig',
+                                        definitie='Rechthoekig',
+                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlRioleringVorm/rechthoekig'),
+        'u-vorm': KeuzelijstWaarde(invulwaarde='u-vorm',
+                                   label='u-vorm',
+                                   definitie='U-vorm',
+                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlRioleringVorm/u-vorm'),
+        'vierkant': KeuzelijstWaarde(invulwaarde='vierkant',
+                                     label='vierkant',
+                                     definitie='Vierkant',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlRioleringVorm/vierkant'),
+        'zeshoekig': KeuzelijstWaarde(invulwaarde='zeshoekig',
+                                      label='zeshoekig',
+                                      definitie='Zeshoekig',
+                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlRioleringVorm/zeshoekig')
+    }
 
-    def __init__(self):
-        super().__init__(naam="KlRioleringVorm",
-                         label="Riolering vorm",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlRioleringVorm",
-                         definition="Vormen van de riolering.",
-                         usagenote="",
-                         deprecated_version="",
-                         codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlRioleringVorm")
-
-        self.add_option("achthoekig", "achthoekig", "Achthoekig", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlRioleringVorm/achthoekig")
-        self.add_option("andere", "andere", "Andere", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlRioleringVorm/andere")
-        self.add_option("cirkelvormig", "cirkelvormig", "Cirkelvormig", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlRioleringVorm/cirkelvormig")
-        self.add_option("cunette", "cunette", "Cunette", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlRioleringVorm/cunette")
-        self.add_option("driehoekig", "driehoekig", "Driehoekig", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlRioleringVorm/driehoekig")
-        self.add_option("eivormig", "eivormig", "Eivormig", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlRioleringVorm/eivormig")
-        self.add_option("gewelf", "gewelf", "Gewelf", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlRioleringVorm/gewelf")
-        self.add_option("ovaal", "ovaal", "Ovaal", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlRioleringVorm/ovaal")
-        self.add_option("rechthoekig", "rechthoekig", "Rechthoekig", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlRioleringVorm/rechthoekig")
-        self.add_option("u-vorm", "u-vorm", "U-vorm", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlRioleringVorm/u-vorm")
-        self.add_option("vierkant", "vierkant", "Vierkant", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlRioleringVorm/vierkant")
-        self.add_option("zeshoekig", "zeshoekig", "Zeshoekig", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlRioleringVorm/zeshoekig")

@@ -1,59 +1,184 @@
 # coding=utf-8
-from OTLModel.Datatypes.Keuzelijst import Keuzelijst
+from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
+from OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 
 # Generated with OTLEnumerationCreator. To modify: extend, do not edit
-class KlOnderbouwType(Keuzelijst):
+class KlOnderbouwType(KeuzelijstField):
     """Types van onderbouw."""
+    naam = 'KlOnderbouwType'
+    label = 'Onderbouw type'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlOnderbouwType'
+    definition = 'Types van onderbouw.'
+    codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlOnderbouwType'
+    options = {
+        'bodemsubstraat': KeuzelijstWaarde(invulwaarde='bodemsubstraat',
+                                           label='bodemsubstraat',
+                                           definitie='Fundering van bodemsubstraat',
+                                           objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOnderbouwType/bodemsubstraat'),
+        'bodemsubstraat-met-steenslag': KeuzelijstWaarde(invulwaarde='bodemsubstraat-met-steenslag',
+                                                         label='bodemsubstraat met steenslag',
+                                                         definitie='Fundering van bodemsubstraat met steenslag',
+                                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOnderbouwType/bodemsubstraat-met-steenslag'),
+        'bodemsubstraat-met-zand': KeuzelijstWaarde(invulwaarde='bodemsubstraat-met-zand',
+                                                    label='bodemsubstraat met zand',
+                                                    definitie='Fundering van bodemsubstraat met zand',
+                                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOnderbouwType/bodemsubstraat-met-zand'),
+        'draineerzand': KeuzelijstWaarde(invulwaarde='draineerzand',
+                                         label='draineerzand',
+                                         definitie='Fundering van draineerzand.',
+                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOnderbouwType/draineerzand'),
+        'drainerend-schraal-beton': KeuzelijstWaarde(invulwaarde='drainerend-schraal-beton',
+                                                     label='drainerend schraal beton',
+                                                     definitie='Fundering van drainerend schraal beton',
+                                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOnderbouwType/drainerend-schraal-beton'),
+        'drainerend-zandcement': KeuzelijstWaarde(invulwaarde='drainerend-zandcement',
+                                                  label='drainerend zandcement',
+                                                  definitie='Fundering van drainerend zandcement.',
+                                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOnderbouwType/drainerend-zandcement'),
+        'geschikt-gemaakt-aanvullingsmateriaal': KeuzelijstWaarde(invulwaarde='geschikt-gemaakt-aanvullingsmateriaal',
+                                                                  label='geschikt gemaakt aanvullingsmateriaal',
+                                                                  definitie='Fundering van geschikt gemaakt aanvullingsmateriaal',
+                                                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOnderbouwType/geschikt-gemaakt-aanvullingsmateriaal'),
+        'granulaatcement': KeuzelijstWaarde(invulwaarde='granulaatcement',
+                                            label='granulaatcement',
+                                            definitie='granulaatcement',
+                                            objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOnderbouwType/granulaatcement'),
+        'granulaatmengsel-0-4': KeuzelijstWaarde(invulwaarde='granulaatmengsel-0-4',
+                                                 label='granulaatmengsel 0-4',
+                                                 definitie='Fundering van granulaatmengsel 0/4',
+                                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOnderbouwType/granulaatmengsel-0-4'),
+        'granulaatmengsel-0-6.3': KeuzelijstWaarde(invulwaarde='granulaatmengsel-0-6.3',
+                                                   label='granulaatmengsel 0-6.3',
+                                                   definitie='Fudnering van granulaatmengsel 0/6.3',
+                                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOnderbouwType/granulaatmengsel-0-6.3'),
+        'met-toevoegsel-behandelde-steenslag-met-continue-korrelverdeling---type-IA': KeuzelijstWaarde(invulwaarde='met-toevoegsel-behandelde-steenslag-met-continue-korrelverdeling---type-IA',
+                                                                                                       label='met toevoegsel behandelde steenslag met continue korrelverdeling - type IA',
+                                                                                                       definitie='Fundering van met toevoegsel behandelde steenslag met continue korrelverdeling - type IA',
+                                                                                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOnderbouwType/met-toevoegsel-behandelde-steenslag-met-continue-korrelverdeling---type-IA'),
+        'met-toevoegsel-behandelde-steenslag-met-continue-korrelverdeling---type-IB': KeuzelijstWaarde(invulwaarde='met-toevoegsel-behandelde-steenslag-met-continue-korrelverdeling---type-IB',
+                                                                                                       label='met toevoegsel behandelde steenslag met continue korrelverdeling - type IB',
+                                                                                                       definitie='Fundering van met toevoegsel behandelde steenslag met continue korrelverdeling - type IB',
+                                                                                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOnderbouwType/met-toevoegsel-behandelde-steenslag-met-continue-korrelverdeling---type-IB'),
+        'met-toevoegsel-behandelde-steenslag-met-continue-korrelverdeling---type-IIA': KeuzelijstWaarde(invulwaarde='met-toevoegsel-behandelde-steenslag-met-continue-korrelverdeling---type-IIA',
+                                                                                                        label='met toevoegsel behandelde steenslag met continue korrelverdeling - type IIA',
+                                                                                                        definitie='Fundering van met toevoegsel behandelde steenslag met continue korrelverdeling - type IIA',
+                                                                                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOnderbouwType/met-toevoegsel-behandelde-steenslag-met-continue-korrelverdeling---type-IIA'),
+        'met-toevoegsel-behandelde-steenslag-met-continue-korrelverdeling---type-IIB': KeuzelijstWaarde(invulwaarde='met-toevoegsel-behandelde-steenslag-met-continue-korrelverdeling---type-IIB',
+                                                                                                        label='met toevoegsel behandelde steenslag met continue korrelverdeling - type IIB',
+                                                                                                        definitie='Fundering van met toevoegsel behandelde steenslag met continue korrelverdeling - type IIB',
+                                                                                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOnderbouwType/met-toevoegsel-behandelde-steenslag-met-continue-korrelverdeling---type-IIB'),
+        'mortel': KeuzelijstWaarde(invulwaarde='mortel',
+                                   label='mortel',
+                                   definitie='Fundering van mortel',
+                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOnderbouwType/mortel'),
+        'onderfundering-type-I': KeuzelijstWaarde(invulwaarde='onderfundering-type-I',
+                                                  label='onderfundering type I',
+                                                  definitie='onderfundering type I',
+                                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOnderbouwType/onderfundering-type-I'),
+        'onderfundering-type-II': KeuzelijstWaarde(invulwaarde='onderfundering-type-II',
+                                                   label='onderfundering type II',
+                                                   definitie='onderfundering type II',
+                                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOnderbouwType/onderfundering-type-II'),
+        'onderfundering-type-III': KeuzelijstWaarde(invulwaarde='onderfundering-type-III',
+                                                    label='onderfundering type III',
+                                                    definitie='onderfundering type III',
+                                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOnderbouwType/onderfundering-type-III'),
+        'schraal-asfalt': KeuzelijstWaarde(invulwaarde='schraal-asfalt',
+                                           label='schraal asfalt',
+                                           definitie='Fundering van schraal asfalt',
+                                           objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOnderbouwType/schraal-asfalt'),
+        'schraal-beton': KeuzelijstWaarde(invulwaarde='schraal-beton',
+                                          label='schraal beton',
+                                          definitie='Fundering van schraal beton.',
+                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOnderbouwType/schraal-beton'),
+        'schraalbeton-met-stut': KeuzelijstWaarde(invulwaarde='schraalbeton-met-stut',
+                                                  label='schraalbeton met stut',
+                                                  definitie='Fundering van schraalbeton met stut',
+                                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOnderbouwType/schraalbeton-met-stut'),
+        'skeletbodems': KeuzelijstWaarde(invulwaarde='skeletbodems',
+                                         label='skeletbodems',
+                                         definitie='Fundering van skeletbodems.',
+                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOnderbouwType/skeletbodems'),
+        'stabiliseren-van-de-bestaande-verharding-met-cement-(recycling-in-situ)': KeuzelijstWaarde(invulwaarde='stabiliseren-van-de-bestaande-verharding-met-cement-(recycling-in-situ)',
+                                                                                                    label='stabiliseren van de bestaande verharding met cement (recycling in situ)',
+                                                                                                    definitie='Fundering door het stabiliseren van de bestaande verharding met cement (recycling in situ)',
+                                                                                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOnderbouwType/stabiliseren-van-de-bestaande-verharding-met-cement-(recycling-in-situ)'),
+        'steenslag-2-4': KeuzelijstWaarde(invulwaarde='steenslag-2-4',
+                                          label='steenslag 2-4',
+                                          definitie='Fundering van steenslag 2/4',
+                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOnderbouwType/steenslag-2-4'),
+        'steenslag-2-6.3': KeuzelijstWaarde(invulwaarde='steenslag-2-6.3',
+                                            label='steenslag 2-6.3',
+                                            definitie='Fundering van steenslag 2/6.3',
+                                            objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOnderbouwType/steenslag-2-6.3'),
+        'steenslag-met-continue-korrelverdeling-zonder-toevoegsel---type-I': KeuzelijstWaarde(invulwaarde='steenslag-met-continue-korrelverdeling-zonder-toevoegsel---type-I',
+                                                                                              label='steenslag met continue korrelverdeling zonder toevoegsel - type I',
+                                                                                              definitie='Fundering van steenslag met continue korrelverdeling zonder toevoegsel - type I',
+                                                                                              objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOnderbouwType/steenslag-met-continue-korrelverdeling-zonder-toevoegsel---type-I'),
+        'steenslag-met-continue-korrelverdeling-zonder-toevoegsel---type-II': KeuzelijstWaarde(invulwaarde='steenslag-met-continue-korrelverdeling-zonder-toevoegsel---type-II',
+                                                                                               label='steenslag met continue korrelverdeling zonder toevoegsel - type II',
+                                                                                               definitie='Fundering van steenslag met continue korrelverdeling zonder toevoegsel - type II',
+                                                                                               objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOnderbouwType/steenslag-met-continue-korrelverdeling-zonder-toevoegsel---type-II'),
+        'steenslag-met-niet-continue-korrelverdeling': KeuzelijstWaarde(invulwaarde='steenslag-met-niet-continue-korrelverdeling',
+                                                                        label='steenslag met niet-continue korrelverdeling',
+                                                                        definitie='Fundering van steenslagfundering met niet-continue korrelverdeling',
+                                                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOnderbouwType/steenslag-met-niet-continue-korrelverdeling'),
+        'steenslag-of-rolgrind': KeuzelijstWaarde(invulwaarde='steenslag-of-rolgrind',
+                                                  label='steenslag of rolgrind',
+                                                  definitie='Fundering van steenslag of rolgrind.',
+                                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOnderbouwType/steenslag-of-rolgrind'),
+        'teerhoudend-asfaltgranulaatcement': KeuzelijstWaarde(invulwaarde='teerhoudend-asfaltgranulaatcement',
+                                                              label='teerhoudend asfaltgranulaatcement',
+                                                              definitie='Fundering in teerhoudend asfaltgranulaatcement',
+                                                              objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOnderbouwType/teerhoudend-asfaltgranulaatcement'),
+        'ternair-mengsel': KeuzelijstWaarde(invulwaarde='ternair-mengsel',
+                                            label='ternair mengsel',
+                                            definitie='Fundering van ternair mengsel',
+                                            objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOnderbouwType/ternair-mengsel'),
+        'tijdelijke-steenslag-miv-verwijdering': KeuzelijstWaarde(invulwaarde='tijdelijke-steenslag-miv-verwijdering',
+                                                                  label='tijdelijke steenslag miv verwijdering',
+                                                                  definitie='Fundering van tijdelijke steenslag miv verwijdering',
+                                                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOnderbouwType/tijdelijke-steenslag-miv-verwijdering'),
+        'vliegas-cementmengsel': KeuzelijstWaarde(invulwaarde='vliegas-cementmengsel',
+                                                  label='vliegas cementmengsel',
+                                                  definitie='Fundering van vliesgas-cementmengsel.',
+                                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOnderbouwType/vliegas-cementmengsel'),
+        'vliegas-kalkmengsel': KeuzelijstWaarde(invulwaarde='vliegas-kalkmengsel',
+                                                label='vliegas kalkmengsel',
+                                                definitie='Fundering van vliesgas-kalkmengsel',
+                                                objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOnderbouwType/vliegas-kalkmengsel'),
+        'walsbeton': KeuzelijstWaarde(invulwaarde='walsbeton',
+                                      label='walsbeton',
+                                      definitie='Fundering van walsbeton.',
+                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOnderbouwType/walsbeton'),
+        'waterdoorlatende-steenslagfundering': KeuzelijstWaarde(invulwaarde='waterdoorlatende-steenslagfundering',
+                                                                label='waterdoorlatende steenslagfundering',
+                                                                definitie='Fundering van waterdoorlatende steenslagfundering',
+                                                                objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOnderbouwType/waterdoorlatende-steenslagfundering'),
+        'wortelruimte---bomengranulaat': KeuzelijstWaarde(invulwaarde='wortelruimte---bomengranulaat',
+                                                          label='wortelruimte - bomengranulaat',
+                                                          definitie='Fundering wortelruimte - bomengranulaat',
+                                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOnderbouwType/wortelruimte---bomengranulaat'),
+        'wortelruimte---bomenzand': KeuzelijstWaarde(invulwaarde='wortelruimte---bomenzand',
+                                                     label='wortelruimte - bomenzand',
+                                                     definitie='Fundering wortelruimte - bomenzand',
+                                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOnderbouwType/wortelruimte---bomenzand'),
+        'wortelruimte---groeiplaatsconstructie': KeuzelijstWaarde(invulwaarde='wortelruimte---groeiplaatsconstructie',
+                                                                  label='wortelruimte - groeiplaatsconstructie',
+                                                                  definitie='Fundering wortelruimte - groeiplaatsconstructie',
+                                                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOnderbouwType/wortelruimte---groeiplaatsconstructie'),
+        'zand': KeuzelijstWaarde(invulwaarde='zand',
+                                 label='zand',
+                                 definitie='Fundering van zand',
+                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOnderbouwType/zand'),
+        'zandcement': KeuzelijstWaarde(invulwaarde='zandcement',
+                                       label='zandcement',
+                                       definitie='Fundering van zandcement',
+                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOnderbouwType/zandcement'),
+        'zandcement-met-stut': KeuzelijstWaarde(invulwaarde='zandcement-met-stut',
+                                                label='zandcement met stut',
+                                                definitie='Fundering van zandcement met stut',
+                                                objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOnderbouwType/zandcement-met-stut')
+    }
 
-    def __init__(self):
-        super().__init__(naam="KlOnderbouwType",
-                         label="Onderbouw type",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlOnderbouwType",
-                         definition="Types van onderbouw.",
-                         usagenote="",
-                         deprecated_version="",
-                         codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlOnderbouwType")
-
-        self.add_option("bodemsubstraat", "bodemsubstraat", "Fundering van bodemsubstraat", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOnderbouwType/bodemsubstraat")
-        self.add_option("bodemsubstraat-met-steenslag", "bodemsubstraat met steenslag", "Fundering van bodemsubstraat met steenslag", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOnderbouwType/bodemsubstraat-met-steenslag")
-        self.add_option("bodemsubstraat-met-zand", "bodemsubstraat met zand", "Fundering van bodemsubstraat met zand", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOnderbouwType/bodemsubstraat-met-zand")
-        self.add_option("draineerzand", "draineerzand", "Fundering van draineerzand.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOnderbouwType/draineerzand")
-        self.add_option("drainerend-schraal-beton", "drainerend schraal beton", "Fundering van drainerend schraal beton", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOnderbouwType/drainerend-schraal-beton")
-        self.add_option("drainerend-zandcement", "drainerend zandcement", "Fundering van drainerend zandcement.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOnderbouwType/drainerend-zandcement")
-        self.add_option("geschikt-gemaakt-aanvullingsmateriaal", "geschikt gemaakt aanvullingsmateriaal", "Fundering van geschikt gemaakt aanvullingsmateriaal", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOnderbouwType/geschikt-gemaakt-aanvullingsmateriaal")
-        self.add_option("granulaatcement", "granulaatcement", "granulaatcement", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOnderbouwType/granulaatcement")
-        self.add_option("granulaatmengsel-0-4", "granulaatmengsel 0-4", "Fundering van granulaatmengsel 0/4", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOnderbouwType/granulaatmengsel-0-4")
-        self.add_option("granulaatmengsel-0-6.3", "granulaatmengsel 0-6.3", "Fudnering van granulaatmengsel 0/6.3", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOnderbouwType/granulaatmengsel-0-6.3")
-        self.add_option("met-toevoegsel-behandelde-steenslag-met-continue-korrelverdeling---type-IA", "met toevoegsel behandelde steenslag met continue korrelverdeling - type IA", "Fundering van met toevoegsel behandelde steenslag met continue korrelverdeling - type IA", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOnderbouwType/met-toevoegsel-behandelde-steenslag-met-continue-korrelverdeling---type-IA")
-        self.add_option("met-toevoegsel-behandelde-steenslag-met-continue-korrelverdeling---type-IB", "met toevoegsel behandelde steenslag met continue korrelverdeling - type IB", "Fundering van met toevoegsel behandelde steenslag met continue korrelverdeling - type IB", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOnderbouwType/met-toevoegsel-behandelde-steenslag-met-continue-korrelverdeling---type-IB")
-        self.add_option("met-toevoegsel-behandelde-steenslag-met-continue-korrelverdeling---type-IIA", "met toevoegsel behandelde steenslag met continue korrelverdeling - type IIA", "Fundering van met toevoegsel behandelde steenslag met continue korrelverdeling - type IIA", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOnderbouwType/met-toevoegsel-behandelde-steenslag-met-continue-korrelverdeling---type-IIA")
-        self.add_option("met-toevoegsel-behandelde-steenslag-met-continue-korrelverdeling---type-IIB", "met toevoegsel behandelde steenslag met continue korrelverdeling - type IIB", "Fundering van met toevoegsel behandelde steenslag met continue korrelverdeling - type IIB", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOnderbouwType/met-toevoegsel-behandelde-steenslag-met-continue-korrelverdeling---type-IIB")
-        self.add_option("mortel", "mortel", "Fundering van mortel", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOnderbouwType/mortel")
-        self.add_option("onderfundering-type-I", "onderfundering type I", "onderfundering type I", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOnderbouwType/onderfundering-type-I")
-        self.add_option("onderfundering-type-II", "onderfundering type II", "onderfundering type II", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOnderbouwType/onderfundering-type-II")
-        self.add_option("onderfundering-type-III", "onderfundering type III", "onderfundering type III", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOnderbouwType/onderfundering-type-III")
-        self.add_option("schraal-asfalt", "schraal asfalt", "Fundering van schraal asfalt", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOnderbouwType/schraal-asfalt")
-        self.add_option("schraal-beton", "schraal beton", "Fundering van schraal beton.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOnderbouwType/schraal-beton")
-        self.add_option("schraalbeton-met-stut", "schraalbeton met stut", "Fundering van schraalbeton met stut", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOnderbouwType/schraalbeton-met-stut")
-        self.add_option("skeletbodems", "skeletbodems", "Fundering van skeletbodems.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOnderbouwType/skeletbodems")
-        self.add_option("stabiliseren-van-de-bestaande-verharding-met-cement-(recycling-in-situ)", "stabiliseren van de bestaande verharding met cement (recycling in situ)", "Fundering door het stabiliseren van de bestaande verharding met cement (recycling in situ)", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOnderbouwType/stabiliseren-van-de-bestaande-verharding-met-cement-(recycling-in-situ)")
-        self.add_option("steenslag-2-4", "steenslag 2-4", "Fundering van steenslag 2/4", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOnderbouwType/steenslag-2-4")
-        self.add_option("steenslag-2-6.3", "steenslag 2-6.3", "Fundering van steenslag 2/6.3", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOnderbouwType/steenslag-2-6.3")
-        self.add_option("steenslag-met-continue-korrelverdeling-zonder-toevoegsel---type-I", "steenslag met continue korrelverdeling zonder toevoegsel - type I", "Fundering van steenslag met continue korrelverdeling zonder toevoegsel - type I", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOnderbouwType/steenslag-met-continue-korrelverdeling-zonder-toevoegsel---type-I")
-        self.add_option("steenslag-met-continue-korrelverdeling-zonder-toevoegsel---type-II", "steenslag met continue korrelverdeling zonder toevoegsel - type II", "Fundering van steenslag met continue korrelverdeling zonder toevoegsel - type II", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOnderbouwType/steenslag-met-continue-korrelverdeling-zonder-toevoegsel---type-II")
-        self.add_option("steenslag-met-niet-continue-korrelverdeling", "steenslag met niet-continue korrelverdeling", "Fundering van steenslagfundering met niet-continue korrelverdeling", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOnderbouwType/steenslag-met-niet-continue-korrelverdeling")
-        self.add_option("steenslag-of-rolgrind", "steenslag of rolgrind", "Fundering van steenslag of rolgrind.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOnderbouwType/steenslag-of-rolgrind")
-        self.add_option("teerhoudend-asfaltgranulaatcement", "teerhoudend asfaltgranulaatcement", "Fundering in teerhoudend asfaltgranulaatcement", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOnderbouwType/teerhoudend-asfaltgranulaatcement")
-        self.add_option("ternair-mengsel", "ternair mengsel", "Fundering van ternair mengsel", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOnderbouwType/ternair-mengsel")
-        self.add_option("tijdelijke-steenslag-miv-verwijdering", "tijdelijke steenslag miv verwijdering", "Fundering van tijdelijke steenslag miv verwijdering", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOnderbouwType/tijdelijke-steenslag-miv-verwijdering")
-        self.add_option("vliegas-cementmengsel", "vliegas cementmengsel", "Fundering van vliesgas-cementmengsel.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOnderbouwType/vliegas-cementmengsel")
-        self.add_option("vliegas-kalkmengsel", "vliegas kalkmengsel", "Fundering van vliesgas-kalkmengsel", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOnderbouwType/vliegas-kalkmengsel")
-        self.add_option("walsbeton", "walsbeton", "Fundering van walsbeton.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOnderbouwType/walsbeton")
-        self.add_option("waterdoorlatende-steenslagfundering", "waterdoorlatende steenslagfundering", "Fundering van waterdoorlatende steenslagfundering", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOnderbouwType/waterdoorlatende-steenslagfundering")
-        self.add_option("wortelruimte---bomengranulaat", "wortelruimte - bomengranulaat", "Fundering wortelruimte - bomengranulaat", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOnderbouwType/wortelruimte---bomengranulaat")
-        self.add_option("wortelruimte---bomenzand", "wortelruimte - bomenzand", "Fundering wortelruimte - bomenzand", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOnderbouwType/wortelruimte---bomenzand")
-        self.add_option("wortelruimte---groeiplaatsconstructie", "wortelruimte - groeiplaatsconstructie", "Fundering wortelruimte - groeiplaatsconstructie", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOnderbouwType/wortelruimte---groeiplaatsconstructie")
-        self.add_option("zand", "zand", "Fundering van zand", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOnderbouwType/zand")
-        self.add_option("zandcement", "zandcement", "Fundering van zandcement", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOnderbouwType/zandcement")
-        self.add_option("zandcement-met-stut", "zandcement met stut", "Fundering van zandcement met stut", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOnderbouwType/zandcement-met-stut")

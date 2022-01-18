@@ -1,24 +1,32 @@
 # coding=utf-8
+from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
+from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.Proef import Proef
 from OTLModel.Datatypes.KwantWrdInCentimeter import KwantWrdInCentimeter
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class ProefGemetenDikte(Proef):
+class ProefGemetenDikte(Proef, AttributeInfo):
     """De effectieve dikte van de laag."""
 
-    typeURI = "https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefGemetenDikte"
+    typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefGemetenDikte'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        super().__init__()
+        AttributeInfo.__init__(self)
+        Proef.__init__(self)
 
-        self.gemetenDikte = KwantWrdInCentimeter()
+        self._gemetenDikte = OTLAttribuut(field=KwantWrdInCentimeter,
+                                          naam='gemetenDikte',
+                                          label='gemeten dikte',
+                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefGemetenDikte.gemetenDikte',
+                                          definition='De gemeten dikte van de laag in centimeter.')
+
+    @property
+    def gemetenDikte(self):
         """De gemeten dikte van de laag in centimeter."""
-        self.gemetenDikte.naam = "gemetenDikte"
-        self.gemetenDikte.label = "gemeten dikte"
-        self.gemetenDikte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefGemetenDikte.gemetenDikte"
-        self.gemetenDikte.definition = "De gemeten dikte van de laag in centimeter."
-        self.gemetenDikte.constraints = ""
-        self.gemetenDikte.usagenote = ""
-        self.gemetenDikte.deprecated_version = ""
+        return self._gemetenDikte.waarde
+
+    @gemetenDikte.setter
+    def gemetenDikte(self, value):
+        self._gemetenDikte.set_waarde(value, owner=self)

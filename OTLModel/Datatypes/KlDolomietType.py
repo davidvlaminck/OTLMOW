@@ -1,20 +1,28 @@
 # coding=utf-8
-from OTLModel.Datatypes.Keuzelijst import Keuzelijst
+from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
+from OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 
 # Generated with OTLEnumerationCreator. To modify: extend, do not edit
-class KlDolomietType(Keuzelijst):
+class KlDolomietType(KeuzelijstField):
     """Types van dolomiet."""
+    naam = 'KlDolomietType'
+    label = 'Dolomiet type'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlDolomietType'
+    definition = 'Types van dolomiet.'
+    codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlDolomietType'
+    options = {
+        '0-15': KeuzelijstWaarde(invulwaarde='0-15',
+                                 label='0-15',
+                                 definitie='0/15',
+                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlDolomietType/0-15'),
+        '0-5': KeuzelijstWaarde(invulwaarde='0-5',
+                                label='0-5',
+                                definitie='0/5',
+                                objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlDolomietType/0-5'),
+        '5-15': KeuzelijstWaarde(invulwaarde='5-15',
+                                 label='5-15',
+                                 definitie='mei-15',
+                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlDolomietType/5-15')
+    }
 
-    def __init__(self):
-        super().__init__(naam="KlDolomietType",
-                         label="Dolomiet type",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlDolomietType",
-                         definition="Types van dolomiet.",
-                         usagenote="",
-                         deprecated_version="",
-                         codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlDolomietType")
-
-        self.add_option("0-15", "0-15", "0/15", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlDolomietType/0-15")
-        self.add_option("0-5", "0-5", "0/5", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlDolomietType/0-5")
-        self.add_option("5-15", "5-15", "mei-15", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlDolomietType/5-15")

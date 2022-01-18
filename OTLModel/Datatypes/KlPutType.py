@@ -1,23 +1,40 @@
 # coding=utf-8
-from OTLModel.Datatypes.Keuzelijst import Keuzelijst
+from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
+from OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 
 # Generated with OTLEnumerationCreator. To modify: extend, do not edit
-class KlPutType(Keuzelijst):
+class KlPutType(KeuzelijstField):
     """Types van put."""
+    naam = 'KlPutType'
+    label = 'Put type'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlPutType'
+    definition = 'Types van put.'
+    codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlPutType'
+    options = {
+        'aansluitingstoegangsput-(ATP)': KeuzelijstWaarde(invulwaarde='aansluitingstoegangsput-(ATP)',
+                                                          label='aansluitingstoegangsput (ATP)',
+                                                          definitie='Knijpopening',
+                                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlPutType/aansluitingstoegangsput-(ATP)'),
+        'begintoegangs--of-verbindingsput-(BIP-of-DVP)': KeuzelijstWaarde(invulwaarde='begintoegangs--of-verbindingsput-(BIP-of-DVP)',
+                                                                          label='begintoegangs- of verbindingsput (BIP of DVP)',
+                                                                          definitie='Begintoegangs- of verbindingsput (= BIP of DVP)',
+                                                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlPutType/begintoegangs--of-verbindingsput-(BIP-of-DVP)'),
+        'doorlooptoegangs--of-verbindingsput-(DTP-of-DVP)': KeuzelijstWaarde(invulwaarde='doorlooptoegangs--of-verbindingsput-(DTP-of-DVP)',
+                                                                             label='doorlooptoegangs- of verbindingsput (DTP of DVP)',
+                                                                             definitie='Doorlooptoegangs- of verbindingsput (= DTP of DVP)',
+                                                                             objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlPutType/doorlooptoegangs--of-verbindingsput-(DTP-of-DVP)'),
+        'hoektoegangsput-(HTP)': KeuzelijstWaarde(invulwaarde='hoektoegangsput-(HTP)',
+                                                  label='hoektoegangsput (HTP)',
+                                                  definitie='Hoektoegangsput (= HTP)',
+                                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlPutType/hoektoegangsput-(HTP)'),
+        'putbuis-of-schachttoegangsput-(STP)': KeuzelijstWaarde(invulwaarde='putbuis-of-schachttoegangsput-(STP)',
+                                                                label='putbuis of schachttoegangsput (STP)',
+                                                                definitie='Putbuis of schachttoegangsput (= STP)',
+                                                                objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlPutType/putbuis-of-schachttoegangsput-(STP)'),
+        'vervaltoegangsput-(VTP)': KeuzelijstWaarde(invulwaarde='vervaltoegangsput-(VTP)',
+                                                    label='vervaltoegangsput (VTP)',
+                                                    definitie='Vervaltoegangsput (= VTP)',
+                                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlPutType/vervaltoegangsput-(VTP)')
+    }
 
-    def __init__(self):
-        super().__init__(naam="KlPutType",
-                         label="Put type",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlPutType",
-                         definition="Types van put.",
-                         usagenote="",
-                         deprecated_version="",
-                         codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlPutType")
-
-        self.add_option("aansluitingstoegangsput-(ATP)", "aansluitingstoegangsput (ATP)", "Knijpopening", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlPutType/aansluitingstoegangsput-(ATP)")
-        self.add_option("begintoegangs--of-verbindingsput-(BIP-of-DVP)", "begintoegangs- of verbindingsput (BIP of DVP)", "Begintoegangs- of verbindingsput (= BIP of DVP)", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlPutType/begintoegangs--of-verbindingsput-(BIP-of-DVP)")
-        self.add_option("doorlooptoegangs--of-verbindingsput-(DTP-of-DVP)", "doorlooptoegangs- of verbindingsput (DTP of DVP)", "Doorlooptoegangs- of verbindingsput (= DTP of DVP)", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlPutType/doorlooptoegangs--of-verbindingsput-(DTP-of-DVP)")
-        self.add_option("hoektoegangsput-(HTP)", "hoektoegangsput (HTP)", "Hoektoegangsput (= HTP)", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlPutType/hoektoegangsput-(HTP)")
-        self.add_option("putbuis-of-schachttoegangsput-(STP)", "putbuis of schachttoegangsput (STP)", "Putbuis of schachttoegangsput (= STP)", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlPutType/putbuis-of-schachttoegangsput-(STP)")
-        self.add_option("vervaltoegangsput-(VTP)", "vervaltoegangsput (VTP)", "Vervaltoegangsput (= VTP)", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlPutType/vervaltoegangsput-(VTP)")

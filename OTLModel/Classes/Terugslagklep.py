@@ -1,6 +1,7 @@
 # coding=utf-8
+from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
+from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.LinkendElement import LinkendElement
-from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlTerugslagklepType import KlTerugslagklepType
 from OTLModel.Datatypes.KlTsklepAfsluiterMateriaal import KlTsklepAfsluiterMateriaal
 from OTLModel.Datatypes.KlVormTerugslagklep import KlVormTerugslagklep
@@ -9,81 +10,117 @@ from OTLModel.Datatypes.KwantWrdInMillimeter import KwantWrdInMillimeter
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Terugslagklep(LinkendElement):
+class Terugslagklep(LinkendElement, AttributeInfo):
     """Een terugslagklep is een klep die dient om water, vloeistof, granulaat, poeder of gas in één richting door te laten. Meestal duwt het medium de klep bij het heenstromen open en sluit een veer of de zwaartekracht de klep."""
 
-    typeURI = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Terugslagklep"
+    typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Terugslagklep'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        super().__init__()
+        AttributeInfo.__init__(self)
+        LinkendElement.__init__(self)
 
-        self.breedteOpening = KwantWrdInMillimeter()
+        self._breedteOpening = OTLAttribuut(field=KwantWrdInMillimeter,
+                                            naam='breedteOpening',
+                                            label='breedte opening',
+                                            objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Terugslagklep.breedteOpening',
+                                            definition='Breedte van de opening die door de terugslagklep wordt afgesloten in millimeter.')
+
+        self._diameter = OTLAttribuut(field=KwantWrdInMillimeter,
+                                      naam='diameter',
+                                      label='diameter',
+                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Terugslagklep.diameter',
+                                      definition='De diameter van de terugslagklep in millimeter.')
+
+        self._hoogteOpening = OTLAttribuut(field=KwantWrdInMillimeter,
+                                           naam='hoogteOpening',
+                                           label='hoogte opening',
+                                           objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Terugslagklep.hoogteOpening',
+                                           definition='De hoogte van de opening die door de terugslagklep wordt afgesloten in millimeter.')
+
+        self._materiaal = OTLAttribuut(field=KlTsklepAfsluiterMateriaal,
+                                       naam='materiaal',
+                                       label='materiaal',
+                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Terugslagklep.materiaal',
+                                       definition='Het materiaal waaruit de terugslagklep is vervaardigd.')
+
+        self._peil = OTLAttribuut(field=KwantWrdInMeterTAW,
+                                  naam='peil',
+                                  label='peil',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Terugslagklep.peil',
+                                  definition='Niveau van de doorlaatopening van de terugslagklep uitgedrukt in meter-TAW.')
+
+        self._type = OTLAttribuut(field=KlTerugslagklepType,
+                                  naam='type',
+                                  label='type',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Terugslagklep.type',
+                                  definition='Bepaalt het type van terugslagklep.')
+
+        self._vorm = OTLAttribuut(field=KlVormTerugslagklep,
+                                  naam='vorm',
+                                  label='vorm',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Terugslagklep.vorm',
+                                  definition='De vorm van de terugslagklep.')
+
+    @property
+    def breedteOpening(self):
         """Breedte van de opening die door de terugslagklep wordt afgesloten in millimeter."""
-        self.breedteOpening.naam = "breedteOpening"
-        self.breedteOpening.label = "breedte opening"
-        self.breedteOpening.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Terugslagklep.breedteOpening"
-        self.breedteOpening.definition = "Breedte van de opening die door de terugslagklep wordt afgesloten in millimeter."
-        self.breedteOpening.constraints = ""
-        self.breedteOpening.usagenote = ""
-        self.breedteOpening.deprecated_version = ""
+        return self._breedteOpening.waarde
 
-        self.diameter = KwantWrdInMillimeter()
+    @breedteOpening.setter
+    def breedteOpening(self, value):
+        self._breedteOpening.set_waarde(value, owner=self)
+
+    @property
+    def diameter(self):
         """De diameter van de terugslagklep in millimeter."""
-        self.diameter.naam = "diameter"
-        self.diameter.label = "diameter"
-        self.diameter.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Terugslagklep.diameter"
-        self.diameter.definition = "De diameter van de terugslagklep in millimeter."
-        self.diameter.constraints = ""
-        self.diameter.usagenote = ""
-        self.diameter.deprecated_version = ""
+        return self._diameter.waarde
 
-        self.hoogteOpening = KwantWrdInMillimeter()
+    @diameter.setter
+    def diameter(self, value):
+        self._diameter.set_waarde(value, owner=self)
+
+    @property
+    def hoogteOpening(self):
         """De hoogte van de opening die door de terugslagklep wordt afgesloten in millimeter."""
-        self.hoogteOpening.naam = "hoogteOpening"
-        self.hoogteOpening.label = "hoogte opening"
-        self.hoogteOpening.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Terugslagklep.hoogteOpening"
-        self.hoogteOpening.definition = "De hoogte van de opening die door de terugslagklep wordt afgesloten in millimeter."
-        self.hoogteOpening.constraints = ""
-        self.hoogteOpening.usagenote = ""
-        self.hoogteOpening.deprecated_version = ""
+        return self._hoogteOpening.waarde
 
-        self.materiaal = KeuzelijstField(naam="materiaal",
-                                         label="materiaal",
-                                         lijst=KlTsklepAfsluiterMateriaal(),
-                                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Terugslagklep.materiaal",
-                                         definition="Het materiaal waaruit de terugslagklep is vervaardigd.",
-                                         constraints="",
-                                         usagenote="",
-                                         deprecated_version="")
+    @hoogteOpening.setter
+    def hoogteOpening(self, value):
+        self._hoogteOpening.set_waarde(value, owner=self)
+
+    @property
+    def materiaal(self):
         """Het materiaal waaruit de terugslagklep is vervaardigd."""
+        return self._materiaal.waarde
 
-        self.peil = KwantWrdInMeterTAW()
+    @materiaal.setter
+    def materiaal(self, value):
+        self._materiaal.set_waarde(value, owner=self)
+
+    @property
+    def peil(self):
         """Niveau van de doorlaatopening van de terugslagklep uitgedrukt in meter-TAW."""
-        self.peil.naam = "peil"
-        self.peil.label = "peil"
-        self.peil.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Terugslagklep.peil"
-        self.peil.definition = "Niveau van de doorlaatopening van de terugslagklep uitgedrukt in meter-TAW."
-        self.peil.constraints = ""
-        self.peil.usagenote = ""
-        self.peil.deprecated_version = ""
+        return self._peil.waarde
 
-        self.type = KeuzelijstField(naam="type",
-                                    label="type",
-                                    lijst=KlTerugslagklepType(),
-                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Terugslagklep.type",
-                                    definition="Bepaalt het type van terugslagklep.",
-                                    constraints="",
-                                    usagenote="",
-                                    deprecated_version="")
+    @peil.setter
+    def peil(self, value):
+        self._peil.set_waarde(value, owner=self)
+
+    @property
+    def type(self):
         """Bepaalt het type van terugslagklep."""
+        return self._type.waarde
 
-        self.vorm = KeuzelijstField(naam="vorm",
-                                    label="vorm",
-                                    lijst=KlVormTerugslagklep(),
-                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Terugslagklep.vorm",
-                                    definition="De vorm van de terugslagklep.",
-                                    constraints="",
-                                    usagenote="",
-                                    deprecated_version="")
+    @type.setter
+    def type(self, value):
+        self._type.set_waarde(value, owner=self)
+
+    @property
+    def vorm(self):
         """De vorm van de terugslagklep."""
+        return self._vorm.waarde
+
+    @vorm.setter
+    def vorm(self, value):
+        self._vorm.set_waarde(value, owner=self)

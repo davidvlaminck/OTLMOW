@@ -1,24 +1,32 @@
 # coding=utf-8
+from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
+from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.Proef import Proef
 from OTLModel.Datatypes.DtcGeluidstestRapport import DtcGeluidstestRapport
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class ProefGeluidstest(Proef):
+class ProefGeluidstest(Proef, AttributeInfo):
     """Test van het geluidsscherm op oa. luchtgeluidsisolatie, geluidsabsorptie, e.d. """
 
-    typeURI = "https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefGeluidstest"
+    typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefGeluidstest'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        super().__init__()
+        AttributeInfo.__init__(self)
+        Proef.__init__(self)
 
-        self.geluidstestrapport = DtcGeluidstestRapport()
+        self._geluidstestrapport = OTLAttribuut(field=DtcGeluidstestRapport,
+                                                naam='geluidstestrapport',
+                                                label='geluidstestrapport',
+                                                objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefGeluidstest.geluidstestrapport',
+                                                definition='Het resultaat geluidstest.')
+
+    @property
+    def geluidstestrapport(self):
         """Het resultaat geluidstest."""
-        self.geluidstestrapport.naam = "geluidstestrapport"
-        self.geluidstestrapport.label = "geluidstestrapport"
-        self.geluidstestrapport.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefGeluidstest.geluidstestrapport"
-        self.geluidstestrapport.definition = "Het resultaat geluidstest."
-        self.geluidstestrapport.constraints = ""
-        self.geluidstestrapport.usagenote = ""
-        self.geluidstestrapport.deprecated_version = ""
+        return self._geluidstestrapport.waarde
+
+    @geluidstestrapport.setter
+    def geluidstestrapport(self, value):
+        self._geluidstestrapport.set_waarde(value, owner=self)

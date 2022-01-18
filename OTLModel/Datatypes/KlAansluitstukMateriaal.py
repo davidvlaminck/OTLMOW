@@ -1,22 +1,36 @@
 # coding=utf-8
-from OTLModel.Datatypes.Keuzelijst import Keuzelijst
+from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
+from OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 
 # Generated with OTLEnumerationCreator. To modify: extend, do not edit
-class KlAansluitstukMateriaal(Keuzelijst):
+class KlAansluitstukMateriaal(KeuzelijstField):
     """Het materiaal van het aansluitstuk."""
+    naam = 'KlAansluitstukMateriaal'
+    label = 'Aansluitstuk materiaal'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlAansluitstukMateriaal'
+    definition = 'Het materiaal van het aansluitstuk.'
+    codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlAansluitstukMateriaal'
+    options = {
+        'gres': KeuzelijstWaarde(invulwaarde='gres',
+                                 label='gres',
+                                 definitie='Gres',
+                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAansluitstukMateriaal/gres'),
+        'polyethyleen': KeuzelijstWaarde(invulwaarde='polyethyleen',
+                                         label='polyethyleen',
+                                         definitie='polyethyleen',
+                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAansluitstukMateriaal/polyethyleen'),
+        'pp': KeuzelijstWaarde(invulwaarde='pp',
+                               label='pp',
+                               definitie='Polypropyleen',
+                               objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAansluitstukMateriaal/pp'),
+        'pvc': KeuzelijstWaarde(invulwaarde='pvc',
+                                label='pvc',
+                                definitie='Polyvinylchloride',
+                                objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAansluitstukMateriaal/pvc'),
+        'pvc-u-composiet': KeuzelijstWaarde(invulwaarde='pvc-u-composiet',
+                                            label='pvc-u-composiet',
+                                            definitie='pvc-u-composiet',
+                                            objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAansluitstukMateriaal/pvc-u-composiet')
+    }
 
-    def __init__(self):
-        super().__init__(naam="KlAansluitstukMateriaal",
-                         label="Aansluitstuk materiaal",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlAansluitstukMateriaal",
-                         definition="Het materiaal van het aansluitstuk.",
-                         usagenote="",
-                         deprecated_version="",
-                         codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlAansluitstukMateriaal")
-
-        self.add_option("gres", "gres", "Gres", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAansluitstukMateriaal/gres")
-        self.add_option("polyethyleen", "polyethyleen", "polyethyleen", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAansluitstukMateriaal/polyethyleen")
-        self.add_option("pp", "pp", "Polypropyleen", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAansluitstukMateriaal/pp")
-        self.add_option("pvc", "pvc", "Polyvinylchloride", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAansluitstukMateriaal/pvc")
-        self.add_option("pvc-u-composiet", "pvc-u-composiet", "pvc-u-composiet", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAansluitstukMateriaal/pvc-u-composiet")

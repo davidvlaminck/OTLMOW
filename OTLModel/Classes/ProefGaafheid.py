@@ -1,24 +1,32 @@
 # coding=utf-8
+from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
+from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.Proef import Proef
 from OTLModel.Datatypes.DtcDocument import DtcDocument
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class ProefGaafheid(Proef):
+class ProefGaafheid(Proef, AttributeInfo):
     """Controle van het lijnvormig element op de ongeschondenheid, volledigheid en zuiverheid."""
 
-    typeURI = "https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefGaafheid"
+    typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefGaafheid'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        super().__init__()
+        AttributeInfo.__init__(self)
+        Proef.__init__(self)
 
-        self.gaafheid = DtcDocument()
+        self._gaafheid = OTLAttribuut(field=DtcDocument,
+                                      naam='gaafheid',
+                                      label='gaafheid',
+                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefGaafheid.gaafheid',
+                                      definition='De resultaten van de controle.')
+
+    @property
+    def gaafheid(self):
         """De resultaten van de controle."""
-        self.gaafheid.naam = "gaafheid"
-        self.gaafheid.label = "gaafheid"
-        self.gaafheid.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefGaafheid.gaafheid"
-        self.gaafheid.definition = "De resultaten van de controle."
-        self.gaafheid.constraints = ""
-        self.gaafheid.usagenote = ""
-        self.gaafheid.deprecated_version = ""
+        return self._gaafheid.waarde
+
+    @gaafheid.setter
+    def gaafheid(self, value):
+        self._gaafheid.set_waarde(value, owner=self)

@@ -1,49 +1,66 @@
 # coding=utf-8
+from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
+from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.Voedingspunt import Voedingspunt
 from OTLModel.Classes.BevestigingGC import BevestigingGC
-from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlZonnepaneelMerk import KlZonnepaneelMerk
 from OTLModel.Datatypes.KlZonnepaneelModelnaam import KlZonnepaneelModelnaam
 from OTLModel.Datatypes.KwantWrdInWatt import KwantWrdInWatt
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Zonnepaneel(Voedingspunt, BevestigingGC):
+class Zonnepaneel(Voedingspunt, BevestigingGC, AttributeInfo):
     """Toestel om elektrische energie op te wekken uit zonlicht met als doel het voeden van een installatie. Ook wel fotovoltaïsche cellen of zonnecellen genoemd."""
 
-    typeURI = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Zonnepaneel"
+    typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Zonnepaneel'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
+        AttributeInfo.__init__(self)
         BevestigingGC.__init__(self)
         Voedingspunt.__init__(self)
 
-        self.merk = KeuzelijstField(naam="merk",
-                                    label="merk",
-                                    lijst=KlZonnepaneelMerk(),
-                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Zonnepaneel.merk",
-                                    definition="Het merk van het zonnepaneel.",
-                                    constraints="",
-                                    usagenote="",
-                                    deprecated_version="")
+        self._merk = OTLAttribuut(field=KlZonnepaneelMerk,
+                                  naam='merk',
+                                  label='merk',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Zonnepaneel.merk',
+                                  definition='Het merk van het zonnepaneel.')
+
+        self._modelnaam = OTLAttribuut(field=KlZonnepaneelModelnaam,
+                                       naam='modelnaam',
+                                       label='modelnaam',
+                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Zonnepaneel.modelnaam',
+                                       definition='De modelnaam van het zonnepaneel.')
+
+        self._vermogen = OTLAttribuut(field=KwantWrdInWatt,
+                                      naam='vermogen',
+                                      label='vermogen',
+                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Zonnepaneel.vermogen',
+                                      definition='Het vermogen van het zonnepaneel.')
+
+    @property
+    def merk(self):
         """Het merk van het zonnepaneel."""
+        return self._merk.waarde
 
-        self.modelnaam = KeuzelijstField(naam="modelnaam",
-                                         label="modelnaam",
-                                         lijst=KlZonnepaneelModelnaam(),
-                                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Zonnepaneel.modelnaam",
-                                         definition="De modelnaam van het zonnepaneel.",
-                                         constraints="",
-                                         usagenote="",
-                                         deprecated_version="")
+    @merk.setter
+    def merk(self, value):
+        self._merk.set_waarde(value, owner=self)
+
+    @property
+    def modelnaam(self):
         """De modelnaam van het zonnepaneel."""
+        return self._modelnaam.waarde
 
-        self.vermogen = KwantWrdInWatt()
+    @modelnaam.setter
+    def modelnaam(self, value):
+        self._modelnaam.set_waarde(value, owner=self)
+
+    @property
+    def vermogen(self):
         """Het vermogen van het zonnepaneel."""
-        self.vermogen.naam = "vermogen"
-        self.vermogen.label = "vermogen"
-        self.vermogen.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Zonnepaneel.vermogen"
-        self.vermogen.definition = "Het vermogen van het zonnepaneel."
-        self.vermogen.constraints = ""
-        self.vermogen.usagenote = ""
-        self.vermogen.deprecated_version = ""
+        return self._vermogen.waarde
+
+    @vermogen.setter
+    def vermogen(self, value):
+        self._vermogen.set_waarde(value, owner=self)

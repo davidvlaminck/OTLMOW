@@ -1,34 +1,68 @@
 # coding=utf-8
-from OTLModel.Datatypes.Keuzelijst import Keuzelijst
+from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
+from OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 
 # Generated with OTLEnumerationCreator. To modify: extend, do not edit
-class KlVerkeerslichtMasker(Keuzelijst):
+class KlVerkeerslichtMasker(KeuzelijstField):
     """Keuzelijst met de gangbare types masker die op een verkeerslicht zijn aangebracht."""
+    naam = 'KlVerkeerslichtMasker'
+    label = 'Verkeerslicht masker'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#KlVerkeerslichtMasker'
+    definition = 'Keuzelijst met de gangbare types masker die op een verkeerslicht zijn aangebracht.'
+    codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlVerkeerslichtMasker'
+    options = {
+        'driehoek': KeuzelijstWaarde(invulwaarde='driehoek',
+                                     label='driehoek',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerkeerslichtMasker/driehoek'),
+        'fietser': KeuzelijstWaarde(invulwaarde='fietser',
+                                    label='fietser',
+                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerkeerslichtMasker/fietser'),
+        'horizontale-balk': KeuzelijstWaarde(invulwaarde='horizontale-balk',
+                                             label='horizontale balk',
+                                             objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerkeerslichtMasker/horizontale-balk'),
+        'kleine-cirkel': KeuzelijstWaarde(invulwaarde='kleine-cirkel',
+                                          label='kleine cirkel',
+                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerkeerslichtMasker/kleine-cirkel'),
+        'kruis': KeuzelijstWaarde(invulwaarde='kruis',
+                                  label='kruis',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerkeerslichtMasker/kruis'),
+        'niet-gekend': KeuzelijstWaarde(invulwaarde='niet-gekend',
+                                        label='niet gekend',
+                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerkeerslichtMasker/niet-gekend'),
+        'pijl-links': KeuzelijstWaarde(invulwaarde='pijl-links',
+                                       label='pijl links',
+                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerkeerslichtMasker/pijl-links'),
+        'pijl-rechtdoor': KeuzelijstWaarde(invulwaarde='pijl-rechtdoor',
+                                           label='pijl rechtdoor',
+                                           definitie='Pijl rechtdoor',
+                                           objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerkeerslichtMasker/pijl-rechtdoor'),
+        'pijl-rechtdoor-links': KeuzelijstWaarde(invulwaarde='pijl-rechtdoor-links',
+                                                 label='pijl rechtdoor links',
+                                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerkeerslichtMasker/pijl-rechtdoor-links'),
+        'pijl-rechtdoor-rechts': KeuzelijstWaarde(invulwaarde='pijl-rechtdoor-rechts',
+                                                  label='pijl rechtdoor rechts',
+                                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerkeerslichtMasker/pijl-rechtdoor-rechts'),
+        'pijl-rechts': KeuzelijstWaarde(invulwaarde='pijl-rechts',
+                                        label='pijl rechts',
+                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerkeerslichtMasker/pijl-rechts'),
+        'schuine-balk-+45°': KeuzelijstWaarde(invulwaarde='schuine-balk-+45°',
+                                              label='schuine balk +45°',
+                                              objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerkeerslichtMasker/schuine-balk-+45°'),
+        'schuine-balk--45°': KeuzelijstWaarde(invulwaarde='schuine-balk--45°',
+                                              label='schuine balk -45°',
+                                              objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerkeerslichtMasker/schuine-balk--45°'),
+        'verticale-balk': KeuzelijstWaarde(invulwaarde='verticale-balk',
+                                           label='verticale balk',
+                                           objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerkeerslichtMasker/verticale-balk'),
+        'vierkant-groen': KeuzelijstWaarde(invulwaarde='vierkant-groen',
+                                           label='vierkant groen',
+                                           objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerkeerslichtMasker/vierkant-groen'),
+        'voetganger': KeuzelijstWaarde(invulwaarde='voetganger',
+                                       label='voetganger',
+                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerkeerslichtMasker/voetganger'),
+        'volle-lens': KeuzelijstWaarde(invulwaarde='volle-lens',
+                                       label='volle lens',
+                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerkeerslichtMasker/volle-lens')
+    }
 
-    def __init__(self):
-        super().__init__(naam="KlVerkeerslichtMasker",
-                         label="Verkeerslicht masker",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#KlVerkeerslichtMasker",
-                         definition="Keuzelijst met de gangbare types masker die op een verkeerslicht zijn aangebracht.",
-                         usagenote="",
-                         deprecated_version="",
-                         codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlVerkeerslichtMasker")
-
-        self.add_option("driehoek", "driehoek", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerkeerslichtMasker/driehoek")
-        self.add_option("fietser", "fietser", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerkeerslichtMasker/fietser")
-        self.add_option("horizontale-balk", "horizontale balk", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerkeerslichtMasker/horizontale-balk")
-        self.add_option("kleine-cirkel", "kleine cirkel", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerkeerslichtMasker/kleine-cirkel")
-        self.add_option("kruis", "kruis", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerkeerslichtMasker/kruis")
-        self.add_option("niet-gekend", "niet gekend", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerkeerslichtMasker/niet-gekend")
-        self.add_option("pijl-links", "pijl links", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerkeerslichtMasker/pijl-links")
-        self.add_option("pijl-rechtdoor", "pijl rechtdoor", "Pijl rechtdoor", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerkeerslichtMasker/pijl-rechtdoor")
-        self.add_option("pijl-rechtdoor-links", "pijl rechtdoor links", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerkeerslichtMasker/pijl-rechtdoor-links")
-        self.add_option("pijl-rechtdoor-rechts", "pijl rechtdoor rechts", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerkeerslichtMasker/pijl-rechtdoor-rechts")
-        self.add_option("pijl-rechts", "pijl rechts", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerkeerslichtMasker/pijl-rechts")
-        self.add_option("schuine-balk-+45°", "schuine balk +45°", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerkeerslichtMasker/schuine-balk-+45°")
-        self.add_option("schuine-balk--45°", "schuine balk -45°", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerkeerslichtMasker/schuine-balk--45°")
-        self.add_option("verticale-balk", "verticale balk", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerkeerslichtMasker/verticale-balk")
-        self.add_option("vierkant-groen", "vierkant groen", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerkeerslichtMasker/vierkant-groen")
-        self.add_option("voetganger", "voetganger", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerkeerslichtMasker/voetganger")
-        self.add_option("volle-lens", "volle lens", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerkeerslichtMasker/volle-lens")

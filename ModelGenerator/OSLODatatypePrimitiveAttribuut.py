@@ -4,8 +4,8 @@ import dataclasses
 @dataclasses.dataclass
 class OSLODatatypePrimitiveAttribuut:
     name: str
-    label_nl: str
-    definition_nl: str
+    label: str
+    definition: str
     class_uri: str
     kardinaliteit_min: str
     kardinaliteit_max: str
@@ -14,7 +14,7 @@ class OSLODatatypePrimitiveAttribuut:
     overerving: int
     constraints: str
     readonly: int
-    usagenote_nl: str
+    usagenote: str
     deprecated_version: str
 
 

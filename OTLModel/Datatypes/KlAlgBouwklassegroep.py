@@ -1,28 +1,60 @@
 # coding=utf-8
-from OTLModel.Datatypes.Keuzelijst import Keuzelijst
+from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
+from OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 
 # Generated with OTLEnumerationCreator. To modify: extend, do not edit
-class KlAlgBouwklassegroep(Keuzelijst):
+class KlAlgBouwklassegroep(KeuzelijstField):
     """De bouwklassegroepen."""
+    naam = 'KlAlgBouwklassegroep'
+    label = 'Alg bouwklassegroep'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlAlgBouwklassegroep'
+    definition = 'De bouwklassegroepen.'
+    codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlAlgBouwklassegroep'
+    options = {
+        'B1': KeuzelijstWaarde(invulwaarde='B1',
+                               label='B1',
+                               definitie='B1',
+                               objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgBouwklassegroep/B1'),
+        'B10': KeuzelijstWaarde(invulwaarde='B10',
+                                label='B10',
+                                definitie='B10',
+                                objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgBouwklassegroep/B10'),
+        'B2': KeuzelijstWaarde(invulwaarde='B2',
+                               label='B2',
+                               definitie='B2',
+                               objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgBouwklassegroep/B2'),
+        'B3': KeuzelijstWaarde(invulwaarde='B3',
+                               label='B3',
+                               definitie='B3',
+                               objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgBouwklassegroep/B3'),
+        'B4': KeuzelijstWaarde(invulwaarde='B4',
+                               label='B4',
+                               definitie='B4',
+                               objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgBouwklassegroep/B4'),
+        'B5': KeuzelijstWaarde(invulwaarde='B5',
+                               label='B5',
+                               definitie='B5',
+                               objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgBouwklassegroep/B5'),
+        'B6': KeuzelijstWaarde(invulwaarde='B6',
+                               label='B6',
+                               definitie='B6',
+                               objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgBouwklassegroep/B6'),
+        'B7': KeuzelijstWaarde(invulwaarde='B7',
+                               label='B7',
+                               definitie='B7',
+                               objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgBouwklassegroep/B7'),
+        'B8': KeuzelijstWaarde(invulwaarde='B8',
+                               label='B8',
+                               definitie='B8',
+                               objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgBouwklassegroep/B8'),
+        'B9': KeuzelijstWaarde(invulwaarde='B9',
+                               label='B9',
+                               definitie='B9',
+                               objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgBouwklassegroep/B9'),
+        'BF': KeuzelijstWaarde(invulwaarde='BF',
+                               label='BF',
+                               definitie='BF',
+                               objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgBouwklassegroep/BF')
+    }
 
-    def __init__(self):
-        super().__init__(naam="KlAlgBouwklassegroep",
-                         label="Alg bouwklassegroep",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlAlgBouwklassegroep",
-                         definition="De bouwklassegroepen.",
-                         usagenote="",
-                         deprecated_version="",
-                         codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlAlgBouwklassegroep")
-
-        self.add_option("B1", "B1", "B1", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgBouwklassegroep/B1")
-        self.add_option("B10", "B10", "B10", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgBouwklassegroep/B10")
-        self.add_option("B2", "B2", "B2", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgBouwklassegroep/B2")
-        self.add_option("B3", "B3", "B3", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgBouwklassegroep/B3")
-        self.add_option("B4", "B4", "B4", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgBouwklassegroep/B4")
-        self.add_option("B5", "B5", "B5", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgBouwklassegroep/B5")
-        self.add_option("B6", "B6", "B6", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgBouwklassegroep/B6")
-        self.add_option("B7", "B7", "B7", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgBouwklassegroep/B7")
-        self.add_option("B8", "B8", "B8", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgBouwklassegroep/B8")
-        self.add_option("B9", "B9", "B9", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgBouwklassegroep/B9")
-        self.add_option("BF", "BF", "BF", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgBouwklassegroep/BF")

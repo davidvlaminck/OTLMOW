@@ -1,19 +1,22 @@
 # coding=utf-8
-from OTLModel.Datatypes.Keuzelijst import Keuzelijst
+from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
+from OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 
 # Generated with OTLEnumerationCreator. To modify: extend, do not edit
-class KlPoortconfiguratieRichting(Keuzelijst):
+class KlPoortconfiguratieRichting(KeuzelijstField):
     """De richting waarin de poort openstaat."""
+    naam = 'KlPoortconfiguratieRichting'
+    label = 'Poortconfiguratie richting'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlPoortconfiguratieRichting'
+    definition = 'De richting waarin de poort openstaat.'
+    codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlPoortconfiguratieRichting'
+    options = {
+        'ingaand': KeuzelijstWaarde(invulwaarde='ingaand',
+                                    label='ingaand',
+                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlPoortconfiguratieRichting/ingaand'),
+        'uitgaand': KeuzelijstWaarde(invulwaarde='uitgaand',
+                                     label='uitgaand',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlPoortconfiguratieRichting/uitgaand')
+    }
 
-    def __init__(self):
-        super().__init__(naam="KlPoortconfiguratieRichting",
-                         label="Poortconfiguratie richting",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlPoortconfiguratieRichting",
-                         definition="De richting waarin de poort openstaat.",
-                         usagenote="",
-                         deprecated_version="",
-                         codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlPoortconfiguratieRichting")
-
-        self.add_option("ingaand", "ingaand", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlPoortconfiguratieRichting/ingaand")
-        self.add_option("uitgaand", "uitgaand", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlPoortconfiguratieRichting/uitgaand")

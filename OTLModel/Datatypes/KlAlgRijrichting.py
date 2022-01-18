@@ -1,19 +1,24 @@
 # coding=utf-8
-from OTLModel.Datatypes.Keuzelijst import Keuzelijst
+from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
+from OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 
 # Generated with OTLEnumerationCreator. To modify: extend, do not edit
-class KlAlgRijrichting(Keuzelijst):
+class KlAlgRijrichting(KeuzelijstField):
     """De mogelijke rijrichtingen."""
+    naam = 'KlAlgRijrichting'
+    label = 'Rijrichting'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlAlgRijrichting'
+    definition = 'De mogelijke rijrichtingen.'
+    codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlAlgRijrichting'
+    options = {
+        'aflopend': KeuzelijstWaarde(invulwaarde='aflopend',
+                                     label='aflopend',
+                                     definitie='Aflopende rijrichting.',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgRijrichting/aflopend'),
+        'oplopend': KeuzelijstWaarde(invulwaarde='oplopend',
+                                     label='oplopend',
+                                     definitie='Oplopende rijrichting.',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgRijrichting/oplopend')
+    }
 
-    def __init__(self):
-        super().__init__(naam="KlAlgRijrichting",
-                         label="Rijrichting",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlAlgRijrichting",
-                         definition="De mogelijke rijrichtingen.",
-                         usagenote="",
-                         deprecated_version="",
-                         codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlAlgRijrichting")
-
-        self.add_option("aflopend", "aflopend", "Aflopende rijrichting.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgRijrichting/aflopend")
-        self.add_option("oplopend", "oplopend", "Oplopende rijrichting.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgRijrichting/oplopend")

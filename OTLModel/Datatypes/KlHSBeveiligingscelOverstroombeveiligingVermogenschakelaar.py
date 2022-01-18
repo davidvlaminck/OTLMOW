@@ -1,19 +1,22 @@
 # coding=utf-8
-from OTLModel.Datatypes.Keuzelijst import Keuzelijst
+from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
+from OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 
 # Generated with OTLEnumerationCreator. To modify: extend, do not edit
-class KlHSBeveiligingscelOverstroombeveiligingVermogenschakelaar(Keuzelijst):
+class KlHSBeveiligingscelOverstroombeveiligingVermogenschakelaar(KeuzelijstField):
     """Directe of indirecte overstroombeveiliging van de vermogenschakelaar."""
+    naam = 'KlHSBeveiligingscelOverstroombeveiligingVermogenschakelaar'
+    label = 'HS-beveiligingscel overstroombeveiliging vermogenschakelaar'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlHSBeveiligingscelOverstroombeveiligingVermogenschakelaar'
+    definition = 'Directe of indirecte overstroombeveiliging van de vermogenschakelaar.'
+    codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlHSBeveiligingscelOverstroombeveiligingVermogenschakelaar'
+    options = {
+        'direct': KeuzelijstWaarde(invulwaarde='direct',
+                                   label='direct',
+                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlHSBeveiligingscelOverstroombeveiligingVermogenschakelaar/direct'),
+        'indirect': KeuzelijstWaarde(invulwaarde='indirect',
+                                     label='indirect',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlHSBeveiligingscelOverstroombeveiligingVermogenschakelaar/indirect')
+    }
 
-    def __init__(self):
-        super().__init__(naam="KlHSBeveiligingscelOverstroombeveiligingVermogenschakelaar",
-                         label="HS-beveiligingscel overstroombeveiliging vermogenschakelaar",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlHSBeveiligingscelOverstroombeveiligingVermogenschakelaar",
-                         definition="Directe of indirecte overstroombeveiliging van de vermogenschakelaar.",
-                         usagenote="",
-                         deprecated_version="",
-                         codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlHSBeveiligingscelOverstroombeveiligingVermogenschakelaar")
-
-        self.add_option("direct", "direct", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlHSBeveiligingscelOverstroombeveiligingVermogenschakelaar/direct")
-        self.add_option("indirect", "indirect", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlHSBeveiligingscelOverstroombeveiligingVermogenschakelaar/indirect")

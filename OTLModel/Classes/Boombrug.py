@@ -1,46 +1,63 @@
 # coding=utf-8
+from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
+from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.AIMObject import AIMObject
-from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlEcoBoombrugType import KlEcoBoombrugType
 from OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Boombrug(AIMObject):
+class Boombrug(AIMObject, AttributeInfo):
     """Een eenvoudige constructie die een oversteek biedt voor soorten die in bomen leven, voornamelijk eekhoorns."""
 
-    typeURI = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Boombrug"
+    typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Boombrug'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        super().__init__()
+        AIMObject.__init__(self)
+        AttributeInfo.__init__(self)
 
-        self.hoogte = KwantWrdInMeter()
+        self._hoogte = OTLAttribuut(field=KwantWrdInMeter,
+                                    naam='hoogte',
+                                    label='hoogte',
+                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Boombrug.hoogte',
+                                    definition='De hoogte van de boombrug in meter.')
+
+        self._lengte = OTLAttribuut(field=KwantWrdInMeter,
+                                    naam='lengte',
+                                    label='lengte',
+                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Boombrug.lengte',
+                                    definition='De lengte van de boombrug in meter.')
+
+        self._type = OTLAttribuut(field=KlEcoBoombrugType,
+                                  naam='type',
+                                  label='type',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Boombrug.type',
+                                  definition='Het type van boombrug.')
+
+    @property
+    def hoogte(self):
         """De hoogte van de boombrug in meter."""
-        self.hoogte.naam = "hoogte"
-        self.hoogte.label = "hoogte"
-        self.hoogte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Boombrug.hoogte"
-        self.hoogte.definition = "De hoogte van de boombrug in meter."
-        self.hoogte.constraints = ""
-        self.hoogte.usagenote = ""
-        self.hoogte.deprecated_version = ""
+        return self._hoogte.waarde
 
-        self.lengte = KwantWrdInMeter()
+    @hoogte.setter
+    def hoogte(self, value):
+        self._hoogte.set_waarde(value, owner=self)
+
+    @property
+    def lengte(self):
         """De lengte van de boombrug in meter."""
-        self.lengte.naam = "lengte"
-        self.lengte.label = "lengte"
-        self.lengte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Boombrug.lengte"
-        self.lengte.definition = "De lengte van de boombrug in meter."
-        self.lengte.constraints = ""
-        self.lengte.usagenote = ""
-        self.lengte.deprecated_version = ""
+        return self._lengte.waarde
 
-        self.type = KeuzelijstField(naam="type",
-                                    label="type",
-                                    lijst=KlEcoBoombrugType(),
-                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Boombrug.type",
-                                    definition="Het type van boombrug.",
-                                    constraints="",
-                                    usagenote="",
-                                    deprecated_version="")
+    @lengte.setter
+    def lengte(self, value):
+        self._lengte.set_waarde(value, owner=self)
+
+    @property
+    def type(self):
         """Het type van boombrug."""
+        return self._type.waarde
+
+    @type.setter
+    def type(self, value):
+        self._type.set_waarde(value, owner=self)

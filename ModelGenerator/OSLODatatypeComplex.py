@@ -5,9 +5,9 @@ import dataclasses
 class OSLODatatypeComplex:
     name: str
     objectUri: str
-    definition_nl: str
-    label_nl: str
-    usagenote_nl: str
+    definition: str
+    label: str
+    usagenote: str
     deprecated_version: str
 
 

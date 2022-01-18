@@ -1,20 +1,28 @@
 # coding=utf-8
-from OTLModel.Datatypes.Keuzelijst import Keuzelijst
+from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
+from OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 
 # Generated with OTLEnumerationCreator. To modify: extend, do not edit
-class KlVGOpstelling(Keuzelijst):
+class KlVGOpstelling(KeuzelijstField):
     """Beschrijft de oriëntatie van het geplaatste schermelement tov de weg. De oriëntatie van vlakke schermen kan naast loodrecht op het maaiveld ook schuin naar achter hellend of schuin naar voor hellend zijn."""
+    naam = 'KlVGOpstelling'
+    label = 'Vlak geluidschermelement opstelling'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlVGOpstelling'
+    definition = 'Beschrijft de oriëntatie van het geplaatste schermelement tov de weg. De oriëntatie van vlakke schermen kan naast loodrecht op het maaiveld ook schuin naar achter hellend of schuin naar voor hellend zijn.'
+    codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlVGOpstelling'
+    options = {
+        'loodrecht-op-maaiveld': KeuzelijstWaarde(invulwaarde='loodrecht-op-maaiveld',
+                                                  label='loodrecht op maaiveld',
+                                                  definitie='loodrecht op maaiveld',
+                                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVGOpstelling/loodrecht-op-maaiveld'),
+        'schuin-naar-achter-hellend': KeuzelijstWaarde(invulwaarde='schuin-naar-achter-hellend',
+                                                       label='schuin naar achter hellend',
+                                                       definitie='schuin naar achter hellend t.o.v. de weg',
+                                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVGOpstelling/schuin-naar-achter-hellend'),
+        'schuin-naar-voor-hellend': KeuzelijstWaarde(invulwaarde='schuin-naar-voor-hellend',
+                                                     label='schuin naar voor hellend',
+                                                     definitie='schuin naar voor hellend t.o.v. de weg',
+                                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVGOpstelling/schuin-naar-voor-hellend')
+    }
 
-    def __init__(self):
-        super().__init__(naam="KlVGOpstelling",
-                         label="Vlak geluidschermelement opstelling",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlVGOpstelling",
-                         definition="Beschrijft de oriëntatie van het geplaatste schermelement tov de weg. De oriëntatie van vlakke schermen kan naast loodrecht op het maaiveld ook schuin naar achter hellend of schuin naar voor hellend zijn.",
-                         usagenote="",
-                         deprecated_version="",
-                         codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlVGOpstelling")
-
-        self.add_option("loodrecht-op-maaiveld", "loodrecht op maaiveld", "loodrecht op maaiveld", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVGOpstelling/loodrecht-op-maaiveld")
-        self.add_option("schuin-naar-achter-hellend", "schuin naar achter hellend", "schuin naar achter hellend t.o.v. de weg", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVGOpstelling/schuin-naar-achter-hellend")
-        self.add_option("schuin-naar-voor-hellend", "schuin naar voor hellend", "schuin naar voor hellend t.o.v. de weg", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVGOpstelling/schuin-naar-voor-hellend")

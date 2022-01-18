@@ -1,46 +1,64 @@
 # coding=utf-8
+from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
+from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from abc import abstractmethod
 from OTLModel.Classes.AIMDBStatus import AIMDBStatus
 from OTLModel.Datatypes.DtcIdentificator import DtcIdentificator
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class RelatieObject(AIMDBStatus):
+class RelatieObject(AIMDBStatus, AttributeInfo):
     """Abstracte die de relaties voorziet van gemeenschappelijk eigenschappen."""
 
-    typeURI = "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#RelatieObject"
+    typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#RelatieObject'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     @abstractmethod
     def __init__(self):
-        super().__init__()
+        AIMDBStatus.__init__(self)
+        AttributeInfo.__init__(self)
 
-        self.assetId = DtcIdentificator()
+        self._assetId = OTLAttribuut(field=DtcIdentificator,
+                                     naam='assetId',
+                                     label='asset-id',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#RelatieObject.assetId',
+                                     definition='Unieke identificatie van de asset zoals toegekend door de assetbeheerder of n.a.v. eerste aanlevering door de leverancier.')
+
+        self._bronAssetId = OTLAttribuut(field=DtcIdentificator,
+                                         naam='bronAssetId',
+                                         label='asset-id bron-asset',
+                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#RelatieObject.bronAssetId',
+                                         definition='De identificator van het object waaruit de relatie vertrekt.')
+
+        self._doelAssetId = OTLAttribuut(field=DtcIdentificator,
+                                         naam='doelAssetId',
+                                         label='asset-id doel-asset',
+                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#RelatieObject.doelAssetId',
+                                         definition='De identificator van het object waarin de relatie toekomt.')
+
+    @property
+    def assetId(self):
         """Unieke identificatie van de asset zoals toegekend door de assetbeheerder of n.a.v. eerste aanlevering door de leverancier."""
-        self.assetId.naam = "assetId"
-        self.assetId.label = "asset-id"
-        self.assetId.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#RelatieObject.assetId"
-        self.assetId.definition = "Unieke identificatie van de asset zoals toegekend door de assetbeheerder of n.a.v. eerste aanlevering door de leverancier."
-        self.assetId.constraints = ""
-        self.assetId.usagenote = ""
-        self.assetId.deprecated_version = ""
+        return self._assetId.waarde
 
-        self.bronAssetId = DtcIdentificator()
+    @assetId.setter
+    def assetId(self, value):
+        self._assetId.set_waarde(value, owner=self)
+
+    @property
+    def bronAssetId(self):
         """De identificator van het object waaruit de relatie vertrekt."""
-        self.bronAssetId.naam = "bronAssetId"
-        self.bronAssetId.label = "asset-id bron-asset"
-        self.bronAssetId.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#RelatieObject.bronAssetId"
-        self.bronAssetId.definition = "De identificator van het object waaruit de relatie vertrekt."
-        self.bronAssetId.constraints = ""
-        self.bronAssetId.usagenote = ""
-        self.bronAssetId.deprecated_version = ""
+        return self._bronAssetId.waarde
 
-        self.doelAssetId = DtcIdentificator()
+    @bronAssetId.setter
+    def bronAssetId(self, value):
+        self._bronAssetId.set_waarde(value, owner=self)
+
+    @property
+    def doelAssetId(self):
         """De identificator van het object waarin de relatie toekomt."""
-        self.doelAssetId.naam = "doelAssetId"
-        self.doelAssetId.label = "asset-id doel-asset"
-        self.doelAssetId.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#RelatieObject.doelAssetId"
-        self.doelAssetId.definition = "De identificator van het object waarin de relatie toekomt."
-        self.doelAssetId.constraints = ""
-        self.doelAssetId.usagenote = ""
-        self.doelAssetId.deprecated_version = ""
+        return self._doelAssetId.waarde
+
+    @doelAssetId.setter
+    def doelAssetId(self, value):
+        self._doelAssetId.set_waarde(value, owner=self)

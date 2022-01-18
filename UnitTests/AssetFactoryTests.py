@@ -55,17 +55,17 @@ class AssetFactoryTests(TestCase):
     def test_create_aimObject_using_other_aimObject_as_template_other_typeURI_with_oneField(self):
         factory = AssetFactory()
         aftakking = Aftakking()
-        aftakking.naam.waarde = 'aftakking naam'
-        aftakking.isActief.waarde = True
+        aftakking.naam = 'aftakking naam'
+        aftakking.isActief = True
         stroomkringURI = Stroomkring.typeURI
         created_asset = factory.create_aimObject_using_other_aimObject_as_template(aftakking, typeURI=stroomkringURI, fieldsToCopy=['naam'])
 
-        self.assertEqual(True, aftakking.isActief.waarde)
-        self.assertEqual('aftakking naam', aftakking.naam.waarde)
+        self.assertEqual(True, aftakking.isActief)
+        self.assertEqual('aftakking naam', aftakking.naam)
 
         self.assertTrue(isinstance(created_asset, Stroomkring))
-        self.assertEqual('aftakking naam', created_asset.naam.waarde)
-        self.assertIsNone(created_asset.isActief.waarde)
+        self.assertEqual('aftakking naam', created_asset.naam)
+        self.assertIsNone(created_asset.isActief)
 
 
     def test_create_aimObject_using_other_aimObject_as_template_not_OTLAsset(self):
@@ -77,18 +77,18 @@ class AssetFactoryTests(TestCase):
     def test_create_aimObject_using_other_aimObject_as_template_StringField_KwantWrd(self):
         factory = AssetFactory()
         orig_aftakking = Aftakking()
-        orig_aftakking.theoretischeLevensduur.waarde = 120
+        orig_aftakking.theoretischeLevensduur = 120
         orig_aftakking.naam = 'aftakking originele naam'
         nieuwe_aftakking = factory.create_aimObject_using_other_aimObject_as_template(orig_aftakking)
-        self.assertEqual(120, orig_aftakking.theoretischeLevensduur.waarde)
+        self.assertEqual(120, orig_aftakking.theoretischeLevensduur)
         self.assertEqual('aftakking originele naam', orig_aftakking.naam)
-        orig_aftakking.theoretischeLevensduur.waarde = 240
+        orig_aftakking.theoretischeLevensduur = 240
         orig_aftakking.naam = 'aftakking nieuwe naam'
 
-        self.assertEqual(240, orig_aftakking.theoretischeLevensduur.waarde)
+        self.assertEqual(240, orig_aftakking.theoretischeLevensduur)
         self.assertEqual('aftakking nieuwe naam', orig_aftakking.naam)
         self.assertTrue(isinstance(nieuwe_aftakking, Aftakking))
-        self.assertEqual(120, nieuwe_aftakking.theoretischeLevensduur.waarde)
+        self.assertEqual(120, nieuwe_aftakking.theoretischeLevensduur)
         self.assertEqual('aftakking originele naam', nieuwe_aftakking.naam)
 
     def test_copy_fields_from_object_to_new_object_invalid_orig_asset(self):
@@ -116,25 +116,25 @@ class AssetFactoryTests(TestCase):
         factory = AssetFactory()
         orig_aftakking = Aftakking()
         nieuwe_aftakking = factory.dynamic_create_instance_from_uri(Aftakking.typeURI)
-        orig_aftakking.naam.waarde = 'originele naam'
+        orig_aftakking.naam = 'originele naam'
 
         factory.copy_fields_from_object_to_new_object(orig_aftakking, nieuwe_aftakking, ['naam'])
-        orig_aftakking.naam.waarde = 'nieuwe naam'
+        orig_aftakking.naam = 'nieuwe naam'
 
-        self.assertEqual('nieuwe naam', orig_aftakking.naam.waarde)
-        self.assertEqual('originele naam', nieuwe_aftakking.naam.waarde)
+        self.assertEqual('nieuwe naam', orig_aftakking.naam)
+        self.assertEqual('originele naam', nieuwe_aftakking.naam)
 
     def test_copy_fields_from_object_to_new_object_ComplexField(self):
         factory = AssetFactory()
         orig_aftakking = Aftakking()
         nieuwe_aftakking = factory.dynamic_create_instance_from_uri(Aftakking.typeURI)
-        orig_aftakking.assetId.identificator.waarde = 'originele id'
+        orig_aftakking.assetId.identificator = 'originele id'
 
         factory.copy_fields_from_object_to_new_object(orig_aftakking, nieuwe_aftakking, ['assetId'])
-        orig_aftakking.assetId.identificator.waarde = 'nieuwe id'
+        orig_aftakking.assetId.identificator = 'nieuwe id'
 
-        self.assertEqual('nieuwe id', orig_aftakking.assetId.identificator.waarde)
-        self.assertEqual('originele id', nieuwe_aftakking.assetId.identificator.waarde)
+        self.assertEqual('nieuwe id', orig_aftakking.assetId.identificator)
+        self.assertEqual('originele id', nieuwe_aftakking.assetId.identificator)
 
     def test_copy_fields_from_object_to_new_object_DotNotatie(self):
         self.assertTrue(False)

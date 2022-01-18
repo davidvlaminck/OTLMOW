@@ -1,17 +1,16 @@
 # coding=utf-8
-from OTLModel.Datatypes.Keuzelijst import Keuzelijst
+from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
+from OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 
 # Generated with OTLEnumerationCreator. To modify: extend, do not edit
-class KlPLCModelnaam(Keuzelijst):
+class KlPLCModelnaam(KeuzelijstField):
     """De modelnaam van de PLC."""
-
-    def __init__(self):
-        super().__init__(naam="KlPLCModelnaam",
-                         label="PLC model",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlPLCModelnaam",
-                         definition="De modelnaam van de PLC.",
-                         usagenote="",
-                         deprecated_version="",
-                         codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlPLCModelnaam")
+    naam = 'KlPLCModelnaam'
+    label = 'PLC model'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlPLCModelnaam'
+    definition = 'De modelnaam van de PLC.'
+    codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlPLCModelnaam'
+    options = 
+    }
 

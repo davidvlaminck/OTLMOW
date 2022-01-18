@@ -1,48 +1,114 @@
 # coding=utf-8
-from OTLModel.Datatypes.Keuzelijst import Keuzelijst
+from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
+from OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 
 # Generated with OTLEnumerationCreator. To modify: extend, do not edit
-class KlLichtmastBotsNormering(Keuzelijst):
+class KlLichtmastBotsNormering(KeuzelijstField):
     """Lijst van mogelijke waarden voor botsnormering van lichtmasten."""
+    naam = 'KlLichtmastBotsNormering'
+    label = 'Lichtmast botsnormering'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlLichtmastBotsNormering'
+    definition = 'Lijst van mogelijke waarden voor botsnormering van lichtmasten.'
+    codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlLichtmastBotsNormering'
+    options = {
+        '100HE1': KeuzelijstWaarde(invulwaarde='100HE1',
+                                   label='100HE1',
+                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLichtmastBotsNormering/100HE1'),
+        '100HE2': KeuzelijstWaarde(invulwaarde='100HE2',
+                                   label='100HE2',
+                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLichtmastBotsNormering/100HE2'),
+        '100HE3': KeuzelijstWaarde(invulwaarde='100HE3',
+                                   label='100HE3',
+                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLichtmastBotsNormering/100HE3'),
+        '100LE1': KeuzelijstWaarde(invulwaarde='100LE1',
+                                   label='100LE1',
+                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLichtmastBotsNormering/100LE1'),
+        '100LE2': KeuzelijstWaarde(invulwaarde='100LE2',
+                                   label='100LE2',
+                                   definitie='nader in te vullen',
+                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLichtmastBotsNormering/100LE2'),
+        '100LE3': KeuzelijstWaarde(invulwaarde='100LE3',
+                                   label='100LE3',
+                                   definitie='nader in te vullen',
+                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLichtmastBotsNormering/100LE3'),
+        '100NE1': KeuzelijstWaarde(invulwaarde='100NE1',
+                                   label='100NE1',
+                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLichtmastBotsNormering/100NE1'),
+        '100NE2': KeuzelijstWaarde(invulwaarde='100NE2',
+                                   label='100NE2',
+                                   definitie='nader in te vullen',
+                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLichtmastBotsNormering/100NE2'),
+        '100NE4': KeuzelijstWaarde(invulwaarde='100NE4',
+                                   label='100NE4',
+                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLichtmastBotsNormering/100NE4'),
+        '50HE1': KeuzelijstWaarde(invulwaarde='50HE1',
+                                  label='50HE1',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLichtmastBotsNormering/50HE1'),
+        '50HE2': KeuzelijstWaarde(invulwaarde='50HE2',
+                                  label='50HE2',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLichtmastBotsNormering/50HE2'),
+        '50HE3': KeuzelijstWaarde(invulwaarde='50HE3',
+                                  label='50HE3',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLichtmastBotsNormering/50HE3'),
+        '50LE1': KeuzelijstWaarde(invulwaarde='50LE1',
+                                  label='50LE1',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLichtmastBotsNormering/50LE1'),
+        '50LE2': KeuzelijstWaarde(invulwaarde='50LE2',
+                                  label='50LE2',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLichtmastBotsNormering/50LE2'),
+        '50LE3': KeuzelijstWaarde(invulwaarde='50LE3',
+                                  label='50LE3',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLichtmastBotsNormering/50LE3'),
+        '50NE1': KeuzelijstWaarde(invulwaarde='50NE1',
+                                  label='50NE1',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLichtmastBotsNormering/50NE1'),
+        '50NE2': KeuzelijstWaarde(invulwaarde='50NE2',
+                                  label='50NE2',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLichtmastBotsNormering/50NE2'),
+        '50NE3': KeuzelijstWaarde(invulwaarde='50NE3',
+                                  label='50NE3',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLichtmastBotsNormering/50NE3'),
+        '50NE4': KeuzelijstWaarde(invulwaarde='50NE4',
+                                  label='50NE4',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLichtmastBotsNormering/50NE4'),
+        '70HE1': KeuzelijstWaarde(invulwaarde='70HE1',
+                                  label='70HE1',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLichtmastBotsNormering/70HE1'),
+        '70HE2': KeuzelijstWaarde(invulwaarde='70HE2',
+                                  label='70HE2',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLichtmastBotsNormering/70HE2'),
+        '70HE3': KeuzelijstWaarde(invulwaarde='70HE3',
+                                  label='70HE3',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLichtmastBotsNormering/70HE3'),
+        '70LE1': KeuzelijstWaarde(invulwaarde='70LE1',
+                                  label='70LE1',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLichtmastBotsNormering/70LE1'),
+        '70LE2': KeuzelijstWaarde(invulwaarde='70LE2',
+                                  label='70LE2',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLichtmastBotsNormering/70LE2'),
+        '70LE3': KeuzelijstWaarde(invulwaarde='70LE3',
+                                  label='70LE3',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLichtmastBotsNormering/70LE3'),
+        '70NE1': KeuzelijstWaarde(invulwaarde='70NE1',
+                                  label='70NE1',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLichtmastBotsNormering/70NE1'),
+        '70NE2': KeuzelijstWaarde(invulwaarde='70NE2',
+                                  label='70NE2',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLichtmastBotsNormering/70NE2'),
+        '70NE3': KeuzelijstWaarde(invulwaarde='70NE3',
+                                  label='70NE3',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLichtmastBotsNormering/70NE3'),
+        '70NE4': KeuzelijstWaarde(invulwaarde='70NE4',
+                                  label='70NE4',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLichtmastBotsNormering/70NE4'),
+        '9': KeuzelijstWaarde(invulwaarde='9',
+                              label='9',
+                              definitie='nader in te vullen',
+                              objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLichtmastBotsNormering/9'),
+        'niet-botsvriendelijke-mast': KeuzelijstWaarde(invulwaarde='niet-botsvriendelijke-mast',
+                                                       label='Niet-botsvriendelijke mast',
+                                                       definitie='Mast heeft geen botsvriendelijke normering.',
+                                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLichtmastBotsNormering/niet-botsvriendelijke-mast')
+    }
 
-    def __init__(self):
-        super().__init__(naam="KlLichtmastBotsNormering",
-                         label="Lichtmast botsnormering",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlLichtmastBotsNormering",
-                         definition="Lijst van mogelijke waarden voor botsnormering van lichtmasten.",
-                         usagenote="",
-                         deprecated_version="",
-                         codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlLichtmastBotsNormering")
-
-        self.add_option("100HE1", "100HE1", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLichtmastBotsNormering/100HE1")
-        self.add_option("100HE2", "100HE2", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLichtmastBotsNormering/100HE2")
-        self.add_option("100HE3", "100HE3", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLichtmastBotsNormering/100HE3")
-        self.add_option("100LE1", "100LE1", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLichtmastBotsNormering/100LE1")
-        self.add_option("100LE2", "100LE2", "nader in te vullen", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLichtmastBotsNormering/100LE2")
-        self.add_option("100LE3", "100LE3", "nader in te vullen", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLichtmastBotsNormering/100LE3")
-        self.add_option("100NE1", "100NE1", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLichtmastBotsNormering/100NE1")
-        self.add_option("100NE2", "100NE2", "nader in te vullen", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLichtmastBotsNormering/100NE2")
-        self.add_option("100NE4", "100NE4", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLichtmastBotsNormering/100NE4")
-        self.add_option("50HE1", "50HE1", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLichtmastBotsNormering/50HE1")
-        self.add_option("50HE2", "50HE2", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLichtmastBotsNormering/50HE2")
-        self.add_option("50HE3", "50HE3", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLichtmastBotsNormering/50HE3")
-        self.add_option("50LE1", "50LE1", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLichtmastBotsNormering/50LE1")
-        self.add_option("50LE2", "50LE2", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLichtmastBotsNormering/50LE2")
-        self.add_option("50LE3", "50LE3", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLichtmastBotsNormering/50LE3")
-        self.add_option("50NE1", "50NE1", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLichtmastBotsNormering/50NE1")
-        self.add_option("50NE2", "50NE2", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLichtmastBotsNormering/50NE2")
-        self.add_option("50NE3", "50NE3", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLichtmastBotsNormering/50NE3")
-        self.add_option("50NE4", "50NE4", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLichtmastBotsNormering/50NE4")
-        self.add_option("70HE1", "70HE1", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLichtmastBotsNormering/70HE1")
-        self.add_option("70HE2", "70HE2", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLichtmastBotsNormering/70HE2")
-        self.add_option("70HE3", "70HE3", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLichtmastBotsNormering/70HE3")
-        self.add_option("70LE1", "70LE1", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLichtmastBotsNormering/70LE1")
-        self.add_option("70LE2", "70LE2", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLichtmastBotsNormering/70LE2")
-        self.add_option("70LE3", "70LE3", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLichtmastBotsNormering/70LE3")
-        self.add_option("70NE1", "70NE1", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLichtmastBotsNormering/70NE1")
-        self.add_option("70NE2", "70NE2", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLichtmastBotsNormering/70NE2")
-        self.add_option("70NE3", "70NE3", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLichtmastBotsNormering/70NE3")
-        self.add_option("70NE4", "70NE4", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLichtmastBotsNormering/70NE4")
-        self.add_option("9", "9", "nader in te vullen", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLichtmastBotsNormering/9")
-        self.add_option("niet-botsvriendelijke-mast", "Niet-botsvriendelijke mast", "Mast heeft geen botsvriendelijke normering.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLichtmastBotsNormering/niet-botsvriendelijke-mast")

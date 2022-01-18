@@ -1,19 +1,24 @@
 # coding=utf-8
-from OTLModel.Datatypes.Keuzelijst import Keuzelijst
+from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
+from OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 
 # Generated with OTLEnumerationCreator. To modify: extend, do not edit
-class KlFiguratieSoortVerschuind(Keuzelijst):
+class KlFiguratieSoortVerschuind(KeuzelijstField):
     """Soorten van verschuinde figuratie markering."""
+    naam = 'KlFiguratieSoortVerschuind'
+    label = 'Figuratie soort verschuind'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlFiguratieSoortVerschuind'
+    definition = 'Soorten van verschuinde figuratie markering.'
+    codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlFiguratieSoortVerschuind'
+    options = {
+        'letterfiguratiemarkering(schuin)': KeuzelijstWaarde(invulwaarde='letterfiguratiemarkering(schuin)',
+                                                             label='letterfiguratiemarkering(schuin)',
+                                                             definitie='Een schuine lettermarking als figuratie zoals BUS, TAXI, TRAM,....',
+                                                             objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieSoortVerschuind/letterfiguratiemarkering(schuin)'),
+        'omgekeerde-driehoek(schuin)': KeuzelijstWaarde(invulwaarde='omgekeerde-driehoek(schuin)',
+                                                        label='omgekeerde driehoek(schuin)',
+                                                        definitie='Een schuine omgekeerde driehoek markering.',
+                                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieSoortVerschuind/omgekeerde-driehoek(schuin)')
+    }
 
-    def __init__(self):
-        super().__init__(naam="KlFiguratieSoortVerschuind",
-                         label="Figuratie soort verschuind",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlFiguratieSoortVerschuind",
-                         definition="Soorten van verschuinde figuratie markering.",
-                         usagenote="",
-                         deprecated_version="",
-                         codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlFiguratieSoortVerschuind")
-
-        self.add_option("letterfiguratiemarkering(schuin)", "letterfiguratiemarkering(schuin)", "Een schuine lettermarking als figuratie zoals BUS, TAXI, TRAM,....", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieSoortVerschuind/letterfiguratiemarkering(schuin)")
-        self.add_option("omgekeerde-driehoek(schuin)", "omgekeerde driehoek(schuin)", "Een schuine omgekeerde driehoek markering.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieSoortVerschuind/omgekeerde-driehoek(schuin)")

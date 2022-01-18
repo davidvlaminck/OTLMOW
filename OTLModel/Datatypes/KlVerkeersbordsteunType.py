@@ -1,24 +1,44 @@
 # coding=utf-8
-from OTLModel.Datatypes.Keuzelijst import Keuzelijst
+from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
+from OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 
 # Generated with OTLEnumerationCreator. To modify: extend, do not edit
-class KlVerkeersbordsteunType(Keuzelijst):
+class KlVerkeersbordsteunType(KeuzelijstField):
     """Types voor een verkeersbordsteun."""
+    naam = 'KlVerkeersbordsteunType'
+    label = 'Verkeersbordsteuntype'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlVerkeersbordsteunType'
+    definition = 'Types voor een verkeersbordsteun.'
+    codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlVerkeersbordsteunType'
+    options = {
+        'botsvriendelijke-steun': KeuzelijstWaarde(invulwaarde='botsvriendelijke-steun',
+                                                   label='botsvriendelijke steun',
+                                                   definitie='Constructie die na aanrijding zijn oorspronkelijke positie hersteld',
+                                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerkeersbordsteunType/botsvriendelijke-steun'),
+        'botsvriendelijke-steun-type-100NE2': KeuzelijstWaarde(invulwaarde='botsvriendelijke-steun-type-100NE2',
+                                                               label='botsvriendelijke steun type 100NE2',
+                                                               definitie='te bepalen',
+                                                               objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerkeersbordsteunType/botsvriendelijke-steun-type-100NE2'),
+        'botsvriendelijke-steun-type-100NE3': KeuzelijstWaarde(invulwaarde='botsvriendelijke-steun-type-100NE3',
+                                                               label='botsvriendelijke steun type 100NE3',
+                                                               definitie='te bepalen',
+                                                               objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerkeersbordsteunType/botsvriendelijke-steun-type-100NE3'),
+        'galgpaal': KeuzelijstWaarde(invulwaarde='galgpaal',
+                                     label='galgpaal',
+                                     definitie='Deze optie mag niet aangeduid worden! Bij instantiëren van galgpalen moet je het onderdeel 'Galgpaal' gebruiken.',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerkeersbordsteunType/galgpaal'),
+        'rechte-paal': KeuzelijstWaarde(invulwaarde='rechte-paal',
+                                        label='rechte paal',
+                                        definitie='Een rechte paal met als doel een verkeersbord te bevestigen.',
+                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerkeersbordsteunType/rechte-paal'),
+        'seinbrug': KeuzelijstWaarde(invulwaarde='seinbrug',
+                                     label='seinbrug',
+                                     definitie='Deze optie mag niet aangeduid worden! Bij instantiëren van seinbruggen moet je het onderdeel 'Seinbrug' gebruiken.',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerkeersbordsteunType/seinbrug'),
+        'vakwerksteun': KeuzelijstWaarde(invulwaarde='vakwerksteun',
+                                         label='vakwerksteun',
+                                         definitie='Een keuzelijst om het type verkeersbordpaal te bepalen',
+                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerkeersbordsteunType/vakwerksteun')
+    }
 
-    def __init__(self):
-        super().__init__(naam="KlVerkeersbordsteunType",
-                         label="Verkeersbordsteuntype",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlVerkeersbordsteunType",
-                         definition="Types voor een verkeersbordsteun.",
-                         usagenote="",
-                         deprecated_version="",
-                         codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlVerkeersbordsteunType")
-
-        self.add_option("botsvriendelijke-steun", "botsvriendelijke steun", "Constructie die na aanrijding zijn oorspronkelijke positie hersteld", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerkeersbordsteunType/botsvriendelijke-steun")
-        self.add_option("botsvriendelijke-steun-type-100NE2", "botsvriendelijke steun type 100NE2", "te bepalen", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerkeersbordsteunType/botsvriendelijke-steun-type-100NE2")
-        self.add_option("botsvriendelijke-steun-type-100NE3", "botsvriendelijke steun type 100NE3", "te bepalen", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerkeersbordsteunType/botsvriendelijke-steun-type-100NE3")
-        self.add_option("galgpaal", "galgpaal", "Deze optie mag niet aangeduid worden! Bij instantiëren van galgpalen moet je het onderdeel 'Galgpaal' gebruiken.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerkeersbordsteunType/galgpaal")
-        self.add_option("rechte-paal", "rechte paal", "Een rechte paal met als doel een verkeersbord te bevestigen.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerkeersbordsteunType/rechte-paal")
-        self.add_option("seinbrug", "seinbrug", "Deze optie mag niet aangeduid worden! Bij instantiëren van seinbruggen moet je het onderdeel 'Seinbrug' gebruiken.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerkeersbordsteunType/seinbrug")
-        self.add_option("vakwerksteun", "vakwerksteun", "Een keuzelijst om het type verkeersbordpaal te bepalen", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerkeersbordsteunType/vakwerksteun")

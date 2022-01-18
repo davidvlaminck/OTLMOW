@@ -1,24 +1,37 @@
 # coding=utf-8
-from OTLModel.Datatypes.Keuzelijst import Keuzelijst
+from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
+from OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 
 # Generated with OTLEnumerationCreator. To modify: extend, do not edit
-class KlSelLusSoort(Keuzelijst):
+class KlSelLusSoort(KeuzelijstField):
     """Keuzelijst met verschillende soorten selectieve lussen."""
+    naam = 'KlSelLusSoort'
+    label = 'Selectieve lus soort'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlSelLusSoort'
+    definition = 'Keuzelijst met verschillende soorten selectieve lussen.'
+    codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlSelLusSoort'
+    options = {
+        'buslus': KeuzelijstWaarde(invulwaarde='buslus',
+                                   label='buslus',
+                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlSelLusSoort/buslus'),
+        'trambuslus': KeuzelijstWaarde(invulwaarde='trambuslus',
+                                       label='trambuslus',
+                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlSelLusSoort/trambuslus'),
+        'trambuslus-virtueel': KeuzelijstWaarde(invulwaarde='trambuslus-virtueel',
+                                                label='trambuslus virtueel',
+                                                objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlSelLusSoort/trambuslus-virtueel'),
+        'tramlus': KeuzelijstWaarde(invulwaarde='tramlus',
+                                    label='tramlus',
+                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlSelLusSoort/tramlus'),
+        'tramlus-magnetisch': KeuzelijstWaarde(invulwaarde='tramlus-magnetisch',
+                                               label='tramlus magnetisch',
+                                               objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlSelLusSoort/tramlus-magnetisch'),
+        'tramlus-virtueel': KeuzelijstWaarde(invulwaarde='tramlus-virtueel',
+                                             label='tramlus virtueel',
+                                             objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlSelLusSoort/tramlus-virtueel'),
+        'tramlus-wisselcontact-DeLijn': KeuzelijstWaarde(invulwaarde='tramlus-wisselcontact-DeLijn',
+                                                         label='tramlus wisselcontact DeLijn',
+                                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlSelLusSoort/tramlus-wisselcontact-DeLijn')
+    }
 
-    def __init__(self):
-        super().__init__(naam="KlSelLusSoort",
-                         label="Selectieve lus soort",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlSelLusSoort",
-                         definition="Keuzelijst met verschillende soorten selectieve lussen.",
-                         usagenote="",
-                         deprecated_version="",
-                         codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlSelLusSoort")
-
-        self.add_option("buslus", "buslus", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlSelLusSoort/buslus")
-        self.add_option("trambuslus", "trambuslus", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlSelLusSoort/trambuslus")
-        self.add_option("trambuslus-virtueel", "trambuslus virtueel", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlSelLusSoort/trambuslus-virtueel")
-        self.add_option("tramlus", "tramlus", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlSelLusSoort/tramlus")
-        self.add_option("tramlus-magnetisch", "tramlus magnetisch", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlSelLusSoort/tramlus-magnetisch")
-        self.add_option("tramlus-virtueel", "tramlus virtueel", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlSelLusSoort/tramlus-virtueel")
-        self.add_option("tramlus-wisselcontact-DeLijn", "tramlus wisselcontact DeLijn", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlSelLusSoort/tramlus-wisselcontact-DeLijn")

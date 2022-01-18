@@ -1,9 +1,11 @@
 # coding=utf-8
+from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
+from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.BloemrijkGraslandGraslandfase4 import BloemrijkGraslandGraslandfase4
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Stroomdalgrasland(BloemrijkGraslandGraslandfase4):
+class Stroomdalgrasland(BloemrijkGraslandGraslandfase4, AttributeInfo):
     """G4b - cipreswolfsmelk, geoorde zuring, gestreepte
 klaver, grote tijm, handjesgras, harige ratelaar,
 hemelsleutel, kaal breukkruid, kleine
@@ -15,8 +17,9 @@ smalle raai, tripmadam, veldsalie, viltganzerik,
 voorjaarszegge, wit en zacht vetkruid, zachte
 haver, zeepkruid."""
 
-    typeURI = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Stroomdalgrasland"
+    typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Stroomdalgrasland'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        super().__init__()
+        AttributeInfo.__init__(self)
+        BloemrijkGraslandGraslandfase4.__init__(self)

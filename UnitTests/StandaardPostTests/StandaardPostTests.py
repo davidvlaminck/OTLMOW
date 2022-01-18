@@ -4,8 +4,7 @@ from unittest import TestCase
 from OTLModel.ClassLoader import ClassLoader
 from OTLModel.Classes.BitumineuzeLaag import BitumineuzeLaag
 from OTLModel.Classes.Geotextiel import Geotextiel
-from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
-from OTLModel.Datatypes.UnionTypeField import UnionTypeField
+from OTLModel.Datatypes.ComplexField import ComplexField
 
 
 @dataclasses.dataclass
@@ -23,23 +22,16 @@ class StandaardPostMapping:
     mappingOpmerking: str
 
 
-def set_value_by_dotnotatie(assetOrAttribuut, dotnotatie, defaultWaarde):
-    if '.' not in dotnotatie:
-        attribuut = getattr(assetOrAttribuut, dotnotatie)
-        if isinstance(attribuut, KeuzelijstField):
-            attribuut.set_value_by_invulwaarde(defaultWaarde)
-        else:
-            attribuut.waarde = defaultWaarde
-        return
+class DotNotationError(ValueError):
+    pass
 
-    attributen = dotnotatie.split('.')
 
-    if isinstance(assetOrAttribuut, UnionTypeField):
-        assetOrAttribuut.gebruik_veld(attributen[0])
-        attribuut = assetOrAttribuut.actiefVeld
-    else:
-        attribuut = getattr(assetOrAttribuut, attributen[0])
-    set_value_by_dotnotatie(attribuut, dotnotatie.split(".", 1)[1], defaultWaarde)
+def set_value_by_dotnotatie(assetOrAttribuut, dotnotatie, value):
+    try:
+        eval(f'assetOrAttribuut.{dotnotatie}')
+        exec(f'assetOrAttribuut.{dotnotatie} = value')
+    except:
+        raise DotNotationError(f'{dotnotatie} of {assetOrAttribuut} can not be set to {value}')
 
 
 @dataclasses.dataclass
@@ -160,6 +152,28 @@ class StandaardPostCollection:
 
 
 class StandaardPostTests(TestCase):
+    def test_set_value_by_dotnotatie_simple(self):
+        b = BitumineuzeLaag()
+        b.notitie = 'a'
+        self.assertEqual('a', b.notitie)
+        set_value_by_dotnotatie(b, 'notitie', 'c')
+        self.assertEqual('c', b.notitie)
+
+    def test_set_value_by_dotnotatie_invalid_attribute(self):
+        b = BitumineuzeLaag()
+        b.notitie = 'a'
+        self.assertEqual('a', b.notitie)
+        with self.assertRaises(DotNotationError) as dotnotationerror:
+            set_value_by_dotnotatie(b, 'notitie_invalid', 'c')
+        self.assertRegex(str(dotnotationerror.exception), 'notitie_invalid of <OTLModel.Classes.BitumineuzeLaag.BitumineuzeLaag object at 0x[0-9A-F]+> can not be set to c')
+
+    def test_set_value_by_dotnotatie_complex(self):
+        b = BitumineuzeLaag()
+        b.assetId.identificator = 'a'
+        self.assertEqual('a', b.assetId.identificator)
+        set_value_by_dotnotatie(b, 'assetId.identificator', 'c')
+        self.assertEqual('c', b.assetId.identificator)
+
     def test_create_assets_by_standaardPost_0501(self):
         posten = StandaardPostCollection()
         post0501 = posten.get_by_nummer('0501.00000')
@@ -167,7 +181,7 @@ class StandaardPostTests(TestCase):
 
         self.assertEqual(1, len(assets))
         self.assertTrue(isinstance(assets[0], Geotextiel))
-        self.assertEqual('bescherming', assets[0].type.waarde.invulwaarde)
+        self.assertEqual('bescherming', assets[0].type)
 
     def test_create_assets_by_standaardPost_0602_15019(self):
         posten = StandaardPostCollection()
@@ -176,6 +190,6 @@ class StandaardPostTests(TestCase):
 
         self.assertEqual(1, len(assets))
         self.assertTrue(isinstance(assets[0], BitumineuzeLaag))
-        self.assertEqual('AVS-B', assets[0].mengseltype.waarde.invulwaarde)
-        self.assertEqual('verharding', assets[0].laagRol.waarde.invulwaarde)
-        self.assertEqual('profileerlaag', assets[0].laagtype.waarde.laagtype.waarde.invulwaarde)
+        self.assertEqual('AVS-B', assets[0].mengseltype)
+        self.assertEqual('verharding', assets[0].laagRol)
+        self.assertEqual('profileerlaag', assets[0].laagtype.profileerlaag.laagtype)

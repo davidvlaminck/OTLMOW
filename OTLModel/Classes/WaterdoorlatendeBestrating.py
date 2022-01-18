@@ -1,6 +1,7 @@
 # coding=utf-8
+from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
+from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.Bestrating import Bestrating
-from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlAardWBSS import KlAardWBSS
 from OTLModel.Datatypes.KlBestratingAfwerking import KlBestratingAfwerking
 from OTLModel.Datatypes.KlBestratingselementAfmetingLxB import KlBestratingselementAfmetingLxB
@@ -8,51 +9,72 @@ from OTLModel.Datatypes.KlWBSSType import KlWBSSType
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class WaterdoorlatendeBestrating(Bestrating):
+class WaterdoorlatendeBestrating(Bestrating, AttributeInfo):
     """Betonstraatstenen of betontegels die omwille van hun vormkenmerken (bv. drainageopeningen of verbrede voegen) of betonstructuur (poreus beton met een open korrelopbouw) water doorlaten zoals omschreven in PTV 122."""
 
-    typeURI = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#WaterdoorlatendeBestrating"
+    typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#WaterdoorlatendeBestrating'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        super().__init__()
+        AttributeInfo.__init__(self)
+        Bestrating.__init__(self)
 
-        self.aard = KeuzelijstField(naam="aard",
-                                    label="aard",
-                                    lijst=KlAardWBSS(),
-                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#WaterdoorlatendeBestrating.aard",
-                                    definition="Het kenmerk of de vorm van de waterdoorlatende betonstraatsteen waardoor infiltratie van hemelwater in de bodem mogelijk is.",
-                                    constraints="",
-                                    usagenote="",
-                                    deprecated_version="")
+        self._aard = OTLAttribuut(field=KlAardWBSS,
+                                  naam='aard',
+                                  label='aard',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#WaterdoorlatendeBestrating.aard',
+                                  definition='Het kenmerk of de vorm van de waterdoorlatende betonstraatsteen waardoor infiltratie van hemelwater in de bodem mogelijk is.')
+
+        self._afmetingVanBestratingselementLxB = OTLAttribuut(field=KlBestratingselementAfmetingLxB,
+                                                              naam='afmetingVanBestratingselementLxB',
+                                                              label='afmeting van bestratingselement LxB',
+                                                              objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#WaterdoorlatendeBestrating.afmetingVanBestratingselementLxB',
+                                                              definition='De lengte en breedte van het bestratingselement in millimeter.')
+
+        self._afwerking = OTLAttribuut(field=KlBestratingAfwerking,
+                                       naam='afwerking',
+                                       label='afwerking',
+                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#WaterdoorlatendeBestrating.afwerking',
+                                       definition='Bepaling van de afwerking van de waterdoorlatende betonstraatstenen of betontegels.')
+
+        self._type = OTLAttribuut(field=KlWBSSType,
+                                  naam='type',
+                                  label='type',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#WaterdoorlatendeBestrating.type',
+                                  definition='Het type van waterdoorlatende betonstraatstenen of betontegels.')
+
+    @property
+    def aard(self):
         """Het kenmerk of de vorm van de waterdoorlatende betonstraatsteen waardoor infiltratie van hemelwater in de bodem mogelijk is."""
+        return self._aard.waarde
 
-        self.afmetingVanBestratingselementLxB = KeuzelijstField(naam="afmetingVanBestratingselementLxB",
-                                                                label="afmeting van bestratingselement LxB",
-                                                                lijst=KlBestratingselementAfmetingLxB(),
-                                                                objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#WaterdoorlatendeBestrating.afmetingVanBestratingselementLxB",
-                                                                definition="De lengte en breedte van het bestratingselement in millimeter.",
-                                                                constraints="",
-                                                                usagenote="",
-                                                                deprecated_version="")
+    @aard.setter
+    def aard(self, value):
+        self._aard.set_waarde(value, owner=self)
+
+    @property
+    def afmetingVanBestratingselementLxB(self):
         """De lengte en breedte van het bestratingselement in millimeter."""
+        return self._afmetingVanBestratingselementLxB.waarde
 
-        self.afwerking = KeuzelijstField(naam="afwerking",
-                                         label="afwerking",
-                                         lijst=KlBestratingAfwerking(),
-                                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#WaterdoorlatendeBestrating.afwerking",
-                                         definition="Bepaling van de afwerking van de waterdoorlatende betonstraatstenen of betontegels.",
-                                         constraints="",
-                                         usagenote="",
-                                         deprecated_version="")
+    @afmetingVanBestratingselementLxB.setter
+    def afmetingVanBestratingselementLxB(self, value):
+        self._afmetingVanBestratingselementLxB.set_waarde(value, owner=self)
+
+    @property
+    def afwerking(self):
         """Bepaling van de afwerking van de waterdoorlatende betonstraatstenen of betontegels."""
+        return self._afwerking.waarde
 
-        self.type = KeuzelijstField(naam="type",
-                                    label="type",
-                                    lijst=KlWBSSType(),
-                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#WaterdoorlatendeBestrating.type",
-                                    definition="Het type van waterdoorlatende betonstraatstenen of betontegels.",
-                                    constraints="",
-                                    usagenote="",
-                                    deprecated_version="")
+    @afwerking.setter
+    def afwerking(self, value):
+        self._afwerking.set_waarde(value, owner=self)
+
+    @property
+    def type(self):
         """Het type van waterdoorlatende betonstraatstenen of betontegels."""
+        return self._type.waarde
+
+    @type.setter
+    def type(self, value):
+        self._type.set_waarde(value, owner=self)

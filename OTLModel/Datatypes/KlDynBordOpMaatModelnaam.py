@@ -1,17 +1,16 @@
 # coding=utf-8
-from OTLModel.Datatypes.Keuzelijst import Keuzelijst
+from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
+from OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 
 # Generated with OTLEnumerationCreator. To modify: extend, do not edit
-class KlDynBordOpMaatModelnaam(Keuzelijst):
+class KlDynBordOpMaatModelnaam(KeuzelijstField):
     """Keuzelijst met de gangbare modelnamen van dynamische borden op maat. De modelnamen worden meestal door de leverancier of fabrikant bepaald."""
-
-    def __init__(self):
-        super().__init__(naam="KlDynBordOpMaatModelnaam",
-                         label="Keuzelijst modelnamen voor dynamische borden op maat",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlDynBordOpMaatModelnaam",
-                         definition="Keuzelijst met de gangbare modelnamen van dynamische borden op maat. De modelnamen worden meestal door de leverancier of fabrikant bepaald.",
-                         usagenote="",
-                         deprecated_version="",
-                         codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlDynBordOpMaatModelnaam")
+    naam = 'KlDynBordOpMaatModelnaam'
+    label = 'Keuzelijst modelnamen voor dynamische borden op maat'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlDynBordOpMaatModelnaam'
+    definition = 'Keuzelijst met de gangbare modelnamen van dynamische borden op maat. De modelnamen worden meestal door de leverancier of fabrikant bepaald.'
+    codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlDynBordOpMaatModelnaam'
+    options = 
+    }
 

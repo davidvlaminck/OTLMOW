@@ -1,61 +1,20 @@
 import unittest
 from datetime import datetime, time
 
-from OTLModel.BaseClasses.WKTField import WKTField
+from OTLModel.Classes.Agent import Agent
+from OTLModel.Classes.HoutigeVegetatie import HoutigeVegetatie
+from OTLModel.Classes.KabelnetToegang import KabelnetToegang
 from OTLModel.Datatypes.BooleanField import BooleanField
 from OTLModel.Datatypes.DateField import DateField
-from OTLModel.Datatypes.DateTimeField import DateTimeField
 from OTLModel.Datatypes.IntegerField import IntegerField
-from OTLModel.Datatypes.LiteralField import LiteralField
-from OTLModel.Datatypes.NonNegIntegerField import NonNegIntegerField
-from OTLModel.Datatypes.OTLField import OTLField
-from OTLModel.Datatypes.StringField import StringField
+from OTLModel.Datatypes.KwantWrdInMaand import KwantWrdInMaand
 from OTLModel.Datatypes.TimeField import TimeField
 
 
-class TestInstance:
+class TestInstance(KabelnetToegang, HoutigeVegetatie):
     def __init__(self):
-        self.boolean = BooleanField(naam="booleanField", label="booleanField", objectUri="booleanField",
-                                    definition="definitie booleanField", constraints="", usagenote="", deprecated_version="")
-        """doc for boolean"""
-
-        self.string = StringField(naam="StringField", label="StringFieldLabel", objectUri="StringFieldUri",
-                                  definition="definitie StringField", constraints="", usagenote="", deprecated_version="")
-        """doc for string"""
-
-        self.int = IntegerField(naam="IntegerField", label="IntegerField", objectUri="IntegerField", definition="definitie IntegerField", constraints="",
-                                usagenote="", deprecated_version="")
-        """doc for int"""
-
-        self.nonNegInt = NonNegIntegerField(naam="NonNegIntegerField", label="NonNegIntegerField", objectUri="NonNegIntegerField",
-                                            definition="definitie NonNegIntegerField", constraints="", usagenote="",
-                                            deprecated_version="")
-        """doc for nonNegInt"""
-
-        self.date = DateField(naam="DateField", label="DateField", objectUri="DateField",
-                              definition="definitie DateField", constraints="", usagenote="",
-                              deprecated_version="")
-        """doc for date"""
-
-        self.datetime = DateTimeField(naam="DateTimeField", label="DateTimeField", objectUri="DateTimeField",
-                                      definition="definitie DateTimeField", constraints="", usagenote="",
-                                      deprecated_version="")
-        """doc for datetime"""
-
-        self.literal = LiteralField(naam="LiteralField", label="LiteralField", objectUri="LiteralField",
-                                    definition="definitie LiteralField", constraints="", usagenote="",
-                                    deprecated_version="", readonlyValue="eenheid")
-        """doc for literal"""
-
-        self.time = TimeField(naam="TimeField", label="TimeField", objectUri="TimeField",
-                              definition="definitie TimeField", constraints="", usagenote="",
-                              deprecated_version="")
-        """doc for time"""
-
-        self.wkt = WKTField(naam="WKTField", label="WKTField", objectUri="WKTField",
-                            definition="definitie WKTField", constraints="", usagenote="",
-                            deprecated_version="")
-        """doc for wkt """
+        KabelnetToegang.__init__(self)
+        HoutigeVegetatie.__init__(self)
 
 
 class PrimitiveTypeTests(unittest.TestCase):
@@ -63,161 +22,92 @@ class PrimitiveTypeTests(unittest.TestCase):
         instance = TestInstance()
         instance2 = TestInstance()
 
-        instance.string.waarde = "1"
-        self.assertTrue(instance.string.waarde == "1")
+        instance.notitie = "1"
+        self.assertTrue(instance.notitie == "1")
 
-        instance2.string.waarde = "2"
-        self.assertTrue(instance.string.waarde == "1")
-        self.assertTrue(instance2.string.waarde == "2")
-
-    def test_stringTests(self):
-        instance = TestInstance()
-        self.assertTrue(instance.string.objectUri == "StringFieldUri")
-        self.assertTrue(instance.string.naam == "StringField")
-        self.assertIsNone(instance.string.waarde)
-
-        with self.assertRaises(ValueError):
-            instance.string.waarde = 1
-        with self.assertRaises(ValueError):
-            instance.string.waarde = True
-
-        self.assertTrue(isinstance(instance.string, StringField))
-        self.assertTrue(isinstance(instance.string, OTLField))
-
-        self.assertEqual(instance.string.primitiveType.__name__, "str")
-        instance.string.waarde = "str"
-        self.assertTrue(instance.string.waarde == "str")
-        self.assertTrue(isinstance(instance.string.waarde, str))
+        instance2.notitie = "2"
+        self.assertTrue(instance.notitie == "1")
+        self.assertTrue(instance2.notitie == "2")
 
     def test_BooleanFieldTests(self):
         instance = TestInstance()
 
-        self.assertTrue(instance.boolean.objectUri == "booleanField")
-        self.assertIsNone(instance.boolean.waarde)
-        self.assertTrue(isinstance(instance.boolean, BooleanField))
-        self.assertTrue(isinstance(instance.boolean, OTLField))
+        self.assertEquals(instance._isActief.field.objectUri, "http://www.w3.org/2001/XMLSchema#boolean")
+        self.assertIsNone(instance.isActief)
 
-        instance.boolean.waarde = True
-        self.assertTrue(instance.boolean.waarde)
-        self.assertTrue(isinstance(instance.boolean.waarde, bool))
+        instance.isActief = True
+        self.assertEquals(instance._isActief.field, BooleanField)
+        self.assertTrue(instance.isActief)
+        self.assertTrue(isinstance(instance.isActief, bool))
 
-        instance.boolean.waarde = False
-        self.assertFalse(instance.boolean.waarde)
+        instance.isActief = False
+        self.assertFalse(instance.isActief)
 
-        with self.assertRaises(ValueError):
-            instance.boolean.waarde = 1
+        with self.assertRaises(TypeError):
+            instance.isActief = "True"
 
-    def test_intTests(self):
+        with self.assertRaises(TypeError):
+            instance.isActief = 0
+
+    def test_IntegerFieldTests(self):
         instance = TestInstance()
 
-        self.assertTrue(instance.int.objectUri == "IntegerField")
-        self.assertIsNone(instance.int.waarde)
-        self.assertTrue(isinstance(instance.int, IntegerField))
-        self.assertTrue(isinstance(instance.int, OTLField))
+        self.assertEquals("http://www.w3.org/2001/XMLSchema#integer", instance._kabelnetToegangId.field.objectUri)
+        self.assertIsNone(instance.kabelnetToegangId)
+        self.assertEquals(instance._kabelnetToegangId.field, IntegerField)
 
-        instance.int.waarde = 1
-        self.assertTrue(instance.int.waarde == 1)
-        self.assertTrue(isinstance(instance.int.waarde, int))
+        instance.kabelnetToegangId = 2
+        self.assertTrue(instance.kabelnetToegangId == 2)
+        self.assertTrue(isinstance(instance.kabelnetToegangId, int))
 
-        with self.assertRaises(ValueError):
-            instance.int.waarde = "1"
-        with self.assertRaises(ValueError):
-            instance.int.waarde = True
+        instance.kabelnetToegangId = True  # also works, True == 1 and False == 0
+        self.assertTrue(instance.kabelnetToegangId == 1)
 
-        # with self.assertRaises(SyntaxError):
-        instance.int = True
+        with self.assertRaises(TypeError):
+            instance.kabelnetToegangId = "1"
 
     def test_nonNegIntTests(self):
         instance = TestInstance()
 
-        self.assertTrue(instance.nonNegInt.objectUri == "NonNegIntegerField")
-        self.assertIsNone(instance.nonNegInt.waarde)
-        self.assertTrue(isinstance(instance.nonNegInt, IntegerField))
-        self.assertTrue(isinstance(instance.nonNegInt, OTLField))
+        self.assertIsNone(instance.theoretischeLevensduur)
+        self.assertEquals(instance._theoretischeLevensduur.field, KwantWrdInMaand)
 
-        instance.nonNegInt.waarde = 1
-        self.assertEqual(1, instance.nonNegInt.waarde)
-        self.assertTrue(isinstance(instance.nonNegInt.waarde, int))
+        instance.theoretischeLevensduur = 5
+        self.assertEqual(5, instance.theoretischeLevensduur)
+        self.assertTrue(isinstance(instance.theoretischeLevensduur, int))
+
+        with self.assertRaises(TypeError):
+            instance.theoretischeLevensduur = "1"
 
         with self.assertRaises(ValueError):
-            instance.nonNegInt.waarde = -1
-        with self.assertRaises(ValueError):
-            instance.nonNegInt.waarde = "1"
-        with self.assertRaises(ValueError):
-            instance.nonNegInt.waarde = True
+            instance.theoretischeLevensduur = -1
 
     def test_dateTests(self):
         instance = TestInstance()
 
-        self.assertTrue(instance.date.objectUri == "DateField")
-        self.assertIsNone(instance.date.waarde)
-        self.assertTrue(isinstance(instance.date, DateField))
-        self.assertTrue(isinstance(instance.date, OTLField))
+        self.assertEquals("http://www.w3.org/2001/XMLSchema#date", instance._datumOprichtingObject.field.objectUri)
+        self.assertIsNone(instance.datumOprichtingObject)
+        self.assertEquals(instance._datumOprichtingObject.field, DateField)
 
-        instance.date.waarde = datetime(2021, 2, 5)
-        self.assertEqual(5, instance.date.waarde.day)
-        self.assertEqual(2, instance.date.waarde.month)
-        self.assertEqual(2021, instance.date.waarde.year)
-        self.assertTrue(isinstance(instance.date.waarde, datetime))
-        self.assertEqual("2021-02-05", instance.date.default())
+        instance.datumOprichtingObject = datetime(2021, 2, 5)
+        self.assertEqual(5, instance.datumOprichtingObject.day)
+        self.assertEqual(2, instance.datumOprichtingObject.month)
+        self.assertEqual(2021, instance.datumOprichtingObject.year)
+        self.assertTrue(isinstance(instance.datumOprichtingObject, datetime))
 
-    def test_datetimeTests(self):
-        instance = TestInstance()
-
-        self.assertTrue(instance.datetime.objectUri == "DateTimeField")
-        self.assertIsNone(instance.datetime.waarde)
-        self.assertTrue(isinstance(instance.datetime, DateTimeField))
-        self.assertTrue(isinstance(instance.datetime, OTLField))
-
-        instance.datetime.waarde = datetime(2021, 2, 5, 10, 11, 12)
-        self.assertEqual(5, instance.datetime.waarde.day)
-        self.assertEqual(2, instance.datetime.waarde.month)
-        self.assertEqual(2021, instance.datetime.waarde.year)
-        self.assertEqual(10, instance.datetime.waarde.hour)
-        self.assertEqual(11, instance.datetime.waarde.minute)
-        self.assertEqual(12, instance.datetime.waarde.second)
-        self.assertTrue(isinstance(instance.datetime.waarde, datetime))
-        self.assertEqual("2021-02-05 10:11:12", instance.datetime.default())
-
-    def test_literalTests(self):
-        instance = TestInstance()
-
-        self.assertTrue(instance.literal.objectUri == "LiteralField")
-        self.assertIsNotNone(instance.literal.waarde)
-        self.assertTrue(isinstance(instance.literal, LiteralField))
-        self.assertTrue(isinstance(instance.literal, OTLField))
-
-        self.assertEqual("eenheid", instance.literal.waarde)
-        self.assertTrue(isinstance(instance.literal.waarde, str))
-
-        with self.assertRaises(AttributeError):
-            instance.literal.waarde = "andere eenheid"
+        self.assertEqual("2021-02-05", instance._datumOprichtingObject.field.value_default(instance.datumOprichtingObject))
 
     def test_timeTests(self):
-        instance = TestInstance()
+        instance = Agent()
 
-        self.assertTrue(instance.time.objectUri == "TimeField")
-        self.assertIsNone(instance.time.waarde)
-        self.assertTrue(isinstance(instance.time, TimeField))
-        self.assertTrue(isinstance(instance.time, OTLField))
+        self.assertEquals("http://www.w3.org/2001/XMLSchema#time", instance.contactinfo.beschikbaarheid._openingstijd.field.objectUri)
+        self.assertIsNone(instance.contactinfo.beschikbaarheid.openingstijd)
+        self.assertEquals(instance.contactinfo.beschikbaarheid._openingstijd.field, TimeField)
 
-        instance.time.waarde = time(10, 11, 12)
-        self.assertEqual(10, instance.time.waarde.hour)
-        self.assertEqual(11, instance.time.waarde.minute)
-        self.assertEqual(12, instance.time.waarde.second)
-        self.assertTrue(isinstance(instance.time.waarde, time))
-        self.assertEqual("10:11:12", instance.time.default())
+        instance.contactinfo.beschikbaarheid.openingstijd = time(10, 11, 12)
+        self.assertEqual(10, instance.contactinfo.beschikbaarheid.openingstijd.hour)
+        self.assertEqual(11, instance.contactinfo.beschikbaarheid.openingstijd.minute)
+        self.assertEqual(12, instance.contactinfo.beschikbaarheid.openingstijd.second)
+        self.assertTrue(isinstance(instance.contactinfo.beschikbaarheid.openingstijd, time))
 
-    def test_wktTests(self):
-        instance = TestInstance()
-
-        self.assertTrue(instance.wkt.objectUri == "WKTField")
-        self.assertIsNone(instance.wkt.waarde)
-        self.assertTrue(isinstance(instance.wkt, WKTField))
-        self.assertTrue(isinstance(instance.wkt, OTLField))
-
-        with self.assertRaises(ValueError):
-            instance.wkt.waarde = 2
-
-        with self.assertRaises(ValueError):
-            instance.wkt.waarde = "invalid wkt string"
+        self.assertEqual("10:11:12", instance.contactinfo.beschikbaarheid._openingstijd.field.value_default(instance.contactinfo.beschikbaarheid.openingstijd))

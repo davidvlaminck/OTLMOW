@@ -1,58 +1,80 @@
 # coding=utf-8
+from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
+from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.Bestrating import Bestrating
 from OTLModel.Datatypes.DtcBSSRandafwerking import DtcBSSRandafwerking
-from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlBSSType import KlBSSType
 from OTLModel.Datatypes.KlBestratingAfwerking import KlBestratingAfwerking
 from OTLModel.Datatypes.KlBestratingselementAfmetingLxB import KlBestratingselementAfmetingLxB
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class BestratingVanBetonstraatsteen(Bestrating):
+class BestratingVanBetonstraatsteen(Bestrating, AttributeInfo):
     """Bestrating van geprefabriceerde stenen in beton die (in de afgesproken mate) voldoen aan de vereisten van NBN EN 1338 en NBN B21-311."""
 
-    typeURI = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#BestratingVanBetonstraatsteen"
+    typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#BestratingVanBetonstraatsteen'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        super().__init__()
+        AttributeInfo.__init__(self)
+        Bestrating.__init__(self)
 
-        self.afmetingVanBestratingselementLxB = KeuzelijstField(naam="afmetingVanBestratingselementLxB",
-                                                                label="afmeting van bestratingselement LxB",
-                                                                lijst=KlBestratingselementAfmetingLxB(),
-                                                                objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#BestratingVanBetonstraatsteen.afmetingVanBestratingselementLxB",
-                                                                definition="De lengte en breedte van het bestratingselement in millimeter.",
-                                                                constraints="",
-                                                                usagenote="",
-                                                                deprecated_version="")
+        self._afmetingVanBestratingselementLxB = OTLAttribuut(field=KlBestratingselementAfmetingLxB,
+                                                              naam='afmetingVanBestratingselementLxB',
+                                                              label='afmeting van bestratingselement LxB',
+                                                              objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#BestratingVanBetonstraatsteen.afmetingVanBestratingselementLxB',
+                                                              definition='De lengte en breedte van het bestratingselement in millimeter.')
+
+        self._afwerking = OTLAttribuut(field=KlBestratingAfwerking,
+                                       naam='afwerking',
+                                       label='afwerking',
+                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#BestratingVanBetonstraatsteen.afwerking',
+                                       definition='Bepaling van afwerking van de betonstraatstenen.')
+
+        self._randafwerking = OTLAttribuut(field=DtcBSSRandafwerking,
+                                           naam='randafwerking',
+                                           label='randafwerking',
+                                           objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#BestratingVanBetonstraatsteen.randafwerking',
+                                           definition='De wijze waarop de rand van de betonstraatsteenverharding is afgewerkt.')
+
+        self._type = OTLAttribuut(field=KlBSSType,
+                                  naam='type',
+                                  label='type',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#BestratingVanBetonstraatsteen.type',
+                                  definition='Het type betonstraatsteen.')
+
+    @property
+    def afmetingVanBestratingselementLxB(self):
         """De lengte en breedte van het bestratingselement in millimeter."""
+        return self._afmetingVanBestratingselementLxB.waarde
 
-        self.afwerking = KeuzelijstField(naam="afwerking",
-                                         label="afwerking",
-                                         lijst=KlBestratingAfwerking(),
-                                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#BestratingVanBetonstraatsteen.afwerking",
-                                         definition="Bepaling van afwerking van de betonstraatstenen.",
-                                         constraints="",
-                                         usagenote="",
-                                         deprecated_version="")
+    @afmetingVanBestratingselementLxB.setter
+    def afmetingVanBestratingselementLxB(self, value):
+        self._afmetingVanBestratingselementLxB.set_waarde(value, owner=self)
+
+    @property
+    def afwerking(self):
         """Bepaling van afwerking van de betonstraatstenen."""
+        return self._afwerking.waarde
 
-        self.randafwerking = DtcBSSRandafwerking()
+    @afwerking.setter
+    def afwerking(self, value):
+        self._afwerking.set_waarde(value, owner=self)
+
+    @property
+    def randafwerking(self):
         """De wijze waarop de rand van de betonstraatsteenverharding is afgewerkt."""
-        self.randafwerking.naam = "randafwerking"
-        self.randafwerking.label = "randafwerking"
-        self.randafwerking.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#BestratingVanBetonstraatsteen.randafwerking"
-        self.randafwerking.definition = "De wijze waarop de rand van de betonstraatsteenverharding is afgewerkt."
-        self.randafwerking.constraints = ""
-        self.randafwerking.usagenote = ""
-        self.randafwerking.deprecated_version = ""
+        return self._randafwerking.waarde
 
-        self.type = KeuzelijstField(naam="type",
-                                    label="type",
-                                    lijst=KlBSSType(),
-                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#BestratingVanBetonstraatsteen.type",
-                                    definition="Het type betonstraatsteen.",
-                                    constraints="",
-                                    usagenote="",
-                                    deprecated_version="")
+    @randafwerking.setter
+    def randafwerking(self, value):
+        self._randafwerking.set_waarde(value, owner=self)
+
+    @property
+    def type(self):
         """Het type betonstraatsteen."""
+        return self._type.waarde
+
+    @type.setter
+    def type(self, value):
+        self._type.set_waarde(value, owner=self)

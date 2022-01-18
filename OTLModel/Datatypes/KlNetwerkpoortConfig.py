@@ -1,37 +1,76 @@
 # coding=utf-8
-from OTLModel.Datatypes.Keuzelijst import Keuzelijst
+from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
+from OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 
 # Generated with OTLEnumerationCreator. To modify: extend, do not edit
-class KlNetwerkpoortConfig(Keuzelijst):
+class KlNetwerkpoortConfig(KeuzelijstField):
     """Lijst van mogelijke soort verbindingen aangeboden aan de klant van Netwerkpoorten."""
+    naam = 'KlNetwerkpoortConfig'
+    label = 'Netwerkpoort configuratie'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlNetwerkpoortConfig'
+    definition = 'Lijst van mogelijke soort verbindingen aangeboden aan de klant van Netwerkpoorten.'
+    codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlNetwerkpoortConfig'
+    options = {
+        '100GE': KeuzelijstWaarde(invulwaarde='100GE',
+                                  label='100GE',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortConfig/100GE'),
+        '10GE': KeuzelijstWaarde(invulwaarde='10GE',
+                                 label='10GE',
+                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortConfig/10GE'),
+        '16G-FC': KeuzelijstWaarde(invulwaarde='16G-FC',
+                                   label='16G FC',
+                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortConfig/16G-FC'),
+        '1G-FC': KeuzelijstWaarde(invulwaarde='1G-FC',
+                                  label='1G FC',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortConfig/1G-FC'),
+        '40GE': KeuzelijstWaarde(invulwaarde='40GE',
+                                 label='40GE',
+                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortConfig/40GE'),
+        '4G-FC': KeuzelijstWaarde(invulwaarde='4G-FC',
+                                  label='4G FC',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortConfig/4G-FC'),
+        '8G-FC': KeuzelijstWaarde(invulwaarde='8G-FC',
+                                  label='8G FC',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortConfig/8G-FC'),
+        'E': KeuzelijstWaarde(invulwaarde='E',
+                              label='E',
+                              objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortConfig/E'),
+        'E1': KeuzelijstWaarde(invulwaarde='E1',
+                               label='E1',
+                               objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortConfig/E1'),
+        'FE': KeuzelijstWaarde(invulwaarde='FE',
+                               label='FE',
+                               objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortConfig/FE'),
+        'GE': KeuzelijstWaarde(invulwaarde='GE',
+                               label='GE',
+                               objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortConfig/GE'),
+        'NULL': KeuzelijstWaarde(invulwaarde='NULL',
+                                 label='NULL',
+                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortConfig/NULL'),
+        'OTU-1': KeuzelijstWaarde(invulwaarde='OTU-1',
+                                  label='OTU-1',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortConfig/OTU-1'),
+        'OTU-2': KeuzelijstWaarde(invulwaarde='OTU-2',
+                                  label='OTU-2',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortConfig/OTU-2'),
+        'OTU-4': KeuzelijstWaarde(invulwaarde='OTU-4',
+                                  label='OTU-4',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortConfig/OTU-4'),
+        'Other': KeuzelijstWaarde(invulwaarde='Other',
+                                  label='Other',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortConfig/Other'),
+        'STM-1': KeuzelijstWaarde(invulwaarde='STM-1',
+                                  label='STM-1',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortConfig/STM-1'),
+        'STM-16': KeuzelijstWaarde(invulwaarde='STM-16',
+                                   label='STM-16',
+                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortConfig/STM-16'),
+        'STM-4': KeuzelijstWaarde(invulwaarde='STM-4',
+                                  label='STM-4',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortConfig/STM-4'),
+        'STM-64': KeuzelijstWaarde(invulwaarde='STM-64',
+                                   label='STM-64',
+                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortConfig/STM-64')
+    }
 
-    def __init__(self):
-        super().__init__(naam="KlNetwerkpoortConfig",
-                         label="Netwerkpoort configuratie",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlNetwerkpoortConfig",
-                         definition="Lijst van mogelijke soort verbindingen aangeboden aan de klant van Netwerkpoorten.",
-                         usagenote="",
-                         deprecated_version="",
-                         codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlNetwerkpoortConfig")
-
-        self.add_option("100GE", "100GE", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortConfig/100GE")
-        self.add_option("10GE", "10GE", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortConfig/10GE")
-        self.add_option("16G-FC", "16G FC", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortConfig/16G-FC")
-        self.add_option("1G-FC", "1G FC", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortConfig/1G-FC")
-        self.add_option("40GE", "40GE", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortConfig/40GE")
-        self.add_option("4G-FC", "4G FC", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortConfig/4G-FC")
-        self.add_option("8G-FC", "8G FC", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortConfig/8G-FC")
-        self.add_option("E", "E", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortConfig/E")
-        self.add_option("E1", "E1", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortConfig/E1")
-        self.add_option("FE", "FE", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortConfig/FE")
-        self.add_option("GE", "GE", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortConfig/GE")
-        self.add_option("NULL", "NULL", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortConfig/NULL")
-        self.add_option("OTU-1", "OTU-1", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortConfig/OTU-1")
-        self.add_option("OTU-2", "OTU-2", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortConfig/OTU-2")
-        self.add_option("OTU-4", "OTU-4", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortConfig/OTU-4")
-        self.add_option("Other", "Other", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortConfig/Other")
-        self.add_option("STM-1", "STM-1", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortConfig/STM-1")
-        self.add_option("STM-16", "STM-16", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortConfig/STM-16")
-        self.add_option("STM-4", "STM-4", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortConfig/STM-4")
-        self.add_option("STM-64", "STM-64", "", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortConfig/STM-64")

@@ -1,22 +1,36 @@
 # coding=utf-8
-from OTLModel.Datatypes.Keuzelijst import Keuzelijst
+from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
+from OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 
 # Generated with OTLEnumerationCreator. To modify: extend, do not edit
-class KlBoomGroeifase(Keuzelijst):
+class KlBoomGroeifase(KeuzelijstField):
     """De verschillende fases van beheer volgens de verschillende levensfases."""
+    naam = 'KlBoomGroeifase'
+    label = 'Groeifasen'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlBoomGroeifase'
+    definition = 'De verschillende fases van beheer volgens de verschillende levensfases.'
+    codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlBoomGroeifase'
+    options = {
+        'dood': KeuzelijstWaarde(invulwaarde='dood',
+                                 label='dood',
+                                 definitie='Dood',
+                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBoomGroeifase/dood'),
+        'eindfase': KeuzelijstWaarde(invulwaarde='eindfase',
+                                     label='eindfase',
+                                     definitie='De periode waarbij regressie/aftakeling plaatsvindt – beheer gericht op in stand houding (kroonverzorging)',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBoomGroeifase/eindfase'),
+        'jeugdfase': KeuzelijstWaarde(invulwaarde='jeugdfase',
+                                      label='jeugdfase',
+                                      definitie='De periode van de lengte-ontwikkeling van de boom – beheer gericht op tot stand brengen van de takvrije stamlengte (begeleidingssnoei,..)',
+                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBoomGroeifase/jeugdfase'),
+        'plantfase': KeuzelijstWaarde(invulwaarde='plantfase',
+                                      label='plantfase',
+                                      definitie='De periode na de aanplant waarbij het beheer gericht is op het aanslaan van de boom (water geven, boompalen verwijderen,…)',
+                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBoomGroeifase/plantfase'),
+        'volwassenfase': KeuzelijstWaarde(invulwaarde='volwassenfase',
+                                          label='volwassenfase',
+                                          definitie='De periode van de kroonontwikkeling – beheer gericht op in stand houden van de boom (onderhoudssnoei)',
+                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBoomGroeifase/volwassenfase')
+    }
 
-    def __init__(self):
-        super().__init__(naam="KlBoomGroeifase",
-                         label="Groeifasen",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlBoomGroeifase",
-                         definition="De verschillende fases van beheer volgens de verschillende levensfases.",
-                         usagenote="",
-                         deprecated_version="",
-                         codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlBoomGroeifase")
-
-        self.add_option("dood", "dood", "Dood", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBoomGroeifase/dood")
-        self.add_option("eindfase", "eindfase", "De periode waarbij regressie/aftakeling plaatsvindt – beheer gericht op in stand houding (kroonverzorging)", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBoomGroeifase/eindfase")
-        self.add_option("jeugdfase", "jeugdfase", "De periode van de lengte-ontwikkeling van de boom – beheer gericht op tot stand brengen van de takvrije stamlengte (begeleidingssnoei,..)", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBoomGroeifase/jeugdfase")
-        self.add_option("plantfase", "plantfase", "De periode na de aanplant waarbij het beheer gericht is op het aanslaan van de boom (water geven, boompalen verwijderen,…)", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBoomGroeifase/plantfase")
-        self.add_option("volwassenfase", "volwassenfase", "De periode van de kroonontwikkeling – beheer gericht op in stand houden van de boom (onderhoudssnoei)", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBoomGroeifase/volwassenfase")

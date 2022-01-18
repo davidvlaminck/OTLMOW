@@ -1,23 +1,40 @@
 # coding=utf-8
-from OTLModel.Datatypes.Keuzelijst import Keuzelijst
+from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
+from OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 
 # Generated with OTLEnumerationCreator. To modify: extend, do not edit
-class KlPompSoort(Keuzelijst):
+class KlPompSoort(KeuzelijstField):
     """Soorten pomp."""
+    naam = 'KlPompSoort'
+    label = 'Pomp soort'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlPompSoort'
+    definition = 'Soorten pomp.'
+    codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlPompSoort'
+    options = {
+        'LPR-pomp-(luchtpersriolering)': KeuzelijstWaarde(invulwaarde='LPR-pomp-(luchtpersriolering)',
+                                                          label='LPR-pomp (luchtpersriolering)',
+                                                          definitie='LPR-pomp (luchtpersriolering)',
+                                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlPompSoort/LPR-pomp-(luchtpersriolering)'),
+        'dompelpomp': KeuzelijstWaarde(invulwaarde='dompelpomp',
+                                       label='dompelpomp',
+                                       definitie='dompelpomp',
+                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlPompSoort/dompelpomp'),
+        'radiale-centrifugaalpomp-(dompel)': KeuzelijstWaarde(invulwaarde='radiale-centrifugaalpomp-(dompel)',
+                                                              label='radiale centrifugaalpomp (dompel)',
+                                                              definitie='Radiale centrifugaalpomp (dompel)',
+                                                              objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlPompSoort/radiale-centrifugaalpomp-(dompel)'),
+        'radiale-centrifugaalpomp-(droog)': KeuzelijstWaarde(invulwaarde='radiale-centrifugaalpomp-(droog)',
+                                                             label='radiale centrifugaalpomp (droog)',
+                                                             definitie='Radiale centrifugaalpomp (droog)',
+                                                             objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlPompSoort/radiale-centrifugaalpomp-(droog)'),
+        'schachtpomp': KeuzelijstWaarde(invulwaarde='schachtpomp',
+                                        label='schachtpomp',
+                                        definitie='Schachtpomp',
+                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlPompSoort/schachtpomp'),
+        'vijzelpomp': KeuzelijstWaarde(invulwaarde='vijzelpomp',
+                                       label='vijzelpomp',
+                                       definitie='Vijzelpomp',
+                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlPompSoort/vijzelpomp')
+    }
 
-    def __init__(self):
-        super().__init__(naam="KlPompSoort",
-                         label="Pomp soort",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlPompSoort",
-                         definition="Soorten pomp.",
-                         usagenote="",
-                         deprecated_version="",
-                         codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlPompSoort")
-
-        self.add_option("LPR-pomp-(luchtpersriolering)", "LPR-pomp (luchtpersriolering)", "LPR-pomp (luchtpersriolering)", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlPompSoort/LPR-pomp-(luchtpersriolering)")
-        self.add_option("dompelpomp", "dompelpomp", "dompelpomp", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlPompSoort/dompelpomp")
-        self.add_option("radiale-centrifugaalpomp-(dompel)", "radiale centrifugaalpomp (dompel)", "Radiale centrifugaalpomp (dompel)", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlPompSoort/radiale-centrifugaalpomp-(dompel)")
-        self.add_option("radiale-centrifugaalpomp-(droog)", "radiale centrifugaalpomp (droog)", "Radiale centrifugaalpomp (droog)", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlPompSoort/radiale-centrifugaalpomp-(droog)")
-        self.add_option("schachtpomp", "schachtpomp", "Schachtpomp", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlPompSoort/schachtpomp")
-        self.add_option("vijzelpomp", "vijzelpomp", "Vijzelpomp", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlPompSoort/vijzelpomp")

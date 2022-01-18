@@ -2,27 +2,40 @@ import decimal
 import unittest
 from abc import ABC
 
+from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Datatypes.DteKleurRAL import DteKleurRAL
 from OTLModel.Datatypes.StringField import StringField
 from OTLModel.Classes.AIMObject import AIMObject
 
 
 class DteTestClass(AIMObject, ABC):
-    RALKleur = DteKleurRAL()
+    def __init__(self):
+        self._kleur = OTLAttribuut(field=DteKleurRAL,
+                                   naam='kleur',
+                                   label='kleur',
+                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Lichtmast.kleur',
+                                   definition='RAL kleur van de lichtmast.')
+
+    @property
+    def kleur(self):
+        """RAL kleur van de lichtmast."""
+        return self._kleur.waarde
+
+    @kleur.setter
+    def kleur(self, value):
+        self._kleur.set_waarde(value, owner=self)
 
 
 class RelatiesTests(unittest.TestCase):
     def test_DteTestClass(self):
-        instance = DteTestClass
+        instance = DteTestClass()
 
-        self.assertTrue(isinstance(instance.RALKleur, DteKleurRAL))
-        self.assertIsNone(instance.RALKleur.eenheidVeld)
-        self.assertEqual(None, instance.RALKleur.waarde)
+        self.assertEqual(instance._kleur.field, DteKleurRAL)
 
-        instance.RALKleur.waarde = "1111"
-        self.assertEqual("1111", instance.RALKleur.waarde)
+        instance.kleur = "1111"
+        self.assertEqual("1111", instance.kleur)
 
-        with self.assertRaises(ValueError):
-            instance.RALKleur.waarde = 2.0
+        with self.assertRaises(TypeError):
+            instance.kleur = 2.0
 
-        self.assertTrue(isinstance(instance.RALKleur.waardeVeld, StringField))
+        self.assertTrue(isinstance(instance.kleur, str))

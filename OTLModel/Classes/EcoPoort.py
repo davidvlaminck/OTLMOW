@@ -1,36 +1,48 @@
 # coding=utf-8
+from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
+from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.ComplexeGeleiding import ComplexeGeleiding
-from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlEcoPoorttype import KlEcoPoorttype
 from OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class EcoPoort(ComplexeGeleiding):
+class EcoPoort(ComplexeGeleiding, AttributeInfo):
     """Een afsluitbare doorgang om mensen toe te laten tot het gebied."""
 
-    typeURI = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#EcoPoort"
+    typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#EcoPoort'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        super().__init__()
+        AttributeInfo.__init__(self)
+        ComplexeGeleiding.__init__(self)
 
-        self.breedte = KwantWrdInMeter()
+        self._breedte = OTLAttribuut(field=KwantWrdInMeter,
+                                     naam='breedte',
+                                     label='breedte',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#EcoPoort.breedte',
+                                     definition='De breedte van de poort in meter.')
+
+        self._poortType = OTLAttribuut(field=KlEcoPoorttype,
+                                       naam='poortType',
+                                       label='poort type',
+                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#EcoPoort.poortType',
+                                       definition='Bepaling van het type van poort.')
+
+    @property
+    def breedte(self):
         """De breedte van de poort in meter."""
-        self.breedte.naam = "breedte"
-        self.breedte.label = "breedte"
-        self.breedte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#EcoPoort.breedte"
-        self.breedte.definition = "De breedte van de poort in meter."
-        self.breedte.constraints = ""
-        self.breedte.usagenote = ""
-        self.breedte.deprecated_version = ""
+        return self._breedte.waarde
 
-        self.poortType = KeuzelijstField(naam="poortType",
-                                         label="poort type",
-                                         lijst=KlEcoPoorttype(),
-                                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#EcoPoort.poortType",
-                                         definition="Bepaling van het type van poort.",
-                                         constraints="",
-                                         usagenote="",
-                                         deprecated_version="")
+    @breedte.setter
+    def breedte(self, value):
+        self._breedte.set_waarde(value, owner=self)
+
+    @property
+    def poortType(self):
         """Bepaling van het type van poort."""
+        return self._poortType.waarde
+
+    @poortType.setter
+    def poortType(self, value):
+        self._poortType.set_waarde(value, owner=self)

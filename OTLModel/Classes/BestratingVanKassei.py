@@ -1,24 +1,36 @@
 # coding=utf-8
+from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
+from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.Bestrating import Bestrating
 from OTLModel.Datatypes.DtcAfmetingBxlInCm import DtcAfmetingBxlInCm
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class BestratingVanKassei(Bestrating):
+class BestratingVanKassei(Bestrating, AttributeInfo):
     """Bestrating van kasseien, in rij gelegd. Kasseien zijn bestratingselementen van porfier, kwartsiet, graniet, of van harde zandsteen die geen schilferige structuur heeft. Ze hebben een dicht aaneengesloten en homogene korrel, zonder steenkorst, kwade aders of kwakaders en vertonen geen diamantkop."""
 
-    typeURI = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#BestratingVanKassei"
+    typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#BestratingVanKassei'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        super().__init__()
+        AttributeInfo.__init__(self)
+        Bestrating.__init__(self)
 
-        self.afmetingVanBestratingselementBxl = DtcAfmetingBxlInCm()
-        """Afmeting van de breedte in cm (langste) en van de lengte in cm (kortste) van de kassei."""
-        self.afmetingVanBestratingselementBxl.naam = "afmetingVanBestratingselementBxl"
-        self.afmetingVanBestratingselementBxl.label = "afmeting van bestratingselement bxl"
-        self.afmetingVanBestratingselementBxl.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#BestratingVanKassei.afmetingVanBestratingselementBxl"
-        self.afmetingVanBestratingselementBxl.definition = "Afmeting van de breedte in cm (langste) en van de lengte in cm (kortste) van de kassei."
-        self.afmetingVanBestratingselementBxl.constraints = ""
-        self.afmetingVanBestratingselementBxl.usagenote = ""
-        self.afmetingVanBestratingselementBxl.deprecated_version = ""
+        self._afmetingVanBestratingselementBxl = OTLAttribuut(field=DtcAfmetingBxlInCm,
+                                                              naam='afmetingVanBestratingselementBxl',
+                                                              label='afmeting van bestratingselement bxl',
+                                                              objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#BestratingVanKassei.afmetingVanBestratingselementBxl',
+                                                              definition='Afmeting van de breedte in cm (langste)
+ en van de lengte in cm (kortste)
+ van de kassei.')
+
+    @property
+    def afmetingVanBestratingselementBxl(self):
+        """Afmeting van de breedte in cm (langste)
+ en van de lengte in cm (kortste)
+ van de kassei."""
+        return self._afmetingVanBestratingselementBxl.waarde
+
+    @afmetingVanBestratingselementBxl.setter
+    def afmetingVanBestratingselementBxl(self, value):
+        self._afmetingVanBestratingselementBxl.set_waarde(value, owner=self)

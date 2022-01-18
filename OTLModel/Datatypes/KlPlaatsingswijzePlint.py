@@ -1,19 +1,24 @@
 # coding=utf-8
-from OTLModel.Datatypes.Keuzelijst import Keuzelijst
+from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
+from OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 
 # Generated with OTLEnumerationCreator. To modify: extend, do not edit
-class KlPlaatsingswijzePlint(Keuzelijst):
+class KlPlaatsingswijzePlint(KeuzelijstField):
     """De manier waarop de plint geplaatst is ten opzichte van de profielen."""
+    naam = 'KlPlaatsingswijzePlint'
+    label = 'Plaatsingswijze plint'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlPlaatsingswijzePlint'
+    definition = 'De manier waarop de plint geplaatst is ten opzichte van de profielen.'
+    codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlPlaatsingswijzePlint'
+    options = {
+        'bevestigd-tegen-de-profielen': KeuzelijstWaarde(invulwaarde='bevestigd-tegen-de-profielen',
+                                                         label='bevestigd tegen de profielen',
+                                                         definitie='bevestigd tegen de profielen',
+                                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlPlaatsingswijzePlint/bevestigd-tegen-de-profielen'),
+        'geschoven-tussen-de-profielen': KeuzelijstWaarde(invulwaarde='geschoven-tussen-de-profielen',
+                                                          label='geschoven tussen de profielen',
+                                                          definitie='geschoven tussen de profielen',
+                                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlPlaatsingswijzePlint/geschoven-tussen-de-profielen')
+    }
 
-    def __init__(self):
-        super().__init__(naam="KlPlaatsingswijzePlint",
-                         label="Plaatsingswijze plint",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlPlaatsingswijzePlint",
-                         definition="De manier waarop de plint geplaatst is ten opzichte van de profielen.",
-                         usagenote="",
-                         deprecated_version="",
-                         codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlPlaatsingswijzePlint")
-
-        self.add_option("bevestigd-tegen-de-profielen", "bevestigd tegen de profielen", "bevestigd tegen de profielen", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlPlaatsingswijzePlint/bevestigd-tegen-de-profielen")
-        self.add_option("geschoven-tussen-de-profielen", "geschoven tussen de profielen", "geschoven tussen de profielen", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlPlaatsingswijzePlint/geschoven-tussen-de-profielen")

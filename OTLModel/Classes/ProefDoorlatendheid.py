@@ -1,24 +1,32 @@
 # coding=utf-8
+from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
+from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.Proef import Proef
 from OTLModel.Datatypes.DtcDocument import DtcDocument
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class ProefDoorlatendheid(Proef):
+class ProefDoorlatendheid(Proef, AttributeInfo):
     """De controle van de doorlatendheid van het oppervlak met behulp van de dubbele ringmethode."""
 
-    typeURI = "https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefDoorlatendheid"
+    typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefDoorlatendheid'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        super().__init__()
+        AttributeInfo.__init__(self)
+        Proef.__init__(self)
 
-        self.doorlatendheid = DtcDocument()
+        self._doorlatendheid = OTLAttribuut(field=DtcDocument,
+                                            naam='doorlatendheid',
+                                            label='doorlatendheid',
+                                            objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefDoorlatendheid.doorlatendheid',
+                                            definition='Proefresultaten van de waterdoorlatendheid.')
+
+    @property
+    def doorlatendheid(self):
         """Proefresultaten van de waterdoorlatendheid."""
-        self.doorlatendheid.naam = "doorlatendheid"
-        self.doorlatendheid.label = "doorlatendheid"
-        self.doorlatendheid.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefDoorlatendheid.doorlatendheid"
-        self.doorlatendheid.definition = "Proefresultaten van de waterdoorlatendheid."
-        self.doorlatendheid.constraints = ""
-        self.doorlatendheid.usagenote = ""
-        self.doorlatendheid.deprecated_version = ""
+        return self._doorlatendheid.waarde
+
+    @doorlatendheid.setter
+    def doorlatendheid(self, value):
+        self._doorlatendheid.set_waarde(value, owner=self)

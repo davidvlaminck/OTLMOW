@@ -1,24 +1,32 @@
 # coding=utf-8
+from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
+from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.AIMObject import AIMObject
 from OTLModel.Datatypes.KwantWrdInVierkanteMeter import KwantWrdInVierkanteMeter
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class GroepMarkering(AIMObject):
+class GroepMarkering(AIMObject, AttributeInfo):
     """Groepering om alle soorten markeringen te groeperen."""
 
-    typeURI = "https://wegenenverkeer.data.vlaanderen.be/ns/installatie#GroepMarkering"
+    typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/installatie#GroepMarkering'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        super().__init__()
+        AIMObject.__init__(self)
+        AttributeInfo.__init__(self)
 
-        self.totaleGroepOppervlakte = KwantWrdInVierkanteMeter()
+        self._totaleGroepOppervlakte = OTLAttribuut(field=KwantWrdInVierkanteMeter,
+                                                    naam='totaleGroepOppervlakte',
+                                                    label='totale oppervlakte groepering',
+                                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/installatie#GroepMarkering.totaleGroepOppervlakte',
+                                                    definition='De totale oppervlakte van de totale markering groepering.')
+
+    @property
+    def totaleGroepOppervlakte(self):
         """De totale oppervlakte van de totale markering groepering."""
-        self.totaleGroepOppervlakte.naam = "totaleGroepOppervlakte"
-        self.totaleGroepOppervlakte.label = "totale oppervlakte groepering"
-        self.totaleGroepOppervlakte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/installatie#GroepMarkering.totaleGroepOppervlakte"
-        self.totaleGroepOppervlakte.definition = "De totale oppervlakte van de totale markering groepering."
-        self.totaleGroepOppervlakte.constraints = ""
-        self.totaleGroepOppervlakte.usagenote = ""
-        self.totaleGroepOppervlakte.deprecated_version = ""
+        return self._totaleGroepOppervlakte.waarde
+
+    @totaleGroepOppervlakte.setter
+    def totaleGroepOppervlakte(self, value):
+        self._totaleGroepOppervlakte.set_waarde(value, owner=self)

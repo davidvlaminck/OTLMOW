@@ -1,78 +1,110 @@
 # coding=utf-8
+from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
+from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.AIMObject import AIMObject
 from OTLModel.Datatypes.DtcDocument import DtcDocument
-from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlOverstortrandMateriaal import KlOverstortrandMateriaal
 from OTLModel.Datatypes.KlVariabelDeelType import KlVariabelDeelType
 from OTLModel.Datatypes.KwantWrdInMillimeter import KwantWrdInMillimeter
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Overstortrand(AIMObject):
+class Overstortrand(AIMObject, AttributeInfo):
     """Een overstortrand heeft als doel het afvoeren van (pieken in) overtollig rioolwater vanuit de gemengde riolering naar het oppervlaktewater."""
 
-    typeURI = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Overstortrand"
+    typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Overstortrand'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        super().__init__()
+        AIMObject.__init__(self)
+        AttributeInfo.__init__(self)
 
-        self.breedte = KwantWrdInMillimeter()
+        self._breedte = OTLAttribuut(field=KwantWrdInMillimeter,
+                                     naam='breedte',
+                                     label='breedte',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Overstortrand.breedte',
+                                     definition='De afstand tussen de uiterste zijden van de overstortrand in millimeter.')
+
+        self._hoogte = OTLAttribuut(field=KwantWrdInMillimeter,
+                                    naam='hoogte',
+                                    label='hoogte',
+                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Overstortrand.hoogte',
+                                    definition='De afstand tussen de vaste drempel en het hoogste punt van de overstortrand in millimeter.')
+
+        self._materiaal = OTLAttribuut(field=KlOverstortrandMateriaal,
+                                       naam='materiaal',
+                                       label='materiaal',
+                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Overstortrand.materiaal',
+                                       definition='Het materiaal waaruit de overstortrand vervaardigd is.')
+
+        self._technischeFiche = OTLAttribuut(field=DtcDocument,
+                                             naam='technischeFiche',
+                                             label='technische fiche',
+                                             objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Overstortrand.technischeFiche',
+                                             definition='De technische fiche van de de overstortrand.')
+
+        self._variabelDeelType = OTLAttribuut(field=KlVariabelDeelType,
+                                              naam='variabelDeelType',
+                                              label='variabel deel type',
+                                              objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Overstortrand.variabelDeelType',
+                                              definition='Bepaalt het type van het variabel deel van de overstortrand.')
+
+        self._wanddikte = OTLAttribuut(field=KwantWrdInMillimeter,
+                                       naam='wanddikte',
+                                       label='wanddikte',
+                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Overstortrand.wanddikte',
+                                       definition='De wanddikte van de overstortrand in millimeter.')
+
+    @property
+    def breedte(self):
         """De afstand tussen de uiterste zijden van de overstortrand in millimeter."""
-        self.breedte.naam = "breedte"
-        self.breedte.label = "breedte"
-        self.breedte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Overstortrand.breedte"
-        self.breedte.definition = "De afstand tussen de uiterste zijden van de overstortrand in millimeter."
-        self.breedte.constraints = ""
-        self.breedte.usagenote = ""
-        self.breedte.deprecated_version = ""
+        return self._breedte.waarde
 
-        self.hoogte = KwantWrdInMillimeter()
+    @breedte.setter
+    def breedte(self, value):
+        self._breedte.set_waarde(value, owner=self)
+
+    @property
+    def hoogte(self):
         """De afstand tussen de vaste drempel en het hoogste punt van de overstortrand in millimeter."""
-        self.hoogte.naam = "hoogte"
-        self.hoogte.label = "hoogte"
-        self.hoogte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Overstortrand.hoogte"
-        self.hoogte.definition = "De afstand tussen de vaste drempel en het hoogste punt van de overstortrand in millimeter."
-        self.hoogte.constraints = ""
-        self.hoogte.usagenote = ""
-        self.hoogte.deprecated_version = ""
+        return self._hoogte.waarde
 
-        self.materiaal = KeuzelijstField(naam="materiaal",
-                                         label="materiaal",
-                                         lijst=KlOverstortrandMateriaal(),
-                                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Overstortrand.materiaal",
-                                         definition="Het materiaal waaruit de overstortrand vervaardigd is.",
-                                         constraints="",
-                                         usagenote="",
-                                         deprecated_version="")
+    @hoogte.setter
+    def hoogte(self, value):
+        self._hoogte.set_waarde(value, owner=self)
+
+    @property
+    def materiaal(self):
         """Het materiaal waaruit de overstortrand vervaardigd is."""
+        return self._materiaal.waarde
 
-        self.technischeFiche = DtcDocument()
+    @materiaal.setter
+    def materiaal(self, value):
+        self._materiaal.set_waarde(value, owner=self)
+
+    @property
+    def technischeFiche(self):
         """De technische fiche van de de overstortrand."""
-        self.technischeFiche.naam = "technischeFiche"
-        self.technischeFiche.label = "technische fiche"
-        self.technischeFiche.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Overstortrand.technischeFiche"
-        self.technischeFiche.definition = "De technische fiche van de de overstortrand."
-        self.technischeFiche.constraints = ""
-        self.technischeFiche.usagenote = ""
-        self.technischeFiche.deprecated_version = ""
+        return self._technischeFiche.waarde
 
-        self.variabelDeelType = KeuzelijstField(naam="variabelDeelType",
-                                                label="variabel deel type",
-                                                lijst=KlVariabelDeelType(),
-                                                objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Overstortrand.variabelDeelType",
-                                                definition="Bepaalt het type van het variabel deel van de overstortrand.",
-                                                constraints="",
-                                                usagenote="",
-                                                deprecated_version="")
+    @technischeFiche.setter
+    def technischeFiche(self, value):
+        self._technischeFiche.set_waarde(value, owner=self)
+
+    @property
+    def variabelDeelType(self):
         """Bepaalt het type van het variabel deel van de overstortrand."""
+        return self._variabelDeelType.waarde
 
-        self.wanddikte = KwantWrdInMillimeter()
+    @variabelDeelType.setter
+    def variabelDeelType(self, value):
+        self._variabelDeelType.set_waarde(value, owner=self)
+
+    @property
+    def wanddikte(self):
         """De wanddikte van de overstortrand in millimeter."""
-        self.wanddikte.naam = "wanddikte"
-        self.wanddikte.label = "wanddikte"
-        self.wanddikte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Overstortrand.wanddikte"
-        self.wanddikte.definition = "De wanddikte van de overstortrand in millimeter."
-        self.wanddikte.constraints = ""
-        self.wanddikte.usagenote = ""
-        self.wanddikte.deprecated_version = ""
+        return self._wanddikte.waarde
+
+    @wanddikte.setter
+    def wanddikte(self, value):
+        self._wanddikte.set_waarde(value, owner=self)

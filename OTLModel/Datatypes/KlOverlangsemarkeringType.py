@@ -1,19 +1,24 @@
 # coding=utf-8
-from OTLModel.Datatypes.Keuzelijst import Keuzelijst
+from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
+from OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 
 # Generated with OTLEnumerationCreator. To modify: extend, do not edit
-class KlOverlangsemarkeringType(Keuzelijst):
+class KlOverlangsemarkeringType(KeuzelijstField):
     """Mogelijke types van de overlangse markering."""
+    naam = 'KlOverlangsemarkeringType'
+    label = 'Overlangse markering type'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlOverlangsemarkeringType'
+    definition = 'Mogelijke types van de overlangse markering.'
+    codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlOverlangsemarkeringType'
+    options = {
+        'doorlopend': KeuzelijstWaarde(invulwaarde='doorlopend',
+                                       label='doorlopend',
+                                       definitie='Een overlangse markering bestaande uit een doorlopende streep.',
+                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOverlangsemarkeringType/doorlopend'),
+        'onderbroken': KeuzelijstWaarde(invulwaarde='onderbroken',
+                                        label='onderbroken',
+                                        definitie='Een overlangse markering bestaande uit een onderbroken streep.',
+                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOverlangsemarkeringType/onderbroken')
+    }
 
-    def __init__(self):
-        super().__init__(naam="KlOverlangsemarkeringType",
-                         label="Overlangse markering type",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlOverlangsemarkeringType",
-                         definition="Mogelijke types van de overlangse markering.",
-                         usagenote="",
-                         deprecated_version="",
-                         codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlOverlangsemarkeringType")
-
-        self.add_option("doorlopend", "doorlopend", "Een overlangse markering bestaande uit een doorlopende streep.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOverlangsemarkeringType/doorlopend")
-        self.add_option("onderbroken", "onderbroken", "Een overlangse markering bestaande uit een onderbroken streep.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOverlangsemarkeringType/onderbroken")

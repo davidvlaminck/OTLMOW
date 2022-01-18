@@ -1,93 +1,135 @@
 # coding=utf-8
+from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
+from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from abc import abstractmethod
 from OTLModel.Classes.AIMObject import AIMObject
-from OTLModel.Datatypes.KardinaliteitField import KardinaliteitField
 from OTLModel.Datatypes.DtcAdres import DtcAdres
 from OTLModel.Datatypes.DtcDocument import DtcDocument
 from OTLModel.Datatypes.DtcExterneReferentie import DtcExterneReferentie
-from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlVerkeerstekenWettelijkeStatus import KlVerkeerstekenWettelijkeStatus
 from OTLModel.Datatypes.StringField import StringField
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Verkeersteken(AIMObject):
+class Verkeersteken(AIMObject, AttributeInfo):
     """Abstracte klasse voor aanwijzingen ten behoeve van de weggebruikers die verbonden wordt aan het aankondigen of opleggen van een bepaalde verkeersmaatregel zoals bepaald in de wegcode."""
 
-    typeURI = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Verkeersteken"
+    typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Verkeersteken'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     @abstractmethod
     def __init__(self):
-        super().__init__()
+        AIMObject.__init__(self)
+        AttributeInfo.__init__(self)
 
-        self.adres = DtcAdres()
+        self._adres = OTLAttribuut(field=DtcAdres,
+                                   naam='adres',
+                                   label='adres',
+                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Verkeersteken.adres',
+                                   definition='Adres van het verkeersteken.')
+
+        self._afbeelding = OTLAttribuut(field=DtcDocument,
+                                        naam='afbeelding',
+                                        label='afbeelding',
+                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Verkeersteken.afbeelding',
+                                        kardinaliteit_min='0',
+                                        kardinaliteit_max='*',
+                                        definition='Foto van het verkeersteken.')
+
+        self._mobiliteitsMaatregel = OTLAttribuut(field=DtcExterneReferentie,
+                                                  naam='mobiliteitsMaatregel',
+                                                  label='mobiliteitsmaatregel',
+                                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Verkeersteken.mobiliteitsMaatregel',
+                                                  kardinaliteit_min='0',
+                                                  kardinaliteit_max='*',
+                                                  definition='Externe referentie naar een maatregel om de beweging en verplaatsing van de weggebruiker op het openbaar domein of privé domein met openbaar karakter te organiseren.')
+
+        self._plaatsbeschrijving = OTLAttribuut(field=StringField,
+                                                naam='plaatsbeschrijving',
+                                                label='plaatsbeschrijving',
+                                                objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Verkeersteken.plaatsbeschrijving',
+                                                definition='Tekstuele beschrijving waar het verkeersteken zal komen.')
+
+        self._signalisatieVergunning = OTLAttribuut(field=DtcExterneReferentie,
+                                                    naam='signalisatieVergunning',
+                                                    label='signalisatievergunning',
+                                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Verkeersteken.signalisatieVergunning',
+                                                    kardinaliteit_min='0',
+                                                    kardinaliteit_max='*',
+                                                    definition='Externe referentie naar een vergunning voor het tijdelijk aanbrengen of wijzigen van signalisatie op het openbaar domein of privaat domein met openbaar karakter.')
+
+        self._variabelOpschrift = OTLAttribuut(field=StringField,
+                                               naam='variabelOpschrift',
+                                               label='variabel opschrift',
+                                               objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Verkeersteken.variabelOpschrift',
+                                               definition='Variabele tekst die op het verkeersbordconcept komt te staan.')
+
+        self._wettelijkeStatus = OTLAttribuut(field=KlVerkeerstekenWettelijkeStatus,
+                                              naam='wettelijkeStatus',
+                                              label='wettelijke status',
+                                              objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Verkeersteken.wettelijkeStatus',
+                                              usagenote='Bijvoorbeeld: vergund, niet-vergund, in ontwerp',
+                                              definition='Duidt de wettelijke status aan van het verkeersteken.')
+
+    @property
+    def adres(self):
         """Adres van het verkeersteken."""
-        self.adres.naam = "adres"
-        self.adres.label = "adres"
-        self.adres.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Verkeersteken.adres"
-        self.adres.definition = "Adres van het verkeersteken."
-        self.adres.constraints = ""
-        self.adres.usagenote = ""
-        self.adres.deprecated_version = ""
+        return self._adres.waarde
 
-        afbeeldingField = DtcDocument()
-        afbeeldingField.naam = "afbeelding"
-        afbeeldingField.label = "afbeelding"
-        afbeeldingField.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Verkeersteken.afbeelding"
-        afbeeldingField.definition = "Foto van het verkeersteken."
-        afbeeldingField.constraints = ""
-        afbeeldingField.usagenote = ""
-        afbeeldingField.deprecated_version = ""
-        self.afbeelding = KardinaliteitField(minKardinaliteit="0", maxKardinaliteit="*", fieldToMultiply=afbeeldingField)
+    @adres.setter
+    def adres(self, value):
+        self._adres.set_waarde(value, owner=self)
+
+    @property
+    def afbeelding(self):
         """Foto van het verkeersteken."""
+        return self._afbeelding.waarde
 
-        mobiliteitsMaatregelField = DtcExterneReferentie()
-        mobiliteitsMaatregelField.naam = "mobiliteitsMaatregel"
-        mobiliteitsMaatregelField.label = "mobiliteitsmaatregel"
-        mobiliteitsMaatregelField.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Verkeersteken.mobiliteitsMaatregel"
-        mobiliteitsMaatregelField.definition = "Externe referentie naar een maatregel om de beweging en verplaatsing van de weggebruiker op het openbaar domein of privé domein met openbaar karakter te organiseren."
-        mobiliteitsMaatregelField.constraints = ""
-        mobiliteitsMaatregelField.usagenote = ""
-        mobiliteitsMaatregelField.deprecated_version = ""
-        self.mobiliteitsMaatregel = KardinaliteitField(minKardinaliteit="0", maxKardinaliteit="*", fieldToMultiply=mobiliteitsMaatregelField)
+    @afbeelding.setter
+    def afbeelding(self, value):
+        self._afbeelding.set_waarde(value, owner=self)
+
+    @property
+    def mobiliteitsMaatregel(self):
         """Externe referentie naar een maatregel om de beweging en verplaatsing van de weggebruiker op het openbaar domein of privé domein met openbaar karakter te organiseren."""
+        return self._mobiliteitsMaatregel.waarde
 
-        self.plaatsbeschrijving = StringField(naam="plaatsbeschrijving",
-                                              label="plaatsbeschrijving",
-                                              objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Verkeersteken.plaatsbeschrijving",
-                                              definition="Tekstuele beschrijving waar het verkeersteken zal komen.",
-                                              constraints="",
-                                              usagenote="",
-                                              deprecated_version="")
+    @mobiliteitsMaatregel.setter
+    def mobiliteitsMaatregel(self, value):
+        self._mobiliteitsMaatregel.set_waarde(value, owner=self)
+
+    @property
+    def plaatsbeschrijving(self):
         """Tekstuele beschrijving waar het verkeersteken zal komen."""
+        return self._plaatsbeschrijving.waarde
 
-        signalisatieVergunningField = DtcExterneReferentie()
-        signalisatieVergunningField.naam = "signalisatieVergunning"
-        signalisatieVergunningField.label = "signalisatievergunning"
-        signalisatieVergunningField.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Verkeersteken.signalisatieVergunning"
-        signalisatieVergunningField.definition = "Externe referentie naar een vergunning voor het tijdelijk aanbrengen of wijzigen van signalisatie op het openbaar domein of privaat domein met openbaar karakter."
-        signalisatieVergunningField.constraints = ""
-        signalisatieVergunningField.usagenote = ""
-        signalisatieVergunningField.deprecated_version = ""
-        self.signalisatieVergunning = KardinaliteitField(minKardinaliteit="0", maxKardinaliteit="*", fieldToMultiply=signalisatieVergunningField)
+    @plaatsbeschrijving.setter
+    def plaatsbeschrijving(self, value):
+        self._plaatsbeschrijving.set_waarde(value, owner=self)
+
+    @property
+    def signalisatieVergunning(self):
         """Externe referentie naar een vergunning voor het tijdelijk aanbrengen of wijzigen van signalisatie op het openbaar domein of privaat domein met openbaar karakter."""
+        return self._signalisatieVergunning.waarde
 
-        self.variabelOpschrift = StringField(naam="variabelOpschrift",
-                                             label="variabel opschrift",
-                                             objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Verkeersteken.variabelOpschrift",
-                                             definition="Variabele tekst die op het verkeersbordconcept komt te staan.",
-                                             constraints="",
-                                             usagenote="",
-                                             deprecated_version="")
+    @signalisatieVergunning.setter
+    def signalisatieVergunning(self, value):
+        self._signalisatieVergunning.set_waarde(value, owner=self)
+
+    @property
+    def variabelOpschrift(self):
         """Variabele tekst die op het verkeersbordconcept komt te staan."""
+        return self._variabelOpschrift.waarde
 
-        self.wettelijkeStatus = KeuzelijstField(naam="wettelijkeStatus",
-                                                label="wettelijke status",
-                                                lijst=KlVerkeerstekenWettelijkeStatus(),
-                                                objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Verkeersteken.wettelijkeStatus",
-                                                definition="Duidt de wettelijke status aan van het verkeersteken.",
-                                                constraints="",
-                                                usagenote="Bijvoorbeeld: vergund, niet-vergund, in ontwerp",
-                                                deprecated_version="")
+    @variabelOpschrift.setter
+    def variabelOpschrift(self, value):
+        self._variabelOpschrift.set_waarde(value, owner=self)
+
+    @property
+    def wettelijkeStatus(self):
         """Duidt de wettelijke status aan van het verkeersteken."""
+        return self._wettelijkeStatus.waarde
+
+    @wettelijkeStatus.setter
+    def wettelijkeStatus(self, value):
+        self._wettelijkeStatus.set_waarde(value, owner=self)

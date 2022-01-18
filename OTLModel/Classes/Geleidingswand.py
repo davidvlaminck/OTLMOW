@@ -1,47 +1,64 @@
 # coding=utf-8
+from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
+from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.Geleiding import Geleiding
-from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlGeleidingMateriaal import KlGeleidingMateriaal
 from OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter
 from OTLModel.Datatypes.KwantWrdInMillimeter import KwantWrdInMillimeter
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Geleidingswand(Geleiding):
+class Geleidingswand(Geleiding, AttributeInfo):
     """Een geleidingswand geleidt kleinere dieren zoals amfibieën naar kleinere ecokokers, ecoduikers en dergelijke."""
 
-    typeURI = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Geleidingswand"
+    typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Geleidingswand'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        super().__init__()
+        AttributeInfo.__init__(self)
+        Geleiding.__init__(self)
 
-        self.hoogte = KwantWrdInMillimeter()
+        self._hoogte = OTLAttribuut(field=KwantWrdInMillimeter,
+                                    naam='hoogte',
+                                    label='hoogte',
+                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Geleidingswand.hoogte',
+                                    definition='De hoogte van de geleidingswand in millimeter.')
+
+        self._lengte = OTLAttribuut(field=KwantWrdInMeter,
+                                    naam='lengte',
+                                    label='lengte',
+                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Geleidingswand.lengte',
+                                    definition='De lengte van de geleidingswand in meter.')
+
+        self._materiaal = OTLAttribuut(field=KlGeleidingMateriaal,
+                                       naam='materiaal',
+                                       label='materiaal',
+                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Geleidingswand.materiaal',
+                                       definition='Het materiaal van de geleiding.')
+
+    @property
+    def hoogte(self):
         """De hoogte van de geleidingswand in millimeter."""
-        self.hoogte.naam = "hoogte"
-        self.hoogte.label = "hoogte"
-        self.hoogte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Geleidingswand.hoogte"
-        self.hoogte.definition = "De hoogte van de geleidingswand in millimeter."
-        self.hoogte.constraints = ""
-        self.hoogte.usagenote = ""
-        self.hoogte.deprecated_version = ""
+        return self._hoogte.waarde
 
-        self.lengte = KwantWrdInMeter()
+    @hoogte.setter
+    def hoogte(self, value):
+        self._hoogte.set_waarde(value, owner=self)
+
+    @property
+    def lengte(self):
         """De lengte van de geleidingswand in meter."""
-        self.lengte.naam = "lengte"
-        self.lengte.label = "lengte"
-        self.lengte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Geleidingswand.lengte"
-        self.lengte.definition = "De lengte van de geleidingswand in meter."
-        self.lengte.constraints = ""
-        self.lengte.usagenote = ""
-        self.lengte.deprecated_version = ""
+        return self._lengte.waarde
 
-        self.materiaal = KeuzelijstField(naam="materiaal",
-                                         label="materiaal",
-                                         lijst=KlGeleidingMateriaal(),
-                                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Geleidingswand.materiaal",
-                                         definition="Het materiaal van de geleiding.",
-                                         constraints="",
-                                         usagenote="",
-                                         deprecated_version="")
+    @lengte.setter
+    def lengte(self, value):
+        self._lengte.set_waarde(value, owner=self)
+
+    @property
+    def materiaal(self):
         """Het materiaal van de geleiding."""
+        return self._materiaal.waarde
+
+    @materiaal.setter
+    def materiaal(self, value):
+        self._materiaal.set_waarde(value, owner=self)

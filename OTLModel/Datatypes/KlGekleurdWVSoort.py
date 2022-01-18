@@ -1,26 +1,52 @@
 # coding=utf-8
-from OTLModel.Datatypes.Keuzelijst import Keuzelijst
+from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
+from OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 
 # Generated with OTLEnumerationCreator. To modify: extend, do not edit
-class KlGekleurdWVSoort(Keuzelijst):
+class KlGekleurdWVSoort(KeuzelijstField):
     """Types van gekleurd wegvlak."""
+    naam = 'KlGekleurdWVSoort'
+    label = 'Gekleurd WV type'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlGekleurdWVSoort'
+    definition = 'Types van gekleurd wegvlak.'
+    codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlGekleurdWVSoort'
+    options = {
+        'OFOS-(Opgeblazen-fietsopstelstrook)': KeuzelijstWaarde(invulwaarde='OFOS-(Opgeblazen-fietsopstelstrook)',
+                                                                label='OFOS (Opgeblazen fietsopstelstrook)',
+                                                                definitie='Gekleurd wegvlak als OFOS.',
+                                                                objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlGekleurdWVSoort/OFOS-(Opgeblazen-fietsopstelstrook)'),
+        'OFOS-variant': KeuzelijstWaarde(invulwaarde='OFOS-variant',
+                                         label='OFOS variant',
+                                         definitie='Gekleurd wegvlak als OFOS variant.',
+                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlGekleurdWVSoort/OFOS-variant'),
+        'fiets-suggestiestrook': KeuzelijstWaarde(invulwaarde='fiets-suggestiestrook',
+                                                  label='fiets suggestiestrook',
+                                                  definitie='Gekleurd wegvlak als fiets suggestiestrook.',
+                                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlGekleurdWVSoort/fiets-suggestiestrook'),
+        'fietsoversteekplaats-met-blokken-(FOP)': KeuzelijstWaarde(invulwaarde='fietsoversteekplaats-met-blokken-(FOP)',
+                                                                   label='fietsoversteekplaats met blokken (FOP)',
+                                                                   definitie='Gekleurd wegvlak als fietsoversteekplaats met blokken.',
+                                                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlGekleurdWVSoort/fietsoversteekplaats-met-blokken-(FOP)'),
+        'fietspad-(met-lijnen)': KeuzelijstWaarde(invulwaarde='fietspad-(met-lijnen)',
+                                                  label='fietspad (met lijnen)',
+                                                  definitie='Gekleurd wegvlak als fietspad (met lijnen).',
+                                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlGekleurdWVSoort/fietspad-(met-lijnen)'),
+        'middengeleider-(Bv.-Groene-strook)': KeuzelijstWaarde(invulwaarde='middengeleider-(Bv.-Groene-strook)',
+                                                               label='middengeleider (Bv. Groene strook)',
+                                                               definitie='Gekleurd wegvlak als middengeleider.',
+                                                               objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlGekleurdWVSoort/middengeleider-(Bv.-Groene-strook)'),
+        'parkeerplaats-mindervaliden': KeuzelijstWaarde(invulwaarde='parkeerplaats-mindervaliden',
+                                                        label='parkeerplaats mindervaliden',
+                                                        definitie='Gekleurd wegvlak als parkeerplaats mindervaliden.',
+                                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlGekleurdWVSoort/parkeerplaats-mindervaliden'),
+        'verkeersplateau': KeuzelijstWaarde(invulwaarde='verkeersplateau',
+                                            label='verkeersplateau',
+                                            definitie='Gekleurd wegvlak als verkeersplateau.',
+                                            objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlGekleurdWVSoort/verkeersplateau'),
+        'voetgangers-oversteekplaats': KeuzelijstWaarde(invulwaarde='voetgangers-oversteekplaats',
+                                                        label='voetgangers-oversteekplaats',
+                                                        definitie='Gekleurd wegvlak als voetgangers-oversteekplaats.',
+                                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlGekleurdWVSoort/voetgangers-oversteekplaats')
+    }
 
-    def __init__(self):
-        super().__init__(naam="KlGekleurdWVSoort",
-                         label="Gekleurd WV type",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlGekleurdWVSoort",
-                         definition="Types van gekleurd wegvlak.",
-                         usagenote="",
-                         deprecated_version="",
-                         codelist="https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlGekleurdWVSoort")
-
-        self.add_option("OFOS-(Opgeblazen-fietsopstelstrook)", "OFOS (Opgeblazen fietsopstelstrook)", "Gekleurd wegvlak als OFOS.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlGekleurdWVSoort/OFOS-(Opgeblazen-fietsopstelstrook)")
-        self.add_option("OFOS-variant", "OFOS variant", "Gekleurd wegvlak als OFOS variant.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlGekleurdWVSoort/OFOS-variant")
-        self.add_option("fiets-suggestiestrook", "fiets suggestiestrook", "Gekleurd wegvlak als fiets suggestiestrook.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlGekleurdWVSoort/fiets-suggestiestrook")
-        self.add_option("fietsoversteekplaats-met-blokken-(FOP)", "fietsoversteekplaats met blokken (FOP)", "Gekleurd wegvlak als fietsoversteekplaats met blokken.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlGekleurdWVSoort/fietsoversteekplaats-met-blokken-(FOP)")
-        self.add_option("fietspad-(met-lijnen)", "fietspad (met lijnen)", "Gekleurd wegvlak als fietspad (met lijnen).", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlGekleurdWVSoort/fietspad-(met-lijnen)")
-        self.add_option("middengeleider-(Bv.-Groene-strook)", "middengeleider (Bv. Groene strook)", "Gekleurd wegvlak als middengeleider.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlGekleurdWVSoort/middengeleider-(Bv.-Groene-strook)")
-        self.add_option("parkeerplaats-mindervaliden", "parkeerplaats mindervaliden", "Gekleurd wegvlak als parkeerplaats mindervaliden.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlGekleurdWVSoort/parkeerplaats-mindervaliden")
-        self.add_option("verkeersplateau", "verkeersplateau", "Gekleurd wegvlak als verkeersplateau.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlGekleurdWVSoort/verkeersplateau")
-        self.add_option("voetgangers-oversteekplaats", "voetgangers-oversteekplaats", "Gekleurd wegvlak als voetgangers-oversteekplaats.", "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlGekleurdWVSoort/voetgangers-oversteekplaats")

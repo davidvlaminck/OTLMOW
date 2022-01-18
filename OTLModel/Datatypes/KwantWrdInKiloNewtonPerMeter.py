@@ -21,9 +21,9 @@ class KwantWrdInKiloNewtonPerMeterEenheid(KwantWrdEenheid):
 
 # Generated with OTLPrimitiveDatatypeCreator. To modify: extend, do not edit
 class KwantWrdInKiloNewtonPerMeter(FloatOrDecimalField, KwantWrd):
-    naam = 'waarde'
-    label = 'waarde'
-    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInKiloNewtonPerMeter.waarde'
-    definition = 'Bevat een getal die bij het datatype hoort.'
+    naam = 'KwantWrdInKiloNewtonPerMeter'
+    label = 'Kwantitatieve waarde in kiloNewton per meter'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInKiloNewtonPerMeter'
+    definition = 'Een kwantitatieve waarde die een getal in  kiloNewton per meter uitdrukt.'
     eenheid = KwantWrdInKiloNewtonPerMeterEenheid()
 

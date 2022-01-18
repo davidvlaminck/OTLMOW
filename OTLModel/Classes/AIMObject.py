@@ -1,10 +1,11 @@
 # coding=utf-8
+from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
+from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from abc import abstractmethod
 from OTLModel.Classes.AIMToestand import AIMToestand
 from OTLModel.Classes.AIMDBStatus import AIMDBStatus
 from OTLModel.BaseClasses.OTLAsset import OTLAsset
 from OTLModel.BaseClasses.RelatieInteractor import RelatieInteractor
-from OTLModel.Datatypes.KardinaliteitField import KardinaliteitField
 from OTLModel.Datatypes.DateField import DateField
 from OTLModel.Datatypes.DtcIdentificator import DtcIdentificator
 from OTLModel.Datatypes.KwantWrdInMaand import KwantWrdInMaand
@@ -12,73 +13,108 @@ from OTLModel.Datatypes.StringField import StringField
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class AIMObject(AIMToestand, AIMDBStatus, OTLAsset, RelatieInteractor):
+class AIMObject(AIMToestand, AIMDBStatus, OTLAsset, RelatieInteractor, AttributeInfo):
     """Abstracte als de basisklasse voor alle uniek geïdentificeerde OTL objecten met de basiseigenschappen die elk OTL object minstens heeft."""
 
-    typeURI = "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMObject"
+    typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMObject'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     @abstractmethod
     def __init__(self):
-        AIMToestand.__init__(self)
         AIMDBStatus.__init__(self)
+        AIMToestand.__init__(self)
+        AttributeInfo.__init__(self)
         OTLAsset.__init__(self)
         RelatieInteractor.__init__(self)
 
-        self.assetId = DtcIdentificator()
+        self._assetId = OTLAttribuut(field=DtcIdentificator,
+                                     naam='assetId',
+                                     label='asset-id',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMObject.assetId',
+                                     definition='Unieke identificatie van de asset zoals toegekend door de assetbeheerder of n.a.v. eerste aanlevering door de leverancier.')
+
+        self._bestekPostNummer = OTLAttribuut(field=StringField,
+                                              naam='bestekPostNummer',
+                                              label='bestekpostnummer',
+                                              objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMObject.bestekPostNummer',
+                                              kardinaliteit_max='*',
+                                              definition='Een verwijzing naar een postnummer uit het specifieke bestek waar het object mee verband houdt.')
+
+        self._datumOprichtingObject = OTLAttribuut(field=DateField,
+                                                   naam='datumOprichtingObject',
+                                                   label='datum oprichting object',
+                                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMObject.datumOprichtingObject',
+                                                   definition='Datum van de oprichting van het object.')
+
+        self._notitie = OTLAttribuut(field=StringField,
+                                     naam='notitie',
+                                     label='notitie',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMObject.notitie',
+                                     definition='Extra notitie voor het object.')
+
+        self._standaardBestekPostNummer = OTLAttribuut(field=StringField,
+                                                       naam='standaardBestekPostNummer',
+                                                       label='standaardbestekpostnummer',
+                                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMObject.standaardBestekPostNummer',
+                                                       kardinaliteit_max='*',
+                                                       definition='Een verwijzing naar een postnummer uit het standaardbestek waar het object mee verband houdt. De notatie van het postnummer moet overeenkomen met de notatie die gebruikt is in de catalogi van standaardbestekken, bijvoorbeeld postnummer 0701.20404G.')
+
+        self._theoretischeLevensduur = OTLAttribuut(field=KwantWrdInMaand,
+                                                    naam='theoretischeLevensduur',
+                                                    label='theoretische levensduur',
+                                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMObject.theoretischeLevensduur',
+                                                    definition=' De levensduur in aantal maanden die theoretisch mag verwacht worden voor een object.')
+
+    @property
+    def assetId(self):
         """Unieke identificatie van de asset zoals toegekend door de assetbeheerder of n.a.v. eerste aanlevering door de leverancier."""
-        self.assetId.naam = "assetId"
-        self.assetId.label = "asset-id"
-        self.assetId.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMObject.assetId"
-        self.assetId.definition = "Unieke identificatie van de asset zoals toegekend door de assetbeheerder of n.a.v. eerste aanlevering door de leverancier."
-        self.assetId.constraints = ""
-        self.assetId.usagenote = ""
-        self.assetId.deprecated_version = ""
+        return self._assetId.waarde
 
-        bestekPostNummerField = StringField(naam="bestekPostNummer",
-                                            label="bestekpostnummer",
-                                            objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMObject.bestekPostNummer",
-                                            definition="Een verwijzing naar een postnummer uit het specifieke bestek waar het object mee verband houdt.",
-                                            constraints="",
-                                            usagenote="",
-                                            deprecated_version="")
-        self.bestekPostNummer = KardinaliteitField(minKardinaliteit="1", maxKardinaliteit="*", fieldToMultiply=bestekPostNummerField)
+    @assetId.setter
+    def assetId(self, value):
+        self._assetId.set_waarde(value, owner=self)
+
+    @property
+    def bestekPostNummer(self):
         """Een verwijzing naar een postnummer uit het specifieke bestek waar het object mee verband houdt."""
+        return self._bestekPostNummer.waarde
 
-        self.datumOprichtingObject = DateField(naam="datumOprichtingObject",
-                                               label="datum oprichting object",
-                                               objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMObject.datumOprichtingObject",
-                                               definition="Datum van de oprichting van het object.",
-                                               constraints="",
-                                               usagenote="",
-                                               deprecated_version="")
+    @bestekPostNummer.setter
+    def bestekPostNummer(self, value):
+        self._bestekPostNummer.set_waarde(value, owner=self)
+
+    @property
+    def datumOprichtingObject(self):
         """Datum van de oprichting van het object."""
+        return self._datumOprichtingObject.waarde
 
-        self.notitie = StringField(naam="notitie",
-                                   label="notitie",
-                                   objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMObject.notitie",
-                                   definition="Extra notitie voor het object.",
-                                   constraints="",
-                                   usagenote="",
-                                   deprecated_version="")
+    @datumOprichtingObject.setter
+    def datumOprichtingObject(self, value):
+        self._datumOprichtingObject.set_waarde(value, owner=self)
+
+    @property
+    def notitie(self):
         """Extra notitie voor het object."""
+        return self._notitie.waarde
 
-        standaardBestekPostNummerField = StringField(naam="standaardBestekPostNummer",
-                                                     label="standaardbestekpostnummer",
-                                                     objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMObject.standaardBestekPostNummer",
-                                                     definition="Een verwijzing naar een postnummer uit het standaardbestek waar het object mee verband houdt. De notatie van het postnummer moet overeenkomen met de notatie die gebruikt is in de catalogi van standaardbestekken, bijvoorbeeld postnummer 0701.20404G.",
-                                                     constraints="",
-                                                     usagenote="",
-                                                     deprecated_version="")
-        self.standaardBestekPostNummer = KardinaliteitField(minKardinaliteit="1", maxKardinaliteit="*", fieldToMultiply=standaardBestekPostNummerField)
+    @notitie.setter
+    def notitie(self, value):
+        self._notitie.set_waarde(value, owner=self)
+
+    @property
+    def standaardBestekPostNummer(self):
         """Een verwijzing naar een postnummer uit het standaardbestek waar het object mee verband houdt. De notatie van het postnummer moet overeenkomen met de notatie die gebruikt is in de catalogi van standaardbestekken, bijvoorbeeld postnummer 0701.20404G."""
+        return self._standaardBestekPostNummer.waarde
 
-        self.theoretischeLevensduur = KwantWrdInMaand()
+    @standaardBestekPostNummer.setter
+    def standaardBestekPostNummer(self, value):
+        self._standaardBestekPostNummer.set_waarde(value, owner=self)
+
+    @property
+    def theoretischeLevensduur(self):
         """ De levensduur in aantal maanden die theoretisch mag verwacht worden voor een object."""
-        self.theoretischeLevensduur.naam = "theoretischeLevensduur"
-        self.theoretischeLevensduur.label = "theoretische levensduur"
-        self.theoretischeLevensduur.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMObject.theoretischeLevensduur"
-        self.theoretischeLevensduur.definition = " De levensduur in aantal maanden die theoretisch mag verwacht worden voor een object."
-        self.theoretischeLevensduur.constraints = ""
-        self.theoretischeLevensduur.usagenote = ""
-        self.theoretischeLevensduur.deprecated_version = ""
+        return self._theoretischeLevensduur.waarde
+
+    @theoretischeLevensduur.setter
+    def theoretischeLevensduur(self, value):
+        self._theoretischeLevensduur.set_waarde(value, owner=self)

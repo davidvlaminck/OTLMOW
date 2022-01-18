@@ -1,24 +1,32 @@
 # coding=utf-8
+from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
+from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.LinkendElement import LinkendElement
 from OTLModel.Datatypes.KwantWrdInMeterTAW import KwantWrdInMeterTAW
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Wervel(LinkendElement):
+class Wervel(LinkendElement, AttributeInfo):
     """Een wervel is een debietsbeperkend element dat zich tussen 2 kamers of tussen een kamer en een leiding bevindt."""
 
-    typeURI = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Wervel"
+    typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Wervel'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        super().__init__()
+        AttributeInfo.__init__(self)
+        LinkendElement.__init__(self)
 
-        self.peil = KwantWrdInMeterTAW()
+        self._peil = OTLAttribuut(field=KwantWrdInMeterTAW,
+                                  naam='peil',
+                                  label='peil',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Wervel.peil',
+                                  definition='Dit is het niveau in meter-TAW van de inlaat van het wervelventiel.')
+
+    @property
+    def peil(self):
         """Dit is het niveau in meter-TAW van de inlaat van het wervelventiel."""
-        self.peil.naam = "peil"
-        self.peil.label = "peil"
-        self.peil.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Wervel.peil"
-        self.peil.definition = "Dit is het niveau in meter-TAW van de inlaat van het wervelventiel."
-        self.peil.constraints = ""
-        self.peil.usagenote = ""
-        self.peil.deprecated_version = ""
+        return self._peil.waarde
+
+    @peil.setter
+    def peil(self, value):
+        self._peil.set_waarde(value, owner=self)

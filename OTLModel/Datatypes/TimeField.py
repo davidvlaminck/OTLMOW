@@ -1,8 +1,8 @@
-from datetime import datetime
+from datetime import time
 from OTLModel.BaseClasses.OTLField import OTLField
 
 
-class DateField(OTLField):
+class TimeField(OTLField):
     """Beschrijft een tekstregel volgens http://www.w3.org/2001/XMLSchema#string."""
     naam = 'Time'
     objectUri = 'http://www.w3.org/2001/XMLSchema#time'
@@ -12,9 +12,8 @@ class DateField(OTLField):
 
     @staticmethod
     def validate(value, attribuut):
-        if value is not None and not isinstance(value, datetime):
+        if value is not None and not isinstance(value, time):
             raise TypeError(f'expecting datetime in {attribuut.naam}')
-        # TODO date vars should be 0 0 0
         return True
 
     @staticmethod

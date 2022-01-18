@@ -110,7 +110,7 @@ class OTLUnionDatatypeCreatorTests(unittest.TestCase):
         logger = NoneLogger()
         collector = OSLOCollector(mock)
         creator = OTLUnionDatatypeCreator(logger, collector)
-        osloDatatypeUnion = OSLODatatypeUnion(name='name', objectUri='', definition_nl='', label_nl='', usagenote_nl='',
+        osloDatatypeUnion = OSLODatatypeUnion(name='name', objectUri='', definition='', label='', usagenote='',
                                               deprecated_version='')
 
         with self.assertRaises(ValueError) as exception_empty_uri:
@@ -121,8 +121,8 @@ class OTLUnionDatatypeCreatorTests(unittest.TestCase):
         logger = NoneLogger()
         collector = OSLOCollector(mock)
         creator = OTLUnionDatatypeCreator(logger, collector)
-        osloDatatypeUnion = OSLODatatypeUnion(name='name', objectUri='Bad objectUri', definition_nl='', label_nl='',
-                                              usagenote_nl='',
+        osloDatatypeUnion = OSLODatatypeUnion(name='name', objectUri='Bad objectUri', definition='', label='',
+                                              usagenote='',
                                               deprecated_version='')
 
         with self.assertRaises(ValueError) as exception_bad_uri:
@@ -135,7 +135,7 @@ class OTLUnionDatatypeCreatorTests(unittest.TestCase):
         creator = OTLUnionDatatypeCreator(logger, collector)
         osloDatatypeUnion = OSLODatatypeUnion(name='',
                                               objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtuLichtmastMasthoogte',
-                                              definition_nl='', label_nl='', usagenote_nl='',
+                                              definition='', label='', usagenote='',
                                               deprecated_version='')
 
         with self.assertRaises(ValueError) as exception_bad_name:

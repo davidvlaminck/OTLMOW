@@ -21,9 +21,9 @@ class KwantWrdInkVARhEenheid(KwantWrdEenheid):
 
 # Generated with OTLPrimitiveDatatypeCreator. To modify: extend, do not edit
 class KwantWrdInkVARh(FloatOrDecimalField, KwantWrd):
-    naam = 'waarde'
-    label = 'waarde'
-    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInkVARh.waarde'
-    definition = 'Bevat een getal die bij het datatype hoort.'
+    naam = 'KwantWrdInkVARh'
+    label = 'Kwantitatieve waarde in kVARh'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInkVARh'
+    definition = 'Een kwantitatieve waarde die een getal in KiloVoltAmpereReactiefUur uitdrukt.'
     eenheid = KwantWrdInkVARhEenheid()
 

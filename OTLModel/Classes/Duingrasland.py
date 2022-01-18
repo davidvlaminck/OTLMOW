@@ -1,9 +1,11 @@
 # coding=utf-8
+from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
+from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.SoortenrijkSchraalGraslandGraslandfase5 import SoortenrijkSchraalGraslandGraslandfase5
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Duingrasland(SoortenrijkSchraalGraslandGraslandfase5):
+class Duingrasland(SoortenrijkSchraalGraslandGraslandfase5, AttributeInfo):
     """G5a - Zanddoddengras, Kleverige reigersbek, Ruw
 vergeet-mij-nietje, Kruipend stalkruid,
 Zandhoornbloem, Duinfakkelgras, Liggende
@@ -15,8 +17,9 @@ bergvlas, Nachtsilene, Walstrobremraap,
 Kalkbedstro, Zachte haver, Voorjaarsganzerik,
 Duindravik, Gestreepte klaver, Wondklaver."""
 
-    typeURI = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Duingrasland"
+    typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Duingrasland'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        super().__init__()
+        AttributeInfo.__init__(self)
+        SoortenrijkSchraalGraslandGraslandfase5.__init__(self)

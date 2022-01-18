@@ -1,8 +1,6 @@
-import decimal
 import unittest
 
 from OTLModel.Datatypes.KwantWrdInVolt import KwantWrdInVolt
-from OTLModel.Datatypes.DecimalFloatField import DecimalFloatField
 from OTLModel.Classes.Voedt import Voedt
 
 
@@ -10,17 +8,17 @@ class RelatiesTests(unittest.TestCase):
     def test_VoedtInit(self):
         instance = Voedt()
 
-        self.assertTrue(isinstance(instance.aansluitspanning, KwantWrdInVolt))
-        self.assertEqual("V", instance.aansluitspanning.eenheidVeld.waarde)
-        self.assertEqual(None, instance.aansluitspanning.waarde)
+        self.assertEqual(instance._aansluitspanning.field, KwantWrdInVolt)
+        self.assertEqual("V", instance._aansluitspanning.field.eenheid.standaardEenheid)
+        self.assertEqual(None, instance.aansluitspanning)
 
-        instance.aansluitspanning.waarde = 3.0
-        self.assertEqual(3.0, instance.aansluitspanning.waarde)
+        instance.aansluitspanning = 3.0
+        self.assertEqual(3, instance.aansluitspanning)
 
-        instance.aansluitspanning = KwantWrdInVolt(1.0)  # beide werken
-        self.assertEqual(1.0, instance.aansluitspanning.waarde)
+        instance.aansluitspanning = 4
+        self.assertEqual(4.0, instance.aansluitspanning)
 
         with self.assertRaises(AttributeError):
-            instance.aansluitspanning.standaardEenheid.waarde = 'A'
+            instance._aansluitspanning.field.eenheid.standaardEenheid = 'A'
 
-        self.assertTrue(isinstance(instance.aansluitspanning.waardeVeld, DecimalFloatField))
+

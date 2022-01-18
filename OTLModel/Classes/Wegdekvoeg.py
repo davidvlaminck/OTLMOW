@@ -1,46 +1,64 @@
 # coding=utf-8
+from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
+from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.AIMObject import AIMObject
 from OTLModel.Datatypes.BooleanField import BooleanField
-from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlWegdekvoegType import KlWegdekvoegType
 from OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Wegdekvoeg(AIMObject):
+class Wegdekvoeg(AIMObject, AttributeInfo):
     """Dwarsvoegen en langsvoegen met uitzondering van de krimpvoegen."""
 
-    typeURI = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Wegdekvoeg"
+    typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Wegdekvoeg'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        super().__init__()
+        AIMObject.__init__(self)
+        AttributeInfo.__init__(self)
 
-        self.heeftDeuvels = BooleanField(naam="heeftDeuvels",
-                                         label="heeft deuvels",
-                                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Wegdekvoeg.heeftDeuvels",
-                                         definition="Aanduiding of de voeg al dan niet verdeuveld is.",
-                                         constraints="",
-                                         usagenote="",
-                                         deprecated_version="")
+        self._heeftDeuvels = OTLAttribuut(field=BooleanField,
+                                          naam='heeftDeuvels',
+                                          label='heeft deuvels',
+                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Wegdekvoeg.heeftDeuvels',
+                                          definition='Aanduiding of de voeg al dan niet verdeuveld is.')
+
+        self._lengte = OTLAttribuut(field=KwantWrdInMeter,
+                                    naam='lengte',
+                                    label='lengte',
+                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Wegdekvoeg.lengte',
+                                    definition='De lengte van de wegdekvoeg.')
+
+        self._type = OTLAttribuut(field=KlWegdekvoegType,
+                                  naam='type',
+                                  label='type',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Wegdekvoeg.type',
+                                  definition='Het type van wegdekvoeg.')
+
+    @property
+    def heeftDeuvels(self):
         """Aanduiding of de voeg al dan niet verdeuveld is."""
+        return self._heeftDeuvels.waarde
 
-        self.lengte = KwantWrdInMeter()
+    @heeftDeuvels.setter
+    def heeftDeuvels(self, value):
+        self._heeftDeuvels.set_waarde(value, owner=self)
+
+    @property
+    def lengte(self):
         """De lengte van de wegdekvoeg."""
-        self.lengte.naam = "lengte"
-        self.lengte.label = "lengte"
-        self.lengte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Wegdekvoeg.lengte"
-        self.lengte.definition = "De lengte van de wegdekvoeg."
-        self.lengte.constraints = ""
-        self.lengte.usagenote = ""
-        self.lengte.deprecated_version = ""
+        return self._lengte.waarde
 
-        self.type = KeuzelijstField(naam="type",
-                                    label="type",
-                                    lijst=KlWegdekvoegType(),
-                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Wegdekvoeg.type",
-                                    definition="Het type van wegdekvoeg.",
-                                    constraints="",
-                                    usagenote="",
-                                    deprecated_version="")
+    @lengte.setter
+    def lengte(self, value):
+        self._lengte.set_waarde(value, owner=self)
+
+    @property
+    def type(self):
         """Het type van wegdekvoeg."""
+        return self._type.waarde
+
+    @type.setter
+    def type(self, value):
+        self._type.set_waarde(value, owner=self)

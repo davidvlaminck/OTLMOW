@@ -21,9 +21,9 @@ class KwantWrdInTonEenheid(KwantWrdEenheid):
 
 # Generated with OTLPrimitiveDatatypeCreator. To modify: extend, do not edit
 class KwantWrdInTon(FloatOrDecimalField, KwantWrd):
-    naam = 'waarde'
-    label = 'waarde'
-    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInTon.waarde'
-    definition = 'Bevat een getal die bij het datatype hoort.'
+    naam = 'KwantWrdInTon'
+    label = 'Kwantitatieve waarde in ton'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInTon'
+    definition = 'Een kwantitatieve waarde die een getal in ton uitdrukt.'
     eenheid = KwantWrdInTonEenheid()
 

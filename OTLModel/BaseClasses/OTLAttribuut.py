@@ -1,4 +1,5 @@
 ﻿import math
+from msilib import sequence
 
 from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLField import OTLField
@@ -35,17 +36,25 @@ class OTLAttribuut(AttributeInfo):
             kardinaliteit_max = math.inf
         else:
             kardinaliteit_max = int(self.kardinaliteit_max)
-        if kardinaliteit_max > 1:
+        if kardinaliteit_max > 1 and value is not None:
             kardinaliteit_min = int(self.kardinaliteit_min)
             if not isinstance(value, list):
-                raise TypeError(f'expecting list in {owner.__class__.__name__}.{self.naam}')
+                raise TypeError(f'expecting a list in {owner.__class__.__name__}.{self.naam}')
+            elif isinstance(value, list) and isinstance(value, set):
+                raise TypeError(f'expecting a non set type of list in {owner.__class__.__name__}.{self.naam}')
             elif len(value) < kardinaliteit_min:
                 raise ValueError(f'expecting at least {kardinaliteit_min} element(s) in {owner.__class__.__name__}.{self.naam}')
             elif len(value) > kardinaliteit_max:
                 raise ValueError(f'expecting at most {kardinaliteit_max} element(s) in {owner.__class__.__name__}.{self.naam}')
             for el_value in value:
-                if not self.field.validate(el_value, self):
-                    raise ValueError(f'invalid value in list for {owner.__class__.__name__}.{self.naam}: {el_value} is not valid, must be valid for {self.field.naam}')
+                try:
+                    field_validated = self.field.validate(el_value, self)
+                    if not field_validated:
+                        raise ValueError(f'invalid value in list for {owner.__class__.__name__}.{self.naam}: {el_value} is not valid, must be valid for {self.field.naam}')
+                except TypeError as error:
+                    raise ValueError(
+                        f'invalid value in list for {owner.__class__.__name__}.{self.naam}: {el_value} is not valid, must be valid for {self.field.naam}\n' + str(error))
+
             self.waarde = self.field.convert_to_correct_type(value)
         else:
             if self.field.validate(value=value, attribuut=self):

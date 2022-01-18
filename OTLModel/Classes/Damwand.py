@@ -1,67 +1,95 @@
 # coding=utf-8
+from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
+from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.ConstructieElement import ConstructieElement
 from OTLModel.Datatypes.BooleanField import BooleanField
-from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlDamwandMateriaal import KlDamwandMateriaal
 from OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter
 from OTLModel.Datatypes.KwantWrdInVierkanteMeter import KwantWrdInVierkanteMeter
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Damwand(ConstructieElement):
+class Damwand(ConstructieElement, AttributeInfo):
     """Een grond- en/of waterkerende constructie, die bestaat uit een verticaal in de grond geplaatste wand."""
 
-    typeURI = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Damwand"
+    typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Damwand'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        super().__init__()
+        AttributeInfo.__init__(self)
+        ConstructieElement.__init__(self)
 
-        self.isWaterdicht = BooleanField(naam="isWaterdicht",
-                                         label="is waterdicht",
-                                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Damwand.isWaterdicht",
-                                         definition="Geeft aan of de damwand al dan niet waterdicht is.",
-                                         constraints="",
-                                         usagenote="",
-                                         deprecated_version="")
+        self._isWaterdicht = OTLAttribuut(field=BooleanField,
+                                          naam='isWaterdicht',
+                                          label='is waterdicht',
+                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Damwand.isWaterdicht',
+                                          definition='Geeft aan of de damwand al dan niet waterdicht is.')
+
+        self._materiaal = OTLAttribuut(field=KlDamwandMateriaal,
+                                       naam='materiaal',
+                                       label='Damwand materiaal',
+                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Damwand.materiaal',
+                                       definition='Het materiaal waaruit de damwand bestaat.')
+
+        self._oppervlakte = OTLAttribuut(field=KwantWrdInVierkanteMeter,
+                                         naam='oppervlakte',
+                                         label='oppervlakte',
+                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Damwand.oppervlakte',
+                                         definition='De totale oppervlakte van de damwandconstructie in vierkante meter.')
+
+        self._profiellengte = OTLAttribuut(field=KwantWrdInMeter,
+                                           naam='profiellengte',
+                                           label='profiellengte',
+                                           objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Damwand.profiellengte',
+                                           definition='De lengte van één damwandprofiel.')
+
+        self._totaleLengte = OTLAttribuut(field=KwantWrdInMeter,
+                                          naam='totaleLengte',
+                                          label='totale lengte',
+                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Damwand.totaleLengte',
+                                          definition='De totale lengte van de damwandconstructie in lopende meter.')
+
+    @property
+    def isWaterdicht(self):
         """Geeft aan of de damwand al dan niet waterdicht is."""
+        return self._isWaterdicht.waarde
 
-        self.materiaal = KeuzelijstField(naam="materiaal",
-                                         label="Damwand materiaal",
-                                         lijst=KlDamwandMateriaal(),
-                                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Damwand.materiaal",
-                                         definition="Het materiaal waaruit de damwand bestaat.",
-                                         constraints="",
-                                         usagenote="",
-                                         deprecated_version="")
+    @isWaterdicht.setter
+    def isWaterdicht(self, value):
+        self._isWaterdicht.set_waarde(value, owner=self)
+
+    @property
+    def materiaal(self):
         """Het materiaal waaruit de damwand bestaat."""
+        return self._materiaal.waarde
 
-        self.oppervlakte = KwantWrdInVierkanteMeter()
+    @materiaal.setter
+    def materiaal(self, value):
+        self._materiaal.set_waarde(value, owner=self)
+
+    @property
+    def oppervlakte(self):
         """De totale oppervlakte van de damwandconstructie in vierkante meter."""
-        self.oppervlakte.naam = "oppervlakte"
-        self.oppervlakte.label = "oppervlakte"
-        self.oppervlakte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Damwand.oppervlakte"
-        self.oppervlakte.definition = "De totale oppervlakte van de damwandconstructie in vierkante meter."
-        self.oppervlakte.constraints = ""
-        self.oppervlakte.usagenote = ""
-        self.oppervlakte.deprecated_version = ""
+        return self._oppervlakte.waarde
 
-        self.profiellengte = KwantWrdInMeter()
+    @oppervlakte.setter
+    def oppervlakte(self, value):
+        self._oppervlakte.set_waarde(value, owner=self)
+
+    @property
+    def profiellengte(self):
         """De lengte van één damwandprofiel."""
-        self.profiellengte.naam = "profiellengte"
-        self.profiellengte.label = "profiellengte"
-        self.profiellengte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Damwand.profiellengte"
-        self.profiellengte.definition = "De lengte van één damwandprofiel."
-        self.profiellengte.constraints = ""
-        self.profiellengte.usagenote = ""
-        self.profiellengte.deprecated_version = ""
+        return self._profiellengte.waarde
 
-        self.totaleLengte = KwantWrdInMeter()
+    @profiellengte.setter
+    def profiellengte(self, value):
+        self._profiellengte.set_waarde(value, owner=self)
+
+    @property
+    def totaleLengte(self):
         """De totale lengte van de damwandconstructie in lopende meter."""
-        self.totaleLengte.naam = "totaleLengte"
-        self.totaleLengte.label = "totale lengte"
-        self.totaleLengte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Damwand.totaleLengte"
-        self.totaleLengte.definition = "De totale lengte van de damwandconstructie in lopende meter."
-        self.totaleLengte.constraints = ""
-        self.totaleLengte.usagenote = ""
-        self.totaleLengte.deprecated_version = ""
+        return self._totaleLengte.waarde
+
+    @totaleLengte.setter
+    def totaleLengte(self, value):
+        self._totaleLengte.set_waarde(value, owner=self)

@@ -21,9 +21,9 @@ class KwantWrdInKubiekeMeterEenheid(KwantWrdEenheid):
 
 # Generated with OTLPrimitiveDatatypeCreator. To modify: extend, do not edit
 class KwantWrdInKubiekeMeter(FloatOrDecimalField, KwantWrd):
-    naam = 'waarde'
-    label = 'waarde'
-    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInKubiekeMeter.waarde'
-    definition = 'Bevat een getal die bij het datatype hoort.'
+    naam = 'KwantWrdInKubiekeMeter'
+    label = 'Kwantitatieve waarde in kubieke meter'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInKubiekeMeter'
+    definition = 'Een kwantitatieve waarde die een getal in kubieke meter uitdrukt.'
     eenheid = KwantWrdInKubiekeMeterEenheid()
 

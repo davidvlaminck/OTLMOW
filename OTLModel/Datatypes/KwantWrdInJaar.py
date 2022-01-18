@@ -21,9 +21,9 @@ class KwantWrdInJaarEenheid(KwantWrdEenheid):
 
 # Generated with OTLPrimitiveDatatypeCreator. To modify: extend, do not edit
 class KwantWrdInJaar(NonNegIntegerField, KwantWrd):
-    naam = 'waarde'
-    label = 'waarde'
-    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInJaar.waarde'
-    definition = 'Bevat een getal die bij het datatype hoort.'
+    naam = 'KwantWrdInJaar'
+    label = 'Kwantitatieve waarde in aantal jaar'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInJaar'
+    definition = 'Een kwantitatieve waarde die een getal in aantal jaar uitdrukt.'
     eenheid = KwantWrdInJaarEenheid()
 

@@ -1,6 +1,7 @@
 # coding=utf-8
+from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
+from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.AIMNaamObject import AIMNaamObject
-from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlTransformatorIsolatiemedium import KlTransformatorIsolatiemedium
 from OTLModel.Datatypes.KlTransformatorTrafobeveiliging import KlTransformatorTrafobeveiliging
 from OTLModel.Datatypes.KwantWrdInKiloVolt import KwantWrdInKiloVolt
@@ -11,80 +12,117 @@ from OTLModel.Datatypes.StringField import StringField
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Transformator(AIMNaamObject):
+class Transformator(AIMNaamObject, AttributeInfo):
     """Elektrische apparatuur, bestaande uit magnetisch gekoppelde spoelen, die instaat voor het transformeren van de voedingsspanning."""
 
-    typeURI = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Transformator"
+    typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Transformator'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        super().__init__()
+        AIMNaamObject.__init__(self)
+        AttributeInfo.__init__(self)
 
-        self.isolatiemedium = KeuzelijstField(naam="isolatiemedium",
-                                              label="isolatiemedium",
-                                              lijst=KlTransformatorIsolatiemedium(),
-                                              objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Transformator.isolatiemedium",
-                                              definition="Wijze van onderdompeling van de magnetische kring en van de wikkelingen van de transformator.",
-                                              constraints="",
-                                              usagenote="",
-                                              deprecated_version="")
+        self._isolatiemedium = OTLAttribuut(field=KlTransformatorIsolatiemedium,
+                                            naam='isolatiemedium',
+                                            label='isolatiemedium',
+                                            objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Transformator.isolatiemedium',
+                                            definition='Wijze van onderdompeling van de magnetische kring en van de wikkelingen van de transformator.')
+
+        self._kortsluitspanning = OTLAttribuut(field=KwantWrdInProcent,
+                                               naam='kortsluitspanning',
+                                               label='kortsluitspanning',
+                                               objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Transformator.kortsluitspanning',
+                                               definition='Kortsluitspanning van de transformator (in %).')
+
+        self._nominaalVermogen = OTLAttribuut(field=KwantWrdInKiloVoltAmpere,
+                                              naam='nominaalVermogen',
+                                              label='nominaal vermogen',
+                                              objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Transformator.nominaalVermogen',
+                                              definition='nominale vermogen van de transformator.')
+
+        self._nominalePrimaireSpanning = OTLAttribuut(field=KwantWrdInKiloVolt,
+                                                      naam='nominalePrimaireSpanning',
+                                                      label='nominale primaire spanning',
+                                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Transformator.nominalePrimaireSpanning',
+                                                      definition='Nominale spanning van de primaire wikkeling in kV.')
+
+        self._nominaleSecundaireSpanning = OTLAttribuut(field=KwantWrdInVolt,
+                                                        naam='nominaleSecundaireSpanning',
+                                                        label='nominale secundaire spanning',
+                                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Transformator.nominaleSecundaireSpanning',
+                                                        definition='Nominale spanning van de secundaire wikkeling in V.')
+
+        self._schakelgroep = OTLAttribuut(field=StringField,
+                                          naam='schakelgroep',
+                                          label='schakelgroep',
+                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Transformator.schakelgroep',
+                                          definition='Verzameling van 3 schakelcombinaties waarbij de hoofdletter de schakelwijze van de primaire weergeeft, de kleine letter(s) de schakelwijze van de secundaire weergeeft (en eventueel het feit dat het sterpunt naar buiten werd gebracht) en het getal geeft het klokgetal (of het aantal keer dat er 30° faseverschuiving tussen HS- en LS-spanning is) vb Dyn11')
+
+        self._typeBeveiliging = OTLAttribuut(field=KlTransformatorTrafobeveiliging,
+                                             naam='typeBeveiliging',
+                                             label='type beveiliging',
+                                             objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Transformator.typeBeveiliging',
+                                             definition='Type transformatorbeveiliging.')
+
+    @property
+    def isolatiemedium(self):
         """Wijze van onderdompeling van de magnetische kring en van de wikkelingen van de transformator."""
+        return self._isolatiemedium.waarde
 
-        self.kortsluitspanning = KwantWrdInProcent()
+    @isolatiemedium.setter
+    def isolatiemedium(self, value):
+        self._isolatiemedium.set_waarde(value, owner=self)
+
+    @property
+    def kortsluitspanning(self):
         """Kortsluitspanning van de transformator (in %)."""
-        self.kortsluitspanning.naam = "kortsluitspanning"
-        self.kortsluitspanning.label = "kortsluitspanning"
-        self.kortsluitspanning.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Transformator.kortsluitspanning"
-        self.kortsluitspanning.definition = "Kortsluitspanning van de transformator (in %)."
-        self.kortsluitspanning.constraints = ""
-        self.kortsluitspanning.usagenote = ""
-        self.kortsluitspanning.deprecated_version = ""
+        return self._kortsluitspanning.waarde
 
-        self.nominaalVermogen = KwantWrdInKiloVoltAmpere()
+    @kortsluitspanning.setter
+    def kortsluitspanning(self, value):
+        self._kortsluitspanning.set_waarde(value, owner=self)
+
+    @property
+    def nominaalVermogen(self):
         """nominale vermogen van de transformator."""
-        self.nominaalVermogen.naam = "nominaalVermogen"
-        self.nominaalVermogen.label = "nominaal vermogen"
-        self.nominaalVermogen.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Transformator.nominaalVermogen"
-        self.nominaalVermogen.definition = "nominale vermogen van de transformator."
-        self.nominaalVermogen.constraints = ""
-        self.nominaalVermogen.usagenote = ""
-        self.nominaalVermogen.deprecated_version = ""
+        return self._nominaalVermogen.waarde
 
-        self.nominalePrimaireSpanning = KwantWrdInKiloVolt()
+    @nominaalVermogen.setter
+    def nominaalVermogen(self, value):
+        self._nominaalVermogen.set_waarde(value, owner=self)
+
+    @property
+    def nominalePrimaireSpanning(self):
         """Nominale spanning van de primaire wikkeling in kV."""
-        self.nominalePrimaireSpanning.naam = "nominalePrimaireSpanning"
-        self.nominalePrimaireSpanning.label = "nominale primaire spanning"
-        self.nominalePrimaireSpanning.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Transformator.nominalePrimaireSpanning"
-        self.nominalePrimaireSpanning.definition = "Nominale spanning van de primaire wikkeling in kV."
-        self.nominalePrimaireSpanning.constraints = ""
-        self.nominalePrimaireSpanning.usagenote = ""
-        self.nominalePrimaireSpanning.deprecated_version = ""
+        return self._nominalePrimaireSpanning.waarde
 
-        self.nominaleSecundaireSpanning = KwantWrdInVolt()
+    @nominalePrimaireSpanning.setter
+    def nominalePrimaireSpanning(self, value):
+        self._nominalePrimaireSpanning.set_waarde(value, owner=self)
+
+    @property
+    def nominaleSecundaireSpanning(self):
         """Nominale spanning van de secundaire wikkeling in V."""
-        self.nominaleSecundaireSpanning.naam = "nominaleSecundaireSpanning"
-        self.nominaleSecundaireSpanning.label = "nominale secundaire spanning"
-        self.nominaleSecundaireSpanning.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Transformator.nominaleSecundaireSpanning"
-        self.nominaleSecundaireSpanning.definition = "Nominale spanning van de secundaire wikkeling in V."
-        self.nominaleSecundaireSpanning.constraints = ""
-        self.nominaleSecundaireSpanning.usagenote = ""
-        self.nominaleSecundaireSpanning.deprecated_version = ""
+        return self._nominaleSecundaireSpanning.waarde
 
-        self.schakelgroep = StringField(naam="schakelgroep",
-                                        label="schakelgroep",
-                                        objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Transformator.schakelgroep",
-                                        definition="Verzameling van 3 schakelcombinaties waarbij de hoofdletter de schakelwijze van de primaire weergeeft, de kleine letter(s) de schakelwijze van de secundaire weergeeft (en eventueel het feit dat het sterpunt naar buiten werd gebracht) en het getal geeft het klokgetal (of het aantal keer dat er 30° faseverschuiving tussen HS- en LS-spanning is) vb Dyn11",
-                                        constraints="",
-                                        usagenote="",
-                                        deprecated_version="")
+    @nominaleSecundaireSpanning.setter
+    def nominaleSecundaireSpanning(self, value):
+        self._nominaleSecundaireSpanning.set_waarde(value, owner=self)
+
+    @property
+    def schakelgroep(self):
         """Verzameling van 3 schakelcombinaties waarbij de hoofdletter de schakelwijze van de primaire weergeeft, de kleine letter(s) de schakelwijze van de secundaire weergeeft (en eventueel het feit dat het sterpunt naar buiten werd gebracht) en het getal geeft het klokgetal (of het aantal keer dat er 30° faseverschuiving tussen HS- en LS-spanning is) vb Dyn11"""
+        return self._schakelgroep.waarde
 
-        self.typeBeveiliging = KeuzelijstField(naam="typeBeveiliging",
-                                               label="type beveiliging",
-                                               lijst=KlTransformatorTrafobeveiliging(),
-                                               objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Transformator.typeBeveiliging",
-                                               definition="Type transformatorbeveiliging.",
-                                               constraints="",
-                                               usagenote="",
-                                               deprecated_version="")
+    @schakelgroep.setter
+    def schakelgroep(self, value):
+        self._schakelgroep.set_waarde(value, owner=self)
+
+    @property
+    def typeBeveiliging(self):
         """Type transformatorbeveiliging."""
+        return self._typeBeveiliging.waarde
+
+    @typeBeveiliging.setter
+    def typeBeveiliging(self, value):
+        self._typeBeveiliging.set_waarde(value, owner=self)

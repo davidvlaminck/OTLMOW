@@ -1,27 +1,33 @@
 # coding=utf-8
+from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
+from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.NaampadObject import NaampadObject
-from OTLModel.Datatypes.KardinaliteitField import KardinaliteitField
-from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlPadNetwerkprotectie import KlPadNetwerkprotectie
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Pad(NaampadObject):
+class Pad(NaampadObject, AttributeInfo):
     """Een aaneengesloten reeks van links die samen een verbinding realiseren over het netwerk, gebruik makende van eenzelfde technologie (vb SDH, OTN…)."""
 
-    typeURI = "https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Pad"
+    typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Pad'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        super().__init__()
+        AttributeInfo.__init__(self)
+        NaampadObject.__init__(self)
 
-        netwerkprotectieField = KeuzelijstField(naam="netwerkprotectie",
-                                                label="netwerkprotectie",
-                                                lijst=KlPadNetwerkprotectie(),
-                                                objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Pad.netwerkprotectie",
-                                                definition="Referentie van het pad dat redundantie levert aan dit pad.",
-                                                constraints="",
-                                                usagenote="",
-                                                deprecated_version="")
-        self.netwerkprotectie = KardinaliteitField(minKardinaliteit="1", maxKardinaliteit="*", fieldToMultiply=netwerkprotectieField)
+        self._netwerkprotectie = OTLAttribuut(field=KlPadNetwerkprotectie,
+                                              naam='netwerkprotectie',
+                                              label='netwerkprotectie',
+                                              objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Pad.netwerkprotectie',
+                                              kardinaliteit_max='*',
+                                              definition='Referentie van het pad dat redundantie levert aan dit pad.')
+
+    @property
+    def netwerkprotectie(self):
         """Referentie van het pad dat redundantie levert aan dit pad."""
+        return self._netwerkprotectie.waarde
+
+    @netwerkprotectie.setter
+    def netwerkprotectie(self, value):
+        self._netwerkprotectie.set_waarde(value, owner=self)

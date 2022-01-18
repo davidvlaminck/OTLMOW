@@ -1,4 +1,6 @@
 # coding=utf-8
+from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
+from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from abc import abstractmethod
 from OTLModel.Classes.LijnvormigElement import LijnvormigElement
 from OTLModel.Datatypes.DtcGCMateriaalKarakteristiek import DtcGCMateriaalKarakteristiek
@@ -7,62 +9,88 @@ from OTLModel.Datatypes.KwantWrdInKiloNewtonPerVierkanteMeter import KwantWrdInK
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Geluidsschermelement(LijnvormigElement):
+class Geluidsschermelement(LijnvormigElement, AttributeInfo):
     """Abstracte om de gemeenschappelijke eigenschappen van de verschillende types schermlementen te bundelen."""
 
-    typeURI = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Geluidsschermelement"
+    typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Geluidsschermelement'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     @abstractmethod
     def __init__(self):
-        super().__init__()
+        AttributeInfo.__init__(self)
+        LijnvormigElement.__init__(self)
 
-        self.hoogte = KwantWrdInCentimeter()
+        self._hoogte = OTLAttribuut(field=KwantWrdInCentimeter,
+                                    naam='hoogte',
+                                    label='hoogte',
+                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Geluidsschermelement.hoogte',
+                                    definition='De hoogte in centimeter van het schermelement, verticaal gemeten.')
+
+        self._lengte = OTLAttribuut(field=KwantWrdInCentimeter,
+                                    naam='lengte',
+                                    label='lengte',
+                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Geluidsschermelement.lengte',
+                                    definition='De lengte van het schermelement in centimeter zonder inbegrip van de profielen, horizontaal gemeten.')
+
+        self._materiaalkarakteristiek = OTLAttribuut(field=DtcGCMateriaalKarakteristiek,
+                                                     naam='materiaalkarakteristiek',
+                                                     label='materiaalkarakteristiek',
+                                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Geluidsschermelement.materiaalkarakteristiek',
+                                                     definition='Het materiaal van de geluidswerende constructie en het geluidskarakteristiek van het materiaal.')
+
+        self._maximaleTotaleDikte = OTLAttribuut(field=KwantWrdInCentimeter,
+                                                 naam='maximaleTotaleDikte',
+                                                 label='maximale totale dikte',
+                                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Geluidsschermelement.maximaleTotaleDikte',
+                                                 definition='De maximale totale dikte van het schermelement in centimeter, gemeten ter hoogte van het geluidsabsorberende deel van het schermelement.')
+
+        self._windbelasting = OTLAttribuut(field=KwantWrdInKiloNewtonPerVierkanteMeter,
+                                           naam='windbelasting',
+                                           label='windbelasting',
+                                           objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Geluidsschermelement.windbelasting',
+                                           definition='Getal in kN/m2 voor de aanduiding van de maximale windbelasting volgens de norm NBN EN 1994-1-4.')
+
+    @property
+    def hoogte(self):
         """De hoogte in centimeter van het schermelement, verticaal gemeten."""
-        self.hoogte.naam = "hoogte"
-        self.hoogte.label = "hoogte"
-        self.hoogte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Geluidsschermelement.hoogte"
-        self.hoogte.definition = "De hoogte in centimeter van het schermelement, verticaal gemeten."
-        self.hoogte.constraints = ""
-        self.hoogte.usagenote = ""
-        self.hoogte.deprecated_version = ""
+        return self._hoogte.waarde
 
-        self.lengte = KwantWrdInCentimeter()
+    @hoogte.setter
+    def hoogte(self, value):
+        self._hoogte.set_waarde(value, owner=self)
+
+    @property
+    def lengte(self):
         """De lengte van het schermelement in centimeter zonder inbegrip van de profielen, horizontaal gemeten."""
-        self.lengte.naam = "lengte"
-        self.lengte.label = "lengte"
-        self.lengte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Geluidsschermelement.lengte"
-        self.lengte.definition = "De lengte van het schermelement in centimeter zonder inbegrip van de profielen, horizontaal gemeten."
-        self.lengte.constraints = ""
-        self.lengte.usagenote = ""
-        self.lengte.deprecated_version = ""
+        return self._lengte.waarde
 
-        self.materiaalkarakteristiek = DtcGCMateriaalKarakteristiek()
+    @lengte.setter
+    def lengte(self, value):
+        self._lengte.set_waarde(value, owner=self)
+
+    @property
+    def materiaalkarakteristiek(self):
         """Het materiaal van de geluidswerende constructie en het geluidskarakteristiek van het materiaal."""
-        self.materiaalkarakteristiek.naam = "materiaalkarakteristiek"
-        self.materiaalkarakteristiek.label = "materiaalkarakteristiek"
-        self.materiaalkarakteristiek.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Geluidsschermelement.materiaalkarakteristiek"
-        self.materiaalkarakteristiek.definition = "Het materiaal van de geluidswerende constructie en het geluidskarakteristiek van het materiaal."
-        self.materiaalkarakteristiek.constraints = ""
-        self.materiaalkarakteristiek.usagenote = ""
-        self.materiaalkarakteristiek.deprecated_version = ""
+        return self._materiaalkarakteristiek.waarde
 
-        self.maximaleTotaleDikte = KwantWrdInCentimeter()
+    @materiaalkarakteristiek.setter
+    def materiaalkarakteristiek(self, value):
+        self._materiaalkarakteristiek.set_waarde(value, owner=self)
+
+    @property
+    def maximaleTotaleDikte(self):
         """De maximale totale dikte van het schermelement in centimeter, gemeten ter hoogte van het geluidsabsorberende deel van het schermelement."""
-        self.maximaleTotaleDikte.naam = "maximaleTotaleDikte"
-        self.maximaleTotaleDikte.label = "maximale totale dikte"
-        self.maximaleTotaleDikte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Geluidsschermelement.maximaleTotaleDikte"
-        self.maximaleTotaleDikte.definition = "De maximale totale dikte van het schermelement in centimeter, gemeten ter hoogte van het geluidsabsorberende deel van het schermelement."
-        self.maximaleTotaleDikte.constraints = ""
-        self.maximaleTotaleDikte.usagenote = ""
-        self.maximaleTotaleDikte.deprecated_version = ""
+        return self._maximaleTotaleDikte.waarde
 
-        self.windbelasting = KwantWrdInKiloNewtonPerVierkanteMeter()
+    @maximaleTotaleDikte.setter
+    def maximaleTotaleDikte(self, value):
+        self._maximaleTotaleDikte.set_waarde(value, owner=self)
+
+    @property
+    def windbelasting(self):
         """Getal in kN/m2 voor de aanduiding van de maximale windbelasting volgens de norm NBN EN 1994-1-4."""
-        self.windbelasting.naam = "windbelasting"
-        self.windbelasting.label = "windbelasting"
-        self.windbelasting.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Geluidsschermelement.windbelasting"
-        self.windbelasting.definition = "Getal in kN/m2 voor de aanduiding van de maximale windbelasting volgens de norm NBN EN 1994-1-4."
-        self.windbelasting.constraints = ""
-        self.windbelasting.usagenote = ""
-        self.windbelasting.deprecated_version = ""
+        return self._windbelasting.waarde
+
+    @windbelasting.setter
+    def windbelasting(self, value):
+        self._windbelasting.set_waarde(value, owner=self)

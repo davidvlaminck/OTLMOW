@@ -21,9 +21,9 @@ class KwantWrdInPromilleEenheid(KwantWrdEenheid):
 
 # Generated with OTLPrimitiveDatatypeCreator. To modify: extend, do not edit
 class KwantWrdInPromille(FloatOrDecimalField, KwantWrd):
-    naam = 'waarde'
-    label = 'waarde'
-    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInPromille.waarde'
-    definition = 'Bevat een getal die bij het datatype hoort.'
+    naam = 'KwantWrdInPromille'
+    label = 'Kwantitatieve waarde in promille'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInPromille'
+    definition = 'Een kwantitatieve waarde die een getal in promille uitdrukt.'
     eenheid = KwantWrdInPromilleEenheid()
 

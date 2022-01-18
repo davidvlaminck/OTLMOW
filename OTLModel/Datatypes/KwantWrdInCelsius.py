@@ -21,9 +21,9 @@ class KwantWrdInCelsiusEenheid(KwantWrdEenheid):
 
 # Generated with OTLPrimitiveDatatypeCreator. To modify: extend, do not edit
 class KwantWrdInCelsius(FloatOrDecimalField, KwantWrd):
-    naam = 'waarde'
-    label = 'waarde'
-    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInCelsius.waarde'
-    definition = 'Bevat een getal die bij het datatype hoort.'
+    naam = 'KwantWrdInCelsius'
+    label = 'Kwantitatieve waarde in Celsius'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInCelsius'
+    definition = 'Een kwantitatieve waarde die een getal in graden celsius uitdrukt.'
     eenheid = KwantWrdInCelsiusEenheid()
 

@@ -1,71 +1,108 @@
 # coding=utf-8
+from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
+from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.Luchtkwaliteittoestel import Luchtkwaliteittoestel
 from OTLModel.Datatypes.BooleanField import BooleanField
-from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlAlgIngressProtectionCode import KlAlgIngressProtectionCode
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class LuchtkwaliteitZenderOntvanger(Luchtkwaliteittoestel):
+class LuchtkwaliteitZenderOntvanger(Luchtkwaliteittoestel, AttributeInfo):
     """Onderdeel van de luchtkwaliteitsensor dat het signaal uitstuurt en ontvangt op basis waarvan de luchtkwaliteit gemeten wordt."""
 
-    typeURI = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#LuchtkwaliteitZenderOntvanger"
+    typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#LuchtkwaliteitZenderOntvanger'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        super().__init__()
+        AttributeInfo.__init__(self)
+        Luchtkwaliteittoestel.__init__(self)
 
-        self.ipKlasse = KeuzelijstField(naam="ipKlasse",
-                                        label="ingress protection klasse",
-                                        lijst=KlAlgIngressProtectionCode(),
-                                        objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#LuchtkwaliteitZenderOntvanger.ipKlasse",
-                                        definition="De IP-codering als een aanduiding voor de mate van beveiliging van de constructie van elektrische of elektronische apparatuur tegen eigen schade door gebruik in \"vijandige omgevingen\" en tegen eventueel gevaar voor de gebruiker volgens IEC 60529.",
-                                        constraints="",
-                                        usagenote="",
-                                        deprecated_version="")
-        """De IP-codering als een aanduiding voor de mate van beveiliging van de constructie van elektrische of elektronische apparatuur tegen eigen schade door gebruik in \"vijandige omgevingen\" en tegen eventueel gevaar voor de gebruiker volgens IEC 60529."""
+        self._ipKlasse = OTLAttribuut(field=KlAlgIngressProtectionCode,
+                                      naam='ipKlasse',
+                                      label='ingress protection klasse',
+                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#LuchtkwaliteitZenderOntvanger.ipKlasse',
+                                      definition='De IP-codering als een aanduiding voor de mate van beveiliging van de constructie van elektrische of elektronische apparatuur tegen eigen schade door gebruik in "vijandige omgevingen" en tegen eventueel gevaar voor de gebruiker volgens IEC 60529.')
 
-        self.isBeschermd = BooleanField(naam="isBeschermd",
-                                        label="is beschermd",
-                                        objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#LuchtkwaliteitZenderOntvanger.isBeschermd",
-                                        definition="Geeft aan of het toestel beschermd wordt tegen aanrijdingen of niet.",
-                                        constraints="",
-                                        usagenote="",
-                                        deprecated_version="")
+        self._isBeschermd = OTLAttribuut(field=BooleanField,
+                                         naam='isBeschermd',
+                                         label='is beschermd',
+                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#LuchtkwaliteitZenderOntvanger.isBeschermd',
+                                         definition='Geeft aan of het toestel beschermd wordt tegen aanrijdingen of niet.')
+
+        self._meetCO = OTLAttribuut(field=BooleanField,
+                                    naam='meetCO',
+                                    label='meet CO',
+                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#LuchtkwaliteitZenderOntvanger.meetCO',
+                                    definition='Geeft aan of het meettoestel CO in de lucht meet of niet.')
+
+        self._meetNoX = OTLAttribuut(field=BooleanField,
+                                     naam='meetNoX',
+                                     label='meet NOx',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#LuchtkwaliteitZenderOntvanger.meetNoX',
+                                     definition='Geeft aan of het meettoestel NOx in de lucht meet of niet.')
+
+        self._meetTemperatuur = OTLAttribuut(field=BooleanField,
+                                             naam='meetTemperatuur',
+                                             label='meet temperatuur',
+                                             objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#LuchtkwaliteitZenderOntvanger.meetTemperatuur',
+                                             definition='Geeft aan of het meettoestel de omgevingstemperatuur meet of niet.')
+
+        self._meetZicht = OTLAttribuut(field=BooleanField,
+                                       naam='meetZicht',
+                                       label='meet zicht',
+                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#LuchtkwaliteitZenderOntvanger.meetZicht',
+                                       definition='Geeft aan of het meettoestel zichtbaarheid meet of niet.')
+
+    @property
+    def ipKlasse(self):
+        """De IP-codering als een aanduiding voor de mate van beveiliging van de constructie van elektrische of elektronische apparatuur tegen eigen schade door gebruik in "vijandige omgevingen" en tegen eventueel gevaar voor de gebruiker volgens IEC 60529."""
+        return self._ipKlasse.waarde
+
+    @ipKlasse.setter
+    def ipKlasse(self, value):
+        self._ipKlasse.set_waarde(value, owner=self)
+
+    @property
+    def isBeschermd(self):
         """Geeft aan of het toestel beschermd wordt tegen aanrijdingen of niet."""
+        return self._isBeschermd.waarde
 
-        self.meetCO = BooleanField(naam="meetCO",
-                                   label="meet CO",
-                                   objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#LuchtkwaliteitZenderOntvanger.meetCO",
-                                   definition="Geeft aan of het meettoestel CO in de lucht meet of niet.",
-                                   constraints="",
-                                   usagenote="",
-                                   deprecated_version="")
+    @isBeschermd.setter
+    def isBeschermd(self, value):
+        self._isBeschermd.set_waarde(value, owner=self)
+
+    @property
+    def meetCO(self):
         """Geeft aan of het meettoestel CO in de lucht meet of niet."""
+        return self._meetCO.waarde
 
-        self.meetNoX = BooleanField(naam="meetNoX",
-                                    label="meet NOx",
-                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#LuchtkwaliteitZenderOntvanger.meetNoX",
-                                    definition="Geeft aan of het meettoestel NOx in de lucht meet of niet.",
-                                    constraints="",
-                                    usagenote="",
-                                    deprecated_version="")
+    @meetCO.setter
+    def meetCO(self, value):
+        self._meetCO.set_waarde(value, owner=self)
+
+    @property
+    def meetNoX(self):
         """Geeft aan of het meettoestel NOx in de lucht meet of niet."""
+        return self._meetNoX.waarde
 
-        self.meetTemperatuur = BooleanField(naam="meetTemperatuur",
-                                            label="meet temperatuur",
-                                            objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#LuchtkwaliteitZenderOntvanger.meetTemperatuur",
-                                            definition="Geeft aan of het meettoestel de omgevingstemperatuur meet of niet.",
-                                            constraints="",
-                                            usagenote="",
-                                            deprecated_version="")
+    @meetNoX.setter
+    def meetNoX(self, value):
+        self._meetNoX.set_waarde(value, owner=self)
+
+    @property
+    def meetTemperatuur(self):
         """Geeft aan of het meettoestel de omgevingstemperatuur meet of niet."""
+        return self._meetTemperatuur.waarde
 
-        self.meetZicht = BooleanField(naam="meetZicht",
-                                      label="meet zicht",
-                                      objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#LuchtkwaliteitZenderOntvanger.meetZicht",
-                                      definition="Geeft aan of het meettoestel zichtbaarheid meet of niet.",
-                                      constraints="",
-                                      usagenote="",
-                                      deprecated_version="")
+    @meetTemperatuur.setter
+    def meetTemperatuur(self, value):
+        self._meetTemperatuur.set_waarde(value, owner=self)
+
+    @property
+    def meetZicht(self):
         """Geeft aan of het meettoestel zichtbaarheid meet of niet."""
+        return self._meetZicht.waarde
+
+    @meetZicht.setter
+    def meetZicht(self, value):
+        self._meetZicht.set_waarde(value, owner=self)

@@ -21,9 +21,9 @@ class KwantWrdInDecimaleGradenEenheid(KwantWrdEenheid):
 
 # Generated with OTLPrimitiveDatatypeCreator. To modify: extend, do not edit
 class KwantWrdInDecimaleGraden(FloatOrDecimalField, KwantWrd):
-    naam = 'waarde'
-    label = 'waarde'
-    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInDecimaleGraden.waarde'
-    definition = 'Bevat een getal die bij het datatype hoort.'
+    naam = 'KwantWrdInDecimaleGraden'
+    label = 'Kwantitatieve waarde in decimale graden'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInDecimaleGraden'
+    definition = 'Een kwantitatieve waarde die een getal in decimale graden uitdrukt.'
     eenheid = KwantWrdInDecimaleGradenEenheid()
 

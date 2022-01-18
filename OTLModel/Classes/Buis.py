@@ -1,11 +1,11 @@
 # coding=utf-8
+from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
+from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from abc import abstractmethod
 from OTLModel.Classes.AIMObject import AIMObject
-from OTLModel.Datatypes.KardinaliteitField import KardinaliteitField
 from OTLModel.Datatypes.BooleanField import BooleanField
 from OTLModel.Datatypes.DtcDocument import DtcDocument
 from OTLModel.Datatypes.DteTekstblok import DteTekstblok
-from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlRioleringVorm import KlRioleringVorm
 from OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter
 from OTLModel.Datatypes.KwantWrdInMeterTAW import KwantWrdInMeterTAW
@@ -14,161 +14,257 @@ from OTLModel.Datatypes.KwantWrdInPromille import KwantWrdInPromille
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Buis(AIMObject):
+class Buis(AIMObject, AttributeInfo):
     """Abstracte om de gemeenschappelijke eigenschappen en relaties van de verschillende soorten buizen onder één noemer te houden."""
 
-    typeURI = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Buis"
+    typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Buis'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     @abstractmethod
     def __init__(self):
-        super().__init__()
+        AIMObject.__init__(self)
+        AttributeInfo.__init__(self)
 
-        self.bokAfwaarts = KwantWrdInMeterTAW()
+        self._bokAfwaarts = OTLAttribuut(field=KwantWrdInMeterTAW,
+                                         naam='bokAfwaarts',
+                                         label='bok afwaarts',
+                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Buis.bokAfwaarts',
+                                         definition='Peil in meter-TAW van de vloei aan de afwaartse kant van de buis.')
+
+        self._bokOpwaarts = OTLAttribuut(field=KwantWrdInMeterTAW,
+                                         naam='bokOpwaarts',
+                                         label='bok opwaarts',
+                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Buis.bokOpwaarts',
+                                         definition='Peil in meter-TAW van de vloei aan de opwaartse kant van de buis.')
+
+        self._breedte = OTLAttribuut(field=KwantWrdInMillimeter,
+                                     naam='breedte',
+                                     label='breedte',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Buis.breedte',
+                                     usagenote='Attribuut uit gebruik sinds versie 2.1.0',
+                                     deprecated_version='2.1.0',
+                                     definition='De breedte van de buis in millimeter.')
+
+        self._breedteBinnenzijde = OTLAttribuut(field=KwantWrdInMillimeter,
+                                                naam='breedteBinnenzijde',
+                                                label='breedte binnenzijde',
+                                                objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Buis.breedteBinnenzijde',
+                                                definition='De breedte van de binnenzijde van de buis in millimeter. Bij cirkelvormige buizen is dit de binnendiameter.')
+
+        self._breedteBuitenzijde = OTLAttribuut(field=KwantWrdInMillimeter,
+                                                naam='breedteBuitenzijde',
+                                                label='breedte buitenzijde',
+                                                objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Buis.breedteBuitenzijde',
+                                                definition='De breedte van de buitenzijde van de buis in millimeter. Bij cirkelvormige buizen is dit de buitendiameter.')
+
+        self._diepteAfwaarts = OTLAttribuut(field=KwantWrdInMeter,
+                                            naam='diepteAfwaarts',
+                                            label='diepte afwaarts',
+                                            objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Buis.diepteAfwaarts',
+                                            definition='Diepte van de vloei aan de afwaartse kant van de buis t.o.v. de bovenkant van het deksel.')
+
+        self._diepteOpwaarts = OTLAttribuut(field=KwantWrdInMeter,
+                                            naam='diepteOpwaarts',
+                                            label='diepte opwaarts',
+                                            objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Buis.diepteOpwaarts',
+                                            definition='De diepte van de vloei aan de opwaartse kant van de buis t.o.v. de bovenkant van het deksel.')
+
+        self._helling = OTLAttribuut(field=KwantWrdInPromille,
+                                     naam='helling',
+                                     label='helling',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Buis.helling',
+                                     definition='De helling van de buis in de lengterichting, uitgedrukt in promille.')
+
+        self._hoogteBinnenzijde = OTLAttribuut(field=KwantWrdInMillimeter,
+                                               naam='hoogteBinnenzijde',
+                                               label='hoogte binnenzijde',
+                                               objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Buis.hoogteBinnenzijde',
+                                               definition='De hoogte van de binnenzijde van de buis in millimeter. Bij cirkelvormige buizen is dit de binnendiameter.')
+
+        self._hoogteBuitenzijde = OTLAttribuut(field=KwantWrdInMillimeter,
+                                               naam='hoogteBuitenzijde',
+                                               label='hoogte buitenzijde',
+                                               objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Buis.hoogteBuitenzijde',
+                                               definition='De hoogte van de buitenzijde van een buis in millimeter. Bij cirkelvormige buizen is dit de buitendiameter.')
+
+        self._isManToegankelijk = OTLAttribuut(field=BooleanField,
+                                               naam='isManToegankelijk',
+                                               label='is man toegankelijk',
+                                               objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Buis.isManToegankelijk',
+                                               definition='Bepaalt of de buis toegankelijk is voor een persoon.')
+
+        self._isOpgevuld = OTLAttribuut(field=BooleanField,
+                                        naam='isOpgevuld',
+                                        label='is opgevuld',
+                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Buis.isOpgevuld',
+                                        definition='Geeft aan of de buis gestabiliseerd/opgevuld is of niet.')
+
+        self._lengte = OTLAttribuut(field=KwantWrdInMeter,
+                                    naam='lengte',
+                                    label='lengte',
+                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Buis.lengte',
+                                    definition='De totale lengte in meter van de buis tussen opwaartse en afwaartse put.')
+
+        self._technischeFiche = OTLAttribuut(field=DtcDocument,
+                                             naam='technischeFiche',
+                                             label='technische fiche',
+                                             objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Buis.technischeFiche',
+                                             usagenote='Bestanden van het type xlsx of pdf.',
+                                             kardinaliteit_max='*',
+                                             definition='De technische fiche van de buis.')
+
+        self._toestandBuis = OTLAttribuut(field=DteTekstblok,
+                                          naam='toestandBuis',
+                                          label='toestand buis',
+                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Buis.toestandBuis',
+                                          definition='Opmerkingen van de toestand en staat van de buis.')
+
+        self._vorm = OTLAttribuut(field=KlRioleringVorm,
+                                  naam='vorm',
+                                  label='vorm',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Buis.vorm',
+                                  definition='Bepaalt de vorm van de buis.')
+
+    @property
+    def bokAfwaarts(self):
         """Peil in meter-TAW van de vloei aan de afwaartse kant van de buis."""
-        self.bokAfwaarts.naam = "bokAfwaarts"
-        self.bokAfwaarts.label = "bok afwaarts"
-        self.bokAfwaarts.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Buis.bokAfwaarts"
-        self.bokAfwaarts.definition = "Peil in meter-TAW van de vloei aan de afwaartse kant van de buis."
-        self.bokAfwaarts.constraints = ""
-        self.bokAfwaarts.usagenote = ""
-        self.bokAfwaarts.deprecated_version = ""
+        return self._bokAfwaarts.waarde
 
-        self.bokOpwaarts = KwantWrdInMeterTAW()
+    @bokAfwaarts.setter
+    def bokAfwaarts(self, value):
+        self._bokAfwaarts.set_waarde(value, owner=self)
+
+    @property
+    def bokOpwaarts(self):
         """Peil in meter-TAW van de vloei aan de opwaartse kant van de buis."""
-        self.bokOpwaarts.naam = "bokOpwaarts"
-        self.bokOpwaarts.label = "bok opwaarts"
-        self.bokOpwaarts.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Buis.bokOpwaarts"
-        self.bokOpwaarts.definition = "Peil in meter-TAW van de vloei aan de opwaartse kant van de buis."
-        self.bokOpwaarts.constraints = ""
-        self.bokOpwaarts.usagenote = ""
-        self.bokOpwaarts.deprecated_version = ""
+        return self._bokOpwaarts.waarde
 
-        self.breedteBinnenzijde = KwantWrdInMillimeter()
+    @bokOpwaarts.setter
+    def bokOpwaarts(self, value):
+        self._bokOpwaarts.set_waarde(value, owner=self)
+
+    @property
+    def breedte(self):
+        """De breedte van de buis in millimeter."""
+        return self._breedte.waarde
+
+    @breedte.setter
+    def breedte(self, value):
+        self._breedte.set_waarde(value, owner=self)
+
+    @property
+    def breedteBinnenzijde(self):
         """De breedte van de binnenzijde van de buis in millimeter. Bij cirkelvormige buizen is dit de binnendiameter."""
-        self.breedteBinnenzijde.naam = "breedteBinnenzijde"
-        self.breedteBinnenzijde.label = "breedte binnenzijde"
-        self.breedteBinnenzijde.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Buis.breedteBinnenzijde"
-        self.breedteBinnenzijde.definition = "De breedte van de binnenzijde van de buis in millimeter. Bij cirkelvormige buizen is dit de binnendiameter."
-        self.breedteBinnenzijde.constraints = ""
-        self.breedteBinnenzijde.usagenote = ""
-        self.breedteBinnenzijde.deprecated_version = ""
+        return self._breedteBinnenzijde.waarde
 
-        self.breedteBuitenzijde = KwantWrdInMillimeter()
+    @breedteBinnenzijde.setter
+    def breedteBinnenzijde(self, value):
+        self._breedteBinnenzijde.set_waarde(value, owner=self)
+
+    @property
+    def breedteBuitenzijde(self):
         """De breedte van de buitenzijde van de buis in millimeter. Bij cirkelvormige buizen is dit de buitendiameter."""
-        self.breedteBuitenzijde.naam = "breedteBuitenzijde"
-        self.breedteBuitenzijde.label = "breedte buitenzijde"
-        self.breedteBuitenzijde.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Buis.breedteBuitenzijde"
-        self.breedteBuitenzijde.definition = "De breedte van de buitenzijde van de buis in millimeter. Bij cirkelvormige buizen is dit de buitendiameter."
-        self.breedteBuitenzijde.constraints = ""
-        self.breedteBuitenzijde.usagenote = ""
-        self.breedteBuitenzijde.deprecated_version = ""
+        return self._breedteBuitenzijde.waarde
 
-        self.diepteAfwaarts = KwantWrdInMeter()
+    @breedteBuitenzijde.setter
+    def breedteBuitenzijde(self, value):
+        self._breedteBuitenzijde.set_waarde(value, owner=self)
+
+    @property
+    def diepteAfwaarts(self):
         """Diepte van de vloei aan de afwaartse kant van de buis t.o.v. de bovenkant van het deksel."""
-        self.diepteAfwaarts.naam = "diepteAfwaarts"
-        self.diepteAfwaarts.label = "diepte afwaarts"
-        self.diepteAfwaarts.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Buis.diepteAfwaarts"
-        self.diepteAfwaarts.definition = "Diepte van de vloei aan de afwaartse kant van de buis t.o.v. de bovenkant van het deksel."
-        self.diepteAfwaarts.constraints = ""
-        self.diepteAfwaarts.usagenote = ""
-        self.diepteAfwaarts.deprecated_version = ""
+        return self._diepteAfwaarts.waarde
 
-        self.diepteOpwaarts = KwantWrdInMeter()
+    @diepteAfwaarts.setter
+    def diepteAfwaarts(self, value):
+        self._diepteAfwaarts.set_waarde(value, owner=self)
+
+    @property
+    def diepteOpwaarts(self):
         """De diepte van de vloei aan de opwaartse kant van de buis t.o.v. de bovenkant van het deksel."""
-        self.diepteOpwaarts.naam = "diepteOpwaarts"
-        self.diepteOpwaarts.label = "diepte opwaarts"
-        self.diepteOpwaarts.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Buis.diepteOpwaarts"
-        self.diepteOpwaarts.definition = "De diepte van de vloei aan de opwaartse kant van de buis t.o.v. de bovenkant van het deksel."
-        self.diepteOpwaarts.constraints = ""
-        self.diepteOpwaarts.usagenote = ""
-        self.diepteOpwaarts.deprecated_version = ""
+        return self._diepteOpwaarts.waarde
 
-        self.helling = KwantWrdInPromille()
+    @diepteOpwaarts.setter
+    def diepteOpwaarts(self, value):
+        self._diepteOpwaarts.set_waarde(value, owner=self)
+
+    @property
+    def helling(self):
         """De helling van de buis in de lengterichting, uitgedrukt in promille."""
-        self.helling.naam = "helling"
-        self.helling.label = "helling"
-        self.helling.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Buis.helling"
-        self.helling.definition = "De helling van de buis in de lengterichting, uitgedrukt in promille."
-        self.helling.constraints = ""
-        self.helling.usagenote = ""
-        self.helling.deprecated_version = ""
+        return self._helling.waarde
 
-        self.hoogteBinnenzijde = KwantWrdInMillimeter()
+    @helling.setter
+    def helling(self, value):
+        self._helling.set_waarde(value, owner=self)
+
+    @property
+    def hoogteBinnenzijde(self):
         """De hoogte van de binnenzijde van de buis in millimeter. Bij cirkelvormige buizen is dit de binnendiameter."""
-        self.hoogteBinnenzijde.naam = "hoogteBinnenzijde"
-        self.hoogteBinnenzijde.label = "hoogte binnenzijde"
-        self.hoogteBinnenzijde.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Buis.hoogteBinnenzijde"
-        self.hoogteBinnenzijde.definition = "De hoogte van de binnenzijde van de buis in millimeter. Bij cirkelvormige buizen is dit de binnendiameter."
-        self.hoogteBinnenzijde.constraints = ""
-        self.hoogteBinnenzijde.usagenote = ""
-        self.hoogteBinnenzijde.deprecated_version = ""
+        return self._hoogteBinnenzijde.waarde
 
-        self.hoogteBuitenzijde = KwantWrdInMillimeter()
+    @hoogteBinnenzijde.setter
+    def hoogteBinnenzijde(self, value):
+        self._hoogteBinnenzijde.set_waarde(value, owner=self)
+
+    @property
+    def hoogteBuitenzijde(self):
         """De hoogte van de buitenzijde van een buis in millimeter. Bij cirkelvormige buizen is dit de buitendiameter."""
-        self.hoogteBuitenzijde.naam = "hoogteBuitenzijde"
-        self.hoogteBuitenzijde.label = "hoogte buitenzijde"
-        self.hoogteBuitenzijde.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Buis.hoogteBuitenzijde"
-        self.hoogteBuitenzijde.definition = "De hoogte van de buitenzijde van een buis in millimeter. Bij cirkelvormige buizen is dit de buitendiameter."
-        self.hoogteBuitenzijde.constraints = ""
-        self.hoogteBuitenzijde.usagenote = ""
-        self.hoogteBuitenzijde.deprecated_version = ""
+        return self._hoogteBuitenzijde.waarde
 
-        self.isManToegankelijk = BooleanField(naam="isManToegankelijk",
-                                              label="is man toegankelijk",
-                                              objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Buis.isManToegankelijk",
-                                              definition="Bepaalt of de buis toegankelijk is voor een persoon.",
-                                              constraints="",
-                                              usagenote="",
-                                              deprecated_version="")
+    @hoogteBuitenzijde.setter
+    def hoogteBuitenzijde(self, value):
+        self._hoogteBuitenzijde.set_waarde(value, owner=self)
+
+    @property
+    def isManToegankelijk(self):
         """Bepaalt of de buis toegankelijk is voor een persoon."""
+        return self._isManToegankelijk.waarde
 
-        self.isOpgevuld = BooleanField(naam="isOpgevuld",
-                                       label="is opgevuld",
-                                       objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Buis.isOpgevuld",
-                                       definition="Geeft aan of de buis gestabiliseerd/opgevuld is of niet.",
-                                       constraints="",
-                                       usagenote="",
-                                       deprecated_version="")
+    @isManToegankelijk.setter
+    def isManToegankelijk(self, value):
+        self._isManToegankelijk.set_waarde(value, owner=self)
+
+    @property
+    def isOpgevuld(self):
         """Geeft aan of de buis gestabiliseerd/opgevuld is of niet."""
+        return self._isOpgevuld.waarde
 
-        self.lengte = KwantWrdInMeter()
+    @isOpgevuld.setter
+    def isOpgevuld(self, value):
+        self._isOpgevuld.set_waarde(value, owner=self)
+
+    @property
+    def lengte(self):
         """De totale lengte in meter van de buis tussen opwaartse en afwaartse put."""
-        self.lengte.naam = "lengte"
-        self.lengte.label = "lengte"
-        self.lengte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Buis.lengte"
-        self.lengte.definition = "De totale lengte in meter van de buis tussen opwaartse en afwaartse put."
-        self.lengte.constraints = ""
-        self.lengte.usagenote = ""
-        self.lengte.deprecated_version = ""
+        return self._lengte.waarde
 
-        technischeFicheField = DtcDocument()
-        technischeFicheField.naam = "technischeFiche"
-        technischeFicheField.label = "technische fiche"
-        technischeFicheField.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Buis.technischeFiche"
-        technischeFicheField.definition = "De technische fiche van de buis."
-        technischeFicheField.constraints = ""
-        technischeFicheField.usagenote = "Bestanden van het type xlsx of pdf."
-        technischeFicheField.deprecated_version = ""
-        self.technischeFiche = KardinaliteitField(minKardinaliteit="1", maxKardinaliteit="*", fieldToMultiply=technischeFicheField)
+    @lengte.setter
+    def lengte(self, value):
+        self._lengte.set_waarde(value, owner=self)
+
+    @property
+    def technischeFiche(self):
         """De technische fiche van de buis."""
+        return self._technischeFiche.waarde
 
-        self.toestandBuis = DteTekstblok()
+    @technischeFiche.setter
+    def technischeFiche(self, value):
+        self._technischeFiche.set_waarde(value, owner=self)
+
+    @property
+    def toestandBuis(self):
         """Opmerkingen van de toestand en staat van de buis."""
-        self.toestandBuis.naam = "toestandBuis"
-        self.toestandBuis.label = "toestand buis"
-        self.toestandBuis.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Buis.toestandBuis"
-        self.toestandBuis.definition = "Opmerkingen van de toestand en staat van de buis."
-        self.toestandBuis.constraints = ""
-        self.toestandBuis.usagenote = ""
-        self.toestandBuis.deprecated_version = ""
+        return self._toestandBuis.waarde
 
-        self.vorm = KeuzelijstField(naam="vorm",
-                                    label="vorm",
-                                    lijst=KlRioleringVorm(),
-                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Buis.vorm",
-                                    definition="Bepaalt de vorm van de buis.",
-                                    constraints="",
-                                    usagenote="",
-                                    deprecated_version="")
+    @toestandBuis.setter
+    def toestandBuis(self, value):
+        self._toestandBuis.set_waarde(value, owner=self)
+
+    @property
+    def vorm(self):
         """Bepaalt de vorm van de buis."""
+        return self._vorm.waarde
+
+    @vorm.setter
+    def vorm(self, value):
+        self._vorm.set_waarde(value, owner=self)

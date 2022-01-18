@@ -2,7 +2,7 @@ from datetime import datetime
 from OTLModel.BaseClasses.OTLField import OTLField
 
 
-class DateField(OTLField):
+class DateTimeField(OTLField):
     """Beschrijft een datum volgens http://www.w3.org/2001/XMLSchema#dateTime."""
     naam = 'DateTime'
     objectUri = 'http://www.w3.org/2001/XMLSchema#dateTime'

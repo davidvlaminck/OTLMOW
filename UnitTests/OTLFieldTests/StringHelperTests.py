@@ -4,9 +4,9 @@ from ModelGenerator.StringHelper import wrap_in_quotes
 
 
 class StringHelperTests(TestCase):
-    def test_empty_string_returns_empty_string(self):
+    def test_empty_string_returns_empty_string_in_single_quotes(self):
         result = wrap_in_quotes('')
-        self.assertEqual('', result)
+        self.assertEqual("''", result)
 
     def test_None(self):
         with self.assertRaises(TypeError):

@@ -22,15 +22,15 @@ class ComplexDatatypeOSLOCollector(OSLOCollector):
         self.complexDatatypes = [
             OSLODatatypeComplex(name='DtcAdres',
                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAdres',
-                                usagenote_nl='',
-                                definition_nl='Complex datatype voor de aanduiding van een bepaalde locatie, doorgaans van een huis, woning, gebouw of faciliteit, op de aarde.',
-                                label_nl='Adres',
+                                usagenote='',
+                                definition='Complex datatype voor de aanduiding van een bepaalde locatie, doorgaans van een huis, woning, gebouw of faciliteit, op de aarde.',
+                                label='Adres',
                                 deprecated_version=''),
             OSLODatatypeComplex(name='DtcIdentificator',
                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcIdentificator',
-                                usagenote_nl='',
-                                definition_nl='Complex datatype voor de identificator van een AIM object volgens de bron van de identificator.',
-                                label_nl='Identificator',
+                                usagenote='',
+                                definition='Complex datatype voor de identificator van een AIM object volgens de bron van de identificator.',
+                                label='Identificator',
                                 deprecated_version='')
         ]
         self.complexDatatypeAttributen = [
@@ -220,7 +220,7 @@ class OTLComplexDatatypeCreatorTests(unittest.TestCase):
         logger = NoneLogger()
         collector = OSLOCollector(mock)
         creator = OTLComplexDatatypeCreator(logger, collector)
-        osloDatatypeComplex = OSLODatatypeComplex(name='name', objectUri='', definition_nl='', label_nl='', usagenote_nl='',
+        osloDatatypeComplex = OSLODatatypeComplex(name='name', objectUri='', definition='', label='', usagenote='',
                                                   deprecated_version='')
 
         with self.assertRaises(ValueError) as exception_empty_uri:
@@ -231,9 +231,8 @@ class OTLComplexDatatypeCreatorTests(unittest.TestCase):
         logger = NoneLogger()
         collector = OSLOCollector(mock)
         creator = OTLComplexDatatypeCreator(logger, collector)
-        osloDatatypeComplex = OSLODatatypeComplex(name='name', objectUri='Bad objectUri', definition_nl='', label_nl='',
-                                                  usagenote_nl='',
-                                                  deprecated_version='')
+        osloDatatypeComplex = OSLODatatypeComplex(name='name', objectUri='Bad objectUri', definition='', label='',
+                                                  usagenote='', deprecated_version='')
 
         with self.assertRaises(ValueError) as exception_bad_uri:
             creator.CreateBlockToWriteFromComplexTypes(osloDatatypeComplex)
@@ -245,8 +244,7 @@ class OTLComplexDatatypeCreatorTests(unittest.TestCase):
         creator = OTLComplexDatatypeCreator(logger, collector)
         osloDatatypeComplex = OSLODatatypeComplex(name='',
                                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcIdentificator',
-                                                  definition_nl='', label_nl='', usagenote_nl='',
-                                                  deprecated_version='')
+                                                  definition='', label='', usagenote='', deprecated_version='')
 
         with self.assertRaises(ValueError) as exception_bad_name:
             creator.CreateBlockToWriteFromComplexTypes(osloDatatypeComplex)

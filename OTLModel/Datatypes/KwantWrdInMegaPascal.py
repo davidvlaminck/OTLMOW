@@ -21,9 +21,9 @@ class KwantWrdInMegaPascalEenheid(KwantWrdEenheid):
 
 # Generated with OTLPrimitiveDatatypeCreator. To modify: extend, do not edit
 class KwantWrdInMegaPascal(FloatOrDecimalField, KwantWrd):
-    naam = 'waarde'
-    label = 'waarde'
-    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMegaPascal.waarde'
-    definition = 'Bevat een getal die bij het datatype hoort.'
+    naam = 'KwantWrdInMegaPascal'
+    label = 'Kwantitatieve waarde in MPa'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMegaPascal'
+    definition = 'Een kwantitatieve waarde die een getal in megapascal uitdrukt.'
     eenheid = KwantWrdInMegaPascalEenheid()
 

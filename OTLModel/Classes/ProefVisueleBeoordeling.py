@@ -1,24 +1,32 @@
 # coding=utf-8
+from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
+from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.Proef import Proef
 from OTLModel.Datatypes.DtcDocument import DtcDocument
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class ProefVisueleBeoordeling(Proef):
+class ProefVisueleBeoordeling(Proef, AttributeInfo):
     """Opsporen van de gebreken bij de definitieve oplevering."""
 
-    typeURI = "https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefVisueleBeoordeling"
+    typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefVisueleBeoordeling'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        super().__init__()
+        AttributeInfo.__init__(self)
+        Proef.__init__(self)
 
-        self.visueleBeoordeling = DtcDocument()
+        self._visueleBeoordeling = OTLAttribuut(field=DtcDocument,
+                                                naam='visueleBeoordeling',
+                                                label='visuele beoordeling',
+                                                objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefVisueleBeoordeling.visueleBeoordeling',
+                                                definition='Een rapport van de visuele beoordeling van de laag.')
+
+    @property
+    def visueleBeoordeling(self):
         """Een rapport van de visuele beoordeling van de laag."""
-        self.visueleBeoordeling.naam = "visueleBeoordeling"
-        self.visueleBeoordeling.label = "visuele beoordeling"
-        self.visueleBeoordeling.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefVisueleBeoordeling.visueleBeoordeling"
-        self.visueleBeoordeling.definition = "Een rapport van de visuele beoordeling van de laag."
-        self.visueleBeoordeling.constraints = ""
-        self.visueleBeoordeling.usagenote = ""
-        self.visueleBeoordeling.deprecated_version = ""
+        return self._visueleBeoordeling.waarde
+
+    @visueleBeoordeling.setter
+    def visueleBeoordeling(self, value):
+        self._visueleBeoordeling.set_waarde(value, owner=self)

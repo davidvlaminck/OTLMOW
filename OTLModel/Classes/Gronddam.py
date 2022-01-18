@@ -1,78 +1,111 @@
 # coding=utf-8
+from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
+from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.AIMObject import AIMObject
-from OTLModel.Datatypes.DecimalFloatField import DecimalFloatField
-from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
+from OTLModel.Datatypes.FloatOrDecimalField import FloatOrDecimalField
 from OTLModel.Datatypes.KlHelling import KlHelling
 from OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Gronddam(AIMObject):
+class Gronddam(AIMObject, AttributeInfo):
     """Gronddammen zijn trapeziumvormige constructies bestaande uit zand, grond of steenachtige materialen.
 De onderkant van de gronddam wordt direct op het bestaand maaiveld aangebracht of op een vooraf aangebrachte grondverbetering.
 Een gronddam kan volgende functies vervullen: geluidswering, geleiding van dieren, veiligheid en lichtwering."""
 
-    typeURI = "https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Gronddam"
+    typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Gronddam'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        super().__init__()
+        AIMObject.__init__(self)
+        AttributeInfo.__init__(self)
 
-        self.basisbreedte = KwantWrdInMeter()
+        self._basisbreedte = OTLAttribuut(field=KwantWrdInMeter,
+                                          naam='basisbreedte',
+                                          label='basisbreedte',
+                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Gronddam.basisbreedte',
+                                          definition='De breedte van de basis van de gronddam in meter.')
+
+        self._gronddichtheid = OTLAttribuut(field=FloatOrDecimalField,
+                                            naam='gronddichtheid',
+                                            label='gronddichtheid',
+                                            objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Gronddam.gronddichtheid',
+                                            definition='De gronddichtheid van de gronddam.')
+
+        self._hellingAchterzijde = OTLAttribuut(field=KlHelling,
+                                                naam='hellingAchterzijde',
+                                                label='helling achterzijde',
+                                                objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Gronddam.hellingAchterzijde',
+                                                definition='De hellingsgraad van de achterzijde gronddam in kwarten.')
+
+        self._hellingVoorzijde = OTLAttribuut(field=KlHelling,
+                                              naam='hellingVoorzijde',
+                                              label='helling voorzijde',
+                                              objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Gronddam.hellingVoorzijde',
+                                              definition='De hellingsgraad van de voorzijde van de gronddam in kwarten.')
+
+        self._hoogte = OTLAttribuut(field=KwantWrdInMeter,
+                                    naam='hoogte',
+                                    label='hoogte',
+                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Gronddam.hoogte',
+                                    definition='De hoogte van de gronddam in meter.')
+
+        self._kruinbreedte = OTLAttribuut(field=KwantWrdInMeter,
+                                          naam='kruinbreedte',
+                                          label='kruinbreedte',
+                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Gronddam.kruinbreedte',
+                                          definition='De breedte van de kruin van de gronddam in meter.')
+
+    @property
+    def basisbreedte(self):
         """De breedte van de basis van de gronddam in meter."""
-        self.basisbreedte.naam = "basisbreedte"
-        self.basisbreedte.label = "basisbreedte"
-        self.basisbreedte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Gronddam.basisbreedte"
-        self.basisbreedte.definition = "De breedte van de basis van de gronddam in meter."
-        self.basisbreedte.constraints = ""
-        self.basisbreedte.usagenote = ""
-        self.basisbreedte.deprecated_version = ""
+        return self._basisbreedte.waarde
 
-        self.gronddichtheid = DecimalFloatField(naam="gronddichtheid",
-                                                label="gronddichtheid",
-                                                objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Gronddam.gronddichtheid",
-                                                definition="De gronddichtheid van de gronddam.",
-                                                constraints="",
-                                                usagenote="",
-                                                deprecated_version="")
+    @basisbreedte.setter
+    def basisbreedte(self, value):
+        self._basisbreedte.set_waarde(value, owner=self)
+
+    @property
+    def gronddichtheid(self):
         """De gronddichtheid van de gronddam."""
+        return self._gronddichtheid.waarde
 
-        self.hellingAchterzijde = KeuzelijstField(naam="hellingAchterzijde",
-                                                  label="helling achterzijde",
-                                                  lijst=KlHelling(),
-                                                  objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Gronddam.hellingAchterzijde",
-                                                  definition="De hellingsgraad van de achterzijde gronddam in kwarten.",
-                                                  constraints="",
-                                                  usagenote="",
-                                                  deprecated_version="")
+    @gronddichtheid.setter
+    def gronddichtheid(self, value):
+        self._gronddichtheid.set_waarde(value, owner=self)
+
+    @property
+    def hellingAchterzijde(self):
         """De hellingsgraad van de achterzijde gronddam in kwarten."""
+        return self._hellingAchterzijde.waarde
 
-        self.hellingVoorzijde = KeuzelijstField(naam="hellingVoorzijde",
-                                                label="helling voorzijde",
-                                                lijst=KlHelling(),
-                                                objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Gronddam.hellingVoorzijde",
-                                                definition="De hellingsgraad van de voorzijde van de gronddam in kwarten.",
-                                                constraints="",
-                                                usagenote="",
-                                                deprecated_version="")
+    @hellingAchterzijde.setter
+    def hellingAchterzijde(self, value):
+        self._hellingAchterzijde.set_waarde(value, owner=self)
+
+    @property
+    def hellingVoorzijde(self):
         """De hellingsgraad van de voorzijde van de gronddam in kwarten."""
+        return self._hellingVoorzijde.waarde
 
-        self.hoogte = KwantWrdInMeter()
+    @hellingVoorzijde.setter
+    def hellingVoorzijde(self, value):
+        self._hellingVoorzijde.set_waarde(value, owner=self)
+
+    @property
+    def hoogte(self):
         """De hoogte van de gronddam in meter."""
-        self.hoogte.naam = "hoogte"
-        self.hoogte.label = "hoogte"
-        self.hoogte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Gronddam.hoogte"
-        self.hoogte.definition = "De hoogte van de gronddam in meter."
-        self.hoogte.constraints = ""
-        self.hoogte.usagenote = ""
-        self.hoogte.deprecated_version = ""
+        return self._hoogte.waarde
 
-        self.kruinbreedte = KwantWrdInMeter()
+    @hoogte.setter
+    def hoogte(self, value):
+        self._hoogte.set_waarde(value, owner=self)
+
+    @property
+    def kruinbreedte(self):
         """De breedte van de kruin van de gronddam in meter."""
-        self.kruinbreedte.naam = "kruinbreedte"
-        self.kruinbreedte.label = "kruinbreedte"
-        self.kruinbreedte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Gronddam.kruinbreedte"
-        self.kruinbreedte.definition = "De breedte van de kruin van de gronddam in meter."
-        self.kruinbreedte.constraints = ""
-        self.kruinbreedte.usagenote = ""
-        self.kruinbreedte.deprecated_version = ""
+        return self._kruinbreedte.waarde
+
+    @kruinbreedte.setter
+    def kruinbreedte(self, value):
+        self._kruinbreedte.set_waarde(value, owner=self)

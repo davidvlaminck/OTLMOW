@@ -1,9 +1,10 @@
 # coding=utf-8
+from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
+from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from abc import abstractmethod
 from OTLModel.Classes.AIMNaamObject import AIMNaamObject
 from OTLModel.Classes.EMDraagconstructie import EMDraagconstructie
 from OTLModel.Datatypes.DteKleurRAL import DteKleurRAL
-from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlDraagConstrBeschermlaag import KlDraagConstrBeschermlaag
 from OTLModel.Datatypes.KlDraagConstrBijzondertransport import KlDraagConstrBijzondertransport
 from OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter
@@ -11,62 +12,89 @@ from OTLModel.Datatypes.StringField import StringField
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class SteunStandaard(AIMNaamObject, EMDraagconstructie):
+class SteunStandaard(AIMNaamObject, EMDraagconstructie, AttributeInfo):
     """Abstracte voor de standaard steunen."""
 
-    typeURI = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#SteunStandaard"
+    typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#SteunStandaard'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     @abstractmethod
     def __init__(self):
         AIMNaamObject.__init__(self)
+        AttributeInfo.__init__(self)
         EMDraagconstructie.__init__(self)
 
-        self.beschermlaag = KeuzelijstField(naam="beschermlaag",
-                                            label="beschermlaag",
-                                            lijst=KlDraagConstrBeschermlaag(),
-                                            objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#SteunStandaard.beschermlaag",
-                                            definition="Type bescherming van de steun, bv. geschilderd of gegalvaniseerd.",
-                                            constraints="",
-                                            usagenote="",
-                                            deprecated_version="")
+        self._beschermlaag = OTLAttribuut(field=KlDraagConstrBeschermlaag,
+                                          naam='beschermlaag',
+                                          label='beschermlaag',
+                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#SteunStandaard.beschermlaag',
+                                          definition='Type bescherming van de steun, bv. geschilderd of gegalvaniseerd.')
+
+        self._bijzonderTransport = OTLAttribuut(field=KlDraagConstrBijzondertransport,
+                                                naam='bijzonderTransport',
+                                                label='bijzonder transport',
+                                                objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#SteunStandaard.bijzonderTransport',
+                                                definition='Wijze waarop het object eventueel geschikt is om bijzonder transport mogelijk te maken.')
+
+        self._fabrikant = OTLAttribuut(field=StringField,
+                                       naam='fabrikant',
+                                       label='fabrikant',
+                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#SteunStandaard.fabrikant',
+                                       definition='De fabrikant van de steun.')
+
+        self._hoogteBovenkant = OTLAttribuut(field=KwantWrdInMeter,
+                                             naam='hoogteBovenkant',
+                                             label='hoogte bovenkant',
+                                             objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#SteunStandaard.hoogteBovenkant',
+                                             definition='Hoogte (in meter) van de bovenkant van de steun.')
+
+        self._kleur = OTLAttribuut(field=DteKleurRAL,
+                                   naam='kleur',
+                                   label='kleur',
+                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#SteunStandaard.kleur',
+                                   definition='De RAL kleur van het uitwendig zichtbare gedeelte.')
+
+    @property
+    def beschermlaag(self):
         """Type bescherming van de steun, bv. geschilderd of gegalvaniseerd."""
+        return self._beschermlaag.waarde
 
-        self.bijzonderTransport = KeuzelijstField(naam="bijzonderTransport",
-                                                  label="bijzonder transport",
-                                                  lijst=KlDraagConstrBijzondertransport(),
-                                                  objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#SteunStandaard.bijzonderTransport",
-                                                  definition="Wijze waarop het object eventueel geschikt is om bijzonder transport mogelijk te maken.",
-                                                  constraints="",
-                                                  usagenote="",
-                                                  deprecated_version="")
+    @beschermlaag.setter
+    def beschermlaag(self, value):
+        self._beschermlaag.set_waarde(value, owner=self)
+
+    @property
+    def bijzonderTransport(self):
         """Wijze waarop het object eventueel geschikt is om bijzonder transport mogelijk te maken."""
+        return self._bijzonderTransport.waarde
 
-        self.fabrikant = StringField(naam="fabrikant",
-                                     label="fabrikant",
-                                     objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#SteunStandaard.fabrikant",
-                                     definition="De fabrikant van de steun.",
-                                     constraints="",
-                                     usagenote="",
-                                     deprecated_version="")
+    @bijzonderTransport.setter
+    def bijzonderTransport(self, value):
+        self._bijzonderTransport.set_waarde(value, owner=self)
+
+    @property
+    def fabrikant(self):
         """De fabrikant van de steun."""
+        return self._fabrikant.waarde
 
-        self.hoogteBovenkant = KwantWrdInMeter()
+    @fabrikant.setter
+    def fabrikant(self, value):
+        self._fabrikant.set_waarde(value, owner=self)
+
+    @property
+    def hoogteBovenkant(self):
         """Hoogte (in meter) van de bovenkant van de steun."""
-        self.hoogteBovenkant.naam = "hoogteBovenkant"
-        self.hoogteBovenkant.label = "hoogte bovenkant"
-        self.hoogteBovenkant.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#SteunStandaard.hoogteBovenkant"
-        self.hoogteBovenkant.definition = "Hoogte (in meter) van de bovenkant van de steun."
-        self.hoogteBovenkant.constraints = ""
-        self.hoogteBovenkant.usagenote = ""
-        self.hoogteBovenkant.deprecated_version = ""
+        return self._hoogteBovenkant.waarde
 
-        self.kleur = DteKleurRAL()
+    @hoogteBovenkant.setter
+    def hoogteBovenkant(self, value):
+        self._hoogteBovenkant.set_waarde(value, owner=self)
+
+    @property
+    def kleur(self):
         """De RAL kleur van het uitwendig zichtbare gedeelte."""
-        self.kleur.naam = "kleur"
-        self.kleur.label = "kleur"
-        self.kleur.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#SteunStandaard.kleur"
-        self.kleur.definition = "De RAL kleur van het uitwendig zichtbare gedeelte."
-        self.kleur.constraints = ""
-        self.kleur.usagenote = ""
-        self.kleur.deprecated_version = ""
+        return self._kleur.waarde
+
+    @kleur.setter
+    def kleur(self, value):
+        self._kleur.set_waarde(value, owner=self)

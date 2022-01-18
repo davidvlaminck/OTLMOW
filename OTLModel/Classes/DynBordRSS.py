@@ -1,36 +1,48 @@
 # coding=utf-8
+from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
+from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.LEDBord import LEDBord
-from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlDynBordRSSMerk import KlDynBordRSSMerk
 from OTLModel.Datatypes.KlDynBordRSSModelnaam import KlDynBordRSSModelnaam
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class DynBordRSS(LEDBord):
+class DynBordRSS(LEDBord, AttributeInfo):
     """Dynamisch verkeersbord voor rijstrooksignalisatie (RSS)."""
 
-    typeURI = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DynBordRSS"
+    typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DynBordRSS'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        super().__init__()
+        AttributeInfo.__init__(self)
+        LEDBord.__init__(self)
 
-        self.merk = KeuzelijstField(naam="merk",
-                                    label="merk",
-                                    lijst=KlDynBordRSSMerk(),
-                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DynBordRSS.merk",
-                                    definition="Merk van het dynamische bord.",
-                                    constraints="",
-                                    usagenote="",
-                                    deprecated_version="")
+        self._merk = OTLAttribuut(field=KlDynBordRSSMerk,
+                                  naam='merk',
+                                  label='merk',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DynBordRSS.merk',
+                                  definition='Merk van het dynamische bord.')
+
+        self._modelnaam = OTLAttribuut(field=KlDynBordRSSModelnaam,
+                                       naam='modelnaam',
+                                       label='modelnaam',
+                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DynBordRSS.modelnaam',
+                                       definition='Modelnaam van het RSS-bord.')
+
+    @property
+    def merk(self):
         """Merk van het dynamische bord."""
+        return self._merk.waarde
 
-        self.modelnaam = KeuzelijstField(naam="modelnaam",
-                                         label="modelnaam",
-                                         lijst=KlDynBordRSSModelnaam(),
-                                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DynBordRSS.modelnaam",
-                                         definition="Modelnaam van het RSS-bord.",
-                                         constraints="",
-                                         usagenote="",
-                                         deprecated_version="")
+    @merk.setter
+    def merk(self, value):
+        self._merk.set_waarde(value, owner=self)
+
+    @property
+    def modelnaam(self):
         """Modelnaam van het RSS-bord."""
+        return self._modelnaam.waarde
+
+    @modelnaam.setter
+    def modelnaam(self, value):
+        self._modelnaam.set_waarde(value, owner=self)

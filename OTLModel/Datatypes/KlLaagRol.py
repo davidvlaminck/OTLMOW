@@ -18,7 +18,7 @@ class KlLaagRol(KeuzelijstField):
                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLaagRol/aanvulling'),
         'bed-van-bestrating': KeuzelijstWaarde(invulwaarde='bed-van-bestrating',
                                                label='bed van bestrating',
-                                               definitie='Dit betekent hetzelfde als 'straatlaag'. Gelieve voor deze optie 'straatlaag' aan te duiden als keuzemogelijkheid!',
+                                               definitie='Dit betekent hetzelfde als \'straatlaag\'. Gelieve voor deze optie \'straatlaag\' aan te duiden als keuzemogelijkheid!',
                                                objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLaagRol/bed-van-bestrating'),
         'fundering': KeuzelijstWaarde(invulwaarde='fundering',
                                       label='fundering',

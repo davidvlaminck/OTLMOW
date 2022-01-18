@@ -1,15 +1,15 @@
 ﻿import unittest
 
+from OTLModel.Datatypes.DtcIdentificator import DtcIdentificator
 from OTLModel.Datatypes.DtcRechtspersoon import DtcRechtspersoon
-from UnitTests.OTLFieldTests.KwantWrdInMeter import KwantWrdInMeter
 from Facility.Exceptions.UnionTypeError import UnionTypeError
 from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
-from UnitTests.OTLFieldTests.DtcIdentificator import DtcIdentificator
-from UnitTests.OTLFieldTests.DtcVegetatieSoortnaam import DtcVegetatieSoortnaam
-from UnitTests.OTLFieldTests.DtuLichtmastMasthoogte import DtuLichtmastMasthoogte
-from UnitTests.OTLFieldTests.KlAIMToestand import KlAIMToestand
-from UnitTests.OTLFieldTests.KlRioleringsbuisMateriaal import KlRioleringsbuisMateriaal
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLModel.Datatypes.DtcVegetatieSoortnaam import DtcVegetatieSoortnaam
+from OTLModel.Datatypes.DtuLichtmastMasthoogte import DtuLichtmastMasthoogte
+from OTLModel.Datatypes.KlAIMToestand import KlAIMToestand
+from OTLModel.Datatypes.KlRioleringsbuisMateriaal import KlRioleringsbuisMateriaal
+from OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter
 from OTLModel.Datatypes.StringField import StringField
 
 
@@ -284,7 +284,7 @@ possible values:
     in-ontwerp
     in-opbouw
     overgedragen
-    overgedragen
+    uit-gebruik
     verwijderd""",
             instance.attr_type_info("toestand"))
 
@@ -300,7 +300,7 @@ possible values:
         self.assertEqual(['geel', 'rood'], instance.kleur)
         with self.assertRaises(TypeError):
             instance.kleur = ("geel")
-        with self.assertRaises(TypeError):
+        with self.assertRaises(ValueError):
             instance.kleur = ["geel", 2]
 
     def test_KeuzelijstFieldMetKardinaliteit(self):
@@ -315,7 +315,7 @@ possible values:
         self.assertEqual(['PP-buizen', 'PVC-buizen'], instance.materiaal)
         with self.assertRaises(TypeError):
             instance.materiaal = tuple("PP-buizen")
-        with self.assertRaises(TypeError):
+        with self.assertRaises(ValueError):
             instance.materiaal = ["PP-buizen", 2]
 
     @unittest.skip("not implemented yet")

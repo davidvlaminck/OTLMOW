@@ -21,9 +21,9 @@ class KwantWrdInMaandEenheid(KwantWrdEenheid):
 
 # Generated with OTLPrimitiveDatatypeCreator. To modify: extend, do not edit
 class KwantWrdInMaand(NonNegIntegerField, KwantWrd):
-    naam = 'waarde'
-    label = 'waarde'
-    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMaand.waarde'
-    definition = 'Bevat een getal die bij het datatype hoort.'
+    naam = 'KwantWrdInMaand'
+    label = 'Kwantitatieve waarde in maand'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMaand'
+    definition = 'Een kwantitatieve waarde die een getal in aantal maanden uitdrukt.'
     eenheid = KwantWrdInMaandEenheid()
 

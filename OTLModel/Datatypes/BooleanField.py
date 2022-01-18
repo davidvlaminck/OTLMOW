@@ -11,13 +11,9 @@ class BooleanField(OTLField):
 
     @staticmethod
     def validate(value, attribuut):
-        if value is not None:
-            if isinstance(value, int):
-                raise TypeError(f'expecting bool in {attribuut.naam}')
-            elif not isinstance(value, bool):
-                raise TypeError(f'expecting bool in {attribuut.naam}')
+        if value is not None and not isinstance(value, bool):
+            raise TypeError(f'expecting bool in {attribuut.naam}')
         return True
 
     def __str__(self):
         return OTLField.__str__(self)
-

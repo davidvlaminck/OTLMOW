@@ -1,36 +1,48 @@
 # coding=utf-8
+from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
+from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.AIMObject import AIMObject
-from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlBouwputType import KlBouwputType
 from OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Bouwput(AIMObject):
+class Bouwput(AIMObject, AttributeInfo):
     """De ontgraving die nodig is voor het maken van een ondergrondse constructie zoals bv. een put of putten."""
 
-    typeURI = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bouwput"
+    typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bouwput'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        super().__init__()
+        AIMObject.__init__(self)
+        AttributeInfo.__init__(self)
 
-        self.putdiepte = KwantWrdInMeter()
+        self._putdiepte = OTLAttribuut(field=KwantWrdInMeter,
+                                       naam='putdiepte',
+                                       label='putdiepte',
+                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bouwput.putdiepte',
+                                       definition='Diepte tussen het maaiveld en onderkant bouwput in meter.')
+
+        self._type = OTLAttribuut(field=KlBouwputType,
+                                  naam='type',
+                                  label='type',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bouwput.type',
+                                  definition='Het type van bouwput.')
+
+    @property
+    def putdiepte(self):
         """Diepte tussen het maaiveld en onderkant bouwput in meter."""
-        self.putdiepte.naam = "putdiepte"
-        self.putdiepte.label = "putdiepte"
-        self.putdiepte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bouwput.putdiepte"
-        self.putdiepte.definition = "Diepte tussen het maaiveld en onderkant bouwput in meter."
-        self.putdiepte.constraints = ""
-        self.putdiepte.usagenote = ""
-        self.putdiepte.deprecated_version = ""
+        return self._putdiepte.waarde
 
-        self.type = KeuzelijstField(naam="type",
-                                    label="type",
-                                    lijst=KlBouwputType(),
-                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bouwput.type",
-                                    definition="Het type van bouwput.",
-                                    constraints="",
-                                    usagenote="",
-                                    deprecated_version="")
+    @putdiepte.setter
+    def putdiepte(self, value):
+        self._putdiepte.set_waarde(value, owner=self)
+
+    @property
+    def type(self):
         """Het type van bouwput."""
+        return self._type.waarde
+
+    @type.setter
+    def type(self, value):
+        self._type.set_waarde(value, owner=self)

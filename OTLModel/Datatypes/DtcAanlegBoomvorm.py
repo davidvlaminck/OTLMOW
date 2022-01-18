@@ -23,7 +23,7 @@ class DtcAanlegBoomvormWaarden(AttributeInfo):
                                                     naam='beschermingVraatschade',
                                                     label='bescherming vraatschade',
                                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcAanlegBoomvorm.beschermingVraatschade',
-                                                    usagenote_nl='Attribuut uit gebruik sinds versie 2.0.0',
+                                                    usagenote='Attribuut uit gebruik sinds versie 2.0.0',
                                                     deprecated_version='2.0.0',
                                                     definition='Bescherming van de stam tegen knaagdieren.')
 

@@ -1,76 +1,110 @@
 # coding=utf-8
+from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
+from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.ComplexeGeleiding import ComplexeGeleiding
 from OTLModel.Datatypes.BooleanField import BooleanField
-from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlEcoPaalmateriaal import KlEcoPaalmateriaal
 from OTLModel.Datatypes.KlRasterMazen import KlRasterMazen
 from OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Ecoraster(ComplexeGeleiding):
+class Ecoraster(ComplexeGeleiding, AttributeInfo):
     """Een geleiding om dieren te leiden naar een plaats (ecoduct, ecotunnel, ...) waar ze veilig een drukke weg kunnen oversteken."""
 
-    typeURI = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Ecoraster"
+    typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Ecoraster'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        super().__init__()
+        AttributeInfo.__init__(self)
+        ComplexeGeleiding.__init__(self)
 
-        self.heeftPrikkeldraad = BooleanField(naam="heeftPrikkeldraad",
-                                              label="heeft prikkeldraad",
-                                              objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Ecoraster.heeftPrikkeldraad",
-                                              definition="Aanduiding of het ecoraster is voorzien van prikkeldraad.",
-                                              constraints="",
-                                              usagenote="",
-                                              deprecated_version="")
+        self._heeftPrikkeldraad = OTLAttribuut(field=BooleanField,
+                                               naam='heeftPrikkeldraad',
+                                               label='heeft prikkeldraad',
+                                               objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Ecoraster.heeftPrikkeldraad',
+                                               definition='Aanduiding of het ecoraster is voorzien van prikkeldraad.')
+
+        self._heeftSpandraden = OTLAttribuut(field=BooleanField,
+                                             naam='heeftSpandraden',
+                                             label='heeft spandraden',
+                                             objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Ecoraster.heeftSpandraden',
+                                             definition='Aanduiding of het ecoraster is voorzien van spandraden.')
+
+        self._lengte = OTLAttribuut(field=KwantWrdInMeter,
+                                    naam='lengte',
+                                    label='lengte',
+                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Ecoraster.lengte',
+                                    definition='De lengte van het ecoraster in meter.')
+
+        self._paalMateriaal = OTLAttribuut(field=KlEcoPaalmateriaal,
+                                           naam='paalMateriaal',
+                                           label='paal materiaal',
+                                           objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Ecoraster.paalMateriaal',
+                                           definition='Het materiaal van de paal in het ecoraster.')
+
+        self._paalhoogte = OTLAttribuut(field=KwantWrdInMeter,
+                                        naam='paalhoogte',
+                                        label='paalhoogte',
+                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Ecoraster.paalhoogte',
+                                        definition='De hoogte van de paal in het ecoraster in meter.')
+
+        self._typeMazen = OTLAttribuut(field=KlRasterMazen,
+                                       naam='typeMazen',
+                                       label='type mazen',
+                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Ecoraster.typeMazen',
+                                       definition='Het type van de mazen in het ecoraster.')
+
+    @property
+    def heeftPrikkeldraad(self):
         """Aanduiding of het ecoraster is voorzien van prikkeldraad."""
+        return self._heeftPrikkeldraad.waarde
 
-        self.heeftSpandraden = BooleanField(naam="heeftSpandraden",
-                                            label="heeft spandraden",
-                                            objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Ecoraster.heeftSpandraden",
-                                            definition="Aanduiding of het ecoraster is voorzien van spandraden.",
-                                            constraints="",
-                                            usagenote="",
-                                            deprecated_version="")
+    @heeftPrikkeldraad.setter
+    def heeftPrikkeldraad(self, value):
+        self._heeftPrikkeldraad.set_waarde(value, owner=self)
+
+    @property
+    def heeftSpandraden(self):
         """Aanduiding of het ecoraster is voorzien van spandraden."""
+        return self._heeftSpandraden.waarde
 
-        self.lengte = KwantWrdInMeter()
+    @heeftSpandraden.setter
+    def heeftSpandraden(self, value):
+        self._heeftSpandraden.set_waarde(value, owner=self)
+
+    @property
+    def lengte(self):
         """De lengte van het ecoraster in meter."""
-        self.lengte.naam = "lengte"
-        self.lengte.label = "lengte"
-        self.lengte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Ecoraster.lengte"
-        self.lengte.definition = "De lengte van het ecoraster in meter."
-        self.lengte.constraints = ""
-        self.lengte.usagenote = ""
-        self.lengte.deprecated_version = ""
+        return self._lengte.waarde
 
-        self.paalMateriaal = KeuzelijstField(naam="paalMateriaal",
-                                             label="paal materiaal",
-                                             lijst=KlEcoPaalmateriaal(),
-                                             objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Ecoraster.paalMateriaal",
-                                             definition="Het materiaal van de paal in het ecoraster.",
-                                             constraints="",
-                                             usagenote="",
-                                             deprecated_version="")
+    @lengte.setter
+    def lengte(self, value):
+        self._lengte.set_waarde(value, owner=self)
+
+    @property
+    def paalMateriaal(self):
         """Het materiaal van de paal in het ecoraster."""
+        return self._paalMateriaal.waarde
 
-        self.paalhoogte = KwantWrdInMeter()
+    @paalMateriaal.setter
+    def paalMateriaal(self, value):
+        self._paalMateriaal.set_waarde(value, owner=self)
+
+    @property
+    def paalhoogte(self):
         """De hoogte van de paal in het ecoraster in meter."""
-        self.paalhoogte.naam = "paalhoogte"
-        self.paalhoogte.label = "paalhoogte"
-        self.paalhoogte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Ecoraster.paalhoogte"
-        self.paalhoogte.definition = "De hoogte van de paal in het ecoraster in meter."
-        self.paalhoogte.constraints = ""
-        self.paalhoogte.usagenote = ""
-        self.paalhoogte.deprecated_version = ""
+        return self._paalhoogte.waarde
 
-        self.typeMazen = KeuzelijstField(naam="typeMazen",
-                                         label="type mazen",
-                                         lijst=KlRasterMazen(),
-                                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Ecoraster.typeMazen",
-                                         definition="Het type van de mazen in het ecoraster.",
-                                         constraints="",
-                                         usagenote="",
-                                         deprecated_version="")
+    @paalhoogte.setter
+    def paalhoogte(self, value):
+        self._paalhoogte.set_waarde(value, owner=self)
+
+    @property
+    def typeMazen(self):
         """Het type van de mazen in het ecoraster."""
+        return self._typeMazen.waarde
+
+    @typeMazen.setter
+    def typeMazen(self, value):
+        self._typeMazen.set_waarde(value, owner=self)

@@ -21,9 +21,9 @@ class KwantWrdInGigabyteEenheid(KwantWrdEenheid):
 
 # Generated with OTLPrimitiveDatatypeCreator. To modify: extend, do not edit
 class KwantWrdInGigabyte(FloatOrDecimalField, KwantWrd):
-    naam = 'waarde'
-    label = 'waarde'
-    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInGigabyte.waarde'
-    definition = 'Bevat een getal die bij het datatype hoort.'
+    naam = 'KwantWrdInGigabyte'
+    label = 'Kwantitatieve waarde in gigabyte'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInGigabyte'
+    definition = 'Een kwantitatieve waarde die een getal in gigabyte uitdrukt.'
     eenheid = KwantWrdInGigabyteEenheid()
 

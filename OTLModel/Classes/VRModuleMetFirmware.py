@@ -1,40 +1,52 @@
 # coding=utf-8
+from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
+from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from abc import abstractmethod
 from OTLModel.Classes.VerkeersregelaarModule import VerkeersregelaarModule
 from OTLModel.Classes.FirmwareObject import FirmwareObject
-from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlVRModuleMetFirmwareMerk import KlVRModuleMetFirmwareMerk
 from OTLModel.Datatypes.KlVRModuleMetFirmwareModelnaam import KlVRModuleMetFirmwareModelnaam
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class VRModuleMetFirmware(VerkeersregelaarModule, FirmwareObject):
+class VRModuleMetFirmware(VerkeersregelaarModule, FirmwareObject, AttributeInfo):
     """Abstracte voor modules met firmware van een verkeersregelaar."""
 
-    typeURI = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#VRModuleMetFirmware"
+    typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#VRModuleMetFirmware'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     @abstractmethod
     def __init__(self):
-        VerkeersregelaarModule.__init__(self)
+        AttributeInfo.__init__(self)
         FirmwareObject.__init__(self)
+        VerkeersregelaarModule.__init__(self)
 
-        self.merk = KeuzelijstField(naam="merk",
-                                    label="merk",
-                                    lijst=KlVRModuleMetFirmwareMerk(),
-                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#VRModuleMetFirmware.merk",
-                                    definition="Het merk van de VR module met Firmware.",
-                                    constraints="",
-                                    usagenote="",
-                                    deprecated_version="")
+        self._merk = OTLAttribuut(field=KlVRModuleMetFirmwareMerk,
+                                  naam='merk',
+                                  label='merk',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#VRModuleMetFirmware.merk',
+                                  definition='Het merk van de VR module met Firmware.')
+
+        self._modelnaam = OTLAttribuut(field=KlVRModuleMetFirmwareModelnaam,
+                                       naam='modelnaam',
+                                       label='modelnaam',
+                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#VRModuleMetFirmware.modelnaam',
+                                       definition='De modelnaam/product range van de VR module met Firmware.')
+
+    @property
+    def merk(self):
         """Het merk van de VR module met Firmware."""
+        return self._merk.waarde
 
-        self.modelnaam = KeuzelijstField(naam="modelnaam",
-                                         label="modelnaam",
-                                         lijst=KlVRModuleMetFirmwareModelnaam(),
-                                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#VRModuleMetFirmware.modelnaam",
-                                         definition="De modelnaam/product range van de VR module met Firmware.",
-                                         constraints="",
-                                         usagenote="",
-                                         deprecated_version="")
+    @merk.setter
+    def merk(self, value):
+        self._merk.set_waarde(value, owner=self)
+
+    @property
+    def modelnaam(self):
         """De modelnaam/product range van de VR module met Firmware."""
+        return self._modelnaam.waarde
+
+    @modelnaam.setter
+    def modelnaam(self, value):
+        self._modelnaam.set_waarde(value, owner=self)

@@ -1,9 +1,11 @@
 # coding=utf-8
+from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
+from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.Ruigte import Ruigte
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class VerstoordGrasland(Ruigte):
+class VerstoordGrasland(Ruigte, AttributeInfo):
     """R1 - duinriet, kruipertje, gewone raket, bijvoet,
 fijnstraal spec., kleine brandnetel,
 boerenwormkruid, kamille spec., varkensgras,
@@ -16,8 +18,9 @@ akkerwinde, kweek, heermoes, grote klaproos,
 herderstasje, paarse dovenetel, perzikkruid,
 vogelmuur, akkerkool"""
 
-    typeURI = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#VerstoordGrasland"
+    typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#VerstoordGrasland'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        super().__init__()
+        AttributeInfo.__init__(self)
+        Ruigte.__init__(self)

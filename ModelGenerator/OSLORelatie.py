@@ -9,5 +9,5 @@ class OSLORelatie:
     doel_uri: str
     objectUri: str
     richting: str
-    usagenote_nl: str
+    usagenote: str
     deprecated_version: str

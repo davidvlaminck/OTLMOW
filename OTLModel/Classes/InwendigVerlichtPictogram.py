@@ -1,58 +1,80 @@
 # coding=utf-8
+from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
+from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.AIMObject import AIMObject
 from OTLModel.Datatypes.DtcAfmetingBxlxhInMm import DtcAfmetingBxlxhInMm
-from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlBinnenverlichtingstoestelSoortLamp import KlBinnenverlichtingstoestelSoortLamp
 from OTLModel.Datatypes.KlPictogramSymbool import KlPictogramSymbool
 from OTLModel.Datatypes.KwantWrdInMinuut import KwantWrdInMinuut
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class InwendigVerlichtPictogram(AIMObject):
+class InwendigVerlichtPictogram(AIMObject, AttributeInfo):
     """Verlichtingstoestel om de aandacht te vestigen op een pictogram dat erop bevestigd is."""
 
-    typeURI = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#InwendigVerlichtPictogram"
+    typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#InwendigVerlichtPictogram'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        super().__init__()
+        AIMObject.__init__(self)
+        AttributeInfo.__init__(self)
 
-        self.afmeting = DtcAfmetingBxlxhInMm()
+        self._afmeting = OTLAttribuut(field=DtcAfmetingBxlxhInMm,
+                                      naam='afmeting',
+                                      label='afmeting',
+                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#InwendigVerlichtPictogram.afmeting',
+                                      definition='Geeft de buitenafmeting van het toestel mee.')
+
+        self._nalichtingstijd = OTLAttribuut(field=KwantWrdInMinuut,
+                                             naam='nalichtingstijd',
+                                             label='nalichtingstijd',
+                                             objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#InwendigVerlichtPictogram.nalichtingstijd',
+                                             definition='De tijd tussen het uitschakelen van de interne lichtbron en het volledig duister worden van het toestel.')
+
+        self._symbool = OTLAttribuut(field=KlPictogramSymbool,
+                                     naam='symbool',
+                                     label='symbool',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#InwendigVerlichtPictogram.symbool',
+                                     definition='Het symbool afgebeeld op het toestel.')
+
+        self._typeLamp = OTLAttribuut(field=KlBinnenverlichtingstoestelSoortLamp,
+                                      naam='typeLamp',
+                                      label='type lamp',
+                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#InwendigVerlichtPictogram.typeLamp',
+                                      definition='Het soort lamp waarmee het toestel verlicht wordt.')
+
+    @property
+    def afmeting(self):
         """Geeft de buitenafmeting van het toestel mee."""
-        self.afmeting.naam = "afmeting"
-        self.afmeting.label = "afmeting"
-        self.afmeting.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#InwendigVerlichtPictogram.afmeting"
-        self.afmeting.definition = "Geeft de buitenafmeting van het toestel mee."
-        self.afmeting.constraints = ""
-        self.afmeting.usagenote = ""
-        self.afmeting.deprecated_version = ""
+        return self._afmeting.waarde
 
-        self.nalichtingstijd = KwantWrdInMinuut()
+    @afmeting.setter
+    def afmeting(self, value):
+        self._afmeting.set_waarde(value, owner=self)
+
+    @property
+    def nalichtingstijd(self):
         """De tijd tussen het uitschakelen van de interne lichtbron en het volledig duister worden van het toestel."""
-        self.nalichtingstijd.naam = "nalichtingstijd"
-        self.nalichtingstijd.label = "nalichtingstijd"
-        self.nalichtingstijd.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#InwendigVerlichtPictogram.nalichtingstijd"
-        self.nalichtingstijd.definition = "De tijd tussen het uitschakelen van de interne lichtbron en het volledig duister worden van het toestel."
-        self.nalichtingstijd.constraints = ""
-        self.nalichtingstijd.usagenote = ""
-        self.nalichtingstijd.deprecated_version = ""
+        return self._nalichtingstijd.waarde
 
-        self.symbool = KeuzelijstField(naam="symbool",
-                                       label="symbool",
-                                       lijst=KlPictogramSymbool(),
-                                       objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#InwendigVerlichtPictogram.symbool",
-                                       definition="Het symbool afgebeeld op het toestel.",
-                                       constraints="",
-                                       usagenote="",
-                                       deprecated_version="")
+    @nalichtingstijd.setter
+    def nalichtingstijd(self, value):
+        self._nalichtingstijd.set_waarde(value, owner=self)
+
+    @property
+    def symbool(self):
         """Het symbool afgebeeld op het toestel."""
+        return self._symbool.waarde
 
-        self.typeLamp = KeuzelijstField(naam="typeLamp",
-                                        label="type lamp",
-                                        lijst=KlBinnenverlichtingstoestelSoortLamp(),
-                                        objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#InwendigVerlichtPictogram.typeLamp",
-                                        definition="Het soort lamp waarmee het toestel verlicht wordt.",
-                                        constraints="",
-                                        usagenote="",
-                                        deprecated_version="")
+    @symbool.setter
+    def symbool(self, value):
+        self._symbool.set_waarde(value, owner=self)
+
+    @property
+    def typeLamp(self):
         """Het soort lamp waarmee het toestel verlicht wordt."""
+        return self._typeLamp.waarde
+
+    @typeLamp.setter
+    def typeLamp(self, value):
+        self._typeLamp.set_waarde(value, owner=self)

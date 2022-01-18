@@ -1,43 +1,64 @@
 # coding=utf-8
+from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
+from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.Communicatieapparatuur import Communicatieapparatuur
 from OTLModel.Classes.FirmwareObject import FirmwareObject
 from OTLModel.Datatypes.StringField import StringField
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Armatuurcontroller(Communicatieapparatuur, FirmwareObject):
+class Armatuurcontroller(Communicatieapparatuur, FirmwareObject, AttributeInfo):
     """Controller die op het verlichtingstoestel wordt gemonteerd en die één verlichtingstoestel aanstuurt."""
 
-    typeURI = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Armatuurcontroller"
+    typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Armatuurcontroller'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
+        AttributeInfo.__init__(self)
         Communicatieapparatuur.__init__(self)
         FirmwareObject.__init__(self)
 
-        self.merk = StringField(naam="merk",
-                                label="merk",
-                                objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Armatuurcontroller.merk",
-                                definition="Merk van de armatuurcontroller.",
-                                constraints="",
-                                usagenote="",
-                                deprecated_version="")
+        self._merk = OTLAttribuut(field=StringField,
+                                  naam='merk',
+                                  label='merk',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Armatuurcontroller.merk',
+                                  definition='Merk van de armatuurcontroller.')
+
+        self._modelnaam = OTLAttribuut(field=StringField,
+                                       naam='modelnaam',
+                                       label='modelnaam',
+                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Armatuurcontroller.modelnaam',
+                                       definition='Modelnaam van de armatuurcontroller.')
+
+        self._serienummer = OTLAttribuut(field=StringField,
+                                         naam='serienummer',
+                                         label='serienummer',
+                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Armatuurcontroller.serienummer',
+                                         definition='Het unieke nummer waarmee het toestel door de fabrikant geïdentificeerd is.')
+
+    @property
+    def merk(self):
         """Merk van de armatuurcontroller."""
+        return self._merk.waarde
 
-        self.modelnaam = StringField(naam="modelnaam",
-                                     label="modelnaam",
-                                     objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Armatuurcontroller.modelnaam",
-                                     definition="Modelnaam van de armatuurcontroller.",
-                                     constraints="",
-                                     usagenote="",
-                                     deprecated_version="")
+    @merk.setter
+    def merk(self, value):
+        self._merk.set_waarde(value, owner=self)
+
+    @property
+    def modelnaam(self):
         """Modelnaam van de armatuurcontroller."""
+        return self._modelnaam.waarde
 
-        self.serienummer = StringField(naam="serienummer",
-                                       label="serienummer",
-                                       objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Armatuurcontroller.serienummer",
-                                       definition="Het unieke nummer waarmee het toestel door de fabrikant geïdentificeerd is.",
-                                       constraints="",
-                                       usagenote="",
-                                       deprecated_version="")
+    @modelnaam.setter
+    def modelnaam(self, value):
+        self._modelnaam.set_waarde(value, owner=self)
+
+    @property
+    def serienummer(self):
         """Het unieke nummer waarmee het toestel door de fabrikant geïdentificeerd is."""
+        return self._serienummer.waarde
+
+    @serienummer.setter
+    def serienummer(self, value):
+        self._serienummer.set_waarde(value, owner=self)

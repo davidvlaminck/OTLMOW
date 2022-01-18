@@ -21,9 +21,9 @@ class KwantWrdInInchEenheid(KwantWrdEenheid):
 
 # Generated with OTLPrimitiveDatatypeCreator. To modify: extend, do not edit
 class KwantWrdInInch(FloatOrDecimalField, KwantWrd):
-    naam = 'waarde'
-    label = 'waarde'
-    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInInch.waarde'
-    definition = 'Bevat een getal die bij het datatype hoort.'
+    naam = 'KwantWrdInInch'
+    label = 'Kwantitatieve waarde in inch'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInInch'
+    definition = 'Een kwantitatieve waarde die een getal in inches uitdrukt.'
     eenheid = KwantWrdInInchEenheid()
 

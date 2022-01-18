@@ -1,88 +1,144 @@
 # coding=utf-8
+from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
+from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.SoftwareToegang import SoftwareToegang
-from OTLModel.Datatypes.KardinaliteitField import KardinaliteitField
 from OTLModel.Datatypes.DtcDocument import DtcDocument
 from OTLModel.Datatypes.DtcSoftwarePoortconfiguratie import DtcSoftwarePoortconfiguratie
-from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlSoftwareLicentie import KlSoftwareLicentie
 from OTLModel.Datatypes.StringField import StringField
 from OTLModel.Datatypes.URIField import URIField
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Software(SoftwareToegang):
+class Software(SoftwareToegang, AttributeInfo):
     """Geheel van computerprogramma's met bijbehorende data."""
 
-    typeURI = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Software"
+    typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Software'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        super().__init__()
+        AttributeInfo.__init__(self)
+        SoftwareToegang.__init__(self)
 
-        self.aangebodenServices = DtcDocument()
+        self._aangebodenServices = OTLAttribuut(field=DtcDocument,
+                                                naam='aangebodenServices',
+                                                label='aangeboden services',
+                                                objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Software.aangebodenServices',
+                                                definition='De endpoints van diensten.')
+
+        self._buildnummer = OTLAttribuut(field=StringField,
+                                         naam='buildnummer',
+                                         label='buildnummer',
+                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Software.buildnummer',
+                                         definition='De software build.')
+
+        self._dependencies = OTLAttribuut(field=DtcDocument,
+                                          naam='dependencies',
+                                          label='dependencies',
+                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Software.dependencies',
+                                          definition='Afhankelijkheden met andere diensten.')
+
+        self._documentatie = OTLAttribuut(field=StringField,
+                                          naam='documentatie',
+                                          label='documentatie',
+                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Software.documentatie',
+                                          usagenote='Attribuut uit gebruik sinds versie 2.1.0',
+                                          deprecated_version='2.1.0',
+                                          definition='Link naar documentatie over de software.')
+
+        self._licentie = OTLAttribuut(field=KlSoftwareLicentie,
+                                      naam='licentie',
+                                      label='licentie',
+                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Software.licentie',
+                                      definition='De licentievorm van de software (bv. commercieel, shareware, freeware, open source [BSD, Apache, GPL],...).')
+
+        self._onlineDocumentatie = OTLAttribuut(field=URIField,
+                                                naam='onlineDocumentatie',
+                                                label='online documentatie',
+                                                objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Software.onlineDocumentatie',
+                                                definition='De url waarop documentatie over de software te vinden is.')
+
+        self._poortenconfiguratie = OTLAttribuut(field=DtcSoftwarePoortconfiguratie,
+                                                 naam='poortenconfiguratie',
+                                                 label='poortenconfiguratie',
+                                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Software.poortenconfiguratie',
+                                                 kardinaliteit_max='*',
+                                                 definition='Beschrijft welke poort voor welke service gebruikt wordt.')
+
+        self._versie = OTLAttribuut(field=StringField,
+                                    naam='versie',
+                                    label='versie',
+                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Software.versie',
+                                    definition='Het versienummer van de software.')
+
+    @property
+    def aangebodenServices(self):
         """De endpoints van diensten."""
-        self.aangebodenServices.naam = "aangebodenServices"
-        self.aangebodenServices.label = "aangeboden services"
-        self.aangebodenServices.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Software.aangebodenServices"
-        self.aangebodenServices.definition = "De endpoints van diensten."
-        self.aangebodenServices.constraints = ""
-        self.aangebodenServices.usagenote = ""
-        self.aangebodenServices.deprecated_version = ""
+        return self._aangebodenServices.waarde
 
-        self.buildnummer = StringField(naam="buildnummer",
-                                       label="buildnummer",
-                                       objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Software.buildnummer",
-                                       definition="De software build.",
-                                       constraints="",
-                                       usagenote="",
-                                       deprecated_version="")
+    @aangebodenServices.setter
+    def aangebodenServices(self, value):
+        self._aangebodenServices.set_waarde(value, owner=self)
+
+    @property
+    def buildnummer(self):
         """De software build."""
+        return self._buildnummer.waarde
 
-        self.dependencies = DtcDocument()
+    @buildnummer.setter
+    def buildnummer(self, value):
+        self._buildnummer.set_waarde(value, owner=self)
+
+    @property
+    def dependencies(self):
         """Afhankelijkheden met andere diensten."""
-        self.dependencies.naam = "dependencies"
-        self.dependencies.label = "dependencies"
-        self.dependencies.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Software.dependencies"
-        self.dependencies.definition = "Afhankelijkheden met andere diensten."
-        self.dependencies.constraints = ""
-        self.dependencies.usagenote = ""
-        self.dependencies.deprecated_version = ""
+        return self._dependencies.waarde
 
-        self.licentie = KeuzelijstField(naam="licentie",
-                                        label="licentie",
-                                        lijst=KlSoftwareLicentie(),
-                                        objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Software.licentie",
-                                        definition="De licentievorm van de software (bv. commercieel, shareware, freeware, open source [BSD, Apache, GPL],...).",
-                                        constraints="",
-                                        usagenote="",
-                                        deprecated_version="")
+    @dependencies.setter
+    def dependencies(self, value):
+        self._dependencies.set_waarde(value, owner=self)
+
+    @property
+    def documentatie(self):
+        """Link naar documentatie over de software."""
+        return self._documentatie.waarde
+
+    @documentatie.setter
+    def documentatie(self, value):
+        self._documentatie.set_waarde(value, owner=self)
+
+    @property
+    def licentie(self):
         """De licentievorm van de software (bv. commercieel, shareware, freeware, open source [BSD, Apache, GPL],...)."""
+        return self._licentie.waarde
 
-        self.onlineDocumentatie = URIField(naam="onlineDocumentatie",
-                                           label="online documentatie",
-                                           objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Software.onlineDocumentatie",
-                                           definition="De url waarop documentatie over de software te vinden is.",
-                                           constraints="",
-                                           usagenote="",
-                                           deprecated_version="")
+    @licentie.setter
+    def licentie(self, value):
+        self._licentie.set_waarde(value, owner=self)
+
+    @property
+    def onlineDocumentatie(self):
         """De url waarop documentatie over de software te vinden is."""
+        return self._onlineDocumentatie.waarde
 
-        poortenconfiguratieField = DtcSoftwarePoortconfiguratie()
-        poortenconfiguratieField.naam = "poortenconfiguratie"
-        poortenconfiguratieField.label = "poortenconfiguratie"
-        poortenconfiguratieField.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Software.poortenconfiguratie"
-        poortenconfiguratieField.definition = "Beschrijft welke poort voor welke service gebruikt wordt."
-        poortenconfiguratieField.constraints = ""
-        poortenconfiguratieField.usagenote = ""
-        poortenconfiguratieField.deprecated_version = ""
-        self.poortenconfiguratie = KardinaliteitField(minKardinaliteit="1", maxKardinaliteit="*", fieldToMultiply=poortenconfiguratieField)
+    @onlineDocumentatie.setter
+    def onlineDocumentatie(self, value):
+        self._onlineDocumentatie.set_waarde(value, owner=self)
+
+    @property
+    def poortenconfiguratie(self):
         """Beschrijft welke poort voor welke service gebruikt wordt."""
+        return self._poortenconfiguratie.waarde
 
-        self.versie = StringField(naam="versie",
-                                  label="versie",
-                                  objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Software.versie",
-                                  definition="Het versienummer van de software.",
-                                  constraints="",
-                                  usagenote="",
-                                  deprecated_version="")
+    @poortenconfiguratie.setter
+    def poortenconfiguratie(self, value):
+        self._poortenconfiguratie.set_waarde(value, owner=self)
+
+    @property
+    def versie(self):
         """Het versienummer van de software."""
+        return self._versie.waarde
+
+    @versie.setter
+    def versie(self, value):
+        self._versie.set_waarde(value, owner=self)

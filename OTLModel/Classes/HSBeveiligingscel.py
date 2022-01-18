@@ -1,8 +1,9 @@
 # coding=utf-8
+from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
+from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.AIMNaamObject import AIMNaamObject
 from OTLModel.Datatypes.BooleanField import BooleanField
 from OTLModel.Datatypes.DtcDocument import DtcDocument
-from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlHSBeveiligingscelHoogspanningszekering import KlHSBeveiligingscelHoogspanningszekering
 from OTLModel.Datatypes.KlHSBeveiligingscelMerk import KlHSBeveiligingscelMerk
 from OTLModel.Datatypes.KlHSBeveiligingscelModelnaam import KlHSBeveiligingscelModelnaam
@@ -15,119 +16,177 @@ from OTLModel.Datatypes.StringField import StringField
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class HSBeveiligingscel(AIMNaamObject):
+class HSBeveiligingscel(AIMNaamObject, AttributeInfo):
     """Cel die de hoogspanningsschakelinrichting omvat. Hieronder vallen onder meer de lastscheidingsschakelaar, smeltveiligheden, aardingsschakelaar,..."""
 
-    typeURI = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#HSBeveiligingscel"
+    typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#HSBeveiligingscel'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        super().__init__()
+        AIMNaamObject.__init__(self)
+        AttributeInfo.__init__(self)
 
-        self.elektrischSchema = DtcDocument()
+        self._elektrischSchema = OTLAttribuut(field=DtcDocument,
+                                              naam='elektrischSchema',
+                                              label='elektrisch schema',
+                                              objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#HSBeveiligingscel.elektrischSchema',
+                                              definition='Elektrisch aansluitschema van de HS beveiligingscel.')
+
+        self._heeftreserveZekering = OTLAttribuut(field=BooleanField,
+                                                  naam='heeftreserveZekering',
+                                                  label='heeft reserve zekering',
+                                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#HSBeveiligingscel.heeftreserveZekering',
+                                                  definition='Is er een reserve zekering aanwezig?')
+
+        self._hoogspanningszekering = OTLAttribuut(field=KlHSBeveiligingscelHoogspanningszekering,
+                                                   naam='hoogspanningszekering',
+                                                   label='hoogspanningszekering',
+                                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#HSBeveiligingscel.hoogspanningszekering',
+                                                   definition='Waarde van de hoogspanningszekering.')
+
+        self._keuringsfrequentie = OTLAttribuut(field=KwantWrdInJaar,
+                                                naam='keuringsfrequentie',
+                                                label='keuringsfrequentie',
+                                                objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#HSBeveiligingscel.keuringsfrequentie',
+                                                definition='Frequentie (in jaar) waarmee de installatie moet onderworpen worden aan een periodieke keuring door een externe dienst voor technische controle.')
+
+        self._merk = OTLAttribuut(field=KlHSBeveiligingscelMerk,
+                                  naam='merk',
+                                  label='merk',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#HSBeveiligingscel.merk',
+                                  definition='Merk van de HS beveiligingscel.')
+
+        self._modelnaam = OTLAttribuut(field=KlHSBeveiligingscelModelnaam,
+                                       naam='modelnaam',
+                                       label='modelnaam',
+                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#HSBeveiligingscel.modelnaam',
+                                       definition='Modelnaam van de HS beveiligingscel.')
+
+        self._overstroombeveiligingInstelwaarde = OTLAttribuut(field=KwantWrdInAmpere,
+                                                               naam='overstroombeveiligingInstelwaarde',
+                                                               label='overstroombeveiliging instelwaarde',
+                                                               objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#HSBeveiligingscel.overstroombeveiligingInstelwaarde',
+                                                               definition='Instelwaarde van de overstroombeveiliging.')
+
+        self._overstroombeveiligingType = OTLAttribuut(field=StringField,
+                                                       naam='overstroombeveiligingType',
+                                                       label='overstroombeveiliging type',
+                                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#HSBeveiligingscel.overstroombeveiligingType',
+                                                       definition='Type overstroombeveiliging.')
+
+        self._overstroombeveiligingVermogenschakelaar = OTLAttribuut(field=KlHSBeveiligingscelOverstroombeveiligingVermogenschakelaar,
+                                                                     naam='overstroombeveiligingVermogenschakelaar',
+                                                                     label='overstroombeveiliging vermogenschakelaar',
+                                                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#HSBeveiligingscel.overstroombeveiligingVermogenschakelaar',
+                                                                     definition='Directe of indirecte overstroombeveiliging van de vermogenschakelaar.')
+
+        self._schakelmateriaalKlasse = OTLAttribuut(field=KlHSBeveiligingscelSchakelmateriaalKlasse,
+                                                    naam='schakelmateriaalKlasse',
+                                                    label='schakelmateriaal klasse',
+                                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#HSBeveiligingscel.schakelmateriaalKlasse',
+                                                    definition='Klasse van het schakelmateriaal volgens Synergrid.')
+
+        self._schakelmateriaalType = OTLAttribuut(field=KlHSBeveiligingscelSchakelmateriaalType,
+                                                  naam='schakelmateriaalType',
+                                                  label='schakelmateriaal type',
+                                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#HSBeveiligingscel.schakelmateriaalType',
+                                                  definition='Type van schakelmateriaal.')
+
+    @property
+    def elektrischSchema(self):
         """Elektrisch aansluitschema van de HS beveiligingscel."""
-        self.elektrischSchema.naam = "elektrischSchema"
-        self.elektrischSchema.label = "elektrisch schema"
-        self.elektrischSchema.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#HSBeveiligingscel.elektrischSchema"
-        self.elektrischSchema.definition = "Elektrisch aansluitschema van de HS beveiligingscel."
-        self.elektrischSchema.constraints = ""
-        self.elektrischSchema.usagenote = ""
-        self.elektrischSchema.deprecated_version = ""
+        return self._elektrischSchema.waarde
 
-        self.heeftreserveZekering = BooleanField(naam="heeftreserveZekering",
-                                                 label="heeft reserve zekering",
-                                                 objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#HSBeveiligingscel.heeftreserveZekering",
-                                                 definition="Is er een reserve zekering aanwezig?",
-                                                 constraints="",
-                                                 usagenote="",
-                                                 deprecated_version="")
+    @elektrischSchema.setter
+    def elektrischSchema(self, value):
+        self._elektrischSchema.set_waarde(value, owner=self)
+
+    @property
+    def heeftreserveZekering(self):
         """Is er een reserve zekering aanwezig?"""
+        return self._heeftreserveZekering.waarde
 
-        self.hoogspanningszekering = KeuzelijstField(naam="hoogspanningszekering",
-                                                     label="hoogspanningszekering",
-                                                     lijst=KlHSBeveiligingscelHoogspanningszekering(),
-                                                     objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#HSBeveiligingscel.hoogspanningszekering",
-                                                     definition="Waarde van de hoogspanningszekering.",
-                                                     constraints="",
-                                                     usagenote="",
-                                                     deprecated_version="")
+    @heeftreserveZekering.setter
+    def heeftreserveZekering(self, value):
+        self._heeftreserveZekering.set_waarde(value, owner=self)
+
+    @property
+    def hoogspanningszekering(self):
         """Waarde van de hoogspanningszekering."""
+        return self._hoogspanningszekering.waarde
 
-        self.keuringsfrequentie = KwantWrdInJaar()
+    @hoogspanningszekering.setter
+    def hoogspanningszekering(self, value):
+        self._hoogspanningszekering.set_waarde(value, owner=self)
+
+    @property
+    def keuringsfrequentie(self):
         """Frequentie (in jaar) waarmee de installatie moet onderworpen worden aan een periodieke keuring door een externe dienst voor technische controle."""
-        self.keuringsfrequentie.naam = "keuringsfrequentie"
-        self.keuringsfrequentie.label = "keuringsfrequentie"
-        self.keuringsfrequentie.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#HSBeveiligingscel.keuringsfrequentie"
-        self.keuringsfrequentie.definition = "Frequentie (in jaar) waarmee de installatie moet onderworpen worden aan een periodieke keuring door een externe dienst voor technische controle."
-        self.keuringsfrequentie.constraints = ""
-        self.keuringsfrequentie.usagenote = ""
-        self.keuringsfrequentie.deprecated_version = ""
+        return self._keuringsfrequentie.waarde
 
-        self.merk = KeuzelijstField(naam="merk",
-                                    label="merk",
-                                    lijst=KlHSBeveiligingscelMerk(),
-                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#HSBeveiligingscel.merk",
-                                    definition="Merk van de HS beveiligingscel.",
-                                    constraints="",
-                                    usagenote="",
-                                    deprecated_version="")
+    @keuringsfrequentie.setter
+    def keuringsfrequentie(self, value):
+        self._keuringsfrequentie.set_waarde(value, owner=self)
+
+    @property
+    def merk(self):
         """Merk van de HS beveiligingscel."""
+        return self._merk.waarde
 
-        self.modelnaam = KeuzelijstField(naam="modelnaam",
-                                         label="modelnaam",
-                                         lijst=KlHSBeveiligingscelModelnaam(),
-                                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#HSBeveiligingscel.modelnaam",
-                                         definition="Modelnaam van de HS beveiligingscel.",
-                                         constraints="",
-                                         usagenote="",
-                                         deprecated_version="")
+    @merk.setter
+    def merk(self, value):
+        self._merk.set_waarde(value, owner=self)
+
+    @property
+    def modelnaam(self):
         """Modelnaam van de HS beveiligingscel."""
+        return self._modelnaam.waarde
 
-        self.overstroombeveiligingInstelwaarde = KwantWrdInAmpere()
+    @modelnaam.setter
+    def modelnaam(self, value):
+        self._modelnaam.set_waarde(value, owner=self)
+
+    @property
+    def overstroombeveiligingInstelwaarde(self):
         """Instelwaarde van de overstroombeveiliging."""
-        self.overstroombeveiligingInstelwaarde.naam = "overstroombeveiligingInstelwaarde"
-        self.overstroombeveiligingInstelwaarde.label = "overstroombeveiliging instelwaarde"
-        self.overstroombeveiligingInstelwaarde.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#HSBeveiligingscel.overstroombeveiligingInstelwaarde"
-        self.overstroombeveiligingInstelwaarde.definition = "Instelwaarde van de overstroombeveiliging."
-        self.overstroombeveiligingInstelwaarde.constraints = ""
-        self.overstroombeveiligingInstelwaarde.usagenote = ""
-        self.overstroombeveiligingInstelwaarde.deprecated_version = ""
+        return self._overstroombeveiligingInstelwaarde.waarde
 
-        self.overstroombeveiligingType = StringField(naam="overstroombeveiligingType",
-                                                     label="overstroombeveiliging type",
-                                                     objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#HSBeveiligingscel.overstroombeveiligingType",
-                                                     definition="Type overstroombeveiliging.",
-                                                     constraints="",
-                                                     usagenote="",
-                                                     deprecated_version="")
+    @overstroombeveiligingInstelwaarde.setter
+    def overstroombeveiligingInstelwaarde(self, value):
+        self._overstroombeveiligingInstelwaarde.set_waarde(value, owner=self)
+
+    @property
+    def overstroombeveiligingType(self):
         """Type overstroombeveiliging."""
+        return self._overstroombeveiligingType.waarde
 
-        self.overstroombeveiligingVermogenschakelaar = KeuzelijstField(naam="overstroombeveiligingVermogenschakelaar",
-                                                                       label="overstroombeveiliging vermogenschakelaar",
-                                                                       lijst=KlHSBeveiligingscelOverstroombeveiligingVermogenschakelaar(),
-                                                                       objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#HSBeveiligingscel.overstroombeveiligingVermogenschakelaar",
-                                                                       definition="Directe of indirecte overstroombeveiliging van de vermogenschakelaar.",
-                                                                       constraints="",
-                                                                       usagenote="",
-                                                                       deprecated_version="")
+    @overstroombeveiligingType.setter
+    def overstroombeveiligingType(self, value):
+        self._overstroombeveiligingType.set_waarde(value, owner=self)
+
+    @property
+    def overstroombeveiligingVermogenschakelaar(self):
         """Directe of indirecte overstroombeveiliging van de vermogenschakelaar."""
+        return self._overstroombeveiligingVermogenschakelaar.waarde
 
-        self.schakelmateriaalKlasse = KeuzelijstField(naam="schakelmateriaalKlasse",
-                                                      label="schakelmateriaal klasse",
-                                                      lijst=KlHSBeveiligingscelSchakelmateriaalKlasse(),
-                                                      objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#HSBeveiligingscel.schakelmateriaalKlasse",
-                                                      definition="Klasse van het schakelmateriaal volgens Synergrid.",
-                                                      constraints="",
-                                                      usagenote="",
-                                                      deprecated_version="")
+    @overstroombeveiligingVermogenschakelaar.setter
+    def overstroombeveiligingVermogenschakelaar(self, value):
+        self._overstroombeveiligingVermogenschakelaar.set_waarde(value, owner=self)
+
+    @property
+    def schakelmateriaalKlasse(self):
         """Klasse van het schakelmateriaal volgens Synergrid."""
+        return self._schakelmateriaalKlasse.waarde
 
-        self.schakelmateriaalType = KeuzelijstField(naam="schakelmateriaalType",
-                                                    label="schakelmateriaal type",
-                                                    lijst=KlHSBeveiligingscelSchakelmateriaalType(),
-                                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#HSBeveiligingscel.schakelmateriaalType",
-                                                    definition="Type van schakelmateriaal.",
-                                                    constraints="",
-                                                    usagenote="",
-                                                    deprecated_version="")
+    @schakelmateriaalKlasse.setter
+    def schakelmateriaalKlasse(self, value):
+        self._schakelmateriaalKlasse.set_waarde(value, owner=self)
+
+    @property
+    def schakelmateriaalType(self):
         """Type van schakelmateriaal."""
+        return self._schakelmateriaalType.waarde
+
+    @schakelmateriaalType.setter
+    def schakelmateriaalType(self, value):
+        self._schakelmateriaalType.set_waarde(value, owner=self)

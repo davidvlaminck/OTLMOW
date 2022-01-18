@@ -1,8 +1,9 @@
 # coding=utf-8
+from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
+from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from abc import abstractmethod
 from OTLModel.Classes.AIMNaamObject import AIMNaamObject
 from OTLModel.Datatypes.BooleanField import BooleanField
-from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlLantaarnVormgeving import KlLantaarnVormgeving
 from OTLModel.Datatypes.KlSeinlantaarnDiameter import KlSeinlantaarnDiameter
 from OTLModel.Datatypes.KlSeinlantaarnMerk import KlSeinlantaarnMerk
@@ -10,61 +11,88 @@ from OTLModel.Datatypes.KlSeinlantaarnModelnaam import KlSeinlantaarnModelnaam
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Seinlantaarn(AIMNaamObject):
+class Seinlantaarn(AIMNaamObject, AttributeInfo):
     """Abstracte voor het geheel van één of meerdere verkeerslichten die boven elkaar worden opgesteld en worden bevestigd op een steun,teneinde de beweging van een weggebruiker die een bepaald traject volgt,te verhinderen of toe te laten."""
 
-    typeURI = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Seinlantaarn"
+    typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Seinlantaarn'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     @abstractmethod
     def __init__(self):
-        super().__init__()
+        AIMNaamObject.__init__(self)
+        AttributeInfo.__init__(self)
 
-        self.diameter = KeuzelijstField(naam="diameter",
-                                        label="diameter",
-                                        lijst=KlSeinlantaarnDiameter(),
-                                        objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Seinlantaarn.diameter",
-                                        definition="Diameter (in mm) van de lens van de verkeerslichten waaruit de lantaarn is samengesteld.",
-                                        constraints="",
-                                        usagenote="",
-                                        deprecated_version="")
+        self._diameter = OTLAttribuut(field=KlSeinlantaarnDiameter,
+                                      naam='diameter',
+                                      label='diameter',
+                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Seinlantaarn.diameter',
+                                      definition='Diameter (in mm) van de lens van de verkeerslichten waaruit de lantaarn is samengesteld.')
+
+        self._heeftContrastscherm = OTLAttribuut(field=BooleanField,
+                                                 naam='heeftContrastscherm',
+                                                 label='heeft contrastscherm aanwezig',
+                                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Seinlantaarn.heeftContrastscherm',
+                                                 definition='Aanduiding of er een contrastscherm aanwezig is op de lantaarn.')
+
+        self._merk = OTLAttribuut(field=KlSeinlantaarnMerk,
+                                  naam='merk',
+                                  label='merk',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Seinlantaarn.merk',
+                                  definition='Het merk van een de seinlantaarn.')
+
+        self._modelnaam = OTLAttribuut(field=KlSeinlantaarnModelnaam,
+                                       naam='modelnaam',
+                                       label='modelnaam',
+                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Seinlantaarn.modelnaam',
+                                       definition='De modelnaam/product range van de seinlantaarn.')
+
+        self._vormgeving = OTLAttribuut(field=KlLantaarnVormgeving,
+                                        naam='vormgeving',
+                                        label='vormgeving',
+                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Seinlantaarn.vormgeving',
+                                        definition='Type vormgeving van de seinlantaarn.')
+
+    @property
+    def diameter(self):
         """Diameter (in mm) van de lens van de verkeerslichten waaruit de lantaarn is samengesteld."""
+        return self._diameter.waarde
 
-        self.heeftContrastscherm = BooleanField(naam="heeftContrastscherm",
-                                                label="heeft contrastscherm aanwezig",
-                                                objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Seinlantaarn.heeftContrastscherm",
-                                                definition="Aanduiding of er een contrastscherm aanwezig is op de lantaarn.",
-                                                constraints="",
-                                                usagenote="",
-                                                deprecated_version="")
+    @diameter.setter
+    def diameter(self, value):
+        self._diameter.set_waarde(value, owner=self)
+
+    @property
+    def heeftContrastscherm(self):
         """Aanduiding of er een contrastscherm aanwezig is op de lantaarn."""
+        return self._heeftContrastscherm.waarde
 
-        self.merk = KeuzelijstField(naam="merk",
-                                    label="merk",
-                                    lijst=KlSeinlantaarnMerk(),
-                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Seinlantaarn.merk",
-                                    definition="Het merk van een de seinlantaarn.",
-                                    constraints="",
-                                    usagenote="",
-                                    deprecated_version="")
+    @heeftContrastscherm.setter
+    def heeftContrastscherm(self, value):
+        self._heeftContrastscherm.set_waarde(value, owner=self)
+
+    @property
+    def merk(self):
         """Het merk van een de seinlantaarn."""
+        return self._merk.waarde
 
-        self.modelnaam = KeuzelijstField(naam="modelnaam",
-                                         label="modelnaam",
-                                         lijst=KlSeinlantaarnModelnaam(),
-                                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Seinlantaarn.modelnaam",
-                                         definition="De modelnaam/product range van de seinlantaarn.",
-                                         constraints="",
-                                         usagenote="",
-                                         deprecated_version="")
+    @merk.setter
+    def merk(self, value):
+        self._merk.set_waarde(value, owner=self)
+
+    @property
+    def modelnaam(self):
         """De modelnaam/product range van de seinlantaarn."""
+        return self._modelnaam.waarde
 
-        self.vormgeving = KeuzelijstField(naam="vormgeving",
-                                          label="vormgeving",
-                                          lijst=KlLantaarnVormgeving(),
-                                          objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Seinlantaarn.vormgeving",
-                                          definition="Type vormgeving van de seinlantaarn.",
-                                          constraints="",
-                                          usagenote="",
-                                          deprecated_version="")
+    @modelnaam.setter
+    def modelnaam(self, value):
+        self._modelnaam.set_waarde(value, owner=self)
+
+    @property
+    def vormgeving(self):
         """Type vormgeving van de seinlantaarn."""
+        return self._vormgeving.waarde
+
+    @vormgeving.setter
+    def vormgeving(self, value):
+        self._vormgeving.set_waarde(value, owner=self)

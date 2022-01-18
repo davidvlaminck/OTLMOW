@@ -21,9 +21,9 @@ class KwantWrdInKubiekeMeterPerSecondeEenheid(KwantWrdEenheid):
 
 # Generated with OTLPrimitiveDatatypeCreator. To modify: extend, do not edit
 class KwantWrdInKubiekeMeterPerSeconde(FloatOrDecimalField, KwantWrd):
-    naam = 'waarde'
-    label = 'waarde'
-    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInKubiekeMeterPerSeconde.waarde'
-    definition = 'Bevat een getal die bij het datatype hoort.'
+    naam = 'KwantWrdInKubiekeMeterPerSeconde'
+    label = 'Kwantitatieve waarde in kubieke meter per seconde'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInKubiekeMeterPerSeconde'
+    definition = 'Een kwantitatieve waarde die een getal in kubieke meter per seconde uitdrukt.'
     eenheid = KwantWrdInKubiekeMeterPerSecondeEenheid()
 

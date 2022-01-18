@@ -21,9 +21,9 @@ class KwantWrdInUurEenheid(KwantWrdEenheid):
 
 # Generated with OTLPrimitiveDatatypeCreator. To modify: extend, do not edit
 class KwantWrdInUur(NonNegIntegerField, KwantWrd):
-    naam = 'waarde'
-    label = 'waarde'
-    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInUur.waarde'
-    definition = 'Bevat een getal die bij het datatype hoort.'
+    naam = 'KwantWrdInUur'
+    label = 'Kwantitatieve waarde in uur'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInUur'
+    definition = 'Een kwantitatieve waarde die een getal in uur uitdrukt.'
     eenheid = KwantWrdInUurEenheid()
 

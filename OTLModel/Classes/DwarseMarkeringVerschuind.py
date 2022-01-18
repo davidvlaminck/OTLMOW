@@ -1,6 +1,7 @@
 # coding=utf-8
+from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
+from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.DwarseMarkeringToegang import DwarseMarkeringToegang
-from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlDwarseMarkeringVerschuindCode import KlDwarseMarkeringVerschuindCode
 from OTLModel.Datatypes.KlDwarseMarkeringVerschuindSoort import KlDwarseMarkeringVerschuindSoort
 from OTLModel.Datatypes.KwantWrdInDecimaleGraden import KwantWrdInDecimaleGraden
@@ -8,61 +9,87 @@ from OTLModel.Datatypes.KwantWrdInVierkanteMeter import KwantWrdInVierkanteMeter
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class DwarseMarkeringVerschuind(DwarseMarkeringToegang):
+class DwarseMarkeringVerschuind(DwarseMarkeringToegang, AttributeInfo):
     """Een schuine markering dwars op de weg aangebracht om het verkeer te waarschuwen, informeren of regelen."""
 
-    typeURI = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DwarseMarkeringVerschuind"
+    typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DwarseMarkeringVerschuind'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        super().__init__()
+        AttributeInfo.__init__(self)
+        DwarseMarkeringToegang.__init__(self)
 
-        self.basisoppervlakte = KwantWrdInVierkanteMeter()
+        self._basisoppervlakte = OTLAttribuut(field=KwantWrdInVierkanteMeter,
+                                              naam='basisoppervlakte',
+                                              label='oppervlakte',
+                                              objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DwarseMarkeringVerschuind.basisoppervlakte',
+                                              definition='De basisoppervlakte van de dwarse markering in vierkante meter.')
+
+        self._code = OTLAttribuut(field=KlDwarseMarkeringVerschuindCode,
+                                  naam='code',
+                                  label='code',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DwarseMarkeringVerschuind.code',
+                                  definition='De (COPRO/BENOR)  code van dwarse markering.')
+
+        self._hoek = OTLAttribuut(field=KwantWrdInDecimaleGraden,
+                                  naam='hoek',
+                                  label='hoek',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DwarseMarkeringVerschuind.hoek',
+                                  definition='De hoek van de verschuinde dwarsmarkering in decimale graden.')
+
+        self._oppervlakte = OTLAttribuut(field=KwantWrdInVierkanteMeter,
+                                         naam='oppervlakte',
+                                         label='oppervlakte',
+                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DwarseMarkeringVerschuind.oppervlakte',
+                                         definition='De oppervlakte van een dwarsmarkering na verschuining.')
+
+        self._soortOmschrijving = OTLAttribuut(field=KlDwarseMarkeringVerschuindSoort,
+                                               naam='soortOmschrijving',
+                                               label='soort omschrijving',
+                                               objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DwarseMarkeringVerschuind.soortOmschrijving',
+                                               definition='De soort en tevens de omschrijving van dwarse markering.')
+
+    @property
+    def basisoppervlakte(self):
         """De basisoppervlakte van de dwarse markering in vierkante meter."""
-        self.basisoppervlakte.naam = "basisoppervlakte"
-        self.basisoppervlakte.label = "oppervlakte"
-        self.basisoppervlakte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DwarseMarkeringVerschuind.basisoppervlakte"
-        self.basisoppervlakte.definition = "De basisoppervlakte van de dwarse markering in vierkante meter."
-        self.basisoppervlakte.constraints = ""
-        self.basisoppervlakte.usagenote = ""
-        self.basisoppervlakte.deprecated_version = ""
+        return self._basisoppervlakte.waarde
 
-        self.code = KeuzelijstField(naam="code",
-                                    label="code",
-                                    lijst=KlDwarseMarkeringVerschuindCode(),
-                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DwarseMarkeringVerschuind.code",
-                                    definition="De (COPRO/BENOR)  code van dwarse markering.",
-                                    constraints="",
-                                    usagenote="",
-                                    deprecated_version="")
+    @basisoppervlakte.setter
+    def basisoppervlakte(self, value):
+        self._basisoppervlakte.set_waarde(value, owner=self)
+
+    @property
+    def code(self):
         """De (COPRO/BENOR)  code van dwarse markering."""
+        return self._code.waarde
 
-        self.hoek = KwantWrdInDecimaleGraden()
+    @code.setter
+    def code(self, value):
+        self._code.set_waarde(value, owner=self)
+
+    @property
+    def hoek(self):
         """De hoek van de verschuinde dwarsmarkering in decimale graden."""
-        self.hoek.naam = "hoek"
-        self.hoek.label = "hoek"
-        self.hoek.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DwarseMarkeringVerschuind.hoek"
-        self.hoek.definition = "De hoek van de verschuinde dwarsmarkering in decimale graden."
-        self.hoek.constraints = ""
-        self.hoek.usagenote = ""
-        self.hoek.deprecated_version = ""
+        return self._hoek.waarde
 
-        self.oppervlakte = KwantWrdInVierkanteMeter()
+    @hoek.setter
+    def hoek(self, value):
+        self._hoek.set_waarde(value, owner=self)
+
+    @property
+    def oppervlakte(self):
         """De oppervlakte van een dwarsmarkering na verschuining."""
-        self.oppervlakte.naam = "oppervlakte"
-        self.oppervlakte.label = "oppervlakte"
-        self.oppervlakte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DwarseMarkeringVerschuind.oppervlakte"
-        self.oppervlakte.definition = "De oppervlakte van een dwarsmarkering na verschuining."
-        self.oppervlakte.constraints = ""
-        self.oppervlakte.usagenote = ""
-        self.oppervlakte.deprecated_version = ""
+        return self._oppervlakte.waarde
 
-        self.soortOmschrijving = KeuzelijstField(naam="soortOmschrijving",
-                                                 label="soort omschrijving",
-                                                 lijst=KlDwarseMarkeringVerschuindSoort(),
-                                                 objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DwarseMarkeringVerschuind.soortOmschrijving",
-                                                 definition="De soort en tevens de omschrijving van dwarse markering.",
-                                                 constraints="",
-                                                 usagenote="",
-                                                 deprecated_version="")
+    @oppervlakte.setter
+    def oppervlakte(self, value):
+        self._oppervlakte.set_waarde(value, owner=self)
+
+    @property
+    def soortOmschrijving(self):
         """De soort en tevens de omschrijving van dwarse markering."""
+        return self._soortOmschrijving.waarde
+
+    @soortOmschrijving.setter
+    def soortOmschrijving(self, value):
+        self._soortOmschrijving.set_waarde(value, owner=self)

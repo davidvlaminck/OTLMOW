@@ -21,9 +21,9 @@ class KwantWrdInVierkanteMeterEenheid(KwantWrdEenheid):
 
 # Generated with OTLPrimitiveDatatypeCreator. To modify: extend, do not edit
 class KwantWrdInVierkanteMeter(FloatOrDecimalField, KwantWrd):
-    naam = 'waarde'
-    label = 'waarde'
-    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInVierkanteMeter.waarde'
-    definition = 'Bevat een getal die bij het datatype hoort.'
+    naam = 'KwantWrdInVierkanteMeter'
+    label = 'Kwantitatieve waarde in vierkante meter'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInVierkanteMeter'
+    definition = 'Een kwantitatieve waarde die een getal in vierkante meter uitdrukt.'
     eenheid = KwantWrdInVierkanteMeterEenheid()
 

@@ -1,47 +1,64 @@
 # coding=utf-8
+from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
+from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.AIMNaamObject import AIMNaamObject
-from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlAfmetingsensorMerk import KlAfmetingsensorMerk
 from OTLModel.Datatypes.KlAfmetingsensorModelnaam import KlAfmetingsensorModelnaam
 from OTLModel.Datatypes.KlAfmetingsensorType import KlAfmetingsensorType
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Afmetingsensor(AIMNaamObject):
+class Afmetingsensor(AIMNaamObject, AttributeInfo):
     """Registratie van voertuigafmetingen."""
 
-    typeURI = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Afmetingsensor"
+    typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Afmetingsensor'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        super().__init__()
+        AIMNaamObject.__init__(self)
+        AttributeInfo.__init__(self)
 
-        self.merk = KeuzelijstField(naam="merk",
-                                    label="merk",
-                                    lijst=KlAfmetingsensorMerk(),
-                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Afmetingsensor.merk",
-                                    definition="Het merk van de afmetingsensor.",
-                                    constraints="",
-                                    usagenote="",
-                                    deprecated_version="")
+        self._merk = OTLAttribuut(field=KlAfmetingsensorMerk,
+                                  naam='merk',
+                                  label='merk',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Afmetingsensor.merk',
+                                  definition='Het merk van de afmetingsensor.')
+
+        self._modelnaam = OTLAttribuut(field=KlAfmetingsensorModelnaam,
+                                       naam='modelnaam',
+                                       label='modelnaam',
+                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Afmetingsensor.modelnaam',
+                                       definition='De modelnaam van de afmetingsensor.')
+
+        self._type = OTLAttribuut(field=KlAfmetingsensorType,
+                                  naam='type',
+                                  label='type',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Afmetingsensor.type',
+                                  definition='Het type van de afmetingsensor.')
+
+    @property
+    def merk(self):
         """Het merk van de afmetingsensor."""
+        return self._merk.waarde
 
-        self.modelnaam = KeuzelijstField(naam="modelnaam",
-                                         label="modelnaam",
-                                         lijst=KlAfmetingsensorModelnaam(),
-                                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Afmetingsensor.modelnaam",
-                                         definition="De modelnaam van de afmetingsensor.",
-                                         constraints="",
-                                         usagenote="",
-                                         deprecated_version="")
+    @merk.setter
+    def merk(self, value):
+        self._merk.set_waarde(value, owner=self)
+
+    @property
+    def modelnaam(self):
         """De modelnaam van de afmetingsensor."""
+        return self._modelnaam.waarde
 
-        self.type = KeuzelijstField(naam="type",
-                                    label="type",
-                                    lijst=KlAfmetingsensorType(),
-                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Afmetingsensor.type",
-                                    definition="Het type van de afmetingsensor.",
-                                    constraints="",
-                                    usagenote="",
-                                    deprecated_version="")
+    @modelnaam.setter
+    def modelnaam(self, value):
+        self._modelnaam.set_waarde(value, owner=self)
+
+    @property
+    def type(self):
         """Het type van de afmetingsensor."""
+        return self._type.waarde
+
+    @type.setter
+    def type(self, value):
+        self._type.set_waarde(value, owner=self)

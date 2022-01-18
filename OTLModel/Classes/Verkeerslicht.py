@@ -1,7 +1,8 @@
 # coding=utf-8
+from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
+from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from abc import abstractmethod
 from OTLModel.Classes.AIMNaamObject import AIMNaamObject
-from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlVerkeerslichtMasker import KlVerkeerslichtMasker
 from OTLModel.Datatypes.KlVerkeerslichtMerk import KlVerkeerslichtMerk
 from OTLModel.Datatypes.KlVerkeerslichtModelnaam import KlVerkeerslichtModelnaam
@@ -9,52 +10,73 @@ from OTLModel.Datatypes.KwantWrdInWatt import KwantWrdInWatt
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Verkeerslicht(AIMNaamObject):
+class Verkeerslicht(AIMNaamObject, AttributeInfo):
     """Abstracte voor verkeerslichten. Dit zijn apparaten, opgesteld naast of boven de weg, om weggebruikers visueel te geleiden over een kruispunt door het gebruik van rode, oranje-gele en groene lichten. De bepalingen van de wegcode zijn van toepassing, meer bepaald titel III, hoofdstuk I, artikelen 61 t.e.m. 64."""
 
-    typeURI = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Verkeerslicht"
+    typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Verkeerslicht'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     @abstractmethod
     def __init__(self):
-        super().__init__()
+        AIMNaamObject.__init__(self)
+        AttributeInfo.__init__(self)
 
-        self.masker = KeuzelijstField(naam="masker",
-                                      label="masker",
-                                      lijst=KlVerkeerslichtMasker(),
-                                      objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Verkeerslicht.masker",
-                                      definition="Type masker dat is aangebracht op het verkeerslicht.",
-                                      constraints="",
-                                      usagenote="",
-                                      deprecated_version="")
+        self._masker = OTLAttribuut(field=KlVerkeerslichtMasker,
+                                    naam='masker',
+                                    label='masker',
+                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Verkeerslicht.masker',
+                                    definition='Type masker dat is aangebracht op het verkeerslicht.')
+
+        self._merk = OTLAttribuut(field=KlVerkeerslichtMerk,
+                                  naam='merk',
+                                  label='merk',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Verkeerslicht.merk',
+                                  definition='Het merk van het verkeerslicht.')
+
+        self._modelnaam = OTLAttribuut(field=KlVerkeerslichtModelnaam,
+                                       naam='modelnaam',
+                                       label='modelnaam',
+                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Verkeerslicht.modelnaam',
+                                       definition='De modelnaam/product range van het verkeerslicht.')
+
+        self._vermogen = OTLAttribuut(field=KwantWrdInWatt,
+                                      naam='vermogen',
+                                      label='vermogen',
+                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Verkeerslicht.vermogen',
+                                      definition='Vermogen (Watt) van het verkeerslicht.')
+
+    @property
+    def masker(self):
         """Type masker dat is aangebracht op het verkeerslicht."""
+        return self._masker.waarde
 
-        self.merk = KeuzelijstField(naam="merk",
-                                    label="merk",
-                                    lijst=KlVerkeerslichtMerk(),
-                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Verkeerslicht.merk",
-                                    definition="Het merk van het verkeerslicht.",
-                                    constraints="",
-                                    usagenote="",
-                                    deprecated_version="")
+    @masker.setter
+    def masker(self, value):
+        self._masker.set_waarde(value, owner=self)
+
+    @property
+    def merk(self):
         """Het merk van het verkeerslicht."""
+        return self._merk.waarde
 
-        self.modelnaam = KeuzelijstField(naam="modelnaam",
-                                         label="modelnaam",
-                                         lijst=KlVerkeerslichtModelnaam(),
-                                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Verkeerslicht.modelnaam",
-                                         definition="De modelnaam/product range van het verkeerslicht.",
-                                         constraints="",
-                                         usagenote="",
-                                         deprecated_version="")
+    @merk.setter
+    def merk(self, value):
+        self._merk.set_waarde(value, owner=self)
+
+    @property
+    def modelnaam(self):
         """De modelnaam/product range van het verkeerslicht."""
+        return self._modelnaam.waarde
 
-        self.vermogen = KwantWrdInWatt()
+    @modelnaam.setter
+    def modelnaam(self, value):
+        self._modelnaam.set_waarde(value, owner=self)
+
+    @property
+    def vermogen(self):
         """Vermogen (Watt) van het verkeerslicht."""
-        self.vermogen.naam = "vermogen"
-        self.vermogen.label = "vermogen"
-        self.vermogen.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Verkeerslicht.vermogen"
-        self.vermogen.definition = "Vermogen (Watt) van het verkeerslicht."
-        self.vermogen.constraints = ""
-        self.vermogen.usagenote = ""
-        self.vermogen.deprecated_version = ""
+        return self._vermogen.waarde
+
+    @vermogen.setter
+    def vermogen(self, value):
+        self._vermogen.set_waarde(value, owner=self)

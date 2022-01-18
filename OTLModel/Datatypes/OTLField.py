@@ -15,5 +15,6 @@ class OTLField:
         if readonly:
             self.__dict__["waarde"] = readonlyValue
 
-    def default(self):
-        return self.waarde
+    @staticmethod
+    def default(value):
+        return value.waarde

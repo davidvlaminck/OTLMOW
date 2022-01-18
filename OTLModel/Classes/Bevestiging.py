@@ -1,13 +1,16 @@
 # coding=utf-8
+from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
+from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.NietDirectioneleRelatie import NietDirectioneleRelatie
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Bevestiging(NietDirectioneleRelatie):
+class Bevestiging(NietDirectioneleRelatie, AttributeInfo):
     """Deze relatie geeft aan dat twee onderdelen direct fysiek op elkaar bevestigd zijn. Dit kan zowel aan de buitenkant als aan de binnenkant zijn zoals bv. een camera aan een paal of een laagspanningsbord in een kast. Deze relatie heeft geen richting."""
 
-    typeURI = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bevestiging"
+    typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bevestiging'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        super().__init__()
+        AttributeInfo.__init__(self)
+        NietDirectioneleRelatie.__init__(self)

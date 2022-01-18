@@ -1,44 +1,63 @@
 # coding=utf-8
+from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
+from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.AIMObject import AIMObject
 from OTLModel.Datatypes.IntegerField import IntegerField
 from OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Verankeringslandhoofd(AIMObject):
+class Verankeringslandhoofd(AIMObject, AttributeInfo):
     """De verankeringsconstructie aan het einde van een cementbetonverharding."""
 
-    typeURI = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Verankeringslandhoofd"
+    typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Verankeringslandhoofd'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        super().__init__()
+        AIMObject.__init__(self)
+        AttributeInfo.__init__(self)
 
-        self.breedte = KwantWrdInMeter()
+        self._breedte = OTLAttribuut(field=KwantWrdInMeter,
+                                     naam='breedte',
+                                     label='breedte',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Verankeringslandhoofd.breedte',
+                                     definition='De breedte van het verankeringslandhoofd in meter.')
+
+        self._lengte = OTLAttribuut(field=KwantWrdInMeter,
+                                    naam='lengte',
+                                    label='lengte',
+                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Verankeringslandhoofd.lengte',
+                                    definition='De lengte van het verankeringslandhoofd in meter.')
+
+        self._ribben = OTLAttribuut(field=IntegerField,
+                                    naam='ribben',
+                                    label='ribben',
+                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Verankeringslandhoofd.ribben',
+                                    definition='Het aantal ribben van het verankeringslandhoofd.')
+
+    @property
+    def breedte(self):
         """De breedte van het verankeringslandhoofd in meter."""
-        self.breedte.naam = "breedte"
-        self.breedte.label = "breedte"
-        self.breedte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Verankeringslandhoofd.breedte"
-        self.breedte.definition = "De breedte van het verankeringslandhoofd in meter."
-        self.breedte.constraints = ""
-        self.breedte.usagenote = ""
-        self.breedte.deprecated_version = ""
+        return self._breedte.waarde
 
-        self.lengte = KwantWrdInMeter()
+    @breedte.setter
+    def breedte(self, value):
+        self._breedte.set_waarde(value, owner=self)
+
+    @property
+    def lengte(self):
         """De lengte van het verankeringslandhoofd in meter."""
-        self.lengte.naam = "lengte"
-        self.lengte.label = "lengte"
-        self.lengte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Verankeringslandhoofd.lengte"
-        self.lengte.definition = "De lengte van het verankeringslandhoofd in meter."
-        self.lengte.constraints = ""
-        self.lengte.usagenote = ""
-        self.lengte.deprecated_version = ""
+        return self._lengte.waarde
 
-        self.ribben = IntegerField(naam="ribben",
-                                   label="ribben",
-                                   objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Verankeringslandhoofd.ribben",
-                                   definition="Het aantal ribben van het verankeringslandhoofd.",
-                                   constraints="",
-                                   usagenote="",
-                                   deprecated_version="")
+    @lengte.setter
+    def lengte(self, value):
+        self._lengte.set_waarde(value, owner=self)
+
+    @property
+    def ribben(self):
         """Het aantal ribben van het verankeringslandhoofd."""
+        return self._ribben.waarde
+
+    @ribben.setter
+    def ribben(self, value):
+        self._ribben.set_waarde(value, owner=self)

@@ -46,7 +46,7 @@ class DtcGeluidstestRapportWaarden(AttributeInfo):
                                          naam='testrapport',
                                          label='testrapport',
                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#DtcGeluidstestRapport.testrapport',
-                                         usagenote_nl='Bestanden van het type xlsx of pdf.',
+                                         usagenote='Bestanden van het type xlsx of pdf.',
                                          kardinaliteit_max='*',
                                          definition='Documentbijlage met de resultaten van de test.')
 

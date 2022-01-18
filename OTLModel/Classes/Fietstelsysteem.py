@@ -1,58 +1,80 @@
 # coding=utf-8
+from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
+from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.AIMNaamObject import AIMNaamObject
 from OTLModel.Datatypes.DtcAfmetingBxlxhInMm import DtcAfmetingBxlxhInMm
 from OTLModel.Datatypes.DtcDocument import DtcDocument
-from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlFietstelsysteemMerk import KlFietstelsysteemMerk
 from OTLModel.Datatypes.KlFietstelsysteemModelnaam import KlFietstelsysteemModelnaam
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Fietstelsysteem(AIMNaamObject):
+class Fietstelsysteem(AIMNaamObject, AttributeInfo):
     """Toestel bij de fietstelinstallatie dat gegevens van detectielussen over passerende fietsers verzamelt en verwerkt."""
 
-    typeURI = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Fietstelsysteem"
+    typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Fietstelsysteem'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        super().__init__()
+        AIMNaamObject.__init__(self)
+        AttributeInfo.__init__(self)
 
-        self.afmetingen = DtcAfmetingBxlxhInMm()
+        self._afmetingen = OTLAttribuut(field=DtcAfmetingBxlxhInMm,
+                                        naam='afmetingen',
+                                        label='afmetingen',
+                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Fietstelsysteem.afmetingen',
+                                        definition='De afmetingen van het fietstelsysteem.')
+
+        self._merk = OTLAttribuut(field=KlFietstelsysteemMerk,
+                                  naam='merk',
+                                  label='merk',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Fietstelsysteem.merk',
+                                  definition='Merknaam van het fietstelsysteem.')
+
+        self._modelnaam = OTLAttribuut(field=KlFietstelsysteemModelnaam,
+                                       naam='modelnaam',
+                                       label='modelnaam',
+                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Fietstelsysteem.modelnaam',
+                                       definition='Naam van het model van het fietstelsysteem volgens de fabrikant.')
+
+        self._technischeFiche = OTLAttribuut(field=DtcDocument,
+                                             naam='technischeFiche',
+                                             label='technische fiche',
+                                             objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Fietstelsysteem.technischeFiche',
+                                             definition='Document met de technische specificaties van het fietstelsysteem.')
+
+    @property
+    def afmetingen(self):
         """De afmetingen van het fietstelsysteem."""
-        self.afmetingen.naam = "afmetingen"
-        self.afmetingen.label = "afmetingen"
-        self.afmetingen.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Fietstelsysteem.afmetingen"
-        self.afmetingen.definition = "De afmetingen van het fietstelsysteem."
-        self.afmetingen.constraints = ""
-        self.afmetingen.usagenote = ""
-        self.afmetingen.deprecated_version = ""
+        return self._afmetingen.waarde
 
-        self.merk = KeuzelijstField(naam="merk",
-                                    label="merk",
-                                    lijst=KlFietstelsysteemMerk(),
-                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Fietstelsysteem.merk",
-                                    definition="Merknaam van het fietstelsysteem.",
-                                    constraints="",
-                                    usagenote="",
-                                    deprecated_version="")
+    @afmetingen.setter
+    def afmetingen(self, value):
+        self._afmetingen.set_waarde(value, owner=self)
+
+    @property
+    def merk(self):
         """Merknaam van het fietstelsysteem."""
+        return self._merk.waarde
 
-        self.modelnaam = KeuzelijstField(naam="modelnaam",
-                                         label="modelnaam",
-                                         lijst=KlFietstelsysteemModelnaam(),
-                                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Fietstelsysteem.modelnaam",
-                                         definition="Naam van het model van het fietstelsysteem volgens de fabrikant.",
-                                         constraints="",
-                                         usagenote="",
-                                         deprecated_version="")
+    @merk.setter
+    def merk(self, value):
+        self._merk.set_waarde(value, owner=self)
+
+    @property
+    def modelnaam(self):
         """Naam van het model van het fietstelsysteem volgens de fabrikant."""
+        return self._modelnaam.waarde
 
-        self.technischeFiche = DtcDocument()
+    @modelnaam.setter
+    def modelnaam(self, value):
+        self._modelnaam.set_waarde(value, owner=self)
+
+    @property
+    def technischeFiche(self):
         """Document met de technische specificaties van het fietstelsysteem."""
-        self.technischeFiche.naam = "technischeFiche"
-        self.technischeFiche.label = "technische fiche"
-        self.technischeFiche.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Fietstelsysteem.technischeFiche"
-        self.technischeFiche.definition = "Document met de technische specificaties van het fietstelsysteem."
-        self.technischeFiche.constraints = ""
-        self.technischeFiche.usagenote = ""
-        self.technischeFiche.deprecated_version = ""
+        return self._technischeFiche.waarde
+
+    @technischeFiche.setter
+    def technischeFiche(self, value):
+        self._technischeFiche.set_waarde(value, owner=self)

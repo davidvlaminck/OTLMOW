@@ -1,28 +1,12 @@
 # coding=utf-8
-from OTLModel.Datatypes.KwantWrd import KwantWrd
 from OTLModel.Datatypes.StringField import StringField
 
 
-# Generated with OTLPrimitiveDatatypeCreator. To modify: extend, do not edit
-class DteIPv4Adres(KwantWrd):
+class DteIPv4Adres(StringField):
     """Beschrijft een ip-adres volgens de ipv4 specificatie."""
-
-    def __init__(self, waarde=None):
-        self.waardeVeld = StringField(naam="waarde",
-                                      label="waarde",
-                                      objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DteIPv4Adres.waarde",
-                                      definition="De string die het IPv4 adres representeert.",
-                                      constraints="",
-                                      usagenote="Het formaat is een decimale notatie bv. 91.198.174.232",
-                                      deprecated_version="")
-        """De string die het IPv4 adres representeert."""
-
-        super().__init__(naam="DteIPv4Adres",
-                         label="IPv4-adres",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DteIPv4Adres",
-                         definition="Beschrijft een ip-adres volgens de ipv4 specificatie.",
-                         usagenote="",
-                         deprecated_version="",
-                         waardeVeld=self.waardeVeld,
-                         eenheidVeld=None,
-                         waarde=waarde)
+    naam = 'DteIPv4Adres'
+    label = 'IPv4-adres'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DteIPv4Adres'
+    definition = 'Beschrijft een ip-adres volgens de ipv4 specificatie.'
+    usagenote = ''
+    deprecated_version = ''

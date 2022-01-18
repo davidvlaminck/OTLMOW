@@ -12,7 +12,7 @@ class DtcVegetatieSoortnaamWaarden(AttributeInfo):
                                   naam='code',
                                   label='code',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcVegetatieSoortnaam.code',
-                                  usagenote_nl='De GBIF code is een unieke gestandaardiseerde code uitgegeven door het GBIF (the Global Biodiversity Information Facility - GBIF.org)',
+                                  usagenote='De GBIF code is een unieke gestandaardiseerde code uitgegeven door het GBIF (the Global Biodiversity Information Facility - GBIF.org)',
                                   definition='De unieke identificator voor de soort van het vegetatie-element.')
 
         self._soortnaamNederlands = OTLAttribuut(field=StringField,

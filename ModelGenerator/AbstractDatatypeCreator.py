@@ -189,13 +189,13 @@ class AbstractDatatypeCreator(ABC):
         datablock.append(''),
         datablock.append(f'# Generated with {self.__class__.__name__}. To modify: extend, do not edit')
         datablock.append(f'class {osloDatatypeComplex.name}({ComplexOrUnionTypeField}, AttributeInfo):'),
-        datablock.append(f'    """{osloDatatypeComplex.definition_nl}"""'),
+        datablock.append(f'    """{osloDatatypeComplex.definition}"""'),
         datablock.append(f'    naam = {wrap_in_quotes(osloDatatypeComplex.name)}'),
-        datablock.append(f'    label = {wrap_in_quotes(osloDatatypeComplex.label_nl)}'),
+        datablock.append(f'    label = {wrap_in_quotes(osloDatatypeComplex.label)}'),
         datablock.append(f'    objectUri = {wrap_in_quotes(osloDatatypeComplex.objectUri)}'),
-        datablock.append(f'    definition = {wrap_in_quotes(osloDatatypeComplex.definition_nl)}'),
-        if osloDatatypeComplex.usagenote_nl != '':
-            datablock.append(f'    usagenote_nl = {wrap_in_quotes(osloDatatypeComplex.usagenote_nl)}'),
+        datablock.append(f'    definition = {wrap_in_quotes(osloDatatypeComplex.definition)}'),
+        if osloDatatypeComplex.usagenote != '':
+            datablock.append(f'    usagenote = {wrap_in_quotes(osloDatatypeComplex.usagenote)}'),
         if osloDatatypeComplex.deprecated_version != '':
             datablock.append(f'    deprecated_version = {wrap_in_quotes(osloDatatypeComplex.deprecated_version)}'),
         datablock.append(f'    waardeObject = {osloDatatypeComplex.name}{WaardenString}'),
@@ -217,10 +217,10 @@ class AbstractDatatypeCreator(ABC):
 
             datablock.append(f'        self._{attribuut.name} = OTLAttribuut(field={fieldName},')
             datablock.append(f'{whitepace}naam={wrap_in_quotes(attribuut.name)},')
-            datablock.append(f'{whitepace}label={wrap_in_quotes(attribuut.label_nl)},')
+            datablock.append(f'{whitepace}label={wrap_in_quotes(attribuut.label)},')
             datablock.append(f'{whitepace}objectUri={wrap_in_quotes(attribuut.objectUri)},')
-            if attribuut.usagenote_nl != '':
-                datablock.append(f'{whitepace}usagenote_nl={wrap_in_quotes(attribuut.usagenote_nl)},')
+            if attribuut.usagenote != '':
+                datablock.append(f'{whitepace}usagenote={wrap_in_quotes(attribuut.usagenote)},')
             if attribuut.deprecated_version != '':
                 datablock.append(f'{whitepace}deprecated_version={wrap_in_quotes(attribuut.deprecated_version)},')
             if attribuut.constraints != '':
@@ -229,18 +229,24 @@ class AbstractDatatypeCreator(ABC):
                 datablock.append(f'{whitepace}kardinaliteit_min={wrap_in_quotes(attribuut.kardinaliteit_min)},')
             if attribuut.kardinaliteit_max != '1':
                 datablock.append(f'{whitepace}kardinaliteit_max={wrap_in_quotes(attribuut.kardinaliteit_max)},')
-            datablock.append(f'{whitepace}definition={wrap_in_quotes(attribuut.definition_nl)})')
+            definitie = wrap_in_quotes(attribuut.definition.replace('\n', ''))
+            datablock.append(f'{whitepace}definition={definitie})')
             datablock.append('')
+
+            ownerself = ''
+            if forClassUse:
+                ownerself = ', owner=self'
 
             prop_datablock.append(f'    @property'),
             prop_datablock.append(f'    def {attribuut.name}(self):'),
-            prop_datablock.append(f'        """{attribuut.definition_nl}"""'),
+            prop_datablock.append(f'        """{attribuut.definition}"""'),
             prop_datablock.append(f'        return self._{attribuut.name}.waarde'),
             prop_datablock.append(f''),
             if not forUnionTypeUse:
                 prop_datablock.append(f'    @{attribuut.name}.setter'),
                 prop_datablock.append(f'    def {attribuut.name}(self, value):'),
-                prop_datablock.append(f'        self._{attribuut.name}.set_waarde(value)'),
+
+                prop_datablock.append(f'        self._{attribuut.name}.set_waarde(value{ownerself})'),
                 prop_datablock.append(f'')
 
         for propline in prop_datablock:

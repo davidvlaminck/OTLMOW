@@ -21,9 +21,9 @@ class KwantWrdInKiloNewtonEenheid(KwantWrdEenheid):
 
 # Generated with OTLPrimitiveDatatypeCreator. To modify: extend, do not edit
 class KwantWrdInKiloNewton(FloatOrDecimalField, KwantWrd):
-    naam = 'waarde'
-    label = 'waarde'
-    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInKiloNewton.waarde'
-    definition = 'Bevat een getal die bij het datatype hoort.'
+    naam = 'KwantWrdInKiloNewton'
+    label = 'Kwantitatieve waarde in kN'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInKiloNewton'
+    definition = 'Een kwantitatieve waarde die een getal in KiloNewton uitdrukt.'
     eenheid = KwantWrdInKiloNewtonEenheid()
 

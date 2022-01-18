@@ -21,9 +21,9 @@ class KwantWrdInSecondeEenheid(KwantWrdEenheid):
 
 # Generated with OTLPrimitiveDatatypeCreator. To modify: extend, do not edit
 class KwantWrdInSeconde(NonNegIntegerField, KwantWrd):
-    naam = 'waarde'
-    label = 'waarde'
-    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInSeconde.waarde'
-    definition = 'Bevat een getal die bij het datatype hoort.'
+    naam = 'KwantWrdInSeconde'
+    label = 'Kwantitatieve waarde in seconde'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInSeconde'
+    definition = 'Een kwantitatieve waarde die een getal in seconde uitdrukt.'
     eenheid = KwantWrdInSecondeEenheid()
 

@@ -1,38 +1,49 @@
 # coding=utf-8
+from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
+from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.AIMObject import AIMObject
-from OTLModel.Datatypes.KardinaliteitField import KardinaliteitField
-from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlBeheerBoomvorm import KlBeheerBoomvorm
 from OTLModel.Datatypes.KwantWrdInVierkanteMeter import KwantWrdInVierkanteMeter
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class BeheerBoomvorm(AIMObject):
+class BeheerBoomvorm(AIMObject, AttributeInfo):
     """Het beheerobject voor de solitaire boom."""
 
-    typeURI = "https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#BeheerBoomvorm"
+    typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#BeheerBoomvorm'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        super().__init__()
+        AIMObject.__init__(self)
+        AttributeInfo.__init__(self)
 
-        beheeroptieField = KeuzelijstField(naam="beheeroptie",
-                                           label="beheeroptie",
-                                           lijst=KlBeheerBoomvorm(),
-                                           objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#BeheerBoomvorm.beheeroptie",
-                                           definition="Behandelingswijzen van bomen.",
-                                           constraints="",
-                                           usagenote="",
-                                           deprecated_version="")
-        self.beheeroptie = KardinaliteitField(minKardinaliteit="1", maxKardinaliteit="*", fieldToMultiply=beheeroptieField)
+        self._beheeroptie = OTLAttribuut(field=KlBeheerBoomvorm,
+                                         naam='beheeroptie',
+                                         label='beheeroptie',
+                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#BeheerBoomvorm.beheeroptie',
+                                         kardinaliteit_max='*',
+                                         definition='Behandelingswijzen van bomen.')
+
+        self._oppervlakte = OTLAttribuut(field=KwantWrdInVierkanteMeter,
+                                         naam='oppervlakte',
+                                         label='oppervlakte',
+                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#BeheerBoomvorm.oppervlakte',
+                                         definition='De oppervlakte in vierkante meter van de te behandelen grond rond de boom.')
+
+    @property
+    def beheeroptie(self):
         """Behandelingswijzen van bomen."""
+        return self._beheeroptie.waarde
 
-        self.oppervlakte = KwantWrdInVierkanteMeter()
+    @beheeroptie.setter
+    def beheeroptie(self, value):
+        self._beheeroptie.set_waarde(value, owner=self)
+
+    @property
+    def oppervlakte(self):
         """De oppervlakte in vierkante meter van de te behandelen grond rond de boom."""
-        self.oppervlakte.naam = "oppervlakte"
-        self.oppervlakte.label = "oppervlakte"
-        self.oppervlakte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#BeheerBoomvorm.oppervlakte"
-        self.oppervlakte.definition = "De oppervlakte in vierkante meter van de te behandelen grond rond de boom."
-        self.oppervlakte.constraints = ""
-        self.oppervlakte.usagenote = ""
-        self.oppervlakte.deprecated_version = ""
+        return self._oppervlakte.waarde
+
+    @oppervlakte.setter
+    def oppervlakte(self, value):
+        self._oppervlakte.set_waarde(value, owner=self)

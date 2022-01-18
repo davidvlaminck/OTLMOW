@@ -1,7 +1,8 @@
 # coding=utf-8
+from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
+from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.Markering import Markering
 from OTLModel.Classes.AOWSType import AOWSType
-from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlGekleurdWVCode import KlGekleurdWVCode
 from OTLModel.Datatypes.KlGekleurdWVSoort import KlGekleurdWVSoort
 from OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter
@@ -9,62 +10,88 @@ from OTLModel.Datatypes.KwantWrdInVierkanteMeter import KwantWrdInVierkanteMeter
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class GekleurdWegvlakMarkering(Markering, AOWSType):
+class GekleurdWegvlakMarkering(Markering, AOWSType, AttributeInfo):
     """Een markering van een wegdeel aangebracht om het verkeer te waarschuwen, informeren of regelen."""
 
-    typeURI = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#GekleurdWegvlakMarkering"
+    typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#GekleurdWegvlakMarkering'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        Markering.__init__(self)
         AOWSType.__init__(self)
+        AttributeInfo.__init__(self)
+        Markering.__init__(self)
 
-        self.breedte = KwantWrdInMeter()
+        self._breedte = OTLAttribuut(field=KwantWrdInMeter,
+                                     naam='breedte',
+                                     label='breedte',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#GekleurdWegvlakMarkering.breedte',
+                                     definition='De breedte van de markering in meter.')
+
+        self._code = OTLAttribuut(field=KlGekleurdWVCode,
+                                  naam='code',
+                                  label='code',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#GekleurdWegvlakMarkering.code',
+                                  definition='De  (COPRO/BENOR) code van de gekleurde wegvlak markering.')
+
+        self._lengte = OTLAttribuut(field=KwantWrdInMeter,
+                                    naam='lengte',
+                                    label='lengte',
+                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#GekleurdWegvlakMarkering.lengte',
+                                    definition='De lengte van de markering in meter.')
+
+        self._oppervlakte = OTLAttribuut(field=KwantWrdInVierkanteMeter,
+                                         naam='oppervlakte',
+                                         label='oppervlakte',
+                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#GekleurdWegvlakMarkering.oppervlakte',
+                                         definition='De oppervlakte van het gekleurd wegdeel in vierkante meter.')
+
+        self._soortOmschrijving = OTLAttribuut(field=KlGekleurdWVSoort,
+                                               naam='soortOmschrijving',
+                                               label='soort omschrijving',
+                                               objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#GekleurdWegvlakMarkering.soortOmschrijving',
+                                               definition='De soort en tevens omschrijving van de figuratie markering.')
+
+    @property
+    def breedte(self):
         """De breedte van de markering in meter."""
-        self.breedte.naam = "breedte"
-        self.breedte.label = "breedte"
-        self.breedte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#GekleurdWegvlakMarkering.breedte"
-        self.breedte.definition = "De breedte van de markering in meter."
-        self.breedte.constraints = ""
-        self.breedte.usagenote = ""
-        self.breedte.deprecated_version = ""
+        return self._breedte.waarde
 
-        self.code = KeuzelijstField(naam="code",
-                                    label="code",
-                                    lijst=KlGekleurdWVCode(),
-                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#GekleurdWegvlakMarkering.code",
-                                    definition="De  (COPRO/BENOR) code van de gekleurde wegvlak markering.",
-                                    constraints="",
-                                    usagenote="",
-                                    deprecated_version="")
+    @breedte.setter
+    def breedte(self, value):
+        self._breedte.set_waarde(value, owner=self)
+
+    @property
+    def code(self):
         """De  (COPRO/BENOR) code van de gekleurde wegvlak markering."""
+        return self._code.waarde
 
-        self.lengte = KwantWrdInMeter()
+    @code.setter
+    def code(self, value):
+        self._code.set_waarde(value, owner=self)
+
+    @property
+    def lengte(self):
         """De lengte van de markering in meter."""
-        self.lengte.naam = "lengte"
-        self.lengte.label = "lengte"
-        self.lengte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#GekleurdWegvlakMarkering.lengte"
-        self.lengte.definition = "De lengte van de markering in meter."
-        self.lengte.constraints = ""
-        self.lengte.usagenote = ""
-        self.lengte.deprecated_version = ""
+        return self._lengte.waarde
 
-        self.oppervlakte = KwantWrdInVierkanteMeter()
+    @lengte.setter
+    def lengte(self, value):
+        self._lengte.set_waarde(value, owner=self)
+
+    @property
+    def oppervlakte(self):
         """De oppervlakte van het gekleurd wegdeel in vierkante meter."""
-        self.oppervlakte.naam = "oppervlakte"
-        self.oppervlakte.label = "oppervlakte"
-        self.oppervlakte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#GekleurdWegvlakMarkering.oppervlakte"
-        self.oppervlakte.definition = "De oppervlakte van het gekleurd wegdeel in vierkante meter."
-        self.oppervlakte.constraints = ""
-        self.oppervlakte.usagenote = ""
-        self.oppervlakte.deprecated_version = ""
+        return self._oppervlakte.waarde
 
-        self.soortOmschrijving = KeuzelijstField(naam="soortOmschrijving",
-                                                 label="soort omschrijving",
-                                                 lijst=KlGekleurdWVSoort(),
-                                                 objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#GekleurdWegvlakMarkering.soortOmschrijving",
-                                                 definition="De soort en tevens omschrijving van de figuratie markering.",
-                                                 constraints="",
-                                                 usagenote="",
-                                                 deprecated_version="")
+    @oppervlakte.setter
+    def oppervlakte(self, value):
+        self._oppervlakte.set_waarde(value, owner=self)
+
+    @property
+    def soortOmschrijving(self):
         """De soort en tevens omschrijving van de figuratie markering."""
+        return self._soortOmschrijving.waarde
+
+    @soortOmschrijving.setter
+    def soortOmschrijving(self, value):
+        self._soortOmschrijving.set_waarde(value, owner=self)

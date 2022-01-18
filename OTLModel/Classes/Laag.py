@@ -1,59 +1,81 @@
 # coding=utf-8
+from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
+from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from abc import abstractmethod
 from OTLModel.Classes.AIMObject import AIMObject
-from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlLaagRol import KlLaagRol
 from OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter
 from OTLModel.Datatypes.KwantWrdInVierkanteMeter import KwantWrdInVierkanteMeter
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Laag(AIMObject):
+class Laag(AIMObject, AttributeInfo):
     """Abstracte voor de gemeenschappelijke eigenschappen van de onderliggende verhardings- en funderings-onderdelen."""
 
-    typeURI = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Laag"
+    typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Laag'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     @abstractmethod
     def __init__(self):
-        super().__init__()
+        AIMObject.__init__(self)
+        AttributeInfo.__init__(self)
 
-        self.breedte = KwantWrdInMeter()
+        self._breedte = OTLAttribuut(field=KwantWrdInMeter,
+                                     naam='breedte',
+                                     label='breedte',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Laag.breedte',
+                                     definition='De (gemiddelde) breedte van een laag in meter. Dit kan ook de nominale breedte zijn afhankelijk van de laag en situatie.')
+
+        self._laagRol = OTLAttribuut(field=KlLaagRol,
+                                     naam='laagRol',
+                                     label='laagrol',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Laag.laagRol',
+                                     definition='De functie die de laag vervult in de verticale opbouw.')
+
+        self._lengte = OTLAttribuut(field=KwantWrdInMeter,
+                                    naam='lengte',
+                                    label='lengte',
+                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Laag.lengte',
+                                    definition='De (gemiddelde) lengte van een laag in meter. Dit kan ook de nominale lengte zijn afhankelijk van de laag en situatie.')
+
+        self._oppervlakte = OTLAttribuut(field=KwantWrdInVierkanteMeter,
+                                         naam='oppervlakte',
+                                         label='oppervlakte',
+                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Laag.oppervlakte',
+                                         definition='De oppervlakte van een laag in vierkante meter.')
+
+    @property
+    def breedte(self):
         """De (gemiddelde) breedte van een laag in meter. Dit kan ook de nominale breedte zijn afhankelijk van de laag en situatie."""
-        self.breedte.naam = "breedte"
-        self.breedte.label = "breedte"
-        self.breedte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Laag.breedte"
-        self.breedte.definition = "De (gemiddelde) breedte van een laag in meter. Dit kan ook de nominale breedte zijn afhankelijk van de laag en situatie."
-        self.breedte.constraints = ""
-        self.breedte.usagenote = ""
-        self.breedte.deprecated_version = ""
+        return self._breedte.waarde
 
-        self.laagRol = KeuzelijstField(naam="laagRol",
-                                       label="laagrol",
-                                       lijst=KlLaagRol(),
-                                       objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Laag.laagRol",
-                                       definition="De functie die de laag vervult in de verticale opbouw.",
-                                       constraints="",
-                                       usagenote="",
-                                       deprecated_version="")
+    @breedte.setter
+    def breedte(self, value):
+        self._breedte.set_waarde(value, owner=self)
+
+    @property
+    def laagRol(self):
         """De functie die de laag vervult in de verticale opbouw."""
+        return self._laagRol.waarde
 
-        self.lengte = KwantWrdInMeter()
+    @laagRol.setter
+    def laagRol(self, value):
+        self._laagRol.set_waarde(value, owner=self)
+
+    @property
+    def lengte(self):
         """De (gemiddelde) lengte van een laag in meter. Dit kan ook de nominale lengte zijn afhankelijk van de laag en situatie."""
-        self.lengte.naam = "lengte"
-        self.lengte.label = "lengte"
-        self.lengte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Laag.lengte"
-        self.lengte.definition = "De (gemiddelde) lengte van een laag in meter. Dit kan ook de nominale lengte zijn afhankelijk van de laag en situatie."
-        self.lengte.constraints = ""
-        self.lengte.usagenote = ""
-        self.lengte.deprecated_version = ""
+        return self._lengte.waarde
 
-        self.oppervlakte = KwantWrdInVierkanteMeter()
+    @lengte.setter
+    def lengte(self, value):
+        self._lengte.set_waarde(value, owner=self)
+
+    @property
+    def oppervlakte(self):
         """De oppervlakte van een laag in vierkante meter."""
-        self.oppervlakte.naam = "oppervlakte"
-        self.oppervlakte.label = "oppervlakte"
-        self.oppervlakte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Laag.oppervlakte"
-        self.oppervlakte.definition = "De oppervlakte van een laag in vierkante meter."
-        self.oppervlakte.constraints = ""
-        self.oppervlakte.usagenote = ""
-        self.oppervlakte.deprecated_version = ""
+        return self._oppervlakte.waarde
+
+    @oppervlakte.setter
+    def oppervlakte(self, value):
+        self._oppervlakte.set_waarde(value, owner=self)

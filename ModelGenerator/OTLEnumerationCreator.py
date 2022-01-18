@@ -34,11 +34,11 @@ class OTLEnumerationCreator(AbstractDatatypeCreator):
                      '',
                      f'# Generated with {self.__class__.__name__}. To modify: extend, do not edit',
                      f'class {osloEnumeration.name}(KeuzelijstField):',
-                     f'    """{osloEnumeration.definition_nl}"""',
+                     f'    """{osloEnumeration.definition}"""',
                      f'    naam = {wrap_in_quotes(osloEnumeration.name)}',
-                     f'    label = {wrap_in_quotes(osloEnumeration.label_nl)}',
+                     f'    label = {wrap_in_quotes(osloEnumeration.label)}',
                      f'    objectUri = {wrap_in_quotes(osloEnumeration.objectUri)}',
-                     f'    definition = {wrap_in_quotes(osloEnumeration.definition_nl)}']
+                     f'    definition = {wrap_in_quotes(osloEnumeration.definition)}']
         if osloEnumeration.deprecated_version != '':
             datablock.append(f'    deprecated_version = {wrap_in_quotes(osloEnumeration.deprecated_version)}')
         datablock.append(f'    codelist = {wrap_in_quotes(osloEnumeration.codelist)}')
@@ -50,7 +50,7 @@ class OTLEnumerationCreator(AbstractDatatypeCreator):
             datablock.append(f"        '{waarde.invulwaarde}': KeuzelijstWaarde(invulwaarde='{waarde.invulwaarde}',")
             datablock.append(f"{whitespace}label='{waarde.label}',")
             if waarde.definitie != '':
-                datablock.append(f"{whitespace}definitie='{waarde.definitie}',")
+                datablock.append(f"{whitespace}definitie={wrap_in_quotes(waarde.definitie)},")
             datablock.append(f"{whitespace}objectUri='{waarde.objectUri}'),")
 
         datablock[-1] = datablock[-1][:-1]

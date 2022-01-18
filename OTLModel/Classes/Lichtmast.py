@@ -1,10 +1,11 @@
 # coding=utf-8
+from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
+from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.AIMNaamObject import AIMNaamObject
 from OTLModel.Classes.EMDraagconstructie import EMDraagconstructie
 from OTLModel.Datatypes.BooleanField import BooleanField
 from OTLModel.Datatypes.DteKleurRAL import DteKleurRAL
 from OTLModel.Datatypes.DtuLichtmastMasthoogte import DtuLichtmastMasthoogte
-from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlDraagConstrBeschermlaag import KlDraagConstrBeschermlaag
 from OTLModel.Datatypes.KlDraagconstructieDwarsdoorsnede import KlDraagconstructieDwarsdoorsnede
 from OTLModel.Datatypes.KlLichtmastBotsNormering import KlLichtmastBotsNormering
@@ -14,100 +15,148 @@ from OTLModel.Datatypes.StringField import StringField
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Lichtmast(AIMNaamObject, EMDraagconstructie):
+class Lichtmast(AIMNaamObject, EMDraagconstructie, AttributeInfo):
     """Paal waarop een verlichtingstoestel of andere toestellen zoals een camera bevestigd kunnen worden met uitzondering van wegverlichting. Omvat het deurtje, klemmenblok, montagekastje, bevestigingsmaterialen (bv. voetplaten) en fundering of verankeringsmassief. Indien de paal gebruikt wordt voor wegverlichting moet het objecttype WVLichtmast gebruikt worden."""
 
-    typeURI = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Lichtmast"
+    typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Lichtmast'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
         AIMNaamObject.__init__(self)
+        AttributeInfo.__init__(self)
         EMDraagconstructie.__init__(self)
 
-        self.beschermlaag = KeuzelijstField(naam="beschermlaag",
-                                            label="beschermlaag",
-                                            lijst=KlDraagConstrBeschermlaag(),
-                                            objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Lichtmast.beschermlaag",
-                                            definition="Beschermlaag van de lichtmast.",
-                                            constraints="",
-                                            usagenote="",
-                                            deprecated_version="")
+        self._beschermlaag = OTLAttribuut(field=KlDraagConstrBeschermlaag,
+                                          naam='beschermlaag',
+                                          label='beschermlaag',
+                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Lichtmast.beschermlaag',
+                                          definition='Beschermlaag van de lichtmast.')
+
+        self._dwarsdoorsnede = OTLAttribuut(field=KlDraagconstructieDwarsdoorsnede,
+                                            naam='dwarsdoorsnede',
+                                            label='dwarsdoorsnede',
+                                            objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Lichtmast.dwarsdoorsnede',
+                                            definition='De vorm van de dwarsdoorsnede van de lichtmast.')
+
+        self._heeftStopcontact = OTLAttribuut(field=BooleanField,
+                                              naam='heeftStopcontact',
+                                              label='heeft stopcontact aanwezig',
+                                              objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Lichtmast.heeftStopcontact',
+                                              definition='Geeft aan of er een stopcontact aanwezig is op de lichtmast.')
+
+        self._kleur = OTLAttribuut(field=DteKleurRAL,
+                                   naam='kleur',
+                                   label='kleur',
+                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Lichtmast.kleur',
+                                   definition='RAL kleur van de lichtmast.')
+
+        self._leverancier = OTLAttribuut(field=KlLichtmastLeverancier,
+                                         naam='leverancier',
+                                         label='leverancier',
+                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Lichtmast.leverancier',
+                                         definition='Leverancier van de lichtmast.')
+
+        self._masthoogte = OTLAttribuut(field=DtuLichtmastMasthoogte,
+                                        naam='masthoogte',
+                                        label='masthoogte',
+                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Lichtmast.masthoogte',
+                                        definition='Hoogte (in meter) van de lichtmast.')
+
+        self._masttype = OTLAttribuut(field=KlLichtmastMasttype,
+                                      naam='masttype',
+                                      label='masttype',
+                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Lichtmast.masttype',
+                                      definition='Type mast bv. rechte metalen paal, rechte metalen paal op voet, kreukelpaal met arm,...')
+
+        self._normeringBotsvriendelijk = OTLAttribuut(field=KlLichtmastBotsNormering,
+                                                      naam='normeringBotsvriendelijk',
+                                                      label='normering botsvriendelijk',
+                                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Lichtmast.normeringBotsvriendelijk',
+                                                      definition='Categorie in normering botsvriendelijkheid.')
+
+        self._specialeUitvoeringswijze = OTLAttribuut(field=StringField,
+                                                      naam='specialeUitvoeringswijze',
+                                                      label='speciale uitvoeringswijze',
+                                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Lichtmast.specialeUitvoeringswijze',
+                                                      definition='Omschrijving van de speciale uitvoeringswijze van de lichtmast indien van toepassing.')
+
+    @property
+    def beschermlaag(self):
         """Beschermlaag van de lichtmast."""
+        return self._beschermlaag.waarde
 
-        self.dwarsdoorsnede = KeuzelijstField(naam="dwarsdoorsnede",
-                                              label="dwarsdoorsnede",
-                                              lijst=KlDraagconstructieDwarsdoorsnede(),
-                                              objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Lichtmast.dwarsdoorsnede",
-                                              definition="De vorm van de dwarsdoorsnede van de lichtmast.",
-                                              constraints="",
-                                              usagenote="",
-                                              deprecated_version="")
+    @beschermlaag.setter
+    def beschermlaag(self, value):
+        self._beschermlaag.set_waarde(value, owner=self)
+
+    @property
+    def dwarsdoorsnede(self):
         """De vorm van de dwarsdoorsnede van de lichtmast."""
+        return self._dwarsdoorsnede.waarde
 
-        self.heeftStopcontact = BooleanField(naam="heeftStopcontact",
-                                             label="heeft stopcontact aanwezig",
-                                             objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Lichtmast.heeftStopcontact",
-                                             definition="Geeft aan of er een stopcontact aanwezig is op de lichtmast.",
-                                             constraints="",
-                                             usagenote="",
-                                             deprecated_version="")
+    @dwarsdoorsnede.setter
+    def dwarsdoorsnede(self, value):
+        self._dwarsdoorsnede.set_waarde(value, owner=self)
+
+    @property
+    def heeftStopcontact(self):
         """Geeft aan of er een stopcontact aanwezig is op de lichtmast."""
+        return self._heeftStopcontact.waarde
 
-        self.kleur = DteKleurRAL()
+    @heeftStopcontact.setter
+    def heeftStopcontact(self, value):
+        self._heeftStopcontact.set_waarde(value, owner=self)
+
+    @property
+    def kleur(self):
         """RAL kleur van de lichtmast."""
-        self.kleur.naam = "kleur"
-        self.kleur.label = "kleur"
-        self.kleur.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Lichtmast.kleur"
-        self.kleur.definition = "RAL kleur van de lichtmast."
-        self.kleur.constraints = ""
-        self.kleur.usagenote = ""
-        self.kleur.deprecated_version = ""
+        return self._kleur.waarde
 
-        self.leverancier = KeuzelijstField(naam="leverancier",
-                                           label="leverancier",
-                                           lijst=KlLichtmastLeverancier(),
-                                           objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Lichtmast.leverancier",
-                                           definition="Leverancier van de lichtmast.",
-                                           constraints="",
-                                           usagenote="",
-                                           deprecated_version="")
+    @kleur.setter
+    def kleur(self, value):
+        self._kleur.set_waarde(value, owner=self)
+
+    @property
+    def leverancier(self):
         """Leverancier van de lichtmast."""
+        return self._leverancier.waarde
 
-        self.masthoogte = DtuLichtmastMasthoogte()
+    @leverancier.setter
+    def leverancier(self, value):
+        self._leverancier.set_waarde(value, owner=self)
+
+    @property
+    def masthoogte(self):
         """Hoogte (in meter) van de lichtmast."""
-        self.masthoogte.naam = "masthoogte"
-        self.masthoogte.label = "masthoogte"
-        self.masthoogte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Lichtmast.masthoogte"
-        self.masthoogte.definition = "Hoogte (in meter) van de lichtmast."
-        self.masthoogte.constraints = ""
-        self.masthoogte.usagenote = ""
-        self.masthoogte.deprecated_version = ""
+        return self._masthoogte.waarde
 
-        self.masttype = KeuzelijstField(naam="masttype",
-                                        label="masttype",
-                                        lijst=KlLichtmastMasttype(),
-                                        objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Lichtmast.masttype",
-                                        definition="Type mast bv. rechte metalen paal, rechte metalen paal op voet, kreukelpaal met arm,...",
-                                        constraints="",
-                                        usagenote="",
-                                        deprecated_version="")
+    @masthoogte.setter
+    def masthoogte(self, value):
+        self._masthoogte.set_waarde(value, owner=self)
+
+    @property
+    def masttype(self):
         """Type mast bv. rechte metalen paal, rechte metalen paal op voet, kreukelpaal met arm,..."""
+        return self._masttype.waarde
 
-        self.normeringBotsvriendelijk = KeuzelijstField(naam="normeringBotsvriendelijk",
-                                                        label="normering botsvriendelijk",
-                                                        lijst=KlLichtmastBotsNormering(),
-                                                        objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Lichtmast.normeringBotsvriendelijk",
-                                                        definition="Categorie in normering botsvriendelijkheid.",
-                                                        constraints="",
-                                                        usagenote="",
-                                                        deprecated_version="")
+    @masttype.setter
+    def masttype(self, value):
+        self._masttype.set_waarde(value, owner=self)
+
+    @property
+    def normeringBotsvriendelijk(self):
         """Categorie in normering botsvriendelijkheid."""
+        return self._normeringBotsvriendelijk.waarde
 
-        self.specialeUitvoeringswijze = StringField(naam="specialeUitvoeringswijze",
-                                                    label="speciale uitvoeringswijze",
-                                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Lichtmast.specialeUitvoeringswijze",
-                                                    definition="Omschrijving van de speciale uitvoeringswijze van de lichtmast indien van toepassing.",
-                                                    constraints="",
-                                                    usagenote="",
-                                                    deprecated_version="")
+    @normeringBotsvriendelijk.setter
+    def normeringBotsvriendelijk(self, value):
+        self._normeringBotsvriendelijk.set_waarde(value, owner=self)
+
+    @property
+    def specialeUitvoeringswijze(self):
         """Omschrijving van de speciale uitvoeringswijze van de lichtmast indien van toepassing."""
+        return self._specialeUitvoeringswijze.waarde
+
+    @specialeUitvoeringswijze.setter
+    def specialeUitvoeringswijze(self, value):
+        self._specialeUitvoeringswijze.set_waarde(value, owner=self)

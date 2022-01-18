@@ -1,6 +1,6 @@
 import os
 import unittest
-from unittest import mock
+from unittest import mock, TestCase
 from unittest.mock import patch
 
 from Loggers.NoneLogger import NoneLogger
@@ -120,7 +120,7 @@ class OTLPrimitiveDatatypeCreatorTests(unittest.TestCase):
         logger = NoneLogger()
         collector = OSLOCollector(mock)
         creator = OTLPrimitiveDatatypeCreator(logger, collector)
-        osloDatatypePrimitive = OSLODatatypePrimitive(name='name', objectUri='', definition_nl='', label_nl='', usagenote_nl='',
+        osloDatatypePrimitive = OSLODatatypePrimitive(name='name', objectUri='', definition='', label='', usagenote='',
                                                       deprecated_version='')
 
         with self.assertRaises(ValueError) as exception_empty_uri:
@@ -131,8 +131,8 @@ class OTLPrimitiveDatatypeCreatorTests(unittest.TestCase):
         logger = NoneLogger()
         collector = OSLOCollector(mock)
         creator = OTLPrimitiveDatatypeCreator(logger, collector)
-        osloDatatypePrimitive = OSLODatatypePrimitive(name='name', objectUri='Bad objectUri', definition_nl='', label_nl='',
-                                                      usagenote_nl='',
+        osloDatatypePrimitive = OSLODatatypePrimitive(name='name', objectUri='Bad objectUri', definition='', label='',
+                                                      usagenote='',
                                                       deprecated_version='')
 
         with self.assertRaises(ValueError) as exception_bad_uri:
@@ -145,7 +145,7 @@ class OTLPrimitiveDatatypeCreatorTests(unittest.TestCase):
         creator = OTLPrimitiveDatatypeCreator(logger, collector)
         osloDatatypePrimitive = OSLODatatypePrimitive(name='',
                                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrd',
-                                                      definition_nl='', label_nl='', usagenote_nl='',
+                                                      definition='', label='', usagenote='',
                                                       deprecated_version='')
 
         with self.assertRaises(ValueError) as exception_bad_name:
@@ -163,8 +163,8 @@ class OTLPrimitiveDatatypeCreatorTests(unittest.TestCase):
 
     def test_ValidOSLODatatypePrimitiveButNoResult(self):
         boolean_primitive = OSLODatatypePrimitive(name="Boolean", objectUri="http://www.w3.org/2001/XMLSchema#boolean",
-                                                  definition_nl="Beschrijft een boolean volgens http://www.w3.org/2001/XMLSchema#boolean.",
-                                                  label_nl="Boolean", usagenote_nl="https://www.w3.org/TR/xmlschema-2/#boolean",
+                                                  definition="Beschrijft een boolean volgens http://www.w3.org/2001/XMLSchema#boolean.",
+                                                  label="Boolean", usagenote="https://www.w3.org/TR/xmlschema-2/#boolean",
                                                   deprecated_version="")
         logger = NoneLogger()
         collector = OSLOCollector(mock)

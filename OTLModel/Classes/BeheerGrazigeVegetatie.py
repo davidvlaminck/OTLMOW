@@ -1,70 +1,97 @@
 # coding=utf-8
+from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
+from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.AIMObject import AIMObject
-from OTLModel.Datatypes.KardinaliteitField import KardinaliteitField
 from OTLModel.Datatypes.BooleanField import BooleanField
 from OTLModel.Datatypes.DtcMaaien import DtcMaaien
-from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlBeheerGrazigeVegetatie import KlBeheerGrazigeVegetatie
 from OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter
 from OTLModel.Datatypes.KwantWrdInVierkanteMeter import KwantWrdInVierkanteMeter
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class BeheerGrazigeVegetatie(AIMObject):
+class BeheerGrazigeVegetatie(AIMObject, AttributeInfo):
     """Het beheerobject voor de grazige vegetatie."""
 
-    typeURI = "https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#BeheerGrazigeVegetatie"
+    typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#BeheerGrazigeVegetatie'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        super().__init__()
+        AIMObject.__init__(self)
+        AttributeInfo.__init__(self)
 
-        beheeroptieField = KeuzelijstField(naam="beheeroptie",
-                                           label="beheeroptie",
-                                           lijst=KlBeheerGrazigeVegetatie(),
-                                           objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#BeheerGrazigeVegetatie.beheeroptie",
-                                           definition="Aanduiding van welk beheer wordt toegepast op de grazige vegetatie.",
-                                           constraints="",
-                                           usagenote="",
-                                           deprecated_version="")
-        self.beheeroptie = KardinaliteitField(minKardinaliteit="1", maxKardinaliteit="*", fieldToMultiply=beheeroptieField)
+        self._beheeroptie = OTLAttribuut(field=KlBeheerGrazigeVegetatie,
+                                         naam='beheeroptie',
+                                         label='beheeroptie',
+                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#BeheerGrazigeVegetatie.beheeroptie',
+                                         kardinaliteit_max='*',
+                                         definition='Aanduiding van welk beheer wordt toegepast op de grazige vegetatie.')
+
+        self._heeftBeheerplan = OTLAttribuut(field=BooleanField,
+                                             naam='heeftBeheerplan',
+                                             label='heeft beheerplan',
+                                             objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#BeheerGrazigeVegetatie.heeftBeheerplan',
+                                             definition='Aanduiding of er een beheerplan bestaat.')
+
+        self._lengte = OTLAttribuut(field=KwantWrdInMeter,
+                                    naam='lengte',
+                                    label='Lengte',
+                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#BeheerGrazigeVegetatie.lengte',
+                                    definition='De lengte in meter van de te behandelen grazige vegetatie.')
+
+        self._maaien = OTLAttribuut(field=DtcMaaien,
+                                    naam='maaien',
+                                    label='maaien',
+                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#BeheerGrazigeVegetatie.maaien',
+                                    definition='Complex datatype voor de eigenschappen van maaien.')
+
+        self._oppervlakte = OTLAttribuut(field=KwantWrdInVierkanteMeter,
+                                         naam='oppervlakte',
+                                         label='oppervlakte',
+                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#BeheerGrazigeVegetatie.oppervlakte',
+                                         definition='De oppervlakte in vierkante meter van de te behandelen grazige vegetatie.')
+
+    @property
+    def beheeroptie(self):
         """Aanduiding van welk beheer wordt toegepast op de grazige vegetatie."""
+        return self._beheeroptie.waarde
 
-        self.heeftBeheerplan = BooleanField(naam="heeftBeheerplan",
-                                            label="heeft beheerplan",
-                                            objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#BeheerGrazigeVegetatie.heeftBeheerplan",
-                                            definition="Aanduiding of er een beheerplan bestaat.",
-                                            constraints="",
-                                            usagenote="",
-                                            deprecated_version="")
+    @beheeroptie.setter
+    def beheeroptie(self, value):
+        self._beheeroptie.set_waarde(value, owner=self)
+
+    @property
+    def heeftBeheerplan(self):
         """Aanduiding of er een beheerplan bestaat."""
+        return self._heeftBeheerplan.waarde
 
-        self.lengte = KwantWrdInMeter()
+    @heeftBeheerplan.setter
+    def heeftBeheerplan(self, value):
+        self._heeftBeheerplan.set_waarde(value, owner=self)
+
+    @property
+    def lengte(self):
         """De lengte in meter van de te behandelen grazige vegetatie."""
-        self.lengte.naam = "lengte"
-        self.lengte.label = "Lengte"
-        self.lengte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#BeheerGrazigeVegetatie.lengte"
-        self.lengte.definition = "De lengte in meter van de te behandelen grazige vegetatie."
-        self.lengte.constraints = ""
-        self.lengte.usagenote = ""
-        self.lengte.deprecated_version = ""
+        return self._lengte.waarde
 
-        self.maaien = DtcMaaien()
+    @lengte.setter
+    def lengte(self, value):
+        self._lengte.set_waarde(value, owner=self)
+
+    @property
+    def maaien(self):
         """Complex datatype voor de eigenschappen van maaien."""
-        self.maaien.naam = "maaien"
-        self.maaien.label = "maaien"
-        self.maaien.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#BeheerGrazigeVegetatie.maaien"
-        self.maaien.definition = "Complex datatype voor de eigenschappen van maaien."
-        self.maaien.constraints = ""
-        self.maaien.usagenote = ""
-        self.maaien.deprecated_version = ""
+        return self._maaien.waarde
 
-        self.oppervlakte = KwantWrdInVierkanteMeter()
+    @maaien.setter
+    def maaien(self, value):
+        self._maaien.set_waarde(value, owner=self)
+
+    @property
+    def oppervlakte(self):
         """De oppervlakte in vierkante meter van de te behandelen grazige vegetatie."""
-        self.oppervlakte.naam = "oppervlakte"
-        self.oppervlakte.label = "oppervlakte"
-        self.oppervlakte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#BeheerGrazigeVegetatie.oppervlakte"
-        self.oppervlakte.definition = "De oppervlakte in vierkante meter van de te behandelen grazige vegetatie."
-        self.oppervlakte.constraints = ""
-        self.oppervlakte.usagenote = ""
-        self.oppervlakte.deprecated_version = ""
+        return self._oppervlakte.waarde
+
+    @oppervlakte.setter
+    def oppervlakte(self, value):
+        self._oppervlakte.set_waarde(value, owner=self)

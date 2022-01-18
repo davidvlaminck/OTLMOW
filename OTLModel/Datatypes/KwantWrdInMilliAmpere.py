@@ -21,9 +21,9 @@ class KwantWrdInMilliAmpereEenheid(KwantWrdEenheid):
 
 # Generated with OTLPrimitiveDatatypeCreator. To modify: extend, do not edit
 class KwantWrdInMilliAmpere(FloatOrDecimalField, KwantWrd):
-    naam = 'waarde'
-    label = 'waarde'
-    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMilliAmpere.waarde'
-    definition = 'Bevat een getal die bij het datatype hoort.'
+    naam = 'KwantWrdInMilliAmpere'
+    label = 'Kwantitatieve waarde in milliampère'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMilliAmpere'
+    definition = 'Een kwantitatieve waarde die een getal in milliampère uitdrukt.'
     eenheid = KwantWrdInMilliAmpereEenheid()
 

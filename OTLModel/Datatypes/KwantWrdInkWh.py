@@ -21,9 +21,9 @@ class KwantWrdInkWhEenheid(KwantWrdEenheid):
 
 # Generated with OTLPrimitiveDatatypeCreator. To modify: extend, do not edit
 class KwantWrdInkWh(FloatOrDecimalField, KwantWrd):
-    naam = 'waarde'
-    label = 'waarde'
-    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInkWh.waarde'
-    definition = 'Bevat een getal die bij het datatype hoort.'
+    naam = 'KwantWrdInkWh'
+    label = 'Kwantitatieve waarde in kWh'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInkWh'
+    definition = 'Een kwantitatieve waarde die een getal in kiloWattUur uitdrukt.'
     eenheid = KwantWrdInkWhEenheid()
 

@@ -1,34 +1,47 @@
 # coding=utf-8
+from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
+from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.StalenProfiel import StalenProfiel
 from OTLModel.Datatypes.KwantWrdInMillimeter import KwantWrdInMillimeter
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class NietStandaardStalenProfiel(StalenProfiel):
+class NietStandaardStalenProfiel(StalenProfiel, AttributeInfo):
     """Een stalen constructie-element waarvan de lengte vele malen groter is dan de breedte en de hoogte in doorsnede. Niet-standaard stalen profiel omvat alle speciale, op maat gemaakte en/of niet vaak voorkomende profielen."""
 
-    typeURI = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#NietStandaardStalenProfiel"
+    typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#NietStandaardStalenProfiel'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        super().__init__()
+        AttributeInfo.__init__(self)
+        StalenProfiel.__init__(self)
 
-        self.profielbreedte = KwantWrdInMillimeter()
+        self._profielbreedte = OTLAttribuut(field=KwantWrdInMillimeter,
+                                            naam='profielbreedte',
+                                            label='profielbreedte',
+                                            objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#NietStandaardStalenProfiel.profielbreedte',
+                                            definition='De korte afmeting in millimeter van het profiel.')
+
+        self._profielhoogte = OTLAttribuut(field=KwantWrdInMillimeter,
+                                           naam='profielhoogte',
+                                           label='profielhoogte',
+                                           objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#NietStandaardStalenProfiel.profielhoogte',
+                                           definition='De langste afmeting in millimeter van het profiel.')
+
+    @property
+    def profielbreedte(self):
         """De korte afmeting in millimeter van het profiel."""
-        self.profielbreedte.naam = "profielbreedte"
-        self.profielbreedte.label = "profielbreedte"
-        self.profielbreedte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#NietStandaardStalenProfiel.profielbreedte"
-        self.profielbreedte.definition = "De korte afmeting in millimeter van het profiel."
-        self.profielbreedte.constraints = ""
-        self.profielbreedte.usagenote = ""
-        self.profielbreedte.deprecated_version = ""
+        return self._profielbreedte.waarde
 
-        self.profielhoogte = KwantWrdInMillimeter()
+    @profielbreedte.setter
+    def profielbreedte(self, value):
+        self._profielbreedte.set_waarde(value, owner=self)
+
+    @property
+    def profielhoogte(self):
         """De langste afmeting in millimeter van het profiel."""
-        self.profielhoogte.naam = "profielhoogte"
-        self.profielhoogte.label = "profielhoogte"
-        self.profielhoogte.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#NietStandaardStalenProfiel.profielhoogte"
-        self.profielhoogte.definition = "De langste afmeting in millimeter van het profiel."
-        self.profielhoogte.constraints = ""
-        self.profielhoogte.usagenote = ""
-        self.profielhoogte.deprecated_version = ""
+        return self._profielhoogte.waarde
+
+    @profielhoogte.setter
+    def profielhoogte(self, value):
+        self._profielhoogte.set_waarde(value, owner=self)

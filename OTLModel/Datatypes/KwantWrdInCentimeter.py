@@ -21,9 +21,9 @@ class KwantWrdInCentimeterEenheid(KwantWrdEenheid):
 
 # Generated with OTLPrimitiveDatatypeCreator. To modify: extend, do not edit
 class KwantWrdInCentimeter(FloatOrDecimalField, KwantWrd):
-    naam = 'waarde'
-    label = 'waarde'
-    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInCentimeter.waarde'
-    definition = 'Bevat een getal die bij het datatype hoort.'
+    naam = 'KwantWrdInCentimeter'
+    label = 'Kwantitatieve waarde in centimeter'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInCentimeter'
+    definition = 'Een kwantitatieve waarde die een getal in centimeter uitdrukt.'
     eenheid = KwantWrdInCentimeterEenheid()
 

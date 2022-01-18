@@ -21,9 +21,9 @@ class KwantWrdInProcentEenheid(KwantWrdEenheid):
 
 # Generated with OTLPrimitiveDatatypeCreator. To modify: extend, do not edit
 class KwantWrdInProcent(FloatOrDecimalField, KwantWrd):
-    naam = 'waarde'
-    label = 'waarde'
-    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInProcent.waarde'
-    definition = 'Bevat een getal die bij het datatype hoort.'
+    naam = 'KwantWrdInProcent'
+    label = 'Kwantitatieve waarde in procent'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInProcent'
+    definition = 'Een kwantitatieve waarde die een getal in procent uitdrukt.'
     eenheid = KwantWrdInProcentEenheid()
 

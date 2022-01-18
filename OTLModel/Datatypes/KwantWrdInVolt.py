@@ -21,9 +21,9 @@ class KwantWrdInVoltEenheid(KwantWrdEenheid):
 
 # Generated with OTLPrimitiveDatatypeCreator. To modify: extend, do not edit
 class KwantWrdInVolt(FloatOrDecimalField, KwantWrd):
-    naam = 'waarde'
-    label = 'waarde'
-    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInVolt.waarde'
-    definition = 'Bevat een getal die bij het datatype hoort.'
+    naam = 'KwantWrdInVolt'
+    label = 'Kwantitatieve waarde in volt'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInVolt'
+    definition = 'Een kwantitatieve waarde die een getal in volt uitdrukt.'
     eenheid = KwantWrdInVoltEenheid()
 

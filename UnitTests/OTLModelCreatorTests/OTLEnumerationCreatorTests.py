@@ -84,7 +84,7 @@ class OTLEnumerationCreatorTests(unittest.TestCase):
         logger = NoneLogger()
         collector = OSLOCollector(mock)
         creator = OTLEnumerationCreator(logger, collector)
-        osloEnumeration = OSLOEnumeration(name='name', objectUri='', definition_nl='', label_nl='', usagenote_nl='',
+        osloEnumeration = OSLOEnumeration(name='name', objectUri='', definition='', label='', usagenote='',
                                           deprecated_version='', codelist='')
 
         with self.assertRaises(ValueError) as exception_empty_uri:
@@ -95,7 +95,7 @@ class OTLEnumerationCreatorTests(unittest.TestCase):
         logger = NoneLogger()
         collector = OSLOCollector(mock)
         creator = OTLEnumerationCreator(logger, collector)
-        osloEnumeration = OSLOEnumeration(name='name', objectUri='Bad objectUri', definition_nl='', label_nl='', usagenote_nl='',
+        osloEnumeration = OSLOEnumeration(name='name', objectUri='Bad objectUri', definition='', label='', usagenote='',
                                           deprecated_version='', codelist='')
 
         with self.assertRaises(ValueError) as exception_bad_uri:
@@ -108,7 +108,7 @@ class OTLEnumerationCreatorTests(unittest.TestCase):
         creator = OTLEnumerationCreator(logger, collector)
         osloEnumeration = OSLOEnumeration(name='',
                                           objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrd',
-                                          definition_nl='', label_nl='', usagenote_nl='',
+                                          definition='', label='', usagenote='',
                                           deprecated_version='', codelist='')
 
         with self.assertRaises(ValueError) as exception_bad_name:

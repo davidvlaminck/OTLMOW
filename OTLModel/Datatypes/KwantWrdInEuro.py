@@ -21,9 +21,9 @@ class KwantWrdInEuroEenheid(KwantWrdEenheid):
 
 # Generated with OTLPrimitiveDatatypeCreator. To modify: extend, do not edit
 class KwantWrdInEuro(FloatOrDecimalField, KwantWrd):
-    naam = 'waarde'
-    label = 'waarde'
-    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInEuro.waarde'
-    definition = 'Bevat een getal die bij het datatype hoort.'
+    naam = 'KwantWrdInEuro'
+    label = 'Kwantitatieve waarde in euro'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInEuro'
+    definition = 'Een kwantitatieve waarde die een getal in Euro uitdrukt.'
     eenheid = KwantWrdInEuroEenheid()
 

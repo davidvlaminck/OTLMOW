@@ -4,7 +4,6 @@ import unittest
 from ModelGenerator.BaseClasses.RelatieValidator import RelatieValidator
 from ModelGenerator.OtlAssetJSONEncoder import OtlAssetJSONEncoder
 from OTLModel.Classes.Aftakking import Aftakking
-from OTLModel.Datatypes.DtcIdentificator import DtcIdentificator
 from OTLModel.Classes.Laagspanningsbord import Laagspanningsbord
 from UnitTests.RelatieValidatorTests import GeldigeRelatieLijstTestInstance
 
@@ -17,10 +16,10 @@ class OtlAssetJSONEncoderTests(unittest.TestCase):
 
         # create testable OTLAsset
         a = Aftakking()
-        a.naam.waarde = "aftakking"
-        a.notitie.waarde = "notitie aftakking"
-        a.isActief.waarde = True
-        a.toestand.set_value_by_label("in ontwerp")
+        a.naam = "aftakking"
+        a.notitie = "notitie aftakking"
+        a.isActief = True
+        a.toestand = "in-ontwerp"
 
         encoder = OtlAssetJSONEncoder()
         js = encoder.encode(a)
@@ -32,7 +31,7 @@ class OtlAssetJSONEncoderTests(unittest.TestCase):
 
     def test_JsonEncodeDecimal(self):
         l = Laagspanningsbord()
-        l.vermogen.waarde = float(25)
+        l.vermogen = float(25)
 
         encoder = OtlAssetJSONEncoder()
         js = encoder.encode(l)
@@ -44,10 +43,8 @@ class OtlAssetJSONEncoderTests(unittest.TestCase):
     def test_JsonEncodeWithDtcIdentificator(self):
         # create testable OTLAsset
         a = Aftakking()
-        dtcId = DtcIdentificator()
-        dtcId.identificator.waarde = "mijn eigen id"
-        a.assetId = dtcId
-        a.naam.waarde = "aftakking"
+        a.assetId.identificator = "mijn eigen id"
+        a.naam = "aftakking"
 
         encoder = OtlAssetJSONEncoder()
         js = encoder.encode(a)
@@ -58,14 +55,12 @@ class OtlAssetJSONEncoderTests(unittest.TestCase):
 
     def test_JsonEncodeWithDtcIdentificatorAndIndent(self):
         a = Aftakking()
-        dtcId = DtcIdentificator()
-        dtcId.identificator.waarde = "mijn_eigen_id_voor_deze_aftakking_asset"
-        dtcId.toegekendDoor.waarde = "python script"
-        a.assetId = dtcId
-        a.naam.waarde = "aftakking"
-        a.notitie.waarde = "notitie aftakking"
-        a.isActief.waarde = True
-        a.toestand.set_value_by_label("in ontwerp")
+        a.assetId.identificator = "mijn_eigen_id_voor_deze_aftakking_asset"
+        a.assetId.toegekendDoor = "python script"
+        a.naam = "aftakking"
+        a.notitie = "notitie aftakking"
+        a.isActief = True
+        a.toestand = "in-ontwerp"
 
         encoder = OtlAssetJSONEncoder(indent=4)
         js = encoder.encode(a)

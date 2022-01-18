@@ -26,7 +26,7 @@ class EMInfraDecoderTests(TestCase):
     def test_decodeAndEncode(self):
         responseString = ResponseTestDouble().response
         decoder = EMInfraDecoder()
-        lijst = decoder.decode(responseString)
+        lijst = decoder.decodeGraph(responseString)
         encoder = OtlAssetJSONEncoder()
         actualJsonString = encoder.encode(lijst)
 

@@ -53,7 +53,8 @@ class OTLEnumerationCreator(AbstractDatatypeCreator):
                 datablock.append(f"{whitespace}definitie={wrap_in_quotes(waarde.definitie)},")
             datablock.append(f"{whitespace}objectUri='{waarde.objectUri}'),")
 
-        datablock[-1] = datablock[-1][:-1]
+        if len(waardes) > 0:
+            datablock[-1] = datablock[-1][:-1]
         datablock.append('    }')
         datablock.append('')
 

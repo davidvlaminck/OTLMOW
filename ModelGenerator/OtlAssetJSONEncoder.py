@@ -2,13 +2,32 @@ import json
 
 from OTLModel.BaseClasses.OTLAsset import OTLAsset
 from OTLModel.Classes.RelatieObject import RelatieObject
-from OTLModel.Datatypes.KardinaliteitField import KardinaliteitField
-from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
-from OTLModel.Datatypes.OTLField import OTLField
+from OTLModel.BaseClasses.OTLField import OTLField
 
 
 class OtlAssetJSONEncoder(json.JSONEncoder):
     def default(self, otlObject):
+        if isinstance(otlObject, OTLAsset) or isinstance(otlObject, RelatieObject):
+            d = dir(otlObject)
+            dictCopy = {}
+            for key in d:
+                if key[0] == '_' or key == 'attr_info' or key == 'attr_type_info':
+                    pass
+                else:
+                    value = otlObject.__getattribute__(key)
+                    if value is None:
+                        continue
+                    if key == 'typeURI':
+                        dictCopy['typeURI'] = otlObject.typeURI
+                    else:
+                        attribute = otlObject.__getattribute__('_' + key)
+                        defaultValue = attribute.default()
+                        if defaultValue is not None:
+                            dictCopy[key] = defaultValue
+            return dictCopy
+        return self
+
+    def default2(self, otlObject):
         if isinstance(otlObject, OTLAsset) or isinstance(otlObject, RelatieObject):
             d = dir(otlObject)
             dictCopy = {}

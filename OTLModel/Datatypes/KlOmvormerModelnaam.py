@@ -11,6 +11,6 @@ class KlOmvormerModelnaam(KeuzelijstField):
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlOmvormerModelnaam'
     definition = 'De modelnaam van de omvormer.'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlOmvormerModelnaam'
-    options = 
+    options = {
     }
 

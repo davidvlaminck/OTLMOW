@@ -21,6 +21,7 @@ class OTLAttribuut(AttributeInfo):
         self.readonlyValue = None
         self.waarde = None
         self.field = field
+
         if readonly:
             self.__dict__["waarde"] = readonlyValue
 
@@ -30,8 +31,24 @@ class OTLAttribuut(AttributeInfo):
             else:
                 pass
 
+    def default(self):
+        if self.field.waardeObject is not None:
+            waardeDict = vars(self.waarde)
+            valueDict = {}
+            for k, v in waardeDict.items():
+                if v.default() is not None:
+                    valueDict[k[1:]] = v.default()
+            if len(valueDict) == 0:
+                return None
+            return valueDict
+        else:
+            return self.waarde
+
     def set_waarde(self, value, owner=None):
         # in combinatie met kard indien nodig
+        if self.field == 'UnionTypeField':
+            pass
+
         if self.kardinaliteit_max == '*':
             kardinaliteit_max = math.inf
         else:
@@ -57,8 +74,16 @@ class OTLAttribuut(AttributeInfo):
 
             self.waarde = self.field.convert_to_correct_type(value)
         else:
-            if self.field.validate(value=value, attribuut=self):
-                self.waarde = self.field.convert_to_correct_type(value)
+            if self.field.waardeObject is not None and isinstance(value, self.field.waardeObject):
+                props = vars(self.field.waardeObject)
+                for prop_key, prop_value in props.items():
+                    if prop_key.startswith('_'):
+                        continue
+                    a = getattr(value, prop_key)
+                    setattr(self.waarde, prop_key, a)
+            else:
+                if self.field.validate(value=value, attribuut=self):
+                    self.waarde = self.field.convert_to_correct_type(value)
 
     def __str__(self):
         return f"""information about {self.naam}:

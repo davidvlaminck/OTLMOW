@@ -19,16 +19,16 @@ from ModelGenerator.SQLDbReader import SQLDbReader
 
 class OSLOInMemoryCreatorTests(unittest.TestCase):
     def mockPerformReadQuery(self, query, arg_dict):
-        if query == 'SELECT label, name, uri, definition, usagenote, abstract, deprecated_version FROM OSLOClass where objectUri=:uriclass' \
+        if query == 'SELECT label_nl, name, uri, definition_nl, usagenote_nl, abstract, deprecated_version FROM OSLOClass where objectUri=:uriclass' \
                 and arg_dict['uriclass'] == 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#NaampadObject':
             return [['Naampad object', 'NaampadObject',
                      'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#NaampadObject'
                         , 'Abstracte als de basisklasse voor elk OTL object dat gebruik maakt van een naampad.', '', 1, '']]
-        elif query == 'SELECT label, name, uri, definition, usagenote, abstract, deprecated_version FROM OSLOClass' and arg_dict == {}:
+        elif query == 'SELECT label_nl, name, uri, definition_nl, usagenote_nl, abstract, deprecated_version FROM OSLOClass' and arg_dict == {}:
             return [['Naampad object', 'NaampadObject',
                      'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#NaampadObject'
                         , 'Abstracte als de basisklasse voor elk OTL object dat gebruik maakt van een naampad.', '', 1, '']]
-        elif query == 'SELECT name, label, definition, class_uri, kardinaliteit_min, kardinaliteit_max, uri, type, overerving, constraints, readonly, usagenote, deprecated_version FROM OSLOAttributen WHERE class_uri=:uriclass AND overerving = 0 and name <> \'typeURI\'' and \
+        elif query == 'SELECT name, label_nl, definition_nl, class_uri, kardinaliteit_min, kardinaliteit_max, uri, type, overerving, constraints, readonly, usagenote_nl, deprecated_version FROM OSLOAttributen WHERE class_uri=:uriclass AND overerving = 0 and name <> \'typeURI\'' and \
                 arg_dict['uriclass'] == 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#NaampadObject':
             return [[
                 'naampad', 'naampad',
@@ -37,8 +37,8 @@ class OSLOInMemoryCreatorTests(unittest.TestCase):
                 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#NaampadObject.naampad',
                 'http://www.w3.org/2001/XMLSchema#string', 0, '', 0, '', ''
             ]]
-        elif query == 'SELECT name, label, definition, class_uri, kardinaliteit_min, kardinaliteit_max, uri, type, ' \
-                      'overerving, constraints, readonly, usagenote, deprecated_version FROM OSLOAttributen WHERE overerving ' \
+        elif query == 'SELECT name, label_nl, definition_nl, class_uri, kardinaliteit_min, kardinaliteit_max, uri, type, ' \
+                      'overerving, constraints, readonly, usagenote_nl, deprecated_version FROM OSLOAttributen WHERE overerving ' \
                       '= 0 and name <> \'typeURI\'' and arg_dict == {}:
             return [[
                 'naampad', 'naampad',
@@ -50,7 +50,7 @@ class OSLOInMemoryCreatorTests(unittest.TestCase):
         elif query == "SELECT base_name, base_uri, class_uri, class_name, deprecated_version FROM InternalBaseClass" and arg_dict == {}:
             return [['AIMNaamObject', "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMNaamObject",
                      "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#NaampadObject", "NaampadObject", ""]]
-        elif query == "SELECT name, uri, definition, label, usagenote, deprecated_version FROM OSLODatatypePrimitive" and arg_dict == {}:
+        elif query == "SELECT name, uri, definition_nl, label_nl, usagenote_nl, deprecated_version FROM OSLODatatypePrimitive" and arg_dict == {}:
             return [["DteKleurRAL", "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DteKleurRAL",
                      "Beschrijft een kleur volgens het RAL classificatiesysteem. De waarde is een natuurlijk getal tussen 1000 en 9999.",
                      "RAL-kleur", "", ""],
@@ -85,7 +85,7 @@ class OSLOInMemoryCreatorTests(unittest.TestCase):
                     ["Decimal", "http://www.w3.org/2001/XMLSchema#decimal",
                      "Beschrijft een decimaal getal volgens http://www.w3.org/2001/XMLSchema#decimal.", "Decimaal getal",
                      "https://www.w3.org/TR/xmlschema-2/#decimal", ""]]
-        elif query == "SELECT name, label, definition, class_uri, kardinaliteit_min, kardinaliteit_max, uri, type, overerving, constraints, readonly, usagenote, deprecated_version FROM OSLOAttributen" and arg_dict == {}:
+        elif query == "SELECT name, label_nl, definition_nl, class_uri, kardinaliteit_min, kardinaliteit_max, uri, type, overerving, constraints, readonly, usagenote_nl, deprecated_version FROM OSLOAttributen" and arg_dict == {}:
             return [["waarde", "waarde", "Beschrijft een kleur volgens het RAL classificatiesysteem.",
                      "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DteKleurRAL", "1", "1",
                      "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DteKleurRAL.waarde",
@@ -100,13 +100,13 @@ class OSLOInMemoryCreatorTests(unittest.TestCase):
                      "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInWatt",
                      "1", "1", "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInWatt.waarde",
                      "http://www.w3.org/2001/XMLSchema#decimal", "0", "", "0", "", ""]]
-        elif query == "SELECT name, label, definition, class_uri, kardinaliteit_min, kardinaliteit_max, uri, type, overerving, constraints, readonly, usagenote, deprecated_version FROM OSLODatatypePrimitiveAttributen" and arg_dict == {}:
+        elif query == "SELECT name, label_nl, definition_nl, class_uri, kardinaliteit_min, kardinaliteit_max, uri, type, overerving, constraints, readonly, usagenote_nl, deprecated_version FROM OSLODatatypePrimitiveAttributen" and arg_dict == {}:
             return [['waarde', 'waarde', 'Beschrijft een kleur volgens het RAL classificatiesysteem.',
                      'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DteKleurRAL', '1', '1',
                      'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DteKleurRAL.waarde',
                      'http://www.w3.org/2001/XMLSchema#string', '0', '', '0',
                      'De waarde moet voldoen aan volgende regex: [1-9]\d{3}', '']]
-        elif query == "SELECT name, label, definition, class_uri, kardinaliteit_min, kardinaliteit_max, uri, type, overerving, constraints, readonly, usagenote, deprecated_version FROM OSLODatatypeComplexAttributen" and arg_dict == {}:
+        elif query == "SELECT name, label_nl, definition_nl, class_uri, kardinaliteit_min, kardinaliteit_max, uri, type, overerving, constraints, readonly, usagenote_nl, deprecated_version FROM OSLODatatypeComplexAttributen" and arg_dict == {}:
             return [['identificator', 'identificator', 'Een groep van tekens om een AIM object te identificeren of te benoemen.',
                      'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcIdentificator', '1', '1',
                      'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcIdentificator.identificator',
@@ -116,12 +116,12 @@ class OSLOInMemoryCreatorTests(unittest.TestCase):
                      'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcIdentificator.toegekendDoor',
                      'http://www.w3.org/2001/XMLSchema#string', '0', '', '0', '', '']]
 
-        elif query == "SELECT name, uri, definition, label, usagenote, deprecated_version FROM OSLODatatypeComplex" and arg_dict == {}:
+        elif query == "SELECT name, uri, definition_nl, label_nl, usagenote_nl, deprecated_version FROM OSLODatatypeComplex" and arg_dict == {}:
             return [['DtcIdentificator', 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcIdentificator', '',
                      'Complex datatype voor de identificator van een AIM object volgens de bron van de identificator.',
                      'Identificator', '']]
 
-        elif query == "SELECT name, uri, usagenote, definition, label, codelist, deprecated_version FROM OSLOEnumeration" and arg_dict == {}:
+        elif query == "SELECT name, uri, usagenote_nl, definition_nl, label_nl, codelist, deprecated_version FROM OSLOEnumeration" and arg_dict == {}:
             return [['KlAIMToestand', 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KlAIMToestand', '',
                      'Keuzelijst met fasen uit de levenscyclus van een object om de toestand op een moment mee vast te leggen.',
                      'AIM toestand', 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlAIMToestand', '']]
@@ -175,7 +175,7 @@ class OSLOInMemoryCreatorTests(unittest.TestCase):
                      'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomkolom',
                      'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#VoedtAangestuurd', 'Source -> Destination', '', '']]
 
-        elif query == "SELECT name, label, definition, class_uri, kardinaliteit_min, kardinaliteit_max, uri, type, overerving, constraints, readonly, usagenote, deprecated_version FROM OSLODatatypeUnionAttributen" and arg_dict == {}:
+        elif query == "SELECT name, label_nl, definition_nl, class_uri, kardinaliteit_min, kardinaliteit_max, uri, type, overerving, constraints, readonly, usagenote_nl, deprecated_version FROM OSLODatatypeUnionAttributen" and arg_dict == {}:
             return [['afwijkendeHoogte', 'afwijkende hoogte', 'De afwijkende hoogte van de mast in meter.',
                      'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtuLichtmastMasthoogte', '0', '1',
                      'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtuLichtmastMasthoogte.afwijkendeHoogte',
@@ -185,7 +185,7 @@ class OSLOInMemoryCreatorTests(unittest.TestCase):
                      'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtuLichtmastMasthoogte.standaardHoogte',
                      'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlLichtmastMasthoogte', 0, '', 0, '', '']]
 
-        elif query == "SELECT name, uri, definition, label, usagenote, deprecated_version FROM OSLODatatypeUnion" and arg_dict == {}:
+        elif query == "SELECT name, uri, definition_nl, label_nl, usagenote_nl, deprecated_version FROM OSLODatatypeUnion" and arg_dict == {}:
             return [['DtuLichtmastMasthoogte', 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtuLichtmastMasthoogte',
                      'Union datatype om een standaard of afwijkende masthoogte te bepalen.', 'Masthoogte', '', '']]
 

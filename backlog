@@ -31,7 +31,6 @@ Postenmapping:
 - van ingevulde asset uitzoeken welke post of posten dit is
 .attributenIterator: iterator voor de attributen van dat attribuut of class (zoeken naar attributen die met _ beginnen en otlfield zijn. In dict steken
 Docstring appenden vanuit otlbject met generieke functies zoals attr_info
-KwantWrd met readonly doen > setter weglaten
 Attr_info met lege parameter: info over object zelf, werkt niet voor classed en type want dat heeft geen field
 Import eminfra voor asset relaties etc: alternatief voor data afladen in Davie
 

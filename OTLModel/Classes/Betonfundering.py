@@ -14,6 +14,8 @@ class Betonfundering(Fundering, AttributeInfo):
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Betonfundering'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
+    deprecated_version = '2.0.0'
+
     @abstractmethod
     def __init__(self):
         AttributeInfo.__init__(self)

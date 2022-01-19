@@ -70,6 +70,11 @@ class OTLClassCreator(AbstractDatatypeCreator):
         datablock.append('')
         datablock.append(f"    typeURI = '{osloClass.objectUri}'")
         datablock.append('    """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""')
+
+        if osloClass.deprecated_version != '':
+            datablock.append('')
+            datablock.append(f"    deprecated_version = '{osloClass.deprecated_version}'")
+
         datablock.append('')
         if osloClass.abstract == 1:
             datablock.append('    @abstractmethod')

@@ -21,6 +21,8 @@ class Bovenbouw(AIMObject, AttributeInfo):
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bovenbouw'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
+    deprecated_version = '2.1.0'
+
     def __init__(self):
         AIMObject.__init__(self)
         AttributeInfo.__init__(self)

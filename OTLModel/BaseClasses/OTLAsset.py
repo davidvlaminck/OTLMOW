@@ -1,3 +1,4 @@
+import warnings
 from abc import abstractmethod, ABC
 
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
@@ -12,6 +13,15 @@ class OTLAsset(ABC):
                                       label='geometry',
                                       objectUri='https://loc.data.wegenenverkeer.be/ns/implementatieelement#Locatie.geometrie',
                                       definition='geometry voor DAVIE')
+
+        if hasattr(self, 'deprecated_version'):
+            if self.deprecated_version is not None:
+                if hasattr(self, 'typeURI'):
+                    warnings.warn(message=f'{self.typeURI} is deprecated since version {self.deprecated_version}',
+                                  category=DeprecationWarning)
+                else:
+                    warnings.warn(message=f'used a class that is deprecated since version {self.deprecated_version}',
+                                  category=DeprecationWarning)
 
     @property
     def geometry(self):

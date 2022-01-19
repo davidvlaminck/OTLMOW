@@ -11,6 +11,8 @@ class Exoten(BegroeidVoorkomen, AttributeInfo):
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Exoten'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
+    deprecated_version = '2.1.0'
+
     def __init__(self):
         AttributeInfo.__init__(self)
         BegroeidVoorkomen.__init__(self)

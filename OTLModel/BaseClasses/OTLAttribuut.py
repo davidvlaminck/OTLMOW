@@ -1,4 +1,5 @@
 ﻿import math
+import warnings
 from msilib import sequence
 
 from OTLModel.BaseClasses.AttributeInfo import AttributeInfo

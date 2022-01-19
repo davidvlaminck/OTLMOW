@@ -8,7 +8,7 @@ from OTLModel.Datatypes.UnionWaarden import UnionWaarden
 
 
 # Generated with OTLUnionDatatypeCreator. To modify: extend, do not edit
-class DtuLichtmastMasthoogteWaarden(UnionWaarden, AttributeInfo):
+class DtuLichtmastMasthoogteWaarden(AttributeInfo, UnionWaarden):
     def __init__(self):
         self._afwijkendeHoogte = OTLAttribuut(field=KwantWrdInMeter,
                                               naam='afwijkendeHoogte',
@@ -58,3 +58,4 @@ class DtuLichtmastMasthoogte(UnionTypeField, AttributeInfo):
 
     def __str__(self):
         return UnionTypeField.__str__(self)
+

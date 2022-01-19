@@ -32,10 +32,10 @@ class RelatiesTests(unittest.TestCase):
 
         self.assertEqual(instance._kleur.field, DteKleurRAL)
 
-        instance.kleur = "1111"
-        self.assertEqual("1111", instance.kleur)
+        instance.kleur.waarde = "1111"
+        self.assertEqual("1111", instance.kleur.waarde)
 
         with self.assertRaises(TypeError):
-            instance.kleur = 2.0
+            instance.kleur.waarde = 2.0
 
-        self.assertTrue(isinstance(instance.kleur, str))
+        self.assertTrue(isinstance(instance.kleur.waarde, str))

@@ -158,28 +158,40 @@ class AbstractDatatypeCreator(ABC):
 
         raise NotImplementedError(f"getTypeNameOfComplexAttribuut fails to get typename from {type_uri}")
 
-    def CreateBlockToWriteFromComplexPrimitiveOrUnionTypes(self, osloDatatype, TypeField=''):
-        attributen = self.get_attributen_by_typeField(TypeField, osloDatatype)
+    def CreateBlockToWriteFromComplexPrimitiveOrUnionTypes(self, osloDatatype, typeField=''):
+        attributen = self.get_attributen_by_typeField(typeField, osloDatatype)
 
         datablock = ['# coding=utf-8',
                      'from OTLModel.BaseClasses.AttributeInfo import AttributeInfo',
                      'from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut']
 
-        listOfFields = self.getFieldsToImportFromListOfAttributes(attributen, [f'{TypeField}Field'])
-        for typeField in listOfFields:
-            datablock.append(f'from OTLModel.Datatypes.{typeField} import {typeField}')
+        list_fields_to_start_with = [f'{typeField}Field']
+        if typeField == 'UnionType':
+            list_fields_to_start_with.append('UnionWaarden')
+        elif typeField == 'Primitive':
+            datablock.append('from OTLModel.BaseClasses.OTLField import OTLField')
+            list_fields_to_start_with = []
+        listOfFields = self.getFieldsToImportFromListOfAttributes(attributen, list_fields_to_start_with)
+        for module in listOfFields:
+            datablock.append(f'from OTLModel.Datatypes.{module} import {module}')
 
         datablock.append('')
         datablock.append('')
         datablock.append(f'# Generated with {self.__class__.__name__}. To modify: extend, do not edit')
-        datablock.append(f'class {osloDatatype.name}Waarden(AttributeInfo):')
+        if typeField == 'UnionType':
+            datablock.append(f'class {osloDatatype.name}Waarden(AttributeInfo, UnionWaarden):')
+        else:
+            datablock.append(f'class {osloDatatype.name}Waarden(AttributeInfo):')
         datablock.append('    def __init__(self):')
 
-        self.addAttributenToDataBlock(attributen, datablock, forClassUse=False)
+        self.addAttributenToDataBlock(attributen, datablock, forClassUse=False, typeField=typeField)
+
+        if typeField == 'Primitive':
+            typeField = 'OTL'
 
         datablock.append(''),
         datablock.append(f'# Generated with {self.__class__.__name__}. To modify: extend, do not edit')
-        datablock.append(f'class {osloDatatype.name}({TypeField}Field, AttributeInfo):'),
+        datablock.append(f'class {osloDatatype.name}({typeField}Field, AttributeInfo):'),
         datablock.append(f'    """{osloDatatype.definition}"""'),
         datablock.append(f'    naam = {wrap_in_quotes(osloDatatype.name)}'),
         datablock.append(f'    label = {wrap_in_quotes(osloDatatype.label)}'),
@@ -192,7 +204,7 @@ class AbstractDatatypeCreator(ABC):
         datablock.append(f'    waardeObject = {osloDatatype.name}Waarden'),
         datablock.append(f''),
         datablock.append(f'    def __str__(self):'),
-        datablock.append(f'        return {TypeField}Field.__str__(self)')
+        datablock.append(f'        return {typeField}Field.__str__(self)')
         datablock.append('')
 
         return datablock
@@ -205,31 +217,31 @@ class AbstractDatatypeCreator(ABC):
         else:
             return self.osloCollector.FindPrimitiveDatatypeAttributenByClassUri(osloDatatype.objectUri)
 
-    def addAttributenToDataBlock(self, attributen, datablock, class_uri='', forClassUse=False):
+    def addAttributenToDataBlock(self, attributen, datablock, forClassUse=False, typeField=''):
         prop_datablock = []
         for attribuut in sorted(attributen, key=lambda a: a.name):
             if attribuut.overerving == 1:
                 raise NotImplementedError(f"overerving 1 is not implemented, found in {attributen.objectUri}")
 
-            whitepace = self.getWhiteSpaceEquivalent(f'        self._{attribuut.name} = OTLAttribuut(')
+            whitespace = self.getWhiteSpaceEquivalent(f'        self._{attribuut.name} = OTLAttribuut(')
             fieldName = self.getSingleFieldFromTypeUri(attribuut.type)
 
             datablock.append(f'        self._{attribuut.name} = OTLAttribuut(field={fieldName},')
-            datablock.append(f'{whitepace}naam={wrap_in_quotes(attribuut.name)},')
-            datablock.append(f'{whitepace}label={wrap_in_quotes(attribuut.label)},')
-            datablock.append(f'{whitepace}objectUri={wrap_in_quotes(attribuut.objectUri)},')
+            datablock.append(f'{whitespace}naam={wrap_in_quotes(attribuut.name)},')
+            datablock.append(f'{whitespace}label={wrap_in_quotes(attribuut.label)},')
+            datablock.append(f'{whitespace}objectUri={wrap_in_quotes(attribuut.objectUri)},')
             if attribuut.usagenote != '':
-                datablock.append(f'{whitepace}usagenote={wrap_in_quotes(attribuut.usagenote)},')
+                datablock.append(f'{whitespace}usagenote={wrap_in_quotes(attribuut.usagenote)},')
             if attribuut.deprecated_version != '':
-                datablock.append(f'{whitepace}deprecated_version={wrap_in_quotes(attribuut.deprecated_version)},')
+                datablock.append(f'{whitespace}deprecated_version={wrap_in_quotes(attribuut.deprecated_version)},')
             if attribuut.constraints != '':
-                datablock.append(f'{whitepace}constraints={wrap_in_quotes(attribuut.constraints)},')
+                datablock.append(f'{whitespace}constraints={wrap_in_quotes(attribuut.constraints)},')
             if attribuut.kardinaliteit_min != '1':
-                datablock.append(f'{whitepace}kardinaliteit_min={wrap_in_quotes(attribuut.kardinaliteit_min)},')
+                datablock.append(f'{whitespace}kardinaliteit_min={wrap_in_quotes(attribuut.kardinaliteit_min)},')
             if attribuut.kardinaliteit_max != '1':
-                datablock.append(f'{whitepace}kardinaliteit_max={wrap_in_quotes(attribuut.kardinaliteit_max)},')
+                datablock.append(f'{whitespace}kardinaliteit_max={wrap_in_quotes(attribuut.kardinaliteit_max)},')
             definitie = wrap_in_quotes(attribuut.definition.replace('\n', ''))
-            datablock.append(f'{whitepace}definition={definitie})')
+            datablock.append(f'{whitespace}definition={definitie})')
             datablock.append('')
 
             ownerself = ''
@@ -246,9 +258,12 @@ class AbstractDatatypeCreator(ABC):
                 prop_datablock.append(f'    def {attribuut.name}(self, value):'),
 
                 prop_datablock.append(f'        self._{attribuut.name}.set_waarde(value{ownerself})'),
+                if typeField == 'UnionType':
+                    prop_datablock.append(f'        if value is not None:')
+                    prop_datablock.append(f"            self.clear_other_props('_{attribuut.name}')")
                 prop_datablock.append(f'')
 
-        for propline in prop_datablock:
-            datablock.append(propline)
+        for prop_line in prop_datablock:
+            datablock.append(prop_line)
 
         return datablock

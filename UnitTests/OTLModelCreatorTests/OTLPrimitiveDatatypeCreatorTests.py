@@ -7,6 +7,7 @@ from Loggers.NoneLogger import NoneLogger
 from ModelGenerator.OSLOCollector import OSLOCollector
 from ModelGenerator.OSLODatatypePrimitive import OSLODatatypePrimitive
 from ModelGenerator.OSLODatatypePrimitiveAttribuut import OSLODatatypePrimitiveAttribuut
+from ModelGenerator.OSLOTypeLink import OSLOTypeLink
 from ModelGenerator.OTLPrimitiveDatatypeCreator import OTLPrimitiveDatatypeCreator
 
 ROOT_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -44,6 +45,9 @@ class PrimitiveDatatypeOSLOCollector(OSLOCollector):
                                            'http://www.w3.org/2001/XMLSchema#string', 0, '', 0,
                                            'De waarde moet voldoen aan volgende regex: [1-9]\\d{3}', '')]
 
+        self.typeLinks = [
+            OSLOTypeLink("http://www.w3.org/2001/XMLSchema#string", "OSLODatatypePrimitive", "")]
+
         self.expectedDataKwantWrdInVolt = ['# coding=utf-8',
                                            'from OTLModel.Datatypes.FloatOrDecimalField import FloatOrDecimalField',
                                            'from OTLModel.Datatypes.LiteralField import LiteralField',
@@ -73,34 +77,45 @@ class PrimitiveDatatypeOSLOCollector(OSLOCollector):
                                            '    definition = \'Bevat een getal die bij het datatype hoort.\'',
                                            '    eenheid = KwantWrdInVoltEenheid()',
                                            '']
-        self.expectedDataRALKleur = ['# coding=utf-8',
-                                     'from OTLModel.Datatypes.KwantWrd import KwantWrd',
-                                     'from OTLModel.Datatypes.StringField import StringField',
-                                     '',
-                                     '',
-                                     '# Generated with OTLPrimitiveDatatypeCreator. To modify: extend, do not edit',
-                                     'class DteKleurRAL(KwantWrd):',
-                                     '    """Beschrijft een kleur volgens het RAL classificatiesysteem. De waarde is een natuurlijk getal tussen 1000 en 9999."""',
-                                     '',
-                                     '    def __init__(self, waarde=None):',
-                                     '        self.waardeVeld = StringField(naam="waarde",',
-                                     '                                      label="waarde",',
-                                     '                                      objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DteKleurRAL.waarde",',
-                                     '                                      definition="Beschrijft een kleur volgens het RAL classificatiesysteem.",',
-                                     '                                      constraints="",',
-                                     '                                      usagenote="De waarde moet voldoen aan volgende regex: [1-9]\\d{3}",',
-                                     '                                      deprecated_version="")',
+        self.expectedDataRALKleur = ["# coding=utf-8",
+                                     "from OTLModel.BaseClasses.AttributeInfo import AttributeInfo",
+                                     "from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut",
+                                     "from OTLModel.BaseClasses.OTLField import OTLField",
+                                     "from OTLModel.Datatypes.StringField import StringField",
+                                     "",
+                                     "",
+                                     "# Generated with OTLPrimitiveDatatypeCreator. To modify: extend, do not edit",
+                                     "class DteKleurRALWaarden(AttributeInfo):",
+                                     "    def __init__(self):",
+                                     "        self._waarde = OTLAttribuut(field=StringField,",
+                                     "                                    naam='waarde',",
+                                     "                                    label='waarde',",
+                                     "                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DteKleurRAL.waarde',",
+                                     "                                    usagenote='De waarde moet voldoen aan volgende regex: [1-9]\d{3}',",
+                                     "                                    definition='Beschrijft een kleur volgens het RAL classificatiesysteem.')",
+                                     "",
+                                     "    @property",
+                                     "    def waarde(self):",
                                      '        """Beschrijft een kleur volgens het RAL classificatiesysteem."""',
-                                     '',
-                                     '        super().__init__(naam="DteKleurRAL",',
-                                     '                         label="RAL-kleur",',
-                                     '                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DteKleurRAL",',
-                                     '                         definition="Beschrijft een kleur volgens het RAL classificatiesysteem. De waarde is een natuurlijk getal tussen 1000 en 9999.",',
-                                     '                         usagenote="",',
-                                     '                         deprecated_version="",',
-                                     '                         waardeVeld=self.waardeVeld,',
-                                     '                         eenheidVeld=None,',
-                                     '                         waarde=waarde)']
+                                     "        return self._waarde.waarde",
+                                     "",
+                                     "    @waarde.setter",
+                                     "    def waarde(self, value):",
+                                     "        self._waarde.set_waarde(value)",
+                                     "",
+                                     "",
+                                     "# Generated with OTLPrimitiveDatatypeCreator. To modify: extend, do not edit",
+                                     "class DteKleurRAL(OTLField, AttributeInfo):",
+                                     '    """Beschrijft een kleur volgens het RAL classificatiesysteem. De waarde is een natuurlijk getal tussen 1000 en 9999."""',
+                                     "    naam = 'DteKleurRAL'",
+                                     "    label = 'RAL-kleur'",
+                                     "    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DteKleurRAL'",
+                                     "    definition = 'Beschrijft een kleur volgens het RAL classificatiesysteem. De waarde is een natuurlijk getal tussen 1000 en 9999.'",
+                                     "    waardeObject = DteKleurRALWaarden",
+                                     "",
+                                     "    def __str__(self):",
+                                     "        return OTLField.__str__(self)",
+                                     ""]
 
 
 class TestOTLPrimitiveDatatypeCreator(OTLPrimitiveDatatypeCreator):
@@ -202,6 +217,18 @@ class OTLPrimitiveDatatypeCreatorTests(unittest.TestCase):
         creator.writeToFile(KwantWrdInVolt, 'Datatypes', dataToWrite, '../../')
 
         filelocation = os.path.abspath(os.path.join(os.sep, ROOT_DIR, 'OTLModel/Datatypes/KwantWrdInVolt.py'))
+        self.assertTrue(os.path.isfile(filelocation))
+
+    def test_WriteToFileOSLODatatypePrimitiveDte(self):
+        logger = NoneLogger()
+        collector = PrimitiveDatatypeOSLOCollector(mock)
+        creator = OTLPrimitiveDatatypeCreator(logger, collector)
+        DteKleurRAL = collector.FindPrimitiveDatatypeByUri(
+            'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DteKleurRAL')
+        dataToWrite = creator.CreateBlockToWriteFromPrimitiveTypes(DteKleurRAL)
+        creator.writeToFile(DteKleurRAL, 'Datatypes', dataToWrite, '../../')
+
+        filelocation = os.path.abspath(os.path.join(os.sep, ROOT_DIR, 'OTLModel/Datatypes/DteKleurRAL.py'))
         self.assertTrue(os.path.isfile(filelocation))
 
     def test_getEenheidFromConstraintsEmptyString(self):

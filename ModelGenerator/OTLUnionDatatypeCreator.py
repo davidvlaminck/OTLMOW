@@ -22,6 +22,6 @@ class OTLUnionDatatypeCreator(AbstractDatatypeCreator):
         if oSLODatatypeUnion.name == '':
             raise ValueError(f"OSLODatatypeUnion.name is invalid. Value = '{oSLODatatypeUnion.name}'")
 
-        return self.CreateBlockToWriteFromComplexPrimitiveOrUnionTypes(oSLODatatypeUnion, TypeField='UnionType')
+        return self.CreateBlockToWriteFromComplexPrimitiveOrUnionTypes(oSLODatatypeUnion, typeField='UnionType')
 
 

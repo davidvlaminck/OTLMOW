@@ -22,15 +22,15 @@ class AbstractBehaviour(unittest.TestCase):
         self.assertTrue(isinstance(contactor, AIMObject))
         contactor2 = Contactor()
 
-        contactor.notitie.waarde = "notitie1"
-        contactor2.notitie.waarde = "notitie2"
-        self.assertTrue(contactor.notitie.waarde == "notitie1")
-        self.assertTrue(contactor2.notitie.waarde == "notitie2")
+        contactor.notitie = "notitie1"
+        contactor2.notitie = "notitie2"
+        self.assertTrue(contactor.notitie == "notitie1")
+        self.assertTrue(contactor2.notitie == "notitie2")
 
         contactor3 = Contactor()
-        self.assertTrue(contactor3.notitie.waarde is None)
+        self.assertTrue(contactor3.notitie is None)
 
-        contactor3.notitie.waarde = "notitie3"
-        self.assertTrue(contactor.notitie.waarde == "notitie1")
-        self.assertTrue(contactor2.notitie.waarde == "notitie2")
-        self.assertTrue(contactor3.notitie.waarde == "notitie3")
+        contactor3.notitie = "notitie3"
+        self.assertTrue(contactor.notitie == "notitie1")
+        self.assertTrue(contactor2.notitie == "notitie2")
+        self.assertTrue(contactor3.notitie == "notitie3")

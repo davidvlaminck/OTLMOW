@@ -10,18 +10,28 @@ class EMInfraDecoderTests(TestCase):
     def test_decodeFirstEntry(self):
         responseString = ResponseTestDouble().response
         decoder = EMInfraDecoder()
-        list = decoder.decodeGraph(responseString)
-        first = list[0]
-        self.assertTrue(isinstance(first, Omvormer))
-        self.assertEqual("https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Omvormer", first.typeURI)
-        self.assertEqual("ENCA0469", first.naam.waarde)
-        self.assertEqual(None, first.notitie.waarde)  # TODO check
-        self.assertEqual("Encoder", first.type.waarde.invulwaarde)
-        self.assertEqual(True, first.isActief.waarde)
-        self.assertEqual("in-gebruik", first.toestand.waarde.invulwaarde)
-        self.assertEqual("10.216.10.33", first.ipAdres.waarde)
-        self.assertEqual("AWV", first.assetId.toegekendDoor.waarde)
-        self.assertEqual("0005bafb-838f-47e0-a4e2-20dd120ede6b-b25kZXJkZWVsI09tdm9ybWVy", first.assetId.identificator.waarde)
+        first = decoder.decodeGraph(responseString)[0]
+        with self.subTest("Testing type match"):
+            self.assertTrue(isinstance(first, Omvormer))
+            self.assertEqual("https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Omvormer", first.typeURI)
+
+        with self.subTest("Testing keuzelijst"):
+            self.assertEqual("Encoder", first.type)
+            self.assertEqual("in-gebruik", first.toestand)
+
+        with self.subTest("Testing StringField"):
+            self.assertEqual("ENCA0469", first.naam)
+            self.assertEqual(None, first.notitie)
+
+        with self.subTest("Testing BooleanField"):
+            self.assertEqual(True, first.isActief)
+
+        with self.subTest("Testing Dte"):
+            self.assertEqual("10.216.10.33", first.ipAdres.waarde)
+
+        with self.subTest("Testing Dtc"):
+            self.assertEqual("AWV", first.assetId.toegekendDoor)
+            self.assertEqual("0005bafb-838f-47e0-a4e2-20dd120ede6b-b25kZXJkZWVsI09tdm9ybWVy", first.assetId.identificator)
 
     def test_decodeAndEncode(self):
         responseString = ResponseTestDouble().response

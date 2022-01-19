@@ -10,5 +10,13 @@ class ComplexField(OTLField, ABC):
 
     @staticmethod
     def validate(value, attribuut):
-        raise ValueError(f'This is a complex datatype. Set the values through the attributes. Use .attr_type_info() for more info')
+        if not isinstance(value, attribuut.field.waardeObject):
+            raise ValueError(f'This is a complex datatype. Set the values through the attributes. Use .attr_type_info() for more info')
+        validation = True
+        for tuple in vars(value).items():
+            waarde = tuple[0]
+            attr = tuple[1]
+            if not attr.field.validate(waarde, attr):
+                validation = False
+        return validation
 

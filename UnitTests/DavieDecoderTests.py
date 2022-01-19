@@ -95,9 +95,9 @@ class DavieDecoderTests(TestCase):
 
     def test_decode_invalid_attribute(self):
         davie_decoder = DavieDecoder()
-        with self.assertRaises(NotImplementedError):
+        with self.assertRaises(AttributeError):
             davie_decoder.decode(
-                '[{"typeURI": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Netwerkpoort", "invalid attribute": "some value"}]')
+                '[{"typeURI": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Netwerkpoort", "invalid_attribute": "some value"}]')
 
     def test_decode_empty_value(self):
         davie_decoder = DavieDecoder()
@@ -158,7 +158,7 @@ class DavieDecoderTests(TestCase):
             self.assertEqual(1.1, lijstObjecten[0].niveau)
 
         with self.subTest("Assert KwantWrdInMeter"):
-            self.assertEqual(2.0, lijstObjecten[0].breedte)
+            self.assertEqual(2.0, lijstObjecten[0].breedte.waarde)
 
     def test_decode_Davie_json_case_4_and_assert_fields(self):
         davie_decoder = DavieDecoder()

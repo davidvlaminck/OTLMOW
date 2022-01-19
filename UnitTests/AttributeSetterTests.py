@@ -2,8 +2,12 @@
 from datetime import datetime
 from unittest import TestCase
 
-from Facility.AttributeSetters import AttributeSetterFactory, ComplexFieldSetter, KardinaliteitFieldSetter, KeuzelijstFieldSetter, \
-    DateFieldSetter, PrimitiveFieldSetter
+from Facility.AttributeSetters import KardinaliteitFieldSetter
+from Facility.DateFieldSetter import DateFieldSetter
+from Facility.ComplexFieldSetter import ComplexFieldSetter
+from Facility.PrimitiveFieldSetter import PrimitiveFieldSetter
+from Facility.AttributeSetterFactory import AttributeSetterFactory
+from Facility.KeuzelijstFieldSetter import KeuzelijstFieldSetter
 from OTLModel.Classes.Afscherming import Afscherming
 from OTLModel.Classes.Brandleiding import Brandleiding
 from OTLModel.Classes.Buitenkast import Buitenkast

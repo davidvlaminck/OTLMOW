@@ -11,6 +11,6 @@ class KlPtKARModemProtocol(KeuzelijstField):
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlPtKARModemProtocol'
     definition = 'Beschrijft het protocol dat de PT-KAR-Modem gebruikt om te communiceren.'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlPtKARModemProtocol'
-    options = 
+    options = {
     }
 

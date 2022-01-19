@@ -14,19 +14,19 @@ class KlLEGCNorm(KeuzelijstField):
     options = {
         'NBN-EN-1793-1': KeuzelijstWaarde(invulwaarde='NBN-EN-1793-1',
                                           label='NBN EN 1793-1',
-                                          definitie='Beproevingsmethode deel 1 'Intrinsieke kenmerken van de geluidabsorptie'',
+                                          definitie="Beproevingsmethode deel 1 'Intrinsieke kenmerken van de geluidabsorptie'",
                                           objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLEGCNorm/NBN-EN-1793-1'),
         'NBN-EN-1793-2': KeuzelijstWaarde(invulwaarde='NBN-EN-1793-2',
                                           label='NBN EN 1793-2',
-                                          definitie='Beproevingsmethode deel 2 'Intrinsieke kenmerken van de luchtgeluidisolatie'',
+                                          definitie="Beproevingsmethode deel 2 'Intrinsieke kenmerken van de luchtgeluidisolatie'",
                                           objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLEGCNorm/NBN-EN-1793-2'),
         'NBN-EN-1793-5': KeuzelijstWaarde(invulwaarde='NBN-EN-1793-5',
                                           label='NBN EN 1793-5',
-                                          definitie='Beproevingsmethode deel 5 'Intrinsieke kenmerken - In situ waarden van geluidsisolatie onder directe geluidveld omstandigheden'',
+                                          definitie="Beproevingsmethode deel 5 'Intrinsieke kenmerken - In situ waarden van geluidsisolatie onder directe geluidveld omstandigheden'",
                                           objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLEGCNorm/NBN-EN-1793-5'),
         'NBN-EN-1793-6': KeuzelijstWaarde(invulwaarde='NBN-EN-1793-6',
                                           label='NBN EN 1793-6',
-                                          definitie='Beproevingsmethode deel 6 'In-situ waarden van luchtgeluidisolatie onder directe geluidsveldcondities'',
+                                          definitie="Beproevingsmethode deel 6 'In-situ waarden van luchtgeluidisolatie onder directe geluidsveldcondities'",
                                           objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLEGCNorm/NBN-EN-1793-6')
     }
 

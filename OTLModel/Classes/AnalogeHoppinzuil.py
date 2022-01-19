@@ -1,46 +1,63 @@
 # coding=utf-8
+from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
+from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.Hoppinzuil import Hoppinzuil
 from OTLModel.Datatypes.DtcDocument import DtcDocument
-from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLModel.Datatypes.KlHoppinzuilType import KlHoppinzuilType
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class AnalogeHoppinzuil(Hoppinzuil):
+class AnalogeHoppinzuil(Hoppinzuil, AttributeInfo):
     """Een hoppinzuil is een informatiezuil, die als doel heeft de reizigers te informeren omtrent de vervoersmogelijkheden en diensten die op de locatie van de zuil voorhanden zijn."""
 
-    typeURI = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#AnalogeHoppinzuil"
+    typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#AnalogeHoppinzuil'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        super().__init__()
+        AttributeInfo.__init__(self)
+        Hoppinzuil.__init__(self)
 
-        self.macrokaart = DtcDocument()
+        self._macrokaart = OTLAttribuut(field=DtcDocument,
+                                        naam='macrokaart',
+                                        label='macrokaart',
+                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#AnalogeHoppinzuil.macrokaart',
+                                        definition='Cartografische weergave van het hoppinpunt en de omliggende hoppinpunten met daarop aangeduid de attractiepolen in de omgeving.')
+
+        self._microkaart = OTLAttribuut(field=DtcDocument,
+                                        naam='microkaart',
+                                        label='microkaart',
+                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#AnalogeHoppinzuil.microkaart',
+                                        definition='Cartografische weergave van het hoppinpunt en de omliggende straten met daarop de hoppinzuil, de verschillende beschikbare vervoersmodi en diensten aangeduid.')
+
+        self._type = OTLAttribuut(field=KlHoppinzuilType,
+                                  naam='type',
+                                  label='type',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#AnalogeHoppinzuil.type',
+                                  definition='De mogelijke types van een analoge hoppinzuil.')
+
+    @property
+    def macrokaart(self):
         """Cartografische weergave van het hoppinpunt en de omliggende hoppinpunten met daarop aangeduid de attractiepolen in de omgeving."""
-        self.macrokaart.naam = "macrokaart"
-        self.macrokaart.label = "macrokaart"
-        self.macrokaart.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#AnalogeHoppinzuil.macrokaart"
-        self.macrokaart.definition = "Cartografische weergave van het hoppinpunt en de omliggende hoppinpunten met daarop aangeduid de attractiepolen in de omgeving."
-        self.macrokaart.constraints = ""
-        self.macrokaart.usagenote = ""
-        self.macrokaart.deprecated_version = ""
+        return self._macrokaart.waarde
 
-        self.microkaart = DtcDocument()
+    @macrokaart.setter
+    def macrokaart(self, value):
+        self._macrokaart.set_waarde(value, owner=self)
+
+    @property
+    def microkaart(self):
         """Cartografische weergave van het hoppinpunt en de omliggende straten met daarop de hoppinzuil, de verschillende beschikbare vervoersmodi en diensten aangeduid."""
-        self.microkaart.naam = "microkaart"
-        self.microkaart.label = "microkaart"
-        self.microkaart.objectUri = "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#AnalogeHoppinzuil.microkaart"
-        self.microkaart.definition = "Cartografische weergave van het hoppinpunt en de omliggende straten met daarop de hoppinzuil, de verschillende beschikbare vervoersmodi en diensten aangeduid."
-        self.microkaart.constraints = ""
-        self.microkaart.usagenote = ""
-        self.microkaart.deprecated_version = ""
+        return self._microkaart.waarde
 
-        self.type = KeuzelijstField(naam="type",
-                                    label="type",
-                                    lijst=KlHoppinzuilType(),
-                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#AnalogeHoppinzuil.type",
-                                    definition="De mogelijke types van een analoge hoppinzuil.",
-                                    constraints="",
-                                    usagenote="",
-                                    deprecated_version="")
+    @microkaart.setter
+    def microkaart(self, value):
+        self._microkaart.set_waarde(value, owner=self)
+
+    @property
+    def type(self):
         """De mogelijke types van een analoge hoppinzuil."""
+        return self._type.waarde
+
+    @type.setter
+    def type(self, value):
+        self._type.set_waarde(value, owner=self)

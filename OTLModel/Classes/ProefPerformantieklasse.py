@@ -20,7 +20,7 @@ class ProefPerformantieklasse(Proef, AttributeInfo):
                                                 naam='performantieklasse',
                                                 label='performantieklasse',
                                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefPerformantieklasse.performantieklasse',
-                                                usagenote='Klasse uit gebruik sinds versie 2.0.0',
+                                                usagenote='Klasse uit gebruik sinds versie 2.0.0 ',
                                                 deprecated_version='2.0.0',
                                                 definition='De aanduiding hoe (performantie) de beginconstructie is getest.')
 

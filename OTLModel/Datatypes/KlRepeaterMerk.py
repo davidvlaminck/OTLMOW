@@ -11,6 +11,6 @@ class KlRepeaterMerk(KeuzelijstField):
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlRepeaterMerk'
     definition = 'Keuzelijst met merknamen voor Repeater.'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlRepeaterMerk'
-    options = 
+    options = {
     }
 

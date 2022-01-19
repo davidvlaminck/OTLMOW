@@ -20,15 +20,13 @@ class ProefSchokindexMVP(Proef, AttributeInfo):
                                            naam='schokindexMvp',
                                            label='schokindex mvp',
                                            objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefSchokindexMVP.schokindexMvp',
-                                           usagenote='Klasse uit gebruik sinds versie 2.0.0',
+                                           usagenote='Klasse uit gebruik sinds versie 2.0.0 ',
                                            deprecated_version='2.0.0',
-                                           definition=' head injury criterium (HIC) van een motorvangplank.
-')
+                                           definition='Head Injury Criterium (HIC) van een motorvangplank.')
 
     @property
     def schokindexMvp(self):
-        """ head injury criterium (HIC) van een motorvangplank.
-"""
+        """Head Injury Criterium (HIC) van een motorvangplank."""
         return self._schokindexMvp.waarde
 
     @schokindexMvp.setter

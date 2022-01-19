@@ -20,17 +20,13 @@ class ProefSchokindex(Proef, AttributeInfo):
                                         naam='schokindex',
                                         label='schokindex',
                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefSchokindex.schokindex',
-                                        usagenote='Klasse uit gebruik sinds versie 2.0.0',
+                                        usagenote='Klasse uit gebruik sinds versie 2.0.0 ',
                                         deprecated_version='2.0.0',
-                                        definition=' De parameter die 
-weergeeft hoe groot de kans op ernstige letsels is van de inzittenden bij een
-aanrijding.')
+                                        definition='De parameter die weergeeft hoe groot de kans op ernstige letsels is van de inzittenden bij een aanrijding.')
 
     @property
     def schokindex(self):
-        """ De parameter die 
-weergeeft hoe groot de kans op ernstige letsels is van de inzittenden bij een
-aanrijding."""
+        """De parameter die weergeeft hoe groot de kans op ernstige letsels is van de inzittenden bij een aanrijding."""
         return self._schokindex.waarde
 
     @schokindex.setter

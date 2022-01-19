@@ -11,6 +11,6 @@ class KlHardwareCdDvdTape(KeuzelijstField):
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#KlHardwareCdDvdTape'
     definition = 'CD, DVD, Tape.'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlHardwareCdDvdTape'
-    options = 
+    options = {
     }
 

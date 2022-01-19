@@ -11,6 +11,6 @@ class KlMeetmicrofoonModelnaam(KeuzelijstField):
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlMeetmicrofoonModelnaam'
     definition = 'De modelnaam van de meetmicrofoon.'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlMeetmicrofoonModelnaam'
-    options = 
+    options = {
     }
 

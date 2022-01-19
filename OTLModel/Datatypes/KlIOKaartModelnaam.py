@@ -11,6 +11,6 @@ class KlIOKaartModelnaam(KeuzelijstField):
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlIOKaartModelnaam'
     definition = 'Lijst van mogelijke modelnamen voor IO-kaarten.'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlIOKaartModelnaam'
-    options = 
+    options = {
     }
 

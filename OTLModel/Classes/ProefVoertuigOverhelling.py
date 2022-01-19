@@ -20,7 +20,7 @@ class ProefVoertuigOverhelling(Proef, AttributeInfo):
                                                  naam='voertuigOverhelling',
                                                  label='voertuig overhelling',
                                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefVoertuigOverhelling.voertuigOverhelling',
-                                                 usagenote='Klasse uit gebruik sinds versie 2.0.0',
+                                                 usagenote='Klasse uit gebruik sinds versie 2.0.0 ',
                                                  deprecated_version='2.0.0',
                                                  definition="Naast het horizontaal verplaatsen van de veiligheidsafbakening bij een impact, kan een voertuig bij impact ook over de afbakening hellen.  De maximale overhelling wordt op basis van foto's en video-opnames van de test bepaald.")
 

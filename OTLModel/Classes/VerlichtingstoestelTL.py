@@ -2,6 +2,7 @@
 from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.Verlichtingstoestel import Verlichtingstoestel
+from OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
@@ -14,3 +15,18 @@ class VerlichtingstoestelTL(Verlichtingstoestel, AttributeInfo):
     def __init__(self):
         AttributeInfo.__init__(self)
         Verlichtingstoestel.__init__(self)
+
+        self._lichtpuntHoogte = OTLAttribuut(field=KwantWrdInMeter,
+                                             naam='lichtpuntHoogte',
+                                             label='lichtpunt hoogte',
+                                             objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#VerlichtingstoestelTL.lichtpuntHoogte',
+                                             definition='Hoogte van het lichtpunt ten opzichte van de rijweg.')
+
+    @property
+    def lichtpuntHoogte(self):
+        """Hoogte van het lichtpunt ten opzichte van de rijweg."""
+        return self._lichtpuntHoogte.waarde
+
+    @lichtpuntHoogte.setter
+    def lichtpuntHoogte(self, value):
+        self._lichtpuntHoogte.set_waarde(value, owner=self)

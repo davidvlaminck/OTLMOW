@@ -11,6 +11,6 @@ class KlPompMerk(KeuzelijstField):
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlPompMerk'
     definition = 'Lijst met merknamen voor pompen.'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlPompMerk'
-    options = 
+    options = {
     }
 

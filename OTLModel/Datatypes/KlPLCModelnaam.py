@@ -11,6 +11,6 @@ class KlPLCModelnaam(KeuzelijstField):
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlPLCModelnaam'
     definition = 'De modelnaam van de PLC.'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlPLCModelnaam'
-    options = 
+    options = {
     }
 

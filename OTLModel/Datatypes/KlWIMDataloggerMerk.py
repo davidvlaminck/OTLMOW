@@ -11,6 +11,6 @@ class KlWIMDataloggerMerk(KeuzelijstField):
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlWIMDataloggerMerk'
     definition = 'Het merk van de WIM-datalogger.'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlWIMDataloggerMerk'
-    options = 
+    options = {
     }
 

@@ -11,6 +11,6 @@ class KlIVRIModelRIS(KeuzelijstField):
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlIVRIModelRIS'
     definition = 'De modelnaam van de RIS.'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlIVRIModelRIS'
-    options = 
+    options = {
     }
 

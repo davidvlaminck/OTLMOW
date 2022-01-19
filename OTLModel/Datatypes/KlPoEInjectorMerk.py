@@ -11,6 +11,6 @@ class KlPoEInjectorMerk(KeuzelijstField):
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlPoEInjectorMerk'
     definition = 'Het merk van de PoE-injector.'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlPoEInjectorMerk'
-    options = 
+    options = {
     }
 

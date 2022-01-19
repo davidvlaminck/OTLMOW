@@ -11,6 +11,6 @@ class KlPTRegelaarModelnaam(KeuzelijstField):
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlPTRegelaarModelnaam'
     definition = 'Keuzelijst met modelnamen voor PTRegelaar.'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlPTRegelaarModelnaam'
-    options = 
+    options = {
     }
 

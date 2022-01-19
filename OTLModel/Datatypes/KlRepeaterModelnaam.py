@@ -11,6 +11,6 @@ class KlRepeaterModelnaam(KeuzelijstField):
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlRepeaterModelnaam'
     definition = 'Keuzelijst met modelnamen voor Repeater.'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlRepeaterModelnaam'
-    options = 
+    options = {
     }
 

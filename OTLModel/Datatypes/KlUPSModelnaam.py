@@ -11,6 +11,6 @@ class KlUPSModelnaam(KeuzelijstField):
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlUPSModelnaam'
     definition = 'De modelnaam van de UPS.'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlUPSModelnaam'
-    options = 
+    options = {
     }
 

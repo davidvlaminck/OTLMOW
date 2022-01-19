@@ -11,6 +11,6 @@ class KlCabineMerk(KeuzelijstField):
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlCabineMerk'
     definition = 'Merknamen voor cabines.'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlCabineMerk'
-    options = 
+    options = {
     }
 

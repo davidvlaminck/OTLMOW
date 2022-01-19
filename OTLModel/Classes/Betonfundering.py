@@ -23,7 +23,7 @@ class Betonfundering(Fundering, AttributeInfo):
                                                naam='afmetingGrondvlak',
                                                label='afmeting grondvlak',
                                                objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Betonfundering.afmetingGrondvlak',
-                                               usagenote='Klasse uit gebruik sinds versie 2.0.0',
+                                               usagenote='Klasse uit gebruik sinds versie 2.0.0 ',
                                                deprecated_version='2.0.0',
                                                definition='De maximale lengte en breedte van bovenkant van de fundering.')
 
@@ -31,7 +31,7 @@ class Betonfundering(Fundering, AttributeInfo):
                                             naam='betonkwaliteit',
                                             label='betonkwaliteit',
                                             objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Betonfundering.betonkwaliteit',
-                                            usagenote='Klasse uit gebruik sinds versie 2.0.0',
+                                            usagenote='Klasse uit gebruik sinds versie 2.0.0 ',
                                             deprecated_version='2.0.0',
                                             definition='Kwaliteit van het beton gebruikt voor de fundering volgens een vaste lijst van mogelijke waarden.')
 

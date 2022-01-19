@@ -28,9 +28,7 @@ class Markering(AIMObject, Signalisatie, AttributeInfo):
                                         naam='isHandwerk',
                                         label='is handwerk',
                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Markering.isHandwerk',
-                                        definition='Boolean om te bepalen of de markering machinaal of handmatig is aangebracht
-
-.')
+                                        definition='Boolean om te bepalen of de markering machinaal of handmatig is aangebracht.')
 
         self._isTijdelijk = OTLAttribuut(field=BooleanField,
                                          naam='isTijdelijk',
@@ -64,9 +62,7 @@ class Markering(AIMObject, Signalisatie, AttributeInfo):
 
     @property
     def isHandwerk(self):
-        """Boolean om te bepalen of de markering machinaal of handmatig is aangebracht
-
-."""
+        """Boolean om te bepalen of de markering machinaal of handmatig is aangebracht."""
         return self._isHandwerk.waarde
 
     @isHandwerk.setter

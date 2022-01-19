@@ -11,6 +11,6 @@ class KlVirtueleServerModelnaam(KeuzelijstField):
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlVirtueleServerModelnaam'
     definition = 'De modelnaam van de virtuele server.'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlVirtueleServerModelnaam'
-    options = 
+    options = {
     }
 

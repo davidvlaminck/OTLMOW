@@ -37,7 +37,7 @@ class Ventilatie(AIMObject, AttributeInfo):
                                             naam='maximaalDebiet',
                                             label='maximaal debiet',
                                             objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Ventilatie.maximaalDebiet',
-                                            usagenote='Attribuut uit gebruik sinds versie 2.0.0',
+                                            usagenote='Attribuut uit gebruik sinds versie 2.0.0 ',
                                             deprecated_version='2.0.0',
                                             definition='Maximaal debiet is de grootste hoeveelheid gas of vloeistof die per tijdseenheid door een bepaald oppervlak kan stromen.')
 

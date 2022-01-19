@@ -82,7 +82,7 @@ class OTLClassCreator(AbstractDatatypeCreator):
                 datablock.append(f'        {inheritance.base_name}.__init__(self)')
             datablock.append('')
 
-        self.add_attributen_to_dataBlock(attributen, datablock, class_uri=osloClass.objectUri, forClassUse=True)
+        self.add_attributen_to_dataBlock(attributen, datablock, forClassUse=True)
         if len(inheritances) == 0 and len(attributen) == 0:
             datablock.append('        pass')
 

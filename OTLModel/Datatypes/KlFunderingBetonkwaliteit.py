@@ -12,6 +12,6 @@ class KlFunderingBetonkwaliteit(KeuzelijstField):
     definition = 'Mogelijke waarden voor de betonkwaliteit van een fundering.'
     deprecated_version = '2.0.0'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlFunderingBetonkwaliteit'
-    options = 
+    options = {
     }
 

@@ -11,6 +11,6 @@ class KlBatterijModelnaam(KeuzelijstField):
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlBatterijModelnaam'
     definition = 'De modelnaam van de batterij.'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlBatterijModelnaam'
-    options = 
+    options = {
     }
 

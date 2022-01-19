@@ -8,9 +8,7 @@ from OTLModel.Datatypes.KlCalamiteitsbordVorm import KlCalamiteitsbordVorm
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
 class CalamiteitsBord(RetroreflecterendVerkeersbord, AttributeInfo):
-    """De aanwijzingsborden ter plaatse van een startpunt, een aantakpunt, een wissel- of koppelpunt van een
-omleggingsroute bij calamiteiten zijn geïntegreerd in een één-bordsysteem met een scharnierende
-plaat."""
+    """De aanwijzingsborden ter plaatse van een startpunt, een aantakpunt, een wissel- of koppelpunt van een omleggingsroute bij calamiteiten zijn geïntegreerd in een één-bordsysteem met een scharnierende plaat."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#CalamiteitsBord'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""

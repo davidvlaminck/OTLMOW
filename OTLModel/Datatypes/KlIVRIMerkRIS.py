@@ -11,6 +11,6 @@ class KlIVRIMerkRIS(KeuzelijstField):
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlIVRIMerkRIS'
     definition = 'Het merk van de RIS.'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlIVRIMerkRIS'
-    options = 
+    options = {
     }
 

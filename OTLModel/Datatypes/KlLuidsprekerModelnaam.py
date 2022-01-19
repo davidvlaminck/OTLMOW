@@ -11,6 +11,6 @@ class KlLuidsprekerModelnaam(KeuzelijstField):
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlLuidsprekerModelnaam'
     definition = 'De modelnaam van de luidspreker.'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlLuidsprekerModelnaam'
-    options = 
+    options = {
     }
 

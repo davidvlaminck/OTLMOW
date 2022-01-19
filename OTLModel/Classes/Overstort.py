@@ -23,8 +23,7 @@ class Overstort(LinkendElement, AttributeInfo):
                                            naam='drempellengte',
                                            label='breedte',
                                            objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Overstort.drempellengte',
-                                           definition='Drempellengte of breedte van de overstort. Deze wordt gemeten aan de kortste zijde
-van de drempel.')
+                                           definition='Drempellengte of breedte van de overstort. Deze wordt gemeten aan de kortste zijde van de drempel.')
 
         self._materiaalDrempel = OTLAttribuut(field=KlOverstortMateriaalDrempel,
                                               naam='materiaalDrempel',
@@ -42,16 +41,11 @@ van de drempel.')
                                          naam='vrijeHoogte',
                                          label='vrije hoogte',
                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Overstort.vrijeHoogte',
-                                         definition='De vrije hoogte tussen de overstortdrempel en het plafond van de
-constructie ter hoogte van de drempel. Voor drempels in leidingen worden
-de vrije hoogte voor de databank genomen tussen de drempel en de
-binnenbovenkant buis. Indien er geen sprake is van een vrije hoogte (vb
-drempels in grachten) wordt dit niet ingevuld.')
+                                         definition='De vrije hoogte tussen de overstortdrempel en het plafond van deconstructie ter hoogte van de drempel. Voor drempels in leidingen wordende vrije hoogte voor de databank genomen tussen de drempel en debinnenbovenkant buis. Indien er geen sprake is van een vrije hoogte (vbdrempels in grachten) wordt dit niet ingevuld.')
 
     @property
     def drempellengte(self):
-        """Drempellengte of breedte van de overstort. Deze wordt gemeten aan de kortste zijde
-van de drempel."""
+        """Drempellengte of breedte van de overstort. Deze wordt gemeten aan de kortste zijde van de drempel."""
         return self._drempellengte.waarde
 
     @drempellengte.setter

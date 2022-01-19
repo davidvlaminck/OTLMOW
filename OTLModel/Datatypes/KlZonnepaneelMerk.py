@@ -11,6 +11,6 @@ class KlZonnepaneelMerk(KeuzelijstField):
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlZonnepaneelMerk'
     definition = 'Het merk van het zonnepaneel.'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlZonnepaneelMerk'
-    options = 
+    options = {
     }
 

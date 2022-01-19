@@ -1,14 +1,14 @@
 # coding=utf-8
 from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from OTLModel.Classes.NietWeggebondenDetectie import NietWeggebondenDetectie
 from OTLModel.Classes.TypeWeggebruiker import TypeWeggebruiker
+from OTLModel.Classes.NietWeggebondenDetectie import NietWeggebondenDetectie
 from OTLModel.Datatypes.KlRadarMerk import KlRadarMerk
 from OTLModel.Datatypes.KlRadarModelnaam import KlRadarModelnaam
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Radar(NietWeggebondenDetectie, TypeWeggebruiker, AttributeInfo):
+class Radar(TypeWeggebruiker, NietWeggebondenDetectie, AttributeInfo):
     """Een detector die werkt volgens het Doppler-effect. De detectie gebeurt met behulp van een microgolfbundel die in de richting van het wegdek wordt uitgezonden. Gebruikt voor het detecteren van voertuigen, voetgangers en fietsers."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Radar'

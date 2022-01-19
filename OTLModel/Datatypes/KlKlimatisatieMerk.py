@@ -11,6 +11,6 @@ class KlKlimatisatieMerk(KeuzelijstField):
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlKlimatisatieMerk'
     definition = 'Merknamen voor klimatisatiesystemen.'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlKlimatisatieMerk'
-    options = 
+    options = {
     }
 

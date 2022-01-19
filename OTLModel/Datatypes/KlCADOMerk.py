@@ -11,6 +11,6 @@ class KlCADOMerk(KeuzelijstField):
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlCADOMerk'
     definition = 'Het merk van de calamiteitendoorsteek.'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlCADOMerk'
-    options = 
+    options = {
     }
 

@@ -1,5 +1,8 @@
+from datetime import datetime
+
 from Loggers.AbstractLogger import AbstractLogger
 from Loggers.LogType import LogType
+from Loggers.NoneLogger import NoneLogger
 from ModelGenerator.OSLOCollector import OSLOCollector
 from ModelGenerator.OTLClassCreator import OTLClassCreator
 from ModelGenerator.OTLComplexDatatypeCreator import OTLComplexDatatypeCreator
@@ -16,12 +19,17 @@ class OTLModelCreator:
         self.logger.log("Created an instance of OTLModelCreator", LogType.INFO)
 
     def create_full_model(self):
+        self.logger.log('started creating model at ' + datetime.now().strftime("%d/%m/%Y %H:%M:%S"), logType=LogType.INFO)
+        l = self.logger
+        self.logger = NoneLogger()
         self.create_primitive_datatypes()
         self.create_complex_datatypes()
         self.create_union_datatypes()
-        #self.create_enumerations()
+        self.create_enumerations()
         self.create_classes()
-        #self.create_relations()
+        self.create_relations()
+        self.logger = l
+        self.logger.log('finished creating model at ' + datetime.now().strftime("%d/%m/%Y %H:%M:%S"), logType=LogType.INFO)
 
     def create_primitive_datatypes(self):
         creator = OTLPrimitiveDatatypeCreator(self.logger, self.osloCollector)

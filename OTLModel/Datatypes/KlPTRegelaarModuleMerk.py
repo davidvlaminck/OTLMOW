@@ -11,6 +11,6 @@ class KlPTRegelaarModuleMerk(KeuzelijstField):
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#KlPTRegelaarModuleMerk'
     definition = 'Keuzelijst met merknamen voor PTRegelaarModule.'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlPTRegelaarModuleMerk'
-    options = 
+    options = {
     }
 

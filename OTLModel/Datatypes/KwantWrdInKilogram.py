@@ -1,39 +1,52 @@
 # coding=utf-8
-from OTLModel.Datatypes.KwantWrd import KwantWrd
-from OTLModel.Datatypes.LiteralField import LiteralField
-from OTLModel.Datatypes.DecimalFloatField import DecimalFloatField
+from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
+from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLModel.BaseClasses.OTLField import OTLField
+from OTLModel.Datatypes.FloatOrDecimalField import FloatOrDecimalField
+from OTLModel.Datatypes.StringField import StringField
 
 
 # Generated with OTLPrimitiveDatatypeCreator. To modify: extend, do not edit
-class KwantWrdInKilogram(KwantWrd):
-    """Een kwantitatieve waarde die een getal in kilogram uitdrukt."""
+class KwantWrdInKilogramWaarden(AttributeInfo):
+    def __init__(self):
+        self._standaardEenheid = OTLAttribuut(field=StringField,
+                                              naam='standaardEenheid',
+                                              label='standaardeenheid',
+                                              objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInKilogram.standaardEenheid',
+                                              usagenote='"kg"^^cdt:ucumunit',
+                                              constraints='"kg"^^cdt:ucumunit',
+                                              definition='De standaard eenheid bij dit datatype is uitgedrukt in kilogram.')
 
-    def __init__(self, waarde=None):
-        self.eenheid = LiteralField(naam="standaardEenheid",
-                                    label="standaardeenheid",
-                                    objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInKilogram.standaardEenheid",
-                                    definition="De standaard eenheid bij dit datatype is uitgedrukt in kilogram.",
-                                    constraints='"kg"^^cdt:ucumunit',
-                                    usagenote='"kg"^^cdt:ucumunit',
-                                    deprecated_version="",
-                                    readonlyValue="kg")
+        self._waarde = OTLAttribuut(field=FloatOrDecimalField,
+                                    naam='waarde',
+                                    label='waarde',
+                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInKilogram.waarde',
+                                    definition='Bevat een getal die bij het datatype hoort.')
+
+    @property
+    def standaardEenheid(self):
         """De standaard eenheid bij dit datatype is uitgedrukt in kilogram."""
+        return self._standaardEenheid.usagenote.split('"')[1]
 
-        self.waardeVeld = DecimalFloatField(naam="waarde",
-                                            label="waarde",
-                                            objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInKilogram.waarde",
-                                            definition="Bevat een getal die bij het datatype hoort.",
-                                            constraints="",
-                                            usagenote="",
-                                            deprecated_version="")
+    @property
+    def waarde(self):
         """Bevat een getal die bij het datatype hoort."""
+        return self._waarde.waarde
 
-        super().__init__(naam="KwantWrdInKilogram",
-                         label="Kwantitatieve waarde in kilogram",
-                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInKilogram",
-                         definition="Een kwantitatieve waarde die een getal in kilogram uitdrukt.",
-                         usagenote="",
-                         deprecated_version="",
-                         waardeVeld=self.waardeVeld,
-                         eenheidVeld=self.eenheid,
-                         waarde=waarde)
+    @waarde.setter
+    def waarde(self, value):
+        self._waarde.set_waarde(value)
+
+
+# Generated with OTLPrimitiveDatatypeCreator. To modify: extend, do not edit
+class KwantWrdInKilogram(OTLField, AttributeInfo):
+    """Een kwantitatieve waarde die een getal in kilogram uitdrukt."""
+    naam = 'KwantWrdInKilogram'
+    label = 'Kwantitatieve waarde in kilogram'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInKilogram'
+    definition = 'Een kwantitatieve waarde die een getal in kilogram uitdrukt.'
+    waardeObject = KwantWrdInKilogramWaarden
+
+    def __str__(self):
+        return OTLField.__str__(self)
+

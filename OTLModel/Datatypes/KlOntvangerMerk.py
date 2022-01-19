@@ -11,6 +11,6 @@ class KlOntvangerMerk(KeuzelijstField):
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlOntvangerMerk'
     definition = 'Keuzelijst met merknamen voor Ontvanger.'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlOntvangerMerk'
-    options = 
+    options = {
     }
 

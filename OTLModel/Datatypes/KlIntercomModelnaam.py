@@ -11,6 +11,6 @@ class KlIntercomModelnaam(KeuzelijstField):
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlIntercomModelnaam'
     definition = 'De modelnaam van het intercomtoestel.'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlIntercomModelnaam'
-    options = 
+    options = {
     }
 

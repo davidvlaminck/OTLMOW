@@ -11,6 +11,6 @@ class KlHydrantKoppeling(KeuzelijstField):
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlHydrantKoppeling'
     definition = 'Keuzelijst met types koppelingen van hydranten.'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlHydrantKoppeling'
-    options = 
+    options = {
     }
 

@@ -11,6 +11,6 @@ class KlVRBAZMerk(KeuzelijstField):
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlVRBAZMerk'
     definition = 'Keuzelijst met merknamen voor VRBAZ.'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlVRBAZMerk'
-    options = 
+    options = {
     }
 

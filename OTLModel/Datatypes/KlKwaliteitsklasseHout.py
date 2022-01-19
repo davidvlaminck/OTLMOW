@@ -11,6 +11,6 @@ class KlKwaliteitsklasseHout(KeuzelijstField):
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KlKwaliteitsklasseHout'
     definition = 'De kwaliteitsindeling van hout met betrekking op vervormingen, scheuren en kwasten.'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlKwaliteitsklasseHout'
-    options = 
+    options = {
     }
 

@@ -11,6 +11,6 @@ class KlPoEInjectorModelnaam(KeuzelijstField):
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlPoEInjectorModelnaam'
     definition = 'De modelnaam van de PoE-injector.'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlPoEInjectorModelnaam'
-    options = 
+    options = {
     }
 

@@ -35,8 +35,7 @@ class OpgaandeHoutigeVegetatie(HoutigeVegetatie, AttributeInfo):
                                                naam='natuurstreefbeeld',
                                                label='natuurstreefbeeld',
                                                objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#OpgaandeHoutigeVegetatie.natuurstreefbeeld',
-                                               definition='Een natuurstreefbeeld is een nagestreefd biotoop, mozaïek van biotopen of een leefgebied van een soort dat je wil behouden of verkrijgen via een goed natuurbeheer.
-In het definitief plan van type twee, drie of vier wordt het ecologisch einddoel vastgesteld aan de hand van natuurstreefbeelden.')
+                                               definition='Een natuurstreefbeeld is een nagestreefd biotoop, mozaïek van biotopen of een leefgebied van een soort dat je wil behouden of verkrijgen via een goed natuurbeheer.In het definitief plan van type twee, drie of vier wordt het ecologisch einddoel vastgesteld aan de hand van natuurstreefbeelden.')
 
         self._type = OTLAttribuut(field=KlHoutigeType,
                                   naam='type',

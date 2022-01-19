@@ -11,6 +11,6 @@ class KlCodeklavierMerk(KeuzelijstField):
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlCodeklavierMerk'
     definition = 'Het merk van het codeklavier.'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlCodeklavierMerk'
-    options = 
+    options = {
     }
 

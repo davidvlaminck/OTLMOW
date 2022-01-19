@@ -38,7 +38,7 @@ class Brandhaspel(Brandvoorziening, AttributeInfo):
                                             naam='maximaalDebiet',
                                             label='maximaalDebiet',
                                             objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Brandhaspel.maximaalDebiet',
-                                            usagenote='Attribuut uit gebruik sinds versie 2.0.0',
+                                            usagenote='Attribuut uit gebruik sinds versie 2.0.0 ',
                                             deprecated_version='2.0.0',
                                             definition='Het maximale debiet dat door de slang en spuitmond kan stromen.')
 

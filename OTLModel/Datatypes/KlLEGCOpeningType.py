@@ -19,7 +19,7 @@ class KlLEGCOpeningType(KeuzelijstField):
                                           objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLEGCOpeningType/dienstopening'),
         'nooddeur': KeuzelijstWaarde(invulwaarde='nooddeur',
                                      label='nooddeur',
-                                     definitie='Deze optie mag niet geselecteerd worden. Indien de doorgang een nooddeur is moet het onderdeel 'Vluchtdeur' geïnstantieerd worden ipv het onderdeel 'Doorgang'.',
+                                     definitie="Deze optie mag niet geselecteerd worden. Indien de doorgang een nooddeur is moet het onderdeel 'Vluchtdeur' geïnstantieerd worden ipv het onderdeel 'Doorgang'.",
                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLEGCOpeningType/nooddeur'),
         'sas': KeuzelijstWaarde(invulwaarde='sas',
                                 label='sas',

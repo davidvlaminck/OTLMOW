@@ -29,7 +29,7 @@ class Bovenbouw(AIMObject, AttributeInfo):
                                      naam='breedte',
                                      label='breedte',
                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bovenbouw.breedte',
-                                     usagenote='Klasse uit gebruik sinds versie 2.1.0',
+                                     usagenote='Klasse uit gebruik sinds versie 2.1.0 ',
                                      deprecated_version='2.1.0',
                                      definition='Breedte-afmeting van het deksel in centimeter. Bij vierkante en cirkelvormige deksels is deze waarde gelijk aan de hoogte.')
 
@@ -37,7 +37,7 @@ class Bovenbouw(AIMObject, AttributeInfo):
                                           naam='dekselklasse',
                                           label='dekselklasse',
                                           objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bovenbouw.dekselklasse',
-                                          usagenote='Klasse uit gebruik sinds versie 2.1.0',
+                                          usagenote='Klasse uit gebruik sinds versie 2.1.0 ',
                                           deprecated_version='2.1.0',
                                           definition='Bepaalt de mate waarin het deksel van de bovenbouw belast kan worden door voertuigen.')
 
@@ -45,7 +45,7 @@ class Bovenbouw(AIMObject, AttributeInfo):
                                         naam='dekselvorm',
                                         label='dekselvorm',
                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bovenbouw.dekselvorm',
-                                        usagenote='Klasse uit gebruik sinds versie 2.1.0',
+                                        usagenote='Klasse uit gebruik sinds versie 2.1.0 ',
                                         deprecated_version='2.1.0',
                                         definition='Bepaalt de vorm van het deksel.')
 
@@ -53,7 +53,7 @@ class Bovenbouw(AIMObject, AttributeInfo):
                                     naam='hoogte',
                                     label='hoogte',
                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bovenbouw.hoogte',
-                                    usagenote='Klasse uit gebruik sinds versie 2.1.0',
+                                    usagenote='Klasse uit gebruik sinds versie 2.1.0 ',
                                     deprecated_version='2.1.0',
                                     definition='Hoogte-afmeting van het deksel in centimeter. Bij vierkante en cirkelvormige deksels is deze waarde gelijk aan de breedte.')
 
@@ -61,7 +61,7 @@ class Bovenbouw(AIMObject, AttributeInfo):
                                           naam='isAfgesloten',
                                           label='is afgesloten',
                                           objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bovenbouw.isAfgesloten',
-                                          usagenote='Klasse uit gebruik sinds versie 2.1.0',
+                                          usagenote='Klasse uit gebruik sinds versie 2.1.0 ',
                                           deprecated_version='2.1.0',
                                           definition='Bepaling of de afsluitinrichting vergrendeld is of niet.')
 
@@ -69,7 +69,7 @@ class Bovenbouw(AIMObject, AttributeInfo):
                                             naam='isScharnierend',
                                             label='is scharnierend',
                                             objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bovenbouw.isScharnierend',
-                                            usagenote='Klasse uit gebruik sinds versie 2.1.0',
+                                            usagenote='Klasse uit gebruik sinds versie 2.1.0 ',
                                             deprecated_version='2.1.0',
                                             definition='Het deksel is al of niet bevestigd met een scharnier.')
 
@@ -77,7 +77,7 @@ class Bovenbouw(AIMObject, AttributeInfo):
                                                      naam='isWaterdichtVergrendeld',
                                                      label='Is waterdicht vergrendeld',
                                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bovenbouw.isWaterdichtVergrendeld',
-                                                     usagenote='Klasse uit gebruik sinds versie 2.1.0',
+                                                     usagenote='Klasse uit gebruik sinds versie 2.1.0 ',
                                                      deprecated_version='2.1.0',
                                                      definition='Geeft aan of de bovenbouw al dan niet waterdicht vergrendeld is zodat het water zich niet boven de bovenbouw kan begeven.')
 
@@ -85,7 +85,7 @@ class Bovenbouw(AIMObject, AttributeInfo):
                                    naam='kader',
                                    label='kader',
                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bovenbouw.kader',
-                                   usagenote='Klasse uit gebruik sinds versie 2.1.0',
+                                   usagenote='Klasse uit gebruik sinds versie 2.1.0 ',
                                    deprecated_version='2.1.0',
                                    definition='Bepaalt het type van het dekselkader.')
 
@@ -93,7 +93,7 @@ class Bovenbouw(AIMObject, AttributeInfo):
                                        naam='materiaal',
                                        label='materiaal',
                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bovenbouw.materiaal',
-                                       usagenote='Klasse uit gebruik sinds versie 2.1.0',
+                                       usagenote='Klasse uit gebruik sinds versie 2.1.0 ',
                                        deprecated_version='2.1.0',
                                        definition='Het materiaal waaruit het deksel van de bovenbouw is vervaardigd.')
 
@@ -101,7 +101,7 @@ class Bovenbouw(AIMObject, AttributeInfo):
                                          naam='oppervlakte',
                                          label='oppervlakte',
                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bovenbouw.oppervlakte',
-                                         usagenote='Klasse uit gebruik sinds versie 2.1.0',
+                                         usagenote='Klasse uit gebruik sinds versie 2.1.0 ',
                                          deprecated_version='2.1.0',
                                          definition='De oppervlakte van het zichtbare deel van de bovenbouw in vierkante meter.')
 
@@ -109,7 +109,7 @@ class Bovenbouw(AIMObject, AttributeInfo):
                                       naam='regeling',
                                       label='regeling',
                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bovenbouw.regeling',
-                                      usagenote='Klasse uit gebruik sinds versie 2.1.0',
+                                      usagenote='Klasse uit gebruik sinds versie 2.1.0 ',
                                       deprecated_version='2.1.0',
                                       definition='De wijze hoe de regeling van het deksel is uitgevoerd.')
 
@@ -117,7 +117,7 @@ class Bovenbouw(AIMObject, AttributeInfo):
                                              naam='technischeFiche',
                                              label='technische fiche',
                                              objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bovenbouw.technischeFiche',
-                                             usagenote='Klasse uit gebruik sinds versie 2.1.0 .Bestanden van het type xlsx of pdf.',
+                                             usagenote='Klasse uit gebruik sinds versie 2.1.0 ',
                                              deprecated_version='2.1.0',
                                              kardinaliteit_max='*',
                                              definition='De technische fiche van de bovenbouw.')
@@ -126,7 +126,7 @@ class Bovenbouw(AIMObject, AttributeInfo):
                                            naam='vergrendeling',
                                            label='vergrendeling',
                                            objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bovenbouw.vergrendeling',
-                                           usagenote='Klasse uit gebruik sinds versie 2.1.0',
+                                           usagenote='Klasse uit gebruik sinds versie 2.1.0 ',
                                            deprecated_version='2.1.0',
                                            definition='Bepaalt het type sleutel voor het ontgrendelen van het deksel.')
 

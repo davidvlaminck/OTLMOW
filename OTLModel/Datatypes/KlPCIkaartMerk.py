@@ -11,6 +11,6 @@ class KlPCIkaartMerk(KeuzelijstField):
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlPCIkaartMerk'
     definition = 'Het merk van de PCI-kaart.'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlPCIkaartMerk'
-    options = 
+    options = {
     }
 

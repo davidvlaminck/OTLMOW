@@ -11,6 +11,6 @@ class KlIOKaartMerk(KeuzelijstField):
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlIOKaartMerk'
     definition = 'Lijst van mogelijke merken voor IO-kaarten.'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlIOKaartMerk'
-    options = 
+    options = {
     }
 

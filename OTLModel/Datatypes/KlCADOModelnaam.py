@@ -11,6 +11,6 @@ class KlCADOModelnaam(KeuzelijstField):
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlCADOModelnaam'
     definition = 'De modelnaam van de calamiteitendoorsteek.'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlCADOModelnaam'
-    options = 
+    options = {
     }
 

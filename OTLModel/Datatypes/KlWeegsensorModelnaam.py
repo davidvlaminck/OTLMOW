@@ -11,6 +11,6 @@ class KlWeegsensorModelnaam(KeuzelijstField):
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlWeegsensorModelnaam'
     definition = 'De modelnaam van de weegsensor.'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlWeegsensorModelnaam'
-    options = 
+    options = {
     }
 

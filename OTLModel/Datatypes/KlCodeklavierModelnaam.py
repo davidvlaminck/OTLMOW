@@ -11,6 +11,6 @@ class KlCodeklavierModelnaam(KeuzelijstField):
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlCodeklavierModelnaam'
     definition = 'De modelnaam van het codeklavier.'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlCodeklavierModelnaam'
-    options = 
+    options = {
     }
 

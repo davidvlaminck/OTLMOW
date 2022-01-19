@@ -20,7 +20,7 @@ class ProefKerendVermogen(Proef, AttributeInfo):
                                             naam='kerendVermogen',
                                             label='kerend vermogen',
                                             objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefKerendVermogen.kerendVermogen',
-                                            usagenote='Klasse uit gebruik sinds versie 2.0.0',
+                                            usagenote='Klasse uit gebruik sinds versie 2.0.0 ',
                                             deprecated_version='2.0.0',
                                             definition='Het vermogen van een voertuigkering om een doorbraak bij een bepaald type crash te voorkomen.')
 

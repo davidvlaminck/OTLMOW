@@ -101,8 +101,7 @@ class Boom(VegetatieElement, AttributeInfo):
                                                         naam='totaleBoombeschermingszone',
                                                         label='totale boombeschermingszone',
                                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Boom.totaleBoombeschermingszone',
-                                                        definition='De straal van de cirkelvormige ruimte rond de boom waar maatregelen genomen worden om de boom te beschermen tijdens projecten of manifestaties uitgedrukt in centimeters.
-')
+                                                        definition='De straal van de cirkelvormige ruimte rond de boom waar maatregelen genomen worden om de boom te beschermen tijdens projecten of manifestaties uitgedrukt in centimeters.')
 
         self._vrijeDoorrijhoogte = OTLAttribuut(field=KwantWrdInMeter,
                                                 naam='vrijeDoorrijhoogte',
@@ -220,8 +219,7 @@ class Boom(VegetatieElement, AttributeInfo):
 
     @property
     def totaleBoombeschermingszone(self):
-        """De straal van de cirkelvormige ruimte rond de boom waar maatregelen genomen worden om de boom te beschermen tijdens projecten of manifestaties uitgedrukt in centimeters.
-"""
+        """De straal van de cirkelvormige ruimte rond de boom waar maatregelen genomen worden om de boom te beschermen tijdens projecten of manifestaties uitgedrukt in centimeters."""
         return self._totaleBoombeschermingszone.waarde
 
     @totaleBoombeschermingszone.setter

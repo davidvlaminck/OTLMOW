@@ -11,6 +11,6 @@ class KlAudioversterkerMerk(KeuzelijstField):
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlAudioversterkerMerk'
     definition = 'Het merk van de audioversterker.'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlAudioversterkerMerk'
-    options = 
+    options = {
     }
 

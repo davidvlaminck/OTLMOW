@@ -11,6 +11,6 @@ class KlRackMerk(KeuzelijstField):
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlRackMerk'
     definition = 'Merken voor racks.'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlRackMerk'
-    options = 
+    options = {
     }
 

@@ -11,6 +11,6 @@ class KlHardwareMerk(KeuzelijstField):
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlHardwareMerk'
     definition = 'Het merk van de hardware.'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlHardwareMerk'
-    options = 
+    options = {
     }
 

@@ -11,6 +11,6 @@ class KlKlimatisatieModelnaam(KeuzelijstField):
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlKlimatisatieModelnaam'
     definition = 'Modelnamen voor klimatisatiesystemen.'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlKlimatisatieModelnaam'
-    options = 
+    options = {
     }
 

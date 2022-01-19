@@ -11,6 +11,6 @@ class KlHSBeveiligingscelModelnaam(KeuzelijstField):
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlHSBeveiligingscelModelnaam'
     definition = 'De modelnaam van de HS-beveiligingscel.'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlHSBeveiligingscelModelnaam'
-    options = 
+    options = {
     }
 

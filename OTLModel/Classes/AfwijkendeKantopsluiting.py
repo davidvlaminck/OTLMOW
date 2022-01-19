@@ -24,22 +24,19 @@ class AfwijkendeKantopsluiting(Kantopsluiting, AttributeInfo):
                                      naam='breedte',
                                      label='breedte',
                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#AfwijkendeKantopsluiting.breedte',
-                                     definition='De breedte van de afwijkende kantopsluiting in centimeter
-.')
+                                     definition='De breedte van de afwijkende kantopsluiting in centimeter.')
 
         self._dikte = OTLAttribuut(field=KwantWrdInCentimeter,
                                    naam='dikte',
                                    label='dikte',
                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#AfwijkendeKantopsluiting.dikte',
-                                   definition='De dikte van de afwijkende kantopsluiting in centimeter
-.')
+                                   definition='De dikte van de afwijkende kantopsluiting in centimeter.')
 
         self._heeftOppervlaktebehandeling = OTLAttribuut(field=BooleanField,
                                                          naam='heeftOppervlaktebehandeling',
                                                          label='heeft oppervlaktebehandeling',
                                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#AfwijkendeKantopsluiting.heeftOppervlaktebehandeling',
-                                                         definition='Aanduiding of er een oppervlaktebehandeling is uitgevoerd op de afwijkende kantopsluiting
-.')
+                                                         definition='Aanduiding of er een oppervlaktebehandeling is uitgevoerd op de afwijkende kantopsluiting.')
 
         self._technischeFicheAfwijking = OTLAttribuut(field=DtcDocument,
                                                       naam='technischeFicheAfwijking',
@@ -51,8 +48,7 @@ class AfwijkendeKantopsluiting(Kantopsluiting, AttributeInfo):
 
     @property
     def breedte(self):
-        """De breedte van de afwijkende kantopsluiting in centimeter
-."""
+        """De breedte van de afwijkende kantopsluiting in centimeter."""
         return self._breedte.waarde
 
     @breedte.setter
@@ -61,8 +57,7 @@ class AfwijkendeKantopsluiting(Kantopsluiting, AttributeInfo):
 
     @property
     def dikte(self):
-        """De dikte van de afwijkende kantopsluiting in centimeter
-."""
+        """De dikte van de afwijkende kantopsluiting in centimeter."""
         return self._dikte.waarde
 
     @dikte.setter
@@ -71,8 +66,7 @@ class AfwijkendeKantopsluiting(Kantopsluiting, AttributeInfo):
 
     @property
     def heeftOppervlaktebehandeling(self):
-        """Aanduiding of er een oppervlaktebehandeling is uitgevoerd op de afwijkende kantopsluiting
-."""
+        """Aanduiding of er een oppervlaktebehandeling is uitgevoerd op de afwijkende kantopsluiting."""
         return self._heeftOppervlaktebehandeling.waarde
 
     @heeftOppervlaktebehandeling.setter

@@ -11,6 +11,6 @@ class KlSlagboomkolomModelnaam(KeuzelijstField):
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlSlagboomkolomModelnaam'
     definition = 'De modelnaam van de slagboomkolom.'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlSlagboomkolomModelnaam'
-    options = 
+    options = {
     }
 

@@ -11,6 +11,6 @@ class KlWeggebondendetectorMerk(KeuzelijstField):
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlWeggebondendetectorMerk'
     definition = 'Keuzelijst met merknamen voor Weggebondendetector.'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlWeggebondendetectorMerk'
-    options = 
+    options = {
     }
 

@@ -11,6 +11,6 @@ class KlIVRIMerkITSapp(KeuzelijstField):
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlIVRIMerkITSapp'
     definition = 'Het merk van de ITSapp.'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlIVRIMerkITSapp'
-    options = 
+    options = {
     }
 

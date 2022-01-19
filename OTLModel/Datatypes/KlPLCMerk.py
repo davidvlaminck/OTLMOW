@@ -11,6 +11,6 @@ class KlPLCMerk(KeuzelijstField):
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlPLCMerk'
     definition = 'Het merk van de PLC.'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlPLCMerk'
-    options = 
+    options = {
     }
 

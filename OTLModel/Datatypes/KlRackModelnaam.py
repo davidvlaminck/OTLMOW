@@ -11,6 +11,6 @@ class KlRackModelnaam(KeuzelijstField):
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlRackModelnaam'
     definition = 'Modelnamen voor racks.'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlRackModelnaam'
-    options = 
+    options = {
     }
 

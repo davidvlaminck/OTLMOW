@@ -26,7 +26,7 @@ class KlBoomConditiebeoordeling(KeuzelijstField):
                               objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBoomConditiebeoordeling/2'),
         '3': KeuzelijstWaarde(invulwaarde='3',
                               label='3',
-                              definitie='De conditie en toekomstverwachting van de boom is minimaal. De mechanische en/of fysiologische toestand van de boom is dusdanig slecht dat 'herstel' van de boom niet of nauwelijks mogelijk is.',
+                              definitie="De conditie en toekomstverwachting van de boom is minimaal. De mechanische en/of fysiologische toestand van de boom is dusdanig slecht dat 'herstel' van de boom niet of nauwelijks mogelijk is.",
                               objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBoomConditiebeoordeling/3')
     }
 

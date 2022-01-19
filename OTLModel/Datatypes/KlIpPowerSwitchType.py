@@ -11,6 +11,6 @@ class KlIpPowerSwitchType(KeuzelijstField):
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlIpPowerSwitchType'
     definition = 'Type van de IP powerswitch.'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlIpPowerSwitchType'
-    options = 
+    options = {
     }
 

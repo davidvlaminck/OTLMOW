@@ -11,6 +11,6 @@ class KlBatterijMerk(KeuzelijstField):
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlBatterijMerk'
     definition = 'Het merk van de batterij.'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlBatterijMerk'
-    options = 
+    options = {
     }
 

@@ -11,6 +11,6 @@ class KlDetectiecameraMerk(KeuzelijstField):
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlDetectiecameraMerk'
     definition = 'Keuzelijst met merknamen voor Detectiecamera.'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlDetectiecameraMerk'
-    options = 
+    options = {
     }
 

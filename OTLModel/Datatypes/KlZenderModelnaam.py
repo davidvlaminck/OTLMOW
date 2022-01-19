@@ -11,6 +11,6 @@ class KlZenderModelnaam(KeuzelijstField):
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlZenderModelnaam'
     definition = 'Keuzelijst met modelnamen voor Zender.'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlZenderModelnaam'
-    options = 
+    options = {
     }
 

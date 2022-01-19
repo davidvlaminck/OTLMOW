@@ -21,15 +21,11 @@ class ProefVerderOnderzoekTrekproef(Proef, AttributeInfo):
                                                       label='verder onderzoek trekproef',
                                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefVerderOnderzoekTrekproef.verderOnderzoekTrekproef',
                                                       kardinaliteit_max='*',
-                                                      definition='Een trekproef is een niet-destructieve methode om de stabiliteit (gevoeligheid voor windworp) van
-bomen te testen door een kunstmatige belasting op de stam te relateren met het kantelen van de
-stamvoet.')
+                                                      definition='Een trekproef is een niet-destructieve methode om de stabiliteit (gevoeligheid voor windworp) van bomen te testen door een kunstmatige belasting op de stam te relateren met het kantelen van de stamvoet.')
 
     @property
     def verderOnderzoekTrekproef(self):
-        """Een trekproef is een niet-destructieve methode om de stabiliteit (gevoeligheid voor windworp) van
-bomen te testen door een kunstmatige belasting op de stam te relateren met het kantelen van de
-stamvoet."""
+        """Een trekproef is een niet-destructieve methode om de stabiliteit (gevoeligheid voor windworp) van bomen te testen door een kunstmatige belasting op de stam te relateren met het kantelen van de stamvoet."""
         return self._verderOnderzoekTrekproef.waarde
 
     @verderOnderzoekTrekproef.setter

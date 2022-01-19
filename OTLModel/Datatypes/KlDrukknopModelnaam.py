@@ -11,6 +11,6 @@ class KlDrukknopModelnaam(KeuzelijstField):
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlDrukknopModelnaam'
     definition = 'Keuzelijst met modelnamen voor Drukknop.'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlDrukknopModelnaam'
-    options = 
+    options = {
     }
 

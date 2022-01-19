@@ -11,6 +11,6 @@ class KlZonnepaneelModelnaam(KeuzelijstField):
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlZonnepaneelModelnaam'
     definition = 'De modelnaam van het zonnepaneel.'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlZonnepaneelModelnaam'
-    options = 
+    options = {
     }
 

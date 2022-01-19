@@ -9,8 +9,7 @@ from OTLModel.Datatypes.KlBestrijkingsoort import KlBestrijkingsoort
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
 class Bestrijking(AndereLaag, AttributeInfo):
-    """Een bestrijking bestaat in het sproeien op een verharding of een fundering van één of twee eenvormige 
-lagen bindmiddel met een geschikte viscositeit."""
+    """Een bestrijking bestaat in het sproeien op een verharding of een fundering van één of twee eenvormige lagen bindmiddel met een geschikte viscositeit."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bestrijking'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""

@@ -11,6 +11,6 @@ class KlVirtueleServerMerk(KeuzelijstField):
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlVirtueleServerMerk'
     definition = 'Het merk van de virtuele server.'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlVirtueleServerMerk'
-    options = 
+    options = {
     }
 

@@ -22,9 +22,7 @@ class NietSelectieveDetectielus(SelNietSelLus, AttributeInfo):
                                      naam='functie',
                                      label='functie',
                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#NietSelectieveDetectielus.functie',
-                                     definition='Type niet-selectieve detectielus bv. file, afstand, hiaat,...
-
-')
+                                     definition='Type niet-selectieve detectielus bv. file, afstand, hiaat,...')
 
         self._isMotorgevoelig = OTLAttribuut(field=BooleanField,
                                              naam='isMotorgevoelig',
@@ -47,9 +45,7 @@ class NietSelectieveDetectielus(SelNietSelLus, AttributeInfo):
 
     @property
     def functie(self):
-        """Type niet-selectieve detectielus bv. file, afstand, hiaat,...
-
-"""
+        """Type niet-selectieve detectielus bv. file, afstand, hiaat,..."""
         return self._functie.waarde
 
     @functie.setter

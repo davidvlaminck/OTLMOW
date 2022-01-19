@@ -11,6 +11,6 @@ class KlLEDDriverMerk(KeuzelijstField):
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlLEDDriverMerk'
     definition = 'Het merk van de LED-driver.'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlLEDDriverMerk'
-    options = 
+    options = {
     }
 

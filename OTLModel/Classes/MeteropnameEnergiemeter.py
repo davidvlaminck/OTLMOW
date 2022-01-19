@@ -27,8 +27,7 @@ class MeteropnameEnergiemeter(AIMNaamObject, AttributeInfo):
                                            naam='meterstandDag',
                                            label='meterstand dag',
                                            objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#MeteropnameEnergiemeter.meterstandDag',
-                                           definition='De meterstand bij de laatste meteropname van de dag-energiemeter.
-')
+                                           definition='De meterstand bij de laatste meteropname van de dag-energiemeter.')
 
         self._meterstandNacht = OTLAttribuut(field=KwantWrdInkWh,
                                              naam='meterstandNacht',
@@ -47,8 +46,7 @@ class MeteropnameEnergiemeter(AIMNaamObject, AttributeInfo):
 
     @property
     def meterstandDag(self):
-        """De meterstand bij de laatste meteropname van de dag-energiemeter.
-"""
+        """De meterstand bij de laatste meteropname van de dag-energiemeter."""
         return self._meterstandDag.waarde
 
     @meterstandDag.setter

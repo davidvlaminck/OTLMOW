@@ -11,6 +11,6 @@ class KlIVRIModelITSapp(KeuzelijstField):
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlIVRIModelITSapp'
     definition = 'De modelnaam van de ITSapp.'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlIVRIModelITSapp'
-    options = 
+    options = {
     }
 

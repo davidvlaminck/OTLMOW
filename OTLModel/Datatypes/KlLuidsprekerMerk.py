@@ -11,6 +11,6 @@ class KlLuidsprekerMerk(KeuzelijstField):
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlLuidsprekerMerk'
     definition = 'Het merk van de luidspreker.'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlLuidsprekerMerk'
-    options = 
+    options = {
     }
 

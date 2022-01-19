@@ -11,6 +11,6 @@ class KlSeinlantaarnModelnaam(KeuzelijstField):
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#KlSeinlantaarnModelnaam'
     definition = 'Keuzelijst met modelnamen voor Seinlantaarn.'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlSeinlantaarnModelnaam'
-    options = 
+    options = {
     }
 

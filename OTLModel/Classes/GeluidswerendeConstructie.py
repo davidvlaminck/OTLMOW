@@ -30,7 +30,7 @@ class GeluidswerendeConstructie(LijnvormigElement, AttributeInfo):
                                                  naam='detailplan3dAsbuilt',
                                                  label='detailplan  (3D - As-built)',
                                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#GeluidswerendeConstructie.detailplan3dAsbuilt',
-                                                 usagenote='Klasse uit gebruik sinds versie 2.0.0 .Bestanden van het type dwg of pdf.',
+                                                 usagenote='Klasse uit gebruik sinds versie 2.0.0 ',
                                                  deprecated_version='2.0.0',
                                                  definition='Detailplan als document bijlage (3D as-built DWG of DXF bestand).')
 
@@ -38,7 +38,7 @@ class GeluidswerendeConstructie(LijnvormigElement, AttributeInfo):
                                               naam='heeftAfdeklatten',
                                               label='heeft afdeklatten',
                                               objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#GeluidswerendeConstructie.heeftAfdeklatten',
-                                              usagenote='Klasse uit gebruik sinds versie 2.0.0',
+                                              usagenote='Klasse uit gebruik sinds versie 2.0.0 ',
                                               deprecated_version='2.0.0',
                                               definition='Bepaling of er boven- of onderaan latten gebruikt worden om de geluidswerende constructie te laten aansluiten op de tunnel.')
 
@@ -46,7 +46,7 @@ class GeluidswerendeConstructie(LijnvormigElement, AttributeInfo):
                                                      naam='horizontaalRuimteBeslag',
                                                      label='horizontaal ruimte beslag',
                                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#GeluidswerendeConstructie.horizontaalRuimteBeslag',
-                                                     usagenote='Klasse uit gebruik sinds versie 2.0.0',
+                                                     usagenote='Klasse uit gebruik sinds versie 2.0.0 ',
                                                      deprecated_version='2.0.0',
                                                      definition='De totale dikte in dwarsdoorsnede die wordt ingenomen door de geluidswerende constructie.')
 
@@ -54,7 +54,7 @@ class GeluidswerendeConstructie(LijnvormigElement, AttributeInfo):
                                                             naam='individueleHoogteSchermelement',
                                                             label='individuele hoogte schermelement',
                                                             objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#GeluidswerendeConstructie.individueleHoogteSchermelement',
-                                                            usagenote='Klasse uit gebruik sinds versie 2.0.0',
+                                                            usagenote='Klasse uit gebruik sinds versie 2.0.0 ',
                                                             deprecated_version='2.0.0',
                                                             definition='De hoogte in centimeter van het schermelement, verticaal gemeten.')
 
@@ -62,7 +62,7 @@ class GeluidswerendeConstructie(LijnvormigElement, AttributeInfo):
                                                             naam='individueleLengteSchermelement',
                                                             label='individuele lengte schermelement',
                                                             objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#GeluidswerendeConstructie.individueleLengteSchermelement',
-                                                            usagenote='Klasse uit gebruik sinds versie 2.0.0',
+                                                            usagenote='Klasse uit gebruik sinds versie 2.0.0 ',
                                                             deprecated_version='2.0.0',
                                                             definition='De lengte van het schermelement in centimeter zonder inbegrip van de profielen, horizontaal gemeten.')
 
@@ -70,7 +70,7 @@ class GeluidswerendeConstructie(LijnvormigElement, AttributeInfo):
                                                       naam='isBeginOfEindConstructie',
                                                       label='is begin of eindconstructie',
                                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#GeluidswerendeConstructie.isBeginOfEindConstructie',
-                                                      usagenote='Klasse uit gebruik sinds versie 2.0.0',
+                                                      usagenote='Klasse uit gebruik sinds versie 2.0.0 ',
                                                       deprecated_version='2.0.0',
                                                       definition='Bepaling of het gaat om een begin- of eindconstructie.')
 
@@ -78,7 +78,7 @@ class GeluidswerendeConstructie(LijnvormigElement, AttributeInfo):
                                    naam='kleur',
                                    label='kleur',
                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#GeluidswerendeConstructie.kleur',
-                                   usagenote='Klasse uit gebruik sinds versie 2.0.0',
+                                   usagenote='Klasse uit gebruik sinds versie 2.0.0 ',
                                    deprecated_version='2.0.0',
                                    definition='De RAL kleur van de geluidswerende constructie.')
 
@@ -86,7 +86,7 @@ class GeluidswerendeConstructie(LijnvormigElement, AttributeInfo):
                                                      naam='materiaalKarakteristiek',
                                                      label='materiaal karakteristiek',
                                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#GeluidswerendeConstructie.materiaalKarakteristiek',
-                                                     usagenote='Klasse uit gebruik sinds versie 2.0.0',
+                                                     usagenote='Klasse uit gebruik sinds versie 2.0.0 ',
                                                      deprecated_version='2.0.0',
                                                      kardinaliteit_max='*',
                                                      definition='Het materiaal van de geluidswerende constructie en het geluidskarakteristiek van het materiaal.')
@@ -95,7 +95,7 @@ class GeluidswerendeConstructie(LijnvormigElement, AttributeInfo):
                                                         naam='maximaleDikteSchermelement',
                                                         label='maximale dikte schermelement',
                                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#GeluidswerendeConstructie.maximaleDikteSchermelement',
-                                                        usagenote='Klasse uit gebruik sinds versie 2.0.0',
+                                                        usagenote='Klasse uit gebruik sinds versie 2.0.0 ',
                                                         deprecated_version='2.0.0',
                                                         definition='De maximale dikte van het schermelement in centimeter gemeten vanaf het verst uitstekende gedeelte aan de voorzijde tot het verst uitstekende gedeelte aan de achterzijde van het schermelement.')
 
@@ -103,7 +103,7 @@ class GeluidswerendeConstructie(LijnvormigElement, AttributeInfo):
                                         naam='opstelling',
                                         label='opstelling',
                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#GeluidswerendeConstructie.opstelling',
-                                        usagenote='Klasse uit gebruik sinds versie 2.0.0',
+                                        usagenote='Klasse uit gebruik sinds versie 2.0.0 ',
                                         deprecated_version='2.0.0',
                                         definition='De wijze waarop de geluidswerende constructie is geplaatst ten opzichte van de weg.')
 
@@ -111,7 +111,7 @@ class GeluidswerendeConstructie(LijnvormigElement, AttributeInfo):
                                                    naam='overzichtSchermhoogte',
                                                    label='overzicht schermhoogte',
                                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#GeluidswerendeConstructie.overzichtSchermhoogte',
-                                                   usagenote='Klasse uit gebruik sinds versie 2.0.0',
+                                                   usagenote='Klasse uit gebruik sinds versie 2.0.0 ',
                                                    deprecated_version='2.0.0',
                                                    definition='Hoogte gemeten van het maaiveld tot aan de top van de geluidswerende constructie.')
 
@@ -119,7 +119,7 @@ class GeluidswerendeConstructie(LijnvormigElement, AttributeInfo):
                                            naam='schermelement',
                                            label='schermelement',
                                            objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#GeluidswerendeConstructie.schermelement',
-                                           usagenote='Klasse uit gebruik sinds versie 2.0.0',
+                                           usagenote='Klasse uit gebruik sinds versie 2.0.0 ',
                                            deprecated_version='2.0.0',
                                            kardinaliteit_max='*',
                                            definition='Het type van schermelement.')
@@ -128,17 +128,16 @@ class GeluidswerendeConstructie(LijnvormigElement, AttributeInfo):
                                         naam='schermtype',
                                         label='schermtype',
                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#GeluidswerendeConstructie.schermtype',
-                                        usagenote='Klasse uit gebruik sinds versie 2.0.0',
+                                        usagenote='Klasse uit gebruik sinds versie 2.0.0 ',
                                         deprecated_version='2.0.0',
                                         kardinaliteit_max='*',
-                                        definition='Bepaling van een vlak of niet-vlak scherm. Een vlak scherm zijn alle schermtypes die getest kunnen worden volgens de normen NBN EN 1793-1 NBN EN 1793-2.
-De niet-vlakke schermen zijn de schermen die niet kunnen getest worden volgens de normen NBN EN 1793-1 NBN EN 1793-2.')
+                                        definition='Bepaling van een vlak of niet-vlak scherm. Een vlak scherm zijn alle schermtypes die getest kunnen worden volgens de normen NBN EN 1793-1 NBN EN 1793-2.De niet-vlakke schermen zijn de schermen die niet kunnen getest worden volgens de normen NBN EN 1793-1 NBN EN 1793-2.')
 
         self._statischeBelasting = OTLAttribuut(field=KwantWrdInKiloNewtonPerVierkanteMeter,
                                                 naam='statischeBelasting',
                                                 label='statische belasting',
                                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#GeluidswerendeConstructie.statischeBelasting',
-                                                usagenote='Klasse uit gebruik sinds versie 2.0.0',
+                                                usagenote='Klasse uit gebruik sinds versie 2.0.0 ',
                                                 deprecated_version='2.0.0',
                                                 definition='Getal in kN/m2 voor de aanduiding van de belasting zonder dynamisch effect, bv. eigengewicht.')
 
@@ -146,7 +145,7 @@ De niet-vlakke schermen zijn de schermen die niet kunnen getest worden volgens d
                                          naam='testrapport',
                                          label='testrapport',
                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#GeluidswerendeConstructie.testrapport',
-                                         usagenote='Klasse uit gebruik sinds versie 2.0.0',
+                                         usagenote='Klasse uit gebruik sinds versie 2.0.0 ',
                                          deprecated_version='2.0.0',
                                          kardinaliteit_max='*',
                                          definition='De testresultaten van een geluidswerende constructie.')
@@ -155,7 +154,7 @@ De niet-vlakke schermen zijn de schermen die niet kunnen getest worden volgens d
                                           naam='totaleLengte',
                                           label='totale lengte',
                                           objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#GeluidswerendeConstructie.totaleLengte',
-                                          usagenote='Klasse uit gebruik sinds versie 2.0.0',
+                                          usagenote='Klasse uit gebruik sinds versie 2.0.0 ',
                                           deprecated_version='2.0.0',
                                           definition='De totale lengte van de geluidswerende constructie in meter gemeten vanaf het beginpunt tot het eindpunt.')
 
@@ -163,7 +162,7 @@ De niet-vlakke schermen zijn de schermen die niet kunnen getest worden volgens d
                                                naam='totaleOppervlakte',
                                                label='totale oppervlakte',
                                                objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#GeluidswerendeConstructie.totaleOppervlakte',
-                                               usagenote='Klasse uit gebruik sinds versie 2.0.0',
+                                               usagenote='Klasse uit gebruik sinds versie 2.0.0 ',
                                                deprecated_version='2.0.0',
                                                definition='De totale oppervlakte van alle geplaatste geluidswerende constructie elementen.')
 
@@ -171,7 +170,7 @@ De niet-vlakke schermen zijn de schermen die niet kunnen getest worden volgens d
                                                  naam='videoVoertuigkering',
                                                  label='video voertuigkering',
                                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#GeluidswerendeConstructie.videoVoertuigkering',
-                                                 usagenote='Klasse uit gebruik sinds versie 2.0.0 .Enkel videobestanden zijn toegelaten.',
+                                                 usagenote='Klasse uit gebruik sinds versie 2.0.0 ',
                                                  deprecated_version='2.0.0',
                                                  kardinaliteit_max='*',
                                                  definition='Video van de testen op geluidswerende constructies.')
@@ -180,7 +179,7 @@ De niet-vlakke schermen zijn de schermen die niet kunnen getest worden volgens d
                                            naam='windbelasting',
                                            label='windbelasting',
                                            objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#GeluidswerendeConstructie.windbelasting',
-                                           usagenote='Klasse uit gebruik sinds versie 2.0.0',
+                                           usagenote='Klasse uit gebruik sinds versie 2.0.0 ',
                                            deprecated_version='2.0.0',
                                            definition='Getal in kN/m2 voor de aanduiding van de maximale windbelasting volgens de norm NBN EN 1994-1-4.')
 

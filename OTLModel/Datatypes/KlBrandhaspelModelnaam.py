@@ -11,6 +11,6 @@ class KlBrandhaspelModelnaam(KeuzelijstField):
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlBrandhaspelModelnaam'
     definition = 'De modelnaam van de brandhaspel.'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlBrandhaspelModelnaam'
-    options = 
+    options = {
     }
 

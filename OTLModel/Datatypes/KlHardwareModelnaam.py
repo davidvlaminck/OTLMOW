@@ -11,6 +11,6 @@ class KlHardwareModelnaam(KeuzelijstField):
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlHardwareModelnaam'
     definition = 'De modelnaam van de hardware.'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlHardwareModelnaam'
-    options = 
+    options = {
     }
 

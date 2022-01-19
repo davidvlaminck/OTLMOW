@@ -11,6 +11,6 @@ class KlVerkeerstekenWettelijkeStatus(KeuzelijstField):
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlVerkeerstekenWettelijkeStatus'
     definition = 'Keuzelijst met waarden die de wettelijke status van een verkeersteken aangeven.'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlVerkeerstekenWettelijkeStatus'
-    options = 
+    options = {
     }
 

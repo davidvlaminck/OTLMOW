@@ -11,6 +11,6 @@ class KlIntercomServerMerk(KeuzelijstField):
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlIntercomServerMerk'
     definition = 'Het merk van de intercomserver.'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlIntercomServerMerk'
-    options = 
+    options = {
     }
 

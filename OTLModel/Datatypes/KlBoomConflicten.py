@@ -22,7 +22,7 @@ class KlBoomConflicten(KeuzelijstField):
                                                            objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBoomConflicten/beperkte-doorwortelbare-ruimte'),
         'bodemverdichting': KeuzelijstWaarde(invulwaarde='bodemverdichting',
                                              label='bodemverdichting',
-                                             definitie='Verdichting van de bodem door belasting (voetgangers, fietsers, auto's, bouwmaterialen,...)',
+                                             definitie="Verdichting van de bodem door belasting (voetgangers, fietsers, auto's, bouwmaterialen,...)",
                                              objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBoomConflicten/bodemverdichting'),
         'hinderende-takken': KeuzelijstWaarde(invulwaarde='hinderende-takken',
                                               label='hinderende takken',

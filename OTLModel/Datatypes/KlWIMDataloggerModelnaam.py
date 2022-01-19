@@ -11,6 +11,6 @@ class KlWIMDataloggerModelnaam(KeuzelijstField):
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlWIMDataloggerModelnaam'
     definition = 'De modelnaam van de WIM-datalogger.'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlWIMDataloggerModelnaam'
-    options = 
+    options = {
     }
 

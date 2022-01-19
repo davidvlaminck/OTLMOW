@@ -20,7 +20,7 @@ class ProefPerformantieniveau(Proef, AttributeInfo):
                                                 naam='performantieniveau',
                                                 label='performantieniveau',
                                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefPerformantieniveau.performantieniveau',
-                                                usagenote='Klasse uit gebruik sinds versie 2.0.0',
+                                                usagenote='Klasse uit gebruik sinds versie 2.0.0 ',
                                                 deprecated_version='2.0.0',
                                                 definition='Het niveau waarop de obstakelbeveiliger is getest.')
 

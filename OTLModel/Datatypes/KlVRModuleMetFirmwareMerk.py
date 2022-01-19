@@ -11,6 +11,6 @@ class KlVRModuleMetFirmwareMerk(KeuzelijstField):
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#KlVRModuleMetFirmwareMerk'
     definition = 'Lijst met merken van VR-modules met firmware.'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlVRModuleMetFirmwareMerk'
-    options = 
+    options = {
     }
 

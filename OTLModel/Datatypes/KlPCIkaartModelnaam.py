@@ -11,6 +11,6 @@ class KlPCIkaartModelnaam(KeuzelijstField):
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlPCIkaartModelnaam'
     definition = 'De modelnaam van de PCI-kaart.'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlPCIkaartModelnaam'
-    options = 
+    options = {
     }
 

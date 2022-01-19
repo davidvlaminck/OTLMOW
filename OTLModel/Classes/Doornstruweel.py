@@ -6,8 +6,7 @@ from OTLModel.Classes.Struweel import Struweel
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
 class Doornstruweel(Struweel, AttributeInfo):
-    """S3
- - meidoorn spp, sleedoorn en rozen."""
+    """Een plank of paneel om een grond- en/of waterkerende constructie, verticaal in de grond, te maken."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Doornstruweel'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""

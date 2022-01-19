@@ -45,6 +45,8 @@ class AbstractDatatypeCreator(ABC):
                 return 'DtcOpeningsurenSpecificatie'
             case                'https://schema.org/ContactPoint':
                 return 'DtcContactinfo'
+            case 'http://www.w3.org/2000/01/rdf-schema#Literal':
+                return 'StringField'
 
         raise NotImplemented('not supported fieldType in getSingleFieldFromTypeUri()')
 
@@ -168,7 +170,7 @@ class AbstractDatatypeCreator(ABC):
         list_fields_to_start_with = [f'{typeField}Field']
         if typeField == 'UnionType':
             list_fields_to_start_with.append('UnionWaarden')
-        elif typeField == 'Primitive':
+        elif typeField == 'Primitive' or typeField == 'KwantWrd':
             datablock.append('from OTLModel.BaseClasses.OTLField import OTLField')
             list_fields_to_start_with = []
         listOfFields = self.getFieldsToImportFromListOfAttributes(attributen, list_fields_to_start_with)
@@ -184,9 +186,9 @@ class AbstractDatatypeCreator(ABC):
             datablock.append(f'class {osloDatatype.name}Waarden(AttributeInfo):')
         datablock.append('    def __init__(self):')
 
-        self.addAttributenToDataBlock(attributen, datablock, forClassUse=False, typeField=typeField)
+        self.add_attributen_to_dataBlock(attributen, datablock, forClassUse=False, typeField=typeField)
 
-        if typeField == 'Primitive':
+        if typeField == 'Primitive' or typeField == 'KwantWrd':
             typeField = 'OTL'
 
         datablock.append(''),
@@ -217,7 +219,7 @@ class AbstractDatatypeCreator(ABC):
         else:
             return self.osloCollector.FindPrimitiveDatatypeAttributenByClassUri(osloDatatype.objectUri)
 
-    def addAttributenToDataBlock(self, attributen, datablock, forClassUse=False, typeField=''):
+    def add_attributen_to_dataBlock(self, attributen, datablock, forClassUse=False, typeField=''):
         prop_datablock = []
         for attribuut in sorted(attributen, key=lambda a: a.name):
             if attribuut.overerving == 1:
@@ -251,7 +253,10 @@ class AbstractDatatypeCreator(ABC):
             prop_datablock.append(f'    @property'),
             prop_datablock.append(f'    def {attribuut.name}(self):'),
             prop_datablock.append(f'        """{attribuut.definition}"""'),
-            prop_datablock.append(f'        return self._{attribuut.name}.waarde'),
+            if typeField == 'KwantWrd' and attribuut.name == 'standaardEenheid':
+                prop_datablock.append(f'        return self._{attribuut.name}.usagenote.split(\'"\')[1]'),
+            else:
+                prop_datablock.append(f'        return self._{attribuut.name}.waarde'),
             prop_datablock.append(f''),
             if not attribuut.readonly:
                 prop_datablock.append(f'    @{attribuut.name}.setter'),

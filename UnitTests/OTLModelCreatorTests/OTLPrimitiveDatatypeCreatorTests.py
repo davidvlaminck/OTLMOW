@@ -46,37 +46,62 @@ class PrimitiveDatatypeOSLOCollector(OSLOCollector):
                                            'De waarde moet voldoen aan volgende regex: [1-9]\\d{3}', '')]
 
         self.typeLinks = [
-            OSLOTypeLink("http://www.w3.org/2001/XMLSchema#string", "OSLODatatypePrimitive", "")]
+            OSLOTypeLink("http://www.w3.org/2001/XMLSchema#string", "OSLODatatypePrimitive", ""),
+            OSLOTypeLink("http://www.w3.org/2001/XMLSchema#decimal", "OSLODatatypePrimitive", ""),
+            OSLOTypeLink('http://www.w3.org/2000/01/rdf-schema#Literal', "OSLODatatypePrimitive", "")]
 
-        self.expectedDataKwantWrdInVolt = ['# coding=utf-8',
-                                           'from OTLModel.Datatypes.FloatOrDecimalField import FloatOrDecimalField',
-                                           'from OTLModel.Datatypes.LiteralField import LiteralField',
-                                           'from OTLModel.BaseClasses.KwantWrd import KwantWrd',
-                                           'from OTLModel.BaseClasses.KwantWrdEenheid import KwantWrdEenheid',
-                                           'from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut',
-                                           '',
-                                           '',
-                                           '# Generated with OTLPrimitiveDatatypeCreator. To modify: extend, do not edit',
-                                           'class KwantWrdInVoltEenheid(KwantWrdEenheid):',
-                                           '    def __init__(self):',
-                                           '        super().__init__()',
-                                           '        self._standaardEenheid = OTLAttribuut(field=LiteralField,',
-                                           '                                              naam=\'standaardEenheid\',',
-                                           '                                              label=\'standaard eenheid\',',
-                                           '                                              objectUri=\'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInVolt.standaardEenheid\',',
-                                           '                                              definition=\'De standaard eenheid bij dit datatype is uitgedrukt in Volt.\',',
-                                           '                                              constraints=\'\"V\"^^cdt:ucumunit\',',
-                                           '                                              usagenote=\'\"V\"^^cdt:ucumunit\')',
-                                           '',
-                                           '',
-                                           '# Generated with OTLPrimitiveDatatypeCreator. To modify: extend, do not edit',
-                                           'class KwantWrdInVolt(FloatOrDecimalField, KwantWrd):',
-                                           '    naam = \'waarde\'',
-                                           '    label = \'waarde\'',
-                                           '    objectUri = \'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInVolt.waarde\'',
-                                           '    definition = \'Bevat een getal die bij het datatype hoort.\'',
-                                           '    eenheid = KwantWrdInVoltEenheid()',
-                                           '']
+        self.expectedDataKwantWrdInVolt = ["# coding=utf-8",
+                                           "from OTLModel.BaseClasses.AttributeInfo import AttributeInfo",
+                                           "from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut",
+                                           "from OTLModel.BaseClasses.OTLField import OTLField",
+                                           "from OTLModel.Datatypes.FloatOrDecimalField import FloatOrDecimalField",
+                                           "from OTLModel.Datatypes.StringField import StringField",
+                                           "",
+                                           "",
+                                           "# Generated with OTLPrimitiveDatatypeCreator. To modify: extend, do not edit",
+                                           "class KwantWrdInVoltWaarden(AttributeInfo):",
+                                           "    def __init__(self):",
+                                           "        self._standaardEenheid = OTLAttribuut(field=StringField,",
+                                           "                                              naam='standaardEenheid',",
+                                           "                                              label='standaard eenheid',",
+                                           "                                              objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInVolt.standaardEenheid',",
+                                           "                                              usagenote='\"V\"^^cdt:ucumunit',",
+                                           "                                              constraints='\"V\"^^cdt:ucumunit',",
+                                           "                                              definition='De standaard eenheid bij dit datatype is uitgedrukt in Volt.')",
+                                           "",
+                                           "        self._waarde = OTLAttribuut(field=FloatOrDecimalField,",
+                                           "                                    naam='waarde',",
+                                           "                                    label='waarde',",
+                                           "                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInVolt.waarde',",
+                                           "                                    definition='Bevat een getal die bij het datatype hoort.')",
+                                           "",
+                                           "    @property",
+                                           "    def standaardEenheid(self):",
+                                           '        """De standaard eenheid bij dit datatype is uitgedrukt in Volt."""',
+                                           "        return self._standaardEenheid.usagenote.split(\'\"\')[1]",
+                                           "",
+                                           "    @property",
+                                           "    def waarde(self):",
+                                           '        """Bevat een getal die bij het datatype hoort."""',
+                                           "        return self._waarde.waarde",
+                                           "",
+                                           "    @waarde.setter",
+                                           "    def waarde(self, value):",
+                                           "        self._waarde.set_waarde(value)",
+                                           "",
+                                           "",
+                                           "# Generated with OTLPrimitiveDatatypeCreator. To modify: extend, do not edit",
+                                           "class KwantWrdInVolt(OTLField, AttributeInfo):",
+                                           '    """Een kwantitatieve waarde die een getal in volt uitdrukt."""',
+                                           "    naam = 'KwantWrdInVolt'",
+                                           "    label = 'Kwantitatieve waarde in volt'",
+                                           "    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInVolt'",
+                                           "    definition = 'Een kwantitatieve waarde die een getal in volt uitdrukt.'",
+                                           "    waardeObject = KwantWrdInVoltWaarden",
+                                           "",
+                                           "    def __str__(self):",
+                                           "        return OTLField.__str__(self)",
+                                           ""]
         self.expectedDataRALKleur = ["# coding=utf-8",
                                      "from OTLModel.BaseClasses.AttributeInfo import AttributeInfo",
                                      "from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut",
@@ -230,17 +255,3 @@ class OTLPrimitiveDatatypeCreatorTests(unittest.TestCase):
 
         filelocation = os.path.abspath(os.path.join(os.sep, ROOT_DIR, 'OTLModel/Datatypes/DteKleurRAL.py'))
         self.assertTrue(os.path.isfile(filelocation))
-
-    def test_getEenheidFromConstraintsEmptyString(self):
-        logger = NoneLogger()
-        collector = PrimitiveDatatypeOSLOCollector(mock)
-        creator = OTLPrimitiveDatatypeCreator(logger, collector)
-        with self.assertRaises(ValueError):
-            creator.getEenheidFromConstraints('')
-
-    def test_getEenheidFromConstraintsVoltString(self):
-        logger = NoneLogger()
-        collector = PrimitiveDatatypeOSLOCollector(mock)
-        creator = OTLPrimitiveDatatypeCreator(logger, collector)
-        result = creator.getEenheidFromConstraints('"V"^^cdt:ucumunit')
-        expected = 'V'

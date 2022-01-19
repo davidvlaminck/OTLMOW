@@ -9,16 +9,18 @@ class RelatiesTests(unittest.TestCase):
         instance = Voedt()
 
         self.assertEqual(instance._aansluitspanning.field, KwantWrdInVolt)
-        self.assertEqual("V", instance._aansluitspanning.field.eenheid.standaardEenheid)
-        self.assertEqual(None, instance.aansluitspanning)
+        self.assertEqual(None, instance.aansluitspanning.waarde)
 
-        instance.aansluitspanning = 3.0
-        self.assertEqual(3, instance.aansluitspanning)
+        instance.aansluitspanning.waarde = 3.0
+        self.assertEqual(3, instance.aansluitspanning.waarde)
+        self.assertEqual("V", instance.aansluitspanning.standaardEenheid)
 
-        instance.aansluitspanning = 4
-        self.assertEqual(4.0, instance.aansluitspanning)
+        instance.aansluitspanning .waarde = 4
+        self.assertEqual(4.0, instance.aansluitspanning.waarde)
 
         with self.assertRaises(AttributeError):
-            instance._aansluitspanning.field.eenheid.standaardEenheid = 'A'
+            instance._aansluitspanning.standaardEenheid.waarde = 'A'
+        with self.assertRaises(AttributeError):
+            instance.aansluitspanning.standaardEenheid = 'A'
 
 

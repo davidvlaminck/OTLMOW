@@ -199,7 +199,7 @@ class AbstractDatatypeCreatorTests(unittest.TestCase):
                              '        self._huisnummer.set_waarde(value)',
                              '']
 
-        self.assertEqual(expectedDatablock, creator.addAttributenToDataBlock([attribuut], []))
+        self.assertEqual(expectedDatablock, creator.add_attributen_to_dataBlock([attribuut], []))
 
     def test_addAttributenToDataBlock_DteField(self):
         creator = TestAbstractCreator()
@@ -225,7 +225,7 @@ class AbstractDatatypeCreatorTests(unittest.TestCase):
                              '        self._toestandBuis.set_waarde(value)',
                              '']
 
-        self.assertEqual(expectedDatablock, creator.addAttributenToDataBlock([attribuut], []))
+        self.assertEqual(expectedDatablock, creator.add_attributen_to_dataBlock([attribuut], []))
 
     def test_addAttributenToDataBlock_KwantWrd(self):
         creator = TestAbstractCreator()
@@ -251,7 +251,7 @@ class AbstractDatatypeCreatorTests(unittest.TestCase):
                              '        self._lengte.set_waarde(value)',
                              '']
 
-        self.assertEqual(expectedDatablock, creator.addAttributenToDataBlock([attribuut], []))
+        self.assertEqual(expectedDatablock, creator.add_attributen_to_dataBlock([attribuut], []))
 
     def test_addAttributenToDataBlock_DtcAdres(self):
         creator = TestAbstractCreator()
@@ -278,7 +278,7 @@ class AbstractDatatypeCreatorTests(unittest.TestCase):
                              '        self._adres.set_waarde(value)',
                              '']
 
-        self.assertEqual(expectedDatablock, creator.addAttributenToDataBlock([attribuut], []))
+        self.assertEqual(expectedDatablock, creator.add_attributen_to_dataBlock([attribuut], []))
 
     def test_getWhiteSpaceEquivalent_EmptyString(self):
         creator = TestAbstractCreator()

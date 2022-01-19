@@ -11,6 +11,8 @@ class EMInfraDecoderTests(TestCase):
         responseString = ResponseTestDouble().response
         decoder = EMInfraDecoder()
         first = decoder.decodeGraph(responseString)[0]
+        # TODO parse EM Infra graph so that keys don't contain dots
+
         with self.subTest("Testing type match"):
             self.assertTrue(isinstance(first, Omvormer))
             self.assertEqual("https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Omvormer", first.typeURI)

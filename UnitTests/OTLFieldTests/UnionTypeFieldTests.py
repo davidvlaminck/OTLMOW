@@ -12,14 +12,18 @@ class UnionTypeFieldTests(unittest.TestCase):
         c = Lichtmast()
 
         with self.assertRaises(TypeError):
-            c.masthoogte.afwijkendeHoogte = "2"
+            c.masthoogte.afwijkendeHoogte.waarde = "2"
         with self.assertRaises(ValueError):
-            c.masthoogte.standaardHoogte = "10.0"
+            c.masthoogte.standaardHoogte.waarde = "10.0"
 
+    # TODO setting complex datatype in unionfield skips the clear_props method :-/
     def test_correct_values(self):
         c = Lichtmast()
-        c.masthoogte.afwijkendeHoogte = 7.5
-        self.assertEqual(7.5, c.masthoogte.afwijkendeHoogte)
+        c.masthoogte.afwijkendeHoogte.waarde = 7.5
+        self.assertEqual(7.5, c.masthoogte.afwijkendeHoogte.waarde)
         c.masthoogte.standaardHoogte = '10.00'
         self.assertEqual('10.00', c.masthoogte.standaardHoogte)
-        self.assertEqual(None, c.masthoogte.afwijkendeHoogte)
+        self.assertEqual(None, c.masthoogte.afwijkendeHoogte.waarde)
+        c.masthoogte.afwijkendeHoogte.waarde = 7.5
+        self.assertEqual(7.5, c.masthoogte.afwijkendeHoogte.waarde)
+        self.assertEqual(None, c.masthoogte.standaardHoogte)

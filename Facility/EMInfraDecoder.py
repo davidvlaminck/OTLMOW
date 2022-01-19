@@ -1,11 +1,10 @@
 ﻿import json
 
-from Facility.AttributeSetterFactory import AttributeSetterFactory
-from Facility.KeuzelijstFieldSetter import KeuzelijstFieldSetter
+from Facility.ToOTLDecoder import ToOTLDecoder
 from OTLModel.ClassLoader import ClassLoader
 
 
-class EMInfraDecoder:
+class EMInfraDecoder(ToOTLDecoder):
     def decodeGraph(self, responseString):
         dict_obj = json.loads(responseString)
         lijst = []
@@ -33,12 +32,17 @@ class EMInfraDecoder:
             if 'geometrie' in key:
                 key = 'loc:Locatie.geometry'
 
-            attr_naam = key.split('.')[-1]
-            attribute_setter = AttributeSetterFactory.CreateSetter(instance, attr_naam)
-            if attribute_setter is KeuzelijstFieldSetter:
-                if value != '':
-                    val = value.split('/')[-1]
-                    value = str.lower(val[0]) + val[1:]
-            attribute_setter.set_attribute(value)
+            if isinstance(value, str) and 'https://wegenenverkeer.data.vlaanderen.be/id/concept' in value:
+                 value = value.split('/')[-1]
+
+            self.set_attribute_by_dotnotatie(instance, key.split('.')[-1], value)
+
+            # attr_naam = key.split('.')[-1]
+            # attribute_setter = AttributeSetterFactory.CreateSetter(instance, attr_naam)
+            # if attribute_setter is KeuzelijstFieldSetter:
+            #     if value != '':
+            #         val = value.split('/')[-1]
+            #         value = str.lower(val[0]) + val[1:]
+            # attribute_setter.set_attribute(value)
 
         return instance

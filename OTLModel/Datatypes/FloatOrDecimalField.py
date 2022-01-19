@@ -25,8 +25,7 @@ class FloatOrDecimalField(OTLField):
             val = attribuut.field.convert_to_correct_type(value)
             if val is not None and not isinstance(val, float):
                 raise TypeError(f'expecting a number (int, float or Decimal) in {attribuut.naam}')
-            return True
-        return False
+        return True
 
     def __str__(self):
         return OTLField.__str__(self)

@@ -158,55 +158,54 @@ class AbstractDatatypeCreator(ABC):
 
         raise NotImplementedError(f"getTypeNameOfComplexAttribuut fails to get typename from {type_uri}")
 
-    def CreateBlockToWriteFromComplexOrUnionTypes(self, osloDatatypeComplex, ComplexOrUnionTypeField='ComplexField'):
-        if ComplexOrUnionTypeField == 'ComplexField':
-            attributen = self.osloCollector.FindComplexDatatypeAttributenByClassUri(osloDatatypeComplex.objectUri)
-        else:
-            attributen = self.osloCollector.FindUnionDatatypeAttributenByClassUri(osloDatatypeComplex.objectUri)
+    def CreateBlockToWriteFromComplexPrimitiveOrUnionTypes(self, osloDatatype, TypeField=''):
+        attributen = self.get_attributen_by_typeField(TypeField, osloDatatype)
 
         datablock = ['# coding=utf-8',
                      'from OTLModel.BaseClasses.AttributeInfo import AttributeInfo',
                      'from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut']
 
-        if any(atr.readonly == 1 for atr in attributen):
-            raise NotImplementedError("readonly property is assumed to be 0 on value fields")
-
-        listOfFields = self.getFieldsToImportFromListOfAttributes(attributen, [f'{ComplexOrUnionTypeField}'])
+        listOfFields = self.getFieldsToImportFromListOfAttributes(attributen, [f'{TypeField}Field'])
         for typeField in listOfFields:
             datablock.append(f'from OTLModel.Datatypes.{typeField} import {typeField}')
 
         datablock.append('')
         datablock.append('')
         datablock.append(f'# Generated with {self.__class__.__name__}. To modify: extend, do not edit')
-        WaardenString = 'Waarden'
-        if ComplexOrUnionTypeField!='ComplexField':
-            WaardenString = 'Attributen'
-        datablock.append(f'class {osloDatatypeComplex.name}{WaardenString}(AttributeInfo):')
+        datablock.append(f'class {osloDatatype.name}Waarden(AttributeInfo):')
         datablock.append('    def __init__(self):')
 
-        self.addAttributenToDataBlock(attributen, datablock, forUnionTypeUse=not(ComplexOrUnionTypeField=='ComplexField'))
+        self.addAttributenToDataBlock(attributen, datablock, forClassUse=False)
 
         datablock.append(''),
         datablock.append(f'# Generated with {self.__class__.__name__}. To modify: extend, do not edit')
-        datablock.append(f'class {osloDatatypeComplex.name}({ComplexOrUnionTypeField}, AttributeInfo):'),
-        datablock.append(f'    """{osloDatatypeComplex.definition}"""'),
-        datablock.append(f'    naam = {wrap_in_quotes(osloDatatypeComplex.name)}'),
-        datablock.append(f'    label = {wrap_in_quotes(osloDatatypeComplex.label)}'),
-        datablock.append(f'    objectUri = {wrap_in_quotes(osloDatatypeComplex.objectUri)}'),
-        datablock.append(f'    definition = {wrap_in_quotes(osloDatatypeComplex.definition)}'),
-        if osloDatatypeComplex.usagenote != '':
-            datablock.append(f'    usagenote = {wrap_in_quotes(osloDatatypeComplex.usagenote)}'),
-        if osloDatatypeComplex.deprecated_version != '':
-            datablock.append(f'    deprecated_version = {wrap_in_quotes(osloDatatypeComplex.deprecated_version)}'),
-        datablock.append(f'    waardeObject = {osloDatatypeComplex.name}{WaardenString}'),
+        datablock.append(f'class {osloDatatype.name}({TypeField}Field, AttributeInfo):'),
+        datablock.append(f'    """{osloDatatype.definition}"""'),
+        datablock.append(f'    naam = {wrap_in_quotes(osloDatatype.name)}'),
+        datablock.append(f'    label = {wrap_in_quotes(osloDatatype.label)}'),
+        datablock.append(f'    objectUri = {wrap_in_quotes(osloDatatype.objectUri)}'),
+        datablock.append(f'    definition = {wrap_in_quotes(osloDatatype.definition)}'),
+        if osloDatatype.usagenote != '':
+            datablock.append(f'    usagenote = {wrap_in_quotes(osloDatatype.usagenote)}'),
+        if osloDatatype.deprecated_version != '':
+            datablock.append(f'    deprecated_version = {wrap_in_quotes(osloDatatype.deprecated_version)}'),
+        datablock.append(f'    waardeObject = {osloDatatype.name}Waarden'),
         datablock.append(f''),
         datablock.append(f'    def __str__(self):'),
-        datablock.append(f'        return {ComplexOrUnionTypeField}.__str__(self)')
+        datablock.append(f'        return {TypeField}Field.__str__(self)')
         datablock.append('')
 
         return datablock
 
-    def addAttributenToDataBlock(self, attributen, datablock, class_uri='', forClassUse=False, forUnionTypeUse=False):
+    def get_attributen_by_typeField(self, TypeField, osloDatatype):
+        if TypeField == 'Complex':
+            return self.osloCollector.FindComplexDatatypeAttributenByClassUri(osloDatatype.objectUri)
+        elif TypeField == 'UnionType':
+            return self.osloCollector.FindUnionDatatypeAttributenByClassUri(osloDatatype.objectUri)
+        else:
+            return self.osloCollector.FindPrimitiveDatatypeAttributenByClassUri(osloDatatype.objectUri)
+
+    def addAttributenToDataBlock(self, attributen, datablock, class_uri='', forClassUse=False):
         prop_datablock = []
         for attribuut in sorted(attributen, key=lambda a: a.name):
             if attribuut.overerving == 1:
@@ -242,7 +241,7 @@ class AbstractDatatypeCreator(ABC):
             prop_datablock.append(f'        """{attribuut.definition}"""'),
             prop_datablock.append(f'        return self._{attribuut.name}.waarde'),
             prop_datablock.append(f''),
-            if not forUnionTypeUse:
+            if not attribuut.readonly:
                 prop_datablock.append(f'    @{attribuut.name}.setter'),
                 prop_datablock.append(f'    def {attribuut.name}(self, value):'),
 

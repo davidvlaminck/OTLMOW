@@ -7,11 +7,12 @@ class KeuzelijstField(OTLField):
 
     @staticmethod
     def validate(value, attribuut):
-        if not isinstance(value, str):
-            raise TypeError(f'{value} is not the correct type. Expecting a string')
-        if value is not None and not value in attribuut.field.options.keys():
-            raise ValueError(
-                f'{value} is not a valid option for {attribuut.naam}, find the valid options using .attr_type_info("{attribuut.naam}")')
+        if value is not None:
+            if not isinstance(value, str):
+                raise TypeError(f'{value} is not the correct type. Expecting a string')
+            if not value in attribuut.field.options.keys():
+                raise ValueError(
+                    f'{value} is not a valid option for {attribuut.naam}, find the valid options using .attr_type_info("{attribuut.naam}")')
         return True
 
     def __str__(self):

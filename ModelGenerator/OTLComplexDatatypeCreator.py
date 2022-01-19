@@ -27,9 +27,9 @@ class OTLComplexDatatypeCreator(AbstractDatatypeCreator):
 
         if osloDatatypeComplex.objectUri.startswith(
                 'https://wegenenverkeer.data.vlaanderen.be/ns/') and 'Dtc' in osloDatatypeComplex.objectUri:
-            return self.CreateBlockToWriteFromComplexOrUnionTypes(osloDatatypeComplex)
+            return self.CreateBlockToWriteFromComplexPrimitiveOrUnionTypes(osloDatatypeComplex)
         elif osloDatatypeComplex.objectUri.startswith('https://schema.org/'):
-            return self.CreateBlockToWriteFromComplexOrUnionTypes(osloDatatypeComplex)
+            return self.CreateBlockToWriteFromComplexPrimitiveOrUnionTypes(osloDatatypeComplex)
         else:
             raise NotImplementedError
 

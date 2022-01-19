@@ -11,14 +11,15 @@ class UnionTypeFieldTests(unittest.TestCase):
     def test_bad_value(self):
         c = Lichtmast()
 
+        with self.assertRaises(TypeError):
+            c.masthoogte.afwijkendeHoogte = "2"
         with self.assertRaises(ValueError):
-            c.masthoogte = "2"
-        with self.assertRaises(ValueError):
-            c.masthoogte = "10.0"
+            c.masthoogte.standaardHoogte = "10.0"
 
     def test_correct_values(self):
         c = Lichtmast()
-        c.masthoogte = 7.5
-        self.assertEqual(7.5, c.masthoogte)
-        c.masthoogte = '10.00'
-        self.assertEqual('10.00', c.masthoogte)
+        c.masthoogte.afwijkendeHoogte = 7.5
+        self.assertEqual(7.5, c.masthoogte.afwijkendeHoogte)
+        c.masthoogte.standaardHoogte = '10.00'
+        self.assertEqual('10.00', c.masthoogte.standaardHoogte)
+        self.assertEqual(None, c.masthoogte.afwijkendeHoogte)

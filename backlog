@@ -30,6 +30,7 @@ Postenmapping:
 Docstring appenden vanuit otlobject met generieke functies zoals attr_info
 Attr_info met lege parameter: info over object zelf, werkt niet voor classed en type want dat heeft geen field
 Import eminfra voor asset relaties etc: alternatief voor data afladen in Davie
+https://towardsdatascience.com/making-network-graphs-interactive-with-python-and-pyvis-b754c22c270
 
 Demo
 Via console? Vermijd de nood voor imports

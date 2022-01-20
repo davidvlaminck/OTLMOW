@@ -1,6 +1,7 @@
 ﻿import networkx as nx
 from pyvis import network as net
 from IPython.core.display import display, HTML
+import dash
 
 from OTLModel.Classes.Bevestiging import Bevestiging
 from OTLModel.Classes.RelatieObject import RelatieObject
@@ -37,6 +38,8 @@ class Visualiser:
             return 'black'
         if isinstance(relatie, Sturing):
             return 'green'
+        if isinstance(relatie, HoortBij):
+            return 'orange'
 
     def add_to_html(self, g):
         f = g.html.find('"interaction": {')

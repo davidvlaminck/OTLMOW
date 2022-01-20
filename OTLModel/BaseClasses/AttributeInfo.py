@@ -3,6 +3,9 @@ from OTLModel.BaseClasses.KwantWrd import KwantWrd
 
 
 class AttributeInfo:
+    def info(self):
+        return str(self)
+
     def attr_info(self, attribuut_naam=''):
         if '.' in attribuut_naam:
             attribuut = attribuut_naam.split('.')[0]

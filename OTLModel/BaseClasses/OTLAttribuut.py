@@ -48,14 +48,22 @@ class OTLAttribuut(AttributeInfo):
                     valueList.append(item)
             return valueList
         if self.field.waardeObject is not None:
-            waardeDict = vars(self.waarde)
-            valueDict = {}
-            for k, v in waardeDict.items():
-                if v.default() is not None:
-                    valueDict[k[1:]] = v.default()
-            if len(valueDict) == 0:
+            if self.field._uses_waarde_object:
+                waardeDict = vars(self.waarde)
+                valueDict = {}
+                for k, v in waardeDict.items():
+                    if v.default() is not None:
+                        valueDict[k[1:]] = v.default()
+                if len(valueDict) == 0:
+                    return None
+                return valueDict
+            else:
+                if self.waarde.waarde is not None:
+                    if hasattr(self.waarde.waarde, 'default'):
+                        return self.waarde.waarde.default()
+                    else:
+                        return self.waarde.waarde
                 return None
-            return valueDict
         else:
             if isinstance(self.waarde, datetime):
                 if self.waarde.hour == 0 and self.waarde.minute == 0 and self.waarde.second == 0:
@@ -63,9 +71,12 @@ class OTLAttribuut(AttributeInfo):
                 else:
                     return self.waarde.strftime("%Y-%m-%d %H:%M:%S")
             else:
-                return self.waarde
+                if hasattr(self.waarde, 'default'):
+                    return self.waarde.default()
+                else:
+                    return self.waarde
 
-    def set_waarde(self, value, owner=None, union_type=False):
+    def set_waarde(self, value, owner=None):
         if self.kardinaliteit_max == '*':
             kardinaliteit_max = math.inf
         else:
@@ -76,7 +87,7 @@ class OTLAttribuut(AttributeInfo):
                 raise TypeError(f'expecting a list in {owner.__class__.__name__}.{self.naam}')
             elif isinstance(value, list) and isinstance(value, set):
                 raise TypeError(f'expecting a non set type of list in {owner.__class__.__name__}.{self.naam}')
-            elif len(value) < kardinaliteit_min:
+            elif 0 < len(value) < kardinaliteit_min:
                 raise ValueError(f'expecting at least {kardinaliteit_min} element(s) in {owner.__class__.__name__}.{self.naam}')
             elif len(value) > kardinaliteit_max:
                 raise ValueError(f'expecting at most {kardinaliteit_max} element(s) in {owner.__class__.__name__}.{self.naam}')
@@ -84,10 +95,12 @@ class OTLAttribuut(AttributeInfo):
                 try:
                     field_validated = self.field.validate(el_value, self)
                     if not field_validated:
-                        raise ValueError(f'invalid value in list for {owner.__class__.__name__}.{self.naam}: {el_value} is not valid, must be valid for {self.field.naam}')
+                        raise ValueError(
+                            f'invalid value in list for {owner.__class__.__name__}.{self.naam}: {el_value} is not valid, must be valid for {self.field.naam}')
                 except TypeError as error:
                     raise ValueError(
-                        f'invalid value in list for {owner.__class__.__name__}.{self.naam}: {el_value} is not valid, must be valid for {self.field.naam}\n' + str(error))
+                        f'invalid value in list for {owner.__class__.__name__}.{self.naam}: {el_value} is not valid, must be valid for {self.field.naam}\n' + str(
+                            error))
 
             self.waarde = self.field.convert_to_correct_type(value)
         else:
@@ -103,17 +116,16 @@ class OTLAttribuut(AttributeInfo):
                 if self.field.validate(value=value, attribuut=self):
                     self.waarde = self.field.convert_to_correct_type(value)
 
-
-
     def __str__(self):
-        return f"""information about {self.naam}:
-naam: {self.naam}
-uri: {self.objectUri}
-definition: {self.definition}
-label: {self.label}
-usagenote: {self.usagenote}
-constraints: {self.constraints}
-readonly: {self.readonly}
-kardinaliteit_min: {self.kardinaliteit_min}
-kardinaliteit_max: {self.kardinaliteit_max}
-deprecated_version: {self.deprecated_version}"""
+        s = (f'information about {self.naam}:\n'
+             f'naam: {self.naam}\n'
+             f'uri: {self.objectUri}\n'
+             f'definition: {self.definition}\n'
+             f'label: {self.label}\n'
+             f'usagenote: {self.usagenote}\n'
+             f'constraints: {self.constraints}\n'
+             f'readonly: {self.readonly}\n'
+             f'kardinaliteit_min: {self.kardinaliteit_min}\n'
+             f'kardinaliteit_max: {self.kardinaliteit_max}\n'
+             f'deprecated_version: {self.deprecated_version}\n')
+        return s

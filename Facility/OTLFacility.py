@@ -1,6 +1,7 @@
 from Facility.AssetFactory import AssetFactory
 from Facility.DavieDecoder import DavieDecoder
 from Facility.DavieExporter import DavieExporter
+from Facility.Visualiser import Visualiser
 from Loggers.AbstractLogger import AbstractLogger
 from ModelGenerator.BaseClasses.RelatieValidator import RelatieValidator
 from OTLModel.GeldigeRelatieLijst import GeldigeRelatieLijst
@@ -23,6 +24,7 @@ class OTLFacility:
         self.davieDecoder = DavieDecoder()
         self.asset_factory = AssetFactory()
         self.relatieValidator = RelatieValidator(GeldigeRelatieLijst())
+        self.visualiser = Visualiser()
 
     def init_otl_model_creator(self, otl_file_location):
         sql_reader = SQLDbReader(otl_file_location)

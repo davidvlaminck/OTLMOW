@@ -87,6 +87,16 @@ class DavieDecoderTests(TestCase):
   "naam" : "Gevondenproficiat",
   "geometry" : "POINT Z (155377.8 211520.7 0)"
 }]"""
+    jsonDataCase5 = """{
+  "assetId" : {
+    "identificator" : "ae6c5f35-930d-47a3-b67f-a5ff40c6e0fe-b25kZXJkZWVsI1NsYWdib29ta29sb20",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomkolom",
+  "toestand" : "in-gebruik",
+  "isActief" : true,
+  "geometry" : "POINT Z (61716.3 209331.2 0)"
+}"""
 
     def test_invalid_typeURI(self):
         davie_decoder = DavieDecoder()

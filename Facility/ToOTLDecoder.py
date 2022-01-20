@@ -3,9 +3,20 @@
 from OTLModel.Datatypes.DateField import DateField
 
 
+class DotNotationError(ValueError):
+    pass
+
+
 class ToOTLDecoder:
     def __init__(self):
         pass
+
+    def set_value_by_dotnotatie(self, assetOrAttribuut, dotnotatie, value):
+        try:
+            eval(f'assetOrAttribuut.{dotnotatie}')
+            exec(f'assetOrAttribuut.{dotnotatie} = value')
+        except:
+            raise DotNotationError(f'{dotnotatie} of {assetOrAttribuut.__repr__()} can not be set to {value}')
 
     def set_attribute_by_dotnotatie(self, instanceOrAttribute, key, value):
         if isinstance(value, dict):

@@ -1,6 +1,7 @@
 import dataclasses
 from unittest import TestCase
 
+from Facility.ToOTLDecoder import ToOTLDecoder, DotNotationError
 from OTLModel.ClassLoader import ClassLoader
 from OTLModel.Classes.BitumineuzeLaag import BitumineuzeLaag
 from OTLModel.Classes.Geotextiel import Geotextiel
@@ -22,18 +23,6 @@ class StandaardPostMapping:
     mappingOpmerking: str
 
 
-class DotNotationError(ValueError):
-    pass
-
-
-def set_value_by_dotnotatie(assetOrAttribuut, dotnotatie, value):
-    try:
-        eval(f'assetOrAttribuut.{dotnotatie}')
-        exec(f'assetOrAttribuut.{dotnotatie} = value')
-    except:
-        raise DotNotationError(f'{dotnotatie} of {assetOrAttribuut} can not be set to {value}')
-
-
 @dataclasses.dataclass
 class StandaardPost:
     nummer: str
@@ -50,7 +39,7 @@ class StandaardPost:
                 asset = class_loader.dynamic_create_instance_from_uri(mapping.typeURI)
                 lijst.append(asset)
             if mapping.defaultWaarde != '':
-                set_value_by_dotnotatie(asset, mapping.dotnotatie, mapping.defaultWaarde)
+                ToOTLDecoder().set_value_by_dotnotatie(asset, mapping.dotnotatie, mapping.defaultWaarde)
         return lijst
 
 
@@ -156,7 +145,7 @@ class StandaardPostTests(TestCase):
         b = BitumineuzeLaag()
         b.notitie = 'a'
         self.assertEqual('a', b.notitie)
-        set_value_by_dotnotatie(b, 'notitie', 'c')
+        ToOTLDecoder().set_value_by_dotnotatie(b, 'notitie', 'c')
         self.assertEqual('c', b.notitie)
 
     def test_set_value_by_dotnotatie_invalid_attribute(self):
@@ -164,14 +153,14 @@ class StandaardPostTests(TestCase):
         b.notitie = 'a'
         self.assertEqual('a', b.notitie)
         with self.assertRaises(DotNotationError) as dotnotationerror:
-            set_value_by_dotnotatie(b, 'notitie_invalid', 'c')
+            ToOTLDecoder().set_value_by_dotnotatie(b, 'notitie_invalid', 'c')
         self.assertRegex(str(dotnotationerror.exception), 'notitie_invalid of <OTLModel.Classes.BitumineuzeLaag.BitumineuzeLaag object at 0x[0-9A-F]+> can not be set to c')
 
     def test_set_value_by_dotnotatie_complex(self):
         b = BitumineuzeLaag()
         b.assetId.identificator = 'a'
         self.assertEqual('a', b.assetId.identificator)
-        set_value_by_dotnotatie(b, 'assetId.identificator', 'c')
+        ToOTLDecoder().set_value_by_dotnotatie(b, 'assetId.identificator', 'c')
         self.assertEqual('c', b.assetId.identificator)
 
     def test_create_assets_by_standaardPost_0501(self):

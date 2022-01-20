@@ -20,12 +20,12 @@ def normaliseer_exoten():
             orig_aimObject=exoten, typeURI=InvasieveExoten.typeURI, fieldsToCopy=list_of_fields_to_copy)
 
         # change the assetId
-        nieuwe_invasieve_exoten.assetId.identificator.waarde = f'nieuwe_versie_van_{exoten.assetId.identificator.waarde}'
+        nieuwe_invasieve_exoten.assetId.identificator = f'nieuwe_versie_van_{exoten.assetId.identificator}'
 
         lijst_objecten.append(nieuwe_invasieve_exoten)
 
         # set isActief to False to soft-delete Exoten and add for the import
-        exoten.isActief.waarde = False
+        exoten.isActief = False
         lijst_objecten.append(exoten)
 
     # write to a json file that can be uploaded in Davie

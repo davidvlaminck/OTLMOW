@@ -1,5 +1,6 @@
 ﻿import math
 import warnings
+from datetime import datetime
 from msilib import sequence
 
 from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
@@ -32,6 +33,20 @@ class OTLAttribuut(AttributeInfo):
             pass
 
     def default(self):
+        if self.waarde is not dict and isinstance(self.waarde, list):
+            valueList = []
+            for item in self.waarde:
+                if self.field.waardeObject is not None:
+                    waardeDict = vars(item)
+                    valueDict = {}
+                    for k, v in waardeDict.items():
+                        if v.default() is not None:
+                            valueDict[k[1:]] = v.default()
+                    if len(valueDict) != 0:
+                        valueList.append(valueDict)
+                else:
+                    valueList.append(item)
+            return valueList
         if self.field.waardeObject is not None:
             waardeDict = vars(self.waarde)
             valueDict = {}
@@ -42,7 +57,13 @@ class OTLAttribuut(AttributeInfo):
                 return None
             return valueDict
         else:
-            return self.waarde
+            if isinstance(self.waarde, datetime):
+                if self.waarde.hour == 0 and self.waarde.minute == 0 and self.waarde.second == 0:
+                    return self.waarde.strftime("%Y-%m-%d")
+                else:
+                    return self.waarde.strftime("%Y-%m-%d %H:%M:%S")
+            else:
+                return self.waarde
 
     def set_waarde(self, value, owner=None, union_type=False):
         if self.kardinaliteit_max == '*':
@@ -75,8 +96,9 @@ class OTLAttribuut(AttributeInfo):
                 for prop_key, prop_value in props.items():
                     if prop_key.startswith('_'):
                         continue
-                    a = getattr(value, prop_key)
-                    setattr(self.waarde, prop_key, a)
+                    if prop_key != 'standaardEenheid':
+                        a = getattr(value, prop_key)
+                        setattr(self.waarde, prop_key, a)
             else:
                 if self.field.validate(value=value, attribuut=self):
                     self.waarde = self.field.convert_to_correct_type(value)

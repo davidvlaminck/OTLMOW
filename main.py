@@ -12,32 +12,8 @@ from OTLModel.Classes.DNBLaagspanning import DNBLaagspanning
 from OTLModel.Classes.EnergiemeterDNB import EnergiemeterDNB
 from OTLModel.Classes.Voedt import Voedt
 
-class Bar(object):
-    def __init__(self):
-        self.value = ''
-
-    def __get__(self, instance, owner):
-        print("returned from descriptor object")
-        return self.value
-
-    def __set__(self, instance, value):
-        print("set in descriptor object")
-        self.value = value
-
-    def __delete__(self, instance):
-        print("deleted in descriptor object")
-        del self.value
-
-class Foo(object):
-    bar = Bar()
-
 if __name__ == '__main__':
-    f = Foo()
-    f.bar = 10
-    print(f.bar)
-    del f.bar
-
-
+    normalisatieExoten.normaliseer_exoten()
 
     # create the main facade class: OTLFacility
     logger = TxtLogger(r'C:\temp\pythonLogging\pythonlog.txt')

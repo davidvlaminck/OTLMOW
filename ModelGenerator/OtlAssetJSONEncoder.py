@@ -17,15 +17,26 @@ class OtlAssetJSONEncoder(json.JSONEncoder):
                     value = otlObject.__getattribute__(key)
                     if value is None:
                         continue
+                    if key == 'deprecated_version':
+                        continue
                     if key == 'typeURI':
                         dictCopy['typeURI'] = otlObject.typeURI
                     else:
                         attribute = otlObject.__getattribute__('_' + key)
                         defaultValue = attribute.default()
                         if defaultValue is not None:
+                            if isinstance(defaultValue, str):
+                                if len(defaultValue) == 0:
+                                    continue
+                            if isinstance(defaultValue, list):
+                                if len(defaultValue) == 0:
+                                    continue
+                            if isinstance(defaultValue, dict):
+                                if self.isEmptyDict(defaultValue):
+                                    continue
                             dictCopy[key] = defaultValue
             return dictCopy
-        return self
+        return super().default(otlObject)
 
     def default2(self, otlObject):
         if isinstance(otlObject, OTLAsset) or isinstance(otlObject, RelatieObject):

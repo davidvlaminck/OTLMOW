@@ -31,7 +31,7 @@ class OtlAssetJSONEncoderTests(unittest.TestCase):
 
     def test_JsonEncodeDecimal(self):
         l = Laagspanningsbord()
-        l.vermogen = float(25)
+        l.vermogen.waarde = float(25)
 
         encoder = OtlAssetJSONEncoder()
         js = encoder.encode(l)

@@ -7,7 +7,7 @@ from OTLModel.Datatypes.StringField import StringField
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Agent:(AttributeInfo)
+class Agent(AttributeInfo):
     """Iemand die of iets dat kan handelen of een effect kan teweeg brengen."""
 
     typeURI = 'http://purl.org/dc/terms/Agent'

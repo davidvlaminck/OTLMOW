@@ -1,10 +1,7 @@
 ﻿from random import choice
-from turtle import color
 
-import networkx as nx
-from pyvis import network as net
 from IPython.core.display import display, HTML
-import dash
+from pyvis import network as net
 
 from OTLModel.Classes.Bevestiging import Bevestiging
 from OTLModel.Classes.HoortBij import HoortBij
@@ -158,13 +155,17 @@ class Visualiser:
             if relatie.bronAssetId.identificator in asset_ids and relatie.doelAssetId.identificator in asset_ids:  # only display relations between assets that are displayed
                 g.add_edge(source=relatie.bronAssetId.identificator,
                            to=relatie.doelAssetId.identificator,
-                           color=self.map_relation_to_color(relatie), width=2)
+                           color=self.map_relation_to_color(relatie),
+                           width=2,
+                           arrows=None)
                 if isinstance(relatie, Sturing) or isinstance(relatie, Bevestiging):
                     g.add_edge(to=relatie.bronAssetId.identificator,
                                source=relatie.doelAssetId.identificator,
-                               color=self.map_relation_to_color(relatie), width=2)
+                               color=self.map_relation_to_color(relatie),
+                               width=2, arrowsize=1)
 
-    def map_relation_to_color(self, relatie) -> str:
+    @staticmethod
+    def map_relation_to_color(relatie) -> str:
         relatie_color_dict = {
             'red': Voedt,
             'black': Bevestiging,
@@ -177,33 +178,21 @@ class Visualiser:
                 return k
         return 'brown'
 
-
-        if isinstance(relatie, Voedt):
-            return 'red'
-        if isinstance(relatie, Bevestiging):
-            return 'black'
-        if isinstance(relatie, Sturing):
-            return 'green'
-        if isinstance(relatie, HoortBij):
-            return 'orange'
-        if isinstance(relatie, VoedtAangestuurd):
-            return 'purple'
-        else:
-            return 'brown'
-
-    def add_to_html(self, g):
+    @staticmethod
+    def add_to_html(g):
         f = g.html.find('"interaction": {')
         insert_text = '"click":{"event":console.log("working")},'
         g.html = g.html[:f] + insert_text + g.html[f:]
 
     def random_color_if_not_in_dict(self, typeURI):
-        if not typeURI in self.colorDict.keys():
+        if typeURI not in self.colorDict.keys():
             randomColor = choice(self.colorlist)
             while randomColor in self.colorDict.values():
                 randomColor = choice(self.colorlist)
             self.colorDict[typeURI] = randomColor
         return self.colorDict[typeURI]
 
-    def get_tooltip(self, otl_object):
-        html = otl_object.info().replace('\n', '<br/>').replace(' ','&nbsp;')
-        return         '<div style="font-family: monospace;"</div>' + html
+    @staticmethod
+    def get_tooltip(otl_object):
+        html = otl_object.info().replace('\n', '<br/>').replace(' ', '&nbsp;')
+        return '<div style="font-family: monospace;"</div>' + html

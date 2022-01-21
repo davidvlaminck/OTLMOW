@@ -3,7 +3,6 @@
 from Facility.AssetFactory import AssetFactory
 from OTLModel.Classes.Aftakking import Aftakking
 from OTLModel.Classes.Agent import Agent
-from OTLModel.Classes.ProefStroefheid import ProefStroefheid
 from OTLModel.Classes.Stroomkring import Stroomkring
 
 

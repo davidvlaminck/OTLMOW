@@ -76,18 +76,22 @@ class AssetFactoryTests(TestCase):
     def test_create_aimObject_using_other_aimObject_as_template_StringField_KwantWrd(self):
         factory = AssetFactory()
         orig_aftakking = Aftakking()
-        orig_aftakking.theoretischeLevensduur = 120
+        orig_aftakking.theoretischeLevensduur.waarde = 120
         orig_aftakking.naam = 'aftakking originele naam'
-        nieuwe_aftakking = factory.create_aimObject_using_other_aimObject_as_template(orig_aftakking)
-        self.assertEqual(120, orig_aftakking.theoretischeLevensduur)
+        self.assertEqual(120, orig_aftakking.theoretischeLevensduur.waarde)
         self.assertEqual('aftakking originele naam', orig_aftakking.naam)
-        orig_aftakking.theoretischeLevensduur = 240
+
+        nieuwe_aftakking = factory.create_aimObject_using_other_aimObject_as_template(orig_aftakking)
+        self.assertEqual(120, orig_aftakking.theoretischeLevensduur.waarde)
+        self.assertEqual('aftakking originele naam', orig_aftakking.naam)
+
+        orig_aftakking.theoretischeLevensduur.waarde = 240
         orig_aftakking.naam = 'aftakking nieuwe naam'
 
-        self.assertEqual(240, orig_aftakking.theoretischeLevensduur)
+        self.assertEqual(240, orig_aftakking.theoretischeLevensduur.waarde)
         self.assertEqual('aftakking nieuwe naam', orig_aftakking.naam)
         self.assertTrue(isinstance(nieuwe_aftakking, Aftakking))
-        self.assertEqual(120, nieuwe_aftakking.theoretischeLevensduur)
+        self.assertEqual(120, nieuwe_aftakking.theoretischeLevensduur.waarde)
         self.assertEqual('aftakking originele naam', nieuwe_aftakking.naam)
 
     def test_copy_fields_from_object_to_new_object_invalid_orig_asset(self):

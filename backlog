@@ -30,9 +30,7 @@ Postenmapping:
 - van ingevulde asset uitzoeken welke post of posten dit is
 .attributenIterator: iterator voor de attributen van dat attribuut of class (zoeken naar attributen die met _ beginnen en otlfield zijn. In dict steken
 Docstring appenden vanuit otlobject met generieke functies zoals attr_info
-Attr_info met lege parameter: info over object zelf, werkt niet voor classed en type want dat heeft geen field
 Import eminfra voor asset relaties etc: alternatief voor data afladen in Davie
-https://towardsdatascience.com/making-network-graphs-interactive-with-python-and-pyvis-b754c22c270
 
 
 Demo
@@ -49,7 +47,7 @@ DemoInfo
 use case: migratietraject met testdata ondersteunen
 > allerlei features toegevoegd, zoals import, validatie, helper functies etc.
 Ooit vertrokken van meest simpele model, maar heeft geen inheritance metadata op types en attrs en heeft geen validatie.
-Dotnotatie bevatte waarde om validatie af te dwingen
+Dotnotatie bevatte waarde om validatie af te dwingen, nu enkel bij kwantwrd en dte
 Voordeel echte overerving: filter assets op abstract type, filter relatie van assets
 Dynamic typing voor union types
 Davie kan geen lege waardes verwerken. Is ook gevaarlijk. Mss aparte endpoint of metadata die aanduidt dat iets leeg mag

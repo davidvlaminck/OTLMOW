@@ -6,10 +6,11 @@ Geldige relatie lijst refactor naar isistance met inheritance ipv alle relaties 
 AttributeInfo inheritance nakijken > erft te veel keer over
 
 
-Clean code
+Write clean code
 Defaultdict: dict met default value, dict group
 Unpacking sequences
 Gebruik classes met parameter namen
+Docstrings van https://betterprogramming.pub/the-guide-to-python-docstrings-3d40340e824b
 
 
 NewFeatures

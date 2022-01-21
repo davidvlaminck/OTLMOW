@@ -8,6 +8,7 @@ from OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter
 # Generated with OTLComplexDatatypeCreator. To modify: extend, do not edit
 class DtcKrimpvoegWaarden(AttributeInfo):
     def __init__(self):
+        super().__init__()
         self._krimpvoegFrequentie = OTLAttribuut(field=KwantWrdInMeter,
                                                  naam='krimpvoegFrequentie',
                                                  label='krimpvoeg frequentie',
@@ -27,7 +28,7 @@ class DtcKrimpvoegWaarden(AttributeInfo):
 
     @krimpvoegFrequentie.setter
     def krimpvoegFrequentie(self, value):
-        self._krimpvoegFrequentie.set_waarde(value)
+        self._krimpvoegFrequentie.set_waarde(value, owner=self._parent)
 
     @property
     def totaleLengte(self):
@@ -36,7 +37,7 @@ class DtcKrimpvoegWaarden(AttributeInfo):
 
     @totaleLengte.setter
     def totaleLengte(self, value):
-        self._totaleLengte.set_waarde(value)
+        self._totaleLengte.set_waarde(value, owner=self._parent)
 
 
 # Generated with OTLComplexDatatypeCreator. To modify: extend, do not edit

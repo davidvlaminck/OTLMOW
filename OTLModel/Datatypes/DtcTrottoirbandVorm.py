@@ -9,6 +9,7 @@ from OTLModel.Datatypes.KwantWrdInCentimeter import KwantWrdInCentimeter
 # Generated with OTLComplexDatatypeCreator. To modify: extend, do not edit
 class DtcTrottoirbandVormWaarden(AttributeInfo):
     def __init__(self):
+        super().__init__()
         self._breedte = OTLAttribuut(field=KwantWrdInCentimeter,
                                      naam='breedte',
                                      label='breedte',
@@ -34,7 +35,7 @@ class DtcTrottoirbandVormWaarden(AttributeInfo):
 
     @breedte.setter
     def breedte(self, value):
-        self._breedte.set_waarde(value)
+        self._breedte.set_waarde(value, owner=self._parent)
 
     @property
     def dikte(self):
@@ -43,7 +44,7 @@ class DtcTrottoirbandVormWaarden(AttributeInfo):
 
     @dikte.setter
     def dikte(self, value):
-        self._dikte.set_waarde(value)
+        self._dikte.set_waarde(value, owner=self._parent)
 
     @property
     def vorm(self):
@@ -52,7 +53,7 @@ class DtcTrottoirbandVormWaarden(AttributeInfo):
 
     @vorm.setter
     def vorm(self, value):
-        self._vorm.set_waarde(value)
+        self._vorm.set_waarde(value, owner=self._parent)
 
 
 # Generated with OTLComplexDatatypeCreator. To modify: extend, do not edit

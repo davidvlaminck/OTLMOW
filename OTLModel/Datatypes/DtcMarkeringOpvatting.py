@@ -9,6 +9,7 @@ from OTLModel.Datatypes.KlSignalisatieMarkeringOpvatting import KlSignalisatieMa
 # Generated with OTLComplexDatatypeCreator. To modify: extend, do not edit
 class DtcMarkeringOpvattingWaarden(AttributeInfo):
     def __init__(self):
+        super().__init__()
         self._opvatting = OTLAttribuut(field=KlSignalisatieMarkeringOpvatting,
                                        naam='opvatting',
                                        label='opvatting',
@@ -28,7 +29,7 @@ class DtcMarkeringOpvattingWaarden(AttributeInfo):
 
     @opvatting.setter
     def opvatting(self, value):
-        self._opvatting.set_waarde(value)
+        self._opvatting.set_waarde(value, owner=self._parent)
 
     @property
     def waarborgperiode(self):
@@ -37,7 +38,7 @@ class DtcMarkeringOpvattingWaarden(AttributeInfo):
 
     @waarborgperiode.setter
     def waarborgperiode(self, value):
-        self._waarborgperiode.set_waarde(value)
+        self._waarborgperiode.set_waarde(value, owner=self._parent)
 
 
 # Generated with OTLComplexDatatypeCreator. To modify: extend, do not edit

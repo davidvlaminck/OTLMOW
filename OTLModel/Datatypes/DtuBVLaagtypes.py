@@ -10,6 +10,7 @@ from OTLModel.Datatypes.UnionWaarden import UnionWaarden
 # Generated with OTLUnionDatatypeCreator. To modify: extend, do not edit
 class DtuBVLaagtypesWaarden(AttributeInfo, UnionWaarden):
     def __init__(self):
+        super().__init__()
         self._laagtype = OTLAttribuut(field=KlBVLaagtype,
                                       naam='laagtype',
                                       label='laagtype',
@@ -31,7 +32,7 @@ class DtuBVLaagtypesWaarden(AttributeInfo, UnionWaarden):
 
     @laagtype.setter
     def laagtype(self, value):
-        self._laagtype.set_waarde(value)
+        self._laagtype.set_waarde(value, owner=self._parent)
         if value is not None:
             self.clear_other_props('_laagtype')
 
@@ -42,7 +43,7 @@ class DtuBVLaagtypesWaarden(AttributeInfo, UnionWaarden):
 
     @profileerlaag.setter
     def profileerlaag(self, value):
-        self._profileerlaag.set_waarde(value)
+        self._profileerlaag.set_waarde(value, owner=self._parent)
         if value is not None:
             self.clear_other_props('_profileerlaag')
 

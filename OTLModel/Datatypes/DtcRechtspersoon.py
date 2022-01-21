@@ -9,6 +9,7 @@ from OTLModel.Datatypes.StringField import StringField
 # Generated with OTLComplexDatatypeCreator. To modify: extend, do not edit
 class DtcRechtspersoonWaarden(AttributeInfo):
     def __init__(self):
+        super().__init__()
         self._adres = OTLAttribuut(field=DtcAdres,
                                    naam='adres',
                                    label='adres',
@@ -40,7 +41,7 @@ class DtcRechtspersoonWaarden(AttributeInfo):
 
     @adres.setter
     def adres(self, value):
-        self._adres.set_waarde(value)
+        self._adres.set_waarde(value, owner=self._parent)
 
     @property
     def afdeling(self):
@@ -49,7 +50,7 @@ class DtcRechtspersoonWaarden(AttributeInfo):
 
     @afdeling.setter
     def afdeling(self, value):
-        self._afdeling.set_waarde(value)
+        self._afdeling.set_waarde(value, owner=self._parent)
 
     @property
     def organisatie(self):
@@ -58,7 +59,7 @@ class DtcRechtspersoonWaarden(AttributeInfo):
 
     @organisatie.setter
     def organisatie(self, value):
-        self._organisatie.set_waarde(value)
+        self._organisatie.set_waarde(value, owner=self._parent)
 
     @property
     def telefoonnnummer(self):
@@ -67,7 +68,7 @@ class DtcRechtspersoonWaarden(AttributeInfo):
 
     @telefoonnnummer.setter
     def telefoonnnummer(self, value):
-        self._telefoonnnummer.set_waarde(value)
+        self._telefoonnnummer.set_waarde(value, owner=self._parent)
 
 
 # Generated with OTLComplexDatatypeCreator. To modify: extend, do not edit

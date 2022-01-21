@@ -8,6 +8,7 @@ from OTLModel.Datatypes.StringField import StringField
 # Generated with OTLPrimitiveDatatypeCreator. To modify: extend, do not edit
 class DteIPv4AdresWaarden(AttributeInfo):
     def __init__(self):
+        super().__init__()
         self._waarde = OTLAttribuut(field=StringField,
                                     naam='waarde',
                                     label='waarde',
@@ -22,7 +23,7 @@ class DteIPv4AdresWaarden(AttributeInfo):
 
     @waarde.setter
     def waarde(self, value):
-        self._waarde.set_waarde(value)
+        self._waarde.set_waarde(value, owner=self._parent)
 
 
 # Generated with OTLPrimitiveDatatypeCreator. To modify: extend, do not edit

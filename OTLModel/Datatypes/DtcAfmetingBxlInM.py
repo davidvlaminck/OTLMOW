@@ -8,6 +8,7 @@ from OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter
 # Generated with OTLComplexDatatypeCreator. To modify: extend, do not edit
 class DtcAfmetingBxlInMWaarden(AttributeInfo):
     def __init__(self):
+        super().__init__()
         self._breedte = OTLAttribuut(field=KwantWrdInMeter,
                                      naam='breedte',
                                      label='breedte',
@@ -27,7 +28,7 @@ class DtcAfmetingBxlInMWaarden(AttributeInfo):
 
     @breedte.setter
     def breedte(self, value):
-        self._breedte.set_waarde(value)
+        self._breedte.set_waarde(value, owner=self._parent)
 
     @property
     def lengte(self):
@@ -36,7 +37,7 @@ class DtcAfmetingBxlInMWaarden(AttributeInfo):
 
     @lengte.setter
     def lengte(self, value):
-        self._lengte.set_waarde(value)
+        self._lengte.set_waarde(value, owner=self._parent)
 
 
 # Generated with OTLComplexDatatypeCreator. To modify: extend, do not edit

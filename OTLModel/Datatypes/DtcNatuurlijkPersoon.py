@@ -10,6 +10,7 @@ from OTLModel.Datatypes.StringField import StringField
 # Generated with OTLComplexDatatypeCreator. To modify: extend, do not edit
 class DtcNatuurlijkPersoonWaarden(AttributeInfo):
     def __init__(self):
+        super().__init__()
         self._achternaam = OTLAttribuut(field=StringField,
                                         naam='achternaam',
                                         label='achternaam',
@@ -69,7 +70,7 @@ class DtcNatuurlijkPersoonWaarden(AttributeInfo):
 
     @achternaam.setter
     def achternaam(self, value):
-        self._achternaam.set_waarde(value)
+        self._achternaam.set_waarde(value, owner=self._parent)
 
     @property
     def adres(self):
@@ -78,7 +79,7 @@ class DtcNatuurlijkPersoonWaarden(AttributeInfo):
 
     @adres.setter
     def adres(self, value):
-        self._adres.set_waarde(value)
+        self._adres.set_waarde(value, owner=self._parent)
 
     @property
     def emailadres(self):
@@ -87,7 +88,7 @@ class DtcNatuurlijkPersoonWaarden(AttributeInfo):
 
     @emailadres.setter
     def emailadres(self, value):
-        self._emailadres.set_waarde(value)
+        self._emailadres.set_waarde(value, owner=self._parent)
 
     @property
     def fax(self):
@@ -96,7 +97,7 @@ class DtcNatuurlijkPersoonWaarden(AttributeInfo):
 
     @fax.setter
     def fax(self, value):
-        self._fax.set_waarde(value)
+        self._fax.set_waarde(value, owner=self._parent)
 
     @property
     def heeftEmailVoorkeur(self):
@@ -105,7 +106,7 @@ class DtcNatuurlijkPersoonWaarden(AttributeInfo):
 
     @heeftEmailVoorkeur.setter
     def heeftEmailVoorkeur(self, value):
-        self._heeftEmailVoorkeur.set_waarde(value)
+        self._heeftEmailVoorkeur.set_waarde(value, owner=self._parent)
 
     @property
     def heeftFaxVoorkeur(self):
@@ -114,7 +115,7 @@ class DtcNatuurlijkPersoonWaarden(AttributeInfo):
 
     @heeftFaxVoorkeur.setter
     def heeftFaxVoorkeur(self, value):
-        self._heeftFaxVoorkeur.set_waarde(value)
+        self._heeftFaxVoorkeur.set_waarde(value, owner=self._parent)
 
     @property
     def telefoonnnummer(self):
@@ -123,7 +124,7 @@ class DtcNatuurlijkPersoonWaarden(AttributeInfo):
 
     @telefoonnnummer.setter
     def telefoonnnummer(self, value):
-        self._telefoonnnummer.set_waarde(value)
+        self._telefoonnnummer.set_waarde(value, owner=self._parent)
 
     @property
     def voornaam(self):
@@ -132,7 +133,7 @@ class DtcNatuurlijkPersoonWaarden(AttributeInfo):
 
     @voornaam.setter
     def voornaam(self, value):
-        self._voornaam.set_waarde(value)
+        self._voornaam.set_waarde(value, owner=self._parent)
 
 
 # Generated with OTLComplexDatatypeCreator. To modify: extend, do not edit

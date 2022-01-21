@@ -12,6 +12,7 @@ from OTLModel.Datatypes.KlLEGCTestType import KlLEGCTestType
 # Generated with OTLComplexDatatypeCreator. To modify: extend, do not edit
 class DtcGeluidstestRapportWaarden(AttributeInfo):
     def __init__(self):
+        super().__init__()
         self._geluidsabsorptieReflectie = OTLAttribuut(field=IntegerField,
                                                        naam='geluidsabsorptieReflectie',
                                                        label='geluidsabsorptie reflectie',
@@ -63,7 +64,7 @@ class DtcGeluidstestRapportWaarden(AttributeInfo):
 
     @geluidsabsorptieReflectie.setter
     def geluidsabsorptieReflectie(self, value):
-        self._geluidsabsorptieReflectie.set_waarde(value)
+        self._geluidsabsorptieReflectie.set_waarde(value, owner=self._parent)
 
     @property
     def gemetenWaarde(self):
@@ -72,7 +73,7 @@ class DtcGeluidstestRapportWaarden(AttributeInfo):
 
     @gemetenWaarde.setter
     def gemetenWaarde(self, value):
-        self._gemetenWaarde.set_waarde(value)
+        self._gemetenWaarde.set_waarde(value, owner=self._parent)
 
     @property
     def locatieInSitulabo(self):
@@ -81,7 +82,7 @@ class DtcGeluidstestRapportWaarden(AttributeInfo):
 
     @locatieInSitulabo.setter
     def locatieInSitulabo(self, value):
-        self._locatieInSitulabo.set_waarde(value)
+        self._locatieInSitulabo.set_waarde(value, owner=self._parent)
 
     @property
     def luchtgeluidsisolatie(self):
@@ -90,7 +91,7 @@ class DtcGeluidstestRapportWaarden(AttributeInfo):
 
     @luchtgeluidsisolatie.setter
     def luchtgeluidsisolatie(self, value):
-        self._luchtgeluidsisolatie.set_waarde(value)
+        self._luchtgeluidsisolatie.set_waarde(value, owner=self._parent)
 
     @property
     def norm(self):
@@ -99,7 +100,7 @@ class DtcGeluidstestRapportWaarden(AttributeInfo):
 
     @norm.setter
     def norm(self, value):
-        self._norm.set_waarde(value)
+        self._norm.set_waarde(value, owner=self._parent)
 
     @property
     def testrapport(self):
@@ -108,7 +109,7 @@ class DtcGeluidstestRapportWaarden(AttributeInfo):
 
     @testrapport.setter
     def testrapport(self, value):
-        self._testrapport.set_waarde(value)
+        self._testrapport.set_waarde(value, owner=self._parent)
 
     @property
     def type(self):
@@ -117,7 +118,7 @@ class DtcGeluidstestRapportWaarden(AttributeInfo):
 
     @type.setter
     def type(self, value):
-        self._type.set_waarde(value)
+        self._type.set_waarde(value, owner=self._parent)
 
 
 # Generated with OTLComplexDatatypeCreator. To modify: extend, do not edit

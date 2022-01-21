@@ -10,6 +10,7 @@ from OTLModel.Datatypes.StringField import StringField
 # Generated with OTLComplexDatatypeCreator. To modify: extend, do not edit
 class DtcSoftwarePoortconfiguratieWaarden(AttributeInfo):
     def __init__(self):
+        super().__init__()
         self._poortnummer = OTLAttribuut(field=IntegerField,
                                          naam='poortnummer',
                                          label='poortnummer',
@@ -35,7 +36,7 @@ class DtcSoftwarePoortconfiguratieWaarden(AttributeInfo):
 
     @poortnummer.setter
     def poortnummer(self, value):
-        self._poortnummer.set_waarde(value)
+        self._poortnummer.set_waarde(value, owner=self._parent)
 
     @property
     def richting(self):
@@ -44,7 +45,7 @@ class DtcSoftwarePoortconfiguratieWaarden(AttributeInfo):
 
     @richting.setter
     def richting(self, value):
-        self._richting.set_waarde(value)
+        self._richting.set_waarde(value, owner=self._parent)
 
     @property
     def service(self):
@@ -53,7 +54,7 @@ class DtcSoftwarePoortconfiguratieWaarden(AttributeInfo):
 
     @service.setter
     def service(self, value):
-        self._service.set_waarde(value)
+        self._service.set_waarde(value, owner=self._parent)
 
 
 # Generated with OTLComplexDatatypeCreator. To modify: extend, do not edit

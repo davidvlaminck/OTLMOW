@@ -185,6 +185,7 @@ class AbstractDatatypeCreator(ABC):
         else:
             datablock.append(f'class {osloDatatype.name}Waarden(AttributeInfo):')
         datablock.append('    def __init__(self):')
+        datablock.append('        super().__init__()')
 
         self.add_attributen_to_dataBlock(attributen, datablock, forClassUse=False, typeField=typeField)
 
@@ -246,9 +247,9 @@ class AbstractDatatypeCreator(ABC):
             datablock.append(f'{whitespace}definition={definitie})')
             datablock.append('')
 
-            ownerself = ''
-            if forClassUse:
-                ownerself = ', owner=self'
+            ownerself = ', owner=self'
+            if not forClassUse:
+                ownerself += '._parent'
 
             prop_datablock.append(f'    @property'),
             prop_datablock.append(f'    def {attribuut.name}(self):'),

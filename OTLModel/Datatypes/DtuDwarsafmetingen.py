@@ -10,6 +10,7 @@ from OTLModel.Datatypes.UnionWaarden import UnionWaarden
 # Generated with OTLUnionDatatypeCreator. To modify: extend, do not edit
 class DtuDwarsafmetingenWaarden(AttributeInfo, UnionWaarden):
     def __init__(self):
+        super().__init__()
         self._rechthoekig = OTLAttribuut(field=DtcAfmetingBxlxhInMm,
                                          naam='rechthoekig',
                                          label='rechthoekig',
@@ -31,7 +32,7 @@ class DtuDwarsafmetingenWaarden(AttributeInfo, UnionWaarden):
 
     @rechthoekig.setter
     def rechthoekig(self, value):
-        self._rechthoekig.set_waarde(value)
+        self._rechthoekig.set_waarde(value, owner=self._parent)
         if value is not None:
             self.clear_other_props('_rechthoekig')
 
@@ -42,7 +43,7 @@ class DtuDwarsafmetingenWaarden(AttributeInfo, UnionWaarden):
 
     @rond.setter
     def rond(self, value):
-        self._rond.set_waarde(value)
+        self._rond.set_waarde(value, owner=self._parent)
         if value is not None:
             self.clear_other_props('_rond')
 

@@ -3,6 +3,9 @@ from OTLModel.BaseClasses.KwantWrd import KwantWrd
 
 
 class AttributeInfo:
+    def __init__(self):
+        self._parent = None
+
     def info(self):
         return str(self)
 

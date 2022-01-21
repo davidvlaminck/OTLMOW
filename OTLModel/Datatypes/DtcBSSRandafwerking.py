@@ -9,6 +9,7 @@ from OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter
 # Generated with OTLComplexDatatypeCreator. To modify: extend, do not edit
 class DtcBSSRandafwerkingWaarden(AttributeInfo):
     def __init__(self):
+        super().__init__()
         self._lengteRandafwerking = OTLAttribuut(field=KwantWrdInMeter,
                                                  naam='lengteRandafwerking',
                                                  label='lengte randafwerking',
@@ -28,7 +29,7 @@ class DtcBSSRandafwerkingWaarden(AttributeInfo):
 
     @lengteRandafwerking.setter
     def lengteRandafwerking(self, value):
-        self._lengteRandafwerking.set_waarde(value)
+        self._lengteRandafwerking.set_waarde(value, owner=self._parent)
 
     @property
     def randafwerking(self):
@@ -37,7 +38,7 @@ class DtcBSSRandafwerkingWaarden(AttributeInfo):
 
     @randafwerking.setter
     def randafwerking(self, value):
-        self._randafwerking.set_waarde(value)
+        self._randafwerking.set_waarde(value, owner=self._parent)
 
 
 # Generated with OTLComplexDatatypeCreator. To modify: extend, do not edit

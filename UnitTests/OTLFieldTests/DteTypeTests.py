@@ -10,6 +10,7 @@ from OTLModel.Classes.AIMObject import AIMObject
 
 class DteTestClass(AIMObject, ABC):
     def __init__(self):
+        super().__init__()
         self._kleur = OTLAttribuut(field=DteKleurRAL,
                                    naam='kleur',
                                    label='kleur',

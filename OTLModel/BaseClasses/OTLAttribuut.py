@@ -10,6 +10,7 @@ from OTLModel.BaseClasses.OTLField import OTLField
 class OTLAttribuut(AttributeInfo):
     def __init__(self, naam='', label='', objectUri='', definition='', constraints='', usagenote='', deprecated_version='',
                  kardinaliteit_min='1', kardinaliteit_max='1', field=OTLField, readonly=False, readonlyValue=None):
+        super().__init__()
         self.naam = naam
         self.label = label
         self.objectUri = objectUri
@@ -29,6 +30,7 @@ class OTLAttribuut(AttributeInfo):
 
         if self.field.waardeObject:
             self.waarde = self.field.waardeObject()
+            self.waarde._parent = self
         else:
             pass
 
@@ -77,6 +79,17 @@ class OTLAttribuut(AttributeInfo):
                     return self.waarde
 
     def set_waarde(self, value, owner=None):
+        if owner is not None:
+            if hasattr(owner, 'deprecated_version'):
+                if owner.deprecated_version != '':
+                    if hasattr(owner, 'typeURI'):
+                        warnings.warn(message=f'{owner.typeURI} is deprecated since version {owner.deprecated_version}',
+                                      category=DeprecationWarning)
+                    else:
+                        warnings.warn(message=f'used a class that is deprecated since version {owner.deprecated_version}',
+                                      category=DeprecationWarning)
+
+
         if self.kardinaliteit_max == '*':
             kardinaliteit_max = math.inf
         else:

@@ -9,6 +9,7 @@ from OTLModel.Datatypes.TimeField import TimeField
 # Generated with OTLComplexDatatypeCreator. To modify: extend, do not edit
 class DtcOpeningsurenSpecificatieWaarden(AttributeInfo):
     def __init__(self):
+        super().__init__()
         self._openingstijd = OTLAttribuut(field=TimeField,
                                           naam='openingstijd',
                                           label='openingstijd',
@@ -34,7 +35,7 @@ class DtcOpeningsurenSpecificatieWaarden(AttributeInfo):
 
     @openingstijd.setter
     def openingstijd(self, value):
-        self._openingstijd.set_waarde(value)
+        self._openingstijd.set_waarde(value, owner=self._parent)
 
     @property
     def sluitingstijd(self):
@@ -43,7 +44,7 @@ class DtcOpeningsurenSpecificatieWaarden(AttributeInfo):
 
     @sluitingstijd.setter
     def sluitingstijd(self, value):
-        self._sluitingstijd.set_waarde(value)
+        self._sluitingstijd.set_waarde(value, owner=self._parent)
 
     @property
     def weekdag(self):
@@ -52,7 +53,7 @@ class DtcOpeningsurenSpecificatieWaarden(AttributeInfo):
 
     @weekdag.setter
     def weekdag(self, value):
-        self._weekdag.set_waarde(value)
+        self._weekdag.set_waarde(value, owner=self._parent)
 
 
 # Generated with OTLComplexDatatypeCreator. To modify: extend, do not edit

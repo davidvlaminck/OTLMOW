@@ -12,6 +12,7 @@ from OTLModel.Datatypes.NonNegIntegerField import NonNegIntegerField
 # Generated with OTLComplexDatatypeCreator. To modify: extend, do not edit
 class DtcSierbeplAanlegWaarden(AttributeInfo):
     def __init__(self):
+        super().__init__()
         self._aanplantingswijze = OTLAttribuut(field=KlAanplantingswijzeSierbeplanting,
                                                naam='aanplantingswijze',
                                                label='aanplantingswijze',
@@ -49,7 +50,7 @@ class DtcSierbeplAanlegWaarden(AttributeInfo):
 
     @aanplantingswijze.setter
     def aanplantingswijze(self, value):
-        self._aanplantingswijze.set_waarde(value)
+        self._aanplantingswijze.set_waarde(value, owner=self._parent)
 
     @property
     def containermaat(self):
@@ -58,7 +59,7 @@ class DtcSierbeplAanlegWaarden(AttributeInfo):
 
     @containermaat.setter
     def containermaat(self, value):
-        self._containermaat.set_waarde(value)
+        self._containermaat.set_waarde(value, owner=self._parent)
 
     @property
     def plantdichtheid(self):
@@ -67,7 +68,7 @@ class DtcSierbeplAanlegWaarden(AttributeInfo):
 
     @plantdichtheid.setter
     def plantdichtheid(self, value):
-        self._plantdichtheid.set_waarde(value)
+        self._plantdichtheid.set_waarde(value, owner=self._parent)
 
     @property
     def plantmaat(self):
@@ -76,7 +77,7 @@ class DtcSierbeplAanlegWaarden(AttributeInfo):
 
     @plantmaat.setter
     def plantmaat(self, value):
-        self._plantmaat.set_waarde(value)
+        self._plantmaat.set_waarde(value, owner=self._parent)
 
     @property
     def plantverband(self):
@@ -85,7 +86,7 @@ class DtcSierbeplAanlegWaarden(AttributeInfo):
 
     @plantverband.setter
     def plantverband(self, value):
-        self._plantverband.set_waarde(value)
+        self._plantverband.set_waarde(value, owner=self._parent)
 
 
 # Generated with OTLComplexDatatypeCreator. To modify: extend, do not edit

@@ -10,6 +10,7 @@ from OTLModel.Datatypes.UnionWaarden import UnionWaarden
 # Generated with OTLUnionDatatypeCreator. To modify: extend, do not edit
 class DtuWvLichtmastBevsToestelMethodeWaarden(AttributeInfo, UnionWaarden):
     def __init__(self):
+        super().__init__()
         self._afwijkendeMethode = OTLAttribuut(field=StringField,
                                                naam='afwijkendeMethode',
                                                label='afwijkende methode',
@@ -31,7 +32,7 @@ class DtuWvLichtmastBevsToestelMethodeWaarden(AttributeInfo, UnionWaarden):
 
     @afwijkendeMethode.setter
     def afwijkendeMethode(self, value):
-        self._afwijkendeMethode.set_waarde(value)
+        self._afwijkendeMethode.set_waarde(value, owner=self._parent)
         if value is not None:
             self.clear_other_props('_afwijkendeMethode')
 
@@ -42,7 +43,7 @@ class DtuWvLichtmastBevsToestelMethodeWaarden(AttributeInfo, UnionWaarden):
 
     @standaardMethode.setter
     def standaardMethode(self, value):
-        self._standaardMethode.set_waarde(value)
+        self._standaardMethode.set_waarde(value, owner=self._parent)
         if value is not None:
             self.clear_other_props('_standaardMethode')
 

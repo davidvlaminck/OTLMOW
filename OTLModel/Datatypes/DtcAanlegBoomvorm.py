@@ -19,6 +19,7 @@ from OTLModel.Datatypes.KlVormAanleveringHoutigeVegetatie import KlVormAanleveri
 # Generated with OTLComplexDatatypeCreator. To modify: extend, do not edit
 class DtcAanlegBoomvormWaarden(AttributeInfo):
     def __init__(self):
+        super().__init__()
         self._beschermingVraatschade = OTLAttribuut(field=DtcBeschermingVraatschade,
                                                     naam='beschermingVraatschade',
                                                     label='bescherming vraatschade',
@@ -106,7 +107,7 @@ class DtcAanlegBoomvormWaarden(AttributeInfo):
 
     @beschermingVraatschade.setter
     def beschermingVraatschade(self, value):
-        self._beschermingVraatschade.set_waarde(value)
+        self._beschermingVraatschade.set_waarde(value, owner=self._parent)
 
     @property
     def boompaalconstructie(self):
@@ -115,7 +116,7 @@ class DtcAanlegBoomvormWaarden(AttributeInfo):
 
     @boompaalconstructie.setter
     def boompaalconstructie(self, value):
-        self._boompaalconstructie.set_waarde(value)
+        self._boompaalconstructie.set_waarde(value, owner=self._parent)
 
     @property
     def groeiplaatsverbetering(self):
@@ -124,7 +125,7 @@ class DtcAanlegBoomvormWaarden(AttributeInfo):
 
     @groeiplaatsverbetering.setter
     def groeiplaatsverbetering(self, value):
-        self._groeiplaatsverbetering.set_waarde(value)
+        self._groeiplaatsverbetering.set_waarde(value, owner=self._parent)
 
     @property
     def heeftBoomplaat(self):
@@ -133,7 +134,7 @@ class DtcAanlegBoomvormWaarden(AttributeInfo):
 
     @heeftBoomplaat.setter
     def heeftBoomplaat(self, value):
-        self._heeftBoomplaat.set_waarde(value)
+        self._heeftBoomplaat.set_waarde(value, owner=self._parent)
 
     @property
     def heeftWortelgeleidingwortelwering(self):
@@ -142,7 +143,7 @@ class DtcAanlegBoomvormWaarden(AttributeInfo):
 
     @heeftWortelgeleidingwortelwering.setter
     def heeftWortelgeleidingwortelwering(self, value):
-        self._heeftWortelgeleidingwortelwering.set_waarde(value)
+        self._heeftWortelgeleidingwortelwering.set_waarde(value, owner=self._parent)
 
     @property
     def maaischadeBescherming(self):
@@ -151,7 +152,7 @@ class DtcAanlegBoomvormWaarden(AttributeInfo):
 
     @maaischadeBescherming.setter
     def maaischadeBescherming(self, value):
-        self._maaischadeBescherming.set_waarde(value)
+        self._maaischadeBescherming.set_waarde(value, owner=self._parent)
 
     @property
     def plantmaatHoogte(self):
@@ -160,7 +161,7 @@ class DtcAanlegBoomvormWaarden(AttributeInfo):
 
     @plantmaatHoogte.setter
     def plantmaatHoogte(self, value):
-        self._plantmaatHoogte.set_waarde(value)
+        self._plantmaatHoogte.set_waarde(value, owner=self._parent)
 
     @property
     def plantmaatOmtrek(self):
@@ -169,7 +170,7 @@ class DtcAanlegBoomvormWaarden(AttributeInfo):
 
     @plantmaatOmtrek.setter
     def plantmaatOmtrek(self, value):
-        self._plantmaatOmtrek.set_waarde(value)
+        self._plantmaatOmtrek.set_waarde(value, owner=self._parent)
 
     @property
     def verankering(self):
@@ -178,7 +179,7 @@ class DtcAanlegBoomvormWaarden(AttributeInfo):
 
     @verankering.setter
     def verankering(self, value):
-        self._verankering.set_waarde(value)
+        self._verankering.set_waarde(value, owner=self._parent)
 
     @property
     def verankeringstype(self):
@@ -187,7 +188,7 @@ class DtcAanlegBoomvormWaarden(AttributeInfo):
 
     @verankeringstype.setter
     def verankeringstype(self, value):
-        self._verankeringstype.set_waarde(value)
+        self._verankeringstype.set_waarde(value, owner=self._parent)
 
     @property
     def vormAanlevering(self):
@@ -196,7 +197,7 @@ class DtcAanlegBoomvormWaarden(AttributeInfo):
 
     @vormAanlevering.setter
     def vormAanlevering(self, value):
-        self._vormAanlevering.set_waarde(value)
+        self._vormAanlevering.set_waarde(value, owner=self._parent)
 
     @property
     def vraatschadeBescherming(self):
@@ -205,7 +206,7 @@ class DtcAanlegBoomvormWaarden(AttributeInfo):
 
     @vraatschadeBescherming.setter
     def vraatschadeBescherming(self, value):
-        self._vraatschadeBescherming.set_waarde(value)
+        self._vraatschadeBescherming.set_waarde(value, owner=self._parent)
 
     @property
     def wortelAanplant(self):
@@ -214,7 +215,7 @@ class DtcAanlegBoomvormWaarden(AttributeInfo):
 
     @wortelAanplant.setter
     def wortelAanplant(self, value):
-        self._wortelAanplant.set_waarde(value)
+        self._wortelAanplant.set_waarde(value, owner=self._parent)
 
 
 # Generated with OTLComplexDatatypeCreator. To modify: extend, do not edit

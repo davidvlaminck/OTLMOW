@@ -10,6 +10,7 @@ from OTLModel.Datatypes.UnionWaarden import UnionWaarden
 # Generated with OTLUnionDatatypeCreator. To modify: extend, do not edit
 class DtuHellingsSchoorhoekWaarden(AttributeInfo, UnionWaarden):
     def __init__(self):
+        super().__init__()
         self._hellingshoek = OTLAttribuut(field=KwantWrdInDecimaleGraden,
                                           naam='hellingshoek',
                                           label='hellingshoek',
@@ -31,7 +32,7 @@ class DtuHellingsSchoorhoekWaarden(AttributeInfo, UnionWaarden):
 
     @hellingshoek.setter
     def hellingshoek(self, value):
-        self._hellingshoek.set_waarde(value)
+        self._hellingshoek.set_waarde(value, owner=self._parent)
         if value is not None:
             self.clear_other_props('_hellingshoek')
 
@@ -42,7 +43,7 @@ class DtuHellingsSchoorhoekWaarden(AttributeInfo, UnionWaarden):
 
     @schoorhoek.setter
     def schoorhoek(self, value):
-        self._schoorhoek.set_waarde(value)
+        self._schoorhoek.set_waarde(value, owner=self._parent)
         if value is not None:
             self.clear_other_props('_schoorhoek')
 

@@ -11,6 +11,7 @@ from OTLModel.Datatypes.UnionWaarden import UnionWaarden
 # Generated with OTLUnionDatatypeCreator. To modify: extend, do not edit
 class DtuAfmetingVerkeersbordWaarden(AttributeInfo, UnionWaarden):
     def __init__(self):
+        super().__init__()
         self._achthoekig = OTLAttribuut(field=DtcAfmetingZijdeInMm,
                                         naam='achthoekig',
                                         label='achthoekig',
@@ -53,7 +54,7 @@ class DtuAfmetingVerkeersbordWaarden(AttributeInfo, UnionWaarden):
 
     @achthoekig.setter
     def achthoekig(self, value):
-        self._achthoekig.set_waarde(value)
+        self._achthoekig.set_waarde(value, owner=self._parent)
         if value is not None:
             self.clear_other_props('_achthoekig')
 
@@ -64,7 +65,7 @@ class DtuAfmetingVerkeersbordWaarden(AttributeInfo, UnionWaarden):
 
     @driehoekig.setter
     def driehoekig(self, value):
-        self._driehoekig.set_waarde(value)
+        self._driehoekig.set_waarde(value, owner=self._parent)
         if value is not None:
             self.clear_other_props('_driehoekig')
 
@@ -75,7 +76,7 @@ class DtuAfmetingVerkeersbordWaarden(AttributeInfo, UnionWaarden):
 
     @rond.setter
     def rond(self, value):
-        self._rond.set_waarde(value)
+        self._rond.set_waarde(value, owner=self._parent)
         if value is not None:
             self.clear_other_props('_rond')
 
@@ -86,7 +87,7 @@ class DtuAfmetingVerkeersbordWaarden(AttributeInfo, UnionWaarden):
 
     @vierhoekig.setter
     def vierhoekig(self, value):
-        self._vierhoekig.set_waarde(value)
+        self._vierhoekig.set_waarde(value, owner=self._parent)
         if value is not None:
             self.clear_other_props('_vierhoekig')
 
@@ -97,7 +98,7 @@ class DtuAfmetingVerkeersbordWaarden(AttributeInfo, UnionWaarden):
 
     @zeshoekig.setter
     def zeshoekig(self, value):
-        self._zeshoekig.set_waarde(value)
+        self._zeshoekig.set_waarde(value, owner=self._parent)
         if value is not None:
             self.clear_other_props('_zeshoekig')
 

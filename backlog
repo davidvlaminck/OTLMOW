@@ -8,6 +8,9 @@ Geldige relatie lijst refactor naar isinstance met inheritance ipv alle relaties
 AttributeInfo inheritance nakijken > erft te veel keer over
 check correct implementation date, datetime, time
 deprecated warning werkt niet voor KWantWrd, omdat de setter van waarde het parent attribuut uit de class niet kent > op getter gebruiken?
+ERROR:Could not create a list of GeldigeRelatie objects
+ERROR:Could not create a class for Boolean
+ERROR:Could not create a class for AnyURI
 
 
 Write clean code

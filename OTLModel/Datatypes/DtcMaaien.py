@@ -10,6 +10,7 @@ from OTLModel.Datatypes.KlMaaiPeriode import KlMaaiPeriode
 # Generated with OTLComplexDatatypeCreator. To modify: extend, do not edit
 class DtcMaaienWaarden(AttributeInfo):
     def __init__(self):
+        super().__init__()
         self._frequentie = OTLAttribuut(field=KlMaaiFrequentie,
                                         naam='frequentie',
                                         label='frequentie',
@@ -61,7 +62,7 @@ class DtcMaaienWaarden(AttributeInfo):
 
     @frequentie.setter
     def frequentie(self, value):
-        self._frequentie.set_waarde(value)
+        self._frequentie.set_waarde(value, owner=self._parent)
 
     @property
     def isGazonbeheer(self):
@@ -70,7 +71,7 @@ class DtcMaaienWaarden(AttributeInfo):
 
     @isGazonbeheer.setter
     def isGazonbeheer(self, value):
-        self._isGazonbeheer.set_waarde(value)
+        self._isGazonbeheer.set_waarde(value, owner=self._parent)
 
     @property
     def isMachinaal(self):
@@ -79,7 +80,7 @@ class DtcMaaienWaarden(AttributeInfo):
 
     @isMachinaal.setter
     def isMachinaal(self, value):
-        self._isMachinaal.set_waarde(value)
+        self._isMachinaal.set_waarde(value, owner=self._parent)
 
     @property
     def isRuigtebeheer(self):
@@ -88,7 +89,7 @@ class DtcMaaienWaarden(AttributeInfo):
 
     @isRuigtebeheer.setter
     def isRuigtebeheer(self, value):
-        self._isRuigtebeheer.set_waarde(value)
+        self._isRuigtebeheer.set_waarde(value, owner=self._parent)
 
     @property
     def isVeiligheidsmaaien(self):
@@ -97,7 +98,7 @@ class DtcMaaienWaarden(AttributeInfo):
 
     @isVeiligheidsmaaien.setter
     def isVeiligheidsmaaien(self, value):
-        self._isVeiligheidsmaaien.set_waarde(value)
+        self._isVeiligheidsmaaien.set_waarde(value, owner=self._parent)
 
     @property
     def klepelmaaierToegelaten(self):
@@ -106,7 +107,7 @@ class DtcMaaienWaarden(AttributeInfo):
 
     @klepelmaaierToegelaten.setter
     def klepelmaaierToegelaten(self, value):
-        self._klepelmaaierToegelaten.set_waarde(value)
+        self._klepelmaaierToegelaten.set_waarde(value, owner=self._parent)
 
     @property
     def periode(self):
@@ -115,7 +116,7 @@ class DtcMaaienWaarden(AttributeInfo):
 
     @periode.setter
     def periode(self, value):
-        self._periode.set_waarde(value)
+        self._periode.set_waarde(value, owner=self._parent)
 
 
 # Generated with OTLComplexDatatypeCreator. To modify: extend, do not edit

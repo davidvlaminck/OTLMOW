@@ -8,6 +8,7 @@ from OTLModel.Datatypes.KwantWrdInMillimeter import KwantWrdInMillimeter
 # Generated with OTLComplexDatatypeCreator. To modify: extend, do not edit
 class DtcAfmetingZijdeInMmWaarden(AttributeInfo):
     def __init__(self):
+        super().__init__()
         self._zijde = OTLAttribuut(field=KwantWrdInMillimeter,
                                    naam='zijde',
                                    label='zijde',
@@ -21,7 +22,7 @@ class DtcAfmetingZijdeInMmWaarden(AttributeInfo):
 
     @zijde.setter
     def zijde(self, value):
-        self._zijde.set_waarde(value)
+        self._zijde.set_waarde(value, owner=self._parent)
 
 
 # Generated with OTLComplexDatatypeCreator. To modify: extend, do not edit

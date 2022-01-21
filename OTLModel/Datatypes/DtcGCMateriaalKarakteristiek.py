@@ -9,6 +9,7 @@ from OTLModel.Datatypes.KlLEGCMateriaal import KlLEGCMateriaal
 # Generated with OTLComplexDatatypeCreator. To modify: extend, do not edit
 class DtcGCMateriaalKarakteristiekWaarden(AttributeInfo):
     def __init__(self):
+        super().__init__()
         self._geluidskarakteristiek = OTLAttribuut(field=KlLEGCGeluidskarakteristiek,
                                                    naam='geluidskarakteristiek',
                                                    label='geluidskarakteristiek',
@@ -28,7 +29,7 @@ class DtcGCMateriaalKarakteristiekWaarden(AttributeInfo):
 
     @geluidskarakteristiek.setter
     def geluidskarakteristiek(self, value):
-        self._geluidskarakteristiek.set_waarde(value)
+        self._geluidskarakteristiek.set_waarde(value, owner=self._parent)
 
     @property
     def materiaal(self):
@@ -37,7 +38,7 @@ class DtcGCMateriaalKarakteristiekWaarden(AttributeInfo):
 
     @materiaal.setter
     def materiaal(self, value):
-        self._materiaal.set_waarde(value)
+        self._materiaal.set_waarde(value, owner=self._parent)
 
 
 # Generated with OTLComplexDatatypeCreator. To modify: extend, do not edit

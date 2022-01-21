@@ -10,6 +10,7 @@ from OTLModel.Datatypes.StringField import StringField
 # Generated with OTLComplexDatatypeCreator. To modify: extend, do not edit
 class DtcContactinfoWaarden(AttributeInfo):
     def __init__(self):
+        super().__init__()
         self._adres = OTLAttribuut(field=DtcAdres,
                                    naam='adres',
                                    label='adres',
@@ -74,7 +75,7 @@ class DtcContactinfoWaarden(AttributeInfo):
 
     @adres.setter
     def adres(self, value):
-        self._adres.set_waarde(value)
+        self._adres.set_waarde(value, owner=self._parent)
 
     @property
     def beschikbaarheid(self):
@@ -83,7 +84,7 @@ class DtcContactinfoWaarden(AttributeInfo):
 
     @beschikbaarheid.setter
     def beschikbaarheid(self, value):
-        self._beschikbaarheid.set_waarde(value)
+        self._beschikbaarheid.set_waarde(value, owner=self._parent)
 
     @property
     def contactnaam(self):
@@ -92,7 +93,7 @@ class DtcContactinfoWaarden(AttributeInfo):
 
     @contactnaam.setter
     def contactnaam(self, value):
-        self._contactnaam.set_waarde(value)
+        self._contactnaam.set_waarde(value, owner=self._parent)
 
     @property
     def email(self):
@@ -101,7 +102,7 @@ class DtcContactinfoWaarden(AttributeInfo):
 
     @email.setter
     def email(self, value):
-        self._email.set_waarde(value)
+        self._email.set_waarde(value, owner=self._parent)
 
     @property
     def fax(self):
@@ -110,7 +111,7 @@ class DtcContactinfoWaarden(AttributeInfo):
 
     @fax.setter
     def fax(self, value):
-        self._fax.set_waarde(value)
+        self._fax.set_waarde(value, owner=self._parent)
 
     @property
     def opmerkingen(self):
@@ -119,7 +120,7 @@ class DtcContactinfoWaarden(AttributeInfo):
 
     @opmerkingen.setter
     def opmerkingen(self, value):
-        self._opmerkingen.set_waarde(value)
+        self._opmerkingen.set_waarde(value, owner=self._parent)
 
     @property
     def telefoon(self):
@@ -128,7 +129,7 @@ class DtcContactinfoWaarden(AttributeInfo):
 
     @telefoon.setter
     def telefoon(self, value):
-        self._telefoon.set_waarde(value)
+        self._telefoon.set_waarde(value, owner=self._parent)
 
     @property
     def website(self):
@@ -137,7 +138,7 @@ class DtcContactinfoWaarden(AttributeInfo):
 
     @website.setter
     def website(self, value):
-        self._website.set_waarde(value)
+        self._website.set_waarde(value, owner=self._parent)
 
 
 # Generated with OTLComplexDatatypeCreator. To modify: extend, do not edit

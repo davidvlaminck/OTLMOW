@@ -6,7 +6,7 @@ from OTLModel.Classes.Exoten import Exoten
 from OTLModel.Classes.Voedt import Voedt
 
 
-class DemoTests(TestCase):
+class DeprecatedTests(TestCase):
     def test_use_regular_class(self):
         a = Aftakking()
         if hasattr(a, 'deprecated_version'):
@@ -29,9 +29,3 @@ class DemoTests(TestCase):
         with self.assertWarns(DeprecationWarning):
             v = Voedt()
             v.aansluitvermogen.waarde = 20
-
-
-
-
-
-    # TODO add test for attributes

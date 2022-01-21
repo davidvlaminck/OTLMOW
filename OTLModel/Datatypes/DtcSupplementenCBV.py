@@ -9,6 +9,7 @@ from OTLModel.Datatypes.KlTypeSuppCBV import KlTypeSuppCBV
 # Generated with OTLComplexDatatypeCreator. To modify: extend, do not edit
 class DtcSupplementenCBVWaarden(AttributeInfo):
     def __init__(self):
+        super().__init__()
         self._kleur = OTLAttribuut(field=KlKleurSupp,
                                    naam='kleur',
                                    label='kleur',
@@ -28,7 +29,7 @@ class DtcSupplementenCBVWaarden(AttributeInfo):
 
     @kleur.setter
     def kleur(self, value):
-        self._kleur.set_waarde(value)
+        self._kleur.set_waarde(value, owner=self._parent)
 
     @property
     def type(self):
@@ -37,7 +38,7 @@ class DtcSupplementenCBVWaarden(AttributeInfo):
 
     @type.setter
     def type(self, value):
-        self._type.set_waarde(value)
+        self._type.set_waarde(value, owner=self._parent)
 
 
 # Generated with OTLComplexDatatypeCreator. To modify: extend, do not edit

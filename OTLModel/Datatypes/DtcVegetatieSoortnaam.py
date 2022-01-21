@@ -8,6 +8,7 @@ from OTLModel.Datatypes.StringField import StringField
 # Generated with OTLComplexDatatypeCreator. To modify: extend, do not edit
 class DtcVegetatieSoortnaamWaarden(AttributeInfo):
     def __init__(self):
+        super().__init__()
         self._code = OTLAttribuut(field=StringField,
                                   naam='code',
                                   label='code',
@@ -34,7 +35,7 @@ class DtcVegetatieSoortnaamWaarden(AttributeInfo):
 
     @code.setter
     def code(self, value):
-        self._code.set_waarde(value)
+        self._code.set_waarde(value, owner=self._parent)
 
     @property
     def soortnaamNederlands(self):
@@ -43,7 +44,7 @@ class DtcVegetatieSoortnaamWaarden(AttributeInfo):
 
     @soortnaamNederlands.setter
     def soortnaamNederlands(self, value):
-        self._soortnaamNederlands.set_waarde(value)
+        self._soortnaamNederlands.set_waarde(value, owner=self._parent)
 
     @property
     def soortnaamWetenschappelijk(self):
@@ -52,7 +53,7 @@ class DtcVegetatieSoortnaamWaarden(AttributeInfo):
 
     @soortnaamWetenschappelijk.setter
     def soortnaamWetenschappelijk(self, value):
-        self._soortnaamWetenschappelijk.set_waarde(value)
+        self._soortnaamWetenschappelijk.set_waarde(value, owner=self._parent)
 
 
 # Generated with OTLComplexDatatypeCreator. To modify: extend, do not edit

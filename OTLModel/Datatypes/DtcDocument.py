@@ -11,6 +11,7 @@ from OTLModel.Datatypes.URIField import URIField
 # Generated with OTLComplexDatatypeCreator. To modify: extend, do not edit
 class DtcDocumentWaarden(AttributeInfo):
     def __init__(self):
+        super().__init__()
         self._bestandsnaam = OTLAttribuut(field=StringField,
                                           naam='bestandsnaam',
                                           label='bestandsnaam',
@@ -42,7 +43,7 @@ class DtcDocumentWaarden(AttributeInfo):
 
     @bestandsnaam.setter
     def bestandsnaam(self, value):
-        self._bestandsnaam.set_waarde(value)
+        self._bestandsnaam.set_waarde(value, owner=self._parent)
 
     @property
     def mimeType(self):
@@ -51,7 +52,7 @@ class DtcDocumentWaarden(AttributeInfo):
 
     @mimeType.setter
     def mimeType(self, value):
-        self._mimeType.set_waarde(value)
+        self._mimeType.set_waarde(value, owner=self._parent)
 
     @property
     def omschrijving(self):
@@ -60,7 +61,7 @@ class DtcDocumentWaarden(AttributeInfo):
 
     @omschrijving.setter
     def omschrijving(self, value):
-        self._omschrijving.set_waarde(value)
+        self._omschrijving.set_waarde(value, owner=self._parent)
 
     @property
     def uri(self):
@@ -69,7 +70,7 @@ class DtcDocumentWaarden(AttributeInfo):
 
     @uri.setter
     def uri(self, value):
-        self._uri.set_waarde(value)
+        self._uri.set_waarde(value, owner=self._parent)
 
 
 # Generated with OTLComplexDatatypeCreator. To modify: extend, do not edit

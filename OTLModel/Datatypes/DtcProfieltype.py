@@ -9,6 +9,7 @@ from OTLModel.Datatypes.KlProfielsoort import KlProfielsoort
 # Generated with OTLComplexDatatypeCreator. To modify: extend, do not edit
 class DtcProfieltypeWaarden(AttributeInfo):
     def __init__(self):
+        super().__init__()
         self._profielhoogtemaat = OTLAttribuut(field=KlProfielhoogtemaat,
                                                naam='profielhoogtemaat',
                                                label='profielhoogtemaat',
@@ -28,7 +29,7 @@ class DtcProfieltypeWaarden(AttributeInfo):
 
     @profielhoogtemaat.setter
     def profielhoogtemaat(self, value):
-        self._profielhoogtemaat.set_waarde(value)
+        self._profielhoogtemaat.set_waarde(value, owner=self._parent)
 
     @property
     def profielsoort(self):
@@ -37,7 +38,7 @@ class DtcProfieltypeWaarden(AttributeInfo):
 
     @profielsoort.setter
     def profielsoort(self, value):
-        self._profielsoort.set_waarde(value)
+        self._profielsoort.set_waarde(value, owner=self._parent)
 
 
 # Generated with OTLComplexDatatypeCreator. To modify: extend, do not edit

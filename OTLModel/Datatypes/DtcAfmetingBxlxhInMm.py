@@ -8,6 +8,7 @@ from OTLModel.Datatypes.KwantWrdInMillimeter import KwantWrdInMillimeter
 # Generated with OTLComplexDatatypeCreator. To modify: extend, do not edit
 class DtcAfmetingBxlxhInMmWaarden(AttributeInfo):
     def __init__(self):
+        super().__init__()
         self._breedte = OTLAttribuut(field=KwantWrdInMillimeter,
                                      naam='breedte',
                                      label='breedte',
@@ -33,7 +34,7 @@ class DtcAfmetingBxlxhInMmWaarden(AttributeInfo):
 
     @breedte.setter
     def breedte(self, value):
-        self._breedte.set_waarde(value)
+        self._breedte.set_waarde(value, owner=self._parent)
 
     @property
     def hoogte(self):
@@ -42,7 +43,7 @@ class DtcAfmetingBxlxhInMmWaarden(AttributeInfo):
 
     @hoogte.setter
     def hoogte(self, value):
-        self._hoogte.set_waarde(value)
+        self._hoogte.set_waarde(value, owner=self._parent)
 
     @property
     def lengte(self):
@@ -51,7 +52,7 @@ class DtcAfmetingBxlxhInMmWaarden(AttributeInfo):
 
     @lengte.setter
     def lengte(self, value):
-        self._lengte.set_waarde(value)
+        self._lengte.set_waarde(value, owner=self._parent)
 
 
 # Generated with OTLComplexDatatypeCreator. To modify: extend, do not edit

@@ -10,6 +10,7 @@ from OTLModel.Datatypes.StringField import StringField
 # Generated with OTLComplexDatatypeCreator. To modify: extend, do not edit
 class DtcAdresWaarden(AttributeInfo):
     def __init__(self):
+        super().__init__()
         self._bus = OTLAttribuut(field=StringField,
                                  naam='bus',
                                  label='bus',
@@ -53,7 +54,7 @@ class DtcAdresWaarden(AttributeInfo):
 
     @bus.setter
     def bus(self, value):
-        self._bus.set_waarde(value)
+        self._bus.set_waarde(value, owner=self._parent)
 
     @property
     def gemeente(self):
@@ -62,7 +63,7 @@ class DtcAdresWaarden(AttributeInfo):
 
     @gemeente.setter
     def gemeente(self, value):
-        self._gemeente.set_waarde(value)
+        self._gemeente.set_waarde(value, owner=self._parent)
 
     @property
     def huisnummer(self):
@@ -71,7 +72,7 @@ class DtcAdresWaarden(AttributeInfo):
 
     @huisnummer.setter
     def huisnummer(self, value):
-        self._huisnummer.set_waarde(value)
+        self._huisnummer.set_waarde(value, owner=self._parent)
 
     @property
     def postcode(self):
@@ -80,7 +81,7 @@ class DtcAdresWaarden(AttributeInfo):
 
     @postcode.setter
     def postcode(self, value):
-        self._postcode.set_waarde(value)
+        self._postcode.set_waarde(value, owner=self._parent)
 
     @property
     def provincie(self):
@@ -89,7 +90,7 @@ class DtcAdresWaarden(AttributeInfo):
 
     @provincie.setter
     def provincie(self, value):
-        self._provincie.set_waarde(value)
+        self._provincie.set_waarde(value, owner=self._parent)
 
     @property
     def straatnaam(self):
@@ -98,7 +99,7 @@ class DtcAdresWaarden(AttributeInfo):
 
     @straatnaam.setter
     def straatnaam(self, value):
-        self._straatnaam.set_waarde(value)
+        self._straatnaam.set_waarde(value, owner=self._parent)
 
 
 # Generated with OTLComplexDatatypeCreator. To modify: extend, do not edit

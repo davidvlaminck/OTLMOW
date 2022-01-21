@@ -8,6 +8,7 @@ from OTLModel.Datatypes.StringField import StringField
 # Generated with OTLComplexDatatypeCreator. To modify: extend, do not edit
 class DtcIdentificatorWaarden(AttributeInfo):
     def __init__(self):
+        super().__init__()
         self._identificator = OTLAttribuut(field=StringField,
                                            naam='identificator',
                                            label='identificator',
@@ -27,7 +28,7 @@ class DtcIdentificatorWaarden(AttributeInfo):
 
     @identificator.setter
     def identificator(self, value):
-        self._identificator.set_waarde(value)
+        self._identificator.set_waarde(value, owner=self._parent)
 
     @property
     def toegekendDoor(self):
@@ -36,7 +37,7 @@ class DtcIdentificatorWaarden(AttributeInfo):
 
     @toegekendDoor.setter
     def toegekendDoor(self, value):
-        self._toegekendDoor.set_waarde(value)
+        self._toegekendDoor.set_waarde(value, owner=self._parent)
 
 
 # Generated with OTLComplexDatatypeCreator. To modify: extend, do not edit

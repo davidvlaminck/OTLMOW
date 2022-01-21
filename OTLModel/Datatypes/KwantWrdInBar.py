@@ -9,6 +9,7 @@ from OTLModel.Datatypes.StringField import StringField
 # Generated with OTLPrimitiveDatatypeCreator. To modify: extend, do not edit
 class KwantWrdInBarWaarden(AttributeInfo):
     def __init__(self):
+        super().__init__()
         self._standaardEenheid = OTLAttribuut(field=StringField,
                                               naam='standaardEenheid',
                                               label='standaard eenheid',
@@ -35,7 +36,7 @@ class KwantWrdInBarWaarden(AttributeInfo):
 
     @waarde.setter
     def waarde(self, value):
-        self._waarde.set_waarde(value)
+        self._waarde.set_waarde(value, owner=self._parent)
 
 
 # Generated with OTLPrimitiveDatatypeCreator. To modify: extend, do not edit

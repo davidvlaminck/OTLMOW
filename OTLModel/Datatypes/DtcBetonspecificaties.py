@@ -14,6 +14,7 @@ from OTLModel.Datatypes.KwantWrdInMillimeter import KwantWrdInMillimeter
 # Generated with OTLComplexDatatypeCreator. To modify: extend, do not edit
 class DtcBetonspecificatiesWaarden(AttributeInfo):
     def __init__(self):
+        super().__init__()
         self._betondekking = OTLAttribuut(field=KwantWrdInMillimeter,
                                           naam='betondekking',
                                           label='betondekking',
@@ -95,7 +96,7 @@ class DtcBetonspecificatiesWaarden(AttributeInfo):
 
     @betondekking.setter
     def betondekking(self, value):
-        self._betondekking.set_waarde(value)
+        self._betondekking.set_waarde(value, owner=self._parent)
 
     @property
     def betonmilieuklassen(self):
@@ -104,7 +105,7 @@ class DtcBetonspecificatiesWaarden(AttributeInfo):
 
     @betonmilieuklassen.setter
     def betonmilieuklassen(self, value):
-        self._betonmilieuklassen.set_waarde(value)
+        self._betonmilieuklassen.set_waarde(value, owner=self._parent)
 
     @property
     def betonomgevingsklassen(self):
@@ -113,7 +114,7 @@ class DtcBetonspecificatiesWaarden(AttributeInfo):
 
     @betonomgevingsklassen.setter
     def betonomgevingsklassen(self, value):
-        self._betonomgevingsklassen.set_waarde(value)
+        self._betonomgevingsklassen.set_waarde(value, owner=self._parent)
 
     @property
     def betonsterkteklasse(self):
@@ -122,7 +123,7 @@ class DtcBetonspecificatiesWaarden(AttributeInfo):
 
     @betonsterkteklasse.setter
     def betonsterkteklasse(self, value):
-        self._betonsterkteklasse.set_waarde(value)
+        self._betonsterkteklasse.set_waarde(value, owner=self._parent)
 
     @property
     def gebruiksdomein(self):
@@ -131,7 +132,7 @@ class DtcBetonspecificatiesWaarden(AttributeInfo):
 
     @gebruiksdomein.setter
     def gebruiksdomein(self, value):
-        self._gebruiksdomein.set_waarde(value)
+        self._gebruiksdomein.set_waarde(value, owner=self._parent)
 
     @property
     def grootsteKorrelafmetingDmax(self):
@@ -140,7 +141,7 @@ class DtcBetonspecificatiesWaarden(AttributeInfo):
 
     @grootsteKorrelafmetingDmax.setter
     def grootsteKorrelafmetingDmax(self, value):
-        self._grootsteKorrelafmetingDmax.set_waarde(value)
+        self._grootsteKorrelafmetingDmax.set_waarde(value, owner=self._parent)
 
     @property
     def isCementMetBeperktAlkaligehalte(self):
@@ -149,7 +150,7 @@ class DtcBetonspecificatiesWaarden(AttributeInfo):
 
     @isCementMetBeperktAlkaligehalte.setter
     def isCementMetBeperktAlkaligehalte(self, value):
-        self._isCementMetBeperktAlkaligehalte.set_waarde(value)
+        self._isCementMetBeperktAlkaligehalte.set_waarde(value, owner=self._parent)
 
     @property
     def isCementMetHogeAanvangssterkte(self):
@@ -158,7 +159,7 @@ class DtcBetonspecificatiesWaarden(AttributeInfo):
 
     @isCementMetHogeAanvangssterkte.setter
     def isCementMetHogeAanvangssterkte(self, value):
-        self._isCementMetHogeAanvangssterkte.set_waarde(value)
+        self._isCementMetHogeAanvangssterkte.set_waarde(value, owner=self._parent)
 
     @property
     def isCementMetHogeBestandheidTegenSulfaten(self):
@@ -167,7 +168,7 @@ class DtcBetonspecificatiesWaarden(AttributeInfo):
 
     @isCementMetHogeBestandheidTegenSulfaten.setter
     def isCementMetHogeBestandheidTegenSulfaten(self, value):
-        self._isCementMetHogeBestandheidTegenSulfaten.set_waarde(value)
+        self._isCementMetHogeBestandheidTegenSulfaten.set_waarde(value, owner=self._parent)
 
     @property
     def isCementMetLageHydratatiewarmte(self):
@@ -176,7 +177,7 @@ class DtcBetonspecificatiesWaarden(AttributeInfo):
 
     @isCementMetLageHydratatiewarmte.setter
     def isCementMetLageHydratatiewarmte(self, value):
-        self._isCementMetLageHydratatiewarmte.set_waarde(value)
+        self._isCementMetLageHydratatiewarmte.set_waarde(value, owner=self._parent)
 
     @property
     def isColloidaalbeton(self):
@@ -185,7 +186,7 @@ class DtcBetonspecificatiesWaarden(AttributeInfo):
 
     @isColloidaalbeton.setter
     def isColloidaalbeton(self, value):
-        self._isColloidaalbeton.set_waarde(value)
+        self._isColloidaalbeton.set_waarde(value, owner=self._parent)
 
     @property
     def technischeFiche(self):
@@ -194,7 +195,7 @@ class DtcBetonspecificatiesWaarden(AttributeInfo):
 
     @technischeFiche.setter
     def technischeFiche(self, value):
-        self._technischeFiche.set_waarde(value)
+        self._technischeFiche.set_waarde(value, owner=self._parent)
 
 
 # Generated with OTLComplexDatatypeCreator. To modify: extend, do not edit

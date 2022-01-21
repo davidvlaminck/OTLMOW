@@ -11,6 +11,7 @@ from OTLModel.Datatypes.KlSterkteklasseHout import KlSterkteklasseHout
 # Generated with OTLComplexDatatypeCreator. To modify: extend, do not edit
 class DtcHoutspecificatiesWaarden(AttributeInfo):
     def __init__(self):
+        super().__init__()
         self._houtduurzaamheidsklasse = OTLAttribuut(field=KlDuurzaamheidsklasseHout,
                                                      naam='houtduurzaamheidsklasse',
                                                      label='houtduurzaamheidsklasse',
@@ -42,7 +43,7 @@ class DtcHoutspecificatiesWaarden(AttributeInfo):
 
     @houtduurzaamheidsklasse.setter
     def houtduurzaamheidsklasse(self, value):
-        self._houtduurzaamheidsklasse.set_waarde(value)
+        self._houtduurzaamheidsklasse.set_waarde(value, owner=self._parent)
 
     @property
     def houtkwaliteitsklasse(self):
@@ -51,7 +52,7 @@ class DtcHoutspecificatiesWaarden(AttributeInfo):
 
     @houtkwaliteitsklasse.setter
     def houtkwaliteitsklasse(self, value):
-        self._houtkwaliteitsklasse.set_waarde(value)
+        self._houtkwaliteitsklasse.set_waarde(value, owner=self._parent)
 
     @property
     def houtsterkteklasse(self):
@@ -60,7 +61,7 @@ class DtcHoutspecificatiesWaarden(AttributeInfo):
 
     @houtsterkteklasse.setter
     def houtsterkteklasse(self, value):
-        self._houtsterkteklasse.set_waarde(value)
+        self._houtsterkteklasse.set_waarde(value, owner=self._parent)
 
     @property
     def isResistentTegenMarieneBoorders(self):
@@ -69,7 +70,7 @@ class DtcHoutspecificatiesWaarden(AttributeInfo):
 
     @isResistentTegenMarieneBoorders.setter
     def isResistentTegenMarieneBoorders(self, value):
-        self._isResistentTegenMarieneBoorders.set_waarde(value)
+        self._isResistentTegenMarieneBoorders.set_waarde(value, owner=self._parent)
 
 
 # Generated with OTLComplexDatatypeCreator. To modify: extend, do not edit

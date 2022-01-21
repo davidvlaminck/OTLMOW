@@ -8,6 +8,7 @@ from OTLModel.Datatypes.StringField import StringField
 # Generated with OTLComplexDatatypeCreator. To modify: extend, do not edit
 class DtcExterneReferentieWaarden(AttributeInfo):
     def __init__(self):
+        super().__init__()
         self._externReferentienummer = OTLAttribuut(field=StringField,
                                                     naam='externReferentienummer',
                                                     label='extern referentienummer',
@@ -27,7 +28,7 @@ class DtcExterneReferentieWaarden(AttributeInfo):
 
     @externReferentienummer.setter
     def externReferentienummer(self, value):
-        self._externReferentienummer.set_waarde(value)
+        self._externReferentienummer.set_waarde(value, owner=self._parent)
 
     @property
     def externePartij(self):
@@ -36,7 +37,7 @@ class DtcExterneReferentieWaarden(AttributeInfo):
 
     @externePartij.setter
     def externePartij(self, value):
-        self._externePartij.set_waarde(value)
+        self._externePartij.set_waarde(value, owner=self._parent)
 
 
 # Generated with OTLComplexDatatypeCreator. To modify: extend, do not edit

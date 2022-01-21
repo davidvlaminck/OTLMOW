@@ -10,6 +10,7 @@ from OTLModel.Datatypes.URIField import URIField
 # Generated with OTLComplexDatatypeCreator. To modify: extend, do not edit
 class DtcProductidentificatiecodeWaarden(AttributeInfo):
     def __init__(self):
+        super().__init__()
         self._keuringsverslag = OTLAttribuut(field=DtcDocument,
                                              naam='keuringsverslag',
                                              label='keuringsverslag',
@@ -41,7 +42,7 @@ class DtcProductidentificatiecodeWaarden(AttributeInfo):
 
     @keuringsverslag.setter
     def keuringsverslag(self, value):
-        self._keuringsverslag.set_waarde(value)
+        self._keuringsverslag.set_waarde(value, owner=self._parent)
 
     @property
     def linkTechnischeFiche(self):
@@ -50,7 +51,7 @@ class DtcProductidentificatiecodeWaarden(AttributeInfo):
 
     @linkTechnischeFiche.setter
     def linkTechnischeFiche(self, value):
-        self._linkTechnischeFiche.set_waarde(value)
+        self._linkTechnischeFiche.set_waarde(value, owner=self._parent)
 
     @property
     def producent(self):
@@ -59,7 +60,7 @@ class DtcProductidentificatiecodeWaarden(AttributeInfo):
 
     @producent.setter
     def producent(self, value):
-        self._producent.set_waarde(value)
+        self._producent.set_waarde(value, owner=self._parent)
 
     @property
     def productidentificatiecode(self):
@@ -68,7 +69,7 @@ class DtcProductidentificatiecodeWaarden(AttributeInfo):
 
     @productidentificatiecode.setter
     def productidentificatiecode(self, value):
-        self._productidentificatiecode.set_waarde(value)
+        self._productidentificatiecode.set_waarde(value, owner=self._parent)
 
 
 # Generated with OTLComplexDatatypeCreator. To modify: extend, do not edit

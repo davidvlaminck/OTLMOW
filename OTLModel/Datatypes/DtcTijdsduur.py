@@ -10,6 +10,7 @@ from OTLModel.Datatypes.KwantWrdInUur import KwantWrdInUur
 # Generated with OTLComplexDatatypeCreator. To modify: extend, do not edit
 class DtcTijdsduurWaarden(AttributeInfo):
     def __init__(self):
+        super().__init__()
         self._minuten = OTLAttribuut(field=KwantWrdInMinuut,
                                      naam='minuten',
                                      label='minuten',
@@ -35,7 +36,7 @@ class DtcTijdsduurWaarden(AttributeInfo):
 
     @minuten.setter
     def minuten(self, value):
-        self._minuten.set_waarde(value)
+        self._minuten.set_waarde(value, owner=self._parent)
 
     @property
     def seconden(self):
@@ -44,7 +45,7 @@ class DtcTijdsduurWaarden(AttributeInfo):
 
     @seconden.setter
     def seconden(self, value):
-        self._seconden.set_waarde(value)
+        self._seconden.set_waarde(value, owner=self._parent)
 
     @property
     def uren(self):
@@ -53,7 +54,7 @@ class DtcTijdsduurWaarden(AttributeInfo):
 
     @uren.setter
     def uren(self, value):
-        self._uren.set_waarde(value)
+        self._uren.set_waarde(value, owner=self._parent)
 
 
 # Generated with OTLComplexDatatypeCreator. To modify: extend, do not edit

@@ -9,6 +9,7 @@ from OTLModel.Datatypes.StringField import StringField
 # Generated with OTLComplexDatatypeCreator. To modify: extend, do not edit
 class DtcLENormWaarden(AttributeInfo):
     def __init__(self):
+        super().__init__()
         self._bijkomendeParameter = OTLAttribuut(field=KlLEKantopsluitingBijkomendeParameter,
                                                  naam='bijkomendeParameter',
                                                  label='bijkomende parameter',
@@ -28,7 +29,7 @@ class DtcLENormWaarden(AttributeInfo):
 
     @bijkomendeParameter.setter
     def bijkomendeParameter(self, value):
-        self._bijkomendeParameter.set_waarde(value)
+        self._bijkomendeParameter.set_waarde(value, owner=self._parent)
 
     @property
     def norm(self):
@@ -37,7 +38,7 @@ class DtcLENormWaarden(AttributeInfo):
 
     @norm.setter
     def norm(self, value):
-        self._norm.set_waarde(value)
+        self._norm.set_waarde(value, owner=self._parent)
 
 
 # Generated with OTLComplexDatatypeCreator. To modify: extend, do not edit

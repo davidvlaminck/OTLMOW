@@ -9,6 +9,7 @@ from OTLModel.Datatypes.KwantWrdInTon import KwantWrdInTon
 # Generated with OTLComplexDatatypeCreator. To modify: extend, do not edit
 class DtcProfileerlaagWaarden(AttributeInfo):
     def __init__(self):
+        super().__init__()
         self._gewicht = OTLAttribuut(field=KwantWrdInTon,
                                      naam='gewicht',
                                      label='gewicht',
@@ -28,7 +29,7 @@ class DtcProfileerlaagWaarden(AttributeInfo):
 
     @gewicht.setter
     def gewicht(self, value):
-        self._gewicht.set_waarde(value)
+        self._gewicht.set_waarde(value, owner=self._parent)
 
     @property
     def laagtype(self):
@@ -37,7 +38,7 @@ class DtcProfileerlaagWaarden(AttributeInfo):
 
     @laagtype.setter
     def laagtype(self, value):
-        self._laagtype.set_waarde(value)
+        self._laagtype.set_waarde(value, owner=self._parent)
 
 
 # Generated with OTLComplexDatatypeCreator. To modify: extend, do not edit

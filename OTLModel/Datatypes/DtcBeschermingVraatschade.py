@@ -9,6 +9,7 @@ from OTLModel.Datatypes.KlMateriaalBeschermingVraatschade import KlMateriaalBesc
 # Generated with OTLComplexDatatypeCreator. To modify: extend, do not edit
 class DtcBeschermingVraatschadeWaarden(AttributeInfo):
     def __init__(self):
+        super().__init__()
         self._materiaal = OTLAttribuut(field=KlMateriaalBeschermingVraatschade,
                                        naam='materiaal',
                                        label='materiaal',
@@ -28,7 +29,7 @@ class DtcBeschermingVraatschadeWaarden(AttributeInfo):
 
     @materiaal.setter
     def materiaal(self, value):
-        self._materiaal.set_waarde(value)
+        self._materiaal.set_waarde(value, owner=self._parent)
 
     @property
     def tegenMaaischade(self):
@@ -37,7 +38,7 @@ class DtcBeschermingVraatschadeWaarden(AttributeInfo):
 
     @tegenMaaischade.setter
     def tegenMaaischade(self, value):
-        self._tegenMaaischade.set_waarde(value)
+        self._tegenMaaischade.set_waarde(value, owner=self._parent)
 
 
 # Generated with OTLComplexDatatypeCreator. To modify: extend, do not edit

@@ -9,6 +9,7 @@ from OTLModel.Datatypes.KlWalsmethode import KlWalsmethode
 # Generated with OTLComplexDatatypeCreator. To modify: extend, do not edit
 class DtcConstructiestaalspecificatiesWaarden(AttributeInfo):
     def __init__(self):
+        super().__init__()
         self._staalsoort = OTLAttribuut(field=KlConstructiestaalsoort,
                                         naam='staalsoort',
                                         label='staalsoort',
@@ -28,7 +29,7 @@ class DtcConstructiestaalspecificatiesWaarden(AttributeInfo):
 
     @staalsoort.setter
     def staalsoort(self, value):
-        self._staalsoort.set_waarde(value)
+        self._staalsoort.set_waarde(value, owner=self._parent)
 
     @property
     def walsmethode(self):
@@ -37,7 +38,7 @@ class DtcConstructiestaalspecificatiesWaarden(AttributeInfo):
 
     @walsmethode.setter
     def walsmethode(self, value):
-        self._walsmethode.set_waarde(value)
+        self._walsmethode.set_waarde(value, owner=self._parent)
 
 
 # Generated with OTLComplexDatatypeCreator. To modify: extend, do not edit

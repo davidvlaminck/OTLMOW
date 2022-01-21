@@ -11,6 +11,7 @@ deprecated warning werkt niet voor KWantWrd, omdat de setter van waarde het pare
 ERROR:Could not create a list of GeldigeRelatie objects
 ERROR:Could not create a class for Boolean
 ERROR:Could not create a class for AnyURI
+Clear other props van Dtu naat set waarde verhuizen en checken op owner.Field
 
 
 Write clean code
@@ -18,6 +19,7 @@ Defaultdict: dict met default value, dict group
 Unpacking sequences
 Gebruik classes met parameter namen
 Docstrings van https://betterprogramming.pub/the-guide-to-python-docstrings-3d40340e824b
+Custom errors 
 
 
 NewFeatures
@@ -27,7 +29,6 @@ relatieCreator => gebruikt relatieValidator en _validatie methode op objecten ze
 OTL model creator houdt geen rekening met bestaande classes en datatypes (deze moeten gewist worden indien niet meer in de OTL)
 Create_model(pure=False): pure maakt een model zonder toevoegingen zoals relatieInteractor en otlobject
 Asset Factory: create similar relations from asset
-deprecated: gebruik ervan moet in de logs een warning geven, zowel bij classes als attributen. Gebruik builtin warnings
 Store: assets opslaan in Store waar je gemakkelijk kan zoeken op id of comb van naam en type. Maakt ook mogelijk om te controleren op ids of dubbele relaties
 Automatisch temp id's genereren voor assets waar die niet is ingevuld (alleen nuttig indien via Factory aangemaakt, de gebruiker moet de ids kunnen vinden om bv relaties te leggen
 AgentCollection: bevat Agents zodat men gemakkelijk relaties kan leggen naar bestaande Agents

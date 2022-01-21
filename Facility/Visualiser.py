@@ -5,6 +5,7 @@ from pyvis import network as net
 
 from OTLModel.Classes.Bevestiging import Bevestiging
 from OTLModel.Classes.HoortBij import HoortBij
+from OTLModel.Classes.NietDirectioneleRelatie import NietDirectioneleRelatie
 from OTLModel.Classes.RelatieObject import RelatieObject
 from OTLModel.Classes.Sturing import Sturing
 from OTLModel.Classes.Voedt import Voedt
@@ -128,7 +129,6 @@ class Visualiser:
         self.create_nodes(g, list_of_objects)
         self.create_edges(g, list_of_objects)
         g.show('example.html')
-        # self.add_to_html(g)
         display(HTML('example.html'))
 
     def create_nodes(self, g, list_of_objects):
@@ -157,12 +157,12 @@ class Visualiser:
                            to=relatie.doelAssetId.identificator,
                            color=self.map_relation_to_color(relatie),
                            width=2,
-                           arrows=None)
-                if isinstance(relatie, Sturing) or isinstance(relatie, Bevestiging):
+                           arrowsize=0.5)
+                if isinstance(relatie, NietDirectioneleRelatie):
                     g.add_edge(to=relatie.bronAssetId.identificator,
                                source=relatie.doelAssetId.identificator,
                                color=self.map_relation_to_color(relatie),
-                               width=2, arrowsize=1)
+                               width=2, arrowsize=0.5)
 
     @staticmethod
     def map_relation_to_color(relatie) -> str:
@@ -177,12 +177,6 @@ class Visualiser:
             if isinstance(relatie, v):
                 return k
         return 'brown'
-
-    @staticmethod
-    def add_to_html(g):
-        f = g.html.find('"interaction": {')
-        insert_text = '"click":{"event":console.log("working")},'
-        g.html = g.html[:f] + insert_text + g.html[f:]
 
     def random_color_if_not_in_dict(self, typeURI):
         if typeURI not in self.colorDict.keys():

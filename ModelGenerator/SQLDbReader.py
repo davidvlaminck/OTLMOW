@@ -3,6 +3,8 @@ import sqlite3
 
 
 class SQLDbReader:
+    """SQLDbReader performs read query's. It first checks if the provided path has a file. Provides an easy way to override querying for testing purposes. """
+
     def __init__(self, path=None):
         self.path = path
         if path is None:

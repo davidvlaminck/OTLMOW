@@ -1,16 +1,14 @@
-import decimal
 import unittest
 from datetime import datetime
 
-from ModelGenerator.BaseClasses.RelatieValidator import RelatieValidator
 from ModelGenerator.OtlAssetJSONEncoder import OtlAssetJSONEncoder
 from OTLModel.Classes.Aftakking import Aftakking
+from OTLModel.Classes.Exoten import Exoten
 from OTLModel.Classes.Laagspanningsbord import Laagspanningsbord
 from OTLModel.Classes.Verkeersregelaar import Verkeersregelaar
 from OTLModel.Classes.WVLichtmast import WVLichtmast
 from OTLModel.Datatypes.DtcExterneReferentie import DtcExterneReferentie
 from OTLModel.Datatypes.DtuWvLichtmastBevsToestelMethode import DtuWvLichtmastBevsToestelMethode
-from UnitTests.RelatieValidatorTests import GeldigeRelatieLijstTestInstance
 
 
 class OtlAssetJSONEncoderTests(unittest.TestCase):
@@ -29,6 +27,15 @@ class OtlAssetJSONEncoderTests(unittest.TestCase):
             '{"isActief": true, "naam": "aftakking", "notitie": "notitie aftakking", "toestand": "in-ontwerp", "typeURI": '
             '"https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Aftakking"}',
             js)
+
+    def test_JsonEncode_Deprecated(self):
+        e = Exoten()
+        e.isActief = True
+
+        json = OtlAssetJSONEncoder().encode(e)
+        expected = '{"isActief": true, "typeURI": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Exoten"}'
+
+        self.assertEqual(expected, json)
 
     def test_JsonEncode_Boolean(self):
         a = Aftakking()

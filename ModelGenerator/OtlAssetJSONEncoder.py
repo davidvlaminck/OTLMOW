@@ -1,76 +1,23 @@
 import json
+from collections import OrderedDict
 
 from OTLModel.BaseClasses.OTLAsset import OTLAsset
+from OTLModel.BaseClasses.OTLObject import OTLObject
 from OTLModel.Classes.RelatieObject import RelatieObject
 from OTLModel.BaseClasses.OTLField import OTLField
 
 
 class OtlAssetJSONEncoder(json.JSONEncoder):
     def default(self, otlObject):
-        if isinstance(otlObject, OTLAsset) or isinstance(otlObject, RelatieObject):
-            d = dir(otlObject)
-            dictCopy = {}
-            for key in d:
-                if key[0] == '_' or key == 'attr_info' or key == 'attr_type_info':
-                    pass
-                else:
-                    value = otlObject.__getattribute__(key)
-                    if value is None:
-                        continue
-                    if key == 'deprecated_version':
-                        continue
-                    if key == 'typeURI':
-                        dictCopy['typeURI'] = otlObject.typeURI
-                    else:
-                        attribute = otlObject.__getattribute__('_' + key)
-                        defaultValue = attribute.default()
-                        if defaultValue is not None:
-                            if isinstance(defaultValue, str):
-                                if len(defaultValue) == 0:
-                                    continue
-                            if isinstance(defaultValue, list):
-                                if len(defaultValue) == 0:
-                                    continue
-                            if isinstance(defaultValue, dict):
-                                if self.isEmptyDict(defaultValue):
-                                    continue
-                            dictCopy[key] = defaultValue
-            return dictCopy
+        if isinstance(otlObject, OTLObject):
+            d = otlObject.create_dict_from_asset()
+            if hasattr(otlObject, 'typeURI'):
+                d['typeURI'] = otlObject.typeURI
+            od = OrderedDict(sorted(d.items()))
+            return od
         return super().default(otlObject)
 
-    def default2(self, otlObject):
-        if isinstance(otlObject, OTLAsset) or isinstance(otlObject, RelatieObject):
-            d = dir(otlObject)
-            dictCopy = {}
-            for key in d:
-                if key[0] == '_':
-                    pass
-                else:
-                    value = otlObject.__getattribute__(key)
-                    if isinstance(value, OTLField):
-                        valueByDefault = value.default()
-                        if valueByDefault is None:
-                            continue
-                        if isinstance(valueByDefault, str):
-                            if len(valueByDefault) == 0:
-                                continue
-                        if isinstance(valueByDefault, list):
-                            if len(valueByDefault) == 0:
-                                continue
-                        if isinstance(valueByDefault, dict):
-                            if self.isEmptyDict(valueByDefault):
-                                continue
-                        dictCopy[key] = valueByDefault
-                    else:
-                        if value is None:
-                            continue
-                        dictCopy[key] = value
-            return dictCopy
-        else:
-            return super().default(otlObject)
-
-    # https://realpython.com/python-json/?fbclid=IwAR2gXW0-lF6Koyd6YxpSUBJH-mEj1lS1lEPUavPfrYbzfbzWnkLcRN_RAG8
-
+    # no usage?
     def isEmptyDict(self, value: dict):
         b = True
         for v in value.values():

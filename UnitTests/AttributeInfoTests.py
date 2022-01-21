@@ -1,7 +1,10 @@
 ﻿from unittest import TestCase
 
+from OTLModel.BaseClasses.OTLObject import OTLObjectHelper
 from OTLModel.Classes.Aftakking import Aftakking
+from OTLModel.Classes.Exoten import Exoten
 from OTLModel.Classes.Verkeersregelaar import Verkeersregelaar
+from OTLModel.Datatypes.DtcExterneReferentie import DtcExterneReferentie
 
 
 class AttributeInfoTests(TestCase):
@@ -17,7 +20,7 @@ class AttributeInfoTests(TestCase):
 
     def test_make_string_version_empty_class(self):
         v = Verkeersregelaar()
-        string_version = v.build_string_version(indent=4)
+        string_version = OTLObjectHelper().build_string_version(v, indent=4)
         expected = ''
         print(string_version)
         self.assertEqual(string_version, expected)
@@ -25,7 +28,7 @@ class AttributeInfoTests(TestCase):
     def test_make_string_version_StringField(self):
         v = Verkeersregelaar()
         v.naam = 'VR'
-        string_version = v.build_string_version(indent=4)
+        string_version = OTLObjectHelper().build_string_version(v, indent=4)
         expected = '    naam : VR'
         print(string_version)
         self.assertEqual(string_version, expected)
@@ -34,7 +37,73 @@ class AttributeInfoTests(TestCase):
         v = Verkeersregelaar()
         v.assetId.identificator = 'eigen_id'
         v.assetId.toegekendDoor = 'AWV'
-        string_version = v.build_string_version(indent=4)
-        expected = '    assetId :\n        identificator : eigen_id        \ntoegekendDoor : AWV\n'
+        string_version = OTLObjectHelper().build_string_version(v, indent=4)
+        expected = '    assetId :\n        identificator : eigen_id\n        toegekendDoor : AWV'
         print(string_version)
         self.assertEqual(string_version, expected)
+
+    def test_create_dict_from_asset_DtcIdentificator(self):
+        v = Verkeersregelaar()
+        v.assetId.identificator = 'eigen_id'
+        v.assetId.toegekendDoor = 'AWV'
+        d = v.create_dict_from_asset()
+        expected = {'assetId': {
+            'identificator': 'eigen_id',
+            'toegekendDoor': 'AWV'}}
+        self.assertDictEqual(expected, d)
+
+    def test_create_dict_from_asset_deprecated(self):
+        e = Exoten()
+        e.toestand = 'in-gebruik'
+        d = e.create_dict_from_asset()
+        expected = {'toestand': 'in-gebruik'}
+        self.assertDictEqual(expected, d)
+
+    def test_create_dict_from_asset_string(self):
+        v = Verkeersregelaar()
+        v.naam = 'VR'
+        d = v.create_dict_from_asset()
+        expected = {'naam': 'VR'}
+        self.assertDictEqual(expected, d)
+
+    def test_create_dict_from_asset_kwantWrd(self):
+        v = Verkeersregelaar()
+        v.theoretischeLevensduur.waarde = 120
+        d = v.create_dict_from_asset()
+        expected = {'theoretischeLevensduur': 120}
+        self.assertDictEqual(expected, d)
+
+    def test_create_dict_from_asset_keuzelijst(self):
+        v = Verkeersregelaar()
+        v.toestand = 'in-gebruik'
+        d = v.create_dict_from_asset()
+        expected = {'toestand': 'in-gebruik'}
+        self.assertDictEqual(expected, d)
+
+    def test_create_dict_from_asset_keuzelijst_kardinaliteit(self):
+        v = Verkeersregelaar()
+        v.coordinatiewijze = ["centraal", "pulsen"]
+        d = v.create_dict_from_asset()
+        expected = {'coordinatiewijze': ["centraal", "pulsen"]}
+        self.assertDictEqual(expected, d)
+
+    def test_create_dict_from_asset_complex_kardinaliteit(self):
+        v = Verkeersregelaar()
+        v.externeReferentie = []
+
+        v.externeReferentie.append(DtcExterneReferentie.waardeObject())
+        v.externeReferentie[0].externReferentienummer = "externe referentie 2"
+        v.externeReferentie[0].externePartij = "bij externe partij 2"
+
+        v.externeReferentie.append(DtcExterneReferentie.waardeObject())
+        v.externeReferentie[1].externReferentienummer = "externe referentie 1"
+        v.externeReferentie[1].externePartij = "bij externe partij 1"
+        d = v.create_dict_from_asset()
+        expected = {'externeReferentie': [
+            {'externReferentienummer': 'externe referentie 2',
+             'externePartij': 'bij externe partij 2'
+             }, {'externReferentienummer': 'externe referentie 1',
+                 'externePartij': 'bij externe partij 1'
+                 }]
+        }
+        self.assertDictEqual(expected, d)

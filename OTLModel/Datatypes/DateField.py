@@ -1,4 +1,4 @@
-from datetime import datetime
+from datetime import date
 from OTLModel.BaseClasses.OTLField import OTLField
 
 
@@ -12,9 +12,8 @@ class DateField(OTLField):
 
     @staticmethod
     def validate(value, attribuut):
-        if value is not None and not isinstance(value, datetime):
-            raise TypeError(f'expecting datetime in {attribuut.naam}')
-        # TODO time vars should be 0 0 0
+        if value is not None and not isinstance(value, date):
+            raise TypeError(f'expecting date in {attribuut.naam}')
         return True
 
     @staticmethod

@@ -11,7 +11,7 @@ ERROR:Could not create a class for Boolean
 ERROR:Could not create a class for AnyURI
 Clear other props van Dtu naar set waarde verhuizen en checken op owner.Field
 deployment/packaging: https://packaging.python.org/en/latest/guides/distributing-packages-using-setuptools/
-
+requirements > Shapely voor WKT, PyVis en IPython voor visualiser en Python 3.10
 
 Write clean code
 Defaultdict: dict met default value, dict group

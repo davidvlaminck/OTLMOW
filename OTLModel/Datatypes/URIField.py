@@ -1,5 +1,3 @@
-from attr import validators
-
 from OTLModel.BaseClasses.OTLField import OTLField
 
 

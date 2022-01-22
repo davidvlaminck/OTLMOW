@@ -4,7 +4,7 @@ Agent - Keuring ondersteuning > Worden niet correct gegenereerd
 RelatieObject > inherit OTLObject
 AIMObject > inherit OTLAsset
 Nakijken implementatie van Agent, Signalisatie, proef en keuring:overerving van de base class otlobject: query'en welke concrete classes NIET overerven van AIMObject > RelatieInteractor en OTL Asset toevoegen aan die assets
-Geldige relatie lijst refactor naar isinstance met inheritance ipv alle relaties en testen:https://stackoverflow.com/questions/31488362/why-is-dict-faster-than-if-else-in-python/31488416
+Geldige relatie lijst refactor naar isinstance met inheritance ipv alle relaties en testen: https://stackoverflow.com/questions/31488362/why-is-dict-faster-than-if-else-in-python/31488416
 AttributeInfo inheritance nakijken > erft te veel keer over
 ERROR:Could not create a list of GeldigeRelatie objects
 ERROR:Could not create a class for Boolean
@@ -24,6 +24,7 @@ Custom errors
 NewFeatures
 OTL versie verwerken in logging createmodel
 Dependencies resolven: pip install -r requirements.txt https://stackoverflow.com/questions/6590688/is-it-bad-to-have-my-virtualenv-directory-inside-my-git-repository
+> pip freeze > python -m pip install -r requirements.txt
 relatieCreator => gebruikt relatieValidator en _validatie methode op objecten zelf om te verifiëren of een relatie mag gelegd worden. Houdt geen rekening met bestaande relaties
 OTL model creator houdt geen rekening met bestaande classes en datatypes (deze moeten gewist worden indien niet meer in de OTL)
 Create_model(pure=False): pure maakt een model zonder toevoegingen zoals relatieInteractor en otlobject

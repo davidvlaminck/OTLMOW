@@ -1,0 +1,23 @@
+backports.entry-points-selectable==1.1.1
+certifi==2021.10.8
+charset-normalizer==2.0.10
+conda==4.3.16
+# Cython @ file:///buildstream/freedesktop-sdk/components/cython.bst
+distlib==0.3.4
+filelock==3.4.2
+idna==3.3
+Mako==1.1.6
+# Markdown @ file:///buildstream/freedesktop-sdk/components/python3-markdown.bst
+# meson @ file:///buildstream/freedesktop-sdk/components/meson.bst
+pipenv==2022.1.8
+platformdirs==2.4.1
+pycosat==0.6.3
+Pygments==2.11.2
+requests==2.27.1
+ruamel.yaml==0.17.20
+ruamel.yaml.clib==0.2.6
+shapely==1.8.0
+six==1.16.0
+urllib3==1.26.8
+virtualenv==20.13.0
+virtualenv-clone==0.5.7

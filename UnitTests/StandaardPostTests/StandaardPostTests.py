@@ -5,7 +5,6 @@ from Facility.ToOTLDecoder import ToOTLDecoder, DotNotationError
 from OTLModel.ClassLoader import ClassLoader
 from OTLModel.Classes.BitumineuzeLaag import BitumineuzeLaag
 from OTLModel.Classes.Geotextiel import Geotextiel
-from OTLModel.Datatypes.ComplexField import ComplexField
 
 
 @dataclasses.dataclass
@@ -154,7 +153,7 @@ class StandaardPostTests(TestCase):
         self.assertEqual('a', b.notitie)
         with self.assertRaises(DotNotationError) as dotnotationerror:
             ToOTLDecoder().set_value_by_dotnotatie(b, 'notitie_invalid', 'c')
-        self.assertRegex(str(dotnotationerror.exception), 'notitie_invalid of <OTLModel.Classes.BitumineuzeLaag.BitumineuzeLaag object at 0x[0-9A-F]+> can not be set to c')
+        self.assertRegex(str(dotnotationerror.exception), 'notitie_invalid of <OTLModel.Classes.BitumineuzeLaag.BitumineuzeLaag object at 0x[0-9a-f]+> can not be set to c')
 
     def test_set_value_by_dotnotatie_complex(self):
         b = BitumineuzeLaag()

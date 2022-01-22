@@ -62,6 +62,13 @@ beta release wanneer de lijst van bugfixes leeg is
 full release wanneer? business bepaalt: lijst van features zijn genummerd, doorgeven welke essentieel zijn
 
 
+Use cases
+Normalisatie
+Migratie
+Testen nieuwe otl versies
+Davie api? Shpfiles maken van alle types? 
+
+
 Facility
 * Design
     - OTLModelCreator => creates OTL model

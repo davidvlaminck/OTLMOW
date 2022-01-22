@@ -1,7 +1,6 @@
 ﻿import math
 import warnings
 from datetime import datetime
-from msilib import sequence
 
 from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLField import OTLField
@@ -88,7 +87,6 @@ class OTLAttribuut(AttributeInfo):
                     else:
                         warnings.warn(message=f'used a class that is deprecated since version {owner.deprecated_version}',
                                       category=DeprecationWarning)
-
 
         if self.kardinaliteit_max == '*':
             kardinaliteit_max = math.inf

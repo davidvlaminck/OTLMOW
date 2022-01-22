@@ -36,7 +36,6 @@ AnyURIField implementeren met validatie voor zover dat mogelijk is
 Postenmapping:
 - van post automatisch asset maken met ingevulde waardes
 - van ingevulde asset uitzoeken welke post of posten dit is
-.attributenIterator: iterator voor de attributen van dat attribuut of class (zoeken naar attributen die met _ beginnen en otlfield zijn. In dict steken
 Docstring appenden vanuit otlobject met generieke functies zoals attr_info
 Import eminfra voor asset relaties etc: alternatief voor data afladen in Davie
 

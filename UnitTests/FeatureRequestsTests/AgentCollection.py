@@ -4,6 +4,7 @@ from ModelGenerator.OtlAssetJSONEncoder import OtlAssetJSONEncoder
 from OTLModel.Classes.Agent import Agent
 
 
+@unittest.skip("feature request")
 class AgentCollectionTests(unittest.TestCase):
     def test_search_agent_by_name(self):
         collection = AgentCollection()

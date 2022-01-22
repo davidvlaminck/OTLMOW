@@ -1,5 +1,5 @@
 Fix
-utf-8 encoding > setting in pycharm aanpassen + UTF-8 + BOM aanzetten voor windows
+utf-8 encoding > setting in pycharm aanpassen: UTF-8 + BOM aanzetten voor windows
 Agent - Keuring ondersteuning > Worden niet correct gegenereerd
 RelatieObject > inherit OTLObject
 AIMObject > inherit OTLAsset
@@ -55,6 +55,9 @@ Dotnotatie bevatte waarde om validatie af te dwingen, nu enkel bij kwantwrd en d
 Voordeel echte overerving: filter assets op abstract type, filter relatie van assets
 Dynamic typing voor union types
 Davie kan geen lege waardes verwerken. Is ook gevaarlijk. Mss aparte endpoint of metadata die aanduidt dat iets leeg mag
+alpha release nu
+beta release wanneer de lijst van bugfixes leeg is
+full release wanneer? business bepaalt: lijst van features zijn genummerd, doorgeven welke essentieel zijn
 
 
 Facility

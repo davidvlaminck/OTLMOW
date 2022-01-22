@@ -47,8 +47,8 @@ class AbstractDatatypeCreator(ABC):
                 return 'DtcContactinfo'
             case 'http://www.w3.org/2000/01/rdf-schema#Literal':
                 return 'StringField'
-
-        raise NotImplemented('not supported fieldType in getSingleFieldFromTypeUri()')
+            case _:
+                raise NotImplemented('not supported fieldType in getSingleFieldFromTypeUri()')
 
     @staticmethod
     def getNonSingleFieldFromTypeUri(fieldType: str):

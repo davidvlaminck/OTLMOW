@@ -37,6 +37,7 @@ Postenmapping:
 - van ingevulde asset uitzoeken welke post of posten dit is
 Docstring appenden vanuit otlobject met generieke functies zoals attr_info
 Import eminfra voor asset relaties etc: alternatief voor data afladen in Davie
+zoeken voor naam/label naar typeuri: opslaan in dict als lower() > ClassLijst
 
 
 Demo

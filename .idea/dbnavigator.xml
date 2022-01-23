@@ -24,7 +24,11 @@
     <autoscroll-to-editor value="false" />
     <autoscroll-from-editor value="true" />
     <show-object-properties value="true" />
-    <loaded-nodes />
+    <loaded-nodes>
+      <connection connection-id="b24a7c42-f974-4d1d-b251-e19d367a212d">
+        <schema name="main" object-types="table, view, constraint, index, column, dataset trigger" />
+      </connection>
+    </loaded-nodes>
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="b24a7c42-f974-4d1d-b251-e19d367a212d">
@@ -32,12 +36,15 @@
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
-    <open-files />
+    <open-files>
+      <object connection-id="b24a7c42-f974-4d1d-b251-e19d367a212d" object-ref="schemas/main/tables/OSLODatatypePrimitive" />
+    </open-files>
   </component>
   <component name="DBNavigator.Project.DatabaseSessionManager">
     <connection id="b24a7c42-f974-4d1d-b251-e19d367a212d" />
   </component>
   <component name="DBNavigator.Project.DatasetFilterManager">
+    <filter-actions connection-id="b24a7c42-f974-4d1d-b251-e19d367a212d" dataset="main.OSLODatatypePrimitive" active-filter-id="EMPTY_FILTER" />
     <filter-actions connection-id="b24a7c42-f974-4d1d-b251-e19d367a212d" dataset="main.GeneralInfo" active-filter-id="EMPTY_FILTER" />
     <filter-actions connection-id="b24a7c42-f974-4d1d-b251-e19d367a212d" dataset="main.OSLOAttributen" active-filter-id="d8f7c781-48b1-400b-a422-3df87f06ce5c">
       <filter id="d8f7c781-48b1-400b-a422-3df87f06ce5c" name="''" temporary="false" custom-name="false" type="basic" join-type="AND">

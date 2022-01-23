@@ -69,18 +69,18 @@ class PrimitiveTypeTests(unittest.TestCase):
     def test_nonNegIntTests(self):
         instance = TestInstance()
 
-        self.assertIsNone(instance.theoretischeLevensduur)
+        self.assertIsNone(instance.theoretischeLevensduur.waarde)
         self.assertEquals(instance._theoretischeLevensduur.field, KwantWrdInMaand)
 
-        instance.theoretischeLevensduur = 5
-        self.assertEqual(5, instance.theoretischeLevensduur)
-        self.assertTrue(isinstance(instance.theoretischeLevensduur, int))
+        instance.theoretischeLevensduur.waarde = 5
+        self.assertEqual(5, instance.theoretischeLevensduur.waarde)
+        self.assertTrue(isinstance(instance.theoretischeLevensduur.waarde, int))
 
         with self.assertRaises(TypeError):
-            instance.theoretischeLevensduur = "1"
+            instance.theoretischeLevensduur.waarde = "1"
 
         with self.assertRaises(ValueError):
-            instance.theoretischeLevensduur = -1
+            instance.theoretischeLevensduur.waarde = -1
 
     def test_dateTests(self):
         instance = TestInstance()

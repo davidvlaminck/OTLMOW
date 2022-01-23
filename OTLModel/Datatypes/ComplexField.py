@@ -14,6 +14,8 @@ class ComplexField(OTLField, ABC):
             raise ValueError(f'This is a complex datatype. Set the values through the attributes. Use .attr_type_info() for more info')
         validation = True
         for tuple in vars(value).items():
+            if tuple[0] == '_parent':
+                continue
             waarde = tuple[0]
             attr = tuple[1]
             if not attr.field.validate(waarde, attr):

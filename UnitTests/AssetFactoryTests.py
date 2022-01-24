@@ -1,4 +1,5 @@
-﻿from unittest import TestCase
+﻿import unittest
+from unittest import TestCase
 
 from Facility.AssetFactory import AssetFactory
 from OTLModel.Classes.Aftakking import Aftakking
@@ -139,5 +140,6 @@ class AssetFactoryTests(TestCase):
         self.assertEqual('nieuwe id', orig_aftakking.assetId.identificator)
         self.assertEqual('originele id', nieuwe_aftakking.assetId.identificator)
 
+    @unittest.skip('Not implemented yet')
     def test_copy_fields_from_object_to_new_object_DotNotatie(self):
         self.assertTrue(False)

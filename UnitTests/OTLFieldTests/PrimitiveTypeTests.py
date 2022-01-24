@@ -32,11 +32,11 @@ class PrimitiveTypeTests(unittest.TestCase):
     def test_BooleanFieldTests(self):
         instance = TestInstance()
 
-        self.assertEquals(instance._isActief.field.objectUri, "http://www.w3.org/2001/XMLSchema#boolean")
+        self.assertEqual(instance._isActief.field.objectUri, "http://www.w3.org/2001/XMLSchema#boolean")
         self.assertIsNone(instance.isActief)
 
         instance.isActief = True
-        self.assertEquals(instance._isActief.field, BooleanField)
+        self.assertEqual(instance._isActief.field, BooleanField)
         self.assertTrue(instance.isActief)
         self.assertTrue(isinstance(instance.isActief, bool))
 
@@ -52,9 +52,9 @@ class PrimitiveTypeTests(unittest.TestCase):
     def test_IntegerFieldTests(self):
         instance = TestInstance()
 
-        self.assertEquals("http://www.w3.org/2001/XMLSchema#integer", instance._kabelnetToegangId.field.objectUri)
+        self.assertEqual("http://www.w3.org/2001/XMLSchema#integer", instance._kabelnetToegangId.field.objectUri)
         self.assertIsNone(instance.kabelnetToegangId)
-        self.assertEquals(instance._kabelnetToegangId.field, IntegerField)
+        self.assertEqual(instance._kabelnetToegangId.field, IntegerField)
 
         instance.kabelnetToegangId = 2
         self.assertTrue(instance.kabelnetToegangId == 2)
@@ -70,7 +70,7 @@ class PrimitiveTypeTests(unittest.TestCase):
         instance = TestInstance()
 
         self.assertIsNone(instance.theoretischeLevensduur.waarde)
-        self.assertEquals(instance._theoretischeLevensduur.field, KwantWrdInMaand)
+        self.assertEqual(instance._theoretischeLevensduur.field, KwantWrdInMaand)
 
         instance.theoretischeLevensduur.waarde = 5
         self.assertEqual(5, instance.theoretischeLevensduur.waarde)
@@ -85,9 +85,9 @@ class PrimitiveTypeTests(unittest.TestCase):
     def test_dateTests(self):
         instance = TestInstance()
 
-        self.assertEquals("http://www.w3.org/2001/XMLSchema#date", instance._datumOprichtingObject.field.objectUri)
+        self.assertEqual("http://www.w3.org/2001/XMLSchema#date", instance._datumOprichtingObject.field.objectUri)
         self.assertIsNone(instance.datumOprichtingObject)
-        self.assertEquals(instance._datumOprichtingObject.field, DateField)
+        self.assertEqual(instance._datumOprichtingObject.field, DateField)
 
         instance.datumOprichtingObject = datetime(2021, 2, 5)
         self.assertEqual(5, instance.datumOprichtingObject.day)
@@ -100,9 +100,9 @@ class PrimitiveTypeTests(unittest.TestCase):
     def test_timeTests(self):
         instance = Agent()
 
-        self.assertEquals("http://www.w3.org/2001/XMLSchema#time", instance.contactinfo.beschikbaarheid._openingstijd.field.objectUri)
+        self.assertEqual("http://www.w3.org/2001/XMLSchema#time", instance.contactinfo.beschikbaarheid._openingstijd.field.objectUri)
         self.assertIsNone(instance.contactinfo.beschikbaarheid.openingstijd)
-        self.assertEquals(instance.contactinfo.beschikbaarheid._openingstijd.field, TimeField)
+        self.assertEqual(instance.contactinfo.beschikbaarheid._openingstijd.field, TimeField)
 
         instance.contactinfo.beschikbaarheid.openingstijd = time(10, 11, 12)
         self.assertEqual(10, instance.contactinfo.beschikbaarheid.openingstijd.hour)

@@ -10,19 +10,25 @@ from OTLModel.Datatypes.DtcExterneReferentie import DtcExterneReferentie
 class AttributeInfoTests(TestCase):
     def test_info_empty_class(self):
         infoString = Aftakking().info()
-        expected = '^information about Aftakking \d{12}:\n$'
+        expected = '^information about Aftakking \d{10,12}:\n$'
         self.assertRegex(infoString, expected)
 
     def test_info_empty_class2(self):
         infoString = Verkeersregelaar().info()
-        expected = '^information about Verkeersregelaar \d{12}:\n$'
+        expected = '^information about Verkeersregelaar \d{10,12}:\n$'
         self.assertRegex(infoString, expected)
+
+    def test_attr_info_empty_class(self):
+        infoString = Verkeersregelaar().attr_info()
+        expected = '^Attribute information about Verkeersregelaar \d{10,12}:\n'
+        expected2 = 'assetId \(type: DtcIdentificator\)\n'
+        self.assertRegex(infoString, expected)
+        self.assertRegex(infoString, expected2)
 
     def test_make_string_version_empty_class(self):
         v = Verkeersregelaar()
         string_version = OTLObjectHelper().build_string_version(v, indent=4)
         expected = ''
-        print(string_version)
         self.assertEqual(string_version, expected)
 
     def test_make_string_version_StringField(self):
@@ -30,7 +36,6 @@ class AttributeInfoTests(TestCase):
         v.naam = 'VR'
         string_version = OTLObjectHelper().build_string_version(v, indent=4)
         expected = '    naam : VR'
-        print(string_version)
         self.assertEqual(string_version, expected)
 
     def test_make_string_version_DtcIdentificator(self):
@@ -39,7 +44,6 @@ class AttributeInfoTests(TestCase):
         v.assetId.toegekendDoor = 'AWV'
         string_version = OTLObjectHelper().build_string_version(v, indent=4)
         expected = '    assetId :\n        identificator : eigen_id\n        toegekendDoor : AWV'
-        print(string_version)
         self.assertEqual(string_version, expected)
 
     def test_create_dict_from_asset_DtcIdentificator(self):

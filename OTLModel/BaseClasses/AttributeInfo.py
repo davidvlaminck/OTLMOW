@@ -14,14 +14,17 @@ class AttributeInfo:
             attribuut = attribuut_naam.split('.')[0]
             rest = attribuut_naam.split('.', 1)[1]
             at = getattr(self, '_' + attribuut)
-            print(at.field)
             if at.field._uses_waarde_object:
                 return at.field.waardeObject().attr_info(rest)
             else:
                 return at.attr_info(rest)
         else:
             if attribuut_naam == '':
-                return str(self)
+                s = f'Attribute information about {self.__class__.__name__} {self.__hash__()}:\n'
+                for k, v in sorted(vars(self).items()):
+                    if v is not None:
+                        s += f'{k[1:]} (type: {v.field.naam})\n'
+                return s
             at = getattr(self, '_' + attribuut_naam)
             return str(at)
 

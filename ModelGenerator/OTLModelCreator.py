@@ -26,11 +26,11 @@ class OTLModelCreator:
     def create_full_model(self):
         self.logger.log('started creating model at ' + datetime.now().strftime("%d/%m/%Y %H:%M:%S"), logType=LogType.INFO)
         self.query_correct_base_classes()
-        # self.create_primitive_datatypes()
-        # self.create_complex_datatypes()
-        # self.create_union_datatypes()
-        # self.create_enumerations()
-        # self.create_classes()
+        self.create_primitive_datatypes()
+        self.create_complex_datatypes()
+        self.create_union_datatypes()
+        self.create_enumerations()
+        self.create_classes()
         self.create_relations()
         self.logger.log('finished creating model at ' + datetime.now().strftime("%d/%m/%Y %H:%M:%S"), logType=LogType.INFO)
 

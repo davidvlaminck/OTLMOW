@@ -1,7 +1,6 @@
 Fix
 utf-8 encoding > setting in pycharm aanpassen: UTF-8 + BOM aanzetten voor windows
 Geldige relatie lijst refactor naar isinstance met inheritance ipv alle relaties en testen: https://stackoverflow.com/questions/31488362/why-is-dict-faster-than-if-else-in-python/31488416
-ERROR:Could not create a list of GeldigeRelatie objects
 Clear other props van Dtu naar set waarde verhuizen en checken op owner.Field
 deployment/packaging: https://packaging.python.org/en/latest/guides/distributing-packages-using-setuptools/
 requirements > rdflib voor lezen ttl bestanden, Shapely voor WKT, PyVis en IPython voor visualiser en Python 3.10

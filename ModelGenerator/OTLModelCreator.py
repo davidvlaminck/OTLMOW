@@ -26,11 +26,11 @@ class OTLModelCreator:
     def create_full_model(self):
         self.logger.log('started creating model at ' + datetime.now().strftime("%d/%m/%Y %H:%M:%S"), logType=LogType.INFO)
         self.query_correct_base_classes()
-        self.create_primitive_datatypes()
-        self.create_complex_datatypes()
-        self.create_union_datatypes()
-        #self.create_enumerations()
-        self.create_classes()
+        # self.create_primitive_datatypes()
+        # self.create_complex_datatypes()
+        # self.create_union_datatypes()
+        # self.create_enumerations()
+        # self.create_classes()
         self.create_relations()
         self.logger.log('finished creating model at ' + datetime.now().strftime("%d/%m/%Y %H:%M:%S"), logType=LogType.INFO)
 
@@ -149,7 +149,7 @@ class OTLModelCreator:
             if len(dataToWrite) == 0:
                 self.logger.log(f"Could not create a list of GeldigeRelatie objects", LogType.INFO)
                 pass
-            creator.writeToFile(dataToWrite)
+            creator.writeToFile(dataToWrite, '../')
             self.logger.log(f"Created a list of GeldigeRelatie objects", LogType.INFO)
         except Exception as e:
             self.logger.log(str(e), LogType.ERROR)

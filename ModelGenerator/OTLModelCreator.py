@@ -29,7 +29,7 @@ class OTLModelCreator:
         self.create_primitive_datatypes()
         self.create_complex_datatypes()
         self.create_union_datatypes()
-        self.create_enumerations()
+        #self.create_enumerations()
         self.create_classes()
         self.create_relations()
         self.logger.log('finished creating model at ' + datetime.now().strftime("%d/%m/%Y %H:%M:%S"), logType=LogType.INFO)
@@ -46,7 +46,7 @@ class OTLModelCreator:
                                     'http://www.w3.org/2001/XMLSchema#date',
                                     'http://www.w3.org/2001/XMLSchema#nonNegativeInteger',
                                     'http://www.w3.org/2001/XMLSchema#string',
-                                    'http://www.w3.org/2001/XMLSchema#boolean'
+                                    'http://www.w3.org/2001/XMLSchema#boolean',
                                     'http://www.w3.org/2001/XMLSchema#anyURI']:
                 self.logger.log(f"Skip creating class for {primDatatype.name}", LogType.INFO)
                 continue
@@ -159,5 +159,4 @@ class OTLModelCreator:
         result = self.osloCollector.OSLOInMemoryCreator.check_on_base_classes()
         if result != 0:
             raise NewOTLBaseClassNotImplemented()
-        pass
 

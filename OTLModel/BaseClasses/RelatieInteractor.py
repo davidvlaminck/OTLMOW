@@ -13,6 +13,13 @@ class RelatieInteractor:
     def _loadGeldigeRelaties(self):
         raise NotImplementedError("initialize a RelatieValidator first")
 
+    def _showGeldigeRelaties(self):
+        self._loadGeldigeRelaties()
+        s = ''
+        for relatie in self._geldigeRelaties:
+            s += f'{relatie.bron}  ---{relatie.relatie}--> {relatie.doel}\n'
+        return s
+
     def _validateRelatiePossible(self, doelObject, relatieType: type, relatieRichting: RelatieRichting):
         if not self._relatieValidatieMogelijk:
             self._loadGeldigeRelaties()

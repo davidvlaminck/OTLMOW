@@ -12,6 +12,7 @@ def normaliseer_exoten():
     lijst_exoten = otl_facility.davieImporter.import_file(jsonPath)
 
     lijst_objecten = []
+
     # loop through all objects and create an instance of InvasieveExoten based on an existing Exoten object
     list_of_fields_to_copy = otl_facility.asset_factory.get_public_fieldlist_from_object(lijst_exoten[0])
     for exoten in lijst_exoten:

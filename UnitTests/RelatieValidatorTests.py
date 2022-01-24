@@ -194,6 +194,17 @@ class RelatieValidatorTests(unittest.TestCase):
         self.assertFalse(a._validateRelatiePossible(c, v, RelatieRichting.DOEL_BRON))
         self.assertTrue(a._validateRelatiePossible(h, v, RelatieRichting.BRON_DOEL))
 
+    def test_showGeldigeRelatieOnObject(self):
+        geldigeRelatieLijst = GeldigeRelatieLijstTestInstance()
+        validator = RelatieValidator(geldigeRelatieLijst)
+        a = Aftakking()
+        result = a._showGeldigeRelaties()
+        expected = """https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Aftakking  ---https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Voedt--> https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Hoofdschakelaar
+https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#EnergiemeterAWV  ---https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Voedt--> https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Aftakking
+https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Stroomkring  ---https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Voedt--> https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Aftakking
+"""
+        self.assertEqual(expected, result)
+
 
 class RelatieValidatorTestsUsingFacility(unittest.TestCase):
     def test_afterInitFacilityValidateRelatieOnObject(self):
@@ -207,3 +218,5 @@ class RelatieValidatorTestsUsingFacility(unittest.TestCase):
         self.assertFalse(a._validateRelatiePossible(e, v, RelatieRichting.BRON_DOEL))
         self.assertFalse(a._validateRelatiePossible(c, v, RelatieRichting.DOEL_BRON))
         self.assertTrue(a._validateRelatiePossible(h, v, RelatieRichting.BRON_DOEL))
+
+

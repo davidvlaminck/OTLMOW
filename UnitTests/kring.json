@@ -1,0 +1,9 @@
+{
+    "assetId": {
+        "identificator": "eigen_id",
+        "toegekendDoor": "Python"
+    },
+    "theoretischeLevensduur": 120,
+    "toestand": "in-gebruik",
+    "typeURI": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Stroomkring"
+}

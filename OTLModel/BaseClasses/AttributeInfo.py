@@ -22,7 +22,7 @@ class AttributeInfo:
             if attribuut_naam == '':
                 s = f'Attribute information about {self.__class__.__name__} {self.__hash__()}:\n'
                 for k, v in sorted(vars(self).items()):
-                    if v is not None:
+                    if v is not None and k != '_parent':
                         s += f'{k[1:]} (type: {v.field.naam})\n'
                 return s
             at = getattr(self, '_' + attribuut_naam)
@@ -39,6 +39,10 @@ class AttributeInfo:
                 return at.attr_type_info(rest)
         else:
             at = getattr(self, '_' + attribuut_naam)
+
             if isinstance(at.field(), KwantWrd):
                 return str(at.field()) + str(at.field.eenheid)
-            return str(at.field())
+            s = str(at.field())
+            if at.field.waardeObject is not None:
+                s += '\n\n' + at.waarde.attr_info('')
+            return s

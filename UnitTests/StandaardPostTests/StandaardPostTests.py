@@ -151,26 +151,6 @@ class StandaardPostTests(TestCase):
         ToOTLDecoder().set_value_by_dotnotatie(b, 'assetId.identificator', 'c')
         self.assertEqual('c', b.assetId.identificator)
 
-    def test_create_assets_by_standaardPost_0501(self):
-        posten = StandaardPostCollection()
-        post0501 = posten.get_by_nummer('0501.00000')
-        assets = post0501.get_assets_from_post()
-
-        self.assertEqual(1, len(assets))
-        self.assertTrue(isinstance(assets[0], Geotextiel))
-        self.assertEqual('bescherming', assets[0].type)
-
-    def test_create_assets_by_standaardPost_0602_15019(self):
-        posten = StandaardPostCollection()
-        post0602 = posten.get_by_nummer('0602.15019')
-        assets = post0602.get_assets_from_post()
-
-        self.assertEqual(1, len(assets))
-        self.assertTrue(isinstance(assets[0], BitumineuzeLaag))
-        self.assertEqual('AVS-B', assets[0].mengseltype)
-        self.assertEqual('verharding', assets[0].laagRol)
-        self.assertEqual('profileerlaag', assets[0].laagtype.profileerlaag.laagtype)
-
     def test_create_datablock_standaardPost_0501(self):
         posten = StandaardPostCollection()
         post0501 = posten.get_by_nummer('0501.00000')

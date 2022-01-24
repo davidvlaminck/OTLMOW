@@ -7,6 +7,11 @@ from PostenMapping.StandaardPost import StandaardPost
 
 class StandaardPostFactory:
     @staticmethod
+    def find_post_by_nummer(nummer: str):
+        posten_lijst = PostenLijst().lijst.values()
+        return next(p for p in posten_lijst if p.nummer == nummer)
+
+    @staticmethod
     def create_assets_from_post(post: StandaardPost):
         class_loader = ClassLoader()
         lijst = []

@@ -4,15 +4,19 @@ from OTLModel.Classes.BeschermingWapening import BeschermingWapening
 from OTLModel.Classes.BitumineuzeLaag import BitumineuzeLaag
 from OTLModel.Classes.Geotextiel import Geotextiel
 from OTLModel.Classes.Verankeringslandhoofd import Verankeringslandhoofd
+from OTLModel.Classes.Walsbetonverharding import Walsbetonverharding
+from PostenMapping.Model.Post050100000 import Post050100000
 from PostenMapping.Model.Post050200100 import Post050200100
 from PostenMapping.Model.Post050200300 import Post050200300
 from PostenMapping.Model.Post060190001 import Post060190001
+from PostenMapping.Model.Post060215019 import Post060215019
+from PostenMapping.Model.Post060423020 import Post060423020
 from PostenMapping.StandaardPostFactory import StandaardPostFactory
 
 
 class StandaardPostFactoryTests(TestCase):
     def test_create_assets_by_standaardPost_0501(self):
-        post0501 = StandaardPostFactory.find_post_by_nummer('0501.00000')
+        post0501 = Post050100000()
         assets = StandaardPostFactory.create_assets_from_post(post0501)
 
         self.assertEqual(1, len(assets))
@@ -20,8 +24,8 @@ class StandaardPostFactoryTests(TestCase):
         self.assertEqual('bescherming', assets[0].type)
 
     def test_create_assets_by_standaardPost_0602_15019(self):
-        post0602 = StandaardPostFactory.find_post_by_nummer('0602.15019')
-        assets = post0602.get_assets_from_post()
+        post0602 = Post060215019()
+        assets = StandaardPostFactory.create_assets_from_post(post0602)
 
         self.assertEqual(1, len(assets))
         self.assertTrue(isinstance(assets[0], BitumineuzeLaag))
@@ -48,3 +52,10 @@ class StandaardPostFactoryTests(TestCase):
         resultaat = StandaardPostFactory.find_posten_from_asset(b)
         self.assertEqual(1, len(resultaat))
         self.assertEqual(Post050200300().nummer, resultaat[0].nummer)
+
+    def test_find_posten_from_asset_Walsbetonverharding(self):
+        w = Walsbetonverharding()
+        w.dikte.waarde = 20
+        resultaat = StandaardPostFactory.find_posten_from_asset(w)
+        self.assertEqual(1, len(resultaat))
+        self.assertEqual(Post060423020().nummer, resultaat[0].nummer)

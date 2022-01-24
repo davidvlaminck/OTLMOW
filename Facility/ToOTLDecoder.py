@@ -58,3 +58,5 @@ class ToOTLDecoder:
                     setattr(instanceOrAttribute, key, val)
                 else:
                     setattr(instanceOrAttribute, key, value)
+
+

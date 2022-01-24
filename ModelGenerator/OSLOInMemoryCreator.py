@@ -192,3 +192,45 @@ class OSLOInMemoryCreator:
             list.append(c)
 
         return list
+
+    def check_on_base_classes(self):
+        data = self.sqlDbReader.performReadQuery(
+            """WITH inh1 AS ( SELECT uri AS org_class_uri, CASE WHEN base_uri IS NULL THEN uri ELSE base_uri END AS 
+            inheritsfrom FROM OSLOClass LEFT JOIN InternalBaseClass ON OSLOClass.uri = InternalBaseClass.class_uri WHERE 
+            abstract = 0), inh2 AS ( SELECT org_class_uri, CASE WHEN base_uri IS NULL THEN inheritsfrom ELSE base_uri END AS 
+            inheritsfrom FROM inh1 LEFT JOIN InternalBaseClass ON inh1.inheritsfrom = InternalBaseClass.class_uri), 
+            inh3 AS ( SELECT org_class_uri, CASE WHEN base_uri IS NULL THEN inheritsfrom ELSE base_uri END AS inheritsfrom FROM 
+            inh2 LEFT JOIN InternalBaseClass ON inh2.inheritsfrom = InternalBaseClass.class_uri), inh4 AS ( SELECT 
+            org_class_uri, CASE WHEN base_uri IS NULL THEN inheritsfrom ELSE base_uri END AS inheritsfrom FROM inh3 LEFT JOIN 
+            InternalBaseClass ON inh3.inheritsfrom = InternalBaseClass.class_uri), inh5 AS ( SELECT org_class_uri, 
+            CASE WHEN base_uri IS NULL THEN inheritsfrom ELSE base_uri END AS inheritsfrom FROM inh4 LEFT JOIN 
+            InternalBaseClass ON inh4.inheritsfrom = InternalBaseClass.class_uri), distinct_bases AS (SELECT DISTINCT 
+            inheritsfrom AS uri FROM inh5), selected_bases AS (SELECT * FROM distinct_bases WHERE uri IN (
+            'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#RelatieObject', 
+            'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#Derdenobject','http://purl.org/dc/terms/Agent',
+            'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMObject')), check1 AS ( SELECT 
+            distinct_bases.*, CASE WHEN class_uri IS NULL THEN uri ELSE class_uri END AS class_uri FROM distinct_bases LEFT 
+            JOIN InternalBaseClass bases_1_up ON distinct_bases.uri = bases_1_up.base_uri WHERE distinct_bases.uri NOT IN (
+            'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMDBStatus', 
+            'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMToestand')), check2 AS ( SELECT check1.uri, 
+            base_uri AS class_uri FROM check1 LEFT JOIN InternalBaseClass inh_down ON check1.class_uri = inh_down.class_uri AND 
+            check1.uri <> inh_down.base_uri AND base_uri NOT IN (
+            'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMDBStatus', 
+            'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMToestand') WHERE base_uri IS NOT NULL AND 
+            base_uri NOT IN (SELECT * FROM selected_bases)), check3 AS ( SELECT check2.uri, base_uri AS class_uri FROM check2 
+            LEFT JOIN InternalBaseClass inh_down ON check2.class_uri = inh_down.class_uri AND check2.uri <> inh_down.base_uri 
+            AND base_uri NOT IN ('https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMDBStatus', 
+            'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMToestand') WHERE base_uri IS NOT NULL AND 
+            base_uri NOT IN (SELECT * FROM selected_bases)), check4 AS ( SELECT check3.uri, base_uri AS class_uri FROM check3 
+            LEFT JOIN InternalBaseClass inh_down ON check3.class_uri = inh_down.class_uri AND check3.uri <> inh_down.base_uri 
+            AND base_uri NOT IN ('https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMDBStatus', 
+            'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMToestand') WHERE base_uri IS NOT NULL AND 
+            base_uri NOT IN (SELECT * FROM selected_bases)), check5 AS ( SELECT check4.uri, base_uri AS class_uri, 
+            * FROM check4 LEFT JOIN InternalBaseClass inh_down ON check4.class_uri = inh_down.class_uri AND check4.uri <> 
+            inh_down.base_uri AND base_uri NOT IN (
+            'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMDBStatus', 
+            'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMToestand') WHERE base_uri IS NOT NULL AND 
+            base_uri NOT IN (SELECT * FROM selected_bases)) SELECT count(*) FROM check5;""",
+            {})
+
+        return data[0][0]

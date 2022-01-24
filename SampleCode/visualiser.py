@@ -10,6 +10,7 @@ if __name__ == '__main__':
     otl_facility = OTLFacility(logger)
 
     jsonPath = "DA-2022-00006_export_slagbomen.json"
+
     slagbomen_assets = otl_facility.davieImporter.import_file(jsonPath)
 
     otl_facility.visualiser.show(slagbomen_assets)

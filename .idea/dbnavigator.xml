@@ -36,9 +36,7 @@
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
-    <open-files>
-      <object connection-id="b24a7c42-f974-4d1d-b251-e19d367a212d" object-ref="schemas/main/tables/OSLODatatypePrimitive" />
-    </open-files>
+    <open-files />
   </component>
   <component name="DBNavigator.Project.DatabaseSessionManager">
     <connection id="b24a7c42-f974-4d1d-b251-e19d367a212d" />

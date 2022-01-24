@@ -12,6 +12,11 @@ from ModelGenerator.OTLPrimitiveDatatypeCreator import OTLPrimitiveDatatypeCreat
 from ModelGenerator.OTLUnionDatatypeCreator import OTLUnionDatatypeCreator
 
 
+class NewOTLBaseClassNotImplemented(NotImplementedError):
+    pass
+
+
+
 class OTLModelCreator:
     def __init__(self, logger: AbstractLogger, osloCollector: OSLOCollector):
         self.logger = logger
@@ -20,6 +25,7 @@ class OTLModelCreator:
 
     def create_full_model(self):
         self.logger.log('started creating model at ' + datetime.now().strftime("%d/%m/%Y %H:%M:%S"), logType=LogType.INFO)
+        self.query_correct_base_classes()
         self.create_primitive_datatypes()
         self.create_complex_datatypes()
         self.create_union_datatypes()
@@ -148,3 +154,10 @@ class OTLModelCreator:
         except Exception as e:
             self.logger.log(str(e), LogType.ERROR)
             self.logger.log(f"Could not create a list of GeldigeRelatie objects", LogType.ERROR)
+
+    def query_correct_base_classes(self):
+        result = self.osloCollector.OSLOInMemoryCreator.check_on_base_classes()
+        if result != 0:
+            raise NewOTLBaseClassNotImplemented()
+        pass
+

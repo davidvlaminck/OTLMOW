@@ -196,7 +196,7 @@ class AbstractDatatypeCreatorTests(unittest.TestCase):
                              '',
                              '    @huisnummer.setter',
                              '    def huisnummer(self, value):',
-                             '        self._huisnummer.set_waarde(value)',
+                             '        self._huisnummer.set_waarde(value, owner=self._parent)',
                              '']
 
         self.assertEqual(expectedDatablock, creator.add_attributen_to_dataBlock([attribuut], []))
@@ -222,7 +222,7 @@ class AbstractDatatypeCreatorTests(unittest.TestCase):
                              '',
                              '    @toestandBuis.setter',
                              '    def toestandBuis(self, value):',
-                             '        self._toestandBuis.set_waarde(value)',
+                             '        self._toestandBuis.set_waarde(value, owner=self._parent)',
                              '']
 
         self.assertEqual(expectedDatablock, creator.add_attributen_to_dataBlock([attribuut], []))
@@ -248,7 +248,7 @@ class AbstractDatatypeCreatorTests(unittest.TestCase):
                              '',
                              '    @lengte.setter',
                              '    def lengte(self, value):',
-                             '        self._lengte.set_waarde(value)',
+                             '        self._lengte.set_waarde(value, owner=self._parent)',
                              '']
 
         self.assertEqual(expectedDatablock, creator.add_attributen_to_dataBlock([attribuut], []))
@@ -275,7 +275,7 @@ class AbstractDatatypeCreatorTests(unittest.TestCase):
                              '',
                              '    @adres.setter',
                              '    def adres(self, value):',
-                             '        self._adres.set_waarde(value)',
+                             '        self._adres.set_waarde(value, owner=self._parent)',
                              '']
 
         self.assertEqual(expectedDatablock, creator.add_attributen_to_dataBlock([attribuut], []))

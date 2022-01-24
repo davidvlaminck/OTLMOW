@@ -1,20 +1,18 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.AIMObject import AIMObject
 from OTLModel.Datatypes.KlContactorType import KlContactorType
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Contactor(AIMObject, AttributeInfo):
+class Contactor(AIMObject):
     """Toestel dat ter plaatse of op afstand aangestuurd wordt om (grote) vermogensstromen af te schakelen."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Contactor'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        AIMObject.__init__(self)
-        AttributeInfo.__init__(self)
+        super().__init__()
 
         self._type = OTLAttribuut(field=KlContactorType,
                                   naam='type',

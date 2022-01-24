@@ -1,5 +1,4 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.AIMObject import AIMObject
 from OTLModel.Datatypes.KlStopcontactAantalPolen import KlStopcontactAantalPolen
@@ -8,15 +7,14 @@ from OTLModel.Datatypes.KwantWrdInVolt import KwantWrdInVolt
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Stopcontact(AIMObject, AttributeInfo):
+class Stopcontact(AIMObject):
     """Een aansluitpunt op het elektrisch net voor afname van elektrische energie met behulp van een stekker."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Stopcontact'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        AIMObject.__init__(self)
-        AttributeInfo.__init__(self)
+        super().__init__()
 
         self._aantalPolen = OTLAttribuut(field=KlStopcontactAantalPolen,
                                          naam='aantalPolen',

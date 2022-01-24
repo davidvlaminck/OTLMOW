@@ -1,5 +1,4 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.AIMNaamObject import AIMNaamObject
 from OTLModel.Datatypes.KlGPUMerk import KlGPUMerk
@@ -7,15 +6,14 @@ from OTLModel.Datatypes.KlGPUModelnaam import KlGPUModelnaam
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class GPU(AIMNaamObject, AttributeInfo):
+class GPU(AIMNaamObject):
     """Grafische verwerkingseenheid."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#GPU'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        AIMNaamObject.__init__(self)
-        AttributeInfo.__init__(self)
+        super().__init__()
 
         self._merk = OTLAttribuut(field=KlGPUMerk,
                                   naam='merk',

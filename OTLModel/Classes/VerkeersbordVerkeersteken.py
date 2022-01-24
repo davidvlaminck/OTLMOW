@@ -1,20 +1,18 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.Verkeersteken import Verkeersteken
 from OTLModel.Datatypes.BooleanField import BooleanField
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class VerkeersbordVerkeersteken(Verkeersteken, AttributeInfo):
+class VerkeersbordVerkeersteken(Verkeersteken):
     """De voorstelling door middel van een verkeersbord van een aanwijzing ten behoeve van de weggebruikers die verbonden wordt aan het aankondigen of opleggen van een bepaalde verkeersmaatregel zoals bepaald in de wegcode."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/installatie#VerkeersbordVerkeersteken'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        AttributeInfo.__init__(self)
-        Verkeersteken.__init__(self)
+        super().__init__()
 
         self._isBeginZone = OTLAttribuut(field=BooleanField,
                                          naam='isBeginZone',

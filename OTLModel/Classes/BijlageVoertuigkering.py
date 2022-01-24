@@ -1,12 +1,11 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from abc import abstractmethod, ABC
 from OTLModel.Datatypes.DtcDocument import DtcDocument
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class BijlageVoertuigkering(ABC, AttributeInfo):
+class BijlageVoertuigkering(ABC):
     """Abstracte om bestanden te bundelen omtrent voertuigkering."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#BijlageVoertuigkering'
@@ -14,8 +13,6 @@ class BijlageVoertuigkering(ABC, AttributeInfo):
 
     @abstractmethod
     def __init__(self):
-        super().__init__()
-
         self._testrapportVoertuigkering = OTLAttribuut(field=DtcDocument,
                                                        naam='testrapportVoertuigkering',
                                                        label='testrapport voertuigkering',

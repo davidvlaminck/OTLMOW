@@ -1,12 +1,11 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from abc import abstractmethod, ABC
 from OTLModel.Datatypes.KwantWrdInCentimeter import KwantWrdInCentimeter
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class LaagDikte(ABC, AttributeInfo):
+class LaagDikte(ABC):
     """Abstracte waarmee aan een laag het attribuut dikte wordt toegekend."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#LaagDikte'
@@ -14,8 +13,6 @@ class LaagDikte(ABC, AttributeInfo):
 
     @abstractmethod
     def __init__(self):
-        super().__init__()
-
         self._dikte = OTLAttribuut(field=KwantWrdInCentimeter,
                                    naam='dikte',
                                    label='dikte',

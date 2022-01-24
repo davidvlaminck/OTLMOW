@@ -1,5 +1,4 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.AIMObject import AIMObject
 from OTLModel.Classes.Put import Put
@@ -8,7 +7,7 @@ from OTLModel.Datatypes.KwantWrdInDecimaleGraden import KwantWrdInDecimaleGraden
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class InspectieputRiolering(AIMObject, Put, AttributeInfo):
+class InspectieputRiolering(AIMObject, Put):
     """Dient om de aanwezige riolering te kunnen inspecteren, reinigen of onderhouden. """
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/installatie#InspectieputRiolering'
@@ -16,7 +15,6 @@ class InspectieputRiolering(AIMObject, Put, AttributeInfo):
 
     def __init__(self):
         AIMObject.__init__(self)
-        AttributeInfo.__init__(self)
         Put.__init__(self)
 
         self._hoekverdraaiing = OTLAttribuut(field=KwantWrdInDecimaleGraden,

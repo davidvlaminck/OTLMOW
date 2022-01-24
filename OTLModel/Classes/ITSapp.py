@@ -1,5 +1,4 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.IVRIComponent import IVRIComponent
 from OTLModel.Datatypes.KlIVRIMerkITSapp import KlIVRIMerkITSapp
@@ -7,15 +6,14 @@ from OTLModel.Datatypes.KlIVRIModelITSapp import KlIVRIModelITSapp
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class ITSapp(IVRIComponent, AttributeInfo):
+class ITSapp(IVRIComponent):
     """Functionele software component die de intelligente regel applicaties aanbiedt aan de intelligente verkeersregelaars."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#ITSapp'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        AttributeInfo.__init__(self)
-        IVRIComponent.__init__(self)
+        super().__init__()
 
         self._merk = OTLAttribuut(field=KlIVRIMerkITSapp,
                                   naam='merk',

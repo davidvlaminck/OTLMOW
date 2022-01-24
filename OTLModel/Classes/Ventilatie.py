@@ -1,5 +1,4 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from abc import abstractmethod
 from OTLModel.Classes.AIMObject import AIMObject
@@ -10,7 +9,7 @@ from OTLModel.Datatypes.KwantWrdInWatt import KwantWrdInWatt
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Ventilatie(AIMObject, AttributeInfo):
+class Ventilatie(AIMObject):
     """Abstracte voor attributen die gemeenschappelijk zijn voor verschillende types van ventilatie."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Ventilatie'
@@ -18,8 +17,7 @@ class Ventilatie(AIMObject, AttributeInfo):
 
     @abstractmethod
     def __init__(self):
-        AIMObject.__init__(self)
-        AttributeInfo.__init__(self)
+        super().__init__()
 
         self._binnendiameter = OTLAttribuut(field=KwantWrdInMillimeter,
                                             naam='binnendiameter',

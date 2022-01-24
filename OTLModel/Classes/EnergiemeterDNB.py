@@ -1,5 +1,4 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.DNBMeter import DNBMeter
 from OTLModel.Datatypes.BooleanField import BooleanField
@@ -7,15 +6,14 @@ from OTLModel.Datatypes.KlEnergiemeterDNBUurtarief import KlEnergiemeterDNBUurta
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class EnergiemeterDNB(DNBMeter, AttributeInfo):
+class EnergiemeterDNB(DNBMeter):
     """Toestel dat eigendom is van de distributienetbeheerder en in de installatie van de asset beheerder geplaatst wordt voor het meten van het energieverbruik van de betreffende installatie."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#EnergiemeterDNB'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        AttributeInfo.__init__(self)
-        DNBMeter.__init__(self)
+        super().__init__()
 
         self._isGecombineerdeEnergiemeter = OTLAttribuut(field=BooleanField,
                                                          naam='isGecombineerdeEnergiemeter',

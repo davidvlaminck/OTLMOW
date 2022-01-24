@@ -1,5 +1,4 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.Markering import Markering
 from OTLModel.Classes.AOWSType import AOWSType
@@ -11,7 +10,7 @@ from OTLModel.Datatypes.KwantWrdInVierkanteMeter import KwantWrdInVierkanteMeter
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class OverlangseMarkering(Markering, AOWSType, AttributeInfo):
+class OverlangseMarkering(Markering, AOWSType):
     """Een markering overlangs op de weg aangebracht om het verkeer te waarschuwen, informeren of regelen."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#OverlangseMarkering'
@@ -19,7 +18,6 @@ class OverlangseMarkering(Markering, AOWSType, AttributeInfo):
 
     def __init__(self):
         AOWSType.__init__(self)
-        AttributeInfo.__init__(self)
         Markering.__init__(self)
 
         self._code = OTLAttribuut(field=KlOverlangseMarkeringCode,

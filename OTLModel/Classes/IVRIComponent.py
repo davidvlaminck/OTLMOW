@@ -1,5 +1,4 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from abc import abstractmethod
 from OTLModel.Classes.Software import Software
@@ -8,7 +7,7 @@ from OTLModel.Datatypes.KlIVRIBaseline import KlIVRIBaseline
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class IVRIComponent(Software, AttributeInfo):
+class IVRIComponent(Software):
     """Abstracte die eigenschappen van de iVRI (intelligente verkeersregelaar) component bundelt."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#IVRIComponent'
@@ -16,8 +15,7 @@ class IVRIComponent(Software, AttributeInfo):
 
     @abstractmethod
     def __init__(self):
-        AttributeInfo.__init__(self)
-        Software.__init__(self)
+        super().__init__()
 
         self._baseline = OTLAttribuut(field=KlIVRIBaseline,
                                       naam='baseline',

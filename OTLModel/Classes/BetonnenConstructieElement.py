@@ -1,5 +1,4 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from abc import abstractmethod, ABC
 from OTLModel.Datatypes.DtcBetonspecificaties import DtcBetonspecificaties
@@ -8,7 +7,7 @@ from OTLModel.Datatypes.KlUitvoeringsmethode import KlUitvoeringsmethode
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class BetonnenConstructieElement(ABC, AttributeInfo):
+class BetonnenConstructieElement(ABC):
     """Bundeling van gemeenschappelijke eigenschappen van betonnen constructie-elementen."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#BetonnenConstructieElement'
@@ -16,8 +15,6 @@ class BetonnenConstructieElement(ABC, AttributeInfo):
 
     @abstractmethod
     def __init__(self):
-        super().__init__()
-
         self._betonspecificaties = OTLAttribuut(field=DtcBetonspecificaties,
                                                 naam='betonspecificaties',
                                                 label='betonspecificaties',

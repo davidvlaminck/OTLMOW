@@ -1,5 +1,4 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from abc import abstractmethod
 from OTLModel.Classes.AIMNaamObject import AIMNaamObject
@@ -9,7 +8,7 @@ from OTLModel.Datatypes.StringField import StringField
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Energiemeter(AIMNaamObject, AttributeInfo):
+class Energiemeter(AIMNaamObject):
     """Abstracte voor alle energiemeters."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Energiemeter'
@@ -17,8 +16,7 @@ class Energiemeter(AIMNaamObject, AttributeInfo):
 
     @abstractmethod
     def __init__(self):
-        AIMNaamObject.__init__(self)
-        AttributeInfo.__init__(self)
+        super().__init__()
 
         self._aantalTelwerken = OTLAttribuut(field=IntegerField,
                                              naam='aantalTelwerken',

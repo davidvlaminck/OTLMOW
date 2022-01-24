@@ -1,11 +1,6 @@
 Fix
 utf-8 encoding > setting in pycharm aanpassen: UTF-8 + BOM aanzetten voor windows
-Agent - Keuring ondersteuning > Worden niet correct gegenereerd
-RelatieObject > inherit OTLObject
-AIMObject > inherit OTLAsset
-Nakijken implementatie van Agent, Signalisatie, proef en keuring:overerving van de base class otlobject: query'en welke concrete classes NIET overerven van AIMObject > RelatieInteractor en OTL Asset toevoegen aan die assets
 Geldige relatie lijst refactor naar isinstance met inheritance ipv alle relaties en testen: https://stackoverflow.com/questions/31488362/why-is-dict-faster-than-if-else-in-python/31488416
-AttributeInfo inheritance nakijken > erft te veel keer over
 ERROR:Could not create a list of GeldigeRelatie objects
 ERROR:Could not create a class for Boolean
 ERROR:Could not create a class for AnyURI

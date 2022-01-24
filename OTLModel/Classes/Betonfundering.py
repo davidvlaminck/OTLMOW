@@ -1,5 +1,4 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from abc import abstractmethod
 from OTLModel.Classes.Fundering import Fundering
@@ -8,7 +7,7 @@ from OTLModel.Datatypes.KlFunderingBetonkwaliteit import KlFunderingBetonkwalite
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Betonfundering(Fundering, AttributeInfo):
+class Betonfundering(Fundering):
     """Abstracte voor funderingen in beton."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Betonfundering'
@@ -18,8 +17,7 @@ class Betonfundering(Fundering, AttributeInfo):
 
     @abstractmethod
     def __init__(self):
-        AttributeInfo.__init__(self)
-        Fundering.__init__(self)
+        super().__init__()
 
         self._afmetingGrondvlak = OTLAttribuut(field=DtcAfmetingBxlInM,
                                                naam='afmetingGrondvlak',

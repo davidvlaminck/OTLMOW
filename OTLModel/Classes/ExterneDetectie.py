@@ -1,5 +1,4 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.Detectie import Detectie
 from OTLModel.Datatypes.BooleanField import BooleanField
@@ -10,15 +9,14 @@ from OTLModel.Datatypes.KlExternedetectieCommunicatiewijze import KlExternedetec
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class ExterneDetectie(Detectie, AttributeInfo):
+class ExterneDetectie(Detectie):
     """Inputsignalen bv. van een brug of een overweg, die door een externe partij doorgegeven worden teneinde de verkeersregelaar aan te sturen. Dit object wordt niet gebruikt voor eigen lussen van een ander kruispunt."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#ExterneDetectie'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        AttributeInfo.__init__(self)
-        Detectie.__init__(self)
+        super().__init__()
 
         self._aangeslotenToestel = OTLAttribuut(field=KlExternedetectieAangeslotentoestel,
                                                 naam='aangeslotenToestel',

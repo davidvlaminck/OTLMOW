@@ -1,5 +1,4 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.AIMObject import AIMObject
 from OTLModel.Datatypes.DtcDocument import DtcDocument
@@ -10,15 +9,14 @@ from OTLModel.Datatypes.KwantWrdInMillimeter import KwantWrdInMillimeter
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Buisbekleding(AIMObject, AttributeInfo):
+class Buisbekleding(AIMObject):
     """De bekleding of coating ter bescherming van de buis."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Buisbekleding'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        AIMObject.__init__(self)
-        AttributeInfo.__init__(self)
+        super().__init__()
 
         self._laagdikte = OTLAttribuut(field=KwantWrdInMillimeter,
                                        naam='laagdikte',

@@ -1,11 +1,10 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.SoortenrijkSchraalGraslandGraslandfase5 import SoortenrijkSchraalGraslandGraslandfase5
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class HeischraalGrasland(SoortenrijkSchraalGraslandGraslandfase5, AttributeInfo):
+class HeischraalGrasland(SoortenrijkSchraalGraslandGraslandfase5):
     """G5d - blauwe knoop, blauwe zegge, bleeksporig
 bosviooltje, bleke zegge, borstelgras, dicht
 havikskruid, echte guldenroede, fijn
@@ -24,5 +23,4 @@ welriekende nachtorchis."""
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        AttributeInfo.__init__(self)
-        SoortenrijkSchraalGraslandGraslandfase5.__init__(self)
+        super().__init__()

@@ -1,12 +1,11 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from abc import abstractmethod, ABC
 from OTLModel.Datatypes.KlVerlichtingstoestelconnectorBesturingsconnector import KlVerlichtingstoestelconnectorBesturingsconnector
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class VerlichtingstoestelConnector(ABC, AttributeInfo):
+class VerlichtingstoestelConnector(ABC):
     """Abstracte om een besturingsconnector toe te voegen aan een WV-toestel."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#VerlichtingstoestelConnector'
@@ -14,8 +13,6 @@ class VerlichtingstoestelConnector(ABC, AttributeInfo):
 
     @abstractmethod
     def __init__(self):
-        super().__init__()
-
         self._besturingsconnector = OTLAttribuut(field=KlVerlichtingstoestelconnectorBesturingsconnector,
                                                  naam='besturingsconnector',
                                                  label='besturingsconnector',

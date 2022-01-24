@@ -1,20 +1,18 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.Bebakening import Bebakening
 from OTLModel.Datatypes.KlWegreflectorType import KlWegreflectorType
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Wegreflector(Bebakening, AttributeInfo):
+class Wegreflector(Bebakening):
     """Heeft als doel de zichtbaarheid van verkeerseilanden te verhogen en geleiding van de weggebruiker langs de weg."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Wegreflector'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        AttributeInfo.__init__(self)
-        Bebakening.__init__(self)
+        super().__init__()
 
         self._type = OTLAttribuut(field=KlWegreflectorType,
                                   naam='type',

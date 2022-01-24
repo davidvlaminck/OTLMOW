@@ -1,5 +1,4 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.NietWeggebondenDetectie import NietWeggebondenDetectie
 from OTLModel.Classes.TypeWeggebruiker import TypeWeggebruiker
@@ -9,14 +8,13 @@ from OTLModel.Datatypes.KlDetectiecameraModelnaam import KlDetectiecameraModelna
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class DetectieCamera(NietWeggebondenDetectie, TypeWeggebruiker, AttributeInfo):
+class DetectieCamera(NietWeggebondenDetectie, TypeWeggebruiker):
     """Deze camera's worden onder andere opgesteld op kruispunten om de aanwezigheid van voertuigen te detecteren. De detectie kan optisch en/of thermografisch gebeuren. """
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DetectieCamera'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        AttributeInfo.__init__(self)
         NietWeggebondenDetectie.__init__(self)
         TypeWeggebruiker.__init__(self)
 

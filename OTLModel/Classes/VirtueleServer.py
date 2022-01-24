@@ -1,5 +1,4 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.HardwareToegang import HardwareToegang
 from OTLModel.Datatypes.KlVirtueleServerMerk import KlVirtueleServerMerk
@@ -7,15 +6,14 @@ from OTLModel.Datatypes.KlVirtueleServerModelnaam import KlVirtueleServerModelna
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class VirtueleServer(HardwareToegang, AttributeInfo):
+class VirtueleServer(HardwareToegang):
     """Gedeelte van een fysieke server, dat zich met behulp van software gedraagt als een 'echte' server."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#VirtueleServer'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        AttributeInfo.__init__(self)
-        HardwareToegang.__init__(self)
+        super().__init__()
 
         self._merk = OTLAttribuut(field=KlVirtueleServerMerk,
                                   naam='merk',

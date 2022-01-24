@@ -1,5 +1,4 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from abc import abstractmethod
 from OTLModel.Classes.ConstructieElement import ConstructieElement
@@ -11,7 +10,7 @@ from OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class StalenProfiel(ConstructieElement, StalenConstructieElement, ConstructieElementenGC, AttributeInfo):
+class StalenProfiel(ConstructieElement, StalenConstructieElement, ConstructieElementenGC):
     """Bundeling van gemeenschappelijke eigenschappen van standaard en niet-standaard stalen profiel."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#StalenProfiel'
@@ -19,7 +18,6 @@ class StalenProfiel(ConstructieElement, StalenConstructieElement, ConstructieEle
 
     @abstractmethod
     def __init__(self):
-        AttributeInfo.__init__(self)
         ConstructieElement.__init__(self)
         ConstructieElementenGC.__init__(self)
         StalenConstructieElement.__init__(self)

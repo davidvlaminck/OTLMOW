@@ -1,5 +1,4 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from abc import abstractmethod
 from OTLModel.Classes.AfschermendeConstructie import AfschermendeConstructie
@@ -7,7 +6,7 @@ from OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class AansluitendeConstructie(AfschermendeConstructie, AttributeInfo):
+class AansluitendeConstructie(AfschermendeConstructie):
     """Abstracte die alle aansluitende constructies bundelt."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#AansluitendeConstructie'
@@ -15,8 +14,7 @@ class AansluitendeConstructie(AfschermendeConstructie, AttributeInfo):
 
     @abstractmethod
     def __init__(self):
-        AfschermendeConstructie.__init__(self)
-        AttributeInfo.__init__(self)
+        super().__init__()
 
         self._totaleLengte = OTLAttribuut(field=KwantWrdInMeter,
                                           naam='totaleLengte',

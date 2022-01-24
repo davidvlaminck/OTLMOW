@@ -1,5 +1,4 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.SelNietSelLus import SelNietSelLus
 from OTLModel.Datatypes.BooleanField import BooleanField
@@ -8,15 +7,14 @@ from OTLModel.Datatypes.KlSelLusVerbinding import KlSelLusVerbinding
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class SelectieveDetectielus(SelNietSelLus, AttributeInfo):
+class SelectieveDetectielus(SelNietSelLus):
     """De selectieve detectielussen moeten bepaalde voertuigen toelaten het kruispunt prioritair te dwarsen. Daarvoor zijn die prioritaire voertuigen uitgerust met een zendtoestel dat gecodeerd informatie doorstuurt naar een datalus in het wegdek. Deze lus is verbonden met een demodulator die de informatie decodeert en doorstuurt naar de verkeersregelaar van het te dwarsen kruispunt"""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#SelectieveDetectielus'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        AttributeInfo.__init__(self)
-        SelNietSelLus.__init__(self)
+        super().__init__()
 
         self._heeftMeerdereKruisingen = OTLAttribuut(field=BooleanField,
                                                      naam='heeftMeerdereKruisingen',

@@ -1,12 +1,11 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from abc import abstractmethod, ABC
 from OTLModel.Datatypes.StringField import StringField
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class FirmwareObject(ABC, AttributeInfo):
+class FirmwareObject(ABC):
     """Abstracte voor de firmware van het object."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#FirmwareObject'
@@ -14,8 +13,6 @@ class FirmwareObject(ABC, AttributeInfo):
 
     @abstractmethod
     def __init__(self):
-        super().__init__()
-
         self._firmwareversie = OTLAttribuut(field=StringField,
                                             naam='firmwareversie',
                                             label='firmwareversie',

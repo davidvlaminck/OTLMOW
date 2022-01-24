@@ -1,5 +1,4 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from abc import abstractmethod
 from OTLModel.Classes.Draagconstructie import Draagconstructie
@@ -7,7 +6,7 @@ from OTLModel.Datatypes.KlEMDraagconstructieElekBeveiliging import KlEMDraagcons
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class EMDraagconstructie(Draagconstructie, AttributeInfo):
+class EMDraagconstructie(Draagconstructie):
     """Abstracte voor een elektromechanisch (EM) dragend element (bv. paal, kolom, seinbrug, galgpaal) waaraan EM-toestellen bevestigd kunnen worden."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#EMDraagconstructie'
@@ -15,8 +14,7 @@ class EMDraagconstructie(Draagconstructie, AttributeInfo):
 
     @abstractmethod
     def __init__(self):
-        AttributeInfo.__init__(self)
-        Draagconstructie.__init__(self)
+        super().__init__()
 
         self._elektrischeBeveiliging = OTLAttribuut(field=KlEMDraagconstructieElekBeveiliging,
                                                     naam='elektrischeBeveiliging',

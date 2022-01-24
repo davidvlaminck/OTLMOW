@@ -1,5 +1,4 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.Fundering import Fundering
 from OTLModel.Datatypes.BooleanField import BooleanField
@@ -10,15 +9,14 @@ from OTLModel.Datatypes.KwantWrdInKubiekeMeter import KwantWrdInKubiekeMeter
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Funderingsmassief(Fundering, AttributeInfo):
+class Funderingsmassief(Fundering):
     """Een fundering waarop een klein(er) object geplaatst wordt of er (in principe) onlosmakelijk in vastgezet wordt (vb.: een paal/een steun, een kleine sokkel,...) Als het grotere constructie-elementen betreft (vb.: een pijler, een gebouw,...), moeten andere onderdelen van fundering gebruikt worden."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Funderingsmassief'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        AttributeInfo.__init__(self)
-        Fundering.__init__(self)
+        super().__init__()
 
         self._afmetingGrondvlak = OTLAttribuut(field=DtuAfmetingGrondvlak,
                                                naam='afmetingGrondvlak',

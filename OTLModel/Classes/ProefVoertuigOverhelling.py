@@ -1,12 +1,11 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.Proef import Proef
 from OTLModel.Datatypes.KlLEACVoertuigOverhelling import KlLEACVoertuigOverhelling
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class ProefVoertuigOverhelling(Proef, AttributeInfo):
+class ProefVoertuigOverhelling(Proef):
     """Proef om de overhelling over de bebakening van het voertuig te bepalen bij impact."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefVoertuigOverhelling'
@@ -15,8 +14,7 @@ class ProefVoertuigOverhelling(Proef, AttributeInfo):
     deprecated_version = '2.0.0'
 
     def __init__(self):
-        AttributeInfo.__init__(self)
-        Proef.__init__(self)
+        super().__init__()
 
         self._voertuigOverhelling = OTLAttribuut(field=KlLEACVoertuigOverhelling,
                                                  naam='voertuigOverhelling',

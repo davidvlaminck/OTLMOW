@@ -1,5 +1,4 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.ConstructieElement import ConstructieElement
 from OTLModel.Classes.BetonnenConstructieElement import BetonnenConstructieElement
@@ -10,14 +9,13 @@ from OTLModel.Datatypes.KlPlaatsingswijzePlint import KlPlaatsingswijzePlint
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class PlintGC(ConstructieElement, BetonnenConstructieElement, ConstructieElementenGC, AttributeInfo):
+class PlintGC(ConstructieElement, BetonnenConstructieElement, ConstructieElementenGC):
     """Een plint is een betonnen balk/plaat die de akoestische dichtheid verzekert tussen de schermelementen van de geluidswerende constructie en de bodem."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#PlintGC'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        AttributeInfo.__init__(self)
         BetonnenConstructieElement.__init__(self)
         ConstructieElement.__init__(self)
         ConstructieElementenGC.__init__(self)

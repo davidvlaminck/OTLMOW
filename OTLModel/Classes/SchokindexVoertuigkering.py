@@ -1,12 +1,11 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from abc import abstractmethod, ABC
 from OTLModel.Datatypes.KlLEACSchokindex import KlLEACSchokindex
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class SchokindexVoertuigkering(ABC, AttributeInfo):
+class SchokindexVoertuigkering(ABC):
     """Abstracte waarin de resultaten van de proef voor de bepaling van de schokindex parameter worden bijgehouden."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#SchokindexVoertuigkering'
@@ -14,8 +13,6 @@ class SchokindexVoertuigkering(ABC, AttributeInfo):
 
     @abstractmethod
     def __init__(self):
-        super().__init__()
-
         self._schokindex = OTLAttribuut(field=KlLEACSchokindex,
                                         naam='schokindex',
                                         label='schokindex',

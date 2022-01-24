@@ -1,5 +1,4 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.SelNietSelLus import SelNietSelLus
 from OTLModel.Datatypes.BooleanField import BooleanField
@@ -8,15 +7,14 @@ from OTLModel.Datatypes.KlVriLusSoortvoertuig import KlVriLusSoortvoertuig
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class NietSelectieveDetectielus(SelNietSelLus, AttributeInfo):
+class NietSelectieveDetectielus(SelNietSelLus):
     """Een niet-selectieve detectielus werkt onder invloed van een wijziging in de zelfinductie van een lus in het wegdek wanneer het metaal van een voertuig binnen het gevoeligheidsgebied van de lus komt. """
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#NietSelectieveDetectielus'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        AttributeInfo.__init__(self)
-        SelNietSelLus.__init__(self)
+        super().__init__()
 
         self._functie = OTLAttribuut(field=KlVriLusFunctie,
                                      naam='functie',

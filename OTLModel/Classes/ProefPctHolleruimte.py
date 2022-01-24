@@ -1,20 +1,18 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.Proef import Proef
 from OTLModel.Datatypes.DtcDocument import DtcDocument
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class ProefPctHolleruimte(Proef, AttributeInfo):
+class ProefPctHolleruimte(Proef):
     """Proef om het percentage holle ruimte in een bitumineuze laag te bepalen."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefPctHolleruimte'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        AttributeInfo.__init__(self)
-        Proef.__init__(self)
+        super().__init__()
 
         self._pctHolleruimte = OTLAttribuut(field=DtcDocument,
                                             naam='pctHolleruimte',

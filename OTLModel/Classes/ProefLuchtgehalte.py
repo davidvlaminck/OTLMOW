@@ -1,20 +1,18 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.Proef import Proef
 from OTLModel.Datatypes.DtcDocument import DtcDocument
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class ProefLuchtgehalte(Proef, AttributeInfo):
+class ProefLuchtgehalte(Proef):
     """Proef die de hoeveelheid lucht bepaalt  in vers beton met de drukmethode volgens NBN EN 12350-7."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefLuchtgehalte'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        AttributeInfo.__init__(self)
-        Proef.__init__(self)
+        super().__init__()
 
         self._luchtgehalte = OTLAttribuut(field=DtcDocument,
                                           naam='luchtgehalte',

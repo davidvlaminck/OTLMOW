@@ -1,5 +1,4 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.Markering import Markering
 from OTLModel.Classes.AOWSType import AOWSType
@@ -10,7 +9,7 @@ from OTLModel.Datatypes.KwantWrdInVierkanteMeter import KwantWrdInVierkanteMeter
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class LijnvormigElementMarkering(Markering, AOWSType, AttributeInfo):
+class LijnvormigElementMarkering(Markering, AOWSType):
     """Een markering van een lijnvormig element om de zichtbaarheid te verhogen om het verkeer te waarschuwen, informeren of regelen."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#LijnvormigElementMarkering'
@@ -18,7 +17,6 @@ class LijnvormigElementMarkering(Markering, AOWSType, AttributeInfo):
 
     def __init__(self):
         AOWSType.__init__(self)
-        AttributeInfo.__init__(self)
         Markering.__init__(self)
 
         self._code = OTLAttribuut(field=KlLEMarkeringCode,

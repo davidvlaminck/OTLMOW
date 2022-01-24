@@ -1,11 +1,10 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from abc import abstractmethod, ABC
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Signalisatie(ABC, AttributeInfo):
+class Signalisatie(ABC):
     """Abstracte voor de gemeenschappelijke eigenschappen en relaties van signalisatie-elementen."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Signalisatie'
@@ -13,4 +12,4 @@ class Signalisatie(ABC, AttributeInfo):
 
     @abstractmethod
     def __init__(self):
-        super().__init__()
+        pass

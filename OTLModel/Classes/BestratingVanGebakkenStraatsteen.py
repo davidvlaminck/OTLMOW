@@ -1,5 +1,4 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.Bestrating import Bestrating
 from OTLModel.Datatypes.KlFormaatGebakkenStraatsteen import KlFormaatGebakkenStraatsteen
@@ -7,15 +6,14 @@ from OTLModel.Datatypes.KlStandaardkwaliteitsklasse import KlStandaardkwaliteits
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class BestratingVanGebakkenStraatsteen(Bestrating, AttributeInfo):
+class BestratingVanGebakkenStraatsteen(Bestrating):
     """Gebakken straatstenen zijn straatstenen, in hoofdzaak vervaardigd uit klei al dan niet gemengd met leem, zand, brandstoffen of andere toeslagstoffen."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#BestratingVanGebakkenStraatsteen'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        AttributeInfo.__init__(self)
-        Bestrating.__init__(self)
+        super().__init__()
 
         self._formaatVanBestratingselement = OTLAttribuut(field=KlFormaatGebakkenStraatsteen,
                                                           naam='formaatVanBestratingselement',

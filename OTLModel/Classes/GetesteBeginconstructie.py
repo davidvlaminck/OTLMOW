@@ -1,5 +1,4 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.SchokindexVoertuigkering import SchokindexVoertuigkering
 from OTLModel.Classes.Beginstuk import Beginstuk
@@ -7,14 +6,13 @@ from OTLModel.Datatypes.KlLEACPerformantieklasse import KlLEACPerformantieklasse
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class GetesteBeginconstructie(SchokindexVoertuigkering, Beginstuk, AttributeInfo):
+class GetesteBeginconstructie(SchokindexVoertuigkering, Beginstuk):
     """Een gecertificeerd begin aan een geleideconstructie,met als doel de ernst van een frontale botsing te reduceren aan de stroomopwaartse zijde ten opzichte van de meest nabij gelegen rijstrook."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#GetesteBeginconstructie'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        AttributeInfo.__init__(self)
         Beginstuk.__init__(self)
         SchokindexVoertuigkering.__init__(self)
 

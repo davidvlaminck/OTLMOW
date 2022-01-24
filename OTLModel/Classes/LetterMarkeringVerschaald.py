@@ -1,5 +1,4 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.FiguratieMarkeringToegang import FiguratieMarkeringToegang
 from OTLModel.Datatypes.FloatOrDecimalField import FloatOrDecimalField
@@ -9,15 +8,14 @@ from OTLModel.Datatypes.KwantWrdInVierkanteMeter import KwantWrdInVierkanteMeter
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class LetterMarkeringVerschaald(FiguratieMarkeringToegang, AttributeInfo):
+class LetterMarkeringVerschaald(FiguratieMarkeringToegang):
     """Een markering bestaande uit letters die een verschaling ondergaat zoals een vergroting en/of een verkleining."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#LetterMarkeringVerschaald'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        AttributeInfo.__init__(self)
-        FiguratieMarkeringToegang.__init__(self)
+        super().__init__()
 
         self._basisOppervlakte = OTLAttribuut(field=KwantWrdInVierkanteMeter,
                                               naam='basisOppervlakte',

@@ -1,5 +1,4 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.SoftwareToegang import SoftwareToegang
 from OTLModel.Datatypes.DtcDocument import DtcDocument
@@ -10,15 +9,14 @@ from OTLModel.Datatypes.URIField import URIField
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Software(SoftwareToegang, AttributeInfo):
+class Software(SoftwareToegang):
     """Geheel van computerprogramma's met bijbehorende data."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Software'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        AttributeInfo.__init__(self)
-        SoftwareToegang.__init__(self)
+        super().__init__()
 
         self._aangebodenServices = OTLAttribuut(field=DtcDocument,
                                                 naam='aangebodenServices',

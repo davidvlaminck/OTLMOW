@@ -1,5 +1,4 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.Straatmeubilair import Straatmeubilair
 from OTLModel.Datatypes.AntiParkeerpaalType import AntiParkeerpaalType
@@ -8,15 +7,14 @@ from OTLModel.Datatypes.KlPlaatsingswijze import KlPlaatsingswijze
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class AntiParkeerpaal(Straatmeubilair, AttributeInfo):
+class AntiParkeerpaal(Straatmeubilair):
     """Een paal met als doel het parkeren te verhinderen."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#AntiParkeerpaal'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        AttributeInfo.__init__(self)
-        Straatmeubilair.__init__(self)
+        super().__init__()
 
         self._materiaal = OTLAttribuut(field=KlAntiparkeerpaalMateriaal,
                                        naam='materiaal',

@@ -1,20 +1,18 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.Proef import Proef
 from OTLModel.Datatypes.DtcDocument import DtcDocument
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class ProefRetroreflectie(Proef, AttributeInfo):
+class ProefRetroreflectie(Proef):
     """Het bepalen van de retroreflectiecoëfficiënt via een manuele retroreflectometer of via labotesten."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefRetroreflectie'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        AttributeInfo.__init__(self)
-        Proef.__init__(self)
+        super().__init__()
 
         self._retroreflectie = OTLAttribuut(field=DtcDocument,
                                             naam='retroreflectie',

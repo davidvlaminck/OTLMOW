@@ -1,5 +1,4 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.AIMNaamObject import AIMNaamObject
 from OTLModel.Datatypes.DtcDocument import DtcDocument
@@ -7,15 +6,14 @@ from OTLModel.Datatypes.KwantWrdInAmpere import KwantWrdInAmpere
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Laagspanningsbord(AIMNaamObject, AttributeInfo):
+class Laagspanningsbord(AIMNaamObject):
     """Verzameling van alle elektrische componenten nodig voor de voeding en sturing van applicaties die erop aangesloten zijn. Omvat onder andere automaten,klemmenblokken,..."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Laagspanningsbord'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        AIMNaamObject.__init__(self)
-        AttributeInfo.__init__(self)
+        super().__init__()
 
         self._elektrischSchema = OTLAttribuut(field=DtcDocument,
                                               naam='elektrischSchema',

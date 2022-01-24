@@ -1,12 +1,11 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.Grasland import Grasland
 from OTLModel.Datatypes.KlNSB import KlNSB
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class GrasKruidenmixGraslandfase3(Grasland, AttributeInfo):
+class GrasKruidenmixGraslandfase3(Grasland):
     """G3 - Fijn mozaïek van grassen en kruiden zoals:
 beemdlangbloem, gewone berenklauw,
 gewoon duizendblad, gewoon reukgras,
@@ -22,8 +21,7 @@ veldgerst, vijfvingerkruid."""
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        AttributeInfo.__init__(self)
-        Grasland.__init__(self)
+        super().__init__()
 
         self._huidigNatuurbeeld = OTLAttribuut(field=KlNSB,
                                                naam='huidigNatuurbeeld',

@@ -1,5 +1,4 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.AIMObject import AIMObject
 from OTLModel.Datatypes.IntegerField import IntegerField
@@ -7,15 +6,14 @@ from OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Verankeringslandhoofd(AIMObject, AttributeInfo):
+class Verankeringslandhoofd(AIMObject):
     """De verankeringsconstructie aan het einde van een cementbetonverharding."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Verankeringslandhoofd'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        AIMObject.__init__(self)
-        AttributeInfo.__init__(self)
+        super().__init__()
 
         self._breedte = OTLAttribuut(field=KwantWrdInMeter,
                                      naam='breedte',

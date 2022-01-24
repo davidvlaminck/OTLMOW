@@ -1,5 +1,4 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from abc import abstractmethod, ABC
 from OTLModel.Datatypes.DtcConstructiestaalspecificaties import DtcConstructiestaalspecificaties
@@ -7,7 +6,7 @@ from OTLModel.Datatypes.KwantWrdInKilogram import KwantWrdInKilogram
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class StalenConstructieElement(ABC, AttributeInfo):
+class StalenConstructieElement(ABC):
     """Bundeling van gemeenschappelijke eigenschappen van stalen constructie-elementen."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#StalenConstructieElement'
@@ -15,8 +14,6 @@ class StalenConstructieElement(ABC, AttributeInfo):
 
     @abstractmethod
     def __init__(self):
-        super().__init__()
-
         self._staalspecificaties = OTLAttribuut(field=DtcConstructiestaalspecificaties,
                                                 naam='staalspecificaties',
                                                 label='staalspecificaties',

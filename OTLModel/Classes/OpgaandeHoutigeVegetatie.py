@@ -1,5 +1,4 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.HoutigeVegetatie import HoutigeVegetatie
 from OTLModel.Datatypes.KlGroeiplaatsverbetering import KlGroeiplaatsverbetering
@@ -8,15 +7,14 @@ from OTLModel.Datatypes.KlNSB import KlNSB
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class OpgaandeHoutigeVegetatie(HoutigeVegetatie, AttributeInfo):
+class OpgaandeHoutigeVegetatie(HoutigeVegetatie):
     """Een houtkant of een bos."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#OpgaandeHoutigeVegetatie'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        AttributeInfo.__init__(self)
-        HoutigeVegetatie.__init__(self)
+        super().__init__()
 
         self._groeiplaatsverbetering = OTLAttribuut(field=KlGroeiplaatsverbetering,
                                                     naam='groeiplaatsverbetering',

@@ -1,5 +1,4 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.AndereLaag import AndereLaag
 from OTLModel.Datatypes.KlKleurSupp import KlKleurSupp
@@ -8,15 +7,14 @@ from OTLModel.Datatypes.KlSlemlaagsoort import KlSlemlaagsoort
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Slemlaag(AndereLaag, AttributeInfo):
+class Slemlaag(AndereLaag):
     """Een slemlaag (slem) is een oppervlaktebehandeling die bestaat uit een mengsel dat ter plaatse bereid en verwerkt wordt."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slemlaag'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        AndereLaag.__init__(self)
-        AttributeInfo.__init__(self)
+        super().__init__()
 
         self._kleur = OTLAttribuut(field=KlKleurSupp,
                                    naam='kleur',

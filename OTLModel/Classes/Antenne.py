@@ -1,5 +1,4 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.Communicatieapparatuur import Communicatieapparatuur
 from OTLModel.Datatypes.KlAntenneFrequentierange import KlAntenneFrequentierange
@@ -8,15 +7,14 @@ from OTLModel.Datatypes.KlAntenneModelnaam import KlAntenneModelnaam
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Antenne(Communicatieapparatuur, AttributeInfo):
+class Antenne(Communicatieapparatuur):
     """Toestel verbonden met een zender of ontvanger ten behoeve van het opvangen of verspreiden van signalen."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Antenne'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        AttributeInfo.__init__(self)
-        Communicatieapparatuur.__init__(self)
+        super().__init__()
 
         self._frequentierange = OTLAttribuut(field=KlAntenneFrequentierange,
                                              naam='frequentierange',

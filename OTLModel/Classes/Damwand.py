@@ -1,5 +1,4 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.ConstructieElement import ConstructieElement
 from OTLModel.Datatypes.BooleanField import BooleanField
@@ -9,15 +8,14 @@ from OTLModel.Datatypes.KwantWrdInVierkanteMeter import KwantWrdInVierkanteMeter
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Damwand(ConstructieElement, AttributeInfo):
+class Damwand(ConstructieElement):
     """Een grond- en/of waterkerende constructie, die bestaat uit een verticaal in de grond geplaatste wand."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Damwand'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        AttributeInfo.__init__(self)
-        ConstructieElement.__init__(self)
+        super().__init__()
 
         self._isWaterdicht = OTLAttribuut(field=BooleanField,
                                           naam='isWaterdicht',

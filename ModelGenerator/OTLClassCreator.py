@@ -18,7 +18,7 @@ class OTLClassCreator(AbstractDatatypeCreator):
 
         if osloClass.objectUri == '' or not (
                 osloClass.objectUri.startswith('https://wegenenverkeer.data.vlaanderen.be/ns/') or osloClass.objectUri.startswith(
-                'http://purl.org/dc/terms')):
+            'http://purl.org/dc/terms')):
             raise ValueError(f"OSLOClass.objectUri is invalid. Value = '{osloClass.objectUri}'")
 
         if osloClass.name == '':
@@ -30,15 +30,30 @@ class OTLClassCreator(AbstractDatatypeCreator):
         attributen = self.osloCollector.FindAttributesByClass(osloClass)
         inheritances = self.osloCollector.FindInheritancesByClass(osloClass)
 
-        if osloClass.objectUri == 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMObject':
+        if osloClass.objectUri in ['https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMObject',
+                                   'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#Derdenobject']:
+            inheritances.append(
+                Inheritance(base_name='AttributeInfo', base_uri='', class_name='', class_uri='', deprecated_version=''))
             inheritances.append(
                 Inheritance(base_name='OTLAsset', base_uri='', class_name='', class_uri='', deprecated_version=''))
             inheritances.append(
                 Inheritance(base_name='RelatieInteractor', base_uri='', class_name='', class_uri='', deprecated_version=''))
 
-        datablock = ['# coding=utf-8',
-                     'from OTLModel.BaseClasses.AttributeInfo import AttributeInfo',
-                     'from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut']
+        elif osloClass.objectUri == 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#RelatieObject':
+            inheritances.append(
+                Inheritance(base_name='AttributeInfo', base_uri='', class_name='', class_uri='', deprecated_version=''))
+            inheritances.append(
+                Inheritance(base_name='OTLObject', base_uri='', class_name='', class_uri='', deprecated_version=''))
+
+        elif osloClass.objectUri == 'http://purl.org/dc/terms/Agent':
+            inheritances.append(
+                Inheritance(base_name='AttributeInfo', base_uri='', class_name='', class_uri='', deprecated_version=''))
+            inheritances.append(
+                Inheritance(base_name='OTLObject', base_uri='', class_name='', class_uri='', deprecated_version=''))
+            inheritances.append(
+                Inheritance(base_name='RelatieInteractor', base_uri='', class_name='', class_uri='', deprecated_version=''))
+
+        datablock = ['# coding=utf-8', 'from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut']
 
         if osloClass.abstract == 1:
             if len(inheritances) > 0:
@@ -48,12 +63,10 @@ class OTLClassCreator(AbstractDatatypeCreator):
 
         if len(inheritances) > 0:
             for inheritance in inheritances:
-                if inheritance.base_name == 'OTLAsset' or inheritance.base_name == 'RelatieInteractor':
+                if inheritance.base_name in ['OTLAsset', 'OTLObject', 'RelatieInteractor', 'AttributeInfo']:
                     datablock.append(f'from OTLModel.BaseClasses.{inheritance.base_name} import {inheritance.base_name}')
                 else:
                     datablock.append(f'from OTLModel.Classes.{inheritance.base_name} import {inheritance.base_name}')
-
-        inheritances.append(Inheritance(base_name='AttributeInfo', class_name=osloClass.name, base_uri='', class_uri='', deprecated_version=''))
 
         if any(atr.readonly == 1 for atr in attributen):
             raise NotImplementedError("readonly property is assumed to be 0 on value fields")
@@ -97,11 +110,12 @@ class OTLClassCreator(AbstractDatatypeCreator):
         return datablock
 
     def getClassLineFromClassAndInheritances(self, osloClass, inheritances):
-        if osloClass.abstract == 0 and len(inheritances) <= 1:
-            return f'class {osloClass.name}:(AttributeInfo)'
-        if osloClass.abstract == 1 and len(inheritances) <= 1:
-            return f'class {osloClass.name}(ABC, AttributeInfo):'
-        if len(inheritances) > 1:
+        if osloClass.abstract == 0 and len(inheritances) == 0:
+            raise NotImplementedError(f"{osloClass.objectUri} class structure not implemented")
+            # return f'class {osloClass.name}:'
+        if osloClass.abstract == 1 and len(inheritances) == 0:
+            return f'class {osloClass.name}(ABC):'
+        if len(inheritances) > 0:
             line = f'class {osloClass.name}('
             for inheritance in inheritances:
                 line += inheritance.base_name + ', '

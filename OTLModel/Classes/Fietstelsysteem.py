@@ -1,5 +1,4 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.AIMNaamObject import AIMNaamObject
 from OTLModel.Datatypes.DtcAfmetingBxlxhInMm import DtcAfmetingBxlxhInMm
@@ -9,15 +8,14 @@ from OTLModel.Datatypes.KlFietstelsysteemModelnaam import KlFietstelsysteemModel
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Fietstelsysteem(AIMNaamObject, AttributeInfo):
+class Fietstelsysteem(AIMNaamObject):
     """Toestel bij de fietstelinstallatie dat gegevens van detectielussen over passerende fietsers verzamelt en verwerkt."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Fietstelsysteem'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        AIMNaamObject.__init__(self)
-        AttributeInfo.__init__(self)
+        super().__init__()
 
         self._afmetingen = OTLAttribuut(field=DtcAfmetingBxlxhInMm,
                                         naam='afmetingen',

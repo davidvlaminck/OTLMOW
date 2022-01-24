@@ -1,20 +1,18 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.Proef import Proef
 from OTLModel.Datatypes.KwantWrdInCelsius import KwantWrdInCelsius
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class ProefTemperatuur(Proef, AttributeInfo):
+class ProefTemperatuur(Proef):
     """Controle van de temperatuur van een asfaltmengsel."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefTemperatuur'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        AttributeInfo.__init__(self)
-        Proef.__init__(self)
+        super().__init__()
 
         self._temperatuur = OTLAttribuut(field=KwantWrdInCelsius,
                                          naam='temperatuur',

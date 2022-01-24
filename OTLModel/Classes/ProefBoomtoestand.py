@@ -1,5 +1,4 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.Proef import Proef
 from OTLModel.Datatypes.DateTimeField import DateTimeField
@@ -18,15 +17,14 @@ from OTLModel.Datatypes.KwantWrdInEuro import KwantWrdInEuro
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class ProefBoomtoestand(Proef, AttributeInfo):
+class ProefBoomtoestand(Proef):
     """De toestand met waarnemingen per inspectie van een boom."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefBoomtoestand'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        AttributeInfo.__init__(self)
-        Proef.__init__(self)
+        super().__init__()
 
         self._basiswaarde = OTLAttribuut(field=KwantWrdInEuro,
                                          naam='basiswaarde',

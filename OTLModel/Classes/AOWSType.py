@@ -1,5 +1,4 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from abc import abstractmethod, ABC
 from OTLModel.Datatypes.BooleanField import BooleanField
@@ -7,7 +6,7 @@ from OTLModel.Datatypes.StringField import StringField
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class AOWSType(ABC, AttributeInfo):
+class AOWSType(ABC):
     """Abstracte om alle eigenschappen en relaties van AOWS type onder 1 noemer te houden."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#AOWSType'
@@ -15,8 +14,6 @@ class AOWSType(ABC, AttributeInfo):
 
     @abstractmethod
     def __init__(self):
-        super().__init__()
-
         self._isGoedgekeurd = OTLAttribuut(field=BooleanField,
                                            naam='isGoedgekeurd',
                                            label='is goedgekeurd',

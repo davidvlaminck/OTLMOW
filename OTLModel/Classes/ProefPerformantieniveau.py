@@ -1,12 +1,11 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.Proef import Proef
 from OTLModel.Datatypes.KlLEACPerformantieniveau import KlLEACPerformantieniveau
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class ProefPerformantieniveau(Proef, AttributeInfo):
+class ProefPerformantieniveau(Proef):
     """Bepaling van het performantieniveau."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefPerformantieniveau'
@@ -15,8 +14,7 @@ class ProefPerformantieniveau(Proef, AttributeInfo):
     deprecated_version = '2.0.0'
 
     def __init__(self):
-        AttributeInfo.__init__(self)
-        Proef.__init__(self)
+        super().__init__()
 
         self._performantieniveau = OTLAttribuut(field=KlLEACPerformantieniveau,
                                                 naam='performantieniveau',

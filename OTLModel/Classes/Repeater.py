@@ -1,5 +1,4 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.ZenderOntvangerToegang import ZenderOntvangerToegang
 from OTLModel.Datatypes.DteTekstblok import DteTekstblok
@@ -8,15 +7,14 @@ from OTLModel.Datatypes.KlRepeaterModelnaam import KlRepeaterModelnaam
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Repeater(ZenderOntvangerToegang, AttributeInfo):
+class Repeater(ZenderOntvangerToegang):
     """Apparatuur die het ontvangen signaal versterkt doorgeeft."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Repeater'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        AttributeInfo.__init__(self)
-        ZenderOntvangerToegang.__init__(self)
+        super().__init__()
 
         self._merk = OTLAttribuut(field=KlRepeaterMerk,
                                   naam='merk',

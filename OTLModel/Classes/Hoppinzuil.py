@@ -1,5 +1,4 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from abc import abstractmethod
 from OTLModel.Classes.AIMObject import AIMObject
@@ -8,7 +7,7 @@ from OTLModel.Datatypes.StringField import StringField
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Hoppinzuil(AIMObject, AttributeInfo):
+class Hoppinzuil(AIMObject):
     """Abstracte om de gemeenschappelijke eigenschappen van de verschillende hoppinzuilen onder 1 noemer te plaatsen."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Hoppinzuil'
@@ -16,8 +15,7 @@ class Hoppinzuil(AIMObject, AttributeInfo):
 
     @abstractmethod
     def __init__(self):
-        AIMObject.__init__(self)
-        AttributeInfo.__init__(self)
+        super().__init__()
 
         self._weergegevenVervoersmodiOpKaart = OTLAttribuut(field=KlWeergegevenVervoersmodiOpKaart,
                                                             naam='weergegevenVervoersmodiOpKaart',

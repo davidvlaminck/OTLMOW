@@ -1,5 +1,4 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.DirectioneleRelatie import DirectioneleRelatie
 from OTLModel.Datatypes.DateField import DateField
@@ -8,15 +7,14 @@ from OTLModel.Datatypes.KlBetrokkenheidRol import KlBetrokkenheidRol
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class HeeftBetrokkene(DirectioneleRelatie, AttributeInfo):
+class HeeftBetrokkene(DirectioneleRelatie):
     """Koppelt een natuurlijk persoon,rechtspersoon of een hoedanigheid (een functie eerder dan de persoon die de functie uitoefent) aan een object in een bepaalde rol."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#HeeftBetrokkene'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        AttributeInfo.__init__(self)
-        DirectioneleRelatie.__init__(self)
+        super().__init__()
 
         self._datumAanvang = OTLAttribuut(field=DateField,
                                           naam='datumAanvang',

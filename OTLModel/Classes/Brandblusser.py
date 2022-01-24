@@ -1,5 +1,4 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.AIMObject import AIMObject
 from OTLModel.Datatypes.DateField import DateField
@@ -9,15 +8,14 @@ from OTLModel.Datatypes.KlBrandblusserType import KlBrandblusserType
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Brandblusser(AIMObject, AttributeInfo):
+class Brandblusser(AIMObject):
     """Een apparaat om het vuur van een kleine brand mee te doven. Het bestaat uit een cilinder waarin een beperkte hoeveelheid blusmiddel onder druk staat."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Brandblusser'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        AIMObject.__init__(self)
-        AttributeInfo.__init__(self)
+        super().__init__()
 
         self._aankoopdatum = OTLAttribuut(field=DateField,
                                           naam='aankoopdatum',

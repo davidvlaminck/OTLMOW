@@ -1,5 +1,4 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.AIMObject import AIMObject
 from OTLModel.Classes.Verkeersbord import Verkeersbord
@@ -11,7 +10,7 @@ from OTLModel.Datatypes.KwantWrdInVierkanteMeter import KwantWrdInVierkanteMeter
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class RetroreflecterendVerkeersbord(AIMObject, Verkeersbord, AttributeInfo):
+class RetroreflecterendVerkeersbord(AIMObject, Verkeersbord):
     """Verkeersbord met op het beeldvlak een tekening en/of tekst die worden weergegeven met een geëigend bekledingsmateriaal."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#RetroreflecterendVerkeersbord'
@@ -19,7 +18,6 @@ class RetroreflecterendVerkeersbord(AIMObject, Verkeersbord, AttributeInfo):
 
     def __init__(self):
         AIMObject.__init__(self)
-        AttributeInfo.__init__(self)
         Verkeersbord.__init__(self)
 
         self._afwerkingsgraad = OTLAttribuut(field=KlRetroreflecterendVerkeersbordAfwerkingsgraad,

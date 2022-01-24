@@ -1,5 +1,4 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from abc import abstractmethod
 from OTLModel.Classes.Behuizing import Behuizing
@@ -12,7 +11,7 @@ from OTLModel.Datatypes.StringField import StringField
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Inloopbehuizing(Behuizing, AttributeInfo):
+class Inloopbehuizing(Behuizing):
     """Een behuizing voor het beschermen van technieken en materialen waarin het omwille van de grootte en toegankelijkheid mogelijk is om rond te lopen."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Inloopbehuizing'
@@ -20,8 +19,7 @@ class Inloopbehuizing(Behuizing, AttributeInfo):
 
     @abstractmethod
     def __init__(self):
-        AttributeInfo.__init__(self)
-        Behuizing.__init__(self)
+        super().__init__()
 
         self._afmeting = OTLAttribuut(field=DtcAfmetingBxlxhInM,
                                       naam='afmeting',

@@ -1,20 +1,18 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.AndereLaag import AndereLaag
 from OTLModel.Datatypes.KlBeschermingWapeningType import KlBeschermingWapeningType
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class BeschermingWapening(AndereLaag, AttributeInfo):
+class BeschermingWapening(AndereLaag):
     """De bescherming of de wapening van de onderfundering, fundering of grondmassief."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#BeschermingWapening'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        AndereLaag.__init__(self)
-        AttributeInfo.__init__(self)
+        super().__init__()
 
         self._type = OTLAttribuut(field=KlBeschermingWapeningType,
                                   naam='type',

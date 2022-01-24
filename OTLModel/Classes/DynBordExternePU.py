@@ -1,5 +1,4 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.PU import PU
 from OTLModel.Datatypes.BooleanField import BooleanField
@@ -9,15 +8,14 @@ from OTLModel.Datatypes.KlDynBordExternePUModelnaam import KlDynBordExternePUMod
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class DynBordExternePU(PU, AttributeInfo):
+class DynBordExternePU(PU):
     """Externe stuureenheid die buiten het dynamisch bord bevestigd is, in de buurt van de openbare weg. Het betreft dus geen stuureenheid in een serverroom, noch een stuureenheid op het bord zelf."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DynBordExternePU'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        AttributeInfo.__init__(self)
-        PU.__init__(self)
+        super().__init__()
 
         self._heeftGeintegreerdeModem = OTLAttribuut(field=BooleanField,
                                                      naam='heeftGeintegreerdeModem',

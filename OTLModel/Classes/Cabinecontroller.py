@@ -1,5 +1,4 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.Controller import Controller
 from OTLModel.Datatypes.KlControllerBeveiligingssleutel import KlControllerBeveiligingssleutel
@@ -7,15 +6,14 @@ from OTLModel.Datatypes.StringField import StringField
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Cabinecontroller(Controller, AttributeInfo):
+class Cabinecontroller(Controller):
     """Controller die zorgt voor de bewaking en bediening van de geschakelde verlichtingsaftakkingen en voor bewaking van de voedingsinstallatie."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Cabinecontroller'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        AttributeInfo.__init__(self)
-        Controller.__init__(self)
+        super().__init__()
 
         self._beveiligingssleutel = OTLAttribuut(field=KlControllerBeveiligingssleutel,
                                                  naam='beveiligingssleutel',

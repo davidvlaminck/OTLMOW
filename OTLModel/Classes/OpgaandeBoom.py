@@ -1,5 +1,4 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.VegetatieElement import VegetatieElement
 from OTLModel.Datatypes.BooleanField import BooleanField
@@ -14,7 +13,7 @@ from OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class OpgaandeBoom(VegetatieElement, AttributeInfo):
+class OpgaandeBoom(VegetatieElement):
     """Een opgaande boom is een boom waarvan de vorm van de kruin overeenkomt met zijn natuurlijke, soortgebonden habitus. Opgaande bomen kunnen een hoge, lage, brede, smalle of een afwijkende groeivorm hebben, zoals zuil- en treurvormen. De boom kan zich op volstrekt natuurlijke wijze uitgezaaid hebben en zijn groeivorm kan bepaald zijn door de natuurlijke groeiomstandigheden (bv. natuurlijke snoei). Ontstond de boom in kunstmatige omstandigheden, dan is de groeivorm bepaald door de jeugdsnoei in de kwekerij en is het eindbeeld van de boom bepaald door de begeleidingssnoei of vormsnoei die wordt uitgevoerd vanaf het planten."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#OpgaandeBoom'
@@ -23,8 +22,7 @@ class OpgaandeBoom(VegetatieElement, AttributeInfo):
     deprecated_version = '2.0.0'
 
     def __init__(self):
-        AttributeInfo.__init__(self)
-        VegetatieElement.__init__(self)
+        super().__init__()
 
         self._aanleg = OTLAttribuut(field=DtcAanlegBoomvorm,
                                     naam='aanleg',

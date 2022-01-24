@@ -1,5 +1,4 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from abc import abstractmethod
 from OTLModel.Classes.AIMNaamObject import AIMNaamObject
@@ -12,7 +11,7 @@ from OTLModel.Datatypes.StringField import StringField
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class HardwareToegang(AIMNaamObject, AttributeInfo):
+class HardwareToegang(AIMNaamObject):
     """Een abstracte die de gemeenschappelijke kenmerken bevat voor zowel fysieke als virtuele hardware."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#HardwareToegang'
@@ -20,8 +19,7 @@ class HardwareToegang(AIMNaamObject, AttributeInfo):
 
     @abstractmethod
     def __init__(self):
-        AIMNaamObject.__init__(self)
-        AttributeInfo.__init__(self)
+        super().__init__()
 
         self._CPU = OTLAttribuut(field=StringField,
                                  naam='CPU',

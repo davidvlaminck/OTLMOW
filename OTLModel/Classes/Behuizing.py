@@ -1,5 +1,4 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from abc import abstractmethod
 from OTLModel.Classes.AIMNaamObject import AIMNaamObject
@@ -8,7 +7,7 @@ from OTLModel.Datatypes.DtcDocument import DtcDocument
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Behuizing(AIMNaamObject, AttributeInfo):
+class Behuizing(AIMNaamObject):
     """Abstracte voor alle types van behuizing voor het beschermen van technieken."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Behuizing'
@@ -16,8 +15,7 @@ class Behuizing(AIMNaamObject, AttributeInfo):
 
     @abstractmethod
     def __init__(self):
-        AIMNaamObject.__init__(self)
-        AttributeInfo.__init__(self)
+        super().__init__()
 
         self._adres = OTLAttribuut(field=DtcAdres,
                                    naam='adres',

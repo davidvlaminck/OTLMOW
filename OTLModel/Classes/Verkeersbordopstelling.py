@@ -1,5 +1,4 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.AIMObject import AIMObject
 from OTLModel.Classes.Signalisatie import Signalisatie
@@ -11,7 +10,7 @@ from OTLModel.Datatypes.KlPositieSoort import KlPositieSoort
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Verkeersbordopstelling(AIMObject, Signalisatie, AttributeInfo):
+class Verkeersbordopstelling(AIMObject, Signalisatie):
     """Het geheel van verticale verkeerssignalisatie die bevestigd is aan één of meerdere draagconstructies op éénzelfde geolocatie."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Verkeersbordopstelling'
@@ -19,7 +18,6 @@ class Verkeersbordopstelling(AIMObject, Signalisatie, AttributeInfo):
 
     def __init__(self):
         AIMObject.__init__(self)
-        AttributeInfo.__init__(self)
         Signalisatie.__init__(self)
 
         self._afbeelding = OTLAttribuut(field=DtcDocument,

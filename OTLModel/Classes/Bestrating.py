@@ -1,5 +1,4 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from abc import abstractmethod
 from OTLModel.Classes.ArtificieleLaag import ArtificieleLaag
@@ -9,7 +8,7 @@ from OTLModel.Datatypes.KlKleurSupp import KlKleurSupp
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Bestrating(ArtificieleLaag, AttributeInfo):
+class Bestrating(ArtificieleLaag):
     """Verhardingstype opgebouwd uit bestratingen (rechthoekige of vierkante componenten van beperkte afmetingen) waardoor een aanzienlijk aantal voegen tussen de componenten zitten."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Bestrating'
@@ -17,8 +16,7 @@ class Bestrating(ArtificieleLaag, AttributeInfo):
 
     @abstractmethod
     def __init__(self):
-        ArtificieleLaag.__init__(self)
-        AttributeInfo.__init__(self)
+        super().__init__()
 
         self._kleur = OTLAttribuut(field=KlKleurSupp,
                                    naam='kleur',

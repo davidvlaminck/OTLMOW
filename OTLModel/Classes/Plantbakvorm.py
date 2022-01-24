@@ -1,5 +1,4 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.VegetatieElement import VegetatieElement
 from OTLModel.Datatypes.BooleanField import BooleanField
@@ -8,15 +7,14 @@ from OTLModel.Datatypes.KwantWrdInVierkanteMeter import KwantWrdInVierkanteMeter
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Plantbakvorm(VegetatieElement, AttributeInfo):
+class Plantbakvorm(VegetatieElement):
     """Beplanting die niet in volle grond werd aangebracht, maar in bakvorm."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Plantbakvorm'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        AttributeInfo.__init__(self)
-        VegetatieElement.__init__(self)
+        super().__init__()
 
         self._isBereikbaar = OTLAttribuut(field=BooleanField,
                                           naam='isBereikbaar',

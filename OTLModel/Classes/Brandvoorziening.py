@@ -1,12 +1,11 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from abc import abstractmethod
 from OTLModel.Classes.AIMNaamObject import AIMNaamObject
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Brandvoorziening(AIMNaamObject, AttributeInfo):
+class Brandvoorziening(AIMNaamObject):
     """Abstracte voor linkende elementen die voorzien kunnen worden van verwarming om hun werkzaamheid in extreme omstandigheden te garanderen."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Brandvoorziening'
@@ -14,5 +13,4 @@ class Brandvoorziening(AIMNaamObject, AttributeInfo):
 
     @abstractmethod
     def __init__(self):
-        AIMNaamObject.__init__(self)
-        AttributeInfo.__init__(self)
+        super().__init__()

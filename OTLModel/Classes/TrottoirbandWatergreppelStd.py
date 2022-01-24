@@ -1,5 +1,4 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.GestandaardiseerdeKantopsluiting import GestandaardiseerdeKantopsluiting
 from OTLModel.Datatypes.DtcLENorm import DtcLENorm
@@ -8,15 +7,14 @@ from OTLModel.Datatypes.KlLETrottoirbandWatergreppelType import KlLETrottoirband
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class TrottoirbandWatergreppelStd(GestandaardiseerdeKantopsluiting, AttributeInfo):
+class TrottoirbandWatergreppelStd(GestandaardiseerdeKantopsluiting):
     """Gestandaardiseerde kantopsluiting, die een trottoirband en een watergreppel combineert in een geheel."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#TrottoirbandWatergreppelStd'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        AttributeInfo.__init__(self)
-        GestandaardiseerdeKantopsluiting.__init__(self)
+        super().__init__()
 
         self._norm = OTLAttribuut(field=DtcLENorm,
                                   naam='norm',

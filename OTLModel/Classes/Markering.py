@@ -1,5 +1,4 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from abc import abstractmethod
 from OTLModel.Classes.AIMObject import AIMObject
@@ -12,7 +11,7 @@ from OTLModel.Datatypes.KlMarkeringSoort import KlMarkeringSoort
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Markering(AIMObject, Signalisatie, AttributeInfo):
+class Markering(AIMObject, Signalisatie):
     """Abstracte als noemer voor de verschillende types van markeringen."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Markering'
@@ -21,7 +20,6 @@ class Markering(AIMObject, Signalisatie, AttributeInfo):
     @abstractmethod
     def __init__(self):
         AIMObject.__init__(self)
-        AttributeInfo.__init__(self)
         Signalisatie.__init__(self)
 
         self._isHandwerk = OTLAttribuut(field=BooleanField,

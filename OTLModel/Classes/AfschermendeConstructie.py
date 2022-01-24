@@ -1,5 +1,4 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from abc import abstractmethod
 from OTLModel.Classes.BijlageVoertuigkering import BijlageVoertuigkering
@@ -12,7 +11,7 @@ from OTLModel.Datatypes.StringField import StringField
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class AfschermendeConstructie(BijlageVoertuigkering, LijnvormigElement, AttributeInfo):
+class AfschermendeConstructie(BijlageVoertuigkering, LijnvormigElement):
     """Abstracte die een lijn- of puntvormige constructie,geïnstalleerd langs de weg om een kerend vermogen te bieden aan een dwalend voertuig,samenvat."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#AfschermendeConstructie'
@@ -20,7 +19,6 @@ class AfschermendeConstructie(BijlageVoertuigkering, LijnvormigElement, Attribut
 
     @abstractmethod
     def __init__(self):
-        AttributeInfo.__init__(self)
         BijlageVoertuigkering.__init__(self)
         LijnvormigElement.__init__(self)
 

@@ -1,5 +1,4 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from abc import abstractmethod
 from OTLModel.Classes.BegroeidVoorkomen import BegroeidVoorkomen
@@ -8,7 +7,7 @@ from OTLModel.Datatypes.KlGrazigeVegetatieAanleg import KlGrazigeVegetatieAanleg
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class GrazigeVegetatie(BegroeidVoorkomen, AttributeInfo):
+class GrazigeVegetatie(BegroeidVoorkomen):
     """Begroeiingen die uit grassen en (bloeiende) kruiden bestaan."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#GrazigeVegetatie'
@@ -16,8 +15,7 @@ class GrazigeVegetatie(BegroeidVoorkomen, AttributeInfo):
 
     @abstractmethod
     def __init__(self):
-        AttributeInfo.__init__(self)
-        BegroeidVoorkomen.__init__(self)
+        super().__init__()
 
         self._aanleg = OTLAttribuut(field=KlGrazigeVegetatieAanleg,
                                     naam='aanleg',

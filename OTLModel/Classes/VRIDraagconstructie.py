@@ -1,12 +1,11 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from abc import abstractmethod
 from OTLModel.Classes.SteunStandaard import SteunStandaard
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class VRIDraagconstructie(SteunStandaard, AttributeInfo):
+class VRIDraagconstructie(SteunStandaard):
     """Abstracte voor een dragend element (bv. paal, kolom ) waaraan lantaarns met verkeerslichten bevestigd kunnen worden bij de verkeersregelinstallatie."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#VRIDraagconstructie'
@@ -14,5 +13,4 @@ class VRIDraagconstructie(SteunStandaard, AttributeInfo):
 
     @abstractmethod
     def __init__(self):
-        AttributeInfo.__init__(self)
-        SteunStandaard.__init__(self)
+        super().__init__()

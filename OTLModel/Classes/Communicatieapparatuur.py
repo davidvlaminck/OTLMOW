@@ -1,12 +1,11 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from abc import abstractmethod
 from OTLModel.Classes.AIMNaamObject import AIMNaamObject
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Communicatieapparatuur(AIMNaamObject, AttributeInfo):
+class Communicatieapparatuur(AIMNaamObject):
     """Abstracte voor alle benodigde apparatuur voor het ontvangen en verzenden van signalen."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Communicatieapparatuur'
@@ -14,5 +13,4 @@ class Communicatieapparatuur(AIMNaamObject, AttributeInfo):
 
     @abstractmethod
     def __init__(self):
-        AIMNaamObject.__init__(self)
-        AttributeInfo.__init__(self)
+        super().__init__()

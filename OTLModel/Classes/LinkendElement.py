@@ -1,5 +1,4 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from abc import abstractmethod
 from OTLModel.Classes.AIMObject import AIMObject
@@ -7,7 +6,7 @@ from OTLModel.Datatypes.DtcDocument import DtcDocument
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class LinkendElement(AIMObject, AttributeInfo):
+class LinkendElement(AIMObject):
     """Abstracte bedoeld om alle eigenschappen en relaties van linkende elementen te groeperen. Linkende elementen zijn objecten die aansluiten op een buis."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#LinkendElement'
@@ -15,8 +14,7 @@ class LinkendElement(AIMObject, AttributeInfo):
 
     @abstractmethod
     def __init__(self):
-        AIMObject.__init__(self)
-        AttributeInfo.__init__(self)
+        super().__init__()
 
         self._technischeFiche = OTLAttribuut(field=DtcDocument,
                                              naam='technischeFiche',

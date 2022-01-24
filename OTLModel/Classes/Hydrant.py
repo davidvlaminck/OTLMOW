@@ -1,5 +1,4 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.Brandvoorziening import Brandvoorziening
 from OTLModel.Datatypes.BooleanField import BooleanField
@@ -8,15 +7,14 @@ from OTLModel.Datatypes.KwantWrdInInch import KwantWrdInInch
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Hydrant(Brandvoorziening, AttributeInfo):
+class Hydrant(Brandvoorziening):
     """Aftappunt van de brandleiding bedoeld voor de brandweer. Ook brandkraan genoemd."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Hydrant'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        AttributeInfo.__init__(self)
-        Brandvoorziening.__init__(self)
+        super().__init__()
 
         self._diameter = OTLAttribuut(field=KwantWrdInInch,
                                       naam='diameter',

@@ -1,20 +1,18 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.AIMObject import AIMObject
 from OTLModel.Datatypes.KlBinnenverlichtingstoestelSoortLamp import KlBinnenverlichtingstoestelSoortLamp
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Aanstraalverlichting(AIMObject, AttributeInfo):
+class Aanstraalverlichting(AIMObject):
     """Lamp met fel gebundeld licht die het verlicht gebied duidelijk zichtbaar maakt."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Aanstraalverlichting'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        AIMObject.__init__(self)
-        AttributeInfo.__init__(self)
+        super().__init__()
 
         self._type = OTLAttribuut(field=KlBinnenverlichtingstoestelSoortLamp,
                                   naam='type',

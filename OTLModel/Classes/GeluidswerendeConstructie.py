@@ -1,5 +1,4 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.LijnvormigElement import LijnvormigElement
 from OTLModel.Datatypes.BooleanField import BooleanField
@@ -16,7 +15,7 @@ from OTLModel.Datatypes.KwantWrdInVierkanteMeter import KwantWrdInVierkanteMeter
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class GeluidswerendeConstructie(LijnvormigElement, AttributeInfo):
+class GeluidswerendeConstructie(LijnvormigElement):
     """Een geluidswerende wandvormige constructie bestaande uit een desgevallend geluidsisolerend materiaal en/of geluidsabsorberend materiaal en voorzien van de nodige structuren om de bouwkundige stabiliteit te verzekeren."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#GeluidswerendeConstructie'
@@ -25,8 +24,7 @@ class GeluidswerendeConstructie(LijnvormigElement, AttributeInfo):
     deprecated_version = '2.0.0'
 
     def __init__(self):
-        AttributeInfo.__init__(self)
-        LijnvormigElement.__init__(self)
+        super().__init__()
 
         self._detailplan3dAsbuilt = OTLAttribuut(field=DtcDocument,
                                                  naam='detailplan3dAsbuilt',

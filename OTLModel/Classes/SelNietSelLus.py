@@ -1,5 +1,4 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from abc import abstractmethod
 from OTLModel.Classes.Detectielus import Detectielus
@@ -7,7 +6,7 @@ from OTLModel.Datatypes.BooleanField import BooleanField
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class SelNietSelLus(Detectielus, AttributeInfo):
+class SelNietSelLus(Detectielus):
     """Abstracte klasse die de eigenschappen van selectieve en niet-selectieve lussen combineert."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#SelNietSelLus'
@@ -15,8 +14,7 @@ class SelNietSelLus(Detectielus, AttributeInfo):
 
     @abstractmethod
     def __init__(self):
-        AttributeInfo.__init__(self)
-        Detectielus.__init__(self)
+        super().__init__()
 
         self._heeftMofInTrekput = OTLAttribuut(field=BooleanField,
                                                naam='heeftMofInTrekput',

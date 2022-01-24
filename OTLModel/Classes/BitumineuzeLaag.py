@@ -1,5 +1,4 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.LaagBouwklasse import LaagBouwklasse
 from OTLModel.Datatypes.DtuBVLaagtypes import DtuBVLaagtypes
@@ -9,15 +8,14 @@ from OTLModel.Datatypes.KlKleurSupp import KlKleurSupp
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class BitumineuzeLaag(LaagBouwklasse, AttributeInfo):
+class BitumineuzeLaag(LaagBouwklasse):
     """Flexibele verharding die meestal uit bitumineus gebonden materialen (asfalt of gietasfalt) bestaat en laagsgewijs wordt aangelegd. ."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#BitumineuzeLaag'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        AttributeInfo.__init__(self)
-        LaagBouwklasse.__init__(self)
+        super().__init__()
 
         self._bindmiddelType = OTLAttribuut(field=KlBVBindmiddel,
                                             naam='bindmiddelType',

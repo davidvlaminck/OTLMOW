@@ -1,5 +1,4 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.AIMObject import AIMObject
 from OTLModel.Classes.Signalisatie import Signalisatie
@@ -8,7 +7,7 @@ from OTLModel.Datatypes.KlFolieType import KlFolieType
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Divergentiepuntbebakeningselement(AIMObject, Signalisatie, AttributeInfo):
+class Divergentiepuntbebakeningselement(AIMObject, Signalisatie):
     """Een constructie met als doel de zichtbaarheid van het divergentiepunt te vergroten."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Divergentiepuntbebakeningselement'
@@ -16,7 +15,6 @@ class Divergentiepuntbebakeningselement(AIMObject, Signalisatie, AttributeInfo):
 
     def __init__(self):
         AIMObject.__init__(self)
-        AttributeInfo.__init__(self)
         Signalisatie.__init__(self)
 
         self._folietype = OTLAttribuut(field=KlFolieType,

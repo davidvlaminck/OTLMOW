@@ -1,20 +1,18 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.AIMNaamObject import AIMNaamObject
 from OTLModel.Datatypes.KlClusterClusterdoel import KlClusterClusterdoel
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Cluster(AIMNaamObject, AttributeInfo):
+class Cluster(AIMNaamObject):
     """Groep van servers die samenwerken om een gemeenschappelijk doel te bereiken (zowel voor groeperen van resources en/of redundantie)."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Cluster'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        AIMNaamObject.__init__(self)
-        AttributeInfo.__init__(self)
+        super().__init__()
 
         self._clusterdoel = OTLAttribuut(field=KlClusterClusterdoel,
                                          naam='clusterdoel',

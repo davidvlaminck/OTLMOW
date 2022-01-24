@@ -1,5 +1,4 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.Brandvoorziening import Brandvoorziening
 from OTLModel.Datatypes.DateField import DateField
@@ -12,15 +11,14 @@ from OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Brandhaspel(Brandvoorziening, AttributeInfo):
+class Brandhaspel(Brandvoorziening):
     """Een brandslang met spuitmond,opgerold op een haspel."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Brandhaspel'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        AttributeInfo.__init__(self)
-        Brandvoorziening.__init__(self)
+        super().__init__()
 
         self._buitendiameter = OTLAttribuut(field=KwantWrdInCentimeter,
                                             naam='buitendiameter',

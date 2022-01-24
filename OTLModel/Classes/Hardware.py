@@ -1,5 +1,4 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.HardwareToegang import HardwareToegang
 from OTLModel.Datatypes.IntegerField import IntegerField
@@ -9,15 +8,14 @@ from OTLModel.Datatypes.KlHardwareVormfactor import KlHardwareVormfactor
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Hardware(HardwareToegang, AttributeInfo):
+class Hardware(HardwareToegang):
     """Fysieke componenten of onderdelen van een computer."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Hardware'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        AttributeInfo.__init__(self)
-        HardwareToegang.__init__(self)
+        super().__init__()
 
         self._aantalUnits = OTLAttribuut(field=IntegerField,
                                          naam='aantalUnits',

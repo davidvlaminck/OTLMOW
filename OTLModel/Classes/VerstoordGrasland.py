@@ -1,11 +1,10 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.Ruigte import Ruigte
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class VerstoordGrasland(Ruigte, AttributeInfo):
+class VerstoordGrasland(Ruigte):
     """R1 - duinriet, kruipertje, gewone raket, bijvoet,
 fijnstraal spec., kleine brandnetel,
 boerenwormkruid, kamille spec., varkensgras,
@@ -22,5 +21,4 @@ vogelmuur, akkerkool"""
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        AttributeInfo.__init__(self)
-        Ruigte.__init__(self)
+        super().__init__()

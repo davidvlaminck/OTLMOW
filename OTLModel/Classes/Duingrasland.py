@@ -1,11 +1,10 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.SoortenrijkSchraalGraslandGraslandfase5 import SoortenrijkSchraalGraslandGraslandfase5
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Duingrasland(SoortenrijkSchraalGraslandGraslandfase5, AttributeInfo):
+class Duingrasland(SoortenrijkSchraalGraslandGraslandfase5):
     """G5a - Zanddoddengras, Kleverige reigersbek, Ruw
 vergeet-mij-nietje, Kruipend stalkruid,
 Zandhoornbloem, Duinfakkelgras, Liggende
@@ -21,5 +20,4 @@ Duindravik, Gestreepte klaver, Wondklaver."""
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        AttributeInfo.__init__(self)
-        SoortenrijkSchraalGraslandGraslandfase5.__init__(self)
+        super().__init__()

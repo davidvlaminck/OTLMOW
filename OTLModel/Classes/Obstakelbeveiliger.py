@@ -1,5 +1,4 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.SchokindexVoertuigkering import SchokindexVoertuigkering
 from OTLModel.Classes.AfschermendeConstructie import AfschermendeConstructie
@@ -8,7 +7,7 @@ from OTLModel.Datatypes.KlLEACPerformantieniveau import KlLEACPerformantieniveau
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Obstakelbeveiliger(SchokindexVoertuigkering, AfschermendeConstructie, AttributeInfo):
+class Obstakelbeveiliger(SchokindexVoertuigkering, AfschermendeConstructie):
     """Een energie-absorberende constructie voor voertuigen,geïnstalleerd vóór één of meerdere obstakels,met als doel de ernst van een botsing te reduceren."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Obstakelbeveiliger'
@@ -16,7 +15,6 @@ class Obstakelbeveiliger(SchokindexVoertuigkering, AfschermendeConstructie, Attr
 
     def __init__(self):
         AfschermendeConstructie.__init__(self)
-        AttributeInfo.__init__(self)
         SchokindexVoertuigkering.__init__(self)
 
         self._performantieniveau = OTLAttribuut(field=KlLEACPerformantieniveau,

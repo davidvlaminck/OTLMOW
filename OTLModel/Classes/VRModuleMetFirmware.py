@@ -1,5 +1,4 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from abc import abstractmethod
 from OTLModel.Classes.VerkeersregelaarModule import VerkeersregelaarModule
@@ -9,7 +8,7 @@ from OTLModel.Datatypes.KlVRModuleMetFirmwareModelnaam import KlVRModuleMetFirmw
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class VRModuleMetFirmware(VerkeersregelaarModule, FirmwareObject, AttributeInfo):
+class VRModuleMetFirmware(VerkeersregelaarModule, FirmwareObject):
     """Abstracte voor modules met firmware van een verkeersregelaar."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#VRModuleMetFirmware'
@@ -17,7 +16,6 @@ class VRModuleMetFirmware(VerkeersregelaarModule, FirmwareObject, AttributeInfo)
 
     @abstractmethod
     def __init__(self):
-        AttributeInfo.__init__(self)
         FirmwareObject.__init__(self)
         VerkeersregelaarModule.__init__(self)
 

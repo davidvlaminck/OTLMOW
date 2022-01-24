@@ -1,5 +1,4 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.VRModuleMetFirmware import VRModuleMetFirmware
 from OTLModel.Datatypes.BooleanField import BooleanField
@@ -9,15 +8,14 @@ from OTLModel.Datatypes.StringField import StringField
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class VRCommunicatiekaart(VRModuleMetFirmware, AttributeInfo):
+class VRCommunicatiekaart(VRModuleMetFirmware):
     """Modem die alle toestandswijzigingen van de stuurkaart doorgeeft aan het afstandsbewakingssysteem. De module maakt continue een backup van alle log en data gegevens en slaat deze op op de aanwezige SD kaart. Tevens wordt de module ook gebruikt om vanop afstand te kunnen communiceren met de regelaar"""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#VRCommunicatiekaart'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        AttributeInfo.__init__(self)
-        VRModuleMetFirmware.__init__(self)
+        super().__init__()
 
         self._dnsNaam = OTLAttribuut(field=StringField,
                                      naam='dnsNaam',

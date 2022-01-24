@@ -1,20 +1,18 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.GrazigeVegetatie import GrazigeVegetatie
 from OTLModel.Datatypes.KlNSB import KlNSB
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Grasland(GrazigeVegetatie, AttributeInfo):
+class Grasland(GrazigeVegetatie):
     """Grazige vegetatie met daarin kruidachtigen die jaarlijks één of meerdere malen per jaar gemaaid of begraasd wordt."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Grasland'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        AttributeInfo.__init__(self)
-        GrazigeVegetatie.__init__(self)
+        super().__init__()
 
         self._natuurstreefbeeld = OTLAttribuut(field=KlNSB,
                                                naam='natuurstreefbeeld',

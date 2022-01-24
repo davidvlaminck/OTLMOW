@@ -1,5 +1,4 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.AIMObject import AIMObject
 from OTLModel.Classes.Signalisatie import Signalisatie
@@ -9,7 +8,7 @@ from OTLModel.Datatypes.KlVerkeersspiegelVorm import KlVerkeersspiegelVorm
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Verkeersspiegel(AIMObject, Signalisatie, AttributeInfo):
+class Verkeersspiegel(AIMObject, Signalisatie):
     """Een verkeersspiegel is een spiegel die de zichtbaarheid verbetert van het aankomende verkeer."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Verkeersspiegel'
@@ -17,7 +16,6 @@ class Verkeersspiegel(AIMObject, Signalisatie, AttributeInfo):
 
     def __init__(self):
         AIMObject.__init__(self)
-        AttributeInfo.__init__(self)
         Signalisatie.__init__(self)
 
         self._bijlageDocument = OTLAttribuut(field=DtcDocument,

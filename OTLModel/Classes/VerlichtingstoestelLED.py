@@ -1,5 +1,4 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.VerlichtingstoestelConnector import VerlichtingstoestelConnector
 from OTLModel.Classes.Verlichtingstoestel import Verlichtingstoestel
@@ -16,7 +15,7 @@ from OTLModel.Datatypes.KlWvLedVerlNiveau import KlWvLedVerlNiveau
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class VerlichtingstoestelLED(VerlichtingstoestelConnector, Verlichtingstoestel, AttributeInfo):
+class VerlichtingstoestelLED(VerlichtingstoestelConnector, Verlichtingstoestel):
     """Het geheel van de LEDlichtmodule en de behuizing die werden samengesteld met als doel:
  * de lichtstroom van de lichtbronnen hoofdzakelijk op het te verlichten oppervlak (doorlopende wegsectie, conflictgebied,...) te richten, teneinde de zichtbaarheid te verhogen;
  * de lichtstroom te beheersen zodat de weggebruikers niet verblind worden en de lichthinder beperkt wordt;
@@ -27,7 +26,6 @@ De LED driver bevindt zich fysiek in het verlichtingstoestel maar wordt als een 
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        AttributeInfo.__init__(self)
         Verlichtingstoestel.__init__(self)
         VerlichtingstoestelConnector.__init__(self)
 

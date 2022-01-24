@@ -1,5 +1,4 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.AIMObject import AIMObject
 from OTLModel.Classes.BevestigingGC import BevestigingGC
@@ -9,7 +8,7 @@ from OTLModel.Datatypes.StringField import StringField
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Pictogram(AIMObject, BevestigingGC, AttributeInfo):
+class Pictogram(AIMObject, BevestigingGC):
     """Een bord dat een symbool of afbeelding bevat dat de plaats inneemt van een tekst."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Pictogram'
@@ -17,7 +16,6 @@ class Pictogram(AIMObject, BevestigingGC, AttributeInfo):
 
     def __init__(self):
         AIMObject.__init__(self)
-        AttributeInfo.__init__(self)
         BevestigingGC.__init__(self)
 
         self._nalichtingstijd = OTLAttribuut(field=KwantWrdInMinuut,

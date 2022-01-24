@@ -1,5 +1,4 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.ComplexeGeleiding import ComplexeGeleiding
 from OTLModel.Datatypes.BooleanField import BooleanField
@@ -9,15 +8,14 @@ from OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Ecoraster(ComplexeGeleiding, AttributeInfo):
+class Ecoraster(ComplexeGeleiding):
     """Een geleiding om dieren te leiden naar een plaats (ecoduct, ecotunnel, ...) waar ze veilig een drukke weg kunnen oversteken."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Ecoraster'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        AttributeInfo.__init__(self)
-        ComplexeGeleiding.__init__(self)
+        super().__init__()
 
         self._heeftPrikkeldraad = OTLAttribuut(field=BooleanField,
                                                naam='heeftPrikkeldraad',

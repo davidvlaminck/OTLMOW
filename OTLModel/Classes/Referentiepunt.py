@@ -1,5 +1,4 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.AIMObject import AIMObject
 from OTLModel.Classes.Signalisatie import Signalisatie
@@ -9,7 +8,7 @@ from OTLModel.Datatypes.KlSignalisatieReferentiepuntType import KlSignalisatieRe
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Referentiepunt(AIMObject, Signalisatie, BevestigingGC, AttributeInfo):
+class Referentiepunt(AIMObject, Signalisatie, BevestigingGC):
     """Een kilometer- of hectometerpaal."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Referentiepunt'
@@ -17,7 +16,6 @@ class Referentiepunt(AIMObject, Signalisatie, BevestigingGC, AttributeInfo):
 
     def __init__(self):
         AIMObject.__init__(self)
-        AttributeInfo.__init__(self)
         BevestigingGC.__init__(self)
         Signalisatie.__init__(self)
 

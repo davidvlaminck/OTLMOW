@@ -1,5 +1,4 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from abc import abstractmethod
 from OTLModel.Classes.Voedingspunt import Voedingspunt
@@ -12,7 +11,7 @@ from OTLModel.Datatypes.StringField import StringField
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class DNB(Voedingspunt, AttributeInfo):
+class DNB(Voedingspunt):
     """Een abstracte die de gegevens van de distributienetbeheerder bevat die bij een aansluiting horen."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#DNB'
@@ -20,8 +19,7 @@ class DNB(Voedingspunt, AttributeInfo):
 
     @abstractmethod
     def __init__(self):
-        AttributeInfo.__init__(self)
-        Voedingspunt.__init__(self)
+        super().__init__()
 
         self._aansluitvermogen = OTLAttribuut(field=KwantWrdInKiloVoltAmpere,
                                               naam='aansluitvermogen',

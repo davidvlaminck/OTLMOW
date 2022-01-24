@@ -1,5 +1,4 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.LinkendElement import LinkendElement
 from OTLModel.Datatypes.KlOverstortMateriaalDrempel import KlOverstortMateriaalDrempel
@@ -9,15 +8,14 @@ from OTLModel.Datatypes.KwantWrdInMillimeter import KwantWrdInMillimeter
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Overstort(LinkendElement, AttributeInfo):
+class Overstort(LinkendElement):
     """Een overstort is een drempel tussen twee kamers waar water vanaf een bepaald peil van de ene naar de andere kamer kan stromen. Tussen twee kamers kunnen een of meerdere overstorten voorkomen."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Overstort'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        AttributeInfo.__init__(self)
-        LinkendElement.__init__(self)
+        super().__init__()
 
         self._drempellengte = OTLAttribuut(field=KwantWrdInMillimeter,
                                            naam='drempellengte',

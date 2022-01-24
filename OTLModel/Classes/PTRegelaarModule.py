@@ -1,5 +1,4 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from abc import abstractmethod
 from OTLModel.Classes.AIMNaamObject import AIMNaamObject
@@ -8,7 +7,7 @@ from OTLModel.Datatypes.KlPTRegelaarModuleModelnaam import KlPTRegelaarModuleMod
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class PTRegelaarModule(AIMNaamObject, AttributeInfo):
+class PTRegelaarModule(AIMNaamObject):
     """Abstracte voor de verschillende modules waaruit het personentransportbeïnvloedingssysteem van de verkeersregelaar opgebouwd is. Hierdoor zal het personentransport een snellere doorstroming aan een verkeerslichtengeregeld kruispunt genieten."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#PTRegelaarModule'
@@ -16,8 +15,7 @@ class PTRegelaarModule(AIMNaamObject, AttributeInfo):
 
     @abstractmethod
     def __init__(self):
-        AIMNaamObject.__init__(self)
-        AttributeInfo.__init__(self)
+        super().__init__()
 
         self._merk = OTLAttribuut(field=KlPTRegelaarModuleMerk,
                                   naam='merk',

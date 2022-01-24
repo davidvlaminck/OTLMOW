@@ -1,5 +1,4 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.AIMNaamObject import AIMNaamObject
 from OTLModel.Datatypes.BooleanField import BooleanField
@@ -12,15 +11,14 @@ from OTLModel.Datatypes.StringField import StringField
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class IntercomToestel(AIMNaamObject, AttributeInfo):
+class IntercomToestel(AIMNaamObject):
     """Het toestel dat deel uitmaakt van een intercomsysteem en audio- en/of videocommunicatie tussen twee personen mogelijk maakt."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#IntercomToestel'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        AIMNaamObject.__init__(self)
-        AttributeInfo.__init__(self)
+        super().__init__()
 
         self._dnsNaam = OTLAttribuut(field=StringField,
                                      naam='dnsNaam',

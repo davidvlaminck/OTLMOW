@@ -1,5 +1,4 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from abc import abstractmethod, ABC
 from OTLModel.Datatypes.KlLEACKerendVermogen import KlLEACKerendVermogen
@@ -7,7 +6,7 @@ from OTLModel.Datatypes.KlLEACVoertuigOverhelling import KlLEACVoertuigOverhelli
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class EigenschappenVoertuigkering(ABC, AttributeInfo):
+class EigenschappenVoertuigkering(ABC):
     """Op deze abstracte worden attributen met betrekking tot voertuigkering bijgehouden."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#EigenschappenVoertuigkering'
@@ -15,8 +14,6 @@ class EigenschappenVoertuigkering(ABC, AttributeInfo):
 
     @abstractmethod
     def __init__(self):
-        super().__init__()
-
         self._kerendVermogen = OTLAttribuut(field=KlLEACKerendVermogen,
                                             naam='kerendVermogen',
                                             label='kerend vermogen',

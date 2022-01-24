@@ -1,8 +1,10 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.AIMToestand import AIMToestand
 from OTLModel.Classes.AIMDBStatus import AIMDBStatus
+from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
+from OTLModel.BaseClasses.OTLAsset import OTLAsset
+from OTLModel.BaseClasses.RelatieInteractor import RelatieInteractor
 from OTLModel.Datatypes.BooleanField import BooleanField
 from OTLModel.Datatypes.DtcDocument import DtcDocument
 from OTLModel.Datatypes.DtcIdentificator import DtcIdentificator
@@ -10,7 +12,7 @@ from OTLModel.Datatypes.StringField import StringField
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Derdenobject(AIMToestand, AIMDBStatus, AttributeInfo):
+class Derdenobject(AIMToestand, AIMDBStatus, AttributeInfo, OTLAsset, RelatieInteractor):
     """Object niet in eigendom van de assetbeheerder dat zonder verdere typering bewaard wordt om relaties met getypeerde assets te kunnen beheren."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#Derdenobject'
@@ -20,6 +22,8 @@ class Derdenobject(AIMToestand, AIMDBStatus, AttributeInfo):
         AIMDBStatus.__init__(self)
         AIMToestand.__init__(self)
         AttributeInfo.__init__(self)
+        OTLAsset.__init__(self)
+        RelatieInteractor.__init__(self)
 
         self._assetId = OTLAttribuut(field=DtcIdentificator,
                                      naam='assetId',

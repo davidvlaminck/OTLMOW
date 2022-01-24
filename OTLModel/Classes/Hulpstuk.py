@@ -1,5 +1,4 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.LinkendElement import LinkendElement
 from OTLModel.Datatypes.KlAansluitstukMateriaal import KlAansluitstukMateriaal
@@ -8,15 +7,14 @@ from OTLModel.Datatypes.KwantWrdInMillimeter import KwantWrdInMillimeter
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Hulpstuk(LinkendElement, AttributeInfo):
+class Hulpstuk(LinkendElement):
     """Stukken die zorgen voor verbindingen tussen rechte buizen om bv. van richting te veranderen, te verlengen, te verlopen van diameter, meerdere buizen op mekaar aan te sluiten,..."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Hulpstuk'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        AttributeInfo.__init__(self)
-        LinkendElement.__init__(self)
+        super().__init__()
 
         self._inwendigeDiameter = OTLAttribuut(field=KwantWrdInMillimeter,
                                                naam='inwendigeDiameter',

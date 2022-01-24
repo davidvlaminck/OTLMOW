@@ -1,5 +1,4 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.Voedingspunt import Voedingspunt
 from OTLModel.Datatypes.KlBatterijMerk import KlBatterijMerk
@@ -7,15 +6,14 @@ from OTLModel.Datatypes.KlBatterijModelnaam import KlBatterijModelnaam
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Batterij(Voedingspunt, AttributeInfo):
+class Batterij(Voedingspunt):
     """Element bestaande uit meerdere elektrochemische cellen voor het leveren van elektriciteit,die ontstaat door de omzetting van opgeslagen chemische energie in elektrische energie."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Batterij'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        AttributeInfo.__init__(self)
-        Voedingspunt.__init__(self)
+        super().__init__()
 
         self._merk = OTLAttribuut(field=KlBatterijMerk,
                                   naam='merk',

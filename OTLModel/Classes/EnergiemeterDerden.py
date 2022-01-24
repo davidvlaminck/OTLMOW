@@ -1,11 +1,10 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.Energiemeter import Energiemeter
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class EnergiemeterDerden(Energiemeter, AttributeInfo):
+class EnergiemeterDerden(Energiemeter):
     """Toestel dat eigendom is van een derde partij, verschillend van de distributienetbeheerder, waarmee het energieverbruik van de installaties van deze derden gemeten wordt. 
 Deze energiemeters komen enkel voor op:
 - installaties van AWV waarop derden een afzonderlijke kring hebben gekregen voor het voeden van hun eigen installaties
@@ -15,5 +14,4 @@ Deze energiemeters komen enkel voor op:
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        AttributeInfo.__init__(self)
-        Energiemeter.__init__(self)
+        super().__init__()

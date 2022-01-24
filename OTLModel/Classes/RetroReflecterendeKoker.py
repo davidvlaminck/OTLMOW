@@ -1,20 +1,18 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.AIMObject import AIMObject
 from OTLModel.Datatypes.KlRetroreflecterendeKokerFolieType import KlRetroreflecterendeKokerFolieType
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class RetroReflecterendeKoker(AIMObject, AttributeInfo):
+class RetroReflecterendeKoker(AIMObject):
     """Een kunststoffen koker bevestigd rond een steun om de zichtbaarheid van verkeerseilanden te verhogen."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#RetroReflecterendeKoker'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        AIMObject.__init__(self)
-        AttributeInfo.__init__(self)
+        super().__init__()
 
         self._folieType = OTLAttribuut(field=KlRetroreflecterendeKokerFolieType,
                                        naam='folieType',

@@ -1,5 +1,4 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.LaagBouwklasse import LaagBouwklasse
 from OTLModel.Datatypes.DtcSupplementenCBV import DtcSupplementenCBV
@@ -12,15 +11,14 @@ from OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Cementbetonverharding(LaagBouwklasse, AttributeInfo):
+class Cementbetonverharding(LaagBouwklasse):
     """Stijve verharding met of zonder wapening verkregen door cementbeton te spreiden en mechanisch te verdichten."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Cementbetonverharding'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        AttributeInfo.__init__(self)
-        LaagBouwklasse.__init__(self)
+        super().__init__()
 
         self._aantalAnkerstaven = OTLAttribuut(field=IntegerField,
                                                naam='aantalAnkerstaven',

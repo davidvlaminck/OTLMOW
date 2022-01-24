@@ -1,12 +1,11 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.Proef import Proef
 from OTLModel.Datatypes.KlLEACSchokindexMVP import KlLEACSchokindexMVP
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class ProefSchokindexMVP(Proef, AttributeInfo):
+class ProefSchokindexMVP(Proef):
     """Proef voor de bepaling van de schokindex parameter van de motorvangplank."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefSchokindexMVP'
@@ -15,8 +14,7 @@ class ProefSchokindexMVP(Proef, AttributeInfo):
     deprecated_version = '2.0.0'
 
     def __init__(self):
-        AttributeInfo.__init__(self)
-        Proef.__init__(self)
+        super().__init__()
 
         self._schokindexMvp = OTLAttribuut(field=KlLEACSchokindexMVP,
                                            naam='schokindexMvp',

@@ -1,5 +1,4 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from abc import abstractmethod
 from OTLModel.Classes.Kantopsluiting import Kantopsluiting
@@ -8,7 +7,7 @@ from OTLModel.Datatypes.KlLEStandaardFabricageLengte import KlLEStandaardFabrica
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class GestandaardiseerdeKantopsluiting(Kantopsluiting, AttributeInfo):
+class GestandaardiseerdeKantopsluiting(Kantopsluiting):
     """Abstracte voor een kantopsluiting die voldoet aan een bepaalde standaard."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#GestandaardiseerdeKantopsluiting'
@@ -16,8 +15,7 @@ class GestandaardiseerdeKantopsluiting(Kantopsluiting, AttributeInfo):
 
     @abstractmethod
     def __init__(self):
-        AttributeInfo.__init__(self)
-        Kantopsluiting.__init__(self)
+        super().__init__()
 
         self._bijkomendeParameter = OTLAttribuut(field=KlLEKantopsluitingBijkomendeParameter,
                                                  naam='bijkomendeParameter',

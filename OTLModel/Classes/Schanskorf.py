@@ -1,5 +1,4 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.AndereVerharding import AndereVerharding
 from OTLModel.Datatypes.BooleanField import BooleanField
@@ -11,15 +10,14 @@ from OTLModel.Datatypes.KlTypeSchanskorf import KlTypeSchanskorf
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Schanskorf(AndereVerharding, AttributeInfo):
+class Schanskorf(AndereVerharding):
     """Een schanskorf bestaat uit een metalen gaasnet dat wordt gevuld met steenachtige materialen."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Schanskorf'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        AndereVerharding.__init__(self)
-        AttributeInfo.__init__(self)
+        super().__init__()
 
         self._heeftVerankeringspalen = OTLAttribuut(field=BooleanField,
                                                     naam='heeftVerankeringspalen',

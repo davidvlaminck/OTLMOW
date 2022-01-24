@@ -1,5 +1,4 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.Geluidsschermelement import Geluidsschermelement
 from OTLModel.Datatypes.KlVGOpstelling import KlVGOpstelling
@@ -8,15 +7,14 @@ from OTLModel.Datatypes.KlVormSchermelement import KlVormSchermelement
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class VlakGeluidsschermelement(Geluidsschermelement, AttributeInfo):
+class VlakGeluidsschermelement(Geluidsschermelement):
     """Een vlak scherm zijn alle schermtypes die getest kunnen worden volgens de normen NBN EN 1793-1 NBN EN 1793-2."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#VlakGeluidsschermelement'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        AttributeInfo.__init__(self)
-        Geluidsschermelement.__init__(self)
+        super().__init__()
 
         self._opstelling = OTLAttribuut(field=KlVGOpstelling,
                                         naam='opstelling',

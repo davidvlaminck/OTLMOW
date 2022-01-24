@@ -1,5 +1,4 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.AIMNaamObject import AIMNaamObject
 from OTLModel.Datatypes.KlKlimatisatieMerk import KlKlimatisatieMerk
@@ -7,15 +6,14 @@ from OTLModel.Datatypes.KlKlimatisatieModelnaam import KlKlimatisatieModelnaam
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Klimatisatie(AIMNaamObject, AttributeInfo):
+class Klimatisatie(AIMNaamObject):
     """Component waarmee de temperatuur en klimaat geregeld wordt van het objecttype waaraan het bevestigd is zoals een behuizing of ruimte."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Klimatisatie'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        AIMNaamObject.__init__(self)
-        AttributeInfo.__init__(self)
+        super().__init__()
 
         self._merk = OTLAttribuut(field=KlKlimatisatieMerk,
                                   naam='merk',

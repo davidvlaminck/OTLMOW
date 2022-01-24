@@ -1,5 +1,4 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.VerlichtingstoestelConnector import VerlichtingstoestelConnector
 from OTLModel.Classes.Verlichtingstoestel import Verlichtingstoestel
@@ -8,7 +7,7 @@ from OTLModel.Datatypes.DteKleurRAL import DteKleurRAL
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class VerlichtingstoestelMHHP(VerlichtingstoestelConnector, Verlichtingstoestel, AttributeInfo):
+class VerlichtingstoestelMHHP(VerlichtingstoestelConnector, Verlichtingstoestel):
     """Het geheel van de metaalhalogenide lamp (MHHP), voorschakelapparatuur en de behuizing die werden samengesteld met als doel:
 * de lichtstroom van de lichtbronnen hoofdzakelijk op het te verlichten oppervlak (doorlopende wegsectie, conflictgebied,...) te richten, teneinde de zichtbaarheid te verhogen;
 * de lichtstroom te beheersen zodat de weggebruikers niet verblind worden en de lichthinder beperkt wordt;
@@ -18,7 +17,6 @@ class VerlichtingstoestelMHHP(VerlichtingstoestelConnector, Verlichtingstoestel,
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        AttributeInfo.__init__(self)
         Verlichtingstoestel.__init__(self)
         VerlichtingstoestelConnector.__init__(self)
 

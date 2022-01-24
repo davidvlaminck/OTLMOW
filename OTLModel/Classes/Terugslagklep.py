@@ -1,5 +1,4 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.LinkendElement import LinkendElement
 from OTLModel.Datatypes.KlTerugslagklepType import KlTerugslagklepType
@@ -10,15 +9,14 @@ from OTLModel.Datatypes.KwantWrdInMillimeter import KwantWrdInMillimeter
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Terugslagklep(LinkendElement, AttributeInfo):
+class Terugslagklep(LinkendElement):
     """Een terugslagklep is een klep die dient om water, vloeistof, granulaat, poeder of gas in één richting door te laten. Meestal duwt het medium de klep bij het heenstromen open en sluit een veer of de zwaartekracht de klep."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Terugslagklep'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        AttributeInfo.__init__(self)
-        LinkendElement.__init__(self)
+        super().__init__()
 
         self._breedteOpening = OTLAttribuut(field=KwantWrdInMillimeter,
                                             naam='breedteOpening',

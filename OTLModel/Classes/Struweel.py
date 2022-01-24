@@ -1,20 +1,18 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.HoutigeVegetatie import HoutigeVegetatie
 from OTLModel.Datatypes.KlNSB import KlNSB
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Struweel(HoutigeVegetatie, AttributeInfo):
+class Struweel(HoutigeVegetatie):
     """Een struweel is een met struiken begroeide oppervlakte dat minimaal 5 m breed  is, minimaal 1 m hoog, maar meestal 2 tot 5 m hoog is. Een struweel is meestal meersoortig en vaak aan de rand van een bos terug te vinden."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Struweel'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        AttributeInfo.__init__(self)
-        HoutigeVegetatie.__init__(self)
+        super().__init__()
 
         self._huidigNatuurbeeld = OTLAttribuut(field=KlNSB,
                                                naam='huidigNatuurbeeld',

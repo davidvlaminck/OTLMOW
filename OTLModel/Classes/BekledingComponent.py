@@ -1,12 +1,11 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from abc import abstractmethod
 from OTLModel.Classes.AIMObject import AIMObject
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class BekledingComponent(AIMObject, AttributeInfo):
+class BekledingComponent(AIMObject):
     """Abstracte voor componenten die als bekleding worden bevestigd op andere elementen."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#BekledingComponent'
@@ -14,5 +13,4 @@ class BekledingComponent(AIMObject, AttributeInfo):
 
     @abstractmethod
     def __init__(self):
-        AIMObject.__init__(self)
-        AttributeInfo.__init__(self)
+        super().__init__()

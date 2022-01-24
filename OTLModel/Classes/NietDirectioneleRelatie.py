@@ -1,12 +1,11 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from abc import abstractmethod
 from OTLModel.Classes.RelatieObject import RelatieObject
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class NietDirectioneleRelatie(RelatieObject, AttributeInfo):
+class NietDirectioneleRelatie(RelatieObject):
     """Een abstracte die relaties groepeert waarbij de richting semantisch niet gedefinieerd is."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#NietDirectioneleRelatie'
@@ -14,5 +13,4 @@ class NietDirectioneleRelatie(RelatieObject, AttributeInfo):
 
     @abstractmethod
     def __init__(self):
-        AttributeInfo.__init__(self)
-        RelatieObject.__init__(self)
+        super().__init__()

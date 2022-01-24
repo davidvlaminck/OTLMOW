@@ -1,5 +1,4 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.AIMObject import AIMObject
 from OTLModel.Classes.Put import Put
@@ -7,7 +6,7 @@ from OTLModel.Datatypes.KlPutMateriaal import KlPutMateriaal
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class BlindePut(AIMObject, Put, AttributeInfo):
+class BlindePut(AIMObject, Put):
     """Een put waar de riolering op aangesloten is maar die niet meer zichtbaar is."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/installatie#BlindePut'
@@ -15,7 +14,6 @@ class BlindePut(AIMObject, Put, AttributeInfo):
 
     def __init__(self):
         AIMObject.__init__(self)
-        AttributeInfo.__init__(self)
         Put.__init__(self)
 
         self._materiaal = OTLAttribuut(field=KlPutMateriaal,

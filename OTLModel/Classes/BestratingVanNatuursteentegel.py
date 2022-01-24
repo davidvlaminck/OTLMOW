@@ -1,5 +1,4 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.Bestrating import Bestrating
 from OTLModel.Datatypes.KlBestratingAfwerking import KlBestratingAfwerking
@@ -8,15 +7,14 @@ from OTLModel.Datatypes.KlNatuursteentegelGebruiksklasse import KlNatuursteenteg
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class BestratingVanNatuursteentegel(Bestrating, AttributeInfo):
+class BestratingVanNatuursteentegel(Bestrating):
     """Een buitentegel (of buitenplavei) is elk element van natuursteen gebruikt als bestratingsmateriaal, waarvan de breedte groter is dan 150 mm en doorgaans groter is dan twee maal de dikte volgens PTV841."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#BestratingVanNatuursteentegel'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        AttributeInfo.__init__(self)
-        Bestrating.__init__(self)
+        super().__init__()
 
         self._afmetingVanBestratingselementLxB = OTLAttribuut(field=KlBestratingselementAfmetingLxB,
                                                               naam='afmetingVanBestratingselementLxB',

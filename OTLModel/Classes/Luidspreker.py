@@ -1,5 +1,4 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.AIMNaamObject import AIMNaamObject
 from OTLModel.Datatypes.DtcDocument import DtcDocument
@@ -10,15 +9,14 @@ from OTLModel.Datatypes.KlLuidsprekerModelnaam import KlLuidsprekerModelnaam
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Luidspreker(AIMNaamObject, AttributeInfo):
+class Luidspreker(AIMNaamObject):
     """Een luidspreker is een apparaat waarmee elektrische signalen worden omgezet in geluid."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Luidspreker'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        AIMNaamObject.__init__(self)
-        AttributeInfo.__init__(self)
+        super().__init__()
 
         self._merk = OTLAttribuut(field=KlLuidsprekerMerk,
                                   naam='merk',

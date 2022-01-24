@@ -1,12 +1,11 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from abc import abstractmethod, ABC
 from OTLModel.Datatypes.KlVriTypeweggebruiker import KlVriTypeweggebruiker
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class TypeWeggebruiker(ABC, AttributeInfo):
+class TypeWeggebruiker(ABC):
     """Abstracte klasse die het type weggebruiker met een attribuut (volgens keuzelijst) aangeeft."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#TypeWeggebruiker'
@@ -14,8 +13,6 @@ class TypeWeggebruiker(ABC, AttributeInfo):
 
     @abstractmethod
     def __init__(self):
-        super().__init__()
-
         self._typeWeggebruiker = OTLAttribuut(field=KlVriTypeweggebruiker,
                                               naam='typeWeggebruiker',
                                               label='type weggebruiker',

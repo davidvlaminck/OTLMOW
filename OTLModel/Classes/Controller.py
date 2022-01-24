@@ -1,5 +1,4 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from abc import abstractmethod
 from OTLModel.Classes.AIMNaamObject import AIMNaamObject
@@ -8,7 +7,7 @@ from OTLModel.Datatypes.StringField import StringField
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Controller(AIMNaamObject, AttributeInfo):
+class Controller(AIMNaamObject):
     """Abstracte voor allerlei types van controllers."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Controller'
@@ -16,8 +15,7 @@ class Controller(AIMNaamObject, AttributeInfo):
 
     @abstractmethod
     def __init__(self):
-        AIMNaamObject.__init__(self)
-        AttributeInfo.__init__(self)
+        super().__init__()
 
         self._batchnummer = OTLAttribuut(field=StringField,
                                          naam='batchnummer',

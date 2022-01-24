@@ -1,5 +1,4 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.Communicatieapparatuur import Communicatieapparatuur
 from OTLModel.Classes.FirmwareObject import FirmwareObject
@@ -7,14 +6,13 @@ from OTLModel.Datatypes.StringField import StringField
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Armatuurcontroller(Communicatieapparatuur, FirmwareObject, AttributeInfo):
+class Armatuurcontroller(Communicatieapparatuur, FirmwareObject):
     """Controller die op het verlichtingstoestel wordt gemonteerd en die één verlichtingstoestel aanstuurt."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Armatuurcontroller'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        AttributeInfo.__init__(self)
         Communicatieapparatuur.__init__(self)
         FirmwareObject.__init__(self)
 

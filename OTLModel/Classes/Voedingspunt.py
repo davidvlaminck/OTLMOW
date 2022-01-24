@@ -1,12 +1,11 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from abc import abstractmethod
 from OTLModel.Classes.AIMNaamObject import AIMNaamObject
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Voedingspunt(AIMNaamObject, AttributeInfo):
+class Voedingspunt(AIMNaamObject):
     """Abstracte voor het aansluitpunt van de voeding."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Voedingspunt'
@@ -14,5 +13,4 @@ class Voedingspunt(AIMNaamObject, AttributeInfo):
 
     @abstractmethod
     def __init__(self):
-        AIMNaamObject.__init__(self)
-        AttributeInfo.__init__(self)
+        super().__init__()

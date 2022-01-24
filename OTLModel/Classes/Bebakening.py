@@ -1,5 +1,4 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from abc import abstractmethod
 from OTLModel.Classes.AIMObject import AIMObject
@@ -8,7 +7,7 @@ from OTLModel.Datatypes.KlKleurReflector import KlKleurReflector
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Bebakening(AIMObject, Signalisatie, AttributeInfo):
+class Bebakening(AIMObject, Signalisatie):
     """Abstracte voor de bebakeningen."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Bebakening'
@@ -17,7 +16,6 @@ class Bebakening(AIMObject, Signalisatie, AttributeInfo):
     @abstractmethod
     def __init__(self):
         AIMObject.__init__(self)
-        AttributeInfo.__init__(self)
         Signalisatie.__init__(self)
 
         self._kleurReflectorAflopend = OTLAttribuut(field=KlKleurReflector,

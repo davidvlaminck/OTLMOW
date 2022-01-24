@@ -1,5 +1,4 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from abc import abstractmethod
 from OTLModel.Classes.Energiemeter import Energiemeter
@@ -7,7 +6,7 @@ from OTLModel.Datatypes.KlEnergiemeterDNBMeteropnameFrequentie import KlEnergiem
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class DNBMeter(Energiemeter, AttributeInfo):
+class DNBMeter(Energiemeter):
     """Abstracte voor elk toestel dat eigendom is van de distributienetbeheerder en in de installatie van de asset beheerder geplaatst wordt voor diverse metingen van doorgevoerde energie."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#DNBMeter'
@@ -15,8 +14,7 @@ class DNBMeter(Energiemeter, AttributeInfo):
 
     @abstractmethod
     def __init__(self):
-        AttributeInfo.__init__(self)
-        Energiemeter.__init__(self)
+        super().__init__()
 
         self._meteropnameFrequentie = OTLAttribuut(field=KlEnergiemeterDNBMeteropnameFrequentie,
                                                    naam='meteropnameFrequentie',

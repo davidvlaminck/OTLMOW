@@ -1,5 +1,4 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.AIMNaamObject import AIMNaamObject
 from OTLModel.Classes.EMDraagconstructie import EMDraagconstructie
@@ -15,7 +14,7 @@ from OTLModel.Datatypes.StringField import StringField
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Lichtmast(AIMNaamObject, EMDraagconstructie, AttributeInfo):
+class Lichtmast(AIMNaamObject, EMDraagconstructie):
     """Paal waarop een verlichtingstoestel of andere toestellen zoals een camera bevestigd kunnen worden met uitzondering van wegverlichting. Omvat het deurtje, klemmenblok, montagekastje, bevestigingsmaterialen (bv. voetplaten) en fundering of verankeringsmassief. Indien de paal gebruikt wordt voor wegverlichting moet het objecttype WVLichtmast gebruikt worden."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Lichtmast'
@@ -23,7 +22,6 @@ class Lichtmast(AIMNaamObject, EMDraagconstructie, AttributeInfo):
 
     def __init__(self):
         AIMNaamObject.__init__(self)
-        AttributeInfo.__init__(self)
         EMDraagconstructie.__init__(self)
 
         self._beschermlaag = OTLAttribuut(field=KlDraagConstrBeschermlaag,

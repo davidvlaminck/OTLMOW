@@ -1,5 +1,4 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.NaampadObject import NaampadObject
 from OTLModel.Datatypes.BooleanField import BooleanField
@@ -9,15 +8,14 @@ from OTLModel.Datatypes.KlAlgSnelheidsregime import KlAlgSnelheidsregime
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Trajectcontrole(NaampadObject, AttributeInfo):
+class Trajectcontrole(NaampadObject):
     """Trajectcontrole is een systeem waarbij de gemiddelde snelheid over een langere afstand wordt gemeten."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Trajectcontrole'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        AttributeInfo.__init__(self)
-        NaampadObject.__init__(self)
+        super().__init__()
 
         self._attest = OTLAttribuut(field=DtcDocument,
                                     naam='attest',

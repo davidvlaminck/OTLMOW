@@ -1,20 +1,18 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.Bestrating import Bestrating
 from OTLModel.Datatypes.KlBestratingOpvulsoort import KlBestratingOpvulsoort
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class BestratingVanGrasbetontegel(Bestrating, AttributeInfo):
+class BestratingVanGrasbetontegel(Bestrating):
     """Bestrating van grasbetontegels."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#BestratingVanGrasbetontegel'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        AttributeInfo.__init__(self)
-        Bestrating.__init__(self)
+        super().__init__()
 
         self._vulling = OTLAttribuut(field=KlBestratingOpvulsoort,
                                      naam='vulling',

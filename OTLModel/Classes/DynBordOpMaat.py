@@ -1,5 +1,4 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.LEDBord import LEDBord
 from OTLModel.Datatypes.KlDynBordOpMaatMerk import KlDynBordOpMaatMerk
@@ -7,15 +6,14 @@ from OTLModel.Datatypes.KlDynBordOpMaatModelnaam import KlDynBordOpMaatModelnaam
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class DynBordOpMaat(LEDBord, AttributeInfo):
+class DynBordOpMaat(LEDBord):
     """Dynamisch verkeersbord dat niet standaard is; en dus niet is gespecifieerd in SB270."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DynBordOpMaat'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        AttributeInfo.__init__(self)
-        LEDBord.__init__(self)
+        super().__init__()
 
         self._merk = OTLAttribuut(field=KlDynBordOpMaatMerk,
                                   naam='merk',

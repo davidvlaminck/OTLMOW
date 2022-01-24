@@ -1,5 +1,4 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from abc import abstractmethod
 from OTLModel.Classes.ConstructieElement import ConstructieElement
@@ -8,7 +7,7 @@ from OTLModel.Datatypes.KwantWrdInMeterTAW import KwantWrdInMeterTAW
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Fundering(ConstructieElement, AttributeInfo):
+class Fundering(ConstructieElement):
     """Abstracte voor verschillende manieren om er voor te zorgen dat het eigen gewicht van het object dat de fundering krijgt en de krachten uitgeoefend op dat object, zoals nuttige belasting, sneeuw, winddruk, enzovoorts, worden overgedragen op de draagkrachtige ondergrond. Een fundering zit hoofdzakelijk onder het maaiveld en heeft tot doel het stabiliseren van een ander object."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Fundering'
@@ -16,8 +15,7 @@ class Fundering(ConstructieElement, AttributeInfo):
 
     @abstractmethod
     def __init__(self):
-        AttributeInfo.__init__(self)
-        ConstructieElement.__init__(self)
+        super().__init__()
 
         self._aanzetpeil = OTLAttribuut(field=KwantWrdInMeterTAW,
                                         naam='aanzetpeil',

@@ -1,5 +1,4 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.Detectie import Detectie
 from OTLModel.Classes.FirmwareObject import FirmwareObject
@@ -9,14 +8,13 @@ from OTLModel.Datatypes.KlWeggebondendetectorModelnaam import KlWeggebondendetec
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class WeggebondenDetector(Detectie, FirmwareObject, AttributeInfo):
+class WeggebondenDetector(Detectie, FirmwareObject):
     """Weggebonden detectoren zijn draadloze in het wegdek geïntegreerde radars of magnetische inductiesensoren. Ze zitten ingebed in een cilinder, die geplaatst wordt in het wegdek en die draadloos communiceert met een access point die met de verkeersregelaar verbonden is"""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#WeggebondenDetector'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        AttributeInfo.__init__(self)
         Detectie.__init__(self)
         FirmwareObject.__init__(self)
 

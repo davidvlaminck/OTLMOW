@@ -1,11 +1,10 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.BloemrijkGraslandGraslandfase4 import BloemrijkGraslandGraslandfase4
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Stroomdalgrasland(BloemrijkGraslandGraslandfase4, AttributeInfo):
+class Stroomdalgrasland(BloemrijkGraslandGraslandfase4):
     """G4b - cipreswolfsmelk, geoorde zuring, gestreepte
 klaver, grote tijm, handjesgras, harige ratelaar,
 hemelsleutel, kaal breukkruid, kleine
@@ -21,5 +20,4 @@ haver, zeepkruid."""
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        AttributeInfo.__init__(self)
-        BloemrijkGraslandGraslandfase4.__init__(self)
+        super().__init__()

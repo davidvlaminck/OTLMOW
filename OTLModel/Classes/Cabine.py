@@ -1,5 +1,4 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.Inloopbehuizing import Inloopbehuizing
 from OTLModel.Datatypes.KlCabineAardingsstelsel import KlCabineAardingsstelsel
@@ -8,15 +7,14 @@ from OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Cabine(Inloopbehuizing, AttributeInfo):
+class Cabine(Inloopbehuizing):
     """Een behuizing voornamelijk bestemd voor het beschermen van elektromechanische technieken waarin het omwille van de grootte en toegankelijkheid mogelijk is om rond te lopen."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Cabine'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        AttributeInfo.__init__(self)
-        Inloopbehuizing.__init__(self)
+        super().__init__()
 
         self._aardingsstelsel = OTLAttribuut(field=KlCabineAardingsstelsel,
                                              naam='aardingsstelsel',

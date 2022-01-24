@@ -1,5 +1,4 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.Lichtmast import Lichtmast
 from OTLModel.Datatypes.DtuWvLichtmastBevsToestelMethode import DtuWvLichtmastBevsToestelMethode
@@ -8,15 +7,14 @@ from OTLModel.Datatypes.KlWvLichtmastArmlengte import KlWvLichtmastArmlengte
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class WVLichtmast(Lichtmast, AttributeInfo):
+class WVLichtmast(Lichtmast):
     """Paal voorzien van armen voor het bevestigen van wegverlichtingstoestellen. Omvat het deurtje, klemmenblok, montagekastje, de bevestigingsmaterialen (bv. voetplaten) en fundering of verankeringsmassief. Gebruik Lichtmast voor de bevestiging van andere toestellen dan wegverlichting."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#WVLichtmast'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        AttributeInfo.__init__(self)
-        Lichtmast.__init__(self)
+        super().__init__()
 
         self._aantalArmen = OTLAttribuut(field=KlWvLichtmastAantArmen,
                                          naam='aantalArmen',

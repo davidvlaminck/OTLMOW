@@ -1,5 +1,4 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.LaagDikte import LaagDikte
 from OTLModel.Classes.Laag import Laag
@@ -10,14 +9,13 @@ from OTLModel.Datatypes.KwantWrdInKubiekeMeter import KwantWrdInKubiekeMeter
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Onderbouw(LaagDikte, Laag, AttributeInfo):
+class Onderbouw(LaagDikte, Laag):
     """Gedeelte van het baanlichaam dat tussen het baanbed en de verharding ligt. Deze omvat onderfundering, fundering en de straatlaag."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Onderbouw'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        AttributeInfo.__init__(self)
         Laag.__init__(self)
         LaagDikte.__init__(self)
 

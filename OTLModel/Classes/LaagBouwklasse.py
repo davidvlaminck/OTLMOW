@@ -1,5 +1,4 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from abc import abstractmethod
 from OTLModel.Classes.ArtificieleLaag import ArtificieleLaag
@@ -7,7 +6,7 @@ from OTLModel.Datatypes.KlAlgBouwklassegroep import KlAlgBouwklassegroep
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class LaagBouwklasse(ArtificieleLaag, AttributeInfo):
+class LaagBouwklasse(ArtificieleLaag):
     """Abstracte waarmee aan een laag het attribuut bouwklasse wordt toegekend."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#LaagBouwklasse'
@@ -15,8 +14,7 @@ class LaagBouwklasse(ArtificieleLaag, AttributeInfo):
 
     @abstractmethod
     def __init__(self):
-        ArtificieleLaag.__init__(self)
-        AttributeInfo.__init__(self)
+        super().__init__()
 
         self._bouwklasse = OTLAttribuut(field=KlAlgBouwklassegroep,
                                         naam='bouwklasse',

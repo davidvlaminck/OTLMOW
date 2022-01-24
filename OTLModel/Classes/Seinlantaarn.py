@@ -1,5 +1,4 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from abc import abstractmethod
 from OTLModel.Classes.AIMNaamObject import AIMNaamObject
@@ -11,7 +10,7 @@ from OTLModel.Datatypes.KlSeinlantaarnModelnaam import KlSeinlantaarnModelnaam
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Seinlantaarn(AIMNaamObject, AttributeInfo):
+class Seinlantaarn(AIMNaamObject):
     """Abstracte voor het geheel van één of meerdere verkeerslichten die boven elkaar worden opgesteld en worden bevestigd op een steun,teneinde de beweging van een weggebruiker die een bepaald traject volgt,te verhinderen of toe te laten."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Seinlantaarn'
@@ -19,8 +18,7 @@ class Seinlantaarn(AIMNaamObject, AttributeInfo):
 
     @abstractmethod
     def __init__(self):
-        AIMNaamObject.__init__(self)
-        AttributeInfo.__init__(self)
+        super().__init__()
 
         self._diameter = OTLAttribuut(field=KlSeinlantaarnDiameter,
                                       naam='diameter',

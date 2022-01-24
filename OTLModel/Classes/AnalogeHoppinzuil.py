@@ -1,5 +1,4 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.Hoppinzuil import Hoppinzuil
 from OTLModel.Datatypes.DtcDocument import DtcDocument
@@ -7,15 +6,14 @@ from OTLModel.Datatypes.KlHoppinzuilType import KlHoppinzuilType
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class AnalogeHoppinzuil(Hoppinzuil, AttributeInfo):
+class AnalogeHoppinzuil(Hoppinzuil):
     """Een hoppinzuil is een informatiezuil, die als doel heeft de reizigers te informeren omtrent de vervoersmogelijkheden en diensten die op de locatie van de zuil voorhanden zijn."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#AnalogeHoppinzuil'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        AttributeInfo.__init__(self)
-        Hoppinzuil.__init__(self)
+        super().__init__()
 
         self._macrokaart = OTLAttribuut(field=DtcDocument,
                                         naam='macrokaart',

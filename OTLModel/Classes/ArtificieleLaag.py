@@ -1,5 +1,4 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from abc import abstractmethod
 from OTLModel.Classes.Laag import Laag
@@ -8,7 +7,7 @@ from OTLModel.Classes.LaagProductidentificatiecode import LaagProductidentificat
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class ArtificieleLaag(Laag, LaagDikte, LaagProductidentificatiecode, AttributeInfo):
+class ArtificieleLaag(Laag, LaagDikte, LaagProductidentificatiecode):
     """Abstracte als noemer om de abstracten Laag, LaagProductidentificatiecode en LaagDikte te groeperen."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#ArtificieleLaag'
@@ -16,7 +15,6 @@ class ArtificieleLaag(Laag, LaagDikte, LaagProductidentificatiecode, AttributeIn
 
     @abstractmethod
     def __init__(self):
-        AttributeInfo.__init__(self)
         Laag.__init__(self)
         LaagDikte.__init__(self)
         LaagProductidentificatiecode.__init__(self)

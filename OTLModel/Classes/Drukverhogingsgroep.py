@@ -1,5 +1,4 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.Brandvoorziening import Brandvoorziening
 from OTLModel.Datatypes.KwantWrdInBar import KwantWrdInBar
@@ -7,15 +6,14 @@ from OTLModel.Datatypes.KwantWrdInKiloWatt import KwantWrdInKiloWatt
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Drukverhogingsgroep(Brandvoorziening, AttributeInfo):
+class Drukverhogingsgroep(Brandvoorziening):
     """Onderdeel dat de druk van het aangevoerde water regelt."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Drukverhogingsgroep'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        AttributeInfo.__init__(self)
-        Brandvoorziening.__init__(self)
+        super().__init__()
 
         self._inkomendeDruk = OTLAttribuut(field=KwantWrdInBar,
                                            naam='inkomendeDruk',

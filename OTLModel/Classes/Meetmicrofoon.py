@@ -1,5 +1,4 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.AIMNaamObject import AIMNaamObject
 from OTLModel.Datatypes.DtcDocument import DtcDocument
@@ -9,7 +8,7 @@ from OTLModel.Datatypes.KlMeetmicrofoonModelnaam import KlMeetmicrofoonModelnaam
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Meetmicrofoon(AIMNaamObject, AttributeInfo):
+class Meetmicrofoon(AIMNaamObject):
     """Een microfoon is een elektromechanisch instrument dat geluid omzet in een elektrisch signaal. 
 Een meetmicrofoon registreert de geluidsdruk, is gevoelig voor geluid uit alle richtingen en heeft een vlakke frequentiekarakteristiek. Nauwkeurigheid is hier belangrijker dan geluidskwaliteit. In een tunnel meet de microfoon het geluidsniveau in de tunnel om het volume van een luidspreker aan te kunnen passen om zo verstaanbaar mogelijk te communiceren.
 """
@@ -18,8 +17,7 @@ Een meetmicrofoon registreert de geluidsdruk, is gevoelig voor geluid uit alle r
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        AIMNaamObject.__init__(self)
-        AttributeInfo.__init__(self)
+        super().__init__()
 
         self._merk = OTLAttribuut(field=KlMeetmicrofoonMerk,
                                   naam='merk',

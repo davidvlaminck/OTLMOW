@@ -1,5 +1,4 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.ZenderOntvangerToegang import ZenderOntvangerToegang
 from OTLModel.Datatypes.KlOntvangerMerk import KlOntvangerMerk
@@ -8,15 +7,14 @@ from OTLModel.Datatypes.KlOntvangerToepassing import KlOntvangerToepassing
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Ontvanger(ZenderOntvangerToegang, AttributeInfo):
+class Ontvanger(ZenderOntvangerToegang):
     """Toestel voor het opvangen van signalen."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Ontvanger'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        AttributeInfo.__init__(self)
-        ZenderOntvangerToegang.__init__(self)
+        super().__init__()
 
         self._merk = OTLAttribuut(field=KlOntvangerMerk,
                                   naam='merk',

@@ -1,5 +1,4 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from abc import abstractmethod, ABC
 from OTLModel.Datatypes.BooleanField import BooleanField
@@ -13,7 +12,7 @@ from OTLModel.Datatypes.KwantWrdInUur import KwantWrdInUur
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Deur(ABC, AttributeInfo):
+class Deur(ABC):
     """Een beweegbaar element ter afsluiting van een ruimte. In een gebouw is een deur meestal bevestigd in een kozijn,dat weer in een muur of wand is aangebracht."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Deur'
@@ -21,8 +20,6 @@ class Deur(ABC, AttributeInfo):
 
     @abstractmethod
     def __init__(self):
-        super().__init__()
-
         self._afmetingDeuropening = OTLAttribuut(field=DtcAfmetingBxhInM,
                                                  naam='afmetingDeuropening',
                                                  label='afmeting deuropening',

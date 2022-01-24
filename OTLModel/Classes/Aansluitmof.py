@@ -1,5 +1,4 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.LinkendElement import LinkendElement
 from OTLModel.Datatypes.KlAansluitstukMateriaal import KlAansluitstukMateriaal
@@ -7,15 +6,14 @@ from OTLModel.Datatypes.KwantWrdInMillimeter import KwantWrdInMillimeter
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Aansluitmof(LinkendElement, AttributeInfo):
+class Aansluitmof(LinkendElement):
     """Aansluitingsstuk tussen 2 buizen."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Aansluitmof'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        AttributeInfo.__init__(self)
-        LinkendElement.__init__(self)
+        super().__init__()
 
         self._diameter = OTLAttribuut(field=KwantWrdInMillimeter,
                                       naam='diameter',

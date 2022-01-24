@@ -1,12 +1,11 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from abc import abstractmethod, ABC
 from OTLModel.Datatypes.DtcProductidentificatiecode import DtcProductidentificatiecode
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class LaagProductidentificatiecode(ABC, AttributeInfo):
+class LaagProductidentificatiecode(ABC):
     """Abstracte waarmee aan een laag de eigenschap productidentificatiecode wordt toegekend."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#LaagProductidentificatiecode'
@@ -14,8 +13,6 @@ class LaagProductidentificatiecode(ABC, AttributeInfo):
 
     @abstractmethod
     def __init__(self):
-        super().__init__()
-
         self._productidentificatiecode = OTLAttribuut(field=DtcProductidentificatiecode,
                                                       naam='productidentificatiecode',
                                                       label='productidentificatiecode',

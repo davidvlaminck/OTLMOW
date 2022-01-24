@@ -1,5 +1,4 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from abc import abstractmethod
 from OTLModel.Classes.Kast import Kast
@@ -9,7 +8,7 @@ from OTLModel.Datatypes.KwantWrdInJaar import KwantWrdInJaar
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Buitenkast(Kast, AttributeInfo):
+class Buitenkast(Kast):
     """Abstracte voor kasten die typisch buiten staan en daarom bestand moeten zijn tegen de elementen en verfraaiing kunnen krijgen."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Buitenkast'
@@ -17,8 +16,7 @@ class Buitenkast(Kast, AttributeInfo):
 
     @abstractmethod
     def __init__(self):
-        AttributeInfo.__init__(self)
-        Kast.__init__(self)
+        super().__init__()
 
         self._ipKlasse = OTLAttribuut(field=KlAlgIngressProtectionCode,
                                       naam='ipKlasse',

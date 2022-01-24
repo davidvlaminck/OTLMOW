@@ -1,5 +1,4 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.NaampadObject import NaampadObject
 from OTLModel.Datatypes.IntegerField import IntegerField
@@ -8,15 +7,14 @@ from OTLModel.Datatypes.StringField import StringField
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Link(NaampadObject, AttributeInfo):
+class Link(NaampadObject):
     """Het (glasvezel) traject tussen twee toestellen (NetwerkElementen) die rechtstreeks met mekaar communiceren."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Link'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        AttributeInfo.__init__(self)
-        NaampadObject.__init__(self)
+        super().__init__()
 
         self._geleidingsgroepTnummer = OTLAttribuut(field=IntegerField,
                                                     naam='geleidingsgroepTnummer',

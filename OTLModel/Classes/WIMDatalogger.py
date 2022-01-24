@@ -1,5 +1,4 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.AIMNaamObject import AIMNaamObject
 from OTLModel.Datatypes.KlWIMDataloggerMerk import KlWIMDataloggerMerk
@@ -7,15 +6,14 @@ from OTLModel.Datatypes.KlWIMDataloggerModelnaam import KlWIMDataloggerModelnaam
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class WIMDatalogger(AIMNaamObject, AttributeInfo):
+class WIMDatalogger(AIMNaamObject):
     """Lokale verwerkingseenheid voor aggregatie weeggegevens."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#WIMDatalogger'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        AIMNaamObject.__init__(self)
-        AttributeInfo.__init__(self)
+        super().__init__()
 
         self._merk = OTLAttribuut(field=KlWIMDataloggerMerk,
                                   naam='merk',

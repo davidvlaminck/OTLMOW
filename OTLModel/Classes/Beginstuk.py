@@ -1,12 +1,11 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from abc import abstractmethod
 from OTLModel.Classes.AfschermendeConstructie import AfschermendeConstructie
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Beginstuk(AfschermendeConstructie, AttributeInfo):
+class Beginstuk(AfschermendeConstructie):
     """Abstracte voor een stuk aan het uiteinde van een geleideconstructie,met als doel een frontale botsing te reduceren gericht naar het naderende verkeer."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Beginstuk'
@@ -14,5 +13,4 @@ class Beginstuk(AfschermendeConstructie, AttributeInfo):
 
     @abstractmethod
     def __init__(self):
-        AfschermendeConstructie.__init__(self)
-        AttributeInfo.__init__(self)
+        super().__init__()

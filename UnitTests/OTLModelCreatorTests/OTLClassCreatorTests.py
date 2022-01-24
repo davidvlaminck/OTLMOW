@@ -41,22 +41,20 @@ class ClassOSLOCollector(OSLOCollector):
         ]
 
         self.expectedDataGebouw = ['# coding=utf-8',
-                                   'from OTLModel.BaseClasses.AttributeInfo import AttributeInfo',
                                    'from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut',
                                    'from OTLModel.Classes.Behuizing import Behuizing',
                                    'from OTLModel.Datatypes.DtcDocument import DtcDocument',
                                    '',
                                    '',
                                    '# Generated with OTLClassCreator. To modify: extend, do not edit',
-                                   "class Gebouw(Behuizing, AttributeInfo):",
+                                   "class Gebouw(Behuizing):",
                                    '    """Elk bouwwerk, dat een voor mensen toegankelijke overdekte, geheel of gedeeltelijk met wanden omsloten ruimte vormt."""',
                                    "",
                                    "    typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Gebouw'",
                                    '    """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""',
                                    "",
                                    "    def __init__(self):",
-                                   '        AttributeInfo.__init__(self)',
-                                   '        Behuizing.__init__(self)',
+                                   '        super().__init__()',
                                    "",
                                    "        self._grondplan = OTLAttribuut(field=DtcDocument,",
                                    "                                       naam='grondplan',",
@@ -132,8 +130,8 @@ class OTLClassCreatorTests(unittest.TestCase):
         self.assertEqual(str(exception_bad_name.exception), "Input is not a OSLOClass")
 
     expectedDataContainerBuis = ['# coding=utf-8',
+                                 'from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut',
                                  'from abc import abstractmethod, ABC',
-                                 'from OTLModel.Datatypes.KardinaliteitField import KardinaliteitField',
                                  'from OTLModel.Datatypes.StringField import StringField',
                                  '',
                                  '',
@@ -141,32 +139,29 @@ class OTLClassCreatorTests(unittest.TestCase):
                                  'class ContainerBuis(ABC):',
                                  '    """Abstracte voor het groeperen van eigenschappen en relaties van buisvormige container elementen. Dit zijn buizen die kabels of andere leidingen kunnen bevatten."""',
                                  '',
-                                 '    typeURI = "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#ContainerBuis"',
+                                 "    typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#ContainerBuis'",
                                  '    """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""',
                                  '',
                                  '    @abstractmethod',
                                  '    def __init__(self):',
-                                 '        kleurField = StringField(naam="kleur",',
-                                 '                                 label="kleur",',
-                                 '                                 objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#ContainerBuis.kleur",',
-                                 '                                 definition="De kleur van de coating.",',
-                                 '                                 constraints="",',
-                                 '                                 usagenote="",',
-                                 '                                 deprecated_version="")',
-                                 '        self.kleur = KardinaliteitField(minKardinaliteit="1", maxKardinaliteit="*", fieldToMultiply=kleurField)',
-                                 '        """De kleur van de coating."""']
+                                 '        self._kleur = OTLAttribuut(field=StringField,',
+                                 "                                   naam='kleur',",
+                                 "                                   label='kleur',",
+                                 "                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#ContainerBuis.kleur',",
+                                 "                                   kardinaliteit_max='*',",
+                                 "                                   definition='De kleur van de coating.')",
+                                 '',
+                                 '    @property',
+                                 '    def kleur(self):',
+                                 '        """De kleur van de coating."""',
+                                 '        return self._kleur.waarde',
+                                 '',
+                                 '    @kleur.setter',
+                                 '    def kleur(self, value):',
+                                 '        self._kleur.set_waarde(value, owner=self)']
 
     def test_ContainerBuis(self):
-        logger = NoneLogger()
-
-        base_dir = os.path.dirname(os.path.realpath(__file__))
-        file_location = f'{base_dir}/../../InputFiles/OTL.db'
-        sql_reader = SQLDbReader(file_location)
-        oslo_creator = OSLOInMemoryCreator(sql_reader)
-        collector = OSLOCollector(oslo_creator)
-        collector.collect()
-
-        creator = OTLClassCreator(logger, collector)
+        collector, creator = self.set_up_real_collector_and_creator()
         containerBuis = collector.FindClassByUri('https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#ContainerBuis')
         dataToWrite = creator.CreateBlockToWriteFromClasses(containerBuis)
 
@@ -183,16 +178,7 @@ class OTLClassCreatorTests(unittest.TestCase):
         self.assertEqual(collector.expectedDataGebouw, dataToWrite)
 
     def test_WriteToFileContainerBuis(self):
-        logger = NoneLogger()
-
-        base_dir = os.path.dirname(os.path.realpath(__file__))
-        file_location = f'{base_dir}/../../InputFiles/OTL.db'
-        sql_reader = SQLDbReader(file_location)
-        oslo_creator = OSLOInMemoryCreator(sql_reader)
-        collector = OSLOCollector(oslo_creator)
-        collector.collect()
-
-        creator = OTLClassCreator(logger, collector)
+        collector, creator = self.set_up_real_collector_and_creator()
         containerBuis = collector.FindClassByUri('https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#ContainerBuis')
         dataToWrite = creator.CreateBlockToWriteFromClasses(containerBuis)
         creator.writeToFile(containerBuis, 'Classes', dataToWrite, '../../')
@@ -201,16 +187,7 @@ class OTLClassCreatorTests(unittest.TestCase):
         self.assertTrue(os.path.isfile(filelocation))
 
     def test_WriteToFileBuis(self):
-        logger = NoneLogger()
-
-        base_dir = os.path.dirname(os.path.realpath(__file__))
-        file_location = f'{base_dir}/../../InputFiles/OTL.db'
-        sql_reader = SQLDbReader(file_location)
-        oslo_creator = OSLOInMemoryCreator(sql_reader)
-        collector = OSLOCollector(oslo_creator)
-        collector.collect()
-
-        creator = OTLClassCreator(logger, collector)
+        collector, creator = self.set_up_real_collector_and_creator()
         buis = collector.FindClassByUri('https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Buis')
         dataToWrite = creator.CreateBlockToWriteFromClasses(buis)
         creator.writeToFile(buis, 'Classes', dataToWrite, '../../')
@@ -219,19 +196,59 @@ class OTLClassCreatorTests(unittest.TestCase):
         self.assertTrue(os.path.isfile(filelocation))
 
     def test_WriteToFileGebouw(self):
-        logger = NoneLogger()
-
-        base_dir = os.path.dirname(os.path.realpath(__file__))
-        file_location = f'{base_dir}/../../InputFiles/OTL.db'
-        sql_reader = SQLDbReader(file_location)
-        oslo_creator = OSLOInMemoryCreator(sql_reader)
-        collector = OSLOCollector(oslo_creator)
-        collector.collect()
-
-        creator = OTLClassCreator(logger, collector)
+        collector, creator = self.set_up_real_collector_and_creator()
         containerBuis = collector.FindClassByUri('https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Gebouw')
         dataToWrite = creator.CreateBlockToWriteFromClasses(containerBuis)
         creator.writeToFile(containerBuis, 'Classes', dataToWrite, '../../')
 
         filelocation = os.path.abspath(os.path.join(os.sep, ROOT_DIR, 'OTLModel/Classes/Gebouw.py'))
         self.assertTrue(os.path.isfile(filelocation))
+
+    def test_CheckInheritances_Agent(self):
+        collector, creator = self.set_up_real_collector_and_creator()
+
+        agent = collector.FindClassByUri('http://purl.org/dc/terms/Agent')
+        dataToWrite = creator.CreateBlockToWriteFromClasses(agent)
+        inheritanceLine = "class Agent(AttributeInfo, OTLObject, RelatieInteractor):"
+
+        self.assertEqual(inheritanceLine, dataToWrite[11])
+
+    def test_CheckInheritances_AIMObject(self):
+        collector, creator = self.set_up_real_collector_and_creator()
+
+        aimObject = collector.FindClassByUri('https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMObject')
+        dataToWrite = creator.CreateBlockToWriteFromClasses(aimObject)
+        inheritanceLine = "class AIMObject(AIMToestand, AIMDBStatus, AttributeInfo, OTLAsset, RelatieInteractor):"
+
+        self.assertEqual(inheritanceLine, dataToWrite[15])
+
+    def test_CheckInheritances_RelatieObject(self):
+        collector, creator = self.set_up_real_collector_and_creator()
+
+        relatieObject = collector.FindClassByUri(
+            'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#RelatieObject')
+        dataToWrite = creator.CreateBlockToWriteFromClasses(relatieObject)
+        inheritanceLine = "class RelatieObject(AIMDBStatus, AttributeInfo, OTLObject):"
+
+        self.assertEqual(inheritanceLine, dataToWrite[10])
+
+    def test_CheckInheritances_DerdenObject(self):
+        collector, creator = self.set_up_real_collector_and_creator()
+
+        derdenobject = collector.FindClassByUri('https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#Derdenobject')
+        dataToWrite = creator.CreateBlockToWriteFromClasses(derdenobject)
+        inheritanceLine = "class Derdenobject(AIMToestand, AIMDBStatus, AttributeInfo, OTLAsset, RelatieInteractor):"
+
+        self.assertEqual(inheritanceLine, dataToWrite[14])
+
+    @staticmethod
+    def set_up_real_collector_and_creator():
+        logger = NoneLogger()
+        base_dir = os.path.dirname(os.path.realpath(__file__))
+        file_location = f'{base_dir}/../../InputFiles/OTL.db'
+        sql_reader = SQLDbReader(file_location)
+        oslo_creator = OSLOInMemoryCreator(sql_reader)
+        collector = OSLOCollector(oslo_creator)
+        collector.collect()
+        creator = OTLClassCreator(logger, collector)
+        return collector, creator

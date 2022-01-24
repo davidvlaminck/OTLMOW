@@ -1,5 +1,4 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from abc import abstractmethod
 from OTLModel.Classes.BegroeidVoorkomen import BegroeidVoorkomen
@@ -10,7 +9,7 @@ from OTLModel.Datatypes.KwantWrdInVierkanteMeter import KwantWrdInVierkanteMeter
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class HoutigeVegetatie(BegroeidVoorkomen, AttributeInfo):
+class HoutigeVegetatie(BegroeidVoorkomen):
     """Houtige planten of houtige gewassen (planta lignosa) zijn overblijvende planten die worden gekenmerkt door secundaire diktegroei, waardoor de takken, stammen en wortels veel hout bevatten."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#HoutigeVegetatie'
@@ -18,8 +17,7 @@ class HoutigeVegetatie(BegroeidVoorkomen, AttributeInfo):
 
     @abstractmethod
     def __init__(self):
-        AttributeInfo.__init__(self)
-        BegroeidVoorkomen.__init__(self)
+        super().__init__()
 
         self._aanleg = OTLAttribuut(field=DtcHoutigeAanleg,
                                     naam='aanleg',

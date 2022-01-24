@@ -1,5 +1,4 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.LEDBord import LEDBord
 from OTLModel.Datatypes.KlDynBordRSSMerk import KlDynBordRSSMerk
@@ -7,15 +6,14 @@ from OTLModel.Datatypes.KlDynBordRSSModelnaam import KlDynBordRSSModelnaam
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class DynBordRSS(LEDBord, AttributeInfo):
+class DynBordRSS(LEDBord):
     """Dynamisch verkeersbord voor rijstrooksignalisatie (RSS)."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DynBordRSS'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        AttributeInfo.__init__(self)
-        LEDBord.__init__(self)
+        super().__init__()
 
         self._merk = OTLAttribuut(field=KlDynBordRSSMerk,
                                   naam='merk',

@@ -1,20 +1,18 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.AIMObject import AIMObject
 from OTLModel.Datatypes.KlEcoEcoductType import KlEcoEcoductType
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Ecoduct(AIMObject, AttributeInfo):
+class Ecoduct(AIMObject):
     """Ecoducten of natuurbruggen zorgen ervoor dat dieren veilig de weg kunnen oversteken."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Ecoduct'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        AIMObject.__init__(self)
-        AttributeInfo.__init__(self)
+        super().__init__()
 
         self._type = OTLAttribuut(field=KlEcoEcoductType,
                                   naam='type',

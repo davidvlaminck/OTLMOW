@@ -1,5 +1,4 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from abc import abstractmethod
 from OTLModel.Classes.LijnvormigElement import LijnvormigElement
@@ -9,7 +8,7 @@ from OTLModel.Datatypes.KwantWrdInKiloNewtonPerVierkanteMeter import KwantWrdInK
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Geluidsschermelement(LijnvormigElement, AttributeInfo):
+class Geluidsschermelement(LijnvormigElement):
     """Abstracte om de gemeenschappelijke eigenschappen van de verschillende types schermlementen te bundelen."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Geluidsschermelement'
@@ -17,8 +16,7 @@ class Geluidsschermelement(LijnvormigElement, AttributeInfo):
 
     @abstractmethod
     def __init__(self):
-        AttributeInfo.__init__(self)
-        LijnvormigElement.__init__(self)
+        super().__init__()
 
         self._hoogte = OTLAttribuut(field=KwantWrdInCentimeter,
                                     naam='hoogte',

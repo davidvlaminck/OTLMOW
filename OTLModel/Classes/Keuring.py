@@ -1,5 +1,4 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.Proef import Proef
 from OTLModel.Datatypes.DateField import DateField
@@ -8,15 +7,14 @@ from OTLModel.Datatypes.KwantWrdInJaar import KwantWrdInJaar
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Keuring(Proef, AttributeInfo):
+class Keuring(Proef):
     """Technische keuring uitgevoerd door een officiële keuringsinstantie."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#Keuring'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        AttributeInfo.__init__(self)
-        Proef.__init__(self)
+        super().__init__()
 
         self._datum = OTLAttribuut(field=DateField,
                                    naam='datum',

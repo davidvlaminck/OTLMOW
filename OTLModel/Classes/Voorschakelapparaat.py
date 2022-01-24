@@ -1,12 +1,11 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.AIMObject import AIMObject
 from OTLModel.Datatypes.KlVoorschakelapparaatType import KlVoorschakelapparaatType
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Voorschakelapparaat(AIMObject, AttributeInfo):
+class Voorschakelapparaat(AIMObject):
     """Het voorschakelapparaat van een ontladingslamp in ruime zin omvat alle componenten die in serie of in parallel met de lamp geschakeld worden om haar goede werking te verzekeren. Ze bestaat in 2 uitvoeringsvormen elektromagnetische en elektronische.
 Voor de elektromagnetische bestaat deze uit 
 *de ballast: een elektromagnetische eenheid, die d.m.v. passieve componenten zoals een spoel of een condensator en/of actieve componenten, hoofdzakelijk dient om de lampstroom te beperken tot de vereiste waarde;
@@ -19,8 +18,7 @@ Voor de elektromagnetische bestaat deze uit
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        AIMObject.__init__(self)
-        AttributeInfo.__init__(self)
+        super().__init__()
 
         self._type = OTLAttribuut(field=KlVoorschakelapparaatType,
                                   naam='type',

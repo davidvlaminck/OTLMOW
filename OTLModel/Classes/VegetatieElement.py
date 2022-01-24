@@ -1,5 +1,4 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from abc import abstractmethod
 from OTLModel.Classes.AIMObject import AIMObject
@@ -9,7 +8,7 @@ from OTLModel.Datatypes.KlVegetatieelementHoogte import KlVegetatieelementHoogte
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class VegetatieElement(AIMObject, AttributeInfo):
+class VegetatieElement(AIMObject):
     """Abstracte om alle gemeenschappelijke eigenschappen en relaties van de solitaire plant in de ruimte onder 1 noemer te plaatsen."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#VegetatieElement'
@@ -17,8 +16,7 @@ class VegetatieElement(AIMObject, AttributeInfo):
 
     @abstractmethod
     def __init__(self):
-        AIMObject.__init__(self)
-        AttributeInfo.__init__(self)
+        super().__init__()
 
         self._hoogte = OTLAttribuut(field=KlVegetatieelementHoogte,
                                     naam='hoogte',

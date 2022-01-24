@@ -1,5 +1,4 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.AndereLaag import AndereLaag
 from OTLModel.Datatypes.BooleanField import BooleanField
@@ -8,15 +7,14 @@ from OTLModel.Datatypes.KlGeotextielType import KlGeotextielType
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Geotextiel(AndereLaag, AttributeInfo):
+class Geotextiel(AndereLaag):
     """Geotextiel om grondoppervlakken, taluds en/of bodems te beschermen tegen erosie door wind, golfslag en/of stroming van water, afkomstig hetzij van afstromende neerslag, hetzij van afvloeiend oppervlaktewater."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Geotextiel'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        AndereLaag.__init__(self)
-        AttributeInfo.__init__(self)
+        super().__init__()
 
         self._heeftVulling = OTLAttribuut(field=BooleanField,
                                           naam='heeftVulling',

@@ -1,5 +1,4 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from abc import abstractmethod
 from OTLModel.Classes.AIMNaamObject import AIMNaamObject
@@ -7,7 +6,7 @@ from OTLModel.Datatypes.KlVriBewaking import KlVriBewaking
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Detectie(AIMNaamObject, AttributeInfo):
+class Detectie(AIMNaamObject):
     """Abstracte voor de overige detecties, zijnde die die niet onder de groepen "niet weggebonden detecties", " weggebonden detecties" of "detectielussen" vallen."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Detectie'
@@ -15,8 +14,7 @@ class Detectie(AIMNaamObject, AttributeInfo):
 
     @abstractmethod
     def __init__(self):
-        AIMNaamObject.__init__(self)
-        AttributeInfo.__init__(self)
+        super().__init__()
 
         self._soortBewaking = OTLAttribuut(field=KlVriBewaking,
                                            naam='soortBewaking',

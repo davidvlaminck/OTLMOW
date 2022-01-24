@@ -1,5 +1,4 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.VRIDraagconstructie import VRIDraagconstructie
 from OTLModel.Datatypes.BooleanField import BooleanField
@@ -11,15 +10,14 @@ from OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Seinbrug(VRIDraagconstructie, AttributeInfo):
+class Seinbrug(VRIDraagconstructie):
     """Metalen constructie bestaande uit twee of meer verticale steunen met voetplaat en uit een enkele of een dubbel uitgevoerde horizontale dwarsverbinding, allen kokervormig met rechthoekige doorsnede. Ook wel portiek of portaal genoemd."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Seinbrug'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        AttributeInfo.__init__(self)
-        VRIDraagconstructie.__init__(self)
+        super().__init__()
 
         self._aantalLadders = OTLAttribuut(field=FloatOrDecimalField,
                                            naam='aantalLadders',

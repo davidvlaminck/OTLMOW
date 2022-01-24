@@ -1,12 +1,11 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.Proef import Proef
 from OTLModel.Datatypes.KlLEACKerendVermogen import KlLEACKerendVermogen
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class ProefKerendVermogen(Proef, AttributeInfo):
+class ProefKerendVermogen(Proef):
     """Proef om het vermogen van een voertuigkering te bepalen om een doorbraak bij een bepaald type crash te voorkomen."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefKerendVermogen'
@@ -15,8 +14,7 @@ class ProefKerendVermogen(Proef, AttributeInfo):
     deprecated_version = '2.0.0'
 
     def __init__(self):
-        AttributeInfo.__init__(self)
-        Proef.__init__(self)
+        super().__init__()
 
         self._kerendVermogen = OTLAttribuut(field=KlLEACKerendVermogen,
                                             naam='kerendVermogen',

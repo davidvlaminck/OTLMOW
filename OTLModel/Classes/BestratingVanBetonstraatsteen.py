@@ -1,5 +1,4 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.Bestrating import Bestrating
 from OTLModel.Datatypes.DtcBSSRandafwerking import DtcBSSRandafwerking
@@ -9,15 +8,14 @@ from OTLModel.Datatypes.KlBestratingselementAfmetingLxB import KlBestratingselem
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class BestratingVanBetonstraatsteen(Bestrating, AttributeInfo):
+class BestratingVanBetonstraatsteen(Bestrating):
     """Bestrating van geprefabriceerde stenen in beton die (in de afgesproken mate) voldoen aan de vereisten van NBN EN 1338 en NBN B21-311."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#BestratingVanBetonstraatsteen'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        AttributeInfo.__init__(self)
-        Bestrating.__init__(self)
+        super().__init__()
 
         self._afmetingVanBestratingselementLxB = OTLAttribuut(field=KlBestratingselementAfmetingLxB,
                                                               naam='afmetingVanBestratingselementLxB',

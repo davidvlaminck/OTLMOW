@@ -1,5 +1,4 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.AIMObject import AIMObject
 from OTLModel.Classes.TerreinDeel import TerreinDeel
@@ -8,7 +7,7 @@ from OTLModel.Datatypes.KlWegbermType import KlWegbermType
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Wegberm(AIMObject, TerreinDeel, AttributeInfo):
+class Wegberm(AIMObject, TerreinDeel):
     """Gedeelte van het wegplatform dat buiten de rijbanen ligt. Een wegberm kan sloten en bijzonder ingerichte onderdelen bevatten."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Wegberm'
@@ -16,7 +15,6 @@ class Wegberm(AIMObject, TerreinDeel, AttributeInfo):
 
     def __init__(self):
         AIMObject.__init__(self)
-        AttributeInfo.__init__(self)
         TerreinDeel.__init__(self)
 
         self._bijzonderIngerichteOnderdelen = OTLAttribuut(field=KlWegbermBIO,

@@ -1,5 +1,4 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.Betonfundering import Betonfundering
 from OTLModel.Classes.KlassiekeFundering import KlassiekeFundering
@@ -8,14 +7,13 @@ from OTLModel.Datatypes.KwantWrdInKubiekeMeter import KwantWrdInKubiekeMeter
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Verankeringsmassief(Betonfundering, KlassiekeFundering, AttributeInfo):
+class Verankeringsmassief(Betonfundering, KlassiekeFundering):
     """Een fundering waarin ankers zijn aangebracht en die zorgen voor bevestiging en stabilisatie van een object."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Verankeringsmassief'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        AttributeInfo.__init__(self)
         Betonfundering.__init__(self)
         KlassiekeFundering.__init__(self)
 

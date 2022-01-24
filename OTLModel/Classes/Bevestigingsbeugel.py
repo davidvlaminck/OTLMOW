@@ -1,5 +1,4 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.AIMNaamObject import AIMNaamObject
 from OTLModel.Classes.BevestigingGC import BevestigingGC
@@ -9,7 +8,7 @@ from OTLModel.Datatypes.KlBevestigingsbeugelType import KlBevestigingsbeugelType
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Bevestigingsbeugel(AIMNaamObject, BevestigingGC, AttributeInfo):
+class Bevestigingsbeugel(AIMNaamObject, BevestigingGC):
     """Verbindingsstuk waarmee een object kan vastgemaakt worden aan een steun of oppervlak."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bevestigingsbeugel'
@@ -17,7 +16,6 @@ class Bevestigingsbeugel(AIMNaamObject, BevestigingGC, AttributeInfo):
 
     def __init__(self):
         AIMNaamObject.__init__(self)
-        AttributeInfo.__init__(self)
         BevestigingGC.__init__(self)
 
         self._berekeningsnota = OTLAttribuut(field=DtcDocument,

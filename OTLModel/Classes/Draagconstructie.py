@@ -1,11 +1,10 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from abc import abstractmethod, ABC
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Draagconstructie(ABC, AttributeInfo):
+class Draagconstructie(ABC):
     """Abstracte voor alle draagconstructies."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Draagconstructie'
@@ -13,4 +12,4 @@ class Draagconstructie(ABC, AttributeInfo):
 
     @abstractmethod
     def __init__(self):
-        super().__init__()
+        pass

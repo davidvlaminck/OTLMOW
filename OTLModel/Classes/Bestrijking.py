@@ -1,5 +1,4 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.AndereLaag import AndereLaag
 from OTLModel.Datatypes.KlBestrijkingKaliber import KlBestrijkingKaliber
@@ -8,15 +7,14 @@ from OTLModel.Datatypes.KlBestrijkingsoort import KlBestrijkingsoort
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Bestrijking(AndereLaag, AttributeInfo):
+class Bestrijking(AndereLaag):
     """Een bestrijking bestaat in het sproeien op een verharding of een fundering van één of twee eenvormige lagen bindmiddel met een geschikte viscositeit."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bestrijking'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        AndereLaag.__init__(self)
-        AttributeInfo.__init__(self)
+        super().__init__()
 
         self._kaliber = OTLAttribuut(field=KlBestrijkingKaliber,
                                      naam='kaliber',

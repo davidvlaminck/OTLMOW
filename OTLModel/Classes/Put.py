@@ -1,5 +1,4 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from abc import abstractmethod, ABC
 from OTLModel.Datatypes.DtcAdres import DtcAdres
@@ -10,7 +9,7 @@ from OTLModel.Datatypes.KwantWrdInMeterTAW import KwantWrdInMeterTAW
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Put(ABC, AttributeInfo):
+class Put(ABC):
     """Abstracte bedoeld om de verschillende soort putten onder te brengen en gemeenschappelijke eigenschappen over te dragen. De relaties worden overgedragen via de abstracte PutRelaties."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Put'
@@ -18,8 +17,6 @@ class Put(ABC, AttributeInfo):
 
     @abstractmethod
     def __init__(self):
-        super().__init__()
-
         self._adres = OTLAttribuut(field=DtcAdres,
                                    naam='adres',
                                    label='adres',

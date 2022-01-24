@@ -1,5 +1,4 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.AIMObject import AIMObject
 from OTLModel.Datatypes.DtcDocument import DtcDocument
@@ -7,7 +6,7 @@ from OTLModel.Datatypes.KlLEGCOpeningType import KlLEGCOpeningType
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Doorgang(AIMObject, AttributeInfo):
+class Doorgang(AIMObject):
     """Doorgangen voorzien een vluchtmogelijkheid. Deze bezitten dezelfde akoestische kwaliteitseisen als de voorgestelde schermen."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Doorgang'
@@ -16,8 +15,7 @@ class Doorgang(AIMObject, AttributeInfo):
     deprecated_version = '2.1.0'
 
     def __init__(self):
-        AIMObject.__init__(self)
-        AttributeInfo.__init__(self)
+        super().__init__()
 
         self._technischeFiche = OTLAttribuut(field=DtcDocument,
                                              naam='technischeFiche',

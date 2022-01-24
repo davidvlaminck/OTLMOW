@@ -1,5 +1,4 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.AIMObject import AIMObject
 from OTLModel.Datatypes.KlBinnenverlichtingstoestelSchakelwijze import KlBinnenverlichtingstoestelSchakelwijze
@@ -7,15 +6,14 @@ from OTLModel.Datatypes.KlBinnenverlichtingstoestelSoortLamp import KlBinnenverl
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Binnenverlichtingstoestel(AIMObject, AttributeInfo):
+class Binnenverlichtingstoestel(AIMObject):
     """Een verlichtingstoestel dat binnen in een gebouw geplaatst wordt. Een verlichtingstoestel is de combinatie van de lamp en de armatuur."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Binnenverlichtingstoestel'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        AIMObject.__init__(self)
-        AttributeInfo.__init__(self)
+        super().__init__()
 
         self._schakelwijze = OTLAttribuut(field=KlBinnenverlichtingstoestelSchakelwijze,
                                           naam='schakelwijze',

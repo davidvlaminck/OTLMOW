@@ -1,11 +1,10 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from abc import abstractmethod, ABC
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class ConstructieElementenGC(ABC, AttributeInfo):
+class ConstructieElementenGC(ABC):
     """Abstracte om de constructie-elementen te bundelen die gerelateerd zijn aan geluidswerende constructies."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#ConstructieElementenGC'
@@ -13,4 +12,4 @@ class ConstructieElementenGC(ABC, AttributeInfo):
 
     @abstractmethod
     def __init__(self):
-        super().__init__()
+        pass

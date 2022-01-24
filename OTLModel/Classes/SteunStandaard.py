@@ -1,5 +1,4 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from abc import abstractmethod
 from OTLModel.Classes.AIMNaamObject import AIMNaamObject
@@ -12,7 +11,7 @@ from OTLModel.Datatypes.StringField import StringField
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class SteunStandaard(AIMNaamObject, EMDraagconstructie, AttributeInfo):
+class SteunStandaard(AIMNaamObject, EMDraagconstructie):
     """Abstracte voor de standaard steunen."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#SteunStandaard'
@@ -21,7 +20,6 @@ class SteunStandaard(AIMNaamObject, EMDraagconstructie, AttributeInfo):
     @abstractmethod
     def __init__(self):
         AIMNaamObject.__init__(self)
-        AttributeInfo.__init__(self)
         EMDraagconstructie.__init__(self)
 
         self._beschermlaag = OTLAttribuut(field=KlDraagConstrBeschermlaag,

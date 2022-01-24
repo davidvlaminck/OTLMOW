@@ -1,5 +1,4 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from abc import abstractmethod
 from OTLModel.Classes.Behuizing import Behuizing
@@ -10,7 +9,7 @@ from OTLModel.Datatypes.KlAlgMateriaal import KlAlgMateriaal
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Kast(Behuizing, AttributeInfo):
+class Kast(Behuizing):
     """Abstracte voor allerlei types kasten."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Kast'
@@ -18,8 +17,7 @@ class Kast(Behuizing, AttributeInfo):
 
     @abstractmethod
     def __init__(self):
-        AttributeInfo.__init__(self)
-        Behuizing.__init__(self)
+        super().__init__()
 
         self._afmeting = OTLAttribuut(field=DtcAfmetingBxlxhInMm,
                                       naam='afmeting',

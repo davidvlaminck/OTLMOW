@@ -1,5 +1,4 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.AIMObject import AIMObject
 from OTLModel.Datatypes.FloatOrDecimalField import FloatOrDecimalField
@@ -8,7 +7,7 @@ from OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Gronddam(AIMObject, AttributeInfo):
+class Gronddam(AIMObject):
     """Gronddammen zijn trapeziumvormige constructies bestaande uit zand, grond of steenachtige materialen.
 De onderkant van de gronddam wordt direct op het bestaand maaiveld aangebracht of op een vooraf aangebrachte grondverbetering.
 Een gronddam kan volgende functies vervullen: geluidswering, geleiding van dieren, veiligheid en lichtwering."""
@@ -17,8 +16,7 @@ Een gronddam kan volgende functies vervullen: geluidswering, geleiding van diere
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        AIMObject.__init__(self)
-        AttributeInfo.__init__(self)
+        super().__init__()
 
         self._basisbreedte = OTLAttribuut(field=KwantWrdInMeter,
                                           naam='basisbreedte',

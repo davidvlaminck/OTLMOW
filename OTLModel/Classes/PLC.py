@@ -1,5 +1,4 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.Controller import Controller
 from OTLModel.Datatypes.DtcDocument import DtcDocument
@@ -8,15 +7,14 @@ from OTLModel.Datatypes.KlPLCModelnaam import KlPLCModelnaam
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class PLC(Controller, AttributeInfo):
+class PLC(Controller):
     """Een verwerkingseenheid die volgens een vaste cyclus op basis van informatie van zijn ingangen, zijn uitgangen aanstuurt op basis van zijn programma. Omwille van zijn vormfactor kan de eenheid gebruikt worden in een vijandige omgeving."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#PLC'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        AttributeInfo.__init__(self)
-        Controller.__init__(self)
+        super().__init__()
 
         self._merk = OTLAttribuut(field=KlPLCMerk,
                                   naam='merk',

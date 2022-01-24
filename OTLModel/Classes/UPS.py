@@ -1,5 +1,4 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.Voedingspunt import Voedingspunt
 from OTLModel.Datatypes.KlUPSMerk import KlUPSMerk
@@ -10,15 +9,14 @@ from OTLModel.Datatypes.StringField import StringField
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class UPS(Voedingspunt, AttributeInfo):
+class UPS(Voedingspunt):
     """Toestel (Uninterruptible Power Supply = niet onderbreekbare voeding) voor het leveren van  elektrische energie van een vastgelegde kwaliteit, onafhankelijk van de beschikbaarheid van een betrouwbare netspanning. Indien het openbare net niet langer bruikbaar is om als energiebron te fungeren, wordt de energievoorziening overgenomen door de accubatterij. Deze zal gedurende een bepaalde tijd, afhankelijk van de capaciteit, de stroomvoorziening verzorgen. De UPS dient om de (minimale) voeding ononderbroken te verzekeren"""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#UPS'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        AttributeInfo.__init__(self)
-        Voedingspunt.__init__(self)
+        super().__init__()
 
         self._autonomie = OTLAttribuut(field=KwantWrdInkWh,
                                        naam='autonomie',

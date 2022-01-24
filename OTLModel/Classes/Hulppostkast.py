@@ -1,20 +1,18 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.Buitenkast import Buitenkast
 from OTLModel.Datatypes.KlHulppostkastType import KlHulppostkastType
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Hulppostkast(Buitenkast, AttributeInfo):
+class Hulppostkast(Buitenkast):
     """Een kast waarin verschillende onderdelen verzameld worden voor bijstand in noodgevallen."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Hulppostkast'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        AttributeInfo.__init__(self)
-        Buitenkast.__init__(self)
+        super().__init__()
 
         self._type = OTLAttribuut(field=KlHulppostkastType,
                                   naam='type',

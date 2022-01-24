@@ -1,20 +1,18 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.Behuizing import Behuizing
 from OTLModel.Datatypes.DtcDocument import DtcDocument
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Gebouw(Behuizing, AttributeInfo):
+class Gebouw(Behuizing):
     """Elk bouwwerk, dat een voor mensen toegankelijke overdekte, geheel of gedeeltelijk met wanden omsloten ruimte vormt."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Gebouw'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        AttributeInfo.__init__(self)
-        Behuizing.__init__(self)
+        super().__init__()
 
         self._grondplan = OTLAttribuut(field=DtcDocument,
                                        naam='grondplan',

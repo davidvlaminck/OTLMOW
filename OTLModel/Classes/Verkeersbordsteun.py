@@ -1,5 +1,4 @@
 # coding=utf-8
-from OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLModel.Classes.AIMNaamObject import AIMNaamObject
 from OTLModel.Classes.Draagconstructie import Draagconstructie
@@ -11,7 +10,7 @@ from OTLModel.Datatypes.StringField import StringField
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Verkeersbordsteun(AIMNaamObject, Draagconstructie, AttributeInfo):
+class Verkeersbordsteun(AIMNaamObject, Draagconstructie):
     """Een draagconstructie voor verkeersborden of pictogrammen. Dit kan een ronde paal of een vakwerksteun zijn."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Verkeersbordsteun'
@@ -19,7 +18,6 @@ class Verkeersbordsteun(AIMNaamObject, Draagconstructie, AttributeInfo):
 
     def __init__(self):
         AIMNaamObject.__init__(self)
-        AttributeInfo.__init__(self)
         Draagconstructie.__init__(self)
 
         self._breedte = OTLAttribuut(field=KwantWrdInMillimeter,

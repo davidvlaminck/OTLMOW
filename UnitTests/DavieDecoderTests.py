@@ -1,6 +1,7 @@
 from unittest import TestCase
 
 from Facility.DavieDecoder import DavieDecoder
+from OTLModel.Classes.ExterneDetectie import ExterneDetectie
 from OTLModel.Classes.HeeftBetrokkene import HeeftBetrokkene
 from OTLModel.Classes.Netwerkpoort import Netwerkpoort
 from OTLModel.Classes.Verkeersregelaar import Verkeersregelaar
@@ -97,6 +98,24 @@ class DavieDecoderTests(TestCase):
   "isActief" : true,
   "geometry" : "POINT Z (61716.3 209331.2 0)"
 }"""
+    jsonDataCase6 = """[{
+  "assetId" : {
+    "identificator" : "7102cbba-4391-4d7c-a2d1-8873eac3eee8-b25kZXJkZWVsI0V4dGVybmVEZXRlY3RpZQ",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#ExterneDetectie",
+  "isActief" : true,
+  "contactpersoon" : {
+    "adres" : [ {
+      "gemeente" : "aalter",
+      "straatnaam" : "teststraat"
+    } ],
+    "voornaam" : "test_voornaam",
+    "achternaam" : "test_achternaam"
+  },
+  "toestand" : "in-ontwerp",
+  "naam" : "test_ExterneDetectie"
+}]"""
 
     def test_invalid_typeURI(self):
         davie_decoder = DavieDecoder()
@@ -187,3 +206,15 @@ class DavieDecoderTests(TestCase):
             self.assertEqual("externe referentie 2", lijstObjecten[0].externeReferentie[0].externReferentienummer)
             self.assertEqual("bij externe partij 1", lijstObjecten[0].externeReferentie[1].externePartij)
             self.assertEqual("externe referentie 1", lijstObjecten[0].externeReferentie[1].externReferentienummer)
+
+    def test_decode_Davie_json_case_6_and_assert_fields_kard_complex_in_complex(self):
+        davie_decoder = DavieDecoder()
+        lijstObjecten = davie_decoder.decode(self.jsonDataCase6)
+        self.assertEqual(1, len(lijstObjecten))
+        self.assertTrue(isinstance(lijstObjecten[0], ExterneDetectie))
+        self.assertEqual('test_voornaam', lijstObjecten[0].contactpersoon.voornaam)
+        self.assertEqual('test_achternaam', lijstObjecten[0].contactpersoon.achternaam)
+
+        self.assertEqual('aalter', lijstObjecten[0].contactpersoon.adres[0].gemeente)
+        self.assertEqual('teststraat', lijstObjecten[0].contactpersoon.adres[0].straatnaam)
+

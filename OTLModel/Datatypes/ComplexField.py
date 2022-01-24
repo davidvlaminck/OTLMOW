@@ -16,9 +16,8 @@ class ComplexField(OTLField, ABC):
         for tuple in vars(value).items():
             if tuple[0] == '_parent':
                 continue
-            waarde = tuple[0]
             attr = tuple[1]
-            if not attr.field.validate(waarde, attr):
+            if not attr.field.validate(attr.waarde, attr):
                 validation = False
         return validation
 

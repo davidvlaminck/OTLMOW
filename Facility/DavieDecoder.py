@@ -23,5 +23,6 @@ class DavieDecoder(ToOTLDecoder):
                 if 'geometrie' in key:
                     key = 'loc:Locatie.geometry'
 
+                #self.set_value_by_dotnotatie(instance, key, value)
                 self.set_attribute_by_dotnotatie(instance, key, value)
         return lijst

@@ -1,45 +1,13 @@
-import dataclasses
-from unittest import TestCase
+from unittest import TestCase, mock
 
 from Facility.ToOTLDecoder import ToOTLDecoder, DotNotationError
-from OTLModel.ClassLoader import ClassLoader
+from Loggers.NoneLogger import NoneLogger
 from OTLModel.Classes.BitumineuzeLaag import BitumineuzeLaag
 from OTLModel.Classes.Geotextiel import Geotextiel
-
-
-@dataclasses.dataclass
-class StandaardPostMapping:
-    typeURI: str
-    attribuutURI: str
-    dotnotatie: str
-    defaultWaarde: str
-    range: str
-    usagenote: str
-    isMeetstaatAttr: int
-    isAltijdInTeVullen: int
-    isBasisMapping: int
-    mappingStatus: str
-    mappingOpmerking: str
-
-
-@dataclasses.dataclass
-class StandaardPost:
-    nummer: str
-    beschrijving: str
-    meetstaateenheid: str
-    mappings: list
-
-    def get_assets_from_post(self):
-        class_loader = ClassLoader()
-        lijst = []
-        for mapping in self.mappings:
-            asset = next((c for c in lijst if c.typeURI == mapping.typeURI), None)
-            if asset is None:
-                asset = class_loader.dynamic_create_instance_from_uri(mapping.typeURI)
-                lijst.append(asset)
-            if mapping.defaultWaarde != '':
-                ToOTLDecoder().set_value_by_dotnotatie(asset, mapping.dotnotatie, mapping.defaultWaarde)
-        return lijst
+from PostenMapping.PostenCollector import PostenCollector
+from PostenMapping.PostenCreator import PostenCreator
+from PostenMapping.StandaardPost import StandaardPost
+from PostenMapping.StandaardPostMapping import StandaardPostMapping
 
 
 class StandaardPostCollection:
@@ -54,7 +22,21 @@ class StandaardPostCollection:
                                              isAltijdInTeVullen=0,
                                              isBasisMapping=1,
                                              mappingStatus='gemapt 2.0',
-                                             mappingOpmerking='')]
+                                             mappingOpmerking='',
+                                             standaardpostnummer='0501.00000')
+            , StandaardPostMapping(
+                typeURI='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Geotextiel',
+                attribuutURI='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Laag.oppervlakte',
+                dotnotatie='oppervlakte',
+                defaultWaarde='',
+                range='',
+                usagenote='m2^^cdt:ucumunit',
+                isMeetstaatAttr=1,
+                isAltijdInTeVullen=1,
+                isBasisMapping=1,
+                mappingStatus='gemapt 2.0',
+                mappingOpmerking='',
+                standaardpostnummer='0501.00000')]
         standaardposten = [StandaardPost(nummer='0501.00000',
                                          beschrijving='Beschermen van de onderfundering of fundering volgens 5-1, met geotextiel',
                                          meetstaateenheid='M2',
@@ -71,7 +53,8 @@ class StandaardPostCollection:
                                  isAltijdInTeVullen=0,
                                  isBasisMapping=1,
                                  mappingStatus='gemapt 2.0',
-                                 mappingOpmerking=''),
+                                 mappingOpmerking='',
+                                 standaardpostnummer='0602.15019'),
             StandaardPostMapping(typeURI='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#BitumineuzeLaag',
                                  attribuutURI='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Laag.laagRol',
                                  dotnotatie='laagRol',
@@ -82,7 +65,8 @@ class StandaardPostCollection:
                                  isAltijdInTeVullen=0,
                                  isBasisMapping=1,
                                  mappingStatus='gemapt 2.0',
-                                 mappingOpmerking=''),
+                                 mappingOpmerking='',
+                                 standaardpostnummer='0602.15019'),
             StandaardPostMapping(typeURI='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#BitumineuzeLaag',
                                  attribuutURI='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#LaagBouwklasse.bouwklasse',
                                  dotnotatie='bouwklasse',
@@ -93,7 +77,8 @@ class StandaardPostCollection:
                                  isAltijdInTeVullen=1,
                                  isBasisMapping=1,
                                  mappingStatus='gemapt 2.0',
-                                 mappingOpmerking=''),
+                                 mappingOpmerking='',
+                                 standaardpostnummer='0602.15019'),
             StandaardPostMapping(typeURI='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#BitumineuzeLaag',
                                  attribuutURI='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#BitumineuzeLaag.mengseltype',
                                  dotnotatie='mengseltype',
@@ -104,7 +89,8 @@ class StandaardPostCollection:
                                  isAltijdInTeVullen=0,
                                  isBasisMapping=1,
                                  mappingStatus='gemapt 2.0',
-                                 mappingOpmerking=''),
+                                 mappingOpmerking='',
+                                 standaardpostnummer='0602.15019'),
             StandaardPostMapping(typeURI='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#BitumineuzeLaag',
                                  attribuutURI='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#LaagDikte.dikte',
                                  dotnotatie='dikte',
@@ -115,7 +101,8 @@ class StandaardPostCollection:
                                  isAltijdInTeVullen=1,
                                  isBasisMapping=1,
                                  mappingStatus='gemapt 2.0',
-                                 mappingOpmerking=''),
+                                 mappingOpmerking='',
+                                 standaardpostnummer='0602.15019'),
             StandaardPostMapping(typeURI='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#BitumineuzeLaag',
                                  attribuutURI='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcProfileerlaag.gewicht',
                                  dotnotatie='laagtype.profileerlaag.gewicht',
@@ -126,7 +113,8 @@ class StandaardPostCollection:
                                  isAltijdInTeVullen=1,
                                  isBasisMapping=1,
                                  mappingStatus='gemapt 2.0',
-                                 mappingOpmerking='')]
+                                 mappingOpmerking='',
+                                 standaardpostnummer='0602.15019')]
 
         standaardposten.append(StandaardPost(nummer='0602.15019',
                                              beschrijving='Profileerlaag, bouwklassegroep B1-B3 volgens 6-2, type AVS-B, dikte E = 8 à 10 cm',
@@ -153,7 +141,8 @@ class StandaardPostTests(TestCase):
         self.assertEqual('a', b.notitie)
         with self.assertRaises(DotNotationError) as dotnotationerror:
             ToOTLDecoder().set_value_by_dotnotatie(b, 'notitie_invalid', 'c')
-        self.assertRegex(str(dotnotationerror.exception), 'notitie_invalid of <OTLModel.Classes.BitumineuzeLaag.BitumineuzeLaag object at 0x[0-9a-fA-F]+> can not be set to c')
+        self.assertRegex(str(dotnotationerror.exception),
+                         'notitie_invalid of <OTLModel.Classes.BitumineuzeLaag.BitumineuzeLaag object at 0x[0-9a-fA-F]+> can not be set to c')
 
     def test_set_value_by_dotnotatie_complex(self):
         b = BitumineuzeLaag()
@@ -181,3 +170,36 @@ class StandaardPostTests(TestCase):
         self.assertEqual('AVS-B', assets[0].mengseltype)
         self.assertEqual('verharding', assets[0].laagRol)
         self.assertEqual('profileerlaag', assets[0].laagtype.profileerlaag.laagtype)
+
+    def test_create_datablock_standaardPost_0501(self):
+        posten = StandaardPostCollection()
+        post0501 = posten.get_by_nummer('0501.00000')
+        creator = PostenCreator(NoneLogger(), postenCollector=PostenCollector(mock))
+
+        datablock = creator.create_datablock_from_post(post0501)
+        expected = ['# coding=utf-8',
+                    "from PostenMapping.StandaardPost import StandaardPost",
+                    "from PostenMapping.StandaardPostMapping import StandaardPostMapping",
+                    "",
+                    "",
+                    '# Generated with PostenCreator. To modify: extend, do not edit',
+                    "class Post050100000(StandaardPost):",
+                    "    def __init__(self):",
+                    "        super().__init__(",
+                    "            nummer='0501.00000',",
+                    "            beschrijving='Beschermen van de onderfundering of fundering volgens 5-1, met geotextiel',",
+                    "            meetstaateenheid='M2',",
+                    "            mappings=[StandaardPostMapping(",
+                    "                typeURI='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Geotextiel',",
+                    "                attribuutURI='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Geotextiel.type',",
+                    "                dotnotatie='type',",
+                    "                defaultWaarde='bescherming',",
+                    "                range='',",
+                    "                usagenote='',",
+                    "                isMeetstaatAttr=0,",
+                    "                isAltijdInTeVullen=0,",
+                    "                isBasisMapping=1,",
+                    "                mappingStatus='gemapt 2.0',",
+                    "                mappingOpmerking='',",
+                    "                standaardpostnummer='0501.00000')])", ""]
+        self.assertEqual(expected, datablock)

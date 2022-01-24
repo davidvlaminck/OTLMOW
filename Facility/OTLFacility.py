@@ -11,6 +11,9 @@ from ModelGenerator.OTLModelCreator import OTLModelCreator
 from ModelGenerator.OtlAssetJSONEncoder import OtlAssetJSONEncoder
 from ModelGenerator.SQLDbReader import SQLDbReader
 from Facility.DavieImporter import DavieImporter
+from PostenMapping.PostenCollector import PostenCollector
+from PostenMapping.PostenCreator import PostenCreator
+from PostenMapping.PostenInMemoryCreator import PostenInMemoryCreator
 
 
 class OTLFacility:
@@ -19,6 +22,8 @@ class OTLFacility:
         self.logger = instanceLogger
         self.collector = None
         self.modelCreator = None
+        self.posten_collector = None
+        self.posten_creator = None
         self.davieExporter = DavieExporter()
         self.encoder = OtlAssetJSONEncoder(indent=4)
         self.davieDecoder = DavieDecoder()
@@ -35,6 +40,18 @@ class OTLFacility:
     def create_otl_datamodel(self):
         self.collector.collect()
         self.modelCreator.create_full_model()
+
+    def init_postenmapping_creator(self, otl_file_location):
+        sql_reader = SQLDbReader(otl_file_location)
+        oslo_creator = PostenInMemoryCreator(sql_reader)
+        self.posten_collector = PostenCollector(oslo_creator)
+        self.posten_creator = PostenCreator(self.logger, self.posten_collector)
+
+    def create_posten_model(self):
+        self.posten_collector.collect()
+        self.posten_creator.create_all_mappings()
+
+
 
 
 

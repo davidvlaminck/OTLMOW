@@ -78,10 +78,9 @@ class AbstractDatatypeCreator(ABC):
         base_dir = os.path.dirname(os.path.realpath(__file__))
         path = f"{base_dir}/../OTLModel/{directory}/{datatype.name}.py"
 
-        file = open(path, "w", encoding='utf-8')
-        for line in dataToWrite:
-            file.write(line + "\n")
-        file.close()
+        with open(path, "w", encoding='utf-8') as file:
+            for line in dataToWrite:
+                file.write(line + "\n")
 
     def getFieldsToImportFromListOfAttributes(self, attributen, listToStartFrom=None):
         if listToStartFrom is None:

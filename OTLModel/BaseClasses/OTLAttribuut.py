@@ -112,8 +112,10 @@ class OTLAttribuut(AttributeInfo):
                     raise ValueError(
                         f'invalid value in list for {owner.__class__.__name__}.{self.naam}: {el_value} is not valid, must be valid for {self.field.naam}\n' + str(
                             error))
-
-            self.waarde = self.field.convert_to_correct_type(value)
+            new_list = []
+            for el_value in value:
+                new_list.append(self.field.convert_to_correct_type(el_value))
+            self.waarde = new_list
         else:
             if self.field.waardeObject is not None and isinstance(value, self.field.waardeObject):
                 props = vars(self.field.waardeObject)

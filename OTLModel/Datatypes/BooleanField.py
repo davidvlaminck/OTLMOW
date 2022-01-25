@@ -12,6 +12,8 @@ class BooleanField(OTLField):
 
     @classmethod
     def convert_to_correct_type(cls, value):
+        if value is None:
+            return None
         if isinstance(value, bool):
             return value
         try:

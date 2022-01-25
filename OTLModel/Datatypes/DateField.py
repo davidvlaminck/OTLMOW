@@ -14,6 +14,8 @@ class DateField(OTLField):
 
     @classmethod
     def convert_to_correct_type(cls, value):
+        if value is None:
+            return None
         if isinstance(value, date):
             return value
         if isinstance(value, datetime):

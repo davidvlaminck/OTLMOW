@@ -12,6 +12,8 @@ class IntegerField(OTLField):
 
     @classmethod
     def convert_to_correct_type(cls, value):
+        if value is None:
+            return None
         if isinstance(value, bool) or isinstance(value, int):
             return value
         try:

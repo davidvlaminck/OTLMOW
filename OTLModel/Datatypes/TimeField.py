@@ -18,6 +18,8 @@ class TimeField(OTLField):
 
     @staticmethod
     def value_default(value):
+        if value is None:
+            return None
         return value.strftime("%H:%M:%S")
 
     def __str__(self):

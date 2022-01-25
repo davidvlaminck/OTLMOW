@@ -1,5 +1,6 @@
 from unittest import TestCase, mock
 
+from Facility.DotnotatieHelper import DotnotatieHelper
 from Facility.ToOTLDecoder import ToOTLDecoder, DotNotationError
 from Loggers.NoneLogger import NoneLogger
 from OTLModel.Classes.BitumineuzeLaag import BitumineuzeLaag
@@ -132,23 +133,21 @@ class StandaardPostTests(TestCase):
         b = BitumineuzeLaag()
         b.notitie = 'a'
         self.assertEqual('a', b.notitie)
-        ToOTLDecoder().set_value_by_dotnotatie(b, 'notitie', 'c')
+        DotnotatieHelper.set_attribute_by_dotnotatie(b, 'notitie', 'c')
         self.assertEqual('c', b.notitie)
 
     def test_set_value_by_dotnotatie_invalid_attribute(self):
         b = BitumineuzeLaag()
         b.notitie = 'a'
         self.assertEqual('a', b.notitie)
-        with self.assertRaises(DotNotationError) as dotnotationerror:
-            ToOTLDecoder().set_value_by_dotnotatie(b, 'notitie_invalid', 'c')
-        self.assertRegex(str(dotnotationerror.exception),
-                         'notitie_invalid of <OTLModel.Classes.BitumineuzeLaag.BitumineuzeLaag object at 0x[0-9a-fA-F]+> can not be set to c')
+        with self.assertRaises(AttributeError) as dotnotationerror:
+            DotnotatieHelper.set_attribute_by_dotnotatie(b, 'notitie_invalid', 'c')
 
     def test_set_value_by_dotnotatie_complex(self):
         b = BitumineuzeLaag()
         b.assetId.identificator = 'a'
         self.assertEqual('a', b.assetId.identificator)
-        ToOTLDecoder().set_value_by_dotnotatie(b, 'assetId.identificator', 'c')
+        DotnotatieHelper.set_attribute_by_dotnotatie(b, 'assetId.identificator', 'c')
         self.assertEqual('c', b.assetId.identificator)
 
     def test_create_datablock_standaardPost_0501(self):
@@ -181,5 +180,18 @@ class StandaardPostTests(TestCase):
                     "                isBasisMapping=1,",
                     "                mappingStatus='gemapt 2.0',",
                     "                mappingOpmerking='',",
-                    "                standaardpostnummer='0501.00000')])", ""]
+                    "                standaardpostnummer='0501.00000')",
+                    '                , StandaardPostMapping(',
+                    "                typeURI='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Geotextiel',",
+                    "                attribuutURI='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Laag.oppervlakte',",
+                    "                dotnotatie='oppervlakte',",
+                    "                defaultWaarde='',",
+                    "                range='',",
+                    "                usagenote='m2^^cdt:ucumunit',",
+                    '                isMeetstaatAttr=1,',
+                    '                isAltijdInTeVullen=1,',
+                    '                isBasisMapping=1,',
+                    "                mappingStatus='gemapt 2.0',",
+                    "                mappingOpmerking='',",
+                    "                standaardpostnummer='0501.00000')])"]
         self.assertEqual(expected, datablock)

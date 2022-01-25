@@ -1,4 +1,6 @@
-from datetime import date
+from datetime import date, datetime
+
+from OTLModel.BaseClasses.CouldNotConvertToCorrectType import CouldNotConvertToCorrectType
 from OTLModel.BaseClasses.OTLField import OTLField
 
 
@@ -9,6 +11,23 @@ class DateField(OTLField):
     definition = 'Beschrijft een datum volgens http://www.w3.org/2001/XMLSchema#date.'
     label = 'Datum'
     usagenote = 'https://www.w3.org/TR/xmlschema-2/#date'
+
+    @classmethod
+    def convert_to_correct_type(cls, value):
+        if isinstance(value, date):
+            return value
+        if isinstance(value, datetime):
+            return date(value.year, value.month, value.day)
+        if isinstance(value, str):
+            try:
+                dt = datetime.strptime(value, "%Y-%m-%d")
+                return date(dt.year, dt.month, dt.day)
+            except Exception:
+                raise CouldNotConvertToCorrectType(f'{value} could not be converted to correct type (implied by {cls.__name__})')
+        try:
+            return date(value)
+        except Exception:
+            raise CouldNotConvertToCorrectType(f'{value} could not be converted to correct type (implied by {cls.__name__})')
 
     @staticmethod
     def validate(value, attribuut):

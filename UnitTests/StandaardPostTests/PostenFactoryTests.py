@@ -59,3 +59,4 @@ class StandaardPostFactoryTests(TestCase):
         resultaat = StandaardPostFactory.find_posten_from_asset(w)
         self.assertEqual(1, len(resultaat))
         self.assertEqual(Post060423020().nummer, resultaat[0].nummer)
+

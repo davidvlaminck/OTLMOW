@@ -11,18 +11,7 @@ class ToOTLDecoder:
     def __init__(self):
         pass
 
-    def set_value_by_dotnotatie_new(self, assetOrAttribuut, dotnotatie, value):
-        if isinstance(value, dict):
-            for k, v in value.items():
-                self.set_value_by_dotnotatie(assetOrAttribuut, dotnotatie + '.' + k, v)
-            return
 
-        try:
-            exec(f'instance = assetOrAttribuut')
-            eval(f'instance.{dotnotatie}')
-            exec(f'instance.{dotnotatie} = value')
-        except Exception as ex:
-            raise DotNotationError(f'{dotnotatie} of {assetOrAttribuut.__repr__()} can not be set to {value}')
 
     def set_value_by_dotnotatie(self, assetOrAttribuut, dotnotatie, value):
         try:

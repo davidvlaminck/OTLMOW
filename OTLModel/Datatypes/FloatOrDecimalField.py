@@ -1,5 +1,6 @@
 ﻿import decimal
 
+from OTLModel.BaseClasses.CouldNotConvertToCorrectType import CouldNotConvertToCorrectType
 from OTLModel.BaseClasses.OTLField import OTLField
 
 
@@ -11,13 +12,16 @@ class FloatOrDecimalField(OTLField):
     label = 'Decimaal getal'
     usagenote = 'https://www.w3.org/TR/xmlschema-2/#decimal'
 
-    @staticmethod
-    def convert_to_correct_type(value):
+    @classmethod
+    def convert_to_correct_type(cls, value):
         if isinstance(value, bool):
             return value
         if isinstance(value, int) or isinstance(value, decimal.Decimal):
             return float(value)
-        return value
+        try:
+            return float(value)
+        except Exception:
+            raise CouldNotConvertToCorrectType(f'{value} could not be converted to correct type (implied by {cls.__name__})')
 
     @staticmethod
     def validate(value, attribuut):
@@ -29,4 +33,3 @@ class FloatOrDecimalField(OTLField):
 
     def __str__(self):
         return OTLField.__str__(self)
-

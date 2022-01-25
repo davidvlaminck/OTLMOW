@@ -1,3 +1,4 @@
+from OTLModel.BaseClasses.CouldNotConvertToCorrectType import CouldNotConvertToCorrectType
 from OTLModel.BaseClasses.OTLField import OTLField
 
 
@@ -8,6 +9,15 @@ class IntegerField(OTLField):
     definition = 'Beschrijft een geheel getal volgens http://www.w3.org/2001/XMLSchema#integer.'
     label = 'Geheel getal'
     usagenote = 'https://www.w3.org/TR/xmlschema-2/#integer'
+
+    @classmethod
+    def convert_to_correct_type(cls, value):
+        if isinstance(value, bool) or isinstance(value, int):
+            return value
+        try:
+            return int(value)
+        except Exception:
+            raise CouldNotConvertToCorrectType(f'{value} could not be converted to correct type (implied by {cls.__name__})')
 
     @staticmethod
     def validate(value, attribuut):

@@ -9,6 +9,10 @@ class StringField(OTLField):
     label = 'String'
     usagenote = 'https://www.w3.org/TR/xmlschema-2/#string'
 
+    @classmethod
+    def convert_to_correct_type(cls, value):
+        return str(value)
+
     @staticmethod
     def validate(value, attribuut):
         if value is not None and not isinstance(value, str):

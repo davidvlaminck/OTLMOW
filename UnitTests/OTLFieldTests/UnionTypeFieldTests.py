@@ -1,5 +1,6 @@
 import unittest
 
+from OTLModel.BaseClasses.CouldNotConvertToCorrectType import CouldNotConvertToCorrectType
 from OTLModel.Classes.Lichtmast import Lichtmast
 
 
@@ -11,8 +12,8 @@ class UnionTypeFieldTests(unittest.TestCase):
     def test_bad_value(self):
         c = Lichtmast()
 
-        with self.assertRaises(TypeError):
-            c.masthoogte.afwijkendeHoogte.waarde = "2"
+        with self.assertRaises(CouldNotConvertToCorrectType):
+            c.masthoogte.afwijkendeHoogte.waarde = "a"
         with self.assertRaises(ValueError):
             c.masthoogte.standaardHoogte = "10.0"
 

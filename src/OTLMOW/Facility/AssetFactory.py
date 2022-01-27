@@ -61,7 +61,7 @@ class AssetFactory:
         d = dir(orig_asset)
         listFields = []
         for key in d:
-            if key[0] == '_' or key in ['attr_info', 'attr_type_info', 'info', 'make_string_version', 'create_dict_from_asset']:
+            if key[0] == '_' or key in ['info_attr', 'info_attr_type', 'info', 'make_string_version', 'create_dict_from_asset']:
                 continue
             else:
                 listFields.append(key)

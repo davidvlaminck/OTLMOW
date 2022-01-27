@@ -1,6 +1,7 @@
 ﻿import unittest
 from unittest import TestCase
 
+from src.OTLMOW.OTLModel.Classes.AIMNaamObject import AIMNaamObject
 from src.OTLMOW.Facility.AssetFactory import AssetFactory
 from src.OTLMOW.OTLModel.Classes.Aftakking import Aftakking
 from src.OTLMOW.OTLModel.Classes.Agent import Agent
@@ -13,6 +14,8 @@ class AssetFactoryTests(TestCase):
         uri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Aftakking'
         asset_created = factory.dynamic_create_instance_from_uri(uri)
         self.assertEqual(uri, asset_created.typeURI)
+        self.assertTrue(isinstance(asset_created, Aftakking))
+        self.assertTrue(isinstance(asset_created, AIMNaamObject))
 
     def test_dynamic_create_instance_from_uri_using_invalid_uri(self):
         factory = AssetFactory()

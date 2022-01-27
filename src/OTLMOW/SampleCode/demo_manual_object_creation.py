@@ -17,12 +17,10 @@ if __name__ == '__main__':
     # use the generated datamodel to create instances of OTL classes
     dnb = DNBLaagspanning()
     dnb.naam = 'A0024'
-    # dnb.naam.waarde = 24  # this raises a ValueError because it has an incorrect value
     dnb.toestand = 'in-gebruik'
     dnb.assetId.identificator = 'eigen_Id_voor_A0024'
     dnb.eanNummer = '541448860003995215'
     dnb.adresVolgensDNB.gemeente = 'brasschaat'
-    # dnb.adresVolgensDNB.gemeente = 'Brasschaat'  # this raises a ValueError because it has an incorrect value
     dnb.adresVolgensDNB.postcode = '2930'
     dnb.adresVolgensDNB.straatnaam = 'Bredabaan 90'
 
@@ -44,5 +42,5 @@ if __name__ == '__main__':
     print(encoded_json)
 
     # write the json file
-    path = f'{datetime.now().strftime("%Y%m%d%H%M%S")}_export.json'
-    otl_facility.encoder.write_json_to_file(encoded_json, path)
+    filepath = f'Output/{datetime.now().strftime("%Y%m%d%H%M%S")}_export.json'
+    otl_facility.encoder.write_json_to_file(encoded_json, filepath)

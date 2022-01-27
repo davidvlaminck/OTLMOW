@@ -1,6 +1,6 @@
 ﻿from random import choice
 
-from IPython.core.display import display, HTML
+from IPython.display import display, HTML
 from pyvis import network as net
 
 from src.OTLMOW.OTLModel.Classes.Bevestiging import Bevestiging

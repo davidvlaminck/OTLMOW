@@ -1,3 +1,4 @@
+import decimal
 from src.OTLMOW.Facility.Exceptions.CouldNotConvertToCorrectType import CouldNotConvertToCorrectType
 from src.OTLMOW.OTLModel.BaseClasses.OTLField import OTLField
 
@@ -16,6 +17,11 @@ class IntegerField(OTLField):
             return None
         if isinstance(value, bool) or isinstance(value, int):
             return value
+        if isinstance(value, float) or isinstance(value, decimal.Decimal):
+            i = int(value)
+            if value - i != 0:
+                raise CouldNotConvertToCorrectType(f'{value} could not be converted to correct type (implied by {cls.__name__})')
+            return i
         try:
             return int(value)
         except Exception:

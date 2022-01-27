@@ -1,5 +1,6 @@
 ﻿/src/OTLMOW/SampleCode/example.html
-/src/OTLMOW/SampleCode/*export.json
+/src/OTLMOW/SampleCode/Output
+/src/OTLMOW/SampleCode/Output/*
 /.idea/dbnavigator.xml
 /.idea/workspace.xml
 /.idea/modules.xml

@@ -20,10 +20,10 @@ class DemoTests(TestCase):
 
 
         print(kring.info())
-        print(kring.attr_info(''))
+        print(kring.info_attr(''))
 
-        print(kring.attr_info('assetId'))
-        print(kring.attr_type_info('assetId'))
+        print(kring.info_attr('assetId'))
+        print(kring.info_attr_type('assetId'))
 
         kring.assetId.identificator = 'eigen_id'
         kring.assetId.toegekendDoor = 'Python'

@@ -1,7 +1,8 @@
 from src.OTLMOW.OTLModel.BaseClasses.OTLField import OTLField
+from src.OTLMOW.OTLModel.Datatypes.IntegerField import IntegerField
 
 
-class NonNegIntegerField(OTLField):
+class NonNegIntegerField(IntegerField):
     """Beschrijft een natuurlijk getal volgens http://www.w3.org/2001/XMLSchema#nonNegativeInteger."""
     naam = 'NonNegativeInteger'
     objectUri = 'http://www.w3.org/2001/XMLSchema#nonNegativeInteger'

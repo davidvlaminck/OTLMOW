@@ -1,2 +1,6 @@
 ﻿if __name__ == '__main__':
-    print('leeg script')
+    print('')
+    print('hello world')
+
+
+

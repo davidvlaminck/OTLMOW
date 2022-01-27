@@ -19,7 +19,7 @@ class AttributeInfoTests(TestCase):
         self.assertRegex(infoString, expected)
 
     def test_attr_info_empty_class(self):
-        infoString = Verkeersregelaar().attr_info()
+        infoString = Verkeersregelaar().info_attr()
         expected = '^Attribute information about Verkeersregelaar \d{10,12}:\n'
         expected2 = 'assetId \(type: DtcIdentificator\)\n'
         self.assertRegex(infoString, expected)

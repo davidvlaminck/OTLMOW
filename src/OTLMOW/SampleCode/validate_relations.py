@@ -2,7 +2,7 @@ from src.OTLMOW.Facility.OTLFacility import OTLFacility
 from src.OTLMOW.Loggers.ConsoleLogger import ConsoleLogger
 from src.OTLMOW.Loggers.LoggerCollection import LoggerCollection
 from src.OTLMOW.Loggers.TxtLogger import TxtLogger
-from src.OTLMOW.ModelGenerator.BaseClasses import RelatieRichting
+from src.OTLMOW.ModelGenerator.BaseClasses.RelatieRichting import RelatieRichting
 from src.OTLMOW.OTLModel.Classes.DNBLaagspanning import DNBLaagspanning
 from src.OTLMOW.OTLModel.Classes.EnergiemeterDNB import EnergiemeterDNB
 from src.OTLMOW.OTLModel.Classes.Voedt import Voedt

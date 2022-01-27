@@ -28,7 +28,7 @@ setup(
     # There are some restrictions on what makes a valid project name
     # specification here:
     # https://packaging.python.org/specifications/core-metadata/#name
-    name='OTL.MOW',  # Required
+    name='OTLMOW',  # Required
 
     # Versions should comply with PEP 440:
     # https://www.python.org/dev/peps/pep-0440/
@@ -69,7 +69,7 @@ setup(
     #
     # This field corresponds to the "Home-Page" metadata field:
     # https://packaging.python.org/specifications/core-metadata/#home-page-optional
-    url='https://github.com/davidvlaminck/OTLClassPython',  # Optional
+    url='https://github.com/davidvlaminck/OTLMOW',  # Optional
 
     # This should be your name or the name of the organization which owns the
     # project.
@@ -111,7 +111,7 @@ setup(
 
     # When your source code is in a subdirectory under the project root, e.g.
     # `src/`, it is necessary to specify the `package_dir` argument.
-    # package_dir={'': 'src'},  # Optional
+    package_dir={'': 'src'},  # Optional
 
     # You can just specify package directories manually here if your project is
     # simple. Or you can use find_packages().
@@ -122,7 +122,7 @@ setup(
     #
     #   py_modules=["my_module"],
     #
-    packages=find_packages(where=''),  # Required
+    packages=find_packages(where='src'),  # Required
 
     # Specify which Python versions you support. In contrast to the
     # 'Programming Language' classifiers above, 'pip install' will check this

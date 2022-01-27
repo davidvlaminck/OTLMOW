@@ -1,10 +1,10 @@
 ﻿from unittest import TestCase
 
-from OTLModel.BaseClasses.OTLObject import OTLObjectHelper
-from OTLModel.Classes.Aftakking import Aftakking
-from OTLModel.Classes.Exoten import Exoten
-from OTLModel.Classes.Verkeersregelaar import Verkeersregelaar
-from OTLModel.Datatypes.DtcExterneReferentie import DtcExterneReferentie
+from src.OTLMOW.OTLModel.BaseClasses.OTLObject import OTLObjectHelper
+from src.OTLMOW.OTLModel.Classes.Aftakking import Aftakking
+from src.OTLMOW.OTLModel.Classes.Exoten import Exoten
+from src.OTLMOW.OTLModel.Classes.Verkeersregelaar import Verkeersregelaar
+from src.OTLMOW.OTLModel.Datatypes.DtcExterneReferentie import DtcExterneReferentie
 
 
 class AttributeInfoTests(TestCase):

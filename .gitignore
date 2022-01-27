@@ -1,2 +1,8 @@
-﻿/SampleCode/example.html
-/SampleCode/*export.json
+﻿/src/OTLMOW/SampleCode/example.html
+/src/OTLMOW/SampleCode/*export.json
+/.idea/dbnavigator.xml
+/.idea/workspace.xml
+/.idea/modules.xml
+/.idea/vcs.xml
+/.idea/misc.xml
+/.idea/codeStyles/*

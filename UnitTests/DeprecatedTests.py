@@ -1,9 +1,9 @@
 ﻿import warnings
 from unittest import TestCase
 
-from OTLModel.Classes.Aftakking import Aftakking
-from OTLModel.Classes.Exoten import Exoten
-from OTLModel.Classes.Voedt import Voedt
+from src.OTLMOW.OTLModel.Classes.Aftakking import Aftakking
+from src.OTLMOW.OTLModel.Classes.Exoten import Exoten
+from src.OTLMOW.OTLModel.Classes.Voedt import Voedt
 
 
 class DeprecatedTests(TestCase):

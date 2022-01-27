@@ -1,5 +1,5 @@
 ﻿import unittest
-from Facility.EMInfraImporter import EMInfraImporter
+from src.OTLMOW.Facility.EMInfraImporter import EMInfraImporter
 
 
 class EMInfraImporterTests(unittest.TestCase):

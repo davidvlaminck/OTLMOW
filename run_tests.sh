@@ -1,2 +1,2 @@
 # copy paste in terminal, run from \OTLClassPython
-python -m unittest discover -s UnitTests -p "*Tests.py"
+.\venv_OTLMOW\Scripts\python.exe -m unittest discover -s UnitTests -p "*Tests.py"

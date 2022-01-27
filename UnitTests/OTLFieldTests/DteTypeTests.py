@@ -1,11 +1,9 @@
-import decimal
 import unittest
 from abc import ABC
 
-from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from OTLModel.Datatypes.DteKleurRAL import DteKleurRAL
-from OTLModel.Datatypes.StringField import StringField
-from OTLModel.Classes.AIMObject import AIMObject
+from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from src.OTLMOW.OTLModel.Datatypes.DteKleurRAL import DteKleurRAL
+from src.OTLMOW.OTLModel.Classes.AIMObject import AIMObject
 
 
 class DteTestClass(AIMObject, ABC):
@@ -35,8 +33,5 @@ class RelatiesTests(unittest.TestCase):
 
         instance.kleur.waarde = "1111"
         self.assertEqual("1111", instance.kleur.waarde)
-
-        with self.assertRaises(TypeError):
-            instance.kleur.waarde = 2.0
 
         self.assertTrue(isinstance(instance.kleur.waarde, str))

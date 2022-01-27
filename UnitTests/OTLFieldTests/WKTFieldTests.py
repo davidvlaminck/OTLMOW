@@ -1,9 +1,6 @@
 ﻿import unittest
 
-from OTLModel.BaseClasses.OTLAsset import OTLAsset
-from OTLModel.BaseClasses.WKTField import WKTField
-from OTLModel.Datatypes.DtcRechtspersoon import DtcRechtspersoon
-from OTLModel.Datatypes.DtcIdentificator import DtcIdentificator
+from src.OTLMOW.OTLModel.BaseClasses.OTLAsset import OTLAsset
 
 
 class WktTestClass(OTLAsset):

@@ -1,13 +1,13 @@
 import unittest
 from unittest import mock
 
-from Loggers.NoneLogger import NoneLogger
-from ModelGenerator.AbstractDatatypeCreator import AbstractDatatypeCreator
-from ModelGenerator.OSLOAttribuut import OSLOAttribuut
-from ModelGenerator.OSLOCollector import OSLOCollector
-from ModelGenerator.OSLODatatypeComplexAttribuut import OSLODatatypeComplexAttribuut
-from ModelGenerator.OSLOTypeLink import OSLOTypeLink
-from ModelGenerator.OTLComplexDatatypeCreator import OTLComplexDatatypeCreator
+from src.OTLMOW.Loggers.NoneLogger import NoneLogger
+from src.OTLMOW.ModelGenerator.AbstractDatatypeCreator import AbstractDatatypeCreator
+from src.OTLMOW.ModelGenerator.OSLOAttribuut import OSLOAttribuut
+from src.OTLMOW.ModelGenerator.OSLOCollector import OSLOCollector
+from src.OTLMOW.ModelGenerator.OSLODatatypeComplexAttribuut import OSLODatatypeComplexAttribuut
+from src.OTLMOW.ModelGenerator.OSLOTypeLink import OSLOTypeLink
+from src.OTLMOW.ModelGenerator.OTLComplexDatatypeCreator import OTLComplexDatatypeCreator
 from UnitTests.OTLModelCreatorTests.OTLComplexDatatypeCreatorTests import ComplexDatatypeOSLOCollector
 
 

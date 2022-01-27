@@ -3,13 +3,13 @@ import unittest
 from unittest import mock
 from unittest.mock import patch
 
-from Loggers.NoneLogger import NoneLogger
-from ModelGenerator.OSLOCollector import OSLOCollector
-from ModelGenerator.OSLOEnumeration import OSLOEnumeration
-from ModelGenerator.OSLOInMemoryCreator import OSLOInMemoryCreator
-from ModelGenerator.OTLEnumerationCreator import OTLEnumerationCreator
-from ModelGenerator.SQLDbReader import SQLDbReader
-from OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
+from src.OTLMOW.Loggers.NoneLogger import NoneLogger
+from src.OTLMOW.ModelGenerator.OSLOCollector import OSLOCollector
+from src.OTLMOW.ModelGenerator.OSLOEnumeration import OSLOEnumeration
+from src.OTLMOW.ModelGenerator.OSLOInMemoryCreator import OSLOInMemoryCreator
+from src.OTLMOW.ModelGenerator.OTLEnumerationCreator import OTLEnumerationCreator
+from src.OTLMOW.ModelGenerator.SQLDbReader import SQLDbReader
+from src.OTLMOW.OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 ROOT_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
@@ -26,8 +26,8 @@ class EnumerationOSLOCollector(OSLOCollector):
 
         self.expectedDataKlAIMToestand = [
             "# coding=utf-8",
-            "from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField",
-            "from OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde",
+            "from src.OTLMOW.OTLModel.Datatypes.KeuzelijstField import KeuzelijstField",
+            "from src.OTLMOW.OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde",
             "",
             "",
             "# Generated with OTLEnumerationCreator. To modify: extend, do not edit",
@@ -152,16 +152,16 @@ class OTLEnumerationCreatorTests(unittest.TestCase):
         KlAIMToestand = collector.FindEnumerationByUri(
             'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KlAIMToestand')
         dataToWrite = creator.CreateBlockToWriteFromEnumerations(KlAIMToestand)
-        creator.writeToFile(KlAIMToestand, 'Datatypes', dataToWrite, '../../')
+        creator.writeToFile(KlAIMToestand, 'Datatypes', dataToWrite, '../../src/OTLMOW/')
 
-        filelocation = os.path.abspath(os.path.join(os.sep, ROOT_DIR, 'OTLModel/Datatypes/KlAIMToestand.py'))
+        filelocation = os.path.abspath(os.path.join(os.sep, ROOT_DIR, 'src/OTLMOW/OTLModel/Datatypes/KlAIMToestand.py'))
         self.assertTrue(os.path.isfile(filelocation))
 
     def test_WriteToFileOSLOEnumeration2(self):
         logger = NoneLogger()
 
         base_dir = os.path.dirname(os.path.realpath(__file__))
-        file_location = f'{base_dir}/../../InputFiles/OTL.db'
+        file_location = f'{base_dir}/../../src/OTLMOW/InputFiles/OTL.db'
         sql_reader = SQLDbReader(file_location)
         oslo_creator = OSLOInMemoryCreator(sql_reader)
         collector = OSLOCollector(oslo_creator)
@@ -171,16 +171,16 @@ class OTLEnumerationCreatorTests(unittest.TestCase):
         KlAIMToestand = collector.FindEnumerationByUri(
             'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KlAlgProvincie')
         dataToWrite = creator.CreateBlockToWriteFromEnumerations(KlAIMToestand)
-        creator.writeToFile(KlAIMToestand, 'Datatypes', dataToWrite, '../../')
+        creator.writeToFile(KlAIMToestand, 'Datatypes', dataToWrite, '../../src/OTLMOW/')
 
-        filelocation = os.path.abspath(os.path.join(os.sep, ROOT_DIR, 'OTLModel/Datatypes/KlAlgProvincie.py'))
+        filelocation = os.path.abspath(os.path.join(os.sep, ROOT_DIR, 'src/OTLMOW/OTLModel/Datatypes/KlAlgProvincie.py'))
         self.assertTrue(os.path.isfile(filelocation))
 
     def test_getKeuzelijstWaardesFromUri(self):
         logger = NoneLogger()
 
         base_dir = os.path.dirname(os.path.realpath(__file__))
-        file_location = f'{base_dir}/../../InputFiles/OTL.db'
+        file_location = f'{base_dir}/../../src/OTLMOW/InputFiles/OTL.db'
         sql_reader = SQLDbReader(file_location)
         oslo_creator = OSLOInMemoryCreator(sql_reader)
         collector = OSLOCollector(oslo_creator)

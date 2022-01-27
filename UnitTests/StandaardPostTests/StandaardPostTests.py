@@ -1,14 +1,12 @@
 from unittest import TestCase, mock
 
-from Facility.DotnotatieHelper import DotnotatieHelper
-from Facility.ToOTLDecoder import ToOTLDecoder, DotNotationError
-from Loggers.NoneLogger import NoneLogger
-from OTLModel.Classes.BitumineuzeLaag import BitumineuzeLaag
-from OTLModel.Classes.Geotextiel import Geotextiel
-from PostenMapping.PostenCollector import PostenCollector
-from PostenMapping.PostenCreator import PostenCreator
-from PostenMapping.StandaardPost import StandaardPost
-from PostenMapping.StandaardPostMapping import StandaardPostMapping
+from src.OTLMOW.Facility.DotnotatieHelper import DotnotatieHelper
+from src.OTLMOW.Loggers.NoneLogger import NoneLogger
+from src.OTLMOW.OTLModel.Classes.BitumineuzeLaag import BitumineuzeLaag
+from src.OTLMOW.PostenMapping.PostenCollector import PostenCollector
+from src.OTLMOW.PostenMapping.PostenCreator import PostenCreator
+from src.OTLMOW.PostenMapping.StandaardPost import StandaardPost
+from src.OTLMOW.PostenMapping.StandaardPostMapping import StandaardPostMapping
 
 
 class StandaardPostCollection:
@@ -157,8 +155,8 @@ class StandaardPostTests(TestCase):
 
         datablock = creator.create_datablock_from_post(post0501)
         expected = ['# coding=utf-8',
-                    "from PostenMapping.StandaardPost import StandaardPost",
-                    "from PostenMapping.StandaardPostMapping import StandaardPostMapping",
+                    "from src.OTLMOW.PostenMapping.StandaardPost import StandaardPost",
+                    "from src.OTLMOW.PostenMapping.StandaardPostMapping import StandaardPostMapping",
                     "",
                     "",
                     '# Generated with PostenCreator. To modify: extend, do not edit',

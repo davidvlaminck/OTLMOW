@@ -1,7 +1,7 @@
 import unittest
 
-from OTLModel.BaseClasses.CouldNotConvertToCorrectType import CouldNotConvertToCorrectType
-from OTLModel.Classes.Lichtmast import Lichtmast
+from src.OTLMOW.Facility.Exceptions.CouldNotConvertToCorrectType import CouldNotConvertToCorrectType
+from src.OTLMOW.OTLModel.Classes.Lichtmast import Lichtmast
 
 
 class UnionTypeFieldTests(unittest.TestCase):

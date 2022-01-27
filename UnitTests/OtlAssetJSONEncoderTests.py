@@ -1,14 +1,14 @@
 import unittest
 from datetime import datetime
 
-from ModelGenerator.OtlAssetJSONEncoder import OtlAssetJSONEncoder
-from OTLModel.Classes.Aftakking import Aftakking
-from OTLModel.Classes.Exoten import Exoten
-from OTLModel.Classes.Laagspanningsbord import Laagspanningsbord
-from OTLModel.Classes.Verkeersregelaar import Verkeersregelaar
-from OTLModel.Classes.WVLichtmast import WVLichtmast
-from OTLModel.Datatypes.DtcExterneReferentie import DtcExterneReferentie
-from OTLModel.Datatypes.DtuWvLichtmastBevsToestelMethode import DtuWvLichtmastBevsToestelMethode
+from src.OTLMOW.ModelGenerator.OtlAssetJSONEncoder import OtlAssetJSONEncoder
+from src.OTLMOW.OTLModel.Classes.Aftakking import Aftakking
+from src.OTLMOW.OTLModel.Classes.Exoten import Exoten
+from src.OTLMOW.OTLModel.Classes.Laagspanningsbord import Laagspanningsbord
+from src.OTLMOW.OTLModel.Classes.Verkeersregelaar import Verkeersregelaar
+from src.OTLMOW.OTLModel.Classes.WVLichtmast import WVLichtmast
+from src.OTLMOW.OTLModel.Datatypes.DtcExterneReferentie import DtcExterneReferentie
+from src.OTLMOW.OTLModel.Datatypes.DtuWvLichtmastBevsToestelMethode import DtuWvLichtmastBevsToestelMethode
 
 
 class OtlAssetJSONEncoderTests(unittest.TestCase):

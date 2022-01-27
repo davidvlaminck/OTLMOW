@@ -2,9 +2,9 @@ import unittest
 from unittest import TestCase
 
 from EMInfraResponseTestDouble import ResponseTestDouble
-from Facility.EMInfraDecoder import EMInfraDecoder
-from ModelGenerator.OtlAssetJSONEncoder import OtlAssetJSONEncoder
-from OTLModel.Classes.Omvormer import Omvormer
+from src.OTLMOW.Facility.EMInfraDecoder import EMInfraDecoder
+from src.OTLMOW.ModelGenerator.OtlAssetJSONEncoder import OtlAssetJSONEncoder
+from src.OTLMOW.OTLModel.Classes.Omvormer import Omvormer
 
 
 class EMInfraDecoderTests(TestCase):

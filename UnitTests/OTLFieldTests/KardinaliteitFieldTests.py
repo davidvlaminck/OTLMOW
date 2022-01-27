@@ -1,9 +1,9 @@
 import unittest
+from datetime import date
 
-from OTLModel.Classes.AIMObject import AIMObject
-from OTLModel.Classes.Buis import Buis
-from OTLModel.Classes.ContainerBuis import ContainerBuis
-from OTLModel.Classes.Mantelbuis import Mantelbuis
+from src.OTLMOW.OTLModel.Classes.Buis import Buis
+from src.OTLMOW.OTLModel.Classes.ContainerBuis import ContainerBuis
+from src.OTLMOW.OTLModel.Classes.Mantelbuis import Mantelbuis
 
 
 class ContainerBuisKardinaliteitFieldTests(unittest.TestCase):
@@ -44,10 +44,6 @@ class ContainerBuisKardinaliteitFieldTests(unittest.TestCase):
         with self.assertRaises(TypeError) as exc_dict:
             instance.kleur = {}
         self.assertEqual(str(exc_dict.exception), "expecting a list in Mantelbuis.kleur")
-
-        with self.assertRaises(ValueError) as exc_tuple_with_bad_value:
-            instance.kleur = ["geel", 3]
-        self.assertEqual(str(exc_tuple_with_bad_value.exception), "invalid value in list for Mantelbuis.kleur: 3 is not valid, must be valid for String\nexpecting string in kleur")
 
         instance._kleur.kardinaliteit_min = "2"
         instance._kleur.kardinaliteit_max = "2"

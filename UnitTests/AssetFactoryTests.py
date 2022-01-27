@@ -1,10 +1,10 @@
 ﻿import unittest
 from unittest import TestCase
 
-from Facility.AssetFactory import AssetFactory
-from OTLModel.Classes.Aftakking import Aftakking
-from OTLModel.Classes.Agent import Agent
-from OTLModel.Classes.Stroomkring import Stroomkring
+from src.OTLMOW.Facility.AssetFactory import AssetFactory
+from src.OTLMOW.OTLModel.Classes.Aftakking import Aftakking
+from src.OTLMOW.OTLModel.Classes.Agent import Agent
+from src.OTLMOW.OTLModel.Classes.Stroomkring import Stroomkring
 
 
 class AssetFactoryTests(TestCase):
@@ -57,7 +57,7 @@ class AssetFactoryTests(TestCase):
         aftakking = Aftakking()
         aftakking.naam = 'aftakking naam'
         aftakking.isActief = True
-        stroomkringURI = Stroomkring.typeURI
+        stroomkringURI = Stroomkring().typeURI
         created_asset = factory.create_aimObject_using_other_aimObject_as_template(aftakking, typeURI=stroomkringURI, fieldsToCopy=['naam'])
 
         self.assertEqual(True, aftakking.isActief)

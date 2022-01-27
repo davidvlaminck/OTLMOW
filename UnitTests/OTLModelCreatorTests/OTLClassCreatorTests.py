@@ -3,15 +3,15 @@ import unittest
 from unittest import mock
 from unittest.mock import patch
 
-from Loggers.NoneLogger import NoneLogger
-from ModelGenerator.Inheritance import Inheritance
-from ModelGenerator.OSLOAttribuut import OSLOAttribuut
-from ModelGenerator.OSLOClass import OSLOClass
-from ModelGenerator.OSLOCollector import OSLOCollector
-from ModelGenerator.OSLOInMemoryCreator import OSLOInMemoryCreator
-from ModelGenerator.OSLOTypeLink import OSLOTypeLink
-from ModelGenerator.OTLClassCreator import OTLClassCreator
-from ModelGenerator.SQLDbReader import SQLDbReader
+from src.OTLMOW.Loggers.NoneLogger import NoneLogger
+from src.OTLMOW.ModelGenerator.Inheritance import Inheritance
+from src.OTLMOW.ModelGenerator.OSLOAttribuut import OSLOAttribuut
+from src.OTLMOW.ModelGenerator.OSLOClass import OSLOClass
+from src.OTLMOW.ModelGenerator.OSLOCollector import OSLOCollector
+from src.OTLMOW.ModelGenerator.OSLOInMemoryCreator import OSLOInMemoryCreator
+from src.OTLMOW.ModelGenerator.OSLOTypeLink import OSLOTypeLink
+from src.OTLMOW.ModelGenerator.OTLClassCreator import OTLClassCreator
+from src.OTLMOW.ModelGenerator.SQLDbReader import SQLDbReader
 
 ROOT_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
@@ -41,9 +41,9 @@ class ClassOSLOCollector(OSLOCollector):
         ]
 
         self.expectedDataGebouw = ['# coding=utf-8',
-                                   'from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut',
-                                   'from OTLModel.Classes.Behuizing import Behuizing',
-                                   'from OTLModel.Datatypes.DtcDocument import DtcDocument',
+                                   'from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut',
+                                   'from src.OTLMOW.OTLModel.Classes.Behuizing import Behuizing',
+                                   'from src.OTLMOW.OTLModel.Datatypes.DtcDocument import DtcDocument',
                                    '',
                                    '',
                                    '# Generated with OTLClassCreator. To modify: extend, do not edit',
@@ -130,9 +130,9 @@ class OTLClassCreatorTests(unittest.TestCase):
         self.assertEqual(str(exception_bad_name.exception), "Input is not a OSLOClass")
 
     expectedDataContainerBuis = ['# coding=utf-8',
-                                 'from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut',
+                                 'from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut',
                                  'from abc import abstractmethod, ABC',
-                                 'from OTLModel.Datatypes.StringField import StringField',
+                                 'from src.OTLMOW.OTLModel.Datatypes.StringField import StringField',
                                  '',
                                  '',
                                  '# Generated with OTLClassCreator. To modify: extend, do not edit',
@@ -181,27 +181,27 @@ class OTLClassCreatorTests(unittest.TestCase):
         collector, creator = self.set_up_real_collector_and_creator()
         containerBuis = collector.FindClassByUri('https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#ContainerBuis')
         dataToWrite = creator.CreateBlockToWriteFromClasses(containerBuis)
-        creator.writeToFile(containerBuis, 'Classes', dataToWrite, '../../')
+        creator.writeToFile(containerBuis, 'Classes', dataToWrite, '../../src/OTLMOW/')
 
-        filelocation = os.path.abspath(os.path.join(os.sep, ROOT_DIR, 'OTLModel/Classes/ContainerBuis.py'))
+        filelocation = os.path.abspath(os.path.join(os.sep, ROOT_DIR, 'src/OTLMOW/OTLModel/Classes/ContainerBuis.py'))
         self.assertTrue(os.path.isfile(filelocation))
 
     def test_WriteToFileBuis(self):
         collector, creator = self.set_up_real_collector_and_creator()
         buis = collector.FindClassByUri('https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Buis')
         dataToWrite = creator.CreateBlockToWriteFromClasses(buis)
-        creator.writeToFile(buis, 'Classes', dataToWrite, '../../')
+        creator.writeToFile(buis, 'Classes', dataToWrite, '../../src/OTLMOW/')
 
-        filelocation = os.path.abspath(os.path.join(os.sep, ROOT_DIR, 'OTLModel/Classes/Buis.py'))
+        filelocation = os.path.abspath(os.path.join(os.sep, ROOT_DIR, 'src/OTLMOW/OTLModel/Classes/Buis.py'))
         self.assertTrue(os.path.isfile(filelocation))
 
     def test_WriteToFileGebouw(self):
         collector, creator = self.set_up_real_collector_and_creator()
         containerBuis = collector.FindClassByUri('https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Gebouw')
         dataToWrite = creator.CreateBlockToWriteFromClasses(containerBuis)
-        creator.writeToFile(containerBuis, 'Classes', dataToWrite, '../../')
+        creator.writeToFile(containerBuis, 'Classes', dataToWrite, '../../src/OTLMOW/')
 
-        filelocation = os.path.abspath(os.path.join(os.sep, ROOT_DIR, 'OTLModel/Classes/Gebouw.py'))
+        filelocation = os.path.abspath(os.path.join(os.sep, ROOT_DIR, 'src/OTLMOW/OTLModel/Classes/Gebouw.py'))
         self.assertTrue(os.path.isfile(filelocation))
 
     def test_CheckInheritances_Agent(self):
@@ -245,7 +245,7 @@ class OTLClassCreatorTests(unittest.TestCase):
     def set_up_real_collector_and_creator():
         logger = NoneLogger()
         base_dir = os.path.dirname(os.path.realpath(__file__))
-        file_location = f'{base_dir}/../../InputFiles/OTL.db'
+        file_location = f'{base_dir}/../../src/OTLMOW/InputFiles/OTL.db'
         sql_reader = SQLDbReader(file_location)
         oslo_creator = OSLOInMemoryCreator(sql_reader)
         collector = OSLOCollector(oslo_creator)

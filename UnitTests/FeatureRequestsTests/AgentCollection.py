@@ -1,7 +1,6 @@
 import unittest
 
-from ModelGenerator.OtlAssetJSONEncoder import OtlAssetJSONEncoder
-from OTLModel.Classes.Agent import Agent
+from src.OTLMOW.OTLModel.Classes.Agent import Agent
 
 
 @unittest.skip("feature request")

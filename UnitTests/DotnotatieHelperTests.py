@@ -1,8 +1,7 @@
 ﻿from unittest import TestCase
 
-from Facility.DotnotatieHelper import DotnotatieHelper
-from OTLModel.BaseClasses.CouldNotConvertToCorrectType import CouldNotConvertToCorrectType
-from OTLModel.Classes.BestratingVanKassei import BestratingVanKassei
+from src.OTLMOW.Facility.DotnotatieHelper import DotnotatieHelper
+from src.OTLMOW.OTLModel.Classes.BestratingVanKassei import BestratingVanKassei
 
 
 class DotnotatieHelperTests(TestCase):

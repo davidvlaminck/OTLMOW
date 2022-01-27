@@ -1,14 +1,14 @@
 import os
 import unittest
-from unittest import mock, TestCase
+from unittest import mock
 from unittest.mock import patch
 
-from Loggers.NoneLogger import NoneLogger
-from ModelGenerator.OSLOCollector import OSLOCollector
-from ModelGenerator.OSLODatatypePrimitive import OSLODatatypePrimitive
-from ModelGenerator.OSLODatatypePrimitiveAttribuut import OSLODatatypePrimitiveAttribuut
-from ModelGenerator.OSLOTypeLink import OSLOTypeLink
-from ModelGenerator.OTLPrimitiveDatatypeCreator import OTLPrimitiveDatatypeCreator
+from src.OTLMOW.Loggers.NoneLogger import NoneLogger
+from src.OTLMOW.ModelGenerator.OSLOCollector import OSLOCollector
+from src.OTLMOW.ModelGenerator.OSLODatatypePrimitive import OSLODatatypePrimitive
+from src.OTLMOW.ModelGenerator.OSLODatatypePrimitiveAttribuut import OSLODatatypePrimitiveAttribuut
+from src.OTLMOW.ModelGenerator.OSLOTypeLink import OSLOTypeLink
+from src.OTLMOW.ModelGenerator.OTLPrimitiveDatatypeCreator import OTLPrimitiveDatatypeCreator
 
 ROOT_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
@@ -51,11 +51,11 @@ class PrimitiveDatatypeOSLOCollector(OSLOCollector):
             OSLOTypeLink('http://www.w3.org/2000/01/rdf-schema#Literal', "OSLODatatypePrimitive", "")]
 
         self.expectedDataKwantWrdInVolt = ["# coding=utf-8",
-                                           "from OTLModel.BaseClasses.AttributeInfo import AttributeInfo",
-                                           "from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut",
-                                           "from OTLModel.BaseClasses.OTLField import OTLField",
-                                           "from OTLModel.Datatypes.FloatOrDecimalField import FloatOrDecimalField",
-                                           "from OTLModel.Datatypes.StringField import StringField",
+                                           "from src.OTLMOW.OTLModel.BaseClasses.AttributeInfo import AttributeInfo",
+                                           "from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut",
+                                           "from src.OTLMOW.OTLModel.BaseClasses.OTLField import OTLField",
+                                           "from src.OTLMOW.OTLModel.Datatypes.FloatOrDecimalField import FloatOrDecimalField",
+                                           "from src.OTLMOW.OTLModel.Datatypes.StringField import StringField",
                                            "",
                                            "",
                                            "# Generated with OTLPrimitiveDatatypeCreator. To modify: extend, do not edit",
@@ -104,10 +104,10 @@ class PrimitiveDatatypeOSLOCollector(OSLOCollector):
                                            "        return OTLField.__str__(self)",
                                            ""]
         self.expectedDataRALKleur = ["# coding=utf-8",
-                                     "from OTLModel.BaseClasses.AttributeInfo import AttributeInfo",
-                                     "from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut",
-                                     "from OTLModel.BaseClasses.OTLField import OTLField",
-                                     "from OTLModel.Datatypes.StringField import StringField",
+                                     "from src.OTLMOW.OTLModel.BaseClasses.AttributeInfo import AttributeInfo",
+                                     "from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut",
+                                     "from src.OTLMOW.OTLModel.BaseClasses.OTLField import OTLField",
+                                     "from src.OTLMOW.OTLModel.Datatypes.StringField import StringField",
                                      "",
                                      "",
                                      "# Generated with OTLPrimitiveDatatypeCreator. To modify: extend, do not edit",
@@ -243,7 +243,7 @@ class OTLPrimitiveDatatypeCreatorTests(unittest.TestCase):
         dataToWrite = creator.CreateBlockToWriteFromPrimitiveTypes(KwantWrdInVolt)
         creator.writeToFile(KwantWrdInVolt, 'Datatypes', dataToWrite, '../../')
 
-        filelocation = os.path.abspath(os.path.join(os.sep, ROOT_DIR, 'OTLModel/Datatypes/KwantWrdInVolt.py'))
+        filelocation = os.path.abspath(os.path.join(os.sep, ROOT_DIR, 'src/OTLMOW/OTLModel/Datatypes/KwantWrdInVolt.py'))
         self.assertTrue(os.path.isfile(filelocation))
 
     def test_WriteToFileOSLODatatypePrimitiveDte(self):
@@ -253,7 +253,7 @@ class OTLPrimitiveDatatypeCreatorTests(unittest.TestCase):
         DteKleurRAL = collector.FindPrimitiveDatatypeByUri(
             'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DteKleurRAL')
         dataToWrite = creator.CreateBlockToWriteFromPrimitiveTypes(DteKleurRAL)
-        creator.writeToFile(DteKleurRAL, 'Datatypes', dataToWrite, '../../')
+        creator.writeToFile(DteKleurRAL, 'Datatypes', dataToWrite, '../../src/OTLMOW/')
 
-        filelocation = os.path.abspath(os.path.join(os.sep, ROOT_DIR, 'OTLModel/Datatypes/DteKleurRAL.py'))
+        filelocation = os.path.abspath(os.path.join(os.sep, ROOT_DIR, 'src/OTLMOW/OTLModel/Datatypes/DteKleurRAL.py'))
         self.assertTrue(os.path.isfile(filelocation))

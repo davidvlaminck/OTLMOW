@@ -1,14 +1,15 @@
 import unittest
 from datetime import datetime, time
 
-from OTLModel.Classes.Agent import Agent
-from OTLModel.Classes.HoutigeVegetatie import HoutigeVegetatie
-from OTLModel.Classes.KabelnetToegang import KabelnetToegang
-from OTLModel.Datatypes.BooleanField import BooleanField
-from OTLModel.Datatypes.DateField import DateField
-from OTLModel.Datatypes.IntegerField import IntegerField
-from OTLModel.Datatypes.KwantWrdInMaand import KwantWrdInMaand
-from OTLModel.Datatypes.TimeField import TimeField
+from src.OTLMOW.Facility.Exceptions.CouldNotConvertToCorrectType import CouldNotConvertToCorrectType
+from src.OTLMOW.OTLModel.Classes.Agent import Agent
+from src.OTLMOW.OTLModel.Classes.HoutigeVegetatie import HoutigeVegetatie
+from src.OTLMOW.OTLModel.Classes.KabelnetToegang import KabelnetToegang
+from src.OTLMOW.OTLModel.Datatypes.BooleanField import BooleanField
+from src.OTLMOW.OTLModel.Datatypes.DateField import DateField
+from src.OTLMOW.OTLModel.Datatypes.IntegerField import IntegerField
+from src.OTLMOW.OTLModel.Datatypes.KwantWrdInMaand import KwantWrdInMaand
+from src.OTLMOW.OTLModel.Datatypes.TimeField import TimeField
 
 
 class TestInstance(KabelnetToegang, HoutigeVegetatie):
@@ -43,11 +44,8 @@ class PrimitiveTypeTests(unittest.TestCase):
         instance.isActief = False
         self.assertFalse(instance.isActief)
 
-        with self.assertRaises(TypeError):
-            instance.isActief = "True"
-
-        with self.assertRaises(TypeError):
-            instance.isActief = 0
+        with self.assertRaises(CouldNotConvertToCorrectType):
+            instance.isActief = "a"
 
     def test_IntegerFieldTests(self):
         instance = TestInstance()
@@ -63,8 +61,8 @@ class PrimitiveTypeTests(unittest.TestCase):
         instance.kabelnetToegangId = True  # also works, True == 1 and False == 0
         self.assertTrue(instance.kabelnetToegangId == 1)
 
-        with self.assertRaises(TypeError):
-            instance.kabelnetToegangId = "1"
+        with self.assertRaises(CouldNotConvertToCorrectType):
+            instance.kabelnetToegangId = "a"
 
     def test_nonNegIntTests(self):
         instance = TestInstance()

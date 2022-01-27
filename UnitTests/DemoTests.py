@@ -1,10 +1,9 @@
-﻿import unittest
-from unittest import TestCase
+﻿from unittest import TestCase
 
-from Facility.OTLFacility import OTLFacility
-from Loggers.NoneLogger import NoneLogger
-from OTLModel.Classes.AIMObject import AIMObject
-from OTLModel.Classes.Stroomkring import Stroomkring
+from src.OTLMOW.Facility.OTLFacility import OTLFacility
+from src.OTLMOW.Loggers.NoneLogger import NoneLogger
+from src.OTLMOW.OTLModel.Classes.AIMObject import AIMObject
+from src.OTLMOW.OTLModel.Classes.Stroomkring import Stroomkring
 
 
 class DemoTests(TestCase):

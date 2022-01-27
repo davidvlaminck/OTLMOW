@@ -3,14 +3,14 @@ import unittest
 from unittest import mock
 from unittest.mock import patch
 
-from Loggers.NoneLogger import NoneLogger
-from ModelGenerator.OSLOCollector import OSLOCollector
-from ModelGenerator.OSLODatatypeUnion import OSLODatatypeUnion
-from ModelGenerator.OSLODatatypeUnionAttribuut import OSLODatatypeUnionAttribuut
-from ModelGenerator.OSLOInMemoryCreator import OSLOInMemoryCreator
-from ModelGenerator.OSLOTypeLink import OSLOTypeLink
-from ModelGenerator.OTLUnionDatatypeCreator import OTLUnionDatatypeCreator
-from ModelGenerator.SQLDbReader import SQLDbReader
+from src.OTLMOW.Loggers.NoneLogger import NoneLogger
+from src.OTLMOW.ModelGenerator.OSLOCollector import OSLOCollector
+from src.OTLMOW.ModelGenerator.OSLODatatypeUnion import OSLODatatypeUnion
+from src.OTLMOW.ModelGenerator.OSLODatatypeUnionAttribuut import OSLODatatypeUnionAttribuut
+from src.OTLMOW.ModelGenerator.OSLOInMemoryCreator import OSLOInMemoryCreator
+from src.OTLMOW.ModelGenerator.OSLOTypeLink import OSLOTypeLink
+from src.OTLMOW.ModelGenerator.OTLUnionDatatypeCreator import OTLUnionDatatypeCreator
+from src.OTLMOW.ModelGenerator.SQLDbReader import SQLDbReader
 
 ROOT_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
@@ -44,12 +44,12 @@ class UnionDatatypeOSLOCollector(OSLOCollector):
         ]
 
         self.expectedDtu = ["# coding=utf-8",
-                            "from OTLModel.BaseClasses.AttributeInfo import AttributeInfo",
-                            "from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut",
-                            "from OTLModel.Datatypes.KlLichtmastMasthoogte import KlLichtmastMasthoogte",
-                            "from OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter",
-                            "from OTLModel.Datatypes.UnionTypeField import UnionTypeField",
-                            "from OTLModel.Datatypes.UnionWaarden import UnionWaarden",
+                            "from src.OTLMOW.OTLModel.BaseClasses.AttributeInfo import AttributeInfo",
+                            "from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut",
+                            "from src.OTLMOW.OTLModel.Datatypes.KlLichtmastMasthoogte import KlLichtmastMasthoogte",
+                            "from src.OTLMOW.OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter",
+                            "from src.OTLMOW.OTLModel.Datatypes.UnionTypeField import UnionTypeField",
+                            "from src.OTLMOW.OTLModel.Datatypes.UnionWaarden import UnionWaarden",
                             "",
                             "",
                             "# Generated with OTLUnionDatatypeCreator. To modify: extend, do not edit",
@@ -178,7 +178,7 @@ class OTLUnionDatatypeCreatorTests(unittest.TestCase):
     def test_WriteToFileDtcAdresOSLODatatypeUnion(self):
         logger = NoneLogger()
 
-        file_location = os.path.abspath(os.path.join(os.sep, ROOT_DIR, 'InputFiles/OTL.db'))
+        file_location = os.path.abspath(os.path.join(os.sep, ROOT_DIR, 'src/OTLMOW/InputFiles/OTL.db'))
         sql_reader = SQLDbReader(file_location)
         oslo_creator = OSLOInMemoryCreator(sql_reader)
         collector = OSLOCollector(oslo_creator)
@@ -188,7 +188,7 @@ class OTLUnionDatatypeCreatorTests(unittest.TestCase):
         DtuLichtmastMasthoogte = collector.FindUnionDatatypeByUri(
             'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtuLichtmastMasthoogte')
         dataToWrite = creator.CreateBlockToWriteFromUnionTypes(DtuLichtmastMasthoogte)
-        creator.writeToFile(DtuLichtmastMasthoogte, 'Datatypes', dataToWrite, '../../')
+        creator.writeToFile(DtuLichtmastMasthoogte, 'Datatypes', dataToWrite, '../../src/OTLMOW/')
 
-        filelocation = os.path.abspath(os.path.join(os.sep, ROOT_DIR, 'OTLModel/Datatypes/DtuLichtmastMasthoogte.py'))
+        filelocation = os.path.abspath(os.path.join(os.sep, ROOT_DIR, 'src/OTLMOW/OTLModel/Datatypes/DtuLichtmastMasthoogte.py'))
         self.assertTrue(os.path.isfile(filelocation))

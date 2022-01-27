@@ -3,14 +3,14 @@ import unittest
 from unittest import mock
 from unittest.mock import patch
 
-from Loggers.NoneLogger import NoneLogger
-from ModelGenerator.OSLOCollector import OSLOCollector
-from ModelGenerator.OSLODatatypeComplex import OSLODatatypeComplex
-from ModelGenerator.OSLODatatypeComplexAttribuut import OSLODatatypeComplexAttribuut
-from ModelGenerator.OSLOInMemoryCreator import OSLOInMemoryCreator
-from ModelGenerator.OSLOTypeLink import OSLOTypeLink
-from ModelGenerator.OTLComplexDatatypeCreator import OTLComplexDatatypeCreator
-from ModelGenerator.SQLDbReader import SQLDbReader
+from src.OTLMOW.Loggers.NoneLogger import NoneLogger
+from src.OTLMOW.ModelGenerator.OSLOCollector import OSLOCollector
+from src.OTLMOW.ModelGenerator.OSLODatatypeComplex import OSLODatatypeComplex
+from src.OTLMOW.ModelGenerator.OSLODatatypeComplexAttribuut import OSLODatatypeComplexAttribuut
+from src.OTLMOW.ModelGenerator.OSLOInMemoryCreator import OSLOInMemoryCreator
+from src.OTLMOW.ModelGenerator.OSLOTypeLink import OSLOTypeLink
+from src.OTLMOW.ModelGenerator.OTLComplexDatatypeCreator import OTLComplexDatatypeCreator
+from src.OTLMOW.ModelGenerator.SQLDbReader import SQLDbReader
 
 ROOT_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
@@ -79,10 +79,10 @@ class ComplexDatatypeOSLOCollector(OSLOCollector):
         ]
 
         self.expectedDataDtcIdentificator = ["# coding=utf-8",
-                                             "from OTLModel.BaseClasses.AttributeInfo import AttributeInfo",
-                                             "from OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut",
-                                             "from OTLModel.Datatypes.ComplexField import ComplexField",
-                                             "from OTLModel.Datatypes.StringField import StringField",
+                                             "from src.OTLMOW.OTLModel.BaseClasses.AttributeInfo import AttributeInfo",
+                                             "from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut",
+                                             "from src.OTLMOW.OTLModel.Datatypes.ComplexField import ComplexField",
+                                             "from src.OTLMOW.OTLModel.Datatypes.StringField import StringField",
                                              "",
                                              "",
                                              "# Generated with OTLComplexDatatypeCreator. To modify: extend, do not edit",
@@ -134,10 +134,10 @@ class ComplexDatatypeOSLOCollector(OSLOCollector):
                                              ""]
 
         self.expectedDataDtcAdres = ['# coding=utf-8',
-                                     'from OTLModel.Datatypes.ComplexField import ComplexField',
-                                     'from OTLModel.Datatypes.KeuzelijstField import KeuzelijstField',
-                                     'from OTLModel.Datatypes.KlAlgGemeente import KlAlgGemeente',
-                                     'from OTLModel.Datatypes.StringField import StringField',
+                                     'from src.OTLMOW.OTLModel.Datatypes.ComplexField import ComplexField',
+                                     'from src.OTLMOW.OTLModel.Datatypes.KeuzelijstField import KeuzelijstField',
+                                     'from src.OTLMOW.OTLModel.Datatypes.KlAlgGemeente import KlAlgGemeente',
+                                     'from src.OTLMOW.OTLModel.Datatypes.StringField import StringField',
                                      '',
                                      '',
                                      '# Generated with OTLComplexDatatypeCreator. To modify: extend, do not edit',
@@ -274,7 +274,7 @@ class OTLComplexDatatypeCreatorTests(unittest.TestCase):
         logger = NoneLogger()
 
         base_dir = os.path.dirname(os.path.realpath(__file__))
-        file_location = f'{base_dir}/../../InputFiles/OTL.db'
+        file_location = f'{base_dir}/../../src/OTLMOW/InputFiles/OTL.db'
         sql_reader = SQLDbReader(file_location)
         oslo_creator = OSLOInMemoryCreator(sql_reader)
         collector = OSLOCollector(oslo_creator)
@@ -284,16 +284,16 @@ class OTLComplexDatatypeCreatorTests(unittest.TestCase):
         dtcAdres = collector.FindComplexDatatypeByUri(
             'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAdres')
         dataToWrite = creator.CreateBlockToWriteFromComplexTypes(dtcAdres)
-        creator.writeToFile(dtcAdres, 'Datatypes', dataToWrite, '../../')
+        creator.writeToFile(dtcAdres, 'Datatypes', dataToWrite, '../../src/OTLMOW/')
 
-        filelocation = os.path.abspath(os.path.join(os.sep, ROOT_DIR, 'OTLModel/Datatypes/DtcAdres.py'))
+        filelocation = os.path.abspath(os.path.join(os.sep, ROOT_DIR, 'src/OTLMOW/OTLModel/Datatypes/DtcAdres.py'))
         self.assertTrue(os.path.isfile(filelocation))
 
     def test_WriteToFileDtcRechtspersoonOSLODatatypeComplex(self):
         logger = NoneLogger()
 
         base_dir = os.path.dirname(os.path.realpath(__file__))
-        file_location = f'{base_dir}/../../InputFiles/OTL.db'
+        file_location = f'{base_dir}/../../src/OTLMOW/InputFiles/OTL.db'
         sql_reader = SQLDbReader(file_location)
         oslo_creator = OSLOInMemoryCreator(sql_reader)
         collector = OSLOCollector(oslo_creator)
@@ -303,16 +303,16 @@ class OTLComplexDatatypeCreatorTests(unittest.TestCase):
         DtcRechtspersoon = collector.FindComplexDatatypeByUri(
             'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcRechtspersoon')
         dataToWrite = creator.CreateBlockToWriteFromComplexTypes(DtcRechtspersoon)
-        creator.writeToFile(DtcRechtspersoon, 'Datatypes', dataToWrite, '../../')
+        creator.writeToFile(DtcRechtspersoon, 'Datatypes', dataToWrite, '../../src/OTLMOW/')
 
-        filelocation = os.path.abspath(os.path.join(os.sep, ROOT_DIR, 'OTLModel/Datatypes/DtcRechtspersoon.py'))
+        filelocation = os.path.abspath(os.path.join(os.sep, ROOT_DIR, 'src/OTLMOW/OTLModel/Datatypes/DtcRechtspersoon.py'))
         self.assertTrue(os.path.isfile(filelocation))
 
     def test_WriteToFileDtcMaaienOSLODatatypeComplex(self):
         logger = NoneLogger()
 
         base_dir = os.path.dirname(os.path.realpath(__file__))
-        file_location = f'{base_dir}/../../InputFiles/OTL.db'
+        file_location = f'{base_dir}/../../src/OTLMOW/InputFiles/OTL.db'
         sql_reader = SQLDbReader(file_location)
         oslo_creator = OSLOInMemoryCreator(sql_reader)
         collector = OSLOCollector(oslo_creator)
@@ -322,7 +322,7 @@ class OTLComplexDatatypeCreatorTests(unittest.TestCase):
         DtcMaaien = collector.FindComplexDatatypeByUri(
             'https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#DtcMaaien')
         dataToWrite = creator.CreateBlockToWriteFromComplexTypes(DtcMaaien)
-        creator.writeToFile(DtcMaaien, 'Datatypes', dataToWrite, '../../')
+        creator.writeToFile(DtcMaaien, 'Datatypes', dataToWrite, '../../src/OTLMOW/')
 
-        filelocation = os.path.abspath(os.path.join(os.sep, ROOT_DIR, 'OTLModel/Datatypes/DtcMaaien.py'))
+        filelocation = os.path.abspath(os.path.join(os.sep, ROOT_DIR, 'src/OTLMOW/OTLModel/Datatypes/DtcMaaien.py'))
         self.assertTrue(os.path.isfile(filelocation))

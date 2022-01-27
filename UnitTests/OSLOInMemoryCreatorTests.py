@@ -2,19 +2,19 @@ import os
 import unittest
 from unittest.mock import Mock
 
-from ModelGenerator.Inheritance import Inheritance
-from ModelGenerator.OSLOAttribuut import OSLOAttribuut
-from ModelGenerator.OSLOClass import OSLOClass
-from ModelGenerator.OSLODatatypeComplex import OSLODatatypeComplex
-from ModelGenerator.OSLODatatypeComplexAttribuut import OSLODatatypeComplexAttribuut
-from ModelGenerator.OSLODatatypePrimitive import OSLODatatypePrimitive
-from ModelGenerator.OSLODatatypePrimitiveAttribuut import OSLODatatypePrimitiveAttribuut
-from ModelGenerator.OSLODatatypeUnion import OSLODatatypeUnion
-from ModelGenerator.OSLODatatypeUnionAttribuut import OSLODatatypeUnionAttribuut
-from ModelGenerator.OSLOEnumeration import OSLOEnumeration
-from ModelGenerator.OSLOInMemoryCreator import OSLOInMemoryCreator
-from ModelGenerator.OSLORelatie import OSLORelatie
-from ModelGenerator.SQLDbReader import SQLDbReader
+from src.OTLMOW.ModelGenerator.Inheritance import Inheritance
+from src.OTLMOW.ModelGenerator.OSLOAttribuut import OSLOAttribuut
+from src.OTLMOW.ModelGenerator.OSLOClass import OSLOClass
+from src.OTLMOW.ModelGenerator.OSLODatatypeComplex import OSLODatatypeComplex
+from src.OTLMOW.ModelGenerator.OSLODatatypeComplexAttribuut import OSLODatatypeComplexAttribuut
+from src.OTLMOW.ModelGenerator.OSLODatatypePrimitive import OSLODatatypePrimitive
+from src.OTLMOW.ModelGenerator.OSLODatatypePrimitiveAttribuut import OSLODatatypePrimitiveAttribuut
+from src.OTLMOW.ModelGenerator.OSLODatatypeUnion import OSLODatatypeUnion
+from src.OTLMOW.ModelGenerator.OSLODatatypeUnionAttribuut import OSLODatatypeUnionAttribuut
+from src.OTLMOW.ModelGenerator.OSLOEnumeration import OSLOEnumeration
+from src.OTLMOW.ModelGenerator.OSLOInMemoryCreator import OSLOInMemoryCreator
+from src.OTLMOW.ModelGenerator.OSLORelatie import OSLORelatie
+from src.OTLMOW.ModelGenerator.SQLDbReader import SQLDbReader
 
 
 class OSLOInMemoryCreatorTests(unittest.TestCase):
@@ -198,7 +198,7 @@ class OSLOInMemoryCreatorTests(unittest.TestCase):
 
     def test_OTLDbClass(self):
         base_dir = os.path.dirname(os.path.realpath(__file__))
-        file_location = f'{base_dir}/../InputFiles/OTL.db'
+        file_location = f'{base_dir}/../src/OTLMOW/InputFiles/OTL.db'
         sql_reader = SQLDbReader(file_location)
         oslo_creator = OSLOInMemoryCreator(sql_reader)
         listOfClasses = oslo_creator.getAllClasses()
@@ -209,7 +209,7 @@ class OSLOInMemoryCreatorTests(unittest.TestCase):
 
     def test_OTLDbPrimitiveDatatypes(self):
         base_dir = os.path.dirname(os.path.realpath(__file__))
-        file_location = f'{base_dir}/../InputFiles/OTL.db'
+        file_location = f'{base_dir}/../src/OTLMOW/InputFiles/OTL.db'
         sql_reader = SQLDbReader(file_location)
         oslo_creator = OSLOInMemoryCreator(sql_reader)
         listOfPrimitiveDatatypes = oslo_creator.getAllPrimitiveDatatypes()
@@ -220,7 +220,7 @@ class OSLOInMemoryCreatorTests(unittest.TestCase):
 
     def test_OTLDbPrimitiveDatatypeAttributen(self):
         base_dir = os.path.dirname(os.path.realpath(__file__))
-        file_location = f'{base_dir}/../InputFiles/OTL.db'
+        file_location = f'{base_dir}/../src/OTLMOW/InputFiles/OTL.db'
         sql_reader = SQLDbReader(file_location)
         oslo_creator = OSLOInMemoryCreator(sql_reader)
         listOfPrimitiveDatatypeAttributen = oslo_creator.getAllPrimitiveDatatypeAttributen()

@@ -2,6 +2,23 @@
 This project aims to implement the Flemish data standard OTL (https://wegenenverkeer.data.vlaanderen.be/) in Python.
 Below is sample code that should be self-explanatory. It demonstrates the basic possibilities of this project.
 
+## Installation and requirements
+To install the OTL MOW project into your python project, use pip to install it
+``` 
+pip install OTLMOW
+``` 
+OTLMOW has dependencies on rdflib, pyvis and shapely. 
+``` 
+pip install rdflib
+pip install pyvis
+pip install shapely
+``` 
+If you're using Windows, use the following commands instead to install shapely
+``` 
+pip install pipwin
+pipwin install shapely
+``` 
+
 ## Creating the OTL datamodel using the OTL SQLite
 With every OTL update, this piece of code will allow the creation of an updated Python datamodel. The generated classes are not backwards compatible.
 ```  

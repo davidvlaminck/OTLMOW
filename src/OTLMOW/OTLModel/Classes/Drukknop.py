@@ -1,10 +1,10 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from src.OTLMOW.OTLModel.Classes.NietWeggebondenDetectie import NietWeggebondenDetectie
-from src.OTLMOW.OTLModel.Datatypes.DtcTijdsduur import DtcTijdsduur
-from src.OTLMOW.OTLModel.Datatypes.KlDrukknopMerk import KlDrukknopMerk
-from src.OTLMOW.OTLModel.Datatypes.KlDrukknopModelnaam import KlDrukknopModelnaam
-from src.OTLMOW.OTLModel.Datatypes.KlDrukknopSoort import KlDrukknopSoort
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.Classes.NietWeggebondenDetectie import NietWeggebondenDetectie
+from OTLMOW.OTLModel.Datatypes.DtcTijdsduur import DtcTijdsduur
+from OTLMOW.OTLModel.Datatypes.KlDrukknopMerk import KlDrukknopMerk
+from OTLMOW.OTLModel.Datatypes.KlDrukknopModelnaam import KlDrukknopModelnaam
+from OTLMOW.OTLModel.Datatypes.KlDrukknopSoort import KlDrukknopSoort
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit

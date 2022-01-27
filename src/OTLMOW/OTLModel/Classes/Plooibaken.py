@@ -1,8 +1,8 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from src.OTLMOW.OTLModel.Classes.Straatmeubilair import Straatmeubilair
-from src.OTLMOW.OTLModel.Datatypes.KlKleurPlooibaken import KlKleurPlooibaken
-from src.OTLMOW.OTLModel.Datatypes.KlPlooibakenType import KlPlooibakenType
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.Classes.Straatmeubilair import Straatmeubilair
+from OTLMOW.OTLModel.Datatypes.KlKleurPlooibaken import KlKleurPlooibaken
+from OTLMOW.OTLModel.Datatypes.KlPlooibakenType import KlPlooibakenType
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit

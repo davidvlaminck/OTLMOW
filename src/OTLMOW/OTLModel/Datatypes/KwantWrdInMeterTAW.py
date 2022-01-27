@@ -1,9 +1,9 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.AttributeInfo import AttributeInfo
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from src.OTLMOW.OTLModel.BaseClasses.OTLField import OTLField
-from src.OTLMOW.OTLModel.Datatypes.FloatOrDecimalField import FloatOrDecimalField
-from src.OTLMOW.OTLModel.Datatypes.StringField import StringField
+from OTLMOW.OTLModel.BaseClasses.AttributeInfo import AttributeInfo
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.BaseClasses.OTLField import OTLField
+from OTLMOW.OTLModel.Datatypes.FloatOrDecimalField import FloatOrDecimalField
+from OTLMOW.OTLModel.Datatypes.StringField import StringField
 
 
 # Generated with OTLPrimitiveDatatypeCreator. To modify: extend, do not edit

@@ -1,7 +1,7 @@
 import unittest
 from unittest import TestCase
 
-from src.OTLMOW.OTLModel.Classes.Aftakking import Aftakking
+from OTLMOW.OTLModel.Classes.Aftakking import Aftakking
 
 
 @unittest.skip("feature request")

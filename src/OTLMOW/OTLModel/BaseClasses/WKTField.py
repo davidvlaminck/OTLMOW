@@ -1,6 +1,6 @@
 from shapely import wkt
 from shapely.errors import WKTReadingError
-from src.OTLMOW.OTLModel.BaseClasses.OTLField import OTLField
+from OTLMOW.OTLModel.BaseClasses.OTLField import OTLField
 
 
 class WKTField(OTLField):

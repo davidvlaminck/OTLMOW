@@ -3,14 +3,14 @@ import unittest
 from unittest import mock
 from unittest.mock import patch
 
-from src.OTLMOW.Loggers.NoneLogger import NoneLogger
-from src.OTLMOW.ModelGenerator.OSLOCollector import OSLOCollector
-from src.OTLMOW.ModelGenerator.OSLODatatypeComplex import OSLODatatypeComplex
-from src.OTLMOW.ModelGenerator.OSLODatatypeComplexAttribuut import OSLODatatypeComplexAttribuut
-from src.OTLMOW.ModelGenerator.OSLOInMemoryCreator import OSLOInMemoryCreator
-from src.OTLMOW.ModelGenerator.OSLOTypeLink import OSLOTypeLink
-from src.OTLMOW.ModelGenerator.OTLComplexDatatypeCreator import OTLComplexDatatypeCreator
-from src.OTLMOW.ModelGenerator.SQLDbReader import SQLDbReader
+from OTLMOW.Loggers.NoneLogger import NoneLogger
+from OTLMOW.ModelGenerator.OSLOCollector import OSLOCollector
+from OTLMOW.ModelGenerator.OSLODatatypeComplex import OSLODatatypeComplex
+from OTLMOW.ModelGenerator.OSLODatatypeComplexAttribuut import OSLODatatypeComplexAttribuut
+from OTLMOW.ModelGenerator.OSLOInMemoryCreator import OSLOInMemoryCreator
+from OTLMOW.ModelGenerator.OSLOTypeLink import OSLOTypeLink
+from OTLMOW.ModelGenerator.OTLComplexDatatypeCreator import OTLComplexDatatypeCreator
+from OTLMOW.ModelGenerator.SQLDbReader import SQLDbReader
 
 ROOT_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 

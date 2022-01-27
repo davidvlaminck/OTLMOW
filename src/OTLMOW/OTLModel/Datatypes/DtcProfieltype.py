@@ -1,9 +1,9 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.AttributeInfo import AttributeInfo
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from src.OTLMOW.OTLModel.Datatypes.ComplexField import ComplexField
-from src.OTLMOW.OTLModel.Datatypes.KlProfielhoogtemaat import KlProfielhoogtemaat
-from src.OTLMOW.OTLModel.Datatypes.KlProfielsoort import KlProfielsoort
+from OTLMOW.OTLModel.BaseClasses.AttributeInfo import AttributeInfo
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.Datatypes.ComplexField import ComplexField
+from OTLMOW.OTLModel.Datatypes.KlProfielhoogtemaat import KlProfielhoogtemaat
+from OTLMOW.OTLModel.Datatypes.KlProfielsoort import KlProfielsoort
 
 
 # Generated with OTLComplexDatatypeCreator. To modify: extend, do not edit

@@ -1,11 +1,11 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from abc import abstractmethod, ABC
-from src.OTLMOW.OTLModel.Datatypes.DtcAdres import DtcAdres
-from src.OTLMOW.OTLModel.Datatypes.DtcDocument import DtcDocument
-from src.OTLMOW.OTLModel.Datatypes.DteTekstblok import DteTekstblok
-from src.OTLMOW.OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter
-from src.OTLMOW.OTLModel.Datatypes.KwantWrdInMeterTAW import KwantWrdInMeterTAW
+from OTLMOW.OTLModel.Datatypes.DtcAdres import DtcAdres
+from OTLMOW.OTLModel.Datatypes.DtcDocument import DtcDocument
+from OTLMOW.OTLModel.Datatypes.DteTekstblok import DteTekstblok
+from OTLMOW.OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter
+from OTLMOW.OTLModel.Datatypes.KwantWrdInMeterTAW import KwantWrdInMeterTAW
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit

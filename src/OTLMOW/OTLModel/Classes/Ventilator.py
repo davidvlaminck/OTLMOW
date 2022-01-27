@@ -1,10 +1,10 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from src.OTLMOW.OTLModel.Classes.Ventilatie import Ventilatie
-from src.OTLMOW.OTLModel.Datatypes.BooleanField import BooleanField
-from src.OTLMOW.OTLModel.Datatypes.KlVentilatorGebruik import KlVentilatorGebruik
-from src.OTLMOW.OTLModel.Datatypes.KlVentilatorRichting import KlVentilatorRichting
-from src.OTLMOW.OTLModel.Datatypes.KwantWrdInProcent import KwantWrdInProcent
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.Classes.Ventilatie import Ventilatie
+from OTLMOW.OTLModel.Datatypes.BooleanField import BooleanField
+from OTLMOW.OTLModel.Datatypes.KlVentilatorGebruik import KlVentilatorGebruik
+from OTLMOW.OTLModel.Datatypes.KlVentilatorRichting import KlVentilatorRichting
+from OTLMOW.OTLModel.Datatypes.KwantWrdInProcent import KwantWrdInProcent
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit

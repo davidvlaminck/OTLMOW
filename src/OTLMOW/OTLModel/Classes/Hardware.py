@@ -1,10 +1,10 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from src.OTLMOW.OTLModel.Classes.HardwareToegang import HardwareToegang
-from src.OTLMOW.OTLModel.Datatypes.IntegerField import IntegerField
-from src.OTLMOW.OTLModel.Datatypes.KlHardwareMerk import KlHardwareMerk
-from src.OTLMOW.OTLModel.Datatypes.KlHardwareModelnaam import KlHardwareModelnaam
-from src.OTLMOW.OTLModel.Datatypes.KlHardwareVormfactor import KlHardwareVormfactor
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.Classes.HardwareToegang import HardwareToegang
+from OTLMOW.OTLModel.Datatypes.IntegerField import IntegerField
+from OTLMOW.OTLModel.Datatypes.KlHardwareMerk import KlHardwareMerk
+from OTLMOW.OTLModel.Datatypes.KlHardwareModelnaam import KlHardwareModelnaam
+from OTLMOW.OTLModel.Datatypes.KlHardwareVormfactor import KlHardwareVormfactor
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit

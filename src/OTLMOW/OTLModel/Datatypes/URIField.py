@@ -1,4 +1,4 @@
-from src.OTLMOW.OTLModel.BaseClasses.OTLField import OTLField
+from OTLMOW.OTLModel.BaseClasses.OTLField import OTLField
 
 
 class URIField(OTLField):

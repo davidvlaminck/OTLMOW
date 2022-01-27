@@ -1,8 +1,8 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from src.OTLMOW.OTLModel.Classes.VRModuleZFirmware import VRModuleZFirmware
-from src.OTLMOW.OTLModel.Datatypes.KlVRBatterijCUMerk import KlVRBatterijCUMerk
-from src.OTLMOW.OTLModel.Datatypes.KlVRBatterijCUModelnaam import KlVRBatterijCUModelnaam
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.Classes.VRModuleZFirmware import VRModuleZFirmware
+from OTLMOW.OTLModel.Datatypes.KlVRBatterijCUMerk import KlVRBatterijCUMerk
+from OTLMOW.OTLModel.Datatypes.KlVRBatterijCUModelnaam import KlVRBatterijCUModelnaam
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit

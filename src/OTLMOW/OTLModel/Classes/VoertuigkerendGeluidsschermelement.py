@@ -1,10 +1,10 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from src.OTLMOW.OTLModel.Classes.BijlageVoertuigkering import BijlageVoertuigkering
-from src.OTLMOW.OTLModel.Classes.Geluidsschermelement import Geluidsschermelement
-from src.OTLMOW.OTLModel.Classes.SchokindexVoertuigkering import SchokindexVoertuigkering
-from src.OTLMOW.OTLModel.Classes.EigenschappenVoertuigkering import EigenschappenVoertuigkering
-from src.OTLMOW.OTLModel.Datatypes.KlLEACWerkingsbreedte import KlLEACWerkingsbreedte
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.Classes.BijlageVoertuigkering import BijlageVoertuigkering
+from OTLMOW.OTLModel.Classes.Geluidsschermelement import Geluidsschermelement
+from OTLMOW.OTLModel.Classes.SchokindexVoertuigkering import SchokindexVoertuigkering
+from OTLMOW.OTLModel.Classes.EigenschappenVoertuigkering import EigenschappenVoertuigkering
+from OTLMOW.OTLModel.Datatypes.KlLEACWerkingsbreedte import KlLEACWerkingsbreedte
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit

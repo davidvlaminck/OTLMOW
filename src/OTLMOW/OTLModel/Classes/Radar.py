@@ -1,9 +1,9 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from src.OTLMOW.OTLModel.Classes.TypeWeggebruiker import TypeWeggebruiker
-from src.OTLMOW.OTLModel.Classes.NietWeggebondenDetectie import NietWeggebondenDetectie
-from src.OTLMOW.OTLModel.Datatypes.KlRadarMerk import KlRadarMerk
-from src.OTLMOW.OTLModel.Datatypes.KlRadarModelnaam import KlRadarModelnaam
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.Classes.TypeWeggebruiker import TypeWeggebruiker
+from OTLMOW.OTLModel.Classes.NietWeggebondenDetectie import NietWeggebondenDetectie
+from OTLMOW.OTLModel.Datatypes.KlRadarMerk import KlRadarMerk
+from OTLMOW.OTLModel.Datatypes.KlRadarModelnaam import KlRadarModelnaam
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit

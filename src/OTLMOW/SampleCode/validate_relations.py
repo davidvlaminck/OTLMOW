@@ -1,11 +1,11 @@
-from src.OTLMOW.Facility.OTLFacility import OTLFacility
-from src.OTLMOW.Loggers.ConsoleLogger import ConsoleLogger
-from src.OTLMOW.Loggers.LoggerCollection import LoggerCollection
-from src.OTLMOW.Loggers.TxtLogger import TxtLogger
-from src.OTLMOW.ModelGenerator.BaseClasses.RelatieRichting import RelatieRichting
-from src.OTLMOW.OTLModel.Classes.DNBLaagspanning import DNBLaagspanning
-from src.OTLMOW.OTLModel.Classes.EnergiemeterDNB import EnergiemeterDNB
-from src.OTLMOW.OTLModel.Classes.Voedt import Voedt
+from OTLMOW.Facility.OTLFacility import OTLFacility
+from OTLMOW.Loggers.ConsoleLogger import ConsoleLogger
+from OTLMOW.Loggers.LoggerCollection import LoggerCollection
+from OTLMOW.Loggers.TxtLogger import TxtLogger
+from OTLMOW.ModelGenerator.BaseClasses.RelatieRichting import RelatieRichting
+from OTLMOW.OTLModel.Classes.DNBLaagspanning import DNBLaagspanning
+from OTLMOW.OTLModel.Classes.EnergiemeterDNB import EnergiemeterDNB
+from OTLMOW.OTLModel.Classes.Voedt import Voedt
 
 if __name__ == '__main__':
     logger = LoggerCollection([

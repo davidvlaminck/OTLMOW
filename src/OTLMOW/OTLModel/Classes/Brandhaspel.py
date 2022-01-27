@@ -1,13 +1,13 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from src.OTLMOW.OTLModel.Classes.Brandvoorziening import Brandvoorziening
-from src.OTLMOW.OTLModel.Datatypes.DateField import DateField
-from src.OTLMOW.OTLModel.Datatypes.KlBrandhaspelMerk import KlBrandhaspelMerk
-from src.OTLMOW.OTLModel.Datatypes.KlBrandhaspelModelnaam import KlBrandhaspelModelnaam
-from src.OTLMOW.OTLModel.Datatypes.KwantWrdInCentimeter import KwantWrdInCentimeter
-from src.OTLMOW.OTLModel.Datatypes.KwantWrdInKubiekeMeter import KwantWrdInKubiekeMeter
-from src.OTLMOW.OTLModel.Datatypes.KwantWrdInKubiekeMeterPerSeconde import KwantWrdInKubiekeMeterPerSeconde
-from src.OTLMOW.OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.Classes.Brandvoorziening import Brandvoorziening
+from OTLMOW.OTLModel.Datatypes.DateField import DateField
+from OTLMOW.OTLModel.Datatypes.KlBrandhaspelMerk import KlBrandhaspelMerk
+from OTLMOW.OTLModel.Datatypes.KlBrandhaspelModelnaam import KlBrandhaspelModelnaam
+from OTLMOW.OTLModel.Datatypes.KwantWrdInCentimeter import KwantWrdInCentimeter
+from OTLMOW.OTLModel.Datatypes.KwantWrdInKubiekeMeter import KwantWrdInKubiekeMeter
+from OTLMOW.OTLModel.Datatypes.KwantWrdInKubiekeMeterPerSeconde import KwantWrdInKubiekeMeterPerSeconde
+from OTLMOW.OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit

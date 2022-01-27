@@ -1,17 +1,17 @@
 ﻿from unittest import TestCase
 
-from src.OTLMOW.OTLModel.Classes.BeschermingWapening import BeschermingWapening
-from src.OTLMOW.OTLModel.Classes.BitumineuzeLaag import BitumineuzeLaag
-from src.OTLMOW.OTLModel.Classes.Geotextiel import Geotextiel
-from src.OTLMOW.OTLModel.Classes.Verankeringslandhoofd import Verankeringslandhoofd
-from src.OTLMOW.OTLModel.Classes.Walsbetonverharding import Walsbetonverharding
-from src.OTLMOW.PostenMapping.Model.Post050100000 import Post050100000
-from src.OTLMOW.PostenMapping.Model.Post050200100 import Post050200100
-from src.OTLMOW.PostenMapping.Model.Post050200300 import Post050200300
-from src.OTLMOW.PostenMapping.Model.Post060190001 import Post060190001
-from src.OTLMOW.PostenMapping.Model.Post060215019 import Post060215019
-from src.OTLMOW.PostenMapping.Model.Post060423020 import Post060423020
-from src.OTLMOW.PostenMapping.StandaardPostFactory import StandaardPostFactory
+from OTLMOW.OTLModel.Classes.BeschermingWapening import BeschermingWapening
+from OTLMOW.OTLModel.Classes.BitumineuzeLaag import BitumineuzeLaag
+from OTLMOW.OTLModel.Classes.Geotextiel import Geotextiel
+from OTLMOW.OTLModel.Classes.Verankeringslandhoofd import Verankeringslandhoofd
+from OTLMOW.OTLModel.Classes.Walsbetonverharding import Walsbetonverharding
+from OTLMOW.PostenMapping.Model.Post050100000 import Post050100000
+from OTLMOW.PostenMapping.Model.Post050200100 import Post050200100
+from OTLMOW.PostenMapping.Model.Post050200300 import Post050200300
+from OTLMOW.PostenMapping.Model.Post060190001 import Post060190001
+from OTLMOW.PostenMapping.Model.Post060215019 import Post060215019
+from OTLMOW.PostenMapping.Model.Post060423020 import Post060423020
+from OTLMOW.PostenMapping.StandaardPostFactory import StandaardPostFactory
 
 
 class StandaardPostFactoryTests(TestCase):

@@ -1,7 +1,7 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from src.OTLMOW.OTLModel.Classes.Bestrating import Bestrating
-from src.OTLMOW.OTLModel.Datatypes.DtcAfmetingBxlInCm import DtcAfmetingBxlInCm
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.Classes.Bestrating import Bestrating
+from OTLMOW.OTLModel.Datatypes.DtcAfmetingBxlInCm import DtcAfmetingBxlInCm
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit

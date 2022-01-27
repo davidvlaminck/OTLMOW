@@ -1,6 +1,6 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from src.OTLMOW.OTLModel.Classes.Energiemeter import Energiemeter
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.Classes.Energiemeter import Energiemeter
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit

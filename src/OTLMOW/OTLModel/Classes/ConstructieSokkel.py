@@ -1,9 +1,9 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from src.OTLMOW.OTLModel.Classes.ConstructieElement import ConstructieElement
-from src.OTLMOW.OTLModel.Classes.BetonnenConstructieElement import BetonnenConstructieElement
-from src.OTLMOW.OTLModel.Classes.ConstructieElementenGC import ConstructieElementenGC
-from src.OTLMOW.OTLModel.Datatypes.DtcAfmetingBxlxhInCm import DtcAfmetingBxlxhInCm
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.Classes.ConstructieElement import ConstructieElement
+from OTLMOW.OTLModel.Classes.BetonnenConstructieElement import BetonnenConstructieElement
+from OTLMOW.OTLModel.Classes.ConstructieElementenGC import ConstructieElementenGC
+from OTLMOW.OTLModel.Datatypes.DtcAfmetingBxlxhInCm import DtcAfmetingBxlxhInCm
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit

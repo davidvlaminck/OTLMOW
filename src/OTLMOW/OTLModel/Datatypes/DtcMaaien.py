@@ -1,10 +1,10 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.AttributeInfo import AttributeInfo
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from src.OTLMOW.OTLModel.Datatypes.BooleanField import BooleanField
-from src.OTLMOW.OTLModel.Datatypes.ComplexField import ComplexField
-from src.OTLMOW.OTLModel.Datatypes.KlMaaiFrequentie import KlMaaiFrequentie
-from src.OTLMOW.OTLModel.Datatypes.KlMaaiPeriode import KlMaaiPeriode
+from OTLMOW.OTLModel.BaseClasses.AttributeInfo import AttributeInfo
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.Datatypes.BooleanField import BooleanField
+from OTLMOW.OTLModel.Datatypes.ComplexField import ComplexField
+from OTLMOW.OTLModel.Datatypes.KlMaaiFrequentie import KlMaaiFrequentie
+from OTLMOW.OTLModel.Datatypes.KlMaaiPeriode import KlMaaiPeriode
 
 
 # Generated with OTLComplexDatatypeCreator. To modify: extend, do not edit

@@ -1,9 +1,9 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from src.OTLMOW.OTLModel.Classes.HoutigeVegetatie import HoutigeVegetatie
-from src.OTLMOW.OTLModel.Datatypes.KlGroeiplaatsverbetering import KlGroeiplaatsverbetering
-from src.OTLMOW.OTLModel.Datatypes.KlHoutigeType import KlHoutigeType
-from src.OTLMOW.OTLModel.Datatypes.KlNSB import KlNSB
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.Classes.HoutigeVegetatie import HoutigeVegetatie
+from OTLMOW.OTLModel.Datatypes.KlGroeiplaatsverbetering import KlGroeiplaatsverbetering
+from OTLMOW.OTLModel.Datatypes.KlHoutigeType import KlHoutigeType
+from OTLMOW.OTLModel.Datatypes.KlNSB import KlNSB
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit

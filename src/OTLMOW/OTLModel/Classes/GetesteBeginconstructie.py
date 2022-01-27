@@ -1,8 +1,8 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from src.OTLMOW.OTLModel.Classes.SchokindexVoertuigkering import SchokindexVoertuigkering
-from src.OTLMOW.OTLModel.Classes.Beginstuk import Beginstuk
-from src.OTLMOW.OTLModel.Datatypes.KlLEACPerformantieklasse import KlLEACPerformantieklasse
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.Classes.SchokindexVoertuigkering import SchokindexVoertuigkering
+from OTLMOW.OTLModel.Classes.Beginstuk import Beginstuk
+from OTLMOW.OTLModel.Datatypes.KlLEACPerformantieklasse import KlLEACPerformantieklasse
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit

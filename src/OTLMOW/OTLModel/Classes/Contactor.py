@@ -1,7 +1,7 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from src.OTLMOW.OTLModel.Classes.AIMObject import AIMObject
-from src.OTLMOW.OTLModel.Datatypes.KlContactorType import KlContactorType
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.Classes.AIMObject import AIMObject
+from OTLMOW.OTLModel.Datatypes.KlContactorType import KlContactorType
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit

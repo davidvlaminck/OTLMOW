@@ -1,14 +1,14 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from src.OTLMOW.OTLModel.Classes.AIMToestand import AIMToestand
-from src.OTLMOW.OTLModel.Classes.AIMDBStatus import AIMDBStatus
-from src.OTLMOW.OTLModel.BaseClasses.AttributeInfo import AttributeInfo
-from src.OTLMOW.OTLModel.BaseClasses.OTLAsset import OTLAsset
-from src.OTLMOW.OTLModel.BaseClasses.RelatieInteractor import RelatieInteractor
-from src.OTLMOW.OTLModel.Datatypes.BooleanField import BooleanField
-from src.OTLMOW.OTLModel.Datatypes.DtcDocument import DtcDocument
-from src.OTLMOW.OTLModel.Datatypes.DtcIdentificator import DtcIdentificator
-from src.OTLMOW.OTLModel.Datatypes.StringField import StringField
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.Classes.AIMToestand import AIMToestand
+from OTLMOW.OTLModel.Classes.AIMDBStatus import AIMDBStatus
+from OTLMOW.OTLModel.BaseClasses.AttributeInfo import AttributeInfo
+from OTLMOW.OTLModel.BaseClasses.OTLAsset import OTLAsset
+from OTLMOW.OTLModel.BaseClasses.RelatieInteractor import RelatieInteractor
+from OTLMOW.OTLModel.Datatypes.BooleanField import BooleanField
+from OTLMOW.OTLModel.Datatypes.DtcDocument import DtcDocument
+from OTLMOW.OTLModel.Datatypes.DtcIdentificator import DtcIdentificator
+from OTLMOW.OTLModel.Datatypes.StringField import StringField
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit

@@ -1,13 +1,13 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from src.OTLMOW.OTLModel.Classes.LaagBouwklasse import LaagBouwklasse
-from src.OTLMOW.OTLModel.Datatypes.DtcSupplementenCBV import DtcSupplementenCBV
-from src.OTLMOW.OTLModel.Datatypes.IntegerField import IntegerField
-from src.OTLMOW.OTLModel.Datatypes.KlCBVAardVerharding import KlCBVAardVerharding
-from src.OTLMOW.OTLModel.Datatypes.KlCBVLaagtype import KlCBVLaagtype
-from src.OTLMOW.OTLModel.Datatypes.KlCBVOppervlaktebehandeling import KlCBVOppervlaktebehandeling
-from src.OTLMOW.OTLModel.Datatypes.KwantWrdInKubiekeMeter import KwantWrdInKubiekeMeter
-from src.OTLMOW.OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.Classes.LaagBouwklasse import LaagBouwklasse
+from OTLMOW.OTLModel.Datatypes.DtcSupplementenCBV import DtcSupplementenCBV
+from OTLMOW.OTLModel.Datatypes.IntegerField import IntegerField
+from OTLMOW.OTLModel.Datatypes.KlCBVAardVerharding import KlCBVAardVerharding
+from OTLMOW.OTLModel.Datatypes.KlCBVLaagtype import KlCBVLaagtype
+from OTLMOW.OTLModel.Datatypes.KlCBVOppervlaktebehandeling import KlCBVOppervlaktebehandeling
+from OTLMOW.OTLModel.Datatypes.KwantWrdInKubiekeMeter import KwantWrdInKubiekeMeter
+from OTLMOW.OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit

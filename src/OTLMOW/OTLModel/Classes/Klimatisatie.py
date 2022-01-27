@@ -1,8 +1,8 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from src.OTLMOW.OTLModel.Classes.AIMNaamObject import AIMNaamObject
-from src.OTLMOW.OTLModel.Datatypes.KlKlimatisatieMerk import KlKlimatisatieMerk
-from src.OTLMOW.OTLModel.Datatypes.KlKlimatisatieModelnaam import KlKlimatisatieModelnaam
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.Classes.AIMNaamObject import AIMNaamObject
+from OTLMOW.OTLModel.Datatypes.KlKlimatisatieMerk import KlKlimatisatieMerk
+from OTLMOW.OTLModel.Datatypes.KlKlimatisatieModelnaam import KlKlimatisatieModelnaam
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit

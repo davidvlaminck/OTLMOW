@@ -1,6 +1,6 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from src.OTLMOW.OTLModel.Classes.Grasland import Grasland
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.Classes.Grasland import Grasland
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit

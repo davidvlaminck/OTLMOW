@@ -1,13 +1,13 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from abc import abstractmethod
-from src.OTLMOW.OTLModel.Classes.AIMNaamObject import AIMNaamObject
-from src.OTLMOW.OTLModel.Classes.Verkeersbord import Verkeersbord
-from src.OTLMOW.OTLModel.Datatypes.BooleanField import BooleanField
-from src.OTLMOW.OTLModel.Datatypes.DtcDocument import DtcDocument
-from src.OTLMOW.OTLModel.Datatypes.DteIPv4Adres import DteIPv4Adres
-from src.OTLMOW.OTLModel.Datatypes.IntegerField import IntegerField
-from src.OTLMOW.OTLModel.Datatypes.StringField import StringField
+from OTLMOW.OTLModel.Classes.AIMNaamObject import AIMNaamObject
+from OTLMOW.OTLModel.Classes.Verkeersbord import Verkeersbord
+from OTLMOW.OTLModel.Datatypes.BooleanField import BooleanField
+from OTLMOW.OTLModel.Datatypes.DtcDocument import DtcDocument
+from OTLMOW.OTLModel.Datatypes.DteIPv4Adres import DteIPv4Adres
+from OTLMOW.OTLModel.Datatypes.IntegerField import IntegerField
+from OTLMOW.OTLModel.Datatypes.StringField import StringField
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit

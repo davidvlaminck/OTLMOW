@@ -1,16 +1,16 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from src.OTLMOW.OTLModel.Classes.AIMNaamObject import AIMNaamObject
-from src.OTLMOW.OTLModel.Classes.EMDraagconstructie import EMDraagconstructie
-from src.OTLMOW.OTLModel.Datatypes.BooleanField import BooleanField
-from src.OTLMOW.OTLModel.Datatypes.DteKleurRAL import DteKleurRAL
-from src.OTLMOW.OTLModel.Datatypes.DtuLichtmastMasthoogte import DtuLichtmastMasthoogte
-from src.OTLMOW.OTLModel.Datatypes.KlDraagConstrBeschermlaag import KlDraagConstrBeschermlaag
-from src.OTLMOW.OTLModel.Datatypes.KlDraagconstructieDwarsdoorsnede import KlDraagconstructieDwarsdoorsnede
-from src.OTLMOW.OTLModel.Datatypes.KlLichtmastBotsNormering import KlLichtmastBotsNormering
-from src.OTLMOW.OTLModel.Datatypes.KlLichtmastLeverancier import KlLichtmastLeverancier
-from src.OTLMOW.OTLModel.Datatypes.KlLichtmastMasttype import KlLichtmastMasttype
-from src.OTLMOW.OTLModel.Datatypes.StringField import StringField
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.Classes.AIMNaamObject import AIMNaamObject
+from OTLMOW.OTLModel.Classes.EMDraagconstructie import EMDraagconstructie
+from OTLMOW.OTLModel.Datatypes.BooleanField import BooleanField
+from OTLMOW.OTLModel.Datatypes.DteKleurRAL import DteKleurRAL
+from OTLMOW.OTLModel.Datatypes.DtuLichtmastMasthoogte import DtuLichtmastMasthoogte
+from OTLMOW.OTLModel.Datatypes.KlDraagConstrBeschermlaag import KlDraagConstrBeschermlaag
+from OTLMOW.OTLModel.Datatypes.KlDraagconstructieDwarsdoorsnede import KlDraagconstructieDwarsdoorsnede
+from OTLMOW.OTLModel.Datatypes.KlLichtmastBotsNormering import KlLichtmastBotsNormering
+from OTLMOW.OTLModel.Datatypes.KlLichtmastLeverancier import KlLichtmastLeverancier
+from OTLMOW.OTLModel.Datatypes.KlLichtmastMasttype import KlLichtmastMasttype
+from OTLMOW.OTLModel.Datatypes.StringField import StringField
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit

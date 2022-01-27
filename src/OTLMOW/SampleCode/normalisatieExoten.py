@@ -1,6 +1,6 @@
-﻿from src.OTLMOW.Facility.OTLFacility import OTLFacility
-from src.OTLMOW.Loggers.TxtLogger import TxtLogger
-from src.OTLMOW.OTLModel.Classes.InvasieveExoten import InvasieveExoten
+﻿from OTLMOW.Facility.OTLFacility import OTLFacility
+from OTLMOW.Loggers.TxtLogger import TxtLogger
+from OTLMOW.OTLModel.Classes.InvasieveExoten import InvasieveExoten
 
 def normaliseer_exoten():
     # create the main facade class: OTLFacility

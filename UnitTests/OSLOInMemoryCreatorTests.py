@@ -2,19 +2,19 @@ import os
 import unittest
 from unittest.mock import Mock
 
-from src.OTLMOW.ModelGenerator.Inheritance import Inheritance
-from src.OTLMOW.ModelGenerator.OSLOAttribuut import OSLOAttribuut
-from src.OTLMOW.ModelGenerator.OSLOClass import OSLOClass
-from src.OTLMOW.ModelGenerator.OSLODatatypeComplex import OSLODatatypeComplex
-from src.OTLMOW.ModelGenerator.OSLODatatypeComplexAttribuut import OSLODatatypeComplexAttribuut
-from src.OTLMOW.ModelGenerator.OSLODatatypePrimitive import OSLODatatypePrimitive
-from src.OTLMOW.ModelGenerator.OSLODatatypePrimitiveAttribuut import OSLODatatypePrimitiveAttribuut
-from src.OTLMOW.ModelGenerator.OSLODatatypeUnion import OSLODatatypeUnion
-from src.OTLMOW.ModelGenerator.OSLODatatypeUnionAttribuut import OSLODatatypeUnionAttribuut
-from src.OTLMOW.ModelGenerator.OSLOEnumeration import OSLOEnumeration
-from src.OTLMOW.ModelGenerator.OSLOInMemoryCreator import OSLOInMemoryCreator
-from src.OTLMOW.ModelGenerator.OSLORelatie import OSLORelatie
-from src.OTLMOW.ModelGenerator.SQLDbReader import SQLDbReader
+from OTLMOW.ModelGenerator.Inheritance import Inheritance
+from OTLMOW.ModelGenerator.OSLOAttribuut import OSLOAttribuut
+from OTLMOW.ModelGenerator.OSLOClass import OSLOClass
+from OTLMOW.ModelGenerator.OSLODatatypeComplex import OSLODatatypeComplex
+from OTLMOW.ModelGenerator.OSLODatatypeComplexAttribuut import OSLODatatypeComplexAttribuut
+from OTLMOW.ModelGenerator.OSLODatatypePrimitive import OSLODatatypePrimitive
+from OTLMOW.ModelGenerator.OSLODatatypePrimitiveAttribuut import OSLODatatypePrimitiveAttribuut
+from OTLMOW.ModelGenerator.OSLODatatypeUnion import OSLODatatypeUnion
+from OTLMOW.ModelGenerator.OSLODatatypeUnionAttribuut import OSLODatatypeUnionAttribuut
+from OTLMOW.ModelGenerator.OSLOEnumeration import OSLOEnumeration
+from OTLMOW.ModelGenerator.OSLOInMemoryCreator import OSLOInMemoryCreator
+from OTLMOW.ModelGenerator.OSLORelatie import OSLORelatie
+from OTLMOW.ModelGenerator.SQLDbReader import SQLDbReader
 
 
 class OSLOInMemoryCreatorTests(unittest.TestCase):

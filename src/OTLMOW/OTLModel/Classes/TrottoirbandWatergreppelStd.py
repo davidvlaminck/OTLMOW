@@ -1,9 +1,9 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from src.OTLMOW.OTLModel.Classes.GestandaardiseerdeKantopsluiting import GestandaardiseerdeKantopsluiting
-from src.OTLMOW.OTLModel.Datatypes.DtcLENorm import DtcLENorm
-from src.OTLMOW.OTLModel.Datatypes.DtcTrottoirbandVorm import DtcTrottoirbandVorm
-from src.OTLMOW.OTLModel.Datatypes.KlLETrottoirbandWatergreppelType import KlLETrottoirbandWatergreppelType
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.Classes.GestandaardiseerdeKantopsluiting import GestandaardiseerdeKantopsluiting
+from OTLMOW.OTLModel.Datatypes.DtcLENorm import DtcLENorm
+from OTLMOW.OTLModel.Datatypes.DtcTrottoirbandVorm import DtcTrottoirbandVorm
+from OTLMOW.OTLModel.Datatypes.KlLETrottoirbandWatergreppelType import KlLETrottoirbandWatergreppelType
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit

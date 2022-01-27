@@ -1,15 +1,15 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from abc import abstractmethod
-from src.OTLMOW.OTLModel.Classes.AIMObject import AIMObject
-from src.OTLMOW.OTLModel.Datatypes.BooleanField import BooleanField
-from src.OTLMOW.OTLModel.Datatypes.DtcDocument import DtcDocument
-from src.OTLMOW.OTLModel.Datatypes.DteTekstblok import DteTekstblok
-from src.OTLMOW.OTLModel.Datatypes.KlRioleringVorm import KlRioleringVorm
-from src.OTLMOW.OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter
-from src.OTLMOW.OTLModel.Datatypes.KwantWrdInMeterTAW import KwantWrdInMeterTAW
-from src.OTLMOW.OTLModel.Datatypes.KwantWrdInMillimeter import KwantWrdInMillimeter
-from src.OTLMOW.OTLModel.Datatypes.KwantWrdInPromille import KwantWrdInPromille
+from OTLMOW.OTLModel.Classes.AIMObject import AIMObject
+from OTLMOW.OTLModel.Datatypes.BooleanField import BooleanField
+from OTLMOW.OTLModel.Datatypes.DtcDocument import DtcDocument
+from OTLMOW.OTLModel.Datatypes.DteTekstblok import DteTekstblok
+from OTLMOW.OTLModel.Datatypes.KlRioleringVorm import KlRioleringVorm
+from OTLMOW.OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter
+from OTLMOW.OTLModel.Datatypes.KwantWrdInMeterTAW import KwantWrdInMeterTAW
+from OTLMOW.OTLModel.Datatypes.KwantWrdInMillimeter import KwantWrdInMillimeter
+from OTLMOW.OTLModel.Datatypes.KwantWrdInPromille import KwantWrdInPromille
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit

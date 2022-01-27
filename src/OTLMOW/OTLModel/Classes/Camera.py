@@ -1,13 +1,13 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from src.OTLMOW.OTLModel.Classes.AIMNaamObject import AIMNaamObject
-from src.OTLMOW.OTLModel.Datatypes.BooleanField import BooleanField
-from src.OTLMOW.OTLModel.Datatypes.DtcDocument import DtcDocument
-from src.OTLMOW.OTLModel.Datatypes.DteIPv4Adres import DteIPv4Adres
-from src.OTLMOW.OTLModel.Datatypes.KlCameraMerk import KlCameraMerk
-from src.OTLMOW.OTLModel.Datatypes.KlCameraModelnaam import KlCameraModelnaam
-from src.OTLMOW.OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter
-from src.OTLMOW.OTLModel.Datatypes.StringField import StringField
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.Classes.AIMNaamObject import AIMNaamObject
+from OTLMOW.OTLModel.Datatypes.BooleanField import BooleanField
+from OTLMOW.OTLModel.Datatypes.DtcDocument import DtcDocument
+from OTLMOW.OTLModel.Datatypes.DteIPv4Adres import DteIPv4Adres
+from OTLMOW.OTLModel.Datatypes.KlCameraMerk import KlCameraMerk
+from OTLMOW.OTLModel.Datatypes.KlCameraModelnaam import KlCameraModelnaam
+from OTLMOW.OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter
+from OTLMOW.OTLModel.Datatypes.StringField import StringField
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit

@@ -1,10 +1,10 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from src.OTLMOW.OTLModel.Classes.VRModuleMetFirmware import VRModuleMetFirmware
-from src.OTLMOW.OTLModel.Datatypes.BooleanField import BooleanField
-from src.OTLMOW.OTLModel.Datatypes.DteIPv4Adres import DteIPv4Adres
-from src.OTLMOW.OTLModel.Datatypes.KlVrComKaartTypeOpslaggeheugen import KlVrComKaartTypeOpslaggeheugen
-from src.OTLMOW.OTLModel.Datatypes.StringField import StringField
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.Classes.VRModuleMetFirmware import VRModuleMetFirmware
+from OTLMOW.OTLModel.Datatypes.BooleanField import BooleanField
+from OTLMOW.OTLModel.Datatypes.DteIPv4Adres import DteIPv4Adres
+from OTLMOW.OTLModel.Datatypes.KlVrComKaartTypeOpslaggeheugen import KlVrComKaartTypeOpslaggeheugen
+from OTLMOW.OTLModel.Datatypes.StringField import StringField
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit

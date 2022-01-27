@@ -1,10 +1,10 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from abc import abstractmethod
-from src.OTLMOW.OTLModel.Classes.AIMDBStatus import AIMDBStatus
-from src.OTLMOW.OTLModel.BaseClasses.AttributeInfo import AttributeInfo
-from src.OTLMOW.OTLModel.BaseClasses.OTLObject import OTLObject
-from src.OTLMOW.OTLModel.Datatypes.DtcIdentificator import DtcIdentificator
+from OTLMOW.OTLModel.Classes.AIMDBStatus import AIMDBStatus
+from OTLMOW.OTLModel.BaseClasses.AttributeInfo import AttributeInfo
+from OTLMOW.OTLModel.BaseClasses.OTLObject import OTLObject
+from OTLMOW.OTLModel.Datatypes.DtcIdentificator import DtcIdentificator
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit

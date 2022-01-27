@@ -1,9 +1,9 @@
 import unittest
 from datetime import date
 
-from src.OTLMOW.OTLModel.Classes.Buis import Buis
-from src.OTLMOW.OTLModel.Classes.ContainerBuis import ContainerBuis
-from src.OTLMOW.OTLModel.Classes.Mantelbuis import Mantelbuis
+from OTLMOW.OTLModel.Classes.Buis import Buis
+from OTLMOW.OTLModel.Classes.ContainerBuis import ContainerBuis
+from OTLMOW.OTLModel.Classes.Mantelbuis import Mantelbuis
 
 
 class ContainerBuisKardinaliteitFieldTests(unittest.TestCase):

@@ -1,7 +1,7 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from src.OTLMOW.OTLModel.Classes.NaampadObject import NaampadObject
-from src.OTLMOW.OTLModel.Datatypes.KlPadNetwerkprotectie import KlPadNetwerkprotectie
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.Classes.NaampadObject import NaampadObject
+from OTLMOW.OTLModel.Datatypes.KlPadNetwerkprotectie import KlPadNetwerkprotectie
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit

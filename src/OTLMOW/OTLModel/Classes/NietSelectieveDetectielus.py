@@ -1,9 +1,9 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from src.OTLMOW.OTLModel.Classes.SelNietSelLus import SelNietSelLus
-from src.OTLMOW.OTLModel.Datatypes.BooleanField import BooleanField
-from src.OTLMOW.OTLModel.Datatypes.KlVriLusFunctie import KlVriLusFunctie
-from src.OTLMOW.OTLModel.Datatypes.KlVriLusSoortvoertuig import KlVriLusSoortvoertuig
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.Classes.SelNietSelLus import SelNietSelLus
+from OTLMOW.OTLModel.Datatypes.BooleanField import BooleanField
+from OTLMOW.OTLModel.Datatypes.KlVriLusFunctie import KlVriLusFunctie
+from OTLMOW.OTLModel.Datatypes.KlVriLusSoortvoertuig import KlVriLusSoortvoertuig
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit

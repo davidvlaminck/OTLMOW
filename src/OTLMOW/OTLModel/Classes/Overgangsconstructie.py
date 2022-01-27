@@ -1,7 +1,7 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from src.OTLMOW.OTLModel.Classes.SchokindexVoertuigkering import SchokindexVoertuigkering
-from src.OTLMOW.OTLModel.Classes.AansluitendeConstructie import AansluitendeConstructie
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.Classes.SchokindexVoertuigkering import SchokindexVoertuigkering
+from OTLMOW.OTLModel.Classes.AansluitendeConstructie import AansluitendeConstructie
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit

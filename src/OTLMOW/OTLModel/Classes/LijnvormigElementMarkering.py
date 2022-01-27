@@ -1,11 +1,11 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from src.OTLMOW.OTLModel.Classes.Markering import Markering
-from src.OTLMOW.OTLModel.Classes.AOWSType import AOWSType
-from src.OTLMOW.OTLModel.Datatypes.KlLEMarkeringCode import KlLEMarkeringCode
-from src.OTLMOW.OTLModel.Datatypes.KlLEMarkeringSoort import KlLEMarkeringSoort
-from src.OTLMOW.OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter
-from src.OTLMOW.OTLModel.Datatypes.KwantWrdInVierkanteMeter import KwantWrdInVierkanteMeter
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.Classes.Markering import Markering
+from OTLMOW.OTLModel.Classes.AOWSType import AOWSType
+from OTLMOW.OTLModel.Datatypes.KlLEMarkeringCode import KlLEMarkeringCode
+from OTLMOW.OTLModel.Datatypes.KlLEMarkeringSoort import KlLEMarkeringSoort
+from OTLMOW.OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter
+from OTLMOW.OTLModel.Datatypes.KwantWrdInVierkanteMeter import KwantWrdInVierkanteMeter
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit

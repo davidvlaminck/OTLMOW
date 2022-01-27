@@ -1,7 +1,7 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from src.OTLMOW.OTLModel.Classes.VRIDraagconstructie import VRIDraagconstructie
-from src.OTLMOW.OTLModel.Datatypes.KlBoogpaalType import KlBoogpaalType
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.Classes.VRIDraagconstructie import VRIDraagconstructie
+from OTLMOW.OTLModel.Datatypes.KlBoogpaalType import KlBoogpaalType
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit

@@ -1,6 +1,6 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from src.OTLMOW.OTLModel.Classes.AndereLaag import AndereLaag
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.Classes.AndereLaag import AndereLaag
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit

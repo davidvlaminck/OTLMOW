@@ -1,7 +1,7 @@
 ﻿import decimal
 
-from src.OTLMOW.Facility.Exceptions.CouldNotConvertToCorrectType import CouldNotConvertToCorrectType
-from src.OTLMOW.OTLModel.BaseClasses.OTLField import OTLField
+from OTLMOW.Facility.Exceptions.CouldNotConvertToCorrectType import CouldNotConvertToCorrectType
+from OTLMOW.OTLModel.BaseClasses.OTLField import OTLField
 
 
 class FloatOrDecimalField(OTLField):

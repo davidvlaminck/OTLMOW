@@ -1,7 +1,7 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from src.OTLMOW.OTLModel.Classes.Put import Put
-from src.OTLMOW.OTLModel.Classes.PutRelatie import PutRelatie
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.Classes.Put import Put
+from OTLMOW.OTLModel.Classes.PutRelatie import PutRelatie
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit

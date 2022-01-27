@@ -1,15 +1,15 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from src.OTLMOW.OTLModel.Classes.AIMNaamObject import AIMNaamObject
-from src.OTLMOW.OTLModel.Datatypes.DateField import DateField
-from src.OTLMOW.OTLModel.Datatypes.DtcDocument import DtcDocument
-from src.OTLMOW.OTLModel.Datatypes.DtcExterneReferentie import DtcExterneReferentie
-from src.OTLMOW.OTLModel.Datatypes.KlRegelaarRegelaartype import KlRegelaarRegelaartype
-from src.OTLMOW.OTLModel.Datatypes.KlVerkeersregelaarCoordinatiewijze import KlVerkeersregelaarCoordinatiewijze
-from src.OTLMOW.OTLModel.Datatypes.KlVerkeersregelaarMerk import KlVerkeersregelaarMerk
-from src.OTLMOW.OTLModel.Datatypes.KlVerkeersregelaarModelnaam import KlVerkeersregelaarModelnaam
-from src.OTLMOW.OTLModel.Datatypes.KlVerkeersregelaarVoltage import KlVerkeersregelaarVoltage
-from src.OTLMOW.OTLModel.Datatypes.StringField import StringField
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.Classes.AIMNaamObject import AIMNaamObject
+from OTLMOW.OTLModel.Datatypes.DateField import DateField
+from OTLMOW.OTLModel.Datatypes.DtcDocument import DtcDocument
+from OTLMOW.OTLModel.Datatypes.DtcExterneReferentie import DtcExterneReferentie
+from OTLMOW.OTLModel.Datatypes.KlRegelaarRegelaartype import KlRegelaarRegelaartype
+from OTLMOW.OTLModel.Datatypes.KlVerkeersregelaarCoordinatiewijze import KlVerkeersregelaarCoordinatiewijze
+from OTLMOW.OTLModel.Datatypes.KlVerkeersregelaarMerk import KlVerkeersregelaarMerk
+from OTLMOW.OTLModel.Datatypes.KlVerkeersregelaarModelnaam import KlVerkeersregelaarModelnaam
+from OTLMOW.OTLModel.Datatypes.KlVerkeersregelaarVoltage import KlVerkeersregelaarVoltage
+from OTLMOW.OTLModel.Datatypes.StringField import StringField
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit

@@ -1,17 +1,17 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from src.OTLMOW.OTLModel.Classes.AIMNaamObject import AIMNaamObject
-from src.OTLMOW.OTLModel.Datatypes.BooleanField import BooleanField
-from src.OTLMOW.OTLModel.Datatypes.DtcDocument import DtcDocument
-from src.OTLMOW.OTLModel.Datatypes.KlHSBeveiligingscelHoogspanningszekering import KlHSBeveiligingscelHoogspanningszekering
-from src.OTLMOW.OTLModel.Datatypes.KlHSBeveiligingscelMerk import KlHSBeveiligingscelMerk
-from src.OTLMOW.OTLModel.Datatypes.KlHSBeveiligingscelModelnaam import KlHSBeveiligingscelModelnaam
-from src.OTLMOW.OTLModel.Datatypes.KlHSBeveiligingscelOverstroombeveiligingVermogenschakelaar import KlHSBeveiligingscelOverstroombeveiligingVermogenschakelaar
-from src.OTLMOW.OTLModel.Datatypes.KlHSBeveiligingscelSchakelmateriaalKlasse import KlHSBeveiligingscelSchakelmateriaalKlasse
-from src.OTLMOW.OTLModel.Datatypes.KlHSBeveiligingscelSchakelmateriaalType import KlHSBeveiligingscelSchakelmateriaalType
-from src.OTLMOW.OTLModel.Datatypes.KwantWrdInAmpere import KwantWrdInAmpere
-from src.OTLMOW.OTLModel.Datatypes.KwantWrdInJaar import KwantWrdInJaar
-from src.OTLMOW.OTLModel.Datatypes.StringField import StringField
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.Classes.AIMNaamObject import AIMNaamObject
+from OTLMOW.OTLModel.Datatypes.BooleanField import BooleanField
+from OTLMOW.OTLModel.Datatypes.DtcDocument import DtcDocument
+from OTLMOW.OTLModel.Datatypes.KlHSBeveiligingscelHoogspanningszekering import KlHSBeveiligingscelHoogspanningszekering
+from OTLMOW.OTLModel.Datatypes.KlHSBeveiligingscelMerk import KlHSBeveiligingscelMerk
+from OTLMOW.OTLModel.Datatypes.KlHSBeveiligingscelModelnaam import KlHSBeveiligingscelModelnaam
+from OTLMOW.OTLModel.Datatypes.KlHSBeveiligingscelOverstroombeveiligingVermogenschakelaar import KlHSBeveiligingscelOverstroombeveiligingVermogenschakelaar
+from OTLMOW.OTLModel.Datatypes.KlHSBeveiligingscelSchakelmateriaalKlasse import KlHSBeveiligingscelSchakelmateriaalKlasse
+from OTLMOW.OTLModel.Datatypes.KlHSBeveiligingscelSchakelmateriaalType import KlHSBeveiligingscelSchakelmateriaalType
+from OTLMOW.OTLModel.Datatypes.KwantWrdInAmpere import KwantWrdInAmpere
+from OTLMOW.OTLModel.Datatypes.KwantWrdInJaar import KwantWrdInJaar
+from OTLMOW.OTLModel.Datatypes.StringField import StringField
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit

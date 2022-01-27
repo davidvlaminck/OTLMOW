@@ -1,7 +1,7 @@
 import unittest
 from unittest import TestCase
 
-from src.OTLMOW.OTLModel.Classes.Wegkantkast import Wegkantkast
+from OTLMOW.OTLModel.Classes.Wegkantkast import Wegkantkast
 
 
 class WrongGeometryError(Exception):

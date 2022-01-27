@@ -1,9 +1,9 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from abc import abstractmethod
-from src.OTLMOW.OTLModel.Classes.AIMObject import AIMObject
-from src.OTLMOW.OTLModel.Classes.Signalisatie import Signalisatie
-from src.OTLMOW.OTLModel.Datatypes.KlKleurReflector import KlKleurReflector
+from OTLMOW.OTLModel.Classes.AIMObject import AIMObject
+from OTLMOW.OTLModel.Classes.Signalisatie import Signalisatie
+from OTLMOW.OTLModel.Datatypes.KlKleurReflector import KlKleurReflector
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit

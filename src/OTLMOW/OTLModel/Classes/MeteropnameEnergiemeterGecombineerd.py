@@ -1,8 +1,8 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from src.OTLMOW.OTLModel.Classes.MeteropnameEnergiemeter import MeteropnameEnergiemeter
-from src.OTLMOW.OTLModel.Datatypes.KwantWrdInKiloWatt import KwantWrdInKiloWatt
-from src.OTLMOW.OTLModel.Datatypes.KwantWrdInkVARh import KwantWrdInkVARh
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.Classes.MeteropnameEnergiemeter import MeteropnameEnergiemeter
+from OTLMOW.OTLModel.Datatypes.KwantWrdInKiloWatt import KwantWrdInKiloWatt
+from OTLMOW.OTLModel.Datatypes.KwantWrdInkVARh import KwantWrdInkVARh
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit

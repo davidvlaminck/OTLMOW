@@ -1,8 +1,8 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from abc import abstractmethod
-from src.OTLMOW.OTLModel.Classes.Laag import Laag
-from src.OTLMOW.OTLModel.Classes.LaagProductidentificatiecode import LaagProductidentificatiecode
+from OTLMOW.OTLModel.Classes.Laag import Laag
+from OTLMOW.OTLModel.Classes.LaagProductidentificatiecode import LaagProductidentificatiecode
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit

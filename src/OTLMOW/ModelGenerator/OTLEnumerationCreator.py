@@ -1,13 +1,13 @@
 import rdflib
 from rdflib import URIRef
 
-from src.OTLMOW.Loggers.AbstractLogger import AbstractLogger
-from src.OTLMOW.Loggers.LogType import LogType
-from src.OTLMOW.ModelGenerator.AbstractDatatypeCreator import AbstractDatatypeCreator
-from src.OTLMOW.ModelGenerator.OSLOCollector import OSLOCollector
-from src.OTLMOW.ModelGenerator.OSLOEnumeration import OSLOEnumeration
-from src.OTLMOW.ModelGenerator.StringHelper import wrap_in_quotes
-from src.OTLMOW.OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
+from OTLMOW.Loggers.AbstractLogger import AbstractLogger
+from OTLMOW.Loggers.LogType import LogType
+from OTLMOW.ModelGenerator.AbstractDatatypeCreator import AbstractDatatypeCreator
+from OTLMOW.ModelGenerator.OSLOCollector import OSLOCollector
+from OTLMOW.ModelGenerator.OSLOEnumeration import OSLOEnumeration
+from OTLMOW.ModelGenerator.StringHelper import wrap_in_quotes
+from OTLMOW.OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 
 class OTLEnumerationCreator(AbstractDatatypeCreator):
@@ -28,8 +28,8 @@ class OTLEnumerationCreator(AbstractDatatypeCreator):
 
     def CreateBlockToWriteFromEnumeration(self, osloEnumeration: OSLOEnumeration):
         datablock = ['# coding=utf-8',
-                     'from src.OTLMOW.OTLModel.Datatypes.KeuzelijstField import KeuzelijstField',
-                     'from src.OTLMOW.OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde',
+                     'from OTLMOW.OTLModel.Datatypes.KeuzelijstField import KeuzelijstField',
+                     'from OTLMOW.OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde',
                      '',
                      '',
                      f'# Generated with {self.__class__.__name__}. To modify: extend, do not edit',

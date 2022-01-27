@@ -1,9 +1,9 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from src.OTLMOW.OTLModel.Classes.AndereLaag import AndereLaag
-from src.OTLMOW.OTLModel.Datatypes.KlDunneOverlagingType import KlDunneOverlagingType
-from src.OTLMOW.OTLModel.Datatypes.KlKleurSupp import KlKleurSupp
-from src.OTLMOW.OTLModel.Datatypes.KwantWrdInTon import KwantWrdInTon
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.Classes.AndereLaag import AndereLaag
+from OTLMOW.OTLModel.Datatypes.KlDunneOverlagingType import KlDunneOverlagingType
+from OTLMOW.OTLModel.Datatypes.KlKleurSupp import KlKleurSupp
+from OTLMOW.OTLModel.Datatypes.KwantWrdInTon import KwantWrdInTon
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit

@@ -1,15 +1,15 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from src.OTLMOW.OTLModel.Classes.Put import Put
-from src.OTLMOW.OTLModel.Classes.PutRelatie import PutRelatie
-from src.OTLMOW.OTLModel.Datatypes.BooleanField import BooleanField
-from src.OTLMOW.OTLModel.Datatypes.DtcAfmetingBxlxhInMm import DtcAfmetingBxlxhInMm
-from src.OTLMOW.OTLModel.Datatypes.KlPutRooster import KlPutRooster
-from src.OTLMOW.OTLModel.Datatypes.KlRoosterIndeling import KlRoosterIndeling
-from src.OTLMOW.OTLModel.Datatypes.KlRoosterOpeningswijze import KlRoosterOpeningswijze
-from src.OTLMOW.OTLModel.Datatypes.KlStraatkolkBakType import KlStraatkolkBakType
-from src.OTLMOW.OTLModel.Datatypes.KlStraatkolkType import KlStraatkolkType
-from src.OTLMOW.OTLModel.Datatypes.KlStraatkolkTypeUitlaat import KlStraatkolkTypeUitlaat
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.Classes.Put import Put
+from OTLMOW.OTLModel.Classes.PutRelatie import PutRelatie
+from OTLMOW.OTLModel.Datatypes.BooleanField import BooleanField
+from OTLMOW.OTLModel.Datatypes.DtcAfmetingBxlxhInMm import DtcAfmetingBxlxhInMm
+from OTLMOW.OTLModel.Datatypes.KlPutRooster import KlPutRooster
+from OTLMOW.OTLModel.Datatypes.KlRoosterIndeling import KlRoosterIndeling
+from OTLMOW.OTLModel.Datatypes.KlRoosterOpeningswijze import KlRoosterOpeningswijze
+from OTLMOW.OTLModel.Datatypes.KlStraatkolkBakType import KlStraatkolkBakType
+from OTLMOW.OTLModel.Datatypes.KlStraatkolkType import KlStraatkolkType
+from OTLMOW.OTLModel.Datatypes.KlStraatkolkTypeUitlaat import KlStraatkolkTypeUitlaat
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit

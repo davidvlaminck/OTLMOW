@@ -1,12 +1,12 @@
 from unittest import TestCase
 
-from src.OTLMOW.Facility.DavieDecoder import DavieDecoder
-from src.OTLMOW.OTLModel.Classes.ExterneDetectie import ExterneDetectie
-from src.OTLMOW.OTLModel.Classes.HeeftBetrokkene import HeeftBetrokkene
-from src.OTLMOW.OTLModel.Classes.Netwerkpoort import Netwerkpoort
-from src.OTLMOW.OTLModel.Classes.Verkeersregelaar import Verkeersregelaar
-from src.OTLMOW.OTLModel.Classes.Wegberm import Wegberm
-from src.OTLMOW.OTLModel.Classes.Wegkantkast import Wegkantkast
+from OTLMOW.Facility.DavieDecoder import DavieDecoder
+from OTLMOW.OTLModel.Classes.ExterneDetectie import ExterneDetectie
+from OTLMOW.OTLModel.Classes.HeeftBetrokkene import HeeftBetrokkene
+from OTLMOW.OTLModel.Classes.Netwerkpoort import Netwerkpoort
+from OTLMOW.OTLModel.Classes.Verkeersregelaar import Verkeersregelaar
+from OTLMOW.OTLModel.Classes.Wegberm import Wegberm
+from OTLMOW.OTLModel.Classes.Wegkantkast import Wegkantkast
 
 
 class DavieDecoderTests(TestCase):

@@ -1,4 +1,4 @@
-﻿from src.OTLMOW.ModelGenerator.OtlAssetJSONEncoder import OtlAssetJSONEncoder
+﻿from OTLMOW.ModelGenerator.OtlAssetJSONEncoder import OtlAssetJSONEncoder
 
 
 class DavieExporter:

@@ -1,13 +1,13 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from abc import abstractmethod
-from src.OTLMOW.OTLModel.Classes.Voedingspunt import Voedingspunt
-from src.OTLMOW.OTLModel.Datatypes.DateField import DateField
-from src.OTLMOW.OTLModel.Datatypes.DtcAdres import DtcAdres
-from src.OTLMOW.OTLModel.Datatypes.DtcDocument import DtcDocument
-from src.OTLMOW.OTLModel.Datatypes.DtcRechtspersoon import DtcRechtspersoon
-from src.OTLMOW.OTLModel.Datatypes.KwantWrdInKiloVoltAmpere import KwantWrdInKiloVoltAmpere
-from src.OTLMOW.OTLModel.Datatypes.StringField import StringField
+from OTLMOW.OTLModel.Classes.Voedingspunt import Voedingspunt
+from OTLMOW.OTLModel.Datatypes.DateField import DateField
+from OTLMOW.OTLModel.Datatypes.DtcAdres import DtcAdres
+from OTLMOW.OTLModel.Datatypes.DtcDocument import DtcDocument
+from OTLMOW.OTLModel.Datatypes.DtcRechtspersoon import DtcRechtspersoon
+from OTLMOW.OTLModel.Datatypes.KwantWrdInKiloVoltAmpere import KwantWrdInKiloVoltAmpere
+from OTLMOW.OTLModel.Datatypes.StringField import StringField
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit

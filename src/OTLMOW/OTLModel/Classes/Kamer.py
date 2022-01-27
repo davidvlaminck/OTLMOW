@@ -1,12 +1,12 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from src.OTLMOW.OTLModel.Classes.PutRelatie import PutRelatie
-from src.OTLMOW.OTLModel.Datatypes.DtcDocument import DtcDocument
-from src.OTLMOW.OTLModel.Datatypes.KlKamerKlasse import KlKamerKlasse
-from src.OTLMOW.OTLModel.Datatypes.KlPutMateriaal import KlPutMateriaal
-from src.OTLMOW.OTLModel.Datatypes.KlRioleringVorm import KlRioleringVorm
-from src.OTLMOW.OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter
-from src.OTLMOW.OTLModel.Datatypes.KwantWrdInMillimeter import KwantWrdInMillimeter
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.Classes.PutRelatie import PutRelatie
+from OTLMOW.OTLModel.Datatypes.DtcDocument import DtcDocument
+from OTLMOW.OTLModel.Datatypes.KlKamerKlasse import KlKamerKlasse
+from OTLMOW.OTLModel.Datatypes.KlPutMateriaal import KlPutMateriaal
+from OTLMOW.OTLModel.Datatypes.KlRioleringVorm import KlRioleringVorm
+from OTLMOW.OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter
+from OTLMOW.OTLModel.Datatypes.KwantWrdInMillimeter import KwantWrdInMillimeter
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit

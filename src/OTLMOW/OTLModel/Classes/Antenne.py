@@ -1,9 +1,9 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from src.OTLMOW.OTLModel.Classes.Communicatieapparatuur import Communicatieapparatuur
-from src.OTLMOW.OTLModel.Datatypes.KlAntenneFrequentierange import KlAntenneFrequentierange
-from src.OTLMOW.OTLModel.Datatypes.KlAntenneMerk import KlAntenneMerk
-from src.OTLMOW.OTLModel.Datatypes.KlAntenneModelnaam import KlAntenneModelnaam
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.Classes.Communicatieapparatuur import Communicatieapparatuur
+from OTLMOW.OTLModel.Datatypes.KlAntenneFrequentierange import KlAntenneFrequentierange
+from OTLMOW.OTLModel.Datatypes.KlAntenneMerk import KlAntenneMerk
+from OTLMOW.OTLModel.Datatypes.KlAntenneModelnaam import KlAntenneModelnaam
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit

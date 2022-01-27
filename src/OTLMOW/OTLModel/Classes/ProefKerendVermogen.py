@@ -1,7 +1,7 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from src.OTLMOW.OTLModel.Classes.Proef import Proef
-from src.OTLMOW.OTLModel.Datatypes.KlLEACKerendVermogen import KlLEACKerendVermogen
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.Classes.Proef import Proef
+from OTLMOW.OTLModel.Datatypes.KlLEACKerendVermogen import KlLEACKerendVermogen
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit

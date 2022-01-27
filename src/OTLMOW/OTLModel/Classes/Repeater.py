@@ -1,9 +1,9 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from src.OTLMOW.OTLModel.Classes.ZenderOntvangerToegang import ZenderOntvangerToegang
-from src.OTLMOW.OTLModel.Datatypes.DteTekstblok import DteTekstblok
-from src.OTLMOW.OTLModel.Datatypes.KlRepeaterMerk import KlRepeaterMerk
-from src.OTLMOW.OTLModel.Datatypes.KlRepeaterModelnaam import KlRepeaterModelnaam
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.Classes.ZenderOntvangerToegang import ZenderOntvangerToegang
+from OTLMOW.OTLModel.Datatypes.DteTekstblok import DteTekstblok
+from OTLMOW.OTLModel.Datatypes.KlRepeaterMerk import KlRepeaterMerk
+from OTLMOW.OTLModel.Datatypes.KlRepeaterModelnaam import KlRepeaterModelnaam
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit

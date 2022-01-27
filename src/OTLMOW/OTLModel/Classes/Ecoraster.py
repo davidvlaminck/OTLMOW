@@ -1,10 +1,10 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from src.OTLMOW.OTLModel.Classes.ComplexeGeleiding import ComplexeGeleiding
-from src.OTLMOW.OTLModel.Datatypes.BooleanField import BooleanField
-from src.OTLMOW.OTLModel.Datatypes.KlEcoPaalmateriaal import KlEcoPaalmateriaal
-from src.OTLMOW.OTLModel.Datatypes.KlRasterMazen import KlRasterMazen
-from src.OTLMOW.OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.Classes.ComplexeGeleiding import ComplexeGeleiding
+from OTLMOW.OTLModel.Datatypes.BooleanField import BooleanField
+from OTLMOW.OTLModel.Datatypes.KlEcoPaalmateriaal import KlEcoPaalmateriaal
+from OTLMOW.OTLModel.Datatypes.KlRasterMazen import KlRasterMazen
+from OTLMOW.OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit

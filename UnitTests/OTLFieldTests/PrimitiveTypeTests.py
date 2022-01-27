@@ -1,15 +1,15 @@
 import unittest
 from datetime import datetime, time
 
-from src.OTLMOW.Facility.Exceptions.CouldNotConvertToCorrectType import CouldNotConvertToCorrectType
-from src.OTLMOW.OTLModel.Classes.Agent import Agent
-from src.OTLMOW.OTLModel.Classes.HoutigeVegetatie import HoutigeVegetatie
-from src.OTLMOW.OTLModel.Classes.KabelnetToegang import KabelnetToegang
-from src.OTLMOW.OTLModel.Datatypes.BooleanField import BooleanField
-from src.OTLMOW.OTLModel.Datatypes.DateField import DateField
-from src.OTLMOW.OTLModel.Datatypes.IntegerField import IntegerField
-from src.OTLMOW.OTLModel.Datatypes.KwantWrdInMaand import KwantWrdInMaand
-from src.OTLMOW.OTLModel.Datatypes.TimeField import TimeField
+from OTLMOW.Facility.Exceptions.CouldNotConvertToCorrectType import CouldNotConvertToCorrectType
+from OTLMOW.OTLModel.Classes.Agent import Agent
+from OTLMOW.OTLModel.Classes.HoutigeVegetatie import HoutigeVegetatie
+from OTLMOW.OTLModel.Classes.KabelnetToegang import KabelnetToegang
+from OTLMOW.OTLModel.Datatypes.BooleanField import BooleanField
+from OTLMOW.OTLModel.Datatypes.DateField import DateField
+from OTLMOW.OTLModel.Datatypes.IntegerField import IntegerField
+from OTLMOW.OTLModel.Datatypes.KwantWrdInMaand import KwantWrdInMaand
+from OTLMOW.OTLModel.Datatypes.TimeField import TimeField
 
 
 class TestInstance(KabelnetToegang, HoutigeVegetatie):

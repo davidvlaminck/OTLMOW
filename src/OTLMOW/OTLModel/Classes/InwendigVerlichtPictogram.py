@@ -1,10 +1,10 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from src.OTLMOW.OTLModel.Classes.AIMObject import AIMObject
-from src.OTLMOW.OTLModel.Datatypes.DtcAfmetingBxlxhInMm import DtcAfmetingBxlxhInMm
-from src.OTLMOW.OTLModel.Datatypes.KlBinnenverlichtingstoestelSoortLamp import KlBinnenverlichtingstoestelSoortLamp
-from src.OTLMOW.OTLModel.Datatypes.KlPictogramSymbool import KlPictogramSymbool
-from src.OTLMOW.OTLModel.Datatypes.KwantWrdInMinuut import KwantWrdInMinuut
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.Classes.AIMObject import AIMObject
+from OTLMOW.OTLModel.Datatypes.DtcAfmetingBxlxhInMm import DtcAfmetingBxlxhInMm
+from OTLMOW.OTLModel.Datatypes.KlBinnenverlichtingstoestelSoortLamp import KlBinnenverlichtingstoestelSoortLamp
+from OTLMOW.OTLModel.Datatypes.KlPictogramSymbool import KlPictogramSymbool
+from OTLMOW.OTLModel.Datatypes.KwantWrdInMinuut import KwantWrdInMinuut
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit

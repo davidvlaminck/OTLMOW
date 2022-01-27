@@ -1,8 +1,8 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from abc import abstractmethod
-from src.OTLMOW.OTLModel.Classes.ArtificieleLaag import ArtificieleLaag
-from src.OTLMOW.OTLModel.Datatypes.KlAlgBouwklassegroep import KlAlgBouwklassegroep
+from OTLMOW.OTLModel.Classes.ArtificieleLaag import ArtificieleLaag
+from OTLMOW.OTLModel.Datatypes.KlAlgBouwklassegroep import KlAlgBouwklassegroep
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit

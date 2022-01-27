@@ -1,4 +1,4 @@
-﻿from src.OTLMOW.Facility.DavieDecoder import DavieDecoder
+﻿from OTLMOW.Facility.DavieDecoder import DavieDecoder
 
 
 class DavieImporter:

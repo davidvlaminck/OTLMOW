@@ -1,9 +1,9 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from src.OTLMOW.OTLModel.Classes.AndereLaag import AndereLaag
-from src.OTLMOW.OTLModel.Datatypes.KlBestrijkingKaliber import KlBestrijkingKaliber
-from src.OTLMOW.OTLModel.Datatypes.KlBestrijkingProductfamilie import KlBestrijkingProductfamilie
-from src.OTLMOW.OTLModel.Datatypes.KlBestrijkingsoort import KlBestrijkingsoort
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.Classes.AndereLaag import AndereLaag
+from OTLMOW.OTLModel.Datatypes.KlBestrijkingKaliber import KlBestrijkingKaliber
+from OTLMOW.OTLModel.Datatypes.KlBestrijkingProductfamilie import KlBestrijkingProductfamilie
+from OTLMOW.OTLModel.Datatypes.KlBestrijkingsoort import KlBestrijkingsoort
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit

@@ -1,10 +1,10 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from src.OTLMOW.OTLModel.Classes.AIMNaamObject import AIMNaamObject
-from src.OTLMOW.OTLModel.Datatypes.DtcDocument import DtcDocument
-from src.OTLMOW.OTLModel.Datatypes.KlAudioTransportType import KlAudioTransportType
-from src.OTLMOW.OTLModel.Datatypes.KlMeetmicrofoonMerk import KlMeetmicrofoonMerk
-from src.OTLMOW.OTLModel.Datatypes.KlMeetmicrofoonModelnaam import KlMeetmicrofoonModelnaam
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.Classes.AIMNaamObject import AIMNaamObject
+from OTLMOW.OTLModel.Datatypes.DtcDocument import DtcDocument
+from OTLMOW.OTLModel.Datatypes.KlAudioTransportType import KlAudioTransportType
+from OTLMOW.OTLModel.Datatypes.KlMeetmicrofoonMerk import KlMeetmicrofoonMerk
+from OTLMOW.OTLModel.Datatypes.KlMeetmicrofoonModelnaam import KlMeetmicrofoonModelnaam
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit

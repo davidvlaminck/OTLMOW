@@ -1,6 +1,6 @@
-from src.OTLMOW.Loggers.AbstractLogger import AbstractLogger
-from src.OTLMOW.Loggers.LogType import LogType
-from src.OTLMOW.ModelGenerator import OSLOCollector
+from OTLMOW.Loggers.AbstractLogger import AbstractLogger
+from OTLMOW.Loggers.LogType import LogType
+from OTLMOW.ModelGenerator import OSLOCollector
 
 
 class OTLGeldigeRelatieCreator:

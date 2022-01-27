@@ -1,13 +1,13 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from src.OTLMOW.OTLModel.Classes.AIMNaamObject import AIMNaamObject
-from src.OTLMOW.OTLModel.Datatypes.IntegerField import IntegerField
-from src.OTLMOW.OTLModel.Datatypes.KlNetwerkMerk import KlNetwerkMerk
-from src.OTLMOW.OTLModel.Datatypes.KlNetwerkTechnologie import KlNetwerkTechnologie
-from src.OTLMOW.OTLModel.Datatypes.KlNetwerkpoortConfig import KlNetwerkpoortConfig
-from src.OTLMOW.OTLModel.Datatypes.KlNetwerkpoortGolflengte import KlNetwerkpoortGolflengte
-from src.OTLMOW.OTLModel.Datatypes.KlNetwerkpoortType import KlNetwerkpoortType
-from src.OTLMOW.OTLModel.Datatypes.StringField import StringField
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.Classes.AIMNaamObject import AIMNaamObject
+from OTLMOW.OTLModel.Datatypes.IntegerField import IntegerField
+from OTLMOW.OTLModel.Datatypes.KlNetwerkMerk import KlNetwerkMerk
+from OTLMOW.OTLModel.Datatypes.KlNetwerkTechnologie import KlNetwerkTechnologie
+from OTLMOW.OTLModel.Datatypes.KlNetwerkpoortConfig import KlNetwerkpoortConfig
+from OTLMOW.OTLModel.Datatypes.KlNetwerkpoortGolflengte import KlNetwerkpoortGolflengte
+from OTLMOW.OTLModel.Datatypes.KlNetwerkpoortType import KlNetwerkpoortType
+from OTLMOW.OTLModel.Datatypes.StringField import StringField
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit

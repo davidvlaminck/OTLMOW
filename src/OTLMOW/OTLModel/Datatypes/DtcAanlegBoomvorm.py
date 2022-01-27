@@ -1,19 +1,19 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.AttributeInfo import AttributeInfo
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from src.OTLMOW.OTLModel.Datatypes.BooleanField import BooleanField
-from src.OTLMOW.OTLModel.Datatypes.ComplexField import ComplexField
-from src.OTLMOW.OTLModel.Datatypes.DtcBeschermingVraatschade import DtcBeschermingVraatschade
-from src.OTLMOW.OTLModel.Datatypes.KlAantalBoompalen import KlAantalBoompalen
-from src.OTLMOW.OTLModel.Datatypes.KlBeschermingMaaischade import KlBeschermingMaaischade
-from src.OTLMOW.OTLModel.Datatypes.KlBoomVerankering import KlBoomVerankering
-from src.OTLMOW.OTLModel.Datatypes.KlBoomVerankeringtype import KlBoomVerankeringtype
-from src.OTLMOW.OTLModel.Datatypes.KlGroeiplaatsverbetering import KlGroeiplaatsverbetering
-from src.OTLMOW.OTLModel.Datatypes.KlMateriaalBeschermingVraatschade import KlMateriaalBeschermingVraatschade
-from src.OTLMOW.OTLModel.Datatypes.KlPlantmaatHoogte import KlPlantmaatHoogte
-from src.OTLMOW.OTLModel.Datatypes.KlPlantmaatOmtrek import KlPlantmaatOmtrek
-from src.OTLMOW.OTLModel.Datatypes.KlVegetatieWortel import KlVegetatieWortel
-from src.OTLMOW.OTLModel.Datatypes.KlVormAanleveringHoutigeVegetatie import KlVormAanleveringHoutigeVegetatie
+from OTLMOW.OTLModel.BaseClasses.AttributeInfo import AttributeInfo
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.Datatypes.BooleanField import BooleanField
+from OTLMOW.OTLModel.Datatypes.ComplexField import ComplexField
+from OTLMOW.OTLModel.Datatypes.DtcBeschermingVraatschade import DtcBeschermingVraatschade
+from OTLMOW.OTLModel.Datatypes.KlAantalBoompalen import KlAantalBoompalen
+from OTLMOW.OTLModel.Datatypes.KlBeschermingMaaischade import KlBeschermingMaaischade
+from OTLMOW.OTLModel.Datatypes.KlBoomVerankering import KlBoomVerankering
+from OTLMOW.OTLModel.Datatypes.KlBoomVerankeringtype import KlBoomVerankeringtype
+from OTLMOW.OTLModel.Datatypes.KlGroeiplaatsverbetering import KlGroeiplaatsverbetering
+from OTLMOW.OTLModel.Datatypes.KlMateriaalBeschermingVraatschade import KlMateriaalBeschermingVraatschade
+from OTLMOW.OTLModel.Datatypes.KlPlantmaatHoogte import KlPlantmaatHoogte
+from OTLMOW.OTLModel.Datatypes.KlPlantmaatOmtrek import KlPlantmaatOmtrek
+from OTLMOW.OTLModel.Datatypes.KlVegetatieWortel import KlVegetatieWortel
+from OTLMOW.OTLModel.Datatypes.KlVormAanleveringHoutigeVegetatie import KlVormAanleveringHoutigeVegetatie
 
 
 # Generated with OTLComplexDatatypeCreator. To modify: extend, do not edit

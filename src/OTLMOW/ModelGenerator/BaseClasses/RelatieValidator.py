@@ -1,5 +1,5 @@
-from src.OTLMOW.OTLModel.BaseClasses.RelatieInteractor import RelatieInteractor
-from src.OTLMOW.ModelGenerator.BaseClasses.Singleton import Singleton
+from OTLMOW.OTLModel.BaseClasses.RelatieInteractor import RelatieInteractor
+from OTLMOW.ModelGenerator.BaseClasses.Singleton import Singleton
 
 
 class RelatieValidator(metaclass=Singleton):

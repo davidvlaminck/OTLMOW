@@ -1,9 +1,9 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.AttributeInfo import AttributeInfo
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from src.OTLMOW.OTLModel.Datatypes.ComplexField import ComplexField
-from src.OTLMOW.OTLModel.Datatypes.KlBSSRandafwerking import KlBSSRandafwerking
-from src.OTLMOW.OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter
+from OTLMOW.OTLModel.BaseClasses.AttributeInfo import AttributeInfo
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.Datatypes.ComplexField import ComplexField
+from OTLMOW.OTLModel.Datatypes.KlBSSRandafwerking import KlBSSRandafwerking
+from OTLMOW.OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter
 
 
 # Generated with OTLComplexDatatypeCreator. To modify: extend, do not edit

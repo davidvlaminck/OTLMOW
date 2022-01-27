@@ -1,7 +1,7 @@
-﻿from src.OTLMOW.Facility.OTLFacility import OTLFacility
-from src.OTLMOW.Loggers.ConsoleLogger import ConsoleLogger
-from src.OTLMOW.Loggers.TxtLogger import TxtLogger
-from src.OTLMOW.Loggers.LoggerCollection import LoggerCollection
+﻿from OTLMOW.Facility.OTLFacility import OTLFacility
+from OTLMOW.Loggers.ConsoleLogger import ConsoleLogger
+from OTLMOW.Loggers.TxtLogger import TxtLogger
+from OTLMOW.Loggers.LoggerCollection import LoggerCollection
 
 
 if __name__ == '__main__':

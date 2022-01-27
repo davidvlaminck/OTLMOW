@@ -1,7 +1,7 @@
-from src.OTLMOW.ModelGenerator.OSLOClass import OSLOClass
-from src.OTLMOW.ModelGenerator import OSLODatatypeComplexAttribuut
-from src.OTLMOW.ModelGenerator import OSLODatatypePrimitiveAttribuut
-from src.OTLMOW.ModelGenerator import OSLODatatypeUnionAttribuut
+from OTLMOW.ModelGenerator.OSLOClass import OSLOClass
+from OTLMOW.ModelGenerator import OSLODatatypeComplexAttribuut
+from OTLMOW.ModelGenerator import OSLODatatypePrimitiveAttribuut
+from OTLMOW.ModelGenerator import OSLODatatypeUnionAttribuut
 
 
 class OSLOCollector:

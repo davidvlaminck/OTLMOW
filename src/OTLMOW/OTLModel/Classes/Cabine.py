@@ -1,9 +1,9 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from src.OTLMOW.OTLModel.Classes.Inloopbehuizing import Inloopbehuizing
-from src.OTLMOW.OTLModel.Datatypes.KlCabineAardingsstelsel import KlCabineAardingsstelsel
-from src.OTLMOW.OTLModel.Datatypes.KlCabineStandaardtype import KlCabineStandaardtype
-from src.OTLMOW.OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.Classes.Inloopbehuizing import Inloopbehuizing
+from OTLMOW.OTLModel.Datatypes.KlCabineAardingsstelsel import KlCabineAardingsstelsel
+from OTLMOW.OTLModel.Datatypes.KlCabineStandaardtype import KlCabineStandaardtype
+from OTLMOW.OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit

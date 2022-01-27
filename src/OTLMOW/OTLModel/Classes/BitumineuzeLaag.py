@@ -1,10 +1,10 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from src.OTLMOW.OTLModel.Classes.LaagBouwklasse import LaagBouwklasse
-from src.OTLMOW.OTLModel.Datatypes.DtuBVLaagtypes import DtuBVLaagtypes
-from src.OTLMOW.OTLModel.Datatypes.KlBVBindmiddel import KlBVBindmiddel
-from src.OTLMOW.OTLModel.Datatypes.KlBVMengseltype import KlBVMengseltype
-from src.OTLMOW.OTLModel.Datatypes.KlKleurSupp import KlKleurSupp
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.Classes.LaagBouwklasse import LaagBouwklasse
+from OTLMOW.OTLModel.Datatypes.DtuBVLaagtypes import DtuBVLaagtypes
+from OTLMOW.OTLModel.Datatypes.KlBVBindmiddel import KlBVBindmiddel
+from OTLMOW.OTLModel.Datatypes.KlBVMengseltype import KlBVMengseltype
+from OTLMOW.OTLModel.Datatypes.KlKleurSupp import KlKleurSupp
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit

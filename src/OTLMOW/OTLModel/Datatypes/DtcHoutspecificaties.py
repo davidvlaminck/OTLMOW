@@ -1,11 +1,11 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.AttributeInfo import AttributeInfo
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from src.OTLMOW.OTLModel.Datatypes.BooleanField import BooleanField
-from src.OTLMOW.OTLModel.Datatypes.ComplexField import ComplexField
-from src.OTLMOW.OTLModel.Datatypes.KlDuurzaamheidsklasseHout import KlDuurzaamheidsklasseHout
-from src.OTLMOW.OTLModel.Datatypes.KlKwaliteitsklasseHout import KlKwaliteitsklasseHout
-from src.OTLMOW.OTLModel.Datatypes.KlSterkteklasseHout import KlSterkteklasseHout
+from OTLMOW.OTLModel.BaseClasses.AttributeInfo import AttributeInfo
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.Datatypes.BooleanField import BooleanField
+from OTLMOW.OTLModel.Datatypes.ComplexField import ComplexField
+from OTLMOW.OTLModel.Datatypes.KlDuurzaamheidsklasseHout import KlDuurzaamheidsklasseHout
+from OTLMOW.OTLModel.Datatypes.KlKwaliteitsklasseHout import KlKwaliteitsklasseHout
+from OTLMOW.OTLModel.Datatypes.KlSterkteklasseHout import KlSterkteklasseHout
 
 
 # Generated with OTLComplexDatatypeCreator. To modify: extend, do not edit

@@ -1,10 +1,10 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from abc import abstractmethod
-from src.OTLMOW.OTLModel.Classes.Kast import Kast
-from src.OTLMOW.OTLModel.Datatypes.KlAlgIngressProtectionCode import KlAlgIngressProtectionCode
-from src.OTLMOW.OTLModel.Datatypes.KlBuitenkastVerfraaid import KlBuitenkastVerfraaid
-from src.OTLMOW.OTLModel.Datatypes.KwantWrdInJaar import KwantWrdInJaar
+from OTLMOW.OTLModel.Classes.Kast import Kast
+from OTLMOW.OTLModel.Datatypes.KlAlgIngressProtectionCode import KlAlgIngressProtectionCode
+from OTLMOW.OTLModel.Datatypes.KlBuitenkastVerfraaid import KlBuitenkastVerfraaid
+from OTLMOW.OTLModel.Datatypes.KwantWrdInJaar import KwantWrdInJaar
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit

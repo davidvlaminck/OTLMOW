@@ -1,9 +1,9 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from src.OTLMOW.OTLModel.Classes.Controller import Controller
-from src.OTLMOW.OTLModel.Datatypes.DtcDocument import DtcDocument
-from src.OTLMOW.OTLModel.Datatypes.KlPLCMerk import KlPLCMerk
-from src.OTLMOW.OTLModel.Datatypes.KlPLCModelnaam import KlPLCModelnaam
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.Classes.Controller import Controller
+from OTLMOW.OTLModel.Datatypes.DtcDocument import DtcDocument
+from OTLMOW.OTLModel.Datatypes.KlPLCMerk import KlPLCMerk
+from OTLMOW.OTLModel.Datatypes.KlPLCModelnaam import KlPLCModelnaam
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit

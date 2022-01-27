@@ -1,9 +1,9 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from src.OTLMOW.OTLModel.Classes.AfschermendeConstructie import AfschermendeConstructie
-from src.OTLMOW.OTLModel.Datatypes.KlLEACSchokindexMVP import KlLEACSchokindexMVP
-from src.OTLMOW.OTLModel.Datatypes.KlLEACSnelheidsklasse import KlLEACSnelheidsklasse
-from src.OTLMOW.OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.Classes.AfschermendeConstructie import AfschermendeConstructie
+from OTLMOW.OTLModel.Datatypes.KlLEACSchokindexMVP import KlLEACSchokindexMVP
+from OTLMOW.OTLModel.Datatypes.KlLEACSnelheidsklasse import KlLEACSnelheidsklasse
+from OTLMOW.OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit

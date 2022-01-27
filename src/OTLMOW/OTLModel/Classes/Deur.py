@@ -1,14 +1,14 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from abc import abstractmethod, ABC
-from src.OTLMOW.OTLModel.Datatypes.BooleanField import BooleanField
-from src.OTLMOW.OTLModel.Datatypes.DtcAfmetingBxhInM import DtcAfmetingBxhInM
-from src.OTLMOW.OTLModel.Datatypes.DtcDocument import DtcDocument
-from src.OTLMOW.OTLModel.Datatypes.KlDeurFabrikant import KlDeurFabrikant
-from src.OTLMOW.OTLModel.Datatypes.KlDeurHandgreeptype import KlDeurHandgreeptype
-from src.OTLMOW.OTLModel.Datatypes.KwantWrdInMillimeter import KwantWrdInMillimeter
-from src.OTLMOW.OTLModel.Datatypes.KwantWrdInSeconde import KwantWrdInSeconde
-from src.OTLMOW.OTLModel.Datatypes.KwantWrdInUur import KwantWrdInUur
+from OTLMOW.OTLModel.Datatypes.BooleanField import BooleanField
+from OTLMOW.OTLModel.Datatypes.DtcAfmetingBxhInM import DtcAfmetingBxhInM
+from OTLMOW.OTLModel.Datatypes.DtcDocument import DtcDocument
+from OTLMOW.OTLModel.Datatypes.KlDeurFabrikant import KlDeurFabrikant
+from OTLMOW.OTLModel.Datatypes.KlDeurHandgreeptype import KlDeurHandgreeptype
+from OTLMOW.OTLModel.Datatypes.KwantWrdInMillimeter import KwantWrdInMillimeter
+from OTLMOW.OTLModel.Datatypes.KwantWrdInSeconde import KwantWrdInSeconde
+from OTLMOW.OTLModel.Datatypes.KwantWrdInUur import KwantWrdInUur
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit

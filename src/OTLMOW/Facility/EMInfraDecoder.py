@@ -1,7 +1,7 @@
 ﻿import json
 
-from src.OTLMOW.Facility.ToOTLDecoder import ToOTLDecoder
-from src.OTLMOW.OTLModel.ClassLoader import ClassLoader
+from OTLMOW.Facility.ToOTLDecoder import ToOTLDecoder
+from OTLMOW.OTLModel.ClassLoader import ClassLoader
 
 
 class EMInfraDecoder(ToOTLDecoder):

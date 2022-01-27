@@ -1,15 +1,15 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from abc import abstractmethod
-from src.OTLMOW.OTLModel.Classes.AIMToestand import AIMToestand
-from src.OTLMOW.OTLModel.Classes.AIMDBStatus import AIMDBStatus
-from src.OTLMOW.OTLModel.BaseClasses.AttributeInfo import AttributeInfo
-from src.OTLMOW.OTLModel.BaseClasses.OTLAsset import OTLAsset
-from src.OTLMOW.OTLModel.BaseClasses.RelatieInteractor import RelatieInteractor
-from src.OTLMOW.OTLModel.Datatypes.DateField import DateField
-from src.OTLMOW.OTLModel.Datatypes.DtcIdentificator import DtcIdentificator
-from src.OTLMOW.OTLModel.Datatypes.KwantWrdInMaand import KwantWrdInMaand
-from src.OTLMOW.OTLModel.Datatypes.StringField import StringField
+from OTLMOW.OTLModel.Classes.AIMToestand import AIMToestand
+from OTLMOW.OTLModel.Classes.AIMDBStatus import AIMDBStatus
+from OTLMOW.OTLModel.BaseClasses.AttributeInfo import AttributeInfo
+from OTLMOW.OTLModel.BaseClasses.OTLAsset import OTLAsset
+from OTLMOW.OTLModel.BaseClasses.RelatieInteractor import RelatieInteractor
+from OTLMOW.OTLModel.Datatypes.DateField import DateField
+from OTLMOW.OTLModel.Datatypes.DtcIdentificator import DtcIdentificator
+from OTLMOW.OTLModel.Datatypes.KwantWrdInMaand import KwantWrdInMaand
+from OTLMOW.OTLModel.Datatypes.StringField import StringField
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit

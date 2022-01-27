@@ -1,8 +1,8 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from src.OTLMOW.OTLModel.Classes.Buis import Buis
-from src.OTLMOW.OTLModel.Datatypes.KlPersleidingMateriaal import KlPersleidingMateriaal
-from src.OTLMOW.OTLModel.Datatypes.KlSDRKlasse import KlSDRKlasse
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.Classes.Buis import Buis
+from OTLMOW.OTLModel.Datatypes.KlPersleidingMateriaal import KlPersleidingMateriaal
+from OTLMOW.OTLModel.Datatypes.KlSDRKlasse import KlSDRKlasse
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit

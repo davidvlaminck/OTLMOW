@@ -1,9 +1,9 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from src.OTLMOW.OTLModel.Classes.ZenderOntvangerToegang import ZenderOntvangerToegang
-from src.OTLMOW.OTLModel.Datatypes.DteTekstblok import DteTekstblok
-from src.OTLMOW.OTLModel.Datatypes.KlZenderMerk import KlZenderMerk
-from src.OTLMOW.OTLModel.Datatypes.KlZenderModelnaam import KlZenderModelnaam
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.Classes.ZenderOntvangerToegang import ZenderOntvangerToegang
+from OTLMOW.OTLModel.Datatypes.DteTekstblok import DteTekstblok
+from OTLMOW.OTLModel.Datatypes.KlZenderMerk import KlZenderMerk
+from OTLMOW.OTLModel.Datatypes.KlZenderModelnaam import KlZenderModelnaam
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit

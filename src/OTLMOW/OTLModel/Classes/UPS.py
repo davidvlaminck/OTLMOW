@@ -1,11 +1,11 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from src.OTLMOW.OTLModel.Classes.Voedingspunt import Voedingspunt
-from src.OTLMOW.OTLModel.Datatypes.KlUPSMerk import KlUPSMerk
-from src.OTLMOW.OTLModel.Datatypes.KlUPSModelnaam import KlUPSModelnaam
-from src.OTLMOW.OTLModel.Datatypes.KwantWrdInWatt import KwantWrdInWatt
-from src.OTLMOW.OTLModel.Datatypes.KwantWrdInkWh import KwantWrdInkWh
-from src.OTLMOW.OTLModel.Datatypes.StringField import StringField
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.Classes.Voedingspunt import Voedingspunt
+from OTLMOW.OTLModel.Datatypes.KlUPSMerk import KlUPSMerk
+from OTLMOW.OTLModel.Datatypes.KlUPSModelnaam import KlUPSModelnaam
+from OTLMOW.OTLModel.Datatypes.KwantWrdInWatt import KwantWrdInWatt
+from OTLMOW.OTLModel.Datatypes.KwantWrdInkWh import KwantWrdInkWh
+from OTLMOW.OTLModel.Datatypes.StringField import StringField
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit

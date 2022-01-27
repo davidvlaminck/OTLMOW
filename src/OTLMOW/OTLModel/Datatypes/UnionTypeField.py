@@ -1,5 +1,5 @@
-﻿from src.OTLMOW.OTLModel.BaseClasses.OTLField import OTLField
-from src.OTLMOW.Facility.Exceptions.UnionTypeError import UnionTypeError
+﻿from OTLMOW.OTLModel.BaseClasses.OTLField import OTLField
+from OTLMOW.Facility.Exceptions.UnionTypeError import UnionTypeError
 
 
 class UnionTypeField(OTLField):

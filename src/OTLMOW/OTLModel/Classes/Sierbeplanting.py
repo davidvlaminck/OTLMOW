@@ -1,8 +1,8 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from src.OTLMOW.OTLModel.Classes.BegroeidVoorkomen import BegroeidVoorkomen
-from src.OTLMOW.OTLModel.Datatypes.DtcSierbeplAanleg import DtcSierbeplAanleg
-from src.OTLMOW.OTLModel.Datatypes.KlSierbeplantingType import KlSierbeplantingType
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.Classes.BegroeidVoorkomen import BegroeidVoorkomen
+from OTLMOW.OTLModel.Datatypes.DtcSierbeplAanleg import DtcSierbeplAanleg
+from OTLMOW.OTLModel.Datatypes.KlSierbeplantingType import KlSierbeplantingType
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit

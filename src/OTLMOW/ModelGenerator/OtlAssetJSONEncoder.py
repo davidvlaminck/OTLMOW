@@ -1,7 +1,7 @@
 import json
 from collections import OrderedDict
 
-from src.OTLMOW.OTLModel.BaseClasses.OTLObject import OTLObject
+from OTLMOW.OTLModel.BaseClasses.OTLObject import OTLObject
 
 
 class OtlAssetJSONEncoder(json.JSONEncoder):

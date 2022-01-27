@@ -1,14 +1,14 @@
 from datetime import datetime
 
-from src.OTLMOW.Loggers.AbstractLogger import AbstractLogger
-from src.OTLMOW.Loggers.LogType import LogType
-from src.OTLMOW.ModelGenerator.OSLOCollector import OSLOCollector
-from src.OTLMOW.ModelGenerator.OTLClassCreator import OTLClassCreator
-from src.OTLMOW.ModelGenerator.OTLComplexDatatypeCreator import OTLComplexDatatypeCreator
-from src.OTLMOW.ModelGenerator.OTLEnumerationCreator import OTLEnumerationCreator
-from src.OTLMOW.ModelGenerator.OTLGeldigeRelatieCreator import OTLGeldigeRelatieCreator
-from src.OTLMOW.ModelGenerator.OTLPrimitiveDatatypeCreator import OTLPrimitiveDatatypeCreator
-from src.OTLMOW.ModelGenerator.OTLUnionDatatypeCreator import OTLUnionDatatypeCreator
+from OTLMOW.Loggers.AbstractLogger import AbstractLogger
+from OTLMOW.Loggers.LogType import LogType
+from OTLMOW.ModelGenerator.OSLOCollector import OSLOCollector
+from OTLMOW.ModelGenerator.OTLClassCreator import OTLClassCreator
+from OTLMOW.ModelGenerator.OTLComplexDatatypeCreator import OTLComplexDatatypeCreator
+from OTLMOW.ModelGenerator.OTLEnumerationCreator import OTLEnumerationCreator
+from OTLMOW.ModelGenerator.OTLGeldigeRelatieCreator import OTLGeldigeRelatieCreator
+from OTLMOW.ModelGenerator.OTLPrimitiveDatatypeCreator import OTLPrimitiveDatatypeCreator
+from OTLMOW.ModelGenerator.OTLUnionDatatypeCreator import OTLUnionDatatypeCreator
 
 
 class NewOTLBaseClassNotImplemented(NotImplementedError):

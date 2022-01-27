@@ -1,11 +1,11 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from src.OTLMOW.OTLModel.Classes.AIMNaamObject import AIMNaamObject
-from src.OTLMOW.OTLModel.Datatypes.DtcDocument import DtcDocument
-from src.OTLMOW.OTLModel.Datatypes.KLLuidsprekerVormgeving import KLLuidsprekerVormgeving
-from src.OTLMOW.OTLModel.Datatypes.KlAudioTransportType import KlAudioTransportType
-from src.OTLMOW.OTLModel.Datatypes.KlLuidsprekerMerk import KlLuidsprekerMerk
-from src.OTLMOW.OTLModel.Datatypes.KlLuidsprekerModelnaam import KlLuidsprekerModelnaam
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.Classes.AIMNaamObject import AIMNaamObject
+from OTLMOW.OTLModel.Datatypes.DtcDocument import DtcDocument
+from OTLMOW.OTLModel.Datatypes.KLLuidsprekerVormgeving import KLLuidsprekerVormgeving
+from OTLMOW.OTLModel.Datatypes.KlAudioTransportType import KlAudioTransportType
+from OTLMOW.OTLModel.Datatypes.KlLuidsprekerMerk import KlLuidsprekerMerk
+from OTLMOW.OTLModel.Datatypes.KlLuidsprekerModelnaam import KlLuidsprekerModelnaam
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit

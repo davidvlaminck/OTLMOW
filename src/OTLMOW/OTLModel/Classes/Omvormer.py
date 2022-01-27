@@ -1,12 +1,12 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from src.OTLMOW.OTLModel.Classes.AIMNaamObject import AIMNaamObject
-from src.OTLMOW.OTLModel.Datatypes.DtcDocument import DtcDocument
-from src.OTLMOW.OTLModel.Datatypes.DteIPv4Adres import DteIPv4Adres
-from src.OTLMOW.OTLModel.Datatypes.KlOmvormerMerk import KlOmvormerMerk
-from src.OTLMOW.OTLModel.Datatypes.KlOmvormerModelnaam import KlOmvormerModelnaam
-from src.OTLMOW.OTLModel.Datatypes.KlOmvormerType import KlOmvormerType
-from src.OTLMOW.OTLModel.Datatypes.StringField import StringField
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.Classes.AIMNaamObject import AIMNaamObject
+from OTLMOW.OTLModel.Datatypes.DtcDocument import DtcDocument
+from OTLMOW.OTLModel.Datatypes.DteIPv4Adres import DteIPv4Adres
+from OTLMOW.OTLModel.Datatypes.KlOmvormerMerk import KlOmvormerMerk
+from OTLMOW.OTLModel.Datatypes.KlOmvormerModelnaam import KlOmvormerModelnaam
+from OTLMOW.OTLModel.Datatypes.KlOmvormerType import KlOmvormerType
+from OTLMOW.OTLModel.Datatypes.StringField import StringField
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit

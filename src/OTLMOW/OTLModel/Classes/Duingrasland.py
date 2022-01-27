@@ -1,6 +1,6 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from src.OTLMOW.OTLModel.Classes.SoortenrijkSchraalGraslandGraslandfase5 import SoortenrijkSchraalGraslandGraslandfase5
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.Classes.SoortenrijkSchraalGraslandGraslandfase5 import SoortenrijkSchraalGraslandGraslandfase5
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit

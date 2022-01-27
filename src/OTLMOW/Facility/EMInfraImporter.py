@@ -2,7 +2,7 @@
 
 import requests
 
-from src.OTLMOW.Facility.EMInfraDecoder import EMInfraDecoder
+from OTLMOW.Facility.EMInfraDecoder import EMInfraDecoder
 
 
 class EMInfraImporter:

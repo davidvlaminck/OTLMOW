@@ -1,11 +1,11 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from abc import abstractmethod
-from src.OTLMOW.OTLModel.Classes.LijnvormigElement import LijnvormigElement
-from src.OTLMOW.OTLModel.Datatypes.BooleanField import BooleanField
-from src.OTLMOW.OTLModel.Datatypes.KlLEKantopsluitingKleur import KlLEKantopsluitingKleur
-from src.OTLMOW.OTLModel.Datatypes.KlLEKantopsluitingSoort import KlLEKantopsluitingSoort
-from src.OTLMOW.OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter
+from OTLMOW.OTLModel.Classes.LijnvormigElement import LijnvormigElement
+from OTLMOW.OTLModel.Datatypes.BooleanField import BooleanField
+from OTLMOW.OTLModel.Datatypes.KlLEKantopsluitingKleur import KlLEKantopsluitingKleur
+from OTLMOW.OTLModel.Datatypes.KlLEKantopsluitingSoort import KlLEKantopsluitingSoort
+from OTLMOW.OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit

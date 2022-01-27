@@ -1,10 +1,10 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.AttributeInfo import AttributeInfo
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from src.OTLMOW.OTLModel.Datatypes.KlSchoorhoek import KlSchoorhoek
-from src.OTLMOW.OTLModel.Datatypes.KwantWrdInDecimaleGraden import KwantWrdInDecimaleGraden
-from src.OTLMOW.OTLModel.Datatypes.UnionTypeField import UnionTypeField
-from src.OTLMOW.OTLModel.Datatypes.UnionWaarden import UnionWaarden
+from OTLMOW.OTLModel.BaseClasses.AttributeInfo import AttributeInfo
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.Datatypes.KlSchoorhoek import KlSchoorhoek
+from OTLMOW.OTLModel.Datatypes.KwantWrdInDecimaleGraden import KwantWrdInDecimaleGraden
+from OTLMOW.OTLModel.Datatypes.UnionTypeField import UnionTypeField
+from OTLMOW.OTLModel.Datatypes.UnionWaarden import UnionWaarden
 
 
 # Generated with OTLUnionDatatypeCreator. To modify: extend, do not edit

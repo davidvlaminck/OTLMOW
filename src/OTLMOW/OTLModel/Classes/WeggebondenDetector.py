@@ -1,10 +1,10 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from src.OTLMOW.OTLModel.Classes.Detectie import Detectie
-from src.OTLMOW.OTLModel.Classes.FirmwareObject import FirmwareObject
-from src.OTLMOW.OTLModel.Datatypes.KlWeggebondendetectorDetectieprincipe import KlWeggebondendetectorDetectieprincipe
-from src.OTLMOW.OTLModel.Datatypes.KlWeggebondendetectorMerk import KlWeggebondendetectorMerk
-from src.OTLMOW.OTLModel.Datatypes.KlWeggebondendetectorModelnaam import KlWeggebondendetectorModelnaam
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.Classes.Detectie import Detectie
+from OTLMOW.OTLModel.Classes.FirmwareObject import FirmwareObject
+from OTLMOW.OTLModel.Datatypes.KlWeggebondendetectorDetectieprincipe import KlWeggebondendetectorDetectieprincipe
+from OTLMOW.OTLModel.Datatypes.KlWeggebondendetectorMerk import KlWeggebondendetectorMerk
+from OTLMOW.OTLModel.Datatypes.KlWeggebondendetectorModelnaam import KlWeggebondendetectorModelnaam
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit

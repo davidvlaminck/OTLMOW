@@ -1,9 +1,9 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from src.OTLMOW.OTLModel.Classes.AIMNaamObject import AIMNaamObject
-from src.OTLMOW.OTLModel.Datatypes.KlAfmetingsensorMerk import KlAfmetingsensorMerk
-from src.OTLMOW.OTLModel.Datatypes.KlAfmetingsensorModelnaam import KlAfmetingsensorModelnaam
-from src.OTLMOW.OTLModel.Datatypes.KlAfmetingsensorType import KlAfmetingsensorType
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.Classes.AIMNaamObject import AIMNaamObject
+from OTLMOW.OTLModel.Datatypes.KlAfmetingsensorMerk import KlAfmetingsensorMerk
+from OTLMOW.OTLModel.Datatypes.KlAfmetingsensorModelnaam import KlAfmetingsensorModelnaam
+from OTLMOW.OTLModel.Datatypes.KlAfmetingsensorType import KlAfmetingsensorType
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit

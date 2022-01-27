@@ -1,7 +1,7 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from src.OTLMOW.OTLModel.Classes.GrazigeVegetatie import GrazigeVegetatie
-from src.OTLMOW.OTLModel.Datatypes.KlNSB import KlNSB
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.Classes.GrazigeVegetatie import GrazigeVegetatie
+from OTLMOW.OTLModel.Datatypes.KlNSB import KlNSB
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit

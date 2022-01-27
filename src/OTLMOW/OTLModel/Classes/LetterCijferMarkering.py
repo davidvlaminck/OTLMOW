@@ -1,9 +1,9 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from src.OTLMOW.OTLModel.Classes.FiguratieMarkeringToegang import FiguratieMarkeringToegang
-from src.OTLMOW.OTLModel.Datatypes.KlLetterCijfer import KlLetterCijfer
-from src.OTLMOW.OTLModel.Datatypes.KlLetterCijferType import KlLetterCijferType
-from src.OTLMOW.OTLModel.Datatypes.KwantWrdInVierkanteMeter import KwantWrdInVierkanteMeter
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.Classes.FiguratieMarkeringToegang import FiguratieMarkeringToegang
+from OTLMOW.OTLModel.Datatypes.KlLetterCijfer import KlLetterCijfer
+from OTLMOW.OTLModel.Datatypes.KlLetterCijferType import KlLetterCijferType
+from OTLMOW.OTLModel.Datatypes.KwantWrdInVierkanteMeter import KwantWrdInVierkanteMeter
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit

@@ -1,12 +1,12 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.AttributeInfo import AttributeInfo
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from src.OTLMOW.OTLModel.Datatypes.ComplexField import ComplexField
-from src.OTLMOW.OTLModel.Datatypes.KlAanplantingswijzeSierbeplanting import KlAanplantingswijzeSierbeplanting
-from src.OTLMOW.OTLModel.Datatypes.KlSierbeplContainer import KlSierbeplContainer
-from src.OTLMOW.OTLModel.Datatypes.KlSierbeplPlantmaat import KlSierbeplPlantmaat
-from src.OTLMOW.OTLModel.Datatypes.KlVegetatiePlantverband import KlVegetatiePlantverband
-from src.OTLMOW.OTLModel.Datatypes.NonNegIntegerField import NonNegIntegerField
+from OTLMOW.OTLModel.BaseClasses.AttributeInfo import AttributeInfo
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.Datatypes.ComplexField import ComplexField
+from OTLMOW.OTLModel.Datatypes.KlAanplantingswijzeSierbeplanting import KlAanplantingswijzeSierbeplanting
+from OTLMOW.OTLModel.Datatypes.KlSierbeplContainer import KlSierbeplContainer
+from OTLMOW.OTLModel.Datatypes.KlSierbeplPlantmaat import KlSierbeplPlantmaat
+from OTLMOW.OTLModel.Datatypes.KlVegetatiePlantverband import KlVegetatiePlantverband
+from OTLMOW.OTLModel.Datatypes.NonNegIntegerField import NonNegIntegerField
 
 
 # Generated with OTLComplexDatatypeCreator. To modify: extend, do not edit

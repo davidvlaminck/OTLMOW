@@ -1,5 +1,5 @@
 ﻿import unittest
-from src.OTLMOW.Facility.DavieImporter import DavieImporter
+from OTLMOW.Facility.DavieImporter import DavieImporter
 
 
 class DavieImporterTests(unittest.TestCase):

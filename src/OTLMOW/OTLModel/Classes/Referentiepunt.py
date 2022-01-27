@@ -1,10 +1,10 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from src.OTLMOW.OTLModel.Classes.AIMObject import AIMObject
-from src.OTLMOW.OTLModel.Classes.Signalisatie import Signalisatie
-from src.OTLMOW.OTLModel.Classes.BevestigingGC import BevestigingGC
-from src.OTLMOW.OTLModel.Datatypes.DteTekstblok import DteTekstblok
-from src.OTLMOW.OTLModel.Datatypes.KlSignalisatieReferentiepuntType import KlSignalisatieReferentiepuntType
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.Classes.AIMObject import AIMObject
+from OTLMOW.OTLModel.Classes.Signalisatie import Signalisatie
+from OTLMOW.OTLModel.Classes.BevestigingGC import BevestigingGC
+from OTLMOW.OTLModel.Datatypes.DteTekstblok import DteTekstblok
+from OTLMOW.OTLModel.Datatypes.KlSignalisatieReferentiepuntType import KlSignalisatieReferentiepuntType
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit

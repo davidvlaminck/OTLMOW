@@ -1,6 +1,6 @@
 ﻿from datetime import datetime
 
-from src.OTLMOW.Facility.AbstractAttributeSetter import AbstractAttributeSetter
+from OTLMOW.Facility.AbstractAttributeSetter import AbstractAttributeSetter
 
 
 class DateFieldSetter(AbstractAttributeSetter):

@@ -1,8 +1,8 @@
 import unittest
 
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from src.OTLMOW.OTLModel.Datatypes.DtcRechtspersoon import DtcRechtspersoon
-from src.OTLMOW.OTLModel.Datatypes.DtcIdentificator import DtcIdentificator
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.Datatypes.DtcRechtspersoon import DtcRechtspersoon
+from OTLMOW.OTLModel.Datatypes.DtcIdentificator import DtcIdentificator
 
 
 class DtcTestClass:

@@ -1,5 +1,5 @@
-from src.OTLMOW.Loggers.AbstractLogger import AbstractLogger
-from src.OTLMOW.Loggers.LogType import LogType
+from OTLMOW.Loggers.AbstractLogger import AbstractLogger
+from OTLMOW.Loggers.LogType import LogType
 
 
 class ConsoleLogger(AbstractLogger):

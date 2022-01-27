@@ -1,9 +1,9 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from abc import abstractmethod
-from src.OTLMOW.OTLModel.Classes.Fundering import Fundering
-from src.OTLMOW.OTLModel.Datatypes.DtcAfmetingBxlInM import DtcAfmetingBxlInM
-from src.OTLMOW.OTLModel.Datatypes.KlFunderingBetonkwaliteit import KlFunderingBetonkwaliteit
+from OTLMOW.OTLModel.Classes.Fundering import Fundering
+from OTLMOW.OTLModel.Datatypes.DtcAfmetingBxlInM import DtcAfmetingBxlInM
+from OTLMOW.OTLModel.Datatypes.KlFunderingBetonkwaliteit import KlFunderingBetonkwaliteit
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit

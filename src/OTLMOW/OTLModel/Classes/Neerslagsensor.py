@@ -1,9 +1,9 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from src.OTLMOW.OTLModel.Classes.AIMNaamObject import AIMNaamObject
-from src.OTLMOW.OTLModel.Datatypes.KlNeerslagsensorMerk import KlNeerslagsensorMerk
-from src.OTLMOW.OTLModel.Datatypes.KlNeerslagsensorModelnaam import KlNeerslagsensorModelnaam
-from src.OTLMOW.OTLModel.Datatypes.KlNeerslagsensorType import KlNeerslagsensorType
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.Classes.AIMNaamObject import AIMNaamObject
+from OTLMOW.OTLModel.Datatypes.KlNeerslagsensorMerk import KlNeerslagsensorMerk
+from OTLMOW.OTLModel.Datatypes.KlNeerslagsensorModelnaam import KlNeerslagsensorModelnaam
+from OTLMOW.OTLModel.Datatypes.KlNeerslagsensorType import KlNeerslagsensorType
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit

@@ -1,7 +1,7 @@
-﻿from src.OTLMOW.Facility.ComplexFieldSetter import ComplexFieldSetter
-from src.OTLMOW.Facility.PrimitiveFieldSetter import PrimitiveFieldSetter
-from src.OTLMOW.Facility.KeuzelijstFieldSetter import KeuzelijstFieldSetter
-from src.OTLMOW.OTLModel.Datatypes import KeuzelijstField
+﻿from OTLMOW.Facility.ComplexFieldSetter import ComplexFieldSetter
+from OTLMOW.Facility.PrimitiveFieldSetter import PrimitiveFieldSetter
+from OTLMOW.Facility.KeuzelijstFieldSetter import KeuzelijstFieldSetter
+from OTLMOW.OTLModel.Datatypes import KeuzelijstField
 
 
 class AttributeSetterFactory:  # TODO write tests

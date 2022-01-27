@@ -1,13 +1,13 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from abc import abstractmethod
-from src.OTLMOW.OTLModel.Classes.AIMObject import AIMObject
-from src.OTLMOW.OTLModel.Datatypes.BooleanField import BooleanField
-from src.OTLMOW.OTLModel.Datatypes.DtcVegetatieSoortnaam import DtcVegetatieSoortnaam
-from src.OTLMOW.OTLModel.Datatypes.KlTaludWaarde import KlTaludWaarde
-from src.OTLMOW.OTLModel.Datatypes.KlVegetatieDrassigheid import KlVegetatieDrassigheid
-from src.OTLMOW.OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter
-from src.OTLMOW.OTLModel.Datatypes.KwantWrdInVierkanteMeter import KwantWrdInVierkanteMeter
+from OTLMOW.OTLModel.Classes.AIMObject import AIMObject
+from OTLMOW.OTLModel.Datatypes.BooleanField import BooleanField
+from OTLMOW.OTLModel.Datatypes.DtcVegetatieSoortnaam import DtcVegetatieSoortnaam
+from OTLMOW.OTLModel.Datatypes.KlTaludWaarde import KlTaludWaarde
+from OTLMOW.OTLModel.Datatypes.KlVegetatieDrassigheid import KlVegetatieDrassigheid
+from OTLMOW.OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter
+from OTLMOW.OTLModel.Datatypes.KwantWrdInVierkanteMeter import KwantWrdInVierkanteMeter
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit

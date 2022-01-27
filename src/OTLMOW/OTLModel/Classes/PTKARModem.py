@@ -1,7 +1,7 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from src.OTLMOW.OTLModel.Classes.PTModuleMetFirmware import PTModuleMetFirmware
-from src.OTLMOW.OTLModel.Datatypes.KlPtKARModemProtocol import KlPtKARModemProtocol
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.Classes.PTModuleMetFirmware import PTModuleMetFirmware
+from OTLMOW.OTLModel.Datatypes.KlPtKARModemProtocol import KlPtKARModemProtocol
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit

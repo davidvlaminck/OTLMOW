@@ -1,10 +1,10 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from src.OTLMOW.OTLModel.Classes.AIMObject import AIMObject
-from src.OTLMOW.OTLModel.Datatypes.DateField import DateField
-from src.OTLMOW.OTLModel.Datatypes.KlBrandblusserBlusmiddel import KlBrandblusserBlusmiddel
-from src.OTLMOW.OTLModel.Datatypes.KlBrandblusserGewicht import KlBrandblusserGewicht
-from src.OTLMOW.OTLModel.Datatypes.KlBrandblusserType import KlBrandblusserType
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.Classes.AIMObject import AIMObject
+from OTLMOW.OTLModel.Datatypes.DateField import DateField
+from OTLMOW.OTLModel.Datatypes.KlBrandblusserBlusmiddel import KlBrandblusserBlusmiddel
+from OTLMOW.OTLModel.Datatypes.KlBrandblusserGewicht import KlBrandblusserGewicht
+from OTLMOW.OTLModel.Datatypes.KlBrandblusserType import KlBrandblusserType
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit

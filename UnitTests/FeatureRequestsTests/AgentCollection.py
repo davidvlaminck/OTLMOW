@@ -1,6 +1,6 @@
 import unittest
 
-from src.OTLMOW.OTLModel.Classes.Agent import Agent
+from OTLMOW.OTLModel.Classes.Agent import Agent
 
 
 @unittest.skip("feature request")

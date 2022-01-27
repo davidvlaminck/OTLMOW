@@ -1,9 +1,9 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from src.OTLMOW.OTLModel.Classes.DirectioneleRelatie import DirectioneleRelatie
-from src.OTLMOW.OTLModel.Datatypes.DateField import DateField
-from src.OTLMOW.OTLModel.Datatypes.DtcContactinfo import DtcContactinfo
-from src.OTLMOW.OTLModel.Datatypes.KlBetrokkenheidRol import KlBetrokkenheidRol
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.Classes.DirectioneleRelatie import DirectioneleRelatie
+from OTLMOW.OTLModel.Datatypes.DateField import DateField
+from OTLMOW.OTLModel.Datatypes.DtcContactinfo import DtcContactinfo
+from OTLMOW.OTLModel.Datatypes.KlBetrokkenheidRol import KlBetrokkenheidRol
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit

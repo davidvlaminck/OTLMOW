@@ -1,9 +1,9 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from src.OTLMOW.OTLModel.Classes.AIMObject import AIMObject
-from src.OTLMOW.OTLModel.Classes.TerreinDeel import TerreinDeel
-from src.OTLMOW.OTLModel.Datatypes.KlWegbermBIO import KlWegbermBIO
-from src.OTLMOW.OTLModel.Datatypes.KlWegbermType import KlWegbermType
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.Classes.AIMObject import AIMObject
+from OTLMOW.OTLModel.Classes.TerreinDeel import TerreinDeel
+from OTLMOW.OTLModel.Datatypes.KlWegbermBIO import KlWegbermBIO
+from OTLMOW.OTLModel.Datatypes.KlWegbermType import KlWegbermType
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit

@@ -1,8 +1,8 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from src.OTLMOW.OTLModel.Classes.HardwareToegang import HardwareToegang
-from src.OTLMOW.OTLModel.Datatypes.KlVirtueleServerMerk import KlVirtueleServerMerk
-from src.OTLMOW.OTLModel.Datatypes.KlVirtueleServerModelnaam import KlVirtueleServerModelnaam
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.Classes.HardwareToegang import HardwareToegang
+from OTLMOW.OTLModel.Datatypes.KlVirtueleServerMerk import KlVirtueleServerMerk
+from OTLMOW.OTLModel.Datatypes.KlVirtueleServerModelnaam import KlVirtueleServerModelnaam
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit

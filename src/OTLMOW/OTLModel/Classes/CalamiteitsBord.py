@@ -1,8 +1,8 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from src.OTLMOW.OTLModel.Classes.RetroreflecterendVerkeersbord import RetroreflecterendVerkeersbord
-from src.OTLMOW.OTLModel.Datatypes.KlCalamiteitsbordType import KlCalamiteitsbordType
-from src.OTLMOW.OTLModel.Datatypes.KlCalamiteitsbordVorm import KlCalamiteitsbordVorm
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.Classes.RetroreflecterendVerkeersbord import RetroreflecterendVerkeersbord
+from OTLMOW.OTLModel.Datatypes.KlCalamiteitsbordType import KlCalamiteitsbordType
+from OTLMOW.OTLModel.Datatypes.KlCalamiteitsbordVorm import KlCalamiteitsbordVorm
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit

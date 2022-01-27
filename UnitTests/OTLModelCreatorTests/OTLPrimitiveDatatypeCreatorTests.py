@@ -3,12 +3,12 @@ import unittest
 from unittest import mock
 from unittest.mock import patch
 
-from src.OTLMOW.Loggers.NoneLogger import NoneLogger
-from src.OTLMOW.ModelGenerator.OSLOCollector import OSLOCollector
-from src.OTLMOW.ModelGenerator.OSLODatatypePrimitive import OSLODatatypePrimitive
-from src.OTLMOW.ModelGenerator.OSLODatatypePrimitiveAttribuut import OSLODatatypePrimitiveAttribuut
-from src.OTLMOW.ModelGenerator.OSLOTypeLink import OSLOTypeLink
-from src.OTLMOW.ModelGenerator.OTLPrimitiveDatatypeCreator import OTLPrimitiveDatatypeCreator
+from OTLMOW.Loggers.NoneLogger import NoneLogger
+from OTLMOW.ModelGenerator.OSLOCollector import OSLOCollector
+from OTLMOW.ModelGenerator.OSLODatatypePrimitive import OSLODatatypePrimitive
+from OTLMOW.ModelGenerator.OSLODatatypePrimitiveAttribuut import OSLODatatypePrimitiveAttribuut
+from OTLMOW.ModelGenerator.OSLOTypeLink import OSLOTypeLink
+from OTLMOW.ModelGenerator.OTLPrimitiveDatatypeCreator import OTLPrimitiveDatatypeCreator
 
 ROOT_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 

@@ -1,10 +1,10 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from src.OTLMOW.OTLModel.Classes.AIMNaamObject import AIMNaamObject
-from src.OTLMOW.OTLModel.Datatypes.DtcAfmetingBxlxhInMm import DtcAfmetingBxlxhInMm
-from src.OTLMOW.OTLModel.Datatypes.DtcDocument import DtcDocument
-from src.OTLMOW.OTLModel.Datatypes.KlFietstelsysteemMerk import KlFietstelsysteemMerk
-from src.OTLMOW.OTLModel.Datatypes.KlFietstelsysteemModelnaam import KlFietstelsysteemModelnaam
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.Classes.AIMNaamObject import AIMNaamObject
+from OTLMOW.OTLModel.Datatypes.DtcAfmetingBxlxhInMm import DtcAfmetingBxlxhInMm
+from OTLMOW.OTLModel.Datatypes.DtcDocument import DtcDocument
+from OTLMOW.OTLModel.Datatypes.KlFietstelsysteemMerk import KlFietstelsysteemMerk
+from OTLMOW.OTLModel.Datatypes.KlFietstelsysteemModelnaam import KlFietstelsysteemModelnaam
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit

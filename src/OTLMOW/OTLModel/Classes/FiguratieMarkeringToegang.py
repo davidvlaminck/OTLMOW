@@ -1,8 +1,8 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from abc import abstractmethod
-from src.OTLMOW.OTLModel.Classes.Markering import Markering
-from src.OTLMOW.OTLModel.Classes.AOWSType import AOWSType
+from OTLMOW.OTLModel.Classes.Markering import Markering
+from OTLMOW.OTLModel.Classes.AOWSType import AOWSType
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit

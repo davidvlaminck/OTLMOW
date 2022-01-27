@@ -1,13 +1,13 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from src.OTLMOW.OTLModel.Classes.AIMNaamObject import AIMNaamObject
-from src.OTLMOW.OTLModel.Datatypes.KlTransformatorIsolatiemedium import KlTransformatorIsolatiemedium
-from src.OTLMOW.OTLModel.Datatypes.KlTransformatorTrafobeveiliging import KlTransformatorTrafobeveiliging
-from src.OTLMOW.OTLModel.Datatypes.KwantWrdInKiloVolt import KwantWrdInKiloVolt
-from src.OTLMOW.OTLModel.Datatypes.KwantWrdInKiloVoltAmpere import KwantWrdInKiloVoltAmpere
-from src.OTLMOW.OTLModel.Datatypes.KwantWrdInProcent import KwantWrdInProcent
-from src.OTLMOW.OTLModel.Datatypes.KwantWrdInVolt import KwantWrdInVolt
-from src.OTLMOW.OTLModel.Datatypes.StringField import StringField
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.Classes.AIMNaamObject import AIMNaamObject
+from OTLMOW.OTLModel.Datatypes.KlTransformatorIsolatiemedium import KlTransformatorIsolatiemedium
+from OTLMOW.OTLModel.Datatypes.KlTransformatorTrafobeveiliging import KlTransformatorTrafobeveiliging
+from OTLMOW.OTLModel.Datatypes.KwantWrdInKiloVolt import KwantWrdInKiloVolt
+from OTLMOW.OTLModel.Datatypes.KwantWrdInKiloVoltAmpere import KwantWrdInKiloVoltAmpere
+from OTLMOW.OTLModel.Datatypes.KwantWrdInProcent import KwantWrdInProcent
+from OTLMOW.OTLModel.Datatypes.KwantWrdInVolt import KwantWrdInVolt
+from OTLMOW.OTLModel.Datatypes.StringField import StringField
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit

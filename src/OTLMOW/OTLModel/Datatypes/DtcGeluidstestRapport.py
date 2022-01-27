@@ -1,12 +1,12 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.AttributeInfo import AttributeInfo
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from src.OTLMOW.OTLModel.Datatypes.ComplexField import ComplexField
-from src.OTLMOW.OTLModel.Datatypes.DtcDocument import DtcDocument
-from src.OTLMOW.OTLModel.Datatypes.IntegerField import IntegerField
-from src.OTLMOW.OTLModel.Datatypes.KlGCMeetMethode import KlGCMeetMethode
-from src.OTLMOW.OTLModel.Datatypes.KlLEGCNorm import KlLEGCNorm
-from src.OTLMOW.OTLModel.Datatypes.KlLEGCTestType import KlLEGCTestType
+from OTLMOW.OTLModel.BaseClasses.AttributeInfo import AttributeInfo
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.Datatypes.ComplexField import ComplexField
+from OTLMOW.OTLModel.Datatypes.DtcDocument import DtcDocument
+from OTLMOW.OTLModel.Datatypes.IntegerField import IntegerField
+from OTLMOW.OTLModel.Datatypes.KlGCMeetMethode import KlGCMeetMethode
+from OTLMOW.OTLModel.Datatypes.KlLEGCNorm import KlLEGCNorm
+from OTLMOW.OTLModel.Datatypes.KlLEGCTestType import KlLEGCTestType
 
 
 # Generated with OTLComplexDatatypeCreator. To modify: extend, do not edit

@@ -1,9 +1,9 @@
 import os
 from abc import ABC
 
-from src.OTLMOW.Loggers.AbstractLogger import AbstractLogger
-from src.OTLMOW.ModelGenerator import OSLOCollector
-from src.OTLMOW.ModelGenerator.StringHelper import wrap_in_quotes
+from OTLMOW.Loggers.AbstractLogger import AbstractLogger
+from OTLMOW.ModelGenerator.OSLOCollector import OSLOCollector
+from OTLMOW.ModelGenerator.StringHelper import wrap_in_quotes
 
 
 class AbstractDatatypeCreator(ABC):
@@ -163,18 +163,18 @@ class AbstractDatatypeCreator(ABC):
         attributen = self.get_attributen_by_typeField(typeField, osloDatatype)
 
         datablock = ['# coding=utf-8',
-                     'from src.OTLMOW.OTLModel.BaseClasses.AttributeInfo import AttributeInfo',
-                     'from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut']
+                     'from OTLMOW.OTLModel.BaseClasses.AttributeInfo import AttributeInfo',
+                     'from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut']
 
         list_fields_to_start_with = [f'{typeField}Field']
         if typeField == 'UnionType':
             list_fields_to_start_with.append('UnionWaarden')
         elif typeField == 'Primitive' or typeField == 'KwantWrd':
-            datablock.append('from src.OTLMOW.OTLModel.BaseClasses.OTLField import OTLField')
+            datablock.append('from OTLMOW.OTLModel.BaseClasses.OTLField import OTLField')
             list_fields_to_start_with = []
         listOfFields = self.getFieldsToImportFromListOfAttributes(attributen, list_fields_to_start_with)
         for module in listOfFields:
-            datablock.append(f'from src.OTLMOW.OTLModel.Datatypes.{module} import {module}')
+            datablock.append(f'from OTLMOW.OTLModel.Datatypes.{module} import {module}')
 
         datablock.append('')
         datablock.append('')

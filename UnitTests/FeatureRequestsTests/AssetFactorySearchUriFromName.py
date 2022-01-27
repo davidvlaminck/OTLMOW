@@ -1,7 +1,7 @@
 ﻿import unittest
 from unittest import TestCase
 
-from src.OTLMOW.Facility.AssetFactory import AssetFactory
+from OTLMOW.Facility.AssetFactory import AssetFactory
 
 
 @unittest.skip("feature request")

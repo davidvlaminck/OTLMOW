@@ -1,13 +1,13 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from abc import abstractmethod
-from src.OTLMOW.OTLModel.Classes.AIMObject import AIMObject
-from src.OTLMOW.OTLModel.Classes.Signalisatie import Signalisatie
-from src.OTLMOW.OTLModel.Datatypes.BooleanField import BooleanField
-from src.OTLMOW.OTLModel.Datatypes.DtcMarkeringOpvatting import DtcMarkeringOpvatting
-from src.OTLMOW.OTLModel.Datatypes.DtcProductidentificatiecode import DtcProductidentificatiecode
-from src.OTLMOW.OTLModel.Datatypes.KlKleurMarkering import KlKleurMarkering
-from src.OTLMOW.OTLModel.Datatypes.KlMarkeringSoort import KlMarkeringSoort
+from OTLMOW.OTLModel.Classes.AIMObject import AIMObject
+from OTLMOW.OTLModel.Classes.Signalisatie import Signalisatie
+from OTLMOW.OTLModel.Datatypes.BooleanField import BooleanField
+from OTLMOW.OTLModel.Datatypes.DtcMarkeringOpvatting import DtcMarkeringOpvatting
+from OTLMOW.OTLModel.Datatypes.DtcProductidentificatiecode import DtcProductidentificatiecode
+from OTLMOW.OTLModel.Datatypes.KlKleurMarkering import KlKleurMarkering
+from OTLMOW.OTLModel.Datatypes.KlMarkeringSoort import KlMarkeringSoort
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit

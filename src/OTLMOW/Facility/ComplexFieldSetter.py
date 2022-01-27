@@ -1,5 +1,5 @@
-﻿from src.OTLMOW.Facility.AbstractAttributeSetter import AbstractAttributeSetter
-from src.OTLMOW.Facility.AttributeSetterFactory import AttributeSetterFactory
+﻿from OTLMOW.Facility.AbstractAttributeSetter import AbstractAttributeSetter
+from OTLMOW.Facility.AttributeSetterFactory import AttributeSetterFactory
 
 
 class ComplexFieldSetter(AbstractAttributeSetter):

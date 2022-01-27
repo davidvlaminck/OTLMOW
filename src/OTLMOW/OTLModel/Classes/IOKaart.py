@@ -1,12 +1,12 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from src.OTLMOW.OTLModel.Classes.AIMObject import AIMObject
-from src.OTLMOW.OTLModel.Datatypes.KlIOBitSnelheid import KlIOBitSnelheid
-from src.OTLMOW.OTLModel.Datatypes.KlIOKaartMerk import KlIOKaartMerk
-from src.OTLMOW.OTLModel.Datatypes.KlIOKaartModelnaam import KlIOKaartModelnaam
-from src.OTLMOW.OTLModel.Datatypes.KlIORichting import KlIORichting
-from src.OTLMOW.OTLModel.Datatypes.KlIOSignaaltype import KlIOSignaaltype
-from src.OTLMOW.OTLModel.Datatypes.StringField import StringField
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.Classes.AIMObject import AIMObject
+from OTLMOW.OTLModel.Datatypes.KlIOBitSnelheid import KlIOBitSnelheid
+from OTLMOW.OTLModel.Datatypes.KlIOKaartMerk import KlIOKaartMerk
+from OTLMOW.OTLModel.Datatypes.KlIOKaartModelnaam import KlIOKaartModelnaam
+from OTLMOW.OTLModel.Datatypes.KlIORichting import KlIORichting
+from OTLMOW.OTLModel.Datatypes.KlIOSignaaltype import KlIOSignaaltype
+from OTLMOW.OTLModel.Datatypes.StringField import StringField
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit

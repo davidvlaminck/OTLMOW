@@ -1,8 +1,8 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from src.OTLMOW.OTLModel.Classes.AIMNaamObject import AIMNaamObject
-from src.OTLMOW.OTLModel.Datatypes.KlGPUMerk import KlGPUMerk
-from src.OTLMOW.OTLModel.Datatypes.KlGPUModelnaam import KlGPUModelnaam
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.Classes.AIMNaamObject import AIMNaamObject
+from OTLMOW.OTLModel.Datatypes.KlGPUMerk import KlGPUMerk
+from OTLMOW.OTLModel.Datatypes.KlGPUModelnaam import KlGPUModelnaam
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit

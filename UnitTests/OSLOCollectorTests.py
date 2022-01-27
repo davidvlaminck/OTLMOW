@@ -1,8 +1,8 @@
 import unittest
 from unittest.mock import Mock
 
-from src.OTLMOW.ModelGenerator.OSLOCollector import OSLOCollector
-from src.OTLMOW.ModelGenerator.OSLOInMemoryCreator import OSLOInMemoryCreator
+from OTLMOW.ModelGenerator.OSLOCollector import OSLOCollector
+from OTLMOW.ModelGenerator.OSLOInMemoryCreator import OSLOInMemoryCreator
 from UnitTests.OSLOInMemoryCreatorTests import OSLOInMemoryCreatorTests
 
 

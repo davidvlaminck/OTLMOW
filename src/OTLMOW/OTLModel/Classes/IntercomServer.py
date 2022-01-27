@@ -1,12 +1,12 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from src.OTLMOW.OTLModel.Classes.AIMNaamObject import AIMNaamObject
-from src.OTLMOW.OTLModel.Datatypes.DtcDocument import DtcDocument
-from src.OTLMOW.OTLModel.Datatypes.DteIPv4Adres import DteIPv4Adres
-from src.OTLMOW.OTLModel.Datatypes.KlAudioTransportType import KlAudioTransportType
-from src.OTLMOW.OTLModel.Datatypes.KlIntercomServerMerk import KlIntercomServerMerk
-from src.OTLMOW.OTLModel.Datatypes.KlIntercomServerModelnaam import KlIntercomServerModelnaam
-from src.OTLMOW.OTLModel.Datatypes.StringField import StringField
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.Classes.AIMNaamObject import AIMNaamObject
+from OTLMOW.OTLModel.Datatypes.DtcDocument import DtcDocument
+from OTLMOW.OTLModel.Datatypes.DteIPv4Adres import DteIPv4Adres
+from OTLMOW.OTLModel.Datatypes.KlAudioTransportType import KlAudioTransportType
+from OTLMOW.OTLModel.Datatypes.KlIntercomServerMerk import KlIntercomServerMerk
+from OTLMOW.OTLModel.Datatypes.KlIntercomServerModelnaam import KlIntercomServerModelnaam
+from OTLMOW.OTLModel.Datatypes.StringField import StringField
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit

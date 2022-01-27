@@ -1,21 +1,21 @@
 from collections import defaultdict
 
-from src.OTLMOW.Facility.AssetFactory import AssetFactory
-from src.OTLMOW.Facility.DavieDecoder import DavieDecoder
-from src.OTLMOW.Facility.DavieExporter import DavieExporter
-from src.OTLMOW.Facility.Visualiser import Visualiser
-from src.OTLMOW.Facility.DavieImporter import DavieImporter
-from src.OTLMOW.ModelGenerator.BaseClasses.RelatieValidator import RelatieValidator
-from src.OTLMOW.ModelGenerator.OtlAssetJSONEncoder import OtlAssetJSONEncoder
-from src.OTLMOW.ModelGenerator.SQLDbReader import SQLDbReader
-from src.OTLMOW.Loggers.AbstractLogger import AbstractLogger
-from src.OTLMOW.ModelGenerator.OSLOCollector import OSLOCollector
-from src.OTLMOW.ModelGenerator.OSLOInMemoryCreator import OSLOInMemoryCreator
-from src.OTLMOW.ModelGenerator.OTLModelCreator import OTLModelCreator
-from src.OTLMOW.OTLModel.BaseClasses.OTLObject import OTLObject
-from src.OTLMOW.PostenMapping.PostenCollector import PostenCollector
-from src.OTLMOW.PostenMapping.PostenCreator import PostenCreator
-from src.OTLMOW.PostenMapping.PostenInMemoryCreator import PostenInMemoryCreator
+from OTLMOW.Facility.AssetFactory import AssetFactory
+from OTLMOW.Facility.DavieDecoder import DavieDecoder
+from OTLMOW.Facility.DavieExporter import DavieExporter
+from OTLMOW.Facility.Visualiser import Visualiser
+from OTLMOW.Facility.DavieImporter import DavieImporter
+from OTLMOW.ModelGenerator.BaseClasses.RelatieValidator import RelatieValidator
+from OTLMOW.ModelGenerator.OtlAssetJSONEncoder import OtlAssetJSONEncoder
+from OTLMOW.ModelGenerator.SQLDbReader import SQLDbReader
+from OTLMOW.Loggers.AbstractLogger import AbstractLogger
+from OTLMOW.ModelGenerator.OSLOCollector import OSLOCollector
+from OTLMOW.ModelGenerator.OSLOInMemoryCreator import OSLOInMemoryCreator
+from OTLMOW.ModelGenerator.OTLModelCreator import OTLModelCreator
+from OTLMOW.OTLModel.BaseClasses.OTLObject import OTLObject
+from OTLMOW.PostenMapping.PostenCollector import PostenCollector
+from OTLMOW.PostenMapping.PostenCreator import PostenCreator
+from OTLMOW.PostenMapping.PostenInMemoryCreator import PostenInMemoryCreator
 
 
 class OTLFacility:

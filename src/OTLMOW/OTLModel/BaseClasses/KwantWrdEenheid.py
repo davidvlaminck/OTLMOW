@@ -1,4 +1,4 @@
-﻿from src.OTLMOW.OTLModel.BaseClasses.AttributeInfo import AttributeInfo
+﻿from OTLMOW.OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 
 
 class KwantWrdEenheid(AttributeInfo):

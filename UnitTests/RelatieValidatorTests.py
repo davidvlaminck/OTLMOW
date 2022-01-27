@@ -1,20 +1,20 @@
 import unittest
 
-from src.OTLMOW.Facility.OTLFacility import OTLFacility
-from src.OTLMOW.Loggers.NoneLogger import NoneLogger
-from src.OTLMOW.ModelGenerator.BaseClasses.GeldigeRelatie import GeldigeRelatie
-from src.OTLMOW.ModelGenerator.BaseClasses.RelatieRichting import RelatieRichting
-from src.OTLMOW.ModelGenerator.BaseClasses.RelatieValidator import RelatieValidator
-from src.OTLMOW.OTLModel.BaseClasses.RelatieInteractor import RelatieInteractor
-from src.OTLMOW.OTLModel.Classes.Aftakking import Aftakking
-from src.OTLMOW.OTLModel.Classes.Bevestiging import Bevestiging
-from src.OTLMOW.OTLModel.Classes.Contactor import Contactor
-from src.OTLMOW.OTLModel.Classes.EnergiemeterAWV import EnergiemeterAWV
-from src.OTLMOW.OTLModel.Classes.Hoofdschakelaar import Hoofdschakelaar
-from src.OTLMOW.OTLModel.Classes.RelatieObject import RelatieObject
-from src.OTLMOW.OTLModel.Classes.Stroomkring import Stroomkring
-from src.OTLMOW.OTLModel.Classes.Voedt import Voedt
-from src.OTLMOW.OTLModel.ClassLoader import ClassLoader
+from OTLMOW.Facility.OTLFacility import OTLFacility
+from OTLMOW.Loggers.NoneLogger import NoneLogger
+from OTLMOW.ModelGenerator.BaseClasses.GeldigeRelatie import GeldigeRelatie
+from OTLMOW.ModelGenerator.BaseClasses.RelatieRichting import RelatieRichting
+from OTLMOW.ModelGenerator.BaseClasses.RelatieValidator import RelatieValidator
+from OTLMOW.OTLModel.BaseClasses.RelatieInteractor import RelatieInteractor
+from OTLMOW.OTLModel.Classes.Aftakking import Aftakking
+from OTLMOW.OTLModel.Classes.Bevestiging import Bevestiging
+from OTLMOW.OTLModel.Classes.Contactor import Contactor
+from OTLMOW.OTLModel.Classes.EnergiemeterAWV import EnergiemeterAWV
+from OTLMOW.OTLModel.Classes.Hoofdschakelaar import Hoofdschakelaar
+from OTLMOW.OTLModel.Classes.RelatieObject import RelatieObject
+from OTLMOW.OTLModel.Classes.Stroomkring import Stroomkring
+from OTLMOW.OTLModel.Classes.Voedt import Voedt
+from OTLMOW.OTLModel.ClassLoader import ClassLoader
 
 
 class GeldigeRelatieLijst:

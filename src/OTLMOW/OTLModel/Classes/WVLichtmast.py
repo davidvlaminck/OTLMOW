@@ -1,9 +1,9 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from src.OTLMOW.OTLModel.Classes.Lichtmast import Lichtmast
-from src.OTLMOW.OTLModel.Datatypes.DtuWvLichtmastBevsToestelMethode import DtuWvLichtmastBevsToestelMethode
-from src.OTLMOW.OTLModel.Datatypes.KlWvLichtmastAantArmen import KlWvLichtmastAantArmen
-from src.OTLMOW.OTLModel.Datatypes.KlWvLichtmastArmlengte import KlWvLichtmastArmlengte
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.Classes.Lichtmast import Lichtmast
+from OTLMOW.OTLModel.Datatypes.DtuWvLichtmastBevsToestelMethode import DtuWvLichtmastBevsToestelMethode
+from OTLMOW.OTLModel.Datatypes.KlWvLichtmastAantArmen import KlWvLichtmastAantArmen
+from OTLMOW.OTLModel.Datatypes.KlWvLichtmastArmlengte import KlWvLichtmastArmlengte
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit

@@ -1,5 +1,5 @@
 ﻿from abc import ABC
-from src.OTLMOW.OTLModel.BaseClasses.OTLField import OTLField
+from OTLMOW.OTLModel.BaseClasses.OTLField import OTLField
 
 
 class ComplexField(OTLField, ABC):

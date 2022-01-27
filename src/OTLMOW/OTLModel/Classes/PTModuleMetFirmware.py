@@ -1,8 +1,8 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from abc import abstractmethod
-from src.OTLMOW.OTLModel.Classes.PTRegelaarModule import PTRegelaarModule
-from src.OTLMOW.OTLModel.Classes.FirmwareObject import FirmwareObject
+from OTLMOW.OTLModel.Classes.PTRegelaarModule import PTRegelaarModule
+from OTLMOW.OTLModel.Classes.FirmwareObject import FirmwareObject
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit

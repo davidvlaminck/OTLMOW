@@ -1,11 +1,11 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from src.OTLMOW.OTLModel.Classes.SoftwareToegang import SoftwareToegang
-from src.OTLMOW.OTLModel.Datatypes.DtcDocument import DtcDocument
-from src.OTLMOW.OTLModel.Datatypes.DtcSoftwarePoortconfiguratie import DtcSoftwarePoortconfiguratie
-from src.OTLMOW.OTLModel.Datatypes.KlSoftwareLicentie import KlSoftwareLicentie
-from src.OTLMOW.OTLModel.Datatypes.StringField import StringField
-from src.OTLMOW.OTLModel.Datatypes.URIField import URIField
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.Classes.SoftwareToegang import SoftwareToegang
+from OTLMOW.OTLModel.Datatypes.DtcDocument import DtcDocument
+from OTLMOW.OTLModel.Datatypes.DtcSoftwarePoortconfiguratie import DtcSoftwarePoortconfiguratie
+from OTLMOW.OTLModel.Datatypes.KlSoftwareLicentie import KlSoftwareLicentie
+from OTLMOW.OTLModel.Datatypes.StringField import StringField
+from OTLMOW.OTLModel.Datatypes.URIField import URIField
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit

@@ -1,10 +1,10 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from src.OTLMOW.OTLModel.Classes.PU import PU
-from src.OTLMOW.OTLModel.Datatypes.BooleanField import BooleanField
-from src.OTLMOW.OTLModel.Datatypes.DtcDocument import DtcDocument
-from src.OTLMOW.OTLModel.Datatypes.KlDynBordExternePUMerk import KlDynBordExternePUMerk
-from src.OTLMOW.OTLModel.Datatypes.KlDynBordExternePUModelnaam import KlDynBordExternePUModelnaam
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.Classes.PU import PU
+from OTLMOW.OTLModel.Datatypes.BooleanField import BooleanField
+from OTLMOW.OTLModel.Datatypes.DtcDocument import DtcDocument
+from OTLMOW.OTLModel.Datatypes.KlDynBordExternePUMerk import KlDynBordExternePUMerk
+from OTLMOW.OTLModel.Datatypes.KlDynBordExternePUModelnaam import KlDynBordExternePUModelnaam
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit

@@ -1,9 +1,9 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from abc import abstractmethod
-from src.OTLMOW.OTLModel.Classes.Detectie import Detectie
-from src.OTLMOW.OTLModel.Classes.FirmwareObject import FirmwareObject
-from src.OTLMOW.OTLModel.Datatypes.KwantWrdInVolt import KwantWrdInVolt
+from OTLMOW.OTLModel.Classes.Detectie import Detectie
+from OTLMOW.OTLModel.Classes.FirmwareObject import FirmwareObject
+from OTLMOW.OTLModel.Datatypes.KwantWrdInVolt import KwantWrdInVolt
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit

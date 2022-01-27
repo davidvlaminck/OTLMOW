@@ -1,9 +1,9 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from src.OTLMOW.OTLModel.Classes.Geluidsschermelement import Geluidsschermelement
-from src.OTLMOW.OTLModel.Datatypes.KlVGOpstelling import KlVGOpstelling
-from src.OTLMOW.OTLModel.Datatypes.KlVGSchermelementtype import KlVGSchermelementtype
-from src.OTLMOW.OTLModel.Datatypes.KlVormSchermelement import KlVormSchermelement
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.Classes.Geluidsschermelement import Geluidsschermelement
+from OTLMOW.OTLModel.Datatypes.KlVGOpstelling import KlVGOpstelling
+from OTLMOW.OTLModel.Datatypes.KlVGSchermelementtype import KlVGSchermelementtype
+from OTLMOW.OTLModel.Datatypes.KlVormSchermelement import KlVormSchermelement
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit

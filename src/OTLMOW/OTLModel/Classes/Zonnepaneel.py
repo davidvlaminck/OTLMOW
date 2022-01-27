@@ -1,10 +1,10 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from src.OTLMOW.OTLModel.Classes.Voedingspunt import Voedingspunt
-from src.OTLMOW.OTLModel.Classes.BevestigingGC import BevestigingGC
-from src.OTLMOW.OTLModel.Datatypes.KlZonnepaneelMerk import KlZonnepaneelMerk
-from src.OTLMOW.OTLModel.Datatypes.KlZonnepaneelModelnaam import KlZonnepaneelModelnaam
-from src.OTLMOW.OTLModel.Datatypes.KwantWrdInWatt import KwantWrdInWatt
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.Classes.Voedingspunt import Voedingspunt
+from OTLMOW.OTLModel.Classes.BevestigingGC import BevestigingGC
+from OTLMOW.OTLModel.Datatypes.KlZonnepaneelMerk import KlZonnepaneelMerk
+from OTLMOW.OTLModel.Datatypes.KlZonnepaneelModelnaam import KlZonnepaneelModelnaam
+from OTLMOW.OTLModel.Datatypes.KwantWrdInWatt import KwantWrdInWatt
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit

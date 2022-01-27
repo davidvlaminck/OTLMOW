@@ -1,10 +1,10 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from src.OTLMOW.OTLModel.Classes.AIMObject import AIMObject
-from src.OTLMOW.OTLModel.Classes.BevestigingGC import BevestigingGC
-from src.OTLMOW.OTLModel.Datatypes.KlPictogramSymbool import KlPictogramSymbool
-from src.OTLMOW.OTLModel.Datatypes.KwantWrdInMinuut import KwantWrdInMinuut
-from src.OTLMOW.OTLModel.Datatypes.StringField import StringField
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.Classes.AIMObject import AIMObject
+from OTLMOW.OTLModel.Classes.BevestigingGC import BevestigingGC
+from OTLMOW.OTLModel.Datatypes.KlPictogramSymbool import KlPictogramSymbool
+from OTLMOW.OTLModel.Datatypes.KwantWrdInMinuut import KwantWrdInMinuut
+from OTLMOW.OTLModel.Datatypes.StringField import StringField
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit

@@ -1,11 +1,11 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.AttributeInfo import AttributeInfo
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from src.OTLMOW.OTLModel.Datatypes.ComplexField import ComplexField
-from src.OTLMOW.OTLModel.Datatypes.DteTekstblok import DteTekstblok
-from src.OTLMOW.OTLModel.Datatypes.KlAlgMimeType import KlAlgMimeType
-from src.OTLMOW.OTLModel.Datatypes.StringField import StringField
-from src.OTLMOW.OTLModel.Datatypes.URIField import URIField
+from OTLMOW.OTLModel.BaseClasses.AttributeInfo import AttributeInfo
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.Datatypes.ComplexField import ComplexField
+from OTLMOW.OTLModel.Datatypes.DteTekstblok import DteTekstblok
+from OTLMOW.OTLModel.Datatypes.KlAlgMimeType import KlAlgMimeType
+from OTLMOW.OTLModel.Datatypes.StringField import StringField
+from OTLMOW.OTLModel.Datatypes.URIField import URIField
 
 
 # Generated with OTLComplexDatatypeCreator. To modify: extend, do not edit

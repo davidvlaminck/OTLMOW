@@ -1,9 +1,9 @@
 import unittest
 from abc import ABC
 
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from src.OTLMOW.OTLModel.Datatypes.DteKleurRAL import DteKleurRAL
-from src.OTLMOW.OTLModel.Classes.AIMObject import AIMObject
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.Datatypes.DteKleurRAL import DteKleurRAL
+from OTLMOW.OTLModel.Classes.AIMObject import AIMObject
 
 
 class DteTestClass(AIMObject, ABC):

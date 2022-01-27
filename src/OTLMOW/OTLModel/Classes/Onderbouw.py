@@ -1,11 +1,11 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from src.OTLMOW.OTLModel.Classes.LaagDikte import LaagDikte
-from src.OTLMOW.OTLModel.Classes.Laag import Laag
-from src.OTLMOW.OTLModel.Datatypes.BooleanField import BooleanField
-from src.OTLMOW.OTLModel.Datatypes.DtcKrimpvoeg import DtcKrimpvoeg
-from src.OTLMOW.OTLModel.Datatypes.KlOnderbouwType import KlOnderbouwType
-from src.OTLMOW.OTLModel.Datatypes.KwantWrdInKubiekeMeter import KwantWrdInKubiekeMeter
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.Classes.LaagDikte import LaagDikte
+from OTLMOW.OTLModel.Classes.Laag import Laag
+from OTLMOW.OTLModel.Datatypes.BooleanField import BooleanField
+from OTLMOW.OTLModel.Datatypes.DtcKrimpvoeg import DtcKrimpvoeg
+from OTLMOW.OTLModel.Datatypes.KlOnderbouwType import KlOnderbouwType
+from OTLMOW.OTLModel.Datatypes.KwantWrdInKubiekeMeter import KwantWrdInKubiekeMeter
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit

@@ -1,11 +1,11 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from src.OTLMOW.OTLModel.Classes.AIMNaamObject import AIMNaamObject
-from src.OTLMOW.OTLModel.Datatypes.DteIPv4Adres import DteIPv4Adres
-from src.OTLMOW.OTLModel.Datatypes.KlNetwerkMerk import KlNetwerkMerk
-from src.OTLMOW.OTLModel.Datatypes.KlNetwerkelemGebruik import KlNetwerkelemGebruik
-from src.OTLMOW.OTLModel.Datatypes.KlNetwerkelemModelnaam import KlNetwerkelemModelnaam
-from src.OTLMOW.OTLModel.Datatypes.StringField import StringField
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.Classes.AIMNaamObject import AIMNaamObject
+from OTLMOW.OTLModel.Datatypes.DteIPv4Adres import DteIPv4Adres
+from OTLMOW.OTLModel.Datatypes.KlNetwerkMerk import KlNetwerkMerk
+from OTLMOW.OTLModel.Datatypes.KlNetwerkelemGebruik import KlNetwerkelemGebruik
+from OTLMOW.OTLModel.Datatypes.KlNetwerkelemModelnaam import KlNetwerkelemModelnaam
+from OTLMOW.OTLModel.Datatypes.StringField import StringField
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit

@@ -1,8 +1,8 @@
-from src.OTLMOW.Loggers.AbstractLogger import AbstractLogger
-from src.OTLMOW.Loggers.LogType import LogType
-from src.OTLMOW.ModelGenerator.AbstractDatatypeCreator import AbstractDatatypeCreator
-from src.OTLMOW.ModelGenerator.OSLOCollector import OSLOCollector
-from src.OTLMOW.ModelGenerator.OSLODatatypeComplex import OSLODatatypeComplex
+from OTLMOW.Loggers.AbstractLogger import AbstractLogger
+from OTLMOW.Loggers.LogType import LogType
+from OTLMOW.ModelGenerator.AbstractDatatypeCreator import AbstractDatatypeCreator
+from OTLMOW.ModelGenerator.OSLOCollector import OSLOCollector
+from OTLMOW.ModelGenerator.OSLODatatypeComplex import OSLODatatypeComplex
 
 
 class OTLComplexDatatypeCreator(AbstractDatatypeCreator):

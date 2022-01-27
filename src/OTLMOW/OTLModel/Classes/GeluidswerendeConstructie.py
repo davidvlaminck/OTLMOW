@@ -1,17 +1,17 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from src.OTLMOW.OTLModel.Classes.LijnvormigElement import LijnvormigElement
-from src.OTLMOW.OTLModel.Datatypes.BooleanField import BooleanField
-from src.OTLMOW.OTLModel.Datatypes.DtcDocument import DtcDocument
-from src.OTLMOW.OTLModel.Datatypes.DtcGCMateriaalKarakteristiek import DtcGCMateriaalKarakteristiek
-from src.OTLMOW.OTLModel.Datatypes.DteKleurRAL import DteKleurRAL
-from src.OTLMOW.OTLModel.Datatypes.KlLEGCOpstelling import KlLEGCOpstelling
-from src.OTLMOW.OTLModel.Datatypes.KlLEGCSchermelementType import KlLEGCSchermelementType
-from src.OTLMOW.OTLModel.Datatypes.KlLEGCSchermtype import KlLEGCSchermtype
-from src.OTLMOW.OTLModel.Datatypes.KwantWrdInCentimeter import KwantWrdInCentimeter
-from src.OTLMOW.OTLModel.Datatypes.KwantWrdInKiloNewtonPerVierkanteMeter import KwantWrdInKiloNewtonPerVierkanteMeter
-from src.OTLMOW.OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter
-from src.OTLMOW.OTLModel.Datatypes.KwantWrdInVierkanteMeter import KwantWrdInVierkanteMeter
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.Classes.LijnvormigElement import LijnvormigElement
+from OTLMOW.OTLModel.Datatypes.BooleanField import BooleanField
+from OTLMOW.OTLModel.Datatypes.DtcDocument import DtcDocument
+from OTLMOW.OTLModel.Datatypes.DtcGCMateriaalKarakteristiek import DtcGCMateriaalKarakteristiek
+from OTLMOW.OTLModel.Datatypes.DteKleurRAL import DteKleurRAL
+from OTLMOW.OTLModel.Datatypes.KlLEGCOpstelling import KlLEGCOpstelling
+from OTLMOW.OTLModel.Datatypes.KlLEGCSchermelementType import KlLEGCSchermelementType
+from OTLMOW.OTLModel.Datatypes.KlLEGCSchermtype import KlLEGCSchermtype
+from OTLMOW.OTLModel.Datatypes.KwantWrdInCentimeter import KwantWrdInCentimeter
+from OTLMOW.OTLModel.Datatypes.KwantWrdInKiloNewtonPerVierkanteMeter import KwantWrdInKiloNewtonPerVierkanteMeter
+from OTLMOW.OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter
+from OTLMOW.OTLModel.Datatypes.KwantWrdInVierkanteMeter import KwantWrdInVierkanteMeter
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit

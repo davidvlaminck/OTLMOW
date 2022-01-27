@@ -1,7 +1,7 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from src.OTLMOW.OTLModel.Classes.AfschermendeConstructie import AfschermendeConstructie
-from src.OTLMOW.OTLModel.Datatypes.KlLEACTypeEindstuk import KlLEACTypeEindstuk
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.Classes.AfschermendeConstructie import AfschermendeConstructie
+from OTLMOW.OTLModel.Datatypes.KlLEACTypeEindstuk import KlLEACTypeEindstuk
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit

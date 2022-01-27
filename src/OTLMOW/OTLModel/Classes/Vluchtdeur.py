@@ -1,8 +1,8 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from src.OTLMOW.OTLModel.Classes.AIMObject import AIMObject
-from src.OTLMOW.OTLModel.Classes.Deur import Deur
-from src.OTLMOW.OTLModel.Classes.BevestigingGC import BevestigingGC
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.Classes.AIMObject import AIMObject
+from OTLMOW.OTLModel.Classes.Deur import Deur
+from OTLMOW.OTLModel.Classes.BevestigingGC import BevestigingGC
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit

@@ -1,10 +1,10 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from abc import abstractmethod
-from src.OTLMOW.OTLModel.Classes.VerkeersregelaarModule import VerkeersregelaarModule
-from src.OTLMOW.OTLModel.Classes.FirmwareObject import FirmwareObject
-from src.OTLMOW.OTLModel.Datatypes.KlVRModuleMetFirmwareMerk import KlVRModuleMetFirmwareMerk
-from src.OTLMOW.OTLModel.Datatypes.KlVRModuleMetFirmwareModelnaam import KlVRModuleMetFirmwareModelnaam
+from OTLMOW.OTLModel.Classes.VerkeersregelaarModule import VerkeersregelaarModule
+from OTLMOW.OTLModel.Classes.FirmwareObject import FirmwareObject
+from OTLMOW.OTLModel.Datatypes.KlVRModuleMetFirmwareMerk import KlVRModuleMetFirmwareMerk
+from OTLMOW.OTLModel.Datatypes.KlVRModuleMetFirmwareModelnaam import KlVRModuleMetFirmwareModelnaam
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit

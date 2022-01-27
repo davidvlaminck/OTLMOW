@@ -1,7 +1,7 @@
 import unittest
 
-from src.OTLMOW.OTLModel.Datatypes.KwantWrdInVolt import KwantWrdInVolt
-from src.OTLMOW.OTLModel.Classes.Voedt import Voedt
+from OTLMOW.OTLModel.Datatypes.KwantWrdInVolt import KwantWrdInVolt
+from OTLMOW.OTLModel.Classes.Voedt import Voedt
 
 
 class RelatiesTests(unittest.TestCase):

@@ -1,8 +1,8 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from src.OTLMOW.OTLModel.Classes.LinkendElement import LinkendElement
-from src.OTLMOW.OTLModel.Datatypes.KlAansluitstukMateriaal import KlAansluitstukMateriaal
-from src.OTLMOW.OTLModel.Datatypes.KwantWrdInMillimeter import KwantWrdInMillimeter
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.Classes.LinkendElement import LinkendElement
+from OTLMOW.OTLModel.Datatypes.KlAansluitstukMateriaal import KlAansluitstukMateriaal
+from OTLMOW.OTLModel.Datatypes.KwantWrdInMillimeter import KwantWrdInMillimeter
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit

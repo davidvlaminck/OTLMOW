@@ -1,11 +1,11 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from src.OTLMOW.OTLModel.Classes.AIMObject import AIMObject
-from src.OTLMOW.OTLModel.Datatypes.KlLEDDriverMerk import KlLEDDriverMerk
-from src.OTLMOW.OTLModel.Datatypes.KlLEDDriverModelnaam import KlLEDDriverModelnaam
-from src.OTLMOW.OTLModel.Datatypes.KlLEDDriverProtocol import KlLEDDriverProtocol
-from src.OTLMOW.OTLModel.Datatypes.KwantWrdInMilliAmpere import KwantWrdInMilliAmpere
-from src.OTLMOW.OTLModel.Datatypes.KwantWrdInWatt import KwantWrdInWatt
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.Classes.AIMObject import AIMObject
+from OTLMOW.OTLModel.Datatypes.KlLEDDriverMerk import KlLEDDriverMerk
+from OTLMOW.OTLModel.Datatypes.KlLEDDriverModelnaam import KlLEDDriverModelnaam
+from OTLMOW.OTLModel.Datatypes.KlLEDDriverProtocol import KlLEDDriverProtocol
+from OTLMOW.OTLModel.Datatypes.KwantWrdInMilliAmpere import KwantWrdInMilliAmpere
+from OTLMOW.OTLModel.Datatypes.KwantWrdInWatt import KwantWrdInWatt
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit

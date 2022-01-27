@@ -1,8 +1,8 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from src.OTLMOW.OTLModel.Classes.LEDBord import LEDBord
-from src.OTLMOW.OTLModel.Datatypes.KlDynBordVMSMerk import KlDynBordVMSMerk
-from src.OTLMOW.OTLModel.Datatypes.KlDynBordVMSModelnaam import KlDynBordVMSModelnaam
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.Classes.LEDBord import LEDBord
+from OTLMOW.OTLModel.Datatypes.KlDynBordVMSMerk import KlDynBordVMSMerk
+from OTLMOW.OTLModel.Datatypes.KlDynBordVMSModelnaam import KlDynBordVMSModelnaam
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit

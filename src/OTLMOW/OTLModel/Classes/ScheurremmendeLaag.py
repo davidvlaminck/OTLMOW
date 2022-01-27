@@ -1,7 +1,7 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from src.OTLMOW.OTLModel.Classes.AndereLaag import AndereLaag
-from src.OTLMOW.OTLModel.Datatypes.KlScheurremmendeLaagType import KlScheurremmendeLaagType
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.Classes.AndereLaag import AndereLaag
+from OTLMOW.OTLModel.Datatypes.KlScheurremmendeLaagType import KlScheurremmendeLaagType
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit

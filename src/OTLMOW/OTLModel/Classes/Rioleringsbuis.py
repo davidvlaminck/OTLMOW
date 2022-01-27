@@ -1,10 +1,10 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from src.OTLMOW.OTLModel.Classes.Buis import Buis
-from src.OTLMOW.OTLModel.Datatypes.IntegerField import IntegerField
-from src.OTLMOW.OTLModel.Datatypes.KlRioleringsbuisFunctie import KlRioleringsbuisFunctie
-from src.OTLMOW.OTLModel.Datatypes.KlRioleringsbuisMateriaal import KlRioleringsbuisMateriaal
-from src.OTLMOW.OTLModel.Datatypes.KlSterktereeks import KlSterktereeks
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.Classes.Buis import Buis
+from OTLMOW.OTLModel.Datatypes.IntegerField import IntegerField
+from OTLMOW.OTLModel.Datatypes.KlRioleringsbuisFunctie import KlRioleringsbuisFunctie
+from OTLMOW.OTLModel.Datatypes.KlRioleringsbuisMateriaal import KlRioleringsbuisMateriaal
+from OTLMOW.OTLModel.Datatypes.KlSterktereeks import KlSterktereeks
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit

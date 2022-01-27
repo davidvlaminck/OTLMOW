@@ -1,9 +1,9 @@
-from src.OTLMOW.Loggers.AbstractLogger import AbstractLogger
-from src.OTLMOW.Loggers.LogType import LogType
-from src.OTLMOW.ModelGenerator.AbstractDatatypeCreator import AbstractDatatypeCreator
-from src.OTLMOW.ModelGenerator.Inheritance import Inheritance
-from src.OTLMOW.ModelGenerator.OSLOClass import OSLOClass
-from src.OTLMOW.ModelGenerator.OSLOCollector import OSLOCollector
+from OTLMOW.Loggers.AbstractLogger import AbstractLogger
+from OTLMOW.Loggers.LogType import LogType
+from OTLMOW.ModelGenerator.AbstractDatatypeCreator import AbstractDatatypeCreator
+from OTLMOW.ModelGenerator.Inheritance import Inheritance
+from OTLMOW.ModelGenerator.OSLOClass import OSLOClass
+from OTLMOW.ModelGenerator.OSLOCollector import OSLOCollector
 
 
 class OTLClassCreator(AbstractDatatypeCreator):
@@ -53,7 +53,7 @@ class OTLClassCreator(AbstractDatatypeCreator):
             inheritances.append(
                 Inheritance(base_name='RelatieInteractor', base_uri='', class_name='', class_uri='', deprecated_version=''))
 
-        datablock = ['# coding=utf-8', 'from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut']
+        datablock = ['# coding=utf-8', 'from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut']
 
         if osloClass.abstract == 1:
             if len(inheritances) > 0:
@@ -64,16 +64,16 @@ class OTLClassCreator(AbstractDatatypeCreator):
         if len(inheritances) > 0:
             for inheritance in inheritances:
                 if inheritance.base_name in ['OTLAsset', 'OTLObject', 'RelatieInteractor', 'AttributeInfo']:
-                    datablock.append(f'from src.OTLMOW.OTLModel.BaseClasses.{inheritance.base_name} import {inheritance.base_name}')
+                    datablock.append(f'from OTLMOW.OTLModel.BaseClasses.{inheritance.base_name} import {inheritance.base_name}')
                 else:
-                    datablock.append(f'from src.OTLMOW.OTLModel.Classes.{inheritance.base_name} import {inheritance.base_name}')
+                    datablock.append(f'from OTLMOW.OTLModel.Classes.{inheritance.base_name} import {inheritance.base_name}')
 
         if any(atr.readonly == 1 for atr in attributen):
             raise NotImplementedError("readonly property is assumed to be 0 on value fields")
 
         listOfFields = self.getFieldsToImportFromListOfAttributes(attributen)
         for typeField in listOfFields:
-            datablock.append(f'from src.OTLMOW.OTLModel.Datatypes.{typeField} import {typeField}')
+            datablock.append(f'from OTLMOW.OTLModel.Datatypes.{typeField} import {typeField}')
 
         datablock.append('')
         datablock.append('')

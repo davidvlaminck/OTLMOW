@@ -1,8 +1,8 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from abc import abstractmethod
-from src.OTLMOW.OTLModel.Classes.Draagconstructie import Draagconstructie
-from src.OTLMOW.OTLModel.Datatypes.KlEMDraagconstructieElekBeveiliging import KlEMDraagconstructieElekBeveiliging
+from OTLMOW.OTLModel.Classes.Draagconstructie import Draagconstructie
+from OTLMOW.OTLModel.Datatypes.KlEMDraagconstructieElekBeveiliging import KlEMDraagconstructieElekBeveiliging
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit

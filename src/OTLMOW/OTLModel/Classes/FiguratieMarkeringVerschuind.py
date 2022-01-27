@@ -1,11 +1,11 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from src.OTLMOW.OTLModel.Classes.FiguratieMarkeringToegang import FiguratieMarkeringToegang
-from src.OTLMOW.OTLModel.Datatypes.KlFiguratieCodeVerschuind import KlFiguratieCodeVerschuind
-from src.OTLMOW.OTLModel.Datatypes.KlFiguratieSoortVerschuind import KlFiguratieSoortVerschuind
-from src.OTLMOW.OTLModel.Datatypes.KlFiguratieTypeVerschuind import KlFiguratieTypeVerschuind
-from src.OTLMOW.OTLModel.Datatypes.KwantWrdInDecimaleGraden import KwantWrdInDecimaleGraden
-from src.OTLMOW.OTLModel.Datatypes.KwantWrdInVierkanteMeter import KwantWrdInVierkanteMeter
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.Classes.FiguratieMarkeringToegang import FiguratieMarkeringToegang
+from OTLMOW.OTLModel.Datatypes.KlFiguratieCodeVerschuind import KlFiguratieCodeVerschuind
+from OTLMOW.OTLModel.Datatypes.KlFiguratieSoortVerschuind import KlFiguratieSoortVerschuind
+from OTLMOW.OTLModel.Datatypes.KlFiguratieTypeVerschuind import KlFiguratieTypeVerschuind
+from OTLMOW.OTLModel.Datatypes.KwantWrdInDecimaleGraden import KwantWrdInDecimaleGraden
+from OTLMOW.OTLModel.Datatypes.KwantWrdInVierkanteMeter import KwantWrdInVierkanteMeter
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit

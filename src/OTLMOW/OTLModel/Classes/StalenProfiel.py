@@ -1,12 +1,12 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from abc import abstractmethod
-from src.OTLMOW.OTLModel.Classes.ConstructieElement import ConstructieElement
-from src.OTLMOW.OTLModel.Classes.StalenConstructieElement import StalenConstructieElement
-from src.OTLMOW.OTLModel.Classes.ConstructieElementenGC import ConstructieElementenGC
-from src.OTLMOW.OTLModel.Datatypes.BooleanField import BooleanField
-from src.OTLMOW.OTLModel.Datatypes.DtcDocument import DtcDocument
-from src.OTLMOW.OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter
+from OTLMOW.OTLModel.Classes.ConstructieElement import ConstructieElement
+from OTLMOW.OTLModel.Classes.StalenConstructieElement import StalenConstructieElement
+from OTLMOW.OTLModel.Classes.ConstructieElementenGC import ConstructieElementenGC
+from OTLMOW.OTLModel.Datatypes.BooleanField import BooleanField
+from OTLMOW.OTLModel.Datatypes.DtcDocument import DtcDocument
+from OTLMOW.OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit

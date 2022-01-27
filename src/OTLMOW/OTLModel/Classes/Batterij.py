@@ -1,8 +1,8 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from src.OTLMOW.OTLModel.Classes.Voedingspunt import Voedingspunt
-from src.OTLMOW.OTLModel.Datatypes.KlBatterijMerk import KlBatterijMerk
-from src.OTLMOW.OTLModel.Datatypes.KlBatterijModelnaam import KlBatterijModelnaam
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.Classes.Voedingspunt import Voedingspunt
+from OTLMOW.OTLModel.Datatypes.KlBatterijMerk import KlBatterijMerk
+from OTLMOW.OTLModel.Datatypes.KlBatterijModelnaam import KlBatterijModelnaam
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit

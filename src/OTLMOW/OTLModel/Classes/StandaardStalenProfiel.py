@@ -1,7 +1,7 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from src.OTLMOW.OTLModel.Classes.StalenProfiel import StalenProfiel
-from src.OTLMOW.OTLModel.Datatypes.DtcProfieltype import DtcProfieltype
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.Classes.StalenProfiel import StalenProfiel
+from OTLMOW.OTLModel.Datatypes.DtcProfieltype import DtcProfieltype
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit

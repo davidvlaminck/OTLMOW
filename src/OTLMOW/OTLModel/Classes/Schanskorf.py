@@ -1,12 +1,12 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from src.OTLMOW.OTLModel.Classes.AndereVerharding import AndereVerharding
-from src.OTLMOW.OTLModel.Datatypes.BooleanField import BooleanField
-from src.OTLMOW.OTLModel.Datatypes.DtcDocument import DtcDocument
-from src.OTLMOW.OTLModel.Datatypes.KlSchanskorfVorm import KlSchanskorfVorm
-from src.OTLMOW.OTLModel.Datatypes.KlStortsteenKaliber import KlStortsteenKaliber
-from src.OTLMOW.OTLModel.Datatypes.KlStortsteenType import KlStortsteenType
-from src.OTLMOW.OTLModel.Datatypes.KlTypeSchanskorf import KlTypeSchanskorf
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.Classes.AndereVerharding import AndereVerharding
+from OTLMOW.OTLModel.Datatypes.BooleanField import BooleanField
+from OTLMOW.OTLModel.Datatypes.DtcDocument import DtcDocument
+from OTLMOW.OTLModel.Datatypes.KlSchanskorfVorm import KlSchanskorfVorm
+from OTLMOW.OTLModel.Datatypes.KlStortsteenKaliber import KlStortsteenKaliber
+from OTLMOW.OTLModel.Datatypes.KlStortsteenType import KlStortsteenType
+from OTLMOW.OTLModel.Datatypes.KlTypeSchanskorf import KlTypeSchanskorf
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit

@@ -1,10 +1,10 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from src.OTLMOW.OTLModel.Classes.NaampadObject import NaampadObject
-from src.OTLMOW.OTLModel.Datatypes.BooleanField import BooleanField
-from src.OTLMOW.OTLModel.Datatypes.DtcDocument import DtcDocument
-from src.OTLMOW.OTLModel.Datatypes.KlAlgRijrichting import KlAlgRijrichting
-from src.OTLMOW.OTLModel.Datatypes.KlAlgSnelheidsregime import KlAlgSnelheidsregime
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.Classes.NaampadObject import NaampadObject
+from OTLMOW.OTLModel.Datatypes.BooleanField import BooleanField
+from OTLMOW.OTLModel.Datatypes.DtcDocument import DtcDocument
+from OTLMOW.OTLModel.Datatypes.KlAlgRijrichting import KlAlgRijrichting
+from OTLMOW.OTLModel.Datatypes.KlAlgSnelheidsregime import KlAlgSnelheidsregime
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit

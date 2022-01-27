@@ -1,15 +1,15 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from src.OTLMOW.OTLModel.Classes.VegetatieElement import VegetatieElement
-from src.OTLMOW.OTLModel.Datatypes.BooleanField import BooleanField
-from src.OTLMOW.OTLModel.Datatypes.DtcAanlegBoomvorm import DtcAanlegBoomvorm
-from src.OTLMOW.OTLModel.Datatypes.KlBoomGroeifase import KlBoomGroeifase
-from src.OTLMOW.OTLModel.Datatypes.KlBoomspiegelInvulling import KlBoomspiegelInvulling
-from src.OTLMOW.OTLModel.Datatypes.KlEindbeeldOpgaandeBoom import KlEindbeeldOpgaandeBoom
-from src.OTLMOW.OTLModel.Datatypes.KlKlassePlantjaar import KlKlassePlantjaar
-from src.OTLMOW.OTLModel.Datatypes.KwantWrdInCentimeter import KwantWrdInCentimeter
-from src.OTLMOW.OTLModel.Datatypes.KwantWrdInKubiekeMeter import KwantWrdInKubiekeMeter
-from src.OTLMOW.OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.Classes.VegetatieElement import VegetatieElement
+from OTLMOW.OTLModel.Datatypes.BooleanField import BooleanField
+from OTLMOW.OTLModel.Datatypes.DtcAanlegBoomvorm import DtcAanlegBoomvorm
+from OTLMOW.OTLModel.Datatypes.KlBoomGroeifase import KlBoomGroeifase
+from OTLMOW.OTLModel.Datatypes.KlBoomspiegelInvulling import KlBoomspiegelInvulling
+from OTLMOW.OTLModel.Datatypes.KlEindbeeldOpgaandeBoom import KlEindbeeldOpgaandeBoom
+from OTLMOW.OTLModel.Datatypes.KlKlassePlantjaar import KlKlassePlantjaar
+from OTLMOW.OTLModel.Datatypes.KwantWrdInCentimeter import KwantWrdInCentimeter
+from OTLMOW.OTLModel.Datatypes.KwantWrdInKubiekeMeter import KwantWrdInKubiekeMeter
+from OTLMOW.OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit

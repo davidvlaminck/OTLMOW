@@ -1,12 +1,12 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from src.OTLMOW.OTLModel.Classes.AIMNaamObject import AIMNaamObject
-from src.OTLMOW.OTLModel.Datatypes.DtcDocument import DtcDocument
-from src.OTLMOW.OTLModel.Datatypes.KlPTRegelaarMerk import KlPTRegelaarMerk
-from src.OTLMOW.OTLModel.Datatypes.KlPTRegelaarModelnaam import KlPTRegelaarModelnaam
-from src.OTLMOW.OTLModel.Datatypes.KlPtRegelaarCommunicatiewijze import KlPtRegelaarCommunicatiewijze
-from src.OTLMOW.OTLModel.Datatypes.KlPtRegelaarProtocol import KlPtRegelaarProtocol
-from src.OTLMOW.OTLModel.Datatypes.StringField import StringField
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.Classes.AIMNaamObject import AIMNaamObject
+from OTLMOW.OTLModel.Datatypes.DtcDocument import DtcDocument
+from OTLMOW.OTLModel.Datatypes.KlPTRegelaarMerk import KlPTRegelaarMerk
+from OTLMOW.OTLModel.Datatypes.KlPTRegelaarModelnaam import KlPTRegelaarModelnaam
+from OTLMOW.OTLModel.Datatypes.KlPtRegelaarCommunicatiewijze import KlPtRegelaarCommunicatiewijze
+from OTLMOW.OTLModel.Datatypes.KlPtRegelaarProtocol import KlPtRegelaarProtocol
+from OTLMOW.OTLModel.Datatypes.StringField import StringField
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit

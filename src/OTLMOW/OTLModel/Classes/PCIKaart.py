@@ -1,8 +1,8 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from src.OTLMOW.OTLModel.Classes.AIMNaamObject import AIMNaamObject
-from src.OTLMOW.OTLModel.Datatypes.KlPCIkaartMerk import KlPCIkaartMerk
-from src.OTLMOW.OTLModel.Datatypes.KlPCIkaartModelnaam import KlPCIkaartModelnaam
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.Classes.AIMNaamObject import AIMNaamObject
+from OTLMOW.OTLModel.Datatypes.KlPCIkaartMerk import KlPCIkaartMerk
+from OTLMOW.OTLModel.Datatypes.KlPCIkaartModelnaam import KlPCIkaartModelnaam
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit

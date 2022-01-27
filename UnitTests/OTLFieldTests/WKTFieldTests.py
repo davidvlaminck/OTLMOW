@@ -1,6 +1,6 @@
 ﻿import unittest
 
-from src.OTLMOW.OTLModel.BaseClasses.OTLAsset import OTLAsset
+from OTLMOW.OTLModel.BaseClasses.OTLAsset import OTLAsset
 
 
 class WktTestClass(OTLAsset):

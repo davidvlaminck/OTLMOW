@@ -1,9 +1,9 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from src.OTLMOW.OTLModel.Classes.AIMObject import AIMObject
-from src.OTLMOW.OTLModel.Datatypes.KlVerwarmingselementMerk import KlVerwarmingselementMerk
-from src.OTLMOW.OTLModel.Datatypes.KlVerwarmingselementModelnaam import KlVerwarmingselementModelnaam
-from src.OTLMOW.OTLModel.Datatypes.KwantWrdInWatt import KwantWrdInWatt
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.Classes.AIMObject import AIMObject
+from OTLMOW.OTLModel.Datatypes.KlVerwarmingselementMerk import KlVerwarmingselementMerk
+from OTLMOW.OTLModel.Datatypes.KlVerwarmingselementModelnaam import KlVerwarmingselementModelnaam
+from OTLMOW.OTLModel.Datatypes.KwantWrdInWatt import KwantWrdInWatt
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit

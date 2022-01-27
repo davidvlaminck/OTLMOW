@@ -1,9 +1,9 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from abc import abstractmethod
-from src.OTLMOW.OTLModel.Classes.Kantopsluiting import Kantopsluiting
-from src.OTLMOW.OTLModel.Datatypes.KlLEKantopsluitingBijkomendeParameter import KlLEKantopsluitingBijkomendeParameter
-from src.OTLMOW.OTLModel.Datatypes.KlLEStandaardFabricageLengte import KlLEStandaardFabricageLengte
+from OTLMOW.OTLModel.Classes.Kantopsluiting import Kantopsluiting
+from OTLMOW.OTLModel.Datatypes.KlLEKantopsluitingBijkomendeParameter import KlLEKantopsluitingBijkomendeParameter
+from OTLMOW.OTLModel.Datatypes.KlLEStandaardFabricageLengte import KlLEStandaardFabricageLengte
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit

@@ -1,7 +1,7 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from src.OTLMOW.OTLModel.Classes.VerlichtingstoestelConnector import VerlichtingstoestelConnector
-from src.OTLMOW.OTLModel.Classes.Verlichtingstoestel import Verlichtingstoestel
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.Classes.VerlichtingstoestelConnector import VerlichtingstoestelConnector
+from OTLMOW.OTLModel.Classes.Verlichtingstoestel import Verlichtingstoestel
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit

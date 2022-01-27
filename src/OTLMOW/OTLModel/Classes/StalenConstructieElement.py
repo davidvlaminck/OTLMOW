@@ -1,8 +1,8 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from abc import abstractmethod, ABC
-from src.OTLMOW.OTLModel.Datatypes.DtcConstructiestaalspecificaties import DtcConstructiestaalspecificaties
-from src.OTLMOW.OTLModel.Datatypes.KwantWrdInKilogram import KwantWrdInKilogram
+from OTLMOW.OTLModel.Datatypes.DtcConstructiestaalspecificaties import DtcConstructiestaalspecificaties
+from OTLMOW.OTLModel.Datatypes.KwantWrdInKilogram import KwantWrdInKilogram
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit

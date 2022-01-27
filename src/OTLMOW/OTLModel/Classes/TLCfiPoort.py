@@ -1,8 +1,8 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from src.OTLMOW.OTLModel.Classes.IVRIComponent import IVRIComponent
-from src.OTLMOW.OTLModel.Datatypes.KlIVRIMerkTLCfi import KlIVRIMerkTLCfi
-from src.OTLMOW.OTLModel.Datatypes.KlIVRIModelTLCfi import KlIVRIModelTLCfi
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.Classes.IVRIComponent import IVRIComponent
+from OTLMOW.OTLModel.Datatypes.KlIVRIMerkTLCfi import KlIVRIMerkTLCfi
+from OTLMOW.OTLModel.Datatypes.KlIVRIModelTLCfi import KlIVRIModelTLCfi
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit

@@ -2,10 +2,10 @@
 import unittest
 from unittest.mock import Mock
 
-from src.OTLMOW.Loggers.NoneLogger import NoneLogger
-from src.OTLMOW.ModelGenerator.OSLOCollector import OSLOCollector
-from src.OTLMOW.ModelGenerator.OSLOInMemoryCreator import OSLOInMemoryCreator
-from src.OTLMOW.ModelGenerator.OTLGeldigeRelatieCreator import OTLGeldigeRelatieCreator
+from OTLMOW.Loggers.NoneLogger import NoneLogger
+from OTLMOW.ModelGenerator.OSLOCollector import OSLOCollector
+from OTLMOW.ModelGenerator.OSLOInMemoryCreator import OSLOInMemoryCreator
+from OTLMOW.ModelGenerator.OTLGeldigeRelatieCreator import OTLGeldigeRelatieCreator
 
 
 class OTLClassCreatorTests(unittest.TestCase):

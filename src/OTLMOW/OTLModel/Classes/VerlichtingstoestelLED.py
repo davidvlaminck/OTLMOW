@@ -1,17 +1,17 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from src.OTLMOW.OTLModel.Classes.VerlichtingstoestelConnector import VerlichtingstoestelConnector
-from src.OTLMOW.OTLModel.Classes.Verlichtingstoestel import Verlichtingstoestel
-from src.OTLMOW.OTLModel.Datatypes.BooleanField import BooleanField
-from src.OTLMOW.OTLModel.Datatypes.DteKleurRAL import DteKleurRAL
-from src.OTLMOW.OTLModel.Datatypes.KlWvLedAantalTeVerlichtenRijstroken import KlWvLedAantalTeVerlichtenRijstroken
-from src.OTLMOW.OTLModel.Datatypes.KlWvLedKleurTemp import KlWvLedKleurTemp
-from src.OTLMOW.OTLModel.Datatypes.KlWvLedLichtkleur import KlWvLedLichtkleur
-from src.OTLMOW.OTLModel.Datatypes.KlWvLedLichtpunthoogte import KlWvLedLichtpunthoogte
-from src.OTLMOW.OTLModel.Datatypes.KlWvLedOverhang import KlWvLedOverhang
-from src.OTLMOW.OTLModel.Datatypes.KlWvLedProtector import KlWvLedProtector
-from src.OTLMOW.OTLModel.Datatypes.KlWvLedTussenafstand import KlWvLedTussenafstand
-from src.OTLMOW.OTLModel.Datatypes.KlWvLedVerlNiveau import KlWvLedVerlNiveau
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.Classes.VerlichtingstoestelConnector import VerlichtingstoestelConnector
+from OTLMOW.OTLModel.Classes.Verlichtingstoestel import Verlichtingstoestel
+from OTLMOW.OTLModel.Datatypes.BooleanField import BooleanField
+from OTLMOW.OTLModel.Datatypes.DteKleurRAL import DteKleurRAL
+from OTLMOW.OTLModel.Datatypes.KlWvLedAantalTeVerlichtenRijstroken import KlWvLedAantalTeVerlichtenRijstroken
+from OTLMOW.OTLModel.Datatypes.KlWvLedKleurTemp import KlWvLedKleurTemp
+from OTLMOW.OTLModel.Datatypes.KlWvLedLichtkleur import KlWvLedLichtkleur
+from OTLMOW.OTLModel.Datatypes.KlWvLedLichtpunthoogte import KlWvLedLichtpunthoogte
+from OTLMOW.OTLModel.Datatypes.KlWvLedOverhang import KlWvLedOverhang
+from OTLMOW.OTLModel.Datatypes.KlWvLedProtector import KlWvLedProtector
+from OTLMOW.OTLModel.Datatypes.KlWvLedTussenafstand import KlWvLedTussenafstand
+from OTLMOW.OTLModel.Datatypes.KlWvLedVerlNiveau import KlWvLedVerlNiveau
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit

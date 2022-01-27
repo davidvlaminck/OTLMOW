@@ -1,5 +1,5 @@
-from src.OTLMOW.OTLModel.BaseClasses.OTLField import OTLField
-from src.OTLMOW.OTLModel.Datatypes.IntegerField import IntegerField
+from OTLMOW.OTLModel.BaseClasses.OTLField import OTLField
+from OTLMOW.OTLModel.Datatypes.IntegerField import IntegerField
 
 
 class NonNegIntegerField(IntegerField):

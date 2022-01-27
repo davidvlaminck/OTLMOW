@@ -1,11 +1,11 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from src.OTLMOW.OTLModel.Classes.AIMNaamObject import AIMNaamObject
-from src.OTLMOW.OTLModel.Datatypes.BooleanField import BooleanField
-from src.OTLMOW.OTLModel.Datatypes.DtcAfmetingDiameterInCm import DtcAfmetingDiameterInCm
-from src.OTLMOW.OTLModel.Datatypes.DtuAfmetingGrondvlak import DtuAfmetingGrondvlak
-from src.OTLMOW.OTLModel.Datatypes.KlAlgMateriaal import KlAlgMateriaal
-from src.OTLMOW.OTLModel.Datatypes.KwantWrdInCentimeter import KwantWrdInCentimeter
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.Classes.AIMNaamObject import AIMNaamObject
+from OTLMOW.OTLModel.Datatypes.BooleanField import BooleanField
+from OTLMOW.OTLModel.Datatypes.DtcAfmetingDiameterInCm import DtcAfmetingDiameterInCm
+from OTLMOW.OTLModel.Datatypes.DtuAfmetingGrondvlak import DtuAfmetingGrondvlak
+from OTLMOW.OTLModel.Datatypes.KlAlgMateriaal import KlAlgMateriaal
+from OTLMOW.OTLModel.Datatypes.KwantWrdInCentimeter import KwantWrdInCentimeter
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit

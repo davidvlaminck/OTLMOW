@@ -1,13 +1,13 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from abc import abstractmethod
-from src.OTLMOW.OTLModel.Classes.Behuizing import Behuizing
-from src.OTLMOW.OTLModel.Datatypes.DtcAfmetingBxlxhInM import DtcAfmetingBxlxhInM
-from src.OTLMOW.OTLModel.Datatypes.DtcDocument import DtcDocument
-from src.OTLMOW.OTLModel.Datatypes.KlAlgMateriaal import KlAlgMateriaal
-from src.OTLMOW.OTLModel.Datatypes.KlCabineMerk import KlCabineMerk
-from src.OTLMOW.OTLModel.Datatypes.KlCabineModelnaam import KlCabineModelnaam
-from src.OTLMOW.OTLModel.Datatypes.StringField import StringField
+from OTLMOW.OTLModel.Classes.Behuizing import Behuizing
+from OTLMOW.OTLModel.Datatypes.DtcAfmetingBxlxhInM import DtcAfmetingBxlxhInM
+from OTLMOW.OTLModel.Datatypes.DtcDocument import DtcDocument
+from OTLMOW.OTLModel.Datatypes.KlAlgMateriaal import KlAlgMateriaal
+from OTLMOW.OTLModel.Datatypes.KlCabineMerk import KlCabineMerk
+from OTLMOW.OTLModel.Datatypes.KlCabineModelnaam import KlCabineModelnaam
+from OTLMOW.OTLModel.Datatypes.StringField import StringField
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit

@@ -1,12 +1,12 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from abc import abstractmethod
-from src.OTLMOW.OTLModel.Classes.AIMNaamObject import AIMNaamObject
-from src.OTLMOW.OTLModel.Datatypes.BooleanField import BooleanField
-from src.OTLMOW.OTLModel.Datatypes.KlLantaarnVormgeving import KlLantaarnVormgeving
-from src.OTLMOW.OTLModel.Datatypes.KlSeinlantaarnDiameter import KlSeinlantaarnDiameter
-from src.OTLMOW.OTLModel.Datatypes.KlSeinlantaarnMerk import KlSeinlantaarnMerk
-from src.OTLMOW.OTLModel.Datatypes.KlSeinlantaarnModelnaam import KlSeinlantaarnModelnaam
+from OTLMOW.OTLModel.Classes.AIMNaamObject import AIMNaamObject
+from OTLMOW.OTLModel.Datatypes.BooleanField import BooleanField
+from OTLMOW.OTLModel.Datatypes.KlLantaarnVormgeving import KlLantaarnVormgeving
+from OTLMOW.OTLModel.Datatypes.KlSeinlantaarnDiameter import KlSeinlantaarnDiameter
+from OTLMOW.OTLModel.Datatypes.KlSeinlantaarnMerk import KlSeinlantaarnMerk
+from OTLMOW.OTLModel.Datatypes.KlSeinlantaarnModelnaam import KlSeinlantaarnModelnaam
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit

@@ -1,13 +1,13 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from abc import abstractmethod
-from src.OTLMOW.OTLModel.Classes.BijlageVoertuigkering import BijlageVoertuigkering
-from src.OTLMOW.OTLModel.Classes.LijnvormigElement import LijnvormigElement
-from src.OTLMOW.OTLModel.Datatypes.BooleanField import BooleanField
-from src.OTLMOW.OTLModel.Datatypes.DtcDocument import DtcDocument
-from src.OTLMOW.OTLModel.Datatypes.DtcProductidentificatiecode import DtcProductidentificatiecode
-from src.OTLMOW.OTLModel.Datatypes.KlLEACMateriaal import KlLEACMateriaal
-from src.OTLMOW.OTLModel.Datatypes.StringField import StringField
+from OTLMOW.OTLModel.Classes.BijlageVoertuigkering import BijlageVoertuigkering
+from OTLMOW.OTLModel.Classes.LijnvormigElement import LijnvormigElement
+from OTLMOW.OTLModel.Datatypes.BooleanField import BooleanField
+from OTLMOW.OTLModel.Datatypes.DtcDocument import DtcDocument
+from OTLMOW.OTLModel.Datatypes.DtcProductidentificatiecode import DtcProductidentificatiecode
+from OTLMOW.OTLModel.Datatypes.KlLEACMateriaal import KlLEACMateriaal
+from OTLMOW.OTLModel.Datatypes.StringField import StringField
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit

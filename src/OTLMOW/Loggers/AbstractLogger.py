@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 
-from src.OTLMOW.Loggers.LogType import LogType
+from OTLMOW.Loggers.LogType import LogType
 
 
 class AbstractLogger(ABC):

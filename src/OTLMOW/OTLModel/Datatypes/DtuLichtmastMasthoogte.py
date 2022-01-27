@@ -1,10 +1,10 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.AttributeInfo import AttributeInfo
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from src.OTLMOW.OTLModel.Datatypes.KlLichtmastMasthoogte import KlLichtmastMasthoogte
-from src.OTLMOW.OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter
-from src.OTLMOW.OTLModel.Datatypes.UnionTypeField import UnionTypeField
-from src.OTLMOW.OTLModel.Datatypes.UnionWaarden import UnionWaarden
+from OTLMOW.OTLModel.BaseClasses.AttributeInfo import AttributeInfo
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.Datatypes.KlLichtmastMasthoogte import KlLichtmastMasthoogte
+from OTLMOW.OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter
+from OTLMOW.OTLModel.Datatypes.UnionTypeField import UnionTypeField
+from OTLMOW.OTLModel.Datatypes.UnionWaarden import UnionWaarden
 
 
 # Generated with OTLUnionDatatypeCreator. To modify: extend, do not edit

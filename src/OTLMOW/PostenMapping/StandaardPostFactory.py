@@ -1,8 +1,8 @@
-﻿from src.OTLMOW.Facility.DotnotatieHelper import DotnotatieHelper
-from src.OTLMOW.OTLModel.BaseClasses.OTLAsset import OTLAsset
-from src.OTLMOW.OTLModel.ClassLoader import ClassLoader
-from src.OTLMOW.PostenMapping.PostenLijst import PostenLijst
-from src.OTLMOW.PostenMapping.StandaardPost import StandaardPost
+﻿from OTLMOW.Facility.DotnotatieHelper import DotnotatieHelper
+from OTLMOW.OTLModel.BaseClasses.OTLAsset import OTLAsset
+from OTLMOW.OTLModel.ClassLoader import ClassLoader
+from OTLMOW.PostenMapping.PostenLijst import PostenLijst
+from OTLMOW.PostenMapping.StandaardPost import StandaardPost
 
 
 class StandaardPostFactory:

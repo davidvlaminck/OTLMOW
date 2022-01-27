@@ -1,6 +1,6 @@
-from src.OTLMOW.OTLModel import GeldigeRelatieLijst
-from src.OTLMOW.ModelGenerator.BaseClasses import RelatieValidator
-from src.OTLMOW.ModelGenerator.BaseClasses import Singleton
+from OTLMOW.OTLModel import GeldigeRelatieLijst
+from OTLMOW.ModelGenerator.BaseClasses import RelatieValidator
+from OTLMOW.ModelGenerator.BaseClasses import Singleton
 
 
 

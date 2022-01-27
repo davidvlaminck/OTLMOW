@@ -1,6 +1,6 @@
 from abc import abstractmethod
 
-from src.OTLMOW.ModelGenerator.BaseClasses import RelatieRichting
+from OTLMOW.ModelGenerator.BaseClasses import RelatieRichting
 
 
 class RelatieInteractor:

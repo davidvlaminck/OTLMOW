@@ -1,11 +1,11 @@
 ﻿import unittest
 from unittest import TestCase
 
-from src.OTLMOW.OTLModel.Classes.AIMNaamObject import AIMNaamObject
-from src.OTLMOW.Facility.AssetFactory import AssetFactory
-from src.OTLMOW.OTLModel.Classes.Aftakking import Aftakking
-from src.OTLMOW.OTLModel.Classes.Agent import Agent
-from src.OTLMOW.OTLModel.Classes.Stroomkring import Stroomkring
+from OTLMOW.OTLModel.Classes.AIMNaamObject import AIMNaamObject
+from OTLMOW.Facility.AssetFactory import AssetFactory
+from OTLMOW.OTLModel.Classes.Aftakking import Aftakking
+from OTLMOW.OTLModel.Classes.Agent import Agent
+from OTLMOW.OTLModel.Classes.Stroomkring import Stroomkring
 
 
 class AssetFactoryTests(TestCase):

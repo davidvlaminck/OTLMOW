@@ -1,6 +1,6 @@
-from src.OTLMOW.ModelGenerator import SQLDbReader
-from src.OTLMOW.PostenMapping.StandaardPost import StandaardPost
-from src.OTLMOW.PostenMapping.StandaardPostMapping import StandaardPostMapping
+from OTLMOW.ModelGenerator import SQLDbReader
+from OTLMOW.PostenMapping.StandaardPost import StandaardPost
+from OTLMOW.PostenMapping.StandaardPostMapping import StandaardPostMapping
 
 
 class PostenInMemoryCreator:

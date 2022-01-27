@@ -1,12 +1,12 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from src.OTLMOW.OTLModel.Classes.AIMObject import AIMObject
-from src.OTLMOW.OTLModel.Datatypes.DtcDocument import DtcDocument
-from src.OTLMOW.OTLModel.Datatypes.DtcExterneReferentie import DtcExterneReferentie
-from src.OTLMOW.OTLModel.Datatypes.KlVerkeersbordCategorie import KlVerkeersbordCategorie
-from src.OTLMOW.OTLModel.Datatypes.KlVerkeersbordCode import KlVerkeersbordCode
-from src.OTLMOW.OTLModel.Datatypes.KlVerkeersbordconceptStatus import KlVerkeersbordconceptStatus
-from src.OTLMOW.OTLModel.Datatypes.StringField import StringField
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.Classes.AIMObject import AIMObject
+from OTLMOW.OTLModel.Datatypes.DtcDocument import DtcDocument
+from OTLMOW.OTLModel.Datatypes.DtcExterneReferentie import DtcExterneReferentie
+from OTLMOW.OTLModel.Datatypes.KlVerkeersbordCategorie import KlVerkeersbordCategorie
+from OTLMOW.OTLModel.Datatypes.KlVerkeersbordCode import KlVerkeersbordCode
+from OTLMOW.OTLModel.Datatypes.KlVerkeersbordconceptStatus import KlVerkeersbordconceptStatus
+from OTLMOW.OTLModel.Datatypes.StringField import StringField
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit

@@ -2,8 +2,8 @@
 import warnings
 from datetime import datetime
 
-from src.OTLMOW.OTLModel.BaseClasses.AttributeInfo import AttributeInfo
-from src.OTLMOW.OTLModel.BaseClasses.OTLField import OTLField
+from OTLMOW.OTLModel.BaseClasses.AttributeInfo import AttributeInfo
+from OTLMOW.OTLModel.BaseClasses.OTLField import OTLField
 
 
 class OTLAttribuut(AttributeInfo):

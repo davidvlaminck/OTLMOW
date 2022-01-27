@@ -1,7 +1,7 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from src.OTLMOW.OTLModel.Classes.VegetatieElement import VegetatieElement
-from src.OTLMOW.OTLModel.Datatypes.KlVegetatieWortel import KlVegetatieWortel
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.Classes.VegetatieElement import VegetatieElement
+from OTLMOW.OTLModel.Datatypes.KlVegetatieWortel import KlVegetatieWortel
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit

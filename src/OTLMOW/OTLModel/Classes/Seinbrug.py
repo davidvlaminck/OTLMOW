@@ -1,12 +1,12 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from src.OTLMOW.OTLModel.Classes.VRIDraagconstructie import VRIDraagconstructie
-from src.OTLMOW.OTLModel.Datatypes.BooleanField import BooleanField
-from src.OTLMOW.OTLModel.Datatypes.DtcDocument import DtcDocument
-from src.OTLMOW.OTLModel.Datatypes.FloatOrDecimalField import FloatOrDecimalField
-from src.OTLMOW.OTLModel.Datatypes.KlSeinbrugRijrichting import KlSeinbrugRijrichting
-from src.OTLMOW.OTLModel.Datatypes.KlSeinbrugType import KlSeinbrugType
-from src.OTLMOW.OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.Classes.VRIDraagconstructie import VRIDraagconstructie
+from OTLMOW.OTLModel.Datatypes.BooleanField import BooleanField
+from OTLMOW.OTLModel.Datatypes.DtcDocument import DtcDocument
+from OTLMOW.OTLModel.Datatypes.FloatOrDecimalField import FloatOrDecimalField
+from OTLMOW.OTLModel.Datatypes.KlSeinbrugRijrichting import KlSeinbrugRijrichting
+from OTLMOW.OTLModel.Datatypes.KlSeinbrugType import KlSeinbrugType
+from OTLMOW.OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit

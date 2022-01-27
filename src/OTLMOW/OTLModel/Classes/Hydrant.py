@@ -1,9 +1,9 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from src.OTLMOW.OTLModel.Classes.Brandvoorziening import Brandvoorziening
-from src.OTLMOW.OTLModel.Datatypes.BooleanField import BooleanField
-from src.OTLMOW.OTLModel.Datatypes.KlHydrantKoppeling import KlHydrantKoppeling
-from src.OTLMOW.OTLModel.Datatypes.KwantWrdInInch import KwantWrdInInch
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.Classes.Brandvoorziening import Brandvoorziening
+from OTLMOW.OTLModel.Datatypes.BooleanField import BooleanField
+from OTLMOW.OTLModel.Datatypes.KlHydrantKoppeling import KlHydrantKoppeling
+from OTLMOW.OTLModel.Datatypes.KwantWrdInInch import KwantWrdInInch
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit

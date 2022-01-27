@@ -1,12 +1,12 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from src.OTLMOW.OTLModel.Classes.AIMNaamObject import AIMNaamObject
-from src.OTLMOW.OTLModel.Classes.Draagconstructie import Draagconstructie
-from src.OTLMOW.OTLModel.Datatypes.KlOperationeleStatus import KlOperationeleStatus
-from src.OTLMOW.OTLModel.Datatypes.KlVerkeersbordsteunType import KlVerkeersbordsteunType
-from src.OTLMOW.OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter
-from src.OTLMOW.OTLModel.Datatypes.KwantWrdInMillimeter import KwantWrdInMillimeter
-from src.OTLMOW.OTLModel.Datatypes.StringField import StringField
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.Classes.AIMNaamObject import AIMNaamObject
+from OTLMOW.OTLModel.Classes.Draagconstructie import Draagconstructie
+from OTLMOW.OTLModel.Datatypes.KlOperationeleStatus import KlOperationeleStatus
+from OTLMOW.OTLModel.Datatypes.KlVerkeersbordsteunType import KlVerkeersbordsteunType
+from OTLMOW.OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter
+from OTLMOW.OTLModel.Datatypes.KwantWrdInMillimeter import KwantWrdInMillimeter
+from OTLMOW.OTLModel.Datatypes.StringField import StringField
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit

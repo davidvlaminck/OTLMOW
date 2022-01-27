@@ -1,12 +1,12 @@
 from unittest import TestCase, mock
 
-from src.OTLMOW.Facility.DotnotatieHelper import DotnotatieHelper
-from src.OTLMOW.Loggers.NoneLogger import NoneLogger
-from src.OTLMOW.OTLModel.Classes.BitumineuzeLaag import BitumineuzeLaag
-from src.OTLMOW.PostenMapping.PostenCollector import PostenCollector
-from src.OTLMOW.PostenMapping.PostenCreator import PostenCreator
-from src.OTLMOW.PostenMapping.StandaardPost import StandaardPost
-from src.OTLMOW.PostenMapping.StandaardPostMapping import StandaardPostMapping
+from OTLMOW.Facility.DotnotatieHelper import DotnotatieHelper
+from OTLMOW.Loggers.NoneLogger import NoneLogger
+from OTLMOW.OTLModel.Classes.BitumineuzeLaag import BitumineuzeLaag
+from OTLMOW.PostenMapping.PostenCollector import PostenCollector
+from OTLMOW.PostenMapping.PostenCreator import PostenCreator
+from OTLMOW.PostenMapping.StandaardPost import StandaardPost
+from OTLMOW.PostenMapping.StandaardPostMapping import StandaardPostMapping
 
 
 class StandaardPostCollection:

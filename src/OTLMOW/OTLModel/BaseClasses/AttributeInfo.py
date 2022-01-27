@@ -1,5 +1,5 @@
-﻿from src.OTLMOW.OTLModel.Datatypes import ComplexField
-from src.OTLMOW.OTLModel.BaseClasses.KwantWrd import KwantWrd
+﻿from OTLMOW.OTLModel.Datatypes import ComplexField
+from OTLMOW.OTLModel.BaseClasses.KwantWrd import KwantWrd
 
 
 class AttributeInfo:

@@ -1,8 +1,8 @@
 from abc import abstractmethod, ABC
 
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from src.OTLMOW.OTLModel.BaseClasses.OTLObject import OTLObject
-from src.OTLMOW.OTLModel.BaseClasses.WKTField import WKTField
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.BaseClasses.OTLObject import OTLObject
+from OTLMOW.OTLModel.BaseClasses.WKTField import WKTField
 
 
 class OTLAsset(ABC, OTLObject):

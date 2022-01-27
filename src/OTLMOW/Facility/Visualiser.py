@@ -3,13 +3,13 @@
 from IPython.display import display, HTML
 from pyvis import network as net
 
-from src.OTLMOW.OTLModel.Classes.Bevestiging import Bevestiging
-from src.OTLMOW.OTLModel.Classes.HoortBij import HoortBij
-from src.OTLMOW.OTLModel.Classes.NietDirectioneleRelatie import NietDirectioneleRelatie
-from src.OTLMOW.OTLModel.Classes.RelatieObject import RelatieObject
-from src.OTLMOW.OTLModel.Classes.Sturing import Sturing
-from src.OTLMOW.OTLModel.Classes.Voedt import Voedt
-from src.OTLMOW.OTLModel.Classes.VoedtAangestuurd import VoedtAangestuurd
+from OTLMOW.OTLModel.Classes.Bevestiging import Bevestiging
+from OTLMOW.OTLModel.Classes.HoortBij import HoortBij
+from OTLMOW.OTLModel.Classes.NietDirectioneleRelatie import NietDirectioneleRelatie
+from OTLMOW.OTLModel.Classes.RelatieObject import RelatieObject
+from OTLMOW.OTLModel.Classes.Sturing import Sturing
+from OTLMOW.OTLModel.Classes.Voedt import Voedt
+from OTLMOW.OTLModel.Classes.VoedtAangestuurd import VoedtAangestuurd
 
 
 class Visualiser:

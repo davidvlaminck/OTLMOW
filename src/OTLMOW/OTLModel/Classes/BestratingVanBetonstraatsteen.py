@@ -1,10 +1,10 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from src.OTLMOW.OTLModel.Classes.Bestrating import Bestrating
-from src.OTLMOW.OTLModel.Datatypes.DtcBSSRandafwerking import DtcBSSRandafwerking
-from src.OTLMOW.OTLModel.Datatypes.KlBSSType import KlBSSType
-from src.OTLMOW.OTLModel.Datatypes.KlBestratingAfwerking import KlBestratingAfwerking
-from src.OTLMOW.OTLModel.Datatypes.KlBestratingselementAfmetingLxB import KlBestratingselementAfmetingLxB
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.Classes.Bestrating import Bestrating
+from OTLMOW.OTLModel.Datatypes.DtcBSSRandafwerking import DtcBSSRandafwerking
+from OTLMOW.OTLModel.Datatypes.KlBSSType import KlBSSType
+from OTLMOW.OTLModel.Datatypes.KlBestratingAfwerking import KlBestratingAfwerking
+from OTLMOW.OTLModel.Datatypes.KlBestratingselementAfmetingLxB import KlBestratingselementAfmetingLxB
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit

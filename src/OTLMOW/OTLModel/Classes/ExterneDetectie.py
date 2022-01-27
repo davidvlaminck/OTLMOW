@@ -1,11 +1,11 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from src.OTLMOW.OTLModel.Classes.Detectie import Detectie
-from src.OTLMOW.OTLModel.Datatypes.BooleanField import BooleanField
-from src.OTLMOW.OTLModel.Datatypes.DtcNatuurlijkPersoon import DtcNatuurlijkPersoon
-from src.OTLMOW.OTLModel.Datatypes.DtcRechtspersoon import DtcRechtspersoon
-from src.OTLMOW.OTLModel.Datatypes.KlExternedetectieAangeslotentoestel import KlExternedetectieAangeslotentoestel
-from src.OTLMOW.OTLModel.Datatypes.KlExternedetectieCommunicatiewijze import KlExternedetectieCommunicatiewijze
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.Classes.Detectie import Detectie
+from OTLMOW.OTLModel.Datatypes.BooleanField import BooleanField
+from OTLMOW.OTLModel.Datatypes.DtcNatuurlijkPersoon import DtcNatuurlijkPersoon
+from OTLMOW.OTLModel.Datatypes.DtcRechtspersoon import DtcRechtspersoon
+from OTLMOW.OTLModel.Datatypes.KlExternedetectieAangeslotentoestel import KlExternedetectieAangeslotentoestel
+from OTLMOW.OTLModel.Datatypes.KlExternedetectieCommunicatiewijze import KlExternedetectieCommunicatiewijze
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit

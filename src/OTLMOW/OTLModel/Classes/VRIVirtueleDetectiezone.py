@@ -1,7 +1,7 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from src.OTLMOW.OTLModel.Classes.Detectielus import Detectielus
-from src.OTLMOW.OTLModel.Datatypes.KlVriLusFunctie import KlVriLusFunctie
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.Classes.Detectielus import Detectielus
+from OTLMOW.OTLModel.Datatypes.KlVriLusFunctie import KlVriLusFunctie
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit

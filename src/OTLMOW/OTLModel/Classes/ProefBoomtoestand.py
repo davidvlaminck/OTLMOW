@@ -1,19 +1,19 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from src.OTLMOW.OTLModel.Classes.Proef import Proef
-from src.OTLMOW.OTLModel.Datatypes.DateTimeField import DateTimeField
-from src.OTLMOW.OTLModel.Datatypes.DtcDocument import DtcDocument
-from src.OTLMOW.OTLModel.Datatypes.FloatOrDecimalField import FloatOrDecimalField
-from src.OTLMOW.OTLModel.Datatypes.KlBoomConditiebeoordeling import KlBoomConditiebeoordeling
-from src.OTLMOW.OTLModel.Datatypes.KlBoomConditiewaarde import KlBoomConditiewaarde
-from src.OTLMOW.OTLModel.Datatypes.KlBoomConflicten import KlBoomConflicten
-from src.OTLMOW.OTLModel.Datatypes.KlBoomGebreken import KlBoomGebreken
-from src.OTLMOW.OTLModel.Datatypes.KlBoomOnderhoudstoestand import KlBoomOnderhoudstoestand
-from src.OTLMOW.OTLModel.Datatypes.KlBoomPlantwijzewaarde import KlBoomPlantwijzewaarde
-from src.OTLMOW.OTLModel.Datatypes.KlBoomStandplaatswaarde import KlBoomStandplaatswaarde
-from src.OTLMOW.OTLModel.Datatypes.KlBoomtoestandMeerwaardefactor import KlBoomtoestandMeerwaardefactor
-from src.OTLMOW.OTLModel.Datatypes.KwantWrdInCentimeter import KwantWrdInCentimeter
-from src.OTLMOW.OTLModel.Datatypes.KwantWrdInEuro import KwantWrdInEuro
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.Classes.Proef import Proef
+from OTLMOW.OTLModel.Datatypes.DateTimeField import DateTimeField
+from OTLMOW.OTLModel.Datatypes.DtcDocument import DtcDocument
+from OTLMOW.OTLModel.Datatypes.FloatOrDecimalField import FloatOrDecimalField
+from OTLMOW.OTLModel.Datatypes.KlBoomConditiebeoordeling import KlBoomConditiebeoordeling
+from OTLMOW.OTLModel.Datatypes.KlBoomConditiewaarde import KlBoomConditiewaarde
+from OTLMOW.OTLModel.Datatypes.KlBoomConflicten import KlBoomConflicten
+from OTLMOW.OTLModel.Datatypes.KlBoomGebreken import KlBoomGebreken
+from OTLMOW.OTLModel.Datatypes.KlBoomOnderhoudstoestand import KlBoomOnderhoudstoestand
+from OTLMOW.OTLModel.Datatypes.KlBoomPlantwijzewaarde import KlBoomPlantwijzewaarde
+from OTLMOW.OTLModel.Datatypes.KlBoomStandplaatswaarde import KlBoomStandplaatswaarde
+from OTLMOW.OTLModel.Datatypes.KlBoomtoestandMeerwaardefactor import KlBoomtoestandMeerwaardefactor
+from OTLMOW.OTLModel.Datatypes.KwantWrdInCentimeter import KwantWrdInCentimeter
+from OTLMOW.OTLModel.Datatypes.KwantWrdInEuro import KwantWrdInEuro
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit

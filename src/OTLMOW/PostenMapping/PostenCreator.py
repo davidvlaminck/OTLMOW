@@ -1,11 +1,11 @@
 import os
 from datetime import datetime
 
-from src.OTLMOW.Loggers.AbstractLogger import AbstractLogger
-from src.OTLMOW.Loggers.LogType import LogType
-from src.OTLMOW.ModelGenerator.StringHelper import wrap_in_quotes
-from src.OTLMOW.PostenMapping.PostenCollector import PostenCollector
-from src.OTLMOW.PostenMapping.StandaardPost import StandaardPost
+from OTLMOW.Loggers.AbstractLogger import AbstractLogger
+from OTLMOW.Loggers.LogType import LogType
+from OTLMOW.ModelGenerator.StringHelper import wrap_in_quotes
+from OTLMOW.PostenMapping.PostenCollector import PostenCollector
+from OTLMOW.PostenMapping.StandaardPost import StandaardPost
 
 
 class PostenCreator:
@@ -48,8 +48,8 @@ class PostenCreator:
 
     def create_datablock_from_post(self, post: StandaardPost) -> [str]:
         datablock = ['# coding=utf-8',
-                     "from src.OTLMOW.PostenMapping.StandaardPost import StandaardPost",
-                     "from src.OTLMOW.PostenMapping.StandaardPostMapping import StandaardPostMapping",
+                     "from OTLMOW.PostenMapping.StandaardPost import StandaardPost",
+                     "from OTLMOW.PostenMapping.StandaardPostMapping import StandaardPostMapping",
                      "", "",
                      '# Generated with PostenCreator. To modify: extend, do not edit',
                      f"class Post{post.nummer.replace('.', '')}(StandaardPost):",
@@ -91,7 +91,7 @@ class PostenCreator:
 
     def add_to_lijst(self, post: StandaardPost):
         self.datablock_lijst_import.append(
-            f"from src.OTLMOW.PostenMapping.Model.Post{post.nummer.replace('.', '')} import Post{post.nummer.replace('.', '')}")
+            f"from OTLMOW.PostenMapping.Model.Post{post.nummer.replace('.', '')} import Post{post.nummer.replace('.', '')}")
         self.datablock_lijst.append(f"            '{post.nummer}': Post{post.nummer.replace('.', '')}(),")
 
     def create_lijst(self):

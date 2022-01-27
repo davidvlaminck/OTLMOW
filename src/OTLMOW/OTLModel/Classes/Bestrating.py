@@ -1,10 +1,10 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from abc import abstractmethod
-from src.OTLMOW.OTLModel.Classes.ArtificieleLaag import ArtificieleLaag
-from src.OTLMOW.OTLModel.Datatypes.KlBestratingSteenverband import KlBestratingSteenverband
-from src.OTLMOW.OTLModel.Datatypes.KlBestratingVoegvulling import KlBestratingVoegvulling
-from src.OTLMOW.OTLModel.Datatypes.KlKleurSupp import KlKleurSupp
+from OTLMOW.OTLModel.Classes.ArtificieleLaag import ArtificieleLaag
+from OTLMOW.OTLModel.Datatypes.KlBestratingSteenverband import KlBestratingSteenverband
+from OTLMOW.OTLModel.Datatypes.KlBestratingVoegvulling import KlBestratingVoegvulling
+from OTLMOW.OTLModel.Datatypes.KlKleurSupp import KlKleurSupp
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit

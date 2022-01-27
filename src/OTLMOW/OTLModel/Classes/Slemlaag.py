@@ -1,9 +1,9 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from src.OTLMOW.OTLModel.Classes.AndereLaag import AndereLaag
-from src.OTLMOW.OTLModel.Datatypes.KlKleurSupp import KlKleurSupp
-from src.OTLMOW.OTLModel.Datatypes.KlSlemProductfamilie import KlSlemProductfamilie
-from src.OTLMOW.OTLModel.Datatypes.KlSlemlaagsoort import KlSlemlaagsoort
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.Classes.AndereLaag import AndereLaag
+from OTLMOW.OTLModel.Datatypes.KlKleurSupp import KlKleurSupp
+from OTLMOW.OTLModel.Datatypes.KlSlemProductfamilie import KlSlemProductfamilie
+from OTLMOW.OTLModel.Datatypes.KlSlemlaagsoort import KlSlemlaagsoort
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit

@@ -1,16 +1,16 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from src.OTLMOW.OTLModel.Classes.AIMObject import AIMObject
-from src.OTLMOW.OTLModel.Datatypes.BooleanField import BooleanField
-from src.OTLMOW.OTLModel.Datatypes.DtcDocument import DtcDocument
-from src.OTLMOW.OTLModel.Datatypes.KlDekselKaderType import KlDekselKaderType
-from src.OTLMOW.OTLModel.Datatypes.KlDekselKlasse import KlDekselKlasse
-from src.OTLMOW.OTLModel.Datatypes.KlDekselMateriaal import KlDekselMateriaal
-from src.OTLMOW.OTLModel.Datatypes.KlDekselRegeling import KlDekselRegeling
-from src.OTLMOW.OTLModel.Datatypes.KlDekselVergrendeling import KlDekselVergrendeling
-from src.OTLMOW.OTLModel.Datatypes.KlRioleringVorm import KlRioleringVorm
-from src.OTLMOW.OTLModel.Datatypes.KwantWrdInCentimeter import KwantWrdInCentimeter
-from src.OTLMOW.OTLModel.Datatypes.KwantWrdInVierkanteMeter import KwantWrdInVierkanteMeter
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.Classes.AIMObject import AIMObject
+from OTLMOW.OTLModel.Datatypes.BooleanField import BooleanField
+from OTLMOW.OTLModel.Datatypes.DtcDocument import DtcDocument
+from OTLMOW.OTLModel.Datatypes.KlDekselKaderType import KlDekselKaderType
+from OTLMOW.OTLModel.Datatypes.KlDekselKlasse import KlDekselKlasse
+from OTLMOW.OTLModel.Datatypes.KlDekselMateriaal import KlDekselMateriaal
+from OTLMOW.OTLModel.Datatypes.KlDekselRegeling import KlDekselRegeling
+from OTLMOW.OTLModel.Datatypes.KlDekselVergrendeling import KlDekselVergrendeling
+from OTLMOW.OTLModel.Datatypes.KlRioleringVorm import KlRioleringVorm
+from OTLMOW.OTLModel.Datatypes.KwantWrdInCentimeter import KwantWrdInCentimeter
+from OTLMOW.OTLModel.Datatypes.KwantWrdInVierkanteMeter import KwantWrdInVierkanteMeter
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit

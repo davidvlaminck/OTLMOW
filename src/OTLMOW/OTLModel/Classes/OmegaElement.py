@@ -1,8 +1,8 @@
 # coding=utf-8
-from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from src.OTLMOW.OTLModel.Classes.Straatmeubilair import Straatmeubilair
-from src.OTLMOW.OTLModel.Datatypes.KlOmegaElementMateriaal import KlOmegaElementMateriaal
-from src.OTLMOW.OTLModel.Datatypes.KlPlaatsingswijze import KlPlaatsingswijze
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from OTLMOW.OTLModel.Classes.Straatmeubilair import Straatmeubilair
+from OTLMOW.OTLModel.Datatypes.KlOmegaElementMateriaal import KlOmegaElementMateriaal
+from OTLMOW.OTLModel.Datatypes.KlPlaatsingswijze import KlPlaatsingswijze
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit

@@ -1,6 +1,6 @@
 ﻿import datetime
 
-from src.OTLMOW.OTLModel.Datatypes import DateField
+from OTLMOW.OTLModel.Datatypes import DateField
 
 
 class DotNotationError(ValueError):

@@ -1,0 +1,161 @@
+# coding=utf-8
+from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
+from src.OTLMOW.OTLModel.Classes.Put import Put
+from src.OTLMOW.OTLModel.Classes.PutRelatie import PutRelatie
+from src.OTLMOW.OTLModel.Datatypes.BooleanField import BooleanField
+from src.OTLMOW.OTLModel.Datatypes.DtcAfmetingBxlxhInMm import DtcAfmetingBxlxhInMm
+from src.OTLMOW.OTLModel.Datatypes.KlPutRooster import KlPutRooster
+from src.OTLMOW.OTLModel.Datatypes.KlRoosterIndeling import KlRoosterIndeling
+from src.OTLMOW.OTLModel.Datatypes.KlRoosterOpeningswijze import KlRoosterOpeningswijze
+from src.OTLMOW.OTLModel.Datatypes.KlStraatkolkBakType import KlStraatkolkBakType
+from src.OTLMOW.OTLModel.Datatypes.KlStraatkolkType import KlStraatkolkType
+from src.OTLMOW.OTLModel.Datatypes.KlStraatkolkTypeUitlaat import KlStraatkolkTypeUitlaat
+
+
+# Generated with OTLClassCreator. To modify: extend, do not edit
+class Straatkolk(Put, PutRelatie):
+    """De hemelwaterinlaatconstructie,meestal geplaatst in de straatgoot of watergreppel,waarlangs het hemelwater van de verhardingen wordt afgevoerd."""
+
+    typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Straatkolk'
+    """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
+
+    def __init__(self):
+        Put.__init__(self)
+        PutRelatie.__init__(self)
+
+        self._bakAfmetingen = OTLAttribuut(field=DtcAfmetingBxlxhInMm,
+                                           naam='bakAfmetingen',
+                                           label='bak afmetingen',
+                                           objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Straatkolk.bakAfmetingen',
+                                           definition='De afmetingen van de bak van de straatkolk in mm.')
+
+        self._bakType = OTLAttribuut(field=KlStraatkolkBakType,
+                                     naam='bakType',
+                                     label='baktype',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Straatkolk.bakType',
+                                     definition='Het type van bak van de straatkolk.')
+
+        self._heeftAfdekplaatReukafsluiter = OTLAttribuut(field=BooleanField,
+                                                          naam='heeftAfdekplaatReukafsluiter',
+                                                          label='heeft afdekplaat reukafsluiter',
+                                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Straatkolk.heeftAfdekplaatReukafsluiter',
+                                                          definition='Dit attribuut geeft aan of de straatkolk een afdekplaat als reukafsluiter heeft.')
+
+        self._isInfiltrerend = OTLAttribuut(field=BooleanField,
+                                            naam='isInfiltrerend',
+                                            label='is infiltrerend',
+                                            objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Straatkolk.isInfiltrerend',
+                                            definition='Wanneer de wanden van de straatkolk poreus zijn (en de straatkolk dus infiltrerend is), kan een deel van het water het water dat in de straatkolk komt rechtstreeks in de grond infiltreren.')
+
+        self._rooster = OTLAttribuut(field=KlPutRooster,
+                                     naam='rooster',
+                                     label='rooster',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Straatkolk.rooster',
+                                     usagenote='Attribuut uit gebruik sinds versie 2.1.0 ',
+                                     deprecated_version='2.1.0',
+                                     definition='Bepaalt het gebruikte type van rooster.')
+
+        self._roosterIndeling = OTLAttribuut(field=KlRoosterIndeling,
+                                             naam='roosterIndeling',
+                                             label='rooster indeling',
+                                             objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Straatkolk.roosterIndeling',
+                                             definition='Dit attribuut geeft aan hoe het rooster ingedeeld is: met zijdelingse opvang of dat er sprake is van een 1-delig of 2-delig rooster.')
+
+        self._roosterOpeningswijze = OTLAttribuut(field=KlRoosterOpeningswijze,
+                                                  naam='roosterOpeningswijze',
+                                                  label='rooster openingswijze',
+                                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Straatkolk.roosterOpeningswijze',
+                                                  definition='Dit attribuut geeft de manier aan hoe het rooster geopend kan worden.')
+
+        self._type = OTLAttribuut(field=KlStraatkolkType,
+                                  naam='type',
+                                  label='type',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Straatkolk.type',
+                                  definition='Het type van de straatkolk.')
+
+        self._typeUitlaat = OTLAttribuut(field=KlStraatkolkTypeUitlaat,
+                                         naam='typeUitlaat',
+                                         label='type uitlaat ',
+                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Straatkolk.typeUitlaat',
+                                         definition='Het type van uitlaat van de straatkolk.')
+
+    @property
+    def bakAfmetingen(self):
+        """De afmetingen van de bak van de straatkolk in mm."""
+        return self._bakAfmetingen.waarde
+
+    @bakAfmetingen.setter
+    def bakAfmetingen(self, value):
+        self._bakAfmetingen.set_waarde(value, owner=self)
+
+    @property
+    def bakType(self):
+        """Het type van bak van de straatkolk."""
+        return self._bakType.waarde
+
+    @bakType.setter
+    def bakType(self, value):
+        self._bakType.set_waarde(value, owner=self)
+
+    @property
+    def heeftAfdekplaatReukafsluiter(self):
+        """Dit attribuut geeft aan of de straatkolk een afdekplaat als reukafsluiter heeft."""
+        return self._heeftAfdekplaatReukafsluiter.waarde
+
+    @heeftAfdekplaatReukafsluiter.setter
+    def heeftAfdekplaatReukafsluiter(self, value):
+        self._heeftAfdekplaatReukafsluiter.set_waarde(value, owner=self)
+
+    @property
+    def isInfiltrerend(self):
+        """Wanneer de wanden van de straatkolk poreus zijn (en de straatkolk dus infiltrerend is), kan een deel van het water het water dat in de straatkolk komt rechtstreeks in de grond infiltreren."""
+        return self._isInfiltrerend.waarde
+
+    @isInfiltrerend.setter
+    def isInfiltrerend(self, value):
+        self._isInfiltrerend.set_waarde(value, owner=self)
+
+    @property
+    def rooster(self):
+        """Bepaalt het gebruikte type van rooster."""
+        return self._rooster.waarde
+
+    @rooster.setter
+    def rooster(self, value):
+        self._rooster.set_waarde(value, owner=self)
+
+    @property
+    def roosterIndeling(self):
+        """Dit attribuut geeft aan hoe het rooster ingedeeld is: met zijdelingse opvang of dat er sprake is van een 1-delig of 2-delig rooster."""
+        return self._roosterIndeling.waarde
+
+    @roosterIndeling.setter
+    def roosterIndeling(self, value):
+        self._roosterIndeling.set_waarde(value, owner=self)
+
+    @property
+    def roosterOpeningswijze(self):
+        """Dit attribuut geeft de manier aan hoe het rooster geopend kan worden."""
+        return self._roosterOpeningswijze.waarde
+
+    @roosterOpeningswijze.setter
+    def roosterOpeningswijze(self, value):
+        self._roosterOpeningswijze.set_waarde(value, owner=self)
+
+    @property
+    def type(self):
+        """Het type van de straatkolk."""
+        return self._type.waarde
+
+    @type.setter
+    def type(self, value):
+        self._type.set_waarde(value, owner=self)
+
+    @property
+    def typeUitlaat(self):
+        """Het type van uitlaat van de straatkolk."""
+        return self._typeUitlaat.waarde
+
+    @typeUitlaat.setter
+    def typeUitlaat(self, value):
+        self._typeUitlaat.set_waarde(value, owner=self)

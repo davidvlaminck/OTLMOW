@@ -1,0 +1,2929 @@
+[{
+  "assetId" : {
+    "identificator" : "fee81d43-ea0e-4d4b-a9d0-3938fd70b7f3-aW5zdGFsbGF0aWUjU2xhZ2Jvb20",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Slagboom",
+  "toestand" : "in-gebruik",
+  "isActief" : true,
+  "naam" : "SLB",
+  "naampad" : "DA-2021-00024/SLB"
+},{
+  "assetId" : {
+    "identificator" : "fe5a43f5-eed0-409c-9d65-a59c33e1e93b-b25kZXJkZWVsI1ZvZWR0QWFuZ2VzdHV1cmQ",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#VoedtAangestuurd",
+  "bronAssetId" : {
+    "identificator" : "360cb925-4f1e-4a38-8001-78221f0b1290-b25kZXJkZWVsI0NvbnRhY3Rvcg",
+    "toegekendDoor" : "AWV"
+  },
+  "doelAssetId" : {
+    "identificator" : "e2199e9a-5642-49f7-9e43-6b170b0db33c-b25kZXJkZWVsI1NsYWdib29ta29sb20",
+    "toegekendDoor" : "AWV"
+  },
+  "bron" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Contactor"
+  },
+  "doel" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomkolom"
+  },
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "fdad2e1e-7d79-4c25-8ede-375f4d40a8c4-b25kZXJkZWVsI0JldmVzdGlnaW5n",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bevestiging",
+  "bronAssetId" : {
+    "identificator" : "7d822202-8d9a-4235-9669-8c3a07e1cf5c-b25kZXJkZWVsI1NsYWdib29tYXJt",
+    "toegekendDoor" : "AWV"
+  },
+  "doelAssetId" : {
+    "identificator" : "e9893bc4-4b04-4143-80f5-9319d57d47bf-b25kZXJkZWVsI1NsYWdib29tYXJtVmVybGljaHRpbmc",
+    "toegekendDoor" : "AWV"
+  },
+  "bron" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomarm"
+  },
+  "doel" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#SlagboomarmVerlichting"
+  },
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "fb7ab8ef-de22-4945-8029-a1dbd73f5bab-b25kZXJkZWVsI1NsYWdib29ta29sb20",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomkolom",
+  "toestand" : "in-ontwerp",
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "f3eb6eef-51b4-4610-915f-ce97f9c8c91f-b25kZXJkZWVsI1NsYWdib29tYXJt",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomarm",
+  "toestand" : "in-ontwerp",
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "f3e24c18-9199-4ecf-94ca-98e581134821-b25kZXJkZWVsI0hvb3J0Qmlq",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#HoortBij",
+  "bronAssetId" : {
+    "identificator" : "9aab29be-f656-4d05-a59d-309911ea778f-b25kZXJkZWVsI1NsYWdib29ta29sb20",
+    "toegekendDoor" : "AWV"
+  },
+  "doelAssetId" : {
+    "identificator" : "75640b15-b14e-48e6-8826-87d11f1cd366-aW5zdGFsbGF0aWUjU2xhZ2Jvb20",
+    "toegekendDoor" : "AWV"
+  },
+  "bron" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomkolom"
+  },
+  "doel" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Slagboom"
+  },
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "f2a660d9-4c16-4cbd-b7a2-7031f9e23bbb-b25kZXJkZWVsI1NsYWdib29tYXJtVmVybGljaHRpbmc",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#SlagboomarmVerlichting",
+  "toestand" : "in-ontwerp",
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "f15f529c-d1c5-41a6-a6b7-ab1b1710836d-b25kZXJkZWVsI1NsYWdib29ta29sb20",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomkolom",
+  "toestand" : "in-ontwerp",
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "ee925bdb-2d24-4d56-90c9-c31203ce62bc-b25kZXJkZWVsI1NsYWdib29tYXJtVmVybGljaHRpbmc",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#SlagboomarmVerlichting",
+  "toestand" : "in-ontwerp",
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "edac00d5-8c8e-4ba1-b781-48ef029809f7-b25kZXJkZWVsI1NsYWdib29tYXJtVmVybGljaHRpbmc",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#SlagboomarmVerlichting",
+  "toestand" : "in-ontwerp",
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "ec0d6621-e272-4f1a-adab-7d720713a144-b25kZXJkZWVsI0JldmVzdGlnaW5n",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bevestiging",
+  "bronAssetId" : {
+    "identificator" : "16d9e167-4b8f-4411-b9c8-f56b6ef56de6-b25kZXJkZWVsI1NsYWdib29tYXJtVmVybGljaHRpbmc",
+    "toegekendDoor" : "AWV"
+  },
+  "doelAssetId" : {
+    "identificator" : "4a5f31e6-8087-4187-8207-0cdde9caf9b6-b25kZXJkZWVsI1NsYWdib29tYXJt",
+    "toegekendDoor" : "AWV"
+  },
+  "bron" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#SlagboomarmVerlichting"
+  },
+  "doel" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomarm"
+  },
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "eb45c3a5-2bf9-4c56-b665-2a7dafb6b709-b25kZXJkZWVsI0JlbA",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bel",
+  "naam" : "Bel.1",
+  "isActief" : true,
+  "toestand" : "in-ontwerp"
+},{
+  "assetId" : {
+    "identificator" : "eaf303d8-192d-4626-82b1-7f3e69c1ca8b-b25kZXJkZWVsI0hlZWZ0QmV0cm9ra2VuZQ"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#HeeftBetrokkene",
+  "bronAssetId" : {
+    "identificator" : "3b043f3e-dea4-44db-bf42-1608402fe0c4-aW5zdGFsbGF0aWUjU2xhZ2Jvb20"
+  },
+  "doelAssetId" : {
+    "identificator" : "53236577-99c3-4863-8a60-f057c6fd4c1f-cHVybDpBZ2VudA"
+  },
+  "bron" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Slagboom"
+  },
+  "doel" : {
+    "typeURI" : "http://purl.org/dc/terms/Agent"
+  },
+  "rol" : "toezichter",
+  "specifiekeContactinfo" : [ ],
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "e9893bc4-4b04-4143-80f5-9319d57d47bf-b25kZXJkZWVsI1NsYWdib29tYXJtVmVybGljaHRpbmc",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#SlagboomarmVerlichting",
+  "toestand" : "in-ontwerp",
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "e7cb7ca1-96a8-409b-b025-bdce01aace65-b25kZXJkZWVsI0hlZWZ0QmV0cm9ra2VuZQ"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#HeeftBetrokkene",
+  "bronAssetId" : {
+    "identificator" : "c7b82659-871c-4a76-945c-dd3b8c820a7c-aW5zdGFsbGF0aWUjU2xhZ2Jvb20"
+  },
+  "doelAssetId" : {
+    "identificator" : "53236577-99c3-4863-8a60-f057c6fd4c1f-cHVybDpBZ2VudA"
+  },
+  "bron" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Slagboom"
+  },
+  "doel" : {
+    "typeURI" : "http://purl.org/dc/terms/Agent"
+  },
+  "rol" : "toezichter",
+  "specifiekeContactinfo" : [ ],
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "e70e0d9c-0ee0-4ca1-a9d3-20b1f33fbb2b-b25kZXJkZWVsI0JldmVzdGlnaW5n",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bevestiging",
+  "bronAssetId" : {
+    "identificator" : "78a26cf6-978c-4cc2-a47c-9085caeda742-b25kZXJkZWVsI1NsYWdib29tYXJtVmVybGljaHRpbmc",
+    "toegekendDoor" : "AWV"
+  },
+  "doelAssetId" : {
+    "identificator" : "07c73def-23ff-4342-b90a-4ebbe8d180d4-b25kZXJkZWVsI1NsYWdib29tYXJt",
+    "toegekendDoor" : "AWV"
+  },
+  "bron" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#SlagboomarmVerlichting"
+  },
+  "doel" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomarm"
+  },
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "e6755986-b233-4b3a-95da-693424a84a2c-b25kZXJkZWVsI1NsYWdib29tYXJtVmVybGljaHRpbmc",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#SlagboomarmVerlichting",
+  "toestand" : "in-ontwerp",
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "e5aa6900-93a5-493d-bb18-b9b88b515a51-b25kZXJkZWVsI1ZvZWR0",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Voedt",
+  "bronAssetId" : {
+    "identificator" : "70947e2e-202f-4f22-9168-bfbe7b77fcf4-b25kZXJkZWVsI1N0cm9vbWtyaW5n",
+    "toegekendDoor" : "AWV"
+  },
+  "doelAssetId" : {
+    "identificator" : "0da636d7-e26d-43bf-bfb2-490de588b25c-b25kZXJkZWVsI0NvbnRhY3Rvcg",
+    "toegekendDoor" : "AWV"
+  },
+  "bron" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Stroomkring"
+  },
+  "doel" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Contactor"
+  },
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "e4800bd0-5938-468e-95d4-63eb6d13924d-aW5zdGFsbGF0aWUjU2xhZ2Jvb20",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Slagboom",
+  "toestand" : "in-gebruik",
+  "isActief" : true,
+  "naam" : "SLB002",
+  "naampad" : "DA-2021-00024/SLB002"
+},{
+  "assetId" : {
+    "identificator" : "e3b4d388-a080-4f03-a927-5d052a15c546-b25kZXJkZWVsI1ZvZWR0QWFuZ2VzdHV1cmQ",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#VoedtAangestuurd",
+  "bronAssetId" : {
+    "identificator" : "cfa06f23-4005-4020-9a97-67c1fca72079-b25kZXJkZWVsI0NvbnRhY3Rvcg",
+    "toegekendDoor" : "AWV"
+  },
+  "doelAssetId" : {
+    "identificator" : "8048aee7-5493-48c4-8c7f-3e7318390b76-b25kZXJkZWVsI1NsYWdib29ta29sb20",
+    "toegekendDoor" : "AWV"
+  },
+  "bron" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Contactor"
+  },
+  "doel" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomkolom"
+  },
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "e2ce3fae-551f-44b3-81bd-9649d7fa0fd3-b25kZXJkZWVsI0hlZWZ0QmV0cm9ra2VuZQ"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#HeeftBetrokkene",
+  "bronAssetId" : {
+    "identificator" : "8a1f4ab5-0042-404a-8a6b-2c57eeab7c61-aW5zdGFsbGF0aWUjU2xhZ2Jvb20"
+  },
+  "doelAssetId" : {
+    "identificator" : "be960fe9-fa51-4537-8ef6-b0946186111a-cHVybDpBZ2VudA"
+  },
+  "bron" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Slagboom"
+  },
+  "doel" : {
+    "typeURI" : "http://purl.org/dc/terms/Agent"
+  },
+  "rol" : "installatieverantwoordelijke",
+  "specifiekeContactinfo" : [ ],
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "e25a703a-2208-4a9d-81f3-73711ce07ebf-b25kZXJkZWVsI0JldmVzdGlnaW5n",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bevestiging",
+  "bronAssetId" : {
+    "identificator" : "8b7eed93-99fd-4f9f-a6ce-de06e861f7c4-b25kZXJkZWVsI1NsYWdib29ta29sb20",
+    "toegekendDoor" : "AWV"
+  },
+  "doelAssetId" : {
+    "identificator" : "2cfd3d6a-d305-49be-acbb-b614a6a27e4d-b25kZXJkZWVsI1NsYWdib29tYXJt",
+    "toegekendDoor" : "AWV"
+  },
+  "bron" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomkolom"
+  },
+  "doel" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomarm"
+  },
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "e2199e9a-5642-49f7-9e43-6b170b0db33c-b25kZXJkZWVsI1NsYWdib29ta29sb20",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomkolom",
+  "toestand" : "in-gebruik",
+  "isActief" : true,
+  "geometry" : "POINT Z (61723.2 209360.9 0)"
+},{
+  "assetId" : {
+    "identificator" : "e1f6b74e-e9ff-47d6-a365-9eccffafe743-b25kZXJkZWVsI1NsYWdib29tYXJtVmVybGljaHRpbmc",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#SlagboomarmVerlichting",
+  "toestand" : "in-ontwerp",
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "e11533f3-165f-4cf7-a6f1-95d29e74c92f-aW5zdGFsbGF0aWUjU2xhZ2Jvb20",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Slagboom",
+  "naam" : "SLAGBOOMINSTALLATIE2",
+  "toestand" : "in-gebruik",
+  "notitie" : "Waarborg tot ???",
+  "naampad" : "KO0004/SLAGBOOMINSTALLATIE2",
+  "isActief" : false
+},{
+  "assetId" : {
+    "identificator" : "de42d4b8-10c8-4039-a604-20e8cd01f4fa-b25kZXJkZWVsI0JldmVzdGlnaW5n",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bevestiging",
+  "bronAssetId" : {
+    "identificator" : "119bd2c7-23b5-40ea-94c1-7729a055c441-b25kZXJkZWVsI1ZvZXJ0dWlnbGFudGFhcm4",
+    "toegekendDoor" : "AWV"
+  },
+  "doelAssetId" : {
+    "identificator" : "9ca7baae-8d4b-4752-a016-b58f1b2a9cdc-b25kZXJkZWVsI1ZlcmtlZXJzbGljaHRSb29k",
+    "toegekendDoor" : "AWV"
+  },
+  "bron" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Voertuiglantaarn"
+  },
+  "doel" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#VerkeerslichtRood"
+  },
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "db381298-e06a-41fe-a7bb-af538f265db8-b25kZXJkZWVsI0JldmVzdGlnaW5n",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bevestiging",
+  "bronAssetId" : {
+    "identificator" : "2cfd3d6a-d305-49be-acbb-b614a6a27e4d-b25kZXJkZWVsI1NsYWdib29tYXJt",
+    "toegekendDoor" : "AWV"
+  },
+  "doelAssetId" : {
+    "identificator" : "ee925bdb-2d24-4d56-90c9-c31203ce62bc-b25kZXJkZWVsI1NsYWdib29tYXJtVmVybGljaHRpbmc",
+    "toegekendDoor" : "AWV"
+  },
+  "bron" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomarm"
+  },
+  "doel" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#SlagboomarmVerlichting"
+  },
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "d64fcdb0-36eb-44e4-8f50-95cc215a267c-b25kZXJkZWVsI1NsYWdib29tYXJtVmVybGljaHRpbmc",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#SlagboomarmVerlichting",
+  "toestand" : "in-ontwerp",
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "d63bf44d-29af-4bda-b8c5-60e513ef7d05-b25kZXJkZWVsI0hlZWZ0QmV0cm9ra2VuZQ"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#HeeftBetrokkene",
+  "bronAssetId" : {
+    "identificator" : "fee81d43-ea0e-4d4b-a9d0-3938fd70b7f3-aW5zdGFsbGF0aWUjU2xhZ2Jvb20"
+  },
+  "doelAssetId" : {
+    "identificator" : "53236577-99c3-4863-8a60-f057c6fd4c1f-cHVybDpBZ2VudA"
+  },
+  "bron" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Slagboom"
+  },
+  "doel" : {
+    "typeURI" : "http://purl.org/dc/terms/Agent"
+  },
+  "rol" : "toezichter",
+  "specifiekeContactinfo" : [ ],
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "d5852e80-ec9c-4091-bb7f-ed26cea2368a-b25kZXJkZWVsI1NsYWdib29tYXJt",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomarm",
+  "toestand" : "in-ontwerp",
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "d5653463-cda3-4baf-815d-8ae8df3568aa-b25kZXJkZWVsI1NsYWdib29tYXJt",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomarm",
+  "toestand" : "in-ontwerp",
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "d3bb0764-e4b3-4279-a510-a5c93774fa46-b25kZXJkZWVsI1NsYWdib29ta29sb20",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomkolom",
+  "toestand" : "in-ontwerp",
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "d2d32c9e-0cd3-4dcc-b67a-7457a1c0c522-b25kZXJkZWVsI1ZvZWR0QWFuZ2VzdHV1cmQ",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#VoedtAangestuurd",
+  "bronAssetId" : {
+    "identificator" : "8079c90b-9fdc-415c-9cc0-153a377dc715-b25kZXJkZWVsI0NvbnRhY3Rvcg",
+    "toegekendDoor" : "AWV"
+  },
+  "doelAssetId" : {
+    "identificator" : "66c7e146-5ecf-4f58-8c50-b43f5e341f90-b25kZXJkZWVsI1NsYWdib29ta29sb20",
+    "toegekendDoor" : "AWV"
+  },
+  "bron" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Contactor"
+  },
+  "doel" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomkolom"
+  },
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "d1363150-3684-4d69-ade3-1cea686fdf47-b25kZXJkZWVsI0JldmVzdGlnaW5n",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bevestiging",
+  "bronAssetId" : {
+    "identificator" : "016d7498-a4d8-407b-86cd-b112d8f0dcd6-b25kZXJkZWVsI1NsYWdib29tYXJtVmVybGljaHRpbmc",
+    "toegekendDoor" : "AWV"
+  },
+  "doelAssetId" : {
+    "identificator" : "4d657ed6-6172-43d3-9423-136d3d338dbe-b25kZXJkZWVsI1NsYWdib29tYXJt",
+    "toegekendDoor" : "AWV"
+  },
+  "bron" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#SlagboomarmVerlichting"
+  },
+  "doel" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomarm"
+  },
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "d0b13b3a-85d7-4a75-8e5a-6c64073b73c1-b25kZXJkZWVsI1NsYWdib29ta29sb20",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomkolom",
+  "toestand" : "in-ontwerp",
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "cfa06f23-4005-4020-9a97-67c1fca72079-b25kZXJkZWVsI0NvbnRhY3Rvcg",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Contactor",
+  "toestand" : "in-gebruik",
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "cec428ee-64d0-4a58-817c-abf246b58cd8-b25kZXJkZWVsI1ZvZWR0QWFuZ2VzdHV1cmQ",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#VoedtAangestuurd",
+  "bronAssetId" : {
+    "identificator" : "428a0622-bab7-44e7-a245-2c7fea22b0ac-b25kZXJkZWVsI0NvbnRhY3Rvcg",
+    "toegekendDoor" : "AWV"
+  },
+  "doelAssetId" : {
+    "identificator" : "ae62d133-0737-4143-8f7c-f01fb063db20-b25kZXJkZWVsI1NsYWdib29ta29sb20",
+    "toegekendDoor" : "AWV"
+  },
+  "bron" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Contactor"
+  },
+  "doel" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomkolom"
+  },
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "ce007250-f78c-4a7f-a210-308f946b8251-b25kZXJkZWVsI0hlZWZ0QmV0cm9ra2VuZQ"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#HeeftBetrokkene",
+  "bronAssetId" : {
+    "identificator" : "3b043f3e-dea4-44db-bf42-1608402fe0c4-aW5zdGFsbGF0aWUjU2xhZ2Jvb20"
+  },
+  "doelAssetId" : {
+    "identificator" : "be960fe9-fa51-4537-8ef6-b0946186111a-cHVybDpBZ2VudA"
+  },
+  "bron" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Slagboom"
+  },
+  "doel" : {
+    "typeURI" : "http://purl.org/dc/terms/Agent"
+  },
+  "rol" : "installatieverantwoordelijke",
+  "specifiekeContactinfo" : [ ],
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "cb60d242-1c57-49ea-817f-2d8c88dd5e32-b25kZXJkZWVsI1NsYWdib29tYXJtVmVybGljaHRpbmc",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#SlagboomarmVerlichting",
+  "toestand" : "in-ontwerp",
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "cab4bbfe-d4be-4572-98ce-3a23deaf07c8-b25kZXJkZWVsI0NvbnRhY3Rvcg",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Contactor",
+  "toestand" : "in-gebruik",
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "ca1de66d-4904-4017-a155-c495d856da32-b25kZXJkZWVsI0JldmVzdGlnaW5n",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bevestiging",
+  "bronAssetId" : {
+    "identificator" : "e6755986-b233-4b3a-95da-693424a84a2c-b25kZXJkZWVsI1NsYWdib29tYXJtVmVybGljaHRpbmc",
+    "toegekendDoor" : "AWV"
+  },
+  "doelAssetId" : {
+    "identificator" : "c61e1ca9-713f-4d14-9aec-f493196e83f6-b25kZXJkZWVsI1NsYWdib29tYXJt",
+    "toegekendDoor" : "AWV"
+  },
+  "bron" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#SlagboomarmVerlichting"
+  },
+  "doel" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomarm"
+  },
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "c9da7eaf-abc8-4de9-96cb-9779327d4e34-b25kZXJkZWVsI1NsYWdib29tYXJtVmVybGljaHRpbmc",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#SlagboomarmVerlichting",
+  "toestand" : "in-ontwerp",
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "c7b82659-871c-4a76-945c-dd3b8c820a7c-aW5zdGFsbGF0aWUjU2xhZ2Jvb20",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Slagboom",
+  "toestand" : "in-gebruik",
+  "isActief" : true,
+  "naampad" : "DA-2021-00024/SLB001-2",
+  "naam" : "SLB001-2"
+},{
+  "assetId" : {
+    "identificator" : "c7176fff-fc7f-4a59-97e5-0723cc46e2d4-b25kZXJkZWVsI1ZvZWR0",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Voedt",
+  "bronAssetId" : {
+    "identificator" : "2992958a-61ef-49ed-81eb-0c63dff09eba-b25kZXJkZWVsI1N0cm9vbWtyaW5n",
+    "toegekendDoor" : "AWV"
+  },
+  "doelAssetId" : {
+    "identificator" : "360cb925-4f1e-4a38-8001-78221f0b1290-b25kZXJkZWVsI0NvbnRhY3Rvcg",
+    "toegekendDoor" : "AWV"
+  },
+  "bron" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Stroomkring"
+  },
+  "doel" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Contactor"
+  },
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "c61e1ca9-713f-4d14-9aec-f493196e83f6-b25kZXJkZWVsI1NsYWdib29tYXJt",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomarm",
+  "toestand" : "in-ontwerp",
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "c41ac7fe-d016-442a-95ad-6ce8334a513f-b25kZXJkZWVsI0NvbnRhY3Rvcg",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Contactor",
+  "toestand" : "in-gebruik",
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "c249c19c-506f-499e-92f3-5c57c2c711d9-b25kZXJkZWVsI0hlZWZ0QmV0cm9ra2VuZQ"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#HeeftBetrokkene",
+  "bronAssetId" : {
+    "identificator" : "e4800bd0-5938-468e-95d4-63eb6d13924d-aW5zdGFsbGF0aWUjU2xhZ2Jvb20"
+  },
+  "doelAssetId" : {
+    "identificator" : "be960fe9-fa51-4537-8ef6-b0946186111a-cHVybDpBZ2VudA"
+  },
+  "bron" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Slagboom"
+  },
+  "doel" : {
+    "typeURI" : "http://purl.org/dc/terms/Agent"
+  },
+  "rol" : "installatieverantwoordelijke",
+  "specifiekeContactinfo" : [ ],
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "c084ab62-cf9b-4974-88c6-f722b6d36bf4-b25kZXJkZWVsI1NsYWdib29tYXJtVmVybGljaHRpbmc",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#SlagboomarmVerlichting",
+  "toestand" : "in-ontwerp",
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "beb66622-eaa5-4fbd-bb20-cf12cc847676-b25kZXJkZWVsI1ZvZWR0QWFuZ2VzdHV1cmQ",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#VoedtAangestuurd",
+  "bronAssetId" : {
+    "identificator" : "5bf36168-9924-4f7d-9a33-80e12311a02d-b25kZXJkZWVsI0NvbnRhY3Rvcg",
+    "toegekendDoor" : "AWV"
+  },
+  "doelAssetId" : {
+    "identificator" : "9aab29be-f656-4d05-a59d-309911ea778f-b25kZXJkZWVsI1NsYWdib29ta29sb20",
+    "toegekendDoor" : "AWV"
+  },
+  "bron" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Contactor"
+  },
+  "doel" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomkolom"
+  },
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "bd89646d-63cc-4714-9d14-c0b67d725652-b25kZXJkZWVsI1NsYWdib29tYXJtVmVybGljaHRpbmc",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#SlagboomarmVerlichting",
+  "toestand" : "in-ontwerp",
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "bd147a43-025c-495b-b3f6-298c67bd2814-b25kZXJkZWVsI0JldmVzdGlnaW5n",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bevestiging",
+  "bronAssetId" : {
+    "identificator" : "83d761ca-62e6-4951-9a0d-83c416d4a44c-b25kZXJkZWVsI0NvZGVrbGF2aWVy",
+    "toegekendDoor" : "AWV"
+  },
+  "doelAssetId" : {
+    "identificator" : "0e507a88-cf7c-461b-bdb5-cf092b171105-b25kZXJkZWVsI1JlY2h0ZVN0ZXVu",
+    "toegekendDoor" : "AWV"
+  },
+  "bron" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Codeklavier"
+  },
+  "doel" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#RechteSteun"
+  },
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "bbe5b92d-6a24-4dad-a396-8a49a33c3f38-b25kZXJkZWVsI1ZvZWR0",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Voedt",
+  "bronAssetId" : {
+    "identificator" : "58a96f26-1e30-4e23-af48-eb58919ae5b8-b25kZXJkZWVsI1N0cm9vbWtyaW5n",
+    "toegekendDoor" : "AWV"
+  },
+  "doelAssetId" : {
+    "identificator" : "8079c90b-9fdc-415c-9cc0-153a377dc715-b25kZXJkZWVsI0NvbnRhY3Rvcg",
+    "toegekendDoor" : "AWV"
+  },
+  "bron" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Stroomkring"
+  },
+  "doel" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Contactor"
+  },
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "b907cc44-ecee-4af7-8e69-0db008973d64-b25kZXJkZWVsI1ZvZWR0QWFuZ2VzdHV1cmQ",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#VoedtAangestuurd",
+  "bronAssetId" : {
+    "identificator" : "c41ac7fe-d016-442a-95ad-6ce8334a513f-b25kZXJkZWVsI0NvbnRhY3Rvcg",
+    "toegekendDoor" : "AWV"
+  },
+  "doelAssetId" : {
+    "identificator" : "95675296-b204-4be9-a920-b26b9d6d2c12-b25kZXJkZWVsI1NsYWdib29ta29sb20",
+    "toegekendDoor" : "AWV"
+  },
+  "bron" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Contactor"
+  },
+  "doel" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomkolom"
+  },
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "b7378093-f0f1-4e83-8196-6839c83f0d5d-b25kZXJkZWVsI1ZvZWR0",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Voedt",
+  "bronAssetId" : {
+    "identificator" : "ce5bb8fb-4579-47b5-801d-e4201c34a321-b25kZXJkZWVsI1N0cm9vbWtyaW5n",
+    "toegekendDoor" : "AWV"
+  },
+  "doelAssetId" : {
+    "identificator" : "cfa06f23-4005-4020-9a97-67c1fca72079-b25kZXJkZWVsI0NvbnRhY3Rvcg",
+    "toegekendDoor" : "AWV"
+  },
+  "bron" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Stroomkring"
+  },
+  "doel" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Contactor"
+  },
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "b49c6700-362b-4c41-a3c5-31d715f84ad1-b25kZXJkZWVsI0hvb3J0Qmlq",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#HoortBij",
+  "bronAssetId" : {
+    "identificator" : "ae6c5f35-930d-47a3-b67f-a5ff40c6e0fe-b25kZXJkZWVsI1NsYWdib29ta29sb20",
+    "toegekendDoor" : "AWV"
+  },
+  "doelAssetId" : {
+    "identificator" : "3b043f3e-dea4-44db-bf42-1608402fe0c4-aW5zdGFsbGF0aWUjU2xhZ2Jvb20",
+    "toegekendDoor" : "AWV"
+  },
+  "bron" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomkolom"
+  },
+  "doel" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Slagboom"
+  },
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "b3f6f477-df9e-4415-a8fb-264173aa1ccf-b25kZXJkZWVsI0JldmVzdGlnaW5n",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bevestiging",
+  "bronAssetId" : {
+    "identificator" : "450d5fe8-3d1f-441e-9fd6-3df9129d9265-b25kZXJkZWVsI1NsYWdib29tYXJt",
+    "toegekendDoor" : "AWV"
+  },
+  "doelAssetId" : {
+    "identificator" : "edac00d5-8c8e-4ba1-b781-48ef029809f7-b25kZXJkZWVsI1NsYWdib29tYXJtVmVybGljaHRpbmc",
+    "toegekendDoor" : "AWV"
+  },
+  "bron" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomarm"
+  },
+  "doel" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#SlagboomarmVerlichting"
+  },
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "b2fb5551-c4ed-4351-85bc-bb8e8c330790-aW5zdGFsbGF0aWUjU2xhZ2Jvb20",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Slagboom",
+  "naampad" : "DA-2021-00024/SLB004",
+  "toestand" : "in-gebruik",
+  "isActief" : true,
+  "naam" : "SLB004"
+},{
+  "assetId" : {
+    "identificator" : "aec33173-ae05-4b26-a922-8550b02c0411-b25kZXJkZWVsI1N0dXJpbmc",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Sturing",
+  "bronAssetId" : {
+    "identificator" : "eb45c3a5-2bf9-4c56-b665-2a7dafb6b709-b25kZXJkZWVsI0JlbA",
+    "toegekendDoor" : "AWV"
+  },
+  "doelAssetId" : {
+    "identificator" : "13d10054-737f-4b22-a18b-a7c8dd3683d6-b25kZXJkZWVsI0lPS2FhcnQ",
+    "toegekendDoor" : "AWV"
+  },
+  "bron" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bel"
+  },
+  "doel" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#IOKaart"
+  },
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "ae6c5f35-930d-47a3-b67f-a5ff40c6e0fe-b25kZXJkZWVsI1NsYWdib29ta29sb20",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomkolom",
+  "toestand" : "in-gebruik",
+  "isActief" : true,
+  "geometry" : "POINT Z (61716.3 209331.2 0)"
+},{
+  "assetId" : {
+    "identificator" : "ae62d133-0737-4143-8f7c-f01fb063db20-b25kZXJkZWVsI1NsYWdib29ta29sb20",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomkolom",
+  "toestand" : "in-gebruik",
+  "isActief" : true,
+  "geometry" : "POINT Z (61718.9 209364.7 0)"
+},{
+  "assetId" : {
+    "identificator" : "addd7174-1774-431c-a8ac-35f218c31fe3-b25kZXJkZWVsI0JldmVzdGlnaW5n",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bevestiging",
+  "bronAssetId" : {
+    "identificator" : "fb7ab8ef-de22-4945-8029-a1dbd73f5bab-b25kZXJkZWVsI1NsYWdib29ta29sb20",
+    "toegekendDoor" : "AWV"
+  },
+  "doelAssetId" : {
+    "identificator" : "4b959c08-37f6-4ada-95fd-bd0013454cc9-b25kZXJkZWVsI1NsYWdib29tYXJt",
+    "toegekendDoor" : "AWV"
+  },
+  "bron" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomkolom"
+  },
+  "doel" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomarm"
+  },
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "abd9dab9-a20e-49dd-bd09-71893f3e514b-b25kZXJkZWVsI0JldmVzdGlnaW5n",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bevestiging",
+  "bronAssetId" : {
+    "identificator" : "4d657ed6-6172-43d3-9423-136d3d338dbe-b25kZXJkZWVsI1NsYWdib29tYXJt",
+    "toegekendDoor" : "AWV"
+  },
+  "doelAssetId" : {
+    "identificator" : "777918b7-5fd0-4077-9a03-37b2b87d88d2-b25kZXJkZWVsI1NsYWdib29ta29sb20",
+    "toegekendDoor" : "AWV"
+  },
+  "bron" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomarm"
+  },
+  "doel" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomkolom"
+  },
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "aab3305d-28ae-4305-8922-f6f792b2e731-b25kZXJkZWVsI1NsYWdib29tYXJt",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomarm",
+  "toestand" : "in-ontwerp",
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "a619b374-8e23-46d9-a0c3-210b45c41c21-b25kZXJkZWVsI1NsYWdib29ta29sb20",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomkolom",
+  "toestand" : "in-gebruik",
+  "isActief" : true,
+  "geometry" : "POINT Z (98717.3 191909.9 0)"
+},{
+  "assetId" : {
+    "identificator" : "a60143bf-34ee-4ea3-8f68-44254db79f56-b25kZXJkZWVsI1NsYWdib29ta29sb20",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomkolom",
+  "toestand" : "in-gebruik",
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "a4723294-5ec9-4fcd-9328-139f3063f8ad-b25kZXJkZWVsI1NsYWdib29tYXJt",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomarm",
+  "toestand" : "in-ontwerp",
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "a26c138a-2e65-4e07-a2da-cb464868896f-b25kZXJkZWVsI1NsYWdib29ta29sb20",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomkolom",
+  "toestand" : "in-ontwerp",
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "a1b097c9-f2be-4621-b49d-4a18fbc7e9ab-b25kZXJkZWVsI0JldmVzdGlnaW5n",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bevestiging",
+  "bronAssetId" : {
+    "identificator" : "961c8ba0-ecd6-4835-9fcb-c979a347dffc-b25kZXJkZWVsI1NsYWdib29tYXJtVmVybGljaHRpbmc",
+    "toegekendDoor" : "AWV"
+  },
+  "doelAssetId" : {
+    "identificator" : "6f7920f7-b335-4a69-808c-53e5eb3e268f-b25kZXJkZWVsI1NsYWdib29tYXJt",
+    "toegekendDoor" : "AWV"
+  },
+  "bron" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#SlagboomarmVerlichting"
+  },
+  "doel" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomarm"
+  },
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "a15fd5a7-a43e-4318-b3f9-2eaab41f186d-b25kZXJkZWVsI0JldmVzdGlnaW5n",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bevestiging",
+  "bronAssetId" : {
+    "identificator" : "914d022d-00b4-47b6-a70e-3cf7508e497f-b25kZXJkZWVsI1NsYWdib29tYXJt",
+    "toegekendDoor" : "AWV"
+  },
+  "doelAssetId" : {
+    "identificator" : "84d2b953-ab3c-4133-971c-97049153120d-b25kZXJkZWVsI1NsYWdib29ta29sb20",
+    "toegekendDoor" : "AWV"
+  },
+  "bron" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomarm"
+  },
+  "doel" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomkolom"
+  },
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "a0ba5bc7-9131-42f9-9062-680c361c8190-b25kZXJkZWVsI1NsYWdib29ta29sb20",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomkolom",
+  "toestand" : "in-ontwerp",
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "9feac2eb-a7e5-4dfd-9e92-59bb098c3fe0-b25kZXJkZWVsI0hvb3J0Qmlq",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#HoortBij",
+  "bronAssetId" : {
+    "identificator" : "a619b374-8e23-46d9-a0c3-210b45c41c21-b25kZXJkZWVsI1NsYWdib29ta29sb20",
+    "toegekendDoor" : "AWV"
+  },
+  "doelAssetId" : {
+    "identificator" : "0f7934e2-6200-48bb-a484-bac2b764e0f2-aW5zdGFsbGF0aWUjU2xhZ2Jvb20",
+    "toegekendDoor" : "AWV"
+  },
+  "bron" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomkolom"
+  },
+  "doel" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Slagboom"
+  },
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "9eb475e4-9d92-4b26-9627-e30433d114cd-b25kZXJkZWVsI0hlZWZ0QmV0cm9ra2VuZQ"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#HeeftBetrokkene",
+  "bronAssetId" : {
+    "identificator" : "053db5e7-c5cd-4dbf-be58-5b82d52ab8e7-aW5zdGFsbGF0aWUjU2xhZ2Jvb20"
+  },
+  "doelAssetId" : {
+    "identificator" : "be960fe9-fa51-4537-8ef6-b0946186111a-cHVybDpBZ2VudA"
+  },
+  "bron" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Slagboom"
+  },
+  "doel" : {
+    "typeURI" : "http://purl.org/dc/terms/Agent"
+  },
+  "rol" : "installatieverantwoordelijke",
+  "specifiekeContactinfo" : [ ],
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "9e7650af-308c-4bea-b223-0498a7ad2a81-b25kZXJkZWVsI1ZvZWR0QWFuZ2VzdHV1cmQ",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#VoedtAangestuurd",
+  "bronAssetId" : {
+    "identificator" : "0da636d7-e26d-43bf-bfb2-490de588b25c-b25kZXJkZWVsI0NvbnRhY3Rvcg",
+    "toegekendDoor" : "AWV"
+  },
+  "doelAssetId" : {
+    "identificator" : "20570686-42f8-4a85-a1b2-bacfb945ab2b-b25kZXJkZWVsI1NsYWdib29ta29sb20",
+    "toegekendDoor" : "AWV"
+  },
+  "bron" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Contactor"
+  },
+  "doel" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomkolom"
+  },
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "9d5a244a-bf5c-4158-ba34-5c00d7e55b9c-b25kZXJkZWVsI1NsYWdib29ta29sb20",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomkolom",
+  "toestand" : "in-ontwerp",
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "9d520ee4-af3e-46bd-bf54-2f5cef21d9a2-b25kZXJkZWVsI1NsYWdib29tYXJtVmVybGljaHRpbmc",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#SlagboomarmVerlichting",
+  "toestand" : "in-ontwerp",
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "9ca7baae-8d4b-4752-a016-b58f1b2a9cdc-b25kZXJkZWVsI1ZlcmtlZXJzbGljaHRSb29k",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#VerkeerslichtRood",
+  "naam" : "VerkeerslichtRood",
+  "isActief" : true,
+  "toestand" : "in-ontwerp"
+},{
+  "assetId" : {
+    "identificator" : "9aab29be-f656-4d05-a59d-309911ea778f-b25kZXJkZWVsI1NsYWdib29ta29sb20",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomkolom",
+  "toestand" : "in-gebruik",
+  "isActief" : true,
+  "geometry" : "POINT Z (98743 191952.2 0)"
+},{
+  "assetId" : {
+    "identificator" : "99a0005e-37c5-4811-be8e-d1f3d6234137-b25kZXJkZWVsI0JldmVzdGlnaW5n",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bevestiging",
+  "bronAssetId" : {
+    "identificator" : "007105f0-521c-4ead-9e4e-1c7f8546f01b-b25kZXJkZWVsI1NsYWdib29ta29sb20",
+    "toegekendDoor" : "AWV"
+  },
+  "doelAssetId" : {
+    "identificator" : "450d5fe8-3d1f-441e-9fd6-3df9129d9265-b25kZXJkZWVsI1NsYWdib29tYXJt",
+    "toegekendDoor" : "AWV"
+  },
+  "bron" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomkolom"
+  },
+  "doel" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomarm"
+  },
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "986ff9b9-2eaa-49d2-a9a1-14473a3f00bb-b25kZXJkZWVsI0JldmVzdGlnaW5n",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bevestiging",
+  "bronAssetId" : {
+    "identificator" : "05f502d8-d91a-4717-9574-28fc81228c91-b25kZXJkZWVsI1NsYWdib29tYXJtVmVybGljaHRpbmc",
+    "toegekendDoor" : "AWV"
+  },
+  "doelAssetId" : {
+    "identificator" : "d5653463-cda3-4baf-815d-8ae8df3568aa-b25kZXJkZWVsI1NsYWdib29tYXJt",
+    "toegekendDoor" : "AWV"
+  },
+  "bron" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#SlagboomarmVerlichting"
+  },
+  "doel" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomarm"
+  },
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "982265dd-29dd-4207-860e-e9dc86e51a6d-b25kZXJkZWVsI0JldmVzdGlnaW5n",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bevestiging",
+  "bronAssetId" : {
+    "identificator" : "4b959c08-37f6-4ada-95fd-bd0013454cc9-b25kZXJkZWVsI1NsYWdib29tYXJt",
+    "toegekendDoor" : "AWV"
+  },
+  "doelAssetId" : {
+    "identificator" : "c9da7eaf-abc8-4de9-96cb-9779327d4e34-b25kZXJkZWVsI1NsYWdib29tYXJtVmVybGljaHRpbmc",
+    "toegekendDoor" : "AWV"
+  },
+  "bron" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomarm"
+  },
+  "doel" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#SlagboomarmVerlichting"
+  },
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "97e4fb8a-e0f6-47c7-b3b7-4e35a2bed335-b25kZXJkZWVsI0hlZWZ0QmV0cm9ra2VuZQ"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#HeeftBetrokkene",
+  "bronAssetId" : {
+    "identificator" : "b2fb5551-c4ed-4351-85bc-bb8e8c330790-aW5zdGFsbGF0aWUjU2xhZ2Jvb20"
+  },
+  "doelAssetId" : {
+    "identificator" : "be960fe9-fa51-4537-8ef6-b0946186111a-cHVybDpBZ2VudA"
+  },
+  "bron" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Slagboom"
+  },
+  "doel" : {
+    "typeURI" : "http://purl.org/dc/terms/Agent"
+  },
+  "rol" : "installatieverantwoordelijke",
+  "specifiekeContactinfo" : [ ],
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "96d9e1f3-cb84-4e74-9c23-7eee37729ebb-b25kZXJkZWVsI1NsYWdib29tYXJtVmVybGljaHRpbmc",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#SlagboomarmVerlichting",
+  "toestand" : "in-ontwerp",
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "965d8f06-21bb-4cde-ad0a-6f74f1ec5971-b25kZXJkZWVsI1NsYWdib29tYXJtVmVybGljaHRpbmc",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#SlagboomarmVerlichting",
+  "toestand" : "in-ontwerp",
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "9631a27b-00cb-4e49-a8c2-65760daff60e-b25kZXJkZWVsI0hlZWZ0QmV0cm9ra2VuZQ"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#HeeftBetrokkene",
+  "bronAssetId" : {
+    "identificator" : "0f7934e2-6200-48bb-a484-bac2b764e0f2-aW5zdGFsbGF0aWUjU2xhZ2Jvb20"
+  },
+  "doelAssetId" : {
+    "identificator" : "53236577-99c3-4863-8a60-f057c6fd4c1f-cHVybDpBZ2VudA"
+  },
+  "bron" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Slagboom"
+  },
+  "doel" : {
+    "typeURI" : "http://purl.org/dc/terms/Agent"
+  },
+  "rol" : "toezichter",
+  "specifiekeContactinfo" : [ ],
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "961c8ba0-ecd6-4835-9fcb-c979a347dffc-b25kZXJkZWVsI1NsYWdib29tYXJtVmVybGljaHRpbmc",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#SlagboomarmVerlichting",
+  "toestand" : "in-ontwerp",
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "95675296-b204-4be9-a920-b26b9d6d2c12-b25kZXJkZWVsI1NsYWdib29ta29sb20",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomkolom",
+  "toestand" : "in-gebruik",
+  "isActief" : true,
+  "geometry" : "POINT Z (61516.2 209445.7 0)"
+},{
+  "assetId" : {
+    "identificator" : "93f5cdc3-fe0c-412d-ba31-0787d14258c5-b25kZXJkZWVsI1BMQw",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#PLC",
+  "isActief" : true,
+  "naam" : "L.PLC.TYS.1",
+  "toestand" : "in-ontwerp"
+},{
+  "assetId" : {
+    "identificator" : "93189f92-80cb-455c-a004-e94d37c7dcca-b25kZXJkZWVsI0hlZWZ0QmV0cm9ra2VuZQ"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#HeeftBetrokkene",
+  "bronAssetId" : {
+    "identificator" : "053db5e7-c5cd-4dbf-be58-5b82d52ab8e7-aW5zdGFsbGF0aWUjU2xhZ2Jvb20"
+  },
+  "doelAssetId" : {
+    "identificator" : "53236577-99c3-4863-8a60-f057c6fd4c1f-cHVybDpBZ2VudA"
+  },
+  "bron" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Slagboom"
+  },
+  "doel" : {
+    "typeURI" : "http://purl.org/dc/terms/Agent"
+  },
+  "rol" : "toezichter",
+  "specifiekeContactinfo" : [ ],
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "9298eca6-f9f4-456f-aea6-74944d03b75d-b25kZXJkZWVsI0hlZWZ0QmV0cm9ra2VuZQ"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#HeeftBetrokkene",
+  "bronAssetId" : {
+    "identificator" : "62c7cdd6-0619-4d25-a638-0f9e17c67f02-aW5zdGFsbGF0aWUjU2xhZ2Jvb20"
+  },
+  "doelAssetId" : {
+    "identificator" : "53236577-99c3-4863-8a60-f057c6fd4c1f-cHVybDpBZ2VudA"
+  },
+  "bron" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Slagboom"
+  },
+  "doel" : {
+    "typeURI" : "http://purl.org/dc/terms/Agent"
+  },
+  "rol" : "toezichter",
+  "specifiekeContactinfo" : [ ],
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "914d022d-00b4-47b6-a70e-3cf7508e497f-b25kZXJkZWVsI1NsYWdib29tYXJt",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomarm",
+  "toestand" : "in-ontwerp",
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "8e4bc1e8-dac8-44fc-947b-16b99c2dd0c5-b25kZXJkZWVsI1NsYWdib29tYXJt",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomarm",
+  "toestand" : "in-ontwerp",
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "8e3a74d7-b1a4-4367-b879-dea7660cdcd4-b25kZXJkZWVsI0hvb3J0Qmlq",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#HoortBij",
+  "bronAssetId" : {
+    "identificator" : "20570686-42f8-4a85-a1b2-bacfb945ab2b-b25kZXJkZWVsI1NsYWdib29ta29sb20",
+    "toegekendDoor" : "AWV"
+  },
+  "doelAssetId" : {
+    "identificator" : "62c7cdd6-0619-4d25-a638-0f9e17c67f02-aW5zdGFsbGF0aWUjU2xhZ2Jvb20",
+    "toegekendDoor" : "AWV"
+  },
+  "bron" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomkolom"
+  },
+  "doel" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Slagboom"
+  },
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "8c493b7f-bdd9-4418-9180-2ce7320781cc-b25kZXJkZWVsI0JldmVzdGlnaW5n",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bevestiging",
+  "bronAssetId" : {
+    "identificator" : "119bd2c7-23b5-40ea-94c1-7729a055c441-b25kZXJkZWVsI1ZvZXJ0dWlnbGFudGFhcm4",
+    "toegekendDoor" : "AWV"
+  },
+  "doelAssetId" : {
+    "identificator" : "79c4b922-3984-4895-83f0-11da8002f1a6-b25kZXJkZWVsI1NlaW5icnVn",
+    "toegekendDoor" : "AWV"
+  },
+  "bron" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Voertuiglantaarn"
+  },
+  "doel" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Seinbrug"
+  },
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "8b7eed93-99fd-4f9f-a6ce-de06e861f7c4-b25kZXJkZWVsI1NsYWdib29ta29sb20",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomkolom",
+  "toestand" : "in-ontwerp",
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "8a1f4ab5-0042-404a-8a6b-2c57eeab7c61-aW5zdGFsbGF0aWUjU2xhZ2Jvb20",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Slagboom",
+  "toestand" : "in-gebruik",
+  "naam" : "SLB003",
+  "isActief" : true,
+  "naampad" : "DA-2021-00024/SLB003"
+},{
+  "assetId" : {
+    "identificator" : "89d580e0-b832-4881-b8ff-51a1c4914fbc-b25kZXJkZWVsI1ZvZWR0",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Voedt",
+  "bronAssetId" : {
+    "identificator" : "9d22d581-e33d-4dca-911d-7ed0e4824fb2-b25kZXJkZWVsI1N0cm9vbWtyaW5n",
+    "toegekendDoor" : "AWV"
+  },
+  "doelAssetId" : {
+    "identificator" : "cab4bbfe-d4be-4572-98ce-3a23deaf07c8-b25kZXJkZWVsI0NvbnRhY3Rvcg",
+    "toegekendDoor" : "AWV"
+  },
+  "bron" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Stroomkring"
+  },
+  "doel" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Contactor"
+  },
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "8963d896-be48-46b1-acf9-2a7d4fb877a4-b25kZXJkZWVsI1NsYWdib29tYXJt",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomarm",
+  "toestand" : "in-ontwerp",
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "86e3ddef-57f4-4751-a45c-a3171c6f27b4-b25kZXJkZWVsI1ZvZWR0QWFuZ2VzdHV1cmQ",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#VoedtAangestuurd",
+  "bronAssetId" : {
+    "identificator" : "0baafecb-d8d3-4421-b298-2a8993f97015-b25kZXJkZWVsI0NvbnRhY3Rvcg",
+    "toegekendDoor" : "AWV"
+  },
+  "doelAssetId" : {
+    "identificator" : "a619b374-8e23-46d9-a0c3-210b45c41c21-b25kZXJkZWVsI1NsYWdib29ta29sb20",
+    "toegekendDoor" : "AWV"
+  },
+  "bron" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Contactor"
+  },
+  "doel" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomkolom"
+  },
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "8643c571-6089-41aa-911b-6443945aae03-b25kZXJkZWVsI1NsYWdib29ta29sb20",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomkolom",
+  "toestand" : "in-ontwerp",
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "850f9be7-302b-44b5-8752-c3323c55ce75-b25kZXJkZWVsI1ZlcmtlZXJzbGljaHRPcmFuamVnZWVs",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#VerkeerslichtOranjegeel",
+  "isActief" : true,
+  "toestand" : "in-ontwerp",
+  "naam" : "VerkeerslichtOrange"
+},{
+  "assetId" : {
+    "identificator" : "84d2b953-ab3c-4133-971c-97049153120d-b25kZXJkZWVsI1NsYWdib29ta29sb20",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomkolom",
+  "toestand" : "in-ontwerp",
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "83d761ca-62e6-4951-9a0d-83c416d4a44c-b25kZXJkZWVsI0NvZGVrbGF2aWVy",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Codeklavier",
+  "naam" : "CKL.TYS.1",
+  "isActief" : true,
+  "toestand" : "in-ontwerp"
+},{
+  "assetId" : {
+    "identificator" : "80c5776d-bd31-458d-bab7-49d6baf9cf0c-b25kZXJkZWVsI0hvb3J0Qmlq",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#HoortBij",
+  "bronAssetId" : {
+    "identificator" : "66c7e146-5ecf-4f58-8c50-b43f5e341f90-b25kZXJkZWVsI1NsYWdib29ta29sb20",
+    "toegekendDoor" : "AWV"
+  },
+  "doelAssetId" : {
+    "identificator" : "fee81d43-ea0e-4d4b-a9d0-3938fd70b7f3-aW5zdGFsbGF0aWUjU2xhZ2Jvb20",
+    "toegekendDoor" : "AWV"
+  },
+  "bron" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomkolom"
+  },
+  "doel" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Slagboom"
+  },
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "8079c90b-9fdc-415c-9cc0-153a377dc715-b25kZXJkZWVsI0NvbnRhY3Rvcg",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Contactor",
+  "toestand" : "in-gebruik",
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "8048aee7-5493-48c4-8c7f-3e7318390b76-b25kZXJkZWVsI1NsYWdib29ta29sb20",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomkolom",
+  "toestand" : "in-gebruik",
+  "isActief" : true,
+  "geometry" : "POINT Z (65450 162432.8 0)"
+},{
+  "assetId" : {
+    "identificator" : "7d822202-8d9a-4235-9669-8c3a07e1cf5c-b25kZXJkZWVsI1NsYWdib29tYXJt",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomarm",
+  "toestand" : "in-ontwerp",
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "7c6634be-91ce-4972-8a13-87dca4a297a4-b25kZXJkZWVsI0JldmVzdGlnaW5n",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bevestiging",
+  "bronAssetId" : {
+    "identificator" : "c61e1ca9-713f-4d14-9aec-f493196e83f6-b25kZXJkZWVsI1NsYWdib29tYXJt",
+    "toegekendDoor" : "AWV"
+  },
+  "doelAssetId" : {
+    "identificator" : "771f43fe-50d6-43ad-94ac-8bfa14ec7eb4-b25kZXJkZWVsI1NsYWdib29ta29sb20",
+    "toegekendDoor" : "AWV"
+  },
+  "bron" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomarm"
+  },
+  "doel" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomkolom"
+  },
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "78a26cf6-978c-4cc2-a47c-9085caeda742-b25kZXJkZWVsI1NsYWdib29tYXJtVmVybGljaHRpbmc",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#SlagboomarmVerlichting",
+  "toestand" : "in-ontwerp",
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "782720cf-585e-4863-a3db-d6b2a743eeaa-b25kZXJkZWVsI1ZlcmtlZXJzbGljaHRHcm9lbg",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#VerkeerslichtGroen",
+  "isActief" : true,
+  "toestand" : "in-ontwerp",
+  "naam" : "VerkeerslichtGroen"
+},{
+  "assetId" : {
+    "identificator" : "777918b7-5fd0-4077-9a03-37b2b87d88d2-b25kZXJkZWVsI1NsYWdib29ta29sb20",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomkolom",
+  "toestand" : "in-gebruik",
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "771f43fe-50d6-43ad-94ac-8bfa14ec7eb4-b25kZXJkZWVsI1NsYWdib29ta29sb20",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomkolom",
+  "toestand" : "in-ontwerp",
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "75640b15-b14e-48e6-8826-87d11f1cd366-aW5zdGFsbGF0aWUjU2xhZ2Jvb20",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Slagboom",
+  "naampad" : "DA-2021-00024/SLBuitrit",
+  "naam" : "SLBuitrit",
+  "toestand" : "in-gebruik",
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "7422c52e-6f93-44ec-8f3a-e54a967f554d-b25kZXJkZWVsI1ZvZWR0",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Voedt",
+  "bronAssetId" : {
+    "identificator" : "b6b4894e-59a5-44fd-b7a9-a1d457fe268a-b25kZXJkZWVsI1N0cm9vbWtyaW5n",
+    "toegekendDoor" : "AWV"
+  },
+  "doelAssetId" : {
+    "identificator" : "38db6cd5-10d0-4773-b6fe-7c013032adaf-b25kZXJkZWVsI0NvbnRhY3Rvcg",
+    "toegekendDoor" : "AWV"
+  },
+  "bron" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Stroomkring"
+  },
+  "doel" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Contactor"
+  },
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "7194b1ef-cff8-4456-afdb-8dbe897cc916-b25kZXJkZWVsI0JldmVzdGlnaW5n",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bevestiging",
+  "bronAssetId" : {
+    "identificator" : "bd89646d-63cc-4714-9d14-c0b67d725652-b25kZXJkZWVsI1NsYWdib29tYXJtVmVybGljaHRpbmc",
+    "toegekendDoor" : "AWV"
+  },
+  "doelAssetId" : {
+    "identificator" : "a4723294-5ec9-4fcd-9328-139f3063f8ad-b25kZXJkZWVsI1NsYWdib29tYXJt",
+    "toegekendDoor" : "AWV"
+  },
+  "bron" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#SlagboomarmVerlichting"
+  },
+  "doel" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomarm"
+  },
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "7100a8ee-c7d1-4dde-a5e3-2780d0b8e118-b25kZXJkZWVsI0JldmVzdGlnaW5n",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bevestiging",
+  "bronAssetId" : {
+    "identificator" : "6f7920f7-b335-4a69-808c-53e5eb3e268f-b25kZXJkZWVsI1NsYWdib29tYXJt",
+    "toegekendDoor" : "AWV"
+  },
+  "doelAssetId" : {
+    "identificator" : "600a1a52-7852-4867-9511-3fb342cd7b03-b25kZXJkZWVsI1NsYWdib29ta29sb20",
+    "toegekendDoor" : "AWV"
+  },
+  "bron" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomarm"
+  },
+  "doel" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomkolom"
+  },
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "7023799b-972f-460f-a82d-d7b3c7c5a1b7-b25kZXJkZWVsI0hlZWZ0QmV0cm9ra2VuZQ"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#HeeftBetrokkene",
+  "bronAssetId" : {
+    "identificator" : "0f7934e2-6200-48bb-a484-bac2b764e0f2-aW5zdGFsbGF0aWUjU2xhZ2Jvb20"
+  },
+  "doelAssetId" : {
+    "identificator" : "be960fe9-fa51-4537-8ef6-b0946186111a-cHVybDpBZ2VudA"
+  },
+  "bron" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Slagboom"
+  },
+  "doel" : {
+    "typeURI" : "http://purl.org/dc/terms/Agent"
+  },
+  "rol" : "installatieverantwoordelijke",
+  "specifiekeContactinfo" : [ ],
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "6ffb952e-73eb-4c0e-a1f8-b3cfa8e68891-b25kZXJkZWVsI0JldmVzdGlnaW5n",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bevestiging",
+  "bronAssetId" : {
+    "identificator" : "4a5f31e6-8087-4187-8207-0cdde9caf9b6-b25kZXJkZWVsI1NsYWdib29tYXJt",
+    "toegekendDoor" : "AWV"
+  },
+  "doelAssetId" : {
+    "identificator" : "680f477f-cd81-4175-abb0-1b244b7d752f-b25kZXJkZWVsI1NsYWdib29ta29sb20",
+    "toegekendDoor" : "AWV"
+  },
+  "bron" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomarm"
+  },
+  "doel" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomkolom"
+  },
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "6f7920f7-b335-4a69-808c-53e5eb3e268f-b25kZXJkZWVsI1NsYWdib29tYXJt",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomarm",
+  "toestand" : "in-ontwerp",
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "6f255659-6709-4751-a00c-2bd053f1eb75-b25kZXJkZWVsI0JldmVzdGlnaW5n",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bevestiging",
+  "bronAssetId" : {
+    "identificator" : "f3eb6eef-51b4-4610-915f-ce97f9c8c91f-b25kZXJkZWVsI1NsYWdib29tYXJt",
+    "toegekendDoor" : "AWV"
+  },
+  "doelAssetId" : {
+    "identificator" : "08854907-203f-439d-8f43-5c02ea5a1321-b25kZXJkZWVsI1NsYWdib29tYXJtVmVybGljaHRpbmc",
+    "toegekendDoor" : "AWV"
+  },
+  "bron" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomarm"
+  },
+  "doel" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#SlagboomarmVerlichting"
+  },
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "680f477f-cd81-4175-abb0-1b244b7d752f-b25kZXJkZWVsI1NsYWdib29ta29sb20",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomkolom",
+  "toestand" : "in-ontwerp",
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "66d61b20-84bf-435d-baac-961148b50ada-aW5zdGFsbGF0aWUjU2xhZ2Jvb20",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Slagboom",
+  "naampad" : "KO0004/SLAGBOOMINSTALLATIE1",
+  "naam" : "SLAGBOOMINSTALLATIE1",
+  "toestand" : "in-ontwerp",
+  "isActief" : false
+},{
+  "assetId" : {
+    "identificator" : "66c7e146-5ecf-4f58-8c50-b43f5e341f90-b25kZXJkZWVsI1NsYWdib29ta29sb20",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomkolom",
+  "toestand" : "in-gebruik",
+  "isActief" : true,
+  "geometry" : "POINT Z (65688.6 162212.8 0)"
+},{
+  "assetId" : {
+    "identificator" : "63898856-791b-4339-9bc0-152f097b2d24-b25kZXJkZWVsI0hlZWZ0QmV0cm9ra2VuZQ"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#HeeftBetrokkene",
+  "bronAssetId" : {
+    "identificator" : "b2fb5551-c4ed-4351-85bc-bb8e8c330790-aW5zdGFsbGF0aWUjU2xhZ2Jvb20"
+  },
+  "doelAssetId" : {
+    "identificator" : "53236577-99c3-4863-8a60-f057c6fd4c1f-cHVybDpBZ2VudA"
+  },
+  "bron" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Slagboom"
+  },
+  "doel" : {
+    "typeURI" : "http://purl.org/dc/terms/Agent"
+  },
+  "rol" : "toezichter",
+  "specifiekeContactinfo" : [ ],
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "63620dd5-fc40-42ec-9bf3-64c07a2bff8a-b25kZXJkZWVsI0JldmVzdGlnaW5n",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bevestiging",
+  "bronAssetId" : {
+    "identificator" : "cb60d242-1c57-49ea-817f-2d8c88dd5e32-b25kZXJkZWVsI1NsYWdib29tYXJtVmVybGljaHRpbmc",
+    "toegekendDoor" : "AWV"
+  },
+  "doelAssetId" : {
+    "identificator" : "8963d896-be48-46b1-acf9-2a7d4fb877a4-b25kZXJkZWVsI1NsYWdib29tYXJt",
+    "toegekendDoor" : "AWV"
+  },
+  "bron" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#SlagboomarmVerlichting"
+  },
+  "doel" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomarm"
+  },
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "62c7cdd6-0619-4d25-a638-0f9e17c67f02-aW5zdGFsbGF0aWUjU2xhZ2Jvb20",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Slagboom",
+  "naam" : "SLB005",
+  "toestand" : "in-gebruik",
+  "isActief" : true,
+  "naampad" : "DA-2021-00024/SLB005"
+},{
+  "assetId" : {
+    "identificator" : "61b2de70-698c-4ced-bf45-f3944563e5de-b25kZXJkZWVsI0JldmVzdGlnaW5n",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bevestiging",
+  "bronAssetId" : {
+    "identificator" : "c084ab62-cf9b-4974-88c6-f722b6d36bf4-b25kZXJkZWVsI1NsYWdib29tYXJtVmVybGljaHRpbmc",
+    "toegekendDoor" : "AWV"
+  },
+  "doelAssetId" : {
+    "identificator" : "aab3305d-28ae-4305-8922-f6f792b2e731-b25kZXJkZWVsI1NsYWdib29tYXJt",
+    "toegekendDoor" : "AWV"
+  },
+  "bron" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#SlagboomarmVerlichting"
+  },
+  "doel" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomarm"
+  },
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "61978491-6371-4ce7-8835-61583f6b7867-aW5zdGFsbGF0aWUjU2xhZ2Jvb20",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Slagboom",
+  "naampad" : "KW0002B3/slagboom",
+  "naam" : "slagboom",
+  "notitie" : "verwijderd op vraag van Dirk Dousselaere",
+  "toestand" : "geannuleerd",
+  "isActief" : false
+},{
+  "assetId" : {
+    "identificator" : "606a3001-a0f0-4174-9b0b-66f98ffb05ba-b25kZXJkZWVsI1ZvZWR0",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Voedt",
+  "bronAssetId" : {
+    "identificator" : "bd4ef6c6-b438-44db-bc57-e730e532e325-b25kZXJkZWVsI1N0cm9vbWtyaW5n",
+    "toegekendDoor" : "AWV"
+  },
+  "doelAssetId" : {
+    "identificator" : "5bf36168-9924-4f7d-9a33-80e12311a02d-b25kZXJkZWVsI0NvbnRhY3Rvcg",
+    "toegekendDoor" : "AWV"
+  },
+  "bron" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Stroomkring"
+  },
+  "doel" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Contactor"
+  },
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "60173e59-8ccb-4b8d-800c-09d2d1228288-b25kZXJkZWVsI0hlZWZ0QmV0cm9ra2VuZQ"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#HeeftBetrokkene",
+  "bronAssetId" : {
+    "identificator" : "fee81d43-ea0e-4d4b-a9d0-3938fd70b7f3-aW5zdGFsbGF0aWUjU2xhZ2Jvb20"
+  },
+  "doelAssetId" : {
+    "identificator" : "be960fe9-fa51-4537-8ef6-b0946186111a-cHVybDpBZ2VudA"
+  },
+  "bron" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Slagboom"
+  },
+  "doel" : {
+    "typeURI" : "http://purl.org/dc/terms/Agent"
+  },
+  "rol" : "installatieverantwoordelijke",
+  "specifiekeContactinfo" : [ ],
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "600a1a52-7852-4867-9511-3fb342cd7b03-b25kZXJkZWVsI1NsYWdib29ta29sb20",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomkolom",
+  "toestand" : "in-ontwerp",
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "5d86c03d-2fd0-4370-8a98-2eb96bc272f9-b25kZXJkZWVsI1NsYWdib29tYXJtVmVybGljaHRpbmc",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#SlagboomarmVerlichting",
+  "toestand" : "in-ontwerp",
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "5bf36168-9924-4f7d-9a33-80e12311a02d-b25kZXJkZWVsI0NvbnRhY3Rvcg",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Contactor",
+  "toestand" : "in-gebruik",
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "59cea222-f304-4ea2-a3cd-903a9fda649c-b25kZXJkZWVsI0JldmVzdGlnaW5n",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bevestiging",
+  "bronAssetId" : {
+    "identificator" : "96d9e1f3-cb84-4e74-9c23-7eee37729ebb-b25kZXJkZWVsI1NsYWdib29tYXJtVmVybGljaHRpbmc",
+    "toegekendDoor" : "AWV"
+  },
+  "doelAssetId" : {
+    "identificator" : "d5852e80-ec9c-4091-bb7f-ed26cea2368a-b25kZXJkZWVsI1NsYWdib29tYXJt",
+    "toegekendDoor" : "AWV"
+  },
+  "bron" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#SlagboomarmVerlichting"
+  },
+  "doel" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomarm"
+  },
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "57ffec73-a804-4011-94a7-16637217ca91-b25kZXJkZWVsI0JldmVzdGlnaW5n",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bevestiging",
+  "bronAssetId" : {
+    "identificator" : "965d8f06-21bb-4cde-ad0a-6f74f1ec5971-b25kZXJkZWVsI1NsYWdib29tYXJtVmVybGljaHRpbmc",
+    "toegekendDoor" : "AWV"
+  },
+  "doelAssetId" : {
+    "identificator" : "3d0d4316-5c16-4771-b680-291b5c0eec3b-b25kZXJkZWVsI1NsYWdib29tYXJt",
+    "toegekendDoor" : "AWV"
+  },
+  "bron" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#SlagboomarmVerlichting"
+  },
+  "doel" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomarm"
+  },
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "55ee744b-289c-40e0-89c4-94c5a73ac012-b25kZXJkZWVsI0JldmVzdGlnaW5n",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bevestiging",
+  "bronAssetId" : {
+    "identificator" : "782720cf-585e-4863-a3db-d6b2a743eeaa-b25kZXJkZWVsI1ZlcmtlZXJzbGljaHRHcm9lbg",
+    "toegekendDoor" : "AWV"
+  },
+  "doelAssetId" : {
+    "identificator" : "119bd2c7-23b5-40ea-94c1-7729a055c441-b25kZXJkZWVsI1ZvZXJ0dWlnbGFudGFhcm4",
+    "toegekendDoor" : "AWV"
+  },
+  "bron" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#VerkeerslichtGroen"
+  },
+  "doel" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Voertuiglantaarn"
+  },
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "559cee44-11e7-42dd-9ee8-8221e0ef1910-b25kZXJkZWVsI0JldmVzdGlnaW5n",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bevestiging",
+  "bronAssetId" : {
+    "identificator" : "53a18776-2444-4aa6-9b2d-418277bbc2d7-b25kZXJkZWVsI1NsYWdib29tYXJt",
+    "toegekendDoor" : "AWV"
+  },
+  "doelAssetId" : {
+    "identificator" : "a60143bf-34ee-4ea3-8f68-44254db79f56-b25kZXJkZWVsI1NsYWdib29ta29sb20",
+    "toegekendDoor" : "AWV"
+  },
+  "bron" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomarm"
+  },
+  "doel" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomkolom"
+  },
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "546020b3-b4ec-45d5-acdc-896223cf8b77-b25kZXJkZWVsI1ZvZWR0",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Voedt",
+  "bronAssetId" : {
+    "identificator" : "b8db94b4-50bd-49d9-8851-524d17ffa6d7-b25kZXJkZWVsI1N0cm9vbWtyaW5n",
+    "toegekendDoor" : "AWV"
+  },
+  "doelAssetId" : {
+    "identificator" : "c41ac7fe-d016-442a-95ad-6ce8334a513f-b25kZXJkZWVsI0NvbnRhY3Rvcg",
+    "toegekendDoor" : "AWV"
+  },
+  "bron" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Stroomkring"
+  },
+  "doel" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Contactor"
+  },
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "53a18776-2444-4aa6-9b2d-418277bbc2d7-b25kZXJkZWVsI1NsYWdib29tYXJt",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomarm",
+  "toestand" : "in-ontwerp",
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "50855b57-23be-42e8-ac24-6280df3a5b8a-b25kZXJkZWVsI0hlZWZ0QmV0cm9ra2VuZQ"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#HeeftBetrokkene",
+  "bronAssetId" : {
+    "identificator" : "62c7cdd6-0619-4d25-a638-0f9e17c67f02-aW5zdGFsbGF0aWUjU2xhZ2Jvb20"
+  },
+  "doelAssetId" : {
+    "identificator" : "be960fe9-fa51-4537-8ef6-b0946186111a-cHVybDpBZ2VudA"
+  },
+  "bron" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Slagboom"
+  },
+  "doel" : {
+    "typeURI" : "http://purl.org/dc/terms/Agent"
+  },
+  "rol" : "installatieverantwoordelijke",
+  "specifiekeContactinfo" : [ ],
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "4d657ed6-6172-43d3-9423-136d3d338dbe-b25kZXJkZWVsI1NsYWdib29tYXJt",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomarm",
+  "toestand" : "in-gebruik",
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "4d4bcd39-63eb-476f-83a9-50da8e8636d8-b25kZXJkZWVsI1N0dXJpbmc",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Sturing",
+  "bronAssetId" : {
+    "identificator" : "83d761ca-62e6-4951-9a0d-83c416d4a44c-b25kZXJkZWVsI0NvZGVrbGF2aWVy",
+    "toegekendDoor" : "AWV"
+  },
+  "doelAssetId" : {
+    "identificator" : "13d10054-737f-4b22-a18b-a7c8dd3683d6-b25kZXJkZWVsI0lPS2FhcnQ",
+    "toegekendDoor" : "AWV"
+  },
+  "bron" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Codeklavier"
+  },
+  "doel" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#IOKaart"
+  },
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "4b959c08-37f6-4ada-95fd-bd0013454cc9-b25kZXJkZWVsI1NsYWdib29tYXJt",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomarm",
+  "toestand" : "in-ontwerp",
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "4b86827a-446a-431e-b23b-064e7c71a6f6-aW5zdGFsbGF0aWUjU2xhZ2Jvb20",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Slagboom",
+  "notitie" : "Nieuwe Sluis en stuwen Aalst",
+  "naampad" : "KO0127/Slagbomen",
+  "naam" : "Slagbomen",
+  "toestand" : "in-ontwerp",
+  "isActief" : false
+},{
+  "assetId" : {
+    "identificator" : "4ad3dfba-7967-4830-aead-7853b976e304-b25kZXJkZWVsI0JldmVzdGlnaW5n",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bevestiging",
+  "bronAssetId" : {
+    "identificator" : "e1f6b74e-e9ff-47d6-a365-9eccffafe743-b25kZXJkZWVsI1NsYWdib29tYXJtVmVybGljaHRpbmc",
+    "toegekendDoor" : "AWV"
+  },
+  "doelAssetId" : {
+    "identificator" : "53a18776-2444-4aa6-9b2d-418277bbc2d7-b25kZXJkZWVsI1NsYWdib29tYXJt",
+    "toegekendDoor" : "AWV"
+  },
+  "bron" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#SlagboomarmVerlichting"
+  },
+  "doel" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomarm"
+  },
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "4a5f31e6-8087-4187-8207-0cdde9caf9b6-b25kZXJkZWVsI1NsYWdib29tYXJt",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomarm",
+  "toestand" : "in-ontwerp",
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "468750c9-52fc-4f67-86a8-3cafe7d67c96-b25kZXJkZWVsI0JldmVzdGlnaW5n",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bevestiging",
+  "bronAssetId" : {
+    "identificator" : "850f9be7-302b-44b5-8752-c3323c55ce75-b25kZXJkZWVsI1ZlcmtlZXJzbGljaHRPcmFuamVnZWVs",
+    "toegekendDoor" : "AWV"
+  },
+  "doelAssetId" : {
+    "identificator" : "119bd2c7-23b5-40ea-94c1-7729a055c441-b25kZXJkZWVsI1ZvZXJ0dWlnbGFudGFhcm4",
+    "toegekendDoor" : "AWV"
+  },
+  "bron" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#VerkeerslichtOranjegeel"
+  },
+  "doel" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Voertuiglantaarn"
+  },
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "450d5fe8-3d1f-441e-9fd6-3df9129d9265-b25kZXJkZWVsI1NsYWdib29tYXJt",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomarm",
+  "toestand" : "in-ontwerp",
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "43cfdf06-4b2d-4d79-8a17-dcf8dae81077-b25kZXJkZWVsI0hvb3J0Qmlq",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#HoortBij",
+  "bronAssetId" : {
+    "identificator" : "8048aee7-5493-48c4-8c7f-3e7318390b76-b25kZXJkZWVsI1NsYWdib29ta29sb20",
+    "toegekendDoor" : "AWV"
+  },
+  "doelAssetId" : {
+    "identificator" : "c7b82659-871c-4a76-945c-dd3b8c820a7c-aW5zdGFsbGF0aWUjU2xhZ2Jvb20",
+    "toegekendDoor" : "AWV"
+  },
+  "bron" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomkolom"
+  },
+  "doel" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Slagboom"
+  },
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "428a0622-bab7-44e7-a245-2c7fea22b0ac-b25kZXJkZWVsI0NvbnRhY3Rvcg",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Contactor",
+  "toestand" : "in-gebruik",
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "426e86bc-08aa-400e-9584-3e8a6883eb3e-b25kZXJkZWVsI1N0dXJpbmc",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Sturing",
+  "bronAssetId" : {
+    "identificator" : "13d10054-737f-4b22-a18b-a7c8dd3683d6-b25kZXJkZWVsI0lPS2FhcnQ",
+    "toegekendDoor" : "AWV"
+  },
+  "doelAssetId" : {
+    "identificator" : "93f5cdc3-fe0c-412d-ba31-0787d14258c5-b25kZXJkZWVsI1BMQw",
+    "toegekendDoor" : "AWV"
+  },
+  "bron" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#IOKaart"
+  },
+  "doel" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#PLC"
+  },
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "3d0d4316-5c16-4771-b680-291b5c0eec3b-b25kZXJkZWVsI1NsYWdib29tYXJt",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomarm",
+  "toestand" : "in-ontwerp",
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "3cd53786-c19f-4a9e-a4b5-e1d1e1b5b947-b25kZXJkZWVsI0JldmVzdGlnaW5n",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bevestiging",
+  "bronAssetId" : {
+    "identificator" : "07c73def-23ff-4342-b90a-4ebbe8d180d4-b25kZXJkZWVsI1NsYWdib29tYXJt",
+    "toegekendDoor" : "AWV"
+  },
+  "doelAssetId" : {
+    "identificator" : "0f7277bd-ea2e-48e0-903e-933e6a455f20-b25kZXJkZWVsI1NsYWdib29ta29sb20",
+    "toegekendDoor" : "AWV"
+  },
+  "bron" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomarm"
+  },
+  "doel" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomkolom"
+  },
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "3cb5a585-792b-4aaf-8982-7220cd8e9835-b25kZXJkZWVsI1NsYWdib29ta29sb20",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomkolom",
+  "toestand" : "in-ontwerp",
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "3b043f3e-dea4-44db-bf42-1608402fe0c4-aW5zdGFsbGF0aWUjU2xhZ2Jvb20",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Slagboom",
+  "naam" : "SLB001-1",
+  "toestand" : "in-gebruik",
+  "isActief" : true,
+  "naampad" : "DA-2021-00024/SLB001-1"
+},{
+  "assetId" : {
+    "identificator" : "38db6cd5-10d0-4773-b6fe-7c013032adaf-b25kZXJkZWVsI0NvbnRhY3Rvcg",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Contactor",
+  "toestand" : "in-gebruik",
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "360cb925-4f1e-4a38-8001-78221f0b1290-b25kZXJkZWVsI0NvbnRhY3Rvcg",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Contactor",
+  "toestand" : "in-gebruik",
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "35bfea96-d318-482c-92db-7a318ef33389-b25kZXJkZWVsI1N0dXJpbmc",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Sturing",
+  "bronAssetId" : {
+    "identificator" : "2d1c2ce3-9bff-4e4c-8e24-b2bbcfe66cd5-b25kZXJkZWVsI0NvbnRhY3Rvcg",
+    "toegekendDoor" : "AWV"
+  },
+  "doelAssetId" : {
+    "identificator" : "13d10054-737f-4b22-a18b-a7c8dd3683d6-b25kZXJkZWVsI0lPS2FhcnQ",
+    "toegekendDoor" : "AWV"
+  },
+  "bron" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Contactor"
+  },
+  "doel" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#IOKaart"
+  },
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "33d6d67f-5082-4c49-872d-80a2f623228d-b25kZXJkZWVsI0JldmVzdGlnaW5n",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bevestiging",
+  "bronAssetId" : {
+    "identificator" : "8963d896-be48-46b1-acf9-2a7d4fb877a4-b25kZXJkZWVsI1NsYWdib29tYXJt",
+    "toegekendDoor" : "AWV"
+  },
+  "doelAssetId" : {
+    "identificator" : "d0b13b3a-85d7-4a75-8e5a-6c64073b73c1-b25kZXJkZWVsI1NsYWdib29ta29sb20",
+    "toegekendDoor" : "AWV"
+  },
+  "bron" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomarm"
+  },
+  "doel" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomkolom"
+  },
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "3301781e-65dc-4013-b89e-7ce219f70ec6-b25kZXJkZWVsI0JldmVzdGlnaW5n",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bevestiging",
+  "bronAssetId" : {
+    "identificator" : "07339cdb-85be-4fe3-a774-af95a8f64a11-b25kZXJkZWVsI1NsYWdib29tYXJt",
+    "toegekendDoor" : "AWV"
+  },
+  "doelAssetId" : {
+    "identificator" : "8643c571-6089-41aa-911b-6443945aae03-b25kZXJkZWVsI1NsYWdib29ta29sb20",
+    "toegekendDoor" : "AWV"
+  },
+  "bron" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomarm"
+  },
+  "doel" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomkolom"
+  },
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "32e34dab-e19f-4758-a64e-17c3ded9a2d8-b25kZXJkZWVsI0JldmVzdGlnaW5n",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bevestiging",
+  "bronAssetId" : {
+    "identificator" : "d5653463-cda3-4baf-815d-8ae8df3568aa-b25kZXJkZWVsI1NsYWdib29tYXJt",
+    "toegekendDoor" : "AWV"
+  },
+  "doelAssetId" : {
+    "identificator" : "2644c895-6b8f-4e17-bc67-7449614e54fc-b25kZXJkZWVsI1NsYWdib29ta29sb20",
+    "toegekendDoor" : "AWV"
+  },
+  "bron" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomarm"
+  },
+  "doel" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomkolom"
+  },
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "2d71a842-a900-47b7-8052-e4bae3438690-b25kZXJkZWVsI0hlZWZ0QmV0cm9ra2VuZQ"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#HeeftBetrokkene",
+  "bronAssetId" : {
+    "identificator" : "8a1f4ab5-0042-404a-8a6b-2c57eeab7c61-aW5zdGFsbGF0aWUjU2xhZ2Jvb20"
+  },
+  "doelAssetId" : {
+    "identificator" : "53236577-99c3-4863-8a60-f057c6fd4c1f-cHVybDpBZ2VudA"
+  },
+  "bron" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Slagboom"
+  },
+  "doel" : {
+    "typeURI" : "http://purl.org/dc/terms/Agent"
+  },
+  "rol" : "toezichter",
+  "specifiekeContactinfo" : [ ],
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "2d1c2ce3-9bff-4e4c-8e24-b2bbcfe66cd5-b25kZXJkZWVsI0NvbnRhY3Rvcg",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Contactor",
+  "toestand" : "in-ontwerp",
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "2cfd3d6a-d305-49be-acbb-b614a6a27e4d-b25kZXJkZWVsI1NsYWdib29tYXJt",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomarm",
+  "toestand" : "in-ontwerp",
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "2a3bc25e-49ed-406f-a86d-ba1dba60ddb6-b25kZXJkZWVsI1ZvZWR0QWFuZ2VzdHV1cmQ",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#VoedtAangestuurd",
+  "bronAssetId" : {
+    "identificator" : "cab4bbfe-d4be-4572-98ce-3a23deaf07c8-b25kZXJkZWVsI0NvbnRhY3Rvcg",
+    "toegekendDoor" : "AWV"
+  },
+  "doelAssetId" : {
+    "identificator" : "ae6c5f35-930d-47a3-b67f-a5ff40c6e0fe-b25kZXJkZWVsI1NsYWdib29ta29sb20",
+    "toegekendDoor" : "AWV"
+  },
+  "bron" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Contactor"
+  },
+  "doel" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomkolom"
+  },
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "28fb9fd8-9ded-4ce8-bb6c-38c13a01ffe5-b25kZXJkZWVsI0JldmVzdGlnaW5n",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bevestiging",
+  "bronAssetId" : {
+    "identificator" : "8e4bc1e8-dac8-44fc-947b-16b99c2dd0c5-b25kZXJkZWVsI1NsYWdib29tYXJt",
+    "toegekendDoor" : "AWV"
+  },
+  "doelAssetId" : {
+    "identificator" : "f2a660d9-4c16-4cbd-b7a2-7031f9e23bbb-b25kZXJkZWVsI1NsYWdib29tYXJtVmVybGljaHRpbmc",
+    "toegekendDoor" : "AWV"
+  },
+  "bron" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomarm"
+  },
+  "doel" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#SlagboomarmVerlichting"
+  },
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "27efcd9b-1c60-442e-a671-e92a3227094b-b25kZXJkZWVsI0hlZWZ0QmV0cm9ra2VuZQ"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#HeeftBetrokkene",
+  "bronAssetId" : {
+    "identificator" : "c7b82659-871c-4a76-945c-dd3b8c820a7c-aW5zdGFsbGF0aWUjU2xhZ2Jvb20"
+  },
+  "doelAssetId" : {
+    "identificator" : "be960fe9-fa51-4537-8ef6-b0946186111a-cHVybDpBZ2VudA"
+  },
+  "bron" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Slagboom"
+  },
+  "doel" : {
+    "typeURI" : "http://purl.org/dc/terms/Agent"
+  },
+  "rol" : "installatieverantwoordelijke",
+  "specifiekeContactinfo" : [ ],
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "2644c895-6b8f-4e17-bc67-7449614e54fc-b25kZXJkZWVsI1NsYWdib29ta29sb20",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomkolom",
+  "toestand" : "in-ontwerp",
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "26051664-5bb8-414f-8cb8-2bd9d8c8f8e2-b25kZXJkZWVsI0hvb3J0Qmlq",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#HoortBij",
+  "bronAssetId" : {
+    "identificator" : "10e59c83-6d9e-46b5-a320-a330f7946741-b25kZXJkZWVsI1NsYWdib29ta29sb20",
+    "toegekendDoor" : "AWV"
+  },
+  "doelAssetId" : {
+    "identificator" : "e4800bd0-5938-468e-95d4-63eb6d13924d-aW5zdGFsbGF0aWUjU2xhZ2Jvb20",
+    "toegekendDoor" : "AWV"
+  },
+  "bron" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomkolom"
+  },
+  "doel" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Slagboom"
+  },
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "25bbea3b-ac64-4ded-99b4-42133f4b76d8-b25kZXJkZWVsI0JlbA",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bel",
+  "isActief" : true,
+  "toestand" : "in-ontwerp",
+  "naam" : "Bel.2"
+},{
+  "assetId" : {
+    "identificator" : "24c840d4-7e79-4221-8329-624bf1227846-b25kZXJkZWVsI0JldmVzdGlnaW5n",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bevestiging",
+  "bronAssetId" : {
+    "identificator" : "d5852e80-ec9c-4091-bb7f-ed26cea2368a-b25kZXJkZWVsI1NsYWdib29tYXJt",
+    "toegekendDoor" : "AWV"
+  },
+  "doelAssetId" : {
+    "identificator" : "a26c138a-2e65-4e07-a2da-cb464868896f-b25kZXJkZWVsI1NsYWdib29ta29sb20",
+    "toegekendDoor" : "AWV"
+  },
+  "bron" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomarm"
+  },
+  "doel" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomkolom"
+  },
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "226676a2-9877-467d-b74e-92fbb71dd0cb-b25kZXJkZWVsI0JldmVzdGlnaW5n",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bevestiging",
+  "bronAssetId" : {
+    "identificator" : "3cb5a585-792b-4aaf-8982-7220cd8e9835-b25kZXJkZWVsI1NsYWdib29ta29sb20",
+    "toegekendDoor" : "AWV"
+  },
+  "doelAssetId" : {
+    "identificator" : "8e4bc1e8-dac8-44fc-947b-16b99c2dd0c5-b25kZXJkZWVsI1NsYWdib29tYXJt",
+    "toegekendDoor" : "AWV"
+  },
+  "bron" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomkolom"
+  },
+  "doel" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomarm"
+  },
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "211f8e44-1d8e-4266-8dfb-d00a14eb6d12-b25kZXJkZWVsI0hlZWZ0QmV0cm9ra2VuZQ"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#HeeftBetrokkene",
+  "bronAssetId" : {
+    "identificator" : "75640b15-b14e-48e6-8826-87d11f1cd366-aW5zdGFsbGF0aWUjU2xhZ2Jvb20"
+  },
+  "doelAssetId" : {
+    "identificator" : "be960fe9-fa51-4537-8ef6-b0946186111a-cHVybDpBZ2VudA"
+  },
+  "bron" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Slagboom"
+  },
+  "doel" : {
+    "typeURI" : "http://purl.org/dc/terms/Agent"
+  },
+  "rol" : "installatieverantwoordelijke",
+  "specifiekeContactinfo" : [ ],
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "20570686-42f8-4a85-a1b2-bacfb945ab2b-b25kZXJkZWVsI1NsYWdib29ta29sb20",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomkolom",
+  "toestand" : "in-gebruik",
+  "isActief" : true,
+  "geometry" : "POINT Z (61703.8 209380.1 0)"
+},{
+  "assetId" : {
+    "identificator" : "1b960fd6-20d9-4bd8-9fb1-c8b0311a6827-b25kZXJkZWVsI0JldmVzdGlnaW5n",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bevestiging",
+  "bronAssetId" : {
+    "identificator" : "9d520ee4-af3e-46bd-bf54-2f5cef21d9a2-b25kZXJkZWVsI1NsYWdib29tYXJtVmVybGljaHRpbmc",
+    "toegekendDoor" : "AWV"
+  },
+  "doelAssetId" : {
+    "identificator" : "914d022d-00b4-47b6-a70e-3cf7508e497f-b25kZXJkZWVsI1NsYWdib29tYXJt",
+    "toegekendDoor" : "AWV"
+  },
+  "bron" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#SlagboomarmVerlichting"
+  },
+  "doel" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomarm"
+  },
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "18e9bf1f-4bcb-44c0-84b9-360aa42e0757-b25kZXJkZWVsI0hlZWZ0QmV0cm9ra2VuZQ"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#HeeftBetrokkene",
+  "bronAssetId" : {
+    "identificator" : "75640b15-b14e-48e6-8826-87d11f1cd366-aW5zdGFsbGF0aWUjU2xhZ2Jvb20"
+  },
+  "doelAssetId" : {
+    "identificator" : "53236577-99c3-4863-8a60-f057c6fd4c1f-cHVybDpBZ2VudA"
+  },
+  "bron" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Slagboom"
+  },
+  "doel" : {
+    "typeURI" : "http://purl.org/dc/terms/Agent"
+  },
+  "rol" : "toezichter",
+  "specifiekeContactinfo" : [ ],
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "1816886d-6306-4641-9182-7f496be05b57-b25kZXJkZWVsI0JldmVzdGlnaW5n",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bevestiging",
+  "bronAssetId" : {
+    "identificator" : "a4723294-5ec9-4fcd-9328-139f3063f8ad-b25kZXJkZWVsI1NsYWdib29tYXJt",
+    "toegekendDoor" : "AWV"
+  },
+  "doelAssetId" : {
+    "identificator" : "d3bb0764-e4b3-4279-a510-a5c93774fa46-b25kZXJkZWVsI1NsYWdib29ta29sb20",
+    "toegekendDoor" : "AWV"
+  },
+  "bron" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomarm"
+  },
+  "doel" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomkolom"
+  },
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "16d9e167-4b8f-4411-b9c8-f56b6ef56de6-b25kZXJkZWVsI1NsYWdib29tYXJtVmVybGljaHRpbmc",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#SlagboomarmVerlichting",
+  "toestand" : "in-ontwerp",
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "15d1e8a0-1dee-4717-b655-81080851349b-b25kZXJkZWVsI0hlZWZ0QmV0cm9ra2VuZQ"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#HeeftBetrokkene",
+  "bronAssetId" : {
+    "identificator" : "e4800bd0-5938-468e-95d4-63eb6d13924d-aW5zdGFsbGF0aWUjU2xhZ2Jvb20"
+  },
+  "doelAssetId" : {
+    "identificator" : "53236577-99c3-4863-8a60-f057c6fd4c1f-cHVybDpBZ2VudA"
+  },
+  "bron" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Slagboom"
+  },
+  "doel" : {
+    "typeURI" : "http://purl.org/dc/terms/Agent"
+  },
+  "rol" : "toezichter",
+  "specifiekeContactinfo" : [ ],
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "1507b021-9023-4b0d-9028-125ed0bf031f-b25kZXJkZWVsI1ZvZWR0",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Voedt",
+  "bronAssetId" : {
+    "identificator" : "4d2d3941-df96-4dd9-ab5d-cccc5468fd3f-b25kZXJkZWVsI1N0cm9vbWtyaW5n",
+    "toegekendDoor" : "AWV"
+  },
+  "doelAssetId" : {
+    "identificator" : "0baafecb-d8d3-4421-b298-2a8993f97015-b25kZXJkZWVsI0NvbnRhY3Rvcg",
+    "toegekendDoor" : "AWV"
+  },
+  "bron" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Stroomkring"
+  },
+  "doel" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Contactor"
+  },
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "13d10054-737f-4b22-a18b-a7c8dd3683d6-b25kZXJkZWVsI0lPS2FhcnQ",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#IOKaart",
+  "toestand" : "in-ontwerp",
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "128d91d3-2fc9-4471-b650-c78599f5cf29-b25kZXJkZWVsI0hvb3J0Qmlq",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#HoortBij",
+  "bronAssetId" : {
+    "identificator" : "e2199e9a-5642-49f7-9e43-6b170b0db33c-b25kZXJkZWVsI1NsYWdib29ta29sb20",
+    "toegekendDoor" : "AWV"
+  },
+  "doelAssetId" : {
+    "identificator" : "8a1f4ab5-0042-404a-8a6b-2c57eeab7c61-aW5zdGFsbGF0aWUjU2xhZ2Jvb20",
+    "toegekendDoor" : "AWV"
+  },
+  "bron" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomkolom"
+  },
+  "doel" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Slagboom"
+  },
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "11dd4e8a-dc76-4278-bbe9-0a5a3b78df57-b25kZXJkZWVsI1ZvZWR0QWFuZ2VzdHV1cmQ",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#VoedtAangestuurd",
+  "bronAssetId" : {
+    "identificator" : "38db6cd5-10d0-4773-b6fe-7c013032adaf-b25kZXJkZWVsI0NvbnRhY3Rvcg",
+    "toegekendDoor" : "AWV"
+  },
+  "doelAssetId" : {
+    "identificator" : "10e59c83-6d9e-46b5-a320-a330f7946741-b25kZXJkZWVsI1NsYWdib29ta29sb20",
+    "toegekendDoor" : "AWV"
+  },
+  "bron" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Contactor"
+  },
+  "doel" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomkolom"
+  },
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "119bd2c7-23b5-40ea-94c1-7729a055c441-b25kZXJkZWVsI1ZvZXJ0dWlnbGFudGFhcm4",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Voertuiglantaarn",
+  "toestand" : "in-ontwerp",
+  "naam" : "voertuiglantaarn",
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "10e59c83-6d9e-46b5-a320-a330f7946741-b25kZXJkZWVsI1NsYWdib29ta29sb20",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomkolom",
+  "toestand" : "in-gebruik",
+  "isActief" : true,
+  "geometry" : "POINT Z (61714.4 209350.7 0)"
+},{
+  "assetId" : {
+    "identificator" : "107fbb3e-b5d5-4dcb-b358-de2b9108c774-b25kZXJkZWVsI0JldmVzdGlnaW5n",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bevestiging",
+  "bronAssetId" : {
+    "identificator" : "a0ba5bc7-9131-42f9-9062-680c361c8190-b25kZXJkZWVsI1NsYWdib29ta29sb20",
+    "toegekendDoor" : "AWV"
+  },
+  "doelAssetId" : {
+    "identificator" : "f3eb6eef-51b4-4610-915f-ce97f9c8c91f-b25kZXJkZWVsI1NsYWdib29tYXJt",
+    "toegekendDoor" : "AWV"
+  },
+  "bron" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomkolom"
+  },
+  "doel" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomarm"
+  },
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "107abfdd-c086-4e3e-b17d-701dc09d2ae7-b25kZXJkZWVsI1ZvZWR0",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Voedt",
+  "bronAssetId" : {
+    "identificator" : "bce7675b-5e0b-4c1a-bc5f-bb1c956ccbdf-b25kZXJkZWVsI1N0cm9vbWtyaW5n",
+    "toegekendDoor" : "AWV"
+  },
+  "doelAssetId" : {
+    "identificator" : "428a0622-bab7-44e7-a245-2c7fea22b0ac-b25kZXJkZWVsI0NvbnRhY3Rvcg",
+    "toegekendDoor" : "AWV"
+  },
+  "bron" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Stroomkring"
+  },
+  "doel" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Contactor"
+  },
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "0f7934e2-6200-48bb-a484-bac2b764e0f2-aW5zdGFsbGF0aWUjU2xhZ2Jvb20",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Slagboom",
+  "isActief" : true,
+  "naam" : "SLBInrit",
+  "naampad" : "DA-2021-00024/SLBInrit",
+  "toestand" : "in-gebruik"
+},{
+  "assetId" : {
+    "identificator" : "0f7277bd-ea2e-48e0-903e-933e6a455f20-b25kZXJkZWVsI1NsYWdib29ta29sb20",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomkolom",
+  "toestand" : "in-ontwerp",
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "0e507a88-cf7c-461b-bdb5-cf092b171105-b25kZXJkZWVsI1JlY2h0ZVN0ZXVu",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#RechteSteun",
+  "naam" : "OrangePaal",
+  "isActief" : true,
+  "toestand" : "in-ontwerp"
+},{
+  "assetId" : {
+    "identificator" : "0da636d7-e26d-43bf-bfb2-490de588b25c-b25kZXJkZWVsI0NvbnRhY3Rvcg",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Contactor",
+  "toestand" : "in-gebruik",
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "0baafecb-d8d3-4421-b298-2a8993f97015-b25kZXJkZWVsI0NvbnRhY3Rvcg",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Contactor",
+  "toestand" : "in-gebruik",
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "08854907-203f-439d-8f43-5c02ea5a1321-b25kZXJkZWVsI1NsYWdib29tYXJtVmVybGljaHRpbmc",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#SlagboomarmVerlichting",
+  "toestand" : "in-ontwerp",
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "07c73def-23ff-4342-b90a-4ebbe8d180d4-b25kZXJkZWVsI1NsYWdib29tYXJt",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomarm",
+  "toestand" : "gepland",
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "07339cdb-85be-4fe3-a774-af95a8f64a11-b25kZXJkZWVsI1NsYWdib29tYXJt",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomarm",
+  "toestand" : "in-ontwerp",
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "06c9c826-12b4-4ac1-ac7f-a8eaa48c7b6f-b25kZXJkZWVsI0hvb3J0Qmlq",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#HoortBij",
+  "bronAssetId" : {
+    "identificator" : "95675296-b204-4be9-a920-b26b9d6d2c12-b25kZXJkZWVsI1NsYWdib29ta29sb20",
+    "toegekendDoor" : "AWV"
+  },
+  "doelAssetId" : {
+    "identificator" : "053db5e7-c5cd-4dbf-be58-5b82d52ab8e7-aW5zdGFsbGF0aWUjU2xhZ2Jvb20",
+    "toegekendDoor" : "AWV"
+  },
+  "bron" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomkolom"
+  },
+  "doel" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Slagboom"
+  },
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "05f502d8-d91a-4717-9574-28fc81228c91-b25kZXJkZWVsI1NsYWdib29tYXJtVmVybGljaHRpbmc",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#SlagboomarmVerlichting",
+  "toestand" : "in-ontwerp",
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "053db5e7-c5cd-4dbf-be58-5b82d52ab8e7-aW5zdGFsbGF0aWUjU2xhZ2Jvb20",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Slagboom",
+  "naam" : "SLB006",
+  "toestand" : "in-gebruik",
+  "naampad" : "DA-2021-00024/SLB006",
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "04d93a9e-641f-45b9-aa22-959e312c9605-b25kZXJkZWVsI0hvb3J0Qmlq",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#HoortBij",
+  "bronAssetId" : {
+    "identificator" : "ae62d133-0737-4143-8f7c-f01fb063db20-b25kZXJkZWVsI1NsYWdib29ta29sb20",
+    "toegekendDoor" : "AWV"
+  },
+  "doelAssetId" : {
+    "identificator" : "b2fb5551-c4ed-4351-85bc-bb8e8c330790-aW5zdGFsbGF0aWUjU2xhZ2Jvb20",
+    "toegekendDoor" : "AWV"
+  },
+  "bron" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomkolom"
+  },
+  "doel" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Slagboom"
+  },
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "037b8aad-aaa0-457f-a7ec-876df479efe5-b25kZXJkZWVsI0JldmVzdGlnaW5n",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bevestiging",
+  "bronAssetId" : {
+    "identificator" : "3d0d4316-5c16-4771-b680-291b5c0eec3b-b25kZXJkZWVsI1NsYWdib29tYXJt",
+    "toegekendDoor" : "AWV"
+  },
+  "doelAssetId" : {
+    "identificator" : "f15f529c-d1c5-41a6-a6b7-ab1b1710836d-b25kZXJkZWVsI1NsYWdib29ta29sb20",
+    "toegekendDoor" : "AWV"
+  },
+  "bron" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomarm"
+  },
+  "doel" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomkolom"
+  },
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "01bc15a6-750a-47d8-b93f-26107241a679-b25kZXJkZWVsI0JldmVzdGlnaW5n",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bevestiging",
+  "bronAssetId" : {
+    "identificator" : "9d5a244a-bf5c-4158-ba34-5c00d7e55b9c-b25kZXJkZWVsI1NsYWdib29ta29sb20",
+    "toegekendDoor" : "AWV"
+  },
+  "doelAssetId" : {
+    "identificator" : "7d822202-8d9a-4235-9669-8c3a07e1cf5c-b25kZXJkZWVsI1NsYWdib29tYXJt",
+    "toegekendDoor" : "AWV"
+  },
+  "bron" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomkolom"
+  },
+  "doel" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomarm"
+  },
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "016d7498-a4d8-407b-86cd-b112d8f0dcd6-b25kZXJkZWVsI1NsYWdib29tYXJtVmVybGljaHRpbmc",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#SlagboomarmVerlichting",
+  "toestand" : "in-gebruik",
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "01619650-05cd-434c-8c1b-da7f27315050-b25kZXJkZWVsI0JldmVzdGlnaW5n",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bevestiging",
+  "bronAssetId" : {
+    "identificator" : "d64fcdb0-36eb-44e4-8f50-95cc215a267c-b25kZXJkZWVsI1NsYWdib29tYXJtVmVybGljaHRpbmc",
+    "toegekendDoor" : "AWV"
+  },
+  "doelAssetId" : {
+    "identificator" : "07339cdb-85be-4fe3-a774-af95a8f64a11-b25kZXJkZWVsI1NsYWdib29tYXJt",
+    "toegekendDoor" : "AWV"
+  },
+  "bron" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#SlagboomarmVerlichting"
+  },
+  "doel" : {
+    "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomarm"
+  },
+  "isActief" : true
+},{
+  "assetId" : {
+    "identificator" : "007105f0-521c-4ead-9e4e-1c7f8546f01b-b25kZXJkZWVsI1NsYWdib29ta29sb20",
+    "toegekendDoor" : "AWV"
+  },
+  "typeURI" : "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomkolom",
+  "toestand" : "in-ontwerp",
+  "isActief" : true
+}]

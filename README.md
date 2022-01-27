@@ -5,8 +5,8 @@ Below is sample code that should be self-explanatory. It demonstrates the basic 
 ## Creating the OTL datamodel using the OTL SQLite
 With every OTL update, this piece of code will allow the creation of an updated Python datamodel. The generated classes are not backwards compatible.
 ```  
-from Facility.OTLFacility import OTLFacility
-from Loggers.TxtLogger import TxtLogger
+from src.OTLMOW.Facility.OTLFacility import OTLFacility
+from src.OTLMOW.Loggers.TxtLogger import TxtLogger
 
 # create the main facade class: OTLFacility
 logger = TxtLogger(r'C:\temp\pythonLogging\pythonlog.txt')
@@ -21,11 +21,11 @@ otl_facility.create_otl_datamodel()
 The datamodel generates classes, allowing the properties to be filled with data.
 Use the property 'waarde' to change the value of a property and to allow data validation.
 ```  
-from Facility.OTLFacility import OTLFacility
-from Loggers.TxtLogger import TxtLogger
-from OTLModel.Classes.DNBLaagspanning import DNBLaagspanning
-from OTLModel.Classes.EnergiemeterDNB import EnergiemeterDNB
-from OTLModel.Classes.Voedt import Voedt
+from src.OTLMOW.Facility.OTLFacility import OTLFacility
+from src.OTLMOW.Loggers.TxtLogger import TxtLogger
+from src.OTLMOW.OTLModel.Classes.DNBLaagspanning import DNBLaagspanning
+from src.OTLMOW.OTLModel.Classes.EnergiemeterDNB import EnergiemeterDNB
+from src.OTLMOW.OTLModel.Classes.Voedt import Voedt
 
 # create the main facade class: OTLFacility
 logger = TxtLogger(r'C:\temp\pythonLogging\pythonlog.txt')

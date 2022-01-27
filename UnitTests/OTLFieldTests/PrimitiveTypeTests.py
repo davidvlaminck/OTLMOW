@@ -74,8 +74,8 @@ class PrimitiveTypeTests(unittest.TestCase):
         self.assertEqual(5, instance.theoretischeLevensduur.waarde)
         self.assertTrue(isinstance(instance.theoretischeLevensduur.waarde, int))
 
-        with self.assertRaises(TypeError):
-            instance.theoretischeLevensduur.waarde = "1"
+        with self.assertRaises(CouldNotConvertToCorrectType):
+            instance.theoretischeLevensduur.waarde = "a"
 
         with self.assertRaises(ValueError):
             instance.theoretischeLevensduur.waarde = -1

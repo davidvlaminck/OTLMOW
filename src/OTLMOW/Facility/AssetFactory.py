@@ -27,7 +27,8 @@ class AssetFactory:
 
     def create_aimObject_using_other_aimObject_as_template(self, orig_aimObject, typeURI='', fieldsToCopy=None):
         """Creates an AIMObject, using another AIMObject as template.
-        The parameter typeURI defines the type of the new AIMObject that is created. If omitted, it is assumed the same type as the given aimObject
+        The parameter typeURI defines the type of the new AIMObject that is created.
+        If omitted, it is assumed the same type as the given aimObject
         The parameter fieldsToCopy dictates what fields are copied from the first object
         When the types do no match, fieldsToCopy can not be empty"""
 

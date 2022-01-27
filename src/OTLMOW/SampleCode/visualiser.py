@@ -15,3 +15,6 @@ if __name__ == '__main__':
     slagbomen_assets = otl_facility.davieImporter.import_file(jsonPath)
 
     otl_facility.visualiser.show(slagbomen_assets)
+
+    # for item in otl_facility.make_overview_of_assets(slagbomen_assets).items():
+    #     print(item)

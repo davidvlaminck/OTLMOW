@@ -1,3 +1,5 @@
+from collections import defaultdict
+
 from src.OTLMOW.Facility.AssetFactory import AssetFactory
 from src.OTLMOW.Facility.DavieDecoder import DavieDecoder
 from src.OTLMOW.Facility.DavieExporter import DavieExporter
@@ -10,6 +12,7 @@ from src.OTLMOW.Loggers.AbstractLogger import AbstractLogger
 from src.OTLMOW.ModelGenerator.OSLOCollector import OSLOCollector
 from src.OTLMOW.ModelGenerator.OSLOInMemoryCreator import OSLOInMemoryCreator
 from src.OTLMOW.ModelGenerator.OTLModelCreator import OTLModelCreator
+from src.OTLMOW.OTLModel.BaseClasses.OTLObject import OTLObject
 from src.OTLMOW.PostenMapping.PostenCollector import PostenCollector
 from src.OTLMOW.PostenMapping.PostenCreator import PostenCreator
 from src.OTLMOW.PostenMapping.PostenInMemoryCreator import PostenInMemoryCreator
@@ -49,6 +52,13 @@ class OTLFacility:
     def create_posten_model(self):
         self.posten_collector.collect()
         self.posten_creator.create_all_mappings()
+
+    @staticmethod
+    def make_overview_of_assets(objects: [OTLObject]) -> defaultdict:
+        d = defaultdict(int)
+        for i in objects:
+            d[i.typeURI] += 1
+        return d
 
 
 

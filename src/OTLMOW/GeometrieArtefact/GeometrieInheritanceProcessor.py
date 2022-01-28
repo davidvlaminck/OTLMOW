@@ -21,7 +21,7 @@ class GeometrieInheritanceProcessor:
                 break
             for inheritance in list(filter(lambda i: i.class_uri == concrete_class.objectUri, self.inheritances)):
                 base = inheritance.base_uri
-                self.process_inheritance_for_base_with_only_concrete_inheritors(base)
+                self.process_inheritance_for_base(base)
 
 
             # elke keer vertrekken van concrete classes dan naar benden en terug naar boven in volgorde zodat geen enkele inheritance gemist wordt
@@ -29,12 +29,29 @@ class GeometrieInheritanceProcessor:
 
         return self.geometrie_types
 
-    def process_inheritance_for_base_with_only_concrete_inheritors(self, base):
+    def process_inheritance_for_base(self, base):
         inheritances = list(filter(lambda i: i.base_uri == base, self.inheritances))
         if len(inheritances) == 0:
             return
-        first_concrete = inheritances[0].class_uri
-        first_geo = next(g for g in self.geometrie_types if g.objectUri == first_concrete)
+
+        # are all subclasses non-abstract? => do they all have a geometryType?
+        for inheritance in inheritances:
+            try:
+                geo_subclass = next(g for g in self.geometrie_types if g.objectUri == inheritance.class_uri)
+            except Exception:
+                # no valid geometryType found
+                self.process_inheritance_for_base(inheritance.class_uri)
+
+        i = 0
+        first_geo = None
+        while first_geo is None and i <= len(inheritances):
+            try:
+                first_geo = next(g for g in self.geometrie_types if g.objectUri == inheritances[i].class_uri)
+            except Exception:
+                i += 1
+        if first_geo is None:
+            return
+
         same_geo_type = True
         for inheritance in inheritances:
             concrete = next(g for g in self.geometrie_types if g.objectUri == inheritance.class_uri)
@@ -55,6 +72,4 @@ class GeometrieInheritanceProcessor:
 
         base_inheritances = list(filter(lambda i: i.class_uri == base, self.inheritances))
         for base_inheritance in base_inheritances:
-            # check of de base inheritance non-concrete classes heeft, zo ja, ga eerst verder omhoog
-
             self.process_inheritance_for_base(base_inheritance.base_uri)

@@ -80,3 +80,68 @@ class GeometryTypeTests(TestCase):
         self.assertEqual('https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Seinlantaarn',
                          processed_geometrie_types[0].objectUri)
         self.assertEqual(0, len(gip.inheritances))
+
+    def test_InheritanceTest_multiple_cases(self):
+        sqlReader = SQLDbReader('../../src/OTLMOW/InputFiles/Geometrie_Artefact_22_PU.db')
+        memory = GeometrieInMemoryCreator(sqlReader)
+        geo_collector = GeometrieArtefactCollector(memory)
+        geo_collector.collect()
+        geometrie_types = [geo_collector.find_by_objectUri('https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Voertuiglantaarn')
+            , geo_collector.find_by_objectUri('https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Fietslantaarn')
+        , geo_collector.find_by_objectUri('https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Stroomkring')
+        , geo_collector.find_by_objectUri('https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DynBordRSS')
+        , geo_collector.find_by_objectUri('https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DynBordVMS')]
+
+        inheritances = [
+            Inheritance(base_uri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Seinlantaarn',
+                        class_uri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Fietslantaarn',
+                        base_name='', class_name='', deprecated_version=''),
+            Inheritance(base_uri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Seinlantaarn',
+                        class_uri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Voertuiglantaarn',
+                        base_name='', class_name='', deprecated_version=''),
+            Inheritance(base_uri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMNaamObject',
+                        class_uri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Seinlantaarn',
+                        base_name='', class_name='', deprecated_version=''),
+            Inheritance(base_uri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMNaamObject',
+                        class_uri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Stroomkring',
+                        base_name='', class_name='', deprecated_version=''),
+            Inheritance(base_uri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMNaamObject',
+                        class_uri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#LEDBord',
+                        base_name='', class_name='', deprecated_version=''),
+            Inheritance(base_uri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#LEDBord',
+                        class_uri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DynBordRSS',
+                        base_name='', class_name='', deprecated_version=''),
+            Inheritance(base_uri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#LEDBord',
+                        class_uri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DynBordVMS',
+                        base_name='', class_name='', deprecated_version='')]
+
+        classes = [
+            OSLOClass('Seinlantaarn', 'Seinlantaarn', 'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Seinlantaarn',
+                      'Abstracte voor het geheel van één of meerdere verkeerslichten die boven elkaar worden opgesteld en worden bevestigd op een steun,teneinde de beweging van een weggebruiker die een bepaald traject volgt,te verhinderen of toe te laten.',
+                      '', 1, ''),
+            OSLOClass('Fietslantaarn', 'Fietslantaarn', 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Fietslantaarn',
+                      'Geheel van meerdere verkeerslichten die boven elkaar worden opgesteld en worden bevestigd op een steun, teneinde de beweging van fietsers te verhinderen of toe te laten.',
+                      '', 0, ''),
+            OSLOClass('Voertuiglantaarn', 'Voertuiglantaarn',
+                      'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Voertuiglantaarn',
+                      'Geheel van meerdere verkeerslichten die boven elkaar worden opgesteld en worden bevestigd op een steun, teneinde de beweging van voertuigen te verhinderen of toe te laten.',
+                      '', 0, ''),
+            OSLOClass('LED-bord', 'LEDBord', 'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#LEDBord',
+                      'Abstracte klasse die de gemeenschappelijke eigenschappen van verschillende types dynamische verkeersborden groepeert.',
+                      '', 1, ''),
+            OSLOClass('AIM naam object', 'AIMNaamObject', 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMNaamObject',
+                      'Abstracte als de basisklasse voor elk OTL object dat benoemd wordt met een mensleesbare identificator.', '', 1, ''),
+            OSLOClass('RSS-bord', 'DynBordRSS', 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DynBordRSS',
+                      'Dynamisch verkeersbord voor rijstrooksignalisatie (RSS).', '', 0, ''),
+            OSLOClass('Stroomkring', 'Stroomkring', 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Stroomkring',
+                      'Ook wel vertrek of vertrekkende kabel genoemd. Afgezekerde elektrische geleiders waarmee de applicaties voorzien worden van de nodige voeding.',
+                      '', 0, ''),
+            OSLOClass('VMS-bord', 'DynBordVMS', 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DynBordVMS',
+                      'Dynamisch verkeersbord dat dynamische verkeerstekens  (linkerzijde) en teksten (rechterzijde) kan afbeelden. VMS staat voor Variable Message Signs.',
+                      '', 0, '')]
+
+        gip = GeometrieInheritanceProcessor(geometrie_types, inheritances, classes)
+        processed_geometrie_types = gip.ProcessInheritances()
+        self.assertTrue(isinstance(processed_geometrie_types, list))
+        self.assertEqual(0, len(gip.inheritances))
+

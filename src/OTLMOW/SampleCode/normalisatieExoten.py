@@ -20,9 +20,8 @@ def normaliseer_exoten():
         nieuwe_invasieve_exoten = otl_facility.asset_factory.create_aimObject_using_other_aimObject_as_template(
             orig_aimObject=exoten, typeURI=InvasieveExoten.typeURI, fieldsToCopy=list_of_fields_to_copy)
 
-        # change the assetId
+        # change the assetId and add for the import
         nieuwe_invasieve_exoten.assetId.identificator = f'nieuwe_versie_van_{exoten.assetId.identificator}'
-
         lijst_objecten.append(nieuwe_invasieve_exoten)
 
         # set isActief to False to soft-delete Exoten and add for the import

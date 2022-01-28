@@ -5,6 +5,7 @@ Clear other props van Dtu naar set waarde verhuizen en checken op owner.Field
 deployment/packaging: https://packaging.python.org/en/latest/guides/distributing-packages-using-setuptools/
 requirements > rdflib voor lezen ttl bestanden, Shapely voor WKT, PyVis voor visualiser en Python 3.10
 
+
 Write clean code
 Defaultdict: dict met default value, dict group
 Unpacking sequences

@@ -24,7 +24,8 @@ class StandaardPostFactoryTests(TestCase):
         self.assertEqual('bescherming', assets[0].type)
 
     def test_create_assets_by_standaardPost_0602_15019(self):
-        post0602 = Post060215019()
+
+        post0602 = StandaardPostFactory.find_post_by_nummer('0602.15019')
         assets = StandaardPostFactory.create_assets_from_post(post0602)
 
         self.assertEqual(1, len(assets))
@@ -54,9 +55,12 @@ class StandaardPostFactoryTests(TestCase):
         self.assertEqual(Post050200300().nummer, resultaat[0].nummer)
 
     def test_find_posten_from_asset_Walsbetonverharding(self):
-        w = Walsbetonverharding()
-        w.dikte.waarde = 20
-        resultaat = StandaardPostFactory.find_posten_from_asset(w)
-        self.assertEqual(1, len(resultaat))
+        wbv = Walsbetonverharding()
+        wbv.dikte.waarde = 20
+
+        resultaat = StandaardPostFactory.find_posten_from_asset(wbv)
         self.assertEqual(Post060423020().nummer, resultaat[0].nummer)
+
+        self.assertEqual(1, len(resultaat))
+
 

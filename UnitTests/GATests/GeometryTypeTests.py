@@ -1,3 +1,4 @@
+import os
 from unittest import TestCase
 
 from OTLMOW.GeometrieArtefact.GeometrieArtefactCollector import GeometrieArtefactCollector
@@ -6,6 +7,8 @@ from OTLMOW.GeometrieArtefact.GeometrieInheritanceProcessor import GeometrieInhe
 from OTLMOW.GeometrieArtefact.GeometrieType import GeometrieType
 from OTLMOW.ModelGenerator.Inheritance import Inheritance
 from OTLMOW.ModelGenerator.OSLOClass import OSLOClass
+from OTLMOW.ModelGenerator.OSLOCollector import OSLOCollector
+from OTLMOW.ModelGenerator.OSLOInMemoryCreator import OSLOInMemoryCreator
 from OTLMOW.ModelGenerator.SQLDbReader import SQLDbReader
 
 
@@ -141,6 +144,24 @@ class GeometryTypeTests(TestCase):
                       '', 0, '')]
 
         gip = GeometrieInheritanceProcessor(geometrie_types, inheritances, classes)
+        processed_geometrie_types = gip.ProcessInheritances()
+        self.assertTrue(isinstance(processed_geometrie_types, list))
+        self.assertEqual(0, len(gip.inheritances))
+
+    def test_InheritanceTest_all_cases(self):
+        sqlReader = SQLDbReader('../../src/OTLMOW/InputFiles/Geometrie_Artefact_22_PU.db')
+        memory = GeometrieInMemoryCreator(sqlReader)
+        geo_collector = GeometrieArtefactCollector(memory)
+        geo_collector.collect()
+
+        base_dir = os.path.dirname(os.path.realpath(__file__))
+        file_location = f'{base_dir}/../../src/OTLMOW/InputFiles/OTL.db'
+        sql_reader2 = SQLDbReader(file_location)
+        oslo_creator = OSLOInMemoryCreator(sql_reader2)
+        collector = OSLOCollector(oslo_creator)
+        collector.collect()
+
+        gip = GeometrieInheritanceProcessor(geo_collector.geometrie_types, collector.inheritances, collector.classes)
         processed_geometrie_types = gip.ProcessInheritances()
         self.assertTrue(isinstance(processed_geometrie_types, list))
         self.assertEqual(0, len(gip.inheritances))

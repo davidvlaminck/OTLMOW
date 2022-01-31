@@ -39,36 +39,46 @@ class GeometrieInheritanceProcessor:
         if len(inheritances) == 0:
             return
 
-        i = 0
-        first_geo = None
-        while first_geo is None and i <= len(inheritances):
-            try:
-                first_geo = next(g for g in self.geometrie_types if g.objectUri == inheritances[i].class_uri)
-            except Exception:
-                i += 1
-        if first_geo is not None:
-            same_geo_type = True
+        # per type geo nakijken of alle inheritance classes dezelfde waarde hebben
+        # één None waarde betekent geen overerving van geo type
+
+        no_None_types = True
+        geen = 1
+        point = 1
+        line = 1
+        polygon = 1
+
+        for inheritance in inheritances:
+            geo_type = next((g for g in self.geometrie_types if g.objectUri == inheritance.class_uri), None)
+            if geo_type is None:
+                no_None_types = False
+                break
+            if geen == 1 and geo_type.geen_geometrie == 0:
+                geen = 0
+            if point == 1 and geo_type.punt3D == 0:
+                point = 0
+            if line == 1 and geo_type.lijn3D == 0:
+                line = 0
+            if polygon == 1 and geo_type.polygoon3D == 0:
+                polygon = 0
+
+        if no_None_types and (geen + point + line + polygon > 0):
+            new_geo_type = GeometrieType()
+            new_geo_type.objectUri = base
+            new_geo_type.label_nl = next(g for g in self.classes if g.objectUri == base).label
+            new_geo_type.geen_geometrie = geen
+            new_geo_type.punt3D = point
+            new_geo_type.lijn3D = line
+            new_geo_type.polygoon3D = polygon
+
+            self.geometrie_types.append(new_geo_type)
+            print(f'able to inherit geometry type for classes with base {inheritances[0].base_name}')
             for inheritance in inheritances:
                 try:
-                    concrete = next(g for g in self.geometrie_types if g.objectUri == inheritance.class_uri)
-                    if concrete.geen_geometrie != first_geo.geen_geometrie or concrete.punt3D != first_geo.punt3D or concrete.lijn3D != first_geo.lijn3D or concrete.polygoon3D != first_geo.polygoon3D:
-                        same_geo_type = False
-                        break
+                    current_geo_type = next(g for g in self.geometrie_types if g.objectUri == inheritance.class_uri)
+                    self.geometrie_types.remove(current_geo_type)
                 except StopIteration:
                     pass
-
-            if same_geo_type:
-                new_geo_type = copy.copy(first_geo)
-                new_geo_type.objectUri = base
-                new_geo_type.label_nl = next(g for g in self.classes if g.objectUri == base).label
-                self.geometrie_types.append(new_geo_type)
-                print(f'able to inherit geometry type for classes with base {inheritances[0].base_name}')
-                for inheritance in inheritances:
-                    try:
-                        current_geo_type = next(g for g in self.geometrie_types if g.objectUri == inheritance.class_uri)
-                        self.geometrie_types.remove(current_geo_type)
-                    except StopIteration:
-                        pass
 
         for inheritance in inheritances:
             self.inheritances.remove(inheritance)

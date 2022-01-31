@@ -39,15 +39,14 @@ class GeometrieInheritanceProcessor:
         if len(inheritances) == 0:
             return
 
-        # per type geo nakijken of alle inheritance classes dezelfde waarde hebben
-        # één None waarde betekent geen overerving van geo type
-
         no_None_types = True
         geen = 1
         point = 1
         line = 1
         polygon = 1
 
+        # for all inheritances, find the common geometry types
+        # if any class does not have a geometry tpe (likely due to lack of inheritance), don't inherit anything
         for inheritance in inheritances:
             geo_type = next((g for g in self.geometrie_types if g.objectUri == inheritance.class_uri), None)
             if geo_type is None:
@@ -62,6 +61,7 @@ class GeometrieInheritanceProcessor:
             if polygon == 1 and geo_type.polygoon3D == 0:
                 polygon = 0
 
+        # if there is something to inherit: create and add a new geometry Type (using base) and remove others
         if no_None_types and (geen + point + line + polygon > 0):
             new_geo_type = GeometrieType()
             new_geo_type.objectUri = base
@@ -74,12 +74,11 @@ class GeometrieInheritanceProcessor:
             self.geometrie_types.append(new_geo_type)
             print(f'able to inherit geometry type for classes with base {inheritances[0].base_name}')
             for inheritance in inheritances:
-                try:
-                    current_geo_type = next(g for g in self.geometrie_types if g.objectUri == inheritance.class_uri)
+                current_geo_type = next((g for g in self.geometrie_types if g.objectUri == inheritance.class_uri), None)
+                if current_geo_type is not None:
                     self.geometrie_types.remove(current_geo_type)
-                except StopIteration:
-                    pass
 
+        # regardless of outcomes, remove all inheritances from base to avoid duplicates
         for inheritance in inheritances:
             self.inheritances.remove(inheritance)
 

@@ -46,6 +46,6 @@ class JsonLDEncoder(TestCase):
 
         list_of_objects = [camera, voedt]
 
-        encoder = OtlAssetJSONLDEncoder(indent=4)
+        encoder = OtlAssetJSONLDEncoder(indent=2)
         self.assertEqual(expected_result, self.encoder.encode(list_of_objects))
 

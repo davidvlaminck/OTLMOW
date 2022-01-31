@@ -18,6 +18,7 @@ if __name__ == '__main__':
     dnb = DNBLaagspanning()
     dnb.naam = 'A0024'
     dnb.toestand = 'in-gebruik'
+    # dnb.toestand = 'foute toestand'  # raises ValueError
     dnb.assetId.identificator = 'eigen_Id_voor_A0024'
     dnb.eanNummer = '541448860003995215'
     dnb.adresVolgensDNB.gemeente = 'brasschaat'

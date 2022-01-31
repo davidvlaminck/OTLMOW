@@ -79,7 +79,7 @@ class GeometryTypeTests(TestCase):
                       '', 0, '')]
 
         gip = GeometrieInheritanceProcessor(geometrie_types, inheritances, classes)
-        processed_geometrie_types = gip.ProcessInheritances()
+        processed_geometrie_types = gip.process_inheritances()
         self.assertTrue(isinstance(processed_geometrie_types, list))
         self.assertEqual(1, len(processed_geometrie_types))
         self.assertEqual('https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Seinlantaarn',
@@ -147,7 +147,7 @@ class GeometryTypeTests(TestCase):
                       '', 0, '')]
 
         gip = GeometrieInheritanceProcessor(geometrie_types, inheritances, classes)
-        processed_geometrie_types = gip.ProcessInheritances()
+        processed_geometrie_types = gip.process_inheritances()
         self.assertTrue(isinstance(processed_geometrie_types, list))
         self.assertEqual(0, len(gip.inheritances))
 
@@ -166,7 +166,7 @@ class GeometryTypeTests(TestCase):
         collector.collect()
 
         gip = GeometrieInheritanceProcessor(geo_collector.geometrie_types, collector.inheritances, collector.classes)
-        processed_geometrie_types = gip.ProcessInheritances()
+        processed_geometrie_types = gip.process_inheritances()
         self.assertTrue(isinstance(processed_geometrie_types, list))
         self.assertEqual(0, len(gip.inheritances))
 

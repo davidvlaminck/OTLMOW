@@ -1,5 +1,6 @@
 from datetime import datetime
 
+from OTLMOW.GeometrieArtefact.GeometrieArtefactCollector import GeometrieArtefactCollector
 from OTLMOW.Loggers.AbstractLogger import AbstractLogger
 from OTLMOW.Loggers.LogType import LogType
 from OTLMOW.ModelGenerator.OSLOCollector import OSLOCollector
@@ -15,11 +16,11 @@ class NewOTLBaseClassNotImplemented(NotImplementedError):
     pass
 
 
-
 class OTLModelCreator:
-    def __init__(self, logger: AbstractLogger, osloCollector: OSLOCollector):
+    def __init__(self, logger: AbstractLogger, osloCollector: OSLOCollector, geoACollector: GeometrieArtefactCollector = None):
         self.logger = logger
         self.osloCollector = osloCollector
+        self.geoACollector = geoACollector
         self.logger.log("Created an instance of OTLModelCreator", LogType.INFO)
 
     def create_full_model(self):
@@ -120,7 +121,7 @@ class OTLModelCreator:
                 self.logger.log(f"Could not create a class for {enumeration.name}", LogType.ERROR)
 
     def create_classes(self):
-        creator = OTLClassCreator(self.logger, self.osloCollector)
+        creator = OTLClassCreator(self.logger, self.osloCollector, self.geoACollector)
 
         for cls in self.osloCollector.classes:
             try:

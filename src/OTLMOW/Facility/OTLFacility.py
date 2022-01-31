@@ -5,6 +5,8 @@ from OTLMOW.Facility.DavieDecoder import DavieDecoder
 from OTLMOW.Facility.DavieExporter import DavieExporter
 from OTLMOW.Facility.Visualiser import Visualiser
 from OTLMOW.Facility.DavieImporter import DavieImporter
+from OTLMOW.GeometrieArtefact.GeometrieArtefactCollector import GeometrieArtefactCollector
+from OTLMOW.GeometrieArtefact.GeometrieInMemoryCreator import GeometrieInMemoryCreator
 from OTLMOW.ModelGenerator.BaseClasses.RelatieValidator import RelatieValidator
 from OTLMOW.ModelGenerator.OtlAssetJSONEncoder import OtlAssetJSONEncoder
 from OTLMOW.ModelGenerator.SQLDbReader import SQLDbReader
@@ -23,6 +25,7 @@ class OTLFacility:
         self.davieImporter = DavieImporter()
         self.logger = instanceLogger
         self.collector = None
+        self.geoAcollector = None
         self.modelCreator = None
         self.posten_collector = None
         self.posten_creator = None
@@ -33,14 +36,20 @@ class OTLFacility:
         # self.relatieValidator = RelatieValidator(GeldigeRelatieLijst()) TODO not working
         self.visualiser = Visualiser()
 
-    def init_otl_model_creator(self, otl_file_location):
+    def init_otl_model_creator(self, otl_file_location, geoA_file_location=''):
         sql_reader = SQLDbReader(otl_file_location)
         oslo_creator = OSLOInMemoryCreator(sql_reader)
         self.collector = OSLOCollector(oslo_creator)
-        self.modelCreator = OTLModelCreator(self.logger, self.collector)
+        if geoA_file_location != '':
+            sql_reader_GA = SQLDbReader(geoA_file_location)
+            geo_memory_creator = GeometrieInMemoryCreator(sql_reader_GA)
+            self.geoAcollector = GeometrieArtefactCollector(geo_memory_creator)
+        self.modelCreator = OTLModelCreator(self.logger, self.collector, self.geoAcollector)
 
     def create_otl_datamodel(self):
         self.collector.collect()
+        if self.geoAcollector is not None:
+            self.geoAcollector.collect()
         self.modelCreator.create_full_model()
 
     def init_postenmapping_creator(self, otl_file_location):

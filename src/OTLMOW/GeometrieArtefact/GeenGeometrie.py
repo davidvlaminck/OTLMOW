@@ -1,0 +1,2 @@
+class GeenGeometrie:
+    pass

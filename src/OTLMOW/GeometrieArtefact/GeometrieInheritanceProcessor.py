@@ -11,7 +11,7 @@ class GeometrieInheritanceProcessor:
         self.inheritances = copy.copy(inheritances)
         self.classes = copy.copy(classes)
 
-    def ProcessInheritances(self) -> [GeometrieType]:
+    def process_inheritances(self) -> [GeometrieType]:
         print(f'start with {len(self.geometrie_types)} geometry types and {len(self.inheritances)} inheritances')
 
         while len(self.inheritances) > 0:
@@ -65,7 +65,9 @@ class GeometrieInheritanceProcessor:
         if no_None_types and (geen + point + line + polygon > 0):
             new_geo_type = GeometrieType()
             new_geo_type.objectUri = base
-            new_geo_type.label_nl = next(g for g in self.classes if g.objectUri == base).label
+            cls = next((g for g in self.classes if g.objectUri == base), None)
+            if cls is not None:
+                new_geo_type.label_nl = cls.label
             new_geo_type.geen_geometrie = geen
             new_geo_type.punt3D = point
             new_geo_type.lijn3D = line

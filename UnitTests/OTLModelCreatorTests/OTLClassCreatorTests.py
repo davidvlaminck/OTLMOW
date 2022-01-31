@@ -3,6 +3,8 @@ import unittest
 from unittest import mock
 from unittest.mock import patch
 
+from OTLMOW.GeometrieArtefact.GeometrieArtefactCollector import GeometrieArtefactCollector
+from OTLMOW.GeometrieArtefact.GeometrieType import GeometrieType
 from OTLMOW.Loggers.NoneLogger import NoneLogger
 from OTLMOW.ModelGenerator.Inheritance import Inheritance
 from OTLMOW.ModelGenerator.OSLOAttribuut import OSLOAttribuut
@@ -75,6 +77,14 @@ class ClassOSLOCollector(OSLOCollector):
 class TestOTLClassCreator(OTLClassCreator):
     def __init__(self, logger, collector):
         super().__init__(logger, collector)
+
+
+class GeometrieArtefactCollectorDouble:
+    def __init__(self):
+        self.geometrie_types = [GeometrieType(objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Gebouw',
+                                              label_nl='Gebouw',
+                                              geen_geometrie=0, punt3D=0, lijn3D=0,
+                                              polygoon3D=1)]
 
 
 class OTLClassCreatorTests(unittest.TestCase):
@@ -170,9 +180,10 @@ class OTLClassCreatorTests(unittest.TestCase):
     def test_Gebouw_DtcKardMax1(self):
         logger = NoneLogger()
         collector = ClassOSLOCollector(mock)
-        creator = OTLClassCreator(logger, collector)
-        gebouw = collector.FindClassByUri(
-            'https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Gebouw')
+        geo_collector = GeometrieArtefactCollectorDouble()
+        creator = OTLClassCreator(logger, collector, None)
+        creator.geometry_types = geo_collector.geometrie_types
+        gebouw = collector.FindClassByUri('https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Gebouw')
         dataToWrite = creator.CreateBlockToWriteFromClasses(gebouw)
 
         self.assertEqual(collector.expectedDataGebouw, dataToWrite)

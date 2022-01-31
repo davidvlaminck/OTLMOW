@@ -8,7 +8,7 @@ from OTLMOW.ModelGenerator.OSLOCollector import OSLOCollector
 from OTLMOW.ModelGenerator.OSLODatatypeComplexAttribuut import OSLODatatypeComplexAttribuut
 from OTLMOW.ModelGenerator.OSLOTypeLink import OSLOTypeLink
 from OTLMOW.ModelGenerator.OTLComplexDatatypeCreator import OTLComplexDatatypeCreator
-from UnitTests.OTLModelCreatorTests.OTLComplexDatatypeCreatorTests import ComplexDatatypeOSLOCollector
+from OTLModelCreatorTests.OTLComplexDatatypeCreatorTests import ComplexDatatypeOSLOCollector
 
 
 class ClassOSLOCollector(OSLOCollector):

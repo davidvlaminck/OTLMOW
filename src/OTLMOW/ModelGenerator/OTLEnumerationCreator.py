@@ -19,7 +19,8 @@ class OTLEnumerationCreator(AbstractDatatypeCreator):
     def CreateBlockToWriteFromEnumerations(self, osloEnumeration: OSLOEnumeration):
         if not isinstance(osloEnumeration, OSLOEnumeration):
             raise ValueError(f"Input is not a OSLOEnumeration")
-        if osloEnumeration.objectUri == '' or not osloEnumeration.objectUri.startswith('https://wegenenverkeer.data.vlaanderen.be/ns/'):
+        if osloEnumeration.objectUri == '' or not osloEnumeration.objectUri.startswith(
+                'https://wegenenverkeer.data.vlaanderen.be/ns/'):
             raise ValueError(f"OSLOEnumeration.objectUri is invalid. Value = '{osloEnumeration.objectUri}'")
         if osloEnumeration.name == '':
             raise ValueError(f"OSLOEnumeration.name is invalid. Value = '{osloEnumeration.name}'")
@@ -27,25 +28,28 @@ class OTLEnumerationCreator(AbstractDatatypeCreator):
         return self.CreateBlockToWriteFromEnumeration(osloEnumeration)
 
     def CreateBlockToWriteFromEnumeration(self, osloEnumeration: OSLOEnumeration):
+        keuzelijst_waardes = self.getKeuzelijstWaardesFromUri(osloEnumeration.name)
+
         datablock = ['# coding=utf-8',
-                     'from OTLMOW.OTLModel.Datatypes.KeuzelijstField import KeuzelijstField',
-                     'from OTLMOW.OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde',
-                     '',
-                     '',
-                     f'# Generated with {self.__class__.__name__}. To modify: extend, do not edit',
-                     f'class {osloEnumeration.name}(KeuzelijstField):',
-                     f'    """{osloEnumeration.definition}"""',
-                     f'    naam = {wrap_in_quotes(osloEnumeration.name)}',
-                     f'    label = {wrap_in_quotes(osloEnumeration.label)}',
-                     f'    objectUri = {wrap_in_quotes(osloEnumeration.objectUri)}',
-                     f'    definition = {wrap_in_quotes(osloEnumeration.definition)}']
+                     'from OTLMOW.OTLModel.Datatypes.KeuzelijstField import KeuzelijstField']
+        if len(keuzelijst_waardes) > 0:
+            datablock.append('from OTLMOW.OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde')
+
+        datablock.extend(['',
+                          '',
+                          f'# Generated with {self.__class__.__name__}. To modify: extend, do not edit',
+                          f'class {osloEnumeration.name}(KeuzelijstField):',
+                          f'    """{osloEnumeration.definition}"""',
+                          f'    naam = {wrap_in_quotes(osloEnumeration.name)}',
+                          f'    label = {wrap_in_quotes(osloEnumeration.label)}',
+                          f'    objectUri = {wrap_in_quotes(osloEnumeration.objectUri)}',
+                          f'    definition = {wrap_in_quotes(osloEnumeration.definition)}'])
         if osloEnumeration.deprecated_version != '':
             datablock.append(f'    deprecated_version = {wrap_in_quotes(osloEnumeration.deprecated_version)}')
         datablock.append(f'    codelist = {wrap_in_quotes(osloEnumeration.codelist)}')
         datablock.append('    options = {')
 
-        waardes = self.getKeuzelijstWaardesFromUri(osloEnumeration.name)
-        for waarde in sorted(waardes, key=lambda w: w.invulwaarde):
+        for waarde in sorted(keuzelijst_waardes, key=lambda w: w.invulwaarde):
             whitespace = AbstractDatatypeCreator.getWhiteSpaceEquivalent(f"        '{waarde.invulwaarde}': KeuzelijstWaarde(")
             datablock.append(f"        '{waarde.invulwaarde}': KeuzelijstWaarde(invulwaarde='{waarde.invulwaarde}',")
             datablock.append(f"{whitespace}label='{waarde.label}',")
@@ -53,7 +57,7 @@ class OTLEnumerationCreator(AbstractDatatypeCreator):
                 datablock.append(f"{whitespace}definitie={wrap_in_quotes(waarde.definitie)},")
             datablock.append(f"{whitespace}objectUri='{waarde.objectUri}'),")
 
-        if len(waardes) > 0:
+        if len(keuzelijst_waardes) > 0:
             datablock[-1] = datablock[-1][:-1]
         datablock.append('    }')
         datablock.append('')

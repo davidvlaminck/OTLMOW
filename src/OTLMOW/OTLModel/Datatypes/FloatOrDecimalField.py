@@ -21,8 +21,9 @@ class FloatOrDecimalField(OTLField):
         if isinstance(value, int) or isinstance(value, decimal.Decimal):
             return float(value)
         try:
-            return float(value)
-        except Exception:
+            float_value = float(value)
+            return float_value
+        except ValueError:
             raise CouldNotConvertToCorrectType(f'{value} could not be converted to correct type (implied by {cls.__name__})')
 
     @staticmethod

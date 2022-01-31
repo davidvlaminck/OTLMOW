@@ -26,8 +26,8 @@ class EnumerationOSLOCollector(OSLOCollector):
 
         self.expectedDataKlAIMToestand = [
             "# coding=utf-8",
-            "from src.OTLMOW.OTLModel.Datatypes.KeuzelijstField import KeuzelijstField",
-            "from src.OTLMOW.OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde",
+            "from OTLMOW.OTLModel.Datatypes.KeuzelijstField import KeuzelijstField",
+            "from OTLMOW.OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde",
             "",
             "",
             "# Generated with OTLEnumerationCreator. To modify: extend, do not edit",
@@ -176,7 +176,7 @@ class OTLEnumerationCreatorTests(unittest.TestCase):
         filelocation = os.path.abspath(os.path.join(os.sep, ROOT_DIR, 'src/OTLMOW/OTLModel/Datatypes/KlAlgProvincie.py'))
         self.assertTrue(os.path.isfile(filelocation))
 
-    def test_getKeuzelijstWaardesFromUri(self):
+    def test_getKeuzelijstWaardesFromUri2(self):
         logger = NoneLogger()
 
         base_dir = os.path.dirname(os.path.realpath(__file__))

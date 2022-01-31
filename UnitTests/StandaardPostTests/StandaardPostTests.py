@@ -155,8 +155,8 @@ class StandaardPostTests(TestCase):
 
         datablock = creator.create_datablock_from_post(post0501)
         expected = ['# coding=utf-8',
-                    "from src.OTLMOW.PostenMapping.StandaardPost import StandaardPost",
-                    "from src.OTLMOW.PostenMapping.StandaardPostMapping import StandaardPostMapping",
+                    "from OTLMOW.PostenMapping.StandaardPost import StandaardPost",
+                    "from OTLMOW.PostenMapping.StandaardPostMapping import StandaardPostMapping",
                     "",
                     "",
                     '# Generated with PostenCreator. To modify: extend, do not edit',

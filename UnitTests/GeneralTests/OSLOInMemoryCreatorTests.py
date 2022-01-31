@@ -198,7 +198,7 @@ class OSLOInMemoryCreatorTests(unittest.TestCase):
 
     def test_OTLDbClass(self):
         base_dir = os.path.dirname(os.path.realpath(__file__))
-        file_location = f'{base_dir}/../src/OTLMOW/InputFiles/OTL.db'
+        file_location = f'{base_dir}/../../src/OTLMOW/InputFiles/OTL.db'
         sql_reader = SQLDbReader(file_location)
         oslo_creator = OSLOInMemoryCreator(sql_reader)
         listOfClasses = oslo_creator.getAllClasses()
@@ -209,7 +209,7 @@ class OSLOInMemoryCreatorTests(unittest.TestCase):
 
     def test_OTLDbPrimitiveDatatypes(self):
         base_dir = os.path.dirname(os.path.realpath(__file__))
-        file_location = f'{base_dir}/../src/OTLMOW/InputFiles/OTL.db'
+        file_location = f'{base_dir}/../../src/OTLMOW/InputFiles/OTL.db'
         sql_reader = SQLDbReader(file_location)
         oslo_creator = OSLOInMemoryCreator(sql_reader)
         listOfPrimitiveDatatypes = oslo_creator.getAllPrimitiveDatatypes()
@@ -220,7 +220,7 @@ class OSLOInMemoryCreatorTests(unittest.TestCase):
 
     def test_OTLDbPrimitiveDatatypeAttributen(self):
         base_dir = os.path.dirname(os.path.realpath(__file__))
-        file_location = f'{base_dir}/../src/OTLMOW/InputFiles/OTL.db'
+        file_location = f'{base_dir}/../../src/OTLMOW/InputFiles/OTL.db'
         sql_reader = SQLDbReader(file_location)
         oslo_creator = OSLOInMemoryCreator(sql_reader)
         listOfPrimitiveDatatypeAttributen = oslo_creator.getAllPrimitiveDatatypeAttributen()

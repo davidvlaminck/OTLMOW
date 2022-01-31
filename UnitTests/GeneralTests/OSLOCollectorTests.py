@@ -3,7 +3,7 @@ from unittest.mock import Mock
 
 from OTLMOW.ModelGenerator.OSLOCollector import OSLOCollector
 from OTLMOW.ModelGenerator.OSLOInMemoryCreator import OSLOInMemoryCreator
-from UnitTests.OSLOInMemoryCreatorTests import OSLOInMemoryCreatorTests
+from GeneralTests.OSLOInMemoryCreatorTests import OSLOInMemoryCreatorTests
 
 
 class OSLOCollectorTests(unittest.TestCase):

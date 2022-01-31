@@ -41,9 +41,9 @@ class ClassOSLOCollector(OSLOCollector):
         ]
 
         self.expectedDataGebouw = ['# coding=utf-8',
-                                   'from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut',
-                                   'from src.OTLMOW.OTLModel.Classes.Behuizing import Behuizing',
-                                   'from src.OTLMOW.OTLModel.Datatypes.DtcDocument import DtcDocument',
+                                   'from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut',
+                                   'from OTLMOW.OTLModel.Classes.Behuizing import Behuizing',
+                                   'from OTLMOW.OTLModel.Datatypes.DtcDocument import DtcDocument',
                                    '',
                                    '',
                                    '# Generated with OTLClassCreator. To modify: extend, do not edit',
@@ -130,9 +130,9 @@ class OTLClassCreatorTests(unittest.TestCase):
         self.assertEqual(str(exception_bad_name.exception), "Input is not a OSLOClass")
 
     expectedDataContainerBuis = ['# coding=utf-8',
-                                 'from src.OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut',
+                                 'from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut',
                                  'from abc import abstractmethod, ABC',
-                                 'from src.OTLMOW.OTLModel.Datatypes.StringField import StringField',
+                                 'from OTLMOW.OTLModel.Datatypes.StringField import StringField',
                                  '',
                                  '',
                                  '# Generated with OTLClassCreator. To modify: extend, do not edit',

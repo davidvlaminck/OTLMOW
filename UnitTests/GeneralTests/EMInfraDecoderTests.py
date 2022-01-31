@@ -1,7 +1,7 @@
 import unittest
 from unittest import TestCase
 
-from UnitTests.EMInfraResponseTestDouble import ResponseTestDouble
+from GeneralTests.EMInfraResponseTestDouble import ResponseTestDouble
 from OTLMOW.Facility.EMInfraDecoder import EMInfraDecoder
 from OTLMOW.ModelGenerator.OtlAssetJSONEncoder import OtlAssetJSONEncoder
 from OTLMOW.OTLModel.Classes.Omvormer import Omvormer

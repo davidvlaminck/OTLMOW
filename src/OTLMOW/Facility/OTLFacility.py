@@ -79,7 +79,7 @@ class OTLFacility:
         attributen = model_grabber.decode_json_and_get_attributen(oef_file_location)
         self.oef_model_creator = OEFModelCreator(self.logger, classes=classes, attributen=attributen)
 
-    def oef_model_creator(self):
+    def create_oef_datamodel(self):
         self.oef_model_creator.create_full_model()
 
 

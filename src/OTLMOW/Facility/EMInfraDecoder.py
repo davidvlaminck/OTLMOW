@@ -27,13 +27,10 @@ class EMInfraDecoder(ToOTLDecoder):
             instance = OEFClassLoader().dynamic_create_instance_from_uri(typeURI)
 
         for key, value in obj.items():
-            if key.startswith('@') or 'typeURI' in key or value == '' or  'puntlocatie' in key or key.startswith('ins:') or key.startswith('ond:'):
+            if key.startswith('@') or 'typeURI' in key or value == '' or 'puntlocatie' in key:
                 continue
             if 'geometrie' in key:
                 key = 'loc:Locatie.geometry'
-
-            if 'toezichtgroep' in key:
-                pass
 
             value = self.trim_keuzelijst_from_ld_notation(value)
 

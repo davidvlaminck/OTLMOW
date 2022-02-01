@@ -35,11 +35,23 @@ class VPLMast(EMObject):
                                     objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#EMObject.vsaType',
                                     definitie='keuzelijst elektromagnetisch, elektronisch, niet gekend')
 
+        self._vermoedenSokkelAsbesthoudend = EMAttribuut(field=BooleanField,
+                                                         naam='Vermoeden sokkel asbesthoudend',
+                                                         label='Vermoeden sokkel asbesthoudend',
+                                                         objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#EMObject.vermoedenSokkelAsbesthoudend',
+                                                         definitie='(Vermoeden) sokkel asbesthoudend')
+
         self._aanstuurstroomDriversInMa = EMAttribuut(field=StringField,
                                                       naam='aanstuurstroom drivers (in_mA)',
                                                       label='aanstuurstroom drivers (in_mA)',
                                                       objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#EMObject.aanstuurstroomDriversInMa',
                                                       definitie='Definitie nog toe te voegen voor eigenschap aanstuurstroom drivers (in_mA)')
+
+        self._aantalVsaVervangen = EMAttribuut(field=FloatOrDecimalField,
+                                               naam='aantal VSA vervangen',
+                                               label='aantal VSA vervangen',
+                                               objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#EMObject.aantalVsaVervangen',
+                                               definitie='Definitie nog toe te voegen voor eigenschap aantal VSA vervangen')
 
         self._aantalArmen = EMAttribuut(field=StringField,
                                         naam='aantal armen',
@@ -53,6 +65,30 @@ class VPLMast(EMObject):
                                                     objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#EMObject.aantalDriversPerToestel',
                                                     definitie='Definitie nog toe te voegen voor eigenschap aantal drivers per toestel')
 
+        self._aantalKlemmenblokkenVervangen = EMAttribuut(field=FloatOrDecimalField,
+                                                          naam='aantal klemmenblokken vervangen',
+                                                          label='aantal klemmenblokken vervangen',
+                                                          objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#EMObject.aantalKlemmenblokkenVervangen',
+                                                          definitie='Definitie nog toe te voegen voor eigenschap aantal klemmenblokken vervangen')
+
+        self._aantalLampenVervangen = EMAttribuut(field=FloatOrDecimalField,
+                                                  naam='aantal lampen vervangen',
+                                                  label='aantal lampen vervangen',
+                                                  objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#EMObject.aantalLampenVervangen',
+                                                  definitie='Definitie nog toe te voegen voor eigenschap aantal lampen vervangen')
+
+        self._aantalLamphoudersVervangen = EMAttribuut(field=FloatOrDecimalField,
+                                                       naam='aantal lamphouders vervangen',
+                                                       label='aantal lamphouders vervangen',
+                                                       objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#EMObject.aantalLamphoudersVervangen',
+                                                       definitie='Definitie nog toe te voegen voor eigenschap aantal lamphouders vervangen')
+
+        self._aantalStartersVervangen = EMAttribuut(field=FloatOrDecimalField,
+                                                    naam='aantal starters vervangen',
+                                                    label='aantal starters vervangen',
+                                                    objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#EMObject.aantalStartersVervangen',
+                                                    definitie='Definitie nog toe te voegen voor eigenschap aantal starters vervangen')
+
         self._aantalTeVerlichtenRijvakkenLed = EMAttribuut(field=StringField,
                                                            naam='aantal te verlichten rijvakken LED',
                                                            label='aantal te verlichten rijvakken LED',
@@ -64,6 +100,18 @@ class VPLMast(EMObject):
                                                          label='aantal verlichtingstoestellen',
                                                          objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#EMObject.aantalVerlichtingstoestellen',
                                                          definitie='Definitie nog toe te voegen voor eigenschap aantal verlichtingstoestellen')
+
+        self._aantalZekeringenVervangen = EMAttribuut(field=FloatOrDecimalField,
+                                                      naam='aantal zekeringen vervangen',
+                                                      label='aantal zekeringen vervangen',
+                                                      objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#EMObject.aantalZekeringenVervangen',
+                                                      definitie='Definitie nog toe te voegen voor eigenschap aantal zekeringen vervangen')
+
+        self._andereOnderhoudsacties = EMAttribuut(field=StringField,
+                                                   naam='andere onderhoudsacties',
+                                                   label='andere onderhoudsacties',
+                                                   objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#EMObject.andereOnderhoudsacties',
+                                                   definitie='veld waar met max 40 lettertekens aanvullende info kan geleverd worden')
 
         self._armatuurkleur = EMAttribuut(field=StringField,
                                           naam='armatuurkleur',
@@ -114,6 +162,24 @@ class VPLMast(EMObject):
                                                     objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#VPLMast.datumLichtmastVernieuwd',
                                                     definitie='datum waarop de lichtmast geplaatst is')
 
+        self._deurtjeVervangen = EMAttribuut(field=BooleanField,
+                                             naam='deurtje vervangen',
+                                             label='deurtje vervangen',
+                                             objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#VPLMast.deurtjeVervangen',
+                                             definitie='Definitie nog toe te voegen voor eigenschap deurtje vervangen')
+
+        self._directGevaar = EMAttribuut(field=BooleanField,
+                                         naam='direct gevaar',
+                                         label='direct gevaar',
+                                         objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#EMObject.directGevaar',
+                                         definitie='Definitie nog toe te voegen voor eigenschap direct gevaar')
+
+        self._externeRoestvorming = EMAttribuut(field=StringField,
+                                                naam='externe roestvorming',
+                                                label='externe roestvorming',
+                                                objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#EMObject.externeRoestvorming',
+                                                definitie='keuzelijst en schaalverdeling volgens inspectiehandboek')
+
         self._geschilderd = EMAttribuut(field=BooleanField,
                                         naam='geschilderd',
                                         label='geschilderd',
@@ -125,6 +191,12 @@ class VPLMast(EMObject):
                                               label='inclinatiehoek LED',
                                               objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#EMObject.inclinatiehoekLed',
                                               definitie='Definitie nog toe te voegen voor eigenschap inclinatiehoek LED')
+
+        self._interneRoestvorming = EMAttribuut(field=StringField,
+                                                naam='interne roestvorming',
+                                                label='interne roestvorming',
+                                                objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#EMObject.interneRoestvorming',
+                                                definitie='keuzelijst en schaalverdeling volgens inspectiehandboek')
 
         self._kleurtemperatuurLed = EMAttribuut(field=StringField,
                                                 naam='kleurtemperatuur LED',
@@ -192,6 +264,12 @@ class VPLMast(EMObject):
                                                           objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#VPLMast.merkEnTypeArmatuurcontroller3',
                                                           definitie='Definitie nog toe te voegen voor eigenschap merk en type armatuurcontroller 3')
 
+        self._nummerLeesbaar = EMAttribuut(field=StringField,
+                                           naam='nummer leesbaar',
+                                           label='nummer leesbaar',
+                                           objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#EMObject.nummerLeesbaar',
+                                           definitie='keuzelijst en schaalverdeling volgens inspectiehandboek')
+
         self._nummerVoedingskring = EMAttribuut(field=StringField,
                                                 naam='nummer voedingskring',
                                                 label='nummer voedingskring',
@@ -209,6 +287,18 @@ class VPLMast(EMObject):
                                                                    label='opmerking inventaris verlichtingstoestel',
                                                                    objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#EMObject.opmerkingInventarisVerlichtingstoestel',
                                                                    definitie='veld waar met max 40 lettertekens aanvullende info kan geleverd worden')
+
+        self._opmerkingToestandPaal = EMAttribuut(field=StringField,
+                                                  naam='opmerking toestand paal',
+                                                  label='opmerking toestand paal',
+                                                  objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#VPLMast.opmerkingToestandPaal',
+                                                  definitie='veld waar met max 40 lettertekens aanvullende info kan geleverd worden')
+
+        self._opmerkingToestandVerlichtingstoestel = EMAttribuut(field=StringField,
+                                                                 naam='opmerking toestand verlichtingstoestel',
+                                                                 label='opmerking toestand verlichtingstoestel',
+                                                                 objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#EMObject.opmerkingToestandVerlichtingstoestel',
+                                                                 definitie='veld waar met max 40 lettertekens aanvullende info kan geleverd worden')
 
         self._optiekLed = EMAttribuut(field=StringField,
                                       naam='optiek LED',
@@ -276,6 +366,36 @@ class VPLMast(EMObject):
                                                            objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#VPLMast.serienummerArmatuurcontroller3',
                                                            definitie='Definitie nog toe te voegen voor eigenschap serienummer armatuurcontroller 3')
 
+        self._toestandBouten = EMAttribuut(field=StringField,
+                                           naam='toestand bouten',
+                                           label='toestand bouten',
+                                           objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#VPLMast.toestandBouten',
+                                           definitie='keuzelijst en schaalverdeling volgens inspectiehandboek')
+
+        self._toestandDeurtje = EMAttribuut(field=StringField,
+                                            naam='toestand deurtje',
+                                            label='toestand deurtje',
+                                            objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#VPLMast.toestandDeurtje',
+                                            definitie='keuzelijst en schaalverdeling volgens inspectiehandboek')
+
+        self._toestandFunderingVplmast = EMAttribuut(field=StringField,
+                                                     naam='toestand fundering (VPLMAST)',
+                                                     label='toestand fundering (VPLMAST)',
+                                                     objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#VPLMast.toestandFunderingVplmast',
+                                                     definitie='keuzelijst en schaalverdeling volgens inspectiehandboek')
+
+        self._toestandPaal = EMAttribuut(field=StringField,
+                                         naam='toestand paal',
+                                         label='toestand paal',
+                                         objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#VPLMast.toestandPaal',
+                                         definitie='keuzelijst en schaalverdeling volgens inspectiehandboek')
+
+        self._toestandVerlichtingstoestellen = EMAttribuut(field=StringField,
+                                                           naam='toestand verlichtingstoestellen',
+                                                           label='toestand verlichtingstoestellen',
+                                                           objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#EMObject.toestandVerlichtingstoestellen',
+                                                           definitie='keuzelijst (OK, OK met opmerkingen, Ã©Ã©n of meer toestellen of lampen defect, niet gekend)')
+
         self._verlichtingsniveauLed = EMAttribuut(field=StringField,
                                                   naam='verlichtingsniveau LED',
                                                   label='verlichtingsniveau LED',
@@ -334,6 +454,15 @@ class VPLMast(EMObject):
         self._vsaType.set_waarde(value, owner=self)
 
     @property
+    def vermoedenSokkelAsbesthoudend(self):
+        """(Vermoeden) sokkel asbesthoudend"""
+        return self._vermoedenSokkelAsbesthoudend.waarde
+
+    @vermoedenSokkelAsbesthoudend.setter
+    def vermoedenSokkelAsbesthoudend(self, value):
+        self._vermoedenSokkelAsbesthoudend.set_waarde(value, owner=self)
+
+    @property
     def aanstuurstroomDriversInMa(self):
         """Definitie nog toe te voegen voor eigenschap aanstuurstroom drivers (in_mA)"""
         return self._aanstuurstroomDriversInMa.waarde
@@ -341,6 +470,15 @@ class VPLMast(EMObject):
     @aanstuurstroomDriversInMa.setter
     def aanstuurstroomDriversInMa(self, value):
         self._aanstuurstroomDriversInMa.set_waarde(value, owner=self)
+
+    @property
+    def aantalVsaVervangen(self):
+        """Definitie nog toe te voegen voor eigenschap aantal VSA vervangen"""
+        return self._aantalVsaVervangen.waarde
+
+    @aantalVsaVervangen.setter
+    def aantalVsaVervangen(self, value):
+        self._aantalVsaVervangen.set_waarde(value, owner=self)
 
     @property
     def aantalArmen(self):
@@ -361,6 +499,42 @@ class VPLMast(EMObject):
         self._aantalDriversPerToestel.set_waarde(value, owner=self)
 
     @property
+    def aantalKlemmenblokkenVervangen(self):
+        """Definitie nog toe te voegen voor eigenschap aantal klemmenblokken vervangen"""
+        return self._aantalKlemmenblokkenVervangen.waarde
+
+    @aantalKlemmenblokkenVervangen.setter
+    def aantalKlemmenblokkenVervangen(self, value):
+        self._aantalKlemmenblokkenVervangen.set_waarde(value, owner=self)
+
+    @property
+    def aantalLampenVervangen(self):
+        """Definitie nog toe te voegen voor eigenschap aantal lampen vervangen"""
+        return self._aantalLampenVervangen.waarde
+
+    @aantalLampenVervangen.setter
+    def aantalLampenVervangen(self, value):
+        self._aantalLampenVervangen.set_waarde(value, owner=self)
+
+    @property
+    def aantalLamphoudersVervangen(self):
+        """Definitie nog toe te voegen voor eigenschap aantal lamphouders vervangen"""
+        return self._aantalLamphoudersVervangen.waarde
+
+    @aantalLamphoudersVervangen.setter
+    def aantalLamphoudersVervangen(self, value):
+        self._aantalLamphoudersVervangen.set_waarde(value, owner=self)
+
+    @property
+    def aantalStartersVervangen(self):
+        """Definitie nog toe te voegen voor eigenschap aantal starters vervangen"""
+        return self._aantalStartersVervangen.waarde
+
+    @aantalStartersVervangen.setter
+    def aantalStartersVervangen(self, value):
+        self._aantalStartersVervangen.set_waarde(value, owner=self)
+
+    @property
     def aantalTeVerlichtenRijvakkenLed(self):
         """Definitie nog toe te voegen voor eigenschap aantal te verlichten rijvakken LED"""
         return self._aantalTeVerlichtenRijvakkenLed.waarde
@@ -377,6 +551,24 @@ class VPLMast(EMObject):
     @aantalVerlichtingstoestellen.setter
     def aantalVerlichtingstoestellen(self, value):
         self._aantalVerlichtingstoestellen.set_waarde(value, owner=self)
+
+    @property
+    def aantalZekeringenVervangen(self):
+        """Definitie nog toe te voegen voor eigenschap aantal zekeringen vervangen"""
+        return self._aantalZekeringenVervangen.waarde
+
+    @aantalZekeringenVervangen.setter
+    def aantalZekeringenVervangen(self, value):
+        self._aantalZekeringenVervangen.set_waarde(value, owner=self)
+
+    @property
+    def andereOnderhoudsacties(self):
+        """veld waar met max 40 lettertekens aanvullende info kan geleverd worden"""
+        return self._andereOnderhoudsacties.waarde
+
+    @andereOnderhoudsacties.setter
+    def andereOnderhoudsacties(self, value):
+        self._andereOnderhoudsacties.set_waarde(value, owner=self)
 
     @property
     def armatuurkleur(self):
@@ -451,6 +643,33 @@ class VPLMast(EMObject):
         self._datumLichtmastVernieuwd.set_waarde(value, owner=self)
 
     @property
+    def deurtjeVervangen(self):
+        """Definitie nog toe te voegen voor eigenschap deurtje vervangen"""
+        return self._deurtjeVervangen.waarde
+
+    @deurtjeVervangen.setter
+    def deurtjeVervangen(self, value):
+        self._deurtjeVervangen.set_waarde(value, owner=self)
+
+    @property
+    def directGevaar(self):
+        """Definitie nog toe te voegen voor eigenschap direct gevaar"""
+        return self._directGevaar.waarde
+
+    @directGevaar.setter
+    def directGevaar(self, value):
+        self._directGevaar.set_waarde(value, owner=self)
+
+    @property
+    def externeRoestvorming(self):
+        """keuzelijst en schaalverdeling volgens inspectiehandboek"""
+        return self._externeRoestvorming.waarde
+
+    @externeRoestvorming.setter
+    def externeRoestvorming(self, value):
+        self._externeRoestvorming.set_waarde(value, owner=self)
+
+    @property
     def geschilderd(self):
         """corrosiebescherming geschilderd of niet ?"""
         return self._geschilderd.waarde
@@ -467,6 +686,15 @@ class VPLMast(EMObject):
     @inclinatiehoekLed.setter
     def inclinatiehoekLed(self, value):
         self._inclinatiehoekLed.set_waarde(value, owner=self)
+
+    @property
+    def interneRoestvorming(self):
+        """keuzelijst en schaalverdeling volgens inspectiehandboek"""
+        return self._interneRoestvorming.waarde
+
+    @interneRoestvorming.setter
+    def interneRoestvorming(self, value):
+        self._interneRoestvorming.set_waarde(value, owner=self)
 
     @property
     def kleurtemperatuurLed(self):
@@ -568,6 +796,15 @@ class VPLMast(EMObject):
         self._merkEnTypeArmatuurcontroller3.set_waarde(value, owner=self)
 
     @property
+    def nummerLeesbaar(self):
+        """keuzelijst en schaalverdeling volgens inspectiehandboek"""
+        return self._nummerLeesbaar.waarde
+
+    @nummerLeesbaar.setter
+    def nummerLeesbaar(self, value):
+        self._nummerLeesbaar.set_waarde(value, owner=self)
+
+    @property
     def nummerVoedingskring(self):
         """identificatie voedingskring : tekstveld om variatie provincies op te vangen : kring A, B, C, ... of  kring 1, 2, 9, ... of ..."""
         return self._nummerVoedingskring.waarde
@@ -593,6 +830,24 @@ class VPLMast(EMObject):
     @opmerkingInventarisVerlichtingstoestel.setter
     def opmerkingInventarisVerlichtingstoestel(self, value):
         self._opmerkingInventarisVerlichtingstoestel.set_waarde(value, owner=self)
+
+    @property
+    def opmerkingToestandPaal(self):
+        """veld waar met max 40 lettertekens aanvullende info kan geleverd worden"""
+        return self._opmerkingToestandPaal.waarde
+
+    @opmerkingToestandPaal.setter
+    def opmerkingToestandPaal(self, value):
+        self._opmerkingToestandPaal.set_waarde(value, owner=self)
+
+    @property
+    def opmerkingToestandVerlichtingstoestel(self):
+        """veld waar met max 40 lettertekens aanvullende info kan geleverd worden"""
+        return self._opmerkingToestandVerlichtingstoestel.waarde
+
+    @opmerkingToestandVerlichtingstoestel.setter
+    def opmerkingToestandVerlichtingstoestel(self, value):
+        self._opmerkingToestandVerlichtingstoestel.set_waarde(value, owner=self)
 
     @property
     def optiekLed(self):
@@ -692,6 +947,51 @@ class VPLMast(EMObject):
     @serienummerArmatuurcontroller3.setter
     def serienummerArmatuurcontroller3(self, value):
         self._serienummerArmatuurcontroller3.set_waarde(value, owner=self)
+
+    @property
+    def toestandBouten(self):
+        """keuzelijst en schaalverdeling volgens inspectiehandboek"""
+        return self._toestandBouten.waarde
+
+    @toestandBouten.setter
+    def toestandBouten(self, value):
+        self._toestandBouten.set_waarde(value, owner=self)
+
+    @property
+    def toestandDeurtje(self):
+        """keuzelijst en schaalverdeling volgens inspectiehandboek"""
+        return self._toestandDeurtje.waarde
+
+    @toestandDeurtje.setter
+    def toestandDeurtje(self, value):
+        self._toestandDeurtje.set_waarde(value, owner=self)
+
+    @property
+    def toestandFunderingVplmast(self):
+        """keuzelijst en schaalverdeling volgens inspectiehandboek"""
+        return self._toestandFunderingVplmast.waarde
+
+    @toestandFunderingVplmast.setter
+    def toestandFunderingVplmast(self, value):
+        self._toestandFunderingVplmast.set_waarde(value, owner=self)
+
+    @property
+    def toestandPaal(self):
+        """keuzelijst en schaalverdeling volgens inspectiehandboek"""
+        return self._toestandPaal.waarde
+
+    @toestandPaal.setter
+    def toestandPaal(self, value):
+        self._toestandPaal.set_waarde(value, owner=self)
+
+    @property
+    def toestandVerlichtingstoestellen(self):
+        """keuzelijst (OK, OK met opmerkingen, Ã©Ã©n of meer toestellen of lampen defect, niet gekend)"""
+        return self._toestandVerlichtingstoestellen.waarde
+
+    @toestandVerlichtingstoestellen.setter
+    def toestandVerlichtingstoestellen(self, value):
+        self._toestandVerlichtingstoestellen.set_waarde(value, owner=self)
 
     @property
     def verlichtingsniveauLed(self):

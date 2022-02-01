@@ -31,12 +31,15 @@ class OEFClassCreator:
         if oef_class['naam'] == '':
             raise ValueError(f"oef_class[naam] is invalid. Value = '{oef_class['naam']}'")
 
+        if oef_class['naam'] == 'AID':
+            pass
+
         return self._create_block_to_write_from_class(oef_class)
 
     def _create_block_to_write_from_class(self, oef_class: dict):
         attributen = self.find_attributes_by_class(oef_class)
 
-        datablock = ['# coding=utf-8', 'from OEFModel.EMObject import EMObject']
+        datablock = ['# coding=utf-8', 'from OTLMOW.OEFModel.EMObject import EMObject']
 
         if len(attributen) > 0:
             datablock.append('from OTLMOW.OEFModel.EMAttribuut import EMAttribuut')
@@ -66,7 +69,7 @@ class OEFClassCreator:
     def find_attributes_by_class(self, oef_class):
         attributenlijst = list(map(lambda a: a['attribuut'], oef_class['attributen']))
         attributenlijst = list(
-            filter(lambda a: not a.startswith('https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMObject'),
+            filter(lambda a: not a.startswith('https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#'),
                    attributenlijst))
         return list(filter(lambda x: x['uri'] in attributenlijst, self.attributen))
 
@@ -76,13 +79,15 @@ class OEFClassCreator:
             'http://www.w3.org/2001/XMLSchema#boolean': 'BooleanField',
             'http://www.w3.org/2001/XMLSchema#string': 'StringField',
             'http://www.w3.org/2001/XMLSchema#integer': 'IntegerField',
-            'http://www.w3.org/2001/XMLSchema#date': 'DateField'
+            'http://www.w3.org/2001/XMLSchema#date': 'DateField',
+            'http://www.w3.org/2001/XMLSchema#dateTime': 'DateTimeField'
         }
         return substitute_lijst.get(datatype)
 
     def get_fields_to_import_from_list_of_attributes(self, attributen):
         field_lijst = list(set(map(lambda a: a['dataType'], attributen)))
-        return list(sorted(map(self.get_field_from_datatype, field_lijst)))
+        unsorted = list(sorted(map(self.get_field_from_datatype, field_lijst)))
+        return unsorted
 
     @staticmethod
     def getWhiteSpaceEquivalent(string):
@@ -91,14 +96,13 @@ class OEFClassCreator:
     def add_attributen_to_datablock(self, attributen, datablock):
         prop_datablock = []
         for attribuut in sorted(attributen, key=lambda a: a['naam']):
-            verkorte_uri = attribuut["uri"].replace('https://lgc.data.wegenenverkeer.be/ns/attribuut#', '')
+            verkorte_uri = attribuut["uri"].replace('https://lgc.data.wegenenverkeer.be/ns/attribuut#', '').\
+                replace('https://ond.data.wegenenverkeer.be/ns/attribuut#', '').\
+                replace('https://ins.data.wegenenverkeer.be/ns/attribuut#', '')
             verkorte_uri = verkorte_uri.split('.')[1]
 
             whitespace = self.getWhiteSpaceEquivalent(f'        self._{verkorte_uri} = EMAttribuut(')
             fieldName = self.get_field_from_datatype(attribuut['dataType'])
-
-            if verkorte_uri == 'rijstrook':
-                pass
 
             datablock.append(f'        self._{verkorte_uri} = EMAttribuut(field={fieldName},')
             datablock.append(f'{whitespace}naam={wrap_in_quotes(attribuut["naam"])},')

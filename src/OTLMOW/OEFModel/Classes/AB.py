@@ -20,6 +20,12 @@ class AB(EMObject):
                                     objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#AB.ipAdres',
                                     definitie='IP adres eigenschap voor legacy objecten')
 
+        self._notitieinspectie = EMAttribuut(field=StringField,
+                                             naam='notitieInspectie',
+                                             label='notitieInspectie',
+                                             objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#EMObject.notitieinspectie',
+                                             definitie='Definitie nog toe te voegen voor eigenschap notitie')
+
     @property
     def ipAdres(self):
         """IP adres eigenschap voor legacy objecten"""
@@ -28,4 +34,13 @@ class AB(EMObject):
     @ipAdres.setter
     def ipAdres(self, value):
         self._ipAdres.set_waarde(value, owner=self)
+
+    @property
+    def notitieinspectie(self):
+        """Definitie nog toe te voegen voor eigenschap notitie"""
+        return self._notitieinspectie.waarde
+
+    @notitieinspectie.setter
+    def notitieinspectie(self, value):
+        self._notitieinspectie.set_waarde(value, owner=self)
 

@@ -41,6 +41,24 @@ class IVSB(EMObject):
                                     objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#EMObject.vsaType',
                                     definitie='keuzelijst elektromagnetisch, elektronisch, niet gekend')
 
+        self._aantalVsaLaagsteVermogenVervangen = EMAttribuut(field=FloatOrDecimalField,
+                                                              naam='aantal VSA laagste vermogen vervangen',
+                                                              label='aantal VSA laagste vermogen vervangen',
+                                                              objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#IVSB.aantalVsaLaagsteVermogenVervangen',
+                                                              definitie='afhankelijk veld, dient enkel getoond te worden als er 2 lamptypes aanwezig zijn')
+
+        self._aantalVsaVervangen = EMAttribuut(field=FloatOrDecimalField,
+                                               naam='aantal VSA vervangen',
+                                               label='aantal VSA vervangen',
+                                               objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#EMObject.aantalVsaVervangen',
+                                               definitie='Definitie nog toe te voegen voor eigenschap aantal VSA vervangen')
+
+        self._aantalDeurtjesVervangen = EMAttribuut(field=FloatOrDecimalField,
+                                                    naam='aantal deurtjes vervangen',
+                                                    label='aantal deurtjes vervangen',
+                                                    objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#IVSB.aantalDeurtjesVervangen',
+                                                    definitie='Definitie nog toe te voegen voor eigenschap aantal deurtjes vervangen')
+
         self._aantalLampen = EMAttribuut(field=FloatOrDecimalField,
                                          naam='aantal lampen',
                                          label='aantal lampen',
@@ -52,6 +70,30 @@ class IVSB(EMObject):
                                                         label='aantal lampen laagste vermogen',
                                                         objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#IVSB.aantalLampenLaagsteVermogen',
                                                         definitie='afhankelijk veld, dient enkel getoond te worden als er 2 lamptypes aanwezig zijn')
+
+        self._aantalLampenLaagsteVermogenVervangen = EMAttribuut(field=FloatOrDecimalField,
+                                                                 naam='aantal lampen laagste vermogen vervangen',
+                                                                 label='aantal lampen laagste vermogen vervangen',
+                                                                 objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#IVSB.aantalLampenLaagsteVermogenVervangen',
+                                                                 definitie='afhankelijk veld, dient enkel getoond te worden als er 2 lamptypes aanwezig zijn')
+
+        self._aantalLampenVervangen = EMAttribuut(field=FloatOrDecimalField,
+                                                  naam='aantal lampen vervangen',
+                                                  label='aantal lampen vervangen',
+                                                  objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#EMObject.aantalLampenVervangen',
+                                                  definitie='Definitie nog toe te voegen voor eigenschap aantal lampen vervangen')
+
+        self._aantalOntstekersLaagsteVermogenVerv = EMAttribuut(field=FloatOrDecimalField,
+                                                                naam='aantal ontstekers laagste vermogen verv',
+                                                                label='aantal ontstekers laagste vermogen verv',
+                                                                objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#IVSB.aantalOntstekersLaagsteVermogenVerv',
+                                                                definitie='afhankelijk veld, dient enkel getoond te worden als er 2 lamptypes aanwezig zijn')
+
+        self._aantalOntstekersVervangen = EMAttribuut(field=FloatOrDecimalField,
+                                                      naam='aantal ontstekers vervangen',
+                                                      label='aantal ontstekers vervangen',
+                                                      objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#IVSB.aantalOntstekersVervangen',
+                                                      definitie='Definitie nog toe te voegen voor eigenschap aantal ontstekers vervangen')
 
         self._afmeting = EMAttribuut(field=StringField,
                                      naam='afmeting',
@@ -77,6 +119,12 @@ class IVSB(EMObject):
                                                      objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#IVSB.gecombineerdMetAnderBord',
                                                      definitie='aanduiden als er aan/op het bord een vsb of retroreflecterend stuk bevestigd is')
 
+        self._isolatieweerstand = EMAttribuut(field=FloatOrDecimalField,
+                                              naam='isolatieweerstand',
+                                              label='isolatieweerstand',
+                                              objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#IVSB.isolatieweerstand',
+                                              definitie='Definitie nog toe te voegen voor eigenschap isolatieweerstand')
+
         self._lampType = EMAttribuut(field=StringField,
                                      naam='lamp type',
                                      label='lamp type',
@@ -89,11 +137,41 @@ class IVSB(EMObject):
                                                     objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#IVSB.lampTypeLaagsteVermogen',
                                                     definitie='afhankelijk veld, dient enkel getoond te worden als er 2 lamptypes aanwezig zijn')
 
+        self._nogTeHerstellenOpmerkingen = EMAttribuut(field=StringField,
+                                                       naam='nog te herstellen/opmerkingen',
+                                                       label='nog te herstellen/opmerkingen',
+                                                       objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#IVSB.nogTeHerstellenOpmerkingen',
+                                                       definitie='veld waar met max 40 lettertekens aanvullende info kan geleverd worden')
+
+        self._notitieinspectie = EMAttribuut(field=StringField,
+                                             naam='notitieInspectie',
+                                             label='notitieInspectie',
+                                             objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#EMObject.notitieinspectie',
+                                             definitie='Definitie nog toe te voegen voor eigenschap notitie')
+
+        self._onderhoudUitgevoerd = EMAttribuut(field=StringField,
+                                                naam='onderhoud uitgevoerd',
+                                                label='onderhoud uitgevoerd',
+                                                objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#IVSB.onderhoudUitgevoerd',
+                                                definitie='Definitie nog toe te voegen voor eigenschap onderhoud uitgevoerd')
+
+        self._opmerkingElektrischeApparatuur = EMAttribuut(field=StringField,
+                                                           naam='opmerking elektrische apparatuur',
+                                                           label='opmerking elektrische apparatuur',
+                                                           objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#IVSB.opmerkingElektrischeApparatuur',
+                                                           definitie='veld waar met max 40 lettertekens aanvullende info kan geleverd worden')
+
         self._opmerkingInventarisIvsb = EMAttribuut(field=StringField,
                                                     naam='opmerking inventaris IVSB',
                                                     label='opmerking inventaris IVSB',
                                                     objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#IVSB.opmerkingInventarisIvsb',
                                                     definitie='veld waar met max 40 lettertekens aanvullende info kan geleverd worden')
+
+        self._opmerkingToestandIvsb = EMAttribuut(field=StringField,
+                                                  naam='opmerking toestand IVSB',
+                                                  label='opmerking toestand IVSB',
+                                                  objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#IVSB.opmerkingToestandIvsb',
+                                                  definitie='veld waar met max 40 lettertekens aanvullende info kan geleverd worden')
 
         self._redenIvsbBuitenGebruik = EMAttribuut(field=StringField,
                                                    naam='reden IVSB buiten gebruik',
@@ -107,11 +185,53 @@ class IVSB(EMObject):
                                             objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#IVSB.tekstEnSymbolen',
                                             definitie='tekstveld waar opschrift van bord bijgehouden kan worden')
 
+        self._toestandIvsb = EMAttribuut(field=StringField,
+                                         naam='toestand IVSB',
+                                         label='toestand IVSB',
+                                         objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#IVSB.toestandIvsb',
+                                         definitie='Definitie nog toe te voegen voor eigenschap toestand IVSB')
+
+        self._toestandBeugelsBevestigingsmiddelen = EMAttribuut(field=StringField,
+                                                                naam='toestand beugels/bevestigingsmiddelen',
+                                                                label='toestand beugels/bevestigingsmiddelen',
+                                                                objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#IVSB.toestandBeugelsBevestigingsmiddelen',
+                                                                definitie='Definitie nog toe te voegen voor eigenschap toestand beugels/bevestigingsmiddelen')
+
+        self._toestandDeurtjeSluitingssysteem = EMAttribuut(field=StringField,
+                                                            naam='toestand deurtje/sluitingssysteem',
+                                                            label='toestand deurtje/sluitingssysteem',
+                                                            objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#IVSB.toestandDeurtjeSluitingssysteem',
+                                                            definitie='Definitie nog toe te voegen voor eigenschap toestand deurtje/sluitingssysteem')
+
+        self._toestandElektrischeApparatuur = EMAttribuut(field=StringField,
+                                                          naam='toestand elektrische apparatuur',
+                                                          label='toestand elektrische apparatuur',
+                                                          objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#IVSB.toestandElektrischeApparatuur',
+                                                          definitie='Definitie nog toe te voegen voor eigenschap toestand elektrische apparatuur')
+
         self._typeIvsb = EMAttribuut(field=StringField,
                                      naam='type IVSB',
                                      label='type IVSB',
                                      objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#IVSB.typeIvsb',
                                      definitie='Definitie nog toe te voegen voor eigenschap type IVSB')
+
+        self._typeOnderhoud = EMAttribuut(field=StringField,
+                                          naam='type onderhoud',
+                                          label='type onderhoud',
+                                          objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#EMObject.typeOnderhoud',
+                                          definitie='Definitie nog toe te voegen voor eigenschap type onderhoud')
+
+        self._waterdichtheidKabelinvoer = EMAttribuut(field=StringField,
+                                                      naam='waterdichtheid kabelinvoer',
+                                                      label='waterdichtheid kabelinvoer',
+                                                      objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#IVSB.waterdichtheidKabelinvoer',
+                                                      definitie='Definitie nog toe te voegen voor eigenschap waterdichtheid kabelinvoer')
+
+        self._werkingIvsb = EMAttribuut(field=StringField,
+                                        naam='werking IVSB',
+                                        label='werking IVSB',
+                                        objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#IVSB.werkingIvsb',
+                                        definitie='Definitie nog toe te voegen voor eigenschap werking IVSB')
 
     @property
     def 2TypesLampenAanwezig(self):
@@ -150,6 +270,33 @@ class IVSB(EMObject):
         self._vsaType.set_waarde(value, owner=self)
 
     @property
+    def aantalVsaLaagsteVermogenVervangen(self):
+        """afhankelijk veld, dient enkel getoond te worden als er 2 lamptypes aanwezig zijn"""
+        return self._aantalVsaLaagsteVermogenVervangen.waarde
+
+    @aantalVsaLaagsteVermogenVervangen.setter
+    def aantalVsaLaagsteVermogenVervangen(self, value):
+        self._aantalVsaLaagsteVermogenVervangen.set_waarde(value, owner=self)
+
+    @property
+    def aantalVsaVervangen(self):
+        """Definitie nog toe te voegen voor eigenschap aantal VSA vervangen"""
+        return self._aantalVsaVervangen.waarde
+
+    @aantalVsaVervangen.setter
+    def aantalVsaVervangen(self, value):
+        self._aantalVsaVervangen.set_waarde(value, owner=self)
+
+    @property
+    def aantalDeurtjesVervangen(self):
+        """Definitie nog toe te voegen voor eigenschap aantal deurtjes vervangen"""
+        return self._aantalDeurtjesVervangen.waarde
+
+    @aantalDeurtjesVervangen.setter
+    def aantalDeurtjesVervangen(self, value):
+        self._aantalDeurtjesVervangen.set_waarde(value, owner=self)
+
+    @property
     def aantalLampen(self):
         """Definitie nog toe te voegen voor eigenschap aantal lampen"""
         return self._aantalLampen.waarde
@@ -166,6 +313,42 @@ class IVSB(EMObject):
     @aantalLampenLaagsteVermogen.setter
     def aantalLampenLaagsteVermogen(self, value):
         self._aantalLampenLaagsteVermogen.set_waarde(value, owner=self)
+
+    @property
+    def aantalLampenLaagsteVermogenVervangen(self):
+        """afhankelijk veld, dient enkel getoond te worden als er 2 lamptypes aanwezig zijn"""
+        return self._aantalLampenLaagsteVermogenVervangen.waarde
+
+    @aantalLampenLaagsteVermogenVervangen.setter
+    def aantalLampenLaagsteVermogenVervangen(self, value):
+        self._aantalLampenLaagsteVermogenVervangen.set_waarde(value, owner=self)
+
+    @property
+    def aantalLampenVervangen(self):
+        """Definitie nog toe te voegen voor eigenschap aantal lampen vervangen"""
+        return self._aantalLampenVervangen.waarde
+
+    @aantalLampenVervangen.setter
+    def aantalLampenVervangen(self, value):
+        self._aantalLampenVervangen.set_waarde(value, owner=self)
+
+    @property
+    def aantalOntstekersLaagsteVermogenVerv(self):
+        """afhankelijk veld, dient enkel getoond te worden als er 2 lamptypes aanwezig zijn"""
+        return self._aantalOntstekersLaagsteVermogenVerv.waarde
+
+    @aantalOntstekersLaagsteVermogenVerv.setter
+    def aantalOntstekersLaagsteVermogenVerv(self, value):
+        self._aantalOntstekersLaagsteVermogenVerv.set_waarde(value, owner=self)
+
+    @property
+    def aantalOntstekersVervangen(self):
+        """Definitie nog toe te voegen voor eigenschap aantal ontstekers vervangen"""
+        return self._aantalOntstekersVervangen.waarde
+
+    @aantalOntstekersVervangen.setter
+    def aantalOntstekersVervangen(self, value):
+        self._aantalOntstekersVervangen.set_waarde(value, owner=self)
 
     @property
     def afmeting(self):
@@ -204,6 +387,15 @@ class IVSB(EMObject):
         self._gecombineerdMetAnderBord.set_waarde(value, owner=self)
 
     @property
+    def isolatieweerstand(self):
+        """Definitie nog toe te voegen voor eigenschap isolatieweerstand"""
+        return self._isolatieweerstand.waarde
+
+    @isolatieweerstand.setter
+    def isolatieweerstand(self, value):
+        self._isolatieweerstand.set_waarde(value, owner=self)
+
+    @property
     def lampType(self):
         """Lijst lamptypes"""
         return self._lampType.waarde
@@ -222,6 +414,42 @@ class IVSB(EMObject):
         self._lampTypeLaagsteVermogen.set_waarde(value, owner=self)
 
     @property
+    def nogTeHerstellenOpmerkingen(self):
+        """veld waar met max 40 lettertekens aanvullende info kan geleverd worden"""
+        return self._nogTeHerstellenOpmerkingen.waarde
+
+    @nogTeHerstellenOpmerkingen.setter
+    def nogTeHerstellenOpmerkingen(self, value):
+        self._nogTeHerstellenOpmerkingen.set_waarde(value, owner=self)
+
+    @property
+    def notitieinspectie(self):
+        """Definitie nog toe te voegen voor eigenschap notitie"""
+        return self._notitieinspectie.waarde
+
+    @notitieinspectie.setter
+    def notitieinspectie(self, value):
+        self._notitieinspectie.set_waarde(value, owner=self)
+
+    @property
+    def onderhoudUitgevoerd(self):
+        """Definitie nog toe te voegen voor eigenschap onderhoud uitgevoerd"""
+        return self._onderhoudUitgevoerd.waarde
+
+    @onderhoudUitgevoerd.setter
+    def onderhoudUitgevoerd(self, value):
+        self._onderhoudUitgevoerd.set_waarde(value, owner=self)
+
+    @property
+    def opmerkingElektrischeApparatuur(self):
+        """veld waar met max 40 lettertekens aanvullende info kan geleverd worden"""
+        return self._opmerkingElektrischeApparatuur.waarde
+
+    @opmerkingElektrischeApparatuur.setter
+    def opmerkingElektrischeApparatuur(self, value):
+        self._opmerkingElektrischeApparatuur.set_waarde(value, owner=self)
+
+    @property
     def opmerkingInventarisIvsb(self):
         """veld waar met max 40 lettertekens aanvullende info kan geleverd worden"""
         return self._opmerkingInventarisIvsb.waarde
@@ -229,6 +457,15 @@ class IVSB(EMObject):
     @opmerkingInventarisIvsb.setter
     def opmerkingInventarisIvsb(self, value):
         self._opmerkingInventarisIvsb.set_waarde(value, owner=self)
+
+    @property
+    def opmerkingToestandIvsb(self):
+        """veld waar met max 40 lettertekens aanvullende info kan geleverd worden"""
+        return self._opmerkingToestandIvsb.waarde
+
+    @opmerkingToestandIvsb.setter
+    def opmerkingToestandIvsb(self, value):
+        self._opmerkingToestandIvsb.set_waarde(value, owner=self)
 
     @property
     def redenIvsbBuitenGebruik(self):
@@ -249,6 +486,42 @@ class IVSB(EMObject):
         self._tekstEnSymbolen.set_waarde(value, owner=self)
 
     @property
+    def toestandIvsb(self):
+        """Definitie nog toe te voegen voor eigenschap toestand IVSB"""
+        return self._toestandIvsb.waarde
+
+    @toestandIvsb.setter
+    def toestandIvsb(self, value):
+        self._toestandIvsb.set_waarde(value, owner=self)
+
+    @property
+    def toestandBeugelsBevestigingsmiddelen(self):
+        """Definitie nog toe te voegen voor eigenschap toestand beugels/bevestigingsmiddelen"""
+        return self._toestandBeugelsBevestigingsmiddelen.waarde
+
+    @toestandBeugelsBevestigingsmiddelen.setter
+    def toestandBeugelsBevestigingsmiddelen(self, value):
+        self._toestandBeugelsBevestigingsmiddelen.set_waarde(value, owner=self)
+
+    @property
+    def toestandDeurtjeSluitingssysteem(self):
+        """Definitie nog toe te voegen voor eigenschap toestand deurtje/sluitingssysteem"""
+        return self._toestandDeurtjeSluitingssysteem.waarde
+
+    @toestandDeurtjeSluitingssysteem.setter
+    def toestandDeurtjeSluitingssysteem(self, value):
+        self._toestandDeurtjeSluitingssysteem.set_waarde(value, owner=self)
+
+    @property
+    def toestandElektrischeApparatuur(self):
+        """Definitie nog toe te voegen voor eigenschap toestand elektrische apparatuur"""
+        return self._toestandElektrischeApparatuur.waarde
+
+    @toestandElektrischeApparatuur.setter
+    def toestandElektrischeApparatuur(self, value):
+        self._toestandElektrischeApparatuur.set_waarde(value, owner=self)
+
+    @property
     def typeIvsb(self):
         """Definitie nog toe te voegen voor eigenschap type IVSB"""
         return self._typeIvsb.waarde
@@ -256,4 +529,31 @@ class IVSB(EMObject):
     @typeIvsb.setter
     def typeIvsb(self, value):
         self._typeIvsb.set_waarde(value, owner=self)
+
+    @property
+    def typeOnderhoud(self):
+        """Definitie nog toe te voegen voor eigenschap type onderhoud"""
+        return self._typeOnderhoud.waarde
+
+    @typeOnderhoud.setter
+    def typeOnderhoud(self, value):
+        self._typeOnderhoud.set_waarde(value, owner=self)
+
+    @property
+    def waterdichtheidKabelinvoer(self):
+        """Definitie nog toe te voegen voor eigenschap waterdichtheid kabelinvoer"""
+        return self._waterdichtheidKabelinvoer.waarde
+
+    @waterdichtheidKabelinvoer.setter
+    def waterdichtheidKabelinvoer(self, value):
+        self._waterdichtheidKabelinvoer.set_waarde(value, owner=self)
+
+    @property
+    def werkingIvsb(self):
+        """Definitie nog toe te voegen voor eigenschap werking IVSB"""
+        return self._werkingIvsb.waarde
+
+    @werkingIvsb.setter
+    def werkingIvsb(self, value):
+        self._werkingIvsb.set_waarde(value, owner=self)
 

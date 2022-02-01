@@ -72,15 +72,28 @@ class OTLFacility:
             d[i.typeURI] += 1
         return d
 
-    def init_oef_model_creator(self, oef_file_location):
+    def init_oef_model_creator(self, oef_file_location, ins_ond_file_location=''):
         model_grabber = ModelGrabber()
-        model_grabber.grab_model_as_json(oef_file_location)
+        model_grabber.grab_models_as_json(oef_file_location, ins_ond_file_location)
         classes = model_grabber.decode_json_and_get_classes(oef_file_location)
         attributen = model_grabber.decode_json_and_get_attributen(oef_file_location)
+        ins_ond_classes = model_grabber.decode_json_and_get_classes(ins_ond_file_location)
+        self.extend_classes_with_ond_ins(classes, ins_ond_classes)
+        ins_ond_attributen = model_grabber.decode_json_and_get_attributen(ins_ond_file_location)
+        attributen.extend(ins_ond_attributen)
+
         self.oef_model_creator = OEFModelCreator(self.logger, classes=classes, attributen=attributen)
 
     def create_oef_datamodel(self):
         self.oef_model_creator.create_full_model()
+
+    def extend_classes_with_ond_ins(self, classes, ins_ond_classes):
+        for cls in classes:
+            ins_ond_cls = next((c for c in ins_ond_classes if c["uri"] == cls["uri"]), None)
+            if ins_ond_cls is None:
+                continue
+            cls["attributen"].extend(ins_ond_cls["attributen"])
+
 
 
 

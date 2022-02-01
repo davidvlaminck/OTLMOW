@@ -33,6 +33,12 @@ class MIVLVE(EMObject):
                                         objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#EMObject.opmerkingen',
                                         definitie='Definitie nog toe te voegen voor eigenschap Opmerkingen')
 
+        self._notitieinspectie = EMAttribuut(field=StringField,
+                                             naam='notitieInspectie',
+                                             label='notitieInspectie',
+                                             objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#EMObject.notitieinspectie',
+                                             definitie='Definitie nog toe te voegen voor eigenschap notitie')
+
     @property
     def bezoeklocatieLatitude5052(self):
         """waardes tussen 50 en 52"""
@@ -59,4 +65,13 @@ class MIVLVE(EMObject):
     @opmerkingen.setter
     def opmerkingen(self, value):
         self._opmerkingen.set_waarde(value, owner=self)
+
+    @property
+    def notitieinspectie(self):
+        """Definitie nog toe te voegen voor eigenschap notitie"""
+        return self._notitieinspectie.waarde
+
+    @notitieinspectie.setter
+    def notitieinspectie(self, value):
+        self._notitieinspectie.set_waarde(value, owner=self)
 

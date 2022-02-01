@@ -220,6 +220,24 @@ class TGC(EMObject):
                                                   objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#EMObject.noodverlichtingAantal',
                                                   definitie='Definitie nog toe te voegen voor eigenschap noodverlichting aantal')
 
+        self._notitieinspectie = EMAttribuut(field=StringField,
+                                             naam='notitieInspectie',
+                                             label='notitieInspectie',
+                                             objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#EMObject.notitieinspectie',
+                                             definitie='Definitie nog toe te voegen voor eigenschap notitie')
+
+        self._opmerkingenBijOnderhoud = EMAttribuut(field=StringField,
+                                                    naam='opmerkingen bij onderhoud',
+                                                    label='opmerkingen bij onderhoud',
+                                                    objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#EMObject.opmerkingenBijOnderhoud',
+                                                    definitie='Definitie nog toe te voegen voor eigenschap opmerkingen bij onderhoud')
+
+        self._resultaatOnderhoud = EMAttribuut(field=StringField,
+                                               naam='resultaat onderhoud',
+                                               label='resultaat onderhoud',
+                                               objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#EMObject.resultaatOnderhoud',
+                                               definitie='Definitie nog toe te voegen voor eigenschap resultaat onderhoud')
+
         self._rookmeldersAantal = EMAttribuut(field=FloatOrDecimalField,
                                               naam='rookmelders aantal',
                                               label='rookmelders aantal',
@@ -531,6 +549,33 @@ class TGC(EMObject):
     @noodverlichtingAantal.setter
     def noodverlichtingAantal(self, value):
         self._noodverlichtingAantal.set_waarde(value, owner=self)
+
+    @property
+    def notitieinspectie(self):
+        """Definitie nog toe te voegen voor eigenschap notitie"""
+        return self._notitieinspectie.waarde
+
+    @notitieinspectie.setter
+    def notitieinspectie(self, value):
+        self._notitieinspectie.set_waarde(value, owner=self)
+
+    @property
+    def opmerkingenBijOnderhoud(self):
+        """Definitie nog toe te voegen voor eigenschap opmerkingen bij onderhoud"""
+        return self._opmerkingenBijOnderhoud.waarde
+
+    @opmerkingenBijOnderhoud.setter
+    def opmerkingenBijOnderhoud(self, value):
+        self._opmerkingenBijOnderhoud.set_waarde(value, owner=self)
+
+    @property
+    def resultaatOnderhoud(self):
+        """Definitie nog toe te voegen voor eigenschap resultaat onderhoud"""
+        return self._resultaatOnderhoud.waarde
+
+    @resultaatOnderhoud.setter
+    def resultaatOnderhoud(self, value):
+        self._resultaatOnderhoud.set_waarde(value, owner=self)
 
     @property
     def rookmeldersAantal(self):

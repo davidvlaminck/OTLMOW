@@ -1,6 +1,7 @@
 ﻿import json
 
 from OTLMOW.Facility.ToOTLDecoder import ToOTLDecoder
+from OTLMOW.OEFModel.OEFClassLoader import OEFClassLoader
 from OTLMOW.OTLModel.ClassLoader import ClassLoader
 
 
@@ -20,29 +21,46 @@ class EMInfraDecoder(ToOTLDecoder):
     def decodeJsonObject(self, obj):
         typeURI = next(value for key, value in obj.items() if 'typeURI' in key)
 
-        if 'https://wegenenverkeer.data.vlaanderen.be/ns' not in typeURI:
-            return
-            #raise ValueError('typeURI should start with "https://wegenenverkeer.data.vlaanderen.be/ns" to use this decoder')
-
-        instance = ClassLoader().dynamic_create_instance_from_uri(typeURI)
+        if 'https://wegenenverkeer.data.vlaanderen.be/ns' in typeURI:
+            instance = ClassLoader().dynamic_create_instance_from_uri(typeURI)
+        else:
+            instance = OEFClassLoader().dynamic_create_instance_from_uri(typeURI)
 
         for key, value in obj.items():
-            if key.startswith('@') or 'typeURI' in key or value == '' or 'toezichter' in key or 'puntlocatie' in key:
+            if key.startswith('@') or 'typeURI' in key or value == '' or  'puntlocatie' in key \
+                    or 'schadebeheerder' in key or key.startswith('ins:') or key.startswith('ond:'):
                 continue
             if 'geometrie' in key:
                 key = 'loc:Locatie.geometry'
 
-            if isinstance(value, str) and 'https://wegenenverkeer.data.vlaanderen.be/id/concept' in value:
-                 value = value.split('/')[-1]
+            if 'toezichtgroep' in key:
+                pass
+
+            value = self.trim_keuzelijst_from_ld_notation(value)
+
+            if key != 'loc:Locatie.geometry':
+                value = self.trim_keys_from_ld_notation(value)
 
             self.set_attribute_by_dotnotatie(instance, key.split('.')[-1], value)
 
-            # attr_naam = key.split('.')[-1]
-            # attribute_setter = AttributeSetterFactory.CreateSetter(instance, attr_naam)
-            # if attribute_setter is KeuzelijstFieldSetter:
-            #     if value != '':
-            #         val = value.split('/')[-1]
-            #         value = str.lower(val[0]) + val[1:]
-            # attribute_setter.set_attribute(value)
-
         return instance
+
+    def trim_keys_from_ld_notation(self, value):
+        if isinstance(value, dict):
+            for k, v in set(value.items()):
+                value[k.split('.')[-1]] = v
+                value.pop(k)
+        return value
+
+    def trim_keuzelijst_from_ld_notation(self, value):
+        if isinstance(value, str) and 'https://wegenenverkeer.data.vlaanderen.be/id/concept' in value:
+            return value.split('/')[-1]
+        elif isinstance(value, dict):
+            for k, v in set(value.items()):
+                value[k] = self.trim_keuzelijst_from_ld_notation(v)
+        elif isinstance(value, list):
+            for item in value:
+                i = list.index(value, item)
+                value[i] = self.trim_keys_from_ld_notation(item)
+        return value
+

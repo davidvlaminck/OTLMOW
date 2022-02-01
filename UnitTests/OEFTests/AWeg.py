@@ -1,5 +1,5 @@
 # coding=utf-8
-from OEFModel.EMObject import EMObject
+from OTLMOW.OEFModel.EMObject import EMObject
 from OTLMOW.OEFModel.EMAttribuut import EMAttribuut
 from OTLMOW.OTLModel.Datatypes.BooleanField import BooleanField
 

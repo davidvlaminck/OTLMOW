@@ -30,8 +30,6 @@ class OTLAttribuut(AttributeInfo):
         if self.field.waardeObject:
             self.waarde = self.field.waardeObject()
             self.waarde._parent = self
-        else:
-            pass
 
     def default(self):
         if self.waarde is not dict and isinstance(self.waarde, list):

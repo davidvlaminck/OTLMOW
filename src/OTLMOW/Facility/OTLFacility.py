@@ -74,7 +74,7 @@ class OTLFacility:
 
     def init_oef_model_creator(self, oef_file_location):
         model_grabber = ModelGrabber()
-        model_grabber.grab_model(oef_file_location)
+        model_grabber.grab_model_as_json(oef_file_location)
         classes = model_grabber.decode_json_and_get_classes(oef_file_location)
         attributen = model_grabber.decode_json_and_get_attributen(oef_file_location)
         self.oef_model_creator = OEFModelCreator(self.logger, classes=classes, attributen=attributen)

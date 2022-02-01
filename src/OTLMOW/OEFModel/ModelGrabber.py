@@ -8,8 +8,9 @@ class ModelGrabber:
         self.cert_path = 'C:\\resources\\datamanager_eminfra_prd.awv.vlaanderen.be.crt'
         self.key_path = 'C:\\resources\\datamanager_eminfra_prd.awv.vlaanderen.be.key'
 
-    def grab_model(self, save_to: str = 'oef.legacy.json'):
-        model = requests.get('https://services.apps.mow.vlaanderen.be/eminfra/core/api/otl/schema/oef/legacy',  cert=(self.cert_path, self.key_path))
+    def grab_model_as_json(self, save_to: str = 'oef.legacy.json'):
+        model = requests.get('https://services.apps.mow.vlaanderen.be/eminfra/core/api/otl/schema/oef/legacy',
+                             cert=(self.cert_path, self.key_path))
         with open(save_to, 'wb') as f:
             f.write(model.content)
 

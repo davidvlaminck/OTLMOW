@@ -91,24 +91,30 @@ class OEFClassCreator:
     def add_attributen_to_datablock(self, attributen, datablock):
         prop_datablock = []
         for attribuut in sorted(attributen, key=lambda a: a['naam']):
-            verkorte_uri = attribuut["uri"].replace('https://lgc.data.wegenenverkeer.be/ns/attribuut#EMObject.', '')
+            verkorte_uri = attribuut["uri"].replace('https://lgc.data.wegenenverkeer.be/ns/attribuut#', '')
+            verkorte_uri = verkorte_uri.split('.')[1]
 
             whitespace = self.getWhiteSpaceEquivalent(f'        self._{verkorte_uri} = EMAttribuut(')
             fieldName = self.get_field_from_datatype(attribuut['dataType'])
+
+            if verkorte_uri == 'rijstrook':
+                pass
 
             datablock.append(f'        self._{verkorte_uri} = EMAttribuut(field={fieldName},')
             datablock.append(f'{whitespace}naam={wrap_in_quotes(attribuut["naam"])},')
             datablock.append(f'{whitespace}label={wrap_in_quotes(attribuut["label"])},')
             datablock.append(f'{whitespace}objectUri={wrap_in_quotes(attribuut["uri"])},')
             if attribuut["kardinaliteit"] != '1..1':
-                datablock.append(f'{whitespace}definitie={wrap_in_quotes(attribuut["kardinaliteit"])},')
-            datablock.append(f'{whitespace}definitie={wrap_in_quotes(attribuut["definitie"])})')
+                datablock.append(f'{whitespace}kardinaliteit={wrap_in_quotes(attribuut["kardinaliteit"])},')
+            definitie_zonder_quotes = attribuut["definitie"].replace("\'", "\\\'").replace("\n", ' ')
+            datablock.append(f'{whitespace}definitie={wrap_in_quotes(definitie_zonder_quotes)})')
 
             datablock.append('')
 
             prop_datablock.append(f'    @property'),
             prop_datablock.append(f'    def {verkorte_uri}(self):'),
-            prop_datablock.append(f'        """{attribuut["definitie"]}"""'),
+
+            prop_datablock.append(f'        """{definitie_zonder_quotes}"""'),
             prop_datablock.append(f'        return self._{verkorte_uri}.waarde'),
             prop_datablock.append(f''),
             prop_datablock.append(f'    @{verkorte_uri}.setter'),
@@ -122,9 +128,9 @@ class OEFClassCreator:
         return datablock
 
     @staticmethod
-    def writeToFile(datatype, dataToWrite: list[str], relativePath=''):
+    def writeToFile(cls, dataToWrite: list[str], relativePath=''):
         base_dir = os.path.dirname(os.path.realpath(__file__))
-        path = f"{base_dir}/../OEFModel/Classes/{datatype.name}.py"
+        path = f"{base_dir}/../OEFModel/Classes/{cls['naam']}.py"
 
         with open(path, "w", encoding='utf-8') as file:
             for line in dataToWrite:

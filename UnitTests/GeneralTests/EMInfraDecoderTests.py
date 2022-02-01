@@ -37,11 +37,37 @@ class EMInfraDecoderTests(TestCase):
             self.assertEqual("AWV", first.assetId.toegekendDoor)
             self.assertEqual("0005bafb-838f-47e0-a4e2-20dd120ede6b-b25kZXJkZWVsI09tdm9ybWVy", first.assetId.identificator)
 
-    @unittest.skip('graph not correctly implemented')
-    def test_decodeAndEncode(self):
+    def test_decode(self):
         responseString = ResponseTestDouble().response
         decoder = EMInfraDecoder()
         lijst = decoder.decodeGraph(responseString)
-        encoder = OtlAssetJSONEncoder()
-        actualJsonString = encoder.encode(lijst)
+        self.assertEqual(56, len(lijst))
 
+    def test_trim_keys_from_ld_notation(self):
+        decoder = EMInfraDecoder()
+
+        with self.subTest("Testing Dtc"):
+            value = {'DtcIdentificator.toegekendDoor': 'AWV', 'DtcIdentificator.identificator': '0005bafb-838f-47e0-a4e2-20dd120ede6b-b25kZXJkZWVsI09tdm9ybWVy'}
+            result = decoder.trim_keys_from_ld_notation(value)
+            expected = {'toegekendDoor': 'AWV', 'identificator': '0005bafb-838f-47e0-a4e2-20dd120ede6b-b25kZXJkZWVsI09tdm9ybWVy'}
+            self.assertDictEqual(expected, result)
+
+        with self.subTest("Testing Boolean"):
+            value = True
+            result = decoder.trim_keys_from_ld_notation(value)
+            expected = True
+            self.assertEqual(expected, result)
+
+        with self.subTest("Testing Kard *"):
+            value = ["geel", "rood"]
+            result = decoder.trim_keys_from_ld_notation(value)
+            expected = ["geel", "rood"]
+            self.assertListEqual(expected, result)
+
+        with self.subTest("Testing Kard * ComplexField"):
+            value = [{'DtcExterneReferentie.externReferentienummer': 'extern ref 1', 'DtcExterneReferentie.externePartij': 'extern 1'},
+                     {'DtcExterneReferentie.externReferentienummer': 'extern ref 2', 'DtcExterneReferentie.externePartij': 'extern 2'}]
+            result = decoder.trim_keys_from_ld_notation(value)
+            expected = [{'externReferentienummer': 'extern ref 1', 'externePartij': 'extern 1'},
+                        {'externReferentienummer': 'extern ref 2', 'externePartij': 'extern 2'}]
+            self.assertListEqual(expected, result)

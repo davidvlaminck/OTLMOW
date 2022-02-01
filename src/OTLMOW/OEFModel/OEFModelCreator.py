@@ -1,15 +1,7 @@
 from datetime import datetime
 
-from OTLMOW.GeometrieArtefact.GeometrieArtefactCollector import GeometrieArtefactCollector
 from OTLMOW.Loggers.AbstractLogger import AbstractLogger
 from OTLMOW.Loggers.LogType import LogType
-from OTLMOW.ModelGenerator.OSLOCollector import OSLOCollector
-from OTLMOW.ModelGenerator.OTLClassCreator import OTLClassCreator
-from OTLMOW.ModelGenerator.OTLComplexDatatypeCreator import OTLComplexDatatypeCreator
-from OTLMOW.ModelGenerator.OTLEnumerationCreator import OTLEnumerationCreator
-from OTLMOW.ModelGenerator.OTLGeldigeRelatieCreator import OTLGeldigeRelatieCreator
-from OTLMOW.ModelGenerator.OTLPrimitiveDatatypeCreator import OTLPrimitiveDatatypeCreator
-from OTLMOW.ModelGenerator.OTLUnionDatatypeCreator import OTLUnionDatatypeCreator
 from OTLMOW.OEFModel.OEFClassCreator import OEFClassCreator
 
 

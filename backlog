@@ -93,6 +93,13 @@ Facility
         - csv per type
 
 
+python --version > verwijzen juiste python versie
+python -m venv venv > aanmaken env
+activate gebruikt in venv map / scripts in terminal
+vandaar uit pip commands gebruiken
+project settings > existing environment aangeduid > manueel browsen naar venv map
+
+
 
 Building and Packaging:
 .\venv2\Scripts\python.exe -m build --wheel

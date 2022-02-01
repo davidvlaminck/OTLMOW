@@ -37,7 +37,7 @@ class OEFModelCreator:
                 if len(dataToWrite) == 0:
                     self.logger.log(f"Could not create a class for {cls['naam']}", LogType.INFO)
                     pass
-                creator.writeToFile(cls, 'Classes', dataToWrite)
+                creator.writeToFile(cls, relativePath='Classes', dataToWrite=dataToWrite)
                 self.logger.log(f"Created a class for {cls['naam']}", LogType.INFO)
             except Exception as e:
                 self.logger.log(str(e), LogType.ERROR)

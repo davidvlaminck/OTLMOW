@@ -14,6 +14,8 @@ from OTLMOW.Loggers.AbstractLogger import AbstractLogger
 from OTLMOW.ModelGenerator.OSLOCollector import OSLOCollector
 from OTLMOW.ModelGenerator.OSLOInMemoryCreator import OSLOInMemoryCreator
 from OTLMOW.ModelGenerator.OTLModelCreator import OTLModelCreator
+from OTLMOW.OEFModel.ModelGrabber import ModelGrabber
+from OTLMOW.OEFModel.OEFModelCreator import OEFModelCreator
 from OTLMOW.OTLModel.BaseClasses.OTLObject import OTLObject
 from OTLMOW.PostenMapping.PostenCollector import PostenCollector
 from OTLMOW.PostenMapping.PostenCreator import PostenCreator
@@ -27,6 +29,7 @@ class OTLFacility:
         self.collector = None
         self.geoAcollector = None
         self.modelCreator = None
+        self.oef_model_creator = None
         self.posten_collector = None
         self.posten_creator = None
         self.davieExporter = DavieExporter()
@@ -68,6 +71,16 @@ class OTLFacility:
         for i in objects:
             d[i.typeURI] += 1
         return d
+
+    def init_oef_model_creator(self, oef_file_location):
+        model_grabber = ModelGrabber()
+        model_grabber.grab_model(oef_file_location)
+        classes = model_grabber.decode_json_and_get_classes(oef_file_location)
+        attributen = model_grabber.decode_json_and_get_attributen(oef_file_location)
+        self.oef_model_creator = OEFModelCreator(self.logger, classes=classes, attributen=attributen)
+
+    def oef_model_creator(self):
+        self.oef_model_creator.create_full_model()
 
 
 

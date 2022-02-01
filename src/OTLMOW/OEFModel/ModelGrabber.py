@@ -13,20 +13,14 @@ class ModelGrabber:
         with open(save_to, 'wb') as f:
             f.write(model.content)
 
-    def decode_json(self, file_path: str = ''):
+    def decode_json_and_get_classes(self, file_path: str = ''):
         f = open(file_path)
         dict_obj = json.load(f)
         f.close()
+        return dict_obj["classes"]
 
-        classes = dict_obj["classes"]
-        for c in classes:
-            if len(c["superClasses"]) > 0:
-                pass
-        attributen = dict_obj["attributen"]
-        for a in attributen:
-            if a["kardinaliteit"] != '1..1':
-                pass
-
-
-        pass
-
+    def decode_json_and_get_attributen(self, file_path: str = ''):
+        f = open(file_path)
+        dict_obj = json.load(f)
+        f.close()
+        return dict_obj["attributen"]

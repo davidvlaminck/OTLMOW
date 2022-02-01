@@ -27,8 +27,7 @@ class EMInfraDecoder(ToOTLDecoder):
             instance = OEFClassLoader().dynamic_create_instance_from_uri(typeURI)
 
         for key, value in obj.items():
-            if key.startswith('@') or 'typeURI' in key or value == '' or  'puntlocatie' in key \
-                    or 'schadebeheerder' in key or key.startswith('ins:') or key.startswith('ond:'):
+            if key.startswith('@') or 'typeURI' in key or value == '' or  'puntlocatie' in key or key.startswith('ins:') or key.startswith('ond:'):
                 continue
             if 'geometrie' in key:
                 key = 'loc:Locatie.geometry'

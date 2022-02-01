@@ -1,3 +1,4 @@
+from OTLMOW.OEFModel.DtcBeheerder import DtcBeheerder
 from OTLMOW.OEFModel.DtcToezichtGroep import DtcToezichtGroep
 from OTLMOW.OEFModel.DtcToezichter import DtcToezichter
 from OTLMOW.OEFModel.EMAttribuut import EMAttribuut
@@ -26,6 +27,21 @@ class EMObject(NaampadObject):
                                        label='toezichter',
                                        objectUri='https://tz.data.wegenenverkeer.be/ns/implementatieelement#Toezicht.toezichter',
                                        definitie='De toezichter van een asset.')
+
+        self._schadebeheerder = EMAttribuut(field=DtcBeheerder,
+                                            naam='schadebeheerder',
+                                            label='schadebeheerder',
+                                            objectUri='https://tz.data.wegenenverkeer.be/ns/implementatieelement#Schadebeheerder.schadebeheerder',
+                                            definitie='De schadebeheerder  van een asset.')
+
+    @property
+    def schadebeheerder(self):
+        """De schadebeheerder van een asset."""
+        return self._schadebeheerder.waarde
+
+    @schadebeheerder.setter
+    def schadebeheerder(self, value):
+        self._schadebeheerder.set_waarde(value, owner=self)
 
     @property
     def toezichter(self):

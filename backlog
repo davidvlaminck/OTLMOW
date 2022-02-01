@@ -93,6 +93,11 @@ Facility
         - csv per type
 
 
+idee legacy assets inladen:
+sqlite db met assets en relaties, opgehaald uit otl endpoints
+tabel assetsOSLO: uuid, id, naam, naampad, toestand, actief, type, jsonld
+tabel relatiesOSLO: uuid, id, bron uuid, bron id, doel uuid, doel id, type, jsonld
+
 python --version > verwijzen juiste python versie
 python -m venv venv > aanmaken env
 activate gebruikt in venv map / scripts in terminal

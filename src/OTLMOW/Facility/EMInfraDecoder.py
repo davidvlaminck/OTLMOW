@@ -46,6 +46,10 @@ class EMInfraDecoder(ToOTLDecoder):
             for k, v in set(value.items()):
                 value[k.split('.')[-1]] = v
                 value.pop(k)
+        if isinstance(value, list):
+            for item in value:
+                if isinstance(item, dict):
+                    self.trim_keys_from_ld_notation(item)
         return value
 
     def trim_keuzelijst_from_ld_notation(self, value):

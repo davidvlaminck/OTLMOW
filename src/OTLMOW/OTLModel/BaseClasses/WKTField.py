@@ -1,6 +1,5 @@
-from shapely import wkt
-from shapely.errors import WKTReadingError
 from OTLMOW.OTLModel.BaseClasses.OTLField import OTLField
+from OTLMOW.OTLModel.BaseClasses.WKTValidator import WKTValidator
 
 
 class WKTField(OTLField):
@@ -16,10 +15,8 @@ class WKTField(OTLField):
         if value is not None:
             if not isinstance(value, str):
                 raise TypeError(f'expecting string in {attribuut.naam}')
-            try:
-                wkt.loads(value)
-            except WKTReadingError as error:
-                raise ValueError(f'{value} is not a valid WKT string for {attribuut.naam}: {str(error)}')
+            if not WKTValidator.validate_wkt(value):
+                raise ValueError(f'{value} is not a valid WKT string for {attribuut.naam}')
         return True
 
     def __str__(self):

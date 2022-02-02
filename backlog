@@ -3,7 +3,6 @@ utf-8 encoding > setting in pycharm aanpassen: UTF-8 + BOM aanzetten voor window
 Geldige relatie lijst refactor naar isinstance met inheritance ipv alle relaties en testen: https://stackoverflow.com/questions/31488362/why-is-dict-faster-than-if-else-in-python/31488416
 Clear other props van Dtu naar set waarde verhuizen en checken op owner.Field
 convert type nakijken en unittests schrijven
-EMInfra decoder
 shapely dependency wegwerken
 deployment/packaging: https://packaging.python.org/en/latest/guides/distributing-packages-using-setuptools/
 requirements > rdflib voor lezen ttl bestanden, Shapely voor WKT, PyVis voor visualiser en Python 3.10
@@ -92,13 +91,6 @@ Facility
     - Different formats
         - json
         - csv per type
-
-python --version > verwijzen juiste python versie
-python -m venv venv > aanmaken env
-activate gebruikt in venv map / scripts in terminal
-vandaar uit pip commands gebruiken
-project settings > existing environment aangeduid > manueel browsen naar venv map
-
 
 
 Building and Packaging:

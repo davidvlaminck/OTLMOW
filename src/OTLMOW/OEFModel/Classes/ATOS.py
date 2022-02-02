@@ -23,30 +23,6 @@ class ATOS(EMObject):
                                              objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#EMObject.DubbeleVoedingOk',
                                              definitie='Definitie nog toe te voegen voor eigenschap (Dubbele) voeding OK')
 
-        self._1WaaromNiet = EMAttribuut(field=StringField,
-                                        naam='1. Waarom niet?',
-                                        label='1. Waarom niet?',
-                                        objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#EMObject.1WaaromNiet',
-                                        definitie='Definitie nog toe te voegen voor eigenschap Waarom niet?')
-
-        self._101SiteVerantwoordelijkeGeNformeerd = EMAttribuut(field=BooleanField,
-                                                                naam='101. Site verantwoordelijke geÃ¯nformeerd',
-                                                                label='101. Site verantwoordelijke geÃ¯nformeerd',
-                                                                objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#EMObject.101SiteVerantwoordelijkeGeNformeerd',
-                                                                definitie='Definitie nog toe te voegen voor eigenschap Site verantwoordelijke geÃ¯nformeerd')
-
-        self._215Actie = EMAttribuut(field=StringField,
-                                     naam='215. Actie',
-                                     label='215. Actie',
-                                     objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#EMObject.215Actie',
-                                     definitie='Definitie nog toe te voegen voor eigenschap Actie')
-
-        self._601SiteVerantwoordelijkeGeNformeerd = EMAttribuut(field=BooleanField,
-                                                                naam='601. Site verantwoordelijke geÃ¯nformeerd',
-                                                                label='601. Site verantwoordelijke geÃ¯nformeerd',
-                                                                objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#EMObject.601SiteVerantwoordelijkeGeNformeerd',
-                                                                definitie='Definitie nog toe te voegen voor eigenschap Site verantwoordelijke geÃ¯nformeerd')
-
         self._abbameldaInstallatieOk = EMAttribuut(field=BooleanField,
                                                    naam='ABBAMelda installatie OK',
                                                    label='ABBAMelda installatie OK',
@@ -415,42 +391,6 @@ class ATOS(EMObject):
     @DubbeleVoedingOk.setter
     def DubbeleVoedingOk(self, value):
         self._DubbeleVoedingOk.set_waarde(value, owner=self)
-
-    @property
-    def 1WaaromNiet(self):
-        """Definitie nog toe te voegen voor eigenschap Waarom niet?"""
-        return self._1WaaromNiet.waarde
-
-    @1WaaromNiet.setter
-    def 1WaaromNiet(self, value):
-        self._1WaaromNiet.set_waarde(value, owner=self)
-
-    @property
-    def 101SiteVerantwoordelijkeGeNformeerd(self):
-        """Definitie nog toe te voegen voor eigenschap Site verantwoordelijke geÃ¯nformeerd"""
-        return self._101SiteVerantwoordelijkeGeNformeerd.waarde
-
-    @101SiteVerantwoordelijkeGeNformeerd.setter
-    def 101SiteVerantwoordelijkeGeNformeerd(self, value):
-        self._101SiteVerantwoordelijkeGeNformeerd.set_waarde(value, owner=self)
-
-    @property
-    def 215Actie(self):
-        """Definitie nog toe te voegen voor eigenschap Actie"""
-        return self._215Actie.waarde
-
-    @215Actie.setter
-    def 215Actie(self, value):
-        self._215Actie.set_waarde(value, owner=self)
-
-    @property
-    def 601SiteVerantwoordelijkeGeNformeerd(self):
-        """Definitie nog toe te voegen voor eigenschap Site verantwoordelijke geÃ¯nformeerd"""
-        return self._601SiteVerantwoordelijkeGeNformeerd.waarde
-
-    @601SiteVerantwoordelijkeGeNformeerd.setter
-    def 601SiteVerantwoordelijkeGeNformeerd(self, value):
-        self._601SiteVerantwoordelijkeGeNformeerd.set_waarde(value, owner=self)
 
     @property
     def abbameldaInstallatieOk(self):

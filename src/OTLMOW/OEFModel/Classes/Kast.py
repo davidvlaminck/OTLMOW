@@ -16,18 +16,6 @@ class Kast(EMObject):
     def __init__(self):
         super().__init__()
 
-        self._KastBeschadigdFoto = EMAttribuut(field=BooleanField,
-                                                 naam='04. kast beschadigd (foto)',
-                                                 label='04. kast beschadigd (foto)',
-                                                 objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#Kast.04KastBeschadigdFoto',
-                                                 definitie='Definitie nog toe te voegen voor eigenschap kast beschadigd (foto)')
-
-        self._VervolgActie = EMAttribuut(field=StringField,
-                                           naam='09. Vervolg actie',
-                                           label='09. Vervolg actie',
-                                           objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#Kast.09VervolgActie',
-                                           definitie='Definitie nog toe te voegen voor eigenschap Vervolg actie')
-
         self._aantalOvbsEnVoetVervangen = EMAttribuut(field=StringField,
                                                       naam='Aantal OVBS en voet vervangen',
                                                       label='Aantal OVBS en voet vervangen',
@@ -333,24 +321,6 @@ class Kast(EMObject):
                                              label='notitieInspectie',
                                              objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#EMObject.notitieinspectie',
                                              definitie='Definitie nog toe te voegen voor eigenschap notitie')
-
-    @property
-    def KastBeschadigdFoto(self):
-        """Definitie nog toe te voegen voor eigenschap kast beschadigd (foto)"""
-        return self._KastBeschadigdFoto.waarde
-
-    @KastBeschadigdFoto.setter
-    def KastBeschadigdFoto(self, value):
-        self._KastBeschadigdFoto.set_waarde(value, owner=self)
-
-    @property
-    def VervolgActie(self):
-        """Definitie nog toe te voegen voor eigenschap Vervolg actie"""
-        return self._VervolgActie.waarde
-
-    @VervolgActie.setter
-    def VervolgActie(self, value):
-        self._VervolgActie.set_waarde(value, owner=self)
 
     @property
     def aantalOvbsEnVoetVervangen(self):

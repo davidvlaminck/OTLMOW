@@ -16,36 +16,6 @@ class DIZV(EMObject):
     def __init__(self):
         super().__init__()
 
-        self._1WaaromNiet = EMAttribuut(field=StringField,
-                                        naam='1. Waarom niet?',
-                                        label='1. Waarom niet?',
-                                        objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#EMObject.1WaaromNiet',
-                                        definitie='Definitie nog toe te voegen voor eigenschap Waarom niet?')
-
-        self._5OmschrijfBeschadiging = EMAttribuut(field=StringField,
-                                                   naam='5. Omschrijf beschadiging',
-                                                   label='5. Omschrijf beschadiging',
-                                                   objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#DIZV.5OmschrijfBeschadiging',
-                                                   definitie='Definitie nog toe te voegen voor eigenschap Omschrijf beschadiging')
-
-        self._6OmschrijfBeschadiging = EMAttribuut(field=StringField,
-                                                   naam='6. Omschrijf beschadiging',
-                                                   label='6. Omschrijf beschadiging',
-                                                   objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#DIZV.6OmschrijfBeschadiging',
-                                                   definitie='Definitie nog toe te voegen voor eigenschap Omschrijf beschadiging')
-
-        self._7OmschrijfBeschadiging = EMAttribuut(field=StringField,
-                                                   naam='7. Omschrijf beschadiging',
-                                                   label='7. Omschrijf beschadiging',
-                                                   objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#DIZV.7OmschrijfBeschadiging',
-                                                   definitie='Definitie nog toe te voegen voor eigenschap Omschrijf beschadiging')
-
-        self._9WaaromNiet = EMAttribuut(field=StringField,
-                                        naam='9. Waarom niet?',
-                                        label='9. Waarom niet?',
-                                        objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#DIZV.9WaaromNiet',
-                                        definitie='Definitie nog toe te voegen voor eigenschap Waarom niet?')
-
         self._aanmeldenOnderhoudBijVtc034436331 = EMAttribuut(field=BooleanField,
                                                               naam='Aanmelden onderhoud bij VTC 03/443 63 31',
                                                               label='Aanmelden onderhoud bij VTC 03/443 63 31',
@@ -201,51 +171,6 @@ class DIZV(EMObject):
                                                         label='invullen van de bezoekersfiche',
                                                         objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#DIZV.invullenVanDeBezoekersfiche',
                                                         definitie='Definitie nog toe te voegen voor eigenschap invullen van de bezoekersfiche')
-
-    @property
-    def 1WaaromNiet(self):
-        """Definitie nog toe te voegen voor eigenschap Waarom niet?"""
-        return self._1WaaromNiet.waarde
-
-    @1WaaromNiet.setter
-    def 1WaaromNiet(self, value):
-        self._1WaaromNiet.set_waarde(value, owner=self)
-
-    @property
-    def 5OmschrijfBeschadiging(self):
-        """Definitie nog toe te voegen voor eigenschap Omschrijf beschadiging"""
-        return self._5OmschrijfBeschadiging.waarde
-
-    @5OmschrijfBeschadiging.setter
-    def 5OmschrijfBeschadiging(self, value):
-        self._5OmschrijfBeschadiging.set_waarde(value, owner=self)
-
-    @property
-    def 6OmschrijfBeschadiging(self):
-        """Definitie nog toe te voegen voor eigenschap Omschrijf beschadiging"""
-        return self._6OmschrijfBeschadiging.waarde
-
-    @6OmschrijfBeschadiging.setter
-    def 6OmschrijfBeschadiging(self, value):
-        self._6OmschrijfBeschadiging.set_waarde(value, owner=self)
-
-    @property
-    def 7OmschrijfBeschadiging(self):
-        """Definitie nog toe te voegen voor eigenschap Omschrijf beschadiging"""
-        return self._7OmschrijfBeschadiging.waarde
-
-    @7OmschrijfBeschadiging.setter
-    def 7OmschrijfBeschadiging(self, value):
-        self._7OmschrijfBeschadiging.set_waarde(value, owner=self)
-
-    @property
-    def 9WaaromNiet(self):
-        """Definitie nog toe te voegen voor eigenschap Waarom niet?"""
-        return self._9WaaromNiet.waarde
-
-    @9WaaromNiet.setter
-    def 9WaaromNiet(self, value):
-        self._9WaaromNiet.set_waarde(value, owner=self)
 
     @property
     def aanmeldenOnderhoudBijVtc034436331(self):

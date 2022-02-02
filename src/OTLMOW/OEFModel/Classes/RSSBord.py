@@ -16,12 +16,6 @@ class RSSBord(EMObject):
     def __init__(self):
         super().__init__()
 
-        self._19AlgemeneOpmerkingen = EMAttribuut(field=StringField,
-                                                  naam='19 Algemene opmerkingen',
-                                                  label='19 Algemene opmerkingen',
-                                                  objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#EMObject.19AlgemeneOpmerkingen',
-                                                  definitie='Definitie nog toe te voegen voor eigenschap 19 Algemene opmerkingen')
-
         self._aantalOvbsEnVoetVervangen = EMAttribuut(field=StringField,
                                                       naam='Aantal OVBS en voet vervangen',
                                                       label='Aantal OVBS en voet vervangen',
@@ -213,15 +207,6 @@ class RSSBord(EMObject):
                                             label='toestand RSS bord',
                                             objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#RSSBord.toestandRssBord',
                                             definitie='Definitie nog toe te voegen voor eigenschap toestand RSS bord')
-
-    @property
-    def 19AlgemeneOpmerkingen(self):
-        """Definitie nog toe te voegen voor eigenschap 19 Algemene opmerkingen"""
-        return self._19AlgemeneOpmerkingen.waarde
-
-    @19AlgemeneOpmerkingen.setter
-    def 19AlgemeneOpmerkingen(self, value):
-        self._19AlgemeneOpmerkingen.set_waarde(value, owner=self)
 
     @property
     def aantalOvbsEnVoetVervangen(self):

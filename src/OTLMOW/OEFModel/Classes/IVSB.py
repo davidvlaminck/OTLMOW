@@ -17,12 +17,6 @@ class IVSB(EMObject):
     def __init__(self):
         super().__init__()
 
-        self._2TypesLampenAanwezig = EMAttribuut(field=BooleanField,
-                                                 naam='2 types lampen aanwezig',
-                                                 label='2 types lampen aanwezig',
-                                                 objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#IVSB.2TypesLampenAanwezig',
-                                                 definitie='selecteren indien er 2 types lampen in het IVS bord aanwezig zijn')
-
         self._ivsbBuitenGebruik = EMAttribuut(field=BooleanField,
                                               naam='IVSB buiten gebruik',
                                               label='IVSB buiten gebruik',
@@ -232,15 +226,6 @@ class IVSB(EMObject):
                                         label='werking IVSB',
                                         objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#IVSB.werkingIvsb',
                                         definitie='Definitie nog toe te voegen voor eigenschap werking IVSB')
-
-    @property
-    def 2TypesLampenAanwezig(self):
-        """selecteren indien er 2 types lampen in het IVS bord aanwezig zijn"""
-        return self._2TypesLampenAanwezig.waarde
-
-    @2TypesLampenAanwezig.setter
-    def 2TypesLampenAanwezig(self, value):
-        self._2TypesLampenAanwezig.set_waarde(value, owner=self)
 
     @property
     def ivsbBuitenGebruik(self):

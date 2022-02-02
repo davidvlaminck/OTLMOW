@@ -1,4 +1,5 @@
 import os
+import re
 
 from OTLMOW.GeometrieArtefact.GeenGeometrie import GeenGeometrie
 from OTLMOW.GeometrieArtefact.GeometrieArtefactCollector import GeometrieArtefactCollector
@@ -96,10 +97,13 @@ class OEFClassCreator:
     def add_attributen_to_datablock(self, attributen, datablock):
         prop_datablock = []
         for attribuut in sorted(attributen, key=lambda a: a['naam']):
-            verkorte_uri = attribuut["uri"].replace('https://lgc.data.wegenenverkeer.be/ns/attribuut#', '').\
-                replace('https://ond.data.wegenenverkeer.be/ns/attribuut#', '').\
+            verkorte_uri = attribuut["uri"].replace('https://lgc.data.wegenenverkeer.be/ns/attribuut#', ''). \
+                replace('https://ond.data.wegenenverkeer.be/ns/attribuut#', ''). \
                 replace('https://ins.data.wegenenverkeer.be/ns/attribuut#', '')
             verkorte_uri = verkorte_uri.split('.')[1]
+
+            if re.search("^\d", verkorte_uri) is not None:
+                continue
 
             whitespace = self.getWhiteSpaceEquivalent(f'        self._{verkorte_uri} = EMAttribuut(')
             fieldName = self.get_field_from_datatype(attribuut['dataType'])

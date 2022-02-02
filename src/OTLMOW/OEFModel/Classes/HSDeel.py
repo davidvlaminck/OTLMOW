@@ -14,12 +14,6 @@ class HSDeel(EMObject):
     def __init__(self):
         super().__init__()
 
-        self._ReserveZekeringenHsAanwezig = EMAttribuut(field=StringField,
-                                                         naam='3 reserve zekeringen HS aanwezig',
-                                                         label='3 reserve zekeringen HS aanwezig',
-                                                         objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#HSDeel.3ReserveZekeringenHsAanwezig',
-                                                         definitie='Definitie nog toe te voegen voor eigenschap 3 reserve zekeringen HS aanwezig')
-
         self._hsSchakelappTrafoStofSpinnenwebVrij = EMAttribuut(field=StringField,
                                                                 naam='HS schakelapp/trafo stof&spinnenweb vrij',
                                                                 label='HS schakelapp/trafo stof&spinnenweb vrij',
@@ -151,15 +145,6 @@ class HSDeel(EMObject):
                                                                  label='vitale5-EHBO-Elektrocutieplaat aanwezig',
                                                                  objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#HSDeel.vitale5EhboElektrocutieplaatAanwezig',
                                                                  definitie='Definitie nog toe te voegen voor eigenschap vitale5-EHBO-Elektrocutieplaat aanwezig')
-
-    @property
-    def ReserveZekeringenHsAanwezig(self):
-        """Definitie nog toe te voegen voor eigenschap 3 reserve zekeringen HS aanwezig"""
-        return self._ReserveZekeringenHsAanwezig.waarde
-
-    @ReserveZekeringenHsAanwezig.setter
-    def ReserveZekeringenHsAanwezig(self, value):
-        self._ReserveZekeringenHsAanwezig.set_waarde(value, owner=self)
 
     @property
     def hsSchakelappTrafoStofSpinnenwebVrij(self):

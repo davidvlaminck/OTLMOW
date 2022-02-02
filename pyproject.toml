@@ -12,7 +12,6 @@ dynamic = ["version", "description"]
 requires-python = ">=3.10"
 dependencies = [
     "rdflib",
-    "shapely",
     "pyvis",
 ]
 

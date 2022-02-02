@@ -9,6 +9,12 @@ readme = "README.md"
 license = {file = "LICENSE"}
 classifiers = ["License :: OSI Approved :: MIT License"]
 dynamic = ["version", "description"]
+requires-python = ">=3.10"
+dependencies = [
+    "rdflib",
+    "shapely",
+    "pyvis",
+]
 
 [project.urls]
 Home = "https://github.com/davidvlaminck/OTLMOW"

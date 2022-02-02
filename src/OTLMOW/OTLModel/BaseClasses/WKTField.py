@@ -17,6 +17,8 @@ class WKTField(OTLField):
                 raise TypeError(f'expecting string in {attribuut.naam}')
             if not WKTValidator.validate_wkt(value):
                 raise ValueError(f'{value} is not a valid WKT string for {attribuut.naam}')
+            if not value.startswith(attribuut.constraints):
+                raise TypeError(f'expecting {attribuut.constraints} in {attribuut.naam}')
         return True
 
     def __str__(self):

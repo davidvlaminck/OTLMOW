@@ -16,58 +16,16 @@ class Kast(EMObject):
     def __init__(self):
         super().__init__()
 
-        self._04KastBeschadigdFoto = EMAttribuut(field=BooleanField,
+        self._KastBeschadigdFoto = EMAttribuut(field=BooleanField,
                                                  naam='04. kast beschadigd (foto)',
                                                  label='04. kast beschadigd (foto)',
                                                  objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#Kast.04KastBeschadigdFoto',
                                                  definitie='Definitie nog toe te voegen voor eigenschap kast beschadigd (foto)')
 
-        self._09VervolgActie = EMAttribuut(field=StringField,
+        self._VervolgActie = EMAttribuut(field=StringField,
                                            naam='09. Vervolg actie',
                                            label='09. Vervolg actie',
                                            objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#Kast.09VervolgActie',
-                                           definitie='Definitie nog toe te voegen voor eigenschap Vervolg actie')
-
-        self._14VervolgActie = EMAttribuut(field=StringField,
-                                           naam='14. Vervolg actie',
-                                           label='14. Vervolg actie',
-                                           objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#Kast.14VervolgActie',
-                                           definitie='Definitie nog toe te voegen voor eigenschap Vervolg actie')
-
-        self._18VervolgActie = EMAttribuut(field=StringField,
-                                           naam='18. Vervolg actie',
-                                           label='18. Vervolg actie',
-                                           objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#Kast.18VervolgActie',
-                                           definitie='Definitie nog toe te voegen voor eigenschap Vervolg actie')
-
-        self._19VervolgActie = EMAttribuut(field=StringField,
-                                           naam='19. Vervolg actie',
-                                           label='19. Vervolg actie',
-                                           objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#Kast.19VervolgActie',
-                                           definitie='Definitie nog toe te voegen voor eigenschap Vervolg actie')
-
-        self._21VervolgActie = EMAttribuut(field=StringField,
-                                           naam='21. vervolg actie',
-                                           label='21. vervolg actie',
-                                           objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#Kast.21VervolgActie',
-                                           definitie='Definitie nog toe te voegen voor eigenschap Vervolg actie')
-
-        self._22VervolgActie = EMAttribuut(field=StringField,
-                                           naam='22. vervolg actie',
-                                           label='22. vervolg actie',
-                                           objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#Kast.22VervolgActie',
-                                           definitie='Definitie nog toe te voegen voor eigenschap Vervolg actie')
-
-        self._23VervolgActie = EMAttribuut(field=StringField,
-                                           naam='23. vervolg actie',
-                                           label='23. vervolg actie',
-                                           objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#Kast.23VervolgActie',
-                                           definitie='Definitie nog toe te voegen voor eigenschap Vervolg actie')
-
-        self._26VervolgActie = EMAttribuut(field=StringField,
-                                           naam='26. vervolg actie',
-                                           label='26. vervolg actie',
-                                           objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#Kast.26VervolgActie',
                                            definitie='Definitie nog toe te voegen voor eigenschap Vervolg actie')
 
         self._aantalOvbsEnVoetVervangen = EMAttribuut(field=StringField,
@@ -377,85 +335,22 @@ class Kast(EMObject):
                                              definitie='Definitie nog toe te voegen voor eigenschap notitie')
 
     @property
-    def 04KastBeschadigdFoto(self):
+    def KastBeschadigdFoto(self):
         """Definitie nog toe te voegen voor eigenschap kast beschadigd (foto)"""
-        return self._04KastBeschadigdFoto.waarde
+        return self._KastBeschadigdFoto.waarde
 
-    @04KastBeschadigdFoto.setter
-    def 04KastBeschadigdFoto(self, value):
-        self._04KastBeschadigdFoto.set_waarde(value, owner=self)
-
-    @property
-    def 09VervolgActie(self):
-        """Definitie nog toe te voegen voor eigenschap Vervolg actie"""
-        return self._09VervolgActie.waarde
-
-    @09VervolgActie.setter
-    def 09VervolgActie(self, value):
-        self._09VervolgActie.set_waarde(value, owner=self)
+    @KastBeschadigdFoto.setter
+    def KastBeschadigdFoto(self, value):
+        self._KastBeschadigdFoto.set_waarde(value, owner=self)
 
     @property
-    def 14VervolgActie(self):
+    def VervolgActie(self):
         """Definitie nog toe te voegen voor eigenschap Vervolg actie"""
-        return self._14VervolgActie.waarde
+        return self._VervolgActie.waarde
 
-    @14VervolgActie.setter
-    def 14VervolgActie(self, value):
-        self._14VervolgActie.set_waarde(value, owner=self)
-
-    @property
-    def 18VervolgActie(self):
-        """Definitie nog toe te voegen voor eigenschap Vervolg actie"""
-        return self._18VervolgActie.waarde
-
-    @18VervolgActie.setter
-    def 18VervolgActie(self, value):
-        self._18VervolgActie.set_waarde(value, owner=self)
-
-    @property
-    def 19VervolgActie(self):
-        """Definitie nog toe te voegen voor eigenschap Vervolg actie"""
-        return self._19VervolgActie.waarde
-
-    @19VervolgActie.setter
-    def 19VervolgActie(self, value):
-        self._19VervolgActie.set_waarde(value, owner=self)
-
-    @property
-    def 21VervolgActie(self):
-        """Definitie nog toe te voegen voor eigenschap Vervolg actie"""
-        return self._21VervolgActie.waarde
-
-    @21VervolgActie.setter
-    def 21VervolgActie(self, value):
-        self._21VervolgActie.set_waarde(value, owner=self)
-
-    @property
-    def 22VervolgActie(self):
-        """Definitie nog toe te voegen voor eigenschap Vervolg actie"""
-        return self._22VervolgActie.waarde
-
-    @22VervolgActie.setter
-    def 22VervolgActie(self, value):
-        self._22VervolgActie.set_waarde(value, owner=self)
-
-    @property
-    def 23VervolgActie(self):
-        """Definitie nog toe te voegen voor eigenschap Vervolg actie"""
-        return self._23VervolgActie.waarde
-
-    @23VervolgActie.setter
-    def 23VervolgActie(self, value):
-        self._23VervolgActie.set_waarde(value, owner=self)
-
-    @property
-    def 26VervolgActie(self):
-        """Definitie nog toe te voegen voor eigenschap Vervolg actie"""
-        return self._26VervolgActie.waarde
-
-    @26VervolgActie.setter
-    def 26VervolgActie(self, value):
-        self._26VervolgActie.set_waarde(value, owner=self)
+    @VervolgActie.setter
+    def VervolgActie(self, value):
+        self._VervolgActie.set_waarde(value, owner=self)
 
     @property
     def aantalOvbsEnVoetVervangen(self):

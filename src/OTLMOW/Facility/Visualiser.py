@@ -1,6 +1,9 @@
 ﻿from random import choice
 
+import networkx as nx
+import matplotlib.pyplot as plt
 from IPython.display import display, HTML
+from networkx.drawing.nx_agraph import graphviz_layout
 from pyvis import network as net
 
 from OTLMOW.OTLModel.Classes.Bevestiging import Bevestiging
@@ -128,6 +131,10 @@ class Visualiser:
         g = net.Network(height='100%', width='100%', heading='', directed=True)
         self.create_nodes(g, list_of_objects)
         self.create_edges(g, list_of_objects)
+        options = 'options = {"nodes": {"font":{"bold":{"size": 18}}}, "interaction": {"dragView": true}, "physics": {"solver": "barnesHut", "stabilization": true, "barnesHut" : {"centralGravity" : 0, "springLength" : 100, "avoidOverlap" : 0.05,"gravitationalConstant" : -2500}}}'
+        # see https://visjs.github.io/vis-network/docs/network/#options => {"configure":{"showButton":true}}
+        g.set_options(options)
+
         g.show('example.html')
         display(HTML('example.html'))
 
@@ -137,12 +144,18 @@ class Visualiser:
             naam = otl_object.__class__.__name__ + '_' + otl_object.assetId.identificator
             if hasattr(otl_object, 'naam'):
                 naam = otl_object.naam
+            # if hasattr(otl_object, 'naampad'):
+            #     naam = otl_object.naampad
             selected_color = self.random_color_if_not_in_dict(otl_object.typeURI)
 
             tooltip = self.get_tooltip(otl_object)
+            shape = 'dot'
+            if otl_object.typeURI.startswith('https://lgc.'):
+                shape = 'square'
 
             g.add_node(otl_object.assetId.identificator,
                        label=naam,
+                       shape=shape,
                        size=20,
                        color=selected_color,
                        title=tooltip)

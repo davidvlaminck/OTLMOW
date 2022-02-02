@@ -8,6 +8,7 @@ shapely dependency wegwerken
 deployment/packaging: https://packaging.python.org/en/latest/guides/distributing-packages-using-setuptools/
 requirements > rdflib voor lezen ttl bestanden, Shapely voor WKT, PyVis voor visualiser en Python 3.10
 Loggers > python native logging
+OEF model: HS heeft een getal vooran in een eigenschap > getallen omzetten naar letterwoorden
 
 
 Write clean code
@@ -91,12 +92,6 @@ Facility
     - Different formats
         - json
         - csv per type
-
-
-idee legacy assets inladen:
-sqlite db met assets en relaties, opgehaald uit otl endpoints
-tabel assetsOSLO: uuid, id, naam, naampad, toestand, actief, type, jsonld
-tabel relatiesOSLO: uuid, id, bron uuid, bron id, doel uuid, doel id, type, jsonld
 
 python --version > verwijzen juiste python versie
 python -m venv venv > aanmaken env

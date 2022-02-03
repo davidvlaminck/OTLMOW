@@ -3,13 +3,13 @@ class WKTValidator:
     def validate_wkt(cls, input_string: str) -> bool:
         if not '(' in input_string or not ')' in input_string:
             return False
-        geo_type = input_string.split('(')[0]
+        geo_type = input_string.split(' (')[0]
 
         if geo_type not in ('POINT', 'POINT Z', 'LINESTRING', 'LINESTRING Z', 'POLYGON', 'POLYGON Z'):
             return False
 
         if geo_type.startswith('POLYGON'):
-            punten = input_string.split('((')[1]
+            punten = input_string.split(' ((')[1]
             if punten[-2:] != '))':
                 return False
             punten = punten[:-2]
@@ -25,7 +25,7 @@ class WKTValidator:
                 puntenlijst = punten.split(', ')
                 return WKTValidator.validate_puntenlijst(geo_type, puntenlijst)
         else:
-            punten = input_string.split('(')[1]
+            punten = input_string.split(' (')[1]
             if punten[-1] != ')':
                 return False
             punten = punten[:-1]

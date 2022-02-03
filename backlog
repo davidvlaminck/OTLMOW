@@ -100,3 +100,4 @@ Building and Packaging:
 Dist
 twine
 .\venv2\Scripts\python.exe -m twine check dist/*
+.\venv2\Scripts\python.exe -m twine upload dist/OTLMOW-0.2a1-py3-none-any.whl # specific wheel

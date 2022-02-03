@@ -20,193 +20,225 @@ class RSSBord(EMObject):
                                                       naam='Aantal OVBS en voet vervangen',
                                                       label='Aantal OVBS en voet vervangen',
                                                       objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#EMObject.aantalOvbsEnVoetVervangen',
-                                                      definitie='Definitie nog toe te voegen voor eigenschap Aantal OVBS en voet vervangen')
+                                                      definitie='Definitie nog toe te voegen voor eigenschap Aantal OVBS en voet vervangen',
+                                                      owner=self)
 
         self._aantalOvbsVervangen = EMAttribuut(field=StringField,
                                                 naam='Aantal OVBS vervangen',
                                                 label='Aantal OVBS vervangen',
                                                 objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#EMObject.aantalOvbsVervangen',
-                                                definitie='Definitie nog toe te voegen voor eigenschap Aantal OVBS vervangen')
+                                                definitie='Definitie nog toe te voegen voor eigenschap Aantal OVBS vervangen',
+                                                owner=self)
 
         self._aantalNogInTePlannen = EMAttribuut(field=StringField,
                                                  naam='Aantal nog in te plannen',
                                                  label='Aantal nog in te plannen',
                                                  objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#EMObject.aantalNogInTePlannen',
-                                                 definitie='Definitie nog toe te voegen voor eigenschap Aantal nog in te plannen')
+                                                 definitie='Definitie nog toe te voegen voor eigenschap Aantal nog in te plannen',
+                                                 owner=self)
 
         self._b07VervolgActie = EMAttribuut(field=StringField,
                                             naam='B07. Vervolg actie',
                                             label='B07. Vervolg actie',
                                             objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#EMObject.b07VervolgActie',
-                                            definitie='Definitie nog toe te voegen voor eigenschap Vervolg actie')
+                                            definitie='Definitie nog toe te voegen voor eigenschap Vervolg actie',
+                                            owner=self)
 
         self._b08VervolgActie = EMAttribuut(field=StringField,
                                             naam='B08. Vervolg actie',
                                             label='B08. Vervolg actie',
                                             objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#RSSBord.b08VervolgActie',
-                                            definitie='Definitie nog toe te voegen voor eigenschap Vervolg actie')
+                                            definitie='Definitie nog toe te voegen voor eigenschap Vervolg actie',
+                                            owner=self)
 
         self._binnenzijdeBordGereinigd = EMAttribuut(field=BooleanField,
                                                      naam='Binnenzijde bord gereinigd',
                                                      label='Binnenzijde bord gereinigd',
                                                      objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#EMObject.binnenzijdeBordGereinigd',
-                                                     definitie='Definitie nog toe te voegen voor eigenschap Binnenzijde bord gereinigd')
+                                                     definitie='Definitie nog toe te voegen voor eigenschap Binnenzijde bord gereinigd',
+                                                     owner=self)
 
         self._bordbevestigingInGoedeStaatFoto = EMAttribuut(field=StringField,
                                                             naam='Bordbevestiging in goede staat(foto)',
                                                             label='Bordbevestiging in goede staat(foto)',
                                                             objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#EMObject.bordbevestigingInGoedeStaatFoto',
-                                                            definitie='Definitie nog toe te voegen voor eigenschap Bordbevestiging in goede staat(foto)')
+                                                            definitie='Definitie nog toe te voegen voor eigenschap Bordbevestiging in goede staat(foto)',
+                                                            owner=self)
 
         self._deurcontactInOrde = EMAttribuut(field=StringField,
                                               naam='Deurcontact in orde',
                                               label='Deurcontact in orde',
                                               objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#EMObject.deurcontactInOrde',
-                                              definitie='Definitie nog toe te voegen voor eigenschap Deurcontact in orde')
+                                              definitie='Definitie nog toe te voegen voor eigenschap Deurcontact in orde',
+                                              owner=self)
 
         self._filtermattenGereinigdVervangen = EMAttribuut(field=BooleanField,
                                                            naam='Filtermatten gereinigd / vervangen',
                                                            label='Filtermatten gereinigd / vervangen',
                                                            objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#EMObject.filtermattenGereinigdVervangen',
-                                                           definitie='Definitie nog toe te voegen voor eigenschap Filtermatten gereinigd / vervangen')
+                                                           definitie='Definitie nog toe te voegen voor eigenschap Filtermatten gereinigd / vervangen',
+                                                           owner=self)
 
         self._goedeWerkingBordEn = EMAttribuut(field=StringField,
                                                naam='Goede werking bord(en)',
                                                label='Goede werking bord(en)',
                                                objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#EMObject.goedeWerkingBordEn',
-                                               definitie='Definitie nog toe te voegen voor eigenschap Goede werking bord(en)')
+                                               definitie='Definitie nog toe te voegen voor eigenschap Goede werking bord(en)',
+                                               owner=self)
 
         self._graffitiAanwezigFoto = EMAttribuut(field=BooleanField,
                                                  naam='Graffiti aanwezig (foto)',
                                                  label='Graffiti aanwezig (foto)',
                                                  objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#EMObject.graffitiAanwezigFoto',
-                                                 definitie='Definitie nog toe te voegen voor eigenschap Graffiti aanwezig (foto)')
+                                                 definitie='Definitie nog toe te voegen voor eigenschap Graffiti aanwezig (foto)',
+                                                 owner=self)
 
         self._infoHerstellingBord = EMAttribuut(field=StringField,
                                                 naam='Info herstelling bord',
                                                 label='Info herstelling bord',
                                                 objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#EMObject.infoHerstellingBord',
-                                                definitie='Definitie nog toe te voegen voor eigenschap Info herstelling bord')
+                                                definitie='Definitie nog toe te voegen voor eigenschap Info herstelling bord',
+                                                owner=self)
 
         self._infoTePlannen = EMAttribuut(field=StringField,
                                           naam='Info te plannen',
                                           label='Info te plannen',
                                           objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#EMObject.infoTePlannen',
-                                          definitie='Definitie nog toe te voegen voor eigenschap Info te plannen')
+                                          definitie='Definitie nog toe te voegen voor eigenschap Info te plannen',
+                                          owner=self)
 
         self._isDiffInOrde = EMAttribuut(field=BooleanField,
                                          naam='Is diff in orde?',
                                          label='Is diff in orde?',
                                          objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#EMObject.isDiffInOrde',
-                                         definitie='Definitie nog toe te voegen voor eigenschap Is diff in orde?')
+                                         definitie='Definitie nog toe te voegen voor eigenschap Is diff in orde?',
+                                         owner=self)
 
         self._kabelinvoerenInOrde = EMAttribuut(field=StringField,
                                                 naam='Kabelinvoeren in orde',
                                                 label='Kabelinvoeren in orde',
                                                 objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#EMObject.kabelinvoerenInOrde',
-                                                definitie='Definitie nog toe te voegen voor eigenschap Kabelinvoeren in orde')
+                                                definitie='Definitie nog toe te voegen voor eigenschap Kabelinvoeren in orde',
+                                                owner=self)
 
         self._ledprintsGoedBevestigd = EMAttribuut(field=StringField,
                                                    naam='Ledprints goed bevestigd',
                                                    label='Ledprints goed bevestigd',
                                                    objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#EMObject.ledprintsGoedBevestigd',
-                                                   definitie='Definitie nog toe te voegen voor eigenschap Ledprints goed bevestigd')
+                                                   definitie='Definitie nog toe te voegen voor eigenschap Ledprints goed bevestigd',
+                                                   owner=self)
 
         self._lichtsensorVrijgemaakt = EMAttribuut(field=StringField,
                                                    naam='Lichtsensor vrijgemaakt',
                                                    label='Lichtsensor vrijgemaakt',
                                                    objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#EMObject.lichtsensorVrijgemaakt',
-                                                   definitie='Definitie nog toe te voegen voor eigenschap Lichtsensor vrijgemaakt')
+                                                   definitie='Definitie nog toe te voegen voor eigenschap Lichtsensor vrijgemaakt',
+                                                   owner=self)
 
         self._lichtsensorenInOrde = EMAttribuut(field=StringField,
                                                 naam='Lichtsensoren in orde',
                                                 label='Lichtsensoren in orde',
                                                 objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#EMObject.lichtsensorenInOrde',
-                                                definitie='Definitie nog toe te voegen voor eigenschap Lichtsensoren in orde')
+                                                definitie='Definitie nog toe te voegen voor eigenschap Lichtsensoren in orde',
+                                                owner=self)
 
         self._luchtfiltersGereinigd = EMAttribuut(field=BooleanField,
                                                   naam='Luchtfilters gereinigd',
                                                   label='Luchtfilters gereinigd',
                                                   objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#EMObject.luchtfiltersGereinigd',
-                                                  definitie='Definitie nog toe te voegen voor eigenschap Luchtfilters gereinigd')
+                                                  definitie='Definitie nog toe te voegen voor eigenschap Luchtfilters gereinigd',
+                                                  owner=self)
 
         self._ordentelijkeInterneBekabeling = EMAttribuut(field=StringField,
                                                           naam='Ordentelijke interne bekabeling',
                                                           label='Ordentelijke interne bekabeling',
                                                           objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#EMObject.ordentelijkeInterneBekabeling',
-                                                          definitie='Definitie nog toe te voegen voor eigenschap Ordentelijke interne bekabeling')
+                                                          definitie='Definitie nog toe te voegen voor eigenschap Ordentelijke interne bekabeling',
+                                                          owner=self)
 
         self._overspanningsbeveiligingInOrde = EMAttribuut(field=BooleanField,
                                                            naam='Overspanningsbeveiliging in orde',
                                                            label='Overspanningsbeveiliging in orde',
                                                            objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#EMObject.overspanningsbeveiligingInOrde',
-                                                           definitie='Definitie nog toe te voegen voor eigenschap Overspanningsbeveiliging in orde')
+                                                           definitie='Definitie nog toe te voegen voor eigenschap Overspanningsbeveiliging in orde',
+                                                           owner=self)
 
         self._rssBuitenGebruik = EMAttribuut(field=BooleanField,
                                              naam='RSS buiten gebruik',
                                              label='RSS buiten gebruik',
                                              objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#RSSBord.rssBuitenGebruik',
-                                             definitie='Definitie nog toe te voegen voor eigenschap RSS buiten gebruik')
+                                             definitie='Definitie nog toe te voegen voor eigenschap RSS buiten gebruik',
+                                             owner=self)
 
         self._reinigenBordNoodzakelijkFoto = EMAttribuut(field=BooleanField,
                                                          naam='Reinigen bord noodzakelijk (foto)',
                                                          label='Reinigen bord noodzakelijk (foto)',
                                                          objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#EMObject.reinigenBordNoodzakelijkFoto',
-                                                         definitie='Definitie nog toe te voegen voor eigenschap Reinigen bord noodzakelijk (foto)')
+                                                         definitie='Definitie nog toe te voegen voor eigenschap Reinigen bord noodzakelijk (foto)',
+                                                         owner=self)
 
         self._verlichtingInOrde = EMAttribuut(field=StringField,
                                               naam='Verlichting in orde',
                                               label='Verlichting in orde',
                                               objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#EMObject.verlichtingInOrde',
-                                              definitie='Definitie nog toe te voegen voor eigenschap Verlichting in orde')
+                                              definitie='Definitie nog toe te voegen voor eigenschap Verlichting in orde',
+                                              owner=self)
 
         self._vervangenLuchtfilterS = EMAttribuut(field=StringField,
                                                   naam='Vervangen luchtfilter(s)',
                                                   label='Vervangen luchtfilter(s)',
                                                   objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#EMObject.vervangenLuchtfilterS',
-                                                  definitie='Definitie nog toe te voegen voor eigenschap Vervangen luchtfilter(s)')
+                                                  definitie='Definitie nog toe te voegen voor eigenschap Vervangen luchtfilter(s)',
+                                                  owner=self)
 
         self._verwarmingEnVerluchtingInOrde = EMAttribuut(field=StringField,
                                                           naam='Verwarming en verluchting in orde',
                                                           label='Verwarming en verluchting in orde',
                                                           objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#EMObject.verwarmingEnVerluchtingInOrde',
-                                                          definitie='Definitie nog toe te voegen voor eigenschap Verwarming en verluchting in orde')
+                                                          definitie='Definitie nog toe te voegen voor eigenschap Verwarming en verluchting in orde',
+                                                          owner=self)
 
         self._waterdichtheidBordInOrde = EMAttribuut(field=StringField,
                                                      naam='Waterdichtheid bord in orde',
                                                      label='Waterdichtheid bord in orde',
                                                      objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#EMObject.waterdichtheidBordInOrde',
-                                                     definitie='Definitie nog toe te voegen voor eigenschap Waterdichtheid bord in orde')
+                                                     definitie='Definitie nog toe te voegen voor eigenschap Waterdichtheid bord in orde',
+                                                     owner=self)
 
         self._werkingDiffGetestViaTestknop = EMAttribuut(field=BooleanField,
                                                          naam='Werking diff getest (via testknop)',
                                                          label='Werking diff getest (via testknop)',
                                                          objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#EMObject.werkingDiffGetestViaTestknop',
-                                                         definitie='Definitie nog toe te voegen voor eigenschap Werking diff getest (via testknop)')
+                                                         definitie='Definitie nog toe te voegen voor eigenschap Werking diff getest (via testknop)',
+                                                         owner=self)
 
         self._datumNieuweRss = EMAttribuut(field=DateField,
                                            naam='datum nieuwe RSS',
                                            label='datum nieuwe RSS',
                                            objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#RSSBord.datumNieuweRss',
-                                           definitie='Definitie nog toe te voegen voor eigenschap datum nieuwe RSS')
+                                           definitie='Definitie nog toe te voegen voor eigenschap datum nieuwe RSS',
+                                           owner=self)
 
         self._drager = EMAttribuut(field=StringField,
                                    naam='drager',
                                    label='drager',
                                    objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#EMObject.drager',
-                                   definitie='Definitie nog toe te voegen voor eigenschap drager')
+                                   definitie='Definitie nog toe te voegen voor eigenschap drager',
+                                   owner=self)
 
         self._redenRssBuitenGebruik = EMAttribuut(field=StringField,
                                                   naam='reden RSS buiten gebruik',
                                                   label='reden RSS buiten gebruik',
                                                   objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#RSSBord.redenRssBuitenGebruik',
-                                                  definitie='Definitie nog toe te voegen voor eigenschap reden RSS buiten gebruik')
+                                                  definitie='Definitie nog toe te voegen voor eigenschap reden RSS buiten gebruik',
+                                                  owner=self)
 
         self._toestandRssBord = EMAttribuut(field=StringField,
                                             naam='toestand RSS bord',
                                             label='toestand RSS bord',
                                             objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#RSSBord.toestandRssBord',
-                                            definitie='Definitie nog toe te voegen voor eigenschap toestand RSS bord')
+                                            definitie='Definitie nog toe te voegen voor eigenschap toestand RSS bord',
+                                            owner=self)
 
     @property
     def aantalOvbsEnVoetVervangen(self):

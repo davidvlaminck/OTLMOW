@@ -26,79 +26,92 @@ class DtcAanlegBoomvormWaarden(AttributeInfo):
                                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcAanlegBoomvorm.beschermingVraatschade',
                                                     usagenote='Attribuut uit gebruik sinds versie 2.0.0 ',
                                                     deprecated_version='2.0.0',
-                                                    definition='Bescherming van de stam tegen knaagdieren.')
+                                                    definition='Bescherming van de stam tegen knaagdieren.',
+                                                    owner=self)
 
         self._boompaalconstructie = OTLAttribuut(field=KlAantalBoompalen,
                                                  naam='boompaalconstructie',
                                                  label='boompaalconstructie',
                                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcAanlegBoomvorm.boompaalconstructie',
-                                                 definition='Een constructie om de wortels van de aangeplante boom vast te zetten of te fixeren met oa. palen.')
+                                                 definition='Een constructie om de wortels van de aangeplante boom vast te zetten of te fixeren met oa. palen.',
+                                                 owner=self)
 
         self._groeiplaatsverbetering = OTLAttribuut(field=KlGroeiplaatsverbetering,
                                                     naam='groeiplaatsverbetering',
                                                     label='groeiplaatsverbetering',
                                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcAanlegBoomvorm.groeiplaatsverbetering',
-                                                    definition='De techniek waarmee de groeiplaats wordt verbeterd met als doel de levensverwachting en de conditie van de vegetatie te verbeteren.')
+                                                    definition='De techniek waarmee de groeiplaats wordt verbeterd met als doel de levensverwachting en de conditie van de vegetatie te verbeteren.',
+                                                    owner=self)
 
         self._heeftBoomplaat = OTLAttribuut(field=BooleanField,
                                             naam='heeftBoomplaat',
                                             label='heeft boomplaat',
                                             objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcAanlegBoomvorm.heeftBoomplaat',
-                                            definition='Boomplaten worden aangebracht rond de stam van bomen, bosgoed en heesters en eventueel vastgezet met piketten. Ze hebben een centrale opening en een rechte snede, zodat ze op eenvoudige wijze rond de planten kunnen aangebracht worden.')
+                                            definition='Boomplaten worden aangebracht rond de stam van bomen, bosgoed en heesters en eventueel vastgezet met piketten. Ze hebben een centrale opening en een rechte snede, zodat ze op eenvoudige wijze rond de planten kunnen aangebracht worden.',
+                                            owner=self)
 
         self._heeftWortelgeleidingwortelwering = OTLAttribuut(field=BooleanField,
                                                               naam='heeftWortelgeleidingwortelwering',
                                                               label='heeft wortelgeleiding wortelwering',
                                                               objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcAanlegBoomvorm.heeftWortelgeleidingwortelwering',
-                                                              definition='Aanduiding of de boom wortelwering heeft. Wortelgeleiding en –wering moet voorkomen dat boomwortels het trottoir, de middenberm, het fietspad, de rijweg, andere wegverhardingen en leidingstelsels beschadigen.')
+                                                              definition='Aanduiding of de boom wortelwering heeft. Wortelgeleiding en –wering moet voorkomen dat boomwortels het trottoir, de middenberm, het fietspad, de rijweg, andere wegverhardingen en leidingstelsels beschadigen.',
+                                                              owner=self)
 
         self._maaischadeBescherming = OTLAttribuut(field=KlBeschermingMaaischade,
                                                    naam='maaischadeBescherming',
                                                    label='maaischade bescherming',
                                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcAanlegBoomvorm.maaischadeBescherming',
-                                                   definition='Bescherming van de stam tegen maaimachines.')
+                                                   definition='Bescherming van de stam tegen maaimachines.',
+                                                   owner=self)
 
         self._plantmaatHoogte = OTLAttribuut(field=KlPlantmaatHoogte,
                                              naam='plantmaatHoogte',
                                              label='plantmaat hoogte',
                                              objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcAanlegBoomvorm.plantmaatHoogte',
-                                             definition='De hoogte in meter gemeten van de stamvoet tot de top met een minimum en maximum waarde.')
+                                             definition='De hoogte in meter gemeten van de stamvoet tot de top met een minimum en maximum waarde.',
+                                             owner=self)
 
         self._plantmaatOmtrek = OTLAttribuut(field=KlPlantmaatOmtrek,
                                              naam='plantmaatOmtrek',
                                              label='plantmaat omtrek',
                                              objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcAanlegBoomvorm.plantmaatOmtrek',
-                                             definition='De stamomtrek in centimeter  (gemeten op 1 m boven het maaiveld) met een minimum en maximum waarde.')
+                                             definition='De stamomtrek in centimeter  (gemeten op 1 m boven het maaiveld) met een minimum en maximum waarde.',
+                                             owner=self)
 
         self._verankering = OTLAttribuut(field=KlBoomVerankering,
                                          naam='verankering',
                                          label='verankering',
                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcAanlegBoomvorm.verankering',
-                                         definition='Aanduiding of de boom onder- of bovengronds gefixeerd wordt.')
+                                         definition='Aanduiding of de boom onder- of bovengronds gefixeerd wordt.',
+                                         owner=self)
 
         self._verankeringstype = OTLAttribuut(field=KlBoomVerankeringtype,
                                               naam='verankeringstype',
                                               label='verankeringstype',
                                               objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcAanlegBoomvorm.verankeringstype',
-                                              definition='Het materiaal van de fixering of verankering.')
+                                              definition='Het materiaal van de fixering of verankering.',
+                                              owner=self)
 
         self._vormAanlevering = OTLAttribuut(field=KlVormAanleveringHoutigeVegetatie,
                                              naam='vormAanlevering',
                                              label='vorm aanlevering',
                                              objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcAanlegBoomvorm.vormAanlevering',
-                                             definition='De wijze waarop het plantgoed wordt aangeleverd.')
+                                             definition='De wijze waarop het plantgoed wordt aangeleverd.',
+                                             owner=self)
 
         self._vraatschadeBescherming = OTLAttribuut(field=KlMateriaalBeschermingVraatschade,
                                                     naam='vraatschadeBescherming',
                                                     label='vraatschade bescherming',
                                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcAanlegBoomvorm.vraatschadeBescherming',
-                                                    definition='Bescherming van de stam tegen knaagdieren.')
+                                                    definition='Bescherming van de stam tegen knaagdieren.',
+                                                    owner=self)
 
         self._wortelAanplant = OTLAttribuut(field=KlVegetatieWortel,
                                             naam='wortelAanplant',
                                             label='wortel aanplant',
                                             objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcAanlegBoomvorm.wortelAanplant',
-                                            definition='De manier van levering en aanplanting van het wortelgestel van de boom of plant.')
+                                            definition='De manier van levering en aanplanting van het wortelgestel van de boom of plant.',
+                                            owner=self)
 
     @property
     def beschermingVraatschade(self):

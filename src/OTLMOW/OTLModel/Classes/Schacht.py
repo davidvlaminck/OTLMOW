@@ -7,47 +7,54 @@ from OTLMOW.OTLModel.Datatypes.KlPutMateriaal import KlPutMateriaal
 from OTLMOW.OTLModel.Datatypes.KlRioleringVorm import KlRioleringVorm
 from OTLMOW.OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter
 from OTLMOW.OTLModel.Datatypes.KwantWrdInMillimeter import KwantWrdInMillimeter
+from OTLMOW.GeometrieArtefact.VlakGeometrie import VlakGeometrie
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Schacht(PutRelatie):
+class Schacht(PutRelatie, VlakGeometrie):
     """Gedeelte van de put tussen regeling en de kamer."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Schacht'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        super().__init__()
+        PutRelatie.__init__(self)
+        VlakGeometrie.__init__(self)
 
         self._breedte = OTLAttribuut(field=KwantWrdInMillimeter,
                                      naam='breedte',
                                      label='breedte',
                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Schacht.breedte',
-                                     definition='De afmeting 1 (breedte) van het grondplan van de schacht in millimeter.')
+                                     definition='De afmeting 1 (breedte) van het grondplan van de schacht in millimeter.',
+                                     owner=self)
 
         self._diepte = OTLAttribuut(field=KwantWrdInMeter,
                                     naam='diepte',
                                     label='diepte',
                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Schacht.diepte',
-                                    definition='De diepte vanaf het maaiveld tot onderkant van de afdekplaat in meter.')
+                                    definition='De diepte vanaf het maaiveld tot onderkant van de afdekplaat in meter.',
+                                    owner=self)
 
         self._heeftLadder = OTLAttribuut(field=BooleanField,
                                          naam='heeftLadder',
                                          label='heeft ladder',
                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Schacht.heeftLadder',
-                                         definition='Bepaling of er al dan niet een ladder aanwezig is in de schacht.')
+                                         definition='Bepaling of er al dan niet een ladder aanwezig is in de schacht.',
+                                         owner=self)
 
         self._hoogte = OTLAttribuut(field=KwantWrdInMillimeter,
                                     naam='hoogte',
                                     label='hoogte',
                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Schacht.hoogte',
-                                    definition='De afmeting 2 (hoogte) van het grondplan van de schacht in millimeter.')
+                                    definition='De afmeting 2 (hoogte) van het grondplan van de schacht in millimeter.',
+                                    owner=self)
 
         self._materiaal = OTLAttribuut(field=KlPutMateriaal,
                                        naam='materiaal',
                                        label='materiaal',
                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Schacht.materiaal',
-                                       definition='Het materiaal waaruit de schacht opgebouwd is.')
+                                       definition='Het materiaal waaruit de schacht opgebouwd is.',
+                                       owner=self)
 
         self._technischeFiche = OTLAttribuut(field=DtcDocument,
                                              naam='technischeFiche',
@@ -55,13 +62,15 @@ class Schacht(PutRelatie):
                                              objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Schacht.technischeFiche',
                                              usagenote='Bestanden van het type xlsx, dwg of pdf.',
                                              kardinaliteit_max='*',
-                                             definition='De technische fiche van de schacht.')
+                                             definition='De technische fiche van de schacht.',
+                                             owner=self)
 
         self._vorm = OTLAttribuut(field=KlRioleringVorm,
                                   naam='vorm',
                                   label='vorm',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Schacht.vorm',
-                                  definition='Vorm van het schachtgedeelte van de kamer.')
+                                  definition='Vorm van het schachtgedeelte van de kamer.',
+                                  owner=self)
 
     @property
     def breedte(self):

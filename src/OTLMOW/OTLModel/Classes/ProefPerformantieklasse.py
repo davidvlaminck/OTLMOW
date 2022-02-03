@@ -2,10 +2,13 @@
 from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLMOW.OTLModel.Classes.Proef import Proef
 from OTLMOW.OTLModel.Datatypes.KlLEACPerformantieklasse import KlLEACPerformantieklasse
+from OTLMOW.GeometrieArtefact.PuntGeometrie import PuntGeometrie
+from OTLMOW.GeometrieArtefact.LijnGeometrie import LijnGeometrie
+from OTLMOW.GeometrieArtefact.VlakGeometrie import VlakGeometrie
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class ProefPerformantieklasse(Proef):
+class ProefPerformantieklasse(Proef, PuntGeometrie, LijnGeometrie, VlakGeometrie):
     """Proef die de performantie (bij impact) bepaalt."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefPerformantieklasse'
@@ -14,7 +17,10 @@ class ProefPerformantieklasse(Proef):
     deprecated_version = '2.0.0'
 
     def __init__(self):
-        super().__init__()
+        Proef.__init__(self)
+        LijnGeometrie.__init__(self)
+        PuntGeometrie.__init__(self)
+        VlakGeometrie.__init__(self)
 
         self._performantieklasse = OTLAttribuut(field=KlLEACPerformantieklasse,
                                                 naam='performantieklasse',
@@ -22,7 +28,8 @@ class ProefPerformantieklasse(Proef):
                                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefPerformantieklasse.performantieklasse',
                                                 usagenote='Klasse uit gebruik sinds versie 2.0.0 ',
                                                 deprecated_version='2.0.0',
-                                                definition='De aanduiding hoe (performantie) de beginconstructie is getest.')
+                                                definition='De aanduiding hoe (performantie) de beginconstructie is getest.',
+                                                owner=self)
 
     @property
     def performantieklasse(self):

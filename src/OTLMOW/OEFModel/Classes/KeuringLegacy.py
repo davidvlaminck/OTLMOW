@@ -18,7 +18,8 @@ class KeuringLegacy(EMObject):
                                            naam='Notitie (KEURING)',
                                            label='Notitie (KEURING)',
                                            objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#KeuringLegacy.notitieKeuring',
-                                           definitie='Definitie nog toe te voegen voor eigenschap Notitie (KEURING)')
+                                           definitie='Definitie nog toe te voegen voor eigenschap Notitie (KEURING)',
+                                           owner=self)
 
     @property
     def notitieKeuring(self):

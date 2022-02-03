@@ -5,41 +5,47 @@ from OTLMOW.OTLModel.Datatypes.DtcDocument import DtcDocument
 from OTLMOW.OTLModel.Datatypes.KlSlagboomarmMerk import KlSlagboomarmMerk
 from OTLMOW.OTLModel.Datatypes.KlSlagboomarmModelnaam import KlSlagboomarmModelnaam
 from OTLMOW.OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter
+from OTLMOW.GeometrieArtefact.LijnGeometrie import LijnGeometrie
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Slagboomarm(AIMObject):
+class Slagboomarm(AIMObject, LijnGeometrie):
     """De bewegende arm van een slagboominstallatie."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomarm'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        super().__init__()
+        AIMObject.__init__(self)
+        LijnGeometrie.__init__(self)
 
         self._lengteBoom = OTLAttribuut(field=KwantWrdInMeter,
                                         naam='lengteBoom',
                                         label='lengte boom',
                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomarm.lengteBoom',
-                                        definition='De lengte van de slagboomarm uitgedrukt in meter.')
+                                        definition='De lengte van de slagboomarm uitgedrukt in meter.',
+                                        owner=self)
 
         self._merk = OTLAttribuut(field=KlSlagboomarmMerk,
                                   naam='merk',
                                   label='merk',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomarm.merk',
-                                  definition='Het merk van de slagboom installatie.')
+                                  definition='Het merk van de slagboom installatie.',
+                                  owner=self)
 
         self._modelnaam = OTLAttribuut(field=KlSlagboomarmModelnaam,
                                        naam='modelnaam',
                                        label='modelnaam',
                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomarm.modelnaam',
-                                       definition='Naam van het model van de slagboominstallatie.')
+                                       definition='Naam van het model van de slagboominstallatie.',
+                                       owner=self)
 
         self._technischeFiche = OTLAttribuut(field=DtcDocument,
                                              naam='technischeFiche',
                                              label='technische fiche',
                                              objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomarm.technischeFiche',
-                                             definition='Technische fiche van de slagboominstallatie.')
+                                             definition='Technische fiche van de slagboominstallatie.',
+                                             owner=self)
 
     @property
     def lengteBoom(self):

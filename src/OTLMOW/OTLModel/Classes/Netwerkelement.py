@@ -6,77 +6,89 @@ from OTLMOW.OTLModel.Datatypes.KlNetwerkMerk import KlNetwerkMerk
 from OTLMOW.OTLModel.Datatypes.KlNetwerkelemGebruik import KlNetwerkelemGebruik
 from OTLMOW.OTLModel.Datatypes.KlNetwerkelemModelnaam import KlNetwerkelemModelnaam
 from OTLMOW.OTLModel.Datatypes.StringField import StringField
+from OTLMOW.GeometrieArtefact.PuntGeometrie import PuntGeometrie
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Netwerkelement(AIMNaamObject):
+class Netwerkelement(AIMNaamObject, PuntGeometrie):
     """Toestel,onderdeel van het netwerk,waarop netwerkverbindingen kunnen aangelegd worden."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Netwerkelement'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        super().__init__()
+        AIMNaamObject.__init__(self)
+        PuntGeometrie.__init__(self)
 
         self._beschrijvingFabrikant = OTLAttribuut(field=StringField,
                                                    naam='beschrijvingFabrikant',
                                                    label='beschrijving fabrikant',
                                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Netwerkelement.beschrijvingFabrikant',
-                                                   definition='Bijkomende specificaties over het apparaat of onderdeel type van de fabrikant.')
+                                                   definition='Bijkomende specificaties over het apparaat of onderdeel type van de fabrikant.',
+                                                   owner=self)
 
         self._gebruik = OTLAttribuut(field=KlNetwerkelemGebruik,
                                      naam='gebruik',
                                      label='gebruik',
                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Netwerkelement.gebruik',
-                                     definition='Toestel, onderdeel van het netwerk, waarop netwerkverbindingen kunnen aangelegd worden.')
+                                     definition='Toestel, onderdeel van het netwerk, waarop netwerkverbindingen kunnen aangelegd worden.',
+                                     owner=self)
 
         self._ipAddressBeheer = OTLAttribuut(field=DteIPv4Adres,
                                              naam='ipAddressBeheer',
                                              label='IP address beheer',
                                              objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Netwerkelement.ipAddressBeheer',
-                                             definition='IP adres van het toestel.')
+                                             definition='IP adres van het toestel.',
+                                             owner=self)
 
         self._ipAddressMask = OTLAttribuut(field=DteIPv4Adres,
                                            naam='ipAddressMask',
                                            label='IP address mask',
                                            objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Netwerkelement.ipAddressMask',
-                                           definition='IP adres mask van het toestel.')
+                                           definition='IP adres mask van het toestel.',
+                                           owner=self)
 
         self._ipGateway = OTLAttribuut(field=DteIPv4Adres,
                                        naam='ipGateway',
                                        label='IP gateway',
                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Netwerkelement.ipGateway',
-                                       definition='IP adres van gateway.')
+                                       definition='IP adres van gateway.',
+                                       owner=self)
 
         self._merk = OTLAttribuut(field=KlNetwerkMerk,
                                   naam='merk',
                                   label='merk',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Netwerkelement.merk',
-                                  definition='Merk waarmee de fabrikant het netwerkelement identificeert.')
+                                  definition='Merk waarmee de fabrikant het netwerkelement identificeert.',
+                                  owner=self)
 
         self._modelnaam = OTLAttribuut(field=KlNetwerkelemModelnaam,
                                        naam='modelnaam',
                                        label='modelnaam',
                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Netwerkelement.modelnaam',
-                                       definition='Modelnaam waarmee de fabrikant dit type toestel identificeert.')
+                                       definition='Modelnaam waarmee de fabrikant dit type toestel identificeert.',
+                                       owner=self)
 
         self._nSAPAddress = OTLAttribuut(field=StringField,
                                          naam='nSAPAddress',
                                          label='NSAP-address',
                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Netwerkelement.nSAPAddress',
-                                         definition='Netwerkadres van deze component.')
+                                         definition='Netwerkadres van deze component.',
+                                         owner=self)
 
         self._serienummer = OTLAttribuut(field=StringField,
                                          naam='serienummer',
                                          label='serienummer',
                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Netwerkelement.serienummer',
-                                         definition='Unieke identificatiecode van het toestel, toegekend door de fabrikant.')
+                                         definition='Unieke identificatiecode van het toestel, toegekend door de fabrikant.',
+                                         owner=self)
 
         self._softwareVersie = OTLAttribuut(field=StringField,
                                             naam='softwareVersie',
                                             label='software versie',
                                             objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Netwerkelement.softwareVersie',
-                                            definition='Identificatie van de softwareversie die op dit apparaat of onderdeel geladen is. Dit kan ook de firmwareversie zijn.')
+                                            definition='Identificatie van de softwareversie die op dit apparaat of onderdeel geladen is. Dit kan ook de firmwareversie zijn.',
+                                            owner=self)
 
     @property
     def beschrijvingFabrikant(self):

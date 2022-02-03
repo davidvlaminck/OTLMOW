@@ -16,14 +16,16 @@ class DtuHellingsSchoorhoekWaarden(AttributeInfo, UnionWaarden):
                                           label='hellingshoek',
                                           objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtuHellingsSchoorhoek.hellingshoek',
                                           kardinaliteit_min='0',
-                                          definition='Hoek die het object maakt ten opzichte van de verticale, uitgedrukt in decimale graden.')
+                                          definition='Hoek die het object maakt ten opzichte van de verticale, uitgedrukt in decimale graden.',
+                                          owner=self)
 
         self._schoorhoek = OTLAttribuut(field=KlSchoorhoek,
                                         naam='schoorhoek',
                                         label='schoorhoek',
                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtuHellingsSchoorhoek.schoorhoek',
                                         kardinaliteit_min='0',
-                                        definition='Hoek die het object maakt ten opzichte van de verticale, uitgedrukt in 1 op x (vb.: 1/4).')
+                                        definition='Hoek die het object maakt ten opzichte van de verticale, uitgedrukt in 1 op x (vb.: 1/4).',
+                                        owner=self)
 
     @property
     def hellingshoek(self):

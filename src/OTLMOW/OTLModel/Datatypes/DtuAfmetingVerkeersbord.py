@@ -17,35 +17,40 @@ class DtuAfmetingVerkeersbordWaarden(AttributeInfo, UnionWaarden):
                                         label='achthoekig',
                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtuAfmetingVerkeersbord.achthoekig',
                                         kardinaliteit_min='0',
-                                        definition='De afmeting voor een achthoekig verkeersbord (zijde in millimeter).')
+                                        definition='De afmeting voor een achthoekig verkeersbord (zijde in millimeter).',
+                                        owner=self)
 
         self._driehoekig = OTLAttribuut(field=DtcAfmetingZijdeInMm,
                                         naam='driehoekig',
                                         label='driehoekig',
                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtuAfmetingVerkeersbord.driehoekig',
                                         kardinaliteit_min='0',
-                                        definition='De afmeting van een driehoekig verkeersbord (zijde in millimeter).')
+                                        definition='De afmeting van een driehoekig verkeersbord (zijde in millimeter).',
+                                        owner=self)
 
         self._rond = OTLAttribuut(field=DtcAfmetingDiameterInMm,
                                   naam='rond',
                                   label='rond',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtuAfmetingVerkeersbord.rond',
                                   kardinaliteit_min='0',
-                                  definition='De afmeting voor een rond verkeersbord (diameter in millimeter).')
+                                  definition='De afmeting voor een rond verkeersbord (diameter in millimeter).',
+                                  owner=self)
 
         self._vierhoekig = OTLAttribuut(field=DtcAfmetingBxhInMm,
                                         naam='vierhoekig',
                                         label='vierhoekig',
                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtuAfmetingVerkeersbord.vierhoekig',
                                         kardinaliteit_min='0',
-                                        definition='De afmeting voor een vierhoekig verkeersbord (breedte en hoogte in millimeter).')
+                                        definition='De afmeting voor een vierhoekig verkeersbord (breedte en hoogte in millimeter).',
+                                        owner=self)
 
         self._zeshoekig = OTLAttribuut(field=DtcAfmetingZijdeInMm,
                                        naam='zeshoekig',
                                        label='zeshoekig',
                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtuAfmetingVerkeersbord.zeshoekig',
                                        kardinaliteit_min='0',
-                                       definition='De afmeting voor een zeshoekig verkeersbord (zijde in millimeter).')
+                                       definition='De afmeting voor een zeshoekig verkeersbord (zijde in millimeter).',
+                                       owner=self)
 
     @property
     def achthoekig(self):

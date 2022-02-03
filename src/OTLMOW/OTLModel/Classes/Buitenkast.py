@@ -22,19 +22,22 @@ class Buitenkast(Kast):
                                       naam='ipKlasse',
                                       label='ingress protection klasse',
                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Buitenkast.ipKlasse',
-                                      definition='De IP-codering als een aanduiding voor de mate van beveiliging van de constructie van elektrische of elektronische apparatuur tegen eigen schade door gebruik in "vijandige omgevingen" en tegen eventueel gevaar voor de gebruiker volgens IEC 60529.')
+                                      definition='De IP-codering als een aanduiding voor de mate van beveiliging van de constructie van elektrische of elektronische apparatuur tegen eigen schade door gebruik in "vijandige omgevingen" en tegen eventueel gevaar voor de gebruiker volgens IEC 60529.',
+                                      owner=self)
 
         self._keuringsfrequentie = OTLAttribuut(field=KwantWrdInJaar,
                                                 naam='keuringsfrequentie',
                                                 label='keuringsfrequentie',
                                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Buitenkast.keuringsfrequentie',
-                                                definition='Frequentie (in jaar) waarmee de kast moet onderworpen worden aan een periodieke keuring door een externe dienst voor technische controle.')
+                                                definition='Frequentie (in jaar) waarmee de kast moet onderworpen worden aan een periodieke keuring door een externe dienst voor technische controle.',
+                                                owner=self)
 
         self._verfraaid = OTLAttribuut(field=KlBuitenkastVerfraaid,
                                        naam='verfraaid',
                                        label='verfraaid',
                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Buitenkast.verfraaid',
-                                       definition='Geeft aan of de wegkantkast voorzien van verfraaiing en of die al dan niet vergund is.')
+                                       definition='Geeft aan of de wegkantkast voorzien van verfraaiing en of die al dan niet vergund is.',
+                                       owner=self)
 
     @property
     def ipKlasse(self):

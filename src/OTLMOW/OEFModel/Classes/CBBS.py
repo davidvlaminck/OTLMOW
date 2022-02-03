@@ -18,7 +18,8 @@ class CBBS(EMObject):
                                                     naam='kabelkelder vrij van water',
                                                     label='kabelkelder vrij van water',
                                                     objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#EMObject.kabelkelderVrijVanWater',
-                                                    definitie='Definitie nog toe te voegen voor eigenschap kabelkelder vrij van water')
+                                                    definitie='Definitie nog toe te voegen voor eigenschap kabelkelder vrij van water',
+                                                    owner=self)
 
     @property
     def kabelkelderVrijVanWater(self):

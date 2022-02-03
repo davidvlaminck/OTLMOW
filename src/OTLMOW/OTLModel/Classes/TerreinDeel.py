@@ -4,6 +4,7 @@ from abc import abstractmethod, ABC
 from OTLMOW.OTLModel.Datatypes.FloatOrDecimalField import FloatOrDecimalField
 from OTLMOW.OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter
 from OTLMOW.OTLModel.Datatypes.KwantWrdInVierkanteMeter import KwantWrdInVierkanteMeter
+from OTLMOW.GeometrieArtefact.VlakGeometrie import VlakGeometrie
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
@@ -15,29 +16,35 @@ class TerreinDeel(ABC):
 
     @abstractmethod
     def __init__(self):
+        super().__init__()
+
         self._breedte = OTLAttribuut(field=KwantWrdInMeter,
                                      naam='breedte',
                                      label='breedte',
                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#TerreinDeel.breedte',
-                                     definition='De breedte van het object in meter. In geval van een ongelijkmatige breedte wordt de gemiddelde breedte opgenomen.')
+                                     definition='De breedte van het object in meter. In geval van een ongelijkmatige breedte wordt de gemiddelde breedte opgenomen.',
+                                     owner=self)
 
         self._lengte = OTLAttribuut(field=KwantWrdInMeter,
                                     naam='lengte',
                                     label='lengte',
                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#TerreinDeel.lengte',
-                                    definition='De lengte van het object in meter. In geval van een ongelijkmatige lengte wordt de gemiddelde lengte opgenomen.')
+                                    definition='De lengte van het object in meter. In geval van een ongelijkmatige lengte wordt de gemiddelde lengte opgenomen.',
+                                    owner=self)
 
         self._niveau = OTLAttribuut(field=FloatOrDecimalField,
                                     naam='niveau',
                                     label='niveau',
                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#TerreinDeel.niveau',
-                                    definition='Het niveau waarop het object zich bevindt, relatief ten opzichte van andere objecten. Negatieve waarden worden geassocieerd met ondergronds en positieve waarden met bovengronds. Nul wordt beschouwd als een absolute waarde om het maaiveld aan te duiden.')
+                                    definition='Het niveau waarop het object zich bevindt, relatief ten opzichte van andere objecten. Negatieve waarden worden geassocieerd met ondergronds en positieve waarden met bovengronds. Nul wordt beschouwd als een absolute waarde om het maaiveld aan te duiden.',
+                                    owner=self)
 
         self._oppervlakte = OTLAttribuut(field=KwantWrdInVierkanteMeter,
                                          naam='oppervlakte',
                                          label='oppervlakte',
                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#TerreinDeel.oppervlakte',
-                                         definition='De oppervlakte in vierkante meter.')
+                                         definition='De oppervlakte in vierkante meter.',
+                                         owner=self)
 
     @property
     def breedte(self):

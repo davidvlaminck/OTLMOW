@@ -6,35 +6,40 @@ from OTLMOW.OTLModel.Datatypes.DtcSoftwarePoortconfiguratie import DtcSoftwarePo
 from OTLMOW.OTLModel.Datatypes.KlSoftwareLicentie import KlSoftwareLicentie
 from OTLMOW.OTLModel.Datatypes.StringField import StringField
 from OTLMOW.OTLModel.Datatypes.URIField import URIField
+from OTLMOW.GeometrieArtefact.GeenGeometrie import GeenGeometrie
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Software(SoftwareToegang):
+class Software(SoftwareToegang, GeenGeometrie):
     """Geheel van computerprogramma's met bijbehorende data."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Software'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        super().__init__()
+        SoftwareToegang.__init__(self)
+        GeenGeometrie.__init__(self)
 
         self._aangebodenServices = OTLAttribuut(field=DtcDocument,
                                                 naam='aangebodenServices',
                                                 label='aangeboden services',
                                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Software.aangebodenServices',
-                                                definition='De endpoints van diensten.')
+                                                definition='De endpoints van diensten.',
+                                                owner=self)
 
         self._buildnummer = OTLAttribuut(field=StringField,
                                          naam='buildnummer',
                                          label='buildnummer',
                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Software.buildnummer',
-                                         definition='De software build.')
+                                         definition='De software build.',
+                                         owner=self)
 
         self._dependencies = OTLAttribuut(field=DtcDocument,
                                           naam='dependencies',
                                           label='dependencies',
                                           objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Software.dependencies',
-                                          definition='Afhankelijkheden met andere diensten.')
+                                          definition='Afhankelijkheden met andere diensten.',
+                                          owner=self)
 
         self._documentatie = OTLAttribuut(field=StringField,
                                           naam='documentatie',
@@ -42,32 +47,37 @@ class Software(SoftwareToegang):
                                           objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Software.documentatie',
                                           usagenote='Attribuut uit gebruik sinds versie 2.1.0 ',
                                           deprecated_version='2.1.0',
-                                          definition='Link naar documentatie over de software.')
+                                          definition='Link naar documentatie over de software.',
+                                          owner=self)
 
         self._licentie = OTLAttribuut(field=KlSoftwareLicentie,
                                       naam='licentie',
                                       label='licentie',
                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Software.licentie',
-                                      definition='De licentievorm van de software (bv. commercieel, shareware, freeware, open source [BSD, Apache, GPL],...).')
+                                      definition='De licentievorm van de software (bv. commercieel, shareware, freeware, open source [BSD, Apache, GPL],...).',
+                                      owner=self)
 
         self._onlineDocumentatie = OTLAttribuut(field=URIField,
                                                 naam='onlineDocumentatie',
                                                 label='online documentatie',
                                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Software.onlineDocumentatie',
-                                                definition='De url waarop documentatie over de software te vinden is.')
+                                                definition='De url waarop documentatie over de software te vinden is.',
+                                                owner=self)
 
         self._poortenconfiguratie = OTLAttribuut(field=DtcSoftwarePoortconfiguratie,
                                                  naam='poortenconfiguratie',
                                                  label='poortenconfiguratie',
                                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Software.poortenconfiguratie',
                                                  kardinaliteit_max='*',
-                                                 definition='Beschrijft welke poort voor welke service gebruikt wordt.')
+                                                 definition='Beschrijft welke poort voor welke service gebruikt wordt.',
+                                                 owner=self)
 
         self._versie = OTLAttribuut(field=StringField,
                                     naam='versie',
                                     label='versie',
                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Software.versie',
-                                    definition='Het versienummer van de software.')
+                                    definition='Het versienummer van de software.',
+                                    owner=self)
 
     @property
     def aangebodenServices(self):

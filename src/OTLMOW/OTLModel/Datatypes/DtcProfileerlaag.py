@@ -14,13 +14,15 @@ class DtcProfileerlaagWaarden(AttributeInfo):
                                      naam='gewicht',
                                      label='gewicht',
                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcProfileerlaag.gewicht',
-                                     definition='Het gewicht van de profileerlaag in ton.')
+                                     definition='Het gewicht van de profileerlaag in ton.',
+                                     owner=self)
 
         self._laagtype = OTLAttribuut(field=KlBVLaagtype,
                                       naam='laagtype',
                                       label='laagtype',
                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcProfileerlaag.laagtype',
-                                      definition='Het type van de bitumineuze verharding.')
+                                      definition='Het type van de bitumineuze verharding.',
+                                      owner=self)
 
     @property
     def gewicht(self):

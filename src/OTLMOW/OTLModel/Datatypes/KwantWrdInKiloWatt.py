@@ -16,13 +16,15 @@ class KwantWrdInKiloWattWaarden(AttributeInfo):
                                               objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInKiloWatt.standaardEenheid',
                                               usagenote='"kW"^^cdt:ucumunit',
                                               constraints='"kW"^^cdt:ucumunit',
-                                              definition='De standaard eenheid bij dit datatype is uitgedrukt in kilowatt.')
+                                              definition='De standaard eenheid bij dit datatype is uitgedrukt in kilowatt.',
+                                              owner=self)
 
         self._waarde = OTLAttribuut(field=FloatOrDecimalField,
                                     naam='waarde',
                                     label='waarde',
                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInKiloWatt.waarde',
-                                    definition='Bevat een getal die bij het datatype hoort.')
+                                    definition='Bevat een getal die bij het datatype hoort.',
+                                    owner=self)
 
     @property
     def standaardEenheid(self):

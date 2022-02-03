@@ -16,14 +16,16 @@ class DtuDwarsafmetingenWaarden(AttributeInfo, UnionWaarden):
                                          label='rechthoekig',
                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtuDwarsafmetingen.rechthoekig',
                                          kardinaliteit_min='0',
-                                         definition='Afmetingen voor breedte, lengte en hoogte van een rechthoekig object.')
+                                         definition='Afmetingen voor breedte, lengte en hoogte van een rechthoekig object.',
+                                         owner=self)
 
         self._rond = OTLAttribuut(field=DtcAfmetingDiameterInMm,
                                   naam='rond',
                                   label='rond',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtuDwarsafmetingen.rond',
                                   kardinaliteit_min='0',
-                                  definition='Afmeting van de diameter in milimeter van een rond object.')
+                                  definition='Afmeting van de diameter in milimeter van een rond object.',
+                                  owner=self)
 
     @property
     def rechthoekig(self):

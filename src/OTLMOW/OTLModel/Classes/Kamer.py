@@ -7,47 +7,54 @@ from OTLMOW.OTLModel.Datatypes.KlPutMateriaal import KlPutMateriaal
 from OTLMOW.OTLModel.Datatypes.KlRioleringVorm import KlRioleringVorm
 from OTLMOW.OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter
 from OTLMOW.OTLModel.Datatypes.KwantWrdInMillimeter import KwantWrdInMillimeter
+from OTLMOW.GeometrieArtefact.VlakGeometrie import VlakGeometrie
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Kamer(PutRelatie):
+class Kamer(PutRelatie, VlakGeometrie):
     """Een kamer is een aanééngesloten ondergrondse constructie waarbinnen vrije stroming van water over de bodem mogelijk is. Een constructie of inspectieput kan één of meerdere kamers hebben."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Kamer'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        super().__init__()
+        PutRelatie.__init__(self)
+        VlakGeometrie.__init__(self)
 
         self._breedte = OTLAttribuut(field=KwantWrdInMillimeter,
                                      naam='breedte',
                                      label='breedte',
                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Kamer.breedte',
-                                     definition='De afmeting 1 (breedte) van het grondplan van de putkamer in millimeter.')
+                                     definition='De afmeting 1 (breedte) van het grondplan van de putkamer in millimeter.',
+                                     owner=self)
 
         self._diepte = OTLAttribuut(field=KwantWrdInMeter,
                                     naam='diepte',
                                     label='diepte',
                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Kamer.diepte',
-                                    definition='De diepte van de putkamer in meter.')
+                                    definition='De diepte van de putkamer in meter.',
+                                    owner=self)
 
         self._hoogte = OTLAttribuut(field=KwantWrdInMillimeter,
                                     naam='hoogte',
                                     label='hoogte',
                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Kamer.hoogte',
-                                    definition='De afmeting 2 (hoogte) van het grondplan van de putkamer in millimeter.')
+                                    definition='De afmeting 2 (hoogte) van het grondplan van de putkamer in millimeter.',
+                                    owner=self)
 
         self._klasse = OTLAttribuut(field=KlKamerKlasse,
                                     naam='klasse',
                                     label='klasse',
                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Kamer.klasse',
-                                    definition='De stabiliteitsklasse van de kamer.')
+                                    definition='De stabiliteitsklasse van de kamer.',
+                                    owner=self)
 
         self._materiaal = OTLAttribuut(field=KlPutMateriaal,
                                        naam='materiaal',
                                        label='materiaal',
                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Kamer.materiaal',
-                                       definition='Het materiaal waaruit de kamer opgebouwd is.')
+                                       definition='Het materiaal waaruit de kamer opgebouwd is.',
+                                       owner=self)
 
         self._technischeFiche = OTLAttribuut(field=DtcDocument,
                                              naam='technischeFiche',
@@ -55,13 +62,15 @@ class Kamer(PutRelatie):
                                              objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Kamer.technischeFiche',
                                              usagenote='Bestanden van het type xlsx, dwg of pdf.',
                                              kardinaliteit_max='*',
-                                             definition='De technische fiche van de kamer.')
+                                             definition='De technische fiche van de kamer.',
+                                             owner=self)
 
         self._vorm = OTLAttribuut(field=KlRioleringVorm,
                                   naam='vorm',
                                   label='vorm',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Kamer.vorm',
-                                  definition='De vorm van de kamer.')
+                                  definition='De vorm van de kamer.',
+                                  owner=self)
 
     @property
     def breedte(self):

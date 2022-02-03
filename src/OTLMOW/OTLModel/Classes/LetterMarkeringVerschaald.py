@@ -5,53 +5,61 @@ from OTLMOW.OTLModel.Datatypes.FloatOrDecimalField import FloatOrDecimalField
 from OTLMOW.OTLModel.Datatypes.KlLetterVerschaald import KlLetterVerschaald
 from OTLMOW.OTLModel.Datatypes.KlLetterVerschaaldType import KlLetterVerschaaldType
 from OTLMOW.OTLModel.Datatypes.KwantWrdInVierkanteMeter import KwantWrdInVierkanteMeter
+from OTLMOW.GeometrieArtefact.PuntGeometrie import PuntGeometrie
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class LetterMarkeringVerschaald(FiguratieMarkeringToegang):
+class LetterMarkeringVerschaald(FiguratieMarkeringToegang, PuntGeometrie):
     """Een markering bestaande uit letters die een verschaling ondergaat zoals een vergroting en/of een verkleining."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#LetterMarkeringVerschaald'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        super().__init__()
+        FiguratieMarkeringToegang.__init__(self)
+        PuntGeometrie.__init__(self)
 
         self._basisOppervlakte = OTLAttribuut(field=KwantWrdInVierkanteMeter,
                                               naam='basisOppervlakte',
                                               label='basisoppervlakte',
                                               objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#LetterMarkeringVerschaald.basisOppervlakte',
-                                              definition='De basisoppervlakte van de individuele lettermarkering voor verschaling zoals beschreven in de algemene omzendbrief.')
+                                              definition='De basisoppervlakte van de individuele lettermarkering voor verschaling zoals beschreven in de algemene omzendbrief.',
+                                              owner=self)
 
         self._letter = OTLAttribuut(field=KlLetterVerschaald,
                                     naam='letter',
                                     label='letter',
                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#LetterMarkeringVerschaald.letter',
-                                    definition='De individuele letter gebruikt bij de verschaalde wegmarkering.')
+                                    definition='De individuele letter gebruikt bij de verschaalde wegmarkering.',
+                                    owner=self)
 
         self._oppervlakte = OTLAttribuut(field=KwantWrdInVierkanteMeter,
                                          naam='oppervlakte',
                                          label='oppervlakte',
                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#LetterMarkeringVerschaald.oppervlakte',
-                                         definition='De oppervlakte van een figuratiemarkering na de verschaling.')
+                                         definition='De oppervlakte van een figuratiemarkering na de verschaling.',
+                                         owner=self)
 
         self._type = OTLAttribuut(field=KlLetterVerschaaldType,
                                   naam='type',
                                   label='type',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#LetterMarkeringVerschaald.type',
-                                  definition='Het type van de individuele verschaalde lettermarkering.')
+                                  definition='Het type van de individuele verschaalde lettermarkering.',
+                                  owner=self)
 
         self._vergrotingsfactor = OTLAttribuut(field=FloatOrDecimalField,
                                                naam='vergrotingsfactor',
                                                label='vergrotingsfactor',
                                                objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#LetterMarkeringVerschaald.vergrotingsfactor',
-                                               definition='Een decimaal getal dat weergeeft in welke mate de figuratiemarkering vergroot of verkleind wordt.')
+                                               definition='Een decimaal getal dat weergeeft in welke mate de figuratiemarkering vergroot of verkleind wordt.',
+                                               owner=self)
 
         self._verlengingsfactor = OTLAttribuut(field=FloatOrDecimalField,
                                                naam='verlengingsfactor',
                                                label='verlengingsfactor',
                                                objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#LetterMarkeringVerschaald.verlengingsfactor',
-                                               definition='Een decimaal getal dat de verlenging van een figuratiemarkering weergeeft.')
+                                               definition='Een decimaal getal dat de verlenging van een figuratiemarkering weergeeft.',
+                                               owner=self)
 
     @property
     def basisOppervlakte(self):

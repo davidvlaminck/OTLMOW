@@ -24,19 +24,22 @@ class RelatieObject(AIMDBStatus, AttributeInfo, OTLObject):
                                      naam='assetId',
                                      label='asset-id',
                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#RelatieObject.assetId',
-                                     definition='Unieke identificatie van de asset zoals toegekend door de assetbeheerder of n.a.v. eerste aanlevering door de leverancier.')
+                                     definition='Unieke identificatie van de asset zoals toegekend door de assetbeheerder of n.a.v. eerste aanlevering door de leverancier.',
+                                     owner=self)
 
         self._bronAssetId = OTLAttribuut(field=DtcIdentificator,
                                          naam='bronAssetId',
                                          label='asset-id bron-asset',
                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#RelatieObject.bronAssetId',
-                                         definition='De identificator van het object waaruit de relatie vertrekt.')
+                                         definition='De identificator van het object waaruit de relatie vertrekt.',
+                                         owner=self)
 
         self._doelAssetId = OTLAttribuut(field=DtcIdentificator,
                                          naam='doelAssetId',
                                          label='asset-id doel-asset',
                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#RelatieObject.doelAssetId',
-                                         definition='De identificator van het object waarin de relatie toekomt.')
+                                         definition='De identificator van het object waarin de relatie toekomt.',
+                                         owner=self)
 
     @property
     def assetId(self):

@@ -18,14 +18,16 @@ class BijlageVoertuigkering(ABC):
                                                        label='testrapport voertuigkering',
                                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#BijlageVoertuigkering.testrapportVoertuigkering',
                                                        kardinaliteit_max='*',
-                                                       definition='De testresultaten van de crashtesten die op de voertuigkerende constructie uitgevoerd zijn.')
+                                                       definition='De testresultaten van de crashtesten die op de voertuigkerende constructie uitgevoerd zijn.',
+                                                       owner=self)
 
         self._videoVoertuigkering = OTLAttribuut(field=DtcDocument,
                                                  naam='videoVoertuigkering',
                                                  label='video voertuigkering',
                                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#BijlageVoertuigkering.videoVoertuigkering',
                                                  kardinaliteit_max='*',
-                                                 definition='Video-opname van de crashtesten op de voertuigkerende constructie.')
+                                                 definition='Video-opname van de crashtesten op de voertuigkerende constructie.',
+                                                 owner=self)
 
     @property
     def testrapportVoertuigkering(self):

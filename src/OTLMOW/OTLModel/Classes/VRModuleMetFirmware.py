@@ -23,13 +23,15 @@ class VRModuleMetFirmware(VerkeersregelaarModule, FirmwareObject):
                                   naam='merk',
                                   label='merk',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#VRModuleMetFirmware.merk',
-                                  definition='Het merk van de VR module met Firmware.')
+                                  definition='Het merk van de VR module met Firmware.',
+                                  owner=self)
 
         self._modelnaam = OTLAttribuut(field=KlVRModuleMetFirmwareModelnaam,
                                        naam='modelnaam',
                                        label='modelnaam',
                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#VRModuleMetFirmware.modelnaam',
-                                       definition='De modelnaam/product range van de VR module met Firmware.')
+                                       definition='De modelnaam/product range van de VR module met Firmware.',
+                                       owner=self)
 
     @property
     def merk(self):

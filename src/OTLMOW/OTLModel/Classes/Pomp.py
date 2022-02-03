@@ -8,77 +8,89 @@ from OTLMOW.OTLModel.Datatypes.KlPompSoort import KlPompSoort
 from OTLMOW.OTLModel.Datatypes.KwantWrdInKubiekeMeter import KwantWrdInKubiekeMeter
 from OTLMOW.OTLModel.Datatypes.KwantWrdInMillimeter import KwantWrdInMillimeter
 from OTLMOW.OTLModel.Datatypes.KwantWrdInWatt import KwantWrdInWatt
+from OTLMOW.GeometrieArtefact.PuntGeometrie import PuntGeometrie
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Pomp(LinkendElement):
+class Pomp(LinkendElement, PuntGeometrie):
     """Een pomp is een werktuig dat water verplaatst door er energie aan af te geven in de vorm van een drukverhoging of snelheidsverhoging."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Pomp'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        super().__init__()
+        LinkendElement.__init__(self)
+        PuntGeometrie.__init__(self)
 
         self._binnenDiameter = OTLAttribuut(field=KwantWrdInMillimeter,
                                             naam='binnenDiameter',
                                             label='binnendiameter',
                                             objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Pomp.binnenDiameter',
-                                            definition='Afmeting van de binnenkant van de opening waardoor het opgepompte water loopt.')
+                                            definition='Afmeting van de binnenkant van de opening waardoor het opgepompte water loopt.',
+                                            owner=self)
 
         self._buitenDiameter = OTLAttribuut(field=KwantWrdInMillimeter,
                                             naam='buitenDiameter',
                                             label='buitendiameter',
                                             objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Pomp.buitenDiameter',
-                                            definition='Afmeting van de buitenkant van de opening waarlangs het opgepomte water loopt in functie van een aansluiting van een afvoer.')
+                                            definition='Afmeting van de buitenkant van de opening waarlangs het opgepomte water loopt in functie van een aansluiting van een afvoer.',
+                                            owner=self)
 
         self._maximaalDebiet = OTLAttribuut(field=KwantWrdInKubiekeMeter,
                                             naam='maximaalDebiet',
                                             label='maximaal debiet',
                                             objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Pomp.maximaalDebiet',
-                                            definition='Het debiet dat de pomp kan verplaatsen wanneer ze op volle capaciteit werkt volgens de specificaties van de fabrikant.')
+                                            definition='Het debiet dat de pomp kan verplaatsen wanneer ze op volle capaciteit werkt volgens de specificaties van de fabrikant.',
+                                            owner=self)
 
         self._merk = OTLAttribuut(field=KlPompMerk,
                                   naam='merk',
                                   label='merk',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Pomp.merk',
-                                  definition='De naam van het merk volgens de fabrikant.')
+                                  definition='De naam van het merk volgens de fabrikant.',
+                                  owner=self)
 
         self._metSoftstarter = OTLAttribuut(field=BooleanField,
                                             naam='metSoftstarter',
                                             label='met softstarter',
                                             objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Pomp.metSoftstarter',
-                                            definition='Geeft aan of het toestel voorzien is van een eigen softstarter.')
+                                            definition='Geeft aan of het toestel voorzien is van een eigen softstarter.',
+                                            owner=self)
 
         self._metTempSensor = OTLAttribuut(field=BooleanField,
                                            naam='metTempSensor',
                                            label='met temperatuur sensor',
                                            objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Pomp.metTempSensor',
-                                           definition='Geeft aan of het toestel uitgerust is met een temperatuur sensor in functie van de bewaking van de correcte werking.')
+                                           definition='Geeft aan of het toestel uitgerust is met een temperatuur sensor in functie van de bewaking van de correcte werking.',
+                                           owner=self)
 
         self._metVochtsensor = OTLAttribuut(field=BooleanField,
                                             naam='metVochtsensor',
                                             label='met vocht sensor',
                                             objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Pomp.metVochtsensor',
-                                            definition='Geeft aan of het toestel uitgerust is met een vocht sensor in functie van de bewaking van de correcte werking.')
+                                            definition='Geeft aan of het toestel uitgerust is met een vocht sensor in functie van de bewaking van de correcte werking.',
+                                            owner=self)
 
         self._modelnaam = OTLAttribuut(field=KlPompModelnaam,
                                        naam='modelnaam',
                                        label='modelnaam',
                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Pomp.modelnaam',
-                                       definition='Naam van het model van het toestel volgens de fabrikant.')
+                                       definition='Naam van het model van het toestel volgens de fabrikant.',
+                                       owner=self)
 
         self._soort = OTLAttribuut(field=KlPompSoort,
                                    naam='soort',
                                    label='soort',
                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Pomp.soort',
-                                   definition='Bepaalt de aard van de pomp volgens haar werkingsprincipe.')
+                                   definition='Bepaalt de aard van de pomp volgens haar werkingsprincipe.',
+                                   owner=self)
 
         self._vermogen = OTLAttribuut(field=KwantWrdInWatt,
                                       naam='vermogen',
                                       label='vermogen',
                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Pomp.vermogen',
-                                      definition='Elektrisch vermogen van het toestels volgens de specificaties van de fabrikant.')
+                                      definition='Elektrisch vermogen van het toestels volgens de specificaties van de fabrikant.',
+                                      owner=self)
 
     @property
     def binnenDiameter(self):

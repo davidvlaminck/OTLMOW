@@ -22,19 +22,22 @@ class VegetatieElement(AIMObject):
                                     naam='hoogte',
                                     label='hoogte',
                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#VegetatieElement.hoogte',
-                                    definition='De hoogteklasse van het vegetatie-element.')
+                                    definition='De hoogteklasse van het vegetatie-element.',
+                                    owner=self)
 
         self._niveau = OTLAttribuut(field=FloatOrDecimalField,
                                     naam='niveau',
                                     label='niveau',
                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#VegetatieElement.niveau',
-                                    definition='Het niveau waarop het object zich bevindt, relatief ten opzichte van andere objecten. Negatieve waarden worden geassocieerd met ondergronds en positieve waarden met bovengronds. Nul wordt beschouwd als een absolute waarde om het maaiveld aan te duiden.')
+                                    definition='Het niveau waarop het object zich bevindt, relatief ten opzichte van andere objecten. Negatieve waarden worden geassocieerd met ondergronds en positieve waarden met bovengronds. Nul wordt beschouwd als een absolute waarde om het maaiveld aan te duiden.',
+                                    owner=self)
 
         self._soortnaam = OTLAttribuut(field=DtcVegetatieSoortnaam,
                                        naam='soortnaam',
                                        label='soortnaam',
                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#VegetatieElement.soortnaam',
-                                       definition='Met deze eigenschap worden de Nederlandse soortnaam, wetenschappelijke soortnaam en de soortcode van de plantensoort weergegeven.')
+                                       definition='Met deze eigenschap worden de Nederlandse soortnaam, wetenschappelijke soortnaam en de soortcode van de plantensoort weergegeven.',
+                                       owner=self)
 
     @property
     def hoogte(self):

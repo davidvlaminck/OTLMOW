@@ -18,7 +18,8 @@ class Tu(EMObject):
                                              naam='notitieInspectie',
                                              label='notitieInspectie',
                                              objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#EMObject.notitieinspectie',
-                                             definitie='Definitie nog toe te voegen voor eigenschap notitie')
+                                             definitie='Definitie nog toe te voegen voor eigenschap notitie',
+                                             owner=self)
 
     @property
     def notitieinspectie(self):

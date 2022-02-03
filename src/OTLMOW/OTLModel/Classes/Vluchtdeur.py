@@ -1,5 +1,4 @@
 # coding=utf-8
-from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLMOW.OTLModel.Classes.AIMObject import AIMObject
 from OTLMOW.OTLModel.Classes.Deur import Deur
 from OTLMOW.OTLModel.Classes.BevestigingGC import BevestigingGC

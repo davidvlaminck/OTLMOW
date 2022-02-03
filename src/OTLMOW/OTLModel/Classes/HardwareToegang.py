@@ -25,56 +25,65 @@ class HardwareToegang(AIMNaamObject):
                                  naam='CPU',
                                  label='CPU',
                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#HardwareToegang.CPU',
-                                 definition='Centrale verwerkingseenheid.')
+                                 definition='Centrale verwerkingseenheid.',
+                                 owner=self)
 
         self._cdDvdTape = OTLAttribuut(field=KlHardwareCdDvdTape,
                                        naam='cdDvdTape',
                                        label='CD DVD Tape',
                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#HardwareToegang.cdDvdTape',
-                                       definition='De hardware uitgerust met CD/DVD/Tape.')
+                                       definition='De hardware uitgerust met CD/DVD/Tape.',
+                                       owner=self)
 
         self._disk = OTLAttribuut(field=KwantWrdInGigabyte,
                                   naam='disk',
                                   label='disk',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#HardwareToegang.disk',
-                                  definition='De disk config van de hardware, HD, RAID, ...')
+                                  definition='De disk config van de hardware, HD, RAID, ...',
+                                  owner=self)
 
         self._dnsNaam = OTLAttribuut(field=StringField,
                                      naam='dnsNaam',
                                      label='DNS naam',
                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#HardwareToegang.dnsNaam',
-                                     definition='De DNSNaam (ook "volledige domein naam" genoemd ) is een unieke naam binnen het Domain Name System (DNS), het naamgevingssysteem waarmee computers, webservers, diensten en  toepassing op een unieke manier kunnen worden geïdentificeerd. Deze bevat zowel de hostname en de top level domein naam bv. 120c8-ar1.belfa.be.')
+                                     definition='De DNSNaam (ook "volledige domein naam" genoemd ) is een unieke naam binnen het Domain Name System (DNS), het naamgevingssysteem waarmee computers, webservers, diensten en  toepassing op een unieke manier kunnen worden geïdentificeerd. Deze bevat zowel de hostname en de top level domein naam bv. 120c8-ar1.belfa.be.',
+                                     owner=self)
 
         self._domein = OTLAttribuut(field=KlHardwareDomein,
                                     naam='domein',
                                     label='domein',
                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#HardwareToegang.domein',
-                                    definition='Administratieve groepering van meerdere particuliere computernetwerken of hosts binnen dezelfde infrastructuur.')
+                                    definition='Administratieve groepering van meerdere particuliere computernetwerken of hosts binnen dezelfde infrastructuur.',
+                                    owner=self)
 
         self._ipAdres = OTLAttribuut(field=DteIPv4Adres,
                                      naam='ipAdres',
                                      label='ip adres',
                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#HardwareToegang.ipAdres',
                                      kardinaliteit_max='*',
-                                     definition='Het IP-adres van de hardware.')
+                                     definition='Het IP-adres van de hardware.',
+                                     owner=self)
 
         self._licentie = OTLAttribuut(field=StringField,
                                       naam='licentie',
                                       label='licentie',
                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#HardwareToegang.licentie',
-                                      definition='De licentie van het OS of de licentie van de hardware voor support/garantie op componenten.')
+                                      definition='De licentie van het OS of de licentie van de hardware voor support/garantie op componenten.',
+                                      owner=self)
 
         self._os = OTLAttribuut(field=KlHardwareOS,
                                 naam='os',
                                 label='OS',
                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#HardwareToegang.os',
-                                definition='Het besturingssysteem dat op de hardware draait.')
+                                definition='Het besturingssysteem dat op de hardware draait.',
+                                owner=self)
 
         self._ram = OTLAttribuut(field=KwantWrdInGigabyte,
                                  naam='ram',
                                  label='RAM',
                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#HardwareToegang.ram',
-                                 definition='De grootte van het werkgeheugen.')
+                                 definition='De grootte van het werkgeheugen.',
+                                 owner=self)
 
     @property
     def CPU(self):

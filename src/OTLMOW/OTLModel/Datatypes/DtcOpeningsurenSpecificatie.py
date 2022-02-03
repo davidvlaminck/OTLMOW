@@ -14,19 +14,22 @@ class DtcOpeningsurenSpecificatieWaarden(AttributeInfo):
                                           naam='openingstijd',
                                           label='openingstijd',
                                           objectUri='https://schema.org/OpeningHoursSpecification.openingstijd',
-                                          definition='Het tijdsstip waarop de opening plaatsvindt.')
+                                          definition='Het tijdsstip waarop de opening plaatsvindt.',
+                                          owner=self)
 
         self._sluitingstijd = OTLAttribuut(field=TimeField,
                                            naam='sluitingstijd',
                                            label='sluitingstijd',
                                            objectUri='https://schema.org/OpeningHoursSpecification.sluitingstijd',
-                                           definition='Het tijdsstip waarop de sluiting plaatsvindt.')
+                                           definition='Het tijdsstip waarop de sluiting plaatsvindt.',
+                                           owner=self)
 
         self._weekdag = OTLAttribuut(field=KlAlgWeekdagen,
                                      naam='weekdag',
                                      label='weekdag',
                                      objectUri='https://schema.org/OpeningHoursSpecification.weekdag',
-                                     definition='Een dag uit de week incl. weekenddagen.')
+                                     definition='Een dag uit de week incl. weekenddagen.',
+                                     owner=self)
 
     @property
     def openingstijd(self):

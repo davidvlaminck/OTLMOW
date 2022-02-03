@@ -20,13 +20,15 @@ class Wegkantkast(Buitenkast):
                                               naam='elektrischSchema',
                                               label='elektrisch schema',
                                               objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Wegkantkast.elektrischSchema',
-                                              definition='Elektrisch aansluitschema van de kast.')
+                                              definition='Elektrisch aansluitschema van de kast.',
+                                              owner=self)
 
         self._heeftMaaibescherming = OTLAttribuut(field=BooleanField,
                                                   naam='heeftMaaibescherming',
                                                   label='heeft maaibescherming',
                                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Wegkantkast.heeftMaaibescherming',
-                                                  definition='Geeft aan of de kast voorzien is van bescherming tegen schade bij het maaien van de omgeving rond de kast.')
+                                                  definition='Geeft aan of de kast voorzien is van bescherming tegen schade bij het maaien van de omgeving rond de kast.',
+                                                  owner=self)
 
         self._mplan = OTLAttribuut(field=DtcDocument,
                                    naam='mplan',
@@ -34,13 +36,15 @@ class Wegkantkast(Buitenkast):
                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Wegkantkast.mplan',
                                    usagenote='Bestanden van het type dwg of pdf.',
                                    kardinaliteit_max='*',
-                                   definition='Mechanisch plan van de volledige installatie. Er wordt één plan toegevoegd per installatie/techniek die op de kast is aangesloten.')
+                                   definition='Mechanisch plan van de volledige installatie. Er wordt één plan toegevoegd per installatie/techniek die op de kast is aangesloten.',
+                                   owner=self)
 
         self._type = OTLAttribuut(field=KlWegkantkastType,
                                   naam='type',
                                   label='type',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Wegkantkast.type',
-                                  definition='Type van de wegkantkast volgens de gangbare types.')
+                                  definition='Type van de wegkantkast volgens de gangbare types.',
+                                  owner=self)
 
     @property
     def elektrischSchema(self):

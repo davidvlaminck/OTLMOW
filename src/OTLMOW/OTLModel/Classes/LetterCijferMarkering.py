@@ -4,35 +4,40 @@ from OTLMOW.OTLModel.Classes.FiguratieMarkeringToegang import FiguratieMarkering
 from OTLMOW.OTLModel.Datatypes.KlLetterCijfer import KlLetterCijfer
 from OTLMOW.OTLModel.Datatypes.KlLetterCijferType import KlLetterCijferType
 from OTLMOW.OTLModel.Datatypes.KwantWrdInVierkanteMeter import KwantWrdInVierkanteMeter
+from OTLMOW.GeometrieArtefact.PuntGeometrie import PuntGeometrie
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class LetterCijferMarkering(FiguratieMarkeringToegang):
+class LetterCijferMarkering(FiguratieMarkeringToegang, PuntGeometrie):
     """Een markering bestaande uit individuele letters en/of cijfers."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#LetterCijferMarkering'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        super().__init__()
+        FiguratieMarkeringToegang.__init__(self)
+        PuntGeometrie.__init__(self)
 
         self._letterCijfer = OTLAttribuut(field=KlLetterCijfer,
                                           naam='letterCijfer',
                                           label='letter-cijfer',
                                           objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#LetterCijferMarkering.letterCijfer',
-                                          definition='De individuele letter of cijfer gebruikt bij de wegmarkering.')
+                                          definition='De individuele letter of cijfer gebruikt bij de wegmarkering.',
+                                          owner=self)
 
         self._oppervlakte = OTLAttribuut(field=KwantWrdInVierkanteMeter,
                                          naam='oppervlakte',
                                          label='basisoppervlakte',
                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#LetterCijferMarkering.oppervlakte',
-                                         definition='De oppervlakte van de individuele letter- of cijfermarkering zoals beschreven in de algemene omzendbrief.')
+                                         definition='De oppervlakte van de individuele letter- of cijfermarkering zoals beschreven in de algemene omzendbrief.',
+                                         owner=self)
 
         self._type = OTLAttribuut(field=KlLetterCijferType,
                                   naam='type',
                                   label='type',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#LetterCijferMarkering.type',
-                                  definition='Het type van de individuele letter- of cijfermarkering.')
+                                  definition='Het type van de individuele letter- of cijfermarkering.',
+                                  owner=self)
 
     @property
     def letterCijfer(self):

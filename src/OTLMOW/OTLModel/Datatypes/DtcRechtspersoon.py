@@ -14,25 +14,29 @@ class DtcRechtspersoonWaarden(AttributeInfo):
                                    naam='adres',
                                    label='adres',
                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcRechtspersoon.adres',
-                                   definition='Het adres.')
+                                   definition='Het adres.',
+                                   owner=self)
 
         self._afdeling = OTLAttribuut(field=StringField,
                                       naam='afdeling',
                                       label='afdeling',
                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcRechtspersoon.afdeling',
-                                      definition='De afdeling waartoe een rechtspersoon behoort.')
+                                      definition='De afdeling waartoe een rechtspersoon behoort.',
+                                      owner=self)
 
         self._organisatie = OTLAttribuut(field=StringField,
                                          naam='organisatie',
                                          label='organisatie',
                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcRechtspersoon.organisatie',
-                                         definition='De naam van de organisatie of rechtspersoon.')
+                                         definition='De naam van de organisatie of rechtspersoon.',
+                                         owner=self)
 
         self._telefoonnnummer = OTLAttribuut(field=StringField,
                                              naam='telefoonnnummer',
                                              label='telefoonnnummer',
                                              objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcRechtspersoon.telefoonnnummer',
-                                             definition='Het telefoonnummer.')
+                                             definition='Het telefoonnummer.',
+                                             owner=self)
 
     @property
     def adres(self):

@@ -3,29 +3,33 @@ from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLMOW.OTLModel.Classes.Buis import Buis
 from OTLMOW.OTLModel.Datatypes.KlPersleidingMateriaal import KlPersleidingMateriaal
 from OTLMOW.OTLModel.Datatypes.KlSDRKlasse import KlSDRKlasse
+from OTLMOW.GeometrieArtefact.LijnGeometrie import LijnGeometrie
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Persleiding(Buis):
+class Persleiding(Buis, LijnGeometrie):
     """Ondergronds kanaal of pijp voor afvoer van een vloeistof of gas onder druk."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Persleiding'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        super().__init__()
+        Buis.__init__(self)
+        LijnGeometrie.__init__(self)
 
         self._materiaal = OTLAttribuut(field=KlPersleidingMateriaal,
                                        naam='materiaal',
                                        label='materiaal',
                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Persleiding.materiaal',
-                                       definition='Bepaalt het materiaal van de persleiding.')
+                                       definition='Bepaalt het materiaal van de persleiding.',
+                                       owner=self)
 
         self._sdrKlasse = OTLAttribuut(field=KlSDRKlasse,
                                        naam='sdrKlasse',
                                        label='SDR klasse',
                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Persleiding.sdrKlasse',
-                                       definition='De verhouding tussen de wanddikte en de diameter van de persleiding.')
+                                       definition='De verhouding tussen de wanddikte en de diameter van de persleiding.',
+                                       owner=self)
 
     @property
     def materiaal(self):

@@ -21,13 +21,15 @@ class IVRIComponent(Software):
                                       naam='baseline',
                                       label='baseline',
                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#IVRIComponent.baseline',
-                                      definition='Specificatieversie van het protocol waarop de iVRI component werkt.')
+                                      definition='Specificatieversie van het protocol waarop de iVRI component werkt.',
+                                      owner=self)
 
         self._certificaat = OTLAttribuut(field=DtcDocument,
                                          naam='certificaat',
                                          label='certificaat',
                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#IVRIComponent.certificaat',
-                                         definition='Certificaat van de keuringsinstantie dat wordt uitgereikt aan een iVRI (intelligente verkeersregelaar) component. ')
+                                         definition='Certificaat van de keuringsinstantie dat wordt uitgereikt aan een iVRI (intelligente verkeersregelaar) component. ',
+                                         owner=self)
 
     @property
     def baseline(self):

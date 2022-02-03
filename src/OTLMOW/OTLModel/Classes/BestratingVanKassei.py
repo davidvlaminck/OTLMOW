@@ -18,7 +18,8 @@ class BestratingVanKassei(Bestrating):
                                                               naam='afmetingVanBestratingselementBxl',
                                                               label='afmeting van bestratingselement bxl',
                                                               objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#BestratingVanKassei.afmetingVanBestratingselementBxl',
-                                                              definition='Afmeting van de breedte in cm (langste) en van de lengte in cm (kortste) van de kassei.')
+                                                              definition='Afmeting van de breedte in cm (langste) en van de lengte in cm (kortste) van de kassei.',
+                                                              owner=self)
 
     @property
     def afmetingVanBestratingselementBxl(self):

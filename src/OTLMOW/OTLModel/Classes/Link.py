@@ -4,35 +4,40 @@ from OTLMOW.OTLModel.Classes.NaampadObject import NaampadObject
 from OTLMOW.OTLModel.Datatypes.IntegerField import IntegerField
 from OTLMOW.OTLModel.Datatypes.KlNetwerklinkMediumtype import KlNetwerklinkMediumtype
 from OTLMOW.OTLModel.Datatypes.StringField import StringField
+from OTLMOW.GeometrieArtefact.GeenGeometrie import GeenGeometrie
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Link(NaampadObject):
+class Link(NaampadObject, GeenGeometrie):
     """Het (glasvezel) traject tussen twee toestellen (NetwerkElementen) die rechtstreeks met mekaar communiceren."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Link'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        super().__init__()
+        NaampadObject.__init__(self)
+        GeenGeometrie.__init__(self)
 
         self._geleidingsgroepTnummer = OTLAttribuut(field=IntegerField,
                                                     naam='geleidingsgroepTnummer',
                                                     label='geleidingsgroep T-nummer',
                                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Link.geleidingsgroepTnummer',
-                                                    definition='T-nummer van de geleidingsgroep in de kabelnet toepassing.')
+                                                    definition='T-nummer van de geleidingsgroep in de kabelnet toepassing.',
+                                                    owner=self)
 
         self._mediumtype = OTLAttribuut(field=KlNetwerklinkMediumtype,
                                         naam='mediumtype',
                                         label='mediumtype',
                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Link.mediumtype',
-                                        definition='Geeft aan hoe de verbinding tussen Netwerkelementen fysiek gerealiseerd wordt')
+                                        definition='Geeft aan hoe de verbinding tussen Netwerkelementen fysiek gerealiseerd wordt',
+                                        owner=self)
 
         self._ring = OTLAttribuut(field=StringField,
                                   naam='ring',
                                   label='ring',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Link.ring',
-                                  definition='Naam van de ringstructuur in het transport netwerk.')
+                                  definition='Naam van de ringstructuur in het transport netwerk.',
+                                  owner=self)
 
     @property
     def geleidingsgroepTnummer(self):

@@ -4,35 +4,40 @@ from OTLMOW.OTLModel.Classes.AndereLaag import AndereLaag
 from OTLMOW.OTLModel.Datatypes.KlDunneOverlagingType import KlDunneOverlagingType
 from OTLMOW.OTLModel.Datatypes.KlKleurSupp import KlKleurSupp
 from OTLMOW.OTLModel.Datatypes.KwantWrdInTon import KwantWrdInTon
+from OTLMOW.GeometrieArtefact.VlakGeometrie import VlakGeometrie
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class DunneOverlaging(AndereLaag):
+class DunneOverlaging(AndereLaag, VlakGeometrie):
     """Een dunne overlaging kan bestaan uit een SME overlaging of een antisliplaag."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DunneOverlaging'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        super().__init__()
+        AndereLaag.__init__(self)
+        VlakGeometrie.__init__(self)
 
         self._gewicht = OTLAttribuut(field=KwantWrdInTon,
                                      naam='gewicht',
                                      label='gewicht',
                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DunneOverlaging.gewicht',
-                                     definition='Het gewicht van de dunne overlaging in ton.')
+                                     definition='Het gewicht van de dunne overlaging in ton.',
+                                     owner=self)
 
         self._kleur = OTLAttribuut(field=KlKleurSupp,
                                    naam='kleur',
                                    label='kleur',
                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DunneOverlaging.kleur',
-                                   definition='De kleur van de dunne overlaging.')
+                                   definition='De kleur van de dunne overlaging.',
+                                   owner=self)
 
         self._type = OTLAttribuut(field=KlDunneOverlagingType,
                                   naam='type',
                                   label='type',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DunneOverlaging.type',
-                                  definition='Het type SME overlaging of antisliplaag.')
+                                  definition='Het type SME overlaging of antisliplaag.',
+                                  owner=self)
 
     @property
     def gewicht(self):

@@ -15,53 +15,61 @@ class DtcNatuurlijkPersoonWaarden(AttributeInfo):
                                         naam='achternaam',
                                         label='achternaam',
                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcNatuurlijkPersoon.achternaam',
-                                        definition='De achternaam.')
+                                        definition='De achternaam.',
+                                        owner=self)
 
         self._adres = OTLAttribuut(field=DtcAdres,
                                    naam='adres',
                                    label='adres',
                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcNatuurlijkPersoon.adres',
                                    kardinaliteit_max='*',
-                                   definition='Het adres.')
+                                   definition='Het adres.',
+                                   owner=self)
 
         self._emailadres = OTLAttribuut(field=StringField,
                                         naam='emailadres',
                                         label='emailadres',
                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcNatuurlijkPersoon.emailadres',
                                         kardinaliteit_max='*',
-                                        definition='Het emailadres.')
+                                        definition='Het emailadres.',
+                                        owner=self)
 
         self._fax = OTLAttribuut(field=StringField,
                                  naam='fax',
                                  label='fax',
                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcNatuurlijkPersoon.fax',
                                  kardinaliteit_max='*',
-                                 definition='De faxnummer.')
+                                 definition='De faxnummer.',
+                                 owner=self)
 
         self._heeftEmailVoorkeur = OTLAttribuut(field=BooleanField,
                                                 naam='heeftEmailVoorkeur',
                                                 label='heeft email voorkeur',
                                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcNatuurlijkPersoon.heeftEmailVoorkeur',
-                                                definition='Aanduiding of een persoon de voorkeur heeft om via email gecontacteerd te worden.')
+                                                definition='Aanduiding of een persoon de voorkeur heeft om via email gecontacteerd te worden.',
+                                                owner=self)
 
         self._heeftFaxVoorkeur = OTLAttribuut(field=BooleanField,
                                               naam='heeftFaxVoorkeur',
                                               label='heeft fax voorkeur',
                                               objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcNatuurlijkPersoon.heeftFaxVoorkeur',
-                                              definition='Aanduiding of een persoon een voorkeur heeft om via fax gegevens te ontvangen.')
+                                              definition='Aanduiding of een persoon een voorkeur heeft om via fax gegevens te ontvangen.',
+                                              owner=self)
 
         self._telefoonnnummer = OTLAttribuut(field=StringField,
                                              naam='telefoonnnummer',
                                              label='telefoonnnummer',
                                              objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcNatuurlijkPersoon.telefoonnnummer',
                                              kardinaliteit_max='*',
-                                             definition='Het telefoonnummer.')
+                                             definition='Het telefoonnummer.',
+                                             owner=self)
 
         self._voornaam = OTLAttribuut(field=StringField,
                                       naam='voornaam',
                                       label='voornaam',
                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcNatuurlijkPersoon.voornaam',
-                                      definition='De voornaam.')
+                                      definition='De voornaam.',
+                                      owner=self)
 
     @property
     def achternaam(self):

@@ -4,41 +4,47 @@ from OTLMOW.OTLModel.Classes.VegetatieElement import VegetatieElement
 from OTLMOW.OTLModel.Datatypes.BooleanField import BooleanField
 from OTLMOW.OTLModel.Datatypes.KwantWrdInKubiekeMeter import KwantWrdInKubiekeMeter
 from OTLMOW.OTLModel.Datatypes.KwantWrdInVierkanteMeter import KwantWrdInVierkanteMeter
+from OTLMOW.GeometrieArtefact.VlakGeometrie import VlakGeometrie
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Plantbakvorm(VegetatieElement):
+class Plantbakvorm(VegetatieElement, VlakGeometrie):
     """Beplanting die niet in volle grond werd aangebracht, maar in bakvorm."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Plantbakvorm'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        super().__init__()
+        VegetatieElement.__init__(self)
+        VlakGeometrie.__init__(self)
 
         self._isBereikbaar = OTLAttribuut(field=BooleanField,
                                           naam='isBereikbaar',
                                           label='is bereikbaar',
                                           objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Plantbakvorm.isBereikbaar',
-                                          definition='Duidt aan of de plantbakvorm door de mens fysiek bereikbaar is zonder hulpmiddelen.')
+                                          definition='Duidt aan of de plantbakvorm door de mens fysiek bereikbaar is zonder hulpmiddelen.',
+                                          owner=self)
 
         self._isVerplaatsbaar = OTLAttribuut(field=BooleanField,
                                              naam='isVerplaatsbaar',
                                              label='is verplaatsbaar',
                                              objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Plantbakvorm.isVerplaatsbaar',
-                                             definition='Duidt aan of de plantbakvorm al dan niet verplaatsbaar is en dus niet permanent verankerd werd met het aardoppervlak.')
+                                             definition='Duidt aan of de plantbakvorm al dan niet verplaatsbaar is en dus niet permanent verankerd werd met het aardoppervlak.',
+                                             owner=self)
 
         self._oppervlakteBak = OTLAttribuut(field=KwantWrdInVierkanteMeter,
                                             naam='oppervlakteBak',
                                             label='oppervlakte',
                                             objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Plantbakvorm.oppervlakteBak',
-                                            definition='De afmetingen van de plantbak in vierkante meter.')
+                                            definition='De afmetingen van de plantbak in vierkante meter.',
+                                            owner=self)
 
         self._volume = OTLAttribuut(field=KwantWrdInKubiekeMeter,
                                     naam='volume',
                                     label='volume',
                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Plantbakvorm.volume',
-                                    definition='De inhoud of grootte van de plantbakvorm in de ruimte in kubieke meter.')
+                                    definition='De inhoud of grootte van de plantbakvorm in de ruimte in kubieke meter.',
+                                    owner=self)
 
     @property
     def isBereikbaar(self):

@@ -18,7 +18,8 @@ class VerlichtingstoestelTL(Verlichtingstoestel):
                                              naam='lichtpuntHoogte',
                                              label='lichtpunt hoogte',
                                              objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#VerlichtingstoestelTL.lichtpuntHoogte',
-                                             definition='Hoogte van het lichtpunt ten opzichte van de rijweg.')
+                                             definition='Hoogte van het lichtpunt ten opzichte van de rijweg.',
+                                             owner=self)
 
     @property
     def lichtpuntHoogte(self):

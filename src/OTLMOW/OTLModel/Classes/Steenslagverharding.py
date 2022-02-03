@@ -18,7 +18,8 @@ class Steenslagverharding(AndereVerharding):
                                   naam='type',
                                   label='type',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Steenslagverharding.type',
-                                  definition='Bepaling van het type steenslagverharding.')
+                                  definition='Bepaling van het type steenslagverharding.',
+                                  owner=self)
 
     @property
     def type(self):

@@ -21,31 +21,36 @@ class BeheerExoten(AIMObject):
                                          naam='beheeroptie',
                                          label='beheeroptie',
                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#BeheerExoten.beheeroptie',
-                                         definition='Behandelingswijzen van exoten.')
+                                         definition='Behandelingswijzen van exoten.',
+                                         owner=self)
 
         self._bijzondereAfvoerVereist = OTLAttribuut(field=BooleanField,
                                                      naam='bijzondereAfvoerVereist',
                                                      label='bijzondere afvoer vereist',
                                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#BeheerExoten.bijzondereAfvoerVereist',
-                                                     definition='Aanduiding of voor de verwijderde exoten een niet-reguliere afvoer is voorzien.')
+                                                     definition='Aanduiding of voor de verwijderde exoten een niet-reguliere afvoer is voorzien.',
+                                                     owner=self)
 
         self._heeftDeponie = OTLAttribuut(field=BooleanField,
                                           naam='heeftDeponie',
                                           label='heeft deponie',
                                           objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#BeheerExoten.heeftDeponie',
-                                          definition='Aanduiding of de Japanse duizendknoop terplaatse kan worden gedeponeerd in een gecontamineerde zone.')
+                                          definition='Aanduiding of de Japanse duizendknoop terplaatse kan worden gedeponeerd in een gecontamineerde zone.',
+                                          owner=self)
 
         self._nazorgJaarfrequentie = OTLAttribuut(field=KlNazorgJaarfrequentie,
                                                   naam='nazorgJaarfrequentie',
                                                   label='nazorg jaarfrequentie',
                                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#BeheerExoten.nazorgJaarfrequentie',
-                                                  definition='Aantal keer dat de behandelde zone jaarlijks dient te worden gecontroleerd.')
+                                                  definition='Aantal keer dat de behandelde zone jaarlijks dient te worden gecontroleerd.',
+                                                  owner=self)
 
         self._oppervlakte = OTLAttribuut(field=KwantWrdInVierkanteMeter,
                                          naam='oppervlakte',
                                          label='oppervlakte',
                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#BeheerExoten.oppervlakte',
-                                         definition='De oppervlakte in vierkante meter van de te behandelen exoten.')
+                                         definition='De oppervlakte in vierkante meter van de te behandelen exoten.',
+                                         owner=self)
 
     @property
     def beheeroptie(self):

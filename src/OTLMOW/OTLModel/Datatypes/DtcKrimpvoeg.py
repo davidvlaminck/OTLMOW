@@ -13,13 +13,15 @@ class DtcKrimpvoegWaarden(AttributeInfo):
                                                  naam='krimpvoegFrequentie',
                                                  label='krimpvoeg frequentie',
                                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcKrimpvoeg.krimpvoegFrequentie',
-                                                 definition='De afstand tussen de krimpvoegen in meter.')
+                                                 definition='De afstand tussen de krimpvoegen in meter.',
+                                                 owner=self)
 
         self._totaleLengte = OTLAttribuut(field=KwantWrdInMeter,
                                           naam='totaleLengte',
                                           label='lengte',
                                           objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcKrimpvoeg.totaleLengte',
-                                          definition='De totale lengte in meter.')
+                                          definition='De totale lengte in meter.',
+                                          owner=self)
 
     @property
     def krimpvoegFrequentie(self):

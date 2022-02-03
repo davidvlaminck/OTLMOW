@@ -21,79 +21,92 @@ class Encoder(EMObject):
                                                  naam='algemene reinheid kast',
                                                  label='algemene reinheid kast',
                                                  objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#Encoder.algemeneReinheidKast',
-                                                 definitie='Definitie nog toe te voegen voor eigenschap algemene reinheid kast')
+                                                 definitie='Definitie nog toe te voegen voor eigenschap algemene reinheid kast',
+                                                 owner=self)
 
         self._bezoekficheKastIngevuld = EMAttribuut(field=BooleanField,
                                                     naam='bezoekfiche kast ingevuld',
                                                     label='bezoekfiche kast ingevuld',
                                                     objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#Encoder.bezoekficheKastIngevuld',
-                                                    definitie='Definitie nog toe te voegen voor eigenschap bezoekfiche kast ingevuld')
+                                                    definitie='Definitie nog toe te voegen voor eigenschap bezoekfiche kast ingevuld',
+                                                    owner=self)
 
         self._bodemKastDroog = EMAttribuut(field=StringField,
                                            naam='bodem kast droog',
                                            label='bodem kast droog',
                                            objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#Encoder.bodemKastDroog',
-                                           definitie='Definitie nog toe te voegen voor eigenschap bodem kast droog')
+                                           definitie='Definitie nog toe te voegen voor eigenschap bodem kast droog',
+                                           owner=self)
 
         self._datumNieuweEncoder = EMAttribuut(field=DateField,
                                                naam='datum nieuwe encoder',
                                                label='datum nieuwe encoder',
                                                objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#EMObject.datumNieuweEncoder',
-                                               definitie='Definitie nog toe te voegen voor eigenschap datum nieuwe encoder')
+                                               definitie='Definitie nog toe te voegen voor eigenschap datum nieuwe encoder',
+                                               owner=self)
 
         self._einde = EMAttribuut(field=DateTimeField,
                                   naam='einde',
                                   label='einde',
                                   objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#EMObject.einde',
-                                  definitie='Definitie nog toe te voegen voor eigenschap einde')
+                                  definitie='Definitie nog toe te voegen voor eigenschap einde',
+                                  owner=self)
 
         self._encoderRedenDatumIngevenInv = EMAttribuut(field=StringField,
                                                         naam='encoder > reden? datum ingeven inv.',
                                                         label='encoder > reden? datum ingeven inv.',
                                                         objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#EMObject.encoderRedenDatumIngevenInv',
-                                                        definitie='Definitie nog toe te voegen voor eigenschap encoder > reden? datum ingeven inv.')
+                                                        definitie='Definitie nog toe te voegen voor eigenschap encoder > reden? datum ingeven inv.',
+                                                        owner=self)
 
         self._encoderVervangen = EMAttribuut(field=BooleanField,
                                              naam='encoder vervangen?',
                                              label='encoder vervangen?',
                                              objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#EMObject.encoderVervangen',
-                                             definitie='Definitie nog toe te voegen voor eigenschap encoder vervangen?')
+                                             definitie='Definitie nog toe te voegen voor eigenschap encoder vervangen?',
+                                             owner=self)
 
         self._merkEnTypeEncoder = EMAttribuut(field=StringField,
                                               naam='merk en type encoder',
                                               label='merk en type encoder',
                                               objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#Encoder.merkEnTypeEncoder',
-                                              definitie='Definitie nog toe te voegen voor eigenschap merk en type encoder')
+                                              definitie='Definitie nog toe te voegen voor eigenschap merk en type encoder',
+                                              owner=self)
 
         self._opmerkingAlgemeneReinheidKast = EMAttribuut(field=StringField,
                                                           naam='opmerking algemene reinheid kast',
                                                           label='opmerking algemene reinheid kast',
                                                           objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#Encoder.opmerkingAlgemeneReinheidKast',
-                                                          definitie='Definitie nog toe te voegen voor eigenschap opmerking algemene reinheid kast')
+                                                          definitie='Definitie nog toe te voegen voor eigenschap opmerking algemene reinheid kast',
+                                                          owner=self)
 
         self._opmerkingBodemKast = EMAttribuut(field=StringField,
                                                naam='opmerking bodem kast',
                                                label='opmerking bodem kast',
                                                objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#Encoder.opmerkingBodemKast',
-                                               definitie='Definitie nog toe te voegen voor eigenschap opmerking bodem kast')
+                                               definitie='Definitie nog toe te voegen voor eigenschap opmerking bodem kast',
+                                               owner=self)
 
         self._opmerkingInspectieOnderhoud = EMAttribuut(field=StringField,
                                                         naam='opmerking inspectie / onderhoud',
                                                         label='opmerking inspectie / onderhoud',
                                                         objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#EMObject.opmerkingInspectieOnderhoud',
-                                                        definitie='Definitie nog toe te voegen voor eigenschap opmerking inspectie / onderhoud')
+                                                        definitie='Definitie nog toe te voegen voor eigenschap opmerking inspectie / onderhoud',
+                                                        owner=self)
 
         self._start = EMAttribuut(field=DateTimeField,
                                   naam='start',
                                   label='start',
                                   objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#EMObject.start',
-                                  definitie='Definitie nog toe te voegen voor eigenschap start')
+                                  definitie='Definitie nog toe te voegen voor eigenschap start',
+                                  owner=self)
 
         self._stofVerwijderen = EMAttribuut(field=BooleanField,
                                             naam='stof verwijderen',
                                             label='stof verwijderen',
                                             objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#Encoder.stofVerwijderen',
-                                            definitie='Definitie nog toe te voegen voor eigenschap stof verwijderen')
+                                            definitie='Definitie nog toe te voegen voor eigenschap stof verwijderen',
+                                            owner=self)
 
     @property
     def algemeneReinheidKast(self):

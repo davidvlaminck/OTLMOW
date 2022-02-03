@@ -20,19 +20,22 @@ class Antenne(Communicatieapparatuur):
                                              naam='frequentierange',
                                              label='frequentierange',
                                              objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Antenne.frequentierange',
-                                             definition='Geeft de frequentierange aan waarbinnen de antenne gebruikt kan worden.')
+                                             definition='Geeft de frequentierange aan waarbinnen de antenne gebruikt kan worden.',
+                                             owner=self)
 
         self._merk = OTLAttribuut(field=KlAntenneMerk,
                                   naam='merk',
                                   label='merk',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Antenne.merk',
-                                  definition='Het merk van de antenne.')
+                                  definition='Het merk van de antenne.',
+                                  owner=self)
 
         self._modelnaam = OTLAttribuut(field=KlAntenneModelnaam,
                                        naam='modelnaam',
                                        label='modelnaam',
                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Antenne.modelnaam',
-                                       definition='De modelnaam/product range van een antenne.')
+                                       definition='De modelnaam/product range van een antenne.',
+                                       owner=self)
 
     @property
     def frequentierange(self):

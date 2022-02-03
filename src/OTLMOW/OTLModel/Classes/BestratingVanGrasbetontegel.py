@@ -18,7 +18,8 @@ class BestratingVanGrasbetontegel(Bestrating):
                                      naam='vulling',
                                      label='vulling',
                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#BestratingVanGrasbetontegel.vulling',
-                                     definition='Het gebruikte materiaal als toevoeging in de vrije openingen van de tegels.')
+                                     definition='Het gebruikte materiaal als toevoeging in de vrije openingen van de tegels.',
+                                     owner=self)
 
     @property
     def vulling(self):

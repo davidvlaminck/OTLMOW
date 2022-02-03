@@ -3,35 +3,40 @@ from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLMOW.OTLModel.Classes.AIMNaamObject import AIMNaamObject
 from OTLMOW.OTLModel.Datatypes.BooleanField import BooleanField
 from OTLMOW.OTLModel.Datatypes.KlToegangscontroleSleuteltype import KlToegangscontroleSleuteltype
+from OTLMOW.GeometrieArtefact.PuntGeometrie import PuntGeometrie
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Toegangscontrole(AIMNaamObject):
+class Toegangscontrole(AIMNaamObject, PuntGeometrie):
     """Component voor controle van de toegang tot een ruimte of behuizing."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Toegangscontrole'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        super().__init__()
+        AIMNaamObject.__init__(self)
+        PuntGeometrie.__init__(self)
 
         self._heeftBadgelezer = OTLAttribuut(field=BooleanField,
                                              naam='heeftBadgelezer',
                                              label='heeft badgelezer',
                                              objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Toegangscontrole.heeftBadgelezer',
-                                             definition='Geeft aan of de toegangscontrole uitgerust is met een badgelezer.')
+                                             definition='Geeft aan of de toegangscontrole uitgerust is met een badgelezer.',
+                                             owner=self)
 
         self._heeftSlotMetAfstandsbediening = OTLAttribuut(field=BooleanField,
                                                            naam='heeftSlotMetAfstandsbediening',
                                                            label='heeft slot met afstandsbediening',
                                                            objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Toegangscontrole.heeftSlotMetAfstandsbediening',
-                                                           definition='Geeft aan of het objecttype waaraan de toegangscontrole bevestigd is, kan geopend worden via een slot met afstandsbediening.')
+                                                           definition='Geeft aan of het objecttype waaraan de toegangscontrole bevestigd is, kan geopend worden via een slot met afstandsbediening.',
+                                                           owner=self)
 
         self._sleutelType = OTLAttribuut(field=KlToegangscontroleSleuteltype,
                                          naam='sleutelType',
                                          label='type sleutel',
                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Toegangscontrole.sleutelType',
-                                         definition='De soort sleutel die wordt gebruikt om de toegang te regelen.')
+                                         definition='De soort sleutel die wordt gebruikt om de toegang te regelen.',
+                                         owner=self)
 
     @property
     def heeftBadgelezer(self):

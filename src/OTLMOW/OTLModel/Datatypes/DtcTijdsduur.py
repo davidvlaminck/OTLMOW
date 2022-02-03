@@ -15,19 +15,22 @@ class DtcTijdsduurWaarden(AttributeInfo):
                                      naam='minuten',
                                      label='minuten',
                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcTijdsduur.minuten',
-                                     definition='Het aantal minuten.')
+                                     definition='Het aantal minuten.',
+                                     owner=self)
 
         self._seconden = OTLAttribuut(field=KwantWrdInSeconde,
                                       naam='seconden',
                                       label='seconden',
                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcTijdsduur.seconden',
-                                      definition='Het aantal seconden.')
+                                      definition='Het aantal seconden.',
+                                      owner=self)
 
         self._uren = OTLAttribuut(field=KwantWrdInUur,
                                   naam='uren',
                                   label='uren',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcTijdsduur.uren',
-                                  definition='Het aantal uren.')
+                                  definition='Het aantal uren.',
+                                  owner=self)
 
     @property
     def minuten(self):

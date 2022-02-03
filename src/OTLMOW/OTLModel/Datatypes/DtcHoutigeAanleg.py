@@ -24,79 +24,92 @@ class DtcHoutigeAanlegWaarden(AttributeInfo):
                                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcHoutigeAanleg.beschermingVraatschade',
                                                     usagenote='Attribuut uit gebruik sinds versie 2.0.0 ',
                                                     deprecated_version='2.0.0',
-                                                    definition='Bescherming van de stam tegen knaagdieren.')
+                                                    definition='Bescherming van de stam tegen knaagdieren.',
+                                                    owner=self)
 
         self._heeftBoomplaat = OTLAttribuut(field=BooleanField,
                                             naam='heeftBoomplaat',
                                             label='heeft boomplaat',
                                             objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcHoutigeAanleg.heeftBoomplaat',
-                                            definition='Boomplaten worden aangebracht rond de stam van bomen, bosgoed en heesters en eventueel vastgezet met piketten. Ze hebben een centrale opening en een rechte snede, zodat ze op eenvoudige wijze rond de planten kunnen aangebracht worden.')
+                                            definition='Boomplaten worden aangebracht rond de stam van bomen, bosgoed en heesters en eventueel vastgezet met piketten. Ze hebben een centrale opening en een rechte snede, zodat ze op eenvoudige wijze rond de planten kunnen aangebracht worden.',
+                                            owner=self)
 
         self._heeftHaagsteun = OTLAttribuut(field=BooleanField,
                                             naam='heeftHaagsteun',
                                             label='heeft haagsteun',
                                             objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcHoutigeAanleg.heeftHaagsteun',
-                                            definition='Duidt op de aanezigheid van een constructie van palen en bedrading die haagbeplanting ondersteunt.')
+                                            definition='Duidt op de aanezigheid van een constructie van palen en bedrading die haagbeplanting ondersteunt.',
+                                            owner=self)
 
         self._heeftWortelgeleidingwortelwering = OTLAttribuut(field=BooleanField,
                                                               naam='heeftWortelgeleidingwortelwering',
                                                               label='heeft wortelgeleiding-wortelwering',
                                                               objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcHoutigeAanleg.heeftWortelgeleidingwortelwering',
-                                                              definition='Wortelgeleiding en –wering moet voorkomen dat boomwortels het trottoir, de middenberm, het fietspad, de rijweg, andere wegverhardingen en leidingstelsels beschadigen. Het heeft als doel om boomwortels naar beneden te leiden, waar ze onder een obstakel verder kunnen groeien.')
+                                                              definition='Wortelgeleiding en –wering moet voorkomen dat boomwortels het trottoir, de middenberm, het fietspad, de rijweg, andere wegverhardingen en leidingstelsels beschadigen. Het heeft als doel om boomwortels naar beneden te leiden, waar ze onder een obstakel verder kunnen groeien.',
+                                                              owner=self)
 
         self._maaischadeBescherming = OTLAttribuut(field=KlBeschermingMaaischade,
                                                    naam='maaischadeBescherming',
                                                    label='maaischade bescherming',
                                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcHoutigeAanleg.maaischadeBescherming',
-                                                   definition='Bescherming van de stam tegen maaimachines.')
+                                                   definition='Bescherming van de stam tegen maaimachines.',
+                                                   owner=self)
 
         self._plantafstand = OTLAttribuut(field=NonNegIntegerField,
                                           naam='plantafstand',
                                           label='plantafstand',
                                           objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcHoutigeAanleg.plantafstand',
-                                          definition='Aantal planten per lopende meter.')
+                                          definition='Aantal planten per lopende meter.',
+                                          owner=self)
 
         self._plantdichtheid = OTLAttribuut(field=NonNegIntegerField,
                                             naam='plantdichtheid',
                                             label='plantdichtheid',
                                             objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcHoutigeAanleg.plantdichtheid',
-                                            definition='Aantal planten per vierkante meter.')
+                                            definition='Aantal planten per vierkante meter.',
+                                            owner=self)
 
         self._plantmaatHoogte = OTLAttribuut(field=KlPlantmaatHoogte,
                                              naam='plantmaatHoogte',
                                              label='plantmaat hoogte',
                                              objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcHoutigeAanleg.plantmaatHoogte',
-                                             definition='De hoogte van de plant in cm gemeten tussen een minimum en maximum waarde.')
+                                             definition='De hoogte van de plant in cm gemeten tussen een minimum en maximum waarde.',
+                                             owner=self)
 
         self._plantmaatOmtrek = OTLAttribuut(field=KlPlantmaatOmtrek,
                                              naam='plantmaatOmtrek',
                                              label='plantmaat omtrek',
                                              objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcHoutigeAanleg.plantmaatOmtrek',
-                                             definition='De stamomtrek in centimeter  (gemeten op 1 m boven het maaiveld) met een minimum en maximum waarde.')
+                                             definition='De stamomtrek in centimeter  (gemeten op 1 m boven het maaiveld) met een minimum en maximum waarde.',
+                                             owner=self)
 
         self._plantverband = OTLAttribuut(field=KlVegetatiePlantverband,
                                           naam='plantverband',
                                           label='plantverband',
                                           objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcHoutigeAanleg.plantverband',
-                                          definition='De wijze waarop de planten zijn geschikt.')
+                                          definition='De wijze waarop de planten zijn geschikt.',
+                                          owner=self)
 
         self._vormAanlevering = OTLAttribuut(field=KlVormAanleveringHoutigeVegetatie,
                                              naam='vormAanlevering',
                                              label='vorm aanlevering',
                                              objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcHoutigeAanleg.vormAanlevering',
-                                             definition='De wijze waarop het plantgoed wordt aangeleverd.')
+                                             definition='De wijze waarop het plantgoed wordt aangeleverd.',
+                                             owner=self)
 
         self._vraatschadeBescherming = OTLAttribuut(field=KlMateriaalBeschermingVraatschade,
                                                     naam='vraatschadeBescherming',
                                                     label='vraatschade bescherming',
                                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcHoutigeAanleg.vraatschadeBescherming',
-                                                    definition='Bescherming van de stam tegen knaagdieren.')
+                                                    definition='Bescherming van de stam tegen knaagdieren.',
+                                                    owner=self)
 
         self._wortel = OTLAttribuut(field=KlVegetatieWortel,
                                     naam='wortel',
                                     label='wortel',
                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcHoutigeAanleg.wortel',
-                                    definition='De manier van levering en aanplanting van het wortelgestel van de boom of plant.')
+                                    definition='De manier van levering en aanplanting van het wortelgestel van de boom of plant.',
+                                    owner=self)
 
     @property
     def beschermingVraatschade(self):

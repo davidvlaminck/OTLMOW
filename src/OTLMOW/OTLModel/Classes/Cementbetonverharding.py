@@ -24,43 +24,50 @@ class Cementbetonverharding(LaagBouwklasse):
                                                naam='aantalAnkerstaven',
                                                label='aantal ankerstaven',
                                                objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Cementbetonverharding.aantalAnkerstaven',
-                                               definition='Aantal ankerstaven waarmee de voegen verankerd zijn.')
+                                               definition='Aantal ankerstaven waarmee de voegen verankerd zijn.',
+                                               owner=self)
 
         self._aardVerharding = OTLAttribuut(field=KlCBVAardVerharding,
                                             naam='aardVerharding',
                                             label='aard verharding',
                                             objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Cementbetonverharding.aardVerharding',
-                                            definition='De uitvoeringswijze van de cementbetonverharding.')
+                                            definition='De uitvoeringswijze van de cementbetonverharding.',
+                                            owner=self)
 
         self._krimpvoegFrequentie = OTLAttribuut(field=KwantWrdInMeter,
                                                  naam='krimpvoegFrequentie',
                                                  label='krimpvoeg frequentie',
                                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Cementbetonverharding.krimpvoegFrequentie',
-                                                 definition='De afstand tussen de krimpvoegen in meter.')
+                                                 definition='De afstand tussen de krimpvoegen in meter.',
+                                                 owner=self)
 
         self._laagtype = OTLAttribuut(field=KlCBVLaagtype,
                                       naam='laagtype',
                                       label='laagtype',
                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Cementbetonverharding.laagtype',
-                                      definition='Het type van de cementbetonverhardingslaag.')
+                                      definition='Het type van de cementbetonverhardingslaag.',
+                                      owner=self)
 
         self._oppervlakbehandeling = OTLAttribuut(field=KlCBVOppervlaktebehandeling,
                                                   naam='oppervlakbehandeling',
                                                   label='oppervlakbehandeling',
                                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Cementbetonverharding.oppervlakbehandeling',
-                                                  definition='Behandeling die wordt toegepast op het oppervlak van een laag, met of zonder toevoeging van materialen, en bestemd is om de eigenschappen van de laag te verbeteren, hetzij bij de uitvoering, hetzij achteraf.')
+                                                  definition='Behandeling die wordt toegepast op het oppervlak van een laag, met of zonder toevoeging van materialen, en bestemd is om de eigenschappen van de laag te verbeteren, hetzij bij de uitvoering, hetzij achteraf.',
+                                                  owner=self)
 
         self._supplementen = OTLAttribuut(field=DtcSupplementenCBV,
                                           naam='supplementen',
                                           label='supplementen van de verharding',
                                           objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Cementbetonverharding.supplementen',
-                                          definition='Additionele toevoegingen aan de verharding.')
+                                          definition='Additionele toevoegingen aan de verharding.',
+                                          owner=self)
 
         self._volume = OTLAttribuut(field=KwantWrdInKubiekeMeter,
                                     naam='volume',
                                     label='volume',
                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Cementbetonverharding.volume',
-                                    definition='Het volume van cementbetonverharding in kubieke meter.')
+                                    definition='Het volume van cementbetonverharding in kubieke meter.',
+                                    owner=self)
 
     @property
     def aantalAnkerstaven(self):

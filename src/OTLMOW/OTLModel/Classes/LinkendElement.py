@@ -21,7 +21,8 @@ class LinkendElement(AIMObject):
                                              label='technische fiche',
                                              objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#LinkendElement.technischeFiche',
                                              kardinaliteit_max='*',
-                                             definition='De technische fiche van een linkend element.')
+                                             definition='De technische fiche van een linkend element.',
+                                             owner=self)
 
     @property
     def technischeFiche(self):

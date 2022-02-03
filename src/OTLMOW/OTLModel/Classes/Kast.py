@@ -6,10 +6,12 @@ from OTLMOW.OTLModel.Datatypes.BooleanField import BooleanField
 from OTLMOW.OTLModel.Datatypes.DtcAfmetingBxlxhInMm import DtcAfmetingBxlxhInMm
 from OTLMOW.OTLModel.Datatypes.DtcDocument import DtcDocument
 from OTLMOW.OTLModel.Datatypes.KlAlgMateriaal import KlAlgMateriaal
+from OTLMOW.GeometrieArtefact.PuntGeometrie import PuntGeometrie
+from OTLMOW.GeometrieArtefact.VlakGeometrie import VlakGeometrie
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Kast(Behuizing):
+class Kast(Behuizing, PuntGeometrie, VlakGeometrie):
     """Abstracte voor allerlei types kasten."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Kast'
@@ -17,31 +19,37 @@ class Kast(Behuizing):
 
     @abstractmethod
     def __init__(self):
-        super().__init__()
+        Behuizing.__init__(self)
+        PuntGeometrie.__init__(self)
+        VlakGeometrie.__init__(self)
 
         self._afmeting = OTLAttribuut(field=DtcAfmetingBxlxhInMm,
                                       naam='afmeting',
                                       label='afmeting',
                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Kast.afmeting',
-                                      definition='Buitenafmeting van de kast als maximale breedte, lengte en hoogte in millimeter.')
+                                      definition='Buitenafmeting van de kast als maximale breedte, lengte en hoogte in millimeter.',
+                                      owner=self)
 
         self._heeftVerlichting = OTLAttribuut(field=BooleanField,
                                               naam='heeftVerlichting',
                                               label='heeft verlichting',
                                               objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Kast.heeftVerlichting',
-                                              definition='Geeft aan of er verlichting aanwezig is binnen de kast.')
+                                              definition='Geeft aan of er verlichting aanwezig is binnen de kast.',
+                                              owner=self)
 
         self._indelingsplan = OTLAttribuut(field=DtcDocument,
                                            naam='indelingsplan',
                                            label='indelingsplan',
                                            objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Kast.indelingsplan',
-                                           definition='Schematisch overzicht van de indeling van de kast volgens de aanwezige technieken in vooraanzicht.')
+                                           definition='Schematisch overzicht van de indeling van de kast volgens de aanwezige technieken in vooraanzicht.',
+                                           owner=self)
 
         self._kastmateriaal = OTLAttribuut(field=KlAlgMateriaal,
                                            naam='kastmateriaal',
                                            label='kastmateriaal',
                                            objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Kast.kastmateriaal',
-                                           definition='Materiaal waaruit de kast is opgebouwd.')
+                                           definition='Materiaal waaruit de kast is opgebouwd.',
+                                           owner=self)
 
     @property
     def afmeting(self):

@@ -18,7 +18,8 @@ class Luchtkwaliteitreflector(Luchtkwaliteittoestel):
                                          naam='isBeschermd',
                                          label='is beschermd',
                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Luchtkwaliteitreflector.isBeschermd',
-                                         definition='Geeft aan of de sensor beschermd is tegen beschadiging, bv. door een aanrijding.')
+                                         definition='Geeft aan of de sensor beschermd is tegen beschadiging, bv. door een aanrijding.',
+                                         owner=self)
 
     @property
     def isBeschermd(self):

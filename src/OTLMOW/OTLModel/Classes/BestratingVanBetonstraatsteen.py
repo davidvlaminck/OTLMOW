@@ -21,25 +21,29 @@ class BestratingVanBetonstraatsteen(Bestrating):
                                                               naam='afmetingVanBestratingselementLxB',
                                                               label='afmeting van bestratingselement LxB',
                                                               objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#BestratingVanBetonstraatsteen.afmetingVanBestratingselementLxB',
-                                                              definition='De lengte en breedte van het bestratingselement in millimeter.')
+                                                              definition='De lengte en breedte van het bestratingselement in millimeter.',
+                                                              owner=self)
 
         self._afwerking = OTLAttribuut(field=KlBestratingAfwerking,
                                        naam='afwerking',
                                        label='afwerking',
                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#BestratingVanBetonstraatsteen.afwerking',
-                                       definition='Bepaling van afwerking van de betonstraatstenen.')
+                                       definition='Bepaling van afwerking van de betonstraatstenen.',
+                                       owner=self)
 
         self._randafwerking = OTLAttribuut(field=DtcBSSRandafwerking,
                                            naam='randafwerking',
                                            label='randafwerking',
                                            objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#BestratingVanBetonstraatsteen.randafwerking',
-                                           definition='De wijze waarop de rand van de betonstraatsteenverharding is afgewerkt.')
+                                           definition='De wijze waarop de rand van de betonstraatsteenverharding is afgewerkt.',
+                                           owner=self)
 
         self._type = OTLAttribuut(field=KlBSSType,
                                   naam='type',
                                   label='type',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#BestratingVanBetonstraatsteen.type',
-                                  definition='Het type betonstraatsteen.')
+                                  definition='Het type betonstraatsteen.',
+                                  owner=self)
 
     @property
     def afmetingVanBestratingselementLxB(self):

@@ -16,13 +16,15 @@ class KwantWrdInGigabyteWaarden(AttributeInfo):
                                               objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInGigabyte.standaardEenheid',
                                               usagenote='"GBy"^^cdt:ucumunit',
                                               constraints='"GBy"^^cdt:ucumunit',
-                                              definition='De standaard eenheid bij dit datatype is uitgedrukt in gigabyte.')
+                                              definition='De standaard eenheid bij dit datatype is uitgedrukt in gigabyte.',
+                                              owner=self)
 
         self._waarde = OTLAttribuut(field=FloatOrDecimalField,
                                     naam='waarde',
                                     label='waarde',
                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInGigabyte.waarde',
-                                    definition='Bevat een getal die bij het datatype hoort.')
+                                    definition='Bevat een getal die bij het datatype hoort.',
+                                    owner=self)
 
     @property
     def standaardEenheid(self):

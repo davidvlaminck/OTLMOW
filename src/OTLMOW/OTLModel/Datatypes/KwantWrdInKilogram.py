@@ -16,13 +16,15 @@ class KwantWrdInKilogramWaarden(AttributeInfo):
                                               objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInKilogram.standaardEenheid',
                                               usagenote='"kg"^^cdt:ucumunit',
                                               constraints='"kg"^^cdt:ucumunit',
-                                              definition='De standaard eenheid bij dit datatype is uitgedrukt in kilogram.')
+                                              definition='De standaard eenheid bij dit datatype is uitgedrukt in kilogram.',
+                                              owner=self)
 
         self._waarde = OTLAttribuut(field=FloatOrDecimalField,
                                     naam='waarde',
                                     label='waarde',
                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInKilogram.waarde',
-                                    definition='Bevat een getal die bij het datatype hoort.')
+                                    definition='Bevat een getal die bij het datatype hoort.',
+                                    owner=self)
 
     @property
     def standaardEenheid(self):

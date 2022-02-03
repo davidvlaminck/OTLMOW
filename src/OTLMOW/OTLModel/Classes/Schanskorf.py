@@ -23,50 +23,58 @@ class Schanskorf(AndereVerharding):
                                                     naam='heeftVerankeringspalen',
                                                     label='heeft verankeringspalen',
                                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Schanskorf.heeftVerankeringspalen',
-                                                    definition='Aanduiding of de palen de functie hebben om een schanskorf te verankeren.')
+                                                    definition='Aanduiding of de palen de functie hebben om een schanskorf te verankeren.',
+                                                    owner=self)
 
         self._isGegalvaniseerd = OTLAttribuut(field=BooleanField,
                                               naam='isGegalvaniseerd',
                                               label='is gegalvaniseerd',
                                               objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Schanskorf.isGegalvaniseerd',
-                                              definition='Aanduiding of de schanskorf gegalvaniseerd is.')
+                                              definition='Aanduiding of de schanskorf gegalvaniseerd is.',
+                                              owner=self)
 
         self._isGelast = OTLAttribuut(field=BooleanField,
                                       naam='isGelast',
                                       label='is gelast',
                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Schanskorf.isGelast',
-                                      definition='Aanduiding of de schanskorf gelast is.')
+                                      definition='Aanduiding of de schanskorf gelast is.',
+                                      owner=self)
 
         self._kaliber = OTLAttribuut(field=KlStortsteenKaliber,
                                      naam='kaliber',
                                      label='kaliber',
                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Schanskorf.kaliber',
-                                     definition='Het kaliber of gemiddelde diameter van de stenen in de schanskorf.')
+                                     definition='Het kaliber of gemiddelde diameter van de stenen in de schanskorf.',
+                                     owner=self)
 
         self._materiaalVulling = OTLAttribuut(field=KlStortsteenType,
                                               naam='materiaalVulling',
                                               label='materiaalvulling',
                                               objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Schanskorf.materiaalVulling',
-                                              definition='Het soort stenen waaruit de opvulling van een schanskorf bestaat.')
+                                              definition='Het soort stenen waaruit de opvulling van een schanskorf bestaat.',
+                                              owner=self)
 
         self._technischeFiche = OTLAttribuut(field=DtcDocument,
                                              naam='technischeFiche',
                                              label='technische fiche',
                                              objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Schanskorf.technischeFiche',
                                              kardinaliteit_max='*',
-                                             definition='De technische fiche van de schanskorven als bijlage.')
+                                             definition='De technische fiche van de schanskorven als bijlage.',
+                                             owner=self)
 
         self._type = OTLAttribuut(field=KlTypeSchanskorf,
                                   naam='type',
                                   label='type',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Schanskorf.type',
-                                  definition='Duidt het type schanskorf aan.')
+                                  definition='Duidt het type schanskorf aan.',
+                                  owner=self)
 
         self._vorm = OTLAttribuut(field=KlSchanskorfVorm,
                                   naam='vorm',
                                   label='vorm',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Schanskorf.vorm',
-                                  definition='De gebruikte vorm van de schanskorf.')
+                                  definition='De gebruikte vorm van de schanskorf.',
+                                  owner=self)
 
     @property
     def heeftVerankeringspalen(self):

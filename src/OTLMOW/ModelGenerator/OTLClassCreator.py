@@ -67,7 +67,9 @@ class OTLClassCreator(AbstractDatatypeCreator):
             inheritances.append(
                 Inheritance(base_name='RelatieInteractor', base_uri='', class_name='', class_uri='', deprecated_version=''))
 
-        datablock = ['# coding=utf-8', 'from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut']
+        datablock = ['# coding=utf-8']
+        if len(attributen) > 0:
+            datablock.append('from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut')
 
         if osloClass.abstract == 1:
             if len(inheritances) > 0:
@@ -91,7 +93,7 @@ class OTLClassCreator(AbstractDatatypeCreator):
 
         listOfGeometryTypes = self.getGeometryTypesFromUri(osloClass.objectUri)
         for GeometryType in listOfGeometryTypes:
-            datablock.append(f'from OTLMOW.GeometryArtefact.{GeometryType.__name__} import {GeometryType.__name__}')
+            datablock.append(f'from OTLMOW.GeometrieArtefact.{GeometryType.__name__} import {GeometryType.__name__}')
 
         datablock.append('')
         datablock.append('')

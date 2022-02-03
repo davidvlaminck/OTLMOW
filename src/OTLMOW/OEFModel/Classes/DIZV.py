@@ -20,157 +20,183 @@ class DIZV(EMObject):
                                                               naam='Aanmelden onderhoud bij VTC 03/443 63 31',
                                                               label='Aanmelden onderhoud bij VTC 03/443 63 31',
                                                               objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#DIZV.aanmeldenOnderhoudBijVtc034436331',
-                                                              definitie='Definitie nog toe te voegen voor eigenschap Aanmelden onderhoud bij VTC 03/443 63 31')
+                                                              definitie='Definitie nog toe te voegen voor eigenschap Aanmelden onderhoud bij VTC 03/443 63 31',
+                                                              owner=self)
 
         self._afmeldenOnderhoudBijVtc034436331 = EMAttribuut(field=BooleanField,
                                                              naam='Afmelden onderhoud bij VTC 03/443 63 31',
                                                              label='Afmelden onderhoud bij VTC 03/443 63 31',
                                                              objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#DIZV.afmeldenOnderhoudBijVtc034436331',
-                                                             definitie='Definitie nog toe te voegen voor eigenschap Afmelden onderhoud bij VTC 03/443 63 31')
+                                                             definitie='Definitie nog toe te voegen voor eigenschap Afmelden onderhoud bij VTC 03/443 63 31',
+                                                             owner=self)
 
         self._bijkomendeUitlegOpmerkingen = EMAttribuut(field=BooleanField,
                                                         naam='Bijkomende uitleg/opmerkingen',
                                                         label='Bijkomende uitleg/opmerkingen',
                                                         objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#DIZV.bijkomendeUitlegOpmerkingen',
-                                                        definitie='Definitie nog toe te voegen voor eigenschap Bijkomende uitleg/opmerkingen')
+                                                        definitie='Definitie nog toe te voegen voor eigenschap Bijkomende uitleg/opmerkingen',
+                                                        owner=self)
 
         self._checkAlgemeneReinheidWegkantkast = EMAttribuut(field=StringField,
                                                              naam='Check algemene reinheid wegkantkast',
                                                              label='Check algemene reinheid wegkantkast',
                                                              objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#DIZV.checkAlgemeneReinheidWegkantkast',
-                                                             definitie='Definitie nog toe te voegen voor eigenschap Check algemene reinheid wegkantkast')
+                                                             definitie='Definitie nog toe te voegen voor eigenschap Check algemene reinheid wegkantkast',
+                                                             owner=self)
 
         self._checkDataStroomMiv = EMAttribuut(field=StringField,
                                                naam='Check data stroom MIV',
                                                label='Check data stroom MIV',
                                                objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#DIZV.checkDataStroomMiv',
-                                               definitie='Definitie nog toe te voegen voor eigenschap Check data stroom MIV')
+                                               definitie='Definitie nog toe te voegen voor eigenschap Check data stroom MIV',
+                                               owner=self)
 
         self._checkInkomendeSignalenCctv = EMAttribuut(field=StringField,
                                                        naam='Check inkomende signalen CCTV',
                                                        label='Check inkomende signalen CCTV',
                                                        objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#DIZV.checkInkomendeSignalenCctv',
-                                                       definitie='Definitie nog toe te voegen voor eigenschap Check inkomende signalen CCTV')
+                                                       definitie='Definitie nog toe te voegen voor eigenschap Check inkomende signalen CCTV',
+                                                       owner=self)
 
         self._checkVentilatorComputer = EMAttribuut(field=StringField,
                                                     naam='Check ventilator computer',
                                                     label='Check ventilator computer',
                                                     objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#DIZV.checkVentilatorComputer',
-                                                    definitie='Definitie nog toe te voegen voor eigenschap Check ventilator computer')
+                                                    definitie='Definitie nog toe te voegen voor eigenschap Check ventilator computer',
+                                                    owner=self)
 
         self._checkenBevestigingspuntenAanCameraS = EMAttribuut(field=StringField,
                                                                 naam="Checken bevestigingspunten aan camera's",
                                                                 label="Checken bevestigingspunten aan camera's",
                                                                 objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#DIZV.checkenBevestigingspuntenAanCameraS',
-                                                                definitie="Definitie nog toe te voegen voor eigenschap Checken bevestigingspunten aan camera\'s")
+                                                                definitie="Definitie nog toe te voegen voor eigenschap Checken bevestigingspunten aan camera\'s",
+                                                                owner=self)
 
         self._checkenConnectiesAnprCameraS = EMAttribuut(field=StringField,
                                                          naam="Checken connecties ANPR camera's",
                                                          label="Checken connecties ANPR camera's",
                                                          objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#DIZV.checkenConnectiesAnprCameraS',
-                                                         definitie="Definitie nog toe te voegen voor eigenschap Checken connecties ANPR camera\'s")
+                                                         definitie="Definitie nog toe te voegen voor eigenschap Checken connecties ANPR camera\'s",
+                                                         owner=self)
 
         self._checkenVerankeringBeugelThvDeBrug = EMAttribuut(field=StringField,
                                                               naam='Checken verankering beugel thv de brug',
                                                               label='Checken verankering beugel thv de brug',
                                                               objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#DIZV.checkenVerankeringBeugelThvDeBrug',
-                                                              definitie='Definitie nog toe te voegen voor eigenschap Checken verankering beugel thv de brug')
+                                                              definitie='Definitie nog toe te voegen voor eigenschap Checken verankering beugel thv de brug',
+                                                              owner=self)
 
         self._checkenWaterdichteBehuizingRj45Anpr = EMAttribuut(field=StringField,
                                                                 naam='Checken waterdichte behuizing RJ 45 ANPR',
                                                                 label='Checken waterdichte behuizing RJ 45 ANPR',
                                                                 objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#DIZV.checkenWaterdichteBehuizingRj45Anpr',
-                                                                definitie='Definitie nog toe te voegen voor eigenschap Checken waterdichte behuizing RJ 45 ANPR')
+                                                                definitie='Definitie nog toe te voegen voor eigenschap Checken waterdichte behuizing RJ 45 ANPR',
+                                                                owner=self)
 
         self._controleBedrijfstemperatuurComputer = EMAttribuut(field=StringField,
                                                                 naam='Controle bedrijfstemperatuur computer',
                                                                 label='Controle bedrijfstemperatuur computer',
                                                                 objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#DIZV.controleBedrijfstemperatuurComputer',
-                                                                definitie='Definitie nog toe te voegen voor eigenschap Controle bedrijfstemperatuur computer')
+                                                                definitie='Definitie nog toe te voegen voor eigenschap Controle bedrijfstemperatuur computer',
+                                                                owner=self)
 
         self._controleSpanningsomvormers12v = EMAttribuut(field=StringField,
                                                           naam='Controle spanningsomvormers 12V',
                                                           label='Controle spanningsomvormers 12V',
                                                           objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#DIZV.controleSpanningsomvormers12v',
-                                                          definitie='Definitie nog toe te voegen voor eigenschap Controle spanningsomvormers 12V')
+                                                          definitie='Definitie nog toe te voegen voor eigenschap Controle spanningsomvormers 12V',
+                                                          owner=self)
 
         self._controleStaatWegkantkast = EMAttribuut(field=BooleanField,
                                                      naam='Controle staat wegkantkast',
                                                      label='Controle staat wegkantkast',
                                                      objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#DIZV.controleStaatWegkantkast',
-                                                     definitie='Definitie nog toe te voegen voor eigenschap Controle staat wegkantkast')
+                                                     definitie='Definitie nog toe te voegen voor eigenschap Controle staat wegkantkast',
+                                                     owner=self)
 
         self._controleVerbindingTelematicanetwerk = EMAttribuut(field=StringField,
                                                                 naam='Controle verbinding Telematicanetwerk',
                                                                 label='Controle verbinding Telematicanetwerk',
                                                                 objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#DIZV.controleVerbindingTelematicanetwerk',
-                                                                definitie='Definitie nog toe te voegen voor eigenschap Controle verbinding Telematicanetwerk')
+                                                                definitie='Definitie nog toe te voegen voor eigenschap Controle verbinding Telematicanetwerk',
+                                                                owner=self)
 
         self._controleerDatapakketAnprCameras = EMAttribuut(field=StringField,
                                                             naam='Controleer datapakket ANPR cameras',
                                                             label='Controleer datapakket ANPR cameras',
                                                             objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#DIZV.controleerDatapakketAnprCameras',
-                                                            definitie='Definitie nog toe te voegen voor eigenschap Controleer datapakket ANPR cameras')
+                                                            definitie='Definitie nog toe te voegen voor eigenschap Controleer datapakket ANPR cameras',
+                                                            owner=self)
 
         self._eindeDizv = EMAttribuut(field=DateTimeField,
                                       naam='Einde (DIZV)',
                                       label='Einde (DIZV)',
                                       objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#DIZV.eindeDizv',
-                                      definitie='Definitie nog toe te voegen voor eigenschap Einde (DIZV)')
+                                      definitie='Definitie nog toe te voegen voor eigenschap Einde (DIZV)',
+                                      owner=self)
 
         self._geefUitlegOpmerkingen = EMAttribuut(field=StringField,
                                                   naam='Geef uitleg/opmerkingen',
                                                   label='Geef uitleg/opmerkingen',
                                                   objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#DIZV.geefUitlegOpmerkingen',
-                                                  definitie='Definitie nog toe te voegen voor eigenschap Geef uitleg/opmerkingen')
+                                                  definitie='Definitie nog toe te voegen voor eigenschap Geef uitleg/opmerkingen',
+                                                  owner=self)
 
         self._goedeWerkingSoftwareNagekeken = EMAttribuut(field=BooleanField,
                                                           naam='Goede werking software nagekeken',
                                                           label='Goede werking software nagekeken',
                                                           objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#DIZV.goedeWerkingSoftwareNagekeken',
-                                                          definitie='Definitie nog toe te voegen voor eigenschap Goede werking software nagekeken')
+                                                          definitie='Definitie nog toe te voegen voor eigenschap Goede werking software nagekeken',
+                                                          owner=self)
 
         self._reinigingLensEnControleBehuizingCam = EMAttribuut(field=BooleanField,
                                                                 naam='Reiniging lens en controle behuizing cam',
                                                                 label='Reiniging lens en controle behuizing cam',
                                                                 objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#DIZV.reinigingLensEnControleBehuizingCam',
-                                                                definitie='Definitie nog toe te voegen voor eigenschap Reiniging lens en controle behuizing cam')
+                                                                definitie='Definitie nog toe te voegen voor eigenschap Reiniging lens en controle behuizing cam',
+                                                                owner=self)
 
         self._spanningsomvormerVervangen = EMAttribuut(field=BooleanField,
                                                        naam='Spanningsomvormer vervangen?',
                                                        label='Spanningsomvormer vervangen?',
                                                        objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#DIZV.spanningsomvormerVervangen',
-                                                       definitie='Definitie nog toe te voegen voor eigenschap Spanningsomvormer vervangen?')
+                                                       definitie='Definitie nog toe te voegen voor eigenschap Spanningsomvormer vervangen?',
+                                                       owner=self)
 
         self._startDizv = EMAttribuut(field=DateTimeField,
                                       naam='Start (DIZV)',
                                       label='Start (DIZV)',
                                       objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#DIZV.startDizv',
-                                      definitie='Definitie nog toe te voegen voor eigenschap Start (DIZV)')
+                                      definitie='Definitie nog toe te voegen voor eigenschap Start (DIZV)',
+                                      owner=self)
 
         self._stofVerwijderenVanDeComponenten = EMAttribuut(field=BooleanField,
                                                             naam='Stof verwijderen van de componenten',
                                                             label='Stof verwijderen van de componenten',
                                                             objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#DIZV.stofVerwijderenVanDeComponenten',
-                                                            definitie='Definitie nog toe te voegen voor eigenschap Stof verwijderen van de componenten')
+                                                            definitie='Definitie nog toe te voegen voor eigenschap Stof verwijderen van de componenten',
+                                                            owner=self)
 
         self._visueleControleBevestigingsbeugelBrug = EMAttribuut(field=StringField,
                                                                   naam='Visuele controle bevestigingsbeugel brug',
                                                                   label='Visuele controle bevestigingsbeugel brug',
                                                                   objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#DIZV.visueleControleBevestigingsbeugelBrug',
-                                                                  definitie='Definitie nog toe te voegen voor eigenschap Visuele controle bevestigingsbeugel brug')
+                                                                  definitie='Definitie nog toe te voegen voor eigenschap Visuele controle bevestigingsbeugel brug',
+                                                                  owner=self)
 
         self._vochtigheidOpBodemKast = EMAttribuut(field=BooleanField,
                                                    naam='Vochtigheid op bodem kast',
                                                    label='Vochtigheid op bodem kast',
                                                    objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#DIZV.vochtigheidOpBodemKast',
-                                                   definitie='Definitie nog toe te voegen voor eigenschap Vochtigheid op bodem kast')
+                                                   definitie='Definitie nog toe te voegen voor eigenschap Vochtigheid op bodem kast',
+                                                   owner=self)
 
         self._invullenVanDeBezoekersfiche = EMAttribuut(field=BooleanField,
                                                         naam='invullen van de bezoekersfiche',
                                                         label='invullen van de bezoekersfiche',
                                                         objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#DIZV.invullenVanDeBezoekersfiche',
-                                                        definitie='Definitie nog toe te voegen voor eigenschap invullen van de bezoekersfiche')
+                                                        definitie='Definitie nog toe te voegen voor eigenschap invullen van de bezoekersfiche',
+                                                        owner=self)
 
     @property
     def aanmeldenOnderhoudBijVtc034436331(self):

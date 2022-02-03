@@ -22,13 +22,15 @@ class Bebakening(AIMObject, Signalisatie):
                                                     naam='kleurReflectorAflopend',
                                                     label='kleur aflopend',
                                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Bebakening.kleurReflectorAflopend',
-                                                    definition='De kleur van de reflector stroomafwaarts.')
+                                                    definition='De kleur van de reflector stroomafwaarts.',
+                                                    owner=self)
 
         self._kleurReflectorOplopend = OTLAttribuut(field=KlKleurReflector,
                                                     naam='kleurReflectorOplopend',
                                                     label='kleur oplopend',
                                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Bebakening.kleurReflectorOplopend',
-                                                    definition='De kleur van de reflector stroomopwaarts.')
+                                                    definition='De kleur van de reflector stroomopwaarts.',
+                                                    owner=self)
 
     @property
     def kleurReflectorAflopend(self):

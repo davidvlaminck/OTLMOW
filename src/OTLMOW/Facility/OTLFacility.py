@@ -28,8 +28,8 @@ class OTLFacility:
         self.logger = instanceLogger
         self.collector = None
         self.geoAcollector = None
-        self.modelCreator = None
-        self.oef_model_creator = None
+        self.modelCreator: None | OTLModelCreator = None
+        self.oef_model_creator: None | OEFModelCreator = None
         self.posten_collector = None
         self.posten_creator = None
         self.davieExporter = DavieExporter()

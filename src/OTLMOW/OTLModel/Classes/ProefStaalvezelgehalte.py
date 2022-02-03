@@ -2,23 +2,30 @@
 from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLMOW.OTLModel.Classes.Proef import Proef
 from OTLMOW.OTLModel.Datatypes.DtcDocument import DtcDocument
+from OTLMOW.GeometrieArtefact.PuntGeometrie import PuntGeometrie
+from OTLMOW.GeometrieArtefact.LijnGeometrie import LijnGeometrie
+from OTLMOW.GeometrieArtefact.VlakGeometrie import VlakGeometrie
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class ProefStaalvezelgehalte(Proef):
+class ProefStaalvezelgehalte(Proef, PuntGeometrie, LijnGeometrie, VlakGeometrie):
     """Bepaling van de hoeveelheid staalvezels in de cementbetonverharding."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefStaalvezelgehalte'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        super().__init__()
+        Proef.__init__(self)
+        LijnGeometrie.__init__(self)
+        PuntGeometrie.__init__(self)
+        VlakGeometrie.__init__(self)
 
         self._staalvezelgehalte = OTLAttribuut(field=DtcDocument,
                                                naam='staalvezelgehalte',
                                                label='staalvezelgehalte',
                                                objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefStaalvezelgehalte.staalvezelgehalte',
-                                               definition='Het resultaat van de test van het gemeten staalvezelgehalte in de BV laag.')
+                                               definition='Het resultaat van de test van het gemeten staalvezelgehalte in de BV laag.',
+                                               owner=self)
 
     @property
     def staalvezelgehalte(self):

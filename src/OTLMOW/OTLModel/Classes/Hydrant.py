@@ -20,25 +20,29 @@ class Hydrant(Brandvoorziening):
                                       naam='diameter',
                                       label='diameter',
                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Hydrant.diameter',
-                                      definition='Diameter van het aftappunt.')
+                                      definition='Diameter van het aftappunt.',
+                                      owner=self)
 
         self._heeftEigenAfsluitkraan = OTLAttribuut(field=BooleanField,
                                                     naam='heeftEigenAfsluitkraan',
                                                     label='heeft eigen afsluitkraan',
                                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Hydrant.heeftEigenAfsluitkraan',
-                                                    definition='Geeft aan of de hydrant ter plaatse kan afgesloten/opengezet kan worden.')
+                                                    definition='Geeft aan of de hydrant ter plaatse kan afgesloten/opengezet kan worden.',
+                                                    owner=self)
 
         self._heeftIsolatie = OTLAttribuut(field=BooleanField,
                                            naam='heeftIsolatie',
                                            label='heeft isolatie',
                                            objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Hydrant.heeftIsolatie',
-                                           definition='Geeft aan of de hydrant voorzien is van eigen isolatie.')
+                                           definition='Geeft aan of de hydrant voorzien is van eigen isolatie.',
+                                           owner=self)
 
         self._koppeling = OTLAttribuut(field=KlHydrantKoppeling,
                                        naam='koppeling',
                                        label='koppeling',
                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Hydrant.koppeling',
-                                       definition='Aard van de koppeling voor aansluiting van een aftapping.')
+                                       definition='Aard van de koppeling voor aansluiting van een aftapping.',
+                                       owner=self)
 
     @property
     def diameter(self):

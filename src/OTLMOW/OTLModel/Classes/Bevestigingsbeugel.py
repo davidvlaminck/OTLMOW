@@ -5,10 +5,11 @@ from OTLMOW.OTLModel.Classes.BevestigingGC import BevestigingGC
 from OTLMOW.OTLModel.Datatypes.BooleanField import BooleanField
 from OTLMOW.OTLModel.Datatypes.DtcDocument import DtcDocument
 from OTLMOW.OTLModel.Datatypes.KlBevestigingsbeugelType import KlBevestigingsbeugelType
+from OTLMOW.GeometrieArtefact.PuntGeometrie import PuntGeometrie
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Bevestigingsbeugel(AIMNaamObject, BevestigingGC):
+class Bevestigingsbeugel(AIMNaamObject, BevestigingGC, PuntGeometrie):
     """Verbindingsstuk waarmee een object kan vastgemaakt worden aan een steun of oppervlak."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bevestigingsbeugel'
@@ -17,6 +18,7 @@ class Bevestigingsbeugel(AIMNaamObject, BevestigingGC):
     def __init__(self):
         AIMNaamObject.__init__(self)
         BevestigingGC.__init__(self)
+        PuntGeometrie.__init__(self)
 
         self._berekeningsnota = OTLAttribuut(field=DtcDocument,
                                              naam='berekeningsnota',
@@ -24,7 +26,8 @@ class Bevestigingsbeugel(AIMNaamObject, BevestigingGC):
                                              objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bevestigingsbeugel.berekeningsnota',
                                              usagenote='Bestanden van het type xlsx of pdf.',
                                              kardinaliteit_max='*',
-                                             definition='Document met de berekeningsnota van de bevestigingsbeugel.')
+                                             definition='Document met de berekeningsnota van de bevestigingsbeugel.',
+                                             owner=self)
 
         self._constructieEnMontageplan = OTLAttribuut(field=DtcDocument,
                                                       naam='constructieEnMontageplan',
@@ -32,19 +35,22 @@ class Bevestigingsbeugel(AIMNaamObject, BevestigingGC):
                                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bevestigingsbeugel.constructieEnMontageplan',
                                                       usagenote='Bestanden van het type dwg of pdf.',
                                                       kardinaliteit_max='*',
-                                                      definition='Document met het constructie- en montageplan van de bevestigingsbeugel.')
+                                                      definition='Document met het constructie- en montageplan van de bevestigingsbeugel.',
+                                                      owner=self)
 
         self._isVerzegeld = OTLAttribuut(field=BooleanField,
                                          naam='isVerzegeld',
                                          label='is verzegeld',
                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bevestigingsbeugel.isVerzegeld',
-                                         definition='Geeft aan of de bevestigingsbeugel verzegeld is tegen het ongemerkt losmaken ervan.')
+                                         definition='Geeft aan of de bevestigingsbeugel verzegeld is tegen het ongemerkt losmaken ervan.',
+                                         owner=self)
 
         self._type = OTLAttribuut(field=KlBevestigingsbeugelType,
                                   naam='type',
                                   label='type',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bevestigingsbeugel.type',
-                                  definition='Het type van de bevestigingsbeugel.')
+                                  definition='Het type van de bevestigingsbeugel.',
+                                  owner=self)
 
     @property
     def berekeningsnota(self):

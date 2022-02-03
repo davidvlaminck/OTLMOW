@@ -14,7 +14,7 @@ class OTLObjectHelper:
             return l
         d = {}
         for k, v in vars(asset).items():
-            if k == '_parent':
+            if k in ['_parent', '_geometry_types']:
                 continue
             if v.waarde is not None and v.waarde != []:
                 if v.field.waardeObject is not None:

@@ -20,19 +20,22 @@ class BestratingVanBetontegel(Bestrating):
                                                               naam='afmetingVanBestratingselementLxB',
                                                               label='afmeting van bestratingselement LxB',
                                                               objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#BestratingVanBetontegel.afmetingVanBestratingselementLxB',
-                                                              definition='De lengte en breedte van het bestratingselement in millimeter.')
+                                                              definition='De lengte en breedte van het bestratingselement in millimeter.',
+                                                              owner=self)
 
         self._afwerking = OTLAttribuut(field=KlBestratingAfwerking,
                                        naam='afwerking',
                                        label='afwerking',
                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#BestratingVanBetontegel.afwerking',
-                                       definition='Bepaling van afwerking van de betontegels.')
+                                       definition='Bepaling van afwerking van de betontegels.',
+                                       owner=self)
 
         self._type = OTLAttribuut(field=KlBSSType,
                                   naam='type',
                                   label='type',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#BestratingVanBetontegel.type',
-                                  definition='Het type betontegel.')
+                                  definition='Het type betontegel.',
+                                  owner=self)
 
     @property
     def afmetingVanBestratingselementLxB(self):

@@ -6,53 +6,61 @@ from OTLMOW.OTLModel.Datatypes.KlFiguratieSoortVerschuind import KlFiguratieSoor
 from OTLMOW.OTLModel.Datatypes.KlFiguratieTypeVerschuind import KlFiguratieTypeVerschuind
 from OTLMOW.OTLModel.Datatypes.KwantWrdInDecimaleGraden import KwantWrdInDecimaleGraden
 from OTLMOW.OTLModel.Datatypes.KwantWrdInVierkanteMeter import KwantWrdInVierkanteMeter
+from OTLMOW.GeometrieArtefact.VlakGeometrie import VlakGeometrie
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class FiguratieMarkeringVerschuind(FiguratieMarkeringToegang):
+class FiguratieMarkeringVerschuind(FiguratieMarkeringToegang, VlakGeometrie):
     """Een schuine markering als figuratie op de weg aangebracht om het verkeer te waarschuwen, informeren of regelen."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#FiguratieMarkeringVerschuind'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        super().__init__()
+        FiguratieMarkeringToegang.__init__(self)
+        VlakGeometrie.__init__(self)
 
         self._basisOppervlakte = OTLAttribuut(field=KwantWrdInVierkanteMeter,
                                               naam='basisOppervlakte',
                                               label='basisoppervlakte',
                                               objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#FiguratieMarkeringVerschuind.basisOppervlakte',
-                                              definition='De (basis) oppervlakte van de markering zoals beschreven in de algemene omzendbrief.')
+                                              definition='De (basis) oppervlakte van de markering zoals beschreven in de algemene omzendbrief.',
+                                              owner=self)
 
         self._code = OTLAttribuut(field=KlFiguratieCodeVerschuind,
                                   naam='code',
                                   label='code',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#FiguratieMarkeringVerschuind.code',
-                                  definition='De code van de verschuinde figuratie markering.')
+                                  definition='De code van de verschuinde figuratie markering.',
+                                  owner=self)
 
         self._hoek = OTLAttribuut(field=KwantWrdInDecimaleGraden,
                                   naam='hoek',
                                   label='hoek',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#FiguratieMarkeringVerschuind.hoek',
-                                  definition='De hoek van de verschuinde figuratiemarkering in decimale graden.')
+                                  definition='De hoek van de verschuinde figuratiemarkering in decimale graden.',
+                                  owner=self)
 
         self._oppervlakte = OTLAttribuut(field=KwantWrdInVierkanteMeter,
                                          naam='oppervlakte',
                                          label='oppervlakte',
                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#FiguratieMarkeringVerschuind.oppervlakte',
-                                         definition='De oppervlakte van de figuratie markering na verschuining.')
+                                         definition='De oppervlakte van de figuratie markering na verschuining.',
+                                         owner=self)
 
         self._soortOmschrijving = OTLAttribuut(field=KlFiguratieSoortVerschuind,
                                                naam='soortOmschrijving',
                                                label='soort omschrijving',
                                                objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#FiguratieMarkeringVerschuind.soortOmschrijving',
-                                               definition='De soort en tevens de omschrijving van de verschuinde figuratie markering.')
+                                               definition='De soort en tevens de omschrijving van de verschuinde figuratie markering.',
+                                               owner=self)
 
         self._type = OTLAttribuut(field=KlFiguratieTypeVerschuind,
                                   naam='type',
                                   label='type',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#FiguratieMarkeringVerschuind.type',
-                                  definition='Het type van de verschuinde figuratie markering.')
+                                  definition='Het type van de verschuinde figuratie markering.',
+                                  owner=self)
 
     @property
     def basisOppervlakte(self):

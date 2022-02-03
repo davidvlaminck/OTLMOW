@@ -17,31 +17,36 @@ class DtcGeluidstestRapportWaarden(AttributeInfo):
                                                        naam='geluidsabsorptieReflectie',
                                                        label='geluidsabsorptie reflectie',
                                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#DtcGeluidstestRapport.geluidsabsorptieReflectie',
-                                                       definition='De absorptie- of reflectiewaarde van het geluidsscherm als geheel getal.')
+                                                       definition='De absorptie- of reflectiewaarde van het geluidsscherm als geheel getal.',
+                                                       owner=self)
 
         self._gemetenWaarde = OTLAttribuut(field=IntegerField,
                                            naam='gemetenWaarde',
                                            label='gemeten waarde',
                                            objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#DtcGeluidstestRapport.gemetenWaarde',
-                                           definition='De sterkte van het geluid in dB.')
+                                           definition='De sterkte van het geluid in dB.',
+                                           owner=self)
 
         self._locatieInSitulabo = OTLAttribuut(field=KlGCMeetMethode,
                                                naam='locatieInSitulabo',
                                                label='locatie in situlabo',
                                                objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#DtcGeluidstestRapport.locatieInSitulabo',
-                                               definition='Locatie waar de geluidstest is uitgevoerd (terrein of labo).')
+                                               definition='Locatie waar de geluidstest is uitgevoerd (terrein of labo).',
+                                               owner=self)
 
         self._luchtgeluidsisolatie = OTLAttribuut(field=IntegerField,
                                                   naam='luchtgeluidsisolatie',
                                                   label='luchtgeluidsisolatie',
                                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#DtcGeluidstestRapport.luchtgeluidsisolatie',
-                                                  definition='De gemeten waarde van het  luchtgeluidsisiolatie van het geluidsscherm.')
+                                                  definition='De gemeten waarde van het  luchtgeluidsisiolatie van het geluidsscherm.',
+                                                  owner=self)
 
         self._norm = OTLAttribuut(field=KlLEGCNorm,
                                   naam='norm',
                                   label='norm',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#DtcGeluidstestRapport.norm',
-                                  definition='De proef volgens de beschreven standaard.')
+                                  definition='De proef volgens de beschreven standaard.',
+                                  owner=self)
 
         self._testrapport = OTLAttribuut(field=DtcDocument,
                                          naam='testrapport',
@@ -49,13 +54,15 @@ class DtcGeluidstestRapportWaarden(AttributeInfo):
                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#DtcGeluidstestRapport.testrapport',
                                          usagenote='Bestanden van het type xlsx of pdf.',
                                          kardinaliteit_max='*',
-                                         definition='Documentbijlage met de resultaten van de test.')
+                                         definition='Documentbijlage met de resultaten van de test.',
+                                         owner=self)
 
         self._type = OTLAttribuut(field=KlLEGCTestType,
                                   naam='type',
                                   label='type',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#DtcGeluidstestRapport.type',
-                                  definition='Het type van de test.')
+                                  definition='Het type van de test.',
+                                  owner=self)
 
     @property
     def geluidsabsorptieReflectie(self):

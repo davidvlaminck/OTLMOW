@@ -19,13 +19,15 @@ class DynBordVMS(LEDBord):
                                   naam='merk',
                                   label='merk',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DynBordVMS.merk',
-                                  definition='Merk van het dynamische bord.')
+                                  definition='Merk van het dynamische bord.',
+                                  owner=self)
 
         self._modelnaam = OTLAttribuut(field=KlDynBordVMSModelnaam,
                                        naam='modelnaam',
                                        label='modelnaam',
                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DynBordVMS.modelnaam',
-                                       definition='Modelnaam van het VMS-bord.')
+                                       definition='Modelnaam van het VMS-bord.',
+                                       owner=self)
 
     @property
     def merk(self):

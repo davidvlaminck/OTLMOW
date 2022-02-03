@@ -16,13 +16,15 @@ class KwantWrdInVoltWaarden(AttributeInfo):
                                               objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInVolt.standaardEenheid',
                                               usagenote='"V"^^cdt:ucumunit',
                                               constraints='"V"^^cdt:ucumunit',
-                                              definition='De standaard eenheid bij dit datatype is uitgedrukt in Volt.')
+                                              definition='De standaard eenheid bij dit datatype is uitgedrukt in Volt.',
+                                              owner=self)
 
         self._waarde = OTLAttribuut(field=FloatOrDecimalField,
                                     naam='waarde',
                                     label='waarde',
                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInVolt.waarde',
-                                    definition='Bevat een getal die bij het datatype hoort.')
+                                    definition='Bevat een getal die bij het datatype hoort.',
+                                    owner=self)
 
     @property
     def standaardEenheid(self):

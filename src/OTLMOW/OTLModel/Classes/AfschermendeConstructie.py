@@ -26,37 +26,43 @@ class AfschermendeConstructie(BijlageVoertuigkering, LijnvormigElement):
                                                naam='certificaathouder',
                                                label='certificaathouder',
                                                objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#AfschermendeConstructie.certificaathouder',
-                                               definition='De houder van het uitvoeringscertificaat.')
+                                               definition='De houder van het uitvoeringscertificaat.',
+                                               owner=self)
 
         self._isPermanent = OTLAttribuut(field=BooleanField,
                                          naam='isPermanent',
                                          label='is permanent',
                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#AfschermendeConstructie.isPermanent',
-                                         definition='Vermelding of de afschermende constructie al dan niet van permanente aard is.')
+                                         definition='Vermelding of de afschermende constructie al dan niet van permanente aard is.',
+                                         owner=self)
 
         self._materiaal = OTLAttribuut(field=KlLEACMateriaal,
                                        naam='materiaal',
                                        label='materiaal',
                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#AfschermendeConstructie.materiaal',
-                                       definition='Het gebruikte materiaal voor de afschermende constructie.')
+                                       definition='Het gebruikte materiaal voor de afschermende constructie.',
+                                       owner=self)
 
         self._metTandGroef = OTLAttribuut(field=BooleanField,
                                           naam='metTandGroef',
                                           label='met tand-groef',
                                           objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#AfschermendeConstructie.metTandGroef',
-                                          definition='Geeft aan of de afschermende constructie bevestigd is aan de onderliggende laag door middel van een tand-groef aansluiting.')
+                                          definition='Geeft aan of de afschermende constructie bevestigd is aan de onderliggende laag door middel van een tand-groef aansluiting.',
+                                          owner=self)
 
         self._productidentificatiecode = OTLAttribuut(field=DtcProductidentificatiecode,
                                                       naam='productidentificatiecode',
                                                       label='productidentificatiecode',
                                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#AfschermendeConstructie.productidentificatiecode',
-                                                      definition='De productidentificatiecode voor het bepalen van de code van het gebruikte product (bv. COPRO/BENOR).')
+                                                      definition='De productidentificatiecode voor het bepalen van de code van het gebruikte product (bv. COPRO/BENOR).',
+                                                      owner=self)
 
         self._productnaam = OTLAttribuut(field=StringField,
                                          naam='productnaam',
                                          label='productnaam',
                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#AfschermendeConstructie.productnaam',
-                                         definition='Dit is de commerciële naam van de afschermende constructie.')
+                                         definition='Dit is de commerciële naam van de afschermende constructie.',
+                                         owner=self)
 
         self._testrapport = OTLAttribuut(field=DtcDocument,
                                          naam='testrapport',
@@ -65,14 +71,16 @@ class AfschermendeConstructie(BijlageVoertuigkering, LijnvormigElement):
                                          usagenote='Attribuut uit gebruik sinds versie 2.0.0 ',
                                          deprecated_version='2.0.0',
                                          kardinaliteit_max='*',
-                                         definition='De testresultaten van een afschermende constructie.')
+                                         definition='De testresultaten van een afschermende constructie.',
+                                         owner=self)
 
         self._uitvoeringscertificatie = OTLAttribuut(field=DtcDocument,
                                                      naam='uitvoeringscertificatie',
                                                      label='uitvoeringscertificatie',
                                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#AfschermendeConstructie.uitvoeringscertificatie',
                                                      usagenote='Bestanden van het type xlsx of pdf.',
-                                                     definition='Documentatie van het certificaat.')
+                                                     definition='Documentatie van het certificaat.',
+                                                     owner=self)
 
         self._video = OTLAttribuut(field=DtcDocument,
                                    naam='video',
@@ -81,7 +89,8 @@ class AfschermendeConstructie(BijlageVoertuigkering, LijnvormigElement):
                                    usagenote='Attribuut uit gebruik sinds versie 2.0.0 ',
                                    deprecated_version='2.0.0',
                                    kardinaliteit_max='*',
-                                   definition='Video van de testen op afschermende constructies.')
+                                   definition='Video van de testen op afschermende constructies.',
+                                   owner=self)
 
     @property
     def certificaathouder(self):

@@ -22,7 +22,7 @@ class AttributeInfo:
             if attribuut_naam == '':
                 s = f'Attribute information about {self.__class__.__name__} {self.__hash__()}:\n'
                 for k, v in sorted(vars(self).items()):
-                    if v is not None and k != '_parent':
+                    if v is not None and k not in ['_parent', '_geometry', '_geometry_types']:
                         s += f'{k[1:]} (type: {v.field.naam})\n'
                 return s
             at = getattr(self, '_' + attribuut_naam)

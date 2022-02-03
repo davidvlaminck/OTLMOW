@@ -16,14 +16,16 @@ class DtuBVLaagtypesWaarden(AttributeInfo, UnionWaarden):
                                       label='laagtype',
                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtuBVLaagtypes.laagtype',
                                       kardinaliteit_min='0',
-                                      definition='Het type van de bitumineuze verharding.')
+                                      definition='Het type van de bitumineuze verharding.',
+                                      owner=self)
 
         self._profileerlaag = OTLAttribuut(field=DtcProfileerlaag,
                                            naam='profileerlaag',
                                            label='profileerlaag',
                                            objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtuBVLaagtypes.profileerlaag',
                                            kardinaliteit_min='0',
-                                           definition='De laag die het profiel verbetert van de verharding.')
+                                           definition='De laag die het profiel verbetert van de verharding.',
+                                           owner=self)
 
     @property
     def laagtype(self):

@@ -5,10 +5,11 @@ from OTLMOW.OTLModel.Classes.AIMNaamObject import AIMNaamObject
 from OTLMOW.OTLModel.Datatypes.IntegerField import IntegerField
 from OTLMOW.OTLModel.Datatypes.KlEnergiemeterMetertype import KlEnergiemeterMetertype
 from OTLMOW.OTLModel.Datatypes.StringField import StringField
+from OTLMOW.GeometrieArtefact.PuntGeometrie import PuntGeometrie
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Energiemeter(AIMNaamObject):
+class Energiemeter(AIMNaamObject, PuntGeometrie):
     """Abstracte voor alle energiemeters."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Energiemeter'
@@ -16,25 +17,29 @@ class Energiemeter(AIMNaamObject):
 
     @abstractmethod
     def __init__(self):
-        super().__init__()
+        AIMNaamObject.__init__(self)
+        PuntGeometrie.__init__(self)
 
         self._aantalTelwerken = OTLAttribuut(field=IntegerField,
                                              naam='aantalTelwerken',
                                              label='aantal telwerken',
                                              objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Energiemeter.aantalTelwerken',
-                                             definition='Het aantal telwerken dat de energiemeter bevat: 1 bij enkelvoudige meter, 2 bij een dag- en nacht-meter.')
+                                             definition='Het aantal telwerken dat de energiemeter bevat: 1 bij enkelvoudige meter, 2 bij een dag- en nacht-meter.',
+                                             owner=self)
 
         self._meternummer = OTLAttribuut(field=StringField,
                                          naam='meternummer',
                                          label='meternummer',
                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Energiemeter.meternummer',
-                                         definition='Het serienummer (nummer van het fabrikaat) op de meter.')
+                                         definition='Het serienummer (nummer van het fabrikaat) op de meter.',
+                                         owner=self)
 
         self._metertype = OTLAttribuut(field=KlEnergiemeterMetertype,
                                        naam='metertype',
                                        label='metertype',
                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Energiemeter.metertype',
-                                       definition='Type meter (mechanisch, elektronisch).')
+                                       definition='Type meter (mechanisch, elektronisch).',
+                                       owner=self)
 
     @property
     def aantalTelwerken(self):

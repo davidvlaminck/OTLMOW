@@ -20,20 +20,23 @@ class SelectieveDetectielus(SelNietSelLus):
                                                      naam='heeftMeerdereKruisingen',
                                                      label='heeft meerdere kruisingen',
                                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#SelectieveDetectielus.heeftMeerdereKruisingen',
-                                                     definition='Aanduiding of de lus voor meerdere kruispunten wordt gebruikt.')
+                                                     definition='Aanduiding of de lus voor meerdere kruispunten wordt gebruikt.',
+                                                     owner=self)
 
         self._soortLus = OTLAttribuut(field=KlSelLusSoort,
                                       naam='soortLus',
                                       label='soort lus',
                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#SelectieveDetectielus.soortLus',
                                       kardinaliteit_max='*',
-                                      definition='Type detectielus vb bus, tram,...')
+                                      definition='Type detectielus vb bus, tram,...',
+                                      owner=self)
 
         self._verbinding = OTLAttribuut(field=KlSelLusVerbinding,
                                         naam='verbinding',
                                         label='verbinding',
                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#SelectieveDetectielus.verbinding',
-                                        definition='Soort verbinding (serieel of contact).')
+                                        definition='Soort verbinding (serieel of contact).',
+                                        owner=self)
 
     @property
     def heeftMeerdereKruisingen(self):

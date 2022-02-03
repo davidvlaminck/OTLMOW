@@ -16,7 +16,8 @@ class DtcContactinfoWaarden(AttributeInfo):
                                    label='adres',
                                    objectUri='https://schema.org/ContactPoint.adres',
                                    kardinaliteit_min='0',
-                                   definition='Adres dat men kan aanschrijven of bezoeken.')
+                                   definition='Adres dat men kan aanschrijven of bezoeken.',
+                                   owner=self)
 
         self._beschikbaarheid = OTLAttribuut(field=DtcOpeningsurenSpecificatie,
                                              naam='beschikbaarheid',
@@ -24,49 +25,56 @@ class DtcContactinfoWaarden(AttributeInfo):
                                              objectUri='https://schema.org/ContactPoint.beschikbaarheid',
                                              kardinaliteit_min='0',
                                              kardinaliteit_max='*',
-                                             definition='Periode waarin contact kan worden opgenomen.')
+                                             definition='Periode waarin contact kan worden opgenomen.',
+                                             owner=self)
 
         self._contactnaam = OTLAttribuut(field=StringField,
                                          naam='contactnaam',
                                          label='contactnaam',
                                          objectUri='https://schema.org/ContactPoint.contactnaam',
                                          kardinaliteit_min='0',
-                                         definition='Naam van bv. de persoon die men kan contacteren.')
+                                         definition='Naam van bv. de persoon die men kan contacteren.',
+                                         owner=self)
 
         self._email = OTLAttribuut(field=StringField,
                                    naam='email',
                                    label='email',
                                    objectUri='https://schema.org/ContactPoint.email',
                                    kardinaliteit_min='0',
-                                   definition='Email-adres waarnaar men kan mailen.')
+                                   definition='Email-adres waarnaar men kan mailen.',
+                                   owner=self)
 
         self._fax = OTLAttribuut(field=StringField,
                                  naam='fax',
                                  label='fax',
                                  objectUri='https://schema.org/ContactPoint.fax',
                                  kardinaliteit_min='0',
-                                 definition='Faxnummer waarnaar men kan faxen.')
+                                 definition='Faxnummer waarnaar men kan faxen.',
+                                 owner=self)
 
         self._opmerkingen = OTLAttribuut(field=StringField,
                                          naam='opmerkingen',
                                          label='opmerkingen',
                                          objectUri='https://schema.org/ContactPoint.opmerkingen',
                                          kardinaliteit_min='0',
-                                         definition='Bijkomende informatie met betrekking tot het gebruik van de contactgegevens.')
+                                         definition='Bijkomende informatie met betrekking tot het gebruik van de contactgegevens.',
+                                         owner=self)
 
         self._telefoon = OTLAttribuut(field=StringField,
                                       naam='telefoon',
                                       label='telefoon',
                                       objectUri='https://schema.org/ContactPoint.telefoon',
                                       kardinaliteit_min='0',
-                                      definition='Telefoonnummer waarop men kan bellen.')
+                                      definition='Telefoonnummer waarop men kan bellen.',
+                                      owner=self)
 
         self._website = OTLAttribuut(field=StringField,
                                      naam='website',
                                      label='website',
                                      objectUri='https://schema.org/ContactPoint.website',
                                      kardinaliteit_min='0',
-                                     definition='Website waarnaar men kan surfen.')
+                                     definition='Website waarnaar men kan surfen.',
+                                     owner=self)
 
     @property
     def adres(self):

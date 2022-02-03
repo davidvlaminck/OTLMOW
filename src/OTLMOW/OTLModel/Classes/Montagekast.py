@@ -20,13 +20,15 @@ class Montagekast(Buitenkast):
                                                  label='e-plan en m-plan',
                                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Montagekast.eplanMechanischPlan',
                                                  usagenote='Bestanden van het type dwg.',
-                                                 definition='Elektrisch aansluitschema van de kast en mechanisch plan van de volledige installatie in de kast.')
+                                                 definition='Elektrisch aansluitschema van de kast en mechanisch plan van de volledige installatie in de kast.',
+                                                 owner=self)
 
         self._opstelhoogte = OTLAttribuut(field=KwantWrdInMeter,
                                           naam='opstelhoogte',
                                           label='opstelhoogte',
                                           objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Montagekast.opstelhoogte',
-                                          definition='De afstand tussen het maaiveld en de bovenrand van de montagekast in meter.')
+                                          definition='De afstand tussen het maaiveld en de bovenrand van de montagekast in meter.',
+                                          owner=self)
 
     @property
     def eplanMechanischPlan(self):

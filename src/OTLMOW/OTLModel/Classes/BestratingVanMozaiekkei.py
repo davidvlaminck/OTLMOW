@@ -19,13 +19,15 @@ class BestratingVanMozaiekkei(Bestrating):
                                      naam='formaat',
                                      label='formaat',
                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#BestratingVanMozaiekkei.formaat',
-                                     definition='De grootte van mozaïekkei.')
+                                     definition='De grootte van mozaïekkei.',
+                                     owner=self)
 
         self._isHerbruik = OTLAttribuut(field=BooleanField,
                                         naam='isHerbruik',
                                         label='is herbruik',
                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#BestratingVanMozaiekkei.isHerbruik',
-                                        definition='Bepaling of de mozaïekkeien gerecycleerd werden.')
+                                        definition='Bepaling of de mozaïekkeien gerecycleerd werden.',
+                                        owner=self)
 
     @property
     def formaat(self):

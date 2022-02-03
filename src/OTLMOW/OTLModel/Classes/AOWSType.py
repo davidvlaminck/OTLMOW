@@ -18,13 +18,15 @@ class AOWSType(ABC):
                                            naam='isGoedgekeurd',
                                            label='is goedgekeurd',
                                            objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#AOWSType.isGoedgekeurd',
-                                           definition='Bepaling van de goedkeuring van AOWS.')
+                                           definition='Bepaling van de goedkeuring van AOWS.',
+                                           owner=self)
 
         self._versieGoedgekeurd = OTLAttribuut(field=StringField,
                                                naam='versieGoedgekeurd',
                                                label='versie goedgekeurd',
                                                objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#AOWSType.versieGoedgekeurd',
-                                               definition='De versie van het standaardbestek 250 waar de goedkeuring is bepaald.')
+                                               definition='De versie van het standaardbestek 250 waar de goedkeuring is bepaald.',
+                                               owner=self)
 
     @property
     def isGoedgekeurd(self):

@@ -4,63 +4,72 @@ from OTLMOW.OTLModel.Classes.AIMObject import AIMObject
 from OTLMOW.OTLModel.Datatypes.DtcDocument import DtcDocument
 from OTLMOW.OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter
 from OTLMOW.OTLModel.Datatypes.KwantWrdInVierkanteMeter import KwantWrdInVierkanteMeter
+from OTLMOW.GeometrieArtefact.LijnGeometrie import LijnGeometrie
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class GeluidwerendeConstructie(AIMObject):
+class GeluidwerendeConstructie(AIMObject, LijnGeometrie):
     """Een geluidswerende wandvormige constructie bestaande uit een desgevallend geluidsisolerend materiaal en/of geluidsabsorberend materiaal en voorzien van de nodige structuren om de bouwkundige stabiliteit te verzekeren."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/installatie#GeluidwerendeConstructie'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        super().__init__()
+        AIMObject.__init__(self)
+        LijnGeometrie.__init__(self)
 
         self._detailplanHoogteverloop = OTLAttribuut(field=DtcDocument,
                                                      naam='detailplanHoogteverloop',
                                                      label='detailplan hoogteverloop',
                                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/installatie#GeluidwerendeConstructie.detailplanHoogteverloop',
                                                      usagenote='Bestanden moeten van het type DWG of DXF zijn.',
-                                                     definition='Dit is een detailplan in de vorm van een lijn waarin het verloop van de absolute hoogte van de top van de geluidswerende constructie wordt weergegeven. Minstens om de 10 meter wordt de hoogte van de top van de constructie bepaald. Het detailplan wordt gebruikt voor akoestische modellering.')
+                                                     definition='Dit is een detailplan in de vorm van een lijn waarin het verloop van de absolute hoogte van de top van de geluidswerende constructie wordt weergegeven. Minstens om de 10 meter wordt de hoogte van de top van de constructie bepaald. Het detailplan wordt gebruikt voor akoestische modellering.',
+                                                     owner=self)
 
         self._horizontaalRuimtebeslag = OTLAttribuut(field=DtcDocument,
                                                      naam='horizontaalRuimtebeslag',
                                                      label='horizontaal ruimtebeslag',
                                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/installatie#GeluidwerendeConstructie.horizontaalRuimtebeslag',
-                                                     definition='Document waarin de variatie in horizontaal ruimtebeslag over het verloop van de geluidswerende constructie is weergegeven. Het horizontaal ruimtebeslag is de breedte die de gehele constructie inneemt op het maaiveld, loodrecht op de richting waarin de schermelementen op elkaar aangesloten zijn. Er moet een nieuwe waarde ingegeven worden elke keer als de hoogte van de constructie wijzigt.')
+                                                     definition='Document waarin de variatie in horizontaal ruimtebeslag over het verloop van de geluidswerende constructie is weergegeven. Het horizontaal ruimtebeslag is de breedte die de gehele constructie inneemt op het maaiveld, loodrecht op de richting waarin de schermelementen op elkaar aangesloten zijn. Er moet een nieuwe waarde ingegeven worden elke keer als de hoogte van de constructie wijzigt.',
+                                                     owner=self)
 
         self._overzichtsafbeelding = OTLAttribuut(field=DtcDocument,
                                                   naam='overzichtsafbeelding',
                                                   label='overzichtsafbeelding',
                                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/installatie#GeluidwerendeConstructie.overzichtsafbeelding',
                                                   kardinaliteit_max='*',
-                                                  definition='Dit een overzichtsfoto van de hele constructie. Op basis van deze afbeelding kan je snel bekijken hoe de kleur of hoogte varieert over het verloop van de geluidswerende constructie.')
+                                                  definition='Dit een overzichtsfoto van de hele constructie. Op basis van deze afbeelding kan je snel bekijken hoe de kleur of hoogte varieert over het verloop van de geluidswerende constructie.',
+                                                  owner=self)
 
         self._rekennota = OTLAttribuut(field=DtcDocument,
                                        naam='rekennota',
                                        label='rekennota',
                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/installatie#GeluidwerendeConstructie.rekennota',
                                        kardinaliteit_max='*',
-                                       definition='Dit is een document waarin allerlei berekeningen bijgehouden worden omtrent de stabiliteit en sterkte van de geluidswerende constructie (oa de variatie in statische belasting en windbelasting over het verloop van geluidswerende constructie).')
+                                       definition='Dit is een document waarin allerlei berekeningen bijgehouden worden omtrent de stabiliteit en sterkte van de geluidswerende constructie (oa de variatie in statische belasting en windbelasting over het verloop van geluidswerende constructie).',
+                                       owner=self)
 
         self._technischeFiche = OTLAttribuut(field=DtcDocument,
                                              naam='technischeFiche',
                                              label='technische fiche',
                                              objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/installatie#GeluidwerendeConstructie.technischeFiche',
                                              kardinaliteit_max='*',
-                                             definition='Dit document geeft volgende zaken mee: producent, productnaam (type), beschrijving van de geplaatste constructie, certificatie (CE en ISO), montage, akoestische karakteristieken, duurzaamheid en brandwerende kenmerken.')
+                                             definition='Dit document geeft volgende zaken mee: producent, productnaam (type), beschrijving van de geplaatste constructie, certificatie (CE en ISO), montage, akoestische karakteristieken, duurzaamheid en brandwerende kenmerken.',
+                                             owner=self)
 
         self._totaleLengte = OTLAttribuut(field=KwantWrdInMeter,
                                           naam='totaleLengte',
                                           label='totale lengte',
                                           objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/installatie#GeluidwerendeConstructie.totaleLengte',
-                                          definition='De afstand in meter gemeten tussen het beginpunt en het eindpunt van de geluidswerende constructie.')
+                                          definition='De afstand in meter gemeten tussen het beginpunt en het eindpunt van de geluidswerende constructie.',
+                                          owner=self)
 
         self._totaleOppervlakte = OTLAttribuut(field=KwantWrdInVierkanteMeter,
                                                naam='totaleOppervlakte',
                                                label='totale oppervlakte',
                                                objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/installatie#GeluidwerendeConstructie.totaleOppervlakte',
-                                               definition='De totale oppervlakte van het naar de weg gerichte vlak van alle geplaatste schermelementen van de geluidswerende constructie.')
+                                               definition='De totale oppervlakte van het naar de weg gerichte vlak van alle geplaatste schermelementen van de geluidswerende constructie.',
+                                               owner=self)
 
     @property
     def detailplanHoogteverloop(self):

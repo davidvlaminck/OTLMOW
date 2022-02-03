@@ -19,6 +19,10 @@ class KlVoorschakelapparaatType(KeuzelijstField):
         'elektronisch': KeuzelijstWaarde(invulwaarde='elektronisch',
                                          label='elektronisch',
                                          definitie='/ CLASS : IVSB',
-                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVoorschakelapparaatType/elektronisch')
+                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVoorschakelapparaatType/elektronisch'),
+        'niet-gekend': KeuzelijstWaarde(invulwaarde='niet-gekend',
+                                        label='Niet gekend',
+                                        definitie='Type niet gekend',
+                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVoorschakelapparaatType/niet-gekend')
     }
 

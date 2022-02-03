@@ -20,13 +20,15 @@ class BeheerBoomvorm(AIMObject):
                                          label='beheeroptie',
                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#BeheerBoomvorm.beheeroptie',
                                          kardinaliteit_max='*',
-                                         definition='Behandelingswijzen van bomen.')
+                                         definition='Behandelingswijzen van bomen.',
+                                         owner=self)
 
         self._oppervlakte = OTLAttribuut(field=KwantWrdInVierkanteMeter,
                                          naam='oppervlakte',
                                          label='oppervlakte',
                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#BeheerBoomvorm.oppervlakte',
-                                         definition='De oppervlakte in vierkante meter van de te behandelen grond rond de boom.')
+                                         definition='De oppervlakte in vierkante meter van de te behandelen grond rond de boom.',
+                                         owner=self)
 
     @property
     def beheeroptie(self):

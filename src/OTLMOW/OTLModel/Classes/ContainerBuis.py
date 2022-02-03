@@ -18,7 +18,8 @@ class ContainerBuis(ABC):
                                    label='kleur',
                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#ContainerBuis.kleur',
                                    kardinaliteit_max='*',
-                                   definition='De kleur van de coating.')
+                                   definition='De kleur van de coating.',
+                                   owner=self)
 
     @property
     def kleur(self):

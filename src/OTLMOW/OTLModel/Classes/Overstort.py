@@ -5,41 +5,47 @@ from OTLMOW.OTLModel.Datatypes.KlOverstortMateriaalDrempel import KlOverstortMat
 from OTLMOW.OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter
 from OTLMOW.OTLModel.Datatypes.KwantWrdInMeterTAW import KwantWrdInMeterTAW
 from OTLMOW.OTLModel.Datatypes.KwantWrdInMillimeter import KwantWrdInMillimeter
+from OTLMOW.GeometrieArtefact.VlakGeometrie import VlakGeometrie
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Overstort(LinkendElement):
+class Overstort(LinkendElement, VlakGeometrie):
     """Een overstort is een drempel tussen twee kamers waar water vanaf een bepaald peil van de ene naar de andere kamer kan stromen. Tussen twee kamers kunnen een of meerdere overstorten voorkomen."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Overstort'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        super().__init__()
+        LinkendElement.__init__(self)
+        VlakGeometrie.__init__(self)
 
         self._drempellengte = OTLAttribuut(field=KwantWrdInMillimeter,
                                            naam='drempellengte',
                                            label='breedte',
                                            objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Overstort.drempellengte',
-                                           definition='Drempellengte of breedte van de overstort. Deze wordt gemeten aan de kortste zijde van de drempel.')
+                                           definition='Drempellengte of breedte van de overstort. Deze wordt gemeten aan de kortste zijde van de drempel.',
+                                           owner=self)
 
         self._materiaalDrempel = OTLAttribuut(field=KlOverstortMateriaalDrempel,
                                               naam='materiaalDrempel',
                                               label='materiaal drempel',
                                               objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Overstort.materiaalDrempel',
-                                              definition='Het gebruikte materiaal voor het vervaardigen van de overstort (drempel).')
+                                              definition='Het gebruikte materiaal voor het vervaardigen van de overstort (drempel).',
+                                              owner=self)
 
         self._peil = OTLAttribuut(field=KwantWrdInMeterTAW,
                                   naam='peil',
                                   label='peil',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Overstort.peil',
-                                  definition='Drempelpeil van de overstort. Uitgedrukt in meter-TAW gemeten in het midden van de drempel.')
+                                  definition='Drempelpeil van de overstort. Uitgedrukt in meter-TAW gemeten in het midden van de drempel.',
+                                  owner=self)
 
         self._vrijeHoogte = OTLAttribuut(field=KwantWrdInMeter,
                                          naam='vrijeHoogte',
                                          label='vrije hoogte',
                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Overstort.vrijeHoogte',
-                                         definition='De vrije hoogte tussen de overstortdrempel en het plafond van deconstructie ter hoogte van de drempel. Voor drempels in leidingen wordende vrije hoogte voor de databank genomen tussen de drempel en debinnenbovenkant buis. Indien er geen sprake is van een vrije hoogte (vbdrempels in grachten) wordt dit niet ingevuld.')
+                                         definition='De vrije hoogte tussen de overstortdrempel en het plafond van deconstructie ter hoogte van de drempel. Voor drempels in leidingen wordende vrije hoogte voor de databank genomen tussen de drempel en debinnenbovenkant buis. Indien er geen sprake is van een vrije hoogte (vbdrempels in grachten) wordt dit niet ingevuld.',
+                                         owner=self)
 
     @property
     def drempellengte(self):

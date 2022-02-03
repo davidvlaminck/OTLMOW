@@ -8,10 +8,11 @@ from OTLMOW.OTLModel.Datatypes.KlAlgMateriaal import KlAlgMateriaal
 from OTLMOW.OTLModel.Datatypes.KlCabineMerk import KlCabineMerk
 from OTLMOW.OTLModel.Datatypes.KlCabineModelnaam import KlCabineModelnaam
 from OTLMOW.OTLModel.Datatypes.StringField import StringField
+from OTLMOW.GeometrieArtefact.VlakGeometrie import VlakGeometrie
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Inloopbehuizing(Behuizing):
+class Inloopbehuizing(Behuizing, VlakGeometrie):
     """Een behuizing voor het beschermen van technieken en materialen waarin het omwille van de grootte en toegankelijkheid mogelijk is om rond te lopen."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Inloopbehuizing'
@@ -19,43 +20,50 @@ class Inloopbehuizing(Behuizing):
 
     @abstractmethod
     def __init__(self):
-        super().__init__()
+        Behuizing.__init__(self)
+        VlakGeometrie.__init__(self)
 
         self._afmeting = OTLAttribuut(field=DtcAfmetingBxlxhInM,
                                       naam='afmeting',
                                       label='afmeting',
                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Inloopbehuizing.afmeting',
-                                      definition='Buitenafmetingen van het bovengronds gedeelte van een behuizing waarin het in principe mogelijk is om rond te lopen omwille van de grootte en toegankelijkheid.')
+                                      definition='Buitenafmetingen van het bovengronds gedeelte van een behuizing waarin het in principe mogelijk is om rond te lopen omwille van de grootte en toegankelijkheid.',
+                                      owner=self)
 
         self._beschrijvingBereikbaarheid = OTLAttribuut(field=StringField,
                                                         naam='beschrijvingBereikbaarheid',
                                                         label='beschrijving bereikbaarheid',
                                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Inloopbehuizing.beschrijvingBereikbaarheid',
-                                                        definition='Een beschrijving van de omgeving van de behuizing in functie van de bereikbaarheid en toegankelijkheid voor werken en toezicht.')
+                                                        definition='Een beschrijving van de omgeving van de behuizing in functie van de bereikbaarheid en toegankelijkheid voor werken en toezicht.',
+                                                        owner=self)
 
         self._grondplan = OTLAttribuut(field=DtcDocument,
                                        naam='grondplan',
                                        label='grondplan',
                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Inloopbehuizing.grondplan',
-                                       definition='Plattegrond van de behuizing met aanduidingen van de verschillende aanwezige elementen zoals kelder, kasten met kastnummers, toegangscontrole en meer.')
+                                       definition='Plattegrond van de behuizing met aanduidingen van de verschillende aanwezige elementen zoals kelder, kasten met kastnummers, toegangscontrole en meer.',
+                                       owner=self)
 
         self._inloopbehuizingMateriaal = OTLAttribuut(field=KlAlgMateriaal,
                                                       naam='inloopbehuizingMateriaal',
                                                       label='Cabine materiaal',
                                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Inloopbehuizing.inloopbehuizingMateriaal',
-                                                      definition='Materiaal waaruit de cabine vervaardigd is zonder buitenafwerking van dak of wanden.')
+                                                      definition='Materiaal waaruit de cabine vervaardigd is zonder buitenafwerking van dak of wanden.',
+                                                      owner=self)
 
         self._merk = OTLAttribuut(field=KlCabineMerk,
                                   naam='merk',
                                   label='merk',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Inloopbehuizing.merk',
-                                  definition='De merknaam volgens de fabrikant van een behuizing waarin het in principe mogelijk is om rond te lopen omwille van de grootte en toegankelijkheid.')
+                                  definition='De merknaam volgens de fabrikant van een behuizing waarin het in principe mogelijk is om rond te lopen omwille van de grootte en toegankelijkheid.',
+                                  owner=self)
 
         self._modelnaam = OTLAttribuut(field=KlCabineModelnaam,
                                        naam='modelnaam',
                                        label='modelnaam',
                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Inloopbehuizing.modelnaam',
-                                       definition='Naam waarmee de fabrikant het model identificeert van een behuizing waarin het in principe mogelijk is om rond te lopen omwille van de grootte en toegankelijkheid.')
+                                       definition='Naam waarmee de fabrikant het model identificeert van een behuizing waarin het in principe mogelijk is om rond te lopen omwille van de grootte en toegankelijkheid.',
+                                       owner=self)
 
     @property
     def afmeting(self):

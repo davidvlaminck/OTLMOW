@@ -20,7 +20,8 @@ class NaampadObject(AIMNaamObject):
                                      naam='naampad',
                                      label='naampad',
                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#NaampadObject.naampad',
-                                     definition='Een set van objecten (bv. collecties) die aanduiden waar het object zich bevindt in de objectenboom (EM-Infra).')
+                                     definition='Een set van objecten (bv. collecties) die aanduiden waar het object zich bevindt in de objectenboom (EM-Infra).',
+                                     owner=self)
 
     @property
     def naampad(self):

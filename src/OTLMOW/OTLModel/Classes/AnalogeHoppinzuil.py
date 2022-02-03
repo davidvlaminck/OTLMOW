@@ -19,19 +19,22 @@ class AnalogeHoppinzuil(Hoppinzuil):
                                         naam='macrokaart',
                                         label='macrokaart',
                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#AnalogeHoppinzuil.macrokaart',
-                                        definition='Cartografische weergave van het hoppinpunt en de omliggende hoppinpunten met daarop aangeduid de attractiepolen in de omgeving.')
+                                        definition='Cartografische weergave van het hoppinpunt en de omliggende hoppinpunten met daarop aangeduid de attractiepolen in de omgeving.',
+                                        owner=self)
 
         self._microkaart = OTLAttribuut(field=DtcDocument,
                                         naam='microkaart',
                                         label='microkaart',
                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#AnalogeHoppinzuil.microkaart',
-                                        definition='Cartografische weergave van het hoppinpunt en de omliggende straten met daarop de hoppinzuil, de verschillende beschikbare vervoersmodi en diensten aangeduid.')
+                                        definition='Cartografische weergave van het hoppinpunt en de omliggende straten met daarop de hoppinzuil, de verschillende beschikbare vervoersmodi en diensten aangeduid.',
+                                        owner=self)
 
         self._type = OTLAttribuut(field=KlHoppinzuilType,
                                   naam='type',
                                   label='type',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#AnalogeHoppinzuil.type',
-                                  definition='De mogelijke types van een analoge hoppinzuil.')
+                                  definition='De mogelijke types van een analoge hoppinzuil.',
+                                  owner=self)
 
     @property
     def macrokaart(self):

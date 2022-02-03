@@ -4,37 +4,42 @@ from OTLMOW.OTLModel.Classes.AIMNaamObject import AIMNaamObject
 from OTLMOW.OTLModel.Datatypes.KlHoogtedetectieMerk import KlHoogtedetectieMerk
 from OTLMOW.OTLModel.Datatypes.KlHoogtedetectieModelnaam import KlHoogtedetectieModelnaam
 from OTLMOW.OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter
+from OTLMOW.GeometrieArtefact.PuntGeometrie import PuntGeometrie
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Hoogtedetectie(AIMNaamObject):
+class Hoogtedetectie(AIMNaamObject, PuntGeometrie):
     """Hoogtedetectiesysteem voor het voorkomen van schade aan kunstwerken. Stuurt vaak een dynamisch bord aan. Voor handhaving staat het in relatie met een ANPR-camera."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Hoogtedetectie'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        super().__init__()
+        AIMNaamObject.__init__(self)
+        PuntGeometrie.__init__(self)
 
         self._detectiehoogte = OTLAttribuut(field=KwantWrdInMeter,
                                             naam='detectiehoogte',
                                             label='detectiehoogte',
                                             objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Hoogtedetectie.detectiehoogte',
-                                            definition='De ingestelde hoogtelimiet waarboven het systeem voor hoogtedetectie een detectiesignaal moet uitsturen.')
+                                            definition='De ingestelde hoogtelimiet waarboven het systeem voor hoogtedetectie een detectiesignaal moet uitsturen.',
+                                            owner=self)
 
         self._merk = OTLAttribuut(field=KlHoogtedetectieMerk,
                                   naam='merk',
                                   label='merk',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Hoogtedetectie.merk',
                                   usagenote='volgens een keuzelijst',
-                                  definition='Merknaam van het systeem voor hoogtedetectie.Verwijst naar de fabrikant of producent.')
+                                  definition='Merknaam van het systeem voor hoogtedetectie.Verwijst naar de fabrikant of producent.',
+                                  owner=self)
 
         self._modelnaam = OTLAttribuut(field=KlHoogtedetectieModelnaam,
                                        naam='modelnaam',
                                        label='modelnaam',
                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Hoogtedetectie.modelnaam',
                                        usagenote='Uit een keuzelijst.',
-                                       definition='De modelnaam van de hoogtedetectie.')
+                                       definition='De modelnaam van de hoogtedetectie.',
+                                       owner=self)
 
     @property
     def detectiehoogte(self):

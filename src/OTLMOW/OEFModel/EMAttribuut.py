@@ -7,7 +7,7 @@ from OTLMOW.OTLModel.BaseClasses.OTLField import OTLField
 
 
 class EMAttribuut(AttributeInfo):
-    def __init__(self, naam='', label='', objectUri='', definitie='', kardinaliteit='1..1', field=OTLField):
+    def __init__(self, naam='', label='', objectUri='', definitie='', kardinaliteit='1..1', field=OTLField, owner=None):
         super().__init__()
         self.naam = naam
         self.label = label
@@ -17,6 +17,7 @@ class EMAttribuut(AttributeInfo):
         self.kardinaliteit = kardinaliteit
         self.waarde = None
         self.field = field
+        self.owner = owner
 
         if self.field.waardeObject:
             self.waarde = self.field.waardeObject()

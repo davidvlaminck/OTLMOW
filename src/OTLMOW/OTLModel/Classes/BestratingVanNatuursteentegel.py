@@ -20,19 +20,22 @@ class BestratingVanNatuursteentegel(Bestrating):
                                                               naam='afmetingVanBestratingselementLxB',
                                                               label='afmeting van bestratingselement LxB',
                                                               objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#BestratingVanNatuursteentegel.afmetingVanBestratingselementLxB',
-                                                              definition='De lengte en breedte van het bestratingselement in millimeter.')
+                                                              definition='De lengte en breedte van het bestratingselement in millimeter.',
+                                                              owner=self)
 
         self._afwerking = OTLAttribuut(field=KlBestratingAfwerking,
                                        naam='afwerking',
                                        label='afwerking',
                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#BestratingVanNatuursteentegel.afwerking',
-                                       definition='Bepaling van de afwerking van het oppervlak van de natuursteentegels.')
+                                       definition='Bepaling van de afwerking van het oppervlak van de natuursteentegels.',
+                                       owner=self)
 
         self._gebruiksklasse = OTLAttribuut(field=KlNatuursteentegelGebruiksklasse,
                                             naam='gebruiksklasse',
                                             label='gebruiksklasse',
                                             objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#BestratingVanNatuursteentegel.gebruiksklasse',
-                                            definition='Bepaling van het toegelaten verkeer en belasting op de bestrating van natuursteentegels.')
+                                            definition='Bepaling van het toegelaten verkeer en belasting op de bestrating van natuursteentegels.',
+                                            owner=self)
 
     @property
     def afmetingVanBestratingselementLxB(self):

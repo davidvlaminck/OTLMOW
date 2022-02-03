@@ -16,13 +16,15 @@ class KwantWrdInVierkanteMeterWaarden(AttributeInfo):
                                               objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInVierkanteMeter.standaardEenheid',
                                               usagenote='"m2"^^cdt:ucumunit',
                                               constraints='"m2"^^cdt:ucumunit',
-                                              definition='De standaard eenheid bij dit datatype is uitgedrukt in vierkante meter.')
+                                              definition='De standaard eenheid bij dit datatype is uitgedrukt in vierkante meter.',
+                                              owner=self)
 
         self._waarde = OTLAttribuut(field=FloatOrDecimalField,
                                     naam='waarde',
                                     label='waarde',
                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInVierkanteMeter.waarde',
-                                    definition='Bevat een getal die bij het datatype hoort.')
+                                    definition='Bevat een getal die bij het datatype hoort.',
+                                    owner=self)
 
     @property
     def standaardEenheid(self):

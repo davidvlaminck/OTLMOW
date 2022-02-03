@@ -8,10 +8,11 @@ from OTLMOW.OTLModel.Datatypes.DtcDocument import DtcDocument
 from OTLMOW.OTLModel.Datatypes.DtcRechtspersoon import DtcRechtspersoon
 from OTLMOW.OTLModel.Datatypes.KwantWrdInKiloVoltAmpere import KwantWrdInKiloVoltAmpere
 from OTLMOW.OTLModel.Datatypes.StringField import StringField
+from OTLMOW.GeometrieArtefact.GeenGeometrie import GeenGeometrie
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class DNB(Voedingspunt):
+class DNB(Voedingspunt, GeenGeometrie):
     """Een abstracte die de gegevens van de distributienetbeheerder bevat die bij een aansluiting horen."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#DNB'
@@ -19,67 +20,78 @@ class DNB(Voedingspunt):
 
     @abstractmethod
     def __init__(self):
-        super().__init__()
+        Voedingspunt.__init__(self)
+        GeenGeometrie.__init__(self)
 
         self._aansluitvermogen = OTLAttribuut(field=KwantWrdInKiloVoltAmpere,
                                               naam='aansluitvermogen',
                                               label='aansluitvermogen',
                                               objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#DNB.aansluitvermogen',
-                                              definition='Vermogen van de aansluiting.')
+                                              definition='Vermogen van de aansluiting.',
+                                              owner=self)
 
         self._adresVolgensDNB = OTLAttribuut(field=DtcAdres,
                                              naam='adresVolgensDNB',
                                              label='adres volgens DNB',
                                              objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#DNB.adresVolgensDNB',
-                                             definition='Het adres van de aansluiting volgens de distributienetbeheerder.')
+                                             definition='Het adres van de aansluiting volgens de distributienetbeheerder.',
+                                             owner=self)
 
         self._datumEnergieleveringscontract = OTLAttribuut(field=DateField,
                                                            naam='datumEnergieleveringscontract',
                                                            label='datum energieleveringscontract',
                                                            objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#DNB.datumEnergieleveringscontract',
-                                                           definition='De datum waarop het energieleveringscontract afgesloten is.')
+                                                           definition='De datum waarop het energieleveringscontract afgesloten is.',
+                                                           owner=self)
 
         self._datumOprichting = OTLAttribuut(field=DateField,
                                              naam='datumOprichting',
                                              label='datum oprichting',
                                              objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#DNB.datumOprichting',
-                                             definition='Datum waarop de DNB het voedingsbord koppelt met het net.')
+                                             definition='Datum waarop de DNB het voedingsbord koppelt met het net.',
+                                             owner=self)
 
         self._datumStartEnergielevering = OTLAttribuut(field=DateField,
                                                        naam='datumStartEnergielevering',
                                                        label='datum start energielevering',
                                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#DNB.datumStartEnergielevering',
-                                                       definition='De datum waarop de energielevering effectief aanvangt. Dit gebeurt zodra zowel de aansluiting op het DNB-net als het energieleveringscontract in orde zijn.')
+                                                       definition='De datum waarop de energielevering effectief aanvangt. Dit gebeurt zodra zowel de aansluiting op het DNB-net als het energieleveringscontract in orde zijn.',
+                                                       owner=self)
 
         self._eanNummer = OTLAttribuut(field=StringField,
                                        naam='eanNummer',
                                        label='ean nummer',
                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#DNB.eanNummer',
-                                       definition='Uniek identificatienummer van de elektrische aansluiting, bestaande uit 18 cijfers.')
+                                       definition='Uniek identificatienummer van de elektrische aansluiting, bestaande uit 18 cijfers.',
+                                       owner=self)
 
         self._energieleverancier = OTLAttribuut(field=DtcRechtspersoon,
                                                 naam='energieleverancier',
                                                 label='energieleverancier',
                                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#DNB.energieleverancier',
-                                                definition='Leverancier van de energie.')
+                                                definition='Leverancier van de energie.',
+                                                owner=self)
 
         self._netbeheerder = OTLAttribuut(field=DtcRechtspersoon,
                                           naam='netbeheerder',
                                           label='netbeheerder',
                                           objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#DNB.netbeheerder',
-                                          definition='Lokale instantie die instaat voor het beheer van het elektriciteitsnet.')
+                                          definition='Lokale instantie die instaat voor het beheer van het elektriciteitsnet.',
+                                          owner=self)
 
         self._referentieDNB = OTLAttribuut(field=StringField,
                                            naam='referentieDNB',
                                            label='referentie distributienetbeheerder',
                                            objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#DNB.referentieDNB',
-                                           definition='De wijze waarop, de referentie waarmee de aansluiting gekend is bij de distributienetbeheerder.')
+                                           definition='De wijze waarop, de referentie waarmee de aansluiting gekend is bij de distributienetbeheerder.',
+                                           owner=self)
 
         self._risicoAnalyse = OTLAttribuut(field=DtcDocument,
                                            naam='risicoAnalyse',
                                            label='risico analyse',
                                            objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#DNB.risicoAnalyse',
-                                           definition='Document met de risicoanalyse.')
+                                           definition='Document met de risicoanalyse.',
+                                           owner=self)
 
     @property
     def aansluitvermogen(self):

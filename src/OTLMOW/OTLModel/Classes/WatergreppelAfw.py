@@ -18,7 +18,8 @@ class WatergreppelAfw(AfwijkendeKantopsluiting):
                                                          naam='aantalRijenBetonstraatsteen',
                                                          label='aantal rijen betonstraatsteen',
                                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#WatergreppelAfw.aantalRijenBetonstraatsteen',
-                                                         definition='Het aantal rijen betonstraatsteen waaruit de watergreppel is opgebouwd.')
+                                                         definition='Het aantal rijen betonstraatsteen waaruit de watergreppel is opgebouwd.',
+                                                         owner=self)
 
     @property
     def aantalRijenBetonstraatsteen(self):

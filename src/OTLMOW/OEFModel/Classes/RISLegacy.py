@@ -20,229 +20,267 @@ class RISLegacy(EMObject):
                                                naam='AP1001 (reader) aantal',
                                                label='AP1001 (reader) aantal',
                                                objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#EMObject.ap1001ReaderAantal',
-                                               definitie='Definitie nog toe te voegen voor eigenschap AP1001 (reader) aantal')
+                                               definitie='Definitie nog toe te voegen voor eigenschap AP1001 (reader) aantal',
+                                               owner=self)
 
         self._ap1009DualReaderAantal = EMAttribuut(field=FloatOrDecimalField,
                                                    naam='AP1009 (dual reader) aantal',
                                                    label='AP1009 (dual reader) aantal',
                                                    objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#EMObject.ap1009DualReaderAantal',
-                                                   definitie='Definitie nog toe te voegen voor eigenschap AP1009 (dual reader) aantal')
+                                                   definitie='Definitie nog toe te voegen voor eigenschap AP1009 (dual reader) aantal',
+                                                   owner=self)
 
         self._ap2001VoedingAantal = EMAttribuut(field=FloatOrDecimalField,
                                                 naam='AP2001 (voeding) aantal',
                                                 label='AP2001 (voeding) aantal',
                                                 objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#EMObject.ap2001VoedingAantal',
-                                                definitie='Definitie nog toe te voegen voor eigenschap AP2001 (voeding) aantal')
+                                                definitie='Definitie nog toe te voegen voor eigenschap AP2001 (voeding) aantal',
+                                                owner=self)
 
         self._ap3002InputEenheidAantal = EMAttribuut(field=FloatOrDecimalField,
                                                      naam='AP3002 (input eenheid) aantal',
                                                      label='AP3002 (input eenheid) aantal',
                                                      objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#EMObject.ap3002InputEenheidAantal',
-                                                     definitie='Definitie nog toe te voegen voor eigenschap AP3002 (input eenheid) aantal')
+                                                     definitie='Definitie nog toe te voegen voor eigenschap AP3002 (input eenheid) aantal',
+                                                     owner=self)
 
         self._ap3004OutputEenheidAantal = EMAttribuut(field=FloatOrDecimalField,
                                                       naam='AP3004 (output eenheid) aantal',
                                                       label='AP3004 (output eenheid) aantal',
                                                       objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#EMObject.ap3004OutputEenheidAantal',
-                                                      definitie='Definitie nog toe te voegen voor eigenschap AP3004 (output eenheid) aantal')
+                                                      definitie='Definitie nog toe te voegen voor eigenschap AP3004 (output eenheid) aantal',
+                                                      owner=self)
 
         self._ap7803BlueTechnologieAantal = EMAttribuut(field=FloatOrDecimalField,
                                                         naam='AP7803 (blue technologie) aantal',
                                                         label='AP7803 (blue technologie) aantal',
                                                         objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#EMObject.ap7803BlueTechnologieAantal',
-                                                        definitie='Definitie nog toe te voegen voor eigenschap AP7803 (blue technologie) aantal')
+                                                        definitie='Definitie nog toe te voegen voor eigenschap AP7803 (blue technologie) aantal',
+                                                        owner=self)
 
         self._ap8001ControleEenheidAantal = EMAttribuut(field=FloatOrDecimalField,
                                                         naam='AP8001 (controle eenheid) aantal',
                                                         label='AP8001 (controle eenheid) aantal',
                                                         objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#EMObject.ap8001ControleEenheidAantal',
-                                                        definitie='Definitie nog toe te voegen voor eigenschap AP8001 (controle eenheid) aantal')
+                                                        definitie='Definitie nog toe te voegen voor eigenschap AP8001 (controle eenheid) aantal',
+                                                        owner=self)
 
         self._rioRemoteInputOutputAantal = EMAttribuut(field=FloatOrDecimalField,
                                                        naam='RIO (remote input output) aantal',
                                                        label='RIO (remote input output) aantal',
                                                        objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#EMObject.rioRemoteInputOutputAantal',
-                                                       definitie='Definitie nog toe te voegen voor eigenschap RIO (remote input output) aantal')
+                                                       definitie='Definitie nog toe te voegen voor eigenschap RIO (remote input output) aantal',
+                                                       owner=self)
 
         self._andere = EMAttribuut(field=StringField,
                                    naam='andere',
                                    label='andere',
                                    objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#EMObject.andere',
-                                   definitie='Definitie nog toe te voegen voor eigenschap andere')
+                                   definitie='Definitie nog toe te voegen voor eigenschap andere',
+                                   owner=self)
 
         self._apparatuurOpslagCameraBeeldenAantal = EMAttribuut(field=FloatOrDecimalField,
                                                                 naam='apparatuur opslag camera beelden aantal',
                                                                 label='apparatuur opslag camera beelden aantal',
                                                                 objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#EMObject.apparatuurOpslagCameraBeeldenAantal',
-                                                                definitie='Definitie nog toe te voegen voor eigenschap apparatuur opslag camera beelden aantal')
+                                                                definitie='Definitie nog toe te voegen voor eigenschap apparatuur opslag camera beelden aantal',
+                                                                owner=self)
 
         self._apparatuurOpslagCameraBeeldenType = EMAttribuut(field=StringField,
                                                               naam='apparatuur opslag camera beelden type',
                                                               label='apparatuur opslag camera beelden type',
                                                               objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#EMObject.apparatuurOpslagCameraBeeldenType',
-                                                              definitie='Definitie nog toe te voegen voor eigenschap apparatuur opslag camera beelden type')
+                                                              definitie='Definitie nog toe te voegen voor eigenschap apparatuur opslag camera beelden type',
+                                                              owner=self)
 
         self._automaatNummer = EMAttribuut(field=StringField,
                                            naam='automaat nummer',
                                            label='automaat nummer',
                                            objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#EMObject.automaatNummer',
-                                           definitie='Definitie nog toe te voegen voor eigenschap automaat nummer')
+                                           definitie='Definitie nog toe te voegen voor eigenschap automaat nummer',
+                                           owner=self)
 
         self._automatischeDeursluiterAantal = EMAttribuut(field=FloatOrDecimalField,
                                                           naam='automatische deursluiter aantal',
                                                           label='automatische deursluiter aantal',
                                                           objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#EMObject.automatischeDeursluiterAantal',
-                                                          definitie='Definitie nog toe te voegen voor eigenschap automatische deursluiter aantal')
+                                                          definitie='Definitie nog toe te voegen voor eigenschap automatische deursluiter aantal',
+                                                          owner=self)
 
         self._batterijAantal = EMAttribuut(field=FloatOrDecimalField,
                                            naam='batterij aantal',
                                            label='batterij aantal',
                                            objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#EMObject.batterijAantal',
-                                           definitie='Definitie nog toe te voegen voor eigenschap batterij aantal')
+                                           definitie='Definitie nog toe te voegen voor eigenschap batterij aantal',
+                                           owner=self)
 
         self._bewakingAircoAantal = EMAttribuut(field=FloatOrDecimalField,
                                                 naam='bewaking airco aantal',
                                                 label='bewaking airco aantal',
                                                 objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#EMObject.bewakingAircoAantal',
-                                                definitie='Definitie nog toe te voegen voor eigenschap bewaking airco aantal')
+                                                definitie='Definitie nog toe te voegen voor eigenschap bewaking airco aantal',
+                                                owner=self)
 
         self._bewakingVerlichtingAantal = EMAttribuut(field=FloatOrDecimalField,
                                                       naam='bewaking verlichting aantal',
                                                       label='bewaking verlichting aantal',
                                                       objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#EMObject.bewakingVerlichtingAantal',
-                                                      definitie='Definitie nog toe te voegen voor eigenschap bewaking verlichting aantal')
+                                                      definitie='Definitie nog toe te voegen voor eigenschap bewaking verlichting aantal',
+                                                      owner=self)
 
         self._bewegingsdetectorAantal = EMAttribuut(field=FloatOrDecimalField,
                                                     naam='bewegingsdetector aantal',
                                                     label='bewegingsdetector aantal',
                                                     objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#EMObject.bewegingsdetectorAantal',
-                                                    definitie='Definitie nog toe te voegen voor eigenschap bewegingsdetector aantal')
+                                                    definitie='Definitie nog toe te voegen voor eigenschap bewegingsdetector aantal',
+                                                    owner=self)
 
         self._buitensireneAantal = EMAttribuut(field=FloatOrDecimalField,
                                                naam='buitensirene aantal',
                                                label='buitensirene aantal',
                                                objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#EMObject.buitensireneAantal',
-                                               definitie='Definitie nog toe te voegen voor eigenschap buitensirene aantal')
+                                               definitie='Definitie nog toe te voegen voor eigenschap buitensirene aantal',
+                                               owner=self)
 
         self._cameraAantal = EMAttribuut(field=FloatOrDecimalField,
                                          naam='camera aantal',
                                          label='camera aantal',
                                          objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#EMObject.cameraAantal',
-                                         definitie='Definitie nog toe te voegen voor eigenschap camera aantal')
+                                         definitie='Definitie nog toe te voegen voor eigenschap camera aantal',
+                                         owner=self)
 
         self._cameraType = EMAttribuut(field=StringField,
                                        naam='camera type',
                                        label='camera type',
                                        objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#EMObject.cameraType',
-                                       definitie='Definitie nog toe te voegen voor eigenschap camera type')
+                                       definitie='Definitie nog toe te voegen voor eigenschap camera type',
+                                       owner=self)
 
         self._centrServerToepassingssoftwareVersie = EMAttribuut(field=StringField,
                                                                  naam='centr server toepassingssoftware versie',
                                                                  label='centr server toepassingssoftware versie',
                                                                  objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#EMObject.centrServerToepassingssoftwareVersie',
-                                                                 definitie='Definitie nog toe te voegen voor eigenschap centr server toepassingssoftware versie')
+                                                                 definitie='Definitie nog toe te voegen voor eigenschap centr server toepassingssoftware versie',
+                                                                 owner=self)
 
         self._centraleServerHardwareAantal = EMAttribuut(field=FloatOrDecimalField,
                                                          naam='centrale server hardware aantal',
                                                          label='centrale server hardware aantal',
                                                          objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#EMObject.centraleServerHardwareAantal',
-                                                         definitie='Definitie nog toe te voegen voor eigenschap centrale server hardware aantal')
+                                                         definitie='Definitie nog toe te voegen voor eigenschap centrale server hardware aantal',
+                                                         owner=self)
 
         self._centraleServerHardwareType = EMAttribuut(field=StringField,
                                                        naam='centrale server hardware type',
                                                        label='centrale server hardware type',
                                                        objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#EMObject.centraleServerHardwareType',
-                                                       definitie='Definitie nog toe te voegen voor eigenschap centrale server hardware type')
+                                                       definitie='Definitie nog toe te voegen voor eigenschap centrale server hardware type',
+                                                       owner=self)
 
         self._centraleServerOperatingsoftwareVersie = EMAttribuut(field=StringField,
                                                                   naam='centrale server operatingsoftware versie',
                                                                   label='centrale server operatingsoftware versie',
                                                                   objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#EMObject.centraleServerOperatingsoftwareVersie',
-                                                                  definitie='Definitie nog toe te voegen voor eigenschap centrale server operatingsoftware versie')
+                                                                  definitie='Definitie nog toe te voegen voor eigenschap centrale server operatingsoftware versie',
+                                                                  owner=self)
 
         self._centraleServerTypeOperatingSoftware = EMAttribuut(field=BooleanField,
                                                                 naam='centrale server type> operating software',
                                                                 label='centrale server type> operating software',
                                                                 objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#EMObject.centraleServerTypeOperatingSoftware',
-                                                                definitie='Definitie nog toe te voegen voor eigenschap centrale server type> operating software')
+                                                                definitie='Definitie nog toe te voegen voor eigenschap centrale server type> operating software',
+                                                                owner=self)
 
         self._centraleServerTypeToepassingssoftware = EMAttribuut(field=BooleanField,
                                                                   naam='centrale server type>toepassingssoftware',
                                                                   label='centrale server type>toepassingssoftware',
                                                                   objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#EMObject.centraleServerTypeToepassingssoftware',
-                                                                  definitie='Definitie nog toe te voegen voor eigenschap centrale server type>toepassingssoftware')
+                                                                  definitie='Definitie nog toe te voegen voor eigenschap centrale server type>toepassingssoftware',
+                                                                  owner=self)
 
         self._codeklavierAantal = EMAttribuut(field=FloatOrDecimalField,
                                               naam='codeklavier aantal',
                                               label='codeklavier aantal',
                                               objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#EMObject.codeklavierAantal',
-                                              definitie='Definitie nog toe te voegen voor eigenschap codeklavier aantal')
+                                              definitie='Definitie nog toe te voegen voor eigenschap codeklavier aantal',
+                                              owner=self)
 
         self._deurslotMeerpuntsIseoCilinderAantal = EMAttribuut(field=FloatOrDecimalField,
                                                                 naam='deurslot meerpunts+ISEO cilinder aantal',
                                                                 label='deurslot meerpunts+ISEO cilinder aantal',
                                                                 objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#EMObject.deurslotMeerpuntsIseoCilinderAantal',
-                                                                definitie='Definitie nog toe te voegen voor eigenschap deurslot meerpunts+ISEO cilinder aantal')
+                                                                definitie='Definitie nog toe te voegen voor eigenschap deurslot meerpunts+ISEO cilinder aantal',
+                                                                owner=self)
 
         self._deurslotMotorischeCilEmvy3ksAantal = EMAttribuut(field=FloatOrDecimalField,
                                                                naam='deurslot motorische cil(EMVY 3KS) aantal',
                                                                label='deurslot motorische cil(EMVY 3KS) aantal',
                                                                objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#EMObject.deurslotMotorischeCilEmvy3ksAantal',
-                                                               definitie='Definitie nog toe te voegen voor eigenschap deurslot motorische cil(EMVY 3KS) aantal')
+                                                               definitie='Definitie nog toe te voegen voor eigenschap deurslot motorische cil(EMVY 3KS) aantal',
+                                                               owner=self)
 
         self._inbraakcentraleAantal = EMAttribuut(field=FloatOrDecimalField,
                                                   naam='inbraakcentrale aantal',
                                                   label='inbraakcentrale aantal',
                                                   objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#EMObject.inbraakcentraleAantal',
-                                                  definitie='Definitie nog toe te voegen voor eigenschap inbraakcentrale aantal')
+                                                  definitie='Definitie nog toe te voegen voor eigenschap inbraakcentrale aantal',
+                                                  owner=self)
 
         self._inbraakcentraleType = EMAttribuut(field=StringField,
                                                 naam='inbraakcentrale type',
                                                 label='inbraakcentrale type',
                                                 objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#EMObject.inbraakcentraleType',
-                                                definitie='Definitie nog toe te voegen voor eigenschap inbraakcentrale type')
+                                                definitie='Definitie nog toe te voegen voor eigenschap inbraakcentrale type',
+                                                owner=self)
 
         self._kaartlezerAantal = EMAttribuut(field=FloatOrDecimalField,
                                              naam='kaartlezer aantal',
                                              label='kaartlezer aantal',
                                              objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#EMObject.kaartlezerAantal',
-                                             definitie='Definitie nog toe te voegen voor eigenschap kaartlezer aantal')
+                                             definitie='Definitie nog toe te voegen voor eigenschap kaartlezer aantal',
+                                             owner=self)
 
         self._magneetcontactenAantal = EMAttribuut(field=FloatOrDecimalField,
                                                    naam='magneetcontacten aantal',
                                                    label='magneetcontacten aantal',
                                                    objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#EMObject.magneetcontactenAantal',
-                                                   definitie='Definitie nog toe te voegen voor eigenschap magneetcontacten aantal')
+                                                   definitie='Definitie nog toe te voegen voor eigenschap magneetcontacten aantal',
+                                                   owner=self)
 
         self._noodverlichtingAantal = EMAttribuut(field=FloatOrDecimalField,
                                                   naam='noodverlichting aantal',
                                                   label='noodverlichting aantal',
                                                   objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#EMObject.noodverlichtingAantal',
-                                                  definitie='Definitie nog toe te voegen voor eigenschap noodverlichting aantal')
+                                                  definitie='Definitie nog toe te voegen voor eigenschap noodverlichting aantal',
+                                                  owner=self)
 
         self._notitieinspectie = EMAttribuut(field=StringField,
                                              naam='notitieInspectie',
                                              label='notitieInspectie',
                                              objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#EMObject.notitieinspectie',
-                                             definitie='Definitie nog toe te voegen voor eigenschap notitie')
+                                             definitie='Definitie nog toe te voegen voor eigenschap notitie',
+                                             owner=self)
 
         self._opmerkingenBijOnderhoud = EMAttribuut(field=StringField,
                                                     naam='opmerkingen bij onderhoud',
                                                     label='opmerkingen bij onderhoud',
                                                     objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#EMObject.opmerkingenBijOnderhoud',
-                                                    definitie='Definitie nog toe te voegen voor eigenschap opmerkingen bij onderhoud')
+                                                    definitie='Definitie nog toe te voegen voor eigenschap opmerkingen bij onderhoud',
+                                                    owner=self)
 
         self._resultaatOnderhoud = EMAttribuut(field=StringField,
                                                naam='resultaat onderhoud',
                                                label='resultaat onderhoud',
                                                objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#EMObject.resultaatOnderhoud',
-                                               definitie='Definitie nog toe te voegen voor eigenschap resultaat onderhoud')
+                                               definitie='Definitie nog toe te voegen voor eigenschap resultaat onderhoud',
+                                               owner=self)
 
         self._rookmeldersAantal = EMAttribuut(field=FloatOrDecimalField,
                                               naam='rookmelders aantal',
                                               label='rookmelders aantal',
                                               objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#EMObject.rookmeldersAantal',
-                                              definitie='Definitie nog toe te voegen voor eigenschap rookmelders aantal')
+                                              definitie='Definitie nog toe te voegen voor eigenschap rookmelders aantal',
+                                              owner=self)
 
     @property
     def ap1001ReaderAantal(self):

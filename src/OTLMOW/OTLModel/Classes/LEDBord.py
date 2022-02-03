@@ -26,49 +26,57 @@ class LEDBord(AIMNaamObject, Verkeersbord):
                                                  naam='aantalLichtsensoren',
                                                  label='aantal lichtsensoren',
                                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#LEDBord.aantalLichtsensoren',
-                                                 definition='Het aantal lichtsensoren waar het bord over beschikt die continu de intensiteit van het invallend licht meten.')
+                                                 definition='Het aantal lichtsensoren waar het bord over beschikt die continu de intensiteit van het invallend licht meten.',
+                                                 owner=self)
 
         self._dnsNaam = OTLAttribuut(field=StringField,
                                      naam='dnsNaam',
                                      label='DNS naam',
                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#LEDBord.dnsNaam',
-                                     definition='De DNSNaam (ook "volledige domein naam" genoemd ) is een unieke naam binnen het Domain Name System (DNS), het naamgevingssysteem waarmee computers, webservers, diensten en  toepassing op een unieke manier kunnen worden geïdentificeerd. Deze bevat zowel de hostname en de top level domein naam bv. 120c8-ar1.belfa.be.')
+                                     definition='De DNSNaam (ook "volledige domein naam" genoemd ) is een unieke naam binnen het Domain Name System (DNS), het naamgevingssysteem waarmee computers, webservers, diensten en  toepassing op een unieke manier kunnen worden geïdentificeerd. Deze bevat zowel de hostname en de top level domein naam bv. 120c8-ar1.belfa.be.',
+                                     owner=self)
 
         self._heeftDeurcontact = OTLAttribuut(field=BooleanField,
                                               naam='heeftDeurcontact',
                                               label='heeft deurcontact',
                                               objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#LEDBord.heeftDeurcontact',
-                                              definition='Het LEDBord is beveiligd met een deurcontact dat waarschuwt voor ongeoorloofd openen van het bord door middel van een software-matig alarm.')
+                                              definition='Het LEDBord is beveiligd met een deurcontact dat waarschuwt voor ongeoorloofd openen van het bord door middel van een software-matig alarm.',
+                                              owner=self)
 
         self._ipAdres = OTLAttribuut(field=DteIPv4Adres,
                                      naam='ipAdres',
                                      label='ip adres',
                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#LEDBord.ipAdres',
-                                     definition='Het IP netwerkadres van het LEDBord.')
+                                     definition='Het IP netwerkadres van het LEDBord.',
+                                     owner=self)
 
         self._logischeGroepVerkeerscentrum = OTLAttribuut(field=StringField,
                                                           naam='logischeGroepVerkeerscentrum',
                                                           label='logische groep verkeerscentrum',
                                                           objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#LEDBord.logischeGroepVerkeerscentrum',
-                                                          definition='Identificator van de logische groep toegekend door het Verkeerscentrum.')
+                                                          definition='Identificator van de logische groep toegekend door het Verkeerscentrum.',
+                                                          owner=self)
 
         self._protocol = OTLAttribuut(field=StringField,
                                       naam='protocol',
                                       label='protocol',
                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#LEDBord.protocol',
-                                      definition='Communicatieprotocol waarmee het LEDBord wordt aangestuurd.')
+                                      definition='Communicatieprotocol waarmee het LEDBord wordt aangestuurd.',
+                                      owner=self)
 
         self._technischeFiche = OTLAttribuut(field=DtcDocument,
                                              naam='technischeFiche',
                                              label='technische fiche',
                                              objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#LEDBord.technischeFiche',
-                                             definition='Document met technische informatie over het LEDBord.')
+                                             definition='Document met technische informatie over het LEDBord.',
+                                             owner=self)
 
         self._versie = OTLAttribuut(field=StringField,
                                     naam='versie',
                                     label='versie',
                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#LEDBord.versie',
-                                    definition='Versie van het LEDBord.')
+                                    definition='Versie van het LEDBord.',
+                                    owner=self)
 
     @property
     def aantalLichtsensoren(self):

@@ -20,7 +20,8 @@ class GetesteBeginconstructie(SchokindexVoertuigkering, Beginstuk):
                                                 naam='performantieklasse',
                                                 label='performantieklasse',
                                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#GetesteBeginconstructie.performantieklasse',
-                                                definition='De aanduiding hoe (performantie) de beginconstructie is getest.')
+                                                definition='De aanduiding hoe (performantie) de beginconstructie is getest.',
+                                                owner=self)
 
     @property
     def performantieklasse(self):

@@ -14,13 +14,15 @@ class DtcSupplementenCBVWaarden(AttributeInfo):
                                    naam='kleur',
                                    label='kleur',
                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcSupplementenCBV.kleur',
-                                   definition='De kleur van de supplementen toegevoegd aan de verharding.')
+                                   definition='De kleur van de supplementen toegevoegd aan de verharding.',
+                                   owner=self)
 
         self._type = OTLAttribuut(field=KlTypeSuppCBV,
                                   naam='type',
                                   label='type',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcSupplementenCBV.type',
-                                  definition='Het type van de supplementen toegevoegd aan de verharding.')
+                                  definition='Het type van de supplementen toegevoegd aan de verharding.',
+                                  owner=self)
 
     @property
     def kleur(self):

@@ -20,7 +20,8 @@ class LaagBouwklasse(ArtificieleLaag):
                                         naam='bouwklasse',
                                         label='bouwklasse',
                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#LaagBouwklasse.bouwklasse',
-                                        definition='Een maat voor de verkeersbelasting over de volledige levensduur van de laag. De laag is ontworpen volgens de aangeduide bouwklasse.')
+                                        definition='Een maat voor de verkeersbelasting over de volledige levensduur van de laag. De laag is ontworpen volgens de aangeduide bouwklasse.',
+                                        owner=self)
 
     @property
     def bouwklasse(self):

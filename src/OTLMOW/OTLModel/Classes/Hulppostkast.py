@@ -18,7 +18,8 @@ class Hulppostkast(Buitenkast):
                                   naam='type',
                                   label='type',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Hulppostkast.type',
-                                  definition='Classificatie van de hulppostkast op basis van de inhoud en vorm volgens gangbare standaarden.')
+                                  definition='Classificatie van de hulppostkast op basis van de inhoud en vorm volgens gangbare standaarden.',
+                                  owner=self)
 
     @property
     def type(self):

@@ -18,7 +18,8 @@ class FietsTelDisplayLegacy(EMObject):
                                            naam='isDubbelzijdig',
                                            label='isDubbelzijdig',
                                            objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#FietsTelDisplayLegacy.isdubbelzijdig',
-                                           definitie='isDubbelzijdig')
+                                           definitie='isDubbelzijdig',
+                                           owner=self)
 
     @property
     def isdubbelzijdig(self):

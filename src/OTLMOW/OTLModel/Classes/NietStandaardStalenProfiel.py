@@ -18,13 +18,15 @@ class NietStandaardStalenProfiel(StalenProfiel):
                                             naam='profielbreedte',
                                             label='profielbreedte',
                                             objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#NietStandaardStalenProfiel.profielbreedte',
-                                            definition='De korte afmeting in millimeter van het profiel.')
+                                            definition='De korte afmeting in millimeter van het profiel.',
+                                            owner=self)
 
         self._profielhoogte = OTLAttribuut(field=KwantWrdInMillimeter,
                                            naam='profielhoogte',
                                            label='profielhoogte',
                                            objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#NietStandaardStalenProfiel.profielhoogte',
-                                           definition='De langste afmeting in millimeter van het profiel.')
+                                           definition='De langste afmeting in millimeter van het profiel.',
+                                           owner=self)
 
     @property
     def profielbreedte(self):

@@ -4,10 +4,11 @@ from OTLMOW.OTLModel.Classes.AIMObject import AIMObject
 from OTLMOW.OTLModel.Classes.Put import Put
 from OTLMOW.OTLModel.Datatypes.KlPutType import KlPutType
 from OTLMOW.OTLModel.Datatypes.KwantWrdInDecimaleGraden import KwantWrdInDecimaleGraden
+from OTLMOW.GeometrieArtefact.VlakGeometrie import VlakGeometrie
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class InspectieputRiolering(AIMObject, Put):
+class InspectieputRiolering(AIMObject, Put, VlakGeometrie):
     """Dient om de aanwezige riolering te kunnen inspecteren, reinigen of onderhouden. """
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/installatie#InspectieputRiolering'
@@ -16,18 +17,21 @@ class InspectieputRiolering(AIMObject, Put):
     def __init__(self):
         AIMObject.__init__(self)
         Put.__init__(self)
+        VlakGeometrie.__init__(self)
 
         self._hoekverdraaiing = OTLAttribuut(field=KwantWrdInDecimaleGraden,
                                              naam='hoekverdraaiing',
                                              label='hoekverdraaiing',
                                              objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/installatie#InspectieputRiolering.hoekverdraaiing',
-                                             definition='Verschil in richting tussen inkomende en uitgaande rioolbuis.')
+                                             definition='Verschil in richting tussen inkomende en uitgaande rioolbuis.',
+                                             owner=self)
 
         self._type = OTLAttribuut(field=KlPutType,
                                   naam='type',
                                   label='type',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/installatie#InspectieputRiolering.type',
-                                  definition='Het type van de put zoals beschreven in hoofdstuk 7 van het standaardbestek 250.')
+                                  definition='Het type van de put zoals beschreven in hoofdstuk 7 van het standaardbestek 250.',
+                                  owner=self)
 
     @property
     def hoekverdraaiing(self):

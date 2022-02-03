@@ -7,10 +7,11 @@ from OTLMOW.OTLModel.Datatypes.KlVerkeersbordsteunType import KlVerkeersbordsteu
 from OTLMOW.OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter
 from OTLMOW.OTLModel.Datatypes.KwantWrdInMillimeter import KwantWrdInMillimeter
 from OTLMOW.OTLModel.Datatypes.StringField import StringField
+from OTLMOW.GeometrieArtefact.PuntGeometrie import PuntGeometrie
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Verkeersbordsteun(AIMNaamObject, Draagconstructie):
+class Verkeersbordsteun(AIMNaamObject, Draagconstructie, PuntGeometrie):
     """Een draagconstructie voor verkeersborden of pictogrammen. Dit kan een ronde paal of een vakwerksteun zijn."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Verkeersbordsteun'
@@ -19,6 +20,7 @@ class Verkeersbordsteun(AIMNaamObject, Draagconstructie):
     def __init__(self):
         AIMNaamObject.__init__(self)
         Draagconstructie.__init__(self)
+        PuntGeometrie.__init__(self)
 
         self._breedte = OTLAttribuut(field=KwantWrdInMillimeter,
                                      naam='breedte',
@@ -26,37 +28,43 @@ class Verkeersbordsteun(AIMNaamObject, Draagconstructie):
                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Verkeersbordsteun.breedte',
                                      usagenote='Attribuut uit gebruik sinds versie 2.1.0 ',
                                      deprecated_version='2.1.0',
-                                     definition='De breedte van een verkeersbordpaal in millimeter.')
+                                     definition='De breedte van een verkeersbordpaal in millimeter.',
+                                     owner=self)
 
         self._diameter = OTLAttribuut(field=KwantWrdInMillimeter,
                                       naam='diameter',
                                       label='diameter',
                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Verkeersbordsteun.diameter',
-                                      definition='De diameter van de verkeersbordpaal in millimeter.')
+                                      definition='De diameter van de verkeersbordpaal in millimeter.',
+                                      owner=self)
 
         self._fabricagevoorschrift = OTLAttribuut(field=StringField,
                                                   naam='fabricagevoorschrift',
                                                   label='fabricagevoorschrift',
                                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Verkeersbordsteun.fabricagevoorschrift',
-                                                  definition='Genormaliseerde referentie waaraan het infrastructuur element aan voldoet.')
+                                                  definition='Genormaliseerde referentie waaraan het infrastructuur element aan voldoet.',
+                                                  owner=self)
 
         self._lengte = OTLAttribuut(field=KwantWrdInMeter,
                                     naam='lengte',
                                     label='lengte',
                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Verkeersbordsteun.lengte',
-                                    definition='De lengte van de verkeersbordpaal in meter.')
+                                    definition='De lengte van de verkeersbordpaal in meter.',
+                                    owner=self)
 
         self._lengteBovengronds = OTLAttribuut(field=KwantWrdInMeter,
                                                naam='lengteBovengronds',
                                                label='lengte bovengronds',
                                                objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Verkeersbordsteun.lengteBovengronds',
-                                               definition='De bovengrondse lengte van de verkeersbordpaal in meter.')
+                                               definition='De bovengrondse lengte van de verkeersbordpaal in meter.',
+                                               owner=self)
 
         self._lengteOndergronds = OTLAttribuut(field=KwantWrdInMeter,
                                                naam='lengteOndergronds',
                                                label='lengte ondergronds',
                                                objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Verkeersbordsteun.lengteOndergronds',
-                                               definition='De ondergrondse lengte van de verkeersbordpaal in meter.')
+                                               definition='De ondergrondse lengte van de verkeersbordpaal in meter.',
+                                               owner=self)
 
         self._operationeleStatus = OTLAttribuut(field=KlOperationeleStatus,
                                                 naam='operationeleStatus',
@@ -64,19 +72,22 @@ class Verkeersbordsteun(AIMNaamObject, Draagconstructie):
                                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Verkeersbordsteun.operationeleStatus',
                                                 usagenote='Attribuut uit gebruik sinds versie 2.0.0 ',
                                                 deprecated_version='2.0.0',
-                                                definition='De operationele status van de verkeersbordsteun.')
+                                                definition='De operationele status van de verkeersbordsteun.',
+                                                owner=self)
 
         self._type = OTLAttribuut(field=KlVerkeersbordsteunType,
                                   naam='type',
                                   label='type',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Verkeersbordsteun.type',
-                                  definition='Het type verkeersbordpaal.')
+                                  definition='Het type verkeersbordpaal.',
+                                  owner=self)
 
         self._wanddikte = OTLAttribuut(field=KwantWrdInMillimeter,
                                        naam='wanddikte',
                                        label='wanddikte',
                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Verkeersbordsteun.wanddikte',
-                                       definition='De dikte van de wand in millimeter.')
+                                       definition='De dikte van de wand in millimeter.',
+                                       owner=self)
 
     @property
     def breedte(self):

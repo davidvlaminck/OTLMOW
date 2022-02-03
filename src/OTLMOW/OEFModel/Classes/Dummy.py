@@ -18,7 +18,8 @@ class Dummy(EMObject):
                                          naam='notitie (DUMMY)',
                                          label='notitie (DUMMY)',
                                          objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#Dummy.notitieDummy',
-                                         definitie='Definitie nog toe te voegen voor eigenschap notitie (DUMMY)')
+                                         definitie='Definitie nog toe te voegen voor eigenschap notitie (DUMMY)',
+                                         owner=self)
 
     @property
     def notitieDummy(self):

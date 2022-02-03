@@ -20,19 +20,22 @@ class TrottoirbandStd(GestandaardiseerdeKantopsluiting):
                                   naam='norm',
                                   label='norm',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#TrottoirbandStd.norm',
-                                  definition='De gestandaardiseerde trottoirband volgens aangeduide norm.')
+                                  definition='De gestandaardiseerde trottoirband volgens aangeduide norm.',
+                                  owner=self)
 
         self._type = OTLAttribuut(field=KlLETrottoirbandType,
                                   naam='type',
                                   label='type',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#TrottoirbandStd.type',
-                                  definition='Bepaling van het type van trottoirband.')
+                                  definition='Bepaling van het type van trottoirband.',
+                                  owner=self)
 
         self._vorm = OTLAttribuut(field=DtcTrottoirbandVorm,
                                   naam='vorm',
                                   label='vorm',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#TrottoirbandStd.vorm',
-                                  definition='Bepaling van de vorm van de trottoirband.')
+                                  definition='Bepaling van de vorm van de trottoirband.',
+                                  owner=self)
 
     @property
     def norm(self):

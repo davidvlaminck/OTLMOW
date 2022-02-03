@@ -20,25 +20,29 @@ class SchampkantStd(GestandaardiseerdeKantopsluiting):
                                      naam='breedte',
                                      label='breedte',
                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#SchampkantStd.breedte',
-                                     definition='De breedte van de gestandaardiseerde schampkant in centimeter.')
+                                     definition='De breedte van de gestandaardiseerde schampkant in centimeter.',
+                                     owner=self)
 
         self._dikte = OTLAttribuut(field=KwantWrdInCentimeter,
                                    naam='dikte',
                                    label='dikte',
                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#SchampkantStd.dikte',
-                                   definition='De dikte van de gestandaardiseerde schampkant in centimeter.')
+                                   definition='De dikte van de gestandaardiseerde schampkant in centimeter.',
+                                   owner=self)
 
         self._norm = OTLAttribuut(field=DtcLENorm,
                                   naam='norm',
                                   label='norm',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#SchampkantStd.norm',
-                                  definition='De gestandaardiseerde schampkant volgens aangeduide norm.')
+                                  definition='De gestandaardiseerde schampkant volgens aangeduide norm.',
+                                  owner=self)
 
         self._type = OTLAttribuut(field=KlLESchampkantType,
                                   naam='type',
                                   label='type',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#SchampkantStd.type',
-                                  definition='Het type van gestandaardiseerde schampkant.')
+                                  definition='Het type van gestandaardiseerde schampkant.',
+                                  owner=self)
 
     @property
     def breedte(self):

@@ -18,7 +18,8 @@ class VerkeerslichtRood(Verkeerslicht):
                                           naam='typeBewaking',
                                           label='type bewaking',
                                           objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#VerkeerslichtRood.typeBewaking',
-                                          definition='Type bewaking van het rode verkeerslicht.')
+                                          definition='Type bewaking van het rode verkeerslicht.',
+                                          owner=self)
 
     @property
     def typeBewaking(self):

@@ -18,7 +18,8 @@ class OnbegroeidVoorkomen(AndereVerharding):
                                   naam='type',
                                   label='type',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#OnbegroeidVoorkomen.type',
-                                  definition='Type van onbegroeid voorkomen.')
+                                  definition='Type van onbegroeid voorkomen.',
+                                  owner=self)
 
     @property
     def type(self):

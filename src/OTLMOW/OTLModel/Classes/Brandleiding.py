@@ -19,13 +19,15 @@ class Brandleiding(Persleiding):
                                           naam='isGeisoleerd',
                                           label='is geïsoleerd',
                                           objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Brandleiding.isGeisoleerd',
-                                          definition='Geeft aan of de brandleiding voorzien is van eigen isolatie.')
+                                          definition='Geeft aan of de brandleiding voorzien is van eigen isolatie.',
+                                          owner=self)
 
         self._leidingdruk = OTLAttribuut(field=KwantWrdInBar,
                                          naam='leidingdruk',
                                          label='leidingdruk',
                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Brandleiding.leidingdruk',
-                                         definition='De vastgelegde druk die moet voorzien worden op de leiding in functie van de aanvoer van bluswater.')
+                                         definition='De vastgelegde druk die moet voorzien worden op de leiding in functie van de aanvoer van bluswater.',
+                                         owner=self)
 
     @property
     def isGeisoleerd(self):

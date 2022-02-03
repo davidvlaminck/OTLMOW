@@ -14,13 +14,15 @@ class DtcBeschermingVraatschadeWaarden(AttributeInfo):
                                        naam='materiaal',
                                        label='materiaal',
                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcBeschermingVraatschade.materiaal',
-                                       definition='De middelen als bescherming tegen vraatschade.')
+                                       definition='De middelen als bescherming tegen vraatschade.',
+                                       owner=self)
 
         self._tegenMaaischade = OTLAttribuut(field=BooleanField,
                                              naam='tegenMaaischade',
                                              label='tegen maaischade',
                                              objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcBeschermingVraatschade.tegenMaaischade',
-                                             definition='Aanduiding of er bescherming tegen maaischade aanwezig is.')
+                                             definition='Aanduiding of er bescherming tegen maaischade aanwezig is.',
+                                             owner=self)
 
     @property
     def materiaal(self):

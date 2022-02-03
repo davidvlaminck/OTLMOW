@@ -16,14 +16,16 @@ class DtuAfmetingGrondvlakWaarden(AttributeInfo, UnionWaarden):
                                          label='rechthoekig',
                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtuAfmetingGrondvlak.rechthoekig',
                                          kardinaliteit_min='0',
-                                         definition='Afmetingen voor breedte en lengte of diepte. De breedte meet van links naar rechts in vooraanzicht, de lengte van voor naar achter.')
+                                         definition='Afmetingen voor breedte en lengte of diepte. De breedte meet van links naar rechts in vooraanzicht, de lengte van voor naar achter.',
+                                         owner=self)
 
         self._rond = OTLAttribuut(field=DtcAfmetingDiameterInCm,
                                   naam='rond',
                                   label='rond',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtuAfmetingGrondvlak.rond',
                                   kardinaliteit_min='0',
-                                  definition='Afmeting van de diameter in centimeter van een rond (grond)vlak.')
+                                  definition='Afmeting van de diameter in centimeter van een rond (grond)vlak.',
+                                  owner=self)
 
     @property
     def rechthoekig(self):

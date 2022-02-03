@@ -6,10 +6,11 @@ from OTLMOW.OTLModel.Datatypes.KlLEMarkeringCode import KlLEMarkeringCode
 from OTLMOW.OTLModel.Datatypes.KlLEMarkeringSoort import KlLEMarkeringSoort
 from OTLMOW.OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter
 from OTLMOW.OTLModel.Datatypes.KwantWrdInVierkanteMeter import KwantWrdInVierkanteMeter
+from OTLMOW.GeometrieArtefact.LijnGeometrie import LijnGeometrie
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class LijnvormigElementMarkering(Markering, AOWSType):
+class LijnvormigElementMarkering(Markering, AOWSType, LijnGeometrie):
     """Een markering van een lijnvormig element om de zichtbaarheid te verhogen om het verkeer te waarschuwen, informeren of regelen."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#LijnvormigElementMarkering'
@@ -18,30 +19,35 @@ class LijnvormigElementMarkering(Markering, AOWSType):
     def __init__(self):
         AOWSType.__init__(self)
         Markering.__init__(self)
+        LijnGeometrie.__init__(self)
 
         self._code = OTLAttribuut(field=KlLEMarkeringCode,
                                   naam='code',
                                   label='code',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#LijnvormigElementMarkering.code',
-                                  definition='De (COPRO/BENOR) code van de lijnvormig element markering.')
+                                  definition='De (COPRO/BENOR) code van de lijnvormig element markering.',
+                                  owner=self)
 
         self._lengte = OTLAttribuut(field=KwantWrdInMeter,
                                     naam='lengte',
                                     label='lengte',
                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#LijnvormigElementMarkering.lengte',
-                                    definition='De lengte van de markering in meter.')
+                                    definition='De lengte van de markering in meter.',
+                                    owner=self)
 
         self._oppervlakte = OTLAttribuut(field=KwantWrdInVierkanteMeter,
                                          naam='oppervlakte',
                                          label='oppervlakte',
                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#LijnvormigElementMarkering.oppervlakte',
-                                         definition='De oppervlakte van de markering op het lijnvormig element in vierkante meter.')
+                                         definition='De oppervlakte van de markering op het lijnvormig element in vierkante meter.',
+                                         owner=self)
 
         self._soortOmschrijving = OTLAttribuut(field=KlLEMarkeringSoort,
                                                naam='soortOmschrijving',
                                                label='soort omschrijving',
                                                objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#LijnvormigElementMarkering.soortOmschrijving',
-                                               definition='De soort en tevens de omschrijving van de lijnvormige elementen markering.')
+                                               definition='De soort en tevens de omschrijving van de lijnvormige elementen markering.',
+                                               owner=self)
 
     @property
     def code(self):

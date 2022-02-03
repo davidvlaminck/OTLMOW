@@ -16,14 +16,16 @@ class DtuWvLichtmastBevsToestelMethodeWaarden(AttributeInfo, UnionWaarden):
                                                label='afwijkende methode',
                                                objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtuWvLichtmastBevsToestelMethode.afwijkendeMethode',
                                                kardinaliteit_min='0',
-                                               definition='Tekstveld waarin de afwijkende methode van bevestiging van verlichtingstoestel aan lichtmast kan beschreven worden.')
+                                               definition='Tekstveld waarin de afwijkende methode van bevestiging van verlichtingstoestel aan lichtmast kan beschreven worden.',
+                                               owner=self)
 
         self._standaardMethode = OTLAttribuut(field=KlWvLichtmastBevsToestel,
                                               naam='standaardMethode',
                                               label='standaard methode',
                                               objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtuWvLichtmastBevsToestelMethode.standaardMethode',
                                               kardinaliteit_min='0',
-                                              definition='Bepaling van de standaardbevestigingen van verlichtingstoestellen aan lichtmasten.')
+                                              definition='Bepaling van de standaardbevestigingen van verlichtingstoestellen aan lichtmasten.',
+                                              owner=self)
 
     @property
     def afwijkendeMethode(self):

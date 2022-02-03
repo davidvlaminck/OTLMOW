@@ -16,14 +16,16 @@ class DtuLichtmastMasthoogteWaarden(AttributeInfo, UnionWaarden):
                                               label='afwijkende hoogte',
                                               objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtuLichtmastMasthoogte.afwijkendeHoogte',
                                               kardinaliteit_min='0',
-                                              definition='De afwijkende hoogte van de mast in meter.')
+                                              definition='De afwijkende hoogte van de mast in meter.',
+                                              owner=self)
 
         self._standaardHoogte = OTLAttribuut(field=KlLichtmastMasthoogte,
                                              naam='standaardHoogte',
                                              label='standaard hoogte',
                                              objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtuLichtmastMasthoogte.standaardHoogte',
                                              kardinaliteit_min='0',
-                                             definition='Bepaling van de standaard hoogte van een mast.')
+                                             definition='Bepaling van de standaard hoogte van een mast.',
+                                             owner=self)
 
     @property
     def afwijkendeHoogte(self):

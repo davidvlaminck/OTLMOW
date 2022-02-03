@@ -5,41 +5,47 @@ from OTLMOW.OTLModel.Datatypes.DtcDocument import DtcDocument
 from OTLMOW.OTLModel.Datatypes.KlCodeklavierMerk import KlCodeklavierMerk
 from OTLMOW.OTLModel.Datatypes.KlCodeklavierModelnaam import KlCodeklavierModelnaam
 from OTLMOW.OTLModel.Datatypes.KlCodeklavierWerking import KlCodeklavierWerking
+from OTLMOW.GeometrieArtefact.PuntGeometrie import PuntGeometrie
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Codeklavier(AIMNaamObject):
+class Codeklavier(AIMNaamObject, PuntGeometrie):
     """Toestel voor het aansturen van een asset op basis van ingetoetste codes."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Codeklavier'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        super().__init__()
+        AIMNaamObject.__init__(self)
+        PuntGeometrie.__init__(self)
 
         self._merk = OTLAttribuut(field=KlCodeklavierMerk,
                                   naam='merk',
                                   label='merk',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Codeklavier.merk',
-                                  definition='Het merk van het codeklavier.')
+                                  definition='Het merk van het codeklavier.',
+                                  owner=self)
 
         self._modelnaam = OTLAttribuut(field=KlCodeklavierModelnaam,
                                        naam='modelnaam',
                                        label='modelnaam',
                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Codeklavier.modelnaam',
-                                       definition='De modelnaam van het codeklavier.')
+                                       definition='De modelnaam van het codeklavier.',
+                                       owner=self)
 
         self._technischeFiche = OTLAttribuut(field=DtcDocument,
                                              naam='technischeFiche',
                                              label='technische fiche',
                                              objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Codeklavier.technischeFiche',
-                                             definition='De technische fiche van het codeklavier.')
+                                             definition='De technische fiche van het codeklavier.',
+                                             owner=self)
 
         self._werking = OTLAttribuut(field=KlCodeklavierWerking,
                                      naam='werking',
                                      label='werking',
                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Codeklavier.werking',
-                                     definition='Indeling van het toestel volgens de manier waarop de gebruiker de aansturing doet.')
+                                     definition='Indeling van het toestel volgens de manier waarop de gebruiker de aansturing doet.',
+                                     owner=self)
 
     @property
     def merk(self):

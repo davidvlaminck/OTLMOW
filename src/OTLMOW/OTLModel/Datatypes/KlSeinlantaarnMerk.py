@@ -1,6 +1,5 @@
 # coding=utf-8
 from OTLMOW.OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
-from OTLMOW.OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 
 # Generated with OTLEnumerationCreator. To modify: extend, do not edit

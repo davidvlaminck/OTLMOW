@@ -19,19 +19,22 @@ class BetonnenConstructieElement(ABC):
                                                 naam='betonspecificaties',
                                                 label='betonspecificaties',
                                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#BetonnenConstructieElement.betonspecificaties',
-                                                definition='Eigenschappen van het gebruikte beton.')
+                                                definition='Eigenschappen van het gebruikte beton.',
+                                                owner=self)
 
         self._uitvoeringsmethode = OTLAttribuut(field=KlUitvoeringsmethode,
                                                 naam='uitvoeringsmethode',
                                                 label='uitvoeringsmethode',
                                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#BetonnenConstructieElement.uitvoeringsmethode',
-                                                definition='Op welke manier het beton wordt aangebracht.')
+                                                definition='Op welke manier het beton wordt aangebracht.',
+                                                owner=self)
 
         self._wapeningsplan = OTLAttribuut(field=DtcDocument,
                                            naam='wapeningsplan',
                                            label='wapeningsplan',
                                            objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#BetonnenConstructieElement.wapeningsplan',
-                                           definition='Plan waarin de wapening zo gedetailleerd mogelijk wordt uitgetekend (met materiaalspecificaties en de afmetingen worden weergegeven in millimeters).')
+                                           definition='Plan waarin de wapening zo gedetailleerd mogelijk wordt uitgetekend (met materiaalspecificaties en de afmetingen worden weergegeven in millimeters).',
+                                           owner=self)
 
     @property
     def betonspecificaties(self):

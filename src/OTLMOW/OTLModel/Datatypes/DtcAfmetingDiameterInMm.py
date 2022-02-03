@@ -13,7 +13,8 @@ class DtcAfmetingDiameterInMmWaarden(AttributeInfo):
                                       naam='diameter',
                                       label='diameter',
                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAfmetingDiameterInMm.diameter',
-                                      definition='De diameter in millimeter.')
+                                      definition='De diameter in millimeter.',
+                                      owner=self)
 
     @property
     def diameter(self):

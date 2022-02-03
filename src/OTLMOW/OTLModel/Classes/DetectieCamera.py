@@ -23,19 +23,22 @@ class DetectieCamera(NietWeggebondenDetectie, TypeWeggebruiker):
                                               label='detectieprincipe',
                                               objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DetectieCamera.detectieprincipe',
                                               kardinaliteit_max='*',
-                                              definition='Geeft aan of de camera optisch en/of thermografisch werkt.')
+                                              definition='Geeft aan of de camera optisch en/of thermografisch werkt.',
+                                              owner=self)
 
         self._merk = OTLAttribuut(field=KlDetectiecameraMerk,
                                   naam='merk',
                                   label='merk',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DetectieCamera.merk',
-                                  definition='Merknaam van de detectiecamera.')
+                                  definition='Merknaam van de detectiecamera.',
+                                  owner=self)
 
         self._modelnaam = OTLAttribuut(field=KlDetectiecameraModelnaam,
                                        naam='modelnaam',
                                        label='modelnaam',
                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DetectieCamera.modelnaam',
-                                       definition='De modelnaam van de detectiecamera.')
+                                       definition='De modelnaam van de detectiecamera.',
+                                       owner=self)
 
     @property
     def detectieprincipe(self):

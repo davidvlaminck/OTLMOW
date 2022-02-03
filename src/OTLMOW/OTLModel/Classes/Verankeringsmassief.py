@@ -21,13 +21,15 @@ class Verankeringsmassief(Betonfundering, KlassiekeFundering):
                                                   naam='isAfgedektMetBitumen',
                                                   label='is afgedekt met bitumen',
                                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Verankeringsmassief.isAfgedektMetBitumen',
-                                                  definition='Geeft aan of de fundering afgedekt is met een waterbestendige laag die regenwater en vuil wegvoert van de fundering.')
+                                                  definition='Geeft aan of de fundering afgedekt is met een waterbestendige laag die regenwater en vuil wegvoert van de fundering.',
+                                                  owner=self)
 
         self._volume = OTLAttribuut(field=KwantWrdInKubiekeMeter,
                                     naam='volume',
                                     label='volume',
                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Verankeringsmassief.volume',
-                                    definition='Het volume in kubieke meter van het verankeringsmassief.')
+                                    definition='Het volume in kubieke meter van het verankeringsmassief.',
+                                    owner=self)
 
     @property
     def isAfgedektMetBitumen(self):

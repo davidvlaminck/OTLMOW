@@ -6,10 +6,11 @@ from OTLMOW.OTLModel.Datatypes.KwantWrdInKubiekeMeter import KwantWrdInKubiekeMe
 from OTLMOW.OTLModel.Datatypes.KwantWrdInKubiekeMeterPerSeconde import KwantWrdInKubiekeMeterPerSeconde
 from OTLMOW.OTLModel.Datatypes.KwantWrdInMillimeter import KwantWrdInMillimeter
 from OTLMOW.OTLModel.Datatypes.KwantWrdInWatt import KwantWrdInWatt
+from OTLMOW.GeometrieArtefact.PuntGeometrie import PuntGeometrie
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Ventilatie(AIMObject):
+class Ventilatie(AIMObject, PuntGeometrie):
     """Abstracte voor attributen die gemeenschappelijk zijn voor verschillende types van ventilatie."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Ventilatie'
@@ -17,19 +18,22 @@ class Ventilatie(AIMObject):
 
     @abstractmethod
     def __init__(self):
-        super().__init__()
+        AIMObject.__init__(self)
+        PuntGeometrie.__init__(self)
 
         self._binnendiameter = OTLAttribuut(field=KwantWrdInMillimeter,
                                             naam='binnendiameter',
                                             label='binnendiameter',
                                             objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Ventilatie.binnendiameter',
-                                            definition='De grootste afstand van de rechte lijn die kan worden getrokken tussen twee punten op de binnenzijde van de ventilatie. Deze rechte lijn gaat altijd door het middelpunt van de ventilatie.')
+                                            definition='De grootste afstand van de rechte lijn die kan worden getrokken tussen twee punten op de binnenzijde van de ventilatie. Deze rechte lijn gaat altijd door het middelpunt van de ventilatie.',
+                                            owner=self)
 
         self._buitendiameter = OTLAttribuut(field=KwantWrdInMillimeter,
                                             naam='buitendiameter',
                                             label='buitendiameter',
                                             objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Ventilatie.buitendiameter',
-                                            definition='De grootste afstand van de rechte lijn die kan worden getrokken tussen twee punten op de buitenzijde van de ventilatie. Deze rechte lijn gaat altijd door het middelpunt van de ventilatie.')
+                                            definition='De grootste afstand van de rechte lijn die kan worden getrokken tussen twee punten op de buitenzijde van de ventilatie. Deze rechte lijn gaat altijd door het middelpunt van de ventilatie.',
+                                            owner=self)
 
         self._maximaalDebiet = OTLAttribuut(field=KwantWrdInKubiekeMeter,
                                             naam='maximaalDebiet',
@@ -37,19 +41,22 @@ class Ventilatie(AIMObject):
                                             objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Ventilatie.maximaalDebiet',
                                             usagenote='Attribuut uit gebruik sinds versie 2.0.0 ',
                                             deprecated_version='2.0.0',
-                                            definition='Maximaal debiet is de grootste hoeveelheid gas of vloeistof die per tijdseenheid door een bepaald oppervlak kan stromen.')
+                                            definition='Maximaal debiet is de grootste hoeveelheid gas of vloeistof die per tijdseenheid door een bepaald oppervlak kan stromen.',
+                                            owner=self)
 
         self._maximaalVolumedebiet = OTLAttribuut(field=KwantWrdInKubiekeMeterPerSeconde,
                                                   naam='maximaalVolumedebiet',
                                                   label='maximaal volumedebiet',
                                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Ventilatie.maximaalVolumedebiet',
-                                                  definition='Maximaal volumedebiet is de grootste hoeveelheid volume aan gas of vloeistof die per tijdseenheid door een bepaald oppervlak kan stromen.')
+                                                  definition='Maximaal volumedebiet is de grootste hoeveelheid volume aan gas of vloeistof die per tijdseenheid door een bepaald oppervlak kan stromen.',
+                                                  owner=self)
 
         self._vermogen = OTLAttribuut(field=KwantWrdInWatt,
                                       naam='vermogen',
                                       label='vermogen',
                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Ventilatie.vermogen',
-                                      definition='Het vermogen van een ventilatie is de energie die dat het per seconde omzet.')
+                                      definition='Het vermogen van een ventilatie is de energie die dat het per seconde omzet.',
+                                      owner=self)
 
     @property
     def binnendiameter(self):

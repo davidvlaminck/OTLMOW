@@ -21,217 +21,253 @@ class VVOP(EMObject):
                                            naam='LED verlichting',
                                            label='LED verlichting',
                                            objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#EMObject.ledVerlichting',
-                                           definitie='Definitie nog toe te voegen voor eigenschap LED verlichting')
+                                           definitie='Definitie nog toe te voegen voor eigenschap LED verlichting',
+                                           owner=self)
 
         self._ralKleur = EMAttribuut(field=StringField,
                                      naam='RAL kleur',
                                      label='RAL kleur',
                                      objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#SeinbrugDVM.ralKleur',
-                                     definitie='Definitie nog toe te voegen voor eigenschap RAL kleur')
+                                     definitie='Definitie nog toe te voegen voor eigenschap RAL kleur',
+                                     owner=self)
 
         self._vsaType = EMAttribuut(field=StringField,
                                     naam='VSA type',
                                     label='VSA type',
                                     objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#EMObject.vsaType',
-                                    definitie='keuzelijst elektromagnetisch, elektronisch, niet gekend')
+                                    definitie='keuzelijst elektromagnetisch, elektronisch, niet gekend',
+                                    owner=self)
 
         self._verticaleSignalisatieOversteek = EMAttribuut(field=StringField,
                                                            naam='Verticale signalisatie thv oversteek',
                                                            label='Verticale signalisatie thv oversteek',
                                                            objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#VVOP.verticaleSignalisatieOversteek',
-                                                           definitie='Verticale signalisatie thv oversteek')
+                                                           definitie='Verticale signalisatie thv oversteek',
+                                                           owner=self)
 
         self._aantalArmen = EMAttribuut(field=StringField,
                                         naam='aantal armen',
                                         label='aantal armen',
                                         objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#VPLMast.aantalArmen',
-                                        definitie="keuzelijst aantal armen aan lichtmast (0-4). Indien lichtmast \'M\', \'MS\', \'B\',\'BS\', \'K\' of \'KS\' dan 0,1, 2,3 of 4. Anders altijd 0.")
+                                        definitie="keuzelijst aantal armen aan lichtmast (0-4). Indien lichtmast \'M\', \'MS\', \'B\',\'BS\', \'K\' of \'KS\' dan 0,1, 2,3 of 4. Anders altijd 0.",
+                                        owner=self)
 
         self._aantalKlemmenblokkenVervangen = EMAttribuut(field=FloatOrDecimalField,
                                                           naam='aantal klemmenblokken vervangen',
                                                           label='aantal klemmenblokken vervangen',
                                                           objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#EMObject.aantalKlemmenblokkenVervangen',
-                                                          definitie='Definitie nog toe te voegen voor eigenschap aantal klemmenblokken vervangen')
+                                                          definitie='Definitie nog toe te voegen voor eigenschap aantal klemmenblokken vervangen',
+                                                          owner=self)
 
         self._aantalVerlichtingstoestellen = EMAttribuut(field=FloatOrDecimalField,
                                                          naam='aantal verlichtingstoestellen',
                                                          label='aantal verlichtingstoestellen',
                                                          objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#EMObject.aantalVerlichtingstoestellen',
-                                                         definitie='Definitie nog toe te voegen voor eigenschap aantal verlichtingstoestellen')
+                                                         definitie='Definitie nog toe te voegen voor eigenschap aantal verlichtingstoestellen',
+                                                         owner=self)
 
         self._aantalZekeringenVervangen = EMAttribuut(field=FloatOrDecimalField,
                                                       naam='aantal zekeringen vervangen',
                                                       label='aantal zekeringen vervangen',
                                                       objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#EMObject.aantalZekeringenVervangen',
-                                                      definitie='Definitie nog toe te voegen voor eigenschap aantal zekeringen vervangen')
+                                                      definitie='Definitie nog toe te voegen voor eigenschap aantal zekeringen vervangen',
+                                                      owner=self)
 
         self._armlengteVVOP = EMAttribuut(field=StringField,
                                           naam='armlengteVVOP',
                                           label='armlengteVVOP',
                                           objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#VVOP.armlengteVVOP',
-                                          definitie='armlengteVVOP')
+                                          definitie='armlengteVVOP',
+                                          owner=self)
 
         self._biflash = EMAttribuut(field=BooleanField,
                                     naam='biflash',
                                     label='biflash',
                                     objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#EMObject.biflash',
-                                    definitie='biflash')
+                                    definitie='biflash',
+                                    owner=self)
 
         self._datumLichtmastGeschilderd = EMAttribuut(field=DateField,
                                                       naam='datum lichtmast geschilderd',
                                                       label='datum lichtmast geschilderd',
                                                       objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#VPLMast.datumLichtmastGeschilderd',
-                                                      definitie='datum waarop lichtmast laatste keer is geschilderd')
+                                                      definitie='datum waarop lichtmast laatste keer is geschilderd',
+                                                      owner=self)
 
         self._deurtjeVervangen = EMAttribuut(field=BooleanField,
                                              naam='deurtje vervangen',
                                              label='deurtje vervangen',
                                              objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#VPLMast.deurtjeVervangen',
-                                             definitie='Definitie nog toe te voegen voor eigenschap deurtje vervangen')
+                                             definitie='Definitie nog toe te voegen voor eigenschap deurtje vervangen',
+                                             owner=self)
 
         self._directGevaar = EMAttribuut(field=BooleanField,
                                          naam='direct gevaar',
                                          label='direct gevaar',
                                          objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#EMObject.directGevaar',
-                                         definitie='Definitie nog toe te voegen voor eigenschap direct gevaar')
+                                         definitie='Definitie nog toe te voegen voor eigenschap direct gevaar',
+                                         owner=self)
 
         self._externeRoestvorming = EMAttribuut(field=StringField,
                                                 naam='externe roestvorming',
                                                 label='externe roestvorming',
                                                 objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#EMObject.externeRoestvorming',
-                                                definitie='keuzelijst en schaalverdeling volgens inspectiehandboek')
+                                                definitie='keuzelijst en schaalverdeling volgens inspectiehandboek',
+                                                owner=self)
 
         self._interneRoestvorming = EMAttribuut(field=StringField,
                                                 naam='interne roestvorming',
                                                 label='interne roestvorming',
                                                 objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#EMObject.interneRoestvorming',
-                                                definitie='keuzelijst en schaalverdeling volgens inspectiehandboek')
+                                                definitie='keuzelijst en schaalverdeling volgens inspectiehandboek',
+                                                owner=self)
 
         self._kleurtemperatuurLed = EMAttribuut(field=StringField,
                                                 naam='kleurtemperatuur LED',
                                                 label='kleurtemperatuur LED',
                                                 objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#EMObject.kleurtemperatuurLed',
-                                                definitie='Definitie nog toe te voegen voor eigenschap kleurtemperatuur LED')
+                                                definitie='Definitie nog toe te voegen voor eigenschap kleurtemperatuur LED',
+                                                owner=self)
 
         self._leverancier = EMAttribuut(field=StringField,
                                         naam='leverancier',
                                         label='leverancier',
                                         objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#VPLMast.leverancier',
-                                        definitie='keuzelijst (Baert, PetitJean, Safety Products, andere, niet gekend)')
+                                        definitie='keuzelijst (Baert, PetitJean, Safety Products, andere, niet gekend)',
+                                        owner=self)
 
         self._lichtmastBuitenGebruik = EMAttribuut(field=BooleanField,
                                                    naam='lichtmast buiten gebruik',
                                                    label='lichtmast buiten gebruik',
                                                    objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#VPLMast.lichtmastBuitenGebruik',
-                                                   definitie='indien lichtmast nutteloos is (geen lichtpunt meer), kan eigenschap buiten gebruik op ja worden gesteld, in afwachting van verwijdering')
+                                                   definitie='indien lichtmast nutteloos is (geen lichtpunt meer), kan eigenschap buiten gebruik op ja worden gesteld, in afwachting van verwijdering',
+                                                   owner=self)
 
         self._lichtpunthoogteVVOP = EMAttribuut(field=StringField,
                                                 naam='lichtpunthoogteVVOP',
                                                 label='lichtpunthoogteVVOP',
                                                 objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#VVOP.lichtpunthoogteVVOP',
-                                                definitie='lichtpunthoogte VVOP')
+                                                definitie='lichtpunthoogte VVOP',
+                                                owner=self)
 
         self._nummerLeesbaar = EMAttribuut(field=StringField,
                                            naam='nummer leesbaar',
                                            label='nummer leesbaar',
                                            objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#EMObject.nummerLeesbaar',
-                                           definitie='keuzelijst en schaalverdeling volgens inspectiehandboek')
+                                           definitie='keuzelijst en schaalverdeling volgens inspectiehandboek',
+                                           owner=self)
 
         self._nummerVoedingskring = EMAttribuut(field=StringField,
                                                 naam='nummer voedingskring',
                                                 label='nummer voedingskring',
                                                 objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#VPLMast.nummerVoedingskring',
-                                                definitie='identificatie voedingskring : tekstveld om variatie provincies op te vangen : kring A, B, C, ... of  kring 1, 2, 9, ... of ...')
+                                                definitie='identificatie voedingskring : tekstveld om variatie provincies op te vangen : kring A, B, C, ... of  kring 1, 2, 9, ... of ...',
+                                                owner=self)
 
         self._punctueleVerlichtingLichtbron = EMAttribuut(field=StringField,
                                                           naam='punctuele verlichting lichtbron',
                                                           label='punctuele verlichting lichtbron',
                                                           objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#VVOP.punctueleVerlichtingLichtbron',
-                                                          definitie='punctuele verlichting lichtbron')
+                                                          definitie='punctuele verlichting lichtbron',
+                                                          owner=self)
 
         self._verlichtingToestelMerkEnType = EMAttribuut(field=StringField,
                                                          naam='punctuele verlichting toestel merk en type',
                                                          label='punctuele verlichting toestel merk en type',
                                                          objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#VVOP.verlichtingToestelMerkEnType',
-                                                         definitie='punctuele verlichting toestel merk en type')
+                                                         definitie='punctuele verlichting toestel merk en type',
+                                                         owner=self)
 
         self._redenLichtmastBuitenGebruik = EMAttribuut(field=StringField,
                                                         naam='reden lichtmast buiten gebruik',
                                                         label='reden lichtmast buiten gebruik',
                                                         objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#VPLMast.redenLichtmastBuitenGebruik',
-                                                        definitie='afhankelijke eigenschap die enkel moet getoond worden indien waarde "buiten gebruik" ja. keuzelijst (niet van toepassing, normale slijtage, averij, andere)')
+                                                        definitie='afhankelijke eigenschap die enkel moet getoond worden indien waarde "buiten gebruik" ja. keuzelijst (niet van toepassing, normale slijtage, averij, andere)',
+                                                        owner=self)
 
         self._risicovollePaal = EMAttribuut(field=BooleanField,
                                             naam='risicovolle paal',
                                             label='risicovolle paal',
                                             objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#VPLMast.risicovollePaal',
-                                            definitie='ja als paal extra aandacht vraagt zie inspectiehandboek voor definitie : te bepalen door projectingenieur/toezichter dus niet wijzigbaar voor aannemer')
+                                            definitie='ja als paal extra aandacht vraagt zie inspectiehandboek voor definitie : te bepalen door projectingenieur/toezichter dus niet wijzigbaar voor aannemer',
+                                            owner=self)
 
         self._toestandBouten = EMAttribuut(field=StringField,
                                            naam='toestand bouten',
                                            label='toestand bouten',
                                            objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#VPLMast.toestandBouten',
-                                           definitie='keuzelijst en schaalverdeling volgens inspectiehandboek')
+                                           definitie='keuzelijst en schaalverdeling volgens inspectiehandboek',
+                                           owner=self)
 
         self._toestandDeurtje = EMAttribuut(field=StringField,
                                             naam='toestand deurtje',
                                             label='toestand deurtje',
                                             objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#VPLMast.toestandDeurtje',
-                                            definitie='keuzelijst en schaalverdeling volgens inspectiehandboek')
+                                            definitie='keuzelijst en schaalverdeling volgens inspectiehandboek',
+                                            owner=self)
 
         self._toestandFundering = EMAttribuut(field=StringField,
                                               naam='toestand fundering',
                                               label='toestand fundering',
                                               objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#SeinbrugDVM.toestandFundering',
-                                              definitie='Definitie nog toe te voegen voor eigenschap toestand fundering')
+                                              definitie='Definitie nog toe te voegen voor eigenschap toestand fundering',
+                                              owner=self)
 
         self._toestandPaal = EMAttribuut(field=StringField,
                                          naam='toestand paal',
                                          label='toestand paal',
                                          objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#VPLMast.toestandPaal',
-                                         definitie='keuzelijst en schaalverdeling volgens inspectiehandboek')
+                                         definitie='keuzelijst en schaalverdeling volgens inspectiehandboek',
+                                         owner=self)
 
         self._toestandVerlichtingstoestellen = EMAttribuut(field=StringField,
                                                            naam='toestand verlichtingstoestellen',
                                                            label='toestand verlichtingstoestellen',
                                                            objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#EMObject.toestandVerlichtingstoestellen',
-                                                           definitie='keuzelijst (OK, OK met opmerkingen, Ã©Ã©n of meer toestellen of lampen defect, niet gekend)')
+                                                           definitie='keuzelijst (OK, OK met opmerkingen, Ã©Ã©n of meer toestellen of lampen defect, niet gekend)',
+                                                           owner=self)
 
         self._toestelkleur = EMAttribuut(field=StringField,
                                          naam='toestelkleur',
                                          label='toestelkleur',
                                          objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#VVOP.toestelkleur',
-                                         definitie='toestelkleur in RAL')
+                                         definitie='toestelkleur in RAL',
+                                         owner=self)
 
         self._verlichtingOpstelling = EMAttribuut(field=StringField,
                                                   naam='verlichting opstelling',
                                                   label='verlichting opstelling',
                                                   objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#EMObject.verlichtingOpstelling',
-                                                  definitie='Opstelling van de verlichting (zijberm of middenberm)')
+                                                  definitie='Opstelling van de verlichting (zijberm of middenberm)',
+                                                  owner=self)
 
         self._verlichtingsniveauLed = EMAttribuut(field=StringField,
                                                   naam='verlichtingsniveau LED',
                                                   label='verlichtingsniveau LED',
                                                   objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#EMObject.verlichtingsniveauLed',
-                                                  definitie='Definitie nog toe te voegen voor eigenschap verlichtingsniveau LED')
+                                                  definitie='Definitie nog toe te voegen voor eigenschap verlichtingsniveau LED',
+                                                  owner=self)
 
         self._verlichtingstoestelSysteemvermogen = EMAttribuut(field=FloatOrDecimalField,
                                                                naam='verlichtingstoestel systeemvermogen',
                                                                label='verlichtingstoestel systeemvermogen',
                                                                objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#EMObject.verlichtingstoestelSysteemvermogen',
-                                                               definitie='vermogen (in Watt) van het verlichtingstoestel')
+                                                               definitie='vermogen (in Watt) van het verlichtingstoestel',
+                                                               owner=self)
 
         self._verlichtingstype = EMAttribuut(field=StringField,
                                              naam='verlichtingstype',
                                              label='verlichtingstype',
                                              objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#EMObject.verlichtingstype',
-                                             definitie='keuzelijst met types verlichting (doorlopende straatverlichting, rotonde verlichting, punctuele verlichting, projector, tunnelverlichting)')
+                                             definitie='keuzelijst met types verlichting (doorlopende straatverlichting, rotonde verlichting, punctuele verlichting, projector, tunnelverlichting)',
+                                             owner=self)
 
         self._vsaSperfilter = EMAttribuut(field=BooleanField,
                                           naam='vsa sperfilter',
                                           label='vsa sperfilter',
                                           objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#EMObject.vsaSperfilter',
-                                          definitie='ja als sperfilter op vsa')
+                                          definitie='ja als sperfilter op vsa',
+                                          owner=self)
 
     @property
     def ledVerlichting(self):

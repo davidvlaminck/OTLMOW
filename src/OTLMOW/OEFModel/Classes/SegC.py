@@ -18,19 +18,22 @@ class SegC(EMObject):
                                     naam='IP-adres',
                                     label='IP adres',
                                     objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#AB.ipAdres',
-                                    definitie='IP adres eigenschap voor legacy objecten')
+                                    definitie='IP adres eigenschap voor legacy objecten',
+                                    owner=self)
 
         self._merkEnTypeSegmentController = EMAttribuut(field=StringField,
                                                         naam='merk en type segment controller',
                                                         label='merk en type segment controller',
                                                         objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#SegC.merkEnTypeSegmentController',
-                                                        definitie='merk en type segment controller')
+                                                        definitie='merk en type segment controller',
+                                                        owner=self)
 
         self._serienummerSegmentController = EMAttribuut(field=StringField,
                                                          naam='serienummer segment controller',
                                                          label='serienummer segment controller',
                                                          objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#SegC.serienummerSegmentController',
-                                                         definitie='serienummer segment controller')
+                                                         definitie='serienummer segment controller',
+                                                         owner=self)
 
     @property
     def ipAdres(self):

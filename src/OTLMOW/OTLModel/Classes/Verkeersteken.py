@@ -7,10 +7,11 @@ from OTLMOW.OTLModel.Datatypes.DtcDocument import DtcDocument
 from OTLMOW.OTLModel.Datatypes.DtcExterneReferentie import DtcExterneReferentie
 from OTLMOW.OTLModel.Datatypes.KlVerkeerstekenWettelijkeStatus import KlVerkeerstekenWettelijkeStatus
 from OTLMOW.OTLModel.Datatypes.StringField import StringField
+from OTLMOW.GeometrieArtefact.GeenGeometrie import GeenGeometrie
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Verkeersteken(AIMObject):
+class Verkeersteken(AIMObject, GeenGeometrie):
     """Abstracte klasse voor aanwijzingen ten behoeve van de weggebruikers die verbonden wordt aan het aankondigen of opleggen van een bepaalde verkeersmaatregel zoals bepaald in de wegcode."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Verkeersteken'
@@ -18,13 +19,15 @@ class Verkeersteken(AIMObject):
 
     @abstractmethod
     def __init__(self):
-        super().__init__()
+        AIMObject.__init__(self)
+        GeenGeometrie.__init__(self)
 
         self._adres = OTLAttribuut(field=DtcAdres,
                                    naam='adres',
                                    label='adres',
                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Verkeersteken.adres',
-                                   definition='Adres van het verkeersteken.')
+                                   definition='Adres van het verkeersteken.',
+                                   owner=self)
 
         self._afbeelding = OTLAttribuut(field=DtcDocument,
                                         naam='afbeelding',
@@ -32,7 +35,8 @@ class Verkeersteken(AIMObject):
                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Verkeersteken.afbeelding',
                                         kardinaliteit_min='0',
                                         kardinaliteit_max='*',
-                                        definition='Foto van het verkeersteken.')
+                                        definition='Foto van het verkeersteken.',
+                                        owner=self)
 
         self._mobiliteitsMaatregel = OTLAttribuut(field=DtcExterneReferentie,
                                                   naam='mobiliteitsMaatregel',
@@ -40,13 +44,15 @@ class Verkeersteken(AIMObject):
                                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Verkeersteken.mobiliteitsMaatregel',
                                                   kardinaliteit_min='0',
                                                   kardinaliteit_max='*',
-                                                  definition='Externe referentie naar een maatregel om de beweging en verplaatsing van de weggebruiker op het openbaar domein of privé domein met openbaar karakter te organiseren.')
+                                                  definition='Externe referentie naar een maatregel om de beweging en verplaatsing van de weggebruiker op het openbaar domein of privé domein met openbaar karakter te organiseren.',
+                                                  owner=self)
 
         self._plaatsbeschrijving = OTLAttribuut(field=StringField,
                                                 naam='plaatsbeschrijving',
                                                 label='plaatsbeschrijving',
                                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Verkeersteken.plaatsbeschrijving',
-                                                definition='Tekstuele beschrijving waar het verkeersteken zal komen.')
+                                                definition='Tekstuele beschrijving waar het verkeersteken zal komen.',
+                                                owner=self)
 
         self._signalisatieVergunning = OTLAttribuut(field=DtcExterneReferentie,
                                                     naam='signalisatieVergunning',
@@ -54,20 +60,23 @@ class Verkeersteken(AIMObject):
                                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Verkeersteken.signalisatieVergunning',
                                                     kardinaliteit_min='0',
                                                     kardinaliteit_max='*',
-                                                    definition='Externe referentie naar een vergunning voor het tijdelijk aanbrengen of wijzigen van signalisatie op het openbaar domein of privaat domein met openbaar karakter.')
+                                                    definition='Externe referentie naar een vergunning voor het tijdelijk aanbrengen of wijzigen van signalisatie op het openbaar domein of privaat domein met openbaar karakter.',
+                                                    owner=self)
 
         self._variabelOpschrift = OTLAttribuut(field=StringField,
                                                naam='variabelOpschrift',
                                                label='variabel opschrift',
                                                objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Verkeersteken.variabelOpschrift',
-                                               definition='Variabele tekst die op het verkeersbordconcept komt te staan.')
+                                               definition='Variabele tekst die op het verkeersbordconcept komt te staan.',
+                                               owner=self)
 
         self._wettelijkeStatus = OTLAttribuut(field=KlVerkeerstekenWettelijkeStatus,
                                               naam='wettelijkeStatus',
                                               label='wettelijke status',
                                               objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Verkeersteken.wettelijkeStatus',
                                               usagenote='Bijvoorbeeld: vergund, niet-vergund, in ontwerp',
-                                              definition='Duidt de wettelijke status aan van het verkeersteken.')
+                                              definition='Duidt de wettelijke status aan van het verkeersteken.',
+                                              owner=self)
 
     @property
     def adres(self):

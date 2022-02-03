@@ -20,19 +20,22 @@ class Zender(ZenderOntvangerToegang):
                                   naam='merk',
                                   label='merk',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Zender.merk',
-                                  definition='Het merk van een zender.')
+                                  definition='Het merk van een zender.',
+                                  owner=self)
 
         self._modelnaam = OTLAttribuut(field=KlZenderModelnaam,
                                        naam='modelnaam',
                                        label='modelnaam',
                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Zender.modelnaam',
-                                       definition='De modelnaam/product range van een zender.')
+                                       definition='De modelnaam/product range van een zender.',
+                                       owner=self)
 
         self._toepassing = OTLAttribuut(field=DteTekstblok,
                                         naam='toepassing',
                                         label='toepassing',
                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Zender.toepassing',
-                                        definition='De techniek of standaard waarmee signalen over het netwerk verstuurd worden. Mogelijke waarden zijn onder andere: KAR,  wifi, GPRS of GSM..')
+                                        definition='De techniek of standaard waarmee signalen over het netwerk verstuurd worden. Mogelijke waarden zijn onder andere: KAR,  wifi, GPRS of GSM..',
+                                        owner=self)
 
     @property
     def merk(self):

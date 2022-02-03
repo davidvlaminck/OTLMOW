@@ -4,41 +4,47 @@ from OTLMOW.OTLModel.Classes.AfschermendeConstructie import AfschermendeConstruc
 from OTLMOW.OTLModel.Datatypes.KlLEACSchokindexMVP import KlLEACSchokindexMVP
 from OTLMOW.OTLModel.Datatypes.KlLEACSnelheidsklasse import KlLEACSnelheidsklasse
 from OTLMOW.OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter
+from OTLMOW.GeometrieArtefact.LijnGeometrie import LijnGeometrie
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Motorvangplank(AfschermendeConstructie):
+class Motorvangplank(AfschermendeConstructie, LijnGeometrie):
     """Een constructie geïnstalleerd aan een geleideconstructie of in de onmiddellijke omgeving ervan,met als doel de ernst van een botsing van een motorrijder met de geleideconstructie te reduceren."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Motorvangplank'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        super().__init__()
+        AfschermendeConstructie.__init__(self)
+        LijnGeometrie.__init__(self)
 
         self._lengte = OTLAttribuut(field=KwantWrdInMeter,
                                     naam='lengte',
                                     label='lengte',
                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Motorvangplank.lengte',
-                                    definition='De lengte van de motorvangplank in meter.')
+                                    definition='De lengte van de motorvangplank in meter.',
+                                    owner=self)
 
         self._schokindexMvp = OTLAttribuut(field=KlLEACSchokindexMVP,
                                            naam='schokindexMvp',
                                            label='schokindex motorvangplank',
                                            objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Motorvangplank.schokindexMvp',
-                                           definition='Head injury criterium (HIC) van een motorvangplank.')
+                                           definition='Head injury criterium (HIC) van een motorvangplank.',
+                                           owner=self)
 
         self._snelheidsklasse = OTLAttribuut(field=KlLEACSnelheidsklasse,
                                              naam='snelheidsklasse',
                                              label='snelheidsklasse',
                                              objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Motorvangplank.snelheidsklasse',
-                                             definition='De snelheid waarmee de testen uitgevoerd worden en of deze plaatsvinden op een continu of discontinu (niet in gebruik bij AWV) systeem.')
+                                             definition='De snelheid waarmee de testen uitgevoerd worden en of deze plaatsvinden op een continu of discontinu (niet in gebruik bij AWV) systeem.',
+                                             owner=self)
 
         self._werkingsbreedteMvpwd = OTLAttribuut(field=KwantWrdInMeter,
                                                   naam='werkingsbreedteMvpwd',
                                                   label='werkingsbreedte mvpwd',
                                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Motorvangplank.werkingsbreedteMvpwd',
-                                                  definition='De afstand tussen de voorkant van het onvervormd systeem tot de maximale dynamische laterale positie van elk onderdeel van het systeem.')
+                                                  definition='De afstand tussen de voorkant van het onvervormd systeem tot de maximale dynamische laterale positie van elk onderdeel van het systeem.',
+                                                  owner=self)
 
     @property
     def lengte(self):

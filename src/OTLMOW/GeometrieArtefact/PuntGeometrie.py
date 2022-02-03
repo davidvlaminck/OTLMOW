@@ -7,12 +7,15 @@ from OTLMOW.OTLModel.BaseClasses.WKTField import WKTField
 class PuntGeometrie(ABC):
     @abstractmethod
     def __init__(self):
+        if not hasattr(self, '_geometry_types'):
+            self._geometry_types = []
+        self._geometry_types.append('POINT Z')
         self._geometry = OTLAttribuut(field=WKTField,
                                       naam='geometry',
                                       label='geometry',
                                       objectUri='https://loc.data.wegenenverkeer.be/ns/implementatieelement#Locatie.geometrie',
                                       definition='geometry voor DAVIE',
-                                      constraints='POINT Z')
+                                      owner=self)
 
     @property
     def geometry(self):

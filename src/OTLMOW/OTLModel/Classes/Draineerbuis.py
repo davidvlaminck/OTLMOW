@@ -19,13 +19,15 @@ class Draineerbuis(Buis):
                                             naam='heeftDrainbrug',
                                             label='heeft drainbrug',
                                             objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Draineerbuis.heeftDrainbrug',
-                                            definition='Aanduiding of er al dan niet een profiel onderaan de draineerbuis aanwezig is om zettingen te vermijden.')
+                                            definition='Aanduiding of er al dan niet een profiel onderaan de draineerbuis aanwezig is om zettingen te vermijden.',
+                                            owner=self)
 
         self._materiaal = OTLAttribuut(field=KlDraineerbuisMateriaal,
                                        naam='materiaal',
                                        label='materiaal',
                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Draineerbuis.materiaal',
-                                       definition='Bepaalt het materiaal van de draineerbuis.')
+                                       definition='Bepaalt het materiaal van de draineerbuis.',
+                                       owner=self)
 
     @property
     def heeftDrainbrug(self):

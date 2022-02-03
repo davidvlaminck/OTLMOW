@@ -18,7 +18,8 @@ class LuchtkwaliteitControleUnit(Luchtkwaliteittoestel):
                                       naam='ipKlasse',
                                       label='ingress protection klasse',
                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#LuchtkwaliteitControleUnit.ipKlasse',
-                                      definition='De IP-codering als een aanduiding voor de mate van beveiliging van de constructie van elektrische of elektronische apparatuur tegen eigen schade door gebruik in "vijandige omgevingen" en tegen eventueel gevaar voor de gebruiker volgens IEC 60529.')
+                                      definition='De IP-codering als een aanduiding voor de mate van beveiliging van de constructie van elektrische of elektronische apparatuur tegen eigen schade door gebruik in "vijandige omgevingen" en tegen eventueel gevaar voor de gebruiker volgens IEC 60529.',
+                                      owner=self)
 
     @property
     def ipKlasse(self):

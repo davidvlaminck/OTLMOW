@@ -18,7 +18,8 @@ class Gebouw(Behuizing):
                                        naam='grondplan',
                                        label='grondplan',
                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Gebouw.grondplan',
-                                       definition='Plattegrond van het gebouw met aanduidingen van de verschillende aanwezige elementen zoals kelder, kasten met kastnummers, toegangscontrole en meer.')
+                                       definition='Plattegrond van het gebouw met aanduidingen van de verschillende aanwezige elementen zoals kelder, kasten met kastnummers, toegangscontrole en meer.',
+                                       owner=self)
 
     @property
     def grondplan(self):

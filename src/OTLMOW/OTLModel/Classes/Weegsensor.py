@@ -6,54 +6,62 @@ from OTLMOW.OTLModel.Datatypes.KlWeegsensorMerk import KlWeegsensorMerk
 from OTLMOW.OTLModel.Datatypes.KlWeegsensorModelnaam import KlWeegsensorModelnaam
 from OTLMOW.OTLModel.Datatypes.KlWeegsensorType import KlWeegsensorType
 from OTLMOW.OTLModel.Datatypes.StringField import StringField
+from OTLMOW.GeometrieArtefact.LijnGeometrie import LijnGeometrie
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Weegsensor(AIMNaamObject):
+class Weegsensor(AIMNaamObject, LijnGeometrie):
     """Registratie van de wieldruk van een voertuig (alle klassen). Dit wordt vertaald naar een massa."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Weegsensor'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        super().__init__()
+        AIMNaamObject.__init__(self)
+        LijnGeometrie.__init__(self)
 
         self._meetrapport = OTLAttribuut(field=DtcDocument,
                                          naam='meetrapport',
                                          label='meetrapport',
                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Weegsensor.meetrapport',
                                          usagenote='Bestanden van het type pdf.',
-                                         definition='Document met kalibratiegegevens (aantal rondes, types voertuigen,...).')
+                                         definition='Document met kalibratiegegevens (aantal rondes, types voertuigen,...).',
+                                         owner=self)
 
         self._merk = OTLAttribuut(field=KlWeegsensorMerk,
                                   naam='merk',
                                   label='merk',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Weegsensor.merk',
-                                  definition='Het merk van de weegsensor.')
+                                  definition='Het merk van de weegsensor.',
+                                  owner=self)
 
         self._modelnaam = OTLAttribuut(field=KlWeegsensorModelnaam,
                                        naam='modelnaam',
                                        label='modelnaam',
                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Weegsensor.modelnaam',
-                                       definition='De modelnaam van de weegsensor.')
+                                       definition='De modelnaam van de weegsensor.',
+                                       owner=self)
 
         self._rijstrook = OTLAttribuut(field=StringField,
                                        naam='rijstrook',
                                        label='rijstrook',
                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Weegsensor.rijstrook',
-                                       definition='Beschrijft de rijstroken die door de weegsensor bewaakt worden.')
+                                       definition='Beschrijft de rijstroken die door de weegsensor bewaakt worden.',
+                                       owner=self)
 
         self._serienummer = OTLAttribuut(field=StringField,
                                          naam='serienummer',
                                          label='serienummer',
                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Weegsensor.serienummer',
-                                         definition='Het unieke nummer waarmee het toestel door de fabrikant geïdentificeerd is.')
+                                         definition='Het unieke nummer waarmee het toestel door de fabrikant geïdentificeerd is.',
+                                         owner=self)
 
         self._type = OTLAttribuut(field=KlWeegsensorType,
                                   naam='type',
                                   label='type',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Weegsensor.type',
-                                  definition='Het type van de weegsensor.')
+                                  definition='Het type van de weegsensor.',
+                                  owner=self)
 
     @property
     def meetrapport(self):

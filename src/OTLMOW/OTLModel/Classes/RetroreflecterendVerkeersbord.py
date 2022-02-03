@@ -7,10 +7,11 @@ from OTLMOW.OTLModel.Datatypes.KlRetroreflecterendVerkeersbordAfwerkingsgraad im
 from OTLMOW.OTLModel.Datatypes.KlRetroreflecterendVerkeersbordGrootteorde import KlRetroreflecterendVerkeersbordGrootteorde
 from OTLMOW.OTLModel.Datatypes.KlRetroreflecterendVerkeersbordMerk import KlRetroreflecterendVerkeersbordMerk
 from OTLMOW.OTLModel.Datatypes.KwantWrdInVierkanteMeter import KwantWrdInVierkanteMeter
+from OTLMOW.GeometrieArtefact.PuntGeometrie import PuntGeometrie
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class RetroreflecterendVerkeersbord(AIMObject, Verkeersbord):
+class RetroreflecterendVerkeersbord(AIMObject, Verkeersbord, PuntGeometrie):
     """Verkeersbord met op het beeldvlak een tekening en/of tekst die worden weergegeven met een geëigend bekledingsmateriaal."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#RetroreflecterendVerkeersbord'
@@ -19,39 +20,45 @@ class RetroreflecterendVerkeersbord(AIMObject, Verkeersbord):
     def __init__(self):
         AIMObject.__init__(self)
         Verkeersbord.__init__(self)
+        PuntGeometrie.__init__(self)
 
         self._afwerkingsgraad = OTLAttribuut(field=KlRetroreflecterendVerkeersbordAfwerkingsgraad,
                                              naam='afwerkingsgraad',
                                              label='afwerkingsgraad',
                                              objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#RetroreflecterendVerkeersbord.afwerkingsgraad',
-                                             definition='De afwerkingsgraad van het retroreflecterend verkeersbord, volgens een keuzelijst op basis van SB250.')
+                                             definition='De afwerkingsgraad van het retroreflecterend verkeersbord, volgens een keuzelijst op basis van SB250.',
+                                             owner=self)
 
         self._grootteorde = OTLAttribuut(field=KlRetroreflecterendVerkeersbordGrootteorde,
                                          naam='grootteorde',
                                          label='grootteorde',
                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#RetroreflecterendVerkeersbord.grootteorde',
                                          kardinaliteit_min='0',
-                                         definition='De classificatie naar grootteorde van het verkeersbord, zoals gedefinieerd in SB250 hoofdstuk 10.')
+                                         definition='De classificatie naar grootteorde van het verkeersbord, zoals gedefinieerd in SB250 hoofdstuk 10.',
+                                         owner=self)
 
         self._kleurAchterkant = OTLAttribuut(field=DteKleurRAL,
                                              naam='kleurAchterkant',
                                              label='kleur achterkant',
                                              objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#RetroreflecterendVerkeersbord.kleurAchterkant',
-                                             definition='De kleur van de achterkant van het retroreflecterend verkeersbord.')
+                                             definition='De kleur van de achterkant van het retroreflecterend verkeersbord.',
+                                             owner=self)
 
         self._merk = OTLAttribuut(field=KlRetroreflecterendVerkeersbordMerk,
                                   naam='merk',
                                   label='merk',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#RetroreflecterendVerkeersbord.merk',
                                   usagenote='Te selecteren uit een keuzelijst.',
-                                  definition='De merknaam van het verkeersbord; duidt op de leverancier of producent van het verkeersbord.')
+                                  definition='De merknaam van het verkeersbord; duidt op de leverancier of producent van het verkeersbord.',
+                                  owner=self)
 
         self._oppervlakte = OTLAttribuut(field=KwantWrdInVierkanteMeter,
                                          naam='oppervlakte',
                                          label='oppervlakte',
                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#RetroreflecterendVerkeersbord.oppervlakte',
                                          kardinaliteit_min='0',
-                                         definition='De oppervlakte van het beeldvlak van een verkeersbord.')
+                                         definition='De oppervlakte van het beeldvlak van een verkeersbord.',
+                                         owner=self)
 
     @property
     def afwerkingsgraad(self):

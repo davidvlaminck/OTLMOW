@@ -19,37 +19,43 @@ class WV(EMObject):
                                               naam='andere opmerkingen',
                                               label='andere opmerkingen',
                                               objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#WV.andereOpmerkingen',
-                                              definitie='veld waar met max 40 lettertekens aanvullende info kan geleverd worden')
+                                              definitie='veld waar met max 40 lettertekens aanvullende info kan geleverd worden',
+                                              owner=self)
 
         self._gedimdTussen = EMAttribuut(field=StringField,
                                          naam='gedimd tussen',
                                          label='gedimd tussen',
                                          objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#WV.gedimdTussen',
-                                         definitie='Definitie nog toe te voegen voor eigenschap gedimd tussen')
+                                         definitie='Definitie nog toe te voegen voor eigenschap gedimd tussen',
+                                         owner=self)
 
         self._gedoofdTussen = EMAttribuut(field=StringField,
                                           naam='gedoofd tussen',
                                           label='gedoofd tussen',
                                           objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#WV.gedoofdTussen',
-                                          definitie='Definitie nog toe te voegen voor eigenschap gedoofd tussen')
+                                          definitie='Definitie nog toe te voegen voor eigenschap gedoofd tussen',
+                                          owner=self)
 
         self._kabelfout = EMAttribuut(field=BooleanField,
                                       naam='kabelfout',
                                       label='kabelfout',
                                       objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#EMObject.kabelfout',
-                                      definitie='Definitie nog toe te voegen voor eigenschap kabelfout')
+                                      definitie='Definitie nog toe te voegen voor eigenschap kabelfout',
+                                      owner=self)
 
         self._schakelregime = EMAttribuut(field=StringField,
                                           naam='schakelregime',
                                           label='schakelregime',
                                           objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#WV.schakelregime',
-                                          definitie='Definitie nog toe te voegen voor eigenschap schakelregime')
+                                          definitie='Definitie nog toe te voegen voor eigenschap schakelregime',
+                                          owner=self)
 
         self._tussenafstandLed = EMAttribuut(field=StringField,
                                              naam='tussenafstand LED',
                                              label='tussenafstand LED',
                                              objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#WV.tussenafstandLed',
-                                             definitie='Definitie nog toe te voegen voor eigenschap tussenafstand LED')
+                                             definitie='Definitie nog toe te voegen voor eigenschap tussenafstand LED',
+                                             owner=self)
 
     @property
     def andereOpmerkingen(self):

@@ -18,7 +18,8 @@ class IP(EMObject):
                                     naam='IP-adres',
                                     label='IP adres',
                                     objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#AB.ipAdres',
-                                    definitie='IP adres eigenschap voor legacy objecten')
+                                    definitie='IP adres eigenschap voor legacy objecten',
+                                    owner=self)
 
     @property
     def ipAdres(self):

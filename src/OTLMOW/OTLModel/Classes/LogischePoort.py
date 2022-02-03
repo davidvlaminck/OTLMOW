@@ -18,7 +18,8 @@ class LogischePoort(SoftwareToegang):
                                                naam='poortconfiguratie',
                                                label='poortconfiguratie',
                                                objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#LogischePoort.poortconfiguratie',
-                                               definition='Type TCP of UDP service.')
+                                               definition='Type TCP of UDP service.',
+                                               owner=self)
 
     @property
     def poortconfiguratie(self):

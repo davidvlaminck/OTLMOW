@@ -18,49 +18,57 @@ class LSDeel(EMObject):
                                                       naam='ALS bord stof & spinnenweb vrij',
                                                       label='ALS bord stof & spinnenweb vrij',
                                                       objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#LSDeel.alsBordStofSpinnenwebVrij',
-                                                      definitie='Definitie nog toe te voegen voor eigenschap ALS bord stof & spinnenweb vrij')
+                                                      definitie='Definitie nog toe te voegen voor eigenschap ALS bord stof & spinnenweb vrij',
+                                                      owner=self)
 
         self._opmerkingenOverAlsGedeelte = EMAttribuut(field=StringField,
                                                        naam='Opmerkingen over ALS gedeelte',
                                                        label='Opmerkingen over ALS gedeelte',
                                                        objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#LSDeel.opmerkingenOverAlsGedeelte',
-                                                       definitie='Definitie nog toe te voegen voor eigenschap Opmerkingen over ALS gedeelte')
+                                                       definitie='Definitie nog toe te voegen voor eigenschap Opmerkingen over ALS gedeelte',
+                                                       owner=self)
 
         self._afstandsbewakingOnline = EMAttribuut(field=StringField,
                                                    naam='afstandsbewaking online',
                                                    label='afstandsbewaking online',
                                                    objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#LSDeel.afstandsbewakingOnline',
-                                                   definitie='Definitie nog toe te voegen voor eigenschap afstandsbewaking online')
+                                                   definitie='Definitie nog toe te voegen voor eigenschap afstandsbewaking online',
+                                                   owner=self)
 
         self._alleKabelsGelabeldVolgensSchema = EMAttribuut(field=StringField,
                                                             naam='alle kabels gelabeld volgens schema',
                                                             label='alle kabels gelabeld volgens schema',
                                                             objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#EMObject.alleKabelsGelabeldVolgensSchema',
-                                                            definitie='Definitie nog toe te voegen voor eigenschap alle kabels gelabeld volgens schema')
+                                                            definitie='Definitie nog toe te voegen voor eigenschap alle kabels gelabeld volgens schema',
+                                                            owner=self)
 
         self._bedradingsschemaAlsUpToDate = EMAttribuut(field=StringField,
                                                         naam='bedradingsschema ALS up to date',
                                                         label='bedradingsschema ALS up to date',
                                                         objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#LSDeel.bedradingsschemaAlsUpToDate',
-                                                        definitie='Definitie nog toe te voegen voor eigenschap bedradingsschema ALS up to date')
+                                                        definitie='Definitie nog toe te voegen voor eigenschap bedradingsschema ALS up to date',
+                                                        owner=self)
 
         self._bordverlichtingAlsBordFunctioneert = EMAttribuut(field=StringField,
                                                                naam='bordverlichting ALS bord functioneert',
                                                                label='bordverlichting ALS bord functioneert',
                                                                objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#LSDeel.bordverlichtingAlsBordFunctioneert',
-                                                               definitie='Definitie nog toe te voegen voor eigenschap bordverlichting ALS bord functioneert')
+                                                               definitie='Definitie nog toe te voegen voor eigenschap bordverlichting ALS bord functioneert',
+                                                               owner=self)
 
         self._componentenGelabeldVolgensSchema = EMAttribuut(field=StringField,
                                                              naam='componenten gelabeld volgens schema',
                                                              label='componenten gelabeld volgens schema',
                                                              objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#EMObject.componentenGelabeldVolgensSchema',
-                                                             definitie='Definitie nog toe te voegen voor eigenschap componenten gelabeld volgens schema')
+                                                             definitie='Definitie nog toe te voegen voor eigenschap componenten gelabeld volgens schema',
+                                                             owner=self)
 
         self._geldigKeuringsverslagAlsBordAanwezig = EMAttribuut(field=StringField,
                                                                  naam='geldig keuringsverslag ALS bord aanwezig',
                                                                  label='geldig keuringsverslag ALS bord aanwezig',
                                                                  objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#LSDeel.geldigKeuringsverslagAlsBordAanwezig',
-                                                                 definitie='Definitie nog toe te voegen voor eigenschap geldig keuringsverslag ALS bord aanwezig')
+                                                                 definitie='Definitie nog toe te voegen voor eigenschap geldig keuringsverslag ALS bord aanwezig',
+                                                                 owner=self)
 
     @property
     def alsBordStofSpinnenwebVrij(self):

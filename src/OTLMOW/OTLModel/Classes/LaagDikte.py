@@ -2,6 +2,7 @@
 from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from abc import abstractmethod, ABC
 from OTLMOW.OTLModel.Datatypes.KwantWrdInCentimeter import KwantWrdInCentimeter
+from OTLMOW.GeometrieArtefact.VlakGeometrie import VlakGeometrie
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
@@ -13,11 +14,14 @@ class LaagDikte(ABC):
 
     @abstractmethod
     def __init__(self):
+        super().__init__()
+
         self._dikte = OTLAttribuut(field=KwantWrdInCentimeter,
                                    naam='dikte',
                                    label='dikte',
                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#LaagDikte.dikte',
-                                   definition='De gemiddelde dikte van een laag in centimeter.')
+                                   definition='De gemiddelde dikte van een laag in centimeter.',
+                                   owner=self)
 
     @property
     def dikte(self):

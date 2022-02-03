@@ -13,13 +13,15 @@ class DtcAfmetingBxhInMmWaarden(AttributeInfo):
                                      naam='breedte',
                                      label='breedte',
                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAfmetingBxhInMm.breedte',
-                                     definition='De breedte in millimeter.')
+                                     definition='De breedte in millimeter.',
+                                     owner=self)
 
         self._hoogte = OTLAttribuut(field=KwantWrdInMillimeter,
                                     naam='hoogte',
                                     label='hoogte',
                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAfmetingBxhInMm.hoogte',
-                                    definition='De hoogte in millimeter.')
+                                    definition='De hoogte in millimeter.',
+                                    owner=self)
 
     @property
     def breedte(self):

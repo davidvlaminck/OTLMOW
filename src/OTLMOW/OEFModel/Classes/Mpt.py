@@ -20,79 +20,92 @@ class Mpt(EMObject):
                                         naam='Aansluiting',
                                         label='Aansluiting',
                                         objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#Mpt.aansluiting',
-                                        definitie='Definitie nog toe te voegen voor eigenschap Aansluiting')
+                                        definitie='Definitie nog toe te voegen voor eigenschap Aansluiting',
+                                        owner=self)
 
         self._bezoeklocatieLatitude5052 = EMAttribuut(field=FloatOrDecimalField,
                                                       naam='Bezoeklocatie Latitude (50-52)',
                                                       label='Bezoeklocatie Latitude (50-52)',
                                                       objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#EMObject.bezoeklocatieLatitude5052',
-                                                      definitie='waardes tussen 50 en 52')
+                                                      definitie='waardes tussen 50 en 52',
+                                                      owner=self)
 
         self._bezoeklocatieLongitude27 = EMAttribuut(field=FloatOrDecimalField,
                                                      naam='Bezoeklocatie Longitude (2-7)',
                                                      label='Bezoeklocatie Longitude (2-7)',
                                                      objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#EMObject.bezoeklocatieLongitude27',
-                                                     definitie='waardes tussen 2 en 7')
+                                                     definitie='waardes tussen 2 en 7',
+                                                     owner=self)
 
         self._details = EMAttribuut(field=StringField,
                                     naam='Details',
                                     label='Details',
                                     objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#Mpt.details',
-                                    definitie='Details van het formaat')
+                                    definitie='Details van het formaat',
+                                    owner=self)
 
         self._formaat = EMAttribuut(field=StringField,
                                     naam='Formaat',
                                     label='Formaat',
                                     objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#Mpt.formaat',
-                                    definitie='Definitie nog toe te voegen voor eigenschap Formaat')
+                                    definitie='Definitie nog toe te voegen voor eigenschap Formaat',
+                                    owner=self)
 
         self._gekoppeld = EMAttribuut(field=BooleanField,
                                       naam='Gekoppeld',
                                       label='Gekoppeld',
                                       objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#Mpt.gekoppeld',
-                                      definitie='Definitie nog toe te voegen voor eigenschap Gekoppeld')
+                                      definitie='Definitie nog toe te voegen voor eigenschap Gekoppeld',
+                                      owner=self)
 
         self._laag = EMAttribuut(field=StringField,
                                  naam='Laag',
                                  label='Laag',
                                  objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#Mpt.laag',
-                                 definitie='Definitie nog toe te voegen voor eigenschap Laag')
+                                 definitie='Definitie nog toe te voegen voor eigenschap Laag',
+                                 owner=self)
 
         self._meetpost = EMAttribuut(field=FloatOrDecimalField,
                                      naam='Meetpost',
                                      label='Meetpost',
                                      objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#Mpt.meetpost',
-                                     definitie='Meetpost van het Verkeerscentrum')
+                                     definitie='Meetpost van het Verkeerscentrum',
+                                     owner=self)
 
         self._opmerkingen = EMAttribuut(field=StringField,
                                         naam='Opmerkingen',
                                         label='Opmerkingen',
                                         objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#EMObject.opmerkingen',
-                                        definitie='Definitie nog toe te voegen voor eigenschap Opmerkingen')
+                                        definitie='Definitie nog toe te voegen voor eigenschap Opmerkingen',
+                                        owner=self)
 
         self._rijstrook = EMAttribuut(field=StringField,
                                       naam='Rijstrook',
                                       label='Rijstrook',
                                       objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#Mpt.rijstrook',
-                                      definitie='0 = Pechstrook / BOB 1 = Rechtse rijstrook 2-8 = Volgende rijstroken 9 = Spookstrook')
+                                      definitie='0 = Pechstrook / BOB 1 = Rechtse rijstrook 2-8 = Volgende rijstroken 9 = Spookstrook',
+                                      owner=self)
 
         self._trekput = EMAttribuut(field=BooleanField,
                                     naam='Trekput',
                                     label='Trekput',
                                     objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#Mpt.trekput',
-                                    definitie='Aanwezigheid van een trekput')
+                                    definitie='Aanwezigheid van een trekput',
+                                    owner=self)
 
         self._uitslijprichting = EMAttribuut(field=StringField,
                                              naam='Uitslijprichting',
                                              label='Uitslijprichting',
                                              objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#Mpt.uitslijprichting',
-                                             definitie='Definitie nog toe te voegen voor eigenschap Uitslijprichting')
+                                             definitie='Definitie nog toe te voegen voor eigenschap Uitslijprichting',
+                                             owner=self)
 
         self._wegdek = EMAttribuut(field=StringField,
                                    naam='Wegdek',
                                    label='Wegdek',
                                    objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#Mpt.wegdek',
-                                   definitie='Definitie nog toe te voegen voor eigenschap Wegdek')
+                                   definitie='Definitie nog toe te voegen voor eigenschap Wegdek',
+                                   owner=self)
 
     @property
     def aansluiting(self):

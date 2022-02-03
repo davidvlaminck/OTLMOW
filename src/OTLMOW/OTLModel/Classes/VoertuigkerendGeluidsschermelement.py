@@ -24,7 +24,8 @@ class VoertuigkerendGeluidsschermelement(BijlageVoertuigkering, Geluidsschermele
                                              naam='werkingsbreedte',
                                              label='werkingsbreedte',
                                              objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#VoertuigkerendGeluidsschermelement.werkingsbreedte',
-                                             definition='Dit is de afstand, op het voorvlak van een schermelement en loodrecht op de as van de weg gemeten, tussen de voorkant van het schermelement in normale positie en de plaats van het verst uitwijkend onderdeel aan de achterzijde van het schermelement bij aanrijding.')
+                                             definition='Dit is de afstand, op het voorvlak van een schermelement en loodrecht op de as van de weg gemeten, tussen de voorkant van het schermelement in normale positie en de plaats van het verst uitwijkend onderdeel aan de achterzijde van het schermelement bij aanrijding.',
+                                             owner=self)
 
     @property
     def werkingsbreedte(self):

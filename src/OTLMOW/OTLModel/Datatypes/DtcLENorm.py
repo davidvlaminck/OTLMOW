@@ -14,13 +14,15 @@ class DtcLENormWaarden(AttributeInfo):
                                                  naam='bijkomendeParameter',
                                                  label='bijkomende parameter',
                                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcLENorm.bijkomendeParameter',
-                                                 definition='Het gedetailleerder typeren van de kantopsluiting.')
+                                                 definition='Het gedetailleerder typeren van de kantopsluiting.',
+                                                 owner=self)
 
         self._norm = OTLAttribuut(field=StringField,
                                   naam='norm',
                                   label='norm',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcLENorm.norm',
-                                  definition='De opgelegde en beschreven standaard van de kantopsluiting.')
+                                  definition='De opgelegde en beschreven standaard van de kantopsluiting.',
+                                  owner=self)
 
     @property
     def bijkomendeParameter(self):

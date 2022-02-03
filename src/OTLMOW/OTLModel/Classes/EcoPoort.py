@@ -3,29 +3,33 @@ from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLMOW.OTLModel.Classes.ComplexeGeleiding import ComplexeGeleiding
 from OTLMOW.OTLModel.Datatypes.KlEcoPoorttype import KlEcoPoorttype
 from OTLMOW.OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter
+from OTLMOW.GeometrieArtefact.PuntGeometrie import PuntGeometrie
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class EcoPoort(ComplexeGeleiding):
+class EcoPoort(ComplexeGeleiding, PuntGeometrie):
     """Een afsluitbare doorgang om mensen toe te laten tot het gebied."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#EcoPoort'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        super().__init__()
+        ComplexeGeleiding.__init__(self)
+        PuntGeometrie.__init__(self)
 
         self._breedte = OTLAttribuut(field=KwantWrdInMeter,
                                      naam='breedte',
                                      label='breedte',
                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#EcoPoort.breedte',
-                                     definition='De breedte van de poort in meter.')
+                                     definition='De breedte van de poort in meter.',
+                                     owner=self)
 
         self._poortType = OTLAttribuut(field=KlEcoPoorttype,
                                        naam='poortType',
                                        label='poort type',
                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#EcoPoort.poortType',
-                                       definition='Bepaling van het type van poort.')
+                                       definition='Bepaling van het type van poort.',
+                                       owner=self)
 
     @property
     def breedte(self):

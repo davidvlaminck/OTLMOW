@@ -5,10 +5,11 @@ from OTLMOW.OTLModel.Classes.FirmwareObject import FirmwareObject
 from OTLMOW.OTLModel.Datatypes.KlWeggebondendetectorDetectieprincipe import KlWeggebondendetectorDetectieprincipe
 from OTLMOW.OTLModel.Datatypes.KlWeggebondendetectorMerk import KlWeggebondendetectorMerk
 from OTLMOW.OTLModel.Datatypes.KlWeggebondendetectorModelnaam import KlWeggebondendetectorModelnaam
+from OTLMOW.GeometrieArtefact.PuntGeometrie import PuntGeometrie
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class WeggebondenDetector(Detectie, FirmwareObject):
+class WeggebondenDetector(Detectie, FirmwareObject, PuntGeometrie):
     """Weggebonden detectoren zijn draadloze in het wegdek geïntegreerde radars of magnetische inductiesensoren. Ze zitten ingebed in een cilinder, die geplaatst wordt in het wegdek en die draadloos communiceert met een access point die met de verkeersregelaar verbonden is"""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#WeggebondenDetector'
@@ -17,24 +18,28 @@ class WeggebondenDetector(Detectie, FirmwareObject):
     def __init__(self):
         Detectie.__init__(self)
         FirmwareObject.__init__(self)
+        PuntGeometrie.__init__(self)
 
         self._detectieprincipe = OTLAttribuut(field=KlWeggebondendetectorDetectieprincipe,
                                               naam='detectieprincipe',
                                               label='detectieprincipe',
                                               objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#WeggebondenDetector.detectieprincipe',
-                                              definition='Het detectieprincipe geeft aan hoe de weggebonden detector voertuigen detecteert, bv. door gebruik te maken van inductie of doppler.')
+                                              definition='Het detectieprincipe geeft aan hoe de weggebonden detector voertuigen detecteert, bv. door gebruik te maken van inductie of doppler.',
+                                              owner=self)
 
         self._merk = OTLAttribuut(field=KlWeggebondendetectorMerk,
                                   naam='merk',
                                   label='merk',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#WeggebondenDetector.merk',
-                                  definition='Merknaam van een weggebonden detector.')
+                                  definition='Merknaam van een weggebonden detector.',
+                                  owner=self)
 
         self._modelnaam = OTLAttribuut(field=KlWeggebondendetectorModelnaam,
                                        naam='modelnaam',
                                        label='modelnaam',
                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#WeggebondenDetector.modelnaam',
-                                       definition='De modelnaam van een weggebonden detector.')
+                                       definition='De modelnaam van een weggebonden detector.',
+                                       owner=self)
 
     @property
     def detectieprincipe(self):

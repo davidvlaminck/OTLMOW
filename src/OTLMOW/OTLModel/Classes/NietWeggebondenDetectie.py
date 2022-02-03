@@ -4,10 +4,11 @@ from abc import abstractmethod
 from OTLMOW.OTLModel.Classes.Detectie import Detectie
 from OTLMOW.OTLModel.Classes.FirmwareObject import FirmwareObject
 from OTLMOW.OTLModel.Datatypes.KwantWrdInVolt import KwantWrdInVolt
+from OTLMOW.GeometrieArtefact.PuntGeometrie import PuntGeometrie
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class NietWeggebondenDetectie(Detectie, FirmwareObject):
+class NietWeggebondenDetectie(Detectie, FirmwareObject, PuntGeometrie):
     """Abstracte voor niet weggebonden detectoren. Deze bevinden zich niet in het wegoppervlak en worden aangewend voor volgende doeleinden:
 *nabij de stoplijnen van kruispunten als kruispuntdetectoren waardoor de verkeersafhankelijke werking van de verkeersregelaar mogelijk wordt (zogenaamde microregeling);
 *op willekeurige plaatsen in het verkeersnet, als selectieve detectoren voor het registreren van een aanvraag voor prioritaire doorgang vanwege het openbaar vervoer (bussen of tramrijtuigen) teneinde de afloop van de cyclus op de kruispunten te beïnvloeden"""
@@ -19,12 +20,14 @@ class NietWeggebondenDetectie(Detectie, FirmwareObject):
     def __init__(self):
         Detectie.__init__(self)
         FirmwareObject.__init__(self)
+        PuntGeometrie.__init__(self)
 
         self._voedingsspanning = OTLAttribuut(field=KwantWrdInVolt,
                                               naam='voedingsspanning',
                                               label='voedingsspanning',
                                               objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#NietWeggebondenDetectie.voedingsspanning',
-                                              definition='Spanning waarmee de detectoren gevoed worden.')
+                                              definition='Spanning waarmee de detectoren gevoed worden.',
+                                              owner=self)
 
     @property
     def voedingsspanning(self):

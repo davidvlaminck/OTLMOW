@@ -25,44 +25,51 @@ class BegroeidVoorkomen(AIMObject):
                                      naam='breedte',
                                      label='breedte',
                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#BegroeidVoorkomen.breedte',
-                                     definition='De afstand van het begroeide oppervlak dwars op de as van de (water)weg.')
+                                     definition='De afstand van het begroeide oppervlak dwars op de as van de (water)weg.',
+                                     owner=self)
 
         self._drassigheid = OTLAttribuut(field=KlVegetatieDrassigheid,
                                          naam='drassigheid',
                                          label='drassigheid',
                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#BegroeidVoorkomen.drassigheid',
-                                         definition='Mate waarin de bodem verzadigd is met water. De drassigheid geeft hierbij aan in welke mate de normale werking van types machines zou kunnen verstoord worden.')
+                                         definition='Mate waarin de bodem verzadigd is met water. De drassigheid geeft hierbij aan in welke mate de normale werking van types machines zou kunnen verstoord worden.',
+                                         owner=self)
 
         self._heeftObstakels = OTLAttribuut(field=BooleanField,
                                             naam='heeftObstakels',
                                             label='heeft obstakels',
                                             objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#BegroeidVoorkomen.heeftObstakels',
-                                            definition='Eigenschap die aangeeft of er binnen het beheerdeel al dan niet objecten voorkomen die de vrije werking van machines of andere werktuigen kan verhinderen.')
+                                            definition='Eigenschap die aangeeft of er binnen het beheerdeel al dan niet objecten voorkomen die de vrije werking van machines of andere werktuigen kan verhinderen.',
+                                            owner=self)
 
         self._lengte = OTLAttribuut(field=KwantWrdInMeter,
                                     naam='lengte',
                                     label='lengte',
                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#BegroeidVoorkomen.lengte',
-                                    definition='De afstand van het begroeide oppervlak evenwijdig met de as van de (water)weg.')
+                                    definition='De afstand van het begroeide oppervlak evenwijdig met de as van de (water)weg.',
+                                    owner=self)
 
         self._oppervlakte = OTLAttribuut(field=KwantWrdInVierkanteMeter,
                                          naam='oppervlakte',
                                          label='oppervlakte',
                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#BegroeidVoorkomen.oppervlakte',
-                                         definition='De oppervlakte van het begroeide oppervlak in vierkante meter.')
+                                         definition='De oppervlakte van het begroeide oppervlak in vierkante meter.',
+                                         owner=self)
 
         self._soort = OTLAttribuut(field=DtcVegetatieSoortnaam,
                                    naam='soort',
                                    label='soort',
                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#BegroeidVoorkomen.soort',
                                    kardinaliteit_max='*',
-                                   definition='Met deze eigenschap worden de Nederlandse soortnaam, wetenschappelijke soortnaam en de soortcode van de meest voorkomende soorten binnen het begroeid oppervlak weergegeven.')
+                                   definition='Met deze eigenschap worden de Nederlandse soortnaam, wetenschappelijke soortnaam en de soortcode van de meest voorkomende soorten binnen het begroeid oppervlak weergegeven.',
+                                   owner=self)
 
         self._taludwaarde = OTLAttribuut(field=KlTaludWaarde,
                                          naam='taludwaarde',
                                          label='taludwaarde',
                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#BegroeidVoorkomen.taludwaarde',
-                                         definition='Een talud is het kunstmatig gedeelte van een vlak van de wegbaan, dijken, spoorbanen, vestingswerken, ... dat een helling (min. 20%, max 80% voor kunstmatig verharde taluds) vertoont en bedoeld voor het opvangen van een hoogteverschil.')
+                                         definition='Een talud is het kunstmatig gedeelte van een vlak van de wegbaan, dijken, spoorbanen, vestingswerken, ... dat een helling (min. 20%, max 80% voor kunstmatig verharde taluds) vertoont en bedoeld voor het opvangen van een hoogteverschil.',
+                                         owner=self)
 
     @property
     def breedte(self):

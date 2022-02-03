@@ -19,13 +19,15 @@ class RIS(IVRIComponent):
                                   naam='merk',
                                   label='merk',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#RIS.merk',
-                                  definition='De merknaam van de RIS; duidt op de leverancier of producent van de iVRI component.')
+                                  definition='De merknaam van de RIS; duidt op de leverancier of producent van de iVRI component.',
+                                  owner=self)
 
         self._modelnaam = OTLAttribuut(field=KlIVRIModelRIS,
                                        naam='modelnaam',
                                        label='modelnaam',
                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#RIS.modelnaam',
-                                       definition='De modelnaam/product range van de RIS.')
+                                       definition='De modelnaam/product range van de RIS.',
+                                       owner=self)
 
     @property
     def merk(self):

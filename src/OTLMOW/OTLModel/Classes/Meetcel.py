@@ -5,41 +5,47 @@ from OTLMOW.OTLModel.Datatypes.KlMeetcelNauwkeurigheidsklasse import KlMeetcelNa
 from OTLMOW.OTLModel.Datatypes.KlMeetcelNauwkeurigheidsvermogen import KlMeetcelNauwkeurigheidsvermogen
 from OTLMOW.OTLModel.Datatypes.KlMeetcelVeiligheidsfactor import KlMeetcelVeiligheidsfactor
 from OTLMOW.OTLModel.Datatypes.StringField import StringField
+from OTLMOW.GeometrieArtefact.PuntGeometrie import PuntGeometrie
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Meetcel(AIMNaamObject):
+class Meetcel(AIMNaamObject, PuntGeometrie):
     """Een cel voorzien met uitrusting voor het meten van het energieverbruik aan de hoogspanningszijde van de transformator."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Meetcel'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        super().__init__()
+        AIMNaamObject.__init__(self)
+        PuntGeometrie.__init__(self)
 
         self._nauwkeurigheidsklasse = OTLAttribuut(field=KlMeetcelNauwkeurigheidsklasse,
                                                    naam='nauwkeurigheidsklasse',
                                                    label='nauwkeurigheidsklasse',
                                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Meetcel.nauwkeurigheidsklasse',
-                                                   definition='Nauwkeurigheidsklasse van de meetcel (vb 0,2; 0,2s; 0,5; ...).')
+                                                   definition='Nauwkeurigheidsklasse van de meetcel (vb 0,2; 0,2s; 0,5; ...).',
+                                                   owner=self)
 
         self._nauwkeurigheidsvermogen = OTLAttribuut(field=KlMeetcelNauwkeurigheidsvermogen,
                                                      naam='nauwkeurigheidsvermogen',
                                                      label='nauwkeurigheidsvermogen',
                                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Meetcel.nauwkeurigheidsvermogen',
-                                                     definition='Nauwkeurigheidsvermogen van de meetcel (vb 5;15).')
+                                                     definition='Nauwkeurigheidsvermogen van de meetcel (vb 5;15).',
+                                                     owner=self)
 
         self._transformatieverhouding = OTLAttribuut(field=StringField,
                                                      naam='transformatieverhouding',
                                                      label='transformatieverhouding',
                                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Meetcel.transformatieverhouding',
-                                                     definition='Verhouding van de transformatie (vb 25/5;50/5; (5500/v3)/( 110/v3);...).')
+                                                     definition='Verhouding van de transformatie (vb 25/5;50/5; (5500/v3)/( 110/v3);...).',
+                                                     owner=self)
 
         self._veiligheidsfactor = OTLAttribuut(field=KlMeetcelVeiligheidsfactor,
                                                naam='veiligheidsfactor',
                                                label='veiligheidsfactor',
                                                objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Meetcel.veiligheidsfactor',
-                                               definition='Verhouding tussen de toegekende primaire limietstroom van de meetcel en de toegekende primaire stroom.')
+                                               definition='Verhouding tussen de toegekende primaire limietstroom van de meetcel en de toegekende primaire stroom.',
+                                               owner=self)
 
     @property
     def nauwkeurigheidsklasse(self):

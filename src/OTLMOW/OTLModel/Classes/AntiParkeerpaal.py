@@ -4,35 +4,40 @@ from OTLMOW.OTLModel.Classes.Straatmeubilair import Straatmeubilair
 from OTLMOW.OTLModel.Datatypes.AntiParkeerpaalType import AntiParkeerpaalType
 from OTLMOW.OTLModel.Datatypes.KlAntiparkeerpaalMateriaal import KlAntiparkeerpaalMateriaal
 from OTLMOW.OTLModel.Datatypes.KlPlaatsingswijze import KlPlaatsingswijze
+from OTLMOW.GeometrieArtefact.PuntGeometrie import PuntGeometrie
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class AntiParkeerpaal(Straatmeubilair):
+class AntiParkeerpaal(Straatmeubilair, PuntGeometrie):
     """Een paal met als doel het parkeren te verhinderen."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#AntiParkeerpaal'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        super().__init__()
+        Straatmeubilair.__init__(self)
+        PuntGeometrie.__init__(self)
 
         self._materiaal = OTLAttribuut(field=KlAntiparkeerpaalMateriaal,
                                        naam='materiaal',
                                        label='materiaal',
                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#AntiParkeerpaal.materiaal',
-                                       definition='Het materiaal van de Amsterdammer.')
+                                       definition='Het materiaal van de Amsterdammer.',
+                                       owner=self)
 
         self._plaatsingswijze = OTLAttribuut(field=KlPlaatsingswijze,
                                              naam='plaatsingswijze',
                                              label='plaatsingswijze',
                                              objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#AntiParkeerpaal.plaatsingswijze',
-                                             definition='Aanduiding of de anti-parkeerpaal eenvoudig wegneembaar is.')
+                                             definition='Aanduiding of de anti-parkeerpaal eenvoudig wegneembaar is.',
+                                             owner=self)
 
         self._type = OTLAttribuut(field=AntiParkeerpaalType,
                                   naam='type',
                                   label='type',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#AntiParkeerpaal.type',
-                                  definition='Vorm van de anti-parkeerpaal.')
+                                  definition='Vorm van de anti-parkeerpaal.',
+                                  owner=self)
 
     @property
     def materiaal(self):

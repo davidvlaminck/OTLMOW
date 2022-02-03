@@ -21,199 +21,232 @@ class SeinbrugDVM(EMObject):
                                      naam='RAL kleur',
                                      label='RAL kleur',
                                      objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#SeinbrugDVM.ralKleur',
-                                     definitie='Definitie nog toe te voegen voor eigenschap RAL kleur')
+                                     definitie='Definitie nog toe te voegen voor eigenschap RAL kleur',
+                                     owner=self)
 
         self._beschadigingAanwezig = EMAttribuut(field=BooleanField,
                                                  naam='beschadiging aanwezig',
                                                  label='beschadiging aanwezig',
                                                  objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#SeinbrugDVM.beschadigingAanwezig',
-                                                 definitie='Definitie nog toe te voegen voor eigenschap beschadiging aanwezig')
+                                                 definitie='Definitie nog toe te voegen voor eigenschap beschadiging aanwezig',
+                                                 owner=self)
 
         self._beschadigingAnderePlaats = EMAttribuut(field=StringField,
                                                      naam='beschadiging andere plaats',
                                                      label='beschadiging andere plaats',
                                                      objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#SeinbrugDVM.beschadigingAnderePlaats',
-                                                     definitie='Definitie nog toe te voegen voor eigenschap beschadiging andere plaats')
+                                                     definitie='Definitie nog toe te voegen voor eigenschap beschadiging andere plaats',
+                                                     owner=self)
 
         self._beschadigingBeugelsBord = EMAttribuut(field=StringField,
                                                     naam='beschadiging beugels bord',
                                                     label='beschadiging beugels bord',
                                                     objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#SeinbrugDVM.beschadigingBeugelsBord',
-                                                    definitie='Definitie nog toe te voegen voor eigenschap beschadiging beugels bord')
+                                                    definitie='Definitie nog toe te voegen voor eigenschap beschadiging beugels bord',
+                                                    owner=self)
 
         self._beschadigingKolomLinks = EMAttribuut(field=StringField,
                                                    naam='beschadiging kolom links',
                                                    label='beschadiging kolom links',
                                                    objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#SeinbrugDVM.beschadigingKolomLinks',
-                                                   definitie='Definitie nog toe te voegen voor eigenschap beschadiging kolom links')
+                                                   definitie='Definitie nog toe te voegen voor eigenschap beschadiging kolom links',
+                                                   owner=self)
 
         self._beschadigingKolomRechts = EMAttribuut(field=StringField,
                                                     naam='beschadiging kolom rechts',
                                                     label='beschadiging kolom rechts',
                                                     objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#SeinbrugDVM.beschadigingKolomRechts',
-                                                    definitie='Definitie nog toe te voegen voor eigenschap beschadiging kolom rechts')
+                                                    definitie='Definitie nog toe te voegen voor eigenschap beschadiging kolom rechts',
+                                                    owner=self)
 
         self._beschadigingLadderLinks = EMAttribuut(field=StringField,
                                                     naam='beschadiging ladder links',
                                                     label='beschadiging ladder links',
                                                     objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#SeinbrugDVM.beschadigingLadderLinks',
-                                                    definitie='Definitie nog toe te voegen voor eigenschap beschadiging ladder links')
+                                                    definitie='Definitie nog toe te voegen voor eigenschap beschadiging ladder links',
+                                                    owner=self)
 
         self._beschadigingLadderRechts = EMAttribuut(field=StringField,
                                                      naam='beschadiging ladder rechts',
                                                      label='beschadiging ladder rechts',
                                                      objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#SeinbrugDVM.beschadigingLadderRechts',
-                                                     definitie='Definitie nog toe te voegen voor eigenschap beschadiging ladder rechts')
+                                                     definitie='Definitie nog toe te voegen voor eigenschap beschadiging ladder rechts',
+                                                     owner=self)
 
         self._beschadigingLiggerBoven = EMAttribuut(field=StringField,
                                                     naam='beschadiging ligger boven',
                                                     label='beschadiging ligger boven',
                                                     objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#SeinbrugDVM.beschadigingLiggerBoven',
-                                                    definitie='Definitie nog toe te voegen voor eigenschap beschadiging ligger boven')
+                                                    definitie='Definitie nog toe te voegen voor eigenschap beschadiging ligger boven',
+                                                    owner=self)
 
         self._beschadigingLiggerOnder = EMAttribuut(field=StringField,
                                                     naam='beschadiging ligger onder',
                                                     label='beschadiging ligger onder',
                                                     objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#SeinbrugDVM.beschadigingLiggerOnder',
-                                                    definitie='Definitie nog toe te voegen voor eigenschap beschadiging ligger onder')
+                                                    definitie='Definitie nog toe te voegen voor eigenschap beschadiging ligger onder',
+                                                    owner=self)
 
         self._borgingLeuningenAangebracht = EMAttribuut(field=StringField,
                                                         naam='borging leuningen aangebracht',
                                                         label='borging leuningen aangebracht',
                                                         objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#SeinbrugDVM.borgingLeuningenAangebracht',
-                                                        definitie='Definitie nog toe te voegen voor eigenschap toestand boutverbinding')
+                                                        definitie='Definitie nog toe te voegen voor eigenschap toestand boutverbinding',
+                                                        owner=self)
 
         self._datumNieuweBescherming = EMAttribuut(field=DateField,
                                                    naam='datum nieuwe bescherming',
                                                    label='datum nieuwe bescherming',
                                                    objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#SeinbrugDVM.datumNieuweBescherming',
-                                                   definitie='Definitie nog toe te voegen voor eigenschap datum nieuwe bescherming')
+                                                   definitie='Definitie nog toe te voegen voor eigenschap datum nieuwe bescherming',
+                                                   owner=self)
 
         self._datumNieuweSeinbrugDvm = EMAttribuut(field=DateField,
                                                    naam='datum nieuwe seinbrug DVM',
                                                    label='datum nieuwe seinbrug DVM',
                                                    objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#SeinbrugDVM.datumNieuweSeinbrugDvm',
-                                                   definitie='Definitie nog toe te voegen voor eigenschap datum nieuwe seinbrug DVM')
+                                                   definitie='Definitie nog toe te voegen voor eigenschap datum nieuwe seinbrug DVM',
+                                                   owner=self)
 
         self._externeRoestAanwezig = EMAttribuut(field=BooleanField,
                                                  naam='externe roest aanwezig',
                                                  label='externe roest aanwezig',
                                                  objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#SeinbrugDVM.externeRoestAanwezig',
-                                                 definitie='Definitie nog toe te voegen voor eigenschap externe roest aanwezig')
+                                                 definitie='Definitie nog toe te voegen voor eigenschap externe roest aanwezig',
+                                                 owner=self)
 
         self._externeRoestAnderePlaats = EMAttribuut(field=StringField,
                                                      naam='externe roest andere plaats',
                                                      label='externe roest andere plaats',
                                                      objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#SeinbrugDVM.externeRoestAnderePlaats',
-                                                     definitie='Definitie nog toe te voegen voor eigenschap externe roest andere plaats')
+                                                     definitie='Definitie nog toe te voegen voor eigenschap externe roest andere plaats',
+                                                     owner=self)
 
         self._externeRoestBeugelsBord = EMAttribuut(field=StringField,
                                                     naam='externe roest beugels bord',
                                                     label='externe roest beugels bord',
                                                     objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#SeinbrugDVM.externeRoestBeugelsBord',
-                                                    definitie='Definitie nog toe te voegen voor eigenschap externe roest beugels bord')
+                                                    definitie='Definitie nog toe te voegen voor eigenschap externe roest beugels bord',
+                                                    owner=self)
 
         self._externeRoestKolomLinks = EMAttribuut(field=StringField,
                                                    naam='externe roest kolom links',
                                                    label='externe roest kolom links',
                                                    objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#SeinbrugDVM.externeRoestKolomLinks',
-                                                   definitie='Definitie nog toe te voegen voor eigenschap externe roest kolom links')
+                                                   definitie='Definitie nog toe te voegen voor eigenschap externe roest kolom links',
+                                                   owner=self)
 
         self._externeRoestKolomRechts = EMAttribuut(field=StringField,
                                                     naam='externe roest kolom rechts',
                                                     label='externe roest kolom rechts',
                                                     objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#SeinbrugDVM.externeRoestKolomRechts',
-                                                    definitie='Definitie nog toe te voegen voor eigenschap externe roest kolom rechts')
+                                                    definitie='Definitie nog toe te voegen voor eigenschap externe roest kolom rechts',
+                                                    owner=self)
 
         self._externeRoestLadderLinks = EMAttribuut(field=StringField,
                                                     naam='externe roest ladder links',
                                                     label='externe roest ladder links',
                                                     objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#SeinbrugDVM.externeRoestLadderLinks',
-                                                    definitie='Definitie nog toe te voegen voor eigenschap externe roest ladder links')
+                                                    definitie='Definitie nog toe te voegen voor eigenschap externe roest ladder links',
+                                                    owner=self)
 
         self._externeRoestLadderRechts = EMAttribuut(field=StringField,
                                                      naam='externe roest ladder rechts',
                                                      label='externe roest ladder rechts',
                                                      objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#SeinbrugDVM.externeRoestLadderRechts',
-                                                     definitie='Definitie nog toe te voegen voor eigenschap externe roest ladder rechts')
+                                                     definitie='Definitie nog toe te voegen voor eigenschap externe roest ladder rechts',
+                                                     owner=self)
 
         self._externeRoestLiggerBoven = EMAttribuut(field=StringField,
                                                     naam='externe roest ligger boven',
                                                     label='externe roest ligger boven',
                                                     objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#SeinbrugDVM.externeRoestLiggerBoven',
-                                                    definitie='Definitie nog toe te voegen voor eigenschap externe roest ligger boven')
+                                                    definitie='Definitie nog toe te voegen voor eigenschap externe roest ligger boven',
+                                                    owner=self)
 
         self._externeRoestLiggerOnder = EMAttribuut(field=StringField,
                                                     naam='externe roest ligger onder',
                                                     label='externe roest ligger onder',
                                                     objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#SeinbrugDVM.externeRoestLiggerOnder',
-                                                    definitie='Definitie nog toe te voegen voor eigenschap externe roest ligger onder')
+                                                    definitie='Definitie nog toe te voegen voor eigenschap externe roest ligger onder',
+                                                    owner=self)
 
         self._interneRoest = EMAttribuut(field=StringField,
                                          naam='interne roest',
                                          label='interne roest',
                                          objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#SeinbrugDVM.interneRoest',
-                                         definitie='Definitie nog toe te voegen voor eigenschap interne roest')
+                                         definitie='Definitie nog toe te voegen voor eigenschap interne roest',
+                                         owner=self)
 
         self._lengteOverspanning = EMAttribuut(field=FloatOrDecimalField,
                                                naam='lengte overspanning',
                                                label='lengte overspanning',
                                                objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#SeinbrugDVM.lengteOverspanning',
-                                               definitie='Definitie nog toe te voegen voor eigenschap lengte overspanning')
+                                               definitie='Definitie nog toe te voegen voor eigenschap lengte overspanning',
+                                               owner=self)
 
         self._minimumVrijeHoogte = EMAttribuut(field=FloatOrDecimalField,
                                                naam='minimum vrije hoogte',
                                                label='minimum vrije hoogte',
                                                objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#EMObject.minimumVrijeHoogte',
-                                               definitie='Definitie nog toe te voegen voor eigenschap minimum vrije hoogte')
+                                               definitie='Definitie nog toe te voegen voor eigenschap minimum vrije hoogte',
+                                               owner=self)
 
         self._ontbrekendeDelen = EMAttribuut(field=StringField,
                                              naam='ontbrekende delen',
                                              label='ontbrekende delen',
                                              objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#SeinbrugDVM.ontbrekendeDelen',
-                                             definitie='Definitie nog toe te voegen voor eigenschap ontbrekende delen')
+                                             definitie='Definitie nog toe te voegen voor eigenschap ontbrekende delen',
+                                             owner=self)
 
         self._redenSeinbrugDvmVerwijderd = EMAttribuut(field=StringField,
                                                        naam='reden seinbrug DVM verwijderd',
                                                        label='reden seinbrug DVM verwijderd',
                                                        objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#SeinbrugDVM.redenSeinbrugDvmVerwijderd',
-                                                       definitie='Definitie nog toe te voegen voor eigenschap reden seinbrug DVM verwijderd')
+                                                       definitie='Definitie nog toe te voegen voor eigenschap reden seinbrug DVM verwijderd',
+                                                       owner=self)
 
         self._seinbrugDvmVerwijderd = EMAttribuut(field=BooleanField,
                                                   naam='seinbrug DVM verwijderd',
                                                   label='seinbrug DVM verwijderd',
                                                   objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#SeinbrugDVM.seinbrugDvmVerwijderd',
-                                                  definitie='Definitie nog toe te voegen voor eigenschap seinbrug DVM verwijderd')
+                                                  definitie='Definitie nog toe te voegen voor eigenschap seinbrug DVM verwijderd',
+                                                  owner=self)
 
         self._toestandFundering = EMAttribuut(field=StringField,
                                               naam='toestand fundering',
                                               label='toestand fundering',
                                               objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#SeinbrugDVM.toestandFundering',
-                                              definitie='Definitie nog toe te voegen voor eigenschap toestand fundering')
+                                              definitie='Definitie nog toe te voegen voor eigenschap toestand fundering',
+                                              owner=self)
 
         self._toestandKabels = EMAttribuut(field=StringField,
                                            naam='toestand kabels',
                                            label='toestand kabels',
                                            objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#SeinbrugDVM.toestandKabels',
-                                           definitie='Definitie nog toe te voegen voor eigenschap toestand kabels')
+                                           definitie='Definitie nog toe te voegen voor eigenschap toestand kabels',
+                                           owner=self)
 
         self._typeESeinbrug = EMAttribuut(field=StringField,
                                           naam='type E-seinbrug',
                                           label='type E-seinbrug',
                                           objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#SeinbrugDVM.typeESeinbrug',
-                                          definitie='Definitie nog toe te voegen voor eigenschap type E-seinbrug')
+                                          definitie='Definitie nog toe te voegen voor eigenschap type E-seinbrug',
+                                          owner=self)
 
         self._typeBescherming = EMAttribuut(field=StringField,
                                             naam='type bescherming',
                                             label='type bescherming',
                                             objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#SeinbrugDVM.typeBescherming',
-                                            definitie='Definitie nog toe te voegen voor eigenschap type bescherming')
+                                            definitie='Definitie nog toe te voegen voor eigenschap type bescherming',
+                                            owner=self)
 
         self._typeSeinbrug = EMAttribuut(field=StringField,
                                          naam='type seinbrug',
                                          label='type seinbrug',
                                          objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#EMObject.typeSeinbrug',
-                                         definitie='Definitie nog toe te voegen voor eigenschap type seinbrug')
+                                         definitie='Definitie nog toe te voegen voor eigenschap type seinbrug',
+                                         owner=self)
 
     @property
     def ralKleur(self):

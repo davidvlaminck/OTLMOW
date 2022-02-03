@@ -21,38 +21,44 @@ class Ventilator(Ventilatie):
                                            naam='draairichting',
                                            label='draairichting',
                                            objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Ventilator.draairichting',
-                                           definition='Geeft aan of de bladen van de ventilator met de wijzers mee of tegen de wijzers in draaien.')
+                                           definition='Geeft aan of de bladen van de ventilator met de wijzers mee of tegen de wijzers in draaien.',
+                                           owner=self)
 
         self._gebruik = OTLAttribuut(field=KlVentilatorGebruik,
                                      naam='gebruik',
                                      label='gebruik',
                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Ventilator.gebruik',
-                                     definition='Geeft aan op welke manier de ventilator ingezet wordt.')
+                                     definition='Geeft aan op welke manier de ventilator ingezet wordt.',
+                                     owner=self)
 
         self._heefDrukverschilmeting = OTLAttribuut(field=BooleanField,
                                                     naam='heefDrukverschilmeting',
                                                     label='heeft drukverschilmeting',
                                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Ventilator.heefDrukverschilmeting',
-                                                    definition='Geeft aan of de ventilator uitgerust is met een drukverschilmeters.')
+                                                    definition='Geeft aan of de ventilator uitgerust is met een drukverschilmeters.',
+                                                    owner=self)
 
         self._heeftTemperatuurmeting = OTLAttribuut(field=BooleanField,
                                                     naam='heeftTemperatuurmeting',
                                                     label='heeft temperatuurmeting',
                                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Ventilator.heeftTemperatuurmeting',
-                                                    definition='Geeft aan of de ventilator uitgerust is met temperatuurmeting.')
+                                                    definition='Geeft aan of de ventilator uitgerust is met temperatuurmeting.',
+                                                    owner=self)
 
         self._heeftTrillingsmeting = OTLAttribuut(field=BooleanField,
                                                   naam='heeftTrillingsmeting',
                                                   label='heeft trillingsmeting',
                                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Ventilator.heeftTrillingsmeting',
-                                                  definition='Geeft aan of de ventilator uitgerust is met trillingsmeting.')
+                                                  definition='Geeft aan of de ventilator uitgerust is met trillingsmeting.',
+                                                  owner=self)
 
         self._standen = OTLAttribuut(field=KwantWrdInProcent,
                                      naam='standen',
                                      label='standen',
                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Ventilator.standen',
                                      kardinaliteit_max='*',
-                                     definition='Met de standen van de ventilator kan de draaisnelheid en soms ook de draairichting van de de bladen van de ventilator bepaald worden.')
+                                     definition='Met de standen van de ventilator kan de draaisnelheid en soms ook de draairichting van de de bladen van de ventilator bepaald worden.',
+                                     owner=self)
 
     @property
     def draairichting(self):

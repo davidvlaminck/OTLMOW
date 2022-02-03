@@ -20,307 +20,358 @@ class Kast(EMObject):
                                                       naam='Aantal OVBS en voet vervangen',
                                                       label='Aantal OVBS en voet vervangen',
                                                       objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#EMObject.aantalOvbsEnVoetVervangen',
-                                                      definitie='Definitie nog toe te voegen voor eigenschap Aantal OVBS en voet vervangen')
+                                                      definitie='Definitie nog toe te voegen voor eigenschap Aantal OVBS en voet vervangen',
+                                                      owner=self)
 
         self._aantalOvbsVervangen = EMAttribuut(field=StringField,
                                                 naam='Aantal OVBS vervangen',
                                                 label='Aantal OVBS vervangen',
                                                 objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#EMObject.aantalOvbsVervangen',
-                                                definitie='Definitie nog toe te voegen voor eigenschap Aantal OVBS vervangen')
+                                                definitie='Definitie nog toe te voegen voor eigenschap Aantal OVBS vervangen',
+                                                owner=self)
 
         self._aantalBuizenAfgedicht = EMAttribuut(field=StringField,
                                                   naam='Aantal buizen afgedicht',
                                                   label='Aantal buizen afgedicht',
                                                   objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#Kast.aantalBuizenAfgedicht',
-                                                  definitie='Definitie nog toe te voegen voor eigenschap Aantal buizen afgedicht')
+                                                  definitie='Definitie nog toe te voegen voor eigenschap Aantal buizen afgedicht',
+                                                  owner=self)
 
         self._aantalBuizenTePlannen = EMAttribuut(field=StringField,
                                                   naam='Aantal buizen te plannen',
                                                   label='Aantal buizen te plannen',
                                                   objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#Kast.aantalBuizenTePlannen',
-                                                  definitie='Definitie nog toe te voegen voor eigenschap Aantal buizen te plannen')
+                                                  definitie='Definitie nog toe te voegen voor eigenschap Aantal buizen te plannen',
+                                                  owner=self)
 
         self._aantalNogInTePlannen = EMAttribuut(field=StringField,
                                                  naam='Aantal nog in te plannen',
                                                  label='Aantal nog in te plannen',
                                                  objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#EMObject.aantalNogInTePlannen',
-                                                 definitie='Definitie nog toe te voegen voor eigenschap Aantal nog in te plannen')
+                                                 definitie='Definitie nog toe te voegen voor eigenschap Aantal nog in te plannen',
+                                                 owner=self)
 
         self._algemeneOpmerkingen = EMAttribuut(field=StringField,
                                                 naam='Algemene opmerkingen',
                                                 label='Algemene opmerkingen',
                                                 objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#Kast.algemeneOpmerkingen',
-                                                definitie='Definitie nog toe te voegen voor eigenschap Algemene opmerkingen')
+                                                definitie='Definitie nog toe te voegen voor eigenschap Algemene opmerkingen',
+                                                owner=self)
 
         self._bekabelingDraadkanalenOrdelijkKast = EMAttribuut(field=StringField,
                                                                naam='Bekabeling/draadkanalen ordelijk (KAST)',
                                                                label='Bekabeling/draadkanalen ordelijk (KAST)',
                                                                objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#Kast.bekabelingDraadkanalenOrdelijkKast',
-                                                               definitie='Definitie nog toe te voegen voor eigenschap Bekabeling/draadkanalen ordelijk (KAST)')
+                                                               definitie='Definitie nog toe te voegen voor eigenschap Bekabeling/draadkanalen ordelijk (KAST)',
+                                                               owner=self)
 
         self._bereikbaarheidCorrect = EMAttribuut(field=BooleanField,
                                                   naam='Bereikbaarheid correct',
                                                   label='Bereikbaarheid correct',
                                                   objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#Kast.bereikbaarheidCorrect',
-                                                  definitie='Definitie nog toe te voegen voor eigenschap Bereikbaarheid correct')
+                                                  definitie='Definitie nog toe te voegen voor eigenschap Bereikbaarheid correct',
+                                                  owner=self)
 
         self._betonsokkelGereinigd = EMAttribuut(field=BooleanField,
                                                  naam='Betonsokkel gereinigd',
                                                  label='Betonsokkel gereinigd',
                                                  objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#Kast.betonsokkelGereinigd',
-                                                 definitie='Definitie nog toe te voegen voor eigenschap Betonsokkel gereinigd')
+                                                 definitie='Definitie nog toe te voegen voor eigenschap Betonsokkel gereinigd',
+                                                 owner=self)
 
         self._bezoekficheAanvangtijdstipIngevuld = EMAttribuut(field=BooleanField,
                                                                naam='Bezoekfiche aanvangtijdstip ingevuld',
                                                                label='Bezoekfiche aanvangtijdstip ingevuld',
                                                                objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#Kast.bezoekficheAanvangtijdstipIngevuld',
-                                                               definitie='Definitie nog toe te voegen voor eigenschap Bezoekfiche aanvangtijdstip ingevuld')
+                                                               definitie='Definitie nog toe te voegen voor eigenschap Bezoekfiche aanvangtijdstip ingevuld',
+                                                               owner=self)
 
         self._bezoekficheEindtijdstipIngevuld = EMAttribuut(field=BooleanField,
                                                             naam='Bezoekfiche eindtijdstip ingevuld',
                                                             label='Bezoekfiche eindtijdstip ingevuld',
                                                             objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#Kast.bezoekficheEindtijdstipIngevuld',
-                                                            definitie='Definitie nog toe te voegen voor eigenschap Bezoekfiche eindtijdstip ingevuld')
+                                                            definitie='Definitie nog toe te voegen voor eigenschap Bezoekfiche eindtijdstip ingevuld',
+                                                            owner=self)
 
         self._binnenkantSokkelGestofzuigd = EMAttribuut(field=BooleanField,
                                                         naam='Binnenkant sokkel gestofzuigd',
                                                         label='Binnenkant sokkel gestofzuigd',
                                                         objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#Kast.binnenkantSokkelGestofzuigd',
-                                                        definitie='Definitie nog toe te voegen voor eigenschap Binnenkant sokkel gestofzuigd')
+                                                        definitie='Definitie nog toe te voegen voor eigenschap Binnenkant sokkel gestofzuigd',
+                                                        owner=self)
 
         self._binnensokkelIsGoedAansluitend = EMAttribuut(field=BooleanField,
                                                           naam='Binnensokkel is goed aansluitend',
                                                           label='Binnensokkel is goed aansluitend',
                                                           objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#Kast.binnensokkelIsGoedAansluitend',
-                                                          definitie='Definitie nog toe te voegen voor eigenschap Binnensokkel is goed aansluitend')
+                                                          definitie='Definitie nog toe te voegen voor eigenschap Binnensokkel is goed aansluitend',
+                                                          owner=self)
 
         self._binnenzijdeGereinigd = EMAttribuut(field=BooleanField,
                                                  naam='Binnenzijde gereinigd',
                                                  label='Binnenzijde gereinigd',
                                                  objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#Kast.binnenzijdeGereinigd',
-                                                 definitie='Definitie nog toe te voegen voor eigenschap Binnenzijde gereinigd')
+                                                 definitie='Definitie nog toe te voegen voor eigenschap Binnenzijde gereinigd',
+                                                 owner=self)
 
         self._buizenZijnGoedAfgedichtKast = EMAttribuut(field=StringField,
                                                         naam='Buizen zijn goed afgedicht (KAST)',
                                                         label='Buizen zijn goed afgedicht (KAST)',
                                                         objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#Kast.buizenZijnGoedAfgedichtKast',
-                                                        definitie='Definitie nog toe te voegen voor eigenschap Buizen zijn goed afgedicht (KAST)')
+                                                        definitie='Definitie nog toe te voegen voor eigenschap Buizen zijn goed afgedicht (KAST)',
+                                                        owner=self)
 
         self._deurSluitGoedAf = EMAttribuut(field=BooleanField,
                                             naam='Deur sluit goed af',
                                             label='Deur sluit goed af',
                                             objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#Kast.deurSluitGoedAf',
-                                            definitie='Definitie nog toe te voegen voor eigenschap Deur sluit goed af')
+                                            definitie='Definitie nog toe te voegen voor eigenschap Deur sluit goed af',
+                                            owner=self)
 
         self._deurcontactAanwezig = EMAttribuut(field=BooleanField,
                                                 naam='Deurcontact aanwezig',
                                                 label='Deurcontact aanwezig',
                                                 objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#Kast.deurcontactAanwezig',
-                                                definitie='Definitie nog toe te voegen voor eigenschap Deurcontact aanwezig')
+                                                definitie='Definitie nog toe te voegen voor eigenschap Deurcontact aanwezig',
+                                                owner=self)
 
         self._eindeKast = EMAttribuut(field=DateTimeField,
                                       naam='Einde (KAST)',
                                       label='Einde (KAST)',
                                       objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#Kast.eindeKast',
-                                      definitie='Definitie nog toe te voegen voor eigenschap Einde (KAST)')
+                                      definitie='Definitie nog toe te voegen voor eigenschap Einde (KAST)',
+                                      owner=self)
 
         self._filterSVervangen = EMAttribuut(field=BooleanField,
                                              naam='Filter(s) vervangen',
                                              label='Filter(s) vervangen',
                                              objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#Kast.filterSVervangen',
-                                             definitie='Definitie nog toe te voegen voor eigenschap Filter(s) vervangen')
+                                             definitie='Definitie nog toe te voegen voor eigenschap Filter(s) vervangen',
+                                             owner=self)
 
         self._fotoVanInhoudVanKastGenomen = EMAttribuut(field=BooleanField,
                                                         naam='Foto van inhoud van kast genomen',
                                                         label='Foto van inhoud van kast genomen',
                                                         objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#Kast.fotoVanInhoudVanKastGenomen',
-                                                        definitie='Definitie nog toe te voegen voor eigenschap Foto van inhoud van kast genomen')
+                                                        definitie='Definitie nog toe te voegen voor eigenschap Foto van inhoud van kast genomen',
+                                                        owner=self)
 
         self._geldigeKeuringAanwezig = EMAttribuut(field=BooleanField,
                                                    naam='Geldige keuring aanwezig',
                                                    label='Geldige keuring aanwezig',
                                                    objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#Kast.geldigeKeuringAanwezig',
-                                                   definitie='Definitie nog toe te voegen voor eigenschap Geldige keuring aanwezig')
+                                                   definitie='Definitie nog toe te voegen voor eigenschap Geldige keuring aanwezig',
+                                                   owner=self)
 
         self._genaakbareDelenAanwezig = EMAttribuut(field=StringField,
                                                     naam='Genaakbare delen aanwezig',
                                                     label='Genaakbare delen aanwezig',
                                                     objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#Kast.genaakbareDelenAanwezig',
-                                                    definitie='Definitie nog toe te voegen voor eigenschap Genaakbare delen aanwezig')
+                                                    definitie='Definitie nog toe te voegen voor eigenschap Genaakbare delen aanwezig',
+                                                    owner=self)
 
         self._graffitiFotoS = EMAttribuut(field=BooleanField,
                                           naam="Graffiti (foto's)",
                                           label="Graffiti (foto's)",
                                           objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#Kast.graffitiFotoS',
-                                          definitie="Definitie nog toe te voegen voor eigenschap Graffiti (foto\'s)")
+                                          definitie="Definitie nog toe te voegen voor eigenschap Graffiti (foto\'s)",
+                                          owner=self)
 
         self._hebJeGesnoeid = EMAttribuut(field=StringField,
                                           naam='Heb je gesnoeid?',
                                           label='Heb je gesnoeid?',
                                           objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#Kast.hebJeGesnoeid',
-                                          definitie='Definitie nog toe te voegen voor eigenschap Heb je gesnoeid?')
+                                          definitie='Definitie nog toe te voegen voor eigenschap Heb je gesnoeid?',
+                                          owner=self)
 
         self._installatienummerAanwezigOpKast = EMAttribuut(field=BooleanField,
                                                             naam='Installatienummer aanwezig op kast',
                                                             label='Installatienummer aanwezig op kast',
                                                             objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#Kast.installatienummerAanwezigOpKast',
-                                                            definitie='Definitie nog toe te voegen voor eigenschap Installatienummer aanwezig op kast')
+                                                            definitie='Definitie nog toe te voegen voor eigenschap Installatienummer aanwezig op kast',
+                                                            owner=self)
 
         self._isDiffOk = EMAttribuut(field=StringField,
                                      naam='Is diff ok?',
                                      label='Is diff ok?',
                                      objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#Kast.isDiffOk',
-                                     definitie='Definitie nog toe te voegen voor eigenschap Is diff ok?')
+                                     definitie='Definitie nog toe te voegen voor eigenschap Is diff ok?',
+                                     owner=self)
 
         self._k04VervolgActie = EMAttribuut(field=StringField,
                                             naam='K04. Vervolg actie',
                                             label='K04. Vervolg actie',
                                             objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#Kast.k04VervolgActie',
-                                            definitie='Definitie nog toe te voegen voor eigenschap Vervolg actie')
+                                            definitie='Definitie nog toe te voegen voor eigenschap Vervolg actie',
+                                            owner=self)
 
         self._k20VervolgActie = EMAttribuut(field=StringField,
                                             naam='K20. Vervolg actie',
                                             label='K20. Vervolg actie',
                                             objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#Kast.k20VervolgActie',
-                                            definitie='Definitie nog toe te voegen voor eigenschap Vervolg actie')
+                                            definitie='Definitie nog toe te voegen voor eigenschap Vervolg actie',
+                                            owner=self)
 
         self._k24VervolgActie = EMAttribuut(field=StringField,
                                             naam='K24. Vervolg actie',
                                             label='K24. Vervolg actie',
                                             objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#Kast.k24VervolgActie',
-                                            definitie='Definitie nog toe te voegen voor eigenschap Vervolg actie')
+                                            definitie='Definitie nog toe te voegen voor eigenschap Vervolg actie',
+                                            owner=self)
 
         self._k28VervolgActie = EMAttribuut(field=StringField,
                                             naam='K28. Vervolg actie',
                                             label='K28. Vervolg actie',
                                             objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#Kast.k28VervolgActie',
-                                            definitie='Definitie nog toe te voegen voor eigenschap Vervolg actie')
+                                            definitie='Definitie nog toe te voegen voor eigenschap Vervolg actie',
+                                            owner=self)
 
         self._kastVlotToegankelijkBeplanting = EMAttribuut(field=StringField,
                                                            naam='Kast vlot toegankelijk (beplanting)',
                                                            label='Kast vlot toegankelijk (beplanting)',
                                                            objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#Kast.kastVlotToegankelijkBeplanting',
-                                                           definitie='Definitie nog toe te voegen voor eigenschap Kast vlot toegankelijk (beplanting)')
+                                                           definitie='Definitie nog toe te voegen voor eigenschap Kast vlot toegankelijk (beplanting)',
+                                                           owner=self)
 
         self._knaagdierenbestrijding = EMAttribuut(field=BooleanField,
                                                    naam='Knaagdierenbestrijding',
                                                    label='Knaagdierenbestrijding',
                                                    objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#Kast.knaagdierenbestrijding',
-                                                   definitie='Definitie nog toe te voegen voor eigenschap Knaagdierenbestrijding')
+                                                   definitie='Definitie nog toe te voegen voor eigenschap Knaagdierenbestrijding',
+                                                   owner=self)
 
         self._labelingElektrischeOnderdelenOkKast = EMAttribuut(field=StringField,
                                                                 naam='Labeling elektrische onderdelen OK (KAST)',
                                                                 label='Labeling elektrische onderdelen OK (KAST)',
                                                                 objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#Kast.labelingElektrischeOnderdelenOkKast',
-                                                                definitie='Definitie nog toe te voegen voor eigenschap Labeling elektrische onderdelen OK (KAST)')
+                                                                definitie='Definitie nog toe te voegen voor eigenschap Labeling elektrische onderdelen OK (KAST)',
+                                                                owner=self)
 
         self._omschrijvingAanpassing = EMAttribuut(field=StringField,
                                                    naam='Omschrijving aanpassing',
                                                    label='Omschrijving aanpassing',
                                                    objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#Kast.omschrijvingAanpassing',
-                                                   definitie='Definitie nog toe te voegen voor eigenschap Omschrijving aanpassing')
+                                                   definitie='Definitie nog toe te voegen voor eigenschap Omschrijving aanpassing',
+                                                   owner=self)
 
         self._omschrijvingBeschadiging = EMAttribuut(field=StringField,
                                                      naam='Omschrijving beschadiging',
                                                      label='Omschrijving beschadiging',
                                                      objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#Kast.omschrijvingBeschadiging',
-                                                     definitie='Definitie nog toe te voegen voor eigenschap Omschrijving beschadiging')
+                                                     definitie='Definitie nog toe te voegen voor eigenschap Omschrijving beschadiging',
+                                                     owner=self)
 
         self._omschrijvingPlanning = EMAttribuut(field=StringField,
                                                  naam='Omschrijving planning',
                                                  label='Omschrijving planning',
                                                  objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#Kast.omschrijvingPlanning',
-                                                 definitie='Definitie nog toe te voegen voor eigenschap Omschrijving planning')
+                                                 definitie='Definitie nog toe te voegen voor eigenschap Omschrijving planning',
+                                                 owner=self)
 
         self._omschrijvingWaarKmp = EMAttribuut(field=StringField,
                                                 naam='Omschrijving waar? KMP?',
                                                 label='Omschrijving waar? KMP?',
                                                 objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#Kast.omschrijvingWaarKmp',
-                                                definitie='Definitie nog toe te voegen voor eigenschap Omschrijving waar? KMP?')
+                                                definitie='Definitie nog toe te voegen voor eigenschap Omschrijving waar? KMP?',
+                                                owner=self)
 
         self._overspanningsBeveiligingenOk = EMAttribuut(field=BooleanField,
                                                          naam='Overspannings beveiligingen OK',
                                                          label='Overspannings beveiligingen OK',
                                                          objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#Kast.overspanningsBeveiligingenOk',
-                                                         definitie='Definitie nog toe te voegen voor eigenschap Overspannings beveiligingen OK')
+                                                         definitie='Definitie nog toe te voegen voor eigenschap Overspannings beveiligingen OK',
+                                                         owner=self)
 
         self._plantenEnOfOngedierteVerwijderd = EMAttribuut(field=BooleanField,
                                                             naam='Planten en/of ongedierte verwijderd',
                                                             label='Planten en/of ongedierte verwijderd',
                                                             objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#Kast.plantenEnOfOngedierteVerwijderd',
-                                                            definitie='Definitie nog toe te voegen voor eigenschap Planten en/of ongedierte verwijderd')
+                                                            definitie='Definitie nog toe te voegen voor eigenschap Planten en/of ongedierte verwijderd',
+                                                            owner=self)
 
         self._reinigenBuitenzijdeKast = EMAttribuut(field=BooleanField,
                                                     naam='Reinigen buitenzijde kast',
                                                     label='Reinigen buitenzijde kast',
                                                     objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#Kast.reinigenBuitenzijdeKast',
-                                                    definitie='Definitie nog toe te voegen voor eigenschap Reinigen buitenzijde kast')
+                                                    definitie='Definitie nog toe te voegen voor eigenschap Reinigen buitenzijde kast',
+                                                    owner=self)
 
         self._schroevenContactenOkSteekproef = EMAttribuut(field=BooleanField,
                                                            naam='Schroeven contacten ok (steekproef)',
                                                            label='Schroeven contacten ok (steekproef)',
                                                            objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#Kast.schroevenContactenOkSteekproef',
-                                                           definitie='Definitie nog toe te voegen voor eigenschap Schroeven contacten ok (steekproef)')
+                                                           definitie='Definitie nog toe te voegen voor eigenschap Schroeven contacten ok (steekproef)',
+                                                           owner=self)
 
         self._slotGesmeerdEnGereinigd = EMAttribuut(field=BooleanField,
                                                     naam='Slot gesmeerd en gereinigd',
                                                     label='Slot gesmeerd en gereinigd',
                                                     objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#Kast.slotGesmeerdEnGereinigd',
-                                                    definitie='Definitie nog toe te voegen voor eigenschap Slot gesmeerd en gereinigd')
+                                                    definitie='Definitie nog toe te voegen voor eigenschap Slot gesmeerd en gereinigd',
+                                                    owner=self)
 
         self._startBezoek = EMAttribuut(field=DateTimeField,
                                         naam='Start bezoek',
                                         label='Start bezoek',
                                         objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#Kast.startBezoek',
-                                        definitie='Definitie nog toe te voegen voor eigenschap Start bezoek')
+                                        definitie='Definitie nog toe te voegen voor eigenschap Start bezoek',
+                                        owner=self)
 
         self._stekkersGecontroleerd = EMAttribuut(field=BooleanField,
                                                   naam='Stekkers gecontroleerd',
                                                   label='Stekkers gecontroleerd',
                                                   objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#Kast.stekkersGecontroleerd',
-                                                  definitie='Definitie nog toe te voegen voor eigenschap Stekkers gecontroleerd')
+                                                  definitie='Definitie nog toe te voegen voor eigenschap Stekkers gecontroleerd',
+                                                  owner=self)
 
         self._vtcSticker = EMAttribuut(field=BooleanField,
                                        naam='VTC-sticker',
                                        label='VTC-sticker',
                                        objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#Kast.vtcSticker',
-                                       definitie='Definitie nog toe te voegen voor eigenschap VTC-sticker')
+                                       definitie='Definitie nog toe te voegen voor eigenschap VTC-sticker',
+                                       owner=self)
 
         self._ventilatieOpeningenAppGestofzuigd = EMAttribuut(field=BooleanField,
                                                               naam='Ventilatie-openingen app gestofzuigd',
                                                               label='Ventilatie-openingen app gestofzuigd',
                                                               objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#Kast.ventilatieOpeningenAppGestofzuigd',
-                                                              definitie='Definitie nog toe te voegen voor eigenschap Ventilatie-openingen app gestofzuigd')
+                                                              definitie='Definitie nog toe te voegen voor eigenschap Ventilatie-openingen app gestofzuigd',
+                                                              owner=self)
 
         self._werkingDiffGetestViaTestknop = EMAttribuut(field=BooleanField,
                                                          naam='Werking diff getest (via testknop)',
                                                          label='Werking diff getest (via testknop)',
                                                          objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#EMObject.werkingDiffGetestViaTestknop',
-                                                         definitie='Definitie nog toe te voegen voor eigenschap Werking diff getest (via testknop)')
+                                                         definitie='Definitie nog toe te voegen voor eigenschap Werking diff getest (via testknop)',
+                                                         owner=self)
 
         self._werkingKastventilatieOkKast = EMAttribuut(field=StringField,
                                                         naam='Werking kastventilatie OK (KAST)',
                                                         label='Werking kastventilatie OK (KAST)',
                                                         objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#Kast.werkingKastventilatieOkKast',
-                                                        definitie='Definitie nog toe te voegen voor eigenschap Werking kastventilatie OK (KAST)')
+                                                        definitie='Definitie nog toe te voegen voor eigenschap Werking kastventilatie OK (KAST)',
+                                                        owner=self)
 
         self._werkingKastverlichtingOkKast = EMAttribuut(field=StringField,
                                                          naam='Werking kastverlichting OK (KAST)',
                                                          label='Werking kastverlichting OK (KAST)',
                                                          objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#Kast.werkingKastverlichtingOkKast',
-                                                         definitie='Definitie nog toe te voegen voor eigenschap Werking kastverlichting OK (KAST)')
+                                                         definitie='Definitie nog toe te voegen voor eigenschap Werking kastverlichting OK (KAST)',
+                                                         owner=self)
 
         self._werkingKastverwarmingOkKast = EMAttribuut(field=StringField,
                                                         naam='Werking kastverwarming OK (KAST)',
                                                         label='Werking kastverwarming OK (KAST)',
                                                         objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#Kast.werkingKastverwarmingOkKast',
-                                                        definitie='Definitie nog toe te voegen voor eigenschap Werking kastverwarming OK (KAST)')
+                                                        definitie='Definitie nog toe te voegen voor eigenschap Werking kastverwarming OK (KAST)',
+                                                        owner=self)
 
         self._notitieinspectie = EMAttribuut(field=StringField,
                                              naam='notitieInspectie',
                                              label='notitieInspectie',
                                              objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#EMObject.notitieinspectie',
-                                             definitie='Definitie nog toe te voegen voor eigenschap notitie')
+                                             definitie='Definitie nog toe te voegen voor eigenschap notitie',
+                                             owner=self)
 
     @property
     def aantalOvbsEnVoetVervangen(self):

@@ -13,7 +13,8 @@ class DtcAfmetingZijdeInMmWaarden(AttributeInfo):
                                    naam='zijde',
                                    label='zijde',
                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAfmetingZijdeInMm.zijde',
-                                   definition='De afmeting van een zijde in millimeter.')
+                                   definition='De afmeting van een zijde in millimeter.',
+                                   owner=self)
 
     @property
     def zijde(self):

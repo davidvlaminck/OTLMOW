@@ -21,13 +21,15 @@ class GestandaardiseerdeKantopsluiting(Kantopsluiting):
                                                  naam='bijkomendeParameter',
                                                  label='bijkomende parameter',
                                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#GestandaardiseerdeKantopsluiting.bijkomendeParameter',
-                                                 definition='Detail typering van de kantopsluiting.')
+                                                 definition='Detail typering van de kantopsluiting.',
+                                                 owner=self)
 
         self._fabricageLengte = OTLAttribuut(field=KlLEStandaardFabricageLengte,
                                              naam='fabricageLengte',
                                              label='fabricagelengte',
                                              objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#GestandaardiseerdeKantopsluiting.fabricageLengte',
-                                             definition='De lengte van de individuele kantopsluiting volgens de norm.')
+                                             definition='De lengte van de individuele kantopsluiting volgens de norm.',
+                                             owner=self)
 
     @property
     def bijkomendeParameter(self):

@@ -21,13 +21,15 @@ class Radar(TypeWeggebruiker, NietWeggebondenDetectie):
                                   naam='merk',
                                   label='merk',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Radar.merk',
-                                  definition='Merknaam van de radar.')
+                                  definition='Merknaam van de radar.',
+                                  owner=self)
 
         self._modelnaam = OTLAttribuut(field=KlRadarModelnaam,
                                        naam='modelnaam',
                                        label='modelnaam',
                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Radar.modelnaam',
-                                       definition='De modelnaam van de radar.')
+                                       definition='De modelnaam van de radar.',
+                                       owner=self)
 
     @property
     def merk(self):

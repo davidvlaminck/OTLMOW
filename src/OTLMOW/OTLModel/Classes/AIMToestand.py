@@ -17,7 +17,8 @@ class AIMToestand(ABC):
                                       naam='toestand',
                                       label='toestand',
                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMToestand.toestand',
-                                      definition='Geeft de actuele stand in de levenscyclus van het object.')
+                                      definition='Geeft de actuele stand in de levenscyclus van het object.',
+                                      owner=self)
 
     @property
     def toestand(self):

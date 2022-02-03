@@ -19,13 +19,15 @@ class BestratingVanGebakkenStraatsteen(Bestrating):
                                                           naam='formaatVanBestratingselement',
                                                           label='formaat van bestratingselement',
                                                           objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#BestratingVanGebakkenStraatsteen.formaatVanBestratingselement',
-                                                          definition='Bepaling van de afmeting van het bestratingselement.')
+                                                          definition='Bepaling van de afmeting van het bestratingselement.',
+                                                          owner=self)
 
         self._standaardkwaliteitsklasse = OTLAttribuut(field=KlStandaardkwaliteitsklasse,
                                                        naam='standaardkwaliteitsklasse',
                                                        label='standaardkwaliteitsklasse',
                                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#BestratingVanGebakkenStraatsteen.standaardkwaliteitsklasse',
-                                                       definition='De standaardkwaliteitsklasse volgens PTV 910.')
+                                                       definition='De standaardkwaliteitsklasse volgens PTV 910.',
+                                                       owner=self)
 
     @property
     def formaatVanBestratingselement(self):

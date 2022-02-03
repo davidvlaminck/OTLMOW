@@ -21,13 +21,15 @@ class Detectielus(Detectie):
                                           naam='afmetingenBL',
                                           label='afmetingen b l',
                                           objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Detectielus.afmetingenBL',
-                                          definition='Afmetingen breedte x lengte van de lus.')
+                                          definition='Afmetingen breedte x lengte van de lus.',
+                                          owner=self)
 
         self._bewakingstijd = OTLAttribuut(field=DtcTijdsduur,
                                            naam='bewakingstijd',
                                            label='bewakingstijd',
                                            objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Detectielus.bewakingstijd',
-                                           definition='Wachttijd (in uren) waarna een alarm pas mag optreden.')
+                                           definition='Wachttijd (in uren) waarna een alarm pas mag optreden.',
+                                           owner=self)
 
     @property
     def afmetingenBL(self):

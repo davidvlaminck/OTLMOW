@@ -19,13 +19,15 @@ class CalamiteitsBord(RetroreflecterendVerkeersbord):
                                                  naam='calamiteitsbordType',
                                                  label='calamiteitsbord type',
                                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#CalamiteitsBord.calamiteitsbordType',
-                                                 definition='Het type van calamiteitsbord (bv. draaiend of dragend).')
+                                                 definition='Het type van calamiteitsbord (bv. draaiend of dragend).',
+                                                 owner=self)
 
         self._vorm = OTLAttribuut(field=KlCalamiteitsbordVorm,
                                   naam='vorm',
                                   label='vorm',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#CalamiteitsBord.vorm',
-                                  definition='De vorm van het calamiteitsbord.')
+                                  definition='De vorm van het calamiteitsbord.',
+                                  owner=self)
 
     @property
     def calamiteitsbordType(self):

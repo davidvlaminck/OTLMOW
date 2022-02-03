@@ -6,47 +6,54 @@ from OTLMOW.OTLModel.Datatypes.KlLEDDriverModelnaam import KlLEDDriverModelnaam
 from OTLMOW.OTLModel.Datatypes.KlLEDDriverProtocol import KlLEDDriverProtocol
 from OTLMOW.OTLModel.Datatypes.KwantWrdInMilliAmpere import KwantWrdInMilliAmpere
 from OTLMOW.OTLModel.Datatypes.KwantWrdInWatt import KwantWrdInWatt
+from OTLMOW.GeometrieArtefact.PuntGeometrie import PuntGeometrie
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class LEDDriver(AIMObject):
+class LEDDriver(AIMObject, PuntGeometrie):
     """Een LED-driver is een elektronisch toestel dat de stroomtoevoer naar de LED's dimensioneert om de goede werking te verzekeren. Via de instelparameters van de driver kan uiteindelijk de lichtsterkte van de LED verlichting aangepast worden."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#LEDDriver'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        super().__init__()
+        AIMObject.__init__(self)
+        PuntGeometrie.__init__(self)
 
         self._maximaalVermogen = OTLAttribuut(field=KwantWrdInWatt,
                                               naam='maximaalVermogen',
                                               label='maximaal vermogen',
                                               objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#LEDDriver.maximaalVermogen',
-                                              definition='Maximaal afgenomen vermogen van de driver en lamp samen (incl. verlies/verbruik van de driver zelf).')
+                                              definition='Maximaal afgenomen vermogen van de driver en lamp samen (incl. verlies/verbruik van de driver zelf).',
+                                              owner=self)
 
         self._maximaleAanstuurstroom = OTLAttribuut(field=KwantWrdInMilliAmpere,
                                                     naam='maximaleAanstuurstroom',
                                                     label='maximale aanstuurstroom',
                                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#LEDDriver.maximaleAanstuurstroom',
-                                                    definition='Maximale aanstuurstroom die de LED driver kan leveren.')
+                                                    definition='Maximale aanstuurstroom die de LED driver kan leveren.',
+                                                    owner=self)
 
         self._merk = OTLAttribuut(field=KlLEDDriverMerk,
                                   naam='merk',
                                   label='merk',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#LEDDriver.merk',
-                                  definition='Het merk van de LED-driver.')
+                                  definition='Het merk van de LED-driver.',
+                                  owner=self)
 
         self._modelnaam = OTLAttribuut(field=KlLEDDriverModelnaam,
                                        naam='modelnaam',
                                        label='modelnaam',
                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#LEDDriver.modelnaam',
-                                       definition='De modelnaam van de LED-driver.')
+                                       definition='De modelnaam van de LED-driver.',
+                                       owner=self)
 
         self._protocol = OTLAttribuut(field=KlLEDDriverProtocol,
                                       naam='protocol',
                                       label='protocol',
                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#LEDDriver.protocol',
-                                      definition="Protocol gebruikt door de LED driver voor het aansturen van de LED's.")
+                                      definition="Protocol gebruikt door de LED driver voor het aansturen van de LED's.",
+                                      owner=self)
 
     @property
     def maximaalVermogen(self):

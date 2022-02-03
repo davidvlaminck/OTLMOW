@@ -21,25 +21,29 @@ class Drukknop(NietWeggebondenDetectie):
                                            naam='bewakingstijd',
                                            label='bewakingstijd',
                                            objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Drukknop.bewakingstijd',
-                                           definition='Wachttijd (in uren) waarna een alarm pas mag optreden.')
+                                           definition='Wachttijd (in uren) waarna een alarm pas mag optreden.',
+                                           owner=self)
 
         self._merk = OTLAttribuut(field=KlDrukknopMerk,
                                   naam='merk',
                                   label='merk',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Drukknop.merk',
-                                  definition='De naam van het merk van de drukknop.')
+                                  definition='De naam van het merk van de drukknop.',
+                                  owner=self)
 
         self._modelnaam = OTLAttribuut(field=KlDrukknopModelnaam,
                                        naam='modelnaam',
                                        label='modelnaam',
                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Drukknop.modelnaam',
-                                       definition='De modelnaam van de drukknop.')
+                                       definition='De modelnaam van de drukknop.',
+                                       owner=self)
 
         self._soortDrukknop = OTLAttribuut(field=KlDrukknopSoort,
                                            naam='soortDrukknop',
                                            label='soort drukknop',
                                            objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Drukknop.soortDrukknop',
-                                           definition='Doelgroep van de drukknop (voetganger, fietser, ruiter,...).')
+                                           definition='Doelgroep van de drukknop (voetganger, fietser, ruiter,...).',
+                                           owner=self)
 
     @property
     def bewakingstijd(self):

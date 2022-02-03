@@ -6,10 +6,11 @@ from OTLMOW.OTLModel.Datatypes.KlGekleurdWVCode import KlGekleurdWVCode
 from OTLMOW.OTLModel.Datatypes.KlGekleurdWVSoort import KlGekleurdWVSoort
 from OTLMOW.OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter
 from OTLMOW.OTLModel.Datatypes.KwantWrdInVierkanteMeter import KwantWrdInVierkanteMeter
+from OTLMOW.GeometrieArtefact.VlakGeometrie import VlakGeometrie
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class GekleurdWegvlakMarkering(Markering, AOWSType):
+class GekleurdWegvlakMarkering(Markering, AOWSType, VlakGeometrie):
     """Een markering van een wegdeel aangebracht om het verkeer te waarschuwen, informeren of regelen."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#GekleurdWegvlakMarkering'
@@ -18,36 +19,42 @@ class GekleurdWegvlakMarkering(Markering, AOWSType):
     def __init__(self):
         AOWSType.__init__(self)
         Markering.__init__(self)
+        VlakGeometrie.__init__(self)
 
         self._breedte = OTLAttribuut(field=KwantWrdInMeter,
                                      naam='breedte',
                                      label='breedte',
                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#GekleurdWegvlakMarkering.breedte',
-                                     definition='De breedte van de markering in meter.')
+                                     definition='De breedte van de markering in meter.',
+                                     owner=self)
 
         self._code = OTLAttribuut(field=KlGekleurdWVCode,
                                   naam='code',
                                   label='code',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#GekleurdWegvlakMarkering.code',
-                                  definition='De  (COPRO/BENOR) code van de gekleurde wegvlak markering.')
+                                  definition='De  (COPRO/BENOR) code van de gekleurde wegvlak markering.',
+                                  owner=self)
 
         self._lengte = OTLAttribuut(field=KwantWrdInMeter,
                                     naam='lengte',
                                     label='lengte',
                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#GekleurdWegvlakMarkering.lengte',
-                                    definition='De lengte van de markering in meter.')
+                                    definition='De lengte van de markering in meter.',
+                                    owner=self)
 
         self._oppervlakte = OTLAttribuut(field=KwantWrdInVierkanteMeter,
                                          naam='oppervlakte',
                                          label='oppervlakte',
                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#GekleurdWegvlakMarkering.oppervlakte',
-                                         definition='De oppervlakte van het gekleurd wegdeel in vierkante meter.')
+                                         definition='De oppervlakte van het gekleurd wegdeel in vierkante meter.',
+                                         owner=self)
 
         self._soortOmschrijving = OTLAttribuut(field=KlGekleurdWVSoort,
                                                naam='soortOmschrijving',
                                                label='soort omschrijving',
                                                objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#GekleurdWegvlakMarkering.soortOmschrijving',
-                                               definition='De soort en tevens omschrijving van de figuratie markering.')
+                                               definition='De soort en tevens omschrijving van de figuratie markering.',
+                                               owner=self)
 
     @property
     def breedte(self):

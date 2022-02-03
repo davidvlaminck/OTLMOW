@@ -21,7 +21,8 @@ class Fundering(ConstructieElement):
                                         naam='aanzetpeil',
                                         label='aanzetpeil',
                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Fundering.aanzetpeil',
-                                        definition='De hoogte van het laagste punt van de onderkant van een element, ten opzichte van gemiddeld laagwaterpeil te Oostende (TAWpeil).')
+                                        definition='De hoogte van het laagste punt van de onderkant van een element, ten opzichte van gemiddeld laagwaterpeil te Oostende (TAWpeil).',
+                                        owner=self)
 
         self._hoogte = OTLAttribuut(field=KwantWrdInCentimeter,
                                     naam='hoogte',
@@ -29,7 +30,8 @@ class Fundering(ConstructieElement):
                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Fundering.hoogte',
                                     usagenote='Attribuut uit gebruik sinds versie 2.0.0 ',
                                     deprecated_version='2.0.0',
-                                    definition='De afstand tussen het laagste punt van de onderkant en hoogste punt van de bovenkant van de fundering.')
+                                    definition='De afstand tussen het laagste punt van de onderkant en hoogste punt van de bovenkant van de fundering.',
+                                    owner=self)
 
     @property
     def aanzetpeil(self):

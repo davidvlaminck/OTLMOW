@@ -21,21 +21,24 @@ class Behuizing(AIMNaamObject):
                                    naam='adres',
                                    label='adres',
                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Behuizing.adres',
-                                   definition='Adres (aanduiding van de locatie) van de behuizing. Indien deze geen adres heeft, wordt net zoals door Fluvius voor cabines, het adres van een nabijgelegen straat genomen.')
+                                   definition='Adres (aanduiding van de locatie) van de behuizing. Indien deze geen adres heeft, wordt net zoals door Fluvius voor cabines, het adres van een nabijgelegen straat genomen.',
+                                   owner=self)
 
         self._risicoanalyse = OTLAttribuut(field=DtcDocument,
                                            naam='risicoanalyse',
                                            label='risicoanalyse',
                                            objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Behuizing.risicoanalyse',
                                            usagenote='De risicoanalyse heeft in eerste instantie betrekking op werken in en rond een behuziing met elektrische installaties. Voor behuizingen met installaties van de distributienetbeheerder wordt de risicoanalyse bestemd voor die beheerder, bewaard in het gelijknamig attribuut van het onderdeel van die beheerder, bv. EnergiemeterDNB.',
-                                           definition='Een bestandsbijlage met de risicoanalyse voor werken in en rond een behuizing.')
+                                           definition='Een bestandsbijlage met de risicoanalyse voor werken in en rond een behuizing.',
+                                           owner=self)
 
         self._tabelUitwendigeInvloeden = OTLAttribuut(field=DtcDocument,
                                                       naam='tabelUitwendigeInvloeden',
                                                       label='tabel uitwendige invloeden',
                                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Behuizing.tabelUitwendigeInvloeden',
                                                       usagenote='De tabel is in eerste instantie enkel vereist voor behuizingen die elektrische installaties bevatten die onder het AREI vallen. ',
-                                                      definition='Een bestandsbijlage met de ingevulde en actuele tabel uitwendige invloeden zoals vereist door het AREI voor bepaalde elektrische installaties.')
+                                                      definition='Een bestandsbijlage met de ingevulde en actuele tabel uitwendige invloeden zoals vereist door het AREI voor bepaalde elektrische installaties.',
+                                                      owner=self)
 
     @property
     def adres(self):

@@ -17,7 +17,8 @@ class FirmwareObject(ABC):
                                             naam='firmwareversie',
                                             label='firmwareversie',
                                             objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#FirmwareObject.firmwareversie',
-                                            definition='Versie van de firmware.')
+                                            definition='Versie van de firmware.',
+                                            owner=self)
 
     @property
     def firmwareversie(self):

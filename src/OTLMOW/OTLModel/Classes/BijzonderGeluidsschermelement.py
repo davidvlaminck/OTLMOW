@@ -18,7 +18,8 @@ class BijzonderGeluidsschermelement(Geluidsschermelement):
                                                naam='schermelementtype',
                                                label='schermelementtype',
                                                objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#BijzonderGeluidsschermelement.schermelementtype',
-                                               definition='Het type bijzonder-schermelement.')
+                                               definition='Het type bijzonder-schermelement.',
+                                               owner=self)
 
     @property
     def schermelementtype(self):

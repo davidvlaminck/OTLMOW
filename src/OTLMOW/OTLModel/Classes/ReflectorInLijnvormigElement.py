@@ -1,14 +1,15 @@
 # coding=utf-8
-from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLMOW.OTLModel.Classes.Bebakening import Bebakening
+from OTLMOW.GeometrieArtefact.LijnGeometrie import LijnGeometrie
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class ReflectorInLijnvormigElement(Bebakening):
+class ReflectorInLijnvormigElement(Bebakening, LijnGeometrie):
     """Een reflector dat deel uitmaakt van een constructie met als doel de zichtbaarheid van deze constructie te verhogen."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#ReflectorInLijnvormigElement'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        super().__init__()
+        Bebakening.__init__(self)
+        LijnGeometrie.__init__(self)

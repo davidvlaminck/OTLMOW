@@ -17,7 +17,8 @@ class LaagProductidentificatiecode(ABC):
                                                       naam='productidentificatiecode',
                                                       label='productidentificatiecode',
                                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#LaagProductidentificatiecode.productidentificatiecode',
-                                                      definition='De productidentificatiecode van het gebruikte product (bv. COPRO code of Benor code).')
+                                                      definition='De productidentificatiecode van het gebruikte product (bv. COPRO code of Benor code).',
+                                                      owner=self)
 
     @property
     def productidentificatiecode(self):

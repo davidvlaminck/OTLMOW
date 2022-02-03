@@ -14,13 +14,15 @@ class DtcMarkeringOpvattingWaarden(AttributeInfo):
                                        naam='opvatting',
                                        label='opvatting',
                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcMarkeringOpvatting.opvatting',
-                                       definition='De opvatting van de markering, zijnde middelenverbintenis of resultaatsverbintenis.')
+                                       definition='De opvatting van de markering, zijnde middelenverbintenis of resultaatsverbintenis.',
+                                       owner=self)
 
         self._waarborgperiode = OTLAttribuut(field=KlMarkeringWaarborgperiode,
                                              naam='waarborgperiode',
                                              label='waarborgperiode',
                                              objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcMarkeringOpvatting.waarborgperiode',
-                                             definition='De periode waarin de markering moet voldoen aan de resultaatseisen.')
+                                             definition='De periode waarin de markering moet voldoen aan de resultaatseisen.',
+                                             owner=self)
 
     @property
     def opvatting(self):

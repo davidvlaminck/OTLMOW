@@ -16,13 +16,15 @@ class KwantWrdInMaandWaarden(AttributeInfo):
                                               objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMaand.standaardEenheid',
                                               usagenote='"mo"^^cdt:ucumunit',
                                               constraints='"mo"^^cdt:ucumunit',
-                                              definition='De standaard eenheid bij dit datatype is uitgedrukt in maand.')
+                                              definition='De standaard eenheid bij dit datatype is uitgedrukt in maand.',
+                                              owner=self)
 
         self._waarde = OTLAttribuut(field=NonNegIntegerField,
                                     naam='waarde',
                                     label='waarde',
                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMaand.waarde',
-                                    definition='Bevat een getal die bij het datatype hoort.')
+                                    definition='Bevat een getal die bij het datatype hoort.',
+                                    owner=self)
 
     @property
     def standaardEenheid(self):

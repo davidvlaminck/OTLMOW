@@ -19,13 +19,15 @@ class VRBatterijICU(VRModuleZFirmware):
                                   naam='merk',
                                   label='merk',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#VRBatterijICU.merk',
-                                  definition='De merknaam van de VR-batterij ICU.')
+                                  definition='De merknaam van de VR-batterij ICU.',
+                                  owner=self)
 
         self._modelnaam = OTLAttribuut(field=KlVRBatterijCUModelnaam,
                                        naam='modelnaam',
                                        label='modelnaam',
                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#VRBatterijICU.modelnaam',
-                                       definition='De modelnaam van de VR-batterij ICU.')
+                                       definition='De modelnaam van de VR-batterij ICU.',
+                                       owner=self)
 
     @property
     def merk(self):

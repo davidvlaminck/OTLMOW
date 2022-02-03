@@ -4,35 +4,40 @@ from OTLMOW.OTLModel.Classes.AndereLaag import AndereLaag
 from OTLMOW.OTLModel.Datatypes.KlBestrijkingKaliber import KlBestrijkingKaliber
 from OTLMOW.OTLModel.Datatypes.KlBestrijkingProductfamilie import KlBestrijkingProductfamilie
 from OTLMOW.OTLModel.Datatypes.KlBestrijkingsoort import KlBestrijkingsoort
+from OTLMOW.GeometrieArtefact.VlakGeometrie import VlakGeometrie
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Bestrijking(AndereLaag):
+class Bestrijking(AndereLaag, VlakGeometrie):
     """Een bestrijking bestaat in het sproeien op een verharding of een fundering van één of twee eenvormige lagen bindmiddel met een geschikte viscositeit."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bestrijking'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        super().__init__()
+        AndereLaag.__init__(self)
+        VlakGeometrie.__init__(self)
 
         self._kaliber = OTLAttribuut(field=KlBestrijkingKaliber,
                                      naam='kaliber',
                                      label='kaliber',
                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bestrijking.kaliber',
-                                     definition='De korrelmaat gebruikt bij de bestrijking.')
+                                     definition='De korrelmaat gebruikt bij de bestrijking.',
+                                     owner=self)
 
         self._productfamilie = OTLAttribuut(field=KlBestrijkingProductfamilie,
                                             naam='productfamilie',
                                             label='productfamilie',
                                             objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bestrijking.productfamilie',
-                                            definition='Bepaling tot welke productfamilie de bestrijking behoort. ')
+                                            definition='Bepaling tot welke productfamilie de bestrijking behoort. ',
+                                            owner=self)
 
         self._soort = OTLAttribuut(field=KlBestrijkingsoort,
                                    naam='soort',
                                    label='soort',
                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bestrijking.soort',
-                                   definition='De soort bestrijking.')
+                                   definition='De soort bestrijking.',
+                                   owner=self)
 
     @property
     def kaliber(self):

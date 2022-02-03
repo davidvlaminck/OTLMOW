@@ -26,37 +26,43 @@ class Markering(AIMObject, Signalisatie):
                                         naam='isHandwerk',
                                         label='is handwerk',
                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Markering.isHandwerk',
-                                        definition='Boolean om te bepalen of de markering machinaal of handmatig is aangebracht.')
+                                        definition='Boolean om te bepalen of de markering machinaal of handmatig is aangebracht.',
+                                        owner=self)
 
         self._isTijdelijk = OTLAttribuut(field=BooleanField,
                                          naam='isTijdelijk',
                                          label='is tijdelijk',
                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Markering.isTijdelijk',
-                                         definition='Aanduiding of de wegmarkering al dan niet tot de werfsignalisatie behoort.')
+                                         definition='Aanduiding of de wegmarkering al dan niet tot de werfsignalisatie behoort.',
+                                         owner=self)
 
         self._kleur = OTLAttribuut(field=KlKleurMarkering,
                                    naam='kleur',
                                    label='kleur',
                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Markering.kleur',
-                                   definition='De kleur van de gebruikte markering.')
+                                   definition='De kleur van de gebruikte markering.',
+                                   owner=self)
 
         self._markeringsoort = OTLAttribuut(field=KlMarkeringSoort,
                                             naam='markeringsoort',
                                             label='markeringsoort',
                                             objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Markering.markeringsoort',
-                                            definition='De soort van markering (verf, thermopast,...).')
+                                            definition='De soort van markering (verf, thermopast,...).',
+                                            owner=self)
 
         self._markeringsysteemCopro = OTLAttribuut(field=DtcProductidentificatiecode,
                                                    naam='markeringsysteemCopro',
                                                    label='markeringsysteem COPRO',
                                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Markering.markeringsysteemCopro',
-                                                   definition='De product informatie van de markering via COPRO codes.')
+                                                   definition='De product informatie van de markering via COPRO codes.',
+                                                   owner=self)
 
         self._opvatting = OTLAttribuut(field=DtcMarkeringOpvatting,
                                        naam='opvatting',
                                        label='opvatting',
                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Markering.opvatting',
-                                       definition='De opvatting van de markering, zijnde middelenverbintenis of resultaatsverbintenis met een minimale levensduur.')
+                                       definition='De opvatting van de markering, zijnde middelenverbintenis of resultaatsverbintenis met een minimale levensduur.',
+                                       owner=self)
 
     @property
     def isHandwerk(self):

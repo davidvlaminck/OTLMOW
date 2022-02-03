@@ -8,61 +8,70 @@ from OTLMOW.OTLModel.Datatypes.KlStortsteenKaliber import KlStortsteenKaliber
 from OTLMOW.OTLModel.Datatypes.KlStortsteenPlaatsingswijze import KlStortsteenPlaatsingswijze
 from OTLMOW.OTLModel.Datatypes.KlStortsteenType import KlStortsteenType
 from OTLMOW.OTLModel.Datatypes.KwantWrdInTon import KwantWrdInTon
+from OTLMOW.GeometrieArtefact.VlakGeometrie import VlakGeometrie
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Stortsteen(AndereLaag):
+class Stortsteen(AndereLaag, VlakGeometrie):
     """Natuursteen van onregelmatige vorm,meestal gebruikt voor verstevigings- en beschermingsdoeleinden."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Stortsteen'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        super().__init__()
+        AndereLaag.__init__(self)
+        VlakGeometrie.__init__(self)
 
         self._gewicht = OTLAttribuut(field=KwantWrdInTon,
                                      naam='gewicht',
                                      label='gewicht',
                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Stortsteen.gewicht',
-                                     definition='De hoeveelheid stortsteen in ton.')
+                                     definition='De hoeveelheid stortsteen in ton.',
+                                     owner=self)
 
         self._hechtspecie = OTLAttribuut(field=KlHechtspecie,
                                          naam='hechtspecie',
                                          label='hechtspecie',
                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Stortsteen.hechtspecie',
                                          kardinaliteit_max='*',
-                                         definition='Het gebruikte hechtingsmateriaal tussen gestapelde stenen.')
+                                         definition='Het gebruikte hechtingsmateriaal tussen gestapelde stenen.',
+                                         owner=self)
 
         self._isVerankerd = OTLAttribuut(field=BooleanField,
                                          naam='isVerankerd',
                                          label='is verankerd',
                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Stortsteen.isVerankerd',
-                                         definition='Aanduiding of de gestapelde ruwe steen verankerd is.')
+                                         definition='Aanduiding of de gestapelde ruwe steen verankerd is.',
+                                         owner=self)
 
         self._kaliber = OTLAttribuut(field=KlStortsteenKaliber,
                                      naam='kaliber',
                                      label='kaliber',
                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Stortsteen.kaliber',
-                                     definition='De gemiddelde diameter van de stortsteen.')
+                                     definition='De gemiddelde diameter van de stortsteen.',
+                                     owner=self)
 
         self._plaatsingswijze = OTLAttribuut(field=KlStortsteenPlaatsingswijze,
                                              naam='plaatsingswijze',
                                              label='bestortingswijze',
                                              objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Stortsteen.plaatsingswijze',
-                                             definition='De manier waarop de stenen worden geplaatst.')
+                                             definition='De manier waarop de stenen worden geplaatst.',
+                                             owner=self)
 
         self._technischeFiche = OTLAttribuut(field=DtcDocument,
                                              naam='technischeFiche',
                                              label='technische fiche',
                                              objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Stortsteen.technischeFiche',
                                              kardinaliteit_max='*',
-                                             definition='De technische fiche van stortsteen als bijlage.')
+                                             definition='De technische fiche van stortsteen als bijlage.',
+                                             owner=self)
 
         self._type = OTLAttribuut(field=KlStortsteenType,
                                   naam='type',
                                   label='type',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Stortsteen.type',
-                                  definition='Het type stortsteen.')
+                                  definition='Het type stortsteen.',
+                                  owner=self)
 
     @property
     def gewicht(self):

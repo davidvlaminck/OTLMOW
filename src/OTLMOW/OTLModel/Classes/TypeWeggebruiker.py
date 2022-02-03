@@ -17,7 +17,8 @@ class TypeWeggebruiker(ABC):
                                               naam='typeWeggebruiker',
                                               label='type weggebruiker',
                                               objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#TypeWeggebruiker.typeWeggebruiker',
-                                              definition='het type weggebruiker.')
+                                              definition='het type weggebruiker.',
+                                              owner=self)
 
     @property
     def typeWeggebruiker(self):

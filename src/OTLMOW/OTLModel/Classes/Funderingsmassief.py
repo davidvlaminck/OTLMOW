@@ -6,53 +6,61 @@ from OTLMOW.OTLModel.Datatypes.DtuAfmetingGrondvlak import DtuAfmetingGrondvlak
 from OTLMOW.OTLModel.Datatypes.KlAlgMateriaal import KlAlgMateriaal
 from OTLMOW.OTLModel.Datatypes.KwantWrdInCentimeter import KwantWrdInCentimeter
 from OTLMOW.OTLModel.Datatypes.KwantWrdInKubiekeMeter import KwantWrdInKubiekeMeter
+from OTLMOW.GeometrieArtefact.VlakGeometrie import VlakGeometrie
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Funderingsmassief(Fundering):
+class Funderingsmassief(Fundering, VlakGeometrie):
     """Een fundering waarop een klein(er) object geplaatst wordt of er (in principe) onlosmakelijk in vastgezet wordt (vb.: een paal/een steun, een kleine sokkel,...) Als het grotere constructie-elementen betreft (vb.: een pijler, een gebouw,...), moeten andere onderdelen van fundering gebruikt worden."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Funderingsmassief'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        super().__init__()
+        Fundering.__init__(self)
+        VlakGeometrie.__init__(self)
 
         self._afmetingGrondvlak = OTLAttribuut(field=DtuAfmetingGrondvlak,
                                                naam='afmetingGrondvlak',
                                                label='afmeting grondvlak',
                                                objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Funderingsmassief.afmetingGrondvlak',
-                                               definition='De afmetingen van het grondvlak van de fundering volgens zijn vorm.')
+                                               definition='De afmetingen van het grondvlak van de fundering volgens zijn vorm.',
+                                               owner=self)
 
         self._funderingshoogte = OTLAttribuut(field=KwantWrdInCentimeter,
                                               naam='funderingshoogte',
                                               label='funderingshoogte',
                                               objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Funderingsmassief.funderingshoogte',
-                                              definition='De afstand tussen het laagste punt van de onderkant en hoogste punt van de bovenkant van de fundering.')
+                                              definition='De afstand tussen het laagste punt van de onderkant en hoogste punt van de bovenkant van de fundering.',
+                                              owner=self)
 
         self._isPermanent = OTLAttribuut(field=BooleanField,
                                          naam='isPermanent',
                                          label='is permanent',
                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Funderingsmassief.isPermanent',
-                                         definition='Bepaalt of de fundering (en het gefundeerd object) blijvend is.')
+                                         definition='Bepaalt of de fundering (en het gefundeerd object) blijvend is.',
+                                         owner=self)
 
         self._isPrefab = OTLAttribuut(field=BooleanField,
                                       naam='isPrefab',
                                       label='is prefab',
                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Funderingsmassief.isPrefab',
-                                      definition='Bepaalt of de fundering ter plaatse gestort is of als geprefabriceerd element aangevoerd.')
+                                      definition='Bepaalt of de fundering ter plaatse gestort is of als geprefabriceerd element aangevoerd.',
+                                      owner=self)
 
         self._materiaal = OTLAttribuut(field=KlAlgMateriaal,
                                        naam='materiaal',
                                        label='materiaal',
                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Funderingsmassief.materiaal',
-                                       definition='De grondstof waaruit het funderingsmassief gemaakt is. ')
+                                       definition='De grondstof waaruit het funderingsmassief gemaakt is. ',
+                                       owner=self)
 
         self._volume = OTLAttribuut(field=KwantWrdInKubiekeMeter,
                                     naam='volume',
                                     label='volume',
                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Funderingsmassief.volume',
-                                    definition='Het volume in kubieke meter van het funderingsmassief.')
+                                    definition='Het volume in kubieke meter van het funderingsmassief.',
+                                    owner=self)
 
     @property
     def afmetingGrondvlak(self):

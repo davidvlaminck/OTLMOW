@@ -20,14 +20,16 @@ class DynBordOpMaat(LEDBord):
                                   label='merk',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DynBordOpMaat.merk',
                                   usagenote='Uit een keuzelijst.',
-                                  definition='Merknaam van het dynamisch bord op maat.')
+                                  definition='Merknaam van het dynamisch bord op maat.',
+                                  owner=self)
 
         self._modelnaam = OTLAttribuut(field=KlDynBordOpMaatModelnaam,
                                        naam='modelnaam',
                                        label='modelnaam',
                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DynBordOpMaat.modelnaam',
                                        usagenote='Uit een keuzelijst',
-                                       definition='Modelnaam van het dynamisch bord op maat.')
+                                       definition='Modelnaam van het dynamisch bord op maat.',
+                                       owner=self)
 
     @property
     def merk(self):

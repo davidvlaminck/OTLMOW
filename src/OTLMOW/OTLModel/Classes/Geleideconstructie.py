@@ -23,13 +23,15 @@ class Geleideconstructie(SchokindexVoertuigkering, EigenschappenVoertuigkering, 
                                              naam='isVerwijderbaar',
                                              label='is verwijderbaar',
                                              objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Geleideconstructie.isVerwijderbaar',
-                                             definition='Geleideconstructie kan met minimale moeite tijdelijk worden weggenomen en teruggeplaatst worden.')
+                                             definition='Geleideconstructie kan met minimale moeite tijdelijk worden weggenomen en teruggeplaatst worden.',
+                                             owner=self)
 
         self._werkingsbreedte = OTLAttribuut(field=KlLEACWerkingsbreedte,
                                              naam='werkingsbreedte',
                                              label='werkingsbreedte',
                                              objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Geleideconstructie.werkingsbreedte',
-                                             definition='Op het voorvlak van een geleideconstructie en loodrecht op de as van de weg gemeten afstand tussen de voorkant van de geleideconstructie in normale positie en de plaats van het verst uitwijkend onderdeel aan de achterzijde van de geleideconstructie bij aanrijding.')
+                                             definition='Op het voorvlak van een geleideconstructie en loodrecht op de as van de weg gemeten afstand tussen de voorkant van de geleideconstructie in normale positie en de plaats van het verst uitwijkend onderdeel aan de achterzijde van de geleideconstructie bij aanrijding.',
+                                             owner=self)
 
     @property
     def isVerwijderbaar(self):

@@ -13,13 +13,15 @@ class DtcIdentificatorWaarden(AttributeInfo):
                                            naam='identificator',
                                            label='identificator',
                                            objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcIdentificator.identificator',
-                                           definition='Een groep van tekens om een AIM object te identificeren of te benoemen.')
+                                           definition='Een groep van tekens om een AIM object te identificeren of te benoemen.',
+                                           owner=self)
 
         self._toegekendDoor = OTLAttribuut(field=StringField,
                                            naam='toegekendDoor',
                                            label='toegekend door',
                                            objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcIdentificator.toegekendDoor',
-                                           definition='Gegevens van de organisatie die de toekenning deed.')
+                                           definition='Gegevens van de organisatie die de toekenning deed.',
+                                           owner=self)
 
     @property
     def identificator(self):

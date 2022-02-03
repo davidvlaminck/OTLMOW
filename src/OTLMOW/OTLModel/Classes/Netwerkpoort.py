@@ -8,71 +8,82 @@ from OTLMOW.OTLModel.Datatypes.KlNetwerkpoortConfig import KlNetwerkpoortConfig
 from OTLMOW.OTLModel.Datatypes.KlNetwerkpoortGolflengte import KlNetwerkpoortGolflengte
 from OTLMOW.OTLModel.Datatypes.KlNetwerkpoortType import KlNetwerkpoortType
 from OTLMOW.OTLModel.Datatypes.StringField import StringField
+from OTLMOW.GeometrieArtefact.PuntGeometrie import PuntGeometrie
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Netwerkpoort(AIMNaamObject):
+class Netwerkpoort(AIMNaamObject, PuntGeometrie):
     """De ingang van het toestel samen met component die erop zit,bv. SFP of XFP."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Netwerkpoort'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        super().__init__()
+        AIMNaamObject.__init__(self)
+        PuntGeometrie.__init__(self)
 
         self._beschrijvingFabrikant = OTLAttribuut(field=StringField,
                                                    naam='beschrijvingFabrikant',
                                                    label='beschrijving fabrikant',
                                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Netwerkpoort.beschrijvingFabrikant',
-                                                   definition='Bijkomende specificaties over het apparaat of onderdeel type van de fabrikant.')
+                                                   definition='Bijkomende specificaties over het apparaat of onderdeel type van de fabrikant.',
+                                                   owner=self)
 
         self._code = OTLAttribuut(field=StringField,
                                   naam='code',
                                   label='code',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Netwerkpoort.code',
-                                  definition='Bestelcode van dit toestel of onderdeel bij de fabrikant.')
+                                  definition='Bestelcode van dit toestel of onderdeel bij de fabrikant.',
+                                  owner=self)
 
         self._config = OTLAttribuut(field=KlNetwerkpoortConfig,
                                     naam='config',
                                     label='config',
                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Netwerkpoort.config',
-                                    definition='Soort verbinding aangeboden aan de klant.')
+                                    definition='Soort verbinding aangeboden aan de klant.',
+                                    owner=self)
 
         self._golflengte = OTLAttribuut(field=KlNetwerkpoortGolflengte,
                                         naam='golflengte',
                                         label='golflengte',
                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Netwerkpoort.golflengte',
-                                        definition='De golflengte waarop deze poort communiceert.')
+                                        definition='De golflengte waarop deze poort communiceert.',
+                                        owner=self)
 
         self._merk = OTLAttribuut(field=KlNetwerkMerk,
                                   naam='merk',
                                   label='merk',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Netwerkpoort.merk',
-                                  definition='Merk waarmee de fabrikant de netwerkpoort identificeert.')
+                                  definition='Merk waarmee de fabrikant de netwerkpoort identificeert.',
+                                  owner=self)
 
         self._nNILANCapaciteit = OTLAttribuut(field=IntegerField,
                                               naam='nNILANCapaciteit',
                                               label='NNI LAN-capaciteit',
                                               objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Netwerkpoort.nNILANCapaciteit',
-                                              definition='Bandbreedte via deze poort, uitgedrukt in Mb/s, enkel van toepassing indien NNI poort.')
+                                              definition='Bandbreedte via deze poort, uitgedrukt in Mb/s, enkel van toepassing indien NNI poort.',
+                                              owner=self)
 
         self._serienummer = OTLAttribuut(field=StringField,
                                          naam='serienummer',
                                          label='serienummer',
                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Netwerkpoort.serienummer',
-                                         definition='Unieke identificatiecode van het toestel, toegekend door de fabrikant.')
+                                         definition='Unieke identificatiecode van het toestel, toegekend door de fabrikant.',
+                                         owner=self)
 
         self._technologie = OTLAttribuut(field=KlNetwerkTechnologie,
                                          naam='technologie',
                                          label='technologie',
                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Netwerkpoort.technologie',
-                                         definition='Intern gebruikt netwerk protocol.')
+                                         definition='Intern gebruikt netwerk protocol.',
+                                         owner=self)
 
         self._type = OTLAttribuut(field=KlNetwerkpoortType,
                                   naam='type',
                                   label='model',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Netwerkpoort.type',
-                                  definition='Geeft het soort netwerk interface weer.')
+                                  definition='Geeft het soort netwerk interface weer.',
+                                  owner=self)
 
     @property
     def beschrijvingFabrikant(self):

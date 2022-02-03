@@ -20,19 +20,22 @@ class Ontvanger(ZenderOntvangerToegang):
                                   naam='merk',
                                   label='merk',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Ontvanger.merk',
-                                  definition='Het merk van een ontvanger.')
+                                  definition='Het merk van een ontvanger.',
+                                  owner=self)
 
         self._modelnaam = OTLAttribuut(field=KlOntvangerModelnaam,
                                        naam='modelnaam',
                                        label='modelnaam',
                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Ontvanger.modelnaam',
-                                       definition='De modelnaam/product range van een ontvanger.')
+                                       definition='De modelnaam/product range van een ontvanger.',
+                                       owner=self)
 
         self._toepassing = OTLAttribuut(field=KlOntvangerToepassing,
                                         naam='toepassing',
                                         label='toepassing',
                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Ontvanger.toepassing',
-                                        definition='De techniek of standaard waarmee signalen over het netwerk verstuurd worden.')
+                                        definition='De techniek of standaard waarmee signalen over het netwerk verstuurd worden.',
+                                        owner=self)
 
     @property
     def merk(self):

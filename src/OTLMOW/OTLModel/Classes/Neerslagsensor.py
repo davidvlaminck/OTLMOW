@@ -4,35 +4,40 @@ from OTLMOW.OTLModel.Classes.AIMNaamObject import AIMNaamObject
 from OTLMOW.OTLModel.Datatypes.KlNeerslagsensorMerk import KlNeerslagsensorMerk
 from OTLMOW.OTLModel.Datatypes.KlNeerslagsensorModelnaam import KlNeerslagsensorModelnaam
 from OTLMOW.OTLModel.Datatypes.KlNeerslagsensorType import KlNeerslagsensorType
+from OTLMOW.GeometrieArtefact.PuntGeometrie import PuntGeometrie
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Neerslagsensor(AIMNaamObject):
+class Neerslagsensor(AIMNaamObject, PuntGeometrie):
     """Detectie van neerslag(hoeveelheid/intensiteit)."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Neerslagsensor'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        super().__init__()
+        AIMNaamObject.__init__(self)
+        PuntGeometrie.__init__(self)
 
         self._merk = OTLAttribuut(field=KlNeerslagsensorMerk,
                                   naam='merk',
                                   label='merk',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Neerslagsensor.merk',
-                                  definition='Het merk van de neerslagsensor.')
+                                  definition='Het merk van de neerslagsensor.',
+                                  owner=self)
 
         self._modelnaam = OTLAttribuut(field=KlNeerslagsensorModelnaam,
                                        naam='modelnaam',
                                        label='modelnaam',
                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Neerslagsensor.modelnaam',
-                                       definition='De modelnaam van de neerslagsensor.')
+                                       definition='De modelnaam van de neerslagsensor.',
+                                       owner=self)
 
         self._type = OTLAttribuut(field=KlNeerslagsensorType,
                                   naam='type',
                                   label='type',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Neerslagsensor.type',
-                                  definition='Het type van de neerslagsensor.')
+                                  definition='Het type van de neerslagsensor.',
+                                  owner=self)
 
     @property
     def merk(self):

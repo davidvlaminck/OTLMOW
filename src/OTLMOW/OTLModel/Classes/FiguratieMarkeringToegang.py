@@ -1,5 +1,4 @@
 # coding=utf-8
-from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from abc import abstractmethod
 from OTLMOW.OTLModel.Classes.Markering import Markering
 from OTLMOW.OTLModel.Classes.AOWSType import AOWSType

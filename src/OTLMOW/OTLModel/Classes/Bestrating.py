@@ -22,19 +22,22 @@ class Bestrating(ArtificieleLaag):
                                    naam='kleur',
                                    label='kleur',
                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Bestrating.kleur',
-                                   definition='De kleur van de bestrating.')
+                                   definition='De kleur van de bestrating.',
+                                   owner=self)
 
         self._steenverband = OTLAttribuut(field=KlBestratingSteenverband,
                                           naam='steenverband',
                                           label='steenverband',
                                           objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Bestrating.steenverband',
-                                          definition='Het patroon waarin de bestrating gelegd werd.')
+                                          definition='Het patroon waarin de bestrating gelegd werd.',
+                                          owner=self)
 
         self._voegvulling = OTLAttribuut(field=KlBestratingVoegvulling,
                                          naam='voegvulling',
                                          label='voegvulling',
                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Bestrating.voegvulling',
-                                         definition='De gebruikte voegvulling van de bestrating.')
+                                         definition='De gebruikte voegvulling van de bestrating.',
+                                         owner=self)
 
     @property
     def kleur(self):

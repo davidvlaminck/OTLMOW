@@ -18,7 +18,8 @@ class ANPRPaal(EMObject):
                                      naam='Galgpaal',
                                      label='Galgpaal',
                                      objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#ANPRPaal.galgpaal',
-                                     definitie='Is de asset een galgpaal?')
+                                     definitie='Is de asset een galgpaal?',
+                                     owner=self)
 
     @property
     def galgpaal(self):

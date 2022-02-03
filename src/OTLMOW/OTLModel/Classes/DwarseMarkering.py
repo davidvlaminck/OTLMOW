@@ -20,19 +20,22 @@ class DwarseMarkering(DwarseMarkeringToegang):
                                   naam='code',
                                   label='code',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DwarseMarkering.code',
-                                  definition='De (COPRO/BENOR)  code van dwarse markering.')
+                                  definition='De (COPRO/BENOR)  code van dwarse markering.',
+                                  owner=self)
 
         self._oppervlakte = OTLAttribuut(field=KwantWrdInVierkanteMeter,
                                          naam='oppervlakte',
                                          label='oppervlakte',
                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DwarseMarkering.oppervlakte',
-                                         definition='De oppervlakte van de dwarse markering in vierkante meter.')
+                                         definition='De oppervlakte van de dwarse markering in vierkante meter.',
+                                         owner=self)
 
         self._soortOmschrijving = OTLAttribuut(field=KlDwarseMarkeringSoort,
                                                naam='soortOmschrijving',
                                                label='soort omschrijving',
                                                objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DwarseMarkering.soortOmschrijving',
-                                               definition='De soort en tevens de omschrijving van dwarse markering.')
+                                               definition='De soort en tevens de omschrijving van dwarse markering.',
+                                               owner=self)
 
     @property
     def code(self):

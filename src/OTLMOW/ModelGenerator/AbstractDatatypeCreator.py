@@ -243,7 +243,8 @@ class AbstractDatatypeCreator(ABC):
             if attribuut.kardinaliteit_max != '1':
                 datablock.append(f'{whitespace}kardinaliteit_max={wrap_in_quotes(attribuut.kardinaliteit_max)},')
             definitie = wrap_in_quotes(attribuut.definition.replace('\n', ''))
-            datablock.append(f'{whitespace}definition={definitie})')
+            datablock.append(f'{whitespace}definition={definitie},')
+            datablock.append(f'{whitespace}owner=self)')
             datablock.append('')
 
             ownerself = ', owner=self'

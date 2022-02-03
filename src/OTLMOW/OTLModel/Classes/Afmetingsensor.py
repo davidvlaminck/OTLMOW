@@ -4,35 +4,40 @@ from OTLMOW.OTLModel.Classes.AIMNaamObject import AIMNaamObject
 from OTLMOW.OTLModel.Datatypes.KlAfmetingsensorMerk import KlAfmetingsensorMerk
 from OTLMOW.OTLModel.Datatypes.KlAfmetingsensorModelnaam import KlAfmetingsensorModelnaam
 from OTLMOW.OTLModel.Datatypes.KlAfmetingsensorType import KlAfmetingsensorType
+from OTLMOW.GeometrieArtefact.PuntGeometrie import PuntGeometrie
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Afmetingsensor(AIMNaamObject):
+class Afmetingsensor(AIMNaamObject, PuntGeometrie):
     """Registratie van voertuigafmetingen."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Afmetingsensor'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        super().__init__()
+        AIMNaamObject.__init__(self)
+        PuntGeometrie.__init__(self)
 
         self._merk = OTLAttribuut(field=KlAfmetingsensorMerk,
                                   naam='merk',
                                   label='merk',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Afmetingsensor.merk',
-                                  definition='Het merk van de afmetingsensor.')
+                                  definition='Het merk van de afmetingsensor.',
+                                  owner=self)
 
         self._modelnaam = OTLAttribuut(field=KlAfmetingsensorModelnaam,
                                        naam='modelnaam',
                                        label='modelnaam',
                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Afmetingsensor.modelnaam',
-                                       definition='De modelnaam van de afmetingsensor.')
+                                       definition='De modelnaam van de afmetingsensor.',
+                                       owner=self)
 
         self._type = OTLAttribuut(field=KlAfmetingsensorType,
                                   naam='type',
                                   label='type',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Afmetingsensor.type',
-                                  definition='Het type van de afmetingsensor.')
+                                  definition='Het type van de afmetingsensor.',
+                                  owner=self)
 
     @property
     def merk(self):

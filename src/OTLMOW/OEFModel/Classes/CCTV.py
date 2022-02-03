@@ -21,337 +21,393 @@ class CCTV(EMObject):
                                                 naam='WIFI antenne aanwezig',
                                                 label='WIFI antenne aanwezig',
                                                 objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#EMObject.wifiAntenneAanwezig',
-                                                definitie='Definitie nog toe te voegen voor eigenschap WIFI antenne aanwezig')
+                                                definitie='Definitie nog toe te voegen voor eigenschap WIFI antenne aanwezig',
+                                                owner=self)
 
         self._beschadigingRoestvormingWaterdichtheid = EMAttribuut(field=StringField,
                                                                    naam='beschadiging roestvorming waterdichtheid',
                                                                    label='beschadiging roestvorming waterdichtheid',
                                                                    objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#EMObject.beschadigingRoestvormingWaterdichtheid',
-                                                                   definitie='Definitie nog toe te voegen voor eigenschap beschadiging roestvorming waterdichtheid')
+                                                                   definitie='Definitie nog toe te voegen voor eigenschap beschadiging roestvorming waterdichtheid',
+                                                                   owner=self)
 
         self._cameraRedenDatumIngevenInventaris = EMAttribuut(field=StringField,
                                                               naam='camera > reden? datum ingeven inventaris',
                                                               label='camera > reden? datum ingeven inventaris',
                                                               objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#EMObject.cameraRedenDatumIngevenInventaris',
-                                                              definitie='Definitie nog toe te voegen voor eigenschap camera > reden? datum ingeven inventaris')
+                                                              definitie='Definitie nog toe te voegen voor eigenschap camera > reden? datum ingeven inventaris',
+                                                              owner=self)
 
         self._cameraVervangen = EMAttribuut(field=BooleanField,
                                             naam='camera vervangen?',
                                             label='camera vervangen?',
                                             objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#EMObject.cameraVervangen',
-                                            definitie='Definitie nog toe te voegen voor eigenschap camera vervangen?')
+                                            definitie='Definitie nog toe te voegen voor eigenschap camera vervangen?',
+                                            owner=self)
 
         self._controleMet = EMAttribuut(field=StringField,
                                         naam='controle met',
                                         label='controle met',
                                         objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#EMObject.controleMet',
-                                        definitie='Definitie nog toe te voegen voor eigenschap controle met')
+                                        definitie='Definitie nog toe te voegen voor eigenschap controle met',
+                                        owner=self)
 
         self._controleWerkingKwaliteitBijKlant = EMAttribuut(field=StringField,
                                                              naam='controle werking kwaliteit bij klant',
                                                              label='controle werking kwaliteit bij klant',
                                                              objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#EMObject.controleWerkingKwaliteitBijKlant',
-                                                             definitie='bij klant wordt het VVC -VTC - Politie bedoeld')
+                                                             definitie='bij klant wordt het VVC -VTC - Politie bedoeld',
+                                                             owner=self)
 
         self._datumNieuwVertrekGeplaatst = EMAttribuut(field=DateField,
                                                        naam='datum nieuw vertrek geplaatst',
                                                        label='datum nieuw vertrek geplaatst',
                                                        objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#EMObject.datumNieuwVertrekGeplaatst',
-                                                       definitie='Definitie nog toe te voegen voor eigenschap datum nieuw vertrek geplaatst')
+                                                       definitie='Definitie nog toe te voegen voor eigenschap datum nieuw vertrek geplaatst',
+                                                       owner=self)
 
         self._datumNieuweCamera = EMAttribuut(field=DateField,
                                               naam='datum nieuwe camera',
                                               label='datum nieuwe camera',
                                               objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#EMObject.datumNieuweCamera',
-                                              definitie='Definitie nog toe te voegen voor eigenschap datum nieuwe camera')
+                                              definitie='Definitie nog toe te voegen voor eigenschap datum nieuwe camera',
+                                              owner=self)
 
         self._datumNieuweEncoder = EMAttribuut(field=DateField,
                                                naam='datum nieuwe encoder',
                                                label='datum nieuwe encoder',
                                                objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#EMObject.datumNieuweEncoder',
-                                               definitie='Definitie nog toe te voegen voor eigenschap datum nieuwe encoder')
+                                               definitie='Definitie nog toe te voegen voor eigenschap datum nieuwe encoder',
+                                               owner=self)
 
         self._datumNieuweMediaomvormer = EMAttribuut(field=DateField,
                                                      naam='datum nieuwe mediaomvormer',
                                                      label='datum nieuwe mediaomvormer',
                                                      objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#EMObject.datumNieuweMediaomvormer',
-                                                     definitie='Definitie nog toe te voegen voor eigenschap datum nieuwe mediaomvormer')
+                                                     definitie='Definitie nog toe te voegen voor eigenschap datum nieuwe mediaomvormer',
+                                                     owner=self)
 
         self._einde = EMAttribuut(field=DateTimeField,
                                   naam='einde',
                                   label='einde',
                                   objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#EMObject.einde',
-                                  definitie='Definitie nog toe te voegen voor eigenschap einde')
+                                  definitie='Definitie nog toe te voegen voor eigenschap einde',
+                                  owner=self)
 
         self._encoderRedenDatumIngevenInv = EMAttribuut(field=StringField,
                                                         naam='encoder > reden? datum ingeven inv.',
                                                         label='encoder > reden? datum ingeven inv.',
                                                         objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#EMObject.encoderRedenDatumIngevenInv',
-                                                        definitie='Definitie nog toe te voegen voor eigenschap encoder > reden? datum ingeven inv.')
+                                                        definitie='Definitie nog toe te voegen voor eigenschap encoder > reden? datum ingeven inv.',
+                                                        owner=self)
 
         self._encoderAanwezig = EMAttribuut(field=BooleanField,
                                             naam='encoder aanwezig?',
                                             label='encoder aanwezig?',
                                             objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#EMObject.encoderAanwezig',
-                                            definitie='Definitie nog toe te voegen voor eigenschap encoder aanwezig?')
+                                            definitie='Definitie nog toe te voegen voor eigenschap encoder aanwezig?',
+                                            owner=self)
 
         self._encoderInExterneKast = EMAttribuut(field=BooleanField,
                                                  naam='encoder in externe kast',
                                                  label='encoder in externe kast',
                                                  objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#EMObject.encoderInExterneKast',
-                                                 definitie='Definitie nog toe te voegen voor eigenschap encoder in externe kast')
+                                                 definitie='Definitie nog toe te voegen voor eigenschap encoder in externe kast',
+                                                 owner=self)
 
         self._encoderVervangen = EMAttribuut(field=BooleanField,
                                              naam='encoder vervangen?',
                                              label='encoder vervangen?',
                                              objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#EMObject.encoderVervangen',
-                                             definitie='Definitie nog toe te voegen voor eigenschap encoder vervangen?')
+                                             definitie='Definitie nog toe te voegen voor eigenschap encoder vervangen?',
+                                             owner=self)
 
         self._fotoCamera = EMAttribuut(field=BooleanField,
                                        naam='foto camera',
                                        label='foto camera',
                                        objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#EMObject.fotoCamera',
-                                       definitie='Definitie nog toe te voegen voor eigenschap foto camera')
+                                       definitie='Definitie nog toe te voegen voor eigenschap foto camera',
+                                       owner=self)
 
         self._fotoCameraNaOnderhoud = EMAttribuut(field=BooleanField,
                                                   naam='foto camera na onderhoud',
                                                   label='foto camera na onderhoud',
                                                   objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#EMObject.fotoCameraNaOnderhoud',
-                                                  definitie='Definitie nog toe te voegen voor eigenschap foto camera na onderhoud')
+                                                  definitie='Definitie nog toe te voegen voor eigenschap foto camera na onderhoud',
+                                                  owner=self)
 
         self._fotoInhoudPaalkast = EMAttribuut(field=BooleanField,
                                                naam='foto inhoud paalkast',
                                                label='foto inhoud paalkast',
                                                objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#EMObject.fotoInhoudPaalkast',
-                                               definitie='Definitie nog toe te voegen voor eigenschap foto inhoud paalkast')
+                                               definitie='Definitie nog toe te voegen voor eigenschap foto inhoud paalkast',
+                                               owner=self)
 
         self._mediaomvRedenDatumIngevenInv = EMAttribuut(field=StringField,
                                                          naam='mediaomv > reden ? datum ingeven inv.',
                                                          label='mediaomv > reden ? datum ingeven inv.',
                                                          objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#CCTV.mediaomvRedenDatumIngevenInv',
-                                                         definitie='Definitie nog toe te voegen voor eigenschap mediaomv > reden ? datum ingeven inv.')
+                                                         definitie='Definitie nog toe te voegen voor eigenschap mediaomv > reden ? datum ingeven inv.',
+                                                         owner=self)
 
         self._mediaomvormerAanwezig = EMAttribuut(field=BooleanField,
                                                   naam='mediaomvormer aanwezig?',
                                                   label='mediaomvormer aanwezig?',
                                                   objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#EMObject.mediaomvormerAanwezig',
-                                                  definitie='Definitie nog toe te voegen voor eigenschap mediaomvormer aanwezig?')
+                                                  definitie='Definitie nog toe te voegen voor eigenschap mediaomvormer aanwezig?',
+                                                  owner=self)
 
         self._mediaomvormerVervangen = EMAttribuut(field=BooleanField,
                                                    naam='mediaomvormer vervangen?',
                                                    label='mediaomvormer vervangen?',
                                                    objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#EMObject.mediaomvormerVervangen',
-                                                   definitie='Definitie nog toe te voegen voor eigenschap mediaomvormer vervangen?')
+                                                   definitie='Definitie nog toe te voegen voor eigenschap mediaomvormer vervangen?',
+                                                   owner=self)
 
         self._merkEnTypeCamera = EMAttribuut(field=StringField,
                                              naam='merk en type camera',
                                              label='merk en type camera',
                                              objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#EMObject.merkEnTypeCamera',
-                                             definitie='Definitie nog toe te voegen voor eigenschap merk en type camera')
+                                             definitie='Definitie nog toe te voegen voor eigenschap merk en type camera',
+                                             owner=self)
 
         self._notitieinspectie = EMAttribuut(field=StringField,
                                              naam='notitieInspectie',
                                              label='notitieInspectie',
                                              objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#EMObject.notitieinspectie',
-                                             definitie='Definitie nog toe te voegen voor eigenschap notitie')
+                                             definitie='Definitie nog toe te voegen voor eigenschap notitie',
+                                             owner=self)
 
         self._opmerkingBeeld = EMAttribuut(field=StringField,
                                            naam='opmerking beeld',
                                            label='opmerking beeld',
                                            objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#EMObject.opmerkingBeeld',
-                                           definitie='Definitie nog toe te voegen voor eigenschap opmerking beeld')
+                                           definitie='Definitie nog toe te voegen voor eigenschap opmerking beeld',
+                                           owner=self)
 
         self._opmerkingBekabelingWartels = EMAttribuut(field=StringField,
                                                        naam='opmerking bekabeling wartels',
                                                        label='opmerking bekabeling wartels',
                                                        objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#EMObject.opmerkingBekabelingWartels',
-                                                       definitie='Definitie nog toe te voegen voor eigenschap opmerking bekabeling wartels')
+                                                       definitie='Definitie nog toe te voegen voor eigenschap opmerking bekabeling wartels',
+                                                       owner=self)
 
         self._opmerkingBeschRoestWaterdichtheid = EMAttribuut(field=StringField,
                                                               naam='opmerking besch/roest/waterdichtheid',
                                                               label='opmerking besch/roest/waterdichtheid',
                                                               objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#EMObject.opmerkingBeschRoestWaterdichtheid',
-                                                              definitie='Definitie nog toe te voegen voor eigenschap opmerking besch/roest/waterdichtheid')
+                                                              definitie='Definitie nog toe te voegen voor eigenschap opmerking besch/roest/waterdichtheid',
+                                                              owner=self)
 
         self._opmerkingControleKlant = EMAttribuut(field=StringField,
                                                    naam='opmerking controle klant',
                                                    label='opmerking controle klant',
                                                    objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#EMObject.opmerkingControleKlant',
-                                                   definitie='Definitie nog toe te voegen voor eigenschap opmerking controle klant')
+                                                   definitie='Definitie nog toe te voegen voor eigenschap opmerking controle klant',
+                                                   owner=self)
 
         self._opmerkingInspectieOnderhoud = EMAttribuut(field=StringField,
                                                         naam='opmerking inspectie / onderhoud',
                                                         label='opmerking inspectie / onderhoud',
                                                         objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#EMObject.opmerkingInspectieOnderhoud',
-                                                        definitie='Definitie nog toe te voegen voor eigenschap opmerking inspectie / onderhoud')
+                                                        definitie='Definitie nog toe te voegen voor eigenschap opmerking inspectie / onderhoud',
+                                                        owner=self)
 
         self._opmerkingStaatBekabelingElementen = EMAttribuut(field=StringField,
                                                               naam='opmerking staat bekabeling elementen',
                                                               label='opmerking staat bekabeling elementen',
                                                               objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#EMObject.opmerkingStaatBekabelingElementen',
-                                                              definitie='Definitie nog toe te voegen voor eigenschap opmerking staat bekabeling elementen')
+                                                              definitie='Definitie nog toe te voegen voor eigenschap opmerking staat bekabeling elementen',
+                                                              owner=self)
 
         self._opmerkingStaatBekabelingGrondCa = EMAttribuut(field=StringField,
                                                             naam='opmerking staat bekabeling grond - ca',
                                                             label='opmerking staat bekabeling grond - ca',
                                                             objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#EMObject.opmerkingStaatBekabelingGrondCa',
-                                                            definitie='Definitie nog toe te voegen voor eigenschap opmerking staat bekabeling grond - ca')
+                                                            definitie='Definitie nog toe te voegen voor eigenschap opmerking staat bekabeling grond - ca',
+                                                            owner=self)
 
         self._opmerkingStaatBeugelsBevestiging = EMAttribuut(field=StringField,
                                                              naam='opmerking staat beugels/ bevestiging',
                                                              label='opmerking staat beugels/ bevestiging',
                                                              objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#EMObject.opmerkingStaatBeugelsBevestiging',
-                                                             definitie='Definitie nog toe te voegen voor eigenschap opmerking staat beugels/ bevestiging')
+                                                             definitie='Definitie nog toe te voegen voor eigenschap opmerking staat beugels/ bevestiging',
+                                                             owner=self)
 
         self._opmerkingStaatKabelbegeleiding = EMAttribuut(field=StringField,
                                                            naam='opmerking staat kabelbegeleiding',
                                                            label='opmerking staat kabelbegeleiding',
                                                            objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#EMObject.opmerkingStaatKabelbegeleiding',
-                                                           definitie='Definitie nog toe te voegen voor eigenschap opmerking staat kabelbegeleiding')
+                                                           definitie='Definitie nog toe te voegen voor eigenschap opmerking staat kabelbegeleiding',
+                                                           owner=self)
 
         self._opmerkingStaatSiliconen = EMAttribuut(field=StringField,
                                                     naam='opmerking staat siliconen',
                                                     label='opmerking staat siliconen',
                                                     objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#EMObject.opmerkingStaatSiliconen',
-                                                    definitie='Definitie nog toe te voegen voor eigenschap opmerking staat siliconen')
+                                                    definitie='Definitie nog toe te voegen voor eigenschap opmerking staat siliconen',
+                                                    owner=self)
 
         self._opmerkingStaatWifiAntenne = EMAttribuut(field=StringField,
                                                       naam='opmerking staat wifi antenne',
                                                       label='opmerking staat wifi antenne',
                                                       objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#EMObject.opmerkingStaatWifiAntenne',
-                                                      definitie='Definitie nog toe te voegen voor eigenschap opmerking staat wifi antenne')
+                                                      definitie='Definitie nog toe te voegen voor eigenschap opmerking staat wifi antenne',
+                                                      owner=self)
 
         self._opmerkingWartels = EMAttribuut(field=StringField,
                                              naam='opmerking wartels',
                                              label='opmerking wartels',
                                              objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#EMObject.opmerkingWartels',
-                                             definitie='Definitie nog toe te voegen voor eigenschap opmerking wartels')
+                                             definitie='Definitie nog toe te voegen voor eigenschap opmerking wartels',
+                                             owner=self)
 
         self._opmerkingWaterdichtheid = EMAttribuut(field=StringField,
                                                     naam='opmerking waterdichtheid',
                                                     label='opmerking waterdichtheid',
                                                     objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#EMObject.opmerkingWaterdichtheid',
-                                                    definitie='Definitie nog toe te voegen voor eigenschap opmerking waterdichtheid')
+                                                    definitie='Definitie nog toe te voegen voor eigenschap opmerking waterdichtheid',
+                                                    owner=self)
 
         self._overigeVervangenElementen = EMAttribuut(field=StringField,
                                                       naam='overige vervangen elementen',
                                                       label='overige vervangen elementen',
                                                       objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#EMObject.overigeVervangenElementen',
-                                                      definitie='Definitie nog toe te voegen voor eigenschap overige vervangen elementen')
+                                                      definitie='Definitie nog toe te voegen voor eigenschap overige vervangen elementen',
+                                                      owner=self)
 
         self._paalkastAanwezig = EMAttribuut(field=BooleanField,
                                              naam='paalkast aanwezig',
                                              label='paalkast aanwezig',
                                              objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#EMObject.paalkastAanwezig',
-                                             definitie='Definitie nog toe te voegen voor eigenschap paalkast aanwezig')
+                                             definitie='Definitie nog toe te voegen voor eigenschap paalkast aanwezig',
+                                             owner=self)
 
         self._paalkastStaatBekabelingElementen = EMAttribuut(field=StringField,
                                                              naam='paalkast staat bekabeling elementen',
                                                              label='paalkast staat bekabeling elementen',
                                                              objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#EMObject.paalkastStaatBekabelingElementen',
-                                                             definitie='Definitie nog toe te voegen voor eigenschap paalkast staat bekabeling elementen')
+                                                             definitie='Definitie nog toe te voegen voor eigenschap paalkast staat bekabeling elementen',
+                                                             owner=self)
 
         self._paalkastStaatConnectieGrondCamera = EMAttribuut(field=StringField,
                                                               naam='paalkast staat connectie grond - camera',
                                                               label='paalkast staat connectie grond - camera',
                                                               objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#EMObject.paalkastStaatConnectieGrondCamera',
-                                                              definitie='Definitie nog toe te voegen voor eigenschap paalkast staat connectie grond - camera')
+                                                              definitie='Definitie nog toe te voegen voor eigenschap paalkast staat connectie grond - camera',
+                                                              owner=self)
 
         self._paalkastStaatSiliconen = EMAttribuut(field=StringField,
                                                    naam='paalkast staat siliconen',
                                                    label='paalkast staat siliconen',
                                                    objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#EMObject.paalkastStaatSiliconen',
-                                                   definitie='Definitie nog toe te voegen voor eigenschap paalkast staat siliconen')
+                                                   definitie='Definitie nog toe te voegen voor eigenschap paalkast staat siliconen',
+                                                   owner=self)
 
         self._paalkastStaatWartels = EMAttribuut(field=StringField,
                                                  naam='paalkast staat wartels',
                                                  label='paalkast staat wartels',
                                                  objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#EMObject.paalkastStaatWartels',
-                                                 definitie='Definitie nog toe te voegen voor eigenschap paalkast staat wartels')
+                                                 definitie='Definitie nog toe te voegen voor eigenschap paalkast staat wartels',
+                                                 owner=self)
 
         self._paalkastWaterdichtheid = EMAttribuut(field=StringField,
                                                    naam='paalkast waterdichtheid',
                                                    label='paalkast waterdichtheid',
                                                    objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#EMObject.paalkastWaterdichtheid',
-                                                   definitie='Definitie nog toe te voegen voor eigenschap paalkast waterdichtheid')
+                                                   definitie='Definitie nog toe te voegen voor eigenschap paalkast waterdichtheid',
+                                                   owner=self)
 
         self._reinigingBeugelsBevestigingsmiddelen = EMAttribuut(field=BooleanField,
                                                                  naam='reiniging beugels, bevestigingsmiddelen',
                                                                  label='reiniging beugels, bevestigingsmiddelen',
                                                                  objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#EMObject.reinigingBeugelsBevestigingsmiddelen',
-                                                                 definitie='Definitie nog toe te voegen voor eigenschap reiniging beugels, bevestigingsmiddelen')
+                                                                 definitie='Definitie nog toe te voegen voor eigenschap reiniging beugels, bevestigingsmiddelen',
+                                                                 owner=self)
 
         self._reinigingKabelbegeleidingBevestiging = EMAttribuut(field=BooleanField,
                                                                  naam='reiniging kabelbegeleiding bevestiging',
                                                                  label='reiniging kabelbegeleiding bevestiging',
                                                                  objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#EMObject.reinigingKabelbegeleidingBevestiging',
-                                                                 definitie='Definitie nog toe te voegen voor eigenschap reiniging kabelbegeleiding bevestiging')
+                                                                 definitie='Definitie nog toe te voegen voor eigenschap reiniging kabelbegeleiding bevestiging',
+                                                                 owner=self)
 
         self._reinigingKabelsEnGeleidersAanPaal = EMAttribuut(field=BooleanField,
                                                               naam='reiniging kabels en geleiders aan paal',
                                                               label='reiniging kabels en geleiders aan paal',
                                                               objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#EMObject.reinigingKabelsEnGeleidersAanPaal',
-                                                              definitie='Definitie nog toe te voegen voor eigenschap reiniging kabels en geleiders aan paal')
+                                                              definitie='Definitie nog toe te voegen voor eigenschap reiniging kabels en geleiders aan paal',
+                                                              owner=self)
 
         self._reinigingLensEnBehuizing = EMAttribuut(field=BooleanField,
                                                      naam='reiniging lens en behuizing',
                                                      label='reiniging lens en behuizing',
                                                      objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#EMObject.reinigingLensEnBehuizing',
-                                                     definitie='Definitie nog toe te voegen voor eigenschap reiniging lens en behuizing')
+                                                     definitie='Definitie nog toe te voegen voor eigenschap reiniging lens en behuizing',
+                                                     owner=self)
 
         self._staatStevigheidKabelbegeleidingPaal = EMAttribuut(field=StringField,
                                                                 naam='staat /stevigheid kabelbegeleiding paal',
                                                                 label='staat /stevigheid kabelbegeleiding paal',
                                                                 objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#EMObject.staatStevigheidKabelbegeleidingPaal',
-                                                                definitie='Definitie nog toe te voegen voor eigenschap staat /stevigheid kabelbegeleiding paal')
+                                                                definitie='Definitie nog toe te voegen voor eigenschap staat /stevigheid kabelbegeleiding paal',
+                                                                owner=self)
 
         self._staatBekabelingEnWartels = EMAttribuut(field=StringField,
                                                      naam='staat bekabeling en wartels',
                                                      label='staat bekabeling en wartels',
                                                      objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#EMObject.staatBekabelingEnWartels',
-                                                     definitie='Definitie nog toe te voegen voor eigenschap staat bekabeling en wartels')
+                                                     definitie='Definitie nog toe te voegen voor eigenschap staat bekabeling en wartels',
+                                                     owner=self)
 
         self._staatBeugelBevestigingCamera = EMAttribuut(field=StringField,
                                                          naam='staat beugel / bevestiging camera',
                                                          label='staat beugel / bevestiging camera',
                                                          objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#EMObject.staatBeugelBevestigingCamera',
-                                                         definitie='Definitie nog toe te voegen voor eigenschap staat beugel / bevestiging camera')
+                                                         definitie='Definitie nog toe te voegen voor eigenschap staat beugel / bevestiging camera',
+                                                         owner=self)
 
         self._staatWifiAntenne = EMAttribuut(field=StringField,
                                              naam='staat wifi antenne',
                                              label='staat wifi antenne',
                                              objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#EMObject.staatWifiAntenne',
-                                             definitie='Definitie nog toe te voegen voor eigenschap staat wifi antenne')
+                                             definitie='Definitie nog toe te voegen voor eigenschap staat wifi antenne',
+                                             owner=self)
 
         self._start = EMAttribuut(field=DateTimeField,
                                   naam='start',
                                   label='start',
                                   objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#EMObject.start',
-                                  definitie='Definitie nog toe te voegen voor eigenschap start')
+                                  definitie='Definitie nog toe te voegen voor eigenschap start',
+                                  owner=self)
 
         self._vertrekRedenDatumIngevenInv = EMAttribuut(field=StringField,
                                                         naam='vertrek > reden? datum ingeven inv.',
                                                         label='vertrek > reden? datum ingeven inv.',
                                                         objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#EMObject.vertrekRedenDatumIngevenInv',
-                                                        definitie='Definitie nog toe te voegen voor eigenschap vertrek > reden? datum ingeven inv.')
+                                                        definitie='Definitie nog toe te voegen voor eigenschap vertrek > reden? datum ingeven inv.',
+                                                        owner=self)
 
         self._vertrekAanwezig = EMAttribuut(field=BooleanField,
                                             naam='vertrek aanwezig?',
                                             label='vertrek aanwezig?',
                                             objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#EMObject.vertrekAanwezig',
-                                            definitie='Definitie nog toe te voegen voor eigenschap vertrek aanwezig?')
+                                            definitie='Definitie nog toe te voegen voor eigenschap vertrek aanwezig?',
+                                            owner=self)
 
         self._vertrekVervangen = EMAttribuut(field=BooleanField,
                                              naam='vertrek vervangen?',
                                              label='vertrek vervangen?',
                                              objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#EMObject.vertrekVervangen',
-                                             definitie='Definitie nog toe te voegen voor eigenschap vertrek vervangen?')
+                                             definitie='Definitie nog toe te voegen voor eigenschap vertrek vervangen?',
+                                             owner=self)
 
         self._werkingEnKwaliteitBeeld = EMAttribuut(field=StringField,
                                                     naam='werking en kwaliteit beeld',
                                                     label='werking en kwaliteit beeld',
                                                     objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#EMObject.werkingEnKwaliteitBeeld',
-                                                    definitie='Definitie nog toe te voegen voor eigenschap werking en kwaliteit beeld')
+                                                    definitie='Definitie nog toe te voegen voor eigenschap werking en kwaliteit beeld',
+                                                    owner=self)
 
     @property
     def wifiAntenneAanwezig(self):

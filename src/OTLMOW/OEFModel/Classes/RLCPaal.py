@@ -18,13 +18,15 @@ class RLCPaal(EMObject):
                                                 naam='interne roestvorming',
                                                 label='interne roestvorming',
                                                 objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#EMObject.interneRoestvorming',
-                                                definitie='keuzelijst en schaalverdeling volgens inspectiehandboek')
+                                                definitie='keuzelijst en schaalverdeling volgens inspectiehandboek',
+                                                owner=self)
 
         self._notitieinspectie = EMAttribuut(field=StringField,
                                              naam='notitieInspectie',
                                              label='notitieInspectie',
                                              objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#EMObject.notitieinspectie',
-                                             definitie='Definitie nog toe te voegen voor eigenschap notitie')
+                                             definitie='Definitie nog toe te voegen voor eigenschap notitie',
+                                             owner=self)
 
     @property
     def interneRoestvorming(self):

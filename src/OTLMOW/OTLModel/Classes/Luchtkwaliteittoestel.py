@@ -4,10 +4,11 @@ from abc import abstractmethod
 from OTLMOW.OTLModel.Classes.AIMNaamObject import AIMNaamObject
 from OTLMOW.OTLModel.Datatypes.KlLuchtkwaliteitOpstellingMerk import KlLuchtkwaliteitOpstellingMerk
 from OTLMOW.OTLModel.Datatypes.KlLuchtkwaliteitOpstellingModelnaam import KlLuchtkwaliteitOpstellingModelnaam
+from OTLMOW.GeometrieArtefact.PuntGeometrie import PuntGeometrie
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Luchtkwaliteittoestel(AIMNaamObject):
+class Luchtkwaliteittoestel(AIMNaamObject, PuntGeometrie):
     """Abstracte voor attributen van onderdelen van de luchtkwaliteitsensor installatie."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Luchtkwaliteittoestel'
@@ -15,19 +16,22 @@ class Luchtkwaliteittoestel(AIMNaamObject):
 
     @abstractmethod
     def __init__(self):
-        super().__init__()
+        AIMNaamObject.__init__(self)
+        PuntGeometrie.__init__(self)
 
         self._merk = OTLAttribuut(field=KlLuchtkwaliteitOpstellingMerk,
                                   naam='merk',
                                   label='merk',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Luchtkwaliteittoestel.merk',
-                                  definition='Het merk van een onderdeel uit een luchtkwaliteitsinstallatie.')
+                                  definition='Het merk van een onderdeel uit een luchtkwaliteitsinstallatie.',
+                                  owner=self)
 
         self._modelnaam = OTLAttribuut(field=KlLuchtkwaliteitOpstellingModelnaam,
                                        naam='modelnaam',
                                        label='modelnaam',
                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Luchtkwaliteittoestel.modelnaam',
-                                       definition='De modelnaam van een onderdeel uit een luchtkwaliteitsinstallatie.')
+                                       definition='De modelnaam van een onderdeel uit een luchtkwaliteitsinstallatie.',
+                                       owner=self)
 
     @property
     def merk(self):

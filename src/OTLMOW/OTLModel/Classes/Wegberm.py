@@ -21,13 +21,15 @@ class Wegberm(AIMObject, TerreinDeel):
                                                            naam='bijzonderIngerichteOnderdelen',
                                                            label='bijzonder ingerichte onderdelen van de wegberm',
                                                            objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Wegberm.bijzonderIngerichteOnderdelen',
-                                                           definition='De bijzonder ingerichte onderdelen van de wegberm.')
+                                                           definition='De bijzonder ingerichte onderdelen van de wegberm.',
+                                                           owner=self)
 
         self._type = OTLAttribuut(field=KlWegbermType,
                                   naam='type',
                                   label='type',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Wegberm.type',
-                                  definition='Het type van wegberm.')
+                                  definition='Het type van wegberm.',
+                                  owner=self)
 
     @property
     def bijzonderIngerichteOnderdelen(self):

@@ -20,26 +20,30 @@ class NietSelectieveDetectielus(SelNietSelLus):
                                      naam='functie',
                                      label='functie',
                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#NietSelectieveDetectielus.functie',
-                                     definition='Type niet-selectieve detectielus bv. file, afstand, hiaat,...')
+                                     definition='Type niet-selectieve detectielus bv. file, afstand, hiaat,...',
+                                     owner=self)
 
         self._isMotorgevoelig = OTLAttribuut(field=BooleanField,
                                              naam='isMotorgevoelig',
                                              label='is motorgevoelig',
                                              objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#NietSelectieveDetectielus.isMotorgevoelig',
-                                             definition='Geeft aan of de lus motorgevoelig is of niet.')
+                                             definition='Geeft aan of de lus motorgevoelig is of niet.',
+                                             owner=self)
 
         self._isRichtingsgevoelig = OTLAttribuut(field=BooleanField,
                                                  naam='isRichtingsgevoelig',
                                                  label='is richtingsgevoelig',
                                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#NietSelectieveDetectielus.isRichtingsgevoelig',
-                                                 definition='Is de detectielus gevoelig voor de richting waarin het voertuig het gevoeligheidsgebied van de lus binnenkomt?')
+                                                 definition='Is de detectielus gevoelig voor de richting waarin het voertuig het gevoeligheidsgebied van de lus binnenkomt?',
+                                                 owner=self)
 
         self._soortVoertuig = OTLAttribuut(field=KlVriLusSoortvoertuig,
                                            naam='soortVoertuig',
                                            label='soort voertuig',
                                            objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#NietSelectieveDetectielus.soortVoertuig',
                                            kardinaliteit_max='*',
-                                           definition='Type voertuig dat de detectielus volgens zijn instellingen kan detecteren.')
+                                           definition='Type voertuig dat de detectielus volgens zijn instellingen kan detecteren.',
+                                           owner=self)
 
     @property
     def functie(self):

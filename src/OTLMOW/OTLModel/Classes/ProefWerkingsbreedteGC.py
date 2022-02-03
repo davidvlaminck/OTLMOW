@@ -1,10 +1,12 @@
 # coding=utf-8
-from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLMOW.OTLModel.Classes.Proef import Proef
+from OTLMOW.GeometrieArtefact.PuntGeometrie import PuntGeometrie
+from OTLMOW.GeometrieArtefact.LijnGeometrie import LijnGeometrie
+from OTLMOW.GeometrieArtefact.VlakGeometrie import VlakGeometrie
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class ProefWerkingsbreedteGC(Proef):
+class ProefWerkingsbreedteGC(Proef, PuntGeometrie, LijnGeometrie, VlakGeometrie):
     """Proef om de afstand te bepalen tussen de voorkant van de geleideconstructie in normale positie en de plaats van het verst uitwijkend onderdeel aan de achterzijde van de geleideconstructie bij aanrijding. (gemeten op het voorvlak van een geleideconstructie en loodrecht op de as van de weg)"""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefWerkingsbreedteGC'
@@ -13,4 +15,7 @@ class ProefWerkingsbreedteGC(Proef):
     deprecated_version = '2.0.0'
 
     def __init__(self):
-        super().__init__()
+        Proef.__init__(self)
+        LijnGeometrie.__init__(self)
+        PuntGeometrie.__init__(self)
+        VlakGeometrie.__init__(self)

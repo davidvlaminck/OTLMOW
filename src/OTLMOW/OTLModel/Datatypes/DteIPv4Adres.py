@@ -14,7 +14,8 @@ class DteIPv4AdresWaarden(AttributeInfo):
                                     label='waarde',
                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DteIPv4Adres.waarde',
                                     usagenote='Het formaat is een decimale notatie bv. 91.198.174.232',
-                                    definition='De string die het IPv4 adres representeert.')
+                                    definition='De string die het IPv4 adres representeert.',
+                                    owner=self)
 
     @property
     def waarde(self):

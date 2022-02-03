@@ -6,47 +6,54 @@ from OTLMOW.OTLModel.Datatypes.DtcDocument import DtcDocument
 from OTLMOW.OTLModel.Datatypes.KlCADOMerk import KlCADOMerk
 from OTLMOW.OTLModel.Datatypes.KlCADOModelnaam import KlCADOModelnaam
 from OTLMOW.OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter
+from OTLMOW.GeometrieArtefact.LijnGeometrie import LijnGeometrie
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Calamiteitendoorsteek(AIMNaamObject):
+class Calamiteitendoorsteek(AIMNaamObject, LijnGeometrie):
     """Een calamiteitendoorsteek, afgekort CADO, is een mechanische constructie voor het opklappen van een deel van de vangrail in de middenberm van een weg. Het primaire doel van de calamiteitendoorsteek is het doorlaten van hulpverleningsvoertuigen."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Calamiteitendoorsteek'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        super().__init__()
+        AIMNaamObject.__init__(self)
+        LijnGeometrie.__init__(self)
 
         self._isDubbelArmig = OTLAttribuut(field=BooleanField,
                                            naam='isDubbelArmig',
                                            label='is dubbelarmig',
                                            objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Calamiteitendoorsteek.isDubbelArmig',
-                                           definition='Aanduiding of de calamiteitendoorsteek dubbel armig is.')
+                                           definition='Aanduiding of de calamiteitendoorsteek dubbel armig is.',
+                                           owner=self)
 
         self._lengte = OTLAttribuut(field=KwantWrdInMeter,
                                     naam='lengte',
                                     label='lengte',
                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Calamiteitendoorsteek.lengte',
-                                    definition='De totale lengte van de calamiteitendoorsteek constructie.')
+                                    definition='De totale lengte van de calamiteitendoorsteek constructie.',
+                                    owner=self)
 
         self._merk = OTLAttribuut(field=KlCADOMerk,
                                   naam='merk',
                                   label='merk',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Calamiteitendoorsteek.merk',
-                                  definition='Het merk van de calamiteitendoorsteek.')
+                                  definition='Het merk van de calamiteitendoorsteek.',
+                                  owner=self)
 
         self._modelnaam = OTLAttribuut(field=KlCADOModelnaam,
                                        naam='modelnaam',
                                        label='modelnaam',
                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Calamiteitendoorsteek.modelnaam',
-                                       definition='De modelnaam van de calamiteitendoorsteek.')
+                                       definition='De modelnaam van de calamiteitendoorsteek.',
+                                       owner=self)
 
         self._technischeFiche = OTLAttribuut(field=DtcDocument,
                                              naam='technischeFiche',
                                              label='technische fiche',
                                              objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Calamiteitendoorsteek.technischeFiche',
-                                             definition='De technische fiche van de calamiteitendoorsteek.')
+                                             definition='De technische fiche van de calamiteitendoorsteek.',
+                                             owner=self)
 
     @property
     def isDubbelArmig(self):

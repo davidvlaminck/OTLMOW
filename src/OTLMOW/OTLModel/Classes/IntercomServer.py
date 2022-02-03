@@ -7,53 +7,61 @@ from OTLMOW.OTLModel.Datatypes.KlAudioTransportType import KlAudioTransportType
 from OTLMOW.OTLModel.Datatypes.KlIntercomServerMerk import KlIntercomServerMerk
 from OTLMOW.OTLModel.Datatypes.KlIntercomServerModelnaam import KlIntercomServerModelnaam
 from OTLMOW.OTLModel.Datatypes.StringField import StringField
+from OTLMOW.GeometrieArtefact.PuntGeometrie import PuntGeometrie
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class IntercomServer(AIMNaamObject):
+class IntercomServer(AIMNaamObject, PuntGeometrie):
     """Centrale module - inclusief configuratiesoftware - die de intercomtoestellen koppelt, bv. per tunnel of per complex, en een gateway opzet naar de centrale systemen."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#IntercomServer'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        super().__init__()
+        AIMNaamObject.__init__(self)
+        PuntGeometrie.__init__(self)
 
         self._dnsNaam = OTLAttribuut(field=StringField,
                                      naam='dnsNaam',
                                      label='DNS naam',
                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#IntercomServer.dnsNaam',
-                                     definition='De DNSNaam (ook "volledige domein naam" genoemd ) is een unieke naam binnen het Domain Name System (DNS), het naamgevingssysteem waarmee computers, webservers, diensten en  toepassing op een unieke manier kunnen worden geïdentificeerd. Deze bevat zowel de hostname en de top level domein naam bv. 120c8-ar1.belfa.be.')
+                                     definition='De DNSNaam (ook "volledige domein naam" genoemd ) is een unieke naam binnen het Domain Name System (DNS), het naamgevingssysteem waarmee computers, webservers, diensten en  toepassing op een unieke manier kunnen worden geïdentificeerd. Deze bevat zowel de hostname en de top level domein naam bv. 120c8-ar1.belfa.be.',
+                                     owner=self)
 
         self._ipAdres = OTLAttribuut(field=DteIPv4Adres,
                                      naam='ipAdres',
                                      label='IP-adres',
                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#IntercomServer.ipAdres',
-                                     definition='Het IP-adres van de intercomserver.')
+                                     definition='Het IP-adres van de intercomserver.',
+                                     owner=self)
 
         self._merk = OTLAttribuut(field=KlIntercomServerMerk,
                                   naam='merk',
                                   label='merk',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#IntercomServer.merk',
-                                  definition='Het merk van de intercomserver.')
+                                  definition='Het merk van de intercomserver.',
+                                  owner=self)
 
         self._modelnaam = OTLAttribuut(field=KlIntercomServerModelnaam,
                                        naam='modelnaam',
                                        label='modelnaam',
                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#IntercomServer.modelnaam',
-                                       definition='De modelnaam van de intercomserver.')
+                                       definition='De modelnaam van de intercomserver.',
+                                       owner=self)
 
         self._technischeFiche = OTLAttribuut(field=DtcDocument,
                                              naam='technischeFiche',
                                              label='technische fiche',
                                              objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#IntercomServer.technischeFiche',
-                                             definition='De technische fiche van de intercomserver.')
+                                             definition='De technische fiche van de intercomserver.',
+                                             owner=self)
 
         self._transportType = OTLAttribuut(field=KlAudioTransportType,
                                            naam='transportType',
                                            label='transport type',
                                            objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#IntercomServer.transportType',
-                                           definition='Geeft aan op welke manier het audiosignaal wordt getransporteerd door het toestel.')
+                                           definition='Geeft aan op welke manier het audiosignaal wordt getransporteerd door het toestel.',
+                                           owner=self)
 
     @property
     def dnsNaam(self):

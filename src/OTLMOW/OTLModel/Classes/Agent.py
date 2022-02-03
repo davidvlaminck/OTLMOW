@@ -24,20 +24,23 @@ class Agent(AttributeInfo, OTLObject, RelatieInteractor):
                                      naam='agentId',
                                      label='agent identificatie',
                                      objectUri='http://purl.org/dc/terms/Agent.agentId',
-                                     definition='Identificatie van de agent volgens een bepaalde bron.')
+                                     definition='Identificatie van de agent volgens een bepaalde bron.',
+                                     owner=self)
 
         self._contactinfo = OTLAttribuut(field=DtcContactinfo,
                                          naam='contactinfo',
                                          label='Contactinfo',
                                          objectUri='http://purl.org/dc/terms/Agent.contactinfo',
                                          kardinaliteit_max='*',
-                                         definition='Algemene contactgegevens voor de agent.')
+                                         definition='Algemene contactgegevens voor de agent.',
+                                         owner=self)
 
         self._naam = OTLAttribuut(field=StringField,
                                   naam='naam',
                                   label='naam',
                                   objectUri='http://purl.org/dc/terms/Agent.naam',
-                                  definition='De naam waarmee de agent doorgaans benoemd wordt.')
+                                  definition='De naam waarmee de agent doorgaans benoemd wordt.',
+                                  owner=self)
 
     @property
     def agentId(self):

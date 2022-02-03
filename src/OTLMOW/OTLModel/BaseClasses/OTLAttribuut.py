@@ -8,7 +8,7 @@ from OTLMOW.OTLModel.BaseClasses.OTLField import OTLField
 
 class OTLAttribuut(AttributeInfo):
     def __init__(self, naam='', label='', objectUri='', definition='', constraints='', usagenote='', deprecated_version='',
-                 kardinaliteit_min='1', kardinaliteit_max='1', field=OTLField, readonly=False, readonlyValue=None):
+                 kardinaliteit_min='1', kardinaliteit_max='1', field=OTLField, readonly=False, readonlyValue=None, owner=None):
         super().__init__()
         self.naam = naam
         self.label = label
@@ -20,6 +20,7 @@ class OTLAttribuut(AttributeInfo):
         self.readonly = readonly
         self.kardinaliteit_min = kardinaliteit_min
         self.kardinaliteit_max = kardinaliteit_max
+        self.owner = owner
         self.readonlyValue = None
         self.waarde = None
         self.field = field

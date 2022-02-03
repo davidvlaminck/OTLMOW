@@ -21,373 +21,435 @@ class SDH(EMObject):
                                              naam='(Dubbele) voeding OK',
                                              label='(Dubbele) voeding OK',
                                              objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#EMObject.DubbeleVoedingOk',
-                                             definitie='Definitie nog toe te voegen voor eigenschap (Dubbele) voeding OK')
+                                             definitie='Definitie nog toe te voegen voor eigenschap (Dubbele) voeding OK',
+                                             owner=self)
 
         self._abbameldaInstallatieOk = EMAttribuut(field=BooleanField,
                                                    naam='ABBAMelda installatie OK',
                                                    label='ABBAMelda installatie OK',
                                                    objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#EMObject.abbameldaInstallatieOk',
-                                                   definitie='Definitie nog toe te voegen voor eigenschap ABBAMelda installatie OK')
+                                                   definitie='Definitie nog toe te voegen voor eigenschap ABBAMelda installatie OK',
+                                                   owner=self)
 
         self._abbameldaOperoepGemaakt = EMAttribuut(field=BooleanField,
                                                     naam='ABBAMelda operoep gemaakt',
                                                     label='ABBAMelda operoep gemaakt',
                                                     objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#EMObject.abbameldaOperoepGemaakt',
-                                                    definitie='Definitie nog toe te voegen voor eigenschap ABBAMelda operoep gemaakt')
+                                                    definitie='Definitie nog toe te voegen voor eigenschap ABBAMelda operoep gemaakt',
+                                                    owner=self)
 
         self._aanpassingenNodig = EMAttribuut(field=StringField,
                                               naam='Aanpassingen nodig',
                                               label='Aanpassingen nodig',
                                               objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#EMObject.aanpassingenNodig',
-                                              definitie='Definitie nog toe te voegen voor eigenschap Aanpassingen nodig')
+                                              definitie='Definitie nog toe te voegen voor eigenschap Aanpassingen nodig',
+                                              owner=self)
 
         self._algemeneToestandLocatieOk = EMAttribuut(field=BooleanField,
                                                       naam='Algemene toestand locatie OK',
                                                       label='Algemene toestand locatie OK',
                                                       objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#EMObject.algemeneToestandLocatieOk',
-                                                      definitie='Definitie nog toe te voegen voor eigenschap Algemene toestand locatie OK')
+                                                      definitie='Definitie nog toe te voegen voor eigenschap Algemene toestand locatie OK',
+                                                      owner=self)
 
         self._apparatuurFiltersVervangen = EMAttribuut(field=BooleanField,
                                                        naam='Apparatuur filters vervangen',
                                                        label='Apparatuur filters vervangen',
                                                        objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#EMObject.apparatuurFiltersVervangen',
-                                                       definitie='Definitie nog toe te voegen voor eigenschap Apparatuur filters vervangen')
+                                                       definitie='Definitie nog toe te voegen voor eigenschap Apparatuur filters vervangen',
+                                                       owner=self)
 
         self._apparatuurGereinigd = EMAttribuut(field=BooleanField,
                                                 naam='Apparatuur gereinigd',
                                                 label='Apparatuur gereinigd',
                                                 objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#EMObject.apparatuurGereinigd',
-                                                definitie='Definitie nog toe te voegen voor eigenschap Apparatuur gereinigd')
+                                                definitie='Definitie nog toe te voegen voor eigenschap Apparatuur gereinigd',
+                                                owner=self)
 
         self._apparatuurVentilatieOk = EMAttribuut(field=BooleanField,
                                                    naam='Apparatuur ventilatie OK',
                                                    label='Apparatuur ventilatie OK',
                                                    objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#EMObject.apparatuurVentilatieOk',
-                                                   definitie='Definitie nog toe te voegen voor eigenschap Apparatuur ventilatie OK')
+                                                   definitie='Definitie nog toe te voegen voor eigenschap Apparatuur ventilatie OK',
+                                                   owner=self)
 
         self._apparatuurVrijVanAlarmen = EMAttribuut(field=BooleanField,
                                                      naam='Apparatuur vrij van alarmen',
                                                      label='Apparatuur vrij van alarmen',
                                                      objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#EMObject.apparatuurVrijVanAlarmen',
-                                                     definitie='Definitie nog toe te voegen voor eigenschap Apparatuur vrij van alarmen')
+                                                     definitie='Definitie nog toe te voegen voor eigenschap Apparatuur vrij van alarmen',
+                                                     owner=self)
 
         self._batterijVervangen = EMAttribuut(field=BooleanField,
                                               naam='Batterij vervangen',
                                               label='Batterij vervangen',
                                               objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#EMObject.batterijVervangen',
-                                              definitie='Definitie nog toe te voegen voor eigenschap Batterij vervangen')
+                                              definitie='Definitie nog toe te voegen voor eigenschap Batterij vervangen',
+                                              owner=self)
 
         self._batterijVervangenOp = EMAttribuut(field=DateField,
                                                 naam='Batterij vervangen op',
                                                 label='Batterij vervangen op',
                                                 objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#EMObject.batterijVervangenOp',
-                                                definitie='Definitie nog toe te voegen voor eigenschap Batterij vervangen op')
+                                                definitie='Definitie nog toe te voegen voor eigenschap Batterij vervangen op',
+                                                owner=self)
 
         self._beschrijvingInterventie = EMAttribuut(field=StringField,
                                                     naam='Beschrijving interventie',
                                                     label='Beschrijving interventie',
                                                     objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#EMObject.beschrijvingInterventie',
-                                                    definitie='Definitie nog toe te voegen voor eigenschap Beschrijving interventie')
+                                                    definitie='Definitie nog toe te voegen voor eigenschap Beschrijving interventie',
+                                                    owner=self)
 
         self._eindeSdh1 = EMAttribuut(field=DateTimeField,
                                       naam='Einde (SDH 1)',
                                       label='Einde (SDH 1)',
                                       objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#SDH.eindeSdh1',
-                                      definitie='Definitie nog toe te voegen voor eigenschap Einde (SDH 1)')
+                                      definitie='Definitie nog toe te voegen voor eigenschap Einde (SDH 1)',
+                                      owner=self)
 
         self._eindeSdh = EMAttribuut(field=DateTimeField,
                                      naam='Einde (SDH)',
                                      label='Einde (SDH)',
                                      objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#SDH.eindeSdh',
-                                     definitie='Definitie nog toe te voegen voor eigenschap Einde (SDH)')
+                                     definitie='Definitie nog toe te voegen voor eigenschap Einde (SDH)',
+                                     owner=self)
 
         self._elektrischPlanInstallatieOk = EMAttribuut(field=BooleanField,
                                                         naam='Elektrisch plan / installatie OK',
                                                         label='Elektrisch plan / installatie OK',
                                                         objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#EMObject.elektrischPlanInstallatieOk',
-                                                        definitie='Definitie nog toe te voegen voor eigenschap Elektrisch plan / installatie OK')
+                                                        definitie='Definitie nog toe te voegen voor eigenschap Elektrisch plan / installatie OK',
+                                                        owner=self)
 
         self._elektrischPlanInstallatieOkOud = EMAttribuut(field=StringField,
                                                            naam='Elektrisch plan/installatie OK oud',
                                                            label='Elektrisch plan/installatie OK oud',
                                                            objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#EMObject.elektrischPlanInstallatieOkOud',
-                                                           definitie='Definitie nog toe te voegen voor eigenschap Elektrisch plan/installatie OK oud')
+                                                           definitie='Definitie nog toe te voegen voor eigenschap Elektrisch plan/installatie OK oud',
+                                                           owner=self)
 
         self._fotoSApparatuurGemaakt = EMAttribuut(field=BooleanField,
                                                    naam="Foto's apparatuur gemaakt",
                                                    label="Foto's apparatuur gemaakt",
                                                    objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#EMObject.fotoSApparatuurGemaakt',
-                                                   definitie="Definitie nog toe te voegen voor eigenschap Foto\'s apparatuur gemaakt")
+                                                   definitie="Definitie nog toe te voegen voor eigenschap Foto\'s apparatuur gemaakt",
+                                                   owner=self)
 
         self._glasvezelOkBevestigingLabels = EMAttribuut(field=BooleanField,
                                                          naam='Glasvezel OK (bevestiging, labels)',
                                                          label='Glasvezel OK (bevestiging, labels)',
                                                          objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#EMObject.glasvezelOkBevestigingLabels',
-                                                         definitie='Definitie nog toe te voegen voor eigenschap Glasvezel OK (bevestiging, labels)')
+                                                         definitie='Definitie nog toe te voegen voor eigenschap Glasvezel OK (bevestiging, labels)',
+                                                         owner=self)
 
         self._glasvezelOkSelectielijst = EMAttribuut(field=StringField,
                                                      naam='Glasvezel OK selectielijst',
                                                      label='Glasvezel OK selectielijst',
                                                      objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#EMObject.glasvezelOkSelectielijst',
-                                                     definitie='Definitie nog toe te voegen voor eigenschap Glasvezel OK selectielijst')
+                                                     definitie='Definitie nog toe te voegen voor eigenschap Glasvezel OK selectielijst',
+                                                     owner=self)
 
         self._glasvezelConnectorsOk = EMAttribuut(field=BooleanField,
                                                   naam='Glasvezel connectors OK',
                                                   label='Glasvezel connectors OK',
                                                   objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#EMObject.glasvezelConnectorsOk',
-                                                  definitie='Definitie nog toe te voegen voor eigenschap Glasvezel connectors OK')
+                                                  definitie='Definitie nog toe te voegen voor eigenschap Glasvezel connectors OK',
+                                                  owner=self)
 
         self._glasvezelConnectorsOkSelectie = EMAttribuut(field=StringField,
                                                           naam='Glasvezel connectors OK selectie',
                                                           label='Glasvezel connectors OK selectie',
                                                           objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#SDH.glasvezelConnectorsOkSelectie',
-                                                          definitie='Definitie nog toe te voegen voor eigenschap Glasvezel connectors OK selectie')
+                                                          definitie='Definitie nog toe te voegen voor eigenschap Glasvezel connectors OK selectie',
+                                                          owner=self)
 
         self._klimatiseringLocatieOk = EMAttribuut(field=BooleanField,
                                                    naam='Klimatisering locatie OK',
                                                    label='Klimatisering locatie OK',
                                                    objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#EMObject.klimatiseringLocatieOk',
-                                                   definitie='Definitie nog toe te voegen voor eigenschap Klimatisering locatie OK')
+                                                   definitie='Definitie nog toe te voegen voor eigenschap Klimatisering locatie OK',
+                                                   owner=self)
 
         self._koperkabelOkBevestigingLabels = EMAttribuut(field=BooleanField,
                                                           naam='Koperkabel OK (bevestiging,labels)',
                                                           label='Koperkabel OK (bevestiging,labels)',
                                                           objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#EMObject.koperkabelOkBevestigingLabels',
-                                                          definitie='Definitie nog toe te voegen voor eigenschap Koperkabel OK (bevestiging,labels)')
+                                                          definitie='Definitie nog toe te voegen voor eigenschap Koperkabel OK (bevestiging,labels)',
+                                                          owner=self)
 
         self._koperkabelOkSelectie = EMAttribuut(field=StringField,
                                                  naam='Koperkabel OK selectie',
                                                  label='Koperkabel OK selectie',
                                                  objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#SDH.koperkabelOkSelectie',
-                                                 definitie='Definitie nog toe te voegen voor eigenschap Koperkabel OK selectie')
+                                                 definitie='Definitie nog toe te voegen voor eigenschap Koperkabel OK selectie',
+                                                 owner=self)
 
         self._locatieBereikbaar = EMAttribuut(field=BooleanField,
                                               naam='Locatie bereikbaar',
                                               label='Locatie bereikbaar',
                                               objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#EMObject.locatieBereikbaar',
-                                              definitie='Definitie nog toe te voegen voor eigenschap Locatie bereikbaar')
+                                              definitie='Definitie nog toe te voegen voor eigenschap Locatie bereikbaar',
+                                              owner=self)
 
         self._naarWie = EMAttribuut(field=StringField,
                                     naam='Naar wie',
                                     label='Naar wie',
                                     objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#EMObject.naarWie',
-                                    definitie='Definitie nog toe te voegen voor eigenschap Naar wie')
+                                    definitie='Definitie nog toe te voegen voor eigenschap Naar wie',
+                                    owner=self)
 
         self._opmerkingenSdh1 = EMAttribuut(field=StringField,
                                             naam='Opmerkingen (SDH 1)',
                                             label='Opmerkingen (SDH 1)',
                                             objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#SDH.opmerkingenSdh1',
-                                            definitie='Definitie nog toe te voegen voor eigenschap Opmerkingen (SDH 1)')
+                                            definitie='Definitie nog toe te voegen voor eigenschap Opmerkingen (SDH 1)',
+                                            owner=self)
 
         self._opmerkingenSdh10 = EMAttribuut(field=StringField,
                                              naam='Opmerkingen (SDH 10)',
                                              label='Opmerkingen (SDH 10)',
                                              objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#SDH.opmerkingenSdh10',
-                                             definitie='Definitie nog toe te voegen voor eigenschap Opmerkingen (SDH 10)')
+                                             definitie='Definitie nog toe te voegen voor eigenschap Opmerkingen (SDH 10)',
+                                             owner=self)
 
         self._opmerkingenSdh11 = EMAttribuut(field=StringField,
                                              naam='Opmerkingen (SDH 11)',
                                              label='Opmerkingen (SDH 11)',
                                              objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#SDH.opmerkingenSdh11',
-                                             definitie='Definitie nog toe te voegen voor eigenschap Opmerkingen (SDH 11)')
+                                             definitie='Definitie nog toe te voegen voor eigenschap Opmerkingen (SDH 11)',
+                                             owner=self)
 
         self._opmerkingenSdh12 = EMAttribuut(field=StringField,
                                              naam='Opmerkingen (SDH 12)',
                                              label='Opmerkingen (SDH 12)',
                                              objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#SDH.opmerkingenSdh12',
-                                             definitie='Definitie nog toe te voegen voor eigenschap Opmerkingen (SDH 12)')
+                                             definitie='Definitie nog toe te voegen voor eigenschap Opmerkingen (SDH 12)',
+                                             owner=self)
 
         self._opmerkingenSdh13 = EMAttribuut(field=StringField,
                                              naam='Opmerkingen (SDH 13)',
                                              label='Opmerkingen (SDH 13)',
                                              objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#SDH.opmerkingenSdh13',
-                                             definitie='Definitie nog toe te voegen voor eigenschap Opmerkingen (SDH 13)')
+                                             definitie='Definitie nog toe te voegen voor eigenschap Opmerkingen (SDH 13)',
+                                             owner=self)
 
         self._opmerkingenSdh15 = EMAttribuut(field=StringField,
                                              naam='Opmerkingen (SDH 15)',
                                              label='Opmerkingen (SDH 15)',
                                              objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#SDH.opmerkingenSdh15',
-                                             definitie='Definitie nog toe te voegen voor eigenschap Opmerkingen (SDH 15)')
+                                             definitie='Definitie nog toe te voegen voor eigenschap Opmerkingen (SDH 15)',
+                                             owner=self)
 
         self._opmerkingenSdh16 = EMAttribuut(field=StringField,
                                              naam='Opmerkingen (SDH 16)',
                                              label='Opmerkingen (SDH 16)',
                                              objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#SDH.opmerkingenSdh16',
-                                             definitie='Definitie nog toe te voegen voor eigenschap Opmerkingen (SDH 16)')
+                                             definitie='Definitie nog toe te voegen voor eigenschap Opmerkingen (SDH 16)',
+                                             owner=self)
 
         self._opmerkingenSdh17 = EMAttribuut(field=StringField,
                                              naam='Opmerkingen (SDH 17)',
                                              label='Opmerkingen (SDH 17)',
                                              objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#SDH.opmerkingenSdh17',
-                                             definitie='Definitie nog toe te voegen voor eigenschap Opmerkingen (SDH 17)')
+                                             definitie='Definitie nog toe te voegen voor eigenschap Opmerkingen (SDH 17)',
+                                             owner=self)
 
         self._opmerkingenSdh18 = EMAttribuut(field=StringField,
                                              naam='Opmerkingen (SDH 18)',
                                              label='Opmerkingen (SDH 18)',
                                              objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#SDH.opmerkingenSdh18',
-                                             definitie='Definitie nog toe te voegen voor eigenschap Opmerkingen (SDH 18)')
+                                             definitie='Definitie nog toe te voegen voor eigenschap Opmerkingen (SDH 18)',
+                                             owner=self)
 
         self._opmerkingenSdh19 = EMAttribuut(field=StringField,
                                              naam='Opmerkingen (SDH 19)',
                                              label='Opmerkingen (SDH 19)',
                                              objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#SDH.opmerkingenSdh19',
-                                             definitie='Definitie nog toe te voegen voor eigenschap Opmerkingen (SDH 19)')
+                                             definitie='Definitie nog toe te voegen voor eigenschap Opmerkingen (SDH 19)',
+                                             owner=self)
 
         self._opmerkingenSdh2 = EMAttribuut(field=StringField,
                                             naam='Opmerkingen (SDH 2)',
                                             label='Opmerkingen (SDH 2)',
                                             objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#SDH.opmerkingenSdh2',
-                                            definitie='Definitie nog toe te voegen voor eigenschap Opmerkingen (SDH 2)')
+                                            definitie='Definitie nog toe te voegen voor eigenschap Opmerkingen (SDH 2)',
+                                            owner=self)
 
         self._opmerkingenSdh20 = EMAttribuut(field=StringField,
                                              naam='Opmerkingen (SDH 20)',
                                              label='Opmerkingen (SDH 20)',
                                              objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#SDH.opmerkingenSdh20',
-                                             definitie='Definitie nog toe te voegen voor eigenschap Opmerkingen (SDH 20)')
+                                             definitie='Definitie nog toe te voegen voor eigenschap Opmerkingen (SDH 20)',
+                                             owner=self)
 
         self._opmerkingenSdh21 = EMAttribuut(field=StringField,
                                              naam='Opmerkingen (SDH 21)',
                                              label='Opmerkingen (SDH 21)',
                                              objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#SDH.opmerkingenSdh21',
-                                             definitie='Definitie nog toe te voegen voor eigenschap Opmerkingen (SDH 21)')
+                                             definitie='Definitie nog toe te voegen voor eigenschap Opmerkingen (SDH 21)',
+                                             owner=self)
 
         self._opmerkingenSdh22 = EMAttribuut(field=StringField,
                                              naam='Opmerkingen (SDH 22)',
                                              label='Opmerkingen (SDH 22)',
                                              objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#SDH.opmerkingenSdh22',
-                                             definitie='Definitie nog toe te voegen voor eigenschap Opmerkingen (SDH 22)')
+                                             definitie='Definitie nog toe te voegen voor eigenschap Opmerkingen (SDH 22)',
+                                             owner=self)
 
         self._opmerkingenSdh3 = EMAttribuut(field=StringField,
                                             naam='Opmerkingen (SDH 3)',
                                             label='Opmerkingen (SDH 3)',
                                             objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#SDH.opmerkingenSdh3',
-                                            definitie='Definitie nog toe te voegen voor eigenschap Opmerkingen (SDH 3)')
+                                            definitie='Definitie nog toe te voegen voor eigenschap Opmerkingen (SDH 3)',
+                                            owner=self)
 
         self._opmerkingenSdh4 = EMAttribuut(field=StringField,
                                             naam='Opmerkingen (SDH 4)',
                                             label='Opmerkingen (SDH 4)',
                                             objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#SDH.opmerkingenSdh4',
-                                            definitie='Definitie nog toe te voegen voor eigenschap Opmerkingen (SDH 4)')
+                                            definitie='Definitie nog toe te voegen voor eigenschap Opmerkingen (SDH 4)',
+                                            owner=self)
 
         self._opmerkingenSdh5 = EMAttribuut(field=StringField,
                                             naam='Opmerkingen (SDH 5)',
                                             label='Opmerkingen (SDH 5)',
                                             objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#SDH.opmerkingenSdh5',
-                                            definitie='Definitie nog toe te voegen voor eigenschap Opmerkingen (SDH 5)')
+                                            definitie='Definitie nog toe te voegen voor eigenschap Opmerkingen (SDH 5)',
+                                            owner=self)
 
         self._opmerkingenSdh6 = EMAttribuut(field=StringField,
                                             naam='Opmerkingen (SDH 6)',
                                             label='Opmerkingen (SDH 6)',
                                             objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#SDH.opmerkingenSdh6',
-                                            definitie='Definitie nog toe te voegen voor eigenschap Opmerkingen (SDH 6)')
+                                            definitie='Definitie nog toe te voegen voor eigenschap Opmerkingen (SDH 6)',
+                                            owner=self)
 
         self._opmerkingenSdh7 = EMAttribuut(field=StringField,
                                             naam='Opmerkingen (SDH 7)',
                                             label='Opmerkingen (SDH 7)',
                                             objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#SDH.opmerkingenSdh7',
-                                            definitie='Definitie nog toe te voegen voor eigenschap Opmerkingen (SDH 7)')
+                                            definitie='Definitie nog toe te voegen voor eigenschap Opmerkingen (SDH 7)',
+                                            owner=self)
 
         self._opmerkingenSdh8 = EMAttribuut(field=StringField,
                                             naam='Opmerkingen (SDH 8)',
                                             label='Opmerkingen (SDH 8)',
                                             objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#SDH.opmerkingenSdh8',
-                                            definitie='Definitie nog toe te voegen voor eigenschap Opmerkingen (SDH 8)')
+                                            definitie='Definitie nog toe te voegen voor eigenschap Opmerkingen (SDH 8)',
+                                            owner=self)
 
         self._opmerkingenSdh9 = EMAttribuut(field=StringField,
                                             naam='Opmerkingen (SDH 9)',
                                             label='Opmerkingen (SDH 9)',
                                             objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#SDH.opmerkingenSdh9',
-                                            definitie='Definitie nog toe te voegen voor eigenschap Opmerkingen (SDH 9)')
+                                            definitie='Definitie nog toe te voegen voor eigenschap Opmerkingen (SDH 9)',
+                                            owner=self)
 
         self._opmerkingenSdh = EMAttribuut(field=StringField,
                                            naam='Opmerkingen (SDH)',
                                            label='Opmerkingen (SDH)',
                                            objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#SDH.opmerkingenSdh',
-                                           definitie='Definitie nog toe te voegen voor eigenschap Opmerkingen (SDH)')
+                                           definitie='Definitie nog toe te voegen voor eigenschap Opmerkingen (SDH)',
+                                           owner=self)
 
         self._opmerkingenInspectie = EMAttribuut(field=StringField,
                                                  naam='Opmerkingen inspectie',
                                                  label='Opmerkingen inspectie',
                                                  objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#EMObject.opmerkingenInspectie',
-                                                 definitie='Definitie nog toe te voegen voor eigenschap Opmerkingen inspectie')
+                                                 definitie='Definitie nog toe te voegen voor eigenschap Opmerkingen inspectie',
+                                                 owner=self)
 
         self._startSdh1 = EMAttribuut(field=DateTimeField,
                                       naam='Start (SDH 1)',
                                       label='Start (SDH 1)',
                                       objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#SDH.startSdh1',
-                                      definitie='Definitie nog toe te voegen voor eigenschap Start (SDH 1)')
+                                      definitie='Definitie nog toe te voegen voor eigenschap Start (SDH 1)',
+                                      owner=self)
 
         self._startSdh = EMAttribuut(field=DateTimeField,
                                      naam='Start (SDH)',
                                      label='Start (SDH)',
                                      objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#SDH.startSdh',
-                                     definitie='Definitie nog toe te voegen voor eigenschap Start (SDH)')
+                                     definitie='Definitie nog toe te voegen voor eigenschap Start (SDH)',
+                                     owner=self)
 
         self._upsOk = EMAttribuut(field=StringField,
                                   naam='UPS OK',
                                   label='UPS OK',
                                   objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#EMObject.upsOk',
-                                  definitie='Definitie nog toe te voegen voor eigenschap UPS OK')
+                                  definitie='Definitie nog toe te voegen voor eigenschap UPS OK',
+                                  owner=self)
 
         self._upsOkOud = EMAttribuut(field=StringField,
                                      naam='UPS OK oud',
                                      label='UPS OK oud',
                                      objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#EMObject.upsOkOud',
-                                     definitie='Definitie nog toe te voegen voor eigenschap UPS OK oud')
+                                     definitie='Definitie nog toe te voegen voor eigenschap UPS OK oud',
+                                     owner=self)
 
         self._ventilatieLocatieOk = EMAttribuut(field=BooleanField,
                                                 naam='Ventilatie locatie OK',
                                                 label='Ventilatie locatie OK',
                                                 objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#EMObject.ventilatieLocatieOk',
-                                                definitie='Definitie nog toe te voegen voor eigenschap Ventilatie locatie OK')
+                                                definitie='Definitie nog toe te voegen voor eigenschap Ventilatie locatie OK',
+                                                owner=self)
 
         self._verlichtingLocatieOk = EMAttribuut(field=BooleanField,
                                                  naam='Verlichting locatie OK',
                                                  label='Verlichting locatie OK',
                                                  objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#EMObject.verlichtingLocatieOk',
-                                                 definitie='Definitie nog toe te voegen voor eigenschap Verlichting locatie OK')
+                                                 definitie='Definitie nog toe te voegen voor eigenschap Verlichting locatie OK',
+                                                 owner=self)
 
         self._voedingskabelsOk = EMAttribuut(field=BooleanField,
                                              naam='Voedingskabels OK',
                                              label='Voedingskabels OK',
                                              objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#EMObject.voedingskabelsOk',
-                                             definitie='Definitie nog toe te voegen voor eigenschap Voedingskabels OK')
+                                             definitie='Definitie nog toe te voegen voor eigenschap Voedingskabels OK',
+                                             owner=self)
 
         self._voedingsstekkersOk = EMAttribuut(field=BooleanField,
                                                naam='Voedingsstekkers OK',
                                                label='Voedingsstekkers OK',
                                                objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#EMObject.voedingsstekkersOk',
-                                               definitie='Definitie nog toe te voegen voor eigenschap Voedingsstekkers OK')
+                                               definitie='Definitie nog toe te voegen voor eigenschap Voedingsstekkers OK',
+                                               owner=self)
 
         self._einde = EMAttribuut(field=DateTimeField,
                                   naam='einde',
                                   label='einde',
                                   objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#EMObject.einde',
-                                  definitie='Definitie nog toe te voegen voor eigenschap einde')
+                                  definitie='Definitie nog toe te voegen voor eigenschap einde',
+                                  owner=self)
 
         self._labelContactInfoApparatuurOk = EMAttribuut(field=BooleanField,
                                                          naam='label contact info apparatuur OK',
                                                          label='label contact info apparatuur OK',
                                                          objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#EMObject.labelContactInfoApparatuurOk',
-                                                         definitie='Definitie nog toe te voegen voor eigenschap label contact info apparatuur OK')
+                                                         definitie='Definitie nog toe te voegen voor eigenschap label contact info apparatuur OK',
+                                                         owner=self)
 
         self._labelInstallatieNrApparatuurOk = EMAttribuut(field=BooleanField,
                                                            naam='label installatie nr apparatuur OK',
                                                            label='label installatie nr apparatuur OK',
                                                            objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#EMObject.labelInstallatieNrApparatuurOk',
-                                                           definitie='Definitie nog toe te voegen voor eigenschap label installatie nr apparatuur OK')
+                                                           definitie='Definitie nog toe te voegen voor eigenschap label installatie nr apparatuur OK',
+                                                           owner=self)
 
         self._opmerkingenSdh14 = EMAttribuut(field=StringField,
                                              naam='opmerkingen (SDH 14)',
                                              label='opmerkingen (SDH 14)',
                                              objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#SDH.opmerkingenSdh14',
-                                             definitie='Definitie nog toe te voegen voor eigenschap opmerkingen (SDH 14)')
+                                             definitie='Definitie nog toe te voegen voor eigenschap opmerkingen (SDH 14)',
+                                             owner=self)
 
         self._start = EMAttribuut(field=DateTimeField,
                                   naam='start',
                                   label='start',
                                   objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#EMObject.start',
-                                  definitie='Definitie nog toe te voegen voor eigenschap start')
+                                  definitie='Definitie nog toe te voegen voor eigenschap start',
+                                  owner=self)
 
     @property
     def DubbeleVoedingOk(self):

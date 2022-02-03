@@ -20,7 +20,8 @@ class Detectie(AIMNaamObject):
                                            naam='soortBewaking',
                                            label='soort bewaking',
                                            objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Detectie.soortBewaking',
-                                           definition='Type bewaking van de detectie.')
+                                           definition='Type bewaking van de detectie.',
+                                           owner=self)
 
     @property
     def soortBewaking(self):

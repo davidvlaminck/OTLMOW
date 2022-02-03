@@ -18,7 +18,8 @@ class RSSGroep(EMObject):
                                   naam='type',
                                   label='type',
                                   objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#EMObject.type7',
-                                  definitie='Definitie nog toe te voegen voor eigenschap type')
+                                  definitie='Definitie nog toe te voegen voor eigenschap type',
+                                  owner=self)
 
     @property
     def type7(self):

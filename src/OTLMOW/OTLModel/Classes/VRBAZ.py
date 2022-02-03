@@ -20,13 +20,15 @@ De display van de BAZ geeft de actuele werktoestand aan, inclusief eventuele toe
                                   naam='merk',
                                   label='merk',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#VRBAZ.merk',
-                                  definition='De merknaam van de VR-BAZ.')
+                                  definition='De merknaam van de VR-BAZ.',
+                                  owner=self)
 
         self._modelnaam = OTLAttribuut(field=KlVRBAZModelnaam,
                                        naam='modelnaam',
                                        label='modelnaam',
                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#VRBAZ.modelnaam',
-                                       definition='De modelnaam van de VR-BAZ.')
+                                       definition='De modelnaam van de VR-BAZ.',
+                                       owner=self)
 
     @property
     def merk(self):

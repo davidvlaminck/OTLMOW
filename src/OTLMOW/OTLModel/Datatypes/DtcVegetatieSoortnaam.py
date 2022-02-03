@@ -14,19 +14,22 @@ class DtcVegetatieSoortnaamWaarden(AttributeInfo):
                                   label='code',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcVegetatieSoortnaam.code',
                                   usagenote='De GBIF code is een unieke gestandaardiseerde code uitgegeven door het GBIF (the Global Biodiversity Information Facility - GBIF.org)',
-                                  definition='De unieke identificator voor de soort van het vegetatie-element.')
+                                  definition='De unieke identificator voor de soort van het vegetatie-element.',
+                                  owner=self)
 
         self._soortnaamNederlands = OTLAttribuut(field=StringField,
                                                  naam='soortnaamNederlands',
                                                  label='soortnaam nederlands',
                                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcVegetatieSoortnaam.soortnaamNederlands',
-                                                 definition='De Nederlandse soortnaam van de beplanting.')
+                                                 definition='De Nederlandse soortnaam van de beplanting.',
+                                                 owner=self)
 
         self._soortnaamWetenschappelijk = OTLAttribuut(field=StringField,
                                                        naam='soortnaamWetenschappelijk',
                                                        label='soortnaam wetenschappelijk',
                                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcVegetatieSoortnaam.soortnaamWetenschappelijk',
-                                                       definition='De wetenschappelijke soortnaam van de beplanting.')
+                                                       definition='De wetenschappelijke soortnaam van de beplanting.',
+                                                       owner=self)
 
     @property
     def code(self):

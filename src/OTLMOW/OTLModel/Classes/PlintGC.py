@@ -6,10 +6,11 @@ from OTLMOW.OTLModel.Classes.ConstructieElementenGC import ConstructieElementenG
 from OTLMOW.OTLModel.Datatypes.DtcAfmetingBxlxhInM import DtcAfmetingBxlxhInM
 from OTLMOW.OTLModel.Datatypes.DtcDocument import DtcDocument
 from OTLMOW.OTLModel.Datatypes.KlPlaatsingswijzePlint import KlPlaatsingswijzePlint
+from OTLMOW.GeometrieArtefact.LijnGeometrie import LijnGeometrie
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class PlintGC(ConstructieElement, BetonnenConstructieElement, ConstructieElementenGC):
+class PlintGC(ConstructieElement, BetonnenConstructieElement, ConstructieElementenGC, LijnGeometrie):
     """Een plint is een betonnen balk/plaat die de akoestische dichtheid verzekert tussen de schermelementen van de geluidswerende constructie en de bodem."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#PlintGC'
@@ -19,24 +20,28 @@ class PlintGC(ConstructieElement, BetonnenConstructieElement, ConstructieElement
         BetonnenConstructieElement.__init__(self)
         ConstructieElement.__init__(self)
         ConstructieElementenGC.__init__(self)
+        LijnGeometrie.__init__(self)
 
         self._afmetingen = OTLAttribuut(field=DtcAfmetingBxlxhInM,
                                         naam='afmetingen',
                                         label='afmetingen',
                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#PlintGC.afmetingen',
-                                        definition='Met dit complex datatype worden de afmetingen van de plint weergegeven. Indien de plint afwijkt van een rechthoekige vorm wordt deze informatie in de technische fiche opgeslagen.')
+                                        definition='Met dit complex datatype worden de afmetingen van de plint weergegeven. Indien de plint afwijkt van een rechthoekige vorm wordt deze informatie in de technische fiche opgeslagen.',
+                                        owner=self)
 
         self._plaatsingswijze = OTLAttribuut(field=KlPlaatsingswijzePlint,
                                              naam='plaatsingswijze',
                                              label='plaatsingswijze',
                                              objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#PlintGC.plaatsingswijze',
-                                             definition='De manier waarop de plint geplaatst is ten opzichte van de profielen.')
+                                             definition='De manier waarop de plint geplaatst is ten opzichte van de profielen.',
+                                             owner=self)
 
         self._technischeFiche = OTLAttribuut(field=DtcDocument,
                                              naam='technischeFiche',
                                              label='technische fiche',
                                              objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#PlintGC.technischeFiche',
-                                             definition='Document met verdere specificaties van de plint die niet opgevangen worden met de aanwezige attributen.')
+                                             definition='Document met verdere specificaties van de plint die niet opgevangen worden met de aanwezige attributen.',
+                                             owner=self)
 
     @property
     def afmetingen(self):

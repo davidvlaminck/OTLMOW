@@ -4,10 +4,11 @@ from OTLMOW.OTLModel.Classes.AIMObject import AIMObject
 from OTLMOW.OTLModel.Datatypes.FloatOrDecimalField import FloatOrDecimalField
 from OTLMOW.OTLModel.Datatypes.KlHelling import KlHelling
 from OTLMOW.OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter
+from OTLMOW.GeometrieArtefact.VlakGeometrie import VlakGeometrie
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Gronddam(AIMObject):
+class Gronddam(AIMObject, VlakGeometrie):
     """Gronddammen zijn trapeziumvormige constructies bestaande uit zand, grond of steenachtige materialen.
 De onderkant van de gronddam wordt direct op het bestaand maaiveld aangebracht of op een vooraf aangebrachte grondverbetering.
 Een gronddam kan volgende functies vervullen: geluidswering, geleiding van dieren, veiligheid en lichtwering."""
@@ -16,43 +17,50 @@ Een gronddam kan volgende functies vervullen: geluidswering, geleiding van diere
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        super().__init__()
+        AIMObject.__init__(self)
+        VlakGeometrie.__init__(self)
 
         self._basisbreedte = OTLAttribuut(field=KwantWrdInMeter,
                                           naam='basisbreedte',
                                           label='basisbreedte',
                                           objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Gronddam.basisbreedte',
-                                          definition='De breedte van de basis van de gronddam in meter.')
+                                          definition='De breedte van de basis van de gronddam in meter.',
+                                          owner=self)
 
         self._gronddichtheid = OTLAttribuut(field=FloatOrDecimalField,
                                             naam='gronddichtheid',
                                             label='gronddichtheid',
                                             objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Gronddam.gronddichtheid',
-                                            definition='De gronddichtheid van de gronddam.')
+                                            definition='De gronddichtheid van de gronddam.',
+                                            owner=self)
 
         self._hellingAchterzijde = OTLAttribuut(field=KlHelling,
                                                 naam='hellingAchterzijde',
                                                 label='helling achterzijde',
                                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Gronddam.hellingAchterzijde',
-                                                definition='De hellingsgraad van de achterzijde gronddam in kwarten.')
+                                                definition='De hellingsgraad van de achterzijde gronddam in kwarten.',
+                                                owner=self)
 
         self._hellingVoorzijde = OTLAttribuut(field=KlHelling,
                                               naam='hellingVoorzijde',
                                               label='helling voorzijde',
                                               objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Gronddam.hellingVoorzijde',
-                                              definition='De hellingsgraad van de voorzijde van de gronddam in kwarten.')
+                                              definition='De hellingsgraad van de voorzijde van de gronddam in kwarten.',
+                                              owner=self)
 
         self._hoogte = OTLAttribuut(field=KwantWrdInMeter,
                                     naam='hoogte',
                                     label='hoogte',
                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Gronddam.hoogte',
-                                    definition='De hoogte van de gronddam in meter.')
+                                    definition='De hoogte van de gronddam in meter.',
+                                    owner=self)
 
         self._kruinbreedte = OTLAttribuut(field=KwantWrdInMeter,
                                           naam='kruinbreedte',
                                           label='kruinbreedte',
                                           objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Gronddam.kruinbreedte',
-                                          definition='De breedte van de kruin van de gronddam in meter.')
+                                          definition='De breedte van de kruin van de gronddam in meter.',
+                                          owner=self)
 
     @property
     def basisbreedte(self):

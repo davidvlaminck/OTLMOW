@@ -20,7 +20,8 @@ class Mantelbuis(ContainerBuis, Buis):
                                        naam='materiaal',
                                        label='materiaal',
                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Mantelbuis.materiaal',
-                                       definition='Bepaalt het materiaal van de mantelbuis.')
+                                       definition='Bepaalt het materiaal van de mantelbuis.',
+                                       owner=self)
 
     @property
     def materiaal(self):

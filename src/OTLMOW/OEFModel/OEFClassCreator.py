@@ -115,7 +115,8 @@ class OEFClassCreator:
             if attribuut["kardinaliteit"] != '1..1':
                 datablock.append(f'{whitespace}kardinaliteit={wrap_in_quotes(attribuut["kardinaliteit"])},')
             definitie_zonder_quotes = attribuut["definitie"].replace("\'", "\\\'").replace("\n", ' ')
-            datablock.append(f'{whitespace}definitie={wrap_in_quotes(definitie_zonder_quotes)})')
+            datablock.append(f'{whitespace}definitie={wrap_in_quotes(definitie_zonder_quotes)},')
+            datablock.append(f'{whitespace}owner=self)')
 
             datablock.append('')
 

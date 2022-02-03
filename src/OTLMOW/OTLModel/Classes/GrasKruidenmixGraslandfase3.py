@@ -27,7 +27,8 @@ veldgerst, vijfvingerkruid."""
                                                naam='huidigNatuurbeeld',
                                                label='huidig natuurbeeld',
                                                objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#GrasKruidenmixGraslandfase3.huidigNatuurbeeld',
-                                               definition='Bepaling van het vegetatietype op basis van terreininventarisatie.')
+                                               definition='Bepaling van het vegetatietype op basis van terreininventarisatie.',
+                                               owner=self)
 
     @property
     def huidigNatuurbeeld(self):

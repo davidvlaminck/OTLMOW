@@ -13,13 +13,15 @@ class DtcExterneReferentieWaarden(AttributeInfo):
                                                     naam='externReferentienummer',
                                                     label='extern referentienummer',
                                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcExterneReferentie.externReferentienummer',
-                                                    definition='Referentienummer zoals gekend bij de externe partij bv. aannemer, VLCC, ...')
+                                                    definition='Referentienummer zoals gekend bij de externe partij bv. aannemer, VLCC, ...',
+                                                    owner=self)
 
         self._externePartij = OTLAttribuut(field=StringField,
                                            naam='externePartij',
                                            label='externe partij',
                                            objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcExterneReferentie.externePartij',
-                                           definition='De naam van de externe partij waarvoor de referentie geldt. Dit kan een organisatie zijn maar ook een softwaretoepassing zoals bv. ABBA of VLCC.')
+                                           definition='De naam van de externe partij waarvoor de referentie geldt. Dit kan een organisatie zijn maar ook een softwaretoepassing zoals bv. ABBA of VLCC.',
+                                           owner=self)
 
     @property
     def externReferentienummer(self):

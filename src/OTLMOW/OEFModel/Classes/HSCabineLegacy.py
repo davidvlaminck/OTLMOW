@@ -18,121 +18,141 @@ class HSCabineLegacy(EMObject):
                                                                  naam='alle metalen onderdelen geaard&verbonden',
                                                                  label='alle metalen onderdelen geaard&verbonden',
                                                                  objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#HSCabineLegacy.alleMetalenOnderdelenGeaardVerbonden',
-                                                                 definitie='Definitie nog toe te voegen voor eigenschap alle metalen onderdelen geaard&verbonden')
+                                                                 definitie='Definitie nog toe te voegen voor eigenschap alle metalen onderdelen geaard&verbonden',
+                                                                 owner=self)
 
         self._alleToegangsdeurenSluitenPerfect = EMAttribuut(field=StringField,
                                                              naam='alle toegangsdeuren sluiten perfect',
                                                              label='alle toegangsdeuren sluiten perfect',
                                                              objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#HSCabineLegacy.alleToegangsdeurenSluitenPerfect',
-                                                             definitie='Definitie nog toe te voegen voor eigenschap alle toegangsdeuren sluiten perfect')
+                                                             definitie='Definitie nog toe te voegen voor eigenschap alle toegangsdeuren sluiten perfect',
+                                                             owner=self)
 
         self._alleVerlichtingsarmaturenFunctioneren = EMAttribuut(field=StringField,
                                                                   naam='alle verlichtingsarmaturen functioneren',
                                                                   label='alle verlichtingsarmaturen functioneren',
                                                                   objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#HSCabineLegacy.alleVerlichtingsarmaturenFunctioneren',
-                                                                  definitie='Definitie nog toe te voegen voor eigenschap alle verlichtingsarmaturen functioneren')
+                                                                  definitie='Definitie nog toe te voegen voor eigenschap alle verlichtingsarmaturen functioneren',
+                                                                  owner=self)
 
         self._bezoekkaartAanwezigEnIngevuld = EMAttribuut(field=StringField,
                                                           naam='bezoekkaart aanwezig en ingevuld',
                                                           label='bezoekkaart aanwezig en ingevuld',
                                                           objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#HSCabineLegacy.bezoekkaartAanwezigEnIngevuld',
-                                                          definitie='Definitie nog toe te voegen voor eigenschap bezoekkaart aanwezig en ingevuld')
+                                                          definitie='Definitie nog toe te voegen voor eigenschap bezoekkaart aanwezig en ingevuld',
+                                                          owner=self)
 
         self._binnenGeenSpinnenwebOngedierteZand = EMAttribuut(field=StringField,
                                                                naam='binnen geen spinnenweb/ongedierte/zand',
                                                                label='binnen geen spinnenweb/ongedierte/zand',
                                                                objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#HSCabineLegacy.binnenGeenSpinnenwebOngedierteZand',
-                                                               definitie='Definitie nog toe te voegen voor eigenschap binnen geen spinnenweb/ongedierte/zand')
+                                                               definitie='Definitie nog toe te voegen voor eigenschap binnen geen spinnenweb/ongedierte/zand',
+                                                               owner=self)
 
         self._geenScheurenOpeningenInBehuizing = EMAttribuut(field=StringField,
                                                              naam='geen scheuren/openingen in behuizing',
                                                              label='geen scheuren/openingen in behuizing',
                                                              objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#HSCabineLegacy.geenScheurenOpeningenInBehuizing',
-                                                             definitie='Definitie nog toe te voegen voor eigenschap geen scheuren/openingen in behuizing')
+                                                             definitie='Definitie nog toe te voegen voor eigenschap geen scheuren/openingen in behuizing',
+                                                             owner=self)
 
         self._geenStootStruikelgevaar = EMAttribuut(field=StringField,
                                                     naam='geen stoot / struikelgevaar',
                                                     label='geen stoot / struikelgevaar',
                                                     objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#HSCabineLegacy.geenStootStruikelgevaar',
-                                                    definitie='Definitie nog toe te voegen voor eigenschap geen stoot / struikelgevaar')
+                                                    definitie='Definitie nog toe te voegen voor eigenschap geen stoot / struikelgevaar',
+                                                    owner=self)
 
         self._geenVreemdeMaterialenAanwezig = EMAttribuut(field=StringField,
                                                           naam='geen vreemde materialen aanwezig',
                                                           label='geen vreemde materialen aanwezig',
                                                           objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#HSCabineLegacy.geenVreemdeMaterialenAanwezig',
-                                                          definitie='Definitie nog toe te voegen voor eigenschap geen vreemde materialen aanwezig')
+                                                          definitie='Definitie nog toe te voegen voor eigenschap geen vreemde materialen aanwezig',
+                                                          owner=self)
 
         self._geisoleerdeHandschInPerfecteStaat = EMAttribuut(field=StringField,
                                                               naam='geisoleerde handsch in perfecte staat',
                                                               label='geisoleerde handsch in perfecte staat',
                                                               objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#EMObject.geisoleerdeHandschInPerfecteStaat',
-                                                              definitie='Definitie nog toe te voegen voor eigenschap geisoleerde handsch in perfecte staat')
+                                                              definitie='Definitie nog toe te voegen voor eigenschap geisoleerde handsch in perfecte staat',
+                                                              owner=self)
 
         self._indicatieplatenAanwezigOpToegangsdeur = EMAttribuut(field=StringField,
                                                                   naam='indicatieplaten aanwezig op toegangsdeur',
                                                                   label='indicatieplaten aanwezig op toegangsdeur',
                                                                   objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#HSCabineLegacy.indicatieplatenAanwezigOpToegangsdeur',
-                                                                  definitie='Definitie nog toe te voegen voor eigenschap indicatieplaten aanwezig op toegangsdeur')
+                                                                  definitie='Definitie nog toe te voegen voor eigenschap indicatieplaten aanwezig op toegangsdeur',
+                                                                  owner=self)
 
         self._isolerendSasInGoedeStaat = EMAttribuut(field=StringField,
                                                      naam='isolerend sas in goede staat',
                                                      label='isolerend sas in goede staat',
                                                      objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#HSCabineLegacy.isolerendSasInGoedeStaat',
-                                                     definitie='Definitie nog toe te voegen voor eigenschap isolerend sas in goede staat')
+                                                     definitie='Definitie nog toe te voegen voor eigenschap isolerend sas in goede staat',
+                                                     owner=self)
 
         self._kabelkelderVrijVanWater = EMAttribuut(field=StringField,
                                                     naam='kabelkelder vrij van water',
                                                     label='kabelkelder vrij van water',
                                                     objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#EMObject.kabelkelderVrijVanWater',
-                                                    definitie='Definitie nog toe te voegen voor eigenschap kabelkelder vrij van water')
+                                                    definitie='Definitie nog toe te voegen voor eigenschap kabelkelder vrij van water',
+                                                    owner=self)
 
         self._noodverlichtingsarmaturenFunctioneren = EMAttribuut(field=StringField,
                                                                   naam='noodverlichtingsarmaturen functioneren',
                                                                   label='noodverlichtingsarmaturen functioneren',
                                                                   objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#HSCabineLegacy.noodverlichtingsarmaturenFunctioneren',
-                                                                  definitie='Definitie nog toe te voegen voor eigenschap noodverlichtingsarmaturen functioneren')
+                                                                  definitie='Definitie nog toe te voegen voor eigenschap noodverlichtingsarmaturen functioneren',
+                                                                  owner=self)
 
         self._opmerkingenOverHsCabine = EMAttribuut(field=StringField,
                                                     naam='opmerkingen over HS cabine',
                                                     label='opmerkingen over HS cabine',
                                                     objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#HSCabineLegacy.opmerkingenOverHsCabine',
-                                                    definitie='Definitie nog toe te voegen voor eigenschap opmerkingen over HS cabine')
+                                                    definitie='Definitie nog toe te voegen voor eigenschap opmerkingen over HS cabine',
+                                                    owner=self)
 
         self._slotenEnScharnierenInGoedeStaat = EMAttribuut(field=StringField,
                                                             naam='sloten en scharnieren in goede staat',
                                                             label='sloten en scharnieren in goede staat',
                                                             objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#HSCabineLegacy.slotenEnScharnierenInGoedeStaat',
-                                                            definitie='Definitie nog toe te voegen voor eigenschap sloten en scharnieren in goede staat')
+                                                            definitie='Definitie nog toe te voegen voor eigenschap sloten en scharnieren in goede staat',
+                                                            owner=self)
 
         self._thermostaatHygrostaatFunctioneert = EMAttribuut(field=StringField,
                                                               naam='thermostaat / hygrostaat functioneert',
                                                               label='thermostaat / hygrostaat functioneert',
                                                               objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#HSCabineLegacy.thermostaatHygrostaatFunctioneert',
-                                                              definitie='Definitie nog toe te voegen voor eigenschap thermostaat / hygrostaat functioneert')
+                                                              definitie='Definitie nog toe te voegen voor eigenschap thermostaat / hygrostaat functioneert',
+                                                              owner=self)
 
         self._toegangVrijVanOnkruidStruikenTakken = EMAttribuut(field=StringField,
                                                                 naam='toegang vrij van onkruid/struiken/takken',
                                                                 label='toegang vrij van onkruid/struiken/takken',
                                                                 objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#HSCabineLegacy.toegangVrijVanOnkruidStruikenTakken',
-                                                                definitie='Definitie nog toe te voegen voor eigenschap toegang vrij van onkruid/struiken/takken')
+                                                                definitie='Definitie nog toe te voegen voor eigenschap toegang vrij van onkruid/struiken/takken',
+                                                                owner=self)
 
         self._toegangspadInGoedeStaat = EMAttribuut(field=StringField,
                                                     naam='toegangspad in goede staat',
                                                     label='toegangspad in goede staat',
                                                     objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#HSCabineLegacy.toegangspadInGoedeStaat',
-                                                    definitie='Definitie nog toe te voegen voor eigenschap toegangspad in goede staat')
+                                                    definitie='Definitie nog toe te voegen voor eigenschap toegangspad in goede staat',
+                                                    owner=self)
 
         self._verluchtingsroostersInGoedeStaat = EMAttribuut(field=StringField,
                                                              naam='verluchtingsroosters in goede staat',
                                                              label='verluchtingsroosters in goede staat',
                                                              objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#HSCabineLegacy.verluchtingsroostersInGoedeStaat',
-                                                             definitie='Definitie nog toe te voegen voor eigenschap verluchtingsroosters in goede staat')
+                                                             definitie='Definitie nog toe te voegen voor eigenschap verluchtingsroosters in goede staat',
+                                                             owner=self)
 
         self._verwarmingstoestelNietAfgedekt = EMAttribuut(field=StringField,
                                                            naam='verwarmingstoestel niet afgedekt',
                                                            label='verwarmingstoestel niet afgedekt',
                                                            objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#HSCabineLegacy.verwarmingstoestelNietAfgedekt',
-                                                           definitie='Definitie nog toe te voegen voor eigenschap verwarmingstoestel niet afgedekt')
+                                                           definitie='Definitie nog toe te voegen voor eigenschap verwarmingstoestel niet afgedekt',
+                                                           owner=self)
 
     @property
     def alleMetalenOnderdelenGeaardVerbonden(self):

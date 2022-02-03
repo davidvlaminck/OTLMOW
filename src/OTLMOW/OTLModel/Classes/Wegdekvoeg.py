@@ -4,35 +4,40 @@ from OTLMOW.OTLModel.Classes.AIMObject import AIMObject
 from OTLMOW.OTLModel.Datatypes.BooleanField import BooleanField
 from OTLMOW.OTLModel.Datatypes.KlWegdekvoegType import KlWegdekvoegType
 from OTLMOW.OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter
+from OTLMOW.GeometrieArtefact.LijnGeometrie import LijnGeometrie
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Wegdekvoeg(AIMObject):
+class Wegdekvoeg(AIMObject, LijnGeometrie):
     """Dwarsvoegen en langsvoegen met uitzondering van de krimpvoegen."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Wegdekvoeg'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        super().__init__()
+        AIMObject.__init__(self)
+        LijnGeometrie.__init__(self)
 
         self._heeftDeuvels = OTLAttribuut(field=BooleanField,
                                           naam='heeftDeuvels',
                                           label='heeft deuvels',
                                           objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Wegdekvoeg.heeftDeuvels',
-                                          definition='Aanduiding of de voeg al dan niet verdeuveld is.')
+                                          definition='Aanduiding of de voeg al dan niet verdeuveld is.',
+                                          owner=self)
 
         self._lengte = OTLAttribuut(field=KwantWrdInMeter,
                                     naam='lengte',
                                     label='lengte',
                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Wegdekvoeg.lengte',
-                                    definition='De lengte van de wegdekvoeg.')
+                                    definition='De lengte van de wegdekvoeg.',
+                                    owner=self)
 
         self._type = OTLAttribuut(field=KlWegdekvoegType,
                                   naam='type',
                                   label='type',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Wegdekvoeg.type',
-                                  definition='Het type van wegdekvoeg.')
+                                  definition='Het type van wegdekvoeg.',
+                                  owner=self)
 
     @property
     def heeftDeuvels(self):

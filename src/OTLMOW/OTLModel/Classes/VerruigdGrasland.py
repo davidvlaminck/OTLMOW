@@ -18,7 +18,8 @@ class VerruigdGrasland(Ruigte):
                                                naam='huidigNatuurbeeld',
                                                label='huidig natuurbeeld',
                                                objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#VerruigdGrasland.huidigNatuurbeeld',
-                                               definition='Bepaling van het vegetatietype op basis van terreininventarisatie.')
+                                               definition='Bepaling van het vegetatietype op basis van terreininventarisatie.',
+                                               owner=self)
 
     @property
     def huidigNatuurbeeld(self):

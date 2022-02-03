@@ -14,19 +14,22 @@ class DtcTrottoirbandVormWaarden(AttributeInfo):
                                      naam='breedte',
                                      label='breedte',
                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcTrottoirbandVorm.breedte',
-                                     definition='De breedte van de trottoirband.')
+                                     definition='De breedte van de trottoirband.',
+                                     owner=self)
 
         self._dikte = OTLAttribuut(field=KwantWrdInCentimeter,
                                    naam='dikte',
                                    label='dikte',
                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcTrottoirbandVorm.dikte',
-                                   definition='De dikte van de trottoirband.')
+                                   definition='De dikte van de trottoirband.',
+                                   owner=self)
 
         self._vorm = OTLAttribuut(field=KlLETrottoirbandVorm,
                                   naam='vorm',
                                   label='vorm',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcTrottoirbandVorm.vorm',
-                                  definition='De vorm van de trottoirband.')
+                                  definition='De vorm van de trottoirband.',
+                                  owner=self)
 
     @property
     def breedte(self):

@@ -21,32 +21,37 @@ class Put(ABC):
                                    naam='adres',
                                    label='adres',
                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Put.adres',
-                                   definition='Dichtstbijgelegen adres voor de put, het adres bestaat enkel uit de straatnaam indien het dichtstbijzijnde adres > 100m verwijderd is.')
+                                   definition='Dichtstbijgelegen adres voor de put, het adres bestaat enkel uit de straatnaam indien het dichtstbijzijnde adres > 100m verwijderd is.',
+                                   owner=self)
 
         self._diepte = OTLAttribuut(field=KwantWrdInMeter,
                                     naam='diepte',
                                     label='diepte',
                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Put.diepte',
-                                    definition='Het verschil tussen het maaiveldpeil en het laagste punt van de binnenkant van de put in meter.')
+                                    definition='Het verschil tussen het maaiveldpeil en het laagste punt van de binnenkant van de put in meter.',
+                                    owner=self)
 
         self._maaiveldpeil = OTLAttribuut(field=KwantWrdInMeterTAW,
                                           naam='maaiveldpeil',
                                           label='maaiveldpeil',
                                           objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Put.maaiveldpeil',
-                                          definition='De hoogte van het grondoppervlak in meter-TAW in het midden van het deksel van de put.')
+                                          definition='De hoogte van het grondoppervlak in meter-TAW in het midden van het deksel van de put.',
+                                          owner=self)
 
         self._technischeFiche = OTLAttribuut(field=DtcDocument,
                                              naam='technischeFiche',
                                              label='technische fiche',
                                              objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Put.technischeFiche',
                                              kardinaliteit_max='*',
-                                             definition='De technische fiche van de put.')
+                                             definition='De technische fiche van de put.',
+                                             owner=self)
 
         self._toestandPut = OTLAttribuut(field=DteTekstblok,
                                          naam='toestandPut',
                                          label='toestand put',
                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Put.toestandPut',
-                                         definition='Opmerkingen van de toestand en staat van de (verbindings-)put.')
+                                         definition='Opmerkingen van de toestand en staat van de (verbindings-)put.',
+                                         owner=self)
 
     @property
     def adres(self):

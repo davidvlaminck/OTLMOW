@@ -17,7 +17,8 @@ class AIMDBStatus(ABC):
                                       naam='isActief',
                                       label='is actief',
                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMDBStatus.isActief',
-                                      definition='Geeft aan of het object actief kan gebruikt worden of (zacht) verwijderd is uit het asset beheer systeem.')
+                                      definition='Geeft aan of het object actief kan gebruikt worden of (zacht) verwijderd is uit het asset beheer systeem.',
+                                      owner=self)
 
     @property
     def isActief(self):

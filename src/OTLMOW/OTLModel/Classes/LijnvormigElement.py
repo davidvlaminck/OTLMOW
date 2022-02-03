@@ -21,7 +21,8 @@ class LijnvormigElement(AIMObject):
                                              label='technische fiche',
                                              objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#LijnvormigElement.technischeFiche',
                                              kardinaliteit_max='*',
-                                             definition='De technische fiche van het lijnvormig element.')
+                                             definition='De technische fiche van het lijnvormig element.',
+                                             owner=self)
 
     @property
     def technischeFiche(self):

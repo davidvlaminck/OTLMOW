@@ -7,53 +7,61 @@ from OTLMOW.OTLModel.Datatypes.KlRackMerk import KlRackMerk
 from OTLMOW.OTLModel.Datatypes.KlRackModelnaam import KlRackModelnaam
 from OTLMOW.OTLModel.Datatypes.KlRackType import KlRackType
 from OTLMOW.OTLModel.Datatypes.KwantWrdInCentimeter import KwantWrdInCentimeter
+from OTLMOW.GeometrieArtefact.PuntGeometrie import PuntGeometrie
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Rack(AIMNaamObject):
+class Rack(AIMNaamObject, PuntGeometrie):
     """Interne draagstructuur binnen een behuizing voor (elektromechanische) toestellen."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Rack'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        super().__init__()
+        AIMNaamObject.__init__(self)
+        PuntGeometrie.__init__(self)
 
         self._diepte = OTLAttribuut(field=KwantWrdInCentimeter,
                                     naam='diepte',
                                     label='diepte',
                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Rack.diepte',
-                                    definition='De diepte van het rack tussen de voorste en achterste rails.')
+                                    definition='De diepte van het rack tussen de voorste en achterste rails.',
+                                    owner=self)
 
         self._hoogteInRU = OTLAttribuut(field=IntegerField,
                                         naam='hoogteInRU',
                                         label='hoogte in RU',
                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Rack.hoogteInRU',
-                                        definition='Bruikbare ruimte om toestellen te monteren, uitgedrukt in RU (rack units).')
+                                        definition='Bruikbare ruimte om toestellen te monteren, uitgedrukt in RU (rack units).',
+                                        owner=self)
 
         self._huidigBeeld = OTLAttribuut(field=DtcDocument,
                                          naam='huidigBeeld',
                                          label='huidig beeld',
                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Rack.huidigBeeld',
-                                         definition='Foto of schematische voorstelling van de huidige samenstelling van de samenstelling in het rack.')
+                                         definition='Foto of schematische voorstelling van de huidige samenstelling van de samenstelling in het rack.',
+                                         owner=self)
 
         self._merk = OTLAttribuut(field=KlRackMerk,
                                   naam='merk',
                                   label='merk',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Rack.merk',
-                                  definition='Merk waarmee de fabrikant dit type rack identificeert.')
+                                  definition='Merk waarmee de fabrikant dit type rack identificeert.',
+                                  owner=self)
 
         self._modelnaam = OTLAttribuut(field=KlRackModelnaam,
                                        naam='modelnaam',
                                        label='modelnaam',
                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Rack.modelnaam',
-                                       definition='Modelnaam waarmee de fabrikant dit type toestel identificeert.')
+                                       definition='Modelnaam waarmee de fabrikant dit type toestel identificeert.',
+                                       owner=self)
 
         self._rackType = OTLAttribuut(field=KlRackType,
                                       naam='rackType',
                                       label='Rack type',
                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Rack.rackType',
-                                      definition='Geeft het type aan voor een rack volgens een keuzelijst van beschikbare types.')
+                                      definition='Geeft het type aan voor een rack volgens een keuzelijst van beschikbare types.',
+                                      owner=self)
 
     @property
     def diepte(self):

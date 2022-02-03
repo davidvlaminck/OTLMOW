@@ -20,7 +20,8 @@ class DNBMeter(Energiemeter):
                                                    naam='meteropnameFrequentie',
                                                    label='meteropname frequentie',
                                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#DNBMeter.meteropnameFrequentie',
-                                                   definition='Frequentie waarmee de meterstand opgenomen wordt door de netbeheerder.')
+                                                   definition='Frequentie waarmee de meterstand opgenomen wordt door de netbeheerder.',
+                                                   owner=self)
 
     @property
     def meteropnameFrequentie(self):

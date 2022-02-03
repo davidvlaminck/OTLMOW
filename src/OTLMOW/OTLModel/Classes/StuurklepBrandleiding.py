@@ -18,7 +18,8 @@ class StuurklepBrandleiding(Brandvoorziening):
                                                naam='heeftLeegloopklep',
                                                label='heeft leegloopklep',
                                                objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#StuurklepBrandleiding.heeftLeegloopklep',
-                                               definition='Voorziet een mogelijkheid om via de klep de brandleiding te laten leeglopen.')
+                                               definition='Voorziet een mogelijkheid om via de klep de brandleiding te laten leeglopen.',
+                                               owner=self)
 
     @property
     def heeftLeegloopklep(self):

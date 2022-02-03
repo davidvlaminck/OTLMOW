@@ -21,19 +21,22 @@ class BeheerSierbeplanting(AIMObject):
                                          label='beheeroptie',
                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#BeheerSierbeplanting.beheeroptie',
                                          kardinaliteit_max='*',
-                                         definition='Aanduiding van welk beheer wordt toegepast op de sierbeplanting.')
+                                         definition='Aanduiding van welk beheer wordt toegepast op de sierbeplanting.',
+                                         owner=self)
 
         self._heeftBeheerplan = OTLAttribuut(field=BooleanField,
                                              naam='heeftBeheerplan',
                                              label='heeft beheerplan',
                                              objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#BeheerSierbeplanting.heeftBeheerplan',
-                                             definition='Aanduiding of er een beheerplan bestaat.')
+                                             definition='Aanduiding of er een beheerplan bestaat.',
+                                             owner=self)
 
         self._oppervlakte = OTLAttribuut(field=KwantWrdInVierkanteMeter,
                                          naam='oppervlakte',
                                          label='oppervlakte',
                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#BeheerSierbeplanting.oppervlakte',
-                                         definition='De oppervlakte in vierkante meter van de te behandelen sierbeplanting.')
+                                         definition='De oppervlakte in vierkante meter van de te behandelen sierbeplanting.',
+                                         owner=self)
 
     @property
     def beheeroptie(self):

@@ -18,13 +18,15 @@ class AB(EMObject):
                                     naam='IP-adres',
                                     label='IP adres',
                                     objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#AB.ipAdres',
-                                    definitie='IP adres eigenschap voor legacy objecten')
+                                    definitie='IP adres eigenschap voor legacy objecten',
+                                    owner=self)
 
         self._notitieinspectie = EMAttribuut(field=StringField,
                                              naam='notitieInspectie',
                                              label='notitieInspectie',
                                              objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#EMObject.notitieinspectie',
-                                             definitie='Definitie nog toe te voegen voor eigenschap notitie')
+                                             definitie='Definitie nog toe te voegen voor eigenschap notitie',
+                                             owner=self)
 
     @property
     def ipAdres(self):

@@ -12,10 +12,11 @@ from OTLMOW.OTLModel.Datatypes.KwantWrdInCentimeter import KwantWrdInCentimeter
 from OTLMOW.OTLModel.Datatypes.KwantWrdInKiloNewtonPerVierkanteMeter import KwantWrdInKiloNewtonPerVierkanteMeter
 from OTLMOW.OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter
 from OTLMOW.OTLModel.Datatypes.KwantWrdInVierkanteMeter import KwantWrdInVierkanteMeter
+from OTLMOW.GeometrieArtefact.LijnGeometrie import LijnGeometrie
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class GeluidswerendeConstructie(LijnvormigElement):
+class GeluidswerendeConstructie(LijnvormigElement, LijnGeometrie):
     """Een geluidswerende wandvormige constructie bestaande uit een desgevallend geluidsisolerend materiaal en/of geluidsabsorberend materiaal en voorzien van de nodige structuren om de bouwkundige stabiliteit te verzekeren."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#GeluidswerendeConstructie'
@@ -24,7 +25,8 @@ class GeluidswerendeConstructie(LijnvormigElement):
     deprecated_version = '2.0.0'
 
     def __init__(self):
-        super().__init__()
+        LijnvormigElement.__init__(self)
+        LijnGeometrie.__init__(self)
 
         self._detailplan3dAsbuilt = OTLAttribuut(field=DtcDocument,
                                                  naam='detailplan3dAsbuilt',
@@ -32,7 +34,8 @@ class GeluidswerendeConstructie(LijnvormigElement):
                                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#GeluidswerendeConstructie.detailplan3dAsbuilt',
                                                  usagenote='Klasse uit gebruik sinds versie 2.0.0 ',
                                                  deprecated_version='2.0.0',
-                                                 definition='Detailplan als document bijlage (3D as-built DWG of DXF bestand).')
+                                                 definition='Detailplan als document bijlage (3D as-built DWG of DXF bestand).',
+                                                 owner=self)
 
         self._heeftAfdeklatten = OTLAttribuut(field=BooleanField,
                                               naam='heeftAfdeklatten',
@@ -40,7 +43,8 @@ class GeluidswerendeConstructie(LijnvormigElement):
                                               objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#GeluidswerendeConstructie.heeftAfdeklatten',
                                               usagenote='Klasse uit gebruik sinds versie 2.0.0 ',
                                               deprecated_version='2.0.0',
-                                              definition='Bepaling of er boven- of onderaan latten gebruikt worden om de geluidswerende constructie te laten aansluiten op de tunnel.')
+                                              definition='Bepaling of er boven- of onderaan latten gebruikt worden om de geluidswerende constructie te laten aansluiten op de tunnel.',
+                                              owner=self)
 
         self._horizontaalRuimteBeslag = OTLAttribuut(field=KwantWrdInMeter,
                                                      naam='horizontaalRuimteBeslag',
@@ -48,7 +52,8 @@ class GeluidswerendeConstructie(LijnvormigElement):
                                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#GeluidswerendeConstructie.horizontaalRuimteBeslag',
                                                      usagenote='Klasse uit gebruik sinds versie 2.0.0 ',
                                                      deprecated_version='2.0.0',
-                                                     definition='De totale dikte in dwarsdoorsnede die wordt ingenomen door de geluidswerende constructie.')
+                                                     definition='De totale dikte in dwarsdoorsnede die wordt ingenomen door de geluidswerende constructie.',
+                                                     owner=self)
 
         self._individueleHoogteSchermelement = OTLAttribuut(field=KwantWrdInCentimeter,
                                                             naam='individueleHoogteSchermelement',
@@ -56,7 +61,8 @@ class GeluidswerendeConstructie(LijnvormigElement):
                                                             objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#GeluidswerendeConstructie.individueleHoogteSchermelement',
                                                             usagenote='Klasse uit gebruik sinds versie 2.0.0 ',
                                                             deprecated_version='2.0.0',
-                                                            definition='De hoogte in centimeter van het schermelement, verticaal gemeten.')
+                                                            definition='De hoogte in centimeter van het schermelement, verticaal gemeten.',
+                                                            owner=self)
 
         self._individueleLengteSchermelement = OTLAttribuut(field=KwantWrdInCentimeter,
                                                             naam='individueleLengteSchermelement',
@@ -64,7 +70,8 @@ class GeluidswerendeConstructie(LijnvormigElement):
                                                             objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#GeluidswerendeConstructie.individueleLengteSchermelement',
                                                             usagenote='Klasse uit gebruik sinds versie 2.0.0 ',
                                                             deprecated_version='2.0.0',
-                                                            definition='De lengte van het schermelement in centimeter zonder inbegrip van de profielen, horizontaal gemeten.')
+                                                            definition='De lengte van het schermelement in centimeter zonder inbegrip van de profielen, horizontaal gemeten.',
+                                                            owner=self)
 
         self._isBeginOfEindConstructie = OTLAttribuut(field=BooleanField,
                                                       naam='isBeginOfEindConstructie',
@@ -72,7 +79,8 @@ class GeluidswerendeConstructie(LijnvormigElement):
                                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#GeluidswerendeConstructie.isBeginOfEindConstructie',
                                                       usagenote='Klasse uit gebruik sinds versie 2.0.0 ',
                                                       deprecated_version='2.0.0',
-                                                      definition='Bepaling of het gaat om een begin- of eindconstructie.')
+                                                      definition='Bepaling of het gaat om een begin- of eindconstructie.',
+                                                      owner=self)
 
         self._kleur = OTLAttribuut(field=DteKleurRAL,
                                    naam='kleur',
@@ -80,7 +88,8 @@ class GeluidswerendeConstructie(LijnvormigElement):
                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#GeluidswerendeConstructie.kleur',
                                    usagenote='Klasse uit gebruik sinds versie 2.0.0 ',
                                    deprecated_version='2.0.0',
-                                   definition='De RAL kleur van de geluidswerende constructie.')
+                                   definition='De RAL kleur van de geluidswerende constructie.',
+                                   owner=self)
 
         self._materiaalKarakteristiek = OTLAttribuut(field=DtcGCMateriaalKarakteristiek,
                                                      naam='materiaalKarakteristiek',
@@ -89,7 +98,8 @@ class GeluidswerendeConstructie(LijnvormigElement):
                                                      usagenote='Klasse uit gebruik sinds versie 2.0.0 ',
                                                      deprecated_version='2.0.0',
                                                      kardinaliteit_max='*',
-                                                     definition='Het materiaal van de geluidswerende constructie en het geluidskarakteristiek van het materiaal.')
+                                                     definition='Het materiaal van de geluidswerende constructie en het geluidskarakteristiek van het materiaal.',
+                                                     owner=self)
 
         self._maximaleDikteSchermelement = OTLAttribuut(field=KwantWrdInCentimeter,
                                                         naam='maximaleDikteSchermelement',
@@ -97,7 +107,8 @@ class GeluidswerendeConstructie(LijnvormigElement):
                                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#GeluidswerendeConstructie.maximaleDikteSchermelement',
                                                         usagenote='Klasse uit gebruik sinds versie 2.0.0 ',
                                                         deprecated_version='2.0.0',
-                                                        definition='De maximale dikte van het schermelement in centimeter gemeten vanaf het verst uitstekende gedeelte aan de voorzijde tot het verst uitstekende gedeelte aan de achterzijde van het schermelement.')
+                                                        definition='De maximale dikte van het schermelement in centimeter gemeten vanaf het verst uitstekende gedeelte aan de voorzijde tot het verst uitstekende gedeelte aan de achterzijde van het schermelement.',
+                                                        owner=self)
 
         self._opstelling = OTLAttribuut(field=KlLEGCOpstelling,
                                         naam='opstelling',
@@ -105,7 +116,8 @@ class GeluidswerendeConstructie(LijnvormigElement):
                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#GeluidswerendeConstructie.opstelling',
                                         usagenote='Klasse uit gebruik sinds versie 2.0.0 ',
                                         deprecated_version='2.0.0',
-                                        definition='De wijze waarop de geluidswerende constructie is geplaatst ten opzichte van de weg.')
+                                        definition='De wijze waarop de geluidswerende constructie is geplaatst ten opzichte van de weg.',
+                                        owner=self)
 
         self._overzichtSchermhoogte = OTLAttribuut(field=KwantWrdInCentimeter,
                                                    naam='overzichtSchermhoogte',
@@ -113,7 +125,8 @@ class GeluidswerendeConstructie(LijnvormigElement):
                                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#GeluidswerendeConstructie.overzichtSchermhoogte',
                                                    usagenote='Klasse uit gebruik sinds versie 2.0.0 ',
                                                    deprecated_version='2.0.0',
-                                                   definition='Hoogte gemeten van het maaiveld tot aan de top van de geluidswerende constructie.')
+                                                   definition='Hoogte gemeten van het maaiveld tot aan de top van de geluidswerende constructie.',
+                                                   owner=self)
 
         self._schermelement = OTLAttribuut(field=KlLEGCSchermelementType,
                                            naam='schermelement',
@@ -122,7 +135,8 @@ class GeluidswerendeConstructie(LijnvormigElement):
                                            usagenote='Klasse uit gebruik sinds versie 2.0.0 ',
                                            deprecated_version='2.0.0',
                                            kardinaliteit_max='*',
-                                           definition='Het type van schermelement.')
+                                           definition='Het type van schermelement.',
+                                           owner=self)
 
         self._schermtype = OTLAttribuut(field=KlLEGCSchermtype,
                                         naam='schermtype',
@@ -131,7 +145,8 @@ class GeluidswerendeConstructie(LijnvormigElement):
                                         usagenote='Klasse uit gebruik sinds versie 2.0.0 ',
                                         deprecated_version='2.0.0',
                                         kardinaliteit_max='*',
-                                        definition='Bepaling van een vlak of niet-vlak scherm. Een vlak scherm zijn alle schermtypes die getest kunnen worden volgens de normen NBN EN 1793-1 NBN EN 1793-2.De niet-vlakke schermen zijn de schermen die niet kunnen getest worden volgens de normen NBN EN 1793-1 NBN EN 1793-2.')
+                                        definition='Bepaling van een vlak of niet-vlak scherm. Een vlak scherm zijn alle schermtypes die getest kunnen worden volgens de normen NBN EN 1793-1 NBN EN 1793-2.De niet-vlakke schermen zijn de schermen die niet kunnen getest worden volgens de normen NBN EN 1793-1 NBN EN 1793-2.',
+                                        owner=self)
 
         self._statischeBelasting = OTLAttribuut(field=KwantWrdInKiloNewtonPerVierkanteMeter,
                                                 naam='statischeBelasting',
@@ -139,7 +154,8 @@ class GeluidswerendeConstructie(LijnvormigElement):
                                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#GeluidswerendeConstructie.statischeBelasting',
                                                 usagenote='Klasse uit gebruik sinds versie 2.0.0 ',
                                                 deprecated_version='2.0.0',
-                                                definition='Getal in kN/m2 voor de aanduiding van de belasting zonder dynamisch effect, bv. eigengewicht.')
+                                                definition='Getal in kN/m2 voor de aanduiding van de belasting zonder dynamisch effect, bv. eigengewicht.',
+                                                owner=self)
 
         self._testrapport = OTLAttribuut(field=DtcDocument,
                                          naam='testrapport',
@@ -148,7 +164,8 @@ class GeluidswerendeConstructie(LijnvormigElement):
                                          usagenote='Klasse uit gebruik sinds versie 2.0.0 ',
                                          deprecated_version='2.0.0',
                                          kardinaliteit_max='*',
-                                         definition='De testresultaten van een geluidswerende constructie.')
+                                         definition='De testresultaten van een geluidswerende constructie.',
+                                         owner=self)
 
         self._totaleLengte = OTLAttribuut(field=KwantWrdInMeter,
                                           naam='totaleLengte',
@@ -156,7 +173,8 @@ class GeluidswerendeConstructie(LijnvormigElement):
                                           objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#GeluidswerendeConstructie.totaleLengte',
                                           usagenote='Klasse uit gebruik sinds versie 2.0.0 ',
                                           deprecated_version='2.0.0',
-                                          definition='De totale lengte van de geluidswerende constructie in meter gemeten vanaf het beginpunt tot het eindpunt.')
+                                          definition='De totale lengte van de geluidswerende constructie in meter gemeten vanaf het beginpunt tot het eindpunt.',
+                                          owner=self)
 
         self._totaleOppervlakte = OTLAttribuut(field=KwantWrdInVierkanteMeter,
                                                naam='totaleOppervlakte',
@@ -164,7 +182,8 @@ class GeluidswerendeConstructie(LijnvormigElement):
                                                objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#GeluidswerendeConstructie.totaleOppervlakte',
                                                usagenote='Klasse uit gebruik sinds versie 2.0.0 ',
                                                deprecated_version='2.0.0',
-                                               definition='De totale oppervlakte van alle geplaatste geluidswerende constructie elementen.')
+                                               definition='De totale oppervlakte van alle geplaatste geluidswerende constructie elementen.',
+                                               owner=self)
 
         self._videoVoertuigkering = OTLAttribuut(field=DtcDocument,
                                                  naam='videoVoertuigkering',
@@ -173,7 +192,8 @@ class GeluidswerendeConstructie(LijnvormigElement):
                                                  usagenote='Klasse uit gebruik sinds versie 2.0.0 ',
                                                  deprecated_version='2.0.0',
                                                  kardinaliteit_max='*',
-                                                 definition='Video van de testen op geluidswerende constructies.')
+                                                 definition='Video van de testen op geluidswerende constructies.',
+                                                 owner=self)
 
         self._windbelasting = OTLAttribuut(field=KwantWrdInKiloNewtonPerVierkanteMeter,
                                            naam='windbelasting',
@@ -181,7 +201,8 @@ class GeluidswerendeConstructie(LijnvormigElement):
                                            objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#GeluidswerendeConstructie.windbelasting',
                                            usagenote='Klasse uit gebruik sinds versie 2.0.0 ',
                                            deprecated_version='2.0.0',
-                                           definition='Getal in kN/m2 voor de aanduiding van de maximale windbelasting volgens de norm NBN EN 1994-1-4.')
+                                           definition='Getal in kN/m2 voor de aanduiding van de maximale windbelasting volgens de norm NBN EN 1994-1-4.',
+                                           owner=self)
 
     @property
     def detailplan3dAsbuilt(self):

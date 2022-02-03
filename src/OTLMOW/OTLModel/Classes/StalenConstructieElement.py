@@ -3,6 +3,7 @@ from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from abc import abstractmethod, ABC
 from OTLMOW.OTLModel.Datatypes.DtcConstructiestaalspecificaties import DtcConstructiestaalspecificaties
 from OTLMOW.OTLModel.Datatypes.KwantWrdInKilogram import KwantWrdInKilogram
+from OTLMOW.GeometrieArtefact.PuntGeometrie import PuntGeometrie
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
@@ -14,17 +15,21 @@ class StalenConstructieElement(ABC):
 
     @abstractmethod
     def __init__(self):
+        super().__init__()
+
         self._staalspecificaties = OTLAttribuut(field=DtcConstructiestaalspecificaties,
                                                 naam='staalspecificaties',
                                                 label='staalspecificaties',
                                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#StalenConstructieElement.staalspecificaties',
-                                                definition='Eigenschappen van het gebruikte constructiestaal.')
+                                                definition='Eigenschappen van het gebruikte constructiestaal.',
+                                                owner=self)
 
         self._totaalGewicht = OTLAttribuut(field=KwantWrdInKilogram,
                                            naam='totaalGewicht',
                                            label='totaal gewicht',
                                            objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#StalenConstructieElement.totaalGewicht',
-                                           definition='Een kwantitatieve waarde in kilogram van het totale stalen element.')
+                                           definition='Een kwantitatieve waarde in kilogram van het totale stalen element.',
+                                           owner=self)
 
     @property
     def staalspecificaties(self):

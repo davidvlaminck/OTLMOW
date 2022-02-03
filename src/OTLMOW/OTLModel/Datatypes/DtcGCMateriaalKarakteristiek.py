@@ -14,13 +14,15 @@ class DtcGCMateriaalKarakteristiekWaarden(AttributeInfo):
                                                    naam='geluidskarakteristiek',
                                                    label='geluidskarakteristiek',
                                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcGCMateriaalKarakteristiek.geluidskarakteristiek',
-                                                   definition='Het kenmerkend gedrag inzake geluid van de geluidswerende constructie.')
+                                                   definition='Het kenmerkend gedrag inzake geluid van de geluidswerende constructie.',
+                                                   owner=self)
 
         self._materiaal = OTLAttribuut(field=KlLEGCMateriaal,
                                        naam='materiaal',
                                        label='materiaal',
                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcGCMateriaalKarakteristiek.materiaal',
-                                       definition='Het materiaal van de geluidswerende constructie.')
+                                       definition='Het materiaal van de geluidswerende constructie.',
+                                       owner=self)
 
     @property
     def geluidskarakteristiek(self):

@@ -13,7 +13,8 @@ class DteTekstblokWaarden(AttributeInfo):
                                     naam='waarde',
                                     label='waarde',
                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DteTekstblok.waarde',
-                                    definition='De string welke uit meerdere zinnen bestaat, en ook regeleindes kan bevatten. Een tekstblok bevat maximaal 65.000 karakters.')
+                                    definition='De string welke uit meerdere zinnen bestaat, en ook regeleindes kan bevatten. Een tekstblok bevat maximaal 65.000 karakters.',
+                                    owner=self)
 
     @property
     def waarde(self):

@@ -19,19 +19,22 @@ class MeteropnameEnergiemeterGecombineerd(MeteropnameEnergiemeter):
                                             naam='meterstandPiek',
                                             label='meterstand piek',
                                             objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#MeteropnameEnergiemeterGecombineerd.meterstandPiek',
-                                            definition='De stand van de energiemeter waarmee het piekvermogen gemeten wordt.')
+                                            definition='De stand van de energiemeter waarmee het piekvermogen gemeten wordt.',
+                                            owner=self)
 
         self._meterstandReactiefVermogenDag = OTLAttribuut(field=KwantWrdInkVARh,
                                                            naam='meterstandReactiefVermogenDag',
                                                            label='dag-meterstand reactief vermogen',
                                                            objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#MeteropnameEnergiemeterGecombineerd.meterstandReactiefVermogenDag',
-                                                           definition='De stand van de dag-energiemeter waarmee het reactief vermogen gemeten wordt.')
+                                                           definition='De stand van de dag-energiemeter waarmee het reactief vermogen gemeten wordt.',
+                                                           owner=self)
 
         self._meterstandReactiefVermogenNacht = OTLAttribuut(field=KwantWrdInkVARh,
                                                              naam='meterstandReactiefVermogenNacht',
                                                              label='nacht-meterstand reactief vermogen',
                                                              objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#MeteropnameEnergiemeterGecombineerd.meterstandReactiefVermogenNacht',
-                                                             definition='De stand van de nacht-energiemeter waarmee het reactief vermogen gemeten wordt.')
+                                                             definition='De stand van de nacht-energiemeter waarmee het reactief vermogen gemeten wordt.',
+                                                             owner=self)
 
     @property
     def meterstandPiek(self):

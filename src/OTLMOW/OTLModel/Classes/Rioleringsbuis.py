@@ -21,25 +21,29 @@ class Rioleringsbuis(Buis):
                                                            naam='aantalAfgedichteAansluitingen',
                                                            label='Aantal afgedichte aansluitingen',
                                                            objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Rioleringsbuis.aantalAfgedichteAansluitingen',
-                                                           definition='De afgedichte verlaten aansluitingsopeningen van straatkolken en/of huisaansluitingen in de rioleringsbuis.')
+                                                           definition='De afgedichte verlaten aansluitingsopeningen van straatkolken en/of huisaansluitingen in de rioleringsbuis.',
+                                                           owner=self)
 
         self._functie = OTLAttribuut(field=KlRioleringsbuisFunctie,
                                      naam='functie',
                                      label='functie',
                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Rioleringsbuis.functie',
-                                     definition='Bepaalt de functie van de rioleringsbuis.')
+                                     definition='Bepaalt de functie van de rioleringsbuis.',
+                                     owner=self)
 
         self._materiaal = OTLAttribuut(field=KlRioleringsbuisMateriaal,
                                        naam='materiaal',
                                        label='materiaal',
                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Rioleringsbuis.materiaal',
-                                       definition='Bepaalt het materiaal van de rioleringsbuis.')
+                                       definition='Bepaalt het materiaal van de rioleringsbuis.',
+                                       owner=self)
 
         self._sterktereeks = OTLAttribuut(field=KlSterktereeks,
                                           naam='sterktereeks',
                                           label='sterktereeks',
                                           objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Rioleringsbuis.sterktereeks',
-                                          definition='De stabiliteitsklasse van de buis.')
+                                          definition='De stabiliteitsklasse van de buis.',
+                                          owner=self)
 
     @property
     def aantalAfgedichteAansluitingen(self):

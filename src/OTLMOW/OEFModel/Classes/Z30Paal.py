@@ -19,19 +19,22 @@ class Z30Paal(EMObject):
                                      naam='Bord Type',
                                      label='Bord Type',
                                      objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#Z30Paal.bordType',
-                                     definitie='Bord Type')
+                                     definitie='Bord Type',
+                                     owner=self)
 
         self._genummerdeWeg = EMAttribuut(field=BooleanField,
                                           naam='Genummerde Weg',
                                           label='Genummerde Weg',
                                           objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#Z30Paal.genummerdeWeg',
-                                          definitie='Genummerde Weg')
+                                          definitie='Genummerde Weg',
+                                          owner=self)
 
         self._producent = EMAttribuut(field=StringField,
                                       naam='Producent',
                                       label='Producent',
                                       objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#Z30Paal.producent',
-                                      definitie='Producent')
+                                      definitie='Producent',
+                                      owner=self)
 
     @property
     def bordType(self):

@@ -16,25 +16,29 @@ class DtcHoutspecificatiesWaarden(AttributeInfo):
                                                      naam='houtduurzaamheidsklasse',
                                                      label='houtduurzaamheidsklasse',
                                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcHoutspecificaties.houtduurzaamheidsklasse',
-                                                     definition='De verwachte levensduur van het hout. De klasse geeft de resistentie aan van het kernhout tegen ongunstige omstandigheden.')
+                                                     definition='De verwachte levensduur van het hout. De klasse geeft de resistentie aan van het kernhout tegen ongunstige omstandigheden.',
+                                                     owner=self)
 
         self._houtkwaliteitsklasse = OTLAttribuut(field=KlKwaliteitsklasseHout,
                                                   naam='houtkwaliteitsklasse',
                                                   label='houtkwaliteitsklasse',
                                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcHoutspecificaties.houtkwaliteitsklasse',
-                                                  definition='Kwaliteitsindeling van de houtsoort met betrekking op vervormingen, scheuren en kwasten.')
+                                                  definition='Kwaliteitsindeling van de houtsoort met betrekking op vervormingen, scheuren en kwasten.',
+                                                  owner=self)
 
         self._houtsterkteklasse = OTLAttribuut(field=KlSterkteklasseHout,
                                                naam='houtsterkteklasse',
                                                label='houtsterkteklasse',
                                                objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcHoutspecificaties.houtsterkteklasse',
-                                               definition='De maximale belasting van het hout. Deze klasse geeft aan hoe sterk en voor welke constructies de houtsoort geschikt is.')
+                                               definition='De maximale belasting van het hout. Deze klasse geeft aan hoe sterk en voor welke constructies de houtsoort geschikt is.',
+                                               owner=self)
 
         self._isResistentTegenMarieneBoorders = OTLAttribuut(field=BooleanField,
                                                              naam='isResistentTegenMarieneBoorders',
                                                              label='is resistent tegen mariene boorders',
                                                              objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcHoutspecificaties.isResistentTegenMarieneBoorders',
-                                                             definition='Geeft aan of het hout resistent is bij toepassingen in contact met zout of brak water.')
+                                                             definition='Geeft aan of het hout resistent is bij toepassingen in contact met zout of brak water.',
+                                                             owner=self)
 
     @property
     def houtduurzaamheidsklasse(self):

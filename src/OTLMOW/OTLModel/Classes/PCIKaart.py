@@ -3,29 +3,33 @@ from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLMOW.OTLModel.Classes.AIMNaamObject import AIMNaamObject
 from OTLMOW.OTLModel.Datatypes.KlPCIkaartMerk import KlPCIkaartMerk
 from OTLMOW.OTLModel.Datatypes.KlPCIkaartModelnaam import KlPCIkaartModelnaam
+from OTLMOW.GeometrieArtefact.PuntGeometrie import PuntGeometrie
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class PCIKaart(AIMNaamObject):
+class PCIKaart(AIMNaamObject, PuntGeometrie):
     """Peripheral Component Interconnect of uitbreidingssleuf."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#PCIKaart'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        super().__init__()
+        AIMNaamObject.__init__(self)
+        PuntGeometrie.__init__(self)
 
         self._merk = OTLAttribuut(field=KlPCIkaartMerk,
                                   naam='merk',
                                   label='merk',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#PCIKaart.merk',
-                                  definition='Het merk van de PCI-kaart.')
+                                  definition='Het merk van de PCI-kaart.',
+                                  owner=self)
 
         self._modelnaam = OTLAttribuut(field=KlPCIkaartModelnaam,
                                        naam='modelnaam',
                                        label='modelnaam',
                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#PCIKaart.modelnaam',
-                                       definition='De modelnaam van de PCI-kaart.')
+                                       definition='De modelnaam van de PCI-kaart.',
+                                       owner=self)
 
     @property
     def merk(self):

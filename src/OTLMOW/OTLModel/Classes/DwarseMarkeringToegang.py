@@ -1,12 +1,12 @@
 # coding=utf-8
-from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from abc import abstractmethod
 from OTLMOW.OTLModel.Classes.Markering import Markering
 from OTLMOW.OTLModel.Classes.AOWSType import AOWSType
+from OTLMOW.GeometrieArtefact.VlakGeometrie import VlakGeometrie
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class DwarseMarkeringToegang(Markering, AOWSType):
+class DwarseMarkeringToegang(Markering, AOWSType, VlakGeometrie):
     """Abstracte als toegang tot de verschillende soorten dwarse markeringen."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#DwarseMarkeringToegang'
@@ -16,3 +16,4 @@ class DwarseMarkeringToegang(Markering, AOWSType):
     def __init__(self):
         AOWSType.__init__(self)
         Markering.__init__(self)
+        VlakGeometrie.__init__(self)

@@ -21,31 +21,36 @@ class DwarseMarkeringVerschuind(DwarseMarkeringToegang):
                                               naam='basisoppervlakte',
                                               label='oppervlakte',
                                               objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DwarseMarkeringVerschuind.basisoppervlakte',
-                                              definition='De basisoppervlakte van de dwarse markering in vierkante meter.')
+                                              definition='De basisoppervlakte van de dwarse markering in vierkante meter.',
+                                              owner=self)
 
         self._code = OTLAttribuut(field=KlDwarseMarkeringVerschuindCode,
                                   naam='code',
                                   label='code',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DwarseMarkeringVerschuind.code',
-                                  definition='De (COPRO/BENOR)  code van dwarse markering.')
+                                  definition='De (COPRO/BENOR)  code van dwarse markering.',
+                                  owner=self)
 
         self._hoek = OTLAttribuut(field=KwantWrdInDecimaleGraden,
                                   naam='hoek',
                                   label='hoek',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DwarseMarkeringVerschuind.hoek',
-                                  definition='De hoek van de verschuinde dwarsmarkering in decimale graden.')
+                                  definition='De hoek van de verschuinde dwarsmarkering in decimale graden.',
+                                  owner=self)
 
         self._oppervlakte = OTLAttribuut(field=KwantWrdInVierkanteMeter,
                                          naam='oppervlakte',
                                          label='oppervlakte',
                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DwarseMarkeringVerschuind.oppervlakte',
-                                         definition='De oppervlakte van een dwarsmarkering na verschuining.')
+                                         definition='De oppervlakte van een dwarsmarkering na verschuining.',
+                                         owner=self)
 
         self._soortOmschrijving = OTLAttribuut(field=KlDwarseMarkeringVerschuindSoort,
                                                naam='soortOmschrijving',
                                                label='soort omschrijving',
                                                objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DwarseMarkeringVerschuind.soortOmschrijving',
-                                               definition='De soort en tevens de omschrijving van dwarse markering.')
+                                               definition='De soort en tevens de omschrijving van dwarse markering.',
+                                               owner=self)
 
     @property
     def basisoppervlakte(self):

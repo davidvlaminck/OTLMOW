@@ -22,25 +22,29 @@ class Laag(AIMObject):
                                      naam='breedte',
                                      label='breedte',
                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Laag.breedte',
-                                     definition='De (gemiddelde) breedte van een laag in meter. Dit kan ook de nominale breedte zijn afhankelijk van de laag en situatie.')
+                                     definition='De (gemiddelde) breedte van een laag in meter. Dit kan ook de nominale breedte zijn afhankelijk van de laag en situatie.',
+                                     owner=self)
 
         self._laagRol = OTLAttribuut(field=KlLaagRol,
                                      naam='laagRol',
                                      label='laagrol',
                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Laag.laagRol',
-                                     definition='De functie die de laag vervult in de verticale opbouw.')
+                                     definition='De functie die de laag vervult in de verticale opbouw.',
+                                     owner=self)
 
         self._lengte = OTLAttribuut(field=KwantWrdInMeter,
                                     naam='lengte',
                                     label='lengte',
                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Laag.lengte',
-                                    definition='De (gemiddelde) lengte van een laag in meter. Dit kan ook de nominale lengte zijn afhankelijk van de laag en situatie.')
+                                    definition='De (gemiddelde) lengte van een laag in meter. Dit kan ook de nominale lengte zijn afhankelijk van de laag en situatie.',
+                                    owner=self)
 
         self._oppervlakte = OTLAttribuut(field=KwantWrdInVierkanteMeter,
                                          naam='oppervlakte',
                                          label='oppervlakte',
                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Laag.oppervlakte',
-                                         definition='De oppervlakte van een laag in vierkante meter.')
+                                         definition='De oppervlakte van een laag in vierkante meter.',
+                                         owner=self)
 
     @property
     def breedte(self):

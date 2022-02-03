@@ -19,37 +19,43 @@ class HS(EMObject):
                                                 naam='datum eerste controle',
                                                 label='datum eerste controle',
                                                 objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#EMObject.datumEersteControle',
-                                                definitie='Definitie nog toe te voegen voor eigenschap datum eerste controle')
+                                                definitie='Definitie nog toe te voegen voor eigenschap datum eerste controle',
+                                                owner=self)
 
         self._datumLaatsteKeuring = EMAttribuut(field=DateField,
                                                 naam='datum laatste keuring',
                                                 label='datum laatste keuring',
                                                 objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#EMObject.datumLaatsteKeuring',
-                                                definitie='Definitie nog toe te voegen voor eigenschap datum laatste keuring')
+                                                definitie='Definitie nog toe te voegen voor eigenschap datum laatste keuring',
+                                                owner=self)
 
         self._datumRisicoanalyse = EMAttribuut(field=DateField,
                                                naam='datum risicoanalyse',
                                                label='datum risicoanalyse',
                                                objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#EMObject.datumRisicoanalyse',
-                                               definitie='Definitie nog toe te voegen voor eigenschap datum risicoanalyse')
+                                               definitie='Definitie nog toe te voegen voor eigenschap datum risicoanalyse',
+                                               owner=self)
 
         self._installatieverantwConformArt266Arei = EMAttribuut(field=StringField,
                                                                 naam='installatieverantw conform art 266 AREI',
                                                                 label='installatieverantw conform art 266 AREI',
                                                                 objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#EMObject.installatieverantwConformArt266Arei',
-                                                                definitie='Definitie nog toe te voegen voor eigenschap installatieverantw conform art 266 AREI')
+                                                                definitie='Definitie nog toe te voegen voor eigenschap installatieverantw conform art 266 AREI',
+                                                                owner=self)
 
         self._notitieinspectie = EMAttribuut(field=StringField,
                                              naam='notitieInspectie',
                                              label='notitieInspectie',
                                              objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#EMObject.notitieinspectie',
-                                             definitie='Definitie nog toe te voegen voor eigenschap notitie')
+                                             definitie='Definitie nog toe te voegen voor eigenschap notitie',
+                                             owner=self)
 
         self._resultaatKeuring = EMAttribuut(field=StringField,
                                              naam='resultaat keuring',
                                              label='resultaat keuring',
                                              objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#EMObject.resultaatKeuring',
-                                             definitie='Definitie nog toe te voegen voor eigenschap resultaat keuring')
+                                             definitie='Definitie nog toe te voegen voor eigenschap resultaat keuring',
+                                             owner=self)
 
     @property
     def datumEersteControle(self):

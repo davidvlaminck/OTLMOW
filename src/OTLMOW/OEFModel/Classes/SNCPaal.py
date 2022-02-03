@@ -18,7 +18,8 @@ class SNCPaal(EMObject):
                                                 naam='interne roestvorming',
                                                 label='interne roestvorming',
                                                 objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#EMObject.interneRoestvorming',
-                                                definitie='keuzelijst en schaalverdeling volgens inspectiehandboek')
+                                                definitie='keuzelijst en schaalverdeling volgens inspectiehandboek',
+                                                owner=self)
 
     @property
     def interneRoestvorming(self):

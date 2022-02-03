@@ -15,19 +15,22 @@ class DtcSoftwarePoortconfiguratieWaarden(AttributeInfo):
                                          naam='poortnummer',
                                          label='poortnummer',
                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcSoftwarePoortconfiguratie.poortnummer',
-                                         definition='Het nummer dat werd toegekend aan de (netwerk)poort.')
+                                         definition='Het nummer dat werd toegekend aan de (netwerk)poort.',
+                                         owner=self)
 
         self._richting = OTLAttribuut(field=KlPoortconfiguratieRichting,
                                       naam='richting',
                                       label='richting',
                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcSoftwarePoortconfiguratie.richting',
-                                      definition='De richting waarin de poort openstaat.')
+                                      definition='De richting waarin de poort openstaat.',
+                                      owner=self)
 
         self._service = OTLAttribuut(field=StringField,
                                      naam='service',
                                      label='service',
                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcSoftwarePoortconfiguratie.service',
-                                     definition='De service die op een bepaalde poort is aangesloten.')
+                                     definition='De service die op een bepaalde poort is aangesloten.',
+                                     owner=self)
 
     @property
     def poortnummer(self):

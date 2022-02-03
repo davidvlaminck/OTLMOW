@@ -1,5 +1,4 @@
 # coding=utf-8
-from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from abc import abstractmethod
 from OTLMOW.OTLModel.Classes.PTRegelaarModule import PTRegelaarModule
 from OTLMOW.OTLModel.Classes.FirmwareObject import FirmwareObject

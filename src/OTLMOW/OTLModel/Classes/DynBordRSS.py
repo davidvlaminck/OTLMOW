@@ -19,13 +19,15 @@ class DynBordRSS(LEDBord):
                                   naam='merk',
                                   label='merk',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DynBordRSS.merk',
-                                  definition='Merk van het dynamische bord.')
+                                  definition='Merk van het dynamische bord.',
+                                  owner=self)
 
         self._modelnaam = OTLAttribuut(field=KlDynBordRSSModelnaam,
                                        naam='modelnaam',
                                        label='modelnaam',
                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DynBordRSS.modelnaam',
-                                       definition='Modelnaam van het RSS-bord.')
+                                       definition='Modelnaam van het RSS-bord.',
+                                       owner=self)
 
     @property
     def merk(self):

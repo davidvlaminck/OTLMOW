@@ -19,13 +19,15 @@ class HSCabine(Cabine):
                                           naam='lokaalKlasse',
                                           label='lokaal klasse',
                                           objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#HSCabine.lokaalKlasse',
-                                          definition='Classificatie van de hoogspanningscabine als lokaal volgens Synergrid.')
+                                          definition='Classificatie van de hoogspanningscabine als lokaal volgens Synergrid.',
+                                          owner=self)
 
         self._vervaldatumVeiligheidshandschoenen = OTLAttribuut(field=DateField,
                                                                 naam='vervaldatumVeiligheidshandschoenen',
                                                                 label='vervaldatum veiligheidshandschoenen',
                                                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#HSCabine.vervaldatumVeiligheidshandschoenen',
-                                                                definition='De datum waarop de huidige veiligheidshandschoenen in de hoogspanningscabine vervallen.')
+                                                                definition='De datum waarop de huidige veiligheidshandschoenen in de hoogspanningscabine vervallen.',
+                                                                owner=self)
 
     @property
     def lokaalKlasse(self):

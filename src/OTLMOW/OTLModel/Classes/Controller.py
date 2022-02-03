@@ -4,10 +4,11 @@ from abc import abstractmethod
 from OTLMOW.OTLModel.Classes.AIMNaamObject import AIMNaamObject
 from OTLMOW.OTLModel.Datatypes.DteIPv4Adres import DteIPv4Adres
 from OTLMOW.OTLModel.Datatypes.StringField import StringField
+from OTLMOW.GeometrieArtefact.PuntGeometrie import PuntGeometrie
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Controller(AIMNaamObject):
+class Controller(AIMNaamObject, PuntGeometrie):
     """Abstracte voor allerlei types van controllers."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Controller'
@@ -15,37 +16,43 @@ class Controller(AIMNaamObject):
 
     @abstractmethod
     def __init__(self):
-        super().__init__()
+        AIMNaamObject.__init__(self)
+        PuntGeometrie.__init__(self)
 
         self._batchnummer = OTLAttribuut(field=StringField,
                                          naam='batchnummer',
                                          label='batchnummer',
                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Controller.batchnummer',
-                                         definition='Nummer van de batch.')
+                                         definition='Nummer van de batch.',
+                                         owner=self)
 
         self._dNSNaam = OTLAttribuut(field=StringField,
                                      naam='dNSNaam',
                                      label='DNS-naam',
                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Controller.dNSNaam',
-                                     definition='DNS-naam van de controller.')
+                                     definition='DNS-naam van de controller.',
+                                     owner=self)
 
         self._firmwareversie = OTLAttribuut(field=StringField,
                                             naam='firmwareversie',
                                             label='firmwareversie',
                                             objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Controller.firmwareversie',
-                                            definition='Firmwareversie van de controller.')
+                                            definition='Firmwareversie van de controller.',
+                                            owner=self)
 
         self._iPAdres = OTLAttribuut(field=DteIPv4Adres,
                                      naam='iPAdres',
                                      label='IP-adres',
                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Controller.iPAdres',
-                                     definition='IP-adres van de controller.')
+                                     definition='IP-adres van de controller.',
+                                     owner=self)
 
         self._serienummer = OTLAttribuut(field=StringField,
                                          naam='serienummer',
                                          label='serienummer',
                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Controller.serienummer',
-                                         definition='Het unieke nummer waarmee het toestel door de fabrikant geïdentificeerd is.')
+                                         definition='Het unieke nummer waarmee het toestel door de fabrikant geïdentificeerd is.',
+                                         owner=self)
 
     @property
     def batchnummer(self):

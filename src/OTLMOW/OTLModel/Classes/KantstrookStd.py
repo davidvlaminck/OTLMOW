@@ -20,25 +20,29 @@ class KantstrookStd(GestandaardiseerdeKantopsluiting):
                                      naam='breedte',
                                      label='breedte',
                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KantstrookStd.breedte',
-                                     definition='De breedte van de gestandaardiseerde kantstrook in centimeter.')
+                                     definition='De breedte van de gestandaardiseerde kantstrook in centimeter.',
+                                     owner=self)
 
         self._dikte = OTLAttribuut(field=KwantWrdInCentimeter,
                                    naam='dikte',
                                    label='dikte',
                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KantstrookStd.dikte',
-                                   definition='De dikte van de gestandaardiseerde kantstrook in centimeter.')
+                                   definition='De dikte van de gestandaardiseerde kantstrook in centimeter.',
+                                   owner=self)
 
         self._norm = OTLAttribuut(field=DtcLENorm,
                                   naam='norm',
                                   label='norm',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KantstrookStd.norm',
-                                  definition='De gestandaardiseerd kantstrook volgens aangeduide norm.')
+                                  definition='De gestandaardiseerd kantstrook volgens aangeduide norm.',
+                                  owner=self)
 
         self._type = OTLAttribuut(field=KlLEKantstrookType,
                                   naam='type',
                                   label='type',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KantstrookStd.type',
-                                  definition='Het type van gestandaardiseerde kantstrook.')
+                                  definition='Het type van gestandaardiseerde kantstrook.',
+                                  owner=self)
 
     @property
     def breedte(self):

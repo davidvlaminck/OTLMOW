@@ -5,10 +5,11 @@ from OTLMOW.OTLModel.Classes.BevestigingGC import BevestigingGC
 from OTLMOW.OTLModel.Datatypes.KlZonnepaneelMerk import KlZonnepaneelMerk
 from OTLMOW.OTLModel.Datatypes.KlZonnepaneelModelnaam import KlZonnepaneelModelnaam
 from OTLMOW.OTLModel.Datatypes.KwantWrdInWatt import KwantWrdInWatt
+from OTLMOW.GeometrieArtefact.PuntGeometrie import PuntGeometrie
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Zonnepaneel(Voedingspunt, BevestigingGC):
+class Zonnepaneel(Voedingspunt, BevestigingGC, PuntGeometrie):
     """Toestel om elektrische energie op te wekken uit zonlicht met als doel het voeden van een installatie. Ook wel fotovoltaïsche cellen of zonnecellen genoemd."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Zonnepaneel'
@@ -17,24 +18,28 @@ class Zonnepaneel(Voedingspunt, BevestigingGC):
     def __init__(self):
         BevestigingGC.__init__(self)
         Voedingspunt.__init__(self)
+        PuntGeometrie.__init__(self)
 
         self._merk = OTLAttribuut(field=KlZonnepaneelMerk,
                                   naam='merk',
                                   label='merk',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Zonnepaneel.merk',
-                                  definition='Het merk van het zonnepaneel.')
+                                  definition='Het merk van het zonnepaneel.',
+                                  owner=self)
 
         self._modelnaam = OTLAttribuut(field=KlZonnepaneelModelnaam,
                                        naam='modelnaam',
                                        label='modelnaam',
                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Zonnepaneel.modelnaam',
-                                       definition='De modelnaam van het zonnepaneel.')
+                                       definition='De modelnaam van het zonnepaneel.',
+                                       owner=self)
 
         self._vermogen = OTLAttribuut(field=KwantWrdInWatt,
                                       naam='vermogen',
                                       label='vermogen',
                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Zonnepaneel.vermogen',
-                                      definition='Het vermogen van het zonnepaneel.')
+                                      definition='Het vermogen van het zonnepaneel.',
+                                      owner=self)
 
     @property
     def merk(self):

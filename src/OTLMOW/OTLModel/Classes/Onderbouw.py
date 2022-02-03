@@ -23,25 +23,29 @@ class Onderbouw(LaagDikte, Laag):
                                        naam='isHerstel',
                                        label='is herstel',
                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Onderbouw.isHerstel',
-                                       definition='Aanduiding of de onderbouw laag is of wordt hersteld.')
+                                       definition='Aanduiding of de onderbouw laag is of wordt hersteld.',
+                                       owner=self)
 
         self._krimpvoegen = OTLAttribuut(field=DtcKrimpvoeg,
                                          naam='krimpvoegen',
                                          label='Krimpvoegen',
                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Onderbouw.krimpvoegen',
-                                         definition='Een gedeeltelijke insnijding in een constructiedeel die uitzetting en krimp in de constructie toelaat.')
+                                         definition='Een gedeeltelijke insnijding in een constructiedeel die uitzetting en krimp in de constructie toelaat.',
+                                         owner=self)
 
         self._type = OTLAttribuut(field=KlOnderbouwType,
                                   naam='type',
                                   label='type',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Onderbouw.type',
-                                  definition='Het type van onderbouw.')
+                                  definition='Het type van onderbouw.',
+                                  owner=self)
 
         self._volume = OTLAttribuut(field=KwantWrdInKubiekeMeter,
                                     naam='volume',
                                     label='volume',
                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Onderbouw.volume',
-                                    definition='Het volume van onderbouw in kubieke meter.')
+                                    definition='Het volume van onderbouw in kubieke meter.',
+                                    owner=self)
 
     @property
     def isHerstel(self):

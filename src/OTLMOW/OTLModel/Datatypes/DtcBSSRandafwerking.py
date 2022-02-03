@@ -14,13 +14,15 @@ class DtcBSSRandafwerkingWaarden(AttributeInfo):
                                                  naam='lengteRandafwerking',
                                                  label='lengte randafwerking',
                                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcBSSRandafwerking.lengteRandafwerking',
-                                                 definition='De lengte in meter van de randafwerking.')
+                                                 definition='De lengte in meter van de randafwerking.',
+                                                 owner=self)
 
         self._randafwerking = OTLAttribuut(field=KlBSSRandafwerking,
                                            naam='randafwerking',
                                            label='randafwerking',
                                            objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcBSSRandafwerking.randafwerking',
-                                           definition='De mogelijke wijzen van randafwerking van de verharding.')
+                                           definition='De mogelijke wijzen van randafwerking van de verharding.',
+                                           owner=self)
 
     @property
     def lengteRandafwerking(self):

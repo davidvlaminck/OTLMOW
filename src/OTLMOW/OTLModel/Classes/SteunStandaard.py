@@ -26,31 +26,36 @@ class SteunStandaard(AIMNaamObject, EMDraagconstructie):
                                           naam='beschermlaag',
                                           label='beschermlaag',
                                           objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#SteunStandaard.beschermlaag',
-                                          definition='Type bescherming van de steun, bv. geschilderd of gegalvaniseerd.')
+                                          definition='Type bescherming van de steun, bv. geschilderd of gegalvaniseerd.',
+                                          owner=self)
 
         self._bijzonderTransport = OTLAttribuut(field=KlDraagConstrBijzondertransport,
                                                 naam='bijzonderTransport',
                                                 label='bijzonder transport',
                                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#SteunStandaard.bijzonderTransport',
-                                                definition='Wijze waarop het object eventueel geschikt is om bijzonder transport mogelijk te maken.')
+                                                definition='Wijze waarop het object eventueel geschikt is om bijzonder transport mogelijk te maken.',
+                                                owner=self)
 
         self._fabrikant = OTLAttribuut(field=StringField,
                                        naam='fabrikant',
                                        label='fabrikant',
                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#SteunStandaard.fabrikant',
-                                       definition='De fabrikant van de steun.')
+                                       definition='De fabrikant van de steun.',
+                                       owner=self)
 
         self._hoogteBovenkant = OTLAttribuut(field=KwantWrdInMeter,
                                              naam='hoogteBovenkant',
                                              label='hoogte bovenkant',
                                              objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#SteunStandaard.hoogteBovenkant',
-                                             definition='Hoogte (in meter) van de bovenkant van de steun.')
+                                             definition='Hoogte (in meter) van de bovenkant van de steun.',
+                                             owner=self)
 
         self._kleur = OTLAttribuut(field=DteKleurRAL,
                                    naam='kleur',
                                    label='kleur',
                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#SteunStandaard.kleur',
-                                   definition='De RAL kleur van het uitwendig zichtbare gedeelte.')
+                                   definition='De RAL kleur van het uitwendig zichtbare gedeelte.',
+                                   owner=self)
 
     @property
     def beschermlaag(self):

@@ -3,10 +3,11 @@ from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from abc import abstractmethod
 from OTLMOW.OTLModel.Classes.Detectielus import Detectielus
 from OTLMOW.OTLModel.Datatypes.BooleanField import BooleanField
+from OTLMOW.GeometrieArtefact.LijnGeometrie import LijnGeometrie
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class SelNietSelLus(Detectielus):
+class SelNietSelLus(Detectielus, LijnGeometrie):
     """Abstracte klasse die de eigenschappen van selectieve en niet-selectieve lussen combineert."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#SelNietSelLus'
@@ -14,19 +15,22 @@ class SelNietSelLus(Detectielus):
 
     @abstractmethod
     def __init__(self):
-        super().__init__()
+        Detectielus.__init__(self)
+        LijnGeometrie.__init__(self)
 
         self._heeftMofInTrekput = OTLAttribuut(field=BooleanField,
                                                naam='heeftMofInTrekput',
                                                label='heeft mof in trekput',
                                                objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#SelNietSelLus.heeftMofInTrekput',
-                                               definition='Aanduiding of de mof bereikbaar is via een trekput.')
+                                               definition='Aanduiding of de mof bereikbaar is via een trekput.',
+                                               owner=self)
 
         self._isPrioritair = OTLAttribuut(field=BooleanField,
                                           naam='isPrioritair',
                                           label='is prioritair',
                                           objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#SelNietSelLus.isPrioritair',
-                                          definition='Geeft aan of de lus prioritair hersteld moet worden bij defect.')
+                                          definition='Geeft aan of de lus prioritair hersteld moet worden bij defect.',
+                                          owner=self)
 
     @property
     def heeftMofInTrekput(self):

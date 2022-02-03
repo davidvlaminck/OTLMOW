@@ -11,83 +11,98 @@ from OTLMOW.OTLModel.Datatypes.KlDekselVergrendeling import KlDekselVergrendelin
 from OTLMOW.OTLModel.Datatypes.KlRioleringVorm import KlRioleringVorm
 from OTLMOW.OTLModel.Datatypes.KwantWrdInCentimeter import KwantWrdInCentimeter
 from OTLMOW.OTLModel.Datatypes.KwantWrdInVierkanteMeter import KwantWrdInVierkanteMeter
+from OTLMOW.GeometrieArtefact.PuntGeometrie import PuntGeometrie
+from OTLMOW.GeometrieArtefact.VlakGeometrie import VlakGeometrie
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class PutBovenbouw(AIMObject):
+class PutBovenbouw(AIMObject, PuntGeometrie, VlakGeometrie):
     """Een combinatie van het riooldeksel met de kader en de regeling."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#PutBovenbouw'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        super().__init__()
+        AIMObject.__init__(self)
+        PuntGeometrie.__init__(self)
+        VlakGeometrie.__init__(self)
 
         self._breedte = OTLAttribuut(field=KwantWrdInCentimeter,
                                      naam='breedte',
                                      label='breedte',
                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#PutBovenbouw.breedte',
-                                     definition='Breedte-afmeting van het deksel in centimeter. Bij vierkante en cirkelvormige deksels is deze waarde gelijk aan de hoogte.')
+                                     definition='Breedte-afmeting van het deksel in centimeter. Bij vierkante en cirkelvormige deksels is deze waarde gelijk aan de hoogte.',
+                                     owner=self)
 
         self._dekselklasse = OTLAttribuut(field=KlDekselKlasse,
                                           naam='dekselklasse',
                                           label='dekselklasse',
                                           objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#PutBovenbouw.dekselklasse',
-                                          definition='Bepaalt de mate waarin het deksel van de bovenbouw belast kan worden door voertuigen.')
+                                          definition='Bepaalt de mate waarin het deksel van de bovenbouw belast kan worden door voertuigen.',
+                                          owner=self)
 
         self._dekselvorm = OTLAttribuut(field=KlRioleringVorm,
                                         naam='dekselvorm',
                                         label='dekselvorm',
                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#PutBovenbouw.dekselvorm',
-                                        definition='Bepaalt de vorm van het deksel.')
+                                        definition='Bepaalt de vorm van het deksel.',
+                                        owner=self)
 
         self._hoogte = OTLAttribuut(field=KwantWrdInCentimeter,
                                     naam='hoogte',
                                     label='hoogte',
                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#PutBovenbouw.hoogte',
-                                    definition='Hoogte-afmeting van het deksel in centimeter. Bij vierkante en cirkelvormige deksels is deze waarde gelijk aan de breedte.')
+                                    definition='Hoogte-afmeting van het deksel in centimeter. Bij vierkante en cirkelvormige deksels is deze waarde gelijk aan de breedte.',
+                                    owner=self)
 
         self._isAfgesloten = OTLAttribuut(field=BooleanField,
                                           naam='isAfgesloten',
                                           label='is afgesloten',
                                           objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#PutBovenbouw.isAfgesloten',
-                                          definition='Bepaling of de afsluitinrichting vergrendeld is of niet.')
+                                          definition='Bepaling of de afsluitinrichting vergrendeld is of niet.',
+                                          owner=self)
 
         self._isScharnierend = OTLAttribuut(field=BooleanField,
                                             naam='isScharnierend',
                                             label='is scharnierend',
                                             objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#PutBovenbouw.isScharnierend',
-                                            definition='Het deksel is al of niet bevestigd met een scharnier.')
+                                            definition='Het deksel is al of niet bevestigd met een scharnier.',
+                                            owner=self)
 
         self._isWaterdichtVergrendeld = OTLAttribuut(field=BooleanField,
                                                      naam='isWaterdichtVergrendeld',
                                                      label='Is waterdicht vergrendeld',
                                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#PutBovenbouw.isWaterdichtVergrendeld',
-                                                     definition='Geeft aan of de bovenbouw al dan niet waterdicht vergrendeld is zodat het water zich niet boven de bovenbouw kan begeven.')
+                                                     definition='Geeft aan of de bovenbouw al dan niet waterdicht vergrendeld is zodat het water zich niet boven de bovenbouw kan begeven.',
+                                                     owner=self)
 
         self._kader = OTLAttribuut(field=KlDekselKaderType,
                                    naam='kader',
                                    label='kader',
                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#PutBovenbouw.kader',
-                                   definition='Bepaalt het type van het dekselkader.')
+                                   definition='Bepaalt het type van het dekselkader.',
+                                   owner=self)
 
         self._materiaal = OTLAttribuut(field=KlDekselMateriaal,
                                        naam='materiaal',
                                        label='materiaal',
                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#PutBovenbouw.materiaal',
-                                       definition='Het materiaal waaruit het deksel van de bovenbouw is vervaardigd.')
+                                       definition='Het materiaal waaruit het deksel van de bovenbouw is vervaardigd.',
+                                       owner=self)
 
         self._oppervlakte = OTLAttribuut(field=KwantWrdInVierkanteMeter,
                                          naam='oppervlakte',
                                          label='oppervlakte',
                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#PutBovenbouw.oppervlakte',
-                                         definition='De oppervlakte van het zichtbare deel van de bovenbouw in vierkante meter.')
+                                         definition='De oppervlakte van het zichtbare deel van de bovenbouw in vierkante meter.',
+                                         owner=self)
 
         self._regeling = OTLAttribuut(field=KlDekselRegeling,
                                       naam='regeling',
                                       label='regeling',
                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#PutBovenbouw.regeling',
-                                      definition='De wijze hoe de regeling van het deksel is uitgevoerd.')
+                                      definition='De wijze hoe de regeling van het deksel is uitgevoerd.',
+                                      owner=self)
 
         self._technischeFiche = OTLAttribuut(field=DtcDocument,
                                              naam='technischeFiche',
@@ -95,13 +110,15 @@ class PutBovenbouw(AIMObject):
                                              objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#PutBovenbouw.technischeFiche',
                                              usagenote='Bestanden van het type xlsx of pdf.',
                                              kardinaliteit_max='*',
-                                             definition='De technische fiche van de bovenbouw.')
+                                             definition='De technische fiche van de bovenbouw.',
+                                             owner=self)
 
         self._vergrendeling = OTLAttribuut(field=KlDekselVergrendeling,
                                            naam='vergrendeling',
                                            label='vergrendeling',
                                            objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#PutBovenbouw.vergrendeling',
-                                           definition='Bepaalt het type sleutel voor het ontgrendelen van het deksel.')
+                                           definition='Bepaalt het type sleutel voor het ontgrendelen van het deksel.',
+                                           owner=self)
 
     @property
     def breedte(self):

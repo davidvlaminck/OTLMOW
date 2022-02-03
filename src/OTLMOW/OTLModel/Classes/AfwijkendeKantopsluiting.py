@@ -22,19 +22,22 @@ class AfwijkendeKantopsluiting(Kantopsluiting):
                                      naam='breedte',
                                      label='breedte',
                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#AfwijkendeKantopsluiting.breedte',
-                                     definition='De breedte van de afwijkende kantopsluiting in centimeter.')
+                                     definition='De breedte van de afwijkende kantopsluiting in centimeter.',
+                                     owner=self)
 
         self._dikte = OTLAttribuut(field=KwantWrdInCentimeter,
                                    naam='dikte',
                                    label='dikte',
                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#AfwijkendeKantopsluiting.dikte',
-                                   definition='De dikte van de afwijkende kantopsluiting in centimeter.')
+                                   definition='De dikte van de afwijkende kantopsluiting in centimeter.',
+                                   owner=self)
 
         self._heeftOppervlaktebehandeling = OTLAttribuut(field=BooleanField,
                                                          naam='heeftOppervlaktebehandeling',
                                                          label='heeft oppervlaktebehandeling',
                                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#AfwijkendeKantopsluiting.heeftOppervlaktebehandeling',
-                                                         definition='Aanduiding of er een oppervlaktebehandeling is uitgevoerd op de afwijkende kantopsluiting.')
+                                                         definition='Aanduiding of er een oppervlaktebehandeling is uitgevoerd op de afwijkende kantopsluiting.',
+                                                         owner=self)
 
         self._technischeFicheAfwijking = OTLAttribuut(field=DtcDocument,
                                                       naam='technischeFicheAfwijking',
@@ -42,7 +45,8 @@ class AfwijkendeKantopsluiting(Kantopsluiting):
                                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#AfwijkendeKantopsluiting.technischeFicheAfwijking',
                                                       usagenote='Bestanden van het type xlsx of pdf.',
                                                       kardinaliteit_max='*',
-                                                      definition='De technische fiche van de afwijkende kantopsluiting.')
+                                                      definition='De technische fiche van de afwijkende kantopsluiting.',
+                                                      owner=self)
 
     @property
     def breedte(self):

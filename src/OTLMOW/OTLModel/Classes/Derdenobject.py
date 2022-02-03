@@ -29,13 +29,15 @@ class Derdenobject(AIMToestand, AIMDBStatus, AttributeInfo, OTLAsset, RelatieInt
                                      naam='assetId',
                                      label='asset-id',
                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#Derdenobject.assetId',
-                                     definition='Unieke identificatie van de asset zoals toegekend door de assetbeheerder of n.a.v. eerste aanlevering door de leverancier.')
+                                     definition='Unieke identificatie van de asset zoals toegekend door de assetbeheerder of n.a.v. eerste aanlevering door de leverancier.',
+                                     owner=self)
 
         self._contactgegevens = OTLAttribuut(field=StringField,
                                              naam='contactgegevens',
                                              label='contactgegevens',
                                              objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#Derdenobject.contactgegevens',
-                                             definition='Naam, voornaam, telefoonnummer en/of e-mailadres van de contactpersoon.')
+                                             definition='Naam, voornaam, telefoonnummer en/of e-mailadres van de contactpersoon.',
+                                             owner=self)
 
         self._foto = OTLAttribuut(field=DtcDocument,
                                   naam='foto',
@@ -43,19 +45,22 @@ class Derdenobject(AIMToestand, AIMDBStatus, AttributeInfo, OTLAsset, RelatieInt
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#Derdenobject.foto',
                                   usagenote='Enkel bestanden die een foto zijn.',
                                   kardinaliteit_max='*',
-                                  definition='Een foto van het derdenobject die eventuele detailinformatie weergeeft.')
+                                  definition='Een foto van het derdenobject die eventuele detailinformatie weergeeft.',
+                                  owner=self)
 
         self._heeftAansluitkastGeintegreerd = OTLAttribuut(field=BooleanField,
                                                            naam='heeftAansluitkastGeintegreerd',
                                                            label='heeft aansluitkast geïntegreerd',
                                                            objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#Derdenobject.heeftAansluitkastGeintegreerd',
-                                                           definition='Aanduiding of de aansluitkast geïntegreerd is.')
+                                                           definition='Aanduiding of de aansluitkast geïntegreerd is.',
+                                                           owner=self)
 
         self._omschrijving = OTLAttribuut(field=StringField,
                                           naam='omschrijving',
                                           label='omschrijving',
                                           objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#Derdenobject.omschrijving',
-                                          definition='Omschrijving van het derdenobject.')
+                                          definition='Omschrijving van het derdenobject.',
+                                          owner=self)
 
     @property
     def assetId(self):

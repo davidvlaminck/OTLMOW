@@ -17,7 +17,8 @@ class VerlichtingstoestelConnector(ABC):
                                                  naam='besturingsconnector',
                                                  label='besturingsconnector',
                                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#VerlichtingstoestelConnector.besturingsconnector',
-                                                 definition='Type van connector verwerkt in de behuizing van het verlichtingstoestel voor de aansluiting van de module voor lokale afstandsbediening en -bewaking.')
+                                                 definition='Type van connector verwerkt in de behuizing van het verlichtingstoestel voor de aansluiting van de module voor lokale afstandsbediening en -bewaking.',
+                                                 owner=self)
 
     @property
     def besturingsconnector(self):

@@ -19,25 +19,29 @@ class MIVSat(EMObject):
                                                       naam='Bezoeklocatie Latitude (50-52)',
                                                       label='Bezoeklocatie Latitude (50-52)',
                                                       objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#EMObject.bezoeklocatieLatitude5052',
-                                                      definitie='waardes tussen 50 en 52')
+                                                      definitie='waardes tussen 50 en 52',
+                                                      owner=self)
 
         self._bezoeklocatieLongitude27 = EMAttribuut(field=FloatOrDecimalField,
                                                      naam='Bezoeklocatie Longitude (2-7)',
                                                      label='Bezoeklocatie Longitude (2-7)',
                                                      objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#EMObject.bezoeklocatieLongitude27',
-                                                     definitie='waardes tussen 2 en 7')
+                                                     definitie='waardes tussen 2 en 7',
+                                                     owner=self)
 
         self._opmerkingen = EMAttribuut(field=StringField,
                                         naam='Opmerkingen',
                                         label='Opmerkingen',
                                         objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#EMObject.opmerkingen',
-                                        definitie='Definitie nog toe te voegen voor eigenschap Opmerkingen')
+                                        definitie='Definitie nog toe te voegen voor eigenschap Opmerkingen',
+                                        owner=self)
 
         self._notitieinspectie = EMAttribuut(field=StringField,
                                              naam='notitieInspectie',
                                              label='notitieInspectie',
                                              objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#EMObject.notitieinspectie',
-                                             definitie='Definitie nog toe te voegen voor eigenschap notitie')
+                                             definitie='Definitie nog toe te voegen voor eigenschap notitie',
+                                             owner=self)
 
     @property
     def bezoeklocatieLatitude5052(self):

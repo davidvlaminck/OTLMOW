@@ -21,25 +21,29 @@ class BitumineuzeLaag(LaagBouwklasse):
                                             naam='bindmiddelType',
                                             label='bindmiddel type',
                                             objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#BitumineuzeLaag.bindmiddelType',
-                                            definition='Het bindmiddeltype van de bitumineuze laag.')
+                                            definition='Het bindmiddeltype van de bitumineuze laag.',
+                                            owner=self)
 
         self._kleur = OTLAttribuut(field=KlKleurSupp,
                                    naam='kleur',
                                    label='kleur',
                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#BitumineuzeLaag.kleur',
-                                   definition='De kleur van de bitumineuze laag.')
+                                   definition='De kleur van de bitumineuze laag.',
+                                   owner=self)
 
         self._laagtype = OTLAttribuut(field=DtuBVLaagtypes,
                                       naam='laagtype',
                                       label='laagtype',
                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#BitumineuzeLaag.laagtype',
-                                      definition='Het type van bitumineuze laag.')
+                                      definition='Het type van bitumineuze laag.',
+                                      owner=self)
 
         self._mengseltype = OTLAttribuut(field=KlBVMengseltype,
                                          naam='mengseltype',
                                          label='mengseltype',
                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#BitumineuzeLaag.mengseltype',
-                                         definition='Het type van het (giet)asfaltmengsel.')
+                                         definition='Het type van het (giet)asfaltmengsel.',
+                                         owner=self)
 
     @property
     def bindmiddelType(self):

@@ -5,41 +5,47 @@ from OTLMOW.OTLModel.Datatypes.IntegerField import IntegerField
 from OTLMOW.OTLModel.Datatypes.KlHardwareMerk import KlHardwareMerk
 from OTLMOW.OTLModel.Datatypes.KlHardwareModelnaam import KlHardwareModelnaam
 from OTLMOW.OTLModel.Datatypes.KlHardwareVormfactor import KlHardwareVormfactor
+from OTLMOW.GeometrieArtefact.PuntGeometrie import PuntGeometrie
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Hardware(HardwareToegang):
+class Hardware(HardwareToegang, PuntGeometrie):
     """Fysieke componenten of onderdelen van een computer."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Hardware'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        super().__init__()
+        HardwareToegang.__init__(self)
+        PuntGeometrie.__init__(self)
 
         self._aantalUnits = OTLAttribuut(field=IntegerField,
                                          naam='aantalUnits',
                                          label='aantal units',
                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Hardware.aantalUnits',
-                                         definition='Het aantal units dat een server in een rack inneemt.')
+                                         definition='Het aantal units dat een server in een rack inneemt.',
+                                         owner=self)
 
         self._merk = OTLAttribuut(field=KlHardwareMerk,
                                   naam='merk',
                                   label='merk',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Hardware.merk',
-                                  definition='Het merk van de hardware.')
+                                  definition='Het merk van de hardware.',
+                                  owner=self)
 
         self._modelnaam = OTLAttribuut(field=KlHardwareModelnaam,
                                        naam='modelnaam',
                                        label='modelnaam',
                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Hardware.modelnaam',
-                                       definition='De modelnaam van de hardware.')
+                                       definition='De modelnaam van de hardware.',
+                                       owner=self)
 
         self._vormfactor = OTLAttribuut(field=KlHardwareVormfactor,
                                         naam='vormfactor',
                                         label='vormfactor',
                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Hardware.vormfactor',
-                                        definition='Het soort toestel waarin de fysieke componenten of onderdelen worden vormgegeven.')
+                                        definition='Het soort toestel waarin de fysieke componenten of onderdelen worden vormgegeven.',
+                                        owner=self)
 
     @property
     def aantalUnits(self):

@@ -7,56 +7,64 @@ from OTLMOW.OTLModel.Datatypes.KlVerkeersbordCategorie import KlVerkeersbordCate
 from OTLMOW.OTLModel.Datatypes.KlVerkeersbordCode import KlVerkeersbordCode
 from OTLMOW.OTLModel.Datatypes.KlVerkeersbordconceptStatus import KlVerkeersbordconceptStatus
 from OTLMOW.OTLModel.Datatypes.StringField import StringField
+from OTLMOW.GeometrieArtefact.GeenGeometrie import GeenGeometrie
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class VerkeersbordConcept(AIMObject):
+class VerkeersbordConcept(AIMObject, GeenGeometrie):
     """Inhoudelijke definitie van de betekenis van een verkeersbord zoals opgenomen in de wegcode."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/installatie#VerkeersbordConcept'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        super().__init__()
+        AIMObject.__init__(self)
+        GeenGeometrie.__init__(self)
 
         self._afbeelding = OTLAttribuut(field=DtcDocument,
                                         naam='afbeelding',
                                         label='afbeelding',
                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/installatie#VerkeersbordConcept.afbeelding',
                                         kardinaliteit_max='*',
-                                        definition='De afbeelding van het verkeersbordconcept.')
+                                        definition='De afbeelding van het verkeersbordconcept.',
+                                        owner=self)
 
         self._betekenis = OTLAttribuut(field=StringField,
                                        naam='betekenis',
                                        label='betekenis',
                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/installatie#VerkeersbordConcept.betekenis',
-                                       definition='Betekenis die gegeven wordt aan dit soort verkeersbord volgens de wegcode.')
+                                       definition='Betekenis die gegeven wordt aan dit soort verkeersbord volgens de wegcode.',
+                                       owner=self)
 
         self._rechtsgrondOnderdeel = OTLAttribuut(field=DtcExterneReferentie,
                                                   naam='rechtsgrondOnderdeel',
                                                   label='rechtsgrondonderdeel',
                                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/installatie#VerkeersbordConcept.rechtsgrondOnderdeel',
                                                   usagenote='Verwijst meestal naar een artikel in de wegcode die informatie over dit verkeersbordconcept bevat. Bijvoorbeeld: artikel 68.3 voor verbodsborden.',
-                                                  definition='Verwijst naar een rechtsgrondonderdeel over dit verkeersbordconcept.')
+                                                  definition='Verwijst naar een rechtsgrondonderdeel over dit verkeersbordconcept.',
+                                                  owner=self)
 
         self._status = OTLAttribuut(field=KlVerkeersbordconceptStatus,
                                     naam='status',
                                     label='status',
                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/installatie#VerkeersbordConcept.status',
                                     usagenote='Bijvoorbeeld: stabiel, onstabiel, afgeschaft. Een bord met snelheidslimiet van 60 km/u is bijvoorbeeld afgeschaft.',
-                                    definition='Duidt of het verkeersbordconcept nog gebruikt wordt.')
+                                    definition='Duidt of het verkeersbordconcept nog gebruikt wordt.',
+                                    owner=self)
 
         self._verkeersbordCategorie = OTLAttribuut(field=KlVerkeersbordCategorie,
                                                    naam='verkeersbordCategorie',
                                                    label='verkeersbord categorie',
                                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/installatie#VerkeersbordConcept.verkeersbordCategorie',
-                                                   definition='Categorie van het verkeersbordconcept.	.')
+                                                   definition='Categorie van het verkeersbordconcept.	.',
+                                                   owner=self)
 
         self._verkeersbordCode = OTLAttribuut(field=KlVerkeersbordCode,
                                               naam='verkeersbordCode',
                                               label='verkeersbordcode',
                                               objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/installatie#VerkeersbordConcept.verkeersbordCode',
-                                              definition='Code die aan dit soort bord gegeven wordt binnen de wegcode.')
+                                              definition='Code die aan dit soort bord gegeven wordt binnen de wegcode.',
+                                              owner=self)
 
     @property
     def afbeelding(self):

@@ -18,7 +18,8 @@ class Dolomietverharding(AndereVerharding):
                                   naam='type',
                                   label='type',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Dolomietverharding.type',
-                                  definition='Het type dolomiet.')
+                                  definition='Het type dolomiet.',
+                                  owner=self)
 
     @property
     def type(self):

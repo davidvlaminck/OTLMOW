@@ -20,19 +20,22 @@ class HeeftBetrokkene(DirectioneleRelatie):
                                           naam='datumAanvang',
                                           label='datum aanvang',
                                           objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#HeeftBetrokkene.datumAanvang',
-                                          definition='De datum waarop de betrokkenheid effectief geworden is of zal worden. ')
+                                          definition='De datum waarop de betrokkenheid effectief geworden is of zal worden. ',
+                                          owner=self)
 
         self._datumEinde = OTLAttribuut(field=DateField,
                                         naam='datumEinde',
                                         label='datum einde',
                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#HeeftBetrokkene.datumEinde',
-                                        definition='De datum waarop de betrokkenheid beëindigd is of moet beëindigd worden. ')
+                                        definition='De datum waarop de betrokkenheid beëindigd is of moet beëindigd worden. ',
+                                        owner=self)
 
         self._rol = OTLAttribuut(field=KlBetrokkenheidRol,
                                  naam='rol',
                                  label='rol',
                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#HeeftBetrokkene.rol',
-                                 definition='Type voor de manier waarop een agent betrokken is bij een object.')
+                                 definition='Type voor de manier waarop een agent betrokken is bij een object.',
+                                 owner=self)
 
         self._specifiekeContactinfo = OTLAttribuut(field=DtcContactinfo,
                                                    naam='specifiekeContactinfo',
@@ -40,7 +43,8 @@ class HeeftBetrokkene(DirectioneleRelatie):
                                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#HeeftBetrokkene.specifiekeContactinfo',
                                                    kardinaliteit_min='0',
                                                    kardinaliteit_max='*',
-                                                   definition='Specifieke contactgegevens van de betrokken agent met betrekking tot het gekoppelde object.')
+                                                   definition='Specifieke contactgegevens van de betrokken agent met betrekking tot het gekoppelde object.',
+                                                   owner=self)
 
     @property
     def datumAanvang(self):

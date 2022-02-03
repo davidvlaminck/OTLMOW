@@ -17,7 +17,8 @@ class SchokindexVoertuigkering(ABC):
                                         naam='schokindex',
                                         label='schokindex',
                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#SchokindexVoertuigkering.schokindex',
-                                        definition='De parameter die weergeeft hoe groot de kans op ernstige letsels is van de inzittenden bij een aanrijding.')
+                                        definition='De parameter die weergeeft hoe groot de kans op ernstige letsels is van de inzittenden bij een aanrijding.',
+                                        owner=self)
 
     @property
     def schokindex(self):

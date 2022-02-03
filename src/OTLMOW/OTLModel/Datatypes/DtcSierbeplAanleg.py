@@ -17,31 +17,36 @@ class DtcSierbeplAanlegWaarden(AttributeInfo):
                                                naam='aanplantingswijze',
                                                label='aanplantingswijze',
                                                objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcSierbeplAanleg.aanplantingswijze',
-                                               definition='Manier van aanplanten.')
+                                               definition='Manier van aanplanten.',
+                                               owner=self)
 
         self._containermaat = OTLAttribuut(field=KlSierbeplContainer,
                                            naam='containermaat',
                                            label='containermaat',
                                            objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcSierbeplAanleg.containermaat',
-                                           definition='De grootte van de pot of container waarin de plant wordt geleverd. De P staat voor pot, de C voor container. Het getal geeft de grootte weer in centimeter.')
+                                           definition='De grootte van de pot of container waarin de plant wordt geleverd. De P staat voor pot, de C voor container. Het getal geeft de grootte weer in centimeter.',
+                                           owner=self)
 
         self._plantdichtheid = OTLAttribuut(field=NonNegIntegerField,
                                             naam='plantdichtheid',
                                             label='plantdichtheid',
                                             objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcSierbeplAanleg.plantdichtheid',
-                                            definition='Aantal planten per vierkante meter.')
+                                            definition='Aantal planten per vierkante meter.',
+                                            owner=self)
 
         self._plantmaat = OTLAttribuut(field=KlSierbeplPlantmaat,
                                        naam='plantmaat',
                                        label='plantmaat',
                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcSierbeplAanleg.plantmaat',
-                                       definition='De hoogte van de plant in cm gemeten tussen een minimum en maximum waarde.')
+                                       definition='De hoogte van de plant in cm gemeten tussen een minimum en maximum waarde.',
+                                       owner=self)
 
         self._plantverband = OTLAttribuut(field=KlVegetatiePlantverband,
                                           naam='plantverband',
                                           label='plantverband',
                                           objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcSierbeplAanleg.plantverband',
-                                          definition='De wijze waarop de planten zijn geschikt.')
+                                          definition='De wijze waarop de planten zijn geschikt.',
+                                          owner=self)
 
     @property
     def aanplantingswijze(self):

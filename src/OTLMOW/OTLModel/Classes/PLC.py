@@ -20,19 +20,22 @@ class PLC(Controller):
                                   naam='merk',
                                   label='merk',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#PLC.merk',
-                                  definition='Het merk van de PLC.')
+                                  definition='Het merk van de PLC.',
+                                  owner=self)
 
         self._modelnaam = OTLAttribuut(field=KlPLCModelnaam,
                                        naam='modelnaam',
                                        label='modelnaam',
                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#PLC.modelnaam',
-                                       definition='De modelnaam van de PLC.')
+                                       definition='De modelnaam van de PLC.',
+                                       owner=self)
 
         self._technischeFiche = OTLAttribuut(field=DtcDocument,
                                              naam='technischeFiche',
                                              label='technischeFiche',
                                              objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#PLC.technischeFiche',
-                                             definition='De technische fiche van de PLC.')
+                                             definition='De technische fiche van de PLC.',
+                                             owner=self)
 
     @property
     def merk(self):

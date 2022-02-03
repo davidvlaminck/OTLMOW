@@ -5,10 +5,11 @@ from OTLMOW.OTLModel.Datatypes.DtcDocument import DtcDocument
 from OTLMOW.OTLModel.Datatypes.KlAudioTransportType import KlAudioTransportType
 from OTLMOW.OTLModel.Datatypes.KlMeetmicrofoonMerk import KlMeetmicrofoonMerk
 from OTLMOW.OTLModel.Datatypes.KlMeetmicrofoonModelnaam import KlMeetmicrofoonModelnaam
+from OTLMOW.GeometrieArtefact.PuntGeometrie import PuntGeometrie
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Meetmicrofoon(AIMNaamObject):
+class Meetmicrofoon(AIMNaamObject, PuntGeometrie):
     """Een microfoon is een elektromechanisch instrument dat geluid omzet in een elektrisch signaal. 
 Een meetmicrofoon registreert de geluidsdruk, is gevoelig voor geluid uit alle richtingen en heeft een vlakke frequentiekarakteristiek. Nauwkeurigheid is hier belangrijker dan geluidskwaliteit. In een tunnel meet de microfoon het geluidsniveau in de tunnel om het volume van een luidspreker aan te kunnen passen om zo verstaanbaar mogelijk te communiceren.
 """
@@ -17,31 +18,36 @@ Een meetmicrofoon registreert de geluidsdruk, is gevoelig voor geluid uit alle r
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        super().__init__()
+        AIMNaamObject.__init__(self)
+        PuntGeometrie.__init__(self)
 
         self._merk = OTLAttribuut(field=KlMeetmicrofoonMerk,
                                   naam='merk',
                                   label='merk',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Meetmicrofoon.merk',
-                                  definition='Het merk van de meetmicrofoon.')
+                                  definition='Het merk van de meetmicrofoon.',
+                                  owner=self)
 
         self._modelnaam = OTLAttribuut(field=KlMeetmicrofoonModelnaam,
                                        naam='modelnaam',
                                        label='modelnaam',
                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Meetmicrofoon.modelnaam',
-                                       definition='De modelnaam van de meetmicrofoon.')
+                                       definition='De modelnaam van de meetmicrofoon.',
+                                       owner=self)
 
         self._technischeFiche = OTLAttribuut(field=DtcDocument,
                                              naam='technischeFiche',
                                              label='technische fiche',
                                              objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Meetmicrofoon.technischeFiche',
-                                             definition='De technische fiche van de meetmicrofoon.')
+                                             definition='De technische fiche van de meetmicrofoon.',
+                                             owner=self)
 
         self._transportType = OTLAttribuut(field=KlAudioTransportType,
                                            naam='transportType',
                                            label='transport type',
                                            objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Meetmicrofoon.transportType',
-                                           definition='Geeft aan op welke manier het audiosignaal wordt getransporteerd door het toestel.')
+                                           definition='Geeft aan op welke manier het audiosignaal wordt getransporteerd door het toestel.',
+                                           owner=self)
 
     @property
     def merk(self):

@@ -24,13 +24,15 @@ class VerlichtingstoestelMHHP(VerlichtingstoestelConnector, Verlichtingstoestel)
                                            naam='armatuurkleur',
                                            label='armatuurkleur',
                                            objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#VerlichtingstoestelMHHP.armatuurkleur',
-                                           definition='De kleur van de zichtbare buitenkant van het verlichtingstoestel.')
+                                           definition='De kleur van de zichtbare buitenkant van het verlichtingstoestel.',
+                                           owner=self)
 
         self._heeftAntiVandalisme = OTLAttribuut(field=BooleanField,
                                                  naam='heeftAntiVandalisme',
                                                  label='heeft anti vandalisme',
                                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#VerlichtingstoestelMHHP.heeftAntiVandalisme',
-                                                 definition='Is het een antivandalisme type verlichtingstoestel?')
+                                                 definition='Is het een antivandalisme type verlichtingstoestel?',
+                                                 owner=self)
 
     @property
     def armatuurkleur(self):

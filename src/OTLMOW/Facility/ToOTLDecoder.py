@@ -11,8 +11,6 @@ class ToOTLDecoder:
     def __init__(self):
         pass
 
-
-
     def set_value_by_dotnotatie(self, assetOrAttribuut, dotnotatie, value):
         try:
             eval(f'assetOrAttribuut.{dotnotatie}')

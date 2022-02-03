@@ -4,10 +4,11 @@ from OTLMOW.OTLModel.Classes.AIMObject import AIMObject
 from OTLMOW.OTLModel.Classes.Signalisatie import Signalisatie
 from OTLMOW.OTLModel.Datatypes.KlDivergentiepuntbebakeningselementType import KlDivergentiepuntbebakeningselementType
 from OTLMOW.OTLModel.Datatypes.KlFolieType import KlFolieType
+from OTLMOW.GeometrieArtefact.PuntGeometrie import PuntGeometrie
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Divergentiepuntbebakeningselement(AIMObject, Signalisatie):
+class Divergentiepuntbebakeningselement(AIMObject, Signalisatie, PuntGeometrie):
     """Een constructie met als doel de zichtbaarheid van het divergentiepunt te vergroten."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Divergentiepuntbebakeningselement'
@@ -16,18 +17,21 @@ class Divergentiepuntbebakeningselement(AIMObject, Signalisatie):
     def __init__(self):
         AIMObject.__init__(self)
         Signalisatie.__init__(self)
+        PuntGeometrie.__init__(self)
 
         self._folietype = OTLAttribuut(field=KlFolieType,
                                        naam='folietype',
                                        label='folietype',
                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Divergentiepuntbebakeningselement.folietype',
-                                       definition='Het type folie dat bevestigd is aan het Divergentiepuntbebakeningselement.')
+                                       definition='Het type folie dat bevestigd is aan het Divergentiepuntbebakeningselement.',
+                                       owner=self)
 
         self._type = OTLAttribuut(field=KlDivergentiepuntbebakeningselementType,
                                   naam='type',
                                   label='type',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Divergentiepuntbebakeningselement.type',
-                                  definition='De vormen van het divergentiepuntbebakeningselement.')
+                                  definition='De vormen van het divergentiepuntbebakeningselement.',
+                                  owner=self)
 
     @property
     def folietype(self):

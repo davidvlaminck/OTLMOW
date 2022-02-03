@@ -20,19 +20,22 @@ class Repeater(ZenderOntvangerToegang):
                                   naam='merk',
                                   label='merk',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Repeater.merk',
-                                  definition='Het merk van de repeater.')
+                                  definition='Het merk van de repeater.',
+                                  owner=self)
 
         self._modelnaam = OTLAttribuut(field=KlRepeaterModelnaam,
                                        naam='modelnaam',
                                        label='modelnaam',
                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Repeater.modelnaam',
-                                       definition='De modelnaam/product range van een repeater.')
+                                       definition='De modelnaam/product range van een repeater.',
+                                       owner=self)
 
         self._toepassing = OTLAttribuut(field=DteTekstblok,
                                         naam='toepassing',
                                         label='toepassing',
                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Repeater.toepassing',
-                                        definition='De techniek of standaard waarmee signalen over het netwerk verstuurd worden. Mogelijke waarden zijn onder andere: KAR,  wifi, GPRS of GSM..')
+                                        definition='De techniek of standaard waarmee signalen over het netwerk verstuurd worden. Mogelijke waarden zijn onder andere: KAR,  wifi, GPRS of GSM..',
+                                        owner=self)
 
     @property
     def merk(self):

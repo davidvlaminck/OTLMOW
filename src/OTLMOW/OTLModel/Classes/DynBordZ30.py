@@ -19,13 +19,15 @@ class DynBordZ30(LEDBord):
                                   naam='merk',
                                   label='merk',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DynBordZ30.merk',
-                                  definition='Merk van het dynamisch zone-30 bord.')
+                                  definition='Merk van het dynamisch zone-30 bord.',
+                                  owner=self)
 
         self._modelnaam = OTLAttribuut(field=KlDynBordZ30Modelnaam,
                                        naam='modelnaam',
                                        label='modelnaam',
                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DynBordZ30.modelnaam',
-                                       definition='De modelnaam van het Z30-bord.')
+                                       definition='De modelnaam van het Z30-bord.',
+                                       owner=self)
 
     @property
     def merk(self):

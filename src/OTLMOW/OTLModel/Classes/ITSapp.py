@@ -19,13 +19,15 @@ class ITSapp(IVRIComponent):
                                   naam='merk',
                                   label='merk',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#ITSapp.merk',
-                                  definition='De merknaam van de ITSapp; duidt op de leverancier of producent van de iVRI component.')
+                                  definition='De merknaam van de ITSapp; duidt op de leverancier of producent van de iVRI component.',
+                                  owner=self)
 
         self._modelnaam = OTLAttribuut(field=KlIVRIModelITSapp,
                                        naam='modelnaam',
                                        label='modelnaam',
                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#ITSapp.modelnaam',
-                                       definition='De modelnaam/product range van de ITSapp.')
+                                       definition='De modelnaam/product range van de ITSapp.',
+                                       owner=self)
 
     @property
     def merk(self):

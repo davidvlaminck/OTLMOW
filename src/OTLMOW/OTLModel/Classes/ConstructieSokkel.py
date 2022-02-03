@@ -4,10 +4,11 @@ from OTLMOW.OTLModel.Classes.ConstructieElement import ConstructieElement
 from OTLMOW.OTLModel.Classes.BetonnenConstructieElement import BetonnenConstructieElement
 from OTLMOW.OTLModel.Classes.ConstructieElementenGC import ConstructieElementenGC
 from OTLMOW.OTLModel.Datatypes.DtcAfmetingBxlxhInCm import DtcAfmetingBxlxhInCm
+from OTLMOW.GeometrieArtefact.VlakGeometrie import VlakGeometrie
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class ConstructieSokkel(ConstructieElement, BetonnenConstructieElement, ConstructieElementenGC):
+class ConstructieSokkel(ConstructieElement, BetonnenConstructieElement, ConstructieElementenGC, VlakGeometrie):
     """Betonnen zool die het object dat erop rust verhoogt of dat dient om een structuur op een goede manier te kunnen opleggen/verbinden met de fundering."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#ConstructieSokkel'
@@ -17,12 +18,14 @@ class ConstructieSokkel(ConstructieElement, BetonnenConstructieElement, Construc
         BetonnenConstructieElement.__init__(self)
         ConstructieElement.__init__(self)
         ConstructieElementenGC.__init__(self)
+        VlakGeometrie.__init__(self)
 
         self._afmetingen = OTLAttribuut(field=DtcAfmetingBxlxhInCm,
                                         naam='afmetingen',
                                         label='afmetingen',
                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#ConstructieSokkel.afmetingen',
-                                        definition='De afmetingen van de constructiesokkel.')
+                                        definition='De afmetingen van de constructiesokkel.',
+                                        owner=self)
 
     @property
     def afmetingen(self):

@@ -18,133 +18,155 @@ class HSDeel(EMObject):
                                                                 naam='HS schakelapp/trafo stof&spinnenweb vrij',
                                                                 label='HS schakelapp/trafo stof&spinnenweb vrij',
                                                                 objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#HSDeel.hsSchakelappTrafoStofSpinnenwebVrij',
-                                                                definitie='Definitie nog toe te voegen voor eigenschap HS schakelapp/trafo stof&spinnenweb vrij')
+                                                                definitie='Definitie nog toe te voegen voor eigenschap HS schakelapp/trafo stof&spinnenweb vrij',
+                                                                owner=self)
 
         self._alleKabelsGelabeldVolgensSchema = EMAttribuut(field=StringField,
                                                             naam='alle kabels gelabeld volgens schema',
                                                             label='alle kabels gelabeld volgens schema',
                                                             objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#EMObject.alleKabelsGelabeldVolgensSchema',
-                                                            definitie='Definitie nog toe te voegen voor eigenschap alle kabels gelabeld volgens schema')
+                                                            definitie='Definitie nog toe te voegen voor eigenschap alle kabels gelabeld volgens schema',
+                                                            owner=self)
 
         self._attestGlobaleAardingAanwezig = EMAttribuut(field=StringField,
                                                          naam='attest globale aarding aanwezig',
                                                          label='attest globale aarding aanwezig',
                                                          objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#HSDeel.attestGlobaleAardingAanwezig',
-                                                         definitie='Definitie nog toe te voegen voor eigenschap attest globale aarding aanwezig')
+                                                         definitie='Definitie nog toe te voegen voor eigenschap attest globale aarding aanwezig',
+                                                         owner=self)
 
         self._componentenGelabeldVolgensSchema = EMAttribuut(field=StringField,
                                                              naam='componenten gelabeld volgens schema',
                                                              label='componenten gelabeld volgens schema',
                                                              objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#EMObject.componentenGelabeldVolgensSchema',
-                                                             definitie='Definitie nog toe te voegen voor eigenschap componenten gelabeld volgens schema')
+                                                             definitie='Definitie nog toe te voegen voor eigenschap componenten gelabeld volgens schema',
+                                                             owner=self)
 
         self._eendraadschemaAanwezig = EMAttribuut(field=StringField,
                                                    naam='eendraadschema aanwezig',
                                                    label='eendraadschema aanwezig',
                                                    objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#HSDeel.eendraadschemaAanwezig',
-                                                   definitie='Definitie nog toe te voegen voor eigenschap eendraadschema aanwezig')
+                                                   definitie='Definitie nog toe te voegen voor eigenschap eendraadschema aanwezig',
+                                                   owner=self)
 
         self._geenLekEindsluitingAankomstveldenDnb = EMAttribuut(field=StringField,
                                                                  naam='geen lek eindsluiting aankomstvelden DNB',
                                                                  label='geen lek eindsluiting aankomstvelden DNB',
                                                                  objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#HSDeel.geenLekEindsluitingAankomstveldenDnb',
-                                                                 definitie='Definitie nog toe te voegen voor eigenschap geen lek eindsluiting aankomstvelden DNB')
+                                                                 definitie='Definitie nog toe te voegen voor eigenschap geen lek eindsluiting aankomstvelden DNB',
+                                                                 owner=self)
 
         self._geenLekEindsluitingTrafobeveilig = EMAttribuut(field=StringField,
                                                              naam='geen lek eindsluiting trafobeveilig',
                                                              label='geen lek eindsluiting trafobeveilig',
                                                              objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#HSDeel.geenLekEindsluitingTrafobeveilig',
-                                                             definitie='Definitie nog toe te voegen voor eigenschap geen lek eindsluiting trafobeveilig')
+                                                             definitie='Definitie nog toe te voegen voor eigenschap geen lek eindsluiting trafobeveilig',
+                                                             owner=self)
 
         self._geenTrafoOlieLekkage = EMAttribuut(field=StringField,
                                                  naam='geen trafo olie lekkage',
                                                  label='geen trafo olie lekkage',
                                                  objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#HSDeel.geenTrafoOlieLekkage',
-                                                 definitie='Definitie nog toe te voegen voor eigenschap geen trafo olie lekkage')
+                                                 definitie='Definitie nog toe te voegen voor eigenschap geen trafo olie lekkage',
+                                                 owner=self)
 
         self._geenZichtbareDefectenOpenSchakelapp = EMAttribuut(field=StringField,
                                                                 naam='geen zichtbare defecten open schakelapp',
                                                                 label='geen zichtbare defecten open schakelapp',
                                                                 objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#HSDeel.geenZichtbareDefectenOpenSchakelapp',
-                                                                definitie='Definitie nog toe te voegen voor eigenschap geen zichtbare defecten open schakelapp')
+                                                                definitie='Definitie nog toe te voegen voor eigenschap geen zichtbare defecten open schakelapp',
+                                                                owner=self)
 
         self._geisoleerdeHandschInPerfecteStaat = EMAttribuut(field=StringField,
                                                               naam='geisoleerde handsch in perfecte staat',
                                                               label='geisoleerde handsch in perfecte staat',
                                                               objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#EMObject.geisoleerdeHandschInPerfecteStaat',
-                                                              definitie='Definitie nog toe te voegen voor eigenschap geisoleerde handsch in perfecte staat')
+                                                              definitie='Definitie nog toe te voegen voor eigenschap geisoleerde handsch in perfecte staat',
+                                                              owner=self)
 
         self._geldigKeuringsverslagHsAanwezig = EMAttribuut(field=StringField,
                                                             naam='geldig keuringsverslag HS aanwezig',
                                                             label='geldig keuringsverslag HS aanwezig',
                                                             objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#HSDeel.geldigKeuringsverslagHsAanwezig',
-                                                            definitie='Definitie nog toe te voegen voor eigenschap geldig keuringsverslag HS aanwezig')
+                                                            definitie='Definitie nog toe te voegen voor eigenschap geldig keuringsverslag HS aanwezig',
+                                                            owner=self)
 
         self._isolatiemattenInGoedeStaat = EMAttribuut(field=StringField,
                                                        naam='isolatiematten in goede staat',
                                                        label='isolatiematten in goede staat',
                                                        objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#HSDeel.isolatiemattenInGoedeStaat',
-                                                       definitie='Definitie nog toe te voegen voor eigenschap isolatiematten in goede staat')
+                                                       definitie='Definitie nog toe te voegen voor eigenschap isolatiematten in goede staat',
+                                                       owner=self)
 
         self._liggingsplanAardingenAanwezig = EMAttribuut(field=StringField,
                                                           naam='liggingsplan aardingen aanwezig',
                                                           label='liggingsplan aardingen aanwezig',
                                                           objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#HSDeel.liggingsplanAardingenAanwezig',
-                                                          definitie='Definitie nog toe te voegen voor eigenschap liggingsplan aardingen aanwezig')
+                                                          definitie='Definitie nog toe te voegen voor eigenschap liggingsplan aardingen aanwezig',
+                                                          owner=self)
 
         self._neonSpanningsindicatorenFunctioneren = EMAttribuut(field=StringField,
                                                                  naam='neon spanningsindicatoren functioneren',
                                                                  label='neon spanningsindicatoren functioneren',
                                                                  objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#HSDeel.neonSpanningsindicatorenFunctioneren',
-                                                                 definitie='Definitie nog toe te voegen voor eigenschap neon spanningsindicatoren functioneren')
+                                                                 definitie='Definitie nog toe te voegen voor eigenschap neon spanningsindicatoren functioneren',
+                                                                 owner=self)
 
         self._notitieinspectie = EMAttribuut(field=StringField,
                                              naam='notitieInspectie',
                                              label='notitieInspectie',
                                              objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#EMObject.notitieinspectie',
-                                             definitie='Definitie nog toe te voegen voor eigenschap notitie')
+                                             definitie='Definitie nog toe te voegen voor eigenschap notitie',
+                                             owner=self)
 
         self._oliepeilTrafoNormaalNiveau = EMAttribuut(field=StringField,
                                                        naam='oliepeil trafo normaal niveau',
                                                        label='oliepeil trafo normaal niveau',
                                                        objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#HSDeel.oliepeilTrafoNormaalNiveau',
-                                                       definitie='Definitie nog toe te voegen voor eigenschap oliepeil trafo normaal niveau')
+                                                       definitie='Definitie nog toe te voegen voor eigenschap oliepeil trafo normaal niveau',
+                                                       owner=self)
 
         self._openBarenstelStofSpinnenwebVrij = EMAttribuut(field=StringField,
                                                             naam='open barenstel stof/spinnenweb vrij',
                                                             label='open barenstel stof/spinnenweb vrij',
                                                             objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#HSDeel.openBarenstelStofSpinnenwebVrij',
-                                                            definitie='Definitie nog toe te voegen voor eigenschap open barenstel stof/spinnenweb vrij')
+                                                            definitie='Definitie nog toe te voegen voor eigenschap open barenstel stof/spinnenweb vrij',
+                                                            owner=self)
 
         self._opmerkingenOverHsGedeelte = EMAttribuut(field=StringField,
                                                       naam='opmerkingen over HS gedeelte',
                                                       label='opmerkingen over HS gedeelte',
                                                       objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#HSDeel.opmerkingenOverHsGedeelte',
-                                                      definitie='Definitie nog toe te voegen voor eigenschap opmerkingen over HS gedeelte')
+                                                      definitie='Definitie nog toe te voegen voor eigenschap opmerkingen over HS gedeelte',
+                                                      owner=self)
 
         self._schakelbankInGoedeStaat = EMAttribuut(field=StringField,
                                                     naam='schakelbank in goede staat',
                                                     label='schakelbank in goede staat',
                                                     objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#HSDeel.schakelbankInGoedeStaat',
-                                                    definitie='Definitie nog toe te voegen voor eigenschap schakelbank in goede staat')
+                                                    definitie='Definitie nog toe te voegen voor eigenschap schakelbank in goede staat',
+                                                    owner=self)
 
         self._schakelhendelStokInGoedeStaat = EMAttribuut(field=StringField,
                                                           naam='schakelhendel / stok in goede staat',
                                                           label='schakelhendel / stok in goede staat',
                                                           objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#HSDeel.schakelhendelStokInGoedeStaat',
-                                                          definitie='Definitie nog toe te voegen voor eigenschap schakelhendel / stok in goede staat')
+                                                          definitie='Definitie nog toe te voegen voor eigenschap schakelhendel / stok in goede staat',
+                                                          owner=self)
 
         self._schakelpompMagnefixFunctioneert = EMAttribuut(field=StringField,
                                                             naam='schakelpomp magnefix functioneert',
                                                             label='schakelpomp magnefix functioneert',
                                                             objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#HSDeel.schakelpompMagnefixFunctioneert',
-                                                            definitie='Definitie nog toe te voegen voor eigenschap schakelpomp magnefix functioneert')
+                                                            definitie='Definitie nog toe te voegen voor eigenschap schakelpomp magnefix functioneert',
+                                                            owner=self)
 
         self._vitale5EhboElektrocutieplaatAanwezig = EMAttribuut(field=StringField,
                                                                  naam='vitale5-EHBO-Elektrocutieplaat aanwezig',
                                                                  label='vitale5-EHBO-Elektrocutieplaat aanwezig',
                                                                  objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#HSDeel.vitale5EhboElektrocutieplaatAanwezig',
-                                                                 definitie='Definitie nog toe te voegen voor eigenschap vitale5-EHBO-Elektrocutieplaat aanwezig')
+                                                                 definitie='Definitie nog toe te voegen voor eigenschap vitale5-EHBO-Elektrocutieplaat aanwezig',
+                                                                 owner=self)
 
     @property
     def hsSchakelappTrafoStofSpinnenwebVrij(self):

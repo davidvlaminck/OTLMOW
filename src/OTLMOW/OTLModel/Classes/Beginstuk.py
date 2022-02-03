@@ -1,11 +1,11 @@
 # coding=utf-8
-from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from abc import abstractmethod
 from OTLMOW.OTLModel.Classes.AfschermendeConstructie import AfschermendeConstructie
+from OTLMOW.GeometrieArtefact.LijnGeometrie import LijnGeometrie
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Beginstuk(AfschermendeConstructie):
+class Beginstuk(AfschermendeConstructie, LijnGeometrie):
     """Abstracte voor een stuk aan het uiteinde van een geleideconstructie,met als doel een frontale botsing te reduceren gericht naar het naderende verkeer."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Beginstuk'
@@ -13,4 +13,5 @@ class Beginstuk(AfschermendeConstructie):
 
     @abstractmethod
     def __init__(self):
-        super().__init__()
+        AfschermendeConstructie.__init__(self)
+        LijnGeometrie.__init__(self)

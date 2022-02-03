@@ -2,23 +2,26 @@
 from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLMOW.OTLModel.Classes.AIMObject import AIMObject
 from OTLMOW.OTLModel.Datatypes.KwantWrdInWatt import KwantWrdInWatt
+from OTLMOW.GeometrieArtefact.LijnGeometrie import LijnGeometrie
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Verwarmingslint(AIMObject):
+class Verwarmingslint(AIMObject, LijnGeometrie):
     """Verwarmbare omwikkeling voor onderdelen die moeten beschermd worden tegen bevriezing."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Verwarmingslint'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        super().__init__()
+        AIMObject.__init__(self)
+        LijnGeometrie.__init__(self)
 
         self._vermogen = OTLAttribuut(field=KwantWrdInWatt,
                                       naam='vermogen',
                                       label='vermogen',
                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Verwarmingslint.vermogen',
-                                      definition='Het vereiste vermogen in watt voor de correcte werking van het verwarmingslint.')
+                                      definition='Het vereiste vermogen in watt voor de correcte werking van het verwarmingslint.',
+                                      owner=self)
 
     @property
     def vermogen(self):

@@ -20,13 +20,15 @@ class BeheerHoutigeVegetatie(AIMObject):
                                          label='beheeroptie',
                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#BeheerHoutigeVegetatie.beheeroptie',
                                          kardinaliteit_max='*',
-                                         definition='Aanduiding van welk beheer wordt toegepast op de houtige vegetatie.')
+                                         definition='Aanduiding van welk beheer wordt toegepast op de houtige vegetatie.',
+                                         owner=self)
 
         self._heeftBeheerplan = OTLAttribuut(field=BooleanField,
                                              naam='heeftBeheerplan',
                                              label='heeft beheerplan',
                                              objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#BeheerHoutigeVegetatie.heeftBeheerplan',
-                                             definition='Aanduiding of er een beheerplan bestaat.')
+                                             definition='Aanduiding of er een beheerplan bestaat.',
+                                             owner=self)
 
     @property
     def beheeroptie(self):

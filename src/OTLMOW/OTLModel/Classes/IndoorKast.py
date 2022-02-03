@@ -20,7 +20,8 @@ class IndoorKast(Kast):
                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#IndoorKast.mplan',
                                    usagenote='Bestanden van het type dwg of pdf.',
                                    kardinaliteit_max='*',
-                                   definition='Mechanisch plan van de volledige installatie. Er wordt 1 plan toegevoegd per installatie/techniek die op de kast is aangesloten.')
+                                   definition='Mechanisch plan van de volledige installatie. Er wordt 1 plan toegevoegd per installatie/techniek die op de kast is aangesloten.',
+                                   owner=self)
 
     @property
     def mplan(self):

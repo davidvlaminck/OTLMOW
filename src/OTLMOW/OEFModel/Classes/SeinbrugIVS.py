@@ -21,217 +21,253 @@ class SeinbrugIVS(EMObject):
                                                naam='RAL kleur (SEINBRGIVS)',
                                                label='RAL kleur (SEINBRGIVS)',
                                                objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#SeinbrugIVS.ralKleurSeinbrgivs',
-                                               definitie='tekstveld, mogelijk in te vullen met niet van toepassing of 9070 of andere waarden')
+                                               definitie='tekstveld, mogelijk in te vullen met niet van toepassing of 9070 of andere waarden',
+                                               owner=self)
 
         self._aantalDeurtjesAfschermingenVervangen = EMAttribuut(field=FloatOrDecimalField,
                                                                  naam='aantal deurtjes/afschermingen vervangen',
                                                                  label='aantal deurtjes/afschermingen vervangen',
                                                                  objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#SeinbrugIVS.aantalDeurtjesAfschermingenVervangen',
-                                                                 definitie='Definitie nog toe te voegen voor eigenschap aantal deurtjes/afschermingen vervangen')
+                                                                 definitie='Definitie nog toe te voegen voor eigenschap aantal deurtjes/afschermingen vervangen',
+                                                                 owner=self)
 
         self._aanwezigheidExtraVerhoog = EMAttribuut(field=StringField,
                                                      naam='aanwezigheid extra verhoog',
                                                      label='aanwezigheid extra verhoog',
                                                      objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#SeinbrugIVS.aanwezigheidExtraVerhoog',
-                                                     definitie='Definitie nog toe te voegen voor eigenschap aanwezigheid extra verhoog')
+                                                     definitie='Definitie nog toe te voegen voor eigenschap aanwezigheid extra verhoog',
+                                                     owner=self)
 
         self._andereOnderhoudsacties = EMAttribuut(field=StringField,
                                                    naam='andere onderhoudsacties',
                                                    label='andere onderhoudsacties',
                                                    objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#EMObject.andereOnderhoudsacties',
-                                                   definitie='veld waar met max 40 lettertekens aanvullende info kan geleverd worden')
+                                                   definitie='veld waar met max 40 lettertekens aanvullende info kan geleverd worden',
+                                                   owner=self)
 
         self._datumNieuweSeinbrugIvs = EMAttribuut(field=DateField,
                                                    naam='datum nieuwe seinbrug IVS',
                                                    label='datum nieuwe seinbrug IVS',
                                                    objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#SeinbrugIVS.datumNieuweSeinbrugIvs',
-                                                   definitie='datum waarop de seinbrug IVS geplaatst is')
+                                                   definitie='datum waarop de seinbrug IVS geplaatst is',
+                                                   owner=self)
 
         self._datumSeinbrugIvsGeschilderd = EMAttribuut(field=DateField,
                                                         naam='datum seinbrug IVS geschilderd',
                                                         label='datum seinbrug IVS geschilderd',
                                                         objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#SeinbrugIVS.datumSeinbrugIvsGeschilderd',
-                                                        definitie='datum waarop seinbrug IVS laatste keer is geschilderd')
+                                                        definitie='datum waarop seinbrug IVS laatste keer is geschilderd',
+                                                        owner=self)
 
         self._directGevaar = EMAttribuut(field=BooleanField,
                                          naam='direct gevaar',
                                          label='direct gevaar',
                                          objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#EMObject.directGevaar',
-                                         definitie='Definitie nog toe te voegen voor eigenschap direct gevaar')
+                                         definitie='Definitie nog toe te voegen voor eigenschap direct gevaar',
+                                         owner=self)
 
         self._externeRoestvorming = EMAttribuut(field=StringField,
                                                 naam='externe roestvorming',
                                                 label='externe roestvorming',
                                                 objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#EMObject.externeRoestvorming',
-                                                definitie='keuzelijst en schaalverdeling volgens inspectiehandboek')
+                                                definitie='keuzelijst en schaalverdeling volgens inspectiehandboek',
+                                                owner=self)
 
         self._geschilderdSeinbrgivs = EMAttribuut(field=BooleanField,
                                                   naam='geschilderd (SEINBRGIVS)',
                                                   label='geschilderd (SEINBRGIVS)',
                                                   objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#SeinbrugIVS.geschilderdSeinbrgivs',
-                                                  definitie='corrosiebescherming geschilderd of niet?')
+                                                  definitie='corrosiebescherming geschilderd of niet?',
+                                                  owner=self)
 
         self._interneRoestvorming = EMAttribuut(field=StringField,
                                                 naam='interne roestvorming',
                                                 label='interne roestvorming',
                                                 objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#EMObject.interneRoestvorming',
-                                                definitie='keuzelijst en schaalverdeling volgens inspectiehandboek')
+                                                definitie='keuzelijst en schaalverdeling volgens inspectiehandboek',
+                                                owner=self)
 
         self._kabelfout = EMAttribuut(field=BooleanField,
                                       naam='kabelfout',
                                       label='kabelfout',
                                       objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#EMObject.kabelfout',
-                                      definitie='Definitie nog toe te voegen voor eigenschap kabelfout')
+                                      definitie='Definitie nog toe te voegen voor eigenschap kabelfout',
+                                      owner=self)
 
         self._ladder = EMAttribuut(field=StringField,
                                    naam='ladder',
                                    label='ladder',
                                    objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#SeinbrugIVS.ladder',
-                                   definitie='Definitie nog toe te voegen voor eigenschap ladder')
+                                   definitie='Definitie nog toe te voegen voor eigenschap ladder',
+                                   owner=self)
 
         self._lengteOverspanningSeinbrgivs = EMAttribuut(field=FloatOrDecimalField,
                                                          naam='lengte overspanning (SEINBRGIVS)',
                                                          label='lengte overspanning (SEINBRGIVS)',
                                                          objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#SeinbrugIVS.lengteOverspanningSeinbrgivs',
-                                                         definitie='lengte overspanning/uitkraging')
+                                                         definitie='lengte overspanning/uitkraging',
+                                                         owner=self)
 
         self._leuningOpDwarsbalk = EMAttribuut(field=StringField,
                                                naam='leuning op dwarsbalk',
                                                label='leuning op dwarsbalk',
                                                objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#SeinbrugIVS.leuningOpDwarsbalk',
-                                               definitie='Definitie nog toe te voegen voor eigenschap leuning op dwarsbalk')
+                                               definitie='Definitie nog toe te voegen voor eigenschap leuning op dwarsbalk',
+                                               owner=self)
 
         self._minimumVrijeHoogte = EMAttribuut(field=FloatOrDecimalField,
                                                naam='minimum vrije hoogte',
                                                label='minimum vrije hoogte',
                                                objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#EMObject.minimumVrijeHoogte',
-                                               definitie='Definitie nog toe te voegen voor eigenschap minimum vrije hoogte')
+                                               definitie='Definitie nog toe te voegen voor eigenschap minimum vrije hoogte',
+                                               owner=self)
 
         self._nummerLeesbaar = EMAttribuut(field=StringField,
                                            naam='nummer leesbaar',
                                            label='nummer leesbaar',
                                            objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#EMObject.nummerLeesbaar',
-                                           definitie='keuzelijst en schaalverdeling volgens inspectiehandboek')
+                                           definitie='keuzelijst en schaalverdeling volgens inspectiehandboek',
+                                           owner=self)
 
         self._opmerkingInventarisSeinbrugIvs = EMAttribuut(field=StringField,
                                                            naam='opmerking inventaris seinbrug IVS',
                                                            label='opmerking inventaris seinbrug IVS',
                                                            objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#SeinbrugIVS.opmerkingInventarisSeinbrugIvs',
-                                                           definitie='veld waar met max 40 lettertekens aanvullende info kan geleverd worden')
+                                                           definitie='veld waar met max 40 lettertekens aanvullende info kan geleverd worden',
+                                                           owner=self)
 
         self._opmerkingToestandSeinbrugIvs = EMAttribuut(field=StringField,
                                                          naam='opmerking toestand seinbrug IVS',
                                                          label='opmerking toestand seinbrug IVS',
                                                          objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#SeinbrugIVS.opmerkingToestandSeinbrugIvs',
-                                                         definitie='veld waar met max 40 lettertekens aanvullende info kan geleverd worden')
+                                                         definitie='veld waar met max 40 lettertekens aanvullende info kan geleverd worden',
+                                                         owner=self)
 
         self._plaatsBeschadigingSeinbrugIvs = EMAttribuut(field=StringField,
                                                           naam='plaats beschadiging seinbrug IVS',
                                                           label='plaats beschadiging seinbrug IVS',
                                                           objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#SeinbrugIVS.plaatsBeschadigingSeinbrugIvs',
-                                                          definitie='veld waar met max 40 lettertekens aanvullende info kan geleverd worden over de plaats van de beschadiging')
+                                                          definitie='veld waar met max 40 lettertekens aanvullende info kan geleverd worden over de plaats van de beschadiging',
+                                                          owner=self)
 
         self._plaatsExterneRoestvorming = EMAttribuut(field=StringField,
                                                       naam='plaats externe roestvorming',
                                                       label='plaats externe roestvorming',
                                                       objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#SeinbrugIVS.plaatsExterneRoestvorming',
-                                                      definitie='veld waar met max 40 lettertekens aanvullende info kan geleverd worden over de plaats van de externe roestvorming')
+                                                      definitie='veld waar met max 40 lettertekens aanvullende info kan geleverd worden over de plaats van de externe roestvorming',
+                                                      owner=self)
 
         self._redenSeinbrugIvsBuitenGebruik = EMAttribuut(field=StringField,
                                                           naam='reden seinbrug IVS buiten gebruik',
                                                           label='reden seinbrug IVS buiten gebruik',
                                                           objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#SeinbrugIVS.redenSeinbrugIvsBuitenGebruik',
-                                                          definitie='Definitie nog toe te voegen voor eigenschap reden seinbrug IVS buiten gebruik')
+                                                          definitie='Definitie nog toe te voegen voor eigenschap reden seinbrug IVS buiten gebruik',
+                                                          owner=self)
 
         self._reinigingSteunen = EMAttribuut(field=BooleanField,
                                              naam='reiniging steunen',
                                              label='reiniging steunen',
                                              objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#SeinbrugIVS.reinigingSteunen',
-                                             definitie='enkel voor onderhoud IVSB constructies')
+                                             definitie='enkel voor onderhoud IVSB constructies',
+                                             owner=self)
 
         self._seinbrugIvsBuitenGebruik = EMAttribuut(field=BooleanField,
                                                      naam='seinbrug IVS buiten gebruik',
                                                      label='seinbrug IVS buiten gebruik',
                                                      objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#SeinbrugIVS.seinbrugIvsBuitenGebruik',
-                                                     definitie='indien seinbrug IVS nutteloos is, kan eigenschap buiten gebruik op ja worden gesteld, in afwachting van verwijdering')
+                                                     definitie='indien seinbrug IVS nutteloos is, kan eigenschap buiten gebruik op ja worden gesteld, in afwachting van verwijdering',
+                                                     owner=self)
 
         self._seinbrugTeBehoudenVolgensDienstorder = EMAttribuut(field=BooleanField,
                                                                  naam='seinbrug te behouden volgens dienstorder',
                                                                  label='seinbrug te behouden volgens dienstorder',
                                                                  objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#SeinbrugIVS.seinbrugTeBehoudenVolgensDienstorder',
-                                                                 definitie='Definitie nog toe te voegen voor eigenschap seinbrug te behouden volgens dienstorder')
+                                                                 definitie='Definitie nog toe te voegen voor eigenschap seinbrug te behouden volgens dienstorder',
+                                                                 owner=self)
 
         self._toestandBoutenKolomDrager = EMAttribuut(field=StringField,
                                                       naam='toestand bouten kolom-drager',
                                                       label='toestand bouten kolom-drager',
                                                       objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#SeinbrugIVS.toestandBoutenKolomDrager',
-                                                      definitie='keuzelijst en schaalverdeling volgens inspectiehandboek')
+                                                      definitie='keuzelijst en schaalverdeling volgens inspectiehandboek',
+                                                      owner=self)
 
         self._toestandBoutenKolomVerankering = EMAttribuut(field=StringField,
                                                            naam='toestand bouten kolom-verankering',
                                                            label='toestand bouten kolom-verankering',
                                                            objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#SeinbrugIVS.toestandBoutenKolomVerankering',
-                                                           definitie='keuzelijst en schaalverdeling volgens inspectiehandboek')
+                                                           definitie='keuzelijst en schaalverdeling volgens inspectiehandboek',
+                                                           owner=self)
 
         self._toestandDeurtjeAfschermingen = EMAttribuut(field=StringField,
                                                          naam='toestand deurtje/afschermingen',
                                                          label='toestand deurtje/afschermingen',
                                                          objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#SeinbrugIVS.toestandDeurtjeAfschermingen',
-                                                         definitie='keuzelijst en schaalverdeling volgens inspectiehandboek')
+                                                         definitie='keuzelijst en schaalverdeling volgens inspectiehandboek',
+                                                         owner=self)
 
         self._toestandFunderingSeinbrgivs = EMAttribuut(field=StringField,
                                                         naam='toestand fundering (SEINBRGIVS)',
                                                         label='toestand fundering (SEINBRGIVS)',
                                                         objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#SeinbrugIVS.toestandFunderingSeinbrgivs',
-                                                        definitie='keuzelijst en schaalverdeling volgens inspectiehandboek')
+                                                        definitie='keuzelijst en schaalverdeling volgens inspectiehandboek',
+                                                        owner=self)
 
         self._toestandLooproosters = EMAttribuut(field=StringField,
                                                  naam='toestand looproosters',
                                                  label='toestand looproosters',
                                                  objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#SeinbrugIVS.toestandLooproosters',
-                                                 definitie='afhankelijke inspectie eigenschap die enkel maar getoond moet worden als type constructie vakwerk is.keuzelijst en schaalverdeling volgens inspectiehandboek')
+                                                 definitie='afhankelijke inspectie eigenschap die enkel maar getoond moet worden als type constructie vakwerk is.keuzelijst en schaalverdeling volgens inspectiehandboek',
+                                                 owner=self)
 
         self._toestandSeinbrugIvs = EMAttribuut(field=StringField,
                                                 naam='toestand seinbrug IVS',
                                                 label='toestand seinbrug IVS',
                                                 objectUri='https://ins.data.wegenenverkeer.be/ns/attribuut#SeinbrugIVS.toestandSeinbrugIvs',
-                                                definitie='keuzelijst en schaalverdeling volgens inspectiehandboek')
+                                                definitie='keuzelijst en schaalverdeling volgens inspectiehandboek',
+                                                owner=self)
 
         self._typeConstructie = EMAttribuut(field=StringField,
                                             naam='type constructie',
                                             label='type constructie',
                                             objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#SeinbrugIVS.typeConstructie',
-                                            definitie='Definitie nog toe te voegen voor eigenschap type constructie')
+                                            definitie='Definitie nog toe te voegen voor eigenschap type constructie',
+                                            owner=self)
 
         self._typeFundering = EMAttribuut(field=StringField,
                                           naam='type fundering',
                                           label='type fundering',
                                           objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#SeinbrugIVS.typeFundering',
-                                          definitie='Definitie nog toe te voegen voor eigenschap type fundering')
+                                          definitie='Definitie nog toe te voegen voor eigenschap type fundering',
+                                          owner=self)
 
         self._typeKlemmen = EMAttribuut(field=StringField,
                                         naam='type klemmen',
                                         label='type klemmen',
                                         objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#SeinbrugIVS.typeKlemmen',
-                                        definitie='Definitie nog toe te voegen voor eigenschap type klemmen')
+                                        definitie='Definitie nog toe te voegen voor eigenschap type klemmen',
+                                        owner=self)
 
         self._typeKlemmenblok = EMAttribuut(field=StringField,
                                             naam='type klemmenblok',
                                             label='type klemmenblok',
                                             objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#SeinbrugIVS.typeKlemmenblok',
-                                            definitie='Definitie nog toe te voegen voor eigenschap type klemmenblok')
+                                            definitie='Definitie nog toe te voegen voor eigenschap type klemmenblok',
+                                            owner=self)
 
         self._typeOnderhoud = EMAttribuut(field=StringField,
                                           naam='type onderhoud',
                                           label='type onderhoud',
                                           objectUri='https://ond.data.wegenenverkeer.be/ns/attribuut#EMObject.typeOnderhoud',
-                                          definitie='Definitie nog toe te voegen voor eigenschap type onderhoud')
+                                          definitie='Definitie nog toe te voegen voor eigenschap type onderhoud',
+                                          owner=self)
 
         self._typeSeinbrug = EMAttribuut(field=StringField,
                                          naam='type seinbrug',
                                          label='type seinbrug',
                                          objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#EMObject.typeSeinbrug',
-                                         definitie='Definitie nog toe te voegen voor eigenschap type seinbrug')
+                                         definitie='Definitie nog toe te voegen voor eigenschap type seinbrug',
+                                         owner=self)
 
     @property
     def ralKleurSeinbrgivs(self):

@@ -6,10 +6,11 @@ from OTLMOW.OTLModel.Datatypes.BooleanField import BooleanField
 from OTLMOW.OTLModel.Datatypes.KlLEKantopsluitingKleur import KlLEKantopsluitingKleur
 from OTLMOW.OTLModel.Datatypes.KlLEKantopsluitingSoort import KlLEKantopsluitingSoort
 from OTLMOW.OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter
+from OTLMOW.GeometrieArtefact.LijnGeometrie import LijnGeometrie
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Kantopsluiting(LijnvormigElement):
+class Kantopsluiting(LijnvormigElement, LijnGeometrie):
     """Abstracte voor de gemeenschappelijke eigenschappen en relaties voor de kantopsluiting."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Kantopsluiting'
@@ -17,31 +18,36 @@ class Kantopsluiting(LijnvormigElement):
 
     @abstractmethod
     def __init__(self):
-        super().__init__()
+        LijnvormigElement.__init__(self)
+        LijnGeometrie.__init__(self)
 
         self._isGeprefabriceerd = OTLAttribuut(field=BooleanField,
                                                naam='isGeprefabriceerd',
                                                label='is geprefabriceerd',
                                                objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Kantopsluiting.isGeprefabriceerd',
-                                               definition='Aanduiding of de kantopsluiting al dan niet is geprefabriceerd.')
+                                               definition='Aanduiding of de kantopsluiting al dan niet is geprefabriceerd.',
+                                               owner=self)
 
         self._kleur = OTLAttribuut(field=KlLEKantopsluitingKleur,
                                    naam='kleur',
                                    label='kleur',
                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Kantopsluiting.kleur',
-                                   definition='De kleur van kantopsluiting.')
+                                   definition='De kleur van kantopsluiting.',
+                                   owner=self)
 
         self._soort = OTLAttribuut(field=KlLEKantopsluitingSoort,
                                    naam='soort',
                                    label='soort',
                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Kantopsluiting.soort',
-                                   definition='De soort van kantopsluiting.')
+                                   definition='De soort van kantopsluiting.',
+                                   owner=self)
 
         self._totaleLengte = OTLAttribuut(field=KwantWrdInMeter,
                                           naam='totaleLengte',
                                           label='lengte',
                                           objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Kantopsluiting.totaleLengte',
-                                          definition='De totale lengte van de geplaatste constructie van kantopsluitingen in meter.')
+                                          definition='De totale lengte van de geplaatste constructie van kantopsluitingen in meter.',
+                                          owner=self)
 
     @property
     def isGeprefabriceerd(self):

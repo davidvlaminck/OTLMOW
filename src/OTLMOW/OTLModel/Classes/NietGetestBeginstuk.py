@@ -18,7 +18,8 @@ class NietGetestBeginstuk(Beginstuk):
                                              naam='uitbuigingstype',
                                              label='uitbuigingstype',
                                              objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#NietGetestBeginstuk.uitbuigingstype',
-                                             definition='Niet getest beginstuk dat uitbuigt weg van de weg in grondplan.')
+                                             definition='Niet getest beginstuk dat uitbuigt weg van de weg in grondplan.',
+                                             owner=self)
 
     @property
     def uitbuigingstype(self):

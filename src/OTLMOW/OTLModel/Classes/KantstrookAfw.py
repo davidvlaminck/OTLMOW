@@ -18,7 +18,8 @@ class KantstrookAfw(AfwijkendeKantopsluiting):
                                                          naam='aantalRijenBetonstraatsteen',
                                                          label='aantal rijen betonstraatsteen',
                                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KantstrookAfw.aantalRijenBetonstraatsteen',
-                                                         definition='Het aantal rijen betonstraatsteen waaruit de kantstrook is opgebouwd.')
+                                                         definition='Het aantal rijen betonstraatsteen waaruit de kantstrook is opgebouwd.',
+                                                         owner=self)
 
     @property
     def aantalRijenBetonstraatsteen(self):

@@ -20,19 +20,22 @@ class Armatuurcontroller(Communicatieapparatuur, FirmwareObject):
                                   naam='merk',
                                   label='merk',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Armatuurcontroller.merk',
-                                  definition='Merk van de armatuurcontroller.')
+                                  definition='Merk van de armatuurcontroller.',
+                                  owner=self)
 
         self._modelnaam = OTLAttribuut(field=StringField,
                                        naam='modelnaam',
                                        label='modelnaam',
                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Armatuurcontroller.modelnaam',
-                                       definition='Modelnaam van de armatuurcontroller.')
+                                       definition='Modelnaam van de armatuurcontroller.',
+                                       owner=self)
 
         self._serienummer = OTLAttribuut(field=StringField,
                                          naam='serienummer',
                                          label='serienummer',
                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Armatuurcontroller.serienummer',
-                                         definition='Het unieke nummer waarmee het toestel door de fabrikant geïdentificeerd is.')
+                                         definition='Het unieke nummer waarmee het toestel door de fabrikant geïdentificeerd is.',
+                                         owner=self)
 
     @property
     def merk(self):

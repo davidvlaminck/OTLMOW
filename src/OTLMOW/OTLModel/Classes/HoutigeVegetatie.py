@@ -24,25 +24,29 @@ class HoutigeVegetatie(BegroeidVoorkomen):
                                     label='aanleg',
                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#HoutigeVegetatie.aanleg',
                                     kardinaliteit_max='*',
-                                    definition='De manier van aanplanten van de houtige vegetatie.')
+                                    definition='De manier van aanplanten van de houtige vegetatie.',
+                                    owner=self)
 
         self._hoogte = OTLAttribuut(field=KwantWrdInMeter,
                                     naam='hoogte',
                                     label='hoogte',
                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#HoutigeVegetatie.hoogte',
-                                    definition='De hoogte in meter gemeten van de stamvoet tot de top of bovenste snoeivlak van de houtige vegetatie. ')
+                                    definition='De hoogte in meter gemeten van de stamvoet tot de top of bovenste snoeivlak van de houtige vegetatie. ',
+                                    owner=self)
 
         self._isVrijUitgroeiend = OTLAttribuut(field=BooleanField,
                                                naam='isVrijUitgroeiend',
                                                label='is vrij uitgroeiend',
                                                objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#HoutigeVegetatie.isVrijUitgroeiend',
-                                               definition='Geeft aan of de vegetatie of begroeiing al dan niet snoei vereist.')
+                                               definition='Geeft aan of de vegetatie of begroeiing al dan niet snoei vereist.',
+                                               owner=self)
 
         self._knipoppervlak = OTLAttribuut(field=KwantWrdInVierkanteMeter,
                                            naam='knipoppervlak',
                                            label='knipoppervlak',
                                            objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#HoutigeVegetatie.knipoppervlak',
-                                           definition='De afmeting van de begroeiing in vierkante meter dat geschoren moet worden.')
+                                           definition='De afmeting van de begroeiing in vierkante meter dat geschoren moet worden.',
+                                           owner=self)
 
     @property
     def aanleg(self):

@@ -1,11 +1,11 @@
 # coding=utf-8
-from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from abc import abstractmethod
 from OTLMOW.OTLModel.Classes.AIMNaamObject import AIMNaamObject
+from OTLMOW.GeometrieArtefact.PuntGeometrie import PuntGeometrie
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Brandvoorziening(AIMNaamObject):
+class Brandvoorziening(AIMNaamObject, PuntGeometrie):
     """Abstracte voor linkende elementen die voorzien kunnen worden van verwarming om hun werkzaamheid in extreme omstandigheden te garanderen."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Brandvoorziening'
@@ -13,4 +13,5 @@ class Brandvoorziening(AIMNaamObject):
 
     @abstractmethod
     def __init__(self):
-        super().__init__()
+        AIMNaamObject.__init__(self)
+        PuntGeometrie.__init__(self)

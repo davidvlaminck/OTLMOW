@@ -81,7 +81,7 @@ class DavieDecoderTests(TestCase):
   "regelaartype" : "type-1",
   "notitie" : "test 123",
   "naam" : "Gevondenproficiat",
-  "geometry" : "POINT Z (155377.8 211520.7 0)"
+  "geometry" : "POINT Z(155377.8 211520.7 0)"
 }]"""
     jsonDataCase5 = """{
   "assetId" : {

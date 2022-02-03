@@ -1,5 +1,4 @@
 # coding=utf-8
-from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from abc import abstractmethod
 from OTLMOW.OTLModel.Classes.Laag import Laag
 from OTLMOW.OTLModel.Classes.LaagDikte import LaagDikte

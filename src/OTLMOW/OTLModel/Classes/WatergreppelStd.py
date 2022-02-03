@@ -21,25 +21,29 @@ class WatergreppelStd(GestandaardiseerdeKantopsluiting):
                                         naam='isVerholen',
                                         label='is verholen',
                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#WatergreppelStd.isVerholen',
-                                        definition='Aanduiding of de watergreppel verholen is. Verholen goten hebben een kleine sleufopening en een grote afvoercapaciteit.')
+                                        definition='Aanduiding of de watergreppel verholen is. Verholen goten hebben een kleine sleufopening en een grote afvoercapaciteit.',
+                                        owner=self)
 
         self._norm = OTLAttribuut(field=DtcLENorm,
                                   naam='norm',
                                   label='norm',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#WatergreppelStd.norm',
-                                  definition='De gestandaardiseerde watergreppel volgens aangeduide norm.')
+                                  definition='De gestandaardiseerde watergreppel volgens aangeduide norm.',
+                                  owner=self)
 
         self._type = OTLAttribuut(field=KlLEWatergreppelType,
                                   naam='type',
                                   label='type',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#WatergreppelStd.type',
-                                  definition='Het type van gestandaardiseerde watergreppel.')
+                                  definition='Het type van gestandaardiseerde watergreppel.',
+                                  owner=self)
 
         self._vorm = OTLAttribuut(field=DtcTrottoirbandVorm,
                                   naam='vorm',
                                   label='vorm',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#WatergreppelStd.vorm',
-                                  definition='De vorm van de watergreppel.')
+                                  definition='De vorm van de watergreppel.',
+                                  owner=self)
 
     @property
     def isVerholen(self):

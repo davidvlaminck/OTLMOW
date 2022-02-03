@@ -18,7 +18,8 @@ class StandaardStalenProfiel(StalenProfiel):
                                          naam='profieltype',
                                          label='profieltype',
                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#StandaardStalenProfiel.profieltype',
-                                         definition='Soort van profiel gecombineerd met de hoogte.')
+                                         definition='Soort van profiel gecombineerd met de hoogte.',
+                                         owner=self)
 
     @property
     def profieltype(self):

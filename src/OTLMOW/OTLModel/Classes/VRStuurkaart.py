@@ -18,7 +18,8 @@ class VRStuurkaart(VRModuleMetFirmware):
                                                   naam='communicatieprotocol',
                                                   label='communicatieprotocol',
                                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#VRStuurkaart.communicatieprotocol',
-                                                  definition='Gebruikte communicatieprotocol voor de stuurkaart.')
+                                                  definition='Gebruikte communicatieprotocol voor de stuurkaart.',
+                                                  owner=self)
 
     @property
     def communicatieprotocol(self):

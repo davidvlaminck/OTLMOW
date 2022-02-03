@@ -1,11 +1,11 @@
 # coding=utf-8
-from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from abc import abstractmethod
 from OTLMOW.OTLModel.Classes.AIMNaamObject import AIMNaamObject
+from OTLMOW.GeometrieArtefact.GeenGeometrie import GeenGeometrie
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class SoftwareToegang(AIMNaamObject):
+class SoftwareToegang(AIMNaamObject, GeenGeometrie):
     """Een abstracte waarmee een object kan connecteren naar software, al dan niet door gebruik te maken van de logische poort."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#SoftwareToegang'
@@ -13,4 +13,5 @@ class SoftwareToegang(AIMNaamObject):
 
     @abstractmethod
     def __init__(self):
-        super().__init__()
+        AIMNaamObject.__init__(self)
+        GeenGeometrie.__init__(self)

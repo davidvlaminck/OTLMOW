@@ -21,25 +21,29 @@ class Segmentcontroller(Controller):
                                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Segmentcontroller.beveil?igingssleutel',
                                                   usagenote='Attribuut uit gebruik sinds versie 2.0.0 ',
                                                   deprecated_version='2.0.0',
-                                                  definition='De encryptie die wordt toegepast om de verbinding tussen lokaal en centraal te beveiligen.')
+                                                  definition='De encryptie die wordt toegepast om de verbinding tussen lokaal en centraal te beveiligen.',
+                                                  owner=self)
 
         self._beveiligingssleutel = OTLAttribuut(field=KlControllerBeveiligingssleutel,
                                                  naam='beveiligingssleutel',
                                                  label='beveiligingssleutel',
                                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Segmentcontroller.beveiligingssleutel',
-                                                 definition='De encryptie die wordt toegepast om de verbinding tussen lokaal en centraal te beveiligen.')
+                                                 definition='De encryptie die wordt toegepast om de verbinding tussen lokaal en centraal te beveiligen.',
+                                                 owner=self)
 
         self._merk = OTLAttribuut(field=StringField,
                                   naam='merk',
                                   label='merk',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Segmentcontroller.merk',
-                                  definition='Merk van de segmentcontroller.')
+                                  definition='Merk van de segmentcontroller.',
+                                  owner=self)
 
         self._modelnaam = OTLAttribuut(field=StringField,
                                        naam='modelnaam',
                                        label='modelnaam',
                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Segmentcontroller.modelnaam',
-                                       definition='Modelnaam van de segmentcontroller.')
+                                       definition='Modelnaam van de segmentcontroller.',
+                                       owner=self)
 
     @property
     def beveil?igingssleutel(self):

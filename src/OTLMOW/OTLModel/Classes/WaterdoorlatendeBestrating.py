@@ -21,25 +21,29 @@ class WaterdoorlatendeBestrating(Bestrating):
                                   naam='aard',
                                   label='aard',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#WaterdoorlatendeBestrating.aard',
-                                  definition='Het kenmerk of de vorm van de waterdoorlatende betonstraatsteen waardoor infiltratie van hemelwater in de bodem mogelijk is.')
+                                  definition='Het kenmerk of de vorm van de waterdoorlatende betonstraatsteen waardoor infiltratie van hemelwater in de bodem mogelijk is.',
+                                  owner=self)
 
         self._afmetingVanBestratingselementLxB = OTLAttribuut(field=KlBestratingselementAfmetingLxB,
                                                               naam='afmetingVanBestratingselementLxB',
                                                               label='afmeting van bestratingselement LxB',
                                                               objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#WaterdoorlatendeBestrating.afmetingVanBestratingselementLxB',
-                                                              definition='De lengte en breedte van het bestratingselement in millimeter.')
+                                                              definition='De lengte en breedte van het bestratingselement in millimeter.',
+                                                              owner=self)
 
         self._afwerking = OTLAttribuut(field=KlBestratingAfwerking,
                                        naam='afwerking',
                                        label='afwerking',
                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#WaterdoorlatendeBestrating.afwerking',
-                                       definition='Bepaling van de afwerking van de waterdoorlatende betonstraatstenen of betontegels.')
+                                       definition='Bepaling van de afwerking van de waterdoorlatende betonstraatstenen of betontegels.',
+                                       owner=self)
 
         self._type = OTLAttribuut(field=KlWBSSType,
                                   naam='type',
                                   label='type',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#WaterdoorlatendeBestrating.type',
-                                  definition='Het type van waterdoorlatende betonstraatstenen of betontegels.')
+                                  definition='Het type van waterdoorlatende betonstraatstenen of betontegels.',
+                                  owner=self)
 
     @property
     def aard(self):

@@ -20,19 +20,22 @@ class TrottoirbandWatergreppelStd(GestandaardiseerdeKantopsluiting):
                                   naam='norm',
                                   label='norm',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#TrottoirbandWatergreppelStd.norm',
-                                  definition='De gestandaardiseerde trottoirband_watergreppel volgens aangeduide norm.')
+                                  definition='De gestandaardiseerde trottoirband_watergreppel volgens aangeduide norm.',
+                                  owner=self)
 
         self._type = OTLAttribuut(field=KlLETrottoirbandWatergreppelType,
                                   naam='type',
                                   label='type',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#TrottoirbandWatergreppelStd.type',
-                                  definition='Het type van gestandaardiseerde trottoirband_watergreppel.')
+                                  definition='Het type van gestandaardiseerde trottoirband_watergreppel.',
+                                  owner=self)
 
         self._vorm = OTLAttribuut(field=DtcTrottoirbandVorm,
                                   naam='vorm',
                                   label='vorm',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#TrottoirbandWatergreppelStd.vorm',
-                                  definition='De vorm van de gestandaardiseerde trottoirband_watergreppel.')
+                                  definition='De vorm van de gestandaardiseerde trottoirband_watergreppel.',
+                                  owner=self)
 
     @property
     def norm(self):

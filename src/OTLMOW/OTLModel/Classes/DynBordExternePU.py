@@ -21,25 +21,29 @@ class DynBordExternePU(PU):
                                                      naam='heeftGeintegreerdeModem',
                                                      label='heeft geintegreerde modem',
                                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DynBordExternePU.heeftGeintegreerdeModem',
-                                                     definition='De PU heeft een geïntegreerde modem.')
+                                                     definition='De PU heeft een geïntegreerde modem.',
+                                                     owner=self)
 
         self._merk = OTLAttribuut(field=KlDynBordExternePUMerk,
                                   naam='merk',
                                   label='merk',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DynBordExternePU.merk',
-                                  definition='Het merk van de externe PU volgens een keuzelijst.')
+                                  definition='Het merk van de externe PU volgens een keuzelijst.',
+                                  owner=self)
 
         self._modelnaam = OTLAttribuut(field=KlDynBordExternePUModelnaam,
                                        naam='modelnaam',
                                        label='modelnaam',
                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DynBordExternePU.modelnaam',
-                                       definition='De modelnaam van de externe PU volgens een keuzelijst.')
+                                       definition='De modelnaam van de externe PU volgens een keuzelijst.',
+                                       owner=self)
 
         self._technischeFiche = OTLAttribuut(field=DtcDocument,
                                              naam='technischeFiche',
                                              label='technische fiche',
                                              objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DynBordExternePU.technischeFiche',
-                                             definition='Document met technische informatie over de PU.')
+                                             definition='Document met technische informatie over de PU.',
+                                             owner=self)
 
     @property
     def heeftGeintegreerdeModem(self):

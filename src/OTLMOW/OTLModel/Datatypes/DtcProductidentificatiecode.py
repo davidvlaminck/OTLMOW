@@ -15,25 +15,29 @@ class DtcProductidentificatiecodeWaarden(AttributeInfo):
                                              naam='keuringsverslag',
                                              label='keuringsverslag',
                                              objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcProductidentificatiecode.keuringsverslag',
-                                             definition='Een rapport met de resultaten van de keuring.')
+                                             definition='Een rapport met de resultaten van de keuring.',
+                                             owner=self)
 
         self._linkTechnischeFiche = OTLAttribuut(field=URIField,
                                                  naam='linkTechnischeFiche',
                                                  label='link technische fiche',
                                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcProductidentificatiecode.linkTechnischeFiche',
-                                                 definition='De link naar de technische fiche van het gerelateerd product.')
+                                                 definition='De link naar de technische fiche van het gerelateerd product.',
+                                                 owner=self)
 
         self._producent = OTLAttribuut(field=StringField,
                                        naam='producent',
                                        label='producent',
                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcProductidentificatiecode.producent',
-                                       definition='De gerelateerde fabrikant.')
+                                       definition='De gerelateerde fabrikant.',
+                                       owner=self)
 
         self._productidentificatiecode = OTLAttribuut(field=StringField,
                                                       naam='productidentificatiecode',
                                                       label='productidentificatiecode',
                                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcProductidentificatiecode.productidentificatiecode',
-                                                      definition='De code van het gebruikte product (COPRO/BENOR).')
+                                                      definition='De code van het gebruikte product (COPRO/BENOR).',
+                                                      owner=self)
 
     @property
     def keuringsverslag(self):

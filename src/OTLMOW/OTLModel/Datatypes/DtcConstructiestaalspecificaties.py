@@ -14,13 +14,15 @@ class DtcConstructiestaalspecificatiesWaarden(AttributeInfo):
                                         naam='staalsoort',
                                         label='staalsoort',
                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcConstructiestaalspecificaties.staalsoort',
-                                        definition='Staalkwaliteit die wordt gebruikt volgens Europese normen.')
+                                        definition='Staalkwaliteit die wordt gebruikt volgens Europese normen.',
+                                        owner=self)
 
         self._walsmethode = OTLAttribuut(field=KlWalsmethode,
                                          naam='walsmethode',
                                          label='walsmethode',
                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcConstructiestaalspecificaties.walsmethode',
-                                         definition='Op welke manier het staal gewalst is.')
+                                         definition='Op welke manier het staal gewalst is.',
+                                         owner=self)
 
     @property
     def staalsoort(self):

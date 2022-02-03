@@ -16,25 +16,29 @@ class DtcDocumentWaarden(AttributeInfo):
                                           naam='bestandsnaam',
                                           label='bestandsnaam',
                                           objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcDocument.bestandsnaam',
-                                          definition='De naam van het Document inclusief de bestandsextensie, van de naam gescheiden door een punt.')
+                                          definition='De naam van het Document inclusief de bestandsextensie, van de naam gescheiden door een punt.',
+                                          owner=self)
 
         self._mimeType = OTLAttribuut(field=KlAlgMimeType,
                                       naam='mimeType',
                                       label='mime-type',
                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcDocument.mimeType',
-                                      definition='Het MIME type van het document.')
+                                      definition='Het MIME type van het document.',
+                                      owner=self)
 
         self._omschrijving = OTLAttribuut(field=DteTekstblok,
                                           naam='omschrijving',
                                           label='omschrijving',
                                           objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcDocument.omschrijving',
-                                          definition='Een korte toelichting over waar het document juist voor dient.')
+                                          definition='Een korte toelichting over waar het document juist voor dient.',
+                                          owner=self)
 
         self._uri = OTLAttribuut(field=URIField,
                                  naam='uri',
                                  label='uri',
                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcDocument.uri',
-                                 definition='De verwijzing naar de bestandslocatie via een link. Bij lokale bestanden kan dit eventueel ook een pad zijn.')
+                                 definition='De verwijzing naar de bestandslocatie via een link. Bij lokale bestanden kan dit eventueel ook een pad zijn.',
+                                 owner=self)
 
     @property
     def bestandsnaam(self):

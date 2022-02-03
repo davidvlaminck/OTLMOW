@@ -4,10 +4,11 @@ from OTLMOW.OTLModel.Classes.SchokindexVoertuigkering import SchokindexVoertuigk
 from OTLMOW.OTLModel.Classes.AfschermendeConstructie import AfschermendeConstructie
 from OTLMOW.OTLModel.Datatypes.KlLEACObstakelbeveiligerType import KlLEACObstakelbeveiligerType
 from OTLMOW.OTLModel.Datatypes.KlLEACPerformantieniveau import KlLEACPerformantieniveau
+from OTLMOW.GeometrieArtefact.VlakGeometrie import VlakGeometrie
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Obstakelbeveiliger(SchokindexVoertuigkering, AfschermendeConstructie):
+class Obstakelbeveiliger(SchokindexVoertuigkering, AfschermendeConstructie, VlakGeometrie):
     """Een energie-absorberende constructie voor voertuigen,geïnstalleerd vóór één of meerdere obstakels,met als doel de ernst van een botsing te reduceren."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Obstakelbeveiliger'
@@ -16,18 +17,21 @@ class Obstakelbeveiliger(SchokindexVoertuigkering, AfschermendeConstructie):
     def __init__(self):
         AfschermendeConstructie.__init__(self)
         SchokindexVoertuigkering.__init__(self)
+        VlakGeometrie.__init__(self)
 
         self._performantieniveau = OTLAttribuut(field=KlLEACPerformantieniveau,
                                                 naam='performantieniveau',
                                                 label='performantieniveau',
                                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Obstakelbeveiliger.performantieniveau',
-                                                definition='Het niveau waarop de obstakelbeveiliger is getest.')
+                                                definition='Het niveau waarop de obstakelbeveiliger is getest.',
+                                                owner=self)
 
         self._type = OTLAttribuut(field=KlLEACObstakelbeveiligerType,
                                   naam='type',
                                   label='type',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Obstakelbeveiliger.type',
-                                  definition='De functie die de obstakelbeveiliger vervult.')
+                                  definition='De functie die de obstakelbeveiliger vervult.',
+                                  owner=self)
 
     @property
     def performantieniveau(self):

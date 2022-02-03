@@ -18,13 +18,15 @@ class PTKARModem(PTModuleMetFirmware):
                                                 naam='protocolOVVoertuig',
                                                 label='protocol OV-voertuig',
                                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#PTKARModem.protocolOVVoertuig',
-                                                definition='Beschrijft het protocol dat gebruikt wordt om te communiceren met een OV-voertuig.')
+                                                definition='Beschrijft het protocol dat gebruikt wordt om te communiceren met een OV-voertuig.',
+                                                owner=self)
 
         self._protocolRegelaar = OTLAttribuut(field=KlPtKARModemProtocol,
                                               naam='protocolRegelaar',
                                               label='protocol regelaar',
                                               objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#PTKARModem.protocolRegelaar',
-                                              definition='Beschrijft het protocol dat gebruikt wordt om te communiceren met een regelaar.')
+                                              definition='Beschrijft het protocol dat gebruikt wordt om te communiceren met een regelaar.',
+                                              owner=self)
 
     @property
     def protocolOVVoertuig(self):

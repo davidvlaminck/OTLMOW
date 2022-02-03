@@ -16,13 +16,15 @@ class KwantWrdInUurWaarden(AttributeInfo):
                                               objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInUur.standaardEenheid',
                                               usagenote='"h"^^cdt:ucumunit',
                                               constraints='"h"^^cdt:ucumunit',
-                                              definition='De standaard eenheid bij dit datatype is uitgedrukt in uur.')
+                                              definition='De standaard eenheid bij dit datatype is uitgedrukt in uur.',
+                                              owner=self)
 
         self._waarde = OTLAttribuut(field=NonNegIntegerField,
                                     naam='waarde',
                                     label='waarde',
                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInUur.waarde',
-                                    definition='Bevat een getal die bij het datatype hoort.')
+                                    definition='Bevat een getal die bij het datatype hoort.',
+                                    owner=self)
 
     @property
     def standaardEenheid(self):

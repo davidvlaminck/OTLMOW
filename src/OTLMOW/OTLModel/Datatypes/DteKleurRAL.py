@@ -14,7 +14,8 @@ class DteKleurRALWaarden(AttributeInfo):
                                     label='waarde',
                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DteKleurRAL.waarde',
                                     usagenote='De waarde moet voldoen aan volgende regex: [1-9]\d{3}',
-                                    definition='Beschrijft een kleur volgens het RAL classificatiesysteem.')
+                                    definition='Beschrijft een kleur volgens het RAL classificatiesysteem.',
+                                    owner=self)
 
     @property
     def waarde(self):

@@ -19,19 +19,22 @@ class Drukverhogingsgroep(Brandvoorziening):
                                            naam='inkomendeDruk',
                                            label='inkomende druk',
                                            objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Drukverhogingsgroep.inkomendeDruk',
-                                           definition='Verwachte inkomende druk van het water bij de groep.')
+                                           definition='Verwachte inkomende druk van het water bij de groep.',
+                                           owner=self)
 
         self._uitgaandeDruk = OTLAttribuut(field=KwantWrdInBar,
                                            naam='uitgaandeDruk',
                                            label='uitgaande druk',
                                            objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Drukverhogingsgroep.uitgaandeDruk',
-                                           definition='Verwachte uitgaande druk van het water na regeling door de groep.')
+                                           definition='Verwachte uitgaande druk van het water na regeling door de groep.',
+                                           owner=self)
 
         self._vermogen = OTLAttribuut(field=KwantWrdInKiloWatt,
                                       naam='vermogen',
                                       label='vermogen',
                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Drukverhogingsgroep.vermogen',
-                                      definition='Elektrische vermogen vereist voor de goede werking van de groep.')
+                                      definition='Elektrische vermogen vereist voor de goede werking van de groep.',
+                                      owner=self)
 
     @property
     def inkomendeDruk(self):

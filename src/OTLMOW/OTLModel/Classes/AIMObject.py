@@ -31,39 +31,45 @@ class AIMObject(AIMToestand, AIMDBStatus, AttributeInfo, OTLAsset, RelatieIntera
                                      naam='assetId',
                                      label='asset-id',
                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMObject.assetId',
-                                     definition='Unieke identificatie van de asset zoals toegekend door de assetbeheerder of n.a.v. eerste aanlevering door de leverancier.')
+                                     definition='Unieke identificatie van de asset zoals toegekend door de assetbeheerder of n.a.v. eerste aanlevering door de leverancier.',
+                                     owner=self)
 
         self._bestekPostNummer = OTLAttribuut(field=StringField,
                                               naam='bestekPostNummer',
                                               label='bestekpostnummer',
                                               objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMObject.bestekPostNummer',
                                               kardinaliteit_max='*',
-                                              definition='Een verwijzing naar een postnummer uit het specifieke bestek waar het object mee verband houdt.')
+                                              definition='Een verwijzing naar een postnummer uit het specifieke bestek waar het object mee verband houdt.',
+                                              owner=self)
 
         self._datumOprichtingObject = OTLAttribuut(field=DateField,
                                                    naam='datumOprichtingObject',
                                                    label='datum oprichting object',
                                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMObject.datumOprichtingObject',
-                                                   definition='Datum van de oprichting van het object.')
+                                                   definition='Datum van de oprichting van het object.',
+                                                   owner=self)
 
         self._notitie = OTLAttribuut(field=StringField,
                                      naam='notitie',
                                      label='notitie',
                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMObject.notitie',
-                                     definition='Extra notitie voor het object.')
+                                     definition='Extra notitie voor het object.',
+                                     owner=self)
 
         self._standaardBestekPostNummer = OTLAttribuut(field=StringField,
                                                        naam='standaardBestekPostNummer',
                                                        label='standaardbestekpostnummer',
                                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMObject.standaardBestekPostNummer',
                                                        kardinaliteit_max='*',
-                                                       definition='Een verwijzing naar een postnummer uit het standaardbestek waar het object mee verband houdt. De notatie van het postnummer moet overeenkomen met de notatie die gebruikt is in de catalogi van standaardbestekken, bijvoorbeeld postnummer 0701.20404G.')
+                                                       definition='Een verwijzing naar een postnummer uit het standaardbestek waar het object mee verband houdt. De notatie van het postnummer moet overeenkomen met de notatie die gebruikt is in de catalogi van standaardbestekken, bijvoorbeeld postnummer 0701.20404G.',
+                                                       owner=self)
 
         self._theoretischeLevensduur = OTLAttribuut(field=KwantWrdInMaand,
                                                     naam='theoretischeLevensduur',
                                                     label='theoretische levensduur',
                                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMObject.theoretischeLevensduur',
-                                                    definition=' De levensduur in aantal maanden die theoretisch mag verwacht worden voor een object.')
+                                                    definition=' De levensduur in aantal maanden die theoretisch mag verwacht worden voor een object.',
+                                                    owner=self)
 
     @property
     def assetId(self):

@@ -20,7 +20,8 @@ class EMDraagconstructie(Draagconstructie):
                                                     naam='elektrischeBeveiliging',
                                                     label='elektrische beveiliging',
                                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#EMDraagconstructie.elektrischeBeveiliging',
-                                                    definition='Type elektrische beveiliging aanwezig in de draagconstructie.')
+                                                    definition='Type elektrische beveiliging aanwezig in de draagconstructie.',
+                                                    owner=self)
 
     @property
     def elektrischeBeveiliging(self):

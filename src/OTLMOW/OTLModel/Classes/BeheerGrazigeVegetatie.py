@@ -23,31 +23,36 @@ class BeheerGrazigeVegetatie(AIMObject):
                                          label='beheeroptie',
                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#BeheerGrazigeVegetatie.beheeroptie',
                                          kardinaliteit_max='*',
-                                         definition='Aanduiding van welk beheer wordt toegepast op de grazige vegetatie.')
+                                         definition='Aanduiding van welk beheer wordt toegepast op de grazige vegetatie.',
+                                         owner=self)
 
         self._heeftBeheerplan = OTLAttribuut(field=BooleanField,
                                              naam='heeftBeheerplan',
                                              label='heeft beheerplan',
                                              objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#BeheerGrazigeVegetatie.heeftBeheerplan',
-                                             definition='Aanduiding of er een beheerplan bestaat.')
+                                             definition='Aanduiding of er een beheerplan bestaat.',
+                                             owner=self)
 
         self._lengte = OTLAttribuut(field=KwantWrdInMeter,
                                     naam='lengte',
                                     label='Lengte',
                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#BeheerGrazigeVegetatie.lengte',
-                                    definition='De lengte in meter van de te behandelen grazige vegetatie.')
+                                    definition='De lengte in meter van de te behandelen grazige vegetatie.',
+                                    owner=self)
 
         self._maaien = OTLAttribuut(field=DtcMaaien,
                                     naam='maaien',
                                     label='maaien',
                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#BeheerGrazigeVegetatie.maaien',
-                                    definition='Complex datatype voor de eigenschappen van maaien.')
+                                    definition='Complex datatype voor de eigenschappen van maaien.',
+                                    owner=self)
 
         self._oppervlakte = OTLAttribuut(field=KwantWrdInVierkanteMeter,
                                          naam='oppervlakte',
                                          label='oppervlakte',
                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#BeheerGrazigeVegetatie.oppervlakte',
-                                         definition='De oppervlakte in vierkante meter van de te behandelen grazige vegetatie.')
+                                         definition='De oppervlakte in vierkante meter van de te behandelen grazige vegetatie.',
+                                         owner=self)
 
     @property
     def beheeroptie(self):

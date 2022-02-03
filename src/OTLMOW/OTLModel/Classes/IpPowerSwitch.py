@@ -5,49 +5,56 @@ from OTLMOW.OTLModel.Datatypes.DtcDocument import DtcDocument
 from OTLMOW.OTLModel.Datatypes.DteIPv4Adres import DteIPv4Adres
 from OTLMOW.OTLModel.Datatypes.KlIpPowerSwitchType import KlIpPowerSwitchType
 from OTLMOW.OTLModel.Datatypes.StringField import StringField
+from OTLMOW.GeometrieArtefact.PuntGeometrie import PuntGeometrie
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class IpPowerSwitch(AIMNaamObject):
+class IpPowerSwitch(AIMNaamObject, PuntGeometrie):
     """Een IP powerswitch levert netspanning (230V) aan achterliggende apparaten. Door in te loggen op de powerswitch kunt u de poort en dus de netspanning naar het aangesloten apparaat vanop afstand uit en aan zetten."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#IpPowerSwitch'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        super().__init__()
+        AIMNaamObject.__init__(self)
+        PuntGeometrie.__init__(self)
 
         self._dnsNaam = OTLAttribuut(field=StringField,
                                      naam='dnsNaam',
                                      label='DNS naam',
                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#IpPowerSwitch.dnsNaam',
-                                     definition='De DNSNaam (ook "volledige domein naam" genoemd ) is een unieke naam binnen het Domain Name System (DNS), het naamgevingssysteem waarmee computers, webservers, diensten en  toepassing op een unieke manier kunnen worden geïdentificeerd. Deze bevat zowel de hostname en de top level domein naam bv. 120c8-ar1.belfa.be.')
+                                     definition='De DNSNaam (ook "volledige domein naam" genoemd ) is een unieke naam binnen het Domain Name System (DNS), het naamgevingssysteem waarmee computers, webservers, diensten en  toepassing op een unieke manier kunnen worden geïdentificeerd. Deze bevat zowel de hostname en de top level domein naam bv. 120c8-ar1.belfa.be.',
+                                     owner=self)
 
         self._handleiding = OTLAttribuut(field=DtcDocument,
                                          naam='handleiding',
                                          label='handleiding',
                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#IpPowerSwitch.handleiding',
                                          usagenote='Bestanden van het type pdf.',
-                                         definition='De handleiding van de IP powerswitch.')
+                                         definition='De handleiding van de IP powerswitch.',
+                                         owner=self)
 
         self._ipAdres = OTLAttribuut(field=DteIPv4Adres,
                                      naam='ipAdres',
                                      label='ip adres',
                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#IpPowerSwitch.ipAdres',
-                                     definition='Het IP-adres van de IP power switch.')
+                                     definition='Het IP-adres van de IP power switch.',
+                                     owner=self)
 
         self._technischeFiche = OTLAttribuut(field=DtcDocument,
                                              naam='technischeFiche',
                                              label='technische fiche',
                                              objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#IpPowerSwitch.technischeFiche',
                                              usagenote='Bestanden van het type pdf.',
-                                             definition='De technische fiche  van de IP powerswitch.')
+                                             definition='De technische fiche  van de IP powerswitch.',
+                                             owner=self)
 
         self._type = OTLAttribuut(field=KlIpPowerSwitchType,
                                   naam='type',
                                   label='type',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#IpPowerSwitch.type',
-                                  definition='Merk en type van de IP powerswitch.')
+                                  definition='Merk en type van de IP powerswitch.',
+                                  owner=self)
 
     @property
     def dnsNaam(self):

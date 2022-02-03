@@ -19,37 +19,43 @@ class LuchtkwaliteitZenderOntvanger(Luchtkwaliteittoestel):
                                       naam='ipKlasse',
                                       label='ingress protection klasse',
                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#LuchtkwaliteitZenderOntvanger.ipKlasse',
-                                      definition='De IP-codering als een aanduiding voor de mate van beveiliging van de constructie van elektrische of elektronische apparatuur tegen eigen schade door gebruik in "vijandige omgevingen" en tegen eventueel gevaar voor de gebruiker volgens IEC 60529.')
+                                      definition='De IP-codering als een aanduiding voor de mate van beveiliging van de constructie van elektrische of elektronische apparatuur tegen eigen schade door gebruik in "vijandige omgevingen" en tegen eventueel gevaar voor de gebruiker volgens IEC 60529.',
+                                      owner=self)
 
         self._isBeschermd = OTLAttribuut(field=BooleanField,
                                          naam='isBeschermd',
                                          label='is beschermd',
                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#LuchtkwaliteitZenderOntvanger.isBeschermd',
-                                         definition='Geeft aan of het toestel beschermd wordt tegen aanrijdingen of niet.')
+                                         definition='Geeft aan of het toestel beschermd wordt tegen aanrijdingen of niet.',
+                                         owner=self)
 
         self._meetCO = OTLAttribuut(field=BooleanField,
                                     naam='meetCO',
                                     label='meet CO',
                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#LuchtkwaliteitZenderOntvanger.meetCO',
-                                    definition='Geeft aan of het meettoestel CO in de lucht meet of niet.')
+                                    definition='Geeft aan of het meettoestel CO in de lucht meet of niet.',
+                                    owner=self)
 
         self._meetNoX = OTLAttribuut(field=BooleanField,
                                      naam='meetNoX',
                                      label='meet NOx',
                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#LuchtkwaliteitZenderOntvanger.meetNoX',
-                                     definition='Geeft aan of het meettoestel NOx in de lucht meet of niet.')
+                                     definition='Geeft aan of het meettoestel NOx in de lucht meet of niet.',
+                                     owner=self)
 
         self._meetTemperatuur = OTLAttribuut(field=BooleanField,
                                              naam='meetTemperatuur',
                                              label='meet temperatuur',
                                              objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#LuchtkwaliteitZenderOntvanger.meetTemperatuur',
-                                             definition='Geeft aan of het meettoestel de omgevingstemperatuur meet of niet.')
+                                             definition='Geeft aan of het meettoestel de omgevingstemperatuur meet of niet.',
+                                             owner=self)
 
         self._meetZicht = OTLAttribuut(field=BooleanField,
                                        naam='meetZicht',
                                        label='meet zicht',
                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#LuchtkwaliteitZenderOntvanger.meetZicht',
-                                       definition='Geeft aan of het meettoestel zichtbaarheid meet of niet.')
+                                       definition='Geeft aan of het meettoestel zichtbaarheid meet of niet.',
+                                       owner=self)
 
     @property
     def ipKlasse(self):

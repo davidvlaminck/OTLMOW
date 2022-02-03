@@ -142,7 +142,7 @@ class ResponseTestDouble():
       "@type": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Camera",
       "@id": "https://data.awvvlaanderen.be/id/asset/000c960e-b694-4f96-bf56-51872325c714-b25kZXJkZWVsI0NhbWVyYQ",
       "loc:Locatie.omschrijving": "",
-      "loc:Locatie.geometrie": "POINT Z (151063.4 209792.6 0)",
+      "loc:Locatie.geometrie": "POINT Z(151063.4 209792.6 0)",
       "AIMDBStatus.isActief": true,
       "Camera.heeftAid": false,
       "AIMToestand.toestand": "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAIMToestand/in-gebruik",
@@ -1257,7 +1257,6 @@ class ResponseTestDouble():
       },
       "AIMDBStatus.isActief": true,
       "AIMToestand.toestand": "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAIMToestand/in-gebruik",
-      "loc:Locatie.geometrie": "POINT (69084.5 225739.2)",
       "AIMNaamObject.naam": "KW0176",
       "DNB.eanNummer": "541448860001876882",
       "loc:Locatie.puntlocatie": {
@@ -2307,7 +2306,6 @@ class ResponseTestDouble():
       "ond:EMObject.klimatiseringLocatieOk": true,
       "ond:EMObject.beschrijvingInterventie": " Voeding module opgebrand",
       "NaampadObject.naampad": "XTMSA/XTMSA/MSA1.OTN",
-      "ond:EMObject.215Actie": "in orde gebracht",
       "ond:EMObject.apparatuurGereinigd": true,
       "ond:EMObject.fotoSApparatuurGemaakt": true,
       "ond:OTN.eindeOtn1": "2020-09-16T18:30:00",
@@ -2340,7 +2338,6 @@ class ResponseTestDouble():
       "AIMDBStatus.isActief": false,
       "ond:EMObject.algemeneToestandLocatieOk": true,
       "ond:EMObject.glasvezelConnectorsOkOud": "ja",
-      "ond:EMObject.601SiteVerantwoordelijkeGeNformeerd": true,
       "ond:EMObject.koperkabelOkBevestigingLabels": true,
       "ond:EMObject.verlichtingLocatieOk": true,
       "loc:Locatie.omschrijving": "ALPHACLOUD MECHELEN DATACENTRUM",
@@ -2382,7 +2379,6 @@ class ResponseTestDouble():
       "ond:EMObject.glasvezelConnectorsOk": true,
       "ond:EMObject.koperkabelOkSelectielijst": "ja",
       "ond:EMObject.labelContactInfoApparatuurOk": true,
-      "ond:EMObject.101SiteVerantwoordelijkeGeNformeerd": true,
       "ins:EMObject.abbameldaOperoepGemaakt": false
     },
     {
@@ -3274,7 +3270,6 @@ class ResponseTestDouble():
       },
       "AIMNaamObject.naam": "CONa",
       "ond:SDH.startSdh1": "2021-11-17T12:00:00",
-      "ond:EMObject.601SiteVerantwoordelijkeGeNformeerd": true,
       "NaampadObject.naampad": "XTCON/XTCON/CONa",
       "AIMToestand.toestand": "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAIMToestand/in-gebruik",
       "ond:SDH.eindeSdh1": "2021-11-17T13:00:00",

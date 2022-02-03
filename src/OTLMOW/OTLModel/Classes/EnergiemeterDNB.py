@@ -19,13 +19,15 @@ class EnergiemeterDNB(DNBMeter):
                                                          naam='isGecombineerdeEnergiemeter',
                                                          label='is gecombineerde energiemeter',
                                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#EnergiemeterDNB.isGecombineerdeEnergiemeter',
-                                                         definition='Geeft aan of de meter naast de gewone verbruiksmeting ook reactief vermogen en piek metingen doet.')
+                                                         definition='Geeft aan of de meter naast de gewone verbruiksmeting ook reactief vermogen en piek metingen doet.',
+                                                         owner=self)
 
         self._uurtarief = OTLAttribuut(field=KlEnergiemeterDNBUurtarief,
                                        naam='uurtarief',
                                        label='uurtarief',
                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#EnergiemeterDNB.uurtarief',
-                                       definition='Type uurtarief vb enkelvoudig, dubbelvoudig,...')
+                                       definition='Type uurtarief vb enkelvoudig, dubbelvoudig,...',
+                                       owner=self)
 
     @property
     def isGecombineerdeEnergiemeter(self):

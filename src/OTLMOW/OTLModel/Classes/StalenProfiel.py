@@ -26,19 +26,22 @@ class StalenProfiel(ConstructieElement, StalenConstructieElement, ConstructieEle
                                            naam='isVoorgebogen',
                                            label='is voorgebogen',
                                            objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#StalenProfiel.isVoorgebogen',
-                                           definition='Bij het fabriceren wordt er bewust een ronding aangebracht in het profiel. Dit kan bijvoorbeeld dienen ter compensatie van doorbuiging of omwille van esthetische redenen,...')
+                                           definition='Bij het fabriceren wordt er bewust een ronding aangebracht in het profiel. Dit kan bijvoorbeeld dienen ter compensatie van doorbuiging of omwille van esthetische redenen,...',
+                                           owner=self)
 
         self._lengte = OTLAttribuut(field=KwantWrdInMeter,
                                     naam='lengte',
                                     label='lengte',
                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#StalenProfiel.lengte',
-                                    definition='De lengte van het profiel uitgedrukt in in meter.')
+                                    definition='De lengte van het profiel uitgedrukt in in meter.',
+                                    owner=self)
 
         self._technischeFiche = OTLAttribuut(field=DtcDocument,
                                              naam='technischeFiche',
                                              label='technische fiche',
                                              objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#StalenProfiel.technischeFiche',
-                                             definition='De technische gegevens van het stalen profiel (relevante normen, detail afmetingen, gewicht,...).')
+                                             definition='De technische gegevens van het stalen profiel (relevante normen, detail afmetingen, gewicht,...).',
+                                             owner=self)
 
     @property
     def isVoorgebogen(self):

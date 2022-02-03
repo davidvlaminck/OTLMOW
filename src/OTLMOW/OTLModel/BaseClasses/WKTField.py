@@ -17,7 +17,8 @@ class WKTField(OTLField):
                 raise TypeError(f'expecting string in {attribuut.naam}')
             if not WKTValidator.validate_wkt(value):
                 raise ValueError(f'{value} is not a valid WKT string for {attribuut.naam}')
-            if not value.startswith(attribuut.constraints):
+            geo_type = value.split('(')[0]
+            if geo_type not in attribuut.owner._geometry_types:
                 raise TypeError(f'expecting {attribuut.constraints} in {attribuut.naam}')
         return True
 

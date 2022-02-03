@@ -20,20 +20,23 @@ class WVLichtmast(Lichtmast):
                                          naam='aantalArmen',
                                          label='aantal armen',
                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#WVLichtmast.aantalArmen',
-                                         definition='Aantal armen van de lichtmast.')
+                                         definition='Aantal armen van de lichtmast.',
+                                         owner=self)
 
         self._armlengte = OTLAttribuut(field=KlWvLichtmastArmlengte,
                                        naam='armlengte',
                                        label='armlengte',
                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#WVLichtmast.armlengte',
-                                       definition='Lengte van de arm van de lichtmast in meter.')
+                                       definition='Lengte van de arm van de lichtmast in meter.',
+                                       owner=self)
 
         self._bevestigingToestellen = OTLAttribuut(field=DtuWvLichtmastBevsToestelMethode,
                                                    naam='bevestigingToestellen',
                                                    label='bevestiging toestellen',
                                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#WVLichtmast.bevestigingToestellen',
                                                    kardinaliteit_max='*',
-                                                   definition='Geeft de wijze aan waarop elk verlichtingstoestel bevestigd is op de lichtmast als keuze uit een lijst voor standaardmethodes of verder toegelicht wanneer een afwijkende methode gebruikt wordt.')
+                                                   definition='Geeft de wijze aan waarop elk verlichtingstoestel bevestigd is op de lichtmast als keuze uit een lijst voor standaardmethodes of verder toegelicht wanneer een afwijkende methode gebruikt wordt.',
+                                                   owner=self)
 
     @property
     def aantalArmen(self):

@@ -24,13 +24,15 @@ class Brandhaspel(Brandvoorziening):
                                             naam='buitendiameter',
                                             label='buitendiameter',
                                             objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Brandhaspel.buitendiameter',
-                                            definition='Buitendiameter van de slang op de haspel.')
+                                            definition='Buitendiameter van de slang op de haspel.',
+                                            owner=self)
 
         self._keuringsdatum = OTLAttribuut(field=DateField,
                                            naam='keuringsdatum',
                                            label='keuringsdatum',
                                            objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Brandhaspel.keuringsdatum',
-                                           definition='Laatste datum waarop de haspel gekeurd is.')
+                                           definition='Laatste datum waarop de haspel gekeurd is.',
+                                           owner=self)
 
         self._maximaalDebiet = OTLAttribuut(field=KwantWrdInKubiekeMeter,
                                             naam='maximaalDebiet',
@@ -38,31 +40,36 @@ class Brandhaspel(Brandvoorziening):
                                             objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Brandhaspel.maximaalDebiet',
                                             usagenote='Attribuut uit gebruik sinds versie 2.0.0 ',
                                             deprecated_version='2.0.0',
-                                            definition='Het maximale debiet dat door de slang en spuitmond kan stromen.')
+                                            definition='Het maximale debiet dat door de slang en spuitmond kan stromen.',
+                                            owner=self)
 
         self._maximaalVolumedebiet = OTLAttribuut(field=KwantWrdInKubiekeMeterPerSeconde,
                                                   naam='maximaalVolumedebiet',
                                                   label='maximaal volumedebiet',
                                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Brandhaspel.maximaalVolumedebiet',
-                                                  definition='Het maximale debiet dat per tijdseenheid door de slang en spuitmond kan stromen.')
+                                                  definition='Het maximale debiet dat per tijdseenheid door de slang en spuitmond kan stromen.',
+                                                  owner=self)
 
         self._merk = OTLAttribuut(field=KlBrandhaspelMerk,
                                   naam='merk',
                                   label='merk',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Brandhaspel.merk',
-                                  definition='Het merk van de brandhaspel.')
+                                  definition='Het merk van de brandhaspel.',
+                                  owner=self)
 
         self._modelnaam = OTLAttribuut(field=KlBrandhaspelModelnaam,
                                        naam='modelnaam',
                                        label='modelnaam',
                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Brandhaspel.modelnaam',
-                                       definition='De modelnaam van de brandhaspel.')
+                                       definition='De modelnaam van de brandhaspel.',
+                                       owner=self)
 
         self._slangLengte = OTLAttribuut(field=KwantWrdInMeter,
                                          naam='slangLengte',
                                          label='slanglengte',
                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Brandhaspel.slangLengte',
-                                         definition='Nuttige lengte van de brandslang op de haspel.')
+                                         definition='Nuttige lengte van de brandslang op de haspel.',
+                                         owner=self)
 
     @property
     def buitendiameter(self):

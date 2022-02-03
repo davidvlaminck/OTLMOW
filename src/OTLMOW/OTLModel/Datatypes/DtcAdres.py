@@ -15,37 +15,43 @@ class DtcAdresWaarden(AttributeInfo):
                                  naam='bus',
                                  label='bus',
                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAdres.bus',
-                                 definition='Een nummer dat de postbus aanduidt.')
+                                 definition='Een nummer dat de postbus aanduidt.',
+                                 owner=self)
 
         self._gemeente = OTLAttribuut(field=KlAlgGemeente,
                                       naam='gemeente',
                                       label='gemeente',
                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAdres.gemeente',
-                                      definition='De bestuurlijke eenheid waarin het adres gelegen is.')
+                                      definition='De bestuurlijke eenheid waarin het adres gelegen is.',
+                                      owner=self)
 
         self._huisnummer = OTLAttribuut(field=StringField,
                                         naam='huisnummer',
                                         label='huisnummer',
                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAdres.huisnummer',
-                                        definition='Een nummer dat door de gemeente aan bv. een huis wordt toegekend.')
+                                        definition='Een nummer dat door de gemeente aan bv. een huis wordt toegekend.',
+                                        owner=self)
 
         self._postcode = OTLAttribuut(field=StringField,
                                       naam='postcode',
                                       label='postcode',
                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAdres.postcode',
-                                      definition='Een korte reeks tekens die in het postadres wordt opgenomen.')
+                                      definition='Een korte reeks tekens die in het postadres wordt opgenomen.',
+                                      owner=self)
 
         self._provincie = OTLAttribuut(field=KlAlgProvincie,
                                        naam='provincie',
                                        label='provincie',
                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAdres.provincie',
-                                       definition='Het deelgebied waarin het adres gelegen is.')
+                                       definition='Het deelgebied waarin het adres gelegen is.',
+                                       owner=self)
 
         self._straatnaam = OTLAttribuut(field=StringField,
                                         naam='straatnaam',
                                         label='straatnaam',
                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAdres.straatnaam',
-                                        definition='De naam van de straat.')
+                                        definition='De naam van de straat.',
+                                        owner=self)
 
     @property
     def bus(self):

@@ -8,10 +8,11 @@ from OTLMOW.OTLModel.Datatypes.KlVerlichtingstoestelModelnaam import KlVerlichti
 from OTLMOW.OTLModel.Datatypes.KlVerlichtingstoestelVerlichtGebied import KlVerlichtingstoestelVerlichtGebied
 from OTLMOW.OTLModel.Datatypes.KwantWrdInWatt import KwantWrdInWatt
 from OTLMOW.OTLModel.Datatypes.StringField import StringField
+from OTLMOW.GeometrieArtefact.PuntGeometrie import PuntGeometrie
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Verlichtingstoestel(AIMNaamObject):
+class Verlichtingstoestel(AIMNaamObject, PuntGeometrie):
     """Abstracte voor het geheel van de lichtbron en de behuizing die werden samengesteld met als doel:
 * de lichtstroom van de lichtbronnen hoofdzakelijk op het te verlichten oppervlak (doorlopende wegsectie, conflictgebied,...) te richten, teneinde de zichtbaarheid te verhogen;
 * de lichtstroom te beheersen zodat de weggebruikers niet verblind worden en de lichthinder beperkt wordt;
@@ -22,43 +23,50 @@ class Verlichtingstoestel(AIMNaamObject):
 
     @abstractmethod
     def __init__(self):
-        super().__init__()
+        AIMNaamObject.__init__(self)
+        PuntGeometrie.__init__(self)
 
         self._heeftAansluitkastGeintegreerd = OTLAttribuut(field=BooleanField,
                                                            naam='heeftAansluitkastGeintegreerd',
                                                            label='heeft aansluitkast geintegreerd',
                                                            objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Verlichtingstoestel.heeftAansluitkastGeintegreerd',
-                                                           definition='Is de aansluitkast geïntegreerd?')
+                                                           definition='Is de aansluitkast geïntegreerd?',
+                                                           owner=self)
 
         self._merk = OTLAttribuut(field=KlVerlichtingstoestelMerk,
                                   naam='merk',
                                   label='merk',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Verlichtingstoestel.merk',
-                                  definition='Het merk van het verlichtingstoestel.')
+                                  definition='Het merk van het verlichtingstoestel.',
+                                  owner=self)
 
         self._modelnaam = OTLAttribuut(field=KlVerlichtingstoestelModelnaam,
                                        naam='modelnaam',
                                        label='modelnaam',
                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Verlichtingstoestel.modelnaam',
-                                       definition='De modelnaam van het verlichtingstoestel.')
+                                       definition='De modelnaam van het verlichtingstoestel.',
+                                       owner=self)
 
         self._stroomkringnummer = OTLAttribuut(field=StringField,
                                                naam='stroomkringnummer',
                                                label='stroomkringnummer',
                                                objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Verlichtingstoestel.stroomkringnummer',
-                                               definition='Nummer van de stroomkring waarop het verlichtingstoestel is aangesloten.')
+                                               definition='Nummer van de stroomkring waarop het verlichtingstoestel is aangesloten.',
+                                               owner=self)
 
         self._systeemvermogen = OTLAttribuut(field=KwantWrdInWatt,
                                              naam='systeemvermogen',
                                              label='systeemvermogen',
                                              objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Verlichtingstoestel.systeemvermogen',
-                                             definition='Systeemvermogen (Watt) van het verlichtingstoestel.')
+                                             definition='Systeemvermogen (Watt) van het verlichtingstoestel.',
+                                             owner=self)
 
         self._verlichtGebied = OTLAttribuut(field=KlVerlichtingstoestelVerlichtGebied,
                                             naam='verlichtGebied',
                                             label='verlicht gebied',
                                             objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Verlichtingstoestel.verlichtGebied',
-                                            definition='Het gebied op de wegbaan of het object dat verlicht wordt door het verlichtingstoestel.')
+                                            definition='Het gebied op de wegbaan of het object dat verlicht wordt door het verlichtingstoestel.',
+                                            owner=self)
 
     @property
     def heeftAansluitkastGeintegreerd(self):

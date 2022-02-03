@@ -19,13 +19,15 @@ class TLCfiPoort(IVRIComponent):
                                   naam='merk',
                                   label='merk',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#TLCfiPoort.merk',
-                                  definition='De merknaam van de TLC-fi poort; duidt op de leverancier of producent van de iVRI component.')
+                                  definition='De merknaam van de TLC-fi poort; duidt op de leverancier of producent van de iVRI component.',
+                                  owner=self)
 
         self._modelnaam = OTLAttribuut(field=KlIVRIModelTLCfi,
                                        naam='modelnaam',
                                        label='modelnaam',
                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#TLCfiPoort.modelnaam',
-                                       definition='De modelnaam/product range van de TLC-fi poort.')
+                                       definition='De modelnaam/product range van de TLC-fi poort.',
+                                       owner=self)
 
     @property
     def merk(self):

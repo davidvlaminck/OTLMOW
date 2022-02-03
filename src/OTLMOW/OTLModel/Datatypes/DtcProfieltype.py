@@ -14,13 +14,15 @@ class DtcProfieltypeWaarden(AttributeInfo):
                                                naam='profielhoogtemaat',
                                                label='profielhoogtemaat',
                                                objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcProfieltype.profielhoogtemaat',
-                                               definition='Voorgedefinieerde hoogtemaat van een profiel.')
+                                               definition='Voorgedefinieerde hoogtemaat van een profiel.',
+                                               owner=self)
 
         self._profielsoort = OTLAttribuut(field=KlProfielsoort,
                                           naam='profielsoort',
                                           label='profielsoort',
                                           objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcProfieltype.profielsoort',
-                                          definition='Het type profiel (de meest genormeerde types).')
+                                          definition='Het type profiel (de meest genormeerde types).',
+                                          owner=self)
 
     @property
     def profielhoogtemaat(self):

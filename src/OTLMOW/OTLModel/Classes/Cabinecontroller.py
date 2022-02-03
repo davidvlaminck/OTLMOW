@@ -19,19 +19,22 @@ class Cabinecontroller(Controller):
                                                  naam='beveiligingssleutel',
                                                  label='beveiligingssleutel',
                                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Cabinecontroller.beveiligingssleutel',
-                                                 definition='De encryptie die wordt toegepast om de verbinding tussen lokaal en centraal te beveiligen.')
+                                                 definition='De encryptie die wordt toegepast om de verbinding tussen lokaal en centraal te beveiligen.',
+                                                 owner=self)
 
         self._merk = OTLAttribuut(field=StringField,
                                   naam='merk',
                                   label='merk',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Cabinecontroller.merk',
-                                  definition='Merk van de cabinecontroller.')
+                                  definition='Merk van de cabinecontroller.',
+                                  owner=self)
 
         self._modelnaam = OTLAttribuut(field=StringField,
                                        naam='modelnaam',
                                        label='modelnaam',
                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Cabinecontroller.modelnaam',
-                                       definition='Modelnaam van de cabinecontroller.')
+                                       definition='Modelnaam van de cabinecontroller.',
+                                       owner=self)
 
     @property
     def beveiligingssleutel(self):

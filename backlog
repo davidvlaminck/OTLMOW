@@ -8,7 +8,7 @@ deployment/packaging: https://packaging.python.org/en/latest/guides/distributing
 requirements > rdflib voor lezen ttl bestanden, Shapely voor WKT, PyVis voor visualiser en Python 3.10
 Loggers > python native logging
 OEF model: HS heeft een getal vooran in een eigenschap > getallen omzetten naar letterwoorden
-
+Oef loc implementeren 
 
 Write clean code
 Defaultdict: dict met default value, dict group

@@ -10,6 +10,7 @@ OEF model: HS heeft een getal vooraan in een eigenschap > getallen omzetten naar
 GA: WKT string heeft een spatie voor eerste '('
 Oef loc implementeren 
 
+
 Write clean code
 Defaultdict: dict met default value, dict group
 Unpacking sequences
@@ -41,35 +42,6 @@ DAVIE integratie: https://apps-dev.mow.vlaanderen.be/davie-core/swagger-webjars/
 - bestand toevoegen aan de aanlevering
 - aanlevering finaliseren
 
-Demo
-Via console? Vermijd de nood voor imports
-Enkel facility importeren
-Creëer object via uri of naam
-Vul asset info, met juiste en foute waardes
-Vraag attribuut informatie op
-Ander gebruik: normalisatie script
-Abstracte class instantiëren
-
-
-DemoInfo
-use case: migratietraject met testdata ondersteunen
-> allerlei features toegevoegd, zoals import, validatie, helper functies etc.
-Ooit vertrokken van meest simpele model, maar heeft geen inheritance metadata op types en attrs en heeft geen validatie.
-Dotnotatie bevatte waarde om validatie af te dwingen, nu enkel bij kwantwrd en dte
-Voordeel echte overerving: filter assets op abstract type, filter relatie van assets
-Dynamic typing voor union types
-Davie kan geen lege waardes verwerken. Is ook gevaarlijk. Mss aparte endpoint of metadata die aanduidt dat iets leeg mag
-alpha release nu
-beta release wanneer de lijst van bugfixes leeg is
-full release wanneer? business bepaalt: lijst van features zijn genummerd, doorgeven welke essentieel zijn
-
-
-Use cases
-Normalisatie
-Migratie
-Testen nieuwe otl versies
-Davie api? Shpfiles maken van alle types? 
-
 
 Facility
 * Design
@@ -97,7 +69,7 @@ Building and Packaging:
 -or-
 .\venv2\Scripts\flit init
 .\venv2\Scripts\flit build
-Dist
+
 twine
 .\venv2\Scripts\python.exe -m twine check dist/*
 .\venv2\Scripts\python.exe -m twine upload dist/OTLMOW-0.2a1-py3-none-any.whl # specific wheel

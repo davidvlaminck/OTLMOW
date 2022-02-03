@@ -57,7 +57,7 @@ meter = EnergiemeterDNB()
 meter.naam = '50004784'
 meter.assetId.identificator = 'eigen_Id_voor_50004784'
 meter.aantalTelwerken = 1
-meter.geometry = 'POINT Z(157696.6 219065.5 0)'
+meter.geometry = 'POINT Z (157696.6 219065.5 0)'
 
 voedingsrelatie = Voedt()
 voedingsrelatie.assetId.identificator = "A0024-50004784"

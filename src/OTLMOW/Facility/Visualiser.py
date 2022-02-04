@@ -141,7 +141,7 @@ class Visualiser:
     def create_nodes(self, g, list_of_objects):
         otl_objects = list(filter(lambda o: not isinstance(o, RelatieObject), list_of_objects))
         for otl_object in otl_objects:
-            naam = otl_object.__class__.__name__ + '_' + otl_object.assetId.identificator
+            naam = otl_object.__class__.__name__ + '_' + otl_object.assetId.identificator[0:36]
             if hasattr(otl_object, 'naam'):
                 naam = otl_object.naam
             # if hasattr(otl_object, 'naampad'):

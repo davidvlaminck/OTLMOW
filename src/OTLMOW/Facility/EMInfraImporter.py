@@ -1,8 +1,10 @@
 ﻿import base64
+import json
 
 import requests
 
 from OTLMOW.Facility.EMInfraDecoder import EMInfraDecoder
+from OTLMOW.OTLModel.BaseClasses.OTLObject import OTLObject
 
 
 class EMInfraImporter:
@@ -11,7 +13,50 @@ class EMInfraImporter:
         self.cert_path = cert_path
         self.key_path = key_path
 
-    def import_asset_from_webservice_by_asset_id(self, asset_id):
+    def import_assets_from_webservice_by_uuids(self, asset_uuids: [str]) -> [OTLObject]:
+        url = f"https://services.apps.mow.vlaanderen.be/eminfra/core/api/otl/assets/search"
+        asset_list_string = '", "'.join(asset_uuids)
+        body = '{"filters": { "uuid": ' + f'["{asset_list_string}"]' + ' }}'
+        json_data = json.loads(body)
+        response = requests.post(url, cert=(self.cert_path, self.key_path), json=json_data)
+
+        data = response.content.decode("utf-8")
+        jsonobj = json.loads(data)
+        obj_list = jsonobj["@graph"]
+
+        asset_list = []
+        for obj in obj_list:
+            asset_list.append(self.decoder.decodeJsonObject(obj))
+        return asset_list
+
+    def import_assetrelaties_from_webservice_by_assetuuid(self, asset_uuid: str) -> [OTLObject]:
+        url = f"https://services.apps.mow.vlaanderen.be/eminfra/core/api/otl/assetrelaties/search"
+        body = '{"filters": { "asset": ' + f'["{asset_uuid}"]' + ' }}'
+        json_data = json.loads(body)
+        response = requests.post(url, cert=(self.cert_path, self.key_path), json=json_data)
+
+        data = response.content.decode("utf-8")
+        jsonobj = json.loads(data)
+        obj_list = jsonobj["@graph"]
+
+        asset_list = []
+        for obj in obj_list:
+            asset_list.append(self.decoder.decodeJsonObject(obj))
+        return asset_list
+
+    def import_asset_from_webservice_by_uuid(self, asset_uuid: str) -> OTLObject:
+        url = f"https://services.apps.mow.vlaanderen.be/eminfra/core/api/otl/assets/search"
+        body = '{"filters": { "uuid": ' + f'["{asset_uuid}"]' + ' }}'
+        json_data = json.loads(body)
+        response = requests.post(url, cert=(self.cert_path, self.key_path), json=json_data)
+
+        data = response.content.decode("utf-8")
+        jsonobj = json.loads(data)
+        obj_list = jsonobj["@graph"]
+
+        return self.decoder.decodeJsonObject(obj_list[0])
+
+    def import_asset_from_webservice_by_asset_id(self, asset_id) -> str:
         url = f"https://services.apps.mow.vlaanderen.be/eminfra/core/api/otl/assets/{asset_id}"
         response = requests.get(url, cert=(self.cert_path, self.key_path))
         data = response.content.decode("utf-8")

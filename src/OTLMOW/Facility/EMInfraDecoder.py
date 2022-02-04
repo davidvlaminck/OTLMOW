@@ -2,6 +2,7 @@
 
 from OTLMOW.Facility.ToOTLDecoder import ToOTLDecoder
 from OTLMOW.OEFModel.OEFClassLoader import OEFClassLoader
+from OTLMOW.OTLModel.BaseClasses.OTLObject import OTLObject
 from OTLMOW.OTLModel.ClassLoader import ClassLoader
 
 
@@ -18,7 +19,7 @@ class EMInfraDecoder(ToOTLDecoder):
         obj = json.loads(objString)
         return self.decodeJsonObject(obj)
 
-    def decodeJsonObject(self, obj):
+    def decodeJsonObject(self, obj) -> OTLObject:
         typeURI = next(value for key, value in obj.items() if 'typeURI' in key)
 
         if 'https://wegenenverkeer.data.vlaanderen.be/ns' in typeURI:

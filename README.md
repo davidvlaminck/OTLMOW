@@ -117,6 +117,9 @@ output:
 ## Making a visualisation
 It is possible to visualise assets in a node diagram.
 Simply pass the list of assets (incl. relations) to the visualiser class in the OTL Facility class to create an html file that can be opened in any web browser.
+Hovering the nodes will show the data of the assets.
 ```
 otl_facility.visualiser.show(lijst_otl_objecten)
 ```
+The above example will result in the following visualisation:
+![alt text](visualiser_example_readme.png)

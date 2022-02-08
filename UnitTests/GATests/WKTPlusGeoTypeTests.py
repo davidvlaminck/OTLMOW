@@ -23,34 +23,34 @@ class WKTPlusGeoTypeTests(unittest.TestCase):
         puntclass = PointTestClass()
 
         with self.subTest('valid point'):
-            puntclass.geometry = 'POINT Z(1 2 3)'
+            puntclass.geometry = 'POINT Z (1 2 3)'
             self.assertIsNotNone(puntclass.geometry)
 
         with self.subTest('invalid points'):
             with self.assertRaises(TypeError):
-                puntclass.geometry = 'POINT(1 2)'
+                puntclass.geometry = 'POINT (1 2)'
             with self.assertRaises(ValueError):
-                puntclass.geometry = 'POINT Z(1 2,0 3)'
+                puntclass.geometry = 'POINT Z (1 2,0 3)'
 
     def test_point_polygon(self):
         puntvlakclass = PointPolygonTestClass()
 
         with self.subTest('valid point'):
-            puntvlakclass.geometry = 'POINT Z(1 2 3)'
+            puntvlakclass.geometry = 'POINT Z (1 2 3)'
             self.assertIsNotNone(puntvlakclass.geometry)
 
         with self.subTest('valid polygon'):
-            puntvlakclass.geometry = 'POLYGON Z((10.0 20.0 1, 30.0 40.0 2, 50.0 60.0 3))'
+            puntvlakclass.geometry = 'POLYGON Z ((10.0 20.0 1, 30.0 40.0 2, 50.0 60.0 3))'
             self.assertIsNotNone(puntvlakclass.geometry)
 
         with self.subTest('invalid points'):
             with self.assertRaises(TypeError):
-                puntvlakclass.geometry = 'POINT(1 2)'
+                puntvlakclass.geometry = 'POINT (1 2)'
             with self.assertRaises(ValueError):
-                puntvlakclass.geometry = 'POINT Z(1 2,0 3)'
+                puntvlakclass.geometry = 'POINT Z (1 2,0 3)'
 
         with self.subTest('invalid polygons'):
             with self.assertRaises(ValueError):
-                puntvlakclass.geometry = 'POLYGON((10 20, 30 40))'
+                puntvlakclass.geometry = 'POLYGON ((10 20, 30 40))'
             with self.assertRaises(ValueError):
-                puntvlakclass.geometry = 'POLYGON Z((10.0 20.0, 30.0 40.0 2, 50.0 60.0))'
+                puntvlakclass.geometry = 'POLYGON Z ((10.0 20.0, 30.0 40.0 2, 50.0 60.0))'

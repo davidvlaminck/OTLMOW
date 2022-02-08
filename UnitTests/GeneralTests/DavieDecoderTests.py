@@ -133,9 +133,9 @@ class DavieDecoderTests(TestCase):
     def test_decode_geometry(self):
         davie_decoder = DavieDecoder()
         lijstObjecten = davie_decoder.decode(
-            '[{"typeURI": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Wegkantkast", "geometry": "POINT Z(157696.6 219065.5 0)"}]')
+            '[{"typeURI": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Wegkantkast", "geometry": "POINT Z (157696.6 219065.5 0)"}]')
         self.assertTrue(isinstance(lijstObjecten[0], Wegkantkast))
-        self.assertEqual("POINT Z(157696.6 219065.5 0)", lijstObjecten[0].geometry)
+        self.assertEqual("POINT Z (157696.6 219065.5 0)", lijstObjecten[0].geometry)
 
     def test_decode_Davie_json_case_1_and_assert_fields(self):
         davie_decoder = DavieDecoder()

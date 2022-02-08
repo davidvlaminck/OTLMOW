@@ -142,7 +142,7 @@ class ResponseTestDouble():
       "@type": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Camera",
       "@id": "https://data.awvvlaanderen.be/id/asset/000c960e-b694-4f96-bf56-51872325c714-b25kZXJkZWVsI0NhbWVyYQ",
       "loc:Locatie.omschrijving": "",
-      "loc:Locatie.geometrie": "POINT Z(151063.4 209792.6 0)",
+      "loc:Locatie.geometrie": "POINT Z (151063.4 209792.6 0)",
       "AIMDBStatus.isActief": true,
       "Camera.heeftAid": false,
       "AIMToestand.toestand": "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAIMToestand/in-gebruik",

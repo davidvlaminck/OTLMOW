@@ -6,7 +6,7 @@ from OTLMOW.ModelGenerator.OSLOClass import OSLOClass
 
 
 class GeometrieInheritanceProcessor:
-"""This class uses the geometry type definitions and OTL classes and inheritances to determine what classes can inherit their geometry type definition instead of directly. The result is a changed set of geometry type definitions that contains both concrete and base classes. Inheritance works from at least one geometry type definition.""" 
+    """This class uses the geometry type definitions and OTL classes and inheritances to determine what classes can inherit their geometry type definition instead of directly. The result is a changed set of geometry type definitions that contains both concrete and base classes. Inheritance works from at least one geometry type definition."""
     def __init__(self, geometrie_types: [GeometrieType], inheritances: [Inheritance], classes: [OSLOClass]):
         self.geometrie_types = geometrie_types
         self.inheritances = copy.copy(inheritances)

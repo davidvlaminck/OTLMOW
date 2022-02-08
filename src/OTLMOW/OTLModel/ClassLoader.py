@@ -1,5 +1,5 @@
 ﻿class ClassLoader:
-"""This class attempts to load an OTL class from the corresponding module."""
+    """This class attempts to load an OTL class from the corresponding module."""
     @staticmethod
     def dynamic_create_instance_from_name(class_name):
         try:

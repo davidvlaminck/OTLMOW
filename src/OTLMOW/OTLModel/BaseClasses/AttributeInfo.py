@@ -3,7 +3,7 @@ from OTLMOW.OTLModel.BaseClasses.KwantWrd import KwantWrd
 
 
 class AttributeInfo:
-"""Adds the info, info_attr and info_attr_type functions to datatypes or classes"""
+    """Adds the info, info_attr and info_attr_type functions to datatypes or classes"""
     def __init__(self):
         self._parent = None
 

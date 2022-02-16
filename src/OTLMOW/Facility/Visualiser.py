@@ -1,9 +1,6 @@
 ﻿from random import choice
 
-import networkx as nx
-import matplotlib.pyplot as plt
 from IPython.display import display, HTML
-from networkx.drawing.nx_agraph import graphviz_layout
 from pyvis import network as net
 
 from OTLMOW.OTLModel.Classes.Bevestiging import Bevestiging

@@ -42,6 +42,7 @@ DAVIE integratie: https://apps-dev.mow.vlaanderen.be/davie-core/swagger-webjars/
 - bestand toevoegen aan de aanlevering
 - aanlevering finaliseren
 GUI: zoals FME Workbench? inputs, outputs, transformers, filters, custom scripting etc.
+PersistentStorage: https://www.youtube.com/watch?v=S_ipdVNSFlo > FileDict SQLDict
 
 
 Facility

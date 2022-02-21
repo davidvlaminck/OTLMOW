@@ -75,7 +75,6 @@ class GeometrieInheritanceProcessor:
             new_geo_type.polygoon3D = polygon
 
             self.geometrie_types.append(new_geo_type)
-            print(f'able to inherit geometry type for classes with base {inheritances[0].base_name}')
             for inheritance in inheritances:
                 current_geo_type = next((g for g in self.geometrie_types if g.objectUri == inheritance.class_uri), None)
                 if current_geo_type is not None:

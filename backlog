@@ -8,7 +8,6 @@ requirements > rdflib voor lezen ttl bestanden, PyVis voor visualiser en Python 
 Loggers > python native logging
 OEF model: HS heeft een getal vooraan in een eigenschap > getallen omzetten naar letterwoorden
 Oef loc implementeren
-readme aanpassing met visualiser voorbeelden en publiceren
 
 
 Write clean code
@@ -43,6 +42,7 @@ DAVIE integratie: https://apps-dev.mow.vlaanderen.be/davie-core/swagger-webjars/
 - aanlevering finaliseren
 GUI: zoals FME Workbench? inputs, outputs, transformers, filters, custom scripting etc.
 PersistentStorage: https://www.youtube.com/watch?v=S_ipdVNSFlo > FileDict SQLDict
+configparser (config.ini bestand gebruiken)
 
 
 Facility

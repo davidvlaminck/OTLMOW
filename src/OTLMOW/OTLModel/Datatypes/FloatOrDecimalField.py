@@ -24,7 +24,7 @@ class FloatOrDecimalField(OTLField):
             float_value = float(value)
             return float_value
         except ValueError:
-            raise CouldNotConvertToCorrectType(f'{value} could not be converted to correct type (implied by {cls.__name__})')
+            raise CouldNotConvertToCorrectType(f'"{value}" could not be converted to correct type (implied by {cls.__name__})')
 
     @staticmethod
     def validate(value, attribuut):

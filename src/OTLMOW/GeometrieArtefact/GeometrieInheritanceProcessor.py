@@ -13,16 +13,12 @@ class GeometrieInheritanceProcessor:
         self.classes = copy.copy(classes)
 
     def process_inheritances(self) -> [GeometrieType]:
-        print(f'start with {len(self.geometrie_types)} geometry types and {len(self.inheritances)} inheritances')
-
         while len(self.inheritances) > 0:
             # zoek een inheritance en gebruik die voor een goede base class af te leiden
 
             inheritance = next(c for c in self.inheritances)
             base = self.search_for_valid_base_using_inheritance(inheritance.base_uri)
             self.process_inheritance_for_base(base)
-
-        print(f'end with {len(self.geometrie_types)} geometry types and {len(self.inheritances)} inheritances')
         return self.geometrie_types
 
     def search_for_valid_base_using_inheritance(self, base):

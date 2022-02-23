@@ -4,6 +4,8 @@ from datetime import datetime
 
 from OTLMOW.OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLMOW.OTLModel.BaseClasses.OTLField import OTLField
+from OTLMOW.OTLModel.Datatypes.UnionTypeField import UnionTypeField
+from OTLMOW.OTLModel.Datatypes.UnionWaarden import UnionWaarden
 
 
 class OTLAttribuut(AttributeInfo):
@@ -127,6 +129,11 @@ class OTLAttribuut(AttributeInfo):
             else:
                 if self.field.validate(value=self.field.convert_to_correct_type(value), attribuut=self):
                     self.waarde = self.field.convert_to_correct_type(value)
+
+        # check if kwant Ward inside a union type, if so, call clear_props
+        if owner is not None and value is not None and hasattr(owner, 'field') and owner.field.waardeObject is not None and not owner.field._uses_waarde_object and not isinstance(owner.field, UnionTypeField) and owner.owner is not None and isinstance(owner.owner, UnionWaarden):
+            owner.owner.clear_other_props('_' + owner.naam)
+
 
     def __str__(self):
         s = (f'information about {self.naam}:\n'

@@ -128,7 +128,7 @@ class OTLEnumerationCreatorTests(unittest.TestCase):
         logger = NoneLogger()
         collector = EnumerationOSLOCollector(mock)
         creator = OTLEnumerationCreator(logger, collector)
-        KlAIMToestand = collector.FindEnumerationByUri(
+        KlAIMToestand = collector.find_enumeration_by_uri(
             'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KlAIMToestand')
         dataToWrite = creator.CreateBlockToWriteFromEnumerations(KlAIMToestand)
 
@@ -138,7 +138,7 @@ class OTLEnumerationCreatorTests(unittest.TestCase):
         logger = NoneLogger()
         collector = EnumerationOSLOCollector(mock)
         creator = OTLEnumerationCreator(logger, collector)
-        KlAIMToestand = collector.FindEnumerationByUri(
+        KlAIMToestand = collector.find_enumeration_by_uri(
             'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KlAIMToestand')
         lijst = creator.getKeuzelijstWaardesFromUri(KlAIMToestand.name)
 
@@ -149,7 +149,7 @@ class OTLEnumerationCreatorTests(unittest.TestCase):
         logger = NoneLogger()
         collector = EnumerationOSLOCollector(mock)
         creator = OTLEnumerationCreator(logger, collector)
-        KlAIMToestand = collector.FindEnumerationByUri(
+        KlAIMToestand = collector.find_enumeration_by_uri(
             'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KlAIMToestand')
         dataToWrite = creator.CreateBlockToWriteFromEnumerations(KlAIMToestand)
         creator.writeToFile(KlAIMToestand, 'Datatypes', dataToWrite, '../../src/OTLMOW/')
@@ -168,7 +168,7 @@ class OTLEnumerationCreatorTests(unittest.TestCase):
         collector.collect()
 
         creator = OTLEnumerationCreator(logger, collector)
-        KlAIMToestand = collector.FindEnumerationByUri(
+        KlAIMToestand = collector.find_enumeration_by_uri(
             'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KlAlgProvincie')
         dataToWrite = creator.CreateBlockToWriteFromEnumerations(KlAIMToestand)
         creator.writeToFile(KlAIMToestand, 'Datatypes', dataToWrite, '../../src/OTLMOW/')

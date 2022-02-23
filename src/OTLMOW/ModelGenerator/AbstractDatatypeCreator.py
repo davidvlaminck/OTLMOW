@@ -12,7 +12,7 @@ class AbstractDatatypeCreator(ABC):
         self.osloCollector = osloCollector
 
     def getTypeLinkFromAttribuut(self, attribuut):
-        typeLink = self.osloCollector.FindTypeLinkByUri(attribuut.type)
+        typeLink = self.osloCollector.find_type_link_by_uri(attribuut.type)
         if typeLink is not None:
             return typeLink.item_tabel
 
@@ -213,11 +213,11 @@ class AbstractDatatypeCreator(ABC):
 
     def get_attributen_by_typeField(self, TypeField, osloDatatype):
         if TypeField == 'Complex':
-            return self.osloCollector.FindComplexDatatypeAttributenByClassUri(osloDatatype.objectUri)
+            return self.osloCollector.find_complex_datatype_attributen_by_class_uri(osloDatatype.objectUri)
         elif TypeField == 'UnionType':
-            return self.osloCollector.FindUnionDatatypeAttributenByClassUri(osloDatatype.objectUri)
+            return self.osloCollector.find_union_datatype_attributen_by_class_uri(osloDatatype.objectUri)
         else:
-            return self.osloCollector.FindPrimitiveDatatypeAttributenByClassUri(osloDatatype.objectUri)
+            return self.osloCollector.find_primitive_datatype_attributen_by_class_uri(osloDatatype.objectUri)
 
     def add_attributen_to_dataBlock(self, attributen, datablock, forClassUse=False, typeField=''):
         prop_datablock = []

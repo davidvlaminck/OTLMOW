@@ -41,8 +41,8 @@ class OTLClassCreator(AbstractDatatypeCreator):
         return self.CreateBlockToWriteFromClass(osloClass)
 
     def CreateBlockToWriteFromClass(self, osloClass: OSLOClass):
-        attributen = self.osloCollector.FindAttributesByClass(osloClass)
-        inheritances = self.osloCollector.FindInheritancesByClass(osloClass)
+        attributen = self.osloCollector.find_attributes_by_class(osloClass)
+        inheritances = self.osloCollector.find_inheritances_by_class(osloClass)
 
         if osloClass.objectUri in ['https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMObject',
                                    'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#Derdenobject']:

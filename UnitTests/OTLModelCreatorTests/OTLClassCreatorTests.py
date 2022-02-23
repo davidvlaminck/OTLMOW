@@ -176,7 +176,7 @@ class OTLClassCreatorTests(unittest.TestCase):
 
     def test_ContainerBuis(self):
         collector, creator = self.set_up_real_collector_and_creator()
-        containerBuis = collector.FindClassByUri('https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#ContainerBuis')
+        containerBuis = collector.find_class_by_uri('https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#ContainerBuis')
         dataToWrite = creator.CreateBlockToWriteFromClasses(containerBuis)
 
         self.assertEqual(self.expectedDataContainerBuis, dataToWrite)
@@ -187,14 +187,14 @@ class OTLClassCreatorTests(unittest.TestCase):
         geo_collector = GeometrieArtefactCollectorDouble()
         creator = OTLClassCreator(logger, collector, None)
         creator.geometry_types = geo_collector.geometrie_types
-        gebouw = collector.FindClassByUri('https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Gebouw')
+        gebouw = collector.find_class_by_uri('https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Gebouw')
         dataToWrite = creator.CreateBlockToWriteFromClasses(gebouw)
 
         self.assertEqual(collector.expectedDataGebouw, dataToWrite)
 
     def test_WriteToFileContainerBuis(self):
         collector, creator = self.set_up_real_collector_and_creator()
-        containerBuis = collector.FindClassByUri('https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#ContainerBuis')
+        containerBuis = collector.find_class_by_uri('https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#ContainerBuis')
         dataToWrite = creator.CreateBlockToWriteFromClasses(containerBuis)
         creator.writeToFile(containerBuis, 'Classes', dataToWrite, '../../src/OTLMOW/')
 
@@ -203,7 +203,7 @@ class OTLClassCreatorTests(unittest.TestCase):
 
     def test_WriteToFileBuis(self):
         collector, creator = self.set_up_real_collector_and_creator()
-        buis = collector.FindClassByUri('https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Buis')
+        buis = collector.find_class_by_uri('https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Buis')
         dataToWrite = creator.CreateBlockToWriteFromClasses(buis)
         creator.writeToFile(buis, 'Classes', dataToWrite, '../../src/OTLMOW/')
 
@@ -212,7 +212,7 @@ class OTLClassCreatorTests(unittest.TestCase):
 
     def test_WriteToFileGebouw(self):
         collector, creator = self.set_up_real_collector_and_creator()
-        containerBuis = collector.FindClassByUri('https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Gebouw')
+        containerBuis = collector.find_class_by_uri('https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Gebouw')
         dataToWrite = creator.CreateBlockToWriteFromClasses(containerBuis)
         creator.writeToFile(containerBuis, 'Classes', dataToWrite, '../../src/OTLMOW/')
 
@@ -222,7 +222,7 @@ class OTLClassCreatorTests(unittest.TestCase):
     def test_CheckInheritances_Agent(self):
         collector, creator = self.set_up_real_collector_and_creator()
 
-        agent = collector.FindClassByUri('http://purl.org/dc/terms/Agent')
+        agent = collector.find_class_by_uri('http://purl.org/dc/terms/Agent')
         dataToWrite = creator.CreateBlockToWriteFromClasses(agent)
         inheritanceLine = "class Agent(AttributeInfo, OTLObject, RelatieInteractor):"
 
@@ -231,7 +231,7 @@ class OTLClassCreatorTests(unittest.TestCase):
     def test_CheckInheritances_AIMObject(self):
         collector, creator = self.set_up_real_collector_and_creator()
 
-        aimObject = collector.FindClassByUri('https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMObject')
+        aimObject = collector.find_class_by_uri('https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMObject')
         dataToWrite = creator.CreateBlockToWriteFromClasses(aimObject)
         inheritanceLine = "class AIMObject(AIMToestand, AIMDBStatus, AttributeInfo, OTLAsset, RelatieInteractor):"
 
@@ -240,7 +240,7 @@ class OTLClassCreatorTests(unittest.TestCase):
     def test_CheckInheritances_RelatieObject(self):
         collector, creator = self.set_up_real_collector_and_creator()
 
-        relatieObject = collector.FindClassByUri(
+        relatieObject = collector.find_class_by_uri(
             'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#RelatieObject')
         dataToWrite = creator.CreateBlockToWriteFromClasses(relatieObject)
         inheritanceLine = "class RelatieObject(AIMDBStatus, AttributeInfo, OTLObject):"
@@ -250,7 +250,7 @@ class OTLClassCreatorTests(unittest.TestCase):
     def test_CheckInheritances_DerdenObject(self):
         collector, creator = self.set_up_real_collector_and_creator()
 
-        derdenobject = collector.FindClassByUri('https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#Derdenobject')
+        derdenobject = collector.find_class_by_uri('https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#Derdenobject')
         dataToWrite = creator.CreateBlockToWriteFromClasses(derdenobject)
         inheritanceLine = "class Derdenobject(AIMToestand, AIMDBStatus, AttributeInfo, OTLAsset, RelatieInteractor):"
 

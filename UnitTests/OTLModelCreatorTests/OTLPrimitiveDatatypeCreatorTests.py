@@ -221,7 +221,7 @@ class OTLPrimitiveDatatypeCreatorTests(unittest.TestCase):
         logger = NoneLogger()
         collector = PrimitiveDatatypeOSLOCollector(mock)
         creator = OTLPrimitiveDatatypeCreator(logger, collector)
-        KwantWrdInVolt = collector.FindPrimitiveDatatypeByUri(
+        KwantWrdInVolt = collector.find_primitive_datatype_by_uri(
             'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInVolt')
         dataToWrite = creator.CreateBlockToWriteFromPrimitiveTypes(KwantWrdInVolt)
 
@@ -231,7 +231,7 @@ class OTLPrimitiveDatatypeCreatorTests(unittest.TestCase):
         logger = NoneLogger()
         collector = PrimitiveDatatypeOSLOCollector(mock)
         creator = OTLPrimitiveDatatypeCreator(logger, collector)
-        DteKleurRAL = collector.FindPrimitiveDatatypeByUri(
+        DteKleurRAL = collector.find_primitive_datatype_by_uri(
             'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DteKleurRAL')
         dataToWrite = creator.CreateBlockToWriteFromPrimitiveTypes(DteKleurRAL)
 
@@ -241,7 +241,7 @@ class OTLPrimitiveDatatypeCreatorTests(unittest.TestCase):
         logger = NoneLogger()
         collector = PrimitiveDatatypeOSLOCollector(mock)
         creator = OTLPrimitiveDatatypeCreator(logger, collector)
-        KwantWrdInVolt = collector.FindPrimitiveDatatypeByUri(
+        KwantWrdInVolt = collector.find_primitive_datatype_by_uri(
             'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInVolt')
         dataToWrite = creator.CreateBlockToWriteFromPrimitiveTypes(KwantWrdInVolt)
         creator.writeToFile(KwantWrdInVolt, 'Datatypes', dataToWrite, '../../')
@@ -253,7 +253,7 @@ class OTLPrimitiveDatatypeCreatorTests(unittest.TestCase):
         logger = NoneLogger()
         collector = PrimitiveDatatypeOSLOCollector(mock)
         creator = OTLPrimitiveDatatypeCreator(logger, collector)
-        DteKleurRAL = collector.FindPrimitiveDatatypeByUri(
+        DteKleurRAL = collector.find_primitive_datatype_by_uri(
             'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DteKleurRAL')
         dataToWrite = creator.CreateBlockToWriteFromPrimitiveTypes(DteKleurRAL)
         creator.writeToFile(DteKleurRAL, 'Datatypes', dataToWrite, '../../src/OTLMOW/')

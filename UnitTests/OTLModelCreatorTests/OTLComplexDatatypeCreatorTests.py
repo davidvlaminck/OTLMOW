@@ -266,7 +266,7 @@ class OTLComplexDatatypeCreatorTests(unittest.TestCase):
         logger = NoneLogger()
         collector = ComplexDatatypeOSLOCollector(mock)
         creator = OTLComplexDatatypeCreator(logger, collector)
-        dtcIdentificator = collector.FindComplexDatatypeByUri(
+        dtcIdentificator = collector.find_complex_datatype_by_uri(
             'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcIdentificator')
         dataToWrite = creator.CreateBlockToWriteFromComplexTypes(dtcIdentificator)
 
@@ -283,7 +283,7 @@ class OTLComplexDatatypeCreatorTests(unittest.TestCase):
         collector.collect()
 
         creator = OTLComplexDatatypeCreator(logger, collector)
-        dtcAdres = collector.FindComplexDatatypeByUri(
+        dtcAdres = collector.find_complex_datatype_by_uri(
             'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAdres')
         dataToWrite = creator.CreateBlockToWriteFromComplexTypes(dtcAdres)
         creator.writeToFile(dtcAdres, 'Datatypes', dataToWrite, '../../src/OTLMOW/')
@@ -302,7 +302,7 @@ class OTLComplexDatatypeCreatorTests(unittest.TestCase):
         collector.collect()
 
         creator = OTLComplexDatatypeCreator(logger, collector)
-        DtcRechtspersoon = collector.FindComplexDatatypeByUri(
+        DtcRechtspersoon = collector.find_complex_datatype_by_uri(
             'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcRechtspersoon')
         dataToWrite = creator.CreateBlockToWriteFromComplexTypes(DtcRechtspersoon)
         creator.writeToFile(DtcRechtspersoon, 'Datatypes', dataToWrite, '../../src/OTLMOW/')
@@ -321,7 +321,7 @@ class OTLComplexDatatypeCreatorTests(unittest.TestCase):
         collector.collect()
 
         creator = OTLComplexDatatypeCreator(logger, collector)
-        DtcMaaien = collector.FindComplexDatatypeByUri(
+        DtcMaaien = collector.find_complex_datatype_by_uri(
             'https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#DtcMaaien')
         dataToWrite = creator.CreateBlockToWriteFromComplexTypes(DtcMaaien)
         creator.writeToFile(DtcMaaien, 'Datatypes', dataToWrite, '../../src/OTLMOW/')

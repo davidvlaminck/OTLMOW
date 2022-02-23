@@ -38,7 +38,7 @@ class OSLOCollectorTests(unittest.TestCase):
         class_uri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#NaampadObject'
         attribute_uri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#NaampadObject.naampad'
         naampadObject_class = next(c for c in collector.classes if c.objectUri == class_uri)
-        attributes = collector.FindAttributesByClass(naampadObject_class)
+        attributes = collector.find_attributes_by_class(naampadObject_class)
 
         # assert
         self.assertIsNotNone(naampadObject_class)
@@ -54,7 +54,7 @@ class OSLOCollectorTests(unittest.TestCase):
         class_uri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#NaampadObject'
         base_class = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMNaamObject'
         naampadObject_class = next(c for c in collector.classes if c.objectUri == class_uri)
-        inheritances = collector.FindInheritancesByClass(naampadObject_class)
+        inheritances = collector.find_inheritances_by_class(naampadObject_class)
 
         # assert
         self.assertIsNotNone(naampadObject_class)

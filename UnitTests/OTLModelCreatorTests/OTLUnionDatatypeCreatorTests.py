@@ -171,7 +171,7 @@ class OTLUnionDatatypeCreatorTests(unittest.TestCase):
         logger = NoneLogger()
         collector = UnionDatatypeOSLOCollector(mock)
         creator = OTLUnionDatatypeCreator(logger, collector)
-        DtuLichtmastMasthoogte = collector.FindUnionDatatypeByUri(
+        DtuLichtmastMasthoogte = collector.find_union_datatype_by_uri(
             'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtuLichtmastMasthoogte')
         dataToWrite = creator.CreateBlockToWriteFromUnionTypes(DtuLichtmastMasthoogte)
 
@@ -187,7 +187,7 @@ class OTLUnionDatatypeCreatorTests(unittest.TestCase):
         collector.collect()
 
         creator = OTLUnionDatatypeCreator(logger, collector)
-        DtuLichtmastMasthoogte = collector.FindUnionDatatypeByUri(
+        DtuLichtmastMasthoogte = collector.find_union_datatype_by_uri(
             'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtuLichtmastMasthoogte')
         dataToWrite = creator.CreateBlockToWriteFromUnionTypes(DtuLichtmastMasthoogte)
         creator.writeToFile(DtuLichtmastMasthoogte, 'Datatypes', dataToWrite, '../../src/OTLMOW/')

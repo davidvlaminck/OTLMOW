@@ -125,7 +125,7 @@ class OTLModelCreator:
 
         for cls in self.osloCollector.classes:
             try:
-                dataToWrite = creator.CreateBlockToWriteFromClasses(cls)
+                dataToWrite = creator.create_blocks_to_write_from_classes(cls)
                 if dataToWrite is None:
                     self.logger.log(f"Could not create a class for {cls.name}", LogType.INFO)
                     pass

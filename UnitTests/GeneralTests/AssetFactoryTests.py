@@ -23,14 +23,14 @@ class AssetFactoryTests(TestCase):
         with self.assertRaises(ValueError):
             factory.dynamic_create_instance_from_uri(uri)
 
-    def test_get_public_fieldlist_from_object_None(self):
+    def test_get_public_field_list_from_object_None(self):
         factory = AssetFactory()
         with self.assertRaises(ValueError):
-            factory.get_public_fieldlist_from_object(None)
+            factory.get_public_field_list_from_object(None)
 
-    def test_get_public_fieldlist_from_object_Aftakking(self):
+    def test_get_public_field_list_from_object_Aftakking(self):
         factory = AssetFactory()
-        fields = factory.get_public_fieldlist_from_object(Aftakking())
+        fields = factory.get_public_field_list_from_object(Aftakking())
         expected_fields = ['assetId', 'bestekPostNummer', 'datumOprichtingObject', 'geometry', 'isActief', 'naam', 'notitie',
                            'standaardBestekPostNummer', 'theoretischeLevensduur', 'toestand', 'typeURI']
         self.assertListEqual(expected_fields, fields)
@@ -53,7 +53,7 @@ class AssetFactoryTests(TestCase):
         stroomkringURI = Stroomkring.typeURI
         with self.assertRaises(ValueError) as exc_different_type_uri_empty_fieldList:
             created_asset = factory.create_aimObject_using_other_aimObject_as_template(aftakking, typeURI=stroomkringURI)
-        self.assertEqual(str(exc_different_type_uri_empty_fieldList.exception), "parameter typeURI is different from orig_aimObject. parameter fieldsToCopy cannot be empty")
+        self.assertEqual(str(exc_different_type_uri_empty_fieldList.exception), "parameter typeURI is different from orig_aimObject. parameter fields_to_copy cannot be empty")
 
     def test_create_aimObject_using_other_aimObject_as_template_other_typeURI_with_oneField(self):
         factory = AssetFactory()
@@ -61,7 +61,7 @@ class AssetFactoryTests(TestCase):
         aftakking.naam = 'aftakking naam'
         aftakking.isActief = True
         stroomkringURI = Stroomkring().typeURI
-        created_asset = factory.create_aimObject_using_other_aimObject_as_template(aftakking, typeURI=stroomkringURI, fieldsToCopy=['naam'])
+        created_asset = factory.create_aimObject_using_other_aimObject_as_template(aftakking, typeURI=stroomkringURI, fields_to_copy=['naam'])
 
         self.assertEqual(True, aftakking.isActief)
         self.assertEqual('aftakking naam', aftakking.naam)
@@ -114,10 +114,10 @@ class AssetFactoryTests(TestCase):
         factory = AssetFactory()
         with self.assertRaises(ValueError) as ex_invalid_field_list:
             factory.copy_fields_from_object_to_new_object(Aftakking(), Aftakking(), [])
-        self.assertEqual(str(ex_invalid_field_list.exception), "parameter fieldList is empty or None")
+        self.assertEqual(str(ex_invalid_field_list.exception), "parameter field_list is empty or None")
         with self.assertRaises(ValueError) as ex_invalid_field_list:
             factory.copy_fields_from_object_to_new_object(Aftakking(), Aftakking(), None)
-        self.assertEqual(str(ex_invalid_field_list.exception), "parameter fieldList is empty or None")
+        self.assertEqual(str(ex_invalid_field_list.exception), "parameter field_list is empty or None")
 
     def test_copy_fields_from_object_to_new_object_StringField(self):
         factory = AssetFactory()

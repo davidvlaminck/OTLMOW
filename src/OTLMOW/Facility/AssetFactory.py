@@ -5,7 +5,7 @@ from OTLMOW.OTLModel.Classes.AIMObject import AIMObject
 
 class AssetFactory:
     @staticmethod
-    def dynamic_create_instance_from_name(class_name):
+    def dynamic_create_instance_from_name(class_name: str):
         try:
             py_mod = __import__(name=f'OTLMOW.OTLModel.Classes.{class_name}', fromlist=f'Classes.{class_name}')
         except ModuleNotFoundError:
@@ -15,7 +15,7 @@ class AssetFactory:
 
         return instance
 
-    def dynamic_create_instance_from_uri(self, class_uri):
+    def dynamic_create_instance_from_uri(self, class_uri: str):
         if not class_uri.startswith('https://wegenenverkeer.data.vlaanderen.be/ns'):
             raise ValueError(
                 f'{class_uri} is not valid uri, it does not begin with "https://wegenenverkeer.data.vlaanderen.be/ns"')
@@ -25,59 +25,59 @@ class AssetFactory:
             raise ValueError(f'{class_uri} is likely not valid uri, it does not result in a created instance')
         return created
 
-    def create_aimObject_using_other_aimObject_as_template(self, orig_aimObject, typeURI='', fieldsToCopy=None):
+    def create_aimObject_using_other_aimObject_as_template(self, orig_aimObject: AIMObject, typeURI: str = '',
+                                                           fields_to_copy: [str] = None):
         """Creates an AIMObject, using another AIMObject as template.
         The parameter typeURI defines the type of the new AIMObject that is created.
         If omitted, it is assumed the same type as the given aimObject
-        The parameter fieldsToCopy dictates what fields are copied from the first object
-        When the types do no match, fieldsToCopy can not be empty"""
+        The parameter fields_to_copy dictates what fields are copied from the first object
+        When the types do no match, fields_to_copy can not be empty"""
 
-        if fieldsToCopy is None:
-            fieldsToCopy = []
+        if fields_to_copy is None:
+            fields_to_copy = []
         if not isinstance(orig_aimObject, AIMObject):
             raise ValueError(f'{orig_aimObject} is not an AIMObject, not supported')
 
         if typeURI != '':
-            if typeURI != orig_aimObject.typeURI and (fieldsToCopy == [] or fieldsToCopy is None):
-                raise ValueError("parameter typeURI is different from orig_aimObject. parameter fieldsToCopy cannot be empty")
+            if typeURI != orig_aimObject.typeURI and (fields_to_copy == [] or fields_to_copy is None):
+                raise ValueError("parameter typeURI is different from orig_aimObject. parameter fields_to_copy cannot be empty")
 
         if typeURI == '':
             typeURI = orig_aimObject.typeURI
         new_asset = self.dynamic_create_instance_from_uri(typeURI)
 
-        if fieldsToCopy == []:
-            fieldsToCopy = self.get_public_fieldlist_from_object(orig_aimObject)
+        if len(fields_to_copy) == 0:
+            fields_to_copy = self.get_public_field_list_from_object(orig_aimObject)
 
-        if 'typeURI' in fieldsToCopy:
-            fieldsToCopy.remove('typeURI')
-        if 'assetId' in fieldsToCopy:
-            fieldsToCopy.remove('assetId')
+        if 'typeURI' in fields_to_copy:
+            fields_to_copy.remove('typeURI')
+        if 'assetId' in fields_to_copy:
+            fields_to_copy.remove('assetId')
 
-        self.copy_fields_from_object_to_new_object(orig_aimObject, new_asset, fieldsToCopy)
+        self.copy_fields_from_object_to_new_object(orig_aimObject, new_asset, fields_to_copy)
         return new_asset
 
-    def get_public_fieldlist_from_object(self, orig_asset):
+    @staticmethod
+    def get_public_field_list_from_object(orig_asset: AIMObject):
         if orig_asset is None:
             raise ValueError("input can't be None")
         d = dir(orig_asset)
-        listFields = []
-        for key in d:
-            if key[0] == '_' or key in ['info_attr', 'info_attr_type', 'info', 'make_string_version', 'create_dict_from_asset']:
-                continue
-            else:
-                listFields.append(key)
+
+        reserved = ['info_attr', 'info_attr_type', 'info', 'make_string_version', 'create_dict_from_asset']
+        listFields = [item for item in d if item[0] != '_' and item not in reserved]
 
         return listFields
 
-    def copy_fields_from_object_to_new_object(self, orig_object, new_object, fieldList):
+    @staticmethod
+    def copy_fields_from_object_to_new_object(orig_object: AIMObject, new_object: AIMObject, field_list: [str]):
         if orig_object is None:
             raise ValueError("parameter orig_object is None")
         if new_object is None:
             raise ValueError("parameter new_object is None")
-        if fieldList is None or fieldList == []:
-            raise ValueError("parameter fieldList is empty or None")
+        if field_list is None or field_list == []:
+            raise ValueError("parameter field_list is empty or None")
 
-        distinct_fieldList = list(set(fieldList))
+        distinct_fieldList = list(set(field_list))
 
         for fieldName in distinct_fieldList:
             orig_asset_field = getattr(orig_object, fieldName)

@@ -8,8 +8,8 @@ from OTLMOW.OTLModel.Datatypes.KlTypeSuppCBV import KlTypeSuppCBV
 
 # Generated with OTLComplexDatatypeCreator. To modify: extend, do not edit
 class DtcSupplementenCBVWaarden(AttributeInfo):
-    def __init__(self):
-        super().__init__()
+    def __init__(self, parent=None):
+        AttributeInfo.__init__(self, parent)
         self._kleur = OTLAttribuut(field=KlKleurSupp,
                                    naam='kleur',
                                    label='kleur',

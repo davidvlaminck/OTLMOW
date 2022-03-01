@@ -8,8 +8,8 @@ from OTLMOW.OTLModel.Datatypes.KlMateriaalBeschermingVraatschade import KlMateri
 
 # Generated with OTLComplexDatatypeCreator. To modify: extend, do not edit
 class DtcBeschermingVraatschadeWaarden(AttributeInfo):
-    def __init__(self):
-        super().__init__()
+    def __init__(self, parent=None):
+        AttributeInfo.__init__(self, parent)
         self._materiaal = OTLAttribuut(field=KlMateriaalBeschermingVraatschade,
                                        naam='materiaal',
                                        label='materiaal',

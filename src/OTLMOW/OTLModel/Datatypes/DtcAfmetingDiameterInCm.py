@@ -7,8 +7,8 @@ from OTLMOW.OTLModel.Datatypes.KwantWrdInCentimeter import KwantWrdInCentimeter
 
 # Generated with OTLComplexDatatypeCreator. To modify: extend, do not edit
 class DtcAfmetingDiameterInCmWaarden(AttributeInfo):
-    def __init__(self):
-        super().__init__()
+    def __init__(self, parent=None):
+        AttributeInfo.__init__(self, parent)
         self._diameter = OTLAttribuut(field=KwantWrdInCentimeter,
                                       naam='diameter',
                                       label='diameter',

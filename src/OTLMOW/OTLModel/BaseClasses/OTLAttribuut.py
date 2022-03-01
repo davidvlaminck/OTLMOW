@@ -3,6 +3,7 @@ import warnings
 from datetime import datetime
 
 from OTLMOW.OTLModel.BaseClasses.AttributeInfo import AttributeInfo
+from OTLMOW.OTLModel.BaseClasses.CachedProperty import cached_property
 from OTLMOW.OTLModel.BaseClasses.OTLField import OTLField
 from OTLMOW.OTLModel.Datatypes.UnionTypeField import UnionTypeField
 from OTLMOW.OTLModel.Datatypes.UnionWaarden import UnionWaarden
@@ -22,6 +23,7 @@ class OTLAttribuut(AttributeInfo):
         self.readonly = readonly
         self.kardinaliteit_min = kardinaliteit_min
         self.kardinaliteit_max = kardinaliteit_max
+        self._dotnotatie = ''
         self.owner = owner
         self.readonlyValue = None
         self.waarde = None
@@ -31,8 +33,12 @@ class OTLAttribuut(AttributeInfo):
             self.__dict__["waarde"] = readonlyValue
 
         if self.field.waardeObject:
-            self.waarde = self.field.waardeObject()
+            self.waarde = self.field.waardeObject(parent=self)
             self.waarde._parent = self
+
+        #if dotnotatie == '':
+        #    self.add_dotnotatie()
+
 
     def default(self):
         if self.waarde is not dict and isinstance(self.waarde, list):
@@ -148,3 +154,27 @@ class OTLAttribuut(AttributeInfo):
              f'kardinaliteit_max: {self.kardinaliteit_max}\n'
              f'deprecated_version: {self.deprecated_version}\n')
         return s
+
+    @cached_property
+    def dotnotatie(self):
+        if self._dotnotatie == '':
+            self.add_dotnotatie()
+        return self._dotnotatie
+
+    def add_dotnotatie(self):
+        self._dotnotatie += self.naam
+        if self.kardinaliteit_max == '*':
+            kardinaliteit_max = math.inf
+        else:
+            kardinaliteit_max = int(self.kardinaliteit_max)
+        if kardinaliteit_max > 1:
+            self._dotnotatie += '[]'
+
+        self.recurse_add_parents_to_dotnotatie(self)
+
+    def recurse_add_parents_to_dotnotatie(self, attribute):
+        if attribute.owner is not None and hasattr(attribute.owner, '_parent') and attribute.owner._parent is not None and hasattr(attribute.owner._parent, 'dotnotatie'):
+            if attribute.owner._parent.dotnotatie == '':
+                attribute.owner._parent.add_dotnotatie()
+            self._dotnotatie = attribute.owner._parent.dotnotatie + '.' + self._dotnotatie
+

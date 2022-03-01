@@ -8,8 +8,8 @@ from OTLMOW.OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter
 
 # Generated with OTLComplexDatatypeCreator. To modify: extend, do not edit
 class DtcBSSRandafwerkingWaarden(AttributeInfo):
-    def __init__(self):
-        super().__init__()
+    def __init__(self, parent=None):
+        AttributeInfo.__init__(self, parent)
         self._lengteRandafwerking = OTLAttribuut(field=KwantWrdInMeter,
                                                  naam='lengteRandafwerking',
                                                  label='lengte randafwerking',

@@ -13,8 +13,8 @@ from OTLMOW.OTLModel.Datatypes.KwantWrdInMillimeter import KwantWrdInMillimeter
 
 # Generated with OTLComplexDatatypeCreator. To modify: extend, do not edit
 class DtcBetonspecificatiesWaarden(AttributeInfo):
-    def __init__(self):
-        super().__init__()
+    def __init__(self, parent=None):
+        AttributeInfo.__init__(self, parent)
         self._betondekking = OTLAttribuut(field=KwantWrdInMillimeter,
                                           naam='betondekking',
                                           label='betondekking',

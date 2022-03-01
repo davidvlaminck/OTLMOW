@@ -18,8 +18,8 @@ from OTLMOW.OTLModel.Datatypes.KlVormAanleveringHoutigeVegetatie import KlVormAa
 
 # Generated with OTLComplexDatatypeCreator. To modify: extend, do not edit
 class DtcAanlegBoomvormWaarden(AttributeInfo):
-    def __init__(self):
-        super().__init__()
+    def __init__(self, parent=None):
+        AttributeInfo.__init__(self, parent)
         self._beschermingVraatschade = OTLAttribuut(field=DtcBeschermingVraatschade,
                                                     naam='beschermingVraatschade',
                                                     label='bescherming vraatschade',

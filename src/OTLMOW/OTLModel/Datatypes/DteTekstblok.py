@@ -7,8 +7,8 @@ from OTLMOW.OTLModel.Datatypes.StringField import StringField
 
 # Generated with OTLPrimitiveDatatypeCreator. To modify: extend, do not edit
 class DteTekstblokWaarden(AttributeInfo):
-    def __init__(self):
-        super().__init__()
+    def __init__(self, parent=None):
+        AttributeInfo.__init__(self, parent)
         self._waarde = OTLAttribuut(field=StringField,
                                     naam='waarde',
                                     label='waarde',

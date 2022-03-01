@@ -8,8 +8,8 @@ from OTLMOW.OTLModel.Datatypes.StringField import StringField
 
 # Generated with OTLPrimitiveDatatypeCreator. To modify: extend, do not edit
 class KwantWrdInPromilleWaarden(AttributeInfo):
-    def __init__(self):
-        super().__init__()
+    def __init__(self, parent=None):
+        AttributeInfo.__init__(self, parent)
         self._standaardEenheid = OTLAttribuut(field=StringField,
                                               naam='standaardEenheid',
                                               label='standaard eenheid',

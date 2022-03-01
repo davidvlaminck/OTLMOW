@@ -11,8 +11,8 @@ from OTLMOW.OTLModel.Datatypes.NonNegIntegerField import NonNegIntegerField
 
 # Generated with OTLComplexDatatypeCreator. To modify: extend, do not edit
 class DtcSierbeplAanlegWaarden(AttributeInfo):
-    def __init__(self):
-        super().__init__()
+    def __init__(self, parent=None):
+        AttributeInfo.__init__(self, parent)
         self._aanplantingswijze = OTLAttribuut(field=KlAanplantingswijzeSierbeplanting,
                                                naam='aanplantingswijze',
                                                label='aanplantingswijze',

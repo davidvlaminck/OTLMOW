@@ -8,8 +8,8 @@ from OTLMOW.OTLModel.Datatypes.KwantWrdInTon import KwantWrdInTon
 
 # Generated with OTLComplexDatatypeCreator. To modify: extend, do not edit
 class DtcProfileerlaagWaarden(AttributeInfo):
-    def __init__(self):
-        super().__init__()
+    def __init__(self, parent=None):
+        AttributeInfo.__init__(self, parent)
         self._gewicht = OTLAttribuut(field=KwantWrdInTon,
                                      naam='gewicht',
                                      label='gewicht',

@@ -7,8 +7,8 @@ from OTLMOW.OTLModel.Datatypes.KwantWrdInCentimeter import KwantWrdInCentimeter
 
 # Generated with OTLComplexDatatypeCreator. To modify: extend, do not edit
 class DtcAfmetingBxlxhInCmWaarden(AttributeInfo):
-    def __init__(self):
-        super().__init__()
+    def __init__(self, parent=None):
+        AttributeInfo.__init__(self, parent)
         self._breedte = OTLAttribuut(field=KwantWrdInCentimeter,
                                      naam='breedte',
                                      label='breedte',

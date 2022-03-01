@@ -7,8 +7,8 @@ from OTLMOW.OTLModel.Datatypes.StringField import StringField
 
 # Generated with OTLComplexDatatypeCreator. To modify: extend, do not edit
 class DtcExterneReferentieWaarden(AttributeInfo):
-    def __init__(self):
-        super().__init__()
+    def __init__(self, parent=None):
+        AttributeInfo.__init__(self, parent)
         self._externReferentienummer = OTLAttribuut(field=StringField,
                                                     naam='externReferentienummer',
                                                     label='extern referentienummer',

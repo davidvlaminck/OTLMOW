@@ -9,8 +9,8 @@ from OTLMOW.OTLModel.Datatypes.StringField import StringField
 
 # Generated with OTLComplexDatatypeCreator. To modify: extend, do not edit
 class DtcNatuurlijkPersoonWaarden(AttributeInfo):
-    def __init__(self):
-        super().__init__()
+    def __init__(self, parent=None):
+        AttributeInfo.__init__(self, parent)
         self._achternaam = OTLAttribuut(field=StringField,
                                         naam='achternaam',
                                         label='achternaam',

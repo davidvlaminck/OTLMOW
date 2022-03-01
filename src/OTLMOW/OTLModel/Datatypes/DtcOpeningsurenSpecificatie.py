@@ -8,8 +8,8 @@ from OTLMOW.OTLModel.Datatypes.TimeField import TimeField
 
 # Generated with OTLComplexDatatypeCreator. To modify: extend, do not edit
 class DtcOpeningsurenSpecificatieWaarden(AttributeInfo):
-    def __init__(self):
-        super().__init__()
+    def __init__(self, parent=None):
+        AttributeInfo.__init__(self, parent)
         self._openingstijd = OTLAttribuut(field=TimeField,
                                           naam='openingstijd',
                                           label='openingstijd',

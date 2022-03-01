@@ -8,8 +8,8 @@ from OTLMOW.OTLModel.Datatypes.StringField import StringField
 
 # Generated with OTLComplexDatatypeCreator. To modify: extend, do not edit
 class DtcRechtspersoonWaarden(AttributeInfo):
-    def __init__(self):
-        super().__init__()
+    def __init__(self, parent=None):
+        AttributeInfo.__init__(self, parent)
         self._adres = OTLAttribuut(field=DtcAdres,
                                    naam='adres',
                                    label='adres',

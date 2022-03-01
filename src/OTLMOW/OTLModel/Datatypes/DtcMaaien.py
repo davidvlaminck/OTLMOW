@@ -9,8 +9,8 @@ from OTLMOW.OTLModel.Datatypes.KlMaaiPeriode import KlMaaiPeriode
 
 # Generated with OTLComplexDatatypeCreator. To modify: extend, do not edit
 class DtcMaaienWaarden(AttributeInfo):
-    def __init__(self):
-        super().__init__()
+    def __init__(self, parent=None):
+        AttributeInfo.__init__(self, parent)
         self._frequentie = OTLAttribuut(field=KlMaaiFrequentie,
                                         naam='frequentie',
                                         label='frequentie',

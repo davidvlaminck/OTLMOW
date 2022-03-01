@@ -7,8 +7,8 @@ from OTLMOW.OTLModel.Datatypes.StringField import StringField
 
 # Generated with OTLComplexDatatypeCreator. To modify: extend, do not edit
 class DtcIdentificatorWaarden(AttributeInfo):
-    def __init__(self):
-        super().__init__()
+    def __init__(self, parent=None):
+        AttributeInfo.__init__(self, parent)
         self._identificator = OTLAttribuut(field=StringField,
                                            naam='identificator',
                                            label='identificator',

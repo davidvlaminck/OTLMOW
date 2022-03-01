@@ -8,8 +8,8 @@ from OTLMOW.OTLModel.Datatypes.KlWalsmethode import KlWalsmethode
 
 # Generated with OTLComplexDatatypeCreator. To modify: extend, do not edit
 class DtcConstructiestaalspecificatiesWaarden(AttributeInfo):
-    def __init__(self):
-        super().__init__()
+    def __init__(self, parent=None):
+        AttributeInfo.__init__(self, parent)
         self._staalsoort = OTLAttribuut(field=KlConstructiestaalsoort,
                                         naam='staalsoort',
                                         label='staalsoort',

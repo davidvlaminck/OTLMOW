@@ -9,8 +9,9 @@ from OTLMOW.OTLModel.Datatypes.UnionWaarden import UnionWaarden
 
 # Generated with OTLUnionDatatypeCreator. To modify: extend, do not edit
 class DtuWvLichtmastBevsToestelMethodeWaarden(AttributeInfo, UnionWaarden):
-    def __init__(self):
-        super().__init__()
+    def __init__(self, parent=None):
+        AttributeInfo.__init__(self, parent)
+        UnionWaarden.__init__(self)
         self._afwijkendeMethode = OTLAttribuut(field=StringField,
                                                naam='afwijkendeMethode',
                                                label='afwijkende methode',

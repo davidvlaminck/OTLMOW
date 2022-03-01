@@ -9,8 +9,8 @@ from OTLMOW.OTLModel.Datatypes.StringField import StringField
 
 # Generated with OTLComplexDatatypeCreator. To modify: extend, do not edit
 class DtcAdresWaarden(AttributeInfo):
-    def __init__(self):
-        super().__init__()
+    def __init__(self, parent=None):
+        AttributeInfo.__init__(self, parent)
         self._bus = OTLAttribuut(field=StringField,
                                  naam='bus',
                                  label='bus',

@@ -8,8 +8,8 @@ from OTLMOW.OTLModel.Datatypes.KlLEGCMateriaal import KlLEGCMateriaal
 
 # Generated with OTLComplexDatatypeCreator. To modify: extend, do not edit
 class DtcGCMateriaalKarakteristiekWaarden(AttributeInfo):
-    def __init__(self):
-        super().__init__()
+    def __init__(self, parent=None):
+        AttributeInfo.__init__(self, parent)
         self._geluidskarakteristiek = OTLAttribuut(field=KlLEGCGeluidskarakteristiek,
                                                    naam='geluidskarakteristiek',
                                                    label='geluidskarakteristiek',

@@ -10,8 +10,9 @@ from OTLMOW.OTLModel.Datatypes.UnionWaarden import UnionWaarden
 
 # Generated with OTLUnionDatatypeCreator. To modify: extend, do not edit
 class DtuAfmetingVerkeersbordWaarden(AttributeInfo, UnionWaarden):
-    def __init__(self):
-        super().__init__()
+    def __init__(self, parent=None):
+        AttributeInfo.__init__(self, parent)
+        UnionWaarden.__init__(self)
         self._achthoekig = OTLAttribuut(field=DtcAfmetingZijdeInMm,
                                         naam='achthoekig',
                                         label='achthoekig',

@@ -10,8 +10,8 @@ from OTLMOW.OTLModel.Datatypes.URIField import URIField
 
 # Generated with OTLComplexDatatypeCreator. To modify: extend, do not edit
 class DtcDocumentWaarden(AttributeInfo):
-    def __init__(self):
-        super().__init__()
+    def __init__(self, parent=None):
+        AttributeInfo.__init__(self, parent)
         self._bestandsnaam = OTLAttribuut(field=StringField,
                                           naam='bestandsnaam',
                                           label='bestandsnaam',

@@ -11,8 +11,8 @@ from OTLMOW.OTLModel.Datatypes.KlLEGCTestType import KlLEGCTestType
 
 # Generated with OTLComplexDatatypeCreator. To modify: extend, do not edit
 class DtcGeluidstestRapportWaarden(AttributeInfo):
-    def __init__(self):
-        super().__init__()
+    def __init__(self, parent=None):
+        AttributeInfo.__init__(self, parent)
         self._geluidsabsorptieReflectie = OTLAttribuut(field=IntegerField,
                                                        naam='geluidsabsorptieReflectie',
                                                        label='geluidsabsorptie reflectie',

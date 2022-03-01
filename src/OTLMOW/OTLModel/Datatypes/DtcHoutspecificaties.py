@@ -10,8 +10,8 @@ from OTLMOW.OTLModel.Datatypes.KlSterkteklasseHout import KlSterkteklasseHout
 
 # Generated with OTLComplexDatatypeCreator. To modify: extend, do not edit
 class DtcHoutspecificatiesWaarden(AttributeInfo):
-    def __init__(self):
-        super().__init__()
+    def __init__(self, parent=None):
+        AttributeInfo.__init__(self, parent)
         self._houtduurzaamheidsklasse = OTLAttribuut(field=KlDuurzaamheidsklasseHout,
                                                      naam='houtduurzaamheidsklasse',
                                                      label='houtduurzaamheidsklasse',

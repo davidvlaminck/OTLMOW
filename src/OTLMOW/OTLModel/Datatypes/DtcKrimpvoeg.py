@@ -7,8 +7,8 @@ from OTLMOW.OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter
 
 # Generated with OTLComplexDatatypeCreator. To modify: extend, do not edit
 class DtcKrimpvoegWaarden(AttributeInfo):
-    def __init__(self):
-        super().__init__()
+    def __init__(self, parent=None):
+        AttributeInfo.__init__(self, parent)
         self._krimpvoegFrequentie = OTLAttribuut(field=KwantWrdInMeter,
                                                  naam='krimpvoegFrequentie',
                                                  label='krimpvoeg frequentie',

@@ -181,10 +181,13 @@ class AbstractDatatypeCreator(ABC):
         datablock.append(f'# Generated with {self.__class__.__name__}. To modify: extend, do not edit')
         if typeField == 'UnionType':
             datablock.append(f'class {osloDatatype.name}Waarden(AttributeInfo, UnionWaarden):')
+            datablock.append('    def __init__(self, parent=None):')
+            datablock.append('        AttributeInfo.__init__(self, parent)')
+            datablock.append('        UnionWaarden.__init__(self)')
         else:
             datablock.append(f'class {osloDatatype.name}Waarden(AttributeInfo):')
-        datablock.append('    def __init__(self):')
-        datablock.append('        super().__init__()')
+            datablock.append('    def __init__(self, parent=None):')
+            datablock.append('        AttributeInfo.__init__(self, parent)')
 
         self.add_attributen_to_dataBlock(attributen, datablock, forClassUse=False, typeField=typeField)
 

@@ -9,8 +9,8 @@ from OTLMOW.OTLModel.Datatypes.URIField import URIField
 
 # Generated with OTLComplexDatatypeCreator. To modify: extend, do not edit
 class DtcProductidentificatiecodeWaarden(AttributeInfo):
-    def __init__(self):
-        super().__init__()
+    def __init__(self, parent=None):
+        AttributeInfo.__init__(self, parent)
         self._keuringsverslag = OTLAttribuut(field=DtcDocument,
                                              naam='keuringsverslag',
                                              label='keuringsverslag',

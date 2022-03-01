@@ -9,8 +9,8 @@ from OTLMOW.OTLModel.Datatypes.KwantWrdInUur import KwantWrdInUur
 
 # Generated with OTLComplexDatatypeCreator. To modify: extend, do not edit
 class DtcTijdsduurWaarden(AttributeInfo):
-    def __init__(self):
-        super().__init__()
+    def __init__(self, parent=None):
+        AttributeInfo.__init__(self, parent)
         self._minuten = OTLAttribuut(field=KwantWrdInMinuut,
                                      naam='minuten',
                                      label='minuten',

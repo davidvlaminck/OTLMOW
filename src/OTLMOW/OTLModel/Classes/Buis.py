@@ -10,10 +10,11 @@ from OTLMOW.OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter
 from OTLMOW.OTLModel.Datatypes.KwantWrdInMeterTAW import KwantWrdInMeterTAW
 from OTLMOW.OTLModel.Datatypes.KwantWrdInMillimeter import KwantWrdInMillimeter
 from OTLMOW.OTLModel.Datatypes.KwantWrdInPromille import KwantWrdInPromille
+from OTLMOW.GeometrieArtefact.LijnGeometrie import LijnGeometrie
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Buis(AIMObject):
+class Buis(AIMObject, LijnGeometrie):
     """Abstracte om de gemeenschappelijke eigenschappen en relaties van de verschillende soorten buizen onder één noemer te houden."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Buis'
@@ -21,7 +22,8 @@ class Buis(AIMObject):
 
     @abstractmethod
     def __init__(self):
-        super().__init__()
+        AIMObject.__init__(self)
+        LijnGeometrie.__init__(self)
 
         self._bokAfwaarts = OTLAttribuut(field=KwantWrdInMeterTAW,
                                          naam='bokAfwaarts',

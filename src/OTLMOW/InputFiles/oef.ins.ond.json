@@ -38,13 +38,13 @@
       ],
       "attributen" : [
         {
+          "attribuut" : "https://ond.data.wegenenverkeer.be/ns/attribuut#EMObject.resultaatOnderhoud"
+        },
+        {
           "attribuut" : "https://ond.data.wegenenverkeer.be/ns/attribuut#EMObject.opmerkingenBijOnderhoud"
         },
         {
           "attribuut" : "https://ins.data.wegenenverkeer.be/ns/attribuut#EMObject.notitieinspectie"
-        },
-        {
-          "attribuut" : "https://ond.data.wegenenverkeer.be/ns/attribuut#EMObject.resultaatOnderhoud"
         }
       ]
     },
@@ -494,13 +494,13 @@
       ],
       "attributen" : [
         {
+          "attribuut" : "https://ond.data.wegenenverkeer.be/ns/attribuut#EMObject.resultaatOnderhoud"
+        },
+        {
           "attribuut" : "https://ond.data.wegenenverkeer.be/ns/attribuut#EMObject.opmerkingenBijOnderhoud"
         },
         {
           "attribuut" : "https://ins.data.wegenenverkeer.be/ns/attribuut#EMObject.notitieinspectie"
-        },
-        {
-          "attribuut" : "https://ond.data.wegenenverkeer.be/ns/attribuut#EMObject.resultaatOnderhoud"
         }
       ]
     },
@@ -514,13 +514,13 @@
       ],
       "attributen" : [
         {
+          "attribuut" : "https://ond.data.wegenenverkeer.be/ns/attribuut#EMObject.resultaatOnderhoud"
+        },
+        {
           "attribuut" : "https://ond.data.wegenenverkeer.be/ns/attribuut#EMObject.opmerkingenBijOnderhoud"
         },
         {
           "attribuut" : "https://ins.data.wegenenverkeer.be/ns/attribuut#EMObject.notitieinspectie"
-        },
-        {
-          "attribuut" : "https://ond.data.wegenenverkeer.be/ns/attribuut#EMObject.resultaatOnderhoud"
         }
       ]
     },
@@ -1099,13 +1099,13 @@
       ],
       "attributen" : [
         {
+          "attribuut" : "https://ond.data.wegenenverkeer.be/ns/attribuut#EMObject.resultaatOnderhoud"
+        },
+        {
           "attribuut" : "https://ond.data.wegenenverkeer.be/ns/attribuut#EMObject.opmerkingenBijOnderhoud"
         },
         {
           "attribuut" : "https://ins.data.wegenenverkeer.be/ns/attribuut#EMObject.notitieinspectie"
-        },
-        {
-          "attribuut" : "https://ond.data.wegenenverkeer.be/ns/attribuut#EMObject.resultaatOnderhoud"
         }
       ]
     },
@@ -7504,7 +7504,7 @@
     }
   ],
   "metadata" : {
-    "versie" : "2022-02-03T09:46:05.180+01:00",
+    "versie" : "2022-03-01T10:05:43.474+01:00",
     "naam" : "inspectie-en-onderhoud",
     "omschrijving" : "Gegenereerd oef model voor inspectie-en-onderhoud"
   }

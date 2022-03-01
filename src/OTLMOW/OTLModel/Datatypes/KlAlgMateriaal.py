@@ -35,11 +35,20 @@ class KlAlgMateriaal(KeuzelijstField):
                                       label='kunststof',
                                       definitie='kunststof',
                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgMateriaal/kunststof'),
+        'metselwerk': KeuzelijstWaarde(invulwaarde='metselwerk',
+                                       label='metselwerk',
+                                       definitie='metselwerk',
+                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgMateriaal/metselwerk'),
+        'polycarbonaat': KeuzelijstWaarde(invulwaarde='polycarbonaat',
+                                          label='polycarbonaat',
+                                          definitie='polycarbonaat',
+                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgMateriaal/polycarbonaat'),
         'roestvrijstaal': KeuzelijstWaarde(invulwaarde='roestvrijstaal',
                                            label='roestvrijstaal',
                                            objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgMateriaal/roestvrijstaal'),
         'staal': KeuzelijstWaarde(invulwaarde='staal',
                                   label='staal',
+                                  definitie='staal',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgMateriaal/staal')
     }
 

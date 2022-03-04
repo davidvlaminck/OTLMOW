@@ -57,7 +57,7 @@ class Flitscamera(AIMObject, PuntGeometrie):
 
     @property
     def externeReferentie(self):
-        """Het model of productrange van een flitscamera."""
+        """Referentie zoals gekend bij een externe partij bv. aannemer, VLCC, ..."""
         return self._externeReferentie.waarde
 
     @externeReferentie.setter

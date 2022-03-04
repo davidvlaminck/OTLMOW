@@ -1,5 +1,6 @@
 ﻿from unittest import TestCase
 
+from OTLMOW.Facility.Exceptions.HasNoDotNotatieException import HasNoDotNotatieException
 from OTLMOW.OTLModel.Classes.Lichtmast import Lichtmast
 from OTLMOW.OTLModel.Classes.Verkeersregelaar import Verkeersregelaar
 
@@ -12,7 +13,8 @@ class DotnotatieOnAttributeTests(TestCase):
             self.assertEqual('merk', vr._merk.dotnotatie)
 
         with self.subTest('complex attribute'):
-            self.assertEqual('assetId', vr._assetId.dotnotatie)
+            with self.assertRaises(HasNoDotNotatieException):
+                self.assertEqual('assetId', vr._assetId.dotnotatie)
             self.assertEqual('assetId.identificator', vr.assetId._identificator.dotnotatie)
 
         with self.subTest('kwant waarde attribute'):
@@ -27,5 +29,5 @@ class DotnotatieOnAttributeTests(TestCase):
 
         lichtmast = Lichtmast()
         with self.subTest('union attribuut'):
-            self.assertEqual('masthoogte.afwijkendeHoogte', lichtmast.masthoogte.afwijkendeHoogte._waarde.dotnotatie)
+            self.assertEqual('masthoogte.afwijkendeHoogte.waarde', lichtmast.masthoogte.afwijkendeHoogte._waarde.dotnotatie) # TODO incorrect test
             self.assertEqual('masthoogte.standaardHoogte', lichtmast.masthoogte._standaardHoogte.dotnotatie)

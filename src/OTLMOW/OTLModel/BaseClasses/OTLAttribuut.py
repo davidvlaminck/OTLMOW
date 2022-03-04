@@ -2,6 +2,7 @@
 import warnings
 from datetime import datetime
 
+from OTLMOW.Facility.Exceptions.HasNoDotNotatieException import HasNoDotNotatieException
 from OTLMOW.OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLMOW.OTLModel.BaseClasses.CachedProperty import cached_property
 from OTLMOW.OTLModel.BaseClasses.OTLField import OTLField
@@ -35,10 +36,6 @@ class OTLAttribuut(AttributeInfo):
         if self.field.waardeObject:
             self.waarde = self.field.waardeObject(parent=self)
             self.waarde._parent = self
-
-        #if dotnotatie == '':
-        #    self.add_dotnotatie()
-
 
     def default(self):
         if self.waarde is not dict and isinstance(self.waarde, list):
@@ -162,6 +159,9 @@ class OTLAttribuut(AttributeInfo):
         return self._dotnotatie
 
     def add_dotnotatie(self):
+        if self.field.waardeObject is not None:
+            raise HasNoDotNotatieException(f"attribute {self.objectUri} does not have a dotnotatie because it has attributes itself.")
+
         self._dotnotatie += self.naam
         if self.kardinaliteit_max == '*':
             kardinaliteit_max = math.inf

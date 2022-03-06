@@ -11,7 +11,7 @@ class AttributenIterator(TestCase):
         a.toestand = 'in-gebruik'
         a.naam = 'aftakking'
         expected_result = { 'naam': 'aftakking', 'toestand': 'in-gebruik'}
-        self.assertDictEqual(expected_result, a.attributen_iterator)
+        self.assertDictEqual(expected_result, dict(a.attributen_iterator))
 
 
 # something like this:

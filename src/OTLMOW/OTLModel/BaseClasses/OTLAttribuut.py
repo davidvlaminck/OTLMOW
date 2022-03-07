@@ -2,6 +2,7 @@
 import warnings
 from datetime import datetime
 
+from OTLMOW.Facility.Exceptions.HasNoDotNotatieException import HasNoDotNotatieException
 from OTLMOW.OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLMOW.OTLModel.BaseClasses.CachedProperty import cached_property
 from OTLMOW.OTLModel.BaseClasses.OTLField import OTLField
@@ -157,24 +158,27 @@ class OTLAttribuut(AttributeInfo):
 
     @cached_property
     def dotnotatie(self):
+        if self.field.waardeObject is not None:
+            raise HasNoDotNotatieException(
+                f"attribute {self.objectUri} does not have a dotnotatie because it has attributes itself.")
+
         if self._dotnotatie == '':
-            self.add_dotnotatie()
+            self._dotnotatie = self.recurse_add_parents_to_dotnotatie(attribute=self)
         return self._dotnotatie
 
-    def add_dotnotatie(self):
-        self._dotnotatie += self.naam
-        if self.kardinaliteit_max == '*':
+    @staticmethod
+    def recurse_add_parents_to_dotnotatie(attribute):
+        dotnotatie = attribute.naam
+        if attribute.kardinaliteit_max == '*':
             kardinaliteit_max = math.inf
         else:
-            kardinaliteit_max = int(self.kardinaliteit_max)
+            kardinaliteit_max = int(attribute.kardinaliteit_max)
         if kardinaliteit_max > 1:
-            self._dotnotatie += '[]'
+            dotnotatie += '[]'
 
-        self.recurse_add_parents_to_dotnotatie(self)
+        if attribute.owner is not None and hasattr(attribute.owner, '_parent') and attribute.owner._parent is not None and isinstance(
+                attribute.owner._parent, OTLAttribuut):
+            return attribute.recurse_add_parents_to_dotnotatie(attribute.owner._parent) + '.' + dotnotatie
 
-    def recurse_add_parents_to_dotnotatie(self, attribute):
-        if attribute.owner is not None and hasattr(attribute.owner, '_parent') and attribute.owner._parent is not None and hasattr(attribute.owner._parent, 'dotnotatie'):
-            if attribute.owner._parent.dotnotatie == '':
-                attribute.owner._parent.add_dotnotatie()
-            self._dotnotatie = attribute.owner._parent.dotnotatie + '.' + self._dotnotatie
+        return dotnotatie
 

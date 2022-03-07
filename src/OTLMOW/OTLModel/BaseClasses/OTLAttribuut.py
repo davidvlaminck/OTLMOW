@@ -163,11 +163,11 @@ class OTLAttribuut(AttributeInfo):
                 f"attribute {self.objectUri} does not have a dotnotatie because it has attributes itself.")
 
         if self._dotnotatie == '':
-            self._dotnotatie = self.recurse_add_parents_to_dotnotatie(attribute=self)
+            self._dotnotatie = self.recursive_add_parents_to_dotnotatie(attribute=self)
         return self._dotnotatie
 
     @staticmethod
-    def recurse_add_parents_to_dotnotatie(attribute):
+    def recursive_add_parents_to_dotnotatie(attribute):
         dotnotatie = attribute.naam
         if attribute.kardinaliteit_max == '*':
             kardinaliteit_max = math.inf
@@ -178,7 +178,7 @@ class OTLAttribuut(AttributeInfo):
 
         if attribute.owner is not None and hasattr(attribute.owner, '_parent') and attribute.owner._parent is not None and isinstance(
                 attribute.owner._parent, OTLAttribuut):
-            return attribute.recurse_add_parents_to_dotnotatie(attribute.owner._parent) + '.' + dotnotatie
+            return attribute.recursive_add_parents_to_dotnotatie(attribute.owner._parent) + '.' + dotnotatie
 
         return dotnotatie
 

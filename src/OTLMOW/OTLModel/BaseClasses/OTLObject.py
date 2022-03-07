@@ -1,6 +1,8 @@
 ﻿import warnings
 from datetime import date, time, datetime
 
+from OTLMOW.Facility.Exceptions.HasNoDotNotatieException import HasNoDotNotatieException
+
 
 class OTLObjectHelper:
     def create_dict_from_asset(self, asset):
@@ -68,6 +70,26 @@ class OTLObjectHelper:
                 lines.append(' ' * indent * level + f'{key} : {value}')
         return lines
 
+    def attributes_by_dotnotatie(self, asset=None):
+        for k, v in sorted(vars(asset).items()):
+            if k in ['_parent', '_geometry_types']:
+                continue
+            if v.waarde is None:
+                continue
+            if v.field.waardeObject is not None:
+                if v.field._uses_waarde_object:
+                    for k1, v1 in self.attributes_by_dotnotatie(asset=v.waarde):
+                        yield k1, v1
+                else:
+                    if v.waarde.waarde is not None:
+                        yield v.waarde._waarde.dotnotatie, v.waarde.waarde
+            else:
+                if isinstance(v.waarde, list):
+                    if len(v.waarde) > 0:
+                        yield v.dotnotatie, '|'.join(v.waarde)
+                else:
+                    yield v.dotnotatie, v.waarde
+
 
 class OTLObject:
     def __init__(self):
@@ -80,8 +102,12 @@ class OTLObject:
                     warnings.warn(message=f'used a class that is deprecated since version {self.deprecated_version}',
                                   category=DeprecationWarning)
 
-    def create_dict_from_asset(self):
+    def create_dict_from_asset(self, exclude_nested_attributes=False):
         return OTLObjectHelper().recursive_create_dict_from_asset(asset=self)
+
+    def attributes_by_dotnotatie(self):
+        for k, v in OTLObjectHelper().attributes_by_dotnotatie(asset=self):
+            yield k, v
 
     def __str__(self):
         return f'information about {self.__class__.__name__} {self.__hash__()}:\n' + \

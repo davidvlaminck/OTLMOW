@@ -12,6 +12,7 @@ from OTLMOW.OTLModel.Datatypes.KlDraagconstructieDwarsdoorsnede import KlDraagco
 from OTLMOW.OTLModel.Datatypes.KlLichtmastBotsNormering import KlLichtmastBotsNormering
 from OTLMOW.OTLModel.Datatypes.KlLichtmastLeverancier import KlLichtmastLeverancier
 from OTLMOW.OTLModel.Datatypes.KlLichtmastMasttype import KlLichtmastMasttype
+from OTLMOW.OTLModel.Datatypes.KlMasttypePunctueleVerlichting import KlMasttypePunctueleVerlichting
 from OTLMOW.OTLModel.Datatypes.KlWvLichtmastAantArmen import KlWvLichtmastAantArmen
 from OTLMOW.OTLModel.Datatypes.KlWvLichtmastArmlengte import KlWvLichtmastArmlengte
 from OTLMOW.OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter
@@ -51,7 +52,7 @@ class PunctueleVerlichtingsmast(AIMNaamObject, EMDraagconstructie, PuntGeometrie
                                          definition='Geeft aan of de punctuele verlichtingsmast draaibaar is, al dan niet.',
                                          owner=self)
 
-        self._masttype = OTLAttribuut(field=StringField,  # TODO KlMasttypePunctueleVerlichting
+        self._masttype = OTLAttribuut(field=KlMasttypePunctueleVerlichting,
                                       naam='masttype',
                                       label='masttype',
                                       objectUri='',

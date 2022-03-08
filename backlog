@@ -26,7 +26,7 @@ relatieCreator => gebruikt relatieValidator en _validatie methode op objecten ze
 OTL model creator houdt geen rekening met bestaande classes en datatypes (deze moeten gewist worden indien niet meer in de OTL)
 Create_model(pure=False): pure maakt een model zonder toevoegingen zoals relatieInteractor en otlobject
 Asset Factory: create similar relations from asset
-Store: assets opslaan in Store waar je gemakkelijk kan zoeken op id of comb van naam en type. Maakt ook mogelijk om te controleren op ids of dubbele relaties
+Store: assets opslaan in Store waar je gemakkelijk kan zoeken op id of comb van naam en type. Maakt ook mogelijk om te controleren op ids of dubbele relaties > use builtin shelve
 Automatisch temp id's genereren voor assets waar die niet is ingevuld (alleen nuttig indien via Factory aangemaakt, de gebruiker moet de ids kunnen vinden om bv relaties te leggen
 AnyURIField implementeren met validatie voor zover dat mogelijk is
 Postenmapping:

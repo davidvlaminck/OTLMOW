@@ -1,3 +1,5 @@
+from datetime import datetime
+
 from OTLMOW.Facility.EMInfraImporter import EMInfraImporter
 from OTLMOW.Facility.OTLFacility import OTLFacility
 from OTLMOW.Loggers.ConsoleLogger import ConsoleLogger
@@ -19,9 +21,7 @@ if __name__ == '__main__':
     otl_facility = OTLFacility(logger)
 
     # add EM-Infra assets through API
-    input_uuids = ['6fec1fbf-9037-4daa-976d-4ccd54e2d554', '1c6dbec3-62e6-4e30-8fe1-19ba58a73151',
-                   'e88f3270-91ed-4fa8-a605-0969805790d4', 'adbd8726-d026-4c5d-80e1-5343a2fa4d34',
-                   '60b2dcaa-69f1-4fac-9062-9c1381eecd2e', '85ab7233-4d69-4702-841e-aace94b42410',
+    input_uuids = [ '85ab7233-4d69-4702-841e-aace94b42410',
                    'f63bfc00-2951-401e-8dbb-6667a479e0ea']
 
     cert_path = r'C:\resources\datamanager_eminfra_prd.awv.vlaanderen.be.crt'
@@ -158,6 +158,17 @@ if __name__ == '__main__':
                           bevestigingsrelatie_kast_lsb, hoortbijrelatie_beh_3_legacy, hoortbijrelatie_flitsgroep2_legacy,
                           hoortbijrelatie_str_legacy, hoortbijrelatie_lsb_legacy, hoortbijrelatie_kast_legacy,
                           voedingsrelatie_str_meter, bevestigingsrelatie_aansluiting_kast, bevestigingsrelatie_meter_lsb]
+
+    # encode to a json representation
+    encoded_json = otl_facility.encoder.encode(lijst_otl_objecten)
+    print(encoded_json)
+
+    # write the json file
+    filepath = f'Output/{datetime.now().strftime("%Y%m%d%H%M%S")}_export.json'
+    otl_facility.encoder.write_json_to_file(encoded_json, filepath)
+
+    otl_facility.visualiser.show(lijst_otl_objecten)
+
     lijst_otl_objecten.extend(assets)
 
     otl_facility.visualiser.show(lijst_otl_objecten)

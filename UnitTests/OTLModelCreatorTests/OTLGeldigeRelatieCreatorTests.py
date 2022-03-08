@@ -9,27 +9,27 @@ from OTLMOW.ModelGenerator.OTLGeldigeRelatieCreator import OTLGeldigeRelatieCrea
 
 
 class OTLClassCreatorTests(unittest.TestCase):
-    expectedData = ['# coding=utf-8',
-                    'from OTLMOW.ModelGenerator.BaseClasses.GeldigeRelatie import GeldigeRelatie',
-                    '',
-                    '',
-                    'class GeldigeRelatieLijst:',
-                    '    def __init__(self):',
-                    '        self.lijst = [',
-                    '            GeldigeRelatie("https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Behuizing", "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Contactor", "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bevestiging", ""),',
-                    '            GeldigeRelatie("https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Contactor", "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Behuizing", "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bevestiging", ""),',
-                    '            GeldigeRelatie("https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Contactor", "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Laagspanningsbord", "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bevestiging", ""),',
-                    '            GeldigeRelatie("https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Laagspanningsbord", "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Contactor", "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bevestiging", ""),',
-                    '            GeldigeRelatie("https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Contactor", "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#IOKaart", "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Sturing", ""),',
-                    '            GeldigeRelatie("https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#IOKaart", "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Contactor", "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Sturing", ""),',
-                    '            GeldigeRelatie("https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Contactor", "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Contactor", "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Voedt", ""),',
-                    '            GeldigeRelatie("https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Stroomkring", "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Contactor", "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Voedt", ""),',
-                    '            GeldigeRelatie("https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Contactor", "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Seinlantaarn", "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#VoedtAangestuurd", ""),',
-                    '            GeldigeRelatie("https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Contactor", "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Ventilatie", "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#VoedtAangestuurd", ""),',
-                    '            GeldigeRelatie("https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Contactor", "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Calamiteitendoorsteek", "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#VoedtAangestuurd", ""),',
-                    '            GeldigeRelatie("https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Contactor", "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#SlagboomarmVerlichting", "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#VoedtAangestuurd", ""),',
-                    '            GeldigeRelatie("https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Contactor", "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomkolom", "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#VoedtAangestuurd", "")',
-                    '        ]']
+    expected_data = ['# coding=utf-8',
+                     'from OTLMOW.ModelGenerator.BaseClasses.GeldigeRelatie import GeldigeRelatie',
+                     '',
+                     '',
+                     'class GeldigeRelatieLijst:',
+                     '    def __init__(self):',
+                     '        self.lijst = [',
+                     '            GeldigeRelatie("https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Behuizing", "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Contactor", "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bevestiging", ""),',
+                     '            GeldigeRelatie("https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Contactor", "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Behuizing", "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bevestiging", ""),',
+                     '            GeldigeRelatie("https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Contactor", "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Laagspanningsbord", "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bevestiging", ""),',
+                     '            GeldigeRelatie("https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Laagspanningsbord", "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Contactor", "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bevestiging", ""),',
+                     '            GeldigeRelatie("https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Contactor", "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#IOKaart", "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Sturing", ""),',
+                     '            GeldigeRelatie("https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#IOKaart", "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Contactor", "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Sturing", ""),',
+                     '            GeldigeRelatie("https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Contactor", "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Contactor", "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Voedt", ""),',
+                     '            GeldigeRelatie("https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Stroomkring", "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Contactor", "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Voedt", ""),',
+                     '            GeldigeRelatie("https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Contactor", "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Seinlantaarn", "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#VoedtAangestuurd", ""),',
+                     '            GeldigeRelatie("https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Contactor", "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Ventilatie", "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#VoedtAangestuurd", ""),',
+                     '            GeldigeRelatie("https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Contactor", "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Calamiteitendoorsteek", "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#VoedtAangestuurd", ""),',
+                     '            GeldigeRelatie("https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Contactor", "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#SlagboomarmVerlichting", "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#VoedtAangestuurd", ""),',
+                     '            GeldigeRelatie("https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Contactor", "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Slagboomkolom", "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#VoedtAangestuurd", "")',
+                     '        ]']
 
     def mockPerformReadQuery(self, query, arg_dict):
         if query == 'SELECT label_nl, name, uri, definition_nl, usagenote_nl, abstract, deprecated_version FROM OSLOClass where uri=:uriclass' \
@@ -253,4 +253,4 @@ class OTLClassCreatorTests(unittest.TestCase):
         creator = OTLGeldigeRelatieCreator(logger, collector)
         dataToWrite = creator.CreateBlockToWriteFromRelations()
 
-        self.assertEqual(self.expectedData, dataToWrite)
+        self.assertEqual(self.expected_data, dataToWrite)

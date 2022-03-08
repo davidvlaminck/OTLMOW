@@ -77,12 +77,16 @@ class GeldigeRelatieLijstTestInstance(GeldigeRelatieLijst):
             GeldigeRelatie('https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Stroomkring',
                            'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Contactor',
                            'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Voedt',
-                           '')
+                           ''),
+            GeldigeRelatie('https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Aftakking',
+                           'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Hoofdschakelaar',
+                           'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bevestiging',
+                           'deprecated')
         ]
 
 
-class RelatieValidatorWithoutInstanceTests(unittest.TestCase):
-    @unittest.skip("this test only works in a vacuum")
+class RelatieValidatorTests(unittest.TestCase):
+    @unittest.skip("only passes when run in a vacuum")
     def test_beforeInitValidateRelatieOnObject(self):
         e = EnergiemeterAWV()
         a = Aftakking()
@@ -90,8 +94,6 @@ class RelatieValidatorWithoutInstanceTests(unittest.TestCase):
         with self.assertRaises(NotImplementedError):
             self.assertTrue(a._validateRelatiePossible(e, v, RelatieRichting.DOEL_BRON))
 
-
-class RelatieValidatorTests(unittest.TestCase):
     def test_GeldigeRelatieAttrOk(self):
         instance = GeldigeRelatieLijstTestInstance().lijst[0]
         self.assertTrue(instance is not None)
@@ -100,13 +102,6 @@ class RelatieValidatorTests(unittest.TestCase):
         geldigeRelatieLijst = GeldigeRelatieLijstTestInstance()
         validator = RelatieValidator(geldigeRelatieLijst)
         self.assertTrue(validator is not None)
-
-    def test_createInstanceSingleton(self):
-        geldigeRelatieLijst = GeldigeRelatieLijstTestInstance()
-        validator = RelatieValidator(geldigeRelatieLijst)
-        validator.test = True
-        validator2 = RelatieValidator(geldigeRelatieLijst)
-        self.assertTrue(validator2.test)
 
     def test_afterInitValidateRelatie(self):
         geldigeRelatieLijst = GeldigeRelatieLijstTestInstance()
@@ -125,6 +120,7 @@ class RelatieValidatorTests(unittest.TestCase):
         c = Contactor()
         h = Hoofdschakelaar()
         v = Voedt
+        b = Bevestiging
 
         true_cases = [
             dict(bron=e, doel=a, relatie=v),
@@ -136,6 +132,9 @@ class RelatieValidatorTests(unittest.TestCase):
             dict(bron=e, doel=h, relatie=v),
             dict(bron=c, doel=s, relatie=v)
         ]
+        deprecated_cases = [
+            dict(bron=a, doel=h, relatie=b),
+        ]
 
         for case in true_cases:
             with self.subTest(
@@ -145,6 +144,10 @@ class RelatieValidatorTests(unittest.TestCase):
             with self.subTest(
                     f"testing invalid relation: {case['bron'].typeURI.split('#')[1]} ---{case['relatie'].typeURI.split('#')[1]}--> {case['doel'].typeURI.split('#')[1]}"):
                 self.assertFalse(validator.validateRelatieByURI(case['bron'], case['doel'], case['relatie']))
+        for case in deprecated_cases:
+            with self.subTest(f"testing deprecated relation: {case['bron'].typeURI.split('#')[1]} ---{case['relatie'].typeURI.split('#')[1]}--> {case['doel'].typeURI.split('#')[1]}"):
+                with self.assertWarns(DeprecationWarning):
+                    validator.validateRelatieByURI(case['bron'], case['doel'], case['relatie'])
 
     def test_afterInitValidateBadRelatieByBron(self):
         geldigeRelatieLijst = GeldigeRelatieLijstTestInstance()
@@ -175,11 +178,12 @@ class RelatieValidatorTests(unittest.TestCase):
         validator = RelatieValidator(geldigeRelatieLijst)
         a = Aftakking()
         list = validator.getGeldigeRelatiesByBronOrDoel(a.typeURI)
-        self.assertEqual(3, len(list))
+        self.assertEqual(4, len(list))
 
     def test_afterInitGetGeldigeRelatiesOnObject(self):
         geldigeRelatieLijst = GeldigeRelatieLijstTestInstance()
         validator = RelatieValidator(geldigeRelatieLijst)
+        validator.enableValidateRelatieOnRelatieInteractor()
         a = Aftakking()
         self.assertEqual(0, len(a._geldigeRelaties))
         a._loadGeldigeRelaties()
@@ -188,6 +192,7 @@ class RelatieValidatorTests(unittest.TestCase):
     def test_afterInitValidateRelatieOnObject(self):
         geldigeRelatieLijst = GeldigeRelatieLijstTestInstance()
         validator = RelatieValidator(geldigeRelatieLijst)
+        validator.enableValidateRelatieOnRelatieInteractor()
         a = Aftakking()
         e = EnergiemeterAWV()
         v = Voedt
@@ -201,11 +206,13 @@ class RelatieValidatorTests(unittest.TestCase):
     def test_showGeldigeRelatieOnObject(self):
         geldigeRelatieLijst = GeldigeRelatieLijstTestInstance()
         validator = RelatieValidator(geldigeRelatieLijst)
+        validator.enableValidateRelatieOnRelatieInteractor()
         a = Aftakking()
         result = a._showGeldigeRelaties()
-        expected = """https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Aftakking  ---https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Voedt--> https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Hoofdschakelaar
-https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#EnergiemeterAWV  ---https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Voedt--> https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Aftakking
-https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Stroomkring  ---https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Voedt--> https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Aftakking
+        expected = """https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Aftakking  --- https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Voedt --> https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Hoofdschakelaar
+https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Aftakking  --- https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bevestiging --> https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Hoofdschakelaar
+https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#EnergiemeterAWV  --- https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Voedt --> https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Aftakking
+https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Stroomkring  --- https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Voedt --> https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Aftakking
 """
         self.assertEqual(expected, result)
 

@@ -1,13 +1,15 @@
+import warnings
+
+from OTLMOW.ModelGenerator.BaseClasses.GeldigeRelatie import GeldigeRelatie
 from OTLMOW.OTLModel.BaseClasses.RelatieInteractor import RelatieInteractor
 from OTLMOW.ModelGenerator.BaseClasses.Singleton import Singleton
 
 
-class RelatieValidator(metaclass=Singleton):
+class RelatieValidator:
     def __init__(self, relatieLijst):
         self.dictByDoelBronRelatie = {}
         self.dictByBronDoelRelatie = {}
         self.fillValidatorDictsForEfficientSearch(relatieLijst)
-        self.enableValidateRelatieOnRelatieInteractor()
 
     def enableValidateRelatieOnRelatieInteractor(self):
         def loadGeldigeRelaties(selfObject):
@@ -17,7 +19,7 @@ class RelatieValidator(metaclass=Singleton):
 
         RelatieInteractor._loadGeldigeRelaties = loadGeldigeRelaties
 
-    def fillValidatorDictsForEfficientSearch(self, relatieLijst):
+    def fillValidatorDictsForEfficientSearch(self, relatieLijst: [GeldigeRelatie]):
         for rel in relatieLijst.lijst:
             if rel.bron not in self.dictByBronDoelRelatie:
                 self.dictByBronDoelRelatie[rel.bron] = {}
@@ -32,6 +34,10 @@ class RelatieValidator(metaclass=Singleton):
 
     def validateRelatieByURI(self, bron, doel, relatieType):
         try:
+            rel = self.dictByBronDoelRelatie[bron.typeURI][doel.typeURI][relatieType.typeURI]
+            if rel.deprecated_version != '':
+                warnings.warn(message=f'the relation of type {rel.relatie} between assets of types {rel.bron} and {rel.doel} is deprecated since version {rel.deprecated_version}',
+                              category=DeprecationWarning)
             return self.dictByBronDoelRelatie[bron.typeURI][doel.typeURI][relatieType.typeURI] is not None
         except KeyError:
             return False

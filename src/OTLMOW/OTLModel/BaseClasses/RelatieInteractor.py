@@ -16,8 +16,8 @@ class RelatieInteractor:
     def _showGeldigeRelaties(self):
         self._loadGeldigeRelaties()
         s = ''
-        for relatie in self._geldigeRelaties:
-            s += f'{relatie.bron}  ---{relatie.relatie}--> {relatie.doel}\n'
+        for relatie in sorted(self._geldigeRelaties, key=lambda x: x.bron):
+            s += f'{relatie.bron}  --- {relatie.relatie} --> {relatie.doel}\n'
         return s
 
     def _validateRelatiePossible(self, doelObject, relatieType: type, relatieRichting: RelatieRichting):

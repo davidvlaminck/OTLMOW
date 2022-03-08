@@ -1,6 +1,5 @@
 from collections import defaultdict
 
-
 from OTLMOW.Facility.AssetFactory import AssetFactory
 from OTLMOW.Facility.DavieDecoder import DavieDecoder
 from OTLMOW.Facility.DavieExporter import DavieExporter
@@ -38,8 +37,14 @@ class OTLFacility:
         self.encoder = OtlAssetJSONEncoder(indent=4)
         self.davieDecoder = DavieDecoder()
         self.asset_factory = AssetFactory()
-        self.relatieValidator = RelatieValidator(GeldigeRelatieLijst())
+        self.relatieValidator: None | RelatieValidator = None
         self.visualiser = Visualiser()
+
+    def init_relatie_validation(self, relationlist: [GeldigeRelatieLijst] = None):
+        if relationlist is None:
+            relationlist = GeldigeRelatieLijst().lijst
+        self.relatieValidator = RelatieValidator(relationlist)
+        self.relatieValidator.enableValidateRelatieOnRelatieInteractor()
 
     def init_otl_model_creator(self, otl_file_location, geoA_file_location=''):
         sql_reader = SQLDbReader(otl_file_location)

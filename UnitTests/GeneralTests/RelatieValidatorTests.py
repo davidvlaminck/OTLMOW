@@ -78,7 +78,7 @@ class GeldigeRelatieLijstTestInstance(GeldigeRelatieLijst):
 
 
 class RelatieValidatorWithoutInstanceTests(unittest.TestCase):
-    @unittest.skip("not implemented yet")  # TODO
+    @unittest.skip("this test only works in a vacuum")
     def test_beforeInitValidateRelatieOnObject(self):
         e = EnergiemeterAWV()
         a = Aftakking()

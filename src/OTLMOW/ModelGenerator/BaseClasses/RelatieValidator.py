@@ -33,6 +33,8 @@ class RelatieValidator:
             self.dictByDoelBronRelatie[rel.doel][rel.bron][rel.relatie] = rel
 
     def validateRelatieByURI(self, bron, doel, relatieType):
+        if 'lgc.' in bron.typeURI or 'lgc.' in doel.typeURI:
+            return True
         try:
             rel = self.dictByBronDoelRelatie[bron.typeURI][doel.typeURI][relatieType.typeURI]
             if rel.deprecated_version != '':

@@ -3,6 +3,7 @@ from collections import defaultdict
 from OTLMOW.Facility.AssetFactory import AssetFactory
 from OTLMOW.Facility.DavieDecoder import DavieDecoder
 from OTLMOW.Facility.DavieExporter import DavieExporter
+from OTLMOW.Facility.RelatieCreator import RelatieCreator
 from OTLMOW.Facility.Visualiser import Visualiser
 from OTLMOW.Facility.DavieImporter import DavieImporter
 from OTLMOW.GeometrieArtefact.GeometrieArtefactCollector import GeometrieArtefactCollector
@@ -24,7 +25,7 @@ from OTLMOW.PostenMapping.PostenInMemoryCreator import PostenInMemoryCreator
 
 
 class OTLFacility:
-    def __init__(self, instanceLogger: AbstractLogger):
+    def __init__(self, instanceLogger: AbstractLogger, enable_relation_features: bool = False):
         self.davieImporter = DavieImporter()
         self.logger = instanceLogger
         self.collector = None
@@ -38,13 +39,18 @@ class OTLFacility:
         self.davieDecoder = DavieDecoder()
         self.asset_factory = AssetFactory()
         self.relatieValidator: None | RelatieValidator = None
+        self.relatie_creator: None | RelatieCreator = None
         self.visualiser = Visualiser()
+
+        if enable_relation_features:
+            self.init_relatie_validation()
 
     def init_relatie_validation(self, relationlist: [GeldigeRelatieLijst] = None):
         if relationlist is None:
             relationlist = GeldigeRelatieLijst().lijst
         self.relatieValidator = RelatieValidator(relationlist)
         self.relatieValidator.enableValidateRelatieOnRelatieInteractor()
+        self.relatie_creator = RelatieCreator(self.relatieValidator)
 
     def init_otl_model_creator(self, otl_file_location, geoA_file_location=''):
         sql_reader = SQLDbReader(otl_file_location)

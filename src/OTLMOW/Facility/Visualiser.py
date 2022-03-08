@@ -3,6 +3,7 @@
 from IPython.display import display, HTML
 from pyvis import network as net
 
+from OTLMOW.Facility.GenericHelper import GenericHelper
 from OTLMOW.OTLModel.Classes.Bevestiging import Bevestiging
 from OTLMOW.OTLModel.Classes.HoortBij import HoortBij
 from OTLMOW.OTLModel.Classes.NietDirectioneleRelatie import NietDirectioneleRelatie
@@ -162,7 +163,11 @@ class Visualiser:
         otl_assets = list(filter(lambda o: not isinstance(o, RelatieObject), list_of_objects))
         asset_ids = list(map(lambda x: x.assetId.identificator, otl_assets))
 
-        # relaties eerst ontdubbelen op basis van assetId.identificator
+        for relatie in relaties:
+            relatie.assetIdIdentificator = relatie.assetId.identificator
+        relaties = GenericHelper.remove_duplicates_in_iterable_based_on_property(relaties, 'assetIdIdentificator')
+        for relatie in relaties:
+            del relatie.assetIdIdentificator
 
         for relatie in relaties:
             if relatie.bronAssetId.identificator in asset_ids and relatie.doelAssetId.identificator in asset_ids:  # only display relations between assets that are displayed

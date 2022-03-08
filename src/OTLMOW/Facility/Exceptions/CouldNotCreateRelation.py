@@ -1,0 +1,2 @@
+class CouldNotCreateRelation(Exception):
+    pass

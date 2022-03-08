@@ -22,7 +22,6 @@ NewFeatures
 OTL versie verwerken in logging createmodel
 Dependencies resolven: pip install -r requirements.txt https://stackoverflow.com/questions/6590688/is-it-bad-to-have-my-virtualenv-directory-inside-my-git-repository
 > pip freeze > python -m pip install -r requirements.txt
-relatieCreator => gebruikt relatieValidator en _validatie methode op objecten zelf om te verifiëren of een relatie mag gelegd worden. Houdt geen rekening met bestaande relaties. Maakt een geldig relatieobject aan
 OTL model creator houdt geen rekening met bestaande classes en datatypes (deze moeten gewist worden indien niet meer in de OTL)
 Create_model(pure=False): pure maakt een model zonder toevoegingen zoals relatieInteractor en otlobject
 Asset Factory: create similar relations from asset

@@ -37,9 +37,9 @@ if __name__ == '__main__':
 
     # fetch assets, based on a list of uuids
     assets = importer.import_assets_from_webservice_by_uuids(input_uuids)
-    relatie_list = []
 
     # for each asset, find all relations
+    relatie_list = []
     for asset in assets:
         relaties = importer.import_assetrelaties_from_webservice_by_assetuuid(asset.assetId.identificator[0:36])
         relatie_list.extend(relaties)

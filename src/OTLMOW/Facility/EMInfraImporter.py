@@ -70,5 +70,10 @@ class EMInfraImporter:
     @staticmethod
     def get_asset_id_from_uuid_and_typeURI(uuid, typeURI):
         shortUri = typeURI.split('/ns/')[1]
+        if 'lgc' in typeURI:
+            shortUri = 'lgc:' + shortUri
         shortUri_encoded = base64.b64encode(shortUri.encode('utf-8'))
-        return uuid + '-' + shortUri_encoded.decode("utf-8")
+        shortUri_encoded = shortUri_encoded.decode("utf-8")
+        while shortUri_encoded[-1] == '=':
+            shortUri_encoded = shortUri_encoded[:-1]
+        return uuid + '-' + shortUri_encoded

@@ -4,14 +4,13 @@ from unittest import TestCase
 from OTLMOW.OTLModel.Classes.Aftakking import Aftakking
 
 
-@unittest.skip("feature request")
 class AttributenIterator(TestCase):
     def test_loop_over_attributes_of_asset(self):
         a = Aftakking()
         a.toestand = 'in-gebruik'
         a.naam = 'aftakking'
         expected_result = { 'naam': 'aftakking', 'toestand': 'in-gebruik'}
-        self.assertDictEqual(expected_result, dict(a.attributen_iterator))
+        self.assertDictEqual(expected_result, dict(a.create_dict_from_asset()))
 
 
 # something like this:

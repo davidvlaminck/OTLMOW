@@ -23,99 +23,99 @@ class OSLOInMemoryCreator:
             "constraints, readonly, usagenote_nl, deprecated_version FROM OSLODatatypePrimitiveAttributen",
             {})
 
-        list = []
+        lijst = []
         for row in data:
             c = OSLODatatypePrimitiveAttribuut(row[0], row[1], row[2], row[3], row[4], row[5], row[6], row[7], row[8], row[9],
                                                row[10], row[11], row[12])
-            list.append(c)
+            lijst.append(c)
 
-        return list
+        return lijst
 
     def getAllPrimitiveDatatypes(self):
         data = self.sqlDbReader.performReadQuery(
             "SELECT name, uri, definition_nl, label_nl, usagenote_nl, deprecated_version FROM OSLODatatypePrimitive",
             {})
 
-        list = []
+        lijst = []
         for row in data:
             c = OSLODatatypePrimitive(row[0], row[1], row[2], row[3], row[4], row[5])
-            list.append(c)
+            lijst.append(c)
 
-        return list
+        return lijst
 
     def getAllClasses(self):
         data = self.sqlDbReader.performReadQuery(
             "SELECT label_nl, name, uri, definition_nl, usagenote_nl, abstract, deprecated_version FROM OSLOClass",
             {})
 
-        list = []
+        lijst = []
         for row in data:
             c = OSLOClass(row[0], row[1], row[2], row[3], row[4], row[5], row[6])
-            list.append(c)
+            lijst.append(c)
 
-        return list
+        return lijst
 
     def getClassByUri(self, class_uri: str):
         data = self.sqlDbReader.performReadQuery(
             "SELECT label_nl, name, uri, definition_nl, usagenote_nl, abstract, deprecated_version FROM OSLOClass where objectUri=:uriclass",
             {"uriclass": class_uri})
 
-        list = []
+        lijst = []
         for row in data:
             c = OSLOClass(row[0], row[1], row[2], row[3], row[4], row[5], row[6])
-            list.append(c)
+            lijst.append(c)
 
-        return list
+        return lijst
 
     def getAttributeByClassUri(self, class_uri):
         data = self.sqlDbReader.performReadQuery(
             "SELECT name, label_nl, definition_nl, class_uri, kardinaliteit_min, kardinaliteit_max, uri, type, overerving, constraints, readonly, usagenote_nl, deprecated_version FROM OSLOAttributen WHERE class_uri=:uriclass AND overerving = 0 and name <> 'typeURI'",
             {"uriclass": class_uri})
 
-        list = []
+        lijst = []
         for row in data:
             c = OSLOAttribuut(row[0], row[1], row[2], row[3], row[4], row[5], row[6], row[7], row[8], row[9], row[10],
                               row[11], row[12])
-            list.append(c)
+            lijst.append(c)
 
-        return list
+        return lijst
 
     def getAttributes(self):
         data = self.sqlDbReader.performReadQuery(
             "SELECT name, label_nl, definition_nl, class_uri, kardinaliteit_min, kardinaliteit_max, uri, type, overerving, constraints, readonly, usagenote_nl, deprecated_version FROM OSLOAttributen WHERE overerving = 0 and name <> 'typeURI'",
             {})
 
-        list = []
+        lijst = []
         for row in data:
             c = OSLOAttribuut(row[0], row[1], row[2], row[3], row[4], row[5], row[6], row[7], row[8], row[9], row[10],
                               row[11], row[12])
-            list.append(c)
+            lijst.append(c)
 
-        return list
+        return lijst
 
     def getInheritances(self):
         data = self.sqlDbReader.performReadQuery(
             "SELECT base_name, base_uri, class_uri, class_name, deprecated_version FROM InternalBaseClass",
             {})
 
-        list = []
+        lijst = []
         for row in data:
             c = Inheritance(row[0], row[1], row[2], row[3], row[4])
-            list.append(c)
+            lijst.append(c)
 
-        return list
+        return lijst
 
     def getAllComplexDatatypes(self):
         data = self.sqlDbReader.performReadQuery(
             "SELECT name, uri, definition_nl, label_nl, usagenote_nl, deprecated_version FROM OSLODatatypeComplex",
             {})
 
-        list = []
+        lijst = []
         for row in data:
             c = OSLODatatypeComplex(row[0], row[1], row[2], row[3], row[4], row[5])
-            list.append(c)
+            lijst.append(c)
 
-        return list
+        return lijst
 
     def getAllComplexDatatypeAttributen(self):
         data = self.sqlDbReader.performReadQuery(
@@ -123,25 +123,25 @@ class OSLOInMemoryCreator:
             "constraints, readonly, usagenote_nl, deprecated_version FROM OSLODatatypeComplexAttributen",
             {})
 
-        list = []
+        lijst = []
         for row in data:
             c = OSLODatatypeComplexAttribuut(row[0], row[1], row[2], row[3], row[4], row[5], row[6], row[7], row[8], row[9],
                                              row[10], row[11], row[12])
-            list.append(c)
+            lijst.append(c)
 
-        return list
+        return lijst
 
     def getAllUnionDatatypes(self):
         data = self.sqlDbReader.performReadQuery(
             "SELECT name, uri, definition_nl, label_nl, usagenote_nl, deprecated_version FROM OSLODatatypeUnion",
             {})
 
-        list = []
+        lijst = []
         for row in data:
             c = OSLODatatypeUnion(row[0], row[1], row[2], row[3], row[4], row[5])
-            list.append(c)
+            lijst.append(c)
 
-        return list
+        return lijst
 
     def getAllUnionDatatypeAttributen(self):
         data = self.sqlDbReader.performReadQuery(
@@ -149,49 +149,49 @@ class OSLOInMemoryCreator:
             "constraints, readonly, usagenote_nl, deprecated_version FROM OSLODatatypeUnionAttributen",
             {})
 
-        list = []
+        lijst = []
         for row in data:
             c = OSLODatatypeUnionAttribuut(row[0], row[1], row[2], row[3], row[4], row[5], row[6], row[7], row[8], row[9],
                                            row[10], row[11], row[12])
-            list.append(c)
+            lijst.append(c)
 
-        return list
+        return lijst
 
     def getEnumerations(self):
         data = self.sqlDbReader.performReadQuery(
             "SELECT name, uri, usagenote_nl, definition_nl, label_nl, codelist, deprecated_version FROM OSLOEnumeration",
             {})
 
-        list = []
+        lijst = []
         for row in data:
             c = OSLOEnumeration(row[0], row[1], row[2], row[3], row[4], row[5], row[6])
-            list.append(c)
+            lijst.append(c)
 
-        return list
+        return lijst
 
     def getTypeLinks(self):
         data = self.sqlDbReader.performReadQuery(
             "SELECT item_uri, item_tabel, deprecated_version FROM TypeLinkTabel",
             {})
 
-        list = []
+        lijst = []
         for row in data:
             c = OSLOTypeLink(row[0], row[1], row[2])
-            list.append(c)
+            lijst.append(c)
 
-        return list
+        return lijst
 
     def getAllRelations(self):
         data = self.sqlDbReader.performReadQuery(
             "SELECT * FROM OSLORelaties ORDER BY uri, bron_uri, doel_uri",
             {})
 
-        list = []
+        lijst = []
         for row in data:
             c = OSLORelatie(row[0], row[1], row[2], row[3], row[4], row[5], row[6], row[7])
-            list.append(c)
+            lijst.append(c)
 
-        return list
+        return lijst
 
     def check_on_base_classes(self):
         data = self.sqlDbReader.performReadQuery(

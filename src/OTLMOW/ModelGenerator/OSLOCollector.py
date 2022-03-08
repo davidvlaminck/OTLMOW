@@ -8,6 +8,7 @@ from OTLMOW.ModelGenerator.OSLODatatypeUnionAttribuut import OSLODatatypeUnionAt
 from OTLMOW.ModelGenerator.OSLODatatypeComplex import OSLODatatypeComplex
 from OTLMOW.ModelGenerator.OSLODatatypePrimitive import OSLODatatypePrimitive
 from OTLMOW.ModelGenerator.OSLOEnumeration import OSLOEnumeration
+from OTLMOW.ModelGenerator.OSLORelatie import OSLORelatie
 from OTLMOW.ModelGenerator.OSLOTypeLink import OSLOTypeLink
 
 
@@ -25,7 +26,7 @@ class OSLOCollector:
         self.unionDatatypeAttributen = []
         self.enumerations = []
         self.typeLinks = []
-        self.relations = []
+        self.relations = [OSLORelatie]
 
     def collect(self):
         self.classes = self.OSLOInMemoryCreator.getAllClasses()

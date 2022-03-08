@@ -9,7 +9,7 @@ class OTLGeldigeRelatieCreator:
         self.osloCollector = osloCollector
 
     def CreateBlockToWriteFromRelations(self):
-        datablock = ['# coding=utf-8', 'from ModelGenerator.BaseClasses.GeldigeRelatie import GeldigeRelatie']
+        datablock = ['# coding=utf-8', 'from OTLMOW.ModelGenerator.BaseClasses.GeldigeRelatie import GeldigeRelatie']
 
         datablock.extend(['',
                           '',
@@ -21,7 +21,7 @@ class OTLGeldigeRelatieCreator:
             bron = next(c.objectUri for c in self.osloCollector.classes if c.objectUri == relatie.bron_uri)
             doel = next(c.objectUri for c in self.osloCollector.classes if c.objectUri == relatie.doel_uri)
             uri = next(c.objectUri for c in self.osloCollector.classes if c.objectUri == relatie.objectUri)
-            datablock.append(f'            GeldigeRelatie("{bron}", "{doel}", "{uri}"),')
+            datablock.append(f'            GeldigeRelatie("{bron}", "{doel}", "{uri}", "{relatie.deprecated_version}"),')
 
         datablock[-1] = datablock[-1][:-1]  # remove last character of the last item in datablock
 

@@ -181,7 +181,7 @@ class OSLOInMemoryCreator:
 
         return lijst
 
-    def getAllRelations(self):
+    def getAllRelations(self) -> [OSLORelatie]:
         data = self.sqlDbReader.performReadQuery(
             "SELECT * FROM OSLORelaties ORDER BY uri, bron_uri, doel_uri",
             {})

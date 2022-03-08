@@ -1,5 +1,6 @@
 from collections import defaultdict
 
+
 from OTLMOW.Facility.AssetFactory import AssetFactory
 from OTLMOW.Facility.DavieDecoder import DavieDecoder
 from OTLMOW.Facility.DavieExporter import DavieExporter
@@ -17,6 +18,7 @@ from OTLMOW.ModelGenerator.OTLModelCreator import OTLModelCreator
 from OTLMOW.OEFModel.ModelGrabber import ModelGrabber
 from OTLMOW.OEFModel.OEFModelCreator import OEFModelCreator
 from OTLMOW.OTLModel.BaseClasses.OTLObject import OTLObject
+from OTLMOW.OTLModel.GeldigeRelatieLijst import GeldigeRelatieLijst
 from OTLMOW.PostenMapping.PostenCollector import PostenCollector
 from OTLMOW.PostenMapping.PostenCreator import PostenCreator
 from OTLMOW.PostenMapping.PostenInMemoryCreator import PostenInMemoryCreator
@@ -36,7 +38,7 @@ class OTLFacility:
         self.encoder = OtlAssetJSONEncoder(indent=4)
         self.davieDecoder = DavieDecoder()
         self.asset_factory = AssetFactory()
-        # self.relatieValidator = RelatieValidator(GeldigeRelatieLijst()) TODO not working
+        self.relatieValidator = RelatieValidator(GeldigeRelatieLijst())
         self.visualiser = Visualiser()
 
     def init_otl_model_creator(self, otl_file_location, geoA_file_location=''):
@@ -93,12 +95,3 @@ class OTLFacility:
             if ins_ond_cls is None:
                 continue
             cls["attributen"].extend(ins_ond_cls["attributen"])
-
-
-
-
-
-
-
-
-

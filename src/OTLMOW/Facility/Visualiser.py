@@ -161,6 +161,9 @@ class Visualiser:
         relaties = list(filter(lambda o: isinstance(o, RelatieObject), list_of_objects))
         otl_assets = list(filter(lambda o: not isinstance(o, RelatieObject), list_of_objects))
         asset_ids = list(map(lambda x: x.assetId.identificator, otl_assets))
+
+        # relaties eerst ontdubbelen op basis van assetId.identificator
+
         for relatie in relaties:
             if relatie.bronAssetId.identificator in asset_ids and relatie.doelAssetId.identificator in asset_ids:  # only display relations between assets that are displayed
                 g.add_edge(source=relatie.bronAssetId.identificator,

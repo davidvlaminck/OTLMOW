@@ -6,7 +6,7 @@ from OTLMOW.ModelGenerator.BaseClasses.Singleton import Singleton
 
 
 class RelatieValidator:
-    def __init__(self, relatieLijst):
+    def __init__(self, relatieLijst: [GeldigeRelatie]):
         self.dictByDoelBronRelatie = {}
         self.dictByBronDoelRelatie = {}
         self.fillValidatorDictsForEfficientSearch(relatieLijst)
@@ -20,7 +20,7 @@ class RelatieValidator:
         RelatieInteractor._loadGeldigeRelaties = loadGeldigeRelaties
 
     def fillValidatorDictsForEfficientSearch(self, relatieLijst: [GeldigeRelatie]):
-        for rel in relatieLijst.lijst:
+        for rel in relatieLijst:
             if rel.bron not in self.dictByBronDoelRelatie:
                 self.dictByBronDoelRelatie[rel.bron] = {}
             if rel.doel not in self.dictByBronDoelRelatie[rel.bron]:

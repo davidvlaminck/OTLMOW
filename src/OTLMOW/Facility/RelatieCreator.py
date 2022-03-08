@@ -17,4 +17,6 @@ class RelatieCreator:
         relatie.bronAssetId.toegekendDoor = bron.assetId.toegekendDoor
         relatie.doelAssetId.identificator = doel.assetId.identificator
         relatie.doelAssetId.toegekendDoor = doel.assetId.toegekendDoor
+        relatie.assetId.identificator = bron.assetId.identificator + '_-_' + doel.assetId.identificator
+        relatie.assetId.toegekendDoor = 'OTLMOW'
         return relatie

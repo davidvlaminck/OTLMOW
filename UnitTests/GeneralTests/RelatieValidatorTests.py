@@ -64,16 +64,20 @@ class GeldigeRelatieLijstTestInstance(GeldigeRelatieLijst):
         self.lijst = [
             GeldigeRelatie('https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#EnergiemeterAWV',
                            'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Aftakking',
-                           'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Voedt'),
+                           'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Voedt',
+                           ''),
             GeldigeRelatie('https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Stroomkring',
                            'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Aftakking',
-                           'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Voedt'),
+                           'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Voedt',
+                           ''),
             GeldigeRelatie('https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Aftakking',
                            'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Hoofdschakelaar',
-                           'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Voedt'),
+                           'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Voedt',
+                           ''),
             GeldigeRelatie('https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Stroomkring',
                            'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Contactor',
-                           'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Voedt')
+                           'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Voedt',
+                           '')
         ]
 
 

@@ -99,12 +99,12 @@ class RelatieValidatorTests(unittest.TestCase):
         self.assertTrue(instance is not None)
 
     def test_createInstance(self):
-        geldigeRelatieLijst = GeldigeRelatieLijstTestInstance()
+        geldigeRelatieLijst = GeldigeRelatieLijstTestInstance().lijst
         validator = RelatieValidator(geldigeRelatieLijst)
         self.assertTrue(validator is not None)
 
     def test_afterInitValidateRelatie(self):
-        geldigeRelatieLijst = GeldigeRelatieLijstTestInstance()
+        geldigeRelatieLijst = GeldigeRelatieLijstTestInstance().lijst
         validator = RelatieValidator(geldigeRelatieLijst)
         e = EnergiemeterAWV()
         a = Aftakking()
@@ -112,7 +112,7 @@ class RelatieValidatorTests(unittest.TestCase):
         self.assertTrue(validator.validateRelatieByURI(e, a, v))
 
     def test_afterInitValidateMultipleCases(self):
-        geldigeRelatieLijst = GeldigeRelatieLijstTestInstance()
+        geldigeRelatieLijst = GeldigeRelatieLijstTestInstance().lijst
         validator = RelatieValidator(geldigeRelatieLijst)
         e = EnergiemeterAWV()
         a = Aftakking()
@@ -150,7 +150,7 @@ class RelatieValidatorTests(unittest.TestCase):
                     validator.validateRelatieByURI(case['bron'], case['doel'], case['relatie'])
 
     def test_afterInitValidateBadRelatieByBron(self):
-        geldigeRelatieLijst = GeldigeRelatieLijstTestInstance()
+        geldigeRelatieLijst = GeldigeRelatieLijstTestInstance().lijst
         validator = RelatieValidator(geldigeRelatieLijst)
         c = Contactor()
         a = Aftakking()
@@ -158,7 +158,7 @@ class RelatieValidatorTests(unittest.TestCase):
         self.assertFalse(validator.validateRelatieByURI(c, a, v))
 
     def test_afterInitValidateBadRelatieByDoel(self):
-        geldigeRelatieLijst = GeldigeRelatieLijstTestInstance()
+        geldigeRelatieLijst = GeldigeRelatieLijstTestInstance().lijst
         validator = RelatieValidator(geldigeRelatieLijst)
         e = EnergiemeterAWV()
         c = Contactor()
@@ -166,7 +166,7 @@ class RelatieValidatorTests(unittest.TestCase):
         self.assertFalse(validator.validateRelatieByURI(e, c, v))
 
     def test_afterInitValidateBadRelatieByRelatie(self):
-        geldigeRelatieLijst = GeldigeRelatieLijstTestInstance()
+        geldigeRelatieLijst = GeldigeRelatieLijstTestInstance().lijst
         validator = RelatieValidator(geldigeRelatieLijst)
         e = EnergiemeterAWV()
         a = Aftakking()
@@ -174,14 +174,14 @@ class RelatieValidatorTests(unittest.TestCase):
         self.assertFalse(validator.validateRelatieByURI(e, a, b))
 
     def test_afterInitGetGeldigeRelatiesByBronOrDoel(self):
-        geldigeRelatieLijst = GeldigeRelatieLijstTestInstance()
+        geldigeRelatieLijst = GeldigeRelatieLijstTestInstance().lijst
         validator = RelatieValidator(geldigeRelatieLijst)
         a = Aftakking()
         list = validator.getGeldigeRelatiesByBronOrDoel(a.typeURI)
         self.assertEqual(4, len(list))
 
     def test_afterInitGetGeldigeRelatiesOnObject(self):
-        geldigeRelatieLijst = GeldigeRelatieLijstTestInstance()
+        geldigeRelatieLijst = GeldigeRelatieLijstTestInstance().lijst
         validator = RelatieValidator(geldigeRelatieLijst)
         validator.enableValidateRelatieOnRelatieInteractor()
         a = Aftakking()
@@ -190,7 +190,7 @@ class RelatieValidatorTests(unittest.TestCase):
         self.assertGreater(len(a._geldigeRelaties), 0)
 
     def test_afterInitValidateRelatieOnObject(self):
-        geldigeRelatieLijst = GeldigeRelatieLijstTestInstance()
+        geldigeRelatieLijst = GeldigeRelatieLijstTestInstance().lijst
         validator = RelatieValidator(geldigeRelatieLijst)
         validator.enableValidateRelatieOnRelatieInteractor()
         a = Aftakking()
@@ -204,7 +204,7 @@ class RelatieValidatorTests(unittest.TestCase):
         self.assertTrue(a._validateRelatiePossible(h, v, RelatieRichting.BRON_DOEL))
 
     def test_showGeldigeRelatieOnObject(self):
-        geldigeRelatieLijst = GeldigeRelatieLijstTestInstance()
+        geldigeRelatieLijst = GeldigeRelatieLijstTestInstance().lijst
         validator = RelatieValidator(geldigeRelatieLijst)
         validator.enableValidateRelatieOnRelatieInteractor()
         a = Aftakking()

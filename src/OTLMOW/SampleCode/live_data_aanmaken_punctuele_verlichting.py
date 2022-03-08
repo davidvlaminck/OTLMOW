@@ -45,7 +45,7 @@ if __name__ == '__main__':
     mast.masthoogte = 6
     mast.geometry = 'POINT Z (144094.1 165007.7 0)'
 
-    hoortbij_mast1 = HoortBij()  # TODO HoortBij
+    hoortbij_mast1 = HoortBij()
     hoortbij_mast1.assetId.identificator = '031C9.T01-legacy'
     hoortbij_mast1.bronAssetId.identificator = '031C9.T01'
     hoortbij_mast1.doelAssetId.identificator = 'e8b4022a-00d6-4b01-9766-0e50ecfda150-bGdjOmluc3RhbGxhdGllI1ZWT1A'
@@ -65,7 +65,7 @@ if __name__ == '__main__':
     mast2.masthoogte = 6
     mast2.geometry = 'POINT Z (144081.9 165015.4 0)'
 
-    hoortbij_mast2 = HoortBij()  # TODO HoortBij
+    hoortbij_mast2 = HoortBij()  # TODO HoortBij kenmerk toevoegen
     hoortbij_mast2.assetId.identificator = '031C9.T02-legacy'
     hoortbij_mast2.bronAssetId.identificator = '031C9.T02'
     hoortbij_mast2.doelAssetId.identificator = '63b832e0-16be-4edb-a6ac-2fe8ff3f786b-bGdjOmluc3RhbGxhdGllI1ZWT1A'

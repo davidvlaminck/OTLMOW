@@ -34,8 +34,12 @@ class OTLAttribuut(AttributeInfo):
             self.__dict__["waarde"] = readonlyValue
 
         if self.field.waardeObject:
-            self.waarde = self.field.waardeObject(parent=self)
-            self.waarde._parent = self
+            if self.kardinaliteit_max != '1':
+                self.waarde = [self.field.waardeObject(parent=self)]
+                self.waarde[0]._parent = self
+            else:
+                self.waarde = self.field.waardeObject(parent=self)
+                self.waarde._parent = self
 
         #if dotnotatie == '':
         #    self.add_dotnotatie()

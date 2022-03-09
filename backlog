@@ -1,4 +1,5 @@
 Fix
+complexe waarden met kard. geraken niet door de copy by template functie (zie voorbeeld verkeersbord)
 utf-8 encoding > setting in pycharm aanpassen: UTF-8 + BOM aanzetten voor windows
 Geldige relatie lijst refactor naar isinstance met inheritance ipv alle relaties en testen: https://stackoverflow.com/questions/31488362/why-is-dict-faster-than-if-else-in-python/31488416
 convert type nakijken en unittests schrijven

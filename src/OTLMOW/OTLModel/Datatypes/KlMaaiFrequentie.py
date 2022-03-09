@@ -43,6 +43,10 @@ class KlMaaiFrequentie(KeuzelijstField):
         '7-9': KeuzelijstWaarde(invulwaarde='7-9',
                                 label='7-9',
                                 definitie='Zeven tot negen keer per jaar maaien.',
-                                objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlMaaiFrequentie/7-9')
+                                objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlMaaiFrequentie/7-9'),
+        'minder-dan-1-3': KeuzelijstWaarde(invulwaarde='minder-dan-1-3',
+                                           label='minder dan 1/3',
+                                           definitie='Minder dan één keer om de drie jaar maaien.',
+                                           objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlMaaiFrequentie/minder-dan-1-3')
     }
 

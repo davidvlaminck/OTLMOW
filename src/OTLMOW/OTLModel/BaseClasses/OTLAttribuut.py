@@ -41,10 +41,6 @@ class OTLAttribuut(AttributeInfo):
                 self.waarde = self.field.waardeObject(parent=self)
                 self.waarde._parent = self
 
-        #if dotnotatie == '':
-        #    self.add_dotnotatie()
-
-
     def default(self):
         if self.waarde is not dict and isinstance(self.waarde, list):
             valueList = []
@@ -144,7 +140,6 @@ class OTLAttribuut(AttributeInfo):
         # check if kwant Ward inside a union type, if so, call clear_props
         if owner is not None and value is not None and hasattr(owner, 'field') and owner.field.waardeObject is not None and not owner.field._uses_waarde_object and not isinstance(owner.field, UnionTypeField) and owner.owner is not None and isinstance(owner.owner, UnionWaarden):
             owner.owner.clear_other_props('_' + owner.naam)
-
 
     def __str__(self):
         s = (f'information about {self.naam}:\n'

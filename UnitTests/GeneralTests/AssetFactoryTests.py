@@ -6,6 +6,8 @@ from OTLMOW.Facility.AssetFactory import AssetFactory
 from OTLMOW.OTLModel.Classes.Aftakking import Aftakking
 from OTLMOW.OTLModel.Classes.Agent import Agent
 from OTLMOW.OTLModel.Classes.Stroomkring import Stroomkring
+from OTLMOW.OTLModel.Classes.Verkeersregelaar import Verkeersregelaar
+from OTLMOW.OTLModel.Datatypes.DtcExterneReferentie import DtcExterneReferentie
 
 
 class AssetFactoryTests(TestCase):
@@ -142,6 +144,25 @@ class AssetFactoryTests(TestCase):
 
         self.assertEqual('nieuwe id', orig_aftakking.assetId.identificator)
         self.assertEqual('originele id', nieuwe_aftakking.assetId.identificator)
+
+    def test_create_aimObject_using_other_aimObject_as_template_ComplexField_kard(self):
+        factory = AssetFactory()
+        orig_vr = Verkeersregelaar()
+        orig_vr.externeReferentie = []
+        orig_vr.externeReferentie.append(DtcExterneReferentie.waardeObject())
+        orig_vr.externeReferentie[0].externReferentienummer = "externe referentie 2"
+        orig_vr.externeReferentie[0].externePartij = "bij externe partij 2"
+
+        orig_vr.externeReferentie.append(DtcExterneReferentie.waardeObject())
+        orig_vr.externeReferentie[1].externReferentienummer = "externe referentie 1"
+        orig_vr.externeReferentie[1].externePartij = "bij externe partij 1"
+
+        self.assertEqual('externe referentie 1', orig_vr.externeReferentie[1].externReferentienummer)
+
+        nieuwe_vr = factory.create_aimObject_using_other_aimObject_as_template(orig_vr)
+        orig_vr.externeReferentie[1].externReferentienummer = "externe referentie 3"
+        self.assertEqual('externe referentie 3', orig_vr.externeReferentie[1].externReferentienummer)
+        self.assertEqual('externe referentie 1', nieuwe_vr.externeReferentie[1].externReferentienummer)
 
     @unittest.skip('Not implemented yet')
     def test_copy_fields_from_object_to_new_object_DotNotatie(self):

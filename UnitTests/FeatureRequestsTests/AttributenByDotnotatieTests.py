@@ -35,19 +35,18 @@ class AttributenByDotnotatieTests(TestCase):
         v = Verkeersregelaar()
         v.coordinatiewijze = ["centraal", "pulsen"]
         d = dict(v.attributes_by_dotnotatie())
-        expected = {'coordinatiewijze[]': "centraal|pulsen"}
+        expected = {
+            'coordinatiewijze[0]': 'centraal',
+            'coordinatiewijze[1]': 'pulsen'
+        }
         self.assertDictEqual(expected, d)
 
-    @unittest.skip("unsure how to handle multiple complex attributes and dotnotatie")
     def test_attributes_by_dotnotatie_complex_kard_meer_dan_1(self):
         v = Verkeersregelaar()
-        v.externeReferentie = []
-
-        v.externeReferentie.append(DtcExterneReferentie.waardeObject())
         v.externeReferentie[0].externReferentienummer = "externe referentie 2"
         v.externeReferentie[0].externePartij = "bij externe partij 2"
 
-        v.externeReferentie.append(DtcExterneReferentie.waardeObject())
+        v._externeReferentie.append_new_waardeObject()
         v.externeReferentie[1].externReferentienummer = "externe referentie 1"
         v.externeReferentie[1].externePartij = "bij externe partij 1"
         d = dict(v.attributes_by_dotnotatie())

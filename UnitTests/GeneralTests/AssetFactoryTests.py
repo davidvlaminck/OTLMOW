@@ -159,8 +159,8 @@ class AssetFactoryTests(TestCase):
 
         nieuwe_vr = factory.create_aimObject_using_other_aimObject_as_template(orig_vr)
         orig_vr.afbeelding[0].omschrijving.waarde = 'test afbeelding 2'
-        self.assertEqual('test afbeelding 2', orig_vr.afbeelding[1].omschrijving.waarde)
-        self.assertEqual('test afbeelding 1', nieuwe_vr.afbeelding[1].omschrijving.waarde)
+        self.assertEqual('test afbeelding 2', orig_vr.afbeelding[0].omschrijving.waarde)
+        self.assertEqual('test afbeelding 1', nieuwe_vr.afbeelding[0].omschrijving.waarde)
 
     @unittest.skip('Not implemented yet')
     def test_copy_fields_from_object_to_new_object_DotNotatie(self):

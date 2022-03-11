@@ -35,7 +35,7 @@ class AttributeInfoTests(TestCase):
         v = Verkeersregelaar()
         v.naam = 'VR'
         string_version = OTLObjectHelper().build_string_version(v, indent=4)
-        expected = '    naam : VR'
+        expected = 'naam : VR'
         self.assertEqual(string_version, expected)
 
     def test_make_string_version_DtcIdentificator(self):
@@ -43,7 +43,7 @@ class AttributeInfoTests(TestCase):
         v.assetId.identificator = 'eigen_id'
         v.assetId.toegekendDoor = 'AWV'
         string_version = OTLObjectHelper().build_string_version(v, indent=4)
-        expected = '    assetId :\n        identificator : eigen_id\n        toegekendDoor : AWV'
+        expected = 'assetId.identificator : eigen_id\nassetId.toegekendDoor : AWV'
         self.assertEqual(string_version, expected)
 
     def test_create_dict_from_asset_DtcIdentificator(self):
@@ -99,7 +99,7 @@ class AttributeInfoTests(TestCase):
         v.externeReferentie[0].externReferentienummer = "externe referentie 2"
         v.externeReferentie[0].externePartij = "bij externe partij 2"
 
-        v.externeReferentie.append(DtcExterneReferentie.waardeObject())
+        v._externeReferentie.append_new_waardeObject()
         v.externeReferentie[1].externReferentienummer = "externe referentie 1"
         v.externeReferentie[1].externePartij = "bij externe partij 1"
         d = v.create_dict_from_asset()

@@ -23,7 +23,7 @@ class DotnotatieOnAttributeTests(TestCase):
 
         with self.subTest('complex attribute with kard'):
             self.assertEqual('externeReferentie[].externReferentienummer',
-                             vr.externeReferentie._externReferentienummer.dotnotatie)
+                             vr.externeReferentie[0]._externReferentienummer.dotnotatie)
 
         with self.subTest('non-complex attribute with kard'):
             self.assertEqual('coordinatiewijze[]', vr._coordinatiewijze.dotnotatie)

@@ -98,14 +98,14 @@ class PrimitiveTypeTests(unittest.TestCase):
     def test_timeTests(self):
         instance = Agent()
 
-        self.assertEqual("http://www.w3.org/2001/XMLSchema#time", instance.contactinfo.beschikbaarheid._openingstijd.field.objectUri)
-        self.assertIsNone(instance.contactinfo.beschikbaarheid.openingstijd)
-        self.assertEqual(instance.contactinfo.beschikbaarheid._openingstijd.field, TimeField)
+        self.assertEqual("http://www.w3.org/2001/XMLSchema#time", instance.contactinfo[0].beschikbaarheid[0]._openingstijd.field.objectUri)
+        self.assertIsNone(instance.contactinfo[0].beschikbaarheid[0].openingstijd)
+        self.assertEqual(instance.contactinfo[0].beschikbaarheid[0]._openingstijd.field, TimeField)
 
-        instance.contactinfo.beschikbaarheid.openingstijd = time(10, 11, 12)
-        self.assertEqual(10, instance.contactinfo.beschikbaarheid.openingstijd.hour)
-        self.assertEqual(11, instance.contactinfo.beschikbaarheid.openingstijd.minute)
-        self.assertEqual(12, instance.contactinfo.beschikbaarheid.openingstijd.second)
-        self.assertTrue(isinstance(instance.contactinfo.beschikbaarheid.openingstijd, time))
+        instance.contactinfo[0].beschikbaarheid[0].openingstijd = time(10, 11, 12)
+        self.assertEqual(10, instance.contactinfo[0].beschikbaarheid[0].openingstijd.hour)
+        self.assertEqual(11, instance.contactinfo[0].beschikbaarheid[0].openingstijd.minute)
+        self.assertEqual(12, instance.contactinfo[0].beschikbaarheid[0].openingstijd.second)
+        self.assertTrue(isinstance(instance.contactinfo[0].beschikbaarheid[0].openingstijd, time))
 
-        self.assertEqual("10:11:12", instance.contactinfo.beschikbaarheid._openingstijd.field.value_default(instance.contactinfo.beschikbaarheid.openingstijd))
+        self.assertEqual("10:11:12", instance.contactinfo[0].beschikbaarheid[0]._openingstijd.field.value_default(instance.contactinfo[0].beschikbaarheid[0].openingstijd))

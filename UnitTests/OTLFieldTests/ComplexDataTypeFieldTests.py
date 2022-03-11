@@ -49,11 +49,11 @@ class ComplexDataTypeFieldTests(unittest.TestCase):
 
     def test_dtcPersoon(self):
         instance = DtcTestClass()
-        instance.persoon.afdeling = "afdeling"
-        self.assertEqual("afdeling", instance.persoon.afdeling)
+        instance.persoon[0].afdeling = "afdeling"
+        self.assertEqual("afdeling", instance.persoon[0].afdeling)
 
-        instance.persoon.adres.straatnaam = "straat"
-        self.assertEqual("straat", instance.persoon.adres.straatnaam)
+        instance.persoon[0].adres.straatnaam = "straat"
+        self.assertEqual("straat", instance.persoon[0].adres.straatnaam)
 
 
 

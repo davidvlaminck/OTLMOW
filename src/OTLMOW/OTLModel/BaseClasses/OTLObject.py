@@ -12,8 +12,12 @@ class OTLObjectHelper:
         if isinstance(asset, list) and not isinstance(asset, dict):
             l = []
             for item in asset:
-                l.append(self.recursive_create_dict_from_asset(asset=item))
-            return l
+                dict_item = self.recursive_create_dict_from_asset(asset=item)
+                if dict_item is not None:
+                    l.append(dict_item)
+            if len(l) > 0:
+                return l
+            return
         d = {}
         for k, v in vars(asset).items():
             if k in ['_parent', '_geometry_types']:
@@ -21,7 +25,9 @@ class OTLObjectHelper:
             if v.waarde is not None and v.waarde != []:
                 if v.field.waardeObject is not None:
                     if v.field._uses_waarde_object:
-                        d[k[1:]] = self.recursive_create_dict_from_asset(asset=v.waarde)
+                        dict_item = self.recursive_create_dict_from_asset(asset=v.waarde)
+                        if dict_item is not None:
+                            d[k[1:]] = dict_item
                     else:
                         d[k[1:]] = v.waarde.waarde
                 else:
@@ -34,7 +40,9 @@ class OTLObjectHelper:
                     else:
                         d[k[1:]] = v.waarde
 
-        return self.clean_dict(d)
+        d = self.clean_dict(d)
+        if len(d.items()) > 0:
+            return d
 
     def clean_dict(self, d):
         """Recursively remove None values and empty dicts from input dict"""
@@ -48,15 +56,10 @@ class OTLObjectHelper:
                 del d[k]
         return d
 
-    def build_string_version(self, asset, indent=4) -> str:
+    def build_string_version(self, asset, indent=4, use_dotnotatie=False) -> str:
         lines = []
-        asset_dict = self.create_dict_from_asset(asset)
-        lines.extend(
-            self.make_string_version_from_dict(
-                d=asset_dict,
-                level=1,
-                indent=indent))
-
+        for dotnotatie, waarde in self.attributes_by_dotnotatie(asset):
+            lines.append(f'{dotnotatie} : {waarde}')
         return '\n'.join(lines)
 
     def make_string_version_from_dict(self, d, level=0, indent=4) -> []:
@@ -71,25 +74,37 @@ class OTLObjectHelper:
         return lines
 
     def attributes_by_dotnotatie(self, asset=None):
-        for k, v in sorted(vars(asset).items()):
+        var = vars(asset)
+        for k, v in vars(asset).items():
             if k in ['_parent', '_geometry_types']:
                 continue
             if v.waarde is None:
                 continue
-            if v.field.waardeObject is not None:
-                if v.field._uses_waarde_object:
-                    for k1, v1 in self.attributes_by_dotnotatie(asset=v.waarde):
-                        yield k1, v1
+
+            if isinstance(v.waarde, list):
+                # kard > 0
+                if v.field.waardeObject is not None:
+                    if v.field._uses_waarde_object:
+                        for count, item in enumerate(v.waarde):
+                            for k1, v1 in self.attributes_by_dotnotatie(asset=item):
+                                yield k1.replace('[]', f'[{count}]'), v1
+                    else:
+                        for count, item in enumerate(v.waarde.waarde):
+                            for k1, v1 in self.attributes_by_dotnotatie(asset=item):
+                                yield k1.replace('[]', f'[{count}]'), v1
                 else:
-                    if v.waarde.waarde is not None:
-                        yield v.waarde._waarde.dotnotatie, v.waarde.waarde
+                    for count, item in enumerate(v.waarde):
+                        yield v.dotnotatie.replace('[]', f'[{count}]'), item
             else:
-                if isinstance(v.waarde, list):
-                    if len(v.waarde) > 0:
-                        yield v.dotnotatie, '|'.join(v.waarde)
+                if v.field.waardeObject is not None:
+                    if v.field._uses_waarde_object:
+                        for k1, v1 in self.attributes_by_dotnotatie(asset=v.waarde):
+                            yield k1, v1
+                    else:
+                        if v.waarde.waarde is not None:
+                            yield v.waarde._waarde.dotnotatie, v.waarde.waarde
                 else:
                     yield v.dotnotatie, v.waarde
-
 
 class OTLObject:
     def __init__(self):
@@ -109,6 +124,6 @@ class OTLObject:
         for k, v in OTLObjectHelper().attributes_by_dotnotatie(asset=self):
             yield k, v
 
-    def __str__(self):
+    def __str__(self, use_dotnotatie=False):
         return f'information about {self.__class__.__name__} {self.__hash__()}:\n' + \
-               OTLObjectHelper().build_string_version(asset=self, indent=4)
+               OTLObjectHelper().build_string_version(asset=self, indent=4, use_dotnotatie=use_dotnotatie)

@@ -41,6 +41,13 @@ class OTLAttribuut(AttributeInfo):
                 self.waarde = self.field.waardeObject(parent=self)
                 self.waarde._parent = self
 
+    def append_new_waardeObject(self):
+        if self.kardinaliteit_max != '1' and self.field.waardeObject:
+            self.waarde.append(self.field.waardeObject(parent=self))
+            self.waarde[-1]._parent = self
+        else:
+            raise RuntimeError('This method has no effect for this attribute')
+
     def default(self):
         if self.waarde is not dict and isinstance(self.waarde, list):
             valueList = []

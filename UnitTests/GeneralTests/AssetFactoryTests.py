@@ -150,11 +150,8 @@ class AssetFactoryTests(TestCase):
     def test_create_aimObject_using_other_aimObject_as_template_ComplexField_kard(self):
         factory = AssetFactory()
         orig_vr = RetroreflecterendVerkeersbord()
-        orig_vr.afbeelding = []
-        orig_vr.afbeelding.append(DtcDocument.waardeObject())
         orig_vr.afbeelding[0].omschrijving.waarde = 'test afbeelding'
         orig_vr.afbeelding[0].uri = 'https://wegcode.be/images/stories/verkeerstekens/F/F49.png'
-
         self.assertEqual('test afbeelding', orig_vr.afbeelding[0].omschrijving.waarde)
 
         nieuwe_vr = factory.create_aimObject_using_other_aimObject_as_template(orig_vr)

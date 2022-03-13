@@ -3,10 +3,208 @@ from OTLMOW.OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLMOW.OTLModel.BaseClasses.OTLField import OTLField
 from OTLMOW.OTLModel.BaseClasses.OTLObject import OTLObject
+from OTLMOW.OTLModel.Datatypes.ComplexField import ComplexField
 from OTLMOW.OTLModel.Datatypes.FloatOrDecimalField import FloatOrDecimalField
-from OTLMOW.OTLModel.Datatypes.KlAansluitstukMateriaal import KlAansluitstukMateriaal
 from OTLMOW.OTLModel.Datatypes.StringField import StringField
 
+
+class DtcTestComplexType2Waarden(AttributeInfo):
+    def __init__(self, parent=None):
+        AttributeInfo.__init__(self, parent)
+
+        self._testStringField = OTLAttribuut(field=StringField,
+                                             naam='testStringField',
+                                             label='testStringField',
+                                             objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcTestComplexTypeWaarden.testStringField',
+                                             definition='Test attribuut voor StringField',
+                                             owner=self)
+
+        self._testStringFieldMetKard = OTLAttribuut(field=StringField,
+                                                    naam='testStringFieldMetKard',
+                                                    label='testStringFieldMetKard',
+                                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcTestComplexTypeWaarden.testStringFieldMetKard',
+                                                    definition='Test attribuut voor StringField met kardinaliteit > 1',
+                                                    kardinaliteit_max='*',
+                                                    owner=self)
+
+        self._testKwantWrd = OTLAttribuut(field=KwantWrdTest,
+                                          naam='testKwantWrd',
+                                          label='testKwantWrd',
+                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcTestComplexTypeWaarden.testKwantWrd',
+                                          definition='Test attribuut voor Kwantitatieve waarde',
+                                          owner=self)
+
+        self._testKwantWrdMetKard = OTLAttribuut(field=KwantWrdTest,
+                                                 naam='testKwantWrdMetKard',
+                                                 label='testKwantWrdMetKard',
+                                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcTestComplexTypeWaarden.testKwantWrdMetKard',
+                                                 definition='Test attribuut voor Kwantitatieve waarde met kardinaliteit > 1',
+                                                 kardinaliteit_max='*',
+                                                 owner=self)
+
+    @property
+    def testStringFieldMetKard(self):
+        """Test attribuut voor StringField met kardinaliteit > 1"""
+        return self._testStringFieldMetKard.waarde
+
+    @testStringFieldMetKard.setter
+    def testStringFieldMetKard(self, value):
+        self._testStringFieldMetKard.set_waarde(value, owner=self)
+
+    @property
+    def testStringField(self):
+        """Test attribuut voor StringField"""
+        return self._testStringField.waarde
+
+    @testStringField.setter
+    def testStringField(self, value):
+        self._testStringField.set_waarde(value, owner=self)
+
+    @property
+    def testKwantWrdMetKard(self):
+        """Test attribuut voor Kwantitatieve waarde met kardinaliteit > 1"""
+        return self._testKwantWrdMetKard.waarde
+
+    @testKwantWrdMetKard.setter
+    def testKwantWrdMetKard(self, value):
+        self._testKwantWrdMetKard.set_waarde(value, owner=self)
+
+    @property
+    def testKwantWrd(self):
+        """Test attribuut voor Kwantitatieve waarde"""
+        return self._testKwantWrd.waarde
+
+    @testKwantWrd.setter
+    def testKwantWrd(self, value):
+        self._testKwantWrd.set_waarde(value, owner=self)
+
+
+class DtcTestComplexType2(ComplexField, AttributeInfo):
+    """Complex datatype 2 voor test doeleinden"""
+    naam = 'DtcTestComplexType2'
+    label = 'Test complex type 2'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcTestComplexType2'
+    definition = 'Complex datatype 2 voor test doeleinden'
+    waardeObject = DtcTestComplexType2Waarden
+
+    def __str__(self):
+        return ComplexField.__str__(self)
+
+
+class DtcTestComplexTypeWaarden(AttributeInfo):
+    def __init__(self, parent=None):
+        AttributeInfo.__init__(self, parent)
+
+        self._testStringField = OTLAttribuut(field=StringField,
+                                             naam='testStringField',
+                                             label='testStringField',
+                                             objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcTestComplexTypeWaarden.testStringField',
+                                             definition='Test attribuut voor StringField',
+                                             owner=self)
+
+        self._testStringFieldMetKard = OTLAttribuut(field=StringField,
+                                                    naam='testStringFieldMetKard',
+                                                    label='testStringFieldMetKard',
+                                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcTestComplexTypeWaarden.testStringFieldMetKard',
+                                                    definition='Test attribuut voor StringField met kardinaliteit > 1',
+                                                    kardinaliteit_max='*',
+                                                    owner=self)
+
+        self._testKwantWrd = OTLAttribuut(field=KwantWrdTest,
+                                          naam='testKwantWrd',
+                                          label='testKwantWrd',
+                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcTestComplexTypeWaarden.testKwantWrd',
+                                          definition='Test attribuut voor Kwantitatieve waarde',
+                                          owner=self)
+
+        self._testKwantWrdMetKard = OTLAttribuut(field=KwantWrdTest,
+                                                 naam='testKwantWrdMetKard',
+                                                 label='testKwantWrdMetKard',
+                                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcTestComplexTypeWaarden.testKwantWrdMetKard',
+                                                 definition='Test attribuut voor Kwantitatieve waarde met kardinaliteit > 1',
+                                                 kardinaliteit_max='*',
+                                                 owner=self)
+
+        self._testComplexType2 = OTLAttribuut(field=DtcTestComplexType2,
+                                              naam='testComplexType2',
+                                              label='testComplexType2',
+                                              objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#AllCasesTestClass.testComplexType2',
+                                              definition='Test attribuut 2 voor een complexe waarde',
+                                              owner=self)
+
+        self._testComplexType2MetKard = OTLAttribuut(field=DtcTestComplexType2,
+                                                     naam='testComplexTypeMetKard2',
+                                                     label='testComplexTypeMetKard2',
+                                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#AllCasesTestClass.testComplexType2MetKard',
+                                                     definition='Test attribuut 2 voor een complexe waarde met kardinaliteit > 1',
+                                                     kardinaliteit_max='*',
+                                                     owner=self)
+
+    @property
+    def testComplexType2MetKard(self):
+        """Test attribuut 2 voor een complexe waarde met kardinaliteit > 1"""
+        return self._testComplexType2MetKard.waarde
+
+    @testComplexType2MetKard.setter
+    def testComplexType2MetKard(self, value):
+        self._testComplexType2MetKard.set_waarde(value, owner=self)
+
+    @property
+    def testComplexType2(self):
+        """Test attribuut 2 voor een complexe waarde"""
+        return self._testComplexType2.waarde
+
+    @testComplexType2.setter
+    def testComplexType2(self, value):
+        self._testComplexType2.set_waarde(value, owner=self)
+
+    @property
+    def testStringFieldMetKard(self):
+        """Test attribuut voor StringField met kardinaliteit > 1"""
+        return self._testStringFieldMetKard.waarde
+
+    @testStringFieldMetKard.setter
+    def testStringFieldMetKard(self, value):
+        self._testStringFieldMetKard.set_waarde(value, owner=self)
+
+    @property
+    def testStringField(self):
+        """Test attribuut voor StringField"""
+        return self._testStringField.waarde
+
+    @testStringField.setter
+    def testStringField(self, value):
+        self._testStringField.set_waarde(value, owner=self)
+
+    @property
+    def testKwantWrdMetKard(self):
+        """Test attribuut voor Kwantitatieve waarde met kardinaliteit > 1"""
+        return self._testKwantWrdMetKard.waarde
+
+    @testKwantWrdMetKard.setter
+    def testKwantWrdMetKard(self, value):
+        self._testKwantWrdMetKard.set_waarde(value, owner=self)
+
+    @property
+    def testKwantWrd(self):
+        """Test attribuut voor Kwantitatieve waarde"""
+        return self._testKwantWrd.waarde
+
+    @testKwantWrd.setter
+    def testKwantWrd(self, value):
+        self._testKwantWrd.set_waarde(value, owner=self)
+
+
+class DtcTestComplexType(ComplexField, AttributeInfo):
+    """Complex datatype voor test doeleinden"""
+    naam = 'DtcTestComplexType'
+    label = 'Test complex type'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcTestComplexType'
+    definition = 'Complex datatype voor test doeleinden'
+    waardeObject = DtcTestComplexTypeWaarden
+
+    def __str__(self):
+        return ComplexField.__str__(self)
 
 
 class KwantWrdTestWaarden(AttributeInfo):
@@ -95,12 +293,38 @@ class AllCasesTestClass(OTLObject):
                                                  kardinaliteit_max='*',
                                                  owner=self)
 
-        self._materiaal = OTLAttribuut(field=KlAansluitstukMateriaal,
-                                       naam='materiaal',
-                                       label='materiaal',
-                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Aansluitmof.materiaal',
-                                       definition='Het materiaal van de aansluitmof.',
-                                       owner=self)
+        self._testComplexType = OTLAttribuut(field=DtcTestComplexType,
+                                             naam='testComplexType',
+                                             label='testComplexType',
+                                             objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#AllCasesTestClass.testComplexType',
+                                             definition='Test attribuut voor een complexe waarde',
+                                             owner=self)
+
+        self._testComplexTypeMetKard = OTLAttribuut(field=DtcTestComplexType,
+                                                    naam='testComplexTypeMetKard',
+                                                    label='testComplexTypeMetKard',
+                                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#AllCasesTestClass.testComplexTypeMetKard',
+                                                    definition='Test attribuut voor een complexe waarde met kardinaliteit > 1',
+                                                    kardinaliteit_max='*',
+                                                    owner=self)
+
+    @property
+    def testComplexTypeMetKard(self):
+        """Test attribuut voor een complexe waarde met kardinaliteit > 1"""
+        return self._testComplexTypeMetKard.waarde
+
+    @testComplexTypeMetKard.setter
+    def testComplexTypeMetKard(self, value):
+        self._testComplexTypeMetKard.set_waarde(value, owner=self)
+
+    @property
+    def testComplexType(self):
+        """Test attribuut voor een complexe waarde"""
+        return self._testComplexType.waarde
+
+    @testComplexType.setter
+    def testComplexType(self, value):
+        self._testComplexType.set_waarde(value, owner=self)
 
     @property
     def testStringFieldMetKard(self):
@@ -137,12 +361,3 @@ class AllCasesTestClass(OTLObject):
     @testKwantWrd.setter
     def testKwantWrd(self, value):
         self._testKwantWrd.set_waarde(value, owner=self)
-
-    @property
-    def materiaal(self):
-        """Het materiaal van de aansluitmof."""
-        return self._materiaal.waarde
-
-    @materiaal.setter
-    def materiaal(self, value):
-        self._materiaal.set_waarde(value, owner=self)

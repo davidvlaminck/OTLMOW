@@ -158,18 +158,18 @@ class AssetFactoryTests(TestCase):
         nieuwe_vr = factory.create_aimObject_using_other_aimObject_as_template(orig_vr)
         orig_vr.afbeelding[0].omschrijving.waarde = 'test afbeelding 2'
         self.assertEqual('test afbeelding 2', orig_vr.afbeelding[0].omschrijving.waarde)
-        self.assertEqual('test afbeelding 1', nieuwe_vr.afbeelding[0].omschrijving.waarde)
+        self.assertEqual('test afbeelding', nieuwe_vr.afbeelding[0].omschrijving.waarde)
 
     def test_create_aimObject_using_other_aimObject_as_template_testclass(self):
         factory = AssetFactory()
-        orig_vr = AllCasesTestClass()
-        orig_vr.testComplexTypeMetKard[0].testStringField = 'test string'
-        self.assertEqual('test string', orig_vr.testComplexTypeMetKard[0].testStringField)
+        test_instance = AllCasesTestClass()
+        test_instance.testComplexTypeMetKard[0].testStringField = 'test string'
+        self.assertEqual('test string', test_instance.testComplexTypeMetKard[0].testStringField)
 
-        nieuwe_vr = factory.create_aimObject_using_other_aimObject_as_template(orig_vr)
-        orig_vr.afbeelding[0].omschrijving.waarde = 'test afbeelding 2'
-        self.assertEqual('test afbeelding 2', orig_vr.afbeelding[0].omschrijving.waarde)
-        self.assertEqual('test afbeelding 1', nieuwe_vr.afbeelding[0].omschrijving.waarde)
+        copy_test_instance = factory.create_aimObject_using_other_aimObject_as_template(test_instance)
+        test_instance.testComplexTypeMetKard[0].testStringField = 'test string 2'
+        self.assertEqual('test string 2', test_instance.testComplexTypeMetKard[0].testStringField)
+        self.assertEqual('test string 1', copy_test_instance.testComplexTypeMetKard[0].testStringField)
 
     @unittest.skip('Not implemented yet')
     def test_copy_fields_from_object_to_new_object_DotNotatie(self):

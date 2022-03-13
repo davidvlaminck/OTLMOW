@@ -83,6 +83,11 @@ class AssetFactory:
         distinct_fieldList = list(set(field_list))
 
         for fieldName in distinct_fieldList:
-            orig_asset_field = getattr(orig_object, fieldName)
-            new_object_field_copy = copy.deepcopy(orig_asset_field)
+            orig_asset_attribute_value = getattr(orig_object, fieldName)
+            if orig_asset_attribute_value is None:
+                continue
+            orig_asset_attribute = getattr(orig_object, '_' + fieldName)
+            new_object_field_copy = copy.deepcopy(orig_asset_attribute_value)
+            if orig_asset_attribute.kardinaliteit_max != '1':
+                new_object_field_copy = [new_object_field_copy]
             setattr(new_object, fieldName, new_object_field_copy)

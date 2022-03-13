@@ -1,6 +1,7 @@
 ﻿import unittest
 from unittest import TestCase
 
+from GeneralTests.AllCasesTestClass import AllCasesTestClass
 from OTLMOW.OTLModel.Classes.AIMNaamObject import AIMNaamObject
 from OTLMOW.Facility.AssetFactory import AssetFactory
 from OTLMOW.OTLModel.Classes.Aftakking import Aftakking
@@ -153,6 +154,17 @@ class AssetFactoryTests(TestCase):
         orig_vr.afbeelding[0].omschrijving.waarde = 'test afbeelding'
         orig_vr.afbeelding[0].uri = 'https://wegcode.be/images/stories/verkeerstekens/F/F49.png'
         self.assertEqual('test afbeelding', orig_vr.afbeelding[0].omschrijving.waarde)
+
+        nieuwe_vr = factory.create_aimObject_using_other_aimObject_as_template(orig_vr)
+        orig_vr.afbeelding[0].omschrijving.waarde = 'test afbeelding 2'
+        self.assertEqual('test afbeelding 2', orig_vr.afbeelding[0].omschrijving.waarde)
+        self.assertEqual('test afbeelding 1', nieuwe_vr.afbeelding[0].omschrijving.waarde)
+
+    def test_create_aimObject_using_other_aimObject_as_template_testclass(self):
+        factory = AssetFactory()
+        orig_vr = AllCasesTestClass()
+        orig_vr.testComplexTypeMetKard[0].testStringField = 'test string'
+        self.assertEqual('test string', orig_vr.testComplexTypeMetKard[0].testStringField)
 
         nieuwe_vr = factory.create_aimObject_using_other_aimObject_as_template(orig_vr)
         orig_vr.afbeelding[0].omschrijving.waarde = 'test afbeelding 2'

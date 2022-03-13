@@ -9,7 +9,10 @@ class AssetFactory:
         try:
             py_mod = __import__(name=f'OTLMOW.OTLModel.Classes.{class_name}', fromlist=f'Classes.{class_name}')
         except ModuleNotFoundError:
-            return None
+            try:
+                py_mod = __import__(name=f'UnitTests.GeneralTests.{class_name}', fromlist=f'GeneralTests.{class_name}')
+            except ModuleNotFoundError:
+                return None
         class_ = getattr(py_mod, class_name)
         instance = class_()
 

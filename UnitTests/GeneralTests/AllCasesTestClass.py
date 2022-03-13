@@ -3,6 +3,7 @@ from OTLMOW.OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLMOW.OTLModel.BaseClasses.OTLField import OTLField
 from OTLMOW.OTLModel.BaseClasses.OTLObject import OTLObject
+from OTLMOW.OTLModel.Classes.AIMObject import AIMObject
 from OTLMOW.OTLModel.Datatypes.ComplexField import ComplexField
 from OTLMOW.OTLModel.Datatypes.FloatOrDecimalField import FloatOrDecimalField
 from OTLMOW.OTLModel.Datatypes.StringField import StringField
@@ -254,14 +255,14 @@ class KwantWrdTest(OTLField, AttributeInfo):
         return OTLField.__str__(self)
 
 
-class AllCasesTestClass(OTLObject):
+class AllCasesTestClass(AIMObject):
     """Test klasse die alle mogelijke cases en combinaties bevat"""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#AllCasesTestClass'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        OTLObject.__init__(self)
+        AIMObject.__init__(self)
 
         self._testStringField = OTLAttribuut(field=StringField,
                                              naam='testStringField',

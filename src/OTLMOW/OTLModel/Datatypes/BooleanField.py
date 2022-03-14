@@ -14,7 +14,7 @@ class BooleanField(OTLField):
     def convert_to_correct_type(cls, value):
         if value is None:
             return None
-        if isinstance(value, bool):
+        if value == True or value == False:
             return value
         if isinstance(value, str):
             if value.lower() == 'false':
@@ -23,10 +23,7 @@ class BooleanField(OTLField):
                 return True
             else:
                 raise CouldNotConvertToCorrectType(f'{value} could not be converted to correct type (implied by {cls.__name__})')
-        try:
-            return bool(value)
-        except Exception:
-            raise CouldNotConvertToCorrectType(f'{value} could not be converted to correct type (implied by {cls.__name__})')
+        CouldNotConvertToCorrectType(f'{value} could not be converted to correct type (implied by {cls.__name__})')
 
     @staticmethod
     def validate(value, attribuut):

@@ -9,7 +9,7 @@ class RelatieCreator:
     def __init__(self, validator: RelatieValidator):
         self.validator = validator
 
-    def create_relation(self, bron: RelatieInteractor, doel: RelatieInteractor, relatie) -> RelatieObject:
+    def create_relation(self, bron: RelatieInteractor, doel: RelatieInteractor, relatie, naam_affix:str ='') -> RelatieObject:
         if not self.validator.validateRelatieByURI(bron, doel, relatie):
             raise CouldNotCreateRelation("Can't create an invalid relation, please validate relations first")
         relatie = AssetFactory().dynamic_create_instance_from_uri(class_uri=relatie.typeURI)
@@ -18,5 +18,7 @@ class RelatieCreator:
         relatie.doelAssetId.identificator = doel.assetId.identificator
         relatie.doelAssetId.toegekendDoor = doel.assetId.toegekendDoor
         relatie.assetId.identificator = bron.assetId.identificator + '_-_' + doel.assetId.identificator
+        if naam_affix != '':
+            relatie.assetId.identificator += naam_affix
         relatie.assetId.toegekendDoor = 'OTLMOW'
         return relatie

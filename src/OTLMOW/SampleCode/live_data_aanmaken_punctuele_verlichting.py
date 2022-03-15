@@ -62,7 +62,7 @@ if __name__ == '__main__':
     mast.leverancier = 'metalogalva'
     mast.dwarsdoorsnede = 'vierkant'
     mast.armlengte = '2'
-    mast.masttype = 'MT'
+    # mast.masttype = 'MT'  # TODO keuzelijst moet aangevuld worden
     mast.isDraaibaar = False
     mast.masthoogte = 6
     mast.geometry = 'POINT Z (144094.1 165007.7 0)'
@@ -82,7 +82,7 @@ if __name__ == '__main__':
     mast2.leverancier = 'metalogalva'
     mast2.dwarsdoorsnede = 'vierkant'
     mast2.armlengte = '3.2'
-    mast2.masttype = 'MT'
+    # mast2.masttype = 'MT' # TODO keuzelijst moet aangevuld worden
     mast2.isDraaibaar = False
     mast2.masthoogte = 6
     mast2.geometry = 'POINT Z (144081.9 165015.4 0)'
@@ -162,7 +162,7 @@ if __name__ == '__main__':
 
     sturingsrelatie_led_driver_led1 = otl_facility.relatie_creator.create_relation(bron=led_driver1, doel=led1, relatie=Sturing)
 
-    bevestiging_led_driver_led1 = otl_facility.relatie_creator.create_relation(bron=led_driver1, doel=led1, relatie=Bevestiging)
+    bevestiging_led_driver_led1 = otl_facility.relatie_creator.create_relation(bron=led_driver1, doel=led1, relatie=Bevestiging, naam_affix='_bevestiging')
 
     led_driver2 = LEDDriver()
     led_driver2.toestand = 'in-gebruik'
@@ -171,7 +171,7 @@ if __name__ == '__main__':
 
     sturingsrelatie_led_driver_led2 = otl_facility.relatie_creator.create_relation(bron=led_driver2, doel=led2, relatie=Sturing)
 
-    bevestiging_led_driver_led2 = otl_facility.relatie_creator.create_relation(bron=led_driver2, doel=led2, relatie=Bevestiging)
+    bevestiging_led_driver_led2 = otl_facility.relatie_creator.create_relation(bron=led_driver2, doel=led2, relatie=Bevestiging, naam_affix='_bevestiging')
 
     voedtaangestuurd_led_driver1_amc_1 = otl_facility.relatie_creator.create_relation(bron=armatuurcontroller1, doel=led_driver1,
                                                                                       relatie=VoedtAangestuurd)

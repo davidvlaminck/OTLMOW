@@ -281,10 +281,10 @@ if __name__ == '__main__':
     verkeersbord22.kleurAchterkant.waarde = '7043'
     verkeersbord22.afbeelding[0].uri = 'https://wegcode.be/images/stories/verkeerstekens/F/F49.png'
 
-    bevestiging_mast_bord11 = otl_facility.relatie_creator.create_relation(bron=mast, doel=verkeersbord11, relatie=Bevestiging)
-    bevestiging_mast_bord12 = otl_facility.relatie_creator.create_relation(bron=mast, doel=verkeersbord12, relatie=Bevestiging)
-    bevestiging_mast_bord21 = otl_facility.relatie_creator.create_relation(bron=mast2, doel=verkeersbord21, relatie=Bevestiging)
-    bevestiging_mast_bord22 = otl_facility.relatie_creator.create_relation(bron=mast2, doel=verkeersbord22, relatie=Bevestiging)
+    # bevestiging_mast_bord11 = otl_facility.relatie_creator.create_relation(bron=mast, doel=verkeersbord11, relatie=Bevestiging)
+    # bevestiging_mast_bord12 = otl_facility.relatie_creator.create_relation(bron=mast, doel=verkeersbord12, relatie=Bevestiging)
+    # bevestiging_mast_bord21 = otl_facility.relatie_creator.create_relation(bron=mast2, doel=verkeersbord21, relatie=Bevestiging)
+    # bevestiging_mast_bord22 = otl_facility.relatie_creator.create_relation(bron=mast2, doel=verkeersbord22, relatie=Bevestiging)
 
     lijst_otl_objecten = [mast, mast2, led1, led2, armatuurcontroller1, armatuurcontroller2, bevestiging_led_mast1,
                           bevestiging_led_mast2, bevestiging_led_amc1, bevestiging_led_amc2,
@@ -294,8 +294,8 @@ if __name__ == '__main__':
                           voedtaangestuurd_led_driver1_amc_1, hoortbij_legacy_VVOPgroep1, hoortbij_legacy_VVOPgroep2,
                           montagekast1, montagekast2, voedt_montagekast1_amc1, voedt_montagekast2_amc2, str,
                           voedt_str_montagekast1, voedt_str_montagekast2, lsb, bevestiging_lsb_str, kast, bevestiging_kast_lsb,
-                          verkeersbord11, verkeersbord12, verkeersbord21, verkeersbord22,
-                          bevestiging_mast_bord11, bevestiging_mast_bord12, bevestiging_mast_bord21, bevestiging_mast_bord22]
+                          verkeersbord11, verkeersbord12, verkeersbord21, verkeersbord22]
+                          # bevestiging_mast_bord11, bevestiging_mast_bord12, bevestiging_mast_bord21, bevestiging_mast_bord22]
 
     # encode to a json representation
     encoded_json = otl_facility.encoder.encode(lijst_otl_objecten)

@@ -1,3 +1,5 @@
+from datetime import datetime
+
 from OTLMOW.Facility.EMInfraImporter import EMInfraImporter
 from OTLMOW.Facility.OTLFacility import OTLFacility
 from OTLMOW.Loggers.ConsoleLogger import ConsoleLogger
@@ -293,6 +295,15 @@ if __name__ == '__main__':
                           voedt_str_montagekast1, voedt_str_montagekast2, lsb, bevestiging_lsb_str, kast, bevestiging_kast_lsb,
                           verkeersbord11, verkeersbord12, verkeersbord21, verkeersbord22,
                           bevestiging_mast_bord11, bevestiging_mast_bord12, bevestiging_mast_bord21, bevestiging_mast_bord22]
+
+    # encode to a json representation
+    encoded_json = otl_facility.encoder.encode(lijst_otl_objecten)
+    print(encoded_json)
+
+    # write the json file
+    filepath = f'Output/{datetime.now().strftime("%Y%m%d%H%M%S")}_export_punctuele_verlichting.json'
+    otl_facility.encoder.write_json_to_file(encoded_json, filepath)
+
     lijst_otl_objecten.extend(assets)
 
     otl_facility.visualiser.show(lijst_otl_objecten)

@@ -147,12 +147,12 @@ if __name__ == '__main__':
                           voedingsrelatie_str_meter, bevestigingsrelatie_aansluiting_kast, bevestigingsrelatie_meter_lsb]
 
     # encode to a json representation
-    # encoded_json = otl_facility.encoder.encode(lijst_otl_objecten)
-    # print(encoded_json)
+    encoded_json = otl_facility.encoder.encode(lijst_otl_objecten)
+    print(encoded_json)
 
     # write the json file
-    # filepath = f'Output/{datetime.now().strftime("%Y%m%d%H%M%S")}_export.json'
-    # otl_facility.encoder.write_json_to_file(encoded_json, filepath)
+    filepath = f'Output/{datetime.now().strftime("%Y%m%d%H%M%S")}_export_RLC_SNC.json'
+    otl_facility.encoder.write_json_to_file(encoded_json, filepath)
 
     lijst_otl_objecten.extend(assets)
 

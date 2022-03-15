@@ -119,6 +119,7 @@ if __name__ == '__main__':
     kast = Wegkantkast()
     kast.naam = 'R23N3.85.K'
     kast.assetId.identificator = 'R23N3.85.K'
+    kast.mplan = None
 
     bevestigingsrelatie_aansluiting_kast = otl_facility.relatie_creator.create_relation(bron=kast,
                                                                                         doel=next(a for a in assets if

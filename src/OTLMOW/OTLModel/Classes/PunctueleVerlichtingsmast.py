@@ -91,7 +91,6 @@ class PunctueleVerlichtingsmast(AIMNaamObject, EMDraagconstructie, PuntGeometrie
                                                    naam='bevestigingToestellen',
                                                    label='bevestiging toestellen',
                                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#WVLichtmast.bevestigingToestellen',
-                                                   kardinaliteit_max='*',
                                                    definition='Geeft de wijze aan waarop elk verlichtingstoestel bevestigd is op de punctuele verlichtingsmast als keuze uit een lijst voor standaardmethodes of verder toegelicht wanneer een afwijkende methode gebruikt wordt.',
                                                    owner=self)
 

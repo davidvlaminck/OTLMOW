@@ -58,7 +58,7 @@ if __name__ == '__main__':
     mast.assetId.identificator = '031C9.T01'
     mast.assetId.toegekendDoor = 'OTLMOW'
     mast.aantalArmen = '1'  # TODO getal, voor rekenen?
-    mast.bevestigingToestellen[0].standaardMethode = 'paaltop-60mm'
+    mast.bevestigingToestellen.standaardMethode = 'paaltop-60mm'
     mast.leverancier = 'metalogalva'
     mast.dwarsdoorsnede = 'vierkant'
     mast.armlengte = '2'
@@ -78,7 +78,7 @@ if __name__ == '__main__':
     mast2.assetId.identificator = '031C9.T02'
     mast2.assetId.toegekendDoor = 'OTLMOW'
     mast2.aantalArmen = '1'  # TODO getal, voor rekenen?
-    mast2.bevestigingToestellen[0].standaardMethode = 'paaltop-60mm'
+    mast2.bevestigingToestellen.standaardMethode = 'paaltop-60mm'
     mast2.leverancier = 'metalogalva'
     mast2.dwarsdoorsnede = 'vierkant'
     mast2.armlengte = '3.2'
@@ -224,6 +224,7 @@ if __name__ == '__main__':
     kast.adres.gemeente = 'sint-Pieters-Leeuw'
     kast.adres.straatnaam = 'Bergensesteenweg'
     kast.adres.huisnummer = '206'
+    kast.mplan = []
 
     bevestiging_kast_lsb = otl_facility.relatie_creator.create_relation(bron=kast, doel=lsb, relatie=Bevestiging)
 

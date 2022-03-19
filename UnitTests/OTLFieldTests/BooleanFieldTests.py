@@ -12,6 +12,14 @@ class BooleanFieldTests(TestCase):
         self.assertTrue(BooleanField.validate(False, boolean_attribute))
         with self.assertRaises(TypeError):
             BooleanField.validate('a', boolean_attribute)
+        with self.assertRaises(TypeError):
+            BooleanField.validate([], boolean_attribute)
+        with self.assertRaises(TypeError):
+            BooleanField.validate(object(), boolean_attribute)
+        with self.assertRaises(TypeError):
+            BooleanField.validate(1, boolean_attribute)
+        with self.assertRaises(TypeError):
+            BooleanField.validate(1.0, boolean_attribute)
 
     def test_convert_to_correct_type(self):
         self.assertIsNone(BooleanField.convert_to_correct_type(None))
@@ -32,3 +40,9 @@ class BooleanFieldTests(TestCase):
             BooleanField.convert_to_correct_type('y')
         with self.assertRaises(CouldNotConvertToCorrectType):
             BooleanField.convert_to_correct_type('Y')
+        with self.assertRaises(CouldNotConvertToCorrectType):
+            BooleanField.convert_to_correct_type(object())
+        with self.assertRaises(CouldNotConvertToCorrectType):
+            BooleanField.convert_to_correct_type([])
+        with self.assertRaises(CouldNotConvertToCorrectType):
+            BooleanField.convert_to_correct_type({})

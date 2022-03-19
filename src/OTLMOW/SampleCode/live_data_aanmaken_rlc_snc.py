@@ -56,7 +56,7 @@ if __name__ == '__main__':
     flitsgroep.externeReferentie.externReferentienummer = 'https://bmidata.drive-it.be/sites/sites/321'
     flitsgroep.externeReferentie.externePartij = 'Belgisch Meet Instituut'
 
-    hoortbijrelatie_beh_1 = otl_facility.relatie_creator.create_relation(flitspaalbehuizing1, flitsgroep, HoortBij)
+    hoortbijrelatie_beh_1 = otl_facility.relatie_creator.create_relation(bron=flitspaalbehuizing1, doel=flitsgroep, relatie=HoortBij)
 
     # TODO: copy paste flitspaalbehuizing1 + hoortbij
 

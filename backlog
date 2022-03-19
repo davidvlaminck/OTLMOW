@@ -8,6 +8,7 @@ requirements > rdflib voor lezen ttl bestanden, PyVis voor visualiser en Python 
 Loggers > python native logging
 OEF model: HS heeft een getal vooraan in een eigenschap > getallen omzetten naar letterwoorden
 Oef loc implementeren
+edit set_waarde zodat er flag is voor convert to correct type en voor warnings te gebruiken
 
 
 Write clean code

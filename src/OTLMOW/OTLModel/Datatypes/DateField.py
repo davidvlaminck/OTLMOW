@@ -26,10 +26,7 @@ class DateField(OTLField):
                 return date(dt.year, dt.month, dt.day)
             except Exception:
                 raise CouldNotConvertToCorrectType(f'{value} could not be converted to correct type (implied by {cls.__name__})')
-        try:
-            return date(value)
-        except Exception:
-            raise CouldNotConvertToCorrectType(f'{value} could not be converted to correct type (implied by {cls.__name__})')
+        raise CouldNotConvertToCorrectType(f'{value} could not be converted to correct type (implied by {cls.__name__})')
 
     @staticmethod
     def validate(value, attribuut):

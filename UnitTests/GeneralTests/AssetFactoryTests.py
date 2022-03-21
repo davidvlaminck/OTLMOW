@@ -1,16 +1,13 @@
 ﻿import unittest
 from unittest import TestCase
 
-from GeneralTests.AllCasesTestClass import AllCasesTestClass
+from AllCasesTestClass import AllCasesTestClass
 from OTLMOW.OTLModel.Classes.AIMNaamObject import AIMNaamObject
 from OTLMOW.Facility.AssetFactory import AssetFactory
 from OTLMOW.OTLModel.Classes.Aftakking import Aftakking
 from OTLMOW.OTLModel.Classes.Agent import Agent
 from OTLMOW.OTLModel.Classes.RetroreflecterendVerkeersbord import RetroreflecterendVerkeersbord
 from OTLMOW.OTLModel.Classes.Stroomkring import Stroomkring
-from OTLMOW.OTLModel.Classes.Verkeersregelaar import Verkeersregelaar
-from OTLMOW.OTLModel.Datatypes.DtcDocument import DtcDocument
-from OTLMOW.OTLModel.Datatypes.DtcExterneReferentie import DtcExterneReferentie
 
 
 class AssetFactoryTests(TestCase):

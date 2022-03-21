@@ -16,7 +16,7 @@ class FloatOrDecimalField(OTLField):
     def convert_to_correct_type(cls, value):
         if value is None:
             return None
-        if isinstance(value, bool):
+        if isinstance(value, bool) or isinstance(value, float):
             return value
         if isinstance(value, int) or isinstance(value, decimal.Decimal):
             return float(value)
@@ -25,13 +25,15 @@ class FloatOrDecimalField(OTLField):
             return float_value
         except ValueError:
             raise CouldNotConvertToCorrectType(f'"{value}" could not be converted to correct type (implied by {cls.__name__})')
+        except TypeError:
+            raise CouldNotConvertToCorrectType(f'"{value}" could not be converted to correct type (implied by {cls.__name__})')
 
     @staticmethod
     def validate(value, attribuut):
         if value is not None:
-            val = attribuut.field.convert_to_correct_type(value)
-            if val is not None and not isinstance(val, float):
-                raise TypeError(f'expecting a number (int, float or Decimal) in {attribuut.naam}')
+            if isinstance(value, bool) or isinstance(value, float):
+                return True
+            raise TypeError(f'expecting a number (int, float or Decimal) in {attribuut.naam}')
         return True
 
     def __str__(self):

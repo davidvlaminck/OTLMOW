@@ -1,4 +1,5 @@
-﻿from OTLMOW.OTLModel.BaseClasses.OTLField import OTLField
+﻿from OTLMOW.Facility.Exceptions.CouldNotConvertToCorrectType import CouldNotConvertToCorrectType
+from OTLMOW.OTLModel.BaseClasses.OTLField import OTLField
 
 
 class StringField(OTLField):
@@ -13,7 +14,11 @@ class StringField(OTLField):
     def convert_to_correct_type(cls, value):
         if value is None:
             return None
-        return str(value)
+        try:
+            str_val = str(value)
+            return str_val
+        except TypeError:
+            raise CouldNotConvertToCorrectType(f'The given value of object of type {type(value)} could not be converted to string (implied by {cls.__name__})')
 
     @staticmethod
     def validate(value, attribuut):

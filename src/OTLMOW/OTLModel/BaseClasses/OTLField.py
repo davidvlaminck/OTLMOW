@@ -20,7 +20,7 @@ class OTLField:
         return value
 
     @staticmethod
-    def convert_to_correct_type(value):
+    def convert_to_correct_type(value) -> object:
         return value
 
     @abstractmethod

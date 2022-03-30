@@ -2,23 +2,23 @@
 import json
 
 import requests
+from requests import Session
 
 from OTLMOW.Facility.EMInfraDecoder import EMInfraDecoder
 from OTLMOW.OTLModel.BaseClasses.OTLObject import OTLObject
 
 
 class EMInfraImporter:
-    def __init__(self, cert_path='', key_path=''):
+    def __init__(self, requester: Session):
         self.decoder = EMInfraDecoder()
-        self.cert_path = cert_path
-        self.key_path = key_path
+        self.requester = requester
 
     def import_assets_from_webservice_by_uuids(self, asset_uuids: [str]) -> [OTLObject]:
         url = f"https://services.apps.mow.vlaanderen.be/eminfra/core/api/otl/assets/search"
         asset_list_string = '", "'.join(asset_uuids)
         body = '{"filters": { "uuid": ' + f'["{asset_list_string}"]' + ' }}'
         json_data = json.loads(body)
-        response = requests.post(url, cert=(self.cert_path, self.key_path), json=json_data)
+        response = self.requester.post(url, json=json_data)
 
         data = response.content.decode("utf-8")
         jsonobj = json.loads(data)
@@ -33,7 +33,7 @@ class EMInfraImporter:
         url = f"https://services.apps.mow.vlaanderen.be/eminfra/core/api/otl/assetrelaties/search"
         body = '{"filters": { "asset": ' + f'["{asset_uuid}"]' + ' }}'
         json_data = json.loads(body)
-        response = requests.post(url, cert=(self.cert_path, self.key_path), json=json_data)
+        response = self.requester.post(url, json=json_data)
 
         data = response.content.decode("utf-8")
         jsonobj = json.loads(data)
@@ -48,7 +48,7 @@ class EMInfraImporter:
         url = f"https://services.apps.mow.vlaanderen.be/eminfra/core/api/otl/assets/search"
         body = '{"filters": { "uuid": ' + f'["{asset_uuid}"]' + ' }}'
         json_data = json.loads(body)
-        response = requests.post(url, cert=(self.cert_path, self.key_path), json=json_data)
+        response = self.requester.post(url, json=json_data)
 
         data = response.content.decode("utf-8")
         jsonobj = json.loads(data)
@@ -58,7 +58,7 @@ class EMInfraImporter:
 
     def import_asset_from_webservice_by_asset_id(self, asset_id) -> str:
         url = f"https://services.apps.mow.vlaanderen.be/eminfra/core/api/otl/assets/{asset_id}"
-        response = requests.get(url, cert=(self.cert_path, self.key_path))
+        response = self.requester.get(url)
         data = response.content.decode("utf-8")
         return self.decoder.decodeObject(data)
 

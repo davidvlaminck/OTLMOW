@@ -1,6 +1,6 @@
 import datetime
 import json
-import random
+from random import choice
 import requests
 import string
 import jwt # pip install Pyjwt
@@ -11,32 +11,33 @@ from requests import Response
 
 
 class JWTRequester(requests.Session):
-    def __init__(self, private_key_path='', client_id=''):
+    def __init__(self, private_key_path='', client_id='', first_part_url=''):
         self.private_key_path = private_key_path
         self.client_id = client_id
+        self.first_part_url = first_part_url
         self.oAuth_token = ''
         self.expires = datetime.datetime.now()
         super().__init__()
 
     def get(self, url='', **kwargs) -> Response:
         kwargs = self.modify_kwargs_for_bearer_token(kwargs)
-        return super().get(url=url, **kwargs)
+        return super().get(url=self.first_part_url + url, **kwargs)
 
     def post(self, url='', **kwargs) -> Response:
         kwargs = self.modify_kwargs_for_bearer_token(kwargs)
-        return super().post(url=url, **kwargs)
+        return super().post(url=self.first_part_url + url, **kwargs)
 
     def put(self, url='', **kwargs) -> Response:
         kwargs = self.modify_kwargs_for_bearer_token(kwargs)
-        return super().put(url=url, **kwargs)
+        return super().put(url=self.first_part_url + url, **kwargs)
 
     def patch(self, url='', **kwargs) -> Response:
         kwargs = self.modify_kwargs_for_bearer_token(kwargs)
-        return super().patch(url=url, **kwargs)
+        return super().patch(url=self.first_part_url + url, **kwargs)
 
     def delete(self, url='', **kwargs) -> Response:
         kwargs = self.modify_kwargs_for_bearer_token(kwargs)
-        return super().delete(url=url, **kwargs)
+        return super().delete(url=self.first_part_url + url, **kwargs)
 
     def get_oAuth_token(self) -> str:
         if self.is_token_valid():
@@ -55,10 +56,14 @@ class JWTRequester(requests.Session):
 
     def modify_kwargs_for_bearer_token(self, kwargs: dict) -> dict:
         bearer_token = self.get_oAuth_token()
+        if 'headers' not in kwargs:
+            kwargs['headers'] = {}
 
         for arg in kwargs:
             if arg == 'headers':
                 headers = kwargs[arg]
+                if 'accept' not in headers:
+                    headers['accept'] = ''
                 if headers["accept"] is not None:
                     if headers["accept"] != '':
                         headers["accept"] = headers["accept"] + ", application/json"
@@ -75,7 +80,7 @@ class JWTRequester(requests.Session):
                    "sub": f"{self.client_id}",
                    "aud": "https://authenticatie.vlaanderen.be/op",
                    "exp": datetime.datetime.utcnow() + datetime.timedelta(minutes=1),
-                   "jti": ''.join(random.choice(string.ascii_lowercase) for _ in range(20))
+                   "jti": ''.join(choice(string.ascii_lowercase) for _ in range(20))
                    }
 
         with open(self.private_key_path) as private_key:

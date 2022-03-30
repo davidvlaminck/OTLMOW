@@ -1,8 +1,9 @@
 from datetime import datetime
 
-from OTLMOW.Facility.CertRequester import CertRequester
 from OTLMOW.Facility.EMInfraImporter import EMInfraImporter
+from OTLMOW.Facility.JWTRequester import JWTRequester
 from OTLMOW.Facility.OTLFacility import OTLFacility
+from OTLMOW.Facility.RequesterFactory import RequesterFactory
 from OTLMOW.Loggers.ConsoleLogger import ConsoleLogger
 from OTLMOW.Loggers.LoggerCollection import LoggerCollection
 from OTLMOW.Loggers.TxtLogger import TxtLogger
@@ -12,7 +13,7 @@ from OTLMOW.OTLModel.Classes.HoortBij import HoortBij
 from OTLMOW.OTLModel.Classes.LEDDriver import LEDDriver
 from OTLMOW.OTLModel.Classes.Laagspanningsbord import Laagspanningsbord
 from OTLMOW.OTLModel.Classes.Montagekast import Montagekast
-#from OTLMOW.OTLModel.Classes.PunctueleVerlichtingsmast import PunctueleVerlichtingsmast
+# from OTLMOW.OTLModel.Classes.PunctueleVerlichtingsmast import PunctueleVerlichtingsmast
 from OTLMOW.OTLModel.Classes.RetroreflecterendVerkeersbord import RetroreflecterendVerkeersbord
 from OTLMOW.OTLModel.Classes.Stroomkring import Stroomkring
 from OTLMOW.OTLModel.Classes.Sturing import Sturing
@@ -20,23 +21,22 @@ from OTLMOW.OTLModel.Classes.VerlichtingstoestelLED import VerlichtingstoestelLE
 from OTLMOW.OTLModel.Classes.Voedt import Voedt
 from OTLMOW.OTLModel.Classes.VoedtAangestuurd import VoedtAangestuurd
 from OTLMOW.OTLModel.Classes.Wegkantkast import Wegkantkast
-from OTLMOW.OTLModel.Datatypes.DtcAdres import DtcAdresWaarden
-from OTLMOW.OTLModel.Datatypes.DtcDocument import DtcDocumentWaarden, DtcDocument
 
 if __name__ == '__main__':
     logger = LoggerCollection([
         TxtLogger(r'C:\temp\pythonLogging\pythonlog.txt'),
         ConsoleLogger()])
-    otl_facility = OTLFacility(logger, enable_relation_features=True)
+    otl_facility = OTLFacility(instanceLogger=logger,
+                               enable_relation_features=True,
+                               settings_path='C:\\resources\\settings_OTLMOW.json')
 
     # add EM-Infra assets through API
     input_uuids = ['e8b4022a-00d6-4b01-9766-0e50ecfda150', '63b832e0-16be-4edb-a6ac-2fe8ff3f786b',
                    '0a1d21eb-f0d7-4d6d-8778-67d38167c10b']
 
-    cert_path = r'C:\resources\datamanager_eminfra_prd.awv.vlaanderen.be.crt'
-    key_path = r'C:\resources\datamanager_eminfra_prd.awv.vlaanderen.be.key'
-    certRequester = CertRequester(cert_path, key_path)
-    importer = EMInfraImporter(requester=certRequester)
+    requester = RequesterFactory.create_requester(settings=otl_facility.settings, auth_type='JWT', env='prd')
+
+    importer = EMInfraImporter(requester=requester)
 
     # fetch assets, based on a list of uuids
     assets = importer.import_assets_from_webservice_by_uuids(input_uuids)

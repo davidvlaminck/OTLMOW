@@ -14,7 +14,7 @@ class EMInfraImporter:
         self.requester = requester
 
     def import_assets_from_webservice_by_uuids(self, asset_uuids: [str]) -> [OTLObject]:
-        url = f"https://services.apps.mow.vlaanderen.be/eminfra/core/api/otl/assets/search"
+        url = "eminfra/core/api/otl/assets/search"
         asset_list_string = '", "'.join(asset_uuids)
         body = '{"filters": { "uuid": ' + f'["{asset_list_string}"]' + ' }}'
         json_data = json.loads(body)
@@ -30,7 +30,7 @@ class EMInfraImporter:
         return asset_list
 
     def import_assetrelaties_from_webservice_by_assetuuid(self, asset_uuid: str) -> [OTLObject]:
-        url = f"https://services.apps.mow.vlaanderen.be/eminfra/core/api/otl/assetrelaties/search"
+        url = "eminfra/core/api/otl/assetrelaties/search"
         body = '{"filters": { "asset": ' + f'["{asset_uuid}"]' + ' }}'
         json_data = json.loads(body)
         response = self.requester.post(url, json=json_data)

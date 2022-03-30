@@ -2,6 +2,7 @@
 
 from OTLMOW.Facility.EMInfraImporter import EMInfraImporter
 from OTLMOW.Facility.OTLFacility import OTLFacility
+from OTLMOW.Facility.RequesterFactory import RequesterFactory
 from OTLMOW.Loggers.ConsoleLogger import ConsoleLogger
 from OTLMOW.Loggers.TxtLogger import TxtLogger
 from OTLMOW.Loggers.LoggerCollection import LoggerCollection
@@ -11,7 +12,7 @@ if __name__ == '__main__':
     logger = LoggerCollection([
         TxtLogger(r'C:\temp\pythonLogging\pythonlog.txt'),
         ConsoleLogger()])
-    otl_facility = OTLFacility(logger)
+    otl_facility = OTLFacility(logger, settings_path='C:\\resources\\settings_OTLMOW.json')
 
     input_uuids = ['eb45c3a5-2bf9-4c56-b665-2a7dafb6b709', 'c22298c5-1978-49c9-83ec-a2ffd7a71665',
                    '2caf2a3c-bc45-454c-8602-26dbfc2ea3bd', '3d22fd7e-d45d-4553-973f-87a18c29f428',
@@ -31,9 +32,9 @@ if __name__ == '__main__':
                    '83d761ca-62e6-4951-9a0d-83c416d4a44c', '2f92ba74-9011-4dda-9935-51b5e00a097d',
                    '0e507a88-cf7c-461b-bdb5-cf092b171105', '400919e2-cca4-424b-8f96-4003732bdf2b']
 
-    cert_path = r'C:\resources\datamanager_eminfra_prd.awv.vlaanderen.be.crt'
-    key_path = r'C:\resources\datamanager_eminfra_prd.awv.vlaanderen.be.key'
-    importer = EMInfraImporter(cert_path=cert_path, key_path=key_path)
+    requester = RequesterFactory.create_requester(settings=otl_facility.settings, auth_type='JWT', env='prd')
+
+    importer = EMInfraImporter(requester=requester)
 
     # fetch assets, based on a list of uuids
     assets = importer.import_assets_from_webservice_by_uuids(input_uuids)

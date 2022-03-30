@@ -1,3 +1,4 @@
+import json
 from collections import defaultdict
 
 from OTLMOW.Facility.AssetFactory import AssetFactory
@@ -25,7 +26,7 @@ from OTLMOW.PostenMapping.PostenInMemoryCreator import PostenInMemoryCreator
 
 
 class OTLFacility:
-    def __init__(self, instanceLogger: AbstractLogger, enable_relation_features: bool = False):
+    def __init__(self, instanceLogger: AbstractLogger, enable_relation_features: bool = False, settings_path: str = ''):
         self.davieImporter = DavieImporter()
         self.logger = instanceLogger
         self.collector = None
@@ -41,6 +42,10 @@ class OTLFacility:
         self.relatieValidator: None | RelatieValidator = None
         self.relatie_creator: None | RelatieCreator = None
         self.visualiser = Visualiser()
+        self.settings: dict = {}
+
+        if settings_path != '':
+            self.load_settings(settings_path)
 
         if enable_relation_features:
             self.init_relatie_validation()
@@ -106,3 +111,7 @@ class OTLFacility:
             if ins_ond_cls is None:
                 continue
             cls["attributen"].extend(ins_ond_cls["attributen"])
+
+    def load_settings(self, settings_path):
+        with open(settings_path) as settings_file:
+            self.settings = json.load(settings_file)

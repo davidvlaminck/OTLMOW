@@ -6,6 +6,8 @@ from OTLMOW.Loggers.ConsoleLogger import ConsoleLogger
 from OTLMOW.Loggers.LoggerCollection import LoggerCollection
 from OTLMOW.Loggers.TxtLogger import TxtLogger
 from OTLMOW.OTLModel.Classes.Bevestiging import Bevestiging
+from OTLMOW.OTLModel.Classes.Flitsgroep import Flitsgroep
+from OTLMOW.OTLModel.Classes.Flitspaalbehuizing import Flitspaalbehuizing
 from OTLMOW.OTLModel.Classes.HoortBij import HoortBij
 from OTLMOW.OTLModel.Classes.Laagspanningsbord import Laagspanningsbord
 from OTLMOW.OTLModel.Classes.Stroomkring import Stroomkring
@@ -16,10 +18,12 @@ if __name__ == '__main__':
     logger = LoggerCollection([
         TxtLogger(r'C:\temp\pythonLogging\pythonlog.txt'),
         ConsoleLogger()])
-    otl_facility = OTLFacility(logger)
+    otl_facility = OTLFacility(logger, enable_relation_features=True)
 
     # add EM-Infra assets through API
-    input_uuids = [ '85ab7233-4d69-4702-841e-aace94b42410',
+    input_uuids = ['6fec1fbf-9037-4daa-976d-4ccd54e2d554', '1c6dbec3-62e6-4e30-8fe1-19ba58a73151',
+                   'e88f3270-91ed-4fa8-a605-0969805790d4', 'adbd8726-d026-4c5d-80e1-5343a2fa4d34',
+                   '60b2dcaa-69f1-4fac-9062-9c1381eecd2e', '85ab7233-4d69-4702-841e-aace94b42410',
                    'f63bfc00-2951-401e-8dbb-6667a479e0ea']
 
     cert_path = r'C:\resources\datamanager_eminfra_prd.awv.vlaanderen.be.crt'
@@ -52,10 +56,7 @@ if __name__ == '__main__':
     flitsgroep.externeReferentie.externReferentienummer = 'https://bmidata.drive-it.be/sites/sites/321'
     flitsgroep.externeReferentie.externePartij = 'Belgisch Meet Instituut'
 
-    hoortbijrelatie_beh_1 = HoortBij()
-    hoortbijrelatie_beh_1.assetId.identificator = "360C6-360C6.1"
-    hoortbijrelatie_beh_1.bronAssetId.identificator = '360C6.1'
-    hoortbijrelatie_beh_1.doelAssetId.identificator = '360C6'
+    hoortbijrelatie_beh_1 = otl_facility.relatie_creator.create_relation(bron=flitspaalbehuizing1, doel=flitsgroep, relatie=HoortBij)
 
     # TODO: copy paste flitspaalbehuizing1 + hoortbij
 
@@ -66,11 +67,11 @@ if __name__ == '__main__':
     flitspaalbehuizing3.assetId.identificator = '421C6.1'
     flitspaalbehuizing3.geometry = 'POINT Z (173600.1 173138.6 0)'
 
-    hoortbijrelatie_beh_3_legacy = HoortBij()
-    hoortbijrelatie_beh_3_legacy.assetId.identificator = '421C6.1-legacy'
-    hoortbijrelatie_beh_3_legacy.bronAssetId.identificator = '421C6.1'
-    hoortbijrelatie_beh_3_legacy.doelAssetId.identificator = importer.get_asset_id_from_uuid_and_typeURI(
-        '1c6dbec3-62e6-4e30-8fe1-19ba58a73151', 'https://lgc.data.wegenenverkeer.be/ns/installatie#SNCPaal')
+    hoortbijrelatie_beh_3_legacy = otl_facility.relatie_creator.create_relation(bron=flitspaalbehuizing3,
+                                                                                doel=next(a for a in assets if
+                                                                                          a.assetId.identificator[
+                                                                                          0:36] == '1c6dbec3-62e6-4e30-8fe1-19ba58a73151'),
+                                                                                relatie=HoortBij)
 
     flitsgroep2 = Flitsgroep()
     flitsgroep2.naam = '421C6'
@@ -78,78 +79,67 @@ if __name__ == '__main__':
     flitsgroep2.toestand = 'in-gebruik'
     flitsgroep2.isRoodLicht = False
 
-    hoortbijrelatie_flitsgroep2_legacy = HoortBij()
-    hoortbijrelatie_flitsgroep2_legacy.assetId.identificator = '421C6-legacy'
-    hoortbijrelatie_flitsgroep2_legacy.bronAssetId.identificator = '421C6'
-    hoortbijrelatie_flitsgroep2_legacy.doelAssetId.identificator = importer.get_asset_id_from_uuid_and_typeURI(
-        '6fec1fbf-9037-4daa-976d-4ccd54e2d554', 'https://lgc.data.wegenenverkeer.be/ns/installatie#SNC')
+    hoortbijrelatie_flitsgroep2_legacy = otl_facility.relatie_creator.create_relation(bron=flitsgroep2,
+                                                                                      doel=next(a for a in assets if
+                                                                                                a.assetId.identificator[
+                                                                                                0:36] == '6fec1fbf-9037-4daa-976d-4ccd54e2d554'),
+                                                                                      relatie=HoortBij)
 
-    hoortbijrelatie_beh_3 = HoortBij()
-    hoortbijrelatie_beh_3.assetId.identificator = '421C6-421C6.1'
-    hoortbijrelatie_beh_3.bronAssetId.identificator = '421C6.1'
-    hoortbijrelatie_beh_3.doelAssetId.identificator = '421C6'
+    hoortbijrelatie_beh_3 = otl_facility.relatie_creator.create_relation(bron=flitspaalbehuizing3, doel=flitsgroep2,
+                                                                         relatie=HoortBij)
 
     str = Stroomkring()
     str.assetId.identificator = '421C6-str'
 
-    hoortbijrelatie_str_legacy = HoortBij()
-    hoortbijrelatie_str_legacy.assetId.identificator = '421C6-str-legacy'
-    hoortbijrelatie_str_legacy.bronAssetId.identificator = '421C6-str'
-    hoortbijrelatie_str_legacy.doelAssetId.identificator = importer.get_asset_id_from_uuid_and_typeURI(
-        'adbd8726-d026-4c5d-80e1-5343a2fa4d34', 'https://lgc.data.wegenenverkeer.be/ns/installatie#LSDeel')
+    hoortbijrelatie_str_legacy = otl_facility.relatie_creator.create_relation(bron=str,
+                                                                              doel=next(a for a in assets if
+                                                                                        a.assetId.identificator[
+                                                                                        0:36] == 'adbd8726-d026-4c5d-80e1-5343a2fa4d34'),
+                                                                              relatie=HoortBij)
 
-    voedingsrelatie_str_fp = Voedt()
-    voedingsrelatie_str_fp.assetId.identificator = "421C6.1-421C6-str"
-    voedingsrelatie_str_fp.bronAssetId.identificator = '421C6-str'
-    voedingsrelatie_str_fp.doelAssetId.identificator = '421C6.1'
+    voedingsrelatie_str_fp = otl_facility.relatie_creator.create_relation(bron=str, doel=flitspaalbehuizing3, relatie=Voedt)
 
     lsb = Laagspanningsbord()
     lsb.assetId.identificator = '421C6-lsb'
 
-    hoortbijrelatie_lsb_legacy = HoortBij()
-    hoortbijrelatie_lsb_legacy.assetId.identificator = '421C6-lsb-legacy'
-    hoortbijrelatie_lsb_legacy.bronAssetId.identificator = '421C6-lsb'
-    hoortbijrelatie_lsb_legacy.doelAssetId.identificator = importer.get_asset_id_from_uuid_and_typeURI(
-        'adbd8726-d026-4c5d-80e1-5343a2fa4d34', 'https://lgc.data.wegenenverkeer.be/ns/installatie#LSDeel')
+    hoortbijrelatie_lsb_legacy = otl_facility.relatie_creator.create_relation(bron=lsb,
+                                                                              doel=next(a for a in assets if
+                                                                                        a.assetId.identificator[
+                                                                                        0:36] == 'adbd8726-d026-4c5d-80e1-5343a2fa4d34'),
+                                                                              relatie=HoortBij)
 
-    bevestigingsrelatie_str_lsb = Bevestiging()
-    bevestigingsrelatie_str_lsb.assetId.identificator = "421C6-lsb-421C6-str"
-    bevestigingsrelatie_str_lsb.bronAssetId.identificator = '421C6-lsb'
-    bevestigingsrelatie_str_lsb.doelAssetId.identificator = '421C6-str'
+    bevestigingsrelatie_str_lsb = otl_facility.relatie_creator.create_relation(bron=lsb, doel=str, relatie=Bevestiging)
 
-    bevestigingsrelatie_meter_lsb = Bevestiging()
-    bevestigingsrelatie_meter_lsb.assetId.identificator = "421C6-lsb-3013974"
-    bevestigingsrelatie_meter_lsb.bronAssetId.identificator = '421C6-lsb'
-    bevestigingsrelatie_meter_lsb.doelAssetId.identificator = importer.get_asset_id_from_uuid_and_typeURI(
-        '85ab7233-4d69-4702-841e-aace94b42410', 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#EnergiemeterDNB')
+    bevestigingsrelatie_meter_lsb = otl_facility.relatie_creator.create_relation(bron=lsb,
+                                                                                 doel=next(a for a in assets if
+                                                                                           a.assetId.identificator[
+                                                                                           0:36] == '85ab7233-4d69-4702-841e-aace94b42410'),
+                                                                                 relatie=Bevestiging)
 
     kast = Wegkantkast()
     kast.naam = 'R23N3.85.K'
     kast.assetId.identificator = 'R23N3.85.K'
+    kast.mplan = []
 
-    bevestigingsrelatie_aansluiting_kast = Bevestiging()  # TODO
-    bevestigingsrelatie_aansluiting_kast.assetId.identificator = "R23N3.85.K-aansluiting"
-    bevestigingsrelatie_aansluiting_kast.bronAssetId.identificator = 'R23N3.85.K'
-    bevestigingsrelatie_aansluiting_kast.doelAssetId.identificator = importer.get_asset_id_from_uuid_and_typeURI(
-        'f63bfc00-2951-401e-8dbb-6667a479e0ea', 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DNBLaagspanning')
+    bevestigingsrelatie_aansluiting_kast = otl_facility.relatie_creator.create_relation(bron=kast,
+                                                                                        doel=next(a for a in assets if
+                                                                                                  a.assetId.identificator[
+                                                                                                  0:36] == 'f63bfc00-2951-401e-8dbb-6667a479e0ea'),
+                                                                                        relatie=Bevestiging)
 
-    bevestigingsrelatie_kast_lsb = Bevestiging()
-    bevestigingsrelatie_kast_lsb.assetId.identificator = "421C6-lsb-R23N3.85.K"
-    bevestigingsrelatie_kast_lsb.bronAssetId.identificator = '421C6-lsb'
-    bevestigingsrelatie_kast_lsb.doelAssetId.identificator = 'R23N3.85.K'
+    bevestigingsrelatie_kast_lsb = otl_facility.relatie_creator.create_relation(bron=kast, doel=lsb, relatie=Bevestiging)
 
-    hoortbijrelatie_kast_legacy = HoortBij()
-    hoortbijrelatie_kast_legacy.assetId.identificator = 'R23N3.85.K-legacy'
-    hoortbijrelatie_kast_legacy.bronAssetId.identificator = 'R23N3.85.K'
-    hoortbijrelatie_kast_legacy.doelAssetId.identificator = importer.get_asset_id_from_uuid_and_typeURI(
-        'e88f3270-91ed-4fa8-a605-0969805790d4', 'https://lgc.data.wegenenverkeer.be/ns/installatie#Kast')
+    hoortbijrelatie_kast_legacy = otl_facility.relatie_creator.create_relation(bron=kast,
+                                                                               doel=next(a for a in assets if
+                                                                                         a.assetId.identificator[
+                                                                                         0:36] == 'e88f3270-91ed-4fa8-a605-0969805790d4'),
+                                                                               relatie=HoortBij)
 
-    # energiemeter
-    voedingsrelatie_str_meter = Voedt()
-    voedingsrelatie_str_meter.assetId.identificator = "3013974-421C6-str"
-    voedingsrelatie_str_meter.bronAssetId.identificator = importer.get_asset_id_from_uuid_and_typeURI(
-        '85ab7233-4d69-4702-841e-aace94b42410', 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#EnergiemeterDNB')
-    voedingsrelatie_str_meter.doelAssetId.identificator = '421C6-str'
+    voedingsrelatie_str_meter = otl_facility.relatie_creator.create_relation(doel=str,
+                                                                             bron=next(a for a in assets if
+                                                                                       a.assetId.identificator[
+                                                                                       0:36] == '85ab7233-4d69-4702-841e-aace94b42410'),
+                                                                             relatie=Voedt)
 
     lijst_otl_objecten = [flitspaalbehuizing1, flitsgroep, hoortbijrelatie_beh_1, flitspaalbehuizing3, flitsgroep2,
                           hoortbijrelatie_beh_3, str, voedingsrelatie_str_fp, lsb, bevestigingsrelatie_str_lsb, kast,
@@ -162,10 +152,8 @@ if __name__ == '__main__':
     print(encoded_json)
 
     # write the json file
-    filepath = f'Output/{datetime.now().strftime("%Y%m%d%H%M%S")}_export.json'
+    filepath = f'Output/{datetime.now().strftime("%Y%m%d%H%M%S")}_export_RLC_SNC.json'
     otl_facility.encoder.write_json_to_file(encoded_json, filepath)
-
-    otl_facility.visualiser.show(lijst_otl_objecten)
 
     lijst_otl_objecten.extend(assets)
 

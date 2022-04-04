@@ -539,6 +539,20 @@
       ]
     },
     {
+      "uri" : "https://lgc.data.wegenenverkeer.be/ns/installatie#Poortbedieningen",
+      "naam" : "Poortbedieningen",
+      "label" : "ADP",
+      "definitie" : "AUTOMATISCHE DEUREN EN POORTEN",
+      "abstract" : false,
+      "superClasses" : [
+      ],
+      "attributen" : [
+        {
+          "attribuut" : "https://ins.data.wegenenverkeer.be/ns/attribuut#EMObject.notitieinspectie"
+        }
+      ]
+    },
+    {
       "uri" : "https://lgc.data.wegenenverkeer.be/ns/installatie#PLCLegacy",
       "naam" : "PLCLegacy",
       "label" : "Programmeerbare automaat (Legacy)",
@@ -1072,20 +1086,6 @@
         },
         {
           "attribuut" : "https://ins.data.wegenenverkeer.be/ns/attribuut#EMObject.toestandVerankering"
-        }
-      ]
-    },
-    {
-      "uri" : "https://lgc.data.wegenenverkeer.be/ns/installatie#ADP",
-      "naam" : "ADP",
-      "label" : "Automatische deuren en poorten",
-      "definitie" : "AUTOMATISCHE DEUREN EN POORTEN",
-      "abstract" : false,
-      "superClasses" : [
-      ],
-      "attributen" : [
-        {
-          "attribuut" : "https://ins.data.wegenenverkeer.be/ns/attribuut#EMObject.notitieinspectie"
         }
       ]
     },
@@ -7504,7 +7504,7 @@
     }
   ],
   "metadata" : {
-    "versie" : "2022-03-01T10:05:43.474+01:00",
+    "versie" : "2022-04-04T14:45:25.580+02:00",
     "naam" : "inspectie-en-onderhoud",
     "omschrijving" : "Gegenereerd oef model voor inspectie-en-onderhoud"
   }

@@ -14,7 +14,7 @@ class GeometrieInMemoryCreator:
 
         lijst = []
         for row in data:
-            c = GeometrieType(row[0], row[1], row[2], row[3], row[4], row[5], row[6])
+            c = GeometrieType(row[0].replace('-test', ''), row[1], row[2], row[3], row[4], row[5], row[6])
             lijst.append(c)
 
         return lijst

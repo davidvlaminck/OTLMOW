@@ -4,6 +4,7 @@ from OTLMOW.OTLModel.Classes.VerlichtingstoestelConnector import Verlichtingstoe
 from OTLMOW.OTLModel.Classes.Verlichtingstoestel import Verlichtingstoestel
 from OTLMOW.OTLModel.Datatypes.BooleanField import BooleanField
 from OTLMOW.OTLModel.Datatypes.DteKleurRAL import DteKleurRAL
+from OTLMOW.OTLModel.Datatypes.KlArmatuurkleur import KlArmatuurkleur
 from OTLMOW.OTLModel.Datatypes.KlWvLedAantalTeVerlichtenRijstroken import KlWvLedAantalTeVerlichtenRijstroken
 from OTLMOW.OTLModel.Datatypes.KlWvLedKleurTemp import KlWvLedKleurTemp
 from OTLMOW.OTLModel.Datatypes.KlWvLedLichtkleur import KlWvLedLichtkleur
@@ -20,7 +21,7 @@ class VerlichtingstoestelLED(VerlichtingstoestelConnector, Verlichtingstoestel):
  * de lichtstroom van de lichtbronnen hoofdzakelijk op het te verlichten oppervlak (doorlopende wegsectie, conflictgebied,...) te richten, teneinde de zichtbaarheid te verhogen;
  * de lichtstroom te beheersen zodat de weggebruikers niet verblind worden en de lichthinder beperkt wordt;
  * het optisch systeem, de lichtbronnen en de hulpapparatuur tegen uitwendige invloeden te beschermen
-De LED driver bevindt zich fysiek in het verlichtingstoestel maar wordt als een appart onderdeel behandeld."""
+De LED driver bevindt zich fysiek in het verlichtingstoestel maar wordt als een apart onderdeel behandeld."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#VerlichtingstoestelLED'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
@@ -40,6 +41,8 @@ De LED driver bevindt zich fysiek in het verlichtingstoestel maar wordt als een 
                                            naam='armatuurkleur',
                                            label='armatuurkleur',
                                            objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#VerlichtingstoestelLED.armatuurkleur',
+                                           usagenote='Attribuut uit gebruik sinds versie 2.3.0 ',
+                                           deprecated_version='2.3.0',
                                            definition='De kleur van de zichtbare buitenkant van het verlichtingstoestel.',
                                            owner=self)
 
@@ -56,6 +59,13 @@ De LED driver bevindt zich fysiek in het verlichtingstoestel maar wordt als een 
                                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#VerlichtingstoestelLED.isFaunavriendelijk',
                                                 definition='Geeft aan of de lichtkleur van de verlichting is aangepast (gebruik van oranje/rode/amberkleur ipv wit licht) zodat deze als minder storend wordt ervaren door fauna zoals bijvoorbeeld vleermuizen.',
                                                 owner=self)
+
+        self._kleurArmatuur = OTLAttribuut(field=KlArmatuurkleur,
+                                           naam='kleurArmatuur',
+                                           label='kleur armatuur',
+                                           objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#VerlichtingstoestelLED.kleurArmatuur',
+                                           definition='De kleur van de zichtbare buitenkant van het verlichtingstoestel.',
+                                           owner=self)
 
         self._kleurTemperatuur = OTLAttribuut(field=KlWvLedKleurTemp,
                                               naam='kleurTemperatuur',
@@ -103,7 +113,7 @@ De LED driver bevindt zich fysiek in het verlichtingstoestel maar wordt als een 
                                                 naam='verlichtingsNiveau',
                                                 label='verlichtings niveau',
                                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#VerlichtingstoestelLED.verlichtingsNiveau',
-                                                definition='Een set van verlichtingstechnische eisen zoals gemiddelde luminantie, verlichtingssterkte, uniformeiten.',
+                                                definition='Een set van verlichtingstechnische eisen zoals gemiddelde luminantie, verlichtingssterkte, uniformiteiten.',
                                                 owner=self)
 
     @property
@@ -141,6 +151,15 @@ De LED driver bevindt zich fysiek in het verlichtingstoestel maar wordt als een 
     @isFaunavriendelijk.setter
     def isFaunavriendelijk(self, value):
         self._isFaunavriendelijk.set_waarde(value, owner=self)
+
+    @property
+    def kleurArmatuur(self):
+        """De kleur van de zichtbare buitenkant van het verlichtingstoestel."""
+        return self._kleurArmatuur.waarde
+
+    @kleurArmatuur.setter
+    def kleurArmatuur(self, value):
+        self._kleurArmatuur.set_waarde(value, owner=self)
 
     @property
     def kleurTemperatuur(self):
@@ -198,7 +217,7 @@ De LED driver bevindt zich fysiek in het verlichtingstoestel maar wordt als een 
 
     @property
     def verlichtingsNiveau(self):
-        """Een set van verlichtingstechnische eisen zoals gemiddelde luminantie, verlichtingssterkte, uniformeiten."""
+        """Een set van verlichtingstechnische eisen zoals gemiddelde luminantie, verlichtingssterkte, uniformiteiten."""
         return self._verlichtingsNiveau.waarde
 
     @verlichtingsNiveau.setter

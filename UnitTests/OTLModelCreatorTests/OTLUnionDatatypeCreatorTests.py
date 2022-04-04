@@ -181,7 +181,7 @@ class OTLUnionDatatypeCreatorTests(unittest.TestCase):
     def test_WriteToFileDtcAdresOSLODatatypeUnion(self):
         logger = NoneLogger()
 
-        file_location = os.path.abspath(os.path.join(os.sep, ROOT_DIR, 'src/OTLMOW/InputFiles/OTL.db'))
+        file_location = os.path.abspath(os.path.join(os.sep, ROOT_DIR, 'src/OTLMOW/InputFiles/OTL 2.3.db'))
         sql_reader = SQLDbReader(file_location)
         oslo_creator = OSLOInMemoryCreator(sql_reader)
         collector = OSLOCollector(oslo_creator)

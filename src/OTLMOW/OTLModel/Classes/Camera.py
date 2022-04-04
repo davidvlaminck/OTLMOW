@@ -2,10 +2,12 @@
 from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLMOW.OTLModel.Classes.AIMNaamObject import AIMNaamObject
 from OTLMOW.OTLModel.Datatypes.BooleanField import BooleanField
+from OTLMOW.OTLModel.Datatypes.DtcCameraBeeldverwerking import DtcCameraBeeldverwerking
 from OTLMOW.OTLModel.Datatypes.DtcDocument import DtcDocument
 from OTLMOW.OTLModel.Datatypes.DteIPv4Adres import DteIPv4Adres
 from OTLMOW.OTLModel.Datatypes.KlCameraMerk import KlCameraMerk
 from OTLMOW.OTLModel.Datatypes.KlCameraModelnaam import KlCameraModelnaam
+from OTLMOW.OTLModel.Datatypes.KlServicePrioriteit import KlServicePrioriteit
 from OTLMOW.OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter
 from OTLMOW.OTLModel.Datatypes.StringField import StringField
 from OTLMOW.GeometrieArtefact.PuntGeometrie import PuntGeometrie
@@ -22,11 +24,22 @@ class Camera(AIMNaamObject, PuntGeometrie):
         AIMNaamObject.__init__(self)
         PuntGeometrie.__init__(self)
 
+        self._beeldverwerkingsinstelling = OTLAttribuut(field=DtcCameraBeeldverwerking,
+                                                        naam='beeldverwerkingsinstelling',
+                                                        label='beeldverwerkingsinstelling',
+                                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Camera.beeldverwerkingsinstelling',
+                                                        usagenote='Wanneer de camera de beeldverwerking niet zelf doet maar enkel beelden  verstuurt voor verwerking in een externe eenheid, moet die externe eenheid als aparte asset aangemaakt worden indien het specifieke type bestaat in de OTL of moet een instantie van Software gebruikt worden wanneer geen specifieke externe verwerkingseenheid voorzien is. 
+Dit attribuut kan dus enkel gebruikt worden indien de camera of een verwerkingseenheid van de camera zelf de analyse doet en die analyse doorstuurt naar een asset die met de analyse werkt en niet met de beelden.',
+                                                        kardinaliteit_max='*',
+                                                        definition='Geeft aan welke types beeldverwerking die camera zelf uitvoert dus zonder gebruik te maken van een externe verwerkingseenheid.',
+                                                        owner=self)
+
         self._configBestandAid = OTLAttribuut(field=DtcDocument,
                                               naam='configBestandAid',
                                               label='configuratie bestand AID',
                                               objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Camera.configBestandAid',
-                                              usagenote="Enkel in te gebruiken wanneer de camera zelf een AID component bevat (attribuut heeftAid van Camera is 1). Voor camera's met een externe AID module maakt het configuratiebestand deel uit van die aparte AID module. ",
+                                              usagenote='Attribuut uit gebruik sinds versie 2.3.0 ',
+                                              deprecated_version='2.3.0',
                                               definition='Het bestand met de configuratie van de AID component die deel is van de camera.',
                                               owner=self)
 
@@ -41,6 +54,8 @@ class Camera(AIMNaamObject, PuntGeometrie):
                                       naam='heeftAid',
                                       label='heeft AID',
                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Camera.heeftAid',
+                                      usagenote='Attribuut uit gebruik sinds versie 2.3.0 ',
+                                      deprecated_version='2.3.0',
                                       definition='Een AID-camera is een CCTV-camera met geintegreerde AID-module. Deze camera genereert naast een camerabeeld ook metadata ivm wat zich afspeelt op het beeld. Een voorbeeld hiervan is gestopte voertuigen.',
                                       owner=self)
 
@@ -48,6 +63,8 @@ class Camera(AIMNaamObject, PuntGeometrie):
                                               naam='heeftSpitsstrook',
                                               label='heeft spitsstrook',
                                               objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Camera.heeftSpitsstrook',
+                                              usagenote='Attribuut uit gebruik sinds versie 2.3.0 ',
+                                              deprecated_version='2.3.0',
                                               definition='Locatie-eigenschap van een camera. Dit attribuut geeft aan of de camera ingezet wordt om een spitsstrook te schouwen.',
                                               owner=self)
 
@@ -87,6 +104,13 @@ class Camera(AIMNaamObject, PuntGeometrie):
                                           definition='De hoogte waarop de camera bevestigd is, gemeten ten opzichte van het maaiveld waarin de draagconstructie voor de camera verankerd is.',
                                           owner=self)
 
+        self._servicePrioriteit = OTLAttribuut(field=KlServicePrioriteit,
+                                               naam='servicePrioriteit',
+                                               label='Service Prioriteit',
+                                               objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Camera.servicePrioriteit',
+                                               definition='Het prioriteitsniveau dat aangeeft hoe dringend iets moet onderhouden/gerepareerd worden',
+                                               owner=self)
+
         self._technischeFiche = OTLAttribuut(field=DtcDocument,
                                              naam='technischeFiche',
                                              label='technische fiche',
@@ -94,6 +118,15 @@ class Camera(AIMNaamObject, PuntGeometrie):
                                              usagenote='Bestanden van het type pdf.',
                                              definition="Technische fiche van dit element met opsplitsing tussen CCTV, AID en PTZ-camera's.",
                                              owner=self)
+
+    @property
+    def beeldverwerkingsinstelling(self):
+        """Geeft aan welke types beeldverwerking die camera zelf uitvoert dus zonder gebruik te maken van een externe verwerkingseenheid."""
+        return self._beeldverwerkingsinstelling.waarde
+
+    @beeldverwerkingsinstelling.setter
+    def beeldverwerkingsinstelling(self, value):
+        self._beeldverwerkingsinstelling.set_waarde(value, owner=self)
 
     @property
     def configBestandAid(self):
@@ -175,6 +208,15 @@ class Camera(AIMNaamObject, PuntGeometrie):
     @opstelhoogte.setter
     def opstelhoogte(self, value):
         self._opstelhoogte.set_waarde(value, owner=self)
+
+    @property
+    def servicePrioriteit(self):
+        """Het prioriteitsniveau dat aangeeft hoe dringend iets moet onderhouden/gerepareerd worden"""
+        return self._servicePrioriteit.waarde
+
+    @servicePrioriteit.setter
+    def servicePrioriteit(self, value):
+        self._servicePrioriteit.set_waarde(value, owner=self)
 
     @property
     def technischeFiche(self):

@@ -21,7 +21,7 @@ class DtcBSSRandafwerkingWaarden(AttributeInfo):
                                            naam='randafwerking',
                                            label='randafwerking',
                                            objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcBSSRandafwerking.randafwerking',
-                                           definition='De mogelijke wijzen van randafwerking van de verharding.',
+                                           definition='De wijze waarop de rand van de bestrating is afgewerkt.',
                                            owner=self)
 
     @property
@@ -35,7 +35,7 @@ class DtcBSSRandafwerkingWaarden(AttributeInfo):
 
     @property
     def randafwerking(self):
-        """De mogelijke wijzen van randafwerking van de verharding."""
+        """De wijze waarop de rand van de bestrating is afgewerkt."""
         return self._randafwerking.waarde
 
     @randafwerking.setter

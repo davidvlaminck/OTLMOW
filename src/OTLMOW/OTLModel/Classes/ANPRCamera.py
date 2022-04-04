@@ -7,6 +7,7 @@ from OTLMOW.OTLModel.Datatypes.DteIPv4Adres import DteIPv4Adres
 from OTLMOW.OTLModel.Datatypes.KlANPRMerk import KlANPRMerk
 from OTLMOW.OTLModel.Datatypes.KlANPRModelnaam import KlANPRModelnaam
 from OTLMOW.OTLModel.Datatypes.KlAlgRijrichting import KlAlgRijrichting
+from OTLMOW.OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter
 from OTLMOW.OTLModel.Datatypes.StringField import StringField
 from OTLMOW.GeometrieArtefact.PuntGeometrie import PuntGeometrie
 
@@ -56,6 +57,14 @@ class ANPRCamera(AIMNaamObject, PuntGeometrie):
                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#ANPRCamera.modelnaam',
                                        definition='De modelnaam van de ANPR-camera.',
                                        owner=self)
+
+        self._opstelhoogte = OTLAttribuut(field=KwantWrdInMeter,
+                                          naam='opstelhoogte',
+                                          label='opstelhoogte',
+                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#ANPRCamera.opstelhoogte',
+                                          usagenote='De plaats waar de draagconstructie in de grond bevestigd is, bepaalt van waar gemeten wordt voor het bepalen van de opstelhoogte. Wanneer een camera die een brugdek overziet, bevestigd is aan een paal die naast de brug staat, wordt de hoogte gemeten vanaf de basis van de paal en niet vanaf het brugdek.',
+                                          definition='De hoogte waarop de camera bevestigd is, gemeten ten opzichte van het maaiveld waarin de draagconstructie voor de camera verankerd is.',
+                                          owner=self)
 
         self._rijrichting = OTLAttribuut(field=KlAlgRijrichting,
                                          naam='rijrichting',
@@ -116,6 +125,15 @@ class ANPRCamera(AIMNaamObject, PuntGeometrie):
     @modelnaam.setter
     def modelnaam(self, value):
         self._modelnaam.set_waarde(value, owner=self)
+
+    @property
+    def opstelhoogte(self):
+        """De hoogte waarop de camera bevestigd is, gemeten ten opzichte van het maaiveld waarin de draagconstructie voor de camera verankerd is."""
+        return self._opstelhoogte.waarde
+
+    @opstelhoogte.setter
+    def opstelhoogte(self, value):
+        self._opstelhoogte.set_waarde(value, owner=self)
 
     @property
     def rijrichting(self):

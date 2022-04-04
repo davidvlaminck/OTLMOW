@@ -24,14 +24,14 @@ class LEDDriver(AIMObject, PuntGeometrie):
                                               naam='maximaalVermogen',
                                               label='maximaal vermogen',
                                               objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#LEDDriver.maximaalVermogen',
-                                              definition='Maximaal afgenomen vermogen van de driver en lamp samen (incl. verlies/verbruik van de driver zelf).',
+                                              definition='Maximaal afgenomen vermogen van de driver en lamp/lichtbron samen (incl. verlies/verbruik van de driver zelf).',
                                               owner=self)
 
         self._maximaleAanstuurstroom = OTLAttribuut(field=KwantWrdInMilliAmpere,
                                                     naam='maximaleAanstuurstroom',
                                                     label='maximale aanstuurstroom',
                                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#LEDDriver.maximaleAanstuurstroom',
-                                                    definition='Maximale aanstuurstroom die de LED driver kan leveren.',
+                                                    definition='Maximale aanstuurstroom die de LED-driver kan leveren.',
                                                     owner=self)
 
         self._merk = OTLAttribuut(field=KlLEDDriverMerk,
@@ -52,12 +52,12 @@ class LEDDriver(AIMObject, PuntGeometrie):
                                       naam='protocol',
                                       label='protocol',
                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#LEDDriver.protocol',
-                                      definition="Protocol gebruikt door de LED driver voor het aansturen van de LED's.",
+                                      definition="Protocol gebruikt door de LED-driver voor het aansturen van de LED's.",
                                       owner=self)
 
     @property
     def maximaalVermogen(self):
-        """Maximaal afgenomen vermogen van de driver en lamp samen (incl. verlies/verbruik van de driver zelf)."""
+        """Maximaal afgenomen vermogen van de driver en lamp/lichtbron samen (incl. verlies/verbruik van de driver zelf)."""
         return self._maximaalVermogen.waarde
 
     @maximaalVermogen.setter
@@ -66,7 +66,7 @@ class LEDDriver(AIMObject, PuntGeometrie):
 
     @property
     def maximaleAanstuurstroom(self):
-        """Maximale aanstuurstroom die de LED driver kan leveren."""
+        """Maximale aanstuurstroom die de LED-driver kan leveren."""
         return self._maximaleAanstuurstroom.waarde
 
     @maximaleAanstuurstroom.setter
@@ -93,7 +93,7 @@ class LEDDriver(AIMObject, PuntGeometrie):
 
     @property
     def protocol(self):
-        """Protocol gebruikt door de LED driver voor het aansturen van de LED's."""
+        """Protocol gebruikt door de LED-driver voor het aansturen van de LED's."""
         return self._protocol.waarde
 
     @protocol.setter

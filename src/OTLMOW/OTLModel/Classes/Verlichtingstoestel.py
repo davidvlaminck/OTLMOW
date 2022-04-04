@@ -28,7 +28,7 @@ class Verlichtingstoestel(AIMNaamObject, PuntGeometrie):
 
         self._heeftAansluitkastGeintegreerd = OTLAttribuut(field=BooleanField,
                                                            naam='heeftAansluitkastGeintegreerd',
-                                                           label='heeft aansluitkast geintegreerd',
+                                                           label='heeft aansluitkast geïntegreerd',
                                                            objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Verlichtingstoestel.heeftAansluitkastGeintegreerd',
                                                            definition='Is de aansluitkast geïntegreerd?',
                                                            owner=self)

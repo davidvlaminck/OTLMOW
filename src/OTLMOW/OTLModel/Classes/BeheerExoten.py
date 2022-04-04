@@ -5,17 +5,19 @@ from OTLMOW.OTLModel.Datatypes.BooleanField import BooleanField
 from OTLMOW.OTLModel.Datatypes.KlBeheerExoten import KlBeheerExoten
 from OTLMOW.OTLModel.Datatypes.KlNazorgJaarfrequentie import KlNazorgJaarfrequentie
 from OTLMOW.OTLModel.Datatypes.KwantWrdInVierkanteMeter import KwantWrdInVierkanteMeter
+from OTLMOW.GeometrieArtefact.VlakGeometrie import VlakGeometrie
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class BeheerExoten(AIMObject):
+class BeheerExoten(AIMObject, VlakGeometrie):
     """Het beheerobject voor de exoten."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#BeheerExoten'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        super().__init__()
+        AIMObject.__init__(self)
+        VlakGeometrie.__init__(self)
 
         self._beheeroptie = OTLAttribuut(field=KlBeheerExoten,
                                          naam='beheeroptie',

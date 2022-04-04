@@ -3,17 +3,21 @@ from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLMOW.OTLModel.Classes.AIMObject import AIMObject
 from OTLMOW.OTLModel.Datatypes.BooleanField import BooleanField
 from OTLMOW.OTLModel.Datatypes.KlBeheerHoutigeVegetatie import KlBeheerHoutigeVegetatie
+from OTLMOW.GeometrieArtefact.LijnGeometrie import LijnGeometrie
+from OTLMOW.GeometrieArtefact.VlakGeometrie import VlakGeometrie
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class BeheerHoutigeVegetatie(AIMObject):
+class BeheerHoutigeVegetatie(AIMObject, LijnGeometrie, VlakGeometrie):
     """Het beheerobject voor de houtige vegetatie."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#BeheerHoutigeVegetatie'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        super().__init__()
+        AIMObject.__init__(self)
+        LijnGeometrie.__init__(self)
+        VlakGeometrie.__init__(self)
 
         self._beheeroptie = OTLAttribuut(field=KlBeheerHoutigeVegetatie,
                                          naam='beheeroptie',

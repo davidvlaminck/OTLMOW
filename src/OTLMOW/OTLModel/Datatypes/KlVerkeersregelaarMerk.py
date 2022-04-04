@@ -27,6 +27,10 @@ class KlVerkeersregelaarMerk(KeuzelijstField):
         'siemens': KeuzelijstWaarde(invulwaarde='siemens',
                                     label='Siemens',
                                     definitie='Siemens',
-                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerkeersregelaarMerk/siemens')
+                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerkeersregelaarMerk/siemens'),
+        'swarco': KeuzelijstWaarde(invulwaarde='swarco',
+                                   label='Swarco',
+                                   definitie='Swarco (voorheen Dynniq)',
+                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerkeersregelaarMerk/swarco')
     }
 

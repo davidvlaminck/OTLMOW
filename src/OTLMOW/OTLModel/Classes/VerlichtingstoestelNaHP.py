@@ -4,6 +4,7 @@ from OTLMOW.OTLModel.Classes.VerlichtingstoestelConnector import Verlichtingstoe
 from OTLMOW.OTLModel.Classes.Verlichtingstoestel import Verlichtingstoestel
 from OTLMOW.OTLModel.Datatypes.BooleanField import BooleanField
 from OTLMOW.OTLModel.Datatypes.DteKleurRAL import DteKleurRAL
+from OTLMOW.OTLModel.Datatypes.KlArmatuurkleur import KlArmatuurkleur
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
@@ -24,6 +25,8 @@ class VerlichtingstoestelNaHP(VerlichtingstoestelConnector, Verlichtingstoestel)
                                            naam='armatuurkleur',
                                            label='armatuurkleur',
                                            objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#VerlichtingstoestelNaHP.armatuurkleur',
+                                           usagenote='Attribuut uit gebruik sinds versie 2.3.0 ',
+                                           deprecated_version='2.3.0',
                                            definition='De kleur van de zichtbare buitenkant van het verlichtingstoestel.',
                                            owner=self)
 
@@ -40,6 +43,13 @@ class VerlichtingstoestelNaHP(VerlichtingstoestelConnector, Verlichtingstoestel)
                                              objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#VerlichtingstoestelNaHP.heeftSperfilter',
                                              definition='Is er een sperfilter aanwezig?',
                                              owner=self)
+
+        self._kleurArmatuur = OTLAttribuut(field=KlArmatuurkleur,
+                                           naam='kleurArmatuur',
+                                           label='kleur armatuur',
+                                           objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#VerlichtingstoestelNaHP.kleurArmatuur',
+                                           definition='De kleur van de zichtbare buitenkant van het verlichtingstoestel.',
+                                           owner=self)
 
     @property
     def armatuurkleur(self):
@@ -67,3 +77,12 @@ class VerlichtingstoestelNaHP(VerlichtingstoestelConnector, Verlichtingstoestel)
     @heeftSperfilter.setter
     def heeftSperfilter(self, value):
         self._heeftSperfilter.set_waarde(value, owner=self)
+
+    @property
+    def kleurArmatuur(self):
+        """De kleur van de zichtbare buitenkant van het verlichtingstoestel."""
+        return self._kleurArmatuur.waarde
+
+    @kleurArmatuur.setter
+    def kleurArmatuur(self, value):
+        self._kleurArmatuur.set_waarde(value, owner=self)

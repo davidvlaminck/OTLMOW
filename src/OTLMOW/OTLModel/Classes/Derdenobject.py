@@ -9,10 +9,13 @@ from OTLMOW.OTLModel.Datatypes.BooleanField import BooleanField
 from OTLMOW.OTLModel.Datatypes.DtcDocument import DtcDocument
 from OTLMOW.OTLModel.Datatypes.DtcIdentificator import DtcIdentificator
 from OTLMOW.OTLModel.Datatypes.StringField import StringField
+from OTLMOW.GeometrieArtefact.PuntGeometrie import PuntGeometrie
+from OTLMOW.GeometrieArtefact.LijnGeometrie import LijnGeometrie
+from OTLMOW.GeometrieArtefact.VlakGeometrie import VlakGeometrie
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Derdenobject(AIMToestand, AIMDBStatus, AttributeInfo, OTLAsset, RelatieInteractor):
+class Derdenobject(AIMToestand, AIMDBStatus, AttributeInfo, OTLAsset, RelatieInteractor, PuntGeometrie, LijnGeometrie, VlakGeometrie):
     """Object niet in eigendom van de assetbeheerder dat zonder verdere typering bewaard wordt om relaties met getypeerde assets te kunnen beheren."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#Derdenobject'
@@ -24,6 +27,9 @@ class Derdenobject(AIMToestand, AIMDBStatus, AttributeInfo, OTLAsset, RelatieInt
         AttributeInfo.__init__(self)
         OTLAsset.__init__(self)
         RelatieInteractor.__init__(self)
+        LijnGeometrie.__init__(self)
+        PuntGeometrie.__init__(self)
+        VlakGeometrie.__init__(self)
 
         self._assetId = OTLAttribuut(field=DtcIdentificator,
                                      naam='assetId',

@@ -7,7 +7,7 @@ from OTLMOW.OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 class KlLEGCMateriaal(KeuzelijstField):
     """Materialen van de geluidswerende constructie."""
     naam = 'KlLEGCMateriaal'
-    label = 'Materiaal'
+    label = 'Materiaal geluidswerende constructie'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlLEGCMateriaal'
     definition = 'Materialen van de geluidswerende constructie.'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlLEGCMateriaal'

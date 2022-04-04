@@ -7,7 +7,7 @@ from OTLMOW.OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 class KlLEACMateriaal(KeuzelijstField):
     """De verschillende materialen voor afschermende constructies."""
     naam = 'KlLEACMateriaal'
-    label = 'Materiaal'
+    label = 'Materiaal afschermende constructie'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlLEACMateriaal'
     definition = 'De verschillende materialen voor afschermende constructies.'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlLEACMateriaal'

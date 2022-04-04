@@ -7,7 +7,7 @@ from OTLMOW.OTLModel.Datatypes.KlEMDraagconstructieElekBeveiliging import KlEMDr
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
 class EMDraagconstructie(Draagconstructie):
-    """Abstracte voor een elektromechanisch (EM) dragend element (bv. paal, kolom, seinbrug, galgpaal) waaraan EM-toestellen bevestigd kunnen worden."""
+    """Abstracte voor een elektromechanisch (EM) dragend element (bv. paal, kolom, seinbrug, galgpaal, mast) waaraan EM-toestellen bevestigd kunnen worden."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#EMDraagconstructie'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""

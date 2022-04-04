@@ -11,7 +11,7 @@ from OTLMOW.GeometrieArtefact.PuntGeometrie import PuntGeometrie
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
 class Netwerkelement(AIMNaamObject, PuntGeometrie):
-    """Toestel,onderdeel van het netwerk,waarop netwerkverbindingen kunnen aangelegd worden."""
+    """Toestel, onderdeel van het netwerk zoals een backbone of IP-netwerk, waarop netwerkverbindingen kunnen aangelegd worden."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Netwerkelement'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""

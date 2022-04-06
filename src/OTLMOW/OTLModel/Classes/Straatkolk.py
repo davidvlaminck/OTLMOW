@@ -57,8 +57,8 @@ class Straatkolk(Put, PutRelatie, PuntGeometrie):
                                      naam='rooster',
                                      label='rooster',
                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Straatkolk.rooster',
-                                     usagenote='Attribuut uit gebruik sinds versie 2.1.0 ',
-                                     deprecated_version='2.1.0',
+                                     usagenote='Attribuut uit gebruik sinds versie 2.1.0-RC2',
+                                     deprecated_version='2.1.0-RC2',
                                      definition='Bepaalt het gebruikte type van rooster.',
                                      owner=self)
 

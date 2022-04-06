@@ -20,8 +20,8 @@ class Rioleringsstelsel(AIMObject, VlakGeometrie):
                                                naam='rioleringsstelsel',
                                                label='rioleringsstelsel',
                                                objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Rioleringsstelsel.rioleringsstelsel',
-                                               usagenote='Attribuut uit gebruik sinds versie 2.1.0 ',
-                                               deprecated_version='2.1.0',
+                                               usagenote='Attribuut uit gebruik sinds versie 2.1.0-RC2',
+                                               deprecated_version='2.1.0-RC2',
                                                definition='Geeft aan wat voor afvoerwater er door de riolering afgevoerd wordt.',
                                                owner=self)
 

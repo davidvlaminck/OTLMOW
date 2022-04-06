@@ -14,7 +14,7 @@ class ProefVoertuigOverhelling(Proef, PuntGeometrie, LijnGeometrie, VlakGeometri
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefVoertuigOverhelling'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
-    deprecated_version = '2.0.0'
+    deprecated_version = '2.0.0-RC3'
 
     def __init__(self):
         Proef.__init__(self)
@@ -26,8 +26,8 @@ class ProefVoertuigOverhelling(Proef, PuntGeometrie, LijnGeometrie, VlakGeometri
                                                  naam='voertuigOverhelling',
                                                  label='voertuig overhelling',
                                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefVoertuigOverhelling.voertuigOverhelling',
-                                                 usagenote='Klasse uit gebruik sinds versie 2.0.0 ',
-                                                 deprecated_version='2.0.0',
+                                                 usagenote='Klasse uit gebruik sinds versie 2.0.0-RC3',
+                                                 deprecated_version='2.0.0-RC3',
                                                  definition="Naast het horizontaal verplaatsen van de veiligheidsafbakening bij een impact, kan een voertuig bij impact ook over de afbakening hellen.  De maximale overhelling wordt op basis van foto's en video-opnames van de test bepaald.",
                                                  owner=self)
 

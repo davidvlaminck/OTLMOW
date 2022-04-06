@@ -1,11 +1,11 @@
 # coding=utf-8
 from abc import abstractmethod
-from OTLMOW.OTLModel.Classes.Signalisatie import Signalisatie
 from OTLMOW.OTLModel.Classes.AIMObject import AIMObject
+from OTLMOW.OTLModel.Classes.Signalisatie import Signalisatie
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Straatmeubilair(Signalisatie, AIMObject):
+class Straatmeubilair(AIMObject, Signalisatie):
     """Abstracte bedoeld om het straatmeubilair onder 1 noemer te houden."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Straatmeubilair'

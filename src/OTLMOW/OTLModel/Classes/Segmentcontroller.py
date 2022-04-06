@@ -19,8 +19,8 @@ class Segmentcontroller(Controller):
                                                   naam='beveil?igingssleutel',
                                                   label='beveiligingssleutel',
                                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Segmentcontroller.beveil?igingssleutel',
-                                                  usagenote='Attribuut uit gebruik sinds versie 2.0.0 ',
-                                                  deprecated_version='2.0.0',
+                                                  usagenote='Attribuut uit gebruik sinds versie 2.0.0-RC3',
+                                                  deprecated_version='2.0.0-RC3',
                                                   definition='De encryptie die wordt toegepast om de verbinding tussen lokaal en centraal te beveiligen.',
                                                   owner=self)
 

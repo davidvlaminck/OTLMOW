@@ -6,19 +6,17 @@ from OTLMOW.OTLModel.Datatypes.DtcMaaien import DtcMaaien
 from OTLMOW.OTLModel.Datatypes.KlBeheerGrazigeVegetatie import KlBeheerGrazigeVegetatie
 from OTLMOW.OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter
 from OTLMOW.OTLModel.Datatypes.KwantWrdInVierkanteMeter import KwantWrdInVierkanteMeter
-from OTLMOW.GeometrieArtefact.VlakGeometrie import VlakGeometrie
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class BeheerGrazigeVegetatie(AIMObject, VlakGeometrie):
+class BeheerGrazigeVegetatie(AIMObject):
     """Het beheerobject voor de grazige vegetatie."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#BeheerGrazigeVegetatie'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
     def __init__(self):
-        AIMObject.__init__(self)
-        VlakGeometrie.__init__(self)
+        super().__init__()
 
         self._beheeroptie = OTLAttribuut(field=KlBeheerGrazigeVegetatie,
                                          naam='beheeroptie',

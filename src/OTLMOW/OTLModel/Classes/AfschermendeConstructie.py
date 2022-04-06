@@ -68,8 +68,8 @@ class AfschermendeConstructie(BijlageVoertuigkering, LijnvormigElement):
                                          naam='testrapport',
                                          label='testrapport',
                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#AfschermendeConstructie.testrapport',
-                                         usagenote='Attribuut uit gebruik sinds versie 2.0.0 ',
-                                         deprecated_version='2.0.0',
+                                         usagenote='Attribuut uit gebruik sinds versie 2.0.0-RC3',
+                                         deprecated_version='2.0.0-RC3',
                                          kardinaliteit_max='*',
                                          definition='De testresultaten van een afschermende constructie.',
                                          owner=self)
@@ -86,8 +86,8 @@ class AfschermendeConstructie(BijlageVoertuigkering, LijnvormigElement):
                                    naam='video',
                                    label='video',
                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#AfschermendeConstructie.video',
-                                   usagenote='Attribuut uit gebruik sinds versie 2.0.0 ',
-                                   deprecated_version='2.0.0',
+                                   usagenote='Attribuut uit gebruik sinds versie 2.0.0-RC3 .Enkel videobestanden zijn toegelaten.',
+                                   deprecated_version='2.0.0-RC3',
                                    kardinaliteit_max='*',
                                    definition='Video van de testen op afschermende constructies.',
                                    owner=self)

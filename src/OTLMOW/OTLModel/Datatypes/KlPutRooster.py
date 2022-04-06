@@ -10,7 +10,7 @@ class KlPutRooster(KeuzelijstField):
     label = 'Putrooster'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlPutRooster'
     definition = 'Types rooster van de put.'
-    deprecated_version = '2.1.0'
+    deprecated_version = '2.1.0-RC2'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlPutRooster'
     options = {
         'gietijzeren-rooster-met-zichtvlak-x-hoogte-min.-480-x-330-x-180-mm': KeuzelijstWaarde(invulwaarde='gietijzeren-rooster-met-zichtvlak-x-hoogte-min.-480-x-330-x-180-mm',

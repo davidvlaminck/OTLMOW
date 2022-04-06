@@ -14,7 +14,7 @@ class ProefKerendVermogen(Proef, PuntGeometrie, LijnGeometrie, VlakGeometrie):
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefKerendVermogen'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
-    deprecated_version = '2.0.0'
+    deprecated_version = '2.0.0-RC3'
 
     def __init__(self):
         Proef.__init__(self)
@@ -26,8 +26,8 @@ class ProefKerendVermogen(Proef, PuntGeometrie, LijnGeometrie, VlakGeometrie):
                                             naam='kerendVermogen',
                                             label='kerend vermogen',
                                             objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefKerendVermogen.kerendVermogen',
-                                            usagenote='Klasse uit gebruik sinds versie 2.0.0 ',
-                                            deprecated_version='2.0.0',
+                                            usagenote='Klasse uit gebruik sinds versie 2.0.0-RC3',
+                                            deprecated_version='2.0.0-RC3',
                                             definition='Het vermogen van een voertuigkering om een doorbraak bij een bepaald type crash te voorkomen.',
                                             owner=self)
 

@@ -43,8 +43,8 @@ class Buis(AIMObject, LijnGeometrie):
                                      naam='breedte',
                                      label='breedte',
                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Buis.breedte',
-                                     usagenote='Attribuut uit gebruik sinds versie 2.1.0 ',
-                                     deprecated_version='2.1.0',
+                                     usagenote='Attribuut uit gebruik sinds versie 2.1.0-RC2',
+                                     deprecated_version='2.1.0-RC2',
                                      definition='De breedte van de buis in millimeter.',
                                      owner=self)
 

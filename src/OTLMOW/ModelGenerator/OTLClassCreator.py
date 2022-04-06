@@ -45,7 +45,8 @@ class OTLClassCreator(AbstractDatatypeCreator):
         inheritances = self.osloCollector.find_inheritances_by_class(osloClass)
 
         if osloClass.objectUri in ['https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMObject',
-                                   'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#Derdenobject']:
+                                   'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#Derdenobject',
+                                   'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#AbstracteAanvullendeGeometrie']:
             inheritances.append(
                 Inheritance(base_name='AttributeInfo', base_uri='', class_name='', class_uri='', deprecated_version=''))
             inheritances.append(

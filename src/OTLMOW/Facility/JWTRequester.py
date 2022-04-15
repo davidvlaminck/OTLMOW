@@ -6,7 +6,7 @@ import string
 import jwt # pip install Pyjwt
 
 from jwt import algorithms
-from numpy.random.mtrand import random
+from random import choice
 from requests import Response
 
 

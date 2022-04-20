@@ -1,3 +1,4 @@
+from OTLMOW.GeometrieArtefact.PuntGeometrie import PuntGeometrie
 from OTLMOW.OEFModel.DtcBeheerder import DtcBeheerder
 from OTLMOW.OEFModel.DtcToezichtGroep import DtcToezichtGroep
 from OTLMOW.OEFModel.DtcToezichter import DtcToezichter
@@ -6,9 +7,10 @@ from OTLMOW.OTLModel.Classes.NaampadObject import NaampadObject
 from OTLMOW.OTLModel.Datatypes.StringField import StringField
 
 
-class EMObject(NaampadObject):
+class EMObject(NaampadObject, PuntGeometrie):
     def __init__(self):
-        super().__init__()
+        NaampadObject.__init__(self)
+        PuntGeometrie.__init__(self)
 
         self._omschrijving = EMAttribuut(field=StringField,
                                          naam='locatie omschrijving',

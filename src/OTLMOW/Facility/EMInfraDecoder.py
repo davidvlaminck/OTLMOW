@@ -27,6 +27,16 @@ class EMInfraDecoder(ToOTLDecoder):
         else:
             instance = OEFClassLoader().dynamic_create_instance_from_uri(typeURI)
 
+        if 'loc:Locatie.puntlocatie' in obj:
+            if 'loc:3Dpunt.puntgeometrie' in obj['loc:Locatie.puntlocatie']:
+                if 'loc:DtcCoord.lambert72' in obj['loc:Locatie.puntlocatie']['loc:3Dpunt.puntgeometrie']:
+                    coords = obj['loc:Locatie.puntlocatie']['loc:3Dpunt.puntgeometrie']['loc:DtcCoord.lambert72']
+                    x = coords['loc:DtcCoordLambert72.xcoordinaat']
+                    y = coords['loc:DtcCoordLambert72.ycoordinaat']
+                    z = coords['loc:DtcCoordLambert72.zcoordinaat']
+                    instance.geometry = f'POINT Z ({x} {y} {z})'
+
+
         for key, value in obj.items():
             if key.startswith('@') or 'typeURI' in key or value == '' or 'puntlocatie' in key or 'geo:' in key:
                 continue

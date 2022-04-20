@@ -1,7 +1,6 @@
 ﻿import base64
 import json
 
-import requests
 from requests import Session
 
 from OTLMOW.Facility.EMInfraDecoder import EMInfraDecoder

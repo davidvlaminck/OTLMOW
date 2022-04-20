@@ -1,9 +1,8 @@
 import datetime
 import json
-from random import choice
 import requests
 import string
-import jwt # pip install Pyjwt
+import jwt  # pip install Pyjwt
 
 from jwt import algorithms
 from random import choice

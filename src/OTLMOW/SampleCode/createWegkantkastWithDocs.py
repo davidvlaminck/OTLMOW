@@ -130,23 +130,30 @@ if __name__ == '__main__':
 
     agent_collection = AgentCollection(requester=requester)
 
-    for kast in assets[0:1]:
+    for kast in assets:
         wegkantkast = Wegkantkast()
         wegkantkast.naam = kast.naam
+        wegkantkast.toestand = kast.toestand
         wegkantkast.geometry = kast.geometry
         wegkantkast.assetId.identificator = kast.naam
         wegkantkast.assetId.toegekendDoor = 'OTLMOW'
 
-        toezichternaam = kast.toezichter.voornaam + ' ' + kast.toezichter.naam
+        toezichternaam = kast.toezichter.voornaam
+        if toezichternaam is None:
+            toezichternaam = ''
+        if kast.toezichter.naam is not None:
+            toezichternaam = toezichternaam + ' ' + kast.toezichter.naam
         toezichter = agent_collection.get_agent_by_full_name(toezichternaam)
         if toezichter is not None:
             toezichterrelatie = otl_facility.relatie_creator.create_betrokkenerelation(bron=wegkantkast, doel=toezichter)
+            toezichterrelatie.rol = 'toezichter'
             lijst_objecten.append(toezichterrelatie)
 
         toezichtgroepnaam = kast.toezichtgroep.naam
         toezichtgroep = agent_collection.get_agent_by_full_name(toezichtgroepnaam)
         if toezichtgroep is not None:
             toezichtgroeprelatie = otl_facility.relatie_creator.create_betrokkenerelation(bron=wegkantkast, doel=toezichtgroep)
+            toezichtgroeprelatie.rol = 'toezichtsgroep'
             lijst_objecten.append(toezichtgroeprelatie)
 
         schadebeheerdernaam = kast.schadebeheerder.naam
@@ -154,6 +161,7 @@ if __name__ == '__main__':
         if schadebeheerder is not None:
             schadebeheerderrelatie = otl_facility.relatie_creator.create_betrokkenerelation(bron=wegkantkast,
                                                                                             doel=schadebeheerder)
+            schadebeheerderrelatie.rol = 'schadebeheerder'
             lijst_objecten.append(schadebeheerderrelatie)
 
         lijst_objecten.append(wegkantkast)

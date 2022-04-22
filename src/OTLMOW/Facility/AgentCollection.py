@@ -24,7 +24,7 @@ class AgentCollection:
         jsonobj = json.loads(data)
         obj_list = jsonobj["@graph"]
 
-        if obj_list is None:
+        if obj_list is None or obj_list == []:
             self.cache[full_name] = None
             return None
 

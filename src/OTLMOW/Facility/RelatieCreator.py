@@ -15,12 +15,20 @@ class RelatieCreator:
         if not self.validator.validateRelatieByURI(bron, doel, relatie):
             raise CouldNotCreateRelation("Can't create an invalid relation, please validate relations first")
         relatie = AssetFactory().dynamic_create_instance_from_uri(class_uri=relatie.typeURI)
+
         relatie.bronAssetId.identificator = bron.assetId.identificator
         relatie.bronAssetId.toegekendDoor = bron.assetId.toegekendDoor
+
         relatie.doelAssetId.identificator = doel.assetId.identificator
         relatie.doelAssetId.toegekendDoor = doel.assetId.toegekendDoor
+
         relatie.assetId.identificator = bron.assetId.identificator + '_-_' + doel.assetId.identificator
         relatie.assetId.toegekendDoor = 'OTLMOW'
+
+        #if relatie.bronAssetId.toegekendDoor != 'AWV':
+        relatie.bron.typeURI = bron.typeURI
+        #if relatie.doelAssetId.toegekendDoor != 'AWV':
+        relatie.doel.typeURI = doel.typeURI
         return relatie
 
     def create_betrokkenerelation(self, bron: RelatieInteractor, doel: RelatieInteractor, relatie=HeeftBetrokkene) -> RelatieObject:
@@ -42,4 +50,8 @@ class RelatieCreator:
         relatie.assetId.identificator = relatie.bronAssetId.identificator + '_-_' + relatie.doelAssetId.identificator
         relatie.assetId.toegekendDoor = 'OTLMOW'
 
+        #if relatie.bronAssetId.toegekendDoor != 'AWV':
+        relatie.bron.typeURI = bron.typeURI
+        #if relatie.doelAssetId.toegekendDoor != 'AWV':
+        relatie.doel.typeURI = doel.typeURI
         return relatie

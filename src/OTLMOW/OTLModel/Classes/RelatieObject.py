@@ -4,7 +4,42 @@ from abc import abstractmethod
 from OTLMOW.OTLModel.Classes.AIMDBStatus import AIMDBStatus
 from OTLMOW.OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLMOW.OTLModel.BaseClasses.OTLObject import OTLObject
+from OTLMOW.OTLModel.Datatypes.ComplexField import ComplexField
 from OTLMOW.OTLModel.Datatypes.DtcIdentificator import DtcIdentificator
+from OTLMOW.OTLModel.Datatypes.StringField import StringField
+
+
+class BronOfDoelTypeWaarden(AttributeInfo):
+    def __init__(self, parent=None):
+        AttributeInfo.__init__(self, parent)
+        self._typeURI = OTLAttribuut(field=StringField,
+                                     naam='typeURI',
+                                     label='typeURI',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#BronOfDoelType.typeURI',
+                                     definition='Een groep van tekens om een URI te vormen',
+                                     owner=self)
+
+    @property
+    def typeURI(self):
+        """Een groep van tekens om een AIM object te identificeren of te benoemen."""
+        return self._typeURI.waarde
+
+    @typeURI.setter
+    def typeURI(self, value):
+        self._typeURI.set_waarde(value, owner=self._parent)
+
+
+# Generated with OTLComplexDatatypeCreator. To modify: extend, do not edit
+class DtcBronOfDoelType(ComplexField, AttributeInfo):
+    """Complex datatype voor de identificator van een AIM object volgens de bron van de identificator."""
+    naam = 'BronOfDoelType'
+    label = 'BronOfDoelType'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#BronOfDoelType'
+    definition = 'extra datatype om aanleveringen in Davie te faciliteren waar het type van de bron of doel van een relatie expliciet moet worden meegegeven'
+    waardeObject = BronOfDoelTypeWaarden
+
+    def __str__(self):
+        return ComplexField.__str__(self)
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
@@ -41,6 +76,20 @@ class RelatieObject(AIMDBStatus, AttributeInfo, OTLObject):
                                          definition='De identificator van het object waarin de relatie toekomt.',
                                          owner=self)
 
+        self._bron = OTLAttribuut(field=DtcBronOfDoelType,
+                                  naam='bron',
+                                  label='bron',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#RelatieObject.bron',
+                                  definition='De bron van de relatie.',
+                                  owner=self)
+
+        self._doel = OTLAttribuut(field=DtcBronOfDoelType,
+                                  naam='doel',
+                                  label='doel',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#RelatieObject.doel',
+                                  definition='Het doel van de relatie.',
+                                  owner=self)
+
     @property
     def assetId(self):
         """Unieke identificatie van de asset zoals toegekend door de assetbeheerder of n.a.v. eerste aanlevering door de leverancier."""
@@ -67,3 +116,21 @@ class RelatieObject(AIMDBStatus, AttributeInfo, OTLObject):
     @doelAssetId.setter
     def doelAssetId(self, value):
         self._doelAssetId.set_waarde(value, owner=self)
+
+    @property
+    def bron(self):
+        """De bron van de relatie."""
+        return self._bron.waarde
+
+    @bron.setter
+    def bron(self, value):
+        self._bron.set_waarde(value, owner=self)
+
+    @property
+    def doel(self):
+        """Het doel van de relatie."""
+        return self._doel.waarde
+
+    @doel.setter
+    def doel(self, value):
+        self._doel.set_waarde(value, owner=self)

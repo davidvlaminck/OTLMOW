@@ -67,6 +67,7 @@ Facility
 
 
 Building and Packaging:
+__init__.py aanpassen
 .\venv2\Scripts\python.exe -m build --wheel
 -or-
 .\venv2\Scripts\flit init

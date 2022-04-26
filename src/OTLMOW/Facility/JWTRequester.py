@@ -4,7 +4,6 @@ import requests
 import string
 import jwt  # pip install Pyjwt
 
-from jwt import algorithms
 from random import choice
 from requests import Response
 
@@ -84,7 +83,7 @@ class JWTRequester(requests.Session):
 
         with open(self.private_key_path) as private_key:
             private_key_json = json.load(private_key)
-            key = algorithms.RSAAlgorithm.from_jwk(private_key_json)
+            key = jwt.algorithms.RSAAlgorithm.from_jwk(private_key_json)
             token = jwt.encode(payload=payload, key=key, algorithm="RS256")
 
         return token

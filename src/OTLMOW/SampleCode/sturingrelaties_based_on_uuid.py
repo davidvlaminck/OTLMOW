@@ -15,14 +15,14 @@ if __name__ == '__main__':
         ConsoleLogger()])
     otl_facility = OTLFacility(logger, enable_relation_features=True)
 
-    uuid_file_path = 'C:\\resources\\202204062156_sturingsrelaties_netwerkpoorten.csv'
+    uuid_file_path = 'C:\\resources\\202204262158_sturingsrelaties_netwerkpoorten.csv'
 
     relaties = []
 
     with open(uuid_file_path, 'r') as uuidfile:
-        csv_reader = reader(uuidfile, delimiter=';')
+        csv_reader = reader(uuidfile, delimiter='\t')
         for row in csv_reader:
-            if row[0] == 'column2':
+            if row[0] == 'column1':
                 continue
             if row[1] == '' or row[3] == '':
                 continue

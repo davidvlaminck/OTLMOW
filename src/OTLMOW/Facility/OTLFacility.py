@@ -26,7 +26,7 @@ from OTLMOW.PostenMapping.PostenInMemoryCreator import PostenInMemoryCreator
 
 
 class OTLFacility:
-    def __init__(self, instanceLogger: AbstractLogger, enable_relation_features: bool = False, settings_path: str = ''):
+    def __init__(self, instanceLogger: None | AbstractLogger, enable_relation_features: bool = False, settings_path: str = ''):
         self.davieImporter = DavieImporter()
         self.logger = instanceLogger
         self.collector = None

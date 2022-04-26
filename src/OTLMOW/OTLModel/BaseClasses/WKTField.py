@@ -1,4 +1,4 @@
-from OTLMOW.Facility.WrongGeometryError import WrongGeometryError
+from OTLMOW.Facility.Exceptions.WrongGeometryError import WrongGeometryError
 from OTLMOW.OTLModel.BaseClasses.OTLField import OTLField
 from OTLMOW.OTLModel.BaseClasses.WKTValidator import WKTValidator
 
@@ -10,6 +10,11 @@ class WKTField(OTLField):
     definition = ''
     label = 'WKT'
     usagenote = ''
+
+    @staticmethod
+    def convert_to_correct_type(value) -> object:
+        value = value.replace(' Z(', ' Z (').replace('T(', 'T (').replace('G(', 'G (').replace('N(', 'N (')
+        return value
 
     @staticmethod
     def validate(value, attribuut):

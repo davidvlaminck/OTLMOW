@@ -56,7 +56,7 @@ class EMInfraImporter:
         return self.decoder.decodeJsonObject(obj_list[0])
 
     def import_asset_from_webservice_by_asset_id(self, asset_id) -> str:
-        url = f"https://services.apps.mow.vlaanderen.be/eminfra/core/api/otl/assets/{asset_id}"
+        url = f"eminfra/core/api/otl/assets/{asset_id}"
         response = self.requester.get(url)
         data = response.content.decode("utf-8")
         return self.decoder.decodeObject(data)

@@ -2,6 +2,7 @@ from datetime import datetime
 
 from OTLMOW.Facility.EMInfraImporter import EMInfraImporter
 from OTLMOW.Facility.OTLFacility import OTLFacility
+from OTLMOW.Facility.RequesterFactory import RequesterFactory
 from OTLMOW.Loggers.ConsoleLogger import ConsoleLogger
 from OTLMOW.Loggers.LoggerCollection import LoggerCollection
 from OTLMOW.Loggers.TxtLogger import TxtLogger
@@ -14,7 +15,7 @@ if __name__ == '__main__':
     logger = LoggerCollection([
         TxtLogger(r'C:\temp\pythonLogging\pythonlog.txt'),
         ConsoleLogger()])
-    otl_facility = OTLFacility(logger)
+    otl_facility = OTLFacility(logger, settings_path='C:\\resources\\settings_OTLMOW.json')
 
     # use the generated datamodel to create instances of OTL classes
     dnb = DNBLaagspanning()
@@ -38,7 +39,8 @@ if __name__ == '__main__':
     voedingsrelatie.bronAssetId.identificator = 'eigen_Id_voor_A0024'
     voedingsrelatie.doelAssetId.identificator = 'eigen_Id_voor_50004784'
 
-    importer = EMInfraImporter(cert_path = 'C:\\resources\\datamanager_eminfra_prd.awv.vlaanderen.be.crt', key_path = 'C:\\resources\\datamanager_eminfra_prd.awv.vlaanderen.be.key')
+    requester = RequesterFactory.create_requester(settings=otl_facility.settings, auth_type='JWT', env='prd')
+    importer = EMInfraImporter(requester=requester)
     asset_id = importer.get_asset_id_from_uuid_and_typeURI(uuid='43e9c946-ca49-44b3-8ce3-46de0ec12489', typeURI='https://lgc.data.wegenenverkeer.be/ns/installatie#LS')
     ls = importer.import_asset_from_webservice_by_asset_id(asset_id)
 

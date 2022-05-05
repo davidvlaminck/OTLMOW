@@ -43,10 +43,10 @@ class OSLOCollector:
         self.relations = self.OSLOInMemoryCreator.getAllRelations()
 
     def find_attributes_by_class(self, osloclass: OSLOClass) -> [OSLOAttribuut]:
-        return list(filter(lambda c: c.class_uri == osloclass.objectUri, self.attributes))
+        return sorted(list(filter(lambda c: c.class_uri == osloclass.objectUri, self.attributes)), key=lambda a: a.objectUri)
 
     def find_inheritances_by_class(self, osloclass: OSLOClass) -> [Inheritance]:
-        return list(filter(lambda c: c.class_uri == osloclass.objectUri, self.inheritances))
+        return sorted(list(filter(lambda c: c.class_uri == osloclass.objectUri, self.inheritances)), key=lambda c: c.objectUri)
 
     def find_class_by_uri(self, uri: str) -> OSLOClass:
         return next(p for p in self.classes if p.objectUri == uri)

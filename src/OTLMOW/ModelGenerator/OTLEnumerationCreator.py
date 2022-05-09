@@ -1,5 +1,5 @@
 import rdflib
-from rdflib import URIRef
+from rdflib import URIRef, Graph
 
 from OTLMOW.Loggers.AbstractLogger import AbstractLogger
 from OTLMOW.Loggers.LogType import LogType
@@ -28,7 +28,7 @@ class OTLEnumerationCreator(AbstractDatatypeCreator):
         return self.CreateBlockToWriteFromEnumeration(osloEnumeration)
 
     def CreateBlockToWriteFromEnumeration(self, osloEnumeration: OSLOEnumeration):
-        keuzelijst_waardes = self.getKeuzelijstWaardesFromUri(osloEnumeration.name)
+        keuzelijst_waardes = self.get_keuzelijstwaardes_by_name(osloEnumeration.name)
 
         datablock = ['# coding=utf-8',
                      'from OTLMOW.OTLModel.Datatypes.KeuzelijstField import KeuzelijstField']
@@ -65,22 +65,28 @@ class OTLEnumerationCreator(AbstractDatatypeCreator):
         return datablock
 
     @staticmethod
-    def getKeuzelijstWaardesFromUri(keuzelijstnaam):
+    def get_graph_from_location(keuzelijstnaam):
         # create a Graph
         g = rdflib.Graph()
         keuzelijst_link = f"https://raw.githubusercontent.com/Informatievlaanderen/OSLOthema-wegenenverkeer/master/codelijsten/{keuzelijstnaam}.ttl"
-
         # parse the turtle file hosted on github
         try:
             g.parse(keuzelijst_link, format="turtle")
         except Exception:
             raise ConnectionError(f"Could not get ttl file for {keuzelijstnaam}")
+        return g
 
+    @classmethod
+    def get_keuzelijstwaardes_by_name(cls, keuzelijstnaam):
+        g = OTLEnumerationCreator.get_graph_from_location(keuzelijstnaam)
+        return cls.get_keuzelijstwaardes_from_graph(g)
+
+    @classmethod
+    def get_keuzelijstwaardes_from_graph(cls, g: Graph):
         # get distinct set of subjects and remove the conceptschema subject
         distinct_subjects = set([str(url) for url in g.subjects()])
         scheme = next(d for d in distinct_subjects if d.startswith('https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/'))
         distinct_subjects.remove(scheme)
-
         # loop through each triple in the graph by subject
         lijst_keuze_opties = []
         for distinct_object in distinct_subjects:
@@ -93,6 +99,8 @@ class OTLEnumerationCreator(AbstractDatatypeCreator):
                     waarde.label = str(o)
                 elif str(p) == 'http://www.w3.org/2004/02/skos/core#definition':
                     waarde.definitie = str(o)
+                elif str(p) == 'https://www.w3.org/ns/adms#status':
+                    waarde.status = str(o)
             lijst_keuze_opties.append(waarde)
-
         return sorted(lijst_keuze_opties, key=lambda l: l.invulwaarde)
+

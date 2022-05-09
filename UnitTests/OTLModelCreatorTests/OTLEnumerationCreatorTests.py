@@ -3,6 +3,8 @@ import unittest
 from unittest import mock
 from unittest.mock import patch
 
+import rdflib
+
 from OTLMOW.Loggers.NoneLogger import NoneLogger
 from OTLMOW.ModelGenerator.OSLOCollector import OSLOCollector
 from OTLMOW.ModelGenerator.OSLOEnumeration import OSLOEnumeration
@@ -140,7 +142,7 @@ class OTLEnumerationCreatorTests(unittest.TestCase):
         creator = OTLEnumerationCreator(logger, collector)
         KlAIMToestand = collector.find_enumeration_by_uri(
             'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KlAIMToestand')
-        lijst = creator.getKeuzelijstWaardesFromUri(KlAIMToestand.name)
+        lijst = creator.get_keuzelijstwaardes_by_name(KlAIMToestand.name)
 
         self.assertTrue(len(lijst) >= 1)
         self.assertTrue(isinstance(lijst[0], KeuzelijstWaarde))
@@ -187,7 +189,7 @@ class OTLEnumerationCreatorTests(unittest.TestCase):
         collector.collect()
 
         creator = OTLEnumerationCreator(logger, collector)
-        keuzelijst = creator.getKeuzelijstWaardesFromUri("KlAIMToestand")
+        keuzelijst = creator.get_keuzelijstwaardes_by_name("KlAIMToestand")
 
         self.assertTrue(len(keuzelijst) > 0)
         inontwerp_waarde = next(k for k in keuzelijst if k.invulwaarde == 'in-ontwerp')
@@ -196,3 +198,21 @@ class OTLEnumerationCreatorTests(unittest.TestCase):
         self.assertEqual('', inontwerp_waarde.definitie)
         self.assertEqual('https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAIMToestand/in-ontwerp', inontwerp_waarde.objectUri)
         pass
+
+    def test_get_keuzelijstwaardes_from_graph(self):
+        base_dir = os.path.dirname(os.path.realpath(__file__))
+        file_location = f'{base_dir}/AntiParkeerpaalType.ttl'
+        g = rdflib.Graph()
+        g.parse(file_location, format="turtle")
+        list = OTLEnumerationCreator.get_keuzelijstwaardes_from_graph(g)
+        self.assertEqual(2, len(list))
+
+    def test_get_keuzelijstwaardes_from_graph_new_format(self):
+        base_dir = os.path.dirname(os.path.realpath(__file__))
+        file_location = f'{base_dir}/new_format_ttl.ttl'
+        g = rdflib.Graph()
+        g.parse(file_location, format="turtle")
+        list = OTLEnumerationCreator.get_keuzelijstwaardes_from_graph(g)
+        self.assertEqual(2, len(list))
+        pass
+

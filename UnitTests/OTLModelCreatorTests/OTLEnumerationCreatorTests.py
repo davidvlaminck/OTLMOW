@@ -214,5 +214,3 @@ class OTLEnumerationCreatorTests(unittest.TestCase):
         g.parse(file_location, format="turtle")
         list = OTLEnumerationCreator.get_keuzelijstwaardes_from_graph(g)
         self.assertEqual(2, len(list))
-        pass
-

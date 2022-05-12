@@ -28,7 +28,8 @@ class Camera(AIMNaamObject, PuntGeometrie):
                                                         naam='beeldverwerkingsinstelling',
                                                         label='beeldverwerkingsinstelling',
                                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Camera.beeldverwerkingsinstelling',
-                                                        usagenote='Wanneer de camera de beeldverwerking niet zelf doet maar enkel beelden  verstuurt voor verwerking in een externe eenheid, moet die externe eenheid als aparte asset aangemaakt worden indien het specifieke type bestaat in de OTL of moet een instantie van Software gebruikt worden wanneer geen specifieke externe verwerkingseenheid voorzien is. Dit attribuut kan dus enkel gebruikt worden indien de camera of een verwerkingseenheid van de camera zelf de analyse doet en die analyse doorstuurt naar een asset die met de analyse werkt en niet met de beelden.',
+                                                        usagenote='Wanneer de camera de beeldverwerking niet zelf doet maar enkel beelden  verstuurt voor verwerking in een externe eenheid, moet die externe eenheid als aparte asset aangemaakt worden indien het specifieke type bestaat in de OTL of moet een instantie van Software gebruikt worden wanneer geen specifieke externe verwerkingseenheid voorzien is. 
+Dit attribuut kan dus enkel gebruikt worden indien de camera of een verwerkingseenheid van de camera zelf de analyse doet en die analyse doorstuurt naar een asset die met de analyse werkt en niet met de beelden.',
                                                         kardinaliteit_max='*',
                                                         definition='Geeft aan welke types beeldverwerking die camera zelf uitvoert dus zonder gebruik te maken van een externe verwerkingseenheid.',
                                                         owner=self)
@@ -121,7 +122,7 @@ class Camera(AIMNaamObject, PuntGeometrie):
     @property
     def beeldverwerkingsinstelling(self):
         """Geeft aan welke types beeldverwerking die camera zelf uitvoert dus zonder gebruik te maken van een externe verwerkingseenheid."""
-        return self._beeldverwerkingsinstelling.waarde
+        return self._beeldverwerkingsinstelling.get_waarde()
 
     @beeldverwerkingsinstelling.setter
     def beeldverwerkingsinstelling(self, value):
@@ -130,7 +131,7 @@ class Camera(AIMNaamObject, PuntGeometrie):
     @property
     def configBestandAid(self):
         """Het bestand met de configuratie van de AID component die deel is van de camera."""
-        return self._configBestandAid.waarde
+        return self._configBestandAid.get_waarde()
 
     @configBestandAid.setter
     def configBestandAid(self, value):
@@ -139,7 +140,7 @@ class Camera(AIMNaamObject, PuntGeometrie):
     @property
     def dnsNaam(self):
         """De DNSNaam (ook "volledige domein naam" genoemd ) is een unieke naam binnen het Domain Name System (DNS), het naamgevingssysteem waarmee computers, webservers, diensten en  toepassing op een unieke manier kunnen worden geïdentificeerd. Deze bevat zowel de hostname en de top level domein naam bv. 120c8-ar1.belfa.be."""
-        return self._dnsNaam.waarde
+        return self._dnsNaam.get_waarde()
 
     @dnsNaam.setter
     def dnsNaam(self, value):
@@ -148,7 +149,7 @@ class Camera(AIMNaamObject, PuntGeometrie):
     @property
     def heeftAid(self):
         """Een AID-camera is een CCTV-camera met geintegreerde AID-module. Deze camera genereert naast een camerabeeld ook metadata ivm wat zich afspeelt op het beeld. Een voorbeeld hiervan is gestopte voertuigen."""
-        return self._heeftAid.waarde
+        return self._heeftAid.get_waarde()
 
     @heeftAid.setter
     def heeftAid(self, value):
@@ -157,7 +158,7 @@ class Camera(AIMNaamObject, PuntGeometrie):
     @property
     def heeftSpitsstrook(self):
         """Locatie-eigenschap van een camera. Dit attribuut geeft aan of de camera ingezet wordt om een spitsstrook te schouwen."""
-        return self._heeftSpitsstrook.waarde
+        return self._heeftSpitsstrook.get_waarde()
 
     @heeftSpitsstrook.setter
     def heeftSpitsstrook(self, value):
@@ -166,7 +167,7 @@ class Camera(AIMNaamObject, PuntGeometrie):
     @property
     def ipAdres(self):
         """Het IP-adres van de camera."""
-        return self._ipAdres.waarde
+        return self._ipAdres.get_waarde()
 
     @ipAdres.setter
     def ipAdres(self, value):
@@ -175,7 +176,7 @@ class Camera(AIMNaamObject, PuntGeometrie):
     @property
     def isPtz(self):
         """Een PTZ-camera is een CCTV-camera met bijhorend de mogelijkheid om te pannen, tilten en zoomen. Dit vanop afstand met behulp van een verstelbare lens en een motor die in twee assen draaibeweging toelaat."""
-        return self._isPtz.waarde
+        return self._isPtz.get_waarde()
 
     @isPtz.setter
     def isPtz(self, value):
@@ -184,7 +185,7 @@ class Camera(AIMNaamObject, PuntGeometrie):
     @property
     def merk(self):
         """Het merk van de camera."""
-        return self._merk.waarde
+        return self._merk.get_waarde()
 
     @merk.setter
     def merk(self, value):
@@ -193,7 +194,7 @@ class Camera(AIMNaamObject, PuntGeometrie):
     @property
     def modelnaam(self):
         """De modelnaam van de camera."""
-        return self._modelnaam.waarde
+        return self._modelnaam.get_waarde()
 
     @modelnaam.setter
     def modelnaam(self, value):
@@ -202,7 +203,7 @@ class Camera(AIMNaamObject, PuntGeometrie):
     @property
     def opstelhoogte(self):
         """De hoogte waarop de camera bevestigd is, gemeten ten opzichte van het maaiveld waarin de draagconstructie voor de camera verankerd is."""
-        return self._opstelhoogte.waarde
+        return self._opstelhoogte.get_waarde()
 
     @opstelhoogte.setter
     def opstelhoogte(self, value):
@@ -211,7 +212,7 @@ class Camera(AIMNaamObject, PuntGeometrie):
     @property
     def servicePrioriteit(self):
         """Het prioriteitsniveau dat aangeeft hoe dringend iets moet onderhouden/gerepareerd worden"""
-        return self._servicePrioriteit.waarde
+        return self._servicePrioriteit.get_waarde()
 
     @servicePrioriteit.setter
     def servicePrioriteit(self, value):
@@ -220,7 +221,7 @@ class Camera(AIMNaamObject, PuntGeometrie):
     @property
     def technischeFiche(self):
         """Technische fiche van dit element met opsplitsing tussen CCTV, AID en PTZ-camera's."""
-        return self._technischeFiche.waarde
+        return self._technischeFiche.get_waarde()
 
     @technischeFiche.setter
     def technischeFiche(self, value):

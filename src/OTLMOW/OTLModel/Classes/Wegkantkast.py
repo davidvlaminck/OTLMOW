@@ -49,7 +49,7 @@ class Wegkantkast(Buitenkast):
     @property
     def elektrischSchema(self):
         """Elektrisch aansluitschema van de kast."""
-        return self._elektrischSchema.waarde
+        return self._elektrischSchema.get_waarde()
 
     @elektrischSchema.setter
     def elektrischSchema(self, value):
@@ -58,7 +58,7 @@ class Wegkantkast(Buitenkast):
     @property
     def heeftMaaibescherming(self):
         """Geeft aan of de kast voorzien is van bescherming tegen schade bij het maaien van de omgeving rond de kast."""
-        return self._heeftMaaibescherming.waarde
+        return self._heeftMaaibescherming.get_waarde()
 
     @heeftMaaibescherming.setter
     def heeftMaaibescherming(self, value):
@@ -67,7 +67,7 @@ class Wegkantkast(Buitenkast):
     @property
     def mplan(self):
         """Mechanisch plan van de volledige installatie. Er wordt één plan toegevoegd per installatie/techniek die op de kast is aangesloten."""
-        return self._mplan.waarde
+        return self._mplan.get_waarde()
 
     @mplan.setter
     def mplan(self, value):
@@ -76,7 +76,7 @@ class Wegkantkast(Buitenkast):
     @property
     def type(self):
         """Type van de wegkantkast volgens de gangbare types."""
-        return self._type.waarde
+        return self._type.get_waarde()
 
     @type.setter
     def type(self, value):

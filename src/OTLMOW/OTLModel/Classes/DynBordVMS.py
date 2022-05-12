@@ -32,7 +32,7 @@ class DynBordVMS(LEDBord):
     @property
     def merk(self):
         """Merk van het dynamische bord."""
-        return self._merk.waarde
+        return self._merk.get_waarde()
 
     @merk.setter
     def merk(self, value):
@@ -41,7 +41,7 @@ class DynBordVMS(LEDBord):
     @property
     def modelnaam(self):
         """Modelnaam van het VMS-bord."""
-        return self._modelnaam.waarde
+        return self._modelnaam.get_waarde()
 
     @modelnaam.setter
     def modelnaam(self, value):

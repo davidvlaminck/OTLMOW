@@ -59,7 +59,7 @@ class GekleurdWegvlakMarkering(Markering, AOWSType, VlakGeometrie):
     @property
     def breedte(self):
         """De breedte van de markering in meter."""
-        return self._breedte.waarde
+        return self._breedte.get_waarde()
 
     @breedte.setter
     def breedte(self, value):
@@ -68,7 +68,7 @@ class GekleurdWegvlakMarkering(Markering, AOWSType, VlakGeometrie):
     @property
     def code(self):
         """De  (COPRO/BENOR) code van de gekleurde wegvlak markering."""
-        return self._code.waarde
+        return self._code.get_waarde()
 
     @code.setter
     def code(self, value):
@@ -77,7 +77,7 @@ class GekleurdWegvlakMarkering(Markering, AOWSType, VlakGeometrie):
     @property
     def lengte(self):
         """De lengte van de markering in meter."""
-        return self._lengte.waarde
+        return self._lengte.get_waarde()
 
     @lengte.setter
     def lengte(self, value):
@@ -86,7 +86,7 @@ class GekleurdWegvlakMarkering(Markering, AOWSType, VlakGeometrie):
     @property
     def oppervlakte(self):
         """De oppervlakte van het gekleurd wegdeel in vierkante meter."""
-        return self._oppervlakte.waarde
+        return self._oppervlakte.get_waarde()
 
     @oppervlakte.setter
     def oppervlakte(self, value):
@@ -95,7 +95,7 @@ class GekleurdWegvlakMarkering(Markering, AOWSType, VlakGeometrie):
     @property
     def soortOmschrijving(self):
         """De soort en tevens omschrijving van de figuratie markering."""
-        return self._soortOmschrijving.waarde
+        return self._soortOmschrijving.get_waarde()
 
     @soortOmschrijving.setter
     def soortOmschrijving(self, value):

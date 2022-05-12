@@ -34,7 +34,7 @@ class GestandaardiseerdeKantopsluiting(Kantopsluiting):
     @property
     def bijkomendeParameter(self):
         """Detail typering van de kantopsluiting."""
-        return self._bijkomendeParameter.waarde
+        return self._bijkomendeParameter.get_waarde()
 
     @bijkomendeParameter.setter
     def bijkomendeParameter(self, value):
@@ -43,7 +43,7 @@ class GestandaardiseerdeKantopsluiting(Kantopsluiting):
     @property
     def fabricageLengte(self):
         """De lengte van de individuele kantopsluiting volgens de norm."""
-        return self._fabricageLengte.waarde
+        return self._fabricageLengte.get_waarde()
 
     @fabricageLengte.setter
     def fabricageLengte(self, value):

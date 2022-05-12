@@ -26,7 +26,7 @@ class LaagBouwklasse(ArtificieleLaag):
     @property
     def bouwklasse(self):
         """Een maat voor de verkeersbelasting over de volledige levensduur van de laag. De laag is ontworpen volgens de aangeduide bouwklasse."""
-        return self._bouwklasse.waarde
+        return self._bouwklasse.get_waarde()
 
     @bouwklasse.setter
     def bouwklasse(self, value):

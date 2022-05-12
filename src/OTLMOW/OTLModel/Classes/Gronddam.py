@@ -65,7 +65,7 @@ Een gronddam kan volgende functies vervullen: geluidswering, geleiding van diere
     @property
     def basisbreedte(self):
         """De breedte van de basis van de gronddam in meter."""
-        return self._basisbreedte.waarde
+        return self._basisbreedte.get_waarde()
 
     @basisbreedte.setter
     def basisbreedte(self, value):
@@ -74,7 +74,7 @@ Een gronddam kan volgende functies vervullen: geluidswering, geleiding van diere
     @property
     def gronddichtheid(self):
         """De gronddichtheid van de gronddam."""
-        return self._gronddichtheid.waarde
+        return self._gronddichtheid.get_waarde()
 
     @gronddichtheid.setter
     def gronddichtheid(self, value):
@@ -83,7 +83,7 @@ Een gronddam kan volgende functies vervullen: geluidswering, geleiding van diere
     @property
     def hellingAchterzijde(self):
         """De hellingsgraad van de achterzijde gronddam in kwarten."""
-        return self._hellingAchterzijde.waarde
+        return self._hellingAchterzijde.get_waarde()
 
     @hellingAchterzijde.setter
     def hellingAchterzijde(self, value):
@@ -92,7 +92,7 @@ Een gronddam kan volgende functies vervullen: geluidswering, geleiding van diere
     @property
     def hellingVoorzijde(self):
         """De hellingsgraad van de voorzijde van de gronddam in kwarten."""
-        return self._hellingVoorzijde.waarde
+        return self._hellingVoorzijde.get_waarde()
 
     @hellingVoorzijde.setter
     def hellingVoorzijde(self, value):
@@ -101,7 +101,7 @@ Een gronddam kan volgende functies vervullen: geluidswering, geleiding van diere
     @property
     def hoogte(self):
         """De hoogte van de gronddam in meter."""
-        return self._hoogte.waarde
+        return self._hoogte.get_waarde()
 
     @hoogte.setter
     def hoogte(self, value):
@@ -110,7 +110,7 @@ Een gronddam kan volgende functies vervullen: geluidswering, geleiding van diere
     @property
     def kruinbreedte(self):
         """De breedte van de kruin van de gronddam in meter."""
-        return self._kruinbreedte.waarde
+        return self._kruinbreedte.get_waarde()
 
     @kruinbreedte.setter
     def kruinbreedte(self, value):

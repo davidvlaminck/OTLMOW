@@ -24,7 +24,7 @@ class BestratingVanGrasbetontegel(Bestrating):
     @property
     def vulling(self):
         """Het gebruikte materiaal als toevoeging in de vrije openingen van de tegels."""
-        return self._vulling.waarde
+        return self._vulling.get_waarde()
 
     @vulling.setter
     def vulling(self, value):

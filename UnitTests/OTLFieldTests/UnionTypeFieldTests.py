@@ -29,3 +29,5 @@ class UnionTypeFieldTests(unittest.TestCase):
         c.masthoogte.afwijkendeHoogte.waarde = 7.5
         self.assertEqual(7.5, c.masthoogte.afwijkendeHoogte.waarde)
         self.assertEqual(None, c.masthoogte.standaardHoogte)
+
+    # TODO what happend when setting a value to None

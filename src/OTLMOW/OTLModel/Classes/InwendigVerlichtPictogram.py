@@ -50,7 +50,7 @@ class InwendigVerlichtPictogram(AIMObject, PuntGeometrie):
     @property
     def afmeting(self):
         """Geeft de buitenafmeting van het toestel mee."""
-        return self._afmeting.waarde
+        return self._afmeting.get_waarde()
 
     @afmeting.setter
     def afmeting(self, value):
@@ -59,7 +59,7 @@ class InwendigVerlichtPictogram(AIMObject, PuntGeometrie):
     @property
     def nalichtingstijd(self):
         """De tijd tussen het uitschakelen van de interne lichtbron en het volledig duister worden van het toestel."""
-        return self._nalichtingstijd.waarde
+        return self._nalichtingstijd.get_waarde()
 
     @nalichtingstijd.setter
     def nalichtingstijd(self, value):
@@ -68,7 +68,7 @@ class InwendigVerlichtPictogram(AIMObject, PuntGeometrie):
     @property
     def symbool(self):
         """Het symbool afgebeeld op het toestel."""
-        return self._symbool.waarde
+        return self._symbool.get_waarde()
 
     @symbool.setter
     def symbool(self, value):
@@ -77,7 +77,7 @@ class InwendigVerlichtPictogram(AIMObject, PuntGeometrie):
     @property
     def typeLamp(self):
         """Het soort lamp waarmee het toestel verlicht wordt."""
-        return self._typeLamp.waarde
+        return self._typeLamp.get_waarde()
 
     @typeLamp.setter
     def typeLamp(self, value):

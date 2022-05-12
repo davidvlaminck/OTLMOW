@@ -30,7 +30,7 @@ class ProefBindmiddeldosering(Proef, PuntGeometrie, LijnGeometrie, VlakGeometrie
     @property
     def technischVerslagBindmiddeldosering(self):
         """Het technisch verslag van een aangewezen bindmiddeldosering."""
-        return self._technischVerslagBindmiddeldosering.waarde
+        return self._technischVerslagBindmiddeldosering.get_waarde()
 
     @technischVerslagBindmiddeldosering.setter
     def technischVerslagBindmiddeldosering(self, value):

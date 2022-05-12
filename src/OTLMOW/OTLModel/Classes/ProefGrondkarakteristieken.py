@@ -30,7 +30,7 @@ class ProefGrondkarakteristieken(Proef, PuntGeometrie, LijnGeometrie, VlakGeomet
     @property
     def bepalingGrondkarakteristieken(self):
         """Proef met de resultaten van de grondkarakteristieken."""
-        return self._bepalingGrondkarakteristieken.waarde
+        return self._bepalingGrondkarakteristieken.get_waarde()
 
     @bepalingGrondkarakteristieken.setter
     def bepalingGrondkarakteristieken(self, value):

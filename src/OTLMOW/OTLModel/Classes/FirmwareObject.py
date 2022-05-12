@@ -23,7 +23,7 @@ class FirmwareObject(ABC):
     @property
     def firmwareversie(self):
         """Versie van de firmware."""
-        return self._firmwareversie.waarde
+        return self._firmwareversie.get_waarde()
 
     @firmwareversie.setter
     def firmwareversie(self, value):

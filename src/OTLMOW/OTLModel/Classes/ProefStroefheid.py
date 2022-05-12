@@ -30,7 +30,7 @@ class ProefStroefheid(Proef, PuntGeometrie, LijnGeometrie, VlakGeometrie):
     @property
     def stroefheid(self):
         """Proefresultaten van de stroefheid."""
-        return self._stroefheid.waarde
+        return self._stroefheid.get_waarde()
 
     @stroefheid.setter
     def stroefheid(self, value):

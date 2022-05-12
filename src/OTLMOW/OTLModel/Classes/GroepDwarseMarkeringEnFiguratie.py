@@ -34,7 +34,7 @@ class GroepDwarseMarkeringEnFiguratie(AIMObject, PuntGeometrie):
     @property
     def totaleOppervlakte(self):
         """De oppervlakte van de groep dwarse en/of figuratie markering."""
-        return self._totaleOppervlakte.waarde
+        return self._totaleOppervlakte.get_waarde()
 
     @totaleOppervlakte.setter
     def totaleOppervlakte(self, value):
@@ -43,7 +43,7 @@ class GroepDwarseMarkeringEnFiguratie(AIMObject, PuntGeometrie):
     @property
     def tussenruimte(self):
         """De lengte van de tussenruimte in meter tussen de dwarse en/of figuratie markering."""
-        return self._tussenruimte.waarde
+        return self._tussenruimte.get_waarde()
 
     @tussenruimte.setter
     def tussenruimte(self, value):

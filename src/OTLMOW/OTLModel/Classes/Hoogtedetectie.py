@@ -44,7 +44,7 @@ class Hoogtedetectie(AIMNaamObject, PuntGeometrie):
     @property
     def detectiehoogte(self):
         """De ingestelde hoogtelimiet waarboven het systeem voor hoogtedetectie een detectiesignaal moet uitsturen."""
-        return self._detectiehoogte.waarde
+        return self._detectiehoogte.get_waarde()
 
     @detectiehoogte.setter
     def detectiehoogte(self, value):
@@ -53,7 +53,7 @@ class Hoogtedetectie(AIMNaamObject, PuntGeometrie):
     @property
     def merk(self):
         """Merknaam van het systeem voor hoogtedetectie.Verwijst naar de fabrikant of producent."""
-        return self._merk.waarde
+        return self._merk.get_waarde()
 
     @merk.setter
     def merk(self, value):
@@ -62,7 +62,7 @@ class Hoogtedetectie(AIMNaamObject, PuntGeometrie):
     @property
     def modelnaam(self):
         """De modelnaam van de hoogtedetectie."""
-        return self._modelnaam.waarde
+        return self._modelnaam.get_waarde()
 
     @modelnaam.setter
     def modelnaam(self, value):

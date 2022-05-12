@@ -34,7 +34,7 @@ class Taludgoot(AIMObject, LijnGeometrie):
     @property
     def totaleLengte(self):
         """De totale lengte van de geprefabriceerde betonelementen in lopende meter vanaf het beginstuk (niet inbegrepen) tot aan het eindstuk (niet inbegrepen)."""
-        return self._totaleLengte.waarde
+        return self._totaleLengte.get_waarde()
 
     @totaleLengte.setter
     def totaleLengte(self, value):
@@ -43,7 +43,7 @@ class Taludgoot(AIMObject, LijnGeometrie):
     @property
     def type(self):
         """Het type van geprefabriceerd betonelement."""
-        return self._type.waarde
+        return self._type.get_waarde()
 
     @type.setter
     def type(self, value):

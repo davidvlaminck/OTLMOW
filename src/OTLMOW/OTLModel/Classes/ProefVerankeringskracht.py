@@ -30,7 +30,7 @@ class ProefVerankeringskracht(Proef, PuntGeometrie, LijnGeometrie, VlakGeometrie
     @property
     def verankeringskracht(self):
         """Het resultaat van de test om de verankeringskracht in de BV laag."""
-        return self._verankeringskracht.waarde
+        return self._verankeringskracht.get_waarde()
 
     @verankeringskracht.setter
     def verankeringskracht(self, value):

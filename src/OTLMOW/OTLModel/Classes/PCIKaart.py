@@ -34,7 +34,7 @@ class PCIKaart(AIMNaamObject, PuntGeometrie):
     @property
     def merk(self):
         """Het merk van de PCI-kaart."""
-        return self._merk.waarde
+        return self._merk.get_waarde()
 
     @merk.setter
     def merk(self, value):
@@ -43,7 +43,7 @@ class PCIKaart(AIMNaamObject, PuntGeometrie):
     @property
     def modelnaam(self):
         """De modelnaam van de PCI-kaart."""
-        return self._modelnaam.waarde
+        return self._modelnaam.get_waarde()
 
     @modelnaam.setter
     def modelnaam(self, value):

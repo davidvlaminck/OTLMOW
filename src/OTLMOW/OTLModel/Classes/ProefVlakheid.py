@@ -30,7 +30,7 @@ class ProefVlakheid(Proef, PuntGeometrie, LijnGeometrie, VlakGeometrie):
     @property
     def vlakheid(self):
         """Proefresultaten van de vlakheid."""
-        return self._vlakheid.waarde
+        return self._vlakheid.get_waarde()
 
     @vlakheid.setter
     def vlakheid(self, value):

@@ -113,7 +113,7 @@ Volgende documenten zijn specifiek van toepassing voor verkeersregelaars:
     @property
     def coordinatiewijze(self):
         """Wijze waarop de coördinatie is opgezet en de eventuele rol die de verkeersregelaar hierin speelt."""
-        return self._coordinatiewijze.waarde
+        return self._coordinatiewijze.get_waarde()
 
     @coordinatiewijze.setter
     def coordinatiewijze(self, value):
@@ -122,7 +122,7 @@ Volgende documenten zijn specifiek van toepassing voor verkeersregelaars:
     @property
     def externeReferentie(self):
         """Referentie zoals gekend bij een externe partij bv. aannemer, VLCC, ..."""
-        return self._externeReferentie.waarde
+        return self._externeReferentie.get_waarde()
 
     @externeReferentie.setter
     def externeReferentie(self, value):
@@ -131,7 +131,7 @@ Volgende documenten zijn specifiek van toepassing voor verkeersregelaars:
     @property
     def kabelaansluitschema(self):
         """Document met het kabelaansluitschema."""
-        return self._kabelaansluitschema.waarde
+        return self._kabelaansluitschema.get_waarde()
 
     @kabelaansluitschema.setter
     def kabelaansluitschema(self, value):
@@ -140,7 +140,7 @@ Volgende documenten zijn specifiek van toepassing voor verkeersregelaars:
     @property
     def merk(self):
         """Het merk van een verkeersregelaar."""
-        return self._merk.waarde
+        return self._merk.get_waarde()
 
     @merk.setter
     def merk(self, value):
@@ -149,7 +149,7 @@ Volgende documenten zijn specifiek van toepassing voor verkeersregelaars:
     @property
     def modelnaam(self):
         """De modelnaam/product range van een verkeersregelaar."""
-        return self._modelnaam.waarde
+        return self._modelnaam.get_waarde()
 
     @modelnaam.setter
     def modelnaam(self, value):
@@ -158,7 +158,7 @@ Volgende documenten zijn specifiek van toepassing voor verkeersregelaars:
     @property
     def programmeertool(self):
         """Software waarmee de verkeersregelaar geprogrammeerd kan worden."""
-        return self._programmeertool.waarde
+        return self._programmeertool.get_waarde()
 
     @programmeertool.setter
     def programmeertool(self, value):
@@ -167,7 +167,7 @@ Volgende documenten zijn specifiek van toepassing voor verkeersregelaars:
     @property
     def regelaartype(self):
         """Onderverdeling in type regelaar volgens het maximale aantal aan te sluiten seingroepen en kruispuntdetectoren."""
-        return self._regelaartype.waarde
+        return self._regelaartype.get_waarde()
 
     @regelaartype.setter
     def regelaartype(self, value):
@@ -176,7 +176,7 @@ Volgende documenten zijn specifiek van toepassing voor verkeersregelaars:
     @property
     def technischeDocumentatie(self):
         """Document met technische informatie."""
-        return self._technischeDocumentatie.waarde
+        return self._technischeDocumentatie.get_waarde()
 
     @technischeDocumentatie.setter
     def technischeDocumentatie(self, value):
@@ -185,7 +185,7 @@ Volgende documenten zijn specifiek van toepassing voor verkeersregelaars:
     @property
     def voltageLampen(self):
         """Voltage van de verkeerslichten."""
-        return self._voltageLampen.waarde
+        return self._voltageLampen.get_waarde()
 
     @voltageLampen.setter
     def voltageLampen(self, value):
@@ -194,7 +194,7 @@ Volgende documenten zijn specifiek van toepassing voor verkeersregelaars:
     @property
     def vplanDatum(self):
         """Datum van het V-plan."""
-        return self._vplanDatum.waarde
+        return self._vplanDatum.get_waarde()
 
     @vplanDatum.setter
     def vplanDatum(self, value):
@@ -203,7 +203,7 @@ Volgende documenten zijn specifiek van toepassing voor verkeersregelaars:
     @property
     def vplanNummer(self):
         """Nummer van het V-plan."""
-        return self._vplanNummer.waarde
+        return self._vplanNummer.get_waarde()
 
     @vplanNummer.setter
     def vplanNummer(self, value):

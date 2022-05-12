@@ -103,7 +103,7 @@ class Seinbrug(VRIDraagconstructie, LijnGeometrie, VlakGeometrie):
     @property
     def aantalLadders(self):
         """Het aantal ladders waarmee de seinbrug toegankelijk is."""
-        return self._aantalLadders.waarde
+        return self._aantalLadders.get_waarde()
 
     @aantalLadders.setter
     def aantalLadders(self, value):
@@ -112,7 +112,7 @@ class Seinbrug(VRIDraagconstructie, LijnGeometrie, VlakGeometrie):
     @property
     def aantalSteunen(self):
         """Het aantal steunen waarmee de seinbrug gedragen wordt. """
-        return self._aantalSteunen.waarde
+        return self._aantalSteunen.get_waarde()
 
     @aantalSteunen.setter
     def aantalSteunen(self, value):
@@ -121,7 +121,7 @@ class Seinbrug(VRIDraagconstructie, LijnGeometrie, VlakGeometrie):
     @property
     def berekeningsnota(self):
         """Een bijlage met de berekeningsnota voor de seinbrug."""
-        return self._berekeningsnota.waarde
+        return self._berekeningsnota.get_waarde()
 
     @berekeningsnota.setter
     def berekeningsnota(self, value):
@@ -130,7 +130,7 @@ class Seinbrug(VRIDraagconstructie, LijnGeometrie, VlakGeometrie):
     @property
     def controlemetingEBS(self):
         """Een bijlage met het verslag van de controlemeting uitgevoerd door het Expertisecentrum Beton en Staal."""
-        return self._controlemetingEBS.waarde
+        return self._controlemetingEBS.get_waarde()
 
     @controlemetingEBS.setter
     def controlemetingEBS(self, value):
@@ -139,7 +139,7 @@ class Seinbrug(VRIDraagconstructie, LijnGeometrie, VlakGeometrie):
     @property
     def heeftLooproosters(self):
         """Geeft aan of de seinbrug is uitgerust met looproosters."""
-        return self._heeftLooproosters.waarde
+        return self._heeftLooproosters.get_waarde()
 
     @heeftLooproosters.setter
     def heeftLooproosters(self, value):
@@ -148,7 +148,7 @@ class Seinbrug(VRIDraagconstructie, LijnGeometrie, VlakGeometrie):
     @property
     def hoogteVerticaleSteun(self):
         """Verticale afstand (in meter) tussen de bovenkant van het wegdek en de bovenkant van het hoogste constructiedeel van de seinbrug."""
-        return self._hoogteVerticaleSteun.waarde
+        return self._hoogteVerticaleSteun.get_waarde()
 
     @hoogteVerticaleSteun.setter
     def hoogteVerticaleSteun(self, value):
@@ -157,7 +157,7 @@ class Seinbrug(VRIDraagconstructie, LijnGeometrie, VlakGeometrie):
     @property
     def overspanning(self):
         """De afstand tussen de twee steunpunten van de seinbrug."""
-        return self._overspanning.waarde
+        return self._overspanning.get_waarde()
 
     @overspanning.setter
     def overspanning(self, value):
@@ -166,7 +166,7 @@ class Seinbrug(VRIDraagconstructie, LijnGeometrie, VlakGeometrie):
     @property
     def rijrichting(self):
         """Geeft aan of de seinbrug één of beide rijrichtingen overspant."""
-        return self._rijrichting.waarde
+        return self._rijrichting.get_waarde()
 
     @rijrichting.setter
     def rijrichting(self, value):
@@ -175,7 +175,7 @@ class Seinbrug(VRIDraagconstructie, LijnGeometrie, VlakGeometrie):
     @property
     def technischeFiche(self):
         """Een bijlage waarin de detailtekeningen van de seinbrug."""
-        return self._technischeFiche.waarde
+        return self._technischeFiche.get_waarde()
 
     @technischeFiche.setter
     def technischeFiche(self, value):
@@ -184,7 +184,7 @@ class Seinbrug(VRIDraagconstructie, LijnGeometrie, VlakGeometrie):
     @property
     def type(self):
         """Het type van de seinbrug volgens de aard van de constructie."""
-        return self._type.waarde
+        return self._type.get_waarde()
 
     @type.setter
     def type(self, value):
@@ -193,7 +193,7 @@ class Seinbrug(VRIDraagconstructie, LijnGeometrie, VlakGeometrie):
     @property
     def vrijeHoogte(self):
         """De verticale afstand (in meter) tussen de bovenkant van het wegdek en de onderkant van het laagste, daarboven gelegen constructiedeel van de seinbrug."""
-        return self._vrijeHoogte.waarde
+        return self._vrijeHoogte.get_waarde()
 
     @vrijeHoogte.setter
     def vrijeHoogte(self, value):

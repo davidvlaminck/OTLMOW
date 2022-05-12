@@ -114,7 +114,7 @@ class DtcHoutigeAanlegWaarden(AttributeInfo):
     @property
     def beschermingVraatschade(self):
         """Bescherming van de stam tegen knaagdieren."""
-        return self._beschermingVraatschade.waarde
+        return self._beschermingVraatschade.get_waarde()
 
     @beschermingVraatschade.setter
     def beschermingVraatschade(self, value):
@@ -123,7 +123,7 @@ class DtcHoutigeAanlegWaarden(AttributeInfo):
     @property
     def heeftBoomplaat(self):
         """Boomplaten worden aangebracht rond de stam van bomen, bosgoed en heesters en eventueel vastgezet met piketten. Ze hebben een centrale opening en een rechte snede, zodat ze op eenvoudige wijze rond de planten kunnen aangebracht worden."""
-        return self._heeftBoomplaat.waarde
+        return self._heeftBoomplaat.get_waarde()
 
     @heeftBoomplaat.setter
     def heeftBoomplaat(self, value):
@@ -132,7 +132,7 @@ class DtcHoutigeAanlegWaarden(AttributeInfo):
     @property
     def heeftHaagsteun(self):
         """Duidt op de aanezigheid van een constructie van palen en bedrading die haagbeplanting ondersteunt."""
-        return self._heeftHaagsteun.waarde
+        return self._heeftHaagsteun.get_waarde()
 
     @heeftHaagsteun.setter
     def heeftHaagsteun(self, value):
@@ -141,7 +141,7 @@ class DtcHoutigeAanlegWaarden(AttributeInfo):
     @property
     def heeftWortelgeleidingwortelwering(self):
         """Wortelgeleiding en –wering moet voorkomen dat boomwortels het trottoir, de middenberm, het fietspad, de rijweg, andere wegverhardingen en leidingstelsels beschadigen. Het heeft als doel om boomwortels naar beneden te leiden, waar ze onder een obstakel verder kunnen groeien."""
-        return self._heeftWortelgeleidingwortelwering.waarde
+        return self._heeftWortelgeleidingwortelwering.get_waarde()
 
     @heeftWortelgeleidingwortelwering.setter
     def heeftWortelgeleidingwortelwering(self, value):
@@ -150,7 +150,7 @@ class DtcHoutigeAanlegWaarden(AttributeInfo):
     @property
     def maaischadeBescherming(self):
         """Bescherming van de stam tegen maaimachines."""
-        return self._maaischadeBescherming.waarde
+        return self._maaischadeBescherming.get_waarde()
 
     @maaischadeBescherming.setter
     def maaischadeBescherming(self, value):
@@ -159,7 +159,7 @@ class DtcHoutigeAanlegWaarden(AttributeInfo):
     @property
     def plantafstand(self):
         """Aantal planten per lopende meter."""
-        return self._plantafstand.waarde
+        return self._plantafstand.get_waarde()
 
     @plantafstand.setter
     def plantafstand(self, value):
@@ -168,7 +168,7 @@ class DtcHoutigeAanlegWaarden(AttributeInfo):
     @property
     def plantdichtheid(self):
         """Aantal planten per vierkante meter."""
-        return self._plantdichtheid.waarde
+        return self._plantdichtheid.get_waarde()
 
     @plantdichtheid.setter
     def plantdichtheid(self, value):
@@ -177,7 +177,7 @@ class DtcHoutigeAanlegWaarden(AttributeInfo):
     @property
     def plantmaatHoogte(self):
         """De hoogte van de plant in cm gemeten tussen een minimum en maximum waarde."""
-        return self._plantmaatHoogte.waarde
+        return self._plantmaatHoogte.get_waarde()
 
     @plantmaatHoogte.setter
     def plantmaatHoogte(self, value):
@@ -186,7 +186,7 @@ class DtcHoutigeAanlegWaarden(AttributeInfo):
     @property
     def plantmaatOmtrek(self):
         """De stamomtrek in centimeter  (gemeten op 1 m boven het maaiveld) met een minimum en maximum waarde."""
-        return self._plantmaatOmtrek.waarde
+        return self._plantmaatOmtrek.get_waarde()
 
     @plantmaatOmtrek.setter
     def plantmaatOmtrek(self, value):
@@ -195,7 +195,7 @@ class DtcHoutigeAanlegWaarden(AttributeInfo):
     @property
     def plantverband(self):
         """De wijze waarop de planten zijn geschikt."""
-        return self._plantverband.waarde
+        return self._plantverband.get_waarde()
 
     @plantverband.setter
     def plantverband(self, value):
@@ -204,7 +204,7 @@ class DtcHoutigeAanlegWaarden(AttributeInfo):
     @property
     def vormAanlevering(self):
         """De wijze waarop het plantgoed wordt aangeleverd."""
-        return self._vormAanlevering.waarde
+        return self._vormAanlevering.get_waarde()
 
     @vormAanlevering.setter
     def vormAanlevering(self, value):
@@ -213,7 +213,7 @@ class DtcHoutigeAanlegWaarden(AttributeInfo):
     @property
     def vraatschadeBescherming(self):
         """Bescherming van de stam tegen knaagdieren."""
-        return self._vraatschadeBescherming.waarde
+        return self._vraatschadeBescherming.get_waarde()
 
     @vraatschadeBescherming.setter
     def vraatschadeBescherming(self, value):
@@ -222,7 +222,7 @@ class DtcHoutigeAanlegWaarden(AttributeInfo):
     @property
     def wortel(self):
         """De manier van levering en aanplanting van het wortelgestel van de boom of plant."""
-        return self._wortel.waarde
+        return self._wortel.get_waarde()
 
     @wortel.setter
     def wortel(self, value):

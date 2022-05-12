@@ -35,7 +35,7 @@ class MIVInstallatie(NaampadObject, VlakGeometrie):
     @property
     def lusConfig(self):
         """Een definierende tabel die relatie legt tussen meetpuntnummer lusvolgorde nummer en de GPS locatie."""
-        return self._lusConfig.waarde
+        return self._lusConfig.get_waarde()
 
     @lusConfig.setter
     def lusConfig(self, value):
@@ -44,7 +44,7 @@ class MIVInstallatie(NaampadObject, VlakGeometrie):
     @property
     def technischeDocumentatie(self):
         """Documentatie van de onderdelen: LVE / luskaart / communicatiekaart, configurator,  ..."""
-        return self._technischeDocumentatie.waarde
+        return self._technischeDocumentatie.get_waarde()
 
     @technischeDocumentatie.setter
     def technischeDocumentatie(self, value):

@@ -37,7 +37,7 @@ class VerlichtingstoestelMHHP(VerlichtingstoestelConnector, Verlichtingstoestel)
     @property
     def armatuurkleur(self):
         """De kleur van de zichtbare buitenkant van het verlichtingstoestel."""
-        return self._armatuurkleur.waarde
+        return self._armatuurkleur.get_waarde()
 
     @armatuurkleur.setter
     def armatuurkleur(self, value):
@@ -46,7 +46,7 @@ class VerlichtingstoestelMHHP(VerlichtingstoestelConnector, Verlichtingstoestel)
     @property
     def heeftAntiVandalisme(self):
         """Is het een antivandalisme type verlichtingstoestel?"""
-        return self._heeftAntiVandalisme.waarde
+        return self._heeftAntiVandalisme.get_waarde()
 
     @heeftAntiVandalisme.setter
     def heeftAntiVandalisme(self, value):

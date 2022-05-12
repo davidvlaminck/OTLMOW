@@ -42,7 +42,7 @@ class Wegdekvoeg(AIMObject, LijnGeometrie):
     @property
     def heeftDeuvels(self):
         """Aanduiding of de voeg al dan niet verdeuveld is."""
-        return self._heeftDeuvels.waarde
+        return self._heeftDeuvels.get_waarde()
 
     @heeftDeuvels.setter
     def heeftDeuvels(self, value):
@@ -51,7 +51,7 @@ class Wegdekvoeg(AIMObject, LijnGeometrie):
     @property
     def lengte(self):
         """De lengte van de wegdekvoeg."""
-        return self._lengte.waarde
+        return self._lengte.get_waarde()
 
     @lengte.setter
     def lengte(self, value):
@@ -60,7 +60,7 @@ class Wegdekvoeg(AIMObject, LijnGeometrie):
     @property
     def type(self):
         """Het type van wegdekvoeg."""
-        return self._type.waarde
+        return self._type.get_waarde()
 
     @type.setter
     def type(self, value):

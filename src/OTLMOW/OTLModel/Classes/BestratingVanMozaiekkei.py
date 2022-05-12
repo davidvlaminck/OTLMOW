@@ -32,7 +32,7 @@ class BestratingVanMozaiekkei(Bestrating):
     @property
     def formaat(self):
         """De grootte van mozaïekkei."""
-        return self._formaat.waarde
+        return self._formaat.get_waarde()
 
     @formaat.setter
     def formaat(self, value):
@@ -41,7 +41,7 @@ class BestratingVanMozaiekkei(Bestrating):
     @property
     def isHerbruik(self):
         """Bepaling of de mozaïekkeien gerecycleerd werden."""
-        return self._isHerbruik.waarde
+        return self._isHerbruik.get_waarde()
 
     @isHerbruik.setter
     def isHerbruik(self, value):

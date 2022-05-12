@@ -75,7 +75,7 @@ class Kamer(PutRelatie, VlakGeometrie):
     @property
     def breedte(self):
         """De afmeting 1 (breedte) van het grondplan van de putkamer in millimeter."""
-        return self._breedte.waarde
+        return self._breedte.get_waarde()
 
     @breedte.setter
     def breedte(self, value):
@@ -84,7 +84,7 @@ class Kamer(PutRelatie, VlakGeometrie):
     @property
     def diepte(self):
         """De diepte van de putkamer in meter."""
-        return self._diepte.waarde
+        return self._diepte.get_waarde()
 
     @diepte.setter
     def diepte(self, value):
@@ -93,7 +93,7 @@ class Kamer(PutRelatie, VlakGeometrie):
     @property
     def hoogte(self):
         """De afmeting 2 (hoogte) van het grondplan van de putkamer in millimeter."""
-        return self._hoogte.waarde
+        return self._hoogte.get_waarde()
 
     @hoogte.setter
     def hoogte(self, value):
@@ -102,7 +102,7 @@ class Kamer(PutRelatie, VlakGeometrie):
     @property
     def klasse(self):
         """De stabiliteitsklasse van de kamer."""
-        return self._klasse.waarde
+        return self._klasse.get_waarde()
 
     @klasse.setter
     def klasse(self, value):
@@ -111,7 +111,7 @@ class Kamer(PutRelatie, VlakGeometrie):
     @property
     def materiaal(self):
         """Het materiaal waaruit de kamer opgebouwd is."""
-        return self._materiaal.waarde
+        return self._materiaal.get_waarde()
 
     @materiaal.setter
     def materiaal(self, value):
@@ -120,7 +120,7 @@ class Kamer(PutRelatie, VlakGeometrie):
     @property
     def technischeFiche(self):
         """De technische fiche van de kamer."""
-        return self._technischeFiche.waarde
+        return self._technischeFiche.get_waarde()
 
     @technischeFiche.setter
     def technischeFiche(self, value):
@@ -129,7 +129,7 @@ class Kamer(PutRelatie, VlakGeometrie):
     @property
     def vorm(self):
         """De vorm van de kamer."""
-        return self._vorm.waarde
+        return self._vorm.get_waarde()
 
     @vorm.setter
     def vorm(self, value):

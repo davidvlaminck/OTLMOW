@@ -34,7 +34,7 @@ class IVRIComponent(Software):
     @property
     def baseline(self):
         """Specificatieversie van het protocol waarop de iVRI component werkt."""
-        return self._baseline.waarde
+        return self._baseline.get_waarde()
 
     @baseline.setter
     def baseline(self, value):
@@ -43,7 +43,7 @@ class IVRIComponent(Software):
     @property
     def certificaat(self):
         """Certificaat van de keuringsinstantie dat wordt uitgereikt aan een iVRI (intelligente verkeersregelaar) component. """
-        return self._certificaat.waarde
+        return self._certificaat.get_waarde()
 
     @certificaat.setter
     def certificaat(self, value):

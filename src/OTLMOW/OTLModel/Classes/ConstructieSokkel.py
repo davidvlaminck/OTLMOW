@@ -30,7 +30,7 @@ class ConstructieSokkel(ConstructieElement, BetonnenConstructieElement, Construc
     @property
     def afmetingen(self):
         """De afmetingen van de constructiesokkel."""
-        return self._afmetingen.waarde
+        return self._afmetingen.get_waarde()
 
     @afmetingen.setter
     def afmetingen(self, value):

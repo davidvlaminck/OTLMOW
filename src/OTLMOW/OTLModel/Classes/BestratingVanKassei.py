@@ -24,7 +24,7 @@ class BestratingVanKassei(Bestrating):
     @property
     def afmetingVanBestratingselementBxl(self):
         """Afmeting van de breedte in cm (langste) en van de lengte in cm (kortste) van de kassei."""
-        return self._afmetingVanBestratingselementBxl.waarde
+        return self._afmetingVanBestratingselementBxl.get_waarde()
 
     @afmetingVanBestratingselementBxl.setter
     def afmetingVanBestratingselementBxl(self, value):

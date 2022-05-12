@@ -43,7 +43,7 @@ class BeheerSierbeplanting(AIMObject, VlakGeometrie):
     @property
     def beheeroptie(self):
         """Aanduiding van welk beheer wordt toegepast op de sierbeplanting."""
-        return self._beheeroptie.waarde
+        return self._beheeroptie.get_waarde()
 
     @beheeroptie.setter
     def beheeroptie(self, value):
@@ -52,7 +52,7 @@ class BeheerSierbeplanting(AIMObject, VlakGeometrie):
     @property
     def heeftBeheerplan(self):
         """Aanduiding of er een beheerplan bestaat."""
-        return self._heeftBeheerplan.waarde
+        return self._heeftBeheerplan.get_waarde()
 
     @heeftBeheerplan.setter
     def heeftBeheerplan(self, value):
@@ -61,7 +61,7 @@ class BeheerSierbeplanting(AIMObject, VlakGeometrie):
     @property
     def oppervlakte(self):
         """De oppervlakte in vierkante meter van de te behandelen sierbeplanting."""
-        return self._oppervlakte.waarde
+        return self._oppervlakte.get_waarde()
 
     @oppervlakte.setter
     def oppervlakte(self, value):

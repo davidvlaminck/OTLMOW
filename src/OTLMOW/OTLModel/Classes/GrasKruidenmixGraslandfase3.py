@@ -33,7 +33,7 @@ veldgerst, vijfvingerkruid."""
     @property
     def huidigNatuurbeeld(self):
         """Bepaling van het vegetatietype op basis van terreininventarisatie."""
-        return self._huidigNatuurbeeld.waarde
+        return self._huidigNatuurbeeld.get_waarde()
 
     @huidigNatuurbeeld.setter
     def huidigNatuurbeeld(self, value):

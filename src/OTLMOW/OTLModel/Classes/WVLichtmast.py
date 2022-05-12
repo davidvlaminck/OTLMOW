@@ -41,7 +41,7 @@ class WVLichtmast(Lichtmast):
     @property
     def aantalArmen(self):
         """Aantal armen van de lichtmast."""
-        return self._aantalArmen.waarde
+        return self._aantalArmen.get_waarde()
 
     @aantalArmen.setter
     def aantalArmen(self, value):
@@ -50,7 +50,7 @@ class WVLichtmast(Lichtmast):
     @property
     def armlengte(self):
         """Lengte van de arm van de lichtmast in meter."""
-        return self._armlengte.waarde
+        return self._armlengte.get_waarde()
 
     @armlengte.setter
     def armlengte(self, value):
@@ -59,7 +59,7 @@ class WVLichtmast(Lichtmast):
     @property
     def bevestigingToestellen(self):
         """Geeft de wijze aan waarop elk verlichtingstoestel bevestigd is op de lichtmast als keuze uit een lijst voor standaardmethodes of verder toegelicht wanneer een afwijkende methode gebruikt wordt."""
-        return self._bevestigingToestellen.waarde
+        return self._bevestigingToestellen.get_waarde()
 
     @bevestigingToestellen.setter
     def bevestigingToestellen(self, value):

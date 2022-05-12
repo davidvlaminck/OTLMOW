@@ -51,7 +51,7 @@ class DtcSierbeplAanlegWaarden(AttributeInfo):
     @property
     def aanplantingswijze(self):
         """Manier van aanplanten."""
-        return self._aanplantingswijze.waarde
+        return self._aanplantingswijze.get_waarde()
 
     @aanplantingswijze.setter
     def aanplantingswijze(self, value):
@@ -60,7 +60,7 @@ class DtcSierbeplAanlegWaarden(AttributeInfo):
     @property
     def containermaat(self):
         """De grootte van de pot of container waarin de plant wordt geleverd. De P staat voor pot, de C voor container. Het getal geeft de grootte weer in centimeter."""
-        return self._containermaat.waarde
+        return self._containermaat.get_waarde()
 
     @containermaat.setter
     def containermaat(self, value):
@@ -69,7 +69,7 @@ class DtcSierbeplAanlegWaarden(AttributeInfo):
     @property
     def plantdichtheid(self):
         """Aantal planten per vierkante meter."""
-        return self._plantdichtheid.waarde
+        return self._plantdichtheid.get_waarde()
 
     @plantdichtheid.setter
     def plantdichtheid(self, value):
@@ -78,7 +78,7 @@ class DtcSierbeplAanlegWaarden(AttributeInfo):
     @property
     def plantmaat(self):
         """De hoogte van de plant in cm gemeten tussen een minimum en maximum waarde."""
-        return self._plantmaat.waarde
+        return self._plantmaat.get_waarde()
 
     @plantmaat.setter
     def plantmaat(self, value):
@@ -87,7 +87,7 @@ class DtcSierbeplAanlegWaarden(AttributeInfo):
     @property
     def plantverband(self):
         """De wijze waarop de planten zijn geschikt."""
-        return self._plantverband.waarde
+        return self._plantverband.get_waarde()
 
     @plantverband.setter
     def plantverband(self, value):

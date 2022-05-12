@@ -95,7 +95,7 @@ class Pomp(LinkendElement, PuntGeometrie):
     @property
     def binnenDiameter(self):
         """Afmeting van de binnenkant van de opening waardoor het opgepompte water loopt."""
-        return self._binnenDiameter.waarde
+        return self._binnenDiameter.get_waarde()
 
     @binnenDiameter.setter
     def binnenDiameter(self, value):
@@ -104,7 +104,7 @@ class Pomp(LinkendElement, PuntGeometrie):
     @property
     def buitenDiameter(self):
         """Afmeting van de buitenkant van de opening waarlangs het opgepomte water loopt in functie van een aansluiting van een afvoer."""
-        return self._buitenDiameter.waarde
+        return self._buitenDiameter.get_waarde()
 
     @buitenDiameter.setter
     def buitenDiameter(self, value):
@@ -113,7 +113,7 @@ class Pomp(LinkendElement, PuntGeometrie):
     @property
     def maximaalDebiet(self):
         """Het debiet dat de pomp kan verplaatsen wanneer ze op volle capaciteit werkt volgens de specificaties van de fabrikant."""
-        return self._maximaalDebiet.waarde
+        return self._maximaalDebiet.get_waarde()
 
     @maximaalDebiet.setter
     def maximaalDebiet(self, value):
@@ -122,7 +122,7 @@ class Pomp(LinkendElement, PuntGeometrie):
     @property
     def merk(self):
         """De naam van het merk volgens de fabrikant."""
-        return self._merk.waarde
+        return self._merk.get_waarde()
 
     @merk.setter
     def merk(self, value):
@@ -131,7 +131,7 @@ class Pomp(LinkendElement, PuntGeometrie):
     @property
     def metSoftstarter(self):
         """Geeft aan of het toestel voorzien is van een eigen softstarter."""
-        return self._metSoftstarter.waarde
+        return self._metSoftstarter.get_waarde()
 
     @metSoftstarter.setter
     def metSoftstarter(self, value):
@@ -140,7 +140,7 @@ class Pomp(LinkendElement, PuntGeometrie):
     @property
     def metTempSensor(self):
         """Geeft aan of het toestel uitgerust is met een temperatuur sensor in functie van de bewaking van de correcte werking."""
-        return self._metTempSensor.waarde
+        return self._metTempSensor.get_waarde()
 
     @metTempSensor.setter
     def metTempSensor(self, value):
@@ -149,7 +149,7 @@ class Pomp(LinkendElement, PuntGeometrie):
     @property
     def metVochtsensor(self):
         """Geeft aan of het toestel uitgerust is met een vocht sensor in functie van de bewaking van de correcte werking."""
-        return self._metVochtsensor.waarde
+        return self._metVochtsensor.get_waarde()
 
     @metVochtsensor.setter
     def metVochtsensor(self, value):
@@ -158,7 +158,7 @@ class Pomp(LinkendElement, PuntGeometrie):
     @property
     def modelnaam(self):
         """Naam van het model van het toestel volgens de fabrikant."""
-        return self._modelnaam.waarde
+        return self._modelnaam.get_waarde()
 
     @modelnaam.setter
     def modelnaam(self, value):
@@ -167,7 +167,7 @@ class Pomp(LinkendElement, PuntGeometrie):
     @property
     def soort(self):
         """Bepaalt de aard van de pomp volgens haar werkingsprincipe."""
-        return self._soort.waarde
+        return self._soort.get_waarde()
 
     @soort.setter
     def soort(self, value):
@@ -176,7 +176,7 @@ class Pomp(LinkendElement, PuntGeometrie):
     @property
     def vermogen(self):
         """Elektrisch vermogen van het toestels volgens de specificaties van de fabrikant."""
-        return self._vermogen.waarde
+        return self._vermogen.get_waarde()
 
     @vermogen.setter
     def vermogen(self, value):

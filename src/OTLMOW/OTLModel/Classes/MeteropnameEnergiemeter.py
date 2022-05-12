@@ -41,7 +41,7 @@ class MeteropnameEnergiemeter(AIMNaamObject, GeenGeometrie):
     @property
     def datumMeterstand(self):
         """De datum van de laatste meteropname van de energiemeter."""
-        return self._datumMeterstand.waarde
+        return self._datumMeterstand.get_waarde()
 
     @datumMeterstand.setter
     def datumMeterstand(self, value):
@@ -50,7 +50,7 @@ class MeteropnameEnergiemeter(AIMNaamObject, GeenGeometrie):
     @property
     def meterstandDag(self):
         """De meterstand bij de laatste meteropname van de dag-energiemeter."""
-        return self._meterstandDag.waarde
+        return self._meterstandDag.get_waarde()
 
     @meterstandDag.setter
     def meterstandDag(self, value):
@@ -59,7 +59,7 @@ class MeteropnameEnergiemeter(AIMNaamObject, GeenGeometrie):
     @property
     def meterstandNacht(self):
         """De meterstand bij de laatste meteropname van de nacht-energiemeter."""
-        return self._meterstandNacht.waarde
+        return self._meterstandNacht.get_waarde()
 
     @meterstandNacht.setter
     def meterstandNacht(self, value):

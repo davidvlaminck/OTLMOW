@@ -40,7 +40,7 @@ class TrottoirbandWatergreppelStd(GestandaardiseerdeKantopsluiting):
     @property
     def norm(self):
         """De gestandaardiseerde trottoirband_watergreppel volgens aangeduide norm."""
-        return self._norm.waarde
+        return self._norm.get_waarde()
 
     @norm.setter
     def norm(self, value):
@@ -49,7 +49,7 @@ class TrottoirbandWatergreppelStd(GestandaardiseerdeKantopsluiting):
     @property
     def type(self):
         """Het type van gestandaardiseerde trottoirband_watergreppel."""
-        return self._type.waarde
+        return self._type.get_waarde()
 
     @type.setter
     def type(self, value):
@@ -58,7 +58,7 @@ class TrottoirbandWatergreppelStd(GestandaardiseerdeKantopsluiting):
     @property
     def vorm(self):
         """De vorm van de gestandaardiseerde trottoirband_watergreppel."""
-        return self._vorm.waarde
+        return self._vorm.get_waarde()
 
     @vorm.setter
     def vorm(self, value):

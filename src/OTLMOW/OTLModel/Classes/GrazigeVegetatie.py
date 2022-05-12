@@ -43,7 +43,7 @@ class GrazigeVegetatie(BegroeidVoorkomen, VlakGeometrie):
     @property
     def aanleg(self):
         """De wijze van aanleg/aanplanting van de grazige vegetatie."""
-        return self._aanleg.waarde
+        return self._aanleg.get_waarde()
 
     @aanleg.setter
     def aanleg(self, value):
@@ -52,7 +52,7 @@ class GrazigeVegetatie(BegroeidVoorkomen, VlakGeometrie):
     @property
     def heeftBolgewassen(self):
         """Grasland met bol- en knolgewassen die in het voorjaar bloeien."""
-        return self._heeftBolgewassen.waarde
+        return self._heeftBolgewassen.get_waarde()
 
     @heeftBolgewassen.setter
     def heeftBolgewassen(self, value):
@@ -61,7 +61,7 @@ class GrazigeVegetatie(BegroeidVoorkomen, VlakGeometrie):
     @property
     def isOvergroeienRandVerharding(self):
         """Geeft aan of de rand van de verharding al dan niet wordt overgroeid door de grazige vegetatie."""
-        return self._isOvergroeienRandVerharding.waarde
+        return self._isOvergroeienRandVerharding.get_waarde()
 
     @isOvergroeienRandVerharding.setter
     def isOvergroeienRandVerharding(self, value):

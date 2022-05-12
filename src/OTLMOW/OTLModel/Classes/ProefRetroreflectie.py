@@ -30,7 +30,7 @@ class ProefRetroreflectie(Proef, PuntGeometrie, LijnGeometrie, VlakGeometrie):
     @property
     def retroreflectie(self):
         """Proef om de retroreflectie van een verkeersbord te bepalen."""
-        return self._retroreflectie.waarde
+        return self._retroreflectie.get_waarde()
 
     @retroreflectie.setter
     def retroreflectie(self, value):

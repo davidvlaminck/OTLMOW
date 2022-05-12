@@ -49,7 +49,7 @@ class Hulpstuk(LinkendElement, PuntGeometrie):
     @property
     def inwendigeDiameter(self):
         """De diameter van de binnenzijde van het hulpstuk in millimeter."""
-        return self._inwendigeDiameter.waarde
+        return self._inwendigeDiameter.get_waarde()
 
     @inwendigeDiameter.setter
     def inwendigeDiameter(self, value):
@@ -58,7 +58,7 @@ class Hulpstuk(LinkendElement, PuntGeometrie):
     @property
     def materiaal(self):
         """Het materiaal waaruit het hulpstuk vervaardigd is."""
-        return self._materiaal.waarde
+        return self._materiaal.get_waarde()
 
     @materiaal.setter
     def materiaal(self, value):
@@ -67,7 +67,7 @@ class Hulpstuk(LinkendElement, PuntGeometrie):
     @property
     def type(self):
         """Het type van het hulpstuk."""
-        return self._type.waarde
+        return self._type.get_waarde()
 
     @type.setter
     def type(self, value):
@@ -76,7 +76,7 @@ class Hulpstuk(LinkendElement, PuntGeometrie):
     @property
     def uitwendigeDiameter(self):
         """De diameter van de buitenzijde van het hulpstuk in millimeter."""
-        return self._uitwendigeDiameter.waarde
+        return self._uitwendigeDiameter.get_waarde()
 
     @uitwendigeDiameter.setter
     def uitwendigeDiameter(self, value):

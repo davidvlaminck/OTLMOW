@@ -260,7 +260,7 @@ class AbstractDatatypeCreator(ABC):
             if typeField == 'KwantWrd' and attribuut.name == 'standaardEenheid':
                 prop_datablock.append(f'        return self._{attribuut.name}.usagenote.split(\'"\')[1]'),
             else:
-                prop_datablock.append(f'        return self._{attribuut.name}.waarde'),
+                prop_datablock.append(f'        return self._{attribuut.name}.get_waarde()'),
             prop_datablock.append(f''),
             if not attribuut.readonly:
                 prop_datablock.append(f'    @{attribuut.name}.setter'),

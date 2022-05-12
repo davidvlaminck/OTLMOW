@@ -72,7 +72,7 @@ class Cementbetonverharding(LaagBouwklasse):
     @property
     def aantalAnkerstaven(self):
         """Aantal ankerstaven waarmee de voegen verankerd zijn."""
-        return self._aantalAnkerstaven.waarde
+        return self._aantalAnkerstaven.get_waarde()
 
     @aantalAnkerstaven.setter
     def aantalAnkerstaven(self, value):
@@ -81,7 +81,7 @@ class Cementbetonverharding(LaagBouwklasse):
     @property
     def aardVerharding(self):
         """De uitvoeringswijze van de cementbetonverharding."""
-        return self._aardVerharding.waarde
+        return self._aardVerharding.get_waarde()
 
     @aardVerharding.setter
     def aardVerharding(self, value):
@@ -90,7 +90,7 @@ class Cementbetonverharding(LaagBouwklasse):
     @property
     def krimpvoegFrequentie(self):
         """De afstand tussen de krimpvoegen in meter."""
-        return self._krimpvoegFrequentie.waarde
+        return self._krimpvoegFrequentie.get_waarde()
 
     @krimpvoegFrequentie.setter
     def krimpvoegFrequentie(self, value):
@@ -99,7 +99,7 @@ class Cementbetonverharding(LaagBouwklasse):
     @property
     def laagtype(self):
         """Het type van de cementbetonverhardingslaag."""
-        return self._laagtype.waarde
+        return self._laagtype.get_waarde()
 
     @laagtype.setter
     def laagtype(self, value):
@@ -108,7 +108,7 @@ class Cementbetonverharding(LaagBouwklasse):
     @property
     def oppervlakbehandeling(self):
         """Behandeling die wordt toegepast op het oppervlak van een laag, met of zonder toevoeging van materialen, en bestemd is om de eigenschappen van de laag te verbeteren, hetzij bij de uitvoering, hetzij achteraf."""
-        return self._oppervlakbehandeling.waarde
+        return self._oppervlakbehandeling.get_waarde()
 
     @oppervlakbehandeling.setter
     def oppervlakbehandeling(self, value):
@@ -117,7 +117,7 @@ class Cementbetonverharding(LaagBouwklasse):
     @property
     def supplementen(self):
         """Additionele toevoegingen aan de verharding."""
-        return self._supplementen.waarde
+        return self._supplementen.get_waarde()
 
     @supplementen.setter
     def supplementen(self, value):
@@ -126,7 +126,7 @@ class Cementbetonverharding(LaagBouwklasse):
     @property
     def volume(self):
         """Het volume van cementbetonverharding in kubieke meter."""
-        return self._volume.waarde
+        return self._volume.get_waarde()
 
     @volume.setter
     def volume(self, value):

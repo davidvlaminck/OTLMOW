@@ -76,7 +76,7 @@ class Stortsteen(AndereLaag, VlakGeometrie):
     @property
     def gewicht(self):
         """De hoeveelheid stortsteen in ton."""
-        return self._gewicht.waarde
+        return self._gewicht.get_waarde()
 
     @gewicht.setter
     def gewicht(self, value):
@@ -85,7 +85,7 @@ class Stortsteen(AndereLaag, VlakGeometrie):
     @property
     def hechtspecie(self):
         """Het gebruikte hechtingsmateriaal tussen gestapelde stenen."""
-        return self._hechtspecie.waarde
+        return self._hechtspecie.get_waarde()
 
     @hechtspecie.setter
     def hechtspecie(self, value):
@@ -94,7 +94,7 @@ class Stortsteen(AndereLaag, VlakGeometrie):
     @property
     def isVerankerd(self):
         """Aanduiding of de gestapelde ruwe steen verankerd is."""
-        return self._isVerankerd.waarde
+        return self._isVerankerd.get_waarde()
 
     @isVerankerd.setter
     def isVerankerd(self, value):
@@ -103,7 +103,7 @@ class Stortsteen(AndereLaag, VlakGeometrie):
     @property
     def kaliber(self):
         """De gemiddelde diameter van de stortsteen."""
-        return self._kaliber.waarde
+        return self._kaliber.get_waarde()
 
     @kaliber.setter
     def kaliber(self, value):
@@ -112,7 +112,7 @@ class Stortsteen(AndereLaag, VlakGeometrie):
     @property
     def plaatsingswijze(self):
         """De manier waarop de stenen worden geplaatst."""
-        return self._plaatsingswijze.waarde
+        return self._plaatsingswijze.get_waarde()
 
     @plaatsingswijze.setter
     def plaatsingswijze(self, value):
@@ -121,7 +121,7 @@ class Stortsteen(AndereLaag, VlakGeometrie):
     @property
     def technischeFiche(self):
         """De technische fiche van stortsteen als bijlage."""
-        return self._technischeFiche.waarde
+        return self._technischeFiche.get_waarde()
 
     @technischeFiche.setter
     def technischeFiche(self, value):
@@ -130,7 +130,7 @@ class Stortsteen(AndereLaag, VlakGeometrie):
     @property
     def type(self):
         """Het type stortsteen."""
-        return self._type.waarde
+        return self._type.get_waarde()
 
     @type.setter
     def type(self, value):

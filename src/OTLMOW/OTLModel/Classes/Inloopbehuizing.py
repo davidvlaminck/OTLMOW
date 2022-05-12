@@ -68,7 +68,7 @@ class Inloopbehuizing(Behuizing, VlakGeometrie):
     @property
     def afmeting(self):
         """Buitenafmetingen van het bovengronds gedeelte van een behuizing waarin het in principe mogelijk is om rond te lopen omwille van de grootte en toegankelijkheid."""
-        return self._afmeting.waarde
+        return self._afmeting.get_waarde()
 
     @afmeting.setter
     def afmeting(self, value):
@@ -77,7 +77,7 @@ class Inloopbehuizing(Behuizing, VlakGeometrie):
     @property
     def beschrijvingBereikbaarheid(self):
         """Een beschrijving van de omgeving van de behuizing in functie van de bereikbaarheid en toegankelijkheid voor werken en toezicht."""
-        return self._beschrijvingBereikbaarheid.waarde
+        return self._beschrijvingBereikbaarheid.get_waarde()
 
     @beschrijvingBereikbaarheid.setter
     def beschrijvingBereikbaarheid(self, value):
@@ -86,7 +86,7 @@ class Inloopbehuizing(Behuizing, VlakGeometrie):
     @property
     def grondplan(self):
         """Plattegrond van de behuizing met aanduidingen van de verschillende aanwezige elementen zoals kelder, kasten met kastnummers, toegangscontrole en meer."""
-        return self._grondplan.waarde
+        return self._grondplan.get_waarde()
 
     @grondplan.setter
     def grondplan(self, value):
@@ -95,7 +95,7 @@ class Inloopbehuizing(Behuizing, VlakGeometrie):
     @property
     def inloopbehuizingMateriaal(self):
         """Materiaal waaruit de cabine vervaardigd is zonder buitenafwerking van dak of wanden."""
-        return self._inloopbehuizingMateriaal.waarde
+        return self._inloopbehuizingMateriaal.get_waarde()
 
     @inloopbehuizingMateriaal.setter
     def inloopbehuizingMateriaal(self, value):
@@ -104,7 +104,7 @@ class Inloopbehuizing(Behuizing, VlakGeometrie):
     @property
     def merk(self):
         """De merknaam volgens de fabrikant van een behuizing waarin het in principe mogelijk is om rond te lopen omwille van de grootte en toegankelijkheid."""
-        return self._merk.waarde
+        return self._merk.get_waarde()
 
     @merk.setter
     def merk(self, value):
@@ -113,7 +113,7 @@ class Inloopbehuizing(Behuizing, VlakGeometrie):
     @property
     def modelnaam(self):
         """Naam waarmee de fabrikant het model identificeert van een behuizing waarin het in principe mogelijk is om rond te lopen omwille van de grootte en toegankelijkheid."""
-        return self._modelnaam.waarde
+        return self._modelnaam.get_waarde()
 
     @modelnaam.setter
     def modelnaam(self, value):

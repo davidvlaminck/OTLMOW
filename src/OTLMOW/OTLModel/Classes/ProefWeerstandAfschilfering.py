@@ -30,7 +30,7 @@ class ProefWeerstandAfschilfering(Proef, PuntGeometrie, LijnGeometrie, VlakGeome
     @property
     def weerstandAfschilfering(self):
         """Proef om de weerstand/afschilfering van de laag te bepalen."""
-        return self._weerstandAfschilfering.waarde
+        return self._weerstandAfschilfering.get_waarde()
 
     @weerstandAfschilfering.setter
     def weerstandAfschilfering(self, value):

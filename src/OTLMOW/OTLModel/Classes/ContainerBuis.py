@@ -24,7 +24,7 @@ class ContainerBuis(ABC):
     @property
     def kleur(self):
         """De kleur van de coating."""
-        return self._kleur.waarde
+        return self._kleur.get_waarde()
 
     @kleur.setter
     def kleur(self, value):

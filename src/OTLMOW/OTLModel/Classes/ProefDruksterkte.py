@@ -30,7 +30,7 @@ class ProefDruksterkte(Proef, PuntGeometrie, LijnGeometrie, VlakGeometrie):
     @property
     def druksterkte(self):
         """Proefresultaten van de druksterkte van de laag."""
-        return self._druksterkte.waarde
+        return self._druksterkte.get_waarde()
 
     @druksterkte.setter
     def druksterkte(self, value):

@@ -37,7 +37,7 @@ class BeheerHoutigeVegetatie(AIMObject, LijnGeometrie, VlakGeometrie):
     @property
     def beheeroptie(self):
         """Aanduiding van welk beheer wordt toegepast op de houtige vegetatie."""
-        return self._beheeroptie.waarde
+        return self._beheeroptie.get_waarde()
 
     @beheeroptie.setter
     def beheeroptie(self, value):
@@ -46,7 +46,7 @@ class BeheerHoutigeVegetatie(AIMObject, LijnGeometrie, VlakGeometrie):
     @property
     def heeftBeheerplan(self):
         """Aanduiding of er een beheerplan bestaat."""
-        return self._heeftBeheerplan.waarde
+        return self._heeftBeheerplan.get_waarde()
 
     @heeftBeheerplan.setter
     def heeftBeheerplan(self, value):

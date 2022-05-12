@@ -43,7 +43,7 @@ class DtcDocumentWaarden(AttributeInfo):
     @property
     def bestandsnaam(self):
         """De naam van het Document inclusief de bestandsextensie, van de naam gescheiden door een punt."""
-        return self._bestandsnaam.waarde
+        return self._bestandsnaam.get_waarde()
 
     @bestandsnaam.setter
     def bestandsnaam(self, value):
@@ -52,7 +52,7 @@ class DtcDocumentWaarden(AttributeInfo):
     @property
     def mimeType(self):
         """Het MIME type van het document."""
-        return self._mimeType.waarde
+        return self._mimeType.get_waarde()
 
     @mimeType.setter
     def mimeType(self, value):
@@ -61,7 +61,7 @@ class DtcDocumentWaarden(AttributeInfo):
     @property
     def omschrijving(self):
         """Een korte toelichting over waar het document juist voor dient."""
-        return self._omschrijving.waarde
+        return self._omschrijving.get_waarde()
 
     @omschrijving.setter
     def omschrijving(self, value):
@@ -70,7 +70,7 @@ class DtcDocumentWaarden(AttributeInfo):
     @property
     def uri(self):
         """De verwijzing naar de bestandslocatie via een link. Bij lokale bestanden kan dit eventueel ook een pad zijn."""
-        return self._uri.waarde
+        return self._uri.get_waarde()
 
     @uri.setter
     def uri(self, value):

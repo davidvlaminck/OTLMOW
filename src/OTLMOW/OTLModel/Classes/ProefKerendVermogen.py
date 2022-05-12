@@ -34,7 +34,7 @@ class ProefKerendVermogen(Proef, PuntGeometrie, LijnGeometrie, VlakGeometrie):
     @property
     def kerendVermogen(self):
         """Het vermogen van een voertuigkering om een doorbraak bij een bepaald type crash te voorkomen."""
-        return self._kerendVermogen.waarde
+        return self._kerendVermogen.get_waarde()
 
     @kerendVermogen.setter
     def kerendVermogen(self, value):

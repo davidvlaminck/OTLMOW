@@ -30,7 +30,7 @@ class ProefLuchtgehalte(Proef, PuntGeometrie, LijnGeometrie, VlakGeometrie):
     @property
     def luchtgehalte(self):
         """Proefresultaten van het luchtgehalte."""
-        return self._luchtgehalte.waarde
+        return self._luchtgehalte.get_waarde()
 
     @luchtgehalte.setter
     def luchtgehalte(self, value):

@@ -30,7 +30,7 @@ class ProefWaterdichtheid(Proef, PuntGeometrie, LijnGeometrie, VlakGeometrie):
     @property
     def waterdichtheid(self):
         """Testresultaten van het opgemeten waterverlies van het beproefde leidingsvak."""
-        return self._waterdichtheid.waarde
+        return self._waterdichtheid.get_waarde()
 
     @waterdichtheid.setter
     def waterdichtheid(self, value):

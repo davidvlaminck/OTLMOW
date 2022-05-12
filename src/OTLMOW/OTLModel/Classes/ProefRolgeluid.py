@@ -30,7 +30,7 @@ class ProefRolgeluid(Proef, PuntGeometrie, LijnGeometrie, VlakGeometrie):
     @property
     def rolgeluid(self):
         """Proefresultaten van het rolgeluid van de toplaag."""
-        return self._rolgeluid.waarde
+        return self._rolgeluid.get_waarde()
 
     @rolgeluid.setter
     def rolgeluid(self, value):

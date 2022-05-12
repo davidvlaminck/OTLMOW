@@ -31,7 +31,7 @@ class DtuAfmetingGrondvlakWaarden(AttributeInfo, UnionWaarden):
     @property
     def rechthoekig(self):
         """Afmetingen voor breedte en lengte of diepte. De breedte meet van links naar rechts in vooraanzicht, de lengte van voor naar achter."""
-        return self._rechthoekig.waarde
+        return self._rechthoekig.get_waarde()
 
     @rechthoekig.setter
     def rechthoekig(self, value):
@@ -42,7 +42,7 @@ class DtuAfmetingGrondvlakWaarden(AttributeInfo, UnionWaarden):
     @property
     def rond(self):
         """Afmeting van de diameter in centimeter van een rond (grond)vlak."""
-        return self._rond.waarde
+        return self._rond.get_waarde()
 
     @rond.setter
     def rond(self, value):

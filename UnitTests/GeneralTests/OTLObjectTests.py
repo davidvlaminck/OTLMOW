@@ -33,6 +33,7 @@ class OTLObjectsTests(TestCase):
 
     def test_make_string_version_dotnotatie_DtcIdentificator(self):
         v = Verkeersregelaar()
+        v._assetId.add_empty_value()
         v.assetId.identificator = 'eigen_id'
         v.assetId.toegekendDoor = 'AWV'
         string_version = OTLObjectHelper().build_string_version(v, indent=4)
@@ -41,10 +42,11 @@ class OTLObjectsTests(TestCase):
 
     def test_make_string_version_dotnotatie_complex_kardinaliteit(self):
         v = Verkeersregelaar()
+        v._externeReferentie.add_empty_value()
         v.externeReferentie[0].externReferentienummer = "externe referentie 2"
         v.externeReferentie[0].externePartij = "bij externe partij 2"
 
-        v._externeReferentie.append_new_waardeObject()
+        v._externeReferentie.add_empty_value()
         v.externeReferentie[1].externReferentienummer = "externe referentie 1"
         v.externeReferentie[1].externePartij = "bij externe partij 1"
         string_version = OTLObjectHelper().build_string_version(v, indent=4)

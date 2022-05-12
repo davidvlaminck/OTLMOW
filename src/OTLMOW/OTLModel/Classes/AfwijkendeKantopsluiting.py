@@ -51,7 +51,7 @@ class AfwijkendeKantopsluiting(Kantopsluiting):
     @property
     def breedte(self):
         """De breedte van de afwijkende kantopsluiting in centimeter."""
-        return self._breedte.waarde
+        return self._breedte.get_waarde()
 
     @breedte.setter
     def breedte(self, value):
@@ -60,7 +60,7 @@ class AfwijkendeKantopsluiting(Kantopsluiting):
     @property
     def dikte(self):
         """De dikte van de afwijkende kantopsluiting in centimeter."""
-        return self._dikte.waarde
+        return self._dikte.get_waarde()
 
     @dikte.setter
     def dikte(self, value):
@@ -69,7 +69,7 @@ class AfwijkendeKantopsluiting(Kantopsluiting):
     @property
     def heeftOppervlaktebehandeling(self):
         """Aanduiding of er een oppervlaktebehandeling is uitgevoerd op de afwijkende kantopsluiting."""
-        return self._heeftOppervlaktebehandeling.waarde
+        return self._heeftOppervlaktebehandeling.get_waarde()
 
     @heeftOppervlaktebehandeling.setter
     def heeftOppervlaktebehandeling(self, value):
@@ -78,7 +78,7 @@ class AfwijkendeKantopsluiting(Kantopsluiting):
     @property
     def technischeFicheAfwijking(self):
         """De technische fiche van de afwijkende kantopsluiting."""
-        return self._technischeFicheAfwijking.waarde
+        return self._technischeFicheAfwijking.get_waarde()
 
     @technischeFicheAfwijking.setter
     def technischeFicheAfwijking(self, value):

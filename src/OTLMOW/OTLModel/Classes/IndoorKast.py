@@ -26,7 +26,7 @@ class IndoorKast(Kast):
     @property
     def mplan(self):
         """Mechanisch plan van de volledige installatie. Er wordt 1 plan toegevoegd per installatie/techniek die op de kast is aangesloten."""
-        return self._mplan.waarde
+        return self._mplan.get_waarde()
 
     @mplan.setter
     def mplan(self, value):

@@ -23,7 +23,7 @@ class LaagProductidentificatiecode(ABC):
     @property
     def productidentificatiecode(self):
         """De productidentificatiecode van het gebruikte product (bv. COPRO code of Benor code)."""
-        return self._productidentificatiecode.waarde
+        return self._productidentificatiecode.get_waarde()
 
     @productidentificatiecode.setter
     def productidentificatiecode(self, value):

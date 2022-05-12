@@ -42,7 +42,7 @@ class Bestrating(ArtificieleLaag):
     @property
     def kleur(self):
         """De kleur van de bestrating."""
-        return self._kleur.waarde
+        return self._kleur.get_waarde()
 
     @kleur.setter
     def kleur(self, value):
@@ -51,7 +51,7 @@ class Bestrating(ArtificieleLaag):
     @property
     def steenverband(self):
         """Het patroon waarin de bestrating gelegd werd."""
-        return self._steenverband.waarde
+        return self._steenverband.get_waarde()
 
     @steenverband.setter
     def steenverband(self, value):
@@ -60,7 +60,7 @@ class Bestrating(ArtificieleLaag):
     @property
     def voegvulling(self):
         """De gebruikte voegvulling van de bestrating."""
-        return self._voegvulling.waarde
+        return self._voegvulling.get_waarde()
 
     @voegvulling.setter
     def voegvulling(self, value):

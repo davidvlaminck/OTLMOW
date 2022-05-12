@@ -93,7 +93,7 @@ class Netwerkelement(AIMNaamObject, PuntGeometrie):
     @property
     def beschrijvingFabrikant(self):
         """Bijkomende specificaties over het apparaat of onderdeel type van de fabrikant."""
-        return self._beschrijvingFabrikant.waarde
+        return self._beschrijvingFabrikant.get_waarde()
 
     @beschrijvingFabrikant.setter
     def beschrijvingFabrikant(self, value):
@@ -102,7 +102,7 @@ class Netwerkelement(AIMNaamObject, PuntGeometrie):
     @property
     def gebruik(self):
         """Toestel, onderdeel van het netwerk, waarop netwerkverbindingen kunnen aangelegd worden."""
-        return self._gebruik.waarde
+        return self._gebruik.get_waarde()
 
     @gebruik.setter
     def gebruik(self, value):
@@ -111,7 +111,7 @@ class Netwerkelement(AIMNaamObject, PuntGeometrie):
     @property
     def ipAddressBeheer(self):
         """IP adres van het toestel."""
-        return self._ipAddressBeheer.waarde
+        return self._ipAddressBeheer.get_waarde()
 
     @ipAddressBeheer.setter
     def ipAddressBeheer(self, value):
@@ -120,7 +120,7 @@ class Netwerkelement(AIMNaamObject, PuntGeometrie):
     @property
     def ipAddressMask(self):
         """IP adres mask van het toestel."""
-        return self._ipAddressMask.waarde
+        return self._ipAddressMask.get_waarde()
 
     @ipAddressMask.setter
     def ipAddressMask(self, value):
@@ -129,7 +129,7 @@ class Netwerkelement(AIMNaamObject, PuntGeometrie):
     @property
     def ipGateway(self):
         """IP adres van gateway."""
-        return self._ipGateway.waarde
+        return self._ipGateway.get_waarde()
 
     @ipGateway.setter
     def ipGateway(self, value):
@@ -138,7 +138,7 @@ class Netwerkelement(AIMNaamObject, PuntGeometrie):
     @property
     def merk(self):
         """Merk waarmee de fabrikant het netwerkelement identificeert."""
-        return self._merk.waarde
+        return self._merk.get_waarde()
 
     @merk.setter
     def merk(self, value):
@@ -147,7 +147,7 @@ class Netwerkelement(AIMNaamObject, PuntGeometrie):
     @property
     def modelnaam(self):
         """Modelnaam waarmee de fabrikant dit type toestel identificeert."""
-        return self._modelnaam.waarde
+        return self._modelnaam.get_waarde()
 
     @modelnaam.setter
     def modelnaam(self, value):
@@ -156,7 +156,7 @@ class Netwerkelement(AIMNaamObject, PuntGeometrie):
     @property
     def nSAPAddress(self):
         """Netwerkadres van deze component."""
-        return self._nSAPAddress.waarde
+        return self._nSAPAddress.get_waarde()
 
     @nSAPAddress.setter
     def nSAPAddress(self, value):
@@ -165,7 +165,7 @@ class Netwerkelement(AIMNaamObject, PuntGeometrie):
     @property
     def serienummer(self):
         """Unieke identificatiecode van het toestel, toegekend door de fabrikant."""
-        return self._serienummer.waarde
+        return self._serienummer.get_waarde()
 
     @serienummer.setter
     def serienummer(self, value):
@@ -174,7 +174,7 @@ class Netwerkelement(AIMNaamObject, PuntGeometrie):
     @property
     def softwareVersie(self):
         """Identificatie van de softwareversie die op dit apparaat of onderdeel geladen is. Dit kan ook de firmwareversie zijn."""
-        return self._softwareVersie.waarde
+        return self._softwareVersie.get_waarde()
 
     @softwareVersie.setter
     def softwareVersie(self, value):

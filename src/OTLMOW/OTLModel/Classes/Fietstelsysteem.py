@@ -50,7 +50,7 @@ class Fietstelsysteem(AIMNaamObject, PuntGeometrie):
     @property
     def afmetingen(self):
         """De afmetingen van het fietstelsysteem."""
-        return self._afmetingen.waarde
+        return self._afmetingen.get_waarde()
 
     @afmetingen.setter
     def afmetingen(self, value):
@@ -59,7 +59,7 @@ class Fietstelsysteem(AIMNaamObject, PuntGeometrie):
     @property
     def merk(self):
         """Merknaam van het fietstelsysteem."""
-        return self._merk.waarde
+        return self._merk.get_waarde()
 
     @merk.setter
     def merk(self, value):
@@ -68,7 +68,7 @@ class Fietstelsysteem(AIMNaamObject, PuntGeometrie):
     @property
     def modelnaam(self):
         """Naam van het model van het fietstelsysteem volgens de fabrikant."""
-        return self._modelnaam.waarde
+        return self._modelnaam.get_waarde()
 
     @modelnaam.setter
     def modelnaam(self, value):
@@ -77,7 +77,7 @@ class Fietstelsysteem(AIMNaamObject, PuntGeometrie):
     @property
     def technischeFiche(self):
         """Document met de technische specificaties van het fietstelsysteem."""
-        return self._technischeFiche.waarde
+        return self._technischeFiche.get_waarde()
 
     @technischeFiche.setter
     def technischeFiche(self, value):

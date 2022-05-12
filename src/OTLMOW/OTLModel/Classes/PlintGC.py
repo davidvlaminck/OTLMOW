@@ -46,7 +46,7 @@ class PlintGC(ConstructieElement, BetonnenConstructieElement, ConstructieElement
     @property
     def afmetingen(self):
         """Met dit complex datatype worden de afmetingen van de plint weergegeven. Indien de plint afwijkt van een rechthoekige vorm wordt deze informatie in de technische fiche opgeslagen."""
-        return self._afmetingen.waarde
+        return self._afmetingen.get_waarde()
 
     @afmetingen.setter
     def afmetingen(self, value):
@@ -55,7 +55,7 @@ class PlintGC(ConstructieElement, BetonnenConstructieElement, ConstructieElement
     @property
     def plaatsingswijze(self):
         """De manier waarop de plint geplaatst is ten opzichte van de profielen."""
-        return self._plaatsingswijze.waarde
+        return self._plaatsingswijze.get_waarde()
 
     @plaatsingswijze.setter
     def plaatsingswijze(self, value):
@@ -64,7 +64,7 @@ class PlintGC(ConstructieElement, BetonnenConstructieElement, ConstructieElement
     @property
     def technischeFiche(self):
         """Document met verdere specificaties van de plint die niet opgevangen worden met de aanwezige attributen."""
-        return self._technischeFiche.waarde
+        return self._technischeFiche.get_waarde()
 
     @technischeFiche.setter
     def technischeFiche(self, value):

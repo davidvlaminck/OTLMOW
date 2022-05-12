@@ -26,7 +26,7 @@ class BoogpaalVerkeerslicht(VRIDraagconstructie, PuntGeometrie):
     @property
     def typeBoogpaal(self):
         """Draagwijdte van de boogpaal."""
-        return self._typeBoogpaal.waarde
+        return self._typeBoogpaal.get_waarde()
 
     @typeBoogpaal.setter
     def typeBoogpaal(self, value):

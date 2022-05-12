@@ -35,7 +35,7 @@ class Bebakening(AIMObject, Signalisatie):
     @property
     def kleurReflectorAflopend(self):
         """De kleur van de reflector stroomafwaarts."""
-        return self._kleurReflectorAflopend.waarde
+        return self._kleurReflectorAflopend.get_waarde()
 
     @kleurReflectorAflopend.setter
     def kleurReflectorAflopend(self, value):
@@ -44,7 +44,7 @@ class Bebakening(AIMObject, Signalisatie):
     @property
     def kleurReflectorOplopend(self):
         """De kleur van de reflector stroomopwaarts."""
-        return self._kleurReflectorOplopend.waarde
+        return self._kleurReflectorOplopend.get_waarde()
 
     @kleurReflectorOplopend.setter
     def kleurReflectorOplopend(self, value):

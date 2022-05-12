@@ -69,7 +69,7 @@ class Verkeersbord(ABC):
     @property
     def aanzicht(self):
         """De hoek waarin het fysiek bord gepositioneerd is ten opzichte van een vooropgestelde as (het ware noorden). De hoek wordt gemeten in radialen of graden ten opzichte van het noorden in wijzerzin."""
-        return self._aanzicht.waarde
+        return self._aanzicht.get_waarde()
 
     @aanzicht.setter
     def aanzicht(self, value):
@@ -78,7 +78,7 @@ class Verkeersbord(ABC):
     @property
     def afbeelding(self):
         """De afbeelding van het verkeersbord."""
-        return self._afbeelding.waarde
+        return self._afbeelding.get_waarde()
 
     @afbeelding.setter
     def afbeelding(self, value):
@@ -87,7 +87,7 @@ class Verkeersbord(ABC):
     @property
     def afmeting(self):
         """De afmeting(en) van het verkeersbord."""
-        return self._afmeting.waarde
+        return self._afmeting.get_waarde()
 
     @afmeting.setter
     def afmeting(self, value):
@@ -96,7 +96,7 @@ class Verkeersbord(ABC):
     @property
     def fabricagevoorschrift(self):
         """Het fabricagevoorschrift op het verkeersbord."""
-        return self._fabricagevoorschrift.waarde
+        return self._fabricagevoorschrift.get_waarde()
 
     @fabricagevoorschrift.setter
     def fabricagevoorschrift(self, value):
@@ -105,7 +105,7 @@ class Verkeersbord(ABC):
     @property
     def operationeleStatus(self):
         """De operationele status van het verkeersbord."""
-        return self._operationeleStatus.waarde
+        return self._operationeleStatus.get_waarde()
 
     @operationeleStatus.setter
     def operationeleStatus(self, value):
@@ -114,7 +114,7 @@ class Verkeersbord(ABC):
     @property
     def opstelhoogte(self):
         """Afstand tussen het maaiveld en de onderrand van het bord."""
-        return self._opstelhoogte.waarde
+        return self._opstelhoogte.get_waarde()
 
     @opstelhoogte.setter
     def opstelhoogte(self, value):

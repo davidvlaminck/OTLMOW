@@ -68,7 +68,7 @@ class PTRegelaar(AIMNaamObject, PuntGeometrie):
     @property
     def communicatiewijze(self):
         """De manier waarop de PT-regelaar communiceert met de verkeersregelaar."""
-        return self._communicatiewijze.waarde
+        return self._communicatiewijze.get_waarde()
 
     @communicatiewijze.setter
     def communicatiewijze(self, value):
@@ -77,7 +77,7 @@ class PTRegelaar(AIMNaamObject, PuntGeometrie):
     @property
     def lijnnummers(self):
         """Nummers van de PT lijnen die connecteren met de PT regelaar."""
-        return self._lijnnummers.waarde
+        return self._lijnnummers.get_waarde()
 
     @lijnnummers.setter
     def lijnnummers(self, value):
@@ -86,7 +86,7 @@ class PTRegelaar(AIMNaamObject, PuntGeometrie):
     @property
     def merk(self):
         """Het merk van een PT regelaar."""
-        return self._merk.waarde
+        return self._merk.get_waarde()
 
     @merk.setter
     def merk(self, value):
@@ -95,7 +95,7 @@ class PTRegelaar(AIMNaamObject, PuntGeometrie):
     @property
     def modelnaam(self):
         """De modelnaam/product range van een PT regelaar."""
-        return self._modelnaam.waarde
+        return self._modelnaam.get_waarde()
 
     @modelnaam.setter
     def modelnaam(self, value):
@@ -104,7 +104,7 @@ class PTRegelaar(AIMNaamObject, PuntGeometrie):
     @property
     def protocol(self):
         """Naam van het protocol waarmee gecommuniceerd wordt tussen PT-regelaar en verkeersregelaar."""
-        return self._protocol.waarde
+        return self._protocol.get_waarde()
 
     @protocol.setter
     def protocol(self, value):
@@ -113,7 +113,7 @@ class PTRegelaar(AIMNaamObject, PuntGeometrie):
     @property
     def voertuignummers(self):
         """Nummers van de voertuigen die connecteren met de PT regelaar."""
-        return self._voertuignummers.waarde
+        return self._voertuignummers.get_waarde()
 
     @voertuignummers.setter
     def voertuignummers(self, value):

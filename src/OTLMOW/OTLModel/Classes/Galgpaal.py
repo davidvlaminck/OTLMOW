@@ -50,7 +50,7 @@ class Galgpaal(VRIDraagconstructie, PuntGeometrie):
     @property
     def aantalLiggers(self):
         """Het aantal liggers waarmee de arm van de galgpaal is uitgevoerd."""
-        return self._aantalLiggers.waarde
+        return self._aantalLiggers.get_waarde()
 
     @aantalLiggers.setter
     def aantalLiggers(self, value):
@@ -59,7 +59,7 @@ class Galgpaal(VRIDraagconstructie, PuntGeometrie):
     @property
     def armlengte(self):
         """Lengte van de arm van een galgpaal in meter."""
-        return self._armlengte.waarde
+        return self._armlengte.get_waarde()
 
     @armlengte.setter
     def armlengte(self, value):
@@ -68,7 +68,7 @@ class Galgpaal(VRIDraagconstructie, PuntGeometrie):
     @property
     def berekeningsnota(self):
         """Een bijlage met daarin de berekeningsnota voor de galgpaal."""
-        return self._berekeningsnota.waarde
+        return self._berekeningsnota.get_waarde()
 
     @berekeningsnota.setter
     def berekeningsnota(self, value):
@@ -77,7 +77,7 @@ class Galgpaal(VRIDraagconstructie, PuntGeometrie):
     @property
     def dwarsdoorsnede(self):
         """De vorm van de dwarsdoorsnede van het opstaande deel van de galgpaal."""
-        return self._dwarsdoorsnede.waarde
+        return self._dwarsdoorsnede.get_waarde()
 
     @dwarsdoorsnede.setter
     def dwarsdoorsnede(self, value):

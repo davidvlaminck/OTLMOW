@@ -33,7 +33,7 @@ class Voedt(DirectioneleRelatie):
     @property
     def aansluitspanning(self):
         """Spanning van de aansluiting, dit wordt enkel ingevuld op voedingsrelaties voorbij de hoofdschakelaar."""
-        return self._aansluitspanning.waarde
+        return self._aansluitspanning.get_waarde()
 
     @aansluitspanning.setter
     def aansluitspanning(self, value):
@@ -42,7 +42,7 @@ class Voedt(DirectioneleRelatie):
     @property
     def aansluitvermogen(self):
         """Vermogen van de aansluiting, dit wordt enkel ingevuld op voedingsrelaties voorbij de hoofdschakelaar."""
-        return self._aansluitvermogen.waarde
+        return self._aansluitvermogen.get_waarde()
 
     @aansluitvermogen.setter
     def aansluitvermogen(self, value):

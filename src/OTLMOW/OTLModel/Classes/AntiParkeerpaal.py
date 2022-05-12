@@ -42,7 +42,7 @@ class AntiParkeerpaal(Straatmeubilair, PuntGeometrie):
     @property
     def materiaal(self):
         """Het materiaal van de Amsterdammer."""
-        return self._materiaal.waarde
+        return self._materiaal.get_waarde()
 
     @materiaal.setter
     def materiaal(self, value):
@@ -51,7 +51,7 @@ class AntiParkeerpaal(Straatmeubilair, PuntGeometrie):
     @property
     def plaatsingswijze(self):
         """Aanduiding of de anti-parkeerpaal eenvoudig wegneembaar is."""
-        return self._plaatsingswijze.waarde
+        return self._plaatsingswijze.get_waarde()
 
     @plaatsingswijze.setter
     def plaatsingswijze(self, value):
@@ -60,7 +60,7 @@ class AntiParkeerpaal(Straatmeubilair, PuntGeometrie):
     @property
     def type(self):
         """Vorm van de anti-parkeerpaal."""
-        return self._type.waarde
+        return self._type.get_waarde()
 
     @type.setter
     def type(self, value):

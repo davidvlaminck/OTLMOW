@@ -34,7 +34,7 @@ class Putbekleding(AIMObject, PuntGeometrie):
     @property
     def laagdikte(self):
         """De dikte van de bekledingslaag in millimeter."""
-        return self._laagdikte.waarde
+        return self._laagdikte.get_waarde()
 
     @laagdikte.setter
     def laagdikte(self, value):
@@ -43,7 +43,7 @@ class Putbekleding(AIMObject, PuntGeometrie):
     @property
     def type(self):
         """Bepaalt het type van de putbekleding."""
-        return self._type.waarde
+        return self._type.get_waarde()
 
     @type.setter
     def type(self, value):

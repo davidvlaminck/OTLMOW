@@ -34,7 +34,7 @@ class StalenConstructieElement(ABC):
     @property
     def staalspecificaties(self):
         """Eigenschappen van het gebruikte constructiestaal."""
-        return self._staalspecificaties.waarde
+        return self._staalspecificaties.get_waarde()
 
     @staalspecificaties.setter
     def staalspecificaties(self, value):
@@ -43,7 +43,7 @@ class StalenConstructieElement(ABC):
     @property
     def totaalGewicht(self):
         """Een kwantitatieve waarde in kilogram van het totale stalen element."""
-        return self._totaalGewicht.waarde
+        return self._totaalGewicht.get_waarde()
 
     @totaalGewicht.setter
     def totaalGewicht(self, value):

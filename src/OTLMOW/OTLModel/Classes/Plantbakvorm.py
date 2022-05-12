@@ -49,7 +49,7 @@ class Plantbakvorm(VegetatieElement, VlakGeometrie):
     @property
     def isBereikbaar(self):
         """Duidt aan of de plantbakvorm door de mens fysiek bereikbaar is zonder hulpmiddelen."""
-        return self._isBereikbaar.waarde
+        return self._isBereikbaar.get_waarde()
 
     @isBereikbaar.setter
     def isBereikbaar(self, value):
@@ -58,7 +58,7 @@ class Plantbakvorm(VegetatieElement, VlakGeometrie):
     @property
     def isVerplaatsbaar(self):
         """Duidt aan of de plantbakvorm al dan niet verplaatsbaar is en dus niet permanent verankerd werd met het aardoppervlak."""
-        return self._isVerplaatsbaar.waarde
+        return self._isVerplaatsbaar.get_waarde()
 
     @isVerplaatsbaar.setter
     def isVerplaatsbaar(self, value):
@@ -67,7 +67,7 @@ class Plantbakvorm(VegetatieElement, VlakGeometrie):
     @property
     def oppervlakteBak(self):
         """De afmetingen van de plantbak in vierkante meter."""
-        return self._oppervlakteBak.waarde
+        return self._oppervlakteBak.get_waarde()
 
     @oppervlakteBak.setter
     def oppervlakteBak(self, value):
@@ -76,7 +76,7 @@ class Plantbakvorm(VegetatieElement, VlakGeometrie):
     @property
     def volume(self):
         """De inhoud of grootte van de plantbakvorm in de ruimte in kubieke meter."""
-        return self._volume.waarde
+        return self._volume.get_waarde()
 
     @volume.setter
     def volume(self, value):

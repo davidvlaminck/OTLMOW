@@ -48,7 +48,7 @@ class Sleuf(AIMObject, VlakGeometrie):
     @property
     def breedte(self):
         """De breedte van de sleuf in meter volgens figuur 7-1-1 van Standaardbestek 250."""
-        return self._breedte.waarde
+        return self._breedte.get_waarde()
 
     @breedte.setter
     def breedte(self, value):
@@ -57,7 +57,7 @@ class Sleuf(AIMObject, VlakGeometrie):
     @property
     def diepte(self):
         """De diepte van de sleuf tussen toekomstig maaiveld en de binnenonderkant van de buis in meter."""
-        return self._diepte.waarde
+        return self._diepte.get_waarde()
 
     @diepte.setter
     def diepte(self, value):
@@ -66,7 +66,7 @@ class Sleuf(AIMObject, VlakGeometrie):
     @property
     def lengte(self):
         """De totale lengte van de sleuf in lopende meter."""
-        return self._lengte.waarde
+        return self._lengte.get_waarde()
 
     @lengte.setter
     def lengte(self, value):
@@ -75,7 +75,7 @@ class Sleuf(AIMObject, VlakGeometrie):
     @property
     def uitvoering(self):
         """Bepaalt de wijze van de uitvoering van de sleuf."""
-        return self._uitvoering.waarde
+        return self._uitvoering.get_waarde()
 
     @uitvoering.setter
     def uitvoering(self, value):

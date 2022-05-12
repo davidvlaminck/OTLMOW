@@ -35,7 +35,7 @@ class KabelnetToegang(AIMNaamObject, PuntGeometrie):
     @property
     def kabelnetToegangId(self):
         """Uniek nummer uit de Kabelnet toepassing dat deze toegang identificeert."""
-        return self._kabelnetToegangId.waarde
+        return self._kabelnetToegangId.get_waarde()
 
     @kabelnetToegangId.setter
     def kabelnetToegangId(self, value):
@@ -44,7 +44,7 @@ class KabelnetToegang(AIMNaamObject, PuntGeometrie):
     @property
     def netwerkSoort(self):
         """Type netwerk dat bereikbaar is via het toegangspunt."""
-        return self._netwerkSoort.waarde
+        return self._netwerkSoort.get_waarde()
 
     @netwerkSoort.setter
     def netwerkSoort(self, value):

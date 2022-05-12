@@ -24,7 +24,7 @@ class VerkeerslichtRood(Verkeerslicht):
     @property
     def typeBewaking(self):
         """Type bewaking van het rode verkeerslicht."""
-        return self._typeBewaking.waarde
+        return self._typeBewaking.get_waarde()
 
     @typeBewaking.setter
     def typeBewaking(self, value):

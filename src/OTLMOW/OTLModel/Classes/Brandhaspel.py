@@ -74,7 +74,7 @@ class Brandhaspel(Brandvoorziening):
     @property
     def buitendiameter(self):
         """Buitendiameter van de slang op de haspel."""
-        return self._buitendiameter.waarde
+        return self._buitendiameter.get_waarde()
 
     @buitendiameter.setter
     def buitendiameter(self, value):
@@ -83,7 +83,7 @@ class Brandhaspel(Brandvoorziening):
     @property
     def keuringsdatum(self):
         """Laatste datum waarop de haspel gekeurd is."""
-        return self._keuringsdatum.waarde
+        return self._keuringsdatum.get_waarde()
 
     @keuringsdatum.setter
     def keuringsdatum(self, value):
@@ -92,7 +92,7 @@ class Brandhaspel(Brandvoorziening):
     @property
     def maximaalDebiet(self):
         """Het maximale debiet dat door de slang en spuitmond kan stromen."""
-        return self._maximaalDebiet.waarde
+        return self._maximaalDebiet.get_waarde()
 
     @maximaalDebiet.setter
     def maximaalDebiet(self, value):
@@ -101,7 +101,7 @@ class Brandhaspel(Brandvoorziening):
     @property
     def maximaalVolumedebiet(self):
         """Het maximale debiet dat per tijdseenheid door de slang en spuitmond kan stromen."""
-        return self._maximaalVolumedebiet.waarde
+        return self._maximaalVolumedebiet.get_waarde()
 
     @maximaalVolumedebiet.setter
     def maximaalVolumedebiet(self, value):
@@ -110,7 +110,7 @@ class Brandhaspel(Brandvoorziening):
     @property
     def merk(self):
         """Het merk van de brandhaspel."""
-        return self._merk.waarde
+        return self._merk.get_waarde()
 
     @merk.setter
     def merk(self, value):
@@ -119,7 +119,7 @@ class Brandhaspel(Brandvoorziening):
     @property
     def modelnaam(self):
         """De modelnaam van de brandhaspel."""
-        return self._modelnaam.waarde
+        return self._modelnaam.get_waarde()
 
     @modelnaam.setter
     def modelnaam(self, value):
@@ -128,7 +128,7 @@ class Brandhaspel(Brandvoorziening):
     @property
     def slangLengte(self):
         """Nuttige lengte van de brandslang op de haspel."""
-        return self._slangLengte.waarde
+        return self._slangLengte.get_waarde()
 
     @slangLengte.setter
     def slangLengte(self, value):

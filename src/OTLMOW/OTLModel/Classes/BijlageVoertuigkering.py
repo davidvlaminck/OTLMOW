@@ -32,7 +32,7 @@ class BijlageVoertuigkering(ABC):
     @property
     def testrapportVoertuigkering(self):
         """De testresultaten van de crashtesten die op de voertuigkerende constructie uitgevoerd zijn."""
-        return self._testrapportVoertuigkering.waarde
+        return self._testrapportVoertuigkering.get_waarde()
 
     @testrapportVoertuigkering.setter
     def testrapportVoertuigkering(self, value):
@@ -41,7 +41,7 @@ class BijlageVoertuigkering(ABC):
     @property
     def videoVoertuigkering(self):
         """Video-opname van de crashtesten op de voertuigkerende constructie."""
-        return self._videoVoertuigkering.waarde
+        return self._videoVoertuigkering.get_waarde()
 
     @videoVoertuigkering.setter
     def videoVoertuigkering(self, value):

@@ -20,7 +20,7 @@ class DteIPv4AdresWaarden(AttributeInfo):
     @property
     def waarde(self):
         """De string die het IPv4 adres representeert."""
-        return self._waarde.waarde
+        return self._waarde.get_waarde()
 
     @waarde.setter
     def waarde(self, value):

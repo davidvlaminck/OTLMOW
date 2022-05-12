@@ -104,7 +104,7 @@ class DtcBetonspecificatiesWaarden(AttributeInfo):
     @property
     def betondekking(self):
         """De afstand in millimeter tussen de buitenkant van het beton (het oppervlak van het beton) tot het dichtstbijzijnde wapeningsstaal."""
-        return self._betondekking.waarde
+        return self._betondekking.get_waarde()
 
     @betondekking.setter
     def betondekking(self, value):
@@ -113,7 +113,7 @@ class DtcBetonspecificatiesWaarden(AttributeInfo):
     @property
     def betonmilieuklassen(self):
         """Milieuklassen (X-klassen) leggen rechtstreeks de link met bepaalde aantastingsmechanismen, waaraan de betonconstructie (of een onderdeel ervan) wordt blootgesteld tijdens het gebruik. Er kunnen meerdere milieuklassen van toepassing zijn."""
-        return self._betonmilieuklassen.waarde
+        return self._betonmilieuklassen.get_waarde()
 
     @betonmilieuklassen.setter
     def betonmilieuklassen(self, value):
@@ -122,7 +122,7 @@ class DtcBetonspecificatiesWaarden(AttributeInfo):
     @property
     def betonomgevingsklassen(self):
         """De omgeving waaraan de betonconstructie (of een onderdeel ervan) wordt blootgesteld tijdens het gebruik. Er kunnen meerdere omgevingsklassen van toepassing zijn."""
-        return self._betonomgevingsklassen.waarde
+        return self._betonomgevingsklassen.get_waarde()
 
     @betonomgevingsklassen.setter
     def betonomgevingsklassen(self, value):
@@ -131,7 +131,7 @@ class DtcBetonspecificatiesWaarden(AttributeInfo):
     @property
     def betonsterkteklasse(self):
         """De sterkteklasse is een maat voor de druksterkte van beton."""
-        return self._betonsterkteklasse.waarde
+        return self._betonsterkteklasse.get_waarde()
 
     @betonsterkteklasse.setter
     def betonsterkteklasse(self, value):
@@ -140,7 +140,7 @@ class DtcBetonspecificatiesWaarden(AttributeInfo):
     @property
     def gebruiksdomein(self):
         """De gebruiksomstandigheden van het beton. Dit bepaalt tevens het maximum chloridegehalte."""
-        return self._gebruiksdomein.waarde
+        return self._gebruiksdomein.get_waarde()
 
     @gebruiksdomein.setter
     def gebruiksdomein(self, value):
@@ -149,7 +149,7 @@ class DtcBetonspecificatiesWaarden(AttributeInfo):
     @property
     def grootsteKorrelafmetingDmax(self):
         """De nominale grootste korrelafmeting (Dmax)."""
-        return self._grootsteKorrelafmetingDmax.waarde
+        return self._grootsteKorrelafmetingDmax.get_waarde()
 
     @grootsteKorrelafmetingDmax.setter
     def grootsteKorrelafmetingDmax(self, value):
@@ -158,7 +158,7 @@ class DtcBetonspecificatiesWaarden(AttributeInfo):
     @property
     def isCementMetBeperktAlkaligehalte(self):
         """Aanduiding of het cement een beperkt alkaligehalte heeft (LA)."""
-        return self._isCementMetBeperktAlkaligehalte.waarde
+        return self._isCementMetBeperktAlkaligehalte.get_waarde()
 
     @isCementMetBeperktAlkaligehalte.setter
     def isCementMetBeperktAlkaligehalte(self, value):
@@ -167,7 +167,7 @@ class DtcBetonspecificatiesWaarden(AttributeInfo):
     @property
     def isCementMetHogeAanvangssterkte(self):
         """Geeft aan of het cement gebruikt wordt voor een snelle binding (bijvoorbeeld in de winter) (HES)."""
-        return self._isCementMetHogeAanvangssterkte.waarde
+        return self._isCementMetHogeAanvangssterkte.get_waarde()
 
     @isCementMetHogeAanvangssterkte.setter
     def isCementMetHogeAanvangssterkte(self, value):
@@ -176,7 +176,7 @@ class DtcBetonspecificatiesWaarden(AttributeInfo):
     @property
     def isCementMetHogeBestandheidTegenSulfaten(self):
         """Geeft aan of het cement een hoge bestandheid heeft tegen sulfaten (SR)."""
-        return self._isCementMetHogeBestandheidTegenSulfaten.waarde
+        return self._isCementMetHogeBestandheidTegenSulfaten.get_waarde()
 
     @isCementMetHogeBestandheidTegenSulfaten.setter
     def isCementMetHogeBestandheidTegenSulfaten(self, value):
@@ -185,7 +185,7 @@ class DtcBetonspecificatiesWaarden(AttributeInfo):
     @property
     def isCementMetLageHydratatiewarmte(self):
         """Geeft aan of het cement gebruikt wordt voor een tragere sterkteontwikkeling (LH)."""
-        return self._isCementMetLageHydratatiewarmte.waarde
+        return self._isCementMetLageHydratatiewarmte.get_waarde()
 
     @isCementMetLageHydratatiewarmte.setter
     def isCementMetLageHydratatiewarmte(self, value):
@@ -194,7 +194,7 @@ class DtcBetonspecificatiesWaarden(AttributeInfo):
     @property
     def isColloidaalbeton(self):
         """Geeft aan of het beton zich niet ontmengt onder of in water."""
-        return self._isColloidaalbeton.waarde
+        return self._isColloidaalbeton.get_waarde()
 
     @isColloidaalbeton.setter
     def isColloidaalbeton(self, value):
@@ -203,7 +203,7 @@ class DtcBetonspecificatiesWaarden(AttributeInfo):
     @property
     def technischeFiche(self):
         """De technische fiche van het beton. Deze moet volgende eigenschappen bevatten: de norm waaraan het beton voldoet, de sterkteklasse, de duurzaamheid (bestaande uit het gebruiksdomein en de omgevingsklasse(n)), de consistentieklasse, de nominale grootste korrelafmeting,..."""
-        return self._technischeFiche.waarde
+        return self._technischeFiche.get_waarde()
 
     @technischeFiche.setter
     def technischeFiche(self, value):

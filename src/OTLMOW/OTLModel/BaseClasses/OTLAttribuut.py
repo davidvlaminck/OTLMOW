@@ -10,6 +10,7 @@ from OTLMOW.OTLModel.BaseClasses.OTLField import OTLField
 from OTLMOW.OTLModel.Datatypes.UnionTypeField import UnionTypeField
 from OTLMOW.OTLModel.Datatypes.UnionWaarden import UnionWaarden
 
+
 class OTLAttribuut(AttributeInfo):
     def __init__(self, naam='', label='', objectUri='', definition='', constraints='', usagenote='', deprecated_version='',
                  kardinaliteit_min='1', kardinaliteit_max='1', field=OTLField, readonly=False, readonlyValue=None, owner=None):
@@ -30,6 +31,27 @@ class OTLAttribuut(AttributeInfo):
         self.waarde = None
         self.field = field
 
+        if self.field.waardeObject:
+            def add_empty_value():
+                prev_value = self.waarde
+                if kardinaliteit_max == '1':
+                    if prev_value is None:
+                        new_value_object = self.field.waardeObject(parent=self)
+                        new_value_object._parent = self
+                        self.set_waarde(new_value_object)
+                    else:
+                        raise RuntimeError(
+                            "This attribute does not have a cardinality other than 1, therefore you can only call this method once per instance")
+                else:
+                    if prev_value is None:
+                        prev_value = []
+                    new_value_object = self.field.waardeObject(parent=self)
+                    new_value_object._parent = self
+                    prev_value.append(new_value_object)
+                    self.set_waarde(prev_value)
+
+            self.add_empty_value = add_empty_value
+
         if kardinaliteit_max != '1':
             def add_value(value):
                 l = self.waarde
@@ -40,43 +62,23 @@ class OTLAttribuut(AttributeInfo):
 
             self.add_value = add_value
 
-            def add_empty_value():
-                if not self.field.waardeObject:
-                    raise MethodNotApplicableError(
-                        "In order to use this method the attribute must have a cardinality of > 1 and be one of these types: UnionType, ComplexType, KwantWard, Dte")
-                l = self.waarde
-                if self.waarde is None:
-                    l = []
-                new_value_object = self.field.waardeObject(parent=self)
-                new_value_object._parent = self
-                l.append(new_value_object)
-                self.set_waarde(l)
-
-            self.add_empty_value = add_empty_value
-
         if readonly:
             self.__dict__["waarde"] = readonlyValue
 
-        if self.field.waardeObject:
-            if self.kardinaliteit_max != '1':
-                self.waarde = [self.field.waardeObject(parent=self)]
-                self.waarde[0]._parent = self
-            else:
-                self.waarde = self.field.waardeObject(parent=self)
-                self.waarde._parent = self
-
     def add_value(self, value):
-        raise MethodNotApplicableError("This attribute does not have a cardinality other than 1 so simply assign your value directly instead of using this method")
+        raise MethodNotApplicableError(
+            "This attribute does not have a cardinality other than 1 so simply assign your value directly instead of using this method")
+
+    def get_waarde(self):
+        if self.field.waardeObject and self.waarde is None:
+            self.add_empty_value()
+        return self.waarde
 
     def add_empty_value(self):
-        raise MethodNotApplicableError("This attribute does not have a cardinality other than 1 so simply assign your value directly instead of using this method")
-
-    def append_new_waardeObject(self):
-        if self.kardinaliteit_max != '1' and self.field.waardeObject:
-            self.waarde.append(self.field.waardeObject(parent=self))
-            self.waarde[-1]._parent = self
-        else:
-            raise RuntimeError('This method has no effect for this attribute')
+        """Helper method for datatypes UnionType, ComplexType, KwantWrd and Dte to add the underlying waarde object"""
+        if not self.field.waardeObject:
+            raise MethodNotApplicableError(
+                "In order to use this method this object must be one of these types: UnionType, ComplexType, KwantWrd, Dte")
 
     def default(self):
         if self.waarde is not dict and isinstance(self.waarde, list):
@@ -122,31 +124,32 @@ class OTLAttribuut(AttributeInfo):
                 else:
                     return self.waarde
 
-    def set_waarde(self, value, owner=None):
-        if owner is not None:
-            if hasattr(owner, 'deprecated_version'):
-                if owner.deprecated_version != '':
-                    if hasattr(owner, 'typeURI'):
-                        warnings.warn(message=f'{owner.typeURI} is deprecated since version {owner.deprecated_version}',
-                                      category=DeprecationWarning)
-                    else:
-                        warnings.warn(message=f'used a class that is deprecated since version {owner.deprecated_version}',
-                                      category=DeprecationWarning)
+    def _perform_cardinality_check(self, owner, value, kardinaliteit_max):
+        kardinaliteit_min = int(self.kardinaliteit_min)
+        if not isinstance(value, list):
+            raise TypeError(f'expecting a list in {owner.__class__.__name__}.{self.naam}')
+        elif isinstance(value, list) and isinstance(value, set):
+            raise TypeError(f'expecting a non set type of list in {owner.__class__.__name__}.{self.naam}')
+        elif 0 < len(value) < kardinaliteit_min:
+            raise ValueError(f'expecting at least {kardinaliteit_min} element(s) in {owner.__class__.__name__}.{self.naam}')
+        elif len(value) > kardinaliteit_max:
+            raise ValueError(f'expecting at most {kardinaliteit_max} element(s) in {owner.__class__.__name__}.{self.naam}')
 
+    def set_waarde(self, value, owner=None):
+        self._perform_deprecation_check(owner)
+
+        if value is None:
+            self.waarde = None
+            return
+
+        # fix cardinality locally
         if self.kardinaliteit_max == '*':
             kardinaliteit_max = math.inf
         else:
             kardinaliteit_max = int(self.kardinaliteit_max)
-        if kardinaliteit_max > 1 and value is not None:
-            kardinaliteit_min = int(self.kardinaliteit_min)
-            if not isinstance(value, list):
-                raise TypeError(f'expecting a list in {owner.__class__.__name__}.{self.naam}')
-            elif isinstance(value, list) and isinstance(value, set):
-                raise TypeError(f'expecting a non set type of list in {owner.__class__.__name__}.{self.naam}')
-            elif 0 < len(value) < kardinaliteit_min:
-                raise ValueError(f'expecting at least {kardinaliteit_min} element(s) in {owner.__class__.__name__}.{self.naam}')
-            elif len(value) > kardinaliteit_max:
-                raise ValueError(f'expecting at most {kardinaliteit_max} element(s) in {owner.__class__.__name__}.{self.naam}')
+
+        if kardinaliteit_max > 1:
+            self._perform_cardinality_check(owner, value, kardinaliteit_max)
             for el_value in value:
                 try:
                     field_validated = self.field.validate(self.field.convert_to_correct_type(el_value), self)
@@ -163,20 +166,31 @@ class OTLAttribuut(AttributeInfo):
             self.waarde = new_list
         else:
             if self.field.waardeObject is not None and isinstance(value, self.field.waardeObject):
-                props = vars(self.field.waardeObject)
-                for prop_key, prop_value in props.items():
-                    if prop_key.startswith('_'):
-                        continue
-                    if prop_key != 'standaardEenheid':
-                        a = getattr(value, prop_key)
-                        setattr(self.waarde, prop_key, a)
+                self.waarde = value
             else:
-                if self.field.validate(value=self.field.convert_to_correct_type(value), attribuut=self):
-                    self.waarde = self.field.convert_to_correct_type(value)
+                converted_value = self.field.convert_to_correct_type(value)
+                if self.field.validate(value=converted_value, attribuut=self):
+                    self.waarde = converted_value
+                else:
+                    raise ValueError(f'Could not assign the best effort converted value to {owner.__class__.__name__}.{self.naam}')
 
-        # check if kwant Ward inside a union type, if so, call clear_props
-        if owner is not None and value is not None and hasattr(owner, 'field') and owner.field.waardeObject is not None and not owner.field._uses_waarde_object and not isinstance(owner.field, UnionTypeField) and owner.owner is not None and isinstance(owner.owner, UnionWaarden):
+        # check if kwant Wrd inside a union type, if so, call clear_props
+        if owner is not None and value is not None and hasattr(owner,
+                                                               'field') and owner.field.waardeObject is not None and not owner.field._uses_waarde_object and not isinstance(
+                owner.field, UnionTypeField) and owner.owner is not None and isinstance(owner.owner, UnionWaarden):
             owner.owner.clear_other_props('_' + owner.naam)
+
+    @staticmethod
+    def _perform_deprecation_check(owner):
+        if owner is not None:
+            if hasattr(owner, 'deprecated_version'):
+                if owner.deprecated_version != '':
+                    if hasattr(owner, 'typeURI'):
+                        warnings.warn(message=f'{owner.typeURI} is deprecated since version {owner.deprecated_version}',
+                                      category=DeprecationWarning)
+                    else:
+                        warnings.warn(message=f'used a class that is deprecated since version {owner.deprecated_version}',
+                                      category=DeprecationWarning)
 
     def __str__(self):
         s = (f'information about {self.naam}:\n'
@@ -212,9 +226,9 @@ class OTLAttribuut(AttributeInfo):
         if kardinaliteit_max > 1:
             dotnotatie += '[]'
 
-        if attribute.owner is not None and hasattr(attribute.owner, '_parent') and attribute.owner._parent is not None and isinstance(
+        if attribute.owner is not None and hasattr(attribute.owner,
+                                                   '_parent') and attribute.owner._parent is not None and isinstance(
                 attribute.owner._parent, OTLAttribuut):
             return attribute.recursive_add_parents_to_dotnotatie(attribute.owner._parent) + '.' + dotnotatie
 
         return dotnotatie
-

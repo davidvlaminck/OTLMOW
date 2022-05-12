@@ -48,7 +48,7 @@ class DynBordExternePU(PU):
     @property
     def heeftGeintegreerdeModem(self):
         """De PU heeft een geïntegreerde modem."""
-        return self._heeftGeintegreerdeModem.waarde
+        return self._heeftGeintegreerdeModem.get_waarde()
 
     @heeftGeintegreerdeModem.setter
     def heeftGeintegreerdeModem(self, value):
@@ -57,7 +57,7 @@ class DynBordExternePU(PU):
     @property
     def merk(self):
         """Het merk van de externe PU volgens een keuzelijst."""
-        return self._merk.waarde
+        return self._merk.get_waarde()
 
     @merk.setter
     def merk(self, value):
@@ -66,7 +66,7 @@ class DynBordExternePU(PU):
     @property
     def modelnaam(self):
         """De modelnaam van de externe PU volgens een keuzelijst."""
-        return self._modelnaam.waarde
+        return self._modelnaam.get_waarde()
 
     @modelnaam.setter
     def modelnaam(self, value):
@@ -75,7 +75,7 @@ class DynBordExternePU(PU):
     @property
     def technischeFiche(self):
         """Document met technische informatie over de PU."""
-        return self._technischeFiche.waarde
+        return self._technischeFiche.get_waarde()
 
     @technischeFiche.setter
     def technischeFiche(self, value):

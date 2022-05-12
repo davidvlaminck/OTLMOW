@@ -30,7 +30,7 @@ class ProefLuchtdichtheid(Proef, PuntGeometrie, LijnGeometrie, VlakGeometrie):
     @property
     def luchtdichtheid(self):
         """Testresultaten van de opgemeten drukval van het beproefde leidingsvak."""
-        return self._luchtdichtheid.waarde
+        return self._luchtdichtheid.get_waarde()
 
     @luchtdichtheid.setter
     def luchtdichtheid(self, value):

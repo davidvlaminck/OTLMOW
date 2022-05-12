@@ -28,7 +28,7 @@ class Waarschuwingslantaarn(AIMNaamObject, PuntGeometrie):
     @property
     def lamptype(self):
         """Type lamp in de lantaarn."""
-        return self._lamptype.waarde
+        return self._lamptype.get_waarde()
 
     @lamptype.setter
     def lamptype(self, value):

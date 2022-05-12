@@ -60,7 +60,7 @@ class LuchtkwaliteitZenderOntvanger(Luchtkwaliteittoestel):
     @property
     def ipKlasse(self):
         """De IP-codering als een aanduiding voor de mate van beveiliging van de constructie van elektrische of elektronische apparatuur tegen eigen schade door gebruik in "vijandige omgevingen" en tegen eventueel gevaar voor de gebruiker volgens IEC 60529."""
-        return self._ipKlasse.waarde
+        return self._ipKlasse.get_waarde()
 
     @ipKlasse.setter
     def ipKlasse(self, value):
@@ -69,7 +69,7 @@ class LuchtkwaliteitZenderOntvanger(Luchtkwaliteittoestel):
     @property
     def isBeschermd(self):
         """Geeft aan of het toestel beschermd wordt tegen aanrijdingen of niet."""
-        return self._isBeschermd.waarde
+        return self._isBeschermd.get_waarde()
 
     @isBeschermd.setter
     def isBeschermd(self, value):
@@ -78,7 +78,7 @@ class LuchtkwaliteitZenderOntvanger(Luchtkwaliteittoestel):
     @property
     def meetCO(self):
         """Geeft aan of het meettoestel CO in de lucht meet of niet."""
-        return self._meetCO.waarde
+        return self._meetCO.get_waarde()
 
     @meetCO.setter
     def meetCO(self, value):
@@ -87,7 +87,7 @@ class LuchtkwaliteitZenderOntvanger(Luchtkwaliteittoestel):
     @property
     def meetNoX(self):
         """Geeft aan of het meettoestel NOx in de lucht meet of niet."""
-        return self._meetNoX.waarde
+        return self._meetNoX.get_waarde()
 
     @meetNoX.setter
     def meetNoX(self, value):
@@ -96,7 +96,7 @@ class LuchtkwaliteitZenderOntvanger(Luchtkwaliteittoestel):
     @property
     def meetTemperatuur(self):
         """Geeft aan of het meettoestel de omgevingstemperatuur meet of niet."""
-        return self._meetTemperatuur.waarde
+        return self._meetTemperatuur.get_waarde()
 
     @meetTemperatuur.setter
     def meetTemperatuur(self, value):
@@ -105,7 +105,7 @@ class LuchtkwaliteitZenderOntvanger(Luchtkwaliteittoestel):
     @property
     def meetZicht(self):
         """Geeft aan of het meettoestel zichtbaarheid meet of niet."""
-        return self._meetZicht.waarde
+        return self._meetZicht.get_waarde()
 
     @meetZicht.setter
     def meetZicht(self, value):

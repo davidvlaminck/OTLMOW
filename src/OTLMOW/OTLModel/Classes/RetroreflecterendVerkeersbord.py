@@ -63,7 +63,7 @@ class RetroreflecterendVerkeersbord(AIMObject, Verkeersbord, PuntGeometrie):
     @property
     def afwerkingsgraad(self):
         """De afwerkingsgraad van het retroreflecterend verkeersbord, volgens een keuzelijst op basis van SB250."""
-        return self._afwerkingsgraad.waarde
+        return self._afwerkingsgraad.get_waarde()
 
     @afwerkingsgraad.setter
     def afwerkingsgraad(self, value):
@@ -72,7 +72,7 @@ class RetroreflecterendVerkeersbord(AIMObject, Verkeersbord, PuntGeometrie):
     @property
     def grootteorde(self):
         """De classificatie naar grootteorde van het verkeersbord, zoals gedefinieerd in SB250 hoofdstuk 10."""
-        return self._grootteorde.waarde
+        return self._grootteorde.get_waarde()
 
     @grootteorde.setter
     def grootteorde(self, value):
@@ -81,7 +81,7 @@ class RetroreflecterendVerkeersbord(AIMObject, Verkeersbord, PuntGeometrie):
     @property
     def kleurAchterkant(self):
         """De kleur van de achterkant van het retroreflecterend verkeersbord."""
-        return self._kleurAchterkant.waarde
+        return self._kleurAchterkant.get_waarde()
 
     @kleurAchterkant.setter
     def kleurAchterkant(self, value):
@@ -90,7 +90,7 @@ class RetroreflecterendVerkeersbord(AIMObject, Verkeersbord, PuntGeometrie):
     @property
     def merk(self):
         """De merknaam van het verkeersbord; duidt op de leverancier of producent van het verkeersbord."""
-        return self._merk.waarde
+        return self._merk.get_waarde()
 
     @merk.setter
     def merk(self, value):
@@ -99,7 +99,7 @@ class RetroreflecterendVerkeersbord(AIMObject, Verkeersbord, PuntGeometrie):
     @property
     def oppervlakte(self):
         """De oppervlakte van het beeldvlak van een verkeersbord."""
-        return self._oppervlakte.waarde
+        return self._oppervlakte.get_waarde()
 
     @oppervlakte.setter
     def oppervlakte(self, value):

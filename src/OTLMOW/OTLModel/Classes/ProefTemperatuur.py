@@ -30,7 +30,7 @@ class ProefTemperatuur(Proef, PuntGeometrie, LijnGeometrie, VlakGeometrie):
     @property
     def temperatuur(self):
         """De temperatuur van de BV laag in graden Celsius."""
-        return self._temperatuur.waarde
+        return self._temperatuur.get_waarde()
 
     @temperatuur.setter
     def temperatuur(self, value):

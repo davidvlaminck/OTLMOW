@@ -26,7 +26,7 @@ class Handbediening(AIMNaamObject, PuntGeometrie):
     @property
     def type(self):
         """Het gebruikte type voor handbediening langs de buitenkant van een kast voor sturing van systemen binnenin."""
-        return self._type.waarde
+        return self._type.get_waarde()
 
     @type.setter
     def type(self, value):

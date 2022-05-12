@@ -19,7 +19,7 @@ class DteTekstblokWaarden(AttributeInfo):
     @property
     def waarde(self):
         """De string welke uit meerdere zinnen bestaat, en ook regeleindes kan bevatten. Een tekstblok bevat maximaal 65.000 karakters."""
-        return self._waarde.waarde
+        return self._waarde.get_waarde()
 
     @waarde.setter
     def waarde(self, value):

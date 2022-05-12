@@ -81,7 +81,7 @@ class Verkeersteken(AIMObject, GeenGeometrie):
     @property
     def adres(self):
         """Adres van het verkeersteken."""
-        return self._adres.waarde
+        return self._adres.get_waarde()
 
     @adres.setter
     def adres(self, value):
@@ -90,7 +90,7 @@ class Verkeersteken(AIMObject, GeenGeometrie):
     @property
     def afbeelding(self):
         """Foto van het verkeersteken."""
-        return self._afbeelding.waarde
+        return self._afbeelding.get_waarde()
 
     @afbeelding.setter
     def afbeelding(self, value):
@@ -99,7 +99,7 @@ class Verkeersteken(AIMObject, GeenGeometrie):
     @property
     def mobiliteitsMaatregel(self):
         """Externe referentie naar een maatregel om de beweging en verplaatsing van de weggebruiker op het openbaar domein of privé domein met openbaar karakter te organiseren."""
-        return self._mobiliteitsMaatregel.waarde
+        return self._mobiliteitsMaatregel.get_waarde()
 
     @mobiliteitsMaatregel.setter
     def mobiliteitsMaatregel(self, value):
@@ -108,7 +108,7 @@ class Verkeersteken(AIMObject, GeenGeometrie):
     @property
     def plaatsbeschrijving(self):
         """Tekstuele beschrijving waar het verkeersteken zal komen."""
-        return self._plaatsbeschrijving.waarde
+        return self._plaatsbeschrijving.get_waarde()
 
     @plaatsbeschrijving.setter
     def plaatsbeschrijving(self, value):
@@ -117,7 +117,7 @@ class Verkeersteken(AIMObject, GeenGeometrie):
     @property
     def signalisatieVergunning(self):
         """Externe referentie naar een vergunning voor het tijdelijk aanbrengen of wijzigen van signalisatie op het openbaar domein of privaat domein met openbaar karakter."""
-        return self._signalisatieVergunning.waarde
+        return self._signalisatieVergunning.get_waarde()
 
     @signalisatieVergunning.setter
     def signalisatieVergunning(self, value):
@@ -126,7 +126,7 @@ class Verkeersteken(AIMObject, GeenGeometrie):
     @property
     def variabelOpschrift(self):
         """Variabele tekst die op het verkeersbordconcept komt te staan."""
-        return self._variabelOpschrift.waarde
+        return self._variabelOpschrift.get_waarde()
 
     @variabelOpschrift.setter
     def variabelOpschrift(self, value):
@@ -135,7 +135,7 @@ class Verkeersteken(AIMObject, GeenGeometrie):
     @property
     def wettelijkeStatus(self):
         """Duidt de wettelijke status aan van het verkeersteken."""
-        return self._wettelijkeStatus.waarde
+        return self._wettelijkeStatus.get_waarde()
 
     @wettelijkeStatus.setter
     def wettelijkeStatus(self, value):

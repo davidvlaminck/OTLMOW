@@ -31,7 +31,7 @@ class DtuHellingsSchoorhoekWaarden(AttributeInfo, UnionWaarden):
     @property
     def hellingshoek(self):
         """Hoek die het object maakt ten opzichte van de verticale, uitgedrukt in decimale graden."""
-        return self._hellingshoek.waarde
+        return self._hellingshoek.get_waarde()
 
     @hellingshoek.setter
     def hellingshoek(self, value):
@@ -42,7 +42,7 @@ class DtuHellingsSchoorhoekWaarden(AttributeInfo, UnionWaarden):
     @property
     def schoorhoek(self):
         """Hoek die het object maakt ten opzichte van de verticale, uitgedrukt in 1 op x (vb.: 1/4)."""
-        return self._schoorhoek.waarde
+        return self._schoorhoek.get_waarde()
 
     @schoorhoek.setter
     def schoorhoek(self, value):

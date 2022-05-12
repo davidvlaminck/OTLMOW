@@ -58,7 +58,7 @@ class Calamiteitendoorsteek(AIMNaamObject, LijnGeometrie):
     @property
     def isDubbelArmig(self):
         """Aanduiding of de calamiteitendoorsteek dubbel armig is."""
-        return self._isDubbelArmig.waarde
+        return self._isDubbelArmig.get_waarde()
 
     @isDubbelArmig.setter
     def isDubbelArmig(self, value):
@@ -67,7 +67,7 @@ class Calamiteitendoorsteek(AIMNaamObject, LijnGeometrie):
     @property
     def lengte(self):
         """De totale lengte van de calamiteitendoorsteek constructie."""
-        return self._lengte.waarde
+        return self._lengte.get_waarde()
 
     @lengte.setter
     def lengte(self, value):
@@ -76,7 +76,7 @@ class Calamiteitendoorsteek(AIMNaamObject, LijnGeometrie):
     @property
     def merk(self):
         """Het merk van de calamiteitendoorsteek."""
-        return self._merk.waarde
+        return self._merk.get_waarde()
 
     @merk.setter
     def merk(self, value):
@@ -85,7 +85,7 @@ class Calamiteitendoorsteek(AIMNaamObject, LijnGeometrie):
     @property
     def modelnaam(self):
         """De modelnaam van de calamiteitendoorsteek."""
-        return self._modelnaam.waarde
+        return self._modelnaam.get_waarde()
 
     @modelnaam.setter
     def modelnaam(self, value):
@@ -94,7 +94,7 @@ class Calamiteitendoorsteek(AIMNaamObject, LijnGeometrie):
     @property
     def technischeFiche(self):
         """De technische fiche van de calamiteitendoorsteek."""
-        return self._technischeFiche.waarde
+        return self._technischeFiche.get_waarde()
 
     @technischeFiche.setter
     def technischeFiche(self, value):

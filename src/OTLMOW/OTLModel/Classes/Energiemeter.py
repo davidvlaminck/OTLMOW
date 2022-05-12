@@ -44,7 +44,7 @@ class Energiemeter(AIMNaamObject, PuntGeometrie):
     @property
     def aantalTelwerken(self):
         """Het aantal telwerken dat de energiemeter bevat: 1 bij enkelvoudige meter, 2 bij een dag- en nacht-meter."""
-        return self._aantalTelwerken.waarde
+        return self._aantalTelwerken.get_waarde()
 
     @aantalTelwerken.setter
     def aantalTelwerken(self, value):
@@ -53,7 +53,7 @@ class Energiemeter(AIMNaamObject, PuntGeometrie):
     @property
     def meternummer(self):
         """Het serienummer (nummer van het fabrikaat) op de meter."""
-        return self._meternummer.waarde
+        return self._meternummer.get_waarde()
 
     @meternummer.setter
     def meternummer(self, value):
@@ -62,7 +62,7 @@ class Energiemeter(AIMNaamObject, PuntGeometrie):
     @property
     def metertype(self):
         """Type meter (mechanisch, elektronisch)."""
-        return self._metertype.waarde
+        return self._metertype.get_waarde()
 
     @metertype.setter
     def metertype(self, value):

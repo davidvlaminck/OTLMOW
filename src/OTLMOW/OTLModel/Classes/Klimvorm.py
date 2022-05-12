@@ -55,7 +55,7 @@ class Klimvorm(VegetatieElement, PuntGeometrie):
     @property
     def begroeidOppervlak(self):
         """Verticale oppervlakte dat begroeid is in vierkante meter."""
-        return self._begroeidOppervlak.waarde
+        return self._begroeidOppervlak.get_waarde()
 
     @begroeidOppervlak.setter
     def begroeidOppervlak(self, value):
@@ -64,7 +64,7 @@ class Klimvorm(VegetatieElement, PuntGeometrie):
     @property
     def heeftBeheerScheren(self):
         """Duidt aan of de klimvorm al dan niet geschoren wordt."""
-        return self._heeftBeheerScheren.waarde
+        return self._heeftBeheerScheren.get_waarde()
 
     @heeftBeheerScheren.setter
     def heeftBeheerScheren(self, value):
@@ -73,7 +73,7 @@ class Klimvorm(VegetatieElement, PuntGeometrie):
     @property
     def heeftBevestigingconstructie(self):
         """Aanduiding of de klimvorm een bevestigingsconstructie heeft om aan bv een geluidswerende constructie vastgemaakt te worden."""
-        return self._heeftBevestigingconstructie.waarde
+        return self._heeftBevestigingconstructie.get_waarde()
 
     @heeftBevestigingconstructie.setter
     def heeftBevestigingconstructie(self, value):
@@ -82,7 +82,7 @@ class Klimvorm(VegetatieElement, PuntGeometrie):
     @property
     def isGrondgebonden(self):
         """Duidt aan of de klimvorm al dan niet in volle grond staat."""
-        return self._isGrondgebonden.waarde
+        return self._isGrondgebonden.get_waarde()
 
     @isGrondgebonden.setter
     def isGrondgebonden(self, value):
@@ -91,7 +91,7 @@ class Klimvorm(VegetatieElement, PuntGeometrie):
     @property
     def isZelfhechtend(self):
         """Geeft aan of de klimplant (zoals klimop of wingerd) rechtstreeks op de muur kan groeien zonder nood aan een draagstructuur."""
-        return self._isZelfhechtend.waarde
+        return self._isZelfhechtend.get_waarde()
 
     @isZelfhechtend.setter
     def isZelfhechtend(self, value):

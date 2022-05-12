@@ -56,7 +56,7 @@ class DtuAfmetingVerkeersbordWaarden(AttributeInfo, UnionWaarden):
     @property
     def achthoekig(self):
         """De afmeting voor een achthoekig verkeersbord (zijde in millimeter)."""
-        return self._achthoekig.waarde
+        return self._achthoekig.get_waarde()
 
     @achthoekig.setter
     def achthoekig(self, value):
@@ -67,7 +67,7 @@ class DtuAfmetingVerkeersbordWaarden(AttributeInfo, UnionWaarden):
     @property
     def driehoekig(self):
         """De afmeting van een driehoekig verkeersbord (zijde in millimeter)."""
-        return self._driehoekig.waarde
+        return self._driehoekig.get_waarde()
 
     @driehoekig.setter
     def driehoekig(self, value):
@@ -78,7 +78,7 @@ class DtuAfmetingVerkeersbordWaarden(AttributeInfo, UnionWaarden):
     @property
     def rond(self):
         """De afmeting voor een rond verkeersbord (diameter in millimeter)."""
-        return self._rond.waarde
+        return self._rond.get_waarde()
 
     @rond.setter
     def rond(self, value):
@@ -89,7 +89,7 @@ class DtuAfmetingVerkeersbordWaarden(AttributeInfo, UnionWaarden):
     @property
     def vierhoekig(self):
         """De afmeting voor een vierhoekig verkeersbord (breedte en hoogte in millimeter)."""
-        return self._vierhoekig.waarde
+        return self._vierhoekig.get_waarde()
 
     @vierhoekig.setter
     def vierhoekig(self, value):
@@ -100,7 +100,7 @@ class DtuAfmetingVerkeersbordWaarden(AttributeInfo, UnionWaarden):
     @property
     def zeshoekig(self):
         """De afmeting voor een zeshoekig verkeersbord (zijde in millimeter)."""
-        return self._zeshoekig.waarde
+        return self._zeshoekig.get_waarde()
 
     @zeshoekig.setter
     def zeshoekig(self, value):

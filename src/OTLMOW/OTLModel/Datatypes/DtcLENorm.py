@@ -27,7 +27,7 @@ class DtcLENormWaarden(AttributeInfo):
     @property
     def bijkomendeParameter(self):
         """Het gedetailleerder typeren van de kantopsluiting."""
-        return self._bijkomendeParameter.waarde
+        return self._bijkomendeParameter.get_waarde()
 
     @bijkomendeParameter.setter
     def bijkomendeParameter(self, value):
@@ -36,7 +36,7 @@ class DtcLENormWaarden(AttributeInfo):
     @property
     def norm(self):
         """De opgelegde en beschreven standaard van de kantopsluiting."""
-        return self._norm.waarde
+        return self._norm.get_waarde()
 
     @norm.setter
     def norm(self, value):

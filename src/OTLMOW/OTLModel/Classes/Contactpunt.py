@@ -26,7 +26,7 @@ class Contactpunt(AIMObject, PuntGeometrie):
     @property
     def type(self):
         """Typering van de gebruikte techniek op basis waarvan de aan- of afwezigheid van een contact vastgesteld wordt."""
-        return self._type.waarde
+        return self._type.get_waarde()
 
     @type.setter
     def type(self, value):

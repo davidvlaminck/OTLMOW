@@ -27,7 +27,7 @@ class DtcSupplementenCBVWaarden(AttributeInfo):
     @property
     def kleur(self):
         """De kleur van de supplementen toegevoegd aan de verharding."""
-        return self._kleur.waarde
+        return self._kleur.get_waarde()
 
     @kleur.setter
     def kleur(self, value):
@@ -36,7 +36,7 @@ class DtcSupplementenCBVWaarden(AttributeInfo):
     @property
     def type(self):
         """Het type van de supplementen toegevoegd aan de verharding."""
-        return self._type.waarde
+        return self._type.get_waarde()
 
     @type.setter
     def type(self, value):

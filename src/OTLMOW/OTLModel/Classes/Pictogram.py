@@ -44,7 +44,7 @@ class Pictogram(AIMObject, BevestigingGC, PuntGeometrie):
     @property
     def nalichtingstijd(self):
         """De tijd dat het opgeslagen licht (bij bv. fosforen) in een andere lichtfrequentie (met minder energie) weer wordt uitgezonden."""
-        return self._nalichtingstijd.waarde
+        return self._nalichtingstijd.get_waarde()
 
     @nalichtingstijd.setter
     def nalichtingstijd(self, value):
@@ -53,7 +53,7 @@ class Pictogram(AIMObject, BevestigingGC, PuntGeometrie):
     @property
     def opschrift(self):
         """Eventueel begeleidende tekst bij het symbool."""
-        return self._opschrift.waarde
+        return self._opschrift.get_waarde()
 
     @opschrift.setter
     def opschrift(self, value):
@@ -62,7 +62,7 @@ class Pictogram(AIMObject, BevestigingGC, PuntGeometrie):
     @property
     def symbool(self):
         """Het symbool op het pictogram."""
-        return self._symbool.waarde
+        return self._symbool.get_waarde()
 
     @symbool.setter
     def symbool(self, value):

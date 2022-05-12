@@ -26,7 +26,7 @@ class DtcAfmetingBxhInMmWaarden(AttributeInfo):
     @property
     def breedte(self):
         """De breedte in millimeter."""
-        return self._breedte.waarde
+        return self._breedte.get_waarde()
 
     @breedte.setter
     def breedte(self, value):
@@ -35,7 +35,7 @@ class DtcAfmetingBxhInMmWaarden(AttributeInfo):
     @property
     def hoogte(self):
         """De hoogte in millimeter."""
-        return self._hoogte.waarde
+        return self._hoogte.get_waarde()
 
     @hoogte.setter
     def hoogte(self, value):

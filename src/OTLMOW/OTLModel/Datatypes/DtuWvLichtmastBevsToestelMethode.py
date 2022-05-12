@@ -31,7 +31,7 @@ class DtuWvLichtmastBevsToestelMethodeWaarden(AttributeInfo, UnionWaarden):
     @property
     def afwijkendeMethode(self):
         """Tekstveld waarin de afwijkende methode van bevestiging van verlichtingstoestel aan lichtmast kan beschreven worden."""
-        return self._afwijkendeMethode.waarde
+        return self._afwijkendeMethode.get_waarde()
 
     @afwijkendeMethode.setter
     def afwijkendeMethode(self, value):
@@ -42,7 +42,7 @@ class DtuWvLichtmastBevsToestelMethodeWaarden(AttributeInfo, UnionWaarden):
     @property
     def standaardMethode(self):
         """Bepaling van de standaardbevestigingen van verlichtingstoestellen aan lichtmasten."""
-        return self._standaardMethode.waarde
+        return self._standaardMethode.get_waarde()
 
     @standaardMethode.setter
     def standaardMethode(self, value):

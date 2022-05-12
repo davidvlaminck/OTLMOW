@@ -96,7 +96,7 @@ class DNB(Voedingspunt, GeenGeometrie):
     @property
     def aansluitvermogen(self):
         """Vermogen van de aansluiting."""
-        return self._aansluitvermogen.waarde
+        return self._aansluitvermogen.get_waarde()
 
     @aansluitvermogen.setter
     def aansluitvermogen(self, value):
@@ -105,7 +105,7 @@ class DNB(Voedingspunt, GeenGeometrie):
     @property
     def adresVolgensDNB(self):
         """Het adres van de aansluiting volgens de distributienetbeheerder."""
-        return self._adresVolgensDNB.waarde
+        return self._adresVolgensDNB.get_waarde()
 
     @adresVolgensDNB.setter
     def adresVolgensDNB(self, value):
@@ -114,7 +114,7 @@ class DNB(Voedingspunt, GeenGeometrie):
     @property
     def datumEnergieleveringscontract(self):
         """De datum waarop het energieleveringscontract afgesloten is."""
-        return self._datumEnergieleveringscontract.waarde
+        return self._datumEnergieleveringscontract.get_waarde()
 
     @datumEnergieleveringscontract.setter
     def datumEnergieleveringscontract(self, value):
@@ -123,7 +123,7 @@ class DNB(Voedingspunt, GeenGeometrie):
     @property
     def datumOprichting(self):
         """Datum waarop de DNB het voedingsbord koppelt met het net."""
-        return self._datumOprichting.waarde
+        return self._datumOprichting.get_waarde()
 
     @datumOprichting.setter
     def datumOprichting(self, value):
@@ -132,7 +132,7 @@ class DNB(Voedingspunt, GeenGeometrie):
     @property
     def datumStartEnergielevering(self):
         """De datum waarop de energielevering effectief aanvangt. Dit gebeurt zodra zowel de aansluiting op het DNB-net als het energieleveringscontract in orde zijn."""
-        return self._datumStartEnergielevering.waarde
+        return self._datumStartEnergielevering.get_waarde()
 
     @datumStartEnergielevering.setter
     def datumStartEnergielevering(self, value):
@@ -141,7 +141,7 @@ class DNB(Voedingspunt, GeenGeometrie):
     @property
     def eanNummer(self):
         """Uniek identificatienummer van de elektrische aansluiting, bestaande uit 18 cijfers."""
-        return self._eanNummer.waarde
+        return self._eanNummer.get_waarde()
 
     @eanNummer.setter
     def eanNummer(self, value):
@@ -150,7 +150,7 @@ class DNB(Voedingspunt, GeenGeometrie):
     @property
     def energieleverancier(self):
         """Leverancier van de energie."""
-        return self._energieleverancier.waarde
+        return self._energieleverancier.get_waarde()
 
     @energieleverancier.setter
     def energieleverancier(self, value):
@@ -159,7 +159,7 @@ class DNB(Voedingspunt, GeenGeometrie):
     @property
     def netbeheerder(self):
         """Lokale instantie die instaat voor het beheer van het elektriciteitsnet."""
-        return self._netbeheerder.waarde
+        return self._netbeheerder.get_waarde()
 
     @netbeheerder.setter
     def netbeheerder(self, value):
@@ -168,7 +168,7 @@ class DNB(Voedingspunt, GeenGeometrie):
     @property
     def referentieDNB(self):
         """De wijze waarop, de referentie waarmee de aansluiting gekend is bij de distributienetbeheerder."""
-        return self._referentieDNB.waarde
+        return self._referentieDNB.get_waarde()
 
     @referentieDNB.setter
     def referentieDNB(self, value):
@@ -177,7 +177,7 @@ class DNB(Voedingspunt, GeenGeometrie):
     @property
     def risicoAnalyse(self):
         """Document met de risicoanalyse."""
-        return self._risicoAnalyse.waarde
+        return self._risicoAnalyse.get_waarde()
 
     @risicoAnalyse.setter
     def risicoAnalyse(self, value):

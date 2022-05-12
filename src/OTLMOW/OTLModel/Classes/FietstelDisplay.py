@@ -36,7 +36,7 @@ class FietstelDisplay(AIMNaamObject, PuntGeometrie, VlakGeometrie):
     @property
     def isDubbelzijdig(self):
         """Geeft aan of het display telgegevens toont langs zijn beide zijden of niet."""
-        return self._isDubbelzijdig.waarde
+        return self._isDubbelzijdig.get_waarde()
 
     @isDubbelzijdig.setter
     def isDubbelzijdig(self, value):
@@ -45,7 +45,7 @@ class FietstelDisplay(AIMNaamObject, PuntGeometrie, VlakGeometrie):
     @property
     def technischeFiche(self):
         """Document met de technische specificaties van het display."""
-        return self._technischeFiche.waarde
+        return self._technischeFiche.get_waarde()
 
     @technischeFiche.setter
     def technischeFiche(self, value):

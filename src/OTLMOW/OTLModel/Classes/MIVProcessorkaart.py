@@ -41,7 +41,7 @@ class MIVProcessorkaart(AIMNaamObject, PuntGeometrie):
     @property
     def dnsNaam(self):
         """De DNSNaam (ook "volledige domein naam" genoemd ) is een unieke naam binnen het Domain Name System (DNS), het naamgevingssysteem waarmee computers, webservers, diensten en  toepassing op een unieke manier kunnen worden geïdentificeerd. Deze bevat zowel de hostname en de top level domein naam bv. 120c8-ar1.belfa.be."""
-        return self._dnsNaam.waarde
+        return self._dnsNaam.get_waarde()
 
     @dnsNaam.setter
     def dnsNaam(self, value):
@@ -50,7 +50,7 @@ class MIVProcessorkaart(AIMNaamObject, PuntGeometrie):
     @property
     def ipAdres(self):
         """IP-adres van de MIV-processorkaart."""
-        return self._ipAdres.waarde
+        return self._ipAdres.get_waarde()
 
     @ipAdres.setter
     def ipAdres(self, value):
@@ -59,7 +59,7 @@ class MIVProcessorkaart(AIMNaamObject, PuntGeometrie):
     @property
     def softwareversie(self):
         """De opsomming van de verschillende software-patches."""
-        return self._softwareversie.waarde
+        return self._softwareversie.get_waarde()
 
     @softwareversie.setter
     def softwareversie(self, value):

@@ -28,7 +28,7 @@ class DtcCameraBeeldverwerkingWaarden(AttributeInfo):
     @property
     def configBestand(self):
         """Een bestand met de details van de configuratie voor het type beeldverwerking dat gekozen is in het type-attribuut van de instantie."""
-        return self._configBestand.waarde
+        return self._configBestand.get_waarde()
 
     @configBestand.setter
     def configBestand(self, value):
@@ -37,7 +37,7 @@ class DtcCameraBeeldverwerkingWaarden(AttributeInfo):
     @property
     def typeBeeldverwerking(self):
         """Geeft aan welk type beeldverwerking als onlosmakelijk deel van de camera geconfigureerd is."""
-        return self._typeBeeldverwerking.waarde
+        return self._typeBeeldverwerking.get_waarde()
 
     @typeBeeldverwerking.setter
     def typeBeeldverwerking(self, value):

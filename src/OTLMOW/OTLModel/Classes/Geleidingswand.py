@@ -42,7 +42,7 @@ class Geleidingswand(Geleiding, LijnGeometrie):
     @property
     def hoogte(self):
         """De hoogte van de geleidingswand in millimeter."""
-        return self._hoogte.waarde
+        return self._hoogte.get_waarde()
 
     @hoogte.setter
     def hoogte(self, value):
@@ -51,7 +51,7 @@ class Geleidingswand(Geleiding, LijnGeometrie):
     @property
     def lengte(self):
         """De lengte van de geleidingswand in meter."""
-        return self._lengte.waarde
+        return self._lengte.get_waarde()
 
     @lengte.setter
     def lengte(self, value):
@@ -60,7 +60,7 @@ class Geleidingswand(Geleiding, LijnGeometrie):
     @property
     def materiaal(self):
         """Het materiaal van de geleiding."""
-        return self._materiaal.waarde
+        return self._materiaal.get_waarde()
 
     @materiaal.setter
     def materiaal(self, value):

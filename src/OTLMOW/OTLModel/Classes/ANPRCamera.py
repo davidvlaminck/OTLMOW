@@ -84,7 +84,7 @@ class ANPRCamera(AIMNaamObject, PuntGeometrie):
     @property
     def dnsNaam(self):
         """De DNSNaam (ook "volledige domein naam" genoemd ) is een unieke naam binnen het Domain Name System (DNS), het naamgevingssysteem waarmee computers, webservers, diensten en  toepassing op een unieke manier kunnen worden geïdentificeerd. Deze bevat zowel de hostname en de top level domein naam bv. 120c8-ar1.belfa.be."""
-        return self._dnsNaam.waarde
+        return self._dnsNaam.get_waarde()
 
     @dnsNaam.setter
     def dnsNaam(self, value):
@@ -93,7 +93,7 @@ class ANPRCamera(AIMNaamObject, PuntGeometrie):
     @property
     def heeftFlits(self):
         """Geeft aan of de camera een externe infrarood flits heeft."""
-        return self._heeftFlits.waarde
+        return self._heeftFlits.get_waarde()
 
     @heeftFlits.setter
     def heeftFlits(self, value):
@@ -102,7 +102,7 @@ class ANPRCamera(AIMNaamObject, PuntGeometrie):
     @property
     def ipAdres(self):
         """IP-adres van de ANPR-camera."""
-        return self._ipAdres.waarde
+        return self._ipAdres.get_waarde()
 
     @ipAdres.setter
     def ipAdres(self, value):
@@ -111,7 +111,7 @@ class ANPRCamera(AIMNaamObject, PuntGeometrie):
     @property
     def merk(self):
         """Het merk van de ANPR-camera."""
-        return self._merk.waarde
+        return self._merk.get_waarde()
 
     @merk.setter
     def merk(self, value):
@@ -120,7 +120,7 @@ class ANPRCamera(AIMNaamObject, PuntGeometrie):
     @property
     def modelnaam(self):
         """De modelnaam van de ANPR-camera."""
-        return self._modelnaam.waarde
+        return self._modelnaam.get_waarde()
 
     @modelnaam.setter
     def modelnaam(self, value):
@@ -129,7 +129,7 @@ class ANPRCamera(AIMNaamObject, PuntGeometrie):
     @property
     def opstelhoogte(self):
         """De hoogte waarop de camera bevestigd is, gemeten ten opzichte van het maaiveld waarin de draagconstructie voor de camera verankerd is."""
-        return self._opstelhoogte.waarde
+        return self._opstelhoogte.get_waarde()
 
     @opstelhoogte.setter
     def opstelhoogte(self, value):
@@ -138,7 +138,7 @@ class ANPRCamera(AIMNaamObject, PuntGeometrie):
     @property
     def rijrichting(self):
         """De rijrichting van de voertuigen die door de camera geregistreerd worden."""
-        return self._rijrichting.waarde
+        return self._rijrichting.get_waarde()
 
     @rijrichting.setter
     def rijrichting(self, value):
@@ -147,7 +147,7 @@ class ANPRCamera(AIMNaamObject, PuntGeometrie):
     @property
     def technischeFiche(self):
         """Technische fiche van dit element."""
-        return self._technischeFiche.waarde
+        return self._technischeFiche.get_waarde()
 
     @technischeFiche.setter
     def technischeFiche(self, value):

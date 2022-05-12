@@ -40,7 +40,7 @@ class Doorgang(AIMObject, PuntGeometrie):
     @property
     def technischeFiche(self):
         """Document waarin onder andere het inplantingsplan van de doorgang wordt weergegeven."""
-        return self._technischeFiche.waarde
+        return self._technischeFiche.get_waarde()
 
     @technischeFiche.setter
     def technischeFiche(self, value):
@@ -49,7 +49,7 @@ class Doorgang(AIMObject, PuntGeometrie):
     @property
     def type(self):
         """Bepaling van het type van doorgang (sas, nooddeur) (voorlopig opgenomen in figuur 8-4-1)."""
-        return self._type.waarde
+        return self._type.get_waarde()
 
     @type.setter
     def type(self, value):

@@ -36,7 +36,7 @@ class Fundering(ConstructieElement):
     @property
     def aanzetpeil(self):
         """De hoogte van het laagste punt van de onderkant van een element, ten opzichte van gemiddeld laagwaterpeil te Oostende (TAWpeil)."""
-        return self._aanzetpeil.waarde
+        return self._aanzetpeil.get_waarde()
 
     @aanzetpeil.setter
     def aanzetpeil(self, value):
@@ -45,7 +45,7 @@ class Fundering(ConstructieElement):
     @property
     def hoogte(self):
         """De afstand tussen het laagste punt van de onderkant en hoogste punt van de bovenkant van de fundering."""
-        return self._hoogte.waarde
+        return self._hoogte.get_waarde()
 
     @hoogte.setter
     def hoogte(self, value):

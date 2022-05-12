@@ -30,7 +30,7 @@ class ProefConsistentie(Proef, PuntGeometrie, LijnGeometrie, VlakGeometrie):
     @property
     def consistentie(self):
         """Proefresultaten van de consistentie."""
-        return self._consistentie.waarde
+        return self._consistentie.get_waarde()
 
     @consistentie.setter
     def consistentie(self, value):

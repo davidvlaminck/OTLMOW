@@ -31,7 +31,7 @@ class DtuDwarsafmetingenWaarden(AttributeInfo, UnionWaarden):
     @property
     def rechthoekig(self):
         """Afmetingen voor breedte, lengte en hoogte van een rechthoekig object."""
-        return self._rechthoekig.waarde
+        return self._rechthoekig.get_waarde()
 
     @rechthoekig.setter
     def rechthoekig(self, value):
@@ -42,7 +42,7 @@ class DtuDwarsafmetingenWaarden(AttributeInfo, UnionWaarden):
     @property
     def rond(self):
         """Afmeting van de diameter in milimeter van een rond object."""
-        return self._rond.waarde
+        return self._rond.get_waarde()
 
     @rond.setter
     def rond(self, value):

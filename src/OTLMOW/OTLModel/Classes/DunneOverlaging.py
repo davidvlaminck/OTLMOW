@@ -42,7 +42,7 @@ class DunneOverlaging(AndereLaag, VlakGeometrie):
     @property
     def gewicht(self):
         """Het gewicht van de dunne overlaging in ton."""
-        return self._gewicht.waarde
+        return self._gewicht.get_waarde()
 
     @gewicht.setter
     def gewicht(self, value):
@@ -51,7 +51,7 @@ class DunneOverlaging(AndereLaag, VlakGeometrie):
     @property
     def kleur(self):
         """De kleur van de dunne overlaging."""
-        return self._kleur.waarde
+        return self._kleur.get_waarde()
 
     @kleur.setter
     def kleur(self, value):
@@ -60,7 +60,7 @@ class DunneOverlaging(AndereLaag, VlakGeometrie):
     @property
     def type(self):
         """Het type SME overlaging of antisliplaag."""
-        return self._type.waarde
+        return self._type.get_waarde()
 
     @type.setter
     def type(self, value):

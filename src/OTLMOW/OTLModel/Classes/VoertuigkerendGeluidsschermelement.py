@@ -30,7 +30,7 @@ class VoertuigkerendGeluidsschermelement(BijlageVoertuigkering, Geluidsschermele
     @property
     def werkingsbreedte(self):
         """Dit is de afstand, op het voorvlak van een schermelement en loodrecht op de as van de weg gemeten, tussen de voorkant van het schermelement in normale positie en de plaats van het verst uitwijkend onderdeel aan de achterzijde van het schermelement bij aanrijding."""
-        return self._werkingsbreedte.waarde
+        return self._werkingsbreedte.get_waarde()
 
     @werkingsbreedte.setter
     def werkingsbreedte(self, value):

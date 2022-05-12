@@ -47,7 +47,7 @@ class SchampkantStd(GestandaardiseerdeKantopsluiting):
     @property
     def breedte(self):
         """De breedte van de gestandaardiseerde schampkant in centimeter."""
-        return self._breedte.waarde
+        return self._breedte.get_waarde()
 
     @breedte.setter
     def breedte(self, value):
@@ -56,7 +56,7 @@ class SchampkantStd(GestandaardiseerdeKantopsluiting):
     @property
     def dikte(self):
         """De dikte van de gestandaardiseerde schampkant in centimeter."""
-        return self._dikte.waarde
+        return self._dikte.get_waarde()
 
     @dikte.setter
     def dikte(self, value):
@@ -65,7 +65,7 @@ class SchampkantStd(GestandaardiseerdeKantopsluiting):
     @property
     def norm(self):
         """De gestandaardiseerde schampkant volgens aangeduide norm."""
-        return self._norm.waarde
+        return self._norm.get_waarde()
 
     @norm.setter
     def norm(self, value):
@@ -74,7 +74,7 @@ class SchampkantStd(GestandaardiseerdeKantopsluiting):
     @property
     def type(self):
         """Het type van gestandaardiseerde schampkant."""
-        return self._type.waarde
+        return self._type.get_waarde()
 
     @type.setter
     def type(self, value):

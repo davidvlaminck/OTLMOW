@@ -20,7 +20,7 @@ class DteKleurRALWaarden(AttributeInfo):
     @property
     def waarde(self):
         """Beschrijft een kleur volgens het RAL classificatiesysteem."""
-        return self._waarde.waarde
+        return self._waarde.get_waarde()
 
     @waarde.setter
     def waarde(self, value):

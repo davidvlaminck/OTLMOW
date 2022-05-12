@@ -67,7 +67,7 @@ class Verkeersbordopstelling(AIMObject, Signalisatie, PuntGeometrie):
     @property
     def afbeelding(self):
         """Grafische weergave van de opstelling geplaatst op het openbaar domein."""
-        return self._afbeelding.waarde
+        return self._afbeelding.get_waarde()
 
     @afbeelding.setter
     def afbeelding(self, value):
@@ -76,7 +76,7 @@ class Verkeersbordopstelling(AIMObject, Signalisatie, PuntGeometrie):
     @property
     def isBotsvriendelijk(self):
         """Een botsvriendelijk obstakel is een voorwerp dat bij aanrijding door een voertuig de letselernst voor de inzittenden reduceert."""
-        return self._isBotsvriendelijk.waarde
+        return self._isBotsvriendelijk.get_waarde()
 
     @isBotsvriendelijk.setter
     def isBotsvriendelijk(self, value):
@@ -85,7 +85,7 @@ class Verkeersbordopstelling(AIMObject, Signalisatie, PuntGeometrie):
     @property
     def operationeleStatus(self):
         """Operationele status van de Verkeersbordopstelling volgens keuzelijst."""
-        return self._operationeleStatus.waarde
+        return self._operationeleStatus.get_waarde()
 
     @operationeleStatus.setter
     def operationeleStatus(self, value):
@@ -94,7 +94,7 @@ class Verkeersbordopstelling(AIMObject, Signalisatie, PuntGeometrie):
     @property
     def positieTovRijweg(self):
         """De plaatsing van de opstelling ten aanzien van de rijbaan."""
-        return self._positieTovRijweg.waarde
+        return self._positieTovRijweg.get_waarde()
 
     @positieTovRijweg.setter
     def positieTovRijweg(self, value):
@@ -103,7 +103,7 @@ class Verkeersbordopstelling(AIMObject, Signalisatie, PuntGeometrie):
     @property
     def wegSegment(self):
         """Wegsegment waarbij de verkeersbordopstelling geplaatst is."""
-        return self._wegSegment.waarde
+        return self._wegSegment.get_waarde()
 
     @wegSegment.setter
     def wegSegment(self, value):

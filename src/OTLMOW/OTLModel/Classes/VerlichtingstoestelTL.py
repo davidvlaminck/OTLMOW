@@ -24,7 +24,7 @@ class VerlichtingstoestelTL(Verlichtingstoestel):
     @property
     def lichtpuntHoogte(self):
         """Hoogte van het lichtpunt ten opzichte van de rijweg."""
-        return self._lichtpuntHoogte.waarde
+        return self._lichtpuntHoogte.get_waarde()
 
     @lichtpuntHoogte.setter
     def lichtpuntHoogte(self, value):

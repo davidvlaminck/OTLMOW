@@ -27,7 +27,7 @@ Kan uit verschillende materialen bestaan: polycarbonaat,beton,gemetst,of staal."
     @property
     def materiaal(self):
         """Het materiaal waaruit de technische put opgebouwd is."""
-        return self._materiaal.waarde
+        return self._materiaal.get_waarde()
 
     @materiaal.setter
     def materiaal(self, value):

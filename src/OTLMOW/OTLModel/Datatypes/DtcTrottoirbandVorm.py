@@ -34,7 +34,7 @@ class DtcTrottoirbandVormWaarden(AttributeInfo):
     @property
     def breedte(self):
         """De breedte van de trottoirband."""
-        return self._breedte.waarde
+        return self._breedte.get_waarde()
 
     @breedte.setter
     def breedte(self, value):
@@ -43,7 +43,7 @@ class DtcTrottoirbandVormWaarden(AttributeInfo):
     @property
     def dikte(self):
         """De dikte van de trottoirband."""
-        return self._dikte.waarde
+        return self._dikte.get_waarde()
 
     @dikte.setter
     def dikte(self, value):
@@ -52,7 +52,7 @@ class DtcTrottoirbandVormWaarden(AttributeInfo):
     @property
     def vorm(self):
         """De vorm van de trottoirband."""
-        return self._vorm.waarde
+        return self._vorm.get_waarde()
 
     @vorm.setter
     def vorm(self, value):

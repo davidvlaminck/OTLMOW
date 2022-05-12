@@ -48,7 +48,7 @@ class WatergreppelStd(GestandaardiseerdeKantopsluiting):
     @property
     def isVerholen(self):
         """Aanduiding of de watergreppel verholen is. Verholen goten hebben een kleine sleufopening en een grote afvoercapaciteit."""
-        return self._isVerholen.waarde
+        return self._isVerholen.get_waarde()
 
     @isVerholen.setter
     def isVerholen(self, value):
@@ -57,7 +57,7 @@ class WatergreppelStd(GestandaardiseerdeKantopsluiting):
     @property
     def norm(self):
         """De gestandaardiseerde watergreppel volgens aangeduide norm."""
-        return self._norm.waarde
+        return self._norm.get_waarde()
 
     @norm.setter
     def norm(self, value):
@@ -66,7 +66,7 @@ class WatergreppelStd(GestandaardiseerdeKantopsluiting):
     @property
     def type(self):
         """Het type van gestandaardiseerde watergreppel."""
-        return self._type.waarde
+        return self._type.get_waarde()
 
     @type.setter
     def type(self, value):
@@ -75,7 +75,7 @@ class WatergreppelStd(GestandaardiseerdeKantopsluiting):
     @property
     def vorm(self):
         """De vorm van de watergreppel."""
-        return self._vorm.waarde
+        return self._vorm.get_waarde()
 
     @vorm.setter
     def vorm(self, value):

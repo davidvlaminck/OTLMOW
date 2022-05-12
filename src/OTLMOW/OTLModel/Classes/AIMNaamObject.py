@@ -26,7 +26,7 @@ class AIMNaamObject(AIMObject):
     @property
     def naam(self):
         """De mensleesbare naam van een asset zoals dit bv. ook terug te vinden is op een etiket op het object zelf. De assetbeheerder kent deze naam toe of geeft de opdracht om deze toe te kennen. Indien een object een algemeen gangbare naam heeft zoals bv. bij een waterloop dan wordt deze gebruikt."""
-        return self._naam.waarde
+        return self._naam.get_waarde()
 
     @naam.setter
     def naam(self, value):

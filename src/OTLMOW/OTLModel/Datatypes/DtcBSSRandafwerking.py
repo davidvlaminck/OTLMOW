@@ -27,7 +27,7 @@ class DtcBSSRandafwerkingWaarden(AttributeInfo):
     @property
     def lengteRandafwerking(self):
         """De lengte in meter van de randafwerking."""
-        return self._lengteRandafwerking.waarde
+        return self._lengteRandafwerking.get_waarde()
 
     @lengteRandafwerking.setter
     def lengteRandafwerking(self, value):
@@ -36,7 +36,7 @@ class DtcBSSRandafwerkingWaarden(AttributeInfo):
     @property
     def randafwerking(self):
         """De wijze waarop de rand van de bestrating is afgewerkt."""
-        return self._randafwerking.waarde
+        return self._randafwerking.get_waarde()
 
     @randafwerking.setter
     def randafwerking(self, value):

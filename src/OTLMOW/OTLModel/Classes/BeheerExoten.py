@@ -57,7 +57,7 @@ class BeheerExoten(AIMObject, VlakGeometrie):
     @property
     def beheeroptie(self):
         """Behandelingswijzen van exoten."""
-        return self._beheeroptie.waarde
+        return self._beheeroptie.get_waarde()
 
     @beheeroptie.setter
     def beheeroptie(self, value):
@@ -66,7 +66,7 @@ class BeheerExoten(AIMObject, VlakGeometrie):
     @property
     def bijzondereAfvoerVereist(self):
         """Aanduiding of voor de verwijderde exoten een niet-reguliere afvoer is voorzien."""
-        return self._bijzondereAfvoerVereist.waarde
+        return self._bijzondereAfvoerVereist.get_waarde()
 
     @bijzondereAfvoerVereist.setter
     def bijzondereAfvoerVereist(self, value):
@@ -75,7 +75,7 @@ class BeheerExoten(AIMObject, VlakGeometrie):
     @property
     def heeftDeponie(self):
         """Aanduiding of de Japanse duizendknoop terplaatse kan worden gedeponeerd in een gecontamineerde zone."""
-        return self._heeftDeponie.waarde
+        return self._heeftDeponie.get_waarde()
 
     @heeftDeponie.setter
     def heeftDeponie(self, value):
@@ -84,7 +84,7 @@ class BeheerExoten(AIMObject, VlakGeometrie):
     @property
     def nazorgJaarfrequentie(self):
         """Aantal keer dat de behandelde zone jaarlijks dient te worden gecontroleerd."""
-        return self._nazorgJaarfrequentie.waarde
+        return self._nazorgJaarfrequentie.get_waarde()
 
     @nazorgJaarfrequentie.setter
     def nazorgJaarfrequentie(self, value):
@@ -93,7 +93,7 @@ class BeheerExoten(AIMObject, VlakGeometrie):
     @property
     def oppervlakte(self):
         """De oppervlakte in vierkante meter van de te behandelen exoten."""
-        return self._oppervlakte.waarde
+        return self._oppervlakte.get_waarde()
 
     @oppervlakte.setter
     def oppervlakte(self, value):

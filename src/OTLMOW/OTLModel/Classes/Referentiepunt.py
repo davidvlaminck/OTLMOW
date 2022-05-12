@@ -38,7 +38,7 @@ class Referentiepunt(AIMObject, Signalisatie, BevestigingGC, PuntGeometrie):
     @property
     def opschrift(self):
         """De notatie van het referentiepunt."""
-        return self._opschrift.waarde
+        return self._opschrift.get_waarde()
 
     @opschrift.setter
     def opschrift(self, value):
@@ -47,7 +47,7 @@ class Referentiepunt(AIMObject, Signalisatie, BevestigingGC, PuntGeometrie):
     @property
     def type(self):
         """Het type van referentiepunt."""
-        return self._type.waarde
+        return self._type.get_waarde()
 
     @type.setter
     def type(self, value):

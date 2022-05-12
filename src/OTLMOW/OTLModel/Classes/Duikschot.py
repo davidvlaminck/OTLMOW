@@ -26,7 +26,7 @@ class Duikschot(AIMObject, VlakGeometrie):
     @property
     def technischeFiche(self):
         """De technische fiche van het duikschot."""
-        return self._technischeFiche.waarde
+        return self._technischeFiche.get_waarde()
 
     @technischeFiche.setter
     def technischeFiche(self, value):

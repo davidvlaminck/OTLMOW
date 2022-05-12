@@ -62,7 +62,7 @@ class VRCommunicatiekaart(VRModuleMetFirmware):
     @property
     def dnsNaam(self):
         """De DNSNaam (ook "volledige domein naam" genoemd ) is een unieke naam binnen het Domain Name System (DNS), het naamgevingssysteem waarmee computers, webservers, diensten en  toepassing op een unieke manier kunnen worden geïdentificeerd. Deze bevat zowel de hostname en de top level domein naam bv. 120c8-ar1.belfa.be."""
-        return self._dnsNaam.waarde
+        return self._dnsNaam.get_waarde()
 
     @dnsNaam.setter
     def dnsNaam(self, value):
@@ -71,7 +71,7 @@ class VRCommunicatiekaart(VRModuleMetFirmware):
     @property
     def heeftSmartguard(self):
         """Smartguard aanwezig?"""
-        return self._heeftSmartguard.waarde
+        return self._heeftSmartguard.get_waarde()
 
     @heeftSmartguard.setter
     def heeftSmartguard(self, value):
@@ -80,7 +80,7 @@ class VRCommunicatiekaart(VRModuleMetFirmware):
     @property
     def ipAdres(self):
         """IP-adres."""
-        return self._ipAdres.waarde
+        return self._ipAdres.get_waarde()
 
     @ipAdres.setter
     def ipAdres(self, value):
@@ -89,7 +89,7 @@ class VRCommunicatiekaart(VRModuleMetFirmware):
     @property
     def telefoonnummer(self):
         """Telefoonnummer."""
-        return self._telefoonnummer.waarde
+        return self._telefoonnummer.get_waarde()
 
     @telefoonnummer.setter
     def telefoonnummer(self, value):
@@ -98,7 +98,7 @@ class VRCommunicatiekaart(VRModuleMetFirmware):
     @property
     def typeGeheugen(self):
         """Type opslaggeheugen op de aanwezige SD-kaart."""
-        return self._typeGeheugen.waarde
+        return self._typeGeheugen.get_waarde()
 
     @typeGeheugen.setter
     def typeGeheugen(self, value):
@@ -107,7 +107,7 @@ class VRCommunicatiekaart(VRModuleMetFirmware):
     @property
     def uitvoering(self):
         """Type van communicatiekaart."""
-        return self._uitvoering.waarde
+        return self._uitvoering.get_waarde()
 
     @uitvoering.setter
     def uitvoering(self, value):

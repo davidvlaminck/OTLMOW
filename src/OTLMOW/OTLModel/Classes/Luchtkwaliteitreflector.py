@@ -24,7 +24,7 @@ class Luchtkwaliteitreflector(Luchtkwaliteittoestel):
     @property
     def isBeschermd(self):
         """Geeft aan of de sensor beschermd is tegen beschadiging, bv. door een aanrijding."""
-        return self._isBeschermd.waarde
+        return self._isBeschermd.get_waarde()
 
     @isBeschermd.setter
     def isBeschermd(self, value):

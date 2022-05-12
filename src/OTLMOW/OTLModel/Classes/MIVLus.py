@@ -43,7 +43,7 @@ class MIVLus(AIMNaamObject, LijnGeometrie):
     @property
     def meetrapport(self):
         """De elektrische eigenschappen van de lus: R, L, C en de isolatieweerstand. Dit verzekert naast de afmetingen mee de voorziene nauwkeurigheid van de voertuigmetingen."""
-        return self._meetrapport.waarde
+        return self._meetrapport.get_waarde()
 
     @meetrapport.setter
     def meetrapport(self, value):
@@ -52,7 +52,7 @@ class MIVLus(AIMNaamObject, LijnGeometrie):
     @property
     def uitslijprichting(self):
         """De uitlopers van de lus gaan naar links of naar rechts  bekeken ten opzichte van de rijrichting."""
-        return self._uitslijprichting.waarde
+        return self._uitslijprichting.get_waarde()
 
     @uitslijprichting.setter
     def uitslijprichting(self, value):
@@ -61,7 +61,7 @@ class MIVLus(AIMNaamObject, LijnGeometrie):
     @property
     def zichtbaarheid(self):
         """Is dus lus zichtbaar in het wegdek of bedekt door een toplaag."""
-        return self._zichtbaarheid.waarde
+        return self._zichtbaarheid.get_waarde()
 
     @zichtbaarheid.setter
     def zichtbaarheid(self, value):

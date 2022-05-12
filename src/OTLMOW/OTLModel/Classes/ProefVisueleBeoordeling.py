@@ -30,7 +30,7 @@ class ProefVisueleBeoordeling(Proef, PuntGeometrie, LijnGeometrie, VlakGeometrie
     @property
     def visueleBeoordeling(self):
         """Een rapport van de visuele beoordeling van de laag."""
-        return self._visueleBeoordeling.waarde
+        return self._visueleBeoordeling.get_waarde()
 
     @visueleBeoordeling.setter
     def visueleBeoordeling(self, value):

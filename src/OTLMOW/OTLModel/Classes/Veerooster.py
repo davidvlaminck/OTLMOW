@@ -26,7 +26,7 @@ class Veerooster(ComplexeGeleiding, VlakGeometrie):
     @property
     def breedte(self):
         """De breedte van het veerooster in meter."""
-        return self._breedte.waarde
+        return self._breedte.get_waarde()
 
     @breedte.setter
     def breedte(self, value):

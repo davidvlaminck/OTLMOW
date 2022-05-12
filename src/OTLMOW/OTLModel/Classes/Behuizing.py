@@ -43,7 +43,7 @@ class Behuizing(AIMNaamObject):
     @property
     def adres(self):
         """Adres (aanduiding van de locatie) van de behuizing. Indien deze geen adres heeft, wordt net zoals door Fluvius voor cabines, het adres van een nabijgelegen straat genomen."""
-        return self._adres.waarde
+        return self._adres.get_waarde()
 
     @adres.setter
     def adres(self, value):
@@ -52,7 +52,7 @@ class Behuizing(AIMNaamObject):
     @property
     def risicoanalyse(self):
         """Een bestandsbijlage met de risicoanalyse voor werken in en rond een behuizing."""
-        return self._risicoanalyse.waarde
+        return self._risicoanalyse.get_waarde()
 
     @risicoanalyse.setter
     def risicoanalyse(self, value):
@@ -61,7 +61,7 @@ class Behuizing(AIMNaamObject):
     @property
     def tabelUitwendigeInvloeden(self):
         """Een bestandsbijlage met de ingevulde en actuele tabel uitwendige invloeden zoals vereist door het AREI voor bepaalde elektrische installaties."""
-        return self._tabelUitwendigeInvloeden.waarde
+        return self._tabelUitwendigeInvloeden.get_waarde()
 
     @tabelUitwendigeInvloeden.setter
     def tabelUitwendigeInvloeden(self, value):

@@ -39,7 +39,7 @@ class Drukverhogingsgroep(Brandvoorziening):
     @property
     def inkomendeDruk(self):
         """Verwachte inkomende druk van het water bij de groep."""
-        return self._inkomendeDruk.waarde
+        return self._inkomendeDruk.get_waarde()
 
     @inkomendeDruk.setter
     def inkomendeDruk(self, value):
@@ -48,7 +48,7 @@ class Drukverhogingsgroep(Brandvoorziening):
     @property
     def uitgaandeDruk(self):
         """Verwachte uitgaande druk van het water na regeling door de groep."""
-        return self._uitgaandeDruk.waarde
+        return self._uitgaandeDruk.get_waarde()
 
     @uitgaandeDruk.setter
     def uitgaandeDruk(self, value):
@@ -57,7 +57,7 @@ class Drukverhogingsgroep(Brandvoorziening):
     @property
     def vermogen(self):
         """Elektrische vermogen vereist voor de goede werking van de groep."""
-        return self._vermogen.waarde
+        return self._vermogen.get_waarde()
 
     @vermogen.setter
     def vermogen(self, value):

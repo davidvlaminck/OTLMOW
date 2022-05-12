@@ -35,7 +35,7 @@ class Sierbeplanting(BegroeidVoorkomen, VlakGeometrie):
     @property
     def aanleg(self):
         """De manier van aanplanten van de sierbeplanting."""
-        return self._aanleg.waarde
+        return self._aanleg.get_waarde()
 
     @aanleg.setter
     def aanleg(self, value):
@@ -44,7 +44,7 @@ class Sierbeplanting(BegroeidVoorkomen, VlakGeometrie):
     @property
     def type(self):
         """Type van sierbeplanting."""
-        return self._type.waarde
+        return self._type.get_waarde()
 
     @type.setter
     def type(self, value):

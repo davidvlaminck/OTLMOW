@@ -49,7 +49,7 @@ class TerreinDeel(ABC):
     @property
     def breedte(self):
         """De breedte van het object in meter. In geval van een ongelijkmatige breedte wordt de gemiddelde breedte opgenomen."""
-        return self._breedte.waarde
+        return self._breedte.get_waarde()
 
     @breedte.setter
     def breedte(self, value):
@@ -58,7 +58,7 @@ class TerreinDeel(ABC):
     @property
     def lengte(self):
         """De lengte van het object in meter. In geval van een ongelijkmatige lengte wordt de gemiddelde lengte opgenomen."""
-        return self._lengte.waarde
+        return self._lengte.get_waarde()
 
     @lengte.setter
     def lengte(self, value):
@@ -67,7 +67,7 @@ class TerreinDeel(ABC):
     @property
     def niveau(self):
         """Het niveau waarop het object zich bevindt, relatief ten opzichte van andere objecten. Negatieve waarden worden geassocieerd met ondergronds en positieve waarden met bovengronds. Nul wordt beschouwd als een absolute waarde om het maaiveld aan te duiden."""
-        return self._niveau.waarde
+        return self._niveau.get_waarde()
 
     @niveau.setter
     def niveau(self, value):
@@ -76,7 +76,7 @@ class TerreinDeel(ABC):
     @property
     def oppervlakte(self):
         """De oppervlakte in vierkante meter."""
-        return self._oppervlakte.waarde
+        return self._oppervlakte.get_waarde()
 
     @oppervlakte.setter
     def oppervlakte(self, value):

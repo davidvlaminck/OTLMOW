@@ -57,7 +57,7 @@ class Damwand(ConstructieElement, LijnGeometrie):
     @property
     def isWaterdicht(self):
         """Geeft aan of de damwand al dan niet waterdicht is."""
-        return self._isWaterdicht.waarde
+        return self._isWaterdicht.get_waarde()
 
     @isWaterdicht.setter
     def isWaterdicht(self, value):
@@ -66,7 +66,7 @@ class Damwand(ConstructieElement, LijnGeometrie):
     @property
     def materiaal(self):
         """Het materiaal waaruit de damwand bestaat."""
-        return self._materiaal.waarde
+        return self._materiaal.get_waarde()
 
     @materiaal.setter
     def materiaal(self, value):
@@ -75,7 +75,7 @@ class Damwand(ConstructieElement, LijnGeometrie):
     @property
     def oppervlakte(self):
         """De totale oppervlakte van de damwandconstructie in vierkante meter."""
-        return self._oppervlakte.waarde
+        return self._oppervlakte.get_waarde()
 
     @oppervlakte.setter
     def oppervlakte(self, value):
@@ -84,7 +84,7 @@ class Damwand(ConstructieElement, LijnGeometrie):
     @property
     def profiellengte(self):
         """De lengte van één damwandprofiel."""
-        return self._profiellengte.waarde
+        return self._profiellengte.get_waarde()
 
     @profiellengte.setter
     def profiellengte(self, value):
@@ -93,7 +93,7 @@ class Damwand(ConstructieElement, LijnGeometrie):
     @property
     def totaleLengte(self):
         """De totale lengte van de damwandconstructie in lopende meter."""
-        return self._totaleLengte.waarde
+        return self._totaleLengte.get_waarde()
 
     @totaleLengte.setter
     def totaleLengte(self, value):

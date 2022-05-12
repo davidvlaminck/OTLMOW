@@ -34,7 +34,7 @@ class Bouwput(AIMObject, VlakGeometrie):
     @property
     def putdiepte(self):
         """Diepte tussen het maaiveld en onderkant bouwput in meter."""
-        return self._putdiepte.waarde
+        return self._putdiepte.get_waarde()
 
     @putdiepte.setter
     def putdiepte(self, value):
@@ -43,7 +43,7 @@ class Bouwput(AIMObject, VlakGeometrie):
     @property
     def type(self):
         """Het type van bouwput."""
-        return self._type.waarde
+        return self._type.get_waarde()
 
     @type.setter
     def type(self, value):

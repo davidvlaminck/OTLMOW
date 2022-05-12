@@ -40,7 +40,7 @@ class Armatuurcontroller(Communicatieapparatuur, FirmwareObject):
     @property
     def merk(self):
         """Merk van de armatuurcontroller."""
-        return self._merk.waarde
+        return self._merk.get_waarde()
 
     @merk.setter
     def merk(self, value):
@@ -49,7 +49,7 @@ class Armatuurcontroller(Communicatieapparatuur, FirmwareObject):
     @property
     def modelnaam(self):
         """Modelnaam van de armatuurcontroller."""
-        return self._modelnaam.waarde
+        return self._modelnaam.get_waarde()
 
     @modelnaam.setter
     def modelnaam(self, value):
@@ -58,7 +58,7 @@ class Armatuurcontroller(Communicatieapparatuur, FirmwareObject):
     @property
     def serienummer(self):
         """Het unieke nummer waarmee het toestel door de fabrikant geïdentificeerd is."""
-        return self._serienummer.waarde
+        return self._serienummer.get_waarde()
 
     @serienummer.setter
     def serienummer(self, value):

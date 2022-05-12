@@ -43,7 +43,7 @@ class Baanlichaam(AIMObject, VlakGeometrie):
     @property
     def dwarsprofiel(self):
         """Een dwarsprofiel is een doorsnijding van een terrein of constructie met een verticaal vlak, aangebracht loodrecht op de as ervan."""
-        return self._dwarsprofiel.waarde
+        return self._dwarsprofiel.get_waarde()
 
     @dwarsprofiel.setter
     def dwarsprofiel(self, value):
@@ -52,7 +52,7 @@ class Baanlichaam(AIMObject, VlakGeometrie):
     @property
     def horizontaleLigging(self):
         """De horizontale ligging van het baanlichaam als document bijlage."""
-        return self._horizontaleLigging.waarde
+        return self._horizontaleLigging.get_waarde()
 
     @horizontaleLigging.setter
     def horizontaleLigging(self, value):
@@ -61,7 +61,7 @@ class Baanlichaam(AIMObject, VlakGeometrie):
     @property
     def langsprofiel(self):
         """Een langsprofiel is een doorsnijding van een terrein of constructie met een verticaal vlak, aangebracht in de lengterichting van de as ervan."""
-        return self._langsprofiel.waarde
+        return self._langsprofiel.get_waarde()
 
     @langsprofiel.setter
     def langsprofiel(self, value):

@@ -24,7 +24,7 @@ class Hulppostkast(Buitenkast):
     @property
     def type(self):
         """Classificatie van de hulppostkast op basis van de inhoud en vorm volgens gangbare standaarden."""
-        return self._type.waarde
+        return self._type.get_waarde()
 
     @type.setter
     def type(self, value):

@@ -30,7 +30,7 @@ class ProefWatergehalte(Proef, PuntGeometrie, LijnGeometrie, VlakGeometrie):
     @property
     def watergehalte(self):
         """Het resultaat van de test van het gemeten watergehalte in de BV laag."""
-        return self._watergehalte.waarde
+        return self._watergehalte.get_waarde()
 
     @watergehalte.setter
     def watergehalte(self, value):

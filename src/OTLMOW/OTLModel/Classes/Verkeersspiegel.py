@@ -45,7 +45,7 @@ class Verkeersspiegel(AIMObject, Signalisatie, PuntGeometrie):
     @property
     def bijlageDocument(self):
         """Een document met dossiernummer waardoor men kan terugkoppelen naar de vergunning."""
-        return self._bijlageDocument.waarde
+        return self._bijlageDocument.get_waarde()
 
     @bijlageDocument.setter
     def bijlageDocument(self, value):
@@ -54,7 +54,7 @@ class Verkeersspiegel(AIMObject, Signalisatie, PuntGeometrie):
     @property
     def isGoedgekeurd(self):
         """Geeft of de verkeersspiegel al dan niet goedgekeurd is."""
-        return self._isGoedgekeurd.waarde
+        return self._isGoedgekeurd.get_waarde()
 
     @isGoedgekeurd.setter
     def isGoedgekeurd(self, value):
@@ -63,7 +63,7 @@ class Verkeersspiegel(AIMObject, Signalisatie, PuntGeometrie):
     @property
     def vorm(self):
         """Bepaling van de vorm van de gebruikte verkeersspiegel."""
-        return self._vorm.waarde
+        return self._vorm.get_waarde()
 
     @vorm.setter
     def vorm(self, value):

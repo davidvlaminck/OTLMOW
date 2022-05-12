@@ -39,7 +39,7 @@ class AnalogeHoppinzuil(Hoppinzuil):
     @property
     def macrokaart(self):
         """Cartografische weergave van het hoppinpunt en de omliggende hoppinpunten met daarop aangeduid de attractiepolen in de omgeving."""
-        return self._macrokaart.waarde
+        return self._macrokaart.get_waarde()
 
     @macrokaart.setter
     def macrokaart(self, value):
@@ -48,7 +48,7 @@ class AnalogeHoppinzuil(Hoppinzuil):
     @property
     def microkaart(self):
         """Cartografische weergave van het hoppinpunt en de omliggende straten met daarop de hoppinzuil, de verschillende beschikbare vervoersmodi en diensten aangeduid."""
-        return self._microkaart.waarde
+        return self._microkaart.get_waarde()
 
     @microkaart.setter
     def microkaart(self, value):
@@ -57,7 +57,7 @@ class AnalogeHoppinzuil(Hoppinzuil):
     @property
     def type(self):
         """De mogelijke types van een analoge hoppinzuil."""
-        return self._type.waarde
+        return self._type.get_waarde()
 
     @type.setter
     def type(self, value):

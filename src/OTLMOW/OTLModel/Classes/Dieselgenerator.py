@@ -28,7 +28,7 @@ class Dieselgenerator(Voedingspunt, PuntGeometrie, VlakGeometrie):
     @property
     def afmetingen(self):
         """De afmetingen van de dieselgenerator."""
-        return self._afmetingen.waarde
+        return self._afmetingen.get_waarde()
 
     @afmetingen.setter
     def afmetingen(self, value):

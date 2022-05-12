@@ -34,7 +34,7 @@ class ProefSchokindexMVP(Proef, PuntGeometrie, LijnGeometrie, VlakGeometrie):
     @property
     def schokindexMvp(self):
         """Head Injury Criterium (HIC) van een motorvangplank."""
-        return self._schokindexMvp.waarde
+        return self._schokindexMvp.get_waarde()
 
     @schokindexMvp.setter
     def schokindexMvp(self, value):

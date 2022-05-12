@@ -57,7 +57,7 @@ class Controller(AIMNaamObject, PuntGeometrie):
     @property
     def batchnummer(self):
         """Nummer van de batch."""
-        return self._batchnummer.waarde
+        return self._batchnummer.get_waarde()
 
     @batchnummer.setter
     def batchnummer(self, value):
@@ -66,7 +66,7 @@ class Controller(AIMNaamObject, PuntGeometrie):
     @property
     def dNSNaam(self):
         """DNS-naam van de controller."""
-        return self._dNSNaam.waarde
+        return self._dNSNaam.get_waarde()
 
     @dNSNaam.setter
     def dNSNaam(self, value):
@@ -75,7 +75,7 @@ class Controller(AIMNaamObject, PuntGeometrie):
     @property
     def firmwareversie(self):
         """Firmwareversie van de controller."""
-        return self._firmwareversie.waarde
+        return self._firmwareversie.get_waarde()
 
     @firmwareversie.setter
     def firmwareversie(self, value):
@@ -84,7 +84,7 @@ class Controller(AIMNaamObject, PuntGeometrie):
     @property
     def iPAdres(self):
         """IP-adres van de controller."""
-        return self._iPAdres.waarde
+        return self._iPAdres.get_waarde()
 
     @iPAdres.setter
     def iPAdres(self, value):
@@ -93,7 +93,7 @@ class Controller(AIMNaamObject, PuntGeometrie):
     @property
     def serienummer(self):
         """Het unieke nummer waarmee het toestel door de fabrikant geïdentificeerd is."""
-        return self._serienummer.waarde
+        return self._serienummer.get_waarde()
 
     @serienummer.setter
     def serienummer(self, value):

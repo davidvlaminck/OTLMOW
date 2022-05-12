@@ -26,7 +26,7 @@ class NaampadObject(AIMNaamObject):
     @property
     def naampad(self):
         """Een set van objecten (bv. collecties) die aanduiden waar het object zich bevindt in de objectenboom (EM-Infra)."""
-        return self._naampad.waarde
+        return self._naampad.get_waarde()
 
     @naampad.setter
     def naampad(self, value):

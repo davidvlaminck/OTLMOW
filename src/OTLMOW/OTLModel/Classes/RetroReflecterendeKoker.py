@@ -26,7 +26,7 @@ class RetroReflecterendeKoker(AIMObject, PuntGeometrie):
     @property
     def folieType(self):
         """Een keuzelijst het folietype van reflecterende koker te bepalen."""
-        return self._folieType.waarde
+        return self._folieType.get_waarde()
 
     @folieType.setter
     def folieType(self, value):

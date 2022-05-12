@@ -26,7 +26,7 @@ class DtcExterneReferentieWaarden(AttributeInfo):
     @property
     def externReferentienummer(self):
         """Referentienummer zoals gekend bij de externe partij bv. aannemer, VLCC, ..."""
-        return self._externReferentienummer.waarde
+        return self._externReferentienummer.get_waarde()
 
     @externReferentienummer.setter
     def externReferentienummer(self, value):
@@ -35,7 +35,7 @@ class DtcExterneReferentieWaarden(AttributeInfo):
     @property
     def externePartij(self):
         """De naam van de externe partij waarvoor de referentie geldt. Dit kan een organisatie zijn maar ook een softwaretoepassing zoals bv. ABBA of VLCC."""
-        return self._externePartij.waarde
+        return self._externePartij.get_waarde()
 
     @externePartij.setter
     def externePartij(self, value):

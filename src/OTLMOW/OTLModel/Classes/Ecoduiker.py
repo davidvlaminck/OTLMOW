@@ -26,7 +26,7 @@ class Ecoduiker(AIMObject, VlakGeometrie):
     @property
     def typeLooprichel(self):
         """Type van looprichel in de ecoduiker."""
-        return self._typeLooprichel.waarde
+        return self._typeLooprichel.get_waarde()
 
     @typeLooprichel.setter
     def typeLooprichel(self, value):

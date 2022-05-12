@@ -64,7 +64,7 @@ class Overstortrand(AIMObject, VlakGeometrie):
     @property
     def breedte(self):
         """De afstand tussen de uiterste zijden van de overstortrand in millimeter."""
-        return self._breedte.waarde
+        return self._breedte.get_waarde()
 
     @breedte.setter
     def breedte(self, value):
@@ -73,7 +73,7 @@ class Overstortrand(AIMObject, VlakGeometrie):
     @property
     def hoogte(self):
         """De afstand tussen de vaste drempel en het hoogste punt van de overstortrand in millimeter."""
-        return self._hoogte.waarde
+        return self._hoogte.get_waarde()
 
     @hoogte.setter
     def hoogte(self, value):
@@ -82,7 +82,7 @@ class Overstortrand(AIMObject, VlakGeometrie):
     @property
     def materiaal(self):
         """Het materiaal waaruit de overstortrand vervaardigd is."""
-        return self._materiaal.waarde
+        return self._materiaal.get_waarde()
 
     @materiaal.setter
     def materiaal(self, value):
@@ -91,7 +91,7 @@ class Overstortrand(AIMObject, VlakGeometrie):
     @property
     def technischeFiche(self):
         """De technische fiche van de de overstortrand."""
-        return self._technischeFiche.waarde
+        return self._technischeFiche.get_waarde()
 
     @technischeFiche.setter
     def technischeFiche(self, value):
@@ -100,7 +100,7 @@ class Overstortrand(AIMObject, VlakGeometrie):
     @property
     def variabelDeelType(self):
         """Bepaalt het type van het variabel deel van de overstortrand."""
-        return self._variabelDeelType.waarde
+        return self._variabelDeelType.get_waarde()
 
     @variabelDeelType.setter
     def variabelDeelType(self, value):
@@ -109,7 +109,7 @@ class Overstortrand(AIMObject, VlakGeometrie):
     @property
     def wanddikte(self):
         """De wanddikte van de overstortrand in millimeter."""
-        return self._wanddikte.waarde
+        return self._wanddikte.get_waarde()
 
     @wanddikte.setter
     def wanddikte(self, value):

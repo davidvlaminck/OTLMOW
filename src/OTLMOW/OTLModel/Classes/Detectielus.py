@@ -34,7 +34,7 @@ class Detectielus(Detectie):
     @property
     def afmetingenBL(self):
         """Afmetingen breedte x lengte van de lus."""
-        return self._afmetingenBL.waarde
+        return self._afmetingenBL.get_waarde()
 
     @afmetingenBL.setter
     def afmetingenBL(self, value):
@@ -43,7 +43,7 @@ class Detectielus(Detectie):
     @property
     def bewakingstijd(self):
         """Wachttijd (in uren) waarna een alarm pas mag optreden."""
-        return self._bewakingstijd.waarde
+        return self._bewakingstijd.get_waarde()
 
     @bewakingstijd.setter
     def bewakingstijd(self, value):

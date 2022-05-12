@@ -32,7 +32,7 @@ class HSCabine(Cabine):
     @property
     def lokaalKlasse(self):
         """Classificatie van de hoogspanningscabine als lokaal volgens Synergrid."""
-        return self._lokaalKlasse.waarde
+        return self._lokaalKlasse.get_waarde()
 
     @lokaalKlasse.setter
     def lokaalKlasse(self, value):
@@ -41,7 +41,7 @@ class HSCabine(Cabine):
     @property
     def vervaldatumVeiligheidshandschoenen(self):
         """De datum waarop de huidige veiligheidshandschoenen in de hoogspanningscabine vervallen."""
-        return self._vervaldatumVeiligheidshandschoenen.waarde
+        return self._vervaldatumVeiligheidshandschoenen.get_waarde()
 
     @vervaldatumVeiligheidshandschoenen.setter
     def vervaldatumVeiligheidshandschoenen(self, value):

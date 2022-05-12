@@ -26,7 +26,7 @@ class Wervel(LinkendElement, VlakGeometrie):
     @property
     def peil(self):
         """Dit is het niveau in meter-TAW van de inlaat van het wervelventiel."""
-        return self._peil.waarde
+        return self._peil.get_waarde()
 
     @peil.setter
     def peil(self, value):

@@ -71,7 +71,7 @@ class Derdenobject(AIMToestand, AIMDBStatus, AttributeInfo, OTLAsset, RelatieInt
     @property
     def assetId(self):
         """Unieke identificatie van de asset zoals toegekend door de assetbeheerder of n.a.v. eerste aanlevering door de leverancier."""
-        return self._assetId.waarde
+        return self._assetId.get_waarde()
 
     @assetId.setter
     def assetId(self, value):
@@ -80,7 +80,7 @@ class Derdenobject(AIMToestand, AIMDBStatus, AttributeInfo, OTLAsset, RelatieInt
     @property
     def contactgegevens(self):
         """Naam, voornaam, telefoonnummer en/of e-mailadres van de contactpersoon."""
-        return self._contactgegevens.waarde
+        return self._contactgegevens.get_waarde()
 
     @contactgegevens.setter
     def contactgegevens(self, value):
@@ -89,7 +89,7 @@ class Derdenobject(AIMToestand, AIMDBStatus, AttributeInfo, OTLAsset, RelatieInt
     @property
     def foto(self):
         """Een foto van het derdenobject die eventuele detailinformatie weergeeft."""
-        return self._foto.waarde
+        return self._foto.get_waarde()
 
     @foto.setter
     def foto(self, value):
@@ -98,7 +98,7 @@ class Derdenobject(AIMToestand, AIMDBStatus, AttributeInfo, OTLAsset, RelatieInt
     @property
     def heeftAansluitkastGeintegreerd(self):
         """Aanduiding of de aansluitkast geïntegreerd is."""
-        return self._heeftAansluitkastGeintegreerd.waarde
+        return self._heeftAansluitkastGeintegreerd.get_waarde()
 
     @heeftAansluitkastGeintegreerd.setter
     def heeftAansluitkastGeintegreerd(self, value):
@@ -107,7 +107,7 @@ class Derdenobject(AIMToestand, AIMDBStatus, AttributeInfo, OTLAsset, RelatieInt
     @property
     def omschrijving(self):
         """Omschrijving van het derdenobject."""
-        return self._omschrijving.waarde
+        return self._omschrijving.get_waarde()
 
     @omschrijving.setter
     def omschrijving(self, value):

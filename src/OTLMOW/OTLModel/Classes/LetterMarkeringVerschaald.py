@@ -64,7 +64,7 @@ class LetterMarkeringVerschaald(FiguratieMarkeringToegang, PuntGeometrie):
     @property
     def basisOppervlakte(self):
         """De basisoppervlakte van de individuele lettermarkering voor verschaling zoals beschreven in de algemene omzendbrief."""
-        return self._basisOppervlakte.waarde
+        return self._basisOppervlakte.get_waarde()
 
     @basisOppervlakte.setter
     def basisOppervlakte(self, value):
@@ -73,7 +73,7 @@ class LetterMarkeringVerschaald(FiguratieMarkeringToegang, PuntGeometrie):
     @property
     def letter(self):
         """De individuele letter gebruikt bij de verschaalde wegmarkering."""
-        return self._letter.waarde
+        return self._letter.get_waarde()
 
     @letter.setter
     def letter(self, value):
@@ -82,7 +82,7 @@ class LetterMarkeringVerschaald(FiguratieMarkeringToegang, PuntGeometrie):
     @property
     def oppervlakte(self):
         """De oppervlakte van een figuratiemarkering na de verschaling."""
-        return self._oppervlakte.waarde
+        return self._oppervlakte.get_waarde()
 
     @oppervlakte.setter
     def oppervlakte(self, value):
@@ -91,7 +91,7 @@ class LetterMarkeringVerschaald(FiguratieMarkeringToegang, PuntGeometrie):
     @property
     def type(self):
         """Het type van de individuele verschaalde lettermarkering."""
-        return self._type.waarde
+        return self._type.get_waarde()
 
     @type.setter
     def type(self, value):
@@ -100,7 +100,7 @@ class LetterMarkeringVerschaald(FiguratieMarkeringToegang, PuntGeometrie):
     @property
     def vergrotingsfactor(self):
         """Een decimaal getal dat weergeeft in welke mate de figuratiemarkering vergroot of verkleind wordt."""
-        return self._vergrotingsfactor.waarde
+        return self._vergrotingsfactor.get_waarde()
 
     @vergrotingsfactor.setter
     def vergrotingsfactor(self, value):
@@ -109,7 +109,7 @@ class LetterMarkeringVerschaald(FiguratieMarkeringToegang, PuntGeometrie):
     @property
     def verlengingsfactor(self):
         """Een decimaal getal dat de verlenging van een figuratiemarkering weergeeft."""
-        return self._verlengingsfactor.waarde
+        return self._verlengingsfactor.get_waarde()
 
     @verlengingsfactor.setter
     def verlengingsfactor(self, value):

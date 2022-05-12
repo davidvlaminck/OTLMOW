@@ -30,7 +30,7 @@ class ProefMortelkwaliteit(Proef, PuntGeometrie, LijnGeometrie, VlakGeometrie):
     @property
     def mortelkwaliteit(self):
         """Een rapport van de mortelkwaliteit van de onderbouw laag."""
-        return self._mortelkwaliteit.waarde
+        return self._mortelkwaliteit.get_waarde()
 
     @mortelkwaliteit.setter
     def mortelkwaliteit(self, value):

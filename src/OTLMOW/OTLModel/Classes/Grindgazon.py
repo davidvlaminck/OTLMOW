@@ -26,7 +26,7 @@ class Grindgazon(BegroeidVoorkomen, VlakGeometrie):
     @property
     def isTweelaags(self):
         """Geeft aan of het grindgazon tweelaags of éénlaags is."""
-        return self._isTweelaags.waarde
+        return self._isTweelaags.get_waarde()
 
     @isTweelaags.setter
     def isTweelaags(self, value):

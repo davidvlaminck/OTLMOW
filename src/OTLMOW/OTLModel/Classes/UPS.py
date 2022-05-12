@@ -65,7 +65,7 @@ class UPS(Voedingspunt, PuntGeometrie):
     @property
     def autonomie(self):
         """De tijd die de UPS een installatie van voeding kan voorzien."""
-        return self._autonomie.waarde
+        return self._autonomie.get_waarde()
 
     @autonomie.setter
     def autonomie(self, value):
@@ -74,7 +74,7 @@ class UPS(Voedingspunt, PuntGeometrie):
     @property
     def maxContinuVermogen(self):
         """Maximale continu vermogen van de UPS."""
-        return self._maxContinuVermogen.waarde
+        return self._maxContinuVermogen.get_waarde()
 
     @maxContinuVermogen.setter
     def maxContinuVermogen(self, value):
@@ -83,7 +83,7 @@ class UPS(Voedingspunt, PuntGeometrie):
     @property
     def maxPiekVermogen(self):
         """Het maximale piekvermogen van de UPS."""
-        return self._maxPiekVermogen.waarde
+        return self._maxPiekVermogen.get_waarde()
 
     @maxPiekVermogen.setter
     def maxPiekVermogen(self, value):
@@ -92,7 +92,7 @@ class UPS(Voedingspunt, PuntGeometrie):
     @property
     def merk(self):
         """Merk waarmee de fabrikant de UPS identificeert."""
-        return self._merk.waarde
+        return self._merk.get_waarde()
 
     @merk.setter
     def merk(self, value):
@@ -101,7 +101,7 @@ class UPS(Voedingspunt, PuntGeometrie):
     @property
     def modelnaam(self):
         """Modelnaam van de UPS volgens de fabrikant."""
-        return self._modelnaam.waarde
+        return self._modelnaam.get_waarde()
 
     @modelnaam.setter
     def modelnaam(self, value):
@@ -110,7 +110,7 @@ class UPS(Voedingspunt, PuntGeometrie):
     @property
     def serienummer(self):
         """Unieke identificatiecode van het toestel, toegekend door de fabrikant."""
-        return self._serienummer.waarde
+        return self._serienummer.get_waarde()
 
     @serienummer.setter
     def serienummer(self, value):

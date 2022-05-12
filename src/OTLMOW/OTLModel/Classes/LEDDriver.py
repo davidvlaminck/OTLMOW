@@ -58,7 +58,7 @@ class LEDDriver(AIMObject, PuntGeometrie):
     @property
     def maximaalVermogen(self):
         """Maximaal afgenomen vermogen van de driver en lamp/lichtbron samen (incl. verlies/verbruik van de driver zelf)."""
-        return self._maximaalVermogen.waarde
+        return self._maximaalVermogen.get_waarde()
 
     @maximaalVermogen.setter
     def maximaalVermogen(self, value):
@@ -67,7 +67,7 @@ class LEDDriver(AIMObject, PuntGeometrie):
     @property
     def maximaleAanstuurstroom(self):
         """Maximale aanstuurstroom die de LED-driver kan leveren."""
-        return self._maximaleAanstuurstroom.waarde
+        return self._maximaleAanstuurstroom.get_waarde()
 
     @maximaleAanstuurstroom.setter
     def maximaleAanstuurstroom(self, value):
@@ -76,7 +76,7 @@ class LEDDriver(AIMObject, PuntGeometrie):
     @property
     def merk(self):
         """Het merk van de LED-driver."""
-        return self._merk.waarde
+        return self._merk.get_waarde()
 
     @merk.setter
     def merk(self, value):
@@ -85,7 +85,7 @@ class LEDDriver(AIMObject, PuntGeometrie):
     @property
     def modelnaam(self):
         """De modelnaam van de LED-driver."""
-        return self._modelnaam.waarde
+        return self._modelnaam.get_waarde()
 
     @modelnaam.setter
     def modelnaam(self, value):
@@ -94,7 +94,7 @@ class LEDDriver(AIMObject, PuntGeometrie):
     @property
     def protocol(self):
         """Protocol gebruikt door de LED-driver voor het aansturen van de LED's."""
-        return self._protocol.waarde
+        return self._protocol.get_waarde()
 
     @protocol.setter
     def protocol(self, value):

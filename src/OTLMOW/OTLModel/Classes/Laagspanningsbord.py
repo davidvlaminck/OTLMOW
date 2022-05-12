@@ -34,7 +34,7 @@ class Laagspanningsbord(AIMNaamObject, PuntGeometrie):
     @property
     def elektrischSchema(self):
         """Het elektrisch aansluitschema van het laagspanningsbord."""
-        return self._elektrischSchema.waarde
+        return self._elektrischSchema.get_waarde()
 
     @elektrischSchema.setter
     def elektrischSchema(self, value):
@@ -43,7 +43,7 @@ class Laagspanningsbord(AIMNaamObject, PuntGeometrie):
     @property
     def vermogen(self):
         """Het vermogen van het laagspanningsbord."""
-        return self._vermogen.waarde
+        return self._vermogen.get_waarde()
 
     @vermogen.setter
     def vermogen(self, value):

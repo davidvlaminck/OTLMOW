@@ -30,7 +30,7 @@ class ProefDoorlatendheid(Proef, PuntGeometrie, LijnGeometrie, VlakGeometrie):
     @property
     def doorlatendheid(self):
         """Proefresultaten van de waterdoorlatendheid."""
-        return self._doorlatendheid.waarde
+        return self._doorlatendheid.get_waarde()
 
     @doorlatendheid.setter
     def doorlatendheid(self, value):

@@ -36,7 +36,7 @@ class InspectieputRiolering(AIMObject, Put, VlakGeometrie):
     @property
     def hoekverdraaiing(self):
         """Verschil in richting tussen inkomende en uitgaande rioolbuis."""
-        return self._hoekverdraaiing.waarde
+        return self._hoekverdraaiing.get_waarde()
 
     @hoekverdraaiing.setter
     def hoekverdraaiing(self, value):
@@ -45,7 +45,7 @@ class InspectieputRiolering(AIMObject, Put, VlakGeometrie):
     @property
     def type(self):
         """Het type van de put zoals beschreven in hoofdstuk 7 van het standaardbestek 250."""
-        return self._type.waarde
+        return self._type.get_waarde()
 
     @type.setter
     def type(self, value):

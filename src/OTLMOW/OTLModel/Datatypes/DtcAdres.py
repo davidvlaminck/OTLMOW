@@ -56,7 +56,7 @@ class DtcAdresWaarden(AttributeInfo):
     @property
     def bus(self):
         """Een nummer dat de postbus aanduidt."""
-        return self._bus.waarde
+        return self._bus.get_waarde()
 
     @bus.setter
     def bus(self, value):
@@ -65,7 +65,7 @@ class DtcAdresWaarden(AttributeInfo):
     @property
     def gemeente(self):
         """De bestuurlijke eenheid waarin het adres gelegen is."""
-        return self._gemeente.waarde
+        return self._gemeente.get_waarde()
 
     @gemeente.setter
     def gemeente(self, value):
@@ -74,7 +74,7 @@ class DtcAdresWaarden(AttributeInfo):
     @property
     def huisnummer(self):
         """Een nummer dat door de gemeente aan bv. een huis wordt toegekend."""
-        return self._huisnummer.waarde
+        return self._huisnummer.get_waarde()
 
     @huisnummer.setter
     def huisnummer(self, value):
@@ -83,7 +83,7 @@ class DtcAdresWaarden(AttributeInfo):
     @property
     def postcode(self):
         """Een korte reeks tekens die in het postadres wordt opgenomen."""
-        return self._postcode.waarde
+        return self._postcode.get_waarde()
 
     @postcode.setter
     def postcode(self, value):
@@ -92,7 +92,7 @@ class DtcAdresWaarden(AttributeInfo):
     @property
     def provincie(self):
         """Het deelgebied waarin het adres gelegen is."""
-        return self._provincie.waarde
+        return self._provincie.get_waarde()
 
     @provincie.setter
     def provincie(self, value):
@@ -101,7 +101,7 @@ class DtcAdresWaarden(AttributeInfo):
     @property
     def straatnaam(self):
         """De naam van de straat."""
-        return self._straatnaam.waarde
+        return self._straatnaam.get_waarde()
 
     @straatnaam.setter
     def straatnaam(self, value):

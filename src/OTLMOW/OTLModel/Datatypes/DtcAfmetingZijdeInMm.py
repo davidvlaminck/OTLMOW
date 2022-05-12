@@ -19,7 +19,7 @@ class DtcAfmetingZijdeInMmWaarden(AttributeInfo):
     @property
     def zijde(self):
         """De afmeting van een zijde in millimeter."""
-        return self._zijde.waarde
+        return self._zijde.get_waarde()
 
     @zijde.setter
     def zijde(self, value):

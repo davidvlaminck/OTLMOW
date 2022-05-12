@@ -74,7 +74,7 @@ class AIMObject(AIMToestand, AIMDBStatus, AttributeInfo, OTLAsset, RelatieIntera
     @property
     def assetId(self):
         """Unieke identificatie van de asset zoals toegekend door de assetbeheerder of n.a.v. eerste aanlevering door de leverancier."""
-        return self._assetId.waarde
+        return self._assetId.get_waarde()
 
     @assetId.setter
     def assetId(self, value):
@@ -83,7 +83,7 @@ class AIMObject(AIMToestand, AIMDBStatus, AttributeInfo, OTLAsset, RelatieIntera
     @property
     def bestekPostNummer(self):
         """Een verwijzing naar een postnummer uit het specifieke bestek waar het object mee verband houdt."""
-        return self._bestekPostNummer.waarde
+        return self._bestekPostNummer.get_waarde()
 
     @bestekPostNummer.setter
     def bestekPostNummer(self, value):
@@ -92,7 +92,7 @@ class AIMObject(AIMToestand, AIMDBStatus, AttributeInfo, OTLAsset, RelatieIntera
     @property
     def datumOprichtingObject(self):
         """Datum van de oprichting van het object."""
-        return self._datumOprichtingObject.waarde
+        return self._datumOprichtingObject.get_waarde()
 
     @datumOprichtingObject.setter
     def datumOprichtingObject(self, value):
@@ -101,7 +101,7 @@ class AIMObject(AIMToestand, AIMDBStatus, AttributeInfo, OTLAsset, RelatieIntera
     @property
     def notitie(self):
         """Extra notitie voor het object."""
-        return self._notitie.waarde
+        return self._notitie.get_waarde()
 
     @notitie.setter
     def notitie(self, value):
@@ -110,7 +110,7 @@ class AIMObject(AIMToestand, AIMDBStatus, AttributeInfo, OTLAsset, RelatieIntera
     @property
     def standaardBestekPostNummer(self):
         """Een verwijzing naar een postnummer uit het standaardbestek waar het object mee verband houdt. De notatie van het postnummer moet overeenkomen met de notatie die gebruikt is in de catalogi van standaardbestekken, bijvoorbeeld postnummer 0701.20404G."""
-        return self._standaardBestekPostNummer.waarde
+        return self._standaardBestekPostNummer.get_waarde()
 
     @standaardBestekPostNummer.setter
     def standaardBestekPostNummer(self, value):
@@ -119,7 +119,7 @@ class AIMObject(AIMToestand, AIMDBStatus, AttributeInfo, OTLAsset, RelatieIntera
     @property
     def theoretischeLevensduur(self):
         """ De levensduur in aantal maanden die theoretisch mag verwacht worden voor een object."""
-        return self._theoretischeLevensduur.waarde
+        return self._theoretischeLevensduur.get_waarde()
 
     @theoretischeLevensduur.setter
     def theoretischeLevensduur(self, value):

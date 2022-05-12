@@ -48,7 +48,7 @@ class NietSelectieveDetectielus(SelNietSelLus):
     @property
     def functie(self):
         """Type niet-selectieve detectielus bv. file, afstand, hiaat,..."""
-        return self._functie.waarde
+        return self._functie.get_waarde()
 
     @functie.setter
     def functie(self, value):
@@ -57,7 +57,7 @@ class NietSelectieveDetectielus(SelNietSelLus):
     @property
     def isMotorgevoelig(self):
         """Geeft aan of de lus motorgevoelig is of niet."""
-        return self._isMotorgevoelig.waarde
+        return self._isMotorgevoelig.get_waarde()
 
     @isMotorgevoelig.setter
     def isMotorgevoelig(self, value):
@@ -66,7 +66,7 @@ class NietSelectieveDetectielus(SelNietSelLus):
     @property
     def isRichtingsgevoelig(self):
         """Is de detectielus gevoelig voor de richting waarin het voertuig het gevoeligheidsgebied van de lus binnenkomt?"""
-        return self._isRichtingsgevoelig.waarde
+        return self._isRichtingsgevoelig.get_waarde()
 
     @isRichtingsgevoelig.setter
     def isRichtingsgevoelig(self, value):
@@ -75,7 +75,7 @@ class NietSelectieveDetectielus(SelNietSelLus):
     @property
     def soortVoertuig(self):
         """Type voertuig dat de detectielus volgens zijn instellingen kan detecteren."""
-        return self._soortVoertuig.waarde
+        return self._soortVoertuig.get_waarde()
 
     @soortVoertuig.setter
     def soortVoertuig(self, value):

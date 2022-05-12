@@ -42,7 +42,7 @@ class Betonfundering(Fundering, VlakGeometrie):
     @property
     def afmetingGrondvlak(self):
         """De maximale lengte en breedte van bovenkant van de fundering."""
-        return self._afmetingGrondvlak.waarde
+        return self._afmetingGrondvlak.get_waarde()
 
     @afmetingGrondvlak.setter
     def afmetingGrondvlak(self, value):
@@ -51,7 +51,7 @@ class Betonfundering(Fundering, VlakGeometrie):
     @property
     def betonkwaliteit(self):
         """Kwaliteit van het beton gebruikt voor de fundering volgens een vaste lijst van mogelijke waarden."""
-        return self._betonkwaliteit.waarde
+        return self._betonkwaliteit.get_waarde()
 
     @betonkwaliteit.setter
     def betonkwaliteit(self, value):

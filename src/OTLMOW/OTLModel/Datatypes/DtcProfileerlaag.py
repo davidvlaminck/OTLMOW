@@ -27,7 +27,7 @@ class DtcProfileerlaagWaarden(AttributeInfo):
     @property
     def gewicht(self):
         """Het gewicht van de profileerlaag in ton."""
-        return self._gewicht.waarde
+        return self._gewicht.get_waarde()
 
     @gewicht.setter
     def gewicht(self, value):
@@ -36,7 +36,7 @@ class DtcProfileerlaagWaarden(AttributeInfo):
     @property
     def laagtype(self):
         """Het type van de bitumineuze verharding."""
-        return self._laagtype.waarde
+        return self._laagtype.get_waarde()
 
     @laagtype.setter
     def laagtype(self, value):

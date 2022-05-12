@@ -26,7 +26,7 @@ class Bel(AIMNaamObject, PuntGeometrie):
     @property
     def technischeFiche(self):
         """De technische fiche van een bel."""
-        return self._technischeFiche.waarde
+        return self._technischeFiche.get_waarde()
 
     @technischeFiche.setter
     def technischeFiche(self, value):

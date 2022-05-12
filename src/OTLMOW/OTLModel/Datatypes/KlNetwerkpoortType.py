@@ -27,6 +27,10 @@ class KlNetwerkpoortType(KeuzelijstField):
         'UNI': KeuzelijstWaarde(invulwaarde='UNI',
                                 label='UNI',
                                 definitie='User-Network-Interface: deze poort verbindt het netwerk toestel met de poort van een gebruiker.',
-                                objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortType/UNI')
+                                objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortType/UNI'),
+        'ncni': KeuzelijstWaarde(invulwaarde='ncni',
+                                 label='NCNI',
+                                 definitie='Een Not Configured Network Interface.',
+                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkpoortType/ncni')
     }
 

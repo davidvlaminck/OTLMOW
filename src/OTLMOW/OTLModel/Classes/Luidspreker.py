@@ -58,7 +58,7 @@ class Luidspreker(AIMNaamObject, PuntGeometrie):
     @property
     def merk(self):
         """Het merk van de luidspreker."""
-        return self._merk.waarde
+        return self._merk.get_waarde()
 
     @merk.setter
     def merk(self, value):
@@ -67,7 +67,7 @@ class Luidspreker(AIMNaamObject, PuntGeometrie):
     @property
     def modelnaam(self):
         """De modelnaam van de luidspreker."""
-        return self._modelnaam.waarde
+        return self._modelnaam.get_waarde()
 
     @modelnaam.setter
     def modelnaam(self, value):
@@ -76,7 +76,7 @@ class Luidspreker(AIMNaamObject, PuntGeometrie):
     @property
     def technischeFiche(self):
         """De technische fiche van de luidspreker."""
-        return self._technischeFiche.waarde
+        return self._technischeFiche.get_waarde()
 
     @technischeFiche.setter
     def technischeFiche(self, value):
@@ -85,7 +85,7 @@ class Luidspreker(AIMNaamObject, PuntGeometrie):
     @property
     def transportType(self):
         """Geeft aan op welke manier het audiosignaal wordt getransporteerd door het toestel."""
-        return self._transportType.waarde
+        return self._transportType.get_waarde()
 
     @transportType.setter
     def transportType(self, value):
@@ -94,7 +94,7 @@ class Luidspreker(AIMNaamObject, PuntGeometrie):
     @property
     def vormgeving(self):
         """Soort luidsprekers volgens zijn vormfactor."""
-        return self._vormgeving.waarde
+        return self._vormgeving.get_waarde()
 
     @vormgeving.setter
     def vormgeving(self, value):

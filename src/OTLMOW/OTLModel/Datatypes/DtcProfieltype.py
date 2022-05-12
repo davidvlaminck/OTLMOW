@@ -27,7 +27,7 @@ class DtcProfieltypeWaarden(AttributeInfo):
     @property
     def profielhoogtemaat(self):
         """Voorgedefinieerde hoogtemaat van een profiel."""
-        return self._profielhoogtemaat.waarde
+        return self._profielhoogtemaat.get_waarde()
 
     @profielhoogtemaat.setter
     def profielhoogtemaat(self, value):
@@ -36,7 +36,7 @@ class DtcProfieltypeWaarden(AttributeInfo):
     @property
     def profielsoort(self):
         """Het type profiel (de meest genormeerde types)."""
-        return self._profielsoort.waarde
+        return self._profielsoort.get_waarde()
 
     @profielsoort.setter
     def profielsoort(self, value):

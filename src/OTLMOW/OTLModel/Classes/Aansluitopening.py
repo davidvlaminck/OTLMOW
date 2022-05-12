@@ -49,7 +49,7 @@ class Aansluitopening(LinkendElement, PuntGeometrie):
     @property
     def breedte(self):
         """De afstand tussen de uiterste zijden van de aansluitopening in millimeter."""
-        return self._breedte.waarde
+        return self._breedte.get_waarde()
 
     @breedte.setter
     def breedte(self, value):
@@ -58,7 +58,7 @@ class Aansluitopening(LinkendElement, PuntGeometrie):
     @property
     def hoogte(self):
         """De afstand tussen het hoogste en laagste punt van de aansluitopening in millimeter."""
-        return self._hoogte.waarde
+        return self._hoogte.get_waarde()
 
     @hoogte.setter
     def hoogte(self, value):
@@ -67,7 +67,7 @@ class Aansluitopening(LinkendElement, PuntGeometrie):
     @property
     def peil(self):
         """BOK peil in meter-TAW van de knijpopening."""
-        return self._peil.waarde
+        return self._peil.get_waarde()
 
     @peil.setter
     def peil(self, value):
@@ -76,7 +76,7 @@ class Aansluitopening(LinkendElement, PuntGeometrie):
     @property
     def vorm(self):
         """De vorm van de aansluitopening."""
-        return self._vorm.waarde
+        return self._vorm.get_waarde()
 
     @vorm.setter
     def vorm(self, value):

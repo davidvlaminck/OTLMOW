@@ -74,7 +74,7 @@ class BegroeidVoorkomen(AIMObject):
     @property
     def breedte(self):
         """De afstand van het begroeide oppervlak dwars op de as van de (water)weg."""
-        return self._breedte.waarde
+        return self._breedte.get_waarde()
 
     @breedte.setter
     def breedte(self, value):
@@ -83,7 +83,7 @@ class BegroeidVoorkomen(AIMObject):
     @property
     def drassigheid(self):
         """Mate waarin de bodem verzadigd is met water. De drassigheid geeft hierbij aan in welke mate de normale werking van types machines zou kunnen verstoord worden."""
-        return self._drassigheid.waarde
+        return self._drassigheid.get_waarde()
 
     @drassigheid.setter
     def drassigheid(self, value):
@@ -92,7 +92,7 @@ class BegroeidVoorkomen(AIMObject):
     @property
     def heeftObstakels(self):
         """Eigenschap die aangeeft of er binnen het beheerdeel al dan niet objecten voorkomen die de vrije werking van machines of andere werktuigen kan verhinderen."""
-        return self._heeftObstakels.waarde
+        return self._heeftObstakels.get_waarde()
 
     @heeftObstakels.setter
     def heeftObstakels(self, value):
@@ -101,7 +101,7 @@ class BegroeidVoorkomen(AIMObject):
     @property
     def lengte(self):
         """De afstand van het begroeide oppervlak evenwijdig met de as van de (water)weg."""
-        return self._lengte.waarde
+        return self._lengte.get_waarde()
 
     @lengte.setter
     def lengte(self, value):
@@ -110,7 +110,7 @@ class BegroeidVoorkomen(AIMObject):
     @property
     def oppervlakte(self):
         """De oppervlakte van het begroeide oppervlak in vierkante meter."""
-        return self._oppervlakte.waarde
+        return self._oppervlakte.get_waarde()
 
     @oppervlakte.setter
     def oppervlakte(self, value):
@@ -119,7 +119,7 @@ class BegroeidVoorkomen(AIMObject):
     @property
     def soort(self):
         """Met deze eigenschap worden de Nederlandse soortnaam, wetenschappelijke soortnaam en de soortcode van de meest voorkomende soorten binnen het begroeid oppervlak weergegeven."""
-        return self._soort.waarde
+        return self._soort.get_waarde()
 
     @soort.setter
     def soort(self, value):
@@ -128,7 +128,7 @@ class BegroeidVoorkomen(AIMObject):
     @property
     def taludwaarde(self):
         """Een talud is het kunstmatig gedeelte van een vlak van de wegbaan, dijken, spoorbanen, vestingswerken, ... dat een helling (min. 20%, max 80% voor kunstmatig verharde taluds) vertoont en bedoeld voor het opvangen van een hoogteverschil."""
-        return self._taludwaarde.waarde
+        return self._taludwaarde.get_waarde()
 
     @taludwaarde.setter
     def taludwaarde(self, value):

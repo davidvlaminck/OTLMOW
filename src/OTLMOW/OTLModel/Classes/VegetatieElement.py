@@ -42,7 +42,7 @@ class VegetatieElement(AIMObject):
     @property
     def hoogte(self):
         """De hoogteklasse van het vegetatie-element."""
-        return self._hoogte.waarde
+        return self._hoogte.get_waarde()
 
     @hoogte.setter
     def hoogte(self, value):
@@ -51,7 +51,7 @@ class VegetatieElement(AIMObject):
     @property
     def niveau(self):
         """Het niveau waarop het object zich bevindt, relatief ten opzichte van andere objecten. Negatieve waarden worden geassocieerd met ondergronds en positieve waarden met bovengronds. Nul wordt beschouwd als een absolute waarde om het maaiveld aan te duiden."""
-        return self._niveau.waarde
+        return self._niveau.get_waarde()
 
     @niveau.setter
     def niveau(self, value):
@@ -60,7 +60,7 @@ class VegetatieElement(AIMObject):
     @property
     def soortnaam(self):
         """Met deze eigenschap worden de Nederlandse soortnaam, wetenschappelijke soortnaam en de soortcode van de plantensoort weergegeven."""
-        return self._soortnaam.waarde
+        return self._soortnaam.get_waarde()
 
     @soortnaam.setter
     def soortnaam(self, value):

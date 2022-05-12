@@ -42,7 +42,7 @@ class Slemlaag(AndereLaag, VlakGeometrie):
     @property
     def kleur(self):
         """De kleur van de slemlaag."""
-        return self._kleur.waarde
+        return self._kleur.get_waarde()
 
     @kleur.setter
     def kleur(self, value):
@@ -51,7 +51,7 @@ class Slemlaag(AndereLaag, VlakGeometrie):
     @property
     def productfamilie(self):
         """Bepaling tot welke productfamilie de slemlaag behoort. """
-        return self._productfamilie.waarde
+        return self._productfamilie.get_waarde()
 
     @productfamilie.setter
     def productfamilie(self, value):
@@ -60,7 +60,7 @@ class Slemlaag(AndereLaag, VlakGeometrie):
     @property
     def soort(self):
         """De soort slemlaag."""
-        return self._soort.waarde
+        return self._soort.get_waarde()
 
     @soort.setter
     def soort(self, value):

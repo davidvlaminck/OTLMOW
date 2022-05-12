@@ -30,7 +30,7 @@ class ProefKorrelverdeling(Proef, PuntGeometrie, LijnGeometrie, VlakGeometrie):
     @property
     def korrelverdeling(self):
         """Het resultaat van de test van de gemeten korrelverdeling in de BV laag."""
-        return self._korrelverdeling.waarde
+        return self._korrelverdeling.get_waarde()
 
     @korrelverdeling.setter
     def korrelverdeling(self, value):

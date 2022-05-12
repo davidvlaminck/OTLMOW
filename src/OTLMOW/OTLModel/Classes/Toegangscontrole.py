@@ -41,7 +41,7 @@ class Toegangscontrole(AIMNaamObject, PuntGeometrie):
     @property
     def heeftBadgelezer(self):
         """Geeft aan of de toegangscontrole uitgerust is met een badgelezer."""
-        return self._heeftBadgelezer.waarde
+        return self._heeftBadgelezer.get_waarde()
 
     @heeftBadgelezer.setter
     def heeftBadgelezer(self, value):
@@ -50,7 +50,7 @@ class Toegangscontrole(AIMNaamObject, PuntGeometrie):
     @property
     def heeftSlotMetAfstandsbediening(self):
         """Geeft aan of het objecttype waaraan de toegangscontrole bevestigd is, kan geopend worden via een slot met afstandsbediening."""
-        return self._heeftSlotMetAfstandsbediening.waarde
+        return self._heeftSlotMetAfstandsbediening.get_waarde()
 
     @heeftSlotMetAfstandsbediening.setter
     def heeftSlotMetAfstandsbediening(self, value):
@@ -59,7 +59,7 @@ class Toegangscontrole(AIMNaamObject, PuntGeometrie):
     @property
     def sleutelType(self):
         """De soort sleutel die wordt gebruikt om de toegang te regelen."""
-        return self._sleutelType.waarde
+        return self._sleutelType.get_waarde()
 
     @sleutelType.setter
     def sleutelType(self, value):

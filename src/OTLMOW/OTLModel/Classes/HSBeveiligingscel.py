@@ -106,7 +106,7 @@ class HSBeveiligingscel(AIMNaamObject, PuntGeometrie):
     @property
     def elektrischSchema(self):
         """Elektrisch aansluitschema van de HS beveiligingscel."""
-        return self._elektrischSchema.waarde
+        return self._elektrischSchema.get_waarde()
 
     @elektrischSchema.setter
     def elektrischSchema(self, value):
@@ -115,7 +115,7 @@ class HSBeveiligingscel(AIMNaamObject, PuntGeometrie):
     @property
     def heeftreserveZekering(self):
         """Is er een reserve zekering aanwezig?"""
-        return self._heeftreserveZekering.waarde
+        return self._heeftreserveZekering.get_waarde()
 
     @heeftreserveZekering.setter
     def heeftreserveZekering(self, value):
@@ -124,7 +124,7 @@ class HSBeveiligingscel(AIMNaamObject, PuntGeometrie):
     @property
     def hoogspanningszekering(self):
         """Waarde van de hoogspanningszekering."""
-        return self._hoogspanningszekering.waarde
+        return self._hoogspanningszekering.get_waarde()
 
     @hoogspanningszekering.setter
     def hoogspanningszekering(self, value):
@@ -133,7 +133,7 @@ class HSBeveiligingscel(AIMNaamObject, PuntGeometrie):
     @property
     def keuringsfrequentie(self):
         """Frequentie (in jaar) waarmee de installatie moet onderworpen worden aan een periodieke keuring door een externe dienst voor technische controle."""
-        return self._keuringsfrequentie.waarde
+        return self._keuringsfrequentie.get_waarde()
 
     @keuringsfrequentie.setter
     def keuringsfrequentie(self, value):
@@ -142,7 +142,7 @@ class HSBeveiligingscel(AIMNaamObject, PuntGeometrie):
     @property
     def merk(self):
         """Merk van de HS beveiligingscel."""
-        return self._merk.waarde
+        return self._merk.get_waarde()
 
     @merk.setter
     def merk(self, value):
@@ -151,7 +151,7 @@ class HSBeveiligingscel(AIMNaamObject, PuntGeometrie):
     @property
     def modelnaam(self):
         """Modelnaam van de HS beveiligingscel."""
-        return self._modelnaam.waarde
+        return self._modelnaam.get_waarde()
 
     @modelnaam.setter
     def modelnaam(self, value):
@@ -160,7 +160,7 @@ class HSBeveiligingscel(AIMNaamObject, PuntGeometrie):
     @property
     def overstroombeveiligingInstelwaarde(self):
         """Instelwaarde van de overstroombeveiliging."""
-        return self._overstroombeveiligingInstelwaarde.waarde
+        return self._overstroombeveiligingInstelwaarde.get_waarde()
 
     @overstroombeveiligingInstelwaarde.setter
     def overstroombeveiligingInstelwaarde(self, value):
@@ -169,7 +169,7 @@ class HSBeveiligingscel(AIMNaamObject, PuntGeometrie):
     @property
     def overstroombeveiligingType(self):
         """Type overstroombeveiliging."""
-        return self._overstroombeveiligingType.waarde
+        return self._overstroombeveiligingType.get_waarde()
 
     @overstroombeveiligingType.setter
     def overstroombeveiligingType(self, value):
@@ -178,7 +178,7 @@ class HSBeveiligingscel(AIMNaamObject, PuntGeometrie):
     @property
     def overstroombeveiligingVermogenschakelaar(self):
         """Directe of indirecte overstroombeveiliging van de vermogenschakelaar."""
-        return self._overstroombeveiligingVermogenschakelaar.waarde
+        return self._overstroombeveiligingVermogenschakelaar.get_waarde()
 
     @overstroombeveiligingVermogenschakelaar.setter
     def overstroombeveiligingVermogenschakelaar(self, value):
@@ -187,7 +187,7 @@ class HSBeveiligingscel(AIMNaamObject, PuntGeometrie):
     @property
     def schakelmateriaalKlasse(self):
         """Klasse van het schakelmateriaal volgens Synergrid."""
-        return self._schakelmateriaalKlasse.waarde
+        return self._schakelmateriaalKlasse.get_waarde()
 
     @schakelmateriaalKlasse.setter
     def schakelmateriaalKlasse(self, value):
@@ -196,7 +196,7 @@ class HSBeveiligingscel(AIMNaamObject, PuntGeometrie):
     @property
     def schakelmateriaalType(self):
         """Type van schakelmateriaal."""
-        return self._schakelmateriaalType.waarde
+        return self._schakelmateriaalType.get_waarde()
 
     @schakelmateriaalType.setter
     def schakelmateriaalType(self, value):

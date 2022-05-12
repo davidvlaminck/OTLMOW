@@ -41,7 +41,7 @@ class DtcRechtspersoonWaarden(AttributeInfo):
     @property
     def adres(self):
         """Het adres."""
-        return self._adres.waarde
+        return self._adres.get_waarde()
 
     @adres.setter
     def adres(self, value):
@@ -50,7 +50,7 @@ class DtcRechtspersoonWaarden(AttributeInfo):
     @property
     def afdeling(self):
         """De afdeling waartoe een rechtspersoon behoort."""
-        return self._afdeling.waarde
+        return self._afdeling.get_waarde()
 
     @afdeling.setter
     def afdeling(self, value):
@@ -59,7 +59,7 @@ class DtcRechtspersoonWaarden(AttributeInfo):
     @property
     def organisatie(self):
         """De naam van de organisatie of rechtspersoon."""
-        return self._organisatie.waarde
+        return self._organisatie.get_waarde()
 
     @organisatie.setter
     def organisatie(self, value):
@@ -68,7 +68,7 @@ class DtcRechtspersoonWaarden(AttributeInfo):
     @property
     def telefoonnnummer(self):
         """Het telefoonnummer."""
-        return self._telefoonnnummer.waarde
+        return self._telefoonnnummer.get_waarde()
 
     @telefoonnnummer.setter
     def telefoonnnummer(self, value):

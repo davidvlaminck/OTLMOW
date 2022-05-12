@@ -73,7 +73,7 @@ class IOKaart(AIMObject, PuntGeometrie):
     @property
     def bitsnelheid(self):
         """De snelheid (hoeveel bits per seconde) waarmee data doorgestuurd kan worden."""
-        return self._bitsnelheid.waarde
+        return self._bitsnelheid.get_waarde()
 
     @bitsnelheid.setter
     def bitsnelheid(self, value):
@@ -82,7 +82,7 @@ class IOKaart(AIMObject, PuntGeometrie):
     @property
     def firmwareversie(self):
         """Versie van de firmware."""
-        return self._firmwareversie.waarde
+        return self._firmwareversie.get_waarde()
 
     @firmwareversie.setter
     def firmwareversie(self, value):
@@ -91,7 +91,7 @@ class IOKaart(AIMObject, PuntGeometrie):
     @property
     def merk(self):
         """Het merk van de IO-kaart."""
-        return self._merk.waarde
+        return self._merk.get_waarde()
 
     @merk.setter
     def merk(self, value):
@@ -100,7 +100,7 @@ class IOKaart(AIMObject, PuntGeometrie):
     @property
     def modelnaam(self):
         """De modelnaam van de IO-kaart."""
-        return self._modelnaam.waarde
+        return self._modelnaam.get_waarde()
 
     @modelnaam.setter
     def modelnaam(self, value):
@@ -109,7 +109,7 @@ class IOKaart(AIMObject, PuntGeometrie):
     @property
     def poortadres(self):
         """Het IO-kaart poortadres wordt gebruikt om data uit te wisselen met een perifere component. Elke component krijgt een uniek poortadres toegekend, dit adres is een hexadecimaal getal."""
-        return self._poortadres.waarde
+        return self._poortadres.get_waarde()
 
     @poortadres.setter
     def poortadres(self, value):
@@ -118,7 +118,7 @@ class IOKaart(AIMObject, PuntGeometrie):
     @property
     def richting(self):
         """Geeft aan of de IO-kaart dient voor input of output."""
-        return self._richting.waarde
+        return self._richting.get_waarde()
 
     @richting.setter
     def richting(self, value):
@@ -127,7 +127,7 @@ class IOKaart(AIMObject, PuntGeometrie):
     @property
     def signaalType(self):
         """Geeft aan of de IO-kaart werkt met een digitaal of met een analoog signaal."""
-        return self._signaalType.waarde
+        return self._signaalType.get_waarde()
 
     @signaalType.setter
     def signaalType(self, value):

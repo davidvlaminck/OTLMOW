@@ -41,7 +41,7 @@ class SelectieveDetectielus(SelNietSelLus):
     @property
     def heeftMeerdereKruisingen(self):
         """Aanduiding of de lus voor meerdere kruispunten wordt gebruikt."""
-        return self._heeftMeerdereKruisingen.waarde
+        return self._heeftMeerdereKruisingen.get_waarde()
 
     @heeftMeerdereKruisingen.setter
     def heeftMeerdereKruisingen(self, value):
@@ -50,7 +50,7 @@ class SelectieveDetectielus(SelNietSelLus):
     @property
     def soortLus(self):
         """Type detectielus vb bus, tram,..."""
-        return self._soortLus.waarde
+        return self._soortLus.get_waarde()
 
     @soortLus.setter
     def soortLus(self, value):
@@ -59,7 +59,7 @@ class SelectieveDetectielus(SelNietSelLus):
     @property
     def verbinding(self):
         """Soort verbinding (serieel of contact)."""
-        return self._verbinding.waarde
+        return self._verbinding.get_waarde()
 
     @verbinding.setter
     def verbinding(self, value):

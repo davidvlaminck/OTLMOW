@@ -57,7 +57,7 @@ class Geotextiel(AndereLaag, VlakGeometrie):
     @property
     def heeftVulling(self):
         """Aanduiding of er vulling zoals bv. houtsnippers, grind,... in een omhulsel van geotextiel aanwezig is."""
-        return self._heeftVulling.waarde
+        return self._heeftVulling.get_waarde()
 
     @heeftVulling.setter
     def heeftVulling(self, value):
@@ -66,7 +66,7 @@ class Geotextiel(AndereLaag, VlakGeometrie):
     @property
     def isBiodegradeerbaar(self):
         """Aanduiding of het geotextiel al dan niet biologisch degradeerbaar is."""
-        return self._isBiodegradeerbaar.waarde
+        return self._isBiodegradeerbaar.get_waarde()
 
     @isBiodegradeerbaar.setter
     def isBiodegradeerbaar(self, value):
@@ -75,7 +75,7 @@ class Geotextiel(AndereLaag, VlakGeometrie):
     @property
     def isIngezaaid(self):
         """Aanduiding of er in het geotextiel zaden aanwezig zijn."""
-        return self._isIngezaaid.waarde
+        return self._isIngezaaid.get_waarde()
 
     @isIngezaaid.setter
     def isIngezaaid(self, value):
@@ -84,7 +84,7 @@ class Geotextiel(AndereLaag, VlakGeometrie):
     @property
     def technischeFiche(self):
         """De technische fiche van het geotextiel."""
-        return self._technischeFiche.waarde
+        return self._technischeFiche.get_waarde()
 
     @technischeFiche.setter
     def technischeFiche(self, value):
@@ -93,7 +93,7 @@ class Geotextiel(AndereLaag, VlakGeometrie):
     @property
     def type(self):
         """Het type geotextiel."""
-        return self._type.waarde
+        return self._type.get_waarde()
 
     @type.setter
     def type(self, value):

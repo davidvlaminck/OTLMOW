@@ -50,7 +50,7 @@ class OpgaandeHoutigeVegetatie(HoutigeVegetatie, VlakGeometrie):
     @property
     def groeiplaatsverbetering(self):
         """De techniek waarmee de groeiplaats wordt verbeterd met als doel de levensverwachting en de conditie van de vegetatie te verbeteren."""
-        return self._groeiplaatsverbetering.waarde
+        return self._groeiplaatsverbetering.get_waarde()
 
     @groeiplaatsverbetering.setter
     def groeiplaatsverbetering(self, value):
@@ -59,7 +59,7 @@ class OpgaandeHoutigeVegetatie(HoutigeVegetatie, VlakGeometrie):
     @property
     def huidigNatuurbeeld(self):
         """Bepaling van het vegetatietype op basis van terreininventarisatie."""
-        return self._huidigNatuurbeeld.waarde
+        return self._huidigNatuurbeeld.get_waarde()
 
     @huidigNatuurbeeld.setter
     def huidigNatuurbeeld(self, value):
@@ -69,7 +69,7 @@ class OpgaandeHoutigeVegetatie(HoutigeVegetatie, VlakGeometrie):
     def natuurstreefbeeld(self):
         """Een natuurstreefbeeld is een nagestreefd biotoop, mozaïek van biotopen of een leefgebied van een soort dat je wil behouden of verkrijgen via een goed natuurbeheer.
 In het definitief plan van type twee, drie of vier wordt het ecologisch einddoel vastgesteld aan de hand van natuurstreefbeelden."""
-        return self._natuurstreefbeeld.waarde
+        return self._natuurstreefbeeld.get_waarde()
 
     @natuurstreefbeeld.setter
     def natuurstreefbeeld(self, value):
@@ -78,7 +78,7 @@ In het definitief plan van type twee, drie of vier wordt het ecologisch einddoel
     @property
     def type(self):
         """Het type van de opgaande houtige vegetatie."""
-        return self._type.waarde
+        return self._type.get_waarde()
 
     @type.setter
     def type(self, value):

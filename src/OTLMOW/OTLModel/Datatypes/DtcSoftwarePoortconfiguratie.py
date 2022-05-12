@@ -35,7 +35,7 @@ class DtcSoftwarePoortconfiguratieWaarden(AttributeInfo):
     @property
     def poortnummer(self):
         """Het nummer dat werd toegekend aan de (netwerk)poort."""
-        return self._poortnummer.waarde
+        return self._poortnummer.get_waarde()
 
     @poortnummer.setter
     def poortnummer(self, value):
@@ -44,7 +44,7 @@ class DtcSoftwarePoortconfiguratieWaarden(AttributeInfo):
     @property
     def richting(self):
         """De richting waarin de poort openstaat."""
-        return self._richting.waarde
+        return self._richting.get_waarde()
 
     @richting.setter
     def richting(self, value):
@@ -53,7 +53,7 @@ class DtcSoftwarePoortconfiguratieWaarden(AttributeInfo):
     @property
     def service(self):
         """De service die op een bepaalde poort is aangesloten."""
-        return self._service.waarde
+        return self._service.get_waarde()
 
     @service.setter
     def service(self, value):

@@ -48,7 +48,7 @@ class BitumineuzeLaag(LaagBouwklasse):
     @property
     def bindmiddelType(self):
         """Het bindmiddeltype van de bitumineuze laag."""
-        return self._bindmiddelType.waarde
+        return self._bindmiddelType.get_waarde()
 
     @bindmiddelType.setter
     def bindmiddelType(self, value):
@@ -57,7 +57,7 @@ class BitumineuzeLaag(LaagBouwklasse):
     @property
     def kleur(self):
         """De kleur van de bitumineuze laag."""
-        return self._kleur.waarde
+        return self._kleur.get_waarde()
 
     @kleur.setter
     def kleur(self, value):
@@ -66,7 +66,7 @@ class BitumineuzeLaag(LaagBouwklasse):
     @property
     def laagtype(self):
         """Het type van bitumineuze laag."""
-        return self._laagtype.waarde
+        return self._laagtype.get_waarde()
 
     @laagtype.setter
     def laagtype(self, value):
@@ -75,7 +75,7 @@ class BitumineuzeLaag(LaagBouwklasse):
     @property
     def mengseltype(self):
         """Het type van het (giet)asfaltmengsel."""
-        return self._mengseltype.waarde
+        return self._mengseltype.get_waarde()
 
     @mengseltype.setter
     def mengseltype(self, value):

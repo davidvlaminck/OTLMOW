@@ -39,7 +39,7 @@ class MeteropnameEnergiemeterGecombineerd(MeteropnameEnergiemeter):
     @property
     def meterstandPiek(self):
         """De stand van de energiemeter waarmee het piekvermogen gemeten wordt."""
-        return self._meterstandPiek.waarde
+        return self._meterstandPiek.get_waarde()
 
     @meterstandPiek.setter
     def meterstandPiek(self, value):
@@ -48,7 +48,7 @@ class MeteropnameEnergiemeterGecombineerd(MeteropnameEnergiemeter):
     @property
     def meterstandReactiefVermogenDag(self):
         """De stand van de dag-energiemeter waarmee het reactief vermogen gemeten wordt."""
-        return self._meterstandReactiefVermogenDag.waarde
+        return self._meterstandReactiefVermogenDag.get_waarde()
 
     @meterstandReactiefVermogenDag.setter
     def meterstandReactiefVermogenDag(self, value):
@@ -57,7 +57,7 @@ class MeteropnameEnergiemeterGecombineerd(MeteropnameEnergiemeter):
     @property
     def meterstandReactiefVermogenNacht(self):
         """De stand van de nacht-energiemeter waarmee het reactief vermogen gemeten wordt."""
-        return self._meterstandReactiefVermogenNacht.waarde
+        return self._meterstandReactiefVermogenNacht.get_waarde()
 
     @meterstandReactiefVermogenNacht.setter
     def meterstandReactiefVermogenNacht(self, value):

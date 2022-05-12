@@ -2,6 +2,7 @@ from unittest import TestCase
 
 from AllCasesTestClass import AllCasesTestClass
 from OTLMOW.Facility.Exceptions.CouldNotConvertToCorrectType import CouldNotConvertToCorrectType
+from OTLMOW.Facility.Exceptions.UnionTypeError import UnionTypeError
 
 
 class NonStringableObject(object):
@@ -30,24 +31,20 @@ class UnionTypeAttributeTests(TestCase):
     def test_full_test_on_testclass_kard_more(self):
         instance = AllCasesTestClass()
         with self.subTest('empty instance'):
-            self.assertIsNone(instance.testStringFieldMetKard)
+            self.assertIsNotNone(instance.testUnionTypeMetKard)
 
-        with self.subTest('assign value to stringfield with kard * by using add_value method'):
-            instance._testStringFieldMetKard.add_value('1')
-            self.assertEqual('1', instance.testStringFieldMetKard[0])
-            instance._testStringFieldMetKard.add_value('2')
-            self.assertEqual('1', instance.testStringFieldMetKard[0])
-            self.assertEqual('2', instance.testStringFieldMetKard[1])
+        with self.subTest('assign value to UnionType with kard * by using add_empty_value method'):
+            instance.testUnionTypeMetKard[0].unionString = '1'
+            self.assertEqual('1', instance.testUnionTypeMetKard[0].unionString)
+            instance._testUnionTypeMetKard.add_empty_value()
+            instance.testUnionTypeMetKard[1].unionKwantWrd.waarde = 2
+            self.assertEqual('1', instance.testUnionTypeMetKard[0].unionString)
+            self.assertEqual(2, instance.testUnionTypeMetKard[1].unionKwantWrd.waarde)
 
-        with self.subTest('assign bad value to stringfield with kard * by using add_value method'):
+        with self.subTest('assign bad value to UnionType with kard *'):
             with self.assertRaises(CouldNotConvertToCorrectType):
-                instance._testStringFieldMetKard.add_value(NonStringableObject())
+                instance.testUnionTypeMetKard[1].unionKwantWrd.waarde = 'a'
 
-        with self.subTest('assign value directly to stringfield with kard *'):
-            instance.testStringFieldMetKard = ['1']
-            self.assertEqual('1', instance.testStringFieldMetKard[0])
-            instance.testStringFieldMetKard = ['2']
-            self.assertEqual('2', instance.testStringFieldMetKard[0])
-            instance.testStringFieldMetKard = ['1', '2']
-            self.assertEqual('1', instance.testStringFieldMetKard[0])
-            self.assertEqual('2', instance.testStringFieldMetKard[1])
+        with self.subTest('assign value directly to UnionType with kard *'):
+            with self.assertRaises(UnionTypeError):
+                instance.testUnionTypeMetKard = ['1']

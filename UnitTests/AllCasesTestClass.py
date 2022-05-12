@@ -149,8 +149,8 @@ class DtcTestComplexTypeWaarden(AttributeInfo):
                                               owner=self)
 
         self._testComplexType2MetKard = OTLAttribuut(field=DtcTestComplexType2,
-                                                     naam='testComplexTypeMetKard2',
-                                                     label='testComplexTypeMetKard2',
+                                                     naam='testComplexType2MetKard',
+                                                     label='testComplexType2MetKard',
                                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#AllCasesTestClass.testComplexType2MetKard',
                                                      definition='Test attribuut 2 voor een complexe waarde met kardinaliteit > 1',
                                                      kardinaliteit_max='*',
@@ -398,16 +398,16 @@ class AllCasesTestClass(AIMObject):
         AIMObject.__init__(self)
 
         self._testDecimalNumberField = OTLAttribuut(field=FloatOrDecimalField,
-                                                    naam='testFloatOrDecimalField',
-                                                    label='testFloatOrDecimalField',
-                                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#AllCasesTestClass.testFloatOrDecimalField',
+                                                    naam='testDecimalNumberField',
+                                                    label='testDecimalNumberField',
+                                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#AllCasesTestClass.testDecimalNumberField',
                                                     definition='Test attribuut voor FloatOrDecimalField',
                                                     owner=self)
 
         self._testDecimalNumberFieldMetKard = OTLAttribuut(field=FloatOrDecimalField,
-                                                           naam='testFloatOrDecimalFieldMetKard',
-                                                           label='testFloatOrDecimalFielddMetKard',
-                                                           objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#AllCasesTestClass.testFloatOrDecimalFieldMetKard',
+                                                           naam='testDecimalNumberFieldMetKard',
+                                                           label='testDecimalNumberFieldMetKard',
+                                                           objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#AllCasesTestClass.testDecimalNumberFieldMetKard',
                                                            definition='Test attribuut voor FloatOrDecimalField met kardinaliteit > 1',
                                                            kardinaliteit_max='*',
                                                            owner=self)
@@ -482,11 +482,12 @@ class AllCasesTestClass(AIMObject):
                                                   owner=self)
 
         self._testEenvoudigType = OTLAttribuut(field=DteTestEenvoudigType,
-                                               naam='TestEenvoudigType',
-                                               label='Test Eenvoudig Type',
+                                               naam='testEenvoudigType',
+                                               label='test Eenvoudig Type',
                                                objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#AllCasesTestClass.DteTestEenvoudigType',
                                                definition='Test attribuut voor TestEenvoudigType.',
-                                               waarde_shortcut_applicable=True)
+                                               waarde_shortcut_applicable=True,
+                                               owner=self)
 
         self._testKeuzelijst = OTLAttribuut(field=KlTestKeuzelijst,
                                             naam='testKeuzelijst',

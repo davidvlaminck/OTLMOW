@@ -75,3 +75,34 @@ class ComplexDataTypeFieldTests(unittest.TestCase):
             self.assertEqual(True, instance.testComplexTypeMetKard[0].testBooleanField)
             self.assertEqual('2', instance.testComplexTypeMetKard[1].testStringField)
             self.assertEqual(False, instance.testComplexTypeMetKard[1].testBooleanField)
+
+    def test_complex_kard_in_complex_kard(self):
+        instance = AllCasesTestClass()
+        with self.subTest('empty instance'):
+            self.assertIsNotNone(instance.testComplexTypeMetKard)
+
+        with self.subTest('assign value to ComplexType with kard *'):
+            self.assertIsNotNone(instance.testComplexTypeMetKard)
+            self.assertIsInstance(instance.testComplexTypeMetKard, list)
+            self.assertIsInstance(instance.testComplexTypeMetKard[0], DtcTestComplexTypeWaarden)
+            self.assertEqual(1, len(instance.testComplexTypeMetKard))
+            instance.testComplexTypeMetKard[0].testStringField = '1'
+            self.assertEqual('1', instance.testComplexTypeMetKard[0].testStringField)
+            instance.testComplexTypeMetKard[0].testBooleanField = True
+            self.assertEqual(True, instance.testComplexTypeMetKard[0].testBooleanField)
+
+            instance._testComplexTypeMetKard.add_empty_value()
+            self.assertIsNotNone(instance.testComplexTypeMetKard)
+            self.assertIsInstance(instance.testComplexTypeMetKard[1], DtcTestComplexTypeWaarden)
+            self.assertEqual(2, len(instance.testComplexTypeMetKard))
+
+            instance.testComplexTypeMetKard[1].testStringField = '2'
+            self.assertEqual('2', instance.testComplexTypeMetKard[1].testStringField)
+            instance.testComplexTypeMetKard[1].testBooleanField = False
+            self.assertEqual(False, instance.testComplexTypeMetKard[1].testBooleanField)
+
+        with self.subTest('assign value to ComplexType within ComplexType with kard *'):
+            instance.testComplexTypeMetKard[0].testComplexType2MetKard[0]._testStringFieldMetKard.add_value('1.1')
+            instance.testComplexTypeMetKard[0].testComplexType2MetKard[0]._testStringFieldMetKard.add_value('1.2')
+            self.assertEqual('1.1', instance.testComplexTypeMetKard[0].testComplexType2MetKard[0].testStringFieldMetKard[0])
+            self.assertEqual('1.2', instance.testComplexTypeMetKard[0].testComplexType2MetKard[0].testStringFieldMetKard[1])

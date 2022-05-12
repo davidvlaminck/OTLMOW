@@ -7,7 +7,7 @@ class UnionTypeField(OTLField):
         return OTLField.__str__(self)
 
     attributen = None
-    _uses_waarde_object = True
+    waarde_shortcut_applicable = True
 
     @staticmethod
     def validate(value, attribuut):

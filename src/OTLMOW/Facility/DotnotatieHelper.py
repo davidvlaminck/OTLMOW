@@ -25,7 +25,7 @@
             attribute = getattr(instanceOrAttribute, '_' + dotnotatie)
             if convert:
                 value = DotnotatieHelper.convert_waarde_to_correct_type(value, attribute)
-            if attribute.field.waardeObject is not None and not attribute.field._uses_waarde_object:
+            if attribute.field.waardeObject is not None and not attribute.field.waarde_shortcut_applicable:
                 setattr(attribute.waarde, 'waarde', value)
             else:
                 setattr(instanceOrAttribute, dotnotatie, value)
@@ -43,7 +43,7 @@
     @staticmethod
     def convert_waarde_to_correct_type(waarde, attribuut):
         field = attribuut.field
-        if attribuut.field.waardeObject is not None and not attribuut.field._uses_waarde_object:
+        if attribuut.field.waardeObject is not None and not attribuut.field.waarde_shortcut_applicable:
             field = attribuut.waarde._waarde.field
 
         return field.convert_to_correct_type(waarde)

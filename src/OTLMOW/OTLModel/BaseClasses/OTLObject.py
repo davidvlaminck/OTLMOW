@@ -1,8 +1,6 @@
 ﻿import warnings
 from datetime import date, time, datetime
 
-from OTLMOW.Facility.Exceptions.HasNoDotNotatieException import HasNoDotNotatieException
-
 
 class OTLObjectHelper:
     def create_dict_from_asset(self, asset):
@@ -24,7 +22,7 @@ class OTLObjectHelper:
                 continue
             if v.waarde is not None and v.waarde != []:
                 if v.field.waardeObject is not None:
-                    if v.field._uses_waarde_object:
+                    if v.field.waarde_shortcut_applicable:
                         dict_item = self.recursive_create_dict_from_asset(asset=v.waarde)
                         if dict_item is not None:
                             d[k[1:]] = dict_item
@@ -84,7 +82,7 @@ class OTLObjectHelper:
             if isinstance(v.waarde, list):
                 # kard > 0
                 if v.field.waardeObject is not None:
-                    if v.field._uses_waarde_object:
+                    if v.field.waarde_shortcut_applicable:
                         for count, item in enumerate(v.waarde):
                             for k1, v1 in self.attributes_by_dotnotatie(asset=item):
                                 yield k1.replace('[]', f'[{count}]'), v1
@@ -97,7 +95,7 @@ class OTLObjectHelper:
                         yield v.dotnotatie.replace('[]', f'[{count}]'), item
             else:
                 if v.field.waardeObject is not None:
-                    if v.field._uses_waarde_object:
+                    if v.field.waarde_shortcut_applicable:
                         for k1, v1 in self.attributes_by_dotnotatie(asset=v.waarde):
                             yield k1, v1
                     else:

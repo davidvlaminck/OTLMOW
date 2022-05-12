@@ -5,7 +5,7 @@
             if key == '_parent' or key[0] != '_':
                 continue
             attr = getattr(self, key)
-            if attr.field.waardeObject is not None and not attr.field._uses_waarde_object:
+            if attr.field.waardeObject is not None and not attr.field.waarde_shortcut_applicable:
                 attr = getattr(self, key[1:])
                 setattr(attr, 'waarde', None)
             else:

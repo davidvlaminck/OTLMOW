@@ -2,7 +2,7 @@
 
 
 class OTLField:
-    _uses_waarde_object = False
+    waarde_shortcut_applicable = False
     naam = ''
     label = ''
     objectUri = ''

@@ -45,7 +45,7 @@ class StandaardPostFactory:
 
         for mapping in mappings_met_invulbare_attributen:
             attribuut = DotnotatieHelper.get_attribute_by_dotnotatie(otlObject, mapping.dotnotatie)
-            if attribuut.field.waardeObject is not None and not attribuut.field._uses_waarde_object:
+            if attribuut.field.waardeObject is not None and not attribuut.field.waarde_shortcut_applicable:
                 waarde = attribuut.waarde.waarde
             else:
                 waarde = attribuut.waarde

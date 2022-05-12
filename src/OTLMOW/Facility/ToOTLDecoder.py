@@ -21,7 +21,7 @@ class ToOTLDecoder:
                 self.set_attribute_by_dotnotatie(getattr(instanceOrAttribute, key), k, v)
         elif type(value) is list:
             attr = getattr(instanceOrAttribute, '_' + key)
-            if not attr.field._uses_waarde_object:
+            if not attr.field.waarde_shortcut_applicable:
                 setattr(instanceOrAttribute, key, value)
                 return
             valueList = []
@@ -33,7 +33,7 @@ class ToOTLDecoder:
             setattr(instanceOrAttribute, key, valueList)
         else:
             attr = getattr(instanceOrAttribute, '_' + key)
-            if attr.field.waardeObject is not None and not attr.field._uses_waarde_object:
+            if attr.field.waardeObject is not None and not attr.field.waarde_shortcut_applicable:
                 waardeAttr = getattr(attr, "waarde")
                 self.set_attribute_by_dotnotatie(waardeAttr, "waarde", value)
             else:

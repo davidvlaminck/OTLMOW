@@ -3,7 +3,6 @@ import warnings
 from datetime import datetime
 
 from OTLMOW.Facility.DotnotatieHelper import DotnotatieHelper
-from OTLMOW.Facility.Exceptions.HasNoDotNotatieException import HasNoDotNotatieException
 from OTLMOW.Facility.Exceptions.MethodNotApplicableError import MethodNotApplicableError
 from OTLMOW.OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLMOW.OTLModel.BaseClasses.CachedProperty import cached_property
@@ -14,8 +13,7 @@ from OTLMOW.OTLModel.Datatypes.UnionWaarden import UnionWaarden
 
 class OTLAttribuut(AttributeInfo):
     def __init__(self, naam='', label='', objectUri='', definition='', constraints='', usagenote='', deprecated_version='',
-                 kardinaliteit_min='1', kardinaliteit_max='1', field=OTLField, readonly=False, readonlyValue=None, owner=None,
-                 waarde_shortcut_applicable=False):
+                 kardinaliteit_min='1', kardinaliteit_max='1', field=OTLField, readonly=False, readonlyValue=None, owner=None):
         super().__init__()
         self.naam = naam
         self.label = label
@@ -32,7 +30,6 @@ class OTLAttribuut(AttributeInfo):
         self.readonlyValue = None
         self.waarde = None
         self.field = field
-        self.waarde_shortcut_applicable = waarde_shortcut_applicable
 
         if self.field.waardeObject:
             def add_empty_value():
@@ -99,7 +96,7 @@ class OTLAttribuut(AttributeInfo):
                     valueList.append(item)
             return valueList
         if self.field.waardeObject is not None:
-            if self.field._uses_waarde_object:
+            if self.field.waarde_shortcut_applicable:
                 waardeDict = vars(self.waarde)
                 valueDict = {}
                 for k, v in waardeDict.items():
@@ -179,7 +176,7 @@ class OTLAttribuut(AttributeInfo):
 
         # check if kwant Wrd inside a union type, if so, call clear_props
         if owner is not None and value is not None and hasattr(owner,
-                                                               'field') and owner.field.waardeObject is not None and not owner.field._uses_waarde_object and not isinstance(
+                                                               'field') and owner.field.waardeObject is not None and not owner.field.waarde_shortcut_applicable and not isinstance(
                 owner.field, UnionTypeField) and owner.owner is not None and isinstance(owner.owner, UnionWaarden):
             owner.owner.clear_other_props('_' + owner.naam)
 

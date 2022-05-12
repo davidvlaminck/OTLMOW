@@ -196,19 +196,21 @@ class AbstractDatatypeCreator(ABC):
 
         datablock.append(''),
         datablock.append(f'# Generated with {self.__class__.__name__}. To modify: extend, do not edit')
-        datablock.append(f'class {osloDatatype.name}({typeField}Field, AttributeInfo):'),
-        datablock.append(f'    """{osloDatatype.definition}"""'),
-        datablock.append(f'    naam = {wrap_in_quotes(osloDatatype.name)}'),
-        datablock.append(f'    label = {wrap_in_quotes(osloDatatype.label)}'),
-        datablock.append(f'    objectUri = {wrap_in_quotes(osloDatatype.objectUri)}'),
-        datablock.append(f'    definition = {wrap_in_quotes(osloDatatype.definition)}'),
+        datablock.append(f'class {osloDatatype.name}({typeField}Field, AttributeInfo):')
+        datablock.append(f'    """{osloDatatype.definition}"""')
+        datablock.append(f'    naam = {wrap_in_quotes(osloDatatype.name)}')
+        datablock.append(f'    label = {wrap_in_quotes(osloDatatype.label)}')
+        datablock.append(f'    objectUri = {wrap_in_quotes(osloDatatype.objectUri)}')
+        datablock.append(f'    definition = {wrap_in_quotes(osloDatatype.definition)}')
         if osloDatatype.usagenote != '':
-            datablock.append(f'    usagenote = {wrap_in_quotes(osloDatatype.usagenote)}'),
+            datablock.append(f'    usagenote = {wrap_in_quotes(osloDatatype.usagenote)}')
         if osloDatatype.deprecated_version != '':
             datablock.append(f'    deprecated_version = {wrap_in_quotes(osloDatatype.deprecated_version)}'),
-        datablock.append(f'    waardeObject = {osloDatatype.name}Waarden'),
-        datablock.append(f''),
-        datablock.append(f'    def __str__(self):'),
+        if typeField == 'OTL':
+            datablock.append('    waarde_shortcut_applicable = True')
+        datablock.append(f'    waardeObject = {osloDatatype.name}Waarden')
+        datablock.append(f'')
+        datablock.append(f'    def __str__(self):')
         datablock.append(f'        return {typeField}Field.__str__(self)')
         datablock.append('')
 

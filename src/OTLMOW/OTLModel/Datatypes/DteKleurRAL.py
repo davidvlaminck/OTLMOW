@@ -34,6 +34,7 @@ class DteKleurRAL(OTLField, AttributeInfo):
     label = 'RAL-kleur'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DteKleurRAL'
     definition = 'Beschrijft een kleur volgens het RAL classificatiesysteem. De waarde is een natuurlijk getal tussen 1000 en 9999.'
+    waarde_shortcut_applicable = True
     waardeObject = DteKleurRALWaarden
 
     def __str__(self):

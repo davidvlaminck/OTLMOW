@@ -14,7 +14,7 @@ class KwantWrdFieldTests(TestCase):
         instance = AllCasesTestClass()
         with self.subTest('empty instance'):
             self.assertIsNotNone(instance.testKwantWrd)
-            self.assertTrue(instance._testKwantWrd.waarde_shortcut_applicable)
+            self.assertTrue(instance._testKwantWrd.field.waarde_shortcut_applicable)
 
         with self.subTest('assign values to kwantWrdField with kard 1'):
             instance.testKwantWrd.waarde = 1
@@ -31,7 +31,7 @@ class KwantWrdFieldTests(TestCase):
         instance = AllCasesTestClass()
         with self.subTest('empty instance'):
             self.assertIsNotNone(instance.testKwantWrdMetKard)
-            self.assertTrue(instance._testKwantWrdMetKard.waarde_shortcut_applicable)
+            self.assertTrue(instance._testKwantWrdMetKard.field.waarde_shortcut_applicable)
 
         with self.subTest('assign value directly to kwantWrdField with kard *'):
             instance.testKwantWrdMetKard[0].waarde = 1.0

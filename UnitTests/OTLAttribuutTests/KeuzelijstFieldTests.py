@@ -28,7 +28,7 @@ class KeuzelijstFieldTests(TestCase):
         instance = AllCasesTestClass()
         with self.subTest('empty instance'):
             self.assertIsNone(instance.testKeuzelijstMetKard)
-            self.assertFalse(instance._testKeuzelijstMetKard.waarde_shortcut_applicable)
+            self.assertFalse(instance._testKeuzelijstMetKard.field.waarde_shortcut_applicable)
 
         with self.subTest('assign value directly to KeuzelijstMetKard with kard *'):
             instance.testKeuzelijstMetKard = ['waarde-1']

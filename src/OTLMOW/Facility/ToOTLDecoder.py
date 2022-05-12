@@ -1,10 +1,7 @@
 ﻿import datetime
 
+from OTLMOW.Facility.Exceptions.DotNotationError import DotNotationError
 from OTLMOW.OTLModel.Datatypes import DateField
-
-
-class DotNotationError(ValueError):
-    pass
 
 
 class ToOTLDecoder:

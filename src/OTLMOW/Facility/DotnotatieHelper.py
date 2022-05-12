@@ -56,4 +56,19 @@
 
         return new_dict
 
+    @staticmethod
+    def get_dotnotatie(attribute):
+        return DotnotatieHelper.recursive_add_parents_to_dotnotatie(attribute=attribute)
+
+    @staticmethod
+    def recursive_add_parents_to_dotnotatie(attribute):
+        dotnotatie = attribute.naam
+        if attribute.kardinaliteit_max != '1':
+            dotnotatie += '[]'
+
+        if attribute.owner._parent is not None:
+            return DotnotatieHelper.get_dotnotatie(attribute.owner._parent) + '.' + dotnotatie
+
+        return dotnotatie
+
 

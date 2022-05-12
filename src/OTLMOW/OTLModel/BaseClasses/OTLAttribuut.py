@@ -2,6 +2,7 @@
 import warnings
 from datetime import datetime
 
+from OTLMOW.Facility.DotnotatieHelper import DotnotatieHelper
 from OTLMOW.Facility.Exceptions.HasNoDotNotatieException import HasNoDotNotatieException
 from OTLMOW.Facility.Exceptions.MethodNotApplicableError import MethodNotApplicableError
 from OTLMOW.OTLModel.BaseClasses.AttributeInfo import AttributeInfo
@@ -210,27 +211,6 @@ class OTLAttribuut(AttributeInfo):
 
     @cached_property
     def dotnotatie(self):
-        if self.field.waardeObject is not None:
-            raise HasNoDotNotatieException(
-                f"attribute {self.objectUri} does not have a dotnotatie because it has attributes itself.")
-
         if self._dotnotatie == '':
-            self._dotnotatie = self.recursive_add_parents_to_dotnotatie(attribute=self)
+            self._dotnotatie = DotnotatieHelper.get_dotnotatie(self)
         return self._dotnotatie
-
-    @staticmethod
-    def recursive_add_parents_to_dotnotatie(attribute):
-        dotnotatie = attribute.naam
-        if attribute.kardinaliteit_max == '*':
-            kardinaliteit_max = math.inf
-        else:
-            kardinaliteit_max = int(attribute.kardinaliteit_max)
-        if kardinaliteit_max > 1:
-            dotnotatie += '[]'
-
-        if attribute.owner is not None and hasattr(attribute.owner,
-                                                   '_parent') and attribute.owner._parent is not None and isinstance(
-                attribute.owner._parent, OTLAttribuut):
-            return attribute.recursive_add_parents_to_dotnotatie(attribute.owner._parent) + '.' + dotnotatie
-
-        return dotnotatie

@@ -37,6 +37,7 @@ class DtcTestComplexType2Waarden(AttributeInfo):
                                           label='testKwantWrd',
                                           objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcTestComplexTypeWaarden.testKwantWrd',
                                           definition='Test attribuut voor Kwantitatieve waarde',
+                                          waarde_shortcut_applicable=True,
                                           owner=self)
 
         self._testKwantWrdMetKard = OTLAttribuut(field=KwantWrdTest,
@@ -45,6 +46,7 @@ class DtcTestComplexType2Waarden(AttributeInfo):
                                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcTestComplexTypeWaarden.testKwantWrdMetKard',
                                                  definition='Test attribuut voor Kwantitatieve waarde met kardinaliteit > 1',
                                                  kardinaliteit_max='*',
+                                                 waarde_shortcut_applicable=True,
                                                  owner=self)
 
     @property
@@ -127,6 +129,7 @@ class DtcTestComplexTypeWaarden(AttributeInfo):
                                           label='testKwantWrd',
                                           objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcTestComplexTypeWaarden.testKwantWrd',
                                           definition='Test attribuut voor Kwantitatieve waarde',
+                                          waarde_shortcut_applicable=True,
                                           owner=self)
 
         self._testKwantWrdMetKard = OTLAttribuut(field=KwantWrdTest,
@@ -135,6 +138,7 @@ class DtcTestComplexTypeWaarden(AttributeInfo):
                                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcTestComplexTypeWaarden.testKwantWrdMetKard',
                                                  definition='Test attribuut voor Kwantitatieve waarde met kardinaliteit > 1',
                                                  kardinaliteit_max='*',
+                                                 waarde_shortcut_applicable=True,
                                                  owner=self)
 
         self._testComplexType2 = OTLAttribuut(field=DtcTestComplexType2,
@@ -318,6 +322,7 @@ class DtuTestUnionTypeWaarden(AttributeInfo, UnionWaarden):
                                            objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtuTestUnionType.unionKwantWrd',
                                            kardinaliteit_min='0',
                                            definition='De kwantitatieve waarde van deze union type.',
+                                           waarde_shortcut_applicable=True,
                                            owner=self)
 
         self._unionString = OTLAttribuut(field=StringField,
@@ -434,6 +439,7 @@ class AllCasesTestClass(AIMObject):
                                           label='testKwantWrd',
                                           objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#AllCasesTestClass.testKwantWrd',
                                           definition='Test attribuut voor Kwantitatieve waarde',
+                                          waarde_shortcut_applicable=True,
                                           owner=self)
 
         self._testKwantWrdMetKard = OTLAttribuut(field=KwantWrdTest,
@@ -442,6 +448,7 @@ class AllCasesTestClass(AIMObject):
                                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#AllCasesTestClass.testKwantWrdMetKard',
                                                  definition='Test attribuut voor Kwantitatieve waarde met kardinaliteit > 1',
                                                  kardinaliteit_max='*',
+                                                 waarde_shortcut_applicable=True,
                                                  owner=self)
 
         self._testComplexType = OTLAttribuut(field=DtcTestComplexType,
@@ -478,7 +485,8 @@ class AllCasesTestClass(AIMObject):
                                                naam='TestEenvoudigType',
                                                label='Test Eenvoudig Type',
                                                objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#AllCasesTestClass.DteTestEenvoudigType',
-                                               definition='Test attribuut voor TestEenvoudigType.')
+                                               definition='Test attribuut voor TestEenvoudigType.',
+                                               waarde_shortcut_applicable=True)
 
         self._testKeuzelijst = OTLAttribuut(field=KlTestKeuzelijst,
                                             naam='testKeuzelijst',

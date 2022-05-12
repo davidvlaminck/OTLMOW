@@ -13,7 +13,8 @@ from OTLMOW.OTLModel.Datatypes.UnionWaarden import UnionWaarden
 
 class OTLAttribuut(AttributeInfo):
     def __init__(self, naam='', label='', objectUri='', definition='', constraints='', usagenote='', deprecated_version='',
-                 kardinaliteit_min='1', kardinaliteit_max='1', field=OTLField, readonly=False, readonlyValue=None, owner=None):
+                 kardinaliteit_min='1', kardinaliteit_max='1', field=OTLField, readonly=False, readonlyValue=None, owner=None,
+                 waarde_shortcut_applicable=False):
         super().__init__()
         self.naam = naam
         self.label = label
@@ -30,6 +31,7 @@ class OTLAttribuut(AttributeInfo):
         self.readonlyValue = None
         self.waarde = None
         self.field = field
+        self.waarde_shortcut_applicable = waarde_shortcut_applicable
 
         if self.field.waardeObject:
             def add_empty_value():

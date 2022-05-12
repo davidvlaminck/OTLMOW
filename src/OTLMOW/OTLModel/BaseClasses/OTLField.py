@@ -13,6 +13,20 @@ class OTLField:
 
     @staticmethod
     def validate(value, attribuut):
+        if attribuut.field.waardeObject:
+            if not isinstance(value, attribuut.field.waardeObject):
+                raise ValueError(
+                    f'This is a complex datatype. Set the values through the attributes. Use .attr_type_info() for more info')
+            validation = True
+            for attr_key, attr in vars(value).items():
+                if attr_key == '_parent':
+                    continue
+                if attr.waarde is None:
+                    continue
+                if not attr.field.validate(attr.waarde, attr):
+                    validation = False
+                    break
+            return validation
         pass
 
     @staticmethod

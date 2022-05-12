@@ -3,12 +3,12 @@ import warnings
 from datetime import datetime
 
 from OTLMOW.Facility.Exceptions.HasNoDotNotatieException import HasNoDotNotatieException
+from OTLMOW.Facility.Exceptions.MethodNotApplicableError import MethodNotApplicableError
 from OTLMOW.OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLMOW.OTLModel.BaseClasses.CachedProperty import cached_property
 from OTLMOW.OTLModel.BaseClasses.OTLField import OTLField
 from OTLMOW.OTLModel.Datatypes.UnionTypeField import UnionTypeField
 from OTLMOW.OTLModel.Datatypes.UnionWaarden import UnionWaarden
-
 
 class OTLAttribuut(AttributeInfo):
     def __init__(self, naam='', label='', objectUri='', definition='', constraints='', usagenote='', deprecated_version='',
@@ -30,6 +30,30 @@ class OTLAttribuut(AttributeInfo):
         self.waarde = None
         self.field = field
 
+        if kardinaliteit_max != '1':
+            def add_value(value):
+                l = self.waarde
+                if self.waarde is None:
+                    l = []
+                l.append(value)
+                self.set_waarde(l)
+
+            self.add_value = add_value
+
+            def add_empty_value():
+                if not self.field.waardeObject:
+                    raise MethodNotApplicableError(
+                        "In order to use this method the attribute must have a cardinality of > 1 and be one of these types: UnionType, ComplexType, KwantWard, Dte")
+                l = self.waarde
+                if self.waarde is None:
+                    l = []
+                new_value_object = self.field.waardeObject(parent=self)
+                new_value_object._parent = self
+                l.append(new_value_object)
+                self.set_waarde(l)
+
+            self.add_empty_value = add_empty_value
+
         if readonly:
             self.__dict__["waarde"] = readonlyValue
 
@@ -40,6 +64,12 @@ class OTLAttribuut(AttributeInfo):
             else:
                 self.waarde = self.field.waardeObject(parent=self)
                 self.waarde._parent = self
+
+    def add_value(self, value):
+        raise MethodNotApplicableError("This attribute does not have a cardinality other than 1 so simply assign your value directly instead of using this method")
+
+    def add_empty_value(self):
+        raise MethodNotApplicableError("This attribute does not have a cardinality other than 1 so simply assign your value directly instead of using this method")
 
     def append_new_waardeObject(self):
         if self.kardinaliteit_max != '1' and self.field.waardeObject:

@@ -48,6 +48,7 @@ class KwantWrdInKiloWatt(OTLField, AttributeInfo):
     label = 'Kwantitatieve waarde in kilowatt'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInKiloWatt'
     definition = 'Een kwantitatieve waarde die een getal in kilowatt uitdrukt.'
+    waarde_shortcut_applicable = True
     waardeObject = KwantWrdInKiloWattWaarden
 
     def __str__(self):

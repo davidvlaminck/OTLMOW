@@ -48,6 +48,7 @@ class KwantWrdInMillimeter(OTLField, AttributeInfo):
     label = 'Kwantitatieve waarde in millimeter'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMillimeter'
     definition = 'Een kwantitatieve waarde die een getal in millimeter uitdrukt.'
+    waarde_shortcut_applicable = True
     waardeObject = KwantWrdInMillimeterWaarden
 
     def __str__(self):

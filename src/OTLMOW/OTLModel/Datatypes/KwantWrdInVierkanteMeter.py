@@ -48,6 +48,7 @@ class KwantWrdInVierkanteMeter(OTLField, AttributeInfo):
     label = 'Kwantitatieve waarde in vierkante meter'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInVierkanteMeter'
     definition = 'Een kwantitatieve waarde die een getal in vierkante meter uitdrukt.'
+    waarde_shortcut_applicable = True
     waardeObject = KwantWrdInVierkanteMeterWaarden
 
     def __str__(self):

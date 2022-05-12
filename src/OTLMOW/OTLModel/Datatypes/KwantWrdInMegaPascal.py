@@ -48,6 +48,7 @@ class KwantWrdInMegaPascal(OTLField, AttributeInfo):
     label = 'Kwantitatieve waarde in MPa'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMegaPascal'
     definition = 'Een kwantitatieve waarde die een getal in megapascal uitdrukt.'
+    waarde_shortcut_applicable = True
     waardeObject = KwantWrdInMegaPascalWaarden
 
     def __str__(self):

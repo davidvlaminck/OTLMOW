@@ -48,6 +48,7 @@ class KwantWrdInkVARh(OTLField, AttributeInfo):
     label = 'Kwantitatieve waarde in kVARh'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInkVARh'
     definition = 'Een kwantitatieve waarde die een getal in KiloVoltAmpereReactiefUur uitdrukt.'
+    waarde_shortcut_applicable = True
     waardeObject = KwantWrdInkVARhWaarden
 
     def __str__(self):

@@ -48,6 +48,7 @@ class KwantWrdInKubiekeCentimeterPerMeter(OTLField, AttributeInfo):
     label = 'Kwantitatieve waarde in kubieke centimeter per meter'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInKubiekeCentimeterPerMeter'
     definition = 'Een kwantitatieve waarde die een getal in kubieke centimeter per meter uitdrukt.'
+    waarde_shortcut_applicable = True
     waardeObject = KwantWrdInKubiekeCentimeterPerMeterWaarden
 
     def __str__(self):

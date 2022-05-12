@@ -48,6 +48,7 @@ class KwantWrdInKubiekeMeter(OTLField, AttributeInfo):
     label = 'Kwantitatieve waarde in kubieke meter'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInKubiekeMeter'
     definition = 'Een kwantitatieve waarde die een getal in kubieke meter uitdrukt.'
+    waarde_shortcut_applicable = True
     waardeObject = KwantWrdInKubiekeMeterWaarden
 
     def __str__(self):

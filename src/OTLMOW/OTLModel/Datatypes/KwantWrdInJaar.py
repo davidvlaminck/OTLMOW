@@ -48,6 +48,7 @@ class KwantWrdInJaar(OTLField, AttributeInfo):
     label = 'Kwantitatieve waarde in aantal jaar'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInJaar'
     definition = 'Een kwantitatieve waarde die een getal in aantal jaar uitdrukt.'
+    waarde_shortcut_applicable = True
     waardeObject = KwantWrdInJaarWaarden
 
     def __str__(self):

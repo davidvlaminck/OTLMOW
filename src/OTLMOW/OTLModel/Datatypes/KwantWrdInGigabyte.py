@@ -48,6 +48,7 @@ class KwantWrdInGigabyte(OTLField, AttributeInfo):
     label = 'Kwantitatieve waarde in gigabyte'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInGigabyte'
     definition = 'Een kwantitatieve waarde die een getal in gigabyte uitdrukt.'
+    waarde_shortcut_applicable = True
     waardeObject = KwantWrdInGigabyteWaarden
 
     def __str__(self):

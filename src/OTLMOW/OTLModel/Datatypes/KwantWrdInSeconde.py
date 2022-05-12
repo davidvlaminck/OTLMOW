@@ -48,6 +48,7 @@ class KwantWrdInSeconde(OTLField, AttributeInfo):
     label = 'Kwantitatieve waarde in seconde'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInSeconde'
     definition = 'Een kwantitatieve waarde die een getal in seconde uitdrukt.'
+    waarde_shortcut_applicable = True
     waardeObject = KwantWrdInSecondeWaarden
 
     def __str__(self):

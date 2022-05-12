@@ -48,6 +48,7 @@ class KwantWrdInBar(OTLField, AttributeInfo):
     label = 'Kwantitatieve waarde in bar'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInBar'
     definition = 'Een kwantitatieve waarde die een getal in bar uitdrukt.'
+    waarde_shortcut_applicable = True
     waardeObject = KwantWrdInBarWaarden
 
     def __str__(self):

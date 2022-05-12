@@ -48,6 +48,7 @@ class KwantWrdInUur(OTLField, AttributeInfo):
     label = 'Kwantitatieve waarde in uur'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInUur'
     definition = 'Een kwantitatieve waarde die een getal in uur uitdrukt.'
+    waarde_shortcut_applicable = True
     waardeObject = KwantWrdInUurWaarden
 
     def __str__(self):

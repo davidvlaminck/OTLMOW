@@ -48,6 +48,7 @@ class KwantWrdInInch(OTLField, AttributeInfo):
     label = 'Kwantitatieve waarde in inch'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInInch'
     definition = 'Een kwantitatieve waarde die een getal in inches uitdrukt.'
+    waarde_shortcut_applicable = True
     waardeObject = KwantWrdInInchWaarden
 
     def __str__(self):

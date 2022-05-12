@@ -48,6 +48,7 @@ class KwantWrdInTon(OTLField, AttributeInfo):
     label = 'Kwantitatieve waarde in ton'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInTon'
     definition = 'Een kwantitatieve waarde die een getal in ton uitdrukt.'
+    waarde_shortcut_applicable = True
     waardeObject = KwantWrdInTonWaarden
 
     def __str__(self):

@@ -48,6 +48,7 @@ class KwantWrdInKiloNewton(OTLField, AttributeInfo):
     label = 'Kwantitatieve waarde in kN'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInKiloNewton'
     definition = 'Een kwantitatieve waarde die een getal in KiloNewton uitdrukt.'
+    waarde_shortcut_applicable = True
     waardeObject = KwantWrdInKiloNewtonWaarden
 
     def __str__(self):

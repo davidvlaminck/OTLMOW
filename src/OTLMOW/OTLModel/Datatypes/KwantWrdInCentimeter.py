@@ -48,6 +48,7 @@ class KwantWrdInCentimeter(OTLField, AttributeInfo):
     label = 'Kwantitatieve waarde in centimeter'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInCentimeter'
     definition = 'Een kwantitatieve waarde die een getal in centimeter uitdrukt.'
+    waarde_shortcut_applicable = True
     waardeObject = KwantWrdInCentimeterWaarden
 
     def __str__(self):

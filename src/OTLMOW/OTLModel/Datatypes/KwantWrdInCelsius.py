@@ -48,6 +48,7 @@ class KwantWrdInCelsius(OTLField, AttributeInfo):
     label = 'Kwantitatieve waarde in Celsius'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInCelsius'
     definition = 'Een kwantitatieve waarde die een getal in graden celsius uitdrukt.'
+    waarde_shortcut_applicable = True
     waardeObject = KwantWrdInCelsiusWaarden
 
     def __str__(self):

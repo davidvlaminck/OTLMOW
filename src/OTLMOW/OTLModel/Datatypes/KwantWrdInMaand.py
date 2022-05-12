@@ -48,6 +48,7 @@ class KwantWrdInMaand(OTLField, AttributeInfo):
     label = 'Kwantitatieve waarde in maand'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMaand'
     definition = 'Een kwantitatieve waarde die een getal in aantal maanden uitdrukt.'
+    waarde_shortcut_applicable = True
     waardeObject = KwantWrdInMaandWaarden
 
     def __str__(self):

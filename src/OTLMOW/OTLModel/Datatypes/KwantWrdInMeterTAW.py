@@ -48,6 +48,7 @@ class KwantWrdInMeterTAW(OTLField, AttributeInfo):
     label = 'Kwantitatieve waarde in meter TAW'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMeterTAW'
     definition = 'Een kwantitatieve waarde die de hoogte weergeeft in meter van een locatie tov het TAW-referentiepeil.'
+    waarde_shortcut_applicable = True
     waardeObject = KwantWrdInMeterTAWWaarden
 
     def __str__(self):

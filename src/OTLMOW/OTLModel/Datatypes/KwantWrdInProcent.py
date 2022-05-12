@@ -48,6 +48,7 @@ class KwantWrdInProcent(OTLField, AttributeInfo):
     label = 'Kwantitatieve waarde in procent'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInProcent'
     definition = 'Een kwantitatieve waarde die een getal in procent uitdrukt.'
+    waarde_shortcut_applicable = True
     waardeObject = KwantWrdInProcentWaarden
 
     def __str__(self):

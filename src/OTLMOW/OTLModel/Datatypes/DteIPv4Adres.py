@@ -34,6 +34,7 @@ class DteIPv4Adres(OTLField, AttributeInfo):
     label = 'IPv4-adres'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DteIPv4Adres'
     definition = 'Beschrijft een ip-adres volgens de ipv4 specificatie.'
+    waarde_shortcut_applicable = True
     waardeObject = DteIPv4AdresWaarden
 
     def __str__(self):

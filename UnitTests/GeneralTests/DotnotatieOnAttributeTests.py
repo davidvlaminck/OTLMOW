@@ -78,3 +78,14 @@ class DotnotatieOnAttributeTests(TestCase):
 
         instance = AllCasesTestClass()
         self.assertEqual('testKwantWrdMetKard(),waarde', instance.testKwantWrdMetKard[0]._waarde.dotnotatie)
+
+        # restore original settings
+        settingsmanager.settings['file_formats'] = [
+            {'name': 'OTLMOW',
+             'dotnotatie': {
+                 'separator': '.',
+                 'cardinality separator': '|',
+                 'cardinality indicator': '[]',
+                 'waarde_shortcut_applicable': False}
+             }]
+        settingsmanager.load_settings_in_app()

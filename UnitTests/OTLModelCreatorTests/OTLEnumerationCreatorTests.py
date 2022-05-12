@@ -163,7 +163,7 @@ class OTLEnumerationCreatorTests(unittest.TestCase):
         logger = NoneLogger()
 
         base_dir = os.path.dirname(os.path.realpath(__file__))
-        file_location = f'{base_dir}/../../src/OTLMOW/InputFiles/OTL.db'
+        file_location = f'{base_dir}/../../src/OTLMOW/InputFiles/OTL 2.3.db'
         sql_reader = SQLDbReader(file_location)
         oslo_creator = OSLOInMemoryCreator(sql_reader)
         collector = OSLOCollector(oslo_creator)
@@ -182,7 +182,7 @@ class OTLEnumerationCreatorTests(unittest.TestCase):
         logger = NoneLogger()
 
         base_dir = os.path.dirname(os.path.realpath(__file__))
-        file_location = f'{base_dir}/../../src/OTLMOW/InputFiles/OTL.db'
+        file_location = f'{base_dir}/../../src/OTLMOW/InputFiles/OTL 2.3.db'
         sql_reader = SQLDbReader(file_location)
         oslo_creator = OSLOInMemoryCreator(sql_reader)
         collector = OSLOCollector(oslo_creator)

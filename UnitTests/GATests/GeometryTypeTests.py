@@ -15,7 +15,7 @@ from OTLMOW.ModelGenerator.SQLDbReader import SQLDbReader
 class GeometryTypeTests(TestCase):
     def test_GeometryType_Baanlichaam(self):
         base_dir = os.path.dirname(os.path.realpath(__file__))
-        sqlReader = SQLDbReader(f'{base_dir}/../../src/OTLMOW/InputFiles/Geometrie_Artefact_22_PU.db')
+        sqlReader = SQLDbReader(f'{base_dir}/../../src/OTLMOW/InputFiles/Geometrie_Artefact_2.3.RC2.db')
         memory = GeometrieInMemoryCreator(sqlReader)
         geo_collector = GeometrieArtefactCollector(memory)
         geo_collector.collect()
@@ -32,7 +32,7 @@ class GeometryTypeTests(TestCase):
 
     def test_InheritanceTest_A_has_concrete_classes_B_C_with_same_geotype(self):
         base_dir = os.path.dirname(os.path.realpath(__file__))
-        sqlReader = SQLDbReader(f'{base_dir}/../../src/OTLMOW/InputFiles/Geometrie_Artefact_22_PU.db')
+        sqlReader = SQLDbReader(f'{base_dir}/../../src/OTLMOW/InputFiles/Geometrie_Artefact_2.3.RC2.db')
         memory = GeometrieInMemoryCreator(sqlReader)
         geo_collector = GeometrieArtefactCollector(memory)
         geo_collector.collect()
@@ -88,7 +88,7 @@ class GeometryTypeTests(TestCase):
 
     def test_InheritanceTest_multiple_cases(self):
         base_dir = os.path.dirname(os.path.realpath(__file__))
-        sqlReader = SQLDbReader(f'{base_dir}/../../src/OTLMOW/InputFiles/Geometrie_Artefact_22_PU.db')
+        sqlReader = SQLDbReader(f'{base_dir}/../../src/OTLMOW/InputFiles/Geometrie_Artefact_2.3.RC2.db')
         memory = GeometrieInMemoryCreator(sqlReader)
         geo_collector = GeometrieArtefactCollector(memory)
         geo_collector.collect()
@@ -153,13 +153,13 @@ class GeometryTypeTests(TestCase):
 
     def test_InheritanceTest_all_cases(self):
         base_dir = os.path.dirname(os.path.realpath(__file__))
-        sqlReader = SQLDbReader(f'{base_dir}/../../src/OTLMOW/InputFiles/Geometrie_Artefact_22_PU.db')
+        sqlReader = SQLDbReader(f'{base_dir}/../../src/OTLMOW/InputFiles/Geometrie_Artefact_2.3.RC2.db')
         memory = GeometrieInMemoryCreator(sqlReader)
         geo_collector = GeometrieArtefactCollector(memory)
         geo_collector.collect()
 
         base_dir = os.path.dirname(os.path.realpath(__file__))
-        file_location = f'{base_dir}/../../src/OTLMOW/InputFiles/OTL.db'
+        file_location = f'{base_dir}/../../src/OTLMOW/InputFiles/OTL 2.3.db'
         sql_reader2 = SQLDbReader(file_location)
         oslo_creator = OSLOInMemoryCreator(sql_reader2)
         collector = OSLOCollector(oslo_creator)

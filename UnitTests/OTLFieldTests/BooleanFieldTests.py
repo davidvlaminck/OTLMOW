@@ -1,11 +1,20 @@
 from unittest import TestCase
 
+from AllCasesTestClass import AllCasesTestClass
 from OTLMOW.Facility.Exceptions.CouldNotConvertToCorrectType import CouldNotConvertToCorrectType
 from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLMOW.OTLModel.Datatypes.BooleanField import BooleanField
 
 
 class BooleanFieldTests(TestCase):
+    def test_full_test_on_testclass(self):
+        instance = AllCasesTestClass()
+        self.assertIsNone(instance.testBooleanField)
+        instance.testBooleanField = True
+        self.assertTrue(instance.testBooleanField)
+        instance.testBooleanField = False
+        self.assertFalse(instance.testBooleanField)
+
     def test_validate(self):
         boolean_attribute = OTLAttribuut(naam='boolean attribuut')
         self.assertTrue(BooleanField.validate(True, boolean_attribute))

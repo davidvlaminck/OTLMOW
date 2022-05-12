@@ -2,8 +2,8 @@
 from OTLMOW.OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLMOW.OTLModel.BaseClasses.OTLField import OTLField
-from OTLMOW.OTLModel.BaseClasses.OTLObject import OTLObject
 from OTLMOW.OTLModel.Classes.AIMObject import AIMObject
+from OTLMOW.OTLModel.Datatypes.BooleanField import BooleanField
 from OTLMOW.OTLModel.Datatypes.ComplexField import ComplexField
 from OTLMOW.OTLModel.Datatypes.FloatOrDecimalField import FloatOrDecimalField
 from OTLMOW.OTLModel.Datatypes.StringField import StringField
@@ -96,6 +96,13 @@ class DtcTestComplexTypeWaarden(AttributeInfo):
     def __init__(self, parent=None):
         AttributeInfo.__init__(self, parent)
 
+        self._testBooleanField = OTLAttribuut(field=BooleanField,
+                                              naam='testBooleanField',
+                                              label='testBooleanField',
+                                              objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcTestComplexTypeWaarden.testBooleanField',
+                                              definition='Test attribuut voor BooleanField',
+                                              owner=self)
+
         self._testStringField = OTLAttribuut(field=StringField,
                                              naam='testStringField',
                                              label='testStringField',
@@ -176,6 +183,15 @@ class DtcTestComplexTypeWaarden(AttributeInfo):
     @testStringField.setter
     def testStringField(self, value):
         self._testStringField.set_waarde(value, owner=self)
+
+    @property
+    def testBooleanField(self):
+        """Test attribuut voor BooleanField"""
+        return self._testBooleanField.waarde
+
+    @testBooleanField.setter
+    def testBooleanField(self, value):
+        self._testBooleanField.set_waarde(value, owner=self)
 
     @property
     def testKwantWrdMetKard(self):
@@ -264,6 +280,28 @@ class AllCasesTestClass(AIMObject):
     def __init__(self):
         AIMObject.__init__(self)
 
+        self._testDecimalNumberField = OTLAttribuut(field=FloatOrDecimalField,
+                                                    naam='testFloatOrDecimalField',
+                                                    label='testFloatOrDecimalField',
+                                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#AllCasesTestClass.testFloatOrDecimalField',
+                                                    definition='Test attribuut voor FloatOrDecimalField',
+                                                    owner=self)
+
+        self._testDecimalNumberFieldMetKard = OTLAttribuut(field=FloatOrDecimalField,
+                                                           naam='testFloatOrDecimalFieldMetKard',
+                                                           label='testFloatOrDecimalFielddMetKard',
+                                                           objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#AllCasesTestClass.testFloatOrDecimalFieldMetKard',
+                                                           definition='Test attribuut voor FloatOrDecimalField met kardinaliteit > 1',
+                                                           kardinaliteit_max='*',
+                                                           owner=self)
+
+        self._testBooleanField = OTLAttribuut(field=BooleanField,
+                                              naam='testBooleanField',
+                                              label='testBooleanField',
+                                              objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#AllCasesTestClass.testBooleanField',
+                                              definition='Test attribuut voor BooleanField',
+                                              owner=self)
+
         self._testStringField = OTLAttribuut(field=StringField,
                                              naam='testStringField',
                                              label='testStringField',
@@ -326,6 +364,33 @@ class AllCasesTestClass(AIMObject):
     @testComplexType.setter
     def testComplexType(self, value):
         self._testComplexType.set_waarde(value, owner=self)
+
+    @property
+    def testDecimalNumberFieldMetKard(self):
+        """Test attribuut voor DecimalNumberField met kardinaliteit > 1"""
+        return self._testDecimalNumberFieldMetKard.waarde
+
+    @testDecimalNumberFieldMetKard.setter
+    def testDecimalNumberFieldMetKard(self, value):
+        self._testDecimalNumberFieldMetKard.set_waarde(value, owner=self)
+
+    @property
+    def testDecimalNumberField(self):
+        """Test attribuut voor DecimalNumberField"""
+        return self._testDecimalNumberField.waarde
+
+    @testDecimalNumberField.setter
+    def testDecimalNumberField(self, value):
+        self._testDecimalNumberField.set_waarde(value, owner=self)
+
+    @property
+    def testBooleanField(self):
+        """Test attribuut voor BooleanField"""
+        return self._testBooleanField.waarde
+
+    @testBooleanField.setter
+    def testBooleanField(self, value):
+        self._testBooleanField.set_waarde(value, owner=self)
 
     @property
     def testStringFieldMetKard(self):

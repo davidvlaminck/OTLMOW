@@ -1,59 +1,21 @@
 import unittest
 
-from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from OTLMOW.OTLModel.Datatypes.DtcRechtspersoon import DtcRechtspersoon
-from OTLMOW.OTLModel.Datatypes.DtcIdentificator import DtcIdentificator
-
-
-class DtcTestClass:
-    def __init__(self):
-        self._assetId = OTLAttribuut(field=DtcIdentificator,
-                                     naam='assetId',
-                                     label='asset-id',
-                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMObject.assetId',
-                                     definition='Unieke identificatie van de asset zoals toegekend door de assetbeheerder of n.a.v. eerste aanlevering door de leverancier.')
-
-        self._persoon = OTLAttribuut(field=DtcRechtspersoon,
-                                              naam='persoon',
-                                              label='persoon',
-                                              objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMObject.persoon',
-                                              kardinaliteit_max='*',
-                                              definition='Persoon definitie')
-
-    @property
-    def assetId(self):
-        """Unieke identificatie van de asset zoals toegekend door de assetbeheerder of n.a.v. eerste aanlevering door de leverancier."""
-        return self._assetId.waarde
-
-    @assetId.setter
-    def assetId(self, value):
-        self._assetId.set_waarde(value, owner=self)
-
-    @property
-    def persoon(self):
-        """Persoon definitie"""
-        return self._persoon.waarde
-
-    @persoon.setter
-    def persoon(self, value):
-        self._persoon.set_waarde(value, owner=self)
+from AllCasesTestClass import AllCasesTestClass, DtcTestComplexTypeWaarden
 
 
 class ComplexDataTypeFieldTests(unittest.TestCase):
-    def test_DtcIdentificator(self):
-        instance = DtcTestClass()
-        instance.assetId.identificator = "abc"
-        instance.assetId.toegekendDoor = "def"
-        self.assertEqual("abc", instance.assetId.identificator)
-        self.assertEqual("def", instance.assetId.toegekendDoor)
+    def test_full_test_on_testclass_kard_1(self):
+        instance = AllCasesTestClass()
+        with self.subTest('empty instance'):
+            self.assertTrue(isinstance(instance.testComplexType, DtcTestComplexTypeWaarden))
+            self.assertIsNone(instance.testComplexType.testStringField)
+            self.assertIsNone(instance.testComplexType.testBooleanField)
 
-    def test_dtcPersoon(self):
-        instance = DtcTestClass()
-        instance.persoon[0].afdeling = "afdeling"
-        self.assertEqual("afdeling", instance.persoon[0].afdeling)
-
-        instance.persoon[0].adres.straatnaam = "straat"
-        self.assertEqual("straat", instance.persoon[0].adres.straatnaam)
+        instance.testComplexType.testStringField = 'test'
+        instance.testComplexType.testBooleanField = True
+        with self.subTest('assigned values to complex_type with kard 1'):
+            self.assertEqual('test', instance.testComplexType.testStringField)
+            self.assertTrue(instance.testComplexType.testBooleanField)
 
 
 

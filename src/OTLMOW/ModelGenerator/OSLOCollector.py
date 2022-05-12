@@ -43,10 +43,10 @@ class OSLOCollector:
         self.relations = self.OSLOInMemoryCreator.getAllRelations()
 
     def find_attributes_by_class(self, osloclass: OSLOClass) -> [OSLOAttribuut]:
-        return sorted(list(filter(lambda c: c.class_uri == osloclass.objectUri, self.attributes)), key=lambda a: a.objectUri)
+        return sorted(list(filter(lambda c: c.class_uri == osloclass.objectUri, self.attributes)), key=lambda a: a.class_uri)
 
     def find_inheritances_by_class(self, osloclass: OSLOClass) -> [Inheritance]:
-        return sorted(list(filter(lambda c: c.class_uri == osloclass.objectUri, self.inheritances)), key=lambda c: c.objectUri)
+        return sorted(list(filter(lambda c: c.class_uri == osloclass.objectUri, self.inheritances)), key=lambda c: c.class_uri)
 
     def find_class_by_uri(self, uri: str) -> OSLOClass:
         return next(p for p in self.classes if p.objectUri == uri)
@@ -55,19 +55,19 @@ class OSLOCollector:
         return next(p for p in self.primitiveDatatypes if p.objectUri == uri)
 
     def find_primitive_datatype_attributen_by_class_uri(self, class_uri: str) -> list[OSLODatatypePrimitiveAttribuut]:
-        return sorted(list(filter(lambda p: p.class_uri == class_uri, self.primitiveDatatypeAttributen)), key=lambda p: p.objectUri)
+        return sorted(list(filter(lambda p: p.class_uri == class_uri, self.primitiveDatatypeAttributen)), key=lambda p: p.class_uri)
 
     def find_complex_datatype_by_uri(self, uri) -> OSLODatatypeComplex:
         return next(p for p in self.complexDatatypes if p.objectUri == uri)
 
     def find_complex_datatype_attributen_by_class_uri(self, class_uri: str) -> list[OSLODatatypeComplexAttribuut]:
-        return sorted(list(filter(lambda p: p.class_uri == class_uri, self.complexDatatypeAttributen)), key=lambda p: p.objectUri)
+        return sorted(list(filter(lambda p: p.class_uri == class_uri, self.complexDatatypeAttributen)), key=lambda p: p.class_uri)
 
     def find_union_datatype_by_uri(self, uri) -> OSLODatatypeUnion:
         return next(p for p in self.unionDatatypes if p.objectUri == uri)
 
     def find_union_datatype_attributen_by_class_uri(self, class_uri: str) -> list[OSLODatatypeUnionAttribuut]:
-        return sorted(list(filter(lambda p: p.class_uri == class_uri, self.unionDatatypeAttributen)), key=lambda p: p.objectUri)
+        return sorted(list(filter(lambda p: p.class_uri == class_uri, self.unionDatatypeAttributen)), key=lambda p: p.class_uri)
 
     def find_enumeration_by_uri(self, uri) -> OSLOEnumeration:
         return next(p for p in self.enumerations if p.objectUri == uri)

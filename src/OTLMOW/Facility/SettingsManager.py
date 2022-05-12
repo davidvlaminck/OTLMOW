@@ -1,7 +1,9 @@
 import json
 
+from OTLMOW.Facility.Singleton import Singleton
 
-class SettingsManager:
+
+class SettingsManager(metaclass=Singleton):
     def __init__(self, settings_path: str = ''):
         self.settings: dict = {}
         if settings_path != '':

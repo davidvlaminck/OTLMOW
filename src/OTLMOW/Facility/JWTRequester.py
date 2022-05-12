@@ -2,7 +2,7 @@ import datetime
 import json
 import requests
 import string
-import jwt  # pip install Pyjwt
+import jwt  # pip install jwt then Pyjwt
 
 from random import choice
 from requests import Response

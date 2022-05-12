@@ -46,7 +46,7 @@ class AttributenByDotnotatieTests(TestCase):
         v.externeReferentie[0].externReferentienummer = "externe referentie 2"
         v.externeReferentie[0].externePartij = "bij externe partij 2"
 
-        v._externeReferentie.append_new_waardeObject()
+        v._externeReferentie.add_empty_value()
         v.externeReferentie[1].externReferentienummer = "externe referentie 1"
         v.externeReferentie[1].externePartij = "bij externe partij 1"
         d = dict(v.attributes_by_dotnotatie())

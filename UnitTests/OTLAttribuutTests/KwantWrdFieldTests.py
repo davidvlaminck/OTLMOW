@@ -26,6 +26,11 @@ class KwantWrdFieldTests(TestCase):
             instance.testKwantWrd.waarde = 2
             self.assertEqual(2, instance.testKwantWrd.waarde)
 
+        with self.subTest('assigning to readonly field of kwantWrdField with kard 1'):
+            with self.assertRaises(AttributeError):
+                instance.testKwantWrd.standaardEenheid = 'A'
+
+
     def test_full_test_on_testclass_kard_more(self):
         instance = AllCasesTestClass()
         with self.subTest('empty instance'):

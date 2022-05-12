@@ -22,6 +22,11 @@ class UnionTypeAttributeTests(TestCase):
             self.assertEqual(2, instance.testUnionType.unionKwantWrd.waarde)
             self.assertEqual(None, instance.testUnionType.unionString)
 
+        with self.subTest('setting None to UnionType with kard 1'):
+            instance.testUnionType.unionKwantWrd.waarde = None
+            self.assertEqual(None, instance.testUnionType.unionKwantWrd.waarde)
+            self.assertEqual(None, instance.testUnionType.unionString)
+
     def test_full_test_on_testclass_kard_more(self):
         instance = AllCasesTestClass()
         with self.subTest('empty instance'):

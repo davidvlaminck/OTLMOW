@@ -19,34 +19,6 @@ class TestInstance(KabelnetToegang, HoutigeVegetatie):
 
 
 class PrimitiveTypeTests(unittest.TestCase):
-    def test_stringTestsTwoInstances(self):
-        instance = TestInstance()
-        instance2 = TestInstance()
-
-        instance.notitie = "1"
-        self.assertTrue(instance.notitie == "1")
-
-        instance2.notitie = "2"
-        self.assertTrue(instance.notitie == "1")
-        self.assertTrue(instance2.notitie == "2")
-
-    def test_BooleanFieldTests(self):
-        instance = TestInstance()
-
-        self.assertEqual(instance._isActief.field.objectUri, "http://www.w3.org/2001/XMLSchema#boolean")
-        self.assertIsNone(instance.isActief)
-
-        instance.isActief = True
-        self.assertEqual(instance._isActief.field, BooleanField)
-        self.assertTrue(instance.isActief)
-        self.assertTrue(isinstance(instance.isActief, bool))
-
-        instance.isActief = False
-        self.assertFalse(instance.isActief)
-
-        with self.assertRaises(CouldNotConvertToCorrectType):
-            instance.isActief = "a"
-
     def test_IntegerFieldTests(self):
         instance = TestInstance()
 

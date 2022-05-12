@@ -2,9 +2,6 @@ from unittest import TestCase
 
 from AllCasesTestClass import AllCasesTestClass
 from OTLMOW.Facility.Exceptions.CouldNotConvertToCorrectType import CouldNotConvertToCorrectType
-from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from OTLMOW.OTLModel.Datatypes.IntegerField import IntegerField
-from OTLMOW.OTLModel.Datatypes.StringField import StringField
 
 
 class NonStringableObject(object):
@@ -29,7 +26,6 @@ class KwantWrdFieldTests(TestCase):
         with self.subTest('assigning to readonly field of kwantWrdField with kard 1'):
             with self.assertRaises(AttributeError):
                 instance.testKwantWrd.standaardEenheid = 'A'
-
 
     def test_full_test_on_testclass_kard_more(self):
         instance = AllCasesTestClass()

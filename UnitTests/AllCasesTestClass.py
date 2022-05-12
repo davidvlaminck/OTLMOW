@@ -317,7 +317,7 @@ class DtuTestUnionTypeWaarden(AttributeInfo, UnionWaarden):
         AttributeInfo.__init__(self, parent)
         UnionWaarden.__init__(self)
         self._unionKwantWrd = OTLAttribuut(field=KwantWrdTest,
-                                           naam='UnionKwantWrd',
+                                           naam='unionKwantWrd',
                                            label='Union Kwant Wrd',
                                            objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtuTestUnionType.unionKwantWrd',
                                            kardinaliteit_min='0',

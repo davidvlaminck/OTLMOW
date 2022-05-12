@@ -376,13 +376,13 @@ class KlTestKeuzelijst(KeuzelijstField):
     definition = 'Keuzelijst met test waarden.'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlAIMToestand'
     options = {
-        'waarde 1': KeuzelijstWaarde(invulwaarde='waarde-1',
+        'waarde-1': KeuzelijstWaarde(invulwaarde='waarde-1',
                                      label='waarde 1',
                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAIMToestand/waarde-1'),
-        'waarde 2': KeuzelijstWaarde(invulwaarde='waarde-2',
+        'waarde-2': KeuzelijstWaarde(invulwaarde='waarde-2',
                                      label='waarde 2',
                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAIMToestand/waarde-2'),
-        'waarde 3': KeuzelijstWaarde(invulwaarde='waarde-3',
+        'waarde-3': KeuzelijstWaarde(invulwaarde='waarde-3',
                                      label='waarde 3',
                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAIMToestand/waarde-3')
     }

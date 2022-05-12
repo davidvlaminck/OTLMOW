@@ -6,7 +6,11 @@ from OTLMOW.OTLModel.Classes.AIMObject import AIMObject
 from OTLMOW.OTLModel.Datatypes.BooleanField import BooleanField
 from OTLMOW.OTLModel.Datatypes.ComplexField import ComplexField
 from OTLMOW.OTLModel.Datatypes.FloatOrDecimalField import FloatOrDecimalField
+from OTLMOW.OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
+from OTLMOW.OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 from OTLMOW.OTLModel.Datatypes.StringField import StringField
+from OTLMOW.OTLModel.Datatypes.UnionTypeField import UnionTypeField
+from OTLMOW.OTLModel.Datatypes.UnionWaarden import UnionWaarden
 
 
 class DtcTestComplexType2Waarden(AttributeInfo):
@@ -224,6 +228,51 @@ class DtcTestComplexType(ComplexField, AttributeInfo):
         return ComplexField.__str__(self)
 
 
+class DtcTestComplexType(OTLField, AttributeInfo):
+    """Complex datatype voor test doeleinden"""
+    naam = 'DtcTestComplexType'
+    label = 'Test complex type'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcTestComplexType'
+    definition = 'Complex datatype voor test doeleinden'
+    waardeObject = DtcTestComplexTypeWaarden
+
+    def __str__(self):
+        return OTLField.__str__(self)
+
+
+class DteTestEenvoudigTypeWaarden(AttributeInfo):
+    def __init__(self, parent=None):
+        AttributeInfo.__init__(self, parent)
+        self._waarde = OTLAttribuut(field=StringField,
+                                    naam='waarde',
+                                    label='waarde',
+                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DteTestEenvoudigType.waarde',
+                                    usagenote='Alle karakters zijn toegelaten',
+                                    definition='Beschrijft een tekst van een eenvoudig type.',
+                                    owner=self)
+
+    @property
+    def waarde(self):
+        """Beschrijft een tekst van een eenvoudig type."""
+        return self._waarde.waarde
+
+    @waarde.setter
+    def waarde(self, value):
+        self._waarde.set_waarde(value, owner=self._parent)
+
+
+class DteTestEenvoudigType(OTLField, AttributeInfo):
+    """Beschrijft een attribuut voor een eenvoudig type"""
+    naam = 'DteTestEenvoudigType'
+    label = 'Test Eenvoudig Type'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DteTestEenvoudigType'
+    definition = 'Beschrijft een attribuut voor een eenvoudig type'
+    waardeObject = DteTestEenvoudigTypeWaarden
+
+    def __str__(self):
+        return OTLField.__str__(self)
+
+
 class KwantWrdTestWaarden(AttributeInfo):
     def __init__(self, parent=None):
         AttributeInfo.__init__(self, parent)
@@ -269,6 +318,81 @@ class KwantWrdTest(OTLField, AttributeInfo):
 
     def __str__(self):
         return OTLField.__str__(self)
+
+
+class DtuTestUnionTypeWaarden(AttributeInfo, UnionWaarden):
+    def __init__(self, parent=None):
+        AttributeInfo.__init__(self, parent)
+        UnionWaarden.__init__(self)
+        self._unionKwantWrd = OTLAttribuut(field=KwantWrdTest,
+                                           naam='UnionKwantWrd',
+                                           label='Union Kwant Wrd',
+                                           objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtuTestUnionType.unionKwantWrd',
+                                           kardinaliteit_min='0',
+                                           definition='De kwantitatieve waarde van deze union type.',
+                                           owner=self)
+
+        self._unionString = OTLAttribuut(field=StringField,
+                                         naam='unionString',
+                                         label='Union String',
+                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtuTestUnionType.unionString',
+                                         kardinaliteit_min='0',
+                                         definition='De tekstuele waarde van deze union type',
+                                         owner=self)
+
+    @property
+    def unionKwantWrd(self):
+        """De kwantitatieve waarde van deze union type."""
+        return self._unionKwantWrd.waarde
+
+    @unionKwantWrd.setter
+    def unionKwantWrd(self, value):
+        self._unionKwantWrd.set_waarde(value, owner=self._parent)
+        if value is not None:
+            self.clear_other_props('_unionKwantWrd')
+
+    @property
+    def unionString(self):
+        """De tekstuele waarde van deze union type"""
+        return self._unionString.waarde
+
+    @unionString.setter
+    def unionString(self, value):
+        self._unionString.set_waarde(value, owner=self._parent)
+        if value is not None:
+            self.clear_other_props('_unionString')
+
+
+class DtuTestUnionType(UnionTypeField, AttributeInfo):
+    """Test Union datatype"""
+    naam = 'DtuTestUnionType'
+    label = 'TestUnionType'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtuTestUnionType'
+    definition = 'Union datatype om testen mee uit te voeren.'
+    waardeObject = DtuTestUnionTypeWaarden
+
+    def __str__(self):
+        return UnionTypeField.__str__(self)
+
+
+class KlTestKeuzelijst(KeuzelijstField):
+    """Keuzelijst met test waarden."""
+    naam = 'KlTestKeuzelijst'
+    label = 'Test Keuzelijst'
+    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KlTestKeuzelijst'
+    definition = 'Keuzelijst met test waarden.'
+    codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlAIMToestand'
+    options = {
+        'waarde 1': KeuzelijstWaarde(invulwaarde='waarde-1',
+                                     label='waarde 1',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAIMToestand/waarde-1'),
+        'waarde 2': KeuzelijstWaarde(invulwaarde='waarde-2',
+                                     label='waarde 2',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAIMToestand/waarde-2'),
+        'waarde 3': KeuzelijstWaarde(invulwaarde='waarde-3',
+                                     label='waarde 3',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAIMToestand/waarde-3')
+    }
 
 
 class AllCasesTestClass(AIMObject):
@@ -346,6 +470,42 @@ class AllCasesTestClass(AIMObject):
                                                     definition='Test attribuut voor een complexe waarde met kardinaliteit > 1',
                                                     kardinaliteit_max='*',
                                                     owner=self)
+
+        self._testUnionType = OTLAttribuut(field=DtuTestUnionType,
+                                           naam='testUnionType',
+                                           label='testUnionType',
+                                           objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#AllCasesTestClass.testUnionType',
+                                           definition='Test attribuut voor testUnionType.',
+                                           owner=self)
+
+        self._testUnionTypeMetKard = OTLAttribuut(field=DtuTestUnionType,
+                                                  naam='testUnionTypeMetKard',
+                                                  label='testUnionTypeMetKard',
+                                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#AllCasesTestClass.testUnionTypeMetKard',
+                                                  definition='Test attribuut voor testUnionType met kardinaliteit > 1.',
+                                                  kardinaliteit_max='*',
+                                                  owner=self)
+
+        self._testEenvoudigType = OTLAttribuut(field=DteTestEenvoudigType,
+                                               naam='TestEenvoudigType',
+                                               label='Test Eenvoudig Type',
+                                               objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#AllCasesTestClass.DteTestEenvoudigType',
+                                               definition='Test attribuut voor TestEenvoudigType.')
+
+        self._testKeuzelijst = OTLAttribuut(field=KlTestKeuzelijst,
+                                            naam='testKeuzelijst',
+                                            label='test Keuzelijst',
+                                            objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AllCasesTestClass.KltestKeuzelijst',
+                                            definition='Test attribuut voor TestKeuzelijst',
+                                            owner=self)
+
+        self._testKeuzelijstMetKard = OTLAttribuut(field=KlTestKeuzelijst,
+                                                   naam='testKeuzelijstMetKard',
+                                                   label='test KeuzelijstMetKard',
+                                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AllCasesTestClass.KltestKeuzelijst',
+                                                   definition='Test attribuut voor TestKeuzelijstMetKard',
+                                                   kardinaliteit_max='*',
+                                                   owner=self)
 
     @property
     def testComplexTypeMetKard(self):
@@ -427,3 +587,48 @@ class AllCasesTestClass(AIMObject):
     @testKwantWrd.setter
     def testKwantWrd(self, value):
         self._testKwantWrd.set_waarde(value, owner=self)
+
+    @property
+    def testUnionType(self):
+        """Test attribuut voor testUnionType."""
+        return self._testUnionType.waarde
+
+    @testUnionType.setter
+    def testUnionType(self, value):
+        self._testUnionType.set_waarde(value, owner=self)
+
+    @property
+    def testUnionTypeMetKard(self):
+        """Test attribuut voor testUnionType met kardinaliteit > 1."""
+        return self._testUnionTypeMetKard.waarde
+
+    @testUnionTypeMetKard.setter
+    def testUnionTypeMetKard(self, value):
+        self._testUnionTypeMetKard.set_waarde(value, owner=self)
+
+    @property
+    def testEenvoudigType(self):
+        """Test attribuut voor TestEenvoudigType."""
+        return self._testEenvoudigType.waarde
+
+    @testEenvoudigType.setter
+    def testEenvoudigType(self, value):
+        self._testEenvoudigType.set_waarde(value, owner=self)
+
+    @property
+    def testKeuzelijst(self):
+        """Test attribuut voor TestKeuzelijst."""
+        return self._testKeuzelijst.waarde
+
+    @testKeuzelijst.setter
+    def testKeuzelijst(self, value):
+        self._testKeuzelijst.set_waarde(value, owner=self)
+
+    @property
+    def testKeuzelijstMetKard(self):
+        """Test attribuut voor TestKeuzelijst met kardinaliteit > 1."""
+        return self._testKeuzelijstMetKard.waarde
+
+    @testKeuzelijstMetKard.setter
+    def testKeuzelijstMetKard(self, value):
+        self._testKeuzelijstMetKard.set_waarde(value, owner=self)

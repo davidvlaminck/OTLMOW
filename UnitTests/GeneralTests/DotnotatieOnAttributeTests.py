@@ -89,3 +89,30 @@ class DotnotatieOnAttributeTests(TestCase):
                  'waarde_shortcut_applicable': False}
              }]
         settingsmanager.load_settings_in_app()
+
+    def test_dotnotatie_using_waarde_shortcut(self):
+        settingsmanager = SettingsManager(settings_path='')
+        settingsmanager.settings['file_formats'] = [
+            {'name': 'OTLMOW',
+             'dotnotatie': {
+                 'separator': '.',
+                 'cardinality separator': '|',
+                 'cardinality indicator': '[]',
+                 'waarde_shortcut_applicable': True}
+             }]
+        settingsmanager.load_settings_in_app()
+
+        instance = AllCasesTestClass()
+        self.assertEqual('testKwantWrdMetKard[]', instance.testKwantWrdMetKard[0]._waarde.dotnotatie)
+
+        # restore original settings
+        settingsmanager.settings['file_formats'] = [
+            {'name': 'OTLMOW',
+             'dotnotatie': {
+                 'separator': '.',
+                 'cardinality separator': '|',
+                 'cardinality indicator': '[]',
+                 'waarde_shortcut_applicable': False}
+             }]
+        settingsmanager.load_settings_in_app()
+

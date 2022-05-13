@@ -7,7 +7,6 @@ from OTLMOW.OTLModel.Classes.Omvormer import Omvormer
 
 
 class EMInfraDecoderTests(TestCase):
-    @unittest.skip('graph not correctly implemented')
     def test_decodeFirstEntry(self):
         responseString = ResponseTestDouble().response
         decoder = EMInfraDecoder()

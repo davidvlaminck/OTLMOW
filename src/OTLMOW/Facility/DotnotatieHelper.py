@@ -2,18 +2,32 @@
     separator = '.'
     cardinality_separator = '|'
     cardinality_indicator = '[]'
+    waarde_shortcut_applicable = False
 
     @staticmethod
-    def get_dotnotatie(attribute):
+    def get_dotnotatie(attribute, separator: str = '', cardinality_indicator: str = '',
+                       waarde_shortcut_applicable: bool | None = None):
+        if separator == '':
+            separator = DotnotatieHelper.separator
+        if cardinality_indicator == '':
+            cardinality_indicator = DotnotatieHelper.cardinality_indicator
+        if waarde_shortcut_applicable is None:
+            waarde_shortcut_applicable = DotnotatieHelper.waarde_shortcut_applicable
+
+        if waarde_shortcut_applicable:
+            if attribute.naam == 'waarde' and attribute.owner._parent is not None and attribute.owner._parent.field.waarde_shortcut_applicable:
+                return attribute.owner._parent.dotnotatie
+
         dotnotatie = attribute.naam
         if attribute.kardinaliteit_max != '1':
-            dotnotatie += DotnotatieHelper.cardinality_indicator
+            dotnotatie += cardinality_indicator
 
         if attribute.owner._parent is not None:
-            return attribute.owner._parent.dotnotatie + DotnotatieHelper.separator + dotnotatie
+            return attribute.owner._parent.dotnotatie + separator + dotnotatie
 
         return dotnotatie
 
+    # TODO add shortcut waarde option
     @staticmethod
     def set_attribute_by_dotnotatie(instanceOrAttribute, dotnotatie, value, convert=True):
         if '.' in dotnotatie:

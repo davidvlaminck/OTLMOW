@@ -26,3 +26,5 @@ class SettingsManager(metaclass=Singleton):
                     DotnotatieHelper.cardinality_separator = otlmow_format['dotnotatie']['cardinality separator']
                 if 'cardinality indicator' in otlmow_format['dotnotatie']:
                     DotnotatieHelper.cardinality_indicator = otlmow_format['dotnotatie']['cardinality indicator']
+                if 'waarde_shortcut_applicable' in otlmow_format['dotnotatie']:
+                    DotnotatieHelper.waarde_shortcut_applicable = otlmow_format['dotnotatie']['waarde_shortcut_applicable']

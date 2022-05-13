@@ -8,7 +8,8 @@ class ToOTLDecoder:
     def __init__(self):
         pass
 
-    def set_value_by_dotnotatie(self, assetOrAttribuut, dotnotatie, value):
+    @staticmethod
+    def set_value_by_dotnotatie(assetOrAttribuut, dotnotatie, value):
         try:
             eval(f'assetOrAttribuut.{dotnotatie}')
             exec(f'assetOrAttribuut.{dotnotatie} = value')
@@ -33,8 +34,8 @@ class ToOTLDecoder:
             setattr(instanceOrAttribute, key, valueList)
         else:
             attr = getattr(instanceOrAttribute, '_' + key)
-            if attr.field.waardeObject is not None and not attr.field.waarde_shortcut_applicable:
-                waardeAttr = getattr(attr, "waarde")
+            if attr.field.waardeObject is not None and attr.field.waarde_shortcut_applicable:
+                waardeAttr = attr.get_waarde()
                 self.set_attribute_by_dotnotatie(waardeAttr, "waarde", value)
             else:
                 if attr.field is DateField:

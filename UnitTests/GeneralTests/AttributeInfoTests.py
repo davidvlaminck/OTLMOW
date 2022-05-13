@@ -74,7 +74,7 @@ class AttributeInfoTests(TestCase):
         v = Verkeersregelaar()
         v.theoretischeLevensduur.waarde = 120
         d = v.create_dict_from_asset()
-        expected = {'theoretischeLevensduur': 120}
+        expected = {'theoretischeLevensduur': {'waarde': 120}}
         self.assertDictEqual(expected, d)
 
     def test_create_dict_from_asset_keuzelijst(self):

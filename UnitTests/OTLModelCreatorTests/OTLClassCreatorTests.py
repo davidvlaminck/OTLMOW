@@ -201,24 +201,6 @@ class OTLClassCreatorTests(unittest.TestCase):
         filelocation = os.path.abspath(os.path.join(os.sep, ROOT_DIR, 'src/OTLMOW/OTLModel/Classes/ContainerBuis.py'))
         self.assertTrue(os.path.isfile(filelocation))
 
-    def test_WriteToFileBuis(self):
-        collector, creator = self.set_up_real_collector_and_creator()
-        buis = collector.find_class_by_uri('https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Buis')
-        dataToWrite = creator.create_blocks_to_write_from_classes(buis)
-        creator.writeToFile(buis, 'Classes', dataToWrite, '../../src/OTLMOW/')
-
-        filelocation = os.path.abspath(os.path.join(os.sep, ROOT_DIR, 'src/OTLMOW/OTLModel/Classes/Buis.py'))
-        self.assertTrue(os.path.isfile(filelocation))
-
-    def test_WriteToFileGebouw(self):
-        collector, creator = self.set_up_real_collector_and_creator()
-        containerBuis = collector.find_class_by_uri('https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Gebouw')
-        dataToWrite = creator.create_blocks_to_write_from_classes(containerBuis)
-        creator.writeToFile(containerBuis, 'Classes', dataToWrite, '../../src/OTLMOW/')
-
-        filelocation = os.path.abspath(os.path.join(os.sep, ROOT_DIR, 'src/OTLMOW/OTLModel/Classes/Gebouw.py'))
-        self.assertTrue(os.path.isfile(filelocation))
-
     def test_CheckInheritances_Agent(self):
         collector, creator = self.set_up_real_collector_and_creator()
 

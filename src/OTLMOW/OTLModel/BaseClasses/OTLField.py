@@ -23,9 +23,15 @@ class OTLField:
                     continue
                 if attr.waarde is None:
                     continue
-                if not attr.field.validate(attr.waarde, attr):
-                    validation = False
-                    break
+                if attr.kardinaliteit_max != '1':
+                    for value_item in attr.waarde:
+                        if not attr.field.validate(value_item, attr):
+                            validation = False
+                            break
+                else:
+                    if not attr.field.validate(attr.waarde, attr):
+                        validation = False
+                        break
             return validation
         pass
 

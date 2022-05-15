@@ -72,7 +72,29 @@
 
     # TODO add shortcut waarde option
     @staticmethod
-    def set_attribute_by_dotnotatie(instanceOrAttribute, dotnotatie, value, convert=True):
+    def set_attribute_by_dotnotatie(instanceOrAttribute, dotnotatie, value, convert=True, separator: str = '', cardinality_indicator: str = '',
+                                     waarde_shortcut_applicable: bool | None = None):
+        if value is None:
+            return
+
+        cardinality_indicator, separator, waarde_shortcut_applicable = DotnotatieHelper.set_parameters_to_class_vars(
+            cardinality_indicator, separator, waarde_shortcut_applicable)
+        if dotnotatie.count('[]') <= 1:
+            gets = DotnotatieHelper.get_attributes_by_dotnotatie(instanceOrAttribute, dotnotatie)
+            gets.set_waarde(value)
+            return
+
+        if not isinstance(value, list):
+            raise TypeError(f'the given value for {dotnotatie} of {instanceOrAttribute.name} is not valid. This needs to be a list')
+        for index, list_item in enumerate(value):
+            first = dotnotatie.split('.')[0].replace('[]', '')
+            rest = dotnotatie.split('.', 1)[1]
+            attribute = DotnotatieHelper.get_attributes_by_dotnotatie(instanceOrAttribute, first)
+            if attribute.waarde is None or len(attribute.waarde) <= index:
+                attribute.add_empty_value()
+            DotnotatieHelper.set_attribute_by_dotnotatie(attribute.waarde[index], rest, list_item)
+        return
+
         if '.' in dotnotatie:
             first = dotnotatie.split('.')[0]
             rest = dotnotatie.split('.', 1)[1]

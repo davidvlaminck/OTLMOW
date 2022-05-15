@@ -20,5 +20,5 @@ class StandaardPost:
                 asset = class_loader.dynamic_create_instance_from_uri(mapping.typeURI)
                 lijst.append(asset)
             if mapping.defaultWaarde != '':
-                ToOTLDecoder().set_value_by_dotnotatie(asset, mapping.dotnotatie, mapping.defaultWaarde)
+                ToOTLDecoder().set_attribute_by_dotnotatie(asset, mapping.dotnotatie, mapping.defaultWaarde)
         return lijst

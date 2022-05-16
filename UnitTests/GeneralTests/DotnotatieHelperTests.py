@@ -151,6 +151,22 @@ class DotnotatieHelperTests(TestCase):
             DotnotatieHelper.set_attribute_by_dotnotatie(instance, 'testDecimalNumberField', "6.0", convert=False)
             self.assertEqual(6.0, instance.testDecimalNumberField)
 
+        with self.subTest("cardinality > 1 and correctly typed and convert=True"):
+            DotnotatieHelper.set_attribute_by_dotnotatie(instance, 'testDecimalNumberFieldMetKard', [9.0], convert=True)
+            self.assertEqual(9.0, instance.testDecimalNumberFieldMetKard[0])
+
+        with self.subTest("cardinality > 1 and correctly typed and convert=False"):
+            DotnotatieHelper.set_attribute_by_dotnotatie(instance, 'testDecimalNumberFieldMetKard', [8.0], convert=False)
+            self.assertEqual(8.0, instance.testDecimalNumberFieldMetKard[0])
+
+        with self.subTest("cardinality > 1 and incorrectly typed and convert=True"):
+            DotnotatieHelper.set_attribute_by_dotnotatie(instance, 'testDecimalNumberFieldMetKard', ["7.0"], convert=True)
+            self.assertEqual(7.0, instance.testDecimalNumberFieldMetKard[0])
+
+        with self.subTest("cardinality > 1 and incorrectly typed and convert=False (converted by set_waarde method on attribute itself)"):
+            DotnotatieHelper.set_attribute_by_dotnotatie(instance, 'testDecimalNumberFieldMetKard', ["6.0"], convert=False)
+            self.assertEqual(6.0, instance.testDecimalNumberFieldMetKard[0])
+
     def test_set_attributes_by_dotnotatie_default_values(self):
         instance = AllCasesTestClass()
         settingsmanager = SettingsManager(settings_path='')
@@ -180,11 +196,6 @@ class DotnotatieHelperTests(TestCase):
             DotnotatieHelper.set_attribute_by_dotnotatie(instance, 'testComplexType.testStringField', "abc")
             self.assertEqual("abc", instance.testComplexType.testStringField)
 
-        with self.subTest("attribute 2 levels deep with cardinality > 1"):
-            DotnotatieHelper.set_attribute_by_dotnotatie(instance, 'testComplexTypeMetKard[].testStringFieldMetKard[]',
-                                                         [['1.1', '1.2'], ['2.1', '2.2']])
-            self.assertEqual('2.2', instance.testComplexTypeMetKard[1].testStringFieldMetKard[1])
-
         with self.subTest("attribute 2 levels deep with cardinality > 1 and cardinality in first attribute"):
             DotnotatieHelper.set_attribute_by_dotnotatie(instance, 'testComplexTypeMetKard[].testStringField', ['1.1', '2.1'])
             self.assertEqual('2.1', instance.testComplexTypeMetKard[1].testStringField)
@@ -192,6 +203,11 @@ class DotnotatieHelperTests(TestCase):
         with self.subTest("attribute 2 levels deep with cardinality > 1 and cardinality in second attribute"):
             DotnotatieHelper.set_attribute_by_dotnotatie(instance, 'testComplexType.testStringFieldMetKard[]', ['1.1', '1.2'])
             self.assertEqual('1.2', instance.testComplexType.testStringFieldMetKard[1])
+
+        with self.subTest("attribute 2 levels deep with cardinality > 1"):
+            DotnotatieHelper.set_attribute_by_dotnotatie(instance, 'testComplexTypeMetKard[].testStringFieldMetKard[]',
+                                                         [['1.1', '1.2'], ['2.1', '2.2']])
+            self.assertEqual('2.2', instance.testComplexTypeMetKard[1].testStringFieldMetKard[1])
 
         with self.subTest("attribute 3 levels deep"):
             DotnotatieHelper.set_attribute_by_dotnotatie(instance, 'testComplexType.testComplexType2.testStringField', "def")
@@ -265,7 +281,11 @@ class DotnotatieHelperTests(TestCase):
             DotnotatieHelper.set_attribute_by_dotnotatie(instance, 'testKwantWrdMetKard[]', [0.0, 1.0])
             self.assertEqual(1.0, instance.testKwantWrdMetKard[1].waarde)
 
-        with self.subTest("attribute 2 levels deep with cardinality > 1 and with waarde shortcut enabled"):
+        with self.subTest("attribute 2 levels deep with cardinality > 1 (first part) and with waarde shortcut enabled"):
+            DotnotatieHelper.set_attribute_by_dotnotatie(instance, 'testComplexTypeMetKard[].testKwantWrd', [8.0, 9.0])
+            self.assertEqual(9.0, instance.testComplexTypeMetKard[1].testKwantWrd.waarde)
+
+        with self.subTest("attribute 2 levels deep with cardinality > 1 (last part) and with waarde shortcut enabled"):
             DotnotatieHelper.set_attribute_by_dotnotatie(instance, 'testComplexType.testKwantWrdMetKard[]', [2.0, 3.0])
             self.assertEqual(3.0, instance.testComplexType.testKwantWrdMetKard[1].waarde)
 

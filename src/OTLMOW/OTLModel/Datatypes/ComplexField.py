@@ -6,4 +6,4 @@ class ComplexField(OTLField, ABC):
     def __str__(self):
         return OTLField.__str__(self)
 
-    waarde_shortcut_applicable = True
+    waarde_shortcut_applicable = False

@@ -82,7 +82,7 @@ class OTLObjectHelper:
             if isinstance(v.waarde, list):
                 # kard > 0
                 if v.field.waardeObject is not None:
-                    if v.field.waarde_shortcut_applicable:
+                    if not v.field.waarde_shortcut_applicable:
                         for count, item in enumerate(v.waarde):
                             for k1, v1 in self.attributes_by_dotnotatie(asset=item):
                                 yield k1.replace('[]', f'[{count}]'), v1
@@ -95,7 +95,7 @@ class OTLObjectHelper:
                         yield v.dotnotatie.replace('[]', f'[{count}]'), item
             else:
                 if v.field.waardeObject is not None:
-                    if v.field.waarde_shortcut_applicable:
+                    if not v.field.waarde_shortcut_applicable:
                         for k1, v1 in self.attributes_by_dotnotatie(asset=v.waarde):
                             yield k1, v1
                     else:
@@ -103,6 +103,7 @@ class OTLObjectHelper:
                             yield v.waarde._waarde.dotnotatie, v.waarde.waarde
                 else:
                     yield v.dotnotatie, v.waarde
+
 
 class OTLObject:
     def __init__(self):

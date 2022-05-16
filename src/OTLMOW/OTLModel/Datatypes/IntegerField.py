@@ -23,6 +23,9 @@ class IntegerField(OTLField):
                 raise CouldNotConvertToCorrectType(f'{value} could not be converted to correct type (implied by {cls.__name__})')
             return i
         try:
+            if isinstance(value, str):
+                value = float(value)
+                return int(value)
             return int(value)
         except Exception:
             raise CouldNotConvertToCorrectType(f'{value} could not be converted to correct type (implied by {cls.__name__})')

@@ -5,6 +5,7 @@ class WKTValidator:
             return False
         geo_type = input_string.split(' (')[0]
 
+        # TODO add multi
         if geo_type not in ('POINT', 'POINT Z', 'LINESTRING', 'LINESTRING Z', 'POLYGON', 'POLYGON Z'):
             return False
 

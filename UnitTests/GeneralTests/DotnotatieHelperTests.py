@@ -153,6 +153,16 @@ class DotnotatieHelperTests(TestCase):
 
     def test_set_attributes_by_dotnotatie_default_values(self):
         instance = AllCasesTestClass()
+        settingsmanager = SettingsManager(settings_path='')
+        settingsmanager.settings['file_formats'] = [
+            {'name': 'OTLMOW',
+             'dotnotatie': {
+                 'separator': '.',
+                 'cardinality separator': '|',
+                 'cardinality indicator': '[]',
+                 'waarde_shortcut_applicable': False}
+             }]
+        settingsmanager.load_settings_in_app()
 
         with self.subTest("attribute 1 level deep"):
             DotnotatieHelper.set_attribute_by_dotnotatie(instance, 'testDecimalNumberField', 6.0)
@@ -175,6 +185,14 @@ class DotnotatieHelperTests(TestCase):
                                                          [['1.1', '1.2'], ['2.1', '2.2']])
             self.assertEqual('2.2', instance.testComplexTypeMetKard[1].testStringFieldMetKard[1])
 
+        with self.subTest("attribute 2 levels deep with cardinality > 1 and cardinality in first attribute"):
+            DotnotatieHelper.set_attribute_by_dotnotatie(instance, 'testComplexTypeMetKard[].testStringField', ['1.1', '2.1'])
+            self.assertEqual('2.1', instance.testComplexTypeMetKard[1].testStringField)
+
+        with self.subTest("attribute 2 levels deep with cardinality > 1 and cardinality in second attribute"):
+            DotnotatieHelper.set_attribute_by_dotnotatie(instance, 'testComplexType.testStringFieldMetKard[]', ['1.1', '1.2'])
+            self.assertEqual('1.2', instance.testComplexType.testStringFieldMetKard[1])
+
         with self.subTest("attribute 3 levels deep"):
             DotnotatieHelper.set_attribute_by_dotnotatie(instance, 'testComplexType.testComplexType2.testStringField', "def")
             self.assertEqual("def", instance.testComplexType.testComplexType2.testStringField)
@@ -187,3 +205,82 @@ class DotnotatieHelperTests(TestCase):
         with self.subTest("attribute 4 levels deep with waarde shortcut disabled"):
             DotnotatieHelper.set_attribute_by_dotnotatie(instance, 'testComplexType.testComplexType2.testKwantWrd.waarde', 4.0)
             self.assertEqual(4.0, instance.testComplexType.testComplexType2.testKwantWrd.waarde)
+
+    def test_set_attribute_by_dotnotatie_using_settings(self):
+        settingsmanager = SettingsManager(settings_path='')
+        settingsmanager.settings['file_formats'] = [
+            {'name': 'OTLMOW',
+             'dotnotatie': {
+                 'separator': '*',
+                 'cardinality separator': '|',
+                 'cardinality indicator': '()',
+                 'waarde_shortcut_applicable': False}
+             }]
+        settingsmanager.load_settings_in_app()
+
+        instance = AllCasesTestClass()
+
+        with self.subTest("attribute 1 level deep with cardinality > 1"):
+            DotnotatieHelper.set_attribute_by_dotnotatie(instance, 'testStringFieldMetKard()', ['a', 'b'])
+            self.assertEqual(['a', 'b'], instance.testStringFieldMetKard)
+
+        with self.subTest("attribute 2 levels deep"):
+            DotnotatieHelper.set_attribute_by_dotnotatie(instance, 'testComplexType*testStringField', "abc")
+            self.assertEqual("abc", instance.testComplexType.testStringField)
+
+        with self.subTest("attribute 2 levels deep with cardinality > 1"):
+            DotnotatieHelper.set_attribute_by_dotnotatie(instance, 'testComplexTypeMetKard()*testStringFieldMetKard()',
+                                                         [['1.1', '1.2'], ['2.1', '2.2']])
+            self.assertEqual('2.2', instance.testComplexTypeMetKard[1].testStringFieldMetKard[1])
+
+        settingsmanager.settings['file_formats'] = [
+            {'name': 'OTLMOW',
+             'dotnotatie': {
+                 'separator': '.',
+                 'cardinality separator': '|',
+                 'cardinality indicator': '[]',
+                 'waarde_shortcut_applicable': False}
+             }]
+        settingsmanager.load_settings_in_app()
+
+    def test_set_attribute_by_dotnotatie_waarde_shortcut(self):
+        settingsmanager = SettingsManager(settings_path='')
+        settingsmanager.settings['file_formats'] = [
+            {'name': 'OTLMOW',
+             'dotnotatie': {
+                 'separator': '.',
+                 'cardinality separator': '|',
+                 'cardinality indicator': '[]',
+                 'waarde_shortcut_applicable': True}
+             }]
+        settingsmanager.load_settings_in_app()
+
+        instance = AllCasesTestClass()
+
+        with self.subTest("attribute 1 level deep with waarde shortcut enabled"):
+            DotnotatieHelper.set_attribute_by_dotnotatie(instance, 'testKwantWrd', 5.0)
+            self.assertEqual(5.0, instance.testKwantWrd.waarde)
+
+        with self.subTest("attribute 1 level deep with cardinality > 1 and waarde shortcut enabled"):
+            DotnotatieHelper.set_attribute_by_dotnotatie(instance, 'testKwantWrdMetKard[]', [0.0, 1.0])
+            self.assertEqual(1.0, instance.testKwantWrdMetKard[1].waarde)
+
+        with self.subTest("attribute 2 levels deep with cardinality > 1 and with waarde shortcut enabled"):
+            DotnotatieHelper.set_attribute_by_dotnotatie(instance, 'testComplexType.testKwantWrdMetKard[]', [2.0, 3.0])
+            self.assertEqual(3.0, instance.testComplexType.testKwantWrdMetKard[1].waarde)
+
+        with self.subTest("attribute 3 levels deep with waarde shortcut enabled"):
+            DotnotatieHelper.set_attribute_by_dotnotatie(instance, 'testComplexType.testComplexType2.testKwantWrd', 4.0)
+            self.assertEqual(4.0, instance.testComplexType.testComplexType2.testKwantWrd.waarde)
+
+        settingsmanager.settings['file_formats'] = [
+            {'name': 'OTLMOW',
+             'dotnotatie': {
+                 'separator': '.',
+                 'cardinality separator': '|',
+                 'cardinality indicator': '[]',
+                 'waarde_shortcut_applicable': False}
+             }]
+        settingsmanager.load_settings_in_app()
+
+    # issue aanmaken voor testclass te genereren

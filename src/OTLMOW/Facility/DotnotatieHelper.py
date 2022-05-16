@@ -70,44 +70,59 @@
             else:
                 return getattr(instanceOrAttribute, '_' + dotnotatie)
 
-    # TODO add shortcut waarde option
     @staticmethod
-    def set_attribute_by_dotnotatie(instanceOrAttribute, dotnotatie, value, convert=True, separator: str = '', cardinality_indicator: str = '',
-                                     waarde_shortcut_applicable: bool | None = None):
+    def set_attribute_by_dotnotatie(instanceOrAttribute, dotnotatie, value, convert=True, separator: str = '',
+                                    cardinality_indicator: str = '', waarde_shortcut_applicable: bool | None = None) -> None:
         if value is None:
             return
 
         cardinality_indicator, separator, waarde_shortcut_applicable = DotnotatieHelper.set_parameters_to_class_vars(
             cardinality_indicator, separator, waarde_shortcut_applicable)
-        if dotnotatie.count('[]') <= 1:
-            gets = DotnotatieHelper.get_attributes_by_dotnotatie(instanceOrAttribute, dotnotatie)
+
+        if dotnotatie.count(cardinality_indicator) == 0:
+            gets = DotnotatieHelper.get_attributes_by_dotnotatie(instanceOrAttribute=instanceOrAttribute, dotnotatie=dotnotatie,
+                                                                 separator=separator, cardinality_indicator=cardinality_indicator,
+                                                                 waarde_shortcut_applicable=waarde_shortcut_applicable)
             gets.set_waarde(value)
             return
 
-        if not isinstance(value, list):
-            raise TypeError(f'the given value for {dotnotatie} of {instanceOrAttribute.name} is not valid. This needs to be a list')
+        first = dotnotatie.split(cardinality_indicator)[0]
+        rest = dotnotatie.split(cardinality_indicator, maxsplit=1)[1]
+        attribute = DotnotatieHelper.get_attributes_by_dotnotatie(instanceOrAttribute=instanceOrAttribute,
+                                                                  dotnotatie=first + cardinality_indicator,
+                                                                  separator=separator,
+                                                                  cardinality_indicator=cardinality_indicator,
+                                                                  waarde_shortcut_applicable=waarde_shortcut_applicable)
+
+        if separator not in rest:
+
+            possible_waarde_parent_attribute = DotnotatieHelper.get_attributes_by_dotnotatie(
+                instanceOrAttribute=instanceOrAttribute,
+                dotnotatie=first + cardinality_indicator,
+                separator=separator,
+                cardinality_indicator=cardinality_indicator,
+                waarde_shortcut_applicable=False)
+
+            if waarde_shortcut_applicable and possible_waarde_parent_attribute.field.waarde_shortcut_applicable:
+                for index, list_item in enumerate(value):
+                    if len(possible_waarde_parent_attribute.waarde) <= index:
+                        possible_waarde_parent_attribute.add_empty_value()
+                    possible_waarde_parent_attribute.waarde[index]._waarde.set_waarde(list_item)
+                return
+
+            if not isinstance(value, list):
+                raise TypeError(
+                    f'the given value for {dotnotatie} of {instanceOrAttribute.name} is not valid. This needs to be a list')
+
+            attribute.set_waarde(value)
+            return
+
         for index, list_item in enumerate(value):
-            first = dotnotatie.split('.')[0].replace('[]', '')
-            rest = dotnotatie.split('.', 1)[1]
-            attribute = DotnotatieHelper.get_attributes_by_dotnotatie(instanceOrAttribute, first)
+            rest = dotnotatie.split(separator, maxsplit=1)[1]
+
             if attribute.waarde is None or len(attribute.waarde) <= index:
                 attribute.add_empty_value()
             DotnotatieHelper.set_attribute_by_dotnotatie(attribute.waarde[index], rest, list_item)
-        return
-
-        if '.' in dotnotatie:
-            first = dotnotatie.split('.')[0]
-            rest = dotnotatie.split('.', 1)[1]
-            attribute = getattr(instanceOrAttribute, first)
-            return DotnotatieHelper.set_attribute_by_dotnotatie(attribute, rest, value, convert)
-        else:
-            attribute = getattr(instanceOrAttribute, '_' + dotnotatie)
-            if convert:
-                value = DotnotatieHelper.convert_waarde_to_correct_type(value, attribute)
-            if attribute.field.waardeObject is not None and not attribute.field.waarde_shortcut_applicable:
-                setattr(attribute.waarde, 'waarde', value)
-            else:
-                setattr(instanceOrAttribute, dotnotatie, value)
 
     @staticmethod
     def convert_waarde_to_correct_type(waarde, attribuut):

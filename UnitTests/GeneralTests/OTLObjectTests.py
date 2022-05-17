@@ -50,8 +50,6 @@ class OTLObjectsTests(TestCase):
         v.externeReferentie[1].externReferentienummer = "externe referentie 1"
         v.externeReferentie[1].externePartij = "bij externe partij 1"
         string_version = OTLObjectHelper().build_string_version(v, indent=4)
-        expected = 'externeReferentie[0].externReferentienummer : externe referentie 2\n' \
-                   'externeReferentie[0].externePartij : bij externe partij 2\n'\
-                   'externeReferentie[1].externReferentienummer : externe referentie 1\n' \
-                   'externeReferentie[1].externePartij : bij externe partij 1'
+        expected = "externeReferentie[].externReferentienummer : ['externe referentie 2', 'externe referentie 1']\n"\
+                   "externeReferentie[].externePartij : ['bij externe partij 2', 'bij externe partij 1']"
         self.assertEqual(string_version, expected)

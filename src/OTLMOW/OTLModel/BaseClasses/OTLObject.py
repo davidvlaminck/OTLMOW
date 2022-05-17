@@ -29,7 +29,9 @@ class OTLObjectHelper:
                         if dict_item is not None:
                             d[k[1:]] = dict_item
                     else:
-                        d[k[1:]] = v.waarde.waarde
+                        dict_item = self.recursive_create_dict_from_asset(asset=v.waarde)
+                        if dict_item is not None:
+                            d[k[1:]] = dict_item
                 else:
                     if isinstance(v.waarde, time):
                         d[k[1:]] = time.strftime(v.waarde, "%H:%M:%S")

@@ -21,16 +21,16 @@ class CsvImporter:
         self.data = [[]]
         self.objects = []
 
-    def import_csv_file(self, file_location: str = '', separator=';'):
+    def import_csv_file(self, file_location: str = '', delimiter=';'):
         if file_location == '' or not os.path.isfile(file_location):
             raise FileNotFoundError(f'Could not load the file at: {file_location}')
 
         try:
             with open(file_location, 'r') as file:
-                self.headers = file.readline()[:-1].split(separator)
+                self.headers = file.readline()[:-1].split(delimiter)
                 data = []
                 for line in file:
-                    data.append(line[:-1].split(separator))
+                    data.append(line[:-1].split(delimiter))
                 self.data = data[1:]
 
         except Exception as ex:

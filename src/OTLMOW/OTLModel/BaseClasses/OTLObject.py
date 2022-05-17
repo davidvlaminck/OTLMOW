@@ -73,8 +73,7 @@ class OTLObjectHelper:
                 lines.append(' ' * indent * level + f'{key} : {value}')
         return lines
 
-    def list_attributes_and_values_by_dotnotatie(self, asset=None, waarde_shortcut: bool = False, separator: str = '.',
-                                                 cardinality_indicator: str = '[]'):
+    def list_attributes_and_values_by_dotnotatie(self, asset=None, waarde_shortcut: bool = False):
         sorted_attributes = sorted(list(vars(asset).items()), key=lambda i: i[0])
 
         for k, v in sorted_attributes:
@@ -83,16 +82,13 @@ class OTLObjectHelper:
             if v.waarde is None:
                 continue
 
-            if isinstance(v.waarde, list):
-                # kard > 0
-                if v.field.waardeObject is not None:
+            if v.field.waardeObject is not None:
+                if v.kardinaliteit_max != '1':
                     lijsten = []
                     for list_item in v.waarde:
                         lijsten.append(
                             list(self.list_attributes_and_values_by_dotnotatie(asset=list_item,
-                                                                               waarde_shortcut=waarde_shortcut,
-                                                                               separator=separator,
-                                                                               cardinality_indicator=cardinality_indicator)))
+                                                                               waarde_shortcut=waarde_shortcut)))
 
                     combined_dict = {}
                     for lijst in lijsten:
@@ -105,26 +101,13 @@ class OTLObjectHelper:
 
                     for dict_k in sorted(combined_dict.keys()):
                         yield dict_k, combined_dict[dict_k]
-
                 else:
-                    dotnotatie = DotnotatieHelper.get_dotnotatie(v, waarde_shortcut_applicable=waarde_shortcut,
-                                                                 separator=separator,
-                                                                 cardinality_indicator=cardinality_indicator)
-                    yield dotnotatie, v.waarde
-
-            else:
-                if v.field.waardeObject is not None:
-                    for k1, v1 in self.list_attributes_and_values_by_dotnotatie(asset=v.waarde, waarde_shortcut=waarde_shortcut,
-                                                                                separator=separator,
-                                                                                cardinality_indicator=cardinality_indicator):
+                    for k1, v1 in self.list_attributes_and_values_by_dotnotatie(asset=v.waarde, waarde_shortcut=waarde_shortcut):
                         yield k1, v1
 
-                else:
-                    dotnotatie = DotnotatieHelper.get_dotnotatie(v, waarde_shortcut_applicable=waarde_shortcut,
-                                                                     separator=separator,
-                                                                     cardinality_indicator=cardinality_indicator)
-                    yield dotnotatie, v.waarde
-
+            else:
+                dotnotatie = DotnotatieHelper.get_dotnotatie(v, waarde_shortcut_applicable=waarde_shortcut)
+                yield dotnotatie, v.waarde
 
 class OTLObject:
     def __init__(self):
@@ -140,13 +123,9 @@ class OTLObject:
     def create_dict_from_asset(self, exclude_nested_attributes=False):
         return OTLObjectHelper().recursive_create_dict_from_asset(asset=self)
 
-    def list_attributes_and_values_by_dotnotatie(self, waarde_shortcut: bool = False, separator: str = '.',
-                                                 cardinality_indicator: str = '[]'):
+    def list_attributes_and_values_by_dotnotatie(self, waarde_shortcut: bool = False):
         for k, v in OTLObjectHelper().list_attributes_and_values_by_dotnotatie(asset=self,
-                                                                               waarde_shortcut=waarde_shortcut,
-                                                                               separator=separator,
-                                                                               cardinality_indicator=cardinality_indicator
-                                                                               ):
+                                                                               waarde_shortcut=waarde_shortcut):
             yield k, v
 
     def __str__(self, use_dotnotatie=False):

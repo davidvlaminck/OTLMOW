@@ -5,7 +5,6 @@ from AllCasesTestClass import AllCasesTestClass
 from OTLMOW.Facility.CsvExporter import CsvExporter
 from OTLMOW.Facility.CsvImporter import CsvImporter
 from OTLMOW.Facility.OTLFacility import OTLFacility
-from OTLMOW.OTLModel.Classes.Verkeersregelaar import Verkeersregelaar
 
 ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
 
@@ -30,14 +29,16 @@ class CsvExporterTests(unittest.TestCase):
             with self.assertRaises(ValueError):
                 CsvExporter(settings={"file_formats": [{}]})
 
-    @unittest.skip
-    def test_load_test_file(self):
+    def test_load_and_writefile(self):
         otl_facility = OTLFacility(None, settings_path='C:\\resources\\settings_OTLMOW.json')
         importer = CsvImporter(settings=otl_facility.settings)
         file_location = os.path.abspath(os.path.join(os.sep, ROOT_DIR, 'test_file_VR.csv'))
-        importer.import_csv_file(file_location)
-        self.assertEqual(354, len(importer.data))
-        self.assertEqual(34, len(importer.headers))
+        objects = importer.import_csv_file(file_location)
+        exporter = CsvExporter(settings=otl_facility.settings)
+        new_file_location = os.path.abspath(os.path.join(os.sep, ROOT_DIR, 'test_export_file_VR.csv'))
+        os.remove(new_file_location)
+        exporter.export_csv_file(objects, new_file_location)
+        self.assertTrue(os.path.isfile(new_file_location))
 
     def test_create_data_from_objects_empty_objects(self):
         otl_facility = OTLFacility(None, settings_path='C:\\resources\\settings_OTLMOW.json')
@@ -126,7 +127,32 @@ class CsvExporterTests(unittest.TestCase):
             self.assertEqual('string in complex veld binnenin complex veld', csv_data[2][8])
             self.assertEqual(['waarde-2'], csv_data[2][9])
 
-    def test_create_data_from_objects_different_dotnotatie_settings(self):
+    def test_create_data_from_objects_cardinality(self):
+        otl_facility = OTLFacility(None, settings_path='C:\\resources\\settings_OTLMOW.json')
+        exporter = CsvExporter(settings=otl_facility.settings)
+
+        list_of_objects = [AllCasesTestClass()]
+        list_of_objects[0].assetId.identificator = '0'
+        list_of_objects[0]._testComplexTypeMetKard.add_empty_value()
+        list_of_objects[0].testComplexTypeMetKard[0].testStringField = '1.1'
+        list_of_objects[0].testComplexTypeMetKard[0].testBooleanField = False
+        list_of_objects[0]._testComplexTypeMetKard.add_empty_value()
+        list_of_objects[0].testComplexTypeMetKard[1].testStringField = '1.2'
+        list_of_objects[0].testComplexTypeMetKard[1].testBooleanField = True
+
+        csv_data = exporter.create_data_from_objects(list_of_objects)
+
+        self.assertEqual('typeURI', csv_data[0][0])
+        self.assertEqual('assetId.identificator', csv_data[0][1])
+        self.assertEqual('assetId.toegekendDoor', csv_data[0][2])
+        self.assertEqual('testComplexTypeMetKard[].testBooleanField', csv_data[0][3])
+        self.assertEqual('testComplexTypeMetKard[].testStringField', csv_data[0][4])
+        self.assertEqual('0', csv_data[1][1])
+        self.assertEqual(None, csv_data[1][2])
+        self.assertListEqual([False, True], csv_data[1][3])
+        self.assertListEqual(['1.1', '1.2'], csv_data[1][4])
+
+    def test_create_data_from_objects_different_settings(self):
         otl_facility = OTLFacility(None, settings_path='C:\\resources\\settings_OTLMOW.json')
         exporter = CsvExporter(settings=otl_facility.settings)
         exporter.settings = {
@@ -136,7 +162,8 @@ class CsvExporterTests(unittest.TestCase):
                 "cardinality separator": "$",
                 "cardinality indicator": "()",
                 "waarde_shortcut_applicable": True
-            }
+            },
+            "delimiter": ','
         }
 
         list_of_objects = [AllCasesTestClass(), AllCasesTestClass()]
@@ -149,20 +176,22 @@ class CsvExporterTests(unittest.TestCase):
 
         list_of_objects[1].assetId.identificator = '1'
         list_of_objects[1].testBooleanField = False
-        list_of_objects[1].testKeuzelijstMetKard = ['waarde-2']
+        list_of_objects[1].testKeuzelijstMetKard = ['waarde-2','waarde-3']
         list_of_objects[1].testDecimalNumberField = 2.5
         list_of_objects[1].testComplexType.testComplexType2.testStringField = 'string in complex veld binnenin complex veld'
 
         csv_data = exporter.create_data_from_objects(list_of_objects)
 
-        with self.subTest('verify headers'):
-            self.assertEqual('typeURI', csv_data[0][0])
+        with self.subTest('verify headers with different dotnotatie settings'):
             self.assertEqual('assetId+identificator', csv_data[0][1])
             self.assertEqual('assetId+toegekendDoor', csv_data[0][2])
-            self.assertEqual('testBooleanField', csv_data[0][3])
-            self.assertEqual('testComplexType.testKwantWrd', csv_data[0][4])  # TODO fix
+            self.assertEqual('testComplexType+testKwantWrd', csv_data[0][4])
             self.assertEqual('testComplexType+testStringField', csv_data[0][5])
-            self.assertEqual('testDecimalNumberField', csv_data[0][6])
-            self.assertEqual('testKeuzelijst', csv_data[0][7])
-            self.assertEqual('testComplexType.testComplexType2+testStringField', csv_data[0][8])  # TODO fix
+            self.assertEqual('testComplexType+testComplexType2+testStringField', csv_data[0][8])
             self.assertEqual('testKeuzelijstMetKard()', csv_data[0][9])
+
+        csv_data_lines = exporter.create_data_lines_from_data(csv_data)
+        expected_line_asset_2 = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#AllCasesTestClass,1,,False,,,2.5,,string in complex veld binnenin complex veld,waarde-2$waarde-3'
+
+        with self.subTest('verify data with different settings'):
+            self.assertEqual(expected_line_asset_2, csv_data_lines[2])

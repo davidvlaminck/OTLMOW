@@ -1,6 +1,5 @@
 import os
 
-from OTLMOW.Facility.AssetFactory import AssetFactory
 from OTLMOW.Facility.DotnotatieHelper import DotnotatieHelper
 from OTLMOW.OTLModel.Classes.AIMObject import AIMObject
 
@@ -23,42 +22,20 @@ class CsvExporter:
         self.objects = []
         self.csv_headers = []
 
-    def export_csv_file(self, list_of_objects: list = [], file_location: str = '', separator=';'):
-        if file_location == '' or not os.path.isfile(file_location):
-            raise FileNotFoundError(f'Could not load the file at: {file_location}')
+    def export_csv_file(self, list_of_objects: list = [], file_location: str = '', delimiter=';'):
+        if file_location == '':
+            raise ValueError(f'Can not write a file to: {file_location}')
 
-        try:
-            with open(file_location, 'r') as file:
-                self.headers = file.readline()[:-1].split(separator)
-                data = []
-                for line in file:
-                    data.append(line[:-1].split(separator))
-                self.data = data[1:]
-
-        except Exception as ex:
-            raise ex
-
-        return self.create_data_from_objects()
+        csv_data = self.create_data_from_objects(list_of_objects)
+        csv_data_lines = self.create_data_lines_from_data(csv_data)
+        self.write_file(file_location=file_location, data=csv_data_lines)
 
     def create_data_from_objects(self, list_of_objects: list = []) -> [[str]]:
-
-        otlmow_settings = {
-            'separator' : DotnotatieHelper.separator,
-            'cardinality_separator' : DotnotatieHelper.cardinality_separator,
-            'cardinality_indicator' : DotnotatieHelper.cardinality_indicator,
-            'waarde_shortcut_applicable': DotnotatieHelper.waarde_shortcut_applicable
-        }
-
-        DotnotatieHelper.set_parameters_to_class_vars(cardinality_indicator=self.settings['dotnotatie']['cardinality indicator'],
-                                                      waarde_shortcut_applicable=self.settings['dotnotatie']['waarde_shortcut_applicable'],
-                                                      separator =self.settings['dotnotatie']['separator'])
-
         csv_data = []
         if list_of_objects is None or list_of_objects == []:
             raise ValueError('There is no data to export to a csv file')
 
-        self.csv_headers = ['typeURI', 'assetId.identificator'.replace('.', self.settings['dotnotatie']['separator']),
-                            'assetId.toegekendDoor'.replace('.', self.settings['dotnotatie']['separator'])]
+        self.csv_headers = ['typeURI', 'assetId.identificator', 'assetId.toegekendDoor']
 
         for object in list_of_objects:
             if isinstance(object, AIMObject):
@@ -68,24 +45,12 @@ class CsvExporter:
 
                 csv_data.append(self.create_csv_row_for_AIMObject(object))
 
+        self.csv_headers = self.adjust_dotnotatie_by_settings(headers=self.csv_headers, settings=self.settings)
         csv_data.insert(0, self.csv_headers)
 
         csv_data = self.append_with_nones(csv_data)
 
-        DotnotatieHelper.set_parameters_to_class_vars(cardinality_indicator=otlmow_settings['cardinality_indicator'],
-                                                      waarde_shortcut_applicable=otlmow_settings['waarde_shortcut_applicable'],
-                                                      separator=otlmow_settings['separator'])
-
         return csv_data
-
-        DotnotatieHelper.set_attribute_by_dotnotatie(instanceOrAttribute=object,
-                                                     dotnotatie=self.headers[index],
-                                                     value=value,
-                                                     convert=True,
-                                                     separator=self.settings['dotnotatie']['separator'],
-                                                     cardinality_indicator=cardinality_indicator,
-                                                     waarde_shortcut_applicable=self.settings['dotnotatie'][
-                                                         'waarde_shortcut_applicable'])
 
     def create_csv_row_for_AIMObject(self, aimobject):
         values_list = [aimobject.typeURI, aimobject.assetId.identificator, aimobject.assetId.toegekendDoor]
@@ -93,9 +58,7 @@ class CsvExporter:
             values_list.append(None)
 
         for attribute, value in aimobject.list_attributes_and_values_by_dotnotatie(
-                waarde_shortcut=self.settings['dotnotatie']['waarde_shortcut_applicable'],
-                separator=self.settings['dotnotatie']['separator'],
-                cardinality_indicator=self.settings['dotnotatie']['cardinality indicator']):
+                waarde_shortcut=self.settings['dotnotatie']['waarde_shortcut_applicable']):
             if attribute in self.csv_headers[1:3]:
                 continue
 
@@ -109,7 +72,8 @@ class CsvExporter:
 
         return values_list
 
-    def append_with_nones(self, csv_data):
+    @staticmethod
+    def append_with_nones(csv_data):
         header_len = len(csv_data[0])
 
         for row in csv_data[1:]:
@@ -117,3 +81,43 @@ class CsvExporter:
                 row.append(None)
 
         return csv_data
+
+    @staticmethod
+    def adjust_dotnotatie_by_settings(headers, settings):
+        for index, header in enumerate(headers):
+            headers[index] = header.replace('.', settings['dotnotatie']['separator']) \
+                .replace('[]', settings['dotnotatie']['cardinality indicator'])
+        return headers
+
+    def create_data_lines_from_data(self, csv_data):
+        for index, row in enumerate(csv_data):
+            row = self.stringify_list(row, self.settings['dotnotatie']['cardinality separator'])
+            csv_data[index] = self.settings['delimiter'].join(row)
+        return csv_data
+
+    @staticmethod
+    def stringify_list(row: list, cardinality_seperator: str = '|'):
+        for index, item in enumerate(row):
+            if item is None:
+                row[index] = ''
+            else:
+                if isinstance(item, list):
+                    if len(item) == 0:
+                        row[index] = ''
+                    else:
+                        row[index] = cardinality_seperator.join(item)
+                else:
+                    try:
+                        row[index] = str(item)
+                    except:
+                        row[index] = ''
+        return row
+
+    def write_file(self, file_location, data):
+        try:
+            with open(file_location, "w") as file:
+                for line in data:
+                    file.writelines(line + '\n')
+        except Exception as ex:
+            raise ex
+

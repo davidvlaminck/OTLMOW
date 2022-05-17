@@ -5,9 +5,9 @@ from OTLMOW.OTLModel.Classes.AIMObject import AIMObject
 
 class AssetFactory:
     @staticmethod
-    def dynamic_create_instance_from_name(class_name: str):
+    def dynamic_create_instance_from_name(class_name: str, directory:str = 'OTLMOW.OTLModel.Classes'):
         try:
-            py_mod = __import__(name=f'OTLMOW.OTLModel.Classes.{class_name}', fromlist=f'Classes.{class_name}')
+            py_mod = __import__(name=f'{directory}.{class_name}', fromlist=f'{directory.split(".")[-1]}.{class_name}')
         except ModuleNotFoundError:
             try:
                 py_mod = __import__(name=f'UnitTests.GeneralTests.{class_name}', fromlist=f'GeneralTests.{class_name}')
@@ -18,18 +18,18 @@ class AssetFactory:
 
         return instance
 
-    def dynamic_create_instance_from_uri(self, class_uri: str):
+    def dynamic_create_instance_from_uri(self, class_uri: str, directory:str = 'OTLMOW.OTLModel.Classes'):
         if not class_uri.startswith('https://wegenenverkeer.data.vlaanderen.be/ns'):
             raise ValueError(
                 f'{class_uri} is not valid uri, it does not begin with "https://wegenenverkeer.data.vlaanderen.be/ns"')
         class_name = class_uri.split('#')[-1]
-        created = self.dynamic_create_instance_from_name(class_name)
+        created = self.dynamic_create_instance_from_name(class_name, directory=directory)
         if created is None:
             raise ValueError(f'{class_uri} is likely not valid uri, it does not result in a created instance')
         return created
 
     def create_aimObject_using_other_aimObject_as_template(self, orig_aimObject: AIMObject, typeURI: str = '',
-                                                           fields_to_copy: [str] = None):
+                                                           fields_to_copy: [str] = None, directory: str = 'OTLMOW.OTLModel.Classes'):
         """Creates an AIMObject, using another AIMObject as template.
         The parameter typeURI defines the type of the new AIMObject that is created.
         If omitted, it is assumed the same type as the given aimObject
@@ -47,7 +47,7 @@ class AssetFactory:
 
         if typeURI == '':
             typeURI = orig_aimObject.typeURI
-        new_asset = self.dynamic_create_instance_from_uri(typeURI)
+        new_asset = self.dynamic_create_instance_from_uri(typeURI, directory=directory)
 
         if len(fields_to_copy) == 0:
             fields_to_copy = self.get_public_field_list_from_object(orig_aimObject)
@@ -88,6 +88,7 @@ class AssetFactory:
                 continue
             orig_asset_attribute = getattr(orig_object, '_' + fieldName)
             new_object_field_copy = copy.deepcopy(orig_asset_attribute_value)
-            if orig_asset_attribute.kardinaliteit_max != '1':
-                new_object_field_copy = [new_object_field_copy]
-            setattr(new_object, fieldName, new_object_field_copy)
+
+            new_asset_attribute = getattr(new_object, '_' + fieldName)
+            new_asset_attribute.set_waarde(new_object_field_copy)
+

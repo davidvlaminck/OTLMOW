@@ -51,7 +51,7 @@ class OtlAssetJSONEncoderTests(unittest.TestCase):
         l.vermogen.waarde = float(25)
 
         json = OtlAssetJSONEncoder().encode(l)
-        expected = '{"typeURI": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Laagspanningsbord", "vermogen": 25.0}'
+        expected = '{"typeURI": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Laagspanningsbord", "vermogen": {"waarde": 25.0}}'
 
         self.assertEqual(expected, json)
 
@@ -114,7 +114,7 @@ class OtlAssetJSONEncoderTests(unittest.TestCase):
         w.masthoogte.afwijkendeHoogte.waarde = 7.8
 
         json = OtlAssetJSONEncoder().encode(w)
-        expected = '{"masthoogte": {"afwijkendeHoogte": 7.8}, "typeURI": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#WVLichtmast"}'
+        expected = '{"masthoogte": {"afwijkendeHoogte": {"waarde": 7.8}}, "typeURI": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#WVLichtmast"}'
 
         self.assertEqual(expected, json)
 

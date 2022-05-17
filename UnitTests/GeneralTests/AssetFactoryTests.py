@@ -163,7 +163,7 @@ class AssetFactoryTests(TestCase):
         test_instance.testComplexTypeMetKard[0].testStringField = 'test string'
         self.assertEqual('test string', test_instance.testComplexTypeMetKard[0].testStringField)
 
-        copy_test_instance = factory.create_aimObject_using_other_aimObject_as_template(test_instance)
+        copy_test_instance = factory.create_aimObject_using_other_aimObject_as_template(test_instance, directory='UnitTests')
         test_instance.testComplexTypeMetKard[0].testStringField = 'test string 2'
         self.assertEqual('test string 2', test_instance.testComplexTypeMetKard[0].testStringField)
         self.assertEqual('test string 1', copy_test_instance.testComplexTypeMetKard[0].testStringField)

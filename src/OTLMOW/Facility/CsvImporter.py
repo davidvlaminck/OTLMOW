@@ -27,10 +27,10 @@ class CsvImporter:
 
         try:
             with open(file_location, 'r') as file:
-                self.headers = file.readline().split(separator)
+                self.headers = file.readline()[:-1].split(separator)
                 data = []
                 for line in file:
-                    data.append(line.split(separator))
+                    data.append(line[:-1].split(separator))
                 self.data = data[1:]
 
         except Exception as ex:
@@ -55,6 +55,9 @@ class CsvImporter:
                 if row == '':
                     continue
 
+                if self.headers[index] in ['bron.typeURI', 'doel.typeURI']:
+                    continue
+
                 cardinality_indicator = self.settings['dotnotatie']['cardinality indicator']
 
                 if cardinality_indicator in self.headers[index]:
@@ -62,14 +65,14 @@ class CsvImporter:
                 else:
                     value = row
 
-                if self.headers[index] == 'geometry\n':
-                    value = value.replace('\n', '')
+                if self.headers[index] == 'geometry':
+                    value = value
                     if value == '':
                         value = None
                     self.headers[index] = 'geometry'
 
                 DotnotatieHelper.set_attribute_by_dotnotatie(instanceOrAttribute=object,
-                                                             dotnotatie=self.headers[index].replace('\n', ''),
+                                                             dotnotatie=self.headers[index],
                                                              value=value,
                                                              convert=True,
                                                              separator=self.settings['dotnotatie']['separator'],

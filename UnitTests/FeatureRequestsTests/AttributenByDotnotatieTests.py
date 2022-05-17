@@ -36,8 +36,7 @@ class AttributenByDotnotatieTests(TestCase):
         v.coordinatiewijze = ["centraal", "pulsen"]
         d = dict(v.list_attributes_and_values_by_dotnotatie())
         expected = {
-            'coordinatiewijze[0]': 'centraal',
-            'coordinatiewijze[1]': 'pulsen'
+            'coordinatiewijze[]': ['centraal', 'pulsen']
         }
         self.assertDictEqual(expected, d)
 
@@ -51,8 +50,7 @@ class AttributenByDotnotatieTests(TestCase):
         v.externeReferentie[1].externePartij = "bij externe partij 1"
         d = dict(v.list_attributes_and_values_by_dotnotatie())
         expected = {
-            'externeReferentie[0].externReferentienummer': 'externe referentie 2',
-            'externeReferentie[0].externePartij': 'bij externe partij 2',
-            'externeReferentie[1].externReferentienummer': 'externe referentie 1',
-            'externeReferentie[1].externePartij': 'bij externe partij 1'}
+            'externeReferentie[].externReferentienummer': ['externe referentie 2', 'externe referentie 1'],
+            'externeReferentie[].externePartij': ['bij externe partij 2', 'bij externe partij 1']
+        }
         self.assertDictEqual(expected, d)

@@ -12,7 +12,7 @@ class AttributenByDotnotatieTests(TestCase):
         a.toestand = 'in-gebruik'
         a.naam = 'aftakking'
         expected_result = {'naam': 'aftakking', 'toestand': 'in-gebruik'}
-        result_dict = dict(a.attributes_by_dotnotatie())
+        result_dict = dict(a.list_attributes_and_values_by_dotnotatie())
         self.assertDictEqual(expected_result, result_dict)
 
     def test_attributes_by_dotnotatie_complex_attributes(self):
@@ -22,19 +22,19 @@ class AttributenByDotnotatieTests(TestCase):
         expected_result = {
             'assetId.identificator': 'eigen_id',
             'assetId.toegekendDoor': 'AWV'}
-        self.assertDictEqual(expected_result, dict(a.attributes_by_dotnotatie()))
+        self.assertDictEqual(expected_result, dict(a.list_attributes_and_values_by_dotnotatie()))
 
     def test_attributes_by_dotnotatie_kwantitatieve_waarde(self):
         a = Aftakking()
         a.theoretischeLevensduur.waarde = 120
         expected_result = {
             'theoretischeLevensduur.waarde': 120}
-        self.assertDictEqual(expected_result, dict(a.attributes_by_dotnotatie()))
+        self.assertDictEqual(expected_result, dict(a.list_attributes_and_values_by_dotnotatie()))
 
     def test_attributes_by_dotnotatie_kard_meer_dan_1(self):
         v = Verkeersregelaar()
         v.coordinatiewijze = ["centraal", "pulsen"]
-        d = dict(v.attributes_by_dotnotatie())
+        d = dict(v.list_attributes_and_values_by_dotnotatie())
         expected = {
             'coordinatiewijze[0]': 'centraal',
             'coordinatiewijze[1]': 'pulsen'
@@ -49,7 +49,7 @@ class AttributenByDotnotatieTests(TestCase):
         v._externeReferentie.add_empty_value()
         v.externeReferentie[1].externReferentienummer = "externe referentie 1"
         v.externeReferentie[1].externePartij = "bij externe partij 1"
-        d = dict(v.attributes_by_dotnotatie())
+        d = dict(v.list_attributes_and_values_by_dotnotatie())
         expected = {
             'externeReferentie[0].externReferentienummer': 'externe referentie 2',
             'externeReferentie[0].externePartij': 'bij externe partij 2',

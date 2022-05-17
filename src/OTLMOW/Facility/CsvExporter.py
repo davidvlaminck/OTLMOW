@@ -41,16 +41,30 @@ class CsvExporter:
         return self.create_data_from_objects()
 
     def create_data_from_objects(self, list_of_objects: list = []) -> [[str]]:
+
+        otlmow_settings = {
+            'separator' : DotnotatieHelper.separator,
+            'cardinality_separator' : DotnotatieHelper.cardinality_separator,
+            'cardinality_indicator' : DotnotatieHelper.cardinality_indicator,
+            'waarde_shortcut_applicable': DotnotatieHelper.waarde_shortcut_applicable
+        }
+
+        DotnotatieHelper.set_parameters_to_class_vars(cardinality_indicator=self.settings['dotnotatie']['cardinality indicator'],
+                                                      waarde_shortcut_applicable=self.settings['dotnotatie']['waarde_shortcut_applicable'],
+                                                      separator =self.settings['dotnotatie']['separator'])
+
         csv_data = []
         if list_of_objects is None or list_of_objects == []:
             raise ValueError('There is no data to export to a csv file')
 
-        self.csv_headers = ['typeURI', 'assetId.identificator', 'assetId.toegekendDoor']
+        self.csv_headers = ['typeURI', 'assetId.identificator'.replace('.', self.settings['dotnotatie']['separator']),
+                            'assetId.toegekendDoor'.replace('.', self.settings['dotnotatie']['separator'])]
 
         for object in list_of_objects:
             if isinstance(object, AIMObject):
                 if object.assetId.identificator is None or object.assetId.identificator == '':
-                    raise ValueError(f'Not possible to export AIM Objects without a valid assetId.identificator. This is missing for object : {object}')
+                    raise ValueError(
+                        f'Not possible to export AIM Objects without a valid assetId.identificator. This is missing for object : {object}')
 
                 csv_data.append(self.create_csv_row_for_AIMObject(object))
 
@@ -58,48 +72,30 @@ class CsvExporter:
 
         csv_data = self.append_with_nones(csv_data)
 
+        DotnotatieHelper.set_parameters_to_class_vars(cardinality_indicator=otlmow_settings['cardinality_indicator'],
+                                                      waarde_shortcut_applicable=otlmow_settings['waarde_shortcut_applicable'],
+                                                      separator=otlmow_settings['separator'])
+
         return csv_data
 
-        for record in self.data:
-            object = AssetFactory().dynamic_create_instance_from_uri(record[type_index])
-            list_of_objects.append(object)
-            for index, row in enumerate(record):
-                if index == type_index:
-                    continue
-                if row == '':
-                    continue
+        DotnotatieHelper.set_attribute_by_dotnotatie(instanceOrAttribute=object,
+                                                     dotnotatie=self.headers[index],
+                                                     value=value,
+                                                     convert=True,
+                                                     separator=self.settings['dotnotatie']['separator'],
+                                                     cardinality_indicator=cardinality_indicator,
+                                                     waarde_shortcut_applicable=self.settings['dotnotatie'][
+                                                         'waarde_shortcut_applicable'])
 
-                if self.headers[index] in ['bron.typeURI', 'doel.typeURI']:
-                    continue
-
-                cardinality_indicator = self.settings['dotnotatie']['cardinality indicator']
-
-                if cardinality_indicator in self.headers[index]:
-                    value = row.split(self.settings['dotnotatie']['cardinality separator'])
-                else:
-                    value = row
-
-                if self.headers[index] == 'geometry':
-                    value = value
-                    if value == '':
-                        value = None
-                    self.headers[index] = 'geometry'
-
-                DotnotatieHelper.set_attribute_by_dotnotatie(instanceOrAttribute=object,
-                                                             dotnotatie=self.headers[index],
-                                                             value=value,
-                                                             convert=True,
-                                                             separator=self.settings['dotnotatie']['separator'],
-                                                             cardinality_indicator=cardinality_indicator,
-                                                             waarde_shortcut_applicable=self.settings['dotnotatie'][
-                                                                 'waarde_shortcut_applicable'])
-
-    def create_csv_row_for_AIMObject(self, object):
-        values_list = [object.typeURI, object.assetId.identificator, object.assetId.toegekendDoor]
+    def create_csv_row_for_AIMObject(self, aimobject):
+        values_list = [aimobject.typeURI, aimobject.assetId.identificator, aimobject.assetId.toegekendDoor]
         while len(values_list) < len(self.csv_headers):
             values_list.append(None)
 
-        for attribute, value in object.attributes_by_dotnotatie():
+        for attribute, value in aimobject.list_attributes_and_values_by_dotnotatie(
+                waarde_shortcut=self.settings['dotnotatie']['waarde_shortcut_applicable'],
+                separator=self.settings['dotnotatie']['separator'],
+                cardinality_indicator=self.settings['dotnotatie']['cardinality indicator']):
             if attribute in self.csv_headers[1:3]:
                 continue
 

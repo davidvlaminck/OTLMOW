@@ -51,7 +51,8 @@
                 "cardinality separator": "|",
                 "cardinality indicator": "[]",
                 "waarde_shortcut_applicable": true
-            }
+            },
+            "delimiter": ";"
         },
         {
             "name": "xslx",

@@ -95,12 +95,12 @@ class CsvExporterTests(unittest.TestCase):
             self.assertEqual('assetId.identificator', csv_data[0][1])
             self.assertEqual('assetId.toegekendDoor', csv_data[0][2])
             self.assertEqual('testBooleanField', csv_data[0][3])
-            self.assertEqual('testComplexType.testKwantWrd.waarde', csv_data[0][4])  # TODO fix
+            self.assertEqual('testComplexType.testKwantWrd', csv_data[0][4])
             self.assertEqual('testComplexType.testStringField', csv_data[0][5])
             self.assertEqual('testDecimalNumberField', csv_data[0][6])
             self.assertEqual('testKeuzelijst', csv_data[0][7])
             self.assertEqual('testComplexType.testComplexType2.testStringField', csv_data[0][8])
-            self.assertEqual('testKeuzelijstMetKard[0]', csv_data[0][9])  # TODO fix
+            self.assertEqual('testKeuzelijstMetKard[]', csv_data[0][9])
 
         with self.subTest('verify asset 1'):
             self.assertEqual('https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#AllCasesTestClass', csv_data[1][0])
@@ -126,3 +126,43 @@ class CsvExporterTests(unittest.TestCase):
             self.assertEqual('string in complex veld binnenin complex veld', csv_data[2][8])
             self.assertEqual(['waarde-2'], csv_data[2][9])
 
+    def test_create_data_from_objects_different_dotnotatie_settings(self):
+        otl_facility = OTLFacility(None, settings_path='C:\\resources\\settings_OTLMOW.json')
+        exporter = CsvExporter(settings=otl_facility.settings)
+        exporter.settings = {
+            "name": "csv",
+            "dotnotatie": {
+                "separator": "+",
+                "cardinality separator": "$",
+                "cardinality indicator": "()",
+                "waarde_shortcut_applicable": True
+            }
+        }
+
+        list_of_objects = [AllCasesTestClass(), AllCasesTestClass()]
+        list_of_objects[0].assetId.identificator = '0'
+        list_of_objects[0].testDecimalNumberField = 1.0
+        list_of_objects[0].testBooleanField = True
+        list_of_objects[0].testKeuzelijst = 'waarde-1'
+        list_of_objects[0].testComplexType.testStringField = 'string in complex veld'
+        list_of_objects[0].testComplexType.testKwantWrd.waarde = 2.0
+
+        list_of_objects[1].assetId.identificator = '1'
+        list_of_objects[1].testBooleanField = False
+        list_of_objects[1].testKeuzelijstMetKard = ['waarde-2']
+        list_of_objects[1].testDecimalNumberField = 2.5
+        list_of_objects[1].testComplexType.testComplexType2.testStringField = 'string in complex veld binnenin complex veld'
+
+        csv_data = exporter.create_data_from_objects(list_of_objects)
+
+        with self.subTest('verify headers'):
+            self.assertEqual('typeURI', csv_data[0][0])
+            self.assertEqual('assetId+identificator', csv_data[0][1])
+            self.assertEqual('assetId+toegekendDoor', csv_data[0][2])
+            self.assertEqual('testBooleanField', csv_data[0][3])
+            self.assertEqual('testComplexType.testKwantWrd', csv_data[0][4])  # TODO fix
+            self.assertEqual('testComplexType+testStringField', csv_data[0][5])
+            self.assertEqual('testDecimalNumberField', csv_data[0][6])
+            self.assertEqual('testKeuzelijst', csv_data[0][7])
+            self.assertEqual('testComplexType.testComplexType2+testStringField', csv_data[0][8])  # TODO fix
+            self.assertEqual('testKeuzelijstMetKard()', csv_data[0][9])

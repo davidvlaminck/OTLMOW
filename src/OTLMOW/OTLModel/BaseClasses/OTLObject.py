@@ -72,8 +72,9 @@ class OTLObjectHelper:
         return lines
 
     def attributes_by_dotnotatie(self, asset=None):
-        var = vars(asset)
-        for k, v in vars(asset).items():
+        sorted_attributes = sorted(list(vars(asset).items()), key=lambda i: i[0])
+
+        for k, v in sorted_attributes:
             if k in ['_parent', '_geometry_types']:
                 continue
             if v.waarde is None:

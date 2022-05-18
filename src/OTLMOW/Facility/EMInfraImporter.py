@@ -28,6 +28,22 @@ class EMInfraImporter:
             asset_list.append(self.decoder.decodeJsonObject(obj))
         return asset_list
 
+    def import_assetrelaties_from_webservice_by_assetuuidd(self, asset_uuids: [str]) -> [OTLObject]:
+        url = "eminfra/core/api/otl/assetrelaties/search"
+        asset_uuids_string = '","'.join(asset_uuids)
+        body = '{"filters": { "asset": ' + f'["{asset_uuids_string}"]' + ' }}'
+        json_data = json.loads(body)
+        response = self.requester.post(url, json=json_data)
+
+        data = response.content.decode("utf-8")
+        jsonobj = json.loads(data)
+        obj_list = jsonobj["@graph"]
+
+        asset_list = []
+        for obj in obj_list:
+            asset_list.append(self.decoder.decodeJsonObject(obj))
+        return asset_list
+
     def import_assetrelaties_from_webservice_by_assetuuid(self, asset_uuid: str) -> [OTLObject]:
         url = "eminfra/core/api/otl/assetrelaties/search"
         body = '{"filters": { "asset": ' + f'["{asset_uuid}"]' + ' }}'

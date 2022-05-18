@@ -1,6 +1,7 @@
 import unittest
 from datetime import datetime
 
+from AllCasesTestClass import AllCasesTestClass
 from OTLMOW.Facility.OTLFacility import OTLFacility
 from OTLMOW.ModelGenerator.OtlAssetJSONEncoder import OtlAssetJSONEncoder
 from OTLMOW.OTLModel.Classes.Aftakking import Aftakking
@@ -15,74 +16,109 @@ from OTLMOW.OTLModel.Datatypes.DtuWvLichtmastBevsToestelMethode import DtuWvLich
 class OtlAssetJSONEncoderTests(unittest.TestCase):
     def test_init_encoder(self):
         otl_facility = OTLFacility(None, settings_path='C:\\resources\\settings_OTLMOW.json')
-
         encoder = OtlAssetJSONEncoder(settings=otl_facility.settings)
         self.assertIsNotNone(encoder)
 
-
-
-    def test_JsonEncode(self):
-        # create testable OTLAsset
-        a = Aftakking()
-        a.naam = "aftakking"
-        a.notitie = "notitie aftakking"
-        a.isActief = True
-        a.toestand = "in-ontwerp"
-
-        encoder = OtlAssetJSONEncoder()
-        js = encoder.encode(a)
-
-        self.assertEqual(
-            '{"isActief": true, "naam": "aftakking", "notitie": "notitie aftakking", "toestand": "in-ontwerp", "typeURI": '
-            '"https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Aftakking"}',
-            js)
-
-    def test_JsonEncode_Deprecated(self):
-        e = Exoten()
-        e.isActief = True
-
-        json = OtlAssetJSONEncoder().encode(e)
-        expected = '{"isActief": true, "typeURI": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Exoten"}'
-
-        self.assertEqual(expected, json)
-
     def test_JsonEncode_Boolean(self):
-        a = Aftakking()
-        a.isActief = True
+        otl_facility = OTLFacility(None, settings_path='C:\\resources\\settings_OTLMOW.json')
+        encoder = OtlAssetJSONEncoder(settings=otl_facility.settings)
 
-        json = OtlAssetJSONEncoder().encode(a)
-        expected = '{"isActief": true, "typeURI": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Aftakking"}'
+        instance = AllCasesTestClass()
+        instance.testBooleanField = True
+        json_instance = encoder.encode(instance)
+        expected = '{"testBooleanField": true, ' \
+                   '"typeURI": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#AllCasesTestClass"}'
 
-        self.assertEqual(expected, json)
+        self.assertEqual(expected, json_instance)
 
-    def test_JsonEncode_KwantWrd_Decimal(self):
-        l = Laagspanningsbord()
-        l.vermogen.waarde = float(25)
+    def test_JsonEncode_Keuzelijst(self):
+        otl_facility = OTLFacility(None, settings_path='C:\\resources\\settings_OTLMOW.json')
+        encoder = OtlAssetJSONEncoder(settings=otl_facility.settings)
 
-        json = OtlAssetJSONEncoder().encode(l)
-        expected = '{"typeURI": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Laagspanningsbord", "vermogen": {"waarde": 25.0}}'
+        instance = AllCasesTestClass()
+        instance.testKeuzelijst = 'waarde-2'
+        json_instance = encoder.encode(instance)
+        expected = '{"testKeuzelijst": "waarde-2", ' \
+                   '"typeURI": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#AllCasesTestClass"}'
 
-        self.assertEqual(expected, json)
+        self.assertEqual(expected, json_instance)
 
-    def test_JsonEncode_ComplexType_DtcIdentificator(self):
-        a = Aftakking()
-        a.assetId.identificator = 'eigen_id'
-        a.assetId.toegekendDoor = 'Python'
+    def test_JsonEncode_UnionType(self):
+        otl_facility = OTLFacility(None, settings_path='C:\\resources\\settings_OTLMOW.json')
+        encoder = OtlAssetJSONEncoder(settings=otl_facility.settings)
 
-        json = OtlAssetJSONEncoder().encode(a)
-        expected = '{"assetId": {"identificator": "eigen_id", "toegekendDoor": "Python"}, "typeURI": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Aftakking"}'
+        instance = AllCasesTestClass()
+        instance.testUnionType.unionString = 'union waarde'
+        json_instance = encoder.encode(instance)
+        expected = '{"testUnionType": {"unionString": "union waarde"}, ' \
+                   '"typeURI": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#AllCasesTestClass"}'
+        self.assertEqual(expected, json_instance)
 
-        self.assertEqual(expected, json)
+        instance.testUnionType.unionKwantWrd.waarde = 1.0
+        json_instance = encoder.encode(instance)
+        expected = '{"testUnionType": 1.0, ' \
+                   '"typeURI": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#AllCasesTestClass"}'
+        self.assertEqual(expected, json_instance)
 
-    def test_JsonEncode_KeuzelijstType_KlAIMToestand(self):
-        a = Aftakking()
-        a.toestand = 'in-gebruik'
+    def test_JsonEncode_ComplexType(self):
+        otl_facility = OTLFacility(None, settings_path='C:\\resources\\settings_OTLMOW.json')
+        encoder = OtlAssetJSONEncoder(settings=otl_facility.settings)
 
-        json = OtlAssetJSONEncoder().encode(a)
-        expected = '{"toestand": "in-gebruik", "typeURI": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Aftakking"}'
+        instance = AllCasesTestClass()
+        instance.testComplexType.testStringField = 'string'
+        instance.testComplexType.testBooleanField = True
+        instance.testComplexType.testComplexType2.testStringField = 'string niveau 2'
+        json_instance = encoder.encode(instance)
+        expected = '{"testComplexType": {"testBooleanField": true, "testStringField": "string", ' \
+                   '"testComplexType2": {"testStringField": "string niveau 2"}}, ' \
+                   '"typeURI": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#AllCasesTestClass"}'
 
-        self.assertEqual(expected, json)
+        self.assertEqual(expected, json_instance)
 
+    def test_JsonEncode_StringMetKard(self):
+        otl_facility = OTLFacility(None, settings_path='C:\\resources\\settings_OTLMOW.json')
+        encoder = OtlAssetJSONEncoder(settings=otl_facility.settings)
+
+        instance = AllCasesTestClass()
+        instance.testStringFieldMetKard = ['a', 'b', 'c']
+        json_instance = encoder.encode(instance)
+        expected = '{"testStringFieldMetKard": ["a", "b", "c"], ' \
+                   '"typeURI": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#AllCasesTestClass"}'
+
+        self.assertEqual(expected, json_instance)
+
+    def test_JsonEncode_KwantWrd(self):
+        otl_facility = OTLFacility(None, settings_path='C:\\resources\\settings_OTLMOW.json')
+        encoder = OtlAssetJSONEncoder(settings=otl_facility.settings)
+
+        instance = AllCasesTestClass()
+        instance.testKwantWrd.waarde = 1.0
+        json_instance = encoder.encode(instance)
+        expected = '{"testKwantWrd": 1.0, ' \
+                   '"typeURI": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#AllCasesTestClass"}'
+
+        self.assertEqual(expected, json_instance)
+
+    def test_JsonEncode_ComplexTypeMetKard(self):
+        otl_facility = OTLFacility(None, settings_path='C:\\resources\\settings_OTLMOW.json')
+        encoder = OtlAssetJSONEncoder(settings=otl_facility.settings)
+
+        instance = AllCasesTestClass()
+        instance.testComplexTypeMetKard[0].testStringField = 'string'
+        instance.testComplexTypeMetKard[0].testStringFieldMetKard = ['lijst', 'waardes']
+        instance._testComplexTypeMetKard.add_empty_value()
+        instance.testComplexTypeMetKard[1].testStringField = 'string 2'
+        instance.testComplexTypeMetKard[1].testStringFieldMetKard = ['lijst2', 'waardes']
+        json_instance = encoder.encode(instance)
+        expected = '{"testComplexTypeMetKard": [{"testStringField": "string", ' \
+                   '"testStringFieldMetKard": ["lijst", "waardes"]}, ' \
+                   '{"testStringField": "string 2", ' \
+                   '"testStringFieldMetKard": ["lijst2", "waardes"]}], ' \
+                   '"typeURI": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#AllCasesTestClass"}'
+
+        self.assertEqual(expected, json_instance)
+
+    @unittest.skip
     def test_JsonEncode_Date_DatumOprichtingObject(self):
         a = Aftakking()
         a.datumOprichtingObject = datetime(2022, 1, 20)
@@ -91,61 +127,3 @@ class OtlAssetJSONEncoderTests(unittest.TestCase):
         expected = '{"datumOprichtingObject": "2022-01-20", "typeURI": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Aftakking"}'
 
         self.assertEqual(expected, json)
-
-    def test_JsonEncode_Keuzelijst_Kardinaliteit_Coordinatiewijze(self):
-        v = Verkeersregelaar()
-        v.coordinatiewijze = ["centraal", "pulsen"]
-
-        json = OtlAssetJSONEncoder().encode(v)
-        expected = '{"coordinatiewijze": ["centraal", "pulsen"], "typeURI": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Verkeersregelaar"}'
-
-        self.assertEqual(expected, json)
-
-    def test_JsonEncode_Complex_Kardinaliteit_ExterneReferentie(self):
-        v = Verkeersregelaar()
-        v.externeReferentie = []
-
-        v.externeReferentie.append(DtcExterneReferentie.waardeObject())
-        v.externeReferentie[0].externReferentienummer = "externe referentie 2"
-        v.externeReferentie[0].externePartij = "bij externe partij 2"
-
-        v.externeReferentie.append(DtcExterneReferentie.waardeObject())
-        v.externeReferentie[1].externReferentienummer = "externe referentie 1"
-        v.externeReferentie[1].externePartij = "bij externe partij 1"
-
-        json = OtlAssetJSONEncoder().encode(v)
-        expected = '{"externeReferentie": [{"externReferentienummer": "externe referentie 2", "externePartij": "bij externe partij 2"}, {"externReferentienummer": "externe referentie 1", "externePartij": "bij externe partij 1"}], "typeURI": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Verkeersregelaar"}'
-
-        self.assertEqual(expected, json)
-
-    def test_JsonEncode_Union_DtuLichtmasthoogte(self):
-        w = WVLichtmast()
-        w.masthoogte.afwijkendeHoogte.waarde = 7.8
-
-        json = OtlAssetJSONEncoder().encode(w)
-        expected = '{"masthoogte": {"afwijkendeHoogte": {"waarde": 7.8}}, "typeURI": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#WVLichtmast"}'
-
-        self.assertEqual(expected, json)
-
-        w.masthoogte.standaardHoogte = '10.00'
-
-        json = OtlAssetJSONEncoder().encode(w)
-        expected = '{"masthoogte": {"standaardHoogte": "10.00"}, "typeURI": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#WVLichtmast"}'
-
-        self.assertEqual(expected, json)
-
-    def test_JsonEncode_Union_Kardinaliteit_DtuWvLichtmastBevsToestelMethode(self):
-        w = WVLichtmast()
-        w.bevestigingToestellen = []
-        w.bevestigingToestellen.append(DtuWvLichtmastBevsToestelMethode.waardeObject())
-        w.bevestigingToestellen[0].standaardMethode = "mediaanbalk-H"
-
-        json = OtlAssetJSONEncoder().encode(w)
-        expected = '{"bevestigingToestellen": [{"standaardMethode": "mediaanbalk-H"}], "typeURI": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#WVLichtmast"}'
-
-        self.assertEqual(expected, json)
-
-
-# union type
-# list of complex
-# list of KWantWrd?

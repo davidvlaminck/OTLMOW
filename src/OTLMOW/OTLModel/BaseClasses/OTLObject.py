@@ -8,7 +8,7 @@ class OTLObjectHelper:
     def create_dict_from_asset(self, asset):
         return self.clean_dict(self.recursive_create_dict_from_asset(asset))
 
-    def recursive_create_dict_from_asset(self, asset=None):
+    def recursive_create_dict_from_asset(self, asset=None, waarde_shortcut=False):
         if isinstance(asset, list) and not isinstance(asset, dict):
             l = []
             for item in asset:
@@ -24,8 +24,8 @@ class OTLObjectHelper:
                 continue
             if v.waarde is not None and v.waarde != []:
                 if v.field.waardeObject is not None:
-                    if v.field.waarde_shortcut_applicable:
-                        dict_item = self.recursive_create_dict_from_asset(asset=v.waarde)
+                    if waarde_shortcut and v.field.waarde_shortcut_applicable:
+                        dict_item = v.waarde.waarde
                         if dict_item is not None:
                             d[k[1:]] = dict_item
                     else:
@@ -122,8 +122,8 @@ class OTLObject:
                     warnings.warn(message=f'used a class that is deprecated since version {self.deprecated_version}',
                                   category=DeprecationWarning)
 
-    def create_dict_from_asset(self, exclude_nested_attributes=False):
-        return OTLObjectHelper().recursive_create_dict_from_asset(asset=self)
+    def create_dict_from_asset(self, exclude_nested_attributes=False, waarde_shortcut=False):
+        return OTLObjectHelper().recursive_create_dict_from_asset(asset=self, waarde_shortcut=waarde_shortcut)
 
     def list_attributes_and_values_by_dotnotatie(self, waarde_shortcut: bool = False):
         for k, v in OTLObjectHelper().list_attributes_and_values_by_dotnotatie(asset=self,

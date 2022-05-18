@@ -18,14 +18,10 @@ class OtlAssetJSONEncoder(json.JSONEncoder):
             raise ValueError("Unable to find json in file formats settings")
 
         self.settings = json_settings
-        self.headers = []
-        self.data = [[]]
-        self.objects = []
-        self.csv_headers = []
 
     def default(self, otlObject):
         if isinstance(otlObject, OTLObject):
-            d = otlObject.create_dict_from_asset()
+            d = otlObject.create_dict_from_asset(waarde_shortcut=self.settings['dotnotatie']['waarde_shortcut_applicable'])
             if hasattr(otlObject, 'typeURI'):
                 d['typeURI'] = otlObject.typeURI
             od = OrderedDict(sorted(d.items()))

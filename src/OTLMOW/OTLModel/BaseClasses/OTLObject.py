@@ -5,14 +5,16 @@ from OTLMOW.Facility.DotnotatieHelper import DotnotatieHelper
 
 
 class OTLObjectHelper:
-    def create_dict_from_asset(self, asset):
-        return self.clean_dict(self.recursive_create_dict_from_asset(asset))
+    @classmethod
+    def create_dict_from_asset(cls, asset):
+        return cls.clean_dict(cls.recursive_create_dict_from_asset(asset))
 
-    def recursive_create_dict_from_asset(self, asset=None, waarde_shortcut=False):
+    @classmethod
+    def recursive_create_dict_from_asset(cls, asset=None, waarde_shortcut=False):
         if isinstance(asset, list) and not isinstance(asset, dict):
             l = []
             for item in asset:
-                dict_item = self.recursive_create_dict_from_asset(asset=item)
+                dict_item = cls.recursive_create_dict_from_asset(asset=item)
                 if dict_item is not None:
                     l.append(dict_item)
             if len(l) > 0:
@@ -29,7 +31,7 @@ class OTLObjectHelper:
                         if dict_item is not None:
                             d[k[1:]] = dict_item
                     else:
-                        dict_item = self.recursive_create_dict_from_asset(asset=v.waarde)
+                        dict_item = cls.recursive_create_dict_from_asset(asset=v.waarde)
                         if dict_item is not None:
                             d[k[1:]] = dict_item
                 else:
@@ -42,40 +44,44 @@ class OTLObjectHelper:
                     else:
                         d[k[1:]] = v.waarde
 
-        d = self.clean_dict(d)
+        d = cls.clean_dict(d)
         if len(d.items()) > 0:
             return d
 
-    def clean_dict(self, d):
+    @classmethod
+    def clean_dict(cls, d):
         """Recursively remove None values and empty dicts from input dict"""
         for k in list(d):
             v = d[k]
             if isinstance(v, dict):
-                self.clean_dict(v)
+                cls.clean_dict(v)
                 if len(v.items()) == 0:
                     del d[k]
             if v is None:
                 del d[k]
         return d
 
-    def build_string_version(self, asset, indent=4, use_dotnotatie=False) -> str:
+    @classmethod
+    def build_string_version(cls, asset, indent=4, use_dotnotatie=False) -> str:
         lines = []
-        for dotnotatie, waarde in self.list_attributes_and_values_by_dotnotatie(asset):
+        for dotnotatie, waarde in cls.list_attributes_and_values_by_dotnotatie(asset):
             lines.append(f'{dotnotatie} : {waarde}')
         return '\n'.join(lines)
 
-    def make_string_version_from_dict(self, d, level=0, indent=4) -> []:
+    @classmethod
+    def make_string_version_from_dict(cls, d, level=0, indent=4) -> []:
         lines = []
         for key in sorted(d.keys()):
             value = d[key]
             if isinstance(value, dict):
                 lines.append(' ' * indent * level + f'{key} :')
-                lines.extend(self.make_string_version_from_dict(value, level=level + 1, indent=indent))
+                lines.extend(cls.make_string_version_from_dict(value, level=level + 1, indent=indent))
             else:
                 lines.append(' ' * indent * level + f'{key} : {value}')
         return lines
 
-    def list_attributes_and_values_by_dotnotatie(self, asset=None, waarde_shortcut: bool = False):
+    @classmethod
+    def list_attributes_and_values_by_dotnotatie(cls, asset=None, waarde_shortcut: bool = False):
         sorted_attributes = sorted(list(vars(asset).items()), key=lambda i: i[0])
 
         for k, v in sorted_attributes:
@@ -89,8 +95,8 @@ class OTLObjectHelper:
                     lijsten = []
                     for list_item in v.waarde:
                         lijsten.append(
-                            list(self.list_attributes_and_values_by_dotnotatie(asset=list_item,
-                                                                               waarde_shortcut=waarde_shortcut)))
+                            list(cls.list_attributes_and_values_by_dotnotatie(asset=list_item,
+                                                                              waarde_shortcut=waarde_shortcut)))
 
                     combined_dict = {}
                     for lijst in lijsten:
@@ -104,12 +110,13 @@ class OTLObjectHelper:
                     for dict_k in sorted(combined_dict.keys()):
                         yield dict_k, combined_dict[dict_k]
                 else:
-                    for k1, v1 in self.list_attributes_and_values_by_dotnotatie(asset=v.waarde, waarde_shortcut=waarde_shortcut):
+                    for k1, v1 in cls.list_attributes_and_values_by_dotnotatie(asset=v.waarde, waarde_shortcut=waarde_shortcut):
                         yield k1, v1
 
             else:
                 dotnotatie = DotnotatieHelper.get_dotnotatie(v, waarde_shortcut_applicable=waarde_shortcut)
                 yield dotnotatie, v.waarde
+
 
 class OTLObject:
     def __init__(self):
@@ -123,13 +130,13 @@ class OTLObject:
                                   category=DeprecationWarning)
 
     def create_dict_from_asset(self, exclude_nested_attributes=False, waarde_shortcut=False):
-        return OTLObjectHelper().recursive_create_dict_from_asset(asset=self, waarde_shortcut=waarde_shortcut)
+        return OTLObjectHelper.recursive_create_dict_from_asset(asset=self, waarde_shortcut=waarde_shortcut)
 
     def list_attributes_and_values_by_dotnotatie(self, waarde_shortcut: bool = False):
-        for k, v in OTLObjectHelper().list_attributes_and_values_by_dotnotatie(asset=self,
-                                                                               waarde_shortcut=waarde_shortcut):
+        for k, v in OTLObjectHelper.list_attributes_and_values_by_dotnotatie(asset=self,
+                                                                             waarde_shortcut=waarde_shortcut):
             yield k, v
 
     def __str__(self, use_dotnotatie=False):
         return f'information about {self.__class__.__name__} {self.__hash__()}:\n' + \
-               OTLObjectHelper().build_string_version(asset=self, indent=4, use_dotnotatie=use_dotnotatie)
+               OTLObjectHelper.build_string_version(asset=self, indent=4, use_dotnotatie=use_dotnotatie)

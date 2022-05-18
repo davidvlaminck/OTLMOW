@@ -60,7 +60,8 @@ class EMInfraDecoder:
 
         return instance
 
-    def trim_keys_from_ld_notation(self, value):
+    @classmethod
+    def trim_keys_from_ld_notation(cls, value):
         if isinstance(value, dict):
             for k, v in set(value.items()):
                 value[k.split('.')[-1]] = v
@@ -68,18 +69,18 @@ class EMInfraDecoder:
         if isinstance(value, list):
             for item in value:
                 if isinstance(item, dict):
-                    self.trim_keys_from_ld_notation(item)
+                    cls.trim_keys_from_ld_notation(item)
         return value
 
-    def trim_keuzelijst_from_ld_notation(self, value):
+    @classmethod
+    def trim_keuzelijst_from_ld_notation(cls, value):
         if isinstance(value, str) and 'https://wegenenverkeer.data.vlaanderen.be/id/concept' in value:
             return value.split('/')[-1]
         elif isinstance(value, dict):
             for k, v in set(value.items()):
-                value[k] = self.trim_keuzelijst_from_ld_notation(v)
+                value[k] = cls.trim_keuzelijst_from_ld_notation(v)
         elif isinstance(value, list):
-            for item in value:
-                i = list.index(value, item)
-                value[i] = self.trim_keys_from_ld_notation(item)
+            for index, item in enumerate(value):
+                value[index] = cls.trim_keys_from_ld_notation(item)
         return value
 

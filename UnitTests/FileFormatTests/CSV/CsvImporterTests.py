@@ -1,7 +1,7 @@
 import os
 import unittest
 
-from OTLMOW.Facility.CsvImporter import CsvImporter
+from OTLMOW.Facility.FileFormats.CsvImporter import CsvImporter
 from OTLMOW.Facility.OTLFacility import OTLFacility
 from OTLMOW.OTLModel.Classes.Verkeersregelaar import Verkeersregelaar
 

@@ -2,8 +2,8 @@ import os
 import unittest
 
 from AllCasesTestClass import AllCasesTestClass
-from OTLMOW.Facility.CsvExporter import CsvExporter
-from OTLMOW.Facility.CsvImporter import CsvImporter
+from OTLMOW.Facility.FileFormats.CsvExporter import CsvExporter
+from OTLMOW.Facility.FileFormats.CsvImporter import CsvImporter
 from OTLMOW.Facility.OTLFacility import OTLFacility
 
 ROOT_DIR = os.path.dirname(os.path.abspath(__file__))

@@ -1,7 +1,7 @@
 import json
 
+from OTLMOW.Facility.AssetFactory import AssetFactory
 from OTLMOW.Facility.ToOTLDecoder import ToOTLDecoder
-from OTLMOW.OTLModel.ClassLoader import ClassLoader
 
 
 class DavieDecoder(ToOTLDecoder):
@@ -14,7 +14,7 @@ class DavieDecoder(ToOTLDecoder):
             if 'https://wegenenverkeer.data.vlaanderen.be/ns' not in typeURI:
                 raise ValueError('typeURI should start with "https://wegenenverkeer.data.vlaanderen.be/ns" to use this decoder')
 
-            instance = ClassLoader().dynamic_create_instance_from_uri(typeURI)
+            instance = AssetFactory().dynamic_create_instance_from_uri(typeURI)
             lijst.append(instance)
 
             for key, value in obj.items():

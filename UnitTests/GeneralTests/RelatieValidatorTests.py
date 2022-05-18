@@ -1,5 +1,6 @@
 import unittest
 
+from OTLMOW.Facility.AssetFactory import AssetFactory
 from OTLMOW.Facility.OTLFacility import OTLFacility
 from OTLMOW.Loggers.NoneLogger import NoneLogger
 from OTLMOW.ModelGenerator.BaseClasses.GeldigeRelatie import GeldigeRelatie
@@ -14,7 +15,6 @@ from OTLMOW.OTLModel.Classes.Hoofdschakelaar import Hoofdschakelaar
 from OTLMOW.OTLModel.Classes.RelatieObject import RelatieObject
 from OTLMOW.OTLModel.Classes.Stroomkring import Stroomkring
 from OTLMOW.OTLModel.Classes.Voedt import Voedt
-from OTLMOW.OTLModel.ClassLoader import ClassLoader
 
 
 class GeldigeRelatieLijst:
@@ -36,7 +36,7 @@ class UriToClassNameLijst:
 
 class GeldigeRelatie2:
     def __init__(self, bron: str, doel: str, relatie: str):
-        classLoader = ClassLoader()
+        classLoader = AssetFactory()
 
         bronClassName = UriToClassNameLijst().dict[bron]
         bronInstance = classLoader.dynamic_create_instance_from_name(bronClassName)

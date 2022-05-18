@@ -1,5 +1,5 @@
-﻿from OTLMOW.Facility.ToOTLDecoder import ToOTLDecoder
-from OTLMOW.OTLModel.ClassLoader import ClassLoader
+﻿from OTLMOW.Facility.AssetFactory import AssetFactory
+from OTLMOW.Facility.ToOTLDecoder import ToOTLDecoder
 
 
 class StandaardPost:
@@ -12,12 +12,12 @@ class StandaardPost:
         self.mappings = mappings
 
     def get_assets_from_post(self):
-        class_loader = ClassLoader()
+        asset_factory = AssetFactory()
         lijst = []
         for mapping in self.mappings:
             asset = next((c for c in lijst if c.typeURI == mapping.typeURI), None)
             if asset is None:
-                asset = class_loader.dynamic_create_instance_from_uri(mapping.typeURI)
+                asset = asset_factory.dynamic_create_instance_from_uri(mapping.typeURI)
                 lijst.append(asset)
             if mapping.defaultWaarde != '':
                 ToOTLDecoder().set_attribute_by_dotnotatie(asset, mapping.dotnotatie, mapping.defaultWaarde)

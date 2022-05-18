@@ -130,6 +130,13 @@ class DavieDecoderTests(TestCase):
         self.assertTrue(isinstance(lijstObjecten[0], Netwerkpoort))
         self.assertIsNone(lijstObjecten[0].naam)
 
+    def test_decode_empty_value(self):
+        davie_decoder = DavieDecoder()
+        lijstObjecten = davie_decoder.decode(
+            '[{"typeURI": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Netwerkpoort", "naam": ""}]')
+        self.assertTrue(isinstance(lijstObjecten[0], Netwerkpoort))
+        self.assertIsNone(lijstObjecten[0].naam)
+
     def test_decode_geometry(self):
         davie_decoder = DavieDecoder()
         lijstObjecten = davie_decoder.decode(

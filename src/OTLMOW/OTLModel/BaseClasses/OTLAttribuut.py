@@ -142,13 +142,11 @@ class OTLAttribuut(AttributeInfo):
             self.waarde = None
             return
 
-        # fix cardinality locally
-        if self.kardinaliteit_max == '*':
-            kardinaliteit_max = math.inf
-        else:
-            kardinaliteit_max = int(self.kardinaliteit_max)
-
-        if kardinaliteit_max > 1:
+        if self.kardinaliteit_max != '1':
+            if self.kardinaliteit_max == '*':
+                kardinaliteit_max = math.inf
+            else:
+                kardinaliteit_max = int(self.kardinaliteit_max)
             self._perform_cardinality_check(owner, value, kardinaliteit_max)
             for el_value in value:
                 try:
@@ -172,13 +170,13 @@ class OTLAttribuut(AttributeInfo):
                 if self.field.validate(value=converted_value, attribuut=self):
                     self.waarde = converted_value
                 else:
-                    raise ValueError(f'Could not assign the best effort converted value to {owner.__class__.__name__}.{self.naam}')
+                    raise ValueError(
+                        f'Could not assign the best effort converted value to {owner.__class__.__name__}.{self.naam}')
 
         # check if kwant Wrd inside a union type, if so, call clear_props
-        if owner is not None and value is not None and hasattr(owner,
-                                                               'field') and owner.field.waardeObject is not None and not owner.field.waarde_shortcut_applicable and not isinstance(
-                owner.field, UnionTypeField) and owner.owner is not None and isinstance(owner.owner, UnionWaarden):
-            owner.owner.clear_other_props('_' + owner.naam)
+        if owner is not None and value is not None and hasattr(owner, 'field') and owner.field.waardeObject is not None:
+            if owner.field.waarde_shortcut_applicable and not isinstance(owner.field, UnionTypeField) and owner.owner is not None and isinstance(owner.owner, UnionWaarden):
+                owner.owner.clear_other_props('_' + owner.naam)
 
     @staticmethod
     def _perform_deprecation_check(owner):

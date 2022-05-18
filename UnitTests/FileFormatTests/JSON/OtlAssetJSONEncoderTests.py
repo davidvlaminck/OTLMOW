@@ -5,12 +5,6 @@ from AllCasesTestClass import AllCasesTestClass
 from OTLMOW.Facility.OTLFacility import OTLFacility
 from OTLMOW.ModelGenerator.OtlAssetJSONEncoder import OtlAssetJSONEncoder
 from OTLMOW.OTLModel.Classes.Aftakking import Aftakking
-from OTLMOW.OTLModel.Classes.Exoten import Exoten
-from OTLMOW.OTLModel.Classes.Laagspanningsbord import Laagspanningsbord
-from OTLMOW.OTLModel.Classes.Verkeersregelaar import Verkeersregelaar
-from OTLMOW.OTLModel.Classes.WVLichtmast import WVLichtmast
-from OTLMOW.OTLModel.Datatypes.DtcExterneReferentie import DtcExterneReferentie
-from OTLMOW.OTLModel.Datatypes.DtuWvLichtmastBevsToestelMethode import DtuWvLichtmastBevsToestelMethode
 
 
 class OtlAssetJSONEncoderTests(unittest.TestCase):
@@ -56,7 +50,7 @@ class OtlAssetJSONEncoderTests(unittest.TestCase):
 
         instance.testUnionType.unionKwantWrd.waarde = 1.0
         json_instance = encoder.encode(instance)
-        expected = '{"testUnionType": 1.0, ' \
+        expected = '{"testUnionType": {"unionKwantWrd": {"waarde": 1.0}}, ' \
                    '"typeURI": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#AllCasesTestClass"}'
         self.assertEqual(expected, json_instance)
 
@@ -118,7 +112,7 @@ class OtlAssetJSONEncoderTests(unittest.TestCase):
 
         self.assertEqual(expected, json_instance)
 
-    @unittest.skip('make a test for a date')
+    @unittest.skip('make a test for a date field')
     def test_JsonEncode_Date_DatumOprichtingObject(self):
         a = Aftakking()
         a.datumOprichtingObject = datetime(2022, 1, 20)

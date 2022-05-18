@@ -1,6 +1,6 @@
-﻿from OTLMOW.Facility.DotnotatieHelper import DotnotatieHelper
+﻿from OTLMOW.Facility.AssetFactory import AssetFactory
+from OTLMOW.Facility.DotnotatieHelper import DotnotatieHelper
 from OTLMOW.OTLModel.BaseClasses.OTLAsset import OTLAsset
-from OTLMOW.OTLModel.ClassLoader import ClassLoader
 from OTLMOW.PostenMapping.PostenLijst import PostenLijst
 from OTLMOW.PostenMapping.StandaardPost import StandaardPost
 
@@ -13,7 +13,7 @@ class StandaardPostFactory:
 
     @staticmethod
     def create_assets_from_post(post: StandaardPost):
-        class_loader = ClassLoader()
+        class_loader = AssetFactory()
         lijst = []
         for mapping in post.mappings:
             asset = next((c for c in lijst if c.typeURI == mapping.typeURI), None)

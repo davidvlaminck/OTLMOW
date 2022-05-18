@@ -1,9 +1,9 @@
 ﻿import json
 
+from OTLMOW.Facility.AssetFactory import AssetFactory
 from OTLMOW.Facility.DotnotatieHelper import DotnotatieHelper
 from OTLMOW.OEFModel.OEFClassLoader import OEFClassLoader
 from OTLMOW.OTLModel.BaseClasses.OTLObject import OTLObject
-from OTLMOW.OTLModel.ClassLoader import ClassLoader
 
 
 class EMInfraDecoder:
@@ -23,7 +23,7 @@ class EMInfraDecoder:
         typeURI = next(value for key, value in obj.items() if 'typeURI' in key)
 
         if 'https://wegenenverkeer.data.vlaanderen.be/ns' in typeURI:
-            instance = ClassLoader().dynamic_create_instance_from_uri(typeURI)
+            instance = AssetFactory().dynamic_create_instance_from_uri(typeURI)
         else:
             instance = OEFClassLoader().dynamic_create_instance_from_uri(typeURI)
 

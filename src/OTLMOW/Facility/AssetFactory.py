@@ -6,11 +6,18 @@ from OTLMOW.OTLModel.Classes.AIMObject import AIMObject
 class AssetFactory:
     @staticmethod
     def dynamic_create_instance_from_name(class_name: str, directory:str = 'OTLMOW.OTLModel.Classes'):
+        """Loads the OTL class module and attempts to instantiate the class using the name of the class
+
+                :param class_name: class name to instantiate
+                :type: str
+                :rtype: OTLObject or None
+                :return: returns an instance of class_name, that inherits from OTLObject
+                """
         try:
             py_mod = __import__(name=f'{directory}.{class_name}', fromlist=f'{directory.split(".")[-1]}.{class_name}')
         except ModuleNotFoundError:
             try:
-                py_mod = __import__(name=f'UnitTests.GeneralTests.{class_name}', fromlist=f'GeneralTests.{class_name}')
+                py_mod = __import__(name=f'UnitTests.{class_name}', fromlist=f'UnitTests.{class_name}')
             except ModuleNotFoundError:
                 return None
         class_ = getattr(py_mod, class_name)

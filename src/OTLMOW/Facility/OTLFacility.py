@@ -3,7 +3,7 @@ from collections import defaultdict
 
 from OTLMOW.Facility.AssetFactory import AssetFactory
 #from OTLMOW.Facility.DavieDecoder import DavieDecoder
-from OTLMOW.Facility.DavieExporter import DavieExporter
+from OTLMOW.Facility.FileFormats.JsonExporter import JsonExporter
 from OTLMOW.Facility.RelatieCreator import RelatieCreator
 from OTLMOW.Facility.Visualiser import Visualiser
 from OTLMOW.Facility.DavieImporter import DavieImporter
@@ -39,7 +39,7 @@ class OTLFacility:
         self.oef_model_creator: None | OEFModelCreator = None
         self.posten_collector = None
         self.posten_creator = None
-        #self.davieExporter = DavieExporter()
+        self.jsonExporter = JsonExporter(self.settings)
         self.encoder = OtlAssetJSONEncoder(indent=4, settings=self.settings)
         #self.davieDecoder = DavieDecoder()
         self.asset_factory = AssetFactory()

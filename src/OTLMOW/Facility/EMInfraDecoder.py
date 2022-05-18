@@ -1,7 +1,6 @@
 ﻿import json
 
 from OTLMOW.Facility.DotnotatieHelper import DotnotatieHelper
-from OTLMOW.Facility.ToOTLDecoder import ToOTLDecoder
 from OTLMOW.OEFModel.OEFClassLoader import OEFClassLoader
 from OTLMOW.OTLModel.BaseClasses.OTLObject import OTLObject
 from OTLMOW.OTLModel.ClassLoader import ClassLoader

@@ -2,7 +2,7 @@ import json
 from collections import defaultdict
 
 from OTLMOW.Facility.AssetFactory import AssetFactory
-from OTLMOW.Facility.DavieDecoder import DavieDecoder
+#from OTLMOW.Facility.DavieDecoder import DavieDecoder
 from OTLMOW.Facility.DavieExporter import DavieExporter
 from OTLMOW.Facility.RelatieCreator import RelatieCreator
 from OTLMOW.Facility.Visualiser import Visualiser
@@ -27,6 +27,10 @@ from OTLMOW.PostenMapping.PostenInMemoryCreator import PostenInMemoryCreator
 
 class OTLFacility:
     def __init__(self, instanceLogger: None | AbstractLogger, enable_relation_features: bool = False, settings_path: str = ''):
+        self.settings: dict = {}
+        if settings_path != '':
+            self.load_settings(settings_path)
+
         self.davieImporter = DavieImporter()
         self.logger = instanceLogger
         self.collector = None
@@ -35,17 +39,13 @@ class OTLFacility:
         self.oef_model_creator: None | OEFModelCreator = None
         self.posten_collector = None
         self.posten_creator = None
-        self.davieExporter = DavieExporter()
-        self.encoder = OtlAssetJSONEncoder(indent=4)
-        self.davieDecoder = DavieDecoder()
+        #self.davieExporter = DavieExporter()
+        self.encoder = OtlAssetJSONEncoder(indent=4, settings=self.settings)
+        #self.davieDecoder = DavieDecoder()
         self.asset_factory = AssetFactory()
         self.relatieValidator: None | RelatieValidator = None
         self.relatie_creator: None | RelatieCreator = None
         self.visualiser = Visualiser()
-        self.settings: dict = {}
-
-        if settings_path != '':
-            self.load_settings(settings_path)
 
         if enable_relation_features:
             self.init_relatie_validation()

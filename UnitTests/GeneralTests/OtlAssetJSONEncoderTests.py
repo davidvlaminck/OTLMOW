@@ -1,6 +1,7 @@
 import unittest
 from datetime import datetime
 
+from OTLMOW.Facility.OTLFacility import OTLFacility
 from OTLMOW.ModelGenerator.OtlAssetJSONEncoder import OtlAssetJSONEncoder
 from OTLMOW.OTLModel.Classes.Aftakking import Aftakking
 from OTLMOW.OTLModel.Classes.Exoten import Exoten
@@ -12,6 +13,14 @@ from OTLMOW.OTLModel.Datatypes.DtuWvLichtmastBevsToestelMethode import DtuWvLich
 
 
 class OtlAssetJSONEncoderTests(unittest.TestCase):
+    def test_init_encoder(self):
+        otl_facility = OTLFacility(None, settings_path='C:\\resources\\settings_OTLMOW.json')
+
+        encoder = OtlAssetJSONEncoder(settings=otl_facility.settings)
+        self.assertIsNotNone(encoder)
+
+
+
     def test_JsonEncode(self):
         # create testable OTLAsset
         a = Aftakking()

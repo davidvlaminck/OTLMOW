@@ -70,6 +70,7 @@ class JWTRequester(requests.Session):
                 headers["authorization"] = f"Bearer {bearer_token}"
                 kwargs['headers'] = headers
 
+
         return kwargs
 
     def generate_authentification_token(self) -> str:

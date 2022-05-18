@@ -1,25 +1,26 @@
 ﻿import json
 
+from OTLMOW.Facility.DotnotatieHelper import DotnotatieHelper
 from OTLMOW.Facility.ToOTLDecoder import ToOTLDecoder
 from OTLMOW.OEFModel.OEFClassLoader import OEFClassLoader
 from OTLMOW.OTLModel.BaseClasses.OTLObject import OTLObject
 from OTLMOW.OTLModel.ClassLoader import ClassLoader
 
 
-class EMInfraDecoder(ToOTLDecoder):
+class EMInfraDecoder:
     def decodeGraph(self, responseString):
         dict_obj = json.loads(responseString)
         lijst = []
         for obj in dict_obj["@graph"]:
-            lijst.append(self.decodeJsonObject(obj))
+            lijst.append(self.decode_json_object(obj))
 
         return lijst
 
-    def decodeObject(self, objString):
+    def decode_object(self, objString):
         obj = json.loads(objString)
-        return self.decodeJsonObject(obj)
+        return self.decode_json_object(obj)
 
-    def decodeJsonObject(self, obj) -> OTLObject:
+    def decode_json_object(self, obj) -> OTLObject:
         typeURI = next(value for key, value in obj.items() if 'typeURI' in key)
 
         if 'https://wegenenverkeer.data.vlaanderen.be/ns' in typeURI:
@@ -27,28 +28,36 @@ class EMInfraDecoder(ToOTLDecoder):
         else:
             instance = OEFClassLoader().dynamic_create_instance_from_uri(typeURI)
 
-        if 'loc:Locatie.puntlocatie' in obj:
-            if 'loc:3Dpunt.puntgeometrie' in obj['loc:Locatie.puntlocatie']:
-                if 'loc:DtcCoord.lambert72' in obj['loc:Locatie.puntlocatie']['loc:3Dpunt.puntgeometrie']:
-                    coords = obj['loc:Locatie.puntlocatie']['loc:3Dpunt.puntgeometrie']['loc:DtcCoord.lambert72']
-                    x = coords['loc:DtcCoordLambert72.xcoordinaat']
-                    y = coords['loc:DtcCoordLambert72.ycoordinaat']
-                    z = coords['loc:DtcCoordLambert72.zcoordinaat']
-                    instance.geometry = f'POINT Z ({x} {y} {z})'
-
-
         for key, value in obj.items():
-            if key.startswith('@') or 'typeURI' in key or value == '' or 'puntlocatie' in key or 'geo:' in key:
+            if key.startswith('@') or 'typeURI' in key or value == '' or 'puntlocatie' in key:
                 continue
-            if 'geometrie' in key:
-                key = 'loc:Locatie.geometry'
+            if 'geo:' in key:
+                if 'geo:Geometrie.log' in obj and len(obj['geo:Geometrie.log']) > 0:
+                    geo_item = obj['geo:Geometrie.log'][0]
+                    geo_dict = geo_item['geo:DtcLog.geometrie']
+                    for key, value in geo_dict.items():
+                        if 'geo:DtuGeometrie' in key:
+                            DotnotatieHelper.set_attribute_by_dotnotatie(instance, 'geometry', value.replace('(', ' ('))
+                continue
+
+            if key == 'AIMObject.assetId':
+                pass
+
+            if key == 'loc:Locatie.geometrie':
+                if 'geo:Geometrie.log' in obj:
+                    continue
+                else:
+                    DotnotatieHelper.set_attribute_by_dotnotatie(instance, 'geometry', value.replace('(', ' ('))
+                    continue
+
+            # TODO fix set attributes
 
             value = self.trim_keuzelijst_from_ld_notation(value)
 
             if key != 'loc:Locatie.geometry':
                 value = self.trim_keys_from_ld_notation(value)
 
-            self.set_attribute_by_dotnotatie(instance, key.split('.')[-1], value)
+            DotnotatieHelper.set_attribute_by_dotnotatie(instance, key.split('.')[-1], value, waarde_shortcut_applicable=True)
 
         return instance
 

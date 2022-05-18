@@ -3,12 +3,14 @@ from unittest import TestCase
 
 from GeneralTests.EMInfraResponseTestDouble import ResponseTestDouble
 from OTLMOW.Facility.EMInfraDecoder import EMInfraDecoder
+from OTLMOW.Facility.OTLFacility import OTLFacility
 from OTLMOW.OTLModel.Classes.Omvormer import Omvormer
 
 
 class EMInfraDecoderTests(TestCase):
     def test_decodeFirstEntry(self):
         responseString = ResponseTestDouble().response
+        otl_facility = OTLFacility(None, settings_path='C:\\resources\\settings_OTLMOW.json')
         decoder = EMInfraDecoder()
         first = decoder.decodeGraph(responseString)[0]
         # TODO parse EM Infra graph so that keys don't contain dots
@@ -34,6 +36,12 @@ class EMInfraDecoderTests(TestCase):
         with self.subTest("Testing Dtc"):
             self.assertEqual("AWV", first.assetId.toegekendDoor)
             self.assertEqual("0005bafb-838f-47e0-a4e2-20dd120ede6b-b25kZXJkZWVsI09tdm9ybWVy", first.assetId.identificator)
+
+    def test_decode_single_response(self):
+        responseString = ResponseTestDouble().single_response
+        decoder = EMInfraDecoder()
+        lijst = decoder.decodeGraph(responseString)
+        self.assertEqual(1, len(lijst))
 
     def test_decode(self):
         responseString = ResponseTestDouble().response

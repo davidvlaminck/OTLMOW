@@ -162,7 +162,7 @@
                 new_list.append(field.convert_to_correct_type(value_item))
             return new_list
 
-        if attribuut.field.waardeObject is not None and not attribuut.field.waarde_shortcut_applicable:
+        if attribuut.field.waardeObject is not None and attribuut.field.waarde_shortcut_applicable:
             field = attribuut.waarde._waarde.field
 
         return field.convert_to_correct_type(waarde)

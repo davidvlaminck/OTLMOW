@@ -15,14 +15,14 @@ class JsonLdDbSource:
         data = self.reader.performReadQuery('select jsonld from assets where uuid = :uuid',  {"uuid": uuid})
         jsonlddata = data[0][0]
         decoder = EMInfraDecoder()
-        asset = decoder.decodeObject(jsonlddata)
+        asset = decoder.decode_object(jsonlddata)
         return asset
 
     def get_asset_by_naampad(self, naampad: str):
         data = self.reader.performReadQuery('select jsonld from assets where naampad = :naampad',  {"naampad": naampad})
         jsonlddata = data[0][0]
         decoder = EMInfraDecoder()
-        asset = decoder.decodeObject(jsonlddata)
+        asset = decoder.decode_object(jsonlddata)
         return asset
 
     def get_relaties_by_bronuuid(self, bron_uuid: str):
@@ -32,7 +32,7 @@ class JsonLdDbSource:
         for line in data:
             jsonlddata = line[0]
             decoder = EMInfraDecoder()
-            asset = decoder.decodeObject(jsonlddata)
+            asset = decoder.decode_object(jsonlddata)
             assetlijst.append(asset)
 
         return assetlijst
@@ -44,7 +44,7 @@ class JsonLdDbSource:
         for line in data:
             jsonlddata = line[0]
             decoder = EMInfraDecoder()
-            asset = decoder.decodeObject(jsonlddata)
+            asset = decoder.decode_object(jsonlddata)
             assetlijst.append(asset)
 
         return assetlijst
@@ -58,7 +58,7 @@ class JsonLdDbSource:
         for line in data:
             jsonlddata = line[0]
             decoder = EMInfraDecoder()
-            asset = decoder.decodeObject(jsonlddata)
+            asset = decoder.decode_object(jsonlddata)
             assetlijst.append(asset)
 
         return assetlijst
@@ -70,7 +70,7 @@ class JsonLdDbSource:
         for line in data:
             jsonlddata = line[0]
             decoder = EMInfraDecoder()
-            asset = decoder.decodeObject(jsonlddata)
+            asset = decoder.decode_object(jsonlddata)
             assetlijst.append(asset)
 
         return assetlijst
@@ -82,7 +82,7 @@ class JsonLdDbSource:
         for line in data:
             jsonlddata = line[0]
             decoder = EMInfraDecoder()
-            asset = decoder.decodeObject(jsonlddata)
+            asset = decoder.decode_object(jsonlddata)
             assetlijst.append(asset)
 
         return assetlijst

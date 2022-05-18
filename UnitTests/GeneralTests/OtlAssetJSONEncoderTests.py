@@ -118,7 +118,7 @@ class OtlAssetJSONEncoderTests(unittest.TestCase):
 
         self.assertEqual(expected, json_instance)
 
-    @unittest.skip
+    @unittest.skip('make a test for a date')
     def test_JsonEncode_Date_DatumOprichtingObject(self):
         a = Aftakking()
         a.datumOprichtingObject = datetime(2022, 1, 20)

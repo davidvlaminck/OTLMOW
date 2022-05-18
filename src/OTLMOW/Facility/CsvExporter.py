@@ -1,6 +1,3 @@
-import os
-
-from OTLMOW.Facility.DotnotatieHelper import DotnotatieHelper
 from OTLMOW.OTLModel.Classes.AIMObject import AIMObject
 
 
@@ -113,7 +110,8 @@ class CsvExporter:
                         row[index] = ''
         return row
 
-    def write_file(self, file_location, data):
+    @staticmethod
+    def write_file(file_location, data):
         try:
             with open(file_location, "w") as file:
                 for line in data:

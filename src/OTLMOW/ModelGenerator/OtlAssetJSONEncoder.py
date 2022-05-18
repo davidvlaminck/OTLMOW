@@ -29,16 +29,17 @@ class OtlAssetJSONEncoder(json.JSONEncoder):
         return super().default(otlObject)
 
     # no usage?
-    def isEmptyDict(self, value: dict):
-        b = True
+    @classmethod
+    def isEmptyDict(cls, value: dict):
         for v in value.values():
             if isinstance(v, dict):
-                if self.isEmptyDict(v):
+                if cls.isEmptyDict(v):
                     continue
-            if v is not None:
+            if v is not None and v != []:
                 return False
-        return b
+        return True
 
-    def write_json_to_file(self, encoded_json, file_path):
+    @staticmethod
+    def write_json_to_file(encoded_json, file_path):
         with open(file_path, "w") as file:
             file.write(encoded_json)

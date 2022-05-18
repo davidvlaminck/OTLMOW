@@ -21,15 +21,15 @@ if __name__ == '__main__':
     importer = EMInfraImporter(requester=requester)
 
     # input file
-    uuid_file_path = 'C:\\resources\\switch_noloc.txt'
+    uuid_file_path = 'C:\\resources\\export.csv'
 
     # create objects based on uuid (from input file) and typeURI
     lijst_objecten = []
     with open(uuid_file_path, 'r') as uuidfile:
-        csv_reader = reader(uuidfile, delimiter=' ')
+        csv_reader = reader(uuidfile, delimiter=',')
         for row in csv_reader:
             netwerkElement = Netwerkelement()
-            netwerkElement.assetId.identificator = EMInfraImporter.get_asset_id_from_uuid_and_typeURI(row[1], Netwerkelement.typeURI)
+            netwerkElement.assetId.identificator = EMInfraImporter.get_asset_id_from_uuid_and_typeURI(row[0], Netwerkelement.typeURI)
             netwerkElement.assetId.toegekendDoor = 'AWV'
             lijst_objecten.append(netwerkElement)
 

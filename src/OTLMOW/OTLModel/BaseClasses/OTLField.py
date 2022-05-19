@@ -16,7 +16,7 @@ class OTLField:
         if attribuut.field.waardeObject:
             if not isinstance(value, attribuut.field.waardeObject):
                 raise ValueError(
-                    f'This is a complex datatype. Set the values through the attributes. Use .attr_type_info() for more info')
+                    f'This is a complex datatype ({attribuut.dotnotatie}). Set the values through the attributes. Use .attr_type_info() for more info')
             validation = True
             for attr_key, attr in vars(value).items():
                 if attr_key == '_parent':

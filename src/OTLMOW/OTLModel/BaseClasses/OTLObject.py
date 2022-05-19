@@ -1,12 +1,13 @@
 ﻿import warnings
 from datetime import date, time, datetime
+from typing import Generator, Iterable
 
 from OTLMOW.Facility.DotnotatieHelper import DotnotatieHelper
 
 
 class OTLObjectHelper:
     @classmethod
-    def create_dict_from_asset(cls, asset):
+    def create_dict_from_asset(cls, asset) -> dict:
         return cls.clean_dict(cls.recursive_create_dict_from_asset(asset))
 
     @classmethod
@@ -49,7 +50,7 @@ class OTLObjectHelper:
             return d
 
     @classmethod
-    def clean_dict(cls, d):
+    def clean_dict(cls, d) -> dict:
         """Recursively remove None values and empty dicts from input dict"""
         for k in list(d):
             v = d[k]
@@ -81,7 +82,7 @@ class OTLObjectHelper:
         return lines
 
     @classmethod
-    def list_attributes_and_values_by_dotnotatie(cls, asset=None, waarde_shortcut: bool = False):
+    def list_attributes_and_values_by_dotnotatie(cls, asset=None, waarde_shortcut: bool = False) -> Iterable[tuple[str, object]]:
         sorted_attributes = sorted(list(vars(asset).items()), key=lambda i: i[0])
 
         for k, v in sorted_attributes:
@@ -95,8 +96,7 @@ class OTLObjectHelper:
                     lijsten = []
                     for list_item in v.waarde:
                         lijsten.append(
-                            list(cls.list_attributes_and_values_by_dotnotatie(asset=list_item,
-                                                                              waarde_shortcut=waarde_shortcut)))
+                            list(cls.list_attributes_and_values_by_dotnotatie(asset=list_item, waarde_shortcut=waarde_shortcut)))
 
                     combined_dict = {}
                     for lijst in lijsten:
@@ -126,15 +126,14 @@ class OTLObject:
                     warnings.warn(message=f'{self.typeURI} is deprecated since version {self.deprecated_version}',
                                   category=DeprecationWarning)
                 else:
-                    warnings.warn(message=f'used a class that is deprecated since version {self.deprecated_version}',
+                    warnings.warn(message=f'used a class ({self.__class__.__name__}) that is deprecated since version {self.deprecated_version}',
                                   category=DeprecationWarning)
 
-    def create_dict_from_asset(self, exclude_nested_attributes=False, waarde_shortcut=False):
+    def create_dict_from_asset(self, waarde_shortcut=False) -> dict:
         return OTLObjectHelper.recursive_create_dict_from_asset(asset=self, waarde_shortcut=waarde_shortcut)
 
-    def list_attributes_and_values_by_dotnotatie(self, waarde_shortcut: bool = False):
-        for k, v in OTLObjectHelper.list_attributes_and_values_by_dotnotatie(asset=self,
-                                                                             waarde_shortcut=waarde_shortcut):
+    def list_attributes_and_values_by_dotnotatie(self, waarde_shortcut: bool = False) -> Iterable[tuple[str, object]]:
+        for k, v in OTLObjectHelper.list_attributes_and_values_by_dotnotatie(asset=self, waarde_shortcut=waarde_shortcut):
             yield k, v
 
     def __str__(self, use_dotnotatie=False):

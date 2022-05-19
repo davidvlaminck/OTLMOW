@@ -2,8 +2,8 @@
 
 
 class DavieImporter:
-    def __init__(self):
-        self.decoder = JsonDecoder()
+    def __init__(self, settings):
+        self.decoder = JsonDecoder(settings=settings)
 
     def import_file(self, filePath='') -> list:
         """Imports a json file creates with Davie and decodes it to OTL objects

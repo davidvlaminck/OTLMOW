@@ -31,7 +31,7 @@ class OTLFacility:
         if settings_path != '':
             self.load_settings(settings_path)
 
-        self.davieImporter = DavieImporter()
+        self.davieImporter = DavieImporter(self.settings)
         self.logger = instanceLogger
         self.collector = None
         self.geoAcollector = None

@@ -1,14 +1,13 @@
 from datetime import date, datetime, time
 from unittest import TestCase
 
+from OTLMOW.Facility.FileFormats.JsonDecoder import JsonDecoder
 from UnitTests.AllCasesTestClass import AllCasesTestClass
-from OTLMOW.Facility.DavieDecoder import JsonDecoder
 from OTLMOW.OTLModel.Classes.ExterneDetectie import ExterneDetectie
 from OTLMOW.OTLModel.Classes.HeeftBetrokkene import HeeftBetrokkene
 from OTLMOW.OTLModel.Classes.Netwerkpoort import Netwerkpoort
 from OTLMOW.OTLModel.Classes.Verkeersregelaar import Verkeersregelaar
 from OTLMOW.OTLModel.Classes.Wegberm import Wegberm
-from OTLMOW.OTLModel.Classes.Wegkantkast import Wegkantkast
 
 
 class DavieDecoderTests(TestCase):
@@ -115,105 +114,129 @@ class DavieDecoderTests(TestCase):
 }]"""
 
     def test_invalid_typeURI(self):
-        davie_decoder = JsonDecoder()
+        davie_decoder = JsonDecoder(
+            settings={'file_formats': [{"name": "json", "dotnotatie": {"waarde_shortcut_applicable": True}}]})
         with self.assertRaises(ValueError):
             davie_decoder.decode_json_string('[{"typeURI": "https://invalid.uri.com"}]')
 
     def test_decode_invalid_attribute(self):
-        davie_decoder = JsonDecoder()
+        davie_decoder = JsonDecoder(
+            settings={'file_formats': [{"name": "json", "dotnotatie": {"waarde_shortcut_applicable": True}}]})
         with self.assertRaises(AttributeError):
             davie_decoder.decode_json_string(
                 '[{"typeURI": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Netwerkpoort", "invalid_attribute": "some value"}]')
 
     def test_decode_empty_value(self):
-        davie_decoder = JsonDecoder()
+        davie_decoder = JsonDecoder(
+            settings={'file_formats': [{"name": "json", "dotnotatie": {"waarde_shortcut_applicable": True}}]})
         lijstObjecten = davie_decoder.decode_json_string(
             '[{"typeURI": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#AllCasesTestClass", "toestand": ""}]')
         self.assertTrue(isinstance(lijstObjecten[0], AllCasesTestClass))
         self.assertIsNone(lijstObjecten[0].toestand)
 
     def test_decode_geometry(self):
-        davie_decoder = JsonDecoder()
+        davie_decoder = JsonDecoder(
+            settings={'file_formats': [{"name": "json", "dotnotatie": {"waarde_shortcut_applicable": True}}]})
         lijstObjecten = davie_decoder.decode_json_string(
             '[{"typeURI": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#AllCasesTestClass", "geometry": "POINT Z (157696.6 219065.5 0)"}]')
         self.assertIsNone(lijstObjecten[0].toestand)
 
     def test_decode_Stringfield(self):
-        davie_decoder = JsonDecoder()
+        davie_decoder = JsonDecoder(
+            settings={'file_formats': [{"name": "json", "dotnotatie": {"waarde_shortcut_applicable": True}}]})
         lijstObjecten = davie_decoder.decode_json_string(
             '[{"typeURI": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#AllCasesTestClass", "testStringField": "string"}]')
         self.assertEqual("string", lijstObjecten[0].testStringField)
 
     def test_decode_StringfieldMetKard(self):
-        davie_decoder = JsonDecoder()
+        davie_decoder = JsonDecoder(
+            settings={'file_formats': [{"name": "json", "dotnotatie": {"waarde_shortcut_applicable": True}}]})
         lijstObjecten = davie_decoder.decode_json_string(
             '[{"typeURI": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#AllCasesTestClass", "testStringFieldMetKard": ["string", "string2"]}]')
         self.assertEqual(["string", "string2"], lijstObjecten[0].testStringFieldMetKard)
 
     def test_decode_DecimalNumberField(self):
-        davie_decoder = JsonDecoder()
+        davie_decoder = JsonDecoder(
+            settings={'file_formats': [{"name": "json", "dotnotatie": {"waarde_shortcut_applicable": True}}]})
         lijstObjecten = davie_decoder.decode_json_string(
             '[{"typeURI": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#AllCasesTestClass", "testDecimalNumberField": 2.5}]')
         self.assertEqual(2.5, lijstObjecten[0].testDecimalNumberField)
 
     def test_decode_TimeField(self):
-        davie_decoder = JsonDecoder()
+        davie_decoder = JsonDecoder(
+            settings={'file_formats': [{"name": "json", "dotnotatie": {"waarde_shortcut_applicable": True}}]})
         lijstObjecten = davie_decoder.decode_json_string(
             '[{"typeURI": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#AllCasesTestClass", "testTimeField": "22:22:22"}]')
         self.assertEqual(time(hour=22, minute=22, second=22), lijstObjecten[0].testTimeField)
 
     def test_decode_DateTimeField(self):
-        davie_decoder = JsonDecoder()
+        davie_decoder = JsonDecoder(
+            settings={'file_formats': [{"name": "json", "dotnotatie": {"waarde_shortcut_applicable": True}}]})
         lijstObjecten = davie_decoder.decode_json_string(
             '[{"typeURI": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#AllCasesTestClass", "testDateTimeField": "2022-2-2 22:22:22"}]')
         self.assertEqual(datetime(year=2022, month=2, day=2, hour=22, minute=22, second=22), lijstObjecten[0].testDateTimeField)
 
     def test_decode_DateField(self):
-        davie_decoder = JsonDecoder()
+        davie_decoder = JsonDecoder(
+            settings={'file_formats': [{"name": "json", "dotnotatie": {"waarde_shortcut_applicable": True}}]})
         lijstObjecten = davie_decoder.decode_json_string(
             '[{"typeURI": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#AllCasesTestClass", "testDateField": "2022-2-2"}]')
         self.assertEqual(date(year=2022, month=2, day=2), lijstObjecten[0].testDateField)
 
     def test_decode_testKwantWrd(self):
-        davie_decoder = JsonDecoder()
+        davie_decoder = JsonDecoder(
+            settings={'file_formats': [{"name": "json", "dotnotatie": {"waarde_shortcut_applicable": True}}]})
         lijstObjecten = davie_decoder.decode_json_string(
             '[{"typeURI": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#AllCasesTestClass", "testKwantWrd": 3.5}]')
         self.assertEqual(3.5, lijstObjecten[0].testKwantWrd.waarde)
 
+    def test_decode_testKwantWrd_waarde_shortcut_false(self):
+        davie_decoder = JsonDecoder(
+            settings={'file_formats': [{"name": "json", "dotnotatie": {"waarde_shortcut_applicable": False}}]})
+        lijstObjecten = davie_decoder.decode_json_string(
+            '[{"typeURI": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#AllCasesTestClass", "testKwantWrd": { "waarde": 3.5}}]')
+        self.assertEqual(3.5, lijstObjecten[0].testKwantWrd.waarde)
+
     def test_decode_testKwantWrdMetKard(self):
-        davie_decoder = JsonDecoder()
+        davie_decoder = JsonDecoder(
+            settings={'file_formats': [{"name": "json", "dotnotatie": {"waarde_shortcut_applicable": True}}]})
         lijstObjecten = davie_decoder.decode_json_string(
             '[{"typeURI": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#AllCasesTestClass", "testKwantWrdMetKard": [4.5, 6.5]}]')
         self.assertEqual(4.5, lijstObjecten[0].testKwantWrdMetKard[0].waarde)
         self.assertEqual(6.5, lijstObjecten[0].testKwantWrdMetKard[1].waarde)
 
     def test_decode_UnionType(self):
-        davie_decoder = JsonDecoder()
+        davie_decoder = JsonDecoder(
+            settings={'file_formats': [{"name": "json", "dotnotatie": {"waarde_shortcut_applicable": True}}]})
         lijstObjecten = davie_decoder.decode_json_string(
             '[{"typeURI": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#AllCasesTestClass", "testUnionType" : {"unionString": "string"}}]')
         self.assertEqual("string", lijstObjecten[0].testUnionType.unionString)
 
     def test_decode_ComplexType(self):
-        davie_decoder = JsonDecoder()
+        davie_decoder = JsonDecoder(
+            settings={'file_formats': [{"name": "json", "dotnotatie": {"waarde_shortcut_applicable": True}}]})
         lijstObjecten = davie_decoder.decode_json_string(
             '[{"typeURI": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#AllCasesTestClass", "testComplexType" : {"testStringField": "string"}}]')
         self.assertEqual("string", lijstObjecten[0].testComplexType.testStringField)
 
     def test_decode_ComplexTypeMetKard(self):
-        davie_decoder = JsonDecoder()
+        davie_decoder = JsonDecoder(
+            settings={'file_formats': [{"name": "json", "dotnotatie": {"waarde_shortcut_applicable": True}}]})
         lijstObjecten = davie_decoder.decode_json_string(
             '[{"typeURI": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#AllCasesTestClass", "testComplexTypeMetKard" : [{"testStringField": "string"}, {"testBooleanField": true}]}]')
         self.assertEqual("string", lijstObjecten[0].testComplexTypeMetKard[0].testStringField)
         self.assertEqual(True, lijstObjecten[0].testComplexTypeMetKard[1].testBooleanField)
 
     def test_decode_ComplexType2(self):
-        davie_decoder = JsonDecoder()
+        davie_decoder = JsonDecoder(
+            settings={'file_formats': [{"name": "json", "dotnotatie": {"waarde_shortcut_applicable": True}}]})
         lijstObjecten = davie_decoder.decode_json_string(
             '[{"typeURI": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#AllCasesTestClass", "testComplexType" : {"testComplexType2" : {"testStringField": "string"}}}]')
         self.assertEqual("string", lijstObjecten[0].testComplexType.testComplexType2.testStringField)
 
     def test_decode_Davie_json_case_1_and_assert_fields(self):
-        davie_decoder = JsonDecoder()
+        davie_decoder = JsonDecoder(
+            settings={'file_formats': [{"name": "json", "dotnotatie": {"waarde_shortcut_applicable": True}}]})
         lijstObjecten = davie_decoder.decode_json_string(self.jsonDataCase1)
         self.assertEqual(1, len(lijstObjecten))
         self.assertTrue(isinstance(lijstObjecten[0], Netwerkpoort))
@@ -233,7 +256,8 @@ class DavieDecoderTests(TestCase):
             self.assertEqual('AWV', lijstObjecten[0].assetId.toegekendDoor)
 
     def test_decode_Davie_json_case_2_and_assert_fields(self):
-        davie_decoder = JsonDecoder()
+        davie_decoder = JsonDecoder(
+            settings={'file_formats': [{"name": "json", "dotnotatie": {"waarde_shortcut_applicable": True}}]})
         lijstObjecten = davie_decoder.decode_json_string(self.jsonDataCase2)
         self.assertEqual(1, len(lijstObjecten))
         self.assertTrue(isinstance(lijstObjecten[0], HeeftBetrokkene))
@@ -248,7 +272,8 @@ class DavieDecoderTests(TestCase):
         self.assertEqual(True, lijstObjecten[0].isActief)
 
     def test_decode_Davie_json_case_3_and_assert_fields(self):
-        davie_decoder = JsonDecoder()
+        davie_decoder = JsonDecoder(
+            settings={'file_formats': [{"name": "json", "dotnotatie": {"waarde_shortcut_applicable": True}}]})
         lijstObjecten = davie_decoder.decode_json_string(self.jsonDataCase3)
         self.assertEqual(1, len(lijstObjecten))
         self.assertTrue(isinstance(lijstObjecten[0], Wegberm))
@@ -260,7 +285,8 @@ class DavieDecoderTests(TestCase):
             self.assertEqual(2.0, lijstObjecten[0].breedte.waarde)
 
     def test_decode_Davie_json_case_4_and_assert_fields(self):
-        davie_decoder = JsonDecoder()
+        davie_decoder = JsonDecoder(
+            settings={'file_formats': [{"name": "json", "dotnotatie": {"waarde_shortcut_applicable": True}}]})
         lijstObjecten = davie_decoder.decode_json_string(self.jsonDataCase4)
         self.assertEqual(1, len(lijstObjecten))
         self.assertTrue(isinstance(lijstObjecten[0], Verkeersregelaar))
@@ -278,7 +304,8 @@ class DavieDecoderTests(TestCase):
             self.assertEqual("externe referentie 1", lijstObjecten[0].externeReferentie[1].externReferentienummer)
 
     def test_decode_Davie_json_case_6_and_assert_fields_kard_complex_in_complex(self):
-        davie_decoder = JsonDecoder()
+        davie_decoder = JsonDecoder(
+            settings={'file_formats': [{"name": "json", "dotnotatie": {"waarde_shortcut_applicable": True}}]})
         lijstObjecten = davie_decoder.decode_json_string(self.jsonDataCase6)
         self.assertEqual(1, len(lijstObjecten))
         self.assertTrue(isinstance(lijstObjecten[0], ExterneDetectie))
@@ -287,4 +314,3 @@ class DavieDecoderTests(TestCase):
 
         self.assertEqual('aalter', lijstObjecten[0].contactpersoon.adres[0].gemeente)
         self.assertEqual('teststraat', lijstObjecten[0].contactpersoon.adres[0].straatnaam)
-

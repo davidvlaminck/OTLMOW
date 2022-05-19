@@ -6,6 +6,19 @@ from OTLMOW.OTLModel.Datatypes.DateField import DateField
 
 
 class JsonDecoder:
+    def __init__(self, settings=None):
+        if settings is None:
+            settings = {}
+        self.settings = settings
+
+        if 'file_formats' not in self.settings:
+            raise ValueError("The settings are not loaded or don't contain settings for file formats")
+        json_settings = next((s for s in settings['file_formats'] if 'name' in s and s['name'] == 'json'), None)
+        if json_settings is None:
+            raise ValueError("Unable to find json in file formats settings")
+
+        self.settings = json_settings
+
     def decode_json_string(self, jsonString):
         dict_list = json.loads(jsonString)
         lijst = []
@@ -22,7 +35,7 @@ class JsonDecoder:
                 if 'typeURI' in key or value == '' or value == [] or key == 'bron' or key == 'doel':
                     continue
 
-                self.set_value_by_dictitem(instance, key, value, True)  # get True from settings
+                self.set_value_by_dictitem(instance, key, value, self.settings['dotnotatie']['waarde_shortcut_applicable'])
         return lijst
 
     def set_value_by_dictitem(self, instanceOrAttribute, key, value, waarde_shortcut=False):
@@ -53,35 +66,3 @@ class JsonDecoder:
                 attribute_to_set.waarde._waarde.set_waarde(value)
         else:
             attribute_to_set.set_waarde(value)
-
-        return
-
-        if isinstance(value, dict):
-            for k, v in value.items():
-                self.set_value_by_dictitem(getattr(instanceOrAttribute, key), k, v)
-        elif type(value) is list:
-            attr = getattr(instanceOrAttribute, '_' + key)
-            if not attr.field.waarde_shortcut_applicable:
-                setattr(instanceOrAttribute, key, value)
-                return
-            valueList = []
-            for item in value:
-                waardeObject = attr.field.waardeObject()
-                for k, v in item.items():
-                    self.set_value_by_dictitem(waardeObject, k, v)
-                valueList.append(waardeObject)
-            setattr(instanceOrAttribute, key, valueList)
-        else:
-            attr = getattr(instanceOrAttribute, '_' + key)
-            if attr.field.waardeObject is not None and attr.field.waarde_shortcut_applicable:
-                waardeAttr = attr.get_waarde()
-                self.set_value_by_dictitem(waardeAttr, "waarde", value)
-            else:
-                if attr.field is DateField:
-                    val = datetime.datetime.strptime(value, '%Y-%m-%d')
-                    setattr(instanceOrAttribute, key, val)
-                else:
-                    setattr(instanceOrAttribute, key, value)
-
-
-

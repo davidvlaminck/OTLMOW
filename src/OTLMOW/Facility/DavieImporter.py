@@ -1,4 +1,4 @@
-﻿from OTLMOW.Facility.DavieDecoder import JsonDecoder
+﻿from OTLMOW.Facility.FileFormats.JsonDecoder import JsonDecoder
 
 
 class DavieImporter:

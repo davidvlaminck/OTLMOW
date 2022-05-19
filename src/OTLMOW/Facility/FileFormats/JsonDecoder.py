@@ -1,8 +1,6 @@
 import json
-from datetime import datetime
 
 from OTLMOW.Facility.AssetFactory import AssetFactory
-from OTLMOW.OTLModel.Datatypes.DateField import DateField
 
 
 class JsonDecoder:

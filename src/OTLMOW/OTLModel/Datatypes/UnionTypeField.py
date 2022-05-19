@@ -16,9 +16,11 @@ class UnionTypeField(OTLField):
         if isinstance(value, attribuut.field.waardeObject):
             return True
         valueDict = vars(attribuut.field.waardeObject())
-        for attr in valueDict.values():
+        for val_in_dict in valueDict.values():
+            if val_in_dict is None:
+                continue
             try:
-                validate_result = attr.field.validate(value, attr)
+                validate_result = val_in_dict.field.validate(value, val_in_dict)
                 if validate_result:
                     return True
             except:

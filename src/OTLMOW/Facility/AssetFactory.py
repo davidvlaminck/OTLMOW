@@ -94,8 +94,9 @@ class AssetFactory:
             if orig_asset_attribute_value is None:
                 continue
             orig_asset_attribute = getattr(orig_object, '_' + fieldName)
-            new_object_field_copy = copy.deepcopy(orig_asset_attribute_value)
-
             new_asset_attribute = getattr(new_object, '_' + fieldName)
-            new_asset_attribute.set_waarde(new_object_field_copy)
+
+            copy_waardes = copy.deepcopy(orig_asset_attribute.waarde)
+            new_asset_attribute.set_waarde(copy_waardes)
+
 

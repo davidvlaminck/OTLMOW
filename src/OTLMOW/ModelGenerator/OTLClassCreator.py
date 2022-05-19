@@ -58,6 +58,8 @@ class OTLClassCreator(AbstractDatatypeCreator):
             inheritances.append(
                 Inheritance(base_name='AttributeInfo', base_uri='', class_name='', class_uri='', deprecated_version=''))
             inheritances.append(
+                Inheritance(base_name='DavieRelatieAttributes', base_uri='', class_name='', class_uri='', deprecated_version=''))
+            inheritances.append(
                 Inheritance(base_name='OTLObject', base_uri='', class_name='', class_uri='', deprecated_version=''))
 
         elif osloClass.objectUri == 'http://purl.org/dc/terms/Agent':
@@ -80,7 +82,7 @@ class OTLClassCreator(AbstractDatatypeCreator):
 
         if len(inheritances) > 0:
             for inheritance in inheritances:
-                if inheritance.base_name in ['OTLAsset', 'OTLObject', 'RelatieInteractor', 'AttributeInfo']:
+                if inheritance.base_name in ['OTLAsset', 'OTLObject', 'RelatieInteractor', 'AttributeInfo', 'DavieRelatieAttributes']:
                     datablock.append(f'from OTLMOW.OTLModel.BaseClasses.{inheritance.base_name} import {inheritance.base_name}')
                 else:
                     datablock.append(f'from OTLMOW.OTLModel.Classes.{inheritance.base_name} import {inheritance.base_name}')

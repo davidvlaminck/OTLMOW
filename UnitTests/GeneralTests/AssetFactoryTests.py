@@ -160,6 +160,7 @@ class AssetFactoryTests(TestCase):
     def test_create_aimObject_using_other_aimObject_as_template_testclass(self):
         factory = AssetFactory()
         test_instance = AllCasesTestClass()
+        test_instance._testComplexTypeMetKard.add_empty_value()
         test_instance.testComplexTypeMetKard[0].testStringField = 'test string'
         self.assertEqual('test string', test_instance.testComplexTypeMetKard[0].testStringField)
 

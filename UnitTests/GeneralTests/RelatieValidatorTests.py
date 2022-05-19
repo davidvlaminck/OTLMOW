@@ -219,7 +219,7 @@ https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Stroomkring  --- https://
 
 class RelatieValidatorTestsUsingFacility(unittest.TestCase):
     def test_afterInitFacilityValidateRelatieOnObject(self):
-        facility = OTLFacility(NoneLogger())
+        facility = OTLFacility(NoneLogger(), settings_path='C:\\resources\\settings_OTLMOW.json')
         a = Aftakking()
         e = EnergiemeterAWV()
         v = Voedt

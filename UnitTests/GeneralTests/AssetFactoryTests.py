@@ -166,7 +166,7 @@ class AssetFactoryTests(TestCase):
         copy_test_instance = factory.create_aimObject_using_other_aimObject_as_template(test_instance, directory='UnitTests')
         test_instance.testComplexTypeMetKard[0].testStringField = 'test string 2'
         self.assertEqual('test string 2', test_instance.testComplexTypeMetKard[0].testStringField)
-        self.assertEqual('test string 1', copy_test_instance.testComplexTypeMetKard[0].testStringField)
+        self.assertEqual('test string', copy_test_instance.testComplexTypeMetKard[0].testStringField)
 
     @unittest.skip('Not implemented yet')
     def test_copy_fields_from_object_to_new_object_DotNotatie(self):

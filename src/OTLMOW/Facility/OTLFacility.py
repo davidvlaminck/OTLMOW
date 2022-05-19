@@ -2,7 +2,7 @@ import json
 from collections import defaultdict
 
 from OTLMOW.Facility.AssetFactory import AssetFactory
-#from OTLMOW.Facility.DavieDecoder import DavieDecoder
+#from OTLMOW.Facility.JsonDecoder import JsonDecoder
 from OTLMOW.Facility.FileFormats.JsonExporter import JsonExporter
 from OTLMOW.Facility.RelatieCreator import RelatieCreator
 from OTLMOW.Facility.Visualiser import Visualiser
@@ -41,7 +41,7 @@ class OTLFacility:
         self.posten_creator = None
         self.jsonExporter = JsonExporter(self.settings)
         self.encoder = OtlAssetJSONEncoder(indent=4, settings=self.settings)
-        #self.davieDecoder = DavieDecoder()
+        #self.davieDecoder = JsonDecoder()
         self.asset_factory = AssetFactory()
         self.relatieValidator: None | RelatieValidator = None
         self.relatie_creator: None | RelatieCreator = None

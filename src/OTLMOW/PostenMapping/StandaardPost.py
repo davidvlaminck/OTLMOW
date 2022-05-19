@@ -1,5 +1,5 @@
 ﻿from OTLMOW.Facility.AssetFactory import AssetFactory
-from OTLMOW.Facility.ToOTLDecoder import ToOTLDecoder
+from OTLMOW.Facility.DotnotatieHelper import DotnotatieHelper
 
 
 class StandaardPost:
@@ -20,5 +20,5 @@ class StandaardPost:
                 asset = asset_factory.dynamic_create_instance_from_uri(mapping.typeURI)
                 lijst.append(asset)
             if mapping.defaultWaarde != '':
-                ToOTLDecoder().set_attribute_by_dotnotatie(asset, mapping.dotnotatie, mapping.defaultWaarde)
+                DotnotatieHelper().set_attribute_by_dotnotatie(asset, mapping.dotnotatie, mapping.defaultWaarde)
         return lijst

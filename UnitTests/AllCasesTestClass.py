@@ -1,14 +1,18 @@
 # coding=utf-8
+from OTLMOW.GeometrieArtefact.PuntGeometrie import PuntGeometrie
 from OTLMOW.OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLMOW.OTLModel.BaseClasses.OTLField import OTLField
 from OTLMOW.OTLModel.Classes.AIMObject import AIMObject
 from OTLMOW.OTLModel.Datatypes.BooleanField import BooleanField
 from OTLMOW.OTLModel.Datatypes.ComplexField import ComplexField
+from OTLMOW.OTLModel.Datatypes.DateField import DateField
+from OTLMOW.OTLModel.Datatypes.DateTimeField import DateTimeField
 from OTLMOW.OTLModel.Datatypes.FloatOrDecimalField import FloatOrDecimalField
 from OTLMOW.OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLMOW.OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 from OTLMOW.OTLModel.Datatypes.StringField import StringField
+from OTLMOW.OTLModel.Datatypes.TimeField import TimeField
 from OTLMOW.OTLModel.Datatypes.UnionTypeField import UnionTypeField
 from OTLMOW.OTLModel.Datatypes.UnionWaarden import UnionWaarden
 
@@ -385,7 +389,7 @@ class KlTestKeuzelijst(KeuzelijstField):
     }
 
 
-class AllCasesTestClass(AIMObject):
+class AllCasesTestClass(AIMObject, PuntGeometrie):
     """Test klasse die alle mogelijke cases en combinaties bevat"""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#AllCasesTestClass'
@@ -393,6 +397,7 @@ class AllCasesTestClass(AIMObject):
 
     def __init__(self):
         AIMObject.__init__(self)
+        PuntGeometrie.__init__(self)
 
         self._testDecimalNumberField = OTLAttribuut(field=FloatOrDecimalField,
                                                     naam='testDecimalNumberField',
@@ -408,6 +413,27 @@ class AllCasesTestClass(AIMObject):
                                                            definition='Test attribuut voor FloatOrDecimalField met kardinaliteit > 1',
                                                            kardinaliteit_max='*',
                                                            owner=self)
+
+        self._testTimeField = OTLAttribuut(field=TimeField,
+                                           naam='testTimeField',
+                                           label='testTimeField',
+                                           objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#AllCasesTestClass.testTimeField',
+                                           definition='Test attribuut voor TimeField',
+                                           owner=self)
+
+        self._testDateField = OTLAttribuut(field=DateField,
+                                           naam='testDateField',
+                                           label='testDateField',
+                                           objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#AllCasesTestClass.testDateField',
+                                           definition='Test attribuut voor DateField',
+                                           owner=self)
+
+        self._testDateTimeField = OTLAttribuut(field=DateTimeField,
+                                               naam='testDateTimeField',
+                                               label='testDateTimeField',
+                                               objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#AllCasesTestClass.testDateTimeField',
+                                               definition='Test attribuut voor DateTimeField',
+                                               owner=self)
 
         self._testBooleanField = OTLAttribuut(field=BooleanField,
                                               naam='testBooleanField',
@@ -533,6 +559,33 @@ class AllCasesTestClass(AIMObject):
     @testDecimalNumberField.setter
     def testDecimalNumberField(self, value):
         self._testDecimalNumberField.set_waarde(value, owner=self)
+
+    @property
+    def testTimeField(self):
+        """Test attribuut voor TimeField"""
+        return self._testTimeField.get_waarde()
+
+    @testTimeField.setter
+    def testTimeField(self, value):
+        self._testTimeField.set_waarde(value, owner=self)
+
+    @property
+    def testDateField(self):
+        """Test attribuut voor DateField"""
+        return self._testDateField.get_waarde()
+
+    @testDateField.setter
+    def testDateField(self, value):
+        self._testDateField.set_waarde(value, owner=self)
+
+    @property
+    def testDateTimeField(self):
+        """Test attribuut voor DateTimeField"""
+        return self._testDateTimeField.get_waarde()
+
+    @testDateTimeField.setter
+    def testDateTimeField(self, value):
+        self._testDateTimeField.set_waarde(value, owner=self)
 
     @property
     def testBooleanField(self):

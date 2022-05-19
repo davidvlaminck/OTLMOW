@@ -41,7 +41,7 @@ class AssetFactory:
         The parameter typeURI defines the type of the new AIMObject that is created.
         If omitted, it is assumed the same type as the given aimObject
         The parameter fields_to_copy dictates what fields are copied from the first object
-        When the types do no match, fields_to_copy can not be empty"""
+        When the types do not match, fields_to_copy can not be empty"""
 
         if fields_to_copy is None:
             fields_to_copy = []

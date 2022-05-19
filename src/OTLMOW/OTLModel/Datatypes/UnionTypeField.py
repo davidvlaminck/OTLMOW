@@ -13,7 +13,7 @@ class UnionTypeField(OTLField):
     def validate(value, attribuut):
         if value is None:
             return True
-        if isinstance(value, attribuut.field.waardeObject):
+        if type(value) == attribuut.field.waardeObject:
             return True
         valueDict = vars(attribuut.field.waardeObject())
         for val_in_dict in valueDict.values():

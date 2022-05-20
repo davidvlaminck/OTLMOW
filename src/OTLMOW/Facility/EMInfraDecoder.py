@@ -1,6 +1,7 @@
 ﻿import json
 
 from OTLMOW.Facility.AssetFactory import AssetFactory
+from OTLMOW.Facility.FileFormats.DictDecoder import DictDecoder
 from OTLMOW.Facility.FileFormats.JsonDecoder import JsonDecoder
 from OTLMOW.OEFModel.OEFClassLoader import OEFClassLoader
 from OTLMOW.OTLModel.BaseClasses.OTLObject import OTLObject
@@ -39,9 +40,7 @@ class EMInfraDecoder:
                     '@') or 'typeURI' in key or value == '' or value == [] or key == 'bron' or key == 'doel' or ':' in key:
                 continue
 
-            JsonDecoder(settings={
-                'file_formats': [{"name": "json", "dotnotatie": {"waarde_shortcut_applicable": True}}]}).set_value_by_dictitem(
-                instance, key, value, True)
+            DictDecoder.set_value_by_dictitem(instance, key, value, True)
 
         return instance
 

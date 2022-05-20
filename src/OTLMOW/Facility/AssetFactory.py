@@ -1,5 +1,4 @@
-﻿import copy
-
+﻿from OTLMOW.Facility.FileFormats.DictDecoder import DictDecoder
 from OTLMOW.OTLModel.Classes.AIMObject import AIMObject
 
 
@@ -88,15 +87,19 @@ class AssetFactory:
             raise ValueError("parameter field_list is empty or None")
 
         distinct_fieldList = list(set(field_list))
+        instance_dict = orig_object.create_dict_from_asset(waarde_shortcut=False)
+        new_instance_dict = {}
+
+        if instance_dict is None:
+            instance_dict = {}
 
         for fieldName in distinct_fieldList:
-            orig_asset_attribute_value = getattr(orig_object, fieldName)
-            if orig_asset_attribute_value is None:
+            if fieldName not in instance_dict:
                 continue
-            orig_asset_attribute = getattr(orig_object, '_' + fieldName)
-            new_asset_attribute = getattr(new_object, '_' + fieldName)
+            dictitem = instance_dict[fieldName]
+            new_instance_dict[fieldName] = dictitem
 
-            copy_waardes = copy.deepcopy(orig_asset_attribute.waarde)
-            new_asset_attribute.set_waarde(copy_waardes)
+        for k, v in new_instance_dict.items():
+            DictDecoder.set_value_by_dictitem(new_object, k, v, waarde_shortcut=False)
 
 

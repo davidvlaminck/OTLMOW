@@ -64,6 +64,8 @@ class OTLObjectHelper:
     @classmethod
     def clean_dict(cls, d) -> dict:
         """Recursively remove None values and empty dicts from input dict"""
+        if d is None:
+            return None
         for k in list(d):
             v = d[k]
             if isinstance(v, dict):

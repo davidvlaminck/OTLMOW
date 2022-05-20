@@ -34,7 +34,7 @@ class KwantWrdInEuroWaarden(AttributeInfo):
     @property
     def waarde(self):
         """Bevat een getal die bij het datatype hoort."""
-        return self._waarde.waarde
+        return self._waarde.get_waarde()
 
     @waarde.setter
     def waarde(self, value):
@@ -48,6 +48,7 @@ class KwantWrdInEuro(OTLField, AttributeInfo):
     label = 'Kwantitatieve waarde in euro'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInEuro'
     definition = 'Een kwantitatieve waarde die een getal in Euro uitdrukt.'
+    waarde_shortcut_applicable = True
     waardeObject = KwantWrdInEuroWaarden
 
     def __str__(self):

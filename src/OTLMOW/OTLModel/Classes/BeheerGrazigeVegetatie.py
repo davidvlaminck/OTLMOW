@@ -59,7 +59,7 @@ class BeheerGrazigeVegetatie(AIMObject, VlakGeometrie):
     @property
     def beheeroptie(self):
         """Aanduiding van welk beheer wordt toegepast op de grazige vegetatie."""
-        return self._beheeroptie.waarde
+        return self._beheeroptie.get_waarde()
 
     @beheeroptie.setter
     def beheeroptie(self, value):
@@ -68,7 +68,7 @@ class BeheerGrazigeVegetatie(AIMObject, VlakGeometrie):
     @property
     def heeftBeheerplan(self):
         """Aanduiding of er een beheerplan bestaat."""
-        return self._heeftBeheerplan.waarde
+        return self._heeftBeheerplan.get_waarde()
 
     @heeftBeheerplan.setter
     def heeftBeheerplan(self, value):
@@ -77,7 +77,7 @@ class BeheerGrazigeVegetatie(AIMObject, VlakGeometrie):
     @property
     def lengte(self):
         """De lengte in meter van de te behandelen grazige vegetatie."""
-        return self._lengte.waarde
+        return self._lengte.get_waarde()
 
     @lengte.setter
     def lengte(self, value):
@@ -86,7 +86,7 @@ class BeheerGrazigeVegetatie(AIMObject, VlakGeometrie):
     @property
     def maaien(self):
         """Complex datatype voor de eigenschappen van maaien."""
-        return self._maaien.waarde
+        return self._maaien.get_waarde()
 
     @maaien.setter
     def maaien(self, value):
@@ -95,7 +95,7 @@ class BeheerGrazigeVegetatie(AIMObject, VlakGeometrie):
     @property
     def oppervlakte(self):
         """De oppervlakte in vierkante meter van de te behandelen grazige vegetatie."""
-        return self._oppervlakte.waarde
+        return self._oppervlakte.get_waarde()
 
     @oppervlakte.setter
     def oppervlakte(self, value):

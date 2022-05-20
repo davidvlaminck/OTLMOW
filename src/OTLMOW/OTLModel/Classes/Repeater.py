@@ -40,7 +40,7 @@ class Repeater(ZenderOntvangerToegang):
     @property
     def merk(self):
         """Het merk van de repeater."""
-        return self._merk.waarde
+        return self._merk.get_waarde()
 
     @merk.setter
     def merk(self, value):
@@ -49,7 +49,7 @@ class Repeater(ZenderOntvangerToegang):
     @property
     def modelnaam(self):
         """De modelnaam/product range van een repeater."""
-        return self._modelnaam.waarde
+        return self._modelnaam.get_waarde()
 
     @modelnaam.setter
     def modelnaam(self, value):
@@ -58,7 +58,7 @@ class Repeater(ZenderOntvangerToegang):
     @property
     def toepassing(self):
         """De techniek of standaard waarmee signalen over het netwerk verstuurd worden. Mogelijke waarden zijn onder andere: KAR,  wifi, GPRS of GSM.."""
-        return self._toepassing.waarde
+        return self._toepassing.get_waarde()
 
     @toepassing.setter
     def toepassing(self, value):

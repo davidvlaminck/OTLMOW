@@ -26,7 +26,7 @@ class Dilatatie(AIMObject, PuntGeometrie):
     @property
     def uitzettingswaarde(self):
         """De grootst mogelijke uitzetting die mogelijk is voor een bepaalde dilatatieoplossing."""
-        return self._uitzettingswaarde.waarde
+        return self._uitzettingswaarde.get_waarde()
 
     @uitzettingswaarde.setter
     def uitzettingswaarde(self, value):

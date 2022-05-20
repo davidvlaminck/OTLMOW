@@ -52,7 +52,7 @@ class Kantopsluiting(LijnvormigElement, LijnGeometrie):
     @property
     def isGeprefabriceerd(self):
         """Aanduiding of de kantopsluiting al dan niet is geprefabriceerd."""
-        return self._isGeprefabriceerd.waarde
+        return self._isGeprefabriceerd.get_waarde()
 
     @isGeprefabriceerd.setter
     def isGeprefabriceerd(self, value):
@@ -61,7 +61,7 @@ class Kantopsluiting(LijnvormigElement, LijnGeometrie):
     @property
     def kleur(self):
         """De kleur van kantopsluiting."""
-        return self._kleur.waarde
+        return self._kleur.get_waarde()
 
     @kleur.setter
     def kleur(self, value):
@@ -70,7 +70,7 @@ class Kantopsluiting(LijnvormigElement, LijnGeometrie):
     @property
     def soort(self):
         """De soort van kantopsluiting."""
-        return self._soort.waarde
+        return self._soort.get_waarde()
 
     @soort.setter
     def soort(self, value):
@@ -79,7 +79,7 @@ class Kantopsluiting(LijnvormigElement, LijnGeometrie):
     @property
     def totaleLengte(self):
         """De totale lengte van de geplaatste constructie van kantopsluitingen in meter."""
-        return self._totaleLengte.waarde
+        return self._totaleLengte.get_waarde()
 
     @totaleLengte.setter
     def totaleLengte(self, value):

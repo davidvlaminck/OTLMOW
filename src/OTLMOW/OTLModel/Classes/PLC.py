@@ -40,7 +40,7 @@ class PLC(Controller):
     @property
     def merk(self):
         """Het merk van de PLC."""
-        return self._merk.waarde
+        return self._merk.get_waarde()
 
     @merk.setter
     def merk(self, value):
@@ -49,7 +49,7 @@ class PLC(Controller):
     @property
     def modelnaam(self):
         """De modelnaam van de PLC."""
-        return self._modelnaam.waarde
+        return self._modelnaam.get_waarde()
 
     @modelnaam.setter
     def modelnaam(self, value):
@@ -58,7 +58,7 @@ class PLC(Controller):
     @property
     def technischeFiche(self):
         """De technische fiche van de PLC."""
-        return self._technischeFiche.waarde
+        return self._technischeFiche.get_waarde()
 
     @technischeFiche.setter
     def technischeFiche(self, value):

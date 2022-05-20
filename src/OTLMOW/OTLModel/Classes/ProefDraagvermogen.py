@@ -30,7 +30,7 @@ class ProefDraagvermogen(Proef, PuntGeometrie, LijnGeometrie, VlakGeometrie):
     @property
     def draagvermogen(self):
         """Proef die het draagvermogen van de laag bepaald."""
-        return self._draagvermogen.waarde
+        return self._draagvermogen.get_waarde()
 
     @draagvermogen.setter
     def draagvermogen(self, value):

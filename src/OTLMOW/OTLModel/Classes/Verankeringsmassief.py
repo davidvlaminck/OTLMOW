@@ -34,7 +34,7 @@ class Verankeringsmassief(Betonfundering, KlassiekeFundering):
     @property
     def isAfgedektMetBitumen(self):
         """Geeft aan of de fundering afgedekt is met een waterbestendige laag die regenwater en vuil wegvoert van de fundering."""
-        return self._isAfgedektMetBitumen.waarde
+        return self._isAfgedektMetBitumen.get_waarde()
 
     @isAfgedektMetBitumen.setter
     def isAfgedektMetBitumen(self, value):
@@ -43,7 +43,7 @@ class Verankeringsmassief(Betonfundering, KlassiekeFundering):
     @property
     def volume(self):
         """Het volume in kubieke meter van het verankeringsmassief."""
-        return self._volume.waarde
+        return self._volume.get_waarde()
 
     @volume.setter
     def volume(self, value):

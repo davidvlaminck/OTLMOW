@@ -26,7 +26,7 @@ class Stroomkring(AIMNaamObject, PuntGeometrie):
     @property
     def stroomkringnummer(self):
         """De identificatie van de stroomkring."""
-        return self._stroomkringnummer.waarde
+        return self._stroomkringnummer.get_waarde()
 
     @stroomkringnummer.setter
     def stroomkringnummer(self, value):

@@ -47,7 +47,7 @@ class Hydrant(Brandvoorziening):
     @property
     def diameter(self):
         """Diameter van het aftappunt."""
-        return self._diameter.waarde
+        return self._diameter.get_waarde()
 
     @diameter.setter
     def diameter(self, value):
@@ -56,7 +56,7 @@ class Hydrant(Brandvoorziening):
     @property
     def heeftEigenAfsluitkraan(self):
         """Geeft aan of de hydrant ter plaatse kan afgesloten/opengezet kan worden."""
-        return self._heeftEigenAfsluitkraan.waarde
+        return self._heeftEigenAfsluitkraan.get_waarde()
 
     @heeftEigenAfsluitkraan.setter
     def heeftEigenAfsluitkraan(self, value):
@@ -65,7 +65,7 @@ class Hydrant(Brandvoorziening):
     @property
     def heeftIsolatie(self):
         """Geeft aan of de hydrant voorzien is van eigen isolatie."""
-        return self._heeftIsolatie.waarde
+        return self._heeftIsolatie.get_waarde()
 
     @heeftIsolatie.setter
     def heeftIsolatie(self, value):
@@ -74,7 +74,7 @@ class Hydrant(Brandvoorziening):
     @property
     def koppeling(self):
         """Aard van de koppeling voor aansluiting van een aftapping."""
-        return self._koppeling.waarde
+        return self._koppeling.get_waarde()
 
     @koppeling.setter
     def koppeling(self, value):

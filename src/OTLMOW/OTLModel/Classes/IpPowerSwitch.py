@@ -59,7 +59,7 @@ class IpPowerSwitch(AIMNaamObject, PuntGeometrie):
     @property
     def dnsNaam(self):
         """De DNSNaam (ook "volledige domein naam" genoemd ) is een unieke naam binnen het Domain Name System (DNS), het naamgevingssysteem waarmee computers, webservers, diensten en  toepassing op een unieke manier kunnen worden geïdentificeerd. Deze bevat zowel de hostname en de top level domein naam bv. 120c8-ar1.belfa.be."""
-        return self._dnsNaam.waarde
+        return self._dnsNaam.get_waarde()
 
     @dnsNaam.setter
     def dnsNaam(self, value):
@@ -68,7 +68,7 @@ class IpPowerSwitch(AIMNaamObject, PuntGeometrie):
     @property
     def handleiding(self):
         """De handleiding van de IP powerswitch."""
-        return self._handleiding.waarde
+        return self._handleiding.get_waarde()
 
     @handleiding.setter
     def handleiding(self, value):
@@ -77,7 +77,7 @@ class IpPowerSwitch(AIMNaamObject, PuntGeometrie):
     @property
     def ipAdres(self):
         """Het IP-adres van de IP power switch."""
-        return self._ipAdres.waarde
+        return self._ipAdres.get_waarde()
 
     @ipAdres.setter
     def ipAdres(self, value):
@@ -86,7 +86,7 @@ class IpPowerSwitch(AIMNaamObject, PuntGeometrie):
     @property
     def technischeFiche(self):
         """De technische fiche  van de IP powerswitch."""
-        return self._technischeFiche.waarde
+        return self._technischeFiche.get_waarde()
 
     @technischeFiche.setter
     def technischeFiche(self, value):
@@ -95,7 +95,7 @@ class IpPowerSwitch(AIMNaamObject, PuntGeometrie):
     @property
     def type(self):
         """Merk en type van de IP powerswitch."""
-        return self._type.waarde
+        return self._type.get_waarde()
 
     @type.setter
     def type(self, value):

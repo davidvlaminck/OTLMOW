@@ -19,7 +19,7 @@ class DtcAfmetingDiameterInCmWaarden(AttributeInfo):
     @property
     def diameter(self):
         """De diameter in centimeter."""
-        return self._diameter.waarde
+        return self._diameter.get_waarde()
 
     @diameter.setter
     def diameter(self, value):

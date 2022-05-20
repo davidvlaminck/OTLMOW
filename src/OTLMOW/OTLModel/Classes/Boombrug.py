@@ -41,7 +41,7 @@ class Boombrug(AIMObject, LijnGeometrie):
     @property
     def hoogte(self):
         """De hoogte van de boombrug in meter."""
-        return self._hoogte.waarde
+        return self._hoogte.get_waarde()
 
     @hoogte.setter
     def hoogte(self, value):
@@ -50,7 +50,7 @@ class Boombrug(AIMObject, LijnGeometrie):
     @property
     def lengte(self):
         """De lengte van de boombrug in meter."""
-        return self._lengte.waarde
+        return self._lengte.get_waarde()
 
     @lengte.setter
     def lengte(self, value):
@@ -59,7 +59,7 @@ class Boombrug(AIMObject, LijnGeometrie):
     @property
     def type(self):
         """Het type van boombrug."""
-        return self._type.waarde
+        return self._type.get_waarde()
 
     @type.setter
     def type(self, value):

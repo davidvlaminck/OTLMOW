@@ -48,7 +48,7 @@ class Segmentcontroller(Controller):
     @property
     def beveil?igingssleutel(self):
         """De encryptie die wordt toegepast om de verbinding tussen lokaal en centraal te beveiligen."""
-        return self._beveil?igingssleutel.waarde
+        return self._beveil?igingssleutel.get_waarde()
 
     @beveil?igingssleutel.setter
     def beveil?igingssleutel(self, value):
@@ -57,7 +57,7 @@ class Segmentcontroller(Controller):
     @property
     def beveiligingssleutel(self):
         """De encryptie die wordt toegepast om de verbinding tussen lokaal en centraal te beveiligen."""
-        return self._beveiligingssleutel.waarde
+        return self._beveiligingssleutel.get_waarde()
 
     @beveiligingssleutel.setter
     def beveiligingssleutel(self, value):
@@ -66,7 +66,7 @@ class Segmentcontroller(Controller):
     @property
     def merk(self):
         """Merk van de segmentcontroller."""
-        return self._merk.waarde
+        return self._merk.get_waarde()
 
     @merk.setter
     def merk(self, value):
@@ -75,7 +75,7 @@ class Segmentcontroller(Controller):
     @property
     def modelnaam(self):
         """Modelnaam van de segmentcontroller."""
-        return self._modelnaam.waarde
+        return self._modelnaam.get_waarde()
 
     @modelnaam.setter
     def modelnaam(self, value):

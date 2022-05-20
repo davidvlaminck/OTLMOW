@@ -7,18 +7,25 @@ class UnionTypeField(OTLField):
         return OTLField.__str__(self)
 
     attributen = None
-    _uses_waarde_object = True
+    waarde_shortcut_applicable = False
 
     @staticmethod
     def validate(value, attribuut):
+        if value is None:
+            return True
+        if type(value) == attribuut.field.waardeObject:
+            return True
         valueDict = vars(attribuut.field.waardeObject())
-        for attr in valueDict.values():
+        for val_in_dict in valueDict.values():
+            if val_in_dict is None:
+                continue
             try:
-                validate_result = attr.field.validate(value, attr)
+                validate_result = val_in_dict.field.validate(value, val_in_dict)
                 if validate_result:
                     return True
             except:
-                continue
+                raise UnionTypeError(
+                    f'Invalid value for {attribuut.naam}, check attr_type_info to see what kind of values are valid.')
         raise UnionTypeError(f'Invalid value for {attribuut.naam}, check attr_type_info to see what kind of values are valid.')
 
 

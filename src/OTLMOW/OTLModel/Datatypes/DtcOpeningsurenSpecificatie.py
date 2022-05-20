@@ -34,7 +34,7 @@ class DtcOpeningsurenSpecificatieWaarden(AttributeInfo):
     @property
     def openingstijd(self):
         """Het tijdsstip waarop de opening plaatsvindt."""
-        return self._openingstijd.waarde
+        return self._openingstijd.get_waarde()
 
     @openingstijd.setter
     def openingstijd(self, value):
@@ -43,7 +43,7 @@ class DtcOpeningsurenSpecificatieWaarden(AttributeInfo):
     @property
     def sluitingstijd(self):
         """Het tijdsstip waarop de sluiting plaatsvindt."""
-        return self._sluitingstijd.waarde
+        return self._sluitingstijd.get_waarde()
 
     @sluitingstijd.setter
     def sluitingstijd(self, value):
@@ -52,7 +52,7 @@ class DtcOpeningsurenSpecificatieWaarden(AttributeInfo):
     @property
     def weekdag(self):
         """Een dag uit de week incl. weekenddagen."""
-        return self._weekdag.waarde
+        return self._weekdag.get_waarde()
 
     @weekdag.setter
     def weekdag(self, value):

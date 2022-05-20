@@ -49,7 +49,7 @@ class Laag(AIMObject):
     @property
     def breedte(self):
         """De (gemiddelde) breedte van een laag in meter. Dit kan ook de nominale breedte zijn afhankelijk van de laag en situatie."""
-        return self._breedte.waarde
+        return self._breedte.get_waarde()
 
     @breedte.setter
     def breedte(self, value):
@@ -58,7 +58,7 @@ class Laag(AIMObject):
     @property
     def laagRol(self):
         """De functie die de laag vervult in de verticale opbouw."""
-        return self._laagRol.waarde
+        return self._laagRol.get_waarde()
 
     @laagRol.setter
     def laagRol(self, value):
@@ -67,7 +67,7 @@ class Laag(AIMObject):
     @property
     def lengte(self):
         """De (gemiddelde) lengte van een laag in meter. Dit kan ook de nominale lengte zijn afhankelijk van de laag en situatie."""
-        return self._lengte.waarde
+        return self._lengte.get_waarde()
 
     @lengte.setter
     def lengte(self, value):
@@ -76,7 +76,7 @@ class Laag(AIMObject):
     @property
     def oppervlakte(self):
         """De oppervlakte van een laag in vierkante meter."""
-        return self._oppervlakte.waarde
+        return self._oppervlakte.get_waarde()
 
     @oppervlakte.setter
     def oppervlakte(self, value):

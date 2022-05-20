@@ -71,7 +71,7 @@ class Verlichtingstoestel(AIMNaamObject, PuntGeometrie):
     @property
     def heeftAansluitkastGeintegreerd(self):
         """Is de aansluitkast geïntegreerd?"""
-        return self._heeftAansluitkastGeintegreerd.waarde
+        return self._heeftAansluitkastGeintegreerd.get_waarde()
 
     @heeftAansluitkastGeintegreerd.setter
     def heeftAansluitkastGeintegreerd(self, value):
@@ -80,7 +80,7 @@ class Verlichtingstoestel(AIMNaamObject, PuntGeometrie):
     @property
     def merk(self):
         """Het merk van het verlichtingstoestel."""
-        return self._merk.waarde
+        return self._merk.get_waarde()
 
     @merk.setter
     def merk(self, value):
@@ -89,7 +89,7 @@ class Verlichtingstoestel(AIMNaamObject, PuntGeometrie):
     @property
     def modelnaam(self):
         """De modelnaam van het verlichtingstoestel."""
-        return self._modelnaam.waarde
+        return self._modelnaam.get_waarde()
 
     @modelnaam.setter
     def modelnaam(self, value):
@@ -98,7 +98,7 @@ class Verlichtingstoestel(AIMNaamObject, PuntGeometrie):
     @property
     def stroomkringnummer(self):
         """Nummer van de stroomkring waarop het verlichtingstoestel is aangesloten."""
-        return self._stroomkringnummer.waarde
+        return self._stroomkringnummer.get_waarde()
 
     @stroomkringnummer.setter
     def stroomkringnummer(self, value):
@@ -107,7 +107,7 @@ class Verlichtingstoestel(AIMNaamObject, PuntGeometrie):
     @property
     def systeemvermogen(self):
         """Systeemvermogen (Watt) van het verlichtingstoestel."""
-        return self._systeemvermogen.waarde
+        return self._systeemvermogen.get_waarde()
 
     @systeemvermogen.setter
     def systeemvermogen(self, value):
@@ -116,7 +116,7 @@ class Verlichtingstoestel(AIMNaamObject, PuntGeometrie):
     @property
     def verlichtGebied(self):
         """Het gebied op de wegbaan of het object dat verlicht wordt door het verlichtingstoestel."""
-        return self._verlichtGebied.waarde
+        return self._verlichtGebied.get_waarde()
 
     @verlichtGebied.setter
     def verlichtGebied(self, value):

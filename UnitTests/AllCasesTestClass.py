@@ -1,14 +1,18 @@
 # coding=utf-8
+from OTLMOW.GeometrieArtefact.PuntGeometrie import PuntGeometrie
 from OTLMOW.OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLMOW.OTLModel.BaseClasses.OTLField import OTLField
 from OTLMOW.OTLModel.Classes.AIMObject import AIMObject
 from OTLMOW.OTLModel.Datatypes.BooleanField import BooleanField
 from OTLMOW.OTLModel.Datatypes.ComplexField import ComplexField
+from OTLMOW.OTLModel.Datatypes.DateField import DateField
+from OTLMOW.OTLModel.Datatypes.DateTimeField import DateTimeField
 from OTLMOW.OTLModel.Datatypes.FloatOrDecimalField import FloatOrDecimalField
 from OTLMOW.OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLMOW.OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 from OTLMOW.OTLModel.Datatypes.StringField import StringField
+from OTLMOW.OTLModel.Datatypes.TimeField import TimeField
 from OTLMOW.OTLModel.Datatypes.UnionTypeField import UnionTypeField
 from OTLMOW.OTLModel.Datatypes.UnionWaarden import UnionWaarden
 
@@ -50,7 +54,7 @@ class DtcTestComplexType2Waarden(AttributeInfo):
     @property
     def testStringFieldMetKard(self):
         """Test attribuut voor StringField met kardinaliteit > 1"""
-        return self._testStringFieldMetKard.waarde
+        return self._testStringFieldMetKard.get_waarde()
 
     @testStringFieldMetKard.setter
     def testStringFieldMetKard(self, value):
@@ -59,7 +63,7 @@ class DtcTestComplexType2Waarden(AttributeInfo):
     @property
     def testStringField(self):
         """Test attribuut voor StringField"""
-        return self._testStringField.waarde
+        return self._testStringField.get_waarde()
 
     @testStringField.setter
     def testStringField(self, value):
@@ -68,7 +72,7 @@ class DtcTestComplexType2Waarden(AttributeInfo):
     @property
     def testKwantWrdMetKard(self):
         """Test attribuut voor Kwantitatieve waarde met kardinaliteit > 1"""
-        return self._testKwantWrdMetKard.waarde
+        return self._testKwantWrdMetKard.get_waarde()
 
     @testKwantWrdMetKard.setter
     def testKwantWrdMetKard(self, value):
@@ -77,7 +81,7 @@ class DtcTestComplexType2Waarden(AttributeInfo):
     @property
     def testKwantWrd(self):
         """Test attribuut voor Kwantitatieve waarde"""
-        return self._testKwantWrd.waarde
+        return self._testKwantWrd.get_waarde()
 
     @testKwantWrd.setter
     def testKwantWrd(self, value):
@@ -145,8 +149,8 @@ class DtcTestComplexTypeWaarden(AttributeInfo):
                                               owner=self)
 
         self._testComplexType2MetKard = OTLAttribuut(field=DtcTestComplexType2,
-                                                     naam='testComplexTypeMetKard2',
-                                                     label='testComplexTypeMetKard2',
+                                                     naam='testComplexType2MetKard',
+                                                     label='testComplexType2MetKard',
                                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#AllCasesTestClass.testComplexType2MetKard',
                                                      definition='Test attribuut 2 voor een complexe waarde met kardinaliteit > 1',
                                                      kardinaliteit_max='*',
@@ -155,7 +159,7 @@ class DtcTestComplexTypeWaarden(AttributeInfo):
     @property
     def testComplexType2MetKard(self):
         """Test attribuut 2 voor een complexe waarde met kardinaliteit > 1"""
-        return self._testComplexType2MetKard.waarde
+        return self._testComplexType2MetKard.get_waarde()
 
     @testComplexType2MetKard.setter
     def testComplexType2MetKard(self, value):
@@ -164,7 +168,7 @@ class DtcTestComplexTypeWaarden(AttributeInfo):
     @property
     def testComplexType2(self):
         """Test attribuut 2 voor een complexe waarde"""
-        return self._testComplexType2.waarde
+        return self._testComplexType2.get_waarde()
 
     @testComplexType2.setter
     def testComplexType2(self, value):
@@ -173,7 +177,7 @@ class DtcTestComplexTypeWaarden(AttributeInfo):
     @property
     def testStringFieldMetKard(self):
         """Test attribuut voor StringField met kardinaliteit > 1"""
-        return self._testStringFieldMetKard.waarde
+        return self._testStringFieldMetKard.get_waarde()
 
     @testStringFieldMetKard.setter
     def testStringFieldMetKard(self, value):
@@ -182,7 +186,7 @@ class DtcTestComplexTypeWaarden(AttributeInfo):
     @property
     def testStringField(self):
         """Test attribuut voor StringField"""
-        return self._testStringField.waarde
+        return self._testStringField.get_waarde()
 
     @testStringField.setter
     def testStringField(self, value):
@@ -191,7 +195,7 @@ class DtcTestComplexTypeWaarden(AttributeInfo):
     @property
     def testBooleanField(self):
         """Test attribuut voor BooleanField"""
-        return self._testBooleanField.waarde
+        return self._testBooleanField.get_waarde()
 
     @testBooleanField.setter
     def testBooleanField(self, value):
@@ -200,7 +204,7 @@ class DtcTestComplexTypeWaarden(AttributeInfo):
     @property
     def testKwantWrdMetKard(self):
         """Test attribuut voor Kwantitatieve waarde met kardinaliteit > 1"""
-        return self._testKwantWrdMetKard.waarde
+        return self._testKwantWrdMetKard.get_waarde()
 
     @testKwantWrdMetKard.setter
     def testKwantWrdMetKard(self, value):
@@ -209,7 +213,7 @@ class DtcTestComplexTypeWaarden(AttributeInfo):
     @property
     def testKwantWrd(self):
         """Test attribuut voor Kwantitatieve waarde"""
-        return self._testKwantWrd.waarde
+        return self._testKwantWrd.get_waarde()
 
     @testKwantWrd.setter
     def testKwantWrd(self, value):
@@ -228,18 +232,6 @@ class DtcTestComplexType(ComplexField, AttributeInfo):
         return ComplexField.__str__(self)
 
 
-class DtcTestComplexType(OTLField, AttributeInfo):
-    """Complex datatype voor test doeleinden"""
-    naam = 'DtcTestComplexType'
-    label = 'Test complex type'
-    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcTestComplexType'
-    definition = 'Complex datatype voor test doeleinden'
-    waardeObject = DtcTestComplexTypeWaarden
-
-    def __str__(self):
-        return OTLField.__str__(self)
-
-
 class DteTestEenvoudigTypeWaarden(AttributeInfo):
     def __init__(self, parent=None):
         AttributeInfo.__init__(self, parent)
@@ -254,7 +246,7 @@ class DteTestEenvoudigTypeWaarden(AttributeInfo):
     @property
     def waarde(self):
         """Beschrijft een tekst van een eenvoudig type."""
-        return self._waarde.waarde
+        return self._waarde.get_waarde()
 
     @waarde.setter
     def waarde(self, value):
@@ -267,6 +259,7 @@ class DteTestEenvoudigType(OTLField, AttributeInfo):
     label = 'Test Eenvoudig Type'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DteTestEenvoudigType'
     definition = 'Beschrijft een attribuut voor een eenvoudig type'
+    waarde_shortcut_applicable = True
     waardeObject = DteTestEenvoudigTypeWaarden
 
     def __str__(self):
@@ -300,7 +293,7 @@ class KwantWrdTestWaarden(AttributeInfo):
     @property
     def waarde(self):
         """Bevat een getal die bij het datatype hoort."""
-        return self._waarde.waarde
+        return self._waarde.get_waarde()
 
     @waarde.setter
     def waarde(self, value):
@@ -314,6 +307,7 @@ class KwantWrdTest(OTLField, AttributeInfo):
     label = 'Kwantitatieve waarde test'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdTest'
     definition = 'Een kwantitatieve waarde die een test voorstelt.'
+    waarde_shortcut_applicable = True
     waardeObject = KwantWrdTestWaarden
 
     def __str__(self):
@@ -325,7 +319,7 @@ class DtuTestUnionTypeWaarden(AttributeInfo, UnionWaarden):
         AttributeInfo.__init__(self, parent)
         UnionWaarden.__init__(self)
         self._unionKwantWrd = OTLAttribuut(field=KwantWrdTest,
-                                           naam='UnionKwantWrd',
+                                           naam='unionKwantWrd',
                                            label='Union Kwant Wrd',
                                            objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtuTestUnionType.unionKwantWrd',
                                            kardinaliteit_min='0',
@@ -343,7 +337,7 @@ class DtuTestUnionTypeWaarden(AttributeInfo, UnionWaarden):
     @property
     def unionKwantWrd(self):
         """De kwantitatieve waarde van deze union type."""
-        return self._unionKwantWrd.waarde
+        return self._unionKwantWrd.get_waarde()
 
     @unionKwantWrd.setter
     def unionKwantWrd(self, value):
@@ -354,7 +348,7 @@ class DtuTestUnionTypeWaarden(AttributeInfo, UnionWaarden):
     @property
     def unionString(self):
         """De tekstuele waarde van deze union type"""
-        return self._unionString.waarde
+        return self._unionString.get_waarde()
 
     @unionString.setter
     def unionString(self, value):
@@ -383,19 +377,19 @@ class KlTestKeuzelijst(KeuzelijstField):
     definition = 'Keuzelijst met test waarden.'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlAIMToestand'
     options = {
-        'waarde 1': KeuzelijstWaarde(invulwaarde='waarde-1',
+        'waarde-1': KeuzelijstWaarde(invulwaarde='waarde-1',
                                      label='waarde 1',
                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAIMToestand/waarde-1'),
-        'waarde 2': KeuzelijstWaarde(invulwaarde='waarde-2',
+        'waarde-2': KeuzelijstWaarde(invulwaarde='waarde-2',
                                      label='waarde 2',
                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAIMToestand/waarde-2'),
-        'waarde 3': KeuzelijstWaarde(invulwaarde='waarde-3',
+        'waarde-3': KeuzelijstWaarde(invulwaarde='waarde-3',
                                      label='waarde 3',
                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAIMToestand/waarde-3')
     }
 
 
-class AllCasesTestClass(AIMObject):
+class AllCasesTestClass(AIMObject, PuntGeometrie):
     """Test klasse die alle mogelijke cases en combinaties bevat"""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#AllCasesTestClass'
@@ -403,21 +397,43 @@ class AllCasesTestClass(AIMObject):
 
     def __init__(self):
         AIMObject.__init__(self)
+        PuntGeometrie.__init__(self)
 
         self._testDecimalNumberField = OTLAttribuut(field=FloatOrDecimalField,
-                                                    naam='testFloatOrDecimalField',
-                                                    label='testFloatOrDecimalField',
-                                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#AllCasesTestClass.testFloatOrDecimalField',
+                                                    naam='testDecimalNumberField',
+                                                    label='testDecimalNumberField',
+                                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#AllCasesTestClass.testDecimalNumberField',
                                                     definition='Test attribuut voor FloatOrDecimalField',
                                                     owner=self)
 
         self._testDecimalNumberFieldMetKard = OTLAttribuut(field=FloatOrDecimalField,
-                                                           naam='testFloatOrDecimalFieldMetKard',
-                                                           label='testFloatOrDecimalFielddMetKard',
-                                                           objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#AllCasesTestClass.testFloatOrDecimalFieldMetKard',
+                                                           naam='testDecimalNumberFieldMetKard',
+                                                           label='testDecimalNumberFieldMetKard',
+                                                           objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#AllCasesTestClass.testDecimalNumberFieldMetKard',
                                                            definition='Test attribuut voor FloatOrDecimalField met kardinaliteit > 1',
                                                            kardinaliteit_max='*',
                                                            owner=self)
+
+        self._testTimeField = OTLAttribuut(field=TimeField,
+                                           naam='testTimeField',
+                                           label='testTimeField',
+                                           objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#AllCasesTestClass.testTimeField',
+                                           definition='Test attribuut voor TimeField',
+                                           owner=self)
+
+        self._testDateField = OTLAttribuut(field=DateField,
+                                           naam='testDateField',
+                                           label='testDateField',
+                                           objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#AllCasesTestClass.testDateField',
+                                           definition='Test attribuut voor DateField',
+                                           owner=self)
+
+        self._testDateTimeField = OTLAttribuut(field=DateTimeField,
+                                               naam='testDateTimeField',
+                                               label='testDateTimeField',
+                                               objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#AllCasesTestClass.testDateTimeField',
+                                               definition='Test attribuut voor DateTimeField',
+                                               owner=self)
 
         self._testBooleanField = OTLAttribuut(field=BooleanField,
                                               naam='testBooleanField',
@@ -487,10 +503,11 @@ class AllCasesTestClass(AIMObject):
                                                   owner=self)
 
         self._testEenvoudigType = OTLAttribuut(field=DteTestEenvoudigType,
-                                               naam='TestEenvoudigType',
-                                               label='Test Eenvoudig Type',
+                                               naam='testEenvoudigType',
+                                               label='test Eenvoudig Type',
                                                objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#AllCasesTestClass.DteTestEenvoudigType',
-                                               definition='Test attribuut voor TestEenvoudigType.')
+                                               definition='Test attribuut voor TestEenvoudigType.',
+                                               owner=self)
 
         self._testKeuzelijst = OTLAttribuut(field=KlTestKeuzelijst,
                                             naam='testKeuzelijst',
@@ -510,7 +527,7 @@ class AllCasesTestClass(AIMObject):
     @property
     def testComplexTypeMetKard(self):
         """Test attribuut voor een complexe waarde met kardinaliteit > 1"""
-        return self._testComplexTypeMetKard.waarde
+        return self._testComplexTypeMetKard.get_waarde()
 
     @testComplexTypeMetKard.setter
     def testComplexTypeMetKard(self, value):
@@ -519,7 +536,7 @@ class AllCasesTestClass(AIMObject):
     @property
     def testComplexType(self):
         """Test attribuut voor een complexe waarde"""
-        return self._testComplexType.waarde
+        return self._testComplexType.get_waarde()
 
     @testComplexType.setter
     def testComplexType(self, value):
@@ -528,7 +545,7 @@ class AllCasesTestClass(AIMObject):
     @property
     def testDecimalNumberFieldMetKard(self):
         """Test attribuut voor DecimalNumberField met kardinaliteit > 1"""
-        return self._testDecimalNumberFieldMetKard.waarde
+        return self._testDecimalNumberFieldMetKard.get_waarde()
 
     @testDecimalNumberFieldMetKard.setter
     def testDecimalNumberFieldMetKard(self, value):
@@ -537,16 +554,43 @@ class AllCasesTestClass(AIMObject):
     @property
     def testDecimalNumberField(self):
         """Test attribuut voor DecimalNumberField"""
-        return self._testDecimalNumberField.waarde
+        return self._testDecimalNumberField.get_waarde()
 
     @testDecimalNumberField.setter
     def testDecimalNumberField(self, value):
         self._testDecimalNumberField.set_waarde(value, owner=self)
 
     @property
+    def testTimeField(self):
+        """Test attribuut voor TimeField"""
+        return self._testTimeField.get_waarde()
+
+    @testTimeField.setter
+    def testTimeField(self, value):
+        self._testTimeField.set_waarde(value, owner=self)
+
+    @property
+    def testDateField(self):
+        """Test attribuut voor DateField"""
+        return self._testDateField.get_waarde()
+
+    @testDateField.setter
+    def testDateField(self, value):
+        self._testDateField.set_waarde(value, owner=self)
+
+    @property
+    def testDateTimeField(self):
+        """Test attribuut voor DateTimeField"""
+        return self._testDateTimeField.get_waarde()
+
+    @testDateTimeField.setter
+    def testDateTimeField(self, value):
+        self._testDateTimeField.set_waarde(value, owner=self)
+
+    @property
     def testBooleanField(self):
         """Test attribuut voor BooleanField"""
-        return self._testBooleanField.waarde
+        return self._testBooleanField.get_waarde()
 
     @testBooleanField.setter
     def testBooleanField(self, value):
@@ -555,7 +599,7 @@ class AllCasesTestClass(AIMObject):
     @property
     def testStringFieldMetKard(self):
         """Test attribuut voor StringField met kardinaliteit > 1"""
-        return self._testStringFieldMetKard.waarde
+        return self._testStringFieldMetKard.get_waarde()
 
     @testStringFieldMetKard.setter
     def testStringFieldMetKard(self, value):
@@ -564,7 +608,7 @@ class AllCasesTestClass(AIMObject):
     @property
     def testStringField(self):
         """Test attribuut voor StringField"""
-        return self._testStringField.waarde
+        return self._testStringField.get_waarde()
 
     @testStringField.setter
     def testStringField(self, value):
@@ -573,7 +617,7 @@ class AllCasesTestClass(AIMObject):
     @property
     def testKwantWrdMetKard(self):
         """Test attribuut voor Kwantitatieve waarde met kardinaliteit > 1"""
-        return self._testKwantWrdMetKard.waarde
+        return self._testKwantWrdMetKard.get_waarde()
 
     @testKwantWrdMetKard.setter
     def testKwantWrdMetKard(self, value):
@@ -582,7 +626,7 @@ class AllCasesTestClass(AIMObject):
     @property
     def testKwantWrd(self):
         """Test attribuut voor Kwantitatieve waarde"""
-        return self._testKwantWrd.waarde
+        return self._testKwantWrd.get_waarde()
 
     @testKwantWrd.setter
     def testKwantWrd(self, value):
@@ -591,7 +635,7 @@ class AllCasesTestClass(AIMObject):
     @property
     def testUnionType(self):
         """Test attribuut voor testUnionType."""
-        return self._testUnionType.waarde
+        return self._testUnionType.get_waarde()
 
     @testUnionType.setter
     def testUnionType(self, value):
@@ -600,7 +644,7 @@ class AllCasesTestClass(AIMObject):
     @property
     def testUnionTypeMetKard(self):
         """Test attribuut voor testUnionType met kardinaliteit > 1."""
-        return self._testUnionTypeMetKard.waarde
+        return self._testUnionTypeMetKard.get_waarde()
 
     @testUnionTypeMetKard.setter
     def testUnionTypeMetKard(self, value):
@@ -609,7 +653,7 @@ class AllCasesTestClass(AIMObject):
     @property
     def testEenvoudigType(self):
         """Test attribuut voor TestEenvoudigType."""
-        return self._testEenvoudigType.waarde
+        return self._testEenvoudigType.get_waarde()
 
     @testEenvoudigType.setter
     def testEenvoudigType(self, value):
@@ -618,7 +662,7 @@ class AllCasesTestClass(AIMObject):
     @property
     def testKeuzelijst(self):
         """Test attribuut voor TestKeuzelijst."""
-        return self._testKeuzelijst.waarde
+        return self._testKeuzelijst.get_waarde()
 
     @testKeuzelijst.setter
     def testKeuzelijst(self, value):
@@ -627,7 +671,7 @@ class AllCasesTestClass(AIMObject):
     @property
     def testKeuzelijstMetKard(self):
         """Test attribuut voor TestKeuzelijst met kardinaliteit > 1."""
-        return self._testKeuzelijstMetKard.waarde
+        return self._testKeuzelijstMetKard.get_waarde()
 
     @testKeuzelijstMetKard.setter
     def testKeuzelijstMetKard(self, value):

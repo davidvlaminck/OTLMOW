@@ -42,7 +42,7 @@ class Buitenkast(Kast):
     @property
     def ipKlasse(self):
         """De IP-codering als een aanduiding voor de mate van beveiliging van de constructie van elektrische of elektronische apparatuur tegen eigen schade door gebruik in "vijandige omgevingen" en tegen eventueel gevaar voor de gebruiker volgens IEC 60529."""
-        return self._ipKlasse.waarde
+        return self._ipKlasse.get_waarde()
 
     @ipKlasse.setter
     def ipKlasse(self, value):
@@ -51,7 +51,7 @@ class Buitenkast(Kast):
     @property
     def keuringsfrequentie(self):
         """Frequentie (in jaar) waarmee de kast moet onderworpen worden aan een periodieke keuring door een externe dienst voor technische controle."""
-        return self._keuringsfrequentie.waarde
+        return self._keuringsfrequentie.get_waarde()
 
     @keuringsfrequentie.setter
     def keuringsfrequentie(self, value):
@@ -60,7 +60,7 @@ class Buitenkast(Kast):
     @property
     def verfraaid(self):
         """Geeft aan of de wegkantkast voorzien van verfraaiing en of die al dan niet vergund is."""
-        return self._verfraaid.waarde
+        return self._verfraaid.get_waarde()
 
     @verfraaid.setter
     def verfraaid(self, value):

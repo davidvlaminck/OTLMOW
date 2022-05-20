@@ -69,7 +69,7 @@ class VerkeersbordConcept(AIMObject, GeenGeometrie):
     @property
     def afbeelding(self):
         """De afbeelding van het verkeersbordconcept."""
-        return self._afbeelding.waarde
+        return self._afbeelding.get_waarde()
 
     @afbeelding.setter
     def afbeelding(self, value):
@@ -78,7 +78,7 @@ class VerkeersbordConcept(AIMObject, GeenGeometrie):
     @property
     def betekenis(self):
         """Betekenis die gegeven wordt aan dit soort verkeersbord volgens de wegcode."""
-        return self._betekenis.waarde
+        return self._betekenis.get_waarde()
 
     @betekenis.setter
     def betekenis(self, value):
@@ -87,7 +87,7 @@ class VerkeersbordConcept(AIMObject, GeenGeometrie):
     @property
     def rechtsgrondOnderdeel(self):
         """Verwijst naar een rechtsgrondonderdeel over dit verkeersbordconcept."""
-        return self._rechtsgrondOnderdeel.waarde
+        return self._rechtsgrondOnderdeel.get_waarde()
 
     @rechtsgrondOnderdeel.setter
     def rechtsgrondOnderdeel(self, value):
@@ -96,7 +96,7 @@ class VerkeersbordConcept(AIMObject, GeenGeometrie):
     @property
     def status(self):
         """Duidt of het verkeersbordconcept nog gebruikt wordt."""
-        return self._status.waarde
+        return self._status.get_waarde()
 
     @status.setter
     def status(self, value):
@@ -105,7 +105,7 @@ class VerkeersbordConcept(AIMObject, GeenGeometrie):
     @property
     def verkeersbordCategorie(self):
         """Categorie van het verkeersbordconcept.	."""
-        return self._verkeersbordCategorie.waarde
+        return self._verkeersbordCategorie.get_waarde()
 
     @verkeersbordCategorie.setter
     def verkeersbordCategorie(self, value):
@@ -114,7 +114,7 @@ class VerkeersbordConcept(AIMObject, GeenGeometrie):
     @property
     def verkeersbordCode(self):
         """Code die aan dit soort bord gegeven wordt binnen de wegcode."""
-        return self._verkeersbordCode.waarde
+        return self._verkeersbordCode.get_waarde()
 
     @verkeersbordCode.setter
     def verkeersbordCode(self, value):

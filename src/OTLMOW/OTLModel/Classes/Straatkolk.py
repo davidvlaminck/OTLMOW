@@ -93,7 +93,7 @@ class Straatkolk(Put, PutRelatie, PuntGeometrie):
     @property
     def bakAfmetingen(self):
         """De afmetingen van de bak van de straatkolk in mm."""
-        return self._bakAfmetingen.waarde
+        return self._bakAfmetingen.get_waarde()
 
     @bakAfmetingen.setter
     def bakAfmetingen(self, value):
@@ -102,7 +102,7 @@ class Straatkolk(Put, PutRelatie, PuntGeometrie):
     @property
     def bakType(self):
         """Het type van bak van de straatkolk."""
-        return self._bakType.waarde
+        return self._bakType.get_waarde()
 
     @bakType.setter
     def bakType(self, value):
@@ -111,7 +111,7 @@ class Straatkolk(Put, PutRelatie, PuntGeometrie):
     @property
     def heeftAfdekplaatReukafsluiter(self):
         """Dit attribuut geeft aan of de straatkolk een afdekplaat als reukafsluiter heeft."""
-        return self._heeftAfdekplaatReukafsluiter.waarde
+        return self._heeftAfdekplaatReukafsluiter.get_waarde()
 
     @heeftAfdekplaatReukafsluiter.setter
     def heeftAfdekplaatReukafsluiter(self, value):
@@ -120,7 +120,7 @@ class Straatkolk(Put, PutRelatie, PuntGeometrie):
     @property
     def isInfiltrerend(self):
         """Wanneer de wanden van de straatkolk poreus zijn (en de straatkolk dus infiltrerend is), kan een deel van het water het water dat in de straatkolk komt rechtstreeks in de grond infiltreren."""
-        return self._isInfiltrerend.waarde
+        return self._isInfiltrerend.get_waarde()
 
     @isInfiltrerend.setter
     def isInfiltrerend(self, value):
@@ -129,7 +129,7 @@ class Straatkolk(Put, PutRelatie, PuntGeometrie):
     @property
     def rooster(self):
         """Bepaalt het gebruikte type van rooster."""
-        return self._rooster.waarde
+        return self._rooster.get_waarde()
 
     @rooster.setter
     def rooster(self, value):
@@ -138,7 +138,7 @@ class Straatkolk(Put, PutRelatie, PuntGeometrie):
     @property
     def roosterIndeling(self):
         """Dit attribuut geeft aan hoe het rooster ingedeeld is: met zijdelingse opvang of dat er sprake is van een 1-delig of 2-delig rooster."""
-        return self._roosterIndeling.waarde
+        return self._roosterIndeling.get_waarde()
 
     @roosterIndeling.setter
     def roosterIndeling(self, value):
@@ -147,7 +147,7 @@ class Straatkolk(Put, PutRelatie, PuntGeometrie):
     @property
     def roosterOpeningswijze(self):
         """Dit attribuut geeft de manier aan hoe het rooster geopend kan worden."""
-        return self._roosterOpeningswijze.waarde
+        return self._roosterOpeningswijze.get_waarde()
 
     @roosterOpeningswijze.setter
     def roosterOpeningswijze(self, value):
@@ -156,7 +156,7 @@ class Straatkolk(Put, PutRelatie, PuntGeometrie):
     @property
     def type(self):
         """Het type van de straatkolk."""
-        return self._type.waarde
+        return self._type.get_waarde()
 
     @type.setter
     def type(self, value):
@@ -165,7 +165,7 @@ class Straatkolk(Put, PutRelatie, PuntGeometrie):
     @property
     def typeUitlaat(self):
         """Het type van uitlaat van de straatkolk."""
-        return self._typeUitlaat.waarde
+        return self._typeUitlaat.get_waarde()
 
     @typeUitlaat.setter
     def typeUitlaat(self, value):

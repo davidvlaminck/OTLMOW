@@ -26,7 +26,7 @@ class GroepMarkering(AIMObject, PuntGeometrie):
     @property
     def totaleGroepOppervlakte(self):
         """De totale oppervlakte van de totale markering groepering."""
-        return self._totaleGroepOppervlakte.waarde
+        return self._totaleGroepOppervlakte.get_waarde()
 
     @totaleGroepOppervlakte.setter
     def totaleGroepOppervlakte(self, value):

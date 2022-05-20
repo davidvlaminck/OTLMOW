@@ -1,16 +1,22 @@
-﻿import copy
-
+﻿from OTLMOW.Facility.FileFormats.DictDecoder import DictDecoder
 from OTLMOW.OTLModel.Classes.AIMObject import AIMObject
 
 
 class AssetFactory:
     @staticmethod
-    def dynamic_create_instance_from_name(class_name: str):
+    def dynamic_create_instance_from_name(class_name: str, directory:str = 'OTLMOW.OTLModel.Classes'):
+        """Loads the OTL class module and attempts to instantiate the class using the name of the class
+
+                :param class_name: class name to instantiate
+                :type: str
+                :rtype: OTLObject or None
+                :return: returns an instance of class_name, that inherits from OTLObject
+                """
         try:
-            py_mod = __import__(name=f'OTLMOW.OTLModel.Classes.{class_name}', fromlist=f'Classes.{class_name}')
+            py_mod = __import__(name=f'{directory}.{class_name}', fromlist=f'{directory.split(".")[-1]}.{class_name}')
         except ModuleNotFoundError:
             try:
-                py_mod = __import__(name=f'UnitTests.GeneralTests.{class_name}', fromlist=f'GeneralTests.{class_name}')
+                py_mod = __import__(name=f'UnitTests.{class_name}', fromlist=f'{class_name}')
             except ModuleNotFoundError:
                 return None
         class_ = getattr(py_mod, class_name)
@@ -18,23 +24,23 @@ class AssetFactory:
 
         return instance
 
-    def dynamic_create_instance_from_uri(self, class_uri: str):
+    def dynamic_create_instance_from_uri(self, class_uri: str, directory:str = 'OTLMOW.OTLModel.Classes'):
         if not class_uri.startswith('https://wegenenverkeer.data.vlaanderen.be/ns'):
             raise ValueError(
                 f'{class_uri} is not valid uri, it does not begin with "https://wegenenverkeer.data.vlaanderen.be/ns"')
         class_name = class_uri.split('#')[-1]
-        created = self.dynamic_create_instance_from_name(class_name)
+        created = self.dynamic_create_instance_from_name(class_name, directory=directory)
         if created is None:
             raise ValueError(f'{class_uri} is likely not valid uri, it does not result in a created instance')
         return created
 
     def create_aimObject_using_other_aimObject_as_template(self, orig_aimObject: AIMObject, typeURI: str = '',
-                                                           fields_to_copy: [str] = None):
+                                                           fields_to_copy: [str] = None, directory: str = 'OTLMOW.OTLModel.Classes'):
         """Creates an AIMObject, using another AIMObject as template.
         The parameter typeURI defines the type of the new AIMObject that is created.
         If omitted, it is assumed the same type as the given aimObject
         The parameter fields_to_copy dictates what fields are copied from the first object
-        When the types do no match, fields_to_copy can not be empty"""
+        When the types do not match, fields_to_copy can not be empty"""
 
         if fields_to_copy is None:
             fields_to_copy = []
@@ -47,7 +53,7 @@ class AssetFactory:
 
         if typeURI == '':
             typeURI = orig_aimObject.typeURI
-        new_asset = self.dynamic_create_instance_from_uri(typeURI)
+        new_asset = self.dynamic_create_instance_from_uri(typeURI, directory=directory)
 
         if len(fields_to_copy) == 0:
             fields_to_copy = self.get_public_field_list_from_object(orig_aimObject)
@@ -66,7 +72,7 @@ class AssetFactory:
             raise ValueError("input can't be None")
         d = dir(orig_asset)
 
-        reserved = ['info_attr', 'info_attr_type', 'info', 'make_string_version', 'create_dict_from_asset', 'attributes_by_dotnotatie']
+        reserved = ['info_attr', 'info_attr_type', 'info', 'make_string_version', 'create_dict_from_asset', 'list_attributes_and_values_by_dotnotatie']
         listFields = [item for item in d if item[0] != '_' and item not in reserved]
 
         return listFields
@@ -81,13 +87,19 @@ class AssetFactory:
             raise ValueError("parameter field_list is empty or None")
 
         distinct_fieldList = list(set(field_list))
+        instance_dict = orig_object.create_dict_from_asset(waarde_shortcut=False)
+        new_instance_dict = {}
+
+        if instance_dict is None:
+            instance_dict = {}
 
         for fieldName in distinct_fieldList:
-            orig_asset_attribute_value = getattr(orig_object, fieldName)
-            if orig_asset_attribute_value is None:
+            if fieldName not in instance_dict:
                 continue
-            orig_asset_attribute = getattr(orig_object, '_' + fieldName)
-            new_object_field_copy = copy.deepcopy(orig_asset_attribute_value)
-            if orig_asset_attribute.kardinaliteit_max != '1':
-                new_object_field_copy = [new_object_field_copy]
-            setattr(new_object, fieldName, new_object_field_copy)
+            dictitem = instance_dict[fieldName]
+            new_instance_dict[fieldName] = dictitem
+
+        for k, v in new_instance_dict.items():
+            DictDecoder.set_value_by_dictitem(new_object, k, v, waarde_shortcut=False)
+
+

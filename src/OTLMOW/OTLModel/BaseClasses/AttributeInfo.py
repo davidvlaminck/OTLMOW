@@ -15,7 +15,7 @@ class AttributeInfo:
             attribuut = attribuut_naam.split('.')[0]
             rest = attribuut_naam.split('.', 1)[1]
             at = getattr(self, '_' + attribuut)
-            if at.field._uses_waarde_object:
+            if at.field.waarde_shortcut_applicable:
                 return at.field.waardeObject().info_attr(rest)
             else:
                 return at.info_attr(rest)

@@ -19,7 +19,7 @@ class DteTekstblokWaarden(AttributeInfo):
     @property
     def waarde(self):
         """De string welke uit meerdere zinnen bestaat, en ook regeleindes kan bevatten. Een tekstblok bevat maximaal 65.000 karakters."""
-        return self._waarde.waarde
+        return self._waarde.get_waarde()
 
     @waarde.setter
     def waarde(self, value):
@@ -33,6 +33,7 @@ class DteTekstblok(OTLField, AttributeInfo):
     label = 'Tekstblok'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DteTekstblok'
     definition = 'Een tekst welke uit meerdere zinnen bestaat, en ook regeleindes kan bevatten. Een tekstblok bevat maximaal 65.000 karakters.'
+    waarde_shortcut_applicable = True
     waardeObject = DteTekstblokWaarden
 
     def __str__(self):

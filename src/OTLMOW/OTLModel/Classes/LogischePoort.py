@@ -24,7 +24,7 @@ class LogischePoort(SoftwareToegang):
     @property
     def poortconfiguratie(self):
         """Type TCP of UDP service."""
-        return self._poortconfiguratie.waarde
+        return self._poortconfiguratie.get_waarde()
 
     @poortconfiguratie.setter
     def poortconfiguratie(self, value):

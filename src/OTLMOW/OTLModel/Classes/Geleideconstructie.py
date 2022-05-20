@@ -36,7 +36,7 @@ class Geleideconstructie(SchokindexVoertuigkering, EigenschappenVoertuigkering, 
     @property
     def isVerwijderbaar(self):
         """Geleideconstructie kan met minimale moeite tijdelijk worden weggenomen en teruggeplaatst worden."""
-        return self._isVerwijderbaar.waarde
+        return self._isVerwijderbaar.get_waarde()
 
     @isVerwijderbaar.setter
     def isVerwijderbaar(self, value):
@@ -45,7 +45,7 @@ class Geleideconstructie(SchokindexVoertuigkering, EigenschappenVoertuigkering, 
     @property
     def werkingsbreedte(self):
         """Op het voorvlak van een geleideconstructie en loodrecht op de as van de weg gemeten afstand tussen de voorkant van de geleideconstructie in normale positie en de plaats van het verst uitwijkend onderdeel aan de achterzijde van de geleideconstructie bij aanrijding."""
-        return self._werkingsbreedte.waarde
+        return self._werkingsbreedte.get_waarde()
 
     @werkingsbreedte.setter
     def werkingsbreedte(self, value):

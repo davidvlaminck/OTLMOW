@@ -40,7 +40,7 @@ class DwarseMarkering(DwarseMarkeringToegang):
     @property
     def code(self):
         """De (COPRO/BENOR)  code van dwarse markering."""
-        return self._code.waarde
+        return self._code.get_waarde()
 
     @code.setter
     def code(self, value):
@@ -49,7 +49,7 @@ class DwarseMarkering(DwarseMarkeringToegang):
     @property
     def oppervlakte(self):
         """De oppervlakte van de dwarse markering in vierkante meter."""
-        return self._oppervlakte.waarde
+        return self._oppervlakte.get_waarde()
 
     @oppervlakte.setter
     def oppervlakte(self, value):
@@ -58,7 +58,7 @@ class DwarseMarkering(DwarseMarkeringToegang):
     @property
     def soortOmschrijving(self):
         """De soort en tevens de omschrijving van dwarse markering."""
-        return self._soortOmschrijving.waarde
+        return self._soortOmschrijving.get_waarde()
 
     @soortOmschrijving.setter
     def soortOmschrijving(self, value):

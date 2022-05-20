@@ -27,7 +27,7 @@ class MIVLuskaart(AIMNaamObject, PuntGeometrie):
     @property
     def lussenMeetrapport(self):
         """De elektrische eigenschappen van de lus: R, L, C en de isolatieweerstand. Dit verzekert naast de afmetingen mee de voorziene nauwkeurigheid van de voertuigmetingen."""
-        return self._lussenMeetrapport.waarde
+        return self._lussenMeetrapport.get_waarde()
 
     @lussenMeetrapport.setter
     def lussenMeetrapport(self, value):

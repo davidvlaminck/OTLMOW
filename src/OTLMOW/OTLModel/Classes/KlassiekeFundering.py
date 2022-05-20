@@ -36,7 +36,7 @@ class KlassiekeFundering(BetonnenConstructieElement, Fundering):
     @property
     def funderingshoogte(self):
         """De afstand tussen het laagste punt van de onderkant en hoogste punt van de bovenkant van de fundering."""
-        return self._funderingshoogte.waarde
+        return self._funderingshoogte.get_waarde()
 
     @funderingshoogte.setter
     def funderingshoogte(self, value):
@@ -45,7 +45,7 @@ class KlassiekeFundering(BetonnenConstructieElement, Fundering):
     @property
     def grondvlakAfmeting(self):
         """De afmetingen van het (grond)vlak, van de bovenkant van de fundering, volgens de vorm."""
-        return self._grondvlakAfmeting.waarde
+        return self._grondvlakAfmeting.get_waarde()
 
     @grondvlakAfmeting.setter
     def grondvlakAfmeting(self, value):

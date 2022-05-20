@@ -42,7 +42,7 @@ class DtcProductidentificatiecodeWaarden(AttributeInfo):
     @property
     def keuringsverslag(self):
         """Een rapport met de resultaten van de keuring."""
-        return self._keuringsverslag.waarde
+        return self._keuringsverslag.get_waarde()
 
     @keuringsverslag.setter
     def keuringsverslag(self, value):
@@ -51,7 +51,7 @@ class DtcProductidentificatiecodeWaarden(AttributeInfo):
     @property
     def linkTechnischeFiche(self):
         """De link naar de technische fiche van het gerelateerd product."""
-        return self._linkTechnischeFiche.waarde
+        return self._linkTechnischeFiche.get_waarde()
 
     @linkTechnischeFiche.setter
     def linkTechnischeFiche(self, value):
@@ -60,7 +60,7 @@ class DtcProductidentificatiecodeWaarden(AttributeInfo):
     @property
     def producent(self):
         """De gerelateerde fabrikant."""
-        return self._producent.waarde
+        return self._producent.get_waarde()
 
     @producent.setter
     def producent(self, value):
@@ -69,7 +69,7 @@ class DtcProductidentificatiecodeWaarden(AttributeInfo):
     @property
     def productidentificatiecode(self):
         """De code van het gebruikte product (COPRO/BENOR)."""
-        return self._productidentificatiecode.waarde
+        return self._productidentificatiecode.get_waarde()
 
     @productidentificatiecode.setter
     def productidentificatiecode(self, value):

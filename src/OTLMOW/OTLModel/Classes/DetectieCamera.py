@@ -43,7 +43,7 @@ class DetectieCamera(NietWeggebondenDetectie, TypeWeggebruiker):
     @property
     def detectieprincipe(self):
         """Geeft aan of de camera optisch en/of thermografisch werkt."""
-        return self._detectieprincipe.waarde
+        return self._detectieprincipe.get_waarde()
 
     @detectieprincipe.setter
     def detectieprincipe(self, value):
@@ -52,7 +52,7 @@ class DetectieCamera(NietWeggebondenDetectie, TypeWeggebruiker):
     @property
     def merk(self):
         """Merknaam van de detectiecamera."""
-        return self._merk.waarde
+        return self._merk.get_waarde()
 
     @merk.setter
     def merk(self, value):
@@ -61,7 +61,7 @@ class DetectieCamera(NietWeggebondenDetectie, TypeWeggebruiker):
     @property
     def modelnaam(self):
         """De modelnaam van de detectiecamera."""
-        return self._modelnaam.waarde
+        return self._modelnaam.get_waarde()
 
     @modelnaam.setter
     def modelnaam(self, value):

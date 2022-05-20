@@ -30,7 +30,7 @@ class ProefGeluidstest(Proef, PuntGeometrie, LijnGeometrie, VlakGeometrie):
     @property
     def geluidstestrapport(self):
         """Het resultaat geluidstest."""
-        return self._geluidstestrapport.waarde
+        return self._geluidstestrapport.get_waarde()
 
     @geluidstestrapport.setter
     def geluidstestrapport(self, value):

@@ -74,7 +74,7 @@ class DtcNatuurlijkPersoonWaarden(AttributeInfo):
     @property
     def achternaam(self):
         """De achternaam."""
-        return self._achternaam.waarde
+        return self._achternaam.get_waarde()
 
     @achternaam.setter
     def achternaam(self, value):
@@ -83,7 +83,7 @@ class DtcNatuurlijkPersoonWaarden(AttributeInfo):
     @property
     def adres(self):
         """Het adres."""
-        return self._adres.waarde
+        return self._adres.get_waarde()
 
     @adres.setter
     def adres(self, value):
@@ -92,7 +92,7 @@ class DtcNatuurlijkPersoonWaarden(AttributeInfo):
     @property
     def emailadres(self):
         """Het emailadres."""
-        return self._emailadres.waarde
+        return self._emailadres.get_waarde()
 
     @emailadres.setter
     def emailadres(self, value):
@@ -101,7 +101,7 @@ class DtcNatuurlijkPersoonWaarden(AttributeInfo):
     @property
     def fax(self):
         """De faxnummer."""
-        return self._fax.waarde
+        return self._fax.get_waarde()
 
     @fax.setter
     def fax(self, value):
@@ -110,7 +110,7 @@ class DtcNatuurlijkPersoonWaarden(AttributeInfo):
     @property
     def heeftEmailVoorkeur(self):
         """Aanduiding of een persoon de voorkeur heeft om via email gecontacteerd te worden."""
-        return self._heeftEmailVoorkeur.waarde
+        return self._heeftEmailVoorkeur.get_waarde()
 
     @heeftEmailVoorkeur.setter
     def heeftEmailVoorkeur(self, value):
@@ -119,7 +119,7 @@ class DtcNatuurlijkPersoonWaarden(AttributeInfo):
     @property
     def heeftFaxVoorkeur(self):
         """Aanduiding of een persoon een voorkeur heeft om via fax gegevens te ontvangen."""
-        return self._heeftFaxVoorkeur.waarde
+        return self._heeftFaxVoorkeur.get_waarde()
 
     @heeftFaxVoorkeur.setter
     def heeftFaxVoorkeur(self, value):
@@ -128,7 +128,7 @@ class DtcNatuurlijkPersoonWaarden(AttributeInfo):
     @property
     def telefoonnnummer(self):
         """Het telefoonnummer."""
-        return self._telefoonnnummer.waarde
+        return self._telefoonnnummer.get_waarde()
 
     @telefoonnnummer.setter
     def telefoonnnummer(self, value):
@@ -137,7 +137,7 @@ class DtcNatuurlijkPersoonWaarden(AttributeInfo):
     @property
     def voornaam(self):
         """De voornaam."""
-        return self._voornaam.waarde
+        return self._voornaam.get_waarde()
 
     @voornaam.setter
     def voornaam(self, value):

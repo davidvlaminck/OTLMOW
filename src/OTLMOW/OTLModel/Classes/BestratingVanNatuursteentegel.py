@@ -40,7 +40,7 @@ class BestratingVanNatuursteentegel(Bestrating):
     @property
     def afmetingVanBestratingselementLxB(self):
         """De lengte en breedte van het bestratingselement in millimeter."""
-        return self._afmetingVanBestratingselementLxB.waarde
+        return self._afmetingVanBestratingselementLxB.get_waarde()
 
     @afmetingVanBestratingselementLxB.setter
     def afmetingVanBestratingselementLxB(self, value):
@@ -49,7 +49,7 @@ class BestratingVanNatuursteentegel(Bestrating):
     @property
     def afwerking(self):
         """Bepaling van de afwerking van het oppervlak van de natuursteentegels."""
-        return self._afwerking.waarde
+        return self._afwerking.get_waarde()
 
     @afwerking.setter
     def afwerking(self, value):
@@ -58,7 +58,7 @@ class BestratingVanNatuursteentegel(Bestrating):
     @property
     def gebruiksklasse(self):
         """Bepaling van het toegelaten verkeer en belasting op de bestrating van natuursteentegels."""
-        return self._gebruiksklasse.waarde
+        return self._gebruiksklasse.get_waarde()
 
     @gebruiksklasse.setter
     def gebruiksklasse(self, value):

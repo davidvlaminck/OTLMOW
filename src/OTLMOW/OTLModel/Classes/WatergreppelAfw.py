@@ -24,7 +24,7 @@ class WatergreppelAfw(AfwijkendeKantopsluiting):
     @property
     def aantalRijenBetonstraatsteen(self):
         """Het aantal rijen betonstraatsteen waaruit de watergreppel is opgebouwd."""
-        return self._aantalRijenBetonstraatsteen.waarde
+        return self._aantalRijenBetonstraatsteen.get_waarde()
 
     @aantalRijenBetonstraatsteen.setter
     def aantalRijenBetonstraatsteen(self, value):

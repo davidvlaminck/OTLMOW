@@ -49,7 +49,7 @@ class Motorvangplank(AfschermendeConstructie, LijnGeometrie):
     @property
     def lengte(self):
         """De lengte van de motorvangplank in meter."""
-        return self._lengte.waarde
+        return self._lengte.get_waarde()
 
     @lengte.setter
     def lengte(self, value):
@@ -58,7 +58,7 @@ class Motorvangplank(AfschermendeConstructie, LijnGeometrie):
     @property
     def schokindexMvp(self):
         """Head injury criterium (HIC) van een motorvangplank."""
-        return self._schokindexMvp.waarde
+        return self._schokindexMvp.get_waarde()
 
     @schokindexMvp.setter
     def schokindexMvp(self, value):
@@ -67,7 +67,7 @@ class Motorvangplank(AfschermendeConstructie, LijnGeometrie):
     @property
     def snelheidsklasse(self):
         """De snelheid waarmee de testen uitgevoerd worden en of deze plaatsvinden op een continu of discontinu (niet in gebruik bij AWV) systeem."""
-        return self._snelheidsklasse.waarde
+        return self._snelheidsklasse.get_waarde()
 
     @snelheidsklasse.setter
     def snelheidsklasse(self, value):
@@ -76,7 +76,7 @@ class Motorvangplank(AfschermendeConstructie, LijnGeometrie):
     @property
     def werkingsbreedteMvpwd(self):
         """De afstand tussen de voorkant van het onvervormd systeem tot de maximale dynamische laterale positie van elk onderdeel van het systeem."""
-        return self._werkingsbreedteMvpwd.waarde
+        return self._werkingsbreedteMvpwd.get_waarde()
 
     @werkingsbreedteMvpwd.setter
     def werkingsbreedteMvpwd(self, value):

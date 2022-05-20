@@ -34,7 +34,7 @@ class Aansluitmof(LinkendElement, PuntGeometrie):
     @property
     def diameter(self):
         """De diameter van het boorgat gebruikt door de aansluitmof  in millimeter."""
-        return self._diameter.waarde
+        return self._diameter.get_waarde()
 
     @diameter.setter
     def diameter(self, value):
@@ -43,7 +43,7 @@ class Aansluitmof(LinkendElement, PuntGeometrie):
     @property
     def materiaal(self):
         """Het materiaal van de aansluitmof."""
-        return self._materiaal.waarde
+        return self._materiaal.get_waarde()
 
     @materiaal.setter
     def materiaal(self, value):

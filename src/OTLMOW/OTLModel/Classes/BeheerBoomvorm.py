@@ -37,7 +37,7 @@ class BeheerBoomvorm(AIMObject, PuntGeometrie, VlakGeometrie):
     @property
     def beheeroptie(self):
         """Behandelingswijzen van bomen."""
-        return self._beheeroptie.waarde
+        return self._beheeroptie.get_waarde()
 
     @beheeroptie.setter
     def beheeroptie(self, value):
@@ -46,7 +46,7 @@ class BeheerBoomvorm(AIMObject, PuntGeometrie, VlakGeometrie):
     @property
     def oppervlakte(self):
         """De oppervlakte in vierkante meter van de te behandelen grond rond de boom."""
-        return self._oppervlakte.waarde
+        return self._oppervlakte.get_waarde()
 
     @oppervlakte.setter
     def oppervlakte(self, value):

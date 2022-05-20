@@ -27,7 +27,7 @@ Afhankelijk van het gekozen model kan de rechte steun bestemd zijn voor: verkeer
     @property
     def type(self):
         """Het type verwijst naar de aanpassingen die gebeuren wanneer een andere techniek gebruik maakt van de rechte steun. Meestal gaat dit over een aanpassing in de lengte van het verjongde deel van de rechte steun."""
-        return self._type.waarde
+        return self._type.get_waarde()
 
     @type.setter
     def type(self, value):

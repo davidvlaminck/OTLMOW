@@ -30,7 +30,7 @@ class ProefHechtsterkte(Proef, PuntGeometrie, LijnGeometrie, VlakGeometrie):
     @property
     def hechtsterkte(self):
         """Proef om de hechtsterkte van de laag te bepalen."""
-        return self._hechtsterkte.waarde
+        return self._hechtsterkte.get_waarde()
 
     @hechtsterkte.setter
     def hechtsterkte(self, value):

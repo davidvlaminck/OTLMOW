@@ -150,7 +150,7 @@ class Bovenbouw(AIMObject, PuntGeometrie, VlakGeometrie):
     @property
     def breedte(self):
         """Breedte-afmeting van het deksel in centimeter. Bij vierkante en cirkelvormige deksels is deze waarde gelijk aan de hoogte."""
-        return self._breedte.waarde
+        return self._breedte.get_waarde()
 
     @breedte.setter
     def breedte(self, value):
@@ -159,7 +159,7 @@ class Bovenbouw(AIMObject, PuntGeometrie, VlakGeometrie):
     @property
     def dekselklasse(self):
         """Bepaalt de mate waarin het deksel van de bovenbouw belast kan worden door voertuigen."""
-        return self._dekselklasse.waarde
+        return self._dekselklasse.get_waarde()
 
     @dekselklasse.setter
     def dekselklasse(self, value):
@@ -168,7 +168,7 @@ class Bovenbouw(AIMObject, PuntGeometrie, VlakGeometrie):
     @property
     def dekselvorm(self):
         """Bepaalt de vorm van het deksel."""
-        return self._dekselvorm.waarde
+        return self._dekselvorm.get_waarde()
 
     @dekselvorm.setter
     def dekselvorm(self, value):
@@ -177,7 +177,7 @@ class Bovenbouw(AIMObject, PuntGeometrie, VlakGeometrie):
     @property
     def hoogte(self):
         """Hoogte-afmeting van het deksel in centimeter. Bij vierkante en cirkelvormige deksels is deze waarde gelijk aan de breedte."""
-        return self._hoogte.waarde
+        return self._hoogte.get_waarde()
 
     @hoogte.setter
     def hoogte(self, value):
@@ -186,7 +186,7 @@ class Bovenbouw(AIMObject, PuntGeometrie, VlakGeometrie):
     @property
     def isAfgesloten(self):
         """Bepaling of de afsluitinrichting vergrendeld is of niet."""
-        return self._isAfgesloten.waarde
+        return self._isAfgesloten.get_waarde()
 
     @isAfgesloten.setter
     def isAfgesloten(self, value):
@@ -195,7 +195,7 @@ class Bovenbouw(AIMObject, PuntGeometrie, VlakGeometrie):
     @property
     def isScharnierend(self):
         """Het deksel is al of niet bevestigd met een scharnier."""
-        return self._isScharnierend.waarde
+        return self._isScharnierend.get_waarde()
 
     @isScharnierend.setter
     def isScharnierend(self, value):
@@ -204,7 +204,7 @@ class Bovenbouw(AIMObject, PuntGeometrie, VlakGeometrie):
     @property
     def isWaterdichtVergrendeld(self):
         """Geeft aan of de bovenbouw al dan niet waterdicht vergrendeld is zodat het water zich niet boven de bovenbouw kan begeven."""
-        return self._isWaterdichtVergrendeld.waarde
+        return self._isWaterdichtVergrendeld.get_waarde()
 
     @isWaterdichtVergrendeld.setter
     def isWaterdichtVergrendeld(self, value):
@@ -213,7 +213,7 @@ class Bovenbouw(AIMObject, PuntGeometrie, VlakGeometrie):
     @property
     def kader(self):
         """Bepaalt het type van het dekselkader."""
-        return self._kader.waarde
+        return self._kader.get_waarde()
 
     @kader.setter
     def kader(self, value):
@@ -222,7 +222,7 @@ class Bovenbouw(AIMObject, PuntGeometrie, VlakGeometrie):
     @property
     def materiaal(self):
         """Het materiaal waaruit het deksel van de bovenbouw is vervaardigd."""
-        return self._materiaal.waarde
+        return self._materiaal.get_waarde()
 
     @materiaal.setter
     def materiaal(self, value):
@@ -231,7 +231,7 @@ class Bovenbouw(AIMObject, PuntGeometrie, VlakGeometrie):
     @property
     def oppervlakte(self):
         """De oppervlakte van het zichtbare deel van de bovenbouw in vierkante meter."""
-        return self._oppervlakte.waarde
+        return self._oppervlakte.get_waarde()
 
     @oppervlakte.setter
     def oppervlakte(self, value):
@@ -240,7 +240,7 @@ class Bovenbouw(AIMObject, PuntGeometrie, VlakGeometrie):
     @property
     def regeling(self):
         """De wijze hoe de regeling van het deksel is uitgevoerd."""
-        return self._regeling.waarde
+        return self._regeling.get_waarde()
 
     @regeling.setter
     def regeling(self, value):
@@ -249,7 +249,7 @@ class Bovenbouw(AIMObject, PuntGeometrie, VlakGeometrie):
     @property
     def technischeFiche(self):
         """De technische fiche van de bovenbouw."""
-        return self._technischeFiche.waarde
+        return self._technischeFiche.get_waarde()
 
     @technischeFiche.setter
     def technischeFiche(self, value):
@@ -258,7 +258,7 @@ class Bovenbouw(AIMObject, PuntGeometrie, VlakGeometrie):
     @property
     def vergrendeling(self):
         """Bepaalt het type sleutel voor het ontgrendelen van het deksel."""
-        return self._vergrendeling.waarde
+        return self._vergrendeling.get_waarde()
 
     @vergrendeling.setter
     def vergrendeling(self, value):

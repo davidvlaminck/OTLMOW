@@ -50,7 +50,7 @@ class Hardware(HardwareToegang, PuntGeometrie):
     @property
     def aantalUnits(self):
         """Het aantal units dat een server in een rack inneemt."""
-        return self._aantalUnits.waarde
+        return self._aantalUnits.get_waarde()
 
     @aantalUnits.setter
     def aantalUnits(self, value):
@@ -59,7 +59,7 @@ class Hardware(HardwareToegang, PuntGeometrie):
     @property
     def merk(self):
         """Het merk van de hardware."""
-        return self._merk.waarde
+        return self._merk.get_waarde()
 
     @merk.setter
     def merk(self, value):
@@ -68,7 +68,7 @@ class Hardware(HardwareToegang, PuntGeometrie):
     @property
     def modelnaam(self):
         """De modelnaam van de hardware."""
-        return self._modelnaam.waarde
+        return self._modelnaam.get_waarde()
 
     @modelnaam.setter
     def modelnaam(self, value):
@@ -77,7 +77,7 @@ class Hardware(HardwareToegang, PuntGeometrie):
     @property
     def vormfactor(self):
         """Het soort toestel waarin de fysieke componenten of onderdelen worden vormgegeven."""
-        return self._vormfactor.waarde
+        return self._vormfactor.get_waarde()
 
     @vormfactor.setter
     def vormfactor(self, value):

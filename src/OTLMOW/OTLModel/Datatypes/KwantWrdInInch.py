@@ -34,7 +34,7 @@ class KwantWrdInInchWaarden(AttributeInfo):
     @property
     def waarde(self):
         """Bevat een getal die bij het datatype hoort."""
-        return self._waarde.waarde
+        return self._waarde.get_waarde()
 
     @waarde.setter
     def waarde(self, value):
@@ -48,6 +48,7 @@ class KwantWrdInInch(OTLField, AttributeInfo):
     label = 'Kwantitatieve waarde in inch'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInInch'
     definition = 'Een kwantitatieve waarde die een getal in inches uitdrukt.'
+    waarde_shortcut_applicable = True
     waardeObject = KwantWrdInInchWaarden
 
     def __str__(self):

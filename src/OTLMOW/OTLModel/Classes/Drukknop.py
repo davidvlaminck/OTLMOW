@@ -48,7 +48,7 @@ class Drukknop(NietWeggebondenDetectie):
     @property
     def bewakingstijd(self):
         """Wachttijd (in uren) waarna een alarm pas mag optreden."""
-        return self._bewakingstijd.waarde
+        return self._bewakingstijd.get_waarde()
 
     @bewakingstijd.setter
     def bewakingstijd(self, value):
@@ -57,7 +57,7 @@ class Drukknop(NietWeggebondenDetectie):
     @property
     def merk(self):
         """De naam van het merk van de drukknop."""
-        return self._merk.waarde
+        return self._merk.get_waarde()
 
     @merk.setter
     def merk(self, value):
@@ -66,7 +66,7 @@ class Drukknop(NietWeggebondenDetectie):
     @property
     def modelnaam(self):
         """De modelnaam van de drukknop."""
-        return self._modelnaam.waarde
+        return self._modelnaam.get_waarde()
 
     @modelnaam.setter
     def modelnaam(self, value):
@@ -75,7 +75,7 @@ class Drukknop(NietWeggebondenDetectie):
     @property
     def soortDrukknop(self):
         """Doelgroep van de drukknop (voetganger, fietser, ruiter,...)."""
-        return self._soortDrukknop.waarde
+        return self._soortDrukknop.get_waarde()
 
     @soortDrukknop.setter
     def soortDrukknop(self, value):

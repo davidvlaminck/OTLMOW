@@ -88,7 +88,7 @@ class HardwareToegang(AIMNaamObject):
     @property
     def CPU(self):
         """Centrale verwerkingseenheid."""
-        return self._CPU.waarde
+        return self._CPU.get_waarde()
 
     @CPU.setter
     def CPU(self, value):
@@ -97,7 +97,7 @@ class HardwareToegang(AIMNaamObject):
     @property
     def cdDvdTape(self):
         """De hardware uitgerust met CD/DVD/Tape."""
-        return self._cdDvdTape.waarde
+        return self._cdDvdTape.get_waarde()
 
     @cdDvdTape.setter
     def cdDvdTape(self, value):
@@ -106,7 +106,7 @@ class HardwareToegang(AIMNaamObject):
     @property
     def disk(self):
         """De disk config van de hardware, HD, RAID, ..."""
-        return self._disk.waarde
+        return self._disk.get_waarde()
 
     @disk.setter
     def disk(self, value):
@@ -115,7 +115,7 @@ class HardwareToegang(AIMNaamObject):
     @property
     def dnsNaam(self):
         """De DNSNaam (ook "volledige domein naam" genoemd ) is een unieke naam binnen het Domain Name System (DNS), het naamgevingssysteem waarmee computers, webservers, diensten en  toepassing op een unieke manier kunnen worden geïdentificeerd. Deze bevat zowel de hostname en de top level domein naam bv. 120c8-ar1.belfa.be."""
-        return self._dnsNaam.waarde
+        return self._dnsNaam.get_waarde()
 
     @dnsNaam.setter
     def dnsNaam(self, value):
@@ -124,7 +124,7 @@ class HardwareToegang(AIMNaamObject):
     @property
     def domein(self):
         """Administratieve groepering van meerdere particuliere computernetwerken of hosts binnen dezelfde infrastructuur."""
-        return self._domein.waarde
+        return self._domein.get_waarde()
 
     @domein.setter
     def domein(self, value):
@@ -133,7 +133,7 @@ class HardwareToegang(AIMNaamObject):
     @property
     def ipAdres(self):
         """Het IP-adres van de hardware."""
-        return self._ipAdres.waarde
+        return self._ipAdres.get_waarde()
 
     @ipAdres.setter
     def ipAdres(self, value):
@@ -142,7 +142,7 @@ class HardwareToegang(AIMNaamObject):
     @property
     def licentie(self):
         """De licentie van het OS of de licentie van de hardware voor support/garantie op componenten."""
-        return self._licentie.waarde
+        return self._licentie.get_waarde()
 
     @licentie.setter
     def licentie(self, value):
@@ -151,7 +151,7 @@ class HardwareToegang(AIMNaamObject):
     @property
     def os(self):
         """Het besturingssysteem dat op de hardware draait."""
-        return self._os.waarde
+        return self._os.get_waarde()
 
     @os.setter
     def os(self, value):
@@ -160,7 +160,7 @@ class HardwareToegang(AIMNaamObject):
     @property
     def ram(self):
         """De grootte van het werkgeheugen."""
-        return self._ram.waarde
+        return self._ram.get_waarde()
 
     @ram.setter
     def ram(self, value):

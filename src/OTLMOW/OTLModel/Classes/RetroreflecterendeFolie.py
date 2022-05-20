@@ -26,7 +26,7 @@ class RetroreflecterendeFolie(AIMObject, PuntGeometrie):
     @property
     def folietype(self):
         """Het type folie dat bevestigd is aan het retroreflecterend verkeersbord."""
-        return self._folietype.waarde
+        return self._folietype.get_waarde()
 
     @folietype.setter
     def folietype(self, value):

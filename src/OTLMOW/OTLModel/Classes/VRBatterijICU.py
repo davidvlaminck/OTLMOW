@@ -32,7 +32,7 @@ class VRBatterijICU(VRModuleZFirmware):
     @property
     def merk(self):
         """De merknaam van de VR-batterij ICU."""
-        return self._merk.waarde
+        return self._merk.get_waarde()
 
     @merk.setter
     def merk(self, value):
@@ -41,7 +41,7 @@ class VRBatterijICU(VRModuleZFirmware):
     @property
     def modelnaam(self):
         """De modelnaam van de VR-batterij ICU."""
-        return self._modelnaam.waarde
+        return self._modelnaam.get_waarde()
 
     @modelnaam.setter
     def modelnaam(self, value):

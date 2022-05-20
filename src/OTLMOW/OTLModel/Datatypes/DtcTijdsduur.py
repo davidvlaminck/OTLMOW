@@ -35,7 +35,7 @@ class DtcTijdsduurWaarden(AttributeInfo):
     @property
     def minuten(self):
         """Het aantal minuten."""
-        return self._minuten.waarde
+        return self._minuten.get_waarde()
 
     @minuten.setter
     def minuten(self, value):
@@ -44,7 +44,7 @@ class DtcTijdsduurWaarden(AttributeInfo):
     @property
     def seconden(self):
         """Het aantal seconden."""
-        return self._seconden.waarde
+        return self._seconden.get_waarde()
 
     @seconden.setter
     def seconden(self, value):
@@ -53,7 +53,7 @@ class DtcTijdsduurWaarden(AttributeInfo):
     @property
     def uren(self):
         """Het aantal uren."""
-        return self._uren.waarde
+        return self._uren.get_waarde()
 
     @uren.setter
     def uren(self, value):

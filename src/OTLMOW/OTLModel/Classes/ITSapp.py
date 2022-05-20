@@ -32,7 +32,7 @@ class ITSapp(IVRIComponent):
     @property
     def merk(self):
         """De merknaam van de ITSapp; duidt op de leverancier of producent van de iVRI component."""
-        return self._merk.waarde
+        return self._merk.get_waarde()
 
     @merk.setter
     def merk(self, value):
@@ -41,7 +41,7 @@ class ITSapp(IVRIComponent):
     @property
     def modelnaam(self):
         """De modelnaam/product range van de ITSapp."""
-        return self._modelnaam.waarde
+        return self._modelnaam.get_waarde()
 
     @modelnaam.setter
     def modelnaam(self, value):

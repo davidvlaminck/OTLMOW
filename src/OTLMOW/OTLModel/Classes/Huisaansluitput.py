@@ -52,7 +52,7 @@ class Huisaansluitput(Put, PutRelatie, PuntGeometrie):
     @property
     def aansluitingsfiche(self):
         """De aansluitingsfiche van de huisaansluitput."""
-        return self._aansluitingsfiche.waarde
+        return self._aansluitingsfiche.get_waarde()
 
     @aansluitingsfiche.setter
     def aansluitingsfiche(self, value):
@@ -61,7 +61,7 @@ class Huisaansluitput(Put, PutRelatie, PuntGeometrie):
     @property
     def heeftStankafsluiter(self):
         """Aanduiding of een huisaansluitput een stankafsluiter heeft of niet."""
-        return self._heeftStankafsluiter.waarde
+        return self._heeftStankafsluiter.get_waarde()
 
     @heeftStankafsluiter.setter
     def heeftStankafsluiter(self, value):
@@ -70,7 +70,7 @@ class Huisaansluitput(Put, PutRelatie, PuntGeometrie):
     @property
     def isInfiltrerend(self):
         """Wanneer de wanden van het putje poreus zijn (en het putje dus infiltrerend is), kan een deel van het water het water dat in het putje komt rechtstreeks in de grond infiltreren."""
-        return self._isInfiltrerend.waarde
+        return self._isInfiltrerend.get_waarde()
 
     @isInfiltrerend.setter
     def isInfiltrerend(self, value):
@@ -79,7 +79,7 @@ class Huisaansluitput(Put, PutRelatie, PuntGeometrie):
     @property
     def materiaal(self):
         """Bepaalt het materiaal waaruit de huisaansluitput is vervaardigd."""
-        return self._materiaal.waarde
+        return self._materiaal.get_waarde()
 
     @materiaal.setter
     def materiaal(self, value):

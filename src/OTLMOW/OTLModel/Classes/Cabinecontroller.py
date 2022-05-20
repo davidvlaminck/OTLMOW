@@ -39,7 +39,7 @@ class Cabinecontroller(Controller):
     @property
     def beveiligingssleutel(self):
         """De encryptie die wordt toegepast om de verbinding tussen lokaal en centraal te beveiligen."""
-        return self._beveiligingssleutel.waarde
+        return self._beveiligingssleutel.get_waarde()
 
     @beveiligingssleutel.setter
     def beveiligingssleutel(self, value):
@@ -48,7 +48,7 @@ class Cabinecontroller(Controller):
     @property
     def merk(self):
         """Merk van de cabinecontroller."""
-        return self._merk.waarde
+        return self._merk.get_waarde()
 
     @merk.setter
     def merk(self, value):
@@ -57,7 +57,7 @@ class Cabinecontroller(Controller):
     @property
     def modelnaam(self):
         """Modelnaam van de cabinecontroller."""
-        return self._modelnaam.waarde
+        return self._modelnaam.get_waarde()
 
     @modelnaam.setter
     def modelnaam(self, value):

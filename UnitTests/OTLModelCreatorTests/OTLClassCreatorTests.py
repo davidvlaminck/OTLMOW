@@ -70,7 +70,7 @@ class ClassOSLOCollector(OSLOCollector):
                                    "    @property",
                                    "    def grondplan(self):",
                                    '        """Plattegrond van het gebouw met aanduidingen van de verschillende aanwezige elementen zoals kelder, kasten met kastnummers, toegangscontrole en meer."""',
-                                   "        return self._grondplan.waarde",
+                                   "        return self._grondplan.get_waarde()",
                                    "",
                                    "    @grondplan.setter",
                                    "    def grondplan(self, value):",
@@ -168,7 +168,7 @@ class OTLClassCreatorTests(unittest.TestCase):
                                  '    @property',
                                  '    def kleur(self):',
                                  '        """De kleur van de coating."""',
-                                 '        return self._kleur.waarde',
+                                 '        return self._kleur.get_waarde()',
                                  '',
                                  '    @kleur.setter',
                                  '    def kleur(self, value):',
@@ -201,24 +201,6 @@ class OTLClassCreatorTests(unittest.TestCase):
         filelocation = os.path.abspath(os.path.join(os.sep, ROOT_DIR, 'src/OTLMOW/OTLModel/Classes/ContainerBuis.py'))
         self.assertTrue(os.path.isfile(filelocation))
 
-    def test_WriteToFileBuis(self):
-        collector, creator = self.set_up_real_collector_and_creator()
-        buis = collector.find_class_by_uri('https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Buis')
-        dataToWrite = creator.create_blocks_to_write_from_classes(buis)
-        creator.writeToFile(buis, 'Classes', dataToWrite, '../../src/OTLMOW/')
-
-        filelocation = os.path.abspath(os.path.join(os.sep, ROOT_DIR, 'src/OTLMOW/OTLModel/Classes/Buis.py'))
-        self.assertTrue(os.path.isfile(filelocation))
-
-    def test_WriteToFileGebouw(self):
-        collector, creator = self.set_up_real_collector_and_creator()
-        containerBuis = collector.find_class_by_uri('https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Gebouw')
-        dataToWrite = creator.create_blocks_to_write_from_classes(containerBuis)
-        creator.writeToFile(containerBuis, 'Classes', dataToWrite, '../../src/OTLMOW/')
-
-        filelocation = os.path.abspath(os.path.join(os.sep, ROOT_DIR, 'src/OTLMOW/OTLModel/Classes/Gebouw.py'))
-        self.assertTrue(os.path.isfile(filelocation))
-
     def test_CheckInheritances_Agent(self):
         collector, creator = self.set_up_real_collector_and_creator()
 
@@ -243,9 +225,9 @@ class OTLClassCreatorTests(unittest.TestCase):
         relatieObject = collector.find_class_by_uri(
             'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#RelatieObject')
         dataToWrite = creator.create_blocks_to_write_from_classes(relatieObject)
-        inheritanceLine = "class RelatieObject(AIMDBStatus, AttributeInfo, OTLObject):"
+        inheritanceLine = "class RelatieObject(AIMDBStatus, AttributeInfo, DavieRelatieAttributes, OTLObject):"
 
-        self.assertEqual(inheritanceLine, dataToWrite[10])
+        self.assertEqual(inheritanceLine, dataToWrite[11])
 
     def test_CheckInheritances_DerdenObject(self):
         collector, creator = self.set_up_real_collector_and_creator()

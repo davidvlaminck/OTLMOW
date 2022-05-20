@@ -1,4 +1,76 @@
 class ResponseTestDouble():
+    single_response = """{
+  "@graph": [
+{
+  "@type": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Stroomkring",
+  "@id": "https://data.awvvlaanderen.be/id/asset/000d3091-deca-4714-8f82-d95aace9ea90-b25kZXJkZWVsI1N0cm9vbWtyaW5n",
+  "loc:Locatie.geometrie": "POINT Z(101489.3 190526.6 0)",
+  "loc:Locatie.omschrijving": "",
+  "AIMToestand.toestand": "https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAIMToestand/in-gebruik",
+  "loc:Locatie.puntlocatie": {
+    "loc:DtcPuntlocatie.precisie": "",
+    "loc:DtcPuntlocatie.weglocatie": {
+      "loc:DtcWeglocatie.straatnaam": "",
+      "loc:DtcWeglocatie.ident8": "A0100002",
+      "loc:DtcWeglocatie.gemeente": "Gent",
+      "loc:DtcWeglocatie.referentiepaalOpschrift": 47.4,
+      "loc:DtcWeglocatie.ident2": "A10",
+      "loc:DtcWeglocatie.referentiepaalAfstand": -9
+    },
+    "loc:DtcPuntlocatie.bron": "",
+    "loc:3Dpunt.puntgeometrie": {
+      "loc:DtcCoord.lambert72": {
+        "loc:DtcCoordLambert72.ycoordinaat": 190526.6,
+        "loc:DtcCoordLambert72.xcoordinaat": 101489.3,
+        "loc:DtcCoordLambert72.zcoordinaat": 0
+      }
+    },
+    "loc:DtcPuntlocatie.adres": {
+      "loc:DtcAdres.straat": "Luchthavenlaan",
+      "loc:DtcAdres.bus": "",
+      "loc:DtcAdres.gemeente": "Gent",
+      "loc:DtcAdres.postcode": "9051",
+      "loc:DtcAdres.nummer": "35",
+      "loc:DtcAdres.provincie": "Oost-Vlaanderen"
+    }
+  },
+  "AIMObject.typeURI": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Stroomkring",
+  "AIMDBStatus.isActief": true,
+  "AIMNaamObject.naam": "A10N47.4.K_stroomkring",
+  "AIMObject.notitie": "",
+  "AIMObject.assetId": {
+    "DtcIdentificator.identificator": "000d3091-deca-4714-8f82-d95aace9ea90-b25kZXJkZWVsI1N0cm9vbWtyaW5n",
+    "DtcIdentificator.toegekendDoor": "AWV"
+  },
+  "geo:Geometrie.log": [
+    {
+      "geo:DtcLog.overerving": [
+        {
+          "geo:DtcOvererving.erflaatId": {
+            "DtcIdentificator.identificator": "b59f3b37-fe77-4677-9e7c-e5491319e759-b25kZXJkZWVsI0xhYWdzcGFubmluZ3Nib3Jk",
+            "DtcIdentificator.toegekendDoor": "AWV"
+          },
+          "geo:DtcOvererving.erfgenaamId": {
+            "DtcIdentificator.identificator": "000d3091-deca-4714-8f82-d95aace9ea90-b25kZXJkZWVsI1N0cm9vbWtyaW5n",
+            "DtcIdentificator.toegekendDoor": "AWV"
+          },
+          "geo:DtcOvererving.relatieId": {
+            "DtcIdentificator.identificator": "b80e2ca4-123c-46ac-b747-4b6e8075bf78-b25kZXJkZWVsI0JldmVzdGlnaW5n",
+            "DtcIdentificator.toegekendDoor": "AWV"
+          }
+        }
+      ],
+      "geo:DtcLog.gaVersie": "GA_2.2.0",
+      "geo:DtcLog.geometrie": {
+        "geo:DtuGeometrie.punt": "POINT Z(101489.3 190526.6 0)"
+      },
+      "geo:DtcLog.bron": "https://geo.data.wegenenverkeer.be/id/concept/KlLogBron/overerving",
+      "geo:DtcLog.nauwkeurigheid": "",
+      "geo:DtcLog.niveau": "https://geo.data.wegenenverkeer.be/id/concept/KlLogNiveau/-1"
+    }
+  ]
+}]}"""
+
     response = """{
   "@graph": [
     {

@@ -54,7 +54,7 @@ class VerlichtingstoestelNaHP(VerlichtingstoestelConnector, Verlichtingstoestel)
     @property
     def armatuurkleur(self):
         """De kleur van de zichtbare buitenkant van het verlichtingstoestel."""
-        return self._armatuurkleur.waarde
+        return self._armatuurkleur.get_waarde()
 
     @armatuurkleur.setter
     def armatuurkleur(self, value):
@@ -63,7 +63,7 @@ class VerlichtingstoestelNaHP(VerlichtingstoestelConnector, Verlichtingstoestel)
     @property
     def heeftAntiVandalisme(self):
         """Is het een antivandalisme type verlichtingstoestel?"""
-        return self._heeftAntiVandalisme.waarde
+        return self._heeftAntiVandalisme.get_waarde()
 
     @heeftAntiVandalisme.setter
     def heeftAntiVandalisme(self, value):
@@ -72,7 +72,7 @@ class VerlichtingstoestelNaHP(VerlichtingstoestelConnector, Verlichtingstoestel)
     @property
     def heeftSperfilter(self):
         """Is er een sperfilter aanwezig?"""
-        return self._heeftSperfilter.waarde
+        return self._heeftSperfilter.get_waarde()
 
     @heeftSperfilter.setter
     def heeftSperfilter(self, value):
@@ -81,7 +81,7 @@ class VerlichtingstoestelNaHP(VerlichtingstoestelConnector, Verlichtingstoestel)
     @property
     def kleurArmatuur(self):
         """De kleur van de zichtbare buitenkant van het verlichtingstoestel."""
-        return self._kleurArmatuur.waarde
+        return self._kleurArmatuur.get_waarde()
 
     @kleurArmatuur.setter
     def kleurArmatuur(self, value):

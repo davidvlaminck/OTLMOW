@@ -65,7 +65,7 @@ class Funderingsmassief(Fundering, VlakGeometrie):
     @property
     def afmetingGrondvlak(self):
         """De afmetingen van het grondvlak van de fundering volgens zijn vorm."""
-        return self._afmetingGrondvlak.waarde
+        return self._afmetingGrondvlak.get_waarde()
 
     @afmetingGrondvlak.setter
     def afmetingGrondvlak(self, value):
@@ -74,7 +74,7 @@ class Funderingsmassief(Fundering, VlakGeometrie):
     @property
     def funderingshoogte(self):
         """De afstand tussen het laagste punt van de onderkant en hoogste punt van de bovenkant van de fundering."""
-        return self._funderingshoogte.waarde
+        return self._funderingshoogte.get_waarde()
 
     @funderingshoogte.setter
     def funderingshoogte(self, value):
@@ -83,7 +83,7 @@ class Funderingsmassief(Fundering, VlakGeometrie):
     @property
     def isPermanent(self):
         """Bepaalt of de fundering (en het gefundeerd object) blijvend is."""
-        return self._isPermanent.waarde
+        return self._isPermanent.get_waarde()
 
     @isPermanent.setter
     def isPermanent(self, value):
@@ -92,7 +92,7 @@ class Funderingsmassief(Fundering, VlakGeometrie):
     @property
     def isPrefab(self):
         """Bepaalt of de fundering ter plaatse gestort is of als geprefabriceerd element aangevoerd."""
-        return self._isPrefab.waarde
+        return self._isPrefab.get_waarde()
 
     @isPrefab.setter
     def isPrefab(self, value):
@@ -101,7 +101,7 @@ class Funderingsmassief(Fundering, VlakGeometrie):
     @property
     def materiaal(self):
         """De grondstof waaruit het funderingsmassief gemaakt is. """
-        return self._materiaal.waarde
+        return self._materiaal.get_waarde()
 
     @materiaal.setter
     def materiaal(self, value):
@@ -110,7 +110,7 @@ class Funderingsmassief(Fundering, VlakGeometrie):
     @property
     def volume(self):
         """Het volume in kubieke meter van het funderingsmassief."""
-        return self._volume.waarde
+        return self._volume.get_waarde()
 
     @volume.setter
     def volume(self, value):

@@ -65,7 +65,7 @@ class DtcMaaienWaarden(AttributeInfo):
     @property
     def frequentie(self):
         """Het aantal keer dat er gemaaid wordt per jaar."""
-        return self._frequentie.waarde
+        return self._frequentie.get_waarde()
 
     @frequentie.setter
     def frequentie(self, value):
@@ -74,7 +74,7 @@ class DtcMaaienWaarden(AttributeInfo):
     @property
     def isGazonbeheer(self):
         """Aanduiding of de grazige vegetatie meer dan 3x per jaar gemaaid wordt."""
-        return self._isGazonbeheer.waarde
+        return self._isGazonbeheer.get_waarde()
 
     @isGazonbeheer.setter
     def isGazonbeheer(self, value):
@@ -83,7 +83,7 @@ class DtcMaaienWaarden(AttributeInfo):
     @property
     def isMachinaal(self):
         """Aanduiding of het maaien machinaal of handmatig wordt uitgevoerd."""
-        return self._isMachinaal.waarde
+        return self._isMachinaal.get_waarde()
 
     @isMachinaal.setter
     def isMachinaal(self, value):
@@ -92,7 +92,7 @@ class DtcMaaienWaarden(AttributeInfo):
     @property
     def isRuigtebeheer(self):
         """Aanduiding of de grazige vegetatie minder dan 1x per jaar gemaaid wordt."""
-        return self._isRuigtebeheer.waarde
+        return self._isRuigtebeheer.get_waarde()
 
     @isRuigtebeheer.setter
     def isRuigtebeheer(self, value):
@@ -101,7 +101,7 @@ class DtcMaaienWaarden(AttributeInfo):
     @property
     def isVeiligheidsmaaien(self):
         """Aanduiding of er een maaistrook aanwezig is voor het vrijwaren van de zichtbaarheid en voor het vrijhouden van de bebakening en signalisatie."""
-        return self._isVeiligheidsmaaien.waarde
+        return self._isVeiligheidsmaaien.get_waarde()
 
     @isVeiligheidsmaaien.setter
     def isVeiligheidsmaaien(self, value):
@@ -110,7 +110,7 @@ class DtcMaaienWaarden(AttributeInfo):
     @property
     def klepelmaaierToegelaten(self):
         """Aanduiding of er gemaaid mag worden met een klepelmaaier."""
-        return self._klepelmaaierToegelaten.waarde
+        return self._klepelmaaierToegelaten.get_waarde()
 
     @klepelmaaierToegelaten.setter
     def klepelmaaierToegelaten(self, value):
@@ -119,7 +119,7 @@ class DtcMaaienWaarden(AttributeInfo):
     @property
     def periode(self):
         """De maand waarin het maaien wordt uitgevoerd."""
-        return self._periode.waarde
+        return self._periode.get_waarde()
 
     @periode.setter
     def periode(self, value):

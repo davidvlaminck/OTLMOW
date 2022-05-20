@@ -33,7 +33,7 @@ class DtcAfmetingBxlxhInCmWaarden(AttributeInfo):
     @property
     def breedte(self):
         """De breedte in centimeter."""
-        return self._breedte.waarde
+        return self._breedte.get_waarde()
 
     @breedte.setter
     def breedte(self, value):
@@ -42,7 +42,7 @@ class DtcAfmetingBxlxhInCmWaarden(AttributeInfo):
     @property
     def hoogte(self):
         """De hoogte in centimeter."""
-        return self._hoogte.waarde
+        return self._hoogte.get_waarde()
 
     @hoogte.setter
     def hoogte(self, value):
@@ -51,7 +51,7 @@ class DtcAfmetingBxlxhInCmWaarden(AttributeInfo):
     @property
     def lengte(self):
         """De lengte in centimeter."""
-        return self._lengte.waarde
+        return self._lengte.get_waarde()
 
     @lengte.setter
     def lengte(self, value):

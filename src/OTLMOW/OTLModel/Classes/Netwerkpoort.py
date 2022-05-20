@@ -88,7 +88,7 @@ class Netwerkpoort(AIMNaamObject, PuntGeometrie):
     @property
     def beschrijvingFabrikant(self):
         """Bijkomende specificaties over het apparaat of onderdeel type van de fabrikant."""
-        return self._beschrijvingFabrikant.waarde
+        return self._beschrijvingFabrikant.get_waarde()
 
     @beschrijvingFabrikant.setter
     def beschrijvingFabrikant(self, value):
@@ -97,7 +97,7 @@ class Netwerkpoort(AIMNaamObject, PuntGeometrie):
     @property
     def code(self):
         """Bestelcode van dit toestel of onderdeel bij de fabrikant."""
-        return self._code.waarde
+        return self._code.get_waarde()
 
     @code.setter
     def code(self, value):
@@ -106,7 +106,7 @@ class Netwerkpoort(AIMNaamObject, PuntGeometrie):
     @property
     def config(self):
         """Soort verbinding aangeboden aan de klant."""
-        return self._config.waarde
+        return self._config.get_waarde()
 
     @config.setter
     def config(self, value):
@@ -115,7 +115,7 @@ class Netwerkpoort(AIMNaamObject, PuntGeometrie):
     @property
     def golflengte(self):
         """De golflengte waarop deze poort communiceert."""
-        return self._golflengte.waarde
+        return self._golflengte.get_waarde()
 
     @golflengte.setter
     def golflengte(self, value):
@@ -124,7 +124,7 @@ class Netwerkpoort(AIMNaamObject, PuntGeometrie):
     @property
     def merk(self):
         """Merk waarmee de fabrikant de netwerkpoort identificeert."""
-        return self._merk.waarde
+        return self._merk.get_waarde()
 
     @merk.setter
     def merk(self, value):
@@ -133,7 +133,7 @@ class Netwerkpoort(AIMNaamObject, PuntGeometrie):
     @property
     def nNILANCapaciteit(self):
         """Bandbreedte via deze poort, uitgedrukt in Mb/s, enkel van toepassing indien NNI poort."""
-        return self._nNILANCapaciteit.waarde
+        return self._nNILANCapaciteit.get_waarde()
 
     @nNILANCapaciteit.setter
     def nNILANCapaciteit(self, value):
@@ -142,7 +142,7 @@ class Netwerkpoort(AIMNaamObject, PuntGeometrie):
     @property
     def serienummer(self):
         """Unieke identificatiecode van het toestel, toegekend door de fabrikant."""
-        return self._serienummer.waarde
+        return self._serienummer.get_waarde()
 
     @serienummer.setter
     def serienummer(self, value):
@@ -151,7 +151,7 @@ class Netwerkpoort(AIMNaamObject, PuntGeometrie):
     @property
     def technologie(self):
         """Intern gebruikt netwerk protocol."""
-        return self._technologie.waarde
+        return self._technologie.get_waarde()
 
     @technologie.setter
     def technologie(self, value):
@@ -160,7 +160,7 @@ class Netwerkpoort(AIMNaamObject, PuntGeometrie):
     @property
     def type(self):
         """Geeft het soort netwerk interface weer."""
-        return self._type.waarde
+        return self._type.get_waarde()
 
     @type.setter
     def type(self, value):

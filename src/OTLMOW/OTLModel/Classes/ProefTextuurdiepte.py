@@ -30,7 +30,7 @@ class ProefTextuurdiepte(Proef, PuntGeometrie, LijnGeometrie, VlakGeometrie):
     @property
     def textuurdiepte(self):
         """Proefresultaten van de textuurdiepte van de toplaag."""
-        return self._textuurdiepte.waarde
+        return self._textuurdiepte.get_waarde()
 
     @textuurdiepte.setter
     def textuurdiepte(self, value):

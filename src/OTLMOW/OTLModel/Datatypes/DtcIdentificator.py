@@ -26,7 +26,7 @@ class DtcIdentificatorWaarden(AttributeInfo):
     @property
     def identificator(self):
         """Een groep van tekens om een AIM object te identificeren of te benoemen."""
-        return self._identificator.waarde
+        return self._identificator.get_waarde()
 
     @identificator.setter
     def identificator(self, value):
@@ -35,7 +35,7 @@ class DtcIdentificatorWaarden(AttributeInfo):
     @property
     def toegekendDoor(self):
         """Gegevens van de organisatie die de toekenning deed."""
-        return self._toegekendDoor.waarde
+        return self._toegekendDoor.get_waarde()
 
     @toegekendDoor.setter
     def toegekendDoor(self, value):

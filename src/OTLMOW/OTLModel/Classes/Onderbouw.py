@@ -50,7 +50,7 @@ class Onderbouw(LaagDikte, Laag):
     @property
     def isHerstel(self):
         """Aanduiding of de onderbouw laag is of wordt hersteld."""
-        return self._isHerstel.waarde
+        return self._isHerstel.get_waarde()
 
     @isHerstel.setter
     def isHerstel(self, value):
@@ -59,7 +59,7 @@ class Onderbouw(LaagDikte, Laag):
     @property
     def krimpvoegen(self):
         """Een gedeeltelijke insnijding in een constructiedeel die uitzetting en krimp in de constructie toelaat."""
-        return self._krimpvoegen.waarde
+        return self._krimpvoegen.get_waarde()
 
     @krimpvoegen.setter
     def krimpvoegen(self, value):
@@ -68,7 +68,7 @@ class Onderbouw(LaagDikte, Laag):
     @property
     def type(self):
         """Het type van onderbouw."""
-        return self._type.waarde
+        return self._type.get_waarde()
 
     @type.setter
     def type(self, value):
@@ -77,7 +77,7 @@ class Onderbouw(LaagDikte, Laag):
     @property
     def volume(self):
         """Het volume van onderbouw in kubieke meter."""
-        return self._volume.waarde
+        return self._volume.get_waarde()
 
     @volume.setter
     def volume(self, value):

@@ -103,7 +103,7 @@ class Deur(ABC):
     @property
     def afmetingDeuropening(self):
         """Afmeting van de vrije ruimte die ontstaat wanneer de deur volledig geopend is."""
-        return self._afmetingDeuropening.waarde
+        return self._afmetingDeuropening.get_waarde()
 
     @afmetingDeuropening.setter
     def afmetingDeuropening(self, value):
@@ -112,7 +112,7 @@ class Deur(ABC):
     @property
     def brandweerstand(self):
         """Brandwerendheid is een maat voor de tijd die een constructie heeft voor dat deze bezwijkt onder invloed van een brand."""
-        return self._brandweerstand.waarde
+        return self._brandweerstand.get_waarde()
 
     @brandweerstand.setter
     def brandweerstand(self, value):
@@ -121,7 +121,7 @@ class Deur(ABC):
     @property
     def breedte(self):
         """De afmeting van de rechtopstaande deur gemeten van de ene zijkant naar de andere."""
-        return self._breedte.waarde
+        return self._breedte.get_waarde()
 
     @breedte.setter
     def breedte(self, value):
@@ -130,7 +130,7 @@ class Deur(ABC):
     @property
     def dikte(self):
         """De dikte van de deur gemeten van de ene buitenzijde van de deur tot de andere."""
-        return self._dikte.waarde
+        return self._dikte.get_waarde()
 
     @dikte.setter
     def dikte(self, value):
@@ -139,7 +139,7 @@ class Deur(ABC):
     @property
     def fabrikant(self):
         """Naam van de producent van de deur."""
-        return self._fabrikant.waarde
+        return self._fabrikant.get_waarde()
 
     @fabrikant.setter
     def fabrikant(self, value):
@@ -148,7 +148,7 @@ class Deur(ABC):
     @property
     def handgreeptype(self):
         """Soort greep aan waarmee de deur geopend wordt."""
-        return self._handgreeptype.waarde
+        return self._handgreeptype.get_waarde()
 
     @handgreeptype.setter
     def handgreeptype(self, value):
@@ -157,7 +157,7 @@ class Deur(ABC):
     @property
     def heeftDeurcontact(self):
         """Geeft aan of de deur voorzien is van een contact dat bewaakt of de deur open of dicht is."""
-        return self._heeftDeurcontact.waarde
+        return self._heeftDeurcontact.get_waarde()
 
     @heeftDeurcontact.setter
     def heeftDeurcontact(self, value):
@@ -166,7 +166,7 @@ class Deur(ABC):
     @property
     def hoogte(self):
         """De afmeting van de rechtopstaande deur gemeten van de onderkant tot de bovenkant."""
-        return self._hoogte.waarde
+        return self._hoogte.get_waarde()
 
     @hoogte.setter
     def hoogte(self, value):
@@ -175,7 +175,7 @@ class Deur(ABC):
     @property
     def isZelfsluitend(self):
         """Geeft aan of de deur voorzien is van een mechanisme dat er voor zorgt dat de deur sluit zonder tussenkomst van een gebruiker."""
-        return self._isZelfsluitend.waarde
+        return self._isZelfsluitend.get_waarde()
 
     @isZelfsluitend.setter
     def isZelfsluitend(self, value):
@@ -184,7 +184,7 @@ class Deur(ABC):
     @property
     def ophangconstructie(self):
         """Documentatie met betrekking tot de manier waarop de deur met het kozijn bevestigd is aan de ruimte waartoe ze toegang biedt."""
-        return self._ophangconstructie.waarde
+        return self._ophangconstructie.get_waarde()
 
     @ophangconstructie.setter
     def ophangconstructie(self, value):
@@ -193,7 +193,7 @@ class Deur(ABC):
     @property
     def sluitingstijd(self):
         """Duurtijd voor het automatische sluiten van een zelfsluitende deur die volledig open staat."""
-        return self._sluitingstijd.waarde
+        return self._sluitingstijd.get_waarde()
 
     @sluitingstijd.setter
     def sluitingstijd(self, value):

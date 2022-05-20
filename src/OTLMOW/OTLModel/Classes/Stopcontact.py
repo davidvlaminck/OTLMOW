@@ -42,7 +42,7 @@ class Stopcontact(AIMObject, PuntGeometrie):
     @property
     def aantalPolen(self):
         """Typering van het stopcontact volgens het aantal polen op basis van een keuzelijst."""
-        return self._aantalPolen.waarde
+        return self._aantalPolen.get_waarde()
 
     @aantalPolen.setter
     def aantalPolen(self, value):
@@ -51,7 +51,7 @@ class Stopcontact(AIMObject, PuntGeometrie):
     @property
     def spanning(self):
         """De voorziene spanning voor het stopcontact."""
-        return self._spanning.waarde
+        return self._spanning.get_waarde()
 
     @spanning.setter
     def spanning(self, value):
@@ -60,7 +60,7 @@ class Stopcontact(AIMObject, PuntGeometrie):
     @property
     def stroomsterkte(self):
         """Maximale stroomsterkte van het stopcontact uitgedrukt in ampère."""
-        return self._stroomsterkte.waarde
+        return self._stroomsterkte.get_waarde()
 
     @stroomsterkte.setter
     def stroomsterkte(self, value):

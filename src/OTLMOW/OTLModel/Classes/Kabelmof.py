@@ -26,7 +26,7 @@ class Kabelmof(AIMNaamObject, PuntGeometrie):
     @property
     def type(self):
         """Soort mof volgens een lijst van types."""
-        return self._type.waarde
+        return self._type.get_waarde()
 
     @type.setter
     def type(self, value):

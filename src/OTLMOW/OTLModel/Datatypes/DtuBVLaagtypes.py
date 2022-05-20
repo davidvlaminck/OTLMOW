@@ -31,7 +31,7 @@ class DtuBVLaagtypesWaarden(AttributeInfo, UnionWaarden):
     @property
     def laagtype(self):
         """Het type van de bitumineuze verharding."""
-        return self._laagtype.waarde
+        return self._laagtype.get_waarde()
 
     @laagtype.setter
     def laagtype(self, value):
@@ -42,7 +42,7 @@ class DtuBVLaagtypesWaarden(AttributeInfo, UnionWaarden):
     @property
     def profileerlaag(self):
         """De laag die het profiel verbetert van de verharding."""
-        return self._profileerlaag.waarde
+        return self._profileerlaag.get_waarde()
 
     @profileerlaag.setter
     def profileerlaag(self, value):

@@ -64,7 +64,7 @@ class Netwerkkaart(AIMNaamObject, PuntGeometrie):
     @property
     def beschrijvingFabrikant(self):
         """Bijkomende specificaties over het apparaat of onderdeel type van de fabrikant."""
-        return self._beschrijvingFabrikant.waarde
+        return self._beschrijvingFabrikant.get_waarde()
 
     @beschrijvingFabrikant.setter
     def beschrijvingFabrikant(self, value):
@@ -73,7 +73,7 @@ class Netwerkkaart(AIMNaamObject, PuntGeometrie):
     @property
     def merk(self):
         """Merk waarmee de fabrikant de netwerkkaart identificeert."""
-        return self._merk.waarde
+        return self._merk.get_waarde()
 
     @merk.setter
     def merk(self, value):
@@ -82,7 +82,7 @@ class Netwerkkaart(AIMNaamObject, PuntGeometrie):
     @property
     def modelnaam(self):
         """Modelnaam waarmee de fabrikant dit type toestel identificeert."""
-        return self._modelnaam.waarde
+        return self._modelnaam.get_waarde()
 
     @modelnaam.setter
     def modelnaam(self, value):
@@ -91,7 +91,7 @@ class Netwerkkaart(AIMNaamObject, PuntGeometrie):
     @property
     def serienummer(self):
         """Unieke identificatiecode van het toestel, toegekend door de fabrikant."""
-        return self._serienummer.waarde
+        return self._serienummer.get_waarde()
 
     @serienummer.setter
     def serienummer(self, value):
@@ -100,7 +100,7 @@ class Netwerkkaart(AIMNaamObject, PuntGeometrie):
     @property
     def softwareVersie(self):
         """Identificatie van de softwareversie die op dit apparaat of onderdeel geladen is. Dit kan ook een firmwareversie zijn."""
-        return self._softwareVersie.waarde
+        return self._softwareVersie.get_waarde()
 
     @softwareVersie.setter
     def softwareVersie(self, value):
@@ -109,7 +109,7 @@ class Netwerkkaart(AIMNaamObject, PuntGeometrie):
     @property
     def technologie(self):
         """Intern gebruikte netwerk protocol."""
-        return self._technologie.waarde
+        return self._technologie.get_waarde()
 
     @technologie.setter
     def technologie(self, value):

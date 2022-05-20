@@ -24,7 +24,7 @@ class StuurklepBrandleiding(Brandvoorziening):
     @property
     def heeftLeegloopklep(self):
         """Voorziet een mogelijkheid om via de klep de brandleiding te laten leeglopen."""
-        return self._heeftLeegloopklep.waarde
+        return self._heeftLeegloopklep.get_waarde()
 
     @heeftLeegloopklep.setter
     def heeftLeegloopklep(self, value):

@@ -27,7 +27,7 @@ class DtcBeschermingVraatschadeWaarden(AttributeInfo):
     @property
     def materiaal(self):
         """De middelen als bescherming tegen vraatschade."""
-        return self._materiaal.waarde
+        return self._materiaal.get_waarde()
 
     @materiaal.setter
     def materiaal(self, value):
@@ -36,7 +36,7 @@ class DtcBeschermingVraatschadeWaarden(AttributeInfo):
     @property
     def tegenMaaischade(self):
         """Aanduiding of er bescherming tegen maaischade aanwezig is."""
-        return self._tegenMaaischade.waarde
+        return self._tegenMaaischade.get_waarde()
 
     @tegenMaaischade.setter
     def tegenMaaischade(self, value):

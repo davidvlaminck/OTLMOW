@@ -23,7 +23,7 @@ class SchokindexVoertuigkering(ABC):
     @property
     def schokindex(self):
         """De parameter die weergeeft hoe groot de kans op ernstige letsels is van de inzittenden bij een aanrijding."""
-        return self._schokindex.waarde
+        return self._schokindex.get_waarde()
 
     @schokindex.setter
     def schokindex(self, value):

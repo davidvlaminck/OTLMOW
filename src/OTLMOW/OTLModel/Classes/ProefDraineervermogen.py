@@ -30,7 +30,7 @@ class ProefDraineervermogen(Proef, PuntGeometrie, LijnGeometrie, VlakGeometrie):
     @property
     def draineervermogen(self):
         """Proefresultaten van het drainvermogen."""
-        return self._draineervermogen.waarde
+        return self._draineervermogen.get_waarde()
 
     @draineervermogen.setter
     def draineervermogen(self, value):

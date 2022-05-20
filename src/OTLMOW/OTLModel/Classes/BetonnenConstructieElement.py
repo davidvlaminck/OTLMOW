@@ -39,7 +39,7 @@ class BetonnenConstructieElement(ABC):
     @property
     def betonspecificaties(self):
         """Eigenschappen van het gebruikte beton."""
-        return self._betonspecificaties.waarde
+        return self._betonspecificaties.get_waarde()
 
     @betonspecificaties.setter
     def betonspecificaties(self, value):
@@ -48,7 +48,7 @@ class BetonnenConstructieElement(ABC):
     @property
     def uitvoeringsmethode(self):
         """Op welke manier het beton wordt aangebracht."""
-        return self._uitvoeringsmethode.waarde
+        return self._uitvoeringsmethode.get_waarde()
 
     @uitvoeringsmethode.setter
     def uitvoeringsmethode(self, value):
@@ -57,7 +57,7 @@ class BetonnenConstructieElement(ABC):
     @property
     def wapeningsplan(self):
         """Plan waarin de wapening zo gedetailleerd mogelijk wordt uitgetekend (met materiaalspecificaties en de afmetingen worden weergegeven in millimeters)."""
-        return self._wapeningsplan.waarde
+        return self._wapeningsplan.get_waarde()
 
     @wapeningsplan.setter
     def wapeningsplan(self, value):

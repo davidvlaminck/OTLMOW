@@ -67,7 +67,7 @@ class Sokkel(AIMNaamObject, VlakGeometrie):
     @property
     def afmetingGrondvlak(self):
         """De afmeting van het grondvlak van de sokkel volgens zijn vorm."""
-        return self._afmetingGrondvlak.waarde
+        return self._afmetingGrondvlak.get_waarde()
 
     @afmetingGrondvlak.setter
     def afmetingGrondvlak(self, value):
@@ -76,7 +76,7 @@ class Sokkel(AIMNaamObject, VlakGeometrie):
     @property
     def heeftMaaibescherming(self):
         """Geeft aan of de sokkel (en daarmee het object dat er bovenop geplaatst is) beschermd is tegen schade als gevolg van het maaien van omliggende begroeiing."""
-        return self._heeftMaaibescherming.waarde
+        return self._heeftMaaibescherming.get_waarde()
 
     @heeftMaaibescherming.setter
     def heeftMaaibescherming(self, value):
@@ -85,7 +85,7 @@ class Sokkel(AIMNaamObject, VlakGeometrie):
     @property
     def hoogteBovenMaaiveld(self):
         """Hoogte in centimeters van het hoogste punt van de sokkel gemeten vanaf het maaiveld."""
-        return self._hoogteBovenMaaiveld.waarde
+        return self._hoogteBovenMaaiveld.get_waarde()
 
     @hoogteBovenMaaiveld.setter
     def hoogteBovenMaaiveld(self, value):
@@ -94,7 +94,7 @@ class Sokkel(AIMNaamObject, VlakGeometrie):
     @property
     def hoogteSokkel(self):
         """De totale hoogte van de sokkel wanneer die rechtop staat."""
-        return self._hoogteSokkel.waarde
+        return self._hoogteSokkel.get_waarde()
 
     @hoogteSokkel.setter
     def hoogteSokkel(self, value):
@@ -103,7 +103,7 @@ class Sokkel(AIMNaamObject, VlakGeometrie):
     @property
     def materiaal(self):
         """De grondstof waaruit de sokkel (voornamelijk) vervaardigd is."""
-        return self._materiaal.waarde
+        return self._materiaal.get_waarde()
 
     @materiaal.setter
     def materiaal(self, value):
@@ -112,7 +112,7 @@ class Sokkel(AIMNaamObject, VlakGeometrie):
     @property
     def sokkelhoogte(self):
         """De totale hoogte van de sokkel wanneer die rechtop staat."""
-        return self._sokkelhoogte.waarde
+        return self._sokkelhoogte.get_waarde()
 
     @sokkelhoogte.setter
     def sokkelhoogte(self, value):

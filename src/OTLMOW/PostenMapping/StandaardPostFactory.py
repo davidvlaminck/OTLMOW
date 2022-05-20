@@ -1,6 +1,6 @@
-﻿from OTLMOW.Facility.DotnotatieHelper import DotnotatieHelper
+﻿from OTLMOW.Facility.AssetFactory import AssetFactory
+from OTLMOW.Facility.DotnotatieHelper import DotnotatieHelper
 from OTLMOW.OTLModel.BaseClasses.OTLAsset import OTLAsset
-from OTLMOW.OTLModel.ClassLoader import ClassLoader
 from OTLMOW.PostenMapping.PostenLijst import PostenLijst
 from OTLMOW.PostenMapping.StandaardPost import StandaardPost
 
@@ -13,7 +13,7 @@ class StandaardPostFactory:
 
     @staticmethod
     def create_assets_from_post(post: StandaardPost):
-        class_loader = ClassLoader()
+        class_loader = AssetFactory()
         lijst = []
         for mapping in post.mappings:
             asset = next((c for c in lijst if c.typeURI == mapping.typeURI), None)
@@ -44,11 +44,8 @@ class StandaardPostFactory:
         selectie.extend(mappings_met_invulbare_attributen)
 
         for mapping in mappings_met_invulbare_attributen:
-            attribuut = DotnotatieHelper.get_attribute_by_dotnotatie(otlObject, mapping.dotnotatie)
-            if attribuut.field.waardeObject is not None and not attribuut.field._uses_waarde_object:
-                waarde = attribuut.waarde.waarde
-            else:
-                waarde = attribuut.waarde
+            attribuut = DotnotatieHelper.get_attributes_by_dotnotatie(otlObject, mapping.dotnotatie, waarde_shortcut_applicable=True)
+            waarde = attribuut.waarde
             if waarde is None:
                 continue
             selectie = list(filter(lambda m: DotnotatieHelper.convert_waarde_to_correct_type(m.dotnotatie == mapping.dotnotatie and m.defaultWaarde, attribuut) == waarde, selectie))

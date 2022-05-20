@@ -26,7 +26,7 @@ class SolitaireHeester(VegetatieElement, PuntGeometrie):
     @property
     def wortelAanplant(self):
         """De manier van levering en aanplanting van het wortelgestel van de boom of plant."""
-        return self._wortelAanplant.waarde
+        return self._wortelAanplant.get_waarde()
 
     @wortelAanplant.setter
     def wortelAanplant(self, value):

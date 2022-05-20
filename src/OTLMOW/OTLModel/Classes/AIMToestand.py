@@ -23,7 +23,7 @@ class AIMToestand(ABC):
     @property
     def toestand(self):
         """Geeft de actuele stand in de levenscyclus van het object."""
-        return self._toestand.waarde
+        return self._toestand.get_waarde()
 
     @toestand.setter
     def toestand(self, value):

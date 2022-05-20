@@ -30,7 +30,7 @@ class ProefLangsvlakheid(Proef, PuntGeometrie, LijnGeometrie, VlakGeometrie):
     @property
     def langsvlakheid(self):
         """Het resultaat van de meting."""
-        return self._langsvlakheid.waarde
+        return self._langsvlakheid.get_waarde()
 
     @langsvlakheid.setter
     def langsvlakheid(self, value):

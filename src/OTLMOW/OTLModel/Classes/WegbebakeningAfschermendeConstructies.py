@@ -26,7 +26,7 @@ class WegbebakeningAfschermendeConstructies(Bebakening, PuntGeometrie):
     @property
     def type(self):
         """De vorm van wegbebakening voor afschermende constructies."""
-        return self._type.waarde
+        return self._type.get_waarde()
 
     @type.setter
     def type(self, value):

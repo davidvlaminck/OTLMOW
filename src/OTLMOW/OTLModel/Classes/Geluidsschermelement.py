@@ -58,7 +58,7 @@ class Geluidsschermelement(LijnvormigElement, LijnGeometrie):
     @property
     def hoogte(self):
         """De hoogte in centimeter van het schermelement, verticaal gemeten."""
-        return self._hoogte.waarde
+        return self._hoogte.get_waarde()
 
     @hoogte.setter
     def hoogte(self, value):
@@ -67,7 +67,7 @@ class Geluidsschermelement(LijnvormigElement, LijnGeometrie):
     @property
     def lengte(self):
         """De lengte van het schermelement in centimeter zonder inbegrip van de profielen, horizontaal gemeten."""
-        return self._lengte.waarde
+        return self._lengte.get_waarde()
 
     @lengte.setter
     def lengte(self, value):
@@ -76,7 +76,7 @@ class Geluidsschermelement(LijnvormigElement, LijnGeometrie):
     @property
     def materiaalkarakteristiek(self):
         """Het materiaal van de geluidswerende constructie en het geluidskarakteristiek van het materiaal."""
-        return self._materiaalkarakteristiek.waarde
+        return self._materiaalkarakteristiek.get_waarde()
 
     @materiaalkarakteristiek.setter
     def materiaalkarakteristiek(self, value):
@@ -85,7 +85,7 @@ class Geluidsschermelement(LijnvormigElement, LijnGeometrie):
     @property
     def maximaleTotaleDikte(self):
         """De maximale totale dikte van het schermelement in centimeter, gemeten ter hoogte van het geluidsabsorberende deel van het schermelement."""
-        return self._maximaleTotaleDikte.waarde
+        return self._maximaleTotaleDikte.get_waarde()
 
     @maximaleTotaleDikte.setter
     def maximaleTotaleDikte(self, value):
@@ -94,7 +94,7 @@ class Geluidsschermelement(LijnvormigElement, LijnGeometrie):
     @property
     def windbelasting(self):
         """Getal in kN/m2 voor de aanduiding van de maximale windbelasting volgens de norm NBN EN 1994-1-4."""
-        return self._windbelasting.waarde
+        return self._windbelasting.get_waarde()
 
     @windbelasting.setter
     def windbelasting(self, value):

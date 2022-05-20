@@ -24,7 +24,7 @@ class Steenslagverharding(AndereVerharding):
     @property
     def type(self):
         """Bepaling van het type steenslagverharding."""
-        return self._type.waarde
+        return self._type.get_waarde()
 
     @type.setter
     def type(self, value):

@@ -26,7 +26,7 @@ class Mantelbuis(ContainerBuis, Buis):
     @property
     def materiaal(self):
         """Bepaalt het materiaal van de mantelbuis."""
-        return self._materiaal.waarde
+        return self._materiaal.get_waarde()
 
     @materiaal.setter
     def materiaal(self, value):

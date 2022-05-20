@@ -60,7 +60,7 @@ class Slagboomkolom(AIMObject, PuntGeometrie, VlakGeometrie):
     @property
     def afmetingen(self):
         """De afmetingen van de slagboomkolom."""
-        return self._afmetingen.waarde
+        return self._afmetingen.get_waarde()
 
     @afmetingen.setter
     def afmetingen(self, value):
@@ -69,7 +69,7 @@ class Slagboomkolom(AIMObject, PuntGeometrie, VlakGeometrie):
     @property
     def isPivoterend(self):
         """Attribuut waarmee kan aangegeven worden of de koker van de slagboominstallatie al dan niet pivoteert."""
-        return self._isPivoterend.waarde
+        return self._isPivoterend.get_waarde()
 
     @isPivoterend.setter
     def isPivoterend(self, value):
@@ -78,7 +78,7 @@ class Slagboomkolom(AIMObject, PuntGeometrie, VlakGeometrie):
     @property
     def merk(self):
         """Het merk van de slagboom installatie."""
-        return self._merk.waarde
+        return self._merk.get_waarde()
 
     @merk.setter
     def merk(self, value):
@@ -87,7 +87,7 @@ class Slagboomkolom(AIMObject, PuntGeometrie, VlakGeometrie):
     @property
     def modelnaam(self):
         """Naam van het model van de slagboominstallatie."""
-        return self._modelnaam.waarde
+        return self._modelnaam.get_waarde()
 
     @modelnaam.setter
     def modelnaam(self, value):
@@ -96,7 +96,7 @@ class Slagboomkolom(AIMObject, PuntGeometrie, VlakGeometrie):
     @property
     def technischeFiche(self):
         """Technische fiche van de slagboominstallatie."""
-        return self._technischeFiche.waarde
+        return self._technischeFiche.get_waarde()
 
     @technischeFiche.setter
     def technischeFiche(self, value):

@@ -144,7 +144,7 @@ class Buis(AIMObject, LijnGeometrie):
     @property
     def bokAfwaarts(self):
         """Peil in meter-TAW van de vloei aan de afwaartse kant van de buis."""
-        return self._bokAfwaarts.waarde
+        return self._bokAfwaarts.get_waarde()
 
     @bokAfwaarts.setter
     def bokAfwaarts(self, value):
@@ -153,7 +153,7 @@ class Buis(AIMObject, LijnGeometrie):
     @property
     def bokOpwaarts(self):
         """Peil in meter-TAW van de vloei aan de opwaartse kant van de buis."""
-        return self._bokOpwaarts.waarde
+        return self._bokOpwaarts.get_waarde()
 
     @bokOpwaarts.setter
     def bokOpwaarts(self, value):
@@ -162,7 +162,7 @@ class Buis(AIMObject, LijnGeometrie):
     @property
     def breedte(self):
         """De breedte van de buis in millimeter."""
-        return self._breedte.waarde
+        return self._breedte.get_waarde()
 
     @breedte.setter
     def breedte(self, value):
@@ -171,7 +171,7 @@ class Buis(AIMObject, LijnGeometrie):
     @property
     def breedteBinnenzijde(self):
         """De breedte van de binnenzijde van de buis in millimeter. Bij cirkelvormige buizen is dit de binnendiameter."""
-        return self._breedteBinnenzijde.waarde
+        return self._breedteBinnenzijde.get_waarde()
 
     @breedteBinnenzijde.setter
     def breedteBinnenzijde(self, value):
@@ -180,7 +180,7 @@ class Buis(AIMObject, LijnGeometrie):
     @property
     def breedteBuitenzijde(self):
         """De breedte van de buitenzijde van de buis in millimeter. Bij cirkelvormige buizen is dit de buitendiameter."""
-        return self._breedteBuitenzijde.waarde
+        return self._breedteBuitenzijde.get_waarde()
 
     @breedteBuitenzijde.setter
     def breedteBuitenzijde(self, value):
@@ -189,7 +189,7 @@ class Buis(AIMObject, LijnGeometrie):
     @property
     def diepteAfwaarts(self):
         """Diepte van de vloei aan de afwaartse kant van de buis t.o.v. de bovenkant van het deksel."""
-        return self._diepteAfwaarts.waarde
+        return self._diepteAfwaarts.get_waarde()
 
     @diepteAfwaarts.setter
     def diepteAfwaarts(self, value):
@@ -198,7 +198,7 @@ class Buis(AIMObject, LijnGeometrie):
     @property
     def diepteOpwaarts(self):
         """De diepte van de vloei aan de opwaartse kant van de buis t.o.v. de bovenkant van het deksel."""
-        return self._diepteOpwaarts.waarde
+        return self._diepteOpwaarts.get_waarde()
 
     @diepteOpwaarts.setter
     def diepteOpwaarts(self, value):
@@ -207,7 +207,7 @@ class Buis(AIMObject, LijnGeometrie):
     @property
     def helling(self):
         """De helling van de buis in de lengterichting, uitgedrukt in promille."""
-        return self._helling.waarde
+        return self._helling.get_waarde()
 
     @helling.setter
     def helling(self, value):
@@ -216,7 +216,7 @@ class Buis(AIMObject, LijnGeometrie):
     @property
     def hoogteBinnenzijde(self):
         """De hoogte van de binnenzijde van de buis in millimeter. Bij cirkelvormige buizen is dit de binnendiameter."""
-        return self._hoogteBinnenzijde.waarde
+        return self._hoogteBinnenzijde.get_waarde()
 
     @hoogteBinnenzijde.setter
     def hoogteBinnenzijde(self, value):
@@ -225,7 +225,7 @@ class Buis(AIMObject, LijnGeometrie):
     @property
     def hoogteBuitenzijde(self):
         """De hoogte van de buitenzijde van een buis in millimeter. Bij cirkelvormige buizen is dit de buitendiameter."""
-        return self._hoogteBuitenzijde.waarde
+        return self._hoogteBuitenzijde.get_waarde()
 
     @hoogteBuitenzijde.setter
     def hoogteBuitenzijde(self, value):
@@ -234,7 +234,7 @@ class Buis(AIMObject, LijnGeometrie):
     @property
     def isManToegankelijk(self):
         """Bepaalt of de buis toegankelijk is voor een persoon."""
-        return self._isManToegankelijk.waarde
+        return self._isManToegankelijk.get_waarde()
 
     @isManToegankelijk.setter
     def isManToegankelijk(self, value):
@@ -243,7 +243,7 @@ class Buis(AIMObject, LijnGeometrie):
     @property
     def isOpgevuld(self):
         """Geeft aan of de buis gestabiliseerd/opgevuld is of niet."""
-        return self._isOpgevuld.waarde
+        return self._isOpgevuld.get_waarde()
 
     @isOpgevuld.setter
     def isOpgevuld(self, value):
@@ -252,7 +252,7 @@ class Buis(AIMObject, LijnGeometrie):
     @property
     def lengte(self):
         """De totale lengte in meter van de buis tussen opwaartse en afwaartse put."""
-        return self._lengte.waarde
+        return self._lengte.get_waarde()
 
     @lengte.setter
     def lengte(self, value):
@@ -261,7 +261,7 @@ class Buis(AIMObject, LijnGeometrie):
     @property
     def technischeFiche(self):
         """De technische fiche van de buis."""
-        return self._technischeFiche.waarde
+        return self._technischeFiche.get_waarde()
 
     @technischeFiche.setter
     def technischeFiche(self, value):
@@ -270,7 +270,7 @@ class Buis(AIMObject, LijnGeometrie):
     @property
     def toestandBuis(self):
         """Opmerkingen van de toestand en staat van de buis."""
-        return self._toestandBuis.waarde
+        return self._toestandBuis.get_waarde()
 
     @toestandBuis.setter
     def toestandBuis(self, value):
@@ -279,7 +279,7 @@ class Buis(AIMObject, LijnGeometrie):
     @property
     def vorm(self):
         """Bepaalt de vorm van de buis."""
-        return self._vorm.waarde
+        return self._vorm.get_waarde()
 
     @vorm.setter
     def vorm(self, value):

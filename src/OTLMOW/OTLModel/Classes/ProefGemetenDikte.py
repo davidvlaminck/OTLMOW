@@ -30,7 +30,7 @@ class ProefGemetenDikte(Proef, PuntGeometrie, LijnGeometrie, VlakGeometrie):
     @property
     def gemetenDikte(self):
         """De gemeten dikte van de laag in centimeter."""
-        return self._gemetenDikte.waarde
+        return self._gemetenDikte.get_waarde()
 
     @gemetenDikte.setter
     def gemetenDikte(self, value):

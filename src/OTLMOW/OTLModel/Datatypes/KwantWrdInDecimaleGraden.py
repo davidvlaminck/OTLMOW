@@ -34,7 +34,7 @@ class KwantWrdInDecimaleGradenWaarden(AttributeInfo):
     @property
     def waarde(self):
         """Bevat een getal die bij het datatype hoort."""
-        return self._waarde.waarde
+        return self._waarde.get_waarde()
 
     @waarde.setter
     def waarde(self, value):
@@ -48,6 +48,7 @@ class KwantWrdInDecimaleGraden(OTLField, AttributeInfo):
     label = 'Kwantitatieve waarde in decimale graden'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInDecimaleGraden'
     definition = 'Een kwantitatieve waarde die een getal in decimale graden uitdrukt.'
+    waarde_shortcut_applicable = True
     waardeObject = KwantWrdInDecimaleGradenWaarden
 
     def __str__(self):

@@ -72,7 +72,7 @@ class Buisbekleding(AIMObject, LijnGeometrie):
     @property
     def laagdikte(self):
         """De dikte van de bekledingslaag in millimeter."""
-        return self._laagdikte.waarde
+        return self._laagdikte.get_waarde()
 
     @laagdikte.setter
     def laagdikte(self, value):
@@ -81,7 +81,7 @@ class Buisbekleding(AIMObject, LijnGeometrie):
     @property
     def lengte(self):
         """De totale lengte van de buisbekleding in lopende meter."""
-        return self._lengte.waarde
+        return self._lengte.get_waarde()
 
     @lengte.setter
     def lengte(self, value):
@@ -90,7 +90,7 @@ class Buisbekleding(AIMObject, LijnGeometrie):
     @property
     def plaats(self):
         """De kant waar de bekleding van de buis zich bevindt."""
-        return self._plaats.waarde
+        return self._plaats.get_waarde()
 
     @plaats.setter
     def plaats(self, value):
@@ -99,7 +99,7 @@ class Buisbekleding(AIMObject, LijnGeometrie):
     @property
     def technischeFiche(self):
         """De technische fiche van de buisbekleding."""
-        return self._technischeFiche.waarde
+        return self._technischeFiche.get_waarde()
 
     @technischeFiche.setter
     def technischeFiche(self, value):
@@ -108,7 +108,7 @@ class Buisbekleding(AIMObject, LijnGeometrie):
     @property
     def tot(self):
         """Het einde van de buisbekleding in meter ten opzichte van de beginput van de buis."""
-        return self._tot.waarde
+        return self._tot.get_waarde()
 
     @tot.setter
     def tot(self, value):
@@ -117,7 +117,7 @@ class Buisbekleding(AIMObject, LijnGeometrie):
     @property
     def uitvoeringswijze(self):
         """Materiaal en manier van aanbrengen van de buisbekleding."""
-        return self._uitvoeringswijze.waarde
+        return self._uitvoeringswijze.get_waarde()
 
     @uitvoeringswijze.setter
     def uitvoeringswijze(self, value):
@@ -126,7 +126,7 @@ class Buisbekleding(AIMObject, LijnGeometrie):
     @property
     def van(self):
         """Het begin van de buisbekleding in meter ten opzichte van de beginput van de leiding."""
-        return self._van.waarde
+        return self._van.get_waarde()
 
     @van.setter
     def van(self, value):

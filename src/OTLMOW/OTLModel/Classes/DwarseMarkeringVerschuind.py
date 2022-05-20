@@ -55,7 +55,7 @@ class DwarseMarkeringVerschuind(DwarseMarkeringToegang):
     @property
     def basisoppervlakte(self):
         """De basisoppervlakte van de dwarse markering in vierkante meter."""
-        return self._basisoppervlakte.waarde
+        return self._basisoppervlakte.get_waarde()
 
     @basisoppervlakte.setter
     def basisoppervlakte(self, value):
@@ -64,7 +64,7 @@ class DwarseMarkeringVerschuind(DwarseMarkeringToegang):
     @property
     def code(self):
         """De (COPRO/BENOR)  code van dwarse markering."""
-        return self._code.waarde
+        return self._code.get_waarde()
 
     @code.setter
     def code(self, value):
@@ -73,7 +73,7 @@ class DwarseMarkeringVerschuind(DwarseMarkeringToegang):
     @property
     def hoek(self):
         """De hoek van de verschuinde dwarsmarkering in decimale graden."""
-        return self._hoek.waarde
+        return self._hoek.get_waarde()
 
     @hoek.setter
     def hoek(self, value):
@@ -82,7 +82,7 @@ class DwarseMarkeringVerschuind(DwarseMarkeringToegang):
     @property
     def oppervlakte(self):
         """De oppervlakte van een dwarsmarkering na verschuining."""
-        return self._oppervlakte.waarde
+        return self._oppervlakte.get_waarde()
 
     @oppervlakte.setter
     def oppervlakte(self, value):
@@ -91,7 +91,7 @@ class DwarseMarkeringVerschuind(DwarseMarkeringToegang):
     @property
     def soortOmschrijving(self):
         """De soort en tevens de omschrijving van dwarse markering."""
-        return self._soortOmschrijving.waarde
+        return self._soortOmschrijving.get_waarde()
 
     @soortOmschrijving.setter
     def soortOmschrijving(self, value):

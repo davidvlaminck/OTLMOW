@@ -2,7 +2,7 @@
 
 
 class OTLField:
-    _uses_waarde_object = False
+    waarde_shortcut_applicable = False
     naam = ''
     label = ''
     objectUri = ''
@@ -13,6 +13,32 @@ class OTLField:
 
     @staticmethod
     def validate(value, attribuut):
+        if attribuut.field.waardeObject:
+            if isinstance(value, list):
+                for list_item in value:
+                    if not isinstance(list_item, attribuut.field.waardeObject):
+                        raise ValueError(
+                            f'This is a complex datatype ({attribuut.dotnotatie}). Set the values through the attributes. Use .attr_type_info() for more info')
+            else:
+                if not isinstance(value, attribuut.field.waardeObject):
+                    raise ValueError(
+                        f'This is a complex datatype ({attribuut.dotnotatie}). Set the values through the attributes. Use .attr_type_info() for more info')
+            validation = True
+            for attr_key, attr in vars(value).items():
+                if attr_key == '_parent':
+                    continue
+                if attr.waarde is None:
+                    continue
+                if attr.kardinaliteit_max != '1':
+                    for value_item in attr.waarde:
+                        if not attr.field.validate(value_item, attr):
+                            validation = False
+                            break
+                else:
+                    if not attr.field.validate(attr.waarde, attr):
+                        validation = False
+                        break
+            return validation
         pass
 
     @staticmethod

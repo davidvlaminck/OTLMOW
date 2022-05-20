@@ -60,7 +60,7 @@ class SteunStandaard(AIMNaamObject, EMDraagconstructie):
     @property
     def beschermlaag(self):
         """Type bescherming van de steun, bv. geschilderd of gegalvaniseerd."""
-        return self._beschermlaag.waarde
+        return self._beschermlaag.get_waarde()
 
     @beschermlaag.setter
     def beschermlaag(self, value):
@@ -69,7 +69,7 @@ class SteunStandaard(AIMNaamObject, EMDraagconstructie):
     @property
     def bijzonderTransport(self):
         """Wijze waarop het object eventueel geschikt is om bijzonder transport mogelijk te maken."""
-        return self._bijzonderTransport.waarde
+        return self._bijzonderTransport.get_waarde()
 
     @bijzonderTransport.setter
     def bijzonderTransport(self, value):
@@ -78,7 +78,7 @@ class SteunStandaard(AIMNaamObject, EMDraagconstructie):
     @property
     def fabrikant(self):
         """De fabrikant van de steun."""
-        return self._fabrikant.waarde
+        return self._fabrikant.get_waarde()
 
     @fabrikant.setter
     def fabrikant(self, value):
@@ -87,7 +87,7 @@ class SteunStandaard(AIMNaamObject, EMDraagconstructie):
     @property
     def hoogteBovenkant(self):
         """Hoogte (in meter) van de bovenkant van de steun."""
-        return self._hoogteBovenkant.waarde
+        return self._hoogteBovenkant.get_waarde()
 
     @hoogteBovenkant.setter
     def hoogteBovenkant(self, value):
@@ -96,7 +96,7 @@ class SteunStandaard(AIMNaamObject, EMDraagconstructie):
     @property
     def kleur(self):
         """De RAL kleur van het uitwendig zichtbare gedeelte."""
-        return self._kleur.waarde
+        return self._kleur.get_waarde()
 
     @kleur.setter
     def kleur(self, value):

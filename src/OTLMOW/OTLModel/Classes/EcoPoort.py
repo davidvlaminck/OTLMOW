@@ -34,7 +34,7 @@ class EcoPoort(ComplexeGeleiding, PuntGeometrie):
     @property
     def breedte(self):
         """De breedte van de poort in meter."""
-        return self._breedte.waarde
+        return self._breedte.get_waarde()
 
     @breedte.setter
     def breedte(self, value):
@@ -43,7 +43,7 @@ class EcoPoort(ComplexeGeleiding, PuntGeometrie):
     @property
     def poortType(self):
         """Bepaling van het type van poort."""
-        return self._poortType.waarde
+        return self._poortType.get_waarde()
 
     @poortType.setter
     def poortType(self, value):

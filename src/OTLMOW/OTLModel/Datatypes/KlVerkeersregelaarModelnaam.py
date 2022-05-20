@@ -19,6 +19,10 @@ class KlVerkeersregelaarModelnaam(KeuzelijstField):
         'flow-node': KeuzelijstWaarde(invulwaarde='flow-node',
                                       label='FlowNode',
                                       definitie='FlowNode',
-                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerkeersregelaarModelnaam/flow-node')
+                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerkeersregelaarModelnaam/flow-node'),
+        'sx': KeuzelijstWaarde(invulwaarde='sx',
+                               label='SX',
+                               definitie='SX',
+                               objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerkeersregelaarModelnaam/sx')
     }
 

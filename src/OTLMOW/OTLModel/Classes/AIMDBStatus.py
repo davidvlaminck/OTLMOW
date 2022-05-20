@@ -23,7 +23,7 @@ class AIMDBStatus(ABC):
     @property
     def isActief(self):
         """Geeft aan of het object actief kan gebruikt worden of (zacht) verwijderd is uit het asset beheer systeem."""
-        return self._isActief.waarde
+        return self._isActief.get_waarde()
 
     @isActief.setter
     def isActief(self, value):

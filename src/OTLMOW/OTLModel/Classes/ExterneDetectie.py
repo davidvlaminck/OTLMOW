@@ -58,7 +58,7 @@ class ExterneDetectie(Detectie, GeenGeometrie):
     @property
     def aangeslotenToestel(self):
         """Type aangesloten toestel (trein, brug, FCD)."""
-        return self._aangeslotenToestel.waarde
+        return self._aangeslotenToestel.get_waarde()
 
     @aangeslotenToestel.setter
     def aangeslotenToestel(self, value):
@@ -67,7 +67,7 @@ class ExterneDetectie(Detectie, GeenGeometrie):
     @property
     def communicatiewijze(self):
         """De manier waarop de externe detectie communiceert met de verkeersregelaar."""
-        return self._communicatiewijze.waarde
+        return self._communicatiewijze.get_waarde()
 
     @communicatiewijze.setter
     def communicatiewijze(self, value):
@@ -76,7 +76,7 @@ class ExterneDetectie(Detectie, GeenGeometrie):
     @property
     def contactpersoon(self):
         """Naam, voornaam en telefoonnummer van de contactpersoon."""
-        return self._contactpersoon.waarde
+        return self._contactpersoon.get_waarde()
 
     @contactpersoon.setter
     def contactpersoon(self, value):
@@ -85,7 +85,7 @@ class ExterneDetectie(Detectie, GeenGeometrie):
     @property
     def eigenaar(self):
         """Eigenaar van het aangesloten toestel/systeem."""
-        return self._eigenaar.waarde
+        return self._eigenaar.get_waarde()
 
     @eigenaar.setter
     def eigenaar(self, value):
@@ -94,7 +94,7 @@ class ExterneDetectie(Detectie, GeenGeometrie):
     @property
     def heeftHandshaking(self):
         """Bij handshaking wordt gebruikt gemaakt van 2 contacten (maak / verbreek) om zeker te zijn dat het een valide signaal betreft (en geen kabelbreuk of gelijkwaardig)."""
-        return self._heeftHandshaking.waarde
+        return self._heeftHandshaking.get_waarde()
 
     @heeftHandshaking.setter
     def heeftHandshaking(self, value):

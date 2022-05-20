@@ -24,7 +24,7 @@ class LuchtkwaliteitControleUnit(Luchtkwaliteittoestel):
     @property
     def ipKlasse(self):
         """De IP-codering als een aanduiding voor de mate van beveiliging van de constructie van elektrische of elektronische apparatuur tegen eigen schade door gebruik in "vijandige omgevingen" en tegen eventueel gevaar voor de gebruiker volgens IEC 60529."""
-        return self._ipKlasse.waarde
+        return self._ipKlasse.get_waarde()
 
     @ipKlasse.setter
     def ipKlasse(self, value):

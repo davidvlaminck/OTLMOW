@@ -30,7 +30,7 @@ class ProefWateropslorping(Proef, PuntGeometrie, LijnGeometrie, VlakGeometrie):
     @property
     def wateropslorping(self):
         """Proef om de wateropslorping van de laag te bepalen."""
-        return self._wateropslorping.waarde
+        return self._wateropslorping.get_waarde()
 
     @wateropslorping.setter
     def wateropslorping(self, value):

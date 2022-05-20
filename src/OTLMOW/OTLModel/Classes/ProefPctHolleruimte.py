@@ -30,7 +30,7 @@ class ProefPctHolleruimte(Proef, PuntGeometrie, LijnGeometrie, VlakGeometrie):
     @property
     def pctHolleruimte(self):
         """Het resultaat van het aantal percentage holleruimte meting aanwezig in de laag."""
-        return self._pctHolleruimte.waarde
+        return self._pctHolleruimte.get_waarde()
 
     @pctHolleruimte.setter
     def pctHolleruimte(self, value):

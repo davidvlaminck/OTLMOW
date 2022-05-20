@@ -65,7 +65,7 @@ class FiguratieMarkeringVerschuind(FiguratieMarkeringToegang, VlakGeometrie):
     @property
     def basisOppervlakte(self):
         """De (basis) oppervlakte van de markering zoals beschreven in de algemene omzendbrief."""
-        return self._basisOppervlakte.waarde
+        return self._basisOppervlakte.get_waarde()
 
     @basisOppervlakte.setter
     def basisOppervlakte(self, value):
@@ -74,7 +74,7 @@ class FiguratieMarkeringVerschuind(FiguratieMarkeringToegang, VlakGeometrie):
     @property
     def code(self):
         """De code van de verschuinde figuratie markering."""
-        return self._code.waarde
+        return self._code.get_waarde()
 
     @code.setter
     def code(self, value):
@@ -83,7 +83,7 @@ class FiguratieMarkeringVerschuind(FiguratieMarkeringToegang, VlakGeometrie):
     @property
     def hoek(self):
         """De hoek van de verschuinde figuratiemarkering in decimale graden."""
-        return self._hoek.waarde
+        return self._hoek.get_waarde()
 
     @hoek.setter
     def hoek(self, value):
@@ -92,7 +92,7 @@ class FiguratieMarkeringVerschuind(FiguratieMarkeringToegang, VlakGeometrie):
     @property
     def oppervlakte(self):
         """De oppervlakte van de figuratie markering na verschuining."""
-        return self._oppervlakte.waarde
+        return self._oppervlakte.get_waarde()
 
     @oppervlakte.setter
     def oppervlakte(self, value):
@@ -101,7 +101,7 @@ class FiguratieMarkeringVerschuind(FiguratieMarkeringToegang, VlakGeometrie):
     @property
     def soortOmschrijving(self):
         """De soort en tevens de omschrijving van de verschuinde figuratie markering."""
-        return self._soortOmschrijving.waarde
+        return self._soortOmschrijving.get_waarde()
 
     @soortOmschrijving.setter
     def soortOmschrijving(self, value):
@@ -110,7 +110,7 @@ class FiguratieMarkeringVerschuind(FiguratieMarkeringToegang, VlakGeometrie):
     @property
     def type(self):
         """Het type van de verschuinde figuratie markering."""
-        return self._type.waarde
+        return self._type.get_waarde()
 
     @type.setter
     def type(self, value):

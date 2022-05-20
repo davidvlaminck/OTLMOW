@@ -79,7 +79,7 @@ class DtcContactinfoWaarden(AttributeInfo):
     @property
     def adres(self):
         """Adres dat men kan aanschrijven of bezoeken."""
-        return self._adres.waarde
+        return self._adres.get_waarde()
 
     @adres.setter
     def adres(self, value):
@@ -88,7 +88,7 @@ class DtcContactinfoWaarden(AttributeInfo):
     @property
     def beschikbaarheid(self):
         """Periode waarin contact kan worden opgenomen."""
-        return self._beschikbaarheid.waarde
+        return self._beschikbaarheid.get_waarde()
 
     @beschikbaarheid.setter
     def beschikbaarheid(self, value):
@@ -97,7 +97,7 @@ class DtcContactinfoWaarden(AttributeInfo):
     @property
     def contactnaam(self):
         """Naam van bv. de persoon die men kan contacteren."""
-        return self._contactnaam.waarde
+        return self._contactnaam.get_waarde()
 
     @contactnaam.setter
     def contactnaam(self, value):
@@ -106,7 +106,7 @@ class DtcContactinfoWaarden(AttributeInfo):
     @property
     def email(self):
         """Email-adres waarnaar men kan mailen."""
-        return self._email.waarde
+        return self._email.get_waarde()
 
     @email.setter
     def email(self, value):
@@ -115,7 +115,7 @@ class DtcContactinfoWaarden(AttributeInfo):
     @property
     def fax(self):
         """Faxnummer waarnaar men kan faxen."""
-        return self._fax.waarde
+        return self._fax.get_waarde()
 
     @fax.setter
     def fax(self, value):
@@ -124,7 +124,7 @@ class DtcContactinfoWaarden(AttributeInfo):
     @property
     def opmerkingen(self):
         """Bijkomende informatie met betrekking tot het gebruik van de contactgegevens."""
-        return self._opmerkingen.waarde
+        return self._opmerkingen.get_waarde()
 
     @opmerkingen.setter
     def opmerkingen(self, value):
@@ -133,7 +133,7 @@ class DtcContactinfoWaarden(AttributeInfo):
     @property
     def telefoon(self):
         """Telefoonnummer waarop men kan bellen."""
-        return self._telefoon.waarde
+        return self._telefoon.get_waarde()
 
     @telefoon.setter
     def telefoon(self, value):
@@ -142,7 +142,7 @@ class DtcContactinfoWaarden(AttributeInfo):
     @property
     def website(self):
         """Website waarnaar men kan surfen."""
-        return self._website.waarde
+        return self._website.get_waarde()
 
     @website.setter
     def website(self, value):

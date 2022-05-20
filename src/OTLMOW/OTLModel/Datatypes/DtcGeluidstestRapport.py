@@ -67,7 +67,7 @@ class DtcGeluidstestRapportWaarden(AttributeInfo):
     @property
     def geluidsabsorptieReflectie(self):
         """De absorptie- of reflectiewaarde van het geluidsscherm als geheel getal."""
-        return self._geluidsabsorptieReflectie.waarde
+        return self._geluidsabsorptieReflectie.get_waarde()
 
     @geluidsabsorptieReflectie.setter
     def geluidsabsorptieReflectie(self, value):
@@ -76,7 +76,7 @@ class DtcGeluidstestRapportWaarden(AttributeInfo):
     @property
     def gemetenWaarde(self):
         """De sterkte van het geluid in dB."""
-        return self._gemetenWaarde.waarde
+        return self._gemetenWaarde.get_waarde()
 
     @gemetenWaarde.setter
     def gemetenWaarde(self, value):
@@ -85,7 +85,7 @@ class DtcGeluidstestRapportWaarden(AttributeInfo):
     @property
     def locatieInSitulabo(self):
         """Locatie waar de geluidstest is uitgevoerd (terrein of labo)."""
-        return self._locatieInSitulabo.waarde
+        return self._locatieInSitulabo.get_waarde()
 
     @locatieInSitulabo.setter
     def locatieInSitulabo(self, value):
@@ -94,7 +94,7 @@ class DtcGeluidstestRapportWaarden(AttributeInfo):
     @property
     def luchtgeluidsisolatie(self):
         """De gemeten waarde van het  luchtgeluidsisiolatie van het geluidsscherm."""
-        return self._luchtgeluidsisolatie.waarde
+        return self._luchtgeluidsisolatie.get_waarde()
 
     @luchtgeluidsisolatie.setter
     def luchtgeluidsisolatie(self, value):
@@ -103,7 +103,7 @@ class DtcGeluidstestRapportWaarden(AttributeInfo):
     @property
     def norm(self):
         """De proef volgens de beschreven standaard."""
-        return self._norm.waarde
+        return self._norm.get_waarde()
 
     @norm.setter
     def norm(self, value):
@@ -112,7 +112,7 @@ class DtcGeluidstestRapportWaarden(AttributeInfo):
     @property
     def testrapport(self):
         """Documentbijlage met de resultaten van de test."""
-        return self._testrapport.waarde
+        return self._testrapport.get_waarde()
 
     @testrapport.setter
     def testrapport(self, value):
@@ -121,7 +121,7 @@ class DtcGeluidstestRapportWaarden(AttributeInfo):
     @property
     def type(self):
         """Het type van de test."""
-        return self._type.waarde
+        return self._type.get_waarde()
 
     @type.setter
     def type(self, value):

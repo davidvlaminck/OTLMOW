@@ -58,7 +58,7 @@ class AIDModule(AIMNaamObject, PuntGeometrie):
     @property
     def configBestand(self):
         """Configuratiebestand van de configuratie van de AID."""
-        return self._configBestand.waarde
+        return self._configBestand.get_waarde()
 
     @configBestand.setter
     def configBestand(self, value):
@@ -67,7 +67,7 @@ class AIDModule(AIMNaamObject, PuntGeometrie):
     @property
     def dnsNaam(self):
         """De DNSNaam (ook "volledige domein naam" genoemd ) is een unieke naam binnen het Domain Name System (DNS), het naamgevingssysteem waarmee computers, webservers, diensten en  toepassing op een unieke manier kunnen worden geïdentificeerd. Deze bevat zowel de hostname en de top level domein naam bv. 120c8-ar1.belfa.be."""
-        return self._dnsNaam.waarde
+        return self._dnsNaam.get_waarde()
 
     @dnsNaam.setter
     def dnsNaam(self, value):
@@ -76,7 +76,7 @@ class AIDModule(AIMNaamObject, PuntGeometrie):
     @property
     def ipAdres(self):
         """Het IP-adres van de AID-module."""
-        return self._ipAdres.waarde
+        return self._ipAdres.get_waarde()
 
     @ipAdres.setter
     def ipAdres(self, value):
@@ -85,7 +85,7 @@ class AIDModule(AIMNaamObject, PuntGeometrie):
     @property
     def technischeFiche(self):
         """Technische fiche van de AID-module."""
-        return self._technischeFiche.waarde
+        return self._technischeFiche.get_waarde()
 
     @technischeFiche.setter
     def technischeFiche(self, value):
@@ -94,7 +94,7 @@ class AIDModule(AIMNaamObject, PuntGeometrie):
     @property
     def type(self):
         """Het type van de AID-module."""
-        return self._type.waarde
+        return self._type.get_waarde()
 
     @type.setter
     def type(self, value):

@@ -26,7 +26,7 @@ class Ecokoker(AIMObject, LijnGeometrie):
     @property
     def type(self):
         """Het type van ecokoker zoals bv. amfibieënkoker, …."""
-        return self._type.waarde
+        return self._type.get_waarde()
 
     @type.setter
     def type(self, value):

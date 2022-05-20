@@ -39,7 +39,7 @@ class ProefNaderOnderzoekTomograaf(Proef, PuntGeometrie, LijnGeometrie, VlakGeom
     @property
     def inclusiefElektrisch(self):
         """Aanduiding of naast een geluidsweerstandstomografie ook een elektrische weerstandstomografie gebeurd is."""
-        return self._inclusiefElektrisch.waarde
+        return self._inclusiefElektrisch.get_waarde()
 
     @inclusiefElektrisch.setter
     def inclusiefElektrisch(self, value):
@@ -48,7 +48,7 @@ class ProefNaderOnderzoekTomograaf(Proef, PuntGeometrie, LijnGeometrie, VlakGeom
     @property
     def naderOnderzoekTomograaf(self):
         """Het resultaat van de tomograaf proef."""
-        return self._naderOnderzoekTomograaf.waarde
+        return self._naderOnderzoekTomograaf.get_waarde()
 
     @naderOnderzoekTomograaf.setter
     def naderOnderzoekTomograaf(self, value):

@@ -24,7 +24,7 @@ class StandaardStalenProfiel(StalenProfiel):
     @property
     def profieltype(self):
         """Soort van profiel gecombineerd met de hoogte."""
-        return self._profieltype.waarde
+        return self._profieltype.get_waarde()
 
     @profieltype.setter
     def profieltype(self, value):

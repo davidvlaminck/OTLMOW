@@ -1,6 +1,5 @@
 ﻿import unittest
 
-from OTLMOW.Facility.CertRequester import CertRequester
 from OTLMOW.Facility.EMInfraImporter import EMInfraImporter
 from OTLMOW.Facility.OTLFacility import OTLFacility
 from OTLMOW.Facility.RequesterFactory import RequesterFactory

@@ -35,7 +35,7 @@ class SelNietSelLus(Detectielus, LijnGeometrie):
     @property
     def heeftMofInTrekput(self):
         """Aanduiding of de mof bereikbaar is via een trekput."""
-        return self._heeftMofInTrekput.waarde
+        return self._heeftMofInTrekput.get_waarde()
 
     @heeftMofInTrekput.setter
     def heeftMofInTrekput(self, value):
@@ -44,7 +44,7 @@ class SelNietSelLus(Detectielus, LijnGeometrie):
     @property
     def isPrioritair(self):
         """Geeft aan of de lus prioritair hersteld moet worden bij defect."""
-        return self._isPrioritair.waarde
+        return self._isPrioritair.get_waarde()
 
     @isPrioritair.setter
     def isPrioritair(self, value):

@@ -43,7 +43,7 @@ class DtcHoutspecificatiesWaarden(AttributeInfo):
     @property
     def houtduurzaamheidsklasse(self):
         """De verwachte levensduur van het hout. De klasse geeft de resistentie aan van het kernhout tegen ongunstige omstandigheden."""
-        return self._houtduurzaamheidsklasse.waarde
+        return self._houtduurzaamheidsklasse.get_waarde()
 
     @houtduurzaamheidsklasse.setter
     def houtduurzaamheidsklasse(self, value):
@@ -52,7 +52,7 @@ class DtcHoutspecificatiesWaarden(AttributeInfo):
     @property
     def houtkwaliteitsklasse(self):
         """Kwaliteitsindeling van de houtsoort met betrekking op vervormingen, scheuren en kwasten."""
-        return self._houtkwaliteitsklasse.waarde
+        return self._houtkwaliteitsklasse.get_waarde()
 
     @houtkwaliteitsklasse.setter
     def houtkwaliteitsklasse(self, value):
@@ -61,7 +61,7 @@ class DtcHoutspecificatiesWaarden(AttributeInfo):
     @property
     def houtsterkteklasse(self):
         """De maximale belasting van het hout. Deze klasse geeft aan hoe sterk en voor welke constructies de houtsoort geschikt is."""
-        return self._houtsterkteklasse.waarde
+        return self._houtsterkteklasse.get_waarde()
 
     @houtsterkteklasse.setter
     def houtsterkteklasse(self, value):
@@ -70,7 +70,7 @@ class DtcHoutspecificatiesWaarden(AttributeInfo):
     @property
     def isResistentTegenMarieneBoorders(self):
         """Geeft aan of het hout resistent is bij toepassingen in contact met zout of brak water."""
-        return self._isResistentTegenMarieneBoorders.waarde
+        return self._isResistentTegenMarieneBoorders.get_waarde()
 
     @isResistentTegenMarieneBoorders.setter
     def isResistentTegenMarieneBoorders(self, value):

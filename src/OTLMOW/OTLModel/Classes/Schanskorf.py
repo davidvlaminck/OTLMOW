@@ -79,7 +79,7 @@ class Schanskorf(AndereVerharding):
     @property
     def heeftVerankeringspalen(self):
         """Aanduiding of de palen de functie hebben om een schanskorf te verankeren."""
-        return self._heeftVerankeringspalen.waarde
+        return self._heeftVerankeringspalen.get_waarde()
 
     @heeftVerankeringspalen.setter
     def heeftVerankeringspalen(self, value):
@@ -88,7 +88,7 @@ class Schanskorf(AndereVerharding):
     @property
     def isGegalvaniseerd(self):
         """Aanduiding of de schanskorf gegalvaniseerd is."""
-        return self._isGegalvaniseerd.waarde
+        return self._isGegalvaniseerd.get_waarde()
 
     @isGegalvaniseerd.setter
     def isGegalvaniseerd(self, value):
@@ -97,7 +97,7 @@ class Schanskorf(AndereVerharding):
     @property
     def isGelast(self):
         """Aanduiding of de schanskorf gelast is."""
-        return self._isGelast.waarde
+        return self._isGelast.get_waarde()
 
     @isGelast.setter
     def isGelast(self, value):
@@ -106,7 +106,7 @@ class Schanskorf(AndereVerharding):
     @property
     def kaliber(self):
         """Het kaliber of gemiddelde diameter van de stenen in de schanskorf."""
-        return self._kaliber.waarde
+        return self._kaliber.get_waarde()
 
     @kaliber.setter
     def kaliber(self, value):
@@ -115,7 +115,7 @@ class Schanskorf(AndereVerharding):
     @property
     def materiaalVulling(self):
         """Het soort stenen waaruit de opvulling van een schanskorf bestaat."""
-        return self._materiaalVulling.waarde
+        return self._materiaalVulling.get_waarde()
 
     @materiaalVulling.setter
     def materiaalVulling(self, value):
@@ -124,7 +124,7 @@ class Schanskorf(AndereVerharding):
     @property
     def technischeFiche(self):
         """De technische fiche van de schanskorven als bijlage."""
-        return self._technischeFiche.waarde
+        return self._technischeFiche.get_waarde()
 
     @technischeFiche.setter
     def technischeFiche(self, value):
@@ -133,7 +133,7 @@ class Schanskorf(AndereVerharding):
     @property
     def type(self):
         """Duidt het type schanskorf aan."""
-        return self._type.waarde
+        return self._type.get_waarde()
 
     @type.setter
     def type(self, value):
@@ -142,7 +142,7 @@ class Schanskorf(AndereVerharding):
     @property
     def vorm(self):
         """De gebruikte vorm van de schanskorf."""
-        return self._vorm.waarde
+        return self._vorm.get_waarde()
 
     @vorm.setter
     def vorm(self, value):

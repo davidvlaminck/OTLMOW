@@ -51,7 +51,7 @@ class HoutigeVegetatie(BegroeidVoorkomen):
     @property
     def aanleg(self):
         """De manier van aanplanten van de houtige vegetatie."""
-        return self._aanleg.waarde
+        return self._aanleg.get_waarde()
 
     @aanleg.setter
     def aanleg(self, value):
@@ -60,7 +60,7 @@ class HoutigeVegetatie(BegroeidVoorkomen):
     @property
     def hoogte(self):
         """De hoogte in meter gemeten van de stamvoet tot de top of bovenste snoeivlak van de houtige vegetatie. """
-        return self._hoogte.waarde
+        return self._hoogte.get_waarde()
 
     @hoogte.setter
     def hoogte(self, value):
@@ -69,7 +69,7 @@ class HoutigeVegetatie(BegroeidVoorkomen):
     @property
     def isVrijUitgroeiend(self):
         """Geeft aan of de vegetatie of begroeiing al dan niet snoei vereist."""
-        return self._isVrijUitgroeiend.waarde
+        return self._isVrijUitgroeiend.get_waarde()
 
     @isVrijUitgroeiend.setter
     def isVrijUitgroeiend(self, value):
@@ -78,7 +78,7 @@ class HoutigeVegetatie(BegroeidVoorkomen):
     @property
     def knipoppervlak(self):
         """De afmeting van de begroeiing in vierkante meter dat geschoren moet worden."""
-        return self._knipoppervlak.waarde
+        return self._knipoppervlak.get_waarde()
 
     @knipoppervlak.setter
     def knipoppervlak(self, value):

@@ -50,7 +50,7 @@ class Slagboomarm(AIMObject, LijnGeometrie):
     @property
     def lengteBoom(self):
         """De lengte van de slagboomarm uitgedrukt in meter."""
-        return self._lengteBoom.waarde
+        return self._lengteBoom.get_waarde()
 
     @lengteBoom.setter
     def lengteBoom(self, value):
@@ -59,7 +59,7 @@ class Slagboomarm(AIMObject, LijnGeometrie):
     @property
     def merk(self):
         """Het merk van de slagboom installatie."""
-        return self._merk.waarde
+        return self._merk.get_waarde()
 
     @merk.setter
     def merk(self, value):
@@ -68,7 +68,7 @@ class Slagboomarm(AIMObject, LijnGeometrie):
     @property
     def modelnaam(self):
         """Naam van het model van de slagboominstallatie."""
-        return self._modelnaam.waarde
+        return self._modelnaam.get_waarde()
 
     @modelnaam.setter
     def modelnaam(self, value):
@@ -77,7 +77,7 @@ class Slagboomarm(AIMObject, LijnGeometrie):
     @property
     def technischeFiche(self):
         """Technische fiche van de slagboominstallatie."""
-        return self._technischeFiche.waarde
+        return self._technischeFiche.get_waarde()
 
     @technischeFiche.setter
     def technischeFiche(self, value):

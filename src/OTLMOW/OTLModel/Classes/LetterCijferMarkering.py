@@ -42,7 +42,7 @@ class LetterCijferMarkering(FiguratieMarkeringToegang, PuntGeometrie):
     @property
     def letterCijfer(self):
         """De individuele letter of cijfer gebruikt bij de wegmarkering."""
-        return self._letterCijfer.waarde
+        return self._letterCijfer.get_waarde()
 
     @letterCijfer.setter
     def letterCijfer(self, value):
@@ -51,7 +51,7 @@ class LetterCijferMarkering(FiguratieMarkeringToegang, PuntGeometrie):
     @property
     def oppervlakte(self):
         """De oppervlakte van de individuele letter- of cijfermarkering zoals beschreven in de algemene omzendbrief."""
-        return self._oppervlakte.waarde
+        return self._oppervlakte.get_waarde()
 
     @oppervlakte.setter
     def oppervlakte(self, value):
@@ -60,7 +60,7 @@ class LetterCijferMarkering(FiguratieMarkeringToegang, PuntGeometrie):
     @property
     def type(self):
         """Het type van de individuele letter- of cijfermarkering."""
-        return self._type.waarde
+        return self._type.get_waarde()
 
     @type.setter
     def type(self, value):

@@ -64,7 +64,7 @@ class Ecoraster(ComplexeGeleiding, LijnGeometrie):
     @property
     def heeftPrikkeldraad(self):
         """Aanduiding of het ecoraster is voorzien van prikkeldraad."""
-        return self._heeftPrikkeldraad.waarde
+        return self._heeftPrikkeldraad.get_waarde()
 
     @heeftPrikkeldraad.setter
     def heeftPrikkeldraad(self, value):
@@ -73,7 +73,7 @@ class Ecoraster(ComplexeGeleiding, LijnGeometrie):
     @property
     def heeftSpandraden(self):
         """Aanduiding of het ecoraster is voorzien van spandraden."""
-        return self._heeftSpandraden.waarde
+        return self._heeftSpandraden.get_waarde()
 
     @heeftSpandraden.setter
     def heeftSpandraden(self, value):
@@ -82,7 +82,7 @@ class Ecoraster(ComplexeGeleiding, LijnGeometrie):
     @property
     def lengte(self):
         """De lengte van het ecoraster in meter."""
-        return self._lengte.waarde
+        return self._lengte.get_waarde()
 
     @lengte.setter
     def lengte(self, value):
@@ -91,7 +91,7 @@ class Ecoraster(ComplexeGeleiding, LijnGeometrie):
     @property
     def paalMateriaal(self):
         """Het materiaal van de paal in het ecoraster."""
-        return self._paalMateriaal.waarde
+        return self._paalMateriaal.get_waarde()
 
     @paalMateriaal.setter
     def paalMateriaal(self, value):
@@ -100,7 +100,7 @@ class Ecoraster(ComplexeGeleiding, LijnGeometrie):
     @property
     def paalhoogte(self):
         """De hoogte van de paal in het ecoraster in meter."""
-        return self._paalhoogte.waarde
+        return self._paalhoogte.get_waarde()
 
     @paalhoogte.setter
     def paalhoogte(self, value):
@@ -109,7 +109,7 @@ class Ecoraster(ComplexeGeleiding, LijnGeometrie):
     @property
     def typeMazen(self):
         """Het type van de mazen in het ecoraster."""
-        return self._typeMazen.waarde
+        return self._typeMazen.get_waarde()
 
     @typeMazen.setter
     def typeMazen(self, value):

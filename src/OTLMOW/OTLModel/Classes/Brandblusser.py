@@ -57,7 +57,7 @@ class Brandblusser(AIMObject, PuntGeometrie):
     @property
     def aankoopdatum(self):
         """Datum wordt het toestel is aangekocht."""
-        return self._aankoopdatum.waarde
+        return self._aankoopdatum.get_waarde()
 
     @aankoopdatum.setter
     def aankoopdatum(self, value):
@@ -66,7 +66,7 @@ class Brandblusser(AIMObject, PuntGeometrie):
     @property
     def blusmiddel(self):
         """Substantie waarmee het toestel gevuld is in functie van het blussen van vuur."""
-        return self._blusmiddel.waarde
+        return self._blusmiddel.get_waarde()
 
     @blusmiddel.setter
     def blusmiddel(self, value):
@@ -75,7 +75,7 @@ class Brandblusser(AIMObject, PuntGeometrie):
     @property
     def gewicht(self):
         """Totaal gewicht van het gevulde toestel."""
-        return self._gewicht.waarde
+        return self._gewicht.get_waarde()
 
     @gewicht.setter
     def gewicht(self, value):
@@ -84,7 +84,7 @@ class Brandblusser(AIMObject, PuntGeometrie):
     @property
     def keuringsdatum(self):
         """Datum waarop het toestel laatst is gekeurd."""
-        return self._keuringsdatum.waarde
+        return self._keuringsdatum.get_waarde()
 
     @keuringsdatum.setter
     def keuringsdatum(self, value):
@@ -93,7 +93,7 @@ class Brandblusser(AIMObject, PuntGeometrie):
     @property
     def type(self):
         """Het type van de brandblusser."""
-        return self._type.waarde
+        return self._type.get_waarde()
 
     @type.setter
     def type(self, value):

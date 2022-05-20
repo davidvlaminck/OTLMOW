@@ -34,7 +34,7 @@ class KwantWrdInkVARhWaarden(AttributeInfo):
     @property
     def waarde(self):
         """Bevat een getal die bij het datatype hoort."""
-        return self._waarde.waarde
+        return self._waarde.get_waarde()
 
     @waarde.setter
     def waarde(self, value):
@@ -48,6 +48,7 @@ class KwantWrdInkVARh(OTLField, AttributeInfo):
     label = 'Kwantitatieve waarde in kVARh'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInkVARh'
     definition = 'Een kwantitatieve waarde die een getal in KiloVoltAmpereReactiefUur uitdrukt.'
+    waarde_shortcut_applicable = True
     waardeObject = KwantWrdInkVARhWaarden
 
     def __str__(self):

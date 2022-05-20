@@ -24,7 +24,7 @@ class KantstrookAfw(AfwijkendeKantopsluiting):
     @property
     def aantalRijenBetonstraatsteen(self):
         """Het aantal rijen betonstraatsteen waaruit de kantstrook is opgebouwd."""
-        return self._aantalRijenBetonstraatsteen.waarde
+        return self._aantalRijenBetonstraatsteen.get_waarde()
 
     @aantalRijenBetonstraatsteen.setter
     def aantalRijenBetonstraatsteen(self, value):

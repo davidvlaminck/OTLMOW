@@ -42,7 +42,7 @@ class Verwarmingselement(AIMObject, PuntGeometrie):
     @property
     def merk(self):
         """Merk van het element volgens de fabrikant."""
-        return self._merk.waarde
+        return self._merk.get_waarde()
 
     @merk.setter
     def merk(self, value):
@@ -51,7 +51,7 @@ class Verwarmingselement(AIMObject, PuntGeometrie):
     @property
     def modelnaam(self):
         """Modelnaam van het element volgens de fabrikant."""
-        return self._modelnaam.waarde
+        return self._modelnaam.get_waarde()
 
     @modelnaam.setter
     def modelnaam(self, value):
@@ -60,7 +60,7 @@ class Verwarmingselement(AIMObject, PuntGeometrie):
     @property
     def vermogen(self):
         """Elektrisch vermogen nodig voor de correcte werking van het element."""
-        return self._vermogen.waarde
+        return self._vermogen.get_waarde()
 
     @vermogen.setter
     def vermogen(self, value):

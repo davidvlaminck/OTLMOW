@@ -51,7 +51,7 @@ class Trajectcontrole(NaampadObject, LijnGeometrie):
     @property
     def attest(self):
         """Het ijkingsattest van de trajectcontrole in zijn geheel."""
-        return self._attest.waarde
+        return self._attest.get_waarde()
 
     @attest.setter
     def attest(self, value):
@@ -60,7 +60,7 @@ class Trajectcontrole(NaampadObject, LijnGeometrie):
     @property
     def nTP(self):
         """Aanduiding of het systeem voor zijn tijdsaanduiding gebruik maakt van NTP."""
-        return self._nTP.waarde
+        return self._nTP.get_waarde()
 
     @nTP.setter
     def nTP(self, value):
@@ -69,7 +69,7 @@ class Trajectcontrole(NaampadObject, LijnGeometrie):
     @property
     def rijrichting(self):
         """De rijrichting van de voertuigen die gecontroleerd worden."""
-        return self._rijrichting.waarde
+        return self._rijrichting.get_waarde()
 
     @rijrichting.setter
     def rijrichting(self, value):
@@ -78,7 +78,7 @@ class Trajectcontrole(NaampadObject, LijnGeometrie):
     @property
     def snelheidsregime(self):
         """Het snelheidsregime waarop de voertuigen worden gecontroleerd."""
-        return self._snelheidsregime.waarde
+        return self._snelheidsregime.get_waarde()
 
     @snelheidsregime.setter
     def snelheidsregime(self, value):

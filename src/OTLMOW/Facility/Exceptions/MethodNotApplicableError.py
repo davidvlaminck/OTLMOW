@@ -1,0 +1,2 @@
+class MethodNotApplicableError(Exception):
+    pass

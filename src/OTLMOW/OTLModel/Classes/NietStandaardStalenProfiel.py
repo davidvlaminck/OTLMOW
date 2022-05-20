@@ -31,7 +31,7 @@ class NietStandaardStalenProfiel(StalenProfiel):
     @property
     def profielbreedte(self):
         """De korte afmeting in millimeter van het profiel."""
-        return self._profielbreedte.waarde
+        return self._profielbreedte.get_waarde()
 
     @profielbreedte.setter
     def profielbreedte(self, value):
@@ -40,7 +40,7 @@ class NietStandaardStalenProfiel(StalenProfiel):
     @property
     def profielhoogte(self):
         """De langste afmeting in millimeter van het profiel."""
-        return self._profielhoogte.waarde
+        return self._profielhoogte.get_waarde()
 
     @profielhoogte.setter
     def profielhoogte(self, value):

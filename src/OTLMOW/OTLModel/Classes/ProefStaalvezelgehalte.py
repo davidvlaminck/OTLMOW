@@ -30,7 +30,7 @@ class ProefStaalvezelgehalte(Proef, PuntGeometrie, LijnGeometrie, VlakGeometrie)
     @property
     def staalvezelgehalte(self):
         """Het resultaat van de test van het gemeten staalvezelgehalte in de BV laag."""
-        return self._staalvezelgehalte.waarde
+        return self._staalvezelgehalte.get_waarde()
 
     @staalvezelgehalte.setter
     def staalvezelgehalte(self, value):

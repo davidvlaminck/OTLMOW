@@ -56,7 +56,7 @@ class Put(ABC):
     @property
     def adres(self):
         """Dichtstbijgelegen adres voor de put, het adres bestaat enkel uit de straatnaam indien het dichtstbijzijnde adres > 100m verwijderd is."""
-        return self._adres.waarde
+        return self._adres.get_waarde()
 
     @adres.setter
     def adres(self, value):
@@ -65,7 +65,7 @@ class Put(ABC):
     @property
     def diepte(self):
         """Het verschil tussen het maaiveldpeil en het laagste punt van de binnenkant van de put in meter."""
-        return self._diepte.waarde
+        return self._diepte.get_waarde()
 
     @diepte.setter
     def diepte(self, value):
@@ -74,7 +74,7 @@ class Put(ABC):
     @property
     def maaiveldpeil(self):
         """De hoogte van het grondoppervlak in meter-TAW in het midden van het deksel van de put."""
-        return self._maaiveldpeil.waarde
+        return self._maaiveldpeil.get_waarde()
 
     @maaiveldpeil.setter
     def maaiveldpeil(self, value):
@@ -83,7 +83,7 @@ class Put(ABC):
     @property
     def technischeFiche(self):
         """De technische fiche van de put."""
-        return self._technischeFiche.waarde
+        return self._technischeFiche.get_waarde()
 
     @technischeFiche.setter
     def technischeFiche(self, value):
@@ -92,7 +92,7 @@ class Put(ABC):
     @property
     def toestandPut(self):
         """Opmerkingen van de toestand en staat van de (verbindings-)put."""
-        return self._toestandPut.waarde
+        return self._toestandPut.get_waarde()
 
     @toestandPut.setter
     def toestandPut(self, value):

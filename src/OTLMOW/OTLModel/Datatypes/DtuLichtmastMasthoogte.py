@@ -31,7 +31,7 @@ class DtuLichtmastMasthoogteWaarden(AttributeInfo, UnionWaarden):
     @property
     def afwijkendeHoogte(self):
         """De afwijkende hoogte van de mast in meter."""
-        return self._afwijkendeHoogte.waarde
+        return self._afwijkendeHoogte.get_waarde()
 
     @afwijkendeHoogte.setter
     def afwijkendeHoogte(self, value):
@@ -42,7 +42,7 @@ class DtuLichtmastMasthoogteWaarden(AttributeInfo, UnionWaarden):
     @property
     def standaardHoogte(self):
         """Bepaling van de standaard hoogte van een mast."""
-        return self._standaardHoogte.waarde
+        return self._standaardHoogte.get_waarde()
 
     @standaardHoogte.setter
     def standaardHoogte(self, value):

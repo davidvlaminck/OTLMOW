@@ -45,7 +45,7 @@ class Agent(AttributeInfo, OTLObject, RelatieInteractor):
     @property
     def agentId(self):
         """Identificatie van de agent volgens een bepaalde bron."""
-        return self._agentId.waarde
+        return self._agentId.get_waarde()
 
     @agentId.setter
     def agentId(self, value):
@@ -54,7 +54,7 @@ class Agent(AttributeInfo, OTLObject, RelatieInteractor):
     @property
     def contactinfo(self):
         """Algemene contactgegevens voor de agent."""
-        return self._contactinfo.waarde
+        return self._contactinfo.get_waarde()
 
     @contactinfo.setter
     def contactinfo(self, value):
@@ -63,7 +63,7 @@ class Agent(AttributeInfo, OTLObject, RelatieInteractor):
     @property
     def naam(self):
         """De naam waarmee de agent doorgaans benoemd wordt."""
-        return self._naam.waarde
+        return self._naam.get_waarde()
 
     @naam.setter
     def naam(self, value):

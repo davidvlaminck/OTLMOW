@@ -31,6 +31,10 @@ class KlVerkeersregelaarMerk(KeuzelijstField):
         'swarco': KeuzelijstWaarde(invulwaarde='swarco',
                                    label='Swarco',
                                    definitie='Swarco (voorheen Dynniq)',
-                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerkeersregelaarMerk/swarco')
+                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerkeersregelaarMerk/swarco'),
+        'yunex': KeuzelijstWaarde(invulwaarde='yunex',
+                                  label='Yunex',
+                                  definitie='Yunex',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerkeersregelaarMerk/yunex')
     }
 

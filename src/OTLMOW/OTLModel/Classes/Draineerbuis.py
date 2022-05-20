@@ -32,7 +32,7 @@ class Draineerbuis(Buis):
     @property
     def heeftDrainbrug(self):
         """Aanduiding of er al dan niet een profiel onderaan de draineerbuis aanwezig is om zettingen te vermijden."""
-        return self._heeftDrainbrug.waarde
+        return self._heeftDrainbrug.get_waarde()
 
     @heeftDrainbrug.setter
     def heeftDrainbrug(self, value):
@@ -41,7 +41,7 @@ class Draineerbuis(Buis):
     @property
     def materiaal(self):
         """Bepaalt het materiaal van de draineerbuis."""
-        return self._materiaal.waarde
+        return self._materiaal.get_waarde()
 
     @materiaal.setter
     def materiaal(self, value):

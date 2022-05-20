@@ -26,7 +26,7 @@ class DtcKrimpvoegWaarden(AttributeInfo):
     @property
     def krimpvoegFrequentie(self):
         """De afstand tussen de krimpvoegen in meter."""
-        return self._krimpvoegFrequentie.waarde
+        return self._krimpvoegFrequentie.get_waarde()
 
     @krimpvoegFrequentie.setter
     def krimpvoegFrequentie(self, value):
@@ -35,7 +35,7 @@ class DtcKrimpvoegWaarden(AttributeInfo):
     @property
     def totaleLengte(self):
         """De totale lengte in meter."""
-        return self._totaleLengte.waarde
+        return self._totaleLengte.get_waarde()
 
     @totaleLengte.setter
     def totaleLengte(self, value):

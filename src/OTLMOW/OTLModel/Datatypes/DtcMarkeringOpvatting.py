@@ -27,7 +27,7 @@ class DtcMarkeringOpvattingWaarden(AttributeInfo):
     @property
     def opvatting(self):
         """De opvatting van de markering, zijnde middelenverbintenis of resultaatsverbintenis."""
-        return self._opvatting.waarde
+        return self._opvatting.get_waarde()
 
     @opvatting.setter
     def opvatting(self, value):
@@ -36,7 +36,7 @@ class DtcMarkeringOpvattingWaarden(AttributeInfo):
     @property
     def waarborgperiode(self):
         """De periode waarin de markering moet voldoen aan de resultaatseisen."""
-        return self._waarborgperiode.waarde
+        return self._waarborgperiode.get_waarde()
 
     @waarborgperiode.setter
     def waarborgperiode(self, value):

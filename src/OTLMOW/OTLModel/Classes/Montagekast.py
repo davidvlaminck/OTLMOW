@@ -33,7 +33,7 @@ class Montagekast(Buitenkast):
     @property
     def eplanMechanischPlan(self):
         """Elektrisch aansluitschema van de kast en mechanisch plan van de volledige installatie in de kast."""
-        return self._eplanMechanischPlan.waarde
+        return self._eplanMechanischPlan.get_waarde()
 
     @eplanMechanischPlan.setter
     def eplanMechanischPlan(self, value):
@@ -42,7 +42,7 @@ class Montagekast(Buitenkast):
     @property
     def opstelhoogte(self):
         """De afstand tussen het maaiveld en de bovenrand van de montagekast in meter."""
-        return self._opstelhoogte.waarde
+        return self._opstelhoogte.get_waarde()
 
     @opstelhoogte.setter
     def opstelhoogte(self, value):

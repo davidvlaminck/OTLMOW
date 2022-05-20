@@ -72,7 +72,7 @@ class Terugslagklep(LinkendElement, PuntGeometrie):
     @property
     def breedteOpening(self):
         """Breedte van de opening die door de terugslagklep wordt afgesloten in millimeter."""
-        return self._breedteOpening.waarde
+        return self._breedteOpening.get_waarde()
 
     @breedteOpening.setter
     def breedteOpening(self, value):
@@ -81,7 +81,7 @@ class Terugslagklep(LinkendElement, PuntGeometrie):
     @property
     def diameter(self):
         """De diameter van de terugslagklep in millimeter."""
-        return self._diameter.waarde
+        return self._diameter.get_waarde()
 
     @diameter.setter
     def diameter(self, value):
@@ -90,7 +90,7 @@ class Terugslagklep(LinkendElement, PuntGeometrie):
     @property
     def hoogteOpening(self):
         """De hoogte van de opening die door de terugslagklep wordt afgesloten in millimeter."""
-        return self._hoogteOpening.waarde
+        return self._hoogteOpening.get_waarde()
 
     @hoogteOpening.setter
     def hoogteOpening(self, value):
@@ -99,7 +99,7 @@ class Terugslagklep(LinkendElement, PuntGeometrie):
     @property
     def materiaal(self):
         """Het materiaal waaruit de terugslagklep is vervaardigd."""
-        return self._materiaal.waarde
+        return self._materiaal.get_waarde()
 
     @materiaal.setter
     def materiaal(self, value):
@@ -108,7 +108,7 @@ class Terugslagklep(LinkendElement, PuntGeometrie):
     @property
     def peil(self):
         """Niveau van de doorlaatopening van de terugslagklep uitgedrukt in meter-TAW."""
-        return self._peil.waarde
+        return self._peil.get_waarde()
 
     @peil.setter
     def peil(self, value):
@@ -117,7 +117,7 @@ class Terugslagklep(LinkendElement, PuntGeometrie):
     @property
     def type(self):
         """Bepaalt het type van terugslagklep."""
-        return self._type.waarde
+        return self._type.get_waarde()
 
     @type.setter
     def type(self, value):
@@ -126,7 +126,7 @@ class Terugslagklep(LinkendElement, PuntGeometrie):
     @property
     def vorm(self):
         """De vorm van de terugslagklep."""
-        return self._vorm.waarde
+        return self._vorm.get_waarde()
 
     @vorm.setter
     def vorm(self, value):

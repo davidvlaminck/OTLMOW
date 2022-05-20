@@ -155,7 +155,7 @@ class OpgaandeBoom(VegetatieElement, PuntGeometrie):
     @property
     def aanleg(self):
         """De manier van aanplanten van individuele bomen."""
-        return self._aanleg.waarde
+        return self._aanleg.get_waarde()
 
     @aanleg.setter
     def aanleg(self, value):
@@ -164,7 +164,7 @@ class OpgaandeBoom(VegetatieElement, PuntGeometrie):
     @property
     def boomspiegel(self):
         """Het stuk grond rondom de stam van een boom. Dit is in de ideale situatie minstens zo groot is als de kruin van de boom."""
-        return self._boomspiegel.waarde
+        return self._boomspiegel.get_waarde()
 
     @boomspiegel.setter
     def boomspiegel(self, value):
@@ -173,7 +173,7 @@ class OpgaandeBoom(VegetatieElement, PuntGeometrie):
     @property
     def boomverankeringszone(self):
         """De straal van de cirkelvormige ruimte waarbinnen de wortels zich bevinden die instaan voor de stabiliteit van de boom uitgedrukt in meter."""
-        return self._boomverankeringszone.waarde
+        return self._boomverankeringszone.get_waarde()
 
     @boomverankeringszone.setter
     def boomverankeringszone(self, value):
@@ -182,7 +182,7 @@ class OpgaandeBoom(VegetatieElement, PuntGeometrie):
     @property
     def doorwortelbaarVolume(self):
         """Het bodemvolume met voldoende mineralen, water en zuurstof die bereikbaar zijn voor een boom om erin te wortelen."""
-        return self._doorwortelbaarVolume.waarde
+        return self._doorwortelbaarVolume.get_waarde()
 
     @doorwortelbaarVolume.setter
     def doorwortelbaarVolume(self, value):
@@ -191,7 +191,7 @@ class OpgaandeBoom(VegetatieElement, PuntGeometrie):
     @property
     def eindbeeld(self):
         """Het nagestreefde beeld van de volgroeide boom of struik op deze specifieke standplaats."""
-        return self._eindbeeld.waarde
+        return self._eindbeeld.get_waarde()
 
     @eindbeeld.setter
     def eindbeeld(self, value):
@@ -200,7 +200,7 @@ class OpgaandeBoom(VegetatieElement, PuntGeometrie):
     @property
     def geschatteKlassePlantjaar(self):
         """Dit attribuut geeft een interval weer van 20 jaar waarin de boom geplant werd."""
-        return self._geschatteKlassePlantjaar.waarde
+        return self._geschatteKlassePlantjaar.get_waarde()
 
     @geschatteKlassePlantjaar.setter
     def geschatteKlassePlantjaar(self, value):
@@ -209,7 +209,7 @@ class OpgaandeBoom(VegetatieElement, PuntGeometrie):
     @property
     def groeifase(self):
         """Fase van beheer volgens de verschillende levensfases van de boom."""
-        return self._groeifase.waarde
+        return self._groeifase.get_waarde()
 
     @groeifase.setter
     def groeifase(self, value):
@@ -218,7 +218,7 @@ class OpgaandeBoom(VegetatieElement, PuntGeometrie):
     @property
     def heeftBoomrooster(self):
         """Duidt aan of een horizontale structuur aanwezig is die zorgt voor een adequate bescherming van bomen tegen betreding van de boomspiegel door voetgangers of verkeer."""
-        return self._heeftBoomrooster.waarde
+        return self._heeftBoomrooster.get_waarde()
 
     @heeftBoomrooster.setter
     def heeftBoomrooster(self, value):
@@ -227,7 +227,7 @@ class OpgaandeBoom(VegetatieElement, PuntGeometrie):
     @property
     def heeftLuchtleiding(self):
         """Bepaling of een bovengrondse nutsleiding aanwezig is die in conflict kan komen met de boom."""
-        return self._heeftLuchtleiding.waarde
+        return self._heeftLuchtleiding.get_waarde()
 
     @heeftLuchtleiding.setter
     def heeftLuchtleiding(self, value):
@@ -236,7 +236,7 @@ class OpgaandeBoom(VegetatieElement, PuntGeometrie):
     @property
     def isVerplant(self):
         """Aanduiding of de opgaande boom al dan niet van locatie veranderd is na een eerste aanplant binnen het openbaar domein."""
-        return self._isVerplant.waarde
+        return self._isVerplant.get_waarde()
 
     @isVerplant.setter
     def isVerplant(self, value):
@@ -245,7 +245,7 @@ class OpgaandeBoom(VegetatieElement, PuntGeometrie):
     @property
     def kroonDiameter(self):
         """Diameter van de kroonprojectie in meter."""
-        return self._kroonDiameter.waarde
+        return self._kroonDiameter.get_waarde()
 
     @kroonDiameter.setter
     def kroonDiameter(self, value):
@@ -254,7 +254,7 @@ class OpgaandeBoom(VegetatieElement, PuntGeometrie):
     @property
     def takvrijeStamlengte(self):
         """Tot aan de hoogte van de gewenste takvrije stamlengte wordt de boom zodanig gesnoeid dat er één doorgaande stam is."""
-        return self._takvrijeStamlengte.waarde
+        return self._takvrijeStamlengte.get_waarde()
 
     @takvrijeStamlengte.setter
     def takvrijeStamlengte(self, value):
@@ -263,7 +263,7 @@ class OpgaandeBoom(VegetatieElement, PuntGeometrie):
     @property
     def totaleBoombeschermingszone(self):
         """De straal van de cirkelvormige ruimte rond de boom waar maatregelen genomen worden om de boom te beschermen tijdens projecten of manifestaties uitgedrukt in centimeters."""
-        return self._totaleBoombeschermingszone.waarde
+        return self._totaleBoombeschermingszone.get_waarde()
 
     @totaleBoombeschermingszone.setter
     def totaleBoombeschermingszone(self, value):
@@ -272,7 +272,7 @@ class OpgaandeBoom(VegetatieElement, PuntGeometrie):
     @property
     def vrijeDoorrijhoogte(self):
         """Vrij te houden hoogte in meter, voor het doorrijden van verkeer toe te laten."""
-        return self._vrijeDoorrijhoogte.waarde
+        return self._vrijeDoorrijhoogte.get_waarde()
 
     @vrijeDoorrijhoogte.setter
     def vrijeDoorrijhoogte(self, value):

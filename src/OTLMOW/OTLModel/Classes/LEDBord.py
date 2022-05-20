@@ -81,7 +81,7 @@ class LEDBord(AIMNaamObject, Verkeersbord):
     @property
     def aantalLichtsensoren(self):
         """Het aantal lichtsensoren waar het bord over beschikt die continu de intensiteit van het invallend licht meten."""
-        return self._aantalLichtsensoren.waarde
+        return self._aantalLichtsensoren.get_waarde()
 
     @aantalLichtsensoren.setter
     def aantalLichtsensoren(self, value):
@@ -90,7 +90,7 @@ class LEDBord(AIMNaamObject, Verkeersbord):
     @property
     def dnsNaam(self):
         """De DNSNaam (ook "volledige domein naam" genoemd ) is een unieke naam binnen het Domain Name System (DNS), het naamgevingssysteem waarmee computers, webservers, diensten en  toepassing op een unieke manier kunnen worden geïdentificeerd. Deze bevat zowel de hostname en de top level domein naam bv. 120c8-ar1.belfa.be."""
-        return self._dnsNaam.waarde
+        return self._dnsNaam.get_waarde()
 
     @dnsNaam.setter
     def dnsNaam(self, value):
@@ -99,7 +99,7 @@ class LEDBord(AIMNaamObject, Verkeersbord):
     @property
     def heeftDeurcontact(self):
         """Het LEDBord is beveiligd met een deurcontact dat waarschuwt voor ongeoorloofd openen van het bord door middel van een software-matig alarm."""
-        return self._heeftDeurcontact.waarde
+        return self._heeftDeurcontact.get_waarde()
 
     @heeftDeurcontact.setter
     def heeftDeurcontact(self, value):
@@ -108,7 +108,7 @@ class LEDBord(AIMNaamObject, Verkeersbord):
     @property
     def ipAdres(self):
         """Het IP netwerkadres van het LEDBord."""
-        return self._ipAdres.waarde
+        return self._ipAdres.get_waarde()
 
     @ipAdres.setter
     def ipAdres(self, value):
@@ -117,7 +117,7 @@ class LEDBord(AIMNaamObject, Verkeersbord):
     @property
     def logischeGroepVerkeerscentrum(self):
         """Identificator van de logische groep toegekend door het Verkeerscentrum."""
-        return self._logischeGroepVerkeerscentrum.waarde
+        return self._logischeGroepVerkeerscentrum.get_waarde()
 
     @logischeGroepVerkeerscentrum.setter
     def logischeGroepVerkeerscentrum(self, value):
@@ -126,7 +126,7 @@ class LEDBord(AIMNaamObject, Verkeersbord):
     @property
     def protocol(self):
         """Communicatieprotocol waarmee het LEDBord wordt aangestuurd."""
-        return self._protocol.waarde
+        return self._protocol.get_waarde()
 
     @protocol.setter
     def protocol(self, value):
@@ -135,7 +135,7 @@ class LEDBord(AIMNaamObject, Verkeersbord):
     @property
     def technischeFiche(self):
         """Document met technische informatie over het LEDBord."""
-        return self._technischeFiche.waarde
+        return self._technischeFiche.get_waarde()
 
     @technischeFiche.setter
     def technischeFiche(self, value):
@@ -144,7 +144,7 @@ class LEDBord(AIMNaamObject, Verkeersbord):
     @property
     def versie(self):
         """Versie van het LEDBord."""
-        return self._versie.waarde
+        return self._versie.get_waarde()
 
     @versie.setter
     def versie(self, value):

@@ -41,7 +41,7 @@ class KringsBerliner(AIMObject, LijnGeometrie):
     @property
     def beschoeiingsLengte(self):
         """De totale lengte van de beschoeiing langs de sleuf in lopende meter."""
-        return self._beschoeiingsLengte.waarde
+        return self._beschoeiingsLengte.get_waarde()
 
     @beschoeiingsLengte.setter
     def beschoeiingsLengte(self, value):
@@ -50,7 +50,7 @@ class KringsBerliner(AIMObject, LijnGeometrie):
     @property
     def buisdiepte(self):
         """De diepte van de buis."""
-        return self._buisdiepte.waarde
+        return self._buisdiepte.get_waarde()
 
     @buisdiepte.setter
     def buisdiepte(self, value):
@@ -59,7 +59,7 @@ class KringsBerliner(AIMObject, LijnGeometrie):
     @property
     def type(self):
         """Het type beschoeiing."""
-        return self._type.waarde
+        return self._type.get_waarde()
 
     @type.setter
     def type(self, value):

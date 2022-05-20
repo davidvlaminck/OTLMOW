@@ -61,7 +61,7 @@ class Ventilatie(AIMObject, PuntGeometrie):
     @property
     def binnendiameter(self):
         """De grootste afstand van de rechte lijn die kan worden getrokken tussen twee punten op de binnenzijde van de ventilatie. Deze rechte lijn gaat altijd door het middelpunt van de ventilatie."""
-        return self._binnendiameter.waarde
+        return self._binnendiameter.get_waarde()
 
     @binnendiameter.setter
     def binnendiameter(self, value):
@@ -70,7 +70,7 @@ class Ventilatie(AIMObject, PuntGeometrie):
     @property
     def buitendiameter(self):
         """De grootste afstand van de rechte lijn die kan worden getrokken tussen twee punten op de buitenzijde van de ventilatie. Deze rechte lijn gaat altijd door het middelpunt van de ventilatie."""
-        return self._buitendiameter.waarde
+        return self._buitendiameter.get_waarde()
 
     @buitendiameter.setter
     def buitendiameter(self, value):
@@ -79,7 +79,7 @@ class Ventilatie(AIMObject, PuntGeometrie):
     @property
     def maximaalDebiet(self):
         """Maximaal debiet is de grootste hoeveelheid gas of vloeistof die per tijdseenheid door een bepaald oppervlak kan stromen."""
-        return self._maximaalDebiet.waarde
+        return self._maximaalDebiet.get_waarde()
 
     @maximaalDebiet.setter
     def maximaalDebiet(self, value):
@@ -88,7 +88,7 @@ class Ventilatie(AIMObject, PuntGeometrie):
     @property
     def maximaalVolumedebiet(self):
         """Maximaal volumedebiet is de grootste hoeveelheid volume aan gas of vloeistof die per tijdseenheid door een bepaald oppervlak kan stromen."""
-        return self._maximaalVolumedebiet.waarde
+        return self._maximaalVolumedebiet.get_waarde()
 
     @maximaalVolumedebiet.setter
     def maximaalVolumedebiet(self, value):
@@ -97,7 +97,7 @@ class Ventilatie(AIMObject, PuntGeometrie):
     @property
     def vermogen(self):
         """Het vermogen van een ventilatie is de energie die dat het per seconde omzet."""
-        return self._vermogen.waarde
+        return self._vermogen.get_waarde()
 
     @vermogen.setter
     def vermogen(self, value):

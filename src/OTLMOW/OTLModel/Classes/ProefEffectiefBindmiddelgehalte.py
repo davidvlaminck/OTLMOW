@@ -30,7 +30,7 @@ class ProefEffectiefBindmiddelgehalte(Proef, PuntGeometrie, LijnGeometrie, VlakG
     @property
     def effectiefBindmiddelgehalte(self):
         """Het resultaat van de test van het gemeten effectief bindmiddelgehalte in de BV laag."""
-        return self._effectiefBindmiddelgehalte.waarde
+        return self._effectiefBindmiddelgehalte.get_waarde()
 
     @effectiefBindmiddelgehalte.setter
     def effectiefBindmiddelgehalte(self, value):

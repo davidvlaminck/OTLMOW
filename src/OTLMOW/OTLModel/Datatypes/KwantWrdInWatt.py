@@ -34,7 +34,7 @@ class KwantWrdInWattWaarden(AttributeInfo):
     @property
     def waarde(self):
         """Bevat een getal die bij het datatype hoort."""
-        return self._waarde.waarde
+        return self._waarde.get_waarde()
 
     @waarde.setter
     def waarde(self, value):
@@ -48,6 +48,7 @@ class KwantWrdInWatt(OTLField, AttributeInfo):
     label = 'Kwantitatieve waarde in watt'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInWatt'
     definition = 'Een kwantitatieve waarde die een getal in watt uitdrukt.'
+    waarde_shortcut_applicable = True
     waardeObject = KwantWrdInWattWaarden
 
     def __str__(self):

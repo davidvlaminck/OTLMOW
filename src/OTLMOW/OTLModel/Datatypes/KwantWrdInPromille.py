@@ -34,7 +34,7 @@ class KwantWrdInPromilleWaarden(AttributeInfo):
     @property
     def waarde(self):
         """Bevat een getal die bij het datatype hoort."""
-        return self._waarde.waarde
+        return self._waarde.get_waarde()
 
     @waarde.setter
     def waarde(self, value):
@@ -48,6 +48,7 @@ class KwantWrdInPromille(OTLField, AttributeInfo):
     label = 'Kwantitatieve waarde in promille'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInPromille'
     definition = 'Een kwantitatieve waarde die een getal in promille uitdrukt.'
+    waarde_shortcut_applicable = True
     waardeObject = KwantWrdInPromilleWaarden
 
     def __str__(self):

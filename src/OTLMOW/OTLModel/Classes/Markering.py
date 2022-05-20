@@ -67,7 +67,7 @@ class Markering(AIMObject, Signalisatie):
     @property
     def isHandwerk(self):
         """Boolean om te bepalen of de markering machinaal of handmatig is aangebracht."""
-        return self._isHandwerk.waarde
+        return self._isHandwerk.get_waarde()
 
     @isHandwerk.setter
     def isHandwerk(self, value):
@@ -76,7 +76,7 @@ class Markering(AIMObject, Signalisatie):
     @property
     def isTijdelijk(self):
         """Aanduiding of de wegmarkering al dan niet tot de werfsignalisatie behoort."""
-        return self._isTijdelijk.waarde
+        return self._isTijdelijk.get_waarde()
 
     @isTijdelijk.setter
     def isTijdelijk(self, value):
@@ -85,7 +85,7 @@ class Markering(AIMObject, Signalisatie):
     @property
     def kleur(self):
         """De kleur van de gebruikte markering."""
-        return self._kleur.waarde
+        return self._kleur.get_waarde()
 
     @kleur.setter
     def kleur(self, value):
@@ -94,7 +94,7 @@ class Markering(AIMObject, Signalisatie):
     @property
     def markeringsoort(self):
         """De soort van markering (verf, thermopast,...)."""
-        return self._markeringsoort.waarde
+        return self._markeringsoort.get_waarde()
 
     @markeringsoort.setter
     def markeringsoort(self, value):
@@ -103,7 +103,7 @@ class Markering(AIMObject, Signalisatie):
     @property
     def markeringsysteemCopro(self):
         """De product informatie van de markering via COPRO codes."""
-        return self._markeringsysteemCopro.waarde
+        return self._markeringsysteemCopro.get_waarde()
 
     @markeringsysteemCopro.setter
     def markeringsysteemCopro(self, value):
@@ -112,7 +112,7 @@ class Markering(AIMObject, Signalisatie):
     @property
     def opvatting(self):
         """De opvatting van de markering, zijnde middelenverbintenis of resultaatsverbintenis met een minimale levensduur."""
-        return self._opvatting.waarde
+        return self._opvatting.get_waarde()
 
     @opvatting.setter
     def opvatting(self, value):

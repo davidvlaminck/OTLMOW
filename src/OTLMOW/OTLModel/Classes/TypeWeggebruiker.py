@@ -23,7 +23,7 @@ class TypeWeggebruiker(ABC):
     @property
     def typeWeggebruiker(self):
         """het type weggebruiker."""
-        return self._typeWeggebruiker.waarde
+        return self._typeWeggebruiker.get_waarde()
 
     @typeWeggebruiker.setter
     def typeWeggebruiker(self, value):

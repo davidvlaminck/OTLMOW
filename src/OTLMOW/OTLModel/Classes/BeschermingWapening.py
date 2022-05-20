@@ -26,7 +26,7 @@ class BeschermingWapening(AndereLaag, VlakGeometrie):
     @property
     def type(self):
         """Het type bescherming of wapening."""
-        return self._type.waarde
+        return self._type.get_waarde()
 
     @type.setter
     def type(self, value):

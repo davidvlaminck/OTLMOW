@@ -32,7 +32,7 @@ class NietWeggebondenDetectie(Detectie, FirmwareObject, PuntGeometrie):
     @property
     def voedingsspanning(self):
         """Spanning waarmee de detectoren gevoed worden."""
-        return self._voedingsspanning.waarde
+        return self._voedingsspanning.get_waarde()
 
     @voedingsspanning.setter
     def voedingsspanning(self, value):

@@ -42,7 +42,7 @@ class Keuring(Proef, GeenGeometrie):
     @property
     def datum(self):
         """De datum waarop de keuring werd uitgevoerd."""
-        return self._datum.waarde
+        return self._datum.get_waarde()
 
     @datum.setter
     def datum(self, value):
@@ -51,7 +51,7 @@ class Keuring(Proef, GeenGeometrie):
     @property
     def geldigheidsDuur(self):
         """de periode (in jaar) waarbinnen de keuring geldig blijft. """
-        return self._geldigheidsDuur.waarde
+        return self._geldigheidsDuur.get_waarde()
 
     @geldigheidsDuur.setter
     def geldigheidsDuur(self, value):
@@ -60,7 +60,7 @@ class Keuring(Proef, GeenGeometrie):
     @property
     def verslag(self):
         """document met het verslag van de keuring."""
-        return self._verslag.waarde
+        return self._verslag.get_waarde()
 
     @verslag.setter
     def verslag(self, value):

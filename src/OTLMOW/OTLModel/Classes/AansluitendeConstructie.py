@@ -28,7 +28,7 @@ class AansluitendeConstructie(AfschermendeConstructie, LijnGeometrie):
     @property
     def totaleLengte(self):
         """De totale lengte van de elementen van de aansluitende constructie."""
-        return self._totaleLengte.waarde
+        return self._totaleLengte.get_waarde()
 
     @totaleLengte.setter
     def totaleLengte(self, value):

@@ -19,6 +19,10 @@ class KlAlgIngressProtectionCode(KeuzelijstField):
         'i-p-65': KeuzelijstWaarde(invulwaarde='i-p-65',
                                    label='IP65',
                                    definitie='Stofvrij en sproeidicht.',
-                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgIngressProtectionCode/i-p-65')
+                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgIngressProtectionCode/i-p-65'),
+        'ip54': KeuzelijstWaarde(invulwaarde='ip54',
+                                 label='IP54',
+                                 definitie='Spatwaterdicht en stofvrij.',
+                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgIngressProtectionCode/ip54')
     }
 

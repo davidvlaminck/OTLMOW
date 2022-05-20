@@ -60,7 +60,7 @@ class OverlangseMarkering(Markering, AOWSType, LijnGeometrie):
     @property
     def code(self):
         """De (COPRO/BENOR) code van de overlangse markering."""
-        return self._code.waarde
+        return self._code.get_waarde()
 
     @code.setter
     def code(self, value):
@@ -69,7 +69,7 @@ class OverlangseMarkering(Markering, AOWSType, LijnGeometrie):
     @property
     def lengte(self):
         """De lengte van de markering in meter."""
-        return self._lengte.waarde
+        return self._lengte.get_waarde()
 
     @lengte.setter
     def lengte(self, value):
@@ -78,7 +78,7 @@ class OverlangseMarkering(Markering, AOWSType, LijnGeometrie):
     @property
     def oppervlakte(self):
         """De oppervlakte van de overlangse markering in vierkante meter."""
-        return self._oppervlakte.waarde
+        return self._oppervlakte.get_waarde()
 
     @oppervlakte.setter
     def oppervlakte(self, value):
@@ -87,7 +87,7 @@ class OverlangseMarkering(Markering, AOWSType, LijnGeometrie):
     @property
     def positie(self):
         """Bepaling van het wegdeel van de overlangse markering."""
-        return self._positie.waarde
+        return self._positie.get_waarde()
 
     @positie.setter
     def positie(self, value):
@@ -96,7 +96,7 @@ class OverlangseMarkering(Markering, AOWSType, LijnGeometrie):
     @property
     def type(self):
         """Het type van overlangse markering."""
-        return self._type.waarde
+        return self._type.get_waarde()
 
     @type.setter
     def type(self, value):

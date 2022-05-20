@@ -64,7 +64,7 @@ class Afsluiter(LinkendElement, PuntGeometrie):
     @property
     def actueleHoogte(self):
         """De afstand tussen het vloeipeil van de opening en de laagste positie van de schuif."""
-        return self._actueleHoogte.waarde
+        return self._actueleHoogte.get_waarde()
 
     @actueleHoogte.setter
     def actueleHoogte(self, value):
@@ -73,7 +73,7 @@ class Afsluiter(LinkendElement, PuntGeometrie):
     @property
     def breedte(self):
         """De afstand tussen de uiterste zijden van de afsluiter in millimeter."""
-        return self._breedte.waarde
+        return self._breedte.get_waarde()
 
     @breedte.setter
     def breedte(self, value):
@@ -82,7 +82,7 @@ class Afsluiter(LinkendElement, PuntGeometrie):
     @property
     def hoogte(self):
         """De afstand tussen het hoogste en laagste punt van de afsluiter met uitzondering van de spindel in millimeter."""
-        return self._hoogte.waarde
+        return self._hoogte.get_waarde()
 
     @hoogte.setter
     def hoogte(self, value):
@@ -91,7 +91,7 @@ class Afsluiter(LinkendElement, PuntGeometrie):
     @property
     def materiaal(self):
         """Materiaal waaruit de afsluiter is vervaardigd."""
-        return self._materiaal.waarde
+        return self._materiaal.get_waarde()
 
     @materiaal.setter
     def materiaal(self, value):
@@ -100,7 +100,7 @@ class Afsluiter(LinkendElement, PuntGeometrie):
     @property
     def peil(self):
         """BOK-peil in meter-TAW van de onderkant van de doorlaat van de afsluiter."""
-        return self._peil.waarde
+        return self._peil.get_waarde()
 
     @peil.setter
     def peil(self, value):
@@ -109,7 +109,7 @@ class Afsluiter(LinkendElement, PuntGeometrie):
     @property
     def type(self):
         """Bepaalt het type van de afsluiter."""
-        return self._type.waarde
+        return self._type.get_waarde()
 
     @type.setter
     def type(self, value):

@@ -46,7 +46,7 @@ class StalenProfiel(ConstructieElement, StalenConstructieElement, ConstructieEle
     @property
     def isVoorgebogen(self):
         """Bij het fabriceren wordt er bewust een ronding aangebracht in het profiel. Dit kan bijvoorbeeld dienen ter compensatie van doorbuiging of omwille van esthetische redenen,..."""
-        return self._isVoorgebogen.waarde
+        return self._isVoorgebogen.get_waarde()
 
     @isVoorgebogen.setter
     def isVoorgebogen(self, value):
@@ -55,7 +55,7 @@ class StalenProfiel(ConstructieElement, StalenConstructieElement, ConstructieEle
     @property
     def lengte(self):
         """De lengte van het profiel uitgedrukt in in meter."""
-        return self._lengte.waarde
+        return self._lengte.get_waarde()
 
     @lengte.setter
     def lengte(self, value):
@@ -64,7 +64,7 @@ class StalenProfiel(ConstructieElement, StalenConstructieElement, ConstructieEle
     @property
     def technischeFiche(self):
         """De technische gegevens van het stalen profiel (relevante normen, detail afmetingen, gewicht,...)."""
-        return self._technischeFiche.waarde
+        return self._technischeFiche.get_waarde()
 
     @technischeFiche.setter
     def technischeFiche(self, value):

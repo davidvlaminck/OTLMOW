@@ -26,7 +26,7 @@ class VoedingDerdenLaagspanning(Voedingspunt, PuntGeometrie):
     @property
     def aansluitvermogen(self):
         """Vermogen van de aansluiting."""
-        return self._aansluitvermogen.waarde
+        return self._aansluitvermogen.get_waarde()
 
     @aansluitvermogen.setter
     def aansluitvermogen(self, value):

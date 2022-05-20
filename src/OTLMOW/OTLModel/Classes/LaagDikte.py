@@ -26,7 +26,7 @@ class LaagDikte(ABC):
     @property
     def dikte(self):
         """De gemiddelde dikte van een laag in centimeter."""
-        return self._dikte.waarde
+        return self._dikte.get_waarde()
 
     @dikte.setter
     def dikte(self, value):

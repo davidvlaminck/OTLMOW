@@ -50,7 +50,7 @@ class Overstort(LinkendElement, VlakGeometrie):
     @property
     def drempellengte(self):
         """Drempellengte of breedte van de overstort. Deze wordt gemeten aan de kortste zijde van de drempel."""
-        return self._drempellengte.waarde
+        return self._drempellengte.get_waarde()
 
     @drempellengte.setter
     def drempellengte(self, value):
@@ -59,7 +59,7 @@ class Overstort(LinkendElement, VlakGeometrie):
     @property
     def materiaalDrempel(self):
         """Het gebruikte materiaal voor het vervaardigen van de overstort (drempel)."""
-        return self._materiaalDrempel.waarde
+        return self._materiaalDrempel.get_waarde()
 
     @materiaalDrempel.setter
     def materiaalDrempel(self, value):
@@ -68,7 +68,7 @@ class Overstort(LinkendElement, VlakGeometrie):
     @property
     def peil(self):
         """Drempelpeil van de overstort. Uitgedrukt in meter-TAW gemeten in het midden van de drempel."""
-        return self._peil.waarde
+        return self._peil.get_waarde()
 
     @peil.setter
     def peil(self, value):
@@ -81,7 +81,7 @@ constructie ter hoogte van de drempel. Voor drempels in leidingen worden
 de vrije hoogte voor de databank genomen tussen de drempel en de
 binnenbovenkant buis. Indien er geen sprake is van een vrije hoogte (vb
 drempels in grachten) wordt dit niet ingevuld."""
-        return self._vrijeHoogte.waarde
+        return self._vrijeHoogte.get_waarde()
 
     @vrijeHoogte.setter
     def vrijeHoogte(self, value):

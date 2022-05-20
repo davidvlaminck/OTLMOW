@@ -34,7 +34,7 @@ class KwantWrdInSecondeWaarden(AttributeInfo):
     @property
     def waarde(self):
         """Bevat een getal die bij het datatype hoort."""
-        return self._waarde.waarde
+        return self._waarde.get_waarde()
 
     @waarde.setter
     def waarde(self, value):
@@ -48,6 +48,7 @@ class KwantWrdInSeconde(OTLField, AttributeInfo):
     label = 'Kwantitatieve waarde in seconde'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInSeconde'
     definition = 'Een kwantitatieve waarde die een getal in seconde uitdrukt.'
+    waarde_shortcut_applicable = True
     waardeObject = KwantWrdInSecondeWaarden
 
     def __str__(self):

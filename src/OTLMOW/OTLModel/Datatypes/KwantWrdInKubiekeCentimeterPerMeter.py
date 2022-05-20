@@ -34,7 +34,7 @@ class KwantWrdInKubiekeCentimeterPerMeterWaarden(AttributeInfo):
     @property
     def waarde(self):
         """Bevat een getal die bij het datatype hoort."""
-        return self._waarde.waarde
+        return self._waarde.get_waarde()
 
     @waarde.setter
     def waarde(self, value):
@@ -48,6 +48,7 @@ class KwantWrdInKubiekeCentimeterPerMeter(OTLField, AttributeInfo):
     label = 'Kwantitatieve waarde in kubieke centimeter per meter'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInKubiekeCentimeterPerMeter'
     definition = 'Een kwantitatieve waarde die een getal in kubieke centimeter per meter uitdrukt.'
+    waarde_shortcut_applicable = True
     waardeObject = KwantWrdInKubiekeCentimeterPerMeterWaarden
 
     def __str__(self):

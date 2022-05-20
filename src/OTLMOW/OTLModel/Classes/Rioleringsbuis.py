@@ -48,7 +48,7 @@ class Rioleringsbuis(Buis):
     @property
     def aantalAfgedichteAansluitingen(self):
         """De afgedichte verlaten aansluitingsopeningen van straatkolken en/of huisaansluitingen in de rioleringsbuis."""
-        return self._aantalAfgedichteAansluitingen.waarde
+        return self._aantalAfgedichteAansluitingen.get_waarde()
 
     @aantalAfgedichteAansluitingen.setter
     def aantalAfgedichteAansluitingen(self, value):
@@ -57,7 +57,7 @@ class Rioleringsbuis(Buis):
     @property
     def functie(self):
         """Bepaalt de functie van de rioleringsbuis."""
-        return self._functie.waarde
+        return self._functie.get_waarde()
 
     @functie.setter
     def functie(self, value):
@@ -66,7 +66,7 @@ class Rioleringsbuis(Buis):
     @property
     def materiaal(self):
         """Bepaalt het materiaal van de rioleringsbuis."""
-        return self._materiaal.waarde
+        return self._materiaal.get_waarde()
 
     @materiaal.setter
     def materiaal(self, value):
@@ -75,7 +75,7 @@ class Rioleringsbuis(Buis):
     @property
     def sterktereeks(self):
         """De stabiliteitsklasse van de buis."""
-        return self._sterktereeks.waarde
+        return self._sterktereeks.get_waarde()
 
     @sterktereeks.setter
     def sterktereeks(self, value):

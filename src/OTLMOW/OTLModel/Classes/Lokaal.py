@@ -26,7 +26,7 @@ class Lokaal(Behuizing, VlakGeometrie):
     @property
     def grondplan(self):
         """Plattegrond van het lokaal met aanduidingen van de verschillende aanwezige elementen zoals kasten met kastnummers, toegangscontrole en meer."""
-        return self._grondplan.waarde
+        return self._grondplan.get_waarde()
 
     @grondplan.setter
     def grondplan(self, value):

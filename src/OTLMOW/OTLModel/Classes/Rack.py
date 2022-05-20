@@ -66,7 +66,7 @@ class Rack(AIMNaamObject, PuntGeometrie):
     @property
     def diepte(self):
         """De diepte van het rack tussen de voorste en achterste rails."""
-        return self._diepte.waarde
+        return self._diepte.get_waarde()
 
     @diepte.setter
     def diepte(self, value):
@@ -75,7 +75,7 @@ class Rack(AIMNaamObject, PuntGeometrie):
     @property
     def hoogteInRU(self):
         """Bruikbare ruimte om toestellen te monteren, uitgedrukt in RU (rack units)."""
-        return self._hoogteInRU.waarde
+        return self._hoogteInRU.get_waarde()
 
     @hoogteInRU.setter
     def hoogteInRU(self, value):
@@ -84,7 +84,7 @@ class Rack(AIMNaamObject, PuntGeometrie):
     @property
     def huidigBeeld(self):
         """Foto of schematische voorstelling van de huidige samenstelling van de samenstelling in het rack."""
-        return self._huidigBeeld.waarde
+        return self._huidigBeeld.get_waarde()
 
     @huidigBeeld.setter
     def huidigBeeld(self, value):
@@ -93,7 +93,7 @@ class Rack(AIMNaamObject, PuntGeometrie):
     @property
     def merk(self):
         """Merk waarmee de fabrikant dit type rack identificeert."""
-        return self._merk.waarde
+        return self._merk.get_waarde()
 
     @merk.setter
     def merk(self, value):
@@ -102,7 +102,7 @@ class Rack(AIMNaamObject, PuntGeometrie):
     @property
     def modelnaam(self):
         """Modelnaam waarmee de fabrikant dit type toestel identificeert."""
-        return self._modelnaam.waarde
+        return self._modelnaam.get_waarde()
 
     @modelnaam.setter
     def modelnaam(self, value):
@@ -111,7 +111,7 @@ class Rack(AIMNaamObject, PuntGeometrie):
     @property
     def rackType(self):
         """Geeft het type aan voor een rack volgens een keuzelijst van beschikbare types."""
-        return self._rackType.waarde
+        return self._rackType.get_waarde()
 
     @rackType.setter
     def rackType(self, value):

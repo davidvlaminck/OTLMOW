@@ -26,7 +26,7 @@ class Verwarmingslint(AIMObject, LijnGeometrie):
     @property
     def vermogen(self):
         """Het vereiste vermogen in watt voor de correcte werking van het verwarmingslint."""
-        return self._vermogen.waarde
+        return self._vermogen.get_waarde()
 
     @vermogen.setter
     def vermogen(self, value):

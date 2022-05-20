@@ -82,7 +82,7 @@ class Software(SoftwareToegang, GeenGeometrie):
     @property
     def aangebodenServices(self):
         """De endpoints van diensten."""
-        return self._aangebodenServices.waarde
+        return self._aangebodenServices.get_waarde()
 
     @aangebodenServices.setter
     def aangebodenServices(self, value):
@@ -91,7 +91,7 @@ class Software(SoftwareToegang, GeenGeometrie):
     @property
     def buildnummer(self):
         """De software build."""
-        return self._buildnummer.waarde
+        return self._buildnummer.get_waarde()
 
     @buildnummer.setter
     def buildnummer(self, value):
@@ -100,7 +100,7 @@ class Software(SoftwareToegang, GeenGeometrie):
     @property
     def dependencies(self):
         """Afhankelijkheden met andere diensten."""
-        return self._dependencies.waarde
+        return self._dependencies.get_waarde()
 
     @dependencies.setter
     def dependencies(self, value):
@@ -109,7 +109,7 @@ class Software(SoftwareToegang, GeenGeometrie):
     @property
     def documentatie(self):
         """Link naar documentatie over de software."""
-        return self._documentatie.waarde
+        return self._documentatie.get_waarde()
 
     @documentatie.setter
     def documentatie(self, value):
@@ -118,7 +118,7 @@ class Software(SoftwareToegang, GeenGeometrie):
     @property
     def licentie(self):
         """De licentievorm van de software (bv. commercieel, shareware, freeware, open source [BSD, Apache, GPL],...)."""
-        return self._licentie.waarde
+        return self._licentie.get_waarde()
 
     @licentie.setter
     def licentie(self, value):
@@ -127,7 +127,7 @@ class Software(SoftwareToegang, GeenGeometrie):
     @property
     def onlineDocumentatie(self):
         """De url waarop documentatie over de software te vinden is."""
-        return self._onlineDocumentatie.waarde
+        return self._onlineDocumentatie.get_waarde()
 
     @onlineDocumentatie.setter
     def onlineDocumentatie(self, value):
@@ -136,7 +136,7 @@ class Software(SoftwareToegang, GeenGeometrie):
     @property
     def poortenconfiguratie(self):
         """Beschrijft welke poort voor welke service gebruikt wordt."""
-        return self._poortenconfiguratie.waarde
+        return self._poortenconfiguratie.get_waarde()
 
     @poortenconfiguratie.setter
     def poortenconfiguratie(self, value):
@@ -145,7 +145,7 @@ class Software(SoftwareToegang, GeenGeometrie):
     @property
     def versie(self):
         """Het versienummer van de software."""
-        return self._versie.waarde
+        return self._versie.get_waarde()
 
     @versie.setter
     def versie(self, value):

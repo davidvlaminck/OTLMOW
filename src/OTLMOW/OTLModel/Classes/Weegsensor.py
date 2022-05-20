@@ -66,7 +66,7 @@ class Weegsensor(AIMNaamObject, LijnGeometrie):
     @property
     def meetrapport(self):
         """Document met kalibratiegegevens (aantal rondes, types voertuigen,...)."""
-        return self._meetrapport.waarde
+        return self._meetrapport.get_waarde()
 
     @meetrapport.setter
     def meetrapport(self, value):
@@ -75,7 +75,7 @@ class Weegsensor(AIMNaamObject, LijnGeometrie):
     @property
     def merk(self):
         """Het merk van de weegsensor."""
-        return self._merk.waarde
+        return self._merk.get_waarde()
 
     @merk.setter
     def merk(self, value):
@@ -84,7 +84,7 @@ class Weegsensor(AIMNaamObject, LijnGeometrie):
     @property
     def modelnaam(self):
         """De modelnaam van de weegsensor."""
-        return self._modelnaam.waarde
+        return self._modelnaam.get_waarde()
 
     @modelnaam.setter
     def modelnaam(self, value):
@@ -93,7 +93,7 @@ class Weegsensor(AIMNaamObject, LijnGeometrie):
     @property
     def rijstrook(self):
         """Beschrijft de rijstroken die door de weegsensor bewaakt worden."""
-        return self._rijstrook.waarde
+        return self._rijstrook.get_waarde()
 
     @rijstrook.setter
     def rijstrook(self, value):
@@ -102,7 +102,7 @@ class Weegsensor(AIMNaamObject, LijnGeometrie):
     @property
     def serienummer(self):
         """Het unieke nummer waarmee het toestel door de fabrikant geïdentificeerd is."""
-        return self._serienummer.waarde
+        return self._serienummer.get_waarde()
 
     @serienummer.setter
     def serienummer(self, value):
@@ -111,7 +111,7 @@ class Weegsensor(AIMNaamObject, LijnGeometrie):
     @property
     def type(self):
         """Het type van de weegsensor."""
-        return self._type.waarde
+        return self._type.get_waarde()
 
     @type.setter
     def type(self, value):

@@ -74,7 +74,7 @@ class Transformator(AIMNaamObject, PuntGeometrie):
     @property
     def isolatiemedium(self):
         """Wijze van onderdompeling van de magnetische kring en van de wikkelingen van de transformator."""
-        return self._isolatiemedium.waarde
+        return self._isolatiemedium.get_waarde()
 
     @isolatiemedium.setter
     def isolatiemedium(self, value):
@@ -83,7 +83,7 @@ class Transformator(AIMNaamObject, PuntGeometrie):
     @property
     def kortsluitspanning(self):
         """Kortsluitspanning van de transformator (in %)."""
-        return self._kortsluitspanning.waarde
+        return self._kortsluitspanning.get_waarde()
 
     @kortsluitspanning.setter
     def kortsluitspanning(self, value):
@@ -92,7 +92,7 @@ class Transformator(AIMNaamObject, PuntGeometrie):
     @property
     def nominaalVermogen(self):
         """nominale vermogen van de transformator."""
-        return self._nominaalVermogen.waarde
+        return self._nominaalVermogen.get_waarde()
 
     @nominaalVermogen.setter
     def nominaalVermogen(self, value):
@@ -101,7 +101,7 @@ class Transformator(AIMNaamObject, PuntGeometrie):
     @property
     def nominalePrimaireSpanning(self):
         """Nominale spanning van de primaire wikkeling in kV."""
-        return self._nominalePrimaireSpanning.waarde
+        return self._nominalePrimaireSpanning.get_waarde()
 
     @nominalePrimaireSpanning.setter
     def nominalePrimaireSpanning(self, value):
@@ -110,7 +110,7 @@ class Transformator(AIMNaamObject, PuntGeometrie):
     @property
     def nominaleSecundaireSpanning(self):
         """Nominale spanning van de secundaire wikkeling in V."""
-        return self._nominaleSecundaireSpanning.waarde
+        return self._nominaleSecundaireSpanning.get_waarde()
 
     @nominaleSecundaireSpanning.setter
     def nominaleSecundaireSpanning(self, value):
@@ -119,7 +119,7 @@ class Transformator(AIMNaamObject, PuntGeometrie):
     @property
     def schakelgroep(self):
         """Verzameling van 3 schakelcombinaties waarbij de hoofdletter de schakelwijze van de primaire weergeeft, de kleine letter(s) de schakelwijze van de secundaire weergeeft (en eventueel het feit dat het sterpunt naar buiten werd gebracht) en het getal geeft het klokgetal (of het aantal keer dat er 30° faseverschuiving tussen HS- en LS-spanning is) vb Dyn11"""
-        return self._schakelgroep.waarde
+        return self._schakelgroep.get_waarde()
 
     @schakelgroep.setter
     def schakelgroep(self, value):
@@ -128,7 +128,7 @@ class Transformator(AIMNaamObject, PuntGeometrie):
     @property
     def typeBeveiliging(self):
         """Type transformatorbeveiliging."""
-        return self._typeBeveiliging.waarde
+        return self._typeBeveiliging.get_waarde()
 
     @typeBeveiliging.setter
     def typeBeveiliging(self, value):

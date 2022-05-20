@@ -92,7 +92,7 @@ class Lichtmast(AIMNaamObject, EMDraagconstructie, PuntGeometrie):
     @property
     def beschermlaag(self):
         """Beschermlaag van de lichtmast."""
-        return self._beschermlaag.waarde
+        return self._beschermlaag.get_waarde()
 
     @beschermlaag.setter
     def beschermlaag(self, value):
@@ -101,7 +101,7 @@ class Lichtmast(AIMNaamObject, EMDraagconstructie, PuntGeometrie):
     @property
     def dwarsdoorsnede(self):
         """De vorm van de dwarsdoorsnede van de lichtmast."""
-        return self._dwarsdoorsnede.waarde
+        return self._dwarsdoorsnede.get_waarde()
 
     @dwarsdoorsnede.setter
     def dwarsdoorsnede(self, value):
@@ -110,7 +110,7 @@ class Lichtmast(AIMNaamObject, EMDraagconstructie, PuntGeometrie):
     @property
     def heeftStopcontact(self):
         """Geeft aan of er een stopcontact aanwezig is op de lichtmast."""
-        return self._heeftStopcontact.waarde
+        return self._heeftStopcontact.get_waarde()
 
     @heeftStopcontact.setter
     def heeftStopcontact(self, value):
@@ -119,7 +119,7 @@ class Lichtmast(AIMNaamObject, EMDraagconstructie, PuntGeometrie):
     @property
     def kleur(self):
         """RAL kleur van de lichtmast."""
-        return self._kleur.waarde
+        return self._kleur.get_waarde()
 
     @kleur.setter
     def kleur(self, value):
@@ -128,7 +128,7 @@ class Lichtmast(AIMNaamObject, EMDraagconstructie, PuntGeometrie):
     @property
     def leverancier(self):
         """Leverancier van de lichtmast."""
-        return self._leverancier.waarde
+        return self._leverancier.get_waarde()
 
     @leverancier.setter
     def leverancier(self, value):
@@ -137,7 +137,7 @@ class Lichtmast(AIMNaamObject, EMDraagconstructie, PuntGeometrie):
     @property
     def masthoogte(self):
         """Hoogte (in meter) van de lichtmast."""
-        return self._masthoogte.waarde
+        return self._masthoogte.get_waarde()
 
     @masthoogte.setter
     def masthoogte(self, value):
@@ -146,7 +146,7 @@ class Lichtmast(AIMNaamObject, EMDraagconstructie, PuntGeometrie):
     @property
     def masttype(self):
         """Type mast bv. rechte metalen paal, rechte metalen paal op voet, kreukelpaal met arm,..."""
-        return self._masttype.waarde
+        return self._masttype.get_waarde()
 
     @masttype.setter
     def masttype(self, value):
@@ -155,7 +155,7 @@ class Lichtmast(AIMNaamObject, EMDraagconstructie, PuntGeometrie):
     @property
     def normeringBotsvriendelijk(self):
         """Categorie in normering botsvriendelijkheid."""
-        return self._normeringBotsvriendelijk.waarde
+        return self._normeringBotsvriendelijk.get_waarde()
 
     @normeringBotsvriendelijk.setter
     def normeringBotsvriendelijk(self, value):
@@ -164,7 +164,7 @@ class Lichtmast(AIMNaamObject, EMDraagconstructie, PuntGeometrie):
     @property
     def specialeUitvoeringswijze(self):
         """Omschrijving van de speciale uitvoeringswijze van de lichtmast indien van toepassing."""
-        return self._specialeUitvoeringswijze.waarde
+        return self._specialeUitvoeringswijze.get_waarde()
 
     @specialeUitvoeringswijze.setter
     def specialeUitvoeringswijze(self, value):

@@ -60,7 +60,7 @@ class Seinlantaarn(AIMNaamObject, PuntGeometrie):
     @property
     def diameter(self):
         """Diameter (in mm) van de lens van de verkeerslichten waaruit de lantaarn is samengesteld."""
-        return self._diameter.waarde
+        return self._diameter.get_waarde()
 
     @diameter.setter
     def diameter(self, value):
@@ -69,7 +69,7 @@ class Seinlantaarn(AIMNaamObject, PuntGeometrie):
     @property
     def heeftContrastscherm(self):
         """Aanduiding of er een contrastscherm aanwezig is op de lantaarn."""
-        return self._heeftContrastscherm.waarde
+        return self._heeftContrastscherm.get_waarde()
 
     @heeftContrastscherm.setter
     def heeftContrastscherm(self, value):
@@ -78,7 +78,7 @@ class Seinlantaarn(AIMNaamObject, PuntGeometrie):
     @property
     def merk(self):
         """Het merk van een de seinlantaarn."""
-        return self._merk.waarde
+        return self._merk.get_waarde()
 
     @merk.setter
     def merk(self, value):
@@ -87,7 +87,7 @@ class Seinlantaarn(AIMNaamObject, PuntGeometrie):
     @property
     def modelnaam(self):
         """De modelnaam/product range van de seinlantaarn."""
-        return self._modelnaam.waarde
+        return self._modelnaam.get_waarde()
 
     @modelnaam.setter
     def modelnaam(self, value):
@@ -96,7 +96,7 @@ class Seinlantaarn(AIMNaamObject, PuntGeometrie):
     @property
     def vormgeving(self):
         """Type vormgeving van de seinlantaarn."""
-        return self._vormgeving.waarde
+        return self._vormgeving.get_waarde()
 
     @vormgeving.setter
     def vormgeving(self, value):

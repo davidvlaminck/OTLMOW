@@ -27,7 +27,7 @@ class VRIVirtueleDetectiezone(Detectielus, VlakGeometrie):
     @property
     def functie(self):
         """Functie van de VRI detectiezone."""
-        return self._functie.waarde
+        return self._functie.get_waarde()
 
     @functie.setter
     def functie(self, value):

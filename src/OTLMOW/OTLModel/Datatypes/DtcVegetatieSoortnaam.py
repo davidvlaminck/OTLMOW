@@ -34,7 +34,7 @@ class DtcVegetatieSoortnaamWaarden(AttributeInfo):
     @property
     def code(self):
         """De unieke identificator voor de soort van het vegetatie-element."""
-        return self._code.waarde
+        return self._code.get_waarde()
 
     @code.setter
     def code(self, value):
@@ -43,7 +43,7 @@ class DtcVegetatieSoortnaamWaarden(AttributeInfo):
     @property
     def soortnaamNederlands(self):
         """De Nederlandse soortnaam van de beplanting."""
-        return self._soortnaamNederlands.waarde
+        return self._soortnaamNederlands.get_waarde()
 
     @soortnaamNederlands.setter
     def soortnaamNederlands(self, value):
@@ -52,7 +52,7 @@ class DtcVegetatieSoortnaamWaarden(AttributeInfo):
     @property
     def soortnaamWetenschappelijk(self):
         """De wetenschappelijke soortnaam van de beplanting."""
-        return self._soortnaamWetenschappelijk.waarde
+        return self._soortnaamWetenschappelijk.get_waarde()
 
     @soortnaamWetenschappelijk.setter
     def soortnaamWetenschappelijk(self, value):

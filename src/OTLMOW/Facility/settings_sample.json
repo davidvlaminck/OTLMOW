@@ -27,46 +27,64 @@
     ],
     "file_formats": [
         {
+            "name": "OTLMOW",
+            "dotnotatie": {
+                "separator": ".",
+                "cardinality separator": "|",
+                "cardinality indicator": "[]",
+                "waarde_shortcut_applicable": false
+            }
+        },
+        {
             "name": "dwg property set",
             "dotnotatie": {
-                "separator" : ".",
-                "cardinality separator" : "|",
-                "cardinality indicator" : "[]"
+                "separator": ".",
+                "cardinality separator": "|",
+                "cardinality indicator": "[]",
+                "waarde_shortcut_applicable": true
             }
         },
         {
             "name": "csv",
             "dotnotatie": {
-                "separator" : ".",
-                "cardinality separator" : "|",
-                "cardinality indicator" : "[]"
-            }
+                "separator": ".",
+                "cardinality separator": "|",
+                "cardinality indicator": "[]",
+                "waarde_shortcut_applicable": true
+            },
+            "delimiter": ";"
         },
         {
             "name": "xslx",
             "dotnotatie": {
-                "separator" : ".",
-                "cardinality separator" : "|",
-                "cardinality indicator" : "[]"
+                "separator": ".",
+                "cardinality separator": "|",
+                "cardinality indicator": "[]",
+                "waarde_shortcut_applicable": true
             }
         },
         {
             "name": "rvt",
             "dotnotatie": {
-                "separator" : ".",
-                "cardinality separator" : "|",
-                "cardinality indicator" : "[]"
+                "separator": ".",
+                "cardinality separator": "|",
+                "cardinality indicator": "[]",
+                "waarde_shortcut_applicable": true
             }
         },
         {
-            "name": "json"
+            "name": "json",
+            "dotnotatie": {
+                "waarde_shortcut_applicable": true
+            }
         },
         {
             "name": "geojson",
             "dotnotatie": {
-                "separator" : ".",
-                "cardinality separator" : "|",
-                "cardinality indicator" : "[]"
+                "separator": ".",
+                "cardinality separator": "|",
+                "cardinality indicator": "[]",
+                "waarde_shortcut_applicable": true
             }
         }
     ]

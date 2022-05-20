@@ -26,7 +26,7 @@ class EMDraagconstructie(Draagconstructie):
     @property
     def elektrischeBeveiliging(self):
         """Type elektrische beveiliging aanwezig in de draagconstructie."""
-        return self._elektrischeBeveiliging.waarde
+        return self._elektrischeBeveiliging.get_waarde()
 
     @elektrischeBeveiliging.setter
     def elektrischeBeveiliging(self, value):

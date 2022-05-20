@@ -30,7 +30,7 @@ class ProefDwarsvlakheid(Proef, PuntGeometrie, LijnGeometrie, VlakGeometrie):
     @property
     def dwarsvlakheid(self):
         """Proefresultaten van de dwarsvlakheid."""
-        return self._dwarsvlakheid.waarde
+        return self._dwarsvlakheid.get_waarde()
 
     @dwarsvlakheid.setter
     def dwarsvlakheid(self, value):

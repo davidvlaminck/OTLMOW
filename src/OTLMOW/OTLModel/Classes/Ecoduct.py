@@ -26,7 +26,7 @@ class Ecoduct(AIMObject, VlakGeometrie):
     @property
     def type(self):
         """Het type van ecoduct, zoals bv ecoveloduct, bermbrug,…."""
-        return self._type.waarde
+        return self._type.get_waarde()
 
     @type.setter
     def type(self, value):

@@ -63,7 +63,7 @@ class Ventilator(Ventilatie):
     @property
     def draairichting(self):
         """Geeft aan of de bladen van de ventilator met de wijzers mee of tegen de wijzers in draaien."""
-        return self._draairichting.waarde
+        return self._draairichting.get_waarde()
 
     @draairichting.setter
     def draairichting(self, value):
@@ -72,7 +72,7 @@ class Ventilator(Ventilatie):
     @property
     def gebruik(self):
         """Geeft aan op welke manier de ventilator ingezet wordt."""
-        return self._gebruik.waarde
+        return self._gebruik.get_waarde()
 
     @gebruik.setter
     def gebruik(self, value):
@@ -81,7 +81,7 @@ class Ventilator(Ventilatie):
     @property
     def heefDrukverschilmeting(self):
         """Geeft aan of de ventilator uitgerust is met een drukverschilmeters."""
-        return self._heefDrukverschilmeting.waarde
+        return self._heefDrukverschilmeting.get_waarde()
 
     @heefDrukverschilmeting.setter
     def heefDrukverschilmeting(self, value):
@@ -90,7 +90,7 @@ class Ventilator(Ventilatie):
     @property
     def heeftTemperatuurmeting(self):
         """Geeft aan of de ventilator uitgerust is met temperatuurmeting."""
-        return self._heeftTemperatuurmeting.waarde
+        return self._heeftTemperatuurmeting.get_waarde()
 
     @heeftTemperatuurmeting.setter
     def heeftTemperatuurmeting(self, value):
@@ -99,7 +99,7 @@ class Ventilator(Ventilatie):
     @property
     def heeftTrillingsmeting(self):
         """Geeft aan of de ventilator uitgerust is met trillingsmeting."""
-        return self._heeftTrillingsmeting.waarde
+        return self._heeftTrillingsmeting.get_waarde()
 
     @heeftTrillingsmeting.setter
     def heeftTrillingsmeting(self, value):
@@ -108,7 +108,7 @@ class Ventilator(Ventilatie):
     @property
     def standen(self):
         """Met de standen van de ventilator kan de draaisnelheid en soms ook de draairichting van de de bladen van de ventilator bepaald worden."""
-        return self._standen.waarde
+        return self._standen.get_waarde()
 
     @standen.setter
     def standen(self, value):

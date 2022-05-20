@@ -61,7 +61,7 @@ class EMInfraImporter:
 
         asset_list = []
         for obj in obj_list:
-            asset_list.append(self.decoder.decodeJsonObject(obj))
+            asset_list.append(self.decoder.decode_json_object(obj))
         return asset_list
 
     def import_assetrelaties_from_webservice_by_assetuuid(self, asset_uuid: str) -> [OTLObject]:
@@ -76,7 +76,7 @@ class EMInfraImporter:
 
         asset_list = []
         for obj in obj_list:
-            asset_list.append(self.decoder.decodeJsonObject(obj))
+            asset_list.append(self.decoder.decode_json_object(obj))
         return asset_list
 
     def import_asset_from_webservice_by_uuid(self, asset_uuid: str) -> OTLObject:
@@ -89,13 +89,13 @@ class EMInfraImporter:
         jsonobj = json.loads(data)
         obj_list = jsonobj["@graph"]
 
-        return self.decoder.decodeJsonObject(obj_list[0])
+        return self.decoder.decode_json_object(obj_list[0])
 
     def import_asset_from_webservice_by_asset_id(self, asset_id) -> str:
         url = f"eminfra/core/api/otl/assets/{asset_id}"
         response = self.requester.get(url)
         data = response.content.decode("utf-8")
-        return self.decoder.decodeObject(data)
+        return self.decoder.decode_object(data)
 
     def import_asset_from_webservice_by_uuid_and_typeURI(self, uuid, typeURI):
         return self.import_asset_from_webservice_by_asset_id(

@@ -55,7 +55,7 @@ class Bevestigingsbeugel(AIMNaamObject, BevestigingGC, PuntGeometrie):
     @property
     def berekeningsnota(self):
         """Document met de berekeningsnota van de bevestigingsbeugel."""
-        return self._berekeningsnota.waarde
+        return self._berekeningsnota.get_waarde()
 
     @berekeningsnota.setter
     def berekeningsnota(self, value):
@@ -64,7 +64,7 @@ class Bevestigingsbeugel(AIMNaamObject, BevestigingGC, PuntGeometrie):
     @property
     def constructieEnMontageplan(self):
         """Document met het constructie- en montageplan van de bevestigingsbeugel."""
-        return self._constructieEnMontageplan.waarde
+        return self._constructieEnMontageplan.get_waarde()
 
     @constructieEnMontageplan.setter
     def constructieEnMontageplan(self, value):
@@ -73,7 +73,7 @@ class Bevestigingsbeugel(AIMNaamObject, BevestigingGC, PuntGeometrie):
     @property
     def isVerzegeld(self):
         """Geeft aan of de bevestigingsbeugel verzegeld is tegen het ongemerkt losmaken ervan."""
-        return self._isVerzegeld.waarde
+        return self._isVerzegeld.get_waarde()
 
     @isVerzegeld.setter
     def isVerzegeld(self, value):
@@ -82,7 +82,7 @@ class Bevestigingsbeugel(AIMNaamObject, BevestigingGC, PuntGeometrie):
     @property
     def type(self):
         """Het type van de bevestigingsbeugel."""
-        return self._type.waarde
+        return self._type.get_waarde()
 
     @type.setter
     def type(self, value):

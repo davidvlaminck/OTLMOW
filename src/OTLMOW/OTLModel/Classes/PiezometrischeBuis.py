@@ -26,7 +26,7 @@ class PiezometrischeBuis(AIMObject, PuntGeometrie):
     @property
     def diepte(self):
         """De diepte vanaf maaiveld tot de onderkant van de piezometrische buis in meter."""
-        return self._diepte.waarde
+        return self._diepte.get_waarde()
 
     @diepte.setter
     def diepte(self, value):

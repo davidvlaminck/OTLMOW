@@ -27,7 +27,7 @@ class Pad(NaampadObject, GeenGeometrie):
     @property
     def netwerkprotectie(self):
         """Referentie van het pad dat redundantie levert aan dit pad."""
-        return self._netwerkprotectie.waarde
+        return self._netwerkprotectie.get_waarde()
 
     @netwerkprotectie.setter
     def netwerkprotectie(self, value):

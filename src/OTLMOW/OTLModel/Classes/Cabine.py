@@ -42,7 +42,7 @@ class Cabine(Inloopbehuizing, VlakGeometrie):
     @property
     def aardingsstelsel(self):
         """Keuze tussen verschillende types voor het gebruikte aardingsstelsel."""
-        return self._aardingsstelsel.waarde
+        return self._aardingsstelsel.get_waarde()
 
     @aardingsstelsel.setter
     def aardingsstelsel(self, value):
@@ -51,7 +51,7 @@ class Cabine(Inloopbehuizing, VlakGeometrie):
     @property
     def kelderdiepte(self):
         """Binnenhoogte in meter van de kabelkelder onder de cabine."""
-        return self._kelderdiepte.waarde
+        return self._kelderdiepte.get_waarde()
 
     @kelderdiepte.setter
     def kelderdiepte(self, value):
@@ -60,7 +60,7 @@ class Cabine(Inloopbehuizing, VlakGeometrie):
     @property
     def standaardtype(self):
         """Het type van de cabine volgens de gangbare standaarden."""
-        return self._standaardtype.waarde
+        return self._standaardtype.get_waarde()
 
     @standaardtype.setter
     def standaardtype(self, value):

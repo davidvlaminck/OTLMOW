@@ -95,7 +95,7 @@ class AfschermendeConstructie(BijlageVoertuigkering, LijnvormigElement):
     @property
     def certificaathouder(self):
         """De houder van het uitvoeringscertificaat."""
-        return self._certificaathouder.waarde
+        return self._certificaathouder.get_waarde()
 
     @certificaathouder.setter
     def certificaathouder(self, value):
@@ -104,7 +104,7 @@ class AfschermendeConstructie(BijlageVoertuigkering, LijnvormigElement):
     @property
     def isPermanent(self):
         """Vermelding of de afschermende constructie al dan niet van permanente aard is."""
-        return self._isPermanent.waarde
+        return self._isPermanent.get_waarde()
 
     @isPermanent.setter
     def isPermanent(self, value):
@@ -113,7 +113,7 @@ class AfschermendeConstructie(BijlageVoertuigkering, LijnvormigElement):
     @property
     def materiaal(self):
         """Het gebruikte materiaal voor de afschermende constructie."""
-        return self._materiaal.waarde
+        return self._materiaal.get_waarde()
 
     @materiaal.setter
     def materiaal(self, value):
@@ -122,7 +122,7 @@ class AfschermendeConstructie(BijlageVoertuigkering, LijnvormigElement):
     @property
     def metTandGroef(self):
         """Geeft aan of de afschermende constructie bevestigd is aan de onderliggende laag door middel van een tand-groef aansluiting."""
-        return self._metTandGroef.waarde
+        return self._metTandGroef.get_waarde()
 
     @metTandGroef.setter
     def metTandGroef(self, value):
@@ -131,7 +131,7 @@ class AfschermendeConstructie(BijlageVoertuigkering, LijnvormigElement):
     @property
     def productidentificatiecode(self):
         """De productidentificatiecode voor het bepalen van de code van het gebruikte product (bv. COPRO/BENOR)."""
-        return self._productidentificatiecode.waarde
+        return self._productidentificatiecode.get_waarde()
 
     @productidentificatiecode.setter
     def productidentificatiecode(self, value):
@@ -140,7 +140,7 @@ class AfschermendeConstructie(BijlageVoertuigkering, LijnvormigElement):
     @property
     def productnaam(self):
         """Dit is de commerciële naam van de afschermende constructie."""
-        return self._productnaam.waarde
+        return self._productnaam.get_waarde()
 
     @productnaam.setter
     def productnaam(self, value):
@@ -149,7 +149,7 @@ class AfschermendeConstructie(BijlageVoertuigkering, LijnvormigElement):
     @property
     def testrapport(self):
         """De testresultaten van een afschermende constructie."""
-        return self._testrapport.waarde
+        return self._testrapport.get_waarde()
 
     @testrapport.setter
     def testrapport(self, value):
@@ -158,7 +158,7 @@ class AfschermendeConstructie(BijlageVoertuigkering, LijnvormigElement):
     @property
     def uitvoeringscertificatie(self):
         """Documentatie van het certificaat."""
-        return self._uitvoeringscertificatie.waarde
+        return self._uitvoeringscertificatie.get_waarde()
 
     @uitvoeringscertificatie.setter
     def uitvoeringscertificatie(self, value):
@@ -167,7 +167,7 @@ class AfschermendeConstructie(BijlageVoertuigkering, LijnvormigElement):
     @property
     def video(self):
         """Video van de testen op afschermende constructies."""
-        return self._video.waarde
+        return self._video.get_waarde()
 
     @video.setter
     def video(self, value):

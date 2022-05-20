@@ -40,7 +40,7 @@ class VlakGeluidsschermelement(Geluidsschermelement):
     @property
     def opstelling(self):
         """Dit attribuut beschrijft de oriëntatie van het geplaatste schermelement t.o.v. de weg. De oriëntatie van vlakke schermen kan naast loodrecht op het maaiveld ook schuin naar achter hellend of schuin naar voor hellend zijn."""
-        return self._opstelling.waarde
+        return self._opstelling.get_waarde()
 
     @opstelling.setter
     def opstelling(self, value):
@@ -49,7 +49,7 @@ class VlakGeluidsschermelement(Geluidsschermelement):
     @property
     def schermelementtype(self):
         """Het type vlak-schermelement."""
-        return self._schermelementtype.waarde
+        return self._schermelementtype.get_waarde()
 
     @schermelementtype.setter
     def schermelementtype(self, value):
@@ -58,7 +58,7 @@ class VlakGeluidsschermelement(Geluidsschermelement):
     @property
     def vorm(self):
         """Dit attribuut geeft aan of het schermelement recht of gebogen is."""
-        return self._vorm.waarde
+        return self._vorm.get_waarde()
 
     @vorm.setter
     def vorm(self, value):

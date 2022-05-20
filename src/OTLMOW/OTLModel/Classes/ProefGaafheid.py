@@ -30,7 +30,7 @@ class ProefGaafheid(Proef, PuntGeometrie, LijnGeometrie, VlakGeometrie):
     @property
     def gaafheid(self):
         """De resultaten van de controle."""
-        return self._gaafheid.waarde
+        return self._gaafheid.get_waarde()
 
     @gaafheid.setter
     def gaafheid(self, value):

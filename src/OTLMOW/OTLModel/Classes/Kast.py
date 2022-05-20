@@ -54,7 +54,7 @@ class Kast(Behuizing, PuntGeometrie, VlakGeometrie):
     @property
     def afmeting(self):
         """Buitenafmeting van de kast als maximale breedte, lengte en hoogte in millimeter."""
-        return self._afmeting.waarde
+        return self._afmeting.get_waarde()
 
     @afmeting.setter
     def afmeting(self, value):
@@ -63,7 +63,7 @@ class Kast(Behuizing, PuntGeometrie, VlakGeometrie):
     @property
     def heeftVerlichting(self):
         """Geeft aan of er verlichting aanwezig is binnen de kast."""
-        return self._heeftVerlichting.waarde
+        return self._heeftVerlichting.get_waarde()
 
     @heeftVerlichting.setter
     def heeftVerlichting(self, value):
@@ -72,7 +72,7 @@ class Kast(Behuizing, PuntGeometrie, VlakGeometrie):
     @property
     def indelingsplan(self):
         """Schematisch overzicht van de indeling van de kast volgens de aanwezige technieken in vooraanzicht."""
-        return self._indelingsplan.waarde
+        return self._indelingsplan.get_waarde()
 
     @indelingsplan.setter
     def indelingsplan(self, value):
@@ -81,7 +81,7 @@ class Kast(Behuizing, PuntGeometrie, VlakGeometrie):
     @property
     def kastmateriaal(self):
         """Materiaal waaruit de kast is opgebouwd."""
-        return self._kastmateriaal.waarde
+        return self._kastmateriaal.get_waarde()
 
     @kastmateriaal.setter
     def kastmateriaal(self, value):

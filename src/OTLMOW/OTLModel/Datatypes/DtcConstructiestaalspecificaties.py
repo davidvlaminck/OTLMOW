@@ -27,7 +27,7 @@ class DtcConstructiestaalspecificatiesWaarden(AttributeInfo):
     @property
     def staalsoort(self):
         """Staalkwaliteit die wordt gebruikt volgens Europese normen."""
-        return self._staalsoort.waarde
+        return self._staalsoort.get_waarde()
 
     @staalsoort.setter
     def staalsoort(self, value):
@@ -36,7 +36,7 @@ class DtcConstructiestaalspecificatiesWaarden(AttributeInfo):
     @property
     def walsmethode(self):
         """Op welke manier het staal gewalst is."""
-        return self._walsmethode.waarde
+        return self._walsmethode.get_waarde()
 
     @walsmethode.setter
     def walsmethode(self, value):

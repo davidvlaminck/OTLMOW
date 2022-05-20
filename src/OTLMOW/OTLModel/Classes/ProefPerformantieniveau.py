@@ -34,7 +34,7 @@ class ProefPerformantieniveau(Proef, PuntGeometrie, LijnGeometrie, VlakGeometrie
     @property
     def performantieniveau(self):
         """Het niveau waarop de obstakelbeveiliger is getest."""
-        return self._performantieniveau.waarde
+        return self._performantieniveau.get_waarde()
 
     @performantieniveau.setter
     def performantieniveau(self, value):

@@ -49,7 +49,7 @@ class HeeftBetrokkene(DirectioneleRelatie):
     @property
     def datumAanvang(self):
         """De datum waarop de betrokkenheid effectief geworden is of zal worden. """
-        return self._datumAanvang.waarde
+        return self._datumAanvang.get_waarde()
 
     @datumAanvang.setter
     def datumAanvang(self, value):
@@ -58,7 +58,7 @@ class HeeftBetrokkene(DirectioneleRelatie):
     @property
     def datumEinde(self):
         """De datum waarop de betrokkenheid beëindigd is of moet beëindigd worden. """
-        return self._datumEinde.waarde
+        return self._datumEinde.get_waarde()
 
     @datumEinde.setter
     def datumEinde(self, value):
@@ -67,7 +67,7 @@ class HeeftBetrokkene(DirectioneleRelatie):
     @property
     def rol(self):
         """Type voor de manier waarop een agent betrokken is bij een object."""
-        return self._rol.waarde
+        return self._rol.get_waarde()
 
     @rol.setter
     def rol(self, value):
@@ -76,7 +76,7 @@ class HeeftBetrokkene(DirectioneleRelatie):
     @property
     def specifiekeContactinfo(self):
         """Specifieke contactgegevens van de betrokken agent met betrekking tot het gekoppelde object."""
-        return self._specifiekeContactinfo.waarde
+        return self._specifiekeContactinfo.get_waarde()
 
     @specifiekeContactinfo.setter
     def specifiekeContactinfo(self, value):

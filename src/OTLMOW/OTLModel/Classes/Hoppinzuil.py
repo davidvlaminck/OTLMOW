@@ -44,7 +44,7 @@ class Hoppinzuil(AIMObject, PuntGeometrie):
     @property
     def weergegevenVervoersmodiOpKaart(self):
         """De verschillende beschikbare vervoersmodi die op de bijhorende kaart worden weergegeven."""
-        return self._weergegevenVervoersmodiOpKaart.waarde
+        return self._weergegevenVervoersmodiOpKaart.get_waarde()
 
     @weergegevenVervoersmodiOpKaart.setter
     def weergegevenVervoersmodiOpKaart(self, value):
@@ -53,7 +53,7 @@ class Hoppinzuil(AIMObject, PuntGeometrie):
     @property
     def zuilnaam(self):
         """Naam van het hoppinpunt die verwijst naar een duidelijke en herkenbare plaatsnaam."""
-        return self._zuilnaam.waarde
+        return self._zuilnaam.get_waarde()
 
     @zuilnaam.setter
     def zuilnaam(self, value):
@@ -62,7 +62,7 @@ class Hoppinzuil(AIMObject, PuntGeometrie):
     @property
     def zuilnummer(self):
         """Uniek identificatienummer dat elke zuil krijgt en dat wordt opgenomen in de hoppinpuntendatabank."""
-        return self._zuilnummer.waarde
+        return self._zuilnummer.get_waarde()
 
     @zuilnummer.setter
     def zuilnummer(self, value):

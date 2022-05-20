@@ -32,7 +32,7 @@ class Brandleiding(Persleiding):
     @property
     def isGeisoleerd(self):
         """Geeft aan of de brandleiding voorzien is van eigen isolatie."""
-        return self._isGeisoleerd.waarde
+        return self._isGeisoleerd.get_waarde()
 
     @isGeisoleerd.setter
     def isGeisoleerd(self, value):
@@ -41,7 +41,7 @@ class Brandleiding(Persleiding):
     @property
     def leidingdruk(self):
         """De vastgelegde druk die moet voorzien worden op de leiding in functie van de aanvoer van bluswater."""
-        return self._leidingdruk.waarde
+        return self._leidingdruk.get_waarde()
 
     @leidingdruk.setter
     def leidingdruk(self, value):

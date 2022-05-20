@@ -1,0 +1,2 @@
+class DotNotationError(ValueError):
+    pass

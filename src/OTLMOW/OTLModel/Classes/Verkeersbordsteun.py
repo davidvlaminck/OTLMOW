@@ -92,7 +92,7 @@ class Verkeersbordsteun(AIMNaamObject, Draagconstructie, PuntGeometrie):
     @property
     def breedte(self):
         """De breedte van een verkeersbordpaal in millimeter."""
-        return self._breedte.waarde
+        return self._breedte.get_waarde()
 
     @breedte.setter
     def breedte(self, value):
@@ -101,7 +101,7 @@ class Verkeersbordsteun(AIMNaamObject, Draagconstructie, PuntGeometrie):
     @property
     def diameter(self):
         """De diameter van de verkeersbordpaal in millimeter."""
-        return self._diameter.waarde
+        return self._diameter.get_waarde()
 
     @diameter.setter
     def diameter(self, value):
@@ -110,7 +110,7 @@ class Verkeersbordsteun(AIMNaamObject, Draagconstructie, PuntGeometrie):
     @property
     def fabricagevoorschrift(self):
         """Genormaliseerde referentie waaraan het infrastructuur element aan voldoet."""
-        return self._fabricagevoorschrift.waarde
+        return self._fabricagevoorschrift.get_waarde()
 
     @fabricagevoorschrift.setter
     def fabricagevoorschrift(self, value):
@@ -119,7 +119,7 @@ class Verkeersbordsteun(AIMNaamObject, Draagconstructie, PuntGeometrie):
     @property
     def lengte(self):
         """De lengte van de verkeersbordpaal in meter."""
-        return self._lengte.waarde
+        return self._lengte.get_waarde()
 
     @lengte.setter
     def lengte(self, value):
@@ -128,7 +128,7 @@ class Verkeersbordsteun(AIMNaamObject, Draagconstructie, PuntGeometrie):
     @property
     def lengteBovengronds(self):
         """De bovengrondse lengte van de verkeersbordpaal in meter."""
-        return self._lengteBovengronds.waarde
+        return self._lengteBovengronds.get_waarde()
 
     @lengteBovengronds.setter
     def lengteBovengronds(self, value):
@@ -137,7 +137,7 @@ class Verkeersbordsteun(AIMNaamObject, Draagconstructie, PuntGeometrie):
     @property
     def lengteOndergronds(self):
         """De ondergrondse lengte van de verkeersbordpaal in meter."""
-        return self._lengteOndergronds.waarde
+        return self._lengteOndergronds.get_waarde()
 
     @lengteOndergronds.setter
     def lengteOndergronds(self, value):
@@ -146,7 +146,7 @@ class Verkeersbordsteun(AIMNaamObject, Draagconstructie, PuntGeometrie):
     @property
     def operationeleStatus(self):
         """De operationele status van de verkeersbordsteun."""
-        return self._operationeleStatus.waarde
+        return self._operationeleStatus.get_waarde()
 
     @operationeleStatus.setter
     def operationeleStatus(self, value):
@@ -155,7 +155,7 @@ class Verkeersbordsteun(AIMNaamObject, Draagconstructie, PuntGeometrie):
     @property
     def type(self):
         """Het type verkeersbordpaal."""
-        return self._type.waarde
+        return self._type.get_waarde()
 
     @type.setter
     def type(self, value):
@@ -164,7 +164,7 @@ class Verkeersbordsteun(AIMNaamObject, Draagconstructie, PuntGeometrie):
     @property
     def wanddikte(self):
         """De dikte van de wand in millimeter."""
-        return self._wanddikte.waarde
+        return self._wanddikte.get_waarde()
 
     @wanddikte.setter
     def wanddikte(self, value):

@@ -34,7 +34,7 @@ class KwantWrdInKiloNewtonPerMeterWaarden(AttributeInfo):
     @property
     def waarde(self):
         """Bevat een getal die bij het datatype hoort."""
-        return self._waarde.waarde
+        return self._waarde.get_waarde()
 
     @waarde.setter
     def waarde(self, value):
@@ -48,6 +48,7 @@ class KwantWrdInKiloNewtonPerMeter(OTLField, AttributeInfo):
     label = 'Kwantitatieve waarde in kiloNewton per meter'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInKiloNewtonPerMeter'
     definition = 'Een kwantitatieve waarde die een getal in  kiloNewton per meter uitdrukt.'
+    waarde_shortcut_applicable = True
     waardeObject = KwantWrdInKiloNewtonPerMeterWaarden
 
     def __str__(self):

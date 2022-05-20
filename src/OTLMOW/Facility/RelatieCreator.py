@@ -25,10 +25,10 @@ class RelatieCreator:
         relatie.assetId.identificator = bron.assetId.identificator + '_-_' + doel.assetId.identificator
         relatie.assetId.toegekendDoor = 'OTLMOW'
 
-        #if relatie.bronAssetId.toegekendDoor != 'AWV':
-        relatie.bron.typeURI = bron.typeURI
-        #if relatie.doelAssetId.toegekendDoor != 'AWV':
-        relatie.doel.typeURI = doel.typeURI
+        if relatie.bronAssetId.toegekendDoor != 'AWV':
+            relatie.bron.typeURI = bron.typeURI
+        if relatie.doelAssetId.toegekendDoor != 'AWV':
+            relatie.doel.typeURI = doel.typeURI
         return relatie
 
     def create_betrokkenerelation(self, bron: RelatieInteractor, doel: RelatieInteractor, relatie=HeeftBetrokkene) -> RelatieObject:

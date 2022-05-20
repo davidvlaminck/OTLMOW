@@ -112,12 +112,14 @@ class OtlAssetJSONEncoderTests(unittest.TestCase):
 
         self.assertEqual(expected, json_instance)
 
-    @unittest.skip('make a test for a date field')
-    def test_JsonEncode_Date_DatumOprichtingObject(self):
-        a = Aftakking()
-        a.datumOprichtingObject = datetime(2022, 1, 20)
+    def test_JsonEncode_DateTimeField(self):
+        otl_facility = OTLFacility(None, settings_path='C:\\resources\\settings_OTLMOW.json')
+        encoder = OtlAssetJSONEncoder(settings=otl_facility.settings)
 
-        json = OtlAssetJSONEncoder().encode(a)
-        expected = '{"datumOprichtingObject": "2022-01-20", "typeURI": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Aftakking"}'
+        instance = AllCasesTestClass()
+        instance.testDateTimeField = datetime(2022, 2, 2, 22, 22, 22)
+        json_instance = encoder.encode(instance)
+        expected = '{"testDateTimeField": "2022-02-02 22:22:22", ' \
+                   '"typeURI": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#AllCasesTestClass"}'
 
-        self.assertEqual(expected, json)
+        self.assertEqual(expected, json_instance)

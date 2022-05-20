@@ -44,11 +44,8 @@ class StandaardPostFactory:
         selectie.extend(mappings_met_invulbare_attributen)
 
         for mapping in mappings_met_invulbare_attributen:
-            attribuut = DotnotatieHelper.get_attributes_by_dotnotatie(otlObject, mapping.dotnotatie)
-            if attribuut.field.waardeObject is not None and not attribuut.field.waarde_shortcut_applicable:
-                waarde = attribuut.waarde.waarde
-            else:
-                waarde = attribuut.waarde
+            attribuut = DotnotatieHelper.get_attributes_by_dotnotatie(otlObject, mapping.dotnotatie, waarde_shortcut_applicable=True)
+            waarde = attribuut.waarde
             if waarde is None:
                 continue
             selectie = list(filter(lambda m: DotnotatieHelper.convert_waarde_to_correct_type(m.dotnotatie == mapping.dotnotatie and m.defaultWaarde, attribuut) == waarde, selectie))

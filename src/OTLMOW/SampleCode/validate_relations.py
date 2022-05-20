@@ -1,17 +1,12 @@
 from OTLMOW.Facility.OTLFacility import OTLFacility
-from OTLMOW.Loggers.ConsoleLogger import ConsoleLogger
-from OTLMOW.Loggers.LoggerCollection import LoggerCollection
-from OTLMOW.Loggers.TxtLogger import TxtLogger
 from OTLMOW.ModelGenerator.BaseClasses.RelatieRichting import RelatieRichting
 from OTLMOW.OTLModel.Classes.DNBLaagspanning import DNBLaagspanning
 from OTLMOW.OTLModel.Classes.EnergiemeterDNB import EnergiemeterDNB
 from OTLMOW.OTLModel.Classes.Voedt import Voedt
 
 if __name__ == '__main__':
-    logger = LoggerCollection([
-        TxtLogger(r'C:\temp\pythonLogging\pythonlog.txt'),
-        ConsoleLogger()])
-    otl_facility = OTLFacility(logger)
+    otl_facility = OTLFacility(logfile=r'C:\temp\pythonLogging\pythonlog.txt',
+                               settings_path="C:\\resources\\settings_OTLMOW.json")
 
     # use the generated datamodel to create instances of OTL classes
     dnb = DNBLaagspanning()

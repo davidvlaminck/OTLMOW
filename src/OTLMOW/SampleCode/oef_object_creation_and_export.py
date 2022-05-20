@@ -3,19 +3,14 @@ from datetime import datetime
 from OTLMOW.Facility.FileFormats.EMInfraImporter import EMInfraImporter
 from OTLMOW.Facility.OTLFacility import OTLFacility
 from OTLMOW.Facility.RequesterFactory import RequesterFactory
-from OTLMOW.Loggers.ConsoleLogger import ConsoleLogger
-from OTLMOW.Loggers.LoggerCollection import LoggerCollection
-from OTLMOW.Loggers.TxtLogger import TxtLogger
 from OTLMOW.OTLModel.Classes.DNBLaagspanning import DNBLaagspanning
 from OTLMOW.OTLModel.Classes.EnergiemeterDNB import EnergiemeterDNB
 from OTLMOW.OTLModel.Classes.HoortBij import HoortBij
 from OTLMOW.OTLModel.Classes.Voedt import Voedt
 
 if __name__ == '__main__':
-    logger = LoggerCollection([
-        TxtLogger(r'C:\temp\pythonLogging\pythonlog.txt'),
-        ConsoleLogger()])
-    otl_facility = OTLFacility(logger, settings_path='C:\\resources\\settings_OTLMOW.json')
+    otl_facility = OTLFacility(logfile=r'C:\temp\pythonLogging\pythonlog.txt',
+                               settings_path="C:\\resources\\settings_OTLMOW.json")
 
     # use the generated datamodel to create instances of OTL classes
     dnb = DNBLaagspanning()
@@ -53,7 +48,6 @@ if __name__ == '__main__':
     hoortBijrelatie2.assetId.identificator = "50004784-LS"
     hoortBijrelatie2.bronAssetId.identificator = meter.assetId.identificator
     hoortBijrelatie2.doelAssetId.identificator = ls.assetId.identificator
-
 
     lijst_otl_objecten = [dnb, meter, voedingsrelatie, ls,hoortBijrelatie1, hoortBijrelatie2]
 

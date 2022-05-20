@@ -2,9 +2,7 @@ from datetime import datetime
 
 from OTLMOW.Facility.FileFormats.EMInfraImporter import EMInfraImporter
 from OTLMOW.Facility.OTLFacility import OTLFacility
-from OTLMOW.Loggers.ConsoleLogger import ConsoleLogger
-from OTLMOW.Loggers.LoggerCollection import LoggerCollection
-from OTLMOW.Loggers.TxtLogger import TxtLogger
+from OTLMOW.Facility.RequesterFactory import RequesterFactory
 from OTLMOW.OTLModel.Classes.Bevestiging import Bevestiging
 from OTLMOW.OTLModel.Classes.Flitsgroep import Flitsgroep
 from OTLMOW.OTLModel.Classes.Flitspaalbehuizing import Flitspaalbehuizing
@@ -15,10 +13,9 @@ from OTLMOW.OTLModel.Classes.Voedt import Voedt
 from OTLMOW.OTLModel.Classes.Wegkantkast import Wegkantkast
 
 if __name__ == '__main__':
-    logger = LoggerCollection([
-        TxtLogger(r'C:\temp\pythonLogging\pythonlog.txt'),
-        ConsoleLogger()])
-    otl_facility = OTLFacility(logger, enable_relation_features=True)
+    otl_facility = OTLFacility(logfile=r'C:\temp\pythonLogging\pythonlog.txt',
+                               settings_path="C:\\resources\\settings_OTLMOW.json",
+                               enable_relation_features=True)
 
     # add EM-Infra assets through API
     input_uuids = ['6fec1fbf-9037-4daa-976d-4ccd54e2d554', '1c6dbec3-62e6-4e30-8fe1-19ba58a73151',
@@ -26,9 +23,8 @@ if __name__ == '__main__':
                    '60b2dcaa-69f1-4fac-9062-9c1381eecd2e', '85ab7233-4d69-4702-841e-aace94b42410',
                    'f63bfc00-2951-401e-8dbb-6667a479e0ea']
 
-    cert_path = r'C:\resources\datamanager_eminfra_prd.awv.vlaanderen.be.crt'
-    key_path = r'C:\resources\datamanager_eminfra_prd.awv.vlaanderen.be.key'
-    importer = EMInfraImporter(cert_path=cert_path, key_path=key_path)
+    requester = RequesterFactory.create_requester(settings=otl_facility.settings, auth_type='JWT', env='prd')
+    importer = EMInfraImporter(requester=requester)
 
     # fetch assets, based on a list of uuids
     assets = importer.import_assets_from_webservice_by_uuids(input_uuids)

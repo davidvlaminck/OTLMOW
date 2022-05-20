@@ -3,9 +3,6 @@ from datetime import datetime
 from OTLMOW.Facility.FileFormats.EMInfraImporter import EMInfraImporter
 from OTLMOW.Facility.OTLFacility import OTLFacility
 from OTLMOW.Facility.RequesterFactory import RequesterFactory
-from OTLMOW.Loggers.ConsoleLogger import ConsoleLogger
-from OTLMOW.Loggers.LoggerCollection import LoggerCollection
-from OTLMOW.Loggers.TxtLogger import TxtLogger
 from OTLMOW.OTLModel.Classes.Armatuurcontroller import Armatuurcontroller
 from OTLMOW.OTLModel.Classes.Bevestiging import Bevestiging
 from OTLMOW.OTLModel.Classes.HoortBij import HoortBij
@@ -22,12 +19,9 @@ from OTLMOW.OTLModel.Classes.VoedtAangestuurd import VoedtAangestuurd
 from OTLMOW.OTLModel.Classes.Wegkantkast import Wegkantkast
 
 if __name__ == '__main__':
-    logger = LoggerCollection([
-        TxtLogger(r'C:\temp\pythonLogging\pythonlog.txt'),
-        ConsoleLogger()])
-    otl_facility = OTLFacility(instanceLogger=logger,
-                               enable_relation_features=True,
-                               settings_path='C:\\resources\\settings_OTLMOW.json')
+    otl_facility = OTLFacility(logfile=r'C:\temp\pythonLogging\pythonlog.txt',
+                               settings_path="C:\\resources\\settings_OTLMOW.json",
+                               enable_relation_features=True)
 
     # add EM-Infra assets through API
     input_uuids = ['e8b4022a-00d6-4b01-9766-0e50ecfda150', '63b832e0-16be-4edb-a6ac-2fe8ff3f786b',

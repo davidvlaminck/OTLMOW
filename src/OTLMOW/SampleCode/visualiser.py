@@ -1,14 +1,9 @@
 ﻿from OTLMOW.Facility.OTLFacility import OTLFacility
-from OTLMOW.Loggers.ConsoleLogger import ConsoleLogger
-from OTLMOW.Loggers.TxtLogger import TxtLogger
-from OTLMOW.Loggers.LoggerCollection import LoggerCollection
 
 
 if __name__ == '__main__':
-    logger = LoggerCollection([
-        TxtLogger(r'C:\temp\pythonLogging\pythonlog.txt'),
-        ConsoleLogger()])
-    otl_facility = OTLFacility(logger)
+    otl_facility = OTLFacility(logfile=r'C:\temp\pythonLogging\pythonlog.txt',
+                               settings_path="C:\\resources\\settings_OTLMOW.json")
 
     jsonPath = "DA-2022-00006_export_slagbomen.json"
 

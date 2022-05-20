@@ -1,14 +1,9 @@
 from OTLMOW.Facility.OTLFacility import OTLFacility
-from OTLMOW.Loggers.ConsoleLogger import ConsoleLogger
-from OTLMOW.Loggers.LoggerCollection import LoggerCollection
-from OTLMOW.Loggers.TxtLogger import TxtLogger
 
 if __name__ == '__main__':
     # create the main facade class: OTLFacility
-    logger = LoggerCollection([
-        TxtLogger(r'C:\temp\pythonLogging\pythonlog.txt'),
-        ConsoleLogger()])
-    otl_facility = OTLFacility(logger)
+    otl_facility = OTLFacility(logfile=r'C:\temp\pythonLogging\pythonlog.txt',
+                               settings_path="C:\\resources\\settings_OTLMOW.json")
 
     # create a datamodel based on the postenmapping SQLite
     otl_file_location = '../InputFiles/Postenmapping_v1.0.0_RC1.db'

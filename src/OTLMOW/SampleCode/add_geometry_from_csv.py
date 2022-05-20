@@ -3,9 +3,6 @@ from csv import reader
 from OTLMOW.Facility.FileFormats.EMInfraImporter import EMInfraImporter
 from OTLMOW.Facility.OTLFacility import OTLFacility
 from OTLMOW.Facility.RequesterFactory import RequesterFactory
-from OTLMOW.Loggers.ConsoleLogger import ConsoleLogger
-from OTLMOW.Loggers.LoggerCollection import LoggerCollection
-from OTLMOW.Loggers.TxtLogger import TxtLogger
 from OTLMOW.OTLModel.Classes.HoortBij import HoortBij
 from OTLMOW.OTLModel.Classes.Netwerkelement import Netwerkelement
 
@@ -13,10 +10,8 @@ from OTLMOW.OTLModel.Classes.Netwerkelement import Netwerkelement
 # goal:
 # take list of uuid's and find the related legacy element to inherit geometry from
 if __name__ == '__main__':
-    logger = LoggerCollection([
-        TxtLogger(r'C:\temp\pythonLogging\pythonlog.txt'),
-        ConsoleLogger()])
-    otl_facility = OTLFacility(logger, settings_path="C:\\resources\\settings_OTLMOW.json")
+    otl_facility = OTLFacility(logfile=r'C:\temp\pythonLogging\pythonlog.txt',
+                               settings_path="C:\\resources\\settings_OTLMOW.json")
     requester = RequesterFactory.create_requester(settings=otl_facility.settings, auth_type='JWT', env='prd')
     importer = EMInfraImporter(requester=requester)
 

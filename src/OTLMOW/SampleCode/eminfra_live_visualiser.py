@@ -3,16 +3,11 @@
 from OTLMOW.Facility.FileFormats.EMInfraImporter import EMInfraImporter
 from OTLMOW.Facility.OTLFacility import OTLFacility
 from OTLMOW.Facility.RequesterFactory import RequesterFactory
-from OTLMOW.Loggers.ConsoleLogger import ConsoleLogger
-from OTLMOW.Loggers.TxtLogger import TxtLogger
-from OTLMOW.Loggers.LoggerCollection import LoggerCollection
 
 
 if __name__ == '__main__':
-    logger = LoggerCollection([
-        TxtLogger(r'C:\temp\pythonLogging\pythonlog.txt'),
-        ConsoleLogger()])
-    otl_facility = OTLFacility(logger, settings_path='C:\\resources\\settings_OTLMOW.json')
+    otl_facility = OTLFacility(logfile=r'C:\temp\pythonLogging\pythonlog.txt',
+                               settings_path="C:\\resources\\settings_OTLMOW.json")
 
     input_uuids = ['eb45c3a5-2bf9-4c56-b665-2a7dafb6b709', 'c22298c5-1978-49c9-83ec-a2ffd7a71665',
                    '2caf2a3c-bc45-454c-8602-26dbfc2ea3bd', '3d22fd7e-d45d-4553-973f-87a18c29f428',

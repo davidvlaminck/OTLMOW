@@ -2,18 +2,13 @@ from OTLMOW.Facility.AgentCollection import AgentCollection
 from OTLMOW.Facility.FileFormats.EMInfraImporter import EMInfraImporter
 from OTLMOW.Facility.OTLFacility import OTLFacility
 from OTLMOW.Facility.RequesterFactory import RequesterFactory
-from OTLMOW.Loggers.ConsoleLogger import ConsoleLogger
-from OTLMOW.Loggers.LoggerCollection import LoggerCollection
-from OTLMOW.Loggers.TxtLogger import TxtLogger
 from OTLMOW.OTLModel.Classes.HoortBij import HoortBij
 from OTLMOW.OTLModel.Classes.Wegkantkast import Wegkantkast
 
 if __name__ == '__main__':
-    # create the main facade class: OTLFacility
-    logger = LoggerCollection([
-        TxtLogger(r'C:\temp\pythonLogging\pythonlog.txt'),
-        ConsoleLogger()])
-    otl_facility = OTLFacility(logger, settings_path='C:\\resources\\settings_OTLMOW.json', enable_relation_features=True)
+    otl_facility = OTLFacility(logfile=r'C:\temp\pythonLogging\pythonlog.txt',
+                               settings_path="C:\\resources\\settings_OTLMOW.json",
+                               enable_relation_features=True)
 
     input_uuids = ['0199a655-8b63-4250-973b-a4d997a41325', '04040026-ded1-47b0-b0b1-a337393dd99b',
                    '054ec109-3ce6-4c04-817e-828ee4b30099', '055d54e7-0d60-471b-a256-9395b7916a35',

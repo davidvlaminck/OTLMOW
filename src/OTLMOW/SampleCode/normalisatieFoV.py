@@ -1,12 +1,10 @@
 from OTLMOW.Facility.OTLFacility import OTLFacility
-from OTLMOW.Loggers.TxtLogger import TxtLogger
 from OTLMOW.OTLModel.Classes.AanvullendeGeometrie import AanvullendeGeometrie
-from OTLMOW.OTLModel.Classes.InvasieveExoten import InvasieveExoten
 
 def normaliseer_exoten():
     # create the main facade class: OTLFacility
-    logger = TxtLogger(r'C:\temp\pythonLogging\pythonlog.txt')
-    otl_facility = OTLFacility(logger)
+    otl_facility = OTLFacility(logfile=r'C:\temp\pythonLogging\pythonlog.txt',
+                               settings_path="C:\\resources\\settings_OTLMOW.json")
 
     # import from a Davie json file
     jsonPath = "C:\\resources\\DA-2022-00553_export.json"
@@ -31,7 +29,7 @@ def normaliseer_exoten():
         lijst_objecten.append(FoV)
 
     # write to a json file that can be uploaded in Davie
-    otl_facility.davieExporter.export_objects_to_json_file(lijst_objecten, 'C:\\resources\\DA-2022-00553_normalisatie_FoV_prd_voor_import.json')
+    otl_facility.jsonExporter.export_objects_to_json_file(lijst_objecten, 'C:\\resources\\DA-2022-00553_normalisatie_FoV_prd_voor_import.json')
 
 if __name__ == '__main__':
     normaliseer_exoten()

@@ -17,46 +17,45 @@ OTLMOW has dependencies on rdflib and pyvis but these are automatically handled 
 With every OTL update, this piece of code will allow the creation of an updated Python datamodel. The generated classes are not backwards compatible.
 ```  
 from src.OTLMOW.Facility.OTLFacility import OTLFacility
-from src.OTLMOW.Loggers.TxtLogger import TxtLogger
 
 # create the main facade class: OTLFacility
-logger = TxtLogger(r'C:\temp\pythonLogging\pythonlog.txt')
-otl_facility = OTLFacility(logger)
+otl_facility = OTLFacility(logfile=r'C:\temp\pythonLogging\pythonlog.txt',
+                           settings_path="C:\\resources\\settings_OTLMOW.json")
 
 # create a datamodel based on the OTL SQLite database and ttl files stored on the github
-otl_file_location = 'InputFiles/OTL.db'
-otl_facility.init_otl_model_creator(otl_file_location)
+otl_file_location = '../InputFiles/OTL 2.3.db'
+GA_file_location = '../InputFiles/Geometrie_Artefact_2.3.RC2.db'
+otl_facility.init_otl_model_creator(otl_file_location, GA_file_location)
 otl_facility.create_otl_datamodel()
 ```
 ## Using the OTL Datamodel instances to create objects and encode them in JSON
 The datamodel generates classes, allowing the properties to be filled with data.
-Use the property 'waarde' to change the value of a property and to allow data validation.
 ```  
+from datetime import datetime
 from src.OTLMOW.Facility.OTLFacility import OTLFacility
-from src.OTLMOW.Loggers.TxtLogger import TxtLogger
 from src.OTLMOW.OTLModel.Classes.DNBLaagspanning import DNBLaagspanning
 from src.OTLMOW.OTLModel.Classes.EnergiemeterDNB import EnergiemeterDNB
 from src.OTLMOW.OTLModel.Classes.Voedt import Voedt
 
 # create the main facade class: OTLFacility
-logger = TxtLogger(r'C:\temp\pythonLogging\pythonlog.txt')
-otl_facility = OTLFacility(logger)
+otl_facility = OTLFacility(logfile=r'C:\temp\pythonLogging\pythonlog.txt',
+                           settings_path="C:\\resources\\settings_OTLMOW.json")
 
 # use the generated datamodel to create instances of OTL classes
 dnb = DNBLaagspanning()
 dnb.naam = 'A0024'
 dnb.toestand = 'in-gebruik'
-# dnb.toestand = 'foute toestand'  # raises ValueError because the value is not valid
 dnb.assetId.identificator = 'eigen_Id_voor_A0024'
 dnb.eanNummer = '541448860003995215'
 dnb.adresVolgensDNB.gemeente = 'brasschaat'
 dnb.adresVolgensDNB.postcode = '2930'
 dnb.adresVolgensDNB.straatnaam = 'Bredabaan 90'
+# dnb.toestand = 'foute toestand'  # wouls raise ValueError because the value is not valid
 
 meter = EnergiemeterDNB()
 meter.naam = '50004784'
 meter.assetId.identificator = 'eigen_Id_voor_50004784'
-meter.aantalTelwerken.waarde = 1
+meter.aantalTelwerken = 1
 meter.geometry = 'POINT Z (157696.6 219065.5 0)'
 
 voedingsrelatie = Voedt()
@@ -96,7 +95,7 @@ output:
         "assetId": {
             "identificator": "eigen_Id_voor_50004784"
         },
-        "geometry": "POINT Z(157696.6 219065.5 0)",
+        "geometry": "POINT Z (157696.6 219065.5 0)",
         "naam": "50004784",
         "typeURI": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#EnergiemeterDNB"
     },

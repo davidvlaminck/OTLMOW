@@ -5,6 +5,7 @@ from collections import defaultdict
 from OTLMOW.Facility.AssetFactory import AssetFactory
 from OTLMOW.Facility.FileFormats.DavieImporter import DavieImporter
 # from OTLMOW.Facility.JsonDecoder import JsonDecoder
+from OTLMOW.Facility.FileFormats.JsonDecoder import JsonDecoder
 from OTLMOW.Facility.FileFormats.JsonExporter import JsonExporter
 from OTLMOW.Facility.RelatieCreator import RelatieCreator
 from OTLMOW.Facility.Visualiser import Visualiser
@@ -26,7 +27,9 @@ from OTLMOW.PostenMapping.PostenInMemoryCreator import PostenInMemoryCreator
 
 
 class OTLFacility:
-    def __init__(self, loggingLevel=logging.WARNING, logfile='logs.txt', enable_relation_features: bool = False, settings_path: str = ''):
+    def __init__(self, loggingLevel: int = logging.WARNING, logfile: str = 'logs.txt',
+                 enable_relation_features: bool = False,
+                 settings_path: str = ''):
         self.settings: dict = {}
         if settings_path != '':
             self.load_settings(settings_path)
@@ -47,7 +50,7 @@ class OTLFacility:
         self.posten_creator = None
         self.jsonExporter = JsonExporter(self.settings)
         self.encoder = OtlAssetJSONEncoder(indent=4, settings=self.settings)
-        #self.davieDecoder = JsonDecoder()
+        self.davieDecoder = JsonDecoder(self.settings)
         self.asset_factory = AssetFactory()
         self.relatieValidator: None | RelatieValidator = None
         self.relatie_creator: None | RelatieCreator = None

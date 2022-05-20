@@ -2,7 +2,6 @@ from timeit import default_timer as timer
 
 from OTLMOW.Facility.JsonLdDbSource import JsonLdDbSource
 from OTLMOW.Facility.OTLFacility import OTLFacility
-from OTLMOW.Loggers.ConsoleLogger import ConsoleLogger
 from OTLMOW.OEFModel.Classes.GebouwLegacy import GebouwLegacy
 from OTLMOW.OEFModel.Classes.HS import HS
 from OTLMOW.OEFModel.Classes.HSCabineLegacy import HSCabineLegacy
@@ -84,7 +83,8 @@ if __name__ == '__main__':
     algoritme = AlgoritmeVoedingsbronZoeken(jsonldsource)
     algoritme.use_algorithm_to_collect_assets(asset)
 
-    otl_facility = OTLFacility(ConsoleLogger())
+    otl_facility = OTLFacility(logfile=r'C:\temp\pythonLogging\pythonlog.txt',
+                               settings_path="C:\\resources\\settings_OTLMOW.json")
     otl_facility.visualiser.show(algoritme.collected_assets)
 
     end = timer()

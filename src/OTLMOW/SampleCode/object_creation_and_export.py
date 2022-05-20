@@ -1,29 +1,26 @@
 from datetime import datetime
 
-from OTLMOW.Facility.OTLFacility import OTLFacility
-from OTLMOW.Loggers.ConsoleLogger import ConsoleLogger
-from OTLMOW.Loggers.LoggerCollection import LoggerCollection
-from OTLMOW.Loggers.TxtLogger import TxtLogger
-from OTLMOW.OTLModel.Classes.DNBLaagspanning import DNBLaagspanning
-from OTLMOW.OTLModel.Classes.EnergiemeterDNB import EnergiemeterDNB
-from OTLMOW.OTLModel.Classes.Voedt import Voedt
+from src.OTLMOW.Facility.OTLFacility import OTLFacility
+from src.OTLMOW.OTLModel.Classes.DNBLaagspanning import DNBLaagspanning
+from src.OTLMOW.OTLModel.Classes.EnergiemeterDNB import EnergiemeterDNB
+from src.OTLMOW.OTLModel.Classes.Voedt import Voedt
+
 
 if __name__ == '__main__':
-    logger = LoggerCollection([
-        TxtLogger(r'C:\temp\pythonLogging\pythonlog.txt'),
-        ConsoleLogger()])
-    otl_facility = OTLFacility(logger)
+    # create the main facade class: OTLFacility
+    otl_facility = OTLFacility(logfile=r'C:\temp\pythonLogging\pythonlog.txt',
+                               settings_path="C:\\resources\\settings_OTLMOW.json")
 
     # use the generated datamodel to create instances of OTL classes
     dnb = DNBLaagspanning()
     dnb.naam = 'A0024'
     dnb.toestand = 'in-gebruik'
-    # dnb.toestand = 'foute toestand'  # raises ValueError
     dnb.assetId.identificator = 'eigen_Id_voor_A0024'
     dnb.eanNummer = '541448860003995215'
     dnb.adresVolgensDNB.gemeente = 'brasschaat'
     dnb.adresVolgensDNB.postcode = '2930'
     dnb.adresVolgensDNB.straatnaam = 'Bredabaan 90'
+    # dnb.toestand = 'foute toestand'  # wouls raise ValueError because the value is not valid
 
     meter = EnergiemeterDNB()
     meter.naam = '50004784'
@@ -43,5 +40,5 @@ if __name__ == '__main__':
     print(encoded_json)
 
     # write the json file
-    filepath = f'Output/{datetime.now().strftime("%Y%m%d%H%M%S")}_export.json'
-    otl_facility.encoder.write_json_to_file(encoded_json, filepath)
+    path = f'{datetime.now().strftime("%Y%m%d%H%M%S")}_export.json'
+    otl_facility.encoder.write_json_to_file(encoded_json, path)

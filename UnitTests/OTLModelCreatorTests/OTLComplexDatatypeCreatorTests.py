@@ -3,7 +3,6 @@ import unittest
 from unittest import mock
 from unittest.mock import patch
 
-from OTLMOW.Loggers.NoneLogger import NoneLogger
 from OTLMOW.ModelGenerator.OSLOCollector import OSLOCollector
 from OTLMOW.ModelGenerator.OSLODatatypeComplex import OSLODatatypeComplex
 from OTLMOW.ModelGenerator.OSLODatatypeComplexAttribuut import OSLODatatypeComplexAttribuut
@@ -206,23 +205,10 @@ class ComplexDatatypeOSLOCollector(OSLOCollector):
                                      '        """De naam van de straat."""']
 
 
-class TestOTLComplexDatatypeCreator(OTLComplexDatatypeCreator):
-    def __init__(self, logger, collector):
-        super().__init__(logger, collector)
-
-
 class OTLComplexDatatypeCreatorTests(unittest.TestCase):
-    @patch.object(NoneLogger, "log")
-    def test_InitOTLModelCreator(self, mock):
-        logger = NoneLogger()
-        collector = OSLOCollector(mock)
-        creator = OTLComplexDatatypeCreator(logger, collector)
-        self.assertTrue(mock.called)
-
     def test_InvalidOSLODatatypeComplexEmptyUri(self):
-        logger = NoneLogger()
         collector = OSLOCollector(mock)
-        creator = OTLComplexDatatypeCreator(logger, collector)
+        creator = OTLComplexDatatypeCreator(collector)
         osloDatatypeComplex = OSLODatatypeComplex(name='name', objectUri='', definition='', label='', usagenote='',
                                                   deprecated_version='')
 
@@ -231,9 +217,8 @@ class OTLComplexDatatypeCreatorTests(unittest.TestCase):
         self.assertEqual(str(exception_empty_uri.exception), "OSLODatatypeComplex.objectUri is invalid. Value = ''")
 
     def test_InvalidOSLODatatypeComplexBadUri(self):
-        logger = NoneLogger()
         collector = OSLOCollector(mock)
-        creator = OTLComplexDatatypeCreator(logger, collector)
+        creator = OTLComplexDatatypeCreator(collector)
         osloDatatypeComplex = OSLODatatypeComplex(name='name', objectUri='Bad objectUri', definition='', label='',
                                                   usagenote='', deprecated_version='')
 
@@ -242,9 +227,8 @@ class OTLComplexDatatypeCreatorTests(unittest.TestCase):
         self.assertEqual(str(exception_bad_uri.exception), "OSLODatatypeComplex.objectUri is invalid. Value = 'Bad objectUri'")
 
     def test_InvalidOSLODatatypeComplexEmptyName(self):
-        logger = NoneLogger()
         collector = OSLOCollector(mock)
-        creator = OTLComplexDatatypeCreator(logger, collector)
+        creator = OTLComplexDatatypeCreator(collector)
         osloDatatypeComplex = OSLODatatypeComplex(name='',
                                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcIdentificator',
                                                   definition='', label='', usagenote='', deprecated_version='')
@@ -255,17 +239,15 @@ class OTLComplexDatatypeCreatorTests(unittest.TestCase):
 
     def test_InValidType(self):
         bad_Complex = True
-        logger = NoneLogger()
         collector = OSLOCollector(mock)
-        creator = OTLComplexDatatypeCreator(logger, collector)
+        creator = OTLComplexDatatypeCreator(collector)
         with self.assertRaises(ValueError) as exception_bad_name:
             creator.CreateBlockToWriteFromComplexTypes(bad_Complex)
         self.assertEqual(str(exception_bad_name.exception), "Input is not a OSLODatatypeComplex")
 
     def test_DtcIdentificatorOSLODatatypeComplex(self):
-        logger = NoneLogger()
         collector = ComplexDatatypeOSLOCollector(mock)
-        creator = OTLComplexDatatypeCreator(logger, collector)
+        creator = OTLComplexDatatypeCreator(collector)
         dtcIdentificator = collector.find_complex_datatype_by_uri(
             'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcIdentificator')
         dataToWrite = creator.CreateBlockToWriteFromComplexTypes(dtcIdentificator)
@@ -273,8 +255,6 @@ class OTLComplexDatatypeCreatorTests(unittest.TestCase):
         self.assertEqual(collector.expectedDataDtcIdentificator, dataToWrite)
 
     def test_WriteToFileDtcAdresOSLODatatypeComplex(self):
-        logger = NoneLogger()
-
         base_dir = os.path.dirname(os.path.realpath(__file__))
         file_location = f'{base_dir}/../../src/OTLMOW/InputFiles/OTL 2.3.db'
         sql_reader = SQLDbReader(file_location)
@@ -282,7 +262,7 @@ class OTLComplexDatatypeCreatorTests(unittest.TestCase):
         collector = OSLOCollector(oslo_creator)
         collector.collect()
 
-        creator = OTLComplexDatatypeCreator(logger, collector)
+        creator = OTLComplexDatatypeCreator(collector)
         dtcAdres = collector.find_complex_datatype_by_uri(
             'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAdres')
         dataToWrite = creator.CreateBlockToWriteFromComplexTypes(dtcAdres)
@@ -292,8 +272,6 @@ class OTLComplexDatatypeCreatorTests(unittest.TestCase):
         self.assertTrue(os.path.isfile(filelocation))
 
     def test_WriteToFileDtcRechtspersoonOSLODatatypeComplex(self):
-        logger = NoneLogger()
-
         base_dir = os.path.dirname(os.path.realpath(__file__))
         file_location = f'{base_dir}/../../src/OTLMOW/InputFiles/OTL 2.3.db'
         sql_reader = SQLDbReader(file_location)
@@ -301,7 +279,7 @@ class OTLComplexDatatypeCreatorTests(unittest.TestCase):
         collector = OSLOCollector(oslo_creator)
         collector.collect()
 
-        creator = OTLComplexDatatypeCreator(logger, collector)
+        creator = OTLComplexDatatypeCreator(collector)
         DtcRechtspersoon = collector.find_complex_datatype_by_uri(
             'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcRechtspersoon')
         dataToWrite = creator.CreateBlockToWriteFromComplexTypes(DtcRechtspersoon)
@@ -311,8 +289,6 @@ class OTLComplexDatatypeCreatorTests(unittest.TestCase):
         self.assertTrue(os.path.isfile(filelocation))
 
     def test_WriteToFileDtcMaaienOSLODatatypeComplex(self):
-        logger = NoneLogger()
-
         base_dir = os.path.dirname(os.path.realpath(__file__))
         file_location = f'{base_dir}/../../src/OTLMOW/InputFiles/OTL 2.3.db'
         sql_reader = SQLDbReader(file_location)
@@ -320,7 +296,7 @@ class OTLComplexDatatypeCreatorTests(unittest.TestCase):
         collector = OSLOCollector(oslo_creator)
         collector.collect()
 
-        creator = OTLComplexDatatypeCreator(logger, collector)
+        creator = OTLComplexDatatypeCreator(collector)
         DtcMaaien = collector.find_complex_datatype_by_uri(
             'https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#DtcMaaien')
         dataToWrite = creator.CreateBlockToWriteFromComplexTypes(DtcMaaien)

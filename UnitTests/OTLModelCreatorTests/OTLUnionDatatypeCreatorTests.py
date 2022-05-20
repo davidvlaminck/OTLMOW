@@ -3,7 +3,6 @@ import unittest
 from unittest import mock
 from unittest.mock import patch
 
-from OTLMOW.Loggers.NoneLogger import NoneLogger
 from OTLMOW.ModelGenerator.OSLOCollector import OSLOCollector
 from OTLMOW.ModelGenerator.OSLODatatypeUnion import OSLODatatypeUnion
 from OTLMOW.ModelGenerator.OSLODatatypeUnionAttribuut import OSLODatatypeUnionAttribuut
@@ -111,22 +110,14 @@ class UnionDatatypeOSLOCollector(OSLOCollector):
 
 
 class TestOTLUnionDatatypeCreator(OTLUnionDatatypeCreator):
-    def __init__(self, logger, collector):
-        super().__init__(logger, collector)
+    def __init__(self, collector):
+        super().__init__(collector)
 
 
 class OTLUnionDatatypeCreatorTests(unittest.TestCase):
-    @patch.object(NoneLogger, "log")
-    def test_InitOTLModelCreator(self, mock):
-        logger = NoneLogger()
-        collector = OSLOCollector(mock)
-        creator = OTLUnionDatatypeCreator(logger, collector)
-        self.assertTrue(mock.called)
-
     def test_InvalidOSLODatatypeUnionEmptyUri(self):
-        logger = NoneLogger()
         collector = OSLOCollector(mock)
-        creator = OTLUnionDatatypeCreator(logger, collector)
+        creator = OTLUnionDatatypeCreator(collector)
         osloDatatypeUnion = OSLODatatypeUnion(name='name', objectUri='', definition='', label='', usagenote='',
                                               deprecated_version='')
 
@@ -135,9 +126,8 @@ class OTLUnionDatatypeCreatorTests(unittest.TestCase):
         self.assertEqual(str(exception_empty_uri.exception), "OSLODatatypeUnion.objectUri is invalid. Value = ''")
 
     def test_InvalidOSLODatatypeUnionBadUri(self):
-        logger = NoneLogger()
         collector = OSLOCollector(mock)
-        creator = OTLUnionDatatypeCreator(logger, collector)
+        creator = OTLUnionDatatypeCreator(collector)
         osloDatatypeUnion = OSLODatatypeUnion(name='name', objectUri='Bad objectUri', definition='', label='',
                                               usagenote='',
                                               deprecated_version='')
@@ -147,9 +137,8 @@ class OTLUnionDatatypeCreatorTests(unittest.TestCase):
         self.assertEqual(str(exception_bad_uri.exception), "OSLODatatypeUnion.objectUri is invalid. Value = 'Bad objectUri'")
 
     def test_InvalidOSLODatatypeUnionEmptyName(self):
-        logger = NoneLogger()
         collector = OSLOCollector(mock)
-        creator = OTLUnionDatatypeCreator(logger, collector)
+        creator = OTLUnionDatatypeCreator(collector)
         osloDatatypeUnion = OSLODatatypeUnion(name='',
                                               objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtuLichtmastMasthoogte',
                                               definition='', label='', usagenote='',
@@ -161,17 +150,15 @@ class OTLUnionDatatypeCreatorTests(unittest.TestCase):
 
     def test_InValidType(self):
         bad_Union = True
-        logger = NoneLogger()
         collector = OSLOCollector(mock)
-        creator = OTLUnionDatatypeCreator(logger, collector)
+        creator = OTLUnionDatatypeCreator(collector)
         with self.assertRaises(ValueError) as exception_bad_name:
             creator.CreateBlockToWriteFromUnionTypes(bad_Union)
         self.assertEqual(str(exception_bad_name.exception), "Input is not a OSLODatatypeUnion")
 
     def test_DtuLichtmastMasthoogteOSLODatatypeUnion(self):
-        logger = NoneLogger()
         collector = UnionDatatypeOSLOCollector(mock)
-        creator = OTLUnionDatatypeCreator(logger, collector)
+        creator = OTLUnionDatatypeCreator(collector)
         DtuLichtmastMasthoogte = collector.find_union_datatype_by_uri(
             'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtuLichtmastMasthoogte')
         dataToWrite = creator.CreateBlockToWriteFromUnionTypes(DtuLichtmastMasthoogte)
@@ -179,15 +166,13 @@ class OTLUnionDatatypeCreatorTests(unittest.TestCase):
         self.assertEqual(collector.expectedDtu, dataToWrite)
 
     def test_WriteToFileDtcAdresOSLODatatypeUnion(self):
-        logger = NoneLogger()
-
         file_location = os.path.abspath(os.path.join(os.sep, ROOT_DIR, 'src/OTLMOW/InputFiles/OTL 2.3.db'))
         sql_reader = SQLDbReader(file_location)
         oslo_creator = OSLOInMemoryCreator(sql_reader)
         collector = OSLOCollector(oslo_creator)
         collector.collect()
 
-        creator = OTLUnionDatatypeCreator(logger, collector)
+        creator = OTLUnionDatatypeCreator(collector)
         DtuLichtmastMasthoogte = collector.find_union_datatype_by_uri(
             'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtuLichtmastMasthoogte')
         dataToWrite = creator.CreateBlockToWriteFromUnionTypes(DtuLichtmastMasthoogte)

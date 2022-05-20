@@ -2,7 +2,6 @@
 import unittest
 from unittest.mock import Mock
 
-from OTLMOW.Loggers.NoneLogger import NoneLogger
 from OTLMOW.ModelGenerator.OSLOCollector import OSLOCollector
 from OTLMOW.ModelGenerator.OSLOInMemoryCreator import OSLOInMemoryCreator
 from OTLMOW.ModelGenerator.OTLGeldigeRelatieCreator import OTLGeldigeRelatieCreator
@@ -245,12 +244,11 @@ class OTLClassCreatorTests(unittest.TestCase):
         self.assertTrue(len(listOfRelations) >= 1)
         self.assertTrue(len(listOfClasses) >= 1)
 
-        logger = NoneLogger()
         collector = OSLOCollector(mock)
         collector.relations = listOfRelations
         collector.classes = listOfClasses
 
-        creator = OTLGeldigeRelatieCreator(logger, collector)
+        creator = OTLGeldigeRelatieCreator(collector)
         dataToWrite = creator.CreateBlockToWriteFromRelations()
 
         self.assertEqual(self.expected_data, dataToWrite)

@@ -7,7 +7,7 @@ from OTLMOW.Facility.RequesterFactory import RequesterFactory
 
 class EMInfraImporterTests(unittest.TestCase):
     def test_ImportEmptyFileReturnEmptyList(self):
-        otl_facility = OTLFacility(instanceLogger=None,
+        otl_facility = OTLFacility(logfile='',
                                    enable_relation_features=True,
                                    settings_path='C:\\resources\\settings_OTLMOW.json')
 
@@ -20,7 +20,7 @@ class EMInfraImporterTests(unittest.TestCase):
         self.assertEqual(asset_id, asset.assetId.identificator)
 
     def test_get_asset_id_from_uuid_and_typeURI(self):
-        otl_facility = OTLFacility(instanceLogger=None,
+        otl_facility = OTLFacility(logfile='',
                                    enable_relation_features=True,
                                    settings_path='C:\\resources\\settings_OTLMOW.json')
 

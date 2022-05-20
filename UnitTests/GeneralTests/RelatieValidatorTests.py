@@ -2,7 +2,6 @@ import unittest
 
 from OTLMOW.Facility.AssetFactory import AssetFactory
 from OTLMOW.Facility.OTLFacility import OTLFacility
-from OTLMOW.Loggers.NoneLogger import NoneLogger
 from OTLMOW.ModelGenerator.BaseClasses.GeldigeRelatie import GeldigeRelatie
 from OTLMOW.ModelGenerator.BaseClasses.RelatieRichting import RelatieRichting
 from OTLMOW.ModelGenerator.BaseClasses.RelatieValidator import RelatieValidator
@@ -219,7 +218,7 @@ https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Stroomkring  --- https://
 
 class RelatieValidatorTestsUsingFacility(unittest.TestCase):
     def test_afterInitFacilityValidateRelatieOnObject(self):
-        facility = OTLFacility(NoneLogger(), settings_path='C:\\resources\\settings_OTLMOW.json')
+        facility = OTLFacility(logfile='', settings_path='C:\\resources\\settings_OTLMOW.json')
         a = Aftakking()
         e = EnergiemeterAWV()
         v = Voedt

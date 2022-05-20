@@ -1,14 +1,12 @@
 import os
 from abc import ABC
 
-from OTLMOW.Loggers.AbstractLogger import AbstractLogger
 from OTLMOW.ModelGenerator.OSLOCollector import OSLOCollector
 from OTLMOW.ModelGenerator.StringHelper import wrap_in_quotes
 
 
 class AbstractDatatypeCreator(ABC):
-    def __init__(self, logger: AbstractLogger, osloCollector: OSLOCollector):
-        self.logger = logger
+    def __init__(self, osloCollector: OSLOCollector):
         self.osloCollector = osloCollector
 
     def getTypeLinkFromAttribuut(self, attribuut):

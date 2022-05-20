@@ -1,24 +1,13 @@
+import logging
 import os
 import re
 
-from OTLMOW.GeometrieArtefact.GeenGeometrie import GeenGeometrie
-from OTLMOW.GeometrieArtefact.GeometrieArtefactCollector import GeometrieArtefactCollector
-from OTLMOW.GeometrieArtefact.GeometrieInheritanceProcessor import GeometrieInheritanceProcessor
-from OTLMOW.GeometrieArtefact.LijnGeometrie import LijnGeometrie
-from OTLMOW.GeometrieArtefact.PuntGeometrie import PuntGeometrie
-from OTLMOW.GeometrieArtefact.VlakGeometrie import VlakGeometrie
-from OTLMOW.Loggers.AbstractLogger import AbstractLogger
-from OTLMOW.Loggers.LogType import LogType
-from OTLMOW.ModelGenerator.AbstractDatatypeCreator import AbstractDatatypeCreator
-from OTLMOW.ModelGenerator.Inheritance import Inheritance
-from OTLMOW.ModelGenerator.OSLOClass import OSLOClass
-from OTLMOW.ModelGenerator.OSLOCollector import OSLOCollector
 from OTLMOW.ModelGenerator.StringHelper import wrap_in_quotes
 
 
 class OEFClassCreator:
-    def __init__(self, logger: AbstractLogger, attributen: [dict]):
-        logger.log("Created an instance of OEFClassCreator", LogType.INFO)
+    def __init__(self, attributen: [dict]):
+        logging.info("Created an instance of OEFClassCreator")
         self.attributen = attributen
 
     def create_block_to_write_from_class(self, oef_class: dict):

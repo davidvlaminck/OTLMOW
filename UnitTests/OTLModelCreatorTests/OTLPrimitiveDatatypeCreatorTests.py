@@ -1,9 +1,7 @@
 import os
 import unittest
 from unittest import mock
-from unittest.mock import patch
 
-from OTLMOW.Loggers.NoneLogger import NoneLogger
 from OTLMOW.ModelGenerator.OSLOCollector import OSLOCollector
 from OTLMOW.ModelGenerator.OSLODatatypePrimitive import OSLODatatypePrimitive
 from OTLMOW.ModelGenerator.OSLODatatypePrimitiveAttribuut import OSLODatatypePrimitiveAttribuut
@@ -150,23 +148,10 @@ class PrimitiveDatatypeOSLOCollector(OSLOCollector):
                                      ""]
 
 
-class TestOTLPrimitiveDatatypeCreator(OTLPrimitiveDatatypeCreator):
-    def __init__(self, logger, collector):
-        super().__init__(logger, collector)
-
-
 class OTLPrimitiveDatatypeCreatorTests(unittest.TestCase):
-    @patch.object(NoneLogger, "log")
-    def test_InitOTLModelCreator(self, mock):
-        logger = NoneLogger()
-        collector = OSLOCollector(mock)
-        creator = OTLPrimitiveDatatypeCreator(logger, collector)
-        self.assertTrue(mock.called)
-
     def test_InvalidOSLODatatypePrimitiveEmptyUri(self):
-        logger = NoneLogger()
         collector = OSLOCollector(mock)
-        creator = OTLPrimitiveDatatypeCreator(logger, collector)
+        creator = OTLPrimitiveDatatypeCreator(collector)
         osloDatatypePrimitive = OSLODatatypePrimitive(name='name', objectUri='', definition='', label='', usagenote='',
                                                       deprecated_version='')
 
@@ -175,9 +160,8 @@ class OTLPrimitiveDatatypeCreatorTests(unittest.TestCase):
         self.assertEqual(str(exception_empty_uri.exception), "OSLODatatypePrimitive.objectUri is invalid. Value = ''")
 
     def test_InvalidOSLODatatypePrimitiveBadUri(self):
-        logger = NoneLogger()
         collector = OSLOCollector(mock)
-        creator = OTLPrimitiveDatatypeCreator(logger, collector)
+        creator = OTLPrimitiveDatatypeCreator(collector)
         osloDatatypePrimitive = OSLODatatypePrimitive(name='name', objectUri='Bad objectUri', definition='', label='',
                                                       usagenote='',
                                                       deprecated_version='')
@@ -187,9 +171,8 @@ class OTLPrimitiveDatatypeCreatorTests(unittest.TestCase):
         self.assertEqual(str(exception_bad_uri.exception), "OSLODatatypePrimitive.objectUri is invalid. Value = 'Bad objectUri'")
 
     def test_InvalidOSLODatatypePrimitiveEmptyName(self):
-        logger = NoneLogger()
         collector = OSLOCollector(mock)
-        creator = OTLPrimitiveDatatypeCreator(logger, collector)
+        creator = OTLPrimitiveDatatypeCreator(collector)
         osloDatatypePrimitive = OSLODatatypePrimitive(name='',
                                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrd',
                                                       definition='', label='', usagenote='',
@@ -201,9 +184,8 @@ class OTLPrimitiveDatatypeCreatorTests(unittest.TestCase):
 
     def test_InValidType(self):
         bad_primitive = True
-        logger = NoneLogger()
         collector = OSLOCollector(mock)
-        creator = OTLPrimitiveDatatypeCreator(logger, collector)
+        creator = OTLPrimitiveDatatypeCreator(collector)
         with self.assertRaises(ValueError) as exception_bad_name:
             creator.CreateBlockToWriteFromPrimitiveTypes(bad_primitive)
         self.assertEqual(str(exception_bad_name.exception), "Input is not a OSLODatatypePrimitive")
@@ -213,16 +195,14 @@ class OTLPrimitiveDatatypeCreatorTests(unittest.TestCase):
                                                   definition="Beschrijft een boolean volgens http://www.w3.org/2001/XMLSchema#boolean.",
                                                   label="Boolean", usagenote="https://www.w3.org/TR/xmlschema-2/#boolean",
                                                   deprecated_version="")
-        logger = NoneLogger()
         collector = OSLOCollector(mock)
-        creator = OTLPrimitiveDatatypeCreator(logger, collector)
+        creator = OTLPrimitiveDatatypeCreator(collector)
         blockToWrite = creator.CreateBlockToWriteFromPrimitiveTypes(boolean_primitive)
         self.assertIsNone(blockToWrite)
 
     def test_KwantWrdInVoltOSLODatatypePrimitive(self):
-        logger = NoneLogger()
         collector = PrimitiveDatatypeOSLOCollector(mock)
-        creator = OTLPrimitiveDatatypeCreator(logger, collector)
+        creator = OTLPrimitiveDatatypeCreator(collector)
         KwantWrdInVolt = collector.find_primitive_datatype_by_uri(
             'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInVolt')
         dataToWrite = creator.CreateBlockToWriteFromPrimitiveTypes(KwantWrdInVolt)
@@ -230,9 +210,8 @@ class OTLPrimitiveDatatypeCreatorTests(unittest.TestCase):
         self.assertEqual(collector.expectedDataKwantWrdInVolt, dataToWrite)
 
     def test_RALKleurOSLODatatypePrimitive(self):
-        logger = NoneLogger()
         collector = PrimitiveDatatypeOSLOCollector(mock)
-        creator = OTLPrimitiveDatatypeCreator(logger, collector)
+        creator = OTLPrimitiveDatatypeCreator(collector)
         DteKleurRAL = collector.find_primitive_datatype_by_uri(
             'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DteKleurRAL')
         dataToWrite = creator.CreateBlockToWriteFromPrimitiveTypes(DteKleurRAL)
@@ -240,9 +219,8 @@ class OTLPrimitiveDatatypeCreatorTests(unittest.TestCase):
         self.assertEqual(collector.expectedDataRALKleur, dataToWrite)
 
     def test_WriteToFileOSLODatatypePrimitive(self):
-        logger = NoneLogger()
         collector = PrimitiveDatatypeOSLOCollector(mock)
-        creator = OTLPrimitiveDatatypeCreator(logger, collector)
+        creator = OTLPrimitiveDatatypeCreator(collector)
         KwantWrdInVolt = collector.find_primitive_datatype_by_uri(
             'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInVolt')
         dataToWrite = creator.CreateBlockToWriteFromPrimitiveTypes(KwantWrdInVolt)
@@ -252,9 +230,8 @@ class OTLPrimitiveDatatypeCreatorTests(unittest.TestCase):
         self.assertTrue(os.path.isfile(filelocation))
 
     def test_WriteToFileOSLODatatypePrimitiveDte(self):
-        logger = NoneLogger()
         collector = PrimitiveDatatypeOSLOCollector(mock)
-        creator = OTLPrimitiveDatatypeCreator(logger, collector)
+        creator = OTLPrimitiveDatatypeCreator(collector)
         DteKleurRAL = collector.find_primitive_datatype_by_uri(
             'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DteKleurRAL')
         dataToWrite = creator.CreateBlockToWriteFromPrimitiveTypes(DteKleurRAL)

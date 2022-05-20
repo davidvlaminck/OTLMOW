@@ -1,21 +1,21 @@
 import json
+import logging
 from collections import defaultdict
 
 from OTLMOW.Facility.AssetFactory import AssetFactory
-#from OTLMOW.Facility.JsonDecoder import JsonDecoder
+from OTLMOW.Facility.DavieImporter import DavieImporter
+# from OTLMOW.Facility.JsonDecoder import JsonDecoder
 from OTLMOW.Facility.FileFormats.JsonExporter import JsonExporter
 from OTLMOW.Facility.RelatieCreator import RelatieCreator
 from OTLMOW.Facility.Visualiser import Visualiser
-from OTLMOW.Facility.DavieImporter import DavieImporter
 from OTLMOW.GeometrieArtefact.GeometrieArtefactCollector import GeometrieArtefactCollector
 from OTLMOW.GeometrieArtefact.GeometrieInMemoryCreator import GeometrieInMemoryCreator
 from OTLMOW.ModelGenerator.BaseClasses.RelatieValidator import RelatieValidator
-from OTLMOW.ModelGenerator.OtlAssetJSONEncoder import OtlAssetJSONEncoder
-from OTLMOW.ModelGenerator.SQLDbReader import SQLDbReader
-from OTLMOW.Loggers.AbstractLogger import AbstractLogger
 from OTLMOW.ModelGenerator.OSLOCollector import OSLOCollector
 from OTLMOW.ModelGenerator.OSLOInMemoryCreator import OSLOInMemoryCreator
 from OTLMOW.ModelGenerator.OTLModelCreator import OTLModelCreator
+from OTLMOW.ModelGenerator.OtlAssetJSONEncoder import OtlAssetJSONEncoder
+from OTLMOW.ModelGenerator.SQLDbReader import SQLDbReader
 from OTLMOW.OEFModel.ModelGrabber import ModelGrabber
 from OTLMOW.OEFModel.OEFModelCreator import OEFModelCreator
 from OTLMOW.OTLModel.BaseClasses.OTLObject import OTLObject
@@ -26,13 +26,19 @@ from OTLMOW.PostenMapping.PostenInMemoryCreator import PostenInMemoryCreator
 
 
 class OTLFacility:
-    def __init__(self, instanceLogger: None | AbstractLogger, enable_relation_features: bool = False, settings_path: str = ''):
+    def __init__(self, loggingLevel=logging.WARNING, logfile='logs.txt', enable_relation_features: bool = False, settings_path: str = ''):
         self.settings: dict = {}
         if settings_path != '':
             self.load_settings(settings_path)
 
+        if loggingLevel != 0 and logfile != '':
+            logging.basicConfig(filename=logfile,
+                                filemode='a',
+                                format='%(asctime)s,%(msecs)d %(name)s %(levelname)s %(message)s',
+                                datefmt='%H:%M:%S',
+                                level=loggingLevel)
+
         self.davieImporter = DavieImporter(self.settings)
-        self.logger = instanceLogger
         self.collector = None
         self.geoAcollector = None
         self.modelCreator: None | OTLModelCreator = None
@@ -65,7 +71,7 @@ class OTLFacility:
             sql_reader_GA = SQLDbReader(geoA_file_location)
             geo_memory_creator = GeometrieInMemoryCreator(sql_reader_GA)
             self.geoAcollector = GeometrieArtefactCollector(geo_memory_creator)
-        self.modelCreator = OTLModelCreator(self.logger, self.collector, self.geoAcollector)
+        self.modelCreator = OTLModelCreator(self.collector, self.geoAcollector)
 
     def create_otl_datamodel(self):
         self.collector.collect()
@@ -77,7 +83,7 @@ class OTLFacility:
         sql_reader = SQLDbReader(otl_file_location)
         oslo_creator = PostenInMemoryCreator(sql_reader)
         self.posten_collector = PostenCollector(oslo_creator)
-        self.posten_creator = PostenCreator(self.logger, self.posten_collector)
+        self.posten_creator = PostenCreator(self.posten_collector)
 
     def create_posten_model(self):
         self.posten_collector.collect()
@@ -100,7 +106,7 @@ class OTLFacility:
         ins_ond_attributen = model_grabber.decode_json_and_get_attributen(ins_ond_file_location)
         attributen.extend(ins_ond_attributen)
 
-        self.oef_model_creator = OEFModelCreator(self.logger, classes=classes, attributen=attributen)
+        self.oef_model_creator = OEFModelCreator(classes=classes, attributen=attributen)
 
     def create_oef_datamodel(self):
         self.oef_model_creator.create_full_model()

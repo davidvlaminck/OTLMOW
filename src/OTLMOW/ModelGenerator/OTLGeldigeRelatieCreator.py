@@ -1,11 +1,11 @@
-from OTLMOW.Loggers.AbstractLogger import AbstractLogger
-from OTLMOW.Loggers.LogType import LogType
+import logging
+
 from OTLMOW.ModelGenerator import OSLOCollector
 
 
 class OTLGeldigeRelatieCreator:
-    def __init__(self, logger: AbstractLogger, osloCollector: OSLOCollector):
-        logger.log("Created an instance of OTLGeldigeRelatieCreator", LogType.INFO)
+    def __init__(self, osloCollector: OSLOCollector):
+        logging.info("Created an instance of OTLGeldigeRelatieCreator")
         self.osloCollector = osloCollector
 
     def CreateBlockToWriteFromRelations(self):

@@ -1,11 +1,8 @@
 import os
 import unittest
 from unittest import mock
-from unittest.mock import patch
 
-from OTLMOW.GeometrieArtefact.GeometrieArtefactCollector import GeometrieArtefactCollector
 from OTLMOW.GeometrieArtefact.GeometrieType import GeometrieType
-from OTLMOW.Loggers.NoneLogger import NoneLogger
 from OTLMOW.ModelGenerator.Inheritance import Inheritance
 from OTLMOW.ModelGenerator.OSLOAttribuut import OSLOAttribuut
 from OTLMOW.ModelGenerator.OSLOClass import OSLOClass
@@ -91,17 +88,9 @@ class GeometrieArtefactCollectorDouble:
 
 
 class OTLClassCreatorTests(unittest.TestCase):
-    @patch.object(NoneLogger, "log")
-    def test_InitOTLModelCreator(self, mock):
-        logger = NoneLogger()
-        collector = OSLOCollector(mock)
-        creator = OTLClassCreator(logger, collector)
-        self.assertTrue(mock.called)
-
     def test_InvalidOSLOClassEmptyUri(self):
-        logger = NoneLogger()
         collector = OSLOCollector(mock)
-        creator = OTLClassCreator(logger, collector)
+        creator = OTLClassCreator(collector)
         osloClass = OSLOClass(name='name', objectUri='', definition='', label='', usagenote='', abstract=1,
                               deprecated_version='')
 
@@ -110,9 +99,8 @@ class OTLClassCreatorTests(unittest.TestCase):
         self.assertEqual(str(exception_empty_uri.exception), "OSLOClass.objectUri is invalid. Value = ''")
 
     def test_InvalidOSLODatatypeComplexBadUri(self):
-        logger = NoneLogger()
         collector = OSLOCollector(mock)
-        creator = OTLClassCreator(logger, collector)
+        creator = OTLClassCreator(collector)
         osloClass = OSLOClass(name='name', objectUri='Bad objectUri', definition='', label='', usagenote='', abstract=1,
                               deprecated_version='')
 
@@ -121,9 +109,8 @@ class OTLClassCreatorTests(unittest.TestCase):
         self.assertEqual(str(exception_bad_uri.exception), "OSLOClass.objectUri is invalid. Value = 'Bad objectUri'")
 
     def test_InvalidOSLODatatypeComplexEmptyName(self):
-        logger = NoneLogger()
         collector = OSLOCollector(mock)
-        creator = OTLClassCreator(logger, collector)
+        creator = OTLClassCreator(collector)
         osloClass = OSLOClass(name='',
                               objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcIdentificator',
                               definition='', label='', usagenote='', abstract=1,
@@ -135,9 +122,8 @@ class OTLClassCreatorTests(unittest.TestCase):
 
     def test_InValidType(self):
         bad_Class = True
-        logger = NoneLogger()
         collector = OSLOCollector(mock)
-        creator = OTLClassCreator(logger, collector)
+        creator = OTLClassCreator(collector)
         with self.assertRaises(ValueError) as exception_bad_name:
             creator.create_blocks_to_write_from_classes(bad_Class)
         self.assertEqual(str(exception_bad_name.exception), "Input is not a OSLOClass")
@@ -182,10 +168,9 @@ class OTLClassCreatorTests(unittest.TestCase):
         self.assertEqual(self.expectedDataContainerBuis, dataToWrite)
 
     def test_Gebouw_DtcKardMax1(self):
-        logger = NoneLogger()
         collector = ClassOSLOCollector(mock)
         geo_collector = GeometrieArtefactCollectorDouble()
-        creator = OTLClassCreator(logger, collector, None)
+        creator = OTLClassCreator(collector, None)
         creator.geometry_types = geo_collector.geometrie_types
         gebouw = collector.find_class_by_uri('https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Gebouw')
         dataToWrite = creator.create_blocks_to_write_from_classes(gebouw)
@@ -240,12 +225,11 @@ class OTLClassCreatorTests(unittest.TestCase):
 
     @staticmethod
     def set_up_real_collector_and_creator():
-        logger = NoneLogger()
         base_dir = os.path.dirname(os.path.realpath(__file__))
         file_location = f'{base_dir}/../../src/OTLMOW/InputFiles/OTL 2.3.db'
         sql_reader = SQLDbReader(file_location)
         oslo_creator = OSLOInMemoryCreator(sql_reader)
         collector = OSLOCollector(oslo_creator)
         collector.collect()
-        creator = OTLClassCreator(logger, collector)
+        creator = OTLClassCreator(collector)
         return collector, creator

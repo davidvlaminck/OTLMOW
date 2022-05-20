@@ -5,7 +5,6 @@ from unittest.mock import patch
 
 import rdflib
 
-from OTLMOW.Loggers.NoneLogger import NoneLogger
 from OTLMOW.ModelGenerator.OSLOCollector import OSLOCollector
 from OTLMOW.ModelGenerator.OSLOEnumeration import OSLOEnumeration
 from OTLMOW.ModelGenerator.OSLOInMemoryCreator import OSLOInMemoryCreator
@@ -69,23 +68,10 @@ class EnumerationOSLOCollector(OSLOCollector):
             ""]
 
 
-class TestOTLEnumerationCreator(OTLEnumerationCreator):
-    def __init__(self, logger, collector):
-        super().__init__(logger, collector)
-
-
 class OTLEnumerationCreatorTests(unittest.TestCase):
-    @patch.object(NoneLogger, "log")
-    def test_InitOTLModelCreator(self, mock):
-        logger = NoneLogger()
-        collector = OSLOCollector(mock)
-        creator = OTLEnumerationCreator(logger, collector)
-        self.assertTrue(mock.called)
-
     def test_InvalidOSLOEnumerationEmptyUri(self):
-        logger = NoneLogger()
         collector = OSLOCollector(mock)
-        creator = OTLEnumerationCreator(logger, collector)
+        creator = OTLEnumerationCreator(collector)
         osloEnumeration = OSLOEnumeration(name='name', objectUri='', definition='', label='', usagenote='',
                                           deprecated_version='', codelist='')
 
@@ -94,9 +80,8 @@ class OTLEnumerationCreatorTests(unittest.TestCase):
         self.assertEqual(str(exception_empty_uri.exception), "OSLOEnumeration.objectUri is invalid. Value = ''")
 
     def test_InvalidOSLOEnumerationBadUri(self):
-        logger = NoneLogger()
         collector = OSLOCollector(mock)
-        creator = OTLEnumerationCreator(logger, collector)
+        creator = OTLEnumerationCreator(collector)
         osloEnumeration = OSLOEnumeration(name='name', objectUri='Bad objectUri', definition='', label='', usagenote='',
                                           deprecated_version='', codelist='')
 
@@ -105,9 +90,8 @@ class OTLEnumerationCreatorTests(unittest.TestCase):
         self.assertEqual(str(exception_bad_uri.exception), "OSLOEnumeration.objectUri is invalid. Value = 'Bad objectUri'")
 
     def test_InvalidOSLOEnumerationEmptyName(self):
-        logger = NoneLogger()
         collector = OSLOCollector(mock)
-        creator = OTLEnumerationCreator(logger, collector)
+        creator = OTLEnumerationCreator(collector)
         osloEnumeration = OSLOEnumeration(name='',
                                           objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrd',
                                           definition='', label='', usagenote='',
@@ -119,17 +103,15 @@ class OTLEnumerationCreatorTests(unittest.TestCase):
 
     def test_InValidType(self):
         bad_primitive = True
-        logger = NoneLogger()
         collector = OSLOCollector(mock)
-        creator = OTLEnumerationCreator(logger, collector)
+        creator = OTLEnumerationCreator(collector)
         with self.assertRaises(ValueError) as exception_bad_name:
             creator.CreateBlockToWriteFromEnumerations(bad_primitive)
         self.assertEqual(str(exception_bad_name.exception), "Input is not a OSLOEnumeration")
 
     def test_KlAIMToestandOSLOEnumeration(self):
-        logger = NoneLogger()
         collector = EnumerationOSLOCollector(mock)
-        creator = OTLEnumerationCreator(logger, collector)
+        creator = OTLEnumerationCreator(collector)
         KlAIMToestand = collector.find_enumeration_by_uri(
             'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KlAIMToestand')
         dataToWrite = creator.CreateBlockToWriteFromEnumerations(KlAIMToestand)
@@ -137,9 +119,8 @@ class OTLEnumerationCreatorTests(unittest.TestCase):
         self.assertEqual(collector.expectedDataKlAIMToestand, dataToWrite)
 
     def test_getKeuzelijstWaardesFromUri(self):
-        logger = NoneLogger()
         collector = EnumerationOSLOCollector(mock)
-        creator = OTLEnumerationCreator(logger, collector)
+        creator = OTLEnumerationCreator(collector)
         KlAIMToestand = collector.find_enumeration_by_uri(
             'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KlAIMToestand')
         lijst = creator.get_keuzelijstwaardes_by_name(KlAIMToestand.name)
@@ -148,9 +129,8 @@ class OTLEnumerationCreatorTests(unittest.TestCase):
         self.assertTrue(isinstance(lijst[0], KeuzelijstWaarde))
 
     def test_WriteToFileOSLOEnumeration(self):
-        logger = NoneLogger()
         collector = EnumerationOSLOCollector(mock)
-        creator = OTLEnumerationCreator(logger, collector)
+        creator = OTLEnumerationCreator(collector)
         KlAIMToestand = collector.find_enumeration_by_uri(
             'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KlAIMToestand')
         dataToWrite = creator.CreateBlockToWriteFromEnumerations(KlAIMToestand)
@@ -160,8 +140,6 @@ class OTLEnumerationCreatorTests(unittest.TestCase):
         self.assertTrue(os.path.isfile(filelocation))
 
     def test_WriteToFileOSLOEnumeration2(self):
-        logger = NoneLogger()
-
         base_dir = os.path.dirname(os.path.realpath(__file__))
         file_location = f'{base_dir}/../../src/OTLMOW/InputFiles/OTL 2.3.db'
         sql_reader = SQLDbReader(file_location)
@@ -169,7 +147,7 @@ class OTLEnumerationCreatorTests(unittest.TestCase):
         collector = OSLOCollector(oslo_creator)
         collector.collect()
 
-        creator = OTLEnumerationCreator(logger, collector)
+        creator = OTLEnumerationCreator(collector)
         KlAIMToestand = collector.find_enumeration_by_uri(
             'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KlAlgProvincie')
         dataToWrite = creator.CreateBlockToWriteFromEnumerations(KlAIMToestand)
@@ -179,8 +157,6 @@ class OTLEnumerationCreatorTests(unittest.TestCase):
         self.assertTrue(os.path.isfile(filelocation))
 
     def test_getKeuzelijstWaardesFromUri2(self):
-        logger = NoneLogger()
-
         base_dir = os.path.dirname(os.path.realpath(__file__))
         file_location = f'{base_dir}/../../src/OTLMOW/InputFiles/OTL 2.3.db'
         sql_reader = SQLDbReader(file_location)
@@ -188,7 +164,7 @@ class OTLEnumerationCreatorTests(unittest.TestCase):
         collector = OSLOCollector(oslo_creator)
         collector.collect()
 
-        creator = OTLEnumerationCreator(logger, collector)
+        creator = OTLEnumerationCreator(collector)
         keuzelijst = creator.get_keuzelijstwaardes_by_name("KlAIMToestand")
 
         self.assertTrue(len(keuzelijst) > 0)

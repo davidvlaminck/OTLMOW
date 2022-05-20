@@ -1,8 +1,7 @@
+import logging
 import rdflib
 from rdflib import URIRef, Graph
 
-from OTLMOW.Loggers.AbstractLogger import AbstractLogger
-from OTLMOW.Loggers.LogType import LogType
 from OTLMOW.ModelGenerator.AbstractDatatypeCreator import AbstractDatatypeCreator
 from OTLMOW.ModelGenerator.OSLOCollector import OSLOCollector
 from OTLMOW.ModelGenerator.OSLOEnumeration import OSLOEnumeration
@@ -11,9 +10,9 @@ from OTLMOW.OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 
 class OTLEnumerationCreator(AbstractDatatypeCreator):
-    def __init__(self, logger: AbstractLogger, osloCollector: OSLOCollector):
-        super().__init__(logger, osloCollector)
-        logger.log("Created an instance of OTLEnumerationCreator", LogType.INFO)
+    def __init__(self, osloCollector: OSLOCollector):
+        super().__init__(osloCollector)
+        logging.info("Created an instance of OTLEnumerationCreator")
         self.osloCollector = osloCollector
 
     def CreateBlockToWriteFromEnumerations(self, osloEnumeration: OSLOEnumeration):

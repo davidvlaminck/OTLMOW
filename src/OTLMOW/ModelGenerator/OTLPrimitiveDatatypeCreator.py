@@ -1,14 +1,14 @@
-from OTLMOW.Loggers.AbstractLogger import AbstractLogger
-from OTLMOW.Loggers.LogType import LogType
+import logging
+
 from OTLMOW.ModelGenerator.AbstractDatatypeCreator import AbstractDatatypeCreator
 from OTLMOW.ModelGenerator.OSLOCollector import OSLOCollector
 from OTLMOW.ModelGenerator.OSLODatatypePrimitive import OSLODatatypePrimitive
 
 
 class OTLPrimitiveDatatypeCreator(AbstractDatatypeCreator):
-    def __init__(self, logger: AbstractLogger, osloCollector: OSLOCollector):
-        super().__init__(logger, osloCollector)
-        self.logger.log("Created an instance of OTLPrimitiveDatatypeCreator", LogType.INFO)
+    def __init__(self, osloCollector: OSLOCollector):
+        super().__init__(osloCollector)
+        logging.info("Created an instance of OTLPrimitiveDatatypeCreator")
 
     def CreateBlockToWriteFromPrimitiveTypes(self, osloDatatypePrimitive: OSLODatatypePrimitive):
         if not isinstance(osloDatatypePrimitive, OSLODatatypePrimitive):

@@ -1,11 +1,11 @@
+import logging
+
 from OTLMOW.GeometrieArtefact.GeenGeometrie import GeenGeometrie
 from OTLMOW.GeometrieArtefact.GeometrieArtefactCollector import GeometrieArtefactCollector
 from OTLMOW.GeometrieArtefact.GeometrieInheritanceProcessor import GeometrieInheritanceProcessor
 from OTLMOW.GeometrieArtefact.LijnGeometrie import LijnGeometrie
 from OTLMOW.GeometrieArtefact.PuntGeometrie import PuntGeometrie
 from OTLMOW.GeometrieArtefact.VlakGeometrie import VlakGeometrie
-from OTLMOW.Loggers.AbstractLogger import AbstractLogger
-from OTLMOW.Loggers.LogType import LogType
 from OTLMOW.ModelGenerator.AbstractDatatypeCreator import AbstractDatatypeCreator
 from OTLMOW.ModelGenerator.Inheritance import Inheritance
 from OTLMOW.ModelGenerator.OSLOClass import OSLOClass
@@ -13,9 +13,9 @@ from OTLMOW.ModelGenerator.OSLOCollector import OSLOCollector
 
 
 class OTLClassCreator(AbstractDatatypeCreator):
-    def __init__(self, logger: AbstractLogger, oslo_collector: OSLOCollector, geoA_collector: GeometrieArtefactCollector = None):
-        super().__init__(logger, oslo_collector)
-        logger.log("Created an instance of OTLClassCreator", LogType.INFO)
+    def __init__(self, oslo_collector: OSLOCollector, geoA_collector: GeometrieArtefactCollector = None):
+        super().__init__(oslo_collector)
+        logging.info("Created an instance of OTLClassCreator")
         self.osloCollector = oslo_collector
         self.geoACollector = geoA_collector
         self.geometry_types = []

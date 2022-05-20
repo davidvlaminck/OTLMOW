@@ -1,44 +1,42 @@
+import logging
 import os
 from datetime import datetime
 
-from OTLMOW.Loggers.AbstractLogger import AbstractLogger
-from OTLMOW.Loggers.LogType import LogType
 from OTLMOW.ModelGenerator.StringHelper import wrap_in_quotes
 from OTLMOW.PostenMapping.PostenCollector import PostenCollector
 from OTLMOW.PostenMapping.StandaardPost import StandaardPost
 
 
 class PostenCreator:
-    def __init__(self, logger: AbstractLogger, postenCollector: PostenCollector):
-        self.logger = logger
+    def __init__(self, postenCollector: PostenCollector):
         self.postenCollector = postenCollector
-        self.logger.log("Created an instance of PostenCreator", LogType.INFO)
+        logging.info("Created an instance of PostenCreator")
         self.datablock_lijst_import = []
         self.datablock_lijst = []
 
     def create_all_mappings(self):
-        self.logger.log('started creating model at ' + datetime.now().strftime("%d/%m/%Y %H:%M:%S"), logType=LogType.INFO)
+        logging.info('started creating model at ' + datetime.now().strftime("%d/%m/%Y %H:%M:%S"))
         self.postenCollector.collect()
         self.combine_mappings_and_posten()
         self.create_standaardposten()
-        self.logger.log('finished creating model at ' + datetime.now().strftime("%d/%m/%Y %H:%M:%S"), logType=LogType.INFO)
+        logging.info('finished creating model at ' + datetime.now().strftime("%d/%m/%Y %H:%M:%S"))
 
     def create_standaardposten(self):
         for post in self.postenCollector.standaardposten:
             try:
                 dataToWrite = self.create_datablock_from_post(post)
                 if dataToWrite is None:
-                    self.logger.log(f"Could not create a class for {post.nummer}", LogType.INFO)
+                    logging.info(f"Could not create a class for {post.nummer}")
                     pass
                 if len(dataToWrite) == 0:
-                    self.logger.log(f"Could not create a class for {post.nummer}", LogType.INFO)
+                    logging.info(f"Could not create a class for {post.nummer}")
                     pass
                 self.writeToFile(post, dataToWrite)
-                self.logger.log(f"Created a class for {post.nummer}", LogType.INFO)
+                logging.info(f"Created a class for {post.nummer}")
                 self.add_to_lijst(post)
             except BaseException as e:
-                self.logger.log(str(e), LogType.ERROR)
-                self.logger.log(f"Could not create a class for {post.nummer}", LogType.ERROR)
+                logging.error(str(e))
+                logging.error(f"Could not create a class for {post.nummer}")
         self.create_lijst()
 
     def combine_mappings_and_posten(self):

@@ -1,7 +1,6 @@
 import unittest
 from unittest import mock
 
-from OTLMOW.Loggers.NoneLogger import NoneLogger
 from OTLMOW.ModelGenerator.AbstractDatatypeCreator import AbstractDatatypeCreator
 from OTLMOW.ModelGenerator.OSLOAttribuut import OSLOAttribuut
 from OTLMOW.ModelGenerator.OSLOCollector import OSLOCollector
@@ -41,7 +40,7 @@ class ClassOSLOCollector(OSLOCollector):
 
 class TestAbstractCreator(AbstractDatatypeCreator):
     def __init__(self):
-        super().__init__(NoneLogger(), ClassOSLOCollector())
+        super().__init__(ClassOSLOCollector())
 
 
 class AbstractDatatypeCreatorTests(unittest.TestCase):
@@ -340,9 +339,8 @@ class AbstractDatatypeCreatorTests(unittest.TestCase):
         self.assertEqual(expectedList, typesList)
 
     def test_getTypeNameOfComplexAttribuut_Kl(self):
-        logger = NoneLogger()
         collector = ComplexDatatypeOSLOCollector(mock)
-        creator = OTLComplexDatatypeCreator(logger, collector)
+        creator = OTLComplexDatatypeCreator(collector)
         dtcIdentificator = collector.find_complex_datatype_attributen_by_class_uri(
             'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAdres')[1]
         typeName = creator.getTypeNameOfComplexAttribuut(dtcIdentificator.type)
@@ -350,9 +348,8 @@ class AbstractDatatypeCreatorTests(unittest.TestCase):
         self.assertEqual("KlAlgGemeente", typeName)
 
     def test_getTypeNameOfComplexAttribuut_String(self):
-        logger = NoneLogger()
         collector = ComplexDatatypeOSLOCollector(mock)
-        creator = OTLComplexDatatypeCreator(logger, collector)
+        creator = OTLComplexDatatypeCreator(collector)
         dtcIdentificator = collector.find_complex_datatype_attributen_by_class_uri(
             'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAdres')[0]
         typeName = creator.getTypeNameOfComplexAttribuut(dtcIdentificator.type)

@@ -1,7 +1,6 @@
 from unittest import TestCase, mock
 
 from OTLMOW.Facility.DotnotatieHelper import DotnotatieHelper
-from OTLMOW.Loggers.NoneLogger import NoneLogger
 from OTLMOW.OTLModel.Classes.BitumineuzeLaag import BitumineuzeLaag
 from OTLMOW.PostenMapping.PostenCollector import PostenCollector
 from OTLMOW.PostenMapping.PostenCreator import PostenCreator
@@ -151,7 +150,7 @@ class StandaardPostTests(TestCase):
     def test_create_datablock_standaardPost_0501(self):
         posten = StandaardPostCollection()
         post0501 = posten.get_by_nummer('0501.00000')
-        creator = PostenCreator(NoneLogger(), postenCollector=PostenCollector(mock))
+        creator = PostenCreator(postenCollector=PostenCollector(mock))
 
         datablock = creator.create_datablock_from_post(post0501)
         expected = ['# coding=utf-8',

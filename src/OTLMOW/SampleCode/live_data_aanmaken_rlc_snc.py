@@ -1,6 +1,6 @@
 from datetime import datetime
 
-from OTLMOW.Facility.EMInfraImporter import EMInfraImporter
+from OTLMOW.Facility.FileFormats.EMInfraImporter import EMInfraImporter
 from OTLMOW.Facility.OTLFacility import OTLFacility
 from OTLMOW.Loggers.ConsoleLogger import ConsoleLogger
 from OTLMOW.Loggers.LoggerCollection import LoggerCollection

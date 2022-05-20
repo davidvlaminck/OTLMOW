@@ -1,6 +1,6 @@
 import os
 
-from OTLMOW.Facility.EMInfraDecoder import EMInfraDecoder
+from OTLMOW.Facility.FileFormats.EMInfraDecoder import EMInfraDecoder
 from OTLMOW.ModelGenerator.SQLDbReader import SQLDbReader
 
 

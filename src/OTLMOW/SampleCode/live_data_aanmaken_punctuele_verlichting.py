@@ -1,6 +1,6 @@
 from datetime import datetime
 
-from OTLMOW.Facility.EMInfraImporter import EMInfraImporter
+from OTLMOW.Facility.FileFormats.EMInfraImporter import EMInfraImporter
 from OTLMOW.Facility.OTLFacility import OTLFacility
 from OTLMOW.Loggers.ConsoleLogger import ConsoleLogger
 from OTLMOW.Loggers.LoggerCollection import LoggerCollection
@@ -19,8 +19,6 @@ from OTLMOW.OTLModel.Classes.VerlichtingstoestelLED import VerlichtingstoestelLE
 from OTLMOW.OTLModel.Classes.Voedt import Voedt
 from OTLMOW.OTLModel.Classes.VoedtAangestuurd import VoedtAangestuurd
 from OTLMOW.OTLModel.Classes.Wegkantkast import Wegkantkast
-from OTLMOW.OTLModel.Datatypes.DtcAdres import DtcAdresWaarden
-from OTLMOW.OTLModel.Datatypes.DtcDocument import DtcDocumentWaarden, DtcDocument
 
 if __name__ == '__main__':
     logger = LoggerCollection([

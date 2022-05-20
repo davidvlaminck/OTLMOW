@@ -1,5 +1,5 @@
 ﻿import unittest
-from OTLMOW.Facility.DavieImporter import DavieImporter
+from OTLMOW.Facility.FileFormats.DavieImporter import DavieImporter
 
 
 class DavieImporterTests(unittest.TestCase):

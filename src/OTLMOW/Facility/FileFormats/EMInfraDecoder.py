@@ -2,7 +2,6 @@
 
 from OTLMOW.Facility.AssetFactory import AssetFactory
 from OTLMOW.Facility.FileFormats.DictDecoder import DictDecoder
-from OTLMOW.Facility.FileFormats.JsonDecoder import JsonDecoder
 from OTLMOW.OEFModel.OEFClassLoader import OEFClassLoader
 from OTLMOW.OTLModel.BaseClasses.OTLObject import OTLObject
 

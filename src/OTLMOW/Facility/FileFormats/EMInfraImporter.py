@@ -3,7 +3,7 @@ import json
 
 from requests import Session
 
-from OTLMOW.Facility.EMInfraDecoder import EMInfraDecoder
+from OTLMOW.Facility.FileFormats.EMInfraDecoder import EMInfraDecoder
 from OTLMOW.OTLModel.BaseClasses.OTLObject import OTLObject
 
 
@@ -50,7 +50,7 @@ class EMInfraImporter:
 
         asset_list = []
         for obj in obj_list:
-            asset_list.append(self.decoder.decodeJsonObject(obj))
+            asset_list.append(self.decoder.decode_json_object(obj))
         return asset_list
 
     def import_assetrelaties_from_webservice_by_assetuuids(self, asset_uuids: [str]) -> [OTLObject]:

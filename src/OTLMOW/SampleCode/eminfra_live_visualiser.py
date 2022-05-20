@@ -1,6 +1,6 @@
 ﻿import collections
 
-from OTLMOW.Facility.EMInfraImporter import EMInfraImporter
+from OTLMOW.Facility.FileFormats.EMInfraImporter import EMInfraImporter
 from OTLMOW.Facility.OTLFacility import OTLFacility
 from OTLMOW.Facility.RequesterFactory import RequesterFactory
 from OTLMOW.Loggers.ConsoleLogger import ConsoleLogger

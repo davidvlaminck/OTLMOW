@@ -3,7 +3,7 @@ import logging
 from collections import defaultdict
 
 from OTLMOW.Facility.AssetFactory import AssetFactory
-from OTLMOW.Facility.DavieImporter import DavieImporter
+from OTLMOW.Facility.FileFormats.DavieImporter import DavieImporter
 # from OTLMOW.Facility.JsonDecoder import JsonDecoder
 from OTLMOW.Facility.FileFormats.JsonExporter import JsonExporter
 from OTLMOW.Facility.RelatieCreator import RelatieCreator

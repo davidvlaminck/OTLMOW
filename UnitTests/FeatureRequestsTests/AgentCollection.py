@@ -8,7 +8,7 @@ from OTLMOW.OTLModel.Classes.Agent import Agent
 
 class AgentCollectionTests(unittest.TestCase):
     def test_search_agent_by_name(self):
-        otl_facility = OTLFacility(instanceLogger=None, settings_path='C:\\resources\\settings_OTLMOW.json')
+        otl_facility = OTLFacility(logfile='', settings_path='C:\\resources\\settings_OTLMOW.json')
         requester = RequesterFactory.create_requester(settings=otl_facility.settings, auth_type='JWT', env='prd')
         collection = AgentCollection(requester)
         agents_found = collection.get_agent_by_full_name('dave geudens')

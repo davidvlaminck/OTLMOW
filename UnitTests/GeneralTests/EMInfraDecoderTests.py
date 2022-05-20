@@ -11,7 +11,7 @@ from OTLMOW.OTLModel.Classes.Omvormer import Omvormer
 class EMInfraDecoderTests(TestCase):
     def test_decodeFirstEntry(self):
         responseString = ResponseTestDouble().response
-        otl_facility = OTLFacility(None, settings_path='C:\\resources\\settings_OTLMOW.json')
+        otl_facility = OTLFacility(logfile='', settings_path='C:\\resources\\settings_OTLMOW.json')
         decoder = EMInfraDecoder()
         first = decoder.decodeGraph(responseString)[0]
 
@@ -39,7 +39,7 @@ class EMInfraDecoderTests(TestCase):
 
     def test_decode_single_entry(self):
         responseString = ResponseTestDouble().single_response
-        otl_facility = OTLFacility(None, settings_path='C:\\resources\\settings_OTLMOW.json')
+        otl_facility = OTLFacility(logfile='', settings_path='C:\\resources\\settings_OTLMOW.json')
         decoder = EMInfraDecoder()
         first = decoder.decodeGraph(responseString)[0]
 

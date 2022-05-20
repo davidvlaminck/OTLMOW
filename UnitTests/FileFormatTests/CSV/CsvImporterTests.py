@@ -10,7 +10,7 @@ ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
 
 class CsvImporterTests(unittest.TestCase):
     def test_init_importer_only_load_with_settings(self):
-        otl_facility = OTLFacility(None, settings_path='C:\\resources\\settings_OTLMOW.json')
+        otl_facility = OTLFacility(logfile='', settings_path='C:\\resources\\settings_OTLMOW.json')
 
         with self.subTest('load with correct settings'):
             importer = CsvImporter(settings=otl_facility.settings)

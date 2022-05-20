@@ -3,19 +3,22 @@ from datetime import date, time, datetime
 from typing import Generator, Iterable
 
 from OTLMOW.Facility.DotnotatieHelper import DotnotatieHelper
+from OTLMOW.OTLModel.Datatypes.DateField import DateField
+from OTLMOW.OTLModel.Datatypes.DateTimeField import DateTimeField
+from OTLMOW.OTLModel.Datatypes.TimeField import TimeField
 
 
 class OTLObjectHelper:
     @classmethod
-    def create_dict_from_asset(cls, asset) -> dict:
-        return cls.clean_dict(cls.recursive_create_dict_from_asset(asset))
+    def create_dict_from_asset(cls, asset, waarde_shortcut=False) -> dict:
+        return cls.clean_dict(cls.recursive_create_dict_from_asset(asset, waarde_shortcut=waarde_shortcut))
 
     @classmethod
     def recursive_create_dict_from_asset(cls, asset=None, waarde_shortcut=False):
         if isinstance(asset, list) and not isinstance(asset, dict):
             l = []
             for item in asset:
-                dict_item = cls.recursive_create_dict_from_asset(asset=item)
+                dict_item = cls.recursive_create_dict_from_asset(asset=item, waarde_shortcut=waarde_shortcut)
                 if dict_item is not None:
                     l.append(dict_item)
             if len(l) > 0:
@@ -25,27 +28,36 @@ class OTLObjectHelper:
         for k, v in vars(asset).items():
             if k in ['_parent', '_geometry_types']:
                 continue
-            if v.waarde is not None and v.waarde != []:
-                if v.field.waardeObject is not None:
-                    if waarde_shortcut and v.field.waarde_shortcut_applicable:
+            if v.waarde is None or v.waarde == []:
+                continue
+
+            if v.field.waardeObject is not None: # complex
+                if waarde_shortcut and v.field.waarde_shortcut_applicable:
+                    if isinstance(v.waarde, list):
+                        dict_item = []
+                        for item in v.waarde:
+                            dict_item.append(item.waarde)
+                        if len(dict_item) > 0:
+                            d[k[1:]] = dict_item
+                    else:
                         dict_item = v.waarde.waarde
                         if dict_item is not None:
                             d[k[1:]] = dict_item
-                    else:
-                        dict_item = cls.recursive_create_dict_from_asset(asset=v.waarde)
-                        if dict_item is not None:
-                            d[k[1:]] = dict_item
                 else:
-                    if isinstance(v.waarde, time):
-                        d[k[1:]] = time.strftime(v.waarde, "%H:%M:%S")
-                    elif isinstance(v.waarde, date):
-                        d[k[1:]] = date.strftime(v.waarde, "%Y-%m-%d")
-                    elif isinstance(v.waarde, datetime):
-                        d[k[1:]] = datetime.strftime(v.waarde, "%Y-%m-%d %H:%M:%S")
-                    else:
-                        d[k[1:]] = v.waarde
+                    dict_item = cls.recursive_create_dict_from_asset(asset=v.waarde, waarde_shortcut=waarde_shortcut)
+                    if dict_item is not None:
+                        d[k[1:]] = dict_item
+            else:
+                if v.field == TimeField:
+                    d[k[1:]] = time.strftime(v.waarde, "%H:%M:%S")
+                elif v.field == DateField:
+                    d[k[1:]] = date.strftime(v.waarde, "%Y-%m-%d")
+                elif v.field == DateTimeField:
+                    d[k[1:]] = datetime.strftime(v.waarde, "%Y-%m-%d %H:%M:%S")
+                else:
+                    d[k[1:]] = v.waarde
 
-        d = cls.clean_dict(d)
+        #d = cls.clean_dict(d)
         if len(d.items()) > 0:
             return d
 
@@ -130,7 +142,7 @@ class OTLObject:
                                   category=DeprecationWarning)
 
     def create_dict_from_asset(self, waarde_shortcut=False) -> dict:
-        return OTLObjectHelper.recursive_create_dict_from_asset(asset=self, waarde_shortcut=waarde_shortcut)
+        return OTLObjectHelper.create_dict_from_asset(asset=self, waarde_shortcut=waarde_shortcut)
 
     def list_attributes_and_values_by_dotnotatie(self, waarde_shortcut: bool = False) -> Iterable[tuple[str, object]]:
         for k, v in OTLObjectHelper.list_attributes_and_values_by_dotnotatie(asset=self, waarde_shortcut=waarde_shortcut):

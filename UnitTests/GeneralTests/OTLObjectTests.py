@@ -5,7 +5,6 @@ from AllCasesTestClass import AllCasesTestClass
 from OTLMOW.OTLModel.BaseClasses.OTLObject import OTLObjectHelper
 from OTLMOW.OTLModel.Classes.Aftakking import Aftakking
 from OTLMOW.OTLModel.Classes.Verkeersregelaar import Verkeersregelaar
-from OTLMOW.OTLModel.Datatypes.DtcExterneReferentie import DtcExterneReferentie
 
 
 class OTLObjectsTests(TestCase):
@@ -111,24 +110,45 @@ class OTLObjectsTests(TestCase):
                         'testKwantWrdMetKard': [4.5, 5.5]}
             self.assertDictEqual(expected, d)
 
+            d = instance.create_dict_from_asset(waarde_shortcut=False)
+            expected = {'testKwantWrd': {'waarde': 3.5},
+                        'testKwantWrdMetKard': [{'waarde': 4.5}, {'waarde': 5.5}]}
+            self.assertDictEqual(expected, d)
 
-    def test_create_dict_from_asset_complex_kardinaliteit(self):
-        v = Verkeersregelaar()
-        v.externeReferentie = []
+        with self.subTest('complex attributes'):
+            instance = AllCasesTestClass()
+            instance.testComplexType.testStringField = 'string'
+            instance.testComplexType.testBooleanField = True
+            instance.testComplexType.testKwantWrd.waarde = 1.5
+            instance.testComplexType.testComplexType2.testStringField = 'string in complex'
+            instance.testComplexType.testComplexType2._testStringFieldMetKard.add_value('string in complex')
+            instance.testComplexType.testComplexType2._testStringFieldMetKard.add_value('string 2 in complex')
 
-        v.externeReferentie.append(DtcExterneReferentie.waardeObject())
-        v.externeReferentie[0].externReferentienummer = "externe referentie 2"
-        v.externeReferentie[0].externePartij = "bij externe partij 2"
+            d = instance.create_dict_from_asset(waarde_shortcut=True)
+            expected = {
+                'testComplexType': {'testBooleanField': True,
+                                    'testStringField': 'string',
+                                    'testKwantWrd': 1.5,
+                                    'testComplexType2': {'testStringField': 'string in complex',
+                                                         'testStringFieldMetKard': ['string in complex', 'string 2 in complex']}}}
+            self.assertDictEqual(expected, d)
 
-        v._externeReferentie.add_empty_value()
-        v.externeReferentie[1].externReferentienummer = "externe referentie 1"
-        v.externeReferentie[1].externePartij = "bij externe partij 1"
-        d = v.create_dict_from_asset()
-        expected = {'externeReferentie': [
-            {'externReferentienummer': 'externe referentie 2',
-             'externePartij': 'bij externe partij 2'
-             }, {'externReferentienummer': 'externe referentie 1',
-                 'externePartij': 'bij externe partij 1'
-                 }]
-        }
-        self.assertDictEqual(expected, d)
+        with self.subTest('complex attributes with cardinality'):
+            instance = AllCasesTestClass()
+            instance._testComplexTypeMetKard.add_empty_value()
+            instance.testComplexTypeMetKard[0].testStringField = 'string 1'
+            instance.testComplexTypeMetKard[0].testBooleanField = True
+            instance._testComplexTypeMetKard.add_empty_value()
+            instance.testComplexTypeMetKard[1].testStringField = 'string 2'
+            instance.testComplexTypeMetKard[1].testBooleanField = False
+            instance.testComplexTypeMetKard[1].testComplexType2.testStringField = 'string in complex'
+
+            d = instance.create_dict_from_asset(waarde_shortcut=True)
+            expected = {
+                'testComplexTypeMetKard': [{'testBooleanField': True,
+                                             'testStringField': 'string 1'},
+                                            {'testBooleanField': False,
+                                             'testStringField': 'string 2',
+                                             'testComplexType2': {'testStringField': 'string in complex'}}
+                                            ]}
+            self.assertDictEqual(expected, d)

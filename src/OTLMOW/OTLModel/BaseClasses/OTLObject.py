@@ -11,7 +11,7 @@ from OTLMOW.OTLModel.Datatypes.TimeField import TimeField
 class OTLObjectHelper:
     @classmethod
     def create_dict_from_asset(cls, asset, waarde_shortcut=False) -> dict:
-        return cls.clean_dict(cls.recursive_create_dict_from_asset(asset, waarde_shortcut=waarde_shortcut))
+        return cls.recursive_create_dict_from_asset(asset, waarde_shortcut=waarde_shortcut)
 
     @classmethod
     def recursive_create_dict_from_asset(cls, asset=None, waarde_shortcut=False):
@@ -57,7 +57,6 @@ class OTLObjectHelper:
                 else:
                     d[k[1:]] = v.waarde
 
-        #d = cls.clean_dict(d)
         if len(d.items()) > 0:
             return d
 

@@ -56,7 +56,7 @@ class CsvImporter:
                     continue
 
                 if self.headers[index] in ['bron.typeURI', 'doel.typeURI']:
-                    continue
+                    continue # TODO get bron and doel
 
                 cardinality_indicator = self.settings['dotnotatie']['cardinality indicator']
 

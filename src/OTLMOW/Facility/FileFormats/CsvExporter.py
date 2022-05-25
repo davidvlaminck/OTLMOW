@@ -1,3 +1,5 @@
+import copy
+
 from OTLMOW.OTLModel.Classes.AIMObject import AIMObject
 
 
@@ -18,6 +20,7 @@ class CsvExporter:
         self.data = [[]]
         self.objects = []
         self.csv_headers = []
+        self.csv_data = []
 
     def export_csv_file(self, list_of_objects: list = [], file_location: str = '', delimiter=';'):
         if file_location == '':
@@ -28,7 +31,7 @@ class CsvExporter:
         self.write_file(file_location=file_location, data=csv_data_lines)
 
     def create_data_from_objects(self, list_of_objects: list = []) -> [[str]]:
-        csv_data = []
+        self.csv_data = []
         if list_of_objects is None or list_of_objects == []:
             raise ValueError('There is no data to export to a csv file')
 
@@ -40,14 +43,14 @@ class CsvExporter:
                     raise ValueError(
                         f'Not possible to export AIM Objects without a valid assetId.identificator. This is missing for object : {object}')
 
-                csv_data.append(self.create_csv_row_for_AIMObject(object))
+                self.csv_data.append(self.create_csv_row_for_AIMObject(object))
 
         self.csv_headers = self.adjust_dotnotatie_by_settings(headers=self.csv_headers, settings=self.settings)
         self.csv_headers = self.sort_headers(self.csv_headers)
-        csv_data.insert(0, self.csv_headers)
+        self.csv_data.insert(0, self.csv_headers)
 
 
-        csv_data = self.append_with_nones(csv_data)
+        csv_data = self.append_with_nones(self.csv_data)
 
         return csv_data
 
@@ -62,9 +65,13 @@ class CsvExporter:
                 continue
 
             if attribute not in self.csv_headers:
-                self.csv_headers.append(attribute)
+                index = self.find_sorted_header_index(attribute)
+                self.csv_headers.insert(index, attribute)
                 while len(values_list) < len(self.csv_headers):
-                    values_list.append(None)
+                    values_list.insert(index, None)
+                    for data_row in self.csv_data:
+                        if len(data_row) > 0:
+                            data_row.insert(index, None)
 
             index = self.csv_headers.index(attribute)
             values_list[index] = value
@@ -127,7 +134,14 @@ class CsvExporter:
             return headers
         first_three = headers[0:3]
         rest = headers[3:]
-        first_three.extend(sorted(rest))
+        sorted_rest = sorted(rest)
+        first_three.extend(sorted_rest)
 
         return first_three
+
+    def find_sorted_header_index(self, attribute):
+        headers = copy.copy(self.csv_headers)
+        headers.append(attribute)
+        headers = self.sort_headers(headers)
+        return headers.index(attribute)
 

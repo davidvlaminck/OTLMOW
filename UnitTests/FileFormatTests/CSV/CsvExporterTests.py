@@ -40,6 +40,27 @@ class CsvExporterTests(unittest.TestCase):
         exporter.export_csv_file(objects, new_file_location)
         self.assertTrue(os.path.isfile(new_file_location))
 
+    def test_find_sorted_header_index(self):
+        otl_facility = OTLFacility(logfile='', settings_path='C:\\resources\\settings_OTLMOW.json')
+        exporter = CsvExporter(settings=otl_facility.settings)
+        with self.subTest('no headers yet'):
+            exporter.csv_headers = ['typeURI', 'assetId.identificator', 'assetId.toegekendDoor']
+            result = exporter.find_sorted_header_index('a')
+            expected = 3
+            self.assertEqual(expected, result)
+
+        with self.subTest('1 header after'):
+            exporter.csv_headers = ['typeURI', 'assetId.identificator', 'assetId.toegekendDoor', 'a']
+            result = exporter.find_sorted_header_index('b')
+            expected = 4
+            self.assertEqual(expected, result)
+
+        with self.subTest('1 header before'):
+            exporter.csv_headers = ['typeURI', 'assetId.identificator', 'assetId.toegekendDoor', 'b']
+            result = exporter.find_sorted_header_index('a')
+            expected = 3
+            self.assertEqual(expected, result)
+
     def test_sort_headers(self):
         otl_facility = OTLFacility(logfile='', settings_path='C:\\resources\\settings_OTLMOW.json')
         exporter = CsvExporter(settings=otl_facility.settings)
@@ -126,11 +147,11 @@ class CsvExporterTests(unittest.TestCase):
             self.assertEqual('0', csv_data[1][1])
             self.assertEqual(None, csv_data[1][2])
             self.assertEqual(True, csv_data[1][3])
-            self.assertEqual(2.0, csv_data[1][4])
-            self.assertEqual('string in complex veld', csv_data[1][5])
-            self.assertEqual(1.0, csv_data[1][6])
-            self.assertEqual('waarde-1', csv_data[1][7])
-            self.assertEqual(None, csv_data[1][8])
+            self.assertEqual(None, csv_data[1][4])
+            self.assertEqual(2.0, csv_data[1][5])
+            self.assertEqual('string in complex veld', csv_data[1][6])
+            self.assertEqual(1.0, csv_data[1][7])
+            self.assertEqual('waarde-1', csv_data[1][8])
             self.assertEqual(None, csv_data[1][9])
 
         with self.subTest('verify asset 2'):
@@ -138,11 +159,11 @@ class CsvExporterTests(unittest.TestCase):
             self.assertEqual('1', csv_data[2][1])
             self.assertEqual(None, csv_data[2][2])
             self.assertEqual(False, csv_data[2][3])
-            self.assertEqual(None, csv_data[2][4])
+            self.assertEqual('string in complex veld binnenin complex veld', csv_data[2][4])
             self.assertEqual(None, csv_data[2][5])
-            self.assertEqual(2.5, csv_data[2][6])
-            self.assertEqual(None, csv_data[2][7])
-            self.assertEqual('string in complex veld binnenin complex veld', csv_data[2][8])
+            self.assertEqual(None, csv_data[2][6])
+            self.assertEqual(2.5, csv_data[2][7])
+            self.assertEqual(None, csv_data[2][8])
             self.assertEqual(['waarde-2'], csv_data[2][9])
 
     def test_create_data_from_objects_cardinality(self):
@@ -209,7 +230,7 @@ class CsvExporterTests(unittest.TestCase):
             self.assertEqual('testKeuzelijstMetKard()', csv_data[0][9])
 
         csv_data_lines = exporter.create_data_lines_from_data(csv_data)
-        expected_line_asset_2 = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#AllCasesTestClass,1,,False,,,2.5,,string in complex veld binnenin complex veld,waarde-2$waarde-3'
+        expected_line_asset_2 = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#AllCasesTestClass,1,,False,string in complex veld binnenin complex veld,,,2.5,,waarde-2$waarde-3'
 
         with self.subTest('verify data with different settings'):
             self.assertEqual(expected_line_asset_2, csv_data_lines[2])

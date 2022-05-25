@@ -61,5 +61,5 @@ if __name__ == '__main__':
         aan_te_leveren.append(netwerkElement)
 
     # write a file for Davie
-    otl_facility.davieExporter.export_objects_to_json_file(aan_te_leveren, 'C:\\resources\\netwerkelementen_locaties_van_IP_20220518.json')
+    otl_facility.jsonExporter.export_objects_to_json_file(aan_te_leveren, 'C:\\resources\\netwerkelementen_locaties_van_IP_20220518.json')
 

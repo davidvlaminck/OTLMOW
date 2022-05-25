@@ -31,7 +31,7 @@ class CsvImporter:
                 data = []
                 for line in file:
                     data.append(line[:-1].split(delimiter))
-                self.data = data[1:]
+                self.data = data
 
         except Exception as ex:
             raise ex

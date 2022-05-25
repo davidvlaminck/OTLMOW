@@ -43,7 +43,9 @@ class CsvExporter:
                 csv_data.append(self.create_csv_row_for_AIMObject(object))
 
         self.csv_headers = self.adjust_dotnotatie_by_settings(headers=self.csv_headers, settings=self.settings)
+        self.csv_headers = self.sort_headers(self.csv_headers)
         csv_data.insert(0, self.csv_headers)
+
 
         csv_data = self.append_with_nones(csv_data)
 
@@ -118,4 +120,14 @@ class CsvExporter:
                     file.writelines(line + '\n')
         except Exception as ex:
             raise ex
+
+    @staticmethod
+    def sort_headers(headers):
+        if headers is None or headers == []:
+            return headers
+        first_three = headers[0:3]
+        rest = headers[3:]
+        first_three.extend(sorted(rest))
+
+        return first_three
 

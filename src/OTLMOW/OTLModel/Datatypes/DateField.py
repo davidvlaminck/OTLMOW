@@ -25,7 +25,12 @@ class DateField(OTLField):
                 dt = datetime.strptime(value, "%Y-%m-%d")
                 return date(dt.year, dt.month, dt.day)
             except Exception:
-                raise CouldNotConvertToCorrectType(f'{value} could not be converted to correct type (implied by {cls.__name__})')
+                try:
+                    dt = datetime.strptime(value, "%d/%m/%Y")
+                    return date(dt.year, dt.month, dt.day)
+                except Exception:
+                    raise CouldNotConvertToCorrectType(
+                        f'{value} could not be converted to correct type (implied by {cls.__name__})')
         raise CouldNotConvertToCorrectType(f'{value} could not be converted to correct type (implied by {cls.__name__})')
 
     @staticmethod

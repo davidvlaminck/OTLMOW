@@ -13,7 +13,7 @@ class Post060349901(StandaardPost):
             mappings=[StandaardPostMapping(
                 typeURI='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#WaterdoorlatendeBestrating',
                 attribuutURI='',
-                dotnotatie='',
+                dotnotation='',
                 defaultWaarde='',
                 range='',
                 usagenote='',

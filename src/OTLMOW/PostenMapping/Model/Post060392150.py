@@ -13,7 +13,7 @@ class Post060392150(StandaardPost):
             mappings=[StandaardPostMapping(
                 typeURI='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#VerhardingGrasKunststofplaat',
                 attribuutURI='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#VerhardingGrasKunststofplaat.vulling',
-                dotnotatie='vulling',
+                dotnotation='vulling',
                 defaultWaarde='bomenzand-en-ingezaaid',
                 range='',
                 usagenote='',
@@ -26,7 +26,7 @@ class Post060392150(StandaardPost):
                 , StandaardPostMapping(
                 typeURI='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#VerhardingGrasKunststofplaat',
                 attribuutURI='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Laag.laagRol',
-                dotnotatie='laagRol',
+                dotnotation='laagRol',
                 defaultWaarde='verharding',
                 range='',
                 usagenote='',
@@ -39,7 +39,7 @@ class Post060392150(StandaardPost):
                 , StandaardPostMapping(
                 typeURI='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#VerhardingGrasKunststofplaat',
                 attribuutURI='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#LaagDikte.dikte',
-                dotnotatie='dikte',
+                dotnotation='dikte',
                 defaultWaarde='5',
                 range='',
                 usagenote='cm^^cdt:ucumunit',
@@ -52,7 +52,7 @@ class Post060392150(StandaardPost):
                 , StandaardPostMapping(
                 typeURI='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#VerhardingGrasKunststofplaat',
                 attribuutURI='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Laag.oppervlakte',
-                dotnotatie='oppervlakte',
+                dotnotation='oppervlakte',
                 defaultWaarde='',
                 range='',
                 usagenote='m2^^cdt:ucumunit',

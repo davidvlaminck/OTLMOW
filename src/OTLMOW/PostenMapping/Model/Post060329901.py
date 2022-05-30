@@ -13,7 +13,7 @@ class Post060329901(StandaardPost):
             mappings=[StandaardPostMapping(
                 typeURI='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#BestratingVanMozaiekkei',
                 attribuutURI='',
-                dotnotatie='',
+                dotnotation='',
                 defaultWaarde='',
                 range='',
                 usagenote='',

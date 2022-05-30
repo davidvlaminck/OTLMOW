@@ -28,7 +28,7 @@
     "file_formats": [
         {
             "name": "OTLMOW",
-            "dotnotatie": {
+            "dotnotation": {
                 "separator": ".",
                 "cardinality separator": "|",
                 "cardinality indicator": "[]",
@@ -37,7 +37,7 @@
         },
         {
             "name": "dwg property set",
-            "dotnotatie": {
+            "dotnotation": {
                 "separator": ".",
                 "cardinality separator": "|",
                 "cardinality indicator": "[]",
@@ -46,7 +46,7 @@
         },
         {
             "name": "csv",
-            "dotnotatie": {
+            "dotnotation": {
                 "separator": ".",
                 "cardinality separator": "|",
                 "cardinality indicator": "[]",
@@ -56,7 +56,7 @@
         },
         {
             "name": "xslx",
-            "dotnotatie": {
+            "dotnotation": {
                 "separator": ".",
                 "cardinality separator": "|",
                 "cardinality indicator": "[]",
@@ -65,7 +65,7 @@
         },
         {
             "name": "rvt",
-            "dotnotatie": {
+            "dotnotation": {
                 "separator": ".",
                 "cardinality separator": "|",
                 "cardinality indicator": "[]",
@@ -74,13 +74,13 @@
         },
         {
             "name": "json",
-            "dotnotatie": {
+            "dotnotation": {
                 "waarde_shortcut_applicable": true
             }
         },
         {
             "name": "geojson",
-            "dotnotatie": {
+            "dotnotation": {
                 "separator": ".",
                 "cardinality separator": "|",
                 "cardinality indicator": "[]",

@@ -1,7 +1,7 @@
 import os
 
 from OTLMOW.Facility.AssetFactory import AssetFactory
-from OTLMOW.Facility.DotnotatieHelper import DotnotatieHelper
+from OTLMOW.Facility.DotnotationHelper import DotnotationHelper
 
 
 class CsvImporter:
@@ -71,8 +71,8 @@ class CsvImporter:
                         value = None
                     self.headers[index] = 'geometry'
 
-                DotnotatieHelper.set_attribute_by_dotnotatie(instanceOrAttribute=object,
-                                                             dotnotatie=self.headers[index],
+                DotnotationHelper.set_attribute_by_dotnotation(instanceOrAttribute=object,
+                                                             dotnotation=self.headers[index],
                                                              value=value,
                                                              convert=True,
                                                              separator=self.settings['dotnotation']['separator'],

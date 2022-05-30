@@ -1,2 +1,2 @@
-class HasNoDotNotatieException(Exception):
+class HasNoDotnotationException(Exception):
     pass

@@ -13,7 +13,7 @@ class Post060190401(StandaardPost):
             mappings=[StandaardPostMapping(
                 typeURI='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Geotextiel',
                 attribuutURI='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Geotextiel.type',
-                dotnotatie='type',
+                dotnotation='type',
                 defaultWaarde='niet-geweven-geotextiel',
                 range='',
                 usagenote='',
@@ -26,7 +26,7 @@ class Post060190401(StandaardPost):
                 , StandaardPostMapping(
                 typeURI='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Geotextiel',
                 attribuutURI='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Laag.oppervlakte',
-                dotnotatie='oppervlakte',
+                dotnotation='oppervlakte',
                 defaultWaarde='',
                 range='',
                 usagenote='m2^^cdt:ucumunit',

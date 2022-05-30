@@ -13,7 +13,7 @@ class Post060457114(StandaardPost):
             mappings=[StandaardPostMapping(
                 typeURI='',
                 attribuutURI='',
-                dotnotatie='',
+                dotnotation='',
                 defaultWaarde='',
                 range='',
                 usagenote='',
@@ -26,7 +26,7 @@ class Post060457114(StandaardPost):
                 , StandaardPostMapping(
                 typeURI='',
                 attribuutURI='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Laag.laagRol',
-                dotnotatie='laagRol',
+                dotnotation='laagRol',
                 defaultWaarde='verharding',
                 range='',
                 usagenote='',
@@ -39,7 +39,7 @@ class Post060457114(StandaardPost):
                 , StandaardPostMapping(
                 typeURI='',
                 attribuutURI='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#LaagDikte.dikte',
-                dotnotatie='dikte',
+                dotnotation='dikte',
                 defaultWaarde='4',
                 range='',
                 usagenote='cm^^cdt:ucumunit',
@@ -52,7 +52,7 @@ class Post060457114(StandaardPost):
                 , StandaardPostMapping(
                 typeURI='',
                 attribuutURI='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Laag.oppervlakte',
-                dotnotatie='oppervlakte',
+                dotnotation='oppervlakte',
                 defaultWaarde='',
                 range='',
                 usagenote='m2^^cdt:ucumunit',

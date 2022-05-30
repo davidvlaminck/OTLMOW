@@ -13,7 +13,7 @@ class Post060371610(StandaardPost):
             mappings=[StandaardPostMapping(
                 typeURI='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#BestratingVanNatuursteentegel',
                 attribuutURI='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#BestratingVanNatuursteentegel.afwerking',
-                dotnotatie='afwerking',
+                dotnotation='afwerking',
                 defaultWaarde='gezaagd',
                 range='',
                 usagenote='',
@@ -26,7 +26,7 @@ class Post060371610(StandaardPost):
                 , StandaardPostMapping(
                 typeURI='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#BestratingVanNatuursteentegel',
                 attribuutURI='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#BestratingVanNatuursteentegel.afmetingVanBestratingselementLxB',
-                dotnotatie='afmetingVanBestratingselementLxB',
+                dotnotation='afmetingVanBestratingselementLxB',
                 defaultWaarde='150-x-150',
                 range='',
                 usagenote='',
@@ -39,7 +39,7 @@ class Post060371610(StandaardPost):
                 , StandaardPostMapping(
                 typeURI='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#BestratingVanNatuursteentegel',
                 attribuutURI='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Laag.laagRol',
-                dotnotatie='laagRol',
+                dotnotation='laagRol',
                 defaultWaarde='straatlaag',
                 range='',
                 usagenote='',
@@ -52,7 +52,7 @@ class Post060371610(StandaardPost):
                 , StandaardPostMapping(
                 typeURI='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#BestratingVanNatuursteentegel',
                 attribuutURI='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#BestratingVanNatuursteentegel.gebruiksklasse',
-                dotnotatie='gebruiksklasse',
+                dotnotation='gebruiksklasse',
                 defaultWaarde='6',
                 range='',
                 usagenote='',
@@ -65,7 +65,7 @@ class Post060371610(StandaardPost):
                 , StandaardPostMapping(
                 typeURI='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#BestratingVanNatuursteentegel',
                 attribuutURI='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#LaagDikte.dikte',
-                dotnotatie='dikte',
+                dotnotation='dikte',
                 defaultWaarde='10',
                 range='',
                 usagenote='cm^^cdt:ucumunit',
@@ -78,7 +78,7 @@ class Post060371610(StandaardPost):
                 , StandaardPostMapping(
                 typeURI='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#BestratingVanNatuursteentegel',
                 attribuutURI='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Laag.oppervlakte',
-                dotnotatie='oppervlakte',
+                dotnotation='oppervlakte',
                 defaultWaarde='',
                 range='',
                 usagenote='m2^^cdt:ucumunit',

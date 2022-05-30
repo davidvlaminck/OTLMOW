@@ -13,7 +13,7 @@ class Post050401000(StandaardPost):
             mappings=[StandaardPostMapping(
                 typeURI='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Onderbouw',
                 attribuutURI='',
-                dotnotatie='',
+                dotnotation='',
                 defaultWaarde='',
                 range='',
                 usagenote='',
@@ -26,7 +26,7 @@ class Post050401000(StandaardPost):
                 , StandaardPostMapping(
                 typeURI='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Onderbouw',
                 attribuutURI='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcKrimpvoeg.totaleLengte',
-                dotnotatie='krimpvoegen.totaleLengte',
+                dotnotation='krimpvoegen.totaleLengte',
                 defaultWaarde='',
                 range='',
                 usagenote='m^^cdt:ucumunit',
@@ -39,7 +39,7 @@ class Post050401000(StandaardPost):
                 , StandaardPostMapping(
                 typeURI='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Onderbouw',
                 attribuutURI='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcKrimpvoeg.krimpvoegFrequentie',
-                dotnotatie='krimpvoegen.krimpvoegFrequentie',
+                dotnotation='krimpvoegen.krimpvoegFrequentie',
                 defaultWaarde='',
                 range='',
                 usagenote='m^^cdt:ucumunit',

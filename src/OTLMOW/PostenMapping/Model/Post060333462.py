@@ -13,7 +13,7 @@ class Post060333462(StandaardPost):
             mappings=[StandaardPostMapping(
                 typeURI='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#BestratingVanBetonstraatsteen',
                 attribuutURI='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcBSSRandafwerking.lengteRandafwerking',
-                dotnotatie='randafwerking.lengteRandafwerking',
+                dotnotation='randafwerking.lengteRandafwerking',
                 defaultWaarde='',
                 range='',
                 usagenote='m^^cdt:ucumunit',
@@ -26,7 +26,7 @@ class Post060333462(StandaardPost):
                 , StandaardPostMapping(
                 typeURI='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#BestratingVanBetonstraatsteen',
                 attribuutURI='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#LaagDikte.dikte',
-                dotnotatie='dikte',
+                dotnotation='dikte',
                 defaultWaarde='12',
                 range='',
                 usagenote='cm^^cdt:ucumunit',
@@ -39,7 +39,7 @@ class Post060333462(StandaardPost):
                 , StandaardPostMapping(
                 typeURI='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#BestratingVanBetonstraatsteen',
                 attribuutURI='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcBSSRandafwerking.randafwerking',
-                dotnotatie='randafwerking.randafwerking',
+                dotnotation='randafwerking.randafwerking',
                 defaultWaarde='',
                 range='kardinaalsmutsen|biscchopsmutsen',
                 usagenote='',

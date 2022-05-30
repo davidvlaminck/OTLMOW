@@ -13,7 +13,7 @@ class Post060382010(StandaardPost):
             mappings=[StandaardPostMapping(
                 typeURI='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#BestratingVanGrasbetontegel',
                 attribuutURI='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#BestratingVanGrasbetontegel.vulling',
-                dotnotatie='vulling',
+                dotnotation='vulling',
                 defaultWaarde='bomenzand',
                 range='',
                 usagenote='',
@@ -26,7 +26,7 @@ class Post060382010(StandaardPost):
                 , StandaardPostMapping(
                 typeURI='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#BestratingVanGrasbetontegel',
                 attribuutURI='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Laag.laagRol',
-                dotnotatie='laagRol',
+                dotnotation='laagRol',
                 defaultWaarde='straatlaag',
                 range='',
                 usagenote='',
@@ -39,7 +39,7 @@ class Post060382010(StandaardPost):
                 , StandaardPostMapping(
                 typeURI='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#BestratingVanGrasbetontegel',
                 attribuutURI='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#LaagDikte.dikte',
-                dotnotatie='dikte',
+                dotnotation='dikte',
                 defaultWaarde='10',
                 range='',
                 usagenote='cm^^cdt:ucumunit',
@@ -52,7 +52,7 @@ class Post060382010(StandaardPost):
                 , StandaardPostMapping(
                 typeURI='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#BestratingVanGrasbetontegel',
                 attribuutURI='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Laag.oppervlakte',
-                dotnotatie='oppervlakte',
+                dotnotation='oppervlakte',
                 defaultWaarde='',
                 range='',
                 usagenote='m2^^cdt:ucumunit',

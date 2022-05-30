@@ -13,7 +13,7 @@ class Post060333382(StandaardPost):
             mappings=[StandaardPostMapping(
                 typeURI='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#BestratingVanBetonstraatsteen',
                 attribuutURI='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#LaagDikte.dikte',
-                dotnotatie='dikte',
+                dotnotation='dikte',
                 defaultWaarde='12',
                 range='',
                 usagenote='cm^^cdt:ucumunit',
@@ -26,7 +26,7 @@ class Post060333382(StandaardPost):
                 , StandaardPostMapping(
                 typeURI='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#BestratingVanBetonstraatsteen',
                 attribuutURI='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#BestratingVanBetonstraatsteen.afmetingVanBestratingselementLxB',
-                dotnotatie='afmetingVanBestratingselementLxB',
+                dotnotation='afmetingVanBestratingselementLxB',
                 defaultWaarde='200-x-200-voegstenen',
                 range='',
                 usagenote='',
@@ -39,7 +39,7 @@ class Post060333382(StandaardPost):
                 , StandaardPostMapping(
                 typeURI='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#BestratingVanBetonstraatsteen',
                 attribuutURI='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Laag.lengte',
-                dotnotatie='lengte',
+                dotnotation='lengte',
                 defaultWaarde='',
                 range='',
                 usagenote='m^^cdt:ucumunit',
@@ -52,7 +52,7 @@ class Post060333382(StandaardPost):
                 , StandaardPostMapping(
                 typeURI='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#BestratingVanBetonstraatsteen',
                 attribuutURI='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Laag.laagRol',
-                dotnotatie='laagRol',
+                dotnotation='laagRol',
                 defaultWaarde='straatlaag',
                 range='',
                 usagenote='',
@@ -65,7 +65,7 @@ class Post060333382(StandaardPost):
                 , StandaardPostMapping(
                 typeURI='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#BestratingVanBetonstraatsteen',
                 attribuutURI='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#BestratingVanBetonstraatsteen.afwerking',
-                dotnotatie='afwerking',
+                dotnotation='afwerking',
                 defaultWaarde='gewassen',
                 range='',
                 usagenote='',
@@ -78,7 +78,7 @@ class Post060333382(StandaardPost):
                 , StandaardPostMapping(
                 typeURI='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#BestratingVanBetonstraatsteen',
                 attribuutURI='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#BestratingVanBetonstraatsteen.type',
-                dotnotatie='type',
+                dotnotation='type',
                 defaultWaarde='gekleurde-met-kleurondersteunende-granulaten',
                 range='',
                 usagenote='',

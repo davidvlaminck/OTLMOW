@@ -1,5 +1,5 @@
 ﻿from OTLMOW.Facility.AssetFactory import AssetFactory
-from OTLMOW.Facility.DotnotatieHelper import DotnotatieHelper
+from OTLMOW.Facility.DotnotationHelper import DotnotationHelper
 from OTLMOW.OTLModel.BaseClasses.OTLAsset import OTLAsset
 from OTLMOW.PostenMapping.PostenLijst import PostenLijst
 from OTLMOW.PostenMapping.StandaardPost import StandaardPost
@@ -21,7 +21,7 @@ class StandaardPostFactory:
                 asset = class_loader.dynamic_create_instance_from_uri(mapping.typeURI)
                 lijst.append(asset)
             if mapping.defaultWaarde != '':
-                DotnotatieHelper.set_attribute_by_dotnotatie(asset, mapping.dotnotatie, mapping.defaultWaarde)
+                DotnotationHelper.set_attribute_by_dotnotation(asset, mapping.dotnotation, mapping.defaultWaarde)
         return lijst
 
     @staticmethod
@@ -44,11 +44,11 @@ class StandaardPostFactory:
         selectie.extend(mappings_met_invulbare_attributen)
 
         for mapping in mappings_met_invulbare_attributen:
-            attribuut = DotnotatieHelper.get_attributes_by_dotnotatie(otlObject, mapping.dotnotatie, waarde_shortcut_applicable=True)
+            attribuut = DotnotationHelper.get_attributes_by_dotnotation(otlObject, mapping.dotnotation, waarde_shortcut_applicable=True)
             waarde = attribuut.waarde
             if waarde is None:
                 continue
-            selectie = list(filter(lambda m: DotnotatieHelper.convert_waarde_to_correct_type(m.dotnotatie == mapping.dotnotatie and m.defaultWaarde, attribuut) == waarde, selectie))
+            selectie = list(filter(lambda m: DotnotationHelper.convert_waarde_to_correct_type(m.dotnotation == mapping.dotnotation and m.defaultWaarde, attribuut) == waarde, selectie))
 
         postennummers = list(set(map(lambda x: x.standaardpostnummer, selectie)))
         posten_lijst = list(filter(lambda m: m.nummer in postennummers, posten_lijst))

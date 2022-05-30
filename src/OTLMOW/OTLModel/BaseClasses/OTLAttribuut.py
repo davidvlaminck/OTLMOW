@@ -2,7 +2,7 @@
 import warnings
 from datetime import datetime
 
-from OTLMOW.Facility.DotnotatieHelper import DotnotatieHelper
+from OTLMOW.Facility.DotnotationHelper import DotnotationHelper
 from OTLMOW.Facility.Exceptions.MethodNotApplicableError import MethodNotApplicableError
 from OTLMOW.OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLMOW.OTLModel.BaseClasses.CachedProperty import cached_property
@@ -25,7 +25,7 @@ class OTLAttribuut(AttributeInfo):
         self.readonly = readonly
         self.kardinaliteit_min = kardinaliteit_min
         self.kardinaliteit_max = kardinaliteit_max
-        self._dotnotatie = ''
+        self._dotnotation = ''
         self.owner = owner
         self.readonlyValue = None
         self.waarde = None
@@ -205,7 +205,7 @@ class OTLAttribuut(AttributeInfo):
         return s
 
     @cached_property
-    def dotnotatie(self):
-        if self._dotnotatie == '':
-            self._dotnotatie = DotnotatieHelper.get_dotnotatie(self)
-        return self._dotnotatie
+    def dotnotation(self):
+        if self._dotnotation == '':
+            self._dotnotation = DotnotationHelper.get_dotnotation(self)
+        return self._dotnotation

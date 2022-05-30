@@ -170,5 +170,5 @@ class AssetFactoryTests(TestCase):
         self.assertEqual('test string', copy_test_instance.testComplexTypeMetKard[0].testStringField)
 
     @unittest.skip('Not implemented yet')
-    def test_copy_fields_from_object_to_new_object_DotNotatie(self):
+    def test_copy_fields_from_object_to_new_object_Dotnotation(self):
         self.assertTrue(False)

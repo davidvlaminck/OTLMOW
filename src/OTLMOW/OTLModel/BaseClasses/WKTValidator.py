@@ -23,7 +23,10 @@ class WKTValidator:
                         return False
                 return True
             else:
-                puntenlijst = punten.split(', ')
+                if ', ' in punten:
+                    puntenlijst = punten.split(', ')
+                else:
+                    puntenlijst = punten.split(',')
                 return WKTValidator.validate_puntenlijst(geo_type, puntenlijst)
         else:
             punten = input_string.split(' (')[1]

@@ -13,7 +13,7 @@ class Post050407101(StandaardPost):
             mappings=[StandaardPostMapping(
                 typeURI='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Onderbouw',
                 attribuutURI='',
-                dotnotatie='',
+                dotnotation='',
                 defaultWaarde='',
                 range='',
                 usagenote='',
@@ -26,7 +26,7 @@ class Post050407101(StandaardPost):
                 , StandaardPostMapping(
                 typeURI='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Onderbouw',
                 attribuutURI='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Laag.laagRol',
-                dotnotatie='laagRol',
+                dotnotation='laagRol',
                 defaultWaarde='fundering-voor-lijnvormige-elementen',
                 range='',
                 usagenote='',
@@ -39,7 +39,7 @@ class Post050407101(StandaardPost):
                 , StandaardPostMapping(
                 typeURI='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Onderbouw',
                 attribuutURI='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Laag.lengte',
-                dotnotatie='lengte',
+                dotnotation='lengte',
                 defaultWaarde='',
                 range='',
                 usagenote='m^^cdt:ucumunit',
@@ -52,7 +52,7 @@ class Post050407101(StandaardPost):
                 , StandaardPostMapping(
                 typeURI='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Onderbouw',
                 attribuutURI='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Onderbouw.type',
-                dotnotatie='type',
+                dotnotation='type',
                 defaultWaarde='zandcement',
                 range='',
                 usagenote='',

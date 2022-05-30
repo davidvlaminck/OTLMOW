@@ -1,4 +1,4 @@
-﻿from OTLMOW.Facility.DotnotatieHelper import DotnotatieHelper
+﻿from OTLMOW.Facility.DotnotationHelper import DotnotationHelper
 from OTLMOW.OTLModel.Classes.Geleideconstructie import Geleideconstructie
 
 if __name__ == '__main__':

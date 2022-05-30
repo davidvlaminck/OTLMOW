@@ -13,7 +13,7 @@ class Post060190206(StandaardPost):
             mappings=[StandaardPostMapping(
                 typeURI='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Wegdekvoeg',
                 attribuutURI='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Wegdekvoeg.type',
-                dotnotatie='type',
+                dotnotation='type',
                 defaultWaarde='isolatievoeg-tussen-bestaande-constructie-en-betonverharding',
                 range='',
                 usagenote='',
@@ -26,7 +26,7 @@ class Post060190206(StandaardPost):
                 , StandaardPostMapping(
                 typeURI='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Wegdekvoeg',
                 attribuutURI='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Wegdekvoeg.lengte',
-                dotnotatie='lengte',
+                dotnotation='lengte',
                 defaultWaarde='',
                 range='',
                 usagenote='m^^cdt:ucumunit',

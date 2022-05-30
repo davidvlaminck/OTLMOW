@@ -21,7 +21,7 @@ class PostenInMemoryCreator:
 
     def getAllStandaardPostMappings(self):
         data = self.sqlDbReader.performReadQuery(
-            'SELECT TypeURI, AttribuutURI, Dotnotatie, DefaultWaarde, "Range", UsageNote, IsMeetstaatAttr, IsAltijdInTeVullen, IsBasisMapping, MappingStatus, MappingOpmerking, Standaardpostnummer FROM "Mapping SB250"',
+            'SELECT TypeURI, AttribuutURI, Dotnotation, DefaultWaarde, "Range", UsageNote, IsMeetstaatAttr, IsAltijdInTeVullen, IsBasisMapping, MappingStatus, MappingOpmerking, Standaardpostnummer FROM "Mapping SB250"',
             {})
 
         lijst = []

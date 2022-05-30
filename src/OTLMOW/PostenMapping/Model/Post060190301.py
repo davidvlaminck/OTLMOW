@@ -13,7 +13,7 @@ class Post060190301(StandaardPost):
             mappings=[StandaardPostMapping(
                 typeURI='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Cementbetonverharding',
                 attribuutURI='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcSupplementenCBV.type',
-                dotnotatie='supplementen.type',
+                dotnotation='supplementen.type',
                 defaultWaarde='figureren-betonoppervlak-met-kleurverharder',
                 range='',
                 usagenote='',
@@ -26,7 +26,7 @@ class Post060190301(StandaardPost):
                 , StandaardPostMapping(
                 typeURI='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Cementbetonverharding',
                 attribuutURI='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Laag.oppervlakte',
-                dotnotatie='oppervlakte',
+                dotnotation='oppervlakte',
                 defaultWaarde='',
                 range='',
                 usagenote='m2^^cdt:ucumunit',
@@ -39,7 +39,7 @@ class Post060190301(StandaardPost):
                 , StandaardPostMapping(
                 typeURI='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Cementbetonverharding',
                 attribuutURI='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Cementbetonverharding.oppervlakbehandeling',
-                dotnotatie='oppervlakbehandeling',
+                dotnotation='oppervlakbehandeling',
                 defaultWaarde='figureren',
                 range='',
                 usagenote='',

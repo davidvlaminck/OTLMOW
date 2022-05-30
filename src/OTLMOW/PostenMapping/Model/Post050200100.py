@@ -13,7 +13,7 @@ class Post050200100(StandaardPost):
             mappings=[StandaardPostMapping(
                 typeURI='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#BeschermingWapening',
                 attribuutURI='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#BeschermingWapening.type',
-                dotnotatie='type',
+                dotnotation='type',
                 defaultWaarde='wapeningsnet',
                 range='',
                 usagenote='',
@@ -26,7 +26,7 @@ class Post050200100(StandaardPost):
                 , StandaardPostMapping(
                 typeURI='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#BeschermingWapening',
                 attribuutURI='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Laag.oppervlakte',
-                dotnotatie='oppervlakte',
+                dotnotation='oppervlakte',
                 defaultWaarde='',
                 range='',
                 usagenote='m2^^cdt:ucumunit',
@@ -39,7 +39,7 @@ class Post050200100(StandaardPost):
                 , StandaardPostMapping(
                 typeURI='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#BeschermingWapening',
                 attribuutURI='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Laag.laagRol',
-                dotnotatie='laagRol',
+                dotnotation='laagRol',
                 defaultWaarde='wapening',
                 range='',
                 usagenote='',

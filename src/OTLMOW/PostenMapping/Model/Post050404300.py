@@ -13,7 +13,7 @@ class Post050404300(StandaardPost):
             mappings=[StandaardPostMapping(
                 typeURI='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Onderbouw',
                 attribuutURI='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Onderbouw.type',
-                dotnotatie='type',
+                dotnotation='type',
                 defaultWaarde='met-toevoegsel-behandelde-steenslag-met-continue-korrelverdeling---type-IB',
                 range='',
                 usagenote='',
@@ -26,7 +26,7 @@ class Post050404300(StandaardPost):
                 , StandaardPostMapping(
                 typeURI='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Onderbouw',
                 attribuutURI='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Laag.laagRol',
-                dotnotatie='laagRol',
+                dotnotation='laagRol',
                 defaultWaarde='fundering',
                 range='',
                 usagenote='',
@@ -39,7 +39,7 @@ class Post050404300(StandaardPost):
                 , StandaardPostMapping(
                 typeURI='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Onderbouw',
                 attribuutURI='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Onderbouw.volume',
-                dotnotatie='volume',
+                dotnotation='volume',
                 defaultWaarde='',
                 range='',
                 usagenote='m3^^cdt:ucumunit',

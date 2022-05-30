@@ -1,6 +1,6 @@
 from unittest import TestCase, mock
 
-from OTLMOW.Facility.DotnotatieHelper import DotnotatieHelper
+from OTLMOW.Facility.DotnotationHelper import DotnotationHelper
 from OTLMOW.OTLModel.Classes.BitumineuzeLaag import BitumineuzeLaag
 from OTLMOW.PostenMapping.PostenCollector import PostenCollector
 from OTLMOW.PostenMapping.PostenCreator import PostenCreator
@@ -12,7 +12,7 @@ class StandaardPostCollection:
     def __init__(self):
         mappings0501 = [StandaardPostMapping(typeURI='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Geotextiel',
                                              attribuutURI='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Geotextiel.type',
-                                             dotnotatie='type',
+                                             dotnotation='type',
                                              defaultWaarde='bescherming',
                                              range='',
                                              usagenote='',
@@ -25,7 +25,7 @@ class StandaardPostCollection:
             , StandaardPostMapping(
                 typeURI='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Geotextiel',
                 attribuutURI='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Laag.oppervlakte',
-                dotnotatie='oppervlakte',
+                dotnotation='oppervlakte',
                 defaultWaarde='',
                 range='',
                 usagenote='m2^^cdt:ucumunit',
@@ -43,7 +43,7 @@ class StandaardPostCollection:
         mappings060215019 = [
             StandaardPostMapping(typeURI='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#BitumineuzeLaag',
                                  attribuutURI='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcProfileerlaag.laagtype',
-                                 dotnotatie='laagtype.profileerlaag.laagtype',
+                                 dotnotation='laagtype.profileerlaag.laagtype',
                                  defaultWaarde='profileerlaag',
                                  range='',
                                  usagenote='',
@@ -55,7 +55,7 @@ class StandaardPostCollection:
                                  standaardpostnummer='0602.15019'),
             StandaardPostMapping(typeURI='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#BitumineuzeLaag',
                                  attribuutURI='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Laag.laagRol',
-                                 dotnotatie='laagRol',
+                                 dotnotation='laagRol',
                                  defaultWaarde='verharding',
                                  range='',
                                  usagenote='',
@@ -67,7 +67,7 @@ class StandaardPostCollection:
                                  standaardpostnummer='0602.15019'),
             StandaardPostMapping(typeURI='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#BitumineuzeLaag',
                                  attribuutURI='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#LaagBouwklasse.bouwklasse',
-                                 dotnotatie='bouwklasse',
+                                 dotnotation='bouwklasse',
                                  defaultWaarde='',
                                  range='B1|B2|B3',
                                  usagenote='',
@@ -79,7 +79,7 @@ class StandaardPostCollection:
                                  standaardpostnummer='0602.15019'),
             StandaardPostMapping(typeURI='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#BitumineuzeLaag',
                                  attribuutURI='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#BitumineuzeLaag.mengseltype',
-                                 dotnotatie='mengseltype',
+                                 dotnotation='mengseltype',
                                  defaultWaarde='AVS-B',
                                  range='',
                                  usagenote='',
@@ -91,7 +91,7 @@ class StandaardPostCollection:
                                  standaardpostnummer='0602.15019'),
             StandaardPostMapping(typeURI='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#BitumineuzeLaag',
                                  attribuutURI='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#LaagDikte.dikte',
-                                 dotnotatie='dikte',
+                                 dotnotation='dikte',
                                  defaultWaarde='',
                                  range='8 <= x <= 10',
                                  usagenote='cm^^cdt:ucumunit',
@@ -103,7 +103,7 @@ class StandaardPostCollection:
                                  standaardpostnummer='0602.15019'),
             StandaardPostMapping(typeURI='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#BitumineuzeLaag',
                                  attribuutURI='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcProfileerlaag.gewicht',
-                                 dotnotatie='laagtype.profileerlaag.gewicht',
+                                 dotnotation='laagtype.profileerlaag.gewicht',
                                  defaultWaarde='',
                                  range='',
                                  usagenote='t^^cdt:ucumunit',
@@ -126,25 +126,25 @@ class StandaardPostCollection:
 
 
 class StandaardPostTests(TestCase):
-    def test_set_value_by_dotnotatie_simple(self):
+    def test_set_value_by_dotnotation_simple(self):
         b = BitumineuzeLaag()
         b.notitie = 'a'
         self.assertEqual('a', b.notitie)
-        DotnotatieHelper.set_attribute_by_dotnotatie(b, 'notitie', 'c')
+        DotnotationHelper.set_attribute_by_dotnotation(b, 'notitie', 'c')
         self.assertEqual('c', b.notitie)
 
-    def test_set_value_by_dotnotatie_invalid_attribute(self):
+    def test_set_value_by_dotnotation_invalid_attribute(self):
         b = BitumineuzeLaag()
         b.notitie = 'a'
         self.assertEqual('a', b.notitie)
         with self.assertRaises(AttributeError) as dotnotationerror:
-            DotnotatieHelper.set_attribute_by_dotnotatie(b, 'notitie_invalid', 'c')
+            DotnotationHelper.set_attribute_by_dotnotation(b, 'notitie_invalid', 'c')
 
-    def test_set_value_by_dotnotatie_complex(self):
+    def test_set_value_by_dotnotation_complex(self):
         b = BitumineuzeLaag()
         b.assetId.identificator = 'a'
         self.assertEqual('a', b.assetId.identificator)
-        DotnotatieHelper.set_attribute_by_dotnotatie(b, 'assetId.identificator', 'c')
+        DotnotationHelper.set_attribute_by_dotnotation(b, 'assetId.identificator', 'c')
         self.assertEqual('c', b.assetId.identificator)
 
     def test_create_datablock_standaardPost_0501(self):
@@ -168,7 +168,7 @@ class StandaardPostTests(TestCase):
                     "            mappings=[StandaardPostMapping(",
                     "                typeURI='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Geotextiel',",
                     "                attribuutURI='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Geotextiel.type',",
-                    "                dotnotatie='type',",
+                    "                dotnotation='type',",
                     "                defaultWaarde='bescherming',",
                     "                range='',",
                     "                usagenote='',",
@@ -181,7 +181,7 @@ class StandaardPostTests(TestCase):
                     '                , StandaardPostMapping(',
                     "                typeURI='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Geotextiel',",
                     "                attribuutURI='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Laag.oppervlakte',",
-                    "                dotnotatie='oppervlakte',",
+                    "                dotnotation='oppervlakte',",
                     "                defaultWaarde='',",
                     "                range='',",
                     "                usagenote='m2^^cdt:ucumunit',",

@@ -13,7 +13,7 @@ class Post060251064(StandaardPost):
             mappings=[StandaardPostMapping(
                 typeURI='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#BitumineuzeLaag',
                 attribuutURI='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtuBVLaagtypes.laagtype',
-                dotnotatie='laagtype.laagtype',
+                dotnotation='laagtype.laagtype',
                 defaultWaarde='toplaag-van-asfaltbeton',
                 range='',
                 usagenote='',
@@ -26,7 +26,7 @@ class Post060251064(StandaardPost):
                 , StandaardPostMapping(
                 typeURI='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#BitumineuzeLaag',
                 attribuutURI='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Laag.laagRol',
-                dotnotatie='laagRol',
+                dotnotation='laagRol',
                 defaultWaarde='verharding',
                 range='',
                 usagenote='',
@@ -39,7 +39,7 @@ class Post060251064(StandaardPost):
                 , StandaardPostMapping(
                 typeURI='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#BitumineuzeLaag',
                 attribuutURI='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#LaagBouwklasse.bouwklasse',
-                dotnotatie='bouwklasse',
+                dotnotation='bouwklasse',
                 defaultWaarde='',
                 range='B6|B7|B8',
                 usagenote='',
@@ -52,7 +52,7 @@ class Post060251064(StandaardPost):
                 , StandaardPostMapping(
                 typeURI='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#BitumineuzeLaag',
                 attribuutURI='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#BitumineuzeLaag.mengseltype',
-                dotnotatie='mengseltype',
+                dotnotation='mengseltype',
                 defaultWaarde='APT-C',
                 range='',
                 usagenote='',
@@ -65,7 +65,7 @@ class Post060251064(StandaardPost):
                 , StandaardPostMapping(
                 typeURI='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#BitumineuzeLaag',
                 attribuutURI='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#LaagDikte.dikte',
-                dotnotatie='dikte',
+                dotnotation='dikte',
                 defaultWaarde='4',
                 range='',
                 usagenote='cm^^cdt:ucumunit',
@@ -78,7 +78,7 @@ class Post060251064(StandaardPost):
                 , StandaardPostMapping(
                 typeURI='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#BitumineuzeLaag',
                 attribuutURI='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Laag.oppervlakte',
-                dotnotatie='oppervlakte',
+                dotnotation='oppervlakte',
                 defaultWaarde='',
                 range='',
                 usagenote='m2^^cdt:ucumunit',

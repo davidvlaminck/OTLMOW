@@ -18,23 +18,27 @@ class JsonDecoder:
 
         self.settings = json_settings
 
-    def decode_json_string(self, jsonString):
+    def decode_json_string(self, jsonString, ignore_failed_objects=False):
         dict_list = json.loads(jsonString)
         lijst = []
         for obj in dict_list:
-            typeURI = next(value for key, value in obj.items() if 'typeURI' in key)
+            try:
+                typeURI = next(value for key, value in obj.items() if 'typeURI' in key)
 
-            if 'https://wegenenverkeer.data.vlaanderen.be/ns' not in typeURI:
-                raise ValueError('typeURI should start with "https://wegenenverkeer.data.vlaanderen.be/ns" to use this decoder')
+                if 'https://wegenenverkeer.data.vlaanderen.be/ns' not in typeURI:
+                    raise ValueError('typeURI should start with "https://wegenenverkeer.data.vlaanderen.be/ns" to use this decoder')
 
-            instance = AssetFactory().dynamic_create_instance_from_uri(typeURI)
-            lijst.append(instance)
+                instance = AssetFactory().dynamic_create_instance_from_uri(typeURI)
+                lijst.append(instance)
 
-            for key, value in obj.items():
-                if 'typeURI' in key or value == '' or value == [] or key == 'bron' or key == 'doel':
-                    continue
+                for key, value in obj.items():
+                    if 'typeURI' in key or value == '' or value == [] or key == 'bron' or key == 'doel':
+                        continue
 
-                DictDecoder.set_value_by_dictitem(instance, key, value, self.settings['dotnotation']['waarde_shortcut_applicable'])
+                    DictDecoder.set_value_by_dictitem(instance, key, value, self.settings['dotnotation']['waarde_shortcut_applicable'])
+            except Exception as ex:
+                if not ignore_failed_objects:
+                    raise ex
         return lijst
 
 

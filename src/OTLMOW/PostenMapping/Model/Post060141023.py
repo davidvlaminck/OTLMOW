@@ -13,7 +13,7 @@ class Post060141023(StandaardPost):
             mappings=[StandaardPostMapping(
                 typeURI='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Cementbetonverharding',
                 attribuutURI='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Cementbetonverharding.laagtype',
-                dotnotatie='laagtype',
+                dotnotation='laagtype',
                 defaultWaarde='tweelaagse-betonverharding',
                 range='',
                 usagenote='',
@@ -26,7 +26,7 @@ class Post060141023(StandaardPost):
                 , StandaardPostMapping(
                 typeURI='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Cementbetonverharding',
                 attribuutURI='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Cementbetonverharding.aardVerharding',
-                dotnotatie='aardVerharding',
+                dotnotation='aardVerharding',
                 defaultWaarde='doorgaand-gewapend-beton',
                 range='',
                 usagenote='',
@@ -39,7 +39,7 @@ class Post060141023(StandaardPost):
                 , StandaardPostMapping(
                 typeURI='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Cementbetonverharding',
                 attribuutURI='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Laag.laagRol',
-                dotnotatie='laagRol',
+                dotnotation='laagRol',
                 defaultWaarde='verharding',
                 range='',
                 usagenote='',
@@ -52,7 +52,7 @@ class Post060141023(StandaardPost):
                 , StandaardPostMapping(
                 typeURI='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Cementbetonverharding',
                 attribuutURI='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#LaagBouwklasse.bouwklasse',
-                dotnotatie='bouwklasse',
+                dotnotation='bouwklasse',
                 defaultWaarde='',
                 range='B1|B2|B3|B4|B5',
                 usagenote='',
@@ -65,7 +65,7 @@ class Post060141023(StandaardPost):
                 , StandaardPostMapping(
                 typeURI='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Cementbetonverharding',
                 attribuutURI='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#LaagDikte.dikte',
-                dotnotatie='dikte',
+                dotnotation='dikte',
                 defaultWaarde='23',
                 range='',
                 usagenote='cm^^cdt:ucumunit',
@@ -78,7 +78,7 @@ class Post060141023(StandaardPost):
                 , StandaardPostMapping(
                 typeURI='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Cementbetonverharding',
                 attribuutURI='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Laag.oppervlakte',
-                dotnotatie='oppervlakte',
+                dotnotation='oppervlakte',
                 defaultWaarde='',
                 range='',
                 usagenote='m2^^cdt:ucumunit',

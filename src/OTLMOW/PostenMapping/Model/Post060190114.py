@@ -13,7 +13,7 @@ class Post060190114(StandaardPost):
             mappings=[StandaardPostMapping(
                 typeURI='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Cementbetonverharding',
                 attribuutURI='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcSupplementenCBV.kleur',
-                dotnotatie='supplementen.kleur',
+                dotnotation='supplementen.kleur',
                 defaultWaarde='beige',
                 range='',
                 usagenote='',
@@ -26,7 +26,7 @@ class Post060190114(StandaardPost):
                 , StandaardPostMapping(
                 typeURI='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Cementbetonverharding',
                 attribuutURI='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Laag.oppervlakte',
-                dotnotatie='oppervlakte',
+                dotnotation='oppervlakte',
                 defaultWaarde='',
                 range='',
                 usagenote='m2^^cdt:ucumunit',
@@ -39,7 +39,7 @@ class Post060190114(StandaardPost):
                 , StandaardPostMapping(
                 typeURI='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Cementbetonverharding',
                 attribuutURI='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcSupplementenCBV.type',
-                dotnotatie='supplementen.type',
+                dotnotation='supplementen.type',
                 defaultWaarde='figureren-betonoppervlak-in-de-massa-gekleurd',
                 range='',
                 usagenote='',
@@ -52,7 +52,7 @@ class Post060190114(StandaardPost):
                 , StandaardPostMapping(
                 typeURI='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Cementbetonverharding',
                 attribuutURI='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Cementbetonverharding.laagtype',
-                dotnotatie='laagtype',
+                dotnotation='laagtype',
                 defaultWaarde='tweelaagse-betonverharding',
                 range='',
                 usagenote='',

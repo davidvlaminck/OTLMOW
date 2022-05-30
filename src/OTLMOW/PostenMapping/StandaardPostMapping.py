@@ -5,7 +5,7 @@
 class StandaardPostMapping:
     typeURI: str
     attribuutURI: str
-    dotnotatie: str
+    dotnotation: str
     defaultWaarde: str
     range: str
     usagenote: str

@@ -13,7 +13,7 @@ class Post060190204(StandaardPost):
             mappings=[StandaardPostMapping(
                 typeURI='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Wegdekvoeg',
                 attribuutURI='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Wegdekvoeg.lengte',
-                dotnotatie='lengte',
+                dotnotation='lengte',
                 defaultWaarde='',
                 range='',
                 usagenote='m^^cdt:ucumunit',
@@ -26,7 +26,7 @@ class Post060190204(StandaardPost):
                 , StandaardPostMapping(
                 typeURI='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Wegdekvoeg',
                 attribuutURI='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Wegdekvoeg.type',
-                dotnotatie='type',
+                dotnotation='type',
                 defaultWaarde='langsvoeg-tussen-fietspad-en-betonverharding',
                 range='',
                 usagenote='',

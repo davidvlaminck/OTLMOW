@@ -13,7 +13,7 @@ class Post060379902(StandaardPost):
             mappings=[StandaardPostMapping(
                 typeURI='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#BestratingVanNatuursteentegel',
                 attribuutURI='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Bestrating.voegvulling',
-                dotnotatie='voegvulling',
+                dotnotation='voegvulling',
                 defaultWaarde='mortel-met-bouwklasse-B6-B10',
                 range='',
                 usagenote='',
@@ -26,7 +26,7 @@ class Post060379902(StandaardPost):
                 , StandaardPostMapping(
                 typeURI='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#BestratingVanNatuursteentegel',
                 attribuutURI='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Laag.oppervlakte',
-                dotnotatie='oppervlakte',
+                dotnotation='oppervlakte',
                 defaultWaarde='',
                 range='',
                 usagenote='m2^^cdt:ucumunit',

@@ -45,7 +45,7 @@ class CsvExporter:
 
                 self.csv_data.append(self.create_csv_row_for_AIMObject(object))
 
-        self.csv_headers = self.adjust_dotnotatie_by_settings(headers=self.csv_headers, settings=self.settings)
+        self.csv_headers = self.adjust_dotnotation_by_settings(headers=self.csv_headers, settings=self.settings)
         self.csv_headers = self.sort_headers(self.csv_headers)
         self.csv_data.insert(0, self.csv_headers)
 
@@ -59,7 +59,7 @@ class CsvExporter:
         while len(values_list) < len(self.csv_headers):
             values_list.append(None)
 
-        for attribute, value in aimobject.list_attributes_and_values_by_dotnotatie(
+        for attribute, value in aimobject.list_attributes_and_values_by_dotnotation(
                 waarde_shortcut=self.settings['dotnotation']['waarde_shortcut_applicable']):
             if attribute in self.csv_headers[1:3]:
                 continue
@@ -89,7 +89,7 @@ class CsvExporter:
         return csv_data
 
     @staticmethod
-    def adjust_dotnotatie_by_settings(headers, settings):
+    def adjust_dotnotation_by_settings(headers, settings):
         for index, header in enumerate(headers):
             headers[index] = header.replace('.', settings['dotnotation']['separator']) \
                 .replace('[]', settings['dotnotation']['cardinality indicator'])

@@ -2,7 +2,7 @@
 from datetime import date, time, datetime
 from typing import Generator, Iterable
 
-from OTLMOW.Facility.DotnotatieHelper import DotnotatieHelper
+from OTLMOW.Facility.DotnotationHelper import DotnotationHelper
 from OTLMOW.OTLModel.Datatypes.DateField import DateField
 from OTLMOW.OTLModel.Datatypes.DateTimeField import DateTimeField
 from OTLMOW.OTLModel.Datatypes.TimeField import TimeField
@@ -76,10 +76,10 @@ class OTLObjectHelper:
         return d
 
     @classmethod
-    def build_string_version(cls, asset, indent=4, use_dotnotatie=False) -> str:
+    def build_string_version(cls, asset, indent=4, use_dotnotation=False) -> str:
         lines = []
-        for dotnotatie, waarde in cls.list_attributes_and_values_by_dotnotatie(asset):
-            lines.append(f'{dotnotatie} : {waarde}')
+        for dotnotation, waarde in cls.list_attributes_and_values_by_dotnotation(asset):
+            lines.append(f'{dotnotation} : {waarde}')
         return '\n'.join(lines)
 
     @classmethod
@@ -95,7 +95,7 @@ class OTLObjectHelper:
         return lines
 
     @classmethod
-    def list_attributes_and_values_by_dotnotatie(cls, asset=None, waarde_shortcut: bool = False) -> Iterable[tuple[str, object]]:
+    def list_attributes_and_values_by_dotnotation(cls, asset=None, waarde_shortcut: bool = False) -> Iterable[tuple[str, object]]:
         sorted_attributes = sorted(list(vars(asset).items()), key=lambda i: i[0])
 
         for k, v in sorted_attributes:
@@ -109,26 +109,26 @@ class OTLObjectHelper:
                     lijsten = []
                     for list_item in v.waarde:
                         lijsten.append(
-                            list(cls.list_attributes_and_values_by_dotnotatie(asset=list_item, waarde_shortcut=waarde_shortcut)))
+                            list(cls.list_attributes_and_values_by_dotnotation(asset=list_item, waarde_shortcut=waarde_shortcut)))
 
                     combined_dict = {}
                     for lijst in lijsten:
 
-                        for dotnotatie, v in lijst:
-                            if dotnotatie not in combined_dict:
-                                combined_dict[dotnotatie] = [v]
+                        for dotnotation, v in lijst:
+                            if dotnotation not in combined_dict:
+                                combined_dict[dotnotation] = [v]
                             else:
-                                combined_dict[dotnotatie].append(v)
+                                combined_dict[dotnotation].append(v)
 
                     for dict_k in sorted(combined_dict.keys()):
                         yield dict_k, combined_dict[dict_k]
                 else:
-                    for k1, v1 in cls.list_attributes_and_values_by_dotnotatie(asset=v.waarde, waarde_shortcut=waarde_shortcut):
+                    for k1, v1 in cls.list_attributes_and_values_by_dotnotation(asset=v.waarde, waarde_shortcut=waarde_shortcut):
                         yield k1, v1
 
             else:
-                dotnotatie = DotnotatieHelper.get_dotnotatie(v, waarde_shortcut_applicable=waarde_shortcut)
-                yield dotnotatie, v.waarde
+                dotnotation = DotnotationHelper.get_dotnotation(v, waarde_shortcut_applicable=waarde_shortcut)
+                yield dotnotation, v.field.value_default(v.waarde)
 
 
 class OTLObject:
@@ -145,10 +145,10 @@ class OTLObject:
     def create_dict_from_asset(self, waarde_shortcut=False) -> dict:
         return OTLObjectHelper.create_dict_from_asset(asset=self, waarde_shortcut=waarde_shortcut)
 
-    def list_attributes_and_values_by_dotnotatie(self, waarde_shortcut: bool = False) -> Iterable[tuple[str, object]]:
-        for k, v in OTLObjectHelper.list_attributes_and_values_by_dotnotatie(asset=self, waarde_shortcut=waarde_shortcut):
+    def list_attributes_and_values_by_dotnotation(self, waarde_shortcut: bool = False) -> Iterable[tuple[str, object]]:
+        for k, v in OTLObjectHelper.list_attributes_and_values_by_dotnotation(asset=self, waarde_shortcut=waarde_shortcut):
             yield k, v
 
-    def __str__(self, use_dotnotatie=False):
+    def __str__(self, use_dotnotation=False):
         return f'information about {self.__class__.__name__} {self.__hash__()}:\n' + \
-               OTLObjectHelper.build_string_version(asset=self, indent=4, use_dotnotatie=use_dotnotatie)
+               OTLObjectHelper.build_string_version(asset=self, indent=4, use_dotnotation=use_dotnotation)

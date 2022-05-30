@@ -13,7 +13,7 @@ class Post060270062(StandaardPost):
             mappings=[StandaardPostMapping(
                 typeURI='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#BitumineuzeLaag',
                 attribuutURI='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#BitumineuzeLaag.kleur',
-                dotnotatie='kleur',
+                dotnotation='kleur',
                 defaultWaarde='oker',
                 range='',
                 usagenote='',
@@ -26,7 +26,7 @@ class Post060270062(StandaardPost):
                 , StandaardPostMapping(
                 typeURI='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#BitumineuzeLaag',
                 attribuutURI='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtuBVLaagtypes.laagtype',
-                dotnotatie='laagtype.laagtype',
+                dotnotation='laagtype.laagtype',
                 defaultWaarde='toplaag-van-gietasfalt',
                 range='',
                 usagenote='',
@@ -39,7 +39,7 @@ class Post060270062(StandaardPost):
                 , StandaardPostMapping(
                 typeURI='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#BitumineuzeLaag',
                 attribuutURI='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Laag.oppervlakte',
-                dotnotatie='oppervlakte',
+                dotnotation='oppervlakte',
                 defaultWaarde='',
                 range='',
                 usagenote='m2^^cdt:ucumunit',

@@ -61,7 +61,7 @@ class PostenCreator:
         for mapping in post.mappings:
             datablock.append(f"                typeURI={wrap_in_quotes(mapping.typeURI)},")
             datablock.append(f"                attribuutURI={wrap_in_quotes(mapping.attribuutURI)},")
-            datablock.append(f"                dotnotatie={wrap_in_quotes(mapping.dotnotatie)},")
+            datablock.append(f"                dotnotation={wrap_in_quotes(mapping.dotnotation)},")
             datablock.append(f"                defaultWaarde={wrap_in_quotes(mapping.defaultWaarde)},")
             datablock.append(f"                range={wrap_in_quotes(mapping.range)},")
             datablock.append(f"                usagenote={wrap_in_quotes(mapping.usagenote)},")

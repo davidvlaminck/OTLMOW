@@ -13,7 +13,7 @@ class Post050304004(StandaardPost):
             mappings=[StandaardPostMapping(
                 typeURI='',
                 attribuutURI='',
-                dotnotatie='',
+                dotnotation='',
                 defaultWaarde='',
                 range='',
                 usagenote='',

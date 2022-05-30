@@ -13,7 +13,7 @@ class Post060190001(StandaardPost):
             mappings=[StandaardPostMapping(
                 typeURI='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Verankeringslandhoofd',
                 attribuutURI='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Verankeringslandhoofd.lengte',
-                dotnotatie='lengte',
+                dotnotation='lengte',
                 defaultWaarde='',
                 range='',
                 usagenote='m^^cdt:ucumunit',
@@ -26,7 +26,7 @@ class Post060190001(StandaardPost):
                 , StandaardPostMapping(
                 typeURI='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Verankeringslandhoofd',
                 attribuutURI='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Verankeringslandhoofd.breedte',
-                dotnotatie='breedte',
+                dotnotation='breedte',
                 defaultWaarde='',
                 range='',
                 usagenote='m^^cdt:ucumunit',
@@ -39,7 +39,7 @@ class Post060190001(StandaardPost):
                 , StandaardPostMapping(
                 typeURI='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Verankeringslandhoofd',
                 attribuutURI='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Verankeringslandhoofd.ribben',
-                dotnotatie='ribben',
+                dotnotation='ribben',
                 defaultWaarde='integer',
                 range='',
                 usagenote='',

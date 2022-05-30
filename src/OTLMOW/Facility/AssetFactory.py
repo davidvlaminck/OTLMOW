@@ -74,7 +74,7 @@ class AssetFactory:
             raise ValueError("input can't be None")
         d = dir(orig_asset)
 
-        reserved = ['info_attr', 'info_attr_type', 'info', 'make_string_version', 'create_dict_from_asset', 'list_attributes_and_values_by_dotnotatie']
+        reserved = ['info_attr', 'info_attr_type', 'info', 'make_string_version', 'create_dict_from_asset', 'list_attributes_and_values_by_dotnotation']
         listFields = [item for item in d if item[0] != '_' and item not in reserved]
 
         return listFields

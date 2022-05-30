@@ -1,6 +1,6 @@
 import json
 
-from OTLMOW.Facility.DotnotatieHelper import DotnotatieHelper
+from OTLMOW.Facility.DotnotationHelper import DotnotationHelper
 from OTLMOW.Facility.Singleton import Singleton
 
 
@@ -21,10 +21,10 @@ class SettingsManager(metaclass=Singleton):
             otlmow_format = next((f for f in self.settings['file_formats'] if f['name'] == 'OTLMOW'), None)
             if otlmow_format is not None and 'dotnotation' in otlmow_format:
                 if 'separator' in otlmow_format['dotnotation']:
-                    DotnotatieHelper.separator = otlmow_format['dotnotation']['separator']
+                    DotnotationHelper.separator = otlmow_format['dotnotation']['separator']
                 if 'cardinality separator' in otlmow_format['dotnotation']:
-                    DotnotatieHelper.cardinality_separator = otlmow_format['dotnotation']['cardinality separator']
+                    DotnotationHelper.cardinality_separator = otlmow_format['dotnotation']['cardinality separator']
                 if 'cardinality indicator' in otlmow_format['dotnotation']:
-                    DotnotatieHelper.cardinality_indicator = otlmow_format['dotnotation']['cardinality indicator']
+                    DotnotationHelper.cardinality_indicator = otlmow_format['dotnotation']['cardinality indicator']
                 if 'waarde_shortcut_applicable' in otlmow_format['dotnotation']:
-                    DotnotatieHelper.waarde_shortcut_applicable = otlmow_format['dotnotation']['waarde_shortcut_applicable']
+                    DotnotationHelper.waarde_shortcut_applicable = otlmow_format['dotnotation']['waarde_shortcut_applicable']

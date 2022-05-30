@@ -4,67 +4,67 @@ from AllCasesTestClass import AllCasesTestClass
 from OTLMOW.Facility.SettingsManager import SettingsManager
 
 
-class DotnotatieOnAttributeTests(TestCase):
-    def test_dotnotatie_on_attribute(self):
+class DotnotationOnAttributeTests(TestCase):
+    def test_dotnotation_on_attribute(self):
         instance = AllCasesTestClass()
 
         with self.subTest('complex attribute'):
-            self.assertEqual('testComplexType', instance._testComplexType.dotnotatie)
-            self.assertEqual('testComplexType.testBooleanField', instance.testComplexType._testBooleanField.dotnotatie)
-            self.assertEqual('testComplexType.testComplexType2', instance.testComplexType._testComplexType2.dotnotatie)
+            self.assertEqual('testComplexType', instance._testComplexType.dotnotation)
+            self.assertEqual('testComplexType.testBooleanField', instance.testComplexType._testBooleanField.dotnotation)
+            self.assertEqual('testComplexType.testComplexType2', instance.testComplexType._testComplexType2.dotnotation)
             self.assertEqual('testComplexType.testComplexType2.testStringField',
-                             instance.testComplexType.testComplexType2._testStringField.dotnotatie)
+                             instance.testComplexType.testComplexType2._testStringField.dotnotation)
             self.assertEqual('testComplexType.testComplexType2.testKwantWrd',
-                             instance.testComplexType.testComplexType2._testKwantWrd.dotnotatie)
+                             instance.testComplexType.testComplexType2._testKwantWrd.dotnotation)
             self.assertEqual('testComplexType.testComplexType2.testKwantWrd.waarde',
-                             instance.testComplexType.testComplexType2.testKwantWrd._waarde.dotnotatie)
+                             instance.testComplexType.testComplexType2.testKwantWrd._waarde.dotnotation)
 
         with self.subTest('complex attribute with cardinality'):
-            self.assertEqual('testComplexTypeMetKard[]', instance._testComplexTypeMetKard.dotnotatie)
+            self.assertEqual('testComplexTypeMetKard[]', instance._testComplexTypeMetKard.dotnotation)
             self.assertEqual('testComplexTypeMetKard[].testBooleanField',
-                             instance.testComplexTypeMetKard[0]._testBooleanField.dotnotatie)
+                             instance.testComplexTypeMetKard[0]._testBooleanField.dotnotation)
             self.assertEqual('testComplexTypeMetKard[].testComplexType2MetKard[]',
-                             instance.testComplexTypeMetKard[0]._testComplexType2MetKard.dotnotatie)
+                             instance.testComplexTypeMetKard[0]._testComplexType2MetKard.dotnotation)
             self.assertEqual('testComplexTypeMetKard[].testComplexType2MetKard[].testStringFieldMetKard[]',
-                             instance.testComplexTypeMetKard[0].testComplexType2MetKard[0]._testStringFieldMetKard.dotnotatie)
+                             instance.testComplexTypeMetKard[0].testComplexType2MetKard[0]._testStringFieldMetKard.dotnotation)
 
         with self.subTest('non-complex attributes'):
-            self.assertEqual('testKeuzelijst', instance._testKeuzelijst.dotnotatie)
-            self.assertEqual('testStringField', instance._testStringField.dotnotatie)
-            self.assertEqual('testBooleanField', instance._testBooleanField.dotnotatie)
-            self.assertEqual('testDecimalNumberField', instance._testDecimalNumberField.dotnotatie)
+            self.assertEqual('testKeuzelijst', instance._testKeuzelijst.dotnotation)
+            self.assertEqual('testStringField', instance._testStringField.dotnotation)
+            self.assertEqual('testBooleanField', instance._testBooleanField.dotnotation)
+            self.assertEqual('testDecimalNumberField', instance._testDecimalNumberField.dotnotation)
 
         with self.subTest('non-complex attribute with cardinality'):
-            self.assertEqual('testKeuzelijstMetKard[]', instance._testKeuzelijstMetKard.dotnotatie)
-            self.assertEqual('testStringFieldMetKard[]', instance._testStringFieldMetKard.dotnotatie)
-            self.assertEqual('testDecimalNumberFieldMetKard[]', instance._testDecimalNumberFieldMetKard.dotnotatie)
+            self.assertEqual('testKeuzelijstMetKard[]', instance._testKeuzelijstMetKard.dotnotation)
+            self.assertEqual('testStringFieldMetKard[]', instance._testStringFieldMetKard.dotnotation)
+            self.assertEqual('testDecimalNumberFieldMetKard[]', instance._testDecimalNumberFieldMetKard.dotnotation)
 
         with self.subTest('dte attribute'):
-            self.assertEqual('testEenvoudigType', instance._testEenvoudigType.dotnotatie)
+            self.assertEqual('testEenvoudigType', instance._testEenvoudigType.dotnotation)
 
         with self.subTest('kwant waarde attribute'):
-            self.assertEqual('testKwantWrd', instance._testKwantWrd.dotnotatie)
-            self.assertEqual('testKwantWrd.waarde', instance.testKwantWrd._waarde.dotnotatie)
-            self.assertEqual('testKwantWrd.standaardEenheid', instance.testKwantWrd._standaardEenheid.dotnotatie)
-            self.assertEqual('testKwantWrdMetKard[]', instance._testKwantWrdMetKard.dotnotatie)
-            self.assertEqual('testKwantWrdMetKard[].waarde', instance.testKwantWrdMetKard[0]._waarde.dotnotatie)
+            self.assertEqual('testKwantWrd', instance._testKwantWrd.dotnotation)
+            self.assertEqual('testKwantWrd.waarde', instance.testKwantWrd._waarde.dotnotation)
+            self.assertEqual('testKwantWrd.standaardEenheid', instance.testKwantWrd._standaardEenheid.dotnotation)
+            self.assertEqual('testKwantWrdMetKard[]', instance._testKwantWrdMetKard.dotnotation)
+            self.assertEqual('testKwantWrdMetKard[].waarde', instance.testKwantWrdMetKard[0]._waarde.dotnotation)
             self.assertEqual('testKwantWrdMetKard[].standaardEenheid',
-                             instance.testKwantWrdMetKard[0]._standaardEenheid.dotnotatie)
+                             instance.testKwantWrdMetKard[0]._standaardEenheid.dotnotation)
 
         with self.subTest('union attribute'):
-            self.assertEqual('testUnionType', instance._testUnionType.dotnotatie)
-            self.assertEqual('testUnionType.unionString', instance.testUnionType._unionString.dotnotatie)
-            self.assertEqual('testUnionType.unionKwantWrd', instance.testUnionType._unionKwantWrd.dotnotatie)
-            self.assertEqual('testUnionType.unionKwantWrd.waarde', instance.testUnionType.unionKwantWrd._waarde.dotnotatie)
+            self.assertEqual('testUnionType', instance._testUnionType.dotnotation)
+            self.assertEqual('testUnionType.unionString', instance.testUnionType._unionString.dotnotation)
+            self.assertEqual('testUnionType.unionKwantWrd', instance.testUnionType._unionKwantWrd.dotnotation)
+            self.assertEqual('testUnionType.unionKwantWrd.waarde', instance.testUnionType.unionKwantWrd._waarde.dotnotation)
 
         with self.subTest('union attribute with cardinality'):
-            self.assertEqual('testUnionTypeMetKard[]', instance._testUnionTypeMetKard.dotnotatie)
-            self.assertEqual('testUnionTypeMetKard[].unionString', instance.testUnionTypeMetKard[0]._unionString.dotnotatie)
-            self.assertEqual('testUnionTypeMetKard[].unionKwantWrd', instance.testUnionTypeMetKard[0]._unionKwantWrd.dotnotatie)
+            self.assertEqual('testUnionTypeMetKard[]', instance._testUnionTypeMetKard.dotnotation)
+            self.assertEqual('testUnionTypeMetKard[].unionString', instance.testUnionTypeMetKard[0]._unionString.dotnotation)
+            self.assertEqual('testUnionTypeMetKard[].unionKwantWrd', instance.testUnionTypeMetKard[0]._unionKwantWrd.dotnotation)
             self.assertEqual('testUnionTypeMetKard[].unionKwantWrd.waarde',
-                             instance.testUnionTypeMetKard[0].unionKwantWrd._waarde.dotnotatie)
+                             instance.testUnionTypeMetKard[0].unionKwantWrd._waarde.dotnotation)
 
-    def test_use_settingsmanager_to_change_dotnotatie(self):
+    def test_use_settingsmanager_to_change_dotnotation(self):
         settingsmanager = SettingsManager(settings_path='')
         settingsmanager.settings['file_formats'] = [
             {'name': 'OTLMOW',
@@ -77,7 +77,7 @@ class DotnotatieOnAttributeTests(TestCase):
         settingsmanager.load_settings_in_app()
 
         instance = AllCasesTestClass()
-        self.assertEqual('testKwantWrdMetKard(),waarde', instance.testKwantWrdMetKard[0]._waarde.dotnotatie)
+        self.assertEqual('testKwantWrdMetKard(),waarde', instance.testKwantWrdMetKard[0]._waarde.dotnotation)
 
         # restore original settings
         settingsmanager.settings['file_formats'] = [
@@ -90,7 +90,7 @@ class DotnotatieOnAttributeTests(TestCase):
              }]
         settingsmanager.load_settings_in_app()
 
-    def test_dotnotatie_using_waarde_shortcut(self):
+    def test_dotnotation_using_waarde_shortcut(self):
         settingsmanager = SettingsManager(settings_path='')
         settingsmanager.settings['file_formats'] = [
             {'name': 'OTLMOW',
@@ -103,7 +103,7 @@ class DotnotatieOnAttributeTests(TestCase):
         settingsmanager.load_settings_in_app()
 
         instance = AllCasesTestClass()
-        self.assertEqual('testKwantWrdMetKard[]', instance.testKwantWrdMetKard[0]._waarde.dotnotatie)
+        self.assertEqual('testKwantWrdMetKard[]', instance.testKwantWrdMetKard[0]._waarde.dotnotation)
 
         # restore original settings
         settingsmanager.settings['file_formats'] = [

@@ -68,7 +68,7 @@ class DotnotatieOnAttributeTests(TestCase):
         settingsmanager = SettingsManager(settings_path='')
         settingsmanager.settings['file_formats'] = [
             {'name': 'OTLMOW',
-             'dotnotatie': {
+             'dotnotation': {
                  'separator': ',',
                  'cardinality separator': '|',
                  'cardinality indicator': '()',
@@ -82,7 +82,7 @@ class DotnotatieOnAttributeTests(TestCase):
         # restore original settings
         settingsmanager.settings['file_formats'] = [
             {'name': 'OTLMOW',
-             'dotnotatie': {
+             'dotnotation': {
                  'separator': '.',
                  'cardinality separator': '|',
                  'cardinality indicator': '[]',
@@ -94,7 +94,7 @@ class DotnotatieOnAttributeTests(TestCase):
         settingsmanager = SettingsManager(settings_path='')
         settingsmanager.settings['file_formats'] = [
             {'name': 'OTLMOW',
-             'dotnotatie': {
+             'dotnotation': {
                  'separator': '.',
                  'cardinality separator': '|',
                  'cardinality indicator': '[]',
@@ -108,7 +108,7 @@ class DotnotatieOnAttributeTests(TestCase):
         # restore original settings
         settingsmanager.settings['file_formats'] = [
             {'name': 'OTLMOW',
-             'dotnotatie': {
+             'dotnotation': {
                  'separator': '.',
                  'cardinality separator': '|',
                  'cardinality indicator': '[]',

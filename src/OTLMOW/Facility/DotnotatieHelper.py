@@ -15,8 +15,11 @@
         return cardinality_indicator, separator, waarde_shortcut_applicable
 
     @staticmethod
-    def get_dotnotatie(attribute, separator: str = '', cardinality_indicator: str = '',
+    def get_dotnotatie(attribute,
+                       separator: str = '',
+                       cardinality_indicator: str = '',
                        waarde_shortcut_applicable: bool | None = None):
+
         cardinality_indicator, separator, waarde_shortcut_applicable = DotnotatieHelper.set_parameters_to_class_vars(
             cardinality_indicator, separator, waarde_shortcut_applicable)
 
@@ -34,41 +37,51 @@
         return dotnotatie
 
     @staticmethod
-    def get_attributes_by_dotnotatie(instanceOrAttribute, dotnotatie, separator: str = '', cardinality_indicator: str = '',
+    def get_attributes_by_dotnotatie(instance_or_attribute,
+                                     dotnotation: str,
+                                     separator: str = '',
+                                     cardinality_indicator: str = '',
                                      waarde_shortcut_applicable: bool | None = None):
+        """Returns the attribute matching the dotnotation starting from a given class instance name or attribute
+        :param instance_or_attribute: class or attribute to start the dotnotation from
+        :param dotnotation: a string representing a hierarchical structure of attributes
+        :type: str
+        :return: returns the attribute matching the dotnotation starting from a given class instance name or attribute
+        :rtype: OTLAttribuut or a list of OTLAttribuut
+        """
         cardinality_indicator, separator, waarde_shortcut_applicable = DotnotatieHelper.set_parameters_to_class_vars(
             cardinality_indicator, separator, waarde_shortcut_applicable)
 
-        if waarde_shortcut_applicable and separator not in dotnotatie:
-            attribute = getattr(instanceOrAttribute, '_' + dotnotatie.replace(cardinality_indicator, ''))
+        if waarde_shortcut_applicable and separator not in dotnotation:
+            attribute = getattr(instance_or_attribute, '_' + dotnotation.replace(cardinality_indicator, ''))
             if attribute.field.waarde_shortcut_applicable:
-                waardenObject = getattr(instanceOrAttribute, dotnotatie.replace(cardinality_indicator, ''))
-                if cardinality_indicator in dotnotatie:
-                    collect_attributes = []
+                waardenObject = getattr(instance_or_attribute, dotnotation.replace(cardinality_indicator, ''))
+                if cardinality_indicator in dotnotation:
+                    collected_attributes = []
                     for waardenObject_in_list in waardenObject:
-                        collect_attributes.append(getattr(waardenObject_in_list, '_waarde'))
-                    return collect_attributes
+                        collected_attributes.append(getattr(waardenObject_in_list, '_waarde'))
+                    return collected_attributes
                 else:
                     return getattr(waardenObject, '_waarde')
 
-        if separator in dotnotatie:
-            first = dotnotatie.split(separator)[0]
-            rest = dotnotatie.split(separator, 1)[1]
+        if separator in dotnotation:
+            first = dotnotation.split(separator)[0]
+            rest = dotnotation.split(separator, 1)[1]
             if cardinality_indicator in first:
                 first = first.replace(cardinality_indicator, '')
-                attribute = getattr(instanceOrAttribute, first)
-                collect_attributes = []
+                attribute = getattr(instance_or_attribute, first)
+                collected_attributes = []
                 for attr_in_list in attribute:
-                    collect_attributes.append(DotnotatieHelper.get_attributes_by_dotnotatie(attr_in_list, rest))
-                return collect_attributes
+                    collected_attributes.append(DotnotatieHelper.get_attributes_by_dotnotatie(attr_in_list, rest))
+                return collected_attributes
             else:
-                attribute = getattr(instanceOrAttribute, first)
+                attribute = getattr(instance_or_attribute, first)
                 return DotnotatieHelper.get_attributes_by_dotnotatie(attribute, rest)
         else:
-            if cardinality_indicator in dotnotatie:
-                return getattr(instanceOrAttribute, '_' + dotnotatie.replace(cardinality_indicator, ''))
+            if cardinality_indicator in dotnotation:
+                return getattr(instance_or_attribute, '_' + dotnotation.replace(cardinality_indicator, ''))
             else:
-                return getattr(instanceOrAttribute, '_' + dotnotatie)
+                return getattr(instance_or_attribute, '_' + dotnotation)
 
     @staticmethod
     def set_attribute_by_dotnotatie(instanceOrAttribute, dotnotatie, value, convert=True, separator: str = '',
@@ -80,7 +93,7 @@
             cardinality_indicator, separator, waarde_shortcut_applicable)
 
         if dotnotatie.count(cardinality_indicator) == 0:
-            gets = DotnotatieHelper.get_attributes_by_dotnotatie(instanceOrAttribute=instanceOrAttribute, dotnotatie=dotnotatie,
+            gets = DotnotatieHelper.get_attributes_by_dotnotatie(instance_or_attribute=instanceOrAttribute, dotnotation=dotnotatie,
                                                                  separator=separator, cardinality_indicator=cardinality_indicator,
                                                                  waarde_shortcut_applicable=waarde_shortcut_applicable)
             if convert:
@@ -89,12 +102,12 @@
                 gets.set_waarde(value)
             return
 
-        # there is a cardinality_indicator in the dotnotatie
+        # there is a cardinality_indicator in the dotnotation
 
         if separator not in dotnotatie:
             # set list directly
-            attribute = DotnotatieHelper.get_attributes_by_dotnotatie(instanceOrAttribute=instanceOrAttribute,
-                                                                      dotnotatie=dotnotatie.replace(cardinality_indicator, ''),
+            attribute = DotnotatieHelper.get_attributes_by_dotnotatie(instance_or_attribute=instanceOrAttribute,
+                                                                      dotnotation=dotnotatie.replace(cardinality_indicator, ''),
                                                                       separator=separator,
                                                                       cardinality_indicator=cardinality_indicator,
                                                                       waarde_shortcut_applicable=False)
@@ -126,8 +139,8 @@
 
         if cardinality_indicator not in first:
             # cardinality indicator not in first part => go one deeper
-            attribute = DotnotatieHelper.get_attributes_by_dotnotatie(instanceOrAttribute=instanceOrAttribute,
-                                                                      dotnotatie=first,
+            attribute = DotnotatieHelper.get_attributes_by_dotnotatie(instance_or_attribute=instanceOrAttribute,
+                                                                      dotnotation=first,
                                                                       separator=separator,
                                                                       cardinality_indicator=cardinality_indicator,
                                                                       waarde_shortcut_applicable=waarde_shortcut_applicable)
@@ -137,10 +150,10 @@
             return
 
         if cardinality_indicator in first:
-            # shortcut waarde can't be applicable to this attribute because there is still a 2nd part in dotnotatie
+            # shortcut waarde can't be applicable to this attribute because there is still a 2nd part in dotnotation
             # this must be a union / complex type
-            attribute = DotnotatieHelper.get_attributes_by_dotnotatie(instanceOrAttribute=instanceOrAttribute,
-                                                                      dotnotatie=first.replace(cardinality_indicator, ''),
+            attribute = DotnotatieHelper.get_attributes_by_dotnotatie(instance_or_attribute=instanceOrAttribute,
+                                                                      dotnotation=first.replace(cardinality_indicator, ''),
                                                                       separator=separator,
                                                                       cardinality_indicator=cardinality_indicator,
                                                                       waarde_shortcut_applicable=False)

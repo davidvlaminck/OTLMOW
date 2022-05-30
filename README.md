@@ -121,4 +121,4 @@ Hovering the nodes will show the data of the assets.
 otl_facility.visualiser.show(lijst_otl_objecten)
 ```
 The above example will result in the following visualisation:
-![alt text](visualiser_example_readme.png)
+<img alt="example of visualiser" src="visualiser_example_readme.png"/>

@@ -60,7 +60,7 @@ class CsvExporter:
             values_list.append(None)
 
         for attribute, value in aimobject.list_attributes_and_values_by_dotnotatie(
-                waarde_shortcut=self.settings['dotnotatie']['waarde_shortcut_applicable']):
+                waarde_shortcut=self.settings['dotnotation']['waarde_shortcut_applicable']):
             if attribute in self.csv_headers[1:3]:
                 continue
 
@@ -91,13 +91,13 @@ class CsvExporter:
     @staticmethod
     def adjust_dotnotatie_by_settings(headers, settings):
         for index, header in enumerate(headers):
-            headers[index] = header.replace('.', settings['dotnotatie']['separator']) \
-                .replace('[]', settings['dotnotatie']['cardinality indicator'])
+            headers[index] = header.replace('.', settings['dotnotation']['separator']) \
+                .replace('[]', settings['dotnotation']['cardinality indicator'])
         return headers
 
     def create_data_lines_from_data(self, csv_data):
         for index, row in enumerate(csv_data):
-            row = self.stringify_list(row, self.settings['dotnotatie']['cardinality separator'])
+            row = self.stringify_list(row, self.settings['dotnotation']['cardinality separator'])
             csv_data[index] = self.settings['delimiter'].join(row)
         return csv_data
 

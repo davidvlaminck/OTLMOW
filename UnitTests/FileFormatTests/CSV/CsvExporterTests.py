@@ -196,7 +196,7 @@ class CsvExporterTests(unittest.TestCase):
         exporter = CsvExporter(settings=otl_facility.settings)
         exporter.settings = {
             "name": "csv",
-            "dotnotatie": {
+            "dotnotation": {
                 "separator": "+",
                 "cardinality separator": "$",
                 "cardinality indicator": "()",
@@ -221,7 +221,7 @@ class CsvExporterTests(unittest.TestCase):
 
         csv_data = exporter.create_data_from_objects(list_of_objects)
 
-        with self.subTest('verify headers with different dotnotatie settings'):
+        with self.subTest('verify headers with different dotnotation settings'):
             self.assertEqual('assetId+identificator', csv_data[0][1])
             self.assertEqual('assetId+toegekendDoor', csv_data[0][2])
             self.assertEqual('testComplexType+testComplexType2+testStringField', csv_data[0][4])

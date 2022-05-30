@@ -58,10 +58,10 @@ class CsvImporter:
                 if self.headers[index] in ['bron.typeURI', 'doel.typeURI']:
                     continue # TODO get bron and doel
 
-                cardinality_indicator = self.settings['dotnotatie']['cardinality indicator']
+                cardinality_indicator = self.settings['dotnotation']['cardinality indicator']
 
                 if cardinality_indicator in self.headers[index]:
-                    value = row.split(self.settings['dotnotatie']['cardinality separator'])
+                    value = row.split(self.settings['dotnotation']['cardinality separator'])
                 else:
                     value = row
 
@@ -75,9 +75,9 @@ class CsvImporter:
                                                              dotnotatie=self.headers[index],
                                                              value=value,
                                                              convert=True,
-                                                             separator=self.settings['dotnotatie']['separator'],
+                                                             separator=self.settings['dotnotation']['separator'],
                                                              cardinality_indicator=cardinality_indicator,
-                                                             waarde_shortcut_applicable=self.settings['dotnotatie'][
+                                                             waarde_shortcut_applicable=self.settings['dotnotation'][
                                                                  'waarde_shortcut_applicable'])
 
         return list_of_objects

@@ -19,12 +19,12 @@ class SettingsManager(metaclass=Singleton):
     def load_settings_in_app(self):
         if 'file_formats' in self.settings:
             otlmow_format = next((f for f in self.settings['file_formats'] if f['name'] == 'OTLMOW'), None)
-            if otlmow_format is not None and 'dotnotatie' in otlmow_format:
-                if 'separator' in otlmow_format['dotnotatie']:
-                    DotnotatieHelper.separator = otlmow_format['dotnotatie']['separator']
-                if 'cardinality separator' in otlmow_format['dotnotatie']:
-                    DotnotatieHelper.cardinality_separator = otlmow_format['dotnotatie']['cardinality separator']
-                if 'cardinality indicator' in otlmow_format['dotnotatie']:
-                    DotnotatieHelper.cardinality_indicator = otlmow_format['dotnotatie']['cardinality indicator']
-                if 'waarde_shortcut_applicable' in otlmow_format['dotnotatie']:
-                    DotnotatieHelper.waarde_shortcut_applicable = otlmow_format['dotnotatie']['waarde_shortcut_applicable']
+            if otlmow_format is not None and 'dotnotation' in otlmow_format:
+                if 'separator' in otlmow_format['dotnotation']:
+                    DotnotatieHelper.separator = otlmow_format['dotnotation']['separator']
+                if 'cardinality separator' in otlmow_format['dotnotation']:
+                    DotnotatieHelper.cardinality_separator = otlmow_format['dotnotation']['cardinality separator']
+                if 'cardinality indicator' in otlmow_format['dotnotation']:
+                    DotnotatieHelper.cardinality_indicator = otlmow_format['dotnotation']['cardinality indicator']
+                if 'waarde_shortcut_applicable' in otlmow_format['dotnotation']:
+                    DotnotatieHelper.waarde_shortcut_applicable = otlmow_format['dotnotation']['waarde_shortcut_applicable']

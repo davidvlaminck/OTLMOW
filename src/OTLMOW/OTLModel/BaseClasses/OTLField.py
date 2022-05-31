@@ -58,3 +58,7 @@ definition: {self.definition}
 label: {self.label}
 usagenote: {self.usagenote}
 deprecated_version: {self.deprecated_version}"""
+
+    @staticmethod
+    def create_dummy_data():
+        return None

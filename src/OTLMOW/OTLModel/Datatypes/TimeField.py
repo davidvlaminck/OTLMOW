@@ -1,3 +1,4 @@
+import random
 from datetime import time, datetime
 
 from OTLMOW.Facility.Exceptions.CouldNotConvertToCorrectType import CouldNotConvertToCorrectType
@@ -43,4 +44,8 @@ class TimeField(OTLField):
 
     def __str__(self):
         return OTLField.__str__(self)
+
+    @staticmethod
+    def create_dummy_data():
+        return time(hour=random.randint(0, 24), minute=random.randint(0, 60), second=random.randint(0, 60))
 

@@ -1,4 +1,5 @@
 ﻿import decimal
+import random
 
 from OTLMOW.Facility.Exceptions.CouldNotConvertToCorrectType import CouldNotConvertToCorrectType
 from OTLMOW.OTLModel.BaseClasses.OTLField import OTLField
@@ -35,6 +36,10 @@ class FloatOrDecimalField(OTLField):
                 return True
             raise TypeError(f'expecting a number (int, float or Decimal) in {attribuut.naam}')
         return True
+
+    @staticmethod
+    def create_dummy_data():
+        return round(random.random() * 100, 2)
 
     def __str__(self):
         return OTLField.__str__(self)

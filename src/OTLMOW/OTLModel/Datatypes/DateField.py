@@ -1,4 +1,5 @@
-from datetime import date, datetime
+from datetime import date, datetime, timedelta
+from random import randrange
 
 from OTLMOW.Facility.Exceptions.CouldNotConvertToCorrectType import CouldNotConvertToCorrectType
 from OTLMOW.OTLModel.BaseClasses.OTLField import OTLField
@@ -46,3 +47,13 @@ class DateField(OTLField):
     def __str__(self):
         return OTLField.__str__(self)
 
+    @classmethod
+    def random_date(cls, start, end):
+        delta = end - start
+        int_delta = delta.days
+        random_days = randrange(int_delta)
+        return start + timedelta(days=random_days)
+
+    @staticmethod
+    def create_dummy_data():
+        return DateField.random_date(start=date(2000, 1, 1), end=date(2020, 1, 1))

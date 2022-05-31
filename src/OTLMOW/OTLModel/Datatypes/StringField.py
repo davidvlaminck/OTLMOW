@@ -1,4 +1,7 @@
-﻿from OTLMOW.Facility.Exceptions.CouldNotConvertToCorrectType import CouldNotConvertToCorrectType
+﻿import string
+import random
+
+from OTLMOW.Facility.Exceptions.CouldNotConvertToCorrectType import CouldNotConvertToCorrectType
 from OTLMOW.OTLModel.BaseClasses.OTLField import OTLField
 
 
@@ -28,4 +31,8 @@ class StringField(OTLField):
 
     def __str__(self):
         return OTLField.__str__(self)
+
+    @staticmethod
+    def create_dummy_data():
+        return ''.join(random.choice(string.ascii_letters) for i in range(random.randint(5, 15)))
 

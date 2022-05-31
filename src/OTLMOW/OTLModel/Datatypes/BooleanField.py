@@ -1,3 +1,5 @@
+import random
+
 from OTLMOW.Facility.Exceptions.CouldNotConvertToCorrectType import CouldNotConvertToCorrectType
 from OTLMOW.OTLModel.BaseClasses.OTLField import OTLField
 
@@ -33,3 +35,7 @@ class BooleanField(OTLField):
 
     def __str__(self):
         return OTLField.__str__(self)
+
+    @staticmethod
+    def create_dummy_data():
+        return random.choice([True, False])

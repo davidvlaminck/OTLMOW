@@ -209,3 +209,6 @@ class OTLAttribuut(AttributeInfo):
         if self._dotnotation == '':
             self._dotnotation = DotnotationHelper.get_dotnotation(self)
         return self._dotnotation
+
+    def fill_with_dummy_data(self):
+        self.set_waarde(self.field.create_dummy_data())

@@ -1,3 +1,5 @@
+import random
+
 from OTLMOW.OTLModel.BaseClasses.OTLField import OTLField
 from OTLMOW.OTLModel.Datatypes.IntegerField import IntegerField
 
@@ -22,3 +24,6 @@ class NonNegIntegerField(IntegerField):
     def __str__(self):
         return OTLField.__str__(self)
 
+    @staticmethod
+    def create_dummy_data():
+        return random.randint(0, 100)

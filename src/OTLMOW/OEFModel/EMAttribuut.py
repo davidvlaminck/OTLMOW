@@ -1,6 +1,5 @@
 ﻿import math
 import warnings
-from datetime import datetime
 
 from OTLMOW.OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLMOW.OTLModel.BaseClasses.OTLField import OTLField
@@ -14,7 +13,11 @@ class EMAttribuut(AttributeInfo):
         self.objectUri = objectUri
         self.verkorte_uri = objectUri.replace('https://lgc.data.wegenenverkeer.be/ns/attribuut#', '')
         self.definitie = definitie
-        self.kardinaliteit = kardinaliteit
+        self.kardinaliteit_min = 1
+        if kardinaliteit != '1..1':
+            self.kardinaliteit_max = math.inf
+        else:
+            self.kardinaliteit_max = 1
         self.waarde = None
         self.field = field
         self.owner = owner
@@ -37,21 +40,15 @@ class EMAttribuut(AttributeInfo):
                         warnings.warn(message=f'used a class that is deprecated since version {owner.deprecated_version}',
                                       category=DeprecationWarning)
 
-        if self.kardinaliteit != '1..1':
-            kardinaliteit_max = math.inf
-        else:
-            kardinaliteit_max = 1
-
-        if kardinaliteit_max > 1 and value is not None:
-            kardinaliteit_min = 1
+        if self.kardinaliteit_max > 1 and value is not None:
             if not isinstance(value, list):
                 raise TypeError(f'expecting a list in {owner.__class__.__name__}.{self.naam}')
             elif isinstance(value, list) and isinstance(value, set):
                 raise TypeError(f'expecting a non set type of list in {owner.__class__.__name__}.{self.naam}')
-            elif 0 < len(value) < kardinaliteit_min:
-                raise ValueError(f'expecting at least {kardinaliteit_min} element(s) in {owner.__class__.__name__}.{self.naam}')
-            elif len(value) > kardinaliteit_max:
-                raise ValueError(f'expecting at most {kardinaliteit_max} element(s) in {owner.__class__.__name__}.{self.naam}')
+            elif 0 < len(value) < self.kardinaliteit_min:
+                raise ValueError(f'expecting at least {self.kardinaliteit_min} element(s) in {owner.__class__.__name__}.{self.naam}')
+            elif len(value) > self.kardinaliteit_max:
+                raise ValueError(f'expecting at most {self.kardinaliteit_max} element(s) in {owner.__class__.__name__}.{self.naam}')
             for el_value in value:
                 try:
                     field_validated = self.field.validate(self.field.convert_to_correct_type(el_value), self)
@@ -85,5 +82,5 @@ class EMAttribuut(AttributeInfo):
              f'uri: {self.objectUri}\n'
              f'definitie: {self.definitie}\n'
              f'label: {self.label}\n'             
-             f'kardinaliteit: {self.kardinaliteit}\n')
+             f'kardinaliteit: {str(self.kardinaliteit_min)}..{str(self.kardinaliteit_max)}\n')
         return s

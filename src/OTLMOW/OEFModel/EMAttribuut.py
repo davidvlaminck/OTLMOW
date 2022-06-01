@@ -18,6 +18,7 @@ class EMAttribuut(AttributeInfo):
         self.waarde = None
         self.field = field
         self.owner = owner
+        self.kardinaliteit_max = '1'
 
         if self.field.waardeObject:
             self.waarde = self.field.waardeObject()

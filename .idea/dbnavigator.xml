@@ -26,7 +26,7 @@
     <show-object-properties value="true" />
     <loaded-nodes>
       <connection connection-id="cb031204-c00c-40f6-b0d7-c68a5b98e7d2">
-        <schema name="main" object-types="table, view" />
+        <schema name="OTL_AllCasesTestClass" object-types="table, view, constraint, index, column, dataset trigger" />
       </connection>
     </loaded-nodes>
   </component>
@@ -40,6 +40,9 @@
   </component>
   <component name="DBNavigator.Project.DatabaseSessionManager">
     <connection id="cb031204-c00c-40f6-b0d7-c68a5b98e7d2" />
+  </component>
+  <component name="DBNavigator.Project.DatasetFilterManager">
+    <filter-actions connection-id="cb031204-c00c-40f6-b0d7-c68a5b98e7d2" dataset="OTL_AllCasesTestClass.OSLOClass" active-filter-id="" />
   </component>
   <component name="DBNavigator.Project.EditorStateManager">
     <last-used-providers />
@@ -70,7 +73,7 @@
   </component>
   <component name="DBNavigator.Project.Settings">
     <connections>
-      <connection id="cb031204-c00c-40f6-b0d7-c68a5b98e7d2" active="true">
+      <connection id="cb031204-c00c-40f6-b0d7-c68a5b98e7d2" active="true" signed="true">
         <database>
           <name value="Connection" />
           <description value="" />
@@ -86,6 +89,7 @@
           <database value="" />
           <files>
             <file path="C:\resources\syncedGraphsAWVInfra.db" schema="main" />
+            <file path="C:\Users\vlaminda\PycharmProjects\OTLMOW\UnitTests\OTL_AllCasesTestClass.db" schema="OTL_AllCasesTestClass" />
           </files>
           <type value="NONE" />
           <user value="" />

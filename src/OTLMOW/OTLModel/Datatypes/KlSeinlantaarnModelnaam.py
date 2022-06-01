@@ -1,4 +1,5 @@
 # coding=utf-8
+import random
 from OTLMOW.OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 
 
@@ -12,4 +13,12 @@ class KlSeinlantaarnModelnaam(KeuzelijstField):
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlSeinlantaarnModelnaam'
     options = {
     }
+
+    @classmethod
+    def get_dummy_data(cls):
+        return random.choice(list(cls.options.keys()))
+
+    @staticmethod
+    def create_dummy_data():
+        return KlSeinlantaarnModelnaam.get_dummy_data()
 

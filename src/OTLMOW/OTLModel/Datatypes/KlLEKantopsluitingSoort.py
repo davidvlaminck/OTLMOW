@@ -1,4 +1,5 @@
 # coding=utf-8
+import random
 from OTLMOW.OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLMOW.OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
@@ -65,4 +66,12 @@ class KlLEKantopsluitingSoort(KeuzelijstField):
                                                         definitie='Watergreppels in gietasfalt.',
                                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLEKantopsluitingSoort/watergreppels-in-gietasfalt')
     }
+
+    @classmethod
+    def get_dummy_data(cls):
+        return random.choice(list(cls.options.keys()))
+
+    @staticmethod
+    def create_dummy_data():
+        return KlLEKantopsluitingSoort.get_dummy_data()
 

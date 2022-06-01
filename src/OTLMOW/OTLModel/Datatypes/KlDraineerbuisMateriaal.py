@@ -1,4 +1,5 @@
 # coding=utf-8
+import random
 from OTLMOW.OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLMOW.OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
@@ -37,4 +38,12 @@ class KlDraineerbuisMateriaal(KeuzelijstField):
                                                                                            definitie='geribbelde draineerbuizen van PVC zonder kous volgens 3-26.1.1',
                                                                                            objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlDraineerbuisMateriaal/geribbelde-draineerbuizen-van-PVC-zonder-kous-volgens-3-26.1.1')
     }
+
+    @classmethod
+    def get_dummy_data(cls):
+        return random.choice(list(cls.options.keys()))
+
+    @staticmethod
+    def create_dummy_data():
+        return KlDraineerbuisMateriaal.get_dummy_data()
 

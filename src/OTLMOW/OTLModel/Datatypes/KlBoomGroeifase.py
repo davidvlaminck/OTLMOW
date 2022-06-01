@@ -1,4 +1,5 @@
 # coding=utf-8
+import random
 from OTLMOW.OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLMOW.OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
@@ -33,4 +34,12 @@ class KlBoomGroeifase(KeuzelijstField):
                                           definitie='De periode van de kroonontwikkeling – beheer gericht op in stand houden van de boom (onderhoudssnoei)',
                                           objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBoomGroeifase/volwassenfase')
     }
+
+    @classmethod
+    def get_dummy_data(cls):
+        return random.choice(list(cls.options.keys()))
+
+    @staticmethod
+    def create_dummy_data():
+        return KlBoomGroeifase.get_dummy_data()
 

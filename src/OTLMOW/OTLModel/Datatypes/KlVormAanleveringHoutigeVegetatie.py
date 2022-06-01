@@ -1,4 +1,5 @@
 # coding=utf-8
+import random
 from OTLMOW.OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLMOW.OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
@@ -33,4 +34,12 @@ class KlVormAanleveringHoutigeVegetatie(KeuzelijstField):
                                  definitie='Aanlevering van houtige vegetatie in de vorm van veer.',
                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVormAanleveringHoutigeVegetatie/veer')
     }
+
+    @classmethod
+    def get_dummy_data(cls):
+        return random.choice(list(cls.options.keys()))
+
+    @staticmethod
+    def create_dummy_data():
+        return KlVormAanleveringHoutigeVegetatie.get_dummy_data()
 

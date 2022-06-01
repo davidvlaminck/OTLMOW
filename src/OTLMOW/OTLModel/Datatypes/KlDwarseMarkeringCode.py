@@ -1,4 +1,5 @@
 # coding=utf-8
+import random
 from OTLMOW.OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLMOW.OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
@@ -73,4 +74,12 @@ class KlDwarseMarkeringCode(KeuzelijstField):
                                       definitie='Verdrijvingsvlak (33 % opp. v.h. vlak)',
                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlDwarseMarkeringCode/VVA-1-(2)')
     }
+
+    @classmethod
+    def get_dummy_data(cls):
+        return random.choice(list(cls.options.keys()))
+
+    @staticmethod
+    def create_dummy_data():
+        return KlDwarseMarkeringCode.get_dummy_data()
 

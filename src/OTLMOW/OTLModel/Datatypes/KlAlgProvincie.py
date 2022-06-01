@@ -36,5 +36,5 @@ class KlAlgProvincie(KeuzelijstField):
 
     @staticmethod
     def create_dummy_data():
-        return KlAIMToestand.get_dummy_data()
+        return KlAlgProvincie.get_dummy_data()
 

@@ -1,4 +1,5 @@
 # coding=utf-8
+import random
 from OTLMOW.OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLMOW.OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
@@ -111,4 +112,12 @@ class KlLichtmastBotsNormering(KeuzelijstField):
                                                        definitie='Mast heeft geen botsvriendelijke normering.',
                                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLichtmastBotsNormering/niet-botsvriendelijke-mast')
     }
+
+    @classmethod
+    def get_dummy_data(cls):
+        return random.choice(list(cls.options.keys()))
+
+    @staticmethod
+    def create_dummy_data():
+        return KlLichtmastBotsNormering.get_dummy_data()
 

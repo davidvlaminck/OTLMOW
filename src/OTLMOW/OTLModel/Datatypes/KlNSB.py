@@ -1,4 +1,5 @@
 # coding=utf-8
+import random
 from OTLMOW.OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLMOW.OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
@@ -169,4 +170,12 @@ class KlNSB(KeuzelijstField):
                                    definitie='zilt grasland: aardbeiklaver, akkerkers, getand vlotgras, gewone waterbies, heelblaadjes, klein vlooienkruid, kruipend moerasscherm, moeras/zompvergeetme-nietje, moeraszoutgras (polderstreek), penningkruid, pijptorkruid, platte rus, polei, rode ogentroost, slanke waterbies, smalle rolklaver (polderstreek), valse voszegge, watermunt, zeegroene rus, zilte rus, zilte zegge (polderstreek), zilverschoon, zomprus',
                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNSB/rbbzil')
     }
+
+    @classmethod
+    def get_dummy_data(cls):
+        return random.choice(list(cls.options.keys()))
+
+    @staticmethod
+    def create_dummy_data():
+        return KlNSB.get_dummy_data()
 

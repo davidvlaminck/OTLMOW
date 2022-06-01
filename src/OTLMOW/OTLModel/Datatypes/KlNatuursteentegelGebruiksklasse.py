@@ -1,4 +1,5 @@
 # coding=utf-8
+import random
 from OTLMOW.OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLMOW.OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
@@ -41,4 +42,12 @@ class KlNatuursteentegelGebruiksklasse(KeuzelijstField):
                               definitie='Keuzeoptie wegen als gebruiksklasse van natuursteentegels.',
                               objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNatuursteentegelGebruiksklasse/6')
     }
+
+    @classmethod
+    def get_dummy_data(cls):
+        return random.choice(list(cls.options.keys()))
+
+    @staticmethod
+    def create_dummy_data():
+        return KlNatuursteentegelGebruiksklasse.get_dummy_data()
 

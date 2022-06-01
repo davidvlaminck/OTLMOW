@@ -1,4 +1,5 @@
 # coding=utf-8
+import random
 from OTLMOW.OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLMOW.OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
@@ -34,4 +35,12 @@ class KlCabineLokaalKlasse(KeuzelijstField):
                                  label='BB50',
                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlCabineLokaalKlasse/BB50')
     }
+
+    @classmethod
+    def get_dummy_data(cls):
+        return random.choice(list(cls.options.keys()))
+
+    @staticmethod
+    def create_dummy_data():
+        return KlCabineLokaalKlasse.get_dummy_data()
 

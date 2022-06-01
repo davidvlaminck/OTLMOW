@@ -1,4 +1,5 @@
 # coding=utf-8
+import random
 from OTLMOW.OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLMOW.OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
@@ -21,4 +22,12 @@ class KlLEGCSchermtype(KeuzelijstField):
                                  definitie='De vlakke schermen zijn de schermen die kunnen getest worden volgens de normen NBN EN 1793-1 NBN EN 1793-2.',
                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLEGCSchermtype/vlak')
     }
+
+    @classmethod
+    def get_dummy_data(cls):
+        return random.choice(list(cls.options.keys()))
+
+    @staticmethod
+    def create_dummy_data():
+        return KlLEGCSchermtype.get_dummy_data()
 

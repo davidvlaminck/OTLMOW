@@ -1,4 +1,5 @@
 # coding=utf-8
+import random
 from OTLMOW.OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLMOW.OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
@@ -169,4 +170,12 @@ class KlLetterCijfer(KeuzelijstField):
                               definitie='Letter é.',
                               objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLetterCijfer/é')
     }
+
+    @classmethod
+    def get_dummy_data(cls):
+        return random.choice(list(cls.options.keys()))
+
+    @staticmethod
+    def create_dummy_data():
+        return KlLetterCijfer.get_dummy_data()
 

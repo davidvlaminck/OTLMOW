@@ -137,7 +137,7 @@ class OTLModelCreator:
                 logging.error(f"Could not create a class for {cls.name}")
 
     def create_relations(self):
-        creator = OTLGeldigeRelatieCreator(elf.osloCollector)
+        creator = OTLGeldigeRelatieCreator(self.osloCollector)
 
         try:
             dataToWrite = creator.CreateBlockToWriteFromRelations()

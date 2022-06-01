@@ -1,4 +1,5 @@
 # coding=utf-8
+import random
 from OTLMOW.OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLMOW.OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
@@ -317,4 +318,12 @@ class KlFiguratieCode(KeuzelijstField):
                                      definitie='Een visgraatmarkering om de verkeersveiligheid te vergroten en kop-staartbotsingen te vermijden (bij mist).',
                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieCode/visgraat')
     }
+
+    @classmethod
+    def get_dummy_data(cls):
+        return random.choice(list(cls.options.keys()))
+
+    @staticmethod
+    def create_dummy_data():
+        return KlFiguratieCode.get_dummy_data()
 

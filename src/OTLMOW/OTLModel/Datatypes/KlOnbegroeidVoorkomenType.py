@@ -1,4 +1,5 @@
 # coding=utf-8
+import random
 from OTLMOW.OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLMOW.OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
@@ -61,4 +62,12 @@ class KlOnbegroeidVoorkomenType(KeuzelijstField):
                                                  definitie='Tegels die zo gelegd zijn dat de voeg begroeibaar is en waterdoorlaatbaar.',
                                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOnbegroeidVoorkomenType/tegels-met-groenvoeg')
     }
+
+    @classmethod
+    def get_dummy_data(cls):
+        return random.choice(list(cls.options.keys()))
+
+    @staticmethod
+    def create_dummy_data():
+        return KlOnbegroeidVoorkomenType.get_dummy_data()
 

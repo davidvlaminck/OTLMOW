@@ -1,4 +1,5 @@
 # coding=utf-8
+import random
 from OTLMOW.OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLMOW.OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
@@ -49,4 +50,12 @@ class KlBestratingSteenverband(KeuzelijstField):
                                           definitie='Waaierverband',
                                           objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBestratingSteenverband/waaierverband')
     }
+
+    @classmethod
+    def get_dummy_data(cls):
+        return random.choice(list(cls.options.keys()))
+
+    @staticmethod
+    def create_dummy_data():
+        return KlBestratingSteenverband.get_dummy_data()
 

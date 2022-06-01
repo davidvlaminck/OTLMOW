@@ -1,4 +1,5 @@
 # coding=utf-8
+import random
 from OTLMOW.OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLMOW.OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
@@ -33,4 +34,12 @@ class KlLEMarkeringSoort(KeuzelijstField):
                                      definitie='Een afschermende constructie die naast wegen wordt geplaatst om te voorkomen dat voertuigen de weg in zijdelingse richting verlaten, kantelen of de middenberm doorkruisen.',
                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLEMarkeringSoort/vangrail')
     }
+
+    @classmethod
+    def get_dummy_data(cls):
+        return random.choice(list(cls.options.keys()))
+
+    @staticmethod
+    def create_dummy_data():
+        return KlLEMarkeringSoort.get_dummy_data()
 

@@ -68,7 +68,7 @@ class OTLEnumerationCreator(AbstractDatatypeCreator):
         datablock.append("")
         datablock.append("    @staticmethod")
         datablock.append("    def create_dummy_data():")
-        datablock.append("        return KlAIMToestand.get_dummy_data()")
+        datablock.append(f"        return {osloEnumeration.name}.get_dummy_data()")
 
         datablock.append('')
 

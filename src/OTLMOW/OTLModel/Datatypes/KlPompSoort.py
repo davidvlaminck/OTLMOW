@@ -1,4 +1,5 @@
 # coding=utf-8
+import random
 from OTLMOW.OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLMOW.OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
@@ -37,4 +38,12 @@ class KlPompSoort(KeuzelijstField):
                                        definitie='Vijzelpomp',
                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlPompSoort/vijzelpomp')
     }
+
+    @classmethod
+    def get_dummy_data(cls):
+        return random.choice(list(cls.options.keys()))
+
+    @staticmethod
+    def create_dummy_data():
+        return KlPompSoort.get_dummy_data()
 

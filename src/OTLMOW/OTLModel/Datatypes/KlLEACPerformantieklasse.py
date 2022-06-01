@@ -1,4 +1,5 @@
 # coding=utf-8
+import random
 from OTLMOW.OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLMOW.OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
@@ -49,4 +50,12 @@ class KlLEACPerformantieklasse(KeuzelijstField):
                                   definitie='Beginconstructie zowel beperkt frontaal als zijwaarts getest, met een lichte en kleine gezinswagen aan 80km/h, maar er zijn minder testen dan T80, maar meer dan P2 en P1.',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLEACPerformantieklasse/t80-1')
     }
+
+    @classmethod
+    def get_dummy_data(cls):
+        return random.choice(list(cls.options.keys()))
+
+    @staticmethod
+    def create_dummy_data():
+        return KlLEACPerformantieklasse.get_dummy_data()
 

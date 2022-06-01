@@ -1,4 +1,5 @@
 # coding=utf-8
+import random
 from OTLMOW.OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLMOW.OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
@@ -37,4 +38,12 @@ class KlCBVOppervlaktebehandeling(KeuzelijstField):
                                                               definitie='Uitwassen van het steenslagskelet',
                                                               objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlCBVOppervlaktebehandeling/uitwassen-van-het-steenslagskelet')
     }
+
+    @classmethod
+    def get_dummy_data(cls):
+        return random.choice(list(cls.options.keys()))
+
+    @staticmethod
+    def create_dummy_data():
+        return KlCBVOppervlaktebehandeling.get_dummy_data()
 

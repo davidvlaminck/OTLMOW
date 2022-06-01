@@ -1,15 +1,15 @@
 # coding=utf-8
-from OTLMOW.OTLModel.BaseClasses.DavieRelatieAttributes import DavieRelatieAttributes
 from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from abc import abstractmethod
 from OTLMOW.OTLModel.Classes.AIMDBStatus import AIMDBStatus
 from OTLMOW.OTLModel.BaseClasses.AttributeInfo import AttributeInfo
+from OTLMOW.OTLModel.BaseClasses.DavieRelatieAttributes import DavieRelatieAttributes
 from OTLMOW.OTLModel.BaseClasses.OTLObject import OTLObject
 from OTLMOW.OTLModel.Datatypes.DtcIdentificator import DtcIdentificator
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class RelatieObject(AIMDBStatus, AttributeInfo, OTLObject, DavieRelatieAttributes):
+class RelatieObject(AIMDBStatus, AttributeInfo, DavieRelatieAttributes, OTLObject):
     """Abstracte die de relaties voorziet van gemeenschappelijk eigenschappen."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#RelatieObject'

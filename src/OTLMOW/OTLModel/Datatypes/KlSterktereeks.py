@@ -1,4 +1,5 @@
 # coding=utf-8
+import random
 from OTLMOW.OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLMOW.OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
@@ -93,4 +94,12 @@ class KlSterktereeks(KeuzelijstField):
                                                 definitie='PVC composiet SN8',
                                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlSterktereeks/pvc-composiet-s-n-8')
     }
+
+    @classmethod
+    def get_dummy_data(cls):
+        return random.choice(list(cls.options.keys()))
+
+    @staticmethod
+    def create_dummy_data():
+        return KlSterktereeks.get_dummy_data()
 

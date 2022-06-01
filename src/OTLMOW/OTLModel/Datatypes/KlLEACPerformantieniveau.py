@@ -1,4 +1,5 @@
 # coding=utf-8
+import random
 from OTLMOW.OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLMOW.OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
@@ -33,4 +34,12 @@ class KlLEACPerformantieniveau(KeuzelijstField):
                                  definitie='Obstakelbeveiliger beperkt getest aan 80km/h ',
                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLEACPerformantieniveau/80-1')
     }
+
+    @classmethod
+    def get_dummy_data(cls):
+        return random.choice(list(cls.options.keys()))
+
+    @staticmethod
+    def create_dummy_data():
+        return KlLEACPerformantieniveau.get_dummy_data()
 

@@ -1,4 +1,5 @@
 # coding=utf-8
+import random
 from OTLMOW.OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLMOW.OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
@@ -29,4 +30,12 @@ class KlTaludWaarde(KeuzelijstField):
                                             definitie='Een hellingsgraad van 1/3 (33,33%, 18,4°) tot 1/2 (50%, 26,6°).',
                                             objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlTaludWaarde/van-1-3-tot-1-2')
     }
+
+    @classmethod
+    def get_dummy_data(cls):
+        return random.choice(list(cls.options.keys()))
+
+    @staticmethod
+    def create_dummy_data():
+        return KlTaludWaarde.get_dummy_data()
 

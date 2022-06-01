@@ -1,4 +1,5 @@
 # coding=utf-8
+import random
 from OTLMOW.OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLMOW.OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
@@ -85,4 +86,12 @@ class KlBetonmilieuklasse(KeuzelijstField):
                                   definitie='Corrosie ingeleid door chloriden (zeewater, Seawater) : getijde-, spat- en stuifzone.',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBetonmilieuklasse/x-s-3')
     }
+
+    @classmethod
+    def get_dummy_data(cls):
+        return random.choice(list(cls.options.keys()))
+
+    @staticmethod
+    def create_dummy_data():
+        return KlBetonmilieuklasse.get_dummy_data()
 

@@ -1,4 +1,5 @@
 # coding=utf-8
+import random
 from OTLMOW.OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLMOW.OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
@@ -61,4 +62,12 @@ class KlDwarseMarkeringSoort(KeuzelijstField):
                                                               definitie='Een locatie op de rijbaan die bestemd is voor voetgangers om over te steken.',
                                                               objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlDwarseMarkeringSoort/voetgangers-oversteekplaats-(VOP)')
     }
+
+    @classmethod
+    def get_dummy_data(cls):
+        return random.choice(list(cls.options.keys()))
+
+    @staticmethod
+    def create_dummy_data():
+        return KlDwarseMarkeringSoort.get_dummy_data()
 

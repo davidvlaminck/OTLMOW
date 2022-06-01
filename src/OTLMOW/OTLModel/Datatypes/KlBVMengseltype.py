@@ -1,4 +1,5 @@
 # coding=utf-8
+import random
 from OTLMOW.OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLMOW.OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
@@ -217,4 +218,12 @@ class KlBVMengseltype(KeuzelijstField):
                                               definitie='toplaag van ZOA-C',
                                               objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBVMengseltype/toplaag-van-ZOA-C')
     }
+
+    @classmethod
+    def get_dummy_data(cls):
+        return random.choice(list(cls.options.keys()))
+
+    @staticmethod
+    def create_dummy_data():
+        return KlBVMengseltype.get_dummy_data()
 

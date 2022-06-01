@@ -1,4 +1,5 @@
 # coding=utf-8
+import random
 from OTLMOW.OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLMOW.OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
@@ -49,4 +50,12 @@ class KlMaaiFrequentie(KeuzelijstField):
                                            definitie='Minder dan één keer om de drie jaar maaien.',
                                            objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlMaaiFrequentie/minder-dan-1-3')
     }
+
+    @classmethod
+    def get_dummy_data(cls):
+        return random.choice(list(cls.options.keys()))
+
+    @staticmethod
+    def create_dummy_data():
+        return KlMaaiFrequentie.get_dummy_data()
 

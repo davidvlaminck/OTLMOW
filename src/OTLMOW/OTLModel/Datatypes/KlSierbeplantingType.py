@@ -1,4 +1,5 @@
 # coding=utf-8
+import random
 from OTLMOW.OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLMOW.OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
@@ -29,4 +30,12 @@ class KlSierbeplantingType(KeuzelijstField):
                                           definitie='Begroeiingstype met planten die een kruidachtige stengel hebben en overblijvend zijn. Dus niet de eenjarige en tweejarige kruidachtige soorten.',
                                           objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlSierbeplantingType/vaste-planten')
     }
+
+    @classmethod
+    def get_dummy_data(cls):
+        return random.choice(list(cls.options.keys()))
+
+    @staticmethod
+    def create_dummy_data():
+        return KlSierbeplantingType.get_dummy_data()
 

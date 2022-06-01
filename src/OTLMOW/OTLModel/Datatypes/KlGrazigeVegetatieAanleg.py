@@ -1,4 +1,5 @@
 # coding=utf-8
+import random
 from OTLMOW.OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLMOW.OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
@@ -49,4 +50,12 @@ class KlGrazigeVegetatieAanleg(KeuzelijstField):
                                      definitie='Het aanleggen van een grazige vegetatie dmv rhizomen.',
                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlGrazigeVegetatieAanleg/rhizomen')
     }
+
+    @classmethod
+    def get_dummy_data(cls):
+        return random.choice(list(cls.options.keys()))
+
+    @staticmethod
+    def create_dummy_data():
+        return KlGrazigeVegetatieAanleg.get_dummy_data()
 

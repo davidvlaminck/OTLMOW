@@ -1,4 +1,5 @@
 # coding=utf-8
+import random
 from OTLMOW.OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLMOW.OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
@@ -70,4 +71,12 @@ class KlDynBordZ30Modelnaam(KeuzelijstField):
                                             label='F4b 30-70 Flash',
                                             objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlDynBordZ30Modelnaam/F4b-30-70-Flash')
     }
+
+    @classmethod
+    def get_dummy_data(cls):
+        return random.choice(list(cls.options.keys()))
+
+    @staticmethod
+    def create_dummy_data():
+        return KlDynBordZ30Modelnaam.get_dummy_data()
 

@@ -1,4 +1,5 @@
 # coding=utf-8
+import random
 from OTLMOW.OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLMOW.OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
@@ -97,4 +98,12 @@ class KlConstructiestaalsoort(KeuzelijstField):
                                      definitie='S staat voor Structural steel (constructiestaal), 460 voor de vloeigrens in MPa en NL staat voor gegloeid en normaliserend gewalst staal met min. gespecificeerde kerfslagwaarden onder -50° celsius.',
                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlConstructiestaalsoort/s-460-nl')
     }
+
+    @classmethod
+    def get_dummy_data(cls):
+        return random.choice(list(cls.options.keys()))
+
+    @staticmethod
+    def create_dummy_data():
+        return KlConstructiestaalsoort.get_dummy_data()
 

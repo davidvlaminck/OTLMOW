@@ -1,4 +1,5 @@
 # coding=utf-8
+import random
 from OTLMOW.OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLMOW.OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
@@ -33,4 +34,12 @@ class KlFormaatGebakkenStraatsteen(KeuzelijstField):
                                                               definitie='Een gestandaardiseerde maat voor de gebakken straatsteen.',
                                                               objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFormaatGebakkenStraatsteen/waalformaat-(ca.-200-x-ca.-50-mm)')
     }
+
+    @classmethod
+    def get_dummy_data(cls):
+        return random.choice(list(cls.options.keys()))
+
+    @staticmethod
+    def create_dummy_data():
+        return KlFormaatGebakkenStraatsteen.get_dummy_data()
 

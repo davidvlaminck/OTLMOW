@@ -25,8 +25,7 @@ class Beschermbuis(OmhullendeInrichting, Leiding):
                                                naam='indicatieveDiepte',
                                                label='indicatieve diepte',
                                                objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Beschermbuis.indicatieveDiepte',
-                                               usagenote='Meet de kleinste afstand tussen de buis en het maaiveld bij aanleg aangezien bij graafwerken dit de eerste diepte zal zijn waarop een buis kan aangetroffen worden. De diepte moet opgemeten worden, niet ingeschat: "indicatief" wijst op de tijdelijkheid van de waarde, niet op een waarde die bij benadering gegeven wordt. 
-Bij een discrepantie tussen de waarde van dit attribuut en de waarde in TAW uit de geometrie van het object, geldt altijd de waarde in TAW.',
+                                               usagenote='Meet de kleinste afstand tussen de buis en het maaiveld bij aanleg aangezien bij graafwerken dit de eerste diepte zal zijn waarop een buis kan aangetroffen worden. De diepte moet opgemeten worden, niet ingeschat: "indicatief" wijst op de tijdelijkheid van de waarde, niet op een waarde die bij benadering gegeven wordt. Bij een discrepantie tussen de waarde van dit attribuut en de waarde in TAW uit de geometrie van het object, geldt altijd de waarde in TAW.',
                                                definition='De opgemeten diepte als een (positief) getal in meter tussen het hoogste punt van de buis en het maaiveld zoals dit gekend was op het moment van aanleg van de buis.',
                                                owner=self)
 

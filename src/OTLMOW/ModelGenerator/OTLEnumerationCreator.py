@@ -29,7 +29,7 @@ class OTLEnumerationCreator(AbstractDatatypeCreator):
     def CreateBlockToWriteFromEnumeration(self, osloEnumeration: OSLOEnumeration):
         keuzelijst_waardes = self.get_keuzelijstwaardes_by_name(osloEnumeration.name)
 
-        datablock = ['# coding=utf-8',
+        datablock = ['# coding=utf-8', 'import random',
                      'from OTLMOW.OTLModel.Datatypes.KeuzelijstField import KeuzelijstField']
         if len(keuzelijst_waardes) > 0:
             datablock.append('from OTLMOW.OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde')
@@ -59,6 +59,17 @@ class OTLEnumerationCreator(AbstractDatatypeCreator):
         if len(keuzelijst_waardes) > 0:
             datablock[-1] = datablock[-1][:-1]
         datablock.append('    }')
+
+        # dummy values part
+        datablock.append("")
+        datablock.append("    @classmethod")
+        datablock.append("    def get_dummy_data(cls):")
+        datablock.append("        return random.choice(list(cls.options.keys()))")
+        datablock.append("")
+        datablock.append("    @staticmethod")
+        datablock.append("    def create_dummy_data():")
+        datablock.append("        return KlAIMToestand.get_dummy_data()")
+
         datablock.append('')
 
         return datablock
@@ -102,4 +113,3 @@ class OTLEnumerationCreator(AbstractDatatypeCreator):
                     waarde.status = str(o)
             lijst_keuze_opties.append(waarde)
         return sorted(lijst_keuze_opties, key=lambda l: l.invulwaarde)
-

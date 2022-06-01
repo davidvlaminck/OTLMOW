@@ -1,6 +1,4 @@
-﻿import random
-
-from OTLMOW.OTLModel.BaseClasses.OTLField import OTLField
+﻿from OTLMOW.OTLModel.BaseClasses.OTLField import OTLField
 
 
 class KeuzelijstField(OTLField):

@@ -47,5 +47,5 @@ class TimeField(OTLField):
 
     @staticmethod
     def create_dummy_data():
-        return time(hour=random.randint(0, 24), minute=random.randint(0, 60), second=random.randint(0, 60))
+        return time(hour=random.randint(0, 23), minute=random.randint(0, 59), second=random.randint(0, 59))
 

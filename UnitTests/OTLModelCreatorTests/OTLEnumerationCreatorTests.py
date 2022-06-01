@@ -27,6 +27,7 @@ class EnumerationOSLOCollector(OSLOCollector):
 
         self.expectedDataKlAIMToestand = [
             "# coding=utf-8",
+            "import random",
             "from OTLMOW.OTLModel.Datatypes.KeuzelijstField import KeuzelijstField",
             "from OTLMOW.OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde",
             "",
@@ -65,6 +66,14 @@ class EnumerationOSLOCollector(OSLOCollector):
             "                                       label='verwijderd',",
             "                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAIMToestand/verwijderd')",
             "    }",
+            "",
+            "    @classmethod",
+            "    def get_dummy_data(cls):",
+            "        return random.choice(list(cls.options.keys()))",
+            "",
+            "    @staticmethod",
+            "    def create_dummy_data():",
+            "        return KlAIMToestand.get_dummy_data()",
             ""]
 
 
@@ -172,7 +181,8 @@ class OTLEnumerationCreatorTests(unittest.TestCase):
         self.assertEqual('in-ontwerp', inontwerp_waarde.invulwaarde)
         self.assertEqual('in ontwerp', inontwerp_waarde.label)
         self.assertEqual('', inontwerp_waarde.definitie)
-        self.assertEqual('https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAIMToestand/in-ontwerp', inontwerp_waarde.objectUri)
+        self.assertEqual('https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAIMToestand/in-ontwerp',
+                         inontwerp_waarde.objectUri)
         pass
 
     def test_get_keuzelijstwaardes_from_graph(self):

@@ -13,5 +13,5 @@ class AgentCollectionTests(unittest.TestCase):
         collection = AgentCollection(requester)
         agents_found = collection.get_agent_by_full_name('dave geudens')
         self.assertTrue(isinstance(agents_found, Agent))
-        self.assertEqual('8a7c6f90-23b8-4170-b6b7-1517b8c8465b', agents_found.agentId[:36])
+        self.assertEqual('8a7c6f90-23b8-4170-b6b7-1517b8c8465b', agents_found.agentId.identificator[:36])
         self.assertEqual('Dave Geudens', agents_found.naam)

@@ -7,7 +7,6 @@ from OTLMOW.OTLModel.Datatypes.DateField import DateField
 from OTLMOW.OTLModel.Datatypes.DateTimeField import DateTimeField
 from OTLMOW.OTLModel.Datatypes.FloatOrDecimalField import FloatOrDecimalField
 from OTLMOW.OTLModel.Datatypes.IntegerField import IntegerField
-from OTLMOW.OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
 from OTLMOW.OTLModel.Datatypes.KlAIMToestand import KlAIMToestand
 from OTLMOW.OTLModel.Datatypes.StringField import StringField
 from OTLMOW.OTLModel.Datatypes.TimeField import TimeField

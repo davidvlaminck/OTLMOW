@@ -49,7 +49,7 @@ class OtlAssetJSONEncoderTests(unittest.TestCase):
 
         instance.testUnionType.unionKwantWrd.waarde = 1.0
         json_instance = encoder.encode(instance)
-        expected = '{"testUnionType": {"unionKwantWrd": {"waarde": 1.0}}, ' \
+        expected = '{"testUnionType": {"unionKwantWrd": 1.0}, ' \
                    '"typeURI": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#AllCasesTestClass"}'
         self.assertEqual(expected, json_instance)
 

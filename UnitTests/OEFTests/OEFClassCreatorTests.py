@@ -1,12 +1,11 @@
 import unittest
 
-from OTLMOW.Loggers.NoneLogger import NoneLogger
 from OTLMOW.OEFModel.OEFClassCreator import OEFClassCreator
 
 
 class OEFClassCreatorTestData:
     expected_datablock = ["# coding=utf-8",
-                          "from OEFModel.EMObject import EMObject",
+                          "from OTLMOW.OEFModel.EMObject import EMObject",
                           "from OTLMOW.OEFModel.EMAttribuut import EMAttribuut",
                           "from OTLMOW.OTLModel.Datatypes.BooleanField import BooleanField",
                           "",
@@ -25,7 +24,8 @@ class OEFClassCreatorTestData:
                           "                                            naam='encoder aanwezig?',",
                           "                                            label='encoder aanwezig?',",
                           "                                            objectUri='https://lgc.data.wegenenverkeer.be/ns/attribuut#EMObject.encoderAanwezig',",
-                          "                                            definitie='Definitie nog toe te voegen voor eigenschap encoder aanwezig?')",
+                          "                                            definitie='Definitie nog toe te voegen voor eigenschap encoder aanwezig?',",
+                          "                                            owner=self)",
                           "",
                           "    @property",
                           "    def encoderAanwezig(self):",
@@ -66,7 +66,7 @@ class OEFClassCreatorTestData:
 
 class OEFClassCreatorTests(unittest.TestCase):
     def test_find_attributes_by_class(self):
-        oef_class_creator = OEFClassCreator(NoneLogger(), OEFClassCreatorTestData.attributen)
+        oef_class_creator = OEFClassCreator(OEFClassCreatorTestData.attributen)
 
         oef_attributen = oef_class_creator.find_attributes_by_class(OEFClassCreatorTestData.test_class)
         self.assertEqual(1, len(oef_attributen))
@@ -89,7 +89,7 @@ class OEFClassCreatorTests(unittest.TestCase):
             "kardinaliteit": "1..1"
         }]
 
-        oef_class_creator = OEFClassCreator(NoneLogger(), attributen)
+        oef_class_creator = OEFClassCreator(attributen)
 
         result_2_types = oef_class_creator.get_fields_to_import_from_list_of_attributes(attributen)
         result_1_type = oef_class_creator.get_fields_to_import_from_list_of_attributes(attributen[0:1])
@@ -101,7 +101,7 @@ class OEFClassCreatorTests(unittest.TestCase):
         self.assertListEqual(['BooleanField'], result_1_type)
 
     def test_create_block_to_write_from_class(self):
-        oef_class_creator = OEFClassCreator(NoneLogger(), OEFClassCreatorTestData.attributen)
+        oef_class_creator = OEFClassCreator(OEFClassCreatorTestData.attributen)
         oef_class_creator.attributen = oef_class_creator.find_attributes_by_class(OEFClassCreatorTestData.test_class)
 
         datablock_result = oef_class_creator.create_block_to_write_from_class(OEFClassCreatorTestData.test_class)

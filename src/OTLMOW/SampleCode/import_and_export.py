@@ -19,6 +19,6 @@ if __name__ == '__main__':
     # export to a csv file
     export_csv_path = f'{datetime.now().strftime("%Y%m%d%H%M%S")}_export.csv'
     exporter_csv = CsvExporter(otl_facility.settings)
-    exporter_csv.export_csv_file(objects, export_csv_path)
+    exporter_csv.export_csv_file(objects, file_location=export_csv_path, split_per_type=True)
 
     pass

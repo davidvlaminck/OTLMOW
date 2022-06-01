@@ -229,7 +229,7 @@ class CsvExporterTests(unittest.TestCase):
             self.assertEqual('testComplexType+testStringField', csv_data[0][6])
             self.assertEqual('testKeuzelijstMetKard()', csv_data[0][9])
 
-        csv_data_lines = exporter.create_data_lines_from_data(csv_data)
+        csv_data_lines = exporter.create_data_lines_from_data(csv_data, delimiter=exporter.settings['delimiter'])
         expected_line_asset_2 = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#AllCasesTestClass,1,,False,string in complex veld binnenin complex veld,,,2.5,,waarde-2$waarde-3'
 
         with self.subTest('verify data with different settings'):

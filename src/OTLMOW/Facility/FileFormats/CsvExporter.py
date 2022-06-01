@@ -22,13 +22,34 @@ class CsvExporter:
         self.csv_headers = []
         self.csv_data = []
 
-    def export_csv_file(self, list_of_objects: list = [], file_location: str = '', delimiter=';'):
+    def export_csv_file(self, list_of_objects: list = [], file_location: str = '',
+                        delimiter: str = '', split_per_type: bool = False):
         if file_location == '':
             raise ValueError(f'Can not write a file to: {file_location}')
 
-        csv_data = self.create_data_from_objects(list_of_objects)
-        csv_data_lines = self.create_data_lines_from_data(csv_data)
-        self.write_file(file_location=file_location, data=csv_data_lines)
+        if delimiter == '':
+            delimiter = self.settings['delimiter']
+            if delimiter == '':
+                delimiter = ';'
+
+        if split_per_type:
+            self.export_multiple_csv_files(list_of_objects, file_location, delimiter)
+        else:
+            csv_data = self.create_data_from_objects(list_of_objects)
+            csv_data_lines = self.create_data_lines_from_data(csv_data, delimiter)
+            self.write_file(file_location=file_location, data=csv_data_lines)
+
+    def export_multiple_csv_files(self, list_of_objects: list, file_location: str = '', delimiter: str = ''):
+        types = set(map(lambda x: x.typeURI, list_of_objects))
+        for type in types:
+            filtered_objects = list(filter(lambda x: x.typeURI == type, list_of_objects))
+            shortened_uri = type.split('#')[1]
+            specific_file_location = str(file_location)
+            specific_file_location = specific_file_location.split('.')[0] + '_' + shortened_uri + '.' + \
+                                     specific_file_location.split('.')[1]
+            csv_data = self.create_data_from_objects(filtered_objects)
+            csv_data_lines = self.create_data_lines_from_data(csv_data, delimiter)
+            self.write_file(file_location=specific_file_location, data=csv_data_lines)
 
     def create_data_from_objects(self, list_of_objects: list = []) -> [[str]]:
         self.csv_data = []
@@ -48,7 +69,6 @@ class CsvExporter:
         self.csv_headers = self.adjust_dotnotation_by_settings(headers=self.csv_headers, settings=self.settings)
         self.csv_headers = self.sort_headers(self.csv_headers)
         self.csv_data.insert(0, self.csv_headers)
-
 
         csv_data = self.append_with_nones(self.csv_data)
 
@@ -95,10 +115,10 @@ class CsvExporter:
                 .replace('[]', settings['dotnotation']['cardinality indicator'])
         return headers
 
-    def create_data_lines_from_data(self, csv_data):
+    def create_data_lines_from_data(self, csv_data, delimiter):
         for index, row in enumerate(csv_data):
             row = self.stringify_list(row, self.settings['dotnotation']['cardinality separator'])
-            csv_data[index] = self.settings['delimiter'].join(row)
+            csv_data[index] = delimiter.join(row)
         return csv_data
 
     @staticmethod
@@ -144,4 +164,3 @@ class CsvExporter:
         headers.append(attribute)
         headers = self.sort_headers(headers)
         return headers.index(attribute)
-

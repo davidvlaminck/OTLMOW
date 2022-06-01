@@ -8,6 +8,7 @@ from OTLMOW.OTLModel.Datatypes.KlBetonmilieuklasse import KlBetonmilieuklasse
 from OTLMOW.OTLModel.Datatypes.KlBetonomgevingsklasse import KlBetonomgevingsklasse
 from OTLMOW.OTLModel.Datatypes.KlBetonsterkteklasse import KlBetonsterkteklasse
 from OTLMOW.OTLModel.Datatypes.KlGebruiksdomein import KlGebruiksdomein
+from OTLMOW.OTLModel.Datatypes.KlToeslagmiddelBeton import KlToeslagmiddelBeton
 from OTLMOW.OTLModel.Datatypes.KwantWrdInMillimeter import KwantWrdInMillimeter
 
 
@@ -99,6 +100,14 @@ class DtcBetonspecificatiesWaarden(AttributeInfo):
                                              label='technische fiche',
                                              objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcBetonspecificaties.technischeFiche',
                                              definition='De technische fiche van het beton. Deze moet volgende eigenschappen bevatten: de norm waaraan het beton voldoet, de sterkteklasse, de duurzaamheid (bestaande uit het gebruiksdomein en de omgevingsklasse(n)), de consistentieklasse, de nominale grootste korrelafmeting,...',
+                                             owner=self)
+
+        self._toeslagmiddelen = OTLAttribuut(field=KlToeslagmiddelBeton,
+                                             naam='toeslagmiddelen',
+                                             label='sterkteklasse beton',
+                                             objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcBetonspecificaties.toeslagmiddelen',
+                                             kardinaliteit_max='*',
+                                             definition='todo',
                                              owner=self)
 
     @property
@@ -208,6 +217,15 @@ class DtcBetonspecificatiesWaarden(AttributeInfo):
     @technischeFiche.setter
     def technischeFiche(self, value):
         self._technischeFiche.set_waarde(value, owner=self._parent)
+
+    @property
+    def toeslagmiddelen(self):
+        """todo"""
+        return self._toeslagmiddelen.get_waarde()
+
+    @toeslagmiddelen.setter
+    def toeslagmiddelen(self, value):
+        self._toeslagmiddelen.set_waarde(value, owner=self._parent)
 
 
 # Generated with OTLComplexDatatypeCreator. To modify: extend, do not edit

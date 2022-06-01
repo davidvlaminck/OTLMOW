@@ -1,7 +1,7 @@
 # coding=utf-8
 from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from OTLMOW.OTLModel.Classes.Put import Put
 from OTLMOW.OTLModel.Classes.PutRelatie import PutRelatie
+from OTLMOW.OTLModel.Classes.Put import Put
 from OTLMOW.OTLModel.Datatypes.BooleanField import BooleanField
 from OTLMOW.OTLModel.Datatypes.DtcDocument import DtcDocument
 from OTLMOW.OTLModel.Datatypes.KlHuisaansluitputMateriaal import KlHuisaansluitputMateriaal
@@ -9,7 +9,7 @@ from OTLMOW.GeometrieArtefact.PuntGeometrie import PuntGeometrie
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Huisaansluitput(Put, PutRelatie, PuntGeometrie):
+class Huisaansluitput(PutRelatie, Put, PuntGeometrie):
     """Het constructieonderdeel (putje of T-stuk) dat de verbinding vormt tussen de private riolering en de 
  huisaansluiting."""
 

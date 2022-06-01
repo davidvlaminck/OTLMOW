@@ -1,6 +1,7 @@
 # coding=utf-8
 from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLMOW.OTLModel.Classes.AIMNaamObject import AIMNaamObject
+from OTLMOW.OTLModel.Classes.Sensoropstelling import Sensoropstelling
 from OTLMOW.OTLModel.Datatypes.DteIPv4Adres import DteIPv4Adres
 from OTLMOW.OTLModel.Datatypes.KlNeerslagsensorMerk import KlNeerslagsensorMerk
 from OTLMOW.OTLModel.Datatypes.KlNeerslagsensorModelnaam import KlNeerslagsensorModelnaam
@@ -10,7 +11,7 @@ from OTLMOW.GeometrieArtefact.PuntGeometrie import PuntGeometrie
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Neerslagsensor(AIMNaamObject, PuntGeometrie):
+class Neerslagsensor(AIMNaamObject, Sensoropstelling, PuntGeometrie):
     """Detectie van neerslag(hoeveelheid/intensiteit)."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Neerslagsensor'
@@ -18,6 +19,7 @@ class Neerslagsensor(AIMNaamObject, PuntGeometrie):
 
     def __init__(self):
         AIMNaamObject.__init__(self)
+        Sensoropstelling.__init__(self)
         PuntGeometrie.__init__(self)
 
         self._dnsNaam = OTLAttribuut(field=StringField,

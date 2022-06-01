@@ -3,6 +3,8 @@ from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLMOW.OTLModel.Classes.AIMNaamObject import AIMNaamObject
 from OTLMOW.OTLModel.Datatypes.IntegerField import IntegerField
 from OTLMOW.OTLModel.Datatypes.KlKabelnettoegangNetwerksoort import KlKabelnettoegangNetwerksoort
+from OTLMOW.OTLModel.Datatypes.NonNegIntegerField import NonNegIntegerField
+from OTLMOW.OTLModel.Datatypes.URIField import URIField
 from OTLMOW.GeometrieArtefact.PuntGeometrie import PuntGeometrie
 
 
@@ -17,12 +19,27 @@ class KabelnetToegang(AIMNaamObject, PuntGeometrie):
         AIMNaamObject.__init__(self)
         PuntGeometrie.__init__(self)
 
+        self._geschatRUGebruik = OTLAttribuut(field=NonNegIntegerField,
+                                              naam='geschatRUGebruik',
+                                              label='geschat aantal rack units in gebruik',
+                                              objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KabelnetToegang.geschatRUGebruik',
+                                              usagenote='Deze waarde wordt aangeleverd vanuit de Kabelnet-toepassing.',
+                                              definition='Het aantal gebruikte rack units dat voor de betrokken toegang in gebruik is op basis van een berekening in Kabelnet.',
+                                              owner=self)
+
         self._kabelnetToegangId = OTLAttribuut(field=IntegerField,
                                                naam='kabelnetToegangId',
                                                label='kabelnettoegang ID',
                                                objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KabelnetToegang.kabelnetToegangId',
                                                definition='Uniek nummer uit de Kabelnet toepassing dat deze toegang identificeert.',
                                                owner=self)
+
+        self._kabelnetURL = OTLAttribuut(field=URIField,
+                                         naam='kabelnetURL',
+                                         label='kabelnet URL',
+                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KabelnetToegang.kabelnetURL',
+                                         definition='Knooppunt van Kabelnet dat toegang geeft tot de informatie die in Kabelnet bewaard wordt.',
+                                         owner=self)
 
         self._netwerkSoort = OTLAttribuut(field=KlKabelnettoegangNetwerksoort,
                                           naam='netwerkSoort',
@@ -33,6 +50,15 @@ class KabelnetToegang(AIMNaamObject, PuntGeometrie):
                                           owner=self)
 
     @property
+    def geschatRUGebruik(self):
+        """Het aantal gebruikte rack units dat voor de betrokken toegang in gebruik is op basis van een berekening in Kabelnet."""
+        return self._geschatRUGebruik.get_waarde()
+
+    @geschatRUGebruik.setter
+    def geschatRUGebruik(self, value):
+        self._geschatRUGebruik.set_waarde(value, owner=self)
+
+    @property
     def kabelnetToegangId(self):
         """Uniek nummer uit de Kabelnet toepassing dat deze toegang identificeert."""
         return self._kabelnetToegangId.get_waarde()
@@ -40,6 +66,15 @@ class KabelnetToegang(AIMNaamObject, PuntGeometrie):
     @kabelnetToegangId.setter
     def kabelnetToegangId(self, value):
         self._kabelnetToegangId.set_waarde(value, owner=self)
+
+    @property
+    def kabelnetURL(self):
+        """Knooppunt van Kabelnet dat toegang geeft tot de informatie die in Kabelnet bewaard wordt."""
+        return self._kabelnetURL.get_waarde()
+
+    @kabelnetURL.setter
+    def kabelnetURL(self, value):
+        self._kabelnetURL.set_waarde(value, owner=self)
 
     @property
     def netwerkSoort(self):

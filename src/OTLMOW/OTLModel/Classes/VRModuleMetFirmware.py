@@ -1,14 +1,14 @@
 # coding=utf-8
 from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from abc import abstractmethod
-from OTLMOW.OTLModel.Classes.VerkeersregelaarModule import VerkeersregelaarModule
 from OTLMOW.OTLModel.Classes.FirmwareObject import FirmwareObject
+from OTLMOW.OTLModel.Classes.VerkeersregelaarModule import VerkeersregelaarModule
 from OTLMOW.OTLModel.Datatypes.KlVRModuleMetFirmwareMerk import KlVRModuleMetFirmwareMerk
 from OTLMOW.OTLModel.Datatypes.KlVRModuleMetFirmwareModelnaam import KlVRModuleMetFirmwareModelnaam
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class VRModuleMetFirmware(VerkeersregelaarModule, FirmwareObject):
+class VRModuleMetFirmware(FirmwareObject, VerkeersregelaarModule):
     """Abstracte voor modules met firmware van een verkeersregelaar."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#VRModuleMetFirmware'

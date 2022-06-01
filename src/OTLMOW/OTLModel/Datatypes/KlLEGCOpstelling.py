@@ -11,7 +11,7 @@ class KlLEGCOpstelling(KeuzelijstField):
     label = 'Opstelling'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlLEGCOpstelling'
     definition = 'De opstellingen van de geluidswerende constructie.'
-    deprecated_version = '2.0.0'
+    deprecated_version = '2.0.0-RC3'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlLEGCOpstelling'
     options = {
         'concaaf': KeuzelijstWaarde(invulwaarde='concaaf',

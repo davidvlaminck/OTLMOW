@@ -1,13 +1,13 @@
 # coding=utf-8
 from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from OTLMOW.OTLModel.Classes.Put import Put
 from OTLMOW.OTLModel.Classes.PutRelatie import PutRelatie
+from OTLMOW.OTLModel.Classes.Put import Put
 from OTLMOW.OTLModel.Datatypes.KlUitlaatType import KlUitlaatType
 from OTLMOW.GeometrieArtefact.PuntGeometrie import PuntGeometrie
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Riooltoegang(Put, PutRelatie, PuntGeometrie):
+class Riooltoegang(PutRelatie, Put, PuntGeometrie):
     """Het uiteinde van een rioolbuis."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Riooltoegang'

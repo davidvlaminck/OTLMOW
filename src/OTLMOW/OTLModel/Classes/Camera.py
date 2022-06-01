@@ -8,6 +8,7 @@ from OTLMOW.OTLModel.Datatypes.DteIPv4Adres import DteIPv4Adres
 from OTLMOW.OTLModel.Datatypes.KlCameraMerk import KlCameraMerk
 from OTLMOW.OTLModel.Datatypes.KlCameraModelnaam import KlCameraModelnaam
 from OTLMOW.OTLModel.Datatypes.KlServicePrioriteit import KlServicePrioriteit
+from OTLMOW.OTLModel.Datatypes.KlSpectrum import KlSpectrum
 from OTLMOW.OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter
 from OTLMOW.OTLModel.Datatypes.StringField import StringField
 from OTLMOW.GeometrieArtefact.PuntGeometrie import PuntGeometrie
@@ -37,8 +38,8 @@ class Camera(AIMNaamObject, PuntGeometrie):
                                               naam='configBestandAid',
                                               label='configuratie bestand AID',
                                               objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Camera.configBestandAid',
-                                              usagenote='Attribuut uit gebruik sinds versie 2.3.0 ',
-                                              deprecated_version='2.3.0',
+                                              usagenote='Attribuut uit gebruik sinds versie 2.3.0-RC1',
+                                              deprecated_version='2.3.0-RC1',
                                               definition='Het bestand met de configuratie van de AID component die deel is van de camera.',
                                               owner=self)
 
@@ -53,8 +54,8 @@ class Camera(AIMNaamObject, PuntGeometrie):
                                       naam='heeftAid',
                                       label='heeft AID',
                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Camera.heeftAid',
-                                      usagenote='Attribuut uit gebruik sinds versie 2.3.0 ',
-                                      deprecated_version='2.3.0',
+                                      usagenote='Attribuut uit gebruik sinds versie 2.3.0-RC1',
+                                      deprecated_version='2.3.0-RC1',
                                       definition='Een AID-camera is een CCTV-camera met geintegreerde AID-module. Deze camera genereert naast een camerabeeld ook metadata ivm wat zich afspeelt op het beeld. Een voorbeeld hiervan is gestopte voertuigen.',
                                       owner=self)
 
@@ -62,8 +63,8 @@ class Camera(AIMNaamObject, PuntGeometrie):
                                               naam='heeftSpitsstrook',
                                               label='heeft spitsstrook',
                                               objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Camera.heeftSpitsstrook',
-                                              usagenote='Attribuut uit gebruik sinds versie 2.3.0 ',
-                                              deprecated_version='2.3.0',
+                                              usagenote='Attribuut uit gebruik sinds versie 2.3.0-RC1',
+                                              deprecated_version='2.3.0-RC1',
                                               definition='Locatie-eigenschap van een camera. Dit attribuut geeft aan of de camera ingezet wordt om een spitsstrook te schouwen.',
                                               owner=self)
 
@@ -109,6 +110,13 @@ class Camera(AIMNaamObject, PuntGeometrie):
                                                objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Camera.servicePrioriteit',
                                                definition='Het prioriteitsniveau dat aangeeft hoe dringend iets moet onderhouden/gerepareerd worden',
                                                owner=self)
+
+        self._spectrum = OTLAttribuut(field=KlSpectrum,
+                                      naam='spectrum',
+                                      label='spectrum',
+                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Camera.spectrum',
+                                      definition='De golflengte van de invallende straling.',
+                                      owner=self)
 
         self._technischeFiche = OTLAttribuut(field=DtcDocument,
                                              naam='technischeFiche',
@@ -216,6 +224,15 @@ class Camera(AIMNaamObject, PuntGeometrie):
     @servicePrioriteit.setter
     def servicePrioriteit(self, value):
         self._servicePrioriteit.set_waarde(value, owner=self)
+
+    @property
+    def spectrum(self):
+        """De golflengte van de invallende straling."""
+        return self._spectrum.get_waarde()
+
+    @spectrum.setter
+    def spectrum(self, value):
+        self._spectrum.set_waarde(value, owner=self)
 
     @property
     def technischeFiche(self):

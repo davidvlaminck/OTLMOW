@@ -14,7 +14,7 @@ class Betonfundering(Fundering, VlakGeometrie):
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Betonfundering'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
-    deprecated_version = '2.0.0'
+    deprecated_version = '2.0.0-RC4'
 
     @abstractmethod
     def __init__(self):
@@ -25,8 +25,8 @@ class Betonfundering(Fundering, VlakGeometrie):
                                                naam='afmetingGrondvlak',
                                                label='afmeting grondvlak',
                                                objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Betonfundering.afmetingGrondvlak',
-                                               usagenote='Klasse uit gebruik sinds versie 2.0.0 ',
-                                               deprecated_version='2.0.0',
+                                               usagenote='Klasse uit gebruik sinds versie 2.0.0-RC4',
+                                               deprecated_version='2.0.0-RC4',
                                                definition='De maximale lengte en breedte van bovenkant van de fundering.',
                                                owner=self)
 
@@ -34,8 +34,8 @@ class Betonfundering(Fundering, VlakGeometrie):
                                             naam='betonkwaliteit',
                                             label='betonkwaliteit',
                                             objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Betonfundering.betonkwaliteit',
-                                            usagenote='Klasse uit gebruik sinds versie 2.0.0 ',
-                                            deprecated_version='2.0.0',
+                                            usagenote='Klasse uit gebruik sinds versie 2.0.0-RC4',
+                                            deprecated_version='2.0.0-RC4',
                                             definition='Kwaliteit van het beton gebruikt voor de fundering volgens een vaste lijst van mogelijke waarden.',
                                             owner=self)
 

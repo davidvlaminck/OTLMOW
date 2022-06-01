@@ -1,5 +1,7 @@
 # coding=utf-8
+from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLMOW.OTLModel.Classes.NaampadObject import NaampadObject
+from OTLMOW.OTLModel.Datatypes.BooleanField import BooleanField
 from OTLMOW.GeometrieArtefact.VlakGeometrie import VlakGeometrie
 
 
@@ -13,3 +15,20 @@ class Slagboom(NaampadObject, VlakGeometrie):
     def __init__(self):
         NaampadObject.__init__(self)
         VlakGeometrie.__init__(self)
+
+        self._isManueel = OTLAttribuut(field=BooleanField,
+                                       naam='isManueel',
+                                       label='is manueel',
+                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Slagboom.isManueel',
+                                       usagenote='Voor een manuele slagboom zijn geen instanties van de onderliggende onderdelen Slagboomkolom en Slagboomarm vereist.',
+                                       definition='Geeft aan of de slagboom (uitsluitend) manueel bediend wordt of door een aangestuurde motor in de slagboomkolom.',
+                                       owner=self)
+
+    @property
+    def isManueel(self):
+        """Geeft aan of de slagboom (uitsluitend) manueel bediend wordt of door een aangestuurde motor in de slagboomkolom."""
+        return self._isManueel.get_waarde()
+
+    @isManueel.setter
+    def isManueel(self, value):
+        self._isManueel.set_waarde(value, owner=self)

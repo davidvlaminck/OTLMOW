@@ -1,7 +1,7 @@
 # coding=utf-8
 from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from OTLMOW.OTLModel.Classes.Put import Put
 from OTLMOW.OTLModel.Classes.PutRelatie import PutRelatie
+from OTLMOW.OTLModel.Classes.Put import Put
 from OTLMOW.OTLModel.Datatypes.BooleanField import BooleanField
 from OTLMOW.OTLModel.Datatypes.DtcAfmetingBxlxhInMm import DtcAfmetingBxlxhInMm
 from OTLMOW.OTLModel.Datatypes.KlPutRooster import KlPutRooster
@@ -14,7 +14,7 @@ from OTLMOW.GeometrieArtefact.PuntGeometrie import PuntGeometrie
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Straatkolk(Put, PutRelatie, PuntGeometrie):
+class Straatkolk(PutRelatie, Put, PuntGeometrie):
     """De hemelwaterinlaatconstructie,meestal geplaatst in de straatgoot of watergreppel,waarlangs het hemelwater van de verhardingen wordt afgevoerd."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Straatkolk'
@@ -57,8 +57,8 @@ class Straatkolk(Put, PutRelatie, PuntGeometrie):
                                      naam='rooster',
                                      label='rooster',
                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Straatkolk.rooster',
-                                     usagenote='Attribuut uit gebruik sinds versie 2.1.0 ',
-                                     deprecated_version='2.1.0',
+                                     usagenote='Attribuut uit gebruik sinds versie 2.1.0-RC2',
+                                     deprecated_version='2.1.0-RC2',
                                      definition='Bepaalt het gebruikte type van rooster.',
                                      owner=self)
 

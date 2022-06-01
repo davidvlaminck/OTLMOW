@@ -12,7 +12,7 @@ class ProefWerkingsbreedteMVP(Proef, PuntGeometrie, LijnGeometrie, VlakGeometrie
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/proefenmeting#ProefWerkingsbreedteMVP'
     """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""
 
-    deprecated_version = '2.0.0'
+    deprecated_version = '2.0.0-RC3'
 
     def __init__(self):
         Proef.__init__(self)

@@ -6,7 +6,7 @@ if __name__ == '__main__':
                                settings_path="C:\\resources\\settings_OTLMOW.json")
 
     # create a datamodel based on the OTL SQLite database and ttl files stored on the github
-    otl_file_location = '../InputFiles/OTL 2.3.db'
+    otl_file_location = '../InputFiles/OTL 2.5.db'
     GA_file_location = '../InputFiles/Geometrie_Artefact_2.3.RC2.db'
     otl_facility.init_otl_model_creator(otl_file_location, GA_file_location)
     otl_facility.create_otl_datamodel()

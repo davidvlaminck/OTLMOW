@@ -11,7 +11,7 @@ class KlLEGCSchermelementType(KeuzelijstField):
     label = 'Schermelement type'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlLEGCSchermelementType'
     definition = 'Schermelement types.'
-    deprecated_version = '2.0.0'
+    deprecated_version = '2.0.0-RC3'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlLEGCSchermelementType'
     options = {
         'bloembakelement': KeuzelijstWaarde(invulwaarde='bloembakelement',

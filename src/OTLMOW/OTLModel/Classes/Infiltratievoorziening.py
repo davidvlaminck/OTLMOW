@@ -1,11 +1,11 @@
 # coding=utf-8
-from OTLMOW.OTLModel.Classes.Put import Put
 from OTLMOW.OTLModel.Classes.PutRelatie import PutRelatie
+from OTLMOW.OTLModel.Classes.Put import Put
 from OTLMOW.GeometrieArtefact.VlakGeometrie import VlakGeometrie
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Infiltratievoorziening(Put, PutRelatie, VlakGeometrie):
+class Infiltratievoorziening(PutRelatie, Put, VlakGeometrie):
     """Voorziening voor infiltratie van onvervuild water."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Infiltratievoorziening'

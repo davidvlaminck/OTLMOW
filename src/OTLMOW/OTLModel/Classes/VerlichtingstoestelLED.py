@@ -13,6 +13,7 @@ from OTLMOW.OTLModel.Datatypes.KlWvLedOverhang import KlWvLedOverhang
 from OTLMOW.OTLModel.Datatypes.KlWvLedProtector import KlWvLedProtector
 from OTLMOW.OTLModel.Datatypes.KlWvLedTussenafstand import KlWvLedTussenafstand
 from OTLMOW.OTLModel.Datatypes.KlWvLedVerlNiveau import KlWvLedVerlNiveau
+from OTLMOW.OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
@@ -41,8 +42,8 @@ De LED driver bevindt zich fysiek in het verlichtingstoestel maar wordt als een 
                                            naam='armatuurkleur',
                                            label='armatuurkleur',
                                            objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#VerlichtingstoestelLED.armatuurkleur',
-                                           usagenote='Attribuut uit gebruik sinds versie 2.3.0 ',
-                                           deprecated_version='2.3.0',
+                                           usagenote='Attribuut uit gebruik sinds versie 2.3.0-RC1',
+                                           deprecated_version='2.3.0-RC1',
                                            definition='De kleur van de zichtbare buitenkant van het verlichtingstoestel.',
                                            owner=self)
 
@@ -106,8 +107,18 @@ De LED driver bevindt zich fysiek in het verlichtingstoestel maar wordt als een 
                                            naam='tussenAfstand',
                                            label='tussen afstand',
                                            objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#VerlichtingstoestelLED.tussenAfstand',
+                                           usagenote='Attribuut uit gebruik sinds versie 2.4.0-RC1',
+                                           deprecated_version='2.4.0-RC1',
                                            definition='Afstand tussen de verschillende LED verlichtingstoestellen.',
                                            owner=self)
+
+        self._tussenafstandLED = OTLAttribuut(field=KwantWrdInMeter,
+                                              naam='tussenafstandLED',
+                                              label='tussenafstand LED',
+                                              objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#VerlichtingstoestelLED.tussenafstandLED',
+                                              usagenote='Maximum 1 cijfer na de komma ingeven.',
+                                              definition='Afstand, uitgedrukt in meter, tussen de verschillende LED verlichtingstoestellen.',
+                                              owner=self)
 
         self._verlichtingsNiveau = OTLAttribuut(field=KlWvLedVerlNiveau,
                                                 naam='verlichtingsNiveau',
@@ -214,6 +225,15 @@ De LED driver bevindt zich fysiek in het verlichtingstoestel maar wordt als een 
     @tussenAfstand.setter
     def tussenAfstand(self, value):
         self._tussenAfstand.set_waarde(value, owner=self)
+
+    @property
+    def tussenafstandLED(self):
+        """Afstand, uitgedrukt in meter, tussen de verschillende LED verlichtingstoestellen."""
+        return self._tussenafstandLED.get_waarde()
+
+    @tussenafstandLED.setter
+    def tussenafstandLED(self, value):
+        self._tussenafstandLED.set_waarde(value, owner=self)
 
     @property
     def verlichtingsNiveau(self):

@@ -22,8 +22,8 @@ class DtcHoutigeAanlegWaarden(AttributeInfo):
                                                     naam='beschermingVraatschade',
                                                     label='bescherming vraatschade',
                                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcHoutigeAanleg.beschermingVraatschade',
-                                                    usagenote='Attribuut uit gebruik sinds versie 2.0.0 ',
-                                                    deprecated_version='2.0.0',
+                                                    usagenote='Attribuut uit gebruik sinds versie 2.0.0-RC3',
+                                                    deprecated_version='2.0.0-RC3',
                                                     definition='Bescherming van de stam tegen knaagdieren.',
                                                     owner=self)
 

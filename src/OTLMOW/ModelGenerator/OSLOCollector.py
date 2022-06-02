@@ -29,18 +29,18 @@ class OSLOCollector:
         self.relations = [OSLORelatie]
 
     def collect(self):
-        self.classes = self.OSLOInMemoryCreator.getAllClasses()
-        self.attributes = self.OSLOInMemoryCreator.getAttributes()
-        self.inheritances = self.OSLOInMemoryCreator.getInheritances()
-        self.primitiveDatatypes = self.OSLOInMemoryCreator.getAllPrimitiveDatatypes()
-        self.primitiveDatatypeAttributen = self.OSLOInMemoryCreator.getAllPrimitiveDatatypeAttributen()
-        self.complexDatatypes = self.OSLOInMemoryCreator.getAllComplexDatatypes()
-        self.complexDatatypeAttributen = self.OSLOInMemoryCreator.getAllComplexDatatypeAttributen()
-        self.unionDatatypes = self.OSLOInMemoryCreator.getAllUnionDatatypes()
+        self.classes = self.OSLOInMemoryCreator.get_all_classes()
+        self.attributes = self.OSLOInMemoryCreator.get_all_attributes()
+        self.inheritances = self.OSLOInMemoryCreator.get_all_inheritances()
+        self.primitiveDatatypes = self.OSLOInMemoryCreator.get_all_primitive_datatypes()
+        self.primitiveDatatypeAttributen = self.OSLOInMemoryCreator.get_all_primitive_datatype_attributes()
+        self.complexDatatypes = self.OSLOInMemoryCreator.get_all_complex_datatypes()
+        self.complexDatatypeAttributen = self.OSLOInMemoryCreator.get_all_complex_datatype_attributes()
+        self.unionDatatypes = self.OSLOInMemoryCreator.get_all_union_datatypes()
         self.unionDatatypeAttributen = self.OSLOInMemoryCreator.getAllUnionDatatypeAttributen()
-        self.enumerations = self.OSLOInMemoryCreator.getEnumerations()
+        self.enumerations = self.OSLOInMemoryCreator.get_all_enumerations()
         self.typeLinks = self.OSLOInMemoryCreator.getTypeLinks()
-        self.relations = self.OSLOInMemoryCreator.getAllRelations()
+        self.relations = self.OSLOInMemoryCreator.get_all_relations()
 
     def find_attributes_by_class(self, osloclass: OSLOClass) -> [OSLOAttribuut]:
         return sorted(list(filter(lambda c: c.class_uri == osloclass.objectUri, self.attributes)), key=lambda a: a.class_uri)

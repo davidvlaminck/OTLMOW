@@ -232,15 +232,15 @@ class OTLClassCreatorTests(unittest.TestCase):
         mock = Mock()
         oSLOCreator = OSLOInMemoryCreator(mock)
         mock.performReadQuery = self.mockPerformReadQuery
-        listOfRelations = oSLOCreator.getAllRelations()
+        listOfRelations = oSLOCreator.get_all_relations()
         self.assertTrue(len(listOfRelations) >= 1)
 
     def test_write(self):
         mock = Mock()
         oSLOCreator = OSLOInMemoryCreator(mock)
         mock.performReadQuery = self.mockPerformReadQuery
-        listOfRelations = oSLOCreator.getAllRelations()
-        listOfClasses = oSLOCreator.getAllClasses()
+        listOfRelations = oSLOCreator.get_all_relations()
+        listOfClasses = oSLOCreator.get_all_classes()
         self.assertTrue(len(listOfRelations) >= 1)
         self.assertTrue(len(listOfClasses) >= 1)
 

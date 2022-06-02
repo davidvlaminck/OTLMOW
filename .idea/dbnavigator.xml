@@ -24,11 +24,7 @@
     <autoscroll-to-editor value="false" />
     <autoscroll-from-editor value="true" />
     <show-object-properties value="true" />
-    <loaded-nodes>
-      <connection connection-id="cb031204-c00c-40f6-b0d7-c68a5b98e7d2">
-        <schema name="OTL_AllCasesTestClass" object-types="table, view, constraint, index, column, dataset trigger" />
-      </connection>
-    </loaded-nodes>
+    <loaded-nodes />
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="cb031204-c00c-40f6-b0d7-c68a5b98e7d2">

@@ -191,188 +191,147 @@ class OSLOInMemoryCreatorTests(unittest.TestCase):
 
         return []
 
-    def test_FileNotFound(self):
+    def test_file_not_found(self):
         file_location = ''
         with self.assertRaises(FileNotFoundError):
             sql_reader = SQLDbReader(file_location)
 
-    def test_OTLDbClass(self):
+    def test_get_all_classes(self):
         base_dir = os.path.dirname(os.path.realpath(__file__))
-        file_location = f'{base_dir}/../../src/OTLMOW/InputFiles/OTL 2.3.db'
+        file_location = f'{base_dir}/../OTL_AllCasesTestClass.db'
         sql_reader = SQLDbReader(file_location)
         oslo_creator = OSLOInMemoryCreator(sql_reader)
-        listOfClasses = oslo_creator.getAllClasses()
+        list_of_classes = oslo_creator.get_all_classes()
 
-        self.assertTrue(len(listOfClasses) > 0)
-        first = next(c for c in listOfClasses)
-        self.assertEqual(type(first), OSLOClass)
+        self.assertEqual(5, len(list_of_classes))
+        self.assertTrue(isinstance(list_of_classes[0], OSLOClass))
 
-    def test_OTLDbPrimitiveDatatypes(self):
+    def test_get_all_primitive_datatypes(self):
         base_dir = os.path.dirname(os.path.realpath(__file__))
-        file_location = f'{base_dir}/../../src/OTLMOW/InputFiles/OTL 2.3.db'
+        file_location = f'{base_dir}/../OTL_AllCasesTestClass.db'
         sql_reader = SQLDbReader(file_location)
         oslo_creator = OSLOInMemoryCreator(sql_reader)
-        listOfPrimitiveDatatypes = oslo_creator.getAllPrimitiveDatatypes()
+        list_of_primitive_datatypes = oslo_creator.get_all_primitive_datatypes()
 
-        self.assertTrue(len(listOfPrimitiveDatatypes) > 0)
-        first = next(c for c in listOfPrimitiveDatatypes)
-        self.assertEqual(type(first), OSLODatatypePrimitive)
+        self.assertEqual(12, len(list_of_primitive_datatypes))
+        self.assertTrue(isinstance(list_of_primitive_datatypes[0], OSLODatatypePrimitive))
 
-    def test_OTLDbPrimitiveDatatypeAttributen(self):
+    def test_get_all_primitive_datatype_attributes(self):
         base_dir = os.path.dirname(os.path.realpath(__file__))
-        file_location = f'{base_dir}/../../src/OTLMOW/InputFiles/OTL 2.3.db'
+        file_location = f'{base_dir}/../OTL_AllCasesTestClass.db'
         sql_reader = SQLDbReader(file_location)
         oslo_creator = OSLOInMemoryCreator(sql_reader)
-        listOfPrimitiveDatatypeAttributen = oslo_creator.getAllPrimitiveDatatypeAttributen()
+        list_of_primitive_datatypes_attributes = oslo_creator.get_all_primitive_datatype_attributes()
 
-        self.assertTrue(len(listOfPrimitiveDatatypeAttributen) > 0)
-        first = next(c for c in listOfPrimitiveDatatypeAttributen)
-        self.assertEqual(type(first), OSLODatatypePrimitiveAttribuut)
+        self.assertEqual(3, len(list_of_primitive_datatypes_attributes))
+        self.assertTrue(isinstance(list_of_primitive_datatypes_attributes[0], OSLODatatypePrimitiveAttribuut))
 
-    def test_Mock_getAllClasses(self):
-        mock = Mock()
-        oSLOCreator = OSLOInMemoryCreator(mock)
-        mock.performReadQuery = self.mockPerformReadQuery
-        uri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#NaampadObject'
-        listOfClasses = oSLOCreator.getAllClasses()
+    def test_get_class_by_uri(self):
+        base_dir = os.path.dirname(os.path.realpath(__file__))
+        file_location = f'{base_dir}/../OTL_AllCasesTestClass.db'
+        sql_reader = SQLDbReader(file_location)
+        oslo_creator = OSLOInMemoryCreator(sql_reader)
+        uri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#AllCasesTestClass'
+        specific_class = oslo_creator.get_class_by_uri(uri)
 
-        self.assertTrue(len(listOfClasses) >= 1)
-        first = next(c for c in listOfClasses)
-        self.assertEqual(type(first), OSLOClass)
-        self.assertEqual(first.objectUri, uri)
+        self.assertTrue(isinstance(specific_class, OSLOClass))
+        self.assertEqual(uri, specific_class.objectUri)
 
-    def test_Mock_getClassByUri(self):
-        mock = Mock()
-        oSLOCreator = OSLOInMemoryCreator(mock)
-        mock.performReadQuery = self.mockPerformReadQuery
-        uri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#NaampadObject'
-        listOfClasses = oSLOCreator.getClassByUri(uri)
+    def test_get_attributes_by_class_uri(self):
+        base_dir = os.path.dirname(os.path.realpath(__file__))
+        file_location = f'{base_dir}/../OTL_AllCasesTestClass.db'
+        sql_reader = SQLDbReader(file_location)
+        oslo_creator = OSLOInMemoryCreator(sql_reader)
+        uri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#AllCasesTestClass'
+        attribute_uri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#AllCasesTestClass.testBooleanField'
+        attributes = oslo_creator.get_attributes_by_class_uri(uri)
 
-        self.assertTrue(len(listOfClasses) == 1)
-        first = next(c for c in listOfClasses)
-        self.assertEqual(type(first), OSLOClass)
-        self.assertEqual(first.objectUri, uri)
+        self.assertTrue(isinstance(attributes[0], OSLOAttribuut))
+        self.assertEqual(attribute_uri, attributes[0].objectUri)
+        self.assertEqual(uri, attributes[0].class_uri)
 
-    def test_Mock_getAttributeByClassUri(self):
-        mock = Mock()
-        oSLOCreator = OSLOInMemoryCreator(mock)
-        mock.performReadQuery = self.mockPerformReadQuery
-        uri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#NaampadObject'
-        attributeUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#NaampadObject.naampad'
-        listOfAttributes = oSLOCreator.getAttributes()
-        attributes = oSLOCreator.getAttributeByClassUri(uri)
+    def test_get_all_attributes(self):
+        base_dir = os.path.dirname(os.path.realpath(__file__))
+        file_location = f'{base_dir}/../OTL_AllCasesTestClass.db'
+        sql_reader = SQLDbReader(file_location)
+        oslo_creator = OSLOInMemoryCreator(sql_reader)
+        attributes = oslo_creator.get_all_attributes()
+        attribute_uri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#AllCasesTestClass.testBooleanField'
 
-        self.assertTrue(len(listOfAttributes) == 1)
-        first = next(c for c in listOfAttributes)
-        self.assertEqual(type(first), OSLOAttribuut)
-        self.assertEqual(first.objectUri, attributeUri)
+        self.assertTrue(isinstance(attributes[0], OSLOAttribuut))
+        self.assertEqual(attribute_uri, attributes[0].objectUri)
 
-    def test_Mock_getAttributes(self):
-        mock = Mock()
-        oSLOCreator = OSLOInMemoryCreator(mock)
-        mock.performReadQuery = self.mockPerformReadQuery
-        attributeUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#NaampadObject.naampad'
-        listOfAttributes = oSLOCreator.getAttributes()
+    def test_get_all_inheritances(self):
+        base_dir = os.path.dirname(os.path.realpath(__file__))
+        file_location = f'{base_dir}/../OTL_AllCasesTestClass.db'
+        sql_reader = SQLDbReader(file_location)
+        oslo_creator = OSLOInMemoryCreator(sql_reader)
+        inheritances = oslo_creator.get_all_inheritances()
 
-        self.assertTrue(len(listOfAttributes) >= 1)
-        first = next(c for c in listOfAttributes)
-        self.assertEqual(type(first), OSLOAttribuut)
-        self.assertEqual(first.objectUri, attributeUri)
+        self.assertEqual(4, len(inheritances))
+        self.assertTrue(isinstance(inheritances[0], Inheritance))
+        self.assertEqual('https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMDBStatus', inheritances[0].base_uri)
+        self.assertEqual('https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMObject', inheritances[0].class_uri)
 
-    def test_Mock_getInheritances(self):
-        mock = Mock()
-        oSLOCreator = OSLOInMemoryCreator(mock)
-        mock.performReadQuery = self.mockPerformReadQuery
-        listOfInheritances = oSLOCreator.getInheritances()
-        class_uri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#NaampadObject'
+    def test_get_all_complex_datatypes(self):
+        base_dir = os.path.dirname(os.path.realpath(__file__))
+        file_location = f'{base_dir}/../OTL_AllCasesTestClass.db'
+        sql_reader = SQLDbReader(file_location)
+        oslo_creator = OSLOInMemoryCreator(sql_reader)
+        list_of_complex_datatypes = oslo_creator.get_all_complex_datatypes()
 
-        self.assertTrue(len(listOfInheritances) >= 1)
-        first = next(c for c in listOfInheritances)
-        self.assertEqual(type(first), Inheritance)
-        self.assertEqual(first.class_uri, class_uri)
+        self.assertEqual(2, len(list_of_complex_datatypes))
+        self.assertTrue(isinstance(list_of_complex_datatypes[0], OSLODatatypeComplex))
+        self.assertEqual('https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcTestComplexType',
+                         list_of_complex_datatypes[0].objectUri)
 
-    def test_Mock_getAllPrimitiveDatatypes(self):
-        mock = Mock()
-        oSLOCreator = OSLOInMemoryCreator(mock)
-        mock.performReadQuery = self.mockPerformReadQuery
-        listOfPrimitiveDatatypes = oSLOCreator.getAllPrimitiveDatatypes()
-        class_uri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DteKleurRAL'
+    def test_get_all_complex_datatype_attributes(self):
+        base_dir = os.path.dirname(os.path.realpath(__file__))
+        file_location = f'{base_dir}/../OTL_AllCasesTestClass.db'
+        sql_reader = SQLDbReader(file_location)
+        oslo_creator = OSLOInMemoryCreator(sql_reader)
+        list_of_complex_datatypes_attributes = oslo_creator.get_all_complex_datatype_attributes()
 
-        self.assertTrue(len(listOfPrimitiveDatatypes) >= 1)
-        first = next(c for c in listOfPrimitiveDatatypes)
-        self.assertEqual(type(first), OSLODatatypePrimitive)
-        self.assertEqual(first.objectUri, class_uri)
+        self.assertEqual(11, len(list_of_complex_datatypes_attributes))
+        self.assertTrue(isinstance(list_of_complex_datatypes_attributes[0], OSLODatatypeComplexAttribuut))
+        self.assertEqual('https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcTestComplexType.testBooleanField',
+                         list_of_complex_datatypes_attributes[0].objectUri)
 
-    def test_Mock_getAllPrimitiveDatatypeAttributen(self):
-        mock = Mock()
-        oSLOCreator = OSLOInMemoryCreator(mock)
-        mock.performReadQuery = self.mockPerformReadQuery
-        listOfPrimitiveDatatypeAttributen = oSLOCreator.getAllPrimitiveDatatypeAttributen()
-        class_uri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DteKleurRAL.waarde'
+    def test_get_all_enumerations(self):
+        base_dir = os.path.dirname(os.path.realpath(__file__))
+        file_location = f'{base_dir}/../OTL_AllCasesTestClass.db'
+        sql_reader = SQLDbReader(file_location)
+        oslo_creator = OSLOInMemoryCreator(sql_reader)
+        enumerations = oslo_creator.get_all_enumerations()
 
-        self.assertTrue(len(listOfPrimitiveDatatypeAttributen) >= 1)
-        first = next(c for c in listOfPrimitiveDatatypeAttributen)
-        self.assertEqual(type(first), OSLODatatypePrimitiveAttribuut)
-        self.assertEqual(first.objectUri, class_uri)
+        self.assertEqual(1, len(enumerations))
+        self.assertTrue(isinstance(enumerations[0], OSLOEnumeration))
+        self.assertEqual('https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#KlTestKeuzelijst', enumerations[0].objectUri)
 
-    def test_Mock_getAllComplexDatatypes(self):
-        mock = Mock()
-        oSLOCreator = OSLOInMemoryCreator(mock)
-        mock.performReadQuery = self.mockPerformReadQuery
-        listOfComplexDatatypes = oSLOCreator.getAllComplexDatatypes()
-        class_uri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcIdentificator'
+    def test_get_all_relations(self):
+        base_dir = os.path.dirname(os.path.realpath(__file__))
+        file_location = f'{base_dir}/../OTL_AllCasesTestClass.db'
+        sql_reader = SQLDbReader(file_location)
+        oslo_creator = OSLOInMemoryCreator(sql_reader)
+        relations = oslo_creator.get_all_relations()
 
-        self.assertTrue(len(listOfComplexDatatypes) >= 1)
-        first = next(c for c in listOfComplexDatatypes)
-        self.assertEqual(type(first), OSLODatatypeComplex)
-        self.assertEqual(first.objectUri, class_uri)
+        self.assertEqual(2, len(relations))
+        self.assertTrue(isinstance(relations[0], OSLORelatie))
+        self.assertEqual('https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bevestiging', relations[0].objectUri)
+        self.assertEqual('https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#AnotherTestClass', relations[0].doel_uri)
+        self.assertEqual('https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#AllCasesTestClass', relations[0].bron_uri)
 
-    def test_Mock_getAllComplexDatatypeAttributen(self):
-        mock = Mock()
-        oSLOCreator = OSLOInMemoryCreator(mock)
-        mock.performReadQuery = self.mockPerformReadQuery
-        listOfComplexDatatypeAttributen = oSLOCreator.getAllComplexDatatypeAttributen()
-        attribuut_uri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcIdentificator.identificator'
+    def test_get_all_union_datatypes(self):
+        base_dir = os.path.dirname(os.path.realpath(__file__))
+        file_location = f'{base_dir}/../OTL_AllCasesTestClass.db'
+        sql_reader = SQLDbReader(file_location)
+        oslo_creator = OSLOInMemoryCreator(sql_reader)
+        list_of_union_datatypes = oslo_creator.get_all_union_datatypes()
 
-        self.assertTrue(len(listOfComplexDatatypeAttributen) >= 1)
-        first = next(c for c in listOfComplexDatatypeAttributen)
-        self.assertEqual(type(first), OSLODatatypeComplexAttribuut)
-        self.assertEqual(first.objectUri, attribuut_uri)
-
-    def test_Mock_getAllEnumerations(self):
-        mock = Mock()
-        oSLOCreator = OSLOInMemoryCreator(mock)
-        mock.performReadQuery = self.mockPerformReadQuery
-        listOfEnumerations = oSLOCreator.getEnumerations()
-        class_uri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KlAIMToestand'
-
-        self.assertTrue(len(listOfEnumerations) >= 1)
-        first = next(c for c in listOfEnumerations)
-        self.assertEqual(type(first), OSLOEnumeration)
-        self.assertEqual(first.objectUri, class_uri)
-
-    def test_Mock_getAllRelations(self):
-        mock = Mock()
-        oSLOCreator = OSLOInMemoryCreator(mock)
-        mock.performReadQuery = self.mockPerformReadQuery
-        listOfRelations = oSLOCreator.getAllRelations()
-
-        self.assertTrue(len(listOfRelations) >= 1)
-        first = next(c for c in listOfRelations)
-        self.assertEqual(type(first), OSLORelatie)
-        self.assertEqual(first.objectUri, "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bevestiging")
-
-    def test_Mock_getAllUnionDatatypes(self):
-        mock = Mock()
-        oSLOCreator = OSLOInMemoryCreator(mock)
-        mock.performReadQuery = self.mockPerformReadQuery
-        listOfUnionDatatypes = oSLOCreator.getAllUnionDatatypes()
-        class_uri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtuLichtmastMasthoogte'
-
-        self.assertTrue(len(listOfUnionDatatypes) >= 1)
-        first = next(c for c in listOfUnionDatatypes)
-        self.assertEqual(type(first), OSLODatatypeUnion)
-        self.assertEqual(first.objectUri, class_uri)
+        self.assertEqual(1, len(list_of_union_datatypes))
+        self.assertTrue(isinstance(list_of_union_datatypes[0], OSLODatatypeUnion))
+        self.assertEqual('https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtuTestUnionType',
+                         list_of_union_datatypes[0].objectUri)
 
     def test_Mock_getAllUnionDatatypeAttributen(self):
         mock = Mock()

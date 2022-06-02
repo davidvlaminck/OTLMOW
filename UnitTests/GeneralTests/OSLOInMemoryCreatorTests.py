@@ -1,6 +1,5 @@
 import os
 import unittest
-from unittest.mock import Mock
 
 from OTLMOW.ModelGenerator.Inheritance import Inheritance
 from OTLMOW.ModelGenerator.OSLOAttribuut import OSLOAttribuut

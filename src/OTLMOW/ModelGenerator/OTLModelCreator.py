@@ -35,7 +35,7 @@ class OTLModelCreator:
     def create_primitive_datatypes(self):
         creator = OTLPrimitiveDatatypeCreator(self.osloCollector)
 
-        for primDatatype in self.osloCollector.primitiveDatatypes:
+        for primDatatype in self.osloCollector.primitive_datatypes:
             if primDatatype.objectUri in ['http://www.w3.org/2000/01/rdf-schema#Literal',
                                           'http://www.w3.org/2001/XMLSchema#dateTime',
                                           'http://www.w3.org/2001/XMLSchema#integer',
@@ -66,7 +66,7 @@ class OTLModelCreator:
     def create_complex_datatypes(self):
         creator = OTLComplexDatatypeCreator(self.osloCollector)
 
-        for complexDatatype in self.osloCollector.complexDatatypes:
+        for complexDatatype in self.osloCollector.complex_datatypes:
             try:
                 dataToWrite = creator.CreateBlockToWriteFromComplexTypes(complexDatatype)
                 if dataToWrite is None:
@@ -84,7 +84,7 @@ class OTLModelCreator:
     def create_union_datatypes(self):
         creator = OTLUnionDatatypeCreator(self.osloCollector)
 
-        for unionDatatype in self.osloCollector.unionDatatypes:
+        for unionDatatype in self.osloCollector.union_datatypes:
             try:
                 dataToWrite = creator.CreateBlockToWriteFromUnionTypes(unionDatatype)
                 if dataToWrite is None:

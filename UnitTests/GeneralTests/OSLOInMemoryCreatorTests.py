@@ -14,6 +14,7 @@ from OTLMOW.ModelGenerator.OSLODatatypeUnionAttribuut import OSLODatatypeUnionAt
 from OTLMOW.ModelGenerator.OSLOEnumeration import OSLOEnumeration
 from OTLMOW.ModelGenerator.OSLOInMemoryCreator import OSLOInMemoryCreator
 from OTLMOW.ModelGenerator.OSLORelatie import OSLORelatie
+from OTLMOW.ModelGenerator.OSLOTypeLink import OSLOTypeLink
 from OTLMOW.ModelGenerator.SQLDbReader import SQLDbReader
 
 
@@ -333,14 +334,26 @@ class OSLOInMemoryCreatorTests(unittest.TestCase):
         self.assertEqual('https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtuTestUnionType',
                          list_of_union_datatypes[0].objectUri)
 
-    def test_Mock_getAllUnionDatatypeAttributen(self):
-        mock = Mock()
-        oSLOCreator = OSLOInMemoryCreator(mock)
-        mock.performReadQuery = self.mockPerformReadQuery
-        listOfUnionDatatypeAttributen = oSLOCreator.getAllUnionDatatypeAttributen()
-        attribuut_uri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtuLichtmastMasthoogte.afwijkendeHoogte'
+    def test_get_all_union_datatype_attributes(self):
+        base_dir = os.path.dirname(os.path.realpath(__file__))
+        file_location = f'{base_dir}/../OTL_AllCasesTestClass.db'
+        sql_reader = SQLDbReader(file_location)
+        oslo_creator = OSLOInMemoryCreator(sql_reader)
+        list_of_union_datatypes_attributes = oslo_creator.get_all_union_datatype_attributes()
 
-        self.assertTrue(len(listOfUnionDatatypeAttributen) >= 1)
-        first = next(c for c in listOfUnionDatatypeAttributen)
-        self.assertEqual(type(first), OSLODatatypeUnionAttribuut)
-        self.assertEqual(first.objectUri, attribuut_uri)
+        self.assertEqual(2, len(list_of_union_datatypes_attributes))
+        self.assertTrue(isinstance(list_of_union_datatypes_attributes[0], OSLODatatypeUnionAttribuut))
+        self.assertEqual('https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtuTestUnionType.unionKwantWrd',
+                         list_of_union_datatypes_attributes[0].objectUri)
+
+    def test_get_all_typelinks(self):
+        base_dir = os.path.dirname(os.path.realpath(__file__))
+        file_location = f'{base_dir}/../OTL_AllCasesTestClass.db'
+        sql_reader = SQLDbReader(file_location)
+        oslo_creator = OSLOInMemoryCreator(sql_reader)
+        type_links = oslo_creator.get_all_typelinks()
+
+        self.assertEqual(16, len(type_links))
+        self.assertTrue(isinstance(type_links[0], OSLOTypeLink))
+        self.assertEqual('http://www.w3.org/2000/01/rdf-schema#Literal',
+                         type_links[0].item_uri)

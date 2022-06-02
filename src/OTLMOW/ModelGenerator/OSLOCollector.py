@@ -37,9 +37,9 @@ class OSLOCollector:
         self.complexDatatypes = self.OSLOInMemoryCreator.get_all_complex_datatypes()
         self.complexDatatypeAttributen = self.OSLOInMemoryCreator.get_all_complex_datatype_attributes()
         self.unionDatatypes = self.OSLOInMemoryCreator.get_all_union_datatypes()
-        self.unionDatatypeAttributen = self.OSLOInMemoryCreator.getAllUnionDatatypeAttributen()
+        self.unionDatatypeAttributen = self.OSLOInMemoryCreator.get_all_union_datatype_attributes()
         self.enumerations = self.OSLOInMemoryCreator.get_all_enumerations()
-        self.typeLinks = self.OSLOInMemoryCreator.getTypeLinks()
+        self.typeLinks = self.OSLOInMemoryCreator.get_all_typelinks()
         self.relations = self.OSLOInMemoryCreator.get_all_relations()
 
     def find_attributes_by_class(self, osloclass: OSLOClass) -> [OSLOAttribuut]:

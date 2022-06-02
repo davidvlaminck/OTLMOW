@@ -152,10 +152,10 @@ class OSLOInMemoryCreator:
 
         return lijst
 
-    def getAllUnionDatatypeAttributen(self):
+    def get_all_union_datatype_attributes(self) -> [OSLODatatypeUnionAttribuut]:
         data = self.sqlDbReader.performReadQuery(
             "SELECT name, label_nl, definition_nl, class_uri, kardinaliteit_min, kardinaliteit_max, uri, type, overerving, "
-            "constraints, readonly, usagenote_nl, deprecated_version FROM OSLODatatypeUnionAttributen",
+            "constraints, readonly, usagenote_nl, deprecated_version FROM OSLODatatypeUnionAttributen ORDER BY uri",
             {})
 
         lijst = []
@@ -179,9 +179,9 @@ class OSLOInMemoryCreator:
 
         return lijst
 
-    def getTypeLinks(self):
+    def get_all_typelinks(self) -> [OSLOTypeLink]:
         data = self.sqlDbReader.performReadQuery(
-            "SELECT item_uri, item_tabel, deprecated_version FROM TypeLinkTabel",
+            "SELECT item_uri, item_tabel, deprecated_version FROM TypeLinkTabel ORDER BY item_uri",
             {})
 
         lijst = []

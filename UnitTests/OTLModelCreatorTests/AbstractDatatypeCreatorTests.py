@@ -341,7 +341,7 @@ class AbstractDatatypeCreatorTests(unittest.TestCase):
     def test_getTypeNameOfComplexAttribuut_Kl(self):
         collector = ComplexDatatypeOSLOCollector(mock)
         creator = OTLComplexDatatypeCreator(collector)
-        dtcIdentificator = collector.find_complex_datatype_attributen_by_class_uri(
+        dtcIdentificator = collector.find_complex_datatype_attributes_by_class_uri(
             'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAdres')[1]
         typeName = creator.getTypeNameOfComplexAttribuut(dtcIdentificator.type)
 
@@ -350,7 +350,7 @@ class AbstractDatatypeCreatorTests(unittest.TestCase):
     def test_getTypeNameOfComplexAttribuut_String(self):
         collector = ComplexDatatypeOSLOCollector(mock)
         creator = OTLComplexDatatypeCreator(collector)
-        dtcIdentificator = collector.find_complex_datatype_attributen_by_class_uri(
+        dtcIdentificator = collector.find_complex_datatype_attributes_by_class_uri(
             'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAdres')[0]
         typeName = creator.getTypeNameOfComplexAttribuut(dtcIdentificator.type)
 

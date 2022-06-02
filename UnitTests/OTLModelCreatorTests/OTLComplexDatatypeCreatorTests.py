@@ -245,6 +245,7 @@ class OTLComplexDatatypeCreatorTests(unittest.TestCase):
             creator.CreateBlockToWriteFromComplexTypes(bad_Complex)
         self.assertEqual(str(exception_bad_name.exception), "Input is not a OSLODatatypeComplex")
 
+    # TODO refactor to use test objects
     def test_DtcIdentificatorOSLODatatypeComplex(self):
         collector = ComplexDatatypeOSLOCollector(mock)
         creator = OTLComplexDatatypeCreator(collector)

@@ -200,6 +200,7 @@ class OTLPrimitiveDatatypeCreatorTests(unittest.TestCase):
         blockToWrite = creator.CreateBlockToWriteFromPrimitiveTypes(boolean_primitive)
         self.assertIsNone(blockToWrite)
 
+    # TODO refactor tests to use created classes
     def test_KwantWrdInVoltOSLODatatypePrimitive(self):
         collector = PrimitiveDatatypeOSLOCollector(mock)
         creator = OTLPrimitiveDatatypeCreator(collector)

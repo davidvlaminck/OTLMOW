@@ -186,6 +186,7 @@ class OTLClassCreatorTests(unittest.TestCase):
         filelocation = os.path.abspath(os.path.join(os.sep, ROOT_DIR, 'src/OTLMOW/OTLModel/Classes/ContainerBuis.py'))
         self.assertTrue(os.path.isfile(filelocation))
 
+    # TODO change these tests to implementation assumptions
     def test_CheckInheritances_Agent(self):
         collector, creator = self.set_up_real_collector_and_creator()
 

@@ -1,208 +1,71 @@
 import os
 import unittest
 from unittest import mock
-from unittest.mock import patch
 
 from OTLMOW.ModelGenerator.OSLOCollector import OSLOCollector
 from OTLMOW.ModelGenerator.OSLODatatypeComplex import OSLODatatypeComplex
-from OTLMOW.ModelGenerator.OSLODatatypeComplexAttribuut import OSLODatatypeComplexAttribuut
 from OTLMOW.ModelGenerator.OSLOInMemoryCreator import OSLOInMemoryCreator
-from OTLMOW.ModelGenerator.OSLOTypeLink import OSLOTypeLink
 from OTLMOW.ModelGenerator.OTLComplexDatatypeCreator import OTLComplexDatatypeCreator
 from OTLMOW.ModelGenerator.SQLDbReader import SQLDbReader
 
 ROOT_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-
-class ComplexDatatypeOSLOCollector(OSLOCollector):
-    def __init__(self, reader):
-        super().__init__(reader)
-
-        self.complexDatatypes = [
-            OSLODatatypeComplex(name='DtcAdres',
-                                objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAdres',
-                                usagenote='',
-                                definition='Complex datatype voor de aanduiding van een bepaalde locatie, doorgaans van een huis, woning, gebouw of faciliteit, op de aarde.',
-                                label='Adres',
-                                deprecated_version=''),
-            OSLODatatypeComplex(name='DtcIdentificator',
-                                objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcIdentificator',
-                                usagenote='',
-                                definition='Complex datatype voor de identificator van een AIM object volgens de bron van de identificator.',
-                                label='Identificator',
-                                deprecated_version='')
-        ]
-        self.complexDatatypeAttributen = [
-            OSLODatatypeComplexAttribuut('bus', 'bus', 'Een nummer dat de postbus aanduidt.',
-                                         'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAdres', '1', '1',
-                                         'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAdres.bus',
-                                         'http://www.w3.org/2001/XMLSchema#string', 0, '', 0, '', ''),
-            OSLODatatypeComplexAttribuut('gemeente', 'gemeente', 'De bestuurlijke eenheid waarin het adres gelegen is.',
-                                         'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAdres', '1', '1',
-                                         'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAdres.gemeente',
-                                         'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KlAlgGemeente', 0, '',
-                                         0, '', ''),
-            OSLODatatypeComplexAttribuut('huisnummer', 'huisnummer',
-                                         'Een nummer dat door de gemeente aan bv. een huis wordt toegekend.',
-                                         'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAdres', '1', '1',
-                                         'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAdres.huisnummer',
-                                         'http://www.w3.org/2001/XMLSchema#string', 0, '', 0, '', ''),
-            OSLODatatypeComplexAttribuut('postcode', 'postcode', 'Een korte reeks tekens die in het postadres wordt opgenomen.',
-                                         'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAdres', '1', '1',
-                                         'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAdres.postcode',
-                                         'http://www.w3.org/2001/XMLSchema#string', 0, '', 0, '', ''),
-            # provincie weggehaald
-            OSLODatatypeComplexAttribuut('straatnaam', 'straatnaam', 'De naam van de straat.',
-                                         'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAdres', '1', '1',
-                                         'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAdres.straatnaam',
-                                         'http://www.w3.org/2001/XMLSchema#string', 0, '', 0, '', ''),
-            OSLODatatypeComplexAttribuut('identificator', 'identificator',
-                                         'Een groep van tekens om een AIM object te identificeren of te benoemen.',
-                                         'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcIdentificator',
-                                         '1', '1',
-                                         'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcIdentificator.identificator',
-                                         'http://www.w3.org/2001/XMLSchema#string', 0, '', 0, '', ''),
-            OSLODatatypeComplexAttribuut('toegekendDoor', 'toegekend door', 'Gegevens van de organisatie die de toekenning deed.',
-                                         'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcIdentificator',
-                                         '1', '1',
-                                         'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcIdentificator.toegekendDoor',
-                                         'http://www.w3.org/2001/XMLSchema#string', 0, '', 0, '', '')
-        ]
-
-        self.typeLinks = [
-            OSLOTypeLink("http://www.w3.org/2001/XMLSchema#string", "OSLODatatypePrimitive", ""),
-            OSLOTypeLink("http://www.w3.org/2001/XMLSchema#boolean", "OSLODatatypePrimitive", ""),
-            OSLOTypeLink("https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KlAlgGemeente", "OSLOEnumeration",
-                         ""),
-            OSLOTypeLink("https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KlProvincie", "OSLOEnumeration", "")
-        ]
-
-        self.expectedDataDtcIdentificator = ["# coding=utf-8",
-                                             "from OTLMOW.OTLModel.BaseClasses.AttributeInfo import AttributeInfo",
-                                             "from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut",
-                                             "from OTLMOW.OTLModel.Datatypes.ComplexField import ComplexField",
-                                             "from OTLMOW.OTLModel.Datatypes.StringField import StringField",
-                                             "",
-                                             "",
-                                             "# Generated with OTLComplexDatatypeCreator. To modify: extend, do not edit",
-                                             "class DtcIdentificatorWaarden(AttributeInfo):",
-                                             "    def __init__(self, parent=None):",
-                                             "        AttributeInfo.__init__(self, parent)",
-                                             "        self._identificator = OTLAttribuut(field=StringField,",
-                                             "                                           naam='identificator',",
-                                             "                                           label='identificator',",
-                                             "                                           objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcIdentificator.identificator',",
-                                             "                                           definition='Een groep van tekens om een AIM object te identificeren of te benoemen.',",
-                                             "                                           owner=self)",
-                                             "",
-                                             "        self._toegekendDoor = OTLAttribuut(field=StringField,",
-                                             "                                           naam='toegekendDoor',",
-                                             "                                           label='toegekend door',",
-                                             "                                           objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcIdentificator.toegekendDoor',",
-                                             "                                           definition='Gegevens van de organisatie die de toekenning deed.',",
-                                             "                                           owner=self)",
-                                             "",
-                                             "    @property",
-                                             "    def identificator(self):",
-                                             '        """Een groep van tekens om een AIM object te identificeren of te benoemen."""',
-                                             "        return self._identificator.get_waarde()",
-                                             "",
-                                             "    @identificator.setter",
-                                             "    def identificator(self, value):",
-                                             "        self._identificator.set_waarde(value, owner=self._parent)",
-                                             "",
-                                             "    @property",
-                                             "    def toegekendDoor(self):",
-                                             '        """Gegevens van de organisatie die de toekenning deed."""',
-                                             "        return self._toegekendDoor.get_waarde()",
-                                             "",
-                                             "    @toegekendDoor.setter",
-                                             "    def toegekendDoor(self, value):",
-                                             "        self._toegekendDoor.set_waarde(value, owner=self._parent)",
-                                             "",
-                                             "",
-                                             "# Generated with OTLComplexDatatypeCreator. To modify: extend, do not edit",
-                                             "class DtcIdentificator(ComplexField, AttributeInfo):",
-                                             '    """Complex datatype voor de identificator van een AIM object volgens de bron van de identificator."""',
-                                             "    naam = 'DtcIdentificator'",
-                                             "    label = 'Identificator'",
-                                             "    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcIdentificator'",
-                                             "    definition = 'Complex datatype voor de identificator van een AIM object volgens de bron van de identificator.'",
-                                             "    waardeObject = DtcIdentificatorWaarden",
-                                             "",
-                                             "    def __str__(self):",
-                                             "        return ComplexField.__str__(self)",
-                                             ""]
-
-        self.expectedDataDtcAdres = ['# coding=utf-8',
-                                     'from OTLMOW.OTLModel.Datatypes.ComplexField import ComplexField',
-                                     'from OTLMOW.OTLModel.Datatypes.KeuzelijstField import KeuzelijstField',
-                                     'from OTLMOW.OTLModel.Datatypes.KlAlgGemeente import KlAlgGemeente',
-                                     'from OTLMOW.OTLModel.Datatypes.StringField import StringField',
-                                     '',
-                                     '',
-                                     '# Generated with OTLComplexDatatypeCreator. To modify: extend, do not edit',
-                                     'class DtcAdres(ComplexField):',
-                                     '    """Complex datatype voor de aanduiding van een bepaalde locatie, doorgaans van een huis, woning, gebouw of faciliteit, op de aarde."""',
-                                     '',
-                                     '    def __init__(self):',
-                                     '        super().__init__(naam="DtcAdres",',
-                                     '                         label="Adres",',
-                                     '                         objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAdres",',
-                                     '                         definition="Complex datatype voor de aanduiding van een bepaalde locatie, doorgaans van een huis, woning, gebouw of faciliteit, op de aarde.",',
-                                     '                         usagenote="",',
-                                     '                         deprecated_version="")',
-                                     '',
-                                     '        self.waarde.bus = StringField(naam="bus",',
-                                     '                                      label="bus",',
-                                     '                                      objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAdres.bus",',
-                                     '                                      definition="Een nummer dat de postbus aanduidt.",',
-                                     '                                      constraints="",',
-                                     '                                      usagenote="",',
-                                     '                                      deprecated_version="")',
-                                     '        self.bus = self.waarde.bus',
-                                     '        """Een nummer dat de postbus aanduidt."""',
-                                     '',
-                                     '        self.waarde.gemeente = KeuzelijstField(naam="gemeente",',
-                                     '                                               label="gemeente",',
-                                     '                                               lijst=KlAlgGemeente(),',
-                                     '                                               objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAdres.gemeente",',
-                                     '                                               definition="De bestuurlijke eenheid waarin het adres gelegen is.",',
-                                     '                                               constraints="",',
-                                     '                                               usagenote="",',
-                                     '                                               deprecated_version="")',
-                                     '        self.gemeente = self.waarde.gemeente',
-                                     '        """De bestuurlijke eenheid waarin het adres gelegen is."""',
-                                     '',
-                                     '        self.waarde.huisnummer = StringField(naam="huisnummer",',
-                                     '                                             label="huisnummer",',
-                                     '                                             objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAdres.huisnummer",',
-                                     '                                             definition="Een nummer dat door de gemeente aan bv. een huis wordt toegekend.",',
-                                     '                                             constraints="",',
-                                     '                                             usagenote="",',
-                                     '                                             deprecated_version="")',
-                                     '        self.huisnummer = self.waarde.huisnummer',
-                                     '        """Een nummer dat door de gemeente aan bv. een huis wordt toegekend."""',
-                                     '',
-                                     '        self.waarde.postcode = StringField(naam="postcode",',
-                                     '                                           label="postcode",',
-                                     '                                           objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAdres.postcode",',
-                                     '                                           definition="Een korte reeks tekens die in het postadres wordt opgenomen.",',
-                                     '                                           constraints="",',
-                                     '                                           usagenote="",',
-                                     '                                           deprecated_version="")',
-                                     '        self.postcode = self.waarde.postcode',
-                                     '        """Een korte reeks tekens die in het postadres wordt opgenomen."""',
-                                     '',
-                                     '        self.waarde.straatnaam = StringField(naam="straatnaam",',
-                                     '                                             label="straatnaam",',
-                                     '                                             objectUri="https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAdres.straatnaam",',
-                                     '                                             definition="De naam van de straat.",',
-                                     '                                             constraints="",',
-                                     '                                             usagenote="",',
-                                     '                                             deprecated_version="")',
-                                     '        self.straatnaam = self.waarde.straatnaam',
-                                     '        """De naam van de straat."""']
+expectedDtc = ["# coding=utf-8",
+               "from OTLMOW.OTLModel.BaseClasses.AttributeInfo import AttributeInfo",
+               "from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut",
+               "from OTLMOW.OTLModel.Datatypes.ComplexField import ComplexField",
+               "from OTLMOW.OTLModel.Datatypes.StringField import StringField",
+               "",
+               "",
+               "# Generated with OTLComplexDatatypeCreator. To modify: extend, do not edit",
+               "class DtcIdentificatorWaarden(AttributeInfo):",
+               "    def __init__(self, parent=None):",
+               "        AttributeInfo.__init__(self, parent)",
+               "        self._identificator = OTLAttribuut(field=StringField,",
+               "                                           naam='identificator',",
+               "                                           label='identificator',",
+               "                                           objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcIdentificator.identificator',",
+               "                                           definition='Een groep van tekens om een AIM object te identificeren of te benoemen.',",
+               "                                           owner=self)",
+               "",
+               "        self._toegekendDoor = OTLAttribuut(field=StringField,",
+               "                                           naam='toegekendDoor',",
+               "                                           label='toegekend door',",
+               "                                           objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcIdentificator.toegekendDoor',",
+               "                                           definition='Gegevens van de organisatie die de toekenning deed.',",
+               "                                           owner=self)",
+               "",
+               "    @property",
+               "    def identificator(self):",
+               '        """Een groep van tekens om een AIM object te identificeren of te benoemen."""',
+               "        return self._identificator.get_waarde()",
+               "",
+               "    @identificator.setter",
+               "    def identificator(self, value):",
+               "        self._identificator.set_waarde(value, owner=self._parent)",
+               "",
+               "    @property",
+               "    def toegekendDoor(self):",
+               '        """Gegevens van de organisatie die de toekenning deed."""',
+               "        return self._toegekendDoor.get_waarde()",
+               "",
+               "    @toegekendDoor.setter",
+               "    def toegekendDoor(self, value):",
+               "        self._toegekendDoor.set_waarde(value, owner=self._parent)",
+               "",
+               "",
+               "# Generated with OTLComplexDatatypeCreator. To modify: extend, do not edit",
+               "class DtcIdentificator(ComplexField, AttributeInfo):",
+               '    """Complex datatype voor de identificator van een AIM object volgens de bron van de identificator."""',
+               "    naam = 'DtcIdentificator'",
+               "    label = 'Identificator'",
+               "    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcIdentificator'",
+               "    definition = 'Complex datatype voor de identificator van een AIM object volgens de bron van de identificator.'",
+               "    waardeObject = DtcIdentificatorWaarden",
+               "",
+               "    def __str__(self):",
+               "        return ComplexField.__str__(self)",
+               ""]
 
 
 class OTLComplexDatatypeCreatorTests(unittest.TestCase):
@@ -245,63 +108,19 @@ class OTLComplexDatatypeCreatorTests(unittest.TestCase):
             creator.CreateBlockToWriteFromComplexTypes(bad_Complex)
         self.assertEqual(str(exception_bad_name.exception), "Input is not a OSLODatatypeComplex")
 
-    # TODO refactor to use test objects
-    def test_DtcIdentificatorOSLODatatypeComplex(self):
-        collector = ComplexDatatypeOSLOCollector(mock)
+    def setUp(self) -> OSLOCollector:
+        base_dir = os.path.dirname(os.path.realpath(__file__))
+        file_location = f'{base_dir}/../OTL_AllCasesTestClass.db'
+        sql_reader = SQLDbReader(file_location)
+        oslo_creator = OSLOInMemoryCreator(sql_reader)
+        collector = OSLOCollector(oslo_creator)
+        collector.collect()
+        return collector
+
+    def test_create_block_dtc(self):
+        collector = self.setUp()
         creator = OTLComplexDatatypeCreator(collector)
-        dtcIdentificator = collector.find_complex_datatype_by_uri(
+        datatype_complex = collector.find_complex_datatype_by_uri(
             'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcIdentificator')
-        dataToWrite = creator.CreateBlockToWriteFromComplexTypes(dtcIdentificator)
-
-        self.assertEqual(collector.expectedDataDtcIdentificator, dataToWrite)
-
-    def test_WriteToFileDtcAdresOSLODatatypeComplex(self):
-        base_dir = os.path.dirname(os.path.realpath(__file__))
-        file_location = f'{base_dir}/../../src/OTLMOW/InputFiles/OTL 2.3.db'
-        sql_reader = SQLDbReader(file_location)
-        oslo_creator = OSLOInMemoryCreator(sql_reader)
-        collector = OSLOCollector(oslo_creator)
-        collector.collect()
-
-        creator = OTLComplexDatatypeCreator(collector)
-        dtcAdres = collector.find_complex_datatype_by_uri(
-            'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAdres')
-        dataToWrite = creator.CreateBlockToWriteFromComplexTypes(dtcAdres)
-        creator.write_to_file(dtcAdres, 'Datatypes', dataToWrite, '../../src/OTLMOW/')
-
-        filelocation = os.path.abspath(os.path.join(os.sep, ROOT_DIR, 'src/OTLMOW/OTLModel/Datatypes/DtcAdres.py'))
-        self.assertTrue(os.path.isfile(filelocation))
-
-    def test_WriteToFileDtcRechtspersoonOSLODatatypeComplex(self):
-        base_dir = os.path.dirname(os.path.realpath(__file__))
-        file_location = f'{base_dir}/../../src/OTLMOW/InputFiles/OTL 2.3.db'
-        sql_reader = SQLDbReader(file_location)
-        oslo_creator = OSLOInMemoryCreator(sql_reader)
-        collector = OSLOCollector(oslo_creator)
-        collector.collect()
-
-        creator = OTLComplexDatatypeCreator(collector)
-        DtcRechtspersoon = collector.find_complex_datatype_by_uri(
-            'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcRechtspersoon')
-        dataToWrite = creator.CreateBlockToWriteFromComplexTypes(DtcRechtspersoon)
-        creator.write_to_file(DtcRechtspersoon, 'Datatypes', dataToWrite, '../../src/OTLMOW/')
-
-        filelocation = os.path.abspath(os.path.join(os.sep, ROOT_DIR, 'src/OTLMOW/OTLModel/Datatypes/DtcRechtspersoon.py'))
-        self.assertTrue(os.path.isfile(filelocation))
-
-    def test_WriteToFileDtcMaaienOSLODatatypeComplex(self):
-        base_dir = os.path.dirname(os.path.realpath(__file__))
-        file_location = f'{base_dir}/../../src/OTLMOW/InputFiles/OTL 2.3.db'
-        sql_reader = SQLDbReader(file_location)
-        oslo_creator = OSLOInMemoryCreator(sql_reader)
-        collector = OSLOCollector(oslo_creator)
-        collector.collect()
-
-        creator = OTLComplexDatatypeCreator(collector)
-        DtcMaaien = collector.find_complex_datatype_by_uri(
-            'https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#DtcMaaien')
-        dataToWrite = creator.CreateBlockToWriteFromComplexTypes(DtcMaaien)
-        creator.write_to_file(DtcMaaien, 'Datatypes', dataToWrite, '../../src/OTLMOW/')
-
-        filelocation = os.path.abspath(os.path.join(os.sep, ROOT_DIR, 'src/OTLMOW/OTLModel/Datatypes/DtcMaaien.py'))
-        self.assertTrue(os.path.isfile(filelocation))
+        data_to_write = creator.create_block_to_write_from_complex_primitive_or_union_types(datatype_complex, typeField='Complex')
+        self.assertEqual(expectedDtc, data_to_write)

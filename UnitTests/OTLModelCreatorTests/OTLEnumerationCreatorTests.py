@@ -143,7 +143,7 @@ class OTLEnumerationCreatorTests(unittest.TestCase):
         KlAIMToestand = collector.find_enumeration_by_uri(
             'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KlAIMToestand')
         dataToWrite = creator.CreateBlockToWriteFromEnumerations(KlAIMToestand)
-        creator.writeToFile(KlAIMToestand, 'Datatypes', dataToWrite, '../../src/OTLMOW/')
+        creator.write_to_file(KlAIMToestand, 'Datatypes', dataToWrite, '../../src/OTLMOW/')
 
         filelocation = os.path.abspath(os.path.join(os.sep, ROOT_DIR, 'src/OTLMOW/OTLModel/Datatypes/KlAIMToestand.py'))
         self.assertTrue(os.path.isfile(filelocation))
@@ -160,7 +160,7 @@ class OTLEnumerationCreatorTests(unittest.TestCase):
         KlAIMToestand = collector.find_enumeration_by_uri(
             'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KlAlgProvincie')
         dataToWrite = creator.CreateBlockToWriteFromEnumerations(KlAIMToestand)
-        creator.writeToFile(KlAIMToestand, 'Datatypes', dataToWrite, '../../src/OTLMOW/')
+        creator.write_to_file(KlAIMToestand, 'Datatypes', dataToWrite, '../../src/OTLMOW/')
 
         filelocation = os.path.abspath(os.path.join(os.sep, ROOT_DIR, 'src/OTLMOW/OTLModel/Datatypes/KlAlgProvincie.py'))
         self.assertTrue(os.path.isfile(filelocation))

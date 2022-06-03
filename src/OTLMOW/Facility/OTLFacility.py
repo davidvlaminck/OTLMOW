@@ -76,11 +76,11 @@ class OTLFacility:
             self.geoAcollector = GeometrieArtefactCollector(geo_memory_creator)
         self.modelCreator = OTLModelCreator(self.collector, self.geoAcollector)
 
-    def create_otl_datamodel(self):
+    def create_otl_datamodel(self, directory=''):
         self.collector.collect()
         if self.geoAcollector is not None:
             self.geoAcollector.collect()
-        self.modelCreator.create_full_model()
+        self.modelCreator.create_full_model(directory=directory)
 
     def init_postenmapping_creator(self, otl_file_location):
         sql_reader = SQLDbReader(otl_file_location)

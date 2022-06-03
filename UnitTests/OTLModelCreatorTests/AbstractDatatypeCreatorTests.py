@@ -44,6 +44,8 @@ class TestAbstractCreator(AbstractDatatypeCreator):
 
 
 class AbstractDatatypeCreatorTests(unittest.TestCase):
+    #TODO add tests for writing a file
+
     def test_getFieldsToImportFromListOfAttributes_ListWithoutElement_NonEmptyStartList(self):
         creator = TestAbstractCreator()
         listOfAttributes = [

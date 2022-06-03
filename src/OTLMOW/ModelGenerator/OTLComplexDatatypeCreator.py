@@ -10,7 +10,7 @@ class OTLComplexDatatypeCreator(AbstractDatatypeCreator):
         super().__init__(osloCollector)
         logging.info("Created an instance of OTLComplexDatatypeCreator")
 
-    def CreateBlockToWriteFromComplexTypes(self, osloDatatypeComplex: OSLODatatypeComplex):
+    def CreateBlockToWriteFromComplexTypes(self, osloDatatypeComplex: OSLODatatypeComplex, model_location=''):
         if not isinstance(osloDatatypeComplex, OSLODatatypeComplex):
             raise ValueError(f"Input is not a OSLODatatypeComplex")
 
@@ -25,9 +25,11 @@ class OTLComplexDatatypeCreator(AbstractDatatypeCreator):
 
         if osloDatatypeComplex.objectUri.startswith(
                 'https://wegenenverkeer.data.vlaanderen.be/ns/') and 'Dtc' in osloDatatypeComplex.objectUri:
-            return self.CreateBlockToWriteFromComplexPrimitiveOrUnionTypes(osloDatatypeComplex, typeField='Complex')
+            return self.create_block_to_write_from_complex_primitive_or_union_types(osloDatatypeComplex, typeField='Complex',
+                                                                                    model_location=model_location)
         elif osloDatatypeComplex.objectUri.startswith('https://schema.org/'):
-            return self.CreateBlockToWriteFromComplexPrimitiveOrUnionTypes(osloDatatypeComplex, typeField='Complex')
+            return self.create_block_to_write_from_complex_primitive_or_union_types(osloDatatypeComplex, typeField='Complex',
+                                                                                    model_location=model_location)
         else:
             raise NotImplementedError
 

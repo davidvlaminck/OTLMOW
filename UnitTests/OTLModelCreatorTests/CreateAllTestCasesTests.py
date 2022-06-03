@@ -8,15 +8,27 @@ from OTLMOW.ModelGenerator.SQLDbReader import SQLDbReader
 
 
 class CreateAllTestCasesTests(unittest.TestCase):
-    # TODO create AllCasesTestClass using sqlite
+    def setUp(self) -> OSLOCollector:
+        base_dir = os.path.dirname(os.path.realpath(__file__))
+        file_location = f'{base_dir}/../OTL_AllCasesTestClass.db'
+        sql_reader = SQLDbReader(file_location)
+        oslo_creator = OSLOInMemoryCreator(sql_reader)
+        collector = OSLOCollector(oslo_creator)
+        collector.collect()
+        return collector
+
     def test_init_AllCasesTestClass(self):
         otl_facility = OTLFacility(logfile='',
                                    settings_path="C:\\resources\\settings_OTLMOW.json")  # TODO change to local settings file in unittests
+
+        collector = self.setUp()
+        otl_facility.collector = collector
 
         base_dir = os.path.dirname(os.path.realpath(__file__))
         otl_file_location = f'{base_dir}/../OTL_AllCasesTestClass.db'
         #GA_file_location = '../InputFiles/Geometrie_Artefact_2.3.RC2.db'
         otl_facility.init_otl_model_creator(otl_file_location)
-        otl_facility.create_otl_datamodel()
+        otl_facility.create_otl_datamodel(directory=f'{base_dir}/../TestClasses')
 
-        self.assertTrue(False)
+        allcasesclass_location = f'{base_dir}/../TestClasses/OTLModel/Classes/AllCasesTestClass.py' # TODO check for errors in logging
+        self.assertTrue(os.path.isfile(allcasesclass_location))

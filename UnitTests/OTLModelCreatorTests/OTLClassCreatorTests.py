@@ -181,7 +181,7 @@ class OTLClassCreatorTests(unittest.TestCase):
         collector, creator = self.set_up_real_collector_and_creator()
         containerBuis = collector.find_class_by_uri('https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#ContainerBuis')
         dataToWrite = creator.create_blocks_to_write_from_classes(containerBuis)
-        creator.writeToFile(containerBuis, 'Classes', dataToWrite, '../../src/OTLMOW/')
+        creator.write_to_file(containerBuis, 'Classes', dataToWrite, '../../src/OTLMOW/')
 
         filelocation = os.path.abspath(os.path.join(os.sep, ROOT_DIR, 'src/OTLMOW/OTLModel/Classes/ContainerBuis.py'))
         self.assertTrue(os.path.isfile(filelocation))

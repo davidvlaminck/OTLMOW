@@ -1,8 +1,8 @@
 # coding=utf-8
 from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from abc import abstractmethod
-from OTLMOW.OTLModel.Classes.AIMToestand import AIMToestand
 from OTLMOW.OTLModel.Classes.AIMDBStatus import AIMDBStatus
+from OTLMOW.OTLModel.Classes.AIMToestand import AIMToestand
 from OTLMOW.OTLModel.BaseClasses.AttributeInfo import AttributeInfo
 from OTLMOW.OTLModel.BaseClasses.OTLAsset import OTLAsset
 from OTLMOW.OTLModel.BaseClasses.RelatieInteractor import RelatieInteractor
@@ -13,7 +13,7 @@ from OTLMOW.OTLModel.Datatypes.StringField import StringField
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class AIMObject(AIMToestand, AIMDBStatus, AttributeInfo, OTLAsset, RelatieInteractor):
+class AIMObject(AIMDBStatus, AIMToestand, AttributeInfo, OTLAsset, RelatieInteractor):
     """Abstracte als de basisklasse voor alle uniek geïdentificeerde OTL objecten met de basiseigenschappen die elk OTL object minstens heeft."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMObject'

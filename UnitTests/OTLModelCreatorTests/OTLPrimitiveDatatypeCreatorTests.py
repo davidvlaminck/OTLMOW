@@ -5,8 +5,10 @@ from unittest import mock
 from OTLMOW.ModelGenerator.OSLOCollector import OSLOCollector
 from OTLMOW.ModelGenerator.OSLODatatypePrimitive import OSLODatatypePrimitive
 from OTLMOW.ModelGenerator.OSLODatatypePrimitiveAttribuut import OSLODatatypePrimitiveAttribuut
+from OTLMOW.ModelGenerator.OSLOInMemoryCreator import OSLOInMemoryCreator
 from OTLMOW.ModelGenerator.OSLOTypeLink import OSLOTypeLink
 from OTLMOW.ModelGenerator.OTLPrimitiveDatatypeCreator import OTLPrimitiveDatatypeCreator
+from OTLMOW.ModelGenerator.SQLDbReader import SQLDbReader
 
 ROOT_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
@@ -156,7 +158,7 @@ class OTLPrimitiveDatatypeCreatorTests(unittest.TestCase):
                                                       deprecated_version='')
 
         with self.assertRaises(ValueError) as exception_empty_uri:
-            creator.CreateBlockToWriteFromPrimitiveTypes(osloDatatypePrimitive)
+            creator.create_block_to_write_from_primitive_types(osloDatatypePrimitive)
         self.assertEqual(str(exception_empty_uri.exception), "OSLODatatypePrimitive.objectUri is invalid. Value = ''")
 
     def test_InvalidOSLODatatypePrimitiveBadUri(self):
@@ -167,7 +169,7 @@ class OTLPrimitiveDatatypeCreatorTests(unittest.TestCase):
                                                       deprecated_version='')
 
         with self.assertRaises(ValueError) as exception_bad_uri:
-            creator.CreateBlockToWriteFromPrimitiveTypes(osloDatatypePrimitive)
+            creator.create_block_to_write_from_primitive_types(osloDatatypePrimitive)
         self.assertEqual(str(exception_bad_uri.exception), "OSLODatatypePrimitive.objectUri is invalid. Value = 'Bad objectUri'")
 
     def test_InvalidOSLODatatypePrimitiveEmptyName(self):
@@ -179,7 +181,7 @@ class OTLPrimitiveDatatypeCreatorTests(unittest.TestCase):
                                                       deprecated_version='')
 
         with self.assertRaises(ValueError) as exception_bad_name:
-            creator.CreateBlockToWriteFromPrimitiveTypes(osloDatatypePrimitive)
+            creator.create_block_to_write_from_primitive_types(osloDatatypePrimitive)
         self.assertEqual(str(exception_bad_name.exception), "OSLODatatypePrimitive.name is invalid. Value = ''")
 
     def test_InValidType(self):
@@ -187,7 +189,7 @@ class OTLPrimitiveDatatypeCreatorTests(unittest.TestCase):
         collector = OSLOCollector(mock)
         creator = OTLPrimitiveDatatypeCreator(collector)
         with self.assertRaises(ValueError) as exception_bad_name:
-            creator.CreateBlockToWriteFromPrimitiveTypes(bad_primitive)
+            creator.create_block_to_write_from_primitive_types(bad_primitive)
         self.assertEqual(str(exception_bad_name.exception), "Input is not a OSLODatatypePrimitive")
 
     def test_ValidOSLODatatypePrimitiveButNoResult(self):
@@ -197,46 +199,136 @@ class OTLPrimitiveDatatypeCreatorTests(unittest.TestCase):
                                                   deprecated_version="")
         collector = OSLOCollector(mock)
         creator = OTLPrimitiveDatatypeCreator(collector)
-        blockToWrite = creator.CreateBlockToWriteFromPrimitiveTypes(boolean_primitive)
+        blockToWrite = creator.create_block_to_write_from_primitive_types(boolean_primitive)
         self.assertIsNone(blockToWrite)
 
-    # TODO refactor tests to use created classes
-    def test_KwantWrdInVoltOSLODatatypePrimitive(self):
-        collector = PrimitiveDatatypeOSLOCollector(mock)
+    def setUp(self) -> OSLOCollector:
+        base_dir = os.path.dirname(os.path.realpath(__file__))
+        file_location = f'{base_dir}/../OTL_AllCasesTestClass.db'
+        sql_reader = SQLDbReader(file_location)
+        oslo_creator = OSLOInMemoryCreator(sql_reader)
+        collector = OSLOCollector(oslo_creator)
+        collector.collect()
+        return collector
+
+    def test_create_block_dte(self):
+        collector = self.setUp()
         creator = OTLPrimitiveDatatypeCreator(collector)
-        KwantWrdInVolt = collector.find_primitive_datatype_by_uri(
-            'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInVolt')
-        dataToWrite = creator.CreateBlockToWriteFromPrimitiveTypes(KwantWrdInVolt)
+        datatype_DteTestEenvoudigType = collector.find_primitive_datatype_by_uri(
+            'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DteTestEenvoudigType')
+        data_to_write = creator.create_block_to_write_from_primitive_types(datatype_DteTestEenvoudigType)
+        self.assertEqual(expectedDte, data_to_write)
 
-        self.assertEqual(collector.expectedDataKwantWrdInVolt, dataToWrite)
-
-    def test_RALKleurOSLODatatypePrimitive(self):
-        collector = PrimitiveDatatypeOSLOCollector(mock)
+    def test_create_block_kwant_wrd(self):
+        collector = self.setUp()
         creator = OTLPrimitiveDatatypeCreator(collector)
-        DteKleurRAL = collector.find_primitive_datatype_by_uri(
-            'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DteKleurRAL')
-        dataToWrite = creator.CreateBlockToWriteFromPrimitiveTypes(DteKleurRAL)
+        datatype_KwantWrdTest = collector.find_primitive_datatype_by_uri(
+            'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdTest')
+        data_to_write = creator.create_block_to_write_from_primitive_types(datatype_KwantWrdTest)
+        self.assertEqual(expectedKwantWrd, data_to_write)
 
-        self.assertEqual(collector.expectedDataRALKleur, dataToWrite)
 
-    def test_WriteToFileOSLODatatypePrimitive(self):
-        collector = PrimitiveDatatypeOSLOCollector(mock)
-        creator = OTLPrimitiveDatatypeCreator(collector)
-        KwantWrdInVolt = collector.find_primitive_datatype_by_uri(
-            'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInVolt')
-        dataToWrite = creator.CreateBlockToWriteFromPrimitiveTypes(KwantWrdInVolt)
-        creator.writeToFile(KwantWrdInVolt, 'Datatypes', dataToWrite, '../../')
+expectedKwantWrd = ['# coding=utf-8',
+                    'from OTLMOW.OTLModel.BaseClasses.AttributeInfo import AttributeInfo',
+                    'from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut',
+                    'from OTLMOW.OTLModel.BaseClasses.OTLField import OTLField',
+                    'from OTLMOW.OTLModel.Datatypes.FloatOrDecimalField import FloatOrDecimalField',
+                    'from OTLMOW.OTLModel.Datatypes.StringField import StringField',
+                    '',
+                    '',
+                    '# Generated with OTLPrimitiveDatatypeCreator. To modify: extend, do not edit',
+                    'class KwantWrdTestWaarden(AttributeInfo):',
+                    '    def __init__(self, parent=None):',
+                    '        AttributeInfo.__init__(self, parent)',
+                    '        self._standaardEenheid = OTLAttribuut(field=StringField,',
+                    "                                              naam='standaardEenheid',",
+                    "                                              label='standaard eenheid',",
+                    '                                              '
+                    "objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdTest.standaardEenheid',",
+                    '                                              usagenote=\'"%"^^cdt:ucumunit\',',
+                    '                                              constraints=\'"%"^^cdt:ucumunit\',',
+                    "                                              definition='De standaard eenheid bij dit datatype is uitgedrukt in percent.',",
+                    '                                              owner=self)',
+                    '',
+                    '        self._waarde = OTLAttribuut(field=FloatOrDecimalField,',
+                    "                                    naam='waarde',",
+                    "                                    label='waarde',",
+                    '                                    '
+                    "objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdTest.waarde',",
+                    "                                    definition='Bevat een getal die bij het datatype hoort.',",
+                    '                                    owner=self)',
+                    '',
+                    '    @property',
+                    '    def standaardEenheid(self):',
+                    '        """De standaard eenheid bij dit datatype is uitgedrukt in percent."""',
+                    '        return self._standaardEenheid.usagenote.split(\'"\')[1]',
+                    '',
+                    '    @property',
+                    '    def waarde(self):',
+                    '        """Bevat een getal die bij het datatype hoort."""',
+                    '        return self._waarde.get_waarde()',
+                    '',
+                    '    @waarde.setter',
+                    '    def waarde(self, value):',
+                    '        self._waarde.set_waarde(value, owner=self._parent)',
+                    '',
+                    '',
+                    '# Generated with OTLPrimitiveDatatypeCreator. To modify: extend, do not edit',
+                    'class KwantWrdTest(OTLField, AttributeInfo):',
+                    '    """Een kwantitatieve waarde voor test doeleinden."""',
+                    "    naam = 'KwantWrdTest'",
+                    "    label = 'Kwantitatieve test waarde'",
+                    '    objectUri = '
+                    "'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdTest'",
+                    "    definition = 'Een kwantitatieve waarde voor test doeleinden.'",
+                    '    waarde_shortcut_applicable = True',
+                    '    waardeObject = KwantWrdTestWaarden',
+                    '',
+                    '    def __str__(self):',
+                    '        return OTLField.__str__(self)',
+                    '']
 
-        filelocation = os.path.abspath(os.path.join(os.sep, ROOT_DIR, 'src/OTLMOW/OTLModel/Datatypes/KwantWrdInVolt.py'))
-        self.assertTrue(os.path.isfile(filelocation))
-
-    def test_WriteToFileOSLODatatypePrimitiveDte(self):
-        collector = PrimitiveDatatypeOSLOCollector(mock)
-        creator = OTLPrimitiveDatatypeCreator(collector)
-        DteKleurRAL = collector.find_primitive_datatype_by_uri(
-            'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DteKleurRAL')
-        dataToWrite = creator.CreateBlockToWriteFromPrimitiveTypes(DteKleurRAL)
-        creator.writeToFile(DteKleurRAL, 'Datatypes', dataToWrite, '../../src/OTLMOW/')
-
-        filelocation = os.path.abspath(os.path.join(os.sep, ROOT_DIR, 'src/OTLMOW/OTLModel/Datatypes/DteKleurRAL.py'))
-        self.assertTrue(os.path.isfile(filelocation))
+expectedDte = ['# coding=utf-8',
+               'from OTLMOW.OTLModel.BaseClasses.AttributeInfo import AttributeInfo',
+               'from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut',
+               'from OTLMOW.OTLModel.BaseClasses.OTLField import OTLField',
+               'from OTLMOW.OTLModel.Datatypes.StringField import StringField',
+               '',
+               '',
+               '# Generated with OTLPrimitiveDatatypeCreator. To modify: extend, do not edit',
+               'class DteTestEenvoudigTypeWaarden(AttributeInfo):',
+               '    def __init__(self, parent=None):',
+               '        AttributeInfo.__init__(self, parent)',
+               '        self._waarde = OTLAttribuut(field=StringField,',
+               "                                    naam='waarde',",
+               "                                    label='waarde',",
+               '                                    '
+               "objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DteTestEenvoudigType.waarde',",
+               "                                    definition='De string die het eenvoudige "
+               "test datatype voorstelt.',",
+               '                                    owner=self)',
+               '',
+               '    @property',
+               '    def waarde(self):',
+               '        """De string die het eenvoudige test datatype voorstelt."""',
+               '        return self._waarde.get_waarde()',
+               '',
+               '    @waarde.setter',
+               '    def waarde(self, value):',
+               '        self._waarde.set_waarde(value, owner=self._parent)',
+               '',
+               '',
+               '# Generated with OTLPrimitiveDatatypeCreator. To modify: extend, do not edit',
+               'class DteTestEenvoudigType(OTLField, AttributeInfo):',
+               '    """Beschrijft een tekst van een eenvoudig type."""',
+               "    naam = 'DteTestEenvoudigType'",
+               "    label = 'Test EenvoudigType'",
+               '    objectUri = '
+               "'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DteTestEenvoudigType'",
+               "    definition = 'Beschrijft een tekst van een eenvoudig type.'",
+               '    waarde_shortcut_applicable = True',
+               '    waardeObject = DteTestEenvoudigTypeWaarden',
+               '',
+               '    def __str__(self):',
+               '        return OTLField.__str__(self)',
+               '']

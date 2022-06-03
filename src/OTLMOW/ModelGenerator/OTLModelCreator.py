@@ -1,5 +1,6 @@
 import logging
 from datetime import datetime
+from os.path import abspath
 
 from OTLMOW.GeometrieArtefact.GeometrieArtefactCollector import GeometrieArtefactCollector
 from OTLMOW.ModelGenerator.OSLOCollector import OSLOCollector
@@ -21,18 +22,19 @@ class OTLModelCreator:
         self.geoACollector = geoACollector
         logging.info("Created an instance of OTLModelCreator")
 
-    def create_full_model(self):
+    def create_full_model(self, directory):
         logging.info('started creating model at ' + datetime.now().strftime("%d/%m/%Y %H:%M:%S"))
+        directory = abspath(directory)
         self.query_correct_base_classes()
-        self.create_primitive_datatypes()
-        self.create_complex_datatypes()
-        self.create_union_datatypes()
-        self.create_enumerations()
-        self.create_classes()
-        self.create_relations()
+        self.create_primitive_datatypes(directory=directory)
+        self.create_complex_datatypes(directory=directory)
+        self.create_union_datatypes(directory=directory)
+        self.create_enumerations(directory=directory)
+        self.create_classes(directory=directory)
+        self.create_relations(directory=directory)
         logging.info('finished creating model at ' + datetime.now().strftime("%d/%m/%Y %H:%M:%S"))
 
-    def create_primitive_datatypes(self):
+    def create_primitive_datatypes(self, directory):
         creator = OTLPrimitiveDatatypeCreator(self.osloCollector)
 
         for primDatatype in self.osloCollector.primitive_datatypes:
@@ -50,56 +52,56 @@ class OTLModelCreator:
                 continue
 
             try:
-                dataToWrite = creator.CreateBlockToWriteFromPrimitiveTypes(primDatatype)
+                dataToWrite = creator.create_block_to_write_from_primitive_types(primDatatype, model_location=directory)
                 if dataToWrite is None:
                     logging.info(f"Could not create a class for {primDatatype.name}")
                     pass
                 if len(dataToWrite) == 0:
                     logging.info(f"Could not create a class for {primDatatype.name}")
                     pass
-                creator.writeToFile(primDatatype, 'Datatypes', dataToWrite)
+                creator.write_to_file(primDatatype, 'Datatypes', dataToWrite, relative_path=directory)
                 logging.info(f"Created a class for {primDatatype.name}")
             except BaseException as e:
                 logging.error(str(e))
                 logging.error(f"Could not create a class for {primDatatype.name}")
 
-    def create_complex_datatypes(self):
+    def create_complex_datatypes(self, directory):
         creator = OTLComplexDatatypeCreator(self.osloCollector)
 
         for complexDatatype in self.osloCollector.complex_datatypes:
             try:
-                dataToWrite = creator.CreateBlockToWriteFromComplexTypes(complexDatatype)
+                dataToWrite = creator.CreateBlockToWriteFromComplexTypes(complexDatatype, model_location=directory)
                 if dataToWrite is None:
                     logging.info(f"Could not create a class for {complexDatatype.name}")
                     pass
                 if len(dataToWrite) == 0:
                     logging.info(f"Could not create a class for {complexDatatype.name}")
                     pass
-                creator.writeToFile(complexDatatype, 'Datatypes', dataToWrite)
+                creator.write_to_file(complexDatatype, 'Datatypes', dataToWrite, relative_path=directory)
                 logging.info(f"Created a class for {complexDatatype.name}")
             except BaseException as e:
                 logging.error(str(e))
                 logging.error(f"Could not create a class for {complexDatatype.name}")
 
-    def create_union_datatypes(self):
+    def create_union_datatypes(self, directory):
         creator = OTLUnionDatatypeCreator(self.osloCollector)
 
         for unionDatatype in self.osloCollector.union_datatypes:
             try:
-                dataToWrite = creator.CreateBlockToWriteFromUnionTypes(unionDatatype)
+                dataToWrite = creator.create_block_to_write_from_union_types(unionDatatype, model_location=directory)
                 if dataToWrite is None:
                     logging.info(f"Could not create a class for {unionDatatype.name}")
                     pass
                 if len(dataToWrite) == 0:
                     logging.info(f"Could not create a class for {unionDatatype.name}")
                     pass
-                creator.writeToFile(unionDatatype, 'Datatypes', dataToWrite)
+                creator.write_to_file(unionDatatype, 'Datatypes', dataToWrite, relative_path=directory)
                 logging.info(f"Created a class for {unionDatatype.name}")
             except BaseException as e:
                 logging.error(str(e))
                 logging.error(f"Could not create a class for {unionDatatype.name}")
 
-    def create_enumerations(self):
+    def create_enumerations(self, directory):
         creator = OTLEnumerationCreator(self.osloCollector)
 
         for enumeration in self.osloCollector.enumerations:
@@ -112,31 +114,31 @@ class OTLModelCreator:
                 if len(dataToWrite) == 0:
                     logging.info(f"Could not create a class for {enumeration.name}")
                     pass
-                creator.writeToFile(enumeration, 'Datatypes', dataToWrite)
+                creator.write_to_file(enumeration, 'Datatypes', dataToWrite, relative_path=directory)
                 logging.info(f"Created a class for {enumeration.name}")
             except BaseException as e:
                 logging.error(str(e))
                 logging.error(f"Could not create a class for {enumeration.name}")
 
-    def create_classes(self):
+    def create_classes(self, directory):
         creator = OTLClassCreator(self.osloCollector, self.geoACollector)
 
         for cls in self.osloCollector.classes:
             try:
-                dataToWrite = creator.create_blocks_to_write_from_classes(cls)
+                dataToWrite = creator.create_blocks_to_write_from_classes(cls, model_location=directory)
                 if dataToWrite is None:
                     logging.info(f"Could not create a class for {cls.name}")
                     pass
                 if len(dataToWrite) == 0:
                     logging.info(f"Could not create a class for {cls.name}")
                     pass
-                creator.writeToFile(cls, 'Classes', dataToWrite)
+                creator.write_to_file(cls, 'Classes', dataToWrite, relative_path=directory)
                 logging.info(f"Created a class for {cls.name}")
             except Exception as e:
                 logging.error(str(e))
                 logging.error(f"Could not create a class for {cls.name}")
 
-    def create_relations(self):
+    def create_relations(self, directory):
         creator = OTLGeldigeRelatieCreator(self.osloCollector)
 
         try:
@@ -147,13 +149,13 @@ class OTLModelCreator:
             if len(dataToWrite) == 0:
                 logging.info(f"Could not create a list of GeldigeRelatie objects")
                 pass
-            creator.writeToFile(dataToWrite, '../')
+            creator.writeToFile(dataToWrite, directory + '../')
             logging.info(f"Created a list of GeldigeRelatie objects")
         except Exception as e:
             logging.error(str(e))
             logging.error(f"Could not create a list of GeldigeRelatie objects")
 
     def query_correct_base_classes(self):
-        result = self.osloCollector.OSLOInMemoryCreator.check_on_base_classes()
+        result = self.osloCollector.memory_creator.check_on_base_classes()
         if result != 0:
             raise NewOTLBaseClassNotImplemented()

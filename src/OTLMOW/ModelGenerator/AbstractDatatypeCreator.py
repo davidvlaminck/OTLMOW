@@ -6,11 +6,11 @@ from OTLMOW.ModelGenerator.StringHelper import wrap_in_quotes
 
 
 class AbstractDatatypeCreator(ABC):
-    def __init__(self, osloCollector: OSLOCollector):
-        self.osloCollector = osloCollector
+    def __init__(self, oslo_collector: OSLOCollector):
+        self.oslo_collector = oslo_collector
 
     def getTypeLinkFromAttribuut(self, attribuut):
-        typeLink = self.osloCollector.find_type_link_by_uri(attribuut.type)
+        typeLink = self.oslo_collector.find_type_link_by_uri(attribuut.type)
         if typeLink is not None:
             return typeLink.item_tabel
 
@@ -41,7 +41,7 @@ class AbstractDatatypeCreator(ABC):
                 return 'URIField'
             case 'https://schema.org/OpeningHoursSpecification':
                 return 'DtcOpeningsurenSpecificatie'
-            case                'https://schema.org/ContactPoint':
+            case 'https://schema.org/ContactPoint':
                 return 'DtcContactinfo'
             case 'http://www.w3.org/2000/01/rdf-schema#Literal':
                 return 'StringField'
@@ -72,12 +72,16 @@ class AbstractDatatypeCreator(ABC):
         raise NotImplemented(f'not supported fieldType {fieldType} in getNonSingleFieldFromTypeUri()')
 
     @staticmethod
-    def writeToFile(datatype, directory: str, dataToWrite: list[str], relativePath=''):
-        base_dir = os.path.dirname(os.path.realpath(__file__))
-        path = f"{base_dir}/../OTLModel/{directory}/{datatype.name}.py"
+    def write_to_file(datatype, directory: str, data_to_write: list[str], relative_path=''):
+        if relative_path == '':
+            base_dir = os.path.dirname(os.path.realpath(__file__))
+            base_dir = os.path.abspath(os.path.join(base_dir, os.pardir))
+        else:
+            base_dir = relative_path
+        path = f"{base_dir}/OTLModel/{directory}/{datatype.name}.py"
 
         with open(path, "w", encoding='utf-8') as file:
-            for line in dataToWrite:
+            for line in data_to_write:
                 file.write(line + "\n")
 
     def getFieldsToImportFromListOfAttributes(self, attributen, listToStartFrom=None):
@@ -157,7 +161,7 @@ class AbstractDatatypeCreator(ABC):
 
         raise NotImplementedError(f"getTypeNameOfComplexAttribuut fails to get typename from {type_uri}")
 
-    def CreateBlockToWriteFromComplexPrimitiveOrUnionTypes(self, osloDatatype, typeField=''):
+    def create_block_to_write_from_complex_primitive_or_union_types(self, osloDatatype, typeField='', model_location=''):
         attributen = self.get_attributen_by_typeField(typeField, osloDatatype)
 
         datablock = ['# coding=utf-8',
@@ -171,8 +175,15 @@ class AbstractDatatypeCreator(ABC):
             datablock.append('from OTLMOW.OTLModel.BaseClasses.OTLField import OTLField')
             list_fields_to_start_with = []
         listOfFields = self.getFieldsToImportFromListOfAttributes(attributen, list_fields_to_start_with)
+        base_fields = ['BooleanField', 'ComplexField', 'DateField', 'DateTimeField', 'FloatOrDecimalField', 'IntegerField',
+                       'KeuzelijstField', 'UnionTypeField', 'URIField', 'LiteralField', 'NonNegIntegerField', 'TimeField',
+                       'StringField', 'UnionWaarden']
         for module in listOfFields:
-            datablock.append(f'from OTLMOW.OTLModel.Datatypes.{module} import {module}')
+            model_module = 'OTLMOW'
+            if model_location != '' and module not in base_fields:
+                modules = model_location.split('\\OTLMOW\\')[1]
+                model_module = modules.replace('\\', '.')
+            datablock.append(f'from {model_module}.OTLModel.Datatypes.{module} import {module}')
 
         datablock.append('')
         datablock.append('')
@@ -191,6 +202,7 @@ class AbstractDatatypeCreator(ABC):
 
         if typeField == 'Primitive' or typeField == 'KwantWrd':
             typeField = 'OTL'
+
 
         datablock.append(''),
         datablock.append(f'# Generated with {self.__class__.__name__}. To modify: extend, do not edit')
@@ -216,11 +228,11 @@ class AbstractDatatypeCreator(ABC):
 
     def get_attributen_by_typeField(self, TypeField, osloDatatype):
         if TypeField == 'Complex':
-            return self.osloCollector.find_complex_datatype_attributes_by_class_uri(osloDatatype.objectUri)
+            return self.oslo_collector.find_complex_datatype_attributes_by_class_uri(osloDatatype.objectUri)
         elif TypeField == 'UnionType':
-            return self.osloCollector.find_union_datatype_attributes_by_class_uri(osloDatatype.objectUri)
+            return self.oslo_collector.find_union_datatype_attributes_by_class_uri(osloDatatype.objectUri)
         else:
-            return self.osloCollector.find_primitive_datatype_attributes_by_class_uri(osloDatatype.objectUri)
+            return self.oslo_collector.find_primitive_datatype_attributes_by_class_uri(osloDatatype.objectUri)
 
     def add_attributen_to_dataBlock(self, attributen, datablock, forClassUse=False, typeField=''):
         prop_datablock = []

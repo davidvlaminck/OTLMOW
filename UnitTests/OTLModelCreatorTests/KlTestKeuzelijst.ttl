@@ -1,0 +1,29 @@
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlTestKeuzelijst> a skos:ConceptScheme;
+  skos:definition "Keuzelijst met test keuzelijstwaarden."@nl;
+  skos:prefLabel "Test keuzelijst"@nl.
+
+<https://wegenenverkeer.data.vlaanderen.be/id/concept/KlTestKeuzelijst/waarde-1> a skos:Concept;
+  skos:definition ""@nl;
+  skos:inScheme <https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlTestKeuzelijst>;
+  skos:notation "waarde-1";
+  skos:prefLabel "waarde 1"@nl;
+  skos:topConceptOf <https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlTestKeuzelijst> .
+
+<https://wegenenverkeer.data.vlaanderen.be/id/concept/KlTestKeuzelijst/waarde-2> a skos:Concept;
+  skos:definition ""@nl;
+  skos:inScheme <https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlTestKeuzelijst>;
+  skos:notation "waarde-2";
+  skos:prefLabel "waarde 2"@nl;
+  skos:topConceptOf <https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlTestKeuzelijst> .
+
+<https://wegenenverkeer.data.vlaanderen.be/id/concept/KlTestKeuzelijst/waarde-3> a skos:Concept;
+  skos:definition ""@nl;
+  skos:inScheme <https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlTestKeuzelijst>;
+  skos:notation "waarde-3";
+  skos:prefLabel "waarde 3"@nl;
+  skos:topConceptOf <https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlTestKeuzelijst> .

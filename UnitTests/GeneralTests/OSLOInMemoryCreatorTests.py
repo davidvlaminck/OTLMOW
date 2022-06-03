@@ -213,7 +213,7 @@ class OSLOInMemoryCreatorTests(unittest.TestCase):
         oslo_creator = OSLOInMemoryCreator(sql_reader)
         list_of_primitive_datatypes = oslo_creator.get_all_primitive_datatypes()
 
-        self.assertEqual(12, len(list_of_primitive_datatypes))
+        self.assertEqual(13, len(list_of_primitive_datatypes))
         self.assertTrue(isinstance(list_of_primitive_datatypes[0], OSLODatatypePrimitive))
 
     def test_get_all_primitive_datatype_attributes(self):
@@ -223,7 +223,7 @@ class OSLOInMemoryCreatorTests(unittest.TestCase):
         oslo_creator = OSLOInMemoryCreator(sql_reader)
         list_of_primitive_datatypes_attributes = oslo_creator.get_all_primitive_datatype_attributes()
 
-        self.assertEqual(3, len(list_of_primitive_datatypes_attributes))
+        self.assertEqual(5, len(list_of_primitive_datatypes_attributes))
         self.assertTrue(isinstance(list_of_primitive_datatypes_attributes[0], OSLODatatypePrimitiveAttribuut))
 
     def test_get_class_by_uri(self):
@@ -256,7 +256,7 @@ class OSLOInMemoryCreatorTests(unittest.TestCase):
         sql_reader = SQLDbReader(file_location)
         oslo_creator = OSLOInMemoryCreator(sql_reader)
         attributes = oslo_creator.get_all_attributes()
-        attribute_uri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#AllCasesTestClass.testBooleanField'
+        attribute_uri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMDBStatus.isActief'
 
         self.assertTrue(isinstance(attributes[0], OSLOAttribuut))
         self.assertEqual(attribute_uri, attributes[0].objectUri)
@@ -280,9 +280,9 @@ class OSLOInMemoryCreatorTests(unittest.TestCase):
         oslo_creator = OSLOInMemoryCreator(sql_reader)
         list_of_complex_datatypes = oslo_creator.get_all_complex_datatypes()
 
-        self.assertEqual(2, len(list_of_complex_datatypes))
+        self.assertEqual(3, len(list_of_complex_datatypes))
         self.assertTrue(isinstance(list_of_complex_datatypes[0], OSLODatatypeComplex))
-        self.assertEqual('https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcTestComplexType',
+        self.assertEqual('https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcIdentificator',
                          list_of_complex_datatypes[0].objectUri)
 
     def test_get_all_complex_datatype_attributes(self):
@@ -292,9 +292,9 @@ class OSLOInMemoryCreatorTests(unittest.TestCase):
         oslo_creator = OSLOInMemoryCreator(sql_reader)
         list_of_complex_datatypes_attributes = oslo_creator.get_all_complex_datatype_attributes()
 
-        self.assertEqual(11, len(list_of_complex_datatypes_attributes))
+        self.assertEqual(13, len(list_of_complex_datatypes_attributes))
         self.assertTrue(isinstance(list_of_complex_datatypes_attributes[0], OSLODatatypeComplexAttribuut))
-        self.assertEqual('https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcTestComplexType.testBooleanField',
+        self.assertEqual('https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcIdentificator.identificator',
                          list_of_complex_datatypes_attributes[0].objectUri)
 
     def test_get_all_enumerations(self):
@@ -304,7 +304,7 @@ class OSLOInMemoryCreatorTests(unittest.TestCase):
         oslo_creator = OSLOInMemoryCreator(sql_reader)
         enumerations = oslo_creator.get_all_enumerations()
 
-        self.assertEqual(1, len(enumerations))
+        self.assertEqual(2, len(enumerations))
         self.assertTrue(isinstance(enumerations[0], OSLOEnumeration))
         self.assertEqual('https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#KlTestKeuzelijst', enumerations[0].objectUri)
 
@@ -352,7 +352,7 @@ class OSLOInMemoryCreatorTests(unittest.TestCase):
         oslo_creator = OSLOInMemoryCreator(sql_reader)
         type_links = oslo_creator.get_all_typelinks()
 
-        self.assertEqual(16, len(type_links))
+        self.assertEqual(19, len(type_links))
         self.assertTrue(isinstance(type_links[0], OSLOTypeLink))
         self.assertEqual('http://www.w3.org/2000/01/rdf-schema#Literal',
                          type_links[0].item_uri)

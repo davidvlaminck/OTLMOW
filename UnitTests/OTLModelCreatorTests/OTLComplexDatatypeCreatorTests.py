@@ -267,7 +267,7 @@ class OTLComplexDatatypeCreatorTests(unittest.TestCase):
         dtcAdres = collector.find_complex_datatype_by_uri(
             'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAdres')
         dataToWrite = creator.CreateBlockToWriteFromComplexTypes(dtcAdres)
-        creator.writeToFile(dtcAdres, 'Datatypes', dataToWrite, '../../src/OTLMOW/')
+        creator.write_to_file(dtcAdres, 'Datatypes', dataToWrite, '../../src/OTLMOW/')
 
         filelocation = os.path.abspath(os.path.join(os.sep, ROOT_DIR, 'src/OTLMOW/OTLModel/Datatypes/DtcAdres.py'))
         self.assertTrue(os.path.isfile(filelocation))
@@ -284,7 +284,7 @@ class OTLComplexDatatypeCreatorTests(unittest.TestCase):
         DtcRechtspersoon = collector.find_complex_datatype_by_uri(
             'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcRechtspersoon')
         dataToWrite = creator.CreateBlockToWriteFromComplexTypes(DtcRechtspersoon)
-        creator.writeToFile(DtcRechtspersoon, 'Datatypes', dataToWrite, '../../src/OTLMOW/')
+        creator.write_to_file(DtcRechtspersoon, 'Datatypes', dataToWrite, '../../src/OTLMOW/')
 
         filelocation = os.path.abspath(os.path.join(os.sep, ROOT_DIR, 'src/OTLMOW/OTLModel/Datatypes/DtcRechtspersoon.py'))
         self.assertTrue(os.path.isfile(filelocation))
@@ -301,7 +301,7 @@ class OTLComplexDatatypeCreatorTests(unittest.TestCase):
         DtcMaaien = collector.find_complex_datatype_by_uri(
             'https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#DtcMaaien')
         dataToWrite = creator.CreateBlockToWriteFromComplexTypes(DtcMaaien)
-        creator.writeToFile(DtcMaaien, 'Datatypes', dataToWrite, '../../src/OTLMOW/')
+        creator.write_to_file(DtcMaaien, 'Datatypes', dataToWrite, '../../src/OTLMOW/')
 
         filelocation = os.path.abspath(os.path.join(os.sep, ROOT_DIR, 'src/OTLMOW/OTLModel/Datatypes/DtcMaaien.py'))
         self.assertTrue(os.path.isfile(filelocation))

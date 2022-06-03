@@ -1,182 +1,107 @@
+import os
 import unittest
-from unittest import mock
+from unittest.mock import MagicMock
 
 from OTLMOW.ModelGenerator.AbstractDatatypeCreator import AbstractDatatypeCreator
 from OTLMOW.ModelGenerator.OSLOAttribuut import OSLOAttribuut
 from OTLMOW.ModelGenerator.OSLOCollector import OSLOCollector
 from OTLMOW.ModelGenerator.OSLODatatypeComplexAttribuut import OSLODatatypeComplexAttribuut
-from OTLMOW.ModelGenerator.OSLOTypeLink import OSLOTypeLink
+from OTLMOW.ModelGenerator.OSLOInMemoryCreator import OSLOInMemoryCreator
 from OTLMOW.ModelGenerator.OTLComplexDatatypeCreator import OTLComplexDatatypeCreator
-from OTLModelCreatorTests.OTLComplexDatatypeCreatorTests import ComplexDatatypeOSLOCollector
-
-
-class ClassOSLOCollector(OSLOCollector):
-    def __init__(self):
-        super().__init__(None)
-
-        self.typeLinks = [
-            OSLOTypeLink("http://www.w3.org/2001/XMLSchema#string", "OSLODatatypePrimitive", ""),
-            OSLOTypeLink("http://www.w3.org/2001/XMLSchema#boolean", "OSLODatatypePrimitive", ""),
-            OSLOTypeLink("https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInProcent",
-                         "OSLODatatypePrimitive", ""),
-            OSLOTypeLink("https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DteTekstblok",
-                         "OSLODatatypePrimitive", ""),
-            OSLOTypeLink("https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DteIPv4Adres",
-                         "OSLODatatypePrimitive", ""),
-            OSLOTypeLink("https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAdres", "OSLODatatypeComplex",
-                         ""),
-            OSLOTypeLink("https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcDocument", "OSLODatatypeComplex",
-                         ""),
-            OSLOTypeLink("https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KlAlgGemeente", "OSLOEnumeration",
-                         ""),
-            OSLOTypeLink("https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtuLichtmastMasthoogte", "OSLODatatypeUnion",
-                         ''),
-            OSLOTypeLink("https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMeter",
-                         "OSLODatatypePrimitive", ""),
-            OSLOTypeLink("https://schema.org/OpeningHoursSpecification", "OSLODatatypeComplex", ""),
-            OSLOTypeLink("https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#KlMaaiFrequentie", "OSLOEnumeration", "")
-        ]
-
-
-class TestAbstractCreator(AbstractDatatypeCreator):
-    def __init__(self):
-        super().__init__(ClassOSLOCollector())
+from OTLMOW.ModelGenerator.SQLDbReader import SQLDbReader
 
 
 class AbstractDatatypeCreatorTests(unittest.TestCase):
     #TODO add tests for writing a file
 
-    def test_getFieldsToImportFromListOfAttributes_ListWithoutElement_NonEmptyStartList(self):
-        creator = TestAbstractCreator()
-        listOfAttributes = [
-            OSLODatatypeComplexAttribuut('technischeFiche', 'technische fiche',
-                                         'De technische fiche van het beton. Deze moet volgende eigenschappen bevatten: de norm waaraan het beton voldoet, de sterkteklasse, de duurzaamheid (bestaande uit het gebruiksdomein en de omgevingsklasse(n)), de consistentieklasse, de nominale grootste korrelafmeting,...',
-                                         'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcBetonspecificaties',
-                                         '1', '1',
-                                         'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcBetonspecificaties.technischeFiche',
-                                         'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcDocument', 0, '',
-                                         0, '', '')]
-        listOfFields = creator.getFieldsToImportFromListOfAttributes(listOfAttributes, ['StringField'])
+    def setUp(self) -> OSLOCollector:
+        base_dir = os.path.dirname(os.path.realpath(__file__))
+        file_location = f'{base_dir}/../OTL_AllCasesTestClass.db'
+        sql_reader = SQLDbReader(file_location)
+        oslo_creator = OSLOInMemoryCreator(sql_reader)
+        collector = OSLOCollector(oslo_creator)
+        collector.collect()
+        return collector
 
-        self.assertEqual(['DtcDocument', 'StringField'], listOfFields)
+    def test_get_fields_to_import_from_list_of_attributes_List_with_elements_Non_empty_start_list(self):
+        collector = self.setUp()
+        creator = OTLComplexDatatypeCreator(collector)
+        list_of_attributes = collector.find_complex_datatype_attributes_by_class_uri('https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcTestComplexType2')
 
-    def test_getFieldsToImportFromListOfAttributes_ListWithOneComplexTypeDtcDocument(self):
-        creator = TestAbstractCreator()
-        listOfAttributes = [
-            OSLODatatypeComplexAttribuut('technischeFiche', 'technische fiche',
-                                         'De technische fiche van het beton. Deze moet volgende eigenschappen bevatten: de norm waaraan het beton voldoet, de sterkteklasse, de duurzaamheid (bestaande uit het gebruiksdomein en de omgevingsklasse(n)), de consistentieklasse, de nominale grootste korrelafmeting,...',
-                                         'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcBetonspecificaties',
-                                         '1', '1',
-                                         'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcBetonspecificaties.technischeFiche',
-                                         'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcDocument', 0, '',
-                                         0, '', '')]
-        listOfFields = creator.getFieldsToImportFromListOfAttributes(listOfAttributes)
+        list_of_fields = creator.get_fields_to_import_from_list_of_attributes(list_of_attributes, ['BooleanField'])
 
-        self.assertEqual(['DtcDocument'], listOfFields)
+        self.assertEqual(['BooleanField', 'KwantWrdTest', 'StringField'], list_of_fields)
 
-    def test_getFieldsToImportFromListOfAttributes_ListWithKeuzelijstField(self):
-        creator = TestAbstractCreator()
-        listOfAttributes = [
-            OSLODatatypeComplexAttribuut('gemeente', 'gemeente', 'De bestuurlijke eenheid waarin het adres gelegen is.',
-                                         'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAdres', '1', '1',
-                                         'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAdres.gemeente',
-                                         'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KlAlgGemeente', 0, '',
-                                         0, '', '')]
-        listOfFields = creator.getFieldsToImportFromListOfAttributes(listOfAttributes)
+    def test_get_fields_to_import_from_list_of_attributes_List_with_elements_Empty_start_list(self):
+        collector = self.setUp()
+        creator = OTLComplexDatatypeCreator(collector)
+        list_of_attributes = collector.find_complex_datatype_attributes_by_class_uri('https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcTestComplexType2')
 
-        self.assertEqual(['KlAlgGemeente'], listOfFields)
+        list_of_fields = creator.get_fields_to_import_from_list_of_attributes(list_of_attributes)
 
-    def test_getFieldsToImportFromListOfAttributes_ListWithOneStringType(self):
-        creator = TestAbstractCreator()
-        listOfAttributes = [
-            OSLODatatypeComplexAttribuut(name='', label='', definition='', class_uri='', kardinaliteit_min='',
-                                         kardinaliteit_max='', objectUri='',
-                                         type='http://www.w3.org/2001/XMLSchema#string', overerving=0, constraints='', readonly=0,
-                                         usagenote='', deprecated_version='')]
-        listOfFields = creator.getFieldsToImportFromListOfAttributes(listOfAttributes)
+        self.assertEqual(['KwantWrdTest', 'StringField'], list_of_fields)
 
-        self.assertEqual(['StringField'], listOfFields)
+    def test_get_fields_to_import_from_list_of_attributes_List_with_ComplexType(self):
+        collector = self.setUp()
+        creator = OTLComplexDatatypeCreator(collector)
+        list_of_attributes = collector.find_complex_datatype_attributes_by_class_uri(
+            'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcTestComplexType')
+        complex_attributes_list = list(filter(lambda x: "Complex" in x.name, list_of_attributes))
 
-    def test_getFieldsToImportFromListOfAttributes_ListWithTwoStringTypes(self):
-        creator = TestAbstractCreator()
-        listOfAttributes = [
-            OSLODatatypeComplexAttribuut(name='', label='', definition='', class_uri='', kardinaliteit_min='',
-                                         kardinaliteit_max='', objectUri='',
-                                         type='http://www.w3.org/2001/XMLSchema#string', overerving=0, constraints='', readonly=0,
-                                         usagenote='', deprecated_version=''),
-            OSLODatatypeComplexAttribuut(name='', label='', definition='', class_uri='',
-                                         kardinaliteit_min='', kardinaliteit_max='', objectUri='',
-                                         type='http://www.w3.org/2001/XMLSchema#string', overerving=0,
-                                         constraints='', readonly=0, usagenote='', deprecated_version='')
-        ]
-        listOfFields = creator.getFieldsToImportFromListOfAttributes(listOfAttributes)
+        list_of_fields = creator.get_fields_to_import_from_list_of_attributes(complex_attributes_list)
 
-        self.assertEqual(['StringField'], listOfFields)
+        self.assertEqual(['DtcTestComplexType2'], list_of_fields)
 
-    def test_getFieldsToImportFromListOfAttributes_ListWithStringAndBoolField(self):
-        creator = TestAbstractCreator()
-        listOfAttributes = [
-            OSLODatatypeComplexAttribuut(name='', label='', definition='', class_uri='', kardinaliteit_min='',
-                                         kardinaliteit_max='', objectUri='',
-                                         type='http://www.w3.org/2001/XMLSchema#boolean', overerving=0, constraints='',
-                                         readonly=0, usagenote='', deprecated_version=''),
-            OSLODatatypeComplexAttribuut(name='', label='', definition='', class_uri='',
-                                         kardinaliteit_min='', kardinaliteit_max='', objectUri='',
-                                         type='http://www.w3.org/2001/XMLSchema#string', overerving=0,
-                                         constraints='', readonly=0, usagenote='', deprecated_version='')
-        ]
-        listOfFields = creator.getFieldsToImportFromListOfAttributes(listOfAttributes)
+    def test_get_fields_to_import_from_list_of_attributes_List_two_StringField(self):
+        collector = self.setUp()
+        creator = OTLComplexDatatypeCreator(collector)
+        list_of_attributes = collector.find_complex_datatype_attributes_by_class_uri(
+            'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcTestComplexType')
+        complex_attributes_list = list(filter(lambda x: "String" in x.name, list_of_attributes))
 
-        self.assertEqual(['BooleanField', 'StringField'], listOfFields)
+        list_of_fields = creator.get_fields_to_import_from_list_of_attributes(complex_attributes_list)
 
-    def test_getFieldsAndNamesFromListOfAttributes(self):
-        creator = TestAbstractCreator()
-        listOfAttributes = [
-            OSLODatatypeComplexAttribuut(name='boolean', label='', definition='', class_uri='', kardinaliteit_min='',
-                                         kardinaliteit_max='', objectUri='',
-                                         type='http://www.w3.org/2001/XMLSchema#boolean', overerving=0, constraints='',
-                                         readonly=0, usagenote='', deprecated_version=''),
-            OSLODatatypeComplexAttribuut(name='string', label='', definition='', class_uri='',
-                                         kardinaliteit_min='', kardinaliteit_max='', objectUri='',
-                                         type='http://www.w3.org/2001/XMLSchema#string', overerving=0,
-                                         constraints='', readonly=0, usagenote='', deprecated_version=''),
-            OSLODatatypeComplexAttribuut('technischeFiche', 'technische fiche',
-                                         'De technische fiche van het beton. Deze moet volgende eigenschappen bevatten: de norm waaraan het beton voldoet, de sterkteklasse, de duurzaamheid (bestaande uit het gebruiksdomein en de omgevingsklasse(n)), de consistentieklasse, de nominale grootste korrelafmeting,...',
-                                         'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcBetonspecificaties',
-                                         '1', '1',
-                                         'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcBetonspecificaties.technischeFiche',
-                                         'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcDocument', 0, '',
-                                         0, '', '')]
-        listOfFields = creator.getFieldsAndNamesFromListOfAttributes(listOfAttributes)
+        self.assertEqual(['StringField'], list_of_fields)
 
-        self.assertEqual([('BooleanField', 'boolean'), ('DtcDocument', 'technischeFiche'), ('StringField', 'string')],
-                         listOfFields)
+    def test_get_fields_to_import_from_list_of_attributes_List_two_StringField_and_two_BooleanField(self):
+        collector = self.setUp()
+        creator = OTLComplexDatatypeCreator(collector)
+        list_of_attributes = collector.find_complex_datatype_attributes_by_class_uri(
+            'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcTestComplexType')
+        complex_attributes_list = list(filter(lambda x: "String" in x.name or "Boolean" in x.name, list_of_attributes))
 
-    def test_getTypeLinkFromAttribuut_Boolean(self):
-        creator = TestAbstractCreator()
-        attribuut = OSLODatatypeComplexAttribuut(name='boolean', label='', definition='', class_uri='',
-                                                 kardinaliteit_min='',
-                                                 kardinaliteit_max='', objectUri='',
-                                                 type='http://www.w3.org/2001/XMLSchema#boolean', overerving=0, constraints='',
-                                                 readonly=0, usagenote='', deprecated_version='')
-        typeLink = creator.getTypeLinkFromAttribuut(attribuut)
+        list_of_fields = creator.get_fields_to_import_from_list_of_attributes(complex_attributes_list)
+
+        self.assertEqual(['BooleanField', 'StringField'], list_of_fields)
+
+    def test_get_fields_and_names_from_list_of_attributes(self):
+        collector = self.setUp()
+        creator = OTLComplexDatatypeCreator(collector)
+        list_of_attributes = collector.find_complex_datatype_attributes_by_class_uri(
+            'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcTestComplexType')
+        complex_attributes_list = list(filter(lambda x: x.name in ['testStringField', 'testBooleanField', 'testComplexType2'], list_of_attributes))
+
+        list_of_fields = creator.get_fields_and_names_from_list_of_attributes(complex_attributes_list)
+        self.assertEqual([('BooleanField', 'testBooleanField'), ('DtcTestComplexType2', 'testComplexType2'), ('StringField', 'testStringField')], list_of_fields)
+
+    def test_get_type_link_from_attribuut_Boolean(self):
+        collector = self.setUp()
+        creator = OTLComplexDatatypeCreator(collector)
+        attribute = next(c for c in collector.complex_datatype_attributen if c.type == 'http://www.w3.org/2001/XMLSchema#boolean')
+
+        typeLink = creator.get_type_link_from_attribuut(attribute)
         self.assertEqual("OSLODatatypePrimitive", typeLink)
 
-    def test_getTypeLinkFromAttribuut_DtcDocument(self):
-        creator = TestAbstractCreator()
-        attribuut = OSLODatatypeComplexAttribuut('technischeFiche', 'technische fiche',
-                                                 'De technische fiche van het beton. Deze moet volgende eigenschappen bevatten: de norm waaraan het beton voldoet, de sterkteklasse, de duurzaamheid (bestaande uit het gebruiksdomein en de omgevingsklasse(n)), de consistentieklasse, de nominale grootste korrelafmeting,...',
-                                                 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcBetonspecificaties',
-                                                 '1', '1',
-                                                 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcBetonspecificaties.technischeFiche',
-                                                 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcDocument',
-                                                 0, '',
-                                                 0, '', '')
-        typeLink = creator.getTypeLinkFromAttribuut(attribuut)
+    def test_get_type_link_from_attribuut_DtcTestComplexType2(self):
+        collector = self.setUp()
+        creator = OTLComplexDatatypeCreator(collector)
+        attribute = next(c for c in collector.complex_datatype_attributen if c.type == 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcTestComplexType2')
+
+        typeLink = creator.get_type_link_from_attribuut(attribute)
         self.assertEqual("OSLODatatypeComplex", typeLink)
 
-    def test_addAttributenToDataBlock_StringField(self):
-        creator = TestAbstractCreator()
+    def test_add_attributen_to_dataBlock_StringField(self):
+        creator = AbstractDatatypeCreator(oslo_collector=MagicMock(spec=OSLOCollector))
         attribuut = OSLODatatypeComplexAttribuut('huisnummer', 'huisnummer',
                                                  'Een nummer dat door de gemeente aan bv. een huis wordt toegekend.',
                                                  'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAdres',
@@ -203,8 +128,8 @@ class AbstractDatatypeCreatorTests(unittest.TestCase):
 
         self.assertEqual(expectedDatablock, creator.add_attributen_to_dataBlock([attribuut], []))
 
-    def test_addAttributenToDataBlock_DteField(self):
-        creator = TestAbstractCreator()
+    def test_add_attributen_to_dataBlock_DteField(self):
+        creator = AbstractDatatypeCreator(oslo_collector=MagicMock(spec=OSLOCollector))
         attribuut = OSLOAttribuut('toestandBuis', 'toestand buis', 'Opmerkingen van de toestand en staat van de buis.',
                                   'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Buis', '1', '1',
                                   'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Buis.toestandBuis',
@@ -230,8 +155,8 @@ class AbstractDatatypeCreatorTests(unittest.TestCase):
 
         self.assertEqual(expectedDatablock, creator.add_attributen_to_dataBlock([attribuut], []))
 
-    def test_addAttributenToDataBlock_KwantWrd(self):
-        creator = TestAbstractCreator()
+    def test_add_attributen_to_dataBlock_KwantWrd(self):
+        creator = AbstractDatatypeCreator(oslo_collector=MagicMock(spec=OSLOCollector))
         attribuut = OSLOAttribuut('lengte', 'lengte', 'De totale lengte in meter van de buis tussen opwaartse en afwaartse put.',
                                   'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Buis', '1', '1',
                                   'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Buis.lengte',
@@ -257,8 +182,8 @@ class AbstractDatatypeCreatorTests(unittest.TestCase):
 
         self.assertEqual(expectedDatablock, creator.add_attributen_to_dataBlock([attribuut], []))
 
-    def test_addAttributenToDataBlock_DtcAdres(self):
-        creator = TestAbstractCreator()
+    def test_add_attributen_to_dataBlock_DtcAdres(self):
+        creator = AbstractDatatypeCreator(oslo_collector=MagicMock(spec=OSLOCollector))
         attribuut = OSLODatatypeComplexAttribuut('adres', 'adres', 'Adres dat men kan aanschrijven of bezoeken.',
                                                  'https://schema.org/ContactPoint', '0', '1',
                                                  'https://schema.org/ContactPoint.adres',
@@ -285,75 +210,68 @@ class AbstractDatatypeCreatorTests(unittest.TestCase):
 
         self.assertEqual(expectedDatablock, creator.add_attributen_to_dataBlock([attribuut], []))
 
-    def test_getWhiteSpaceEquivalent_EmptyString(self):
-        creator = TestAbstractCreator()
-        result = creator.getWhiteSpaceEquivalent('')
+    def test_get_white_space_equivalent_Empty_string(self):
+        result = AbstractDatatypeCreator.get_white_space_equivalent('')
         self.assertEqual('', result)
 
-    def test_getWhiteSpaceEquivalent_StringOf1Length(self):
-        creator = TestAbstractCreator()
-        result = creator.getWhiteSpaceEquivalent('a')
+    def test_get_white_space_equivalent_String_of_1_length(self):
+        result = AbstractDatatypeCreator.get_white_space_equivalent('a')
         self.assertEqual(' ', result)
 
-    def test_getWhiteSpaceEquivalent_StringOf2Length(self):
-        creator = TestAbstractCreator()
-        result = creator.getWhiteSpaceEquivalent('aa')
+    def test_get_white_space_equivalent_String_of_2_length(self):
+        result = AbstractDatatypeCreator.get_white_space_equivalent('aa')
         self.assertEqual('  ', result)
 
-    def test_getNonPrimitiveFieldFromTypeUri_ComplexField(self):
-        creator = TestAbstractCreator()
-        typesList = creator.getNonSingleFieldFromTypeUri(
-            'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAdres')
-        expectedList = ['ComplexField', 'DtcAdres']
+    def test_get_non_single_field_from_type_uri_ComplexField(self):
+        collector = self.setUp()
+        creator = OTLComplexDatatypeCreator(collector)
+        typesList = creator.get_non_single_field_from_type_uri(
+            'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcTestComplexType')
+        expectedList = ['ComplexField', 'DtcTestComplexType']
 
         self.assertEqual(expectedList, typesList)
 
-    def test_getNonPrimitiveFieldFromTypeUri_DteField(self):
-        creator = TestAbstractCreator()
-        typesList = creator.getNonSingleFieldFromTypeUri(
-            'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DteTekstblok')
-        expectedList = ['ComplexField', 'DteTekstblok']
+    def test_get_non_single_field_from_type_uri_DteField(self):
+        collector = self.setUp()
+        creator = OTLComplexDatatypeCreator(collector)
+        typesList = creator.get_non_single_field_from_type_uri(
+            'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DteTestEenvoudigType')
+        expectedList = ['ComplexField', 'DteTestEenvoudigType']
 
         self.assertEqual(expectedList, typesList)
 
-    def test_getNonPrimitiveFieldFromTypeUri_KwantWrdField(self):
-        creator = TestAbstractCreator()
-        typesList = creator.getNonSingleFieldFromTypeUri(
-            'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInCentimeter')
-        expectedList = ['ComplexField', 'KwantWrdInCentimeter']
+    def test_get_non_single_field_from_type_uri_KwantWrdField(self):
+        collector = self.setUp()
+        creator = OTLComplexDatatypeCreator(collector)
+        typesList = creator.get_non_single_field_from_type_uri(
+            'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdTest')
+        expectedList = ['ComplexField', 'KwantWrdTest']
 
         self.assertEqual(expectedList, typesList)
 
     def test_getNonPrimitiveFieldFromTypeUri_UnionTypeField(self):
-        creator = TestAbstractCreator()
-        typesList = creator.getNonSingleFieldFromTypeUri(
-            'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtuLichtmastMasthoogte')
-        expectedList = ['UnionTypeField', 'DtuLichtmastMasthoogte']
+        collector = self.setUp()
+        creator = OTLComplexDatatypeCreator(collector)
+        typesList = creator.get_non_single_field_from_type_uri(
+            'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtuTestUnionType')
+        expectedList = ['UnionTypeField', 'DtuTestUnionType']
 
         self.assertEqual(expectedList, typesList)
 
-    def test_getNonPrimitiveFieldFromTypeUri_Keuzelijst(self):
-        creator = TestAbstractCreator()
-        typesList = creator.getNonSingleFieldFromTypeUri(
-            'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KlAlgGemeente')
-        expectedList = ['KeuzelijstField', 'KlAlgGemeente']
+    def test_get_non_single_field_from_type_uri_Keuzelijst(self):
+        collector = self.setUp()
+        creator = OTLComplexDatatypeCreator(collector)
+        typesList = creator.get_non_single_field_from_type_uri(
+            'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KlTestKeuzelijst')
+        expectedList = ['KeuzelijstField', 'KlTestKeuzelijst']
 
         self.assertEqual(expectedList, typesList)
 
-    def test_getTypeNameOfComplexAttribuut_Kl(self):
-        collector = ComplexDatatypeOSLOCollector(mock)
+    def test_get_type_name_of_complex_attribute_String(self):
+        collector = self.setUp()
         creator = OTLComplexDatatypeCreator(collector)
         dtcIdentificator = collector.find_complex_datatype_attributes_by_class_uri(
-            'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAdres')[1]
-        typeName = creator.getTypeNameOfComplexAttribuut(dtcIdentificator.type)
+            'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcIdentificator')
+        type_name = creator.get_type_name_of_complex_attribuut(dtcIdentificator[0].type)
+        self.assertEqual("string", type_name)
 
-        self.assertEqual("KlAlgGemeente", typeName)
-
-    def test_getTypeNameOfComplexAttribuut_String(self):
-        collector = ComplexDatatypeOSLOCollector(mock)
-        creator = OTLComplexDatatypeCreator(collector)
-        dtcIdentificator = collector.find_complex_datatype_attributes_by_class_uri(
-            'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAdres')[0]
-        typeName = creator.getTypeNameOfComplexAttribuut(dtcIdentificator.type)
-
-        self.assertEqual("string", typeName)

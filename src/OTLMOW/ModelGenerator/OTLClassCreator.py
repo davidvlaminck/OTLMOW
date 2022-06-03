@@ -90,7 +90,7 @@ class OTLClassCreator(AbstractDatatypeCreator):
         if any(atr.readonly == 1 for atr in attributen):
             raise NotImplementedError("readonly property is assumed to be 0 on value fields")
 
-        list_of_fields = self.getFieldsToImportFromListOfAttributes(attributen)
+        list_of_fields = self.get_fields_to_import_from_list_of_attributes(attributen)
         base_fields = ['BooleanField', 'ComplexField', 'DateField', 'DateTimeField', 'FloatOrDecimalField', 'IntegerField',
                        'KeuzelijstField', 'UnionTypeField', 'URIField', 'LiteralField', 'NonNegIntegerField', 'TimeField',
                        'StringField', 'UnionWaarden']

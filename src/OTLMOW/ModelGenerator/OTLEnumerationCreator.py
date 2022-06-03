@@ -52,7 +52,7 @@ class OTLEnumerationCreator(AbstractDatatypeCreator):
         datablock.append('    options = {')
 
         for waarde in sorted(keuzelijst_waardes, key=lambda w: w.invulwaarde):
-            whitespace = AbstractDatatypeCreator.getWhiteSpaceEquivalent(f"        '{waarde.invulwaarde}': KeuzelijstWaarde(")
+            whitespace = AbstractDatatypeCreator.get_white_space_equivalent(f"        '{waarde.invulwaarde}': KeuzelijstWaarde(")
             datablock.append(f"        '{waarde.invulwaarde}': KeuzelijstWaarde(invulwaarde='{waarde.invulwaarde}',")
             datablock.append(f"{whitespace}label='{waarde.label}',")
             if waarde.definitie != '':

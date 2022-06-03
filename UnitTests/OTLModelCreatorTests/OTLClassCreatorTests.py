@@ -201,7 +201,7 @@ class OTLClassCreatorTests(unittest.TestCase):
 
         aimObject = collector.find_class_by_uri('https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMObject')
         dataToWrite = creator.create_blocks_to_write_from_classes(aimObject)
-        inheritanceLine = "class AIMObject(AIMToestand, AIMDBStatus, AttributeInfo, OTLAsset, RelatieInteractor):"
+        inheritanceLine = "class AIMObject(AIMDBStatus, AIMToestand, AttributeInfo, OTLAsset, RelatieInteractor):"
 
         self.assertEqual(inheritanceLine, dataToWrite[15])
 
@@ -220,7 +220,7 @@ class OTLClassCreatorTests(unittest.TestCase):
 
         derdenobject = collector.find_class_by_uri('https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#Derdenobject')
         dataToWrite = creator.create_blocks_to_write_from_classes(derdenobject)
-        inheritanceLine = "class Derdenobject(AIMToestand, AIMDBStatus, AttributeInfo, OTLAsset, RelatieInteractor):"
+        inheritanceLine = "class Derdenobject(AIMDBStatus, AIMToestand, AttributeInfo, OTLAsset, RelatieInteractor):"
 
         self.assertEqual(inheritanceLine, dataToWrite[14])
 

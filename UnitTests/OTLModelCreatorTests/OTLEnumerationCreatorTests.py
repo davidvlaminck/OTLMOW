@@ -1,7 +1,6 @@
 import os
 import unittest
 from unittest import mock
-from unittest.mock import patch
 
 import rdflib
 
@@ -14,67 +13,45 @@ from OTLMOW.OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 ROOT_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-
-class EnumerationOSLOCollector(OSLOCollector):
-    def __init__(self, reader):
-        super().__init__(reader)
-
-        self.enumerations = [
-            OSLOEnumeration('KlAIMToestand', 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KlAIMToestand',
-                            '',
-                            'Keuzelijst met fasen uit de levenscyclus van een object om de toestand op een moment mee vast te leggen.',
-                            'AIM toestand', 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlAIMToestand', '')]
-
-        self.expectedDataKlAIMToestand = [
-            "# coding=utf-8",
-            "import random",
-            "from OTLMOW.OTLModel.Datatypes.KeuzelijstField import KeuzelijstField",
-            "from OTLMOW.OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde",
-            "",
-            "",
-            "# Generated with OTLEnumerationCreator. To modify: extend, do not edit",
-            "class KlAIMToestand(KeuzelijstField):",
-            '    """Keuzelijst met fasen uit de levenscyclus van een object om de toestand op een moment mee vast te leggen."""',
-            "    naam = 'KlAIMToestand'",
-            "    label = 'AIM toestand'",
-            "    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KlAIMToestand'",
-            "    definition = 'Keuzelijst met fasen uit de levenscyclus van een object om de toestand op een moment mee vast te leggen.'",
-            "    codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlAIMToestand'",
-            "    options = {",
-            "        'geannuleerd': KeuzelijstWaarde(invulwaarde='geannuleerd',",
-            "                                        label='geannuleerd',",
-            "                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAIMToestand/geannuleerd'),",
-            "        'gepland': KeuzelijstWaarde(invulwaarde='gepland',",
-            "                                    label='gepland',",
-            "                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAIMToestand/gepland'),",
-            "        'in-gebruik': KeuzelijstWaarde(invulwaarde='in-gebruik',",
-            "                                       label='in gebruik',",
-            "                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAIMToestand/in-gebruik'),",
-            "        'in-ontwerp': KeuzelijstWaarde(invulwaarde='in-ontwerp',",
-            "                                       label='in ontwerp',",
-            "                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAIMToestand/in-ontwerp'),",
-            "        'in-opbouw': KeuzelijstWaarde(invulwaarde='in-opbouw',",
-            "                                      label='in opbouw',",
-            "                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAIMToestand/in-opbouw'),",
-            "        'overgedragen': KeuzelijstWaarde(invulwaarde='overgedragen',",
-            "                                         label='overgedragen',",
-            "                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAIMToestand/overgedragen'),",
-            "        'uit-gebruik': KeuzelijstWaarde(invulwaarde='uit-gebruik',",
-            "                                        label='uit gebruik',",
-            "                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAIMToestand/uit-gebruik'),",
-            "        'verwijderd': KeuzelijstWaarde(invulwaarde='verwijderd',",
-            "                                       label='verwijderd',",
-            "                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAIMToestand/verwijderd')",
-            "    }",
-            "",
-            "    @classmethod",
-            "    def get_dummy_data(cls):",
-            "        return random.choice(list(cls.options.keys()))",
-            "",
-            "    @staticmethod",
-            "    def create_dummy_data():",
-            "        return KlAIMToestand.get_dummy_data()",
-            ""]
+expectedKeuzelijst = ['# coding=utf-8',
+                      'import random',
+                      'from OTLMOW.OTLModel.Datatypes.KeuzelijstField import KeuzelijstField',
+                      'from OTLMOW.OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde',
+                      '',
+                      '',
+                      '# Generated with OTLEnumerationCreator. To modify: extend, do not edit',
+                      'class KlTestKeuzelijst(KeuzelijstField):',
+                      '    """Keuzelijst met test waarden."""',
+                      "    naam = 'KlTestKeuzelijst'",
+                      "    label = 'Test keuzelijst'",
+                      '    objectUri = '
+                      "'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#KlTestKeuzelijst'",
+                      "    definition = 'Keuzelijst met test waarden.'",
+                      '    codelist = '
+                      "'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlTestKeuzelijst'",
+                      '    options = {',
+                      "        'waarde-1': KeuzelijstWaarde(invulwaarde='waarde-1',",
+                      "                                     label='waarde 1',",
+                      '                                     '
+                      "objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlTestKeuzelijst/waarde-1'),",
+                      "        'waarde-2': KeuzelijstWaarde(invulwaarde='waarde-2',",
+                      "                                     label='waarde 2',",
+                      '                                     '
+                      "objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlTestKeuzelijst/waarde-2'),",
+                      "        'waarde-3': KeuzelijstWaarde(invulwaarde='waarde-3',",
+                      "                                     label='waarde 3',",
+                      '                                     '
+                      "objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlTestKeuzelijst/waarde-3')",
+                      '    }',
+                      '',
+                      '    @classmethod',
+                      '    def get_dummy_data(cls):',
+                      '        return random.choice(list(cls.options.keys()))',
+                      '',
+                      '    @staticmethod',
+                      '    def create_dummy_data():',
+                      '        return KlTestKeuzelijst.get_dummy_data()',
+                      '']
 
 
 class OTLEnumerationCreatorTests(unittest.TestCase):
@@ -85,7 +62,7 @@ class OTLEnumerationCreatorTests(unittest.TestCase):
                                           deprecated_version='', codelist='')
 
         with self.assertRaises(ValueError) as exception_empty_uri:
-            creator.CreateBlockToWriteFromEnumerations(osloEnumeration)
+            creator.create_block_to_write_from_enumerations(osloEnumeration)
         self.assertEqual(str(exception_empty_uri.exception), "OSLOEnumeration.objectUri is invalid. Value = ''")
 
     def test_InvalidOSLOEnumerationBadUri(self):
@@ -95,7 +72,7 @@ class OTLEnumerationCreatorTests(unittest.TestCase):
                                           deprecated_version='', codelist='')
 
         with self.assertRaises(ValueError) as exception_bad_uri:
-            creator.CreateBlockToWriteFromEnumerations(osloEnumeration)
+            creator.create_block_to_write_from_enumerations(osloEnumeration)
         self.assertEqual(str(exception_bad_uri.exception), "OSLOEnumeration.objectUri is invalid. Value = 'Bad objectUri'")
 
     def test_InvalidOSLOEnumerationEmptyName(self):
@@ -107,7 +84,7 @@ class OTLEnumerationCreatorTests(unittest.TestCase):
                                           deprecated_version='', codelist='')
 
         with self.assertRaises(ValueError) as exception_bad_name:
-            creator.CreateBlockToWriteFromEnumerations(osloEnumeration)
+            creator.create_block_to_write_from_enumerations(osloEnumeration)
         self.assertEqual(str(exception_bad_name.exception), "OSLOEnumeration.name is invalid. Value = ''")
 
     def test_InValidType(self):
@@ -115,75 +92,42 @@ class OTLEnumerationCreatorTests(unittest.TestCase):
         collector = OSLOCollector(mock)
         creator = OTLEnumerationCreator(collector)
         with self.assertRaises(ValueError) as exception_bad_name:
-            creator.CreateBlockToWriteFromEnumerations(bad_primitive)
+            creator.create_block_to_write_from_enumerations(bad_primitive)
         self.assertEqual(str(exception_bad_name.exception), "Input is not a OSLOEnumeration")
 
-    def test_KlAIMToestandOSLOEnumeration(self):
-        collector = EnumerationOSLOCollector(mock)
-        creator = OTLEnumerationCreator(collector)
-        KlAIMToestand = collector.find_enumeration_by_uri(
-            'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KlAIMToestand')
-        dataToWrite = creator.CreateBlockToWriteFromEnumerations(KlAIMToestand)
-
-        self.assertEqual(collector.expectedDataKlAIMToestand, dataToWrite)
-
-    def test_getKeuzelijstWaardesFromUri(self):
-        collector = EnumerationOSLOCollector(mock)
-        creator = OTLEnumerationCreator(collector)
-        KlAIMToestand = collector.find_enumeration_by_uri(
-            'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KlAIMToestand')
-        lijst = creator.get_keuzelijstwaardes_by_name(KlAIMToestand.name)
-
-        self.assertTrue(len(lijst) >= 1)
-        self.assertTrue(isinstance(lijst[0], KeuzelijstWaarde))
-
-    def test_WriteToFileOSLOEnumeration(self):
-        collector = EnumerationOSLOCollector(mock)
-        creator = OTLEnumerationCreator(collector)
-        KlAIMToestand = collector.find_enumeration_by_uri(
-            'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KlAIMToestand')
-        dataToWrite = creator.CreateBlockToWriteFromEnumerations(KlAIMToestand)
-        creator.write_to_file(KlAIMToestand, 'Datatypes', dataToWrite, '../../src/OTLMOW/')
-
-        filelocation = os.path.abspath(os.path.join(os.sep, ROOT_DIR, 'src/OTLMOW/OTLModel/Datatypes/KlAIMToestand.py'))
-        self.assertTrue(os.path.isfile(filelocation))
-
-    def test_WriteToFileOSLOEnumeration2(self):
+    def setUp(self) -> OSLOCollector:
         base_dir = os.path.dirname(os.path.realpath(__file__))
-        file_location = f'{base_dir}/../../src/OTLMOW/InputFiles/OTL 2.3.db'
+        file_location = f'{base_dir}/../OTL_AllCasesTestClass.db'
         sql_reader = SQLDbReader(file_location)
         oslo_creator = OSLOInMemoryCreator(sql_reader)
         collector = OSLOCollector(oslo_creator)
         collector.collect()
+        return collector
 
+    def test_KlTestKeuzelijst(self):
+        collector = self.setUp()
         creator = OTLEnumerationCreator(collector)
         KlAIMToestand = collector.find_enumeration_by_uri(
-            'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KlAlgProvincie')
-        dataToWrite = creator.CreateBlockToWriteFromEnumerations(KlAIMToestand)
-        creator.write_to_file(KlAIMToestand, 'Datatypes', dataToWrite, '../../src/OTLMOW/')
+            'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#KlTestKeuzelijst')
+        dataToWrite = creator.create_block_to_write_from_enumerations(KlAIMToestand)
 
-        filelocation = os.path.abspath(os.path.join(os.sep, ROOT_DIR, 'src/OTLMOW/OTLModel/Datatypes/KlAlgProvincie.py'))
-        self.assertTrue(os.path.isfile(filelocation))
+        self.assertListEqual(expectedKeuzelijst, dataToWrite)
 
-    def test_getKeuzelijstWaardesFromUri2(self):
-        base_dir = os.path.dirname(os.path.realpath(__file__))
-        file_location = f'{base_dir}/../../src/OTLMOW/InputFiles/OTL 2.3.db'
-        sql_reader = SQLDbReader(file_location)
-        oslo_creator = OSLOInMemoryCreator(sql_reader)
-        collector = OSLOCollector(oslo_creator)
-        collector.collect()
-
+    def test_get_keuzelijstwaardes_by_name(self):
+        collector = self.setUp()
         creator = OTLEnumerationCreator(collector)
-        keuzelijst = creator.get_keuzelijstwaardes_by_name("KlAIMToestand")
+        keuzelijst = collector.find_enumeration_by_uri(
+            'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#KlTestKeuzelijst')
+        keuzelijst_waarden = creator.get_keuzelijstwaardes_by_name(keuzelijst.name)
+        self.assertTrue(len(keuzelijst_waarden) > 0)
+        self.assertIsInstance(keuzelijst_waarden[0], KeuzelijstWaarde)
 
-        self.assertTrue(len(keuzelijst) > 0)
-        inontwerp_waarde = next(k for k in keuzelijst if k.invulwaarde == 'in-ontwerp')
-        self.assertEqual('in-ontwerp', inontwerp_waarde.invulwaarde)
-        self.assertEqual('in ontwerp', inontwerp_waarde.label)
-        self.assertEqual('', inontwerp_waarde.definitie)
-        self.assertEqual('https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAIMToestand/in-ontwerp',
-                         inontwerp_waarde.objectUri)
-        pass
+        waarde_2 = next(k for k in keuzelijst_waarden if k.invulwaarde == 'waarde-2')
+        self.assertEqual('waarde-2', waarde_2.invulwaarde)
+        self.assertEqual('waarde 2', waarde_2.label)
+        self.assertEqual('', waarde_2.definitie)
+        self.assertEqual('https://wegenenverkeer.data.vlaanderen.be/id/concept/KlTestKeuzelijst/waarde-2',
+                         waarde_2.objectUri)
 
     def test_get_keuzelijstwaardes_from_graph(self):
         base_dir = os.path.dirname(os.path.realpath(__file__))

@@ -107,7 +107,7 @@ class OTLModelCreator:
         for enumeration in self.osloCollector.enumerations:
 
             try:
-                dataToWrite = creator.CreateBlockToWriteFromEnumerations(enumeration)
+                dataToWrite = creator.create_block_to_write_from_enumerations(enumeration)
                 if dataToWrite is None:
                     logging.info(f"Could not create a class for {enumeration.name}")
                     pass

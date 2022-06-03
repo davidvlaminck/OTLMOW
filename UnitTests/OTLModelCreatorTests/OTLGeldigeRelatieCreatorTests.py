@@ -1,10 +1,12 @@
 # -*- coding: utf-8 -*-
+import os
 import unittest
 from unittest.mock import Mock
 
 from OTLMOW.ModelGenerator.OSLOCollector import OSLOCollector
 from OTLMOW.ModelGenerator.OSLOInMemoryCreator import OSLOInMemoryCreator
 from OTLMOW.ModelGenerator.OTLGeldigeRelatieCreator import OTLGeldigeRelatieCreator
+from OTLMOW.ModelGenerator.SQLDbReader import SQLDbReader
 
 
 class OTLClassCreatorTests(unittest.TestCase):
@@ -228,27 +230,19 @@ class OTLClassCreatorTests(unittest.TestCase):
                      'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#VoedtAangestuurd', 'Source -> Destination', '', '']]
         return []
 
-    def test_init(self):
-        mock = Mock()
-        oSLOCreator = OSLOInMemoryCreator(mock)
-        mock.performReadQuery = self.mockPerformReadQuery
-        listOfRelations = oSLOCreator.get_all_relations()
-        self.assertTrue(len(listOfRelations) >= 1)
+    def setUp(self) -> OSLOCollector:
+        base_dir = os.path.dirname(os.path.realpath(__file__))
+        file_location = f'{base_dir}/../OTL_AllCasesTestClass.db'
+        sql_reader = SQLDbReader(file_location)
+        oslo_creator = OSLOInMemoryCreator(sql_reader)
+        collector = OSLOCollector(oslo_creator)
+        collector.collect()
+        return collector
 
     def test_write(self):
-        mock = Mock()
-        oSLOCreator = OSLOInMemoryCreator(mock)
-        mock.performReadQuery = self.mockPerformReadQuery
-        listOfRelations = oSLOCreator.get_all_relations()
-        listOfClasses = oSLOCreator.get_all_classes()
-        self.assertTrue(len(listOfRelations) >= 1)
-        self.assertTrue(len(listOfClasses) >= 1)
-
-        collector = OSLOCollector(mock)
-        collector.relations = listOfRelations
-        collector.classes = listOfClasses
-
+        # TODO add the two relations to the sqlite
+        collector = self.setUp()
         creator = OTLGeldigeRelatieCreator(collector)
-        dataToWrite = creator.CreateBlockToWriteFromRelations()
+        data_to_write = creator.create_block_to_write_from_relations()
+        self.assertListEqual([], data_to_write)
 
-        self.assertEqual(self.expected_data, dataToWrite)

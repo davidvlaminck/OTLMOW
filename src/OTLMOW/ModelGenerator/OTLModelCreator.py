@@ -142,7 +142,7 @@ class OTLModelCreator:
         creator = OTLGeldigeRelatieCreator(self.osloCollector)
 
         try:
-            dataToWrite = creator.CreateBlockToWriteFromRelations()
+            dataToWrite = creator.create_block_to_write_from_relations()
             if dataToWrite is None:
                 logging.info(f"Could not create a list of GeldigeRelatie objects")
                 pass

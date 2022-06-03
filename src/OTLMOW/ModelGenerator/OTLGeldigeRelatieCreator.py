@@ -8,7 +8,7 @@ class OTLGeldigeRelatieCreator:
         logging.info("Created an instance of OTLGeldigeRelatieCreator")
         self.osloCollector = osloCollector
 
-    def CreateBlockToWriteFromRelations(self):
+    def create_block_to_write_from_relations(self):
         datablock = ['# coding=utf-8', 'from OTLMOW.ModelGenerator.BaseClasses.GeldigeRelatie import GeldigeRelatie']
 
         datablock.extend(['',

@@ -7,9 +7,9 @@ from OTLMOW.OTLModel.Classes.HeeftBetrokkene import HeeftBetrokkene
 from OTLMOW.OTLModel.Classes.Netwerkpoort import Netwerkpoort
 from OTLMOW.OTLModel.Classes.Verkeersregelaar import Verkeersregelaar
 from OTLMOW.OTLModel.Classes.Wegberm import Wegberm
-from TestClasses.OTLModel.Classes.AllCasesTestClass import AllCasesTestClass
+from UnitTests.TestClasses.OTLModel.Classes.AllCasesTestClass import AllCasesTestClass
 
-
+# TODO compare to GeneralTests/DavieDecoderTests
 class DavieDecoderTests(TestCase):
     jsonDataCase1 = """[{
     "assetId": {
@@ -131,15 +131,9 @@ class DavieDecoderTests(TestCase):
             settings={'file_formats': [{"name": "json", "dotnotation": {"waarde_shortcut_applicable": True}}]})
         lijstObjecten = davie_decoder.decode_json_string(
             '[{"typeURI": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#AllCasesTestClass", "toestand": ""}]')
-        self.assertTrue(isinstance(lijstObjecten[0], AllCasesTestClass))
+        self.assertEqual(lijstObjecten[0].typeURI, AllCasesTestClass.typeURI)
+        self.assertIsInstance(lijstObjecten[0], AllCasesTestClass)
         self.assertIsNone(lijstObjecten[0].toestand)
-
-    def test_decode_geometry(self):
-        davie_decoder = JsonDecoder(
-            settings={'file_formats': [{"name": "json", "dotnotation": {"waarde_shortcut_applicable": True}}]})
-        lijstObjecten = davie_decoder.decode_json_string(
-            '[{"typeURI": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#AllCasesTestClass", "geometry": "POINT Z (157696.6 219065.5 0)"}]')
-        self.assertEqual("POINT Z (157696.6 219065.5 0)", lijstObjecten[0].geometry)
 
     def test_decode_Stringfield(self):
         davie_decoder = JsonDecoder(
@@ -159,8 +153,8 @@ class DavieDecoderTests(TestCase):
         davie_decoder = JsonDecoder(
             settings={'file_formats': [{"name": "json", "dotnotation": {"waarde_shortcut_applicable": True}}]})
         lijstObjecten = davie_decoder.decode_json_string(
-            '[{"typeURI": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#AllCasesTestClass", "testDecimalNumberField": 2.5}]')
-        self.assertEqual(2.5, lijstObjecten[0].testDecimalNumberField)
+            '[{"typeURI": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#AllCasesTestClass", "testDecimalField": 2.5}]')
+        self.assertEqual(2.5, lijstObjecten[0].testDecimalField)
 
     def test_decode_TimeField(self):
         davie_decoder = JsonDecoder(

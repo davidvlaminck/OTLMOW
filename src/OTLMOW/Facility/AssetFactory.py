@@ -18,7 +18,7 @@ class AssetFactory:
             py_mod = __import__(name=f'{directory}.{class_name}', fromlist=f'{directory.split(".")[-1]}.{class_name}')
         except ModuleNotFoundError:
             try:
-                py_mod = __import__(name=f'UnitTests.{class_name}', fromlist=f'{class_name}')
+                py_mod = __import__(name=f'UnitTests.TestClasses.OTLModel.Classes.{class_name}', fromlist=f'{class_name}')
             except ModuleNotFoundError:
                 return None
         class_ = getattr(py_mod, class_name)

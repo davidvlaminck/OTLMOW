@@ -19,8 +19,10 @@ class CreateAllTestCasesTests(unittest.TestCase):
         return collector
 
     def test_init_AllCasesTestClass(self):
+        base_dir = os.path.dirname(os.path.realpath(__file__))
+        settings_file_location = f'{base_dir}/../settings_OTLMOW.json'
         otl_facility = OTLFacility(logfile='',
-                                   settings_path="C:\\resources\\settings_OTLMOW.json")  # TODO change to local settings file in unittests
+                                   settings_path=settings_file_location)
 
         collector = self.setUp()
         otl_facility.collector = collector

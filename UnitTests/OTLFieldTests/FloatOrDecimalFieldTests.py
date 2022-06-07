@@ -1,4 +1,5 @@
 import decimal
+import logging
 from unittest import TestCase
 
 from OTLMOW.Facility.Exceptions.CouldNotConvertToCorrectType import CouldNotConvertToCorrectType
@@ -23,18 +24,23 @@ class FloatOrDecimalFieldTests(TestCase):
             FloatOrDecimalField.validate(object(), float_attribute)
 
     def test_convert_to_correct_type(self):
-        self.assertIsNone(FloatOrDecimalField.convert_to_correct_type(None))
-        self.assertEqual(1.0, FloatOrDecimalField.convert_to_correct_type(True))
-        self.assertEqual(0.0, FloatOrDecimalField.convert_to_correct_type(False))
-        self.assertEqual(1.0, FloatOrDecimalField.convert_to_correct_type('1'))
-        self.assertEqual(1.0, FloatOrDecimalField.convert_to_correct_type(1))
-        self.assertEqual(1.0, FloatOrDecimalField.convert_to_correct_type(decimal.Decimal(1)))
+        with self.subTest('Correct values'):
+            self.assertIsNone(FloatOrDecimalField.convert_to_correct_type(None))
+            self.assertEqual(1, FloatOrDecimalField.convert_to_correct_type(1.0))
+            self.assertEqual(-2, FloatOrDecimalField.convert_to_correct_type(-2))
+            self.assertEqual(1.0, FloatOrDecimalField.convert_to_correct_type(decimal.Decimal(1)))
+            self.assertEqual(-2.345, FloatOrDecimalField.convert_to_correct_type(-2.345))
 
-        with self.assertRaises(CouldNotConvertToCorrectType):
-            FloatOrDecimalField.convert_to_correct_type('a')
-        with self.assertRaises(CouldNotConvertToCorrectType):
-            FloatOrDecimalField.convert_to_correct_type(object())
-        with self.assertRaises(CouldNotConvertToCorrectType):
-            FloatOrDecimalField.convert_to_correct_type([])
-        with self.assertRaises(CouldNotConvertToCorrectType):
-            FloatOrDecimalField.convert_to_correct_type({})
+        convertable_values_list = [(True, 1.0), (False, 0.0), ('-1', -1.0), ('2.0000', 2.0)]
+        for value, expected in convertable_values_list:
+            with self.subTest(f'Correct value after conversion: value = {value}'):
+                with self.assertLogs() as captured:
+                    self.assertEqual(expected, FloatOrDecimalField.convert_to_correct_type(value))
+                    warnings = list(filter(lambda r: r.levelno == logging.WARNING, list(captured.records)))
+                    self.assertGreater(len(warnings), 0)
+
+        incorrect_values = ['a', object(), [], {}]
+        for value in incorrect_values:
+            with self.subTest(f'Could not perform conversion: value = {value}'):
+                with self.assertRaises(CouldNotConvertToCorrectType):
+                    FloatOrDecimalField.convert_to_correct_type(value)

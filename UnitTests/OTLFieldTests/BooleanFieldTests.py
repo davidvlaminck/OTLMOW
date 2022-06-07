@@ -1,3 +1,4 @@
+import logging
 from unittest import TestCase
 
 from OTLMOW.Facility.Exceptions.CouldNotConvertToCorrectType import CouldNotConvertToCorrectType
@@ -31,27 +32,23 @@ class BooleanFieldTests(TestCase):
             BooleanField.validate(1.0, boolean_attribute)
 
     def test_convert_to_correct_type(self):
-        self.assertIsNone(BooleanField.convert_to_correct_type(None))
-        self.assertTrue(BooleanField.convert_to_correct_type(True))
-        self.assertFalse(BooleanField.convert_to_correct_type(False))
-        self.assertTrue(BooleanField.convert_to_correct_type(1))
-        self.assertFalse(BooleanField.convert_to_correct_type(0))
-        self.assertTrue(BooleanField.convert_to_correct_type("true"))
-        self.assertFalse(BooleanField.convert_to_correct_type("false"))
-        self.assertTrue(BooleanField.convert_to_correct_type("True"))
-        self.assertFalse(BooleanField.convert_to_correct_type("False"))
+        with self.subTest('Correct values'):
+            self.assertIsNone(BooleanField.convert_to_correct_type(None))
+            self.assertTrue(BooleanField.convert_to_correct_type(True))
+            self.assertFalse(BooleanField.convert_to_correct_type(False))
+            self.assertTrue(BooleanField.convert_to_correct_type(1))
+            self.assertFalse(BooleanField.convert_to_correct_type(0))
 
-        with self.assertRaises(CouldNotConvertToCorrectType):
-            BooleanField.convert_to_correct_type('a')
-        with self.assertRaises(CouldNotConvertToCorrectType):
-            BooleanField.convert_to_correct_type('1')
-        with self.assertRaises(CouldNotConvertToCorrectType):
-            BooleanField.convert_to_correct_type('y')
-        with self.assertRaises(CouldNotConvertToCorrectType):
-            BooleanField.convert_to_correct_type('Y')
-        with self.assertRaises(CouldNotConvertToCorrectType):
-            BooleanField.convert_to_correct_type(object())
-        with self.assertRaises(CouldNotConvertToCorrectType):
-            BooleanField.convert_to_correct_type([])
-        with self.assertRaises(CouldNotConvertToCorrectType):
-            BooleanField.convert_to_correct_type({})
+        convertable_values_dict = {'true': True, 'True': True, 'false': False, 'False': False}
+        for value, expected in convertable_values_dict.items():
+            with self.subTest(f'Correct value after conversion: value = {value}'):
+                with self.assertLogs() as captured:
+                    self.assertEqual(expected, BooleanField.convert_to_correct_type(value))
+                    warnings = list(filter(lambda r: r.levelno == logging.WARNING, list(captured.records)))
+                    self.assertGreater(len(warnings), 0)
+
+        incorrect_values = ['a', '1', 'y', 'Y', object(), [], {}]
+        for value in incorrect_values:
+            with self.subTest(f'Could not perform conversion: value = {value}'):
+                with self.assertRaises(CouldNotConvertToCorrectType):
+                    BooleanField.convert_to_correct_type(value)

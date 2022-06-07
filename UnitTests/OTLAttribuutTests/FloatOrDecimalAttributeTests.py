@@ -9,7 +9,7 @@ class NonStringableObject(object):
         pass
 
 
-class FloatOrDecimalTests(TestCase):
+class FloatOrDecimalAttributeTests(TestCase):
     def test_full_test_on_testclass_kard_1(self):
         instance = AllCasesTestClass()
         with self.subTest('empty instance'):

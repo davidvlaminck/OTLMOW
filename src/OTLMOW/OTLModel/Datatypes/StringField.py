@@ -1,4 +1,5 @@
-﻿import string
+﻿import logging
+import string
 import random
 
 from OTLMOW.Facility.Exceptions.CouldNotConvertToCorrectType import CouldNotConvertToCorrectType
@@ -14,11 +15,19 @@ class StringField(OTLField):
     usagenote = 'https://www.w3.org/TR/xmlschema-2/#string'
 
     @classmethod
-    def convert_to_correct_type(cls, value):
+    def convert_to_correct_type(cls, value, log_warnings=True):
         if value is None:
             return None
+        if isinstance(value, str):
+            return value
+        if isinstance(value, list) or isinstance(value, dict):
+            raise CouldNotConvertToCorrectType(
+                f'The given value of object of type {type(value)} could not be converted to string (implied by {cls.__name__})')
         try:
             str_val = str(value)
+            if log_warnings:
+                logging.warning(
+                    'Assigned a non-string to a boolean datatype. Automatically converted to the correct type. Please change the type')
             return str_val
         except TypeError:
             raise CouldNotConvertToCorrectType(f'The given value of object of type {type(value)} could not be converted to string (implied by {cls.__name__})')

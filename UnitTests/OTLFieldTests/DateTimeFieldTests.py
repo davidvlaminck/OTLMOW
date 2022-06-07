@@ -7,8 +7,10 @@ from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLMOW.OTLModel.Datatypes.TimeField import TimeField
 
 
-class DateFieldTests(TestCase):
+class DateTimeFieldTests(TestCase):
     def test_validate(self):
+        # TODO add tests for DateTime
+        self.assertTrue(False)
         time_attribute = OTLAttribuut(naam='time attribuut')
         self.assertTrue(TimeField.validate(None, time_attribute))
         self.assertTrue(TimeField.validate(datetime.time(10, 11, 12), time_attribute))
@@ -24,6 +26,8 @@ class DateFieldTests(TestCase):
             TimeField.validate(1.0, time_attribute)
 
     def test_convert_to_correct_type(self):
+        # TODO add tests for DateTime
+        self.assertTrue(False)
         with self.subTest('Correct values'):
             self.assertIsNone(TimeField.convert_to_correct_type(None))
             self.assertEqual(datetime.time(10, 11, 12), TimeField.convert_to_correct_type(datetime.time(10, 11, 12)))

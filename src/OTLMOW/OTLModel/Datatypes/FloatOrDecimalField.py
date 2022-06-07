@@ -1,4 +1,5 @@
 ﻿import decimal
+import logging
 import random
 
 from OTLMOW.Facility.Exceptions.CouldNotConvertToCorrectType import CouldNotConvertToCorrectType
@@ -14,15 +15,23 @@ class FloatOrDecimalField(OTLField):
     usagenote = 'https://www.w3.org/TR/xmlschema-2/#decimal'
 
     @classmethod
-    def convert_to_correct_type(cls, value):
+    def convert_to_correct_type(cls, value, log_warnings=True):
         if value is None:
             return None
-        if isinstance(value, bool) or isinstance(value, float):
+        if isinstance(value, bool):
+            if log_warnings:
+                logging.warning(
+                    'Assigned a boolean to a decimal datatype. Automatically converted to the correct type. Please change the type')
+            return value
+        if isinstance(value, float):
             return value
         if isinstance(value, int) or isinstance(value, decimal.Decimal):
             return float(value)
         try:
             float_value = float(value)
+            if log_warnings:
+                logging.warning(
+                    'Assigned a boolean to a decimal datatype. Automatically converted to the correct type. Please change the type')
             return float_value
         except ValueError:
             raise CouldNotConvertToCorrectType(f'"{value}" could not be converted to correct type (implied by {cls.__name__})')

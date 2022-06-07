@@ -9,7 +9,7 @@ class NonStringableObject(object):
         pass
 
 
-class StringFieldTests(TestCase):
+class StringAttributeTests(TestCase):
     def test_full_test_on_testclass_kard_1(self):
         instance = AllCasesTestClass()
         with self.subTest('empty instance'):

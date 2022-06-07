@@ -1,3 +1,4 @@
+import logging
 import random
 
 from OTLMOW.Facility.Exceptions.CouldNotConvertToCorrectType import CouldNotConvertToCorrectType
@@ -13,15 +14,19 @@ class BooleanField(OTLField):
     usagenote = 'https://www.w3.org/TR/xmlschema-2/#boolean'
 
     @classmethod
-    def convert_to_correct_type(cls, value):
+    def convert_to_correct_type(cls, value, log_warnings=True):
         if value is None:
             return None
         if value == True or value == False:
             return value
         if isinstance(value, str):
             if value.lower() == 'false':
+                if log_warnings:
+                    logging.warning('Assigned a string to a boolean datatype. Automatically converted to the correct type. Please change the type')
                 return False
             elif value.lower() == 'true':
+                if log_warnings:
+                    logging.warning('Assigned a string to a boolean datatype. Automatically converted to the correct type. Please change the type')
                 return True
             else:
                 raise CouldNotConvertToCorrectType(f'{value} could not be converted to correct type (implied by {cls.__name__})')

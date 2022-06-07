@@ -2,9 +2,7 @@
 
 from OTLMOW.OTLModel.BaseClasses.OTLObject import OTLObjectHelper
 from OTLMOW.OTLModel.Classes.Aftakking import Aftakking
-from OTLMOW.OTLModel.Classes.Exoten import Exoten
 from OTLMOW.OTLModel.Classes.Verkeersregelaar import Verkeersregelaar
-from OTLMOW.OTLModel.Datatypes.DtcExterneReferentie import DtcExterneReferentie
 
 
 class AttributeInfoTests(TestCase):

@@ -203,7 +203,7 @@ class OSLOInMemoryCreatorTests(unittest.TestCase):
         oslo_creator = OSLOInMemoryCreator(sql_reader)
         list_of_classes = oslo_creator.get_all_classes()
 
-        self.assertEqual(5, len(list_of_classes))
+        self.assertEqual(7, len(list_of_classes))
         self.assertTrue(isinstance(list_of_classes[0], OSLOClass))
 
     def test_get_all_primitive_datatypes(self):

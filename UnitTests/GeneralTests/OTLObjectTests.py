@@ -146,9 +146,9 @@ class OTLObjectsTests(TestCase):
             d = instance.create_dict_from_asset(waarde_shortcut=True)
             expected = {
                 'testComplexTypeMetKard': [{'testBooleanField': True,
-                                             'testStringField': 'string 1'},
-                                            {'testBooleanField': False,
-                                             'testStringField': 'string 2',
-                                             'testComplexType2': {'testStringField': 'string in complex'}}
-                                            ]}
+                                            'testStringField': 'string 1'},
+                                           {'testBooleanField': False,
+                                            'testStringField': 'string 2',
+                                            'testComplexType2': {'testStringField': 'string in complex'}}
+                                           ]}
             self.assertDictEqual(expected, d)

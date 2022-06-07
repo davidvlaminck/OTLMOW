@@ -11,8 +11,15 @@ ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
 
 
 class CsvExporterTests(unittest.TestCase):
+    @staticmethod
+    def set_up_facility():
+        base_dir = os.path.dirname(os.path.realpath(__file__))
+        settings_file_location = f'{base_dir}/../../settings_OTLMOW.json'
+        otl_facility = OTLFacility(logfile='', settings_path=settings_file_location)
+        return otl_facility
+
     def test_init_importer_only_load_with_settings(self):
-        otl_facility = OTLFacility(logfile='', settings_path='C:\\resources\\settings_OTLMOW.json')
+        otl_facility = self.set_up_facility()
 
         with self.subTest('load with correct settings'):
             exporter = CsvExporter(settings=otl_facility.settings)
@@ -31,7 +38,7 @@ class CsvExporterTests(unittest.TestCase):
                 CsvExporter(settings={"file_formats": [{}]})
 
     def test_load_and_writefile(self):
-        otl_facility = OTLFacility(logfile='', settings_path='C:\\resources\\settings_OTLMOW.json')
+        otl_facility = self.set_up_facility()
         importer = CsvImporter(settings=otl_facility.settings)
         file_location = os.path.abspath(os.path.join(os.sep, ROOT_DIR, 'test_file_VR.csv'))
         objects = importer.import_csv_file(file_location)
@@ -42,7 +49,7 @@ class CsvExporterTests(unittest.TestCase):
         self.assertTrue(os.path.isfile(new_file_location))
 
     def test_find_sorted_header_index(self):
-        otl_facility = OTLFacility(logfile='', settings_path='C:\\resources\\settings_OTLMOW.json')
+        otl_facility = self.set_up_facility()
         exporter = CsvExporter(settings=otl_facility.settings)
         with self.subTest('no headers yet'):
             exporter.csv_headers = ['typeURI', 'assetId.identificator', 'assetId.toegekendDoor']
@@ -63,7 +70,7 @@ class CsvExporterTests(unittest.TestCase):
             self.assertEqual(expected, result)
 
     def test_sort_headers(self):
-        otl_facility = OTLFacility(logfile='', settings_path='C:\\resources\\settings_OTLMOW.json')
+        otl_facility = self.set_up_facility()
         exporter = CsvExporter(settings=otl_facility.settings)
         with self.subTest('no headers'):
             result = exporter.sort_headers(['typeURI', 'assetId.identificator', 'assetId.toegekendDoor'])
@@ -81,7 +88,7 @@ class CsvExporterTests(unittest.TestCase):
             self.assertListEqual(expected, result)
 
     def test_create_data_from_objects_empty_objects(self):
-        otl_facility = OTLFacility(logfile='', settings_path='C:\\resources\\settings_OTLMOW.json')
+        otl_facility = self.set_up_facility()
         exporter = CsvExporter(settings=otl_facility.settings)
 
         with self.subTest('empty list of objects'):
@@ -112,7 +119,7 @@ class CsvExporterTests(unittest.TestCase):
             self.assertEqual(None, csv_data[1][2])
 
     def test_create_data_from_objects_nonempty_objects_same_type(self):
-        otl_facility = OTLFacility(logfile='', settings_path='C:\\resources\\settings_OTLMOW.json')
+        otl_facility = self.set_up_facility()
         exporter = CsvExporter(settings=otl_facility.settings)
 
         list_of_objects = [AllCasesTestClass(), AllCasesTestClass()]
@@ -168,7 +175,7 @@ class CsvExporterTests(unittest.TestCase):
             self.assertEqual(['waarde-2'], csv_data[2][9])
 
     def test_create_data_from_objects_cardinality(self):
-        otl_facility = OTLFacility(logfile='', settings_path='C:\\resources\\settings_OTLMOW.json')
+        otl_facility = self.set_up_facility()
         exporter = CsvExporter(settings=otl_facility.settings)
 
         list_of_objects = [AllCasesTestClass()]
@@ -193,7 +200,7 @@ class CsvExporterTests(unittest.TestCase):
         self.assertListEqual(['1.1', '1.2'], csv_data[1][4])
 
     def test_create_data_from_objects_different_settings(self):
-        otl_facility = OTLFacility(logfile='', settings_path='C:\\resources\\settings_OTLMOW.json')
+        otl_facility = self.set_up_facility()
         exporter = CsvExporter(settings=otl_facility.settings)
         exporter.settings = {
             "name": "csv",

@@ -1,6 +1,6 @@
 import unittest
 
-from AllCasesTestClass import AllCasesTestClass
+from TestClasses.OTLModel.Classes.AllCasesTestClass import AllCasesTestClass
 
 
 class OTLObjectHelperTest(unittest.TestCase):

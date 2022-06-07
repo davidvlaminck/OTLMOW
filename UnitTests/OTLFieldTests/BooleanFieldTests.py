@@ -1,9 +1,9 @@
 from unittest import TestCase
 
-from AllCasesTestClass import AllCasesTestClass
 from OTLMOW.Facility.Exceptions.CouldNotConvertToCorrectType import CouldNotConvertToCorrectType
 from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLMOW.OTLModel.Datatypes.BooleanField import BooleanField
+from TestClasses.OTLModel.Classes.AllCasesTestClass import AllCasesTestClass
 
 
 class BooleanFieldTests(TestCase):

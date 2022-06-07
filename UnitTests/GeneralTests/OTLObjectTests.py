@@ -1,10 +1,10 @@
 ﻿from datetime import date
 from unittest import TestCase
 
-from AllCasesTestClass import AllCasesTestClass
 from OTLMOW.OTLModel.BaseClasses.OTLObject import OTLObjectHelper
 from OTLMOW.OTLModel.Classes.Aftakking import Aftakking
 from OTLMOW.OTLModel.Classes.Verkeersregelaar import Verkeersregelaar
+from TestClasses.OTLModel.Classes.AllCasesTestClass import AllCasesTestClass
 
 
 class OTLObjectsTests(TestCase):
@@ -71,13 +71,13 @@ class OTLObjectsTests(TestCase):
             instance.testStringField = 'string'
             instance.testBooleanField = True
             instance.testKeuzelijst = 'waarde-2'
-            instance.testDecimalNumberField = 1.5
+            instance.testDecimalField = 1.5
             instance.testDateField = date(year=2022, month=2, day=2)
 
             d = instance.create_dict_from_asset()
             expected = {'testBooleanField': True,
                         'testDateField': '2022-02-02',
-                        'testDecimalNumberField': 1.5,
+                        'testDecimalField': 1.5,
                         'testKeuzelijst': 'waarde-2',
                         'testStringField': 'string'}
             self.assertDictEqual(expected, d)
@@ -88,11 +88,11 @@ class OTLObjectsTests(TestCase):
             instance._testStringFieldMetKard.add_value('string 2')
             instance._testKeuzelijstMetKard.add_value('waarde-1')
             instance._testKeuzelijstMetKard.add_value('waarde-2')
-            instance._testDecimalNumberFieldMetKard.add_value(1.5)
-            instance._testDecimalNumberFieldMetKard.add_value(2.5)
+            instance._testDecimalFieldMetKard.add_value(1.5)
+            instance._testDecimalFieldMetKard.add_value(2.5)
 
             d = instance.create_dict_from_asset()
-            expected = {'testDecimalNumberFieldMetKard': [1.5, 2.5],
+            expected = {'testDecimalFieldMetKard': [1.5, 2.5],
                         'testKeuzelijstMetKard': ['waarde-1', 'waarde-2'],
                         'testStringFieldMetKard': ['string', 'string 2']}
             self.assertDictEqual(expected, d)

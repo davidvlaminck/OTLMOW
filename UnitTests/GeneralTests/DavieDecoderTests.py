@@ -2,12 +2,12 @@ from datetime import date, datetime, time
 from unittest import TestCase
 
 from OTLMOW.Facility.FileFormats.JsonDecoder import JsonDecoder
-from UnitTests.AllCasesTestClass import AllCasesTestClass
 from OTLMOW.OTLModel.Classes.ExterneDetectie import ExterneDetectie
 from OTLMOW.OTLModel.Classes.HeeftBetrokkene import HeeftBetrokkene
 from OTLMOW.OTLModel.Classes.Netwerkpoort import Netwerkpoort
 from OTLMOW.OTLModel.Classes.Verkeersregelaar import Verkeersregelaar
 from OTLMOW.OTLModel.Classes.Wegberm import Wegberm
+from TestClasses.OTLModel.Classes.AllCasesTestClass import AllCasesTestClass
 
 
 class DavieDecoderTests(TestCase):

@@ -1,6 +1,6 @@
 from unittest import TestCase
 
-from AllCasesTestClass import AllCasesTestClass
+from TestClasses.OTLModel.Classes.AllCasesTestClass import AllCasesTestClass
 
 
 class NonStringableObject(object):

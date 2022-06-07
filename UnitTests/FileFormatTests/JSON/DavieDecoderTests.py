@@ -2,12 +2,12 @@ from datetime import date, datetime, time
 from unittest import TestCase
 
 from OTLMOW.Facility.FileFormats.JsonDecoder import JsonDecoder
-from UnitTests.AllCasesTestClass import AllCasesTestClass
 from OTLMOW.OTLModel.Classes.ExterneDetectie import ExterneDetectie
 from OTLMOW.OTLModel.Classes.HeeftBetrokkene import HeeftBetrokkene
 from OTLMOW.OTLModel.Classes.Netwerkpoort import Netwerkpoort
 from OTLMOW.OTLModel.Classes.Verkeersregelaar import Verkeersregelaar
 from OTLMOW.OTLModel.Classes.Wegberm import Wegberm
+from TestClasses.OTLModel.Classes.AllCasesTestClass import AllCasesTestClass
 
 
 class DavieDecoderTests(TestCase):
@@ -139,7 +139,7 @@ class DavieDecoderTests(TestCase):
             settings={'file_formats': [{"name": "json", "dotnotation": {"waarde_shortcut_applicable": True}}]})
         lijstObjecten = davie_decoder.decode_json_string(
             '[{"typeURI": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#AllCasesTestClass", "geometry": "POINT Z (157696.6 219065.5 0)"}]')
-        self.assertIsNone(lijstObjecten[0].toestand)
+        self.assertEqual("POINT Z (157696.6 219065.5 0)", lijstObjecten[0].geometry)
 
     def test_decode_Stringfield(self):
         davie_decoder = JsonDecoder(

@@ -1,10 +1,11 @@
 import os
 import unittest
 
-from AllCasesTestClass import AllCasesTestClass
+
 from OTLMOW.Facility.FileFormats.CsvExporter import CsvExporter
 from OTLMOW.Facility.FileFormats.CsvImporter import CsvImporter
 from OTLMOW.Facility.OTLFacility import OTLFacility
+from TestClasses.OTLModel.Classes.AllCasesTestClass import AllCasesTestClass
 
 ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
 
@@ -116,7 +117,7 @@ class CsvExporterTests(unittest.TestCase):
 
         list_of_objects = [AllCasesTestClass(), AllCasesTestClass()]
         list_of_objects[0].assetId.identificator = '0'
-        list_of_objects[0].testDecimalNumberField = 1.0
+        list_of_objects[0].testDecimalField = 1.0
         list_of_objects[0].testBooleanField = True
         list_of_objects[0].testKeuzelijst = 'waarde-1'
         list_of_objects[0].testComplexType.testStringField = 'string in complex veld'
@@ -125,7 +126,7 @@ class CsvExporterTests(unittest.TestCase):
         list_of_objects[1].assetId.identificator = '1'
         list_of_objects[1].testBooleanField = False
         list_of_objects[1].testKeuzelijstMetKard = ['waarde-2']
-        list_of_objects[1].testDecimalNumberField = 2.5
+        list_of_objects[1].testDecimalField = 2.5
         list_of_objects[1].testComplexType.testComplexType2.testStringField = 'string in complex veld binnenin complex veld'
 
         csv_data = exporter.create_data_from_objects(list_of_objects)
@@ -138,7 +139,7 @@ class CsvExporterTests(unittest.TestCase):
             self.assertEqual('testComplexType.testComplexType2.testStringField', csv_data[0][4])
             self.assertEqual('testComplexType.testKwantWrd', csv_data[0][5])
             self.assertEqual('testComplexType.testStringField', csv_data[0][6])
-            self.assertEqual('testDecimalNumberField', csv_data[0][7])
+            self.assertEqual('testDecimalField', csv_data[0][7])
             self.assertEqual('testKeuzelijst', csv_data[0][8])
             self.assertEqual('testKeuzelijstMetKard[]', csv_data[0][9])
 
@@ -207,7 +208,7 @@ class CsvExporterTests(unittest.TestCase):
 
         list_of_objects = [AllCasesTestClass(), AllCasesTestClass()]
         list_of_objects[0].assetId.identificator = '0'
-        list_of_objects[0].testDecimalNumberField = 1.0
+        list_of_objects[0].testDecimalField = 1.0
         list_of_objects[0].testBooleanField = True
         list_of_objects[0].testKeuzelijst = 'waarde-1'
         list_of_objects[0].testComplexType.testStringField = 'string in complex veld'
@@ -216,7 +217,7 @@ class CsvExporterTests(unittest.TestCase):
         list_of_objects[1].assetId.identificator = '1'
         list_of_objects[1].testBooleanField = False
         list_of_objects[1].testKeuzelijstMetKard = ['waarde-2','waarde-3']
-        list_of_objects[1].testDecimalNumberField = 2.5
+        list_of_objects[1].testDecimalField = 2.5
         list_of_objects[1].testComplexType.testComplexType2.testStringField = 'string in complex veld binnenin complex veld'
 
         csv_data = exporter.create_data_from_objects(list_of_objects)

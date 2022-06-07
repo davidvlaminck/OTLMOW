@@ -1,9 +1,9 @@
 import unittest
 from datetime import datetime
 
-from AllCasesTestClass import AllCasesTestClass
 from OTLMOW.Facility.OTLFacility import OTLFacility
 from OTLMOW.ModelGenerator.OtlAssetJSONEncoder import OtlAssetJSONEncoder
+from TestClasses.OTLModel.Classes.AllCasesTestClass import AllCasesTestClass
 
 
 class OtlAssetJSONEncoderTests(unittest.TestCase):
@@ -62,8 +62,9 @@ class OtlAssetJSONEncoderTests(unittest.TestCase):
         instance.testComplexType.testBooleanField = True
         instance.testComplexType.testComplexType2.testStringField = 'string niveau 2'
         json_instance = encoder.encode(instance)
-        expected = '{"testComplexType": {"testBooleanField": true, "testStringField": "string", ' \
-                   '"testComplexType2": {"testStringField": "string niveau 2"}}, ' \
+        expected = '{"testComplexType": {"testBooleanField": true, ' \
+                   '"testComplexType2": {"testStringField": "string niveau 2"}, ' \
+                   '"testStringField": "string"}, ' \
                    '"typeURI": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#AllCasesTestClass"}'
 
         self.assertEqual(expected, json_instance)

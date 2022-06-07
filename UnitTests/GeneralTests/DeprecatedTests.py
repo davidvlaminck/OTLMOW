@@ -8,7 +8,7 @@ from OTLMOW.OTLModel.Classes.Voedt import Voedt
 
 class DeprecatedTests(TestCase):
     def test_use_regular_class(self):
-        a = Aftakking()
+        a = Aftakking() # TODO change to AllCasesTestClass
         if hasattr(a, 'deprecated_version'):
             self.assertIsNone(a.deprecated_version)
         else:

@@ -3,7 +3,6 @@ from unittest import TestCase
 
 from OTLMOW.Facility.DotnotationHelper import DotnotationHelper
 from OTLMOW.Facility.SettingsManager import SettingsManager
-from OTLMOW.OTLModel.Classes.BestratingVanKassei import BestratingVanKassei
 from TestClasses.OTLModel.Classes.AllCasesTestClass import AllCasesTestClass
 
 
@@ -302,5 +301,3 @@ class DotnotationHelperTests(TestCase):
                  'waarde_shortcut_applicable': False}
              }]
         settingsmanager.load_settings_in_app()
-
-    # issue aanmaken voor testclass te genereren

@@ -203,7 +203,7 @@ class OSLOInMemoryCreatorTests(unittest.TestCase):
         oslo_creator = OSLOInMemoryCreator(sql_reader)
         list_of_classes = oslo_creator.get_all_classes()
 
-        self.assertEqual(7, len(list_of_classes))
+        self.assertEqual(10, len(list_of_classes))
         self.assertTrue(isinstance(list_of_classes[0], OSLOClass))
 
     def test_get_all_primitive_datatypes(self):
@@ -268,7 +268,7 @@ class OSLOInMemoryCreatorTests(unittest.TestCase):
         oslo_creator = OSLOInMemoryCreator(sql_reader)
         inheritances = oslo_creator.get_all_inheritances()
 
-        self.assertEqual(4, len(inheritances))
+        self.assertEqual(9, len(inheritances))
         self.assertTrue(isinstance(inheritances[0], Inheritance))
         self.assertEqual('https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMDBStatus', inheritances[0].base_uri)
         self.assertEqual('https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMObject', inheritances[0].class_uri)

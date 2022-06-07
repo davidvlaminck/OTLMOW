@@ -149,7 +149,7 @@ class OTLModelCreator:
             if len(dataToWrite) == 0:
                 logging.info(f"Could not create a list of GeldigeRelatie objects")
                 pass
-            creator.writeToFile(dataToWrite, directory + '../')
+            creator.writeToFile(dataToWrite, directory)
             logging.info(f"Created a list of GeldigeRelatie objects")
         except Exception as e:
             logging.error(str(e))

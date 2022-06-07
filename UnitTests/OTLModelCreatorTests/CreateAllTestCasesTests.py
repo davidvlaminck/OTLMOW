@@ -1,3 +1,4 @@
+import logging
 import os
 import unittest
 
@@ -30,5 +31,12 @@ class CreateAllTestCasesTests(unittest.TestCase):
         otl_facility.init_otl_model_creator(otl_file_location)
         otl_facility.create_otl_datamodel(directory=f'{base_dir}/../TestClasses')
 
-        allcasesclass_location = f'{base_dir}/../TestClasses/OTLModel/Classes/AllCasesTestClass.py' # TODO check for errors in logging
-        self.assertTrue(os.path.isfile(allcasesclass_location))
+        with self.assertLogs() as captured:
+            otl_facility.create_otl_datamodel(directory=f'{base_dir}/../TestClasses')
+            allcasesclass_location = f'{base_dir}/../TestClasses/OTLModel/Classes/AllCasesTestClass.py'
+            self.assertTrue(os.path.isfile(allcasesclass_location))
+
+        errors = list(filter(lambda r: r.levelno >= logging.ERROR, list(captured.records)))
+
+        self.assertListEqual([], errors)
+

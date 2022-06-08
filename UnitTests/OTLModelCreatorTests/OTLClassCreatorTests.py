@@ -1,6 +1,7 @@
 import os
 import unittest
 from unittest import mock, skip
+from unittest.mock import MagicMock
 
 from OTLMOW.GeometrieArtefact.GeometrieType import GeometrieType
 from OTLMOW.ModelGenerator.Inheritance import Inheritance
@@ -89,7 +90,7 @@ class GeometrieArtefactCollectorDouble:
 
 class OTLClassCreatorTests(unittest.TestCase):
     def test_InvalidOSLOClassEmptyUri(self):
-        collector = OSLOCollector(mock)
+        collector = OSLOCollector(MagicMock(spec=OSLOInMemoryCreator))
         creator = OTLClassCreator(collector)
         osloClass = OSLOClass(name='name', objectUri='', definition='', label='', usagenote='', abstract=1,
                               deprecated_version='')
@@ -99,7 +100,7 @@ class OTLClassCreatorTests(unittest.TestCase):
         self.assertEqual(str(exception_empty_uri.exception), "OSLOClass.objectUri is invalid. Value = ''")
 
     def test_InvalidOSLODatatypeComplexBadUri(self):
-        collector = OSLOCollector(mock)
+        collector = OSLOCollector(MagicMock(spec=OSLOInMemoryCreator))
         creator = OTLClassCreator(collector)
         osloClass = OSLOClass(name='name', objectUri='Bad objectUri', definition='', label='', usagenote='', abstract=1,
                               deprecated_version='')
@@ -109,7 +110,7 @@ class OTLClassCreatorTests(unittest.TestCase):
         self.assertEqual(str(exception_bad_uri.exception), "OSLOClass.objectUri is invalid. Value = 'Bad objectUri'")
 
     def test_InvalidOSLODatatypeComplexEmptyName(self):
-        collector = OSLOCollector(mock)
+        collector = OSLOCollector(MagicMock(spec=OSLOInMemoryCreator))
         creator = OTLClassCreator(collector)
         osloClass = OSLOClass(name='',
                               objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcIdentificator',
@@ -122,7 +123,7 @@ class OTLClassCreatorTests(unittest.TestCase):
 
     def test_InValidType(self):
         bad_Class = True
-        collector = OSLOCollector(mock)
+        collector = OSLOCollector(MagicMock(spec=OSLOInMemoryCreator))
         creator = OTLClassCreator(collector)
         with self.assertRaises(ValueError) as exception_bad_name:
             creator.create_blocks_to_write_from_classes(bad_Class)

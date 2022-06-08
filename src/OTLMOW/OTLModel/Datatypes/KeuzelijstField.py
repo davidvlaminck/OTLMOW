@@ -1,4 +1,7 @@
-﻿from OTLMOW.OTLModel.BaseClasses.OTLField import OTLField
+﻿import warnings
+
+from OTLMOW.Facility.Exceptions.RemovedOptionWarning import RemovedOptionWarning
+from OTLMOW.OTLModel.BaseClasses.OTLField import OTLField
 
 
 class KeuzelijstField(OTLField):
@@ -13,6 +16,14 @@ class KeuzelijstField(OTLField):
             if not value in attribuut.field.options.keys():
                 raise ValueError(
                     f'{value} is not a valid option for {attribuut.naam}, find the valid options using .attr_type_info("{attribuut.naam}")')
+
+            option_value = attribuut.field.options[value]
+            if option_value.status == 'uitgebruik':
+                warnings.warn(message=f'{value} is a deprecated value for {attribuut.naam}, please refrain from using this value.',
+                              category=DeprecationWarning)
+            if option_value.status == 'verwijderd':
+                warnings.warn(category=RemovedOptionWarning,
+                              message=f'{value} is not a valid value for {attribuut.naam}. This will result in a valdation error when updating this attribute.')
         return True
 
     def __str__(self):

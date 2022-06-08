@@ -1,6 +1,6 @@
 import os
 import unittest
-from unittest import mock
+from unittest.mock import MagicMock
 
 import rdflib
 
@@ -41,7 +41,22 @@ expectedKeuzelijst = ['# coding=utf-8',
                       "        'waarde-3': KeuzelijstWaarde(invulwaarde='waarde-3',",
                       "                                     label='waarde 3',",
                       '                                     '
-                      "objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlTestKeuzelijst/waarde-3')",
+                      "objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlTestKeuzelijst/waarde-3'),",
+                      "        'waarde-4': KeuzelijstWaarde(invulwaarde='waarde-4',",
+                      "                                     label='waarde 4',",
+"                                     status='ingebruik',",
+                      '                                     '
+                      "objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlTestKeuzelijst/waarde-4'),",
+                      "        'waarde-5': KeuzelijstWaarde(invulwaarde='waarde-5',",
+                      "                                     label='waarde 5',",
+"                                     status='uitgebruik',",
+                      '                                     '
+                      "objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlTestKeuzelijst/waarde-5'),",
+                      "        'waarde-6': KeuzelijstWaarde(invulwaarde='waarde-6',",
+                      "                                     label='waarde 6',",
+"                                     status='verwijderd',",
+                      '                                     '
+                      "objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlTestKeuzelijst/waarde-6')",
                       '    }',
                       '',
                       '    @classmethod',
@@ -56,7 +71,7 @@ expectedKeuzelijst = ['# coding=utf-8',
 
 class OTLEnumerationCreatorTests(unittest.TestCase):
     def test_InvalidOSLOEnumerationEmptyUri(self):
-        collector = OSLOCollector(mock)
+        collector = OSLOCollector(MagicMock(spec=OSLOInMemoryCreator))
         creator = OTLEnumerationCreator(collector)
         osloEnumeration = OSLOEnumeration(name='name', objectUri='', definition='', label='', usagenote='',
                                           deprecated_version='', codelist='')
@@ -66,7 +81,7 @@ class OTLEnumerationCreatorTests(unittest.TestCase):
         self.assertEqual(str(exception_empty_uri.exception), "OSLOEnumeration.objectUri is invalid. Value = ''")
 
     def test_InvalidOSLOEnumerationBadUri(self):
-        collector = OSLOCollector(mock)
+        collector = OSLOCollector(MagicMock(spec=OSLOInMemoryCreator))
         creator = OTLEnumerationCreator(collector)
         osloEnumeration = OSLOEnumeration(name='name', objectUri='Bad objectUri', definition='', label='', usagenote='',
                                           deprecated_version='', codelist='')
@@ -76,7 +91,7 @@ class OTLEnumerationCreatorTests(unittest.TestCase):
         self.assertEqual(str(exception_bad_uri.exception), "OSLOEnumeration.objectUri is invalid. Value = 'Bad objectUri'")
 
     def test_InvalidOSLOEnumerationEmptyName(self):
-        collector = OSLOCollector(mock)
+        collector = OSLOCollector(MagicMock(spec=OSLOInMemoryCreator))
         creator = OTLEnumerationCreator(collector)
         osloEnumeration = OSLOEnumeration(name='',
                                           objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrd',
@@ -89,7 +104,7 @@ class OTLEnumerationCreatorTests(unittest.TestCase):
 
     def test_InValidType(self):
         bad_primitive = True
-        collector = OSLOCollector(mock)
+        collector = OSLOCollector(MagicMock(spec=OSLOInMemoryCreator))
         creator = OTLEnumerationCreator(collector)
         with self.assertRaises(ValueError) as exception_bad_name:
             creator.create_block_to_write_from_enumerations(bad_primitive)
@@ -111,7 +126,7 @@ class OTLEnumerationCreatorTests(unittest.TestCase):
             'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#KlTestKeuzelijst')
         dataToWrite = creator.create_block_to_write_from_enumerations(KlAIMToestand)
 
-        self.assertListEqual(expectedKeuzelijst, dataToWrite)
+        self.assertEqual(expectedKeuzelijst, dataToWrite)
 
     def test_get_keuzelijstwaardes_by_name(self):
         collector = self.setUp()
@@ -131,11 +146,11 @@ class OTLEnumerationCreatorTests(unittest.TestCase):
 
     def test_get_keuzelijstwaardes_from_graph(self):
         base_dir = os.path.dirname(os.path.realpath(__file__))
-        file_location = f'{base_dir}/AntiParkeerpaalType.ttl'
+        file_location = f'{base_dir}/KlTestKeuzelijst.ttl'
         g = rdflib.Graph()
         g.parse(file_location, format="turtle")
         list = OTLEnumerationCreator.get_keuzelijstwaardes_from_graph(g)
-        self.assertEqual(2, len(list))
+        self.assertEqual(6, len(list))
 
     def test_get_keuzelijstwaardes_from_graph_new_format(self):
         base_dir = os.path.dirname(os.path.realpath(__file__))
@@ -144,3 +159,19 @@ class OTLEnumerationCreatorTests(unittest.TestCase):
         g.parse(file_location, format="turtle")
         list = OTLEnumerationCreator.get_keuzelijstwaardes_from_graph(g)
         self.assertEqual(2, len(list))
+
+    def test_adms_status(self):
+        collector = self.setUp()
+        creator = OTLEnumerationCreator(collector)
+        keuzelijst = collector.find_enumeration_by_uri(
+            'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#KlTestKeuzelijst')
+        keuzelijst_waarden = creator.get_keuzelijstwaardes_by_name(keuzelijst.name)
+
+        waarde_4 = next(k for k in keuzelijst_waarden if k.invulwaarde == 'waarde-4')
+        self.assertEqual('ingebruik', waarde_4.status)
+
+        waarde_5 = next(k for k in keuzelijst_waarden if k.invulwaarde == 'waarde-5')
+        self.assertEqual('uitgebruik', waarde_5.status)
+
+        waarde_6 = next(k for k in keuzelijst_waarden if k.invulwaarde == 'waarde-6')
+        self.assertEqual('verwijderd', waarde_6.status)

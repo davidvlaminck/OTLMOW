@@ -1,0 +1,2 @@
+﻿class RemovedOptionWarning(Warning):
+    pass

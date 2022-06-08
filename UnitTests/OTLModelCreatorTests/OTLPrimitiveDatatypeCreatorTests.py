@@ -1,6 +1,6 @@
 import os
 import unittest
-from unittest import mock
+from unittest.mock import MagicMock
 
 from OTLMOW.ModelGenerator.OSLOCollector import OSLOCollector
 from OTLMOW.ModelGenerator.OSLODatatypePrimitive import OSLODatatypePrimitive
@@ -152,7 +152,7 @@ class PrimitiveDatatypeOSLOCollector(OSLOCollector):
 
 class OTLPrimitiveDatatypeCreatorTests(unittest.TestCase):
     def test_InvalidOSLODatatypePrimitiveEmptyUri(self):
-        collector = OSLOCollector(mock)
+        collector = OSLOCollector(MagicMock(spec=OSLOInMemoryCreator))
         creator = OTLPrimitiveDatatypeCreator(collector)
         osloDatatypePrimitive = OSLODatatypePrimitive(name='name', objectUri='', definition='', label='', usagenote='',
                                                       deprecated_version='')
@@ -162,7 +162,7 @@ class OTLPrimitiveDatatypeCreatorTests(unittest.TestCase):
         self.assertEqual(str(exception_empty_uri.exception), "OSLODatatypePrimitive.objectUri is invalid. Value = ''")
 
     def test_InvalidOSLODatatypePrimitiveBadUri(self):
-        collector = OSLOCollector(mock)
+        collector = OSLOCollector(MagicMock(spec=OSLOInMemoryCreator))
         creator = OTLPrimitiveDatatypeCreator(collector)
         osloDatatypePrimitive = OSLODatatypePrimitive(name='name', objectUri='Bad objectUri', definition='', label='',
                                                       usagenote='',
@@ -173,7 +173,7 @@ class OTLPrimitiveDatatypeCreatorTests(unittest.TestCase):
         self.assertEqual(str(exception_bad_uri.exception), "OSLODatatypePrimitive.objectUri is invalid. Value = 'Bad objectUri'")
 
     def test_InvalidOSLODatatypePrimitiveEmptyName(self):
-        collector = OSLOCollector(mock)
+        collector = OSLOCollector(MagicMock(spec=OSLOInMemoryCreator))
         creator = OTLPrimitiveDatatypeCreator(collector)
         osloDatatypePrimitive = OSLODatatypePrimitive(name='',
                                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrd',
@@ -186,7 +186,7 @@ class OTLPrimitiveDatatypeCreatorTests(unittest.TestCase):
 
     def test_InValidType(self):
         bad_primitive = True
-        collector = OSLOCollector(mock)
+        collector = OSLOCollector(MagicMock(spec=OSLOInMemoryCreator))
         creator = OTLPrimitiveDatatypeCreator(collector)
         with self.assertRaises(ValueError) as exception_bad_name:
             creator.create_block_to_write_from_primitive_types(bad_primitive)
@@ -197,7 +197,7 @@ class OTLPrimitiveDatatypeCreatorTests(unittest.TestCase):
                                                   definition="Beschrijft een boolean volgens http://www.w3.org/2001/XMLSchema#boolean.",
                                                   label="Boolean", usagenote="https://www.w3.org/TR/xmlschema-2/#boolean",
                                                   deprecated_version="")
-        collector = OSLOCollector(mock)
+        collector = OSLOCollector(MagicMock(spec=OSLOInMemoryCreator))
         creator = OTLPrimitiveDatatypeCreator(collector)
         blockToWrite = creator.create_block_to_write_from_primitive_types(boolean_primitive)
         self.assertIsNone(blockToWrite)

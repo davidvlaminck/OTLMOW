@@ -27,3 +27,27 @@
   skos:notation "waarde-3";
   skos:prefLabel "waarde 3"@nl;
   skos:topConceptOf <https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlTestKeuzelijst> .
+
+<https://wegenenverkeer.data.vlaanderen.be/id/concept/KlTestKeuzelijst/waarde-4> a skos:Concept;
+<https://www.w3.org/ns/adms#status> <https://wegenenverkeer.data.vlaanderen.be/id/concept/KlKeuzelijstStatus/ingebruik> ;
+  skos:definition ""@nl;
+  skos:inScheme <https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlTestKeuzelijst>;
+  skos:notation "waarde-4";
+  skos:prefLabel "waarde 4"@nl;
+  skos:topConceptOf <https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlTestKeuzelijst> .
+
+<https://wegenenverkeer.data.vlaanderen.be/id/concept/KlTestKeuzelijst/waarde-5> a skos:Concept;
+<https://www.w3.org/ns/adms#status> <https://wegenenverkeer.data.vlaanderen.be/id/concept/KlKeuzelijstStatus/uitgebruik> ;
+  skos:definition ""@nl;
+  skos:inScheme <https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlTestKeuzelijst>;
+  skos:notation "waarde-5";
+  skos:prefLabel "waarde 5"@nl;
+  skos:topConceptOf <https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlTestKeuzelijst> .
+
+<https://wegenenverkeer.data.vlaanderen.be/id/concept/KlTestKeuzelijst/waarde-6> a skos:Concept;
+<https://www.w3.org/ns/adms#status> <https://wegenenverkeer.data.vlaanderen.be/id/concept/KlKeuzelijstStatus/verwijderd> ;
+  skos:definition ""@nl;
+  skos:inScheme <https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlTestKeuzelijst>;
+  skos:notation "waarde-6";
+  skos:prefLabel "waarde 6"@nl;
+  skos:topConceptOf <https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlTestKeuzelijst> .

@@ -55,6 +55,8 @@ class OTLEnumerationCreator(AbstractDatatypeCreator):
             whitespace = AbstractDatatypeCreator.get_white_space_equivalent(f"        '{waarde.invulwaarde}': KeuzelijstWaarde(")
             datablock.append(f"        '{waarde.invulwaarde}': KeuzelijstWaarde(invulwaarde='{waarde.invulwaarde}',")
             datablock.append(f"{whitespace}label='{waarde.label}',")
+            if waarde.status != '':
+                datablock.append(f"{whitespace}status='{waarde.status}',")
             if waarde.definitie != '':
                 datablock.append(f"{whitespace}definitie={wrap_in_quotes(waarde.definitie)},")
             datablock.append(f"{whitespace}objectUri='{waarde.objectUri}'),")
@@ -118,6 +120,6 @@ class OTLEnumerationCreator(AbstractDatatypeCreator):
                 elif str(p) == 'http://www.w3.org/2004/02/skos/core#definition':
                     waarde.definitie = str(o)
                 elif str(p) == 'https://www.w3.org/ns/adms#status':
-                    waarde.status = str(o)
+                    waarde.status = str(o).replace('https://wegenenverkeer.data.vlaanderen.be/id/concept/KlKeuzelijstStatus/', '')
             lijst_keuze_opties.append(waarde)
         return sorted(lijst_keuze_opties, key=lambda l: l.invulwaarde)

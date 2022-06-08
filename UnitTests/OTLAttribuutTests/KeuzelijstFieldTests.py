@@ -1,5 +1,6 @@
 from unittest import TestCase
 
+from OTLMOW.Facility.Exceptions.RemovedOptionWarning import RemovedOptionWarning
 from TestClasses.OTLModel.Classes.AllCasesTestClass import AllCasesTestClass
 
 
@@ -9,6 +10,22 @@ class NonStringableObject(object):
 
 
 class KeuzelijstFieldTests(TestCase):
+    def test_adms_status(self):
+        instance = AllCasesTestClass()
+        with self.subTest('ingebruik value'):
+            instance.testKeuzelijst = 'waarde-4'
+            self.assertEqual('waarde-4', instance.testKeuzelijst)
+
+        with self.subTest('uitgebruik value'):
+            with self.assertWarns(DeprecationWarning):
+                instance.testKeuzelijst = 'waarde-5'
+                self.assertEqual('waarde-5', instance.testKeuzelijst)
+
+        with self.subTest('verwijderd value'):
+            with self.assertWarns(RemovedOptionWarning):
+                instance.testKeuzelijst = 'waarde-6'
+                self.assertEqual('waarde-6', instance.testKeuzelijst)
+
     def test_full_test_on_testclass_kard_1(self):
         instance = AllCasesTestClass()
         with self.subTest('empty instance'):

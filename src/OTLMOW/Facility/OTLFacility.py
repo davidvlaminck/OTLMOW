@@ -1,6 +1,8 @@
 import json
 import logging
+import os
 from collections import defaultdict
+from os.path import abspath
 
 from OTLMOW.Facility.AssetFactory import AssetFactory
 from OTLMOW.Facility.FileFormats.DavieImporter import DavieImporter
@@ -79,6 +81,9 @@ class OTLFacility:
         self.collector.collect()
         if self.geoAcollector is not None:
             self.geoAcollector.collect()
+        if directory == '':
+            base_dir = os.path.dirname(os.path.realpath(__file__))
+            directory = abspath(f'{base_dir}/../')
         self.modelCreator.create_full_model(directory=directory)
 
     def init_postenmapping_creator(self, otl_file_location):

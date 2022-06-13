@@ -10,3 +10,4 @@
 /dist/*.tar.gz
 /venv/
 /.idea/OTLMOW.iml
+/src/OTLMOW/SampleCode/logs.txt

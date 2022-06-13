@@ -1,13 +1,13 @@
 # coding=utf-8
 from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from OTLMOW.OTLModel.Classes.AIMObject import AIMObject
 from OTLMOW.OTLModel.Classes.Put import Put
+from OTLMOW.OTLModel.Classes.AIMObject import AIMObject
 from OTLMOW.OTLModel.Datatypes.KlPutMateriaal import KlPutMateriaal
 from OTLMOW.GeometrieArtefact.VlakGeometrie import VlakGeometrie
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class BlindePut(AIMObject, Put, VlakGeometrie):
+class BlindePut(Put, AIMObject, VlakGeometrie):
     """Een put waar de riolering op aangesloten is maar die niet meer zichtbaar is."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/installatie#BlindePut'

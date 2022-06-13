@@ -1,12 +1,12 @@
 # coding=utf-8
 from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from OTLMOW.OTLModel.Classes.ContainerBuis import ContainerBuis
 from OTLMOW.OTLModel.Classes.Buis import Buis
+from OTLMOW.OTLModel.Classes.ContainerBuis import ContainerBuis
 from OTLMOW.OTLModel.Datatypes.KlRioleringsbuisMateriaal import KlRioleringsbuisMateriaal
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Mantelbuis(ContainerBuis, Buis):
+class Mantelbuis(Buis, ContainerBuis):
     """Een ondergrondse buis bestemd voor de doorvoer van kabels en/of leidingen."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Mantelbuis'

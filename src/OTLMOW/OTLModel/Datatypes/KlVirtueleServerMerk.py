@@ -1,6 +1,7 @@
 # coding=utf-8
 import random
 from OTLMOW.OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
+from OTLMOW.OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 
 # Generated with OTLEnumerationCreator. To modify: extend, do not edit
@@ -12,6 +13,10 @@ class KlVirtueleServerMerk(KeuzelijstField):
     definition = 'Het merk van de virtuele server.'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlVirtueleServerMerk'
     options = {
+        'ram': KeuzelijstWaarde(invulwaarde='ram',
+                                label='RAM',
+                                definitie='RAM',
+                                objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVirtueleServerMerk/ram')
     }
 
     @classmethod

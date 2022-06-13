@@ -1,7 +1,7 @@
 # coding=utf-8
 from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from OTLMOW.OTLModel.Classes.AIMNaamObject import AIMNaamObject
 from OTLMOW.OTLModel.Classes.Draagconstructie import Draagconstructie
+from OTLMOW.OTLModel.Classes.AIMNaamObject import AIMNaamObject
 from OTLMOW.OTLModel.Datatypes.KlOperationeleStatus import KlOperationeleStatus
 from OTLMOW.OTLModel.Datatypes.KlVerkeersbordsteunType import KlVerkeersbordsteunType
 from OTLMOW.OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter
@@ -11,7 +11,7 @@ from OTLMOW.GeometrieArtefact.PuntGeometrie import PuntGeometrie
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Verkeersbordsteun(AIMNaamObject, Draagconstructie, PuntGeometrie):
+class Verkeersbordsteun(Draagconstructie, AIMNaamObject, PuntGeometrie):
     """Een draagconstructie voor verkeersborden of pictogrammen. Dit kan een ronde paal of een vakwerksteun zijn."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Verkeersbordsteun'

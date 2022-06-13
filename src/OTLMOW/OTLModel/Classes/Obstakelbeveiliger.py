@@ -1,14 +1,14 @@
 # coding=utf-8
 from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from OTLMOW.OTLModel.Classes.SchokindexVoertuigkering import SchokindexVoertuigkering
 from OTLMOW.OTLModel.Classes.AfschermendeConstructie import AfschermendeConstructie
+from OTLMOW.OTLModel.Classes.SchokindexVoertuigkering import SchokindexVoertuigkering
 from OTLMOW.OTLModel.Datatypes.KlLEACObstakelbeveiligerType import KlLEACObstakelbeveiligerType
 from OTLMOW.OTLModel.Datatypes.KlLEACPerformantieniveau import KlLEACPerformantieniveau
 from OTLMOW.GeometrieArtefact.VlakGeometrie import VlakGeometrie
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Obstakelbeveiliger(SchokindexVoertuigkering, AfschermendeConstructie, VlakGeometrie):
+class Obstakelbeveiliger(AfschermendeConstructie, SchokindexVoertuigkering, VlakGeometrie):
     """Een energie-absorberende constructie voor voertuigen,geïnstalleerd vóór één of meerdere obstakels,met als doel de ernst van een botsing te reduceren."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Obstakelbeveiliger'

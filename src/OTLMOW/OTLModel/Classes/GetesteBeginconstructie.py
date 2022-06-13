@@ -1,12 +1,12 @@
 # coding=utf-8
 from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from OTLMOW.OTLModel.Classes.SchokindexVoertuigkering import SchokindexVoertuigkering
 from OTLMOW.OTLModel.Classes.Beginstuk import Beginstuk
+from OTLMOW.OTLModel.Classes.SchokindexVoertuigkering import SchokindexVoertuigkering
 from OTLMOW.OTLModel.Datatypes.KlLEACPerformantieklasse import KlLEACPerformantieklasse
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class GetesteBeginconstructie(SchokindexVoertuigkering, Beginstuk):
+class GetesteBeginconstructie(Beginstuk, SchokindexVoertuigkering):
     """Een gecertificeerd begin aan een geleideconstructie,met als doel de ernst van een frontale botsing te reduceren aan de stroomopwaartse zijde ten opzichte van de meest nabij gelegen rijstrook."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#GetesteBeginconstructie'

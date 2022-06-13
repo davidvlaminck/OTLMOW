@@ -2,15 +2,15 @@
 from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from abc import abstractmethod
 from OTLMOW.OTLModel.Classes.ConstructieElement import ConstructieElement
-from OTLMOW.OTLModel.Classes.StalenConstructieElement import StalenConstructieElement
 from OTLMOW.OTLModel.Classes.ConstructieElementenGC import ConstructieElementenGC
+from OTLMOW.OTLModel.Classes.StalenConstructieElement import StalenConstructieElement
 from OTLMOW.OTLModel.Datatypes.BooleanField import BooleanField
 from OTLMOW.OTLModel.Datatypes.DtcDocument import DtcDocument
 from OTLMOW.OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class StalenProfiel(ConstructieElement, StalenConstructieElement, ConstructieElementenGC):
+class StalenProfiel(ConstructieElement, ConstructieElementenGC, StalenConstructieElement):
     """Bundeling van gemeenschappelijke eigenschappen van standaard en niet-standaard stalen profiel."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#StalenProfiel'

@@ -1,8 +1,8 @@
 # coding=utf-8
 from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from abc import abstractmethod
-from OTLMOW.OTLModel.Classes.AIMNaamObject import AIMNaamObject
 from OTLMOW.OTLModel.Classes.EMDraagconstructie import EMDraagconstructie
+from OTLMOW.OTLModel.Classes.AIMNaamObject import AIMNaamObject
 from OTLMOW.OTLModel.Datatypes.DteKleurRAL import DteKleurRAL
 from OTLMOW.OTLModel.Datatypes.KlDraagConstrBeschermlaag import KlDraagConstrBeschermlaag
 from OTLMOW.OTLModel.Datatypes.KlDraagConstrBijzondertransport import KlDraagConstrBijzondertransport
@@ -11,7 +11,7 @@ from OTLMOW.OTLModel.Datatypes.StringField import StringField
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class SteunStandaard(AIMNaamObject, EMDraagconstructie):
+class SteunStandaard(EMDraagconstructie, AIMNaamObject):
     """Abstracte voor de standaard steunen."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#SteunStandaard'

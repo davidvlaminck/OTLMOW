@@ -1,7 +1,7 @@
 # coding=utf-8
 from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from OTLMOW.OTLModel.Classes.Markering import Markering
 from OTLMOW.OTLModel.Classes.AOWSType import AOWSType
+from OTLMOW.OTLModel.Classes.Markering import Markering
 from OTLMOW.OTLModel.Datatypes.KlGekleurdWVCode import KlGekleurdWVCode
 from OTLMOW.OTLModel.Datatypes.KlGekleurdWVSoort import KlGekleurdWVSoort
 from OTLMOW.OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter
@@ -10,7 +10,7 @@ from OTLMOW.GeometrieArtefact.VlakGeometrie import VlakGeometrie
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class GekleurdWegvlakMarkering(Markering, AOWSType, VlakGeometrie):
+class GekleurdWegvlakMarkering(AOWSType, Markering, VlakGeometrie):
     """Een markering van een wegdeel aangebracht om het verkeer te waarschuwen, informeren of regelen."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#GekleurdWegvlakMarkering'

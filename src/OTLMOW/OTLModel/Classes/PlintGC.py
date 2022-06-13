@@ -1,7 +1,7 @@
 # coding=utf-8
 from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from OTLMOW.OTLModel.Classes.ConstructieElement import ConstructieElement
 from OTLMOW.OTLModel.Classes.BetonnenConstructieElement import BetonnenConstructieElement
+from OTLMOW.OTLModel.Classes.ConstructieElement import ConstructieElement
 from OTLMOW.OTLModel.Classes.ConstructieElementenGC import ConstructieElementenGC
 from OTLMOW.OTLModel.Datatypes.DtcAfmetingBxlxhInM import DtcAfmetingBxlxhInM
 from OTLMOW.OTLModel.Datatypes.DtcDocument import DtcDocument
@@ -10,7 +10,7 @@ from OTLMOW.GeometrieArtefact.LijnGeometrie import LijnGeometrie
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class PlintGC(ConstructieElement, BetonnenConstructieElement, ConstructieElementenGC, LijnGeometrie):
+class PlintGC(BetonnenConstructieElement, ConstructieElement, ConstructieElementenGC, LijnGeometrie):
     """Een plint is een betonnen balk/plaat die de akoestische dichtheid verzekert tussen de schermelementen van de geluidswerende constructie en de bodem."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#PlintGC'

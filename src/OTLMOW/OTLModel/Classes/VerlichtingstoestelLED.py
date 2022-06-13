@@ -1,7 +1,7 @@
 # coding=utf-8
 from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from OTLMOW.OTLModel.Classes.VerlichtingstoestelConnector import VerlichtingstoestelConnector
 from OTLMOW.OTLModel.Classes.Verlichtingstoestel import Verlichtingstoestel
+from OTLMOW.OTLModel.Classes.VerlichtingstoestelConnector import VerlichtingstoestelConnector
 from OTLMOW.OTLModel.Datatypes.BooleanField import BooleanField
 from OTLMOW.OTLModel.Datatypes.DteKleurRAL import DteKleurRAL
 from OTLMOW.OTLModel.Datatypes.KlArmatuurkleur import KlArmatuurkleur
@@ -16,7 +16,7 @@ from OTLMOW.OTLModel.Datatypes.KlWvLedVerlNiveau import KlWvLedVerlNiveau
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class VerlichtingstoestelLED(VerlichtingstoestelConnector, Verlichtingstoestel):
+class VerlichtingstoestelLED(Verlichtingstoestel, VerlichtingstoestelConnector):
     """Het geheel van de LEDlichtmodule en de behuizing die werden samengesteld met als doel:
  * de lichtstroom van de lichtbronnen hoofdzakelijk op het te verlichten oppervlak (doorlopende wegsectie, conflictgebied,...) te richten, teneinde de zichtbaarheid te verhogen;
  * de lichtstroom te beheersen zodat de weggebruikers niet verblind worden en de lichthinder beperkt wordt;

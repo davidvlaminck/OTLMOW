@@ -1,7 +1,7 @@
 # coding=utf-8
 from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from OTLMOW.OTLModel.Classes.AIMObject import AIMObject
 from OTLMOW.OTLModel.Classes.Signalisatie import Signalisatie
+from OTLMOW.OTLModel.Classes.AIMObject import AIMObject
 from OTLMOW.OTLModel.Datatypes.BooleanField import BooleanField
 from OTLMOW.OTLModel.Datatypes.DtcDocument import DtcDocument
 from OTLMOW.OTLModel.Datatypes.KlVerkeersspiegelVorm import KlVerkeersspiegelVorm
@@ -9,7 +9,7 @@ from OTLMOW.GeometrieArtefact.PuntGeometrie import PuntGeometrie
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Verkeersspiegel(AIMObject, Signalisatie, PuntGeometrie):
+class Verkeersspiegel(Signalisatie, AIMObject, PuntGeometrie):
     """Een verkeersspiegel is een spiegel die de zichtbaarheid verbetert van het aankomende verkeer."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Verkeersspiegel'

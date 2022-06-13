@@ -1,15 +1,14 @@
 # coding=utf-8
 from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from OTLMOW.OTLModel.Classes.Voedingspunt import Voedingspunt
 from OTLMOW.OTLModel.Classes.BevestigingGC import BevestigingGC
+from OTLMOW.OTLModel.Classes.Voedingspunt import Voedingspunt
 from OTLMOW.OTLModel.Datatypes.KlZonnepaneelMerk import KlZonnepaneelMerk
 from OTLMOW.OTLModel.Datatypes.KlZonnepaneelModelnaam import KlZonnepaneelModelnaam
 from OTLMOW.OTLModel.Datatypes.KwantWrdInWatt import KwantWrdInWatt
-from OTLMOW.GeometrieArtefact.PuntGeometrie import PuntGeometrie
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Zonnepaneel(Voedingspunt, BevestigingGC, PuntGeometrie):
+class Zonnepaneel(BevestigingGC, Voedingspunt):
     """Toestel om elektrische energie op te wekken uit zonlicht met als doel het voeden van een installatie. Ook wel fotovoltaïsche cellen of zonnecellen genoemd."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Zonnepaneel'
@@ -18,7 +17,6 @@ class Zonnepaneel(Voedingspunt, BevestigingGC, PuntGeometrie):
     def __init__(self):
         BevestigingGC.__init__(self)
         Voedingspunt.__init__(self)
-        PuntGeometrie.__init__(self)
 
         self._merk = OTLAttribuut(field=KlZonnepaneelMerk,
                                   naam='merk',

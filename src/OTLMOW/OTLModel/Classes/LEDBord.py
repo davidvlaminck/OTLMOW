@@ -1,8 +1,8 @@
 # coding=utf-8
 from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from abc import abstractmethod
-from OTLMOW.OTLModel.Classes.AIMNaamObject import AIMNaamObject
 from OTLMOW.OTLModel.Classes.Verkeersbord import Verkeersbord
+from OTLMOW.OTLModel.Classes.AIMNaamObject import AIMNaamObject
 from OTLMOW.OTLModel.Datatypes.BooleanField import BooleanField
 from OTLMOW.OTLModel.Datatypes.DtcDocument import DtcDocument
 from OTLMOW.OTLModel.Datatypes.DteIPv4Adres import DteIPv4Adres
@@ -11,7 +11,7 @@ from OTLMOW.OTLModel.Datatypes.StringField import StringField
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class LEDBord(AIMNaamObject, Verkeersbord):
+class LEDBord(Verkeersbord, AIMNaamObject):
     """Abstracte klasse die de gemeenschappelijke eigenschappen van verschillende types dynamische verkeersborden groepeert."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#LEDBord'

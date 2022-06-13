@@ -1,13 +1,13 @@
 # coding=utf-8
 from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from abc import abstractmethod
-from OTLMOW.OTLModel.Classes.AIMObject import AIMObject
 from OTLMOW.OTLModel.Classes.Signalisatie import Signalisatie
+from OTLMOW.OTLModel.Classes.AIMObject import AIMObject
 from OTLMOW.OTLModel.Datatypes.KlKleurReflector import KlKleurReflector
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Bebakening(AIMObject, Signalisatie):
+class Bebakening(Signalisatie, AIMObject):
     """Abstracte voor de bebakeningen."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Bebakening'

@@ -1,11 +1,11 @@
 # coding=utf-8
 from abc import abstractmethod
-from OTLMOW.OTLModel.Classes.Markering import Markering
 from OTLMOW.OTLModel.Classes.AOWSType import AOWSType
+from OTLMOW.OTLModel.Classes.Markering import Markering
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class FiguratieMarkeringToegang(Markering, AOWSType):
+class FiguratieMarkeringToegang(AOWSType, Markering):
     """Abstracte als toegang tot de verschillende soorten figuratiemarkeringen."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#FiguratieMarkeringToegang'

@@ -1,7 +1,7 @@
 # coding=utf-8
 from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from OTLMOW.OTLModel.Classes.Markering import Markering
 from OTLMOW.OTLModel.Classes.AOWSType import AOWSType
+from OTLMOW.OTLModel.Classes.Markering import Markering
 from OTLMOW.OTLModel.Datatypes.KlOverlangseMarkeringCode import KlOverlangseMarkeringCode
 from OTLMOW.OTLModel.Datatypes.KlOverlangsemarkeringType import KlOverlangsemarkeringType
 from OTLMOW.OTLModel.Datatypes.KlPositieSoort import KlPositieSoort
@@ -11,7 +11,7 @@ from OTLMOW.GeometrieArtefact.LijnGeometrie import LijnGeometrie
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class OverlangseMarkering(Markering, AOWSType, LijnGeometrie):
+class OverlangseMarkering(AOWSType, Markering, LijnGeometrie):
     """Een markering overlangs op de weg aangebracht om het verkeer te waarschuwen, informeren of regelen."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#OverlangseMarkering'

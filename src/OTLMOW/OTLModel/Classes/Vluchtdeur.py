@@ -1,11 +1,11 @@
 # coding=utf-8
-from OTLMOW.OTLModel.Classes.AIMObject import AIMObject
-from OTLMOW.OTLModel.Classes.Deur import Deur
 from OTLMOW.OTLModel.Classes.BevestigingGC import BevestigingGC
+from OTLMOW.OTLModel.Classes.Deur import Deur
+from OTLMOW.OTLModel.Classes.AIMObject import AIMObject
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Vluchtdeur(AIMObject, Deur, BevestigingGC):
+class Vluchtdeur(BevestigingGC, Deur, AIMObject):
     """Deur voor het ontvluchten in geval van calamiteiten weg van de incidentlocatie naar een veilige zone. Een vluchtdeur wordt onder alle omstandigheden zonder sleutel geopend en dit met beperkte kracht."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Vluchtdeur'

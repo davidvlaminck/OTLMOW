@@ -1,7 +1,7 @@
 # coding=utf-8
 from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from OTLMOW.OTLModel.Classes.LaagDikte import LaagDikte
 from OTLMOW.OTLModel.Classes.Laag import Laag
+from OTLMOW.OTLModel.Classes.LaagDikte import LaagDikte
 from OTLMOW.OTLModel.Datatypes.BooleanField import BooleanField
 from OTLMOW.OTLModel.Datatypes.DtcKrimpvoeg import DtcKrimpvoeg
 from OTLMOW.OTLModel.Datatypes.KlOnderbouwType import KlOnderbouwType
@@ -9,7 +9,7 @@ from OTLMOW.OTLModel.Datatypes.KwantWrdInKubiekeMeter import KwantWrdInKubiekeMe
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Onderbouw(LaagDikte, Laag):
+class Onderbouw(Laag, LaagDikte):
     """Gedeelte van het baanlichaam dat tussen het baanbed en de verharding ligt. Deze omvat onderfundering, fundering en de straatlaag."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Onderbouw'

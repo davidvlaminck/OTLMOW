@@ -1,10 +1,10 @@
 # coding=utf-8
-from OTLMOW.OTLModel.Classes.VerlichtingstoestelConnector import VerlichtingstoestelConnector
 from OTLMOW.OTLModel.Classes.Verlichtingstoestel import Verlichtingstoestel
+from OTLMOW.OTLModel.Classes.VerlichtingstoestelConnector import VerlichtingstoestelConnector
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class VerlichtingstoestelHgLP(VerlichtingstoestelConnector, Verlichtingstoestel):
+class VerlichtingstoestelHgLP(Verlichtingstoestel, VerlichtingstoestelConnector):
     """Het geheel van de lagedruk kwik lamp (of fluorescentielamp) (HgLP),, voorschakelapparatuur en de behuizing die werden samengesteld met als doel:
  * de lichtstroom van de lichtbronnen hoofdzakelijk op het te verlichten oppervlak (doorlopende wegsectie, conflictgebied,...) te richten, teneinde de zichtbaarheid te verhogen;
  * de lichtstroom te beheersen zodat de weggebruikers niet verblind worden en de lichthinder beperkt wordt;

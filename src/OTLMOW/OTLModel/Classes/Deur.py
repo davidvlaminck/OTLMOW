@@ -9,7 +9,6 @@ from OTLMOW.OTLModel.Datatypes.KlDeurHandgreeptype import KlDeurHandgreeptype
 from OTLMOW.OTLModel.Datatypes.KwantWrdInMillimeter import KwantWrdInMillimeter
 from OTLMOW.OTLModel.Datatypes.KwantWrdInSeconde import KwantWrdInSeconde
 from OTLMOW.OTLModel.Datatypes.KwantWrdInUur import KwantWrdInUur
-from OTLMOW.GeometrieArtefact.PuntGeometrie import PuntGeometrie
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
@@ -21,8 +20,6 @@ class Deur(ABC):
 
     @abstractmethod
     def __init__(self):
-        super().__init__()
-
         self._afmetingDeuropening = OTLAttribuut(field=DtcAfmetingBxhInM,
                                                  naam='afmetingDeuropening',
                                                  label='afmeting deuropening',

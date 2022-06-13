@@ -1,15 +1,14 @@
 # coding=utf-8
 from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from OTLMOW.OTLModel.Classes.AIMObject import AIMObject
 from OTLMOW.OTLModel.Classes.BevestigingGC import BevestigingGC
+from OTLMOW.OTLModel.Classes.AIMObject import AIMObject
 from OTLMOW.OTLModel.Datatypes.KlPictogramSymbool import KlPictogramSymbool
 from OTLMOW.OTLModel.Datatypes.KwantWrdInMinuut import KwantWrdInMinuut
 from OTLMOW.OTLModel.Datatypes.StringField import StringField
-from OTLMOW.GeometrieArtefact.PuntGeometrie import PuntGeometrie
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Pictogram(AIMObject, BevestigingGC, PuntGeometrie):
+class Pictogram(BevestigingGC, AIMObject):
     """Een bord dat een symbool of afbeelding bevat dat de plaats inneemt van een tekst."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Pictogram'
@@ -18,7 +17,6 @@ class Pictogram(AIMObject, BevestigingGC, PuntGeometrie):
     def __init__(self):
         AIMObject.__init__(self)
         BevestigingGC.__init__(self)
-        PuntGeometrie.__init__(self)
 
         self._nalichtingstijd = OTLAttribuut(field=KwantWrdInMinuut,
                                              naam='nalichtingstijd',

@@ -1,5 +1,6 @@
 # coding=utf-8
 from abc import abstractmethod, ABC
+from OTLMOW.GeometrieArtefact.PuntGeometrie import PuntGeometrie
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
@@ -11,4 +12,6 @@ class BevestigingGC(ABC):
 
     @abstractmethod
     def __init__(self):
+        super().__init__()
+
         pass

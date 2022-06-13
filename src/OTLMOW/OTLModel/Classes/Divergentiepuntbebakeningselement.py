@@ -1,14 +1,14 @@
 # coding=utf-8
 from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from OTLMOW.OTLModel.Classes.AIMObject import AIMObject
 from OTLMOW.OTLModel.Classes.Signalisatie import Signalisatie
+from OTLMOW.OTLModel.Classes.AIMObject import AIMObject
 from OTLMOW.OTLModel.Datatypes.KlDivergentiepuntbebakeningselementType import KlDivergentiepuntbebakeningselementType
 from OTLMOW.OTLModel.Datatypes.KlFolieType import KlFolieType
 from OTLMOW.GeometrieArtefact.PuntGeometrie import PuntGeometrie
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Divergentiepuntbebakeningselement(AIMObject, Signalisatie, PuntGeometrie):
+class Divergentiepuntbebakeningselement(Signalisatie, AIMObject, PuntGeometrie):
     """Een constructie met als doel de zichtbaarheid van het divergentiepunt te vergroten."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Divergentiepuntbebakeningselement'

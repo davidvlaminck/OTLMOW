@@ -1,15 +1,14 @@
 # coding=utf-8
 from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from OTLMOW.OTLModel.Classes.AIMObject import AIMObject
-from OTLMOW.OTLModel.Classes.Signalisatie import Signalisatie
 from OTLMOW.OTLModel.Classes.BevestigingGC import BevestigingGC
+from OTLMOW.OTLModel.Classes.Signalisatie import Signalisatie
+from OTLMOW.OTLModel.Classes.AIMObject import AIMObject
 from OTLMOW.OTLModel.Datatypes.DteTekstblok import DteTekstblok
 from OTLMOW.OTLModel.Datatypes.KlSignalisatieReferentiepuntType import KlSignalisatieReferentiepuntType
-from OTLMOW.GeometrieArtefact.PuntGeometrie import PuntGeometrie
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Referentiepunt(AIMObject, Signalisatie, BevestigingGC, PuntGeometrie):
+class Referentiepunt(BevestigingGC, Signalisatie, AIMObject):
     """Een kilometer- of hectometerpaal."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Referentiepunt'
@@ -19,7 +18,6 @@ class Referentiepunt(AIMObject, Signalisatie, BevestigingGC, PuntGeometrie):
         AIMObject.__init__(self)
         BevestigingGC.__init__(self)
         Signalisatie.__init__(self)
-        PuntGeometrie.__init__(self)
 
         self._opschrift = OTLAttribuut(field=DteTekstblok,
                                        naam='opschrift',

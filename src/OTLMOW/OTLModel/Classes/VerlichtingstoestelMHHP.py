@@ -1,13 +1,13 @@
 # coding=utf-8
 from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from OTLMOW.OTLModel.Classes.VerlichtingstoestelConnector import VerlichtingstoestelConnector
 from OTLMOW.OTLModel.Classes.Verlichtingstoestel import Verlichtingstoestel
+from OTLMOW.OTLModel.Classes.VerlichtingstoestelConnector import VerlichtingstoestelConnector
 from OTLMOW.OTLModel.Datatypes.BooleanField import BooleanField
 from OTLMOW.OTLModel.Datatypes.DteKleurRAL import DteKleurRAL
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class VerlichtingstoestelMHHP(VerlichtingstoestelConnector, Verlichtingstoestel):
+class VerlichtingstoestelMHHP(Verlichtingstoestel, VerlichtingstoestelConnector):
     """Het geheel van de metaalhalogenide lamp (MHHP), voorschakelapparatuur en de behuizing die werden samengesteld met als doel:
 * de lichtstroom van de lichtbronnen hoofdzakelijk op het te verlichten oppervlak (doorlopende wegsectie, conflictgebied,...) te richten, teneinde de zichtbaarheid te verhogen;
 * de lichtstroom te beheersen zodat de weggebruikers niet verblind worden en de lichthinder beperkt wordt;

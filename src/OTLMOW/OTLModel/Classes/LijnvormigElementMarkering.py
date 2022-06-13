@@ -1,7 +1,7 @@
 # coding=utf-8
 from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from OTLMOW.OTLModel.Classes.Markering import Markering
 from OTLMOW.OTLModel.Classes.AOWSType import AOWSType
+from OTLMOW.OTLModel.Classes.Markering import Markering
 from OTLMOW.OTLModel.Datatypes.KlLEMarkeringCode import KlLEMarkeringCode
 from OTLMOW.OTLModel.Datatypes.KlLEMarkeringSoort import KlLEMarkeringSoort
 from OTLMOW.OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter
@@ -10,7 +10,7 @@ from OTLMOW.GeometrieArtefact.LijnGeometrie import LijnGeometrie
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class LijnvormigElementMarkering(Markering, AOWSType, LijnGeometrie):
+class LijnvormigElementMarkering(AOWSType, Markering, LijnGeometrie):
     """Een markering van een lijnvormig element om de zichtbaarheid te verhogen om het verkeer te waarschuwen, informeren of regelen."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#LijnvormigElementMarkering'

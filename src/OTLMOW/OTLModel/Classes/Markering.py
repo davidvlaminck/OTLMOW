@@ -1,8 +1,8 @@
 # coding=utf-8
 from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from abc import abstractmethod
-from OTLMOW.OTLModel.Classes.AIMObject import AIMObject
 from OTLMOW.OTLModel.Classes.Signalisatie import Signalisatie
+from OTLMOW.OTLModel.Classes.AIMObject import AIMObject
 from OTLMOW.OTLModel.Datatypes.BooleanField import BooleanField
 from OTLMOW.OTLModel.Datatypes.DtcMarkeringOpvatting import DtcMarkeringOpvatting
 from OTLMOW.OTLModel.Datatypes.DtcProductidentificatiecode import DtcProductidentificatiecode
@@ -11,7 +11,7 @@ from OTLMOW.OTLModel.Datatypes.KlMarkeringSoort import KlMarkeringSoort
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Markering(AIMObject, Signalisatie):
+class Markering(Signalisatie, AIMObject):
     """Abstracte als noemer voor de verschillende types van markeringen."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Markering'

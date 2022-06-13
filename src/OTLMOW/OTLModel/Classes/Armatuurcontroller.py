@@ -2,6 +2,8 @@
 from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLMOW.OTLModel.Classes.Communicatieapparatuur import Communicatieapparatuur
 from OTLMOW.OTLModel.Classes.FirmwareObject import FirmwareObject
+from OTLMOW.OTLModel.Datatypes.BooleanField import BooleanField
+from OTLMOW.OTLModel.Datatypes.DteIPv4Adres import DteIPv4Adres
 from OTLMOW.OTLModel.Datatypes.StringField import StringField
 
 
@@ -15,6 +17,20 @@ class Armatuurcontroller(Communicatieapparatuur, FirmwareObject):
     def __init__(self):
         Communicatieapparatuur.__init__(self)
         FirmwareObject.__init__(self)
+
+        self._ipAdres = OTLAttribuut(field=DteIPv4Adres,
+                                     naam='ipAdres',
+                                     label='IP-adres',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Armatuurcontroller.ipAdres',
+                                     definition='Het IP-adres van de armatuurcontroller.',
+                                     owner=self)
+
+        self._isDummydot = OTLAttribuut(field=BooleanField,
+                                        naam='isDummydot',
+                                        label='is dummydot',
+                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Armatuurcontroller.isDummydot',
+                                        definition='Geeft aan of er in de toekomst een armatuurcontroller kan aangesloten worden op het verlichtingstoestel, maar dat het toestel voorlopig voorzien is van een kortsluitmodule (ook wel dummydot genoemd).',
+                                        owner=self)
 
         self._merk = OTLAttribuut(field=StringField,
                                   naam='merk',
@@ -36,6 +52,24 @@ class Armatuurcontroller(Communicatieapparatuur, FirmwareObject):
                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Armatuurcontroller.serienummer',
                                          definition='Het unieke nummer waarmee het toestel door de fabrikant geïdentificeerd is.',
                                          owner=self)
+
+    @property
+    def ipAdres(self):
+        """Het IP-adres van de armatuurcontroller."""
+        return self._ipAdres.get_waarde()
+
+    @ipAdres.setter
+    def ipAdres(self, value):
+        self._ipAdres.set_waarde(value, owner=self)
+
+    @property
+    def isDummydot(self):
+        """Geeft aan of er in de toekomst een armatuurcontroller kan aangesloten worden op het verlichtingstoestel, maar dat het toestel voorlopig voorzien is van een kortsluitmodule (ook wel dummydot genoemd)."""
+        return self._isDummydot.get_waarde()
+
+    @isDummydot.setter
+    def isDummydot(self, value):
+        self._isDummydot.set_waarde(value, owner=self)
 
     @property
     def merk(self):

@@ -1,6 +1,7 @@
 # coding=utf-8
 from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLMOW.OTLModel.Classes.LinkendElement import LinkendElement
+from OTLMOW.OTLModel.Classes.OmhullendeInrichting import OmhullendeInrichting
 from OTLMOW.OTLModel.Datatypes.KlAansluitstukMateriaal import KlAansluitstukMateriaal
 from OTLMOW.OTLModel.Datatypes.KlHulpstukType import KlHulpstukType
 from OTLMOW.OTLModel.Datatypes.KwantWrdInMillimeter import KwantWrdInMillimeter
@@ -8,7 +9,7 @@ from OTLMOW.GeometrieArtefact.PuntGeometrie import PuntGeometrie
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Hulpstuk(LinkendElement, PuntGeometrie):
+class Hulpstuk(LinkendElement, OmhullendeInrichting, PuntGeometrie):
     """Stukken die zorgen voor verbindingen tussen rechte buizen om bv. van richting te veranderen, te verlengen, te verlopen van diameter, meerdere buizen op mekaar aan te sluiten,..."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Hulpstuk'
@@ -16,6 +17,7 @@ class Hulpstuk(LinkendElement, PuntGeometrie):
 
     def __init__(self):
         LinkendElement.__init__(self)
+        OmhullendeInrichting.__init__(self)
         PuntGeometrie.__init__(self)
 
         self._inwendigeDiameter = OTLAttribuut(field=KwantWrdInMillimeter,

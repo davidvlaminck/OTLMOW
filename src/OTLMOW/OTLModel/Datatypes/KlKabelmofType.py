@@ -21,7 +21,6 @@ class KlKabelmofType(KeuzelijstField):
                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlKabelmofType/gietmof'),
         'hdpe-mof': KeuzelijstWaarde(invulwaarde='hdpe-mof',
                                      label='HDPE mof',
-                                     definitie='HDPE mof',
                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlKabelmofType/hdpe-mof')
     }
 

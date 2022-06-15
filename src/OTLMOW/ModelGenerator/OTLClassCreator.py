@@ -97,7 +97,9 @@ class OTLClassCreator(AbstractDatatypeCreator):
         for typeField in list_of_fields:
             model_module = 'OTLMOW'
             if model_location != '' and typeField not in base_fields:
-                modules_index = model_location.rfind('\\OTLMOW')
+                if 'UnitTests' in model_location:
+                    model_module = 'UnitTests'
+                modules_index = model_location.rfind('\\' + model_module)
                 modules = model_location[modules_index+1:]
                 model_module = modules.replace('\\', '.')
             datablock.append(f'from {model_module}.OTLModel.Datatypes.{typeField} import {typeField}')

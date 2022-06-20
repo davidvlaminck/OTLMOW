@@ -163,5 +163,5 @@ class OTLFacility:
         try:
             with open(settings_path) as settings_file:
                 self.settings = json.load(settings_file)
-        except:
+        except OSError:
             raise ImportError(f'Could not open the settings file at {settings_file}')

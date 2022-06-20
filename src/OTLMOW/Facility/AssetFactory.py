@@ -1,24 +1,32 @@
 ﻿from OTLMOW.Facility.FileFormats.DictDecoder import DictDecoder
-from OTLMOW.OTLModel.Classes.AIMObject import AIMObject
+from OTLMOW.Facility.GenericHelper import GenericHelper
+from OTLMOW.OTLModel.Classes.ImplementatieElement.AIMObject import AIMObject
 
 
 class AssetFactory:
     @staticmethod
-    def dynamic_create_instance_from_name(class_name: str, directory: str = 'OTLMOW.OTLModel.Classes'):
-        """Loads the OTL class module and attempts to instantiate the class using the name of the class
+    def dynamic_create_instance_from_ns_and_name(namespace: str, class_name: str, directory: str = 'OTLMOW.OTLModel.Classes'):
+        """Loads the OTL class module and attempts to instantiate the class using the name and namespace of the class
 
+        :param namespace: namespace of the class
+        :type: str
         :param class_name: class name to instantiate
         :type: str
         :param directory: directory where the class modules are located, defaults to OTLMOW.OTLModel.Classes
         :type: str
-        :return: returns an instance of class_name, located from directory, that inherits from OTLObject
+        :return: returns an instance of class_name in the given namespace, located from directory, that inherits from OTLObject
         :rtype: OTLObject or None
         """
+        if namespace is None:
+            namespace = ''
+        else:
+            namespace = GenericHelper.get_titlecase_ns(namespace) + '.'
+
         try:
-            py_mod = __import__(name=f'{directory}.{class_name}', fromlist=f'{directory.split(".")[-1]}.{class_name}')
+            py_mod = __import__(name=f'{directory}.{namespace}{class_name}', fromlist=f'{directory.split(".")[-1]}.{class_name}')
         except ModuleNotFoundError:
             try:
-                py_mod = __import__(name=f'UnitTests.TestClasses.OTLModel.Classes.{class_name}', fromlist=f'{class_name}')
+                py_mod = __import__(name=f'UnitTests.TestClasses.OTLModel.Classes.Onderdeel.{class_name}', fromlist=f'{class_name}')
             except ModuleNotFoundError:
                 return None
         class_ = getattr(py_mod, class_name)
@@ -30,8 +38,8 @@ class AssetFactory:
         if not class_uri.startswith('https://wegenenverkeer.data.vlaanderen.be/ns'):
             raise ValueError(
                 f'{class_uri} is not valid uri, it does not begin with "https://wegenenverkeer.data.vlaanderen.be/ns"')
-        class_name = class_uri.split('#')[-1]
-        created = self.dynamic_create_instance_from_name(class_name, directory=directory)
+        ns, name = GenericHelper.get_ns_and_name_from_uri(class_uri)
+        created = self.dynamic_create_instance_from_ns_and_name(ns, name, directory=directory)
         if created is None:
             raise ValueError(f'{class_uri} is likely not valid uri, it does not result in a created instance')
         return created

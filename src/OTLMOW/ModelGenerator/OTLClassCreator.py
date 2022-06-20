@@ -1,5 +1,6 @@
 import logging
 
+from OTLMOW.Facility.GenericHelper import GenericHelper
 from OTLMOW.GeometrieArtefact.GeenGeometrie import GeenGeometrie
 from OTLMOW.GeometrieArtefact.GeometrieArtefactCollector import GeometrieArtefactCollector
 from OTLMOW.GeometrieArtefact.GeometrieInheritanceProcessor import GeometrieInheritanceProcessor
@@ -85,7 +86,14 @@ class OTLClassCreator(AbstractDatatypeCreator):
                 if inheritance.base_name in ['OTLAsset', 'OTLObject', 'RelatieInteractor', 'AttributeInfo', 'DavieRelatieAttributes']:
                     datablock.append(f'from OTLMOW.OTLModel.BaseClasses.{inheritance.base_name} import {inheritance.base_name}')
                 else:
-                    datablock.append(f'from OTLMOW.OTLModel.Classes.{inheritance.base_name} import {inheritance.base_name}')
+                    class_directory = 'Classes'
+                    ns = None
+                    if inheritance.base_uri != 'http://purl.org/dc/terms/Agent':
+                        ns, name = GenericHelper.get_ns_and_name_from_uri(inheritance.base_uri)
+                    if ns is not None:
+                        class_directory = GenericHelper.get_class_directory_from_ns(ns).replace('\\', '.')
+
+                    datablock.append(f'from OTLMOW.OTLModel.{class_directory}.{inheritance.base_name} import {inheritance.base_name}')
 
         if any(atr.readonly == 1 for atr in attributen):
             raise NotImplementedError("readonly property is assumed to be 0 on value fields")
@@ -97,7 +105,9 @@ class OTLClassCreator(AbstractDatatypeCreator):
         for typeField in list_of_fields:
             model_module = 'OTLMOW'
             if model_location != '' and typeField not in base_fields:
-                modules_index = model_location.rfind('\\OTLMOW')
+                if 'UnitTests' in model_location:
+                    model_module = 'UnitTests'
+                modules_index = model_location.rfind('\\' + model_module)
                 modules = model_location[modules_index+1:]
                 model_module = modules.replace('\\', '.')
             datablock.append(f'from {model_module}.OTLModel.Datatypes.{typeField} import {typeField}')

@@ -48,7 +48,7 @@ class StandaardPostFactory:
             waarde = attribuut.waarde
             if waarde is None:
                 continue
-            selectie = list(filter(lambda m: DotnotationHelper.convert_waarde_to_correct_type(m.dotnotation == mapping.dotnotation and m.defaultWaarde, attribuut) == waarde, selectie))
+            selectie = list(filter(lambda m: DotnotationHelper.convert_waarde_to_correct_type(m.dotnotation == mapping.dotnotation and m.defaultWaarde, attribuut, log_warnings=False) == waarde, selectie))
 
         postennummers = list(set(map(lambda x: x.standaardpostnummer, selectie)))
         posten_lijst = list(filter(lambda m: m.nummer in postennummers, posten_lijst))

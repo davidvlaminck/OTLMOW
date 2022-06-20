@@ -1,10 +1,10 @@
 ﻿from unittest import TestCase
 
-from OTLMOW.OTLModel.Classes.BeschermingWapening import BeschermingWapening
-from OTLMOW.OTLModel.Classes.BitumineuzeLaag import BitumineuzeLaag
-from OTLMOW.OTLModel.Classes.Geotextiel import Geotextiel
-from OTLMOW.OTLModel.Classes.Verankeringslandhoofd import Verankeringslandhoofd
-from OTLMOW.OTLModel.Classes.Walsbetonverharding import Walsbetonverharding
+from OTLMOW.OTLModel.Classes.Onderdeel.BeschermingWapening import BeschermingWapening
+from OTLMOW.OTLModel.Classes.Onderdeel.BitumineuzeLaag import BitumineuzeLaag
+from OTLMOW.OTLModel.Classes.Onderdeel.Geotextiel import Geotextiel
+from OTLMOW.OTLModel.Classes.Onderdeel.Verankeringslandhoofd import Verankeringslandhoofd
+from OTLMOW.OTLModel.Classes.Onderdeel.Walsbetonverharding import Walsbetonverharding
 from OTLMOW.PostenMapping.Model.Post050100000 import Post050100000
 from OTLMOW.PostenMapping.Model.Post050200100 import Post050200100
 from OTLMOW.PostenMapping.Model.Post050200300 import Post050200300

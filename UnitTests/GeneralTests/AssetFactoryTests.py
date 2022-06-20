@@ -2,13 +2,13 @@
 from unittest import TestCase
 
 
-from OTLMOW.OTLModel.Classes.AIMNaamObject import AIMNaamObject
+from OTLMOW.OTLModel.Classes.ImplementatieElement.AIMNaamObject import AIMNaamObject
 from OTLMOW.Facility.AssetFactory import AssetFactory
-from OTLMOW.OTLModel.Classes.Aftakking import Aftakking
+from OTLMOW.OTLModel.Classes.Onderdeel.Aftakking import Aftakking
 from OTLMOW.OTLModel.Classes.Agent import Agent
-from OTLMOW.OTLModel.Classes.RetroreflecterendVerkeersbord import RetroreflecterendVerkeersbord
-from OTLMOW.OTLModel.Classes.Stroomkring import Stroomkring
-from TestClasses.OTLModel.Classes.AllCasesTestClass import AllCasesTestClass
+from OTLMOW.OTLModel.Classes.Onderdeel.RetroreflecterendVerkeersbord import RetroreflecterendVerkeersbord
+from OTLMOW.OTLModel.Classes.Onderdeel.Stroomkring import Stroomkring
+from TestClasses.OTLModel.Classes.Onderdeel.AllCasesTestClass import AllCasesTestClass
 
 
 class AssetFactoryTests(TestCase):

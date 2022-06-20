@@ -3,8 +3,8 @@ from OTLMOW.Facility.Exceptions.CouldNotCreateRelation import CouldNotCreateRela
 from OTLMOW.ModelGenerator.BaseClasses.RelatieValidator import RelatieValidator
 from OTLMOW.OTLModel.BaseClasses.RelatieInteractor import RelatieInteractor
 from OTLMOW.OTLModel.Classes.Agent import Agent
-from OTLMOW.OTLModel.Classes.HeeftBetrokkene import HeeftBetrokkene
-from OTLMOW.OTLModel.Classes.RelatieObject import RelatieObject
+from OTLMOW.OTLModel.Classes.ImplementatieElement.RelatieObject import RelatieObject
+from OTLMOW.OTLModel.Classes.Onderdeel.HeeftBetrokkene import HeeftBetrokkene
 
 
 class RelatieCreator:

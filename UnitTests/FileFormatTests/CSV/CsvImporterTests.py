@@ -3,7 +3,7 @@ import unittest
 
 from OTLMOW.Facility.FileFormats.CsvImporter import CsvImporter
 from OTLMOW.Facility.OTLFacility import OTLFacility
-from OTLMOW.OTLModel.Classes.Verkeersregelaar import Verkeersregelaar
+from OTLMOW.OTLModel.Classes.Onderdeel.Verkeersregelaar import Verkeersregelaar
 
 ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
 

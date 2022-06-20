@@ -90,7 +90,7 @@ class OTLEnumerationCreator(AbstractDatatypeCreator):
         except Exception:
             if 'KlTestKeuzelijst' in keuzelijstnaam:
                 base_dir = os.path.dirname(os.path.realpath(__file__))
-                keuzelijst_link = abspath(f'{base_dir}/../../../UnitTests/OTLModelCreatorTests/KlTestKeuzelijst.ttl')
+                keuzelijst_link = abspath(f'{base_dir}/../../../UnitTests/OTLModelCreatorUnitTests/KlTestKeuzelijst.ttl')
                 g.parse(keuzelijst_link, format="turtle")
             else:
                 raise ConnectionError(f"Could not get ttl file for {keuzelijstnaam}")

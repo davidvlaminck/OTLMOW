@@ -2,8 +2,8 @@ from OTLMOW.Facility.AgentCollection import AgentCollection
 from OTLMOW.Facility.FileFormats.EMInfraImporter import EMInfraImporter
 from OTLMOW.Facility.OTLFacility import OTLFacility
 from OTLMOW.Facility.RequesterFactory import RequesterFactory
-from OTLMOW.OTLModel.Classes.HoortBij import HoortBij
-from OTLMOW.OTLModel.Classes.Wegkantkast import Wegkantkast
+from OTLMOW.OTLModel.Classes.Onderdeel.HoortBij import HoortBij
+from OTLMOW.OTLModel.Classes.Onderdeel.Wegkantkast import Wegkantkast
 
 if __name__ == '__main__':
     otl_facility = OTLFacility(logfile=r'C:\temp\pythonLogging\pythonlog.txt',

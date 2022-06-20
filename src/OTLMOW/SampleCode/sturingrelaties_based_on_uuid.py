@@ -2,9 +2,9 @@ from csv import reader
 
 from OTLMOW.Facility.FileFormats.EMInfraImporter import EMInfraImporter
 from OTLMOW.Facility.OTLFacility import OTLFacility
-from OTLMOW.OTLModel.Classes.Camera import Camera
-from OTLMOW.OTLModel.Classes.Netwerkpoort import Netwerkpoort
-from OTLMOW.OTLModel.Classes.Sturing import Sturing
+from OTLMOW.OTLModel.Classes.Onderdeel.Camera import Camera
+from OTLMOW.OTLModel.Classes.Onderdeel.Netwerkpoort import Netwerkpoort
+from OTLMOW.OTLModel.Classes.Onderdeel.Sturing import Sturing
 
 if __name__ == '__main__':
     otl_facility = OTLFacility(logfile=r'C:\temp\pythonLogging\pythonlog.txt',

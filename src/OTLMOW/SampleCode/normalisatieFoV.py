@@ -1,7 +1,7 @@
 from OTLMOW.Facility.FileFormats.EMInfraImporter import EMInfraImporter
 from OTLMOW.Facility.OTLFacility import OTLFacility
 from OTLMOW.Facility.RequesterFactory import RequesterFactory
-from OTLMOW.OTLModel.Classes.AanvullendeGeometrie import AanvullendeGeometrie
+from OTLMOW.OTLModel.Classes.Onderdeel.AanvullendeGeometrie import AanvullendeGeometrie
 
 
 def normaliseer_field_of_views():

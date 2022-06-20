@@ -1,9 +1,9 @@
 from datetime import datetime
 
 from src.OTLMOW.Facility.OTLFacility import OTLFacility
-from src.OTLMOW.OTLModel.Classes.DNBLaagspanning import DNBLaagspanning
-from src.OTLMOW.OTLModel.Classes.EnergiemeterDNB import EnergiemeterDNB
-from src.OTLMOW.OTLModel.Classes.Voedt import Voedt
+from src.OTLMOW.OTLModel.Classes.Onderdeel.DNBLaagspanning import DNBLaagspanning
+from src.OTLMOW.OTLModel.Classes.Onderdeel.EnergiemeterDNB import EnergiemeterDNB
+from src.OTLMOW.OTLModel.Classes.Onderdeel.Voedt import Voedt
 
 
 if __name__ == '__main__':

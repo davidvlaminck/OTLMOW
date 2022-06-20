@@ -3,8 +3,8 @@ from csv import reader
 from OTLMOW.Facility.FileFormats.EMInfraImporter import EMInfraImporter
 from OTLMOW.Facility.OTLFacility import OTLFacility
 from OTLMOW.Facility.RequesterFactory import RequesterFactory
-from OTLMOW.OTLModel.Classes.HoortBij import HoortBij
-from OTLMOW.OTLModel.Classes.Netwerkelement import Netwerkelement
+from OTLMOW.OTLModel.Classes.Onderdeel.HoortBij import HoortBij
+from OTLMOW.OTLModel.Classes.Onderdeel.Netwerkelement import Netwerkelement
 
 
 # goal:

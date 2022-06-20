@@ -1,5 +1,5 @@
 ﻿from OTLMOW.Facility.OTLFacility import OTLFacility
-from OTLMOW.OTLModel.Classes.InvasieveExoten import InvasieveExoten
+from OTLMOW.OTLModel.Classes.Onderdeel.InvasieveExoten import InvasieveExoten
 
 
 def normaliseer_exoten():

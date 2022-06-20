@@ -1,7 +1,7 @@
 import os
 
 from OTLMOW.Facility.OTLFacility import OTLFacility
-from OTLMOW.OTLModel.Classes.Behuizing import Behuizing
+from OTLMOW.OTLModel.Classes.Abstracten.Behuizing import Behuizing
 
 if __name__ == '__main__':
     otl_facility = OTLFacility(logfile=r'C:\temp\pythonLogging\pythonlog.txt',

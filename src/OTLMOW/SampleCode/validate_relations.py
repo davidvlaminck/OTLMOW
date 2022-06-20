@@ -1,8 +1,8 @@
 from OTLMOW.Facility.OTLFacility import OTLFacility
 from OTLMOW.ModelGenerator.BaseClasses.RelatieRichting import RelatieRichting
-from OTLMOW.OTLModel.Classes.DNBLaagspanning import DNBLaagspanning
-from OTLMOW.OTLModel.Classes.EnergiemeterDNB import EnergiemeterDNB
-from OTLMOW.OTLModel.Classes.Voedt import Voedt
+from OTLMOW.OTLModel.Classes.Onderdeel.DNBLaagspanning import DNBLaagspanning
+from OTLMOW.OTLModel.Classes.Onderdeel.EnergiemeterDNB import EnergiemeterDNB
+from OTLMOW.OTLModel.Classes.Onderdeel.Voedt import Voedt
 
 if __name__ == '__main__':
     otl_facility = OTLFacility(logfile=r'C:\temp\pythonLogging\pythonlog.txt',

@@ -3,14 +3,14 @@ from datetime import datetime
 from OTLMOW.Facility.FileFormats.EMInfraImporter import EMInfraImporter
 from OTLMOW.Facility.OTLFacility import OTLFacility
 from OTLMOW.Facility.RequesterFactory import RequesterFactory
-from OTLMOW.OTLModel.Classes.Bevestiging import Bevestiging
-from OTLMOW.OTLModel.Classes.Flitsgroep import Flitsgroep
-from OTLMOW.OTLModel.Classes.Flitspaalbehuizing import Flitspaalbehuizing
-from OTLMOW.OTLModel.Classes.HoortBij import HoortBij
-from OTLMOW.OTLModel.Classes.Laagspanningsbord import Laagspanningsbord
-from OTLMOW.OTLModel.Classes.Stroomkring import Stroomkring
-from OTLMOW.OTLModel.Classes.Voedt import Voedt
-from OTLMOW.OTLModel.Classes.Wegkantkast import Wegkantkast
+from OTLMOW.OTLModel.Classes.Onderdeel.Bevestiging import Bevestiging
+from OTLMOW.OTLModel.Classes.Onderdeel.Flitsgroep import Flitsgroep
+from OTLMOW.OTLModel.Classes.Onderdeel.Flitspaalbehuizing import Flitspaalbehuizing
+from OTLMOW.OTLModel.Classes.Onderdeel.HoortBij import HoortBij
+from OTLMOW.OTLModel.Classes.Onderdeel.Laagspanningsbord import Laagspanningsbord
+from OTLMOW.OTLModel.Classes.Onderdeel.Stroomkring import Stroomkring
+from OTLMOW.OTLModel.Classes.Onderdeel.Voedt import Voedt
+from OTLMOW.OTLModel.Classes.Onderdeel.Wegkantkast import Wegkantkast
 
 if __name__ == '__main__':
     otl_facility = OTLFacility(logfile=r'C:\temp\pythonLogging\pythonlog.txt',

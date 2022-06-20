@@ -1,5 +1,5 @@
 ﻿from OTLMOW.Facility.DotnotationHelper import DotnotationHelper
-from OTLMOW.OTLModel.Classes.Geleideconstructie import Geleideconstructie
+from OTLMOW.OTLModel.Classes.Onderdeel.Geleideconstructie import Geleideconstructie
 
 if __name__ == '__main__':
     gc = Geleideconstructie()

@@ -2,6 +2,7 @@ import logging
 from datetime import datetime
 from os.path import abspath
 
+from OTLMOW.Facility.GenericHelper import GenericHelper
 from OTLMOW.GeometrieArtefact.GeometrieArtefactCollector import GeometrieArtefactCollector
 from OTLMOW.ModelGenerator.OSLOCollector import OSLOCollector
 from OTLMOW.ModelGenerator.OTLClassCreator import OTLClassCreator
@@ -26,11 +27,11 @@ class OTLModelCreator:
         logging.info('started creating model at ' + datetime.now().strftime("%d/%m/%Y %H:%M:%S"))
         directory = abspath(directory)
         self.query_correct_base_classes()
-        self.create_primitive_datatypes(directory=directory)
-        self.create_complex_datatypes(directory=directory)
-        self.create_union_datatypes(directory=directory)
-        self.create_enumerations(directory=directory)
-        self.create_classes(directory=directory)
+        # self.create_primitive_datatypes(directory=directory)
+        # self.create_complex_datatypes(directory=directory)
+        # self.create_union_datatypes(directory=directory)
+        # self.create_enumerations(directory=directory)
+        self.create_classes(model_directory=directory)
         self.create_relations(directory=directory)
         logging.info('finished creating model at ' + datetime.now().strftime("%d/%m/%Y %H:%M:%S"))
 
@@ -120,23 +121,31 @@ class OTLModelCreator:
                 logging.error(str(e))
                 logging.error(f"Could not create a class for {enumeration.name}")
 
-    def create_classes(self, directory):
+    def create_classes(self, model_directory):
         creator = OTLClassCreator(self.osloCollector, self.geoACollector)
 
-        for cls in self.osloCollector.classes:
+        for osloclass in self.osloCollector.classes:
             try:
-                dataToWrite = creator.create_blocks_to_write_from_classes(cls, model_location=directory)
+                dataToWrite = creator.create_blocks_to_write_from_classes(osloclass, model_location=model_directory)
                 if dataToWrite is None:
-                    logging.info(f"Could not create a class for {cls.name}")
+                    logging.info(f"Could not create a class for {osloclass.name}")
                     pass
                 if len(dataToWrite) == 0:
-                    logging.info(f"Could not create a class for {cls.name}")
+                    logging.info(f"Could not create a class for {osloclass.name}")
                     pass
-                creator.write_to_file(cls, 'Classes', dataToWrite, relative_path=directory)
-                logging.info(f"Created a class for {cls.name}")
+
+                class_directory = 'Classes'
+                ns = None
+                if osloclass.objectUri != 'http://purl.org/dc/terms/Agent':
+                    ns, name = GenericHelper.get_ns_and_name_from_uri(osloclass.objectUri)
+                if ns is not None:
+                    class_directory = GenericHelper.get_class_directory_from_ns(ns)
+
+                creator.write_to_file(osloclass, class_directory, dataToWrite, relative_path=model_directory)
+                logging.info(f"Created a class for {osloclass.name}")
             except Exception as e:
                 logging.error(str(e))
-                logging.error(f"Could not create a class for {cls.name}")
+                logging.error(f"Could not create a class for {osloclass.name}")
 
     def create_relations(self, directory):
         creator = OTLGeldigeRelatieCreator(self.osloCollector)

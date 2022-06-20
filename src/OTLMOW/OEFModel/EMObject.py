@@ -3,7 +3,7 @@ from OTLMOW.OEFModel.DtcBeheerder import DtcBeheerder
 from OTLMOW.OEFModel.DtcToezichtGroep import DtcToezichtGroep
 from OTLMOW.OEFModel.DtcToezichter import DtcToezichter
 from OTLMOW.OEFModel.EMAttribuut import EMAttribuut
-from OTLMOW.OTLModel.Classes.NaampadObject import NaampadObject
+from OTLMOW.OTLModel.Classes.ImplementatieElement.NaampadObject import NaampadObject
 from OTLMOW.OTLModel.Datatypes.StringField import StringField
 
 

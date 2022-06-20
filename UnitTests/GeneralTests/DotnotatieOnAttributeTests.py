@@ -1,7 +1,7 @@
 ﻿from unittest import TestCase
 
 from OTLMOW.Facility.SettingsManager import SettingsManager
-from TestClasses.OTLModel.Classes.AllCasesTestClass import AllCasesTestClass
+from TestClasses.OTLModel.Classes.Onderdeel.AllCasesTestClass import AllCasesTestClass
 
 
 class DotnotationOnAttributeTests(TestCase):

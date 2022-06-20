@@ -4,13 +4,13 @@ from IPython.display import display, HTML
 from pyvis import network as net
 
 from OTLMOW.Facility.GenericHelper import GenericHelper
-from OTLMOW.OTLModel.Classes.Bevestiging import Bevestiging
-from OTLMOW.OTLModel.Classes.HoortBij import HoortBij
-from OTLMOW.OTLModel.Classes.NietDirectioneleRelatie import NietDirectioneleRelatie
-from OTLMOW.OTLModel.Classes.RelatieObject import RelatieObject
-from OTLMOW.OTLModel.Classes.Sturing import Sturing
-from OTLMOW.OTLModel.Classes.Voedt import Voedt
-from OTLMOW.OTLModel.Classes.VoedtAangestuurd import VoedtAangestuurd
+from OTLMOW.OTLModel.Classes.ImplementatieElement.NietDirectioneleRelatie import NietDirectioneleRelatie
+from OTLMOW.OTLModel.Classes.ImplementatieElement.RelatieObject import RelatieObject
+from OTLMOW.OTLModel.Classes.Onderdeel.Bevestiging import Bevestiging
+from OTLMOW.OTLModel.Classes.Onderdeel.HoortBij import HoortBij
+from OTLMOW.OTLModel.Classes.Onderdeel.Sturing import Sturing
+from OTLMOW.OTLModel.Classes.Onderdeel.Voedt import Voedt
+from OTLMOW.OTLModel.Classes.Onderdeel.VoedtAangestuurd import VoedtAangestuurd
 
 
 class Visualiser:

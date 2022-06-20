@@ -4,7 +4,7 @@ from datetime import datetime
 
 from OTLMOW.Facility.OTLFacility import OTLFacility
 from OTLMOW.ModelGenerator.OtlAssetJSONEncoder import OtlAssetJSONEncoder
-from TestClasses.OTLModel.Classes.AllCasesTestClass import AllCasesTestClass
+from TestClasses.OTLModel.Classes.Onderdeel.AllCasesTestClass import AllCasesTestClass
 
 
 class OtlAssetJSONEncoderTests(unittest.TestCase):

@@ -5,7 +5,7 @@ from unittest import TestCase
 from GeneralTests.EMInfraResponseTestDouble import ResponseTestDouble
 from OTLMOW.Facility.FileFormats.EMInfraDecoder import EMInfraDecoder
 from OTLMOW.Facility.OTLFacility import OTLFacility
-from OTLMOW.OTLModel.Classes.Omvormer import Omvormer
+from OTLMOW.OTLModel.Classes.Onderdeel.Omvormer import Omvormer
 
 
 class EMInfraDecoderTests(TestCase):

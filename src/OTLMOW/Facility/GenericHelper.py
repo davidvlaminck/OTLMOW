@@ -10,4 +10,32 @@ class GenericHelper:
                 new_iterable.append(item)
         return new_iterable
 
+    @staticmethod
+    def get_ns_and_name_from_uri(objectUri):
+        if 'https://wegenenverkeer.data.vlaanderen.be/ns/' not in objectUri:
+            raise ValueError(f'{objectUri} is not a valid uri to extract a namespace from')
 
+        verkorte_uri = objectUri.split('/ns/')[1]
+        verkorte_uri_array = verkorte_uri.split('#')
+        return verkorte_uri_array[0], verkorte_uri_array[1]
+
+    @staticmethod
+    def get_class_directory_from_ns(ns):
+        return 'Classes\\' + GenericHelper.get_titlecase_ns(ns)
+
+    @staticmethod
+    def get_titlecase_ns(ns: str) -> str:
+        if ns == 'abstracten':
+            return 'Abstracten'
+        elif ns == 'implementatieelement':
+            return 'ImplementatieElement'
+        elif ns == 'installatie':
+            return 'Installatie'
+        elif ns == 'levenscyclus':
+            return 'Levenscyclus'
+        elif ns == 'onderdeel':
+            return 'Onderdeel'
+        elif ns == 'proefenmeting':
+            return 'ProefEnMeting'
+
+    

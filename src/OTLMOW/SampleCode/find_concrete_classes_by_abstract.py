@@ -13,7 +13,7 @@ if __name__ == '__main__':
         for file in files:
             if file.endswith(".py") and not file[0] == '_':
                 try:
-                    instance = otl_facility.asset_factory.dynamic_create_instance_from_name(file[:-3])
+                    instance = otl_facility.asset_factory.dynamic_create_instance_from_ns_and_name(file[:-3])
                     if isinstance(instance, abstract_class_type):
                         print(instance.typeURI)
                 except:

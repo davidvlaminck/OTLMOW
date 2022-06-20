@@ -5,7 +5,7 @@ import unittest
 from OTLMOW.Facility.FileFormats.CsvExporter import CsvExporter
 from OTLMOW.Facility.FileFormats.CsvImporter import CsvImporter
 from OTLMOW.Facility.OTLFacility import OTLFacility
-from TestClasses.OTLModel.Classes.AllCasesTestClass import AllCasesTestClass
+from TestClasses.OTLModel.Classes.Onderdeel.AllCasesTestClass import AllCasesTestClass
 
 ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
 

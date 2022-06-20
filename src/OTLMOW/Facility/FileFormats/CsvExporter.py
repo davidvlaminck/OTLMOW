@@ -1,6 +1,6 @@
 import copy
 
-from OTLMOW.OTLModel.Classes.AIMObject import AIMObject
+from OTLMOW.OTLModel.Classes.ImplementatieElement.AIMObject import AIMObject
 
 
 class CsvExporter:

@@ -1,6 +1,6 @@
 import unittest
 
-from UnitTests.TestClasses.OTLModel.Classes.AllCasesTestClass import AllCasesTestClass
+from TestClasses.OTLModel.Classes.Onderdeel.AllCasesTestClass import AllCasesTestClass
 from UnitTests.TestClasses.OTLModel.Datatypes.DtcTestComplexType import DtcTestComplexTypeWaarden
 
 

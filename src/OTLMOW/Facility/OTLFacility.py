@@ -40,7 +40,7 @@ class OTLFacility:
                                 datefmt='%H:%M:%S',
                                 level=loggingLevel)
 
-        self.davieImporter = DavieImporter(self.settings)
+        self.davie_importer = DavieImporter(self.settings)
         self.oef_model_creator: None | OEFModelCreator = None
         self.posten_collector = None
         self.posten_creator = None
@@ -48,7 +48,7 @@ class OTLFacility:
         self.encoder = OtlAssetJSONEncoder(indent=4, settings=self.settings)
         self.davieDecoder = JsonDecoder(self.settings)
         self.asset_factory = AssetFactory()
-        self.relatieValidator: None | RelatieValidator = None
+        self.relatie_validator: None | RelatieValidator = None
         self.relatie_creator: None | RelatieCreator = None
         self.visualiser = Visualiser()
 
@@ -82,12 +82,12 @@ class OTLFacility:
 
     # create instance
 
-    def _init_relatie_validation(self, relationlist: [GeldigeRelatieLijst] = None):
-        if relationlist is None:
-            relationlist = GeldigeRelatieLijst().lijst
-        self.relatieValidator = RelatieValidator(relationlist)
-        self.relatieValidator.enableValidateRelatieOnRelatieInteractor()
-        self.relatie_creator = RelatieCreator(self.relatieValidator)
+    def _init_relatie_validation(self, relation_list: [GeldigeRelatieLijst] = None):
+        if relation_list is None:
+            relation_list = GeldigeRelatieLijst().lijst
+        self.relatie_validator = RelatieValidator(relation_list)
+        self.relatie_validator.enableValidateRelatieOnRelatieInteractor()
+        self.relatie_creator = RelatieCreator(self.relatie_validator)
 
     @staticmethod
     def _init_otl_model_creator(otl_file_location: str = '', geoA_file_location: str = '') -> OTLModelCreator:
@@ -136,7 +136,8 @@ class OTLFacility:
     def create_oef_datamodel(self):
         self.oef_model_creator.create_full_model()
 
-    def extend_classes_with_ond_ins(self, classes, ins_ond_classes):
+    @staticmethod
+    def extend_classes_with_ond_ins(classes, ins_ond_classes):
         for cls in classes:
             ins_ond_cls = next((c for c in ins_ond_classes if c["uri"] == cls["uri"]), None)
             if ins_ond_cls is None:

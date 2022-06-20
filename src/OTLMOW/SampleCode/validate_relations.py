@@ -34,7 +34,7 @@ if __name__ == '__main__':
     lijst_otl_objecten = [dnb, meter, voedingsrelatie]
 
     # using facility's designated validator
-    print(otl_facility.relatieValidator.validateRelatieByURI(dnb, meter, Voedt))
+    print(otl_facility.relatie_validator.validateRelatieByURI(dnb, meter, Voedt))
     # outputs True
 
     # using methods on the object itself

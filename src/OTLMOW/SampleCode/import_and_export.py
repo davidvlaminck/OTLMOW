@@ -9,7 +9,7 @@ if __name__ == '__main__':
 
     # import a JSON file from Davie
     file_path = 'C:\\resources\\DA-2022-00191_export.json' # VRI Stenenbrug op tei
-    objects = otl_facility.davieImporter.import_file(filePath=file_path, ignore_failed_objects=True)
+    objects = otl_facility.davie_importer.import_file(filePath=file_path, ignore_failed_objects=True)
 
     # export to a JSON file
     export_json_path = f'{datetime.now().strftime("%Y%m%d%H%M%S")}_export.json'

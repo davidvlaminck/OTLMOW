@@ -29,9 +29,17 @@ class OTLFacility:
     def __init__(self, loggingLevel: int = logging.WARNING, logfile: str = 'logs.txt',
                  enable_relation_features: bool = False,
                  settings_path: str = ''):
+        """
+        # logging
+        # settings
+        :param settings_path: specifies the location of the settings file this library loads. Defaults to the example that is
+        supplied with the library ('OTLMOW/Facility/settings_sample.json')
+        :type: str
+
+        # enable relation features
+        """
         self.settings: dict = {}
-        if settings_path != '':
-            self.load_settings(settings_path)
+        self._load_settings(settings_path)
 
         if loggingLevel != 0 and logfile != '':
             logging.basicConfig(filename=logfile,
@@ -144,6 +152,16 @@ class OTLFacility:
                 continue
             cls["attributen"].extend(ins_ond_cls["attributen"])
 
-    def load_settings(self, settings_path):
-        with open(settings_path) as settings_file:
-            self.settings = json.load(settings_file)
+    def _load_settings(self, settings_path):
+        if settings_path == '':
+            base_dir = os.path.dirname(os.path.realpath(__file__))
+            settings_path = abspath(f'{base_dir}\\settings_sample.json')
+
+        if not os.path.isfile(settings_path):
+            raise FileNotFoundError(settings_path + " is not a valid path. File does not exist.")
+
+        try:
+            with open(settings_path) as settings_file:
+                self.settings = json.load(settings_file)
+        except:
+            raise ImportError(f'Could not open the settings file at {settings_file}')

@@ -1,4 +1,16 @@
+from collections import defaultdict
+
+from OTLMOW.OTLModel.BaseClasses.OTLObject import OTLObject
+
+
 class GenericHelper:
+    @staticmethod
+    def count_assets_by_type(objects: [OTLObject]) -> defaultdict:
+        d = defaultdict(int)
+        for i in objects:
+            d[i.typeURI] += 1
+        return d
+
     @classmethod
     def remove_duplicates_in_iterable_based_on_property(cls, iterable: iter, prop: str) -> []:
         done = []

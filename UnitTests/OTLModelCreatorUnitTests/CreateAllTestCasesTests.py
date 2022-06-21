@@ -30,11 +30,9 @@ class CreateAllTestCasesTests(unittest.TestCase):
         base_dir = os.path.dirname(os.path.realpath(__file__))
         otl_file_location = f'{base_dir}/../OTL_AllCasesTestClass.db'
         #GA_file_location = '../InputFiles/Geometrie_Artefact_2.3.RC2.db'
-        otl_facility.init_otl_model_creator(otl_file_location)
-        otl_facility.create_otl_datamodel(directory=f'{base_dir}/../TestClasses')
 
         with self.assertLogs() as captured:
-            otl_facility.create_otl_datamodel(directory=f'{base_dir}/../TestClasses')
+            otl_facility.create_datamodel(directory=f'{base_dir}/../TestClasses', otl_sqlite_file_location=otl_file_location)
             allcasesclass_location = f'{base_dir}/../TestClasses/OTLModel/Classes/Onderdeel/AllCasesTestClass.py'
             self.assertTrue(os.path.isfile(allcasesclass_location))
 

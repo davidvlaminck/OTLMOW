@@ -21,7 +21,12 @@ class CsvImporter:
         self.data = [[]]
         self.objects = []
 
-    def import_csv_file(self, file_location: str = '', delimiter=';'):
+    def import_file(self, file_location: str = '', **kwargs):
+        delimiter = ';'
+        if kwargs is not None:
+            if 'delimiter' in kwargs:
+                delimiter = kwargs['delimiter']
+
         if file_location == '' or not os.path.isfile(file_location):
             raise FileNotFoundError(f'Could not load the file at: {file_location}')
 

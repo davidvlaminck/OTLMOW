@@ -2,7 +2,7 @@ import datetime
 import logging
 from unittest import TestCase
 
-from OTLMOW.Facility.Exceptions.CouldNotConvertToCorrectType import CouldNotConvertToCorrectType
+from OTLMOW.Facility.Exceptions.CouldNotConvertToCorrectTypeError import CouldNotConvertToCorrectTypeError
 from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLMOW.OTLModel.Datatypes.DateField import DateField
 from OTLMOW.OTLModel.Datatypes.IntegerField import IntegerField
@@ -42,5 +42,5 @@ class DateFieldTests(TestCase):
         incorrect_values = ['a', 0.1, '0.1', object(), [], {}, True, False, datetime.time(2, 2, 2)]
         for value in incorrect_values:
             with self.subTest(f'Could not perform conversion: value = {value}'):
-                with self.assertRaises(CouldNotConvertToCorrectType):
+                with self.assertRaises(CouldNotConvertToCorrectTypeError):
                     DateField.convert_to_correct_type(value)

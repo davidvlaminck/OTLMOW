@@ -2,7 +2,7 @@ import logging
 from datetime import date, datetime, timedelta
 from random import randrange
 
-from OTLMOW.Facility.Exceptions.CouldNotConvertToCorrectType import CouldNotConvertToCorrectType
+from OTLMOW.Facility.Exceptions.CouldNotConvertToCorrectTypeError import CouldNotConvertToCorrectTypeError
 from OTLMOW.OTLModel.BaseClasses.OTLField import OTLField
 
 
@@ -19,7 +19,7 @@ class DateField(OTLField):
         if value is None:
             return None
         if isinstance(value, bool):
-            raise CouldNotConvertToCorrectType(f'{value} could not be converted to correct type (implied by {cls.__name__})')
+            raise CouldNotConvertToCorrectTypeError(f'{value} could not be converted to correct type (implied by {cls.__name__})')
         if isinstance(value, datetime):
             if log_warnings:
                 logging.warning(
@@ -50,9 +50,9 @@ class DateField(OTLField):
                             'Assigned a string to a date datatype. Automatically converted to the correct type. Please change the type')
                     return date(dt.year, dt.month, dt.day)
                 except ValueError:
-                    raise CouldNotConvertToCorrectType(
+                    raise CouldNotConvertToCorrectTypeError(
                         f'{value} could not be converted to correct type (implied by {cls.__name__})')
-        raise CouldNotConvertToCorrectType(f'{value} could not be converted to correct type (implied by {cls.__name__})')
+        raise CouldNotConvertToCorrectTypeError(f'{value} could not be converted to correct type (implied by {cls.__name__})')
 
     @staticmethod
     def validate(value, attribuut):

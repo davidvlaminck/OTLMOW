@@ -2,7 +2,7 @@ import logging
 import random
 from datetime import time, datetime, date
 
-from OTLMOW.Facility.Exceptions.CouldNotConvertToCorrectType import CouldNotConvertToCorrectType
+from OTLMOW.Facility.Exceptions.CouldNotConvertToCorrectTypeError import CouldNotConvertToCorrectTypeError
 from OTLMOW.OTLModel.BaseClasses.OTLField import OTLField
 
 
@@ -19,7 +19,7 @@ class TimeField(OTLField):
         if value is None:
             return None
         if isinstance(value, bool):
-            raise CouldNotConvertToCorrectType(f'{value} could not be converted to correct type (implied by {cls.__name__})')
+            raise CouldNotConvertToCorrectTypeError(f'{value} could not be converted to correct type (implied by {cls.__name__})')
         if isinstance(value, time):
             return value
         if isinstance(value, datetime):
@@ -61,8 +61,8 @@ class TimeField(OTLField):
                                 'Assigned a string to a time datatype. Automatically converted to the correct type. Please change the type')
                         return time(dt.hour, dt.minute, dt.second)
                     except Exception:
-                        raise CouldNotConvertToCorrectType(f'{value} could not be converted to correct type (implied by {cls.__name__})')
-        raise CouldNotConvertToCorrectType(f'{value} could not be converted to correct type (implied by {cls.__name__})')
+                        raise CouldNotConvertToCorrectTypeError(f'{value} could not be converted to correct type (implied by {cls.__name__})')
+        raise CouldNotConvertToCorrectTypeError(f'{value} could not be converted to correct type (implied by {cls.__name__})')
 
     @staticmethod
     def validate(value, attribuut):

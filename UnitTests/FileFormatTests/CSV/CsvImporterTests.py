@@ -36,7 +36,7 @@ class CsvImporterTests(unittest.TestCase):
         otl_facility = OTLFacility(logfile='', settings_path=settings_file_location)
         importer = CsvImporter(settings=otl_facility.settings)
         file_location = os.path.abspath(os.path.join(os.sep, ROOT_DIR, 'test_file_VR.csv'))
-        importer.import_csv_file(file_location)
+        importer.import_file(file_location)
         self.assertEqual(187, len(importer.data))
         self.assertEqual(27, len(importer.headers))
 

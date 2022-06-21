@@ -1,6 +1,6 @@
 from unittest import TestCase
 
-from OTLMOW.Facility.Exceptions.CouldNotConvertToCorrectType import CouldNotConvertToCorrectType
+from OTLMOW.Facility.Exceptions.CouldNotConvertToCorrectTypeError import CouldNotConvertToCorrectTypeError
 from OTLMOW.Facility.Exceptions.UnionTypeError import UnionTypeError
 from TestClasses.OTLModel.Classes.Onderdeel.AllCasesTestClass import AllCasesTestClass
 
@@ -42,7 +42,7 @@ class UnionTypeAttributeTests(TestCase):
             self.assertEqual(2, instance.testUnionTypeMetKard[1].unionKwantWrd.waarde)
 
         with self.subTest('assign bad value to UnionType with kard *'):
-            with self.assertRaises(CouldNotConvertToCorrectType):
+            with self.assertRaises(CouldNotConvertToCorrectTypeError):
                 instance.testUnionTypeMetKard[1].unionKwantWrd.waarde = 'a'
 
         with self.subTest('assign value directly to UnionType with kard *'):

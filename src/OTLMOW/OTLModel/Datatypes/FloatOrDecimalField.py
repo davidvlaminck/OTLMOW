@@ -2,7 +2,7 @@
 import logging
 import random
 
-from OTLMOW.Facility.Exceptions.CouldNotConvertToCorrectType import CouldNotConvertToCorrectType
+from OTLMOW.Facility.Exceptions.CouldNotConvertToCorrectTypeError import CouldNotConvertToCorrectTypeError
 from OTLMOW.OTLModel.BaseClasses.OTLField import OTLField
 
 
@@ -34,9 +34,9 @@ class FloatOrDecimalField(OTLField):
                     'Assigned a boolean to a decimal datatype. Automatically converted to the correct type. Please change the type')
             return float_value
         except ValueError:
-            raise CouldNotConvertToCorrectType(f'"{value}" could not be converted to correct type (implied by {cls.__name__})')
+            raise CouldNotConvertToCorrectTypeError(f'"{value}" could not be converted to correct type (implied by {cls.__name__})')
         except TypeError:
-            raise CouldNotConvertToCorrectType(f'"{value}" could not be converted to correct type (implied by {cls.__name__})')
+            raise CouldNotConvertToCorrectTypeError(f'"{value}" could not be converted to correct type (implied by {cls.__name__})')
 
     @staticmethod
     def validate(value, attribuut):

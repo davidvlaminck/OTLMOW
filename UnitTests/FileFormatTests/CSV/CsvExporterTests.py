@@ -41,7 +41,7 @@ class CsvExporterTests(unittest.TestCase):
         otl_facility = self.set_up_facility()
         importer = CsvImporter(settings=otl_facility.settings)
         file_location = os.path.abspath(os.path.join(os.sep, ROOT_DIR, 'test_file_VR.csv'))
-        objects = importer.import_csv_file(file_location)
+        objects = importer.import_file(file_location)
         exporter = CsvExporter(settings=otl_facility.settings)
         new_file_location = os.path.abspath(os.path.join(os.sep, ROOT_DIR, 'test_export_file_VR.csv'))
         os.remove(new_file_location)

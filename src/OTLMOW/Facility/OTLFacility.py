@@ -4,9 +4,10 @@ import os
 from os.path import abspath
 
 from OTLMOW.Facility.AssetFactory import AssetFactory
-from OTLMOW.Facility.FileFormats.DavieImporter import DavieImporter
+from OTLMOW.Facility.FileFormats.JsonImporter import JsonImporter
 from OTLMOW.Facility.FileFormats.JsonDecoder import JsonDecoder
 from OTLMOW.Facility.FileFormats.JsonExporter import JsonExporter
+from OTLMOW.Facility.FileImporter import FileImporter
 from OTLMOW.Facility.RelatieCreator import RelatieCreator
 from OTLMOW.Facility.Visualiser import Visualiser
 from OTLMOW.GeometrieArtefact.GeometrieArtefactCollector import GeometrieArtefactCollector
@@ -48,7 +49,7 @@ class OTLFacility:
                                 datefmt='%H:%M:%S',
                                 level=loggingLevel)
 
-        self.davie_importer = DavieImporter(self.settings)
+        self.json_importer = JsonImporter(self.settings)
         self.oef_model_creator: None | OEFModelCreator = None
         self.posten_collector = None
         self.posten_creator = None
@@ -78,13 +79,17 @@ class OTLFacility:
         file is not mandatory to create a model
         :type: str
 
-        :return: returns an instance of class_name in the given namespace, located from directory, that inherits from OTLObject
-        :rtype: OTLObject or None
+        :return: Nothing is returned, instead the datamodel files are created in the specified directory
+        :rtype: None
         """
         model_creator = self._init_otl_model_creator(otl_sqlite_file_location, geo_artefact_sqlite_file_location)
         self._create_otl_datamodel(model_creator, directory)
 
     # import
+    # add new for AWV Infra API
+    def create_assets_from_file(self, filepath: str, **kwargs) -> list:
+        file_importer = FileImporter(settings=self.settings)
+        return file_importer.create_assets_from_file(filepath=filepath, **kwargs)
 
     # export
 
@@ -110,7 +115,7 @@ class OTLFacility:
         return OTLModelCreator(collector, geo_artefact_collector)
 
     @staticmethod
-    def _create_otl_datamodel(model_creator: OTLModelCreator = None, directory: str = ''):
+    def _create_otl_datamodel(model_creator: OTLModelCreator, directory: str = ''):
         model_creator.oslo_collector.collect()
         if model_creator.geo_artefact_collector is not None:
             model_creator.geo_artefact_collector.collect()

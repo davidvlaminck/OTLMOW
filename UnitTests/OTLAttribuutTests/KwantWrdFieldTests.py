@@ -1,6 +1,6 @@
 from unittest import TestCase
 
-from OTLMOW.Facility.Exceptions.CouldNotConvertToCorrectType import CouldNotConvertToCorrectType
+from OTLMOW.Facility.Exceptions.CouldNotConvertToCorrectTypeError import CouldNotConvertToCorrectTypeError
 from TestClasses.OTLModel.Classes.Onderdeel.AllCasesTestClass import AllCasesTestClass
 
 
@@ -44,5 +44,5 @@ class KwantWrdFieldTests(TestCase):
             self.assertEqual(2, instance.testKwantWrdMetKard[1].waarde)
 
         with self.subTest('assign bad value to kwantWrdField with kard *'):
-            with self.assertRaises(CouldNotConvertToCorrectType):
+            with self.assertRaises(CouldNotConvertToCorrectTypeError):
                 instance.testKwantWrdMetKard[0].waarde = 'a'

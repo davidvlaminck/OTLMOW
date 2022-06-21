@@ -2,7 +2,7 @@ import decimal
 import logging
 import random
 
-from OTLMOW.Facility.Exceptions.CouldNotConvertToCorrectType import CouldNotConvertToCorrectType
+from OTLMOW.Facility.Exceptions.CouldNotConvertToCorrectTypeError import CouldNotConvertToCorrectTypeError
 from OTLMOW.OTLModel.BaseClasses.OTLField import OTLField
 
 
@@ -27,7 +27,7 @@ class IntegerField(OTLField):
         if isinstance(value, float) or isinstance(value, decimal.Decimal):
             i = int(value)
             if value - i != 0:
-                raise CouldNotConvertToCorrectType(f'{value} could not be converted to correct type (implied by {cls.__name__})')
+                raise CouldNotConvertToCorrectTypeError(f'{value} could not be converted to correct type (implied by {cls.__name__})')
             if log_warnings:
                 logging.warning(
                     'Assigned a float/decimal to an integer datatype. Automatically converted to the correct type. Please change the type')
@@ -37,13 +37,13 @@ class IntegerField(OTLField):
                 float_value = float(value)
                 int_value = int(float_value)
                 if int_value != float_value:
-                    raise CouldNotConvertToCorrectType(f'{value} could not be converted to correct type (implied by {cls.__name__})')
+                    raise CouldNotConvertToCorrectTypeError(f'{value} could not be converted to correct type (implied by {cls.__name__})')
                 if log_warnings:
                     logging.warning('Assigned a string to an integer datatype. Automatically converted to the correct type. Please change the type')
                 return int_value
             return int(value)
         except Exception:
-            raise CouldNotConvertToCorrectType(f'{value} could not be converted to correct type (implied by {cls.__name__})')
+            raise CouldNotConvertToCorrectTypeError(f'{value} could not be converted to correct type (implied by {cls.__name__})')
 
     @staticmethod
     def validate(value, attribuut):

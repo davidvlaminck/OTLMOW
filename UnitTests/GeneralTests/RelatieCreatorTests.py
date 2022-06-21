@@ -1,7 +1,7 @@
 import unittest
 
 from OTLMOW.Facility.AssetFactory import AssetFactory
-from OTLMOW.Facility.Exceptions.CouldNotCreateRelation import CouldNotCreateRelation
+from OTLMOW.Facility.Exceptions.CouldNotCreateRelationError import CouldNotCreateRelationError
 from OTLMOW.Facility.RelatieCreator import RelatieCreator
 from OTLMOW.ModelGenerator.BaseClasses.GeldigeRelatie import GeldigeRelatie
 from OTLMOW.ModelGenerator.BaseClasses.RelatieValidator import RelatieValidator
@@ -111,6 +111,6 @@ class RelatieValidatorTests(unittest.TestCase):
         a = Aftakking()
         a.assetId.identificator = 'a'
         v = Voedt
-        with self.assertRaises(CouldNotCreateRelation):
+        with self.assertRaises(CouldNotCreateRelationError):
             relatie = creator.create_relation(bron=a, doel=e, relatie=v)
 

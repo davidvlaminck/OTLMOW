@@ -19,7 +19,7 @@ from OTLMOW.ModelGenerator.SQLDbReader import SQLDbReader
 
 class OSLOInMemoryCreatorTests(unittest.TestCase):
     def test_file_not_found(self):
-        file_location = ''
+        file_location = 'this_file_does_not_exists.db'
         with self.assertRaises(FileNotFoundError):
             SQLDbReader(file_location)
 

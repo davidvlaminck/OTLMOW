@@ -2,7 +2,7 @@
 import string
 import random
 
-from OTLMOW.Facility.Exceptions.CouldNotConvertToCorrectType import CouldNotConvertToCorrectType
+from OTLMOW.Facility.Exceptions.CouldNotConvertToCorrectTypeError import CouldNotConvertToCorrectTypeError
 from OTLMOW.OTLModel.BaseClasses.OTLField import OTLField
 
 
@@ -21,7 +21,7 @@ class StringField(OTLField):
         if isinstance(value, str):
             return value
         if isinstance(value, list) or isinstance(value, dict):
-            raise CouldNotConvertToCorrectType(
+            raise CouldNotConvertToCorrectTypeError(
                 f'The given value of object of type {type(value)} could not be converted to string (implied by {cls.__name__})')
         try:
             str_val = str(value)
@@ -30,7 +30,7 @@ class StringField(OTLField):
                     'Assigned a non-string to a boolean datatype. Automatically converted to the correct type. Please change the type')
             return str_val
         except TypeError:
-            raise CouldNotConvertToCorrectType(f'The given value of object of type {type(value)} could not be converted to string (implied by {cls.__name__})')
+            raise CouldNotConvertToCorrectTypeError(f'The given value of object of type {type(value)} could not be converted to string (implied by {cls.__name__})')
 
     @staticmethod
     def validate(value, attribuut):

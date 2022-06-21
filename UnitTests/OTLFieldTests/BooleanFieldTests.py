@@ -1,7 +1,7 @@
 import logging
 from unittest import TestCase
 
-from OTLMOW.Facility.Exceptions.CouldNotConvertToCorrectType import CouldNotConvertToCorrectType
+from OTLMOW.Facility.Exceptions.CouldNotConvertToCorrectTypeError import CouldNotConvertToCorrectTypeError
 from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLMOW.OTLModel.Datatypes.BooleanField import BooleanField
 from TestClasses.OTLModel.Classes.Onderdeel.AllCasesTestClass import AllCasesTestClass
@@ -50,5 +50,5 @@ class BooleanFieldTests(TestCase):
         incorrect_values = ['a', '1', 'y', 'Y', object(), [], {}]
         for value in incorrect_values:
             with self.subTest(f'Could not perform conversion: value = {value}'):
-                with self.assertRaises(CouldNotConvertToCorrectType):
+                with self.assertRaises(CouldNotConvertToCorrectTypeError):
                     BooleanField.convert_to_correct_type(value)

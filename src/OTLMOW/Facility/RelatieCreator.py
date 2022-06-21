@@ -1,5 +1,5 @@
 from OTLMOW.Facility.AssetFactory import AssetFactory
-from OTLMOW.Facility.Exceptions.CouldNotCreateRelation import CouldNotCreateRelation
+from OTLMOW.Facility.Exceptions.CouldNotCreateRelationError import CouldNotCreateRelationError
 from OTLMOW.ModelGenerator.BaseClasses.RelatieValidator import RelatieValidator
 from OTLMOW.OTLModel.BaseClasses.RelatieInteractor import RelatieInteractor
 from OTLMOW.OTLModel.Classes.Agent import Agent
@@ -13,7 +13,7 @@ class RelatieCreator:
 
     def create_relation(self, bron: RelatieInteractor, doel: RelatieInteractor, relatie) -> RelatieObject:
         if not self.validator.validateRelatieByURI(bron, doel, relatie):
-            raise CouldNotCreateRelation("Can't create an invalid relation, please validate relations first")
+            raise CouldNotCreateRelationError("Can't create an invalid relation, please validate relations first")
         relatie = AssetFactory().dynamic_create_instance_from_uri(class_uri=relatie.typeURI)
 
         relatie.bronAssetId.identificator = bron.assetId.identificator
@@ -33,7 +33,7 @@ class RelatieCreator:
 
     def create_betrokkenerelation(self, bron: RelatieInteractor, doel: RelatieInteractor, relatie=HeeftBetrokkene) -> RelatieObject:
         if not self.validator.validateRelatieByURI(bron, doel, relatie):
-            raise CouldNotCreateRelation("Can't create an invalid relation, please validate relations first")
+            raise CouldNotCreateRelationError("Can't create an invalid relation, please validate relations first")
 
         relatie = AssetFactory().dynamic_create_instance_from_uri(class_uri=relatie.typeURI)
 

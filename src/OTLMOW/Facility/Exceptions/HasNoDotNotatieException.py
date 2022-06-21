@@ -1,2 +1,0 @@
-class HasNoDotnotationException(Exception):
-    pass

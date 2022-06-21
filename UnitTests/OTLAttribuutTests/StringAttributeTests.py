@@ -1,6 +1,6 @@
 from unittest import TestCase
 
-from OTLMOW.Facility.Exceptions.CouldNotConvertToCorrectType import CouldNotConvertToCorrectType
+from OTLMOW.Facility.Exceptions.CouldNotConvertToCorrectTypeError import CouldNotConvertToCorrectTypeError
 from TestClasses.OTLModel.Classes.Onderdeel.AllCasesTestClass import AllCasesTestClass
 
 
@@ -34,7 +34,7 @@ class StringAttributeTests(TestCase):
             self.assertEqual('2', instance.testStringFieldMetKard[1])
 
         with self.subTest('assign bad value to stringfield with kard * by using add_value method'):
-            with self.assertRaises(CouldNotConvertToCorrectType):
+            with self.assertRaises(CouldNotConvertToCorrectTypeError):
                 instance._testStringFieldMetKard.add_value(NonStringableObject())
 
         with self.subTest('assign value directly to stringfield with kard *'):

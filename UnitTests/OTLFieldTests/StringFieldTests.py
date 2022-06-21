@@ -1,7 +1,7 @@
 import logging
 from unittest import TestCase
 
-from OTLMOW.Facility.Exceptions.CouldNotConvertToCorrectType import CouldNotConvertToCorrectType
+from OTLMOW.Facility.Exceptions.CouldNotConvertToCorrectTypeError import CouldNotConvertToCorrectTypeError
 from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
 from OTLMOW.OTLModel.Datatypes.StringField import StringField
 
@@ -46,5 +46,5 @@ class StringFieldTests(TestCase):
         incorrect_values = [NonStringableObject(), [], {}]
         for index, value in enumerate(incorrect_values):
             with self.subTest(f'Could not perform conversion: valueindex = {index}'):
-                with self.assertRaises(CouldNotConvertToCorrectType):
+                with self.assertRaises(CouldNotConvertToCorrectTypeError):
                     StringField.convert_to_correct_type(value)

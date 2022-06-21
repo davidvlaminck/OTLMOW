@@ -17,6 +17,10 @@ class AssetFactory:
         :return: returns an instance of class_name in the given namespace, located from directory, that inherits from OTLObject
         :rtype: OTLObject or None
         """
+
+        if directory is None:
+            directory = 'OTLMOW.OTLModel.Classes'
+
         if namespace is None:
             namespace = ''
         else:
@@ -25,16 +29,16 @@ class AssetFactory:
         try:
             py_mod = __import__(name=f'{directory}.{namespace}{class_name}', fromlist=f'{directory.split(".")[-1]}.{class_name}')
         except ModuleNotFoundError:
-            try:
-                py_mod = __import__(name=f'UnitTests.TestClasses.OTLModel.Classes.Onderdeel.{class_name}', fromlist=f'{class_name}')
-            except ModuleNotFoundError:
-                return None
+            return None
         class_ = getattr(py_mod, class_name)
         instance = class_()
 
         return instance
 
-    def dynamic_create_instance_from_uri(self, class_uri: str, directory:str = 'OTLMOW.OTLModel.Classes'):
+    def dynamic_create_instance_from_uri(self, class_uri: str, directory: str = 'OTLMOW.OTLModel.Classes'):
+        if directory is None:
+            directory = 'OTLMOW.OTLModel.Classes'
+
         if not class_uri.startswith('https://wegenenverkeer.data.vlaanderen.be/ns'):
             raise ValueError(
                 f'{class_uri} is not valid uri, it does not begin with "https://wegenenverkeer.data.vlaanderen.be/ns"')
@@ -52,8 +56,11 @@ class AssetFactory:
         The parameter fields_to_copy dictates what fields are copied from the first object
         When the types do not match, fields_to_copy can not be empty"""
 
+        if directory is None:
+            directory = 'OTLMOW.OTLModel.Classes'
         if fields_to_copy is None:
             fields_to_copy = []
+
         if not isinstance(orig_aimObject, AIMObject):
             raise ValueError(f'{orig_aimObject} is not an AIMObject, not supported')
 

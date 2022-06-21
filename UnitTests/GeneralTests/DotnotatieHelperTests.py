@@ -134,6 +134,12 @@ class DotnotationHelperTests(TestCase):
     def test_set_attribute_by_dotnotation_decimal_value_convert_scenarios(self):
         instance = AllCasesTestClass()
 
+        with self.subTest("setting None"):
+            instance.testDecimalField = 1.0
+            self.assertEqual(1.0, instance.testDecimalField)
+            DotnotationHelper.set_attribute_by_dotnotation(instance, 'testDecimalField', None, convert=True, convert_warnings=False)
+            self.assertIsNone(instance.testDecimalField)
+
         with self.subTest("correctly typed and convert=True"):
             DotnotationHelper.set_attribute_by_dotnotation(instance, 'testDecimalField', 9.0, convert=True, convert_warnings=False)
             self.assertEqual(9.0, instance.testDecimalField)

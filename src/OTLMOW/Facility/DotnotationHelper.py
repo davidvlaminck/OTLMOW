@@ -84,10 +84,9 @@
                 return getattr(instance_or_attribute, '_' + dotnotation)
 
     @staticmethod
-    def set_attribute_by_dotnotation(instanceOrAttribute, dotnotation, value, convert=True, convert_warnings: bool = True, separator: str = '',
-                                     cardinality_indicator: str = '', waarde_shortcut_applicable: bool | None = None) -> None:
-        if value is None:
-            return
+    def set_attribute_by_dotnotation(instanceOrAttribute, dotnotation, value, convert=True, convert_warnings: bool = True,
+                                     separator: str = '', cardinality_indicator: str = '',
+                                     waarde_shortcut_applicable: bool | None = None) -> None:
 
         cardinality_indicator, separator, waarde_shortcut_applicable = DotnotationHelper.set_parameters_to_class_vars(
             cardinality_indicator, separator, waarde_shortcut_applicable)

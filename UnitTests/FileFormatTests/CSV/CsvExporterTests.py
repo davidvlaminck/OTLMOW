@@ -224,7 +224,7 @@ class CsvExporterTests(unittest.TestCase):
 
         list_of_objects[1].assetId.identificator = '1'
         list_of_objects[1].testBooleanField = False
-        list_of_objects[1].testKeuzelijstMetKard = ['waarde-2','waarde-3']
+        list_of_objects[1].testKeuzelijstMetKard = ['waarde-2', 'waarde-3']
         list_of_objects[1].testDecimalField = 2.5
         list_of_objects[1].testComplexType.testComplexType2.testStringField = 'string in complex veld binnenin complex veld'
 

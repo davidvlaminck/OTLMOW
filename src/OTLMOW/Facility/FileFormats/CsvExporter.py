@@ -52,12 +52,11 @@ class CsvExporter:
             list_of_objects = []
 
         types = set(map(lambda x: x.typeURI, list_of_objects))
-        for type in types:
-            filtered_objects = list(filter(lambda x: x.typeURI == type, list_of_objects))
-            shortened_uri = type.split('#')[1]
+        for object_type in types:
+            filtered_objects = list(filter(lambda x: x.typeURI == object_type, list_of_objects))
+            shortened_uri = object_type.split('#')[1]
             specific_file_location = str(file_location)
-            specific_file_location = specific_file_location.split('.')[0] + '_' + shortened_uri + '.' + \
-                                     specific_file_location.split('.')[1]
+            specific_file_location = specific_file_location.split('.')[0] + '_' + shortened_uri + '.' + specific_file_location.split('.')[1]
             csv_data = self.create_data_from_objects(filtered_objects)
             csv_data_lines = self.create_data_lines_from_data(csv_data, delimiter)
             self.write_file(file_location=specific_file_location, data=csv_data_lines)
@@ -69,13 +68,14 @@ class CsvExporter:
 
         self.csv_headers = ['typeURI', 'assetId.identificator', 'assetId.toegekendDoor']
 
-        for object in list_of_objects:
-            if isinstance(object, AIMObject):
-                if object.assetId.identificator is None or object.assetId.identificator == '':
+        for asset_object in list_of_objects:
+            if isinstance(asset_object, AIMObject):
+                if asset_object.assetId.identificator is None or asset_object.assetId.identificator == '':
                     raise ValueError(
-                        f'Not possible to export AIM Objects without a valid assetId.identificator. This is missing for object : {object}')
+                        f'Not possible to export AIM Objects without a valid assetId.identificator. '
+                        f'This is missing for asset_object : {asset_object}')
 
-                self.csv_data.append(self.create_csv_row_for_AIMObject(object))
+                self.csv_data.append(self.create_csv_row_for_AIMObject(asset_object))
 
         self.csv_headers = self.adjust_dotnotation_by_settings(headers=self.csv_headers, settings=self.settings)
         self.csv_headers = self.sort_headers(self.csv_headers)
@@ -85,12 +85,12 @@ class CsvExporter:
 
         return csv_data
 
-    def create_csv_row_for_AIMObject(self, aimobject):
-        values_list = [aimobject.typeURI, aimobject.assetId.identificator, aimobject.assetId.toegekendDoor]
+    def create_csv_row_for_AIMObject(self, aim_object):
+        values_list = [aim_object.typeURI, aim_object.assetId.identificator, aim_object.assetId.toegekendDoor]
         while len(values_list) < len(self.csv_headers):
             values_list.append(None)
 
-        for attribute, value in aimobject.list_attributes_and_values_by_dotnotation(
+        for attribute, value in aim_object.list_attributes_and_values_by_dotnotation(
                 waarde_shortcut=self.settings['dotnotation']['waarde_shortcut_applicable']):
             if attribute in self.csv_headers[1:3]:
                 continue
@@ -146,7 +146,7 @@ class CsvExporter:
                 else:
                     try:
                         row[index] = str(item)
-                    except:
+                    except TypeError:
                         row[index] = ''
         return row
 

@@ -135,15 +135,15 @@ class DotnotationHelperTests(TestCase):
         instance = AllCasesTestClass()
 
         with self.subTest("correctly typed and convert=True"):
-            DotnotationHelper.set_attribute_by_dotnotation(instance, 'testDecimalField', 9.0, convert=True)
+            DotnotationHelper.set_attribute_by_dotnotation(instance, 'testDecimalField', 9.0, convert=True, convert_warnings=False)
             self.assertEqual(9.0, instance.testDecimalField)
 
         with self.subTest("correctly typed and convert=False"):
-            DotnotationHelper.set_attribute_by_dotnotation(instance, 'testDecimalField', 8.0, convert=False)
+            DotnotationHelper.set_attribute_by_dotnotation(instance, 'testDecimalField', 8.0, convert=False, convert_warnings=False)
             self.assertEqual(8.0, instance.testDecimalField)
 
         with self.subTest("incorrectly typed and convert=True"):
-            DotnotationHelper.set_attribute_by_dotnotation(instance, 'testDecimalField', "7.0", convert=True)
+            DotnotationHelper.set_attribute_by_dotnotation(instance, 'testDecimalField', "7.0", convert=True, convert_warnings=False)
             self.assertEqual(7.0, instance.testDecimalField)
 
         with self.subTest("incorrectly typed and convert=False (converted by set_waarde method on attribute itself)"):
@@ -151,7 +151,7 @@ class DotnotationHelperTests(TestCase):
             self.assertEqual(6.0, instance.testDecimalField)
 
         with self.subTest("cardinality > 1 and correctly typed and convert=True"):
-            DotnotationHelper.set_attribute_by_dotnotation(instance, 'testDecimalFieldMetKard', [9.0], convert=True)
+            DotnotationHelper.set_attribute_by_dotnotation(instance, 'testDecimalFieldMetKard', [9.0], convert=True, convert_warnings=False)
             self.assertEqual(9.0, instance.testDecimalFieldMetKard[0])
 
         with self.subTest("cardinality > 1 and correctly typed and convert=False"):
@@ -159,7 +159,7 @@ class DotnotationHelperTests(TestCase):
             self.assertEqual(8.0, instance.testDecimalFieldMetKard[0])
 
         with self.subTest("cardinality > 1 and incorrectly typed and convert=True"):
-            DotnotationHelper.set_attribute_by_dotnotation(instance, 'testDecimalFieldMetKard', ["7.0"], convert=True)
+            DotnotationHelper.set_attribute_by_dotnotation(instance, 'testDecimalFieldMetKard', ["7.0"], convert=True, convert_warnings=False)
             self.assertEqual(7.0, instance.testDecimalFieldMetKard[0])
 
         with self.subTest("cardinality > 1 and incorrectly typed and convert=False (converted by set_waarde method on attribute itself)"):

@@ -28,17 +28,21 @@ from OTLMOW.PostenMapping.PostenInMemoryCreator import PostenInMemoryCreator
 
 
 class OTLFacility:
-    def __init__(self, loggingLevel: int = logging.WARNING, logfile: str = 'logs.txt',
-                 enable_relation_features: bool = False,
-                 settings_path: str = ''):
+    def __init__(self,
+                 settings_path: str = '',
+                 loggingLevel: int = logging.WARNING, logfile: str = 'logs.txt',
+                 enable_relation_features: bool = False):
         """
         # logging
+        ...
+
         # settings
-        :param settings_path: specifies the location of the settings file this library loads. Defaults to the example that is
-        supplied with the library ('OTLMOW/Facility/settings_sample.json')
+
+        :param settings_path: specifies the location of the settings file this library loads. Defaults to the example that is supplied with the library ('OTLMOW/Facility/settings_sample.json')
         :type: str
 
         # enable relation features
+        ...
         """
         self.settings: dict = {}
         self._load_settings(settings_path)
@@ -71,13 +75,11 @@ class OTLFacility:
         """Creates a datamodel given an OTL SQLite database in the specified directory. This will also use a Geometry Artefact
         if specified
 
-        :param directory: directory where the model classes will be created. If not specified, this will create a model in a
-        directory OTLModel in the same directory as the script that runs this method
+        :param directory: directory where the model classes will be created. If not specified, this will create a model in a directory OTLModel in the same directory as the script that runs this method
         :type: str
         :param otl_sqlite_file_location: path to the OTL SQLite file
         :type: str
-        :param geo_artefact_sqlite_file_location: path to the Geometry Artefact SQLite file. Defaults to an empty string as this
-        file is not mandatory to create a model
+        :param geo_artefact_sqlite_file_location: path to the Geometry Artefact SQLite file. Defaults to an empty string as this file is not mandatory to create a model
         :type: str
 
         :return: Nothing is returned, instead the datamodel files are created in the specified directory
@@ -111,6 +113,19 @@ class OTLFacility:
         return file_importer.create_assets_from_file(filepath=filepath, **kwargs)
 
     def create_file_from_assets(self, filepath: str, list_of_objects: list, **kwargs) -> None:
+        """Creates a file from asset objects in memory. Supports csv and json files.
+
+        :param filepath: Path to the file that is to be created
+        :type: str
+
+        Supported arguments for csv:
+
+        delimiter (str): Specifies the delimiter for the csv file. Defaults to ';'
+        split_per_type (bool): If True, creates a file per type instead of one file for all objects
+
+        :return: Returns a list with asset objects
+        :rtype: list
+        """
         file_exporter = FileExporter(settings=self.settings)
         return file_exporter.create_file_from_assets(filepath=filepath, list_of_objects=list_of_objects, **kwargs)
 

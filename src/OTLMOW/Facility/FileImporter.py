@@ -9,13 +9,13 @@ class FileImporter:
     def __init__(self, settings: dict):
         self.settings = settings
 
-    def create_assets_from_file(self, filepath, **kwargs):
+    def create_assets_from_file(self, filepath: str, **kwargs):
         extension = self.get_file_extension(filepath)
         importer = self.get_importer_from_extension(extension=extension, settings=self.settings)
         return importer.import_file(filepath=filepath, **kwargs)
 
     @staticmethod
-    def get_file_extension(filepath):
+    def get_file_extension(filepath: str, file_must_exist: bool = True):
         if filepath == '' or filepath is None:
             raise ValueError('filepath is empty, specify a file path')
 
@@ -23,14 +23,14 @@ class FileImporter:
             raise ValueError('This file does not have an extension. An extension is required to determine the type of importer '
                              'that is needed to import this file')
 
-        if not os.path.isfile(filepath):
+        if file_must_exist and not os.path.isfile(filepath):
             raise FileNotFoundError(filepath + " is not a valid path. File does not exist.")
 
         index = filepath.rfind('.')
         return filepath[index+1:]
 
     @staticmethod
-    def get_importer_from_extension(extension, settings):
+    def get_importer_from_extension(extension: str, settings: dict):
         if extension == 'csv':
             return CsvImporter(settings=settings)
         if extension == 'json':

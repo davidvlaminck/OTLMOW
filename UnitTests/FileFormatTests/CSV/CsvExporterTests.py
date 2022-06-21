@@ -44,8 +44,9 @@ class CsvExporterTests(unittest.TestCase):
         objects = importer.import_file(file_location)
         exporter = CsvExporter(settings=otl_facility.settings)
         new_file_location = os.path.abspath(os.path.join(os.sep, ROOT_DIR, 'test_export_file_VR.csv'))
-        os.remove(new_file_location)
-        exporter.export_csv_file(objects, new_file_location)
+        if os.path.isfile(new_file_location):
+            os.remove(new_file_location)
+        exporter.export_to_file(list_of_objects=objects, filepath=new_file_location)
         self.assertTrue(os.path.isfile(new_file_location))
 
     def test_find_sorted_header_index(self):

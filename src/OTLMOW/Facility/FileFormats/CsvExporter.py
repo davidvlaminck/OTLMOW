@@ -22,10 +22,18 @@ class CsvExporter:
         self.csv_headers = []
         self.csv_data = []
 
-    def export_csv_file(self, list_of_objects: list = [], file_location: str = '',
-                        delimiter: str = '', split_per_type: bool = False):
-        if file_location == '':
-            raise ValueError(f'Can not write a file to: {file_location}')
+    def export_to_file(self, filepath: str = '', list_of_objects: list = None, **kwargs):
+        delimiter = ';'
+        split_per_type = False
+
+        if kwargs is not None:
+            if 'delimiter' in kwargs:
+                delimiter = kwargs['delimiter']
+            if 'split_per_type' in kwargs:
+                split_per_type = kwargs['split_per_type']
+
+        if filepath == '':
+            raise ValueError(f'Can not write a file to: {filepath}')
 
         if delimiter == '':
             delimiter = self.settings['delimiter']
@@ -33,13 +41,16 @@ class CsvExporter:
                 delimiter = ';'
 
         if split_per_type:
-            self.export_multiple_csv_files(list_of_objects, file_location, delimiter)
+            self.export_multiple_csv_files(list_of_objects, filepath, delimiter)
         else:
             csv_data = self.create_data_from_objects(list_of_objects)
             csv_data_lines = self.create_data_lines_from_data(csv_data, delimiter)
-            self.write_file(file_location=file_location, data=csv_data_lines)
+            self.write_file(file_location=filepath, data=csv_data_lines)
 
     def export_multiple_csv_files(self, list_of_objects: list, file_location: str = '', delimiter: str = ''):
+        if list_of_objects is None:
+            list_of_objects = []
+
         types = set(map(lambda x: x.typeURI, list_of_objects))
         for type in types:
             filtered_objects = list(filter(lambda x: x.typeURI == type, list_of_objects))
@@ -51,7 +62,7 @@ class CsvExporter:
             csv_data_lines = self.create_data_lines_from_data(csv_data, delimiter)
             self.write_file(file_location=specific_file_location, data=csv_data_lines)
 
-    def create_data_from_objects(self, list_of_objects: list = []) -> [[str]]:
+    def create_data_from_objects(self, list_of_objects: list) -> [[str]]:
         self.csv_data = []
         if list_of_objects is None or list_of_objects == []:
             raise ValueError('There is no data to export to a csv file')

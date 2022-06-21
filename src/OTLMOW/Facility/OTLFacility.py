@@ -4,6 +4,7 @@ import os
 from os.path import abspath
 
 from OTLMOW.Facility.AssetFactory import AssetFactory
+from OTLMOW.Facility.FileExporter import FileExporter
 from OTLMOW.Facility.FileFormats.JsonImporter import JsonImporter
 from OTLMOW.Facility.FileFormats.JsonDecoder import JsonDecoder
 from OTLMOW.Facility.FileFormats.JsonExporter import JsonExporter
@@ -86,12 +87,32 @@ class OTLFacility:
         self._create_otl_datamodel(model_creator, directory)
 
     # import
-    # add new for AWV Infra API
+    # TODO add new for AWV Infra API
     def create_assets_from_file(self, filepath: str, **kwargs) -> list:
+        """Creates asset objects in memory from a file. Supports csv and json files.
+
+        :param filepath: Path to the file that is to be imported
+        :type: str
+
+        Supported arguments for csv:
+
+        delimiter (str): Specifies the delimiter for the csv file. Defaults to ';'
+
+        Supported arguments for json:
+
+        ignore_failed_objects (bool): If True, suppresses the errors resulting from the creation of one object,
+        to allow the collection of all non-erroneous objects. Defaults to False
+
+
+        :return: Returns a list with asset objects
+        :rtype: list
+        """
         file_importer = FileImporter(settings=self.settings)
         return file_importer.create_assets_from_file(filepath=filepath, **kwargs)
 
-    # export
+    def create_file_from_assets(self, filepath: str, list_of_objects: list, **kwargs) -> None:
+        file_exporter = FileExporter(settings=self.settings)
+        return file_exporter.create_file_from_assets(filepath=filepath, list_of_objects=list_of_objects, **kwargs)
 
     # create instance
 

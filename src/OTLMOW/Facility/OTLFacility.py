@@ -69,9 +69,9 @@ class OTLFacility:
         if enable_relation_features:
             self._init_relatie_validation()
 
-    def create_datamodel(self, directory: str = '',
-                         otl_sqlite_file_location: str = '',
-                         geo_artefact_sqlite_file_location: str = '') -> None:
+    def create_otl_datamodel(self, directory: str = '',
+                             otl_sqlite_file_location: str = '',
+                             geo_artefact_sqlite_file_location: str = '') -> None:
         """Creates a datamodel given an OTL SQLite database in the specified directory. This will also use a Geometry Artefact
         if specified
 

@@ -6,7 +6,7 @@ from OTLMOW.GeometrieArtefact.LijnGeometrie import LijnGeometrie
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class KabelAarding(ABC):
+class KabelAarding(LijnGeometrie):
     """Abstracte voor eigenschappen van verschillende types kabel gebruikt voor aardingen"""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#KabelAarding'

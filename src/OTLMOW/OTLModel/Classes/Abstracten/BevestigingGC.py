@@ -4,7 +4,7 @@ from OTLMOW.GeometrieArtefact.PuntGeometrie import PuntGeometrie
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class BevestigingGC(ABC):
+class BevestigingGC(PuntGeometrie):
     """Abstracte om de bevestigingsrelatie naar de profielen en schermelementen van geluidswerende constructies te faciliteren."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#BevestigingGC'

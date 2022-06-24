@@ -1,6 +1,9 @@
 import logging
 import sys
 
+logging.warning = print
+logging.error = print
+
 from OTLMOW.Facility.OTLFacility import OTLFacility
 
 if __name__ == '__main__':

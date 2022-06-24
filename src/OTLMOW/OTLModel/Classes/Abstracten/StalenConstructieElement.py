@@ -7,7 +7,7 @@ from OTLMOW.GeometrieArtefact.PuntGeometrie import PuntGeometrie
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class StalenConstructieElement(ABC):
+class StalenConstructieElement(PuntGeometrie):
     """Bundeling van gemeenschappelijke eigenschappen van stalen constructie-elementen."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#StalenConstructieElement'

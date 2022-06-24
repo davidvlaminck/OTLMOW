@@ -27,25 +27,25 @@ class OTLClassCreator(AbstractDatatypeCreator):
                                                 inheritances=self.osloCollector.inheritances)
             self.geometry_types = gip.process_inheritances()
 
-    def create_blocks_to_write_from_classes(self, osloClass: OSLOClass, model_location='') -> [str]:
-        if not isinstance(osloClass, OSLOClass):
+    def create_blocks_to_write_from_classes(self, oslo_class: OSLOClass, model_location='') -> [str]:
+        if not isinstance(oslo_class, OSLOClass):
             raise ValueError(f"Input is not a OSLOClass")
 
-        if osloClass.objectUri == '' or not (
-                osloClass.objectUri.startswith('https://wegenenverkeer.data.vlaanderen.be/ns/') or osloClass.objectUri.startswith(
+        if oslo_class.objectUri == '' or not (
+                oslo_class.objectUri.startswith('https://wegenenverkeer.data.vlaanderen.be/ns/') or oslo_class.objectUri.startswith(
             'http://purl.org/dc/terms')):
-            raise ValueError(f"OSLOClass.objectUri is invalid. Value = '{osloClass.objectUri}'")
+            raise ValueError(f"OSLOClass.objectUri is invalid. Value = '{oslo_class.objectUri}'")
 
-        if osloClass.name == '':
-            raise ValueError(f"OSLOClass.name is invalid. Value = '{osloClass.name}'")
+        if oslo_class.name == '':
+            raise ValueError(f"OSLOClass.name is invalid. Value = '{oslo_class.name}'")
 
-        return self.create_block_from_class(osloClass, model_location)
+        return self.create_block_from_class(oslo_class, model_location)
 
-    def create_block_from_class(self, osloClass: OSLOClass, model_location='') -> [str]:
-        attributen = self.osloCollector.find_attributes_by_class(osloClass)
-        inheritances = self.osloCollector.find_inheritances_by_class(osloClass)
+    def create_block_from_class(self, oslo_class: OSLOClass, model_location='') -> [str]:
+        attributen = self.osloCollector.find_attributes_by_class(oslo_class)
+        inheritances = self.osloCollector.find_inheritances_by_class(oslo_class)
 
-        if osloClass.objectUri in ['https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMObject',
+        if oslo_class.objectUri in ['https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMObject',
                                    'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#Derdenobject',
                                    'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#AbstracteAanvullendeGeometrie']:
             inheritances.append(
@@ -55,7 +55,7 @@ class OTLClassCreator(AbstractDatatypeCreator):
             inheritances.append(
                 Inheritance(base_name='RelatieInteractor', base_uri='', class_name='', class_uri='', deprecated_version=''))
 
-        elif osloClass.objectUri == 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#RelatieObject':
+        elif oslo_class.objectUri == 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#RelatieObject':
             inheritances.append(
                 Inheritance(base_name='AttributeInfo', base_uri='', class_name='', class_uri='', deprecated_version=''))
             inheritances.append(
@@ -63,7 +63,7 @@ class OTLClassCreator(AbstractDatatypeCreator):
             inheritances.append(
                 Inheritance(base_name='OTLObject', base_uri='', class_name='', class_uri='', deprecated_version=''))
 
-        elif osloClass.objectUri == 'http://purl.org/dc/terms/Agent':
+        elif oslo_class.objectUri == 'http://purl.org/dc/terms/Agent':
             inheritances.append(
                 Inheritance(base_name='AttributeInfo', base_uri='', class_name='', class_uri='', deprecated_version=''))
             inheritances.append(
@@ -75,7 +75,7 @@ class OTLClassCreator(AbstractDatatypeCreator):
         if len(attributen) > 0:
             datablock.append('from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut')
 
-        if osloClass.abstract == 1:
+        if oslo_class.abstract == 1:
             if len(inheritances) > 0:
                 datablock.append('from abc import abstractmethod')
             else:
@@ -102,35 +102,38 @@ class OTLClassCreator(AbstractDatatypeCreator):
         base_fields = ['BooleanField', 'ComplexField', 'DateField', 'DateTimeField', 'FloatOrDecimalField', 'IntegerField',
                        'KeuzelijstField', 'UnionTypeField', 'URIField', 'LiteralField', 'NonNegIntegerField', 'TimeField',
                        'StringField', 'UnionWaarden']
-        for typeField in list_of_fields:
+        for type_field in list_of_fields:
             model_module = 'OTLMOW'
-            if model_location != '' and typeField not in base_fields:
+            if model_location != '' and type_field not in base_fields:
                 if 'UnitTests' in model_location:
                     model_module = 'UnitTests'
                 modules_index = model_location.rfind('\\' + model_module)
                 modules = model_location[modules_index+1:]
                 model_module = modules.replace('\\', '.')
-            datablock.append(f'from {model_module}.OTLModel.Datatypes.{typeField} import {typeField}')
+            datablock.append(f'from {model_module}.OTLModel.Datatypes.{type_field} import {type_field}')
 
-        list_of_geometry_types = self.get_geometry_types_from_uri(osloClass.objectUri)
+        if 'Bevestiging' in oslo_class.objectUri:
+            pass
+
+        list_of_geometry_types = self.get_geometry_types_from_uri(oslo_class.objectUri)
         for GeometryType in list_of_geometry_types:
             datablock.append(f'from OTLMOW.GeometrieArtefact.{GeometryType.__name__} import {GeometryType.__name__}')
 
         datablock.append('')
         datablock.append('')
         datablock.append(f'# Generated with {self.__class__.__name__}. To modify: extend, do not edit')
-        datablock.append(self.get_classline_from_class_and_inheritances(osloClass, inheritances, list_of_geometry_types))
-        datablock.append(f'    """{osloClass.definition}"""')
+        datablock.append(self.get_classline_from_class_and_inheritances(oslo_class, inheritances, list_of_geometry_types))
+        datablock.append(f'    """{oslo_class.definition}"""')
         datablock.append('')
-        datablock.append(f"    typeURI = '{osloClass.objectUri}'")
+        datablock.append(f"    typeURI = '{oslo_class.objectUri}'")
         datablock.append('    """De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI."""')
 
-        if osloClass.deprecated_version != '':
+        if oslo_class.deprecated_version != '':
             datablock.append('')
-            datablock.append(f"    deprecated_version = '{osloClass.deprecated_version}'")
+            datablock.append(f"    deprecated_version = '{oslo_class.deprecated_version}'")
 
         datablock.append('')
-        if osloClass.abstract == 1:
+        if oslo_class.abstract == 1:
             datablock.append('    @abstractmethod')
         datablock.append('    def __init__(self):')
         if len(inheritances) + len(list_of_geometry_types) == 1:
@@ -152,13 +155,13 @@ class OTLClassCreator(AbstractDatatypeCreator):
 
         return datablock
 
-    def get_classline_from_class_and_inheritances(self, osloClass, inheritances, geometry_types):
-        if osloClass.abstract == 0 and len(inheritances) == 0:
-            raise NotImplementedError(f"{osloClass.objectUri} class structure not implemented")
-        if osloClass.abstract == 1 and len(inheritances) == 0:
-            return f'class {osloClass.name}(ABC):'
-        if len(inheritances) > 0:
-            line = f'class {osloClass.name}('
+    def get_classline_from_class_and_inheritances(self, oslo_class, inheritances, geometry_types):
+        if oslo_class.abstract + len(inheritances) + len(geometry_types) < 1:
+            raise NotImplementedError(f"{oslo_class.objectUri} class structure not implemented")
+        if oslo_class.abstract == 1 and len(inheritances) + len(geometry_types) < 1:
+            return f'class {oslo_class.name}(ABC):'
+        if len(inheritances) + len(geometry_types) > 0:
+            line = f'class {oslo_class.name}('
             for inheritance in inheritances:
                 line += inheritance.base_name + ', '
             for geometry_type in geometry_types:
@@ -167,7 +170,7 @@ class OTLClassCreator(AbstractDatatypeCreator):
             line += '):'
             return line
 
-        raise NotImplementedError(f"{osloClass.objectUri} class structure not implemented")
+        raise NotImplementedError(f"{oslo_class.objectUri} class structure not implemented")
 
     def get_geometry_types_from_uri(self, objectUri):
         if len(self.geometry_types) == 0:

@@ -30,7 +30,7 @@ class OTLModelCreator:
         self.create_primitive_datatypes(directory=directory)
         self.create_complex_datatypes(directory=directory)
         self.create_union_datatypes(directory=directory)
-        self.create_enumerations(directory=directory)
+        #self.create_enumerations(directory=directory)
         self.create_classes(model_directory=directory)
         self.create_relations(directory=directory)
         logging.info('finished creating model at ' + datetime.now().strftime("%d/%m/%Y %H:%M:%S"))

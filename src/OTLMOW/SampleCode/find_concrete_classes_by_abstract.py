@@ -1,23 +1,19 @@
-import os
-
-from OTLMOW.Facility.AssetFactory import AssetFactory
 from OTLMOW.Facility.OTLFacility import OTLFacility
 from OTLMOW.OTLModel.Classes.Abstracten.Behuizing import Behuizing
 
 if __name__ == '__main__':
-    otl_facility = OTLFacility(logfile=r'C:\temp\pythonLogging\python_log.txt',
-                               settings_path="C:\\resources\\settings_OTLMOW.json")
+    otl_facility = OTLFacility(settings_path="C:\\resources\\settings_OTLMOW.json")
+
+    # create a datamodel based on the OTL SQLite database and ttl files stored on the github
+    otl_file_location = '../InputFiles/OTL 2.4.db'
+    GA_file_location = '../InputFiles/Geometrie_Artefact_2.4.db'
 
     abstract_class_type = Behuizing
 
-    # TODO refactor
-    for root, dirs, files in os.walk("../OTLModel/Classes"):
-        for file in files:
-            if file.endswith(".py") and not file[0] == '_':
-                try:
-                    instance = AssetFactory.dynamic_create_instance_from_ns_and_name(file[:-3])
-                    if isinstance(instance, abstract_class_type):
-                        print(instance.typeURI)
-                except:
-                    # catch for abstract classes that can't be instantianted
-                    pass
+    model_creator = otl_facility._init_otl_model_creator(otl_file_location, GA_file_location)
+    model_creator.oslo_collector.collect()
+
+    for uri in model_creator.oslo_collector.find_indirect_superclasses_uri_by_class_uri(abstract_class_type.typeURI):
+        print(uri)
+
+

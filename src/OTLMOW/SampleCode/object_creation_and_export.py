@@ -41,4 +41,4 @@ if __name__ == '__main__':
 
     # write the json file
     path = f'{datetime.now().strftime("%Y%m%d%H%M%S")}_export.json'
-    otl_facility.encoder.write_json_to_file(encoded_json, path)
+    otl_facility.create_file_from_assets(list_of_objects=lijst_otl_objecten, filepath=path)

@@ -49,6 +49,8 @@ class OSLOCollector:
         return sorted(list(filter(lambda c: c.class_uri == oslo_class.objectUri, self.attributes)), key=lambda a: a.objectUri)
 
     def find_inheritances_by_class(self, oslo_class: OSLOClass) -> [Inheritance]:
+        if oslo_class is None:
+            return []
         return self.find_inheritances_by_class_uri(oslo_class.objectUri)
 
     def find_inheritances_by_class_uri(self, oslo_class_uri: str) -> [Inheritance]:

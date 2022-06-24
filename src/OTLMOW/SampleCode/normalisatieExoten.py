@@ -9,7 +9,7 @@ def normaliseer_exoten():
 
     # import from a Davie json file
     jsonPath = "C:\\resources\\DA-2022-00004_export_exoten_normalisatie_prd.json"
-    lijst_exoten = otl_facility.json_importer.import_file(jsonPath)
+    lijst_exoten = otl_facility.create_assets_from_file(jsonPath)
 
     lijst_objecten = []
 
@@ -29,8 +29,8 @@ def normaliseer_exoten():
         lijst_objecten.append(exoten)
 
     # write to a json file that can be uploaded in Davie
-    otl_facility.jsonExporter.export_objects_to_json_file(lijst_objecten,
-                                                          'C:\\resources\\DA-2022-00004_exoten_normalisatie_prd_voor_import.json')
+    otl_facility.create_file_from_assets(list_of_objects=lijst_objecten,
+                                         filepath='C:\\resources\\DA-2022-00004_exoten_normalisatie_prd_voor_import.json')
 
 
 if __name__ == '__main__':

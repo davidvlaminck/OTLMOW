@@ -13,6 +13,10 @@ class KlWvLichtmastBevsToestel(KeuzelijstField):
     definition = 'De standaard bevestigingen van verlichtingstoestellen aan lichtmasten.'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlWvLichtmastBevsToestel'
     options = {
+        'arm-60mm': KeuzelijstWaarde(invulwaarde='arm-60mm',
+                                     label='arm 60mm',
+                                     definitie='arm 60mm',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlWvLichtmastBevsToestel/arm-60mm'),
         'kroon': KeuzelijstWaarde(invulwaarde='kroon',
                                   label='kroon',
                                   definitie='keuzelijst (Niet van toepassing, T-stuk, Mediaanbalk I, Mediaanbalk U, Mediaanbalk H, Ossenkop, Kroon, Andere)./ CLASS : VPLMAST',

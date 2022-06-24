@@ -7,7 +7,7 @@ if __name__ == '__main__':
 
     jsonPath = "DA-2022-00191_export.json"
 
-    vri_assets = otl_facility.json_importer.import_file(jsonPath)
+    vri_assets = otl_facility.create_assets_from_file(jsonPath)
 
     otl_facility.visualiser.show(vri_assets)
 

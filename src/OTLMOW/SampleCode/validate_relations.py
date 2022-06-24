@@ -1,8 +1,8 @@
 from OTLMOW.Facility.OTLFacility import OTLFacility
 from OTLMOW.ModelGenerator.BaseClasses.RelatieRichting import RelatieRichting
-from OTLMOW.OTLModel.Classes.DNBLaagspanning import DNBLaagspanning
-from OTLMOW.OTLModel.Classes.EnergiemeterDNB import EnergiemeterDNB
-from OTLMOW.OTLModel.Classes.Voedt import Voedt
+from OTLMOW.OTLModel.Classes.Onderdeel.DNBLaagspanning import DNBLaagspanning
+from OTLMOW.OTLModel.Classes.Onderdeel.EnergiemeterDNB import EnergiemeterDNB
+from OTLMOW.OTLModel.Classes.Onderdeel.Voedt import Voedt
 
 if __name__ == '__main__':
     otl_facility = OTLFacility(logfile=r'C:\temp\pythonLogging\pythonlog.txt',
@@ -34,7 +34,7 @@ if __name__ == '__main__':
     lijst_otl_objecten = [dnb, meter, voedingsrelatie]
 
     # using facility's designated validator
-    print(otl_facility.relatieValidator.validateRelatieByURI(dnb, meter, Voedt))
+    print(otl_facility.relatie_validator.validateRelatieByURI(dnb, meter, Voedt))
     # outputs True
 
     # using methods on the object itself

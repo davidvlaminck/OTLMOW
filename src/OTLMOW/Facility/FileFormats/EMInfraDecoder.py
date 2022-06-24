@@ -27,6 +27,9 @@ class EMInfraDecoder:
         else:
             instance = OEFClassLoader().dynamic_create_instance_from_uri(typeURI)
 
+        if instance is None:
+            raise NotImplementedError(f'Could not create a class for {typeURI}')
+
         # trim dict
         trimmed_dict = self.trim_json_ld_dict(obj)
 

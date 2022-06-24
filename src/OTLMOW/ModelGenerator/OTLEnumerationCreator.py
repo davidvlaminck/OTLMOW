@@ -1,4 +1,7 @@
 import logging
+import os
+from os.path import abspath
+
 import rdflib
 from rdflib import URIRef, Graph
 
@@ -15,7 +18,7 @@ class OTLEnumerationCreator(AbstractDatatypeCreator):
         logging.info("Created an instance of OTLEnumerationCreator")
         self.osloCollector = osloCollector
 
-    def CreateBlockToWriteFromEnumerations(self, osloEnumeration: OSLOEnumeration):
+    def create_block_to_write_from_enumerations(self, osloEnumeration: OSLOEnumeration):
         if not isinstance(osloEnumeration, OSLOEnumeration):
             raise ValueError(f"Input is not a OSLOEnumeration")
         if osloEnumeration.objectUri == '' or not osloEnumeration.objectUri.startswith(
@@ -24,9 +27,9 @@ class OTLEnumerationCreator(AbstractDatatypeCreator):
         if osloEnumeration.name == '':
             raise ValueError(f"OSLOEnumeration.name is invalid. Value = '{osloEnumeration.name}'")
 
-        return self.CreateBlockToWriteFromEnumeration(osloEnumeration)
+        return self.create_block_to_write_from_enumeration(osloEnumeration)
 
-    def CreateBlockToWriteFromEnumeration(self, osloEnumeration: OSLOEnumeration):
+    def create_block_to_write_from_enumeration(self, osloEnumeration: OSLOEnumeration):
         keuzelijst_waardes = self.get_keuzelijstwaardes_by_name(osloEnumeration.name)
 
         datablock = ['# coding=utf-8', 'import random',
@@ -49,9 +52,11 @@ class OTLEnumerationCreator(AbstractDatatypeCreator):
         datablock.append('    options = {')
 
         for waarde in sorted(keuzelijst_waardes, key=lambda w: w.invulwaarde):
-            whitespace = AbstractDatatypeCreator.getWhiteSpaceEquivalent(f"        '{waarde.invulwaarde}': KeuzelijstWaarde(")
+            whitespace = AbstractDatatypeCreator.get_white_space_equivalent(f"        '{waarde.invulwaarde}': KeuzelijstWaarde(")
             datablock.append(f"        '{waarde.invulwaarde}': KeuzelijstWaarde(invulwaarde='{waarde.invulwaarde}',")
             datablock.append(f"{whitespace}label='{waarde.label}',")
+            if waarde.status != '':
+                datablock.append(f"{whitespace}status='{waarde.status}',")
             if waarde.definitie != '':
                 datablock.append(f"{whitespace}definitie={wrap_in_quotes(waarde.definitie)},")
             datablock.append(f"{whitespace}objectUri='{waarde.objectUri}'),")
@@ -83,7 +88,12 @@ class OTLEnumerationCreator(AbstractDatatypeCreator):
         try:
             g.parse(keuzelijst_link, format="turtle")
         except Exception:
-            raise ConnectionError(f"Could not get ttl file for {keuzelijstnaam}")
+            if 'KlTestKeuzelijst' in keuzelijstnaam:
+                base_dir = os.path.dirname(os.path.realpath(__file__))
+                keuzelijst_link = abspath(f'{base_dir}/../../../UnitTests/OTLModelCreatorUnitTests/KlTestKeuzelijst.ttl')
+                g.parse(keuzelijst_link, format="turtle")
+            else:
+                raise ConnectionError(f"Could not get ttl file for {keuzelijstnaam}")
         return g
 
     @classmethod
@@ -110,6 +120,6 @@ class OTLEnumerationCreator(AbstractDatatypeCreator):
                 elif str(p) == 'http://www.w3.org/2004/02/skos/core#definition':
                     waarde.definitie = str(o)
                 elif str(p) == 'https://www.w3.org/ns/adms#status':
-                    waarde.status = str(o)
+                    waarde.status = str(o).replace('https://wegenenverkeer.data.vlaanderen.be/id/concept/KlKeuzelijstStatus/', '')
             lijst_keuze_opties.append(waarde)
         return sorted(lijst_keuze_opties, key=lambda l: l.invulwaarde)

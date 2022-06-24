@@ -84,10 +84,9 @@
                 return getattr(instance_or_attribute, '_' + dotnotation)
 
     @staticmethod
-    def set_attribute_by_dotnotation(instanceOrAttribute, dotnotation, value, convert=True, separator: str = '',
-                                     cardinality_indicator: str = '', waarde_shortcut_applicable: bool | None = None) -> None:
-        if value is None:
-            return
+    def set_attribute_by_dotnotation(instanceOrAttribute, dotnotation, value, convert=True, convert_warnings: bool = True,
+                                     separator: str = '', cardinality_indicator: str = '',
+                                     waarde_shortcut_applicable: bool | None = None) -> None:
 
         cardinality_indicator, separator, waarde_shortcut_applicable = DotnotationHelper.set_parameters_to_class_vars(
             cardinality_indicator, separator, waarde_shortcut_applicable)
@@ -99,7 +98,7 @@
                                                                    cardinality_indicator=cardinality_indicator,
                                                                    waarde_shortcut_applicable=waarde_shortcut_applicable)
             if convert:
-                gets.set_waarde(DotnotationHelper.convert_waarde_to_correct_type(value, gets))
+                gets.set_waarde(DotnotationHelper.convert_waarde_to_correct_type(value, gets, convert_warnings))
             else:
                 gets.set_waarde(value)
             return
@@ -109,15 +108,14 @@
         if separator not in dotnotation:
             # set list directly
             attribute = DotnotationHelper.get_attributes_by_dotnotation(instance_or_attribute=instanceOrAttribute,
-                                                                        dotnotation=dotnotation.replace(cardinality_indicator,
-                                                                                                        ''),
+                                                                        dotnotation=dotnotation.replace(cardinality_indicator, ''),
                                                                         separator=separator,
                                                                         cardinality_indicator=cardinality_indicator,
                                                                         waarde_shortcut_applicable=False)
 
             if not isinstance(attribute, list) and not attribute.field.waarde_shortcut_applicable:
                 if convert:
-                    converted_value = DotnotationHelper.convert_waarde_to_correct_type(value, attribute)
+                    converted_value = DotnotationHelper.convert_waarde_to_correct_type(value, attribute, convert_warnings)
                     attribute.set_waarde(converted_value)
                 else:
                     attribute.set_waarde(value)
@@ -170,18 +168,18 @@
                                                                waarde_shortcut_applicable=waarde_shortcut_applicable)
 
     @staticmethod
-    def convert_waarde_to_correct_type(waarde, attribuut):
+    def convert_waarde_to_correct_type(waarde, attribuut, log_warnings):
         field = attribuut.field
         if attribuut.kardinaliteit_max != '1' and isinstance(waarde, list):
             new_list = []
             for value_item in waarde:
-                new_list.append(field.convert_to_correct_type(value_item))
+                new_list.append(field.convert_to_correct_type(value_item, log_warnings=log_warnings))
             return new_list
 
         if attribuut.field.waardeObject is not None and attribuut.field.waarde_shortcut_applicable:
             field = attribuut.waarde._waarde.field
 
-        return field.convert_to_correct_type(waarde)
+        return field.convert_to_correct_type(waarde, log_warnings=log_warnings)
 
     def flatten_dict(self, input_dict: dict, seperator: str = '.', prefix='', affix='', new_dict=None):
         if new_dict is None:

@@ -1,9 +1,9 @@
 import unittest
 
-from OTLMOW.OTLModel.Classes.AIMDBStatus import AIMDBStatus
-from OTLMOW.OTLModel.Classes.AIMObject import AIMObject
-from OTLMOW.OTLModel.Classes.AIMToestand import AIMToestand
-from OTLMOW.OTLModel.Classes.Contactor import Contactor
+from OTLMOW.OTLModel.Classes.ImplementatieElement.AIMDBStatus import AIMDBStatus
+from OTLMOW.OTLModel.Classes.ImplementatieElement.AIMObject import AIMObject
+from OTLMOW.OTLModel.Classes.ImplementatieElement.AIMToestand import AIMToestand
+from OTLMOW.OTLModel.Classes.Onderdeel.Contactor import Contactor
 
 
 class AbstractBehaviour(unittest.TestCase):

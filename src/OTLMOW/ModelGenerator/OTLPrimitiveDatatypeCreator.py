@@ -10,7 +10,7 @@ class OTLPrimitiveDatatypeCreator(AbstractDatatypeCreator):
         super().__init__(osloCollector)
         logging.info("Created an instance of OTLPrimitiveDatatypeCreator")
 
-    def CreateBlockToWriteFromPrimitiveTypes(self, osloDatatypePrimitive: OSLODatatypePrimitive):
+    def create_block_to_write_from_primitive_types(self, osloDatatypePrimitive: OSLODatatypePrimitive, model_location=''):
         if not isinstance(osloDatatypePrimitive, OSLODatatypePrimitive):
             raise ValueError(f"Input is not a OSLODatatypePrimitive")
         if osloDatatypePrimitive.objectUri == '' or not (osloDatatypePrimitive.objectUri.startswith('http://www.w3.org/200') or
@@ -24,6 +24,10 @@ class OTLPrimitiveDatatypeCreator(AbstractDatatypeCreator):
 
         if osloDatatypePrimitive.objectUri.startswith(
                 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrd'):
-            return self.CreateBlockToWriteFromComplexPrimitiveOrUnionTypes(osloDatatypePrimitive, typeField='KwantWrd')
+            return self.create_block_to_write_from_complex_primitive_or_union_types(osloDatatypePrimitive,
+                                                                                    typeField='KwantWrd',
+                                                                                    model_location=model_location)
         if osloDatatypePrimitive.objectUri.startswith('https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#Dte'):
-            return self.CreateBlockToWriteFromComplexPrimitiveOrUnionTypes(osloDatatypePrimitive, typeField='Primitive')
+            return self.create_block_to_write_from_complex_primitive_or_union_types(osloDatatypePrimitive,
+                                                                                    typeField='Primitive',
+                                                                                    model_location=model_location)

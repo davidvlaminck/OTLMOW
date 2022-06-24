@@ -9,7 +9,6 @@ ROOT_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__fil
 class SingletonTests(unittest.TestCase):
     def test_instantiate_settingsmanager(self):
         filelocation = os.path.abspath(os.path.join(os.sep, ROOT_DIR, 'src/OTLMOW/Facility/settings_sample.json'))
-        id = None
 
         with self.subTest('instantiate settings manager'):
             settingsmanager = SettingsManager(settings_path=filelocation)

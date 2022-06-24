@@ -13,12 +13,17 @@ from OTLMOW.ModelGenerator.SQLDbReader import SQLDbReader
 
 
 class GeometryTypeTests(TestCase):
-    def test_GeometryType_Baanlichaam(self):
+    def set_up_geo_collector(self):
         base_dir = os.path.dirname(os.path.realpath(__file__))
-        sqlReader = SQLDbReader(f'{base_dir}/../../src/OTLMOW/InputFiles/Geometrie_Artefact_2.3.RC2.db')
+        sqlReader = SQLDbReader(f'{base_dir}/../Geometrie_Artefact_Tests.db')
         memory = GeometrieInMemoryCreator(sqlReader)
         geo_collector = GeometrieArtefactCollector(memory)
         geo_collector.collect()
+        return geo_collector
+
+    def test_GeometryType_Baanlichaam(self):
+        geo_collector = self.set_up_geo_collector()
+
         geo_type_baanlichaam = geo_collector.find_by_objectUri(
             'https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Baanlichaam')
         self.assertTrue(isinstance(geo_type_baanlichaam, GeometrieType))
@@ -31,11 +36,8 @@ class GeometryTypeTests(TestCase):
         self.assertEqual('', geo_type_baanlichaam.gewijzigd_sinds)
 
     def test_InheritanceTest_A_has_concrete_classes_B_C_with_same_geotype(self):
-        base_dir = os.path.dirname(os.path.realpath(__file__))
-        sqlReader = SQLDbReader(f'{base_dir}/../../src/OTLMOW/InputFiles/Geometrie_Artefact_2.3.RC2.db')
-        memory = GeometrieInMemoryCreator(sqlReader)
-        geo_collector = GeometrieArtefactCollector(memory)
-        geo_collector.collect()
+        geo_collector = self.set_up_geo_collector()
+
         geo_voertuig = geo_collector.find_by_objectUri('https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Voertuiglantaarn')
         geo_fietslantaarn = geo_collector.find_by_objectUri(
             'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Fietslantaarn')
@@ -87,11 +89,8 @@ class GeometryTypeTests(TestCase):
         self.assertEqual(0, len(gip.inheritances))
 
     def test_InheritanceTest_multiple_cases(self):
-        base_dir = os.path.dirname(os.path.realpath(__file__))
-        sqlReader = SQLDbReader(f'{base_dir}/../../src/OTLMOW/InputFiles/Geometrie_Artefact_2.3.RC2.db')
-        memory = GeometrieInMemoryCreator(sqlReader)
-        geo_collector = GeometrieArtefactCollector(memory)
-        geo_collector.collect()
+        geo_collector = self.set_up_geo_collector()
+
         geometrie_types = [geo_collector.find_by_objectUri('https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Voertuiglantaarn')
             , geo_collector.find_by_objectUri('https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Fietslantaarn')
         , geo_collector.find_by_objectUri('https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Stroomkring')
@@ -152,14 +151,10 @@ class GeometryTypeTests(TestCase):
         self.assertEqual(0, len(gip.inheritances))
 
     def test_InheritanceTest_all_cases(self):
-        base_dir = os.path.dirname(os.path.realpath(__file__))
-        sqlReader = SQLDbReader(f'{base_dir}/../../src/OTLMOW/InputFiles/Geometrie_Artefact_2.3.RC2.db')
-        memory = GeometrieInMemoryCreator(sqlReader)
-        geo_collector = GeometrieArtefactCollector(memory)
-        geo_collector.collect()
+        geo_collector = self.set_up_geo_collector()
 
         base_dir = os.path.dirname(os.path.realpath(__file__))
-        file_location = f'{base_dir}/../../src/OTLMOW/InputFiles/OTL 2.3.db'
+        file_location = f'{base_dir}/../OTL_Tests.db'
         sql_reader2 = SQLDbReader(file_location)
         oslo_creator = OSLOInMemoryCreator(sql_reader2)
         collector = OSLOCollector(oslo_creator)
@@ -169,4 +164,3 @@ class GeometryTypeTests(TestCase):
         processed_geometrie_types = gip.process_inheritances()
         self.assertTrue(isinstance(processed_geometrie_types, list))
         self.assertEqual(0, len(gip.inheritances))
-

@@ -1,7 +1,7 @@
 ﻿from unittest import TestCase
 
-from AllCasesTestClass import AllCasesTestClass
 from OTLMOW.Facility.SettingsManager import SettingsManager
+from TestClasses.OTLModel.Classes.Onderdeel.AllCasesTestClass import AllCasesTestClass
 
 
 class DotnotationOnAttributeTests(TestCase):
@@ -32,12 +32,12 @@ class DotnotationOnAttributeTests(TestCase):
             self.assertEqual('testKeuzelijst', instance._testKeuzelijst.dotnotation)
             self.assertEqual('testStringField', instance._testStringField.dotnotation)
             self.assertEqual('testBooleanField', instance._testBooleanField.dotnotation)
-            self.assertEqual('testDecimalNumberField', instance._testDecimalNumberField.dotnotation)
+            self.assertEqual('testDecimalField', instance._testDecimalField.dotnotation)
 
         with self.subTest('non-complex attribute with cardinality'):
             self.assertEqual('testKeuzelijstMetKard[]', instance._testKeuzelijstMetKard.dotnotation)
             self.assertEqual('testStringFieldMetKard[]', instance._testStringFieldMetKard.dotnotation)
-            self.assertEqual('testDecimalNumberFieldMetKard[]', instance._testDecimalNumberFieldMetKard.dotnotation)
+            self.assertEqual('testDecimalFieldMetKard[]', instance._testDecimalFieldMetKard.dotnotation)
 
         with self.subTest('dte attribute'):
             self.assertEqual('testEenvoudigType', instance._testEenvoudigType.dotnotation)

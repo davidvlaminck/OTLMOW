@@ -3,20 +3,20 @@ from datetime import datetime
 from OTLMOW.Facility.FileFormats.EMInfraImporter import EMInfraImporter
 from OTLMOW.Facility.OTLFacility import OTLFacility
 from OTLMOW.Facility.RequesterFactory import RequesterFactory
-from OTLMOW.OTLModel.Classes.Armatuurcontroller import Armatuurcontroller
-from OTLMOW.OTLModel.Classes.Bevestiging import Bevestiging
-from OTLMOW.OTLModel.Classes.HoortBij import HoortBij
-from OTLMOW.OTLModel.Classes.LEDDriver import LEDDriver
-from OTLMOW.OTLModel.Classes.Laagspanningsbord import Laagspanningsbord
-from OTLMOW.OTLModel.Classes.Montagekast import Montagekast
-from OTLMOW.OTLModel.Classes.PunctueleVerlichtingsmast import PunctueleVerlichtingsmast
-from OTLMOW.OTLModel.Classes.RetroreflecterendVerkeersbord import RetroreflecterendVerkeersbord
-from OTLMOW.OTLModel.Classes.Stroomkring import Stroomkring
-from OTLMOW.OTLModel.Classes.Sturing import Sturing
-from OTLMOW.OTLModel.Classes.VerlichtingstoestelLED import VerlichtingstoestelLED
-from OTLMOW.OTLModel.Classes.Voedt import Voedt
-from OTLMOW.OTLModel.Classes.VoedtAangestuurd import VoedtAangestuurd
-from OTLMOW.OTLModel.Classes.Wegkantkast import Wegkantkast
+from OTLMOW.OTLModel.Classes.Onderdeel.Armatuurcontroller import Armatuurcontroller
+from OTLMOW.OTLModel.Classes.Onderdeel.Bevestiging import Bevestiging
+from OTLMOW.OTLModel.Classes.Onderdeel.HoortBij import HoortBij
+from OTLMOW.OTLModel.Classes.Onderdeel.LEDDriver import LEDDriver
+from OTLMOW.OTLModel.Classes.Onderdeel.Laagspanningsbord import Laagspanningsbord
+from OTLMOW.OTLModel.Classes.Onderdeel.Montagekast import Montagekast
+from OTLMOW.OTLModel.Classes.Onderdeel.PunctueleVerlichtingsmast import PunctueleVerlichtingsmast
+from OTLMOW.OTLModel.Classes.Onderdeel.RetroreflecterendVerkeersbord import RetroreflecterendVerkeersbord
+from OTLMOW.OTLModel.Classes.Onderdeel.Stroomkring import Stroomkring
+from OTLMOW.OTLModel.Classes.Onderdeel.Sturing import Sturing
+from OTLMOW.OTLModel.Classes.Onderdeel.VerlichtingstoestelLED import VerlichtingstoestelLED
+from OTLMOW.OTLModel.Classes.Onderdeel.Voedt import Voedt
+from OTLMOW.OTLModel.Classes.Onderdeel.VoedtAangestuurd import VoedtAangestuurd
+from OTLMOW.OTLModel.Classes.Onderdeel.Wegkantkast import Wegkantkast
 
 if __name__ == '__main__':
     otl_facility = OTLFacility(logfile=r'C:\temp\pythonLogging\pythonlog.txt',

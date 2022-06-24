@@ -1,7 +1,7 @@
 from unittest import TestCase
 
-from AllCasesTestClass import AllCasesTestClass
-from OTLMOW.Facility.Exceptions.CouldNotConvertToCorrectType import CouldNotConvertToCorrectType
+from OTLMOW.Facility.Exceptions.CouldNotConvertToCorrectTypeError import CouldNotConvertToCorrectTypeError
+from TestClasses.OTLModel.Classes.Onderdeel.AllCasesTestClass import AllCasesTestClass
 
 
 class NonStringableObject(object):
@@ -19,7 +19,7 @@ class KwantWrdFieldTests(TestCase):
         with self.subTest('assign values to kwantWrdField with kard 1'):
             instance.testKwantWrd.waarde = 1
             self.assertEqual(1.0, instance.testKwantWrd.waarde)
-            self.assertEqual('V', instance.testKwantWrd.standaardEenheid)
+            self.assertEqual('%', instance.testKwantWrd.standaardEenheid)
             instance.testKwantWrd.waarde = 2
             self.assertEqual(2, instance.testKwantWrd.waarde)
 
@@ -44,5 +44,5 @@ class KwantWrdFieldTests(TestCase):
             self.assertEqual(2, instance.testKwantWrdMetKard[1].waarde)
 
         with self.subTest('assign bad value to kwantWrdField with kard *'):
-            with self.assertRaises(CouldNotConvertToCorrectType):
+            with self.assertRaises(CouldNotConvertToCorrectTypeError):
                 instance.testKwantWrdMetKard[0].waarde = 'a'

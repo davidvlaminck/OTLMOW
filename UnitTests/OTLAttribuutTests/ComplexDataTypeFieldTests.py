@@ -1,7 +1,7 @@
 import unittest
 
-from AllCasesTestClass import AllCasesTestClass, DtcTestComplexTypeWaarden
-from OTLMOW.Facility.Exceptions.MethodNotApplicableError import MethodNotApplicableError
+from TestClasses.OTLModel.Classes.Onderdeel.AllCasesTestClass import AllCasesTestClass
+from UnitTests.TestClasses.OTLModel.Datatypes.DtcTestComplexType import DtcTestComplexTypeWaarden
 
 
 class ComplexDataTypeFieldTests(unittest.TestCase):

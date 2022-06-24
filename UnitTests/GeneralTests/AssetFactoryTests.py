@@ -1,13 +1,14 @@
 ﻿import unittest
 from unittest import TestCase
 
-from AllCasesTestClass import AllCasesTestClass
-from OTLMOW.OTLModel.Classes.AIMNaamObject import AIMNaamObject
+
+from OTLMOW.OTLModel.Classes.ImplementatieElement.AIMNaamObject import AIMNaamObject
 from OTLMOW.Facility.AssetFactory import AssetFactory
-from OTLMOW.OTLModel.Classes.Aftakking import Aftakking
+from OTLMOW.OTLModel.Classes.Onderdeel.Aftakking import Aftakking
 from OTLMOW.OTLModel.Classes.Agent import Agent
-from OTLMOW.OTLModel.Classes.RetroreflecterendVerkeersbord import RetroreflecterendVerkeersbord
-from OTLMOW.OTLModel.Classes.Stroomkring import Stroomkring
+from OTLMOW.OTLModel.Classes.Onderdeel.RetroreflecterendVerkeersbord import RetroreflecterendVerkeersbord
+from OTLMOW.OTLModel.Classes.Onderdeel.Stroomkring import Stroomkring
+from TestClasses.OTLModel.Classes.Onderdeel.AllCasesTestClass import AllCasesTestClass
 
 
 class AssetFactoryTests(TestCase):
@@ -164,11 +165,11 @@ class AssetFactoryTests(TestCase):
         test_instance.testComplexTypeMetKard[0].testStringField = 'test string'
         self.assertEqual('test string', test_instance.testComplexTypeMetKard[0].testStringField)
 
-        copy_test_instance = factory.create_aimObject_using_other_aimObject_as_template(test_instance, directory='UnitTests')
+        copy_test_instance = factory.create_aimObject_using_other_aimObject_as_template(test_instance, directory='UnitTests.TestClasses.OTLModel.Classes')
         test_instance.testComplexTypeMetKard[0].testStringField = 'test string 2'
         self.assertEqual('test string 2', test_instance.testComplexTypeMetKard[0].testStringField)
         self.assertEqual('test string', copy_test_instance.testComplexTypeMetKard[0].testStringField)
 
     @unittest.skip('Not implemented yet')
-    def test_copy_fields_from_object_to_new_object_Dotnotation(self):
+    def test_copy_fields_from_object_to_new_object_by_dotnotation(self):
         self.assertTrue(False)

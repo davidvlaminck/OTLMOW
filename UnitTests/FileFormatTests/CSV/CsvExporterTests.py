@@ -1,17 +1,25 @@
 import os
 import unittest
 
-from AllCasesTestClass import AllCasesTestClass
+
 from OTLMOW.Facility.FileFormats.CsvExporter import CsvExporter
 from OTLMOW.Facility.FileFormats.CsvImporter import CsvImporter
 from OTLMOW.Facility.OTLFacility import OTLFacility
+from TestClasses.OTLModel.Classes.Onderdeel.AllCasesTestClass import AllCasesTestClass
 
 ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
 
 
 class CsvExporterTests(unittest.TestCase):
+    @staticmethod
+    def set_up_facility():
+        base_dir = os.path.dirname(os.path.realpath(__file__))
+        settings_file_location = f'{base_dir}/../../settings_OTLMOW.json'
+        otl_facility = OTLFacility(logfile='', settings_path=settings_file_location)
+        return otl_facility
+
     def test_init_importer_only_load_with_settings(self):
-        otl_facility = OTLFacility(logfile='', settings_path='C:\\resources\\settings_OTLMOW.json')
+        otl_facility = self.set_up_facility()
 
         with self.subTest('load with correct settings'):
             exporter = CsvExporter(settings=otl_facility.settings)
@@ -30,18 +38,19 @@ class CsvExporterTests(unittest.TestCase):
                 CsvExporter(settings={"file_formats": [{}]})
 
     def test_load_and_writefile(self):
-        otl_facility = OTLFacility(logfile='', settings_path='C:\\resources\\settings_OTLMOW.json')
+        otl_facility = self.set_up_facility()
         importer = CsvImporter(settings=otl_facility.settings)
         file_location = os.path.abspath(os.path.join(os.sep, ROOT_DIR, 'test_file_VR.csv'))
-        objects = importer.import_csv_file(file_location)
+        objects = importer.import_file(file_location)
         exporter = CsvExporter(settings=otl_facility.settings)
         new_file_location = os.path.abspath(os.path.join(os.sep, ROOT_DIR, 'test_export_file_VR.csv'))
-        os.remove(new_file_location)
-        exporter.export_csv_file(objects, new_file_location)
+        if os.path.isfile(new_file_location):
+            os.remove(new_file_location)
+        exporter.export_to_file(list_of_objects=objects, filepath=new_file_location)
         self.assertTrue(os.path.isfile(new_file_location))
 
     def test_find_sorted_header_index(self):
-        otl_facility = OTLFacility(logfile='', settings_path='C:\\resources\\settings_OTLMOW.json')
+        otl_facility = self.set_up_facility()
         exporter = CsvExporter(settings=otl_facility.settings)
         with self.subTest('no headers yet'):
             exporter.csv_headers = ['typeURI', 'assetId.identificator', 'assetId.toegekendDoor']
@@ -62,7 +71,7 @@ class CsvExporterTests(unittest.TestCase):
             self.assertEqual(expected, result)
 
     def test_sort_headers(self):
-        otl_facility = OTLFacility(logfile='', settings_path='C:\\resources\\settings_OTLMOW.json')
+        otl_facility = self.set_up_facility()
         exporter = CsvExporter(settings=otl_facility.settings)
         with self.subTest('no headers'):
             result = exporter.sort_headers(['typeURI', 'assetId.identificator', 'assetId.toegekendDoor'])
@@ -80,7 +89,7 @@ class CsvExporterTests(unittest.TestCase):
             self.assertListEqual(expected, result)
 
     def test_create_data_from_objects_empty_objects(self):
-        otl_facility = OTLFacility(logfile='', settings_path='C:\\resources\\settings_OTLMOW.json')
+        otl_facility = self.set_up_facility()
         exporter = CsvExporter(settings=otl_facility.settings)
 
         with self.subTest('empty list of objects'):
@@ -111,12 +120,12 @@ class CsvExporterTests(unittest.TestCase):
             self.assertEqual(None, csv_data[1][2])
 
     def test_create_data_from_objects_nonempty_objects_same_type(self):
-        otl_facility = OTLFacility(logfile='', settings_path='C:\\resources\\settings_OTLMOW.json')
+        otl_facility = self.set_up_facility()
         exporter = CsvExporter(settings=otl_facility.settings)
 
         list_of_objects = [AllCasesTestClass(), AllCasesTestClass()]
         list_of_objects[0].assetId.identificator = '0'
-        list_of_objects[0].testDecimalNumberField = 1.0
+        list_of_objects[0].testDecimalField = 1.0
         list_of_objects[0].testBooleanField = True
         list_of_objects[0].testKeuzelijst = 'waarde-1'
         list_of_objects[0].testComplexType.testStringField = 'string in complex veld'
@@ -125,7 +134,7 @@ class CsvExporterTests(unittest.TestCase):
         list_of_objects[1].assetId.identificator = '1'
         list_of_objects[1].testBooleanField = False
         list_of_objects[1].testKeuzelijstMetKard = ['waarde-2']
-        list_of_objects[1].testDecimalNumberField = 2.5
+        list_of_objects[1].testDecimalField = 2.5
         list_of_objects[1].testComplexType.testComplexType2.testStringField = 'string in complex veld binnenin complex veld'
 
         csv_data = exporter.create_data_from_objects(list_of_objects)
@@ -138,7 +147,7 @@ class CsvExporterTests(unittest.TestCase):
             self.assertEqual('testComplexType.testComplexType2.testStringField', csv_data[0][4])
             self.assertEqual('testComplexType.testKwantWrd', csv_data[0][5])
             self.assertEqual('testComplexType.testStringField', csv_data[0][6])
-            self.assertEqual('testDecimalNumberField', csv_data[0][7])
+            self.assertEqual('testDecimalField', csv_data[0][7])
             self.assertEqual('testKeuzelijst', csv_data[0][8])
             self.assertEqual('testKeuzelijstMetKard[]', csv_data[0][9])
 
@@ -167,7 +176,7 @@ class CsvExporterTests(unittest.TestCase):
             self.assertEqual(['waarde-2'], csv_data[2][9])
 
     def test_create_data_from_objects_cardinality(self):
-        otl_facility = OTLFacility(logfile='', settings_path='C:\\resources\\settings_OTLMOW.json')
+        otl_facility = self.set_up_facility()
         exporter = CsvExporter(settings=otl_facility.settings)
 
         list_of_objects = [AllCasesTestClass()]
@@ -192,7 +201,7 @@ class CsvExporterTests(unittest.TestCase):
         self.assertListEqual(['1.1', '1.2'], csv_data[1][4])
 
     def test_create_data_from_objects_different_settings(self):
-        otl_facility = OTLFacility(logfile='', settings_path='C:\\resources\\settings_OTLMOW.json')
+        otl_facility = self.set_up_facility()
         exporter = CsvExporter(settings=otl_facility.settings)
         exporter.settings = {
             "name": "csv",
@@ -207,7 +216,7 @@ class CsvExporterTests(unittest.TestCase):
 
         list_of_objects = [AllCasesTestClass(), AllCasesTestClass()]
         list_of_objects[0].assetId.identificator = '0'
-        list_of_objects[0].testDecimalNumberField = 1.0
+        list_of_objects[0].testDecimalField = 1.0
         list_of_objects[0].testBooleanField = True
         list_of_objects[0].testKeuzelijst = 'waarde-1'
         list_of_objects[0].testComplexType.testStringField = 'string in complex veld'
@@ -215,8 +224,8 @@ class CsvExporterTests(unittest.TestCase):
 
         list_of_objects[1].assetId.identificator = '1'
         list_of_objects[1].testBooleanField = False
-        list_of_objects[1].testKeuzelijstMetKard = ['waarde-2','waarde-3']
-        list_of_objects[1].testDecimalNumberField = 2.5
+        list_of_objects[1].testKeuzelijstMetKard = ['waarde-2', 'waarde-3']
+        list_of_objects[1].testDecimalField = 2.5
         list_of_objects[1].testComplexType.testComplexType2.testStringField = 'string in complex veld binnenin complex veld'
 
         csv_data = exporter.create_data_from_objects(list_of_objects)

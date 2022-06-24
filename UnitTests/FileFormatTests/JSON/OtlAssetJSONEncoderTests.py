@@ -1,20 +1,26 @@
+import os
 import unittest
 from datetime import datetime
 
-from AllCasesTestClass import AllCasesTestClass
 from OTLMOW.Facility.OTLFacility import OTLFacility
 from OTLMOW.ModelGenerator.OtlAssetJSONEncoder import OtlAssetJSONEncoder
+from TestClasses.OTLModel.Classes.Onderdeel.AllCasesTestClass import AllCasesTestClass
 
 
 class OtlAssetJSONEncoderTests(unittest.TestCase):
-    def test_init_encoder(self):
-        otl_facility = OTLFacility(logfile='', settings_path='C:\\resources\\settings_OTLMOW.json')
+    def set_up_encoder(self):
+        base_dir = os.path.dirname(os.path.realpath(__file__))
+        settings_file_location = f'{base_dir}/../../settings_OTLMOW.json'
+        otl_facility = OTLFacility(logfile='', settings_path=settings_file_location)
         encoder = OtlAssetJSONEncoder(settings=otl_facility.settings)
+        return encoder
+
+    def test_init_encoder(self):
+        encoder = self.set_up_encoder()
         self.assertIsNotNone(encoder)
 
     def test_JsonEncode_Boolean(self):
-        otl_facility = OTLFacility(logfile='', settings_path='C:\\resources\\settings_OTLMOW.json')
-        encoder = OtlAssetJSONEncoder(settings=otl_facility.settings)
+        encoder = self.set_up_encoder()
 
         instance = AllCasesTestClass()
         instance.testBooleanField = True
@@ -25,8 +31,7 @@ class OtlAssetJSONEncoderTests(unittest.TestCase):
         self.assertEqual(expected, json_instance)
 
     def test_JsonEncode_Keuzelijst(self):
-        otl_facility = OTLFacility(logfile='', settings_path='C:\\resources\\settings_OTLMOW.json')
-        encoder = OtlAssetJSONEncoder(settings=otl_facility.settings)
+        encoder = self.set_up_encoder()
 
         instance = AllCasesTestClass()
         instance.testKeuzelijst = 'waarde-2'
@@ -37,8 +42,7 @@ class OtlAssetJSONEncoderTests(unittest.TestCase):
         self.assertEqual(expected, json_instance)
 
     def test_JsonEncode_UnionType(self):
-        otl_facility = OTLFacility(logfile='', settings_path='C:\\resources\\settings_OTLMOW.json')
-        encoder = OtlAssetJSONEncoder(settings=otl_facility.settings)
+        encoder = self.set_up_encoder()
 
         instance = AllCasesTestClass()
         instance.testUnionType.unionString = 'union waarde'
@@ -54,23 +58,22 @@ class OtlAssetJSONEncoderTests(unittest.TestCase):
         self.assertEqual(expected, json_instance)
 
     def test_JsonEncode_ComplexType(self):
-        otl_facility = OTLFacility(logfile='', settings_path='C:\\resources\\settings_OTLMOW.json')
-        encoder = OtlAssetJSONEncoder(settings=otl_facility.settings)
+        encoder = self.set_up_encoder()
 
         instance = AllCasesTestClass()
         instance.testComplexType.testStringField = 'string'
         instance.testComplexType.testBooleanField = True
         instance.testComplexType.testComplexType2.testStringField = 'string niveau 2'
         json_instance = encoder.encode(instance)
-        expected = '{"testComplexType": {"testBooleanField": true, "testStringField": "string", ' \
-                   '"testComplexType2": {"testStringField": "string niveau 2"}}, ' \
+        expected = '{"testComplexType": {"testBooleanField": true, ' \
+                   '"testComplexType2": {"testStringField": "string niveau 2"}, ' \
+                   '"testStringField": "string"}, ' \
                    '"typeURI": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#AllCasesTestClass"}'
 
         self.assertEqual(expected, json_instance)
 
     def test_JsonEncode_StringMetKard(self):
-        otl_facility = OTLFacility(logfile='', settings_path='C:\\resources\\settings_OTLMOW.json')
-        encoder = OtlAssetJSONEncoder(settings=otl_facility.settings)
+        encoder = self.set_up_encoder()
 
         instance = AllCasesTestClass()
         instance.testStringFieldMetKard = ['a', 'b', 'c']
@@ -81,8 +84,7 @@ class OtlAssetJSONEncoderTests(unittest.TestCase):
         self.assertEqual(expected, json_instance)
 
     def test_JsonEncode_KwantWrd(self):
-        otl_facility = OTLFacility(logfile='', settings_path='C:\\resources\\settings_OTLMOW.json')
-        encoder = OtlAssetJSONEncoder(settings=otl_facility.settings)
+        encoder = self.set_up_encoder()
 
         instance = AllCasesTestClass()
         instance.testKwantWrd.waarde = 1.0
@@ -93,8 +95,7 @@ class OtlAssetJSONEncoderTests(unittest.TestCase):
         self.assertEqual(expected, json_instance)
 
     def test_JsonEncode_ComplexTypeMetKard(self):
-        otl_facility = OTLFacility(logfile='', settings_path='C:\\resources\\settings_OTLMOW.json')
-        encoder = OtlAssetJSONEncoder(settings=otl_facility.settings)
+        encoder = self.set_up_encoder()
 
         instance = AllCasesTestClass()
         instance.testComplexTypeMetKard[0].testStringField = 'string'
@@ -112,8 +113,7 @@ class OtlAssetJSONEncoderTests(unittest.TestCase):
         self.assertEqual(expected, json_instance)
 
     def test_JsonEncode_DateTimeField(self):
-        otl_facility = OTLFacility(logfile='', settings_path='C:\\resources\\settings_OTLMOW.json')
-        encoder = OtlAssetJSONEncoder(settings=otl_facility.settings)
+        encoder = self.set_up_encoder()
 
         instance = AllCasesTestClass()
         instance.testDateTimeField = datetime(2022, 2, 2, 22, 22, 22)

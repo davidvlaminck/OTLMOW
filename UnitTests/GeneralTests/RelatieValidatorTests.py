@@ -1,3 +1,4 @@
+import os
 import unittest
 
 from OTLMOW.Facility.AssetFactory import AssetFactory
@@ -6,14 +7,14 @@ from OTLMOW.ModelGenerator.BaseClasses.GeldigeRelatie import GeldigeRelatie
 from OTLMOW.ModelGenerator.BaseClasses.RelatieRichting import RelatieRichting
 from OTLMOW.ModelGenerator.BaseClasses.RelatieValidator import RelatieValidator
 from OTLMOW.OTLModel.BaseClasses.RelatieInteractor import RelatieInteractor
-from OTLMOW.OTLModel.Classes.Aftakking import Aftakking
-from OTLMOW.OTLModel.Classes.Bevestiging import Bevestiging
-from OTLMOW.OTLModel.Classes.Contactor import Contactor
-from OTLMOW.OTLModel.Classes.EnergiemeterAWV import EnergiemeterAWV
-from OTLMOW.OTLModel.Classes.Hoofdschakelaar import Hoofdschakelaar
-from OTLMOW.OTLModel.Classes.RelatieObject import RelatieObject
-from OTLMOW.OTLModel.Classes.Stroomkring import Stroomkring
-from OTLMOW.OTLModel.Classes.Voedt import Voedt
+from OTLMOW.OTLModel.Classes.Onderdeel.Aftakking import Aftakking
+from OTLMOW.OTLModel.Classes.Onderdeel.Bevestiging import Bevestiging
+from OTLMOW.OTLModel.Classes.Onderdeel.Contactor import Contactor
+from OTLMOW.OTLModel.Classes.Onderdeel.EnergiemeterAWV import EnergiemeterAWV
+from OTLMOW.OTLModel.Classes.Onderdeel.Hoofdschakelaar import Hoofdschakelaar
+from OTLMOW.OTLModel.Classes.ImplementatieElement.RelatieObject import RelatieObject
+from OTLMOW.OTLModel.Classes.Onderdeel.Stroomkring import Stroomkring
+from OTLMOW.OTLModel.Classes.Onderdeel.Voedt import Voedt
 
 
 class GeldigeRelatieLijst:
@@ -38,17 +39,17 @@ class GeldigeRelatie2:
         classLoader = AssetFactory()
 
         bronClassName = UriToClassNameLijst().dict[bron]
-        bronInstance = classLoader.dynamic_create_instance_from_name(bronClassName)
+        bronInstance = classLoader.dynamic_create_instance_from_ns_and_name(bronClassName)
         if not (isinstance(bronInstance, RelatieInteractor)):
             raise TypeError("parameter bron is geen AbstractRelatieInteractor")
 
         doelClassName = UriToClassNameLijst().dict[doel]
-        doelInstance = classLoader.dynamic_create_instance_from_name(doelClassName)
+        doelInstance = classLoader.dynamic_create_instance_from_ns_and_name(doelClassName)
         if not (isinstance(doelInstance, RelatieInteractor)):
             raise TypeError("parameter doel is geen AbstractRelatieInteractor")
 
         relatieClassName = UriToClassNameLijst().dict[relatie]
-        relatieInstance = classLoader.dynamic_create_instance_from_name(relatieClassName)
+        relatieInstance = classLoader.dynamic_create_instance_from_ns_and_name(relatieClassName)
         if not (isinstance(relatieInstance, RelatieObject)):
             raise TypeError("parameter relatie is geen RelatieObject")
 
@@ -218,7 +219,9 @@ https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Stroomkring  --- https://
 
 class RelatieValidatorTestsUsingFacility(unittest.TestCase):
     def test_afterInitFacilityValidateRelatieOnObject(self):
-        facility = OTLFacility(logfile='', settings_path='C:\\resources\\settings_OTLMOW.json')
+        base_dir = os.path.dirname(os.path.realpath(__file__))
+        settings_file_location = f'{base_dir}/../settings_OTLMOW.json'
+        facility = OTLFacility(logfile='', settings_path=settings_file_location, enable_relation_features=True)
         a = Aftakking()
         e = EnergiemeterAWV()
         v = Voedt

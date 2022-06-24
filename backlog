@@ -1,11 +1,8 @@
 Fix
-complexe waarden met kard. geraken niet door de copy by template functie (zie voorbeeld verkeersbord)
 utf-8 encoding > setting in pycharm aanpassen: UTF-8 + BOM aanzetten voor windows
 Geldige relatie lijst refactor naar isinstance met inheritance ipv alle relaties en testen: https://stackoverflow.com/questions/31488362/why-is-dict-faster-than-if-else-in-python/31488416
-convert type nakijken en unittests schrijven
 deployment/packaging: https://packaging.python.org/en/latest/guides/distributing-packages-using-setuptools/
 requirements > rdflib voor lezen ttl bestanden, PyVis voor visualiser en Python 3.10
-Loggers > python native logging
 OEF model: HS heeft een getal vooraan in een eigenschap > getallen omzetten naar letterwoorden
 Oef loc implementeren
 edit set_waarde zodat er flag is voor convert_to_correct_type en voor warnings te disablen bij het gebruik van die functie
@@ -30,6 +27,7 @@ Asset Factory: create similar relations from asset
 Store: assets opslaan in Store waar je gemakkelijk kan zoeken op id of comb van naam en type. Maakt ook mogelijk om te controleren op ids of dubbele relaties > use builtin shelve
 Automatisch temp id's genereren voor assets waar die niet is ingevuld (alleen nuttig indien via Factory aangemaakt, de gebruiker moet de ids kunnen vinden om bv relaties te leggen
 AnyURIField implementeren met validatie voor zover dat mogelijk is
+
 Postenmapping:
 - van post automatisch asset maken met ingevulde waardes
 - van ingevulde asset uitzoeken welke post of posten dit is

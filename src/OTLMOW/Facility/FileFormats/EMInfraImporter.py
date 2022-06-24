@@ -53,6 +53,15 @@ class EMInfraImporter:
             asset_list.append(self.decoder.decode_json_object(obj))
         return asset_list
 
+    def import_assets_from_webservice_by_type_uuid(self, type_uuid: str) -> [OTLObject]:
+        filter_string = '{ "type": ' + f'"{type_uuid}"' + ' }'
+        obj_list = self.get_objects_from_oslo_search_endpoint(url_part='assets', filter_string=filter_string)
+
+        asset_list = []
+        for obj in obj_list:
+            asset_list.append(self.decoder.decode_json_object(obj))
+        return asset_list
+
     def import_assetrelaties_from_webservice_by_assetuuids(self, asset_uuids: [str]) -> [OTLObject]:
         asset_list_string = '", "'.join(asset_uuids)
         filter_string = '{ "asset": ' + f'["{asset_list_string}"]' + ' }'

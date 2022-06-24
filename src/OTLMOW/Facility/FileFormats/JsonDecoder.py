@@ -18,7 +18,7 @@ class JsonDecoder:
 
         self.settings = json_settings
 
-    def decode_json_string(self, jsonString, ignore_failed_objects=False):
+    def decode_json_string(self, jsonString, ignore_failed_objects=False, classes_directory: str = None):
         dict_list = json.loads(jsonString)
         lijst = []
         for obj in dict_list:
@@ -28,7 +28,7 @@ class JsonDecoder:
                 if 'https://wegenenverkeer.data.vlaanderen.be/ns' not in typeURI:
                     raise ValueError('typeURI should start with "https://wegenenverkeer.data.vlaanderen.be/ns" to use this decoder')
 
-                instance = AssetFactory().dynamic_create_instance_from_uri(typeURI)
+                instance = AssetFactory().dynamic_create_instance_from_uri(typeURI, directory=classes_directory)
                 lijst.append(instance)
 
                 for key, value in obj.items():

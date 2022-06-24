@@ -21,7 +21,12 @@ class CsvImporter:
         self.data = [[]]
         self.objects = []
 
-    def import_csv_file(self, file_location: str = '', delimiter=';'):
+    def import_file(self, file_location: str = '', **kwargs):
+        delimiter = ';'
+        if kwargs is not None:
+            if 'delimiter' in kwargs:
+                delimiter = kwargs['delimiter']
+
         if file_location == '' or not os.path.isfile(file_location):
             raise FileNotFoundError(f'Could not load the file at: {file_location}')
 
@@ -56,7 +61,7 @@ class CsvImporter:
                     continue
 
                 if self.headers[index] in ['bron.typeURI', 'doel.typeURI']:
-                    continue # TODO get bron and doel
+                    continue  # TODO get bron and doel
 
                 cardinality_indicator = self.settings['dotnotation']['cardinality indicator']
 
@@ -72,12 +77,12 @@ class CsvImporter:
                     self.headers[index] = 'geometry'
 
                 DotnotationHelper.set_attribute_by_dotnotation(instanceOrAttribute=object,
-                                                             dotnotation=self.headers[index],
-                                                             value=value,
-                                                             convert=True,
-                                                             separator=self.settings['dotnotation']['separator'],
-                                                             cardinality_indicator=cardinality_indicator,
-                                                             waarde_shortcut_applicable=self.settings['dotnotation'][
-                                                                 'waarde_shortcut_applicable'])
+                                                               dotnotation=self.headers[index],
+                                                               value=value,
+                                                               convert=True,
+                                                               convert_warnings=False,
+                                                               separator=self.settings['dotnotation']['separator'],
+                                                               cardinality_indicator=cardinality_indicator,
+                                                               waarde_shortcut_applicable=self.settings['dotnotation']['waarde_shortcut_applicable'])
 
         return list_of_objects

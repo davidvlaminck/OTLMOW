@@ -1,7 +1,8 @@
+import logging
 from datetime import date, datetime, timedelta
 from random import randrange
 
-from OTLMOW.Facility.Exceptions.CouldNotConvertToCorrectType import CouldNotConvertToCorrectType
+from OTLMOW.Facility.Exceptions.CouldNotConvertToCorrectTypeError import CouldNotConvertToCorrectTypeError
 from OTLMOW.OTLModel.BaseClasses.OTLField import OTLField
 
 
@@ -14,25 +15,44 @@ class DateField(OTLField):
     usagenote = 'https://www.w3.org/TR/xmlschema-2/#date'
 
     @classmethod
-    def convert_to_correct_type(cls, value):
+    def convert_to_correct_type(cls, value, log_warnings=True):
         if value is None:
             return None
+        if isinstance(value, bool):
+            raise CouldNotConvertToCorrectTypeError(f'{value} could not be converted to correct type (implied by {cls.__name__})')
+        if isinstance(value, datetime):
+            if log_warnings:
+                logging.warning(
+                    'Assigned a datetime to a date datatype. Automatically converted to the correct type. Please change the type')
+            return date(value.year, value.month, value.day)
         if isinstance(value, date):
             return value
-        if isinstance(value, datetime):
-            return date(value.year, value.month, value.day)
+        if isinstance(value, int):
+            if log_warnings:
+                logging.warning(
+                    'Assigned a int to a date datatype. Automatically converted to the correct type. Please change the type')
+            timestamp = datetime.fromtimestamp(value)
+
+            return date(timestamp.year, timestamp.month, timestamp.day)
+
         if isinstance(value, str):
             try:
                 dt = datetime.strptime(value, "%Y-%m-%d")
+                if log_warnings:
+                    logging.warning(
+                        'Assigned a string to a date datatype. Automatically converted to the correct type. Please change the type')
                 return date(dt.year, dt.month, dt.day)
             except ValueError:
                 try:
                     dt = datetime.strptime(value, "%d/%m/%Y")
+                    if log_warnings:
+                        logging.warning(
+                            'Assigned a string to a date datatype. Automatically converted to the correct type. Please change the type')
                     return date(dt.year, dt.month, dt.day)
                 except ValueError:
-                    raise CouldNotConvertToCorrectType(
+                    raise CouldNotConvertToCorrectTypeError(
                         f'{value} could not be converted to correct type (implied by {cls.__name__})')
-        raise CouldNotConvertToCorrectType(f'{value} could not be converted to correct type (implied by {cls.__name__})')
+        raise CouldNotConvertToCorrectTypeError(f'{value} could not be converted to correct type (implied by {cls.__name__})')
 
     @staticmethod
     def validate(value, attribuut):

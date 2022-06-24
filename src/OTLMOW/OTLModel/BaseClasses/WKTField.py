@@ -11,8 +11,8 @@ class WKTField(OTLField):
     label = 'WKT'
     usagenote = ''
 
-    @staticmethod
-    def convert_to_correct_type(value) -> object:
+    @classmethod
+    def convert_to_correct_type(cls, value, log_warnings=True) -> object:
         value = value.replace(' Z(', ' Z (').replace('T(', 'T (').replace('G(', 'G (').replace('N(', 'N (')
         return value
 

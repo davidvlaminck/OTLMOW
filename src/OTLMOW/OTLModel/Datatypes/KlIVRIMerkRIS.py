@@ -1,6 +1,7 @@
 # coding=utf-8
 import random
 from OTLMOW.OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
+from OTLMOW.OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 
 # Generated with OTLEnumerationCreator. To modify: extend, do not edit
@@ -12,6 +13,10 @@ class KlIVRIMerkRIS(KeuzelijstField):
     definition = 'Het merk van de RIS.'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlIVRIMerkRIS'
     options = {
+        'peek': KeuzelijstWaarde(invulwaarde='peek',
+                                 label='Peek',
+                                 definitie='Peek',
+                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlIVRIMerkRIS/peek')
     }
 
     @classmethod

@@ -1,4 +1,5 @@
-﻿import unittest
+﻿import os
+import unittest
 
 from OTLMOW.Facility.FileFormats.EMInfraImporter import EMInfraImporter
 from OTLMOW.Facility.OTLFacility import OTLFacility
@@ -7,9 +8,11 @@ from OTLMOW.Facility.RequesterFactory import RequesterFactory
 
 class EMInfraImporterTests(unittest.TestCase):
     def test_ImportEmptyFileReturnEmptyList(self):
+        base_dir = os.path.dirname(os.path.realpath(__file__))
+        settings_file_location = f'{base_dir}/../settings_OTLMOW.json'
         otl_facility = OTLFacility(logfile='',
                                    enable_relation_features=True,
-                                   settings_path='C:\\resources\\settings_OTLMOW.json')
+                                   settings_path=settings_file_location)
 
         requester = RequesterFactory.create_requester(settings=otl_facility.settings, auth_type='JWT', env='prd')
 
@@ -20,9 +23,11 @@ class EMInfraImporterTests(unittest.TestCase):
         self.assertEqual(asset_id, asset.assetId.identificator)
 
     def test_get_asset_id_from_uuid_and_typeURI(self):
+        base_dir = os.path.dirname(os.path.realpath(__file__))
+        settings_file_location = f'{base_dir}/../settings_OTLMOW.json'
         otl_facility = OTLFacility(logfile='',
                                    enable_relation_features=True,
-                                   settings_path='C:\\resources\\settings_OTLMOW.json')
+                                   settings_path=settings_file_location)
 
         requester = RequesterFactory.create_requester(settings=otl_facility.settings, auth_type='JWT', env='prd')
 

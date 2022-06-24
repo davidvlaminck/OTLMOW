@@ -1,7 +1,7 @@
 from unittest import TestCase, mock
 
 from OTLMOW.Facility.DotnotationHelper import DotnotationHelper
-from OTLMOW.OTLModel.Classes.BitumineuzeLaag import BitumineuzeLaag
+from OTLMOW.OTLModel.Classes.Onderdeel.BitumineuzeLaag import BitumineuzeLaag
 from OTLMOW.PostenMapping.PostenCollector import PostenCollector
 from OTLMOW.PostenMapping.PostenCreator import PostenCreator
 from OTLMOW.PostenMapping.StandaardPost import StandaardPost

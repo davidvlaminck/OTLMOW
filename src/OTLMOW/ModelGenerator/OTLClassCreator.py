@@ -1,5 +1,6 @@
 import logging
 
+from OTLMOW.Facility.GenericHelper import GenericHelper
 from OTLMOW.GeometrieArtefact.GeenGeometrie import GeenGeometrie
 from OTLMOW.GeometrieArtefact.GeometrieArtefactCollector import GeometrieArtefactCollector
 from OTLMOW.GeometrieArtefact.GeometrieInheritanceProcessor import GeometrieInheritanceProcessor
@@ -26,7 +27,7 @@ class OTLClassCreator(AbstractDatatypeCreator):
                                                 inheritances=self.osloCollector.inheritances)
             self.geometry_types = gip.process_inheritances()
 
-    def create_blocks_to_write_from_classes(self, osloClass: OSLOClass) -> [str]:
+    def create_blocks_to_write_from_classes(self, osloClass: OSLOClass, model_location='') -> [str]:
         if not isinstance(osloClass, OSLOClass):
             raise ValueError(f"Input is not a OSLOClass")
 
@@ -38,9 +39,9 @@ class OTLClassCreator(AbstractDatatypeCreator):
         if osloClass.name == '':
             raise ValueError(f"OSLOClass.name is invalid. Value = '{osloClass.name}'")
 
-        return self.create_block_from_class(osloClass)
+        return self.create_block_from_class(osloClass, model_location)
 
-    def create_block_from_class(self, osloClass: OSLOClass) -> [str]:
+    def create_block_from_class(self, osloClass: OSLOClass, model_location='') -> [str]:
         attributen = self.osloCollector.find_attributes_by_class(osloClass)
         inheritances = self.osloCollector.find_inheritances_by_class(osloClass)
 
@@ -85,14 +86,31 @@ class OTLClassCreator(AbstractDatatypeCreator):
                 if inheritance.base_name in ['OTLAsset', 'OTLObject', 'RelatieInteractor', 'AttributeInfo', 'DavieRelatieAttributes']:
                     datablock.append(f'from OTLMOW.OTLModel.BaseClasses.{inheritance.base_name} import {inheritance.base_name}')
                 else:
-                    datablock.append(f'from OTLMOW.OTLModel.Classes.{inheritance.base_name} import {inheritance.base_name}')
+                    class_directory = 'Classes'
+                    ns = None
+                    if inheritance.base_uri != 'http://purl.org/dc/terms/Agent':
+                        ns, name = GenericHelper.get_ns_and_name_from_uri(inheritance.base_uri)
+                    if ns is not None:
+                        class_directory = GenericHelper.get_class_directory_from_ns(ns).replace('\\', '.')
+
+                    datablock.append(f'from OTLMOW.OTLModel.{class_directory}.{inheritance.base_name} import {inheritance.base_name}')
 
         if any(atr.readonly == 1 for atr in attributen):
             raise NotImplementedError("readonly property is assumed to be 0 on value fields")
 
-        list_of_fields = self.getFieldsToImportFromListOfAttributes(attributen)
+        list_of_fields = self.get_fields_to_import_from_list_of_attributes(attributen)
+        base_fields = ['BooleanField', 'ComplexField', 'DateField', 'DateTimeField', 'FloatOrDecimalField', 'IntegerField',
+                       'KeuzelijstField', 'UnionTypeField', 'URIField', 'LiteralField', 'NonNegIntegerField', 'TimeField',
+                       'StringField', 'UnionWaarden']
         for typeField in list_of_fields:
-            datablock.append(f'from OTLMOW.OTLModel.Datatypes.{typeField} import {typeField}')
+            model_module = 'OTLMOW'
+            if model_location != '' and typeField not in base_fields:
+                if 'UnitTests' in model_location:
+                    model_module = 'UnitTests'
+                modules_index = model_location.rfind('\\' + model_module)
+                modules = model_location[modules_index+1:]
+                model_module = modules.replace('\\', '.')
+            datablock.append(f'from {model_module}.OTLModel.Datatypes.{typeField} import {typeField}')
 
         list_of_geometry_types = self.get_geometry_types_from_uri(osloClass.objectUri)
         for GeometryType in list_of_geometry_types:

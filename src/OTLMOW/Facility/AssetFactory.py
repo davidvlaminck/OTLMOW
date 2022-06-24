@@ -1,37 +1,49 @@
 ﻿from OTLMOW.Facility.FileFormats.DictDecoder import DictDecoder
-from OTLMOW.OTLModel.Classes.AIMObject import AIMObject
+from OTLMOW.Facility.GenericHelper import GenericHelper
+from OTLMOW.OTLModel.Classes.ImplementatieElement.AIMObject import AIMObject
 
 
 class AssetFactory:
     @staticmethod
-    def dynamic_create_instance_from_name(class_name: str, directory: str = 'OTLMOW.OTLModel.Classes'):
-        """Loads the OTL class module and attempts to instantiate the class using the name of the class
+    def dynamic_create_instance_from_ns_and_name(namespace: str, class_name: str, directory: str = 'OTLMOW.OTLModel.Classes'):
+        """Loads the OTL class module and attempts to instantiate the class using the name and namespace of the class
 
+        :param namespace: namespace of the class
+        :type: str
         :param class_name: class name to instantiate
         :type: str
         :param directory: directory where the class modules are located, defaults to OTLMOW.OTLModel.Classes
         :type: str
-        :return: returns an instance of class_name, located from directory, that inherits from OTLObject
+        :return: returns an instance of class_name in the given namespace, located from directory, that inherits from OTLObject
         :rtype: OTLObject or None
         """
+
+        if directory is None:
+            directory = 'OTLMOW.OTLModel.Classes'
+
+        if namespace is None:
+            namespace = ''
+        else:
+            namespace = GenericHelper.get_titlecase_ns(namespace) + '.'
+
         try:
-            py_mod = __import__(name=f'{directory}.{class_name}', fromlist=f'{directory.split(".")[-1]}.{class_name}')
+            py_mod = __import__(name=f'{directory}.{namespace}{class_name}', fromlist=f'{directory.split(".")[-1]}.{class_name}')
         except ModuleNotFoundError:
-            try:
-                py_mod = __import__(name=f'UnitTests.{class_name}', fromlist=f'{class_name}')
-            except ModuleNotFoundError:
-                return None
+            return None
         class_ = getattr(py_mod, class_name)
         instance = class_()
 
         return instance
 
-    def dynamic_create_instance_from_uri(self, class_uri: str, directory:str = 'OTLMOW.OTLModel.Classes'):
+    def dynamic_create_instance_from_uri(self, class_uri: str, directory: str = 'OTLMOW.OTLModel.Classes'):
+        if directory is None:
+            directory = 'OTLMOW.OTLModel.Classes'
+
         if not class_uri.startswith('https://wegenenverkeer.data.vlaanderen.be/ns'):
             raise ValueError(
                 f'{class_uri} is not valid uri, it does not begin with "https://wegenenverkeer.data.vlaanderen.be/ns"')
-        class_name = class_uri.split('#')[-1]
-        created = self.dynamic_create_instance_from_name(class_name, directory=directory)
+        ns, name = GenericHelper.get_ns_and_name_from_uri(class_uri)
+        created = self.dynamic_create_instance_from_ns_and_name(ns, name, directory=directory)
         if created is None:
             raise ValueError(f'{class_uri} is likely not valid uri, it does not result in a created instance')
         return created
@@ -44,8 +56,11 @@ class AssetFactory:
         The parameter fields_to_copy dictates what fields are copied from the first object
         When the types do not match, fields_to_copy can not be empty"""
 
+        if directory is None:
+            directory = 'OTLMOW.OTLModel.Classes'
         if fields_to_copy is None:
             fields_to_copy = []
+
         if not isinstance(orig_aimObject, AIMObject):
             raise ValueError(f'{orig_aimObject} is not an AIMObject, not supported')
 

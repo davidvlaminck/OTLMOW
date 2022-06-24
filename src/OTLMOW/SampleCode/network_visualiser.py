@@ -9,10 +9,10 @@ from OTLMOW.OEFModel.Classes.HSDeel import HSDeel
 from OTLMOW.OEFModel.Classes.Kast import Kast
 from OTLMOW.OEFModel.Classes.LS import LS
 from OTLMOW.OEFModel.Classes.LSDeel import LSDeel
-from OTLMOW.OTLModel.Classes.AIMObject import AIMObject
-from OTLMOW.OTLModel.Classes.Bevestiging import Bevestiging
-from OTLMOW.OTLModel.Classes.HoortBij import HoortBij
-from OTLMOW.OTLModel.Classes.Voedt import Voedt
+from OTLMOW.OTLModel.Classes.ImplementatieElement.AIMObject import AIMObject
+from OTLMOW.OTLModel.Classes.Onderdeel.Bevestiging import Bevestiging
+from OTLMOW.OTLModel.Classes.Onderdeel.HoortBij import HoortBij
+from OTLMOW.OTLModel.Classes.Onderdeel.Voedt import Voedt
 
 
 class AlgoritmeVoedingsbronZoeken:

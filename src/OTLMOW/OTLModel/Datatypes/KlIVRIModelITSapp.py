@@ -1,6 +1,7 @@
 # coding=utf-8
 import random
 from OTLMOW.OTLModel.Datatypes.KeuzelijstField import KeuzelijstField
+from OTLMOW.OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 
 # Generated with OTLEnumerationCreator. To modify: extend, do not edit
@@ -12,6 +13,10 @@ class KlIVRIModelITSapp(KeuzelijstField):
     definition = 'De modelnaam van de ITSapp.'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlIVRIModelITSapp'
     options = {
+        'imflow': KeuzelijstWaarde(invulwaarde='imflow',
+                                   label='Imflow',
+                                   definitie='Imflow',
+                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlIVRIModelITSapp/imflow')
     }
 
     @classmethod

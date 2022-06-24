@@ -6,21 +6,21 @@ from OTLMOW.ModelGenerator.OSLODatatypeUnion import OSLODatatypeUnion
 
 
 class OTLUnionDatatypeCreator(AbstractDatatypeCreator):
-    def __init__(self, osloCollector: OSLOCollector):
-        super().__init__(osloCollector)
+    def __init__(self, oslo_collector: OSLOCollector):
+        super().__init__(oslo_collector)
         logging.info("Created an instance of OTLUnionDatatypeCreator")
 
-    def CreateBlockToWriteFromUnionTypes(self, oSLODatatypeUnion: OSLODatatypeUnion):
-        if not isinstance(oSLODatatypeUnion, OSLODatatypeUnion):
+    def create_block_to_write_from_union_types(self, union_datatype: OSLODatatypeUnion, model_location='') -> [str]:
+        if not isinstance(union_datatype, OSLODatatypeUnion):
             raise ValueError(f"Input is not a OSLODatatypeUnion")
 
-        if oSLODatatypeUnion.objectUri == '' or not (oSLODatatypeUnion.objectUri.startswith(
-                'https://wegenenverkeer.data.vlaanderen.be/ns/') and 'Dtu' in oSLODatatypeUnion.objectUri):
-            raise ValueError(f"OSLODatatypeUnion.objectUri is invalid. Value = '{oSLODatatypeUnion.objectUri}'")
+        if union_datatype.objectUri == '' or not (union_datatype.objectUri.startswith(
+                'https://wegenenverkeer.data.vlaanderen.be/ns/') and 'Dtu' in union_datatype.objectUri):
+            raise ValueError(f"OSLODatatypeUnion.objectUri is invalid. Value = '{union_datatype.objectUri}'")
 
-        if oSLODatatypeUnion.name == '':
-            raise ValueError(f"OSLODatatypeUnion.name is invalid. Value = '{oSLODatatypeUnion.name}'")
+        if union_datatype.name == '':
+            raise ValueError(f"OSLODatatypeUnion.name is invalid. Value = '{union_datatype.name}'")
 
-        return self.CreateBlockToWriteFromComplexPrimitiveOrUnionTypes(oSLODatatypeUnion, typeField='UnionType')
-
-
+        return self.create_block_to_write_from_complex_primitive_or_union_types(union_datatype,
+                                                                                typeField='UnionType',
+                                                                                model_location=model_location)

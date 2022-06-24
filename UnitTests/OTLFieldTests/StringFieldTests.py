@@ -1,9 +1,8 @@
+import logging
 from unittest import TestCase
 
-from AllCasesTestClass import AllCasesTestClass
-from OTLMOW.Facility.Exceptions.CouldNotConvertToCorrectType import CouldNotConvertToCorrectType
+from OTLMOW.Facility.Exceptions.CouldNotConvertToCorrectTypeError import CouldNotConvertToCorrectTypeError
 from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from OTLMOW.OTLModel.Datatypes.IntegerField import IntegerField
 from OTLMOW.OTLModel.Datatypes.StringField import StringField
 
 
@@ -30,11 +29,22 @@ class StringFieldTests(TestCase):
             StringField.validate(1.0, string_attribute)
 
     def test_convert_to_correct_type(self):
-        self.assertIsNone(StringField.convert_to_correct_type(None))
-        self.assertEqual('True', StringField.convert_to_correct_type(True))
-        self.assertEqual('False', StringField.convert_to_correct_type(False))
-        self.assertEqual('1', StringField.convert_to_correct_type(1))
-        self.assertEqual('1.0', StringField.convert_to_correct_type(1.0))
+        with self.subTest('Correct values'):
+            self.assertIsNone(StringField.convert_to_correct_type(None))
+            self.assertEqual('a', StringField.convert_to_correct_type('a'))
+            self.assertEqual('', StringField.convert_to_correct_type(''))
+            self.assertEqual('1', StringField.convert_to_correct_type('1'))
 
-        with self.assertRaises(CouldNotConvertToCorrectType):
-            StringField.convert_to_correct_type(NonStringableObject())
+        convertable_values_list = [(True, 'True'), (1.0, '1.0'), (False, 'False'), (-1, '-1'), (2.000, '2.0')]
+        for value, expected in convertable_values_list:
+            with self.subTest(f'Correct value after conversion: value = {value}'):
+                with self.assertLogs() as captured:
+                    self.assertEqual(expected, StringField.convert_to_correct_type(value))
+                    warnings = list(filter(lambda r: r.levelno == logging.WARNING, list(captured.records)))
+                    self.assertGreater(len(warnings), 0)
+
+        incorrect_values = [NonStringableObject(), [], {}]
+        for index, value in enumerate(incorrect_values):
+            with self.subTest(f'Could not perform conversion: valueindex = {index}'):
+                with self.assertRaises(CouldNotConvertToCorrectTypeError):
+                    StringField.convert_to_correct_type(value)

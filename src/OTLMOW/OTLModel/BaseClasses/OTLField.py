@@ -46,7 +46,7 @@ class OTLField:
         return value
 
     @staticmethod
-    def convert_to_correct_type(value) -> object:
+    def convert_to_correct_type(value, log_warnings=True) -> object:
         return value
 
     @abstractmethod

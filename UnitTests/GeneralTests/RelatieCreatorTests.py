@@ -1,15 +1,15 @@
 import unittest
 
 from OTLMOW.Facility.AssetFactory import AssetFactory
-from OTLMOW.Facility.Exceptions.CouldNotCreateRelation import CouldNotCreateRelation
+from OTLMOW.Facility.Exceptions.CouldNotCreateRelationError import CouldNotCreateRelationError
 from OTLMOW.Facility.RelatieCreator import RelatieCreator
 from OTLMOW.ModelGenerator.BaseClasses.GeldigeRelatie import GeldigeRelatie
 from OTLMOW.ModelGenerator.BaseClasses.RelatieValidator import RelatieValidator
 from OTLMOW.OTLModel.BaseClasses.RelatieInteractor import RelatieInteractor
-from OTLMOW.OTLModel.Classes.Aftakking import Aftakking
-from OTLMOW.OTLModel.Classes.EnergiemeterAWV import EnergiemeterAWV
-from OTLMOW.OTLModel.Classes.RelatieObject import RelatieObject
-from OTLMOW.OTLModel.Classes.Voedt import Voedt
+from OTLMOW.OTLModel.Classes.Onderdeel.Aftakking import Aftakking
+from OTLMOW.OTLModel.Classes.Onderdeel.EnergiemeterAWV import EnergiemeterAWV
+from OTLMOW.OTLModel.Classes.ImplementatieElement.RelatieObject import RelatieObject
+from OTLMOW.OTLModel.Classes.Onderdeel.Voedt import Voedt
 
 
 class GeldigeRelatieLijst:
@@ -34,17 +34,17 @@ class GeldigeRelatie2:
         classLoader = AssetFactory()
 
         bronClassName = UriToClassNameLijst().dict[bron]
-        bronInstance = classLoader.dynamic_create_instance_from_name(bronClassName)
+        bronInstance = classLoader.dynamic_create_instance_from_ns_and_name(bronClassName)
         if not (isinstance(bronInstance, RelatieInteractor)):
             raise TypeError("parameter bron is geen AbstractRelatieInteractor")
 
         doelClassName = UriToClassNameLijst().dict[doel]
-        doelInstance = classLoader.dynamic_create_instance_from_name(doelClassName)
+        doelInstance = classLoader.dynamic_create_instance_from_ns_and_name(doelClassName)
         if not (isinstance(doelInstance, RelatieInteractor)):
             raise TypeError("parameter doel is geen AbstractRelatieInteractor")
 
         relatieClassName = UriToClassNameLijst().dict[relatie]
-        relatieInstance = classLoader.dynamic_create_instance_from_name(relatieClassName)
+        relatieInstance = classLoader.dynamic_create_instance_from_ns_and_name(relatieClassName)
         if not (isinstance(relatieInstance, RelatieObject)):
             raise TypeError("parameter relatie is geen RelatieObject")
 
@@ -111,6 +111,6 @@ class RelatieValidatorTests(unittest.TestCase):
         a = Aftakking()
         a.assetId.identificator = 'a'
         v = Voedt
-        with self.assertRaises(CouldNotCreateRelation):
+        with self.assertRaises(CouldNotCreateRelationError):
             relatie = creator.create_relation(bron=a, doel=e, relatie=v)
 

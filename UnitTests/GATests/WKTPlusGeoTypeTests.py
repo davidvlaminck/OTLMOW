@@ -4,7 +4,7 @@ from OTLMOW.Facility.Exceptions.WrongGeometryError import WrongGeometryError
 from OTLMOW.GeometrieArtefact.PuntGeometrie import PuntGeometrie
 from OTLMOW.GeometrieArtefact.VlakGeometrie import VlakGeometrie
 from OTLMOW.OTLModel.BaseClasses.OTLAsset import OTLAsset
-from OTLMOW.OTLModel.Classes.Wegkantkast import Wegkantkast
+from OTLMOW.OTLModel.Classes.Onderdeel.Wegkantkast import Wegkantkast
 
 
 class PointTestClass(PuntGeometrie, OTLAsset):

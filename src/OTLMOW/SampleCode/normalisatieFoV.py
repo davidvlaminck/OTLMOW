@@ -1,15 +1,17 @@
+from OTLMOW.Facility.FileFormats.EMInfraImporter import EMInfraImporter
 from OTLMOW.Facility.OTLFacility import OTLFacility
-from OTLMOW.OTLModel.Classes.AanvullendeGeometrie import AanvullendeGeometrie
+from OTLMOW.Facility.RequesterFactory import RequesterFactory
+from OTLMOW.OTLModel.Classes.Onderdeel.AanvullendeGeometrie import AanvullendeGeometrie
 
-def normaliseer_exoten():
+
+def normaliseer_field_of_views():
     # create the main facade class: OTLFacility
     otl_facility = OTLFacility(logfile=r'C:\temp\pythonLogging\pythonlog.txt',
                                settings_path="C:\\resources\\settings_OTLMOW.json")
 
-    # import from a Davie json file
-    jsonPath = "C:\\resources\\DA-2022-00553_export.json"
-    lijst_FoV = otl_facility.davieImporter.import_file(jsonPath)
-    lijst_FoV = list(filter(lambda a: "FieldOfView" in a.typeURI, lijst_FoV))
+    requester = RequesterFactory.create_requester(settings=otl_facility.settings, auth_type='JWT', env='prd')
+    importer = EMInfraImporter(requester=requester)
+    lijst_FoV = importer.import_assets_from_webservice_by_type_uuid("397d531c-9b76-44e7-a0e3-05e7f4150018")
 
     lijst_objecten = []
 
@@ -32,4 +34,4 @@ def normaliseer_exoten():
     otl_facility.jsonExporter.export_objects_to_json_file(lijst_objecten, 'C:\\resources\\DA-2022-00553_normalisatie_FoV_prd_voor_import.json')
 
 if __name__ == '__main__':
-    normaliseer_exoten()
+    normaliseer_field_of_views()

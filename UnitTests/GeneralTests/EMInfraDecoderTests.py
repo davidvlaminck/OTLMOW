@@ -1,16 +1,19 @@
 import json
+import os
 from unittest import TestCase
 
 from GeneralTests.EMInfraResponseTestDouble import ResponseTestDouble
 from OTLMOW.Facility.FileFormats.EMInfraDecoder import EMInfraDecoder
 from OTLMOW.Facility.OTLFacility import OTLFacility
-from OTLMOW.OTLModel.Classes.Omvormer import Omvormer
+from OTLMOW.OTLModel.Classes.Onderdeel.Omvormer import Omvormer
 
 
 class EMInfraDecoderTests(TestCase):
     def test_decodeFirstEntry(self):
+        base_dir = os.path.dirname(os.path.realpath(__file__))
+        settings_file_location = f'{base_dir}/../settings_OTLMOW.json'
         responseString = ResponseTestDouble().response
-        otl_facility = OTLFacility(logfile='', settings_path='C:\\resources\\settings_OTLMOW.json')
+        otl_facility = OTLFacility(logfile='', settings_path=settings_file_location)
         decoder = EMInfraDecoder()
         first = decoder.decodeGraph(responseString)[0]
 
@@ -38,7 +41,9 @@ class EMInfraDecoderTests(TestCase):
 
     def test_decode_single_entry(self):
         responseString = ResponseTestDouble().single_response
-        otl_facility = OTLFacility(logfile='', settings_path='C:\\resources\\settings_OTLMOW.json')
+        base_dir = os.path.dirname(os.path.realpath(__file__))
+        settings_file_location = f'{base_dir}/../settings_OTLMOW.json'
+        otl_facility = OTLFacility(logfile='', settings_path=settings_file_location)
         decoder = EMInfraDecoder()
         first = decoder.decodeGraph(responseString)[0]
 

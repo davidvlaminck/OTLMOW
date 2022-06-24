@@ -1,5 +1,5 @@
 ﻿from OTLMOW.Facility.OTLFacility import OTLFacility
-from OTLMOW.OTLModel.Classes.InvasieveExoten import InvasieveExoten
+from OTLMOW.OTLModel.Classes.Onderdeel.InvasieveExoten import InvasieveExoten
 
 
 def normaliseer_exoten():
@@ -9,7 +9,7 @@ def normaliseer_exoten():
 
     # import from a Davie json file
     jsonPath = "C:\\resources\\DA-2022-00004_export_exoten_normalisatie_prd.json"
-    lijst_exoten = otl_facility.davieImporter.import_file(jsonPath)
+    lijst_exoten = otl_facility.json_importer.import_file(jsonPath)
 
     lijst_objecten = []
 

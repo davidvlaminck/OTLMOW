@@ -7,7 +7,7 @@ from OTLMOW.OTLModel.Classes.Onderdeel.Netwerkpoort import Netwerkpoort
 from OTLMOW.OTLModel.Classes.Onderdeel.Sturing import Sturing
 
 if __name__ == '__main__':
-    otl_facility = OTLFacility(logfile=r'C:\temp\pythonLogging\pythonlog.txt',
+    otl_facility = OTLFacility(logfile=r'C:\temp\pythonLogging\python_log.txt',
                                settings_path="C:\\resources\\settings_OTLMOW.json",
                                enable_relation_features=True)
 
@@ -30,5 +30,5 @@ if __name__ == '__main__':
             sturingsrelatie = otl_facility.relatie_creator.create_relation(bron=poort, doel=camera, relatie=Sturing)
             relaties.append(sturingsrelatie)
 
-    otl_facility.jsonExporter.export_objects_to_json_file(relaties, 'C:\\resources\\sturingsrelaties_poort_camera.json')
+    otl_facility.create_file_from_assets(list_of_objects=relaties, filepath='C:\\resources\\sturingsrelaties_poort_camera.json')
 

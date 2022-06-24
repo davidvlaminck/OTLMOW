@@ -5,7 +5,7 @@ from OTLMOW.OTLModel.Classes.Onderdeel.EnergiemeterDNB import EnergiemeterDNB
 from OTLMOW.OTLModel.Classes.Onderdeel.Voedt import Voedt
 
 if __name__ == '__main__':
-    otl_facility = OTLFacility(logfile=r'C:\temp\pythonLogging\pythonlog.txt',
+    otl_facility = OTLFacility(logfile=r'C:\temp\pythonLogging\python_log.txt',
                                settings_path="C:\\resources\\settings_OTLMOW.json")
 
     # use the generated datamodel to create instances of OTL classes

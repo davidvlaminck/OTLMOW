@@ -35,7 +35,8 @@ class AssetFactory:
 
         return instance
 
-    def dynamic_create_instance_from_uri(self, class_uri: str, directory: str = 'OTLMOW.OTLModel.Classes'):
+    @staticmethod
+    def dynamic_create_instance_from_uri(class_uri: str, directory: str = 'OTLMOW.OTLModel.Classes'):
         if directory is None:
             directory = 'OTLMOW.OTLModel.Classes'
 
@@ -43,13 +44,15 @@ class AssetFactory:
             raise ValueError(
                 f'{class_uri} is not valid uri, it does not begin with "https://wegenenverkeer.data.vlaanderen.be/ns"')
         ns, name = GenericHelper.get_ns_and_name_from_uri(class_uri)
-        created = self.dynamic_create_instance_from_ns_and_name(ns, name, directory=directory)
+        created = AssetFactory.dynamic_create_instance_from_ns_and_name(ns, name, directory=directory)
         if created is None:
             raise ValueError(f'{class_uri} is likely not valid uri, it does not result in a created instance')
         return created
 
-    def create_aimObject_using_other_aimObject_as_template(self, orig_aimObject: AIMObject, typeURI: str = '',
-                                                           fields_to_copy: [str] = None, directory: str = 'OTLMOW.OTLModel.Classes'):
+    @staticmethod
+    def create_aimObject_using_other_aimObject_as_template(orig_aimObject: AIMObject, typeURI: str = '',
+                                                           fields_to_copy: [str] = None,
+                                                           directory: str = 'OTLMOW.OTLModel.Classes'):
         """Creates an AIMObject, using another AIMObject as template.
         The parameter typeURI defines the type of the new AIMObject that is created.
         If omitted, it is assumed the same type as the given aimObject
@@ -70,17 +73,17 @@ class AssetFactory:
 
         if typeURI == '':
             typeURI = orig_aimObject.typeURI
-        new_asset = self.dynamic_create_instance_from_uri(typeURI, directory=directory)
+        new_asset = AssetFactory.dynamic_create_instance_from_uri(typeURI, directory=directory)
 
         if len(fields_to_copy) == 0:
-            fields_to_copy = self.get_public_field_list_from_object(orig_aimObject)
+            fields_to_copy = AssetFactory.get_public_field_list_from_object(orig_aimObject)
 
         if 'typeURI' in fields_to_copy:
             fields_to_copy.remove('typeURI')
         if 'assetId' in fields_to_copy:
             fields_to_copy.remove('assetId')
 
-        self.copy_fields_from_object_to_new_object(orig_aimObject, new_asset, fields_to_copy)
+        AssetFactory.copy_fields_from_object_to_new_object(orig_aimObject, new_asset, fields_to_copy)
         return new_asset
 
     @staticmethod
@@ -89,7 +92,8 @@ class AssetFactory:
             raise ValueError("input can't be None")
         d = dir(orig_asset)
 
-        reserved = ['info_attr', 'info_attr_type', 'info', 'make_string_version', 'create_dict_from_asset', 'list_attributes_and_values_by_dotnotation']
+        reserved = ['info_attr', 'info_attr_type', 'info', 'make_string_version', 'create_dict_from_asset',
+                    'list_attributes_and_values_by_dotnotation']
         listFields = [item for item in d if item[0] != '_' and item not in reserved]
 
         return listFields
@@ -118,5 +122,3 @@ class AssetFactory:
 
         for k, v in new_instance_dict.items():
             DictDecoder.set_value_by_dictitem(new_object, k, v, waarde_shortcut=False)
-
-

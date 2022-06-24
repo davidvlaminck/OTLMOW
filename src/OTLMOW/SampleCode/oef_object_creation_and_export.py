@@ -3,13 +3,14 @@ from datetime import datetime
 from OTLMOW.Facility.FileFormats.EMInfraImporter import EMInfraImporter
 from OTLMOW.Facility.OTLFacility import OTLFacility
 from OTLMOW.Facility.RequesterFactory import RequesterFactory
+from OTLMOW.Facility.Visualiser import Visualiser
 from OTLMOW.OTLModel.Classes.Onderdeel.DNBLaagspanning import DNBLaagspanning
 from OTLMOW.OTLModel.Classes.Onderdeel.EnergiemeterDNB import EnergiemeterDNB
 from OTLMOW.OTLModel.Classes.Onderdeel.HoortBij import HoortBij
 from OTLMOW.OTLModel.Classes.Onderdeel.Voedt import Voedt
 
 if __name__ == '__main__':
-    otl_facility = OTLFacility(logfile=r'C:\temp\pythonLogging\pythonlog.txt',
+    otl_facility = OTLFacility(logfile=r'C:\temp\pythonLogging\python_log.txt',
                                settings_path="C:\\resources\\settings_OTLMOW.json")
 
     # use the generated datamodel to create instances of OTL classes
@@ -49,14 +50,10 @@ if __name__ == '__main__':
     hoortBijrelatie2.bronAssetId.identificator = meter.assetId.identificator
     hoortBijrelatie2.doelAssetId.identificator = ls.assetId.identificator
 
-    lijst_otl_objecten = [dnb, meter, voedingsrelatie, ls,hoortBijrelatie1, hoortBijrelatie2]
+    lijst_otl_objecten = [dnb, meter, voedingsrelatie, ls, hoortBijrelatie1, hoortBijrelatie2]
 
-    # encode to a json representation
-    encoded_json = otl_facility.encoder.encode(lijst_otl_objecten)
-    print(encoded_json)
-
-    # write the json file
+    # export as json file
     filepath = f'Output/{datetime.now().strftime("%Y%m%d%H%M%S")}_export.json'
-    otl_facility.encoder.write_json_to_file(encoded_json, filepath)
+    otl_facility.create_file_from_assets(list_of_objects=lijst_otl_objecten, filepath=filepath)
 
-    otl_facility.visualiser.show(lijst_otl_objecten)
+    Visualiser().show(lijst_otl_objecten)

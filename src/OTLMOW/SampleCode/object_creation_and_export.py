@@ -1,5 +1,6 @@
 from datetime import datetime
 
+from OTLMOW.ModelGenerator.OtlAssetJSONEncoder import OtlAssetJSONEncoder
 from src.OTLMOW.Facility.OTLFacility import OTLFacility
 from src.OTLMOW.OTLModel.Classes.Onderdeel.DNBLaagspanning import DNBLaagspanning
 from src.OTLMOW.OTLModel.Classes.Onderdeel.EnergiemeterDNB import EnergiemeterDNB
@@ -8,7 +9,7 @@ from src.OTLMOW.OTLModel.Classes.Onderdeel.Voedt import Voedt
 
 if __name__ == '__main__':
     # create the main facade class: OTLFacility
-    otl_facility = OTLFacility(logfile=r'C:\temp\pythonLogging\pythonlog.txt',
+    otl_facility = OTLFacility(logfile=r'C:\temp\pythonLogging\python_log.txt',
                                settings_path="C:\\resources\\settings_OTLMOW.json")
 
     # use the generated datamodel to create instances of OTL classes
@@ -35,8 +36,9 @@ if __name__ == '__main__':
 
     lijst_otl_objecten = [dnb, meter, voedingsrelatie]
 
-    # encode to a json representation
-    encoded_json = otl_facility.encoder.encode(lijst_otl_objecten)
+    # (OPTIONAL) encode to a json representation
+    encoder = OtlAssetJSONEncoder(indent=4, settings=otl_facility.settings)
+    encoded_json = encoder.encode(lijst_otl_objecten)
     print(encoded_json)
 
     # write the json file

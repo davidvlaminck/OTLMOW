@@ -3,21 +3,15 @@ import logging
 import os
 from os.path import abspath
 
-from OTLMOW.Facility.AssetFactory import AssetFactory
 from OTLMOW.Facility.FileExporter import FileExporter
-from OTLMOW.Facility.FileFormats.JsonImporter import JsonImporter
-from OTLMOW.Facility.FileFormats.JsonDecoder import JsonDecoder
-from OTLMOW.Facility.FileFormats.JsonExporter import JsonExporter
 from OTLMOW.Facility.FileImporter import FileImporter
 from OTLMOW.Facility.RelatieCreator import RelatieCreator
-from OTLMOW.Facility.Visualiser import Visualiser
 from OTLMOW.GeometrieArtefact.GeometrieArtefactCollector import GeometrieArtefactCollector
 from OTLMOW.GeometrieArtefact.GeometrieInMemoryCreator import GeometrieInMemoryCreator
 from OTLMOW.ModelGenerator.BaseClasses.RelatieValidator import RelatieValidator
 from OTLMOW.ModelGenerator.OSLOCollector import OSLOCollector
 from OTLMOW.ModelGenerator.OSLOInMemoryCreator import OSLOInMemoryCreator
 from OTLMOW.ModelGenerator.OTLModelCreator import OTLModelCreator
-from OTLMOW.ModelGenerator.OtlAssetJSONEncoder import OtlAssetJSONEncoder
 from OTLMOW.ModelGenerator.SQLDbReader import SQLDbReader
 from OTLMOW.OEFModel.ModelGrabber import ModelGrabber
 from OTLMOW.OEFModel.OEFModelCreator import OEFModelCreator
@@ -30,7 +24,7 @@ from OTLMOW.PostenMapping.PostenInMemoryCreator import PostenInMemoryCreator
 class OTLFacility:
     def __init__(self,
                  settings_path: str = '',
-                 loggingLevel: int = logging.WARNING, logfile: str = 'logs.txt',
+                 logging_level: int = logging.WARNING, logfile: str = 'logs.txt',
                  enable_relation_features: bool = False):
         """
         # logging
@@ -47,24 +41,18 @@ class OTLFacility:
         self.settings: dict = {}
         self._load_settings(settings_path)
 
-        if loggingLevel != 0 and logfile != '':
+        if logging_level != 0 and logfile != '':
             logging.basicConfig(filename=logfile,
                                 filemode='a',
                                 format='%(asctime)s,%(msecs)d %(name)s %(levelname)s %(message)s',
                                 datefmt='%H:%M:%S',
-                                level=loggingLevel)
+                                level=logging_level)
 
-        self.json_importer = JsonImporter(self.settings)
         self.oef_model_creator: None | OEFModelCreator = None
         self.posten_collector = None
         self.posten_creator = None
-        self.jsonExporter = JsonExporter(self.settings)
-        self.encoder = OtlAssetJSONEncoder(indent=4, settings=self.settings)
-        self.davieDecoder = JsonDecoder(self.settings)
-        self.asset_factory = AssetFactory()
         self.relatie_validator: None | RelatieValidator = None
         self.relatie_creator: None | RelatieCreator = None
-        self.visualiser = Visualiser()
 
         if enable_relation_features:
             self._init_relatie_validation()
@@ -88,8 +76,6 @@ class OTLFacility:
         model_creator = self._init_otl_model_creator(otl_sqlite_file_location, geo_artefact_sqlite_file_location)
         self._create_otl_datamodel(model_creator, directory)
 
-    # import
-    # TODO add new for AWV Infra API
     def create_assets_from_file(self, filepath: str, **kwargs) -> list:
         """Creates asset objects in memory from a file. Supports csv and json files.
 
@@ -128,8 +114,6 @@ class OTLFacility:
         """
         file_exporter = FileExporter(settings=self.settings)
         return file_exporter.create_file_from_assets(filepath=filepath, list_of_objects=list_of_objects, **kwargs)
-
-    # create instance
 
     def _init_relatie_validation(self, relation_list: [GeldigeRelatieLijst] = None):
         if relation_list is None:

@@ -19,7 +19,7 @@ With every OTL update, this piece of code will allow the creation of an updated 
 from src.OTLMOW.Facility.OTLFacility import OTLFacility
 
 # create the main facade class: OTLFacility
-otl_facility = OTLFacility(logfile=r'C:\temp\pythonLogging\pythonlog.txt',
+otl_facility = OTLFacility(logfile=r'C:\temp\pythonLogging\python_log.txt',
                            settings_path="C:\\resources\\settings_OTLMOW.json")
 
 # create a datamodel based on the OTL SQLite database and ttl files stored on the github
@@ -38,7 +38,7 @@ from src.OTLMOW.OTLModel.Classes.EnergiemeterDNB import EnergiemeterDNB
 from src.OTLMOW.OTLModel.Classes.Voedt import Voedt
 
 # create the main facade class: OTLFacility
-otl_facility = OTLFacility(logfile=r'C:\temp\pythonLogging\pythonlog.txt',
+otl_facility = OTLFacility(logfile=r'C:\temp\pythonLogging\python_log.txt',
                            settings_path="C:\\resources\\settings_OTLMOW.json")
 
 # use the generated datamodel to create instances of OTL classes

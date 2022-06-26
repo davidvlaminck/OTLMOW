@@ -6,6 +6,7 @@ from os.path import abspath
 from OTLMOW.Facility.FileExporter import FileExporter
 from OTLMOW.Facility.FileImporter import FileImporter
 from OTLMOW.Facility.RelatieCreator import RelatieCreator
+from OTLMOW.Facility.RequesterFactory import RequesterFactory
 from OTLMOW.GeometrieArtefact.GeometrieArtefactCollector import GeometrieArtefactCollector
 from OTLMOW.GeometrieArtefact.GeometrieInMemoryCreator import GeometrieInMemoryCreator
 from OTLMOW.ModelGenerator.BaseClasses.RelatieValidator import RelatieValidator
@@ -26,17 +27,16 @@ class OTLFacility:
                  settings_path: str = '',
                  logging_level: int = logging.WARNING, logfile: str = 'logs.txt',
                  enable_relation_features: bool = False):
-        """
-        # logging
-        ...
-
-        # settings
+        """Main utility class for creating a model, importing and exporting assets from files and enabling validation features
 
         :param settings_path: specifies the location of the settings file this library loads. Defaults to the example that is supplied with the library ('OTLMOW/Facility/settings_sample.json')
-        :type: str
-
-        # enable relation features
-        ...
+        :type settings_path: str
+        :param logging_level: specifies the level of logging that is used for actions with this class
+        :type logging_level: int
+        :param logfile: specifies the path to the logfile.
+        :type logfile: str
+        :param enable_relation_features: specifies whether to enable the relation features such as validation
+        :type enable_relation_features: bool
         """
         self.settings: dict = {}
         self._load_settings(settings_path)
@@ -60,8 +60,7 @@ class OTLFacility:
     def create_otl_datamodel(self, directory: str = '',
                              otl_sqlite_file_location: str = '',
                              geo_artefact_sqlite_file_location: str = '') -> None:
-        """Creates a datamodel given an OTL SQLite database in the specified directory. This will also use a Geometry Artefact
-        if specified
+        """Creates a datamodel given an OTL SQLite database in the specified directory. This will also use a Geometry Artefact if specified
 
         :param directory: directory where the model classes will be created. If not specified, this will create a model in a directory OTLModel in the same directory as the script that runs this method
         :type: str
@@ -75,6 +74,40 @@ class OTLFacility:
         """
         model_creator = self._init_otl_model_creator(otl_sqlite_file_location, geo_artefact_sqlite_file_location)
         self._create_otl_datamodel(model_creator, directory)
+
+    def create_oef_datamodel(self, oef_file_location: str = '', ins_ond_file_location: str = '',
+                             auth_type: str = 'JWT', env: str = 'prd') -> None:
+        # TODO
+        """Creates a datamodel given an OTL SQLite database in the specified directory. This will also use a Geometry Artefact if specified
+
+        :param oef_file_location: path to the OEF SQLite file
+        :type: str
+        :param ins_ond_file_location: path to the OTL SQLite file
+        :type: str
+        :param geo_artefact_sqlite_file_location: path to the Geometry Artefact SQLite file. Defaults to an empty string as this file is not mandatory to create a model
+        :type: str
+
+        :return: Nothing is returned, instead the datamodel files are created in the specified directory
+        :rtype: None
+        """
+        oef_model_creator = self._init_oef_model_creator(oef_file_location=oef_file_location,
+                                                         ins_ond_file_location=ins_ond_file_location,
+                                                         auth_type=auth_type, env=env)
+        oef_model_creator.create_full_model()
+
+    def create_posten_model(self, postenmaping_file_location) -> None:
+        """Creates a posten model given a SQLite database.
+
+        :param postenmaping_file_location: path to the SQLite file of the postenmapping
+        :type: str
+
+        :return: Nothing is returned, instead the datamodel files are created
+        :rtype: None
+        """
+        collector = self._init_postenmapping_collector(postenmaping_file_location)
+        collector.collect()
+        creator = PostenCreator(collector)
+        creator.create_all_mappings()
 
     def create_assets_from_file(self, filepath: str, **kwargs) -> list:
         """Creates asset objects in memory from a file. Supports csv and json files.
@@ -90,7 +123,6 @@ class OTLFacility:
 
         ignore_failed_objects (bool): If True, suppresses the errors resulting from the creation of one object,
         to allow the collection of all non-erroneous objects. Defaults to False
-
 
         :return: Returns a list with asset objects
         :rtype: list
@@ -144,18 +176,14 @@ class OTLFacility:
             directory = abspath(f'{base_dir}/../')
         model_creator.create_full_model(directory=directory)
 
-    def init_postenmapping_creator(self, otl_file_location):
-        sql_reader = SQLDbReader(otl_file_location)
+    def _init_postenmapping_collector(self, postenmaping_file_location: str = '') -> PostenCollector:
+        sql_reader = SQLDbReader(postenmaping_file_location)
         oslo_creator = PostenInMemoryCreator(sql_reader)
-        self.posten_collector = PostenCollector(oslo_creator)
-        self.posten_creator = PostenCreator(self.posten_collector)
+        return PostenCollector(oslo_creator)
 
-    def create_posten_model(self):
-        self.posten_collector.collect()
-        self.posten_creator.create_all_mappings()
-
-    def init_oef_model_creator(self, oef_file_location, ins_ond_file_location=''):
-        model_grabber = ModelGrabber()
+    def _init_oef_model_creator(self, oef_file_location: str, ins_ond_file_location: str, auth_type: str, env: str):
+        requester = RequesterFactory.create_requester(settings=self.settings, auth_type=auth_type, env=env)
+        model_grabber = ModelGrabber(requester)
         model_grabber.grab_models_as_json(oef_file_location, ins_ond_file_location)
         classes = model_grabber.decode_json_and_get_classes(oef_file_location)
         attributen = model_grabber.decode_json_and_get_attributen(oef_file_location)
@@ -163,11 +191,7 @@ class OTLFacility:
         self.extend_classes_with_ond_ins(classes, ins_ond_classes)
         ins_ond_attributen = model_grabber.decode_json_and_get_attributen(ins_ond_file_location)
         attributen.extend(ins_ond_attributen)
-
-        self.oef_model_creator = OEFModelCreator(classes=classes, attributen=attributen)
-
-    def create_oef_datamodel(self):
-        self.oef_model_creator.create_full_model()
+        return OEFModelCreator(classes=classes, attributen=attributen)
 
     @staticmethod
     def extend_classes_with_ond_ins(classes, ins_ond_classes):

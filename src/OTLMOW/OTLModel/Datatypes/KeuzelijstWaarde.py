@@ -5,3 +5,9 @@ class KeuzelijstWaarde:
         self.definitie = definitie
         self.objectUri = objectUri
         self.status = status
+
+    def print(self):
+        if self.status == '' or self.status == 'ingebruik':
+            return self.invulwaarde
+
+        return self.invulwaarde + ' (' + self.status + ')'

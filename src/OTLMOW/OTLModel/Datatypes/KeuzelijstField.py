@@ -1,11 +1,13 @@
-﻿import warnings
+﻿import logging
+import warnings
 
 from OTLMOW.Facility.Exceptions.RemovedOptionError import RemovedOptionError
 from OTLMOW.OTLModel.BaseClasses.OTLField import OTLField
+from OTLMOW.OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 
 class KeuzelijstField(OTLField):
-    options = {}
+    options: dict[str, KeuzelijstWaarde] = {}
     codelist = ''
 
     @staticmethod
@@ -21,9 +23,10 @@ class KeuzelijstField(OTLField):
             if option_value.status == 'uitgebruik':
                 warnings.warn(message=f'{value} is a deprecated value for {attribuut.naam}, please refrain from using this value.',
                               category=DeprecationWarning)
-            if option_value.status == 'verwijderd':
-                raise RemovedOptionError(f'{value} is not a valid value for {attribuut.naam}. This will result in a valdation '
-                                         'error when updating this attribute.')
+                logging.warning(f'{value} is a deprecated value for {attribuut.naam}, please refrain from using this value.')
+            elif option_value.status == 'verwijderd':
+                logging.error(f'{value} is no longer a valid value for {attribuut.naam}.')
+                raise RemovedOptionError(f'{value} is no longer a valid value for {attribuut.naam}.')
         return True
 
     def __str__(self):
@@ -35,5 +38,5 @@ label: {self.label}
 usagenote: {self.usagenote}
 deprecated_version: {self.deprecated_version}"""
         s += '\npossible values:\n'
-        s += '\n'.join(list(map(lambda x: '    ' + x.invulwaarde, self.options.values())))
+        s += '\n'.join(list(map(lambda x: '    ' + x.print(), self.options.values())))
         return s

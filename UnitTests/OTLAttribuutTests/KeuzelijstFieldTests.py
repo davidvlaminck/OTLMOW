@@ -1,3 +1,4 @@
+import logging
 from unittest import TestCase
 
 from OTLMOW.Facility.Exceptions.RemovedOptionError import RemovedOptionError
@@ -8,6 +9,8 @@ class NonStringableObject(object):
     def __str__(self):
         pass
 
+logging.warning = lambda l: None
+logging.error = lambda l: None
 
 class KeuzelijstFieldTests(TestCase):
     def test_adms_status(self):

@@ -29,8 +29,10 @@ class DateFieldTests(TestCase):
             self.assertIsNone(DateField.convert_to_correct_type(None))
             self.assertEqual(datetime.date(2020, 1, 1), DateField.convert_to_correct_type(datetime.date(2020, 1, 1)))
 
-        convertable_values_list = [('2020-01-01', datetime.date(2020, 1, 1)), ('2020-1-1', datetime.date(2020, 1, 1)),
-                                   ('1/1/2020', datetime.date(2020, 1, 1)), (10000000, datetime.date(1970, 4, 26)),
+        convertable_values_list = [('2020-01-01', datetime.date(2020, 1, 1)),
+                                   ('2020-1-1', datetime.date(2020, 1, 1)),
+                                   ('1/1/2020', datetime.date(2020, 1, 1)),
+                                   (10000000, datetime.date(1970, 4, 26)),
                                    (datetime.datetime(2020, 1, 1, 2, 2, 2), datetime.date(2020, 1, 1))]
         for value, expected in convertable_values_list:
             with self.subTest(f'Correct value after conversion: value = {value}'):

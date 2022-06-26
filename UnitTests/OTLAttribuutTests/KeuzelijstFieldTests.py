@@ -1,6 +1,6 @@
 from unittest import TestCase
 
-from OTLMOW.Facility.Exceptions.RemovedOptionWarning import RemovedOptionWarning
+from OTLMOW.Facility.Exceptions.RemovedOptionError import RemovedOptionError
 from TestClasses.OTLModel.Classes.Onderdeel.AllCasesTestClass import AllCasesTestClass
 
 
@@ -22,7 +22,7 @@ class KeuzelijstFieldTests(TestCase):
                 self.assertEqual('waarde-5', instance.testKeuzelijst)
 
         with self.subTest('verwijderd value'):
-            with self.assertWarns(RemovedOptionWarning):
+            with self.assertRaises(RemovedOptionError):
                 instance.testKeuzelijst = 'waarde-6'
                 self.assertEqual('waarde-6', instance.testKeuzelijst)
 

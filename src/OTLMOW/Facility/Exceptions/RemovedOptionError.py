@@ -1,0 +1,2 @@
+﻿class RemovedOptionError(Exception):
+    pass

@@ -1,6 +1,6 @@
 ﻿import warnings
 
-from OTLMOW.Facility.Exceptions.RemovedOptionWarning import RemovedOptionWarning
+from OTLMOW.Facility.Exceptions.RemovedOptionError import RemovedOptionError
 from OTLMOW.OTLModel.BaseClasses.OTLField import OTLField
 
 
@@ -22,8 +22,8 @@ class KeuzelijstField(OTLField):
                 warnings.warn(message=f'{value} is a deprecated value for {attribuut.naam}, please refrain from using this value.',
                               category=DeprecationWarning)
             if option_value.status == 'verwijderd':
-                warnings.warn(category=RemovedOptionWarning,
-                              message=f'{value} is not a valid value for {attribuut.naam}. This will result in a valdation error when updating this attribute.')
+                raise RemovedOptionError(f'{value} is not a valid value for {attribuut.naam}. This will result in a valdation '
+                                         'error when updating this attribute.')
         return True
 
     def __str__(self):

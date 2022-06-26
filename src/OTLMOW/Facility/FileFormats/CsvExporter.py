@@ -1,5 +1,6 @@
 import copy
 
+from OTLMOW.Facility.GenericHelper import GenericHelper
 from OTLMOW.OTLModel.Classes.ImplementatieElement.AIMObject import AIMObject
 
 
@@ -54,12 +55,16 @@ class CsvExporter:
         types = set(map(lambda x: x.typeURI, list_of_objects))
         for object_type in types:
             filtered_objects = list(filter(lambda x: x.typeURI == object_type, list_of_objects))
-            shortened_uri = object_type.split('#')[1]
+            ns, name = GenericHelper.get_ns_and_name_from_uri(object_type)
+            shortened_uri = ns + '_' + name
             specific_file_location = str(file_location)
-            specific_file_location = specific_file_location.split('.')[0] + '_' + shortened_uri + '.' + specific_file_location.split('.')[1]
+            index = specific_file_location.rfind('\\')
+            dir_location = specific_file_location[0:index]
+            filename = specific_file_location[index+1:]
+            specific_filename = filename.split('.')[0] + '_' + shortened_uri + '.' + filename.split('.')[1]
             csv_data = self.create_data_from_objects(filtered_objects)
             csv_data_lines = self.create_data_lines_from_data(csv_data, delimiter)
-            self.write_file(file_location=specific_file_location, data=csv_data_lines)
+            self.write_file(file_location=dir_location + '\\' + specific_filename, data=csv_data_lines)
 
     def create_data_from_objects(self, list_of_objects: list) -> [[str]]:
         self.csv_data = []

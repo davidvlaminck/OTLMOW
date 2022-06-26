@@ -188,13 +188,13 @@ class OTLFacility:
         classes = model_grabber.decode_json_and_get_classes(oef_file_location)
         attributen = model_grabber.decode_json_and_get_attributen(oef_file_location)
         ins_ond_classes = model_grabber.decode_json_and_get_classes(ins_ond_file_location)
-        self.extend_classes_with_ond_ins(classes, ins_ond_classes)
+        self._extend_classes_with_ond_ins(classes, ins_ond_classes)
         ins_ond_attributen = model_grabber.decode_json_and_get_attributen(ins_ond_file_location)
         attributen.extend(ins_ond_attributen)
         return OEFModelCreator(classes=classes, attributen=attributen)
 
     @staticmethod
-    def extend_classes_with_ond_ins(classes, ins_ond_classes):
+    def _extend_classes_with_ond_ins(classes, ins_ond_classes):
         for cls in classes:
             ins_ond_cls = next((c for c in ins_ond_classes if c["uri"] == cls["uri"]), None)
             if ins_ond_cls is None:

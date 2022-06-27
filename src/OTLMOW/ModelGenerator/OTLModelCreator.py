@@ -1,5 +1,7 @@
 import logging
+import os
 from datetime import datetime
+from os import path
 from os.path import abspath
 
 from OTLMOW.Facility.GenericHelper import GenericHelper
@@ -26,6 +28,7 @@ class OTLModelCreator:
     def create_full_model(self, directory):
         logging.info('started creating model at ' + datetime.now().strftime("%d/%m/%Y %H:%M:%S"))
         directory = abspath(directory)
+        self.check_and_create_subdirectories(directory)
         self.query_correct_base_classes()
         self.create_primitive_datatypes(directory=directory)
         self.create_complex_datatypes(directory=directory)
@@ -168,3 +171,27 @@ class OTLModelCreator:
         result = self.oslo_collector.memory_creator.check_on_base_classes()
         if result != 0:
             raise NewOTLBaseClassNotImplemented()
+
+    def check_and_create_subdirectories(self, directory):
+        if not path.exists(directory):
+            raise OSError(f'The directory {directory} does not exist. Please create it first.')
+        if not path.isdir(directory):
+            raise NotADirectoryError(f'{directory} is not a directory.')
+
+        if not path.exists(directory + '\\Classes'):
+            os.mkdir(directory + '\\Classes')
+        if not path.exists(directory + '\\Datatypes'):
+            os.mkdir(directory + '\\Datatypes')
+
+        if not path.exists(directory + '\\Classes\\Abstracten'):
+            os.mkdir(directory + '\\Classes\\Abstracten')
+        if not path.exists(directory + '\\Classes\\ImplementatieElement'):
+            os.mkdir(directory + '\\Classes\\ImplementatieElement')
+        if not path.exists(directory + '\\Classes\\Installatie'):
+            os.mkdir(directory + '\\Classes\\Installatie')
+        if not path.exists(directory + '\\Classes\\Levenscyclus'):
+            os.mkdir(directory + '\\Classes\\Levenscyclus')
+        if not path.exists(directory + '\\Classes\\Onderdeel'):
+            os.mkdir(directory + '\\Classes\\Onderdeel')
+        if not path.exists(directory + '\\Classes\\ProefEnMeting'):
+            os.mkdir(directory + '\\Classes\\ProefEnMeting')

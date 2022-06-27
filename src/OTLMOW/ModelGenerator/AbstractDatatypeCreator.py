@@ -78,7 +78,7 @@ class AbstractDatatypeCreator(ABC):
             base_dir = os.path.abspath(os.path.join(base_dir, os.pardir))
         else:
             base_dir = relative_path
-        path = f"{base_dir}/OTLModel/{directory}/{datatype.name}.py"
+        path = f"{base_dir}/{directory}/{datatype.name}.py"
 
         with open(path, "w", encoding='utf-8') as file:
             for line in data_to_write:

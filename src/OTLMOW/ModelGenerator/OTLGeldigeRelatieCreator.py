@@ -30,7 +30,7 @@ class OTLGeldigeRelatieCreator:
 
     @staticmethod
     def writeToFile(dataToWrite: list[str], relativePath=''):
-        path = f"{relativePath}/OTLModel/GeldigeRelatieLijst.py"
+        path = f"{relativePath}\\GeldigeRelatieLijst.py"
 
         file = open(path, "w")
         for line in dataToWrite:

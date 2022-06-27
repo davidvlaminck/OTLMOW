@@ -27,7 +27,6 @@ class KeuzelijstFieldTests(TestCase):
         with self.subTest('verwijderd value'):
             with self.assertRaises(RemovedOptionError):
                 instance.testKeuzelijst = 'waarde-6'
-                self.assertEqual('waarde-6', instance.testKeuzelijst)
 
     def test_full_test_on_testclass_kard_1(self):
         instance = AllCasesTestClass()

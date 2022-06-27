@@ -11,6 +11,7 @@ if __name__ == '__main__':
     instance.testComplexType.testStringField = 'waarde in complex datatype'
     instance.testComplexType.testBooleanField = True
 
+    print(instance.typeURI)
     print(OTLObjectHelper.build_string_version(instance))
 
 

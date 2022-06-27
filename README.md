@@ -33,9 +33,9 @@ The datamodel generates classes, allowing the properties to be filled with data.
 ```  
 from datetime import datetime
 from src.OTLMOW.Facility.OTLFacility import OTLFacility
-from src.OTLMOW.OTLModel.Classes.DNBLaagspanning import DNBLaagspanning
-from src.OTLMOW.OTLModel.Classes.EnergiemeterDNB import EnergiemeterDNB
-from src.OTLMOW.OTLModel.Classes.Voedt import Voedt
+from src.OTLMOW.OTLModel.Classes.Onderdeel.DNBLaagspanning import DNBLaagspanning
+from src.OTLMOW.OTLModel.Classes.Onderdeel.EnergiemeterDNB import EnergiemeterDNB
+from src.OTLMOW.OTLModel.Classes.Onderdeel.Voedt import Voedt
 
 # create the main facade class: OTLFacility
 otl_facility = OTLFacility(logfile=r'C:\temp\pythonLogging\python_log.txt',

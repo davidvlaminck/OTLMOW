@@ -62,7 +62,7 @@ class OTLFacility:
                              geo_artefact_sqlite_file_location: str = '') -> None:
         """Creates a datamodel given an OTL SQLite database in the specified directory. This will also use a Geometry Artefact if specified
 
-        :param directory: directory where the model classes will be created. If not specified, this will create a model in a directory OTLModel in the same directory as the script that runs this method
+        :param directory: directory where the model classes will be created, including the OTLModel directory. If not specified, this will create a model in a directory OTLModel in the same directory as the script that runs this method
         :type: str
         :param otl_sqlite_file_location: path to the OTL SQLite file
         :type: str

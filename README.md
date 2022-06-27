@@ -15,7 +15,7 @@ OTLMOW has dependencies on rdflib and pyvis but these are automatically handled 
 
 ## Creating the OTL datamodel using the OTL SQLite
 With every OTL update, this piece of code will allow the creation of an updated Python datamodel. The generated classes are not backwards compatible.
-```  
+```
 from src.OTLMOW.Facility.OTLFacility import OTLFacility
 
 # create the main facade class: OTLFacility
@@ -23,10 +23,10 @@ otl_facility = OTLFacility(logfile=r'C:\temp\pythonLogging\python_log.txt',
                            settings_path="C:\\resources\\settings_OTLMOW.json")
 
 # create a datamodel based on the OTL SQLite database and ttl files stored on the github
-otl_file_location = '../InputFiles/OTL 2.3.db'
-GA_file_location = '../InputFiles/Geometrie_Artefact_2.3.RC2.db'
-otl_facility.init_otl_model_creator(otl_file_location, GA_file_location)
-otl_facility.create_otl_datamodel()
+otl_file_location = '../InputFiles/OTL 2.4.db'
+GA_file_location = '../InputFiles/Geometrie_Artefact_2.4.db'
+otl_facility.create_otl_datamodel(otl_sqlite_file_location=otl_file_location,
+                                  geo_artefact_sqlite_file_location=GA_file_location)
 ```
 ## Using the OTL Datamodel instances to create objects and encode them in JSON
 The datamodel generates classes, allowing the properties to be filled with data.
@@ -71,7 +71,7 @@ print(encoded_json)
 
 # write the json file
 path = f'{datetime.now().strftime("%Y%m%d%H%M%S")}_export.json'
-otl_facility.encoder.write_json_to_file(encoded_json, path)
+otl_facility.create_file_from_assets(filepath=path, list_of_objects=objects)
 ```
 output:
 ```

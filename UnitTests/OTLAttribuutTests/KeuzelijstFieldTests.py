@@ -9,8 +9,8 @@ class NonStringableObject(object):
     def __str__(self):
         pass
 
-logging.warning = lambda l: None
-logging.error = lambda l: None
+# logging.warning = lambda l: None
+# logging.error = lambda l: None
 
 class KeuzelijstFieldTests(TestCase):
     def test_adms_status(self):

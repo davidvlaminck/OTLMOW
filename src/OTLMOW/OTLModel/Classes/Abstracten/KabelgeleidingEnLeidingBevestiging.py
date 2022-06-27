@@ -1,5 +1,5 @@
 # coding=utf-8
-from abc import abstractmethod, ABC
+from abc import abstractmethod
 from OTLMOW.GeometrieArtefact.LijnGeometrie import LijnGeometrie
 
 

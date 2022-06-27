@@ -32,8 +32,8 @@ class OTLClassCreator(AbstractDatatypeCreator):
             raise ValueError(f"Input is not a OSLOClass")
 
         if oslo_class.objectUri == '' or not (
-                oslo_class.objectUri.startswith('https://wegenenverkeer.data.vlaanderen.be/ns/') or oslo_class.objectUri.startswith(
-            'http://purl.org/dc/terms')):
+                oslo_class.objectUri.startswith('https://wegenenverkeer.data.vlaanderen.be/ns/') or oslo_class.objectUri.
+                startswith('http://purl.org/dc/terms')):
             raise ValueError(f"OSLOClass.objectUri is invalid. Value = '{oslo_class.objectUri}'")
 
         if oslo_class.name == '':
@@ -44,10 +44,11 @@ class OTLClassCreator(AbstractDatatypeCreator):
     def create_block_from_class(self, oslo_class: OSLOClass, model_location='') -> [str]:
         attributen = self.osloCollector.find_attributes_by_class(oslo_class)
         inheritances = self.osloCollector.find_inheritances_by_class(oslo_class)
+        list_of_geometry_types = self.get_geometry_types_from_uri(oslo_class.objectUri)
 
         if oslo_class.objectUri in ['https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMObject',
-                                   'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#Derdenobject',
-                                   'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#AbstracteAanvullendeGeometrie']:
+                                    'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#Derdenobject',
+                                    'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#AbstracteAanvullendeGeometrie']:
             inheritances.append(
                 Inheritance(base_name='AttributeInfo', base_uri='', class_name='', class_uri='', deprecated_version=''))
             inheritances.append(
@@ -76,14 +77,15 @@ class OTLClassCreator(AbstractDatatypeCreator):
             datablock.append('from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut')
 
         if oslo_class.abstract == 1:
-            if len(inheritances) > 0:
-                datablock.append('from abc import abstractmethod')
-            else:
+            if len(inheritances) + len(list_of_geometry_types) < 1:
                 datablock.append('from abc import abstractmethod, ABC')
+            else:
+                datablock.append('from abc import abstractmethod')
 
         if len(inheritances) > 0:
             for inheritance in inheritances:
-                if inheritance.base_name in ['OTLAsset', 'OTLObject', 'RelatieInteractor', 'AttributeInfo', 'DavieRelatieAttributes']:
+                if inheritance.base_name in ['OTLAsset', 'OTLObject', 'RelatieInteractor',
+                                             'AttributeInfo', 'DavieRelatieAttributes']:
                     datablock.append(f'from OTLMOW.OTLModel.BaseClasses.{inheritance.base_name} import {inheritance.base_name}')
                 else:
                     class_directory = 'Classes'
@@ -93,7 +95,8 @@ class OTLClassCreator(AbstractDatatypeCreator):
                     if ns is not None:
                         class_directory = GenericHelper.get_class_directory_from_ns(ns).replace('\\', '.')
 
-                    datablock.append(f'from OTLMOW.OTLModel.{class_directory}.{inheritance.base_name} import {inheritance.base_name}')
+                    datablock.append(f'from OTLMOW.OTLModel.{class_directory}.{inheritance.base_name} '
+                                     f'import {inheritance.base_name}')
 
         if any(atr.readonly == 1 for atr in attributen):
             raise NotImplementedError("readonly property is assumed to be 0 on value fields")
@@ -115,7 +118,6 @@ class OTLClassCreator(AbstractDatatypeCreator):
         if 'Bevestiging' in oslo_class.objectUri:
             pass
 
-        list_of_geometry_types = self.get_geometry_types_from_uri(oslo_class.objectUri)
         for GeometryType in list_of_geometry_types:
             datablock.append(f'from OTLMOW.GeometrieArtefact.{GeometryType.__name__} import {GeometryType.__name__}')
 

@@ -1,6 +1,6 @@
 # coding=utf-8
 from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from abc import abstractmethod, ABC
+from abc import abstractmethod
 from OTLMOW.OTLModel.Datatypes.FloatOrDecimalField import FloatOrDecimalField
 from OTLMOW.OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter
 from OTLMOW.OTLModel.Datatypes.KwantWrdInVierkanteMeter import KwantWrdInVierkanteMeter

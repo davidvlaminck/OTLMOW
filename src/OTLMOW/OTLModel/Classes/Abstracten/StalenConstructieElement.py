@@ -1,6 +1,6 @@
 # coding=utf-8
 from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from abc import abstractmethod, ABC
+from abc import abstractmethod
 from OTLMOW.OTLModel.Datatypes.DtcConstructiestaalspecificaties import DtcConstructiestaalspecificaties
 from OTLMOW.OTLModel.Datatypes.KwantWrdInKilogram import KwantWrdInKilogram
 from OTLMOW.GeometrieArtefact.PuntGeometrie import PuntGeometrie

@@ -91,13 +91,14 @@ class OTLEnumerationCreator(AbstractDatatypeCreator):
         # parse the turtle file hosted on github
         try:
             g.parse(keuzelijst_link, format="turtle")
-        except Exception:
+        except Exception as exc:
             if 'KlTestKeuzelijst' in keuzelijstnaam:
                 base_dir = os.path.dirname(os.path.realpath(__file__))
                 keuzelijst_link = abspath(f'{base_dir}/../../../UnitTests/OTLModelCreatorUnitTests/KlTestKeuzelijst.ttl')
                 g.parse(keuzelijst_link, format="turtle")
             else:
-                raise ConnectionError(f"Could not get ttl file for {keuzelijstnaam}")
+                logging.error(msg=f"Could not get ttl file for {keuzelijstnaam}")
+                raise exc
         OTLEnumerationCreator.most_recent_graph = (keuzelijstnaam, g)
         return g
 

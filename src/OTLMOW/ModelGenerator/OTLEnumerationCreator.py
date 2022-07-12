@@ -97,7 +97,7 @@ class OTLEnumerationCreator(AbstractDatatypeCreator):
                 keuzelijst_link = abspath(f'{base_dir}/../../../UnitTests/OTLModelCreatorUnitTests/KlTestKeuzelijst.ttl')
                 g.parse(keuzelijst_link, format="turtle")
             else:
-                logging.error(msg=f"Could not get ttl file for {keuzelijstnaam}")
+                logging.error(f"Could not get ttl file for {keuzelijstnaam}")
                 raise exc
         OTLEnumerationCreator.most_recent_graph = (keuzelijstnaam, g)
         return g

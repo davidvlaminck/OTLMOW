@@ -4,12 +4,12 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/AntiParkeerpaalType> a skos:ConceptScheme;
-<https://www.w3.org/ns/adms#status> <https://wegenenverkeer.data.vlaanderen.be/id/concept/KlKeuzelijstStatus/ingebruik> ;
+<https://www.w3.org/ns/adms#status> <https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik> ;
   skos:definition "De vormen van een anti-parkeerpaal."@nl;
   skos:prefLabel "Anti-parkeerpaal type"@nl.
 
 <https://wegenenverkeer.data.vlaanderen.be/id/concept/AntiParkeerpaalType/conischeTrottoirpaalAmsterdammer> a skos:Concept;
-<https://www.w3.org/ns/adms#status> <https://wegenenverkeer.data.vlaanderen.be/id/concept/KlKeuzelijstStatus/uitgebruik> ;
+<https://www.w3.org/ns/adms#status> <https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/uitgebruik> ;
   skos:definition "Conische paal met afgeronde kop en sierring."@nl;
   skos:inScheme <https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/AntiParkeerpaalType>;
   skos:notation "conischeTrottoirpaalAmsterdammer";
@@ -17,7 +17,7 @@
   skos:topConceptOf <https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/AntiParkeerpaalType> .
 
 <https://wegenenverkeer.data.vlaanderen.be/id/concept/AntiParkeerpaalType/diamantkoppaal> a skos:Concept;
-<https://www.w3.org/ns/adms#status> <https://wegenenverkeer.data.vlaanderen.be/id/concept/KlKeuzelijstStatus/verwijderd> ;
+<https://www.w3.org/ns/adms#status> <https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/verwijderd> ;
   skos:definition "Een paal voorzien van een diamantkop en op de hoeken 4 vellingkanten."@nl;
   skos:inScheme <https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/AntiParkeerpaalType>;
   skos:notation "diamantkoppaal";

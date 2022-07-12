@@ -11,6 +11,7 @@ class KlTestKeuzelijst(KeuzelijstField):
     label = 'Test keuzelijst'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#KlTestKeuzelijst'
     definition = 'Keuzelijst met test waarden.'
+    status = 'ingebruik'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlTestKeuzelijst'
     options = {
         'waarde-1': KeuzelijstWaarde(invulwaarde='waarde-1',

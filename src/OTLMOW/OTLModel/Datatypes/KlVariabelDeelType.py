@@ -15,10 +15,12 @@ class KlVariabelDeelType(KeuzelijstField):
     options = {
         'overstortplaat': KeuzelijstWaarde(invulwaarde='overstortplaat',
                                            label='overstortplaat',
+                                           status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                            definitie='overstortplaat',
                                            objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVariabelDeelType/overstortplaat'),
         'schotbalk': KeuzelijstWaarde(invulwaarde='schotbalk',
                                       label='schotbalk',
+                                      status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                       definitie='schotbalk',
                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVariabelDeelType/schotbalk')
     }

@@ -15,12 +15,15 @@ class KlKabelmofType(KeuzelijstField):
     options = {
         'geldoos': KeuzelijstWaarde(invulwaarde='geldoos',
                                     label='geldoos',
+                                    status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlKabelmofType/geldoos'),
         'gietmof': KeuzelijstWaarde(invulwaarde='gietmof',
                                     label='gietmof',
+                                    status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlKabelmofType/gietmof'),
         'hdpe-mof': KeuzelijstWaarde(invulwaarde='hdpe-mof',
                                      label='HDPE mof',
+                                     status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlKabelmofType/hdpe-mof')
     }
 

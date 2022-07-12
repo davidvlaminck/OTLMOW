@@ -15,15 +15,19 @@ class KlElectricityAppurtenanceType(KeuzelijstField):
     options = {
         'aarding': KeuzelijstWaarde(invulwaarde='aarding',
                                     label='aarding',
+                                    status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlElectricityAppurtenanceType/aarding'),
         'deliverypoint': KeuzelijstWaarde(invulwaarde='deliverypoint',
                                           label='deliveryPoint',
+                                          status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                           objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlElectricityAppurtenanceType/deliverypoint'),
         'mof': KeuzelijstWaarde(invulwaarde='mof',
                                 label='mof',
+                                status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlElectricityAppurtenanceType/mof'),
         'streetlight': KeuzelijstWaarde(invulwaarde='streetlight',
                                         label='streetLight',
+                                        status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlElectricityAppurtenanceType/streetlight')
     }
 

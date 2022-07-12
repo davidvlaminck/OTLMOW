@@ -15,9 +15,11 @@ class KlMIVLusZichtbaarheid(KeuzelijstField):
     options = {
         'onderlaag': KeuzelijstWaarde(invulwaarde='onderlaag',
                                       label='onderlaag',
+                                      status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlMIVLusZichtbaarheid/onderlaag'),
         'toplaag': KeuzelijstWaarde(invulwaarde='toplaag',
                                     label='toplaag',
+                                    status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlMIVLusZichtbaarheid/toplaag')
     }
 

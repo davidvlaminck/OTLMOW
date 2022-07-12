@@ -15,9 +15,11 @@ class KlPipeContainerType(KeuzelijstField):
     options = {
         'kabelenleidinggoot': KeuzelijstWaarde(invulwaarde='kabelenleidinggoot',
                                                label='kabelEnLeidingGoot',
+                                               status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                                objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlPipeContainerType/kabelenleidinggoot'),
         'mantelbuis': KeuzelijstWaarde(invulwaarde='mantelbuis',
                                        label='mantelbuis',
+                                       status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlPipeContainerType/mantelbuis')
     }
 

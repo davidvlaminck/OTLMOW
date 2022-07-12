@@ -15,14 +15,17 @@ class KlDunneOverlagingType(KeuzelijstField):
     options = {
         'SME-D1': KeuzelijstWaarde(invulwaarde='SME-D1',
                                    label='SME-D1',
+                                   status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                    definitie='SME-D1',
                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlDunneOverlagingType/SME-D1'),
         'SME-D2': KeuzelijstWaarde(invulwaarde='SME-D2',
                                    label='SME-D2',
+                                   status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                    definitie='SMA-D2',
                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlDunneOverlagingType/SME-D2'),
         'antisliplaag': KeuzelijstWaarde(invulwaarde='antisliplaag',
                                          label='antisliplaag',
+                                         status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                          definitie='antisliplaag',
                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlDunneOverlagingType/antisliplaag')
     }

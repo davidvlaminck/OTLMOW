@@ -15,6 +15,7 @@ class KlControllerBeveiligingssleutel(KeuzelijstField):
     options = {
         'AES-256': KeuzelijstWaarde(invulwaarde='AES-256',
                                     label='AES-256',
+                                    status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlControllerBeveiligingssleutel/AES-256')
     }
 

@@ -15,9 +15,11 @@ class KlContactorType(KeuzelijstField):
     options = {
         'K': KeuzelijstWaarde(invulwaarde='K',
                               label='K',
+                              status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                               objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlContactorType/K'),
         'Q': KeuzelijstWaarde(invulwaarde='Q',
                               label='Q',
+                              status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                               objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlContactorType/Q')
     }
 

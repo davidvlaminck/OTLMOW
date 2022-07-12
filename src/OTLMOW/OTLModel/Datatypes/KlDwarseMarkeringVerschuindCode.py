@@ -15,6 +15,7 @@ class KlDwarseMarkeringVerschuindCode(KeuzelijstField):
     options = {
         'FOP-sch': KeuzelijstWaarde(invulwaarde='FOP-sch',
                                     label='FOP-sch',
+                                    status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                     definitie='Fietsoversteekplaats met blokken schuin',
                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlDwarseMarkeringVerschuindCode/FOP-sch')
     }

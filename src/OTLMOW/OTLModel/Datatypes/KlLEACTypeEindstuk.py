@@ -15,14 +15,17 @@ class KlLEACTypeEindstuk(KeuzelijstField):
     options = {
         'naar-beneden-afgebogen': KeuzelijstWaarde(invulwaarde='naar-beneden-afgebogen',
                                                    label='naar beneden afgebogen',
+                                                   status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                                    definitie='naar beneden afgebogen',
                                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLEACTypeEindstuk/naar-beneden-afgebogen'),
         'schelp': KeuzelijstWaarde(invulwaarde='schelp',
                                    label='schelp',
+                                   status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                    definitie='schelp',
                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLEACTypeEindstuk/schelp'),
         'uitgebogen': KeuzelijstWaarde(invulwaarde='uitgebogen',
                                        label='uitgebogen',
+                                       status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                        definitie='uitgebogen',
                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLEACTypeEindstuk/uitgebogen')
     }

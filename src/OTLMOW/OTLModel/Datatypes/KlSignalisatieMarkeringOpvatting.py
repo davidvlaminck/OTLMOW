@@ -15,10 +15,12 @@ class KlSignalisatieMarkeringOpvatting(KeuzelijstField):
     options = {
         'middelenverbintenis': KeuzelijstWaarde(invulwaarde='middelenverbintenis',
                                                 label='middelenverbintenis',
+                                                status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                                 definitie='Legt de nadruk op de wijze van aanbrengen en doseringen.',
                                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlSignalisatieMarkeringOpvatting/middelenverbintenis'),
         'resultaatsverbintenis': KeuzelijstWaarde(invulwaarde='resultaatsverbintenis',
                                                   label='resultaatsverbintenis',
+                                                  status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                                   definitie='Houdt in dat de doseringen niet worden vastgelegd in het bijzonder bestek maar dat de markeringen, in nieuwe toestand en gedurende de waarborgperiode voor de markering, moeten voldoen aan resultaatseisen. ',
                                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlSignalisatieMarkeringOpvatting/resultaatsverbintenis')
     }

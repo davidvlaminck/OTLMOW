@@ -15,9 +15,11 @@ class KlEnergiemeterMetertype(KeuzelijstField):
     options = {
         'elektronisch': KeuzelijstWaarde(invulwaarde='elektronisch',
                                          label='elektronisch',
+                                         status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlEnergiemeterMetertype/elektronisch'),
         'mechanisch': KeuzelijstWaarde(invulwaarde='mechanisch',
                                        label='mechanisch',
+                                       status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                        definitie='Nakijken bij EVT',
                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlEnergiemeterMetertype/mechanisch')
     }

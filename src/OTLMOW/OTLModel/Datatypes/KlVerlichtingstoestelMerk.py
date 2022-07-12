@@ -15,21 +15,27 @@ class KlVerlichtingstoestelMerk(KeuzelijstField):
     options = {
         'ARC': KeuzelijstWaarde(invulwaarde='ARC',
                                 label='ARC',
+                                status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerlichtingstoestelMerk/ARC'),
         'HCI-TS': KeuzelijstWaarde(invulwaarde='HCI-TS',
                                    label='HCI-TS',
+                                   status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerlichtingstoestelMerk/HCI-TS'),
         'Philips': KeuzelijstWaarde(invulwaarde='Philips',
                                     label='Philips',
+                                    status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerlichtingstoestelMerk/Philips'),
         'Rombalux': KeuzelijstWaarde(invulwaarde='Rombalux',
                                      label='Rombalux',
+                                     status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerlichtingstoestelMerk/Rombalux'),
         'Schreder': KeuzelijstWaarde(invulwaarde='Schreder',
                                      label='Schreder',
+                                     status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerlichtingstoestelMerk/Schreder'),
         'andere': KeuzelijstWaarde(invulwaarde='andere',
                                    label='andere',
+                                   status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerlichtingstoestelMerk/andere')
     }
 

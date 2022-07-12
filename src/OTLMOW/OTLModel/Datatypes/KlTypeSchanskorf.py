@@ -15,9 +15,11 @@ class KlTypeSchanskorf(KeuzelijstField):
     options = {
         '5-x-7': KeuzelijstWaarde(invulwaarde='5-x-7',
                                   label='5 x 7',
+                                  status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlTypeSchanskorf/5-x-7'),
         '6-x-8': KeuzelijstWaarde(invulwaarde='6-x-8',
                                   label='6 x 8',
+                                  status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlTypeSchanskorf/6-x-8')
     }
 

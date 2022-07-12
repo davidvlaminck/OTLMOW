@@ -15,16 +15,20 @@ class KlPtRegelaarCommunicatiewijze(KeuzelijstField):
     options = {
         'VR-PT-kaart': KeuzelijstWaarde(invulwaarde='VR-PT-kaart',
                                         label='VR PT-kaart',
+                                        status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                         definitie='De PT kaart is een module die is ingebouwd in de verkeersregelaar',
                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlPtRegelaarCommunicatiewijze/VR-PT-kaart'),
         'contact': KeuzelijstWaarde(invulwaarde='contact',
                                     label='contact',
+                                    status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlPtRegelaarCommunicatiewijze/contact'),
         'protocol': KeuzelijstWaarde(invulwaarde='protocol',
                                      label='protocol',
+                                     status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlPtRegelaarCommunicatiewijze/protocol'),
         'serieel': KeuzelijstWaarde(invulwaarde='serieel',
                                     label='serieel',
+                                    status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlPtRegelaarCommunicatiewijze/serieel')
     }
 

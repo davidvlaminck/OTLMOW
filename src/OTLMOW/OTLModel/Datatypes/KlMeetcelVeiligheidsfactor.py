@@ -15,6 +15,7 @@ class KlMeetcelVeiligheidsfactor(KeuzelijstField):
     options = {
         'fS-5': KeuzelijstWaarde(invulwaarde='fS-5',
                                  label='fS 5',
+                                 status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlMeetcelVeiligheidsfactor/fS-5')
     }
 

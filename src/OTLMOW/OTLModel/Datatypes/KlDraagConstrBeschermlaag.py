@@ -15,14 +15,17 @@ class KlDraagConstrBeschermlaag(KeuzelijstField):
     options = {
         'gecoat': KeuzelijstWaarde(invulwaarde='gecoat',
                                    label='gecoat',
+                                   status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                    definitie='Een mengsel van stoffen aangebracht om roest te voorkomen.',
                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlDraagConstrBeschermlaag/gecoat'),
         'gegalvaniseerd': KeuzelijstWaarde(invulwaarde='gegalvaniseerd',
                                            label='gegalvaniseerd',
+                                           status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                            definitie='Een laag zink aangebracht om roest te voorkomen.',
                                            objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlDraagConstrBeschermlaag/gegalvaniseerd'),
         'geschilderd': KeuzelijstWaarde(invulwaarde='geschilderd',
                                         label='geschilderd',
+                                        status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                         definitie='Een laag verf aangebracht om roest te voorkomen.',
                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlDraagConstrBeschermlaag/geschilderd')
     }

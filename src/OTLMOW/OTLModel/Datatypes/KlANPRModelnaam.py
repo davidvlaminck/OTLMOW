@@ -15,15 +15,19 @@ class KlANPRModelnaam(KeuzelijstField):
     options = {
         'G1': KeuzelijstWaarde(invulwaarde='G1',
                                label='G1',
+                               status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlANPRModelnaam/G1'),
         'G3': KeuzelijstWaarde(invulwaarde='G3',
                                label='G3',
+                               status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlANPRModelnaam/G3'),
         'dual': KeuzelijstWaarde(invulwaarde='dual',
                                  label='dual',
+                                 status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlANPRModelnaam/dual'),
         'i-car-cam5': KeuzelijstWaarde(invulwaarde='i-car-cam5',
                                        label='iCar cam5',
+                                       status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                        definitie='iCar cam5',
                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlANPRModelnaam/i-car-cam5')
     }

@@ -15,12 +15,15 @@ class KlEMDraagconstructieElekBeveiliging(KeuzelijstField):
     options = {
         'automaat': KeuzelijstWaarde(invulwaarde='automaat',
                                      label='automaat',
+                                     status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlEMDraagconstructieElekBeveiliging/automaat'),
         'differentieelautomaat': KeuzelijstWaarde(invulwaarde='differentieelautomaat',
                                                   label='differentieelautomaat',
+                                                  status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlEMDraagconstructieElekBeveiliging/differentieelautomaat'),
         'smeltzekering': KeuzelijstWaarde(invulwaarde='smeltzekering',
                                           label='smeltzekering',
+                                          status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                           objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlEMDraagconstructieElekBeveiliging/smeltzekering')
     }
 

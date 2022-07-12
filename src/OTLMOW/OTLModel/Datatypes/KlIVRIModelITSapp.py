@@ -15,6 +15,7 @@ class KlIVRIModelITSapp(KeuzelijstField):
     options = {
         'imflow': KeuzelijstWaarde(invulwaarde='imflow',
                                    label='Imflow',
+                                   status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                    definitie='Imflow',
                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlIVRIModelITSapp/imflow')
     }

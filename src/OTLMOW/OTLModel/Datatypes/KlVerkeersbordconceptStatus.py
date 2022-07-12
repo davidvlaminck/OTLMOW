@@ -15,9 +15,11 @@ class KlVerkeersbordconceptStatus(KeuzelijstField):
     options = {
         'afgeschaft': KeuzelijstWaarde(invulwaarde='afgeschaft',
                                        label='afgeschaft',
+                                       status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerkeersbordconceptStatus/afgeschaft'),
         'stabiel': KeuzelijstWaarde(invulwaarde='stabiel',
                                     label='stabiel',
+                                    status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerkeersbordconceptStatus/stabiel')
     }
 

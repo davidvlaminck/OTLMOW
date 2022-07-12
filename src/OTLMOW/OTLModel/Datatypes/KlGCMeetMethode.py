@@ -15,10 +15,12 @@ class KlGCMeetMethode(KeuzelijstField):
     options = {
         'inSitu': KeuzelijstWaarde(invulwaarde='inSitu',
                                    label='inSitu',
+                                   status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                    definitie='Proef uitgevoerd op de werf',
                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlGCMeetMethode/inSitu'),
         'labo': KeuzelijstWaarde(invulwaarde='labo',
                                  label='labo',
+                                 status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                  definitie='Proef uitgevoerd in het labo',
                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlGCMeetMethode/labo')
     }

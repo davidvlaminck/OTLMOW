@@ -15,21 +15,27 @@ class KlAardingAardingsnet(KeuzelijstField):
     options = {
         'it': KeuzelijstWaarde(invulwaarde='it',
                                label='IT',
+                               status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAardingAardingsnet/it'),
         'tnc': KeuzelijstWaarde(invulwaarde='tnc',
                                 label='TNC',
+                                status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAardingAardingsnet/tnc'),
         'tncs': KeuzelijstWaarde(invulwaarde='tncs',
                                  label='TNCS',
+                                 status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAardingAardingsnet/tncs'),
         'tns': KeuzelijstWaarde(invulwaarde='tns',
                                 label='TNS',
+                                status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAardingAardingsnet/tns'),
         'tns-tncs': KeuzelijstWaarde(invulwaarde='tns-tncs',
                                      label='TNS-TNCS',
+                                     status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAardingAardingsnet/tns-tncs'),
         'tt': KeuzelijstWaarde(invulwaarde='tt',
                                label='TT',
+                               status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAardingAardingsnet/tt')
     }
 

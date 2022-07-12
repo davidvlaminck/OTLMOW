@@ -15,9 +15,11 @@ class KlCabineAardingsstelsel(KeuzelijstField):
     options = {
         'gescheiden': KeuzelijstWaarde(invulwaarde='gescheiden',
                                        label='gescheiden',
+                                       status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlCabineAardingsstelsel/gescheiden'),
         'globaal': KeuzelijstWaarde(invulwaarde='globaal',
                                     label='globaal',
+                                    status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlCabineAardingsstelsel/globaal')
     }
 

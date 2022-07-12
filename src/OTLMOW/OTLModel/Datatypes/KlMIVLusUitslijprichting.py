@@ -15,9 +15,11 @@ class KlMIVLusUitslijprichting(KeuzelijstField):
     options = {
         'links': KeuzelijstWaarde(invulwaarde='links',
                                   label='links',
+                                  status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlMIVLusUitslijprichting/links'),
         'rechts': KeuzelijstWaarde(invulwaarde='rechts',
                                    label='rechts',
+                                   status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlMIVLusUitslijprichting/rechts')
     }
 

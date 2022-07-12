@@ -15,18 +15,22 @@ class KlLantaarnLamptype(KeuzelijstField):
     options = {
         'LED': KeuzelijstWaarde(invulwaarde='LED',
                                 label='LED',
+                                status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                 definitie='Led lamp.',
                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLantaarnLamptype/LED'),
         'gasontlading': KeuzelijstWaarde(invulwaarde='gasontlading',
                                          label='gasontlading',
+                                         status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                          definitie='Lamp op basis van gas.',
                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLantaarnLamptype/gasontlading'),
         'gloeilamp': KeuzelijstWaarde(invulwaarde='gloeilamp',
                                       label='gloeilamp',
+                                      status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                       definitie='Gloeilamp.',
                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLantaarnLamptype/gloeilamp'),
         'halogeen': KeuzelijstWaarde(invulwaarde='halogeen',
                                      label='halogeen',
+                                     status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                      definitie='Halogeenlamp.',
                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLantaarnLamptype/halogeen')
     }

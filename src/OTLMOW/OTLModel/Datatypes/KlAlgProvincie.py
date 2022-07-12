@@ -15,18 +15,23 @@ class KlAlgProvincie(KeuzelijstField):
     options = {
         'antwerpen': KeuzelijstWaarde(invulwaarde='antwerpen',
                                       label='antwerpen',
+                                      status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgProvincie/antwerpen'),
         'limburg': KeuzelijstWaarde(invulwaarde='limburg',
                                     label='limburg',
+                                    status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgProvincie/limburg'),
         'oost-Vlaanderen': KeuzelijstWaarde(invulwaarde='oost-Vlaanderen',
                                             label='oost-Vlaanderen',
+                                            status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                             objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgProvincie/oost-Vlaanderen'),
         'vlaams-Brabant': KeuzelijstWaarde(invulwaarde='vlaams-Brabant',
                                            label='vlaams-Brabant',
+                                           status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                            objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgProvincie/vlaams-Brabant'),
         'west-Vlaanderen': KeuzelijstWaarde(invulwaarde='west-Vlaanderen',
                                             label='west-Vlaanderen',
+                                            status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                             objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgProvincie/west-Vlaanderen')
     }
 

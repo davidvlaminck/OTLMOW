@@ -15,14 +15,17 @@ class KlNetwerkType(KeuzelijstField):
     options = {
         'elektriciteit': KeuzelijstWaarde(invulwaarde='elektriciteit',
                                           label='elektriciteit',
+                                          status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                           definitie='De Klasse hoort in het elektriciteitsnet.',
                                           objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkType/elektriciteit'),
         'gemengd': KeuzelijstWaarde(invulwaarde='gemengd',
                                     label='gemengd',
+                                    status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                     definitie='De Klasse hoort zowel bij het elektriciteitsnet als bij het telecomnet.',
                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkType/gemengd'),
         'telecommunicatie': KeuzelijstWaarde(invulwaarde='telecommunicatie',
                                              label='telecommunicatie',
+                                             status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                              definitie='De Klasse hoort in het telecomnet.',
                                              objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkType/telecommunicatie')
     }

@@ -15,14 +15,17 @@ class KlMateriaalBeschermingVraatschade(KeuzelijstField):
     options = {
         'juteband': KeuzelijstWaarde(invulwaarde='juteband',
                                      label='juteband',
+                                     status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                      definitie='Materiaal dat gebruikt wordt als bescherming vraatschade is een juteband.',
                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlMateriaalBeschermingVraatschade/juteband'),
         'kunststof': KeuzelijstWaarde(invulwaarde='kunststof',
                                       label='kunststof',
+                                      status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                       definitie='Materiaal dat gebruikt wordt als bescherming vraatschade is kunststof.',
                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlMateriaalBeschermingVraatschade/kunststof'),
         'wildafwerend-product': KeuzelijstWaarde(invulwaarde='wildafwerend-product',
                                                  label='wildafwerend product',
+                                                 status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                                  definitie='Wildafwerend product wordt gebruikt als bescherming tegen vraatschade.',
                                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlMateriaalBeschermingVraatschade/wildafwerend-product')
     }

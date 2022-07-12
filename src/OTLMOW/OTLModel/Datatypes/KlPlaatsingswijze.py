@@ -15,10 +15,12 @@ class KlPlaatsingswijze(KeuzelijstField):
     options = {
         'vast': KeuzelijstWaarde(invulwaarde='vast',
                                  label='vast',
+                                 status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                  definitie='Vaste plaatsing van het straatmeubilair.',
                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlPlaatsingswijze/vast'),
         'wegneembaar': KeuzelijstWaarde(invulwaarde='wegneembaar',
                                         label='wegneembaar',
+                                        status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                         definitie='Wegneembare plaatsing van het straatmeubilair.',
                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlPlaatsingswijze/wegneembaar')
     }

@@ -15,14 +15,17 @@ class KlEnergiemeterDNBMeteropnameFrequentie(KeuzelijstField):
     options = {
         'AMR': KeuzelijstWaarde(invulwaarde='AMR',
                                 label='AMR',
+                                status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                 definitie='automatische meter reading',
                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlEnergiemeterDNBMeteropnameFrequentie/AMR'),
         'MMR': KeuzelijstWaarde(invulwaarde='MMR',
                                 label='MMR',
+                                status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                 definitie='manuele meter opname',
                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlEnergiemeterDNBMeteropnameFrequentie/MMR'),
         'YMR': KeuzelijstWaarde(invulwaarde='YMR',
                                 label='YMR',
+                                status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                 definitie='jaarlijkse meter opname',
                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlEnergiemeterDNBMeteropnameFrequentie/YMR')
     }

@@ -15,10 +15,12 @@ class KlLEGCTestType(KeuzelijstField):
     options = {
         'geluidsabsorptie': KeuzelijstWaarde(invulwaarde='geluidsabsorptie',
                                              label='geluidsabsorptie',
+                                             status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                              definitie='Proef : De ééngetalsaanduiding als waarde voor de geluidsabsorptie',
                                              objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLEGCTestType/geluidsabsorptie'),
         'luchtgeluidsisolatie': KeuzelijstWaarde(invulwaarde='luchtgeluidsisolatie',
                                                  label='luchtgeluidsisolatie',
+                                                 status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                                  definitie='Proef : De ééngetalsaanduiding voor luchtgeluidsisolatie',
                                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLEGCTestType/luchtgeluidsisolatie')
     }

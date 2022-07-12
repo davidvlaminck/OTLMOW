@@ -15,14 +15,17 @@ class KlDekselVergrendeling(KeuzelijstField):
     options = {
         'bouten': KeuzelijstWaarde(invulwaarde='bouten',
                                    label='bouten',
+                                   status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                    definitie='Het deksel is vergrendeld met inox schroefbouten met zeskantmoer',
                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlDekselVergrendeling/bouten'),
         'haken': KeuzelijstWaarde(invulwaarde='haken',
                                   label='haken',
+                                  status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                   definitie='Het deksel is met haken vergrendeld',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlDekselVergrendeling/haken'),
         'inbus': KeuzelijstWaarde(invulwaarde='inbus',
                                   label='inbus',
+                                  status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                   definitie='Het deksel is vergrendeld met inox schroefbouten met inbusmoer',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlDekselVergrendeling/inbus')
     }

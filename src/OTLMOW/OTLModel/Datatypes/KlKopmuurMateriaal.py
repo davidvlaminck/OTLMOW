@@ -15,10 +15,12 @@ class KlKopmuurMateriaal(KeuzelijstField):
     options = {
         'beton': KeuzelijstWaarde(invulwaarde='beton',
                                   label='beton',
+                                  status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                   definitie='beton',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlKopmuurMateriaal/beton'),
         'metselwerk': KeuzelijstWaarde(invulwaarde='metselwerk',
                                        label='metselwerk',
+                                       status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                        definitie='metselwerk',
                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlKopmuurMateriaal/metselwerk')
     }

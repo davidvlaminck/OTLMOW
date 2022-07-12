@@ -15,14 +15,17 @@ class KlAanplantingswijzeSierbeplanting(KeuzelijstField):
     options = {
         'aanplanting-bol--en-knolgewassen': KeuzelijstWaarde(invulwaarde='aanplanting-bol--en-knolgewassen',
                                                              label='aanplanting bol- en knolgewassen',
+                                                             status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                                              definitie='Aanplanting via bol- en knolgewassen',
                                                              objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAanplantingswijzeSierbeplanting/aanplanting-bol--en-knolgewassen'),
         'aanplanting-helm': KeuzelijstWaarde(invulwaarde='aanplanting-helm',
                                              label='aanplanting helm',
+                                             status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                              definitie='Aanplanting via helm',
                                              objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAanplantingswijzeSierbeplanting/aanplanting-helm'),
         'aanplanting-zonder-helm': KeuzelijstWaarde(invulwaarde='aanplanting-zonder-helm',
                                                     label='aanplanting zonder helm',
+                                                    status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                                     definitie='Aanplanting zonder helm',
                                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAanplantingswijzeSierbeplanting/aanplanting-zonder-helm')
     }

@@ -15,18 +15,22 @@ class KlEcoLooprichelType(KeuzelijstField):
     options = {
         'beton': KeuzelijstWaarde(invulwaarde='beton',
                                   label='beton',
+                                  status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                   definitie='Een betonnen looprichel.',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlEcoLooprichelType/beton'),
         'doorlopende-natuurlijke-oever': KeuzelijstWaarde(invulwaarde='doorlopende-natuurlijke-oever',
                                                           label='doorlopende natuurlijke oever',
+                                                          status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                                           definitie='Een doorlopende natuurlijke oever.',
                                                           objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlEcoLooprichelType/doorlopende-natuurlijke-oever'),
         'hout': KeuzelijstWaarde(invulwaarde='hout',
                                  label='hout',
+                                 status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                  definitie='Een houten looprichel.',
                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlEcoLooprichelType/hout'),
         'schanskorven': KeuzelijstWaarde(invulwaarde='schanskorven',
                                          label='schanskorven',
+                                         status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                          definitie='Een oever bestaande uit schanskorven.',
                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlEcoLooprichelType/schanskorven')
     }

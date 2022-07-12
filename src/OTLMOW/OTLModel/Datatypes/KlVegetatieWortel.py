@@ -15,18 +15,22 @@ class KlVegetatieWortel(KeuzelijstField):
     options = {
         'container': KeuzelijstWaarde(invulwaarde='container',
                                       label='container',
+                                      status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                       definitie='De wortels zitten in een container of pot bij aanlevering en aanplant.',
                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVegetatieWortel/container'),
         'draadkluit': KeuzelijstWaarde(invulwaarde='draadkluit',
                                        label='draadkluit',
+                                       status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                        definitie='De wortels zitten in een met draad ingebonden kluit aarde',
                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVegetatieWortel/draadkluit'),
         'kluit': KeuzelijstWaarde(invulwaarde='kluit',
                                   label='kluit',
+                                  status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                   definitie='De wortels zijn omringd met aarde.',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVegetatieWortel/kluit'),
         'naakt': KeuzelijstWaarde(invulwaarde='naakt',
                                   label='naakt',
+                                  status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                   definitie='Wortels waarrond geen grond aanwezig is',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVegetatieWortel/naakt')
     }

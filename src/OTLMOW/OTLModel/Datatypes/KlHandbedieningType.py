@@ -15,12 +15,15 @@ class KlHandbedieningType(KeuzelijstField):
     options = {
         'drukknop': KeuzelijstWaarde(invulwaarde='drukknop',
                                      label='drukknop',
+                                     status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlHandbedieningType/drukknop'),
         'schakelaar': KeuzelijstWaarde(invulwaarde='schakelaar',
                                        label='schakelaar',
+                                       status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlHandbedieningType/schakelaar'),
         'sleutelcontact': KeuzelijstWaarde(invulwaarde='sleutelcontact',
                                            label='sleutelcontact',
+                                           status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                            objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlHandbedieningType/sleutelcontact')
     }
 

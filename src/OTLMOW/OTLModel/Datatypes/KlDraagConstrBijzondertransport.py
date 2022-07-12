@@ -15,18 +15,22 @@ class KlDraagConstrBijzondertransport(KeuzelijstField):
     options = {
         'afkoppelbaar': KeuzelijstWaarde(invulwaarde='afkoppelbaar',
                                          label='afkoppelbaar',
+                                         status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                          definitie='Het object is afkoppelbaar.',
                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlDraagConstrBijzondertransport/afkoppelbaar'),
         'draaibaar': KeuzelijstWaarde(invulwaarde='draaibaar',
                                       label='draaibaar',
+                                      status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                       definitie='Het object is draaibaar.',
                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlDraagConstrBijzondertransport/draaibaar'),
         'geen-voorziening': KeuzelijstWaarde(invulwaarde='geen-voorziening',
                                              label='geen voorziening',
+                                             status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                              definitie='Geen voorziening.',
                                              objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlDraagConstrBijzondertransport/geen-voorziening'),
         'kantelbaar': KeuzelijstWaarde(invulwaarde='kantelbaar',
                                        label='kantelbaar',
+                                       status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                        definitie='Het object is kantelbaar.',
                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlDraagConstrBijzondertransport/kantelbaar')
     }

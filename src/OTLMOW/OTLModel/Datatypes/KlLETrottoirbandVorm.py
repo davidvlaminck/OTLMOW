@@ -15,6 +15,7 @@ class KlLETrottoirbandVorm(KeuzelijstField):
     options = {
         'afgeschuind': KeuzelijstWaarde(invulwaarde='afgeschuind',
                                         label='afgeschuind',
+                                        status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                         definitie='Afgeschuind',
                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLETrottoirbandVorm/afgeschuind')
     }

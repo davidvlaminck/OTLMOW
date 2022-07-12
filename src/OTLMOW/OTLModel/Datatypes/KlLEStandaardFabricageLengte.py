@@ -15,10 +15,12 @@ class KlLEStandaardFabricageLengte(KeuzelijstField):
     options = {
         '0.5-m': KeuzelijstWaarde(invulwaarde='0.5-m',
                                   label='0,5 m',
+                                  status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                   definitie='De fabricagelengte is 0,5 meter.',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLEStandaardFabricageLengte/0.5-m'),
         '1-m': KeuzelijstWaarde(invulwaarde='1-m',
                                 label='1 m',
+                                status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                 definitie='De fabricagelengte is 1 meter.',
                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLEStandaardFabricageLengte/1-m')
     }

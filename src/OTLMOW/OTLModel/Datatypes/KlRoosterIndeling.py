@@ -15,14 +15,17 @@ class KlRoosterIndeling(KeuzelijstField):
     options = {
         '1-delig': KeuzelijstWaarde(invulwaarde='1-delig',
                                     label='1-delig',
+                                    status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                     definitie='1-delig',
                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlRoosterIndeling/1-delig'),
         '2-delig': KeuzelijstWaarde(invulwaarde='2-delig',
                                     label='2-delig',
+                                    status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                     definitie='2-delig',
                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlRoosterIndeling/2-delig'),
         'zijdelingse-opvang': KeuzelijstWaarde(invulwaarde='zijdelingse-opvang',
                                                label='zijdelingse opvang',
+                                               status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                                definitie='zijdelingse opvang',
                                                objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlRoosterIndeling/zijdelingse-opvang')
     }

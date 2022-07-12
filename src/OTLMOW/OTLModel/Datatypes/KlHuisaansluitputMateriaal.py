@@ -15,14 +15,17 @@ class KlHuisaansluitputMateriaal(KeuzelijstField):
     options = {
         'beton': KeuzelijstWaarde(invulwaarde='beton',
                                   label='beton',
+                                  status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                   definitie='betonnen huisaansluitputje',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlHuisaansluitputMateriaal/beton'),
         'gres': KeuzelijstWaarde(invulwaarde='gres',
                                  label='gres',
+                                 status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                  definitie='aansluitputje in grès',
                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlHuisaansluitputMateriaal/gres'),
         'kunststof': KeuzelijstWaarde(invulwaarde='kunststof',
                                       label='kunststof',
+                                      status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                       definitie='kunstof aansluitputje',
                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlHuisaansluitputMateriaal/kunststof')
     }

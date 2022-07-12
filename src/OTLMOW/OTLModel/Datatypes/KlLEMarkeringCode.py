@@ -15,18 +15,22 @@ class KlLEMarkeringCode(KeuzelijstField):
     options = {
         'DIV-BIG': KeuzelijstWaarde(invulwaarde='DIV-BIG',
                                     label='DIV-BIG',
+                                    status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                     definitie='De code voor LE markering biggenrug',
                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLEMarkeringCode/DIV-BIG'),
         'DIV-BRDSTN': KeuzelijstWaarde(invulwaarde='DIV-BRDSTN',
                                        label='DIV-BRDSTN',
+                                       status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                        definitie='De code voor LE markering boordsteen',
                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLEMarkeringCode/DIV-BRDSTN'),
         'DIV-BRDSTN-PV': KeuzelijstWaarde(invulwaarde='DIV-BRDSTN-PV',
                                           label='DIV-BRDSTN-PV',
+                                          status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                           definitie='De code voor LE markering boordsteen parkeerverbod',
                                           objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLEMarkeringCode/DIV-BRDSTN-PV'),
         'DIV-NJ': KeuzelijstWaarde(invulwaarde='DIV-NJ',
                                    label='DIV-NJ',
+                                   status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                    definitie='De code voor LE markering New Jersey',
                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLEMarkeringCode/DIV-NJ')
     }

@@ -15,6 +15,7 @@ class KlIVRIMerkRIS(KeuzelijstField):
     options = {
         'peek': KeuzelijstWaarde(invulwaarde='peek',
                                  label='Peek',
+                                 status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                  definitie='Peek',
                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlIVRIMerkRIS/peek')
     }

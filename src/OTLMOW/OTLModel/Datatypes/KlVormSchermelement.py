@@ -15,10 +15,12 @@ class KlVormSchermelement(KeuzelijstField):
     options = {
         'gebogen': KeuzelijstWaarde(invulwaarde='gebogen',
                                     label='gebogen',
+                                    status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                     definitie='gebogen',
                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVormSchermelement/gebogen'),
         'recht': KeuzelijstWaarde(invulwaarde='recht',
                                   label='recht',
+                                  status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                   definitie='recht',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVormSchermelement/recht')
     }

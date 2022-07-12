@@ -15,14 +15,17 @@ class KlVoorschakelapparaatType(KeuzelijstField):
     options = {
         'elektromechanisch': KeuzelijstWaarde(invulwaarde='elektromechanisch',
                                               label='elektromechanisch',
+                                              status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                               definitie='/ CLASS : IVSB',
                                               objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVoorschakelapparaatType/elektromechanisch'),
         'elektronisch': KeuzelijstWaarde(invulwaarde='elektronisch',
                                          label='elektronisch',
+                                         status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                          definitie='/ CLASS : IVSB',
                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVoorschakelapparaatType/elektronisch'),
         'niet-gekend': KeuzelijstWaarde(invulwaarde='niet-gekend',
                                         label='Niet gekend',
+                                        status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                         definitie='Type niet gekend',
                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVoorschakelapparaatType/niet-gekend')
     }

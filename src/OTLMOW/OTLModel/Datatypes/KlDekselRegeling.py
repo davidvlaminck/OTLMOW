@@ -15,18 +15,22 @@ class KlDekselRegeling(KeuzelijstField):
     options = {
         'Traploos-instelbare-afdekkingsinrichting': KeuzelijstWaarde(invulwaarde='Traploos-instelbare-afdekkingsinrichting',
                                                                      label='Traploos instelbare afdekkingsinrichting',
+                                                                     status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                                                      definitie='Traploos instelbare afdekkingsinrichting',
                                                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlDekselRegeling/Traploos-instelbare-afdekkingsinrichting'),
         'geprefabriceerd-of-ter-plaatse-gestorte-regeling': KeuzelijstWaarde(invulwaarde='geprefabriceerd-of-ter-plaatse-gestorte-regeling',
                                                                              label='geprefabriceerd of ter plaatse gestorte regeling',
+                                                                             status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                                                              definitie='geprefabriceerd of ter plaatse gestorte regeling',
                                                                              objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlDekselRegeling/geprefabriceerd-of-ter-plaatse-gestorte-regeling'),
         'ingestort-in-de-dakplaat-van-kunstwerken': KeuzelijstWaarde(invulwaarde='ingestort-in-de-dakplaat-van-kunstwerken',
                                                                      label='ingestort in de dakplaat van kunstwerken',
+                                                                     status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                                                      definitie='ingestort in de dakplaat van kunstwerken',
                                                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlDekselRegeling/ingestort-in-de-dakplaat-van-kunstwerken'),
         'met-ter-plaatse-gestorte-ringbalk': KeuzelijstWaarde(invulwaarde='met-ter-plaatse-gestorte-ringbalk',
                                                               label='met ter plaatse gestorte ringbalk',
+                                                              status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                                               definitie='met ter plaatse gestorte ringbalk',
                                                               objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlDekselRegeling/met-ter-plaatse-gestorte-ringbalk')
     }

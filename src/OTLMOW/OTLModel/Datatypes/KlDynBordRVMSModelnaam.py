@@ -15,9 +15,11 @@ class KlDynBordRVMSModelnaam(KeuzelijstField):
     options = {
         'RVMS-06I04': KeuzelijstWaarde(invulwaarde='RVMS-06I04',
                                        label='RVMS-06I04',
+                                       status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlDynBordRVMSModelnaam/RVMS-06I04'),
         'RVMS-12F05': KeuzelijstWaarde(invulwaarde='RVMS-12F05',
                                        label='RVMS-12F05',
+                                       status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlDynBordRVMSModelnaam/RVMS-12F05')
     }
 

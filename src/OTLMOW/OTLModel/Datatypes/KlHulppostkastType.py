@@ -15,9 +15,11 @@ class KlHulppostkastType(KeuzelijstField):
     options = {
         'a': KeuzelijstWaarde(invulwaarde='a',
                               label='a',
+                              status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                               objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlHulppostkastType/a'),
         'c': KeuzelijstWaarde(invulwaarde='c',
                               label='c',
+                              status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                               objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlHulppostkastType/c')
     }
 

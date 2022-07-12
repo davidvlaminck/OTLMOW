@@ -15,10 +15,12 @@ class KlBeschermingMaaischade(KeuzelijstField):
     options = {
         'houten-paal': KeuzelijstWaarde(invulwaarde='houten-paal',
                                         label='houten paal',
+                                        status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                         definitie='Bescherming dmv een houten paal.',
                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBeschermingMaaischade/houten-paal'),
         'kunststof': KeuzelijstWaarde(invulwaarde='kunststof',
                                       label='kunststof',
+                                      status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                       definitie='Bescherming in kunststof.',
                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBeschermingMaaischade/kunststof')
     }

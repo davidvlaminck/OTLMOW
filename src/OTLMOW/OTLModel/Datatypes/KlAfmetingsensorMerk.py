@@ -15,6 +15,7 @@ class KlAfmetingsensorMerk(KeuzelijstField):
     options = {
         'Sick': KeuzelijstWaarde(invulwaarde='Sick',
                                  label='Sick',
+                                 status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAfmetingsensorMerk/Sick')
     }
 

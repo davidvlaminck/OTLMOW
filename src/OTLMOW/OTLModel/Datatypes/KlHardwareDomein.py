@@ -15,9 +15,11 @@ class KlHardwareDomein(KeuzelijstField):
     options = {
         'alfa': KeuzelijstWaarde(invulwaarde='alfa',
                                  label='alfa',
+                                 status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlHardwareDomein/alfa'),
         'belfla': KeuzelijstWaarde(invulwaarde='belfla',
                                    label='belfla',
+                                   status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlHardwareDomein/belfla')
     }
 

@@ -15,21 +15,27 @@ class KlVriLusFunctie(KeuzelijstField):
     options = {
         'KAR-inmeldlus': KeuzelijstWaarde(invulwaarde='KAR-inmeldlus',
                                           label='KAR inmeldlus',
+                                          status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                           objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVriLusFunctie/KAR-inmeldlus'),
         'KAR-uitmeldlus': KeuzelijstWaarde(invulwaarde='KAR-uitmeldlus',
                                            label='KAR uitmeldlus',
+                                           status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                            objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVriLusFunctie/KAR-uitmeldlus'),
         'afstandslus': KeuzelijstWaarde(invulwaarde='afstandslus',
                                         label='afstandslus',
+                                        status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVriLusFunctie/afstandslus'),
         'filelus': KeuzelijstWaarde(invulwaarde='filelus',
                                     label='filelus',
+                                    status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVriLusFunctie/filelus'),
         'hiaatlus': KeuzelijstWaarde(invulwaarde='hiaatlus',
                                      label='hiaatlus',
+                                     status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVriLusFunctie/hiaatlus'),
         'stopstreeplus': KeuzelijstWaarde(invulwaarde='stopstreeplus',
                                           label='stopstreeplus',
+                                          status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                           objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVriLusFunctie/stopstreeplus')
     }
 

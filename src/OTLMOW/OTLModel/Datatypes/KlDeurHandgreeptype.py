@@ -15,12 +15,15 @@ class KlDeurHandgreeptype(KeuzelijstField):
     options = {
         'handvat': KeuzelijstWaarde(invulwaarde='handvat',
                                     label='handvat',
+                                    status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlDeurHandgreeptype/handvat'),
         'hendel-RWS': KeuzelijstWaarde(invulwaarde='hendel-RWS',
                                        label='hendel RWS',
+                                       status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlDeurHandgreeptype/hendel-RWS'),
         'klink': KeuzelijstWaarde(invulwaarde='klink',
                                   label='klink',
+                                  status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlDeurHandgreeptype/klink')
     }
 

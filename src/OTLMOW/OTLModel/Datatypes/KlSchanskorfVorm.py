@@ -15,10 +15,12 @@ class KlSchanskorfVorm(KeuzelijstField):
     options = {
         'in-blokvorm': KeuzelijstWaarde(invulwaarde='in-blokvorm',
                                         label='in blokvorm',
+                                        status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                         definitie='in blokvorm',
                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlSchanskorfVorm/in-blokvorm'),
         'in-matrasvorm': KeuzelijstWaarde(invulwaarde='in-matrasvorm',
                                           label='in matrasvorm',
+                                          status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                           definitie='in matrasvorm',
                                           objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlSchanskorfVorm/in-matrasvorm')
     }

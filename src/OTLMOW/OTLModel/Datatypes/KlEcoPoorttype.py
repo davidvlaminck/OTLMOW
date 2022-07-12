@@ -15,10 +15,12 @@ class KlEcoPoorttype(KeuzelijstField):
     options = {
         'dubbel': KeuzelijstWaarde(invulwaarde='dubbel',
                                    label='dubbel',
+                                   status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                    definitie='Een dubble poort.',
                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlEcoPoorttype/dubbel'),
         'enkel': KeuzelijstWaarde(invulwaarde='enkel',
                                   label='enkel',
+                                  status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                   definitie='Een enkele poort.',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlEcoPoorttype/enkel')
     }

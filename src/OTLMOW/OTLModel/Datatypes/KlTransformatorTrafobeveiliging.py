@@ -15,12 +15,15 @@ class KlTransformatorTrafobeveiliging(KeuzelijstField):
     options = {
         'gecombineerd': KeuzelijstWaarde(invulwaarde='gecombineerd',
                                          label='gecombineerd',
+                                         status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlTransformatorTrafobeveiliging/gecombineerd'),
         'overdruk': KeuzelijstWaarde(invulwaarde='overdruk',
                                      label='overdruk',
+                                     status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlTransformatorTrafobeveiliging/overdruk'),
         'overtemperatuur': KeuzelijstWaarde(invulwaarde='overtemperatuur',
                                             label='overtemperatuur',
+                                            status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                             definitie='attributen invullen//',
                                             objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlTransformatorTrafobeveiliging/overtemperatuur')
     }

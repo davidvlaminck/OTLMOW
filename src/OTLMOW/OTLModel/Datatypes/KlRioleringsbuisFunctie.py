@@ -15,18 +15,22 @@ class KlRioleringsbuisFunctie(KeuzelijstField):
     options = {
         'bufferleiding': KeuzelijstWaarde(invulwaarde='bufferleiding',
                                           label='bufferleiding',
+                                          status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                           definitie='buis bedoeld voor gravitaire afvoer en tijdelijke buffering van water',
                                           objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlRioleringsbuisFunctie/bufferleiding'),
         'gravitaire-leiding': KeuzelijstWaarde(invulwaarde='gravitaire-leiding',
                                                label='gravitaire leiding',
+                                               status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                                definitie='buis bedoeld voor de gravitaire afvoer van water',
                                                objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlRioleringsbuisFunctie/gravitaire-leiding'),
         'infiltratieleiding': KeuzelijstWaarde(invulwaarde='infiltratieleiding',
                                                label='infiltratieleiding',
+                                               status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                                definitie='buis bedoeld voor gravitaire afvoer en infiltratie van niet vervuild water',
                                                objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlRioleringsbuisFunctie/infiltratieleiding'),
         'syphon': KeuzelijstWaarde(invulwaarde='syphon',
                                    label='syphon',
+                                   status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                    definitie='buis bedoeld voor gravitaire afvoer van water met omgekeerde hevelwerking',
                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlRioleringsbuisFunctie/syphon')
     }

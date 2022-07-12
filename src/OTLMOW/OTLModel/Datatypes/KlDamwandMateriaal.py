@@ -15,14 +15,17 @@ class KlDamwandMateriaal(KeuzelijstField):
     options = {
         'beton': KeuzelijstWaarde(invulwaarde='beton',
                                   label='beton',
+                                  status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                   definitie='beton',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlDamwandMateriaal/beton'),
         'hout': KeuzelijstWaarde(invulwaarde='hout',
                                  label='hout',
+                                 status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                  definitie='hout',
                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlDamwandMateriaal/hout'),
         'staal': KeuzelijstWaarde(invulwaarde='staal',
                                   label='staal',
+                                  status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                   definitie='staal',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlDamwandMateriaal/staal')
     }

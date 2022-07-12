@@ -15,15 +15,19 @@ class KlLuchtkwaliteitOpstellingModelnaam(KeuzelijstField):
     options = {
         'VICOTEC321': KeuzelijstWaarde(invulwaarde='VICOTEC321',
                                        label='VICOTEC321',
+                                       status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLuchtkwaliteitOpstellingModelnaam/VICOTEC321'),
         'VICOTEC322': KeuzelijstWaarde(invulwaarde='VICOTEC322',
                                        label='VICOTEC322',
+                                       status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLuchtkwaliteitOpstellingModelnaam/VICOTEC322'),
         'VICOTEC323': KeuzelijstWaarde(invulwaarde='VICOTEC323',
                                        label='VICOTEC323',
+                                       status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLuchtkwaliteitOpstellingModelnaam/VICOTEC323'),
         'VICOTEC324': KeuzelijstWaarde(invulwaarde='VICOTEC324',
                                        label='VICOTEC324',
+                                       status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLuchtkwaliteitOpstellingModelnaam/VICOTEC324')
     }
 

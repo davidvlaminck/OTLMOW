@@ -15,10 +15,12 @@ class KlRasterMazen(KeuzelijstField):
     options = {
         'fijnmazig': KeuzelijstWaarde(invulwaarde='fijnmazig',
                                       label='fijnmazig',
+                                      status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                       definitie='Een fijnmazig raster.',
                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlRasterMazen/fijnmazig'),
         'grofmazig': KeuzelijstWaarde(invulwaarde='grofmazig',
                                       label='grofmazig',
+                                      status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                       definitie='Een grofmazig raster.',
                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlRasterMazen/grofmazig')
     }

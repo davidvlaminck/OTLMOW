@@ -15,10 +15,12 @@ class KlHechtspecie(KeuzelijstField):
     options = {
         'gebiedseigen-grond': KeuzelijstWaarde(invulwaarde='gebiedseigen-grond',
                                                label='gebiedseigen grond',
+                                               status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                                definitie='gebiedseigen grond',
                                                objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlHechtspecie/gebiedseigen-grond'),
         'zandcement': KeuzelijstWaarde(invulwaarde='zandcement',
                                        label='zandcement',
+                                       status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                        definitie='zandcement',
                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlHechtspecie/zandcement')
     }

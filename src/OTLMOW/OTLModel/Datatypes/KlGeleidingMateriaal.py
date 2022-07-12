@@ -15,14 +15,17 @@ class KlGeleidingMateriaal(KeuzelijstField):
     options = {
         'beton': KeuzelijstWaarde(invulwaarde='beton',
                                   label='beton',
+                                  status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                   definitie='Geleiding bestaande uit een betonnen wand.',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlGeleidingMateriaal/beton'),
         'kunststof': KeuzelijstWaarde(invulwaarde='kunststof',
                                       label='kunststof',
+                                      status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                       definitie='Geleiding bestaande uit een kunststoffen wand.',
                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlGeleidingMateriaal/kunststof'),
         'metaal': KeuzelijstWaarde(invulwaarde='metaal',
                                    label='metaal',
+                                   status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                    definitie='Geleiding bestaande uit een metalen wand.',
                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlGeleidingMateriaal/metaal')
     }

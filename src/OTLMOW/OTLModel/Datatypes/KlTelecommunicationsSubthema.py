@@ -15,6 +15,7 @@ class KlTelecommunicationsSubthema(KeuzelijstField):
     options = {
         'elektronischecommunicatie': KeuzelijstWaarde(invulwaarde='elektronischecommunicatie',
                                                       label='elektronischeCommunicatie',
+                                                      status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlTelecommunicationsSubthema/elektronischecommunicatie')
     }
 

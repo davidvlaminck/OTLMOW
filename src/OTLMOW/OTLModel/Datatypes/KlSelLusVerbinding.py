@@ -15,9 +15,11 @@ class KlSelLusVerbinding(KeuzelijstField):
     options = {
         'contact': KeuzelijstWaarde(invulwaarde='contact',
                                     label='contact',
+                                    status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlSelLusVerbinding/contact'),
         'serieel': KeuzelijstWaarde(invulwaarde='serieel',
                                     label='serieel',
+                                    status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlSelLusVerbinding/serieel')
     }
 

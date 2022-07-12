@@ -15,12 +15,15 @@ class KlCodeklavierWerking(KeuzelijstField):
     options = {
         'cijfercodeslot': KeuzelijstWaarde(invulwaarde='cijfercodeslot',
                                            label='cijfercodeslot',
+                                           status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                            objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlCodeklavierWerking/cijfercodeslot'),
         'cijfercodeslot-met-drukknop': KeuzelijstWaarde(invulwaarde='cijfercodeslot-met-drukknop',
                                                         label='cijfercodeslot met drukknop',
+                                                        status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlCodeklavierWerking/cijfercodeslot-met-drukknop'),
         'drukknop': KeuzelijstWaarde(invulwaarde='drukknop',
                                      label='drukknop',
+                                     status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlCodeklavierWerking/drukknop')
     }
 

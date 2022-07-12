@@ -15,15 +15,19 @@ class KlBrandblusserType(KeuzelijstField):
     options = {
         'a': KeuzelijstWaarde(invulwaarde='a',
                               label='a',
+                              status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                               objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBrandblusserType/a'),
         'b': KeuzelijstWaarde(invulwaarde='b',
                               label='b',
+                              status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                               objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBrandblusserType/b'),
         'c': KeuzelijstWaarde(invulwaarde='c',
                               label='c',
+                              status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                               objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBrandblusserType/c'),
         'd': KeuzelijstWaarde(invulwaarde='d',
                               label='d',
+                              status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                               objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBrandblusserType/d')
     }
 

@@ -15,12 +15,15 @@ class KlRetroreflecterendVerkeersbordGrootteorde(KeuzelijstField):
     options = {
         'groot': KeuzelijstWaarde(invulwaarde='groot',
                                   label='groot',
+                                  status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlRetroreflecterendVerkeersbordGrootteorde/groot'),
         'klein': KeuzelijstWaarde(invulwaarde='klein',
                                   label='klein',
+                                  status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlRetroreflecterendVerkeersbordGrootteorde/klein'),
         'middelgroot': KeuzelijstWaarde(invulwaarde='middelgroot',
                                         label='middelgroot',
+                                        status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlRetroreflecterendVerkeersbordGrootteorde/middelgroot')
     }
 

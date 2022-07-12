@@ -15,10 +15,12 @@ class KlTypeBeschoeiing(KeuzelijstField):
     options = {
         'Berliner': KeuzelijstWaarde(invulwaarde='Berliner',
                                      label='Berliner',
+                                     status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                      definitie='Berliner',
                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlTypeBeschoeiing/Berliner'),
         'Krings': KeuzelijstWaarde(invulwaarde='Krings',
                                    label='Krings',
+                                   status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                    definitie='Krings',
                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlTypeBeschoeiing/Krings')
     }

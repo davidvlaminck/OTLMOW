@@ -15,12 +15,15 @@ class KlDraagconstructieDwarsdoorsnede(KeuzelijstField):
     options = {
         'octagonaal': KeuzelijstWaarde(invulwaarde='octagonaal',
                                        label='octagonaal',
+                                       status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlDraagconstructieDwarsdoorsnede/octagonaal'),
         'rond': KeuzelijstWaarde(invulwaarde='rond',
                                  label='rond',
+                                 status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlDraagconstructieDwarsdoorsnede/rond'),
         'vierkant': KeuzelijstWaarde(invulwaarde='vierkant',
                                      label='vierkant',
+                                     status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlDraagconstructieDwarsdoorsnede/vierkant')
     }
 

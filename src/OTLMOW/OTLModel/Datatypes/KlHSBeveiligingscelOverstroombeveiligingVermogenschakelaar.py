@@ -15,9 +15,11 @@ class KlHSBeveiligingscelOverstroombeveiligingVermogenschakelaar(KeuzelijstField
     options = {
         'direct': KeuzelijstWaarde(invulwaarde='direct',
                                    label='direct',
+                                   status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlHSBeveiligingscelOverstroombeveiligingVermogenschakelaar/direct'),
         'indirect': KeuzelijstWaarde(invulwaarde='indirect',
                                      label='indirect',
+                                     status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlHSBeveiligingscelOverstroombeveiligingVermogenschakelaar/indirect')
     }
 

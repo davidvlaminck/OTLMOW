@@ -15,12 +15,15 @@ class KlSeinlantaarnDiameter(KeuzelijstField):
     options = {
         '100': KeuzelijstWaarde(invulwaarde='100',
                                 label='100',
+                                status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlSeinlantaarnDiameter/100'),
         '200': KeuzelijstWaarde(invulwaarde='200',
                                 label='200',
+                                status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlSeinlantaarnDiameter/200'),
         '300': KeuzelijstWaarde(invulwaarde='300',
                                 label='300',
+                                status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlSeinlantaarnDiameter/300')
     }
 

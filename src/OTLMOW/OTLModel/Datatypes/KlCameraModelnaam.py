@@ -15,10 +15,12 @@ class KlCameraModelnaam(KeuzelijstField):
     options = {
         'dinion-ip-starlight-8000-m': KeuzelijstWaarde(invulwaarde='dinion-ip-starlight-8000-m',
                                                        label='Dinion IP Starlight 8000 M',
+                                                       status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                                        definitie='Dinion IP Starlight 8000 M',
                                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlCameraModelnaam/dinion-ip-starlight-8000-m'),
         'ulisse-hd': KeuzelijstWaarde(invulwaarde='ulisse-hd',
                                       label='Ulisse HD',
+                                      status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                       definitie='Ulisse HD',
                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlCameraModelnaam/ulisse-hd')
     }

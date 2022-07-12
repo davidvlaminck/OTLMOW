@@ -15,12 +15,15 @@ class KlVrStuurkaartCommunicatieprotocol(KeuzelijstField):
     options = {
         'canto': KeuzelijstWaarde(invulwaarde='canto',
                                   label='canto',
+                                  status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVrStuurkaartCommunicatieprotocol/canto'),
         'gecombineerd': KeuzelijstWaarde(invulwaarde='gecombineerd',
                                          label='gecombineerd',
+                                         status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVrStuurkaartCommunicatieprotocol/gecombineerd'),
         'ocit': KeuzelijstWaarde(invulwaarde='ocit',
                                  label='ocit',
+                                 status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                  definitie='nog in te vullen',
                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVrStuurkaartCommunicatieprotocol/ocit')
     }

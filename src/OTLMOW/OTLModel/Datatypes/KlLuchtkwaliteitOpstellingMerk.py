@@ -15,6 +15,7 @@ class KlLuchtkwaliteitOpstellingMerk(KeuzelijstField):
     options = {
         'sick': KeuzelijstWaarde(invulwaarde='sick',
                                  label='sick',
+                                 status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLuchtkwaliteitOpstellingMerk/sick')
     }
 

@@ -15,14 +15,17 @@ class KlStraatkolkType(KeuzelijstField):
     options = {
         'geisoleerd': KeuzelijstWaarde(invulwaarde='geisoleerd',
                                        label='geisoleerd',
+                                       status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                        definitie='Een straatkolk die niet in een rij geplaatst werd maar bijvoorbeeld ergens solitair op een plein.',
                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlStraatkolkType/geisoleerd'),
         'horizontaal': KeuzelijstWaarde(invulwaarde='horizontaal',
                                         label='horizontaal',
+                                        status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                         definitie='Een gietijzeren rooster met horizontale afvoeropening dat op regelmatige afstand geplaatst wordt langs of in een weg, fietspad of voetpad.',
                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlStraatkolkType/horizontaal'),
         'verticaal': KeuzelijstWaarde(invulwaarde='verticaal',
                                       label='verticaal',
+                                      status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                       definitie='Verticale afvoeropening die op regelmatige afstand geplaatst wordt langs of in een boordsteen van de weg, fietspad of voetpad.',
                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlStraatkolkType/verticaal')
     }

@@ -15,14 +15,17 @@ class KlSierbeplPlantmaat(KeuzelijstField):
     options = {
         '20-30': KeuzelijstWaarde(invulwaarde='20-30',
                                   label='20-30',
+                                  status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                   definitie='20/30',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlSierbeplPlantmaat/20-30'),
         '30-40': KeuzelijstWaarde(invulwaarde='30-40',
                                   label='30-40',
+                                  status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                   definitie='30/40',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlSierbeplPlantmaat/30-40'),
         '40-60': KeuzelijstWaarde(invulwaarde='40-60',
                                   label='40-60',
+                                  status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                   definitie='40/60',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlSierbeplPlantmaat/40-60')
     }

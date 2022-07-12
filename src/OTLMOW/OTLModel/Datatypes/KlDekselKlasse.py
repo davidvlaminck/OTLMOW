@@ -15,18 +15,22 @@ class KlDekselKlasse(KeuzelijstField):
     options = {
         'C250-(voetpad)': KeuzelijstWaarde(invulwaarde='C250-(voetpad)',
                                            label='C250 (voetpad)',
+                                           status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                            definitie='C250 (voetpad)',
                                            objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlDekselKlasse/C250-(voetpad)'),
         'D400-(rijweg)': KeuzelijstWaarde(invulwaarde='D400-(rijweg)',
                                           label='D400 (rijweg)',
+                                          status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                           definitie='D400 (rijweg)',
                                           objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlDekselKlasse/D400-(rijweg)'),
         'E600-(rijweg-voor-zwaar-verkeer)': KeuzelijstWaarde(invulwaarde='E600-(rijweg-voor-zwaar-verkeer)',
                                                              label='E600 (rijweg voor zwaar verkeer)',
+                                                             status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                                              definitie='E600 (rijweg voor zwaar verkeer)',
                                                              objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlDekselKlasse/E600-(rijweg-voor-zwaar-verkeer)'),
         'F900-(vliegvelden)': KeuzelijstWaarde(invulwaarde='F900-(vliegvelden)',
                                                label='F900 (vliegvelden)',
+                                               status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                                definitie='F900 (vliegvelden)',
                                                objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlDekselKlasse/F900-(vliegvelden)')
     }

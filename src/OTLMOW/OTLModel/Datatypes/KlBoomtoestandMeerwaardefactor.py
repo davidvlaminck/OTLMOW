@@ -15,18 +15,22 @@ class KlBoomtoestandMeerwaardefactor(KeuzelijstField):
     options = {
         '1': KeuzelijstWaarde(invulwaarde='1',
                               label='1',
+                              status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                               definitie='De boom heeft geen of minder dan 3 specifieke kenmerken die de ecologische en/of erfgoedwaarde verhogen.',
                               objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBoomtoestandMeerwaardefactor/1'),
         '15': KeuzelijstWaarde(invulwaarde='15',
                                label='15',
+                               status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                definitie='De boom heeft minstens 3 kenmerken van ecologische waarde EN/OF erfgoedwaarde OF boom is opgenomen in de Vlaamse wetenschappelijke erfgoedinventaris',
                                objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBoomtoestandMeerwaardefactor/15'),
         '2': KeuzelijstWaarde(invulwaarde='2',
                               label='2',
+                              status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                               definitie='De boom heeft minstens 4 kenmerken van ecologische EN/OF erfgoedwaarde OF de boom heeft minstens 2 kenmerken van ecologische waarde in combinatie met 1 kenmerk van zeer hoge ecologische waarde; OF de boom maakt deel uit van een (ruimere) bescherming als monument, cultuurhistorisch landschap of stads- en dorpsgezicht',
                               objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBoomtoestandMeerwaardefactor/2'),
         '25': KeuzelijstWaarde(invulwaarde='25',
                                label='25',
+                               status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                definitie='De boom is individueel beschermd als monument',
                                objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBoomtoestandMeerwaardefactor/25')
     }

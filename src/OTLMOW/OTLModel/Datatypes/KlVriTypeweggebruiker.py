@@ -15,21 +15,27 @@ class KlVriTypeweggebruiker(KeuzelijstField):
     options = {
         'bus': KeuzelijstWaarde(invulwaarde='bus',
                                 label='bus',
+                                status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVriTypeweggebruiker/bus'),
         'fiets': KeuzelijstWaarde(invulwaarde='fiets',
                                   label='fiets',
+                                  status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVriTypeweggebruiker/fiets'),
         'tram': KeuzelijstWaarde(invulwaarde='tram',
                                  label='tram',
+                                 status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVriTypeweggebruiker/tram'),
         'voertuig': KeuzelijstWaarde(invulwaarde='voertuig',
                                      label='voertuig',
+                                     status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVriTypeweggebruiker/voertuig'),
         'voetganger': KeuzelijstWaarde(invulwaarde='voetganger',
                                        label='voetganger',
+                                       status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVriTypeweggebruiker/voetganger'),
         'vrachtwagen': KeuzelijstWaarde(invulwaarde='vrachtwagen',
                                         label='vrachtwagen',
+                                        status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVriTypeweggebruiker/vrachtwagen')
     }
 

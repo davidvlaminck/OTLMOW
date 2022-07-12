@@ -15,9 +15,11 @@ class KlANPRMerk(KeuzelijstField):
     options = {
         'Macq': KeuzelijstWaarde(invulwaarde='Macq',
                                  label='Macq',
+                                 status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlANPRMerk/Macq'),
         'Tattile': KeuzelijstWaarde(invulwaarde='Tattile',
                                     label='Tattile',
+                                    status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlANPRMerk/Tattile')
     }
 

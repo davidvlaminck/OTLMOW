@@ -15,10 +15,12 @@ class KlPlaatsingswijzePlint(KeuzelijstField):
     options = {
         'bevestigd-tegen-de-profielen': KeuzelijstWaarde(invulwaarde='bevestigd-tegen-de-profielen',
                                                          label='bevestigd tegen de profielen',
+                                                         status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                                          definitie='bevestigd tegen de profielen',
                                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlPlaatsingswijzePlint/bevestigd-tegen-de-profielen'),
         'geschoven-tussen-de-profielen': KeuzelijstWaarde(invulwaarde='geschoven-tussen-de-profielen',
                                                           label='geschoven tussen de profielen',
+                                                          status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                                           definitie='geschoven tussen de profielen',
                                                           objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlPlaatsingswijzePlint/geschoven-tussen-de-profielen')
     }

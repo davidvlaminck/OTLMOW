@@ -15,10 +15,12 @@ class KlCameraBeeldverwerkingstype(KeuzelijstField):
     options = {
         'adr': KeuzelijstWaarde(invulwaarde='adr',
                                 label='ADR',
+                                status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                 definitie='Interne beeldverwerking van het type ADR (detectie van symbolen op vrachtvervoer die gevaarlijke ladingen aangeven volgens het ADR-verdrag).',
                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlCameraBeeldverwerkingstype/adr'),
         'aid': KeuzelijstWaarde(invulwaarde='aid',
                                 label='AID',
+                                status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                 definitie='Interne beeldverwerking van het type automatische incident detectie (AID).',
                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlCameraBeeldverwerkingstype/aid')
     }

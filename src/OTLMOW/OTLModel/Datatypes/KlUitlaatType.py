@@ -15,10 +15,12 @@ class KlUitlaatType(KeuzelijstField):
     options = {
         'inlaat': KeuzelijstWaarde(invulwaarde='inlaat',
                                    label='inlaat',
+                                   status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                    definitie='locatie waar water van een open profiel naar een inbuizing overgaat',
                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlUitlaatType/inlaat'),
         'uitlaat': KeuzelijstWaarde(invulwaarde='uitlaat',
                                     label='uitlaat',
+                                    status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                     definitie='locatie waar water van een inbuizing naar een open profiel overgaat',
                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlUitlaatType/uitlaat')
     }

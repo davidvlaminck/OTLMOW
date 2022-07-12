@@ -15,14 +15,17 @@ class KlLEACSchokindex(KeuzelijstField):
     options = {
         'a': KeuzelijstWaarde(invulwaarde='a',
                               label='a',
+                              status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                               definitie='ASI <= 1.0 (zeer veilig)',
                               objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLEACSchokindex/a'),
         'b': KeuzelijstWaarde(invulwaarde='b',
                               label='b',
+                              status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                               definitie='ASI <= 1.4 (voldoende veilig)',
                               objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLEACSchokindex/b'),
         'c': KeuzelijstWaarde(invulwaarde='c',
                               label='c',
+                              status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                               definitie='ASI <= 1.9',
                               objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLEACSchokindex/c')
     }

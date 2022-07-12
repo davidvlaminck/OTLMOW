@@ -15,18 +15,22 @@ class KlBeschermingWapeningType(KeuzelijstField):
     options = {
         'gelast-geplastificeerd-gaas': KeuzelijstWaarde(invulwaarde='gelast-geplastificeerd-gaas',
                                                         label='gelast geplastificeerd gaas',
+                                                        status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                                         definitie='gelast geplastificeerd gaas',
                                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBeschermingWapeningType/gelast-geplastificeerd-gaas'),
         'geogrids': KeuzelijstWaarde(invulwaarde='geogrids',
                                      label='geogrids',
+                                     status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                      definitie='Een roosterweefsel dat als een soort funderingsrooster wordt toegepast',
                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBeschermingWapeningType/geogrids'),
         'honinggraatstructuur': KeuzelijstWaarde(invulwaarde='honinggraatstructuur',
                                                  label='honinggraatstructuur',
+                                                 status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                                  definitie='Een wapening_bescherming met honinggraatstructuur.',
                                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBeschermingWapeningType/honinggraatstructuur'),
         'wapeningsnet': KeuzelijstWaarde(invulwaarde='wapeningsnet',
                                          label='wapeningsnet',
+                                         status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                          definitie='Keuzelijst voor de wapening gebruikt bij de fundering (wapeningsnet,geotextiel,geogrids)',
                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBeschermingWapeningType/wapeningsnet')
     }

@@ -15,6 +15,7 @@ class KlNeerslagsensorMerk(KeuzelijstField):
     options = {
         'Luft': KeuzelijstWaarde(invulwaarde='Luft',
                                  label='Luft',
+                                 status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNeerslagsensorMerk/Luft')
     }
 

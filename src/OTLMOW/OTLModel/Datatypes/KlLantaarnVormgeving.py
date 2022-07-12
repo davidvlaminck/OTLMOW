@@ -15,9 +15,11 @@ class KlLantaarnVormgeving(KeuzelijstField):
     options = {
         'bijzondere-esthetische-vormgeving': KeuzelijstWaarde(invulwaarde='bijzondere-esthetische-vormgeving',
                                                               label='bijzondere esthetische vormgeving',
+                                                              status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                                               objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLantaarnVormgeving/bijzondere-esthetische-vormgeving'),
         'standaard-vormgeving': KeuzelijstWaarde(invulwaarde='standaard-vormgeving',
                                                  label='standaard vormgeving',
+                                                 status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLantaarnVormgeving/standaard-vormgeving')
     }
 

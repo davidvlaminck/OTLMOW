@@ -15,9 +15,11 @@ class KlPtRegelaarProtocol(KeuzelijstField):
     options = {
         'R0916': KeuzelijstWaarde(invulwaarde='R0916',
                                   label='R0916',
+                                  status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlPtRegelaarProtocol/R0916'),
         'R0918': KeuzelijstWaarde(invulwaarde='R0918',
                                   label='R0918',
+                                  status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlPtRegelaarProtocol/R0918')
     }
 

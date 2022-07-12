@@ -15,14 +15,17 @@ class KlPositieSoort(KeuzelijstField):
     options = {
         'linkerrand': KeuzelijstWaarde(invulwaarde='linkerrand',
                                        label='linkerrand',
+                                       status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                        definitie='linkerrand',
                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlPositieSoort/linkerrand'),
         'midden': KeuzelijstWaarde(invulwaarde='midden',
                                    label='midden',
+                                   status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                    definitie='midden',
                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlPositieSoort/midden'),
         'rechterrand': KeuzelijstWaarde(invulwaarde='rechterrand',
                                         label='rechterrand',
+                                        status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                         definitie='rechterrand',
                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlPositieSoort/rechterrand')
     }

@@ -15,10 +15,12 @@ class KlVegetatiePlantverband(KeuzelijstField):
     options = {
         'geschrankt': KeuzelijstWaarde(invulwaarde='geschrankt',
                                        label='geschrankt',
+                                       status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                        definitie='De planten staan geschrankt',
                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVegetatiePlantverband/geschrankt'),
         'rijafstand': KeuzelijstWaarde(invulwaarde='rijafstand',
                                        label='rijafstand',
+                                       status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                        definitie='De afstand tussen de rijen',
                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVegetatiePlantverband/rijafstand')
     }

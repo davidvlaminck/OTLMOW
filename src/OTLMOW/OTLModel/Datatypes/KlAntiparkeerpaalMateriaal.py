@@ -15,14 +15,17 @@ class KlAntiparkeerpaalMateriaal(KeuzelijstField):
     options = {
         'hout': KeuzelijstWaarde(invulwaarde='hout',
                                  label='hout',
+                                 status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                  definitie='Keuze hout voor het antiparkeerpaal materiaal.',
                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAntiparkeerpaalMateriaal/hout'),
         'kunststof': KeuzelijstWaarde(invulwaarde='kunststof',
                                       label='kunststof',
+                                      status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                       definitie='Keuze kunststof voor het antiparkeerpaal materiaal.',
                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAntiparkeerpaalMateriaal/kunststof'),
         'metaal': KeuzelijstWaarde(invulwaarde='metaal',
                                    label='metaal',
+                                   status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                    definitie='Keuze metaal voor het antiparkeerpaal materiaal.',
                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAntiparkeerpaalMateriaal/metaal')
     }

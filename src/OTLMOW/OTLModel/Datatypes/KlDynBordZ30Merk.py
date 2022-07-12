@@ -15,9 +15,11 @@ class KlDynBordZ30Merk(KeuzelijstField):
     options = {
         'Futurit': KeuzelijstWaarde(invulwaarde='Futurit',
                                     label='Futurit',
+                                    status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlDynBordZ30Merk/Futurit'),
         'Q-lite': KeuzelijstWaarde(invulwaarde='Q-lite',
                                    label='Q-lite',
+                                   status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlDynBordZ30Merk/Q-lite')
     }
 

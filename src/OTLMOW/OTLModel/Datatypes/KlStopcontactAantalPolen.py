@@ -15,9 +15,11 @@ class KlStopcontactAantalPolen(KeuzelijstField):
     options = {
         '3P': KeuzelijstWaarde(invulwaarde='3P',
                                label='3P',
+                               status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlStopcontactAantalPolen/3P'),
         '4P': KeuzelijstWaarde(invulwaarde='4P',
                                label='4P',
+                               status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlStopcontactAantalPolen/4P')
     }
 

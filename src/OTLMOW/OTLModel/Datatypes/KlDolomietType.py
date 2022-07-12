@@ -15,14 +15,17 @@ class KlDolomietType(KeuzelijstField):
     options = {
         '0-15': KeuzelijstWaarde(invulwaarde='0-15',
                                  label='0-15',
+                                 status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                  definitie='0/15',
                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlDolomietType/0-15'),
         '0-5': KeuzelijstWaarde(invulwaarde='0-5',
                                 label='0-5',
+                                status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                 definitie='0/5',
                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlDolomietType/0-5'),
         '5-15': KeuzelijstWaarde(invulwaarde='5-15',
                                  label='5-15',
+                                 status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                  definitie='mei-15',
                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlDolomietType/5-15')
     }

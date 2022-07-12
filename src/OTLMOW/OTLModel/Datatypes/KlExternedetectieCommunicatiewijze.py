@@ -15,12 +15,15 @@ class KlExternedetectieCommunicatiewijze(KeuzelijstField):
     options = {
         'contact': KeuzelijstWaarde(invulwaarde='contact',
                                     label='contact',
+                                    status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlExternedetectieCommunicatiewijze/contact'),
         'protocol': KeuzelijstWaarde(invulwaarde='protocol',
                                      label='protocol',
+                                     status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlExternedetectieCommunicatiewijze/protocol'),
         'serieel': KeuzelijstWaarde(invulwaarde='serieel',
                                     label='serieel',
+                                    status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlExternedetectieCommunicatiewijze/serieel')
     }
 

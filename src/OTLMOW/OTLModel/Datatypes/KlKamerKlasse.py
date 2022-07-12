@@ -15,10 +15,12 @@ class KlKamerKlasse(KeuzelijstField):
     options = {
         'klasse-1': KeuzelijstWaarde(invulwaarde='klasse-1',
                                      label='klasse 1',
+                                     status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                      definitie='klasse 1',
                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlKamerKlasse/klasse-1'),
         'klasse-2': KeuzelijstWaarde(invulwaarde='klasse-2',
                                      label='klasse 2',
+                                     status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                      definitie='klasse 2',
                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlKamerKlasse/klasse-2')
     }

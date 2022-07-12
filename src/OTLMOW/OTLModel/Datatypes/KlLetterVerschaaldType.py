@@ -15,6 +15,7 @@ class KlLetterVerschaaldType(KeuzelijstField):
     options = {
         'versmald---Hoofdletters-(basishoogte-0.4-meter)': KeuzelijstWaarde(invulwaarde='versmald---Hoofdletters-(basishoogte-0.4-meter)',
                                                                             label='versmald - Hoofdletters (basishoogte 0.4 meter)',
+                                                                            status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                                                             definitie='Versmalde hoofdletters bij verschaling (basishoogte 0.4 meter)',
                                                                             objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLetterVerschaaldType/versmald---Hoofdletters-(basishoogte-0.4-meter)')
     }

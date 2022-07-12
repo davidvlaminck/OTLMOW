@@ -15,18 +15,22 @@ class KlCBVAardVerharding(KeuzelijstField):
     options = {
         'doorgaand-gewapend-beton': KeuzelijstWaarde(invulwaarde='doorgaand-gewapend-beton',
                                                      label='doorgaand gewapend beton',
+                                                     status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                                      definitie='Verharding van doorgaand gewapend beton.',
                                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlCBVAardVerharding/doorgaand-gewapend-beton'),
         'gewapend-beton': KeuzelijstWaarde(invulwaarde='gewapend-beton',
                                            label='gewapend beton',
+                                           status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                            definitie='Verharding van gewapend beton.',
                                            objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlCBVAardVerharding/gewapend-beton'),
         'ongewapend-beton': KeuzelijstWaarde(invulwaarde='ongewapend-beton',
                                              label='ongewapend beton',
+                                             status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                              definitie='Verharding van ongewapend beton.',
                                              objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlCBVAardVerharding/ongewapend-beton'),
         'staalvezelbeton': KeuzelijstWaarde(invulwaarde='staalvezelbeton',
                                             label='staalvezelbeton',
+                                            status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                             definitie='Verharding van staalvezelbeton.',
                                             objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlCBVAardVerharding/staalvezelbeton')
     }

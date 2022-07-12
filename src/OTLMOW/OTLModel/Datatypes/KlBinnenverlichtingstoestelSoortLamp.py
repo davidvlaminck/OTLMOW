@@ -15,18 +15,23 @@ class KlBinnenverlichtingstoestelSoortLamp(KeuzelijstField):
     options = {
         'LED': KeuzelijstWaarde(invulwaarde='LED',
                                 label='LED',
+                                status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBinnenverlichtingstoestelSoortLamp/LED'),
         'TL': KeuzelijstWaarde(invulwaarde='TL',
                                label='TL',
+                               status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBinnenverlichtingstoestelSoortLamp/TL'),
         'gloeilamp': KeuzelijstWaarde(invulwaarde='gloeilamp',
                                       label='gloeilamp',
+                                      status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBinnenverlichtingstoestelSoortLamp/gloeilamp'),
         'halogeen': KeuzelijstWaarde(invulwaarde='halogeen',
                                      label='halogeen',
+                                     status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBinnenverlichtingstoestelSoortLamp/halogeen'),
         'spaarlamp': KeuzelijstWaarde(invulwaarde='spaarlamp',
                                       label='spaarlamp',
+                                      status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBinnenverlichtingstoestelSoortLamp/spaarlamp')
     }
 

@@ -15,9 +15,11 @@ class KlNeerslagsensorType(KeuzelijstField):
     options = {
         'optisch': KeuzelijstWaarde(invulwaarde='optisch',
                                     label='optisch',
+                                    status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNeerslagsensorType/optisch'),
         'radar': KeuzelijstWaarde(invulwaarde='radar',
                                   label='radar',
+                                  status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNeerslagsensorType/radar')
     }
 

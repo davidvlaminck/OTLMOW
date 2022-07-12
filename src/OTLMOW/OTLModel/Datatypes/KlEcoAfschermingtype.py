@@ -15,14 +15,17 @@ class KlEcoAfschermingtype(KeuzelijstField):
     options = {
         'heidematten': KeuzelijstWaarde(invulwaarde='heidematten',
                                         label='heidematten',
+                                        status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                         definitie='Een afscherming bestaande uit heidematten.',
                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlEcoAfschermingtype/heidematten'),
         'houten': KeuzelijstWaarde(invulwaarde='houten',
                                    label='houten',
+                                   status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                    definitie='Een afscherming bestaande uit houten schermen.',
                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlEcoAfschermingtype/houten'),
         'metalen': KeuzelijstWaarde(invulwaarde='metalen',
                                     label='metalen',
+                                    status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                     definitie='Een afscherming bestaande uit metalen schermen.',
                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlEcoAfschermingtype/metalen')
     }

@@ -15,14 +15,17 @@ class KlVormTerugslagklep(KeuzelijstField):
     options = {
         'andere': KeuzelijstWaarde(invulwaarde='andere',
                                    label='andere',
+                                   status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                    definitie='andere',
                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVormTerugslagklep/andere'),
         'circkelvormig': KeuzelijstWaarde(invulwaarde='circkelvormig',
                                           label='circkelvormig',
+                                          status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                           definitie='circkelvormig',
                                           objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVormTerugslagklep/circkelvormig'),
         'rechthoekig': KeuzelijstWaarde(invulwaarde='rechthoekig',
                                         label='rechthoekig',
+                                        status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                         definitie='rechthoekig',
                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVormTerugslagklep/rechthoekig')
     }

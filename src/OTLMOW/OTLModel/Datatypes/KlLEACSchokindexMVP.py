@@ -15,10 +15,12 @@ class KlLEACSchokindexMVP(KeuzelijstField):
     options = {
         'level-1': KeuzelijstWaarde(invulwaarde='level-1',
                                     label='level 1',
+                                    status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                     definitie='Krachten op hoofd en nek worden beperkt tijdens test',
                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLEACSchokindexMVP/level-1'),
         'level-2': KeuzelijstWaarde(invulwaarde='level-2',
                                     label='level 2',
+                                    status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                     definitie='Krachten op hoofd en nek worden tot levensgevaarlijk tijdens test',
                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLEACSchokindexMVP/level-2')
     }

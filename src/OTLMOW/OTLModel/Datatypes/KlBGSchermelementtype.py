@@ -15,10 +15,12 @@ class KlBGSchermelementtype(KeuzelijstField):
     options = {
         'bloembakelement': KeuzelijstWaarde(invulwaarde='bloembakelement',
                                             label='bloembakelement',
+                                            status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                             definitie='bloembakelement',
                                             objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBGSchermelementtype/bloembakelement'),
         'l-element': KeuzelijstWaarde(invulwaarde='l-element',
                                       label='L-element',
+                                      status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                       definitie='L-element',
                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBGSchermelementtype/l-element')
     }

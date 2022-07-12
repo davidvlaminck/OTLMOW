@@ -15,14 +15,17 @@ class KlVerkeersregelaarModelnaam(KeuzelijstField):
     options = {
         'civa-2020': KeuzelijstWaarde(invulwaarde='civa-2020',
                                       label='CIVA 2020',
+                                      status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                       definitie='CIVA 2020',
                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerkeersregelaarModelnaam/civa-2020'),
         'flow-node': KeuzelijstWaarde(invulwaarde='flow-node',
                                       label='FlowNode',
+                                      status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                       definitie='FlowNode',
                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerkeersregelaarModelnaam/flow-node'),
         'sx': KeuzelijstWaarde(invulwaarde='sx',
                                label='SX',
+                               status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                definitie='SX',
                                objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerkeersregelaarModelnaam/sx')
     }

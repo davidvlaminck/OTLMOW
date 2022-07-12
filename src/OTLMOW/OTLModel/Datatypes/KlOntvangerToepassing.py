@@ -15,15 +15,19 @@ class KlOntvangerToepassing(KeuzelijstField):
     options = {
         'GPRS': KeuzelijstWaarde(invulwaarde='GPRS',
                                  label='GPRS',
+                                 status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOntvangerToepassing/GPRS'),
         'GSM': KeuzelijstWaarde(invulwaarde='GSM',
                                 label='GSM',
+                                status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOntvangerToepassing/GSM'),
         'KAR': KeuzelijstWaarde(invulwaarde='KAR',
                                 label='KAR',
+                                status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOntvangerToepassing/KAR'),
         'WIFI': KeuzelijstWaarde(invulwaarde='WIFI',
                                  label='WIFI',
+                                 status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOntvangerToepassing/WIFI')
     }
 

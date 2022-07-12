@@ -15,6 +15,7 @@ class KlIVRIBaseline(KeuzelijstField):
     options = {
         'idd-tlc-fi-version-1-3-1': KeuzelijstWaarde(invulwaarde='idd-tlc-fi-version-1-3-1',
                                                      label='IDD TLC-FI version 1.3.1',
+                                                     status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                                      definitie='IDD TLC-FI version 1.3.1',
                                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlIVRIBaseline/idd-tlc-fi-version-1-3-1')
     }

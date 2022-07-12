@@ -15,18 +15,22 @@ class KlTsklepAfsluiterMateriaal(KeuzelijstField):
     options = {
         'am---Gietijzer': KeuzelijstWaarde(invulwaarde='am---Gietijzer',
                                            label='am - Gietijzer',
+                                           status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                            definitie='Een gietijzeren terugslagklep.',
                                            objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlTsklepAfsluiterMateriaal/am---Gietijzer'),
         'ap---Staal': KeuzelijstWaarde(invulwaarde='ap---Staal',
                                        label='ap - Staal',
+                                       status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                        definitie='Een stalen terugslagklep.',
                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlTsklepAfsluiterMateriaal/ap---Staal'),
         'av---Hdpe': KeuzelijstWaarde(invulwaarde='av---Hdpe',
                                       label='av - Hdpe',
+                                      status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                       definitie='Een terugslagklep uit HDPE.',
                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlTsklepAfsluiterMateriaal/av---Hdpe'),
         'z---Anders': KeuzelijstWaarde(invulwaarde='z---Anders',
                                        label='z - Anders',
+                                       status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                        definitie='Een terugslagklep uit een ander materiaal.',
                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlTsklepAfsluiterMateriaal/z---Anders')
     }

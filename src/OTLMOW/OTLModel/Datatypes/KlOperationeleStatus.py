@@ -15,21 +15,27 @@ class KlOperationeleStatus(KeuzelijstField):
     options = {
         'actief': KeuzelijstWaarde(invulwaarde='actief',
                                    label='actief',
+                                   status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOperationeleStatus/actief'),
         'actief-met-geplande-verwijdering': KeuzelijstWaarde(invulwaarde='actief-met-geplande-verwijdering',
                                                              label='actief met geplande verwijdering',
+                                                             status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                                              objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOperationeleStatus/actief-met-geplande-verwijdering'),
         'actief-met-geplande-wijziging': KeuzelijstWaarde(invulwaarde='actief-met-geplande-wijziging',
                                                           label='actief met geplande wijziging',
+                                                          status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                                           objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOperationeleStatus/actief-met-geplande-wijziging'),
         'actief-met-tijdelijke-wijziging': KeuzelijstWaarde(invulwaarde='actief-met-tijdelijke-wijziging',
                                                             label='actief met tijdelijke wijziging',
+                                                            status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                                             objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOperationeleStatus/actief-met-tijdelijke-wijziging'),
         'tijdelijk-actief': KeuzelijstWaarde(invulwaarde='tijdelijk-actief',
                                              label='tijdelijk actief',
+                                             status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                              objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOperationeleStatus/tijdelijk-actief'),
         'tijdelijk-inactief': KeuzelijstWaarde(invulwaarde='tijdelijk-inactief',
                                                label='tijdelijk inactief',
+                                               status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                                objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOperationeleStatus/tijdelijk-inactief')
     }
 

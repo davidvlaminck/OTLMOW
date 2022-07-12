@@ -15,6 +15,7 @@ class KlGPUMerk(KeuzelijstField):
     options = {
         'nvidia': KeuzelijstWaarde(invulwaarde='nvidia',
                                    label='Nvidia',
+                                   status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                    definitie='Nvidia',
                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlGPUMerk/nvidia')
     }

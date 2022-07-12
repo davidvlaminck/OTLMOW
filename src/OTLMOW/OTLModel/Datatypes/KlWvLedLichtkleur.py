@@ -15,15 +15,19 @@ class KlWvLedLichtkleur(KeuzelijstField):
     options = {
         'amber': KeuzelijstWaarde(invulwaarde='amber',
                                   label='amber',
+                                  status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlWvLedLichtkleur/amber'),
         'blauw': KeuzelijstWaarde(invulwaarde='blauw',
                                   label='blauw',
+                                  status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlWvLedLichtkleur/blauw'),
         'rood': KeuzelijstWaarde(invulwaarde='rood',
                                  label='rood',
+                                 status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlWvLedLichtkleur/rood'),
         'wit': KeuzelijstWaarde(invulwaarde='wit',
                                 label='wit',
+                                status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlWvLedLichtkleur/wit')
     }
 

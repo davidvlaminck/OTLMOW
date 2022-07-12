@@ -15,18 +15,22 @@ class KlWegreflectorType(KeuzelijstField):
     options = {
         'glasbolreflector-100-mm-diameter': KeuzelijstWaarde(invulwaarde='glasbolreflector-100-mm-diameter',
                                                              label='glasbolreflector 100 mm diameter',
+                                                             status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                                              definitie='Een wegreflector in glas en diameter 100 millimeter met als doel de geleiding van de weggebruiker langs de weg',
                                                              objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlWegreflectorType/glasbolreflector-100-mm-diameter'),
         'glasbolreflector-50-mm-diameter': KeuzelijstWaarde(invulwaarde='glasbolreflector-50-mm-diameter',
                                                             label='glasbolreflector 50 mm diameter',
+                                                            status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                                             definitie='Een wegreflector in glas en diameter 50 millimeter met als doel de geleiding van de weggebruiker langs de weg',
                                                             objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlWegreflectorType/glasbolreflector-50-mm-diameter'),
         'kunststof-wegdekreflector': KeuzelijstWaarde(invulwaarde='kunststof-wegdekreflector',
                                                       label='kunststof wegdekreflector',
+                                                      status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                                       definitie='Een kunststoffen wegreflector aangebracht op de rijbaan met als doel de zichtbaarheid van verkeerseilanden te verhogen en geleiding van de weggebruiker langs de weg',
                                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlWegreflectorType/kunststof-wegdekreflector'),
         'metalen-wegdekreflector': KeuzelijstWaarde(invulwaarde='metalen-wegdekreflector',
                                                     label='metalen wegdekreflector',
+                                                    status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                                     definitie='Een metalen wegreflector aangebracht op de rijbaan met als doel de zichtbaarheid van verkeerseilanden te verhogen en geleiding van de weggebruiker langs de weg',
                                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlWegreflectorType/metalen-wegdekreflector')
     }

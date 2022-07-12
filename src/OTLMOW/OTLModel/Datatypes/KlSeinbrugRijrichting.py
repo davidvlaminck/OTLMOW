@@ -15,9 +15,11 @@ class KlSeinbrugRijrichting(KeuzelijstField):
     options = {
         'dubbele-rijrichting': KeuzelijstWaarde(invulwaarde='dubbele-rijrichting',
                                                 label='dubbele rijrichting',
+                                                status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlSeinbrugRijrichting/dubbele-rijrichting'),
         'enkele-rijrichting': KeuzelijstWaarde(invulwaarde='enkele-rijrichting',
                                                label='enkele rijrichting',
+                                               status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                                objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlSeinbrugRijrichting/enkele-rijrichting')
     }
 

@@ -15,9 +15,11 @@ class KlClusterClusterdoel(KeuzelijstField):
     options = {
         'groeperen-resources': KeuzelijstWaarde(invulwaarde='groeperen-resources',
                                                 label='groeperen resources',
+                                                status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlClusterClusterdoel/groeperen-resources'),
         'redundantie': KeuzelijstWaarde(invulwaarde='redundantie',
                                         label='redundantie',
+                                        status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlClusterClusterdoel/redundantie')
     }
 

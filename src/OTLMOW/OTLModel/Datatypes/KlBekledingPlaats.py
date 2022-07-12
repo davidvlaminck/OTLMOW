@@ -15,10 +15,12 @@ class KlBekledingPlaats(KeuzelijstField):
     options = {
         'inwendig': KeuzelijstWaarde(invulwaarde='inwendig',
                                      label='inwendig',
+                                     status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                      definitie='binnenzijde van de buis/put, waar deze in contact staat met het medium dat door de buis/put wordt getransporteerd',
                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBekledingPlaats/inwendig'),
         'uitwendig': KeuzelijstWaarde(invulwaarde='uitwendig',
                                       label='uitwendig',
+                                      status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                       definitie='buitenzijde van de buis/put, waar deze in contact staat met de omgeving',
                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBekledingPlaats/uitwendig')
     }

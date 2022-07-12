@@ -15,12 +15,15 @@ class KlVriLusSoortvoertuig(KeuzelijstField):
     options = {
         'fiets': KeuzelijstWaarde(invulwaarde='fiets',
                                   label='fiets',
+                                  status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVriLusSoortvoertuig/fiets'),
         'motor': KeuzelijstWaarde(invulwaarde='motor',
                                   label='motor',
+                                  status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVriLusSoortvoertuig/motor'),
         'voertuig': KeuzelijstWaarde(invulwaarde='voertuig',
                                      label='voertuig',
+                                     status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVriLusSoortvoertuig/voertuig')
     }
 

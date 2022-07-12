@@ -15,14 +15,17 @@ class KlVGSchermelementtype(KeuzelijstField):
     options = {
         'schermelement-bevestigd-tegen-de-profielen': KeuzelijstWaarde(invulwaarde='schermelement-bevestigd-tegen-de-profielen',
                                                                        label='schermelement bevestigd tegen de profielen',
+                                                                       status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                                                        definitie='schermelement bevestigd tegen de profielen',
                                                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVGSchermelementtype/schermelement-bevestigd-tegen-de-profielen'),
         'schermelement-geplaatst-tussen-profielen': KeuzelijstWaarde(invulwaarde='schermelement-geplaatst-tussen-profielen',
                                                                      label='schermelement geplaatst tussen profielen',
+                                                                     status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                                                      definitie='schermelement geplaatst tussen profielen',
                                                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVGSchermelementtype/schermelement-geplaatst-tussen-profielen'),
         'schermelement-zonder-profielen': KeuzelijstWaarde(invulwaarde='schermelement-zonder-profielen',
                                                            label='schermelement zonder profielen',
+                                                           status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                                            definitie='schermelement zonder profielen',
                                                            objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVGSchermelementtype/schermelement-zonder-profielen')
     }

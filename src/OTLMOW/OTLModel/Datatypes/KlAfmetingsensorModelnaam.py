@@ -15,9 +15,11 @@ class KlAfmetingsensorModelnaam(KeuzelijstField):
     options = {
         'FPS': KeuzelijstWaarde(invulwaarde='FPS',
                                 label='FPS',
+                                status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAfmetingsensorModelnaam/FPS'),
         'LMS': KeuzelijstWaarde(invulwaarde='LMS',
                                 label='LMS',
+                                status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAfmetingsensorModelnaam/LMS')
     }
 

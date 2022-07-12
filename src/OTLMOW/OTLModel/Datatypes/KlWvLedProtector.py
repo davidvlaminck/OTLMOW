@@ -15,12 +15,15 @@ class KlWvLedProtector(KeuzelijstField):
     options = {
         'gebogen-glas': KeuzelijstWaarde(invulwaarde='gebogen-glas',
                                          label='gebogen glas',
+                                         status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlWvLedProtector/gebogen-glas'),
         'polycarbonaat': KeuzelijstWaarde(invulwaarde='polycarbonaat',
                                           label='polycarbonaat',
+                                          status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                           objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlWvLedProtector/polycarbonaat'),
         'vlak-glas': KeuzelijstWaarde(invulwaarde='vlak-glas',
                                       label='vlak glas',
+                                      status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlWvLedProtector/vlak-glas')
     }
 

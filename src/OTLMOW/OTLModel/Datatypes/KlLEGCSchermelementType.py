@@ -16,18 +16,22 @@ class KlLEGCSchermelementType(KeuzelijstField):
     options = {
         'bloembakelement': KeuzelijstWaarde(invulwaarde='bloembakelement',
                                             label='bloembakelement',
+                                            status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                             definitie='bloembakelement',
                                             objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLEGCSchermelementType/bloembakelement'),
         'l-element': KeuzelijstWaarde(invulwaarde='l-element',
                                       label='l-element',
+                                      status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                       definitie='l-element',
                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLEGCSchermelementType/l-element'),
         'schermelement-tussen-palen': KeuzelijstWaarde(invulwaarde='schermelement-tussen-palen',
                                                        label='schermelement tussen palen',
+                                                       status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                                        definitie='schermelement tussen palen',
                                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLEGCSchermelementType/schermelement-tussen-palen'),
         'voertuigkerend': KeuzelijstWaarde(invulwaarde='voertuigkerend',
                                            label='voertuigkerend',
+                                           status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                            definitie='voertuigkerend',
                                            objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLEGCSchermelementType/voertuigkerend')
     }

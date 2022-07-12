@@ -15,9 +15,11 @@ class KlMeetcelNauwkeurigheidsvermogen(KeuzelijstField):
     options = {
         '15': KeuzelijstWaarde(invulwaarde='15',
                                label='15',
+                               status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlMeetcelNauwkeurigheidsvermogen/15'),
         '5': KeuzelijstWaarde(invulwaarde='5',
                               label='5',
+                              status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                               objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlMeetcelNauwkeurigheidsvermogen/5')
     }
 

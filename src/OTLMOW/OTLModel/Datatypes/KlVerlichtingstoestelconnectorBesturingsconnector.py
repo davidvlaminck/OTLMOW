@@ -15,9 +15,11 @@ class KlVerlichtingstoestelconnectorBesturingsconnector(KeuzelijstField):
     options = {
         'NEMA': KeuzelijstWaarde(invulwaarde='NEMA',
                                  label='NEMA',
+                                 status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerlichtingstoestelconnectorBesturingsconnector/NEMA'),
         'SR': KeuzelijstWaarde(invulwaarde='SR',
                                label='SR',
+                               status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerlichtingstoestelconnectorBesturingsconnector/SR')
     }
 

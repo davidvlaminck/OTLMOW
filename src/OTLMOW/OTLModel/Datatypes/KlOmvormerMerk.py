@@ -15,10 +15,12 @@ class KlOmvormerMerk(KeuzelijstField):
     options = {
         'axis': KeuzelijstWaarde(invulwaarde='axis',
                                  label='Axis',
+                                 status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                  definitie='Axis',
                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOmvormerMerk/axis'),
         'bosch': KeuzelijstWaarde(invulwaarde='bosch',
                                   label='Bosch',
+                                  status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                   definitie='Bosch',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOmvormerMerk/bosch')
     }

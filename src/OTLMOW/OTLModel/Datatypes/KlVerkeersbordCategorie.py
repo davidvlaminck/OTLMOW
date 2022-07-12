@@ -15,18 +15,22 @@ class KlVerkeersbordCategorie(KeuzelijstField):
     options = {
         'aanwijzingsborden': KeuzelijstWaarde(invulwaarde='aanwijzingsborden',
                                               label='aanwijzingsborden',
+                                              status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                               definitie='aanwijzingsborden',
                                               objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerkeersbordCategorie/aanwijzingsborden'),
         'gebodsborden': KeuzelijstWaarde(invulwaarde='gebodsborden',
                                          label='gebodsborden',
+                                         status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                          definitie='gebodsborden',
                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerkeersbordCategorie/gebodsborden'),
         'gevaarsborden': KeuzelijstWaarde(invulwaarde='gevaarsborden',
                                           label='gevaarsborden',
+                                          status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                           definitie='gevaarsborden',
                                           objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerkeersbordCategorie/gevaarsborden'),
         'voorrangsborden': KeuzelijstWaarde(invulwaarde='voorrangsborden',
                                             label='voorrangsborden',
+                                            status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                             definitie='voorrangsborden',
                                             objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerkeersbordCategorie/voorrangsborden')
     }

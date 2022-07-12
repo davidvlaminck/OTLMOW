@@ -15,10 +15,12 @@ class KlVerkeersspiegelVorm(KeuzelijstField):
     options = {
         'rechthoekig': KeuzelijstWaarde(invulwaarde='rechthoekig',
                                         label='rechthoekig',
+                                        status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                         definitie='rechthoekige verkeersspiegel',
                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerkeersspiegelVorm/rechthoekig'),
         'rond': KeuzelijstWaarde(invulwaarde='rond',
                                  label='rond',
+                                 status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                  definitie='ronde verkeersspiegel',
                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerkeersspiegelVorm/rond')
     }

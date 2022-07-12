@@ -15,6 +15,7 @@ class KlVirtueleServerModelnaam(KeuzelijstField):
     options = {
         'ram': KeuzelijstWaarde(invulwaarde='ram',
                                 label='RAM',
+                                status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                 definitie='RAM',
                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVirtueleServerModelnaam/ram')
     }

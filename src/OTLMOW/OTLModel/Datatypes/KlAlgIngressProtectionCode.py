@@ -15,14 +15,17 @@ class KlAlgIngressProtectionCode(KeuzelijstField):
     options = {
         'i-p-44': KeuzelijstWaarde(invulwaarde='i-p-44',
                                    label='IP44',
+                                   status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                    definitie='Bescherming tegen spitse voorwerpen en plensdicht.',
                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgIngressProtectionCode/i-p-44'),
         'i-p-65': KeuzelijstWaarde(invulwaarde='i-p-65',
                                    label='IP65',
+                                   status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                    definitie='Stofvrij en sproeidicht.',
                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgIngressProtectionCode/i-p-65'),
         'ip54': KeuzelijstWaarde(invulwaarde='ip54',
                                  label='IP54',
+                                 status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                  definitie='Spatwaterdicht en stofvrij.',
                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgIngressProtectionCode/ip54')
     }

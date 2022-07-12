@@ -15,15 +15,19 @@ class KlTelecomCableMateriaalType(KeuzelijstField):
     options = {
         'coaxial': KeuzelijstWaarde(invulwaarde='coaxial',
                                     label='coaxial',
+                                    status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlTelecomCableMateriaalType/coaxial'),
         'opticalfiber': KeuzelijstWaarde(invulwaarde='opticalfiber',
                                          label='opticalFiber',
+                                         status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlTelecomCableMateriaalType/opticalfiber'),
         'other': KeuzelijstWaarde(invulwaarde='other',
                                   label='other',
+                                  status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlTelecomCableMateriaalType/other'),
         'twistedpair': KeuzelijstWaarde(invulwaarde='twistedpair',
                                         label='twistedPair',
+                                        status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlTelecomCableMateriaalType/twistedpair')
     }
 

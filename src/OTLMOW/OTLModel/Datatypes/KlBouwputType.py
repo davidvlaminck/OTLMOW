@@ -15,18 +15,22 @@ class KlBouwputType(KeuzelijstField):
     options = {
         'bouwput': KeuzelijstWaarde(invulwaarde='bouwput',
                                     label='bouwput',
+                                    status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                     definitie='bouwput',
                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBouwputType/bouwput'),
         'intredeput': KeuzelijstWaarde(invulwaarde='intredeput',
                                        label='intredeput',
+                                       status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                        definitie='intredeput',
                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBouwputType/intredeput'),
         'ontvangstput': KeuzelijstWaarde(invulwaarde='ontvangstput',
                                          label='ontvangstput',
+                                         status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                          definitie='ontvangstput',
                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBouwputType/ontvangstput'),
         'persput': KeuzelijstWaarde(invulwaarde='persput',
                                     label='persput',
+                                    status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                     definitie='persput',
                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBouwputType/persput')
     }

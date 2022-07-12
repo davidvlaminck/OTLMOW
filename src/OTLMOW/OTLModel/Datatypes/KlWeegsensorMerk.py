@@ -15,6 +15,7 @@ class KlWeegsensorMerk(KeuzelijstField):
     options = {
         'Kistler': KeuzelijstWaarde(invulwaarde='Kistler',
                                     label='Kistler',
+                                    status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlWeegsensorMerk/Kistler')
     }
 

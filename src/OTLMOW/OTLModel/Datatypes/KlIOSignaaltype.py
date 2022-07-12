@@ -15,9 +15,11 @@ class KlIOSignaaltype(KeuzelijstField):
     options = {
         'analoog': KeuzelijstWaarde(invulwaarde='analoog',
                                     label='analoog',
+                                    status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlIOSignaaltype/analoog'),
         'digitaal': KeuzelijstWaarde(invulwaarde='digitaal',
                                      label='digitaal',
+                                     status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlIOSignaaltype/digitaal')
     }
 

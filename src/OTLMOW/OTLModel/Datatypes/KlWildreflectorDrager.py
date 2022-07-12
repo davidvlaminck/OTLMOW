@@ -15,10 +15,12 @@ class KlWildreflectorDrager(KeuzelijstField):
     options = {
         'houten-paal': KeuzelijstWaarde(invulwaarde='houten-paal',
                                         label='houten paal',
+                                        status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                         definitie='houten paal als drager.',
                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlWildreflectorDrager/houten-paal'),
         'metalen-paal': KeuzelijstWaarde(invulwaarde='metalen-paal',
                                          label='metalen paal',
+                                         status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                          definitie='metalen paal als drager.',
                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlWildreflectorDrager/metalen-paal')
     }

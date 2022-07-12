@@ -15,12 +15,15 @@ class KlBuitenkastVerfraaid(KeuzelijstField):
     options = {
         'ja': KeuzelijstWaarde(invulwaarde='ja',
                                label='ja',
+                               status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBuitenkastVerfraaid/ja'),
         'ja-niet-vergund': KeuzelijstWaarde(invulwaarde='ja-niet-vergund',
                                             label='ja niet vergund',
+                                            status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                             objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBuitenkastVerfraaid/ja-niet-vergund'),
         'nee': KeuzelijstWaarde(invulwaarde='nee',
                                 label='nee',
+                                status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBuitenkastVerfraaid/nee')
     }
 

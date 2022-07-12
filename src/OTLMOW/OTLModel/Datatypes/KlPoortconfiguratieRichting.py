@@ -15,9 +15,11 @@ class KlPoortconfiguratieRichting(KeuzelijstField):
     options = {
         'ingaand': KeuzelijstWaarde(invulwaarde='ingaand',
                                     label='ingaand',
+                                    status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlPoortconfiguratieRichting/ingaand'),
         'uitgaand': KeuzelijstWaarde(invulwaarde='uitgaand',
                                      label='uitgaand',
+                                     status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlPoortconfiguratieRichting/uitgaand')
     }
 

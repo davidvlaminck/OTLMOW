@@ -15,9 +15,11 @@ class KlTelecommunicationsAppurtenanceType(KeuzelijstField):
     options = {
         'spliceclosure': KeuzelijstWaarde(invulwaarde='spliceclosure',
                                           label='spliceClosure',
+                                          status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                           objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlTelecommunicationsAppurtenanceType/spliceclosure'),
         'termination': KeuzelijstWaarde(invulwaarde='termination',
                                         label='termination',
+                                        status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlTelecommunicationsAppurtenanceType/termination')
     }
 

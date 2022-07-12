@@ -15,10 +15,12 @@ class KlSDRKlasse(KeuzelijstField):
     options = {
         '11': KeuzelijstWaarde(invulwaarde='11',
                                label='11',
+                               status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                definitie='11',
                                objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlSDRKlasse/11'),
         '17': KeuzelijstWaarde(invulwaarde='17',
                                label='17',
+                               status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                definitie='17',
                                objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlSDRKlasse/17')
     }

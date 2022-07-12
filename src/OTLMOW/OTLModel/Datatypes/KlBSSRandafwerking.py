@@ -15,18 +15,22 @@ class KlBSSRandafwerking(KeuzelijstField):
     options = {
         'biscchopsmutsen': KeuzelijstWaarde(invulwaarde='biscchopsmutsen',
                                             label='biscchopsmutsen',
+                                            status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                             definitie='Een kantsteen die wordt toegepast wanneer de betonstraatsteen in keperverband wordt gestraat.',
                                             objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBSSRandafwerking/biscchopsmutsen'),
         'geen': KeuzelijstWaarde(invulwaarde='geen',
                                  label='geen',
+                                 status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                  definitie='De randafwerking is overbodig. ',
                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBSSRandafwerking/geen'),
         'gezaagde-betonstraatstenen': KeuzelijstWaarde(invulwaarde='gezaagde-betonstraatstenen',
                                                        label='gezaagde betonstraatstenen',
+                                                       status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                                        definitie='Een kantsteen, meestal uit hetzelfde materiaal,  die op maat werd gebracht.',
                                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBSSRandafwerking/gezaagde-betonstraatstenen'),
         'kardinaalsmutsen': KeuzelijstWaarde(invulwaarde='kardinaalsmutsen',
                                              label='kardinaalsmutsen',
+                                             status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                              definitie='Een kantsteen die wordt toegepast wanneer de betonstraatsteen in keperverband wordt gestraat.',
                                              objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBSSRandafwerking/kardinaalsmutsen')
     }

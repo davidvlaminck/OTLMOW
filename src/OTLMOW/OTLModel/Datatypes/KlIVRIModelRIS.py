@@ -15,6 +15,7 @@ class KlIVRIModelRIS(KeuzelijstField):
     options = {
         'virtualacu': KeuzelijstWaarde(invulwaarde='virtualacu',
                                        label='VirtualACU',
+                                       status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                        definitie='VirtualACU',
                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlIVRIModelRIS/virtualacu')
     }

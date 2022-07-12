@@ -15,10 +15,12 @@ class KlAlgRijrichting(KeuzelijstField):
     options = {
         'aflopend': KeuzelijstWaarde(invulwaarde='aflopend',
                                      label='aflopend',
+                                     status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                      definitie='Aflopende rijrichting.',
                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgRijrichting/aflopend'),
         'oplopend': KeuzelijstWaarde(invulwaarde='oplopend',
                                      label='oplopend',
+                                     status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                      definitie='Oplopende rijrichting.',
                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgRijrichting/oplopend')
     }

@@ -15,6 +15,7 @@ class KlDwarseMarkeringVerschuindSoort(KeuzelijstField):
     options = {
         'fietsoversteekplaats-met-blokken-(FOP)-schuin': KeuzelijstWaarde(invulwaarde='fietsoversteekplaats-met-blokken-(FOP)-schuin',
                                                                           label='fietsoversteekplaats met blokken (FOP) schuin',
+                                                                          status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                                                           definitie='Een oversteekplaats voor fietsers gemarkeerd door witte parallellogrammen.',
                                                                           objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlDwarseMarkeringVerschuindSoort/fietsoversteekplaats-met-blokken-(FOP)-schuin')
     }

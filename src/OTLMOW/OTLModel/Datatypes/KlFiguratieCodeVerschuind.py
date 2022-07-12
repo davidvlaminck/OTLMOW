@@ -15,10 +15,12 @@ class KlFiguratieCodeVerschuind(KeuzelijstField):
     options = {
         'STOP-SmSc': KeuzelijstWaarde(invulwaarde='STOP-SmSc',
                                       label='STOP-SmSc',
+                                      status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                       definitie='Een STOP markering smal en schuin.',
                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieCodeVerschuind/STOP-SmSc'),
         'VB-B1-GRsch': KeuzelijstWaarde(invulwaarde='VB-B1-GRsch',
                                         label='VB-B1-GRsch',
+                                        status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                         definitie='Een omgekeerde driehoekmarkering groot en schuin.',
                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieCodeVerschuind/VB-B1-GRsch')
     }

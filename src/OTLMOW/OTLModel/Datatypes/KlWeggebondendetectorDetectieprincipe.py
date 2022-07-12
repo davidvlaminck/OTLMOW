@@ -15,15 +15,19 @@ class KlWeggebondendetectorDetectieprincipe(KeuzelijstField):
     options = {
         'doppler': KeuzelijstWaarde(invulwaarde='doppler',
                                     label='doppler',
+                                    status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlWeggebondendetectorDetectieprincipe/doppler'),
         'inductief': KeuzelijstWaarde(invulwaarde='inductief',
                                       label='inductief',
+                                      status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlWeggebondendetectorDetectieprincipe/inductief'),
         'infrarood': KeuzelijstWaarde(invulwaarde='infrarood',
                                       label='infrarood',
+                                      status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlWeggebondendetectorDetectieprincipe/infrarood'),
         'infrarood+inductief': KeuzelijstWaarde(invulwaarde='infrarood+inductief',
                                                 label='infrarood+inductief',
+                                                status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlWeggebondendetectorDetectieprincipe/infrarood+inductief')
     }
 

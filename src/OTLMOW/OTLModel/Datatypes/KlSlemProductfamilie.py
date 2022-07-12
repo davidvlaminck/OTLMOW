@@ -15,18 +15,22 @@ class KlSlemProductfamilie(KeuzelijstField):
     options = {
         '1': KeuzelijstWaarde(invulwaarde='1',
                               label='1',
+                              status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                               definitie='Productfamilie 1',
                               objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlSlemProductfamilie/1'),
         '2': KeuzelijstWaarde(invulwaarde='2',
                               label='2',
+                              status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                               definitie='Productfamilie 2',
                               objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlSlemProductfamilie/2'),
         '5': KeuzelijstWaarde(invulwaarde='5',
                               label='5',
+                              status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                               definitie='Productfamilie 5',
                               objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlSlemProductfamilie/5'),
         '6': KeuzelijstWaarde(invulwaarde='6',
                               label='6',
+                              status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                               definitie='Productfamilie 6',
                               objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlSlemProductfamilie/6')
     }

@@ -15,9 +15,11 @@ class KlContactpuntType(KeuzelijstField):
     options = {
         'deurcontact': KeuzelijstWaarde(invulwaarde='deurcontact',
                                         label='deurcontact',
+                                        status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlContactpuntType/deurcontact'),
         'magneetcontact': KeuzelijstWaarde(invulwaarde='magneetcontact',
                                            label='magneetcontact',
+                                           status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                            objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlContactpuntType/magneetcontact')
     }
 

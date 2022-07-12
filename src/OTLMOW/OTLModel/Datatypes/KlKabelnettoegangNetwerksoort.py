@@ -15,9 +15,11 @@ class KlKabelnettoegangNetwerksoort(KeuzelijstField):
     options = {
         'Cu': KeuzelijstWaarde(invulwaarde='Cu',
                                label='Cu',
+                               status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlKabelnettoegangNetwerksoort/Cu'),
         'FO': KeuzelijstWaarde(invulwaarde='FO',
                                label='FO',
+                               status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlKabelnettoegangNetwerksoort/FO')
     }
 

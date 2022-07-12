@@ -15,21 +15,27 @@ class KlSoftwareLicentie(KeuzelijstField):
     options = {
         'commercieel': KeuzelijstWaarde(invulwaarde='commercieel',
                                         label='commercieel',
+                                        status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlSoftwareLicentie/commercieel'),
         'freeware': KeuzelijstWaarde(invulwaarde='freeware',
                                      label='freeware',
+                                     status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlSoftwareLicentie/freeware'),
         'open-source-Apache': KeuzelijstWaarde(invulwaarde='open-source-Apache',
                                                label='open source Apache',
+                                               status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                                objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlSoftwareLicentie/open-source-Apache'),
         'open-source-BSD': KeuzelijstWaarde(invulwaarde='open-source-BSD',
                                             label='open source BSD',
+                                            status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                             objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlSoftwareLicentie/open-source-BSD'),
         'open-source-GPL': KeuzelijstWaarde(invulwaarde='open-source-GPL',
                                             label='open source GPL',
+                                            status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                             objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlSoftwareLicentie/open-source-GPL'),
         'shareware': KeuzelijstWaarde(invulwaarde='shareware',
                                       label='shareware',
+                                      status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlSoftwareLicentie/shareware')
     }
 

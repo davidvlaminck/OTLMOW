@@ -15,10 +15,12 @@ class KlPutbekledingType(KeuzelijstField):
     options = {
         'solventvrije-kunsthars': KeuzelijstWaarde(invulwaarde='solventvrije-kunsthars',
                                                    label='solventvrije kunsthars',
+                                                   status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                                    definitie='solventvrije kunsthars',
                                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlPutbekledingType/solventvrije-kunsthars'),
         'solventvrije-vezelversterkte-epoxyhars': KeuzelijstWaarde(invulwaarde='solventvrije-vezelversterkte-epoxyhars',
                                                                    label='solventvrije vezelversterkte epoxyhars',
+                                                                   status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                                                    definitie='solventvrije vezelversterkte epoxyhars',
                                                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlPutbekledingType/solventvrije-vezelversterkte-epoxyhars')
     }

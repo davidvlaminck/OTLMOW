@@ -15,18 +15,22 @@ class KlHulpstukType(KeuzelijstField):
     options = {
         'T-stuk': KeuzelijstWaarde(invulwaarde='T-stuk',
                                    label='T-stuk',
+                                   status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                    definitie='T-stuk',
                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlHulpstukType/T-stuk'),
         'Y-stuk': KeuzelijstWaarde(invulwaarde='Y-stuk',
                                    label='Y-stuk',
+                                   status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                    definitie='Y-stuk',
                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlHulpstukType/Y-stuk'),
         'aansluitstuk': KeuzelijstWaarde(invulwaarde='aansluitstuk',
                                          label='aansluitstuk',
+                                         status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                          definitie='aansluitstuk',
                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlHulpstukType/aansluitstuk'),
         'bochtstuk': KeuzelijstWaarde(invulwaarde='bochtstuk',
                                       label='bochtstuk',
+                                      status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                       definitie='bochtstuk',
                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlHulpstukType/bochtstuk')
     }

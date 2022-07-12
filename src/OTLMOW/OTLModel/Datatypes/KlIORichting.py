@@ -15,9 +15,11 @@ class KlIORichting(KeuzelijstField):
     options = {
         'input': KeuzelijstWaarde(invulwaarde='input',
                                   label='input',
+                                  status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlIORichting/input'),
         'output': KeuzelijstWaarde(invulwaarde='output',
                                    label='output',
+                                   status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlIORichting/output')
     }
 

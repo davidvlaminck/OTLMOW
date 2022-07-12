@@ -15,14 +15,17 @@ class KlStraatkolkTypeUitlaat(KeuzelijstField):
     options = {
         'kop-uitlaat': KeuzelijstWaarde(invulwaarde='kop-uitlaat',
                                         label='kop uitlaat',
+                                        status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                         definitie='kop uitlaat',
                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlStraatkolkTypeUitlaat/kop-uitlaat'),
         'onderuitlaat': KeuzelijstWaarde(invulwaarde='onderuitlaat',
                                          label='onderuitlaat',
+                                         status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                          definitie='onderuitlaat',
                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlStraatkolkTypeUitlaat/onderuitlaat'),
         'zij-uitlaat': KeuzelijstWaarde(invulwaarde='zij-uitlaat',
                                         label='zij uitlaat',
+                                        status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                         definitie='zij uitlaat',
                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlStraatkolkTypeUitlaat/zij-uitlaat')
     }

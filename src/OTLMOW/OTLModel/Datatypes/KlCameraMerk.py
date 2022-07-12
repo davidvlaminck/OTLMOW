@@ -15,10 +15,12 @@ class KlCameraMerk(KeuzelijstField):
     options = {
         'bosch': KeuzelijstWaarde(invulwaarde='bosch',
                                   label='Bosch',
+                                  status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                   definitie='Bosch',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlCameraMerk/bosch'),
         'videotec': KeuzelijstWaarde(invulwaarde='videotec',
                                      label='Videotec',
+                                     status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                      definitie='Videotec',
                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlCameraMerk/videotec')
     }

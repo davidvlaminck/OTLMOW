@@ -15,14 +15,17 @@ class KlEcoPaalmateriaal(KeuzelijstField):
     options = {
         'hout-Kastanje': KeuzelijstWaarde(invulwaarde='hout-Kastanje',
                                           label='hout Kastanje',
+                                          status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                           definitie='Een houten paal van kastanje hout.',
                                           objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlEcoPaalmateriaal/hout-Kastanje'),
         'hout-Robina': KeuzelijstWaarde(invulwaarde='hout-Robina',
                                         label='hout Robina',
+                                        status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                         definitie='Een houten paal van robina hout.',
                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlEcoPaalmateriaal/hout-Robina'),
         'metaal': KeuzelijstWaarde(invulwaarde='metaal',
                                    label='metaal',
+                                   status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                    definitie='Een metalen paal.',
                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlEcoPaalmateriaal/metaal')
     }

@@ -15,12 +15,15 @@ class KlLEDDriverProtocol(KeuzelijstField):
     options = {
         '1-10v': KeuzelijstWaarde(invulwaarde='1-10v',
                                   label='1-10v',
+                                  status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLEDDriverProtocol/1-10v'),
         'dali': KeuzelijstWaarde(invulwaarde='dali',
                                  label='dali',
+                                 status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLEDDriverProtocol/dali'),
         'daliv2': KeuzelijstWaarde(invulwaarde='daliv2',
                                    label='daliv2',
+                                   status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLEDDriverProtocol/daliv2')
     }
 

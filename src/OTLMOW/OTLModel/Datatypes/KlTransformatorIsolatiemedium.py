@@ -15,21 +15,27 @@ class KlTransformatorIsolatiemedium(KeuzelijstField):
     options = {
         'droog': KeuzelijstWaarde(invulwaarde='droog',
                                   label='droog',
+                                  status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlTransformatorIsolatiemedium/droog'),
         'esterolie': KeuzelijstWaarde(invulwaarde='esterolie',
                                       label='esterolie',
+                                      status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlTransformatorIsolatiemedium/esterolie'),
         'giethars': KeuzelijstWaarde(invulwaarde='giethars',
                                      label='giethars',
+                                     status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlTransformatorIsolatiemedium/giethars'),
         'minerale-olie': KeuzelijstWaarde(invulwaarde='minerale-olie',
                                           label='minerale olie',
+                                          status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                           objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlTransformatorIsolatiemedium/minerale-olie'),
         'siliconenvloeistof': KeuzelijstWaarde(invulwaarde='siliconenvloeistof',
                                                label='siliconenvloeistof',
+                                               status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                                objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlTransformatorIsolatiemedium/siliconenvloeistof'),
         'vegetale-olie': KeuzelijstWaarde(invulwaarde='vegetale-olie',
                                           label='vegetale olie',
+                                          status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                           objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlTransformatorIsolatiemedium/vegetale-olie')
     }
 

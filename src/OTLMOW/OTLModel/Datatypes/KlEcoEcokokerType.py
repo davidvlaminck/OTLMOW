@@ -15,10 +15,12 @@ class KlEcoEcokokerType(KeuzelijstField):
     options = {
         'amfibieenkoker': KeuzelijstWaarde(invulwaarde='amfibieenkoker',
                                            label='amfibieenkoker',
+                                           status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                            definitie='Een ecokoker voor amfibieën.',
                                            objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlEcoEcokokerType/amfibieenkoker'),
         'betonnen-ecokoker': KeuzelijstWaarde(invulwaarde='betonnen-ecokoker',
                                               label='betonnen ecokoker',
+                                              status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                               definitie='Een ecokoker uit beton.',
                                               objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlEcoEcokokerType/betonnen-ecokoker')
     }

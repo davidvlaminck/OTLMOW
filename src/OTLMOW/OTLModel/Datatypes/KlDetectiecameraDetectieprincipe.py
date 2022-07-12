@@ -15,9 +15,11 @@ class KlDetectiecameraDetectieprincipe(KeuzelijstField):
     options = {
         'optisch': KeuzelijstWaarde(invulwaarde='optisch',
                                     label='optisch',
+                                    status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlDetectiecameraDetectieprincipe/optisch'),
         'thermografisch': KeuzelijstWaarde(invulwaarde='thermografisch',
                                            label='thermografisch',
+                                           status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                            objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlDetectiecameraDetectieprincipe/thermografisch')
     }
 

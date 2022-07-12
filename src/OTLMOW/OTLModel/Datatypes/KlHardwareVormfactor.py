@@ -15,12 +15,15 @@ class KlHardwareVormfactor(KeuzelijstField):
     options = {
         'desktop': KeuzelijstWaarde(invulwaarde='desktop',
                                     label='desktop',
+                                    status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlHardwareVormfactor/desktop'),
         'laptop': KeuzelijstWaarde(invulwaarde='laptop',
                                    label='laptop',
+                                   status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlHardwareVormfactor/laptop'),
         'server': KeuzelijstWaarde(invulwaarde='server',
                                    label='server',
+                                   status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlHardwareVormfactor/server')
     }
 

@@ -15,10 +15,12 @@ class KlAfsluiterType(KeuzelijstField):
     options = {
         'steekschuif': KeuzelijstWaarde(invulwaarde='steekschuif',
                                         label='steekschuif',
+                                        status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                         definitie='De steekschuif is een verticaal bewegend afsluitorgaan, en kan rond, vierkant of rechthoekig zijn.',
                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAfsluiterType/steekschuif'),
         'wandafsluiter': KeuzelijstWaarde(invulwaarde='wandafsluiter',
                                           label='wandafsluiter',
+                                          status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                           definitie='Een afsluiter voor de beheersing van water',
                                           objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAfsluiterType/wandafsluiter')
     }

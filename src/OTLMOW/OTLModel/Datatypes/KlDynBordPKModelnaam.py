@@ -15,12 +15,15 @@ class KlDynBordPKModelnaam(KeuzelijstField):
     options = {
         'PK-08J03': KeuzelijstWaarde(invulwaarde='PK-08J03',
                                      label='PK-08J03',
+                                     status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlDynBordPKModelnaam/PK-08J03'),
         'PK-LHT': KeuzelijstWaarde(invulwaarde='PK-LHT',
                                    label='PK-LHT',
+                                   status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlDynBordPKModelnaam/PK-LHT'),
         'PK-Tidal': KeuzelijstWaarde(invulwaarde='PK-Tidal',
                                      label='PK-Tidal',
+                                     status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlDynBordPKModelnaam/PK-Tidal')
     }
 

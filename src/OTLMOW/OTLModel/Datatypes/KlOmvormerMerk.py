@@ -11,16 +11,17 @@ class KlOmvormerMerk(KeuzelijstField):
     label = 'Omvormer merk'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlOmvormerMerk'
     definition = 'Het merk van de omvormer.'
+    status = 'ingebruik'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlOmvormerMerk'
     options = {
         'axis': KeuzelijstWaarde(invulwaarde='axis',
                                  label='Axis',
-                                 status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
+                                 status='ingebruik',
                                  definitie='Axis',
                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOmvormerMerk/axis'),
         'bosch': KeuzelijstWaarde(invulwaarde='bosch',
                                   label='Bosch',
-                                  status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
+                                  status='ingebruik',
                                   definitie='Bosch',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOmvormerMerk/bosch')
     }

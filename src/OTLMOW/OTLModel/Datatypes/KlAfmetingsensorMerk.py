@@ -11,11 +11,12 @@ class KlAfmetingsensorMerk(KeuzelijstField):
     label = 'Afmetingsensor merk'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlAfmetingsensorMerk'
     definition = 'Het merk van de afmetingsensor.'
+    status = 'ingebruik'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlAfmetingsensorMerk'
     options = {
         'Sick': KeuzelijstWaarde(invulwaarde='Sick',
                                  label='Sick',
-                                 status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
+                                 status='ingebruik',
                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAfmetingsensorMerk/Sick')
     }
 

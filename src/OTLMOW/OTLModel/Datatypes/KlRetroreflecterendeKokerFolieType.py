@@ -11,16 +11,17 @@ class KlRetroreflecterendeKokerFolieType(KeuzelijstField):
     label = 'Retroreflecterende koker folie type'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlRetroreflecterendeKokerFolieType'
     definition = 'Keuzeijst voor het bepalen van folietype van de retroreflecterende koker.'
+    status = 'ingebruik'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlRetroreflecterendeKokerFolieType'
     options = {
         'type-2': KeuzelijstWaarde(invulwaarde='type-2',
                                    label='type 2',
-                                   status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
+                                   status='ingebruik',
                                    definitie='Keuze folie type 2 (geel) als folietype van de retroreflecterende koker',
                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlRetroreflecterendeKokerFolieType/type-2'),
         'type-3': KeuzelijstWaarde(invulwaarde='type-3',
                                    label='type 3',
-                                   status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
+                                   status='ingebruik',
                                    definitie='Keuze folie type 3 als folietype (geel - fluorescerend) van de retroreflecterende koker',
                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlRetroreflecterendeKokerFolieType/type-3')
     }

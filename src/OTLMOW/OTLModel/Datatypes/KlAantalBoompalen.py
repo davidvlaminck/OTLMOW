@@ -11,21 +11,22 @@ class KlAantalBoompalen(KeuzelijstField):
     label = 'Aantal boompalen'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlAantalBoompalen'
     definition = 'Hoeveelheid palen waaruit de constructie bestaat.'
+    status = 'ingebruik'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlAantalBoompalen'
     options = {
         '1': KeuzelijstWaarde(invulwaarde='1',
                               label='1',
-                              status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
+                              status='ingebruik',
                               definitie='De constructie bestaat uit 1 boompaal.',
                               objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAantalBoompalen/1'),
         '2': KeuzelijstWaarde(invulwaarde='2',
                               label='2',
-                              status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
+                              status='ingebruik',
                               definitie='De constructie bestaat uit 2 boompalen.',
                               objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAantalBoompalen/2'),
         '3': KeuzelijstWaarde(invulwaarde='3',
                               label='3',
-                              status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
+                              status='ingebruik',
                               definitie='De constructie bestaat uit 3 boompalen.',
                               objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAantalBoompalen/3')
     }

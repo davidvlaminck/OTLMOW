@@ -11,21 +11,22 @@ class KlNetwerkType(KeuzelijstField):
     label = 'Netwerk type'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlNetwerkType'
     definition = 'Zie ook http://inspire.ec.europa.eu/codelist/UtilityNetworkTypeExtendedValue. Codelijst van types voor nutsvoorzieningennetwerken volgens IMKL.'
+    status = 'ingebruik'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlNetwerkType'
     options = {
         'elektriciteit': KeuzelijstWaarde(invulwaarde='elektriciteit',
                                           label='elektriciteit',
-                                          status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
+                                          status='ingebruik',
                                           definitie='De Klasse hoort in het elektriciteitsnet.',
                                           objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkType/elektriciteit'),
         'gemengd': KeuzelijstWaarde(invulwaarde='gemengd',
                                     label='gemengd',
-                                    status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
+                                    status='ingebruik',
                                     definitie='De Klasse hoort zowel bij het elektriciteitsnet als bij het telecomnet.',
                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkType/gemengd'),
         'telecommunicatie': KeuzelijstWaarde(invulwaarde='telecommunicatie',
                                              label='telecommunicatie',
-                                             status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
+                                             status='ingebruik',
                                              definitie='De Klasse hoort in het telecomnet.',
                                              objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkType/telecommunicatie')
     }

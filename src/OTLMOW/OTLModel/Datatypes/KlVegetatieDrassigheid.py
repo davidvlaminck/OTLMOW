@@ -11,21 +11,22 @@ class KlVegetatieDrassigheid(KeuzelijstField):
     label = 'Vegetatie drassigheid'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlVegetatieDrassigheid'
     definition = 'De mate van drassigheid..'
+    status = 'ingebruik'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlVegetatieDrassigheid'
     options = {
         'matig-drassig': KeuzelijstWaarde(invulwaarde='matig-drassig',
                                           label='matig drassig',
-                                          status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
+                                          status='ingebruik',
                                           definitie='De ondergrond is matig drassig',
                                           objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVegetatieDrassigheid/matig-drassig'),
         'niet-drassig': KeuzelijstWaarde(invulwaarde='niet-drassig',
                                          label='niet drassig',
-                                         status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
+                                         status='ingebruik',
                                          definitie='De ondergrond is niet drassig',
                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVegetatieDrassigheid/niet-drassig'),
         'sterk-drassig': KeuzelijstWaarde(invulwaarde='sterk-drassig',
                                           label='sterk drassig',
-                                          status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
+                                          status='ingebruik',
                                           definitie='De ondergrond is sterk drassig',
                                           objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVegetatieDrassigheid/sterk-drassig')
     }

@@ -11,15 +11,16 @@ class KlIORichting(KeuzelijstField):
     label = 'IO richting'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlIORichting'
     definition = 'Geeft aan of de IO-kaart dient voor input of output.'
+    status = 'ingebruik'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlIORichting'
     options = {
         'input': KeuzelijstWaarde(invulwaarde='input',
                                   label='input',
-                                  status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
+                                  status='ingebruik',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlIORichting/input'),
         'output': KeuzelijstWaarde(invulwaarde='output',
                                    label='output',
-                                   status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
+                                   status='ingebruik',
                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlIORichting/output')
     }
 

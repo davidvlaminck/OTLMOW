@@ -11,11 +11,12 @@ class KlVirtueleServerModelnaam(KeuzelijstField):
     label = 'Virtuele server modelnaam'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlVirtueleServerModelnaam'
     definition = 'De modelnaam van de virtuele server.'
+    status = 'ingebruik'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlVirtueleServerModelnaam'
     options = {
         'ram': KeuzelijstWaarde(invulwaarde='ram',
                                 label='RAM',
-                                status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
+                                status='ingebruik',
                                 definitie='RAM',
                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVirtueleServerModelnaam/ram')
     }

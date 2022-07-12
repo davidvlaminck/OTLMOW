@@ -11,21 +11,22 @@ class KlEcoEcoductType(KeuzelijstField):
     label = 'Ecoduct type'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlEcoEcoductType'
     definition = 'Types van ecoduct.'
+    status = 'ingebruik'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlEcoEcoductType'
     options = {
         'bermbrug': KeuzelijstWaarde(invulwaarde='bermbrug',
                                      label='bermbrug',
-                                     status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
+                                     status='ingebruik',
                                      definitie='Een bestaande, vaak smalle brug met beperkt verkeer waarop de natuur via groene bermen doorloopt.',
                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlEcoEcoductType/bermbrug'),
         'ecocreaduct': KeuzelijstWaarde(invulwaarde='ecocreaduct',
                                         label='ecocreaduct',
-                                        status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
+                                        status='ingebruik',
                                         definitie='Een brug hoofdzakelijk in gebruik voor natuur, gecombineerd met zachte recreatie (fietsers, wandelaars, ruiters).',
                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlEcoEcoductType/ecocreaduct'),
         'ecoveloduct': KeuzelijstWaarde(invulwaarde='ecoveloduct',
                                         label='ecoveloduct',
-                                        status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
+                                        status='ingebruik',
                                         definitie='Een brug hoofdzakelijk in gebruik voor natuur, gecombineerd met een fietspad.',
                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlEcoEcoductType/ecoveloduct')
     }

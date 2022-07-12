@@ -11,16 +11,17 @@ class KlOverlangsemarkeringType(KeuzelijstField):
     label = 'Overlangse markering type'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlOverlangsemarkeringType'
     definition = 'Mogelijke types van de overlangse markering.'
+    status = 'ingebruik'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlOverlangsemarkeringType'
     options = {
         'doorlopend': KeuzelijstWaarde(invulwaarde='doorlopend',
                                        label='doorlopend',
-                                       status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
+                                       status='ingebruik',
                                        definitie='Een overlangse markering bestaande uit een doorlopende streep.',
                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOverlangsemarkeringType/doorlopend'),
         'onderbroken': KeuzelijstWaarde(invulwaarde='onderbroken',
                                         label='onderbroken',
-                                        status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
+                                        status='ingebruik',
                                         definitie='Een overlangse markering bestaande uit een onderbroken streep.',
                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOverlangsemarkeringType/onderbroken')
     }

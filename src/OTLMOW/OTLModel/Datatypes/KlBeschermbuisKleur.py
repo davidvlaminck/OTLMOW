@@ -10,6 +10,7 @@ class KlBeschermbuisKleur(KeuzelijstField):
     label = 'Beschermbuiskleur'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlBeschermbuisKleur'
     definition = 'TODO'
+    status = 'ingebruik'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlBeschermbuisKleur'
     options = {
     }

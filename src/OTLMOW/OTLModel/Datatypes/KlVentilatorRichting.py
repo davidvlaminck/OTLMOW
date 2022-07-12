@@ -11,15 +11,16 @@ class KlVentilatorRichting(KeuzelijstField):
     label = 'Ventilator richting'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlVentilatorRichting'
     definition = 'Keuzelijst die aangeeft of de luchtstroom in één richting of beide richtingen kan plaatsvinden.'
+    status = 'ingebruik'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlVentilatorRichting'
     options = {
         'bidirectioneel': KeuzelijstWaarde(invulwaarde='bidirectioneel',
                                            label='bidirectioneel',
-                                           status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
+                                           status='ingebruik',
                                            objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVentilatorRichting/bidirectioneel'),
         'unidirectioneel': KeuzelijstWaarde(invulwaarde='unidirectioneel',
                                             label='unidirectioneel',
-                                            status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
+                                            status='ingebruik',
                                             objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVentilatorRichting/unidirectioneel')
     }
 

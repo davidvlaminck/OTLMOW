@@ -11,16 +11,17 @@ class KlRasterMazen(KeuzelijstField):
     label = 'Rastermazen'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlRasterMazen'
     definition = 'Types van de mazen in het ecoraster.'
+    status = 'ingebruik'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlRasterMazen'
     options = {
         'fijnmazig': KeuzelijstWaarde(invulwaarde='fijnmazig',
                                       label='fijnmazig',
-                                      status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
+                                      status='ingebruik',
                                       definitie='Een fijnmazig raster.',
                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlRasterMazen/fijnmazig'),
         'grofmazig': KeuzelijstWaarde(invulwaarde='grofmazig',
                                       label='grofmazig',
-                                      status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
+                                      status='ingebruik',
                                       definitie='Een grofmazig raster.',
                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlRasterMazen/grofmazig')
     }

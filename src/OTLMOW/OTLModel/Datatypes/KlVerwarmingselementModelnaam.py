@@ -10,6 +10,7 @@ class KlVerwarmingselementModelnaam(KeuzelijstField):
     label = 'Verwarmingselement model naam'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlVerwarmingselementModelnaam'
     definition = 'Keuzelijst van modellen van verwarmingselementen voor alle relevante merken.'
+    status = 'ingebruik'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlVerwarmingselementModelnaam'
     options = {
     }

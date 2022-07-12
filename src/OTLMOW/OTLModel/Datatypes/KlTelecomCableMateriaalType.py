@@ -11,23 +11,24 @@ class KlTelecomCableMateriaalType(KeuzelijstField):
     label = 'Datakabel materiaal'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KlTelecomCableMateriaalType'
     definition = 'Codelijst met waardes voor het type materiaal van een telecomkabel.'
+    status = 'ingebruik'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlTelecomCableMateriaalType'
     options = {
         'coaxial': KeuzelijstWaarde(invulwaarde='coaxial',
                                     label='coaxial',
-                                    status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
+                                    status='ingebruik',
                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlTelecomCableMateriaalType/coaxial'),
         'opticalfiber': KeuzelijstWaarde(invulwaarde='opticalfiber',
                                          label='opticalFiber',
-                                         status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
+                                         status='ingebruik',
                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlTelecomCableMateriaalType/opticalfiber'),
         'other': KeuzelijstWaarde(invulwaarde='other',
                                   label='other',
-                                  status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
+                                  status='ingebruik',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlTelecomCableMateriaalType/other'),
         'twistedpair': KeuzelijstWaarde(invulwaarde='twistedpair',
                                         label='twistedPair',
-                                        status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
+                                        status='ingebruik',
                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlTelecomCableMateriaalType/twistedpair')
     }
 

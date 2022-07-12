@@ -11,11 +11,12 @@ class KlWeegsensorMerk(KeuzelijstField):
     label = 'Weegsensor merk'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlWeegsensorMerk'
     definition = 'Het merk van de weegsensor.'
+    status = 'ingebruik'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlWeegsensorMerk'
     options = {
         'Kistler': KeuzelijstWaarde(invulwaarde='Kistler',
                                     label='Kistler',
-                                    status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
+                                    status='ingebruik',
                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlWeegsensorMerk/Kistler')
     }
 

@@ -11,11 +11,12 @@ class KlWeegsensorType(KeuzelijstField):
     label = 'Weegsensor type'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlWeegsensorType'
     definition = 'Het type van de weegsensor.'
+    status = 'ingebruik'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlWeegsensorType'
     options = {
         'piëzo-kwarts': KeuzelijstWaarde(invulwaarde='piëzo-kwarts',
                                          label='piëzo-kwarts',
-                                         status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
+                                         status='ingebruik',
                                          definitie='piëzo-kwarts',
                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlWeegsensorType/piëzo-kwarts')
     }

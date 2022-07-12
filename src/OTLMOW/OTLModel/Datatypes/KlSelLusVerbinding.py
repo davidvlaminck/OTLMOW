@@ -11,15 +11,16 @@ class KlSelLusVerbinding(KeuzelijstField):
     label = 'Selectieve lus verbinding'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlSelLusVerbinding'
     definition = 'Keuzelijst met soorten verbindingen voor selectieve lussen.'
+    status = 'ingebruik'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlSelLusVerbinding'
     options = {
         'contact': KeuzelijstWaarde(invulwaarde='contact',
                                     label='contact',
-                                    status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
+                                    status='ingebruik',
                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlSelLusVerbinding/contact'),
         'serieel': KeuzelijstWaarde(invulwaarde='serieel',
                                     label='serieel',
-                                    status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
+                                    status='ingebruik',
                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlSelLusVerbinding/serieel')
     }
 

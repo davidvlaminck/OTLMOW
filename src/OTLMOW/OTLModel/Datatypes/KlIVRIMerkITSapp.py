@@ -11,11 +11,12 @@ class KlIVRIMerkITSapp(KeuzelijstField):
     label = 'iVRIMerkITSapp'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlIVRIMerkITSapp'
     definition = 'Het merk van de ITSapp.'
+    status = 'ingebruik'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlIVRIMerkITSapp'
     options = {
         'peek': KeuzelijstWaarde(invulwaarde='peek',
                                  label='Peek',
-                                 status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
+                                 status='ingebruik',
                                  definitie='Peek',
                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlIVRIMerkITSapp/peek')
     }

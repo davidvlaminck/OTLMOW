@@ -11,21 +11,22 @@ class KlDolomietType(KeuzelijstField):
     label = 'Dolomiet type'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlDolomietType'
     definition = 'Types van dolomiet.'
+    status = 'ingebruik'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlDolomietType'
     options = {
         '0-15': KeuzelijstWaarde(invulwaarde='0-15',
                                  label='0-15',
-                                 status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
+                                 status='ingebruik',
                                  definitie='0/15',
                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlDolomietType/0-15'),
         '0-5': KeuzelijstWaarde(invulwaarde='0-5',
                                 label='0-5',
-                                status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
+                                status='ingebruik',
                                 definitie='0/5',
                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlDolomietType/0-5'),
         '5-15': KeuzelijstWaarde(invulwaarde='5-15',
                                  label='5-15',
-                                 status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
+                                 status='ingebruik',
                                  definitie='mei-15',
                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlDolomietType/5-15')
     }

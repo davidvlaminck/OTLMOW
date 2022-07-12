@@ -10,6 +10,7 @@ class KlBevestigingsbeugelType(KeuzelijstField):
     label = 'Bevestigingsbeugel type'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlBevestigingsbeugelType'
     definition = 'Types van bevestigingsbeugel.'
+    status = 'ingebruik'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlBevestigingsbeugelType'
     options = {
     }

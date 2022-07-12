@@ -11,21 +11,22 @@ class KlRoosterOpeningswijze(KeuzelijstField):
     label = 'Rooster openingswijze'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlRoosterOpeningswijze'
     definition = 'Deze keuzelijst geeft de manier aan hoe het rooster geopend kan worden.'
+    status = 'ingebruik'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlRoosterOpeningswijze'
     options = {
         'ovaal-deksel': KeuzelijstWaarde(invulwaarde='ovaal-deksel',
                                          label='ovaal deksel',
-                                         status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
+                                         status='ingebruik',
                                          definitie='ovaal deksel',
                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlRoosterOpeningswijze/ovaal-deksel'),
         'scharnierend': KeuzelijstWaarde(invulwaarde='scharnierend',
                                          label='scharnierend',
-                                         status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
+                                         status='ingebruik',
                                          definitie='scharnierend',
                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlRoosterOpeningswijze/scharnierend'),
         'uitneembaar': KeuzelijstWaarde(invulwaarde='uitneembaar',
                                         label='uitneembaar',
-                                        status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
+                                        status='ingebruik',
                                         definitie='uitneembaar',
                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlRoosterOpeningswijze/uitneembaar')
     }

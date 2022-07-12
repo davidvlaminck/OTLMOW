@@ -11,16 +11,17 @@ class KlHechtspecie(KeuzelijstField):
     label = 'Hecht specie'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlHechtspecie'
     definition = 'Keuzelijst met hecht specie van gestapelde ruwe steen.'
+    status = 'ingebruik'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlHechtspecie'
     options = {
         'gebiedseigen-grond': KeuzelijstWaarde(invulwaarde='gebiedseigen-grond',
                                                label='gebiedseigen grond',
-                                               status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
+                                               status='ingebruik',
                                                definitie='gebiedseigen grond',
                                                objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlHechtspecie/gebiedseigen-grond'),
         'zandcement': KeuzelijstWaarde(invulwaarde='zandcement',
                                        label='zandcement',
-                                       status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
+                                       status='ingebruik',
                                        definitie='zandcement',
                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlHechtspecie/zandcement')
     }

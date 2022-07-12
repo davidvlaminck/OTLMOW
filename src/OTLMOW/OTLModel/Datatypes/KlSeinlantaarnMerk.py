@@ -10,6 +10,7 @@ class KlSeinlantaarnMerk(KeuzelijstField):
     label = 'seinlantaarn merk'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#KlSeinlantaarnMerk'
     definition = 'Keuzelijst met merknamen voor Seinlantaarn.'
+    status = 'ingebruik'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlSeinlantaarnMerk'
     options = {
     }

@@ -11,15 +11,16 @@ class KlBrandblusserGewicht(KeuzelijstField):
     label = 'Brandblusser gewicht'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlBrandblusserGewicht'
     definition = 'Keuzelijst met de mogelijke gewichten van brandblussers.'
+    status = 'ingebruik'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlBrandblusserGewicht'
     options = {
         '6-kg': KeuzelijstWaarde(invulwaarde='6-kg',
                                  label='6 kg',
-                                 status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
+                                 status='ingebruik',
                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBrandblusserGewicht/6-kg'),
         '9-kg': KeuzelijstWaarde(invulwaarde='9-kg',
                                  label='9 kg',
-                                 status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
+                                 status='ingebruik',
                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBrandblusserGewicht/9-kg')
     }
 

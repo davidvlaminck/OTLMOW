@@ -10,6 +10,7 @@ class KlPtKARModemProtocol(KeuzelijstField):
     label = 'PT-KAR-modem protocol'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlPtKARModemProtocol'
     definition = 'Beschrijft het protocol dat de PT-KAR-Modem gebruikt om te communiceren.'
+    status = 'ingebruik'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlPtKARModemProtocol'
     options = {
     }

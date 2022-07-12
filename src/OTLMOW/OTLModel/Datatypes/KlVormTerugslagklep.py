@@ -11,21 +11,22 @@ class KlVormTerugslagklep(KeuzelijstField):
     label = 'Vorm terugslagklep'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlVormTerugslagklep'
     definition = 'De vorm van opening van de terugslagklep.'
+    status = 'ingebruik'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlVormTerugslagklep'
     options = {
         'andere': KeuzelijstWaarde(invulwaarde='andere',
                                    label='andere',
-                                   status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
+                                   status='ingebruik',
                                    definitie='andere',
                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVormTerugslagklep/andere'),
         'circkelvormig': KeuzelijstWaarde(invulwaarde='circkelvormig',
                                           label='circkelvormig',
-                                          status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
+                                          status='ingebruik',
                                           definitie='circkelvormig',
                                           objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVormTerugslagklep/circkelvormig'),
         'rechthoekig': KeuzelijstWaarde(invulwaarde='rechthoekig',
                                         label='rechthoekig',
-                                        status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
+                                        status='ingebruik',
                                         definitie='rechthoekig',
                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVormTerugslagklep/rechthoekig')
     }

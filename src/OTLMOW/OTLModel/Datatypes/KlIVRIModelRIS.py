@@ -11,11 +11,12 @@ class KlIVRIModelRIS(KeuzelijstField):
     label = 'iVRIModelRIS'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlIVRIModelRIS'
     definition = 'De modelnaam van de RIS.'
+    status = 'ingebruik'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlIVRIModelRIS'
     options = {
         'virtualacu': KeuzelijstWaarde(invulwaarde='virtualacu',
                                        label='VirtualACU',
-                                       status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
+                                       status='ingebruik',
                                        definitie='VirtualACU',
                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlIVRIModelRIS/virtualacu')
     }

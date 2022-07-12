@@ -11,21 +11,22 @@ class KlGebruiksdomein(KeuzelijstField):
     label = 'Gebruiksdomein'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KlGebruiksdomein'
     definition = 'De omstandigheden waarin het beton gebruikt zal worden.'
+    status = 'ingebruik'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlGebruiksdomein'
     options = {
         'gb-gewapend': KeuzelijstWaarde(invulwaarde='gb-gewapend',
                                         label='GB (gewapend)',
-                                        status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
+                                        status='ingebruik',
                                         definitie='Gewapend beton.',
                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlGebruiksdomein/gb-gewapend'),
         'ob-ongewapend': KeuzelijstWaarde(invulwaarde='ob-ongewapend',
                                           label='OB (ongewapend)',
-                                          status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
+                                          status='ingebruik',
                                           definitie='Ongewapend beton.',
                                           objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlGebruiksdomein/ob-ongewapend'),
         'vb-voorgespannen': KeuzelijstWaarde(invulwaarde='vb-voorgespannen',
                                              label='VB (voorgespannen)',
-                                             status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
+                                             status='ingebruik',
                                              definitie='Voorgespannen beton.',
                                              objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlGebruiksdomein/vb-voorgespannen')
     }

@@ -11,15 +11,16 @@ class KlMIVLusZichtbaarheid(KeuzelijstField):
     label = 'MIV-lus zichtbaarheid'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlMIVLusZichtbaarheid'
     definition = 'Is de lus zichtbaar in het wegdek of bedenkt door een toplaag.'
+    status = 'ingebruik'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlMIVLusZichtbaarheid'
     options = {
         'onderlaag': KeuzelijstWaarde(invulwaarde='onderlaag',
                                       label='onderlaag',
-                                      status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
+                                      status='ingebruik',
                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlMIVLusZichtbaarheid/onderlaag'),
         'toplaag': KeuzelijstWaarde(invulwaarde='toplaag',
                                     label='toplaag',
-                                    status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
+                                    status='ingebruik',
                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlMIVLusZichtbaarheid/toplaag')
     }
 

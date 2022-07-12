@@ -11,23 +11,24 @@ class KlElectricityAppurtenanceType(KeuzelijstField):
     label = 'Electricity appurtenance type'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KlElectricityAppurtenanceType'
     definition = 'Lijst voor types  van de ElectricityAppurtenance.'
+    status = 'ingebruik'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlElectricityAppurtenanceType'
     options = {
         'aarding': KeuzelijstWaarde(invulwaarde='aarding',
                                     label='aarding',
-                                    status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
+                                    status='ingebruik',
                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlElectricityAppurtenanceType/aarding'),
         'deliverypoint': KeuzelijstWaarde(invulwaarde='deliverypoint',
                                           label='deliveryPoint',
-                                          status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
+                                          status='ingebruik',
                                           objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlElectricityAppurtenanceType/deliverypoint'),
         'mof': KeuzelijstWaarde(invulwaarde='mof',
                                 label='mof',
-                                status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
+                                status='ingebruik',
                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlElectricityAppurtenanceType/mof'),
         'streetlight': KeuzelijstWaarde(invulwaarde='streetlight',
                                         label='streetLight',
-                                        status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
+                                        status='ingebruik',
                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlElectricityAppurtenanceType/streetlight')
     }
 

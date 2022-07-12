@@ -10,6 +10,7 @@ class KlVRBAZMerk(KeuzelijstField):
     label = 'VR-BAZ merk'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlVRBAZMerk'
     definition = 'Keuzelijst met merknamen voor VRBAZ.'
+    status = 'ingebruik'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlVRBAZMerk'
     options = {
     }

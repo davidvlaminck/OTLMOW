@@ -10,6 +10,7 @@ class KlDetectiecameraModelnaam(KeuzelijstField):
     label = 'Detectiecamera modelnaam'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlDetectiecameraModelnaam'
     definition = 'Keuzelijst met modelnamen voor Detectiecamera.'
+    status = 'ingebruik'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlDetectiecameraModelnaam'
     options = {
     }

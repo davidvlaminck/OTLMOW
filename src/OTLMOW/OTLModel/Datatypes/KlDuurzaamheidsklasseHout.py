@@ -10,6 +10,7 @@ class KlDuurzaamheidsklasseHout(KeuzelijstField):
     label = 'Duurzaamheidsklasse van hout'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KlDuurzaamheidsklasseHout'
     definition = 'De resistentie van het kernhout tegen ongunstige omstandigheden.'
+    status = 'ingebruik'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlDuurzaamheidsklasseHout'
     options = {
     }

@@ -10,6 +10,7 @@ class KlFietstelsysteemModelnaam(KeuzelijstField):
     label = 'Modelnaam fietstelsysteem'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlFietstelsysteemModelnaam'
     definition = 'Lijst met mogelijke modelnamen voor fietstelsystemen.'
+    status = 'ingebruik'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlFietstelsysteemModelnaam'
     options = {
     }

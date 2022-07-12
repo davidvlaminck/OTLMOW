@@ -11,11 +11,12 @@ class KlVirtueleServerMerk(KeuzelijstField):
     label = 'Virtuele server merk'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlVirtueleServerMerk'
     definition = 'Het merk van de virtuele server.'
+    status = 'ingebruik'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlVirtueleServerMerk'
     options = {
         'ram': KeuzelijstWaarde(invulwaarde='ram',
                                 label='RAM',
-                                status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
+                                status='ingebruik',
                                 definitie='RAM',
                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVirtueleServerMerk/ram')
     }

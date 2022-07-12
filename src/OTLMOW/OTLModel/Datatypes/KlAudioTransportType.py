@@ -11,15 +11,16 @@ class KlAudioTransportType(KeuzelijstField):
     label = 'Audio transport type'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlAudioTransportType'
     definition = 'Lijst met mogelijke types voor transport van audio over een medium.'
+    status = 'ingebruik'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlAudioTransportType'
     options = {
         'analoog': KeuzelijstWaarde(invulwaarde='analoog',
                                     label='analoog',
-                                    status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
+                                    status='ingebruik',
                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAudioTransportType/analoog'),
         'voip': KeuzelijstWaarde(invulwaarde='voip',
                                  label='voip',
-                                 status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
+                                 status='ingebruik',
                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAudioTransportType/voip')
     }
 

@@ -11,11 +11,12 @@ class KlNeerslagsensorMerk(KeuzelijstField):
     label = 'Neerslagsensor merk'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlNeerslagsensorMerk'
     definition = 'Het merk van de neerslagsensor.'
+    status = 'ingebruik'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlNeerslagsensorMerk'
     options = {
         'Luft': KeuzelijstWaarde(invulwaarde='Luft',
                                  label='Luft',
-                                 status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
+                                 status='ingebruik',
                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNeerslagsensorMerk/Luft')
     }
 

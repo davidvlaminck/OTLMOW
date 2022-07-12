@@ -10,6 +10,7 @@ class KlVRBatterijCUMerk(KeuzelijstField):
     label = 'Batterij CU merk'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlVRBatterijCUMerk'
     definition = 'Keuzelijst met merknamen voor VRBatterijCU.'
+    status = 'ingebruik'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlVRBatterijCUMerk'
     options = {
     }

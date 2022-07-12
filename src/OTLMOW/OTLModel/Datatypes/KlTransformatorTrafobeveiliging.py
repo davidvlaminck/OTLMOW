@@ -11,19 +11,20 @@ class KlTransformatorTrafobeveiliging(KeuzelijstField):
     label = 'Transformator trafobeveiliging'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlTransformatorTrafobeveiliging'
     definition = 'Type transformatorbeveiliging.'
+    status = 'ingebruik'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlTransformatorTrafobeveiliging'
     options = {
         'gecombineerd': KeuzelijstWaarde(invulwaarde='gecombineerd',
                                          label='gecombineerd',
-                                         status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
+                                         status='ingebruik',
                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlTransformatorTrafobeveiliging/gecombineerd'),
         'overdruk': KeuzelijstWaarde(invulwaarde='overdruk',
                                      label='overdruk',
-                                     status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
+                                     status='ingebruik',
                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlTransformatorTrafobeveiliging/overdruk'),
         'overtemperatuur': KeuzelijstWaarde(invulwaarde='overtemperatuur',
                                             label='overtemperatuur',
-                                            status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
+                                            status='ingebruik',
                                             definitie='attributen invullen//',
                                             objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlTransformatorTrafobeveiliging/overtemperatuur')
     }

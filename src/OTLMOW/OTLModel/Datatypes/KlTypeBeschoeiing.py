@@ -11,16 +11,17 @@ class KlTypeBeschoeiing(KeuzelijstField):
     label = 'Type beschoeiing'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlTypeBeschoeiing'
     definition = 'Type beschoeiing.'
+    status = 'ingebruik'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlTypeBeschoeiing'
     options = {
         'Berliner': KeuzelijstWaarde(invulwaarde='Berliner',
                                      label='Berliner',
-                                     status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
+                                     status='ingebruik',
                                      definitie='Berliner',
                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlTypeBeschoeiing/Berliner'),
         'Krings': KeuzelijstWaarde(invulwaarde='Krings',
                                    label='Krings',
-                                   status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
+                                   status='ingebruik',
                                    definitie='Krings',
                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlTypeBeschoeiing/Krings')
     }

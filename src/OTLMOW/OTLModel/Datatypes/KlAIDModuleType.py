@@ -10,6 +10,7 @@ class KlAIDModuleType(KeuzelijstField):
     label = 'AID-module type'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlAIDModuleType'
     definition = 'Het type van de AID-module.'
+    status = 'ingebruik'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlAIDModuleType'
     options = {
     }

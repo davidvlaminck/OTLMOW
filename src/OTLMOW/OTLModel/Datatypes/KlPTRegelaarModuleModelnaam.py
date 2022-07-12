@@ -10,6 +10,7 @@ class KlPTRegelaarModuleModelnaam(KeuzelijstField):
     label = 'PT regelaarmodule modelnaam'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#KlPTRegelaarModuleModelnaam'
     definition = 'Keuzelijst met modelnamen voor PTRegelaarModule.'
+    status = 'ingebruik'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlPTRegelaarModuleModelnaam'
     options = {
     }

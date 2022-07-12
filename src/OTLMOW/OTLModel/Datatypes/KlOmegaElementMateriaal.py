@@ -11,21 +11,22 @@ class KlOmegaElementMateriaal(KeuzelijstField):
     label = 'Omega element materiaal'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlOmegaElementMateriaal'
     definition = 'De gebruikte materialen van het omega-element.'
+    status = 'ingebruik'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlOmegaElementMateriaal'
     options = {
         'aluminium': KeuzelijstWaarde(invulwaarde='aluminium',
                                       label='aluminium',
-                                      status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
+                                      status='ingebruik',
                                       definitie='Omega-element vervaarigd uit aluminium.',
                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOmegaElementMateriaal/aluminium'),
         'roestvrij-staal': KeuzelijstWaarde(invulwaarde='roestvrij-staal',
                                             label='roestvrij staal',
-                                            status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
+                                            status='ingebruik',
                                             definitie='Omega-element vervaarigd uit roestvrij staal.',
                                             objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOmegaElementMateriaal/roestvrij-staal'),
         'verzinkt-staal': KeuzelijstWaarde(invulwaarde='verzinkt-staal',
                                            label='verzinkt staal',
-                                           status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
+                                           status='ingebruik',
                                            definitie='Omega-element vervaarigd uit verzinkt staal.',
                                            objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOmegaElementMateriaal/verzinkt-staal')
     }

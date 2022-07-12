@@ -10,6 +10,7 @@ class KlRadarModelnaam(KeuzelijstField):
     label = 'Radar modelnaam'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlRadarModelnaam'
     definition = 'Keuzelijst met modelnamen voor Radar.'
+    status = 'ingebruik'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlRadarModelnaam'
     options = {
     }

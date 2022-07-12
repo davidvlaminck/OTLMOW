@@ -10,6 +10,7 @@ class KlAntenneModelnaam(KeuzelijstField):
     label = 'Antenne modelnaam'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlAntenneModelnaam'
     definition = 'Keuzelijst met modelnamen voor Antenne.'
+    status = 'ingebruik'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlAntenneModelnaam'
     options = {
     }

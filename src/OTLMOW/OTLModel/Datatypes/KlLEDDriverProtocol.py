@@ -11,19 +11,20 @@ class KlLEDDriverProtocol(KeuzelijstField):
     label = 'LED stuurprotocol'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlLEDDriverProtocol'
     definition = "Protocol gebruikt door de LED driver voor het aansturen van de LED's."
+    status = 'ingebruik'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlLEDDriverProtocol'
     options = {
         '1-10v': KeuzelijstWaarde(invulwaarde='1-10v',
                                   label='1-10v',
-                                  status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
+                                  status='ingebruik',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLEDDriverProtocol/1-10v'),
         'dali': KeuzelijstWaarde(invulwaarde='dali',
                                  label='dali',
-                                 status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
+                                 status='ingebruik',
                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLEDDriverProtocol/dali'),
         'daliv2': KeuzelijstWaarde(invulwaarde='daliv2',
                                    label='daliv2',
-                                   status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
+                                   status='ingebruik',
                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLEDDriverProtocol/daliv2')
     }
 

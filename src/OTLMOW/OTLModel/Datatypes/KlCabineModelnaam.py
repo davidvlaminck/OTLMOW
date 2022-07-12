@@ -10,6 +10,7 @@ class KlCabineModelnaam(KeuzelijstField):
     label = 'Cabine modelnaam'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlCabineModelnaam'
     definition = 'Modelnamen voor cabines.'
+    status = 'ingebruik'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlCabineModelnaam'
     options = {
     }

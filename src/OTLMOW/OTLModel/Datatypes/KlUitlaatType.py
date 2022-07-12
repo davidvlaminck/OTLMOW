@@ -11,16 +11,17 @@ class KlUitlaatType(KeuzelijstField):
     label = 'Uitlaat type'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlUitlaatType'
     definition = 'De verschillende types van uitlaat.'
+    status = 'ingebruik'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlUitlaatType'
     options = {
         'inlaat': KeuzelijstWaarde(invulwaarde='inlaat',
                                    label='inlaat',
-                                   status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
+                                   status='ingebruik',
                                    definitie='locatie waar water van een open profiel naar een inbuizing overgaat',
                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlUitlaatType/inlaat'),
         'uitlaat': KeuzelijstWaarde(invulwaarde='uitlaat',
                                     label='uitlaat',
-                                    status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
+                                    status='ingebruik',
                                     definitie='locatie waar water van een inbuizing naar een open profiel overgaat',
                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlUitlaatType/uitlaat')
     }

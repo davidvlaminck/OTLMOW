@@ -11,15 +11,16 @@ class KlKabelnettoegangNetwerksoort(KeuzelijstField):
     label = 'Kabelnet toegang netwerksoort'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlKabelnettoegangNetwerksoort'
     definition = 'Lijst van netwerktypes die bereikbaar is via het kabelnet toegangspunt.'
+    status = 'ingebruik'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlKabelnettoegangNetwerksoort'
     options = {
         'Cu': KeuzelijstWaarde(invulwaarde='Cu',
                                label='Cu',
-                               status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
+                               status='ingebruik',
                                objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlKabelnettoegangNetwerksoort/Cu'),
         'FO': KeuzelijstWaarde(invulwaarde='FO',
                                label='FO',
-                               status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
+                               status='ingebruik',
                                objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlKabelnettoegangNetwerksoort/FO')
     }
 

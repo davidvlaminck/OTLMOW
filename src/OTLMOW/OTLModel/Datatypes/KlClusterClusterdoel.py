@@ -11,15 +11,16 @@ class KlClusterClusterdoel(KeuzelijstField):
     label = 'Cluster clusterdoel'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlClusterClusterdoel'
     definition = 'De reden waarom de custer is opgezet.'
+    status = 'ingebruik'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlClusterClusterdoel'
     options = {
         'groeperen-resources': KeuzelijstWaarde(invulwaarde='groeperen-resources',
                                                 label='groeperen resources',
-                                                status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
+                                                status='ingebruik',
                                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlClusterClusterdoel/groeperen-resources'),
         'redundantie': KeuzelijstWaarde(invulwaarde='redundantie',
                                         label='redundantie',
-                                        status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
+                                        status='ingebruik',
                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlClusterClusterdoel/redundantie')
     }
 

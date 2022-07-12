@@ -10,6 +10,7 @@ class KlPoEInjectorModelnaam(KeuzelijstField):
     label = 'Power over ethernet injector modelnaam'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlPoEInjectorModelnaam'
     definition = 'De modelnaam van de PoE-injector.'
+    status = 'ingebruik'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlPoEInjectorModelnaam'
     options = {
     }

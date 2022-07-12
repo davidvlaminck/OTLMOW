@@ -10,6 +10,7 @@ class KlIpPowerSwitchType(KeuzelijstField):
     label = 'IP powerswitch type'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlIpPowerSwitchType'
     definition = 'Type van de IP powerswitch.'
+    status = 'ingebruik'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlIpPowerSwitchType'
     options = {
     }

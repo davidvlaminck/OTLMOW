@@ -10,6 +10,7 @@ class KlKabelFabrikant(KeuzelijstField):
     label = 'Kabel fabrikant'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#KlKabelFabrikant'
     definition = 'Lijst met producenten van kabels.'
+    status = 'ingebruik'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlKabelFabrikant'
     options = {
     }

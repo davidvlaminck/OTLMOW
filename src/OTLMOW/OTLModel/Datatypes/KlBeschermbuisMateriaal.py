@@ -11,23 +11,24 @@ class KlBeschermbuisMateriaal(KeuzelijstField):
     label = 'Beschermbuis materiaal'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlBeschermbuisMateriaal'
     definition = 'Keuzelijst voor het bepalen van het materiaal van de beschermbuis.'
+    status = 'ingebruik'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlBeschermbuisMateriaal'
     options = {
         'hdpe': KeuzelijstWaarde(invulwaarde='hdpe',
                                  label='HDPE',
-                                 status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
+                                 status='ingebruik',
                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBeschermbuisMateriaal/hdpe'),
         'hdpe-pn10': KeuzelijstWaarde(invulwaarde='hdpe-pn10',
                                       label='HDPE PN10',
-                                      status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
+                                      status='ingebruik',
                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBeschermbuisMateriaal/hdpe-pn10'),
         'pvc': KeuzelijstWaarde(invulwaarde='pvc',
                                 label='PVC',
-                                status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
+                                status='ingebruik',
                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBeschermbuisMateriaal/pvc'),
         'rvs': KeuzelijstWaarde(invulwaarde='rvs',
                                 label='RVS',
-                                status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
+                                status='ingebruik',
                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBeschermbuisMateriaal/rvs')
     }
 

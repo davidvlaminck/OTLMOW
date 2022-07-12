@@ -11,16 +11,17 @@ class KlMasttypePunctueleVerlichting(KeuzelijstField):
     label = 'Masttype voor punctuele verlichting'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlMasttypePunctueleVerlichting'
     definition = 'Het type van de mast voor punctuele verlichting.'
+    status = 'ingebruik'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlMasttypePunctueleVerlichting'
     options = {
         'mt': KeuzelijstWaarde(invulwaarde='mt',
                                label='MT',
-                               status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
+                               status='ingebruik',
                                definitie='Metalen galgmast voor punctuele verlichting met inplantingsstuk.',
                                objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlMasttypePunctueleVerlichting/mt'),
         'mts': KeuzelijstWaarde(invulwaarde='mts',
                                 label='MTS',
-                                status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
+                                status='ingebruik',
                                 definitie='Metalen galgmast voor punctuele verlichting op voetplaat.',
                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlMasttypePunctueleVerlichting/mts')
     }

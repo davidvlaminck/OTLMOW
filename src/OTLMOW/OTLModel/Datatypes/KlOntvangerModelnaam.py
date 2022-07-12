@@ -10,6 +10,7 @@ class KlOntvangerModelnaam(KeuzelijstField):
     label = 'ontvanger modelnaam'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlOntvangerModelnaam'
     definition = 'Keuzelijst met modelnamen voor Ontvanger.'
+    status = 'ingebruik'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlOntvangerModelnaam'
     options = {
     }

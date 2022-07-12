@@ -11,21 +11,22 @@ class KlAardWBSS(KeuzelijstField):
     label = 'Aard van waterdoorlatende betonstraatsteen'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlAardWBSS'
     definition = 'De mogelijke vormen die ervoor zorgen dat hemelwater infiltreert langs de waterdoorlatende betonstraatsteen.'
+    status = 'ingebruik'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlAardWBSS'
     options = {
         'met-drainageopeningen': KeuzelijstWaarde(invulwaarde='met-drainageopeningen',
                                                   label='met drainageopeningen',
-                                                  status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
+                                                  status='ingebruik',
                                                   definitie='Vorm voor waterdoorlatende betonstraatsteen waarbij hemelwater infiltreert langs de betonstraatsteen.',
                                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAardWBSS/met-drainageopeningen'),
         'met-verbrede-voegen': KeuzelijstWaarde(invulwaarde='met-verbrede-voegen',
                                                 label='met verbrede voegen',
-                                                status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
+                                                status='ingebruik',
                                                 definitie='Vorm voor waterdoorlatende betonstraatsteen waarbij hemelwater infiltreert langs de betonstraatsteen.',
                                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAardWBSS/met-verbrede-voegen'),
         'poreus-beton': KeuzelijstWaarde(invulwaarde='poreus-beton',
                                          label='poreus beton',
-                                         status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
+                                         status='ingebruik',
                                          definitie='Vorm voor waterdoorlatende betonstraatsteen waarbij hemelwater infiltreert doorheen de betonstraatsteen.',
                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAardWBSS/poreus-beton')
     }

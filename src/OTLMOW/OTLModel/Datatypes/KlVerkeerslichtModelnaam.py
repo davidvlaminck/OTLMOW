@@ -10,6 +10,7 @@ class KlVerkeerslichtModelnaam(KeuzelijstField):
     label = 'verkeerslicht modelnaam'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#KlVerkeerslichtModelnaam'
     definition = 'Keuzelijst met modelnamen voor Verkeerslicht.'
+    status = 'ingebruik'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlVerkeerslichtModelnaam'
     options = {
     }

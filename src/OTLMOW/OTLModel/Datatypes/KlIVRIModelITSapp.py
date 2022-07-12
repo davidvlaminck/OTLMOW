@@ -11,11 +11,12 @@ class KlIVRIModelITSapp(KeuzelijstField):
     label = 'iVRIModelITSapp'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlIVRIModelITSapp'
     definition = 'De modelnaam van de ITSapp.'
+    status = 'ingebruik'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlIVRIModelITSapp'
     options = {
         'imflow': KeuzelijstWaarde(invulwaarde='imflow',
                                    label='Imflow',
-                                   status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
+                                   status='ingebruik',
                                    definitie='Imflow',
                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlIVRIModelITSapp/imflow')
     }

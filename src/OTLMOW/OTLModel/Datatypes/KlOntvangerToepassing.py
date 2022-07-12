@@ -11,23 +11,24 @@ class KlOntvangerToepassing(KeuzelijstField):
     label = 'Ontvanger toepassing'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlOntvangerToepassing'
     definition = 'Keuzelijst met modelnamen voor OntvangerToepassing.'
+    status = 'ingebruik'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlOntvangerToepassing'
     options = {
         'GPRS': KeuzelijstWaarde(invulwaarde='GPRS',
                                  label='GPRS',
-                                 status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
+                                 status='ingebruik',
                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOntvangerToepassing/GPRS'),
         'GSM': KeuzelijstWaarde(invulwaarde='GSM',
                                 label='GSM',
-                                status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
+                                status='ingebruik',
                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOntvangerToepassing/GSM'),
         'KAR': KeuzelijstWaarde(invulwaarde='KAR',
                                 label='KAR',
-                                status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
+                                status='ingebruik',
                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOntvangerToepassing/KAR'),
         'WIFI': KeuzelijstWaarde(invulwaarde='WIFI',
                                  label='WIFI',
-                                 status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
+                                 status='ingebruik',
                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOntvangerToepassing/WIFI')
     }
 

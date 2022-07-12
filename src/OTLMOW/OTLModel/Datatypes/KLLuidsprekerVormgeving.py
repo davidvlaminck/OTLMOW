@@ -10,6 +10,7 @@ class KLLuidsprekerVormgeving(KeuzelijstField):
     label = 'Luidspreker vormgeving'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KLLuidsprekerVormgeving'
     definition = 'Types luidspreker volgens hun vormfactor.'
+    status = 'ingebruik'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KLLuidsprekerVormgeving'
     options = {
     }

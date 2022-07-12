@@ -11,15 +11,16 @@ class KlPoortconfiguratieRichting(KeuzelijstField):
     label = 'Poortconfiguratie richting'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlPoortconfiguratieRichting'
     definition = 'De richting waarin de poort openstaat.'
+    status = 'ingebruik'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlPoortconfiguratieRichting'
     options = {
         'ingaand': KeuzelijstWaarde(invulwaarde='ingaand',
                                     label='ingaand',
-                                    status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
+                                    status='ingebruik',
                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlPoortconfiguratieRichting/ingaand'),
         'uitgaand': KeuzelijstWaarde(invulwaarde='uitgaand',
                                      label='uitgaand',
-                                     status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
+                                     status='ingebruik',
                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlPoortconfiguratieRichting/uitgaand')
     }
 

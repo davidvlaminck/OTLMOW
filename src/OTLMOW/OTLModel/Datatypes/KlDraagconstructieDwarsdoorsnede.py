@@ -11,19 +11,20 @@ class KlDraagconstructieDwarsdoorsnede(KeuzelijstField):
     label = 'Draagconstructie dwarsdoorsnede'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlDraagconstructieDwarsdoorsnede'
     definition = 'Lijst van mogelijke vormen van dwarsdoorsnedes van een draagconstructie.'
+    status = 'ingebruik'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlDraagconstructieDwarsdoorsnede'
     options = {
         'octagonaal': KeuzelijstWaarde(invulwaarde='octagonaal',
                                        label='octagonaal',
-                                       status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
+                                       status='ingebruik',
                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlDraagconstructieDwarsdoorsnede/octagonaal'),
         'rond': KeuzelijstWaarde(invulwaarde='rond',
                                  label='rond',
-                                 status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
+                                 status='ingebruik',
                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlDraagconstructieDwarsdoorsnede/rond'),
         'vierkant': KeuzelijstWaarde(invulwaarde='vierkant',
                                      label='vierkant',
-                                     status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
+                                     status='ingebruik',
                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlDraagconstructieDwarsdoorsnede/vierkant')
     }
 

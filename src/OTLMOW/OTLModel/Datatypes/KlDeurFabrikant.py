@@ -10,6 +10,7 @@ class KlDeurFabrikant(KeuzelijstField):
     label = 'Deur fabrikant'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#KlDeurFabrikant'
     definition = 'Lijst van fabrikanten van deuren.'
+    status = 'ingebruik'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlDeurFabrikant'
     options = {
     }

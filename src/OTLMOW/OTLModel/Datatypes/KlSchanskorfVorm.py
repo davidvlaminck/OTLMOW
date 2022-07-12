@@ -11,16 +11,17 @@ class KlSchanskorfVorm(KeuzelijstField):
     label = 'Schanskorf vorm'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlSchanskorfVorm'
     definition = 'Vormen van schanskorven.'
+    status = 'ingebruik'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlSchanskorfVorm'
     options = {
         'in-blokvorm': KeuzelijstWaarde(invulwaarde='in-blokvorm',
                                         label='in blokvorm',
-                                        status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
+                                        status='ingebruik',
                                         definitie='in blokvorm',
                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlSchanskorfVorm/in-blokvorm'),
         'in-matrasvorm': KeuzelijstWaarde(invulwaarde='in-matrasvorm',
                                           label='in matrasvorm',
-                                          status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
+                                          status='ingebruik',
                                           definitie='in matrasvorm',
                                           objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlSchanskorfVorm/in-matrasvorm')
     }

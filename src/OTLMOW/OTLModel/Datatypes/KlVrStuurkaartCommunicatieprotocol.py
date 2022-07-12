@@ -11,19 +11,20 @@ class KlVrStuurkaartCommunicatieprotocol(KeuzelijstField):
     label = 'VRI-communicatieprotocol'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlVrStuurkaartCommunicatieprotocol'
     definition = 'Keuzelist met de voorkomende communicatieprotocollen voor VRIstuurkaarten.'
+    status = 'ingebruik'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlVrStuurkaartCommunicatieprotocol'
     options = {
         'canto': KeuzelijstWaarde(invulwaarde='canto',
                                   label='canto',
-                                  status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
+                                  status='ingebruik',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVrStuurkaartCommunicatieprotocol/canto'),
         'gecombineerd': KeuzelijstWaarde(invulwaarde='gecombineerd',
                                          label='gecombineerd',
-                                         status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
+                                         status='ingebruik',
                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVrStuurkaartCommunicatieprotocol/gecombineerd'),
         'ocit': KeuzelijstWaarde(invulwaarde='ocit',
                                  label='ocit',
-                                 status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
+                                 status='ingebruik',
                                  definitie='nog in te vullen',
                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVrStuurkaartCommunicatieprotocol/ocit')
     }

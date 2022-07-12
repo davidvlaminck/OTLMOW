@@ -10,6 +10,7 @@ class KlHoogtedetectieMerk(KeuzelijstField):
     label = 'Hoogtedetectie merk'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlHoogtedetectieMerk'
     definition = 'Keuzelijst met de gangbare merken van hoogtedetectiesystemen. De merken verwijzen doorgaans naar de fabrikant of leverancier.'
+    status = 'ingebruik'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlHoogtedetectieMerk'
     options = {
     }

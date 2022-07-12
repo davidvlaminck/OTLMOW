@@ -11,16 +11,17 @@ class KlKopmuurMateriaal(KeuzelijstField):
     label = 'Kopmuur materiaal'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlKopmuurMateriaal'
     definition = 'Materialen van de kopmuur.'
+    status = 'ingebruik'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlKopmuurMateriaal'
     options = {
         'beton': KeuzelijstWaarde(invulwaarde='beton',
                                   label='beton',
-                                  status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
+                                  status='ingebruik',
                                   definitie='beton',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlKopmuurMateriaal/beton'),
         'metselwerk': KeuzelijstWaarde(invulwaarde='metselwerk',
                                        label='metselwerk',
-                                       status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
+                                       status='ingebruik',
                                        definitie='metselwerk',
                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlKopmuurMateriaal/metselwerk')
     }

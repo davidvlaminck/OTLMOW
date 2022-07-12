@@ -10,6 +10,7 @@ class KlGPUModelnaam(KeuzelijstField):
     label = 'GPU modelnaam'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlGPUModelnaam'
     definition = 'De modelnaam van de GPU.'
+    status = 'ingebruik'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlGPUModelnaam'
     options = {
     }

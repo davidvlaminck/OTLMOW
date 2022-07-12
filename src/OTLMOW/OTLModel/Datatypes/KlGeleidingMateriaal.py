@@ -11,21 +11,22 @@ class KlGeleidingMateriaal(KeuzelijstField):
     label = 'Geleiding materiaal'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlGeleidingMateriaal'
     definition = 'Materialen voor de geleidingwand om kleinere wilde dieren te geleiden.'
+    status = 'ingebruik'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlGeleidingMateriaal'
     options = {
         'beton': KeuzelijstWaarde(invulwaarde='beton',
                                   label='beton',
-                                  status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
+                                  status='ingebruik',
                                   definitie='Geleiding bestaande uit een betonnen wand.',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlGeleidingMateriaal/beton'),
         'kunststof': KeuzelijstWaarde(invulwaarde='kunststof',
                                       label='kunststof',
-                                      status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
+                                      status='ingebruik',
                                       definitie='Geleiding bestaande uit een kunststoffen wand.',
                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlGeleidingMateriaal/kunststof'),
         'metaal': KeuzelijstWaarde(invulwaarde='metaal',
                                    label='metaal',
-                                   status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
+                                   status='ingebruik',
                                    definitie='Geleiding bestaande uit een metalen wand.',
                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlGeleidingMateriaal/metaal')
     }

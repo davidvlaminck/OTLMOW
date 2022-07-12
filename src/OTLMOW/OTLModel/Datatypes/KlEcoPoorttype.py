@@ -11,16 +11,17 @@ class KlEcoPoorttype(KeuzelijstField):
     label = 'Poorttype'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlEcoPoorttype'
     definition = 'Types van de poort.'
+    status = 'ingebruik'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlEcoPoorttype'
     options = {
         'dubbel': KeuzelijstWaarde(invulwaarde='dubbel',
                                    label='dubbel',
-                                   status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
+                                   status='ingebruik',
                                    definitie='Een dubble poort.',
                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlEcoPoorttype/dubbel'),
         'enkel': KeuzelijstWaarde(invulwaarde='enkel',
                                   label='enkel',
-                                  status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
+                                  status='ingebruik',
                                   definitie='Een enkele poort.',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlEcoPoorttype/enkel')
     }

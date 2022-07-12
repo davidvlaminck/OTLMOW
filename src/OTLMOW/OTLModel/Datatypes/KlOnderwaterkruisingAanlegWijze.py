@@ -11,21 +11,22 @@ class KlOnderwaterkruisingAanlegWijze(KeuzelijstField):
     label = 'Onderwaterkruising aanleg wijze'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlOnderwaterkruisingAanlegWijze'
     definition = 'Lijst met mogelijke manieren van aanleg waarmee onderwaterkruisingen kunnen gerealiseerd worden.'
+    status = 'ingebruik'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlOnderwaterkruisingAanlegWijze'
     options = {
         'ingegoten-in-sluis': KeuzelijstWaarde(invulwaarde='ingegoten-in-sluis',
                                                label='ingegoten in sluis',
-                                               status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
+                                               status='ingebruik',
                                                definitie='Buizen in een sleuf aangestort met beton, in de deurnis, drempel of sluisvloer.',
                                                objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOnderwaterkruisingAanlegWijze/ingegoten-in-sluis'),
         'ingegraven': KeuzelijstWaarde(invulwaarde='ingegraven',
                                        label='ingegraven',
-                                       status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
+                                       status='ingebruik',
                                        definitie='Buizen in een sleuf in de bodem van een waterweg die vervolgens terug aangestort wordt met specie.',
                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOnderwaterkruisingAanlegWijze/ingegraven'),
         'met-zandzakken-vastgelegd': KeuzelijstWaarde(invulwaarde='met-zandzakken-vastgelegd',
                                                       label='met zandzakken vastgelegd',
-                                                      status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
+                                                      status='ingebruik',
                                                       definitie='Buizen in of op de bodem van een waterweg die afgedekt worden met gewicht in de vorm van zandzakken, grote metalen stukken of arduinen blokken.',
                                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlOnderwaterkruisingAanlegWijze/met-zandzakken-vastgelegd')
     }

@@ -11,16 +11,17 @@ class KlWalsmethode(KeuzelijstField):
     label = 'Walsmethode'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KlWalsmethode'
     definition = 'De manier waarop het staal is gewalst.'
+    status = 'ingebruik'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlWalsmethode'
     options = {
         'koud': KeuzelijstWaarde(invulwaarde='koud',
                                  label='Koud',
-                                 status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
+                                 status='ingebruik',
                                  definitie='Staal die bij omgevingstemperatuur wordt gevormd (getrokken) uit warmgewalst staal.',
                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlWalsmethode/koud'),
         'warm': KeuzelijstWaarde(invulwaarde='warm',
                                  label='Warm',
-                                 status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
+                                 status='ingebruik',
                                  definitie='Heet staal wordt vervormd onder druk van persen en walsen.',
                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlWalsmethode/warm')
     }

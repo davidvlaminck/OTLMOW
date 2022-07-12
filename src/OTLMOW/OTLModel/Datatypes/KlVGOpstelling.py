@@ -11,21 +11,22 @@ class KlVGOpstelling(KeuzelijstField):
     label = 'Vlak geluidschermelement opstelling'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlVGOpstelling'
     definition = 'Beschrijft de oriëntatie van het geplaatste schermelement tov de weg. De oriëntatie van vlakke schermen kan naast loodrecht op het maaiveld ook schuin naar achter hellend of schuin naar voor hellend zijn.'
+    status = 'ingebruik'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlVGOpstelling'
     options = {
         'loodrecht-op-maaiveld': KeuzelijstWaarde(invulwaarde='loodrecht-op-maaiveld',
                                                   label='loodrecht op maaiveld',
-                                                  status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
+                                                  status='ingebruik',
                                                   definitie='loodrecht op maaiveld',
                                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVGOpstelling/loodrecht-op-maaiveld'),
         'schuin-naar-achter-hellend': KeuzelijstWaarde(invulwaarde='schuin-naar-achter-hellend',
                                                        label='schuin naar achter hellend',
-                                                       status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
+                                                       status='ingebruik',
                                                        definitie='schuin naar achter hellend t.o.v. de weg',
                                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVGOpstelling/schuin-naar-achter-hellend'),
         'schuin-naar-voor-hellend': KeuzelijstWaarde(invulwaarde='schuin-naar-voor-hellend',
                                                      label='schuin naar voor hellend',
-                                                     status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
+                                                     status='ingebruik',
                                                      definitie='schuin naar voor hellend t.o.v. de weg',
                                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVGOpstelling/schuin-naar-voor-hellend')
     }

@@ -11,19 +11,20 @@ class KlEMDraagconstructieElekBeveiliging(KeuzelijstField):
     label = 'EM-draagconstructie elektrische beveiliging'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#KlEMDraagconstructieElekBeveiliging'
     definition = 'Type elektrische beveiliging aanwezig in de draagconstructie.'
+    status = 'ingebruik'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlEMDraagconstructieElekBeveiliging'
     options = {
         'automaat': KeuzelijstWaarde(invulwaarde='automaat',
                                      label='automaat',
-                                     status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
+                                     status='ingebruik',
                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlEMDraagconstructieElekBeveiliging/automaat'),
         'differentieelautomaat': KeuzelijstWaarde(invulwaarde='differentieelautomaat',
                                                   label='differentieelautomaat',
-                                                  status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
+                                                  status='ingebruik',
                                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlEMDraagconstructieElekBeveiliging/differentieelautomaat'),
         'smeltzekering': KeuzelijstWaarde(invulwaarde='smeltzekering',
                                           label='smeltzekering',
-                                          status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
+                                          status='ingebruik',
                                           objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlEMDraagconstructieElekBeveiliging/smeltzekering')
     }
 

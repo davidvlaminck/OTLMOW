@@ -10,6 +10,7 @@ class KlDynBordExternePUMerk(KeuzelijstField):
     label = 'Keuzelijst met merknamen van externe PUs'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlDynBordExternePUMerk'
     definition = 'Keuzelijst met merknamen van externe PUs.'
+    status = 'ingebruik'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlDynBordExternePUMerk'
     options = {
     }

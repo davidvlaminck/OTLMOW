@@ -11,21 +11,22 @@ class KlUitvoeringsmethode(KeuzelijstField):
     label = 'Uitvoeringsmethode'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#KlUitvoeringsmethode'
     definition = 'Manier van uitvoeren en aanbrengen van beton.'
+    status = 'ingebruik'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlUitvoeringsmethode'
     options = {
         'geprefabriceerd': KeuzelijstWaarde(invulwaarde='geprefabriceerd',
                                             label='Geprefabriceerd',
-                                            status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
+                                            status='ingebruik',
                                             definitie='Het beton is geprefabriceerd.',
                                             objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlUitvoeringsmethode/geprefabriceerd'),
         'ter-plaatse-gestort-met-bekisting': KeuzelijstWaarde(invulwaarde='ter-plaatse-gestort-met-bekisting',
                                                               label='Ter plaatse gestort met bekisting',
-                                                              status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
+                                                              status='ingebruik',
                                                               definitie='Het beton wordt ter plaatste gestort met bekisting.',
                                                               objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlUitvoeringsmethode/ter-plaatse-gestort-met-bekisting'),
         'ter-plaatse-gestort-zonder-bekisting': KeuzelijstWaarde(invulwaarde='ter-plaatse-gestort-zonder-bekisting',
                                                                  label='Ter plaatse gestort zonder bekisting',
-                                                                 status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
+                                                                 status='ingebruik',
                                                                  definitie='Het beton wordt ter plaatste gestort zonder bekisting.',
                                                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlUitvoeringsmethode/ter-plaatse-gestort-zonder-bekisting')
     }

@@ -11,16 +11,17 @@ class KlLEACSnelheidsklasse(KeuzelijstField):
     label = 'Snelheidsklasse'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlLEACSnelheidsklasse'
     definition = 'De verschillende snelheidsklasses van afschermende constructies.'
+    status = 'ingebruik'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlLEACSnelheidsklasse'
     options = {
         'C60': KeuzelijstWaarde(invulwaarde='C60',
                                 label='C60',
-                                status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
+                                status='ingebruik',
                                 definitie='Getest bij 60 km/h',
                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLEACSnelheidsklasse/C60'),
         'C70': KeuzelijstWaarde(invulwaarde='C70',
                                 label='C70',
-                                status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
+                                status='ingebruik',
                                 definitie='Getest bij 70 km/h',
                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLEACSnelheidsklasse/C70')
     }

@@ -11,16 +11,17 @@ class KlVegetatiePlantverband(KeuzelijstField):
     label = 'Vegetatie plantverband'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlVegetatiePlantverband'
     definition = 'De verschillende opties voor het plantverband.'
+    status = 'ingebruik'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlVegetatiePlantverband'
     options = {
         'geschrankt': KeuzelijstWaarde(invulwaarde='geschrankt',
                                        label='geschrankt',
-                                       status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
+                                       status='ingebruik',
                                        definitie='De planten staan geschrankt',
                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVegetatiePlantverband/geschrankt'),
         'rijafstand': KeuzelijstWaarde(invulwaarde='rijafstand',
                                        label='rijafstand',
-                                       status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
+                                       status='ingebruik',
                                        definitie='De afstand tussen de rijen',
                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVegetatiePlantverband/rijafstand')
     }

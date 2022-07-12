@@ -10,6 +10,7 @@ class KlBrandhaspelMerk(KeuzelijstField):
     label = 'Brandhaspel merk'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlBrandhaspelMerk'
     definition = 'Het merk van de brandhaspel.'
+    status = 'ingebruik'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlBrandhaspelMerk'
     options = {
     }

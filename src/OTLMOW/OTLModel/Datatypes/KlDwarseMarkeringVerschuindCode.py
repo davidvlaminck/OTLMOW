@@ -11,11 +11,12 @@ class KlDwarseMarkeringVerschuindCode(KeuzelijstField):
     label = 'Dwarse markering code verschuind'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlDwarseMarkeringVerschuindCode'
     definition = 'Codes van de schuine dwarse markering.'
+    status = 'ingebruik'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlDwarseMarkeringVerschuindCode'
     options = {
         'FOP-sch': KeuzelijstWaarde(invulwaarde='FOP-sch',
                                     label='FOP-sch',
-                                    status='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik',
+                                    status='ingebruik',
                                     definitie='Fietsoversteekplaats met blokken schuin',
                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlDwarseMarkeringVerschuindCode/FOP-sch')
     }

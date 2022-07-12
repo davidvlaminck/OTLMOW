@@ -10,6 +10,7 @@ class KlDrukknopMerk(KeuzelijstField):
     label = 'Drukknop merk'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlDrukknopMerk'
     definition = 'Keuzelijst met merknamen voor Drukknop.'
+    status = 'ingebruik'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlDrukknopMerk'
     options = {
     }

@@ -11,14 +11,17 @@ class KlCalamiteitsbordVorm(KeuzelijstField):
     label = 'Calamiteitsbord vorm'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlCalamiteitsbordVorm'
     definition = 'Vormen van het calamiteitsbord.'
+    status = 'ingebruik'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlCalamiteitsbordVorm'
     options = {
         'rechthoekig': KeuzelijstWaarde(invulwaarde='rechthoekig',
                                         label='rechthoekig',
+                                        status='ingebruik',
                                         definitie='Een rechthoekig calamiteitsbord.',
                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlCalamiteitsbordVorm/rechthoekig'),
         'ruitvormig': KeuzelijstWaarde(invulwaarde='ruitvormig',
                                        label='ruitvormig',
+                                       status='ingebruik',
                                        definitie='Een ruitvormig calamiteitsbord.',
                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlCalamiteitsbordVorm/ruitvormig')
     }

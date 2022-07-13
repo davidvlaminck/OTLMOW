@@ -10,6 +10,7 @@ class KlCodeklavierMerk(KeuzelijstField):
     label = 'Codeklavier merk'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlCodeklavierMerk'
     definition = 'Het merk van het codeklavier.'
+    status = 'ingebruik'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlCodeklavierMerk'
     options = {
     }

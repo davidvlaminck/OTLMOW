@@ -1,5 +1,6 @@
 import copy
 
+from OTLMOW.Facility.DotnotationHelper import DotnotationHelper
 from OTLMOW.Facility.GenericHelper import GenericHelper
 from OTLMOW.OTLModel.Classes.ImplementatieElement.AIMObject import AIMObject
 
@@ -110,7 +111,12 @@ class CsvExporter:
                             data_row.insert(index, None)
 
             index = self.csv_headers.index(attribute)
-            values_list[index] = value
+
+            if isinstance(value, list):
+                value = self.fix_cardinality_value(aim_object, attribute)
+                values_list[index] = value
+            else:
+                values_list[index] = value
 
         return values_list
 
@@ -132,10 +138,11 @@ class CsvExporter:
         return headers
 
     def create_data_lines_from_data(self, csv_data, delimiter):
+        csv_data_lines = []
         for index, row in enumerate(csv_data):
             row = self.stringify_list(row, self.settings['dotnotation']['cardinality separator'])
-            csv_data[index] = delimiter.join(row)
-        return csv_data
+            csv_data_lines.append(delimiter.join(row))
+        return csv_data_lines
 
     @staticmethod
     def stringify_list(row: list, cardinality_seperator: str = '|'):
@@ -147,7 +154,16 @@ class CsvExporter:
                     if len(item) == 0:
                         row[index] = ''
                     else:
-                        row[index] = cardinality_seperator.join(item)
+                        item_string = ''
+                        for item_element in item:
+                            if item_element is None:
+                                item_string += cardinality_seperator
+                            elif isinstance(item_element, str):
+                                item_string += item_element + cardinality_seperator
+                            else:
+                                item_string += str(item_element) + cardinality_seperator
+                        item_string = item_string[:-1]
+                        row[index] = item_string
                 else:
                     try:
                         row[index] = str(item)
@@ -180,3 +196,30 @@ class CsvExporter:
         headers.append(attribute)
         headers = self.sort_headers(headers)
         return headers.index(attribute)
+
+    def fix_cardinality_value(self, aim_object, attribute):
+        actual_attributes = DotnotationHelper.get_attributes_by_dotnotation(instance_or_attribute=aim_object,
+                                                                            dotnotation=attribute,
+                                                                            separator='.',
+                                                                            cardinality_indicator='[]',
+                                                                            waarde_shortcut_applicable=False)
+
+        if actual_attributes is None:
+            return []
+        if not isinstance(actual_attributes, list):
+            return actual_attributes.waarde
+
+        if self.settings['dotnotation']['waarde_shortcut_applicable']:
+            first_attr = actual_attributes[0]
+            if first_attr.field.waarde_shortcut_applicable:
+                values_list = []
+                for actual_attribute in actual_attributes:
+                    if actual_attribute.waarde is not None:
+                        values_list.append(actual_attribute.waarde.waarde)
+                    else:
+                        values_list.append(None)
+            else:
+                values_list = list(map(lambda x: x.waarde, actual_attributes))
+        else:
+            values_list = list(map(lambda x: x.waarde, actual_attributes))
+        return values_list

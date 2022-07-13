@@ -1,6 +1,6 @@
 import os
 import unittest
-
+import datetime
 
 from OTLMOW.Facility.FileFormats.CsvExporter import CsvExporter
 from OTLMOW.Facility.FileFormats.CsvImporter import CsvImporter
@@ -134,6 +134,7 @@ class CsvExporterTests(unittest.TestCase):
         list_of_objects[1].assetId.identificator = '1'
         list_of_objects[1].testBooleanField = False
         list_of_objects[1].testKeuzelijstMetKard = ['waarde-2']
+        list_of_objects[1].testDateField = datetime.date(2022, 2, 2)
         list_of_objects[1].testDecimalField = 2.5
         list_of_objects[1].testComplexType.testComplexType2.testStringField = 'string in complex veld binnenin complex veld'
 
@@ -147,9 +148,10 @@ class CsvExporterTests(unittest.TestCase):
             self.assertEqual('testComplexType.testComplexType2.testStringField', csv_data[0][4])
             self.assertEqual('testComplexType.testKwantWrd', csv_data[0][5])
             self.assertEqual('testComplexType.testStringField', csv_data[0][6])
-            self.assertEqual('testDecimalField', csv_data[0][7])
-            self.assertEqual('testKeuzelijst', csv_data[0][8])
-            self.assertEqual('testKeuzelijstMetKard[]', csv_data[0][9])
+            self.assertEqual('testDateField', csv_data[0][7])
+            self.assertEqual('testDecimalField', csv_data[0][8])
+            self.assertEqual('testKeuzelijst', csv_data[0][9])
+            self.assertEqual('testKeuzelijstMetKard[]', csv_data[0][10])
 
         with self.subTest('verify asset 1'):
             self.assertEqual('https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#AllCasesTestClass', csv_data[1][0])
@@ -159,9 +161,9 @@ class CsvExporterTests(unittest.TestCase):
             self.assertEqual(None, csv_data[1][4])
             self.assertEqual(2.0, csv_data[1][5])
             self.assertEqual('string in complex veld', csv_data[1][6])
-            self.assertEqual(1.0, csv_data[1][7])
-            self.assertEqual('waarde-1', csv_data[1][8])
-            self.assertEqual(None, csv_data[1][9])
+            self.assertEqual(1.0, csv_data[1][8])
+            self.assertEqual('waarde-1', csv_data[1][9])
+            self.assertEqual(None, csv_data[1][10])
 
         with self.subTest('verify asset 2'):
             self.assertEqual('https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#AllCasesTestClass', csv_data[2][0])
@@ -171,9 +173,10 @@ class CsvExporterTests(unittest.TestCase):
             self.assertEqual('string in complex veld binnenin complex veld', csv_data[2][4])
             self.assertEqual(None, csv_data[2][5])
             self.assertEqual(None, csv_data[2][6])
-            self.assertEqual(2.5, csv_data[2][7])
-            self.assertEqual(None, csv_data[2][8])
-            self.assertEqual(['waarde-2'], csv_data[2][9])
+            self.assertEqual('2022-02-02', csv_data[2][7])
+            self.assertEqual(2.5, csv_data[2][8])
+            self.assertEqual(None, csv_data[2][9])
+            self.assertEqual(['waarde-2'], csv_data[2][10])
 
     def test_create_data_from_objects_cardinality(self):
         otl_facility = self.set_up_facility()
@@ -243,3 +246,37 @@ class CsvExporterTests(unittest.TestCase):
 
         with self.subTest('verify data with different settings'):
             self.assertEqual(expected_line_asset_2, csv_data_lines[2])
+
+    def test_create_with_different_cardinality_among_subattributes(self):
+        otl_facility = self.set_up_facility()
+        exporter = CsvExporter(settings=otl_facility.settings)
+
+        list_of_objects = [AllCasesTestClass()]
+        list_of_objects[0].assetId.identificator = '0'
+        list_of_objects[0]._testComplexTypeMetKard.add_empty_value()
+        list_of_objects[0].testComplexTypeMetKard[0].testBooleanField = False
+        list_of_objects[0].testComplexTypeMetKard[0].testStringField = '1.1'
+        list_of_objects[0]._testComplexTypeMetKard.add_empty_value()
+        list_of_objects[0].testComplexTypeMetKard[1].testBooleanField = True
+        list_of_objects[0].testComplexTypeMetKard[1].testKwantWrd.waarde = 2.0
+        list_of_objects[0].testComplexTypeMetKard[1].testStringField = '1.2'
+        list_of_objects[0]._testComplexTypeMetKard.add_empty_value()
+        list_of_objects[0].testComplexTypeMetKard[2].testStringField = '1.3'
+
+        csv_data = exporter.create_data_from_objects(list_of_objects)
+
+        self.assertEqual('testComplexTypeMetKard[].testBooleanField', csv_data[0][3])
+        self.assertEqual('testComplexTypeMetKard[].testKwantWrd', csv_data[0][4])
+        self.assertEqual('testComplexTypeMetKard[].testStringField', csv_data[0][5])
+
+        self.assertListEqual([False, True, None], csv_data[1][3])
+        self.assertListEqual([None, 2.0, None], csv_data[1][4])
+        self.assertListEqual(['1.1', '1.2', '1.3'], csv_data[1][5])
+
+        csv_data_lines = exporter.create_data_lines_from_data(csv_data, ';')
+
+        expected = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#AllCasesTestClass;0;;False|True|;|2.0|;1.1|1.2|1.3'
+        self.assertEqual(expected, csv_data_lines[1])
+
+
+

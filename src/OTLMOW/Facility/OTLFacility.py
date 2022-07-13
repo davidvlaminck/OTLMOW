@@ -22,7 +22,6 @@ from OTLMOW.PostenMapping.PostenCreator import PostenCreator
 from OTLMOW.PostenMapping.PostenInMemoryCreator import PostenInMemoryCreator
 
 
-
 class OTLFacility:
     def __init__(self,
                  settings_path: str = '',

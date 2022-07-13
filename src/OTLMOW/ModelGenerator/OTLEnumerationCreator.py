@@ -132,9 +132,9 @@ class OTLEnumerationCreator(AbstractDatatypeCreator):
     def get_keuzelijstwaardes_from_graph(cls, g: Graph, env: str = default_environment):
         # get distinct set of subjects and remove the conceptschema subject
         distinct_subjects = set([str(url) for url in g.subjects()])
-        scheme = next(d for d in distinct_subjects if d.startswith('https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/'))
+        scheme = next((d for d in distinct_subjects if d.startswith('https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/')), None)
         if env == 'tei':
-            scheme = next(d for d in distinct_subjects if d.startswith('https://wegenenverkeer-test.data.vlaanderen.be/id/conceptscheme/'))
+            scheme = next((d for d in distinct_subjects if d.startswith('https://wegenenverkeer-test.data.vlaanderen.be/id/conceptscheme/')), None)
         distinct_subjects.remove(scheme)
         # loop through each triple in the graph by subject
         lijst_keuze_opties = []
@@ -161,9 +161,9 @@ class OTLEnumerationCreator(AbstractDatatypeCreator):
     @classmethod
     def get_adm_status_from_graph(cls, g: Graph, env: str = default_environment) -> str:
         distinct_subjects = set([str(url) for url in g.subjects()])
-        scheme = next(d for d in distinct_subjects if d.startswith('https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/'))
+        scheme = next((d for d in distinct_subjects if d.startswith('https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/')), None)
         if env == 'tei':
-            scheme = next(d for d in distinct_subjects if d.startswith('https://wegenenverkeer-test.data.vlaanderen.be/id/conceptscheme/'))
+            scheme = next((d for d in distinct_subjects if d.startswith('https://wegenenverkeer-test.data.vlaanderen.be/id/conceptscheme/')), None)
         for s, p, o in g.triples((URIRef(scheme), None, None)):
             if str(p) == 'https://www.w3.org/ns/adms#status':
                 return str(o).replace('https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/', '')

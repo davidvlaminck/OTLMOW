@@ -156,7 +156,7 @@ class OTLEnumerationCreatorTests(unittest.TestCase):
         file_location = f'{base_dir}/KlTestKeuzelijst.ttl'
         g = rdflib.Graph()
         g.parse(file_location, format="turtle")
-        status = OTLEnumerationCreator.get_adm_status_from_graph(g)
+        status = OTLEnumerationCreator.get_adm_status_from_graph(g, name='KlTestKeuzelijst')
         self.assertEqual('ingebruik', status)
 
     def test_get_keuzelijstwaardes_from_graph_new_format(self):

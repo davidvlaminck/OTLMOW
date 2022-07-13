@@ -130,40 +130,43 @@ class OTLEnumerationCreator(AbstractDatatypeCreator):
 
     @classmethod
     def get_keuzelijstwaardes_from_graph(cls, g: Graph, env: str = default_environment):
-        # get distinct set of subjects and remove the conceptschema subject
-        distinct_subjects = set([str(url) for url in g.subjects()])
-        scheme = next((d for d in distinct_subjects if d.startswith('https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/')), None)
-        if env == 'tei':
-            scheme = next((d for d in distinct_subjects if d.startswith('https://wegenenverkeer-test.data.vlaanderen.be/id/conceptscheme/')), None)
-        distinct_subjects.remove(scheme)
-        # loop through each triple in the graph by subject
         lijst_keuze_opties = []
-        for distinct_object in distinct_subjects:
+
+        subjects = set(g.subjects(predicate=None, object=None))
+        distinct_subjects_list = sorted(subjects, key=lambda x: str(x))
+
+        for distinct_subject in distinct_subjects_list:
+            subject_str = str(distinct_subject)
+            if subject_str.startswith('https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/'):
+                continue
+            elif env == 'tei' and subject_str.startswith('https://wegenenverkeer-test.data.vlaanderen.be/id/conceptscheme/'):
+                continue
             waarde = KeuzelijstWaarde()
-            waarde.objectUri = distinct_object
-            for s, p, o in g.triples((URIRef(distinct_object), None, None)):
-                if str(p) == 'http://www.w3.org/2004/02/skos/core#notation':
-                    waarde.invulwaarde = str(o)
-                elif str(p) == 'http://www.w3.org/2004/02/skos/core#prefLabel':
-                    waarde.label = str(o)
-                elif str(p) == 'http://www.w3.org/2004/02/skos/core#definition':
-                    waarde.definitie = str(o)
-                elif str(p) == 'https://www.w3.org/ns/adms#status':
-                    waarde.status = str(o).replace('https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/', '')
+            waarde.objectUri = subject_str
+            status = g.value(subject=distinct_subject, predicate=URIRef('https://www.w3.org/ns/adms#status'))
+            if status is not None:
+                waarde.status = str(status).replace('https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/', '')
+            waarde.invulwaarde = str(g.value(subject=distinct_subject, predicate=URIRef('http://www.w3.org/2004/02/skos/core#notation')))
+            waarde.definitie = str(g.value(subject=distinct_subject, predicate=URIRef('http://www.w3.org/2004/02/skos/core#definition')))
+            waarde.label = str(g.value(subject=distinct_subject, predicate=URIRef('http://www.w3.org/2004/02/skos/core#prefLabel')))
             lijst_keuze_opties.append(waarde)
-        return sorted(lijst_keuze_opties, key=lambda l: l.invulwaarde)
+
+        return lijst_keuze_opties
 
     @classmethod
     def get_adm_status_by_name(cls, keuzelijstnaam: str, env: str = default_environment) -> str:
         g = OTLEnumerationCreator.get_graph(keuzelijstnaam, env=env)
-        return cls.get_adm_status_from_graph(g, env=env)
+        return cls.get_adm_status_from_graph(g, name=keuzelijstnaam, env=env)
 
     @classmethod
-    def get_adm_status_from_graph(cls, g: Graph, env: str = default_environment) -> str:
-        distinct_subjects = set([str(url) for url in g.subjects()])
-        scheme = next((d for d in distinct_subjects if d.startswith('https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/')), None)
+    def get_adm_status_from_graph(cls, g: Graph, name: str, env: str = default_environment) -> str:
+        scheme_uri = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/' + name
         if env == 'tei':
-            scheme = next((d for d in distinct_subjects if d.startswith('https://wegenenverkeer-test.data.vlaanderen.be/id/conceptscheme/')), None)
-        for s, p, o in g.triples((URIRef(scheme), None, None)):
-            if str(p) == 'https://www.w3.org/ns/adms#status':
-                return str(o).replace('https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/', '')
+            scheme_uri = 'https://wegenenverkeer-test.data.vlaanderen.be/id/conceptscheme/' + name
+
+        status = g.value(subject=URIRef(scheme_uri), predicate=URIRef('https://www.w3.org/ns/adms#status'))
+
+        if status is not None:
+            return str(status).replace('https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/', '')
+        else:
+            return ''

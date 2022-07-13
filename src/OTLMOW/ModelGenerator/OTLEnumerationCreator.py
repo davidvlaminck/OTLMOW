@@ -13,7 +13,7 @@ from OTLMOW.OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 
 class OTLEnumerationCreator(AbstractDatatypeCreator):
-    default_environment = 'master'
+    default_environment = 'prd'
     most_recent_graph = None
 
     def __init__(self, oslo_collector: OSLOCollector):
@@ -93,6 +93,8 @@ class OTLEnumerationCreator(AbstractDatatypeCreator):
 
         if env == 'prd':
             env = 'master'
+        elif env == 'tei':
+            env = 'test'
 
         # create a Graph
         g = rdflib.Graph()
@@ -124,13 +126,15 @@ class OTLEnumerationCreator(AbstractDatatypeCreator):
     @classmethod
     def get_keuzelijstwaardes_by_name(cls, keuzelijstnaam: str, env: str = default_environment) -> [KeuzelijstWaarde]:
         g = OTLEnumerationCreator.get_graph(keuzelijstnaam, env)
-        return cls.get_keuzelijstwaardes_from_graph(g)
+        return cls.get_keuzelijstwaardes_from_graph(g, env)
 
     @classmethod
-    def get_keuzelijstwaardes_from_graph(cls, g: Graph):
+    def get_keuzelijstwaardes_from_graph(cls, g: Graph, env: str = default_environment):
         # get distinct set of subjects and remove the conceptschema subject
         distinct_subjects = set([str(url) for url in g.subjects()])
         scheme = next(d for d in distinct_subjects if d.startswith('https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/'))
+        if env == 'tei':
+            scheme = next(d for d in distinct_subjects if d.startswith('https://wegenenverkeer-test.data.vlaanderen.be/id/conceptscheme/'))
         distinct_subjects.remove(scheme)
         # loop through each triple in the graph by subject
         lijst_keuze_opties = []
@@ -150,14 +154,16 @@ class OTLEnumerationCreator(AbstractDatatypeCreator):
         return sorted(lijst_keuze_opties, key=lambda l: l.invulwaarde)
 
     @classmethod
-    def get_adm_status_by_name(cls, keuzelijstnaam: str, env:str = default_environment) -> str:
-        g = OTLEnumerationCreator.get_graph(keuzelijstnaam, env)
-        return cls.get_adm_status_from_graph(g)
+    def get_adm_status_by_name(cls, keuzelijstnaam: str, env: str = default_environment) -> str:
+        g = OTLEnumerationCreator.get_graph(keuzelijstnaam, env=env)
+        return cls.get_adm_status_from_graph(g, env=env)
 
     @classmethod
-    def get_adm_status_from_graph(cls, g: Graph) -> str:
+    def get_adm_status_from_graph(cls, g: Graph, env: str = default_environment) -> str:
         distinct_subjects = set([str(url) for url in g.subjects()])
         scheme = next(d for d in distinct_subjects if d.startswith('https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/'))
+        if env == 'tei':
+            scheme = next(d for d in distinct_subjects if d.startswith('https://wegenenverkeer-test.data.vlaanderen.be/id/conceptscheme/'))
         for s, p, o in g.triples((URIRef(scheme), None, None)):
             if str(p) == 'https://www.w3.org/ns/adms#status':
                 return str(o).replace('https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/', '')

@@ -17,11 +17,11 @@ if __name__ == '__main__':
     ]
 
     # create a datamodel based on the OTL SQLite database and ttl files stored on the github
-    otl_file_location = '../InputFiles/OTL 2.4.db'
+    otl_file_location = '../InputFiles/OTL 2.5.db'
     GA_file_location = '../InputFiles/Geometrie_Artefact_2.4.db'
     otl_facility.create_otl_datamodel(otl_sqlite_file_location=otl_file_location,
                                       geo_artefact_sqlite_file_location=GA_file_location,
-                                      environment='prd')
+                                      environment='tei')
 
     # create an oef model as well
     oef_file_location = '../InputFiles/oef.legacy.json'

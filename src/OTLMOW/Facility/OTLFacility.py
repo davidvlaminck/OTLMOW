@@ -22,6 +22,7 @@ from OTLMOW.PostenMapping.PostenCreator import PostenCreator
 from OTLMOW.PostenMapping.PostenInMemoryCreator import PostenInMemoryCreator
 
 
+
 class OTLFacility:
     def __init__(self,
                  settings_path: str = '',
@@ -59,7 +60,8 @@ class OTLFacility:
 
     def create_otl_datamodel(self, directory: str = '',
                              otl_sqlite_file_location: str = '',
-                             geo_artefact_sqlite_file_location: str = '') -> None:
+                             geo_artefact_sqlite_file_location: str = '',
+                             environment: str = '') -> None:
         """Creates a datamodel given an OTL SQLite database in the specified directory. This will also use a Geometry Artefact if specified
 
         :param directory: directory where the model classes will be created, including the OTLModel directory. If not specified, this will create a model in a directory OTLModel in the same directory as the script that runs this method
@@ -68,12 +70,15 @@ class OTLFacility:
         :type: str
         :param geo_artefact_sqlite_file_location: path to the Geometry Artefact SQLite file. Defaults to an empty string as this file is not mandatory to create a model
         :type: str
+        :param environment: environment of the model, specifically needed for downloading the enumeration options from the GitHub. Valid options are: '', 'prd', 'tei', 'dev' and 'aim'
+        :type: str
 
         :return: Nothing is returned, instead the datamodel files are created in the specified directory
         :rtype: None
         """
+        env = self._validate_environment(environment)
         model_creator = self._init_otl_model_creator(otl_sqlite_file_location, geo_artefact_sqlite_file_location)
-        self._create_otl_datamodel(model_creator, directory)
+        self._create_otl_datamodel(model_creator, directory, env)
 
     def create_oef_datamodel(self, oef_file_location: str = '', ins_ond_file_location: str = '',
                              auth_type: str = 'JWT', env: str = 'prd') -> None:
@@ -155,6 +160,17 @@ class OTLFacility:
         self.relatie_creator = RelatieCreator(self.relatie_validator)
 
     @staticmethod
+    def _validate_environment(environment: str):
+        if environment is None:
+            return 'prd'
+        environment = environment.lower()
+        if environment in ['', 'prd']:
+            return 'prd'
+        elif environment in ['tei', 'dev', 'aim']:
+            return environment
+        raise ValueError("Valid options for the environment parameter are: '', 'prd', 'tei', 'dev' and 'aim'")
+
+    @staticmethod
     def _init_otl_model_creator(otl_file_location: str = '', geoA_file_location: str = '') -> OTLModelCreator:
         sql_reader = SQLDbReader(otl_file_location)
         oslo_creator = OSLOInMemoryCreator(sql_reader)
@@ -167,14 +183,14 @@ class OTLFacility:
         return OTLModelCreator(collector, geo_artefact_collector)
 
     @staticmethod
-    def _create_otl_datamodel(model_creator: OTLModelCreator, directory: str = ''):
+    def _create_otl_datamodel(model_creator: OTLModelCreator, directory: str = '', environment: str = ''):
         model_creator.oslo_collector.collect()
         if model_creator.geo_artefact_collector is not None:
             model_creator.geo_artefact_collector.collect()
         if directory == '':
             base_dir = os.path.dirname(os.path.realpath(__file__))
             directory = abspath(f'{base_dir}/../')
-        model_creator.create_full_model(directory=directory)
+        model_creator.create_full_model(directory=directory, environment=environment)
 
     def _init_postenmapping_collector(self, postenmaping_file_location: str = '') -> PostenCollector:
         sql_reader = SQLDbReader(postenmaping_file_location)

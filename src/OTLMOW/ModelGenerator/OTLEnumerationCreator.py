@@ -13,27 +13,28 @@ from OTLMOW.OTLModel.Datatypes.KeuzelijstWaarde import KeuzelijstWaarde
 
 
 class OTLEnumerationCreator(AbstractDatatypeCreator):
+    default_environment = 'master'
     most_recent_graph = None
 
-    def __init__(self, osloCollector: OSLOCollector):
-        super().__init__(osloCollector)
+    def __init__(self, oslo_collector: OSLOCollector):
+        super().__init__(oslo_collector)
         logging.info("Created an instance of OTLEnumerationCreator")
-        self.osloCollector = osloCollector
+        self.osloCollector = oslo_collector
 
-    def create_block_to_write_from_enumerations(self, osloEnumeration: OSLOEnumeration):
-        if not isinstance(osloEnumeration, OSLOEnumeration):
+    def create_block_to_write_from_enumerations(self, oslo_enumeration: OSLOEnumeration, environment: str = default_environment):
+        if not isinstance(oslo_enumeration, OSLOEnumeration):
             raise ValueError(f"Input is not a OSLOEnumeration")
-        if osloEnumeration.objectUri == '' or not osloEnumeration.objectUri.startswith(
+        if oslo_enumeration.objectUri == '' or not oslo_enumeration.objectUri.startswith(
                 'https://wegenenverkeer.data.vlaanderen.be/ns/'):
-            raise ValueError(f"OSLOEnumeration.objectUri is invalid. Value = '{osloEnumeration.objectUri}'")
-        if osloEnumeration.name == '':
-            raise ValueError(f"OSLOEnumeration.name is invalid. Value = '{osloEnumeration.name}'")
+            raise ValueError(f"OSLOEnumeration.objectUri is invalid. Value = '{oslo_enumeration.objectUri}'")
+        if oslo_enumeration.name == '':
+            raise ValueError(f"OSLOEnumeration.name is invalid. Value = '{oslo_enumeration.name}'")
 
-        return self.create_block_to_write_from_enumeration(osloEnumeration)
+        return self.create_block_to_write_from_enumeration(oslo_enumeration, environment=environment)
 
-    def create_block_to_write_from_enumeration(self, osloEnumeration: OSLOEnumeration):
-        keuzelijst_waardes = self.get_keuzelijstwaardes_by_name(osloEnumeration.name)
-        adm_status = self.get_adm_status_by_name(osloEnumeration.name)
+    def create_block_to_write_from_enumeration(self, oslo_enumeration: OSLOEnumeration, environment: str = default_environment):
+        keuzelijst_waardes = self.get_keuzelijstwaardes_by_name(oslo_enumeration.name, env=environment)
+        adm_status = self.get_adm_status_by_name(oslo_enumeration.name, env=environment)
 
         datablock = ['# coding=utf-8', 'import random',
                      'from OTLMOW.OTLModel.Datatypes.KeuzelijstField import KeuzelijstField']
@@ -43,16 +44,16 @@ class OTLEnumerationCreator(AbstractDatatypeCreator):
         datablock.extend(['',
                           '',
                           f'# Generated with {self.__class__.__name__}. To modify: extend, do not edit',
-                          f'class {osloEnumeration.name}(KeuzelijstField):',
-                          f'    """{osloEnumeration.definition}"""',
-                          f'    naam = {wrap_in_quotes(osloEnumeration.name)}',
-                          f'    label = {wrap_in_quotes(osloEnumeration.label)}',
-                          f'    objectUri = {wrap_in_quotes(osloEnumeration.objectUri)}',
-                          f'    definition = {wrap_in_quotes(osloEnumeration.definition)}',
+                          f'class {oslo_enumeration.name}(KeuzelijstField):',
+                          f'    """{oslo_enumeration.definition}"""',
+                          f'    naam = {wrap_in_quotes(oslo_enumeration.name)}',
+                          f'    label = {wrap_in_quotes(oslo_enumeration.label)}',
+                          f'    objectUri = {wrap_in_quotes(oslo_enumeration.objectUri)}',
+                          f'    definition = {wrap_in_quotes(oslo_enumeration.definition)}',
                           f'    status = {wrap_in_quotes(adm_status)}'])
-        if osloEnumeration.deprecated_version != '':
-            datablock.append(f'    deprecated_version = {wrap_in_quotes(osloEnumeration.deprecated_version)}')
-        datablock.append(f'    codelist = {wrap_in_quotes(osloEnumeration.codelist)}')
+        if oslo_enumeration.deprecated_version != '':
+            datablock.append(f'    deprecated_version = {wrap_in_quotes(oslo_enumeration.deprecated_version)}')
+        datablock.append(f'    codelist = {wrap_in_quotes(oslo_enumeration.codelist)}')
         datablock.append('    options = {')
 
         for waarde in sorted(keuzelijst_waardes, key=lambda w: w.invulwaarde):
@@ -77,17 +78,24 @@ class OTLEnumerationCreator(AbstractDatatypeCreator):
         datablock.append("")
         datablock.append("    @staticmethod")
         datablock.append("    def create_dummy_data():")
-        datablock.append(f"        return {osloEnumeration.name}.get_dummy_data()")
+        datablock.append(f"        return {oslo_enumeration.name}.get_dummy_data()")
 
         datablock.append('')
 
         return datablock
 
     @classmethod
-    def get_graph_from_location(cls, keuzelijstnaam:str):
+    def get_graph_from_location(cls, keuzelijstnaam: str, env: str = default_environment):
+        if env is None or env == '':
+            env = cls.default_environment
+
+        if env == 'prd':
+            env = 'master'
+
         # create a Graph
         g = rdflib.Graph()
-        keuzelijst_link = f"https://raw.githubusercontent.com/Informatievlaanderen/OSLOthema-wegenenverkeer/master/codelijsten/{keuzelijstnaam}.ttl"
+        keuzelijst_link = f"https://raw.githubusercontent.com/Informatievlaanderen/OSLOthema-wegenenverkeer/{env}/codelijsten/{keuzelijstnaam}.ttl"
+
         # parse the turtle file hosted on github
         try:
             g.parse(keuzelijst_link, format="turtle")
@@ -99,21 +107,21 @@ class OTLEnumerationCreator(AbstractDatatypeCreator):
             else:
                 logging.error(f"Could not get ttl file for {keuzelijstnaam}")
                 raise exc
-        OTLEnumerationCreator.most_recent_graph = (keuzelijstnaam, g)
+        OTLEnumerationCreator.most_recent_graph = (keuzelijstnaam, env, g)
         return g
 
     @classmethod
-    def get_graph(cls, keuzelijstnaam:str):
+    def get_graph(cls, keuzelijstnaam: str, env: str = default_environment):
         # check if the most_recent_graph holds the correct graph. If so, return that one, else fetch the correct one
         if OTLEnumerationCreator.most_recent_graph is not None:
-            naam, graph = OTLEnumerationCreator.most_recent_graph
-            if naam == keuzelijstnaam:
-                return graph
-        return OTLEnumerationCreator.get_graph_from_location(keuzelijstnaam)
+            recent_naam, recent_env, recent_graph = OTLEnumerationCreator.most_recent_graph
+            if recent_naam == keuzelijstnaam and recent_env == env:
+                return recent_graph
+        return OTLEnumerationCreator.get_graph_from_location(keuzelijstnaam=keuzelijstnaam, env=env)
 
     @classmethod
-    def get_keuzelijstwaardes_by_name(cls, keuzelijstnaam:str) -> [KeuzelijstWaarde]:
-        g = OTLEnumerationCreator.get_graph(keuzelijstnaam)
+    def get_keuzelijstwaardes_by_name(cls, keuzelijstnaam: str, env: str = default_environment) -> [KeuzelijstWaarde]:
+        g = OTLEnumerationCreator.get_graph(keuzelijstnaam, env)
         return cls.get_keuzelijstwaardes_from_graph(g)
 
     @classmethod
@@ -140,8 +148,8 @@ class OTLEnumerationCreator(AbstractDatatypeCreator):
         return sorted(lijst_keuze_opties, key=lambda l: l.invulwaarde)
 
     @classmethod
-    def get_adm_status_by_name(cls, keuzelijstnaam:str) -> str:
-        g = OTLEnumerationCreator.get_graph(keuzelijstnaam)
+    def get_adm_status_by_name(cls, keuzelijstnaam: str, env:str = default_environment) -> str:
+        g = OTLEnumerationCreator.get_graph(keuzelijstnaam, env)
         return cls.get_adm_status_from_graph(g)
 
     @classmethod

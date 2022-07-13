@@ -20,7 +20,8 @@ if __name__ == '__main__':
     otl_file_location = '../InputFiles/OTL 2.4.db'
     GA_file_location = '../InputFiles/Geometrie_Artefact_2.4.db'
     otl_facility.create_otl_datamodel(otl_sqlite_file_location=otl_file_location,
-                                      geo_artefact_sqlite_file_location=GA_file_location)
+                                      geo_artefact_sqlite_file_location=GA_file_location,
+                                      environment='prd')
 
     # create an oef model as well
     oef_file_location = '../InputFiles/oef.legacy.json'

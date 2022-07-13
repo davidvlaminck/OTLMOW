@@ -25,7 +25,7 @@ class OTLModelCreator:
         self.geo_artefact_collector = geo_artefact_collector
         logging.info("Created an instance of OTLModelCreator")
 
-    def create_full_model(self, directory):
+    def create_full_model(self, directory, environment: str = ''):
         logging.info('started creating model at ' + datetime.now().strftime("%d/%m/%Y %H:%M:%S"))
         directory = abspath(directory)
         self.check_and_create_subdirectories(directory)
@@ -33,7 +33,7 @@ class OTLModelCreator:
         self.create_primitive_datatypes(directory=directory)
         self.create_complex_datatypes(directory=directory)
         self.create_union_datatypes(directory=directory)
-        self.create_enumerations(directory=directory)
+        self.create_enumerations(directory=directory, environment=environment)
         self.create_classes(model_directory=directory)
         self.create_relations(directory=directory)
         logging.info('finished creating model at ' + datetime.now().strftime("%d/%m/%Y %H:%M:%S"))
@@ -105,13 +105,13 @@ class OTLModelCreator:
                 logging.error(str(e))
                 logging.error(f"Could not create a class for {union_datatype.name}")
 
-    def create_enumerations(self, directory):
+    def create_enumerations(self, directory, environment: str = ''):
         creator = OTLEnumerationCreator(self.oslo_collector)
 
         for enumeration in self.oslo_collector.enumerations:
 
             try:
-                data_to_write = creator.create_block_to_write_from_enumerations(enumeration)
+                data_to_write = creator.create_block_to_write_from_enumerations(enumeration, environment=environment)
                 if data_to_write is None:
                     logging.info(f"Could not create a class for {enumeration.name}")
                     pass

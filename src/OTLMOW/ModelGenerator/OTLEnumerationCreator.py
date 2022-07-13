@@ -49,8 +49,10 @@ class OTLEnumerationCreator(AbstractDatatypeCreator):
                           f'    naam = {wrap_in_quotes(oslo_enumeration.name)}',
                           f'    label = {wrap_in_quotes(oslo_enumeration.label)}',
                           f'    objectUri = {wrap_in_quotes(oslo_enumeration.objectUri)}',
-                          f'    definition = {wrap_in_quotes(oslo_enumeration.definition)}',
-                          f'    status = {wrap_in_quotes(adm_status)}'])
+                          f'    definition = {wrap_in_quotes(oslo_enumeration.definition)}'])
+
+        if adm_status is not None and adm_status != '':
+            datablock.append(f'    status = {wrap_in_quotes(adm_status)}')
         if oslo_enumeration.deprecated_version != '':
             datablock.append(f'    deprecated_version = {wrap_in_quotes(oslo_enumeration.deprecated_version)}')
         datablock.append(f'    codelist = {wrap_in_quotes(oslo_enumeration.codelist)}')

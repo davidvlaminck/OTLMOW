@@ -129,10 +129,7 @@ class KlVoedingskabelAdersEnSectie(KeuzelijstField):
     }
 
     @classmethod
-    def get_dummy_data(cls):
-        return random.choice(list(cls.options.keys()))
-
-    @staticmethod
-    def create_dummy_data():
-        return KlVoedingskabelAdersEnSectie.get_dummy_data()
+    def create_dummy_data(cls):
+        return random.choice(list(map(lambda x: x.invulwaarde,
+                                      filter(lambda option: option.status == 'ingebruik', cls.options.values()))))
 

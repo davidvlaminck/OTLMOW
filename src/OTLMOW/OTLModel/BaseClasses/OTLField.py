@@ -67,6 +67,9 @@ deprecated_version: {self.deprecated_version}"""
                 if attr.startswith('__') or not attr.startswith('_') or attr == '_parent':
                     continue
                 attribute = getattr(new_value_object, attr)
-                attribute.set_waarde(attribute.field.create_dummy_data())
+                if attribute.kardinaliteit_max != '1':
+                    attribute.set_waarde([attribute.field.create_dummy_data()])
+                else:
+                    attribute.set_waarde(attribute.field.create_dummy_data())
             return new_value_object
         return None

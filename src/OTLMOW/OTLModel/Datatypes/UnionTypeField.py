@@ -41,7 +41,10 @@ class UnionTypeField(OTLField):
             valid_attrs.append(getattr(new_value_object, attr))
 
         selected_attr = random.choice(valid_attrs)
-        selected_attr.set_waarde(selected_attr.field.create_dummy_data())
+        if selected_attr.kardinaliteit_max != '1':
+            selected_attr.set_waarde([selected_attr.field.create_dummy_data()])
+        else:
+            selected_attr.set_waarde(selected_attr.field.create_dummy_data())
         return new_value_object
 
 

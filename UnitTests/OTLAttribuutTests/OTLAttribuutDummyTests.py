@@ -23,7 +23,18 @@ class OTLAttribuutDummyTests(TestCase):
         generated_dummy_waarde = attr.get_waarde()
         self.assertIsNotNone(generated_dummy_waarde)
         self.assertTrue(isinstance(generated_dummy_waarde, str))
-        self.assertTrue(5 < len(generated_dummy_waarde) < 15)
+        self.assertTrue(5 <= len(generated_dummy_waarde) < 15)
+
+    def test_dummy_StringFieldMetKard(self):
+        attr = OTLAttribuut(field=StringField, kardinaliteit_max='*')
+        attr.fill_with_dummy_data()
+
+        generated_dummy_waarde = attr.get_waarde()
+        self.assertIsNotNone(generated_dummy_waarde)
+        self.assertTrue(isinstance(generated_dummy_waarde, list))
+        self.assertTrue(len(generated_dummy_waarde) == 1)
+        self.assertTrue(isinstance(generated_dummy_waarde[0], str))
+        self.assertTrue(5 <= len(generated_dummy_waarde[0]) < 15)
 
     def test_dummy_FloatOrDecimalField(self):
         attr = OTLAttribuut(field=FloatOrDecimalField)
@@ -97,8 +108,10 @@ class OTLAttribuutDummyTests(TestCase):
 
         generated_dummy_waarde = attr.get_waarde()
         self.assertIsNotNone(generated_dummy_waarde)
-        self.assertIsNotNone(generated_dummy_waarde.testStringField)
+        self.assertIsNotNone(generated_dummy_waarde.testStringFieldMetKard)
         self.assertIsNotNone(generated_dummy_waarde.testBooleanField)
+        self.assertIsNotNone(generated_dummy_waarde.testComplexType2)
+        self.assertIsNotNone(generated_dummy_waarde.testComplexType2.testKwantWrdMetKard[0].waarde)
 
     def test_dummy_UnionField(self):
         attr = OTLAttribuut(field=DtuTestUnionType)

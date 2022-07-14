@@ -212,4 +212,8 @@ class OTLAttribuut(AttributeInfo):
 
     def fill_with_dummy_data(self):
         if not self.readonly:
-            self.set_waarde(self.field.create_dummy_data())
+            data = self.field.create_dummy_data()
+            if self.kardinaliteit_max != '1':
+                self.set_waarde([data])
+            else:
+                self.set_waarde(data)

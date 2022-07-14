@@ -57,7 +57,8 @@ class OTLFacility:
         if enable_relation_features:
             self._init_relatie_validation()
 
-    def create_otl_datamodel(self, directory: str = '',
+    def create_otl_datamodel(self,
+                             directory: str = '',
                              otl_sqlite_file_location: str = '',
                              geo_artefact_sqlite_file_location: str = '',
                              environment: str = '') -> None:
@@ -79,8 +80,11 @@ class OTLFacility:
         model_creator = self._init_otl_model_creator(otl_sqlite_file_location, geo_artefact_sqlite_file_location)
         self._create_otl_datamodel(model_creator, directory, env)
 
-    def create_oef_datamodel(self, oef_file_location: str = '', ins_ond_file_location: str = '',
-                             auth_type: str = 'JWT', env: str = 'prd') -> None:
+    def create_oef_datamodel(self,
+                             oef_file_location: str = '',
+                             ins_ond_file_location: str = '',
+                             auth_type: str = 'JWT',
+                             environment: str = 'prd') -> None:
         # TODO
         """Creates a datamodel given an OTL SQLite database in the specified directory. This will also use a Geometry Artefact if specified
 
@@ -88,7 +92,9 @@ class OTLFacility:
         :type: str
         :param ins_ond_file_location: path to the OTL SQLite file
         :type: str
-        :param geo_artefact_sqlite_file_location: path to the Geometry Artefact SQLite file. Defaults to an empty string as this file is not mandatory to create a model
+        :param auth_type: how to authenticate to access the EM-Infra API to retrieve the models
+        :type: str
+        :param environment: environment of the model, specifically needed for downloading the enumeration options from the GitHub. Valid options are: '', 'prd', 'tei', 'dev' and 'aim'
         :type: str
 
         :return: Nothing is returned, instead the datamodel files are created in the specified directory
@@ -96,19 +102,19 @@ class OTLFacility:
         """
         oef_model_creator = self._init_oef_model_creator(oef_file_location=oef_file_location,
                                                          ins_ond_file_location=ins_ond_file_location,
-                                                         auth_type=auth_type, env=env)
+                                                         auth_type=auth_type, env=environment)
         oef_model_creator.create_full_model()
 
-    def create_posten_model(self, postenmaping_file_location) -> None:
+    def create_posten_model(self, postenmapping_file_location) -> None:
         """Creates a posten model given a SQLite database.
 
-        :param postenmaping_file_location: path to the SQLite file of the postenmapping
+        :param postenmapping_file_location: path to the SQLite file of the postenmapping
         :type: str
 
         :return: Nothing is returned, instead the datamodel files are created
         :rtype: None
         """
-        collector = self._init_postenmapping_collector(postenmaping_file_location)
+        collector = self._init_postenmapping_collector(postenmapping_file_location)
         collector.collect()
         creator = PostenCreator(collector)
         creator.create_all_mappings()
@@ -139,6 +145,8 @@ class OTLFacility:
 
         :param filepath: Path to the file that is to be created
         :type: str
+        :param list_of_objects: The objects in memory that will be exported to a file
+        :type: list
 
         Supported arguments for csv:
 
@@ -191,8 +199,9 @@ class OTLFacility:
             directory = abspath(f'{base_dir}/../')
         model_creator.create_full_model(directory=directory, environment=environment)
 
-    def _init_postenmapping_collector(self, postenmaping_file_location: str = '') -> PostenCollector:
-        sql_reader = SQLDbReader(postenmaping_file_location)
+    @staticmethod
+    def _init_postenmapping_collector(postenmapping_file_location: str = '') -> PostenCollector:
+        sql_reader = SQLDbReader(postenmapping_file_location)
         oslo_creator = PostenInMemoryCreator(sql_reader)
         return PostenCollector(oslo_creator)
 

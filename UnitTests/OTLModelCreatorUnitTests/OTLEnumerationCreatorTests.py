@@ -58,10 +58,10 @@ expectedKeuzelijst = ['# coding=utf-8',
                       "objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlTestKeuzelijst/waarde-6')",
                       '    }',
                       '',
-                      '        @classmethod',
-                      '            def create_dummy_data(cls):',
-                      '                return random.choice(list(map(lambda x: x.invulwaarde,',
-                      '                                              '
+                      '    @classmethod',
+                      '    def create_dummy_data(cls):',
+                      '        return random.choice(list(map(lambda x: x.invulwaarde,',
+                      '                                      '
                       "filter(lambda option: option.status == 'ingebruik', cls.options.values()))))",
                       '']
 

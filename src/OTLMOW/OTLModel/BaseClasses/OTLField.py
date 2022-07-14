@@ -59,6 +59,14 @@ label: {self.label}
 usagenote: {self.usagenote}
 deprecated_version: {self.deprecated_version}"""
 
-    @staticmethod
-    def create_dummy_data():
+    @classmethod
+    def create_dummy_data(cls):
+        if cls.waardeObject is not None:
+            new_value_object = cls.waardeObject()
+            for attr in dir(new_value_object):
+                if attr.startswith('__') or not attr.startswith('_') or attr == '_parent':
+                    continue
+                attribute = getattr(new_value_object, attr)
+                attribute.set_waarde(attribute.field.create_dummy_data())
+            return new_value_object
         return None

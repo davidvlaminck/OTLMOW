@@ -15,6 +15,7 @@ class KwantWrdTestWaarden(AttributeInfo):
                                               label='standaard eenheid',
                                               objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdTest.standaardEenheid',
                                               usagenote='"%"^^cdt:ucumunit',
+                                              readonly=True,
                                               constraints='"%"^^cdt:ucumunit',
                                               definition='De standaard eenheid bij dit datatype is uitgedrukt in percent.',
                                               owner=self)

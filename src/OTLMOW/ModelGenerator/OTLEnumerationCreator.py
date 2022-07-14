@@ -74,13 +74,11 @@ class OTLEnumerationCreator(AbstractDatatypeCreator):
 
         # dummy values part
         datablock.append("")
-        datablock.append("    @classmethod")
-        datablock.append("    def get_dummy_data(cls):")
-        datablock.append("        return random.choice(list(cls.options.keys()))")
-        datablock.append("")
-        datablock.append("    @staticmethod")
-        datablock.append("    def create_dummy_data():")
-        datablock.append(f"        return {oslo_enumeration.name}.get_dummy_data()")
+        datablock.append("        @classmethod")
+        datablock.append("            def create_dummy_data(cls):")
+        datablock.append("                return random.choice(list(map(lambda x: x.invulwaarde,")
+        datablock.append("                                              "
+                         "filter(lambda option: option.status == 'ingebruik', cls.options.values()))))")
 
         datablock.append('')
 
@@ -146,9 +144,12 @@ class OTLEnumerationCreator(AbstractDatatypeCreator):
             status = g.value(subject=distinct_subject, predicate=URIRef('https://www.w3.org/ns/adms#status'))
             if status is not None:
                 waarde.status = str(status).replace('https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/', '')
-            waarde.invulwaarde = str(g.value(subject=distinct_subject, predicate=URIRef('http://www.w3.org/2004/02/skos/core#notation')))
-            waarde.definitie = str(g.value(subject=distinct_subject, predicate=URIRef('http://www.w3.org/2004/02/skos/core#definition')))
-            waarde.label = str(g.value(subject=distinct_subject, predicate=URIRef('http://www.w3.org/2004/02/skos/core#prefLabel')))
+            waarde.invulwaarde = str(
+                g.value(subject=distinct_subject, predicate=URIRef('http://www.w3.org/2004/02/skos/core#notation')))
+            waarde.definitie = str(
+                g.value(subject=distinct_subject, predicate=URIRef('http://www.w3.org/2004/02/skos/core#definition')))
+            waarde.label = str(
+                g.value(subject=distinct_subject, predicate=URIRef('http://www.w3.org/2004/02/skos/core#prefLabel')))
             lijst_keuze_opties.append(waarde)
 
         return lijst_keuze_opties

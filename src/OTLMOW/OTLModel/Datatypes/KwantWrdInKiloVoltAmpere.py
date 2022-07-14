@@ -15,6 +15,7 @@ class KwantWrdInKiloVoltAmpereWaarden(AttributeInfo):
                                               label='standaard eenheid',
                                               objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInKiloVoltAmpere.standaardEenheid',
                                               usagenote='"kVA*"^^cdt:ucumunit',
+                                              readonly=True,
                                               constraints='"kVA*"^^cdt:ucumunit',
                                               definition='De standaard eenheid bij dit datatype is uitgedrukt in kiloVoltAmpere.',
                                               owner=self)

@@ -15,6 +15,7 @@ class KwantWrdInCelsiusWaarden(AttributeInfo):
                                               label='standaard eenheid',
                                               objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInCelsius.standaardEenheid',
                                               usagenote='"Cel"^^cdt:ucumunit',
+                                              readonly=True,
                                               constraints='"Cel"^^cdt:ucumunit',
                                               definition='De standaard eenheid bij dit datatype is uitgedrukt in celsius.',
                                               owner=self)

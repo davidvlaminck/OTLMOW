@@ -15,6 +15,7 @@ class KwantWrdInKubiekeCentimeterPerMeterWaarden(AttributeInfo):
                                               label='standaard eenheid',
                                               objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInKubiekeCentimeterPerMeter.standaardEenheid',
                                               usagenote='"cm3/m"^^cdt:ucumunit',
+                                              readonly=True,
                                               constraints='"cm3/m"^^cdt:ucumunit',
                                               definition='De standaard eenheid bij dit datatype is uitgedrukt in kubieke centimeter per meter.',
                                               owner=self)

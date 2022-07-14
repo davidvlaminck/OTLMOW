@@ -15,6 +15,7 @@ class KwantWrdInEuroWaarden(AttributeInfo):
                                               label='standaard eenheid',
                                               objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInEuro.standaardEenheid',
                                               usagenote='"{Euro}"^^cdt:ucumunit',
+                                              readonly=True,
                                               constraints='"{Euro}"^^cdt:ucumunit',
                                               definition='De standaard eenheid bij dit datatype is uitgedrukt in Euro.',
                                               owner=self)

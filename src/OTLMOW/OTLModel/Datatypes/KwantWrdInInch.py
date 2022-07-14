@@ -15,6 +15,7 @@ class KwantWrdInInchWaarden(AttributeInfo):
                                               label='standaard eenheid',
                                               objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInInch.standaardEenheid',
                                               usagenote='"[in_i]"^^cdt:ucumunit',
+                                              readonly=True,
                                               constraints='"[in_i]"^^cdt:ucumunit',
                                               definition='De standaard eenheid bij dit datatype is uitgedrukt in inch als internationale eenheid (eengemaakte Britse en Amerikaanse systeem).',
                                               owner=self)

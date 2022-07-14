@@ -15,6 +15,7 @@ class KwantWrdInKilogramWaarden(AttributeInfo):
                                               label='standaardeenheid',
                                               objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInKilogram.standaardEenheid',
                                               usagenote='"kg"^^cdt:ucumunit',
+                                              readonly=True,
                                               constraints='"kg"^^cdt:ucumunit',
                                               definition='De standaard eenheid bij dit datatype is uitgedrukt in kilogram.',
                                               owner=self)

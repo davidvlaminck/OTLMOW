@@ -16,11 +16,13 @@ class KlVerlichtingstoestelMerk(KeuzelijstField):
     options = {
         'ARC': KeuzelijstWaarde(invulwaarde='ARC',
                                 label='ARC',
-                                status='ingebruik',
+                                status='uitgebruik',
+                                definitie='ARC',
                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerlichtingstoestelMerk/ARC'),
         'HCI-TS': KeuzelijstWaarde(invulwaarde='HCI-TS',
                                    label='HCI-TS',
-                                   status='ingebruik',
+                                   status='uitgebruik',
+                                   definitie='HCI-TS',
                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerlichtingstoestelMerk/HCI-TS'),
         'Philips': KeuzelijstWaarde(invulwaarde='Philips',
                                     label='Philips',
@@ -28,7 +30,8 @@ class KlVerlichtingstoestelMerk(KeuzelijstField):
                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerlichtingstoestelMerk/Philips'),
         'Rombalux': KeuzelijstWaarde(invulwaarde='Rombalux',
                                      label='Rombalux',
-                                     status='ingebruik',
+                                     status='uitgebruik',
+                                     definitie='Rombalux',
                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerlichtingstoestelMerk/Rombalux'),
         'Schreder': KeuzelijstWaarde(invulwaarde='Schreder',
                                      label='Schreder',
@@ -37,7 +40,12 @@ class KlVerlichtingstoestelMerk(KeuzelijstField):
         'andere': KeuzelijstWaarde(invulwaarde='andere',
                                    label='andere',
                                    status='ingebruik',
-                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerlichtingstoestelMerk/andere')
+                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerlichtingstoestelMerk/andere'),
+        'lightwell': KeuzelijstWaarde(invulwaarde='lightwell',
+                                      label='Lightwell',
+                                      status='ingebruik',
+                                      definitie='Lightwell',
+                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerlichtingstoestelMerk/lightwell')
     }
 
     @classmethod

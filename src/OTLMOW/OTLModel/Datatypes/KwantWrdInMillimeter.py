@@ -15,6 +15,7 @@ class KwantWrdInMillimeterWaarden(AttributeInfo):
                                               label='standaard eenheid',
                                               objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMillimeter.standaardEenheid',
                                               usagenote='"mm"^^cdt:ucumunit',
+                                              readonly=True,
                                               constraints='"mm"^^cdt:ucumunit',
                                               definition='De standaard eenheid bij dit datatype is uitgedrukt in millimeter.',
                                               owner=self)

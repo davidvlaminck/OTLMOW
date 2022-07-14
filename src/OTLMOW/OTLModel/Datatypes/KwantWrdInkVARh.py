@@ -15,6 +15,7 @@ class KwantWrdInkVARhWaarden(AttributeInfo):
                                               label='standaard eenheid',
                                               objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInkVARh.standaardEenheid',
                                               usagenote='"kVARh"^^cdt:ucumunit',
+                                              readonly=True,
                                               constraints='"kVARh"^^cdt:ucumunit',
                                               definition='De standaard eenheid bij dit datatype is uitgedrukt in kVARh.',
                                               owner=self)

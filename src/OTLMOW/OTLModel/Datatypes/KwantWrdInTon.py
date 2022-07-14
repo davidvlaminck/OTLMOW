@@ -15,6 +15,7 @@ class KwantWrdInTonWaarden(AttributeInfo):
                                               label='standaard eenheid',
                                               objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInTon.standaardEenheid',
                                               usagenote='"t"^^cdt:ucumunit',
+                                              readonly=True,
                                               constraints='"t"^^cdt:ucumunit',
                                               definition='De standaard eenheid bij dit datatype is uitgedrukt in ton.',
                                               owner=self)

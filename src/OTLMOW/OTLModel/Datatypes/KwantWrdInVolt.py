@@ -15,6 +15,7 @@ class KwantWrdInVoltWaarden(AttributeInfo):
                                               label='standaard eenheid',
                                               objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInVolt.standaardEenheid',
                                               usagenote='"V"^^cdt:ucumunit',
+                                              readonly=True,
                                               constraints='"V"^^cdt:ucumunit',
                                               definition='De standaard eenheid bij dit datatype is uitgedrukt in Volt.',
                                               owner=self)

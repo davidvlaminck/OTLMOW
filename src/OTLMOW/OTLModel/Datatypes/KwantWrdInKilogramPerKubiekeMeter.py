@@ -15,6 +15,7 @@ class KwantWrdInKilogramPerKubiekeMeterWaarden(AttributeInfo):
                                               label='standaard eenheid',
                                               objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInKilogramPerKubiekeMeter.standaardEenheid',
                                               usagenote='"kg/m3"^^cdt:ucumunit',
+                                              readonly=True,
                                               constraints='"kg/m3"^^cdt:ucumunit',
                                               definition='De standaard eenheid bij dit datatype is uitgedrukt in kilogram per kubieke meter.',
                                               owner=self)

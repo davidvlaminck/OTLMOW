@@ -15,6 +15,7 @@ class KwantWrdInkWhWaarden(AttributeInfo):
                                               label='standaard eenheid',
                                               objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInkWh.standaardEenheid',
                                               usagenote='"kWh"^^cdt:ucumunit',
+                                              readonly=True,
                                               constraints='"kWh"^^cdt:ucumunit',
                                               definition='De standaard eenheid bij dit datatype is uitgedrukt in kiloWattUur.',
                                               owner=self)

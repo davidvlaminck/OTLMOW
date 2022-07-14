@@ -15,6 +15,7 @@ class KwantWrdInKubiekeMeterPerSecondeWaarden(AttributeInfo):
                                               label='standaard eenheid',
                                               objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInKubiekeMeterPerSeconde.standaardEenheid',
                                               usagenote='"m3/s"^^cdt:ucumunit',
+                                              readonly=True,
                                               constraints='"m3/s"^^cdt:ucumunit',
                                               definition='De standaard eenheid bij dit datatype is uitgedrukt in kubieke meter per seconde.',
                                               owner=self)

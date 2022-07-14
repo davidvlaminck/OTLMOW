@@ -13,7 +13,7 @@ class OSLOAttribuut:
     type: str = ''
     overerving: int = -1
     constraints: str = ''
-    readonly: int = ''
+    readonly: int = -1
     usagenote: str = ''
     deprecated_version: str = ''
 

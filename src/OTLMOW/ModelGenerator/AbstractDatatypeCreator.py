@@ -253,6 +253,8 @@ class AbstractDatatypeCreator(ABC):
             datablock.append(f'{whitespace}objectUri={wrap_in_quotes(attribuut.objectUri)},')
             if attribuut.usagenote != '':
                 datablock.append(f'{whitespace}usagenote={wrap_in_quotes(attribuut.usagenote)},')
+            if attribuut.readonly == 1:
+                datablock.append(f'{whitespace}readonly=True,')
             if attribuut.deprecated_version != '':
                 datablock.append(f'{whitespace}deprecated_version={wrap_in_quotes(attribuut.deprecated_version)},')
             if attribuut.constraints != '':

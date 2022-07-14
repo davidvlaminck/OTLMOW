@@ -91,8 +91,6 @@ class OTLAttribuutDummyTests(TestCase):
         self.assertIsNotNone(generated_dummy_waarde.waarde)
         self.assertEqual(generated_dummy_waarde.standaardEenheid, '%')
 
-        # TODO read only implementeren voor kwant waarde
-
     def test_dummy_ComplexField(self):
         attr = OTLAttribuut(field=DtcTestComplexType)
         attr.fill_with_dummy_data()
@@ -110,6 +108,6 @@ class OTLAttribuutDummyTests(TestCase):
         self.assertIsNotNone(generated_dummy_waarde)
         first = generated_dummy_waarde.unionKwantWrd.waarde is not None
         second = generated_dummy_waarde.unionString is not None
-        self.assertTrue(first != second) # either first or second is True, but not both
+        self.assertTrue(first != second)  # either first or second is True, but not both
 
 

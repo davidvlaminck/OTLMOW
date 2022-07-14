@@ -41,6 +41,6 @@ class BooleanField(OTLField):
     def __str__(self):
         return OTLField.__str__(self)
 
-    @staticmethod
-    def create_dummy_data():
+    @classmethod
+    def create_dummy_data(cls):
         return random.choice([True, False])

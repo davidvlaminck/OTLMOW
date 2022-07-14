@@ -82,6 +82,6 @@ class DateTimeField(OTLField):
         random_second = randrange(int_delta)
         return start + timedelta(seconds=random_second)
 
-    @staticmethod
-    def create_dummy_data():
+    @classmethod
+    def create_dummy_data(cls):
         return DateTimeField.random_date(start=datetime.datetime(2000, 1, 1, 0, 0, 0), end=datetime.datetime(2020, 1, 1, 0, 0, 0))

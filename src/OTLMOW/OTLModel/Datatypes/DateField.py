@@ -74,6 +74,6 @@ class DateField(OTLField):
         random_days = randrange(int_delta)
         return start + timedelta(days=random_days)
 
-    @staticmethod
-    def create_dummy_data():
+    @classmethod
+    def create_dummy_data(cls):
         return DateField.random_date(start=date(2000, 1, 1), end=date(2020, 1, 1))

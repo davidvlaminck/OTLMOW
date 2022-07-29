@@ -107,7 +107,7 @@ class OTLObjectHelper:
                 continue
 
             if v.field.waardeObject is not None:
-                if v.kardinaliteit_max != '1':
+                if v.kardinaliteit_max != 1 and v.kardinaliteit_max != '1':
                     lijsten = []
                     for list_item in v.waarde:
                         lijsten.append(

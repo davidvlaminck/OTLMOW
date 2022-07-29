@@ -11,27 +11,29 @@ class KlBrandblusserType(KeuzelijstField):
     label = 'Brandblusser type'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlBrandblusserType'
     definition = 'Keuzelijst met verschillende types van brandblussers volgens de algemene classificatie van brandblussers.'
+    status = 'ingebruik'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlBrandblusserType'
     options = {
         'a': KeuzelijstWaarde(invulwaarde='a',
                               label='a',
+                              status='ingebruik',
                               objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBrandblusserType/a'),
         'b': KeuzelijstWaarde(invulwaarde='b',
                               label='b',
+                              status='ingebruik',
                               objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBrandblusserType/b'),
         'c': KeuzelijstWaarde(invulwaarde='c',
                               label='c',
+                              status='ingebruik',
                               objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBrandblusserType/c'),
         'd': KeuzelijstWaarde(invulwaarde='d',
                               label='d',
+                              status='ingebruik',
                               objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBrandblusserType/d')
     }
 
     @classmethod
-    def get_dummy_data(cls):
-        return random.choice(list(cls.options.keys()))
-
-    @staticmethod
-    def create_dummy_data():
-        return KlBrandblusserType.get_dummy_data()
+    def create_dummy_data(cls):
+        return random.choice(list(map(lambda x: x.invulwaarde,
+                                      filter(lambda option: option.status == 'ingebruik', cls.options.values()))))
 

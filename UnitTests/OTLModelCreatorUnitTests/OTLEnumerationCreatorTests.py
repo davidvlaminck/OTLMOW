@@ -24,11 +24,10 @@ expectedKeuzelijst = ['# coding=utf-8',
                       '    """Keuzelijst met test waarden."""',
                       "    naam = 'KlTestKeuzelijst'",
                       "    label = 'Test keuzelijst'",
-                      '    objectUri = '
-                      "'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#KlTestKeuzelijst'",
+                      "    objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#KlTestKeuzelijst'",
                       "    definition = 'Keuzelijst met test waarden.'",
-                      '    codelist = '
-                      "'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlTestKeuzelijst'",
+                      "    status = 'ingebruik'",
+                      "    codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlTestKeuzelijst'",
                       '    options = {',
                       "        'waarde-1': KeuzelijstWaarde(invulwaarde='waarde-1',",
                       "                                     label='waarde 1',",
@@ -44,28 +43,26 @@ expectedKeuzelijst = ['# coding=utf-8',
                       "objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlTestKeuzelijst/waarde-3'),",
                       "        'waarde-4': KeuzelijstWaarde(invulwaarde='waarde-4',",
                       "                                     label='waarde 4',",
-"                                     status='ingebruik',",
+                      "                                     status='ingebruik',",
                       '                                     '
                       "objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlTestKeuzelijst/waarde-4'),",
                       "        'waarde-5': KeuzelijstWaarde(invulwaarde='waarde-5',",
                       "                                     label='waarde 5',",
-"                                     status='uitgebruik',",
+                      "                                     status='uitgebruik',",
                       '                                     '
                       "objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlTestKeuzelijst/waarde-5'),",
                       "        'waarde-6': KeuzelijstWaarde(invulwaarde='waarde-6',",
                       "                                     label='waarde 6',",
-"                                     status='verwijderd',",
+                      "                                     status='verwijderd',",
                       '                                     '
                       "objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlTestKeuzelijst/waarde-6')",
                       '    }',
                       '',
                       '    @classmethod',
-                      '    def get_dummy_data(cls):',
-                      '        return random.choice(list(cls.options.keys()))',
-                      '',
-                      '    @staticmethod',
-                      '    def create_dummy_data():',
-                      '        return KlTestKeuzelijst.get_dummy_data()',
+                      '    def create_dummy_data(cls):',
+                      '        return random.choice(list(map(lambda x: x.invulwaarde,',
+                      '                                      '
+                      "filter(lambda option: option.status == 'ingebruik', cls.options.values()))))",
                       '']
 
 
@@ -152,6 +149,14 @@ class OTLEnumerationCreatorTests(unittest.TestCase):
         list = OTLEnumerationCreator.get_keuzelijstwaardes_from_graph(g)
         self.assertEqual(6, len(list))
 
+    def test_get_adm_status_from_graph(self):
+        base_dir = os.path.dirname(os.path.realpath(__file__))
+        file_location = f'{base_dir}/KlTestKeuzelijst.ttl'
+        g = rdflib.Graph()
+        g.parse(file_location, format="turtle")
+        status = OTLEnumerationCreator.get_adm_status_from_graph(g, name='KlTestKeuzelijst')
+        self.assertEqual('ingebruik', status)
+
     def test_get_keuzelijstwaardes_from_graph_new_format(self):
         base_dir = os.path.dirname(os.path.realpath(__file__))
         file_location = f'{base_dir}/new_format_ttl.ttl'
@@ -160,7 +165,7 @@ class OTLEnumerationCreatorTests(unittest.TestCase):
         list = OTLEnumerationCreator.get_keuzelijstwaardes_from_graph(g)
         self.assertEqual(2, len(list))
 
-    def test_adms_status(self):
+    def test_get_adms_status_for_options(self):
         collector = self.setUp()
         creator = OTLEnumerationCreator(collector)
         keuzelijst = collector.find_enumeration_by_uri(

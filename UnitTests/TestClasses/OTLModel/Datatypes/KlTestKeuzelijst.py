@@ -11,6 +11,7 @@ class KlTestKeuzelijst(KeuzelijstField):
     label = 'Test keuzelijst'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#KlTestKeuzelijst'
     definition = 'Keuzelijst met test waarden.'
+    status = 'ingebruik'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlTestKeuzelijst'
     options = {
         'waarde-1': KeuzelijstWaarde(invulwaarde='waarde-1',
@@ -37,10 +38,7 @@ class KlTestKeuzelijst(KeuzelijstField):
     }
 
     @classmethod
-    def get_dummy_data(cls):
-        return random.choice(list(cls.options.keys()))
-
-    @staticmethod
-    def create_dummy_data():
-        return KlTestKeuzelijst.get_dummy_data()
+    def create_dummy_data(cls):
+        return random.choice(list(map(lambda x: x.invulwaarde,
+                                      filter(lambda option: option.status == 'ingebruik', cls.options.values()))))
 

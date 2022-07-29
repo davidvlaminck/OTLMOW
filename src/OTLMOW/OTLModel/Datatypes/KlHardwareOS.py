@@ -11,28 +11,30 @@ class KlHardwareOS(KeuzelijstField):
     label = 'Hardware OS'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#KlHardwareOS'
     definition = 'vb : Windows 10 SP1, Windows 10 SP2, unix.'
+    status = 'ingebruik'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlHardwareOS'
     options = {
         'cent-os-linux-7-core': KeuzelijstWaarde(invulwaarde='cent-os-linux-7-core',
                                                  label='CentOS Linux 7 (Core)',
+                                                 status='ingebruik',
                                                  definitie='CentOS Linux 7 (Core)',
                                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlHardwareOS/cent-os-linux-7-core'),
         'unix': KeuzelijstWaarde(invulwaarde='unix',
                                  label='unix',
+                                 status='ingebruik',
                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlHardwareOS/unix'),
         'windows-10-SP1': KeuzelijstWaarde(invulwaarde='windows-10-SP1',
                                            label='windows 10 SP1',
+                                           status='ingebruik',
                                            objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlHardwareOS/windows-10-SP1'),
         'windows-10-SP2': KeuzelijstWaarde(invulwaarde='windows-10-SP2',
                                            label='windows 10 SP2',
+                                           status='ingebruik',
                                            objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlHardwareOS/windows-10-SP2')
     }
 
     @classmethod
-    def get_dummy_data(cls):
-        return random.choice(list(cls.options.keys()))
-
-    @staticmethod
-    def create_dummy_data():
-        return KlHardwareOS.get_dummy_data()
+    def create_dummy_data(cls):
+        return random.choice(list(map(lambda x: x.invulwaarde,
+                                      filter(lambda option: option.status == 'ingebruik', cls.options.values()))))
 

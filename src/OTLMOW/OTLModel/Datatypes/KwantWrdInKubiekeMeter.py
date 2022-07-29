@@ -15,6 +15,7 @@ class KwantWrdInKubiekeMeterWaarden(AttributeInfo):
                                               label='standaard eenheid',
                                               objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInKubiekeMeter.standaardEenheid',
                                               usagenote='"m3"^^cdt:ucumunit',
+                                              readonly=True,
                                               constraints='"m3"^^cdt:ucumunit',
                                               definition='De standaard eenheid bij dit datatype is uitgedrukt in kubieke meter.',
                                               owner=self)

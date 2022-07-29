@@ -11,23 +11,23 @@ class KlBoomVerankering(KeuzelijstField):
     label = 'Boom verankering'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlBoomVerankering'
     definition = 'De verschillende manieren van verankering van een boom.'
+    status = 'ingebruik'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlBoomVerankering'
     options = {
         'bovengronds': KeuzelijstWaarde(invulwaarde='bovengronds',
                                         label='bovengronds',
+                                        status='ingebruik',
                                         definitie='De constructie voor de stabiliteit van de boom bevindt zich boven de grond',
                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBoomVerankering/bovengronds'),
         'ondergronds': KeuzelijstWaarde(invulwaarde='ondergronds',
                                         label='ondergronds',
+                                        status='ingebruik',
                                         definitie='De constructie voor de stabiliteit van de boom bevindt zich volledig onder de grond',
                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBoomVerankering/ondergronds')
     }
 
     @classmethod
-    def get_dummy_data(cls):
-        return random.choice(list(cls.options.keys()))
-
-    @staticmethod
-    def create_dummy_data():
-        return KlBoomVerankering.get_dummy_data()
+    def create_dummy_data(cls):
+        return random.choice(list(map(lambda x: x.invulwaarde,
+                                      filter(lambda option: option.status == 'ingebruik', cls.options.values()))))
 

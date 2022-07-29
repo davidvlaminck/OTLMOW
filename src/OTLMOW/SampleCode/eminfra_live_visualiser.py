@@ -3,10 +3,10 @@
 from OTLMOW.Facility.FileFormats.EMInfraImporter import EMInfraImporter
 from OTLMOW.Facility.OTLFacility import OTLFacility
 from OTLMOW.Facility.RequesterFactory import RequesterFactory
-
+from OTLMOW.Facility.Visualiser import Visualiser
 
 if __name__ == '__main__':
-    otl_facility = OTLFacility(logfile=r'C:\temp\pythonLogging\pythonlog.txt',
+    otl_facility = OTLFacility(logfile=r'C:\temp\pythonLogging\python_log.txt',
                                settings_path="C:\\resources\\settings_OTLMOW.json")
 
     input_uuids = ['eb45c3a5-2bf9-4c56-b665-2a7dafb6b709', 'c22298c5-1978-49c9-83ec-a2ffd7a71665',
@@ -49,7 +49,7 @@ if __name__ == '__main__':
     assets = list(seen.values())
 
     #visualize the list of assets
-    otl_facility.visualiser.show(seen.values())
+    Visualiser().show(seen.values())
 
     # for item in otl_facility.make_overview_of_assets(slagbomen_assets).items():
     #     print(item)

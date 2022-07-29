@@ -6,7 +6,7 @@ from OTLMOW.OTLModel.Classes.Onderdeel.HoortBij import HoortBij
 from OTLMOW.OTLModel.Classes.Onderdeel.Wegkantkast import Wegkantkast
 
 if __name__ == '__main__':
-    otl_facility = OTLFacility(logfile=r'C:\temp\pythonLogging\pythonlog.txt',
+    otl_facility = OTLFacility(logfile=r'C:\temp\pythonLogging\python_log.txt',
                                settings_path="C:\\resources\\settings_OTLMOW.json",
                                enable_relation_features=True)
 

@@ -15,6 +15,7 @@ class KwantWrdInVierkanteMeterWaarden(AttributeInfo):
                                               label='standaard eenheid',
                                               objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInVierkanteMeter.standaardEenheid',
                                               usagenote='"m2"^^cdt:ucumunit',
+                                              readonly=True,
                                               constraints='"m2"^^cdt:ucumunit',
                                               definition='De standaard eenheid bij dit datatype is uitgedrukt in vierkante meter.',
                                               owner=self)

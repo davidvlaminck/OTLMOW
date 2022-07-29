@@ -15,6 +15,7 @@ class KwantWrdInJaarWaarden(AttributeInfo):
                                               label='standaard eenheid',
                                               objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInJaar.standaardEenheid',
                                               usagenote='"a"^^cdt:ucumunit',
+                                              readonly=True,
                                               constraints='"a"^^cdt:ucumunit',
                                               definition='De standaard eenheid bij dit datatype is uitgedrukt in jaar.',
                                               owner=self)

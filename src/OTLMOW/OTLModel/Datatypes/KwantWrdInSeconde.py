@@ -15,6 +15,7 @@ class KwantWrdInSecondeWaarden(AttributeInfo):
                                               label='standaard eenheid',
                                               objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInSeconde.standaardEenheid',
                                               usagenote='"s"^^cdt:ucumunit',
+                                              readonly=True,
                                               constraints='"s"^^cdt:ucumunit',
                                               definition='De standaard eenheid bij dit datatype is uitgedrukt in seconde.',
                                               owner=self)

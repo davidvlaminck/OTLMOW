@@ -11,19 +11,18 @@ class KlIVRIMerkRIS(KeuzelijstField):
     label = 'iVRIMerkRIS'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlIVRIMerkRIS'
     definition = 'Het merk van de RIS.'
+    status = 'ingebruik'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlIVRIMerkRIS'
     options = {
         'peek': KeuzelijstWaarde(invulwaarde='peek',
                                  label='Peek',
+                                 status='ingebruik',
                                  definitie='Peek',
                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlIVRIMerkRIS/peek')
     }
 
     @classmethod
-    def get_dummy_data(cls):
-        return random.choice(list(cls.options.keys()))
-
-    @staticmethod
-    def create_dummy_data():
-        return KlIVRIMerkRIS.get_dummy_data()
+    def create_dummy_data(cls):
+        return random.choice(list(map(lambda x: x.invulwaarde,
+                                      filter(lambda option: option.status == 'ingebruik', cls.options.values()))))
 

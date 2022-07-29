@@ -15,6 +15,7 @@ class KwantWrdInMinuutWaarden(AttributeInfo):
                                               label='standaard eenheid',
                                               objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMinuut.standaardEenheid',
                                               usagenote='"min"^^cdt:ucumunit',
+                                              readonly=True,
                                               constraints='"min"^^cdt:ucumunit',
                                               definition='De standaard eenheid bij dit datatype is uitgedrukt in minuten.',
                                               owner=self)

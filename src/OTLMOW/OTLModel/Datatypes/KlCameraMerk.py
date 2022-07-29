@@ -11,23 +11,23 @@ class KlCameraMerk(KeuzelijstField):
     label = 'Camera merk'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlCameraMerk'
     definition = 'Het merk van de camera.'
+    status = 'ingebruik'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlCameraMerk'
     options = {
         'bosch': KeuzelijstWaarde(invulwaarde='bosch',
                                   label='Bosch',
+                                  status='ingebruik',
                                   definitie='Bosch',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlCameraMerk/bosch'),
         'videotec': KeuzelijstWaarde(invulwaarde='videotec',
                                      label='Videotec',
+                                     status='ingebruik',
                                      definitie='Videotec',
                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlCameraMerk/videotec')
     }
 
     @classmethod
-    def get_dummy_data(cls):
-        return random.choice(list(cls.options.keys()))
-
-    @staticmethod
-    def create_dummy_data():
-        return KlCameraMerk.get_dummy_data()
+    def create_dummy_data(cls):
+        return random.choice(list(map(lambda x: x.invulwaarde,
+                                      filter(lambda option: option.status == 'ingebruik', cls.options.values()))))
 

@@ -1,6 +1,6 @@
 # coding=utf-8
 from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from abc import abstractmethod, ABC
+from abc import abstractmethod
 from OTLMOW.OTLModel.Datatypes.FloatOrDecimalField import FloatOrDecimalField
 from OTLMOW.OTLModel.Datatypes.KwantWrdInMeter import KwantWrdInMeter
 from OTLMOW.OTLModel.Datatypes.KwantWrdInVierkanteMeter import KwantWrdInVierkanteMeter
@@ -8,7 +8,7 @@ from OTLMOW.GeometrieArtefact.VlakGeometrie import VlakGeometrie
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class TerreinDeel(ABC):
+class TerreinDeel(VlakGeometrie):
     """Abstracte voor het gedeelte van het aardoppervlak, met een gelijkaardige functie, dat geen deel uitmaakt van 'waterdeel'."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#TerreinDeel'

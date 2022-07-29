@@ -10,7 +10,7 @@ from OTLMOW.OTLModel.Classes.Onderdeel.Netwerkelement import Netwerkelement
 # goal:
 # take list of uuid's and find the related legacy element to inherit geometry from
 if __name__ == '__main__':
-    otl_facility = OTLFacility(logfile=r'C:\temp\pythonLogging\pythonlog.txt',
+    otl_facility = OTLFacility(logfile=r'C:\temp\pythonLogging\python_log.txt',
                                settings_path="C:\\resources\\settings_OTLMOW.json")
     requester = RequesterFactory.create_requester(settings=otl_facility.settings, auth_type='JWT', env='prd')
     importer = EMInfraImporter(requester=requester)
@@ -61,5 +61,5 @@ if __name__ == '__main__':
         aan_te_leveren.append(netwerkElement)
 
     # write a file for Davie
-    otl_facility.jsonExporter.export_objects_to_json_file(aan_te_leveren, 'C:\\resources\\netwerkelementen_locaties_van_IP_20220518.json')
+    otl_facility.create_file_from_assets(list_of_objects=aan_te_leveren, filepath='C:\\resources\\netwerkelementen_locaties_van_IP_20220518.json')
 

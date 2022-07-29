@@ -15,6 +15,7 @@ class KwantWrdInMaandWaarden(AttributeInfo):
                                               label='standaard eenheid',
                                               objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMaand.standaardEenheid',
                                               usagenote='"mo"^^cdt:ucumunit',
+                                              readonly=True,
                                               constraints='"mo"^^cdt:ucumunit',
                                               definition='De standaard eenheid bij dit datatype is uitgedrukt in maand.',
                                               owner=self)

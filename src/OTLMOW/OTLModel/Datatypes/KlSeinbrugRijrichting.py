@@ -11,21 +11,21 @@ class KlSeinbrugRijrichting(KeuzelijstField):
     label = 'Seinbrug rijrichting'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlSeinbrugRijrichting'
     definition = 'Mogelijke rijrichtingen bij een seinbrug (enkele of dubbele).'
+    status = 'ingebruik'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlSeinbrugRijrichting'
     options = {
         'dubbele-rijrichting': KeuzelijstWaarde(invulwaarde='dubbele-rijrichting',
                                                 label='dubbele rijrichting',
+                                                status='ingebruik',
                                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlSeinbrugRijrichting/dubbele-rijrichting'),
         'enkele-rijrichting': KeuzelijstWaarde(invulwaarde='enkele-rijrichting',
                                                label='enkele rijrichting',
+                                               status='ingebruik',
                                                objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlSeinbrugRijrichting/enkele-rijrichting')
     }
 
     @classmethod
-    def get_dummy_data(cls):
-        return random.choice(list(cls.options.keys()))
-
-    @staticmethod
-    def create_dummy_data():
-        return KlSeinbrugRijrichting.get_dummy_data()
+    def create_dummy_data(cls):
+        return random.choice(list(map(lambda x: x.invulwaarde,
+                                      filter(lambda option: option.status == 'ingebruik', cls.options.values()))))
 

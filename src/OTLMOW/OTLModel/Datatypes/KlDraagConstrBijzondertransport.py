@@ -11,31 +11,33 @@ class KlDraagConstrBijzondertransport(KeuzelijstField):
     label = 'Draagconstructie bijzonder transport'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#KlDraagConstrBijzondertransport'
     definition = 'De mogelijkheden en manieren waarop een steun geschikt is om bijzonder transport mogelijk te maken.'
+    status = 'ingebruik'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlDraagConstrBijzondertransport'
     options = {
         'afkoppelbaar': KeuzelijstWaarde(invulwaarde='afkoppelbaar',
                                          label='afkoppelbaar',
+                                         status='ingebruik',
                                          definitie='Het object is afkoppelbaar.',
                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlDraagConstrBijzondertransport/afkoppelbaar'),
         'draaibaar': KeuzelijstWaarde(invulwaarde='draaibaar',
                                       label='draaibaar',
+                                      status='ingebruik',
                                       definitie='Het object is draaibaar.',
                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlDraagConstrBijzondertransport/draaibaar'),
         'geen-voorziening': KeuzelijstWaarde(invulwaarde='geen-voorziening',
                                              label='geen voorziening',
+                                             status='ingebruik',
                                              definitie='Geen voorziening.',
                                              objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlDraagConstrBijzondertransport/geen-voorziening'),
         'kantelbaar': KeuzelijstWaarde(invulwaarde='kantelbaar',
                                        label='kantelbaar',
+                                       status='ingebruik',
                                        definitie='Het object is kantelbaar.',
                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlDraagConstrBijzondertransport/kantelbaar')
     }
 
     @classmethod
-    def get_dummy_data(cls):
-        return random.choice(list(cls.options.keys()))
-
-    @staticmethod
-    def create_dummy_data():
-        return KlDraagConstrBijzondertransport.get_dummy_data()
+    def create_dummy_data(cls):
+        return random.choice(list(map(lambda x: x.invulwaarde,
+                                      filter(lambda option: option.status == 'ingebruik', cls.options.values()))))
 

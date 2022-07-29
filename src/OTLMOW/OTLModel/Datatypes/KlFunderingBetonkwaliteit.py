@@ -10,16 +10,14 @@ class KlFunderingBetonkwaliteit(KeuzelijstField):
     label = 'Fundering betonkwaliteit'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlFunderingBetonkwaliteit'
     definition = 'Mogelijke waarden voor de betonkwaliteit van een fundering.'
+    status = 'ingebruik'
     deprecated_version = '2.0.0'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlFunderingBetonkwaliteit'
     options = {
     }
 
     @classmethod
-    def get_dummy_data(cls):
-        return random.choice(list(cls.options.keys()))
-
-    @staticmethod
-    def create_dummy_data():
-        return KlFunderingBetonkwaliteit.get_dummy_data()
+    def create_dummy_data(cls):
+        return random.choice(list(map(lambda x: x.invulwaarde,
+                                      filter(lambda option: option.status == 'ingebruik', cls.options.values()))))
 

@@ -15,6 +15,7 @@ class KwantWrdInMilliAmpereWaarden(AttributeInfo):
                                               label='standaard eenheid',
                                               objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMilliAmpere.standaardEenheid',
                                               usagenote='"mA"^^cdt:ucumunit',
+                                              readonly=True,
                                               constraints='"mA"^^cdt:ucumunit',
                                               definition='De standaard eenheid bij dit datatype is uitgedrukt in milliAmpere.',
                                               owner=self)

@@ -15,6 +15,7 @@ class KwantWrdInGigabyteWaarden(AttributeInfo):
                                               label='standaard eenheid',
                                               objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInGigabyte.standaardEenheid',
                                               usagenote='"GBy"^^cdt:ucumunit',
+                                              readonly=True,
                                               constraints='"GBy"^^cdt:ucumunit',
                                               definition='De standaard eenheid bij dit datatype is uitgedrukt in gigabyte.',
                                               owner=self)

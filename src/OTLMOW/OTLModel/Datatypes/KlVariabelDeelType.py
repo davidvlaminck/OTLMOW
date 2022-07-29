@@ -11,23 +11,23 @@ class KlVariabelDeelType(KeuzelijstField):
     label = 'Variabel deel type'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlVariabelDeelType'
     definition = 'Types van het variabel deel van een overstortrand.'
+    status = 'ingebruik'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlVariabelDeelType'
     options = {
         'overstortplaat': KeuzelijstWaarde(invulwaarde='overstortplaat',
                                            label='overstortplaat',
+                                           status='ingebruik',
                                            definitie='overstortplaat',
                                            objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVariabelDeelType/overstortplaat'),
         'schotbalk': KeuzelijstWaarde(invulwaarde='schotbalk',
                                       label='schotbalk',
+                                      status='ingebruik',
                                       definitie='schotbalk',
                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVariabelDeelType/schotbalk')
     }
 
     @classmethod
-    def get_dummy_data(cls):
-        return random.choice(list(cls.options.keys()))
-
-    @staticmethod
-    def create_dummy_data():
-        return KlVariabelDeelType.get_dummy_data()
+    def create_dummy_data(cls):
+        return random.choice(list(map(lambda x: x.invulwaarde,
+                                      filter(lambda option: option.status == 'ingebruik', cls.options.values()))))
 

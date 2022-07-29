@@ -15,6 +15,7 @@ class KwantWrdInKiloNewtonWaarden(AttributeInfo):
                                               label='standaard eenheid',
                                               objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInKiloNewton.standaardEenheid',
                                               usagenote='"kN"^^cdt:ucumunit',
+                                              readonly=True,
                                               constraints='"kN"^^cdt:ucumunit',
                                               definition='De standaard eenheid bij dit datatype is uitgedrukt in kiloNewton.',
                                               owner=self)

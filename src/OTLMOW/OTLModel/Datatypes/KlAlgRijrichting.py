@@ -11,23 +11,23 @@ class KlAlgRijrichting(KeuzelijstField):
     label = 'Rijrichting'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlAlgRijrichting'
     definition = 'De mogelijke rijrichtingen.'
+    status = 'ingebruik'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlAlgRijrichting'
     options = {
         'aflopend': KeuzelijstWaarde(invulwaarde='aflopend',
                                      label='aflopend',
+                                     status='ingebruik',
                                      definitie='Aflopende rijrichting.',
                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgRijrichting/aflopend'),
         'oplopend': KeuzelijstWaarde(invulwaarde='oplopend',
                                      label='oplopend',
+                                     status='ingebruik',
                                      definitie='Oplopende rijrichting.',
                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAlgRijrichting/oplopend')
     }
 
     @classmethod
-    def get_dummy_data(cls):
-        return random.choice(list(cls.options.keys()))
-
-    @staticmethod
-    def create_dummy_data():
-        return KlAlgRijrichting.get_dummy_data()
+    def create_dummy_data(cls):
+        return random.choice(list(map(lambda x: x.invulwaarde,
+                                      filter(lambda option: option.status == 'ingebruik', cls.options.values()))))
 

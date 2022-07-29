@@ -11,43 +11,48 @@ class KlVerkeersbordsteunType(KeuzelijstField):
     label = 'Verkeersbordsteuntype'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlVerkeersbordsteunType'
     definition = 'Types voor een verkeersbordsteun.'
+    status = 'ingebruik'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlVerkeersbordsteunType'
     options = {
         'botsvriendelijke-steun': KeuzelijstWaarde(invulwaarde='botsvriendelijke-steun',
                                                    label='botsvriendelijke steun',
+                                                   status='ingebruik',
                                                    definitie='Constructie die na aanrijding zijn oorspronkelijke positie hersteld',
                                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerkeersbordsteunType/botsvriendelijke-steun'),
         'botsvriendelijke-steun-type-100NE2': KeuzelijstWaarde(invulwaarde='botsvriendelijke-steun-type-100NE2',
                                                                label='botsvriendelijke steun type 100NE2',
+                                                               status='ingebruik',
                                                                definitie='te bepalen',
                                                                objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerkeersbordsteunType/botsvriendelijke-steun-type-100NE2'),
         'botsvriendelijke-steun-type-100NE3': KeuzelijstWaarde(invulwaarde='botsvriendelijke-steun-type-100NE3',
                                                                label='botsvriendelijke steun type 100NE3',
+                                                               status='ingebruik',
                                                                definitie='te bepalen',
                                                                objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerkeersbordsteunType/botsvriendelijke-steun-type-100NE3'),
         'galgpaal': KeuzelijstWaarde(invulwaarde='galgpaal',
                                      label='galgpaal',
+                                     status='ingebruik',
                                      definitie="Deze optie mag niet aangeduid worden! Bij instantiëren van galgpalen moet je het onderdeel 'Galgpaal' gebruiken.",
                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerkeersbordsteunType/galgpaal'),
         'rechte-paal': KeuzelijstWaarde(invulwaarde='rechte-paal',
                                         label='rechte paal',
+                                        status='ingebruik',
                                         definitie='Een rechte paal met als doel een verkeersbord te bevestigen.',
                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerkeersbordsteunType/rechte-paal'),
         'seinbrug': KeuzelijstWaarde(invulwaarde='seinbrug',
                                      label='seinbrug',
+                                     status='ingebruik',
                                      definitie="Deze optie mag niet aangeduid worden! Bij instantiëren van seinbruggen moet je het onderdeel 'Seinbrug' gebruiken.",
                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerkeersbordsteunType/seinbrug'),
         'vakwerksteun': KeuzelijstWaarde(invulwaarde='vakwerksteun',
                                          label='vakwerksteun',
+                                         status='ingebruik',
                                          definitie='Een keuzelijst om het type verkeersbordpaal te bepalen',
                                          objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerkeersbordsteunType/vakwerksteun')
     }
 
     @classmethod
-    def get_dummy_data(cls):
-        return random.choice(list(cls.options.keys()))
-
-    @staticmethod
-    def create_dummy_data():
-        return KlVerkeersbordsteunType.get_dummy_data()
+    def create_dummy_data(cls):
+        return random.choice(list(map(lambda x: x.invulwaarde,
+                                      filter(lambda option: option.status == 'ingebruik', cls.options.values()))))
 

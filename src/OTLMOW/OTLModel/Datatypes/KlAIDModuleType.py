@@ -10,15 +10,13 @@ class KlAIDModuleType(KeuzelijstField):
     label = 'AID-module type'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlAIDModuleType'
     definition = 'Het type van de AID-module.'
+    status = 'ingebruik'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlAIDModuleType'
     options = {
     }
 
     @classmethod
-    def get_dummy_data(cls):
-        return random.choice(list(cls.options.keys()))
-
-    @staticmethod
-    def create_dummy_data():
-        return KlAIDModuleType.get_dummy_data()
+    def create_dummy_data(cls):
+        return random.choice(list(map(lambda x: x.invulwaarde,
+                                      filter(lambda option: option.status == 'ingebruik', cls.options.values()))))
 

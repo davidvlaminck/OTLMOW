@@ -11,31 +11,33 @@ class KlBSSRandafwerking(KeuzelijstField):
     label = 'randafwerking'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlBSSRandafwerking'
     definition = 'De verschillende manieren van de randafwerking van de verharding.'
+    status = 'ingebruik'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlBSSRandafwerking'
     options = {
         'biscchopsmutsen': KeuzelijstWaarde(invulwaarde='biscchopsmutsen',
                                             label='biscchopsmutsen',
+                                            status='ingebruik',
                                             definitie='Een kantsteen die wordt toegepast wanneer de betonstraatsteen in keperverband wordt gestraat.',
                                             objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBSSRandafwerking/biscchopsmutsen'),
         'geen': KeuzelijstWaarde(invulwaarde='geen',
                                  label='geen',
+                                 status='ingebruik',
                                  definitie='De randafwerking is overbodig. ',
                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBSSRandafwerking/geen'),
         'gezaagde-betonstraatstenen': KeuzelijstWaarde(invulwaarde='gezaagde-betonstraatstenen',
                                                        label='gezaagde betonstraatstenen',
+                                                       status='ingebruik',
                                                        definitie='Een kantsteen, meestal uit hetzelfde materiaal,  die op maat werd gebracht.',
                                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBSSRandafwerking/gezaagde-betonstraatstenen'),
         'kardinaalsmutsen': KeuzelijstWaarde(invulwaarde='kardinaalsmutsen',
                                              label='kardinaalsmutsen',
+                                             status='ingebruik',
                                              definitie='Een kantsteen die wordt toegepast wanneer de betonstraatsteen in keperverband wordt gestraat.',
                                              objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlBSSRandafwerking/kardinaalsmutsen')
     }
 
     @classmethod
-    def get_dummy_data(cls):
-        return random.choice(list(cls.options.keys()))
-
-    @staticmethod
-    def create_dummy_data():
-        return KlBSSRandafwerking.get_dummy_data()
+    def create_dummy_data(cls):
+        return random.choice(list(map(lambda x: x.invulwaarde,
+                                      filter(lambda option: option.status == 'ingebruik', cls.options.values()))))
 

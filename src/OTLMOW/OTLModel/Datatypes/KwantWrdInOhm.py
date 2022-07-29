@@ -15,6 +15,7 @@ class KwantWrdInOhmWaarden(AttributeInfo):
                                               label='standaard eenheid',
                                               objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInOhm.standaardEenheid',
                                               usagenote='"Ohm"^^cdt:ucumunit',
+                                              readonly=True,
                                               constraints='"Ohm"^^cdt:ucumunit',
                                               definition='De standaard eenheid bij dit datatype is uitgedrukt in ohm.',
                                               owner=self)

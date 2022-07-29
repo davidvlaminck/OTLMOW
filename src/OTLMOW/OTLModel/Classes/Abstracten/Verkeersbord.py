@@ -1,6 +1,6 @@
 # coding=utf-8
 from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from abc import abstractmethod, ABC
+from abc import abstractmethod
 from OTLMOW.OTLModel.Datatypes.DtcDocument import DtcDocument
 from OTLMOW.OTLModel.Datatypes.DtuAfmetingVerkeersbord import DtuAfmetingVerkeersbord
 from OTLMOW.OTLModel.Datatypes.KlOperationeleStatus import KlOperationeleStatus
@@ -11,7 +11,7 @@ from OTLMOW.GeometrieArtefact.PuntGeometrie import PuntGeometrie
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class Verkeersbord(ABC):
+class Verkeersbord(PuntGeometrie):
     """Abstracte klasse voor borden die een fysieke drager van verkeerstekens kunnen zijn waarvan de betekenis bepaald wordt door een verkeersbordconcept."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Verkeersbord'

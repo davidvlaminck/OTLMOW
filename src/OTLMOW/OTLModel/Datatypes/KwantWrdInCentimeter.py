@@ -15,6 +15,7 @@ class KwantWrdInCentimeterWaarden(AttributeInfo):
                                               label='standaard eenheid',
                                               objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInCentimeter.standaardEenheid',
                                               usagenote='"cm"^^cdt:ucumunit',
+                                              readonly=True,
                                               constraints='"cm"^^cdt:ucumunit',
                                               definition='De standaard eenheid bij dit datatype is uitgedrukt in centimeter.',
                                               owner=self)

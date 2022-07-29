@@ -15,6 +15,7 @@ class KwantWrdInDecimaleGradenWaarden(AttributeInfo):
                                               label='standaard eenheid',
                                               objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInDecimaleGraden.standaardEenheid',
                                               usagenote='"deg"^^cdt:ucumunit',
+                                              readonly=True,
                                               constraints='"deg"^^cdt:ucumunit',
                                               definition='De standaard eenheid bij dit datatype is uitgedrukt in decimale graden.',
                                               owner=self)

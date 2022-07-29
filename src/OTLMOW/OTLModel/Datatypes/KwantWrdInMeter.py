@@ -15,6 +15,7 @@ class KwantWrdInMeterWaarden(AttributeInfo):
                                               label='standaard eenheid',
                                               objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMeter.standaardEenheid',
                                               usagenote='"m"^^cdt:ucumunit',
+                                              readonly=True,
                                               constraints='"m"^^cdt:ucumunit',
                                               definition='De standaard eenheid bij dit datatype is uitgedrukt in meter.',
                                               owner=self)

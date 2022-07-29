@@ -51,7 +51,49 @@ class OSLOCollector:
     def find_inheritances_by_class(self, oslo_class: OSLOClass) -> [Inheritance]:
         if oslo_class is None:
             return []
-        return sorted(list(filter(lambda c: c.class_uri == oslo_class.objectUri, self.inheritances)), key=lambda c: c.base_uri)
+        return self.find_inheritances_by_class_uri(oslo_class.objectUri)
+
+    def find_inheritances_by_class_uri(self, oslo_class_uri: str) -> [Inheritance]:
+        if oslo_class_uri is None or oslo_class_uri == '':
+            return []
+        return sorted(list(filter(lambda c: c.class_uri == oslo_class_uri, self.inheritances)), key=lambda c: c.base_uri)
+
+    def find_all_indirect_inheritances_by_class_uri(self, oslo_class_uri: str) -> [Inheritance]:
+        if oslo_class_uri is None or oslo_class_uri == '':
+            return []
+
+        inheritance_list = []
+        direct_inheritances = self.find_inheritances_by_class_uri(oslo_class_uri)
+        if len(direct_inheritances) == 0:
+            return inheritance_list
+
+        inheritance_list.extend(direct_inheritances)
+        for direct in direct_inheritances:
+            inheritance_list.extend(self.find_all_indirect_inheritances_by_class_uri(direct.class_uri))
+
+        return sorted(inheritance_list, key=lambda c: c.base_uri)
+
+    def find_superclasses_uri_by_class_uri(self, oslo_class_uri: str) -> [str]:
+        if oslo_class_uri is None or oslo_class_uri == '':
+            return []
+
+        inheritances = list(filter(lambda i: i.base_uri == oslo_class_uri, self.inheritances))
+        return sorted(list(map(lambda c: c.class_uri, inheritances)))
+
+    def find_indirect_superclasses_uri_by_class_uri(self, oslo_class_uri: str) -> [str]:
+        if oslo_class_uri is None or oslo_class_uri == '':
+            return []
+
+        superclass_list = []
+        direct_superclasses = self.find_superclasses_uri_by_class_uri(oslo_class_uri)
+        if len(direct_superclasses) == 0:
+            return superclass_list
+
+        superclass_list.extend(direct_superclasses)
+        for direct in direct_superclasses:
+            superclass_list.extend(self.find_indirect_superclasses_uri_by_class_uri(direct))
+
+        return sorted(superclass_list)
 
     def find_class_by_uri(self, uri: str) -> OSLOClass:
         return next((p for p in self.classes if p.objectUri == uri), None)

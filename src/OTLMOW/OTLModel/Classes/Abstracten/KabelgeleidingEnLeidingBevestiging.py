@@ -1,10 +1,10 @@
 # coding=utf-8
-from abc import abstractmethod, ABC
+from abc import abstractmethod
 from OTLMOW.GeometrieArtefact.LijnGeometrie import LijnGeometrie
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class KabelgeleidingEnLeidingBevestiging(ABC):
+class KabelgeleidingEnLeidingBevestiging(LijnGeometrie):
     """Abstracte voor het bevestigen van kabelgeleidingen en leidingen aan bouwkundige elementen"""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#KabelgeleidingEnLeidingBevestiging'

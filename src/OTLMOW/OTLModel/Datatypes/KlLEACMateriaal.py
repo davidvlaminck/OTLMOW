@@ -11,35 +11,38 @@ class KlLEACMateriaal(KeuzelijstField):
     label = 'Materiaal afschermende constructie'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlLEACMateriaal'
     definition = 'De verschillende materialen voor afschermende constructies.'
+    status = 'ingebruik'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlLEACMateriaal'
     options = {
         'geprefabriceerde-beton': KeuzelijstWaarde(invulwaarde='geprefabriceerde-beton',
                                                    label='geprefabriceerde beton',
+                                                   status='ingebruik',
                                                    definitie='geleideconstructie bestaande uit geprefabriceerde betonnen elementen',
                                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLEACMateriaal/geprefabriceerde-beton'),
         'hout-staal': KeuzelijstWaarde(invulwaarde='hout-staal',
                                        label='hout-staal',
+                                       status='ingebruik',
                                        definitie='hout-staal',
                                        objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLEACMateriaal/hout-staal'),
         'in-situ-beton': KeuzelijstWaarde(invulwaarde='in-situ-beton',
                                           label='in situ beton',
+                                          status='ingebruik',
                                           definitie='in situ beton',
                                           objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLEACMateriaal/in-situ-beton'),
         'kunststof': KeuzelijstWaarde(invulwaarde='kunststof',
                                       label='kunststof',
+                                      status='ingebruik',
                                       definitie='kunststof',
                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLEACMateriaal/kunststof'),
         'staal': KeuzelijstWaarde(invulwaarde='staal',
                                   label='staal',
+                                  status='ingebruik',
                                   definitie='staal',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlLEACMateriaal/staal')
     }
 
     @classmethod
-    def get_dummy_data(cls):
-        return random.choice(list(cls.options.keys()))
-
-    @staticmethod
-    def create_dummy_data():
-        return KlLEACMateriaal.get_dummy_data()
+    def create_dummy_data(cls):
+        return random.choice(list(map(lambda x: x.invulwaarde,
+                                      filter(lambda option: option.status == 'ingebruik', cls.options.values()))))
 

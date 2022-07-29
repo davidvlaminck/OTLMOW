@@ -10,15 +10,13 @@ class KlVrComKaartTypeOpslaggeheugen(KeuzelijstField):
     label = 'VR-communicatiekaart type opslaggeheugen'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlVrComKaartTypeOpslaggeheugen'
     definition = 'Keuzelijst met verschillende types geheugen van een VRCommunicatiekaart.'
+    status = 'ingebruik'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlVrComKaartTypeOpslaggeheugen'
     options = {
     }
 
     @classmethod
-    def get_dummy_data(cls):
-        return random.choice(list(cls.options.keys()))
-
-    @staticmethod
-    def create_dummy_data():
-        return KlVrComKaartTypeOpslaggeheugen.get_dummy_data()
+    def create_dummy_data(cls):
+        return random.choice(list(map(lambda x: x.invulwaarde,
+                                      filter(lambda option: option.status == 'ingebruik', cls.options.values()))))
 

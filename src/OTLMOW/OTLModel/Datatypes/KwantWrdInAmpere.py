@@ -15,6 +15,7 @@ class KwantWrdInAmpereWaarden(AttributeInfo):
                                               label='standaard eenheid',
                                               objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInAmpere.standaardEenheid',
                                               usagenote='"A"^^cdt:ucumunit',
+                                              readonly=True,
                                               constraints='"A"^^cdt:ucumunit',
                                               definition='De standaard eenheid bij dit datatype is uitgedrukt in ampere.',
                                               owner=self)

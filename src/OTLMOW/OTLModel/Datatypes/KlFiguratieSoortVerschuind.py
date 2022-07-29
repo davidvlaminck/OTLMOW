@@ -11,23 +11,23 @@ class KlFiguratieSoortVerschuind(KeuzelijstField):
     label = 'Figuratie soort verschuind'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlFiguratieSoortVerschuind'
     definition = 'Soorten van verschuinde figuratie markering.'
+    status = 'ingebruik'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlFiguratieSoortVerschuind'
     options = {
         'letterfiguratiemarkering(schuin)': KeuzelijstWaarde(invulwaarde='letterfiguratiemarkering(schuin)',
                                                              label='letterfiguratiemarkering(schuin)',
+                                                             status='ingebruik',
                                                              definitie='Een schuine lettermarking als figuratie zoals BUS, TAXI, TRAM,....',
                                                              objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieSoortVerschuind/letterfiguratiemarkering(schuin)'),
         'omgekeerde-driehoek(schuin)': KeuzelijstWaarde(invulwaarde='omgekeerde-driehoek(schuin)',
                                                         label='omgekeerde driehoek(schuin)',
+                                                        status='ingebruik',
                                                         definitie='Een schuine omgekeerde driehoek markering.',
                                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlFiguratieSoortVerschuind/omgekeerde-driehoek(schuin)')
     }
 
     @classmethod
-    def get_dummy_data(cls):
-        return random.choice(list(cls.options.keys()))
-
-    @staticmethod
-    def create_dummy_data():
-        return KlFiguratieSoortVerschuind.get_dummy_data()
+    def create_dummy_data(cls):
+        return random.choice(list(map(lambda x: x.invulwaarde,
+                                      filter(lambda option: option.status == 'ingebruik', cls.options.values()))))
 

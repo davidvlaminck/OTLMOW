@@ -15,6 +15,7 @@ class KwantWrdInKiloNewtonPerMeterWaarden(AttributeInfo):
                                               label='standaard eenheid',
                                               objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInKiloNewtonPerMeter.standaardEenheid',
                                               usagenote='"kN/m"^^cdt:ucumunit',
+                                              readonly=True,
                                               constraints='"kN/m"^^cdt:ucumunit',
                                               definition='De standaard eenheid bij dit datatype is uitgedrukt in kiloNewton per meter.',
                                               owner=self)

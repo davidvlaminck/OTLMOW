@@ -10,15 +10,13 @@ class KlRetroreflecterendVerkeersbordMerk(KeuzelijstField):
     label = 'Retroreflecterend Verkeersbord Merk'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlRetroreflecterendVerkeersbordMerk'
     definition = 'Keuzelijst met merknamen van retroreflecterende verkeersborden. De merknaam duidt op de leverancier of producent van het verkeersbord.'
+    status = 'ingebruik'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlRetroreflecterendVerkeersbordMerk'
     options = {
     }
 
     @classmethod
-    def get_dummy_data(cls):
-        return random.choice(list(cls.options.keys()))
-
-    @staticmethod
-    def create_dummy_data():
-        return KlRetroreflecterendVerkeersbordMerk.get_dummy_data()
+    def create_dummy_data(cls):
+        return random.choice(list(map(lambda x: x.invulwaarde,
+                                      filter(lambda option: option.status == 'ingebruik', cls.options.values()))))
 

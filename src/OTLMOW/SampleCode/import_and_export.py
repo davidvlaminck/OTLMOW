@@ -3,7 +3,7 @@ from datetime import datetime
 from OTLMOW.Facility.OTLFacility import OTLFacility
 
 if __name__ == '__main__':
-    otl_facility = OTLFacility(logfile=fr'C:\temp\pythonLogging\{datetime.now().strftime("%Y%m%d%H%M%S")}_pythonlog.txt',
+    otl_facility = OTLFacility(logfile=fr'C:\temp\pythonLogging\{datetime.now().strftime("%Y%m%d%H%M%S")}_python_log.txt',
                                settings_path=r'C:\resources\settings_OTLMOW.json')
 
     # import a JSON file from Davie

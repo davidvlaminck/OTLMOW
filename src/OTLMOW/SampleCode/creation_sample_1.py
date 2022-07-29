@@ -3,6 +3,7 @@ from datetime import datetime
 from OTLMOW.Facility.FileFormats.EMInfraImporter import EMInfraImporter
 from OTLMOW.Facility.OTLFacility import OTLFacility
 from OTLMOW.Facility.RequesterFactory import RequesterFactory
+from OTLMOW.Facility.Visualiser import Visualiser
 from OTLMOW.OTLModel.Classes.Onderdeel.Armatuurcontroller import Armatuurcontroller
 from OTLMOW.OTLModel.Classes.Onderdeel.Bevestiging import Bevestiging
 from OTLMOW.OTLModel.Classes.Onderdeel.HoortBij import HoortBij
@@ -19,7 +20,7 @@ from OTLMOW.OTLModel.Classes.Onderdeel.VoedtAangestuurd import VoedtAangestuurd
 from OTLMOW.OTLModel.Classes.Onderdeel.Wegkantkast import Wegkantkast
 
 if __name__ == '__main__':
-    otl_facility = OTLFacility(logfile=r'C:\temp\pythonLogging\pythonlog.txt',
+    otl_facility = OTLFacility(logfile=r'C:\temp\pythonLogging\python_log.txt',
                                settings_path="C:\\resources\\settings_OTLMOW.json",
                                enable_relation_features=True)
 
@@ -294,14 +295,10 @@ if __name__ == '__main__':
                           verkeersbord11, verkeersbord12, verkeersbord21, verkeersbord22]
     # bevestiging_mast_bord11, bevestiging_mast_bord12, bevestiging_mast_bord21, bevestiging_mast_bord22]
 
-    # encode to a json representation
-    encoded_json = otl_facility.encoder.encode(lijst_otl_objecten)
-    print(encoded_json)
-
-    # write the json file
+    # export as json file
     filepath = f'Output/{datetime.now().strftime("%Y%m%d%H%M%S")}_export_punctuele_verlichting.json'
-    otl_facility.encoder.write_json_to_file(encoded_json, filepath)
+    otl_facility.create_file_from_assets(list_of_objects=lijst_otl_objecten, filepath=filepath)
 
     lijst_otl_objecten.extend(assets)
 
-    otl_facility.visualiser.show(lijst_otl_objecten)
+    Visualiser().show(lijst_otl_objecten)

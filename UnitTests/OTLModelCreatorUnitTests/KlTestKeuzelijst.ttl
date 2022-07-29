@@ -4,6 +4,7 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlTestKeuzelijst> a skos:ConceptScheme;
+<https://www.w3.org/ns/adms#status> <https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik>;
   skos:definition "Keuzelijst met test keuzelijstwaarden."@nl;
   skos:prefLabel "Test keuzelijst"@nl.
 
@@ -29,7 +30,7 @@
   skos:topConceptOf <https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlTestKeuzelijst> .
 
 <https://wegenenverkeer.data.vlaanderen.be/id/concept/KlTestKeuzelijst/waarde-4> a skos:Concept;
-<https://www.w3.org/ns/adms#status> <https://wegenenverkeer.data.vlaanderen.be/id/concept/KlKeuzelijstStatus/ingebruik> ;
+<https://www.w3.org/ns/adms#status> <https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/ingebruik> ;
   skos:definition ""@nl;
   skos:inScheme <https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlTestKeuzelijst>;
   skos:notation "waarde-4";
@@ -37,7 +38,7 @@
   skos:topConceptOf <https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlTestKeuzelijst> .
 
 <https://wegenenverkeer.data.vlaanderen.be/id/concept/KlTestKeuzelijst/waarde-5> a skos:Concept;
-<https://www.w3.org/ns/adms#status> <https://wegenenverkeer.data.vlaanderen.be/id/concept/KlKeuzelijstStatus/uitgebruik> ;
+<https://www.w3.org/ns/adms#status> <https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/uitgebruik> ;
   skos:definition ""@nl;
   skos:inScheme <https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlTestKeuzelijst>;
   skos:notation "waarde-5";
@@ -45,7 +46,7 @@
   skos:topConceptOf <https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlTestKeuzelijst> .
 
 <https://wegenenverkeer.data.vlaanderen.be/id/concept/KlTestKeuzelijst/waarde-6> a skos:Concept;
-<https://www.w3.org/ns/adms#status> <https://wegenenverkeer.data.vlaanderen.be/id/concept/KlKeuzelijstStatus/verwijderd> ;
+<https://www.w3.org/ns/adms#status> <https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAdmsStatus/verwijderd> ;
   skos:definition ""@nl;
   skos:inScheme <https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlTestKeuzelijst>;
   skos:notation "waarde-6";

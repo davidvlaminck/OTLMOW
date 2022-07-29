@@ -11,21 +11,21 @@ class KlHulppostkastType(KeuzelijstField):
     label = 'Hulppostkast type'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlHulppostkastType'
     definition = 'Lijst met al dan niet gestandaardiseerde types voor hulppostkasten.'
+    status = 'ingebruik'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlHulppostkastType'
     options = {
         'a': KeuzelijstWaarde(invulwaarde='a',
                               label='a',
+                              status='ingebruik',
                               objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlHulppostkastType/a'),
         'c': KeuzelijstWaarde(invulwaarde='c',
                               label='c',
+                              status='ingebruik',
                               objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlHulppostkastType/c')
     }
 
     @classmethod
-    def get_dummy_data(cls):
-        return random.choice(list(cls.options.keys()))
-
-    @staticmethod
-    def create_dummy_data():
-        return KlHulppostkastType.get_dummy_data()
+    def create_dummy_data(cls):
+        return random.choice(list(map(lambda x: x.invulwaarde,
+                                      filter(lambda option: option.status == 'ingebruik', cls.options.values()))))
 

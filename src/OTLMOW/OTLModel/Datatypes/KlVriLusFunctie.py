@@ -11,33 +11,37 @@ class KlVriLusFunctie(KeuzelijstField):
     label = 'VRI-lus functie'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlVriLusFunctie'
     definition = 'Keuzelijst met verschillende types detectielussen naar functie.'
+    status = 'ingebruik'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlVriLusFunctie'
     options = {
         'KAR-inmeldlus': KeuzelijstWaarde(invulwaarde='KAR-inmeldlus',
                                           label='KAR inmeldlus',
+                                          status='ingebruik',
                                           objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVriLusFunctie/KAR-inmeldlus'),
         'KAR-uitmeldlus': KeuzelijstWaarde(invulwaarde='KAR-uitmeldlus',
                                            label='KAR uitmeldlus',
+                                           status='ingebruik',
                                            objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVriLusFunctie/KAR-uitmeldlus'),
         'afstandslus': KeuzelijstWaarde(invulwaarde='afstandslus',
                                         label='afstandslus',
+                                        status='ingebruik',
                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVriLusFunctie/afstandslus'),
         'filelus': KeuzelijstWaarde(invulwaarde='filelus',
                                     label='filelus',
+                                    status='ingebruik',
                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVriLusFunctie/filelus'),
         'hiaatlus': KeuzelijstWaarde(invulwaarde='hiaatlus',
                                      label='hiaatlus',
+                                     status='ingebruik',
                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVriLusFunctie/hiaatlus'),
         'stopstreeplus': KeuzelijstWaarde(invulwaarde='stopstreeplus',
                                           label='stopstreeplus',
+                                          status='ingebruik',
                                           objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVriLusFunctie/stopstreeplus')
     }
 
     @classmethod
-    def get_dummy_data(cls):
-        return random.choice(list(cls.options.keys()))
-
-    @staticmethod
-    def create_dummy_data():
-        return KlVriLusFunctie.get_dummy_data()
+    def create_dummy_data(cls):
+        return random.choice(list(map(lambda x: x.invulwaarde,
+                                      filter(lambda option: option.status == 'ingebruik', cls.options.values()))))
 

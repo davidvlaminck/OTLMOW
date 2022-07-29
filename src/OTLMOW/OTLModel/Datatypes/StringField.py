@@ -41,7 +41,7 @@ class StringField(OTLField):
     def __str__(self):
         return OTLField.__str__(self)
 
-    @staticmethod
-    def create_dummy_data():
+    @classmethod
+    def create_dummy_data(cls):
         return ''.join(random.choice(string.ascii_letters) for i in range(random.randint(5, 15)))
 

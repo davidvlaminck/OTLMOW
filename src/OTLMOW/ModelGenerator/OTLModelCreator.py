@@ -1,5 +1,7 @@
 import logging
+import os
 from datetime import datetime
+from os import path
 from os.path import abspath
 
 from OTLMOW.Facility.GenericHelper import GenericHelper
@@ -23,14 +25,15 @@ class OTLModelCreator:
         self.geo_artefact_collector = geo_artefact_collector
         logging.info("Created an instance of OTLModelCreator")
 
-    def create_full_model(self, directory):
+    def create_full_model(self, directory, environment: str = ''):
         logging.info('started creating model at ' + datetime.now().strftime("%d/%m/%Y %H:%M:%S"))
         directory = abspath(directory)
+        self.check_and_create_subdirectories(directory)
         self.query_correct_base_classes()
         self.create_primitive_datatypes(directory=directory)
         self.create_complex_datatypes(directory=directory)
         self.create_union_datatypes(directory=directory)
-        self.create_enumerations(directory=directory)
+        self.create_enumerations(directory=directory, environment=environment)
         self.create_classes(model_directory=directory)
         self.create_relations(directory=directory)
         logging.info('finished creating model at ' + datetime.now().strftime("%d/%m/%Y %H:%M:%S"))
@@ -102,13 +105,13 @@ class OTLModelCreator:
                 logging.error(str(e))
                 logging.error(f"Could not create a class for {union_datatype.name}")
 
-    def create_enumerations(self, directory):
+    def create_enumerations(self, directory, environment: str = ''):
         creator = OTLEnumerationCreator(self.oslo_collector)
 
         for enumeration in self.oslo_collector.enumerations:
 
             try:
-                data_to_write = creator.create_block_to_write_from_enumerations(enumeration)
+                data_to_write = creator.create_block_to_write_from_enumerations(enumeration, environment=environment)
                 if data_to_write is None:
                     logging.info(f"Could not create a class for {enumeration.name}")
                     pass
@@ -168,3 +171,30 @@ class OTLModelCreator:
         result = self.oslo_collector.memory_creator.check_on_base_classes()
         if result != 0:
             raise NewOTLBaseClassNotImplemented()
+
+    def check_and_create_subdirectories(self, directory):
+        if not path.exists(directory):
+            raise OSError(f'The directory {directory} does not exist. Please create it first.')
+        if not path.isdir(directory):
+            raise NotADirectoryError(f'{directory} is not a directory.')
+
+        if not path.exists(directory + '\\OTLModel'):
+            os.mkdir(directory + '\\OTLModel')
+
+        if not path.exists(directory + '\\OTLModel\\Classes'):
+            os.mkdir(directory + '\\OTLModel\\Classes')
+        if not path.exists(directory + '\\OTLModel\\Datatypes'):
+            os.mkdir(directory + '\\OTLModel\\Datatypes')
+
+        if not path.exists(directory + '\\OTLModel\\Classes\\Abstracten'):
+            os.mkdir(directory + '\\OTLModel\\Classes\\Abstracten')
+        if not path.exists(directory + '\\OTLModel\\Classes\\ImplementatieElement'):
+            os.mkdir(directory + '\\OTLModel\\Classes\\ImplementatieElement')
+        if not path.exists(directory + '\\OTLModel\\Classes\\Installatie'):
+            os.mkdir(directory + '\\OTLModel\\Classes\\Installatie')
+        if not path.exists(directory + '\\OTLModel\\Classes\\Levenscyclus'):
+            os.mkdir(directory + '\\OTLModel\\Classes\\Levenscyclus')
+        if not path.exists(directory + '\\OTLModel\\Classes\\Onderdeel'):
+            os.mkdir(directory + '\\OTLModel\\Classes\\Onderdeel')
+        if not path.exists(directory + '\\OTLModel\\Classes\\ProefEnMeting'):
+            os.mkdir(directory + '\\OTLModel\\Classes\\ProefEnMeting')

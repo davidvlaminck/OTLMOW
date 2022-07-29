@@ -11,23 +11,23 @@ class KlKamerKlasse(KeuzelijstField):
     label = 'Kamer klasse'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlKamerKlasse'
     definition = 'De stabiliteitsklasse van de kamer.'
+    status = 'ingebruik'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlKamerKlasse'
     options = {
         'klasse-1': KeuzelijstWaarde(invulwaarde='klasse-1',
                                      label='klasse 1',
+                                     status='ingebruik',
                                      definitie='klasse 1',
                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlKamerKlasse/klasse-1'),
         'klasse-2': KeuzelijstWaarde(invulwaarde='klasse-2',
                                      label='klasse 2',
+                                     status='ingebruik',
                                      definitie='klasse 2',
                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlKamerKlasse/klasse-2')
     }
 
     @classmethod
-    def get_dummy_data(cls):
-        return random.choice(list(cls.options.keys()))
-
-    @staticmethod
-    def create_dummy_data():
-        return KlKamerKlasse.get_dummy_data()
+    def create_dummy_data(cls):
+        return random.choice(list(map(lambda x: x.invulwaarde,
+                                      filter(lambda option: option.status == 'ingebruik', cls.options.values()))))
 

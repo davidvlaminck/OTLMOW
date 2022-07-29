@@ -11,27 +11,29 @@ class KlElectricityAppurtenanceType(KeuzelijstField):
     label = 'Electricity appurtenance type'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KlElectricityAppurtenanceType'
     definition = 'Lijst voor types  van de ElectricityAppurtenance.'
+    status = 'ingebruik'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlElectricityAppurtenanceType'
     options = {
         'aarding': KeuzelijstWaarde(invulwaarde='aarding',
                                     label='aarding',
+                                    status='ingebruik',
                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlElectricityAppurtenanceType/aarding'),
         'deliverypoint': KeuzelijstWaarde(invulwaarde='deliverypoint',
                                           label='deliveryPoint',
+                                          status='ingebruik',
                                           objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlElectricityAppurtenanceType/deliverypoint'),
         'mof': KeuzelijstWaarde(invulwaarde='mof',
                                 label='mof',
+                                status='ingebruik',
                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlElectricityAppurtenanceType/mof'),
         'streetlight': KeuzelijstWaarde(invulwaarde='streetlight',
                                         label='streetLight',
+                                        status='ingebruik',
                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlElectricityAppurtenanceType/streetlight')
     }
 
     @classmethod
-    def get_dummy_data(cls):
-        return random.choice(list(cls.options.keys()))
-
-    @staticmethod
-    def create_dummy_data():
-        return KlElectricityAppurtenanceType.get_dummy_data()
+    def create_dummy_data(cls):
+        return random.choice(list(map(lambda x: x.invulwaarde,
+                                      filter(lambda option: option.status == 'ingebruik', cls.options.values()))))
 

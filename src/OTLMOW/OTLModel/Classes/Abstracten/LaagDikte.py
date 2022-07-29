@@ -1,12 +1,12 @@
 # coding=utf-8
 from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut
-from abc import abstractmethod, ABC
+from abc import abstractmethod
 from OTLMOW.OTLModel.Datatypes.KwantWrdInCentimeter import KwantWrdInCentimeter
 from OTLMOW.GeometrieArtefact.VlakGeometrie import VlakGeometrie
 
 
 # Generated with OTLClassCreator. To modify: extend, do not edit
-class LaagDikte(ABC):
+class LaagDikte(VlakGeometrie):
     """Abstracte waarmee aan een laag het attribuut dikte wordt toegekend."""
 
     typeURI = 'https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#LaagDikte'

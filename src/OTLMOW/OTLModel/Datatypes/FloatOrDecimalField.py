@@ -46,8 +46,8 @@ class FloatOrDecimalField(OTLField):
             raise TypeError(f'expecting a number (int, float or Decimal) in {attribuut.naam}')
         return True
 
-    @staticmethod
-    def create_dummy_data():
+    @classmethod
+    def create_dummy_data(cls):
         return round(random.random() * 100, 2)
 
     def __str__(self):

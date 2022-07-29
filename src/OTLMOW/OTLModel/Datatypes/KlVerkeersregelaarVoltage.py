@@ -11,24 +11,25 @@ class KlVerkeersregelaarVoltage(KeuzelijstField):
     label = 'Verkeersregelaar voltage'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlVerkeersregelaarVoltage'
     definition = 'Keuzelijst met de voorkomende voltages gebruikt voor verkeersregelaars.'
+    status = 'ingebruik'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlVerkeersregelaarVoltage'
     options = {
         '230': KeuzelijstWaarde(invulwaarde='230',
                                 label='230',
+                                status='ingebruik',
                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerkeersregelaarVoltage/230'),
         '40': KeuzelijstWaarde(invulwaarde='40',
                                label='40',
+                               status='ingebruik',
                                objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerkeersregelaarVoltage/40'),
         '42': KeuzelijstWaarde(invulwaarde='42',
                                label='42',
+                               status='ingebruik',
                                objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVerkeersregelaarVoltage/42')
     }
 
     @classmethod
-    def get_dummy_data(cls):
-        return random.choice(list(cls.options.keys()))
-
-    @staticmethod
-    def create_dummy_data():
-        return KlVerkeersregelaarVoltage.get_dummy_data()
+    def create_dummy_data(cls):
+        return random.choice(list(map(lambda x: x.invulwaarde,
+                                      filter(lambda option: option.status == 'ingebruik', cls.options.values()))))
 

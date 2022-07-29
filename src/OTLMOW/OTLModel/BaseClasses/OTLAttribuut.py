@@ -211,4 +211,9 @@ class OTLAttribuut(AttributeInfo):
         return self._dotnotation
 
     def fill_with_dummy_data(self):
-        self.set_waarde(self.field.create_dummy_data())
+        if not self.readonly:
+            data = self.field.create_dummy_data()
+            if self.kardinaliteit_max != '1':
+                self.set_waarde([data])
+            else:
+                self.set_waarde(data)

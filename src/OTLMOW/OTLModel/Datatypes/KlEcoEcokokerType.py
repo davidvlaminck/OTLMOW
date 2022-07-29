@@ -11,23 +11,23 @@ class KlEcoEcokokerType(KeuzelijstField):
     label = 'Ecokoker type'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlEcoEcokokerType'
     definition = 'Types van ecokoker.'
+    status = 'ingebruik'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlEcoEcokokerType'
     options = {
         'amfibieenkoker': KeuzelijstWaarde(invulwaarde='amfibieenkoker',
                                            label='amfibieenkoker',
+                                           status='ingebruik',
                                            definitie='Een ecokoker voor amfibieën.',
                                            objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlEcoEcokokerType/amfibieenkoker'),
         'betonnen-ecokoker': KeuzelijstWaarde(invulwaarde='betonnen-ecokoker',
                                               label='betonnen ecokoker',
+                                              status='ingebruik',
                                               definitie='Een ecokoker uit beton.',
                                               objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlEcoEcokokerType/betonnen-ecokoker')
     }
 
     @classmethod
-    def get_dummy_data(cls):
-        return random.choice(list(cls.options.keys()))
-
-    @staticmethod
-    def create_dummy_data():
-        return KlEcoEcokokerType.get_dummy_data()
+    def create_dummy_data(cls):
+        return random.choice(list(map(lambda x: x.invulwaarde,
+                                      filter(lambda option: option.status == 'ingebruik', cls.options.values()))))
 

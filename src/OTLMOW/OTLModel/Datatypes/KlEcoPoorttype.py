@@ -11,23 +11,23 @@ class KlEcoPoorttype(KeuzelijstField):
     label = 'Poorttype'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlEcoPoorttype'
     definition = 'Types van de poort.'
+    status = 'ingebruik'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlEcoPoorttype'
     options = {
         'dubbel': KeuzelijstWaarde(invulwaarde='dubbel',
                                    label='dubbel',
+                                   status='ingebruik',
                                    definitie='Een dubble poort.',
                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlEcoPoorttype/dubbel'),
         'enkel': KeuzelijstWaarde(invulwaarde='enkel',
                                   label='enkel',
+                                  status='ingebruik',
                                   definitie='Een enkele poort.',
                                   objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlEcoPoorttype/enkel')
     }
 
     @classmethod
-    def get_dummy_data(cls):
-        return random.choice(list(cls.options.keys()))
-
-    @staticmethod
-    def create_dummy_data():
-        return KlEcoPoorttype.get_dummy_data()
+    def create_dummy_data(cls):
+        return random.choice(list(map(lambda x: x.invulwaarde,
+                                      filter(lambda option: option.status == 'ingebruik', cls.options.values()))))
 

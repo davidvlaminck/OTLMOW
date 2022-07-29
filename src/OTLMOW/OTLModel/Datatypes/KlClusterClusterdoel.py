@@ -11,21 +11,21 @@ class KlClusterClusterdoel(KeuzelijstField):
     label = 'Cluster clusterdoel'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlClusterClusterdoel'
     definition = 'De reden waarom de custer is opgezet.'
+    status = 'ingebruik'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlClusterClusterdoel'
     options = {
         'groeperen-resources': KeuzelijstWaarde(invulwaarde='groeperen-resources',
                                                 label='groeperen resources',
+                                                status='ingebruik',
                                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlClusterClusterdoel/groeperen-resources'),
         'redundantie': KeuzelijstWaarde(invulwaarde='redundantie',
                                         label='redundantie',
+                                        status='ingebruik',
                                         objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlClusterClusterdoel/redundantie')
     }
 
     @classmethod
-    def get_dummy_data(cls):
-        return random.choice(list(cls.options.keys()))
-
-    @staticmethod
-    def create_dummy_data():
-        return KlClusterClusterdoel.get_dummy_data()
+    def create_dummy_data(cls):
+        return random.choice(list(map(lambda x: x.invulwaarde,
+                                      filter(lambda option: option.status == 'ingebruik', cls.options.values()))))
 

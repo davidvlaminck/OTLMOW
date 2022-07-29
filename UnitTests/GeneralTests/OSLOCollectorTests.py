@@ -54,6 +54,33 @@ class OSLOCollectorTests(unittest.TestCase):
         attributes = collector.find_attributes_by_class(None)
         self.assertListEqual([], attributes)
 
+    def test_find_superclasses_uri_by_class_uri(self):
+        collector = OSLOCollector(MagicMock(spec=OSLOInMemoryCreator))
+        collector.inheritances = [Inheritance(base_name='b', class_uri='c', base_uri='b', class_name='c'),
+                                  Inheritance(base_name='b', class_uri='a', base_uri='b', class_name='a')]
+
+        uris_found = collector.find_superclasses_uri_by_class_uri('b')
+        self.assertEqual('a', uris_found[0])
+        self.assertEqual(2, len(uris_found))
+
+        uris_found = collector.find_superclasses_uri_by_class_uri('d')
+        self.assertListEqual([], uris_found)
+
+    def test_find_indirect_superclasses_uri_by_class_uri(self):
+        collector = OSLOCollector(MagicMock(spec=OSLOInMemoryCreator))
+        collector.classes = [OSLOClass(name='a', objectUri='a'), OSLOClass(name='b', objectUri='b'),
+                             OSLOClass(name='c', objectUri='c')]
+        collector.inheritances = [
+            Inheritance(base_name='c', class_uri='e', base_uri='c', class_name='e'),
+            Inheritance(base_name='c', class_uri='f', base_uri='c', class_name='f'),
+            Inheritance(base_name='b', class_uri='c', base_uri='b', class_name='c'),
+                                  Inheritance(base_name='b', class_uri='a', base_uri='b', class_name='a'),
+                                  Inheritance(base_name='d', class_uri='b', base_uri='d', class_name='b')]
+
+        uris_found = collector.find_indirect_superclasses_uri_by_class_uri('b')
+        self.assertEqual(4, len(uris_found))
+        self.assertListEqual(['a', 'c', 'e', 'f'], uris_found)
+
     def test_find_inheritances_by_class(self):
         collector = OSLOCollector(MagicMock(spec=OSLOInMemoryCreator))
         collector.classes = [OSLOClass(objectUri='a')]

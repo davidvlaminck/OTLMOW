@@ -11,27 +11,28 @@ class KlMateriaalBeschermingVraatschade(KeuzelijstField):
     label = 'Materiaal bescherming vraatschade'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlMateriaalBeschermingVraatschade'
     definition = 'De middelen als bescherming tegen vraatschade.'
+    status = 'ingebruik'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlMateriaalBeschermingVraatschade'
     options = {
         'juteband': KeuzelijstWaarde(invulwaarde='juteband',
                                      label='juteband',
+                                     status='ingebruik',
                                      definitie='Materiaal dat gebruikt wordt als bescherming vraatschade is een juteband.',
                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlMateriaalBeschermingVraatschade/juteband'),
         'kunststof': KeuzelijstWaarde(invulwaarde='kunststof',
                                       label='kunststof',
+                                      status='ingebruik',
                                       definitie='Materiaal dat gebruikt wordt als bescherming vraatschade is kunststof.',
                                       objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlMateriaalBeschermingVraatschade/kunststof'),
         'wildafwerend-product': KeuzelijstWaarde(invulwaarde='wildafwerend-product',
                                                  label='wildafwerend product',
+                                                 status='ingebruik',
                                                  definitie='Wildafwerend product wordt gebruikt als bescherming tegen vraatschade.',
                                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlMateriaalBeschermingVraatschade/wildafwerend-product')
     }
 
     @classmethod
-    def get_dummy_data(cls):
-        return random.choice(list(cls.options.keys()))
-
-    @staticmethod
-    def create_dummy_data():
-        return KlMateriaalBeschermingVraatschade.get_dummy_data()
+    def create_dummy_data(cls):
+        return random.choice(list(map(lambda x: x.invulwaarde,
+                                      filter(lambda option: option.status == 'ingebruik', cls.options.values()))))
 

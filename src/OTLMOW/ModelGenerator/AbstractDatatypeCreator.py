@@ -78,7 +78,8 @@ class AbstractDatatypeCreator(ABC):
             base_dir = os.path.abspath(os.path.join(base_dir, os.pardir))
         else:
             base_dir = relative_path
-        path = f"{base_dir}/OTLModel/{directory}/{datatype.name}.py"
+        base_dir += '/OTLModel'
+        path = f"{base_dir}/{directory}/{datatype.name}.py"
 
         with open(path, "w", encoding='utf-8') as file:
             for line in data_to_write:
@@ -252,6 +253,8 @@ class AbstractDatatypeCreator(ABC):
             datablock.append(f'{whitespace}objectUri={wrap_in_quotes(attribuut.objectUri)},')
             if attribuut.usagenote != '':
                 datablock.append(f'{whitespace}usagenote={wrap_in_quotes(attribuut.usagenote)},')
+            if attribuut.readonly == 1:
+                datablock.append(f'{whitespace}readonly=True,')
             if attribuut.deprecated_version != '':
                 datablock.append(f'{whitespace}deprecated_version={wrap_in_quotes(attribuut.deprecated_version)},')
             if attribuut.constraints != '':

@@ -15,6 +15,7 @@ class KwantWrdInBarWaarden(AttributeInfo):
                                               label='standaard eenheid',
                                               objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInBar.standaardEenheid',
                                               usagenote='"bar"^^cdt:ucumunit',
+                                              readonly=True,
                                               constraints='"bar"^^cdt:ucumunit',
                                               definition='De standaard eenheid bij dit datatype is uitgedrukt in bar.',
                                               owner=self)

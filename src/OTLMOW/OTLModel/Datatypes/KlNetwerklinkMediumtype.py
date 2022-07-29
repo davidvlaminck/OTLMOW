@@ -11,35 +11,38 @@ class KlNetwerklinkMediumtype(KeuzelijstField):
     label = 'Netwerklink mediumtype'
     objectUri = 'https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#KlNetwerklinkMediumtype'
     definition = 'Mogelijke waarden voor het type drager waarlangs data door de link getransporteerd wordt.'
+    status = 'ingebruik'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlNetwerklinkMediumtype'
     options = {
         'andere': KeuzelijstWaarde(invulwaarde='andere',
                                    label='andere',
+                                   status='ingebruik',
                                    definitie='De link tussen de netwerkpoorten wordt gerealiseerd via een andere dan een optische, UTP, DSL of transportnetwerk verbinding.',
                                    objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerklinkMediumtype/andere'),
         'dsl': KeuzelijstWaarde(invulwaarde='dsl',
                                 label='DSL',
+                                status='ingebruik',
                                 definitie='De link tussen de netwerkpoorten wordt gerealiseerd via een DSL verbinding.',
                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerklinkMediumtype/dsl'),
         'optisch': KeuzelijstWaarde(invulwaarde='optisch',
                                     label='optisch',
+                                    status='ingebruik',
                                     definitie='De link tussen de netwerkpoorten wordt gerealiseerd via een glasvezelkabel.',
                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerklinkMediumtype/optisch'),
         'transportnetwerk': KeuzelijstWaarde(invulwaarde='transportnetwerk',
                                              label='transportnetwerk',
+                                             status='ingebruik',
                                              definitie='De link tussen de netwerkpoorten wordt gerealiseerd via het optisch transportnetwerk.',
                                              objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerklinkMediumtype/transportnetwerk'),
         'utp': KeuzelijstWaarde(invulwaarde='utp',
                                 label='UTP',
+                                status='ingebruik',
                                 definitie='De link tussen de netwerkpoorten wordt gerealiseerd via een UTP kabel.',
                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerklinkMediumtype/utp')
     }
 
     @classmethod
-    def get_dummy_data(cls):
-        return random.choice(list(cls.options.keys()))
-
-    @staticmethod
-    def create_dummy_data():
-        return KlNetwerklinkMediumtype.get_dummy_data()
+    def create_dummy_data(cls):
+        return random.choice(list(map(lambda x: x.invulwaarde,
+                                      filter(lambda option: option.status == 'ingebruik', cls.options.values()))))
 

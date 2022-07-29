@@ -15,6 +15,7 @@ class KwantWrdInUurWaarden(AttributeInfo):
                                               label='standaard eenheid',
                                               objectUri='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInUur.standaardEenheid',
                                               usagenote='"h"^^cdt:ucumunit',
+                                              readonly=True,
                                               constraints='"h"^^cdt:ucumunit',
                                               definition='De standaard eenheid bij dit datatype is uitgedrukt in uur.',
                                               owner=self)

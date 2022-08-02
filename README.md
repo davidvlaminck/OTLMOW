@@ -122,3 +122,7 @@ otl_facility.visualiser.show(lijst_otl_objecten)
 ```
 The above example will result in the following visualisation:
 <img alt="example of visualiser" src="visualiser_example_readme.png"/>
+## Other means of creating objects
+It is possible to 
+- load objects from the EM-Infra API, given correct authentication. The API returns a json-ld which can be read and converted into instances of OTLObject.
+- import a file created with the DAVIE application. The supported formats are json and csv.

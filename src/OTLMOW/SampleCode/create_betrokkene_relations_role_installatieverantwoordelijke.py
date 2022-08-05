@@ -20,6 +20,8 @@ def create_installatie_verantwoordelijke_relation(bron_identificator, doel_ident
     relatie.assetId.identificator = bron_identificator + '_-_' + doel_identificator
     relatie.assetId.toegekendDoor = 'OTLMOW'
 
+    relatie.rol = 'installatieverantwoordelijke'
+
     return relatie
 
 
@@ -50,5 +52,5 @@ if __name__ == '__main__':
                                                                        doel_identificator=agent.agentId.identificator))
 
     # write the json file to upload in DAVIE
-    path = f'{datetime.now().strftime("%Y%m%d%H%M%S")}_export.json'
+    path = f'Output/{datetime.now().strftime("%Y%m%d%H%M%S")}_export.json'
     otl_facility.create_file_from_assets(list_of_objects=relations, filepath=path)

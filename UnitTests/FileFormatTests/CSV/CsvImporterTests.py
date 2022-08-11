@@ -30,6 +30,15 @@ class CsvImporterTests(unittest.TestCase):
             with self.assertRaises(ValueError):
                 CsvImporter(settings={"file_formats": [{}]})
 
+    def test_load_test_file_multiple_types(self):
+        base_dir = os.path.dirname(os.path.realpath(__file__))
+        settings_file_location = f'{base_dir}/../../settings_OTLMOW.json'
+        file_location = os.path.abspath(os.path.join(os.sep, ROOT_DIR, 'export_multiple_types.csv'))
+        otl_facility = OTLFacility(logfile='', settings_path=settings_file_location)
+        objects = otl_facility.create_assets_from_file(file_location)
+
+        self.assertEqual(15, len(objects))
+
     def test_load_test_file(self):
         base_dir = os.path.dirname(os.path.realpath(__file__))
         settings_file_location = f'{base_dir}/../../settings_OTLMOW.json'

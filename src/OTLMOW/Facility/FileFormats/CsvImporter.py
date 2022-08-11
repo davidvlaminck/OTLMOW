@@ -21,17 +21,17 @@ class CsvImporter:
         self.data = [[]]
         self.objects = []
 
-    def import_file(self, file_location: str = '', **kwargs):
+    def import_file(self, filepath: str = '', **kwargs):
         delimiter = ';'
         if kwargs is not None:
             if 'delimiter' in kwargs:
                 delimiter = kwargs['delimiter']
 
-        if file_location == '' or not os.path.isfile(file_location):
-            raise FileNotFoundError(f'Could not load the file at: {file_location}')
+        if filepath == '' or not os.path.isfile(filepath):
+            raise FileNotFoundError(f'Could not load the file at: {filepath}')
 
         try:
-            with open(file_location, 'r') as file:
+            with open(filepath, 'r') as file:
                 self.headers = file.readline()[:-1].split(delimiter)
                 data = []
                 for line in file:

@@ -33,7 +33,7 @@ if __name__ == '__main__':
                                settings_path="/home/davidlinux/Documents/AWV/resources/settings_OTLMOW.json",
                                enable_relation_features=True)
 
-    with open('/home/davidlinux/Documents/AWV/installatie_verantwoordelijke_vlaamsbrabant.json', encoding='utf-8-sig') \
+    with open('/home/davidlinux/Documents/AWV/installatie_verantwoordelijke_westvlaanderen.json', encoding='utf-8-sig') \
             as input_data_file:
         input_data = json.load(input_data_file)
 
@@ -45,6 +45,9 @@ if __name__ == '__main__':
     for input_record in input_data:
         agent_name = input_record['installatieverantwoordelijke']
         aansluiting_identificator = input_record['aansl_identificator']
+
+        if agent_name == 'onbekend':
+            continue
 
         agent = agent_collection.get_agent_by_full_name(agent_name)
 

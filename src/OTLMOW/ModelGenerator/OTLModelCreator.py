@@ -10,7 +10,6 @@ from OTLMOW.ModelGenerator.OSLOCollector import OSLOCollector
 from OTLMOW.ModelGenerator.OTLClassCreator import OTLClassCreator
 from OTLMOW.ModelGenerator.OTLComplexDatatypeCreator import OTLComplexDatatypeCreator
 from OTLMOW.ModelGenerator.OTLEnumerationCreator import OTLEnumerationCreator
-from OTLMOW.ModelGenerator.OTLGeldigeRelatieCreator import OTLGeldigeRelatieCreator
 from OTLMOW.ModelGenerator.OTLPrimitiveDatatypeCreator import OTLPrimitiveDatatypeCreator
 from OTLMOW.ModelGenerator.OTLUnionDatatypeCreator import OTLUnionDatatypeCreator
 
@@ -35,7 +34,6 @@ class OTLModelCreator:
         self.create_union_datatypes(directory=directory)
         self.create_enumerations(directory=directory, environment=environment)
         self.create_classes(model_directory=directory)
-        self.create_relations(directory=directory)
         logging.info('finished creating model at ' + datetime.now().strftime("%d/%m/%Y %H:%M:%S"))
 
     def create_primitive_datatypes(self, directory):
@@ -149,23 +147,6 @@ class OTLModelCreator:
             except Exception as e:
                 logging.error(str(e))
                 logging.error(f"Could not create a class for {oslo_class.name}")
-
-    def create_relations(self, directory):
-        creator = OTLGeldigeRelatieCreator(self.oslo_collector)
-
-        try:
-            data_to_write = creator.create_block_to_write_from_relations()
-            if data_to_write is None:
-                logging.info(f"Could not create a list of GeldigeRelatie objects")
-                pass
-            if len(data_to_write) == 0:
-                logging.info(f"Could not create a list of GeldigeRelatie objects")
-                pass
-            creator.writeToFile(data_to_write, directory)
-            logging.info(f"Created a list of GeldigeRelatie objects")
-        except Exception as e:
-            logging.error(str(e))
-            logging.error(f"Could not create a list of GeldigeRelatie objects")
 
     def query_correct_base_classes(self):
         result = self.oslo_collector.memory_creator.check_on_base_classes()

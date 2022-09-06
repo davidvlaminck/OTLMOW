@@ -13,6 +13,7 @@ class AIMToestand(ABC):
 
     @abstractmethod
     def __init__(self):
+
         self._toestand = OTLAttribuut(field=KlAIMToestand,
                                       naam='toestand',
                                       label='toestand',

@@ -79,7 +79,7 @@ class GeldigeRelatieLijstTestInstance(GeldigeRelatieLijst):
                            'deprecated')
         ]
 
-
+# TODO refactor these tests
 class RelatieValidatorTests(unittest.TestCase):
     def test_create_instance(self):
         geldigeRelatieLijst = GeldigeRelatieLijstTestInstance().lijst

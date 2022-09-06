@@ -46,7 +46,8 @@ class OSLOCollector:
     def find_attributes_by_class(self, oslo_class: OSLOClass) -> [OSLOAttribuut]:
         if oslo_class is None:
             return []
-        return sorted(list(filter(lambda c: c.class_uri == oslo_class.objectUri, self.attributes)), key=lambda a: a.objectUri)
+        return sorted(list(filter(lambda c: c.class_uri == oslo_class.objectUri, self.attributes)),
+                      key=lambda a: a.objectUri)
 
     def find_inheritances_by_class(self, oslo_class: OSLOClass) -> [Inheritance]:
         if oslo_class is None:
@@ -56,7 +57,8 @@ class OSLOCollector:
     def find_inheritances_by_class_uri(self, oslo_class_uri: str) -> [Inheritance]:
         if oslo_class_uri is None or oslo_class_uri == '':
             return []
-        return sorted(list(filter(lambda c: c.class_uri == oslo_class_uri, self.inheritances)), key=lambda c: c.base_uri)
+        return sorted(list(filter(lambda c: c.class_uri == oslo_class_uri, self.inheritances)),
+                      key=lambda c: c.base_uri)
 
     def find_all_indirect_inheritances_by_class_uri(self, oslo_class_uri: str) -> [Inheritance]:
         if oslo_class_uri is None or oslo_class_uri == '':
@@ -124,3 +126,7 @@ class OSLOCollector:
 
     def find_type_link_by_uri(self, type_uri: str) -> OSLOTypeLink:
         return next((p for p in self.typeLinks if p.item_uri == type_uri), None)
+
+    def find_outgoing_relations(self, object_uri: str) -> [OSLORelatie]:
+        return sorted(list(filter(lambda r: r.bron_uri == object_uri and r.bron_overerving == '' and
+                                            r.doel_overerving == '', self.relations)), key=lambda r: r.objectUri)

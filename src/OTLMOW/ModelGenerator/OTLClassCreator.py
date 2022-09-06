@@ -93,7 +93,7 @@ class OTLClassCreator(AbstractDatatypeCreator):
                     if inheritance.base_uri != 'http://purl.org/dc/terms/Agent':
                         ns, name = GenericHelper.get_ns_and_name_from_uri(inheritance.base_uri)
                     if ns is not None:
-                        class_directory = GenericHelper.get_class_directory_from_ns(ns).replace('\\', '.')
+                        class_directory = GenericHelper.get_class_directory_from_ns(ns).replace('/', '.')
 
                     datablock.append(f'from OTLMOW.OTLModel.{class_directory}.{inheritance.base_name} '
                                      f'import {inheritance.base_name}')
@@ -110,9 +110,9 @@ class OTLClassCreator(AbstractDatatypeCreator):
             if model_location != '' and type_field not in base_fields:
                 if 'UnitTests' in model_location:
                     model_module = 'UnitTests'
-                modules_index = model_location.rfind('\\' + model_module)
+                modules_index = model_location.rfind('/' + model_module)
                 modules = model_location[modules_index+1:]
-                model_module = modules.replace('\\', '.')
+                model_module = modules.replace('/', '.')
             datablock.append(f'from {model_module}.OTLModel.Datatypes.{type_field} import {type_field}')
 
         if 'Bevestiging' in oslo_class.objectUri:
@@ -147,6 +147,8 @@ class OTLClassCreator(AbstractDatatypeCreator):
             for geo_type in sorted(list_of_geometry_types, key=lambda a: a.__name__):
                 datablock.append(f'        {geo_type.__name__}.__init__(self)')
             datablock.append('')
+
+        self.add_relations_to_datablock(datablock, oslo_class.objectUri)
 
         self.add_attributen_to_dataBlock(attributen, datablock, forClassUse=True)
         if len(inheritances) == 0 and len(attributen) == 0:
@@ -193,3 +195,12 @@ class OTLClassCreator(AbstractDatatypeCreator):
             geom_types.append(VlakGeometrie)
 
         return geom_types
+
+    def add_relations_to_datablock(self, datablock, objectUri):
+        relations = self.osloCollector.find_outgoing_relations(objectUri)
+        for relation in relations:
+            deprecated = ''
+            if relation.deprecated_version != '':
+                deprecated = f", deprecated='{relation.deprecated_version}'"
+            datablock.append(f"        self.add_valid_relation(relation='{relation.objectUri}', target='{relation.doel_uri}'{deprecated})")
+        datablock.append('')

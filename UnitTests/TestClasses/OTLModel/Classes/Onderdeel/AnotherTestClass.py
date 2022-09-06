@@ -14,6 +14,8 @@ class AnotherTestClass(AIMObject):
     def __init__(self):
         super().__init__()
 
+        self.add_valid_relation(relation='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bevestiging', target='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#AllCasesTestClass')
+
         self._deprecatedString = OTLAttribuut(field=DtcTestComplexType,
                                               naam='deprecatedString',
                                               label='Deprecated Tekstveld',

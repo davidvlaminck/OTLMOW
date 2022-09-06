@@ -13,6 +13,7 @@ class AIMDBStatus(ABC):
 
     @abstractmethod
     def __init__(self):
+
         self._isActief = OTLAttribuut(field=BooleanField,
                                       naam='isActief',
                                       label='is actief',

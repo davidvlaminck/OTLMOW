@@ -27,6 +27,7 @@ class AIMObject(AIMDBStatus, AIMToestand, AttributeInfo, OTLAsset, RelatieIntera
         OTLAsset.__init__(self)
         RelatieInteractor.__init__(self)
 
+
         self._assetId = OTLAttribuut(field=DtcIdentificator,
                                      naam='assetId',
                                      label='asset-id',

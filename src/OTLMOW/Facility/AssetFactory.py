@@ -93,7 +93,7 @@ class AssetFactory:
         d = dir(orig_asset)
 
         reserved = ['info_attr', 'info_attr_type', 'info', 'make_string_version', 'create_dict_from_asset',
-                    'list_attributes_and_values_by_dotnotation']
+                    'list_attributes_and_values_by_dotnotation', 'add_valid_relation']
         listFields = [item for item in d if item[0] != '_' and item not in reserved]
 
         return listFields

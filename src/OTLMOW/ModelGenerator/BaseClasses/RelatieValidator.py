@@ -1,55 +1,39 @@
+import inspect
 import warnings
 
-from OTLMOW.ModelGenerator.BaseClasses.GeldigeRelatie import GeldigeRelatie
 from OTLMOW.OTLModel.BaseClasses.RelatieInteractor import RelatieInteractor
-from OTLMOW.ModelGenerator.BaseClasses.Singleton import Singleton
+from OTLMOW.OTLModel.Classes.ImplementatieElement.RelatieObject import RelatieObject
 
 
 class RelatieValidator:
-    def __init__(self, relatieLijst: [GeldigeRelatie]):
-        self.dictByDoelBronRelatie = {}
-        self.dictByBronDoelRelatie = {}
-        self.fillValidatorDictsForEfficientSearch(relatieLijst)
-
-    def enableValidateRelatieOnRelatieInteractor(self):
-        def loadGeldigeRelaties(selfObject):
-            geldigeRelatiesList = self.getGeldigeRelatiesByBronOrDoel(selfObject.typeURI)
-            selfObject._geldigeRelaties = tuple(i for i in geldigeRelatiesList)
-            selfObject._relatieValidatieMogelijk = True
-
-        RelatieInteractor._loadGeldigeRelaties = loadGeldigeRelaties
-
-    def fillValidatorDictsForEfficientSearch(self, relatieLijst: [GeldigeRelatie]):
-        for rel in relatieLijst:
-            if rel.bron not in self.dictByBronDoelRelatie:
-                self.dictByBronDoelRelatie[rel.bron] = {}
-            if rel.doel not in self.dictByBronDoelRelatie[rel.bron]:
-                self.dictByBronDoelRelatie[rel.bron][rel.doel] = {}
-            self.dictByBronDoelRelatie[rel.bron][rel.doel][rel.relatie] = rel
-            if rel.doel not in self.dictByDoelBronRelatie:
-                self.dictByDoelBronRelatie[rel.doel] = {}
-            if rel.bron not in self.dictByDoelBronRelatie[rel.doel]:
-                self.dictByDoelBronRelatie[rel.doel][rel.bron] = {}
-            self.dictByDoelBronRelatie[rel.doel][rel.bron][rel.relatie] = rel
-
-    def validateRelatieByURI(self, bron, doel, relatieType):
-        if 'lgc.' in bron.typeURI or 'lgc.' in doel.typeURI:
+    @staticmethod
+    def is_valid_relation(source: RelatieInteractor, relation: RelatieObject, target: RelatieInteractor):
+        if 'lgc.' in source.typeURI or 'lgc.' in target.typeURI:
             return True
-        try:
-            rel = self.dictByBronDoelRelatie[bron.typeURI][doel.typeURI][relatieType.typeURI]
-            if rel.deprecated_version != '':
-                warnings.warn(message=f'the relation of type {rel.relatie} between assets of types {rel.bron} and {rel.doel} is deprecated since version {rel.deprecated_version}',
-                              category=DeprecationWarning)
-            return self.dictByBronDoelRelatie[bron.typeURI][doel.typeURI][relatieType.typeURI] is not None
-        except KeyError:
-            return False
 
-    def getGeldigeRelatiesByBronOrDoel(self, bronOfDoelUri: str):
-        relaties = []
-        if bronOfDoelUri in self.dictByBronDoelRelatie:
-            for d in self.dictByBronDoelRelatie[bronOfDoelUri].values():
-                relaties.extend(d.values())
-        if bronOfDoelUri in self.dictByDoelBronRelatie:
-            for d in self.dictByDoelBronRelatie[bronOfDoelUri].values():
-                relaties.extend(d.values())
-        return relaties
+        targets = source._valid_relations[relation.typeURI].keys()
+        if target.typeURI in targets:
+            deprecated_value = source._valid_relations[relation.typeURI][target.typeURI]
+            if deprecated_value != '':
+                warnings.warn(
+                    message=f'the relation of type {relation.typeURI} between assets of types {source.typeURI} and {target.typeURI} is deprecated since version {deprecated_value}',
+                    category=DeprecationWarning)
+            return True
+
+        bases = inspect.getmro(type(target))
+        for base in bases:
+            base_type_uri = RelatieValidator.getmember(base, 'typeURI')
+            if base_type_uri in targets:
+                deprecated_value = source._valid_relations[relation.typeURI][base_type_uri]
+                if deprecated_value != '':
+                    warnings.warn(
+                        message=f'the relation of type {relation.typeURI} between assets of types {source.typeURI} and {target.typeURI} is deprecated since version {deprecated_value}',
+                        category=DeprecationWarning)
+                return True
+
+        # print(bases)
+        return False
+
+    @staticmethod
+    def getmember(obj, name):
+        return next(iter([member for _name, member in inspect.getmembers(obj) if name == _name]), None)

@@ -101,7 +101,7 @@ class OTLObjectHelper:
         sorted_attributes = sorted(list(vars(asset).items()), key=lambda i: i[0])
 
         for k, v in sorted_attributes:
-            if k in ['_parent', '_geometry_types']:
+            if k in ['_parent', '_geometry_types', '_valid_relations']:
                 continue
             if v.waarde is None:
                 continue

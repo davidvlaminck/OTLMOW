@@ -55,12 +55,12 @@ class GenericHelperTests(TestCase):
 
     def test_get_class_directory_from_ns(self):
         testset = {
-            'abstracten': 'Classes\\Abstracten',
-            'implementatieelement': 'Classes\\ImplementatieElement',
-            'installatie': 'Classes\\Installatie',
-            'levenscyclus': 'Classes\\Levenscyclus',
-            'onderdeel': 'Classes\\Onderdeel',
-            'proefenmeting': 'Classes\\ProefEnMeting'
+            'abstracten': 'Classes/Abstracten',
+            'implementatieelement': 'Classes/ImplementatieElement',
+            'installatie': 'Classes/\Installatie',
+            'levenscyclus': 'Classes/Levenscyclus',
+            'onderdeel': 'Classes/Onderdeel',
+            'proefenmeting': 'Classes/ProefEnMeting'
         }
 
         for ns, class_dir in testset.items():

@@ -1,27 +1,25 @@
 import logging
 import os
 import unittest
+from pathlib import Path
 
 from OTLMOW.Facility.AssetFactory import AssetFactory
 from OTLMOW.Facility.OTLFacility import OTLFacility
-from OTLMOW.ModelGenerator.OSLOCollector import OSLOCollector
-from OTLMOW.ModelGenerator.OSLOInMemoryCreator import OSLOInMemoryCreator
-from OTLMOW.ModelGenerator.SQLDbReader import SQLDbReader
 from UnitTests.TestClasses.OTLModel.Classes.Onderdeel.AllCasesTestClass import AllCasesTestClass
 
-
+# TODO refactor all paths to use Path
 class CreateAllTestCasesTests(unittest.TestCase):
     def test_init_AllCasesTestClass(self):
         base_dir = os.path.dirname(os.path.realpath(__file__))
-        settings_file_location = f'{base_dir}/../settings_OTLMOW.json'
-        subset_file_location = f'{base_dir}/../OTL_AllCasesTestClass.db'
+        settings_file_location = Path(f'{base_dir}/../settings_OTLMOW.json')
+        subset_file_location = Path(f'{base_dir}/../OTL_AllCasesTestClass.db')
 
-        otl_facility = OTLFacility(logfile='', settings_path=settings_file_location)
+        otl_facility = OTLFacility(logfile='', settings_path=str(settings_file_location))
 
         with self.assertLogs() as captured:
-            otl_facility.create_otl_datamodel(directory=f'{base_dir}\\..\\TestClasses',
-                                              otl_sqlite_file_location=subset_file_location)
-            allcasesclass_location = f'{base_dir}/../TestClasses/OTLModel/Classes/Onderdeel/AllCasesTestClass.py'
+            otl_facility.create_otl_datamodel(directory=str(Path(f'{base_dir}/../TestClasses')),
+                                              otl_sqlite_file_location=str(subset_file_location))
+            allcasesclass_location = Path(f'{base_dir}/../TestClasses/OTLModel/Classes/Onderdeel/AllCasesTestClass.py')
             self.assertTrue(os.path.isfile(allcasesclass_location))
 
         errors = list(filter(lambda r: r.levelno >= logging.ERROR, list(captured.records)))

@@ -33,7 +33,7 @@ class GenericHelper:
 
     @staticmethod
     def get_class_directory_from_ns(ns):
-        return 'Classes\\' + GenericHelper.get_titlecase_ns(ns)
+        return 'Classes/' + GenericHelper.get_titlecase_ns(ns)
 
     @staticmethod
     def get_titlecase_ns(ns: str) -> str:

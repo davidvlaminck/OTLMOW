@@ -8,11 +8,11 @@ from OTLMOW.OTLModel.Classes.Onderdeel.HeeftBetrokkene import HeeftBetrokkene
 
 
 class RelatieCreator:
-    def __init__(self, validator: RelatieValidator):
-        self.validator = validator
+    def __init__(self):
 
     def create_relation(self, bron: RelatieInteractor, doel: RelatieInteractor, relatie) -> RelatieObject:
-        if not self.validator.validateRelatieByURI(bron, doel, relatie):
+        valid = RelatieValidator.is_valid_relation(source=bron, target=doel, relation=relatie)
+        if not valid:
             raise CouldNotCreateRelationError("Can't create an invalid relation, please validate relations first")
         relatie = AssetFactory().dynamic_create_instance_from_uri(class_uri=relatie.typeURI)
 
@@ -31,11 +31,12 @@ class RelatieCreator:
             relatie.doel.typeURI = doel.typeURI
         return relatie
 
-    def create_betrokkenerelation(self, bron: RelatieInteractor, doel: RelatieInteractor, relatie=HeeftBetrokkene) -> RelatieObject:
-        if not self.validator.validateRelatieByURI(bron, doel, relatie):
+    def create_betrokkenerelation(self, bron: RelatieInteractor, doel: RelatieInteractor, relation=HeeftBetrokkene) -> RelatieObject:
+        valid = RelatieValidator.is_valid_relation(source=bron, target=doel, relation=relation)
+        if not valid:
             raise CouldNotCreateRelationError("Can't create an invalid relation, please validate relations first")
 
-        relatie = AssetFactory().dynamic_create_instance_from_uri(class_uri=relatie.typeURI)
+        relatie = AssetFactory().dynamic_create_instance_from_uri(class_uri=relation.typeURI)
 
         if isinstance(bron, Agent):
             relatie.bronAssetId.identificator = bron.agentId.identificator

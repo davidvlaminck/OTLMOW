@@ -27,6 +27,9 @@ class AIMObject(AIMDBStatus, AIMToestand, AttributeInfo, OTLAsset, RelatieIntera
         OTLAsset.__init__(self)
         RelatieInteractor.__init__(self)
 
+        self.add_valid_relation(relation='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#SluitAanOp',
+                                target='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#Derdenobject')
+
         self._assetId = OTLAttribuut(field=DtcIdentificator,
                                      naam='assetId',
                                      label='asset-id',

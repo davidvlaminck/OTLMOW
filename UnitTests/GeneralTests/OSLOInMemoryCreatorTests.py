@@ -116,7 +116,7 @@ class OSLOInMemoryCreatorTests(unittest.TestCase):
         oslo_creator = self.set_up_creator()
         relations = oslo_creator.get_all_relations()
 
-        self.assertEqual(2, len(relations))
+        self.assertEqual(3, len(relations))
         self.assertTrue(isinstance(relations[0], OSLORelatie))
         self.assertEqual('https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bevestiging', relations[0].objectUri)
         self.assertEqual('https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#AnotherTestClass', relations[0].doel_uri)

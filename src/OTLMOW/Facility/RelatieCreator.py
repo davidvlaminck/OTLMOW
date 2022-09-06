@@ -8,9 +8,8 @@ from OTLMOW.OTLModel.Classes.Onderdeel.HeeftBetrokkene import HeeftBetrokkene
 
 
 class RelatieCreator:
-    def __init__(self):
-
-    def create_relation(self, bron: RelatieInteractor, doel: RelatieInteractor, relatie) -> RelatieObject:
+    @staticmethod
+    def create_relation(bron: RelatieInteractor, doel: RelatieInteractor, relatie) -> RelatieObject:
         valid = RelatieValidator.is_valid_relation(source=bron, target=doel, relation=relatie)
         if not valid:
             raise CouldNotCreateRelationError("Can't create an invalid relation, please validate relations first")
@@ -31,7 +30,8 @@ class RelatieCreator:
             relatie.doel.typeURI = doel.typeURI
         return relatie
 
-    def create_betrokkenerelation(self, bron: RelatieInteractor, doel: RelatieInteractor, relation=HeeftBetrokkene) -> RelatieObject:
+    @staticmethod
+    def create_betrokkenerelation(bron: RelatieInteractor, doel: RelatieInteractor, relation=HeeftBetrokkene) -> RelatieObject:
         valid = RelatieValidator.is_valid_relation(source=bron, target=doel, relation=relation)
         if not valid:
             raise CouldNotCreateRelationError("Can't create an invalid relation, please validate relations first")

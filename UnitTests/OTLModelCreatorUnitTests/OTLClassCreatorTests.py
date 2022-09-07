@@ -1,5 +1,6 @@
 import os
 import unittest
+from pathlib import Path
 from unittest import mock, skip
 from unittest.mock import MagicMock
 
@@ -236,7 +237,7 @@ class OTLClassCreatorTests(unittest.TestCase):
     @staticmethod
     def set_up_real_collector_and_creator():
         base_dir = os.path.dirname(os.path.realpath(__file__))
-        file_location = f'{base_dir}/../../src/OTLMOW/InputFiles/OTL 2.3.db'
+        file_location = Path(f'{base_dir}/../../src/OTLMOW/InputFiles/OTL 2.3.db')
         sql_reader = SQLDbReader(file_location)
         oslo_creator = OSLOInMemoryCreator(sql_reader)
         collector = OSLOCollector(oslo_creator)

@@ -1,10 +1,12 @@
 import os
 import unittest
 import datetime
+from pathlib import Path
 
 from OTLMOW.Facility.FileFormats.CsvExporter import CsvExporter
 from OTLMOW.Facility.FileFormats.CsvImporter import CsvImporter
 from OTLMOW.Facility.OTLFacility import OTLFacility
+from SettingManagerForUnitTests import get_settings_path_for_unittests
 from TestClasses.OTLModel.Classes.Onderdeel.AllCasesTestClass import AllCasesTestClass
 
 ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -13,9 +15,8 @@ ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
 class CsvExporterTests(unittest.TestCase):
     @staticmethod
     def set_up_facility():
-        base_dir = os.path.dirname(os.path.realpath(__file__))
-        settings_file_location = f'{base_dir}/../../settings_OTLMOW.json'
-        otl_facility = OTLFacility(logfile='', settings_path=settings_file_location)
+        settings_file_location = get_settings_path_for_unittests()
+        otl_facility = OTLFacility(settings_path=settings_file_location)
         return otl_facility
 
     def test_init_importer_only_load_with_settings(self):

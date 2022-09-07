@@ -9,11 +9,8 @@ from SettingManagerForUnitTests import get_settings_path_for_unittests
 
 class EMInfraImporterTests(unittest.TestCase):
     def test_ImportEmptyFileReturnEmptyList(self):
-        base_dir = os.path.dirname(os.path.realpath(__file__))
         settings_file_location = get_settings_path_for_unittests()
-        otl_facility = OTLFacility(logfile='',
-                                   enable_relation_features=True,
-                                   settings_path=settings_file_location)
+        otl_facility = OTLFacility(settings_path=settings_file_location)
 
         requester = RequesterFactory.create_requester(settings=otl_facility.settings, auth_type='JWT', env='prd')
 
@@ -24,11 +21,8 @@ class EMInfraImporterTests(unittest.TestCase):
         self.assertEqual(asset_id, asset.assetId.identificator)
 
     def test_get_asset_id_from_uuid_and_typeURI(self):
-        base_dir = os.path.dirname(os.path.realpath(__file__))
         settings_file_location = get_settings_path_for_unittests()
-        otl_facility = OTLFacility(logfile='',
-                                   enable_relation_features=True,
-                                   settings_path=settings_file_location)
+        otl_facility = OTLFacility(settings_path=settings_file_location)
 
         requester = RequesterFactory.create_requester(settings=otl_facility.settings, auth_type='JWT', env='prd')
 

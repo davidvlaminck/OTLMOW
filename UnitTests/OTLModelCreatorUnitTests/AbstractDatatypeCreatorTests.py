@@ -1,5 +1,6 @@
 import os
 import unittest
+from pathlib import Path
 from unittest.mock import MagicMock
 
 from OTLMOW.ModelGenerator.AbstractDatatypeCreator import AbstractDatatypeCreator
@@ -16,7 +17,7 @@ class AbstractDatatypeCreatorTests(unittest.TestCase):
 
     def setUp(self) -> OSLOCollector:
         base_dir = os.path.dirname(os.path.realpath(__file__))
-        file_location = f'{base_dir}/../OTL_AllCasesTestClass.db'
+        file_location = Path(f'{base_dir}/../OTL_AllCasesTestClass.db')
         sql_reader = SQLDbReader(file_location)
         oslo_creator = OSLOInMemoryCreator(sql_reader)
         collector = OSLOCollector(oslo_creator)

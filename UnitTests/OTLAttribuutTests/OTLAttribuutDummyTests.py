@@ -34,7 +34,7 @@ class OTLAttribuutDummyTests(TestCase):
         self.assertTrue(isinstance(generated_dummy_waarde, list))
         self.assertTrue(len(generated_dummy_waarde) == 1)
         self.assertTrue(isinstance(generated_dummy_waarde[0], str))
-        self.assertTrue(5 <= len(generated_dummy_waarde[0]) < 15)
+        self.assertTrue(5 <= len(generated_dummy_waarde[0]) <= 15)
 
     def test_dummy_FloatOrDecimalField(self):
         attr = OTLAttribuut(field=FloatOrDecimalField)

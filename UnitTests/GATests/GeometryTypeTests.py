@@ -1,4 +1,5 @@
 import os
+from pathlib import Path
 from unittest import TestCase
 
 from OTLMOW.GeometrieArtefact.GeometrieArtefactCollector import GeometrieArtefactCollector
@@ -15,7 +16,7 @@ from OTLMOW.ModelGenerator.SQLDbReader import SQLDbReader
 class GeometryTypeTests(TestCase):
     def set_up_geo_collector(self):
         base_dir = os.path.dirname(os.path.realpath(__file__))
-        sqlReader = SQLDbReader(f'{base_dir}/../Geometrie_Artefact_Tests.db')
+        sqlReader = SQLDbReader(Path(f'{base_dir}/../Geometrie_Artefact_Tests.db'))
         memory = GeometrieInMemoryCreator(sqlReader)
         geo_collector = GeometrieArtefactCollector(memory)
         geo_collector.collect()
@@ -154,7 +155,7 @@ class GeometryTypeTests(TestCase):
         geo_collector = self.set_up_geo_collector()
 
         base_dir = os.path.dirname(os.path.realpath(__file__))
-        file_location = f'{base_dir}/../OTL_Tests.db'
+        file_location = Path(f'{base_dir}/../OTL_Tests.db')
         sql_reader2 = SQLDbReader(file_location)
         oslo_creator = OSLOInMemoryCreator(sql_reader2)
         collector = OSLOCollector(oslo_creator)

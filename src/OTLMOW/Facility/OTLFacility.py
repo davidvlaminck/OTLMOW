@@ -2,6 +2,7 @@ import json
 import logging
 import os
 from os.path import abspath
+from pathlib import Path
 
 from OTLMOW.Facility.FileExporter import FileExporter
 from OTLMOW.Facility.FileImporter import FileImporter
@@ -21,23 +22,23 @@ from OTLMOW.PostenMapping.PostenInMemoryCreator import PostenInMemoryCreator
 
 class OTLFacility:
     def __init__(self,
-                 settings_path: str = '',
-                 logging_level: int = logging.WARNING, logfile: str = 'logs.txt',
-                 enable_relation_features: bool = False):
+                 settings_path: Path = None,
+                 logging_level: int = logging.WARNING,
+                 logfile: Path = None):
         """Main utility class for creating a model, importing and exporting assets from files and enabling validation features
 
         :param settings_path: specifies the location of the settings file this library loads. Defaults to the example that is supplied with the library ('OTLMOW/Facility/settings_sample.json')
-        :type settings_path: str
+        :type settings_path: Path
         :param logging_level: specifies the level of logging that is used for actions with this class
         :type logging_level: int
         :param logfile: specifies the path to the logfile.
-        :type logfile: str
+        :type logfile: Path
         """
         self.settings: dict = {}
         self._load_settings(settings_path)
 
-        if logging_level != 0 and logfile != '':
-            logging.basicConfig(filename=logfile,
+        if logging_level != 0 and logfile is not None and str(logfile) != '':
+            logging.basicConfig(filename=str(logfile),
                                 filemode='a',
                                 format='%(asctime)s,%(msecs)d %(name)s %(levelname)s %(message)s',
                                 datefmt='%H:%M:%S',
@@ -48,18 +49,18 @@ class OTLFacility:
         self.posten_creator = None
 
     def create_otl_datamodel(self,
-                             directory: str = '',
-                             otl_sqlite_file_location: str = '',
-                             geo_artefact_sqlite_file_location: str = '',
+                             directory: Path = None,
+                             otl_sqlite_file_location: Path = None,
+                             geo_artefact_sqlite_file_location: Path = None,
                              environment: str = '') -> None:
         """Creates a datamodel given an OTL SQLite database in the specified directory. This will also use a Geometry Artefact if specified
 
         :param directory: directory where the model classes will be created, including the OTLModel directory. If not specified, this will create a model in a directory OTLModel in the same directory as the script that runs this method
-        :type: str
+        :type: Path
         :param otl_sqlite_file_location: path to the OTL SQLite file
-        :type: str
+        :type: Path
         :param geo_artefact_sqlite_file_location: path to the Geometry Artefact SQLite file. Defaults to an empty string as this file is not mandatory to create a model
-        :type: str
+        :type: Path
         :param environment: environment of the model, specifically needed for downloading the enumeration options from the GitHub. Valid options are: '', 'prd', 'tei', 'dev' and 'aim'
         :type: str
 
@@ -71,17 +72,17 @@ class OTLFacility:
         self._create_otl_datamodel(model_creator, directory, env)
 
     def create_oef_datamodel(self,
-                             oef_file_location: str = '',
-                             ins_ond_file_location: str = '',
+                             oef_file_location: Path = None,
+                             ins_ond_file_location: Path = None,
                              auth_type: str = 'JWT',
                              environment: str = 'prd') -> None:
         # TODO
         """Creates a datamodel given an OTL SQLite database in the specified directory. This will also use a Geometry Artefact if specified
 
         :param oef_file_location: path to the OEF SQLite file
-        :type: str
+        :type: Path
         :param ins_ond_file_location: path to the OTL SQLite file
-        :type: str
+        :type: Path
         :param auth_type: how to authenticate to access the EM-Infra API to retrieve the models
         :type: str
         :param environment: environment of the model, specifically needed for downloading the enumeration options from the GitHub. Valid options are: '', 'prd', 'tei', 'dev' and 'aim'
@@ -109,11 +110,11 @@ class OTLFacility:
         creator = PostenCreator(collector)
         creator.create_all_mappings()
 
-    def create_assets_from_file(self, filepath: str, **kwargs) -> list:
+    def create_assets_from_file(self, filepath: Path = None, **kwargs) -> list:
         """Creates asset objects in memory from a file. Supports csv and json files.
 
         :param filepath: Path to the file that is to be imported
-        :type: str
+        :type: Path
 
         Supported arguments for csv:
 
@@ -130,11 +131,11 @@ class OTLFacility:
         file_importer = FileImporter(settings=self.settings)
         return file_importer.create_assets_from_file(filepath=filepath, **kwargs)
 
-    def create_file_from_assets(self, filepath: str, list_of_objects: list, **kwargs) -> None:
+    def create_file_from_assets(self, filepath: Path, list_of_objects: list, **kwargs) -> None:
         """Creates a file from asset objects in memory. Supports csv and json files.
 
         :param filepath: Path to the file that is to be created
-        :type: str
+        :type: Path
         :param list_of_objects: The objects in memory that will be exported to a file
         :type: list
 
@@ -161,29 +162,29 @@ class OTLFacility:
         raise ValueError("Valid options for the environment parameter are: '', 'prd', 'tei', 'dev' and 'aim'")
 
     @staticmethod
-    def _init_otl_model_creator(otl_file_location: str = '', geoA_file_location: str = '') -> OTLModelCreator:
+    def _init_otl_model_creator(otl_file_location: Path = None, geoA_file_location: Path = None) -> OTLModelCreator:
         sql_reader = SQLDbReader(otl_file_location)
         oslo_creator = OSLOInMemoryCreator(sql_reader)
         collector = OSLOCollector(oslo_creator)
         geo_artefact_collector = None
-        if geoA_file_location != '':
+        if geoA_file_location != None:
             sql_reader_GA = SQLDbReader(geoA_file_location)
             geo_memory_creator = GeometrieInMemoryCreator(sql_reader_GA)
             geo_artefact_collector = GeometrieArtefactCollector(geo_memory_creator)
         return OTLModelCreator(collector, geo_artefact_collector)
 
     @staticmethod
-    def _create_otl_datamodel(model_creator: OTLModelCreator, directory: str = '', environment: str = ''):
+    def _create_otl_datamodel(model_creator: OTLModelCreator, directory: Path = None, environment: str = ''):
         model_creator.oslo_collector.collect()
         if model_creator.geo_artefact_collector is not None:
             model_creator.geo_artefact_collector.collect()
-        if directory == '':
-            base_dir = os.path.dirname(os.path.realpath(__file__))
-            directory = abspath(f'{base_dir}/../')
+        if directory == None:
+            current_file_path = Path(__file__)
+            directory = current_file_path.parents[1]
         model_creator.create_full_model(directory=directory, environment=environment)
 
     @staticmethod
-    def _init_postenmapping_collector(postenmapping_file_location: str = '') -> PostenCollector:
+    def _init_postenmapping_collector(postenmapping_file_location: Path = '') -> PostenCollector:
         sql_reader = SQLDbReader(postenmapping_file_location)
         oslo_creator = PostenInMemoryCreator(sql_reader)
         return PostenCollector(oslo_creator)
@@ -210,8 +211,9 @@ class OTLFacility:
 
     def _load_settings(self, settings_path):
         if settings_path == '':
-            base_dir = os.path.dirname(os.path.realpath(__file__))
-            settings_path = abspath(f'{base_dir}\\settings_sample.json')
+            current_file_path = Path(__file__)
+            directory = current_file_path.parents[0]
+            settings_path = abspath(f'{directory}\\settings_sample.json')
 
         if not os.path.isfile(settings_path):
             raise FileNotFoundError(settings_path + " is not a valid path. File does not exist.")

@@ -1,5 +1,6 @@
 import os
 import unittest
+from pathlib import Path
 
 from OTLMOW.ModelGenerator.Inheritance import Inheritance
 from OTLMOW.ModelGenerator.OSLOAttribuut import OSLOAttribuut
@@ -19,13 +20,13 @@ from OTLMOW.ModelGenerator.SQLDbReader import SQLDbReader
 
 class OSLOInMemoryCreatorTests(unittest.TestCase):
     def test_file_not_found(self):
-        file_location = 'this_file_does_not_exists.db'
+        file_location = Path('this_file_does_not_exists.db')
         with self.assertRaises(FileNotFoundError):
             SQLDbReader(file_location)
 
     def set_up_creator(self):
         base_dir = os.path.dirname(os.path.realpath(__file__))
-        file_location = f'{base_dir}/../OTL_AllCasesTestClass.db'
+        file_location = Path(f'{base_dir}/../OTL_AllCasesTestClass.db')
         sql_reader = SQLDbReader(file_location)
         oslo_creator = OSLOInMemoryCreator(sql_reader)
         return oslo_creator

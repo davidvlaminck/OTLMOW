@@ -57,7 +57,7 @@ class GenericHelperTests(TestCase):
         testset = {
             'abstracten': 'Classes/Abstracten',
             'implementatieelement': 'Classes/ImplementatieElement',
-            'installatie': 'Classes/\Installatie',
+            'installatie': 'Classes/Installatie',
             'levenscyclus': 'Classes/Levenscyclus',
             'onderdeel': 'Classes/Onderdeel',
             'proefenmeting': 'Classes/ProefEnMeting'

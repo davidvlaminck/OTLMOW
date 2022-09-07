@@ -144,6 +144,13 @@ class OTLClassCreatorTests(unittest.TestCase):
                                  '',
                                  '    @abstractmethod',
                                  '    def __init__(self):',
+                                 "        self.add_valid_relation(relation='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Omhult', "
+                                 "target='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#ContainerBuis', "
+                                 "deprecated='2.3.0')",
+                                 "        self.add_valid_relation(relation='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Omhult', "
+                                 "target='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Mantelbuis', "
+                                 "deprecated='2.3.0')",
+                                 '',
                                  '        self._kleur = OTLAttribuut(field=StringField,',
                                  "                                   naam='kleur',",
                                  "                                   label='kleur',",

@@ -10,12 +10,12 @@ from TestClasses.OTLModel.Classes.Onderdeel.AllCasesTestClass import AllCasesTes
 class OTLObjectsTests(TestCase):
     def test_build_string_version_dotnotation_empty_class(self):
         infoString = Aftakking().__str__(use_dotnotation=True)
-        expected = '^information about Aftakking \d{10,12}:\n$'
+        expected = '^information about Aftakking \d{10,13}:\n$'
         self.assertRegex(infoString, expected)
 
     def test_build_string_version_dotnotation_empty_class2(self):
         infoString = Verkeersregelaar().__str__(use_dotnotation=True)
-        expected = '^information about Verkeersregelaar \d{10,12}:\n$'
+        expected = '^information about Verkeersregelaar \d{10,13}:\n$'
         self.assertRegex(infoString, expected)
 
     def test_make_string_version_dotnotation_empty_class(self):

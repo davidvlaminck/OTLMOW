@@ -19,4 +19,3 @@ class RelatieObject(AIMDBStatus, AttributeInfo, DavieRelatieAttributes, OTLObjec
         AttributeInfo.__init__(self)
         DavieRelatieAttributes.__init__(self)
         OTLObject.__init__(self)
-

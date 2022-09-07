@@ -1,3 +1,5 @@
+from pathlib import Path
+
 from OTLMOW.Facility.Exceptions.InvalidExtensionError import InvalidExtensionError
 from OTLMOW.Facility.FileFormats.CsvExporter import CsvExporter
 from OTLMOW.Facility.FileFormats.JsonExporter import JsonExporter
@@ -8,7 +10,7 @@ class FileExporter:
     def __init__(self, settings: dict):
         self.settings = settings
 
-    def create_file_from_assets(self, filepath: str, list_of_objects: list, **kwargs):
+    def create_file_from_assets(self, filepath: Path, list_of_objects: list, **kwargs):
         extension = FileImporter.get_file_extension(filepath, file_must_exist=False)
         exporter = self.get_exporter_from_extension(extension=extension, settings=self.settings)
         return exporter.export_to_file(filepath=filepath, list_of_objects=list_of_objects, **kwargs)

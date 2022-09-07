@@ -1,4 +1,5 @@
 import os
+from pathlib import Path
 
 from OTLMOW.Facility.AssetFactory import AssetFactory
 from OTLMOW.Facility.DotnotationHelper import DotnotationHelper
@@ -21,7 +22,7 @@ class CsvImporter:
         self.data = [[]]
         self.objects = []
 
-    def import_file(self, filepath: str = '', **kwargs):
+    def import_file(self, filepath: Path = None, **kwargs):
         delimiter = ';'
         if kwargs is not None:
             if 'delimiter' in kwargs:
@@ -79,10 +80,10 @@ class CsvImporter:
                 DotnotationHelper.set_attribute_by_dotnotation(instanceOrAttribute=object,
                                                                dotnotation=self.headers[index],
                                                                value=value,
-                                                               convert=True,
                                                                convert_warnings=False,
                                                                separator=self.settings['dotnotation']['separator'],
                                                                cardinality_indicator=cardinality_indicator,
-                                                               waarde_shortcut_applicable=self.settings['dotnotation']['waarde_shortcut_applicable'])
+                                                               waarde_shortcut_applicable=self.settings['dotnotation'][
+                                                                   'waarde_shortcut_applicable'])
 
         return list_of_objects

@@ -189,7 +189,7 @@ class OTLFacility:
         oslo_creator = PostenInMemoryCreator(sql_reader)
         return PostenCollector(oslo_creator)
 
-    def _init_oef_model_creator(self, oef_file_location: str, ins_ond_file_location: str, auth_type: str, env: str):
+    def _init_oef_model_creator(self, oef_file_location: Path, ins_ond_file_location: Path, auth_type: str, env: str):
         requester = RequesterFactory.create_requester(settings=self.settings, auth_type=auth_type, env=env)
         model_grabber = ModelGrabber(requester)
         model_grabber.grab_models_as_json(oef_file_location, ins_ond_file_location)

@@ -1,4 +1,5 @@
 import copy
+from pathlib import Path
 
 from OTLMOW.Facility.DotnotationHelper import DotnotationHelper
 from OTLMOW.Facility.GenericHelper import GenericHelper
@@ -24,7 +25,7 @@ class CsvExporter:
         self.csv_headers = []
         self.csv_data = []
 
-    def export_to_file(self, filepath: str = '', list_of_objects: list = None, **kwargs):
+    def export_to_file(self, filepath: Path = None, list_of_objects: list = None, **kwargs):
         delimiter = ';'
         split_per_type = False
 
@@ -34,7 +35,7 @@ class CsvExporter:
             if 'split_per_type' in kwargs:
                 split_per_type = kwargs['split_per_type']
 
-        if filepath == '':
+        if filepath == None:
             raise ValueError(f'Can not write a file to: {filepath}')
 
         if delimiter == '':
@@ -49,7 +50,7 @@ class CsvExporter:
             csv_data_lines = self.create_data_lines_from_data(csv_data, delimiter)
             self.write_file(file_location=filepath, data=csv_data_lines)
 
-    def export_multiple_csv_files(self, list_of_objects: list, file_location: str = '', delimiter: str = ''):
+    def export_multiple_csv_files(self, list_of_objects: list, file_location: Path = None, delimiter: str = ''):
         if list_of_objects is None:
             list_of_objects = []
 

@@ -8,20 +8,13 @@ from OTLMOW.OTLModel.Classes.Onderdeel.Verkeersregelaar import Verkeersregelaar
 class AttributeInfoTests(TestCase):
     def test_info_empty_class(self):
         infoString = Aftakking().info()
-        expected = '^information about Aftakking \d{10,12}:\n$'
+        expected = '^information about Aftakking \d{10,13}:\n$'
         self.assertRegex(infoString, expected)
 
     def test_info_empty_class2(self):
         infoString = Verkeersregelaar().info()
-        expected = '^information about Verkeersregelaar \d{10,12}:\n$'
+        expected = '^information about Verkeersregelaar \d{10,13}:\n$'
         self.assertRegex(infoString, expected)
-
-    def test_attr_info_empty_class(self):
-        infoString = Verkeersregelaar().info_attr()
-        expected = '^Attribute information about Verkeersregelaar \d{10,12}:\n'
-        expected2 = 'assetId \(type: DtcIdentificator\)\n'
-        self.assertRegex(infoString, expected)
-        self.assertRegex(infoString, expected2)
 
     def test_make_string_version_empty_class(self):
         v = Verkeersregelaar()

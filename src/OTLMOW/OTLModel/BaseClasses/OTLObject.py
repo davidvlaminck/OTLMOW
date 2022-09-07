@@ -26,7 +26,7 @@ class OTLObjectHelper:
             return
         d = {}
         for k, v in vars(asset).items():
-            if k in ['_parent', '_geometry_types']:
+            if k in ['_parent', '_geometry_types', '_valid_relations']:
                 continue
             if v.waarde is None or v.waarde == []:
                 continue

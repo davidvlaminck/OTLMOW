@@ -5,18 +5,15 @@ from os.path import abspath
 
 from OTLMOW.Facility.FileExporter import FileExporter
 from OTLMOW.Facility.FileImporter import FileImporter
-from OTLMOW.Facility.RelatieCreator import RelatieCreator
 from OTLMOW.Facility.RequesterFactory import RequesterFactory
 from OTLMOW.GeometrieArtefact.GeometrieArtefactCollector import GeometrieArtefactCollector
 from OTLMOW.GeometrieArtefact.GeometrieInMemoryCreator import GeometrieInMemoryCreator
-from OTLMOW.ModelGenerator.BaseClasses.RelatieValidator import RelatieValidator
 from OTLMOW.ModelGenerator.OSLOCollector import OSLOCollector
 from OTLMOW.ModelGenerator.OSLOInMemoryCreator import OSLOInMemoryCreator
 from OTLMOW.ModelGenerator.OTLModelCreator import OTLModelCreator
 from OTLMOW.ModelGenerator.SQLDbReader import SQLDbReader
 from OTLMOW.OEFModel.ModelGrabber import ModelGrabber
 from OTLMOW.OEFModel.OEFModelCreator import OEFModelCreator
-from OTLMOW.OTLModel.GeldigeRelatieLijst import GeldigeRelatieLijst
 from OTLMOW.PostenMapping.PostenCollector import PostenCollector
 from OTLMOW.PostenMapping.PostenCreator import PostenCreator
 from OTLMOW.PostenMapping.PostenInMemoryCreator import PostenInMemoryCreator
@@ -35,8 +32,6 @@ class OTLFacility:
         :type logging_level: int
         :param logfile: specifies the path to the logfile.
         :type logfile: str
-        :param enable_relation_features: specifies whether to enable the relation features such as validation
-        :type enable_relation_features: bool
         """
         self.settings: dict = {}
         self._load_settings(settings_path)
@@ -51,11 +46,6 @@ class OTLFacility:
         self.oef_model_creator: None | OEFModelCreator = None
         self.posten_collector = None
         self.posten_creator = None
-        self.relatie_validator: None | RelatieValidator = None
-        self.relatie_creator: None | RelatieCreator = None
-
-        if enable_relation_features:
-            self._init_relatie_validation()
 
     def create_otl_datamodel(self,
                              directory: str = '',
@@ -158,13 +148,6 @@ class OTLFacility:
         """
         file_exporter = FileExporter(settings=self.settings)
         return file_exporter.create_file_from_assets(filepath=filepath, list_of_objects=list_of_objects, **kwargs)
-
-    def _init_relatie_validation(self, relation_list: [GeldigeRelatieLijst] = None):
-        if relation_list is None:
-            relation_list = GeldigeRelatieLijst().lijst
-        self.relatie_validator = RelatieValidator(relation_list)
-        self.relatie_validator.enableValidateRelatieOnRelatieInteractor()
-        self.relatie_creator = RelatieCreator(self.relatie_validator)
 
     @staticmethod
     def _validate_environment(environment: str):

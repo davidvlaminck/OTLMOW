@@ -18,16 +18,16 @@ class OSLOCollector:
         self.inheritances: [Inheritance] = None
         self.memory_creator = oslo_in_memory_creator
         self.attributes: [OSLOAttribuut] = None
-        self.classes = []
-        self.primitive_datatypes = []
-        self.primitive_datatype_attributen = []
-        self.complex_datatypes = []
-        self.complex_datatype_attributen = []
-        self.union_datatypes = []
-        self.union_datatype_attributen = []
-        self.enumerations = []
-        self.typeLinks = []
-        self.relations = [OSLORelatie]
+        self.classes: [OSLOClass] = []
+        self.primitive_datatypes: [OSLODatatypePrimitive] = []
+        self.primitive_datatype_attributen: [OSLODatatypePrimitiveAttribuut] = []
+        self.complex_datatypes: [OSLODatatypeComplex] = []
+        self.complex_datatype_attributen: [OSLODatatypeComplexAttribuut] = []
+        self.union_datatypes: [OSLODatatypeUnion] = []
+        self.union_datatype_attributen: [OSLODatatypeUnionAttribuut] = []
+        self.enumerations: [OSLOEnumeration] = []
+        self.typeLinks: [OSLOTypeLink] = []
+        self.relations: [OSLORelatie] = []
 
     def collect(self):
         self.classes = self.memory_creator.get_all_classes()

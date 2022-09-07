@@ -83,14 +83,14 @@ class GeldigeRelatieLijstTestInstance(GeldigeRelatieLijst):
 class RelatieValidatorTests(unittest.TestCase):
     def test_create_instance(self):
         geldigeRelatieLijst = GeldigeRelatieLijstTestInstance().lijst
-        validator = RelatieValidator(geldigeRelatieLijst)
-        creator = RelatieCreator(validator)
+        validator = RelatieValidator()
+        creator = RelatieCreator()
         self.assertIsNotNone(creator)
 
     def test_create_valid_relation(self):
         geldigeRelatieLijst = GeldigeRelatieLijstTestInstance().lijst
-        validator = RelatieValidator(geldigeRelatieLijst)
-        creator = RelatieCreator(validator)
+        validator = RelatieValidator()
+        creator = RelatieCreator()
         e = EnergiemeterAWV()
         e.assetId.identificator = 'e'
         a = Aftakking()
@@ -104,8 +104,8 @@ class RelatieValidatorTests(unittest.TestCase):
 
     def test_create_invalid_relation(self):
         geldigeRelatieLijst = GeldigeRelatieLijstTestInstance().lijst
-        validator = RelatieValidator(geldigeRelatieLijst)
-        creator = RelatieCreator(validator)
+        validator = RelatieValidator()
+        creator = RelatieCreator()
         e = EnergiemeterAWV()
         e.assetId.identificator = 'e'
         a = Aftakking()

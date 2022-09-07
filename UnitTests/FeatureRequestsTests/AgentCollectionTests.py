@@ -4,11 +4,13 @@ from OTLMOW.Facility.AgentCollection import AgentCollection
 from OTLMOW.Facility.OTLFacility import OTLFacility
 from OTLMOW.Facility.RequesterFactory import RequesterFactory
 from OTLMOW.OTLModel.Classes.Agent import Agent
+from SettingManagerForUnitTests import get_settings_path_for_unittests
 
 
 class AgentCollectionTests(unittest.TestCase):
     def test_search_agent_by_name(self):
-        otl_facility = OTLFacility(logfile='', settings_path='C:\\resources\\settings_OTLMOW.json')
+        settings_path = get_settings_path_for_unittests()
+        otl_facility = OTLFacility(logfile='', settings_path=settings_path)
         requester = RequesterFactory.create_requester(settings=otl_facility.settings, auth_type='JWT', env='prd')
         collection = AgentCollection(requester)
         agents_found = collection.get_agent_by_full_name('dave geudens')

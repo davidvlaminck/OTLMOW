@@ -1,5 +1,5 @@
 from OTLMOW.Facility.OTLFacility import OTLFacility
-from OTLMOW.ModelGenerator.BaseClasses.RelatieRichting import RelatieRichting
+from OTLMOW.ModelGenerator.BaseClasses.RelationDirection import RelationDirection
 from OTLMOW.OTLModel.Classes.Onderdeel.DNBLaagspanning import DNBLaagspanning
 from OTLMOW.OTLModel.Classes.Onderdeel.EnergiemeterDNB import EnergiemeterDNB
 from OTLMOW.OTLModel.Classes.Onderdeel.Voedt import Voedt
@@ -39,5 +39,5 @@ if __name__ == '__main__':
 
     # using methods on the object itself
     dnb._loadGeldigeRelaties()
-    print(dnb._validateRelatiePossible(meter, Voedt, relatieRichting=RelatieRichting.BRON_DOEL))
+    print(dnb._validateRelatiePossible(meter, Voedt, relatieRichting=RelationDirection.BRON_DOEL))
     # also outputs True

@@ -20,6 +20,9 @@ class ProefTemperatuur(Proef, PuntGeometrie, LijnGeometrie, VlakGeometrie):
         PuntGeometrie.__init__(self)
         VlakGeometrie.__init__(self)
 
+        self.add_valid_relation(relation='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#IsInspectieVan', target='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#BitumineuzeLaag')
+        self.add_valid_relation(relation='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#IsInspectieVan', target='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DunneOverlaging')
+
         self._temperatuur = OTLAttribuut(field=KwantWrdInCelsius,
                                          naam='temperatuur',
                                          label='temperatuur',

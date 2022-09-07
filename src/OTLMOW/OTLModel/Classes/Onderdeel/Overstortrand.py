@@ -19,6 +19,8 @@ class Overstortrand(AIMObject, VlakGeometrie):
         AIMObject.__init__(self)
         VlakGeometrie.__init__(self)
 
+        self.add_valid_relation(relation='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bevestiging', target='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Overstort')
+
         self._breedte = OTLAttribuut(field=KwantWrdInMillimeter,
                                      naam='breedte',
                                      label='breedte',

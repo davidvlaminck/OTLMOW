@@ -22,6 +22,9 @@ class Pomp(LinkendElement, PuntGeometrie):
         LinkendElement.__init__(self)
         PuntGeometrie.__init__(self)
 
+        self.add_valid_relation(relation='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#SluitAanOp', target='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Muurdoorgangsstuk')
+        self.add_valid_relation(relation='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Sturing', target='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#IOKaart')
+
         self._binnenDiameter = OTLAttribuut(field=KwantWrdInMillimeter,
                                             naam='binnenDiameter',
                                             label='binnendiameter',

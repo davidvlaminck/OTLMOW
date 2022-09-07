@@ -16,6 +16,9 @@ class Verwarmingslint(AIMObject, LijnGeometrie):
         AIMObject.__init__(self)
         LijnGeometrie.__init__(self)
 
+        self.add_valid_relation(relation='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bevestiging', target='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Brandvoorziening')
+        self.add_valid_relation(relation='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bevestiging', target='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Brandleiding')
+
         self._vermogen = OTLAttribuut(field=KwantWrdInWatt,
                                       naam='vermogen',
                                       label='vermogen',

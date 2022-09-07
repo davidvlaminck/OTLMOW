@@ -18,6 +18,8 @@ class Aardingsinstallatie(AIMNaamObject, VlakGeometrie):
         AIMNaamObject.__init__(self)
         VlakGeometrie.__init__(self)
 
+        self.add_valid_relation(relation='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bevestiging', target='https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Aardingsinstallatie')
+
         self._aardingsnet = OTLAttribuut(field=KlAardingAardingsnet,
                                          naam='aardingsnet',
                                          label='aardingsnet',

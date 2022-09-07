@@ -22,6 +22,9 @@ class Verkeersteken(AIMObject, GeenGeometrie):
         AIMObject.__init__(self)
         GeenGeometrie.__init__(self)
 
+        self.add_valid_relation(relation='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#HoortBij', target='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Verkeersteken')
+        self.add_valid_relation(relation='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#HoortBij', target='https://wegenenverkeer.data.vlaanderen.be/ns/installatie#VerkeersbordVerkeersteken')
+
         self._adres = OTLAttribuut(field=DtcAdres,
                                    naam='adres',
                                    label='adres',

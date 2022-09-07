@@ -20,6 +20,8 @@ class WeggebondenDetector(Detectie, FirmwareObject, PuntGeometrie):
         FirmwareObject.__init__(self)
         PuntGeometrie.__init__(self)
 
+        self.add_valid_relation(relation='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Sturing', target='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#ZenderOntvangerToegang')
+
         self._detectieprincipe = OTLAttribuut(field=KlWeggebondendetectorDetectieprincipe,
                                               naam='detectieprincipe',
                                               label='detectieprincipe',

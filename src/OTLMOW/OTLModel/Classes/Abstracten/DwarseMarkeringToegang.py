@@ -17,3 +17,6 @@ class DwarseMarkeringToegang(AOWSType, Markering, VlakGeometrie):
         AOWSType.__init__(self)
         Markering.__init__(self)
         VlakGeometrie.__init__(self)
+
+        self.add_valid_relation(relation='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#HoortBij', target='https://wegenenverkeer.data.vlaanderen.be/ns/installatie#GroepDwarseMarkeringEnFiguratie')
+        self.add_valid_relation(relation='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#HoortBij', target='https://wegenenverkeer.data.vlaanderen.be/ns/installatie#GroepMarkering')

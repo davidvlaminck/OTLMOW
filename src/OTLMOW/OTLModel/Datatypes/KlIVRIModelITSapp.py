@@ -14,6 +14,11 @@ class KlIVRIModelITSapp(KeuzelijstField):
     status = 'ingebruik'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlIVRIModelITSapp'
     options = {
+        'flowtack': KeuzelijstWaarde(invulwaarde='flowtack',
+                                     label='Flowtack',
+                                     status='ingebruik',
+                                     definitie='Flowtack',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlIVRIModelITSapp/flowtack'),
         'imflow': KeuzelijstWaarde(invulwaarde='imflow',
                                    label='Imflow',
                                    status='ingebruik',

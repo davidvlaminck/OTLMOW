@@ -31,6 +31,10 @@ De LED driver bevindt zich fysiek in het verlichtingstoestel maar wordt als een 
         Verlichtingstoestel.__init__(self)
         VerlichtingstoestelConnector.__init__(self)
 
+        self.add_valid_relation(relation='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bevestiging', target='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#EMDraagconstructie')
+        self.add_valid_relation(relation='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bevestiging', target='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#LEDDriver')
+        self.add_valid_relation(relation='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Sturing', target='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#LEDDriver')
+
         self._aantalTeVerlichtenRijstroken = OTLAttribuut(field=KlWvLedAantalTeVerlichtenRijstroken,
                                                           naam='aantalTeVerlichtenRijstroken',
                                                           label='aantal te verlichten rijstroken',

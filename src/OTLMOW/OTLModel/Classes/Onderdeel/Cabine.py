@@ -18,6 +18,10 @@ class Cabine(Inloopbehuizing, VlakGeometrie):
         Inloopbehuizing.__init__(self)
         VlakGeometrie.__init__(self)
 
+        self.add_valid_relation(relation='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bevestiging', target='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Laag')
+        self.add_valid_relation(relation='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bevestiging', target='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#HSBeveiligingscel')
+        self.add_valid_relation(relation='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bevestiging', target='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Transformator')
+
         self._aardingsstelsel = OTLAttribuut(field=KlCabineAardingsstelsel,
                                              naam='aardingsstelsel',
                                              label='aardingsstelsel',

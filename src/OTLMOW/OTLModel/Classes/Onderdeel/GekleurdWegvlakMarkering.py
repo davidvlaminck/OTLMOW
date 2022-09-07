@@ -21,6 +21,8 @@ class GekleurdWegvlakMarkering(AOWSType, Markering, VlakGeometrie):
         Markering.__init__(self)
         VlakGeometrie.__init__(self)
 
+        self.add_valid_relation(relation='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#HoortBij', target='https://wegenenverkeer.data.vlaanderen.be/ns/installatie#GroepMarkering')
+
         self._breedte = OTLAttribuut(field=KwantWrdInMeter,
                                      naam='breedte',
                                      label='breedte',

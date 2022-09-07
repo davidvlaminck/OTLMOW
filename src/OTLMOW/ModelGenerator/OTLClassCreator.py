@@ -198,6 +198,9 @@ class OTLClassCreator(AbstractDatatypeCreator):
 
     def add_relations_to_datablock(self, datablock, objectUri):
         relations = self.osloCollector.find_outgoing_relations(objectUri)
+        if len(relations) == 0:
+            return
+
         for relation in relations:
             deprecated = ''
             if relation.deprecated_version != '':

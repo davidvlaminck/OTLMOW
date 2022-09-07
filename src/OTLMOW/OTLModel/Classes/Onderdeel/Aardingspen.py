@@ -18,6 +18,8 @@ class Aardingspen(KabelAardingSamenstelling, AIMNaamObject, PuntGeometrie):
         KabelAardingSamenstelling.__init__(self)
         PuntGeometrie.__init__(self)
 
+        self.add_valid_relation(relation='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#HoortBij', target='https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Aardingsinstallatie')
+
         self._lengte = OTLAttribuut(field=KwantWrdInCentimeter,
                                     naam='lengte',
                                     label='lengte',

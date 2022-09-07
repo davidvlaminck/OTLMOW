@@ -14,6 +14,11 @@ class KlVirtueleServerModelnaam(KeuzelijstField):
     status = 'ingebruik'
     codelist = 'https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlVirtueleServerModelnaam'
     options = {
+        'boxedacu': KeuzelijstWaarde(invulwaarde='boxedacu',
+                                     label='BoxedACU',
+                                     status='ingebruik',
+                                     definitie='BoxedACU.',
+                                     objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlVirtueleServerModelnaam/boxedacu'),
         'ram': KeuzelijstWaarde(invulwaarde='ram',
                                 label='RAM',
                                 status='ingebruik',

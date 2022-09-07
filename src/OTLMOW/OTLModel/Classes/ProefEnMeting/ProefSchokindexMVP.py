@@ -22,6 +22,8 @@ class ProefSchokindexMVP(Proef, PuntGeometrie, LijnGeometrie, VlakGeometrie):
         PuntGeometrie.__init__(self)
         VlakGeometrie.__init__(self)
 
+        self.add_valid_relation(relation='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#IsInspectieVan', target='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Motorvangplank', deprecated='2.0.0')
+
         self._schokindexMvp = OTLAttribuut(field=KlLEACSchokindexMVP,
                                            naam='schokindexMvp',
                                            label='schokindex mvp',

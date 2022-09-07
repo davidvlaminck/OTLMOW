@@ -18,6 +18,8 @@ class Verwarmingselement(AIMObject, PuntGeometrie):
         AIMObject.__init__(self)
         PuntGeometrie.__init__(self)
 
+        self.add_valid_relation(relation='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Voedt', target='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Verwarmingslint')
+
         self._merk = OTLAttribuut(field=KlVerwarmingselementMerk,
                                   naam='merk',
                                   label='merk',

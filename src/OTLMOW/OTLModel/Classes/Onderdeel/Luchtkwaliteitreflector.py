@@ -14,6 +14,8 @@ class Luchtkwaliteitreflector(Luchtkwaliteittoestel):
     def __init__(self):
         super().__init__()
 
+        self.add_valid_relation(relation='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#HoortBij', target='https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Luchtkwaliteitsensor')
+
         self._isBeschermd = OTLAttribuut(field=BooleanField,
                                          naam='isBeschermd',
                                          label='is beschermd',

@@ -19,6 +19,8 @@ class Leiding(KabelgeleidingEnLeidingBevestiging, AIMNaamObject):
         AIMNaamObject.__init__(self)
         KabelgeleidingEnLeidingBevestiging.__init__(self)
 
+        self.add_valid_relation(relation='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#HeeftAanvullendeGeometrie', target='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Onderwaterkruising')
+
         self._buitendiameter = OTLAttribuut(field=KwantWrdInMillimeter,
                                             naam='buitendiameter',
                                             label='buitendiameter',

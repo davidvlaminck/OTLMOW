@@ -17,6 +17,8 @@ class Putbekleding(AIMObject, PuntGeometrie):
         AIMObject.__init__(self)
         PuntGeometrie.__init__(self)
 
+        self.add_valid_relation(relation='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bevestiging', target='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#PutRelatie')
+
         self._laagdikte = OTLAttribuut(field=KwantWrdInMillimeter,
                                        naam='laagdikte',
                                        label='laagdikte',

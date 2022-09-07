@@ -19,6 +19,9 @@ class Overstort(LinkendElement, VlakGeometrie):
         LinkendElement.__init__(self)
         VlakGeometrie.__init__(self)
 
+        self.add_valid_relation(relation='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bevestiging', target='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Duikschot')
+        self.add_valid_relation(relation='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bevestiging', target='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Overstortrand')
+
         self._drempellengte = OTLAttribuut(field=KwantWrdInMillimeter,
                                            naam='drempellengte',
                                            label='breedte',

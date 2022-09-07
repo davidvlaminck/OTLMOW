@@ -159,23 +159,23 @@ class OTLModelCreator:
         if not path.isdir(directory):
             raise NotADirectoryError(f'{directory} is not a directory.')
 
-        if not path.exists(directory + '\\OTLModel'):
-            os.mkdir(directory + '\\OTLModel')
+        if not path.exists(directory + '/OTLModel'):
+            os.mkdir(directory + '/OTLModel')
 
-        if not path.exists(directory + '\\OTLModel\\Classes'):
-            os.mkdir(directory + '\\OTLModel\\Classes')
-        if not path.exists(directory + '\\OTLModel\\Datatypes'):
-            os.mkdir(directory + '\\OTLModel\\Datatypes')
+        if not path.exists(directory + '/OTLModel/Classes'):
+            os.mkdir(directory + '/OTLModel/Classes')
+        if not path.exists(directory + '/OTLModel/Datatypes'):
+            os.mkdir(directory + '/OTLModel/Datatypes')
 
-        if not path.exists(directory + '\\OTLModel\\Classes\\Abstracten'):
-            os.mkdir(directory + '\\OTLModel\\Classes\\Abstracten')
-        if not path.exists(directory + '\\OTLModel\\Classes\\ImplementatieElement'):
-            os.mkdir(directory + '\\OTLModel\\Classes\\ImplementatieElement')
-        if not path.exists(directory + '\\OTLModel\\Classes\\Installatie'):
-            os.mkdir(directory + '\\OTLModel\\Classes\\Installatie')
-        if not path.exists(directory + '\\OTLModel\\Classes\\Levenscyclus'):
-            os.mkdir(directory + '\\OTLModel\\Classes\\Levenscyclus')
-        if not path.exists(directory + '\\OTLModel\\Classes\\Onderdeel'):
-            os.mkdir(directory + '\\OTLModel\\Classes\\Onderdeel')
-        if not path.exists(directory + '\\OTLModel\\Classes\\ProefEnMeting'):
-            os.mkdir(directory + '\\OTLModel\\Classes\\ProefEnMeting')
+        if not path.exists(directory + '/OTLModel/Classes/Abstracten'):
+            os.mkdir(directory + '/OTLModel/Classes/Abstracten')
+        if not path.exists(directory + '/OTLModel/Classes/ImplementatieElement'):
+            os.mkdir(directory + '/OTLModel/Classes/ImplementatieElement')
+        if not path.exists(directory + '/OTLModel/Classes/Installatie'):
+            os.mkdir(directory + '/OTLModel/Classes/Installatie')
+        if not path.exists(directory + '/OTLModel/Classes/Levenscyclus'):
+            os.mkdir(directory + '/OTLModel/Classes/Levenscyclus')
+        if not path.exists(directory + '/OTLModel/Classes/Onderdeel'):
+            os.mkdir(directory + '/OTLModel/Classes/Onderdeel')
+        if not path.exists(directory + '/OTLModel/Classes/ProefEnMeting'):
+            os.mkdir(directory + '/OTLModel/Classes/ProefEnMeting')

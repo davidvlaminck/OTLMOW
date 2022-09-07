@@ -15,3 +15,6 @@ class FieldOfView(AIMNaamObject, VlakGeometrie):
     def __init__(self):
         AIMNaamObject.__init__(self)
         VlakGeometrie.__init__(self)
+
+        self.add_valid_relation(relation='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bevestiging', target='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#ANPRCamera', deprecated='2.4.0')
+        self.add_valid_relation(relation='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bevestiging', target='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Camera', deprecated='2.4.0')

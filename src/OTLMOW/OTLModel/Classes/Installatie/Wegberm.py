@@ -17,6 +17,9 @@ class Wegberm(TerreinDeel, AIMObject):
         AIMObject.__init__(self)
         TerreinDeel.__init__(self)
 
+        self.add_valid_relation(relation='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bevestiging', target='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#BegroeidVoorkomen')
+        self.add_valid_relation(relation='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bevestiging', target='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#LijnvormigElement')
+
         self._bijzonderIngerichteOnderdelen = OTLAttribuut(field=KlWegbermBIO,
                                                            naam='bijzonderIngerichteOnderdelen',
                                                            label='bijzonder ingerichte onderdelen van de wegberm',

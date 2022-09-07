@@ -16,6 +16,8 @@ class GroepMarkering(AIMObject, PuntGeometrie):
         AIMObject.__init__(self)
         PuntGeometrie.__init__(self)
 
+        self.add_valid_relation(relation='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#HoortBij', target='https://wegenenverkeer.data.vlaanderen.be/ns/installatie#GroepMarkering')
+
         self._totaleGroepOppervlakte = OTLAttribuut(field=KwantWrdInVierkanteMeter,
                                                     naam='totaleGroepOppervlakte',
                                                     label='totale oppervlakte groepering',

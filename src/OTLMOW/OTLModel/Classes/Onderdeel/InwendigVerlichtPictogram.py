@@ -19,6 +19,9 @@ class InwendigVerlichtPictogram(AIMObject, PuntGeometrie):
         AIMObject.__init__(self)
         PuntGeometrie.__init__(self)
 
+        self.add_valid_relation(relation='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bevestiging', target='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#BekledingComponent')
+        self.add_valid_relation(relation='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Sturing', target='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#IOKaart')
+
         self._afmeting = OTLAttribuut(field=DtcAfmetingBxlxhInMm,
                                       naam='afmeting',
                                       label='afmeting',

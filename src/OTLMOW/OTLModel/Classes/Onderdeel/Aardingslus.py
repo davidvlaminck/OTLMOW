@@ -15,3 +15,5 @@ class Aardingslus(KabelAarding, KabelAardingSamenstelling, AIMNaamObject):
         AIMNaamObject.__init__(self)
         KabelAarding.__init__(self)
         KabelAardingSamenstelling.__init__(self)
+
+        self.add_valid_relation(relation='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#HoortBij', target='https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Aardingsinstallatie')

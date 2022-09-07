@@ -20,6 +20,9 @@ class ProefKorrelverdeling(Proef, PuntGeometrie, LijnGeometrie, VlakGeometrie):
         PuntGeometrie.__init__(self)
         VlakGeometrie.__init__(self)
 
+        self.add_valid_relation(relation='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#IsInspectieVan', target='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#BitumineuzeLaag')
+        self.add_valid_relation(relation='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#IsInspectieVan', target='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DunneOverlaging')
+
         self._korrelverdeling = OTLAttribuut(field=DtcDocument,
                                              naam='korrelverdeling',
                                              label='korrelverdeling',

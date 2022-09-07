@@ -19,6 +19,8 @@ class Ecoraster(ComplexeGeleiding, LijnGeometrie):
         ComplexeGeleiding.__init__(self)
         LijnGeometrie.__init__(self)
 
+        self.add_valid_relation(relation='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bevestiging', target='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Geleidingswand')
+
         self._heeftPrikkeldraad = OTLAttribuut(field=BooleanField,
                                                naam='heeftPrikkeldraad',
                                                label='heeft prikkeldraad',

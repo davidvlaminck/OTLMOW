@@ -16,6 +16,8 @@ class Wildreflector(Bebakening, PuntGeometrie):
         Bebakening.__init__(self)
         PuntGeometrie.__init__(self)
 
+        self.add_valid_relation(relation='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bevestiging', target='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Reflectorpaal')
+
         self._drager = OTLAttribuut(field=KlWildreflectorDrager,
                                     naam='drager',
                                     label='drager',

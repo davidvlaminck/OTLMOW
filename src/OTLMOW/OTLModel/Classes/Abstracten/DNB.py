@@ -23,6 +23,8 @@ class DNB(Voedingspunt, GeenGeometrie):
         Voedingspunt.__init__(self)
         GeenGeometrie.__init__(self)
 
+        self.add_valid_relation(relation='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bevestiging', target='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Kast')
+
         self._aansluitvermogen = OTLAttribuut(field=KwantWrdInKiloVoltAmpere,
                                               naam='aansluitvermogen',
                                               label='aansluitvermogen',

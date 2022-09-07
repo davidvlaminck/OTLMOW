@@ -16,6 +16,8 @@ class EquipotentiaalVerbinding(AIMNaamObject, LijnGeometrie):
         AIMNaamObject.__init__(self)
         LijnGeometrie.__init__(self)
 
+        self.add_valid_relation(relation='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#HoortBij', target='https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Aardingsinstallatie')
+
         self._isGeisoleerd = OTLAttribuut(field=BooleanField,
                                           naam='isGeisoleerd',
                                           label='is geïsoleerd',

@@ -20,6 +20,8 @@ class Verkeersspiegel(Signalisatie, AIMObject, PuntGeometrie):
         Signalisatie.__init__(self)
         PuntGeometrie.__init__(self)
 
+        self.add_valid_relation(relation='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bevestiging', target='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Draagconstructie')
+
         self._bijlageDocument = OTLAttribuut(field=DtcDocument,
                                              naam='bijlageDocument',
                                              label='bijlage document',

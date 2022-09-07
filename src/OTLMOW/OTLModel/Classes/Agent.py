@@ -20,6 +20,8 @@ class Agent(AttributeInfo, OTLObject, RelatieInteractor):
         OTLObject.__init__(self)
         RelatieInteractor.__init__(self)
 
+        self.add_valid_relation(relation='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#HeeftBetrokkene', target='http://purl.org/dc/terms/Agent')
+
         self._agentId = OTLAttribuut(field=DtcIdentificator,
                                      naam='agentId',
                                      label='agent identificatie',

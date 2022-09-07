@@ -21,7 +21,27 @@ class KlKabelnettoegangNetwerksoort(KeuzelijstField):
         'FO': KeuzelijstWaarde(invulwaarde='FO',
                                label='FO',
                                status='ingebruik',
-                               objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlKabelnettoegangNetwerksoort/FO')
+                               objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlKabelnettoegangNetwerksoort/FO'),
+        'beide': KeuzelijstWaarde(invulwaarde='beide',
+                                  label='BEIDE',
+                                  status='ingebruik',
+                                  definitie='BEIDE',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlKabelnettoegangNetwerksoort/beide'),
+        'geen': KeuzelijstWaarde(invulwaarde='geen',
+                                 label='GEEN',
+                                 status='ingebruik',
+                                 definitie='GEEN',
+                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlKabelnettoegangNetwerksoort/geen'),
+        'glasvezel': KeuzelijstWaarde(invulwaarde='glasvezel',
+                                      label='GLASVEZEL',
+                                      status='ingebruik',
+                                      definitie='GLASVEZEL',
+                                      objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlKabelnettoegangNetwerksoort/glasvezel'),
+        'koper': KeuzelijstWaarde(invulwaarde='koper',
+                                  label='KOPER',
+                                  status='ingebruik',
+                                  definitie='KOPER',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlKabelnettoegangNetwerksoort/koper')
     }
 
     @classmethod

@@ -17,6 +17,9 @@ class WatergreppelStd(GestandaardiseerdeKantopsluiting):
     def __init__(self):
         super().__init__()
 
+        self.add_valid_relation(relation='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bevestiging', target='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Fundering')
+        self.add_valid_relation(relation='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bevestiging', target='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#KabelgeleidingEnLeidingBevestiging')
+
         self._isVerholen = OTLAttribuut(field=BooleanField,
                                         naam='isVerholen',
                                         label='is verholen',

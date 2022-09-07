@@ -21,6 +21,9 @@ class LijnvormigElementMarkering(AOWSType, Markering, LijnGeometrie):
         Markering.__init__(self)
         LijnGeometrie.__init__(self)
 
+        self.add_valid_relation(relation='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bevestiging', target='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#LijnvormigElement')
+        self.add_valid_relation(relation='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#HoortBij', target='https://wegenenverkeer.data.vlaanderen.be/ns/installatie#GroepMarkering')
+
         self._code = OTLAttribuut(field=KlLEMarkeringCode,
                                   naam='code',
                                   label='code',

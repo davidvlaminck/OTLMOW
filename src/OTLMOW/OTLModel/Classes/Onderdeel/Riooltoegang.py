@@ -18,6 +18,8 @@ class Riooltoegang(Put, PutRelatie, PuntGeometrie):
         PutRelatie.__init__(self)
         PuntGeometrie.__init__(self)
 
+        self.add_valid_relation(relation='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bevestiging', target='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Kopmuur')
+
         self._typeRiooltoegang = OTLAttribuut(field=KlUitlaatType,
                                               naam='typeRiooltoegang',
                                               label='type riooltoegang',

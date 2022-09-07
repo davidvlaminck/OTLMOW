@@ -17,6 +17,9 @@ class VirtueleServer(HardwareToegang, GeenGeometrie):
         HardwareToegang.__init__(self)
         GeenGeometrie.__init__(self)
 
+        self.add_valid_relation(relation='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bevestiging', target='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Cluster')
+        self.add_valid_relation(relation='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#IsSWGehostOp', target='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Cluster')
+
         self._merk = OTLAttribuut(field=KlVirtueleServerMerk,
                                   naam='merk',
                                   label='merk',

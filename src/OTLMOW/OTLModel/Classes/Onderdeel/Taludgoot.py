@@ -17,6 +17,9 @@ class Taludgoot(AIMObject, LijnGeometrie):
         AIMObject.__init__(self)
         LijnGeometrie.__init__(self)
 
+        self.add_valid_relation(relation='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#SluitAanOp', target='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Buis')
+        self.add_valid_relation(relation='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#SluitAanOp', target='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#LinkendElement')
+
         self._totaleLengte = OTLAttribuut(field=KwantWrdInMeter,
                                           naam='totaleLengte',
                                           label='totale lengte',

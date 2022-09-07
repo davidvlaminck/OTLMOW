@@ -18,7 +18,12 @@ class KlIVRIMerkITSapp(KeuzelijstField):
                                  label='Peek',
                                  status='ingebruik',
                                  definitie='Peek',
-                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlIVRIMerkITSapp/peek')
+                                 objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlIVRIMerkITSapp/peek'),
+        'rhdhv': KeuzelijstWaarde(invulwaarde='rhdhv',
+                                  label='RHDHV',
+                                  status='ingebruik',
+                                  definitie='RHDHV',
+                                  objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlIVRIMerkITSapp/rhdhv')
     }
 
     @classmethod

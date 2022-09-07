@@ -17,6 +17,9 @@ class Binnenverlichtingstoestel(AIMObject, PuntGeometrie):
         AIMObject.__init__(self)
         PuntGeometrie.__init__(self)
 
+        self.add_valid_relation(relation='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bevestiging', target='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#BekledingComponent')
+        self.add_valid_relation(relation='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bevestiging', target='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#ConstructieElement')
+
         self._schakelwijze = OTLAttribuut(field=KlBinnenverlichtingstoestelSchakelwijze,
                                           naam='schakelwijze',
                                           label='schakelwijze',

@@ -17,6 +17,8 @@ class Persleiding(Buis, LijnGeometrie):
         Buis.__init__(self)
         LijnGeometrie.__init__(self)
 
+        self.add_valid_relation(relation='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#SluitAanOp', target='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Muurdoorgangsstuk')
+
         self._materiaal = OTLAttribuut(field=KlPersleidingMateriaal,
                                        naam='materiaal',
                                        label='materiaal',

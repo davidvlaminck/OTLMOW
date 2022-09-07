@@ -22,6 +22,8 @@ class ProefVoertuigOverhelling(Proef, PuntGeometrie, LijnGeometrie, VlakGeometri
         PuntGeometrie.__init__(self)
         VlakGeometrie.__init__(self)
 
+        self.add_valid_relation(relation='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#IsInspectieVan', target='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Geleideconstructie', deprecated='2.0.0')
+
         self._voertuigOverhelling = OTLAttribuut(field=KlLEACVoertuigOverhelling,
                                                  naam='voertuigOverhelling',
                                                  label='voertuig overhelling',

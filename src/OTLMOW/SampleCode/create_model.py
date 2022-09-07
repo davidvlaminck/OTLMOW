@@ -8,7 +8,7 @@ logging.error = print
 
 if __name__ == '__main__':
     # create the main facade class: OTLFacility
-    otl_facility = OTLFacility(settings_path="C:\\resources\\settings_OTLMOW.json")
+    otl_facility = OTLFacility(settings_path="/home/davidlinux/Documents/AWV/resources/settings_OTLMOW.json")
 
     logger = logging.getLogger(__name__)
     logger.handlers = [

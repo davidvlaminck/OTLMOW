@@ -20,6 +20,8 @@ class ProefGrondkarakteristieken(Proef, PuntGeometrie, LijnGeometrie, VlakGeomet
         PuntGeometrie.__init__(self)
         VlakGeometrie.__init__(self)
 
+        self.add_valid_relation(relation='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#IsInspectieVan', target='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#AfschermendeConstructie')
+
         self._bepalingGrondkarakteristieken = OTLAttribuut(field=DtcDocument,
                                                            naam='bepalingGrondkarakteristieken',
                                                            label='bepaling grondkarakteristieken',

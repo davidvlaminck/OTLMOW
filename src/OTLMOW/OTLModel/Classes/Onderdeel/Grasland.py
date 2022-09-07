@@ -16,6 +16,8 @@ class Grasland(GrazigeVegetatie, VlakGeometrie):
         GrazigeVegetatie.__init__(self)
         VlakGeometrie.__init__(self)
 
+        self.add_valid_relation(relation='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#HeeftBeheer', target='https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#BeheerGrazigeVegetatie')
+
         self._natuurstreefbeeld = OTLAttribuut(field=KlNSB,
                                                naam='natuurstreefbeeld',
                                                label='natuurstreefbeeld',

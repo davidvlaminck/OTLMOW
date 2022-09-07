@@ -17,6 +17,9 @@ class KringsBerliner(AIMObject, LijnGeometrie):
         AIMObject.__init__(self)
         LijnGeometrie.__init__(self)
 
+        self.add_valid_relation(relation='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bevestiging', target='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bouwput')
+        self.add_valid_relation(relation='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bevestiging', target='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Sleuf')
+
         self._beschoeiingsLengte = OTLAttribuut(field=KwantWrdInMeter,
                                                 naam='beschoeiingsLengte',
                                                 label='beschoeiingslengte',

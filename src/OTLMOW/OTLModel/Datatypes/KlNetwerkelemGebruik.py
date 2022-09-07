@@ -58,7 +58,12 @@ class KlNetwerkelemGebruik(KeuzelijstField):
                                 label='SDH',
                                 status='ingebruik',
                                 definitie='Het netwerkelement wordt gebruikt binnen het SDH netwerk.',
-                                objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkelemGebruik/sdh')
+                                objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkelemGebruik/sdh'),
+        'wifi-access-point': KeuzelijstWaarde(invulwaarde='wifi-access-point',
+                                              label='Wifi access point',
+                                              status='ingebruik',
+                                              definitie='Het netwerkelement is een Wifi access point.',
+                                              objectUri='https://wegenenverkeer.data.vlaanderen.be/id/concept/KlNetwerkelemGebruik/wifi-access-point')
     }
 
     @classmethod

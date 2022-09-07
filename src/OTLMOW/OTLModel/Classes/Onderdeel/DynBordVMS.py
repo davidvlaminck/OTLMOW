@@ -15,6 +15,8 @@ class DynBordVMS(LEDBord):
     def __init__(self):
         super().__init__()
 
+        self.add_valid_relation(relation='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Sturing', target='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#SoftwareToegang')
+
         self._merk = OTLAttribuut(field=KlDynBordVMSMerk,
                                   naam='merk',
                                   label='merk',

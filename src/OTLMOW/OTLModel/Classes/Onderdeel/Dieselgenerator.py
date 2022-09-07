@@ -18,6 +18,9 @@ class Dieselgenerator(Voedingspunt, PuntGeometrie, VlakGeometrie):
         PuntGeometrie.__init__(self)
         VlakGeometrie.__init__(self)
 
+        self.add_valid_relation(relation='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bevestiging', target='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Kast')
+        self.add_valid_relation(relation='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Voedt', target='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Stroomkring')
+
         self._afmetingen = OTLAttribuut(field=DtcAfmetingBxlxhInMm,
                                         naam='afmetingen',
                                         label='afmetingen',

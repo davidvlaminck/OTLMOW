@@ -16,6 +16,9 @@ class WegbebakeningAfschermendeConstructies(Bebakening, PuntGeometrie):
         Bebakening.__init__(self)
         PuntGeometrie.__init__(self)
 
+        self.add_valid_relation(relation='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bevestiging', target='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#AfschermendeConstructie')
+        self.add_valid_relation(relation='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bevestiging', target='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Referentiepunt')
+
         self._type = OTLAttribuut(field=KlWegbebakeningType,
                                   naam='type',
                                   label='type',

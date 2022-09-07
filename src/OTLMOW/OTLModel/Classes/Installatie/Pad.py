@@ -16,6 +16,11 @@ class Pad(NaampadObject, GeenGeometrie):
         NaampadObject.__init__(self)
         GeenGeometrie.__init__(self)
 
+        self.add_valid_relation(relation='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#HeeftNetwerkProtectie', target='https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Pad')
+        self.add_valid_relation(relation='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#HeeftNetwerkProtectie', target='https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Zpad')
+        self.add_valid_relation(relation='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#HoortBij', target='https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Pad')
+        self.add_valid_relation(relation='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#HoortBij', target='https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Zpad')
+
         self._netwerkprotectie = OTLAttribuut(field=KlPadNetwerkprotectie,
                                               naam='netwerkprotectie',
                                               label='netwerkprotectie',

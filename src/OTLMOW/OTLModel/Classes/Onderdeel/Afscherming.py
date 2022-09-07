@@ -16,6 +16,8 @@ class Afscherming(AIMObject, LijnGeometrie):
         AIMObject.__init__(self)
         LijnGeometrie.__init__(self)
 
+        self.add_valid_relation(relation='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#HoortBij', target='https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Ecoduct')
+
         self._type = OTLAttribuut(field=KlEcoAfschermingtype,
                                   naam='type',
                                   label='type',

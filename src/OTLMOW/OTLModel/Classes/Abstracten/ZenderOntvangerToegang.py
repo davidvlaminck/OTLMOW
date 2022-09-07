@@ -15,3 +15,6 @@ class ZenderOntvangerToegang(Communicatieapparatuur, FirmwareObject):
     def __init__(self):
         Communicatieapparatuur.__init__(self)
         FirmwareObject.__init__(self)
+
+        self.add_valid_relation(relation='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bevestiging', target='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bevestigingsbeugel')
+        self.add_valid_relation(relation='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Sturing', target='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#WeggebondenDetector')

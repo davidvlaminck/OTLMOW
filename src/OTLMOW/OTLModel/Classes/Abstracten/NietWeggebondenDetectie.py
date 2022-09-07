@@ -22,6 +22,9 @@ class NietWeggebondenDetectie(Detectie, FirmwareObject, PuntGeometrie):
         FirmwareObject.__init__(self)
         PuntGeometrie.__init__(self)
 
+        self.add_valid_relation(relation='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bevestiging', target='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#VRIDraagconstructie')
+        self.add_valid_relation(relation='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bevestiging', target='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bevestigingsbeugel')
+
         self._voedingsspanning = OTLAttribuut(field=KwantWrdInVolt,
                                               naam='voedingsspanning',
                                               label='voedingsspanning',

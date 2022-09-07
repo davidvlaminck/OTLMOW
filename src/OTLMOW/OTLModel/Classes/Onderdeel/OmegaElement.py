@@ -17,6 +17,9 @@ class OmegaElement(Straatmeubilair, LijnGeometrie):
         Straatmeubilair.__init__(self)
         LijnGeometrie.__init__(self)
 
+        self.add_valid_relation(relation='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bevestiging', target='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bevestigingsbeugel')
+        self.add_valid_relation(relation='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bevestiging', target='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Verankeringsmassief')
+
         self._materiaal = OTLAttribuut(field=KlOmegaElementMateriaal,
                                        naam='materiaal',
                                        label='materiaal',

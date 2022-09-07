@@ -20,6 +20,8 @@ class ProefHechtsterkte(Proef, PuntGeometrie, LijnGeometrie, VlakGeometrie):
         PuntGeometrie.__init__(self)
         VlakGeometrie.__init__(self)
 
+        self.add_valid_relation(relation='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#IsInspectieVan', target='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Cementbetonverharding')
+
         self._hechtsterkte = OTLAttribuut(field=DtcDocument,
                                           naam='hechtsterkte',
                                           label='hechtsterkte',

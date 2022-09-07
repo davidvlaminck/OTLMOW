@@ -21,6 +21,8 @@ class Verkeerslicht(AIMNaamObject, PuntGeometrie):
         AIMNaamObject.__init__(self)
         PuntGeometrie.__init__(self)
 
+        self.add_valid_relation(relation='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bevestiging', target='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Seinlantaarn')
+
         self._masker = OTLAttribuut(field=KlVerkeerslichtMasker,
                                     naam='masker',
                                     label='masker',

@@ -18,6 +18,8 @@ class Link(NaampadObject, GeenGeometrie):
         NaampadObject.__init__(self)
         GeenGeometrie.__init__(self)
 
+        self.add_valid_relation(relation='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#HoortBij', target='https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Pad')
+
         self._geleidingsgroepTnummer = OTLAttribuut(field=IntegerField,
                                                     naam='geleidingsgroepTnummer',
                                                     label='geleidingsgroep T-nummer',

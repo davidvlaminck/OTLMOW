@@ -24,6 +24,9 @@ class Boom(VegetatieElement, PuntGeometrie):
         VegetatieElement.__init__(self)
         PuntGeometrie.__init__(self)
 
+        self.add_valid_relation(relation='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bevestiging', target='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Boombrug')
+        self.add_valid_relation(relation='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#HeeftBeheer', target='https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#BeheerBoomvorm')
+
         self._aanleg = OTLAttribuut(field=DtcAanlegBoomvorm,
                                     naam='aanleg',
                                     label='aanleg',

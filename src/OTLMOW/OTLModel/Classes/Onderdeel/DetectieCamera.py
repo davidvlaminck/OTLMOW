@@ -18,6 +18,9 @@ class DetectieCamera(NietWeggebondenDetectie, TypeWeggebruiker):
         NietWeggebondenDetectie.__init__(self)
         TypeWeggebruiker.__init__(self)
 
+        self.add_valid_relation(relation='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bevestiging', target='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#VRIDraagconstructie')
+        self.add_valid_relation(relation='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bevestiging', target='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#VRIVirtueleDetectiezone')
+
         self._detectieprincipe = OTLAttribuut(field=KlDetectiecameraDetectieprincipe,
                                               naam='detectieprincipe',
                                               label='detectieprincipe',

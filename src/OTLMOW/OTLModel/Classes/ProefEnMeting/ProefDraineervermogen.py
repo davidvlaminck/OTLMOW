@@ -20,6 +20,8 @@ class ProefDraineervermogen(Proef, PuntGeometrie, LijnGeometrie, VlakGeometrie):
         PuntGeometrie.__init__(self)
         VlakGeometrie.__init__(self)
 
+        self.add_valid_relation(relation='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#IsInspectieVan', target='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#BitumineuzeLaag')
+
         self._draineervermogen = OTLAttribuut(field=DtcDocument,
                                               naam='draineervermogen',
                                               label='draineervermogen',

@@ -16,6 +16,8 @@ class Flitscamera(AIMNaamObject, PuntGeometrie):
         AIMNaamObject.__init__(self)
         PuntGeometrie.__init__(self)
 
+        self.add_valid_relation(relation='https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bevestiging', target='https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Flitspaal')
+
         self._externeReferentie = OTLAttribuut(field=DtcExterneReferentie,
                                                naam='externeReferentie',
                                                label='externe referentie',

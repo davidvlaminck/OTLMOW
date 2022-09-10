@@ -78,7 +78,6 @@ class AbstractDatatypeCreator(ABC):
             base_dir = os.path.abspath(os.path.join(base_dir, os.pardir))
         else:
             base_dir = relative_path
-        base_dir += '/OTLModel'
         path = f"{base_dir}/{directory}/{datatype.name}.py"
 
         with open(path, "w", encoding='utf-8') as file:
@@ -166,28 +165,31 @@ class AbstractDatatypeCreator(ABC):
         attributen = self.get_attributen_by_typeField(typeField, osloDatatype)
 
         datablock = ['# coding=utf-8',
-                     'from OTLMOW.OTLModel.BaseClasses.AttributeInfo import AttributeInfo',
-                     'from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut']
+                     'from otlmow_model.BaseClasses.AttributeInfo import AttributeInfo',
+                     'from otlmow_model.BaseClasses.OTLAttribuut import OTLAttribuut']
 
         list_fields_to_start_with = [f'{typeField}Field']
         if typeField == 'UnionType':
             list_fields_to_start_with.append('UnionWaarden')
         elif typeField == 'Primitive' or typeField == 'KwantWrd':
-            datablock.append('from OTLMOW.OTLModel.BaseClasses.OTLField import OTLField')
+            datablock.append('from otlmow_model.BaseClasses.OTLField import OTLField')
             list_fields_to_start_with = []
         listOfFields = self.get_fields_to_import_from_list_of_attributes(attributen, list_fields_to_start_with)
         base_fields = ['BooleanField', 'ComplexField', 'DateField', 'DateTimeField', 'FloatOrDecimalField', 'IntegerField',
                        'KeuzelijstField', 'UnionTypeField', 'URIField', 'LiteralField', 'NonNegIntegerField', 'TimeField',
                        'StringField', 'UnionWaarden']
         for module in listOfFields:
-            model_module = 'OTLMOW'
+            model_module = 'otlmow_model'
             if model_location != '' and module not in base_fields:
                 if 'UnitTests' in model_location:
                     model_module = 'UnitTests'
                 modules_index = model_location.rfind('/' + model_module)
                 modules = model_location[modules_index+1:]
                 model_module = modules.replace('/', '.')
-            datablock.append(f'from {model_module}.OTLModel.Datatypes.{module} import {module}')
+            if module not in base_fields:
+                datablock.append(f'from {model_module}.Datatypes.{module} import {module}')
+            else:
+                datablock.append(f'from {model_module}.BaseClasses.{module} import {module}')
 
         datablock.append('')
         datablock.append('')

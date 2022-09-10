@@ -74,7 +74,7 @@ class OTLClassCreator(AbstractDatatypeCreator):
 
         datablock = ['# coding=utf-8']
         if len(attributen) > 0:
-            datablock.append('from OTLMOW.OTLModel.BaseClasses.OTLAttribuut import OTLAttribuut')
+            datablock.append('from otlmow_model.BaseClasses.OTLAttribuut import OTLAttribuut')
 
         if oslo_class.abstract == 1:
             if len(inheritances) + len(list_of_geometry_types) < 1:
@@ -86,7 +86,7 @@ class OTLClassCreator(AbstractDatatypeCreator):
             for inheritance in inheritances:
                 if inheritance.base_name in ['OTLAsset', 'OTLObject', 'RelatieInteractor',
                                              'AttributeInfo', 'DavieRelatieAttributes']:
-                    datablock.append(f'from OTLMOW.OTLModel.BaseClasses.{inheritance.base_name} import {inheritance.base_name}')
+                    datablock.append(f'from otlmow_model.BaseClasses.{inheritance.base_name} import {inheritance.base_name}')
                 else:
                     class_directory = 'Classes'
                     ns = None
@@ -95,7 +95,7 @@ class OTLClassCreator(AbstractDatatypeCreator):
                     if ns is not None:
                         class_directory = GenericHelper.get_class_directory_from_ns(ns).replace('/', '.')
 
-                    datablock.append(f'from OTLMOW.OTLModel.{class_directory}.{inheritance.base_name} '
+                    datablock.append(f'from otlmow_model.{class_directory}.{inheritance.base_name} '
                                      f'import {inheritance.base_name}')
 
         if any(atr.readonly == 1 for atr in attributen):
@@ -106,20 +106,23 @@ class OTLClassCreator(AbstractDatatypeCreator):
                        'KeuzelijstField', 'UnionTypeField', 'URIField', 'LiteralField', 'NonNegIntegerField', 'TimeField',
                        'StringField', 'UnionWaarden']
         for type_field in list_of_fields:
-            model_module = 'OTLMOW'
+            model_module = 'otlmow_model'
             if model_location != '' and type_field not in base_fields:
                 if 'UnitTests' in model_location:
                     model_module = 'UnitTests'
                 modules_index = model_location.rfind('/' + model_module)
                 modules = model_location[modules_index+1:]
                 model_module = modules.replace('/', '.')
-            datablock.append(f'from {model_module}.OTLModel.Datatypes.{type_field} import {type_field}')
+            if type_field not in base_fields:
+                datablock.append(f'from {model_module}.Datatypes.{type_field} import {type_field}')
+            else:
+                datablock.append(f'from {model_module}.BaseClasses.{type_field} import {type_field}')
 
         if 'Bevestiging' in oslo_class.objectUri:
             pass
 
         for GeometryType in list_of_geometry_types:
-            datablock.append(f'from OTLMOW.GeometrieArtefact.{GeometryType.__name__} import {GeometryType.__name__}')
+            datablock.append(f'from otlmow_model.GeometrieArtefact.{GeometryType.__name__} import {GeometryType.__name__}')
 
         datablock.append('')
         datablock.append('')

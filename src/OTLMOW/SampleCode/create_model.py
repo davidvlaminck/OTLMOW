@@ -20,7 +20,8 @@ if __name__ == '__main__':
     # create a datamodel based on the OTL SQLite database and ttl files stored on the github
     otl_file_location = Path('../InputFiles/OTL 2.4.db')
     GA_file_location = Path('../InputFiles/Geometrie_Artefact_2.4.db')
-    otl_facility.create_otl_datamodel(otl_sqlite_file_location=otl_file_location,
+    otl_facility.create_otl_datamodel(directory=Path('/home/davidlinux/PycharmProjects/OTLMOW-Model/otlmow-model'),
+                                      otl_sqlite_file_location=otl_file_location,
                                       geo_artefact_sqlite_file_location=GA_file_location,
                                       environment='prd')
 

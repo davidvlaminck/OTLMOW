@@ -1,5 +1,6 @@
 import json
 from datetime import datetime
+from pathlib import Path
 
 from OTLMOW.Facility.AgentCollection import AgentCollection
 from OTLMOW.Facility.AssetFactory import AssetFactory
@@ -29,11 +30,10 @@ if __name__ == '__main__':
     # create the main facade class: OTLFacility
     # otl_facility = OTLFacility(logfile=r'C:\temp\pythonLogging\python_log.txt',
     #                            settings_path="C:\\resources\\settings_OTLMOW.json")
-    otl_facility = OTLFacility(logfile='/home/davidlinux/Documents/AWV/python_log.txt',
-                               settings_path="/home/davidlinux/Documents/AWV/resources/settings_OTLMOW.json",
-                               enable_relation_features=True)
+    otl_facility = OTLFacility(logfile=Path('/home/davidlinux/Documents/AWV/python_log.txt'),
+                               settings_path=Path("/home/davidlinux/Documents/AWV/resources/settings_OTLMOW.json"))
 
-    with open('/home/davidlinux/Documents/AWV/installatie_verantwoordelijke_westvlaanderen.json', encoding='utf-8-sig') \
+    with open('/home/davidlinux/Documents/AWV/installatie_verantwoordelijke_antwerpen.json', encoding='utf-8-sig') \
             as input_data_file:
         input_data = json.load(input_data_file)
 
@@ -55,5 +55,5 @@ if __name__ == '__main__':
                                                                        doel_identificator=agent.agentId.identificator))
 
     # write the json file to upload in DAVIE
-    path = f'Output/{datetime.now().strftime("%Y%m%d%H%M%S")}_export.json'
+    path = Path(f'Output/{datetime.now().strftime("%Y%m%d%H%M%S")}_export.json')
     otl_facility.create_file_from_assets(list_of_objects=relations, filepath=path)

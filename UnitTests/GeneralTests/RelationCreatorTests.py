@@ -1,18 +1,13 @@
 import unittest
 
-from OTLMOW.Facility.AssetFactory import AssetFactory
 from OTLMOW.Facility.Exceptions.CouldNotCreateRelationError import CouldNotCreateRelationError
 from OTLMOW.Facility.RelationCreator import RelationCreator
-from OTLMOW.ModelGenerator.BaseClasses.GeldigeRelatie import GeldigeRelatie
-from OTLMOW.ModelGenerator.BaseClasses.RelationValidator import RelationValidator
-from OTLMOW.OTLModel.BaseClasses.RelatieInteractor import RelatieInteractor
 from OTLMOW.OTLModel.Classes.Onderdeel.Aftakking import Aftakking
 from OTLMOW.OTLModel.Classes.Onderdeel.EnergiemeterAWV import EnergiemeterAWV
-from OTLMOW.OTLModel.Classes.ImplementatieElement.RelatieObject import RelatieObject
 from OTLMOW.OTLModel.Classes.Onderdeel.Voedt import Voedt
 
 
-class RelatieValidatorTests(unittest.TestCase):
+class RelationCreatorTests(unittest.TestCase):
     def test_create_valid_relation(self):
         creator = RelationCreator()
         e = EnergiemeterAWV()
@@ -35,4 +30,6 @@ class RelatieValidatorTests(unittest.TestCase):
         v = Voedt
         with self.assertRaises(CouldNotCreateRelationError):
             relatie = creator.create_relation(bron=a, doel=e, relatie=v)
+
+    #TODO add test for deprecation warning
 

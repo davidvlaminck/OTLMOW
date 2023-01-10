@@ -6,8 +6,8 @@ Below is sample code that should be self-explanatory. It demonstrates the basic 
 Since the start of this project, this library has been split up into smaller partial projects, to reduce dependency problems and overhead.
 This is the current list of projects that combine to the OTLMOW project:
 
-otlmow-model: https://github.com/davidvlaminck/OTLMOW-Model
-otlmow-modelbuilder: https://github.com/davidvlaminck/OTLMOW-ModelBuilder
-otlmow-converter: https://github.com/davidvlaminck/OTLMOW-Converter
-otlmow-template: https://github.com/davidvlaminck/OTLMOW-Template
-otlmow-postenmapping: https://github.com/davidvlaminck/OTLMOW-PostenMapping
++ otlmow-model: https://github.com/davidvlaminck/OTLMOW-Model
++ otlmow-modelbuilder: https://github.com/davidvlaminck/OTLMOW-ModelBuilder
++ otlmow-converter: https://github.com/davidvlaminck/OTLMOW-Converter
++ otlmow-template: https://github.com/davidvlaminck/OTLMOW-Template
++ otlmow-postenmapping: https://github.com/davidvlaminck/OTLMOW-PostenMapping

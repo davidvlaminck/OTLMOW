@@ -1,6 +1,5 @@
 # OTLMOW Project 
 This project aims to implement the Flemish data standard OTL (https://wegenenverkeer.data.vlaanderen.be/) in Python.
-Below is sample code that should be self-explanatory. It demonstrates the basic possibilities of this project.
 
 ## Divided into smaller projects
 Since the start of this project, this library has been split up into smaller partial projects, to reduce dependency problems and overhead.
